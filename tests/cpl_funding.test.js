@@ -1492,6 +1492,118 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Part E — achievement-based earning (Sam, 2026-07-24): allocation = CAP; a
+// college is paid on the CPL it actually posts in MAP, proportional to target,
+// capped at 100%; unearned rolls forward. Phase-in: data-gap metrics advance at
+// full cap; a college that posts nothing on a MEASURABLE metric earns $0 (the
+// incentive). Default data order: Year-1 P1 ("any transcribed") is the one
+// measurable metric; P2/P3 (+ all of Year 2) are data gaps.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-24", suppress_below: 5,
+    statewide: { p2: 9000, p3: 16807 },
+    colleges: { "Laney": { p2: 120, p3: 200 }, "Yuba": { p2: 6, p3: null, p3_suppressed: true } },
+    unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  check("E: basis defaults to potential (cap)", T._state.basis === "potential");
+  check("E: basis toggle renders both options",
+    !!doc.querySelector('#cplFundBasis button[data-val="potential"]') &&
+    !!doc.querySelector('#cplFundBasis button[data-val="earned"]'));
+  const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
+  check("E: potential mode Total cell shows the cap (no earned sub)",
+    potRow.querySelector("td.tot").textContent.indexOf("of ") === -1);
+
+  T._state.basis = "earned"; T.render();
+  check("E: earned basis now selected", !!doc.querySelector('#cplFundBasis button[data-val="earned"].on'));
+
+  const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
+  const f = Math.min(1, 200 / la.p1_heads);
+  check("E: in-feed underachiever earns cap − its Year-1 P1 shortfall (earned = cap × actual/target)",
+    Math.abs(la.earned_total - (la.total - la.p1 * (1 - f))) < 1);
+  check("E: earned is strictly below cap when underachieving, and positive",
+    la.earned_total < la.total && la.earned_total > 0);
+
+  const bc = T._alloc("Berkeley City");   // NOT in the feed → $0 on the measurable P1
+  check("E: a college absent from the feed earns $0 on the measurable priority (= cap − P1)",
+    Math.abs(bc.earned_total - (bc.total - bc.p1)) < 1);
+
+  check("E: earned + unearned pool cards render in earned mode",
+    !!doc.querySelector(".cplfund-card.earned") && !!doc.querySelector(".cplfund-card.unearned"));
+
+  const pcards = doc.querySelectorAll(".cplfund-prio .p");
+  check("E: measurable priority card shows an earned-so-far line (not full advance)",
+    pcards[0].textContent.indexOf("Earned so far") !== -1 && pcards[0].textContent.indexOf("full advance") === -1);
+  check("E: data-gap priority cards show full advance until the feed lands",
+    pcards[1].textContent.indexOf("full advance") !== -1 && pcards[2].textContent.indexOf("full advance") !== -1);
+
+  const earnRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
+  check("E: earned mode Total cell shows earned with the cap in a sub",
+    !!earnRow.querySelector("td.tot .sub") && earnRow.querySelector("td.tot").textContent.indexOf("of ") !== -1);
+
+  const csv = T._csv().split("\r\n");
+  check("E: CSV adds Earned + % of cap columns in earned mode",
+    csv[1].indexOf("Earned ") !== -1 && csv[1].indexOf("% of cap") !== -1);
+  check("E: CSV meta flags the EARNED basis", csv[0].indexOf("EARNED basis") !== -1);
+}
+{
+  // Capped at 100%: an overachiever earns its FULL cap (never more).
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-24", suppress_below: 5,
+    statewide: { p3: 16807 }, colleges: { "Laney": { p3: 9999999 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._state.basis = "earned"; T.render();
+  const la = T._alloc("Laney");
+  check("E: overachiever is capped at 100% of its cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
+  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Laney"; }).order + '"] = true;');
+  T.render();
+  const det = doc.querySelector("tr.cplfund-detail");   // only Laney is open
+  check("E: drill-in shows the per-priority earned line", !!det && det.textContent.indexOf("earned:") !== -1);
+}
+{
+  // Feed not loaded → everything advances at full cap (transient), earned == cap.
+  const { window } = freshDom();
+  const doc = boot(window);   // no CPL_FUNDING_PERF
+  const T = window.CPL_FUNDING_TAB;
+  T._state.basis = "earned"; T.render();
+  const la = T._alloc("Laney");
+  check("E: feed not loaded → earned advances at full cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
+}
+{
+  // Suppressed (<5): earns $0 on the measurable priority + is flagged, not blind-credited.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-24", suppress_below: 5,
+    statewide: { p3: 16807 }, colleges: { "Yuba": { p3: null, p3_suppressed: true } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._state.basis = "earned"; T.render();
+  const yu = T._alloc("Yuba");
+  check("E: suppressed college earns $0 on the measurable priority (= cap − P1)",
+    Math.abs(yu.earned_total - (yu.total - yu.p1)) < 1);
+  window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Yuba"; }).order + '"] = true;');
+  T.render();
+  const det = doc.querySelector("tr.cplfund-detail");   // only Yuba is open
+  check("E: suppressed shows a privacy-suppressed note in the drill-in", !!det && det.textContent.indexOf("privacy-suppressed") !== -1);
+}
+{
+  // Conservation: earned ≤ cap for every college, and the pool 'unearned' = Σ (cap − earned).
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-24", suppress_below: 5,
+    statewide: { p3: 16807 }, colleges: { "Laney": { p3: 200 }, "Alameda": { p3: 80 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._state.basis = "earned"; T.render();
+  const D2 = window.CPL_FUNDING;
+  let capSum = 0, earnSum = 0, everOver = false;
+  D2.colleges.forEach(function (c) { var a = T._alloc(c.college); capSum += a.total; earnSum += a.earned_total; if (a.earned_total > a.total + 1) everOver = true; });
+  check("E: no college ever earns above its cap", !everOver);
+  check("E: system earned ≤ system cap and > 0", earnSum <= capSum + 1 && earnSum > 0);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
