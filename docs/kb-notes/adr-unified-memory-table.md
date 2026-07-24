@@ -275,7 +275,11 @@ live **in the table itself** (`tag:memory`, slugs `d-mem-*` / `r-mem-*` /
    orientation pain (`q-mem-measure-pain`, open).
 
 The pane (Phase 2) is built to #1 + #2: a `verified`-default retrieval view, scope
-filters first, the ripple inspector, and session writes marked `proposed`.
+filters first, the ripple inspector, and session writes marked `proposed`. **Phase 3
+(2026-07-24)** wires auto-write into the Rule-8 checkpoint — each checkpoint a session
+writes this run's durable learnings (`proposed` until corroborated), keeping the table a
+faithful, current orientation layer:
+[[docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint]].
 
 ## How we got here
 
