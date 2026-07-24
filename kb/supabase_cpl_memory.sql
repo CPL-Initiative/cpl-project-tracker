@@ -9,11 +9,12 @@
 -- kb_curation, cpl_adoption_interest, cip_crosswalk_suggestion, and the gate
 -- functions is_allowed_reviewer() / team_pass_ok() this migration reuses.
 --
--- ============================ NOT YET APPLIED ============================
--- This is the committed SCHEMA-OF-RECORD only. Do NOT apply until Sam has
--- reviewed the seed (docs/memory/cpl_memory.md) and the gating below. At apply
--- time, follow Rule 9: fresh read at write-time, INSERT-only ON CONFLICT DO
--- NOTHING for the seed under a cohort reviewer_email, committed receipt.
+-- ==================== APPLIED — Phase 1 (2026-07-24) ====================
+-- LIVE on the "Work Plan" project via migrations: create_cpl_memory ·
+-- cpl_memory_add_slug_question_slugrefs · cpl_memory_harden_function_search_path.
+-- Seeded with 40 rows (receipt: kb/cpl_memory_seed.json) + a genesis audit log.
+-- This file is the SCHEMA-OF-RECORD — keep it in sync with the live DDL on every
+-- change (methodology-live-db-functions-need-committed-schema).
 -- ========================================================================
 --
 -- SECURITY / PRIVACY POSTURE (Sam raised these explicitly):
@@ -31,6 +32,7 @@
 
 create table if not exists public.cpl_memory (
   id            uuid primary key default gen_random_uuid(),
+  slug          text unique,                             -- human handle (e.g. 'pr4','q1') for citation ("which rule led to this?") + related refs; sessions auto-generate
   created_at    timestamptz not null default now(),
   updated_at    timestamptz not null default now(),
 
@@ -38,10 +40,10 @@ create table if not exists public.cpl_memory (
   -- integration/…) are TAGS, not kinds — see the ADR. Provisional knowledge is a
   -- 'fact' with status='proposed'; 'event' folds into 'milestone'; 'change' → 'decision'.
   kind          text not null check (kind in
-                  ('fact','pitfall',                      -- knowledge (what's true / to avoid)
-                   'opportunity','wishlist','risk',       -- direction (upside / want / downside)
-                   'decision','milestone',                -- timeline (what we set / what we reached)
-                   'procedure')),                         -- operational (a ripple checklist: change X → also update Y,Z,W)
+                  ('fact','pitfall',                          -- knowledge (what's true / to avoid)
+                   'opportunity','risk','wishlist','question',-- direction (upside / downside / want / open fork awaiting a call → resolves to a decision)
+                   'decision','milestone',                    -- timeline (what we set / what we reached)
+                   'procedure')),                             -- operational (a ripple checklist: change X → also update Y,Z,W)
 
   summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence
   detail        text check (char_length(detail) <= 4000),                       -- col 2: why it matters + the trigger ("read before X")
@@ -56,7 +58,7 @@ create table if not exists public.cpl_memory (
   -- the change-impact / ripple layer (Sam's COBI pain: "update all related
   -- fields in various tabs and report engines when I make a change"):
   affects       text[] not null default '{}',             -- surfaces this entry ripples to (files/tabs/report engines) — REVERSE-queryable
-  related       uuid[] not null default '{}',             -- links to other cpl_memory rows (esp. an entry ↔ its 'procedure' checklist)
+  related       text[] not null default '{}',             -- slugs of related rows (an entry ↔ its 'procedure'; a 'question' ↔ the 'decision' it becomes)
 
   status        text not null default 'proposed'
                   check (status in ('proposed','verified','stale','superseded')),
@@ -68,12 +70,13 @@ create table if not exists public.cpl_memory (
   author        text not null default 'unknown',          -- col 3: user log — who wrote/last-touched it
   verified_at   timestamptz,                              -- the verification loop stamps this
   verified_by   text,
-  superseded_by uuid references public.cpl_memory(id)
+  superseded_by text                                       -- slug of the superseding entry (the 'Revise' = clone + supersede flow; supersede, don't destroy)
 );
 
 -- keep updated_at honest
 create or replace function public.cpl_memory_touch_updated_at()
-returns trigger language plpgsql as $$
+returns trigger language plpgsql
+set search_path = '' as $$
 begin
   new.updated_at := now();
   return new;
@@ -128,3 +131,37 @@ create index if not exists cpl_memory_updated_idx  on public.cpl_memory (updated
 create index if not exists cpl_memory_tags_gin     on public.cpl_memory using gin (tags);
 create index if not exists cpl_memory_affects_gin  on public.cpl_memory using gin (affects);  -- "what touches annual_report.js?"
 create index if not exists cpl_memory_related_gin  on public.cpl_memory using gin (related);
+
+-- ─────────────────────────────────────────────────────────────────────────────
+-- cpl_memory_log — append-only audit trail. AUTO-WRITE is the default (sessions
+-- update memory every handoff WITHOUT approval — same no-review-gate posture as
+-- checkpoints/kb-notes). This log is what makes that safe + curatable: every
+-- create/update/verify/supersede is recorded with actor + before/after, so Sam can
+-- drop in and spot any recurring blip or divergence, and answer "which rule led to
+-- this action?" from a row's history + the sessions that cited it.
+-- ─────────────────────────────────────────────────────────────────────────────
+create table if not exists public.cpl_memory_log (
+  id         uuid primary key default gen_random_uuid(),
+  memory_id  uuid references public.cpl_memory(id) on delete set null,
+  at         timestamptz not null default now(),
+  actor      text not null default 'unknown',   -- session moniker (e.g. 'SkyKnow-s118') or curator email
+  action     text not null check (action in ('create','update','verify','stale','supersede','delete')),
+  note       text,
+  before     jsonb,
+  after      jsonb
+);
+alter table public.cpl_memory_log enable row level security;
+-- READ — team only (same gate as cpl_memory).
+drop policy if exists "team reads cpl_memory_log" on public.cpl_memory_log;
+create policy "team reads cpl_memory_log"
+  on public.cpl_memory_log for select
+  to anon, authenticated
+  using (is_allowed_reviewer() or team_pass_ok());
+-- WRITE — reviewers via the curate pane; sessions write via the Supabase MCP
+-- (service role, bypasses RLS). No anon insert. Append-only (no update/delete policy).
+drop policy if exists "reviewer writes cpl_memory_log" on public.cpl_memory_log;
+create policy "reviewer writes cpl_memory_log"
+  on public.cpl_memory_log for insert
+  to anon, authenticated
+  with check (is_allowed_reviewer());
+create index if not exists cpl_memory_log_mem_idx on public.cpl_memory_log (memory_id, at desc);

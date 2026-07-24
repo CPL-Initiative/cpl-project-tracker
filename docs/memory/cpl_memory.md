@@ -28,13 +28,15 @@ artifacts:
 > Fact Sheet, legislation) right beside dev memory. The *kind* is the entry's
 > nature; the `org` + `tags` carry its area + subject (see `oh1`–`oh5`).
 >
-> **This is a PROTOTYPE SEED** (39 real entries pulled from the corpus, incl. 5
-> organizational-memory rows) so the shape can be felt before the schema + loop
-> are committed. The `#id`s are placeholders until the table is seeded (they
-> become uuids). The table is **NOT yet applied to the live DB** — pending Sam's
-> review.
+> **Phase 1 is LIVE (2026-07-24).** The `cpl_memory` table + `cpl_memory_log` audit
+> trail are applied to the "Work Plan" Supabase project and seeded with **40 rows**
+> (this file's entries + the `q1` security decision-point). The `#id`s here are the
+> `slug`s — the human handles (`pr4`, `q1`) you cite to answer "which rule led to
+> this action?". This markdown becomes the periodic **export** of the live table;
+> next up are the dashboard 🧠 curate pane (Phase 2) and auto-write into the
+> checkpoint (Phase 3).
 
-## The 8 kinds (concise + comprehensive)
+## The 9 kinds (concise + comprehensive)
 
 **Nature** stays a small closed set; **domain** (security / privacy / org-access /
 integration / auditor / supabase / …) lives in **tags**, orthogonally — that split
@@ -48,6 +50,7 @@ is what keeps the type list from sprawling.
 | **Direction** | `opportunity` | an opening worth pursuing (upside, has a path) |
 | | `risk` | an open concern to watch (downside — often security / privacy / access) |
 | | `wishlist` | a wanted-but-unscheduled item (feeds the 📋 To-Do) |
+| | `question` | an open decision-point / fork awaiting a call — resolves into a `decision` |
 | **Timeline** | `decision` | a choice / policy / direction set (the "change" family) |
 | | `milestone` | a notable achievement or event reached (dated) |
 
@@ -116,6 +119,16 @@ pointing (`source`) at its canonical home.*
 |---|---|---|---|---|---|
 | `o1` | **Systemwide stale-articulation signal** in the CER/CCR generator | flag any articulation whose `(college, subj, num)` is absent from the current MAP catalog — tightens *every* count; reuses `CPL_COCI_COURSE_KEYS`. | ccr, cer | proposed | [[docs/kb-notes/methodology-filter-live-counts-against-current-catalog]] |
 | `o2` | **CIP is the systemic exit from TOP** (CO's TOP→CIP cutover, fall 2026) | apply "corroborate, don't gate" to CIP until it earns trust. | ccr, cip | proposed | [[docs/kb-notes/methodology-top-is-a-last-in-line-signal]] |
+
+---
+
+## ❓ Questions — open decision-points awaiting a call
+
+*Each resolves into a `decision` when Sam calls it (linked via `related`, logged).*
+
+| # | Summary | Detail & trigger | Tags | Status | Source |
+|---|---|---|---|---|---|
+| `q1` | **Gate ALL curation tabs behind the team phrase, or keep some on the reviewer secret-link?** | team-phrase = lower friction + broader access; reviewer magic-link = tighter control for sensitive tabs. Likely a per-tab call; resolves into a decision + updates the RLS gates. **affects:** `team_pass_ok` · `is_allowed_reviewer` · curation tabs | security, org-access, governance | proposed | live decision-point (SkyKnow) |
 
 ---
 

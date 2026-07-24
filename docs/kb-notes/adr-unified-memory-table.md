@@ -102,16 +102,18 @@ rotting (the same failure mode Rule 3's kpi-gap and the stale-handoff rule warn 
 Sam asked for "the most concise and comprehensive set of memory types." The key
 move is **two orthogonal axes, not one growing list**:
 
-- **`kind`** = the *nature* of an entry (a small **closed** set — 8).
+- **`kind`** = the *nature* of an entry (a small **closed** set — 9).
 - **`tags`** = the *domain* it's about (an **open** facet — `security`, `privacy`,
   `org-access`, `integration`, `auditor`, `supabase`, `ui`, `re-mint`, …).
 
 Security/privacy/org-access/integration are **not** peers of "fact" — a security
-item can *be* a fact, a pitfall, a risk, or a decision. Making them kinds would
-explode the list combinatorially; making them tags keeps 8 kinds covering
-everything. The collapses that got us to 8: `observation` → `fact` + status
-`proposed` (the status field already carries provisional-ness); `event` → `milestone`;
-`change` → `decision`.
+item can *be* a fact, a pitfall, a risk, a question, or a decision. Making them
+kinds would explode the list combinatorially; making them tags keeps 9 kinds
+covering everything. The collapses that keep it tight: `observation` → `fact` +
+status `proposed` (the status field already carries provisional-ness); `event` →
+`milestone`; `change` → `decision`. The one addition beyond the original five:
+`procedure` (the ripple checklist) and `question` (an open fork awaiting a call,
+which resolves into a `decision`).
 
 | Family | Kind | Captures |
 |---|---|---|
@@ -121,6 +123,7 @@ everything. The collapses that got us to 8: `observation` → `fact` + status
 | **Direction** | `opportunity` | an opening worth pursuing (upside) |
 | | `risk` | an open concern to watch (downside — often security/privacy/access) |
 | | `wishlist` | a wanted-but-unscheduled item (feeds the 📋 To-Do) |
+| | `question` | an open decision-point / fork awaiting a call — resolves into a `decision` |
 | **Timeline** | `decision` | a choice / policy / direction set |
 | | `milestone` | a notable achievement or event reached (dated) |
 
@@ -223,16 +226,37 @@ How `cpl_memory` plugs into what already exists (rather than sitting apart):
 - **Ripple map** — `affects[]` is the reverse index that answers "what must I
   update when I touch this engine?" — the direct payoff for the COBI pain.
 
+## Auto-write, the audit log & Revise (clone → supersede)
+
+Curation is **auto-write by default, curate by exception** (Sam, 2026-07-24) —
+sessions update memory every handoff with **no approval gate**, the same posture as
+checkpoints and KB notes. Three structural guardrails keep that safe without a human
+in the loop: no secrets/PII; sessions only ever write `visibility=internal` (public
+promotion stays curation-gated); and **supersede, don't destroy** — backed by an
+append-only **`cpl_memory_log`** (actor · action · before→after). That log is the
+"recurring blip / divergence" detector Sam drops in on, and — with stable `slug`s
+cited in commits/PRs — the way to answer *"which rule led to this action?"* and zoom
+into the exact row.
+
+**Two edit modes:**
+- **Edit in place** — typo, clearer wording, tag tweak; the truth didn't change
+  (`updated_at` bumps; logged `update`).
+- **Revise = clone → supersede** — when the *truth changed*: clone the row, edit the
+  clone to current truth (`verified`), set the old row `superseded` with
+  `superseded_by` → the new `slug`. The version chain is preserved and walkable.
+  (`stale` stays for "suspect, not yet replaced.")
+
 ## How we got here
 
 Prototyped as a **seed of 39 real entries** across all 8 kinds (incl. 6 `procedure`
 ripple checklists and 5 organizational-memory facts, `oh1`–`oh5`) pulled from the
 existing corpus — Critical Rules, the roadmap, KB notes, `cpl_todos.json`, session
 narratives, the public KB — so the shape can be felt with true content before the
-schema and loop are committed (`docs/memory/cpl_memory.md`). The
-schema-of-record lives at `kb/supabase_cpl_memory.sql` and is **not yet applied to
-the live DB** (per Rule 9: apply only after Sam's review, with a fresh read at
-write-time).
+schema and loop are committed (`docs/memory/cpl_memory.md`). **Phase 1 is now LIVE**
+(2026-07-24): `kb/supabase_cpl_memory.sql` + the `cpl_memory_log` audit table are
+applied to the "Work Plan" project and seeded with 40 rows (receipt
+`kb/cpl_memory_seed.json`; `question` `q1` + org-memory `oh1`–`oh5` included). Next:
+Phase 2 (the dashboard 🧠 curate pane) and Phase 3 (auto-write into the Rule-8 checkpoint).
 
 ## When this applies (and when it doesn't)
 
