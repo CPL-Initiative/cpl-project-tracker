@@ -246,6 +246,14 @@
     ".cplfund-copymsg { color: var(--green-progress); font-size: .8rem; font-weight: 600; }",
     ".cplfund-optbtn { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; font-size: .75rem; font-family: inherit; margin-left: 6px; }",
     ".cplfund-optbtn:hover { border-color: var(--gold-accent); }",
+    // Column show/hide menu (Sam, 2026-07-24) — a ⚙ Columns dropdown of checkboxes.
+    ".cplfund-colmenu { position: relative; display: inline-block; }",
+    ".cplfund-colmenu > summary { list-style: none; cursor: pointer; display: inline-block; }",
+    ".cplfund-colmenu > summary::-webkit-details-marker { display: none; }",
+    ".cplfund-colmenu > summary::marker { content: ''; }",
+    ".cplfund-colmenu-panel { position: absolute; z-index: 30; top: 100%; left: 0; margin-top: 4px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 11px; box-shadow: 0 3px 12px rgba(0,0,0,.14); min-width: 180px; max-height: 320px; overflow-y: auto; display: grid; gap: 4px; }",
+    ".cplfund-colmenu-h { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }",
+    ".cplfund-colmenu-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; white-space: nowrap; cursor: pointer; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
@@ -873,7 +881,8 @@
     if (coordShown()) parts.push("CPL Coordinator in MAP: " + (ELIG.coord[college] ? "yes" : "not on file"));
     if (partShown()) parts.push("participation request by " + participationDeadline() + ": " +
       (ELIG.optin[college] ? "opted in" : "not yet"));
-    return (parts.join(" · ") || "no tracked requirements") + " — informational only in this draft";
+    return (parts.join(" · ") || "no tracked requirements") +
+      " — the participation gate (informational in this draft); funding is earned separately on actual CPL";
   }
   // Opt-in writes (team-phrase / reviewer). Re-fetch after every write — a
   // DELETE filtered out by RLS returns 2xx with nothing deleted, so the
@@ -1766,7 +1775,7 @@
       { key: "p3a", label: "Transcribed†", cls: "",
         title: "distinct students with any TRANSCRIBED CPL per MAP (the one Year-1 priority metric the daily feed can measure today)" },
       { key: "elig", label: "Elig", cls: "",
-        title: "Proposed baseline eligibility (informational in this draft): ✓ all tracked requirements met, ◐ some, ○ none." }
+        title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): the tracked requirements — a CPL Coordinator listed in MAP + a participation request by the deadline — ✓ all met · ◐ some · ○ none. This is the participation gate; funding is then EARNED on actual CPL (see the Earned basis)." }
     ].concat(yearColDefs(), [
       totalColDef(),
       { key: "working_adults", label: "Working adults*", cls: "" }
@@ -1794,6 +1803,42 @@
     basis: "potential"  // "potential" (cap) | "earned" (paid on actual achievement)
   };
   function earnedMode() { return state.basis === "earned"; }
+
+  // ── column show/hide (Sam, 2026-07-24) ────────────────────────────────────
+  // Per-view, persisted; the county context (Working adults) is hidden by
+  // default. Hiding is done with injected nth-child CSS keyed off the live
+  // column order, so the hand-built row cells stay untouched (detail rows are
+  // excluded so a drill-in never collapses). The view's identity column
+  // (College / District) is never hideable.
+  var COLS_STORE = "cplfund_cols_v1";
+  var COL_PREFS = (function () {
+    try { var r = JSON.parse(localStorage.getItem(COLS_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
+    return { college: { working_adults: true } };   // default: county context hidden
+  })();
+  function saveColPrefs() { try { localStorage.setItem(COLS_STORE, JSON.stringify(COL_PREFS)); } catch (e) {} }
+  function hiddenCols() { return COL_PREFS[state.view] || (COL_PREFS[state.view] = {}); }
+  function isColHidden(key) { return !!hiddenCols()[key]; }
+  function idColKey() { return state.view === "district" ? "district" : "college"; }
+  function colHideStyleHtml() {
+    var hid = hiddenCols(), id = idColKey(), rules = [];
+    activeCols().forEach(function (col, i) {
+      if (hid[col.key] && col.key !== id) {
+        var p = i + 1;
+        rules.push(".cplfund-table thead th:nth-child(" + p + "),.cplfund-table tbody tr:not(.cplfund-detail) td:nth-child(" + p + "){display:none}");
+      }
+    });
+    return rules.length ? "<style>" + rules.join("") + "</style>" : "";
+  }
+  function colMenuHtml() {
+    var id = idColKey();
+    var items = activeCols().filter(function (c) { return c.key !== id; }).map(function (c) {
+      var lbl = String(c.label).replace(/<[^>]*>/g, "").trim() || c.key;
+      return '<label class="cplfund-colmenu-item"><input type="checkbox" data-colkey="' + esc(c.key) + '"' +
+        (isColHidden(c.key) ? "" : " checked") + "> " + esc(lbl) + "</label>";
+    }).join("");
+    return '<details class="cplfund-colmenu"><summary class="cplfund-optbtn" title="Show or hide table columns">⚙ Columns</summary>' +
+      '<div class="cplfund-colmenu-panel"><div class="cplfund-colmenu-h">Show columns</div>' + items + "</div></details>";
+  }
 
   // ── allocation model: proportional split + minimum-viable floor ────────
   // W (the college's window entitlement at balanced shares) starts as
@@ -2107,8 +2152,9 @@
       (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>'));
     if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
       (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>'));
-    var eligLine = '<div><span class="dk">Eligibility (proposed):</span> ' +
-      (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') + eligBtns + "</div>";
+    var eligLine = '<div><span class="dk">Baseline eligibility (proposed — the gate to participate):</span> ' +
+      (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') +
+      ' <span class="dk">&mdash; informational in this draft; funding is earned separately on actual CPL.</span>' + eligBtns + "</div>";
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
     // read-only for phrase-holders who haven't flipped team-editing on.
     var noteRec = NOTES[c.college];
@@ -2218,7 +2264,7 @@
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
     // sorted rows and is not itself a sortable/clickable .cplfund-row.
-    return '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
+    return colHideStyleHtml() + '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
       "<thead><tr>" + head + "</tr></thead>" +
       "<tbody>" + foot + body + "</tbody>" +
       "</table></div>";
@@ -2852,7 +2898,8 @@
       segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
-      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (includes the hidden County + working-adults context)">⬇ Excel</button>' +
+      colMenuHtml() +
+      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (the full data incl. any hidden columns + the County/working-adults context)">⬇ Excel</button>' +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdf" title="Open a print-ready view of the whole tab — use your browser&#39;s Print → Save as PDF">⬇ PDF</button></div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>" +
       feederSectionHtml() +
@@ -3103,6 +3150,18 @@
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
     var pdfBtn = document.getElementById("cplFundPdf");
     if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
+
+    // Column show/hide checkboxes — toggle, persist, refresh the table only (the
+    // ⚙ menu lives in the toolbar so it stays open across the toggle).
+    document.querySelectorAll(".cplfund-colmenu input[data-colkey]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var key = cb.getAttribute("data-colkey");
+        var hid = hiddenCols();
+        if (cb.checked) delete hid[key]; else hid[key] = true;
+        saveColPrefs();
+        refreshTable();
+      });
+    });
 
     // Editable inputs — commit on change (blur/Enter). savingState clears so a
     // prior "saved" note doesn't linger across a fresh edit.
