@@ -46,8 +46,9 @@ create table if not exists public.cpl_memory (
   summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence
   detail        text check (char_length(detail) <= 4000),                       -- col 2: why it matters + the trigger ("read before X")
 
-  org           text not null default 'cpl'               -- the owning COBI AREA (primary home) — scalability past CPL; extend the check as COBI adds areas
-                  check (org in ('cpl','ci','cip','gr','shared')),
+  org             text not null default 'cpl'             -- the owning COBI AREA (primary home) — scalability past CPL; extend the check as COBI adds areas
+                    check (org in ('cpl','ci','cip','gr','shared')),
+  share_across_orgs boolean not null default true,         -- DEFAULT SHARED: every area's team sees it. false = private to `org` (e.g. a sensitive GR item). Records intent now; ENFORCED once per-area RLS lands (risk r2).
   scope         text check (char_length(scope) <= 120),   -- the surface WITHIN the org: repo / tab / file / 'cross-cutting'
   tags          text[] not null default '{}',             -- topical facets incl. security | privacy | org-access | integration | history | fact-sheet | …
   source        text check (char_length(source) <= 500),  -- link/path to the KB note / PR / file holding the full record
@@ -61,7 +62,7 @@ create table if not exists public.cpl_memory (
                   check (status in ('proposed','verified','stale','superseded')),
   confidence    text check (confidence in ('low','medium','high')),
   visibility    text not null default 'internal'
-                  check (visibility in ('internal','team','public')),  -- default internal; 'public' NEVER auto — curation-gated only
+                  check (visibility in ('internal','public')),  -- the PUBLIC boundary (orthogonal to share_across_orgs); 'public' NEVER auto — curation-gated only
   event_date    date,                                     -- for milestone / event / change: when it happened
 
   author        text not null default 'unknown',          -- col 3: user log — who wrote/last-touched it
@@ -87,6 +88,9 @@ alter table public.cpl_memory enable row level security;
 
 -- READ — team only (reviewers via magic-link OR team-phrase holders). NO anon.
 -- NOTE: if entries get candid, tighten this to `is_allowed_reviewer()` alone.
+-- FUTURE per-area gate (when the COBI org layer gets real isolation — risk r2):
+--   using (is_allowed_reviewer() or (team_pass_ok() and (share_across_orgs or org = current_org())))
+-- i.e. default-shared rows stay team-wide; share_across_orgs=false rows fall to their own area.
 drop policy if exists "team reads cpl_memory" on public.cpl_memory;
 create policy "team reads cpl_memory"
   on public.cpl_memory for select

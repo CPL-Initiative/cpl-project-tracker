@@ -191,10 +191,21 @@ Sam asked these be first-class. The posture:
   review gate, but **never** to the public `cpl-knowledge-base` except through the
   human-gated curation pipeline — same rule as `/checkpoint`. A `visibility` column
   (`internal` default; `public` never set automatically) makes the boundary explicit.
-- **Org access is a known gap, tracked as a `risk` row.** The COBI org layer has no
-  per-area data isolation yet (CPL and C&I phrases unlock the same tables); when
-  multi-org gating lands, `cpl_memory` can scope by `scope`/tags or a future
-  `org` column. Captured as seed entry `r2`.
+- **Cross-org sharing — default shared, privacy is the exception.** Three
+  orthogonal access controls, each answering a distinct question:
+  1. **`org`** — who *owns* the entry (the home).
+  2. **`share_across_orgs`** (boolean, **default `true`**) — within the internal
+     team, is it visible to *all* COBI areas (default) or private to its `org`?
+     Sam's call: default-shared, because knowledge compounds when areas see each
+     other's facts, and there's no default-secret case today; set `false` for the
+     rare sensitive item (a GR entry it doesn't want to share yet).
+  3. **`visibility`** — the *public* boundary (`internal` default → `public` only
+     via curation). Orthogonal to the two above.
+  Per-area isolation is still deferred (the COBI org layer is cosmetic today —
+  `risk` row `r2`), so `share_across_orgs` **records intent now and enforces once
+  per-area RLS lands** (the future SELECT gate is sketched in the SQL). Kept a
+  simple boolean, not a per-org grant matrix — extend to `shared_with[]` only if
+  "share with CPL+CIP but not GR" ever becomes a real need.
 
 ## Integration
 
