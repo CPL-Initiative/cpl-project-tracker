@@ -884,3 +884,40 @@ shared/team default of Earned, add a `fundingBasis` config field (one line, same
 resolution as everything else). Suppression policy (<5 → $0-flagged) is conservative;
 revisit if small colleges need crediting. The "advance for data-gap priorities" is
 generous by design (phase-in) — as feeds land the advances shrink to real earned.
+
+## 2026-07-24 (SkyFriend cont. 2) — column show/hide + the eligibility-tooltip audit
+
+Sam's "rug left in the context" batch of 6 asks; shipped the two unambiguous ones + a
+recommendation on the rest. **Column show/hide** (`cpl_funding.js`): a **⚙ Columns**
+dropdown (native `<details>`) of checkboxes; **county (Working adults) hidden by
+default**; per-view + persisted (`localStorage cplfund_cols_v1`, keyed `{college:{},
+district:{}}`). The neat trick that avoided a row-render refactor: **hide via injected
+`nth-child` CSS computed from the live `activeCols()` order** — `.cplfund-table thead
+th:nth-child(N)` + `tbody tr:not(.cplfund-detail) td:nth-child(N)`. The `:not(.cplfund-
+detail)` is load-bearing: detail (drill-in) rows are a single `colspan` cell, so without
+the exclusion, hiding column 1 would collapse the whole drill-in. CSS-hiding is also
+transparent to jsdom (cells stay in the DOM), so it didn't disturb any existing test.
+The view's **identity column (College/District) is never hideable** (row anchor). Toggling
+`refreshTable()`s only — the menu lives in the toolbar so it stays open across a toggle.
+**Eligibility audit (#4):** clarified the Elig tooltip + the drill-in "Baseline
+eligibility" line + `eligTitle()` to frame eligibility as the **participation gate**
+(CPL Coordinator in MAP + participation request), explicitly **separate from earned
+funding** — a needed clarification now that funding is achievement-based. Tests 357 →
+**367** (Part F).
+
+**Recommendation for #6 (target vs actual layout) — DON'T use two physical rows per
+college.** Doubling 115 → 230 rows breaks sorting (rows must stay paired), the pinned
+SYSTEM row, zebra striping, and CSV, for a big complexity cost. **Recommend instead:
+stack target-over-actual *within each priority column's cell*** (the `.sub` two-line
+pattern already used by the earned Total cell) — a college sees `target / actual (%)` at
+a glance, no dropdown, no row-doubling, and it composes with sort/CSV/print. This pairs
+directly with **#5** (relabel Eligible†/Transcribed† → per-priority **P1/P2/P3** columns,
+each cell = that priority's target/actual stacked, hover = the priority goal + metric).
+Only the measurable priority shows a real actual today; the others show "—/gap" until
+their feeds land (same `MEASURES` gating). **Deferred with a note:** column **resize**
+(needs `table-layout:fixed` + a colgroup + drag handles — bigger, and it fights the
+no-horizontal-scroll rule) and Sam's dream of **per-column multi-select dropdown filters**
+("could eliminate redundant tab filters") — a real product direction worth a dedicated
+build: a filter row under the header, each column a multi-select of its distinct values,
+AND/OR across columns, replacing the separate view/year toggles. Both are the next
+session's build; the column model (`activeCols()` + the nth-child hook) is the seam.

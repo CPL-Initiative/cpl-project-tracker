@@ -32,6 +32,24 @@ Three more curator asks landed on top of SkyFunder, one JS-only PR in `cpl_fundi
 Tests 325 → **337**; full suite **168 files green**. Story: `docs/cpl_funding_lessons.md`
 (SkyFriend section). Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
+## 2026-07-24 (SkyFriend cont. 2) — column show/hide + eligibility audit
+
+Shipped a **⚙ Columns** show/hide menu (native `<details>` of checkboxes; **county hidden by
+default**; per-view + persisted `cplfund_cols_v1`). Hiding = injected `nth-child` CSS from the
+live `activeCols()` order, with `tbody tr:not(.cplfund-detail)` so a drill-in never collapses;
+the identity column (College/District) is never hideable. **Eligibility audit:** the Elig
+tooltip + drill-in "Baseline eligibility" line + `eligTitle()` now frame it as the
+**participation gate** (coordinator + participation request), **separate from earned funding**.
+Tests 357 → **367** (Part F).
+
+**Queued (Sam's same batch, needs a build):** **#5+#6** — relabel Eligible†/Transcribed† →
+per-priority **P1/P2/P3** columns, each cell **target-over-actual stacked** (the `.sub` pattern —
+NOT two physical rows, which break sort/CSV/SYSTEM row) with a goal+metric hover, so a college
+sees its standing inline without a dropdown. Then column **resize** (`table-layout:fixed` +
+colgroup + drag) and the big one — **per-column multi-select filters** to retire the separate
+view/year toggles. The `activeCols()` + nth-child seam is the foundation. Full recommendation in
+`docs/cpl_funding_lessons.md`.
+
 ## 2026-07-24 (SkyFriend cont.) — achievement-based funding (cap-and-earn)
 
 Sam confirmed the tab must **fund on actual achievement, not headcount** (it never did —

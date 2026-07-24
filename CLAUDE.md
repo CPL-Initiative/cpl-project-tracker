@@ -596,6 +596,13 @@ posted-nothing → $0; suppressed(<5) → $0 flagged. Phase-in: only Year-1 "any
 is measurable today; the rest advance and flip automatically as feeds land. Tests +20 →
 **357**. Story in the lessons doc.
 
+**Cont. 2 — column show/hide + eligibility audit:** a **⚙ Columns** menu (county hidden by
+default; per-view + persisted; hide via `nth-child` CSS off `activeCols()`, sparing detail
+rows; identity column never hideable) + reframed the Elig tooltip/drill-in as the
+**participation gate**, separate from earned funding. Tests → **367**. **Queued** (same batch):
+per-priority P1/P2/P3 columns with **stacked target/actual cells** (recommended over 2 physical
+rows), column resize, and per-column multi-select filters — see the lessons doc.
+
 ### SkyVid side-lane — CPL Student Portal "Credit for Being You" intro video: audio restoration + accessibility (2026-07-23)
 
 Sam's "work some magic" on the new CPL Student Portal (creditforbeingyou.org) 1:51
