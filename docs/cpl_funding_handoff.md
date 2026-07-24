@@ -50,6 +50,22 @@ colgroup + drag) and the big one — **per-column multi-select filters** to reti
 view/year toggles. The `activeCols()` + nth-child seam is the foundation. Full recommendation in
 `docs/cpl_funding_lessons.md`.
 
+## 2026-07-24 (SkyFriend cont. 3) — per-priority P1/P2/P3 columns + numbered Elig pie
+
+**#5 + #6 shipped** (Sam blessed the stacked-cell direction). The Eligible†/Transcribed†
+columns → **three P1/P2/P3 columns** (from `priorities(viewSlot)`, keys `prio0/1/2`), each cell
+**stacks target over actual** (`prioCellHtml`: top `target · cap`, bottom `actual · earned · %`)
+so a college sees its standing inline, no drill-in; header hover = the priority goal + metric.
+Driven by the same `earnFraction` (earned/gap/pending/none/suppressed). CSV → `Pn target`/`Pn
+actual`. Compact `fmtCountK`/`fmtMoneyK` keep the cells narrow (full precision in the hover).
+**Elig glyph** ✓/◐/○ → a **numbered SVG pie** (`eligGlyph`): one slice per tracked requirement,
+green when met — **N-slice not forced-4** (2 today: coordinator + participation; grows as more
+per-college-checkable reqs are wired; `eligReqList()` is the seam). Tests 368 → **376** (Part G).
+
+**Still deferred** (Sam OK'd holding): column **resize** + **per-column multi-select filters**.
+**Open design note:** a *fixed 4-slice* Elig pie needs 2 more per-college-checkable criteria
+defined + wired first (else 2 slices read as failing criteria that don't exist).
+
 ## 2026-07-24 (SkyFriend cont.) — achievement-based funding (cap-and-earn)
 
 Sam confirmed the tab must **fund on actual achievement, not headcount** (it never did —

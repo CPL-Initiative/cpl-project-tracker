@@ -254,6 +254,18 @@
     ".cplfund-colmenu-panel { position: absolute; z-index: 30; top: 100%; left: 0; margin-top: 4px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 11px; box-shadow: 0 3px 12px rgba(0,0,0,.14); min-width: 180px; max-height: 320px; overflow-y: auto; display: grid; gap: 4px; }",
     ".cplfund-colmenu-h { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }",
     ".cplfund-colmenu-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; white-space: nowrap; cursor: pointer; }",
+    // Per-priority P1/P2/P3 columns (Sam, 2026-07-24): each cell stacks the
+    // TARGET (top: projected students · cap) over the ACTUAL (bottom: students
+    // posted in MAP · earned, % of target) — so a college sees its standing
+    // inline, no drill-in needed.
+    ".cplfund-table td.cf-prio { line-height: 1.24; }",
+    ".cf-prio .cf-t { color: var(--text-muted); }",
+    ".cf-prio .cf-a { font-weight: 700; color: var(--navy-primary); display: block; margin-top: 1px; }",
+    ".cf-prio .cf-u { font-weight: 400; color: var(--text-faint); }",
+    ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 700; }",
+    ".cf-prio .cf-gap { color: var(--text-faint); font-weight: 400; }",
+    // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
+    ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
@@ -277,6 +289,25 @@
   }
   function fmtInt(v) { return v == null ? "—" : Math.round(v).toLocaleString("en-US"); }
   function fmtMoney(v) { return v == null ? "—" : "$" + Math.round(v).toLocaleString("en-US"); }
+  // Compact money for the dense per-priority cells ($22.5K, $497K, $1.2M).
+  function fmtMoneyK(v) {
+    if (v == null) return "—";
+    var a = Math.abs(v);
+    if (a >= 1e6) return "$" + parseFloat((v / 1e6).toFixed(1)) + "M";
+    if (a >= 1e5) return "$" + Math.round(v / 1e3) + "K";
+    if (a >= 1e3) return "$" + parseFloat((v / 1e3).toFixed(1)) + "K";
+    return "$" + Math.round(v);
+  }
+  // Compact student counts for the priority cells (797 · 16.8K · 113K) so the
+  // wide statewide numbers don't blow out the column; full precision stays in
+  // the cell hover.
+  function fmtCountK(v) {
+    if (v == null) return "—";
+    var a = Math.abs(v);
+    if (a >= 1e5) return Math.round(v / 1e3) + "K";
+    if (a >= 1e4) return parseFloat((v / 1e3).toFixed(1)) + "K";
+    return fmtInt(v);
+  }
   function fmtRate(v) { return v == null ? "—" : "$" + v.toFixed(2); }
   function fmtPct(v, dp) { return v == null ? "—" : (v * 100).toFixed(dp == null ? 1 : dp) + "%"; }
   function fmtPctTrim(v) { return v == null ? "—" : String(parseFloat((v * 100).toFixed(2))) + "%"; }
@@ -859,21 +890,53 @@
     });
   }
   // Score over only the SHOWN data-backed built-ins (hiding one drops it here too).
+  // The SHOWN, per-college-checkable requirements, in order, with met status —
+  // the pie slices. (Extra free-text requirements aren't per-college tracked,
+  // so they're not sliced; the pie shows the data-backed built-ins.)
+  function eligReqList(college) {
+    var list = [];
+    if (coordShown()) list.push({ met: !!ELIG.coord[college], label: coordLabel() });
+    if (partShown()) list.push({ met: !!ELIG.optin[college], label: partLabel() + " by " + participationDeadline() });
+    return list;
+  }
   function eligParts(college) {
-    var shown = 0, met = 0;
-    if (coordShown()) { shown++; if (ELIG.coord[college]) met++; }
-    if (partShown()) { shown++; if (ELIG.optin[college]) met++; }
-    return { shown: shown, met: met };
+    var reqs = eligReqList(college), met = 0;
+    reqs.forEach(function (r) { if (r.met) met++; });
+    return { shown: reqs.length, met: met };
   }
   function eligScore(college) {
     if (!ELIG.coordOk) return null;
     return eligParts(college).met;
   }
+  // A numbered PIE glyph (Sam, 2026-07-24): one slice per tracked requirement,
+  // numbered 1..N, filled green when the college satisfies it (muted otherwise).
+  // Grows toward 4 slices automatically if more per-college-checkable
+  // requirements are wired; today there are 2 (coordinator + participation).
   function eligGlyph(college) {
-    if (!ELIG.coordOk) return '<span class="dk">—</span>';
-    var p = eligParts(college);
-    if (!p.shown) return '<span class="dk">—</span>';
-    return p.met >= p.shown ? "✓" : p.met > 0 ? "◐" : '<span class="dk">○</span>';
+    if (!ELIG.coordOk) return '<span class="dk" title="eligibility pending — MAP coordinator data not loaded">—</span>';
+    var reqs = eligReqList(college);
+    var n = reqs.length;
+    if (!n) return '<span class="dk">—</span>';
+    var cx = 12, cy = 12, r = 10.5, parts = [];
+    for (var i = 0; i < n; i++) {
+      var met = reqs[i].met;
+      var fill = met ? "var(--green-progress)" : "var(--surface-muted)";
+      if (n === 1) {
+        parts.push('<circle cx="' + cx + '" cy="' + cy + '" r="' + r + '" fill="' + fill + '" stroke="var(--surface-opaque)" stroke-width="1"/>');
+      } else {
+        var a0 = (i / n) * 2 * Math.PI - Math.PI / 2, a1 = ((i + 1) / n) * 2 * Math.PI - Math.PI / 2;
+        var x0 = (cx + r * Math.cos(a0)).toFixed(2), y0 = (cy + r * Math.sin(a0)).toFixed(2);
+        var x1 = (cx + r * Math.cos(a1)).toFixed(2), y1 = (cy + r * Math.sin(a1)).toFixed(2);
+        var large = (a1 - a0) > Math.PI ? 1 : 0;
+        parts.push('<path d="M' + cx + ',' + cy + ' L' + x0 + ',' + y0 + ' A' + r + ',' + r + ' 0 ' + large + ' 1 ' + x1 + ',' + y1 + ' Z" fill="' + fill + '" stroke="var(--surface-opaque)" stroke-width="1"/>');
+      }
+      var am = n === 1 ? -Math.PI / 2 : (((i + 0.5) / n) * 2 * Math.PI - Math.PI / 2), nr = n === 1 ? 0 : r * 0.58;
+      var nx = (cx + nr * Math.cos(am)).toFixed(1), ny = (cy + nr * Math.sin(am)).toFixed(1);
+      parts.push('<text x="' + nx + '" y="' + ny + '" text-anchor="middle" dominant-baseline="central" font-size="7.5" font-weight="700" fill="' +
+        (met ? "var(--white)" : "var(--text-muted)") + '">' + (i + 1) + "</text>");
+    }
+    return '<svg class="cf-eligpie" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="' +
+      eligParts(college).met + " of " + n + ' requirements met">' + parts.join("") + "</svg>";
   }
   function eligTitle(college) {
     if (!ELIG.coordOk) return "eligibility status pending (MAP coordinator data not loaded)";
@@ -1005,21 +1068,18 @@
       lines.push(["SYSTEM (statewide)", base().colleges.length, "", sysd.headcount + feederHeads()].concat(
         yearKeys().map(function (yk) { return Math.round(sysd[yk]); }), [Math.round(sysd.total)], earnCells(sysd)));
     } else {
-      lines.push(["#", "College", "District", "County", "Headcount", "Eligible students", "Transcribed students",
-        "Eligibility (proposed)", "Rural", "Floor applied"].concat(yHead,
+      lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
+        ["Eligibility (proposed)", "Rural", "Floor applied"], yHead,
         ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
       rowsFiltered().forEach(function (c) {
-        lines.push([c.order, c.college, c.district, c.county, c.headcount,
-          csvActual(c.college, "pe"), csvActual(c.college, "p3"),
-          csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""].concat(
+        lines.push([c.order, c.college, c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
+          [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""],
           yearKeys().map(function (yk) { return Math.round(c[yk]); }),
           [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]));
       });
       var sysc = systemAlloc();
-      lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads(),
-        perf() && perf().statewide.pe != null ? perf().statewide.pe : "",
-        perf() && perf().statewide.p3 != null ? perf().statewide.p3 : "",
-        "", "", ""].concat(
+      lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads()].concat(prioCsvCells(null, true),
+        ["", "", ""],
         yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
         [Math.round(sysc.total)], earnCells(sysc), [""]));
     }
@@ -1764,19 +1824,72 @@
           title: "Earned so far of the window cap (Σ priorities: cap × actual ÷ target, capped at 100%; data-gap/absent priorities advance at full cap)" }
       : { key: "total", label: "Total " + windowLabel(), cls: "" };
   }
+  // Per-priority columns (Sam, 2026-07-24): one P1/P2/P3 column per priority of
+  // the VIEWED year; the header hover is the priority goal + metric, the cell
+  // stacks target over actual. Keys are stable (prio0/1/2) across the year filter.
+  function stripTags(s) { return String(s || "").replace(/<[^>]*>/g, ""); }
+  function prioColDefs() {
+    return priorities(state.viewSlot).map(function (p, i) {
+      return { key: "prio" + i, label: "P" + (i + 1), cls: "",
+        title: p.label + " — " + p.title + ": " + stripTags(p.description) +
+          " · METRIC: " + stripTags(p.metric) + ". Cell: top = target (projected students · cap), bottom = actual (posted in MAP · earned, % of target)." };
+    });
+  }
+  // One priority cell: TARGET (students · cap) over ACTUAL (students · earned · %).
+  // c = shaped college row (or a base college); isSystem uses statewide totals.
+  function prioCellHtml(c, p, isSystem) {
+    var heads = isSystem ? totalHeads() : (c.headcount || 0);
+    var target = heads * p.target_rate;
+    var cap = isSystem ? (netCollege() * p.share / nYears()) : (c[p.key] || 0);
+    var fr = earnFraction(isSystem ? null : c, p);
+    var earned = cap * fr.f;
+    var actNum, pctStr = "";
+    if (fr.status === "earned") {
+      actNum = fmtCountK(fr.actual);
+      pctStr = target > 0 ? ' <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "";
+    } else if (fr.status === "suppressed") { actNum = '<span class="cf-gap">&lt;5</span>'; }
+    else if (fr.status === "gap") { actNum = '<span class="cf-gap">gap</span>'; }
+    else if (fr.status === "pending") { actNum = '<span class="cf-gap">&hellip;</span>'; }
+    else { actNum = "0"; }   // none — feed loaded, nothing posted
+    var actExplain = fr.status === "earned" ? fmtInt(fr.actual) + " students posted (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
+      : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
+      : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
+      : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
+      : "nothing posted in MAP yet";
+    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students → " + fmtMoney(cap) + " cap. " +
+      "Actual: " + actExplain + " → " + fmtMoney(earned) + " earned.";
+    return '<td class="cf-prio" title="' + esc(title) + '">' +
+      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) + '</span> <span class="cf-u">' + fmtMoneyK(cap) + "</span></span>" +
+      '<span class="cf-a">' + actNum + ' <span class="cf-u">' + fmtMoneyK(earned) + pctStr + "</span></span>" +
+      "</td>";
+  }
+  // CSV columns for the per-priority target/actual (matches the on-screen cells).
+  function prioCsvHead() {
+    var h = [];
+    priorities(state.viewSlot).forEach(function (p, i) { h.push("P" + (i + 1) + " target", "P" + (i + 1) + " actual"); });
+    return h;
+  }
+  function prioCsvCells(c, isSystem) {
+    var out = [];
+    priorities(state.viewSlot).forEach(function (p) {
+      var heads = isSystem ? totalHeads() : (c.headcount || 0);
+      out.push(Math.round(heads * p.target_rate));
+      var fr = earnFraction(isSystem ? null : c, p);
+      out.push(fr.status === "earned" ? fr.actual : fr.status === "suppressed" ? "<5" :
+        (fr.status === "gap" || fr.status === "pending") ? "" : 0);
+    });
+    return out;
+  }
   function COLS_COLLEGE() {
     return [
       { key: "order", label: "#", cls: "" },
       { key: "college", label: "College", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      { key: "headcount", label: "Headcount", cls: "" },
-      { key: "pea", label: "Eligible†", cls: "",
-        title: "distinct students with any ELIGIBLE CPL units identified in MAP (credit available, not yet transcribed)" },
-      { key: "p3a", label: "Transcribed†", cls: "",
-        title: "distinct students with any TRANSCRIBED CPL per MAP (the one Year-1 priority metric the daily feed can measure today)" },
+      { key: "headcount", label: "Headcount", cls: "" }
+    ].concat(prioColDefs(), [
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): the tracked requirements — a CPL Coordinator listed in MAP + a participation request by the deadline — ✓ all met · ◐ some · ○ none. This is the participation gate; funding is then EARNED on actual CPL (see the Earned basis)." }
-    ].concat(yearColDefs(), [
+    ], yearColDefs(), [
       totalColDef(),
       { key: "working_adults", label: "Working adults*", cls: "" }
     ]);
@@ -2002,12 +2115,15 @@
     function sortVal(r) {
       if (state.sortKey === "elig") return eligScore(r.college);
       if (state.sortKey === "total" && earnedMode()) return r.earned_total;
-      if (state.sortKey !== "p3a" && state.sortKey !== "pea") return r[state.sortKey];
-      var m = state.sortKey === "pea" ? "pe" : "p3";
-      var rec = perfFor(r.college);
-      if (!rec) return null;
-      if (rec[m] == null) return rec[m + "_suppressed"] ? 0.5 : null;
-      return rec[m];
+      // Per-priority columns sort by the college's posted actual on that
+      // priority (earned status); nothing-posted → 0, unmeasurable → last.
+      if (state.sortKey.indexOf("prio") === 0) {
+        var p = priorities(state.viewSlot)[Number(state.sortKey.slice(4))];
+        if (!p) return null;
+        var fr = earnFraction(r, p);
+        return fr.status === "earned" ? fr.actual : (fr.status === "gap" || fr.status === "pending") ? null : 0;
+      }
+      return r[state.sortKey];
     }
     rows = rows.slice().sort(function (a, b) {
       var ka = sortVal(a), kb = sortVal(b);
@@ -2063,8 +2179,7 @@
       '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
-      '<td title="distinct students with any eligible CPL units identified in MAP (credit available, not yet transcribed)">' + fmtActual(perfFor(c.college), "pe") + "</td>" +
-      '<td title="distinct students with any transcribed CPL, per MAP (the one Year-1 priority metric measurable from today\'s feed)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
+      priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
       totalCellHtml(c) +
@@ -2248,14 +2363,10 @@
         sysYearCells +
         totalCellHtml(sys) + "</tr>";
     } else {
-      var pf = perf();
       foot = '<tr class="cplfund-systemrow">' +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
-        '<td title="statewide distinct students with eligible CPL — deduplicated across colleges, not the column sum">' +
-        (pf && pf.statewide && pf.statewide.pe != null ? fmtInt(pf.statewide.pe) : "—") + "</td>" +
-        '<td title="statewide distinct students — deduplicated across colleges, not the column sum">' +
-        (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
+        priorities(state.viewSlot).map(function (p) { return prioCellHtml(null, p, true); }).join("") +
         "<td>" + (ELIG.coordOk && coordShown() ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         totalCellHtml(sys) +
@@ -2563,19 +2674,21 @@
   function actualsFootHtml() {
     var pf = perf();
     if (!pf) {
-      return "<div>&dagger; Priority actuals (per MAP) will appear after the next daily data refresh; " +
-        "Priority 1 is a deliberate data gap kept as an incentive (completions live in college SIS).</div>";
+      return "<div>The <strong>P1 / P2 / P3</strong> columns show each priority&#39;s <strong>target</strong> " +
+        "(projected students · cap) over its <strong>actual</strong> (posted in MAP · earned); the actual row fills in " +
+        "with the next daily MAP refresh. Only measurable metrics show an actual; the rest advance at full cap until their feed lands.</div>";
     }
     var un = Object.keys((pf && pf.unmatched) || {});
     var unLine = un.length
       ? "<div>&#9888; MAP activity for " + un.length + " college name(s) could not be matched to a funding row: " +
         un.map(esc).join(", ") + " &mdash; included in the statewide totals, not shown in any college row.</div>"
       : "";
-    return "<div>&dagger; Eligible = distinct students with any ELIGIBLE CPL units identified in MAP (credit " +
-      "available, not yet transcribed); Transcribed = distinct students with any TRANSCRIBED CPL. Both per MAP as of " + esc(pf.as_of) +
-      "; test/potential records excluded; counts under " + pf.suppress_below + " show as &lt;5; the statewide " +
-      "figures deduplicate across colleges (not the column sum). Priority 1 awaits completion data " +
-      "(deliberate incentive metric &mdash; completions live in college SIS).</div>" + unLine;
+    return "<div>The <strong>P1 / P2 / P3</strong> columns stack each priority&#39;s <strong>target</strong> " +
+      "(top: projected students &middot; cap) over its <strong>actual</strong> (bottom: students posted in MAP &middot; " +
+      "earned, % of target) &mdash; hover the header for the priority&#39;s goal + metric. Actuals per MAP as of " + esc(pf.as_of) +
+      "; test/potential records excluded; counts under " + pf.suppress_below + " read &lt;5; statewide figures " +
+      "deduplicate across colleges (not the column sum). Only the metric(s) MAP can measure today show an actual; the " +
+      "rest read <span class=\"cf-gap\">gap</span> and advance at full cap until their feed lands.</div>" + unLine;
   }
 
   function segHtml(id, items, current) {
@@ -2914,7 +3027,8 @@
             ? " and close out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
         : "The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
           "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
-      "Elig = the proposed baseline requirements above (✓ all tracked · ◐ some · ○ none — informational only). " +
+      "Elig = a numbered pie of the tracked baseline requirements above (slice 1 = coordinator, 2 = participation …); " +
+      "each slice turns green when the college satisfies it (informational in this draft). " +
       "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +

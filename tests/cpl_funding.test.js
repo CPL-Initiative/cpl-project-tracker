@@ -177,6 +177,16 @@ function scenSlot(window, name) {
 function footText(doc) {
   return Array.from(doc.querySelectorAll(".cplfund-foot")).map(function (e) { return e.textContent; }).join(" ");
 }
+// The Elig column is a numbered pie: count met (green-filled) slices in an
+// element's pie glyph (met requirements) and its total slice count.
+function greenSlices(el) {
+  const pie = el && el.querySelector(".cf-eligpie");
+  return pie ? (pie.innerHTML.match(/var\(--green-progress\)/g) || []).length : -1;
+}
+function pieSlices(el) {
+  const pie = el && el.querySelector(".cf-eligpie");
+  return pie ? pie.querySelectorAll("path, circle").length : -1;
+}
 
 // C1 — happy path.
 {
@@ -702,8 +712,10 @@ function footText(doc) {
     doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("STATEWIDE credit recommendation") !== -1);
   check("Y1-P3 card carries the origin-tracking data-gap label",
     doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("Portal") !== -1);
-  check("CPL-students column renders dashes without the artifact",
-    doc.querySelector("#cplFundTable tbody tr td:nth-child(6)").textContent.trim() === "—");
+  // Per-priority table columns: the data-gap priority cells read "gap".
+  const gapCells = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio");
+  check("data-gap priority cells (P2/P3) read 'gap' without the artifact",
+    gapCells[1].textContent.indexOf("gap") !== -1 && gapCells[2].textContent.indexOf("gap") !== -1);
 }
 {
   // With a synthetic perf artifact.
@@ -718,20 +730,20 @@ function footText(doc) {
   const p1card = doc.querySelectorAll(".cplfund-prio .p")[0];
   check("Y1-P1 card shows the any-transcribed statewide actual vs target",
     p1card.textContent.indexOf("20,000") !== -1 && p1card.textContent.indexOf("of target") !== -1);
-  check("tfoot carries the deduplicated statewide any-transcribed actual (20,000)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("20,000") !== -1);
-  check("footer explains the actuals basis + suppression",
+  check("system row's P1 column carries the deduplicated statewide actual (20K, compact)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("20K") !== -1);
+  check("footer explains the per-priority target/actual cells + dedup",
     footText(doc).indexOf("deduplicate across colleges") !== -1 &&
-    footText(doc).indexOf("ELIGIBLE") !== -1 && footText(doc).indexOf("TRANSCRIBED") !== -1);
+    footText(doc).indexOf("target") !== -1 && footText(doc).indexOf("actual") !== -1);
   check("a non-empty unmatched bucket is surfaced in the footer",
     footText(doc).indexOf("Mystery University") !== -1);
-  const rowsArr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr"));
+  const rowsArr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
   const alaRow = rowsArr.find(function (tr) { return tr.textContent.indexOf("Alameda") !== -1; });
-  check("Alameda's CPL-students cell shows the any-transcribed actual (300)",
-    alaRow.querySelector("td:nth-child(6)").textContent.trim() === "300");
-  // Sort by the actuals column.
-  click(window, doc.querySelector('#cplFundTable th[data-sort="p3a"]'));
-  check("sort by CPL students puts the highest actual first",
+  check("Alameda's P1 cell shows the any-transcribed actual (300) stacked under its target",
+    alaRow.querySelector("td.cf-prio").querySelector(".cf-a").textContent.indexOf("300") !== -1);
+  // Sort by the P1 (prio0) column → highest actual first.
+  click(window, doc.querySelector('#cplFundTable th[data-sort="prio0"]'));
+  check("sort by the P1 column puts the highest actual first",
     doc.querySelector("#cplFundTable tbody tr.cplfund-row").textContent.indexOf("Alameda") !== -1);
   // Year 2: all three metrics are gaps today (units builder / MIS match-back).
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
@@ -1037,8 +1049,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const butteRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Butte") !== -1;
   });
-  check("both requirements met → ✓", alamedaRow.textContent.indexOf("✓") !== -1);
-  check("one requirement met → ◐", butteRow.textContent.indexOf("◐") !== -1);
+  check("both requirements met → 2 green pie slices", greenSlices(alamedaRow) === 2);
+  check("one requirement met → 1 green pie slice", greenSlices(butteRow) === 1);
   check("SYSTEM tfoot shows the coordinator coverage fraction",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("2/" + D.colleges.length) !== -1);
   check("deadline edit writes to the scenario", (function () {
@@ -1157,8 +1169,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   };
   check("each built-in requirement has a ✕ (hide) control",
     doc.querySelectorAll('[data-reqhide="coord"]').length === 1 && doc.querySelectorAll('[data-reqhide="part"]').length === 1);
-  check("Alameda meets 1 of 2 tracked requirements → ◐ before hiding",
-    alamedaEligCell() && alamedaEligCell().textContent.indexOf("◐") !== -1);
+  check("Alameda meets 1 of 2 tracked requirements → 1 green of 2 pie slices before hiding",
+    alamedaEligCell() && greenSlices(alamedaEligCell()) === 1 && pieSlices(alamedaEligCell()) === 2);
 
   // Hide the participation requirement → its row disappears, a restore chip
   // appears, and Alameda (coordinator only) now meets ALL shown → ✓.
@@ -1167,8 +1179,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     !doc.querySelector('input[data-edit="part-label"]') && !!doc.querySelector('input[data-edit="coord-label"]'));
   check("a restore chip appears for the hidden requirement", !!doc.querySelector('[data-reqshow="part"]'));
   check("hide persists to the scenario", scenSlot(window).partHidden === true);
-  check("badge follows: with only coordinator tracked, Alameda now reads ✓",
-    alamedaEligCell().textContent.indexOf("✓") !== -1);
+  check("badge follows: with only coordinator tracked, Alameda's pie is 1 green of 1",
+    greenSlices(alamedaEligCell()) === 1 && pieSlices(alamedaEligCell()) === 1);
   check("SYSTEM tfoot still shows the coordinator fraction (coord not hidden)",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
 
@@ -1250,9 +1262,12 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const doc = boot(window);
   check("County column is hidden (data stays in drill-in + CSV)",
     !doc.querySelector('#cplFundTable th[data-sort="county"]'));
-  check("Eligible† column renders next to Transcribed†",
-    !!doc.querySelector('th[data-sort="pea"]') && !!doc.querySelector('th[data-sort="p3a"]') &&
-    doc.querySelector('th[data-sort="p3a"]').textContent.indexOf("Transcribed") !== -1);
+  check("per-priority P1/P2/P3 columns render (replacing Eligible/Transcribed)",
+    !!doc.querySelector('th[data-sort="prio0"]') && !!doc.querySelector('th[data-sort="prio1"]') &&
+    !!doc.querySelector('th[data-sort="prio2"]') &&
+    doc.querySelector('th[data-sort="prio0"]').textContent.indexOf("P1") !== -1);
+  check("a P1 column header hover carries the priority goal + metric",
+    (doc.querySelector('th[data-sort="prio0"]').getAttribute("title") || "").indexOf("METRIC:") !== -1);
   check("count note includes the noncredit campuses",
     doc.getElementById("cplFundCount").textContent.indexOf("noncredit campuses") !== -1 &&
     doc.getElementById("cplFundCount").textContent.indexOf("carve-out") !== -1);
@@ -1262,19 +1277,20 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   click(window, doc.querySelector("tr.cplfund-row"));
   check("drill-in still shows the county context",
     doc.querySelector("tr.cplfund-detail").textContent.indexOf("County context") !== -1);
-  // Eligible actuals render from the perf artifact when it carries pe.
+  // Priority-column actuals render from the perf artifact (measurable P1 = p3).
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
     statewide: { pe: 50000, p2: 100, p3: 20000 },
     colleges: { "Alameda": { pe: 777, p2: 10, p3: 300 } }, unmatched: {}
   };
   window.CPL_FUNDING_TAB.render();
-  const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+  const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) {
     return tr.textContent.indexOf("Alameda") !== -1;
   });
-  check("Eligible cell shows the pe actual", alamedaRow.textContent.indexOf("777") !== -1);
-  check("SYSTEM row shows the statewide eligible figure",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("50,000") !== -1);
+  check("Alameda's P1 cell shows the measurable actual (300) in its actual line",
+    alamedaRow.querySelector("td.cf-prio .cf-a").textContent.indexOf("300") !== -1);
+  check("SYSTEM P1 cell shows the statewide measurable actual (20K, compact)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("20K") !== -1);
   delete window.CPL_FUNDING_PERF;
 }
 
@@ -1448,8 +1464,8 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const lines = csv.split("\r\n");
   check("CSV: meta line + header + one line per college + SYSTEM",
     lines.length === 2 + D.colleges.length + 1 && lines[0].indexOf("DRAFT model") !== -1);
-  check("CSV: header carries County + Eligible/Transcribed + eligibility + rural/floor",
-    lines[1].indexOf("County") !== -1 && lines[1].indexOf("Eligible students") !== -1 &&
+  check("CSV: header carries County + per-priority target/actual + eligibility + rural/floor",
+    lines[1].indexOf("County") !== -1 && lines[1].indexOf("P1 target") !== -1 && lines[1].indexOf("P1 actual") !== -1 &&
     lines[1].indexOf("Rural") !== -1 && lines[1].indexOf("Floor applied") !== -1);
   check("CSV: a rural floored college carries its flags",
     lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("rural") !== -1 && l.indexOf("floor") !== -1; }));
@@ -1637,6 +1653,40 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const eligTh = doc.querySelector('#cplFundTable th[data-sort="elig"]');
   check("F: Elig column tooltip clarifies the participate-vs-earn structure",
     (eligTh.getAttribute("title") || "").indexOf("PARTICIPATE") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part G — per-priority P1/P2/P3 columns (target over actual) + the numbered
+// Elig pie glyph (Sam, 2026-07-24).
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-24", suppress_below: 5,
+    statewide: { p3: 16807 }, colleges: { "Laney": { p3: 200 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const laney = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
+  const cells = laney.querySelectorAll("td.cf-prio");
+  check("G: three per-priority columns render per college row", cells.length === 3);
+  check("G: each priority cell stacks a target line over an actual line",
+    !!cells[0].querySelector(".cf-t") && !!cells[0].querySelector(".cf-a"));
+  check("G: the measurable P1 cell shows the actual + a % of target",
+    cells[0].querySelector(".cf-a").textContent.indexOf("200") !== -1 && cells[0].textContent.indexOf("%") !== -1);
+  check("G: a data-gap priority cell reads 'gap' in its actual line",
+    cells[1].querySelector(".cf-a").textContent.indexOf("gap") !== -1);
+  check("G: the priority cell carries funding (a $ figure) alongside the metric",
+    /\$/.test(cells[0].textContent));
+  check("G: the P1 header hover carries the priority goal + metric",
+    (doc.querySelector('th[data-sort="prio0"]').getAttribute("title") || "").indexOf("METRIC:") !== -1);
+  // The Elig pie: a college meeting both tracked reqs shows 2 numbered green slices.
+  T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true }, asOf: "2026-07-24" });
+  T.render();
+  const laney2 = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
+  const pie = laney2.querySelector(".cf-eligpie");
+  check("G: the Elig glyph is an SVG pie", !!pie && pie.tagName.toLowerCase() === "svg");
+  check("G: the pie has one numbered slice per tracked requirement, all green when met",
+    pieSlices(laney2) === 2 && greenSlices(laney2) === 2 &&
+    Array.from(pie.querySelectorAll("text")).map(function (t) { return t.textContent; }).join("") === "12");
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
