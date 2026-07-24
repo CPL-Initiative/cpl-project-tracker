@@ -1152,8 +1152,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T.render();
   const alamedaEligCell = () => {
     const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(t => t.textContent.indexOf("Alameda") !== -1);
-    // Elig column = the td whose title is the eligTitle string ("… informational only in this draft").
-    return Array.from(tr.querySelectorAll("td")).find(td => (td.getAttribute("title") || "").indexOf("informational only in this draft") !== -1);
+    // Elig column = the td whose title is the eligTitle string ("… the participation gate …").
+    return Array.from(tr.querySelectorAll("td")).find(td => (td.getAttribute("title") || "").indexOf("participation gate") !== -1);
   };
   check("each built-in requirement has a ✕ (hide) control",
     doc.querySelectorAll('[data-reqhide="coord"]').length === 1 && doc.querySelectorAll('[data-reqhide="part"]').length === 1);
@@ -1601,6 +1601,42 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   D2.colleges.forEach(function (c) { var a = T._alloc(c.college); capSum += a.total; earnSum += a.earned_total; if (a.earned_total > a.total + 1) everOver = true; });
   check("E: no college ever earns above its cap", !everOver);
   check("E: system earned ≤ system cap and > 0", earnSum <= capSum + 1 && earnSum > 0);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part F — column show/hide (Sam, 2026-07-24): a ⚙ Columns menu; county hidden
+// by default; per-view + persisted; CSS nth-child hiding that spares detail rows;
+// the identity column (College) is never hideable. Plus the Elig tooltip audit.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  check("F: ⚙ Columns menu renders", !!doc.querySelector(".cplfund-colmenu"));
+  const keys = Array.from(doc.querySelectorAll(".cplfund-colmenu input[data-colkey]")).map(function (cb) { return cb.getAttribute("data-colkey"); });
+  check("F: the College identity column is NOT hideable (absent from the menu)", keys.indexOf("college") === -1);
+  check("F: other columns are hideable (district, headcount, total in the menu)",
+    keys.indexOf("district") !== -1 && keys.indexOf("headcount") !== -1 && keys.indexOf("total") !== -1);
+  const waCb = doc.querySelector('.cplfund-colmenu input[data-colkey="working_adults"]');
+  check("F: county (working adults) is unchecked/hidden by default", !!waCb && !waCb.checked);
+  const style0 = doc.querySelector("#cplFundTable style");
+  check("F: a hide <style> is injected for the default-hidden county", !!style0 && /nth-child/.test(style0.textContent));
+  check("F: the hide rule excludes detail rows so a drill-in never collapses",
+    style0.textContent.indexOf(":not(.cplfund-detail)") !== -1);
+
+  const distCb = doc.querySelector('.cplfund-colmenu input[data-colkey="district"]');
+  distCb.checked = false; distCb.dispatchEvent(new window.Event("change", { bubbles: true }));
+  const style1 = doc.querySelector("#cplFundTable style").textContent;
+  check("F: hiding District injects an nth-child(3) hide rule", style1.indexOf("nth-child(3)") !== -1);
+  check("F: the column choice persists to localStorage",
+    JSON.parse(window.localStorage.getItem("cplfund_cols_v1")).college.district === true);
+  distCb.checked = true; distCb.dispatchEvent(new window.Event("change", { bubbles: true }));
+  const style2 = doc.querySelector("#cplFundTable style");
+  check("F: re-showing District removes its hide rule",
+    (style2 ? style2.textContent : "").indexOf("nth-child(3)") === -1);
+
+  const eligTh = doc.querySelector('#cplFundTable th[data-sort="elig"]');
+  check("F: Elig column tooltip clarifies the participate-vs-earn structure",
+    (eligTh.getAttribute("title") || "").indexOf("PARTICIPATE") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
