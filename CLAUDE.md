@@ -247,6 +247,15 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
      For Fable + a "where we are" `_status`, rendered by `cpl_todos.js` as the
      📋 button on every tab). Bump `_as_of` (resets viewers' check-offs),
      DELETE done items (never leave them checked), keep counts current.
+   - **`cpl_memory` (live Supabase memory table) — auto-write every checkpoint
+     (Phase 3, 2026-07-24).** Sessions write this run's *durable, uncaptured*
+     learnings via the Supabase MCP, **no approval gate**: own writes land
+     **`proposed`**; corroboration (a 2nd session / a committed KB-note-or-PR
+     `source` / Sam's ✓) promotes to `verified` (the only status shown by
+     default). Keep the truth table lean (the append-only `cpl_memory_log`
+     carries volume) — supersede don't delete, log every write, don't dump a
+     session log. Full procedure (SQL patterns + the corroboration rule):
+     [`docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md`](docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md).
 
    Capture in each: (a) what's been learned this checkpoint, (b) current
    state of the work, (c) strategic roadmap, (d) next concrete step.

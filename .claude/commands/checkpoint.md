@@ -22,6 +22,8 @@ Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whateve
 
 9. **`kb/cpl_todos.json` — the dashboard To-Do feed, refreshed on EVERY checkpoint alongside the handoff (added Session 47).** It is the handoff distilled for the dashboard: ≤ ~12 layman-readable items split For Sam (curation) / For Fable (engineering, next session) + a one-paragraph "where we are" `_status`. Rendered by `cpl_todos.js` as the 📋 button on every tab. Bump `_as_of` (this resets viewers' per-browser check-offs — intended), DELETE items that got done (never leave them checked), refresh counts (queue sizes, collision counts) so the numbers match the tabs.
 
+10. **`cpl_memory` (the live Supabase memory table) — auto-write this run's durable learnings (Phase 3, 2026-07-24).** Via the Supabase MCP, write the handful of durable + genuinely uncaptured learnings this run produced (a `fact`/`pitfall`/`decision`/`procedure`/`risk`/`question`/`opportunity`/`milestone`) — **no approval gate**. Own writes land **`status='proposed'`**; promote to `verified` only when corroborated (a committed KB-note/PR `source`, a 2nd session, or Sam's ✓). Supersede (don't delete) anything this run made false; log every write to `cpl_memory_log`; keep the table lean (don't dump a session log — that's what the handoff + the audit log are for). NOT a corpus sweep. Skippable on a light checkpoint that produced nothing durable. Full procedure + SQL: [`docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md`](docs/kb-notes/playbook-cpl-memory-auto-write-at-checkpoint.md).
+
 For each artifact, capture:
 - (a) what's been learned this checkpoint
 - (b) current state of the work
