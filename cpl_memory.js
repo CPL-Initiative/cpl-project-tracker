@@ -33,6 +33,9 @@
   var ROOT_ID = "memory-root";
   var CSS_ID = "cpl-memory-css";
   var REST = SUPABASE_URL + "/rest/v1/";
+  // Self-contained print stylesheet for the Print / PDF window (serif headings, CCC navy accent).
+  // Kept on one line so the source carries no bare "\nbody{" (the .cpl-mem-scope invariant test).
+  var REPORT_PRINT_CSS = "*{box-sizing:border-box;}body{margin:0;padding:36px 44px;font-family:Georgia,'Times New Roman',serif;color:#1c1c1a;line-height:1.5;max-width:7.6in;}h1{font-family:Georgia,serif;font-size:25pt;color:#002F6D;margin:0 0 4px;}p.sub{color:#5c5c55;font-size:10pt;margin:0 0 22px;font-family:Arial,Helvetica,sans-serif;}h2{font-family:Georgia,serif;font-size:14pt;color:#002F6D;border-bottom:2px solid #002F6D;padding-bottom:3px;margin:24px 0 11px;}.item{margin:0 0 13px;padding-left:12px;border-left:2px solid #d8d5cc;}.sum{font-size:11.5pt;font-weight:bold;color:#1c1c1a;}.det{font-size:10pt;color:#3a3a36;margin-top:2px;}.meta{font-size:9pt;color:#6b6b63;margin-top:2px;font-family:Arial,Helvetica,sans-serif;}@media print{a{color:inherit;text-decoration:none;}}";
 
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
 
@@ -66,9 +69,27 @@
   var state = { kinds: null, tag: "", status: "verified", q: "" };
   state.kinds = {};   // set-like map of active kinds
   var view = { mode: "index", id: null, target: null };
+  // report view-mode (a second view of the same tab — the layman "Everything We Know" briefing)
+  var viewMode = "curate";               // "curate" | "report"
+  var reportOrg = "all";                 // org scope: "all" | one of ORGS
+  var reportIncludeProposed = false;     // DEFAULT OFF — verified-only (the pane's verified-default trust rule)
   // DOM refs
   var appEl, authBar, tilesEl, statusSegEl, tagCloudEl, activeEl, curateBarEl,
-    listMetaEl, listEl, listFootEl, rippleEl, searchEl, themeEl;
+    listMetaEl, listEl, listFootEl, rippleEl, searchEl, themeEl,
+    filtersEl, bodyEl, reportEl, viewSegEl;
+
+  // ── report sections (in order) — plain-language briefing headings ──
+  // Each maps to one or more kinds. `touches` shows affects[]; `when` shows d.when.
+  var REPORT_SECTIONS = [
+    { h: "What we've decided", kinds: ["decision"] },
+    { h: "Open questions", kinds: ["question"] },
+    { h: "Traps to avoid", kinds: ["pitfall"] },
+    { h: "What we know", kinds: ["fact"] },
+    { h: "How we do things (change-impact)", kinds: ["procedure"], touches: true },
+    { h: "What we're watching", kinds: ["risk"] },
+    { h: "What we've shipped", kinds: ["milestone"], when: true },
+    { h: "What's next", kinds: ["opportunity", "wishlist"] },
+  ];
 
   // ── tiny DOM helpers ──
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
@@ -176,6 +197,9 @@
     searchEl.setAttribute("aria-label", "Search memory");
     searchEl.oninput = function (e) { state.q = e.target.value; render(); };
     actions.appendChild(searchEl);
+    // view-mode toggle — 🧠 Curate (existing UI) vs 📄 Report (the briefing)
+    viewSegEl = el("div", "mem-viewseg"); viewSegEl.setAttribute("role", "group"); viewSegEl.setAttribute("aria-label", "Switch view mode");
+    actions.appendChild(viewSegEl);
     themeEl = el("button", "mem-theme", "🌗 Theme"); themeEl.type = "button";
     themeEl.setAttribute("aria-label", "Toggle light and dark theme");
     actions.appendChild(themeEl);
@@ -185,35 +209,40 @@
     authBar = el("div", "mem-authbar"); wrap.appendChild(authBar);
     tilesEl = el("div", "mem-tiles"); tilesEl.setAttribute("role", "group"); tilesEl.setAttribute("aria-label", "Filter by kind"); wrap.appendChild(tilesEl);
 
-    var filters = el("div", "mem-filters");
+    filtersEl = el("div", "mem-filters");
     var controls = el("div", "mf-controls");
     controls.appendChild(el("span", "mf-lab", "Status"));
     statusSegEl = el("div", "mem-status-seg"); statusSegEl.setAttribute("role", "group"); statusSegEl.setAttribute("aria-label", "Filter by status");
     controls.appendChild(statusSegEl);
     var clr = el("button", "mf-clear", "Clear all"); clr.type = "button"; clr.onclick = clearAll;
     controls.appendChild(clr);
-    filters.appendChild(controls);
+    filtersEl.appendChild(controls);
     var tagrow = el("div", "mf-tagrow");
     tagrow.appendChild(el("span", "mf-lab", "Tags"));
     tagCloudEl = el("div", "mf-tagcloud"); tagCloudEl.setAttribute("role", "group"); tagCloudEl.setAttribute("aria-label", "Filter by tag");
     tagrow.appendChild(tagCloudEl);
-    filters.appendChild(tagrow);
+    filtersEl.appendChild(tagrow);
     activeEl = el("div", "mf-active"); activeEl.setAttribute("aria-live", "polite");
-    filters.appendChild(activeEl);
-    wrap.appendChild(filters);
+    filtersEl.appendChild(activeEl);
+    wrap.appendChild(filtersEl);
 
     curateBarEl = el("div", "mem-curatebar"); wrap.appendChild(curateBarEl);
 
-    var body = el("div", "mem-body");
+    bodyEl = el("div", "mem-body");
     var listPane = el("section", "mem-list-pane");
     listMetaEl = el("div", "mem-list-meta"); listPane.appendChild(listMetaEl);
     listEl = el("ul", "mem-list"); listPane.appendChild(listEl);
     listFootEl = el("div", "mem-list-foot"); listFootEl.setAttribute("aria-live", "polite"); listPane.appendChild(listFootEl);
-    body.appendChild(listPane);
+    bodyEl.appendChild(listPane);
     var aside = el("aside", "mem-ripple"); aside.setAttribute("aria-label", "Ripple inspector");
     rippleEl = el("div", "ripple-inner"); aside.appendChild(rippleEl);
-    body.appendChild(aside);
-    wrap.appendChild(body);
+    bodyEl.appendChild(aside);
+    wrap.appendChild(bodyEl);
+
+    // report host (the "Everything We Know" briefing) — hidden until report mode
+    reportEl = el("div", "mem-report"); reportEl.setAttribute("aria-label", "Everything We Know report");
+    reportEl.style.display = "none";
+    wrap.appendChild(reportEl);
 
     root.appendChild(wrap);
     appEl = wrap;
@@ -691,6 +720,10 @@
 
   function render() {
     if (!_shellBuilt) return;
+    renderViewSeg();
+    var reportMode = viewMode === "report";
+    applyModeVisibility(reportMode);
+    if (reportMode) { renderReport(); return; }
     renderAuth();
     renderTiles();
     renderStatusSeg();
@@ -699,6 +732,214 @@
     renderCurateBar();
     renderList();
     renderRipple();
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // Report view — the layman "Everything We Know" briefing (2nd view of the tab)
+  // ══════════════════════════════════════════════════════════════════════════
+  function renderViewSeg() {
+    if (!viewSegEl) return;
+    clear(viewSegEl);
+    [["curate", "🧠 Curate"], ["report", "📄 Report"]].forEach(function (o) {
+      var b = el("button", "mem-seg-btn" + (viewMode === o[0] ? " is-active" : ""), o[1]);
+      b.type = "button"; b.setAttribute("aria-pressed", viewMode === o[0]);
+      b.onclick = function () { if (viewMode !== o[0]) { viewMode = o[0]; render(); } };
+      viewSegEl.appendChild(b);
+    });
+  }
+  // Hide the curate chrome (tiles/filters/curate bar/list/ripple + search) in report
+  // mode and reveal the report host; reverse in curate mode. Masthead stays put.
+  function applyModeVisibility(reportMode) {
+    [authBar, tilesEl, filtersEl, curateBarEl, bodyEl].forEach(function (e) {
+      if (e) e.style.display = reportMode ? "none" : "";
+    });
+    if (searchEl) searchEl.style.display = reportMode ? "none" : "";
+    if (reportEl) reportEl.style.display = reportMode ? "" : "none";
+  }
+  // report filter: verified (+ proposed when the box is checked); never superseded;
+  // org matches the scope (or scope is "all").
+  function reportFiltered() {
+    return DATA.filter(function (d) {
+      if (d.status === "superseded") return false;
+      var okStatus = d.status === "verified" || (reportIncludeProposed && d.status === "proposed");
+      if (!okStatus) return false;
+      if (reportOrg !== "all" && (d.org || "") !== reportOrg) return false;
+      return true;
+    });
+  }
+  // derive an as-of from the max updated_at/created_at present (else null) — no
+  // unguarded new Date() so tests stay deterministic. ISO strings sort lexically.
+  function reportAsOf(rows) {
+    var max = null;
+    rows.forEach(function (d) {
+      var t = d.updated_at || d.created_at || null;
+      if (t && (max === null || String(t) > String(max))) max = t;
+    });
+    return max;
+  }
+  function reportControls() {
+    var ctrl = el("div", "mr-controls");
+    var scopeWrap = el("label", "mr-ctl mr-scope");
+    scopeWrap.appendChild(el("span", "mr-ctl-l", "Area"));
+    var scopeSel = document.createElement("select"); scopeSel.className = "mr-scope-sel";
+    scopeSel.setAttribute("aria-label", "Filter the report by COBI area");
+    [["all", "All areas"]].concat(ORGS.map(function (o) { return [o, o]; })).forEach(function (o) {
+      var op = document.createElement("option"); op.value = o[0]; op.textContent = o[1];
+      if (o[0] === reportOrg) op.selected = true; scopeSel.appendChild(op);
+    });
+    scopeSel.onchange = function () { reportOrg = scopeSel.value; renderReport(); };
+    scopeWrap.appendChild(scopeSel);
+    ctrl.appendChild(scopeWrap);
+
+    var chkWrap = el("label", "mr-ctl mr-check");
+    var chk = document.createElement("input"); chk.type = "checkbox"; chk.className = "mr-inc";
+    chk.checked = reportIncludeProposed;
+    chk.onchange = function () { reportIncludeProposed = chk.checked; renderReport(); };
+    chkWrap.appendChild(chk); chkWrap.appendChild(el("span", "mr-ctl-l", "Include proposed"));
+    ctrl.appendChild(chkWrap);
+
+    ctrl.appendChild(el("div", "mr-ctl-spacer"));
+
+    var copyBtn = el("button", "mr-btn", "Copy"); copyBtn.type = "button";
+    copyBtn.onclick = function () { doCopy(copyBtn); };
+    var printBtn = el("button", "mr-btn", "Print / PDF"); printBtn.type = "button";
+    printBtn.onclick = doPrint;
+    ctrl.appendChild(copyBtn); ctrl.appendChild(printBtn);
+    return ctrl;
+  }
+  function renderReport() {
+    if (!reportEl) return;
+    clear(reportEl);
+    reportEl.appendChild(reportControls());
+
+    var rows = reportFiltered();
+    var titleBlock = el("div", "mr-titleblock");
+    titleBlock.appendChild(el("h1", "mr-title", "Everything We Know"));
+    var sub = rows.length + " " + (rows.length === 1 ? "entry" : "entries") + " — "
+      + (reportIncludeProposed ? "verified + proposed" : "verified only");
+    var asOf = reportAsOf(rows);
+    if (asOf) sub += " — as of " + String(asOf).slice(0, 10);
+    if (reportOrg !== "all") sub += " — area: " + reportOrg;
+    titleBlock.appendChild(el("p", "mr-sub", sub));
+    reportEl.appendChild(titleBlock);
+
+    var box = el("div", "mr-body");
+    var any = false;
+    REPORT_SECTIONS.forEach(function (sec) {
+      var items = rows.filter(function (d) { return sec.kinds.indexOf(d.kind) >= 0; });
+      if (!items.length) return;   // omit empty sections
+      any = true;
+      var section = el("section", "mr-section");
+      var h = el("h2", "mr-h", sec.h);
+      h.style.setProperty("--sc", "var(" + (KMAP[sec.kinds[0]] || KMAP.fact).tok + ")");
+      section.appendChild(h);
+      items.forEach(function (d) {
+        var it = el("div", "mr-item");
+        it.appendChild(el("div", "mr-sum", d.summary || d.id));   // plain-language main line
+        if (d.detail) it.appendChild(el("div", "mr-det", d.detail));
+        if (sec.touches && d.affects && d.affects.length) it.appendChild(el("div", "mr-touch", "touches: " + d.affects.join(" · ")));
+        if (sec.when && d.when) it.appendChild(el("div", "mr-when", "shipped " + d.when));
+        if (d.source) it.appendChild(el("div", "mr-src", "source: " + d.source));
+        section.appendChild(it);
+      });
+      box.appendChild(section);
+    });
+    if (!any) box.appendChild(el("div", "mr-empty", "No entries to report — widen the area scope or include proposed entries."));
+    reportEl.appendChild(box);
+  }
+  // plain-text / lightweight-markdown of the currently-shown report
+  function buildReportText() {
+    var rows = reportFiltered();
+    var lines = ["# Everything We Know"];
+    var sub = rows.length + " " + (rows.length === 1 ? "entry" : "entries") + " — "
+      + (reportIncludeProposed ? "verified + proposed" : "verified only");
+    var asOf = reportAsOf(rows);
+    if (asOf) sub += " — as of " + String(asOf).slice(0, 10);
+    if (reportOrg !== "all") sub += " — area: " + reportOrg;
+    lines.push(sub, "");
+    REPORT_SECTIONS.forEach(function (sec) {
+      var items = rows.filter(function (d) { return sec.kinds.indexOf(d.kind) >= 0; });
+      if (!items.length) return;
+      lines.push("## " + sec.h);
+      items.forEach(function (d) {
+        lines.push("- " + (d.summary || d.id));
+        if (d.detail) lines.push("  " + d.detail);
+        if (sec.touches && d.affects && d.affects.length) lines.push("  touches: " + d.affects.join(" · "));
+        if (sec.when && d.when) lines.push("  shipped " + d.when);
+        if (d.source) lines.push("  source: " + d.source);
+      });
+      lines.push("");
+    });
+    return lines.join("\n").replace(/\n+$/, "\n");
+  }
+  function copyFallback(text, ok, fail) {
+    try {
+      var ta = document.createElement("textarea");
+      ta.value = text; ta.setAttribute("readonly", "");
+      ta.style.position = "absolute"; ta.style.left = "-9999px";
+      (document.body || document.documentElement).appendChild(ta);
+      ta.select();
+      var done = false;
+      try { done = !!(document.execCommand && document.execCommand("copy")); } catch (e) { done = false; }
+      if (ta.parentNode) ta.parentNode.removeChild(ta);
+      if (done) ok(); else fail();
+    } catch (e) { fail(); }
+  }
+  function doCopy(btn) {
+    var text = buildReportText();
+    var restore = function () { setTimeout(function () { btn.textContent = "Copy"; }, 1600); };
+    var ok = function () { btn.textContent = "Copied ✓"; restore(); };
+    var fail = function () { btn.textContent = "Copy unavailable"; restore(); };
+    try {
+      var nav = (typeof navigator !== "undefined") ? navigator : null;
+      if (nav && nav.clipboard && nav.clipboard.writeText) {
+        nav.clipboard.writeText(text).then(ok, function () { copyFallback(text, ok, fail); });
+      } else {
+        copyFallback(text, ok, fail);
+      }
+    } catch (e) { fail(); }
+  }
+  function buildReportHtmlDoc() {
+    var rows = reportFiltered();
+    var parts = ['<!DOCTYPE html><html><head><meta charset="utf-8">',
+      '<meta name="viewport" content="width=device-width,initial-scale=1">',
+      "<title>Everything We Know</title><style>", REPORT_PRINT_CSS, "</style></head><body>",
+      "<h1>Everything We Know</h1>"];
+    var sub = esc(rows.length + " " + (rows.length === 1 ? "entry" : "entries") + " — "
+      + (reportIncludeProposed ? "verified + proposed" : "verified only"));
+    var asOf = reportAsOf(rows);
+    if (asOf) sub += " — as of " + esc(String(asOf).slice(0, 10));
+    if (reportOrg !== "all") sub += " — area: " + esc(reportOrg);
+    parts.push('<p class="sub">' + sub + "</p>");
+    REPORT_SECTIONS.forEach(function (sec) {
+      var items = rows.filter(function (d) { return sec.kinds.indexOf(d.kind) >= 0; });
+      if (!items.length) return;
+      parts.push("<h2>" + esc(sec.h) + "</h2>");
+      items.forEach(function (d) {
+        parts.push('<div class="item"><div class="sum">' + esc(d.summary || d.id) + "</div>");
+        if (d.detail) parts.push('<div class="det">' + esc(d.detail) + "</div>");
+        if (sec.touches && d.affects && d.affects.length) parts.push('<div class="meta">touches: ' + esc(d.affects.join(" · ")) + "</div>");
+        if (sec.when && d.when) parts.push('<div class="meta">shipped ' + esc(d.when) + "</div>");
+        if (d.source) parts.push('<div class="meta">source: ' + esc(d.source) + "</div>");
+        parts.push("</div>");
+      });
+    });
+    parts.push("</body></html>");
+    return parts.join("");
+  }
+  function doPrint() {
+    var html = buildReportHtmlDoc();
+    var w = null;
+    try { w = window.open("", "_blank"); } catch (e) { w = null; }
+    if (w && w.document && typeof w.document.write === "function") {
+      try {
+        w.document.open(); w.document.write(html); w.document.close();
+        w.focus(); w.print();
+      } catch (e) { try { window.print(); } catch (e2) { } }
+    } else {
+      // popup blocked / unavailable → print in place
+      try { window.print(); } catch (e) { }
+    }
   }
 
   // ══════════════════════════════════════════════════════════════════════════
@@ -856,6 +1097,32 @@
       ".cpl-mem .rp-toolbtn{font:inherit;font-size:.74rem;font-weight:600;cursor:pointer;padding:5px 11px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .rp-toolbtn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
       ".cpl-mem .rp-toolhost .mem-form{max-width:100%;}",
+      // view-mode segmented control (masthead) — reuses .mem-seg-btn styling
+      ".cpl-mem .mem-viewseg{display:inline-flex;border:1px solid var(--border-strong);border-radius:9px;overflow:hidden;flex:0 0 auto;}",
+      // report view — the "Everything We Know" briefing
+      ".cpl-mem .mem-report{margin-top:14px;}",
+      ".cpl-mem .mr-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;background:var(--surface);border:1px solid var(--border-strong);border-radius:11px;padding:10px 14px;margin-bottom:16px;}",
+      ".cpl-mem .mr-ctl{display:inline-flex;align-items:center;gap:7px;}",
+      ".cpl-mem .mr-ctl-l{font-size:.76rem;font-weight:600;color:var(--text-muted);}",
+      ".cpl-mem .mr-scope-sel{font:inherit;font-size:.8rem;padding:5px 9px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--text-body);}",
+      ".cpl-mem .mr-check{cursor:pointer;}",
+      ".cpl-mem .mr-check input{width:auto;cursor:pointer;}",
+      ".cpl-mem .mr-ctl-spacer{flex:1 1 auto;min-width:8px;}",
+      ".cpl-mem .mr-btn{font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 13px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);white-space:nowrap;}",
+      ".cpl-mem .mr-btn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
+      ".cpl-mem .mr-titleblock{margin:0 0 18px;}",
+      ".cpl-mem .mr-title{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.7rem;font-weight:700;margin:0 0 4px;line-height:1.12;}",
+      ".cpl-mem .mr-sub{font-size:.82rem;color:var(--text-muted);margin:0;}",
+      ".cpl-mem .mr-body{max-width:65ch;}",
+      ".cpl-mem .mr-section{margin:0 0 22px;}",
+      ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 10px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
+      ".cpl-mem .mr-item{margin:0 0 13px;padding-left:12px;border-left:2px solid var(--border);}",
+      ".cpl-mem .mr-sum{color:var(--text-strong);font-size:.95rem;font-weight:600;line-height:1.4;overflow-wrap:anywhere;}",
+      ".cpl-mem .mr-det{color:var(--text-muted);font-size:.83rem;line-height:1.45;margin-top:3px;overflow-wrap:anywhere;}",
+      ".cpl-mem .mr-touch{color:var(--text-faint);font-size:.74rem;margin-top:4px;font-family:ui-monospace,Menlo,monospace;overflow-wrap:anywhere;}",
+      ".cpl-mem .mr-when{color:var(--text-faint);font-size:.74rem;margin-top:3px;}",
+      ".cpl-mem .mr-src{color:var(--text-faint);font-size:.72rem;margin-top:3px;overflow-wrap:anywhere;}",
+      ".cpl-mem .mr-empty{color:var(--text-muted);font-size:.85rem;padding:16px;text-align:center;background:var(--surface-subtle);border:1px dashed var(--border-strong);border-radius:10px;}",
       // responsive
       "@media (max-width:1080px){.cpl-mem .mem-body{grid-template-columns:minmax(0,1fr) 296px;gap:12px;}}",
       "@media (max-width:760px){.cpl-mem .mem-body{grid-template-columns:1fr;}.cpl-mem .mem-ripple{position:static;}.cpl-mem .ripple-inner{max-height:none;}.cpl-mem .mem-search{max-width:100%;flex:1 1 160px;}}",
@@ -879,6 +1146,7 @@
     mount: activate,
     // test / integration seams
     _setData: function (rows) { ingest(rows || []); if (_shellBuilt) render(); },
+    _setViewMode: function (m) { viewMode = m; if (_shellBuilt) render(); },
     _setSession: function (s) { sess = s; if (_shellBuilt) render(); },
     _indices: function () { return { targetIndex: targetIndex, referencedBy: referencedBy, byId: byId }; },
     _data: function () { return DATA; },
