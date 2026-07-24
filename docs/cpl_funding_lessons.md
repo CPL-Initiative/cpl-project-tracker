@@ -831,3 +831,56 @@ match distinctive phrases (`portal`, `credit recommendation`, `completion`, …)
 
 **(d) Next concrete step.** Hand to Sam for live testing. Side-lane — left `cpl_todos.json`
 + the numbered handoff to the CCR mainline (per the SkyFunder precedent).
+
+## 2026-07-24 (SkyFriend cont.) — achievement-based funding: the cap-and-earn model
+
+The projection-% confirmation opened the real ask. Sam's model of the tab turned out
+to be *not what the code did* — and I had to say so plainly before building. Two truths
+established first (see the dialog): (1) the per-priority per-college allocation IS a
+CAP (confirmed against his actual workbook formulas — `E8 = F8*$L$3*E7` = projected-
+headcount × per-student × funding-factor; `F8 = C8*F7` = the % capping counted
+headcount; so the effective share = `factor × %`, tuned to 30/42/28, identical to
+today's shares-first model; his `N3 BALANCE` cell = the Allocation-balance box shipped
+above). (2) Funding on **actual achieved headcount** was **never** intact — neither the
+tab nor the workbook ever tied dollars to achievement; both are deterministic on
+headcount. I told him that directly rather than let the misconception stand. He then
+confirmed the intent and the mechanics (AskUserQuestion, both answered): **build
+achievement-based**, **phase in as feeds land**, **capped at target/cap**, and — the
+clincher — *"safeguard them from needing to achieve the full target to receive funding"*
+(⇒ proportional, not all-or-nothing) and *"incentivize local investment … some not
+implementing at all yet"* (⇒ a non-participant earns $0 on a measurable metric).
+
+**The model shipped** (`cpl_funding.js`, JS-only): `earned = cap × min(1, actual ÷
+target)`; unearned rolls forward. A **Potential ⇄ Earned** basis toggle (default
+Potential — no change for current viewers); earned mode overlays the same surfaces
+(pool Earned-so-far/Unearned cards, per-priority earned %, table total → earned-of-cap
+· % maxed, drill-in per-priority earned). The projection % finally earns a job — it's
+the achievement **target** the actuals divide by.
+
+**The load-bearing decision** was the *default for unmeasured cells* — full doctrine in
+the new KB note `methodology-achievement-based-funding-cap-and-earn.md`. Four distinct
+states, not one: **gap** (metric unmeasurable for anyone → advance full cap),
+**pending** (feed not loaded this cycle → advance), **none** (feed loaded, this college
+posted nothing → **$0**, the incentive), **suppressed** (<5 privacy floor → $0, flagged).
+My first cut wrongly advanced *every* no-datum cell (system earned read 99.87%); the fix
+— split "metric can't be measured" from "this college didn't do it" via a feed-loaded
+check + a per-college-datum check — dropped it to a truthful 85% (the unearned Year-1 P1
+of non-participants rolls forward). That distinction is the whole incentive.
+
+**Invariants test-guarded (Part E, +20 → 357):** earned ≤ cap always; no-feed / all-gap
+⇒ earned == cap (non-destructive overlay); the incentive identity (absent-from-feed
+college earns exactly `cap − its measurable-metric slice`); overachiever capped at 100%;
+suppressed = $0 + flagged; CSV gains Earned + % of cap columns. Verified via jsdom render
+dump (Laney: $197,550 earned of $222,555 cap; system 85% with only ~2 synthetic feed
+colleges).
+
+**Phase-in reality:** today only Year-1 "any transcribed CPL" is measurable, so only it
+flexes; the other two Year-1 priorities + all of Year 2 advance at full cap and light up
+automatically as their feeds land (exhibit linkage · Student Portal origin · CO MIS
+match-back) — the same measurability ladder the `MEASURES` resolver already drives.
+
+**Roadmap / open:** the basis is session state (default Potential) — if Sam wants a
+shared/team default of Earned, add a `fundingBasis` config field (one line, same 3-layer
+resolution as everything else). Suppression policy (<5 → $0-flagged) is conservative;
+revisit if small colleges need crediting. The "advance for data-gap priorities" is
+generous by design (phase-in) — as feeds land the advances shrink to real earned.

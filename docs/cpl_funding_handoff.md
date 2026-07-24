@@ -32,6 +32,27 @@ Three more curator asks landed on top of SkyFunder, one JS-only PR in `cpl_fundi
 Tests 325 → **337**; full suite **168 files green**. Story: `docs/cpl_funding_lessons.md`
 (SkyFriend section). Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
+## 2026-07-24 (SkyFriend cont.) — achievement-based funding (cap-and-earn)
+
+Sam confirmed the tab must **fund on actual achievement, not headcount** (it never did —
+neither tab nor his workbook; I told him so before building). Shipped the **cap-and-earn**
+model in `cpl_funding.js`: `earned = cap × min(1, actual ÷ target)`, capped at 100%, unearned
+rolls forward. A **Potential ⇄ Earned** basis toggle (default Potential) overlays the same
+surfaces (pool Earned/Unearned cards, per-priority earned %, table total → earned-of-cap · %
+maxed, drill-in per-priority earned). The projection % is now the achievement **target**.
+
+**The load-bearing rule** (KB note `methodology-achievement-based-funding-cap-and-earn.md`):
+the default for an *unmeasured* cell depends on WHY it's unmeasured — **gap** (metric
+unmeasurable for anyone) + **pending** (feed not loaded) → advance at full cap; **none** (feed
+loaded, college posted nothing) → **$0** (the incentive); **suppressed** (<5) → $0, flagged.
+Splitting "can't measure the metric" from "this college didn't do it" is the whole incentive.
+
+Phase-in: only Year-1 "any transcribed CPL" is measurable today, so only it flexes; the rest
+advance and light up as feeds land (exhibit linkage · Portal origin · CO MIS match-back).
+Tests +20 → **357** (Part E: earned ≤ cap; no-feed ⇒ earned==cap; incentive identity;
+overachiever capped; suppressed $0). **Open:** basis is session state — add a `fundingBasis`
+config field if a shared/team Earned default is wanted (1 line, same 3-layer resolution).
+
 ## Prior state — 2026-07-23 (SkyFunder)
 
 The tab now has a **shared multi-project / multi-scenario** model, an editable
