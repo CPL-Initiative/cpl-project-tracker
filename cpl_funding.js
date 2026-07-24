@@ -77,6 +77,15 @@
     // shares; the border goes red when the shares over-allocate the pool.
     ".cplfund-card.balance { border-left: 4px solid var(--navy-secondary); }",
     ".cplfund-card.balance.over { border-left-color: var(--red-alert); }",
+    // Achievement-based earning (Sam, 2026-07-23): a Potential⇄Earned basis
+    // toggle + earned/unearned pool boxes; earned cards green, unearned mustard.
+    ".cplfund-card.earned { border-left: 4px solid var(--green-progress); }",
+    ".cplfund-card.unearned { border-left: 4px solid var(--mustard-fill); }",
+    ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
+    ".cplfund-basis-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
+    ".cplfund-basis-note { font-size: .8rem; flex: 1 1 320px; }",
+    ".cplfund-basis-note code, .cplfund-earned-line code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; white-space: nowrap; }",
+    ".cplfund-earned-line { border-top: 1px dotted var(--border-strong); padding-top: 5px; margin-top: 2px; }",
     // Editable/add/delete pool boxes (Sam, 2026-07-23).
     ".cplfund-card.custom-rev { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.custom-ded { border-left: 4px solid var(--red-alert); }",
@@ -964,30 +973,38 @@
   // context plus rural/floor flags ride along.
   function csvText() {
     var fl = frontloaded();
+    var em = earnedMode();
     var ys = selectedYears();
     var yHead = ys.map(function (yr, i) {
       return "Yr " + (i + 1) + " (" + yr + ")" + (fl ? (i === 0 ? " front-loaded" : " carryover") : "");
     });
+    // In earned mode, append Earned + % of cap columns after the cap Total.
+    var earnHead = em ? ["Earned " + windowLabel(), "% of cap"] : [];
+    function earnCells(row) {
+      if (!em) return [];
+      var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
+      return [Math.round(row.earned_total || 0), pct];
+    }
     var lines = [];
     if (state.view === "district") {
-      lines.push(["District", "Colleges", "Counties", "Headcount"].concat(yHead, ["Total " + windowLabel()]));
+      lines.push(["District", "Colleges", "Counties", "Headcount"].concat(yHead, ["Total " + windowLabel()], earnHead));
       rowsFiltered().forEach(function (g) {
         lines.push([g.district, g.n, (g.counties || []).join("; "), g.headcount].concat(
-          yearKeys().map(function (yk) { return Math.round(g[yk]); }), [Math.round(g.total)]));
+          yearKeys().map(function (yk) { return Math.round(g[yk]); }), [Math.round(g.total)], earnCells(g)));
       });
       var sysd = systemAlloc();
       lines.push(["SYSTEM (statewide)", base().colleges.length, "", sysd.headcount + feederHeads()].concat(
-        yearKeys().map(function (yk) { return Math.round(sysd[yk]); }), [Math.round(sysd.total)]));
+        yearKeys().map(function (yk) { return Math.round(sysd[yk]); }), [Math.round(sysd.total)], earnCells(sysd)));
     } else {
       lines.push(["#", "College", "District", "County", "Headcount", "Eligible students", "Transcribed students",
         "Eligibility (proposed)", "Rural", "Floor applied"].concat(yHead,
-        ["Total " + windowLabel(), "Working adults (county)"]));
+        ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
       rowsFiltered().forEach(function (c) {
         lines.push([c.order, c.college, c.district, c.county, c.headcount,
           csvActual(c.college, "pe"), csvActual(c.college, "p3"),
           csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""].concat(
           yearKeys().map(function (yk) { return Math.round(c[yk]); }),
-          [Math.round(c.total), c.working_adults == null ? "" : c.working_adults]));
+          [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]));
       });
       var sysc = systemAlloc();
       lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads(),
@@ -995,10 +1012,11 @@
         perf() && perf().statewide.p3 != null ? perf().statewide.p3 : "",
         "", "", ""].concat(
         yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
-        [Math.round(sysc.total), ""]));
+        [Math.round(sysc.total)], earnCells(sysc), [""]));
     }
     var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
       (fl ? " · front-loaded disbursement" : "") +
+      (em ? " · EARNED basis (paid on actual CPL; cap columns shown for reference)" : "") +
       (isDirty() && !unlocked() ? " · local what-if: " + activeScenario : "")];
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
   }
@@ -1238,6 +1256,39 @@
       segHtml("cplFundYear", items, state.viewSlot) + "</div>";
   }
 
+  // Funding-basis toggle (Sam, 2026-07-23): Potential (the cap) ⇄ Earned (paid
+  // on actual CPL achieved in MAP, proportional to target, capped at the cap).
+  function basisToggleHtml() {
+    var em = earnedMode();
+    return '<div class="cplfund-basis">' +
+      '<span class="cplfund-basis-lbl">Funding basis</span>' +
+      segHtml("cplFundBasis", [
+        { val: "potential", label: "Potential (cap)" },
+        { val: "earned", label: "Earned (actual)" }
+      ], state.basis) +
+      '<span class="dk cplfund-basis-note">' +
+      (em
+        ? "Colleges are paid on the CPL they actually post in MAP &mdash; <code>earned = cap &times; (actual &divide; target)</code>, " +
+          "capped at 100% (a college at half its target draws half its cap; it never needs the full target to be funded). " +
+          "Unearned dollars roll forward. Only priorities MAP can measure today flex on actuals; the rest pay the full cap as an " +
+          "<strong>advance</strong> until their feed lands, then flip automatically."
+        : "Showing each college&#39;s <strong>potential allocation</strong> &mdash; the cap. Switch to <strong>Earned</strong> to see " +
+          "funding based on the actual CPL a college achieves in MAP (proportional to target, capped at the allocation).") +
+      "</span></div>";
+  }
+
+  // Statewide earned line under a priority card (earned mode only).
+  function earnedLineHtml(i) {
+    if (!earnedMode()) return "";
+    var pp = earnAgg().perPrio[i];
+    if (!pp) return "";
+    var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
+    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
+    return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
+      fmtMoney(pp.cap) + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
+      (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
+  }
+
   // ── pool cards ────────────────────────────────────────────────────────
   function poolCardsHtml() {
     var per = perYear();
@@ -1335,6 +1386,21 @@
     out.push(card({ cls: " balance" + (balOver ? " over" : ""), neg: balOver,
       v: (Math.abs(remainder) < 0.5 ? "$0" : (remainder < 0 ? "&minus;" : "") + fmtMoney(Math.abs(remainder))),
       l: balLbl }));
+
+    // Achievement-based earning (Sam, 2026-07-23): when the basis is "earned",
+    // surface the real disbursement so far (Σ colleges, each on its own actuals)
+    // and the unearned remainder that rolls forward.
+    if (earnedMode()) {
+      var ea = earnAgg();
+      var pctEarned = ea.winCap > 0 ? ea.winEarned / ea.winCap : 0;
+      out.push(card({ cls: " earned", v: fmtMoney(ea.winEarned),
+        l: "Earned so far &mdash; paid on actual CPL in MAP across all colleges &mdash; <strong>" + fmtPctTrim(pctEarned) +
+           "</strong> of the " + fmtMoney(ea.winCap) + " college pool",
+        note: "each college earns cap &times; (actual &divide; target), capped at 100%; today only the measurable priority flexes, the rest advance at full cap" }));
+      out.push(card({ cls: " unearned", v: fmtMoney(ea.winUnearned),
+        l: "Unearned &mdash; rolls forward &amp; relevels",
+        note: "the gap to full achievement; disbursed in later years as colleges post more CPL in MAP" }));
+    }
 
     // Minimum-viable floor — editable value + label, not deletable; live top-up note.
     out.push(card({ cls: " floor", v: valueEd("floor_window", false),
@@ -1464,6 +1530,7 @@
         '<span class="dk">(performance target only &mdash; the students this priority aims to reach; it does ' +
         "<strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
         actualLineHtml(p, i, sysHeads) +
+        earnedLineHtml(i) +
         '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
@@ -1518,6 +1585,65 @@
     var m = String(metric || "").toLowerCase();
     for (var i = 0; i < MEASURES.length; i++) { if (MEASURES[i].test(m)) return MEASURES[i]; }
     return {};
+  }
+
+  // ── achievement-based earning (Sam, 2026-07-23) ───────────────────────────
+  // The per-priority per-college allocation is a CAP; a college is paid on the
+  // CPL it ACTUALLY posts in MAP, proportional to its target and never above the
+  // cap: earned = cap × min(1, actual ÷ target). A college at 50% of target gets
+  // 50% of its cap (it does NOT have to hit the full target to be funded), and a
+  // college that overshoots is capped at 100%. Unearned dollars roll forward.
+  // PHASE-IN: only priorities the daily MAP feed can measure today flex on
+  // actuals; the rest — data-gap metrics, or a college whose count is
+  // absent/suppressed — pay the full cap as an ADVANCE (fraction 1) until their
+  // feed lands, at which point they flip to achievement-based automatically.
+  // c = a base-college object; pass null for the statewide (deduplicated) view.
+  // Statuses: gap (metric unmeasurable for anyone → advance full cap),
+  // pending (feed not published yet → advance), earned (paid on the actual),
+  // none (feed IS published but this college has posted nothing → $0, the
+  // incentive), suppressed (1–4 students, privacy-hidden → not yet credited).
+  function earnFraction(c, p) {
+    var meas = measurability(p.metric);
+    if (!meas.src) return { f: 1, status: "gap", meas: meas };            // data-gap metric → advance for everyone
+    var pf = perf();
+    if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
+    var rec = c ? perfFor(c.college) : pf.statewide;
+    var target = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
+    if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
+    if (!rec || rec[meas.src] == null) {
+      // Feed published, no value for this college: it has posted nothing → $0
+      // earned (this is the incentive). A privacy suppression (<5) is flagged
+      // separately and also not blind-credited.
+      var supp = rec && rec[meas.src + "_suppressed"];
+      return { f: 0, status: supp ? "suppressed" : "none", target: target, meas: meas };
+    }
+    return { f: Math.min(1, rec[meas.src] / target), status: "earned", actual: rec[meas.src], target: target, meas: meas };
+  }
+  // Aggregate the earned picture once per render: per-priority (viewed year)
+  // statewide cap+earned for the priority cards, and the window cap+earned totals
+  // (Σ colleges — the real disbursement) for the pool cards. Cached like _alloc.
+  var _earnCache = null;
+  function earnAgg() {
+    if (_earnCache) return _earnCache;
+    var ny = nYears();
+    var ps = priorities(state.viewSlot);
+    var perPrio = ps.map(function () { return { cap: 0, earned: 0, statuses: {} }; });
+    var winCap = 0, winEarned = 0;
+    base().colleges.forEach(function (col) {
+      var W = allocModel().W[col.college] || 0;
+      ps.forEach(function (p, i) {
+        var cap_i = W * p.share / ny;
+        var fr = earnFraction(col, p);
+        perPrio[i].cap += cap_i;
+        perPrio[i].earned += cap_i * fr.f;
+        perPrio[i].statuses[fr.status] = (perPrio[i].statuses[fr.status] || 0) + 1;
+      });
+      var a = collegeAlloc(col);
+      winCap += a.total;
+      winEarned += a.earned_total;
+    });
+    _earnCache = { perPrio: perPrio, ps: ps, winCap: winCap, winEarned: winEarned, winUnearned: winCap - winEarned };
+    return _earnCache;
   }
 
   // ── rural performance attainment ──────────────────────────────────────
@@ -1588,13 +1714,20 @@
         "forward" + (nextFy(selectedYears()[selectedYears().length - 1]) ? " and closing out by " +
         esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". Timing only; allocations don&#39;t change."
       : "";
+    var basisSentence = earnedMode()
+      ? " This allocation is the <strong>cap</strong>. On the Earned basis a college is paid " +
+        "<code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so the projection % becomes the " +
+        "achievement <em>target</em> the MAP actuals are measured against (a college at half its target draws half " +
+        "its cap; it never needs the full target to be funded), and unearned dollars roll forward. Only priorities MAP " +
+        "can measure today flex on actuals; the rest advance at full cap until their feed lands."
+      : " Projection percents are performance <em>targets</em>; they don&#39;t move dollars.";
     return '<div class="cplfund-formula">' +
       "Each college&#39;s potential allocation of one annual tranche is " +
       "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> " +
       "per priority. " + shareSentence + " &mdash; the same again in each of the " +
       nYears() + " years (" + windowLabel() + "). Balance for Year " + state.viewSlot + ": <strong>" +
       (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
-      "</strong>. Projection percents are performance <em>targets</em>; they don&#39;t move dollars." +
+      "</strong>." + basisSentence +
       floorSentence + flSentence + "</div>";
   }
 
@@ -1605,13 +1738,22 @@
   // filter year. Columns are built dynamically from the selected years.
   function yearColDefs() {
     var fl = frontloaded();
+    var em = earnedMode();
     return selectedYears().map(function (yr, i) {
-      var title = fl
-        ? (i === 0 ? "Year 1 (" + yr + ") — full window disbursed up front (front-loaded)"
-                   : "Year " + (i + 1) + " (" + yr + ") — carryover only: unspent Year-1 funds roll forward")
-        : "Year " + (i + 1) + " (" + yr + ") potential allocation";
-      return { key: "y" + (i + 1), label: "Yr " + (i + 1), cls: "", title: title };
+      var title = em
+        ? "Year " + (i + 1) + " (" + yr + ") — earned so far (of the cap), paid on actual CPL in MAP"
+        : fl
+          ? (i === 0 ? "Year 1 (" + yr + ") — full window disbursed up front (front-loaded)"
+                     : "Year " + (i + 1) + " (" + yr + ") — carryover only: unspent Year-1 funds roll forward")
+          : "Year " + (i + 1) + " (" + yr + ") potential allocation";
+      return { key: "y" + (i + 1), label: "Yr " + (i + 1) + (em ? " ⌁" : ""), cls: "", title: title };
     });
+  }
+  function totalColDef() {
+    return earnedMode()
+      ? { key: "total", label: "Earned " + windowLabel(), cls: "",
+          title: "Earned so far of the window cap (Σ priorities: cap × actual ÷ target, capped at 100%; data-gap/absent priorities advance at full cap)" }
+      : { key: "total", label: "Total " + windowLabel(), cls: "" };
   }
   function COLS_COLLEGE() {
     return [
@@ -1626,7 +1768,7 @@
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility (informational in this draft): ✓ all tracked requirements met, ◐ some, ○ none." }
     ].concat(yearColDefs(), [
-      { key: "total", label: "Total " + windowLabel(), cls: "" },
+      totalColDef(),
       { key: "working_adults", label: "Working adults*", cls: "" }
     ]);
   }
@@ -1637,7 +1779,7 @@
       { key: "counties", label: "Counties", cls: "t" },
       { key: "headcount", label: "Headcount", cls: "" }
     ].concat(yearColDefs(), [
-      { key: "total", label: "Total " + windowLabel(), cls: "" }
+      totalColDef()
     ]);
   }
   function districtShort(name) {
@@ -1648,8 +1790,10 @@
     q: "", view: "college", viewSlot: "1",
     sortKey: "order", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
-    docType: "memo"     // memo | letter | report | brief
+    docType: "memo",    // memo | letter | report | brief
+    basis: "potential"  // "potential" (cap) | "earned" (paid on actual achievement)
   };
+  function earnedMode() { return state.basis === "earned"; }
 
   // ── allocation model: proportional split + minimum-viable floor ────────
   // W (the college's window entitlement at balanced shares) starts as
@@ -1706,13 +1850,22 @@
     var ny = nYears();
     var fl = frontloaded();
     var out = { total: 0, w: W, floored: !!allocModel().floored[c.college] };
-    var ys = [];
+    var ys = [], eys = [], earnTotal = 0;
     selectedYears().forEach(function (_, i) {
-      var v = W * shareSum(String(i + 1)) / ny;
+      var slot = String(i + 1);
+      var v = W * shareSum(slot) / ny;
       ys.push(v);
       out.total += v;
+      // Earned this year = Σ priorities (cap × achievement fraction). Measurable
+      // priorities flex on the MAP actual; data-gap/absent ones pay full cap.
+      var ey = 0;
+      priorities(slot).forEach(function (p) { ey += (W * p.share / ny) * earnFraction(c, p).f; });
+      eys.push(ey);
+      earnTotal += ey;
     });
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
+    eys.forEach(function (v, i) { out["ey" + (i + 1)] = fl ? (i === 0 ? earnTotal : 0) : v; });
+    out.earned_total = earnTotal;
     priorities(state.viewSlot).forEach(function (p) {
       out[p.key] = W * p.share / ny;
       out[p.key + "_heads"] = c.headcount * p.target_rate;
@@ -1731,6 +1884,15 @@
       out.total += v;
     });
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
+    // Earned totals = Σ colleges (the real disbursement, each on its own actuals).
+    var eys = selectedYears().map(function () { return 0; }), earnTotal = 0;
+    base().colleges.forEach(function (col) {
+      var a = collegeAlloc(col);
+      earnTotal += a.earned_total;
+      eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
+    });
+    eys.forEach(function (v, i) { out["ey" + (i + 1)] = v; });
+    out.earned_total = earnTotal;
     return out;
   }
 
@@ -1739,20 +1901,24 @@
     if (_districtsCache) return _districtsCache;
     var by = {};
     var yks = yearKeys();
+    var eyks = selectedYears().map(function (_, i) { return "ey" + (i + 1); });
     base().colleges.forEach(function (c) {
       var a = collegeAlloc(c);
       var k = c.district || "(no district)";
       var g = by[k];
       if (!g) {
-        g = by[k] = { district: k, n: 0, counties: [], headcount: 0, total: 0, members: [] };
+        g = by[k] = { district: k, n: 0, counties: [], headcount: 0, total: 0, earned_total: 0, members: [] };
         yks.forEach(function (yk) { g[yk] = 0; });
+        eyks.forEach(function (yk) { g[yk] = 0; });
       }
       g.n += 1;
       g.headcount += c.headcount || 0;
       yks.forEach(function (yk) { g[yk] += a[yk]; });
+      eyks.forEach(function (yk) { g[yk] += a[yk] || 0; });
       g.total += a.total;
+      g.earned_total += a.earned_total;
       if (c.county && g.counties.indexOf(c.county) === -1) g.counties.push(c.county);
-      g.members.push({ college: c.college, headcount: c.headcount, total: a.total });
+      g.members.push({ college: c.college, headcount: c.headcount, total: a.total, earned_total: a.earned_total });
     });
     _districtsCache = Object.keys(by).map(function (k) {
       var g = by[k];
@@ -1790,6 +1956,7 @@
     }
     function sortVal(r) {
       if (state.sortKey === "elig") return eligScore(r.college);
+      if (state.sortKey === "total" && earnedMode()) return r.earned_total;
       if (state.sortKey !== "p3a" && state.sortKey !== "pea") return r[state.sortKey];
       var m = state.sortKey === "pea" ? "pe" : "p3";
       var rec = perfFor(r.college);
@@ -1812,16 +1979,31 @@
   function yearCellsHtml(row) {
     var ys = selectedYears();
     var fl = frontloaded();
+    var em = earnedMode();
     return yearKeys().map(function (yk, i) {
       if (fl && i > 0) {
         return '<td class="cplfund-carry" title="Year ' + (i + 1) + " (" + esc(ys[i]) +
           ') — carryover only: unspent Year-1 funds roll forward (front-loaded disbursement)">↻ carryover</td>';
+      }
+      if (em) {
+        var cap = row[yk] == null ? 0 : row[yk];
+        var earned = row["ey" + (i + 1)] == null ? 0 : row["ey" + (i + 1)];
+        return '<td title="Year ' + (i + 1) + " (" + esc(ys[i]) + ') — earned so far, of the ' + fmtMoney(cap) +
+          ' cap">' + fmtMoney(earned) + "</td>";
       }
       var title = fl
         ? "Year 1 (" + esc(ys[i]) + ") — full window disbursed up front (front-loaded)"
         : "Year " + (i + 1) + " (" + esc(ys[i]) + ") potential allocation";
       return '<td title="' + title + '">' + fmtMoney(row[yk]) + "</td>";
     }).join("");
+  }
+  // Window total/earned cell — in earned mode shows earned with the cap + % sub.
+  function totalCellHtml(row) {
+    if (!earnedMode()) return '<td class="tot">' + fmtMoney(row.total) + "</td>";
+    var pct = row.total > 0 ? (row.earned_total || 0) / row.total : 0;
+    return '<td class="tot" title="earned so far, of the ' + fmtMoney(row.total) + ' window cap">' +
+      fmtMoney(row.earned_total || 0) +
+      '<span class="sub">of ' + fmtMoney(row.total) + " &middot; " + fmtPctTrim(pct) + "</span></td>";
   }
   function rowChips(c) {
     var chips = "";
@@ -1840,7 +2022,7 @@
       '<td title="distinct students with any transcribed CPL, per MAP (the one Year-1 priority metric measurable from today\'s feed)">' + fmtActual(perfFor(c.college), "p3") + "</td>" +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
-      '<td class="tot">' + fmtMoney(c.total) + "</td>" +
+      totalCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
       "</tr>" + (state.open[id] ? collegeDetailHtml(c) : "");
@@ -1869,10 +2051,27 @@
       var math = floorActive
         ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) + " annual tranche"
         : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " + fmtMoney(per);
+      var earnSeg = "";
+      if (earnedMode()) {
+        var fr = earnFraction(c, p);
+        var capYr = c[p.key];
+        var tail = fr.status === "earned"
+          ? " &mdash; " + fmtInt(fr.actual) + " actual &divide; " + fmtInt(fr.target) + " target"
+          : fr.status === "gap"
+            ? ' <span class="dk">&mdash; full advance (metric not measurable in MAP yet)</span>'
+            : fr.status === "pending"
+              ? ' <span class="dk">&mdash; full advance (actuals arrive with the next data refresh)</span>'
+              : fr.status === "suppressed"
+                ? ' <span class="dk">&mdash; fewer than 5 students (privacy-suppressed); not yet credited</span>'
+                : ' <span class="dk">&mdash; $0: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
+                  fmtInt(fr.target) + '-student target)</span>';
+        earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(capYr * fr.f) + "</strong> of " +
+          fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(fr.f) + ")</strong>" + tail;
+      }
       return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
         math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
         " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")" +
-        "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + "</div>";
+        "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + earnSeg + "</div>";
     }).join("");
     var county = c.working_adults == null
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
@@ -1950,13 +2149,15 @@
       '<td class="t trunc" title="' + esc(g.counties) + '">' + esc(g.counties) + "</td>" +
       "<td>" + fmtInt(g.headcount) + "</td>" +
       yearCellsHtml(g) +
-      '<td class="tot">' + fmtMoney(g.total) + "</td>" +
+      totalCellHtml(g) +
       "</tr>" + (state.open[id] ? districtDetailHtml(g) : "");
   }
   function districtDetailHtml(g) {
+    var em = earnedMode();
     var rows = g.members.map(function (c) {
       return '<div><span class="dk">' + esc(c.college) + ":</span> " + fmtInt(c.headcount) +
-        " students &middot; <strong>" + fmtMoney(c.total) + "</strong> over " + esc(windowLabel()) + "</div>";
+        " students &middot; <strong>" + fmtMoney(em ? (c.earned_total || 0) : c.total) + "</strong> " +
+        (em ? "earned of " + fmtMoney(c.total) + " cap" : "over " + esc(windowLabel())) + "</div>";
     }).join("");
     return '<tr class="cplfund-detail"><td colspan="' + COLS_DISTRICT().length + '">' +
       '<div class="cplfund-detail-grid">' + rows + "</div></td></tr>";
@@ -1999,7 +2200,7 @@
         '<td class="t"></td>' +
         sysHeadCell +
         sysYearCells +
-        "<td>" + fmtMoney(sys.total) + "</td></tr>";
+        totalCellHtml(sys) + "</tr>";
     } else {
       var pf = perf();
       foot = '<tr class="cplfund-systemrow">' +
@@ -2011,7 +2212,7 @@
         (pf && pf.statewide && pf.statewide.p3 != null ? fmtInt(pf.statewide.p3) : "—") + "</td>" +
         "<td>" + (ELIG.coordOk && coordShown() ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
-        "<td>" + fmtMoney(sys.total) + "</td>" +
+        totalCellHtml(sys) +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
     }
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
@@ -2618,6 +2819,7 @@
     ensureDraftChip();
     _districtsCache = null;
     _allocCache = null;
+    _earnCache = null;
     var d = base();
     if (!d || !d.colleges || !d.system) {
       mount.innerHTML = '<div class="cplfund-empty">Funding model data is unavailable right now (cpl_funding_data.js failed to load). Try a hard refresh.</div>';
@@ -2638,6 +2840,7 @@
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       "<h3>Funding window</h3>" + yearControlsHtml() +
+      basisToggleHtml() +
       "<h3>Funding pools</h3>" + poolCardsHtml() +
       awardStatsHtml() +
       "<h3>Baseline eligibility</h3>" + eligibilityHtml() +
@@ -2853,6 +3056,7 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
+    wireSeg("cplFundBasis", function (v) { if (v !== state.basis) { state.basis = v; render(); } });
     wireSeg("cplFundDisb", function (v) {
       if (v === disbursement()) return;
       savingState = "";

@@ -581,6 +581,21 @@ moves money; the **Projection %** is a performance target only — it does NOT c
 168 files green. Story: `docs/cpl_funding_lessons.md` (SkyFriend) · `docs/cpl_funding_handoff.md`.
 Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
 
+**Cont. 2026-07-24 — achievement-based funding (cap-and-earn):** the projection-% thread
+surfaced that the tab funds on **headcount, not achievement** — and never did (confirmed
+against Sam's actual workbook formulas). Told him plainly, then built what he confirmed
+(AskUserQuestion): allocation = a **CAP**; `earned = cap × min(1, actual ÷ target)`, capped
+at 100%, unearned rolls forward — so a college draws *proportional* funding (never needs the
+full target) and a non-participant earns **$0** (the incentive). A **Potential ⇄ Earned**
+basis toggle (default Potential) overlays pool Earned/Unearned cards, per-priority earned %,
+table earned-of-cap, drill-in per-priority earned. The projection % is now the achievement
+target. **Load-bearing rule** (new KB note
+`methodology-achievement-based-funding-cap-and-earn.md`): the default for an *unmeasured*
+cell depends on WHY — metric-gap/feed-pending → advance full cap; feed-loaded-but-college-
+posted-nothing → $0; suppressed(<5) → $0 flagged. Phase-in: only Year-1 "any transcribed"
+is measurable today; the rest advance and flip automatically as feeds land. Tests +20 →
+**357**. Story in the lessons doc.
+
 ### SkyVid side-lane — CPL Student Portal "Credit for Being You" intro video: audio restoration + accessibility (2026-07-23)
 
 Sam's "work some magic" on the new CPL Student Portal (creditforbeingyou.org) 1:51
