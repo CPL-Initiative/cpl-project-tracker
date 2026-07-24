@@ -147,6 +147,35 @@ This turns `cpl_memory` from an archive into a **change-impact map**. The seed
 ships 6 real procedures (`pr1`–`pr6` in the mirror) drawn straight from the ripple
 rules the codebase already lives by.
 
+### Three axes — `org` · `scope` · `tags` (one table across all of COBI, all domains)
+
+Two questions surfaced during design: *does this hold organizational memory (MAP
+history, CPL background, the Fact Sheet), not just COBI dev memory?* and *as COBI
+serves more than CPL (C&I, CIP, GR), do we wire in each fact's primary home?* Both
+are answered by keeping three orthogonal axes rather than forking tables:
+
+- **`org`** — the owning **COBI area / primary home**: `cpl` · `ci` · `cip` · `gr`
+  · `shared`. This mirrors the existing COBI org layer (`cobi_orgs.js`, `?org=`),
+  lets the 🧠 pane filter to the current site, and is the **hook for the per-area
+  data isolation currently deferred** (the `r2` risk). Defaults to `cpl`;
+  cross-cutting rules (git, checkpoint) are `shared`. Extend the enum as COBI adds
+  areas.
+- **`scope`** — the surface *within* the org (a tab, a file, "cross-cutting").
+- **`tags`** — topical facets, and the reason the table is **domain-agnostic**: a
+  `fact` about MAP's 2017 origin, AB 123, or Vision 2030 is a first-class row
+  tagged `history` / `legislation` / `cpl-background` / `fact-sheet`, sitting
+  beside a code fact. Nothing about the 8 kinds is engineering-specific.
+
+**The one boundary to hold:** for audience-facing canon (the CPL Fact Sheet, MAP
+history, the public glossary), `cpl_memory` carries the **internal working entry +
+a `source` pointer to the canonical home** — it does not become a competing copy.
+The public `cpl-knowledge-base` stays the published canon, reached only through the
+human-gated curation pipeline. `cpl_memory` is the unified internal *index +
+working layer* across every COBI area and every domain; promotion outward is still
+the deliberate curation step (`r1`). The seed now includes organizational-memory
+rows (`oh1`–`oh5`: MAP history, AB 123, CPL/CCCCO identity, Vision 2030, the
+live-metrics lineage) to prove the breadth.
+
 ## Security, privacy & organizational access
 
 Sam asked these be first-class. The posture:
@@ -185,10 +214,11 @@ How `cpl_memory` plugs into what already exists (rather than sitting apart):
 
 ## How we got here
 
-Prototyped as a **seed of 33 real entries** across all 8 kinds (incl. 6 `procedure`
-ripple checklists) pulled from the existing corpus — Critical Rules, the roadmap,
-KB notes, `cpl_todos.json`, session narratives — so the shape can be felt with true
-content before the schema and loop are committed (`docs/memory/cpl_memory.md`). The
+Prototyped as a **seed of 39 real entries** across all 8 kinds (incl. 6 `procedure`
+ripple checklists and 5 organizational-memory facts, `oh1`–`oh5`) pulled from the
+existing corpus — Critical Rules, the roadmap, KB notes, `cpl_todos.json`, session
+narratives, the public KB — so the shape can be felt with true content before the
+schema and loop are committed (`docs/memory/cpl_memory.md`). The
 schema-of-record lives at `kb/supabase_cpl_memory.sql` and is **not yet applied to
 the live DB** (per Rule 9: apply only after Sam's review, with a fresh read at
 write-time).

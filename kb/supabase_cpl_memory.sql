@@ -46,8 +46,10 @@ create table if not exists public.cpl_memory (
   summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence
   detail        text check (char_length(detail) <= 4000),                       -- col 2: why it matters + the trigger ("read before X")
 
-  scope         text check (char_length(scope) <= 120),   -- repo / tab / 'cross-cutting'
-  tags          text[] not null default '{}',             -- facets incl. security | privacy | org-access | integration
+  org           text not null default 'cpl'               -- the owning COBI AREA (primary home) — scalability past CPL; extend the check as COBI adds areas
+                  check (org in ('cpl','ci','cip','gr','shared')),
+  scope         text check (char_length(scope) <= 120),   -- the surface WITHIN the org: repo / tab / file / 'cross-cutting'
+  tags          text[] not null default '{}',             -- topical facets incl. security | privacy | org-access | integration | history | fact-sheet | …
   source        text check (char_length(source) <= 500),  -- link/path to the KB note / PR / file holding the full record
 
   -- the change-impact / ripple layer (Sam's COBI pain: "update all related
@@ -115,6 +117,7 @@ create policy "reviewer deletes cpl_memory"
   to anon, authenticated
   using (is_allowed_reviewer());
 
+create index if not exists cpl_memory_org_idx      on public.cpl_memory (org);   -- per-COBI-area filtering + future per-area RLS
 create index if not exists cpl_memory_kind_idx     on public.cpl_memory (kind);
 create index if not exists cpl_memory_status_idx   on public.cpl_memory (status);
 create index if not exists cpl_memory_updated_idx  on public.cpl_memory (updated_at desc);

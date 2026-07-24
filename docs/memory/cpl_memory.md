@@ -22,10 +22,17 @@ artifacts:
 > vault-sync carries into the graph. Design + rationale:
 > [[docs/kb-notes/adr-unified-memory-table]].
 >
-> **This is a PROTOTYPE SEED** (33 real entries pulled from the corpus) so the
-> shape can be felt before the schema + loop are committed. The `#id`s are
-> placeholders until the table is seeded (they become uuids). The table is **NOT
-> yet applied to the live DB** — pending Sam's review.
+> **It spans every COBI area and every domain.** Each entry names its `org`
+> home — **CPL · C&I · CIP · GR · shared** — so it scales as COBI serves more than
+> CPL; and it holds **organizational memory** (MAP history, CPL background, the
+> Fact Sheet, legislation) right beside dev memory. The *kind* is the entry's
+> nature; the `org` + `tags` carry its area + subject (see `oh1`–`oh5`).
+>
+> **This is a PROTOTYPE SEED** (39 real entries pulled from the corpus, incl. 5
+> organizational-memory rows) so the shape can be felt before the schema + loop
+> are committed. The `#id`s are placeholders until the table is seeded (they
+> become uuids). The table is **NOT yet applied to the live DB** — pending Sam's
+> review.
 
 ## The 8 kinds (concise + comprehensive)
 
@@ -76,6 +83,16 @@ move with it. Reverse-queryable by `affects` ("what touches `annual_report.js`?"
 | `f5` | **Small curated scenario batches beat the thousands-strong panel** for eliciting curation doctrine | ≤3 forks/batch, profile-before-edges; Sam bounced off the firehose. | ccr, method | verified | [[docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation]] |
 | `f6` | CPL **units double-count competencies** (4 courses → 1 ASE area) — course counts read as coverage | Sam flagged units as "sus"; the Pathways metric is course counts, not units. | pathways | verified | [[docs/cpl_pathways_lessons]] |
 | `f7` | **All Supabase access goes through the MCP tools** — the sandbox can't reach `*.supabase.co` | a direct curl/psql from a session fails; MCP is the only path. Read before any Supabase work. | integration, supabase, security | verified | `CLAUDE.md` Rule 9c |
+| `oh1` | **MAP launched in 2017 as the "Military Articulation Platform"** — its original name; today the "Mapping Articulated Pathways (MAP) platform" | history-only for the old name; never present it as the current expansion. Pairs with `d1`. | history, map-platform, naming | verified | public KB · research/map-platform-evolution |
+| `oh2` | **AB 123 was chaptered July 2025** — statutory backing for CPL | key legislative anchor for the CPL Initiative. | legislation, cpl-background | verified | public KB glossary |
+| `oh3` | **CPL = Credit for Prior Learning; the CPL Initiative belongs to the CCCCO** | program identity; the platform is the MAP platform. | cpl-background, glossary | verified | public KB glossary |
+| `oh4` | **Vision 2030 is the CCC master plan the CPL Initiative supports** | the strategic frame CPL work ladders up to. | vision-2030, cpl-background | verified | CPL Fact Sheet |
+| `oh5` | **Live statewide metrics come from the MAP CPL Insights Dashboard (CCCCO)** | live_metrics.json is the daily scrape feeding the Fact Sheet + dashboard; headline counts are live, not stored here. | metrics, map-platform, fact-sheet | verified | reference-daily-dashboard-data-pipeline |
+
+*`oh1`–`oh5` are **organizational / background memory** — same table, different
+domain (`tags`) and `org` home. This is what makes the store more than a dev log:
+MAP history, CPL background, legislation, and Fact-Sheet facts live here too, each
+pointing (`source`) at its canonical home.*
 
 ---
 
