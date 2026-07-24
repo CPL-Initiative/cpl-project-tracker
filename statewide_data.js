@@ -5269,163 +5269,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
-      "exhibit_ids": [
-        "MAPPRA-F3FS-1-001",
-        "MAPPRA-F3FS1-1-001"
-      ],
-      "title": "Fire Service In-Service Training — Command & Control",
-      "unified_title": "Fire Service In-Service Training — Command & Control",
-      "is_classified": true,
-      "issuing_agency": "California State Fire Training (SFT)",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
-        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "CA MAP INITIATIVE COLLEGE",
-        "Modesto Junior College"
-      ],
-      "potential": 110,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 112,
-      "credit_recs": [
-        {
-          "course": "FTECH 323XABC",
-          "credit": "2 hours in Fire Service In-Service Training/Command & Control"
-        },
-        {
-          "course": "FTECH 323XABC",
-          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
-        },
-        {
-          "course": "ACC 1B",
-          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-ITP(-1-001|MAPCxS-ITPP1-1-001",
       "exhibit_ids": [
         "MAPCXS-ITP(-1-001",
@@ -6309,208 +6152,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "HIST C1002",
           "credit": "3 hours in United States History since 1865"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPSAS-CEPO1-1-001|MAPSAS-CEPO5-1-001|MAPSAS-CPOM1-1-001|MAPSAS-CPOM2-1-001|MAPSAS-CPOM57-1-001|MAPSAS-CPOM76-1-001|MAPSAS-CPOM8-1-001|MAPSAS-CPOM81-1-001",
-      "exhibit_ids": [
-        "MAPSAS-CEPO1-1-001",
-        "MAPSAS-CEPO5-1-001",
-        "MAPSAS-CPOM1-1-001",
-        "MAPSAS-CPOM2-1-001",
-        "MAPSAS-CPOM57-1-001",
-        "MAPSAS-CPOM76-1-001",
-        "MAPSAS-CPOM8-1-001",
-        "MAPSAS-CPOM81-1-001"
-      ],
-      "title": "CLEP Principles of Management",
-      "unified_title": "CLEP Principles of Management",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "CLEP Exam Principles of Management (Score of 50 or higher)",
-        "CLEP Exam: Principles of Management",
-        "CLEP Principles of Management",
-        "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
-        "CLEP Principles of Management (SAC Associate Degree Units)"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Humanities (Letters)",
-      "sector": "Business & Entrepreneurship",
-      "collaborative_type": "Local",
-      "adopters": 11,
-      "adopter_names": [
-        "CA MAP INITIATIVE COLLEGE",
-        "Clovis Community College",
-        "Coastline Community College",
-        "Los Angeles Pierce College",
-        "Merced College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Shasta College"
-      ],
-      "potential": 109,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Calbright College Credit",
-        "Calbright College Non-Credit",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 120,
-      "credit_recs": [
-        {
-          "course": "MAG 44",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "Degree Units",
-          "credit": "3 hours in SAC Associate Degree Semester Units"
-        },
-        {
-          "course": "ACC 62",
-          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
-        },
-        {
-          "course": "CSU Units",
-          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
-        },
-        {
-          "course": "MGMT C100",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "MGMT 31",
-          "credit": "3 hours in Principles of Management"
-        },
-        {
-          "course": "BUS 65",
-          "credit": "3 hours in Management Principles"
-        },
-        {
-          "course": "BUAD 91",
-          "credit": "3 hours in Principles of Management"
         }
       ],
       "authoritative_recs": []
@@ -7751,6 +7392,202 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH 078",
           "credit": "4 hours in Differential Equations"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CEPO1-1-001|MAPSAS-CEPO5-1-001|MAPSAS-CPOM1-1-001|MAPSAS-CPOM2-1-001|MAPSAS-CPOM57-1-001|MAPSAS-CPOM76-1-001|MAPSAS-CPOM8-1-001|MAPSAS-CPOM81-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CEPO1-1-001",
+        "MAPSAS-CEPO5-1-001",
+        "MAPSAS-CPOM1-1-001",
+        "MAPSAS-CPOM2-1-001",
+        "MAPSAS-CPOM57-1-001",
+        "MAPSAS-CPOM76-1-001",
+        "MAPSAS-CPOM8-1-001",
+        "MAPSAS-CPOM81-1-001"
+      ],
+      "title": "CLEP Principles of Management",
+      "unified_title": "CLEP Principles of Management",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Exam Principles of Management (Score of 50 or higher)",
+        "CLEP Exam: Principles of Management",
+        "CLEP Principles of Management",
+        "CLEP Principles of Management (CSU Semester Units Earned Toward CSU Admission)",
+        "CLEP Principles of Management (SAC Associate Degree Units)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Business & Entrepreneurship",
+      "collaborative_type": "Local",
+      "adopters": 10,
+      "adopter_names": [
+        "Clovis Community College",
+        "Coastline Community College",
+        "Los Angeles Pierce College",
+        "Merced College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Shasta College"
+      ],
+      "potential": 108,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 118,
+      "credit_recs": [
+        {
+          "course": "MAG 44",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "Degree Units",
+          "credit": "3 hours in SAC Associate Degree Semester Units"
+        },
+        {
+          "course": "CSU Units",
+          "credit": "3 hours in CSU Semester Units Earned toward CSU Admission"
+        },
+        {
+          "course": "MGMT C100",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "MGMT 31",
+          "credit": "3 hours in Principles of Management"
+        },
+        {
+          "course": "BUS 65",
+          "credit": "3 hours in Management Principles"
+        },
+        {
+          "course": "BUAD 91",
+          "credit": "3 hours in Principles of Management"
         }
       ],
       "authoritative_recs": []
@@ -13356,153 +13193,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH 073",
           "credit": "5 hours in Multivariable Calculus"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPPRA-AMF-1-001",
-      "exhibit_ids": [
-        "MAPPRA-AMF-1-001"
-      ],
-      "title": "Metal Framing Advanced",
-      "unified_title": "Metal Framing Advanced",
-      "is_classified": true,
-      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Advanced Metal Framing"
-      ],
-      "cpl_type": "Portfolio Review",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Business & Entrepreneurship",
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "CA MAP INITIATIVE COLLEGE",
-        "Norco College"
-      ],
-      "potential": 106,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 108,
-      "credit_recs": [
-        {
-          "course": "CRP 478B",
-          "credit": "1.5 hours in Advanced Metal Framing"
-        },
-        {
-          "course": "ACC 200",
-          "credit": "1.5 hours in Advanced Metal Framing"
         }
       ],
       "authoritative_recs": []
@@ -68243,287 +67933,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-A6C8-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001|MAPICI-ASE5-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE5-1-001",
-        "MAPICI-A6C8-1-001",
-        "MAPICI-ABSA-1-001",
-        "MAPICI-AC(A4-1-001",
-        "MAPICI-ASE(20-1-001",
-        "MAPICI-ASE(32-1-001",
-        "MAPICI-ASE(6-1-001",
-        "MAPICI-ASE5-1-001"
-      ],
-      "title": "ASE A5 — Brakes",
-      "unified_title": "ASE A5 — Brakes",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ASE CERTIFICATION (A5) A5 – BRAKES",
-        "Auto 615 Completion",
-        "Automotive Brake Systems ASE A5",
-        "Automotive Service Excellence (ASE) A5 Certificate",
-        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
-        "Automotive Services Excellence (A5: Brakes) Certificate",
-        "Automotive Services Excellence 5 (A5) Certificate",
-        "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Advanced Transportation & Logistics",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 24,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "CA MAP INITIATIVE COLLEGE",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 83,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Citrus College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Lemoore College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 107,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 417",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO B43",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 050",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 115",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO A5",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AT 54",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 33",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 63",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AT 105",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 210",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 050L",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTOMO 501",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 061B",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUT 142",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 54",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "ATEC 5",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUSER 111",
-          "credit": "3 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 176G",
-          "credit": "2 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 5",
-          "credit": "4 hours in Automotive Brakes"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 33",
-          "credit": "4 hours in Automotive Brakes"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4 hours in Automotive Brakes"
-        },
-        {
-          "course": "AUTO 061A",
-          "credit": "4.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 061B",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
-        },
-        {
-          "course": "ACC 55",
-          "credit": "4.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "4.5 hours in Electronically Controlled Brake Systems"
-        },
-        {
-          "course": "AUTO 106",
-          "credit": "2.5 hours in Automotive Brake Systems"
-        },
-        {
-          "course": "AUTO 013A",
-          "credit": "4 hours in Automotive Braking Systems"
-        },
-        {
-          "course": "AUTO 215",
-          "credit": "3 hours in Automotive Brake Systems"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Automotive Braking Systems",
-          "cid": "AUTO 150 X"
-        }
-      ]
-    },
-    {
       "exhibit_id": "MAPICA-PC-1-001|MAPICI-CP/P-1-001|MAPICI-CPL-1-001|MAPICI-KCET-1-001|MAPICI-PC1-1-001|MAPICI-PC2-1-001|MAPICI-PC3-1-001|MAPICI-PL1-1-001|MAPICI-PL2-1-001|MAPICI-PN(-1-001|MAPICI-PN2-1-001|MAPICI-SETP-1-001",
       "exhibit_ids": [
         "MAPICA-PC-1-001",
@@ -122501,6 +121910,106 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPPRA-F3FS-1-001|MAPPRA-F3FS1-1-001",
+      "exhibit_ids": [
+        "MAPPRA-F3FS-1-001",
+        "MAPPRA-F3FS1-1-001"
+      ],
+      "title": "Fire Service In-Service Training — Command & Control",
+      "unified_title": "Fire Service In-Service Training — Command & Control",
+      "is_classified": true,
+      "issuing_agency": "California State Fire Training (SFT)",
+      "training_agency": "",
+      "confidence_title": 0.65,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "FTECH 323B Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
+        "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Modesto Junior College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Imperial Valley College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Ohlone College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "FTECH 323XABC",
+          "credit": "2 hours in Fire Service In-Service Training/Command & Control"
+        },
+        {
+          "course": "FTECH 323XABC",
+          "credit": "0.5 hours in Fire Service In-Service Training/Command & Control"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPPRA-F3FI-1-001",
       "exhibit_ids": [
         "MAPPRA-F3FI-1-001"
@@ -148384,6 +147893,246 @@ window.CPL_STATEWIDE = {
         {
           "credit": "3 hours in Automotive Suspension and Steering Systems",
           "cid": "AUTO 140 X"
+        }
+      ]
+    },
+    {
+      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-A6C8-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001|MAPICI-ASE5-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE5-1-001",
+        "MAPICI-A6C8-1-001",
+        "MAPICI-ABSA-1-001",
+        "MAPICI-AC(A4-1-001",
+        "MAPICI-ASE(20-1-001",
+        "MAPICI-ASE(32-1-001",
+        "MAPICI-ASE(6-1-001",
+        "MAPICI-ASE5-1-001"
+      ],
+      "title": "ASE A5 — Brakes",
+      "unified_title": "ASE A5 — Brakes",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A5) A5 – BRAKES",
+        "Auto 615 Completion",
+        "Automotive Brake Systems ASE A5",
+        "Automotive Service Excellence (ASE) A5 Certificate",
+        "Automotive Service Excellence (ASE) A5 Certificate Brakes",
+        "Automotive Services Excellence (A5: Brakes) Certificate",
+        "Automotive Services Excellence 5 (A5) Certificate",
+        "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 23,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 47,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 417",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO B43",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 115",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO A5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 63",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AT 105",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 210",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 050L",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTOMO 501",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUT 142",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 54",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "ATEC 5",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUSER 111",
+          "credit": "3 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 176G",
+          "credit": "2 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 5",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 33",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4 hours in Automotive Brakes"
+        },
+        {
+          "course": "AUTO 061A",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 061B",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "4.5 hours in Electronically Controlled Brake Systems"
+        },
+        {
+          "course": "AUTO 106",
+          "credit": "2.5 hours in Automotive Brake Systems"
+        },
+        {
+          "course": "AUTO 013A",
+          "credit": "4 hours in Automotive Braking Systems"
+        },
+        {
+          "course": "AUTO 215",
+          "credit": "3 hours in Automotive Brake Systems"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Braking Systems",
+          "cid": "AUTO 150 X"
         }
       ]
     },
@@ -216754,6 +216503,46 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPPRA-AMF-1-001",
+      "exhibit_ids": [
+        "MAPPRA-AMF-1-001"
+      ],
+      "title": "Metal Framing Advanced",
+      "unified_title": "Metal Framing Advanced",
+      "is_classified": true,
+      "issuing_agency": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Advanced Metal Framing"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Norco College"
+      ],
+      "potential": 4,
+      "potential_names": [
+        "American River College",
+        "Los Angeles Southwest College",
+        "Palomar College",
+        "Santiago Canyon College"
+      ],
+      "total_addressable": 5,
+      "credit_recs": [
+        {
+          "course": "CRP 478B",
+          "credit": "1.5 hours in Advanced Metal Framing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPPRA-BL-1-001",
       "exhibit_ids": [
         "MAPPRA-BL-1-001"
@@ -228241,6 +228030,34 @@ window.CPL_STATEWIDE = {
       "total_addressable": 0,
       "credit_recs": [],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXO-SFSM-1-001",
+      "exhibit_ids": [
+        "MAPCXO-SFSM-1-001"
+      ],
+      "title": "Scripting for Security Management",
+      "unified_title": "Scripting for Security Management",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Scripting for Security Management"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
     }
   ],
   "analysis": {
@@ -229137,15 +228954,6 @@ window.CPL_STATEWIDE = {
         "pct": 0.0
       },
       {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 4,
-        "exhibits": 4,
-        "disciplines": 1,
-        "ccc_collaborative": 0,
-        "industry_certs": 1,
-        "pct": 0.0
-      },
-      {
         "college": "Santa Barbara City College",
         "credit_recs": 2,
         "exhibits": 2,
@@ -229167,8 +228975,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5484,
-        "exhibits": 1771,
+        "credit_recs": 5485,
+        "exhibits": 1772,
         "courses": 294,
         "colleges": 84,
         "ccc_collaborative": 25,
@@ -229203,12 +229011,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 466,
-        "exhibits": 268,
-        "courses": 216,
-        "colleges": 42,
+        "credit_recs": 462,
+        "exhibits": 264,
+        "courses": 214,
+        "colleges": 41,
         "ccc_collaborative": 46,
-        "pct": 3.7
+        "pct": 3.6
       },
       {
         "discipline": "Health",
@@ -229376,30 +229184,30 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6761,
+        "credit_recs": 6760,
         "exhibits": 2158,
-        "colleges": 85,
+        "colleges": 84,
         "pct": 53.2
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3485,
+        "credit_recs": 3484,
         "exhibits": 1031,
-        "colleges": 80,
+        "colleges": 79,
         "pct": 27.4
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1845,
-        "exhibits": 1375,
+        "credit_recs": 1846,
+        "exhibits": 1376,
         "colleges": 58,
         "pct": 14.5
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 404,
+        "credit_recs": 402,
         "exhibits": 322,
-        "colleges": 28,
+        "colleges": 27,
         "pct": 3.2
       },
       {
@@ -229420,23 +229228,23 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7890,
+        "credit_recs": 7889,
         "exhibits": 2947,
-        "colleges": 92,
+        "colleges": 91,
         "pct": 62.1
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2632,
+        "credit_recs": 2631,
         "exhibits": 979,
-        "colleges": 76,
+        "colleges": 75,
         "pct": 20.7
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1309,
+        "credit_recs": 1307,
         "exhibits": 396,
-        "colleges": 41,
+        "colleges": 40,
         "pct": 10.3
       },
       {
@@ -229462,9 +229270,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Other (O)",
-        "credit_recs": 81,
-        "exhibits": 53,
-        "colleges": 9,
+        "credit_recs": 82,
+        "exhibits": 54,
+        "colleges": 10,
         "pct": 0.6
       },
       {
@@ -229492,9 +229300,9 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11179,
-        "exhibits": 4761,
-        "colleges": 99,
+        "credit_recs": 11176,
+        "exhibits": 4762,
+        "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
       },
@@ -229918,6 +229726,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-23T14:37:26",
-  "total_credit_recs": 12701
+  "generated_at": "2026-07-24T08:45:16",
+  "total_credit_recs": 12698
 };
