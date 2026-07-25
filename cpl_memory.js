@@ -33,9 +33,15 @@
   var ROOT_ID = "memory-root";
   var CSS_ID = "cpl-memory-css";
   var REST = SUPABASE_URL + "/rest/v1/";
+  // The shared RAG edge function (vector search over the KB + exhibits + live
+  // metrics) that powers the CPL Assistant — reused by ✨ Autogenerate to research
+  // a typed topic and draft a memory entry. Same {query,session_id,history,audience}
+  // contract + SSE `event: text` deltas as cpl_chat.js.
+  var CHAT_URL = SUPABASE_URL + "/functions/v1/cpl-chat";
+  var KIND_KEYS = ["fact", "pitfall", "procedure", "opportunity", "risk", "wishlist", "question", "decision", "milestone"];
   // Self-contained print stylesheet for the Print / PDF window (serif headings, CCC navy accent).
   // Kept on one line so the source carries no bare "\nbody{" (the .cpl-mem-scope invariant test).
-  var REPORT_PRINT_CSS = "*{box-sizing:border-box;}body{margin:0;padding:36px 44px;font-family:Georgia,'Times New Roman',serif;color:#1c1c1a;line-height:1.5;max-width:7.6in;}h1{font-family:Georgia,serif;font-size:25pt;color:#002F6D;margin:0 0 4px;}p.sub{color:#5c5c55;font-size:10pt;margin:0 0 22px;font-family:Arial,Helvetica,sans-serif;}h2{font-family:Georgia,serif;font-size:14pt;color:#002F6D;border-bottom:2px solid #002F6D;padding-bottom:3px;margin:24px 0 6px;}p.lead{font-style:italic;color:#5c5c55;font-size:10.5pt;margin:0 0 11px;font-family:Arial,Helvetica,sans-serif;}p.item{font-size:11pt;color:#26261f;line-height:1.55;margin:0 0 11px;}@media print{a{color:inherit;text-decoration:none;}}";
+  var REPORT_PRINT_CSS = "*{box-sizing:border-box;}body{margin:0;padding:36px 44px;font-family:Georgia,'Times New Roman',serif;color:#1c1c1a;line-height:1.5;max-width:7.6in;}h1{font-family:Georgia,serif;font-size:25pt;color:#002F6D;margin:0 0 4px;}p.sub{color:#5c5c55;font-size:10pt;margin:0 0 22px;font-family:Arial,Helvetica,sans-serif;}h2{font-family:Georgia,serif;font-size:14pt;color:#002F6D;border-bottom:2px solid #002F6D;padding-bottom:3px;margin:24px 0 6px;}p.lead{font-style:italic;color:#5c5c55;font-size:10.5pt;margin:0 0 11px;font-family:Arial,Helvetica,sans-serif;}p.item{font-size:11pt;color:#26261f;line-height:1.55;margin:0 0 11px;}p.item .ititle{font-weight:bold;color:#1c1c1a;}@media print{a{color:inherit;text-decoration:none;}}";
 
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
 
@@ -144,6 +150,7 @@
     r.tags = Array.isArray(d.tags) ? d.tags : [];
     r.affects = Array.isArray(d.affects) ? d.affects : [];
     r.related = Array.isArray(d.related) ? d.related : [];
+    r.title = d.title || "";                             // short scannable label (Report view)
     r.summary = d.summary || "";
     r.detail = d.detail || "";
     r.plain = d.plain || "";                             // reader/briefing text (Report view)
@@ -578,6 +585,143 @@
   }
   function splitTags(s) { return String(s || "").split(",").map(function (x) { return x.trim(); }).filter(Boolean); }
 
+  // ── ✨ Autogenerate ──────────────────────────────────────────────────────
+  // Research a typed topic via the cpl-chat RAG function (vector search over the
+  // KB + exhibits + live metrics) and DRAFT a memory entry the curator then edits.
+  // The function streams a Claude answer; we prompt for a single JSON object and
+  // parse it defensively. Nothing is saved — Autogenerate only PREFILLS the form.
+  function autogenQuery(desc) {
+    return [
+      "You are drafting ONE internal \"team memory\" entry for the CPL Initiative's COBI dashboard.",
+      "Research the CPL / MAP knowledge base for the topic below, then reply with ONLY a single JSON",
+      "object — no prose, no code fence, no commentary. Keys:",
+      '- "kind": one of ' + KIND_KEYS.join(" / "),
+      '- "title": a 3-6 word label',
+      '- "summary": one terse, precise sentence (the curator/AI line)',
+      '- "detail": 1-2 sentences on why it matters and when to read it',
+      '- "plain": one plain-English sentence a non-technical reader can follow; add a concrete example if the topic is technical',
+      '- "tags": array of 1-4 short lowercase topical tags',
+      '- "org": one of cpl / ci / cip / gr / shared (use cpl if unsure)',
+      '- "source": the KB note / doc / URL you grounded this in, or "" if none',
+      "Ground every field in what you actually find; do not invent facts. If the knowledge base does not",
+      'cover it, still return your best draft and set "source" to "".',
+      "TOPIC: " + String(desc || "").trim(),
+    ].join("\n");
+  }
+  // Pull the JSON object out of a model answer (tolerates a ```json fence + surrounding prose).
+  function parseDraft(text) {
+    if (text == null) return null;
+    var s = String(text);
+    var fence = s.match(/```(?:json)?\s*([\s\S]*?)```/i);
+    if (fence) s = fence[1];
+    var a = s.indexOf("{"), b = s.lastIndexOf("}");
+    if (a < 0 || b <= a) return null;
+    var obj; try { obj = JSON.parse(s.slice(a, b + 1)); } catch (e) { return null; }
+    if (!obj || typeof obj !== "object") return null;
+    var tags = Array.isArray(obj.tags)
+      ? obj.tags.map(function (t) { return String(t).trim(); }).filter(Boolean)
+      : (obj.tags ? String(obj.tags).split(",").map(function (t) { return t.trim(); }).filter(Boolean) : []);
+    return {
+      kind: KIND_KEYS.indexOf(obj.kind) >= 0 ? obj.kind : "fact",
+      title: String(obj.title || "").trim(),
+      summary: String(obj.summary || "").trim(),
+      detail: String(obj.detail || "").trim(),
+      plain: String(obj.plain || "").trim(),
+      tags: tags,
+      org: ORGS.indexOf(obj.org) >= 0 ? obj.org : "cpl",
+      source: String(obj.source || "").trim(),
+    };
+  }
+  // Accumulate the SSE `event: text` deltas (same contract as cpl_chat.js).
+  function drainSse(reader) {
+    var decoder = new TextDecoder(), buffer = "", full = "";
+    function pump() {
+      return reader.read().then(function (chunk) {
+        if (chunk.done) return full;
+        buffer += decoder.decode(chunk.value, { stream: true });
+        var events = buffer.split("\n\n"); buffer = events.pop() || "";
+        events.forEach(function (blk) {
+          var ev = "message", data = "";
+          blk.split("\n").forEach(function (line) {
+            if (line.indexOf("event:") === 0) ev = line.slice(6).trim();
+            else if (line.indexOf("data:") === 0) data += line.slice(5).trim();
+          });
+          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") full += d.text; } catch (e) { } }
+        });
+        return pump();
+      });
+    }
+    return pump();
+  }
+  // Fetch → accumulate → parse. Resolves to a normalized draft; rejects on failure.
+  function autogenerate(desc) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var body = JSON.stringify({ query: autogenQuery(desc), session_id: "cobi-memory-autogen", history: [], audience: "administrator" });
+    return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("autogen HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader());
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      var draft = parseDraft(full);
+      if (!draft) throw new Error("no draft");
+      return draft;
+    });
+  }
+  // Read a form control by name via querySelector — robust across browsers AND
+  // jsdom, and (critically) avoids the `form.title` / HTMLFormElement.title
+  // named-property collision that would silently shadow the Short-title input.
+  function fld(form, name) { return form ? form.querySelector('[name="' + name + '"]') : null; }
+  // Prefill an open Add/Edit form from a draft (leaves everything editable; saves nothing).
+  function applyDraftToForm(form, draft) {
+    if (!form || !draft) return;
+    var set = function (name, val) { var e = fld(form, name); if (e) e.value = val; };
+    if (fld(form, "kind")) set("kind", draft.kind || "fact");   // kind select present on Add only
+    set("title", draft.title || "");
+    set("summary", draft.summary || "");
+    set("detail", draft.detail || "");
+    set("plain", draft.plain || "");
+    set("tags", (draft.tags || []).join(", "));
+    if (fld(form, "org")) set("org", draft.org || "cpl");
+    set("source", draft.source || "");
+  }
+
+  // The ✨ Autogenerate affordance at the top of the Add form: a topic box + a
+  // button that researches the KB and prefills the fields below (all still editable).
+  function buildAutogenBox(form, existing) {
+    var isEdit = !!existing;
+    var box = el("div", "mem-autogen");
+    box.appendChild(el("div", "mem-autogen-h", isEdit ? "✨ Autogenerate (re-draft from research)" : "✨ Autogenerate"));
+    var ta = textareaEl("autogen_desc", isEdit ? (existing.title || existing.summary || "") : "");
+    ta.rows = 2;
+    ta.placeholder = "Describe the entry to research — e.g. “a fact about what constitutes a Common Exhibit Reference”";
+    box.appendChild(ta);
+    var row = el("div", "mem-autogen-row");
+    var btn = el("button", "mem-btn mem-btn-primary mem-autogen-btn", "✨ Autogenerate");
+    btn.type = "button";
+    var status = el("span", "mem-autogen-status", "");
+    row.appendChild(btn); row.appendChild(status);
+    box.appendChild(row);
+    box.appendChild(el("div", "mem-field-hint", "Researches the CPL knowledge base and drafts the fields below for you to review and edit. Nothing is saved until you click " + (isEdit ? "Save changes" : "Add") + "."));
+    btn.onclick = function () {
+      var desc = (ta.value || "").trim();
+      if (!desc) { status.textContent = "Type a short description first."; ta.focus(); return; }
+      btn.disabled = true; ta.disabled = true;
+      status.className = "mem-autogen-status is-pending";
+      status.textContent = "Researching the knowledge base…";
+      autogenerate(desc).then(function (draft) {
+        applyDraftToForm(form, draft);
+        status.className = "mem-autogen-status is-ok";
+        status.textContent = "Drafted — review & edit below, then Add.";
+      }).catch(function () {
+        status.className = "mem-autogen-status is-err";
+        status.textContent = "Couldn’t draft that — fill the fields in manually, or try rephrasing.";
+      }).then(function () { btn.disabled = false; ta.disabled = false; });
+    };
+    return box;
+  }
+
   // buildEntryForm — Add (existing==null) or Edit-in-place (existing set).
   function buildEntryForm(host, existing, onDone) {
     var isEdit = !!existing;
@@ -585,8 +729,10 @@
     form.appendChild(el("div", "mem-form-h", isEdit ? "Edit entry · " + existing.id : "Add a new entry"));
     var kindSel = selectEl("kind", KINDS.map(function (x) { return { v: x.k, l: x.label }; }), existing ? existing.kind : "fact");
     var orgSel = selectEl("org", ORGS.map(function (o) { return { v: o, l: o }; }), existing ? (existing.org || "cpl") : "cpl");
+    form.appendChild(buildAutogenBox(form, existing));      // ✨ research a topic → prefill the fields (Add + Edit)
     if (!isEdit) form.appendChild(field("Kind", kindSel));
     if (!isEdit) { var slugIn = inputEl("slug", ""); slugIn.placeholder = "(auto — e.g. f7; or type one)"; form.appendChild(field("Slug (id)", slugIn)); }
+    form.appendChild(field("Short title (Report)", inputEl("title", existing ? (existing.title || "") : "")));
     form.appendChild(field("Summary", inputEl("summary", existing ? existing.summary : "")));
     form.appendChild(field("Detail", textareaEl("detail", existing ? existing.detail : "")));
     var plainF = field("Plain-English (Report view)", textareaEl("plain", existing ? (existing.plain || "") : ""));
@@ -609,6 +755,7 @@
       var v = {
         kind: form.kind ? form.kind.value : (existing ? existing.kind : "fact"),
         slug: form.slug ? form.slug.value.trim() : "",
+        title: fld(form, "title") ? fld(form, "title").value.trim() : "",   // querySelector — `form.title` is shadowed by HTMLFormElement.title
         summary: form.summary.value.trim(),
         detail: form.detail.value.trim(),
         plain: form.plain ? form.plain.value.trim() : "",
@@ -684,7 +831,7 @@
     }).catch(function () { writeErrMsg = "couldn’t save — please try again"; renderAuth(); return false; });
   }
   function snapshot(d) {
-    return { slug: d.id, kind: d.kind, summary: d.summary, detail: d.detail, plain: d.plain, tags: d.tags, org: d.org, status: d.status, source: d.source };
+    return { slug: d.id, kind: d.kind, title: d.title, summary: d.summary, detail: d.detail, plain: d.plain, tags: d.tags, org: d.org, status: d.status, source: d.source };
   }
 
   function cycleStatus(d) {
@@ -701,7 +848,7 @@
   function addEntry(v) {
     var slug = v.slug || genSlug(v.kind);
     var body = {
-      slug: slug, kind: v.kind, summary: v.summary, detail: v.detail, plain: v.plain || null,
+      slug: slug, kind: v.kind, title: v.title || null, summary: v.summary, detail: v.detail, plain: v.plain || null,
       tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs,
       source: v.source || null, status: "proposed",   // session-authored adds land proposed (corroboration gate)
     };
@@ -711,7 +858,7 @@
     }).then(function (ok) { if (ok) refresh(); return ok; });
   }
   function editEntry(d, v) {
-    var body = { summary: v.summary, detail: v.detail, plain: v.plain || null, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
+    var body = { title: v.title || null, summary: v.summary, detail: v.detail, plain: v.plain || null, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
     return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
       logEvent(d._uuid, "update", snapshot(d), body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
@@ -719,7 +866,7 @@
   function reviseEntry(d) {
     var newSlug = genSlug(d.kind);
     var clone = {
-      slug: newSlug, kind: d.kind, summary: d.summary, detail: d.detail, plain: d.plain || null, tags: d.tags,
+      slug: newSlug, kind: d.kind, title: d.title || null, summary: d.summary, detail: d.detail, plain: d.plain || null, tags: d.tags,
       org: d.org || null, share_across_orgs: !!d.share_across_orgs, source: d.source || null,
       status: "verified",   // a curator revise lands verified (a session revise would land proposed)
     };
@@ -875,6 +1022,7 @@
       if (sec.lead) section.appendChild(el("p", "mr-lead", sec.lead));
       items.forEach(function (d) {
         var it = el("div", "mr-item");
+        if (d.title) it.appendChild(el("p", "mr-ptitle", d.title));   // short scannable label (as-needed)
         var txt = reportProse(d);                    // prose: prefer plain, else summary+detail
         if (sec.when && d.when) txt = withReachedDate(txt, d.when);
         it.appendChild(el("p", "mr-p", txt));
@@ -903,7 +1051,7 @@
       items.forEach(function (d) {
         var txt = reportProse(d);
         if (sec.when && d.when) txt = withReachedDate(txt, d.when);
-        lines.push("- " + txt);
+        lines.push("- " + (d.title ? "**" + d.title + "** — " : "") + txt);
       });
       lines.push("");
     });
@@ -956,7 +1104,7 @@
       items.forEach(function (d) {
         var txt = reportProse(d);
         if (sec.when && d.when) txt = withReachedDate(txt, d.when);
-        parts.push('<p class="item">' + esc(txt) + "</p>");
+        parts.push('<p class="item">' + (d.title ? '<span class="ititle">' + esc(d.title) + "</span> " : "") + esc(txt) + "</p>");
       });
     });
     parts.push("</body></html>");
@@ -1058,6 +1206,14 @@
       ".cpl-mem .mem-field-check input{width:auto;}",
       ".cpl-mem .mem-form textarea{resize:vertical;line-height:1.45;}",
       ".cpl-mem .mem-form-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}",
+      ".cpl-mem .mem-autogen{margin:0 0 14px;padding:11px 12px;border:1px dashed color-mix(in srgb,var(--accent-link) 45%,var(--border-strong));border-radius:10px;background:color-mix(in srgb,var(--accent-link) 6%,var(--surface-subtle));}",
+      ".cpl-mem .mem-autogen-h{font-family:'Playfair Display',Georgia,serif;font-size:.92rem;font-weight:700;color:var(--accent-link);margin-bottom:7px;}",
+      ".cpl-mem .mem-autogen-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:7px;}",
+      ".cpl-mem .mem-autogen-btn{flex:0 0 auto;}",
+      ".cpl-mem .mem-autogen-status{font-size:.78rem;color:var(--text-muted);}",
+      ".cpl-mem .mem-autogen-status.is-pending{color:var(--accent-link);}",
+      ".cpl-mem .mem-autogen-status.is-ok{color:var(--st-ok);font-weight:600;}",
+      ".cpl-mem .mem-autogen-status.is-err{color:var(--st-warn);font-weight:600;}",
       ".cpl-mem .mem-btn{font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 13px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .mem-btn:hover{background:var(--surface-subtle);}",
       ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
@@ -1136,7 +1292,7 @@
       // view-mode segmented control (masthead) — reuses .mem-seg-btn styling
       ".cpl-mem .mem-viewseg{display:inline-flex;border:1px solid var(--border-strong);border-radius:9px;overflow:hidden;flex:0 0 auto;}",
       // report view — the "Everything We Know" briefing
-      ".cpl-mem .mem-report{margin-top:14px;}",
+      ".cpl-mem .mem-report{margin-top:14px;text-align:left;}",   // the mount (#memory-root) is center-aligned for its loading state; the report is prose → force left
       ".cpl-mem .mr-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;background:var(--surface);border:1px solid var(--border-strong);border-radius:11px;padding:10px 14px;margin-bottom:16px;}",
       ".cpl-mem .mr-ctl{display:inline-flex;align-items:center;gap:7px;}",
       ".cpl-mem .mr-ctl-l{font-size:.76rem;font-weight:600;color:var(--text-muted);}",
@@ -1153,7 +1309,8 @@
       ".cpl-mem .mr-section{margin:0 0 22px;}",
       ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 7px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
       ".cpl-mem .mr-lead{font-style:italic;color:var(--text-muted);font-size:.85rem;line-height:1.45;margin:0 0 11px;}",
-      ".cpl-mem .mr-item{margin:0 0 12px;}",
+      ".cpl-mem .mr-item{margin:0 0 13px;}",
+      ".cpl-mem .mr-ptitle{color:var(--text-strong);font-size:.9rem;font-weight:700;margin:0 0 1px;line-height:1.35;}",
       ".cpl-mem .mr-p{color:var(--text-body);font-size:.92rem;line-height:1.6;margin:0;overflow-wrap:anywhere;}",
       ".cpl-mem .mr-empty{color:var(--text-muted);font-size:.85rem;padding:16px;text-align:center;background:var(--surface-subtle);border:1px dashed var(--border-strong);border-radius:10px;}",
       // responsive
@@ -1187,6 +1344,11 @@
     _state: state,
     _matches: matchesEntry,
     _genSlug: genSlug,
+    _parseDraft: parseDraft,
+    _autogenQuery: autogenQuery,
+    _autogenerate: autogenerate,
+    _applyDraftToForm: applyDraftToForm,
+    _buildEntryForm: buildEntryForm,
     SUPABASE_URL: SUPABASE_URL,
     SUPABASE_ANON: SUPABASE_ANON,
   };

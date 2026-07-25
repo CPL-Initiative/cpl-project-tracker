@@ -45,6 +45,7 @@ create table if not exists public.cpl_memory (
                    'decision','milestone',                    -- timeline (what we set / what we reached)
                    'procedure')),                             -- operational (a ripple checklist: change X → also update Y,Z,W)
 
+  title         text check (char_length(title) <= 120),                          -- short 3-6 word label shown bold above the prose in the Report view; optional (added 2026-07-25)
   summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence (curator + AI surface)
   detail        text check (char_length(detail) <= 4000),                       -- col 2: why it matters + the trigger ("read before X")
   plain         text check (char_length(plain) <= 2000),                         -- reader/briefing text for the 📄 Report view; NULL falls back to summary(+detail). Add an example where the summary is obtuse. (added 2026-07-25)

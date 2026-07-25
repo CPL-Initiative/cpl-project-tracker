@@ -89,6 +89,23 @@ required to have it. This keeps the double-maintenance the ADR warned about *bou
 `plain` is written once, only for entries the report will actually surface, and only
 where the summary would confuse a lay reader.
 
+**Amendment 2 (2026-07-25, Sky10men) — a short `title` + ✨ Autogenerate.** Two
+follow-ons from Sam's review of the prose Report: (a) an optional short **`title`**
+column (a 3-6 word label rendered bold above each item) so the briefing scans as a
+titled list rather than a wall of paragraphs — optional, so an item with no title
+just shows its prose; and (b) an **✨ Autogenerate** affordance on the Add **and**
+Edit forms that researches a typed topic via the shared **cpl-chat RAG edge
+function** (vector search over the KB + exhibits + live metrics — the same backend
+behind the CPL Assistant) and drafts every field (`kind`/`title`/`summary`/`detail`/
+`plain`/`tags`/`org`/`source`) for the curator to review and edit. It only
+*prefills* — nothing is saved until the curator clicks Add/Save, and the draft is
+parsed defensively (it tolerates a prose-wrapped or fenced JSON answer). Putting
+Autogenerate on the Edit pane too — not just Add — is itself recorded as procedure
+`pr7` ("sweep for sibling surfaces when adding a feature").
+
+*Implementation note — never read a form control named `title` via `form.title`:
+it's shadowed by `HTMLFormElement.title`. Use `form.querySelector('[name="title"]')`.*
+
 ### 2. Home = Supabase + an Obsidian-visible markdown mirror (hybrid)
 
 Measured against the standing **[[docs/kb-notes/adr-reference-data-committed-json-vs-supabase]]**
