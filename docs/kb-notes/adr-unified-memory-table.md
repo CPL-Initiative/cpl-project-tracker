@@ -75,6 +75,20 @@ What makes an entry machine-*actionable* is **structure**:
 - `created_at` · `updated_at` · `author` · `verified_at`/`verified_by` (**Sam's
   column 3** — timestamp + user log).
 
+**Amendment (2026-07-25, Sky10men) — the one reader column `plain`.** The stance
+above ("don't paraphrase into an AI column") holds *for the AI/curator surface* —
+`summary`/`detail` stay terse and precise. But the 📄 Report ("Everything We Know")
+view is a **shareable briefing for a non-techie audience** (Sam's ask: "written in
+prose … in terms that a non-techie can understand; for obtuse items add an example").
+A terse fragment like *"statewide 'eligible' flag = `has_ccc`"* is unreadable to that
+audience no matter how it's laid out — so this is a genuine second *reader* need, not
+the AI paraphrase the ADR rejected. One **optional** `plain` text column carries the
+full-sentence, jargon-free version (with an example where the summary is obtuse); the
+Report **prefers `plain`, falling back to `summary`(+`detail`)** so no row is ever
+required to have it. This keeps the double-maintenance the ADR warned about *bounded*:
+`plain` is written once, only for entries the report will actually surface, and only
+where the summary would confuse a lay reader.
+
 ### 2. Home = Supabase + an Obsidian-visible markdown mirror (hybrid)
 
 Measured against the standing **[[docs/kb-notes/adr-reference-data-committed-json-vs-supabase]]**

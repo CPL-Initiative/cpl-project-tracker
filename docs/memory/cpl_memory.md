@@ -28,13 +28,20 @@ artifacts:
 > Fact Sheet, legislation) right beside dev memory. The *kind* is the entry's
 > nature; the `org` + `tags` carry its area + subject (see `oh1`–`oh5`).
 >
-> **Phase 1 is LIVE (2026-07-24).** The `cpl_memory` table + `cpl_memory_log` audit
-> trail are applied to the "Work Plan" Supabase project and seeded with **40 rows**
-> (this file's entries + the `q1` security decision-point). The `#id`s here are the
-> `slug`s — the human handles (`pr4`, `q1`) you cite to answer "which rule led to
-> this action?". This markdown becomes the periodic **export** of the live table;
-> next up are the dashboard 🧠 curate pane (Phase 2) and auto-write into the
-> checkpoint (Phase 3).
+> **The loop is LIVE (Phases 1–3 shipped).** The `cpl_memory` table + `cpl_memory_log`
+> audit trail are applied to the "Work Plan" Supabase project (#890); the dashboard
+> **🧠 Memory** tab renders both a **Curate** pane (#891) and a 📄 **Report**
+> ("Everything We Know") briefing (#893); and each Rule-8 **checkpoint auto-writes**
+> this run's durable learnings (#892, `proposed`-until-corroborated). The `#id`s here
+> are the `slug`s — the human handles (`pr4`, `q1`) you cite to answer "which rule led
+> to this action?". This markdown is the periodic **export** of the live table.
+>
+> **Reader-facing `plain` field (2026-07-25, Sky10men).** The 📄 Report is a shareable,
+> non-techie briefing, so each row also carries an optional **`plain`** column — the
+> full-sentence, jargon-free version (with an example where the summary is obtuse).
+> The Report renders `plain` in prose and falls back to `summary`(+`detail`) when it's
+> null; `summary`/`detail` stay the terse curator + AI surface, unchanged. All 48
+> current rows are populated (receipt `kb/cpl_memory_plain_seed.json`).
 
 ## The 9 kinds (concise + comprehensive)
 

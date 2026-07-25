@@ -55,8 +55,16 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    Revise pattern: PATCH the old row `status='superseded', superseded_by=<new
    slug>` and write the corrected row. Never hard-delete (history matters +
    "which rule led to this action").
-5. **Log every write** to `cpl_memory_log` (actor = your session moniker).
-6. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
+5. **Write `plain` for the 📄 Report (2026-07-25).** The Report ("Everything We
+   Know") is a shareable, non-techie briefing and renders the optional `plain`
+   column in prose, falling back to `summary`(+`detail`) when it's null. So when a
+   row's `summary` is jargon-heavy (a filename, a flag like `has_ccc`, an id
+   scheme), also write `plain`: one full plain-English sentence a layperson can
+   follow, **with a concrete example where the summary is obtuse**. Skip it when the
+   summary already reads as a plain sentence — the fallback covers those. (`plain`
+   is a reader aid only; it never changes the curator/AI meaning in `summary`/`detail`.)
+6. **Log every write** to `cpl_memory_log` (actor = your session moniker).
+7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
    on. It's a retrieval surface (query by scope), not an infinite feed.
 
@@ -65,12 +73,13 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
 Insert new rows (JSON handles escaping; `status` per the gate):
 
 ```sql
-insert into public.cpl_memory (slug, kind, org, summary, detail, tags, source, related, status, author)
-select x.slug, x.kind, coalesce(x.org,'cpl'), x.summary, x.detail,
+insert into public.cpl_memory (slug, kind, org, summary, detail, plain, tags, source, related, status, author)
+select x.slug, x.kind, coalesce(x.org,'cpl'), x.summary, x.detail, x.plain,
        x.tags, x.source, coalesce(x.related,'{}'::text[]), x.status, '<MonikerSNN>'
 from jsonb_to_recordset($json$[ {"slug":"…","kind":"…","summary":"…","detail":"…",
+       "plain":"… (a non-techie sentence; omit/null if the summary is already plain)",
        "tags":["…"],"source":"…","status":"proposed"} ]$json$::jsonb)
-  as x(slug text, kind text, org text, summary text, detail text,
+  as x(slug text, kind text, org text, summary text, detail text, plain text,
        tags text[], source text, related text[], status text);
 ```
 
