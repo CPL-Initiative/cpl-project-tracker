@@ -5,8 +5,11 @@
 //   - Filtering: verified-only by DEFAULT (matching the pane's verified-default trust
 //     rule); an "Include proposed" checkbox reveals proposed; superseded is NEVER shown;
 //     an org scope <select> narrows by COBI area.
-//   - Sections render only when they hold ≥1 entry (empty sections omitted); a procedure's
-//     affects[] renders as a muted "touches:" line.
+//   - Sections render only when they hold ≥1 entry (empty sections omitted); each rendered
+//     section carries a plain-language lead-in, and every entry renders as prose (the
+//     reader-facing `plain` field when present, else a summary+detail fallback). There is
+//     deliberately NO filename "touches:" dump and NO "source:" citation in the report —
+//     that jargon lives in the Curate view only.
 //   - Deterministic: seeds via the _setData seam + switches via _setViewMode — no real
 //     Date dependency, no fetch timing in the assertions.
 //
@@ -39,6 +42,7 @@ const FIXTURE = [
     when: "2026-07-20", tags: ["cip"], source: "PR #851", affects: [], related: [], updated_at: "2026-07-20T10:00:00Z" },
   { id: "pr1", slug: "pr1", kind: "procedure", status: "verified", org: "cpl",
     summary: "Re-mints follow the mandatory playbook", detail: "Dry-run first, alias map committed, fresh-read at write-time.",
+    plain: "When we renumber course IDs, every related file has to be renumbered in the same pass — miss one and the links silently break.",
     tags: ["remint"], source: "docs/coursecontrolnumber_remint.md", affects: ["kb_curation", "promotions.json", "articulations"], related: [] },
   { id: "f1", slug: "f1", kind: "fact", status: "proposed", org: "cpl",
     summary: "TOP codes are notoriously unreliable", detail: "About 52% of consolidated M-IDs are TOP-mixed.",
@@ -131,19 +135,34 @@ function boot(dom, { withPhrase } = {}) {
   // ── (3) the superseded row is NEVER shown ──
   check("(3) the superseded row never appears", !/must never surface/.test(reportText()));
 
-  // ── (4) the milestone renders under 'What we've shipped' with its `when` ──
-  check("(4) 'What we've shipped' holds the milestone + shipped date", (function () {
+  // ── (4) the milestone renders under 'What we've shipped' with its date in PROSE ──
+  check("(4) 'What we've shipped' holds the milestone + a prose 'Reached <date>'", (function () {
     const s = sectionByHeading("What we've shipped");
-    return s && /CIP Coder \(Beta\) shipped/.test(s.textContent) && /2026-07-20/.test(s.textContent);
+    return s && /CIP Coder \(Beta\) shipped/.test(s.textContent) && /Reached July 20, 2026/.test(s.textContent);
+  })());
+  check("(4b) the milestone uses prose, not the old 'shipped <iso>' format", (function () {
+    const s = sectionByHeading("What we've shipped");
+    return s && !/shipped 2026-07-20/.test(s.textContent);
   })());
 
-  // ── (5) the procedure's affects[] render as a muted "touches:" line ──
-  check("(5) the procedure shows a 'touches:' line from affects[]", (function () {
-    const s = sectionByHeading("How we do things (change-impact)");
-    if (!s) return false;
-    const touch = s.querySelector(".mr-touch");
-    return touch && /touches:\s*kb_curation · promotions\.json · articulations/.test(touch.textContent);
+  // ── (5) the procedure renders as PROSE (its `plain` text), with NO 'touches:' filename dump ──
+  check("(5) the procedure shows its plain prose under 'How we do things'", (function () {
+    const s = sectionByHeading("How we do things");
+    return s && /renumber course IDs/.test(s.textContent) && !!s.querySelector(".mr-p");
   })());
+  check("(5b) NO monospace 'touches:' filename line appears in the report", (function () {
+    return !report.querySelector(".mr-touch") && !/touches:/.test(reportText());
+  })());
+
+  // ── (5c) every rendered section carries a plain-language lead-in ──
+  check("(5c) each rendered section has a .mr-lead intro", (function () {
+    const secs = report.querySelectorAll(".mr-section");
+    if (!secs.length) return false;
+    return Array.prototype.every.call(secs, (s) => !!s.querySelector(".mr-lead"));
+  })());
+
+  // ── (5d) no jargon 'source:' citation in the reader report ──
+  check("(5d) no 'source:' citation appears in the reader report", !/source:/.test(reportText()));
 
   // ── (6) empty sections are omitted (no question/pitfall/risk/opportunity entries) ──
   check("(6) empty sections are omitted (no 'Open questions' / 'Traps to avoid' / 'What we're watching')", (function () {

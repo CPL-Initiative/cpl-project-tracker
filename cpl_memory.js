@@ -35,7 +35,7 @@
   var REST = SUPABASE_URL + "/rest/v1/";
   // Self-contained print stylesheet for the Print / PDF window (serif headings, CCC navy accent).
   // Kept on one line so the source carries no bare "\nbody{" (the .cpl-mem-scope invariant test).
-  var REPORT_PRINT_CSS = "*{box-sizing:border-box;}body{margin:0;padding:36px 44px;font-family:Georgia,'Times New Roman',serif;color:#1c1c1a;line-height:1.5;max-width:7.6in;}h1{font-family:Georgia,serif;font-size:25pt;color:#002F6D;margin:0 0 4px;}p.sub{color:#5c5c55;font-size:10pt;margin:0 0 22px;font-family:Arial,Helvetica,sans-serif;}h2{font-family:Georgia,serif;font-size:14pt;color:#002F6D;border-bottom:2px solid #002F6D;padding-bottom:3px;margin:24px 0 11px;}.item{margin:0 0 13px;padding-left:12px;border-left:2px solid #d8d5cc;}.sum{font-size:11.5pt;font-weight:bold;color:#1c1c1a;}.det{font-size:10pt;color:#3a3a36;margin-top:2px;}.meta{font-size:9pt;color:#6b6b63;margin-top:2px;font-family:Arial,Helvetica,sans-serif;}@media print{a{color:inherit;text-decoration:none;}}";
+  var REPORT_PRINT_CSS = "*{box-sizing:border-box;}body{margin:0;padding:36px 44px;font-family:Georgia,'Times New Roman',serif;color:#1c1c1a;line-height:1.5;max-width:7.6in;}h1{font-family:Georgia,serif;font-size:25pt;color:#002F6D;margin:0 0 4px;}p.sub{color:#5c5c55;font-size:10pt;margin:0 0 22px;font-family:Arial,Helvetica,sans-serif;}h2{font-family:Georgia,serif;font-size:14pt;color:#002F6D;border-bottom:2px solid #002F6D;padding-bottom:3px;margin:24px 0 6px;}p.lead{font-style:italic;color:#5c5c55;font-size:10.5pt;margin:0 0 11px;font-family:Arial,Helvetica,sans-serif;}p.item{font-size:11pt;color:#26261f;line-height:1.55;margin:0 0 11px;}@media print{a{color:inherit;text-decoration:none;}}";
 
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
 
@@ -79,17 +79,51 @@
     filtersEl, bodyEl, reportEl, viewSegEl;
 
   // ── report sections (in order) — plain-language briefing headings ──
-  // Each maps to one or more kinds. `touches` shows affects[]; `when` shows d.when.
+  // Each maps to one or more kinds and carries a `lead`: a one-sentence, non-techie
+  // intro rendered under the heading so a lay reader knows what the section is.
+  // `when` appends the milestone date in prose. (There is deliberately NO filename
+  // "touches:" dump or "source:" citation in the report — that jargon lives in the
+  // Curate view; the reader sees prose only.)
   var REPORT_SECTIONS = [
-    { h: "What we've decided", kinds: ["decision"] },
-    { h: "Open questions", kinds: ["question"] },
-    { h: "Traps to avoid", kinds: ["pitfall"] },
-    { h: "What we know", kinds: ["fact"] },
-    { h: "How we do things (change-impact)", kinds: ["procedure"], touches: true },
-    { h: "What we're watching", kinds: ["risk"] },
-    { h: "What we've shipped", kinds: ["milestone"], when: true },
-    { h: "What's next", kinds: ["opportunity", "wishlist"] },
+    { h: "What we've decided", kinds: ["decision"], lead: "Calls we've made and are sticking with." },
+    { h: "Open questions", kinds: ["question"], lead: "Decisions we still owe an answer on." },
+    { h: "Traps to avoid", kinds: ["pitfall"], lead: "Mistakes we've hit before and don't want to repeat." },
+    { h: "What we know", kinds: ["fact"], lead: "Facts that shape how the work gets done." },
+    { h: "How we do things", kinds: ["procedure"], lead: "When one thing changes, here's what has to change with it — miss a step and something quietly breaks." },
+    { h: "What we're watching", kinds: ["risk"], lead: "Risks we're keeping an eye on." },
+    { h: "What we've shipped", kinds: ["milestone"], when: true, lead: "Milestones we've reached." },
+    { h: "What's next", kinds: ["opportunity", "wishlist"], lead: "Openings and wish-list items we'd like to get to." },
   ];
+
+  // Month names for a deterministic ISO(YYYY-MM-DD) → "Month D, YYYY" (no unguarded
+  // new Date(), which the tests forbid). Falls back to the raw string when unparsable.
+  var REPORT_MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+  function prettyDate(iso) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(iso == null ? "" : iso));
+    if (!m) return String(iso == null ? "" : iso);
+    var mon = REPORT_MONTHS[parseInt(m[2], 10) - 1];
+    return mon ? (mon + " " + parseInt(m[3], 10) + ", " + m[1]) : m[1];
+  }
+  // The reader sentence for an entry: prefer the plain-English `plain` field (the
+  // reader/briefing version, with an example where the summary is obtuse); otherwise
+  // compose the terse `summary` (+ `detail`) into a sentence as a graceful fallback.
+  function reportProse(d) {
+    var p = (d.plain || "").trim();
+    if (p) return p;
+    var s = (d.summary || d.id || "").trim();
+    var det = (d.detail || "").trim();
+    if (!det) return s;
+    if (s && !/[.!?…]$/.test(s)) s += ".";
+    return (s ? s + " " : "") + det;
+  }
+  // Append a milestone's date in prose, keeping the sentence terminated.
+  function withReachedDate(txt, when) {
+    if (!when) return txt;
+    txt = String(txt || "").replace(/\s+$/, "");
+    if (txt && !/[.!?…]$/.test(txt)) txt += ".";
+    return (txt ? txt + " " : "") + "(Reached " + prettyDate(when) + ".)";
+  }
 
   // ── tiny DOM helpers ──
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
@@ -112,6 +146,7 @@
     r.related = Array.isArray(d.related) ? d.related : [];
     r.summary = d.summary || "";
     r.detail = d.detail || "";
+    r.plain = d.plain || "";                             // reader/briefing text (Report view)
     r.source = d.source || "";
     r.status = d.status || "proposed";
     r.when = d.event_date || d.when || null;
@@ -554,6 +589,9 @@
     if (!isEdit) { var slugIn = inputEl("slug", ""); slugIn.placeholder = "(auto — e.g. f7; or type one)"; form.appendChild(field("Slug (id)", slugIn)); }
     form.appendChild(field("Summary", inputEl("summary", existing ? existing.summary : "")));
     form.appendChild(field("Detail", textareaEl("detail", existing ? existing.detail : "")));
+    var plainF = field("Plain-English (Report view)", textareaEl("plain", existing ? (existing.plain || "") : ""));
+    plainF.appendChild(el("span", "mem-field-hint", "Optional. How this reads in the 📄 Report briefing — a full sentence a non-techie can follow; add an example if the summary is jargon-heavy. Left blank, the report falls back to the summary."));
+    form.appendChild(plainF);
     form.appendChild(field("Tags (comma-separated)", inputEl("tags", existing ? (existing.tags || []).join(", ") : "")));
     form.appendChild(field("Org", orgSel));
     var shareWrap = el("label", "mem-field mem-field-check");
@@ -573,6 +611,7 @@
         slug: form.slug ? form.slug.value.trim() : "",
         summary: form.summary.value.trim(),
         detail: form.detail.value.trim(),
+        plain: form.plain ? form.plain.value.trim() : "",
         tags: splitTags(form.tags.value),
         org: form.org.value,
         share_across_orgs: form.share.checked,
@@ -645,7 +684,7 @@
     }).catch(function () { writeErrMsg = "couldn’t save — please try again"; renderAuth(); return false; });
   }
   function snapshot(d) {
-    return { slug: d.id, kind: d.kind, summary: d.summary, detail: d.detail, tags: d.tags, org: d.org, status: d.status, source: d.source };
+    return { slug: d.id, kind: d.kind, summary: d.summary, detail: d.detail, plain: d.plain, tags: d.tags, org: d.org, status: d.status, source: d.source };
   }
 
   function cycleStatus(d) {
@@ -662,7 +701,7 @@
   function addEntry(v) {
     var slug = v.slug || genSlug(v.kind);
     var body = {
-      slug: slug, kind: v.kind, summary: v.summary, detail: v.detail,
+      slug: slug, kind: v.kind, summary: v.summary, detail: v.detail, plain: v.plain || null,
       tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs,
       source: v.source || null, status: "proposed",   // session-authored adds land proposed (corroboration gate)
     };
@@ -672,7 +711,7 @@
     }).then(function (ok) { if (ok) refresh(); return ok; });
   }
   function editEntry(d, v) {
-    var body = { summary: v.summary, detail: v.detail, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
+    var body = { summary: v.summary, detail: v.detail, plain: v.plain || null, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
     return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
       logEvent(d._uuid, "update", snapshot(d), body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
@@ -680,7 +719,7 @@
   function reviseEntry(d) {
     var newSlug = genSlug(d.kind);
     var clone = {
-      slug: newSlug, kind: d.kind, summary: d.summary, detail: d.detail, tags: d.tags,
+      slug: newSlug, kind: d.kind, summary: d.summary, detail: d.detail, plain: d.plain || null, tags: d.tags,
       org: d.org || null, share_across_orgs: !!d.share_across_orgs, source: d.source || null,
       status: "verified",   // a curator revise lands verified (a session revise would land proposed)
     };
@@ -833,13 +872,12 @@
       var h = el("h2", "mr-h", sec.h);
       h.style.setProperty("--sc", "var(" + (KMAP[sec.kinds[0]] || KMAP.fact).tok + ")");
       section.appendChild(h);
+      if (sec.lead) section.appendChild(el("p", "mr-lead", sec.lead));
       items.forEach(function (d) {
         var it = el("div", "mr-item");
-        it.appendChild(el("div", "mr-sum", d.summary || d.id));   // plain-language main line
-        if (d.detail) it.appendChild(el("div", "mr-det", d.detail));
-        if (sec.touches && d.affects && d.affects.length) it.appendChild(el("div", "mr-touch", "touches: " + d.affects.join(" · ")));
-        if (sec.when && d.when) it.appendChild(el("div", "mr-when", "shipped " + d.when));
-        if (d.source) it.appendChild(el("div", "mr-src", "source: " + d.source));
+        var txt = reportProse(d);                    // prose: prefer plain, else summary+detail
+        if (sec.when && d.when) txt = withReachedDate(txt, d.when);
+        it.appendChild(el("p", "mr-p", txt));
         section.appendChild(it);
       });
       box.appendChild(section);
@@ -861,12 +899,11 @@
       var items = rows.filter(function (d) { return sec.kinds.indexOf(d.kind) >= 0; });
       if (!items.length) return;
       lines.push("## " + sec.h);
+      if (sec.lead) lines.push("_" + sec.lead + "_", "");
       items.forEach(function (d) {
-        lines.push("- " + (d.summary || d.id));
-        if (d.detail) lines.push("  " + d.detail);
-        if (sec.touches && d.affects && d.affects.length) lines.push("  touches: " + d.affects.join(" · "));
-        if (sec.when && d.when) lines.push("  shipped " + d.when);
-        if (d.source) lines.push("  source: " + d.source);
+        var txt = reportProse(d);
+        if (sec.when && d.when) txt = withReachedDate(txt, d.when);
+        lines.push("- " + txt);
       });
       lines.push("");
     });
@@ -915,13 +952,11 @@
       var items = rows.filter(function (d) { return sec.kinds.indexOf(d.kind) >= 0; });
       if (!items.length) return;
       parts.push("<h2>" + esc(sec.h) + "</h2>");
+      if (sec.lead) parts.push('<p class="lead">' + esc(sec.lead) + "</p>");
       items.forEach(function (d) {
-        parts.push('<div class="item"><div class="sum">' + esc(d.summary || d.id) + "</div>");
-        if (d.detail) parts.push('<div class="det">' + esc(d.detail) + "</div>");
-        if (sec.touches && d.affects && d.affects.length) parts.push('<div class="meta">touches: ' + esc(d.affects.join(" · ")) + "</div>");
-        if (sec.when && d.when) parts.push('<div class="meta">shipped ' + esc(d.when) + "</div>");
-        if (d.source) parts.push('<div class="meta">source: ' + esc(d.source) + "</div>");
-        parts.push("</div>");
+        var txt = reportProse(d);
+        if (sec.when && d.when) txt = withReachedDate(txt, d.when);
+        parts.push('<p class="item">' + esc(txt) + "</p>");
       });
     });
     parts.push("</body></html>");
@@ -1018,6 +1053,7 @@
       ".cpl-mem .mem-field{display:flex;flex-direction:column;gap:3px;margin-bottom:9px;}",
       ".cpl-mem .mem-field-check{flex-direction:row;align-items:center;gap:7px;}",
       ".cpl-mem .mem-field-l{font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--text-faint);font-weight:700;}",
+      ".cpl-mem .mem-field-hint{font-size:.72rem;line-height:1.4;color:var(--text-faint);font-style:italic;margin-top:2px;}",
       ".cpl-mem .mem-form input,.cpl-mem .mem-form select,.cpl-mem .mem-form textarea{font:inherit;font-size:.85rem;padding:6px 9px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-subtle);color:var(--text-body);width:100%;max-width:100%;}",
       ".cpl-mem .mem-field-check input{width:auto;}",
       ".cpl-mem .mem-form textarea{resize:vertical;line-height:1.45;}",
@@ -1115,13 +1151,10 @@
       ".cpl-mem .mr-sub{font-size:.82rem;color:var(--text-muted);margin:0;}",
       ".cpl-mem .mr-body{max-width:65ch;}",
       ".cpl-mem .mr-section{margin:0 0 22px;}",
-      ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 10px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
-      ".cpl-mem .mr-item{margin:0 0 13px;padding-left:12px;border-left:2px solid var(--border);}",
-      ".cpl-mem .mr-sum{color:var(--text-strong);font-size:.95rem;font-weight:600;line-height:1.4;overflow-wrap:anywhere;}",
-      ".cpl-mem .mr-det{color:var(--text-muted);font-size:.83rem;line-height:1.45;margin-top:3px;overflow-wrap:anywhere;}",
-      ".cpl-mem .mr-touch{color:var(--text-faint);font-size:.74rem;margin-top:4px;font-family:ui-monospace,Menlo,monospace;overflow-wrap:anywhere;}",
-      ".cpl-mem .mr-when{color:var(--text-faint);font-size:.74rem;margin-top:3px;}",
-      ".cpl-mem .mr-src{color:var(--text-faint);font-size:.72rem;margin-top:3px;overflow-wrap:anywhere;}",
+      ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 7px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
+      ".cpl-mem .mr-lead{font-style:italic;color:var(--text-muted);font-size:.85rem;line-height:1.45;margin:0 0 11px;}",
+      ".cpl-mem .mr-item{margin:0 0 12px;}",
+      ".cpl-mem .mr-p{color:var(--text-body);font-size:.92rem;line-height:1.6;margin:0;overflow-wrap:anywhere;}",
       ".cpl-mem .mr-empty{color:var(--text-muted);font-size:.85rem;padding:16px;text-align:center;background:var(--surface-subtle);border:1px dashed var(--border-strong);border-radius:10px;}",
       // responsive
       "@media (max-width:1080px){.cpl-mem .mem-body{grid-template-columns:minmax(0,1fr) 296px;gap:12px;}}",

@@ -45,8 +45,9 @@ create table if not exists public.cpl_memory (
                    'decision','milestone',                    -- timeline (what we set / what we reached)
                    'procedure')),                             -- operational (a ripple checklist: change X → also update Y,Z,W)
 
-  summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence
+  summary       text not null check (char_length(summary) between 1 and 400),   -- col 1: plain-language, one sentence (curator + AI surface)
   detail        text check (char_length(detail) <= 4000),                       -- col 2: why it matters + the trigger ("read before X")
+  plain         text check (char_length(plain) <= 2000),                         -- reader/briefing text for the 📄 Report view; NULL falls back to summary(+detail). Add an example where the summary is obtuse. (added 2026-07-25)
 
   org             text not null default 'cpl'             -- the owning COBI AREA (primary home) — scalability past CPL; extend the check as COBI adds areas
                     check (org in ('cpl','ci','cip','gr','shared')),
