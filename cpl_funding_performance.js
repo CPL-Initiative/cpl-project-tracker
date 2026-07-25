@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-24",
+ "as_of": "2026-07-25",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42886,
-  "p2": 4779,
-  "p3": 16807
+  "pe": 42957,
+  "p2": 4782,
+  "p3": 16811
  },
  "colleges": {
   "Alameda": {
@@ -29,7 +29,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Antelope Valley": {
-   "pe": 276,
+   "pe": 278,
    "p2": 0,
    "p3": 0
   },
@@ -59,7 +59,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Canyons": {
-   "pe": 496,
+   "pe": 497,
    "p2": 0,
    "p3": 0
   },
@@ -125,7 +125,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Cuesta": {
-   "pe": 100,
+   "pe": 98,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -248,7 +248,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "LA Valley": {
-   "pe": 358,
+   "pe": 359,
    "p2": 0,
    "p3": 189
   },
@@ -312,7 +312,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Moorpark": {
-   "pe": 180,
+   "pe": 200,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true
@@ -348,7 +348,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Oxnard": {
-   "pe": 150,
+   "pe": 151,
    "p2": 0,
    "p3": 0
   },
@@ -383,7 +383,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 691
   },
   "Sacramento City": {
-   "pe": 43,
+   "pe": 44,
    "p2": 0,
    "p3": 0
   },
@@ -413,7 +413,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 1502
   },
   "San Francisco": {
-   "pe": 1131,
+   "pe": 1177,
    "p2": 8,
    "p3": 15
   },
@@ -510,9 +510,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 730,
-   "p2": 485,
-   "p3": 549
+   "pe": 731,
+   "p2": 488,
+   "p3": 553
   },
   "West Valley": {
    "pe": 55,

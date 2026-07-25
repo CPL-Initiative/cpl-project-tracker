@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-24T14:17:45.394321+00:00",
+  "scraped_at": "2026-07-25T08:26:38.470863+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26159,
+    "jst": 26230,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1121,
+      "jst": 1166,
       "star": true
     },
     "Norco College": {
@@ -67,12 +67,12 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 156,
+      "jst": 157,
       "star": true
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 812,
+      "jst": 813,
       "star": true
     },
     "Riverside City College": {
@@ -137,7 +137,7 @@
     },
     "Los Angeles Valley College": {
       "vets": 247,
-      "jst": 358,
+      "jst": 359,
       "star": true
     },
     "Santa Rosa Junior College": {
@@ -167,7 +167,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 498,
+      "jst": 499,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -180,14 +180,14 @@
       "jst": 215,
       "star": true
     },
+    "Antelope Valley College": {
+      "vets": 281,
+      "jst": 280,
+      "star": true
+    },
     "Clovis Community College": {
       "vets": 117,
       "jst": 190,
-      "star": true
-    },
-    "Antelope Valley College": {
-      "vets": 281,
-      "jst": 278,
       "star": true
     },
     "Shasta College": {
@@ -257,7 +257,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 151,
+      "jst": 152,
       "star": true
     },
     "Golden West College": {
@@ -417,7 +417,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 168,
+      "jst": 166,
       "star": true
     },
     "Los Medanos College": {
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 179,
+      "jst": 199,
       "star": true
     },
     "Coalinga College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 75,
+      "jst": 76,
       "star": false
     },
     "Gavilan College": {
