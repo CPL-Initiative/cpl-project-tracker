@@ -35,6 +35,7 @@ function makeDom() {
 // (with affects[]), a PROPOSED fact (hidden by default), and a SUPERSEDED row (never shown).
 const FIXTURE = [
   { id: "d1", slug: "d1", kind: "decision", status: "verified", org: "cpl",
+    title: "Edit the generator",
     summary: "Change the generator, not the HTML", detail: "Hand-edits to the HTML are overwritten on the next daily run.",
     tags: ["dashboard"], source: "CLAUDE.md Rule 1", affects: [], related: [], updated_at: "2026-07-24T10:00:00Z" },
   { id: "m1", slug: "m1", kind: "milestone", status: "verified", org: "cip",
@@ -163,6 +164,22 @@ function boot(dom, { withPhrase } = {}) {
 
   // ── (5d) no jargon 'source:' citation in the reader report ──
   check("(5d) no 'source:' citation appears in the reader report", !/source:/.test(reportText()));
+
+  // ── (5e) an item with a `title` renders a bold title line above the prose ──
+  check("(5e) the decision renders its short title as .mr-ptitle", (function () {
+    const s = sectionByHeading("What we've decided");
+    if (!s) return false;
+    const t = s.querySelector(".mr-ptitle");
+    return t && /Edit the generator/.test(t.textContent) && !!s.querySelector(".mr-p");
+  })());
+  check("(5e) an item WITHOUT a title renders no .mr-ptitle (title is as-needed)", (function () {
+    // the procedure fixture (pr1) has no title → its item has a prose para but no title line
+    const s = sectionByHeading("How we do things");
+    return s && !s.querySelector(".mr-ptitle") && !!s.querySelector(".mr-p");
+  })());
+
+  // ── (5f) the report body is left-justified (the mount is center-aligned for its loading state) ──
+  check("(5f) .mem-report CSS forces text-align:left", /\.mem-report\{[^}]*text-align:left/.test(src));
 
   // ── (6) empty sections are omitted (no question/pitfall/risk/opportunity entries) ──
   check("(6) empty sections are omitted (no 'Open questions' / 'Traps to avoid' / 'What we're watching')", (function () {

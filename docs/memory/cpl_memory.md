@@ -36,12 +36,15 @@ artifacts:
 > are the `slug`s — the human handles (`pr4`, `q1`) you cite to answer "which rule led
 > to this action?". This markdown is the periodic **export** of the live table.
 >
-> **Reader-facing `plain` field (2026-07-25, Sky10men).** The 📄 Report is a shareable,
-> non-techie briefing, so each row also carries an optional **`plain`** column — the
-> full-sentence, jargon-free version (with an example where the summary is obtuse).
-> The Report renders `plain` in prose and falls back to `summary`(+`detail`) when it's
-> null; `summary`/`detail` stay the terse curator + AI surface, unchanged. All 48
-> current rows are populated (receipt `kb/cpl_memory_plain_seed.json`).
+> **Reader-facing `title` + `plain` fields (2026-07-25, Sky10men).** The 📄 Report is a
+> shareable, non-techie briefing, so each row carries two optional reader columns: a
+> short **`title`** (a 3-6 word label, bold above the item) and **`plain`** prose (the
+> full-sentence, jargon-free version, with an example where the summary is obtuse). The
+> Report renders `title` + `plain` and falls back to `summary`(+`detail`) when `plain`
+> is null; `summary`/`detail` stay the terse curator + AI surface, unchanged. All rows
+> are populated (receipts `kb/cpl_memory_title_seed.json`, `kb/cpl_memory_plain_seed.json`).
+> An **✨ Autogenerate** button on the Add/Edit form drafts every field from a typed
+> topic via the cpl-chat RAG function (prefill-only; nothing saved until the curator clicks Add/Save).
 
 ## The 9 kinds (concise + comprehensive)
 
