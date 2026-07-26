@@ -111,15 +111,22 @@ create policy "team writes cpl_memory"
               and status in ('proposed','verified')
               and visibility <> 'public');
 
--- UPDATE — reviewers only (the verification/curation loop). 'public' stays out of RLS reach.
+-- UPDATE — team OR reviewer (the verification/curation loop). The pane promises
+-- "unlock to view + curate" and INSERT already trusts team_pass_ok(), so UPDATE must
+-- match: a reviewer-only UPDATE made every team-phrase status/edit/supersede PATCH
+-- update ZERO rows → PostgREST 200 [] → the client's checkWrite reads it as a 403 →
+-- the phrase is cleared → the curator is locked out (fixed 2026-07-26). 'public' still
+-- stays out of RLS reach via the with-check.
 drop policy if exists "reviewer curates cpl_memory" on public.cpl_memory;
-create policy "reviewer curates cpl_memory"
+drop policy if exists "team curates cpl_memory" on public.cpl_memory;
+create policy "team curates cpl_memory"
   on public.cpl_memory for update
   to anon, authenticated
-  using (is_allowed_reviewer())
-  with check (is_allowed_reviewer() and visibility <> 'public');
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check ((is_allowed_reviewer() or team_pass_ok()) and visibility <> 'public');
 
--- DELETE — reviewers only (prefer status='superseded' over hard delete for history).
+-- DELETE — reviewers only (prefer status='superseded' over hard delete for history;
+-- the curate pane supersedes via UPDATE and never hard-deletes, so this stays tight).
 drop policy if exists "reviewer deletes cpl_memory" on public.cpl_memory;
 create policy "reviewer deletes cpl_memory"
   on public.cpl_memory for delete
