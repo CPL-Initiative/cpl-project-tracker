@@ -378,6 +378,10 @@ with openpyxl read-only — never `cat` it.
 
 ## License
 
-This project tracks public statewide CPL data and is maintained by the CPL
-Initiative team at RCCD on behalf of the California Community Colleges
-system. See repository settings for license / use terms.
+© 2026 California Community Colleges Chancellor's Office (CCCCO). **All rights
+reserved** — no copying, redistribution, or derivative use without prior written
+permission (see [`LICENSE`](LICENSE)). This project tracks public statewide CPL
+data and is maintained by the CPL Initiative team at RCCD on behalf of the
+California Community Colleges system. The underlying public data and any
+separately-licensed component (e.g. the CPL Knowledge Base, CC BY 4.0) keep their
+own terms. Permission requests: MAP@rccd.edu.
