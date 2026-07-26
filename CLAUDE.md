@@ -569,6 +569,23 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### Sky10Men side-lane — 🧠 Memory tab polish + 🩺 MAP Data Quality register + license fix (2026-07-26, #894–#898 MERGED)
+
+Picked up SkyKnow's live memory loop. **#894/#895:** the 📄 Report → non-techie **prose** +
+short item **titles** + reader **`plain`** column + **✨ Autogenerate** on Add & Edit (cpl-chat
+RAG draft, prefill-only; form fields via `querySelector`, never `form.title`). **#896:** the Memory
+**curate lockout fix** — `cpl_memory` UPDATE RLS was reviewer-only, so team edits hit the PostgREST
+zero-row trap → `checkWrite` read a 403 → phrase cleared → lockout; widened to reviewer-OR-team
+(now the standing **`p8`** / KB-note rule for every team-curated table). **#897:** the new **🩺 MAP
+Data Quality register** (Supabase `map_data_quality` + team-gated tab, Reference & Curation group,
+seeded with Sam's 4 defects incl. the **USMC JST skill-level CR duplication**, `f8`/`o3`). **#898:**
+**license** corrected (vestigial MIT © 2019 Zachary Rice → **CCCCO all-rights-reserved**). Queued
+(`w3`/`w4`): auto-generate DQ findings from `View_StudentAggregatedValues` + a follow-up nudge.
+Advice given (not built): Priority 1 → **Applied** credits (`TotalAppliedCreditsForCR` already in
+the feed); repo-privacy levers (private ≠ private-data if Pages public; license/privatize/split).
+Story: `docs/cobi_memory_tab_lessons.md` · `docs/cobi_memory_tab_handoff.md`. Side-lane — left
+`cpl_todos.json` + the numbered handoff to the CCR mainline.
+
 ### SkyFriend side-lane — COBI Implementation Funding: uniform fonts · metric-keyed actuals · allocation-balance box (2026-07-23)
 
 Three curator asks on the Implementation Funding tab, one JS-only PR in `cpl_funding.js`
