@@ -270,6 +270,19 @@
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
+    // ── collapsible sections (Sam, 2026-07-27): each top-level section folds ──
+    ".cplfund-sec { border: 1px solid var(--border); border-radius: 8px; margin: 0 0 14px; background: var(--surface-opaque); }",
+    ".cplfund-sec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 9px; padding: 0 16px; }",
+    ".cplfund-sec > summary::-webkit-details-marker { display: none; }",
+    ".cplfund-sec > summary::marker { content: ''; }",
+    ".cplfund-sec > summary h3 { margin: 13px 0; }",
+    ".cplfund-sec > summary:hover h3 { color: var(--navy-secondary); }",
+    ".cplfund-sec > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; border-radius: 8px; }",
+    ".cplfund-sec-chev { color: var(--text-muted); transition: transform .15s; font-size: .8em; flex: 0 0 auto; }",
+    ".cplfund-sec:not([open]) > summary .cplfund-sec-chev { transform: rotate(-90deg); }",
+    ".cplfund-sec-body { padding: 2px 16px 14px; }",
+    // Per-priority cell: the per-student funding rate on the target line.
+    ".cf-prio .cf-rate { font-weight: 400; color: var(--navy-secondary); }",
     "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }"
   ].join("\n");
 
@@ -580,17 +593,46 @@
     var bp = (base().year_priorities[slot] || base().year_priorities["2"])[idx];
     return firstDefined(sc && sc[field], sh && sh[field], bp[field]);
   }
+  // A priority's projection target is now driven by a PER-STUDENT dollar rate
+  // (Sam, 2026-07-27): the curator types "$/student" and the reach (# students
+  // and % of headcount) is DERIVED = priority funding ÷ per-student. per_student
+  // is the stored source of truth; target_rate is derived from it so every
+  // downstream consumer (earnFraction, prioCell, sysHeads, CSV, rural) keeps
+  // reading p.target_rate unchanged. Legacy rows with only a target_rate (no
+  // per_student) fall back to it and expose the implied per-student for display.
+  //   per_student = (share × perYear) ÷ (totalHeads × target_rate)
+  //   target_rate = clamp((share × perYear) ÷ (per_student × totalHeads), 0..1)
+  function prioPerStudent(slot, idx, share, target_rate) {
+    var funding = share * perYear();
+    var heads = totalHeads();
+    var stored = prioField(slot, idx, "per_student");
+    if (stored != null && Number(stored) > 0) return Number(stored);
+    var reach = heads * target_rate;              // derived student target
+    return reach > 0 ? funding / reach : 0;
+  }
+  function prioTargetRate(slot, idx, share) {
+    var stored = prioField(slot, idx, "per_student");
+    if (stored != null && Number(stored) > 0) {
+      var heads = totalHeads();
+      var denom = Number(stored) * heads;
+      return denom > 0 ? Math.min(1, (share * perYear()) / denom) : 0;
+    }
+    return prioField(slot, idx, "target_rate");   // legacy: rate is the source
+  }
   function priorities(slot) {
     if (!base().year_priorities[slot]) slot = "2";   // defensive: >2-year windows reuse Year-2 config
     return base().year_priorities[slot].map(function (p, i) {
+      var share = prioField(slot, i, "share");
+      var target_rate = prioTargetRate(slot, i, share);
       return {
         key: p.key, label: p.label,
         title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
         metric: prioField(slot, i, "metric"),
         strategies: prioStrategies(slot, i),
-        share: prioField(slot, i, "share"),
-        target_rate: prioField(slot, i, "target_rate")
+        share: share,
+        target_rate: target_rate,
+        per_student: prioPerStudent(slot, i, share, target_rate)
       };
     });
   }
@@ -1352,7 +1394,7 @@
     var pp = earnAgg().perPrio[i];
     if (!pp) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
-    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
+    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending || pp.statuses.advancing);
     return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
       fmtMoney(pp.cap) + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
       (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
@@ -1594,10 +1636,10 @@
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
-        '<p class="nums">Projection target ' + edNum("target", fmtRatePct(p.target_rate), { small: true, slot: slot, idx: i, label: p.label + " projection target percent" }) +
-        "% of headcount &rarr; " + fmtInt(sysHeads) + " students " +
-        '<span class="dk">(performance target only &mdash; the students this priority aims to reach; it does ' +
-        "<strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
+        '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
+        " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(p.target_rate) + " of headcount) " +
+        '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
+        "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
         '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
@@ -1619,18 +1661,27 @@
   // docs/kb-notes/reference-funding-metrics-measurability.md.
   function has(m, s) { return m.indexOf(s) !== -1; }
   var MEASURES = [
-    // Origin (CPL Student Portal / CPL Landing Page) — provenance isn't stamped yet.
+    // Origin (CPL Student Portal / CPL Landing Page). The daily builder now counts
+    // portal-origin transcribed students (Potential Student = Yes) into `pp`, so
+    // this is measurable for DISPLAY. It stays an ADVANCE in earned mode
+    // (advance: true) — the Portal is just launching and today's pp is a tiny,
+    // mostly-test cohort, so we don't yet zero out colleges that have posted
+    // nothing here. Flip advance off once the Portal is live and the count real.
     { test: function (m) { return has(m, "portal") || has(m, "landing page"); },
-      gap: "origin (CPL Portal / CPL Landing Page) isn&#39;t captured anywhere yet &mdash; provenance " +
-           "should be stamped at the source when the Student Portal ships (production in ~2 weeks); " +
-           "retrofitting later loses history",
-      gap_short: "needs origin tracking &mdash; bake into the Portal launch" },
+      src: "pp", advance: true,
+      basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page) &mdash; a small, mostly-test cohort until the Portal launches" },
     // Eligible CPL tied to a STATEWIDE credit recommendation — needs exhibit linkage.
     { test: function (m) { return has(m, "credit recommendation") || (has(m, "eligible") && has(m, "statewide")); },
       gap: "the Custom Report carries eligible units per student but NO exhibit linkage &mdash; " +
            "can&#39;t yet tell which eligibility traces to a STATEWIDE credit recommendation " +
            "(needs an exhibit/collaborative-type field on the eligibility rows)",
       gap_short: "needs exhibit linkage in the Custom Report" },
+    // Any eligible CPL identified in MAP (Sam's reworded P1, 2026-07-27) — the
+    // daily builder already carries this as `pe` (Eligible Credits > 0). NB: must
+    // sit AFTER the statewide-eligible gap above, so "eligible + statewide credit
+    // recommendation" still resolves to that gap (that one needs exhibit linkage).
+    { test: function (m) { return has(m, "eligible"); },
+      src: "pe", basis: "distinct students with any eligible CPL identified in MAP" },
     // MAP ↔ MIS student match (Year-2 P3) — the CO match-back build.
     { test: function (m) { return has(m, "matched in map and mis") || (has(m, "match") && /\bmis\b/.test(m)); },
       gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
@@ -1676,6 +1727,15 @@
     if (!meas.src) return { f: 1, status: "gap", meas: meas };            // data-gap metric → advance for everyone
     var pf = perf();
     if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
+    if (meas.advance) {
+      // Measurable for DISPLAY (the count shows), but still paid at full cap as
+      // an advance during phase-in (e.g. the Portal metric before launch) — so a
+      // college with nothing posted yet is NOT zeroed. Surfaces the actual count.
+      var arec = c ? perfFor(c.college) : pf.statewide;
+      var atarget = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
+      var aval = arec && arec[meas.src] != null ? arec[meas.src] : null;
+      return { f: 1, status: "advancing", actual: aval, target: atarget, meas: meas };
+    }
     var rec = c ? perfFor(c.college) : pf.statewide;
     var target = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
@@ -1748,7 +1808,8 @@
     var pct = targetHeads ? act / targetHeads : null;
     return '<p class="nums">Actual <strong>' + fmtInt(act) + "</strong> students per MAP (as of " +
       esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
-      (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
+      (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") +
+      (meas.advance ? ' <span class="dk">&mdash; advancing at full cap during Portal phase-in</span>' : "") + "</p>";
   }
 
   function formulaHtml() {
@@ -1785,11 +1846,13 @@
       : "";
     var basisSentence = earnedMode()
       ? " This allocation is the <strong>cap</strong>. On the Earned basis a college is paid " +
-        "<code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so the projection % becomes the " +
-        "achievement <em>target</em> the MAP actuals are measured against (a college at half its target draws half " +
-        "its cap; it never needs the full target to be funded), and unearned dollars roll forward. Only priorities MAP " +
-        "can measure today flex on actuals; the rest advance at full cap until their feed lands."
-      : " Projection percents are performance <em>targets</em>; they don&#39;t move dollars.";
+        "<code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
+        "(its funding &divide; the per-student rate) becomes the achievement <em>target</em> the MAP actuals are measured " +
+        "against (a college at half its target draws half its cap; it never needs the full target to be funded), and " +
+        "unearned dollars roll forward. Only priorities MAP can measure today flex on actuals; the rest advance at full " +
+        "cap until their feed lands."
+      : " Each priority&#39;s per-student rate sets its student <em>target</em> (funding &divide; rate); the target is a " +
+        "performance goal &mdash; it doesn&#39;t move dollars, which are set by the allocation share.";
     return '<div class="cplfund-formula">' +
       "Each college&#39;s potential allocation of one annual tranche is " +
       "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> " +
@@ -1832,34 +1895,43 @@
     return priorities(state.viewSlot).map(function (p, i) {
       return { key: "prio" + i, label: "P" + (i + 1), cls: "",
         title: p.label + " — " + p.title + ": " + stripTags(p.description) +
-          " · METRIC: " + stripTags(p.metric) + ". Cell: top = target (projected students · cap), bottom = actual (posted in MAP · earned, % of target)." };
+          " · METRIC: " + stripTags(p.metric) + ". Funding rate " + fmtRate(p.per_student) + "/student. " +
+          "Cell: top = target (projected students · $/student rate), bottom = actual (posted in MAP · earned, % of target)." };
     });
   }
-  // One priority cell: TARGET (students · cap) over ACTUAL (students · earned · %).
-  // c = shaped college row (or a base college); isSystem uses statewide totals.
+  // One priority cell: TARGET (students · $/student rate) over ACTUAL (students ·
+  // earned · %). The per-student rate (Sam, 2026-07-27) is the priority's policy
+  // rate — funding ÷ target students — shown on the row so a college reads its
+  // funding as "$X per student" rather than a bare percent. c = shaped college
+  // row (or a base college); isSystem uses statewide totals.
   function prioCellHtml(c, p, isSystem) {
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = heads * p.target_rate;
     var cap = isSystem ? (netCollege() * p.share / nYears()) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
     var earned = cap * fr.f;
+    var perStu = p.per_student || (target > 0 ? cap / target : 0);
+    var rateStr = perStu ? "$" + Math.round(perStu) + "/stu" : "—";
     var actNum, pctStr = "";
     if (fr.status === "earned") {
       actNum = fmtCountK(fr.actual);
       pctStr = target > 0 ? ' <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "";
+    } else if (fr.status === "advancing") {
+      actNum = fr.actual != null ? fmtCountK(fr.actual) : '<span class="cf-gap">&hellip;</span>';
     } else if (fr.status === "suppressed") { actNum = '<span class="cf-gap">&lt;5</span>'; }
     else if (fr.status === "gap") { actNum = '<span class="cf-gap">gap</span>'; }
     else if (fr.status === "pending") { actNum = '<span class="cf-gap">&hellip;</span>'; }
     else { actNum = "0"; }   // none — feed loaded, nothing posted
     var actExplain = fr.status === "earned" ? fmtInt(fr.actual) + " students posted (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
+      : fr.status === "advancing" ? (fr.actual != null ? fmtInt(fr.actual) + " portal-origin students (advancing at full cap during Portal phase-in)" : "portal feed pending (advancing at full cap)")
       : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
       : "nothing posted in MAP yet";
-    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students → " + fmtMoney(cap) + " cap. " +
-      "Actual: " + actExplain + " → " + fmtMoney(earned) + " earned.";
+    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students · " + fmtRate(perStu) +
+      "/student policy rate · " + fmtMoney(cap) + " cap. Actual: " + actExplain + " → " + fmtMoney(earned) + " earned.";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) + '</span> <span class="cf-u">' + fmtMoneyK(cap) + "</span></span>" +
+      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) + '</span> <span class="cf-rate">' + rateStr + "</span></span>" +
       '<span class="cf-a">' + actNum + ' <span class="cf-u">' + fmtMoneyK(earned) + pctStr + "</span></span>" +
       "</td>";
   }
@@ -1875,7 +1947,9 @@
       var heads = isSystem ? totalHeads() : (c.headcount || 0);
       out.push(Math.round(heads * p.target_rate));
       var fr = earnFraction(isSystem ? null : c, p);
-      out.push(fr.status === "earned" ? fr.actual : fr.status === "suppressed" ? "<5" :
+      out.push(fr.status === "earned" ? fr.actual :
+        fr.status === "advancing" ? (fr.actual != null ? fr.actual : "") :
+        fr.status === "suppressed" ? "<5" :
         (fr.status === "gap" || fr.status === "pending") ? "" : 0);
     });
     return out;
@@ -1916,6 +1990,38 @@
     basis: "potential"  // "potential" (cap) | "earned" (paid on actual achievement)
   };
   function earnedMode() { return state.basis === "earned"; }
+
+  // ── collapsible sections (Sam, 2026-07-27) ────────────────────────────────
+  // Each top-level tab section is a native <details> whose <summary> IS its h3.
+  // Open/closed is per-browser persisted (default open), so a curator can fold
+  // away the parts they aren't working on and it stays folded across the many
+  // re-renders that an edit triggers.
+  var SEC_STORE = "cplfund_sections_v1";
+  var SEC_STATE = (function () {
+    try { var r = JSON.parse(localStorage.getItem(SEC_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
+    return {};
+  })();
+  function sectionOpen(id) { return SEC_STATE[id] !== false; }   // default open
+  function saveSectionState(id, open) {
+    SEC_STATE[id] = !!open;
+    try { localStorage.setItem(SEC_STORE, JSON.stringify(SEC_STATE)); } catch (e) {}
+  }
+  function sectionShell(id, titleHtml, bodyHtml) {
+    return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
+      '<summary class="cplfund-sec-sum"><span class="cplfund-sec-chev" aria-hidden="true">▾</span>' +
+      "<h3>" + titleHtml + "</h3></summary>" +
+      '<div class="cplfund-sec-body">' + bodyHtml + "</div></details>";
+  }
+  // Inline section: explicit title + body.
+  function section(id, title, body) { return sectionShell(id, title, body); }
+  // A block whose FIRST element is its own <h3>…</h3> (the rural / feeder
+  // sub-generators): lift that h3 into the summary. Empty input → nothing.
+  function collapseH3(id, html) {
+    if (!html) return "";
+    var m = /^\s*<h3\b[^>]*>([\s\S]*?)<\/h3>/.exec(html);
+    if (!m) return sectionShell(id, id, html);
+    return sectionShell(id, m[1], html.slice(m[0].length));
+  }
 
   // ── column show/hide (Sam, 2026-07-24) ────────────────────────────────────
   // Per-view, persisted; the county context (Working adults) is hidden by
@@ -2230,7 +2336,8 @@
       }
       return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
         math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
-        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students (" + fmtPctTrim(p.target_rate) + ")" +
+        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students at " + fmtRate(p.per_student) +
+        "/student (" + fmtPctTrim(p.target_rate) + " of headcount)" +
         "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + earnSeg + "</div>";
     }).join("");
     var county = c.working_adults == null
@@ -2993,20 +3100,10 @@
       wire();
       return;
     }
-    mount.innerHTML = '<div class="cplfund">' +
-      controlStripHtml() +
-      subviewTabsHtml() +
-      '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
-      authbarHtml() +
-      "<h3>Funding window</h3>" + yearControlsHtml() +
-      basisToggleHtml() +
-      "<h3>Funding pools</h3>" + poolCardsHtml() +
-      awardStatsHtml() +
-      "<h3>Baseline eligibility</h3>" + eligibilityHtml() +
-      "<h3>The three funding priorities</h3>" + yearFilterHtml() + prioritiesHtml() +
-      timingSectionHtml() +
-      "<h3>How an allocation is computed</h3>" + formulaHtml() +
-      "<h3>Potential allocation by college</h3>" +
+    // Each top-level section is wrapped in a collapsible <details> (Sam,
+    // 2026-07-27). The college section body (toolbar + table) is built first so
+    // its IDs (#cplFundSearch/#cplFundCount/#cplFundTable) live inside the fold.
+    var collegeBody =
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
@@ -3014,9 +3111,20 @@
       colMenuHtml() +
       '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as CSV — opens directly in Excel (the full data incl. any hidden columns + the County/working-adults context)">⬇ Excel</button>' +
       '<button type="button" class="cplfund-optbtn" id="cplFundPdf" title="Open a print-ready view of the whole tab — use your browser&#39;s Print → Save as PDF">⬇ PDF</button></div>' +
-      '<div id="cplFundTable">' + tableHtml() + "</div>" +
-      feederSectionHtml() +
-      ruralSectionHtml() +
+      '<div id="cplFundTable">' + tableHtml() + "</div>";
+    mount.innerHTML = '<div class="cplfund">' +
+      controlStripHtml() +
+      subviewTabsHtml() +
+      '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
+      authbarHtml() +
+      section("window", "Funding window", yearControlsHtml() + basisToggleHtml()) +
+      section("pools", "Funding pools", poolCardsHtml() + awardStatsHtml()) +
+      section("eligibility", "Baseline eligibility", eligibilityHtml()) +
+      section("priorities", "The three funding priorities", yearFilterHtml() + prioritiesHtml() + timingSectionHtml()) +
+      section("formula", "How an allocation is computed", formulaHtml()) +
+      section("college", "Potential allocation by college", collegeBody) +
+      collapseH3("feeder", feederSectionHtml()) +
+      collapseH3("rural", ruralSectionHtml()) +
       '<div class="cplfund-foot">' +
       "<div>Dollar cells round to whole dollars; click a row to expand its detail (the per-priority math for the " +
       "year selected above). " +
@@ -3149,6 +3257,14 @@
       setPrio(slot, Number(idx), edit === "share" ? "share" : "target_rate", Math.max(0, pn) / 100);
       return;
     }
+    if (edit === "perstudent") {
+      // Curator types a per-student dollar rate; store it as the source of truth.
+      // priorities() derives target_rate (# students / % of headcount) from it.
+      var ps = parseNum(raw);
+      if (ps == null || ps <= 0) { render(); return; }
+      setPrio(slot, Number(idx), "per_student", Math.max(0, ps));
+      return;
+    }
     if (edit === "metric" || edit === "description") {
       setPrio(slot, Number(idx), edit, raw);
       return;
@@ -3197,6 +3313,11 @@
   }
 
   function wire() {
+    // Persist each collapsible section's open/closed state so it survives the
+    // re-render an edit triggers (native <details> resets otherwise).
+    document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
+      dt.addEventListener("toggle", function () { saveSectionState(dt.getAttribute("data-sec"), dt.open); });
+    });
     var input = document.getElementById("cplFundSearch");
     if (input) {
       input.addEventListener("input", function () { state.q = input.value || ""; refreshTable(); });

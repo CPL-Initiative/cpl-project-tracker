@@ -13,12 +13,18 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
   P2 (access)   = distinct students with Transcribed Credits >= 6
   P3 (capacity) = distinct students with Transcribed Credits > 0  (MAP half;
                   the "and MIS" cross-check has no feed yet)
-  PE (context, added 2026-07-06 per Sam's funding-tab ask) = distinct students
-                  with Eligible Credits > 0 — credit identified in MAP, whether
-                  or not transcribed yet. NOT a priority metric; feeds the
-                  funding table's "Eligible†" column next to "Transcribed†".
-  P1 (completion) is a deliberate data gap — see
-  docs/kb-notes/reference-p1-completion-data-gap.md. Not emitted.
+  PE (added 2026-07-06) = distinct students with Eligible Credits > 0 — credit
+                  identified in MAP, whether or not transcribed yet. Serves the
+                  reworded P1 "eligible for at least one course offered through
+                  CPL" metric (wired in cpl_funding.js MEASURES, 2026-07-27).
+  PP (added 2026-07-27 per Sam) = distinct PORTAL-ORIGIN students (Potential
+                  Student = Yes) with any transcribed CPL — the P3 "transcribed
+                  Credit from either CPL Student Portal or CPL Landing Page"
+                  metric. Small & mostly test until the Portal launches; the
+                  dashboard shows it but advances P3 at full cap during phase-in.
+
+  The field -> priority mapping lives in cpl_funding.js (MEASURES), not here;
+  this script only emits the raw pe/p2/p3/pp counts.
 
 Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
   - aggregate per-college counts only; the student grain never leaves the
@@ -131,10 +137,10 @@ def main():
         return
 
     resolve = _name_resolver()
-    metrics = ("pe", "p2", "p3")
+    metrics = ("pe", "p2", "p3", "pp")
     seen = {m: set() for m in metrics}          # per-(college,sid) dedupe
     state_seen = {m: set() for m in metrics}    # statewide distinct (cross-college dedupe by sid)
-    counts = {}                                 # funding-name -> {pe,p2,p3}
+    counts = {}                                 # funding-name -> {pe,p2,p3,pp}
     unmatched = {}
     state = {m: 0 for m in metrics}
     rowno = 0
@@ -145,8 +151,13 @@ def main():
             continue
         if i_test is not None and (row[i_test] or "").strip().lower() == "yes":
             continue
-        if i_pot is not None and (row[i_pot] or "").strip().lower() == "yes":
-            continue
+        # pe/p2/p3 count DOCUMENTED students (Potential excluded, as before); the
+        # new `pp` counts PORTAL-ORIGIN students (Potential Student = Yes) with
+        # transcribed CPL — the "from the CPL Student Portal / Landing Page"
+        # metric (added 2026-07-27 per Sam; a tiny, mostly-test cohort until the
+        # Portal launches). We no longer skip Potential rows outright — we route
+        # them to pp instead.
+        is_potential = i_pot is not None and (row[i_pot] or "").strip().lower() == "yes"
         try:
             tcr = float((row[i_tcr] or "0").strip() or 0)
         except ValueError:
@@ -162,7 +173,10 @@ def main():
         bucket = counts if fname else unmatched
         key = fname or college
         rec = bucket.setdefault(key, {m: 0 for m in metrics})
-        for metric, hit in (("pe", ecr > 0), ("p3", tcr > 0), ("p2", tcr >= P2_MIN_UNITS)):
+        for metric, hit in (("pe", ecr > 0 and not is_potential),
+                            ("p3", tcr > 0 and not is_potential),
+                            ("p2", tcr >= P2_MIN_UNITS and not is_potential),
+                            ("pp", tcr > 0 and is_potential)):
             if not hit:
                 continue
             k = (key, sid) if sid else (key, f"row{rowno}")
@@ -191,9 +205,11 @@ def main():
     payload = {
         "as_of": (ds["generated_at"] or "").split("T")[0] or date.today().isoformat(),
         "basis": ("MAP " + VIEW + " — distinct students per college; "
-                  "Test/Potential students and test colleges excluded; "
+                  "Test students and test colleges excluded; "
                   "P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, "
-                  "PE = any eligible CPL units identified (context, not a priority metric) (per MAP)"),
+                  "PE = any eligible CPL units identified, "
+                  "PP = portal-origin (Potential Student = Yes) with any transcribed CPL "
+                  "(the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)"),
         "suppress_below": SUPPRESS_BELOW,
         "statewide": state,
         "colleges": suppress(counts),
@@ -211,7 +227,8 @@ def main():
     sup = sum(1 for r in payload["colleges"].values() for m in ("p2", "p3") if r.get(m) is None)
     print(f"wrote {os.path.normpath(out)}: {len(payload['colleges'])} colleges "
           f"({sup} suppressed cells), {len(payload['unmatched'])} unmatched, "
-          f"statewide p2={state['p2']:,} p3={state['p3']:,}, as_of {payload['as_of']}")
+          f"statewide pe={state['pe']:,} p2={state['p2']:,} p3={state['p3']:,} "
+          f"pp={state['pp']:,}, as_of {payload['as_of']}")
 
 
 if __name__ == "__main__":

@@ -556,11 +556,11 @@ function pieSlices(el) {
   check("formula warns when the year's shares no longer sum to 100%",
     (doc.querySelector(".cplfund-formula .cplfund-warn-text") || { textContent: "" }).textContent.indexOf("130") !== -1);
 
-  // Projection target moves students, not dollars.
+  // Per-student rate sets the student target, moves NO dollars (Sam, 2026-07-27).
   commit(window, doc.querySelector('input[data-edit="share"][data-slot="1"][data-idx="0"]'), "30");
   const totalBefore = doc.querySelector("#cplFundTable tbody tr td.tot").textContent;
-  commit(window, doc.querySelector('input[data-edit="target"][data-slot="1"][data-idx="0"]'), "10");
-  check("target edit moves NO dollars (first-row total unchanged)",
+  commit(window, doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]'), "75");
+  check("per-student edit moves NO dollars (first-row total unchanged)",
     doc.querySelector("#cplFundTable tbody tr td.tot").textContent === totalBefore);
 
   // Scenario status + reset.
@@ -699,8 +699,11 @@ function pieSlices(el) {
 }
 
 // C9 — metric-measurability actuals: Year-1 P1 (any transcribed) IS measurable
-// from the daily MAP feed; the five other metrics carry honest data-gap labels
-// until their feeds exist (exhibit linkage / origin tracking / MIS match-back).
+// from the daily MAP feed; the statewide-eligible metric carries an exhibit-
+// linkage data-gap label; the Portal/Landing metric (P3) is now wired to the
+// portal-origin `pp` count (Sam, 2026-07-27) — measurable for display, but
+// advancing at full cap until the Portal is live, so without the feed it reads
+// as pending, not a hard data gap.
 {
   // Without the perf artifact.
   const { window } = freshDom();
@@ -710,12 +713,15 @@ function pieSlices(el) {
   check("Y1-P2 card carries the exhibit-linkage data-gap label",
     doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("data gap") !== -1 &&
     doc.querySelectorAll(".cplfund-prio .p")[1].textContent.indexOf("STATEWIDE credit recommendation") !== -1);
-  check("Y1-P3 card carries the origin-tracking data-gap label",
+  check("Y1-P3 (Portal/Landing) is no longer a hard data gap — it's the wired portal metric",
+    doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("data gap") === -1 &&
     doc.querySelectorAll(".cplfund-prio .p")[2].textContent.indexOf("Portal") !== -1);
-  // Per-priority table columns: the data-gap priority cells read "gap".
+  // Per-priority table columns: the exhibit-linkage P2 cell reads "gap"; the
+  // wired-but-feedless P3 cell reads the pending ellipsis (…), not "gap".
   const gapCells = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio");
-  check("data-gap priority cells (P2/P3) read 'gap' without the artifact",
-    gapCells[1].textContent.indexOf("gap") !== -1 && gapCells[2].textContent.indexOf("gap") !== -1);
+  check("P2 (exhibit-linkage) cell reads 'gap'; P3 (portal, feed pending) reads '…' not 'gap'",
+    gapCells[1].textContent.indexOf("gap") !== -1 &&
+    gapCells[2].textContent.indexOf("…") !== -1 && gapCells[2].textContent.indexOf("gap") === -1);
 }
 {
   // With a synthetic perf artifact.
@@ -778,8 +784,10 @@ function pieSlices(el) {
     cards[0].textContent.indexOf("16,807") === -1);
   check("reordered slot-1 (any transcribed) now carries the measurable actual (16,807 of target)",
     cards[1].textContent.indexOf("16,807") !== -1 && cards[1].textContent.indexOf("of target") !== -1);
-  check("reordered slot-2 (Portal/Landing) still carries the origin data gap",
-    cards[2].textContent.indexOf("data gap") !== -1 && cards[2].textContent.indexOf("Portal") !== -1);
+  check("reordered slot-2 (Portal/Landing) carries the wired portal metric, not the eligibility gap",
+    cards[2].textContent.indexOf("data gap") === -1 &&
+    cards[2].textContent.indexOf("STATEWIDE credit recommendation") === -1 &&
+    cards[2].textContent.indexOf("Portal") !== -1);
 }
 
 // C9c — Projection % row is clarified as a target that does NOT move/cap dollars.
@@ -1687,6 +1695,87 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("G: the pie has one numbered slice per tracked requirement, all green when met",
     pieSlices(laney2) === 2 && greenSlices(laney2) === 2 &&
     Array.from(pie.querySelectorAll("text")).map(function (t) { return t.textContent; }).join("") === "12");
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part H — per-student funding rate (Sam, 2026-07-27): the curator types a
+// $/student rate; the # students + % of headcount are DERIVED. Plus collapsible
+// sections and the reworded P1 (eligible→pe) / P3 (portal→pp) metric wiring.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  // H1 — the priority card takes a per-student $ input, not a % input.
+  check("H1: priority card renders a per-student ($/student) input",
+    !!doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]'));
+  check("H1: no legacy 'target' (% of headcount) input is rendered",
+    !doc.querySelector('input[data-edit="target"]'));
+  check("H1: the priority line reads 'per student' + shows the derived % of headcount",
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf("per student") !== -1 &&
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf("of headcount") !== -1);
+  check("H1: the default (legacy target_rate) shows a positive implied $/student",
+    Number(doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]').value) > 0);
+
+  // H2 — per_student is the source of truth; the student target is INVERSE to it,
+  // and it moves no dollars (the allocation is share-based).
+  T._setShared({ yearPriorities: { "1": { "0": { per_student: 100 } } } });
+  T.render();
+  check("H2: the per-student input round-trips the stored $/student",
+    Math.abs(Number(doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]').value) - 100) < 0.01);
+  const a100 = T._alloc(D.colleges[0].college);
+  T._setShared({ yearPriorities: { "1": { "0": { per_student: 50 } } } });
+  T.render();
+  const a50 = T._alloc(D.colleges[0].college);
+  check("H2: halving $/student ~doubles the student target (inverse), unless clamped at 100%",
+    Math.abs(a50.p1_heads - 2 * a100.p1_heads) < 1 || a50.p1_heads >= D.colleges[0].headcount - 1);
+  check("H2: changing the per-student rate moves NO dollars (allocation is share-based)",
+    Math.abs(a50.total - a100.total) < 1);
+
+  // H3 — the per-student rate shows on each college row's P-cell.
+  const rateEl = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio .cf-rate");
+  check("H3: each P-cell surfaces the per-student rate (/stu)",
+    !!rateEl && rateEl.textContent.indexOf("/stu") !== -1);
+}
+{
+  // H4 — collapsible sections: native <details>, default open, persisted.
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const secs = doc.querySelectorAll("#cplFundingMount details.cplfund-sec");
+  check("H4: top-level sections render as collapsible <details> (>=6)", secs.length >= 6);
+  check("H4: sections default to open, each with an <h3> summary",
+    Array.from(secs).every(function (s) { return s.open && !!s.querySelector("summary h3"); }));
+  check("H4: the college table lives inside a section and still renders rows",
+    !!doc.querySelector("details.cplfund-sec #cplFundTable tbody tr.cplfund-row"));
+  const win = doc.querySelector('details.cplfund-sec[data-sec="window"]');
+  win.open = false;
+  win.dispatchEvent(new window.Event("toggle"));
+  T.render();
+  check("H4: a collapsed section stays collapsed across a re-render (persisted)",
+    !doc.querySelector('details.cplfund-sec[data-sec="window"]').open);
+}
+{
+  // H5 — reworded metrics: P1 'eligible' → the eligible (pe) count; P3 'portal'
+  // → the portal-origin (pp) count, shown but advancing at full cap.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
+    statewide: { pe: 42962, p2: 5000, p3: 16811, pp: 8 },
+    colleges: { "Laney": { pe: 44, p2: 0, p3: 0, pp: 0 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students eligible for at least one course offered through CPL" },
+    "2": { metric: "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page" }
+  } } });
+  T.render();
+  const cards = doc.querySelectorAll(".cplfund-prio .p");
+  check("H5: the reworded P1 'eligible' metric is wired to the eligible (pe) count",
+    cards[0].textContent.indexOf("42,962") !== -1 && cards[0].textContent.indexOf("of target") !== -1);
+  check("H5: the P3 Portal metric shows the portal-origin (pp) count, advancing at full cap",
+    cards[2].textContent.indexOf("portal-origin") !== -1 &&
+    cards[2].textContent.indexOf("advancing at full cap") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
