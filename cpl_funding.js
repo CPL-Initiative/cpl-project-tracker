@@ -931,14 +931,29 @@
       render();
     });
   }
-  // Score over only the SHOWN data-backed built-ins (hiding one drops it here too).
+  // Per-college Veteran Star flag (>=75% of enrolled veterans' JSTs uploaded in
+  // MAP), computed daily into cpl_funding_performance.js (Sam, 2026-07-27). Null
+  // until the feed carries it (then the JST sector is pending, not green).
+  function vetStar() { var pf = perf(); return pf && pf.vet_star ? pf.vet_star : null; }
+  // A free-text requirement whose per-college status we can AUTO-score off the
+  // Veteran Star flag (the "75% of veteran JSTs uploaded" qualifier).
+  function isVetJstReq(txt) {
+    txt = String(txt || "").toLowerCase();
+    return txt.indexOf("jst") !== -1 || txt.indexOf("joint services") !== -1 ||
+      (txt.indexOf("veteran") !== -1 && (txt.indexOf("upload") !== -1 || txt.indexOf("transcript") !== -1));
+  }
   // The SHOWN, per-college-checkable requirements, in order, with met status —
-  // the pie slices. (Extra free-text requirements aren't per-college tracked,
-  // so they're not sliced; the pie shows the data-backed built-ins.)
+  // the pie sectors. Two data-backed built-ins (coordinator + participation) plus
+  // any AUTO-scorable extra requirement (today: the veteran-JST → Veteran Star
+  // qualifier). Other free-text extras aren't per-college tracked, so aren't sliced.
   function eligReqList(college) {
     var list = [];
     if (coordShown()) list.push({ met: !!ELIG.coord[college], label: coordLabel() });
     if (partShown()) list.push({ met: !!ELIG.optin[college], label: partLabel() + " by " + participationDeadline() });
+    var vs = vetStar();
+    extraReqs().forEach(function (txt) {
+      if (isVetJstReq(txt)) list.push({ met: !!(vs && vs[college]), label: txt, auto: "vetstar", pending: !vs });
+    });
     return list;
   }
   function eligParts(college) {
@@ -950,10 +965,21 @@
     if (!ELIG.coordOk) return null;
     return eligParts(college).met;
   }
+  // Colleges that satisfy ALL tracked requirements (the fully-green glyphs) —
+  // the SYSTEM-row Elig count (Sam, 2026-07-27: not the coordinator-only count).
+  function eligAllMetCount() {
+    if (!ELIG.coordOk) return null;
+    var n = 0;
+    base().colleges.forEach(function (c) {
+      var p = eligParts(c.college);
+      if (p.shown > 0 && p.met === p.shown) n++;
+    });
+    return n;
+  }
   // A numbered PIE glyph (Sam, 2026-07-24): one slice per tracked requirement,
   // numbered 1..N, filled green when the college satisfies it (muted otherwise).
-  // Grows toward 4 slices automatically if more per-college-checkable
-  // requirements are wired; today there are 2 (coordinator + participation).
+  // One sector per per-college-checkable requirement (dynamic); today there are
+  // 3: coordinator + participation + the veteran-JST → Veteran Star qualifier.
   function eligGlyph(college) {
     if (!ELIG.coordOk) return '<span class="dk" title="eligibility pending — MAP coordinator data not loaded">—</span>';
     var reqs = eligReqList(college);
@@ -977,7 +1003,7 @@
       parts.push('<text x="' + nx + '" y="' + ny + '" text-anchor="middle" dominant-baseline="central" font-size="7.5" font-weight="700" fill="' +
         (met ? "var(--white)" : "var(--text-muted)") + '">' + (i + 1) + "</text>");
     }
-    return '<svg class="cf-eligpie" viewBox="0 0 24 24" width="22" height="22" role="img" aria-label="' +
+    return '<svg class="cf-eligpie" viewBox="0 0 24 24" width="28" height="28" role="img" aria-label="' +
       eligParts(college).met + " of " + n + ' requirements met">' + parts.join("") + "</svg>";
   }
   function eligTitle(college) {
@@ -986,6 +1012,11 @@
     if (coordShown()) parts.push("CPL Coordinator in MAP: " + (ELIG.coord[college] ? "yes" : "not on file"));
     if (partShown()) parts.push("participation request by " + participationDeadline() + ": " +
       (ELIG.optin[college] ? "opted in" : "not yet"));
+    var vs = vetStar();
+    extraReqs().forEach(function (txt) {
+      if (isVetJstReq(txt)) parts.push("Veteran Star (≥75% veteran JSTs uploaded): " +
+        (!vs ? "pending data" : (vs[college] ? "yes" : "not yet")));
+    });
     return (parts.join(" · ") || "no tracked requirements") +
       " — the participation gate (informational in this draft); funding is earned separately on actual CPL";
   }
@@ -1081,6 +1112,10 @@
     var parts = [];
     if (coordShown()) parts.push(ELIG.coord[college] ? "coordinator: yes" : "coordinator: no");
     if (partShown()) parts.push(ELIG.optin[college] ? "opted in: yes" : "opted in: no");
+    var vs = vetStar();
+    extraReqs().forEach(function (txt) {
+      if (isVetJstReq(txt)) parts.push("veteran star: " + (!vs ? "pending" : (vs[college] ? "yes" : "no")));
+    });
     return parts.join("; ");
   }
   // The CSV carries MORE than the screen: the hidden County + working-adults
@@ -1948,7 +1983,7 @@
       { key: "headcount", label: "Headcount", cls: "" }
     ].concat(prioColDefs(), [
       { key: "elig", label: "Elig", cls: "",
-        title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): the tracked requirements — a CPL Coordinator listed in MAP + a participation request by the deadline — ✓ all met · ◐ some · ○ none. This is the participation gate; funding is then EARNED on actual CPL (see the Earned basis)." }
+        title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (see the Earned basis)." }
     ], yearColDefs(), [
       totalColDef(),
       { key: "working_adults", label: "Working adults*", cls: "" }
@@ -2360,6 +2395,11 @@
       (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>'));
     if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
       (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>'));
+    var vsD = vetStar();
+    extraReqs().forEach(function (txt) {
+      if (isVetJstReq(txt)) eligBits.push("Veteran Star (&ge;75% veteran JSTs) &mdash; " +
+        (!vsD ? '<span class="dk">pending</span>' : vsD[c.college] ? "✓" : '<span class="dk">not yet</span>'));
+    });
     var eligLine = '<div><span class="dk">Baseline eligibility (proposed — the gate to participate):</span> ' +
       (eligBits.join(" &middot; ") || '<span class="dk">no tracked requirements</span>') +
       ' <span class="dk">&mdash; informational in this draft; funding is earned separately on actual CPL.</span>' + eligBtns + "</div>";
@@ -2460,7 +2500,8 @@
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
         priorities(state.viewSlot).map(function (p) { return prioCellHtml(null, p, true); }).join("") +
-        "<td>" + (ELIG.coordOk && coordShown() ? ELIG.coordN + "/" + base().colleges.length : "—") + "</td>" +
+        "<td title=\"colleges satisfying ALL tracked baseline requirements (fully-green glyph)\">" +
+        (ELIG.coordOk ? eligAllMetCount() + "/" + base().colleges.length : "—") + "</td>" +
         sysYearCells +
         totalCellHtml(sys) +
         "<td>" + (base().system.working_adults == null ? "—" : fmtInt(base().system.working_adults)) + "</td></tr>";
@@ -2546,12 +2587,29 @@
     }
     var extras = extraReqs();
     var extraHtml = extras.map(function (txt, i) {
+      // The veteran-JST requirement is AUTO-scored off the Veteran Star flag —
+      // show a live status sub-line (like the two built-ins) instead of leaving
+      // it a plain free-text bullet.
+      var status = "";
+      if (isVetJstReq(txt)) {
+        var vs = vetStar();
+        if (vs) {
+          var starN = base().colleges.reduce(function (s, c) { return s + (vs[c.college] ? 1 : 0); }, 0);
+          var pfv = perf();
+          status = '<div class="cplfund-reqstatus"><strong>' + starN + " of " + total +
+            "</strong> colleges qualify " +
+            '<span class="dk">(auto-scored &mdash; Veteran Star, &ge;75% of enrolled veterans&#39; JSTs uploaded in MAP' +
+            (pfv && pfv.vet_star_as_of ? ", live as of " + esc(String(pfv.vet_star_as_of).slice(0, 10)) : "") + ")</span></div>";
+        } else {
+          status = '<div class="cplfund-reqstatus"><span class="dk">auto-scored from Veteran Star &mdash; status arrives with the next daily data refresh</span></div>';
+        }
+      }
       return '<div class="cplfund-reqitem">' + bullet(
         edText("extra-req", txt, { idx: i, label: "Baseline requirement",
           placeholder: "Describe the requirement…" }),
         '<button type="button" class="cplfund-reqdel" data-reqdel="' + i +
         '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">✕</button>'
-      ) + "</div>";
+      ) + status + "</div>";
     }).join("");
     var partStatus = "deadline " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
@@ -3121,8 +3179,8 @@
             ? " and close out by " + esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". "
         : "The Yr columns are each funding year&#39;s potential allocation &mdash; identical " +
           "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
-      "Elig = a numbered pie of the tracked baseline requirements above (slice 1 = coordinator, 2 = participation …); " +
-      "each slice turns green when the college satisfies it (informational in this draft). " +
+      "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, 2 = participation, 3 = Veteran Star ≥75% JSTs); " +
+      "each sector turns green when the college satisfies it — a fully green glyph = all met (informational in this draft). " +
       "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
