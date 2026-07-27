@@ -260,9 +260,12 @@
     // inline, no drill-in needed.
     ".cplfund-table td.cf-prio { line-height: 1.24; }",
     ".cf-prio .cf-t { color: var(--text-muted); }",
-    ".cf-prio .cf-a { font-weight: 700; color: var(--navy-primary); display: block; margin-top: 1px; }",
-    ".cf-prio .cf-u { font-weight: 400; color: var(--text-faint); }",
-    ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 700; }",
+    // Actual line: the DOLLAR they're earning is the focal point (bold navy);
+    // the student count + % of target recede (Sam, 2026-07-27 — "get the focus
+    // in the right place"). Count sits directly in .cf-a (muted, normal weight).
+    ".cf-prio .cf-a { font-weight: 400; color: var(--text-muted); display: block; margin-top: 1px; }",
+    ".cf-prio .cf-u { font-weight: 700; color: var(--navy-primary); }",
+    ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 400; }",
     ".cf-prio .cf-gap { color: var(--text-faint); font-weight: 400; }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
@@ -1862,13 +1865,21 @@
         "(target % &times; the college&#39;s own MAP headcount), so a floored college is NOT asked to exceed its " +
         "size-appropriate numbers to receive the floor."
       : "";
+    // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
+    // 2026-07-27: the box read as an even-tranche explainer even when front-load
+    // was ON). Each branch tells the whole timing story for its mode.
     var fl = frontloaded();
-    var flSentence = fl
-      ? " <strong>Front-loaded disbursement:</strong> the full window total is available in Year 1 &mdash; sized so " +
-        "smaller colleges can fund the 1&ndash;2 FTE the first-year lift needs &mdash; with unspent funds rolling " +
-        "forward" + (nextFy(selectedYears()[selectedYears().length - 1]) ? " and closing out by " +
-        esc(nextFy(selectedYears()[selectedYears().length - 1])) : "") + ". Timing only; allocations don&#39;t change."
-      : "";
+    var ys = selectedYears();
+    var closeout = nextFy(ys[ys.length - 1]);
+    var cadenceSentence = fl
+      ? "Under <strong>front-loaded</strong> timing the full " + windowLabel() + " window (" +
+        fmtMoney(per * nYears()) + ") is disbursed <strong>up front in Year 1</strong> (" + esc(ys[0]) +
+        ") &mdash; sized so smaller colleges can stand up the 1&ndash;2 FTE the first-year lift needs &mdash; " +
+        "while Years 2+ are carryover only (unspent Year-1 funds roll forward" +
+        (closeout ? ", closing out by " + esc(closeout) : "") + "). Front-loading is timing only: a " +
+        "college&#39;s window total is unchanged."
+      : "That same " + fmtMoney(per) + " tranche disburses again in each of the " + nYears() +
+        " years (" + windowLabel() + "), in <strong>equal annual amounts</strong>.";
     var basisSentence = earnedMode()
       ? " This allocation is the <strong>cap</strong>. On the Earned basis a college is paid " +
         "<code>cap &times; (actual &divide; target)</code>, capped at 100% &mdash; so each priority&#39;s student target " +
@@ -1881,11 +1892,10 @@
     return '<div class="cplfund-formula">' +
       "Each college&#39;s potential allocation of one annual tranche is " +
       "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> " +
-      "per priority. " + shareSentence + " &mdash; the same again in each of the " +
-      nYears() + " years (" + windowLabel() + "). Balance for Year " + state.viewSlot + ": <strong>" +
+      "per priority. " + shareSentence + ". " + cadenceSentence +
+      " Balance for Year " + state.viewSlot + ": <strong>" +
       (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
-      "</strong>." + basisSentence +
-      floorSentence + flSentence + "</div>";
+      "</strong>." + basisSentence + floorSentence + "</div>";
   }
 
   // ── college table state + shaping ─────────────────────────────────────
@@ -2767,21 +2777,32 @@
   }
 
   // ── noncredit feeder section ──────────────────────────────────────────
+  // A feeder's per-year support is released in TWO batches (like the credit
+  // colleges — Timing section); show the per-batch figure under the annual.
+  function feederBatchNote(amount) {
+    return '<div class="dk" style="font-size:.72rem;font-weight:400;margin-top:1px;" ' +
+      'title="Disbursed in two batches per funding year, tracking the cumulative eligible CPL these campuses stand up in MAP (see Timing)">' +
+      "2 batches &middot; " + fmtMoney(amount / 2) + " ea</div>";
+  }
   function feederSectionHtml() {
     var list = feeders();
     var carve = feederCarveout();
     var perYearPool = frontloaded() ? carve : carve / nYears();
     var totalHc = list.reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0) || 1;
     var anyEstimate = list.some(function (f) { return f.estimate; });
+    // Batch cadence (Sam, 2026-07-27): a feeder's support is released in TWO
+    // batches per funding year — the same cadence as the credit colleges (Timing
+    // section) — so each campus row shows its per-batch amount, not just the annual.
     var rows = list.map(function (f, i) {
       var hc = Number(f.headcount) || 0;
+      var supp = (hc / totalHc) * perYearPool;
       return "<tr>" +
         '<td class="t"><strong>' + esc(f.name) + "</strong>" +
         (f.estimate ? ' <span class="cplfund-est" title="editable estimate — no authoritative noncredit MIS pull is wired here">est.</span>' : "") +
         (f.vintage ? ' <span class="dk" style="font-size:.72rem;" title="headcount vintage">' + esc(f.vintage) + "</span>" : "") + "</td>" +
         '<td>' + edNum("feeder-hc", fmtInt(hc), { small: true, idx: i, label: f.name + " headcount" }) + "</td>" +
         "<td>" + fmtPctTrim(hc / totalHc) + "</td>" +
-        "<td>" + fmtMoney((hc / totalHc) * perYearPool) + "</td>" +
+        "<td>" + fmtMoney(supp) + feederBatchNote(supp) + "</td>" +
         '<td class="tot">' + fmtMoney((hc / totalHc) * carve) + "</td></tr>";
     }).join("");
     return '<h3>Noncredit feeder support ' +
@@ -2793,7 +2814,10 @@
       "split above) funds a feeder pool of <strong>" + fmtMoney(perYearPool) +
       (frontloaded() ? " disbursed up front in Year 1 (front-loaded; unspent rolls forward)" : "/yr") +
       "</strong>, split among them by " +
-      "headcount &mdash; recognizing the feeder role without diluting the credit colleges&#39; allocations." +
+      "headcount &mdash; recognizing the feeder role without diluting the credit colleges&#39; allocations. " +
+      "Each feeder&#39;s support is released in <strong>two batches per funding year</strong> &mdash; the same " +
+      "cadence as the credit colleges (see the <em>Timing</em> section) &mdash; tracking the cumulative eligible " +
+      "CPL these campuses stand up in MAP." +
       "<div style='margin-top:8px;'><span class='dk'>Feeder metric:</span> " +
       edText("feeder-metric", feederMetric(), { label: "Feeder metric" }) + "</div></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
@@ -2801,7 +2825,7 @@
       "<th>" + (frontloaded() ? "Support (Yr 1, front-loaded)" : "Support / yr") + "</th><th>Total " + esc(windowLabel()) + "</th></tr></thead>" +
       "<tbody>" + rows + "</tbody>" +
       '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalHc) + "</td><td>100%</td>" +
-      "<td>" + fmtMoney(perYearPool) + "</td>" +
+      "<td>" + fmtMoney(perYearPool) + feederBatchNote(perYearPool) + "</td>" +
       '<td class="tot">' + fmtMoney(carve) + "</td></tr></tfoot></table></div>" +
       (anyEstimate ? '<div class="cplfund-foot"><div>Noncredit headcounts are <strong>editable estimates</strong> ' +
         "&mdash; replace them with each feeder&#39;s MIS noncredit annual headcount to true up the split.</div></div>" : "");
