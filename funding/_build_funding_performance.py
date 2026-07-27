@@ -188,13 +188,20 @@ def main():
                 state_seen[metric].add(sk)
                 state[metric] += 1
 
+    # `pp` (portal-origin) is shown RAW, not <5-suppressed (Sam, 2026-07-27):
+    # the privacy gate for it is the Test Student field (Test = Yes already
+    # excluded above), and the small portal count itself IS the signal to
+    # surface per college. pe/p2/p3 keep the ratified <5 suppression (real
+    # students — adr-funding-priority-metrics-privacy.md).
+    NO_SUPPRESS = {"pp"}
+
     def suppress(bucket):
         outb = {}
         for name, rec in sorted(bucket.items()):
             o = {}
             for metric in metrics:
                 n = rec.get(metric, 0)
-                if 0 < n < SUPPRESS_BELOW:
+                if metric not in NO_SUPPRESS and 0 < n < SUPPRESS_BELOW:
                     o[metric] = None
                     o[metric + "_suppressed"] = True
                 else:
