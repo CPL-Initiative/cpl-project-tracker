@@ -9,7 +9,60 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-23 (SkyFriend), READ THIS FIRST
+## Latest state — 2026-07-27 (SkyMoney), READ THIS FIRST
+
+Three curator asks, one PR (**#901** — `cpl_funding.js` +
+`funding/_build_funding_performance.py` + tests; **0 HTML**, Rule 4 intact):
+
+1. **Collapsible sections.** Every top-level section is a native `<details>` whose
+   `<summary>` is its h3 (8 of them). Two helpers: `section(id, title, body)` for the
+   inline sections and `collapseH3(id, html)` for the sub-generators that emit their own
+   leading h3 (rural/feeder — it lifts that h3 into the summary). Open/closed persists
+   per-browser (`cplfund_sections_v1`, **default open**), re-applied each render; the
+   `toggle` listener added in `wire()` saves it. **Why persist:** an edit re-renders the
+   whole mount, so native `<details>` springs back open otherwise (same lesson as the ⚙
+   Columns menu).
+
+2. **Per-student rate replaces the "% of headcount" input.** Curator types **$/student**;
+   the reach (# students, % of headcount) is DERIVED = `share × perYear ÷ per_student`.
+   **`per_student` is the stored source of truth; `target_rate` is derived from it inside
+   `priorities()` — the ONE seam** — so every consumer (`earnFraction`, `prioCellHtml`,
+   `sysHeads`, CSV, rural) keeps reading `p.target_rate` unchanged — **no consumer re-wiring**
+   for the inversion (some of those functions were edited in the SAME PR for the per-student
+   *display* + the `advancing` feature, but none changed how they consume the rate; only
+   `ruralAttainment`/`collegeAlloc` are literally untouched). Legacy rows (only `target_rate`)
+   fall back and expose the implied rate, so it
+   self-migrates the instant Sam edits one. The edit key is `perstudent` (stores a raw $,
+   not `/100`). Rate also shows inside each P-cell (`cf-rate`, top line `target · $X/stu`).
+   Pattern: KB note `methodology-invert-an-input-derive-at-the-single-seam.md`.
+
+3. **P1/P3 metric wiring (the data-gap ask).** `MEASURES` (the metric-keyed predicate list)
+   gained: a plain-**"eligible"** matcher → `pe` (P1's reworded metric; the eligible count
+   **~43,000** — 43,284 on the 2026-07-27 feed, drifts daily — was ALREADY in the daily feed —
+   gap closed, **no pipeline change**), placed
+   AFTER the statewide-eligible gap so that one still resolves to the exhibit-linkage gap;
+   and the **portal/landing** matcher → new `pp` src + **`advance: true`**. The builder now
+   emits `pp` (Potential Student = Yes with transcribed CPL). `earnFraction` returns status
+   **`advancing`** (f=1) for advance metrics — shows the count but pays full cap during
+   phase-in, so the handful of mostly-test portal records (**pp = 5** post-dispatch, across 3
+   suppressed colleges) don't zero out P3 in Earned mode. **Flip `advance` off once the Portal
+   is live.**
+
+**Two judgment calls (flip either if Sam prefers — both are 1-liners):** (a) the per-cell
+`$/stu` is the **uniform policy rate** Sam sets, not each college's floor-adjusted
+`cap ÷ target` (most colleges land ~10% under the policy rate because the minimum-viable
+floor renormalizes the split); (b) P3 **shows** the pp count but keeps **advancing** (not
+zeroing). Both are in the lessons doc.
+
+Tests **376 → 390** (Part H: per-student derive/inverse, collapsible render + persistence,
+pe/pp wiring; existing P3-as-gap assertions updated). Full suite green (**173 files**);
+real-Chromium render clean (8 sections, 0 console errors, no horizontal scroll, section
+collapse works). **Follow-up (DONE):** the post-merge `daily-dashboard.yml` dispatch
+published `pp` into `cpl_funding_performance.js` — statewide **pp = 5** (2026-07-27), so P3
+now shows the count (advancing) instead of "arrives next refresh". Side-lane — left
+`cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+## Prior state — 2026-07-23 (SkyFriend), READ THIS FIRST
 
 Three more curator asks landed on top of SkyFunder, one JS-only PR in `cpl_funding.js`:
 1. **Uniform fonts** — the whole priority box (desc/nums/metric/strategies) + the Timing

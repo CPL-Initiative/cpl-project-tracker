@@ -598,6 +598,30 @@ guard + `raci` mock fixed (4 activities). Story: `docs/workplan_single_source_ed
 numbered handoff to the CCR mainline.** Deferred: retire dead `projects_editor.js`/projects-grid;
 optionally show the sub-activity description on the Activities-tab cards.
 
+### SkyMoney side-lane — Implementation Funding: collapsible sections · per-student rate · P1/P3 metric wiring (2026-07-27, #901 MERGED)
+
+Three curator asks, one PR (`cpl_funding.js` + the actuals builder + tests; **0 HTML**).
+**(1) Collapsible sections** — every top-level section is a native `<details>` whose
+`<summary>` is its h3 (8); `section()`/`collapseH3()` helpers, open/closed persisted
+(`cplfund_sections_v1`, default open, saved on `toggle`) so it survives the re-render every
+edit triggers. **(2) Per-student rate replaces "% of headcount"** — curator types `$/student`,
+reach (# students / %) is DERIVED = `share × perYear ÷ per_student`; **`per_student` is the
+stored source of truth and `target_rate` is derived from it at the ONE seam (`priorities()`)**,
+so every downstream `target_rate` reader keeps reading it unchanged — no consumer re-wired for
+the inversion (display sites were edited to *show* the rate, not to change the target math; KB
+note `methodology-invert-an-input-derive-at-the-single-seam`); legacy rows fall back +
+self-migrate; rate shows inside each P-cell. Sam's $61.46 confirmed. **(3) Data-gap wiring** —
+P1's reworded "eligible" metric → the eligible count (`pe` ≈ **43,000**, 43,284 on the
+2026-07-27 feed) **already in the feed** (matcher only, no pipeline change); P3's portal metric
+→ new builder `pp` count (Potential Student = Yes + transcribed) with **`advance:true`** → a new
+`earnFraction` status **`advancing`** shows the count but pays full cap so the handful of
+mostly-test records (**pp = 5** post-dispatch) don't zero out P3 in Earned mode (flip off when
+the Portal is live). Tests 376 → **390**; real-Chromium clean. Two judgment calls
+flagged for Sam (uniform vs per-college `$/stu`; P3 advancing vs zeroing) — both 1-liners.
+`pp` published via the post-merge `daily-dashboard.yml` dispatch (pp = 5). Story:
+`docs/cpl_funding_lessons.md` · `docs/cpl_funding_handoff.md`. Side-lane — left
+`cpl_todos.json` + the numbered handoff to the CCR mainline.
+
 ### Sky10Men side-lane — 🧠 Memory tab polish + 🩺 MAP Data Quality register + license fix (2026-07-26, #894–#898 MERGED)
 
 Picked up SkyKnow's live memory loop. **#894/#895:** the 📄 Report → non-techie **prose** +

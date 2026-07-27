@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-06-11
+updated: 2026-07-27
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -953,3 +953,115 @@ Tests 368 → **376** (Part G: 3 columns, target/actual stacked, %, gap, funding
 pie is an SVG with N numbered green-when-met slices). Full suite green. Real-DOM dump verified
 (Laney P1 200/$8.4K of 797/$33.4K = 25.1%; pie 2/2 green "12"). **Deferred, unchanged:** column
 resize + per-column multi-select filters (Sam: "no problem holding … not a big priority now").
+
+---
+
+## 2026-07-27 (SkyMoney) — collapsible sections · per-student rate · P1/P3 metric wiring
+
+Three curator asks on the Implementation Funding tab, one PR (**#901**, `cpl_funding.js`
++ `funding/_build_funding_performance.py` + tests; **0 HTML**). Sam answered the two
+genuine design forks up front via a focused question (per-student shown *inside each
+P-cell*; wire P3's portal count *now*), so the build proceeded without a prototype round.
+
+### 1. Collapsible sections
+
+Every top-level section is a native `<details open>` whose `<summary>` **is** its `h3`
+(8: Funding window · Funding pools · Baseline eligibility · The three funding priorities ·
+How an allocation is computed · Potential allocation by college · Noncredit feeder support ·
+Rural college allowance). Two helpers:
+
+- `section(id, title, body)` — the inline sections (I already have title + body).
+- `collapseH3(id, html)` — for the sub-generators (`ruralSectionHtml`/`feederSectionHtml`)
+  that emit their **own** leading `<h3>…</h3>`; a small regex lifts that h3 into the
+  `<summary>` and wraps the rest as the body. This avoided refactoring those functions'
+  internals (and their early `return ""` empty-state).
+
+**The load-bearing bit is persistence.** An edit re-renders the whole `#cplFundingMount`
+innerHTML, and a fresh native `<details>` defaults back to `open` — so without persistence
+every keystroke-commit would re-open every section the curator had folded. Fix: a
+`cplfund_sections_v1` localStorage map (default open), read by `sectionOpen(id)` when
+building each `<details>` and written by a `toggle` listener attached in `wire()`. Same
+lesson the ⚙ Columns menu already learned (`cplfund_cols_v1`). In-memory `SEC_STATE`
+carries it across renders within a session; localStorage carries it across reloads.
+
+### 2. Per-student funding rate (replaces "% of headcount")
+
+The curator now types **$/student**; the reach (# students + % of headcount) is **derived**
+= `share × perYear ÷ per_student`. The clean part: **`per_student` is the stored source of
+truth, and `target_rate` is derived from it in the ONE place priority objects are built
+(`priorities()`)** — so every downstream `p.target_rate` reader keeps **reading it
+unchanged**; the input flip required **no consumer re-wiring**. (Precision: `ruralAttainment`
+and `collegeAlloc` are literally untouched; `earnFraction`, `prioCellHtml`, `prioritiesHtml`
+(the `sysHeads` reader) and the CSV cells WERE edited in this same PR — but for the
+per-student *display* and the separate `advancing` feature, not to change how they consume
+`target_rate`.) Full write-up:
+KB note `methodology-invert-an-input-derive-at-the-single-seam.md`. Highlights:
+
+- No schema change — `per_student` is a new key in the config JSON; `setPrio(..., "per_student", $)` persists it.
+- Legacy rows (only `target_rate`) fall back and expose the *implied* per-student, so the
+  tab self-migrates the moment Sam edits a rate.
+- The `applyEdit` branch is `perstudent` and stores a **raw dollar** (not `/100` like share/target).
+- Guarded divide-by-zero + clamped `target_rate` to ≤ 1.0 (a very low $/student can't target
+  > 100% of headcount).
+- Checked for recursion first: `priorities()` calls `perYear()`/`totalHeads()`, which read
+  pool config only (no path back into `priorities()`).
+
+**Sam's math confirmed:** P3 $4,164,651 ÷ 67,764 = **$61.46**. The inverse is what the tests
+assert (Part H): halving `$/student` ~doubles the student target, while the **dollar
+allocation is unchanged** (dollars come from the *share*, never the rate) — the clean proof
+the derivation is wired without touching the money.
+
+**Judgment call (a): the per-cell `$/stu` is the UNIFORM policy rate**, the number Sam sets,
+the same down each column — *not* each college's `cap ÷ target`. Why it matters: with the
+minimum-viable floor active, the floor renormalizes the split, so a non-floored college's
+realized `cap ÷ target` sits ~10% below the policy rate and floored colleges sit above it.
+Showing the uniform policy rate reads as one clear policy number matching the priority card;
+showing per-college realized rate would be self-consistent within a row but wouldn't equal
+the $61.46 Sam typed. Left it uniform; noted the flip for Sam (it's a one-liner in
+`prioCellHtml` — `perStu = target > 0 ? cap/target : 0` instead of `p.per_student`).
+
+### 3. P1/P3 metric wiring — closing the data gaps
+
+The measurability engine is `MEASURES` (ordered `test(metric)` predicates, metric-keyed so it
+follows a reordered priority — SkyFriend's fix). Two additions:
+
+- **P1 → `pe`.** Sam reworded P1 to *"eligible for at least one course offered through CPL."*
+  The eligible-students count (`pe`, **~43,000 statewide** — 43,284 on the 2026-07-27 feed; it
+  drifts daily) was **already in the daily feed**
+  (the builder computes it from `Eligible Credits > 0`; it was collected as "context"). The
+  only gap was a matcher — so a plain-**"eligible"** predicate → `src: "pe"`, placed **after**
+  the statewide-eligible gap (`eligible` + `statewide`/`credit recommendation` → still the
+  exhibit-linkage gap, which genuinely needs exhibit linkage). **Zero pipeline change** — the
+  data was there all along. (The find: read what the feed *already carries* before assuming a
+  gap needs a new build.)
+- **P3 → `pp` + `advance`.** P3's metric is portal/landing-page origin, which the feed didn't
+  stamp and which excludes "Potential Student = Yes" rows (Sam's "~4, mostly test"; the real
+  post-dispatch count is **pp = 5**, across 3 privacy-suppressed colleges — Modesto/Solano/West
+  LA). Sam chose "wire the ~4 now." The builder now emits a new `pp` = distinct Potential-Student rows with
+  transcribed CPL (I stopped `continue`-ing on Potential rows and route them to `pp`; pe/p2/p3
+  still exclude them, so those counts are byte-identical). Verified against a synthetic
+  CustomReport: pp counts, and potential-without-transcribed + test rows are excluded.
+
+  **The trap I avoided:** a naive wiring makes P3 measurable, so in **Earned mode** every
+  college with `pp = 0` (i.e. everyone but the handful) flips from "advance at full cap" to `none`
+  → **$0 earned** — silently gutting P3 funding on a not-yet-live Portal. Fix: the portal
+  measure carries `advance: true`, and `earnFraction` returns a new status **`advancing`**
+  (f = 1) — it **surfaces the count for display** but **pays full cap** during phase-in, so
+  P3 isn't zeroed. `earnedLineHtml`, `prioCellHtml`, `actualLineHtml`, and the CSV all learned
+  the `advancing` status. **Flip `advance` off once the Portal is live** and P3 becomes fully
+  achievement-based automatically. (Judgment call (b) — flagged for Sam.)
+
+### State & verification
+
+Tests **376 → 390** (Part H: per-student derive + inverse, collapsible render + persistence,
+pe/pp wiring; the old P3-as-gap assertions updated to the wired behavior). Full suite green
+(**173 files** post-rebase onto #904). Real-Chromium render: 8 collapsible sections, per-student
+input + `$/stu` cells present, section collapse works on click, **0 console errors, no horizontal
+scroll**. `pp` **published** into `cpl_funding_performance.js` via the post-merge
+`daily-dashboard.yml` dispatch — statewide **pp = 5** (2026-07-27), so P3 now shows the count
+(advancing) instead of "arrives next refresh."
+
+**Next concrete steps:** (1) ~~confirm `pp` landed~~ DONE — pp = 5 statewide (2026-07-27 feed);
+(2) if Sam wants it, flip either judgment call (per-college `$/stu`; P3 zeroing) — both
+1-liners; (3) when the CPL Student Portal ships (~2 weeks), remove `advance:true` so P3 goes
+fully achievement-based. Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
