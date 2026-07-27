@@ -10399,14 +10399,25 @@ def build_workplan_goals_from_supabase(
         # one store) when present; fall back to the workplan_goals name.
         title = (proj_map.get(aid, {}) or {}).get("name") or data["name"]
 
-        # PR-B: Activity group label sources from Supabase activities;
-        # falls back to the hardcoded dict, then to "Activity N".
-        primary_act = entry["activity_ids"][0]
-        sb_activity = act_by_aid.get(primary_act, {})
+        # Group the comprehensive table by the project's HOME Activity — its
+        # `workplan_activity` spine, the SAME authoritative key
+        # build_activity_kpis() uses (~L1702) — NOT the smallest association
+        # id. A cross-linked project (e.g. 2.3 → Activities 1-4) must render
+        # under its home Activity 2, not Activity 1; keying the group on
+        # activity_ids[0] repeated + interleaved the Activity headers
+        # (Activity 1 ×3, Activity 3 ×3 on 2026-07-27 data). The "Contributes
+        # to" chips still surface ALL associations — only the grouping is homed.
+        # Label sources from the Supabase Activity name, then the hardcoded
+        # fallback, then "Activity N".
+        home_act = (
+            _activity_num_from_workplan((proj_map.get(aid, {}) or {}).get("activity"))
+            or str(aid).split(".")[0]
+        )
+        sb_activity = act_by_aid.get(home_act, {})
         act_label = (
             sb_activity.get("name")
-            or activity_labels.get(primary_act)
-            or f"Activity {primary_act}"
+            or activity_labels.get(home_act)
+            or f"Activity {home_act}"
         )
 
         goal_dict["total"] = entry["goal_total"]
@@ -10437,6 +10448,22 @@ def build_workplan_goals_from_supabase(
             "current_kpi_key": current_kpi_key,
             "current_kpi_breakdown": current_kpi_breakdown,
         })
+
+    # Order the comprehensive table by HOME Activity, then natural sub-activity
+    # id, so each Activity header renders exactly once (contiguous grouping) —
+    # even for a project whose home Activity differs from its id prefix (a
+    # re-homed legacy id, which the model explicitly allows). Matches the
+    # Activities-tab grouping. A no-op on today's data (home == id-prefix for
+    # every row); the guard is future-proofing against re-homing.
+    def _annual_home_sort_key(r):
+        home = (
+            _activity_num_from_workplan((proj_map.get(r["id"], {}) or {}).get("activity"))
+            or str(r["id"]).split(".")[0]
+        )
+        return (int(home) if str(home).isdigit() else 999,
+                _natural_activity_sort_key(r["id"]))
+
+    annual_goals.sort(key=_annual_home_sort_key)
 
     print(
         f"  Built {len(activities)} activities + {len(workplan_goals)} "
