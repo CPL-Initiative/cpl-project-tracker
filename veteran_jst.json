@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-27T19:15:06.120642+00:00",
+  "scraped_at": "2026-07-27T20:38:35.833007+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26556,
+    "jst": 26569,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -227,7 +227,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 207,
+      "jst": 211,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 76,
+      "jst": 85,
       "star": false
     },
     "Gavilan College": {

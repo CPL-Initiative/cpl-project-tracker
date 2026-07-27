@@ -65497,6 +65497,272 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICI-CCNA7-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCNA7-1-001"
+      ],
+      "title": "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240",
+      "unified_title": "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 87,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 88,
+      "credit_recs": [
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Introduction to Computer Networking"
+        },
+        {
+          "course": "CIS 216",
+          "credit": "3 hours in Network Security"
+        },
+        {
+          "course": "CIS 240",
+          "credit": "6 hours in Switching, Routing, WLANs, Security, and Enterprise Networking (CCNA Prep)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-CCNA8-1-001",
+      "exhibit_ids": [
+        "MAPICI-CCNA8-1-001"
+      ],
+      "title": "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225",
+      "unified_title": "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 87,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "North Orange Continuing Education Credit",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College"
+      ],
+      "total_addressable": 88,
+      "credit_recs": [
+        {
+          "course": "CIS 210",
+          "credit": "3 hours in Introduction to Computer Networking"
+        },
+        {
+          "course": "CIS 216",
+          "credit": "3 hours in Network Security"
+        },
+        {
+          "course": "CIS 224",
+          "credit": "3 hours in Routing and Switching Essentials"
+        },
+        {
+          "course": "CIS 225",
+          "credit": "3 hours in Enterprise Networking, Security, & Automation"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-MGMB-1-001",
       "exhibit_ids": [
         "MAPICI-MGMB-1-001"
@@ -181350,6 +181616,396 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICI-ETC--1-001",
+      "exhibit_ids": [
+        "MAPICI-ETC--1-001"
+      ],
+      "title": "ESRI Technical Certification - GEOG 025",
+      "unified_title": "ESRI Technical Certification - GEOG 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESRI Technical Certification - GEOG 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GEOG 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-ETC-1-1-001",
+      "exhibit_ids": [
+        "MAPICI-ETC-1-1-001"
+      ],
+      "title": "ESRI Technical Certification - GIS 025",
+      "unified_title": "ESRI Technical Certification - GIS 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ESRI Technical Certification - GIS 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GIS 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-AC-G-1-001",
+      "exhibit_ids": [
+        "MAPICI-AC-G-1-001"
+      ],
+      "title": "ASPRS Certification - GIS 025",
+      "unified_title": "ASPRS Certification - GIS 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASPRS Certification - GIS 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GIS 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-AC-G1-1-001",
+      "exhibit_ids": [
+        "MAPICI-AC-G1-1-001"
+      ],
+      "title": "ASPRS Certification - GEOG 025",
+      "unified_title": "ASPRS Certification - GEOG 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASPRS Certification - GEOG 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GEOG 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-GGC--1-001",
+      "exhibit_ids": [
+        "MAPICI-GGC--1-001"
+      ],
+      "title": "GISCI GISP Certification - GEOG 025",
+      "unified_title": "GISCI GISP Certification - GEOG 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "GISCI GISP Certification - GEOG 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GEOG 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-GGC-1-1-001",
+      "exhibit_ids": [
+        "MAPICI-GGC-1-1-001"
+      ],
+      "title": "GISCI GISP Certification - GIS 025",
+      "unified_title": "GISCI GISP Certification - GIS 025",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "GISCI GISP Certification - GIS 025"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Social Sciences",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 29,
+      "potential_names": [
+        "American River College",
+        "Clovis Community College",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Columbia College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Fullerton College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Merced College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Southwestern College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 30,
+      "credit_recs": [
+        {
+          "course": "GIS 025",
+          "credit": "4 hours in Introduction to Geographic Information Systems and Laboratory"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL1-1-001|MAPSAS-AESL2-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA20-1-001|MAPSAS-ASLA21-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
       "exhibit_ids": [
         "MAPSAH-AS(O-1-001",
@@ -228178,12 +228834,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 367,
-        "exhibits": 297,
+        "credit_recs": 380,
+        "exhibits": 305,
         "disciplines": 16,
         "ccc_collaborative": 0,
-        "industry_certs": 15,
-        "pct": 2.9
+        "industry_certs": 28,
+        "pct": 3.0
       },
       {
         "college": "Cabrillo College",
@@ -229098,12 +229754,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 374,
-        "exhibits": 216,
-        "courses": 257,
+        "credit_recs": 381,
+        "exhibits": 218,
+        "courses": 261,
         "colleges": 44,
         "ccc_collaborative": 106,
-        "pct": 2.9
+        "pct": 3.0
       },
       {
         "discipline": "Foreign Languages",
@@ -229112,7 +229768,7 @@ window.CPL_STATEWIDE = {
         "courses": 132,
         "colleges": 31,
         "ccc_collaborative": 23,
-        "pct": 2.3
+        "pct": 2.2
       },
       {
         "discipline": "Fine and Applied Arts",
@@ -229125,12 +229781,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Social Sciences",
-        "credit_recs": 221,
-        "exhibits": 168,
+        "credit_recs": 227,
+        "exhibits": 174,
         "courses": 128,
         "colleges": 31,
         "ccc_collaborative": 0,
-        "pct": 1.7
+        "pct": 1.8
       },
       {
         "discipline": "Family and Consumer Sciences",
@@ -229256,14 +229912,14 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6764,
         "exhibits": 2162,
         "colleges": 84,
-        "pct": 53.3
+        "pct": 53.2
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3484,
-        "exhibits": 1031,
+        "credit_recs": 3497,
+        "exhibits": 1039,
         "colleges": 79,
-        "pct": 27.4
+        "pct": 27.5
       },
       {
         "cpl_type": "Credit By Exam",
@@ -229304,10 +229960,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2631,
-        "exhibits": 979,
+        "credit_recs": 2644,
+        "exhibits": 987,
         "colleges": 75,
-        "pct": 20.7
+        "pct": 20.8
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
@@ -229369,8 +230025,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11178,
-        "exhibits": 4764,
+        "credit_recs": 11191,
+        "exhibits": 4772,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
@@ -229795,6 +230451,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-27T19:14:29",
-  "total_credit_recs": 12700
+  "generated_at": "2026-07-27T20:37:57",
+  "total_credit_recs": 12713
 };
