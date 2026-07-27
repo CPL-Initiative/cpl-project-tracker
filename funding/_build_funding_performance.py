@@ -18,24 +18,33 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   reworded P1 "eligible for at least one course offered through
                   CPL" metric (wired in cpl_funding.js MEASURES, 2026-07-27).
   PP (added 2026-07-27 per Sam) = distinct PORTAL-ORIGIN students (Potential
-                  Student = Yes) with any transcribed CPL — the P3 "transcribed
-                  Credit from either CPL Student Portal or CPL Landing Page"
-                  metric. Small & mostly test until the Portal launches; the
-                  dashboard shows it but advances P3 at full cap during phase-in.
+                  Student = Yes, Test Student != Yes) with any transcribed CPL —
+                  the P3 "transcribed Credit from either CPL Student Portal or
+                  CPL Landing Page" metric. Achievement-based: a college earns on
+                  its actual portal count and one with none earns $0 (#906). Tiny
+                  & mostly test until the Portal launches.
+  VET_STAR (added 2026-07-27) = a per-college Veteran Star flag (funding-name ->
+                  bool) read from veteran_jst.json (>= star_threshold, 0.75, of
+                  enrolled veterans have a JST uploaded). It is NOT a student
+                  count — it's the auto-computed "75% veteran JSTs" eligibility
+                  qualifier for the funding tab's Elig glyph. Emitted as the
+                  top-level payload key `vet_star` (+ as_of/threshold/n).
 
   The field -> priority mapping lives in cpl_funding.js (MEASURES), not here;
-  this script only emits the raw pe/p2/p3/pp counts.
+  this script only emits the raw pe/p2/p3/pp counts (+ the vet_star flags).
 
 Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
   - aggregate per-college counts only; the student grain never leaves the
     runner; MAP Internal StudentID is used solely as a distinct-count set key
     (the _compute_college_military_students pattern in excel_to_dashboard.py)
-  - per-college counts 1..SUPPRESS_BELOW-1 bake as null + "<5" flag
+  - pe/p2/p3 per-college counts 1..SUPPRESS_BELOW-1 bake as null + "<5" flag;
+    `pp` is the one exception (shown raw, Sam 2026-07-27) — its privacy gate is
+    the Test Student field, not <5 suppression (see NO_SUPPRESS below)
   - statewide counts are computed independently from the student grain
     (distinct across colleges), so they are NOT the sum of per-college cells —
     which also defeats recovering a suppressed cell by subtraction
-  - Test Student / Potential Student rows and the MAP test colleges are
-    excluded (fork ③: "documented" means actual records)
+  - Test Student rows and the MAP test colleges are excluded; Potential Student
+    rows are routed to `pp` (not counted in pe/p2/p3)
 
 College-name join: MAP college names resolve to the funding workbook's names
 via kb/college_short_names.json (canonical/alias → short) with a normalized
@@ -58,6 +67,7 @@ ROOT = os.path.normpath(os.path.join(HERE, ".."))
 OUT_JS = os.path.join(ROOT, "cpl_funding_performance.js")
 SHORT_NAMES = os.path.join(ROOT, "kb", "college_short_names.json")
 FUNDING_DATA = os.path.join(ROOT, "cpl_funding_data.js")
+VETERAN_JST = os.path.join(ROOT, "veteran_jst.json")  # daily Vets/JST + Veteran Star
 VIEW = "View_StudentAggregatedValues_APIDataset"
 SUPPRESS_BELOW = 5
 P2_MIN_UNITS = 6.0
@@ -114,6 +124,38 @@ def _name_resolver():
         key = _norm(map_name)
         return lookup.get(key) or by_norm_funding.get(key)
     return resolve
+
+
+def read_veteran_stars(resolve):
+    """Per-college Veteran Star flag (funding-name → bool) from veteran_jst.json —
+    a college where >= star_threshold (0.75) of enrolled veterans have a JST
+    uploaded in MAP. This is the auto-computed "75% veteran JSTs" eligibility
+    qualifier on the funding tab (Sam, 2026-07-27). Graceful if the file is
+    absent (a fetch-less run keeps the tab's JST sector 'pending')."""
+    if not os.path.exists(VETERAN_JST):
+        return None
+    try:
+        with open(VETERAN_JST, encoding="utf-8") as f:
+            vj = json.load(f)
+    except (ValueError, OSError):
+        return None
+    stars, n = {}, 0
+    for map_name, rec in (vj.get("colleges") or {}).items():
+        fname = resolve(map_name)
+        if not fname:
+            continue
+        met = bool(rec.get("star"))
+        stars[fname] = met
+        if met:
+            n += 1
+    if not stars:
+        return None
+    return {
+        "colleges": stars,
+        "as_of": (vj.get("scraped_at") or "").split("T")[0],
+        "threshold": vj.get("star_threshold"),
+        "n": n,
+    }
 
 
 def main():
@@ -222,6 +264,14 @@ def main():
         "colleges": suppress(counts),
         "unmatched": suppress(unmatched),
     }
+    # Veteran Star (>=75% of enrolled veterans' JSTs uploaded) — the auto-computed
+    # eligibility qualifier for the funding tab's Elig glyph (Sam, 2026-07-27).
+    vet = read_veteran_stars(resolve)
+    if vet:
+        payload["vet_star"] = vet["colleges"]
+        payload["vet_star_as_of"] = vet["as_of"]
+        payload["vet_star_threshold"] = vet["threshold"]
+        payload["vet_star_n"] = vet["n"]
     with open(out, "w", encoding="utf-8") as f:
         f.write(
             "// CPL funding priority-metric actuals (P2/P3 + the PE eligible-students\n"

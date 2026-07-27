@@ -1058,8 +1058,10 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   });
   check("both requirements met → 2 green pie slices", greenSlices(alamedaRow) === 2);
   check("one requirement met → 1 green pie slice", greenSlices(butteRow) === 1);
-  check("SYSTEM tfoot shows the coordinator coverage fraction",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("2/" + D.colleges.length) !== -1);
+  // SYSTEM row Elig = colleges meeting ALL tracked requirements (Sam, 2026-07-27):
+  // only Alameda has BOTH coordinator + participation here, so 1 of N.
+  check("SYSTEM tfoot shows the all-requirements-met fraction (not the coordinator count)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
   check("deadline edit writes to the scenario", (function () {
     commit(window, doc.querySelector('input[data-edit="deadline"]'), "2026-10-01");
     return T._getScenario().participationDeadline === "2026-10-01";
@@ -1799,6 +1801,51 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     ohP3.textContent.indexOf("gap") === -1 && ohP3.textContent.indexOf("…") === -1);
   check("H5: P3 cell surfaces the portal count for a college WITH portal students",
     laP3.querySelector(".cf-a").textContent.indexOf("3") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part I — the veteran-JST qualifier → Veteran Star sector (Sam, 2026-07-27). A
+// free-text "75% veteran JSTs uploaded" requirement is AUTO-scored off the daily
+// pf.vet_star flag; it adds a 3rd pie sector, a fully-green glyph = all 3 met,
+// and the SYSTEM Elig count = colleges meeting all.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
+    statewide: { pe: 100, p2: 0, p3: 0, pp: 0 }, colleges: {}, unmatched: {},
+    vet_star: { "Alameda": true, "Butte": false }, vet_star_as_of: "2026-07-27T06:00:00Z",
+    vet_star_threshold: 0.75, vet_star_n: 1 };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ extraReqs: ["Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP"] });
+  T._setElig({ coordOk: true, coord: { "Alameda": true, "Butte": true },
+    optin: { "Alameda": { college: "Alameda" }, "Butte": { college: "Butte" } }, asOf: "2026-07-27" });
+  T.render();
+  const eligCell = function (name) {
+    const tr = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (t) { return t.textContent.indexOf(name) !== -1; });
+    return Array.from(tr.querySelectorAll("td")).find(function (td) { return (td.getAttribute("title") || "").indexOf("participation gate") !== -1; });
+  };
+  check("I: the veteran-JST requirement adds a 3rd pie sector (auto-scored via Veteran Star)",
+    pieSlices(eligCell("Alameda")) === 3);
+  check("I: a Veteran Star college meeting all 3 → a FULLY green glyph (3 of 3)",
+    greenSlices(eligCell("Alameda")) === 3);
+  check("I: a non-star college is 2 of 3 (JST sector not green)",
+    pieSlices(eligCell("Butte")) === 3 && greenSlices(eligCell("Butte")) === 2);
+  check("I: SYSTEM Elig counts colleges meeting ALL 3 (only Alameda) → 1 of N",
+    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("1/" + D.colleges.length) !== -1);
+  check("I: the eligibility section shows the Veteran Star auto-score status line",
+    doc.querySelector(".cplfund-elig").textContent.indexOf("Veteran Star") !== -1 &&
+    doc.querySelector(".cplfund-elig").textContent.indexOf("qualify") !== -1);
+  // Without the vet_star feed, the JST sector still shows but reads pending (not green).
+  const dom2 = freshDom(); const w2 = dom2.window;   // no CPL_FUNDING_PERF
+  const doc2 = boot(w2); const T2 = w2.CPL_FUNDING_TAB;
+  T2._setShared({ extraReqs: ["75% of enrolled veteran JSTs uploaded in MAP"] });
+  T2._setElig({ coordOk: true, coord: { "Alameda": true }, optin: { "Alameda": { college: "Alameda" } }, asOf: "2026-07-27" });
+  T2.render();
+  const aCell = Array.from(doc2.querySelectorAll("#cplFundTable tbody tr")).find(function (t) { return t.textContent.indexOf("Alameda") !== -1; });
+  const aElig = Array.from(aCell.querySelectorAll("td")).find(function (td) { return (td.getAttribute("title") || "").indexOf("participation gate") !== -1; });
+  check("I: feed-less → the JST sector shows but isn't green (pending), so no college is all-3",
+    pieSlices(aElig) === 3 && greenSlices(aElig) === 2);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
