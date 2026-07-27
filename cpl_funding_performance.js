@@ -8,9 +8,9 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test/Potential students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified (context, not a priority metric) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42962,
-  "p2": 4782,
-  "p3": 16811
+  "pe": 43284,
+  "p2": 4790,
+  "p3": 17135
  },
  "colleges": {
   "Alameda": {
@@ -84,7 +84,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 32
   },
   "Citrus": {
-   "pe": 201,
+   "pe": 202,
    "p2": 0,
    "p3": 0
   },
@@ -149,7 +149,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Desert": {
-   "pe": 393,
+   "pe": 396,
    "p2": 37,
    "p3": 37
   },
@@ -484,7 +484,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Taft": {
-   "pe": 10,
+   "pe": 11,
    "p2": 0,
    "p3": 0
   },
@@ -510,9 +510,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "West LA": {
-   "pe": 731,
-   "p2": 488,
-   "p3": 553
+   "pe": 732,
+   "p2": 496,
+   "p3": 561
   },
   "West Valley": {
    "pe": 55,
@@ -527,9 +527,9 @@ window.CPL_FUNDING_PERF = {
  },
  "unmatched": {
   "Barstow Community College": {
-   "pe": 127,
+   "pe": 443,
    "p2": 0,
-   "p3": 0
+   "p3": 316
   },
   "Calbright College Credit": {
    "pe": 117,

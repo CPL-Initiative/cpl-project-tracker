@@ -2,7 +2,7 @@
   "_about": "Daily-cached snapshot of public.projects. Written by kb/_load_projects.py after a successful Supabase fetch. Falls back to this file on Supabase outage so the dashboard regen continues without manual intervention.",
   "_fetched_at": "2026-07-27",
   "_source_table": "public.projects",
-  "row_count": 33,
+  "row_count": 32,
   "rows": [
     {
       "id": "1.1",
@@ -738,29 +738,6 @@
       "kpi_metric": "",
       "kpi_unit": "",
       "wp_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
-      "kpi_order": null
-    },
-    {
-      "id": "5.1",
-      "name": "AI-Ready California Demonstration",
-      "description": "$7M two-year project: CPL-embedded AI workforce pathway from HS dual enrollment through AS to BAS-ASIO baccalaureate across 4 districts",
-      "workplan_activity": "Activity 4: Sprints, Projects & Partnerships",
-      "vision_2030_action": "Action 1a; Action 5",
-      "cpl_goal": "Goal 1; Goal 3",
-      "budget_source": "Proposed: AI-Ready CA ($7M)",
-      "budget": "$7,000,000",
-      "lead": "Samuel Lee",
-      "team": "RCCD, SDCCD, LACCD, SBCCD; ASCCC CIS Workgroup",
-      "status": "Not Started",
-      "percent_complete": 5.0,
-      "start_date": "2025-09-01",
-      "end_date": "2027-09-30",
-      "milestones": "Fall 2025: MOUs and staffing; Spring 2026: AI cert CPL recs drafted; Fall 2026: Dual enrollment launch at 8+ HS",
-      "latest_update": "Project proposal developed; 4 demo districts identified; BAS-ASIO curriculum in design; contingent on funding",
-      "update_date": "2026-04-07",
-      "kpi_metric": "0",
-      "kpi_unit": "districts onboarded",
-      "wp_notes": "AI-Ready California: Proposed $7M two-year demonstration. 4 demo districts identified (RCCD, SDCCD, LACCD, SBCCD). BAS-ASIO curriculum in design. Contingent on funding approval.",
       "kpi_order": null
     }
   ]

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-27T15:19:24.011452+00:00",
+  "scraped_at": "2026-07-27T18:45:31.553814+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26236,
+    "jst": 26556,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -72,7 +72,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 813,
+      "jst": 812,
       "star": true
     },
     "Riverside City College": {
@@ -100,6 +100,11 @@
       "jst": 733,
       "star": true
     },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 445,
+      "star": true
+    },
     "Southwestern College": {
       "vets": 584,
       "jst": 722,
@@ -112,7 +117,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 360,
+      "jst": 363,
       "star": true
     },
     "Cypress College": {
@@ -128,11 +133,6 @@
     "Santa Ana College": {
       "vets": 334,
       "jst": 363,
-      "star": true
-    },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 129,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -227,7 +227,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 206,
+      "jst": 207,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -510,13 +510,13 @@
       "jst": 15,
       "star": false
     },
-    "Butte College": {
-      "vets": 290,
-      "jst": 10,
-      "star": false
-    },
     "Taft College": {
       "vets": 23,
+      "jst": 11,
+      "star": false
+    },
+    "Butte College": {
+      "vets": 290,
       "jst": 10,
       "star": false
     },
