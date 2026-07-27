@@ -1065,3 +1065,95 @@ scroll**. `pp` **published** into `cpl_funding_performance.js` via the post-merg
 (2) if Sam wants it, flip either judgment call (per-college `$/stu`; P3 zeroing) — both
 1-liners; (3) when the CPL Student Portal ships (~2 weeks), remove `advance:true` so P3 goes
 fully achievement-based. Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+---
+
+## 2026-07-27 (SkyMore) — front-load-aware formula box · cell re-weight · feeder 2-batch cadence · rural/feeder advice
+
+Four curator asks on the Implementation Funding tab. Three shipped as a JS-only PR
+(`cpl_funding.js` + its test; **0 HTML**); two (feeder measurables, rural spread) are
+**advisory** — Sam said "propose"/"advise" — captured here + surfaced to him with a
+focused question.
+
+### 1. "How an allocation is computed" is now RESPONSIVE to the Even ⇄ Front-load toggle
+
+The box read as an even-tranche explainer even when Front-load was ON — the core sentence
+said "the same again in each of the N years" regardless. Root cause: the disbursement cadence
+was a **trailing appended sentence** (`flSentence`, only added when front-loaded) on top of a
+hardcoded even-tranche clause. Fix: replaced both with **one `cadenceSentence` that branches**
+on `frontloaded()` and tells the whole timing story for its mode:
+- **Even:** "That same {tranche} disburses again in each of the N years ({window}), in **equal
+  annual amounts**."
+- **Front-load:** "Under **front-loaded** timing the full {window} window ({window total}) is
+  disbursed **up front in Year 1** ({y0}) … while Years 2+ are carryover only (unspent funds
+  roll forward, closing out by {closeout}). Front-loading is timing only: a college's window
+  total is unchanged."
+The floor + basis + balance sentences are unchanged. **Lesson (again): a toggle's explanatory
+text must branch at the point the toggle changes the story — don't bolt a second sentence onto
+a clause written for the other mode.** (The footer + window note already branched; only the
+formula box lagged.)
+
+### 2. Priority cell re-weight — the earned dollar is the focal point
+
+Sam: "de-bold the percentage and student count and bold instead the dollar amount they are
+currently receiving." The bottom (actual) line of each P-cell was `{count}` (bold navy) ·
+`{earned $}` (faint, normal) · `{%}` (bold green) — the eye landed on the count + %, not the
+money. **CSS-only** flip (3 rules): `.cf-a` (container, holds the count) → `font-weight:400` +
+`--text-muted`; `.cf-u` (earned $) → `font-weight:700` + `--navy-primary`; `.cf-pct` (%) →
+`font-weight:400`. Now the **earned dollar** is the bold navy focal point and the count + %
+recede. No markup change (weights only), so every `.cf-a`/`.cf-u`/`.cf-pct` text assertion
+stayed green.
+
+### 3. Noncredit feeder rows reflect the 2-batch-per-year disbursement (like the colleges)
+
+Sam: the feeder support "should be distributed in 2 batches — same as the colleges (see Timing
+section)." The Timing section already shows **two disbursements per funding year** (Feb + Jul)
+"based on cumulative CPL in MAP." Reflected it in the feeder table: a `feederBatchNote(amount)`
+helper prints a muted **"2 batches · ${amount/2} ea"** sub-line under each feeder row's Support
+cell **and** the FEEDER POOL footer; the intro gained a sentence tying the cadence to the
+Timing section and to "the cumulative eligible CPL these campuses stand up in MAP." Batch =
+support ÷ 2 in **both** modes (even: per-year pool halved; front-load: the whole carve-out lands
+in Year 1, still paid in two batches). Kept the "front-loaded" thead label (test-pinned).
+
+### 4 (ADVISORY) — feeder measurables + rural per-priority spread
+
+**Feeder measurables (Sam: "give it a think, suggest any measurables we could build in").**
+NC campuses can't transcribe (colleges do that) and aren't obligated to collect JST (their
+service members mostly don't claim GI Bill), so the college P2/P3/Veteran-Star metrics don't
+port. What DOES port, in build order:
+- **F1 — Eligible headcount** (measurable soonest): distinct NC students with an **exhibit
+  attached to their NC student record in MAP** showing ≥1 eligible unit. This is the direct
+  analog of the colleges' P1 **`pe`** (eligible) count — the daily builder already computes
+  `pe` from `Eligible Credits > 0`; the only lift is teaching the builder to bucket NC-campus
+  student records. **Recommend this as the metric the 2-batch feeder disbursement tracks** —
+  makes the feeder pool achievement-based exactly like the college pool.
+- **F2 — Noncredit-certificate CPL waivers** (the one "award-like" metric they OWN): count of
+  noncredit certificates where a course/requirement was **waived on work experience (CPL)** —
+  the NC campus issues its own noncredit certificates, so this is a transcription-equivalent
+  it controls, and it's the CPL work they've expressed interest in. Measurable if the waiver is
+  recorded against the exhibit in MAP.
+- **F3 (phase-2, stretch) — CPL-ready hand-offs that transcribe at a partner credit college**:
+  the feeder's true value metric, but it needs the same cross-campus identity match-back the
+  colleges' P3-portal / CO-MIS work rides. Propose once that infra lands.
+- **NOT** JST/Veteran-Star (no obligation) and **NOT** portal-origin (credit-college facing).
+
+**Rural per-priority spread (Sam: "adding the $110k to spread across their 3 priorities …
+advise").** Current mechanism (`ruralAttainment` + `ruralSectionHtml`): each rural college
+earns its **full** per-college allowance by clearing a **binary ≥50%-of-average-Year-1-
+attainment** gate — all-or-nothing, and inconsistent with the main pool, which already earns
+**per-priority proportionally** (`earned = cap × min(1, actual/target)` per priority, summed).
+Recommendation: **align rural with the main model** — split each rural college's allowance by
+the 3 priority shares and earn each slice proportionally (`Σ_k allowance×share_k×min(1,
+actual_k/target_k)`, capped). Removes the arbitrary 50% cliff (40% attainment earns 40%, not
+$0), gives one mental model, and stays phase-in-aware. **The $110k needs a decision:** today
+$1M ÷ 10 rural colleges = **$100k each**; **$110k each ⇒ the carve-out must rise to $1.1M**
+(−$100k off the college pool). Surfaced both (mechanism + amount) to Sam via AskUserQuestion;
+build is a follow-up in `ruralSectionHtml`/`ruralAttainment` (mirror `earnFraction`'s per-
+priority cap-and-earn) once he picks.
+
+**State & verification.** Tests **390 → 411** (Part J: formula-box even/front-load branch, the
+three cell-weight CSS guards, feeder 2-batch row + pool per-batch even & front-load). Full
+funding suite green; `retheme_tokens`/`pii_guard`/`cpl_funding_performance` green (the only
+other tests touching `cpl_funding.js`). Render dump confirmed the even/front-load prose swap +
+the "$X · 2 batches · $Y ea" feeder cells. Side-lane — left `cpl_todos.json` + the numbered CCR
+handoff alone (funding lane owns only its own lessons/handoff).

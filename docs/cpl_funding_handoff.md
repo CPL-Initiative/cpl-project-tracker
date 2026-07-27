@@ -9,7 +9,42 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-27 (SkyMoney), READ THIS FIRST
+## Latest state — 2026-07-27 (SkyMore), READ THIS FIRST
+
+Four curator asks; **three shipped** in a JS-only PR (`cpl_funding.js` + test; **0 HTML**),
+**two are advisory** (proposed to Sam, build pending his call):
+
+1. **"How an allocation is computed" is now RESPONSIVE to the Even ⇄ Front-load toggle.** It
+   used to explain even tranches even when front-load was on. Replaced the trailing `flSentence`
+   + hardcoded even clause with one `cadenceSentence` that **branches on `frontloaded()`** —
+   even → "equal annual amounts in each of the N years"; front-load → "the full window disbursed
+   up front in Year 1 … carryover … timing only, window total unchanged." (`formulaHtml()`.)
+2. **Priority cell re-weight** (CSS-only, 3 rules): the **earned dollar** (`.cf-u`) is now the
+   bold navy focal point; the **student count** (`.cf-a`) and **% of target** (`.cf-pct`) recede
+   to normal weight. "Get the focus in the right place."
+3. **Feeder rows reflect the 2-batch-per-year disbursement** (like the colleges — Timing
+   section): a `feederBatchNote()` helper prints "2 batches · $X ea" under each feeder Support
+   cell + the FEEDER POOL footer; intro ties it to Timing + cumulative eligible CPL in MAP.
+   Batch = support ÷ 2 in both even & front-load modes.
+4. **ADVISORY — not built, awaiting Sam** (full write-up in the lessons doc SkyMore section):
+   - **Feeder measurables:** propose **F1 = Eligible headcount** (NC students with an exhibit
+     attached in MAP showing eligible units — the direct analog of the college `pe` count; the
+     builder already computes `pe`, only needs NC-record bucketing → makes the feeder pool
+     achievement-based, tracked by the 2-batch disbursement); **F2 = noncredit-certificate CPL
+     waivers** (the one award-like metric NC campuses own, and the CPL work they want to do);
+     **F3 (phase-2) = hand-offs that transcribe at a partner college**. NOT JST/Veteran-Star
+     (no obligation) or portal-origin (credit-college facing).
+   - **Rural per-priority spread:** the rural allowance today is a **binary ≥50%-of-average
+     Year-1-attainment** gate (all-or-nothing) — inconsistent with the main pool's per-priority
+     cap-and-earn. **Recommend aligning it**: split each rural allowance by the 3 priority shares
+     and earn each slice proportionally (`Σ share_k×min(1,actual_k/target_k)`), removing the 50%
+     cliff. **The $110k:** today $1M ÷ 10 = **$100k each**; $110k each ⇒ carve-out must rise to
+     **$1.1M** (−$100k off the college pool). Build is a follow-up in `ruralSectionHtml`/
+     `ruralAttainment` (mirror `earnFraction`) once Sam picks mechanism + amount.
+
+Tests **390 → 411** (Part J). Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+## Prior state — 2026-07-27 (SkyMoney)
 
 Three curator asks, one PR (**#901** — `cpl_funding.js` +
 `funding/_build_funding_performance.py` + tests; **0 HTML**, Rule 4 intact):

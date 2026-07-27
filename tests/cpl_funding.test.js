@@ -1849,6 +1849,61 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Part J — SkyMore (2026-07-27): (1) the "How an allocation is computed" box is
+// RESPONSIVE to the Even ⇄ Front-load toggle; (2) the priority cell re-weights so
+// the earned DOLLAR is bold and the count/% recede; (3) the noncredit feeder rows
+// reflect the 2-batch-per-year disbursement cadence.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  // J1 — even mode: the formula box explains EQUAL annual tranches, not front-load.
+  const fEven = doc.querySelector(".cplfund-formula").textContent;
+  check("J1: even mode — formula box says the tranche disburses in equal annual amounts",
+    fEven.indexOf("equal annual amounts") !== -1);
+  check("J1: even mode — formula box does NOT describe front-loading",
+    fEven.indexOf("up front in Year 1") === -1 && fEven.toLowerCase().indexOf("front-load") === -1);
+  // J2 — click Front-load: the SAME box now tells the front-load story.
+  click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
+  const fFL = doc.querySelector(".cplfund-formula").textContent;
+  check("J2: front-load mode — formula box explains the full window disbursed up front in Year 1",
+    fFL.indexOf("up front in Year 1") !== -1 && fFL.toLowerCase().indexOf("front-load") !== -1);
+  check("J2: front-load mode — formula box states timing-only (window total unchanged)",
+    fFL.indexOf("window total is unchanged") !== -1);
+  check("J2: front-load mode — formula box drops the even-tranche phrasing",
+    fFL.indexOf("equal annual amounts") === -1);
+}
+{
+  // J3 — priority cell weighting: the earned dollar (.cf-u) is bold; the actual
+  // line (.cf-a, holds the student count) and the % (.cf-pct) recede. Guarded on
+  // the injected CSS (Sam: "get the focus in the right place").
+  check("J3: earned dollar (.cf-u) is bold navy",
+    /\.cf-prio \.cf-u \{ font-weight: 700; color: var\(--navy-primary\); \}/.test(consumerSrc));
+  check("J3: the actual line (.cf-a, student count) is de-bolded (normal weight)",
+    /\.cf-prio \.cf-a \{ font-weight: 400;/.test(consumerSrc));
+  check("J3: the % of target (.cf-pct) is de-bolded (normal weight)",
+    /\.cf-prio \.cf-pct \{ color: var\(--green-progress\); font-weight: 400; \}/.test(consumerSrc));
+}
+{
+  // J4 — feeder rows reflect the 2-batch-per-year disbursement (like the colleges,
+  // Timing section). Even mode: pool per-year = $500,000 → $250,000 per batch.
+  const { window } = freshDom();
+  const doc = boot(window);
+  const feederSec = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
+  check("J4: feeder section explains the two-batch-per-year cadence",
+    feederSec.textContent.indexOf("two batches per funding year") !== -1);
+  const feederTable = doc.querySelectorAll(".cplfund-table")[1];
+  check("J4: feeder rows surface a per-batch amount (2 batches · $X ea)",
+    feederTable.textContent.indexOf("2 batches") !== -1 && feederTable.textContent.indexOf(" ea") !== -1);
+  check("J4: even mode — FEEDER POOL per-batch = half the per-year pool ($250,000 ea)",
+    feederTable.querySelector("tfoot").textContent.indexOf("$250,000 ea") !== -1);
+  // J5 — front-load: whole carve-out lands in Year 1, still 2 batches ($500,000 ea).
+  click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
+  check("J5: front-load — FEEDER POOL per-batch = half the full carve-out ($500,000 ea)",
+    doc.querySelectorAll(".cplfund-table")[1].querySelector("tfoot").textContent.indexOf("$500,000 ea") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
