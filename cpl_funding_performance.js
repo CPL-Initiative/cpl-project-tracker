@@ -9,8 +9,8 @@ window.CPL_FUNDING_PERF = {
  "suppress_below": 5,
  "statewide": {
   "pe": 43284,
-  "p2": 4790,
-  "p3": 17135,
+  "p2": 4791,
+  "p3": 17136,
   "pp": 5
  },
  "colleges": {
@@ -628,8 +628,8 @@ window.CPL_FUNDING_PERF = {
   },
   "West LA": {
    "pe": 732,
-   "p2": 496,
-   "p3": 561,
+   "p2": 497,
+   "p3": 562,
    "pp": null,
    "pp_suppressed": true
   },

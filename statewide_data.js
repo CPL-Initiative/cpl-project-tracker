@@ -179448,77 +179448,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-G0-I1-1-001|MAPCXS-G0-I3-1-001",
-      "exhibit_ids": [
-        "MAPCXS-G0-I1-1-001",
-        "MAPCXS-G0-I3-1-001"
-      ],
-      "title": "Introduction to Global Positioning Systems (GPS)",
-      "unified_title": "Introduction to Global Positioning Systems (GPS)",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "GEOG 037 - Introduction to Global Positioning Systems",
-        "GIS 037 - Introduction to Global Positioning Systems"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Social Sciences",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 29,
-      "potential_names": [
-        "American River College",
-        "Clovis Community College",
-        "College of the Desert",
-        "College of the Redwoods",
-        "Columbia College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cypress College",
-        "Diablo Valley College",
-        "Foothill College",
-        "Fullerton College",
-        "Lake Tahoe Community College",
-        "Lassen College",
-        "Merced College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Southwestern College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 30,
-      "credit_recs": [
-        {
-          "course": "GEOG 037",
-          "credit": "2 hours in Introduction to Global Positioning Systems (GPS)"
-        },
-        {
-          "course": "GIS 037",
-          "credit": "2 hours in Introduction to Global Positioning Systems (GPS)"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-PS7-1-1-001",
       "exhibit_ids": [
         "MAPCXS-PS7-1-1-001"
@@ -228249,8 +228178,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 369,
-        "exhibits": 299,
+        "credit_recs": 367,
+        "exhibits": 297,
         "disciplines": 16,
         "ccc_collaborative": 0,
         "industry_certs": 15,
@@ -229196,12 +229125,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Social Sciences",
-        "credit_recs": 223,
-        "exhibits": 170,
-        "courses": 130,
+        "credit_recs": 221,
+        "exhibits": 168,
+        "courses": 128,
         "colleges": 31,
         "ccc_collaborative": 0,
-        "pct": 1.8
+        "pct": 1.7
       },
       {
         "discipline": "Family and Consumer Sciences",
@@ -229338,8 +229267,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1846,
-        "exhibits": 1376,
+        "credit_recs": 1844,
+        "exhibits": 1374,
         "colleges": 58,
         "pct": 14.5
       },
@@ -229368,8 +229297,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7893,
-        "exhibits": 2951,
+        "credit_recs": 7891,
+        "exhibits": 2949,
         "colleges": 91,
         "pct": 62.1
       },
@@ -229440,8 +229369,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11180,
-        "exhibits": 4766,
+        "credit_recs": 11178,
+        "exhibits": 4764,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
@@ -229866,6 +229795,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-27T18:50:03",
-  "total_credit_recs": 12702
+  "generated_at": "2026-07-27T19:14:29",
+  "total_credit_recs": 12700
 };
