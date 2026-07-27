@@ -982,14 +982,13 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   });
   check("rural college row carries the 🌲 chip", butteRow && butteRow.innerHTML.indexOf("🌲") !== -1);
 
-  // With actuals: attainment vs targets gates the allowance.
-  const butte = D.colleges.find(function (c) { return c.college === "Butte"; });
-  const p1 = D.year_priorities["1"][0];
-  const target = butte.headcount * p1.target_rate;
+  // With actuals: each priority's slice is earned IN PROPORTION once it clears the
+  // floor (Sam, 2026-07-27 — per-priority + ≥50% floor). Feed Butte high on every
+  // src so all its measurable Year-1 slices fully unlock → earns its full allowance.
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
-    statewide: { p2: 1000, p3: 1000 },
-    colleges: { "Butte": { p2: 10, p3: Math.ceil(target) } },   // ≥100% of the P1 target
+    statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
+    colleges: { "Butte": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } },
     unmatched: {}
   };
   T.render();
@@ -997,18 +996,22 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const butteRural = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Butte") !== -1;
   });
-  check("rural college at ≥50% of measurable Yr-1 targets qualifies",
-    butteRural && butteRural.textContent.indexOf("✓ qualifies") !== -1);
-  check("rural tfoot counts qualifiers honestly (1 of 10)",
-    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 10 qualify") !== -1);
+  const perRuralStr = "$" + perRural.toLocaleString("en-US");
+  check("rural: a college over its Year-1 targets earns (green chip) its full allowance",
+    butteRural && !!butteRural.querySelector(".cf-rchip.ok") &&
+    butteRural.textContent.indexOf(perRuralStr) !== -1);
+  check("rural tfoot counts colleges earning (1 of 10) on current data",
+    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 10 earning") !== -1);
 
-  // Threshold is editable: raise it to 200% → Butte no longer qualifies.
+  // The threshold is the per-priority FLOOR: raise it to 200% → no slice can unlock
+  // (attainment caps at 100%) → Butte earns $0 and no green chips.
   const thr = doc.querySelector('input[data-edit="rural-threshold"]');
   commit(window, thr, "200");
   check("threshold edit persisted (scenario)", T._getScenario().ruralThreshold === 2);
   const ruralTable3 = doc.querySelectorAll(".cplfund-table")[2];
-  check("raised threshold demotes the qualifier",
-    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 10 qualify") !== -1);
+  check("raised floor locks every slice → 0 of 10 earning",
+    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 10 earning") !== -1 &&
+    !ruralTable3.querySelector(".cf-rchip.ok"));
 
   // Rural flag override via config (the drill-in button's write path).
   T._setScenario({ ruralOverrides: { "Alameda": true, "Butte": false } });
@@ -1901,6 +1904,70 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
   check("J5: front-load — FEEDER POOL per-batch = half the full carve-out ($500,000 ea)",
     doc.querySelectorAll(".cplfund-table")[1].querySelector("tfoot").textContent.indexOf("$500,000 ea") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part K — SkyMore round 2 (2026-07-27): (1) the rural allowance is earned
+// PER-PRIORITY with a ≥floor unlock (not the old binary ≥50%-average gate);
+// (2) the noncredit feeder measurables ladder (F1 eligible headcount, wired to
+// the feed; F2 waivers placeholder).
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
+  check("K1: rural table headers switched to Earned so far + per-priority",
+    ruralTable.querySelector("thead").textContent.indexOf("Earned so far") !== -1 &&
+    ruralTable.querySelector("thead").textContent.indexOf("By priority") !== -1);
+  check("K1: rural intro explains the per-priority split + floor unlock + proportional pay",
+    ruralTable.parentNode.parentNode.textContent.indexOf("split across the three priorities") !== -1);
+  // Feed one rural college well over target on every measurable src → its Year-1
+  // slices unlock and earn (green chips); the floor test (D3) covers the lock.
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
+    statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
+    colleges: { "Butte": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } }, unmatched: {} };
+  T.render();
+  const rt2 = doc.querySelectorAll(".cplfund-table")[2];
+  const butteRow = Array.from(rt2.querySelectorAll("tbody tr")).find(function (tr) { return /Butte/.test(tr.textContent); });
+  check("K2: a rural college over its Year-1 targets shows a green (unlocked) priority chip",
+    !!butteRow.querySelector(".cf-rchip.ok"));
+  check("K2: that college's Earned-so-far cell shows a positive dollar",
+    /\$[1-9]/.test(butteRow.querySelectorAll("td")[3].textContent));
+  check("K2: rural tfoot reports colleges earning + the earned pool",
+    rt2.querySelector("tfoot").textContent.indexOf("earning on current data") !== -1);
+  // Drill-in mirrors the per-priority earning (chips in the college row detail).
+  // NOTE: click triggers a full re-render, so re-query the detail from the fresh DOM.
+  const butteMain = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) { return /Butte/.test(tr.textContent); });
+  click(window, butteMain);
+  const detail = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-detail")).find(function (tr) { return tr.textContent.indexOf("Rural allowance") !== -1; });
+  check("K3: the college drill-in rural line shows per-priority chips + earned-so-far",
+    !!detail && detail.textContent.indexOf("split across the 3 priorities") !== -1 &&
+    !!detail.querySelector(".cf-rchip"));
+}
+{
+  // K4 — feeder measurables ladder: F1 (eligible headcount) + F2 (NC-cert waivers).
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const feederSec = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
+  check("K4: feeder section renders the F1 + F2 measurables ladder",
+    feederSec.textContent.indexOf("F1") !== -1 && feederSec.textContent.indexOf("Eligible headcount") !== -1 &&
+    feederSec.textContent.indexOf("F2") !== -1 && feederSec.textContent.indexOf("waiver") !== -1);
+  check("K4: F1 is pending until the feed carries feeder eligible counts",
+    feederSec.textContent.indexOf("measurable once campuses attach exhibits") !== -1);
+  check("K4: the ladder documents what is NOT tracked (transcription + JST/Veteran Star)",
+    /aren.{0,3}t obligated to collect JST/.test(feederSec.textContent));
+  // With a feeder F1 feed, the count surfaces (per-feeder + the ladder total).
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
+    statewide: { pe: 0, p2: 0, p3: 0, pp: 0 }, colleges: {}, unmatched: {},
+    feeders: { "NOCE": { pe: 42 }, "Calbright": { pe: null, pe_suppressed: true } } };
+  T.render();
+  const fSec2 = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
+  check("K5: a feeder with an F1 count shows it in its row (eligible in MAP)",
+    fSec2.textContent.indexOf("42 eligible in MAP") !== -1);
+  check("K5: the F1 ladder line surfaces the eligible total once the feed lands",
+    fSec2.textContent.indexOf("eligible NC students identified across the feeders") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

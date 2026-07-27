@@ -26,24 +26,34 @@ function check(name, cond) { results.push([name, !!cond]); }
 
 // ── synthetic fixture ────────────────────────────────────────────────────────
 const COLS = ["College", "Transcribed Credits", "MAP Internal StudentID",
-  "Potential Student", "Test Student"];
+  "Potential Student", "Test Student", "Eligible Credits"];
 const rows = [
-  ["College of Alameda", "7.5", "S1", "no", "no"],   // p2+p3
-  ["College of Alameda", "7.5", "S1", "no", "no"],   // duplicate row → dedupe
-  ["College of Alameda", "3",   "S2", "no", "no"],   // p3 only
-  ["College of Alameda", "9",   "S3", "no", "yes"],  // Test Student → excluded
-  ["College of Alameda", "9",   "S4", "yes", "no"],  // Potential Student → excluded
-  ["Ventura College", "6", "V1", "no", "no"],
-  ["Ventura College", "6", "V2", "no", "no"],
-  ["Ventura College", "6", "V3", "no", "no"],
-  ["Ventura College", "6", "V4", "no", "no"],
-  ["Ventura College", "6", "V5", "no", "no"],
-  ["Ventura College", "6", "V6", "no", "no"],
-  ["Ventura College", "8", "S1", "no", "no"],        // SAME student as Alameda → statewide dedupe
-  ["Ventura College", "6", "",   "no", "no"],        // sid-less → counts as its own student
-  ["Ventura College", "0", "V9", "no", "no"],        // zero credits → ignored
-  ["RivTest City College", "9", "T1", "no", "no"],   // test college → excluded
-  ["Mystery University", "12", "M1", "no", "no"],    // unresolvable name → unmatched
+  ["College of Alameda", "7.5", "S1", "no", "no", "0"],   // p2+p3
+  ["College of Alameda", "7.5", "S1", "no", "no", "0"],   // duplicate row → dedupe
+  ["College of Alameda", "3",   "S2", "no", "no", "0"],   // p3 only
+  ["College of Alameda", "9",   "S3", "no", "yes", "0"],  // Test Student → excluded
+  ["College of Alameda", "9",   "S4", "yes", "no", "0"],  // Potential Student → excluded
+  ["Ventura College", "6", "V1", "no", "no", "0"],
+  ["Ventura College", "6", "V2", "no", "no", "0"],
+  ["Ventura College", "6", "V3", "no", "no", "0"],
+  ["Ventura College", "6", "V4", "no", "no", "0"],
+  ["Ventura College", "6", "V5", "no", "no", "0"],
+  ["Ventura College", "6", "V6", "no", "no", "0"],
+  ["Ventura College", "8", "S1", "no", "no", "0"],        // SAME student as Alameda → statewide dedupe
+  ["Ventura College", "6", "",   "no", "no", "0"],        // sid-less → counts as its own student
+  ["Ventura College", "0", "V9", "no", "no", "0"],        // zero credits → ignored
+  ["RivTest City College", "9", "T1", "no", "no", "0"],   // test college → excluded
+  ["Mystery University", "12", "M1", "no", "no", "0"],    // unresolvable name → unmatched
+  // Noncredit FEEDER campuses (F1 = eligible headcount; not funding colleges).
+  ["North Orange Continuing Education", "0", "F1", "no", "no", "4"],   // NOCE eligible
+  ["North Orange Continuing Education", "0", "F2", "no", "no", "6"],
+  ["North Orange Continuing Education", "0", "F3", "no", "no", "3"],
+  ["North Orange Continuing Education", "0", "F4", "no", "no", "5"],
+  ["North Orange Continuing Education", "0", "F5", "no", "no", "2"],
+  ["North Orange Continuing Education", "0", "F5", "no", "no", "2"],   // dup → dedupe
+  ["North Orange Continuing Education", "9", "FP", "yes", "no", "3"],  // Potential → excluded from F1
+  ["Calbright College", "0", "C1", "no", "no", "3"],                    // Calbright pe=2 → suppressed
+  ["Calbright College", "0", "C2", "no", "no", "3"],
 ];
 const fixture = [{
   viewName: "View_StudentAggregatedValues_APIDataset",
@@ -88,6 +98,13 @@ if (P) {
     P.statewide.p2 === 9 && P.statewide.p3 === 10);
   check("as_of carries the report date", P.as_of === "2026-06-11");
   check("suppress_below = 5 (ratified ADR)", P.suppress_below === 5);
+  // F1 — noncredit feeder eligible headcount, keyed by feeder short name.
+  check("feeder F1: NOCE eligible headcount = 5 (distinct; dup deduped, Potential excluded)",
+    P.feeders && P.feeders["NOCE"] && P.feeders["NOCE"].pe === 5);
+  check("feeder F1: a small feeder cell (<5) suppresses (Calbright pe=2 → null + flag)",
+    P.feeders["Calbright"] && P.feeders["Calbright"].pe === null && P.feeders["Calbright"].pe_suppressed === true);
+  check("feeder campuses do NOT leak into the unmatched bucket",
+    !P.unmatched["North Orange Continuing Education"] && !P.unmatched["Calbright College"]);
 }
 
 // Graceful no-input behavior: exits 0, touches nothing.
