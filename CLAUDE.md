@@ -569,6 +569,25 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyMore side-lane — Implementation Funding: front-load-aware formula · cell re-weight · feeder 2-batch + F1/F2 · rural per-priority earn (2026-07-27, #908/#910 MERGED)
+
+Four curator asks, two JS-focused PRs. **#908:** (1) the **"How an allocation is computed" box now
+branches on the Even ⇄ Front-load toggle** (it read as an even-tranche explainer even when front-load
+was ON — one `cadenceSentence` tells each mode's whole story); (2) college-row P-cells **re-weighted**
+so the earned **dollar** (`.cf-u`) is bold navy and the count + % recede (CSS only); (3) noncredit
+**feeder rows show the 2-batch/yr cadence** (`feederBatchNote` "2 batches · $X ea", tied to the Timing
+section). **#910 (Sam's two AskUserQuestion picks):** (4) the **rural allowance earns PER PRIORITY with
+a ≥50% FLOOR** — `ruralEarned` splits each $100k by the 3 priority shares, each slice unlocks at ≥floor
+then pays in proportion (reuses `earnFraction`, same engine as the main pool; kills the old binary
+≥50%-of-average cliff; dead `ruralAttainment` deleted); (3b) **feeder measurables F1 + F2** — **F1
+(eligible headcount) is live-wired** (builder `_feeder_resolver` + per-feeder `pe` bucketing →
+`feeders:{short:{pe}}`, empty until NC campuses attach exhibits in MAP; consumer measurables ladder),
+**F2 (NC-cert CPL waivers)** an honest "awaiting a data source" placeholder; ladder states what's NOT
+tracked (transcription; JST/Veteran Star). Tests 390→411→**422** + builder 16→**19**; suite 173 green.
+Method: *wire computation+display end-to-end but resolve to a pending state — never seed a fake count.*
+Story: `docs/cpl_funding_lessons.md` (SkyMore + round 2) · `docs/cpl_funding_handoff.md`. Side-lane —
+left `cpl_todos.json` + the numbered CCR handoff alone.
+
 ### SkyElemental side-lane — COBI Element Map refresh + the single-source workplan title/description editor (2026-07-27, #900/#902 MERGED)
 
 Two merged PRs. **#900** refreshed the stale **COBI Element Map** (`Dashboard_Element_Map.html`,
