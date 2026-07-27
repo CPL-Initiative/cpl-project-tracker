@@ -30,15 +30,27 @@ update public.workplan_goals set description =
   'Scale CPL through sprints, partnerships, training, policy, and sustainable funding'
   where activity_id = '4' and kind = 'activity' and coalesce(description,'') = '';
 
--- Pending curator confirmation (NOT applied here): pruning the leftover
--- "Activity 5: Strategic Initiatives & Special Projects" residue. It is more
--- entangled than a bare label — 4 active projects (1.1/1.3/1.4/2.1) carry a
--- stale SECONDARY association to Activity 5, and 2 held-out ghost projects
--- (5.1 AI-Ready California, 5.5) have Activity 5 as their ONLY link + a 5.1
--- ladder in workplan_goals. The safe removal (label rows + the 4 secondary
--- associations, PRESERVING the held-out 5.1/5.5) runs once the curator OKs the
--- depth:
---   delete from public.workplan_goals
---     where activity_id = '5' and kind = 'activity';
---   delete from public.workplan_activity_associations
---     where activity_id = '5' and is_primary = false;   -- 1.1, 1.3, 1.4, 2.1
+-- ── Follow-on: workplan_association_cleanup (curator-confirmed 2026-07-27) ──
+-- Applied live via MCP apply_migration (name: workplan_association_cleanup) after
+-- a fresh-read. Sam confirmed all four: backfill links, purge Activity 5, delete
+-- 5.1 (tabled AI-Ready California — re-addable later), retitle Activity 4.
+--
+-- (1) Backfill a REAL primary association for every project that had none, so the
+--     10 display-only projects (1.1.1, 1.1.2, 1.1.3, 3.1.3, 3.1.4, 3.7, 3.8,
+--     4.4.1, 4.6, 4.7) carry an actual link to their home Activity:
+--   insert into public.workplan_activity_associations (project_id, activity_id, is_primary)
+--   select p.id, regexp_replace(p.workplan_activity,'^Activity\s*(\d+).*','\1'), true
+--   from public.projects p
+--   where p.workplan_activity ~ '^Activity\s*\d+'
+--     and not exists (select 1 from public.workplan_activity_associations a where a.project_id=p.id);
+-- (4) Retitle Activity 4 (both GOAL+STRETCH) to the CPL Workplan title:
+--   update public.workplan_goals set name =
+--     'Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships'
+--     where activity_id='4' and kind='activity';
+-- (3) Delete tabled 5.1 everywhere: item_raci, item_updates, project_lifecycle,
+--     workplan_activity_associations, workplan_goals (kind='project'), projects.
+-- (2) Purge the dissolved Activity 5: delete all workplan_activity_associations
+--     where activity_id='5' (the 1.1/1.3/1.4/2.1 stale secondary tags + 5.1/5.5
+--     ghost primaries) + workplan_goals where activity_id='5' and kind='activity'.
+-- Post-state verified: 0 association gaps, 0 Activity-5 residue, 0 x 5.1 residue,
+-- Activity 4 retitled; total associations 69 -> 73.
