@@ -1211,3 +1211,31 @@ don't leak to `unmatched`) — fixture gained an "Eligible Credits" column + fee
 green (173 files). Render dump confirmed the rural per-priority chips + "Earned so far" + the F1
 "42 eligible in MAP" row note + the ladder. **F1 publishes empty until the daily cron runs against
 a feed carrying NC records.** Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+## 2026-07-27 — SkyMore, cont. 3: the js-tests OOM (test-infra fix)
+
+**Symptom.** After #908/#910 grew `cpl_funding.test.js` to 422 assertions, the non-required
+**js-tests** check went red on CI (`FATAL ERROR: Reached heap limit — JavaScript heap out of
+memory`, ~4GB) — while the suite stayed green locally. It's a non-required check, so it never
+gated the merges, but a red suite erodes signal.
+
+**Root cause (measured, not guessed).** `cpl_funding.test.js` runs **53 `freshDom()` + `boot()`**
+cycles, each `new JSDOM(..., {runScripts})` evaling the ~54KB data + consumer and rendering the
+full 118-row tab. jsdom's **per-window `vm` context is not reclaimable mid-run** — proven: adding
+`window.close()`, clearing the prior window's DOM + evaled globals, and even a forced `global.gc()`
+(`--expose-gc`) **all still OOM at 400–2048 MB**. So ~53 windows × ~75 MB ≈ 4 GB accumulate with
+no way to free them. It passed locally only because dev machines default to a ~8 GB heap
+(`heap_size_limit` = 8240 MB here); CI's runner auto-defaults to ~4 GB → right at the cliff → GC
+thrash → intermittent OOM. Reproduced deterministically: `NODE_OPTIONS=--max-old-space-size=4096
+node tests/cpl_funding.test.js` → EXIT 134.
+
+**Fix.** `tests/run.js` already runs each file in its own sequential child process — so raise the
+child ceiling: `spawnSync("node", ["--max-old-space-size=8192", file])`. The explicit flag
+overrides a lower ambient default (verified: 8240 MB effective even under `NODE_OPTIONS=2048`);
+files run one at a time so only one child holds memory; the cap only permits growth, so the 172
+small files are unaffected. Post-fix: `…=4096` ambient + the flag → 422/422, full suite 173 green.
+
+**Lesson.** A jsdom test file that spins up dozens of windows in a loop will accumulate
+un-reclaimable `vm` contexts; you cannot `close()`/`gc()` your way out. Either give the child
+process a bigger heap (done — matches how the file already passed locally) or split the file so
+each half runs in its own process. If assertions keep growing, prefer the split next.
