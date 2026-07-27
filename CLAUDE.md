@@ -569,6 +569,35 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyElemental side-lane — COBI Element Map refresh + the single-source workplan title/description editor (2026-07-27, #900/#902 MERGED)
+
+Two merged PRs. **#900** refreshed the stale **COBI Element Map** (`Dashboard_Element_Map.html`,
+the 🔧 button on Activities): Excel→**Supabase** everywhere (new `tag-supabase`/`supa-ref`
+chips), Section 2 rewritten to the current 4-Activity/32-sub structure + the real
+`apply_live_activity_current()` priority, a read-only callout (edits happen via the signed-in
+editors), the one honest Excel carve-out (budget Key Factors) flagged. Hand-maintained static
+file, Pages-served. **#902** made the **Annual Workplan Goals tab the ONE place** to edit workplan
+**titles + brief descriptions**: `workplan_goals.js` gained `startDescEdit`(→`projects.description`),
+`startActivityTitleEdit`(→`workplan_goals.name`, keeps the "Activity N:" prefix),
+`startActivityDescEdit`(→ new `workplan_goals.description` col) on a shared `inlineTextEditor`;
+generator emits `activity_desc` store→`CPL_Data.js`; **de-hardcoded** the drifted Activity copies
+in `raci.js`/`master_report.js`/`generate_reports.js` so a rename flows everywhere. **Adversarial
+review earned its keep** — caught that the report generators keyed `ACTIVITY_DESC` by the short
+`Activity N` id but looked it up with the *full* `projects.activity` label, so the de-hardcode was
+dead (fixed + rename-flow test). **Workplan data cleanup** (curator-confirmed, live, receipt
+`kb/supabase_workplan_goals_description.sql`): backfilled real primary links for the 10
+association-less projects; purged the dissolved Activity 5 (+ 5.1/5.5 ghosts); deleted tabled
+`5.1` AI-Ready California; retitled Activity 4 → "Coordinate CPL Sprints, Targeted Projects,
+Professional Learning, and Strategic Partnerships". Two linking mechanisms clarified:
+`projects.workplan_activity` (home + grouping-by-number) vs `workplan_activity_associations`
+(N-to-N cross-links). Tests: new `workplan_goals_desc_editors` (22) + a `master_report` rename-flow
+guard + `raci` mock fixed (4 activities). Story: `docs/workplan_single_source_editor_lessons.md` ·
+`docs/workplan_single_source_editor_handoff.md`; KB notes
+`methodology-single-source-of-truth-flows-via-snapshot`,
+`reference-workplan-activity-project-linking-model`. Side-lane — **left `cpl_todos.json` + the
+numbered handoff to the CCR mainline.** Deferred: retire dead `projects_editor.js`/projects-grid;
+optionally show the sub-activity description on the Activities-tab cards.
+
 ### Sky10Men side-lane — 🧠 Memory tab polish + 🩺 MAP Data Quality register + license fix (2026-07-26, #894–#898 MERGED)
 
 Picked up SkyKnow's live memory loop. **#894/#895:** the 📄 Report → non-techie **prose** +

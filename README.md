@@ -224,7 +224,9 @@ The whole ecosystem, end-to-end:
 Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
     ├── workplan_goals, projects   ← READ BY the pipeline (source of truth as of the
     │      Excel→Supabase migration; daily snapshot + Excel fallback);
-    │      inline-editable on their tabs by allowed reviewers
+    │      inline-editable on their tabs by allowed reviewers — incl. Activity +
+    │      sub-activity TITLES + brief DESCRIPTIONS on the Annual Workplan Goals
+    │      tab (the single-source editor, PR #902; workplan_goals.description col)
     ├── budget_funding, budget_expenditures, personnel  ← also Supabase-read (Budget
     │      cutover, PR #189); inline-editable. Dashboard config (title/desc/KPI
     │      params) moved to committed kb/dashboard_config.json (Excel-retirement P2).
