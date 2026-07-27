@@ -40,7 +40,7 @@
   var CONTENT_W = PAGE_W - MARGIN * 2;
 
   // Activity descriptions from the CPL Workplan (mirrors generate_reports.js).
-  var ACTIVITY_DESC = {
+  var ACTIVITY_DESC_STATIC = {
     'Activity 1': {
       title: 'Activity 1: Build AI-Enhanced CPL Infrastructure',
       shortTitle: 'Technology & MAP Platform',
@@ -62,6 +62,27 @@
       desc: 'Launch targeted CPL sprints, demonstration projects, and cross-sector partnerships to accelerate adoption, advance sustainable policy and funding, and build professional capacity across all 116 colleges.',
     },
   };
+
+  // Live Activity TITLE (+ number) from the CPL_DATA snapshot so an Activity
+  // rename on the Annual Workplan Goals tab flows into the Master report. The
+  // formal per-Activity paragraph (desc) + shortTitle stay authored here — the
+  // report prose is a richer text than the brief one-liner stored on
+  // workplan_goals.description, so it is intentionally not overridden.
+  function buildActivityDesc() {
+    var out = {};
+    Object.keys(ACTIVITY_DESC_STATIC).forEach(function (k) {
+      out[k] = Object.assign({}, ACTIVITY_DESC_STATIC[k]);
+    });
+    var groups = (typeof window !== 'undefined' && window.CPL_DATA
+      && window.CPL_DATA.activity_kpis) || [];
+    groups.forEach(function (g) {
+      var key = g.activity_id;  // "Activity N"
+      if (!key) return;
+      if (!out[key]) out[key] = {};
+      if (g.activity_name) out[key].title = g.activity_name;
+    });
+    return out;
+  }
 
   // ── Pure helpers (exported for tests) ────────────────────────────────────────
 
@@ -150,7 +171,7 @@
       var u = actNum ? (live.updates || {})['activity:' + actNum] : null;
       return {
         name: actName,
-        info: ACTIVITY_DESC[actName] || {},
+        info: buildActivityDesc()['Activity ' + actNum] || {},
         update: updText(u) ? { body: updText(u), date: updDate(u) } : null,
         projects: grouped.groups[actName],
       };

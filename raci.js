@@ -26,12 +26,30 @@
     { k: "C", label: "Consulted",   desc: "Two-way input" },
     { k: "I", label: "Informed",    desc: "Kept in the loop" }
   ];
-  var ACTIVITIES = [
+  // Top-level Activities — derived from the live CPL_DATA snapshot
+  // (activity_kpis[].activity_id / activity_name), which regenerates from the
+  // Supabase workplan_goals Activity rows. So a rename on the Annual Workplan
+  // Goals tab flows here on the next regen. Falls back to a static list only if
+  // the snapshot is missing (keeps RACI usable on a stale/offline bundle).
+  var ACTIVITIES_FALLBACK = [
     { id: "1", name: "Build AI-Enhanced CPL Infrastructure" },
     { id: "2", name: "Faculty Workgroups & Credit Recommendations" },
     { id: "3", name: "Scale CPL Access, Awards, and Procedures" },
     { id: "4", name: "Sprints, Projects & Partnerships" }
   ];
+  function deriveActivities() {
+    var groups = (window.CPL_DATA && window.CPL_DATA.activity_kpis) || [];
+    var out = [];
+    groups.forEach(function (g) {
+      var id = String(g.activity_id || "").replace(/^Activity\s*/i, "").trim();
+      if (!id) return;
+      var name = String(g.activity_name || "")
+        .replace(/^Activity\s*\d+\s*:\s*/i, "").trim();
+      out.push({ id: id, name: name || ("Activity " + id) });
+    });
+    return out.length ? out : ACTIVITIES_FALLBACK;
+  }
+  var ACTIVITIES = deriveActivities();
 
   var state = { members: [], raci: {}, items: [], sess: null, view: "matrix", loaded: false,
     mfilter: { scope: "all", q: "" }, _subByAct: {},

@@ -50,6 +50,13 @@ const DATA = {
     twenty_year_impact: { value: "$1.3B" },
   },
   live_updates: {},
+  // activity_kpis carries the STORE Activity labels (workplan_goals.name). Here
+  // Activity 1's label is deliberately DIFFERENT from every projects[].activity
+  // below, so the guard asserts the report title follows the store rename.
+  activity_kpis: [
+    { activity_id: "Activity 1", activity_name: "Activity 1: RENAMED Infrastructure", kpis: [] },
+    { activity_id: "Activity 2", activity_name: "Activity 2: Faculty Workgroups & Credit Recommendations", kpis: [] },
+  ],
   projects: [
     { id: "1.1", name: "MAP Platform Development", activity: "Activity 1: AI-Enhanced CPL Infrastructure", status: "On Track", pct: 80, desc: "Platform work", lead: "Old Lead", update: "creation-era update", update_date: "2026-04-01", budget: "$1M", budget_source: "CPL", kpi_metric: "5", kpi_goal_2526: "4", workplan_notes: "wp notes" },
     { id: "5.2", name: "AI Certification-to-Course Matching", activity: "Activity 1: AI-Enhanced CPL Infrastructure", status: "In Progress", pct: 40, desc: "", lead: "", update: "", update_date: "", budget: "", budget_source: "", kpi_metric: "" },
@@ -134,6 +141,13 @@ function makeWin(opts) {
   const act2Model = model.activities.filter(function (a) { return /Activity 2/.test(a.name); })[0];
   check("model: Accountable is the lead fallback when no Responsible", act2Model.projects[0].lead === "Acc Only");
   check("model: activity-level update attached", act1Model.update && act1Model.update.body === "Activity 1 rolling status");
+  // Guards the buildActivityDesc key-join fix: the report Activity title must come
+  // from the STORE (activity_kpis.activity_name), NOT the stale projects.activity
+  // group label. The mock renames Activity 1 only in activity_kpis; before the fix
+  // the lookup missed (keyed by the full label) and info was {} → title fell back
+  // to projects.activity, so a rename never reached the report.
+  check("model: Activity title flows from the store rename (not projects.activity)",
+    act1Model.info && act1Model.info.title === "Activity 1: RENAMED Infrastructure");
 
   // (d) selection filtering
   check("model: only selected projects included", model.selectedCount === 2 && !model.activities.some(function (a) {

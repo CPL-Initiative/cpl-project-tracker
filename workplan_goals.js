@@ -180,6 +180,36 @@
     });
   }
 
+  /**
+   * Sub-activity brief-description editor. Writes projects.description (the one
+   * store; the Annual Workplan tab renders it, so the edit flows to every
+   * surface — Activities cards, RACI, reports — on the next regen).
+   */
+  function saveDesc(pid, description, sess) {
+    return fetch(SUPABASE_URL + "/rest/v1/projects?id=eq."
+        + encodeURIComponent(pid), {
+      method: "PATCH",
+      headers: authHeaders(sess, "return=representation"),
+      body: JSON.stringify({ description: description })
+    });
+  }
+
+  /**
+   * Top-level Activity field editor. The 4 Activities are kind='activity' rows
+   * in workplan_goals with TWO row_types (GOAL+STRETCH) that share the same
+   * name + description, so we PATCH by (activity_id, kind='activity') to keep
+   * both rows in sync. `patch` is { name } or { description }.
+   */
+  function saveActivityField(activity_id, patch, sess) {
+    var qs = "activity_id=eq." + encodeURIComponent(activity_id)
+           + "&kind=eq.activity";
+    return fetch(SUPABASE_URL + "/rest/v1/workplan_goals?" + qs, {
+      method: "PATCH",
+      headers: authHeaders(sess, "return=representation"),
+      body: JSON.stringify(patch)
+    });
+  }
+
   // ═══ Activity↔Project association editor ════════════════════════════════
   // The popover (open / render / save / optimistic-paint / rollback) lives in
   // the SHARED module assoc_editor.js (window.CPL_ASSOC_EDITOR), so the Workplan
@@ -304,7 +334,8 @@
     // cells + editable titles. Live-synced Current cells carry no edit attr, so
     // they're never selected here (read-only by construction).
     var cells = document.querySelectorAll(
-      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"]');
+      '[data-editable="1"], [data-current-edit="1"], [data-title-edit="1"], '
+      + '[data-desc-edit="1"], [data-activity-title-edit="1"], [data-activity-desc-edit="1"]');
     cells.forEach(function (c) {
       if (state.sess) c.classList.add("wpg-editable");
       else c.classList.remove("wpg-editable");
@@ -594,6 +625,112 @@
     input.addEventListener("blur", commit);
   }
 
+  // ─── Shared inline text editor (description + Activity title/description) ───
+  // Single-line input or multi-line textarea that PATCHes via opts.save(value,
+  // sess). Mirrors startTitleEdit's optimistic-paint + rollback. In multiline
+  // mode Enter inserts a newline; Cmd/Ctrl+Enter (or blur) saves. Empty renders
+  // the "—" placeholder (the same neutral empty-state the generator emits).
+  function inlineTextEditor(cell, state, opts) {
+    if (!state.sess) return;
+    if (cell.classList.contains("wpg-editing")) return;
+    var oldVal = cell.getAttribute("data-val");
+    if (oldVal === null) oldVal = cell.textContent;
+    if (oldVal === "—") oldVal = "";  // the "—" placeholder means empty
+    var field = opts.multiline
+      ? el("textarea", { "class": "wpg-title-input",
+          "style": "width:100%;box-sizing:border-box;min-height:3.4em;padding:3px 5px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;color:#333;resize:vertical;" }, [])
+      : el("input", { "type": "text", "class": "wpg-title-input",
+          "style": "width:100%;box-sizing:border-box;padding:2px 4px;font:inherit;border:1px solid #4D7EA8;border-radius:3px;background:#fff;color:#333;" }, []);
+    field.value = oldVal;
+    cell.classList.add("wpg-editing");
+    var prevHtml = cell.innerHTML;
+    cell.innerHTML = "";
+    cell.appendChild(field);
+    field.focus();
+    if (field.select) field.select();
+
+    var done = false;
+    function cancel() {
+      if (done) return;
+      done = true;
+      cell.innerHTML = prevHtml;
+      cell.classList.remove("wpg-editing");
+    }
+    function commit() {
+      if (done) return;
+      var val = (field.value || "").trim();
+      if (val === (oldVal || "").trim()) { cancel(); return; }
+      if (opts.required && !val) { field.style.borderColor = "#A33"; return; }
+      done = true;
+      cell.classList.remove("wpg-editing");
+      cell.classList.add("wpg-saving");
+      cell.textContent = val || "—";
+      cell.setAttribute("data-val", val);
+      opts.save(val, state.sess).then(writeResult).then(function (r) {
+        cell.classList.remove("wpg-saving");
+        var paint = r.ok ? "wpg-saved" : "wpg-error";
+        cell.classList.add(paint);
+        setTimeout(function () { cell.classList.remove(paint); }, 1500);
+        if (!r.ok) {
+          cell.innerHTML = prevHtml;
+          cell.setAttribute("data-val", oldVal);
+          console.error("[workplan_goals] save failed:", r.status);
+          maybeDropStalePhrase(state.sess, r.status);
+        }
+      }).catch(function (e) {
+        cell.classList.remove("wpg-saving");
+        cell.classList.add("wpg-error");
+        cell.innerHTML = prevHtml;
+        cell.setAttribute("data-val", oldVal);
+        setTimeout(function () { cell.classList.remove("wpg-error"); }, 2000);
+        console.error("[workplan_goals] save error:", e);
+      });
+    }
+    field.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && (!opts.multiline || e.metaKey || e.ctrlKey)) {
+        e.preventDefault(); commit();
+      } else if (e.key === "Escape") {
+        e.preventDefault(); cancel();
+      }
+    });
+    field.addEventListener("blur", commit);
+  }
+
+  // Sub-activity brief description → projects.description.
+  function startDescEdit(cell, state) {
+    var pid = cell.getAttribute("data-pid");
+    if (!pid) return;
+    inlineTextEditor(cell, state, {
+      multiline: true,
+      save: function (v, sess) { return saveDesc(pid, v || null, sess); }
+    });
+  }
+
+  // Top-level Activity title → workplan_goals.name (rebuilt with the "Activity
+  // N: " prefix so the number can't be edited away).
+  function startActivityTitleEdit(cell, state) {
+    var aid = cell.getAttribute("data-aid");
+    if (!aid) return;
+    inlineTextEditor(cell, state, {
+      required: true,
+      save: function (v, sess) {
+        return saveActivityField(aid, { name: "Activity " + aid + ": " + v }, sess);
+      }
+    });
+  }
+
+  // Top-level Activity brief description → workplan_goals.description.
+  function startActivityDescEdit(cell, state) {
+    var aid = cell.getAttribute("data-aid");
+    if (!aid) return;
+    inlineTextEditor(cell, state, {
+      multiline: true,
+      save: function (v, sess) {
+        return saveActivityField(aid, { description: v || null }, sess);
+      }
+    });
+  }
+
   function attachClickHandler(state) {
     // Use event delegation on the body — works for both tab tables.
     document.body.addEventListener("click", function (e) {
@@ -608,6 +745,15 @@
           }
           if (target.getAttribute("data-title-edit") === "1") {
             startTitleEdit(target, state); return;
+          }
+          if (target.getAttribute("data-desc-edit") === "1") {
+            startDescEdit(target, state); return;
+          }
+          if (target.getAttribute("data-activity-title-edit") === "1") {
+            startActivityTitleEdit(target, state); return;
+          }
+          if (target.getAttribute("data-activity-desc-edit") === "1") {
+            startActivityDescEdit(target, state); return;
           }
         }
         target = target.parentNode;
