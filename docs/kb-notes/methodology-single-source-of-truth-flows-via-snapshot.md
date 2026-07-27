@@ -2,7 +2,8 @@
 title: Single source of truth flows via the regenerated snapshot — de-hardcode consumers, and verify the join key
 created: 2026-07-27
 updated: 2026-07-27
-tags: [methodology, single-source-of-truth, de-hardcode, snapshot, drift, adversarial-review]
+tags: [methodology, single-source-of-truth, de-hardcode, snapshot, drift, adversarial-review, entity-table-overlay]
+updated: 2026-07-27
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -69,6 +70,37 @@ that keep their own hardcoded copy silently drift.
   join (as `master_report.test.js` didn't, until a rename-flow assertion was added).
 - Run an **adversarial review on the diff** — the join-key mismatch here was invisible to
   py_compile + the existing tests and only surfaced when reviewers traced the actual lookup keys.
+
+## Two tables, one tree: make the ENTITY table authoritative, the other a pure overlay (2026-07-27)
+
+The snapshot-flow above is about ONE field with N *consumers*. The sibling failure is one
+*concept* split across two **tables** that two consumers iterate independently.
+
+The Annual Workplan Goals tab iterated `workplan_goals` (the year-ladder table); the Activities
+tab iterated `projects` (the sub-activity tree). Two tables, two consumers → guaranteed drift: the
+#872 reorg re-keyed `projects` but not `workplan_goals`, so 10 projects were missing from Annual
+Goals and every Activity-4 row showed the wrong (off-by-one) targets.
+
+**The fix (Path A): pick ONE table as the authoritative entity list, and make the other a by-id
+overlay that the authoritative iteration *joins in*, never iterates.**
+`build_workplan_goals_from_supabase` now builds the annual-goals rows from the **`projects`** set
+(the same set the Activities tab renders) and overlays the `workplan_goals` ladder by id when
+present. Consequences:
+
+- The two tabs **cannot diverge** — they enumerate the same table; a new project auto-appears on
+  both, and a *left-behind* overlay row degrades to a visible blank ladder instead of a silent id
+  mismatch.
+- A row reflected from the entity table but with **no overlay row** must be **read-only on the
+  fields the overlay owns** — an editable cell that PATCHes a non-existent row is a silent-revert
+  trap. Gate the editable attributes on a `has_ladder`/`has_overlay` flag; the entity-owned fields
+  (title, description → `projects`) stay editable.
+- An all-zero overlay must not inherit truthy defaults from the populated case (the
+  `is_pct = bool(vals) and all(… if v)` → `all([])` == True trap — require a non-zero element).
+
+**Rule of thumb:** if two consumers iterate two tables for one concept, one of them is wrong.
+Elect the entity table, demote the other to an overlay. Pairs with
+`methodology-rekey-every-id-keyed-artifact` (finish the re-key across every keyed table) — Path A
+is the structural insurance that makes a missed re-key *visible* instead of silent.
 
 ## When NOT to apply
 

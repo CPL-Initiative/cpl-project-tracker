@@ -617,6 +617,26 @@ guard + `raci` mock fixed (4 activities). Story: `docs/workplan_single_source_ed
 numbered handoff to the CCR mainline.** Deferred: retire dead `projects_editor.js`/projects-grid;
 optionally show the sub-activity description on the Activities-tab cards.
 
+**Cont. 2026-07-27 — reflect EVERY project + finish the #872 re-key (#905, #909 + a live 4.7→4.5.1
+re-home).** **#905:** the Annual Goals table grouped rows by `activity_ids[0]` (smallest cross-link)
+not the HOME Activity → repeated/interleaved headers (9 not 4); fixed to group by
+`workplan_activity` + sort by (home, id). **#909 — the big finding:** the **#872 reorg re-keyed
+`projects`/`item_raci`/`item_updates` but LEFT `workplan_goals` + `workplan_activity_associations`
+on the OLD numbering** → 10 projects missing from Annual Goals + every Activity-4 row showing the
+NEXT item's targets (off-by-one under the dissolved "4.1 Sprints" wrapper). Fix: applied the same
+#872 crosswalk to `workplan_goals` (two-phase perm, receipt `kb/supabase_workplan_goals_rekey.sql`)
++ cleaned 10 orphan association rows + filled `3.1.4`; generator **Path A** — `annual_goals` now
+iterates the `projects` set (ladder overlaid by id) so every project reflects and the two tabs
+can't drift; blank-ladder rows read-only (gated on `has_ladder`), title/desc still editable; X.Y.Z
+ids nest under their X.Y parent (Sam: 29 Palms subsidiary-but-a-card). A consumer trace confirmed
+RACI/Fact Sheet/reports need no change (the re-key **auto-corrects** the reports' targets — they
+read `projects[*].kpi_goal_*`). **4.7→4.5.1**: Legislative Advocacy re-homed under 4.5 (renumber =
+re-parent). Descriptions: only `3.1.4` was empty (filled); the rest are curator-authored, kept.
+Tests: `annual_goals_activity_grouping` (12) + `annual_goals_reflect_all_projects` (20). Durable:
+**re-key EVERY project-keyed table** (`methodology-rekey-every-id-keyed-artifact`); **projects=tree,
+workplan_goals=overlay** (`methodology-single-source-of-truth-flows-via-snapshot`). Story in the
+lessons/handoff docs above.
+
 ### SkyMoney side-lane — Implementation Funding: collapsible sections · per-student rate · P1/P3 metric wiring (2026-07-27, #901 MERGED)
 
 Three curator asks, one PR (`cpl_funding.js` + the actuals builder + tests; **0 HTML**).
