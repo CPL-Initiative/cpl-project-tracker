@@ -226430,6 +226430,146 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAS-IEL(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IEL(-1-001"
+      ],
+      "title": "IB English Lit (A1) HL (Minimum Passing Score of 4)",
+      "unified_title": "IB English Lit (A1) HL (Minimum Passing Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB English Lit (A1) HL (Minimum Passing Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "IB IBEA1",
+          "credit": "6 hours in IB English Lit (A1) HL (Minimum Passing Score of 4)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IEL(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IEL(1-1-001"
+      ],
+      "title": "IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)",
+      "unified_title": "IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "IB IBEA2",
+          "credit": "6 hours in IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IEBH2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IEBH2-1-001"
+      ],
+      "title": "IB English B HL (Minimum Passing Score of 4)",
+      "unified_title": "IB English B HL (Minimum Passing Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB English B HL (Minimum Passing Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "IB IBEB",
+          "credit": "6 hours in English B HL  (Minimum Passing Score of 4)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IMA&2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IMA&2-1-001"
+      ],
+      "title": "IB Math Analysis & Approaches HL (Minimum Passing Score of 4)",
+      "unified_title": "IB Math Analysis & Approaches HL (Minimum Passing Score of 4)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Math Analysis & Approaches HL (Minimum Passing Score of 4)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "IB IBMAA",
+          "credit": "6 hours in IB Math Analysis & Approaches HL (Minimum Passing Score of 4)"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -228109,8 +228249,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 365,
-        "exhibits": 295,
+        "credit_recs": 369,
+        "exhibits": 299,
         "disciplines": 16,
         "ccc_collaborative": 0,
         "industry_certs": 15,
@@ -228975,9 +229115,9 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5485,
-        "exhibits": 1772,
-        "courses": 294,
+        "credit_recs": 5489,
+        "exhibits": 1776,
+        "courses": 298,
         "colleges": 84,
         "ccc_collaborative": 25,
         "pct": 43.2
@@ -229184,10 +229324,10 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6760,
-        "exhibits": 2158,
+        "credit_recs": 6764,
+        "exhibits": 2162,
         "colleges": 84,
-        "pct": 53.2
+        "pct": 53.3
       },
       {
         "cpl_type": "Industry Certification",
@@ -229228,8 +229368,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7889,
-        "exhibits": 2947,
+        "credit_recs": 7893,
+        "exhibits": 2951,
         "colleges": 91,
         "pct": 62.1
       },
@@ -229300,8 +229440,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11176,
-        "exhibits": 4762,
+        "credit_recs": 11180,
+        "exhibits": 4766,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
@@ -229726,6 +229866,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-26T14:02:52",
-  "total_credit_recs": 12698
+  "generated_at": "2026-07-27T10:11:06",
+  "total_credit_recs": 12702
 };
