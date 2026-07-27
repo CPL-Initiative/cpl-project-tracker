@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-27T20:38:35.833007+00:00",
+  "scraped_at": "2026-07-27T22:29:04.544264+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26569,
+    "jst": 26575,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -227,7 +227,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 211,
+      "jst": 212,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -242,7 +242,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 229,
+      "jst": 233,
       "star": false
     },
     "Evergreen Valley College": {
@@ -367,7 +367,7 @@
     },
     "Porterville College": {
       "vets": 52,
-      "jst": 25,
+      "jst": 26,
       "star": false
     },
     "Las Positas College": {

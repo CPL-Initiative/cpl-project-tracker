@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-27T20:38:35.240Z",
+  "scraped_at": "2026-07-27T22:29:04.174Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -743,17 +743,17 @@
         },
         {
           "college": "Porterville College",
-          "students": 25,
-          "units": 125,
+          "students": 26,
+          "units": 130,
           "avgUnits": 5,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 25,
+          "militaryStudents": 26,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 207600,
-          "yearImpact": 728040,
+          "savings": 216250,
+          "yearImpact": 758375,
           "transcribedUnits": 0
         },
         {
@@ -937,6 +937,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "East Los Angeles College",
+          "students": 234,
+          "units": 693,
+          "avgUnits": 2.9615384615384617,
+          "transcriptionRate": 10.8,
+          "avgTranscribed": 0.32051282051282054,
+          "criteriaMetCount": 0,
+          "militaryStudents": 233,
+          "nonMilitaryStudents": 1,
+          "apprenticeStudents": 0,
+          "savings": 1188510,
+          "yearImpact": 4168029,
+          "transcribedUnits": 75
+        },
+        {
           "college": "Los Medanos College",
           "students": 232,
           "units": 45,
@@ -952,33 +967,18 @@
           "transcribedUnits": 0
         },
         {
-          "college": "East Los Angeles College",
-          "students": 230,
-          "units": 681,
-          "avgUnits": 2.9608695652173913,
-          "transcriptionRate": 11,
-          "avgTranscribed": 0.32608695652173914,
-          "criteriaMetCount": 0,
-          "militaryStudents": 229,
-          "nonMilitaryStudents": 1,
-          "apprenticeStudents": 0,
-          "savings": 1188510,
-          "yearImpact": 4168029,
-          "transcribedUnits": 75
-        },
-        {
           "college": "Citrus College",
-          "students": 211,
-          "units": 820,
-          "avgUnits": 3.8862559241706163,
+          "students": 212,
+          "units": 824,
+          "avgUnits": 3.8867924528301887,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 211,
+          "militaryStudents": 212,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 1418600,
-          "yearImpact": 4974940,
+          "savings": 1425520,
+          "yearImpact": 4999208,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "51,274",
+      "value": "51,280",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,569"
+          "value": "26,575"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 51274,
-    "Units": 242162.15000000002,
+    "Students": 51280,
+    "Units": 242183.15000000002,
     "TranscribedUnits": 104066.45,
-    "Savings": 337299970.25,
-    "YearImpact": 1360260650.8999999,
-    "MilitaryStudents": 26569,
+    "Savings": 337315540.25,
+    "YearImpact": 1360315253.8999999,
+    "MilitaryStudents": 26575,
     "NonMilitaryStudents": 24784,
     "AprenticeStudents": 760,
-    "AverageUnits": 4.7229034208370715,
-    "TranscribedAverage": 2.029614424464641
+    "AverageUnits": 4.722760335413417,
+    "TranscribedAverage": 2.029376950078003
   }
 }
