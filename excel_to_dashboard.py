@@ -1305,13 +1305,42 @@ def render_annual_goals_table_html(annual_goals, activities=None):
     html += '                        <th style="padding:0.5rem 0.4rem;text-align:center;border:1px solid var(--navy-secondary);">TOTAL</th>\n'
     html += '                    </tr>\n                </thead>\n                <tbody>\n'
 
+    # Activity header lookup: display label ("Activity N: Name") → the activity
+    # entry (id + description), so the group header can render editable title +
+    # description spans that PATCH workplan_goals. Sourced from the Supabase
+    # activities list; a group with no matching entry renders plain (read-only).
+    act_by_name = {a["name"]: a for a in (activities or [])}
+
     current_activity = ""
     for row in annual_goals:
-        # Activity group header — curator-editable Activity name flows here
+        # Activity group header — curator-editable Activity name + description.
+        # Name → PATCH workplan_goals.name (kind='activity', both GOAL+STRETCH);
+        # description → PATCH workplan_goals.description. Single source of truth.
         if row["activity"] != current_activity:
             current_activity = row["activity"]
+            act = act_by_name.get(current_activity)
+            if act:
+                aid_num = str(act["id"])
+                prefix = f"Activity {aid_num}: "
+                name_part = (current_activity[len(prefix):]
+                             if current_activity.startswith(prefix)
+                             else current_activity)
+                act_desc = act.get("description") or ""
+                header_inner = (
+                    f'<span style="opacity:0.85;">Activity {html_escape(aid_num)}: </span>'
+                    f'<span class="wpg-title-cell" data-activity-title-edit="1" '
+                    f'data-aid="{html_escape(aid_num, quote=True)}" '
+                    f'data-val="{html_escape(name_part, quote=True)}">{html_escape(name_part)}</span>'
+                    f'<div class="wpg-act-desc-cell" data-activity-desc-edit="1" '
+                    f'data-aid="{html_escape(aid_num, quote=True)}" '
+                    f'data-val="{html_escape(act_desc, quote=True)}" '
+                    f'style="font-weight:400;font-size:0.78rem;opacity:0.92;margin-top:0.2rem;">'
+                    f'{html_escape(act_desc) if act_desc else "&mdash;"}</div>'
+                )
+            else:
+                header_inner = html_escape(current_activity)
             html += (f'                    <tr style="background:var(--navy-secondary);color:#fff;">\n'
-                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{html_escape(current_activity)}</td>\n'
+                     f'                        <td colspan="8" style="padding:0.5rem 0.6rem;font-weight:700;border:1px solid var(--navy-primary);">{header_inner}</td>\n'
                      f'                    </tr>\n')
 
         # Three rows per sub-activity: GOAL, CURRENT, STRETCH
@@ -1363,12 +1392,22 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                 # Curator-editable id + name flow into the visible cell — escape both.
                 # Session 85: the name is wrapped in an editable span (data-title-edit)
                 # → PATCH projects.name (the single authoritative title store).
+                # Brief description under the title — editable, single-stored in
+                # projects.description (data-desc-edit → PATCH). "—" when empty.
+                proj_desc = row.get("description") or ""
+                desc_line = (
+                    f'<div class="wpg-desc-cell" data-desc-edit="1" '
+                    f'data-pid="{html_escape(row["id"], quote=True)}" '
+                    f'data-val="{html_escape(proj_desc, quote=True)}" '
+                    f'style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">'
+                    f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
+                )
                 name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;'
                              f'vertical-align:top;font-weight:600;background:#fff;">'
                              f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
                              f'data-pid="{html_escape(row["id"], quote=True)}">'
-                             f'{html_escape(row["name"])}</span>{chip_line}</td>')
+                             f'{html_escape(row["name"])}</span>{desc_line}{chip_line}</td>')
 
             html += f'                    <tr style="{style}">\n'
             html += f'                        {name_cell}\n'
@@ -1623,12 +1662,31 @@ def build_activity_kpis(projects, activities=None):
     }
     # Live labels from Supabase Activity rows when available
     sb_activity_labels = {a["id"]: a["name"] for a in (activities or [])}
+    # Live Activity brief descriptions from the Supabase Activity rows
+    # (workplan_goals.description — the single source of truth). The fallback
+    # one-liners are used only if the store row has no description yet.
+    sb_activity_desc = {
+        a["id"]: (a.get("description") or "") for a in (activities or [])
+    }
+    activity_desc_fallback = {
+        "1": "AI-enhanced MAP platform with student portal, integrations, and credential registry",
+        "2": "1,000 statewide credit recommendations from 25 faculty/industry workgroups",
+        "3": "Statewide CPL data infrastructure tracking 250K students across 116 colleges",
+        "4": "Scale CPL through sprints, partnerships, training, policy, and sustainable funding",
+    }
 
     def _act_label(act_num):
         return (
             sb_activity_labels.get(act_num)
             or activity_labels_fallback.get(act_num)
             or f"Activity {act_num}"
+        )
+
+    def _act_desc(act_num):
+        return (
+            sb_activity_desc.get(act_num)
+            or activity_desc_fallback.get(act_num)
+            or ""
         )
 
     # All active work-item projects (D.* helper rows excluded; tabled/archived
@@ -1646,6 +1704,7 @@ def build_activity_kpis(projects, activities=None):
             groups[act_num] = {
                 "activity_id": f"Activity {act_num}",
                 "activity_name": _act_label(act_num),
+                "activity_desc": _act_desc(act_num),
                 "kpis": [],
             }
         entry = {
@@ -1913,7 +1972,10 @@ def render_activity_kpis_html(activity_kpis, annual_goals=None, update_log=None,
         avg_pct = round(sum(pcts) / len(pcts)) if pcts else 0
         completed = sum(1 for p in pcts if p >= 100)
         total_kpis = len(pcts)
-        act_goal_text = activity_goals.get(act_id, "")
+        # Single source of truth: the Activity brief description now lives in
+        # workplan_goals.description (carried on the group as activity_desc).
+        # The hardcoded activity_goals dict is a defensive fallback only.
+        act_goal_text = group.get("activity_desc") or activity_goals.get(act_id, "")
 
         # Determine bar color based on avg progress
         if avg_pct >= 75:
@@ -10247,6 +10309,11 @@ def build_workplan_goals_from_supabase(
             "id": aid,
             "name": data["name"],
             "kind": kind,
+            # Activity-level brief description: kind='activity' rows carry it on
+            # both GOAL+STRETCH. This is the single source of truth for the header
+            # one-liner the Activities tab + reports used to hardcode.
+            "description": (goal_row.get("description")
+                            or stretch_row.get("description") or ""),
             "is_percentage": is_pct,
             "years": [label for label, _k in year_keys],
             "goal": goal_values,
@@ -10347,6 +10414,10 @@ def build_workplan_goals_from_supabase(
         annual_goals.append({
             "id": aid,
             "name": title,
+            # Sub-activity brief description — the SINGLE store is
+            # projects.description (the field the retired card editor wrote).
+            # Editable on the Annual Workplan Goals tab now.
+            "description": (proj_map.get(aid, {}) or {}).get("description") or "",
             "is_percentage": entry["is_percentage"],
             "activity": act_label,
             "activity_ids": entry["activity_ids"],

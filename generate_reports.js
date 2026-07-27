@@ -233,7 +233,7 @@ function statusRunsSized(status, sz) {
 }
 
 // Activity descriptions from CPL Workplan
-const ACTIVITY_DESC = {
+const ACTIVITY_DESC_STATIC = {
   "Activity 1": {
     title: "Activity 1: Build AI-Enhanced CPL Infrastructure",
     shortTitle: "Technology & MAP Platform",
@@ -255,6 +255,25 @@ const ACTIVITY_DESC = {
     desc: "Launch targeted CPL sprints, demonstration projects, and cross-sector partnerships to accelerate adoption, advance sustainable policy and funding, and build professional capacity across all 116 colleges.",
   },
 };
+
+// Live Activity TITLE from the CPL_DATA snapshot (activity_kpis[].activity_name)
+// so an Activity rename on the Annual Workplan Goals tab flows into the generated
+// .docx reports. The formal per-Activity paragraph (desc) + shortTitle stay
+// authored here (richer than the brief workplan_goals.description one-liner).
+function buildActivityDesc() {
+  const out = {};
+  Object.keys(ACTIVITY_DESC_STATIC).forEach((k) => {
+    out[k] = Object.assign({}, ACTIVITY_DESC_STATIC[k]);
+  });
+  (DATA.activity_kpis || []).forEach((g) => {
+    const key = g.activity_id;  // "Activity N"
+    if (!key) return;
+    if (!out[key]) out[key] = {};
+    if (g.activity_name) out[key].title = g.activity_name;
+  });
+  return out;
+}
+const ACTIVITY_DESC = buildActivityDesc();
 
 // ══════════════════════════════════════════════
 //  MASTER REPORT
