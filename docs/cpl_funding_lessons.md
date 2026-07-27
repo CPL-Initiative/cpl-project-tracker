@@ -1155,5 +1155,59 @@ priority cap-and-earn) once he picks.
 three cell-weight CSS guards, feeder 2-batch row + pool per-batch even & front-load). Full
 funding suite green; `retheme_tokens`/`pii_guard`/`cpl_funding_performance` green (the only
 other tests touching `cpl_funding.js`). Render dump confirmed the even/front-load prose swap +
-the "$X · 2 batches · $Y ea" feeder cells. Side-lane — left `cpl_todos.json` + the numbered CCR
-handoff alone (funding lane owns only its own lessons/handoff).
+the "$X · 2 batches · $Y ea" feeder cells. **Shipped #908.**
+
+### SkyMore round 2 — the advisory items BUILT (Sam's AskUserQuestion picks)
+
+Sam answered the three forks: **rural = per-priority with a ≥50% FLOOR** (hybrid), **keep $100k
+each**, **build F1 + F2**. Shipped as a second PR (branch restarted from the merged `main` since
+#908 was squash-merged — the harness's fresh-change rule).
+
+**4a — Rural allowance now earns PER PRIORITY with a floor (was a binary ≥50%-of-average gate).**
+`ruralEarned(c)` splits each rural college's allowance by the 3 Year-1 priority shares; each
+slice **unlocks** once that priority clears ≥ the floor (`ruralThreshold`, still editable, default
+50%) of its Year-1 target, then pays **in proportion** to attainment (`slice × min(1,
+actual/target)`), capped. It **reuses `earnFraction`** — the exact per-priority engine the main
+pool uses — so rural and the main pool now share one mental model (Sam's "incorporating it that
+way"). Unmeasurable priorities are *pending* (not paid, not zeroed); the old `ruralAttainment`
+(average) was **deleted** (dead after both call sites moved to `ruralEarned`). The rural table's
+"Yr-1 target attainment" column → **"Earned so far"** ($ earned) + a **"By priority"** column of
+compact `.cf-rchip` chips (green = unlocked & earning, muted = below floor / nothing posted,
+faint = pending feed; `P1/P2/P3` short labels for the no-scroll rule). Tfoot → "N of 10 **earning**
+on current data" + the earned pool total. The college drill-in mirrors it. **Amount unchanged**
+($1M ÷ 10 = $100k each). **Key property:** removes the 50% cliff — 40% attainment on a priority
+now earns 40% of that slice instead of $0 for the whole allowance.
+
+**4b — Noncredit feeder measurables F1 + F2 (the "give it a think" build, done honestly).**
+- **F1 (Eligible headcount) is LIVE-WIRED, not faked.** The daily builder
+  (`_build_funding_performance.py`) gained a **feeder name resolver** (`_feeder_resolver`, MAP
+  name → feeder short) + per-feeder eligible bucketing (the same `pe` measure — `Eligible Credits
+  > 0`, Potential/Test excluded, <5 suppressed) → a new top-level **`feeders: {short: {pe}}`** in
+  the perf artifact. **Zero fabrication:** it's empty today (the feed carries no NC-campus records
+  yet) and lights up the instant campuses attach exhibits to their NC records in MAP. The consumer
+  reads `perf().feeders` — a per-feeder "· N eligible in MAP" sub-note in each feeder row + an F1
+  line in the new **measurables ladder** (`feederMeasurablesHtml`). This is the metric the 2-batch
+  disbursement is framed to track.
+- **F2 (Noncredit-certificate CPL waivers) is a labeled placeholder** — the one award a NC campus
+  issues itself (a course waived on work experience). There's **no feed for it** (it's not in
+  `View_StudentAggregatedValues`), so it's honestly shown "awaiting a data source — recorded when a
+  campus posts the waiver in MAP." Not faked into a number.
+- The ladder also states what is **NOT** tracked: transcription (colleges do that) and JST/Veteran
+  Star (NC campuses aren't obligated to collect JST) — Sam's own framing, on the tab.
+- **The pre-existing `feederMetric` free-text line** (default "CPL-ready noncredit completions
+  handed off to a partner credit college") is effectively **F3** (the hand-off metric) — left in
+  place; F3 proper needs the cross-campus identity match-back the colleges' portal/MIS path rides.
+
+**Method note — the honest way to "build" a metric with no data yet:** wire the *computation* +
+the *display* end-to-end (builder emits the key, consumer reads it, tests prove the bucketing on a
+synthetic row) but let it resolve to a **pending state** until real data lands — never seed a fake
+count. F1 is a live pathway; F2 is a committed placeholder. This is the feeder analog of the
+colleges' measurability ladder (`MEASURES`).
+
+**State & verification.** `tests/cpl_funding.test.js` **411 → 422** (Part K: rural per-priority
+earn + green-chip unlock + floor-locks-all + drill-in chips; feeder F1/F2 ladder + pending state +
+live F1 count). Builder test **16 → 19** (F1 NOCE=5 distinct, Calbright <5 suppressed, feeders
+don't leak to `unmatched`) — fixture gained an "Eligible Credits" column + feeder rows. Full suite
+green (173 files). Render dump confirmed the rural per-priority chips + "Earned so far" + the F1
+"42 eligible in MAP" row note + the ladder. **F1 publishes empty until the daily cron runs against
+a feed carrying NC records.** Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.

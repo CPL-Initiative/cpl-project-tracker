@@ -26,23 +26,23 @@ Four curator asks; **three shipped** in a JS-only PR (`cpl_funding.js` + test; *
    section): a `feederBatchNote()` helper prints "2 batches · $X ea" under each feeder Support
    cell + the FEEDER POOL footer; intro ties it to Timing + cumulative eligible CPL in MAP.
    Batch = support ÷ 2 in both even & front-load modes.
-4. **ADVISORY — not built, awaiting Sam** (full write-up in the lessons doc SkyMore section):
-   - **Feeder measurables:** propose **F1 = Eligible headcount** (NC students with an exhibit
-     attached in MAP showing eligible units — the direct analog of the college `pe` count; the
-     builder already computes `pe`, only needs NC-record bucketing → makes the feeder pool
-     achievement-based, tracked by the 2-batch disbursement); **F2 = noncredit-certificate CPL
-     waivers** (the one award-like metric NC campuses own, and the CPL work they want to do);
-     **F3 (phase-2) = hand-offs that transcribe at a partner college**. NOT JST/Veteran-Star
-     (no obligation) or portal-origin (credit-college facing).
-   - **Rural per-priority spread:** the rural allowance today is a **binary ≥50%-of-average
-     Year-1-attainment** gate (all-or-nothing) — inconsistent with the main pool's per-priority
-     cap-and-earn. **Recommend aligning it**: split each rural allowance by the 3 priority shares
-     and earn each slice proportionally (`Σ share_k×min(1,actual_k/target_k)`), removing the 50%
-     cliff. **The $110k:** today $1M ÷ 10 = **$100k each**; $110k each ⇒ carve-out must rise to
-     **$1.1M** (−$100k off the college pool). Build is a follow-up in `ruralSectionHtml`/
-     `ruralAttainment` (mirror `earnFraction`) once Sam picks mechanism + amount.
+4. **The two advisory items — Sam picked, then BUILT (second PR).** He answered the
+   AskUserQuestion: **rural = per-priority with a ≥50% floor**, **keep $100k each**, **build F1 + F2**.
+   - **Rural (`ruralEarned`):** each allowance is split by the 3 Year-1 priority shares; a slice
+     **unlocks** at ≥ the floor (`ruralThreshold`, editable) of that priority's target, then pays
+     **in proportion** (`slice × min(1, actual/target)`), capped. Reuses `earnFraction` — same engine
+     as the main pool. Table: "Earned so far" + a "By priority" `.cf-rchip` column (green unlocked /
+     muted below-floor / faint pending); tfoot "N of 10 earning". Old averaging `ruralAttainment`
+     **deleted**. Removes the 50% cliff.
+   - **Feeder F1 (LIVE-wired, not faked):** builder `_feeder_resolver` + per-feeder eligible
+     bucketing → `feeders: {short:{pe}}` in the perf artifact (empty until NC campuses attach
+     exhibits; the same `pe`/eligible measure). Consumer: per-row "· N eligible in MAP" + an F1/F2
+     **measurables ladder** (`feederMeasurablesHtml`). **F2** (NC-cert CPL waivers) = honest
+     "awaiting a data source" placeholder (no feed exists). Ladder also states what's NOT tracked
+     (transcription; JST/Veteran-Star). `feederMetric` free-text = the F3 hand-off metric, left in place.
 
-Tests **390 → 411** (Part J). Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+Tests **390 → 411** (#908, Part J) → **422** (Part K); builder **16 → 19**. Side-lane — left
+`cpl_todos.json` + the numbered CCR handoff alone.
 
 ## Prior state — 2026-07-27 (SkyMoney)
 

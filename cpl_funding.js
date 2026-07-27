@@ -32,9 +32,13 @@
 //     so the balance stays $0 by construction.
 //   • RURAL ALLOWANCE (pool.rural_carveout, default $1M): a performance
 //     carve-out — each rural-flagged college (DRAFT roster; per-college
-//     `rural` flags + in-tab override) can earn an equal share by reaching
-//     ≥ rural_threshold (default 50%) of its measurable Year-1 priority
-//     targets (actuals from cpl_funding_performance.js).
+//     `rural` flags + in-tab override) can earn an equal share ($100k). The
+//     allowance is split across the 3 Year-1 priority SHARES; each slice
+//     UNLOCKS once the college clears >= rural_threshold (default 50%) of that
+//     priority's Year-1 target, then pays IN PROPORTION to attainment, capped
+//     (Sam, 2026-07-27 — reuses earnFraction, same per-priority engine as the
+//     main pool; replaced the old binary >=50%-of-average gate). Actuals from
+//     cpl_funding_performance.js.
 //   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
 //     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
 //     map_coordinator_summary() RPC) + ② a participation request by the
@@ -286,6 +290,18 @@
     ".cplfund-sec-body { padding: 2px 16px 14px; }",
     // Per-priority cell: the per-student funding rate on the target line.
     ".cf-prio .cf-rate { font-weight: 400; color: var(--navy-secondary); }",
+    // Rural per-priority earning chips (Sam, 2026-07-27): one per priority, green
+    // when its slice is unlocked (>= floor) + earning, muted when below the floor,
+    // faint when not yet measurable.
+    ".cf-rchip { display: inline-block; font-size: .7rem; font-weight: 600; padding: 0 6px; border-radius: 9px; margin-right: 3px; border: 1px solid var(--border); white-space: nowrap; }",
+    ".cf-rchip.ok { color: var(--green-progress); border-color: var(--green-progress); }",
+    ".cf-rchip.below { color: var(--text-muted); }",
+    ".cf-rchip.pending { color: var(--text-faint); }",
+    // Noncredit feeder measurables ladder (F1 / F2).
+    ".cplfund-fmeas { margin-top: 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; }",
+    ".cplfund-fmeas-h { font-weight: 600; margin-bottom: 4px; }",
+    ".cplfund-fmeas-list { margin: 0 0 6px; padding-left: 18px; }",
+    ".cplfund-fmeas-list li { margin: 2px 0; }",
     "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }"
   ].join("\n");
 
@@ -1804,24 +1820,55 @@
     return _earnCache;
   }
 
-  // ── rural performance attainment ──────────────────────────────────────
-  // Average attainment (actual ÷ target) across the Year-1 priorities the
-  // daily MAP feed can measure TODAY (see MEASURABILITY — currently P1 only;
-  // grows as feeds land). Suppressed (<5) or absent actuals → null =
-  // "pending data", never a silent zero.
-  function ruralAttainment(c) {
-    var rec = perfFor(c.college);
-    if (!rec) return null;
-    var fracs = [];
-    priorities("1").forEach(function (p) {
-      var meas = measurability(p.metric);
-      if (!meas.src) return;
-      if (rec[meas.src] == null) return;   // absent or suppressed → not measurable
-      var target = (c.headcount || 0) * p.target_rate;
-      if (target > 0) fracs.push(rec[meas.src] / target);
+  // ── rural performance attainment (per-priority, ≥floor) ───────────────
+  // Per-college rural allowance = the carve-out split evenly across the rural roster.
+  function ruralPerCollege() {
+    var n = ruralColleges().length;
+    return n ? ruralCarve() / n : 0;
+  }
+  // Rural allowance earned PER PRIORITY, with a floor (Sam, 2026-07-27: "spread the
+  // allowance across their 3 priorities"). The per-college allowance is split by the
+  // 3 priority shares (same as the main pool); a priority's slice UNLOCKS once the
+  // college clears >= the floor (ruralThreshold) of that priority's Year-1 target,
+  // then pays IN PROPORTION to attainment, capped at the slice. Unmeasurable
+  // priorities (no feed yet) are 'pending' — not paid, not zeroed. This aligns the
+  // rural carve-out with the main pool's per-priority cap-and-earn instead of the
+  // old all-or-nothing ≥50%-of-average gate.
+  function ruralEarned(c) {
+    var per = ruralPerCollege();
+    var floor = ruralThreshold();
+    var parts = priorities("1").map(function (p, i) {
+      var slice = per * p.share;
+      var fr = earnFraction(c, p);
+      var out = { label: p.label, short: "P" + (i + 1), title: p.title, slice: slice,
+                  status: fr.status, att: 0, earned: 0, unlocked: false };
+      if (fr.status === "earned") {
+        out.att = fr.f;                 // min(1, actual/target)
+        out.unlocked = fr.f >= floor;   // the floor gates the slice
+        out.earned = out.unlocked ? slice * fr.f : 0;
+      }
+      return out;   // gap/pending → pending; none/suppressed → 0 earned
     });
-    if (!fracs.length) return null;
-    return fracs.reduce(function (s, x) { return s + x; }, 0) / fracs.length;
+    var earned = parts.reduce(function (s, x) { return s + x.earned; }, 0);
+    var measurable = parts.some(function (x) {
+      return x.status === "earned" || x.status === "none" || x.status === "suppressed";
+    });
+    return { per: per, floor: floor, parts: parts, earned: earned, measurable: measurable };
+  }
+  // One rural per-priority chip: green (unlocked + earning), muted (below the floor /
+  // nothing posted), faint (not yet measurable).
+  function ruralChip(pp) {
+    var floor = ruralThreshold();
+    var cls, txt, why;
+    if (pp.status === "earned") {
+      txt = pp.short + " " + fmtPctTrim(pp.att);
+      if (pp.unlocked) { cls = "ok"; why = "earning " + fmtMoney(pp.earned) + " of " + fmtMoney(pp.slice) + " (>= floor)"; }
+      else { cls = "below"; why = "below the " + fmtPctTrim(floor) + " floor — slice locked"; }
+    } else if (pp.status === "none") { cls = "below"; txt = pp.short + " 0%"; why = "nothing posted in MAP yet"; }
+    else if (pp.status === "suppressed") { cls = "pending"; txt = pp.short + " <5"; why = "fewer than 5 (suppressed)"; }
+    else { cls = "pending"; txt = pp.short + " ⏳"; why = "not measurable in MAP yet (pending feed)"; }
+    return '<span class="cf-rchip ' + cls + '" title="' + esc(pp.label + " — " + pp.title + ": " + why) +
+      '">' + esc(txt) + "</span>";
   }
 
   function actualLineHtml(p, idx, targetHeads) {
@@ -2383,14 +2430,13 @@
       : "";
     var ruralLine = "";
     if (c.rural) {
-      var rl = ruralColleges();
-      var perR = rl.length ? ruralCarve() / rl.length : 0;
-      var att = ruralAttainment(baseCollege(c.college) || c);
-      ruralLine = '<div><span class="dk">🌲 Rural allowance:</span> up to ' + fmtMoney(perR) +
-        " this window at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 priority targets &mdash; " +
-        (att == null ? '<span class="dk">attainment pending data</span>'
-          : "current attainment <strong>" + fmtPctTrim(att) + "</strong>" +
-            (att >= ruralThreshold() ? " ✓ qualifies (current data)" : " (below threshold so far)")) + "</div>";
+      var re = ruralEarned(baseCollege(c.college) || c);
+      var rchips = re.parts.map(ruralChip).join(" ");
+      ruralLine = '<div><span class="dk">🌲 Rural allowance:</span> up to ' + fmtMoney(re.per) +
+        " this window, split across the 3 priorities (each unlocks at &ge;" + fmtPctTrim(re.floor) +
+        " of its Year-1 target, then pays in proportion) &mdash; " +
+        (re.measurable ? "earned so far <strong>" + fmtMoney(re.earned) + "</strong> " + rchips
+          : '<span class="dk">attainment pending data</span>') + "</div>";
     }
     var eligBtns = "";
     if (unlocked()) {
@@ -2532,36 +2578,39 @@
     if (!carve && !list.length) return "";
     var thr = ruralThreshold();
     var perR = list.length ? carve / list.length : 0;
-    var earned = 0;
+    var earnedPool = 0, anyEarning = 0;
     var rows = list.map(function (c) {
-      var att = ruralAttainment(c);
-      var status, attCell;
-      if (att == null) { status = '<span class="dk">— pending data</span>'; attCell = '<span class="dk">—</span>'; }
-      else if (att >= thr) { status = "✓ qualifies (current data)"; attCell = fmtPctTrim(att); earned++; }
-      else { status = '<span class="dk">⏳ below threshold so far</span>'; attCell = fmtPctTrim(att); }
+      var re = ruralEarned(c);
+      earnedPool += re.earned;
+      if (re.earned > 0) anyEarning++;
+      var chips = re.parts.map(ruralChip).join(" ");
+      var earnedCell = re.measurable ? fmtMoney(re.earned) : '<span class="dk">— pending data</span>';
       return "<tr>" +
         '<td class="t"><strong>' + esc(c.college) + "</strong> 🌲</td>" +
         "<td>" + fmtInt(c.headcount) + "</td>" +
-        "<td>" + fmtMoney(perR) + "</td>" +
-        '<td title="average of the measurable Year-1 priority attainments (actual ÷ target, per MAP)">' + attCell + "</td>" +
-        '<td class="t">' + status + "</td></tr>";
+        "<td>" + fmtMoney(re.per) + "</td>" +
+        '<td title="allowance earned so far = Σ per-priority slice × attainment, once a priority clears the floor">' + earnedCell + "</td>" +
+        '<td class="t">' + chips + "</td></tr>";
     }).join("");
     return '<h3>Rural college allowance ' +
       '<span class="dk" style="font-size:.8rem;font-weight:400;">(performance carve-out &mdash; earned, not automatic)</span></h3>' +
       '<div class="cplfund-formula" style="margin-bottom:10px;">' +
       "Rural colleges carry the same first-year lift &mdash; faculty articulation work, local business processes &mdash; " +
       "on far smaller allocations. A <strong>" + fmtMoney(carve) + "</strong> top-of-pool carve-out lets each of the " +
-      list.length + " rural-flagged colleges <strong>earn up to " + fmtMoney(perR) + "</strong> this window by reaching " +
-      "<strong>&ge;" + edNum("rural-threshold", fmtRatePct(thr), { small: true, label: "rural allowance threshold percent" }) +
-      "%</strong> of its Year-1 priority targets (measured from the same MAP actuals as the priority cards; unearned " +
-      "funds stay in the carve-out). <span class='dk'>Roster is a DRAFT &mdash; " + esc(base().rural_source || "edit the per-college rural flags") +
+      list.length + " rural-flagged colleges <strong>earn up to " + fmtMoney(perR) + "</strong> this window. " +
+      "The allowance is <strong>split across the three priorities by the same shares as the main pool</strong>; each " +
+      "priority&#39;s slice <strong>unlocks once the college reaches &ge;" +
+      edNum("rural-threshold", fmtRatePct(thr), { small: true, label: "rural allowance threshold percent" }) +
+      "%</strong> of that priority&#39;s Year-1 target, then pays <strong>in proportion to attainment</strong> (capped at " +
+      "the slice). Unearned slices stay in the carve-out; measured from the same MAP actuals as the priority cards. " +
+      "<span class='dk'>Roster is a DRAFT &mdash; " + esc(base().rural_source || "edit the per-college rural flags") +
       ".</span></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
       "<thead><tr><th class='t'>Rural college</th><th>Headcount</th><th>Potential allowance</th>" +
-      "<th>Yr-1 target attainment</th><th class='t'>Status</th></tr></thead>" +
+      "<th>Earned so far</th><th class='t'>By priority (&ge;floor unlocks)</th></tr></thead>" +
       "<tbody>" + (rows || '<tr><td colspan="5" class="t">No colleges are rural-flagged.</td></tr>') + "</tbody>" +
-      '<tfoot><tr><td class="t">RURAL POOL</td><td></td><td>' + fmtMoney(carve) + "</td><td></td>" +
-      '<td class="t">' + earned + " of " + list.length + " qualify on current data</td></tr></tfoot></table></div>";
+      '<tfoot><tr><td class="t">RURAL POOL</td><td></td><td>' + fmtMoney(carve) + "</td><td>" + fmtMoney(earnedPool) + "</td>" +
+      '<td class="t">' + anyEarning + " of " + list.length + " earning on current data</td></tr></tfoot></table></div>";
   }
 
   // ── baseline eligibility section (badges only) ────────────────────────
@@ -2784,6 +2833,53 @@
       'title="Disbursed in two batches per funding year, tracking the cumulative eligible CPL these campuses stand up in MAP (see Timing)">' +
       "2 batches &middot; " + fmtMoney(amount / 2) + " ea</div>";
   }
+  // F1 (noncredit feeder eligible headcount) actuals, per-feeder short → {pe}.
+  function feederPerf() { var pf = perf(); return (pf && pf.feeders) || null; }
+  // A per-feeder F1 sub-note in the row name cell (only when the feed carries it).
+  function feederF1Note(short) {
+    var fp = feederPerf(); var r = fp && fp[short];
+    if (!r) return "";
+    if (r.pe == null) return r.pe_suppressed
+      ? ' <span class="dk" style="font-size:.72rem;">&middot; &lt;5 eligible in MAP</span>' : "";
+    return ' <span class="dk" style="font-size:.72rem;">&middot; ' + fmtInt(r.pe) + " eligible in MAP</span>";
+  }
+  // The noncredit measurables ladder (Sam, 2026-07-27): F1 (eligible headcount —
+  // measurable once campuses attach exhibits to their NC records; wired to the
+  // F1 feed) + F2 (noncredit-certificate CPL waivers — the one award a NC campus
+  // owns; awaiting a data source). NOT transcription (colleges do that) or JST /
+  // Veteran Star (NC campuses aren't obligated to collect JST).
+  function feederMeasurablesHtml() {
+    var fp = feederPerf();
+    var pf = perf();
+    var f1;
+    if (fp) {
+      var total = 0, anyReal = false, supp = false;
+      feeders().forEach(function (f) {
+        var r = fp[f.short];
+        if (!r) return;
+        if (r.pe == null) { if (r.pe_suppressed) supp = true; }
+        else { total += r.pe; anyReal = true; }
+      });
+      f1 = anyReal
+        ? "<strong>" + fmtInt(total) + "</strong> eligible NC students identified across the feeders" +
+          (supp ? " (＋suppressed)" : "") + ' <span class="dk">(per MAP' +
+          (pf && pf.as_of ? ", as of " + esc(pf.as_of) : "") + ")</span>"
+        : '<span class="dk">measurable once campuses attach exhibits to their NC student records in MAP</span>';
+    } else {
+      f1 = '<span class="dk">measurable once campuses attach exhibits to their NC student records in MAP</span>';
+    }
+    return '<div class="cplfund-fmeas">' +
+      '<div class="cplfund-fmeas-h">Noncredit measurables <span class="dk">&mdash; what these campuses can track in MAP</span></div>' +
+      '<ul class="cplfund-fmeas-list">' +
+      "<li><strong>F1 &middot; Eligible headcount</strong> &mdash; distinct NC students with an exhibit attached in MAP showing " +
+      "&ge;1 eligible unit. " + f1 + " <span class='dk'>&mdash; the measure the two-batch disbursement tracks.</span></li>" +
+      "<li><strong>F2 &middot; Noncredit-certificate CPL waivers</strong> &mdash; a noncredit certificate awarded with a course " +
+      "waived on work experience (CPL) &mdash; the one award a NC campus issues itself. " +
+      "<span class='dk'>Awaiting a data source &mdash; recorded when a campus posts the waiver in MAP.</span></li>" +
+      "</ul>" +
+      "<div class='dk' style='font-size:.72rem;'>Not tracked here: transcription (the credit colleges do that) and " +
+      "JST / Veteran Star (noncredit campuses aren&#39;t obligated to collect JST).</div></div>";
+  }
   function feederSectionHtml() {
     var list = feeders();
     var carve = feederCarveout();
@@ -2799,7 +2895,8 @@
       return "<tr>" +
         '<td class="t"><strong>' + esc(f.name) + "</strong>" +
         (f.estimate ? ' <span class="cplfund-est" title="editable estimate — no authoritative noncredit MIS pull is wired here">est.</span>' : "") +
-        (f.vintage ? ' <span class="dk" style="font-size:.72rem;" title="headcount vintage">' + esc(f.vintage) + "</span>" : "") + "</td>" +
+        (f.vintage ? ' <span class="dk" style="font-size:.72rem;" title="headcount vintage">' + esc(f.vintage) + "</span>" : "") +
+        feederF1Note(f.short) + "</td>" +
         '<td>' + edNum("feeder-hc", fmtInt(hc), { small: true, idx: i, label: f.name + " headcount" }) + "</td>" +
         "<td>" + fmtPctTrim(hc / totalHc) + "</td>" +
         "<td>" + fmtMoney(supp) + feederBatchNote(supp) + "</td>" +
@@ -2827,6 +2924,7 @@
       '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalHc) + "</td><td>100%</td>" +
       "<td>" + fmtMoney(perYearPool) + feederBatchNote(perYearPool) + "</td>" +
       '<td class="tot">' + fmtMoney(carve) + "</td></tr></tfoot></table></div>" +
+      feederMeasurablesHtml() +
       (anyEstimate ? '<div class="cplfund-foot"><div>Noncredit headcounts are <strong>editable estimates</strong> ' +
         "&mdash; replace them with each feeder&#39;s MIS noncredit annual headcount to true up the split.</div></div>" : "");
   }

@@ -30,8 +30,17 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   qualifier for the funding tab's Elig glyph. Emitted as the
                   top-level payload key `vet_star` (+ as_of/threshold/n).
 
+  FEEDERS.F1 (added 2026-07-27 per Sam) = per-noncredit-feeder eligible headcount
+                  (distinct students with Eligible Credits > 0), keyed by the
+                  feeder SHORT name (NOCE / SD Cont. Ed / Mt. SAC NC / Calbright).
+                  The one measure a noncredit campus can stand up (it can't
+                  transcribe — colleges do that; F2 waivers have no feed yet).
+                  Emitted as top-level `feeders`; empty until campuses attach
+                  exhibits to their NC student records in MAP.
+
   The field -> priority mapping lives in cpl_funding.js (MEASURES), not here;
-  this script only emits the raw pe/p2/p3/pp counts (+ the vet_star flags).
+  this script only emits the raw pe/p2/p3/pp counts (+ the vet_star flags +
+  the per-feeder F1 eligible headcount).
 
 Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
   - aggregate per-college counts only; the student grain never leaves the
@@ -126,6 +135,29 @@ def _name_resolver():
     return resolve
 
 
+def _feeder_resolver():
+    """MAP college name -> noncredit-feeder SHORT name (or None). Feeders live
+    only in cpl_funding_data.js `feeders` (they were moved out of the college
+    table — they can't earn the CPL priority metrics). Matches on the feeder's
+    full name or its short. Supports F1 (eligible headcount) — the one measure a
+    noncredit campus can stand up once it attaches exhibits to its NC records."""
+    with open(FUNDING_DATA, encoding="utf-8") as f:
+        m = re.search(r"window\.CPL_FUNDING = (\{.*\});\s*$", f.read(), re.S)
+    feeders = json.loads(m.group(1)).get("feeders", []) if m else []
+    lookup = {}
+    for fd in feeders:
+        short = fd.get("short")
+        if not short:
+            continue
+        for nm in (fd.get("name"), short):
+            if nm:
+                lookup[_norm(nm)] = short
+
+    def resolve(map_name):
+        return lookup.get(_norm(map_name))
+    return resolve
+
+
 def read_veteran_stars(resolve):
     """Per-college Veteran Star flag (funding-name → bool) from veteran_jst.json —
     a college where >= star_threshold (0.75) of enrolled veterans have a JST
@@ -179,12 +211,15 @@ def main():
         return
 
     resolve = _name_resolver()
+    feeder_resolve = _feeder_resolver()
     metrics = ("pe", "p2", "p3", "pp")
     seen = {m: set() for m in metrics}          # per-(college,sid) dedupe
     state_seen = {m: set() for m in metrics}    # statewide distinct (cross-college dedupe by sid)
     counts = {}                                 # funding-name -> {pe,p2,p3,pp}
     unmatched = {}
     state = {m: 0 for m in metrics}
+    feeder_counts = {}                          # feeder-short -> {pe}  (F1 eligible headcount)
+    feeder_seen = set()                         # per-(feeder,sid) dedupe
     rowno = 0
     for row in ds["rows"]:
         rowno += 1
@@ -212,6 +247,19 @@ def main():
             continue
         sid = (row[i_sid] or "").strip()
         fname = resolve(college)
+        if not fname:
+            # Not a funding college — is it a noncredit FEEDER campus? If so, count
+            # its F1 eligible headcount (distinct students with eligible units in
+            # MAP; same "eligible" measure as `pe`, Potential/Test excluded) and
+            # DON'T route it to `unmatched`. Empty until campuses attach exhibits.
+            fshort = feeder_resolve(college)
+            if fshort:
+                if ecr > 0 and not is_potential:
+                    fk = (fshort, sid) if sid else (fshort, f"row{rowno}")
+                    if fk not in feeder_seen:
+                        feeder_seen.add(fk)
+                        feeder_counts.setdefault(fshort, {"pe": 0})["pe"] += 1
+                continue
         bucket = counts if fname else unmatched
         key = fname or college
         rec = bucket.setdefault(key, {m: 0 for m in metrics})
@@ -251,6 +299,16 @@ def main():
             outb[name] = o
         return outb
 
+    def suppress_feeders(bucket):
+        out = {}
+        for short, rec in sorted(bucket.items()):
+            n = rec.get("pe", 0)
+            if 0 < n < SUPPRESS_BELOW:
+                out[short] = {"pe": None, "pe_suppressed": True}
+            else:
+                out[short] = {"pe": n}
+        return out
+
     payload = {
         "as_of": (ds["generated_at"] or "").split("T")[0] or date.today().isoformat(),
         "basis": ("MAP " + VIEW + " — distinct students per college; "
@@ -263,6 +321,9 @@ def main():
         "statewide": state,
         "colleges": suppress(counts),
         "unmatched": suppress(unmatched),
+        # F1 (noncredit feeder eligible headcount) — per-feeder short -> {pe}.
+        # Empty until the feeders attach exhibits to their NC records in MAP.
+        "feeders": suppress_feeders(feeder_counts),
     }
     # Veteran Star (>=75% of enrolled veterans' JSTs uploaded) — the auto-computed
     # eligibility qualifier for the funding tab's Elig glyph (Sam, 2026-07-27).
@@ -284,6 +345,7 @@ def main():
     sup = sum(1 for r in payload["colleges"].values() for m in ("p2", "p3") if r.get(m) is None)
     print(f"wrote {os.path.normpath(out)}: {len(payload['colleges'])} colleges "
           f"({sup} suppressed cells), {len(payload['unmatched'])} unmatched, "
+          f"{len(payload['feeders'])} feeders (F1 eligible), "
           f"statewide pe={state['pe']:,} p2={state['p2']:,} p3={state['p3']:,} "
           f"pp={state['pp']:,}, as_of {payload['as_of']}")
 
