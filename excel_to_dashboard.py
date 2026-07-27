@@ -1402,8 +1402,22 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                     f'style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">'
                     f'{html_escape(proj_desc) if proj_desc else "&mdash;"}</div>'
                 )
-                name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem;border:1px solid #ddd;'
+                # Hierarchy: a three-level id (X.Y.Z, e.g. 4.1.1 "29 Palms" under
+                # 4.1 "Veteran Sprint") renders as a SUBSIDIARY of its X.Y parent —
+                # indented + an accent left-border + a "↳" marker — while staying
+                # its own row (a significant project preserved as a card, per Sam).
+                # Order already nests it (rows sort by home Activity + natural id).
+                _depth = str(row["id"]).count(".")
+                _indent_rem = max(0, _depth - 1) * 1.25
+                _pad_left = 0.6 + _indent_rem
+                _nest_style = ("border-left:3px solid var(--seal-blue);"
+                               if _depth >= 2 else "")
+                _sub_marker = ('<span style="color:var(--seal-blue);opacity:0.65;" '
+                               'aria-hidden="true">↳ </span>' if _depth >= 2 else '')
+                name_cell = (f'<td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem {_pad_left:.2f}rem;'
+                             f'border:1px solid #ddd;{_nest_style}'
                              f'vertical-align:top;font-weight:600;background:#fff;">'
+                             f'{_sub_marker}'
                              f'<span style="color:#888;font-size:0.75rem;">{html_escape(row["id"])}</span> '
                              f'<span class="wpg-title-cell" data-title-edit="1" '
                              f'data-pid="{html_escape(row["id"], quote=True)}">'
@@ -1418,7 +1432,13 @@ def render_annual_goals_table_html(annual_goals, activities=None):
             # headline value read-only (current_source=='live'); an unmapped one
             # shows a manual value editable in this tab (PATCH workplan_goals.current).
             rt_attr = rtype.upper() if rtype in ("Goal", "Stretch") else ""
-            editable = bool(rt_attr)
+            # Path A: only rows backed by a real workplan_goals row are ladder-
+            # editable. A blank-ladder project (reflected from `projects` with no
+            # wg row) shows read-only year/Current cells — editing them would
+            # PATCH 0 rows and silently revert. has_ladder defaults True so the
+            # 22 ladder-bearing rows are unaffected.
+            has_ladder = row.get("has_ladder", True)
+            editable = bool(rt_attr) and has_ladder
             is_current = rtype == "Current"
             cur_live = is_current and row.get("current_source") == "live"
             year_keys_map = {
@@ -1446,6 +1466,12 @@ def render_annual_goals_table_html(annual_goals, activities=None):
                         )
                         html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
                                  f'border:1px solid #ddd;font-weight:700;white-space:nowrap;">{live_disp}{badge}</td>\n')
+                        continue
+                    if not has_ladder:
+                        # No backing workplan_goals row → Current is read-only here
+                        # (a manual edit would PATCH 0 rows). Render a plain cell.
+                        html += (f'                        <td style="padding:0.3rem 0.4rem;text-align:center;'
+                                 f'border:1px solid #ddd;{yr_style}">{disp}</td>\n')
                         continue
                     # Manual current — click-to-edit in the Annual Workplan tab.
                     pct_attr = ' data-pct="1"' if row.get("is_percentage") else ''
@@ -10304,7 +10330,12 @@ def build_workplan_goals_from_supabase(
         stretch_values = [_num(stretch_row.get(k)) for _label, k in year_keys]
         goal_total = sum(goal_values)
         stretch_total = sum(stretch_values)
-        is_pct = bool(goal_values) and all(0 < v < 1 for v in goal_values if v)
+        # A percentage ladder needs at least one non-zero value all in (0,1). An
+        # all-zero ladder (a Path-A project with no workplan_goals row) must NOT
+        # read as a percentage — `all(... if v)` over an all-zero list is `all([])`
+        # == True, which would mis-flag every blank row as a percentage.
+        _nonzero = [v for v in goal_values if v]
+        is_pct = bool(_nonzero) and all(0 < v < 1 for v in _nonzero)
         return {
             "id": aid,
             "name": data["name"],
@@ -10328,15 +10359,26 @@ def build_workplan_goals_from_supabase(
         entry = _build_entry(aid, act_by_aid[aid], "activity")
         activities.append(entry)
 
-    # ── Phase 4: build Projects list + annual_goals (sorted by id) ─────────
+    # ── Phase 4: build Projects list + annual_goals ────────────────────────
+    # Path A (2026-07-27): iterate the SAME project set the Activities tab
+    # renders (the `projects` table) — NOT only the workplan_goals ladder rows —
+    # so EVERY sub-activity on the Activities tab is reflected in the Annual
+    # Workplan Goals table. A project with no ladder row overlays a blank
+    # (zeroed) ladder but still lists (title + description + chips editable).
+    # This makes `projects` the single source of the sub-activity tree and
+    # workplan_goals purely the ladder/targets overlay, so the two tabs can no
+    # longer drift apart. (Pre-2026-07-27 this loop iterated workplan_goals,
+    # which the #872 reorg re-key had left on the OLD numbering → 10 projects
+    # missing from this table + Activity-4 targets shown off-by-one.)
     workplan_goals = []
     annual_goals = []
-    for aid in sorted(proj_by_aid.keys(), key=_natural_activity_sort_key):
-        data = proj_by_aid[aid]
-        goal_row = data.get("GOAL") or {}
-        stretch_row = data.get("STRETCH") or {}
-        if not goal_row and not stretch_row:
-            continue  # Defensive — every activity should have both row_types
+    # D.* helper rows never render as work items (mirror build_activity_kpis).
+    project_ids = [str(p["id"]) for p in projects
+                   if not str(p.get("id", "")).startswith("D.")]
+    for aid in sorted(project_ids, key=_natural_activity_sort_key):
+        # Ladder overlay: the workplan_goals GOAL/STRETCH rows when present, else
+        # an empty bucket (blank ladder) carrying the authoritative project name.
+        data = proj_by_aid.get(aid) or {"name": (proj_map.get(aid, {}) or {}).get("name") or aid}
 
         entry = _build_entry(aid, data, "project")
         # PR-B: enrich with the associations this project contributes to
@@ -10429,6 +10471,12 @@ def build_workplan_goals_from_supabase(
             # projects.description (the field the retired card editor wrote).
             # Editable on the Annual Workplan Goals tab now.
             "description": (proj_map.get(aid, {}) or {}).get("description") or "",
+            # Path A: does this project have a backing workplan_goals ladder row?
+            # A blank-ladder project (reflected here but with no wg row) renders
+            # its year/Current cells READ-ONLY — an editable cell would PATCH a
+            # non-existent wg row and silently no-op. Title + description stay
+            # editable (they PATCH projects, which always exists).
+            "has_ladder": bool(data.get("GOAL") or data.get("STRETCH")),
             "is_percentage": entry["is_percentage"],
             "activity": act_label,
             "activity_ids": entry["activity_ids"],
