@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-27T12:38:51.337Z",
+  "scraped_at": "2026-07-27T15:19:23.858Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -878,17 +878,17 @@
         },
         {
           "college": "Santa Rosa Junior College",
-          "students": 436,
-          "units": 1732,
-          "avgUnits": 3.9724770642201834,
+          "students": 438,
+          "units": 1740,
+          "avgUnits": 3.9726027397260273,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 436,
+          "militaryStudents": 438,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 2989440,
-          "yearImpact": 10483776,
+          "savings": 3003280,
+          "yearImpact": 10532312,
           "transcribedUnits": 0
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,722",
+      "value": "50,724",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,234"
+          "value": "26,236"
         },
         {
           "label": "Workforce/Other",
@@ -1813,7 +1813,7 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$335M",
+      "value": "$336M",
       "breakdowns": [
         {
           "label": "Military",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50722,
-    "Units": 241110.15000000002,
+    "Students": 50724,
+    "Units": 241118.15000000002,
     "TranscribedUnits": 102894.45,
-    "Savings": 335487660.25,
-    "YearImpact": 1353891496.8999999,
-    "MilitaryStudents": 26234,
+    "Savings": 335501500.25,
+    "YearImpact": 1353940032.8999999,
+    "MilitaryStudents": 26236,
     "NonMilitaryStudents": 24567,
     "AprenticeStudents": 760,
-    "AverageUnits": 4.7535615709159735,
-    "TranscribedAverage": 2.0285960727100667
+    "AverageUnits": 4.753531858686224,
+    "TranscribedAverage": 2.02851608705938
   }
 }
