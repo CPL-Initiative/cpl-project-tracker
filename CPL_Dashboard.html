@@ -2699,6 +2699,9 @@
 
 
 
+
+
+
 /* ═══ MAP Articulation Analysis Cards ═══ */
 /* ─── Budget inline editor (budget_editor.js) ─── */
 .budget-auth-widget { display:flex; flex-wrap:wrap; gap:0.6rem; align-items:center;
@@ -3185,7 +3188,7 @@
             </div>
           </div>
         </span>
-        <div class="last-updated">Last Updated: July 27, 2026 at 3:29 PM PT</div>
+        <div class="last-updated">Last Updated: July 27, 2026 at 3:48 PM PT</div>
         <button id="refreshBtn" class="cobi-util-link" title="Re-scrape live MAP data and regenerate the dashboard now" onclick="if(!confirm('⚠️ Manual Pipeline Run\n\nThis will re-scrape live data from the MAP CPL Dashboard, regenerate all charts and KPIs, and overwrite today\'s deployed dashboard.\n\nThe process typically takes 3-5 minutes.\n\nContinue?'))return;var b=this;b.disabled=true;b.textContent='⏳ Pipeline triggered — updating...';fetch('https://cpl-proxy.slee-548.workers.dev/trigger?secret=CPL_SCRAPE_2026',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({secret:'CPL_SCRAPE_2026'})}).then(function(r){return r.json()}).then(function(d){if(d.success){b.textContent='✅ Pipeline running — page will refresh in 5 min';setTimeout(function(){location.reload()},300000)}else{b.textContent='❌ '+( d.error||'Unknown error');b.disabled=false}}).catch(function(e){b.textContent='❌ '+e.message;b.disabled=false})">&#x21bb; Manually Refresh COBI</button>
       </div>
     </div>
@@ -3258,7 +3261,7 @@
     <div class="kpi-section-wrapper" id="kpiSectionWrapper">
         <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('kpiSectionWrapper');w.classList.toggle('collapsed');})()"> 
             <span class="kpi-section-title">KPI Metrics</span>
-            <span class="kpi-section-updated">Live data refreshed Jul 27, 2026 · 3:29 PM PT</span>
+            <span class="kpi-section-updated">Live data refreshed Jul 27, 2026 · 3:47 PM PT</span>
             <span class="kpi-toggle-arrow">&#9650;</span>
         </div>
     <div class="kpi-section">
@@ -3677,7 +3680,7 @@
 <div class="kpi-section-wrapper" id="cplAnalyticsWrapper">
     <div class="kpi-section-header" onclick="(function(){var w=document.getElementById('cplAnalyticsWrapper');w.classList.toggle('collapsed');})()">
         <span class="kpi-section-title">CPL Analytics</span>
-        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-07-27T22:28:27</span>
+        <span class="kpi-section-updated">Source: MAP Custom Reporting · Generated 2026-07-27T22:47:16</span>
         <span class="kpi-toggle-arrow">&#9650;</span>
     </div>
     <div class="cpl-analytics-body" id="exhibitAnalysisSection">
@@ -6336,6 +6339,38 @@ AB 111 codifies new CPL funding and regulations. In 2025/26 Title 5 was updated 
                 </div>
                 <a href="reports/projects/4.5_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="#" class="attach-btn" data-folder="4.5 Law &amp; Regulation Review" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a><a href="#raci" class="raci-link" data-raci-key="project:4.5" onclick="try{sessionStorage.setItem('cpl_raci_focus','project:4.5')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI"><span style="font-size:0.8rem;">&#128101;</span> RACI</a><a href="#raci" class="update-link" onclick="try{sessionStorage.setItem('cpl_update_focus','project:4.5')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Braindump a quick status update — CC writes it up and saves it to this card"><span style="font-size:0.8rem;">&#128221;</span> Update</a><a href="#raci" class="nudge-link" onclick="try{sessionStorage.setItem('cpl_nudge_focus','project:4.5')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)"><span style="font-size:0.8rem;">&#128227;</span> Nudge</a>
             </div>
+            <div class="activity-kpi-card no-metric" data-pid="4.5.1" data-activity="Activity 4" data-goal="Goal 3" data-sprint="" data-depth="1" style="border-left:3px solid var(--cobalt);">
+                <div class="akpi-header">
+                    <span class="akpi-id">4.5.1</span>
+                    <span class="akpi-status status-badge status-in-progress" style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">In Progress</span>
+                    
+                </div>
+                <div class="akpi-name">CPL Legislative Advocacy (2026 Session)</div>
+                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:#555;margin:-0.1rem 0 0.3rem 0;"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="project:4.5.1" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
+                <div class="akpi-metric-row">
+                    <span class="akpi-metric-unit" style="opacity:0.5;"></span>
+                </div>
+                <div class="akpi-progress" style="margin-top:0.5rem;">
+                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">
+                        <span style="color:#666;">Progress</span>
+                        <span style="font-weight:700;color:var(--mustard-text);">50%</span>
+                    </div>
+                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;">
+                        <div style="height:100%;width:50%;background:var(--gold-accent);border-radius:3px;"></div>
+                    </div>
+                </div>
+                <div class="cpl-live-update" data-update-key="project:4.5.1" style="display:none;margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>
+                <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;">
+                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
+                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
+                    </div>
+                    <div class="cpl-static-update" style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.
+
+Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
+                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.</div>
+                </div>
+                <a href="reports/projects/4.5.1_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="#" class="attach-btn" data-folder="4.5.1 CPL Legislative Advocacy (2026 Session)" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a><a href="#raci" class="raci-link" data-raci-key="project:4.5.1" onclick="try{sessionStorage.setItem('cpl_raci_focus','project:4.5.1')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI"><span style="font-size:0.8rem;">&#128101;</span> RACI</a><a href="#raci" class="update-link" onclick="try{sessionStorage.setItem('cpl_update_focus','project:4.5.1')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Braindump a quick status update — CC writes it up and saves it to this card"><span style="font-size:0.8rem;">&#128221;</span> Update</a><a href="#raci" class="nudge-link" onclick="try{sessionStorage.setItem('cpl_nudge_focus','project:4.5.1')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)"><span style="font-size:0.8rem;">&#128227;</span> Nudge</a>
+            </div>
             <div class="activity-kpi-card has-metric" data-pid="4.6" data-activity="Activity 4" data-goal="Goal 3" data-sprint="" data-depth="0">
                 <div class="akpi-header">
                     <span class="akpi-id">4.6</span>
@@ -6402,38 +6437,6 @@ AB 111 codifies new CPL funding and regulations. In 2025/26 Title 5 was updated 
                     <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>$50,000 distributed to 114 of 115 credit colleges and 4 noncredit campuses for CPL implementation. $6M one-time fully allocated. 2026 advocacy active for $2M ongoing + $35M one-time appropriation.</div>
                 </div>
                 <a href="reports/projects/4.6_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="#" class="attach-btn" data-folder="4.6 Sustainable Funding" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a><a href="#raci" class="raci-link" data-raci-key="project:4.6" onclick="try{sessionStorage.setItem('cpl_raci_focus','project:4.6')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI"><span style="font-size:0.8rem;">&#128101;</span> RACI</a><a href="#raci" class="update-link" onclick="try{sessionStorage.setItem('cpl_update_focus','project:4.6')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Braindump a quick status update — CC writes it up and saves it to this card"><span style="font-size:0.8rem;">&#128221;</span> Update</a><a href="#raci" class="nudge-link" onclick="try{sessionStorage.setItem('cpl_nudge_focus','project:4.6')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)"><span style="font-size:0.8rem;">&#128227;</span> Nudge</a>
-            </div>
-            <div class="activity-kpi-card no-metric" data-pid="4.7" data-activity="Activity 4" data-goal="Goal 3" data-sprint="" data-depth="0">
-                <div class="akpi-header">
-                    <span class="akpi-id">4.7</span>
-                    <span class="akpi-status status-badge status-in-progress" style="margin:0;font-size:0.7rem;padding:0.15rem 0.5rem;">In Progress</span>
-                    
-                </div>
-                <div class="akpi-name">CPL Legislative Advocacy (2026 Session)</div>
-                <div class="cpl-raci-lead-row" style="display:none;font-size:0.7rem;color:#555;margin:-0.1rem 0 0.3rem 0;"><strong>Lead:</strong> <span class="cpl-raci-lead" data-raci-key="project:4.7" title="Responsible (from the Team &amp; RACI matrix)">&mdash;</span></div>
-                <div class="akpi-metric-row">
-                    <span class="akpi-metric-unit" style="opacity:0.5;"></span>
-                </div>
-                <div class="akpi-progress" style="margin-top:0.5rem;">
-                    <div style="display:flex;justify-content:space-between;font-size:0.7rem;margin-bottom:0.15rem;">
-                        <span style="color:#666;">Progress</span>
-                        <span style="font-weight:700;color:var(--mustard-text);">50%</span>
-                    </div>
-                    <div style="height:5px;background:#e8e8e8;border-radius:3px;overflow:hidden;">
-                        <div style="height:100%;width:50%;background:var(--gold-accent);border-radius:3px;"></div>
-                    </div>
-                </div>
-                <div class="cpl-live-update" data-update-key="project:4.7" style="display:none;margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;"></div>
-                <div style="margin-top:0.5rem;border-top:1px solid #e8e8e8;padding-top:0.4rem;">
-                    <div style="display:flex;align-items:center;margin-bottom:0.3rem;">
-                        <span style="font-size:0.7rem;color:#888;">Last updated: <strong style="color:var(--navy-primary);">2026-07-23</strong></span>
-                    </div>
-                    <div class="cpl-static-update" style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--navy-secondary);color:#fff;padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Latest Update</span>SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.
-
-Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
-                    <div style="font-size:0.75rem;color:#444;line-height:1.4;margin-bottom:0.3rem;"><span style="font-size:0.62rem;font-weight:600;background:var(--gold-accent);color:var(--navy-primary);padding:0.1rem 0.3rem;border-radius:3px;margin-right:0.25rem;">Workplan Note</span>Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.</div>
-                </div>
-                <a href="reports/projects/4.7_Report.docx" download class="report-btn" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'"><span style="font-size:0.8rem;">&#128196;</span> Report</a><a href="#" class="attach-btn" data-folder="4.7 CPL Legislative Advocacy (2026 Session)" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Open SharePoint folder — use Upload or drag &amp; drop to add files"><span style="font-size:0.8rem;">&#128206;</span> Attach</a><a href="#raci" class="raci-link" data-raci-key="project:4.7" onclick="try{sessionStorage.setItem('cpl_raci_focus','project:4.7')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Who's Responsible / Accountable / Consulted / Informed — hover for the roster, click to open Team &amp; RACI"><span style="font-size:0.8rem;">&#128101;</span> RACI</a><a href="#raci" class="update-link" onclick="try{sessionStorage.setItem('cpl_update_focus','project:4.7')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Braindump a quick status update — CC writes it up and saves it to this card"><span style="font-size:0.8rem;">&#128221;</span> Update</a><a href="#raci" class="nudge-link" onclick="try{sessionStorage.setItem('cpl_nudge_focus','project:4.7')}catch(e){}" style="display:inline-flex;align-items:center;gap:0.3rem;margin-top:0.5rem;font-size:0.7rem;text-decoration:none;font-weight:600;padding:0.25rem 0.5rem;border:1px solid #ddd;border-radius:4px;cursor:pointer;transition:background 0.2s;margin-right:0.4rem;color:var(--navy-secondary);background:#fafafa;" onmouseover="this.style.background='#e8e8e8'" onmouseout="this.style.background='#fafafa'" title="Nudge this item's Responsible / Accountable people for a status update (opens your mail app — nothing is auto-sent)"><span style="font-size:0.8rem;">&#128227;</span> Nudge</a>
             </div>
             </div>
             </div>
@@ -7931,6 +7934,36 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                         <td data-aid="4.5" data-kind="project" data-rt="STRETCH" data-total="1" data-val="66" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;">66</td>
                     </tr>
                     <tr style="background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);">
+                        <td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem 1.85rem;border:1px solid #ddd;border-left:3px solid var(--seal-blue);vertical-align:top;font-weight:600;background:#fff;"><span style="color:var(--seal-blue);opacity:0.65;" aria-hidden="true">↳ </span><span style="color:#888;font-size:0.75rem;">4.5.1</span> <span class="wpg-title-cell" data-title-edit="1" data-pid="4.5.1">CPL Legislative Advocacy (2026 Session)</span><div class="wpg-desc-cell" data-desc-edit="1" data-pid="4.5.1" data-val="" style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">&mdash;</div><div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.5.1" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: true}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip wpg-act-chip-primary" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.65rem;font-weight:600;">★ Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
+                    </tr>
+                    <tr style="background:#fff;color:var(--green-progress);font-weight:700;">
+                        
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Current</td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td data-current-total="1" data-aid="4.5.1" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
+                    </tr>
+                    <tr style="background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;">
+                        
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Stretch</td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
+                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
+                    </tr>
+                    <tr style="background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);">
                         <td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem 0.60rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.6</span> <span class="wpg-title-cell" data-title-edit="1" data-pid="4.6">Sustainable Funding</span><div class="wpg-desc-cell" data-desc-edit="1" data-pid="4.6" data-val="" style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">&mdash;</div><div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.6" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: true}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip wpg-act-chip-primary" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.65rem;font-weight:600;">★ Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
                         <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
                         <td data-editable="1" data-aid="4.6" data-kind="project" data-rt="GOAL" data-yr="2025-26" data-yr-key="yr_2025_26" data-val="1" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;">1</td>
@@ -7959,36 +7992,6 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                         <td data-editable="1" data-aid="4.6" data-kind="project" data-rt="STRETCH" data-yr="2028-29" data-yr-key="yr_2028_29" data-val="10" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;">10</td>
                         <td data-editable="1" data-aid="4.6" data-kind="project" data-rt="STRETCH" data-yr="2029-30" data-yr-key="yr_2029_30" data-val="12" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;">12</td>
                         <td data-aid="4.6" data-kind="project" data-rt="STRETCH" data-total="1" data-val="38" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;">38</td>
-                    </tr>
-                    <tr style="background:var(--bg-off-white);font-weight:600;color:var(--navy-primary);">
-                        <td rowspan="3" style="padding:0.4rem 0.6rem 0.4rem 0.60rem;border:1px solid #ddd;vertical-align:top;font-weight:600;background:#fff;"><span style="color:#888;font-size:0.75rem;">4.7</span> <span class="wpg-title-cell" data-title-edit="1" data-pid="4.7">CPL Legislative Advocacy (2026 Session)</span><div class="wpg-desc-cell" data-desc-edit="1" data-pid="4.7" data-val="" style="font-weight:400;font-size:0.72rem;color:#666;margin-top:0.2rem;">&mdash;</div><div class="wpg-assoc-cell" data-assoc-edit="1" data-pid="4.7" data-assoc="[{&quot;activity_id&quot;: &quot;4&quot;, &quot;is_primary&quot;: true}]" data-assoc-backfilled="0" data-activities="[{&quot;id&quot;: &quot;1&quot;, &quot;name&quot;: &quot;Activity 1: Build AI-Enhanced CPL Infrastructure&quot;}, {&quot;id&quot;: &quot;2&quot;, &quot;name&quot;: &quot;Activity 2: Faculty Workgroups &amp; Credit Recommendations&quot;}, {&quot;id&quot;: &quot;3&quot;, &quot;name&quot;: &quot;Activity 3: Build CPL Data Infrastructure&quot;}, {&quot;id&quot;: &quot;4&quot;, &quot;name&quot;: &quot;Activity 4: Coordinate CPL Sprints, Targeted Projects, Professional Learning, and Strategic Partnerships&quot;}]" style="font-size:0.65rem;color:#888;font-weight:400;margin-top:0.15rem;"><span style="color:#888;">Contributes to:</span> <span class="wpg-act-chip wpg-act-chip-primary" style="display:inline-block;margin:0 0.2rem 0 0;padding:0.05rem 0.35rem;background:var(--surface-muted);color:var(--navy-secondary);border-radius:10px;font-size:0.65rem;font-weight:600;">★ Activity 4</span><span class="wpg-assoc-edit-hint" aria-hidden="true"> ✎</span></div></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Goal</td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
-                    </tr>
-                    <tr style="background:#fff;color:var(--green-progress);font-weight:700;">
-                        
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Current</td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td data-current-total="1" data-aid="4.7" style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
-                    </tr>
-                    <tr style="background:var(--bg-off-white);color:var(--mustard-text);font-style:italic;">
-                        
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-size:0.75rem;">Stretch</td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;"></td>
-                        <td style="padding:0.3rem 0.4rem;text-align:center;border:1px solid #ddd;font-weight:700;"></td>
                     </tr>
                 </tbody>
             </table>
@@ -8937,8 +8940,8 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         <!-- DATA-START (auto-replaced by excel_to_dashboard.py — do not edit manually) -->
     <script>
     window.CPL_DATA = {
-  "last_updated": "July 27, 2026 at 3:29 PM PT",
-  "data_as_of": "July 27, 2026 at 3:29 PM PT",
+  "last_updated": "July 27, 2026 at 3:48 PM PT",
+  "data_as_of": "July 27, 2026 at 3:48 PM PT",
   "kpis": {
     "cumulative_students": {
       "value": "51,280",
@@ -9131,7 +9134,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       ],
       "live": true
     },
-    "_live_updated": "2026-07-27T22:29:04.174Z",
+    "_live_updated": "2026-07-27T22:47:53.047Z",
     "map_exhibits": {
       "value": "2,114",
       "label": "Common Exhibit Titles",
@@ -9224,7 +9227,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       ],
       "live": true
     },
-    "_exhibit_updated": "2026-07-27T22:28:27",
+    "_exhibit_updated": "2026-07-27T22:47:16",
     "_exhibit_source": "CustomReport_latest.json",
     "_exhibit_datasets": [
       "View_ArticulatedMAPExhibits_APIDataset",
@@ -10001,6 +10004,30 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
           "depth": 0
         },
         {
+          "id": "4.5.1",
+          "name": "CPL Legislative Advocacy (2026 Session)",
+          "goal": "Goal 3",
+          "metric": "",
+          "unit": "",
+          "goal_2526": "",
+          "stretch_2526": "",
+          "goal_2627": "",
+          "stretch_2627": "",
+          "goal_2728": "",
+          "stretch_2728": "",
+          "goal_2829": "",
+          "stretch_2829": "",
+          "goal_2930": "",
+          "stretch_2930": "",
+          "workplan_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
+          "update": "SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.\n\nLink to bills: https://legiscan.com/CA/text/AB135/id/3044016",
+          "update_date": "2026-07-23",
+          "status": "In Progress",
+          "pct": 50,
+          "sprint_tag": "",
+          "depth": 1
+        },
+        {
           "id": "4.6",
           "name": "Sustainable Funding",
           "goal": "Goal 3",
@@ -10021,30 +10048,6 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
           "update_date": "2026-07-23",
           "status": "In Progress",
           "pct": 40,
-          "sprint_tag": "",
-          "depth": 0
-        },
-        {
-          "id": "4.7",
-          "name": "CPL Legislative Advocacy (2026 Session)",
-          "goal": "Goal 3",
-          "metric": "",
-          "unit": "",
-          "goal_2526": "",
-          "stretch_2526": "",
-          "goal_2627": "",
-          "stretch_2627": "",
-          "goal_2728": "",
-          "stretch_2728": "",
-          "goal_2829": "",
-          "stretch_2829": "",
-          "goal_2930": "",
-          "stretch_2930": "",
-          "workplan_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
-          "update": "SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.\n\nLink to bills: https://legiscan.com/CA/text/AB135/id/3044016",
-          "update_date": "2026-07-23",
-          "status": "In Progress",
-          "pct": 50,
           "sprint_tag": "",
           "depth": 0
         }
@@ -10736,7 +10739,7 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       "created_at": "2026-07-23T16:55:10.589175+00:00",
       "date": "2026-07-23"
     },
-    "project:4.7": {
+    "project:4.5.1": {
       "body": "SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.\n\nLink to bills: https://legiscan.com/CA/text/AB135/id/3044016",
       "author": "(team)",
       "created_at": "2026-07-23T16:54:33.640968+00:00",
@@ -12245,6 +12248,40 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       "kpi_stretch_2930": "20"
     },
     {
+      "id": "4.5.1",
+      "name": "CPL Legislative Advocacy (2026 Session)",
+      "desc": "Advocate for $2M additional ongoing + $35M one-time CPL funding in 2026 legislative session",
+      "activity": "Activity 4: Sprints, Projects \u0026 Partnerships",
+      "v2030": "Action 1a; Action 5",
+      "goal": "Goal 3",
+      "budget_source": "CPL Operations (ongoing $5M)",
+      "budget": "Included in operations",
+      "lead": "Samuel Lee / James Todd",
+      "team": "CO Government Relations, Legislature",
+      "status": "In Progress",
+      "pct": 50,
+      "start": "2026-01-01",
+      "end": "2026-09-30",
+      "milestones": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time; legislative session through September",
+      "update": "SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.\n\nLink to bills: https://legiscan.com/CA/text/AB135/id/3044016",
+      "update_date": "2026-07-23",
+      "kpi_metric": "",
+      "kpi_unit": "",
+      "workplan_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
+      "kpi_order": null,
+      "override": null,
+      "kpi_goal_2526": "",
+      "kpi_goal_2627": "",
+      "kpi_goal_2728": "",
+      "kpi_goal_2829": "",
+      "kpi_goal_2930": "",
+      "kpi_stretch_2526": "",
+      "kpi_stretch_2627": "",
+      "kpi_stretch_2728": "",
+      "kpi_stretch_2829": "",
+      "kpi_stretch_2930": ""
+    },
+    {
       "id": "4.6",
       "name": "Sustainable Funding",
       "desc": "Advance improvements in sustainable funding models and development of external funding to support ongoing CPL work.",
@@ -12277,40 +12314,6 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       "kpi_stretch_2728": "8",
       "kpi_stretch_2829": "10",
       "kpi_stretch_2930": "12"
-    },
-    {
-      "id": "4.7",
-      "name": "CPL Legislative Advocacy (2026 Session)",
-      "desc": "Advocate for $2M additional ongoing + $35M one-time CPL funding in 2026 legislative session",
-      "activity": "Activity 4: Sprints, Projects \u0026 Partnerships",
-      "v2030": "Action 1a; Action 5",
-      "goal": "Goal 3",
-      "budget_source": "CPL Operations (ongoing $5M)",
-      "budget": "Included in operations",
-      "lead": "Samuel Lee / James Todd",
-      "team": "CO Government Relations, Legislature",
-      "status": "In Progress",
-      "pct": 50,
-      "start": "2026-01-01",
-      "end": "2026-09-30",
-      "milestones": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time; legislative session through September",
-      "update": "SB 135 and AB 135 were enacted, providing $7 million in ongoing funding for CPL Initiative operations, technical assistance, faculty workgroups, technology development, partnerships, and intersegmental collaboration, plus $35 million to support college awards based on CPL outcomes, projects, and innovations. The Chancellor's Office has drafted a two-year college funding model, with finalization expected in August 2026, field deployment in October 2026, and first disbursements planned for November or December 2026.\n\nLink to bills: https://legiscan.com/CA/text/AB135/id/3044016",
-      "update_date": "2026-07-23",
-      "kpi_metric": "",
-      "kpi_unit": "",
-      "workplan_notes": "Governor's 2026 budget includes proposed $2M ongoing + $35M one-time. Legislative session runs through September 2026. Monitoring and providing evidence to support advancement.",
-      "kpi_order": null,
-      "override": null,
-      "kpi_goal_2526": "",
-      "kpi_goal_2627": "",
-      "kpi_goal_2728": "",
-      "kpi_goal_2829": "",
-      "kpi_goal_2930": "",
-      "kpi_stretch_2526": "",
-      "kpi_stretch_2627": "",
-      "kpi_stretch_2728": "",
-      "kpi_stretch_2829": "",
-      "kpi_stretch_2930": ""
     }
   ],
   "workplan_goals": [
@@ -13645,6 +13648,46 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       "assoc_backfilled": false
     },
     {
+      "id": "4.5.1",
+      "name": "CPL Legislative Advocacy (2026 Session)",
+      "kind": "project",
+      "description": "",
+      "is_percentage": false,
+      "years": [
+        "2025-26",
+        "2026-27",
+        "2027-28",
+        "2028-29",
+        "2029-30"
+      ],
+      "goal": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "goal_total": 0.0,
+      "stretch": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "stretch_total": 0.0,
+      "activity_ids": [
+        "4"
+      ],
+      "assoc_records": [
+        {
+          "activity_id": "4",
+          "is_primary": true
+        }
+      ],
+      "assoc_backfilled": false
+    },
+    {
       "id": "4.6",
       "name": "Sustainable Funding",
       "kind": "project",
@@ -13673,46 +13716,6 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         12.0
       ],
       "stretch_total": 38.0,
-      "activity_ids": [
-        "4"
-      ],
-      "assoc_records": [
-        {
-          "activity_id": "4",
-          "is_primary": true
-        }
-      ],
-      "assoc_backfilled": false
-    },
-    {
-      "id": "4.7",
-      "name": "CPL Legislative Advocacy (2026 Session)",
-      "kind": "project",
-      "description": "",
-      "is_percentage": false,
-      "years": [
-        "2025-26",
-        "2026-27",
-        "2027-28",
-        "2028-29",
-        "2029-30"
-      ],
-      "goal": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "goal_total": 0.0,
-      "stretch": [
-        0.0,
-        0.0,
-        0.0,
-        0.0,
-        0.0
-      ],
-      "stretch_total": 0.0,
       "activity_ids": [
         "4"
       ],

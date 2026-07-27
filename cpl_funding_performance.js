@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43298,
+  "pe": 43293,
   "p2": 4791,
   "p3": 17136,
   "pp": 5
@@ -675,21 +675,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 0,
    "pp": 0
   },
-  "North Orange Continuing Education": {
-   "pe": null,
-   "pe_suppressed": true,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
   "North Orange Continuing Education Credit": {
-   "pe": null,
-   "pe_suppressed": true,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
-  "San Diego College of Continuing Education": {
    "pe": null,
    "pe_suppressed": true,
    "p2": 0,
@@ -701,6 +687,16 @@ window.CPL_FUNDING_PERF = {
    "p2": 0,
    "p3": 0,
    "pp": 0
+  }
+ },
+ "feeders": {
+  "NOCE": {
+   "pe": null,
+   "pe_suppressed": true
+  },
+  "SD Cont. Ed": {
+   "pe": null,
+   "pe_suppressed": true
   }
  },
  "vet_star": {
