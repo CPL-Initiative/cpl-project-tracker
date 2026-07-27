@@ -222,11 +222,15 @@ The whole ecosystem, end-to-end:
 
 
 Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
-    ├── workplan_goals, projects   ← READ BY the pipeline (source of truth as of the
-    │      Excel→Supabase migration; daily snapshot + Excel fallback);
-    │      inline-editable on their tabs by allowed reviewers — incl. Activity +
-    │      sub-activity TITLES + brief DESCRIPTIONS on the Annual Workplan Goals
-    │      tab (the single-source editor, PR #902; workplan_goals.description col)
+    ├── projects, workplan_goals   ← READ BY the pipeline (source of truth as of the
+    │      Excel→Supabase migration; daily snapshot + Excel fallback). `projects` is
+    │      the authoritative sub-activity TREE; `workplan_goals` is a by-id year-ladder
+    │      OVERLAY (Path A, #909) — so the Annual Workplan Goals tab reflects EVERY
+    │      Activities-tab project, X.Y.Z ids nesting under their X.Y parent. Inline-
+    │      editable by allowed reviewers — Activity + sub-activity TITLES + brief
+    │      DESCRIPTIONS on the Annual Workplan Goals tab (single-source editor, #902;
+    │      `workplan_goals.description` col); blank-ladder rows are read-only on the
+    │      year cells (title/description still edit `projects`)
     ├── budget_funding, budget_expenditures, personnel  ← also Supabase-read (Budget
     │      cutover, PR #189); inline-editable. Dashboard config (title/desc/KPI
     │      params) moved to committed kb/dashboard_config.json (Excel-retirement P2).

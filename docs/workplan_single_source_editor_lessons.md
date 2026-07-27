@@ -117,3 +117,84 @@ Projects, Professional Learning, and Strategic Partnerships". Verified: 0 associ
 ## Next concrete step
 Confirm the dispatched regen landed green (scheduled check ~12 min post-merge). Then, if desired,
 pick up the deferred dead-code retirement as a focused PR.
+
+---
+
+# 2026-07-27 (cont.) — reflect EVERY project + finish the #872 re-key + nest X.Y.Z (#905, #909)
+
+Same SkyElemental lane, same day, three more merges that turned the single-source editor into a
+**complete, self-consistent** Annual Workplan Goals surface.
+
+## What shipped
+- **#905 — repeated-Activity-headers fix.** The Annual Goals table grouped each row by the
+  *smallest* associated Activity id (`activity_ids[0]`), so a cross-linked project (e.g. `2.3`
+  → Activities 1-4) was labeled "Activity 1" and split the section header. Live data showed the
+  header sequence `1,2,1,3,1,4,3,4,3` — **9 headers instead of 4**. Fix: group by the project's
+  **HOME Activity** (`_activity_num_from_workplan(projects.workplan_activity)` — the same key
+  `build_activity_kpis` uses) + sort `annual_goals` by (home, natural id). The editable headers
+  from #902 made the pre-existing bug obvious. Test `annual_goals_activity_grouping_test.py` (12).
+- **#909 — reflect every Activities-tab project + finish the reorg re-key.** THE big one.
+  Root cause discovery: the **#872 Activities reorg re-keyed `projects` (+ `item_raci`/
+  `item_updates`) to the new numbering but NEVER re-keyed the `workplan_goals` ladder table or
+  `workplan_activity_associations`.** Consequences: (a) **10 projects missing** from Annual Goals
+  (the ex-"Activity 5" items `1.1.1/1.1.2/1.1.3`, `3.7`, `3.8`, `4.4.1`, `4.7` + new `3.1.4`,
+  `3.1.3`), and (b) **every Activity-4 row showed the NEXT item's targets** — off-by-one from the
+  dissolved "4.1 Sprints and Projects" wrapper (e.g. "Apprenticeship Sprint" displayed Strategic
+  Partnerships' 3→40 ladder).
+  - **Data (live, receipt `kb/supabase_workplan_goals_rekey.sql`):** re-keyed `workplan_goals`
+    with the *same* #872 crosswalk (two-phase TMP__ permutation), deleted the dissolved `4.1`
+    wrapper + `4.1.3`, synced ladder names to `projects.name`; cleaned 10 stale old-id association
+    rows; filled the one empty description (`3.1.4`). Every Activity-4 target now aligns.
+  - **Generator (Path A):** `build_workplan_goals_from_supabase` builds `annual_goals` from the
+    SAME `projects` set the Activities tab renders (ladder overlaid by id) — every project shows;
+    a project with no ladder row gets a blank read-only ladder (gated on a new `has_ladder` flag)
+    but stays title+description editable. Also fixed an all-zero ladder mis-reading
+    `is_percentage=True` (`all([])` trap). Test `annual_goals_reflect_all_projects_test.py` (20).
+  - **Nesting:** a three-level id (X.Y.Z) renders subsidiary to its X.Y parent (indent + accent
+    border + ↳) while staying its own row — Sam: "wire 29 Palms as subsidiary to the Vet Sprint
+    but preserve it as a card."
+- **4.7 → 4.5.1 re-home (live, no PR — data-only + regen).** Sam: Legislative Advocacy "should be
+  a sub activity of 4.5." Renumbered `4.7`→`4.5.1` across `projects`/`item_raci`/`item_updates`/
+  associations (simple rename, no collision) so it nests under Law & Regulation Review. `3.7` and
+  `3.8` stay standalone under Activity 3 (Sam's call).
+- **Descriptions:** the workplan doc has NO sub-activity breakdown (only 4 Activity prose blocks),
+  and only `3.1.4` was empty — every other `projects.description` is curator-authored with
+  specifics the doc lacks ("117 certifications", "34,000+ veterans", "$2M + $35M"). So per Sam's
+  "fill gaps, flag changes": filled `3.1.4`, kept the rest.
+
+## What we learned (this batch)
+1. **A reorg re-key must touch EVERY project-keyed table, or a left-behind table mis-aligns
+   silently.** #872 re-keyed 3 tables and left 2. The ladder table on the old numbering produced a
+   convincing-but-wrong display (off-by-one under a dissolved slot) — not a crash, so it hid for
+   days. **Discover the full keyed-table set from `information_schema.columns` before AND after a
+   re-key** (project_id / item_id / activity_id / id). The crosswalk from the original receipt is
+   the fix — apply it to the tables that were missed.
+2. **Two tables, one tree: make the entity table authoritative and the other a pure overlay.**
+   The Activities tab iterated `projects`; Annual Goals iterated `workplan_goals`. Two consumers
+   iterating two tables *will* drift. Path A makes `projects` the single source of the sub-activity
+   tree and `workplan_goals` a by-id ladder overlay — now they can't diverge, and a new project
+   auto-appears on both.
+3. **A reflected-but-unbacked row must be read-only on the fields it can't persist.** The blank
+   ladder rows have no `workplan_goals` row, so their year/Current cells can't be PATCHed — gate
+   the editable attributes on `has_ladder` (title+description still edit `projects`). An editable
+   cell that PATCHes 0 rows is a silent-revert UX trap.
+4. **Trace consumers before a data/generator change (Sam's standing reminder).** A dedicated
+   consumer-trace subagent confirmed RACI / Fact Sheet / all 5 report generators need no change —
+   and that the re-key *corrects the reports for free* (they read `projects[*].kpi_goal_*`, ladder-
+   enriched from `workplan_goals` by id). It also caught the 3 blank-row fixes (read-only gating,
+   `is_percentage` guard, all-keys-present) py_compile + the existing tests would have missed.
+5. **Re-homing an id-nested item means renumbering it** (there's no separate parent-pointer field;
+   nesting is id-prefix based, per `methodology-tree-from-dotted-ids-stable-keys`). `4.7`→`4.5.1`
+   is a "renumber to re-parent." Fine for a small item with no ladder; a laddered item would also
+   need its `workplan_goals` row re-keyed.
+
+## Current state
+All live: every Activities-tab project (32) is reflected in Annual Goals with correct targets;
+Activity-4 ladders realigned; `4.5.1` nested under 4.5; 10 X.Y.Z rows nest under their parents;
+Rule 4 parity holds; latest regen green.
+
+## Next concrete step (this lane)
+Deferred/optional (see handoff): retire the dead `projects_editor.js` + projects-grid renderer;
+optionally nest X.Y.Z on the **Activities tab cards** too (today only the Annual Goals table nests
+— `render_activity_kpis_html` groups flat by Activity); optionally add an "add targets/ladder"
+affordance so a curator can give a blank-ladder project year targets from the Annual Goals tab.

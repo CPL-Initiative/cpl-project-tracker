@@ -80,3 +80,22 @@ UPDATE public.projects
 --  SELECT description<>'' FROM public.projects WHERE id='3.1.4';                 -- t
 COMMIT;
 -- ROLLBACK;  -- use instead of COMMIT if any verification value is off.
+
+
+-- ============================================================================
+-- ADDENDUM (same run) — re-home 4.7 "CPL Legislative Advocacy" under 4.5
+-- "Law & Regulation Review" (Sam, 2026-07-27). Renumber 4.7 -> 4.5.1 so it nests
+-- as a child (id-prefix nesting; nesting is visual, the id is the parent link).
+-- Simple rename — 4.5.1 was free in every project-keyed table (checked via
+-- information_schema). 4.7 had rows only in projects/item_raci/item_updates/
+-- workplan_activity_associations (0 in workplan_goals/project_lifecycle/update_log).
+-- workplan_activity stays "Activity 4:" — the Activity home is unchanged.
+-- ============================================================================
+BEGIN;
+UPDATE public.projects     SET id      = '4.5.1' WHERE id      = '4.7';
+UPDATE public.item_raci    SET item_id = '4.5.1' WHERE item_id = '4.7' AND item_type='project';
+UPDATE public.item_updates SET item_id = '4.5.1' WHERE item_id = '4.7' AND item_type='project';
+UPDATE public.workplan_activity_associations SET project_id = '4.5.1' WHERE project_id = '4.7';
+-- VERIFY (expect): 0 rows id='4.7'; 4.5.1 name='CPL Legislative Advocacy (2026 Session)'.
+COMMIT;
+-- ROLLBACK;  -- swap '4.5.1'<->'4.7' to reverse.
