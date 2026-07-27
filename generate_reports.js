@@ -403,7 +403,8 @@ async function generateMasterReport() {
   }
 
   for (const [actName, actProjects] of Object.entries(activityGroups).sort()) {
-    const actInfo = ACTIVITY_DESC[actName] || {};
+    const actNum = (String(actName).match(/Activity\s+(\d+)/) || [])[1];
+    const actInfo = ACTIVITY_DESC['Activity ' + actNum] || {};
     children.push(new Paragraph({ children: [new PageBreak()] }));
 
     // Activity heading (big, colored, like the reference doc)
@@ -424,7 +425,6 @@ async function generateMasterReport() {
     }
 
     // Latest ACTIVITY-level update (RACI 📝 composer, key `activity:N`)
-    const actNum = (actName.match(/Activity\s+(\d+)/) || [])[1];
     const actUpd = actNum ? liveUpdates["activity:" + actNum] : null;
     if (actUpd && actUpd.body) {
       children.push(new Paragraph({
@@ -678,7 +678,8 @@ async function generateMasterReport() {
   let rowIdx = 0;
   for (const [actName, actProjects] of Object.entries(activityGroups).sort()) {
     // Activity group header row
-    const actInfo = ACTIVITY_DESC[actName] || {};
+    const actNum = (String(actName).match(/Activity\s+(\d+)/) || [])[1];
+    const actInfo = ACTIVITY_DESC['Activity ' + actNum] || {};
     summaryDataRows.push(new TableRow({
       children: [
         makeCell(actInfo.shortTitle || actName, { bold: true, color: NAVY, fill: "E8EDF2", colspan: 5, size: 18 }),

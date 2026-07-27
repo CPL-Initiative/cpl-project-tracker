@@ -171,7 +171,7 @@
       var u = actNum ? (live.updates || {})['activity:' + actNum] : null;
       return {
         name: actName,
-        info: buildActivityDesc()[actName] || {},
+        info: buildActivityDesc()['Activity ' + actNum] || {},
         update: updText(u) ? { body: updText(u), date: updDate(u) } : null,
         projects: grouped.groups[actName],
       };
