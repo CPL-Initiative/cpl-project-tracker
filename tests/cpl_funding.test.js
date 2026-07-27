@@ -700,10 +700,9 @@ function pieSlices(el) {
 
 // C9 — metric-measurability actuals: Year-1 P1 (any transcribed) IS measurable
 // from the daily MAP feed; the statewide-eligible metric carries an exhibit-
-// linkage data-gap label; the Portal/Landing metric (P3) is now wired to the
-// portal-origin `pp` count (Sam, 2026-07-27) — measurable for display, but
-// advancing at full cap until the Portal is live, so without the feed it reads
-// as pending, not a hard data gap.
+// linkage data-gap label; the Portal/Landing metric (P3) is wired to the
+// portal-origin `pp` count (Sam, 2026-07-27) — a normal achievement-based metric
+// (no full-cap advance), so without the feed it reads as pending, not a hard gap.
 {
   // Without the perf artifact.
   const { window } = freshDom();
@@ -1521,7 +1520,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 // capped at 100%; unearned rolls forward. Phase-in: data-gap metrics advance at
 // full cap; a college that posts nothing on a MEASURABLE metric earns $0 (the
 // incentive). Default data order: Year-1 P1 ("any transcribed") is the one
-// measurable metric; P2/P3 (+ all of Year 2) are data gaps.
+// measurable metric; P2 (+ all of Year 2) are data gaps. P3 (Portal) is now a
+// measurable metric (→ pp); Part E overrides it to a data gap so its "only P1
+// flexes" model holds — the pp/achievement-based path is exercised in Part H5.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -1531,6 +1532,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  // Hold P3 as a data gap for this part (see the note above).
+  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
+  T.render();
 
   check("E: basis defaults to potential (cap)", T._state.basis === "potential");
   check("E: basis toggle renders both options",
@@ -1579,6 +1583,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Laney": { p3: 9999999 } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });  // hold P3 as a gap
   T._state.basis = "earned"; T.render();
   const la = T._alloc("Laney");
   check("E: overachiever is capped at 100% of its cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
@@ -1603,6 +1608,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Yuba": { p3: null, p3_suppressed: true } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });  // hold P3 as a gap
   T._state.basis = "earned"; T.render();
   const yu = T._alloc("Yuba");
   check("E: suppressed college earns $0 on the measurable priority (= cap − P1)",
@@ -1758,11 +1764,13 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 }
 {
   // H5 — reworded metrics: P1 'eligible' → the eligible (pe) count; P3 'portal'
-  // → the portal-origin (pp) count, shown but advancing at full cap.
+  // → the portal-origin (pp) count, now a NORMAL achievement-based metric (Sam,
+  // 2026-07-27): a college earns on its actual portal count, and one with none
+  // earns $0 (no more full-cap "advancing").
   const { window } = freshDom();
   window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
     statewide: { pe: 42962, p2: 5000, p3: 16811, pp: 8 },
-    colleges: { "Laney": { pe: 44, p2: 0, p3: 0, pp: 0 } }, unmatched: {} };
+    colleges: { "Laney": { pe: 44, p2: 0, p3: 0, pp: 3 }, "Ohlone": { pe: 10, p2: 0, p3: 0, pp: 0 } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setShared({ yearPriorities: { "1": {
@@ -1773,9 +1781,24 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const cards = doc.querySelectorAll(".cplfund-prio .p");
   check("H5: the reworded P1 'eligible' metric is wired to the eligible (pe) count",
     cards[0].textContent.indexOf("42,962") !== -1 && cards[0].textContent.indexOf("of target") !== -1);
-  check("H5: the P3 Portal metric shows the portal-origin (pp) count, advancing at full cap",
+  check("H5: the P3 Portal metric shows the portal-origin (pp) count vs target, NOT 'advancing'",
     cards[2].textContent.indexOf("portal-origin") !== -1 &&
-    cards[2].textContent.indexOf("advancing at full cap") !== -1);
+    cards[2].textContent.indexOf("of target") !== -1 &&
+    cards[2].textContent.indexOf("advancing") === -1);
+  // Achievement-based P3: a college with 0 portal students earns $0 on P3 (its
+  // full P3 cap is unearned); a college with a portal count shows it in the cell.
+  T._state.basis = "earned"; T.render();
+  const oh = T._alloc("Ohlone");     // pp = 0 → P3 fully unearned
+  check("H5: P3 earns $0 for a college with no portal students (P3 cap fully unearned, no advance)",
+    oh.earned_total <= oh.total - oh.p3 + 1);
+  const rowsE = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  const ohP3 = rowsE.find(function (r) { return /Ohlone/.test(r.textContent); }).querySelectorAll("td.cf-prio")[2];
+  const laP3 = rowsE.find(function (r) { return /Laney/.test(r.textContent); }).querySelectorAll("td.cf-prio")[2];
+  check("H5: P3 cell reads 0 (none) for a college with no portal students — not 'gap'/'…'",
+    ohP3.querySelector(".cf-a").textContent.indexOf("0") !== -1 &&
+    ohP3.textContent.indexOf("gap") === -1 && ohP3.textContent.indexOf("…") === -1);
+  check("H5: P3 cell surfaces the portal count for a college WITH portal students",
+    laP3.querySelector(".cf-a").textContent.indexOf("3") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

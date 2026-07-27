@@ -1394,7 +1394,7 @@
     var pp = earnAgg().perPrio[i];
     if (!pp) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
-    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending || pp.statuses.advancing);
+    var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
     return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
       fmtMoney(pp.cap) + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
       (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
@@ -1661,15 +1661,15 @@
   // docs/kb-notes/reference-funding-metrics-measurability.md.
   function has(m, s) { return m.indexOf(s) !== -1; }
   var MEASURES = [
-    // Origin (CPL Student Portal / CPL Landing Page). The daily builder now counts
-    // portal-origin transcribed students (Potential Student = Yes) into `pp`, so
-    // this is measurable for DISPLAY. It stays an ADVANCE in earned mode
-    // (advance: true) — the Portal is just launching and today's pp is a tiny,
-    // mostly-test cohort, so we don't yet zero out colleges that have posted
-    // nothing here. Flip advance off once the Portal is live and the count real.
+    // Origin (CPL Student Portal / CPL Landing Page). The daily builder counts
+    // portal-origin transcribed students (Potential Student = Yes, Test Student
+    // ≠ Yes) into `pp` — a normal achievement-based metric (Sam, 2026-07-27):
+    // colleges earn on their actual portal count, and one with none earns $0
+    // (the incentive). The count is tiny/mostly-test until the Portal launches,
+    // so P3 earns ≈$0 for now and grows as real portal traffic lands.
     { test: function (m) { return has(m, "portal") || has(m, "landing page"); },
-      src: "pp", advance: true,
-      basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page) &mdash; a small, mostly-test cohort until the Portal launches" },
+      src: "pp",
+      basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     // Eligible CPL tied to a STATEWIDE credit recommendation — needs exhibit linkage.
     { test: function (m) { return has(m, "credit recommendation") || (has(m, "eligible") && has(m, "statewide")); },
       gap: "the Custom Report carries eligible units per student but NO exhibit linkage &mdash; " +
@@ -1727,15 +1727,6 @@
     if (!meas.src) return { f: 1, status: "gap", meas: meas };            // data-gap metric → advance for everyone
     var pf = perf();
     if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
-    if (meas.advance) {
-      // Measurable for DISPLAY (the count shows), but still paid at full cap as
-      // an advance during phase-in (e.g. the Portal metric before launch) — so a
-      // college with nothing posted yet is NOT zeroed. Surfaces the actual count.
-      var arec = c ? perfFor(c.college) : pf.statewide;
-      var atarget = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
-      var aval = arec && arec[meas.src] != null ? arec[meas.src] : null;
-      return { f: 1, status: "advancing", actual: aval, target: atarget, meas: meas };
-    }
     var rec = c ? perfFor(c.college) : pf.statewide;
     var target = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
@@ -1808,8 +1799,7 @@
     var pct = targetHeads ? act / targetHeads : null;
     return '<p class="nums">Actual <strong>' + fmtInt(act) + "</strong> students per MAP (as of " +
       esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
-      (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") +
-      (meas.advance ? ' <span class="dk">&mdash; advancing at full cap during Portal phase-in</span>' : "") + "</p>";
+      (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
   }
 
   function formulaHtml() {
@@ -1916,14 +1906,11 @@
     if (fr.status === "earned") {
       actNum = fmtCountK(fr.actual);
       pctStr = target > 0 ? ' <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "";
-    } else if (fr.status === "advancing") {
-      actNum = fr.actual != null ? fmtCountK(fr.actual) : '<span class="cf-gap">&hellip;</span>';
     } else if (fr.status === "suppressed") { actNum = '<span class="cf-gap">&lt;5</span>'; }
     else if (fr.status === "gap") { actNum = '<span class="cf-gap">gap</span>'; }
     else if (fr.status === "pending") { actNum = '<span class="cf-gap">&hellip;</span>'; }
     else { actNum = "0"; }   // none — feed loaded, nothing posted
     var actExplain = fr.status === "earned" ? fmtInt(fr.actual) + " students posted (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
-      : fr.status === "advancing" ? (fr.actual != null ? fmtInt(fr.actual) + " portal-origin students (advancing at full cap during Portal phase-in)" : "portal feed pending (advancing at full cap)")
       : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
@@ -1948,7 +1935,6 @@
       out.push(Math.round(heads * p.target_rate));
       var fr = earnFraction(isSystem ? null : c, p);
       out.push(fr.status === "earned" ? fr.actual :
-        fr.status === "advancing" ? (fr.actual != null ? fr.actual : "") :
         fr.status === "suppressed" ? "<5" :
         (fr.status === "gap" || fr.status === "pending") ? "" : 0);
     });
