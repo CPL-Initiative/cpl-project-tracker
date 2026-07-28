@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-07-23
+updated: 2026-07-28
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
@@ -9,7 +9,94 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-27 (SkyMore), READ THIS FIRST
+## Latest state — 2026-07-28 (SkyHigh), READ THIS FIRST
+
+Four curator asks + two follow-ups, **three PRs, all merged** (`cpl_funding.js` /
+`cpl_funding_data.js` / test; **0 HTML** — the full-width fix is scoped injected CSS).
+
+**#914 — readability / full-width / equitable cells / mobile + a11y:**
+1. **"How an allocation is computed" → a left-justified bulleted `<ul>`** (`formulaHtml()`), one
+   idea per bullet.
+2. **Full width + left-justify:** injected `#tab-implementation-funding .main-container { max-width:
+   none; }` (scoped — other tabs keep the 1400px cap) + `.cplfund { text-align:left }` with
+   `.cplfund-card { text-align:center }` to re-center the stat cards.
+3. **Mobile + accessible:** keyboard-operable sortable headers (`aria-sort` + Enter/Space keydown),
+   a real `<button>` **caret** on rows (`.cplfund-caret` — keeps `<tr>` table semantics, NOT
+   `role=button`), `aria-pressed` segmented toggles, table `role=region` + sr-only `<caption>`,
+   focus-visible rings, **focus restored after `refreshTable()`'s innerHTML swap** (WCAG 2.4.3 —
+   `captureTableFocus`/`restoreTableFocus`), and a `@media (max-width:640px)` block.
+4. **Equitable per-priority cells** (`prioCellHtml`): `Tgt N stu · $cap` over `Now N stu · $earned
+   · %`. The per-student **rate is NOT inline** (it varies once the floor/rural bump small
+   colleges — a $38-vs-$47 spread reads as unequal). Shared yardstick = **% of target**; real
+   dollars bold (`.cf-cap`, `.cf-u`), counts + % normal; the effective $/student + WHY it differs
+   live in the cell **hover**. (`.cf-rate` removed.)
+5. **All sections default COLLAPSED except the college table** (`SEC_STORE` bumped to
+   `cplfund_sections_v2`, `SECTION_DEFAULT_OPEN = { college:true }`).
+
+**#916 — rural allowance FOLDED into the rows** (Sam: "assume they hit the ≥50% unlock, note it in
+the hover"): `collegeAlloc` uses `W = mainW + ruralWindow(c)` so rural flows uniformly into every
+cap / effective rate / Yr / Total; `systemAlloc` + the SYSTEM per-priority cap use
+`netCollegeWithRural()` so **Σ rows == the SYSTEM total**. Hover names the `$X/yr rural allowance`
++ the unlock assumption (a floored+rural college lists BOTH reasons via `reasons.join(" and ")`).
+`earnAgg.winCap` folds rural in; **`perPrio` stays main-pool** (the priority cards' "statewide $ ÷
+rate = target" identity needs the main allocation). **Pool reconciled to ONE number, $33.8M**
+(Sam's call): the hero card = `netCollegeWithRural()` with a note "$32.8M main proportional pool +
+$1M Rural College allowance"; the **rural pool card is now an EARMARK, not a deduction**; the
+brief/memo + report `collegePool` use $33.8M. The PRECISE ≥50%-gated rural earning still lives in
+the Rural section + drill-in chips.
+
+**#921 — rural roster → the 13 federally-rural CCCs** (the old 10 were the CCCCO Rural College
+Transfer Collaborative *demo* cohort, invitation-based). Data-only flip in `cpl_funding_data.js`;
+the per-college bump is **derived** (`carve-out ÷ N`) so it auto-became **$1M/13 ≈ $76,923**.
+The 13: Siskiyous, Feather River, Lassen, Redwoods, Shasta (kept) + Columbia, Cerro Coso, Taft,
+West Hills Coalinga, Barstow, Palo Verde, Copper Mountain, Imperial (added). **Muted, larger 🌲**
+(`.cplfund-tree`: 1.05rem, opacity .5, grayscale .55).
+
+Tests **422 → 460**; full suite (173 files) green each time; real-Chromium verified (light + mobile,
+0 console errors, no page-level horizontal scroll). Two adversarial reviews per structural change
+(fold correctness + the pool-framing cascade) — all findings folded in. Side-lane — left
+`cpl_todos.json` + the numbered CCR handoff alone.
+
+### 🎯 QUEUED for you — PR4: combine the floor with the rural bump (Sam's idea, my ✅ rec)
+
+Route rural colleges' **floor-to-$150k through the rural carve-out FIRST**, then distribute any
+remainder on top. Effect (computed on the 13-college roster): frees **~$752k** of main-pool money
+for non-floored colleges (10 of 13 rural colleges are floored; 3 already ≥$150k proportionally),
+leaving **~$248k** of the $1M as a genuine on-top rural bonus. Clean equity story: *"rural money
+funds rural colleges' floor; the savings flow to everyone else."*
+- **THE decision to get from Sam first:** the $150k floor is a GUARANTEE but the rural bump is
+  currently PERFORMANCE-earned (≥50% achievement). If rural backfills to $150k, that backfill must
+  be guaranteed (else a low performer drops below the minimum) → the rural carve-out splits into a
+  **guaranteed floor-to-$150k part + a performance-earned remainder**. Ask: guarantee the whole
+  rural amount, or keep only the remainder performance-gated?
+- **Edge case:** a couple of the tiniest rural colleges have a floor gap > their ~$77k slice, so the
+  main pool would still top up the rest to reach $150k.
+- **Where the code lives:** `allocModel()` (the floor waterfall — currently main-pool only) +
+  `collegeAlloc` (the rural fold) + `ruralEarned` (the ≥50% precise earning). This couples the two
+  waterfalls, so it's architecturally significant — build it as its own PR with the decision locked.
+
+### Also queued / notes
+- **Display rename:** the data still uses **"West Hills Coalinga"** (now *Coalinga College*) and
+  **"Imperial"** (*Imperial Valley College*). #921 kept them as the roster keys; a display-rename
+  pass (data + any references) would be a small nicety.
+- **Adversarial-review note (accepted simplification, not a bug):** in Earned mode the pool "Earned"
+  card advance-credits the folded rural like the main pool (gap/pending → full advance), which can
+  exceed the Rural section's precise ≥50%-gated figure. That's the "assume unlocked" simplification;
+  the Rural section is the precise view.
+
+### Read in order (SkyHigh)
+1. `docs/cpl_funding_lessons.md` — the SkyHigh section (equitable-cell design, the rural fold, the
+   pool-framing cascade, the roster switch).
+2. This handoff's PR4 block above.
+3. The test harness: `tests/cpl_funding.test.js` (**460 assertions**; Parts L + M are SkyHigh) +
+   the throwaway Chromium harness pattern (`/tmp/shot.js` — rebuild `harness.html` from the current
+   data + consumer, stub `CPL_TABS.loadScript`/`CPL_TEAM_PHRASE`, `CPL_FUNDING_NO_REMOTE=true`;
+   screenshot at 1440/1920/390 + read cell `title`s to verify hovers). Playwright is at
+   `/opt/node22/lib/node_modules/playwright`, Chromium under `/opt/pw-browsers`.
+
+Moniker: **SkyHigh** (Sam named the next one **SkyHighness**). Claim your own if you like.
+
+## Prior state — 2026-07-27 (SkyMore)
 
 Four curator asks; **three shipped** in a JS-only PR (`cpl_funding.js` + test; **0 HTML**),
 **two are advisory** (proposed to Sam, build pending his call):

@@ -569,6 +569,27 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyHigh side-lane — Implementation Funding: readability + equitable cells + rural fold + 13-college roster (2026-07-28, #914/#916/#921 MERGED)
+
+Three merged PRs (JS + the data roster; **0 HTML**). **#914:** "How an allocation is computed" →
+left-justified bullets; **full-width** (scoped `#tab-implementation-funding .main-container{max-width:none}`)
++ left-justify; **mobile + a11y** (keyboard sortable headers `aria-sort`, a real `<button>` caret keeping
+`<tr>` semantics, `aria-pressed` toggles, table region + sr-only caption, focus restored after the
+innerHTML re-render — WCAG 2.4.3, ≤640px media query); **equitable per-priority cells** — `Tgt N stu ·
+$cap`/`Now N stu · $earned · %`, the per-student **rate moved OUT of the cell into the hover** (it varies
+with floor/rural → reads as inequitable inline; % of target is the shared yardstick); sections default
+collapsed except the college table. **#916 — rural allowance FOLDED into the rows** (`W = mainW +
+ruralWindow`, assume the ≥50% unlock, disclosed in the hover): `netCollegeWithRural()` so **Σ rows == the
+SYSTEM total**; `earnAgg.perPrio` stays main-pool (policy cards). Pool reconciled to **ONE number $33.8M**
+with a "$32.8M main + $1M rural" note; the **rural pool card is now an earmark, not a deduction**. **#921 —
+rural roster → the 13 federally-rural CCCs** (the 10 were the RCTC *demo* cohort); the per-college bump is
+**derived** so it auto-became $1M/13 ≈ $76,923 (data-only flip) + a muted, larger 🌲. Tests 422→**460**;
+two adversarial reviews per structural change caught the focus-restore a11y bug + the $1M pool-framing
+cascade. **QUEUED (PR4, Sam's ask): combine the floor with the rural bump** — backfill rural colleges to
+$150k from the carve-out first (frees ~$752k main-pool for non-floored colleges); lock the guaranteed-vs-
+earned split first. Story: `docs/cpl_funding_lessons.md` (SkyHigh) · handoff `docs/cpl_funding_handoff.md`.
+Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
 ### SkyMore side-lane — Implementation Funding: front-load-aware formula · cell re-weight · feeder 2-batch + F1/F2 · rural per-priority earn (2026-07-27, #908/#910 MERGED)
 
 Four curator asks, two JS-focused PRs. **#908:** (1) the **"How an allocation is computed" box now
