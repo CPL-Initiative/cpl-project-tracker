@@ -4,11 +4,11 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-27",
+ "as_of": "2026-07-28",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43293,
+  "pe": 43302,
   "p2": 4791,
   "p3": 17136,
   "pp": 5
@@ -57,7 +57,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Cabrillo": {
-   "pe": 210,
+   "pe": 211,
    "p2": 17,
    "p3": 44,
    "pp": 0
@@ -69,7 +69,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Canyons": {
-   "pe": 497,
+   "pe": 498,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -533,7 +533,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Santa Ana": {
-   "pe": 442,
+   "pe": 443,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -645,7 +645,7 @@ window.CPL_FUNDING_PERF = {
  },
  "unmatched": {
   "Barstow Community College": {
-   "pe": 443,
+   "pe": 449,
    "p2": 0,
    "p3": 316,
    "pp": 0
@@ -725,8 +725,8 @@ window.CPL_FUNDING_PERF = {
   "Santa Ana": true,
   "LA Valley": true,
   "Santa Rosa": true,
-  "Sierra": true,
   "Cabrillo": true,
+  "Sierra": true,
   "Mt. San Jacinto": true,
   "Fresno City": true,
   "Canyons": true,
@@ -811,7 +811,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-07-27",
+ "vet_star_as_of": "2026-07-28",
  "vet_star_threshold": 0.75,
  "vet_star_n": 51
 };
