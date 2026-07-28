@@ -433,12 +433,19 @@ function pieSlices(el) {
   const { window } = freshDom();
   const doc = boot(window);
   check("two year dropdowns (2-year window)", doc.querySelectorAll('select[data-edit="year"]').length === 2);
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;   // 34.8M − 1M − 1M
-  const perYear = net / 2;
-  check("hero = college funding after feeder + rural carve-outs ($" + net.toLocaleString() + ")",
+  // The hero is now the WHOLE college pool incl. the folded rural allowance
+  // (Sam, 2026-07-28): 34.8M − 1M feeder = 33.8M (rural is earmarked WITHIN the
+  // pool, not deducted). The note breaks out the 32.8M main + the 1M rural.
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // 33.8M
+  const mainNet = net - D.pool.rural_carveout;                                     // 32.8M main proportional pool
+  const perYear = net / 2;                                                         // 16.9M total per-year tranche
+  check("hero = the whole college pool incl. folded rural ($" + net.toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
-  check("hero label states 2 annual tranches of the per-year amount",
+  check("hero label states 2 annual tranches of the per-year amount ($" + Math.round(perYear).toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
+  check("hero note breaks out the main proportional pool + the rural allowance",
+    doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + mainNet.toLocaleString("en-US")) !== -1 &&
+    /Rural College allowance/.test(doc.querySelector(".cplfund-card.hero .l").textContent));
 
   // Change Year 2 to 2028-29 → the window widens in the labels; still 2 years.
   const y2 = doc.querySelectorAll('select[data-edit="year"]')[1];
@@ -527,11 +534,12 @@ function pieSlices(el) {
   check("feeder headcount edit persisted to the scenario",
     scenSlot(window).feeders[0].headcount === 40000);
 
-  // Carve-out edit reduces the college tranche.
+  // Raising the FEEDER carve-out still shrinks the hero (feeder is deducted); the
+  // hero is now the whole pool incl. rural, so rural is NOT subtracted here.
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
   commit(window, carveInput, "2,000,000");
-  const net2 = D.pool.college_funding_before_feeder - 2000000 - D.pool.rural_carveout;
-  check("raising the carve-out shrinks the college hero pool",
+  const net2 = D.pool.college_funding_before_feeder - 2000000;
+  check("raising the feeder carve-out shrinks the college hero pool",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net2.toLocaleString("en-US")) !== -1);
 }
 
@@ -967,8 +975,10 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const T = window.CPL_FUNDING_TAB;
   const ruralCard = doc.querySelector(".cplfund-card.rural");
   // The label is now an editable input, so "carve-out" lives in its value, not textContent.
-  check("rural carve-out pool card renders as a deduction", !!(ruralCard && ruralCard.querySelector(".v.neg") &&
-    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "")));
+  check("rural carve-out pool card is an earmark within the pool (no longer a deduction)", !!(ruralCard &&
+    !ruralCard.querySelector(".v.neg") &&
+    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "") &&
+    /earmarked within the pool|folded into rural/.test(ruralCard.textContent)));
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
   check("rural section lists the 10 rural-flagged colleges",
     ruralTable && ruralTable.querySelectorAll("tbody tr").length === 10);

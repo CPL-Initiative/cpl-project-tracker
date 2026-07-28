@@ -1542,7 +1542,7 @@
       out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def), x: hideX(b.field, poolLabel(b.field, b.def)) }));
     });
     out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
-      l: "Total available funds &mdash; sum of all funding sources; the deductions + carve-outs below net down to the college pool" }));
+      l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool (the rural allowance is part of that pool)" }));
 
     // Deductions (skip hidden).
     CORE_DEDUCTION.forEach(function (b) {
@@ -1569,15 +1569,25 @@
     // Carve-outs — editable value + label, NOT deletable (they drive their own sections below).
     out.push(card({ cls: " feeder", neg: true, v: valueEd("feeder_carveout", true),
       l: labelEd("feeder_carveout", "Noncredit feeder support — carve-out") + ' <span class="dk">&mdash; deducted</span>' }));
-    out.push(card({ cls: " rural", neg: true, v: valueEd("rural_carveout", true),
-      l: labelEd("rural_carveout", "Rural college allowance — performance carve-out") + ' <span class="dk">&mdash; deducted</span>',
+    // Rural allowance — no longer a deduction (Sam, 2026-07-28): it's EARMARKED
+    // within the college pool and folded into rural colleges' rows above, so the
+    // hero below now reads the full pool (main + rural).
+    out.push(card({ cls: " rural", v: valueEd("rural_carveout", false),
+      l: labelEd("rural_carveout", "Rural college allowance — performance carve-out") +
+         ' <span class="dk">&mdash; earmarked within the pool, folded into rural colleges&#39; rows</span>',
       note: "earned at &ge;" + fmtPctTrim(ruralThreshold()) + " of Year-1 targets" }));
 
-    // Available college funding (computed hero).
-    out.push(card({ cls: " hero", v: fmtMoney(netCollege()),
-      l: frontloaded()
+    // Available college funding (computed hero) — the WHOLE college pool incl. the
+    // folded rural allowance (Sam, 2026-07-28); ties out to the SYSTEM total row.
+    // The note breaks out the $32.8M main proportional pool + the $1M rural.
+    var perTotal = netCollegeWithRural() / nYears();
+    var ruralIn = netCollegeWithRural() - netCollege();
+    out.push(card({ cls: " hero", v: fmtMoney(netCollegeWithRural()),
+      l: (frontloaded()
         ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
-        : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(per) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")" }));
+        : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(perTotal) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
+      note: fmtMoney(netCollege()) + " main proportional pool + " + fmtMoney(ruralIn) +
+            " Rural College allowance (folded into rural colleges&#39; rows)" }));
 
     // Allocation balance (Sam, 2026-07-23): available annual tranche − the
     // dollars the priority SHARES apportion = remainder. The allocation SHARE is
@@ -2519,9 +2529,9 @@
       // With the floor active OR a folded rural allowance, the pure "headcount
       // share × pool" identity no longer holds row-exactly (the split is
       // renormalized / rural is added) — show the college's own tranche instead.
-      var math = (floorActive || c.rural)
+      var math = (floorActive || c.rural_w > 0)
         ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) +
-          " annual tranche" + (c.rural ? " (incl. rural allowance)" : "")
+          " annual tranche" + (c.rural_w > 0 ? " (incl. rural allowance)" : "")
         : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " + fmtMoney(per);
       var earnSeg = "";
       if (earnedMode()) {
@@ -2883,7 +2893,8 @@
     });
     lines.push("");
     lines.push("Funding window: " + windowLabel() + " (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
-      ") · up to " + fmtMoney(netCollege()) + " in college implementation funding.");
+      ") · up to " + fmtMoney(netCollegeWithRural()) + " in college implementation funding (incl. the " +
+      fmtMoney(netCollegeWithRural() - netCollege()) + " Rural College allowance).");
     lines.push("CPL Initiative · Mapping Articulated Pathways (MAP) platform");
     return lines.join("\n");
   }
@@ -2924,7 +2935,8 @@
       "<h1>Credit for Prior Learning &mdash; Implementation Funding</h1>" +
       "<div class='sub'>Proposed baseline eligibility &middot; DRAFT for field review</div>" +
       "<p>The <strong>CPL Initiative</strong> of the California Community Colleges Chancellor&#39;s Office is proposing to " +
-      "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> in one-time implementation funding to colleges " +
+      "distribute up to <strong>" + esc(fmtMoney(netCollegeWithRural())) + "</strong> (incl. the " +
+      esc(fmtMoney(netCollegeWithRural() - netCollege())) + " Rural College allowance) in one-time implementation funding to colleges " +
       "across the <strong>" + esc(windowLabel()) + "</strong> window (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
       ") to scale Credit for Prior Learning through the Mapping Articulated Pathways (MAP) platform. To qualify, colleges " +
       "would meet a short set of baseline requirements.</p>" +
@@ -3143,7 +3155,7 @@
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
       totalAvailable: (Number(poolField("remaining_2025_26")) || 0) + (Number(poolField("one_time_2026_27")) || 0),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
-      collegePool: netCollege(), nColleges: base().colleges.length,
+      collegePool: netCollegeWithRural(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
       priorities: priorities("1")
