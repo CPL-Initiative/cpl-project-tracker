@@ -1239,3 +1239,54 @@ small files are unaffected. Post-fix: `…=4096` ambient + the flag → 422/422,
 un-reclaimable `vm` contexts; you cannot `close()`/`gc()` your way out. Either give the child
 process a bigger heap (done — matches how the file already passed locally) or split the file so
 each half runs in its own process. If assertions keep growing, prefer the split next.
+
+---
+
+## 2026-07-28 — SkyHigh: readability + equitable cells + the rural fold + the pool-framing cascade
+
+Three merged PRs (#914 readability/full-width/mobile+a11y · #916 rural fold + pool reconciliation ·
+#921 the 13 federally-rural roster + muted 🌲). The durable lessons:
+
+**1. Showing a per-unit RATE inline can read as inequitable the moment it varies.** The cell used
+to show `$38/stu` uniformly — but the $150k floor (and later the rural bump) make each small
+college's *effective* $/student higher ($47, $64, $274…). Put side by side, "$38 vs $274/stu" reads
+as unequal even though it's the floor *protecting* small colleges. **Fix: drop the varying rate from
+the cell; lead with the ONE yardstick every college shares — % of its own target — keep the real
+dollars, and move the effective rate + WHY it differs into the hover.** (`prioCellHtml`, Option "D".)
+The cell became `Tgt N stu · $cap` / `Now N stu · $earned · %`; the hover carries the effective
+$/student + the floor/rural reason. Equity is often about what you *don't* show side by side.
+
+**2. Folding a carve-out into the distribution is a two-layer change — the policy layer fights back.**
+Folding the rural allowance into each rural college's row (`W = mainW + ruralWindow`, assume the
+≥50% unlock) made the DISTRIBUTION total $33.8M (main + rural). But the POLICY layer (priority
+cards' "statewide $ ÷ rate = target" identity, `perYear()`, the balance box) is main-pool. Keep
+those on the main pool; fold rural only into the distribution surfaces (`collegeAlloc`, `systemAlloc`
+via `netCollegeWithRural()`, the Yr/Total, `earnAgg.winCap`) — but NOT `earnAgg.perPrio` (it feeds
+the policy cards). The boundary is: *distribution folds the carve-out; policy cards don't.*
+
+**3. …and the cascade reaches every surface that names the pool.** The adversarial review caught
+that the hero pool card, the report `collegePool`, and the printed narrative still read $32.8M while
+the SYSTEM row + Earned card now read $33.8M — a $1M contradiction. **Lesson: when you change what a
+headline total means, grep every surface that displays it.** Resolution (Sam's call): ONE number
+($33.8M) everywhere, with a note breaking out "$32.8M main + $1M rural," and the rural pool card
+reframed from a *deduction* to an *earmark within the pool*. `netCollege()` stays for the main
+proportional split; the hero shows `netCollegeWithRural()`.
+
+**4. Derive parameters, don't hardcode them — it makes policy swaps free.** The per-college rural
+bump is `carve-out ÷ N(rural)`, never a literal. So switching the roster from the 10-college demo
+cohort to the 13 federally-rural colleges was a **data-only** flip in `cpl_funding_data.js`; the
+bump auto-became $1M/13 ≈ $76,923 with zero code/math change. The only test churn was the hardcoded
+"10"/anchor colleges (Butte→non-rural, Copper Mountain→rural). Every N-dependent display derived
+from the roster, so the model just re-balanced.
+
+**5. Adversarial review earned its keep twice.** Two structural reviews caught what 460 green tests
+didn't: (a) keyboard focus was silently dropped to `<body>` on every sort/expand (the innerHTML
+re-render destroys the focused node — WCAG 2.4.3), and (b) the $1M pool-framing cascade above.
+Tests guard behaviors you thought to assert; a skeptic re-derives the ones you didn't.
+
+**Next (PR4, queued for SkyHighness):** combine the floor with the rural bump — back-fill rural
+colleges to $150k from the rural carve-out FIRST (frees ~$752k of main-pool money for non-floored
+colleges; ~$248k rural remainder on top). The load-bearing decision: the floor is a *guarantee* but
+the rural bump is *performance-earned* — so the carve-out splits into a guaranteed backfill + an
+earned remainder. Lock that split with Sam before building; it couples `allocModel()` +
+`collegeAlloc` + `ruralEarned`.
