@@ -965,6 +965,62 @@ function fresh(withCollege) {
   await tick(); await tick();
   check("baseline: the college-overview clears once a department is chosen", !bdoc.querySelector(".cipx-rev-ovtiles"));
 
+  // ── Programs review (top-level Courses/Programs toggle) — PR4 (Sam, 2026-07-28) ──
+  const PROGRAMS_FX = {
+    colleges: ["ALPHA COLLEGE"],
+    awards: ["A.S. Degree", "Certificate"],
+    statuses: ["Active"],
+    // ROW: [collegeIdx, ctrl, title, top, cip, awardIdx, statusIdx, units, xfer, cte]
+    rows: [
+      [0, "1001", "Business Administration", "0505.00", "52.0201", 0, 0, "18.00", 0, 0],   // 52.0201 ∈ crosswalk(0505.00) → OK
+      [0, "1002", "Managerial Accounting", "0505.00", "52.9001", 0, 0, "18.00", 0, 1],       // 52.9001 ∉ crosswalk → needs revision (CTE program)
+      [0, "1003", "General Agriculture", "9560.00", "01.0000", 1, 0, "12.00", 0, 1],         // 01.0000 ∈ crosswalk(9560.00) + cat "Both" → CTE toggle
+    ],
+  };
+  const domP = makeDom();
+  domP.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+  try { domP.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+  domP.window.eval(src);
+  const pApi = domP.window.CPL_CIP_CROSSWALK;
+  pApi._setPrograms(JSON.parse(JSON.stringify(PROGRAMS_FX)));
+  pApi.activate();
+  const pdoc = domP.window.document;
+  check("programs: exposes the programs seams", typeof pApi._setPrograms === "function" && typeof pApi._progNeedsRevision === "function");
+  check("programs: the top-level scope toggle renders Courses + Programs", (function () { var t = pdoc.querySelectorAll(".cipx-scopebar .cipx-scopetab"); return t.length === 2 && /Courses/.test(t[0].textContent) && /Programs/.test(t[1].textContent); })());
+  check("programs: the Programs scope tab is selected", (function () { var t = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Programs/.test(x.textContent))[0]; return t && t.classList.contains("on"); })());
+  check("programs: the mode bar drops 'Find my course's code' and relabels Review", (function () { var tabs = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return tabs.length === 2 && /Review my programs/.test(tabs[0].textContent) && !/Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent); })());
+  check("programs: needs-revision detector — a CIP outside the current crosswalk flags true", pApi._progNeedsRevision("0505.00", "52.9001") === true && pApi._progNeedsRevision("0505.00", "52.0201") === false);
+  // pick the college
+  const pcsel = pdoc.querySelector(".cipx-prog .cipx-college-sel");
+  check("programs: a program college selector renders (its own — program-export names)", !!pcsel && pcsel.querySelectorAll("option").length === 2);
+  pcsel.value = "0"; pcsel.dispatchEvent(new domP.window.Event("change"));
+  await tick();
+  const pRows = pdoc.querySelectorAll(".cipx-prog-item");
+  check("programs: picking a college lists its programs", pRows.length === 3);
+  check("programs: the summary counts programs needing revision", /1 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
+  // needs-revision first
+  const flagItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Managerial Accounting/.test(it.textContent))[0];
+  check("programs: a mismatched-CIP program is flagged 'needs revision'", flagItem && flagItem.classList.contains("cipx-prog-item-flag") && !!flagItem.querySelector(".cipx-prog-revflag"));
+  check("programs: a CTE program shows a bold CTE chip on the row", flagItem && !!flagItem.querySelector(".cipx-cat-CTE"));
+  // the revise picker offers ONLY crosswalk CIPs (rule #7)
+  const psel = flagItem.querySelector(".cipx-prog-revsel");
+  check("programs: the revise picker offers only the current-crosswalk CIPs for this TOP", (function () { var vals = Array.prototype.map.call(psel.querySelectorAll("option"), (o) => o.value).filter(Boolean); return vals.length >= 2 && vals.indexOf("52.0201") >= 0 && vals.indexOf("52.9001") < 0; })());
+  psel.value = "52.0301"; psel.dispatchEvent(new domP.window.Event("change"));
+  await tick();
+  check("programs: choosing a crosswalk CIP persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1002"].cip === "52.0301"; } catch (e) { return false; } })());
+  check("programs: after revising, the program is no longer flagged (moves out of 'needs revision')", (function () { var it = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (x) => /Managerial Accounting/.test(x.textContent))[0]; return it && !it.classList.contains("cipx-prog-item-flag"); })());
+  check("programs: the summary count drops after a revision", /0 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
+  // CTE / Non-CTE choice on a "Both"-category program CIP (General Agriculture → 01.0000)
+  const bothItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /General Agriculture/.test(it.textContent))[0];
+  const pcte = bothItem && bothItem.querySelector(".cipx-prog-cte");
+  check("programs: a 'Both'-category program CIP surfaces a CTE / Non-CTE toggle", !!pcte && pcte.querySelectorAll(".cipx-rev-ctebtn").length === 2);
+  if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
+  check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
+  // switching scope back to Courses restores the course modes
+  const coursesTab = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Courses/.test(x.textContent))[0];
+  coursesTab.click(); await tick();
+  check("programs: toggling back to Courses restores 3 modes incl. 'Find my course's code'", pdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent));
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;
