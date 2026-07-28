@@ -17,7 +17,39 @@ related:
   - "[[CLAUDE]]"
 ---
 
-# CIP workstream handoff → next session (SkyCoco → you)
+# CIP workstream handoff → next session
+
+## 🟢 LATEST — 2026-07-28 (SkyLark): the CO-handoff enhancement series (Raul + Jenni)
+
+Sam brought CO feedback from **Raul and Jenni** (who will **own the tab** once finalized): 7 asks + 2 rules
+he added mid-stream. Shipping as a short series of focused PRs. **Read `docs/cip_crosswalk_lessons.md`
+(bottom section, 2026-07-28) first** — it has the design calls, the data facts, and the two shipped PRs.
+
+**Shipped (merged):**
+- **#915** — Browse **2/4/6-digit CIP filters** (leftmost/most prominent, "Select All" atop each, cascading)
+  · **bold+bordered CTE chip** · **rename** to "California Community College Searchable CIP Code Taxonomy"
+  (Jenni) · mobile/a11y hardening (0 phone overflow — 3 stacked causes; see lessons).
+- **#917** — **crosswalk-only alternatives** (Sam's "no free range"): every presented CIP is in the crosswalk
+  under *some* TOP; poorly-fitting own-TOP → surface crosswalk CIPs from **more-appropriate TOPs** labeled
+  `↔ TOP N`. Helpers `inXwalk`/`altTopsFor`/`xwalkAlts` off `CIP_TOPS`.
+
+**Next (this series):**
+- **PR3 — course CIP caps + CDCP + CTE-choice.** Enforce credit=1 / noncredit-CDCP=2 (CDCP = course
+  `CreditType` "…Enhanced Funding" — course-level, independent of program; needs a `cip_fitcheck/*` regen to
+  carry a credit flag per course tuple via `kb/_build_cip_fitcheck.py`). "Both"-category CIP assignment →
+  require a CTE/Non-CTE **use** choice stored with the assignment. **Open Q for Sam:** constrain the manual
+  "+ Add another code" search to the crosswalk, or keep it open w/ an "outside crosswalk" flag?
+- **PR4 — Programs curation toggle** (Sam: **top-level Courses/Programs**, above the mode tabs). Programs
+  carry a college-assigned CIP already (`coci_programs_data.js` `row[4]`); render title+award+CIP+bold CTE
+  (GOAL "C - CTE"/"CT") + a **"needs revision"** flag when assigned CIP ∉ current crosswalk for its TOP
+  (interim; wire the **old first-gen program crosswalk** when Sam supplies it) + CTE/Non-CTE choice for Both.
+
+**Locked design calls:** Programs = Course⇄Program **toggle**, **top-level**; CIP caps **enforced** (clear
+reason). **Side-lane discipline:** do NOT touch `kb/cpl_todos.json` or the numbered `session_<N>_handoff.md`.
+
+---
+
+## Prior handoff (SkyCoco → SkyCIP/SkyQB, 2026-07-20)
 
 You inherit the **CIP side-lane** of COBI and **Coco the pup** 🐾. SkyEasy built the whole-catalog
 consensus pre-fill + the two-box "Suggested change" redesign; **SkyCoco** cleared Sam's 4-item

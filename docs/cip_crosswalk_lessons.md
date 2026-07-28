@@ -1676,3 +1676,71 @@ would be to add a downstream rule ("don't dept-default law courses"). Instead:
 - **Fix the root, not a counter-rule.** When rules seem to fight, a visual decision-trace over the live engine
   reveals whether it's a *loop* (add a rule = tail-chasing) or a *cascade* (fix the top domino, the rest stop).
   A deterministic before/after sweep across real data — status/box/confirm/flag diffed — is the soundness proof.
+
+## 2026-07-28 — SkyLark: the CO-handoff enhancement series (Raul + Jenni)
+
+Sam brought a batch of feedback from **Raul and Jenni at the CO** who will **own the tab** once it's
+finalized. Seven asks + two rules he added mid-stream. Shipping as a short series of focused PRs.
+
+**Design calls locked with Sam (AskUserQuestion):**
+- Programs curation = a **Courses ⇄ Programs toggle**, and it sits **top-level, above the mode tabs**
+  (Sam's steer) — the modes shift under it (Programs = Review + Browse; a "Find my program's code" easy
+  button can follow). The CO audience decides "courses vs programs" first.
+- The CIP-count rule is **enforced with a clear reason** (not just a warning).
+
+**Data facts established (recon):**
+- **Programs already carry a college-assigned CIP.** `coci_programs_data.js` rows = `[collegeIdx, ctrl,
+  title, top, cip, awardIdx, statusIdx, units, xfer]` — the CIP is `row[4]` (from the COCI program export's
+  `CIP CODE` column). GOAL encodes CTE: **16,890 "C - CTE" + 678 "CT - CTE and Transfer"**. So the Programs
+  view can render assigned-CIP + CTE + a mismatch flag now; the **old (first-gen) program crosswalk** is
+  what Sam is requesting from the CO to pinpoint which assigned CIPs need revising to the new crosswalk —
+  build the interim flag (assigned CIP ∉ current crosswalk for its TOP) with a seam for the old map.
+- **Course-level CDCP DOES exist** (Sam's key worry — some courses in a CDCP program aren't themselves
+  CDCP). `coci_course_list.xlsx` `CreditType` = **"…Enhanced Funding"** IS the course-level CDCP flag,
+  **independent** of the program: e.g. "Short-term Vocational" splits 2,334 Enhanced-Funding (CDCP) vs 897
+  Non-Enhanced (not CDCP). Values: `Credit Course` (105,402) · `Other Noncredit Enhanced Funding` (5,052)
+  · `Non-Enhanced Funding` (4,298) · `Workforce Preparation Enhanced Funding` (2,085). CDCP = the two
+  Enhanced-Funding types. `Non_Credit_Category` gives the noncredit category. **CDCP = higher apportionment
+  ("Special Populations")** — good tooltip context.
+- **CIP taxonomy category** `rows[].cat` ∈ CTE / **Both** / Non-CTE / Noncredit (+ Retired/Reserved) — drives
+  the "choose CTE-use when Both" step and the bold CTE chip. 50 families, 2,325 codes; the workbook has
+  2-digit family titles + 6-digit code titles but **no 4-digit series titles** (so the 4-digit dropdown
+  labels by code + count — grounded, no hallucination).
+
+### PR #915 (SkyLark) — 2/4/6-digit filters + prominent CTE chip + rename
+Browse mode: three cascading CIP-code dropdowns (2-digit sector · 4-digit sub-series · 6-digit code),
+**leftmost + most prominent** (accent-bordered group), each with a "Select All (all-…)" option at the top.
+Fills are structural (independent of category/xfer/search), respecting the retired toggle; picking a sector
+narrows the sub-series and code lists. CTE chip → **bold + bordered** (`--cipx-cte-stripe` token, weight 800)
+so it reads as the big factor. Rename → **"California Community College Searchable CIP Code Taxonomy"**
+(Jenni). **Mobile hunt (worth remembering):** three separate causes stacked up —
+(1) selects with long option text need `min-width:0` to stack; (2) the mobile `.cipx-row` rule reset the
+title track to `1fr auto`, so badges competed → moved `.cipx-tags` to a wrapped 2nd row + `minmax(0,1fr)`;
+(3) the real killer was a single **unbreakable slash-joined CIP title**
+("Electroneurodiagnostic/Electroencephalographic…") → `overflow-wrap:anywhere` on `.cipx-ttl`. Diagnose phone
+overflow by measuring the `.cipx` container's own `scrollWidth`, and scan for the element with the largest
+`scrollWidth − clientWidth` (an element within the viewport can still carry internal overflow — native
+`<select>`s and nowrap text don't show up in a "right edge past viewport" scan). Tests 266; 0 overflow
+desktop+phone, both themes.
+
+### PR #917 (SkyLark) — crosswalk-only alternatives (Sam's "no free range" rule)
+The tension Sam named: TOPs are unreliable (§7), so we can't hard-lock to the course's own TOP crosswalk,
+but we also don't want free-ranging the full 2,325-code taxonomy. **Resolution (Sam's refinement): every
+presented CIP is in the crosswalk under *some* TOP; when the course's own TOP fits poorly, surface crosswalk
+CIPs from *more-appropriate* TOPs, each labeled `↔ TOP N` + "your TOP may need updating."** Built off the
+existing `CIP_TOPS` inverse map: helpers `inXwalk` / `altTopsFor` / `xwalkAlts`. `beyond` now requires
+`inXwalk` (a code in NO TOP's crosswalk is dropped entirely); the recommend "outside the crosswalk" drawer +
+the no-crosswalk/only-generic fallbacks + the review closest-by-description fallback + the ⚑ mis-code flag
+are all crosswalk-constrained and source-TOP-labeled. Tests 270 (+6). **Method that carries: turn the
+unreliable-TOP problem into a feature — the alt-TOP surface IS the mis-code nudge.**
+
+### Still open (this series)
+- **PR3 — course CIP caps + CDCP + CTE-choice for "Both" + course titles/rows.** Enforce credit=1 /
+  noncredit-CDCP=2 (CDCP from `CreditType` Enhanced Funding — needs a fitcheck-data regen to carry a credit
+  flag on each course tuple). When a "Both" CIP is assigned, require a CTE / Non-CTE use choice, stored with
+  the assignment. Bold CTE chip already global (PR #915). **Open Q for Sam:** constrain the manual
+  "+ Add another code" search to the crosswalk too, or keep it open with an "outside crosswalk" flag?
+- **PR4 — the Programs curation toggle** (top-level Courses/Programs). Program rows: title + award +
+  college-assigned CIP + bold CTE (GOAL-derived) + a "needs revision" flag when the assigned CIP ∉ the
+  current crosswalk for its TOP (interim; wire the old crosswalk when Sam supplies it) + the CTE/Non-CTE
+  choice for Both.
