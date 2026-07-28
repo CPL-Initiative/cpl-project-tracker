@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-28T11:29:42.300108+00:00",
+  "scraped_at": "2026-07-28T14:44:29.369660+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26583,
+    "jst": 26589,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -117,7 +117,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 363,
+      "jst": 368,
       "star": true
     },
     "Cypress College": {
@@ -142,7 +142,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 438,
+      "jst": 439,
       "star": true
     },
     "Cabrillo College": {
