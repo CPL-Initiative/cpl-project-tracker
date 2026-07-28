@@ -1777,3 +1777,27 @@ from the new map (more precise than "not in current crosswalk"). Reuse the **CTE
 `revCteChoice`) + the **crosswalk-only alternatives** (PR #917 `xwalkAlts`) for programs. Programs get 1 CIP
 (the cap rule is course-specific). Titles in the program picker + rows (ask #5-program). **Open Q (from #917,
 unanswered):** constrain the manual "+ Add another code" search to the crosswalk?
+
+### PR #923 (SkyLark) — Programs curation: the top-level Courses/Programs toggle (ask #1) — SHIPPED
+The headline. **Top-level Courses ⇄ Programs toggle ABOVE the mode tabs** (`scopeBar`, `st.scope`); Programs
+scope → mode tabs become "Review my programs" + "Browse". Program review (`programsView`/`programRow`) is
+per-college with its OWN college selector (program-export names differ from the fitcheck names — don't reuse
+the course college bar). Each program: title + award (truncated + tooltip — award names like "Certificate of
+Achievement: 12 to fewer than 18 semester units" are verbose and blew past the viewport on phone) + assigned
+CIP (`row[4]`) + bold CTE chip (`row[9]` from the GOAL→CTE builder tweak) + category chip. A program whose
+assigned CIP ∉ the current crosswalk for its TOP is flagged **⚑ needs revision**; the revise picker offers
+ONLY the crosswalk CIPs for that TOP (`TOPCIP[top].c` — rule #7). Search + "needs revision only" filter;
+flagged first. Choices persist in `cipx_prog_<collegeIdx>` (`{ctrl:{cip,cte}}`); CTE/Non-CTE choice for Both
+reused. Real cases surfaced immediately (Alameda ESOL programs coded `32.0108` under a TOP the current
+crosswalk maps elsewhere). **Seam reserved** for the OLD first-gen program crosswalk (Sam requesting from CO)
+→ flag exact old→new diffs. Tests 275→292; real-Chromium Alameda (113 programs, 5 flagged) desktop+phone 0
+overflow. **Lesson: two independent college-name vocabularies (fitcheck vs program-export) → give each surface
+its own selector rather than forcing a fragile name match.**
+
+### Series complete (2026-07-28, SkyLark) — all 6 asks + 2 rules + rename shipped
+#915 (2/4/6-digit filters + bold CTE + rename) · #917 (crosswalk-only alternatives / more-appropriate-TOP) ·
+#919 (credit-type caps + CDCP + CTE-choice for Both) · #923 (Programs toggle). Docs checkpoints #918/#920/this.
+**Remaining follow-ups (all noted to Sam, none blocking):** (1) the OLD first-gen program crosswalk (Sam
+requesting) → precise old→new revision flags; (2) the open manual "+ Add another code" free-search scope
+question (crosswalk-limited vs open) — unanswered, applies to the COURSE review only; (3) optional
+program-first "Find my program's code" easy button. New KB note: `reference-cdcp-and-the-cip-count-rule.md`.
