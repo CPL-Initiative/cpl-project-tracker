@@ -66,7 +66,7 @@
   }
 
   // ── state ──────────────────────────────────────────────────────────────────
-  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
+  var D = null, ROWS = [], BYCODE = {}, FAMS = {}, SUB4 = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false };
@@ -85,6 +85,7 @@
   function ingest(data) {
     D = data;
     FAMS = (D && D.fams) || {};
+    SUB4 = (D && D.sub4) || {};   // authoritative NCES 4-digit series titles (keyed "51.38"), when the builder can source them (Sam, 2026-07-28)
     ROWS = ((D && D.rows) || []).slice();
     ROWS.sort(function (a, b) {
       var x = (a.t || "").toLowerCase(), y = (b.t || "").toLowerCase();
@@ -163,7 +164,8 @@
       seen[k] = (seen[k] || 0) + 1;
     });
     Object.keys(seen).sort().forEach(function (k) {
-      fam4Ref.appendChild(cipOpt(k, k + " · " + seen[k] + (seen[k] === 1 ? " code" : " codes")));
+      var t4 = SUB4[k];   // show the NCES 4-digit series title when we have it; else code + count (grounded, never invented)
+      fam4Ref.appendChild(cipOpt(k, k + (t4 ? " · " + t4 : "") + " · " + seen[k] + (seen[k] === 1 ? " code" : " codes")));
     });
     fam4Ref.value = st.fam4;
   }
@@ -1508,14 +1510,32 @@
         if (st.progQ) { var hay = (r[2] + " " + (progCip(r[1], r[4]) || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
         return true;
       });
-      shown.sort(function (a, b) {
-        var fa = progNeedsRevision(a[3], progCip(a[1], a[4])) ? 0 : 1, fb = progNeedsRevision(b[3], progCip(b[1], b[4])) ? 0 : 1;
-        if (fa !== fb) return fa - fb;
-        return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
+      listHostP.appendChild(el("div", { class: "cipx-prog-showing" }, ["Showing " + shown.length.toLocaleString() + (shown.length === 1 ? " program" : " programs") + (st.progFlagOnly ? " needing revision" : "") + " — grouped by CIP sector, ascending by code."]));
+      // Group by 2-digit CIP sector, ascending; sort within each sector ascending by the full CIP code;
+      // programs with no CIP assigned fall in a final "No CIP assigned" group (Sam, 2026-07-28).
+      var groups = {};
+      shown.forEach(function (r) { var c = progCip(r[1], r[4]) || ""; var sec = c ? c.slice(0, 2) : ""; (groups[sec] = groups[sec] || []).push(r); });
+      var secs = Object.keys(groups).filter(function (s) { return s !== ""; }).sort();
+      if (groups[""]) secs.push("");   // no-CIP group last
+      var shownCount = 0, capped = false;
+      secs.forEach(function (sec) {
+        if (capped) return;
+        var g = groups[sec].slice().sort(function (a, b) {
+          var ca = progCip(a[1], a[4]) || "", cb = progCip(b[1], b[4]) || "";
+          if (ca !== cb) return ca < cb ? -1 : 1;
+          return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
+        });
+        listHostP.appendChild(el("div", { class: "cipx-prog-sector" + (sec ? "" : " cipx-prog-sector-nocip"), role: "heading", "aria-level": "3" }, [
+          el("span", { class: "cipx-prog-sector-code" }, [sec || "—"]),
+          el("span", { class: "cipx-prog-sector-t" }, [sec ? (FAMS[sec] || ("CIP sector " + sec)) : "No CIP assigned yet"]),
+          el("span", { class: "cipx-prog-sector-n" }, [g.length.toLocaleString() + (g.length === 1 ? " program" : " programs")]),
+        ]));
+        for (var i = 0; i < g.length; i++) {
+          if (shownCount >= 400) { capped = true; break; }
+          listHostP.appendChild(programRow(g[i], repaintProgList)); shownCount++;
+        }
       });
-      listHostP.appendChild(el("div", { class: "cipx-prog-showing" }, ["Showing " + shown.length.toLocaleString() + (shown.length === 1 ? " program" : " programs") + (st.progFlagOnly ? " needing revision" : "") + " — the ones needing a look are first."]));
-      shown.slice(0, 400).forEach(function (r) { listHostP.appendChild(programRow(r, repaintProgList)); });
-      if (shown.length > 400) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
+      if (capped) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
     }
     repaintProgList();
     return host;
@@ -2408,7 +2428,8 @@
   function scopeBar() {
     var bar = el("div", { class: "cipx-scopebar", role: "tablist", "aria-label": "Code your courses or your programs" }, []);
     bar.appendChild(el("span", { class: "cipx-scopebar-l", "aria-hidden": "true" }, ["Code my:"]));
-    [["courses", "Courses"], ["programs", "Programs"]].forEach(function (s) {
+    // Programs sits leftmost, before Courses (Sam, 2026-07-28).
+    [["programs", "Programs"], ["courses", "Courses"]].forEach(function (s) {
       var on = st.scope === s[0];
       var b = el("button", { class: "cipx-scopetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [s[1]]);
       b.onclick = function () {
@@ -2547,8 +2568,10 @@
     wrapEl.appendChild(header());
     wrapEl.appendChild(scopeBar());
     wrapEl.appendChild(modeBar());
-    wrapEl.appendChild(collegeBar());
     var programsReview = (st.scope === "programs" && st.mode === "review");
+    // Programs review has its OWN college selector (program-export names differ); don't render the course
+    // college bar there too — it was showing twice (Sam, 2026-07-28).
+    if (!programsReview) wrapEl.appendChild(collegeBar());
     if (programsReview) {
       wrapEl.appendChild(programsView());
     } else if (st.mode === "recommend") {
@@ -2734,6 +2757,12 @@
       ".cipx-prog-summary{font-size:.9rem;color:var(--cipx-text-soft);margin:2px 0 8px;}",
       ".cipx-prog-showing{font-size:.82rem;color:var(--cipx-muted);margin:4px 2px 8px;}",
       ".cipx-prog-list{display:flex;flex-direction:column;}",
+      ".cipx-prog-sector{display:flex;gap:9px;align-items:baseline;margin:14px 0 7px;padding:5px 4px 6px;border-bottom:2px solid var(--cipx-accent-soft);}",
+      ".cipx-prog-sector:first-child{margin-top:2px;}",
+      ".cipx-prog-sector-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;font-size:.9rem;color:var(--cipx-accent);}",
+      ".cipx-prog-sector-t{font-weight:700;font-size:.92rem;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 auto;}",
+      ".cipx-prog-sector-n{font-size:.76rem;font-weight:600;color:var(--cipx-muted);white-space:nowrap;}",
+      ".cipx-prog-sector-nocip .cipx-prog-sector-code,.cipx-prog-sector-nocip .cipx-prog-sector-t{color:var(--cipx-muted);}",
       ".cipx-prog-item{border:1px solid var(--cipx-border);border-radius:11px;padding:11px 14px;margin-bottom:8px;background:var(--cipx-surface);}",
       ".cipx-prog-item-flag{border-color:var(--cipx-bad-stripe);border-left:4px solid var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
       ".cipx-prog-l1{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;min-width:0;}",
