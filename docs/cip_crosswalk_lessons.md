@@ -1744,3 +1744,36 @@ unreliable-TOP problem into a feature — the alt-TOP surface IS the mis-code nu
   college-assigned CIP + bold CTE (GOAL-derived) + a "needs revision" flag when the assigned CIP ∉ the
   current crosswalk for its TOP (interim; wire the old crosswalk when Sam supplies it) + the CTE/Non-CTE
   choice for Both.
+
+### PR #919 (SkyLark) — credit-type CIP caps + CDCP + CTE/Non-CTE choice for "Both"
+Two COCI rules for the Review tool. **(1) CIP count by credit type (Raul):** credit=1, noncredit=1 UNLESS
+CDCP=2. CDCP is a COURSE-level property (Sam's key catch — a course in a CDCP program can itself be
+non-enhanced-funding), read from the course's own `CreditType`. `kb/_build_cip_fitcheck.py` now emits a 4th
+tuple element (`C`/`D`/`N`/absent; 7,029 CDCP · 99,945 credit · 4,064 noncredit · 20,677 blank). The Review
+tool shows a credit-type label + an active "+" only for CDCP-under-cap, else a disabled "+"; a 1-CIP course
+REPLACES on a new candidate pick (never accumulates); the add-picker, manual search, and apply-to-siblings
+all respect each course's cap. **(2) CTE/Non-CTE choice (Jenni):** a "Both"-category assigned CIP surfaces a
+CTE/Non-CTE toggle → `cipx_revcte_<college>`. **⚠ Bug caught (worth remembering):** the credit flag lives in
+tuple slot `[3]` — the SAME slot `courseToks` used for its token-memo cache — so `courseToks` would have
+returned the flag as "tokens," silently corrupting all fit-check scoring. Fixed by moving the cache to slot
+`[4]`; guard test added. **Lesson: when adding a field to a shared array tuple, grep for every `c[N] =` cache
+write on that tuple first.** Tests 270→275; real-Chromium review+recommend clean on the 4-element data.
+`cip_status_counts.json` NOT regenerated (credit flag doesn't affect classification).
+
+### PR4 — the Programs curation toggle (STILL OPEN, the headline / ask #1)
+**Design (locked with Sam):** a **top-level Courses ⇄ Programs toggle ABOVE the mode tabs**; when Programs is
+selected the mode tabs become **Review my programs + Browse codes** (Find-my-program deferred). Data is
+READY: `coci_programs_data.js` (`window.CPL_COCI_PROGRAMS`) — `rows[]=[collegeIdx,ctrl,title,top,cip,awardIdx,
+statusIdx,units,xfer]`, i.e. each program's **college-assigned CIP is `row[4]`**, TOP `row[3]`, title `row[2]`.
+GOAL-derived CTE isn't in this dataset yet — `_build_coci_programs.py` drops GOAL; to show the bold CTE chip
+on program rows, re-emit a CTE flag from GOAL ("C - CTE"/"CT..." → CTE) in the builder (small change + regen
+of the ~2.4MB `coci_programs_data.js`). **Program review view (per college):** group by subject/award; each
+row = program title + award + assigned CIP (bold CTE chip) + a **"needs revision"** flag when the assigned CIP
+is NOT in the current authoritative TOP→CIP crosswalk for the program's TOP (interim — use the same `inXwalk`/
+`topcip` logic from PR #917; the assigned CIP was set per the OLD first-gen crosswalk, so a mismatch = revise
+to the new crosswalk's CIP). **Seam for the old crosswalk:** Sam is requesting the old program crosswalk from
+the CO — when it lands, add it as a data file and flag specifically the CIPs the old map produced that differ
+from the new map (more precise than "not in current crosswalk"). Reuse the **CTE/Non-CTE choice** (PR #919
+`revCteChoice`) + the **crosswalk-only alternatives** (PR #917 `xwalkAlts`) for programs. Programs get 1 CIP
+(the cap rule is course-specific). Titles in the program picker + rows (ask #5-program). **Open Q (from #917,
+unanswered):** constrain the manual "+ Add another code" search to the crosswalk?

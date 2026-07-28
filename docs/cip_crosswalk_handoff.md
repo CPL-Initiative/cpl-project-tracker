@@ -32,17 +32,25 @@ he added mid-stream. Shipping as a short series of focused PRs. **Read `docs/cip
 - **#917** — **crosswalk-only alternatives** (Sam's "no free range"): every presented CIP is in the crosswalk
   under *some* TOP; poorly-fitting own-TOP → surface crosswalk CIPs from **more-appropriate TOPs** labeled
   `↔ TOP N`. Helpers `inXwalk`/`altTopsFor`/`xwalkAlts` off `CIP_TOPS`.
+- **#919** — **credit-type CIP caps + CDCP + CTE/Non-CTE choice for "Both".** credit=1 / noncredit-CDCP=2
+  (CDCP = course `CreditType` "Enhanced Funding", COURSE-level; fitcheck tuple 4th element `C`/`D`/`N`).
+  Credit label + active/disabled "+"; 1-CIP courses REPLACE. "Both" CIP → CTE/Non-CTE toggle
+  (`cipx_revcte_`). **Caught + fixed a real bug:** the credit flag's slot `[3]` collided with `courseToks`'
+  token cache (moved to `[4]`). Tests 275.
 
-**Next (this series):**
-- **PR3 — course CIP caps + CDCP + CTE-choice.** Enforce credit=1 / noncredit-CDCP=2 (CDCP = course
-  `CreditType` "…Enhanced Funding" — course-level, independent of program; needs a `cip_fitcheck/*` regen to
-  carry a credit flag per course tuple via `kb/_build_cip_fitcheck.py`). "Both"-category CIP assignment →
-  require a CTE/Non-CTE **use** choice stored with the assignment. **Open Q for Sam:** constrain the manual
-  "+ Add another code" search to the crosswalk, or keep it open w/ an "outside crosswalk" flag?
-- **PR4 — Programs curation toggle** (Sam: **top-level Courses/Programs**, above the mode tabs). Programs
-  carry a college-assigned CIP already (`coci_programs_data.js` `row[4]`); render title+award+CIP+bold CTE
-  (GOAL "C - CTE"/"CT") + a **"needs revision"** flag when assigned CIP ∉ current crosswalk for its TOP
-  (interim; wire the **old first-gen program crosswalk** when Sam supplies it) + CTE/Non-CTE choice for Both.
+**Next (this series) — PR4 is the headline, still open:**
+- **PR4 — Programs curation toggle (ask #1).** **top-level Courses ⇄ Programs above the mode tabs**
+  (Sam-locked); Programs → Review my programs + Browse. Data ready: `coci_programs_data.js`
+  (`window.CPL_COCI_PROGRAMS`) rows `[collegeIdx,ctrl,title,top,cip,awardIdx,statusIdx,units,xfer]` — assigned
+  CIP = `row[4]`, TOP `row[3]`, title `row[2]`. **To show the bold CTE chip on programs**, re-emit a CTE flag
+  from GOAL ("C - CTE"/"CT…") in `kb/_build_coci_programs.py` (drops GOAL today) + regen the ~2.4MB data file.
+  Program rows: title + award + assigned CIP + bold CTE + a **"needs revision"** flag when the assigned CIP ∉
+  the current crosswalk for its TOP (reuse `inXwalk`/`topcip`; the CIP was set per the OLD first-gen
+  crosswalk). **Seam:** Sam is getting the OLD program crosswalk from the CO → when it lands, flag the exact
+  old→new differences. Reuse `revCteChoice` (CTE choice for Both) + `xwalkAlts` (crosswalk-only). Programs get
+  1 CIP (cap is course-specific). Full spec in `cip_crosswalk_lessons.md` (bottom).
+- **Open Q for Sam (unanswered, from #917/#919):** constrain the manual "+ Add another code" search to the
+  crosswalk, or keep it open with an "outside crosswalk — verify your TOP" flag?
 
 **Locked design calls:** Programs = Course⇄Program **toggle**, **top-level**; CIP caps **enforced** (clear
 reason). **Side-lane discipline:** do NOT touch `kb/cpl_todos.json` or the numbered `session_<N>_handoff.md`.
