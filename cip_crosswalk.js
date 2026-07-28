@@ -354,7 +354,9 @@
   // catalog description. (The full label is still shown in the UI.)
   function courseTitle(label) { var l = label || "", i = l.indexOf(" — "); return i >= 0 ? l.slice(i + 3) : l; }
   function courseText(c) { return courseTitle(c[0]) + " " + (c[1] || ""); }
-  function courseToks(c) { if (!c[3]) c[3] = fitTokens(courseText(c)); return c[3]; }
+  // Memoize the tokenized course text in slot [4] — slot [3] now carries the credit/CDCP flag from the
+  // fitcheck data (see courseCreditFlag), so the token cache must NOT collide with it.
+  function courseToks(c) { if (!c[4]) c[4] = fitTokens(courseText(c)); return c[4]; }
 
   // ═══════════════════════════════════════════════════════════════════════════
   // Browse: reference list + finder
@@ -1204,6 +1206,39 @@
     if (i >= 0) arr.splice(i, 1); else arr.push(cip);
     revSetCips(label, arr);
   }
+  // ── CIP-count rule by course credit type (COCI, Raul, 2026-07-28) ──────────────
+  // A CREDIT course takes exactly 1 CIP; a NONCREDIT course takes 1 UNLESS it is CDCP
+  // (Career Development & College Preparation — the enhanced-funding "Special Populations"
+  // categories), which may take up to 2. CDCP is a COURSE-level property (from the course's
+  // own CreditType, NOT its program's CDCP tag): the fitcheck tuple's 4th element carries it —
+  // "C" credit · "D" noncredit-CDCP · "N" noncredit-non-CDCP · absent = unknown (cap 1, safe).
+  function courseCreditFlag(r) { return (r && r.c && r.c[3]) || ""; }
+  function courseIsCdcp(r) { return courseCreditFlag(r) === "D"; }
+  function courseCipCap(r) { return courseIsCdcp(r) ? 2 : 1; }
+  function creditLabel(f) { return f === "D" ? "Noncredit · CDCP" : f === "N" ? "Noncredit" : f === "C" ? "Credit course" : ""; }
+  function capReason(r) {
+    var f = courseCreditFlag(r);
+    if (f === "D") return "Noncredit CDCP course — up to 2 CIP codes.";
+    if (f === "N") return "Noncredit course (not CDCP) — one CIP code.";
+    if (f === "C") return "Credit course — one CIP code.";
+    return "One CIP code (credit type not on file).";
+  }
+  function canAddCip(r, dec) { return revCips(dec || revDecisions(), r.label).length < courseCipCap(r); }
+  // ── CTE / Non-CTE use choice for a "Both"-category CIP (Jenni, 2026-07-28) ──────
+  // When an assigned CIP is certified BOTH CTE and non-CTE, the college must record which use
+  // applies for this course. Stored parallel to the assignment, keyed "<label>|<code>".
+  function needsCteChoice(code) { var rr = BYCODE[code]; return !!(rr && rr.cat === "Both"); }
+  function revCteStore() {
+    if (!st.college) return {};
+    try { return JSON.parse(localStorage.getItem("cipx_revcte_" + st.college) || "{}") || {}; } catch (e) { return {}; }
+  }
+  function revCteChoice(label, code) { return revCteStore()[label + "|" + code] || ""; }   // "cte" | "noncte" | ""
+  function revSetCteChoice(label, code, choice) {
+    if (!st.college) return;
+    var s = revCteStore(), k = label + "|" + code;
+    if (choice) s[k] = choice; else delete s[k];
+    try { localStorage.setItem("cipx_revcte_" + st.college, JSON.stringify(s)); } catch (e) {}
+  }
   // VALIDATED is separate from having a code ASSIGNED (Sam, 2026-07-18): a course validated (✓) is one the
   // faculty individually OK'd (accept a box, OK the anchor in the + flow, or Validate-all). A course that
   // only received a bulk-APPLIED code from a sibling has the code but stays in Review (?) so it can still
@@ -1600,6 +1635,19 @@
       chip.appendChild(el("span", { class: "cipx-code" }, [row.code]));
       chip.appendChild(el("span", { class: "cipx-rev-chipt" }, [row.t]));
       if (opts.more) chip.appendChild(el("span", { class: "cipx-rev-chipmore", title: opts.moreTip }, ["+" + opts.more]));
+      // CTE / Non-CTE use choice for a "Both"-category CIP (Jenni, 2026-07-28): a certified-Both CIP must
+      // record which use applies for this course. Only shown on an assigned box (opts.cteLabel set).
+      if (opts.cteLabel && row.cat === "Both") {
+        var cur = revCteChoice(opts.cteLabel, row.code);
+        var cteWrap = el("span", { class: "cipx-rev-cte" + (cur ? "" : " cipx-rev-cte-unset"), title: "This CIP is certified BOTH CTE and non-CTE — choose which use applies to this course" }, []);
+        if (!cur) cteWrap.appendChild(el("span", { class: "cipx-rev-ctelbl" }, ["CTE?"]));
+        [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
+          var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false", title: "Use this CIP as " + o[1] + " for this course" }, [o[1]]);
+          b.onclick = function (e) { e.stopPropagation(); revSetCteChoice(opts.cteLabel, row.code, cur === o[0] ? "" : o[0]); if (opts.onCteChange) opts.onCteChange(); };
+          cteWrap.appendChild(b);
+        });
+        chip.appendChild(cteWrap);
+      }
     } else {
       chip.appendChild(el("span", { class: "cipx-rev-none" }, ["— pick a code —"]));
     }
@@ -1762,9 +1810,13 @@
   function revAddCip(r, dec, ctx, code) {
     var cips = revCips(dec, r.label);
     if (!cips.length) { var anchor = effectiveSug(r, ctx).code; cips = anchor ? [anchor] : []; }   // keep primary as the anchor
-    if (code && cips.indexOf(code) < 0) cips.push(code);
+    if (code && cips.indexOf(code) < 0) {
+      if (cips.length >= courseCipCap(r)) return false;   // enforce the credit=1 / noncredit-CDCP=2 cap
+      cips.push(code);
+    }
     revSetCips(r.label, cips);
     revSetValidated(r.label, true);   // adding a code yourself is an individual confirmation
+    return true;
   }
   function renderAddPicker(r, dec, ctx, host, allRows) {
     var cips = revCips(dec, r.label), anchor = effectiveSug(r, ctx).code;
@@ -1795,17 +1847,21 @@
     host.appendChild(w);
   }
   function renderAddPrompt(r, dec, ctx, host, allRows) {
+    var atCap = !canAddCip(r, dec);
     var pr = el("div", { class: "cipx-rev-addprompt" }, [
       el("span", { class: "cipx-rev-addpaw", "aria-hidden": "true" }, ["🐾"]),
-      el("span", {}, ["Added. Add more if you need them — when you're ready, I can apply these to your other courses."]),
+      el("span", {}, [atCap ? "Added. This course is now at its CIP limit (" + capReason(r).toLowerCase().replace(/\.$/, "") + ") — apply it to your other courses when you're ready." : "Added. Add more if you need them — when you're ready, I can apply these to your other courses."]),
     ]);
-    var more = el("button", { class: "cipx-rev-morebtn", type: "button" }, ["+ Add another"]);
-    more.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "picker"; renderReview(allRows); };
+    if (!atCap) {   // only offer another when the credit-type rule allows it
+      var more = el("button", { class: "cipx-rev-morebtn", type: "button" }, ["+ Add another"]);
+      more.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "picker"; renderReview(allRows); };
+      pr.appendChild(more);
+    }
     var apply = el("button", { class: "cipx-rev-applybtn", type: "button" }, ["Apply to other courses"]);
     apply.onclick = function (e) { e.stopPropagation(); revInline[r.label] = "apply"; renderReview(allRows); };
     var done = el("button", { class: "cipx-rev-donebtn", type: "button" }, ["Done"]);
     done.onclick = function (e) { e.stopPropagation(); revInline[r.label] = null; renderReview(allRows); };
-    pr.appendChild(more); pr.appendChild(apply); pr.appendChild(done);
+    pr.appendChild(apply); pr.appendChild(done);
     host.appendChild(pr);
   }
   function renderApplyPanel(r, dec, ctx, host, allRows) {
@@ -1846,7 +1902,8 @@
         if (!p[0].checked) return;
         var oc = revCips(dec, p[1].label);
         if (!oc.length) oc = [anchor];   // confirm the target's shared primary so it isn't dropped
-        extras.forEach(function (c) { if (oc.indexOf(c) < 0) oc.push(c); });
+        var cap = courseCipCap(p[1]);    // respect each sibling's own credit-type cap (a credit sibling stays at 1)
+        extras.forEach(function (c) { if (oc.indexOf(c) < 0 && oc.length < cap) oc.push(c); });
         revSetCips(p[1].label, oc);
       });
       revInline[r.label] = null; renderReview(allRows);
@@ -1902,19 +1959,30 @@
       var readyConfirm = r.status === "clear";
       var primline = el("div", { class: "cipx-rev-primline" }, [
         cipBox(showCode, { on: confirmed, id: chgId,
+          cteLabel: (cips.length ? r.label : null), onCteChange: function () { renderReview(allRows); },
           onAccept: confirmed ? null : (applied ? validateRow : (showCode ? (readyConfirm ? accept(showCode) : openRow) : null)),
           title: applied ? "Codes applied from a sibling — click to confirm this course · ▾ to change"
             : (confirmed ? null : (readyConfirm ? "Click to confirm this ready match · ▾ to change to any code"
             : "Open to review the options before confirming · ▾ to change to any code")),
           onChange: onChange }),
       ]);
-      var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add another CIP code — a course can carry more than one", "aria-label": "Add another CIP to " + r.label }, ["+"]);
-      addBtn.onclick = function (e) { e.stopPropagation(); revInline[r.label] = (revInline[r.label] === "picker") ? null : "picker"; renderReview(allRows); };
-      primline.appendChild(addBtn);
+      // Credit-type CIP-count rule (Raul, 2026-07-28): a credit course takes 1 CIP; noncredit takes 1
+      // unless it's CDCP (up to 2). Show the course's credit-type label, and an ACTIVE "+" only when a
+      // 2nd CIP is allowed (CDCP, under cap); otherwise a muted, non-interactive "+" carrying the reason.
+      var cflag = courseCreditFlag(r);
+      if (cflag) primline.appendChild(el("span", { class: "cipx-rev-credit" + (cflag === "D" ? " cipx-rev-credit-cdcp" : ""), title: capReason(r) }, [creditLabel(cflag)]));
+      if (courseIsCdcp(r) && canAddCip(r, dec)) {
+        var addBtn = el("button", { class: "cipx-rev-addcip", type: "button", title: "Add a 2nd CIP — CDCP noncredit courses may carry up to 2", "aria-label": "Add another CIP to " + r.label }, ["+"]);
+        addBtn.onclick = function (e) { e.stopPropagation(); revInline[r.label] = (revInline[r.label] === "picker") ? null : "picker"; renderReview(allRows); };
+        primline.appendChild(addBtn);
+      } else {
+        primline.appendChild(el("span", { class: "cipx-rev-addcip cipx-rev-addcip-off", title: capReason(r), "aria-label": capReason(r) }, ["+"]));
+      }
       stack.appendChild(primline);
       cips.slice(1).forEach(function (code) {
         stack.appendChild(el("div", { class: "cipx-rev-extraline" }, [
           cipBox(code, { cls: "cipx-rev-chip-extra", id: chgId + "x" + code.replace(/\W/g, ""), onChange: onChange,
+            cteLabel: r.label, onCteChange: function () { renderReview(allRows); },
             onRemove: function () { revToggleCip(r.label, code); renderReview(allRows); } }),
         ]));
       });
@@ -2061,8 +2129,17 @@
     // crosswalk sug, so the box and the button never disagree (Sam, 2026-07-20: BUSL 10 showed 22.0302 but
     // "Confirm 22.0000"). effectiveSug is display-only and idempotent, so recomputing it here is safe.
     var effCode = (effectiveSug(r, ctx || {}).code) || (r.sug && r.sug.code) || null;
-    // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared)
-    function toggle(code) { revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows); }   // revOpen keeps this row expanded
+    // selecting/deselecting a code in the expand is individual work → validate (or unvalidate when cleared).
+    // Credit-type cap: a 1-CIP course (credit / noncredit non-CDCP / unknown) REPLACES its single code when
+    // a new one is selected; a CDCP course (cap 2) accumulates until full, then a further add is blocked.
+    function toggle(code) {
+      var cur = revCips(revDecisions(), r.label);
+      if (cur.indexOf(code) < 0 && cur.length >= courseCipCap(r)) {
+        if (courseCipCap(r) === 1) { revSetCips(r.label, [code]); revSetValidated(r.label, true); renderReview(allRows); }
+        return;   // CDCP already at 2 → block the extra
+      }
+      revToggleCip(r.label, code); revSetValidated(r.label, revCips(revDecisions(), r.label).length > 0); renderReview(allRows);
+    }
     // one multi-select candidate row — an explicit Select button (Sam: clearer than a checkbox);
     // the whole row is still clickable. "✓ Selected" toggles back off. A course may carry >1 CIP.
     function candRow(cr, rel, extraTag, cls, matched) {
@@ -2133,7 +2210,7 @@
         onPick: function (picked) { toggle(picked[2]); clear(searchWrap); },
       }));
     };
-    utils.appendChild(srch);
+    if (canAddCip(r, dec)) utils.appendChild(srch);   // "+ Add another" only when the credit-type rule allows another CIP
     if (cips.length) { var clr = el("button", { class: "cipx-rev-clear", type: "button" }, [cips.length > 1 ? "Clear all" : "Clear"]); clr.onclick = function () { revSetCips(r.label, []); revSetValidated(r.label, false); renderReview(allRows); }; utils.appendChild(clr); }
     if ((!cips.length && r.sug) || (cips.length && !validated)) {
       // A Suggested (⇄) row nudges OFF the course's own TOP crosswalk toward the peer pick, so the lone
@@ -2630,6 +2707,15 @@
       ".cipx-rev-extraline .cipx-rev-chip .cipx-code{color:var(--cipx-accent);}",
       ".cipx-rev-addcip{flex:none;width:28px;height:28px;border-radius:8px;border:1px dashed var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-accent);font-size:1.15rem;line-height:1;cursor:pointer;display:grid;place-items:center;font-family:inherit;}",
       ".cipx-rev-addcip:hover{border-style:solid;border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-rev-addcip-off{opacity:.35;border-style:dotted;color:var(--cipx-muted);cursor:default;pointer-events:none;}",
+      ".cipx-rev-credit{align-self:center;font-size:.64rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:6px;padding:2px 7px;white-space:nowrap;cursor:help;}",
+      ".cipx-rev-credit-cdcp{color:var(--cipx-cte-fg);background:var(--cipx-cte-bg);border-color:var(--cipx-cte-stripe);}",
+      ".cipx-rev-cte{display:inline-flex;gap:3px;align-items:center;margin-left:5px;}",
+      ".cipx-rev-cte-unset{background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);border-radius:8px;padding:1px 4px;}",
+      ".cipx-rev-ctelbl{font-size:.6rem;font-weight:800;color:var(--cipx-warn-fg);text-transform:uppercase;letter-spacing:.03em;}",
+      ".cipx-rev-ctebtn{font-family:inherit;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:6px;padding:2px 7px;cursor:pointer;}",
+      ".cipx-rev-ctebtn-on{color:#fff;background:var(--cipx-accent);border-color:var(--cipx-accent);}",
+      ".cipx-rev-ctebtn:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
       // inline flow host (picker / prompt / apply panel) under the box stack
       ".cipx-rev-inline{margin-top:7px;}",
       ".cipx-rev-addpick{background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:10px;padding:9px 10px;box-shadow:0 8px 22px rgba(0,0,0,.14);}",
