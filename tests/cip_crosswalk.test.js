@@ -110,16 +110,18 @@ const RFIXTURE = {
   boiler: ["32.0107", "32.0111"],
 };
 const RCOURSES = [
-  ["BUS 101 — Business Basics", "A general business administration program covering management and organization and accounting operations.", "0505.00"],
+  ["BUS 101 — Business Basics", "A general business administration program covering management and organization and accounting operations.", "0505.00", "C"],
   ["NURS 101 — Nursing", "A program that prepares registered nurses to practice nursing and patient care.", "0505.00"],
   ["MYST 1 — Mystery", "Short.", "0505.00"],
   ["ORPH 1 — Orphan Course", "A program that prepares registered nurses to practice nursing and patient care.", "7777.00"],
   // Three ACCT courses whose generic descriptions match no crosswalk code distinctively → all land on
   // the same crosswalk code with no confident winner → status "review" (mirrors Sam's Autobody case:
   // identical-looking rows, split Ready/Review). Their why-lines exercise the "same code as N" branch.
-  ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
-  ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
-  ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00"],
+  // credit flag "D" = noncredit CDCP → cap 2, so the multi-CIP add/apply flow is exercisable
+  // (a credit / non-CDCP course is capped at 1 CIP — tested separately below).
+  ["ACCT 200 — Special Topics", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
+  ["ACCT 201 — Special Projects", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
+  ["ACCT 202 — Independent Study", "A survey course exploring assorted contemporary themes through selected readings, films, and class discussion.", "0505.00", "D"],
   // ACCT 300 is coded under the grab-bag TOP 9560.00 → only weak lexical picks (none 52.030x). Its own
   // pick is uncorroborated (count 1), so it should DEFAULT to the ACCT dominant 52.0301 (Sam's IWAP→welding
   // program-coherence idea), still flagged Review — not left showing an unrelated weak code.
@@ -348,6 +350,13 @@ function fresh(withCollege) {
   check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
   // too-thin description → flagged honestly
   check("recommend flags a too-thin description", rApi._recommend(RCOURSES[2]).thin === true);
+  // Collision guard (2026-07-28): the credit/CDCP flag lives in course tuple slot [3]; the fit-check's
+  // token-memo cache used to live there too. A course carrying a credit flag must still tokenize its
+  // description (not return "C"/"D" as its "tokens") — the cache now lives in slot [4].
+  const flaggedC = ["BIO 1 — Environmental Biology", "A course in ecology and environmental biology and ecosystems and organisms.", "0401.00", "D"];
+  const flaggedToks = rApi._courseToks(flaggedC.slice());
+  check("credit flag at slot [3] does not corrupt course tokenization", flaggedToks && typeof flaggedToks === "object" && Object.keys(flaggedToks).length >= 3);
+  check("a credit-flagged course still scores against a CIP (fit-check unaffected)", typeof rApi._courseScore(rApi._courseToks(flaggedC.slice()), FIXTURE.rows[0]).score === "number");
   // bestCipForTop (drives the consensus pre-fill) is CREDIT-FIRST: the CO crosswalk attaches the
   // noncredit family (32.* exam-prep/basic-skills) to nearly every TOP, so a credit course can
   // lexically match one on an incidental word. It must never out-rank the TOP's credit CIP.
@@ -686,12 +695,23 @@ function fresh(withCollege) {
   cand.click();
   await tick();
   check("review mode: picking a candidate persists the decision (localStorage, as an array)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.indexOf("52.0201") >= 0; } catch (e) { return false; } })());
-  // multi-CIP: a course can carry more than one code; toggling a second adds it, toggling again removes it
+  // Credit-type CIP cap (Raul, 2026-07-28): BUS 101 is a CREDIT course (flag "C", cap 1) → picking a
+  // different candidate REPLACES its single CIP; it never accumulates a second.
   const bus2 = revRow.querySelectorAll(".cipx-rev-cand")[1];
   if (bus2) { bus2.click(); await tick(); }
-  check("review mode: a course can carry more than one CIP (multi-select)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length >= 2; } catch (e) { return false; } })());
-  if (bus2) { bus2.click(); await tick(); }
-  check("review mode: toggling a picked CIP off removes it", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
+  check("cap: a credit (cap-1) course keeps exactly ONE CIP when another candidate is picked (replaces, never accumulates)", (function () { try { var v = JSON.parse(domRev.window.localStorage.getItem("cipx_rev_test_college") || "{}")["BUS 101 — Business Basics"]; return Array.isArray(v) && v.length === 1; } catch (e) { return false; } })());
+  check("cap: a credit course shows its 'Credit course' label + a disabled '+' and no active add button", !!revRow.querySelector(".cipx-rev-credit") && /Credit course/.test(revRow.querySelector(".cipx-rev-credit").textContent) && !!revRow.querySelector(".cipx-rev-addcip-off") && !revRow.querySelector("button.cipx-rev-addcip"));
+  // CTE / Non-CTE choice for a "Both"-category CIP (Jenni, 2026-07-28): assign a Both code (01.0000) and
+  // confirm the assigned box surfaces a CTE / Non-CTE toggle whose pick persists in cipx_revcte_<college>.
+  domRev.window.localStorage.setItem("cipx_rev_test_college", JSON.stringify({ "BUS 101 — Business Basics": ["01.0000"] }));
+  deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change")); await tick();
+  deptSel.value = "BUS"; deptSel.dispatchEvent(new domRev.window.Event("change")); await tick();
+  const busRowB = Array.prototype.filter.call(revdoc.querySelectorAll(".cipx-rev-item"), (it) => /BUS 101/.test(it.textContent))[0];
+  const cteWrap = busRowB && busRowB.querySelector(".cipx-rev-cte");
+  check("CTE-choice: a 'Both'-category assigned CIP surfaces a CTE / Non-CTE toggle", !!cteWrap && cteWrap.querySelectorAll(".cipx-rev-ctebtn").length === 2);
+  check("CTE-choice: the toggle starts unset (prompts a choice)", !!cteWrap && cteWrap.classList.contains("cipx-rev-cte-unset"));
+  if (cteWrap) { cteWrap.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
+  check("CTE-choice: picking CTE persists to cipx_revcte_<college>", (function () { try { return JSON.parse(domRev.window.localStorage.getItem("cipx_revcte_test_college") || "{}")["BUS 101 — Business Basics|01.0000"] === "cte"; } catch (e) { return false; } })());
   check("review row shows the TOP → CIP transition (current TOP beside the CIP box)", revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop") && /0505\.00/.test(revRow.querySelector(".cipx-rev-tocip .cipx-rev-fromtop").textContent) && !!revRow.querySelector(".cipx-rev-tocip .cipx-rev-gbox .cipx-rev-chip"));
   // a stronger match OUTSIDE the crosswalk is a selectable candidate (assignable)
   deptSel.value = "NURS"; deptSel.dispatchEvent(new domRev.window.Event("change"));
