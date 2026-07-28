@@ -433,12 +433,19 @@ function pieSlices(el) {
   const { window } = freshDom();
   const doc = boot(window);
   check("two year dropdowns (2-year window)", doc.querySelectorAll('select[data-edit="year"]').length === 2);
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;   // 34.8M − 1M − 1M
-  const perYear = net / 2;
-  check("hero = college funding after feeder + rural carve-outs ($" + net.toLocaleString() + ")",
+  // The hero is now the WHOLE college pool incl. the folded rural allowance
+  // (Sam, 2026-07-28): 34.8M − 1M feeder = 33.8M (rural is earmarked WITHIN the
+  // pool, not deducted). The note breaks out the 32.8M main + the 1M rural.
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // 33.8M
+  const mainNet = net - D.pool.rural_carveout;                                     // 32.8M main proportional pool
+  const perYear = net / 2;                                                         // 16.9M total per-year tranche
+  check("hero = the whole college pool incl. folded rural ($" + net.toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
-  check("hero label states 2 annual tranches of the per-year amount",
+  check("hero label states 2 annual tranches of the per-year amount ($" + Math.round(perYear).toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
+  check("hero note breaks out the main proportional pool + the rural allowance",
+    doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + mainNet.toLocaleString("en-US")) !== -1 &&
+    /Rural College allowance/.test(doc.querySelector(".cplfund-card.hero .l").textContent));
 
   // Change Year 2 to 2028-29 → the window widens in the labels; still 2 years.
   const y2 = doc.querySelectorAll('select[data-edit="year"]')[1];
@@ -527,11 +534,12 @@ function pieSlices(el) {
   check("feeder headcount edit persisted to the scenario",
     scenSlot(window).feeders[0].headcount === 40000);
 
-  // Carve-out edit reduces the college tranche.
+  // Raising the FEEDER carve-out still shrinks the hero (feeder is deducted); the
+  // hero is now the whole pool incl. rural, so rural is NOT subtracted here.
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
   commit(window, carveInput, "2,000,000");
-  const net2 = D.pool.college_funding_before_feeder - 2000000 - D.pool.rural_carveout;
-  check("raising the carve-out shrinks the college hero pool",
+  const net2 = D.pool.college_funding_before_feeder - 2000000;
+  check("raising the feeder carve-out shrinks the college hero pool",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net2.toLocaleString("en-US")) !== -1);
 }
 
@@ -668,9 +676,11 @@ function pieSlices(el) {
   check("re-click collapses the drill-in", !doc.querySelector("tr.cplfund-detail"));
 
   // Year columns: SYSTEM tfoot carries each year's tranche + the window total.
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout - D.pool.rural_carveout;
+  // The rural carve-out is now FOLDED into rural colleges' rows (Sam, 2026-07-28),
+  // so the SYSTEM total = main net + rural = college funding before feeder only.
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;
   const tranche = net / 2;
-  check("SYSTEM tfoot Total = the college pool ($" + net.toLocaleString() + ")",
+  check("SYSTEM tfoot Total = the college pool incl. folded rural ($" + net.toLocaleString() + ")",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
   check("SYSTEM tfoot year cells carry the per-year tranche ($" + Math.round(tranche).toLocaleString() + ")",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + Math.round(tranche).toLocaleString("en-US")) !== -1);
@@ -965,8 +975,10 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const T = window.CPL_FUNDING_TAB;
   const ruralCard = doc.querySelector(".cplfund-card.rural");
   // The label is now an editable input, so "carve-out" lives in its value, not textContent.
-  check("rural carve-out pool card renders as a deduction", !!(ruralCard && ruralCard.querySelector(".v.neg") &&
-    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "")));
+  check("rural carve-out pool card is an earmark within the pool (no longer a deduction)", !!(ruralCard &&
+    !ruralCard.querySelector(".v.neg") &&
+    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "") &&
+    /earmarked within the pool|folded into rural/.test(ruralCard.textContent)));
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
   check("rural section lists the 10 rural-flagged colleges",
     ruralTable && ruralTable.querySelectorAll("tbody tr").length === 10);
@@ -2079,6 +2091,48 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   click(window, caret12);   // activation bubbles to the row toggle → refreshTable
   check("L12: focus stays on the caret after the row expand re-renders",
     doc.activeElement && String(doc.activeElement.className || "").indexOf("cplfund-caret") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part M — SkyHigh (2026-07-28): the rural allowance is FOLDED into each rural
+// college's row (Sam: "calculate the rural bump assuming they hit the 50%
+// threshold and note it with a hover"). The row cap/rate/Yr/Total include it and
+// the SYSTEM total rises to match; the Rural section keeps the precise
+// unlock-based earning + notes the fold.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const D = window.CPL_FUNDING;
+  const rc = T._alloc("Butte");      // rural
+  const pc = T._alloc("Alameda");    // not rural
+  // M1 — a rural college carries a positive rural window; a plain one carries none.
+  check("M1: a rural college's alloc carries a positive rural_w", rc.rural_w > 0);
+  check("M1: a non-rural college has no rural_w", !pc.rural_w);
+  // M2 — the folded window total = main entitlement + rural window (shares sum to 100%).
+  check("M2: rural college total = main entitlement + rural window",
+    Math.abs(rc.total - (rc.main_w + rc.rural_w)) < 1 && rc.total > rc.main_w);
+  // M3 — the whole college pool now = main net + the rural carve-out (folded into
+  // rural rows), and the SYSTEM total row matches Σ college rows.
+  const sumTotals = D.colleges.reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
+  check("M3: Σ college totals = net college pool + rural carve-out",
+    Math.abs(sumTotals - (T._netCollege() + D.pool.rural_carveout)) < 5);
+  const sysTot = doc.querySelector("#cplFundTable tr.cplfund-systemrow td.tot");
+  check("M3: the SYSTEM total row equals Σ college totals (rural included consistently)",
+    sysTot && sysTot.textContent.indexOf(Math.round(sumTotals).toLocaleString("en-US")) !== -1);
+  // M4 — the rural college's cell hover discloses the folded allowance + the unlock assumption.
+  const bRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (tr) { return /Butte/.test(tr.textContent); });
+  const bTitle = bRow.querySelector("td.cf-prio").getAttribute("title") || "";
+  check("M4: a rural college's cell hover names the rural allowance + the unlock assumption",
+    /rural allowance/.test(bTitle) && /unlock/.test(bTitle));
+  // M5 — the Rural section still shows the precise unlock-based earning and notes the fold.
+  const ruralSec = doc.querySelector('details.cplfund-sec[data-sec="rural"]');
+  check("M5: the Rural section notes the allowance is folded into the table above",
+    ruralSec && ruralSec.textContent.indexOf("folded into") !== -1);
+  check("M5: the Rural section still carries the precise per-priority chips",
+    !!(ruralSec && ruralSec.querySelector(".cf-rchip")));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
