@@ -32,10 +32,12 @@ allowance** (floor-fill + bonus, no performance gate). One PR (`cpl_funding.js` 
   fully consumed by their floor; today they'd get $227k) — I surfaced that pull-down to Sam *with*
   the decision. Rural section rewritten to **Guaranteed allowance → Floor-fill → On-top bonus →
   Window total** (tfoot "10 of 13 funding their floor").
-- Tests **460 → 475** (new **Part N**: reduced-floor + guaranteed-split conservation, freed-pool,
-  earned-decoupling; Parts D1/D3/K/M4/M5 updated). Full suite 173 files green; real-Chromium clean
-  (no h-scroll desktop/mobile, 0 console errors). Adversarial review (4 diverse-lens skeptics) run
-  pre-merge. Story: `docs/cpl_funding_lessons.md` (SkyHighness section).
+- Tests **460 → 475 → 484** (new **Part N** + **Part O** = the review fixes; Parts D1/D3/K/M4/M5
+  updated). Full suite 173 files green; real-Chromium clean (no h-scroll desktop/mobile, 0 console
+  errors). **Adversarial review (4 diverse-lens skeptics) caught + fixed 3 real defects pre-merge** —
+  incl. a MAJOR one: the per-priority **drill-in** was a *third* earned site still flexing the
+  guaranteed rural to $0 in Earned mode (I'd only swept `collegeAlloc` + `prioCellHtml`). Story:
+  `docs/cpl_funding_lessons.md` (SkyHighness section).
 
 ### 🎯 QUEUED for you — the display rename (SkyHigh's "small nicety")
 The roster keys **"West Hills Coalinga"** (now *Coalinga College*) and **"Imperial"** (*Imperial

@@ -1338,10 +1338,27 @@ independent "why" clauses silently double-counts when two of them are actually t
 **State.** One PR (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Rural section rewritten
 to a **Guaranteed allowance → Floor-fill → On-top bonus → Window total** table (tfoot "N of 13 funding
 their floor"); pool card + hero note + drill-in floor/rural lines all reworded to "guaranteed." Tests
-**460 → 475** (new Part N: reduced-floor conservation, guaranteed-split conservation, freed-pool,
-earned-decoupling; Parts D1/D3/K/M4/M5 updated). Full suite 173 files green; real-Chromium clean
-(no h-scroll desktop/mobile, 0 console errors). Adversarial review (4 diverse-lens skeptics) run before
-merge.
+**460 → 475 → 484** (new Part N: reduced-floor + guaranteed-split conservation, freed-pool,
+earned-decoupling; Part O: the review fixes; Parts D1/D3/K/M4/M5 updated). Full suite 173 files green;
+real-Chromium clean (no h-scroll desktop/mobile, 0 console errors).
+
+**The adversarial review earned its keep — it caught a THIRD earned site I missed.** 475 green tests +
+a live-conservation proof + Chromium all passed, yet a 4-diverse-lens skeptic pass (Workflow) found
+three real defects before merge: (1) **MAJOR — the per-priority DRILL-IN earned line was a third earned
+site.** I decoupled the guaranteed rural in `collegeAlloc` (row/pool) and `prioCellHtml` (collapsed
+cell) but the drill-in `earnSeg` still computed `earned = capYr × fr.f` on the rural-*inclusive* cap, so
+in Earned mode it flexed the guaranteed rural to $0 — contradicting the same row's cell/column/pool for
+every rural college. **Lesson: when a value is computed at N call sites, a decoupling change must sweep
+ALL N — grep the formula (`× fr.f`, `c[p.key]`), don't trust that the two you edited are the whole set.**
+(2) MINOR — the cell hover claimed "funds this college's floor first" for the 3 rural colleges already
+above the floor (floorFill=$0), contradicting their own drill-in; gated the phrasing on the actual
+floorFill. (3) MINOR (pre-existing) — an empty rural roster stranded the $1M carve-out; `netCollege` now
+deducts what's actually distributed (`ruralPer × roster`), a no-op on real data that returns the earmark
+to the main pool when there are no rural colleges. **Fixing (2) surfaced a latent `prioCellHtml` crash:**
+my earlier edit had made `ruralBump` system-aware (>0 for the SYSTEM row), so the reasons block would
+dereference the null system `c` — scoped the reasons to a college-only bump. The review's own
+edge-harness independently re-confirmed conservation across floor=0 / carve=0 / empty-roster /
+ruralPer>floor / degrade. **A skeptic re-derives the invariants your tests didn't think to assert.**
 
 **Next in queue:** the display rename — the roster keys `"West Hills Coalinga"`/`"Imperial"` are also the
 **join keys** to `cpl_funding_performance.js` (the actuals feed) via the short-name space, so rename by

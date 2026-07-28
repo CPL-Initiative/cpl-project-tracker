@@ -656,7 +656,14 @@
     return s;
   }
   function netBeforeFeeder() { return grossRevenue() - grossDeduction(); }
-  function netCollege() { return netBeforeFeeder() - feederCarveout() - ruralCarve(); }
+  // The rural carve-out ACTUALLY distributed to rural colleges = ruralPer × roster
+  // size — equals ruralCarve() when the roster is non-empty, and 0 when it's empty.
+  // Deduct this (not the raw carve-out) from the main pool so an empty roster
+  // returns the earmark to the main proportional pool instead of stranding it
+  // (PR4, Sam 2026-07-28). Used by BOTH netCollege and netCollegeWithRural so they
+  // stay consistent. (ruralPerCollege/ruralColleges are hoisted declarations.)
+  function ruralPoolDistributed() { return ruralPerCollege() * ruralColleges().length; }
+  function netCollege() { return netBeforeFeeder() - feederCarveout() - ruralPoolDistributed(); }
   function perYear() { return netCollege() / nYears(); }
   function totalHeads() { return base().system.headcount; }
   function perStudent() { return totalHeads() ? perYear() / totalHeads() : 0; }
@@ -2082,17 +2089,28 @@
     // Hover — the full story incl. the effective per-student rate + WHY it differs
     // (the $150k floor top-up and/or the folded rural allowance).
     var reasons = [];
+    // The floor/rural reasons are per-COLLEGE (the SYSTEM row has no per-college
+    // floor or rural — `ruralBump` above is system-aware for the earned math, so
+    // use a college-scoped bump here and guard against the null system `c`).
+    var colRuralBump = (!isSystem && c && c.rural_w) ? c.rural_w * p.share / nYears() : 0;
+    var colMainW = (!isSystem && c) ? (c.main_w || 0) : 0;
     // For a floored RURAL college the guaranteed rural allowance IS what funds part
     // of that floor, so state it as one combined reason (avoid reading as two
     // additive boosts — PR4, Sam 2026-07-28).
-    if (floored && ruralBump > 0) {
+    if (floored && colRuralBump > 0) {
       reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor — funded partly by " +
         "this college's guaranteed rural allowance and partly by the main pool (small colleges are topped up to stand up the program)");
     } else if (floored) {
       reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up to stand up the program)");
-    } else if (ruralBump > 0) {
-      reasons.push("boosted by a " + fmtMoney(ruralBump) + "/yr guaranteed rural allowance " +
-        "(funds this college's floor first, any remainder on top — see the Rural section)");
+    } else if (colRuralBump > 0) {
+      // Not floored, but a rural college can still have a floor gap its allowance
+      // fills (floorFill > 0) OR already sit above the floor (all bonus). Only claim
+      // floor-funding when it actually happens — else it contradicts the drill-in.
+      var ruralFloorFill = Math.min(c.rural_w || 0, Math.max(0, floorWindow() - colMainW));
+      reasons.push("boosted by a " + fmtMoney(colRuralBump) + "/yr guaranteed rural allowance " +
+        (ruralFloorFill > 0.5
+          ? "(funds this college's floor first, any remainder on top — see the Rural section)"
+          : "(this college's main-pool share already meets the floor, so the whole allowance rides on top — see the Rural section)"));
     }
     var rateSentence = reasons.length
       ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
@@ -2320,7 +2338,7 @@
   function ruralWindow(c) { return (c && isRural(c)) ? ruralPerCollege() : 0; }
   // The whole college pool once the rural carve-out is distributed into rural
   // rows — Σ college rows == this, so the SYSTEM total stays consistent.
-  function netCollegeWithRural() { return netCollege() + ruralPerCollege() * ruralColleges().length; }
+  function netCollegeWithRural() { return netCollege() + ruralPoolDistributed(); }
   function collegeAlloc(c) {
     var mainW = allocModel().W[c.college] || 0;
     var ruralW = ruralWindow(c);         // 0 unless rural; GUARANTEED (PR4)
@@ -2542,6 +2560,13 @@
       if (earnedMode()) {
         var fr = earnFraction(c, p);
         var capYr = c[p.key];
+        // The guaranteed rural slice is added in FULL (only the MAIN cap flexes on
+        // achievement) — mirror collegeAlloc/prioCellHtml so the drill-in agrees
+        // with the cell + row + pool totals (PR4, Sam 2026-07-28).
+        var ruralBumpYr = c.rural_w ? c.rural_w * p.share / nYears() : 0;
+        var mainCapYr = capYr - ruralBumpYr;
+        var earnedYr = mainCapYr * fr.f + ruralBumpYr;
+        var earnedPctYr = capYr > 0 ? earnedYr / capYr : 0;
         var tail = fr.status === "earned"
           ? " &mdash; " + fmtInt(fr.actual) + " actual &divide; " + fmtInt(fr.target) + " target"
           : fr.status === "gap"
@@ -2550,10 +2575,11 @@
               ? ' <span class="dk">&mdash; full advance (actuals arrive with the next data refresh)</span>'
               : fr.status === "suppressed"
                 ? ' <span class="dk">&mdash; fewer than 5 students (privacy-suppressed); not yet credited</span>'
-                : ' <span class="dk">&mdash; $0: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
+                : ' <span class="dk">&mdash; $0 on the main allocation: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
                   fmtInt(fr.target) + '-student target)</span>';
-        earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(capYr * fr.f) + "</strong> of " +
-          fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(fr.f) + ")</strong>" + tail;
+        earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(earnedYr) + "</strong> of " +
+          fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(earnedPctYr) + ")</strong>" + tail +
+          (ruralBumpYr > 0 ? " <span class='dk'>&mdash; incl. " + fmtMoney(ruralBumpYr) + " guaranteed rural</span>" : "");
       }
       return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
         math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
