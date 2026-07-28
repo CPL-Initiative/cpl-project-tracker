@@ -37,20 +37,25 @@ he added mid-stream. Shipping as a short series of focused PRs. **Read `docs/cip
   Credit label + active/disabled "+"; 1-CIP courses REPLACE. "Both" CIP → CTE/Non-CTE toggle
   (`cipx_revcte_`). **Caught + fixed a real bug:** the credit flag's slot `[3]` collided with `courseToks`'
   token cache (moved to `[4]`). Tests 275.
+- **#923 — Programs curation (ask #1, the headline).** Top-level **Courses ⇄ Programs** toggle
+  (`scopeBar`/`st.scope`); Programs → "Review my programs" + "Browse". `programsView`/`programRow` — per
+  college (its OWN selector; program-export names ≠ fitcheck names), each program = title + award + assigned
+  CIP (`row[4]`) + bold CTE (`row[9]`) + a **needs-revision** flag (assigned CIP ∉ `TOPCIP[top].c`) + a
+  crosswalk-only revise picker + CTE/Non-CTE for Both. Persists `cipx_prog_<collegeIdx>`. `_build_coci_programs.py`
+  now emits `cte` from GOAL. Tests 292.
 
-**Next (this series) — PR4 is the headline, still open:**
-- **PR4 — Programs curation toggle (ask #1).** **top-level Courses ⇄ Programs above the mode tabs**
-  (Sam-locked); Programs → Review my programs + Browse. Data ready: `coci_programs_data.js`
-  (`window.CPL_COCI_PROGRAMS`) rows `[collegeIdx,ctrl,title,top,cip,awardIdx,statusIdx,units,xfer]` — assigned
-  CIP = `row[4]`, TOP `row[3]`, title `row[2]`. **To show the bold CTE chip on programs**, re-emit a CTE flag
-  from GOAL ("C - CTE"/"CT…") in `kb/_build_coci_programs.py` (drops GOAL today) + regen the ~2.4MB data file.
-  Program rows: title + award + assigned CIP + bold CTE + a **"needs revision"** flag when the assigned CIP ∉
-  the current crosswalk for its TOP (reuse `inXwalk`/`topcip`; the CIP was set per the OLD first-gen
-  crosswalk). **Seam:** Sam is getting the OLD program crosswalk from the CO → when it lands, flag the exact
-  old→new differences. Reuse `revCteChoice` (CTE choice for Both) + `xwalkAlts` (crosswalk-only). Programs get
-  1 CIP (cap is course-specific). Full spec in `cip_crosswalk_lessons.md` (bottom).
-- **Open Q for Sam (unanswered, from #917/#919):** constrain the manual "+ Add another code" search to the
-  crosswalk, or keep it open with an "outside crosswalk — verify your TOP" flag?
+**🎉 SERIES COMPLETE — all 6 asks + 2 mid-stream rules + the rename shipped.**
+
+**Remaining follow-ups (noted to Sam, none blocking):**
+1. **Old first-gen program crosswalk** — Sam is requesting it from the CO. When it lands, add it as a data
+   file and flag the exact **old→new** program-CIP differences (replaces the interim "not in current crosswalk"
+   signal). The `programRow` revise picker + `progNeedsRevision` are the seam.
+2. **Manual "+ Add another code" search scope** (open from #917/#919, unanswered) — constrain to the crosswalk
+   or keep open with an "outside crosswalk — verify your TOP" flag? Applies to the COURSE review only (program
+   revisions are already crosswalk-only by construction).
+3. Optional: a program-first **"Find my program's code"** easy button (mirrors the course recommend mode).
+4. The standing **WCAG** pre-field gate before wide release; and Phase B (the shared backend / progress store /
+   editing-access model) from `cip_submission_access_plan.md`.
 
 **Locked design calls:** Programs = Course⇄Program **toggle**, **top-level**; CIP caps **enforced** (clear
 reason). **Side-lane discipline:** do NOT touch `kb/cpl_todos.json` or the numbered `session_<N>_handoff.md`.
