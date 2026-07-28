@@ -69,7 +69,7 @@
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
+  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
   // Precomputed engine-baseline status counts (per college + per subject + system-wide) — how the tool
   // classifies each course (Ready/Review/Suggested/Manual), NOT human progress. Built by
@@ -78,7 +78,7 @@
   var CONSENSUS = null, CONSENSUS_COLLEGES = null, CONSENSUS_SUBJECTS = null, CONSENSUS_LOADING = null;
   // confident-consensus thresholds (see consensusPick): >= MIN_N colleges AND >= MAJORITY of them.
   var CONSENSUS_MIN_N = 3, CONSENSUS_MAJORITY = 0.5;
-  var wrapEl, inputRef, pillsRef, famRef, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl, collegeBarEl, _cipxStickyBound;
+  var wrapEl, inputRef, pillsRef, famRef, fam4Ref, fam6Ref, cbRef, xferRef, listHost, countHost, suggestHost, collegeSelEl, collegeBarEl, _cipxStickyBound;
 
   function ingest(data) {
     D = data;
@@ -121,6 +121,8 @@
     if (!st.showRetired && !GOFORWARD[r.cat]) return false;
     if (st.cat !== "all" && r.cat !== st.cat) return false;
     if (st.fam && r.fam !== st.fam) return false;
+    if (st.fam4 && r.code.slice(0, 5) !== st.fam4) return false;
+    if (st.fam6 && r.code !== st.fam6) return false;
     if (st.xfer && !r.x) return false;
     if (st.q) {
       var toks = st.q.split(/\s+/);
@@ -130,6 +132,50 @@
     return true;
   }
   function filtered() { return ROWS.filter(passes); }
+
+  // ── CIP-code hierarchy filters (2 / 4 / 6-digit) ──────────────────────────────
+  // Structural navigation over the CIP tree, independent of category/xfer/search.
+  // Each list carries a "Select All" (empty-value) option at the top. The lists
+  // cascade: picking a sector narrows the sub-series; a sub-series narrows the code.
+  function cipOpt(v, label) { return el("option", { value: v }, [label]); }
+  function cipVisibleRow(r) { return st.showRetired || GOFORWARD[r.cat]; }   // match the browse universe
+  function fillCip2() {
+    if (!famRef) return;
+    clear(famRef);
+    famRef.appendChild(cipOpt("", "All sectors (2-digit)"));
+    Object.keys(FAMS).sort().forEach(function (f) { famRef.appendChild(cipOpt(f, f + " · " + FAMS[f])); });
+    famRef.value = st.fam;
+  }
+  function fillCip4() {
+    if (!fam4Ref) return;
+    clear(fam4Ref);
+    fam4Ref.appendChild(cipOpt("", "All sub-series (4-digit)"));
+    var seen = {};
+    ROWS.forEach(function (r) {
+      if (!cipVisibleRow(r)) return;
+      if (st.fam && r.fam !== st.fam) return;
+      var k = r.code.slice(0, 5);
+      seen[k] = (seen[k] || 0) + 1;
+    });
+    Object.keys(seen).sort().forEach(function (k) {
+      fam4Ref.appendChild(cipOpt(k, k + " · " + seen[k] + (seen[k] === 1 ? " code" : " codes")));
+    });
+    fam4Ref.value = st.fam4;
+  }
+  function fillCip6() {
+    if (!fam6Ref) return;
+    clear(fam6Ref);
+    fam6Ref.appendChild(cipOpt("", "All codes (6-digit)"));
+    ROWS.filter(function (r) {
+      if (!cipVisibleRow(r)) return false;
+      if (st.fam && r.fam !== st.fam) return false;
+      if (st.fam4 && r.code.slice(0, 5) !== st.fam4) return false;
+      return true;
+    }).slice().sort(function (a, b) { return a.code < b.code ? -1 : (a.code > b.code ? 1 : 0); })
+      .forEach(function (r) { fam6Ref.appendChild(cipOpt(r.code, r.code + " · " + (r.t || ""))); });
+    fam6Ref.value = st.fam6;
+  }
+  function fillCipSelects() { fillCip2(); fillCip4(); fillCip6(); }
 
   function catTip(c) {
     return ({ "CTE": "Career Technical Education", "Both": "Both CTE and non-CTE", "Non-CTE": "Not Career Technical Education",
@@ -141,13 +187,15 @@
     if (st.cat !== "all") out.push(st.cat);
     if (st.xfer) out.push("C-ID/CCN");
     if (st.fam) out.push((FAMS[st.fam] || st.fam) + " family");
+    if (st.fam4) out.push("CIP " + st.fam4 + "×");
+    if (st.fam6) out.push("CIP " + st.fam6);
     if (st.showRetired) out.push("incl. retired/reserved");
     return out;
   }
   function resetAll() {
-    st.q = ""; st.cat = "all"; st.fam = ""; st.xfer = false; st.showRetired = false; st.limit = PAGE; st.open = {};
+    st.q = ""; st.cat = "all"; st.fam = ""; st.fam4 = ""; st.fam6 = ""; st.xfer = false; st.showRetired = false; st.limit = PAGE; st.open = {};
     if (inputRef) inputRef.value = "";
-    if (famRef) famRef.value = "";
+    fillCipSelects();
     if (cbRef) cbRef.checked = false;
     if (xferRef) xferRef.setAttribute("aria-pressed", "false");
     if (pillsRef) Array.prototype.forEach.call(pillsRef.querySelectorAll(".cipx-pill"), function (x, i) { x.setAttribute("aria-pressed", i === 0 ? "true" : "false"); });
@@ -2127,7 +2175,7 @@
   function header() {
     var head = el("div", { class: "cipx-head" }, [
       el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office · Academic Affairs"]),
-      el("h2", { class: "cipx-h2" }, ["CIP Coder", el("span", { class: "cipx-beta" }, ["Beta"])]),
+      el("h2", { class: "cipx-h2" }, ["California Community College Searchable CIP Code Taxonomy", el("span", { class: "cipx-beta" }, ["Beta"])]),
       el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your courses, get a CIP code suggested from its current TOP and description, and confirm the fit — soon, sync your settled codes straight to COCI."]),
       el("div", { class: "cipx-hlinks" }, [
         el("a", { href: COE_CROSSWALK, target: "_blank", rel: "noopener" }, ["TOP ↔ CIP crosswalk (COE) ↗"]),
@@ -2173,6 +2221,23 @@
     input.oninput = function () { var v = input.value; clearTimeout(_t); _t = setTimeout(function () { st.q = v.toLowerCase().trim(); st.limit = PAGE; render(); renderFinder(v); }, 140); };
     panel.appendChild(input);
     var controls = el("div", { class: "cipx-controls" }, []);
+
+    // CIP-code filters (2 / 4 / 6-digit) — leftmost + most prominent of all the filters.
+    // Each list has a "Select All" (all-codes) option at the top; they cascade.
+    var cipGroup = el("div", { class: "cipx-cipfilters", role: "group", "aria-label": "Filter by CIP code" }, []);
+    cipGroup.appendChild(el("span", { class: "cipx-cipfilters-lbl", "aria-hidden": "true" }, ["CIP code"]));
+    var sel2 = el("select", { class: "cipx-fsel cipx-fsel-cip", "aria-label": "Filter by CIP sector (2-digit)" }, []);
+    var sel4 = el("select", { class: "cipx-fsel cipx-fsel-cip", "aria-label": "Filter by CIP sub-series (4-digit)" }, []);
+    var sel6 = el("select", { class: "cipx-fsel cipx-fsel-cip cipx-fsel-cip6", "aria-label": "Filter by CIP code (6-digit)" }, []);
+    famRef = sel2; fam4Ref = sel4; fam6Ref = sel6;
+    fillCipSelects();
+    sel2.onchange = function () { st.fam = sel2.value; st.fam4 = ""; st.fam6 = ""; fillCip4(); fillCip6(); st.limit = PAGE; render(); };
+    sel4.onchange = function () { st.fam4 = sel4.value; st.fam6 = ""; fillCip6(); st.limit = PAGE; render(); };
+    sel6.onchange = function () { st.fam6 = sel6.value; st.limit = PAGE; render(); };
+    cipGroup.appendChild(sel2); cipGroup.appendChild(sel4); cipGroup.appendChild(sel6);
+    controls.appendChild(cipGroup);
+    controls.appendChild(el("span", { class: "cipx-chipsep" }, []));
+
     var pills = el("div", { class: "cipx-pills" }, []); pillsRef = pills;
     [["all", "All"], ["CTE", "CTE"], ["Non-CTE", "Non-CTE"], ["Both", "Both"], ["Noncredit", "Noncredit"]].forEach(function (p) {
       var b = el("button", { class: "cipx-pill", type: "button", "aria-pressed": st.cat === p[0] ? "true" : "false" }, [p[1]]);
@@ -2185,14 +2250,9 @@
     xferRef = xferChip;
     xferChip.onclick = function () { st.xfer = !st.xfer; xferChip.setAttribute("aria-pressed", st.xfer ? "true" : "false"); st.limit = PAGE; render(); };
     controls.appendChild(xferChip);
-    var fam = el("select", { class: "cipx-fsel", "aria-label": "CIP family" }, [el("option", { value: "" }, ["All CIP families"])]);
-    famRef = fam;
-    Object.keys(FAMS).sort().forEach(function (f) { fam.appendChild(el("option", { value: f }, [f + " · " + FAMS[f]])); });
-    fam.onchange = function () { st.fam = fam.value; st.limit = PAGE; render(); };
-    controls.appendChild(fam);
     var tog = el("label", { class: "cipx-retiredtog", title: "Retired = moved/deleted in 2020. Reserved = placeholder codes." }, []);
     var cb = el("input", { type: "checkbox" }); cbRef = cb;
-    cb.onchange = function () { st.showRetired = cb.checked; st.limit = PAGE; render(); };
+    cb.onchange = function () { st.showRetired = cb.checked; fillCip4(); fillCip6(); st.limit = PAGE; render(); };
     tog.appendChild(cb); tog.appendChild(document.createTextNode("Include retired / reserved"));
     controls.appendChild(tog);
     panel.appendChild(controls);
@@ -2245,7 +2305,7 @@
         "--cipx-page:transparent;--cipx-surface:#ffffff;--cipx-surface-2:#eef3f9;--cipx-surface-sub:#f2f6fb;" +
         "--cipx-text:#16283d;--cipx-text-soft:#3c526b;--cipx-muted:#566a80;--cipx-border:#dbe4ee;--cipx-border-strong:#c3d1e0;--cipx-recbadge-bg:#3f6b4e;--cipx-row-sep:#ffffff;--cipx-rev-field:#e7edf4;" +
         "--cipx-accent:#00356b;--cipx-accent-soft:#e7eef6;--cipx-link:#0b5fa8;--cipx-focus:#1f7ae0;--cipx-mark:#ffe89c;--cipx-mark-fg:inherit;" +
-        "--cipx-cte-bg:#e7ede7;--cipx-cte-fg:#4c6350;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
+        "--cipx-cte-bg:#d7ead9;--cipx-cte-fg:#1e5533;--cipx-cte-stripe:#5c9a72;--cipx-both-bg:#e9eaf1;--cipx-both-fg:#565d78;" +
         "--cipx-non-bg:#eceef1;--cipx-non-fg:#59636f;--cipx-nc-bg:#e6edee;--cipx-nc-fg:#4f6a71;" +
         "--cipx-ret-bg:#ececec;--cipx-ret-fg:#5f646b;--cipx-new-bg:#efe9dd;--cipx-new-fg:#6b5c3d;" +
         "--cipx-ok-bg:#e7ede7;--cipx-ok-fg:#3f5a45;--cipx-ok-stripe:#6f9079;--cipx-warn-bg:#f4ecd8;--cipx-warn-fg:#6f5d33;--cipx-warn-stripe:#c6a24a;--cipx-bad-bg:#efe1dd;--cipx-bad-fg:#7c5147;--cipx-bad-stripe:#b7796b;" +
@@ -2254,7 +2314,7 @@
         "--cipx-page:#0e1a2b;--cipx-surface:#16263b;--cipx-surface-2:#1b3150;--cipx-surface-sub:#132338;" +
         "--cipx-text:#e7eef6;--cipx-text-soft:#b8c7d8;--cipx-muted:#8397ab;--cipx-border:#274058;--cipx-border-strong:#33506e;--cipx-row-sep:#33506e;--cipx-rev-field:#101f33;" +
         "--cipx-accent:#7db3ec;--cipx-accent-soft:#1b3652;--cipx-link:#8fc0f2;--cipx-focus:#7db3ec;--cipx-mark:#5a4a1a;--cipx-mark-fg:#ffe89c;" +
-        "--cipx-cte-bg:#233a2c;--cipx-cte-fg:#a4bda9;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
+        "--cipx-cte-bg:#294c35;--cipx-cte-fg:#c6e3ce;--cipx-cte-stripe:#4f9269;--cipx-both-bg:#272c45;--cipx-both-fg:#aeb4d2;--cipx-non-bg:#28323f;--cipx-non-fg:#9aa7b6;--cipx-nc-bg:#1f3841;--cipx-nc-fg:#93b6bf;--cipx-ret-bg:#2a2f36;--cipx-ret-fg:#929aa3;--cipx-new-bg:#34301f;--cipx-new-fg:#c6b78e;" +
         "--cipx-ok-bg:#233a2c;--cipx-ok-fg:#a4bda9;--cipx-ok-stripe:#5f8f74;--cipx-warn-bg:#38321f;--cipx-warn-fg:#d8c48c;--cipx-warn-stripe:#b0913f;--cipx-bad-bg:#3a2723;--cipx-bad-fg:#d9a89c;--cipx-bad-stripe:#a86a5c;--cipx-recbadge-bg:#7cc79b;}",
       ".cipx-head{position:relative;padding:2px 7.6rem 6px 0;}",
       ".cipx-eyebrow{font-size:.72rem;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--cipx-accent);}",
@@ -2283,6 +2343,10 @@
       ".cipx.cipx-theme-dark .cipx-pill[aria-pressed=\"true\"]{color:#0e1a2b;}.cipx-pill-xfer[aria-pressed=\"true\"]{background:var(--cipx-both-fg);border-color:var(--cipx-both-fg);color:#fff;}",
       ".cipx-chipsep{width:1px;align-self:stretch;min-height:22px;background:var(--cipx-border-strong);margin:0 2px;}",
       ".cipx-fsel{font-family:inherit;font-size:.84rem;padding:6px 10px;border-radius:7px;border:1px solid var(--cipx-border-strong);background:var(--cipx-surface);color:var(--cipx-text);cursor:pointer;max-width:230px;}",
+      ".cipx-cipfilters{display:flex;gap:6px;align-items:center;flex-wrap:wrap;padding:5px 10px;border:1.5px solid var(--cipx-accent);border-radius:9px;background:var(--cipx-accent-soft);}",
+      ".cipx-cipfilters-lbl{font-size:.7rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-accent);}",
+      ".cipx-fsel-cip{max-width:210px;}.cipx-fsel-cip6{max-width:260px;}",
+      ".cipx-fsel:focus-visible,.cipx-pill:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
       ".cipx-retiredtog{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--cipx-muted);cursor:pointer;margin-left:auto;}",
       ".cipx-count{font-size:.82rem;color:var(--cipx-muted);font-weight:600;margin:13px 0 0;display:flex;align-items:baseline;flex-wrap:wrap;gap:2px;}",
       ".cipx-cfilters{color:var(--cipx-accent);font-weight:650;}.cipx-clearbtn{margin-left:10px;font-size:.78rem;font-weight:600;color:var(--cipx-link);background:none;border:0;cursor:pointer;padding:0;font-family:inherit;}.cipx-clearbtn:hover{text-decoration:underline;}",
@@ -2304,14 +2368,14 @@
       // list
       ".cipx-list{display:flex;flex-direction:column;}",
       ".cipx-item{border-bottom:1px solid var(--cipx-border);}",
-      ".cipx-row{display:grid;grid-template-columns:16px 92px 1fr auto;gap:14px;align-items:center;padding:12px 10px;cursor:pointer;}",
+      ".cipx-row{display:grid;grid-template-columns:16px 92px minmax(0,1fr) auto;gap:14px;align-items:center;padding:12px 10px;cursor:pointer;}",
       ".cipx-row:hover{background:var(--cipx-surface-sub);}.cipx-item.cipx-open .cipx-row{background:var(--cipx-surface-sub);}",
       ".cipx-caret{color:var(--cipx-muted);font-size:.8rem;width:14px;text-align:center;}",
       ".cipx-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:600;font-size:.9rem;color:var(--cipx-accent);}",
-      ".cipx-ttl{font-weight:550;color:var(--cipx-text);min-width:0;}",
+      ".cipx-ttl{font-weight:550;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;}",
       ".cipx-tags{display:flex;gap:6px;align-items:center;flex-wrap:wrap;justify-content:flex-end;}",
       ".cipx-cat{font-size:.66rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:3px 9px;border-radius:7px;white-space:nowrap;}",
-      ".cipx-cat-CTE{background:var(--cipx-cte-bg);color:var(--cipx-cte-fg);}.cipx-cat-Both{background:var(--cipx-both-bg);color:var(--cipx-both-fg);}.cipx-cat-NonCTE{background:var(--cipx-non-bg);color:var(--cipx-non-fg);}.cipx-cat-Noncredit{background:var(--cipx-nc-bg);color:var(--cipx-nc-fg);}.cipx-cat-Retired,.cipx-cat-Reserved{background:var(--cipx-ret-bg);color:var(--cipx-ret-fg);}",
+      ".cipx-cat-CTE{background:var(--cipx-cte-bg);color:var(--cipx-cte-fg);font-weight:800;border:1px solid var(--cipx-cte-stripe);}.cipx-cat-Both{background:var(--cipx-both-bg);color:var(--cipx-both-fg);}.cipx-cat-NonCTE{background:var(--cipx-non-bg);color:var(--cipx-non-fg);}.cipx-cat-Noncredit{background:var(--cipx-nc-bg);color:var(--cipx-nc-fg);}.cipx-cat-Retired,.cipx-cat-Reserved{background:var(--cipx-ret-bg);color:var(--cipx-ret-fg);}",
       ".cipx-new{background:var(--cipx-new-bg);color:var(--cipx-new-fg);font-size:.6rem;font-weight:800;padding:3px 7px;border-radius:7px;letter-spacing:.04em;}",
       ".cipx-detail{padding:4px 10px 20px 122px;}",
       ".cipx-def{margin:2px 0 0;color:var(--cipx-text-soft);line-height:1.6;max-width:80ch;}",
@@ -2621,9 +2685,12 @@
         ".cipx-search,.cipx-fitta,.cipx-fit-cb,.cipx-college-sel{font-size:16px;}" +
         ".cipx-controls{gap:7px;}.cipx-pills{gap:5px;}.cipx-pill{padding:5px 10px;font-size:.78rem;}.cipx-chipsep{display:none;}" +
         ".cipx-cat{padding:2px 7px;font-size:.62rem;}.cipx-fsel{max-width:100%;flex:1 1 100%;}.cipx-retiredtog{margin-left:0;flex:1 1 100%;}" +
+        ".cipx-cipfilters{flex:1 1 100%;gap:5px;min-width:0;}.cipx-fsel-cip,.cipx-fsel-cip6{max-width:100%;flex:1 1 100%;min-width:0;width:100%;}.cipx-cipfilters-lbl{flex:1 1 100%;}" +
         ".cipx-count{margin-top:11px;}.cipx-csv{margin-left:0;}" +
         ".cipx-collegebar{padding:10px 12px;}.cipx-college-sel{max-width:100%;flex:1 1 100%;}.cipx-college-hint{flex:1 1 100%;}" +
-        ".cipx-row,.cipx-sug-crow{grid-template-columns:13px 56px 1fr auto;gap:9px;}" +
+        ".cipx-sug-crow{grid-template-columns:13px 56px 1fr auto;gap:9px;}" +
+        // browse row on phone: title gets the full remaining width (wraps), badges drop to their own line
+        ".cipx-row{grid-template-columns:13px 56px minmax(0,1fr);gap:6px 9px;}.cipx-row .cipx-tags{grid-column:2/-1;justify-content:flex-start;}" +
         ".cipx-detail,.cipx-sug-why,.cipx-cand-card .cipx-detail{padding-left:14px;}" +
         ".cipx-cbwrap,.cipx-fitta{max-width:100%;}" +
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
