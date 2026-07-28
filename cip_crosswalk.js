@@ -264,6 +264,23 @@
   // ANY ranked display (they live behind the boiler expander). Filter every fallback
   // "closest by description" list through this.
   function nonBoiler(list) { return list.filter(function (o) { return !BOILER[o.r.code]; }); }
+  // The "crosswalk universe" = every CIP that appears in SOME TOP's official crosswalk (CIP_TOPS is the
+  // inverse of topcip). We never present a CIP outside it — no free-ranging the full 2,325-code taxonomy
+  // (Sam, 2026-07-28: "limit the choices to the TOP↔CIP crosswalk … we don't want colleges going free
+  // range"). But TOP codes are unreliable (§7), so a description-fit code that isn't in THIS course's TOP
+  // set yet IS in the crosswalk under ANOTHER TOP is a legitimate "more-appropriate TOP" alternative —
+  // offered, labeled with the TOP it belongs to, and framed as "your course's TOP may need updating."
+  function inXwalk(code) { return !!CIP_TOPS[code]; }
+  function altTopsFor(code) {
+    var tops = CIP_TOPS[code]; if (!tops) return [];
+    return Object.keys(tops).sort().map(function (t) { return { top: t, title: (TOPCIP[t] || {}).t || "" }; });
+  }
+  // description-ranked codes that live in the crosswalk under some TOP (never free-range), tagged with
+  // their source TOP(s) — the fallback when a course's own TOP has no / only-generic crosswalk CIPs.
+  function xwalkAlts(ranked, cap) {
+    return nonBoiler(ranked || []).filter(function (o) { return inXwalk(o.r.code); })
+      .map(function (o) { o.altTops = altTopsFor(o.r.code); return o; }).slice(0, cap || 6);
+  }
 
   // weight of one query token against one CIP row (title > examples > definition)
   function tokWeight(s, r) { return r._tt && r._tt[s] ? 3.0 : (r._te && r._te[s] ? 1.5 : (r._td && r._td[s] ? 1.0 : 0)); }
@@ -942,8 +959,11 @@
     // kills the generic-title flood: for "Independent Study: Biology" every "X Biology" code ties 26.0101,
     // so none surfaces). Boiler codes never surface (boiler expander).
     var bestCandConf = 0; cands.forEach(function (x) { if (x.conf > bestCandConf) bestCandConf = x.conf; });
-    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code]; })
-      .map(function (o) { o.boosted = boosted(o); o.conf = confOf(o); return o; })
+    // Only codes that ARE in the crosswalk under some OTHER TOP (inXwalk) — a truly free-range code
+    // (in no TOP's crosswalk) is never surfaced. Each carries its source TOP(s) for the "more-appropriate
+    // TOP" label. This makes "outside THIS course's TOP crosswalk" a crosswalk-constrained alternative.
+    var beyond = res.ranked.filter(function (o) { return !inSet[o.r.code] && !BOILER[o.r.code] && inXwalk(o.r.code); })
+      .map(function (o) { o.boosted = boosted(o); o.conf = confOf(o); o.altTops = altTopsFor(o.r.code); return o; })
       .filter(function (o) { return o.conf >= BEYOND_CONF_MIN && o.conf > bestCandConf; })
       .sort(function (a, b) { return b.boosted - a.boosted; }).slice(0, 3);
     // Work-experience courses stay in their discipline — don't nudge them elsewhere.
@@ -965,6 +985,7 @@
       r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
       isRec ? el("span", { class: "cipx-recbadge" }, ["✓ Recommended"]) : null,
       prov ? el("span", { class: "cipx-provlbl", title: provTip(rec.prov) }, [prov]) : null,
+      (rec.altTops && rec.altTops.length) ? el("span", { class: "cipx-alttop", title: "In the official crosswalk under TOP " + rec.altTops[0].top + (rec.altTops[0].title ? " · " + rec.altTops[0].title : "") + (rec.altTops.length > 1 ? " (+" + (rec.altTops.length - 1) + " more)" : "") + " — your course's TOP may need updating." }, ["↔ TOP " + rec.altTops[0].top]) : null,
     ]);
     var meta = flat ? null : el("span", { class: "cipx-rec-meta" }, [
       el("span", { class: "cipx-tierlbl cipx-tier-" + tier.key }, [tier.label]),
@@ -985,7 +1006,7 @@
     var wrap = el("div", { class: "cipx-rec-list" }, []);
     items.forEach(function (rec) {
       // accept either a candidate rec {r,prov,rel,…} or a ranked entry {r,rel,matched}
-      var norm = rec.prov !== undefined ? rec : { r: rec.r, prov: "", rel: rec.rel, score: rec.score, matched: rec.matched };
+      var norm = rec.prov !== undefined ? rec : { r: rec.r, prov: "", rel: rec.rel, score: rec.score, matched: rec.matched, conf: rec.conf, dconf: rec.dconf, altTops: rec.altTops };
       wrap.appendChild(recCandCard(norm, norm.r.code === recommendedCode, flat));
     });
     return wrap;
@@ -1014,10 +1035,10 @@
     var auto = !m.recommended;   // no clear crosswalk winner → open the drawer
     var caret = el("span", { class: "cipx-caret" }, [auto ? "▾" : "▸"]);
     var btn = el("button", { class: "cipx-beyond-btn", type: "button", "aria-expanded": auto ? "true" : "false" }, [
-      caret, el("span", {}, ["⚠ " + m.beyond.length + " strong match" + (m.beyond.length === 1 ? "" : "es") + " outside the crosswalk"]),
+      caret, el("span", {}, ["↔ " + m.beyond.length + " crosswalk code" + (m.beyond.length === 1 ? "" : "s") + " under a more-appropriate TOP"]),
     ]);
     var body = el("div", { class: "cipx-beyond-body" }, []);
-    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording well but aren't in the official crosswalk for TOP " + (m.top || "—") + (m.topTitle ? " · " + m.topTitle : "") + ". The course's TOP code may be out of date, or the crosswalk may not cover it yet — worth checking against their definitions."]);
+    var note = el("div", { class: "cipx-beyond-note" }, ["These CIP codes fit this course's wording better than the options above — and they ARE in the official crosswalk, just under a different TOP than the one on this course (TOP " + (m.top || "—") + (m.topTitle ? " · " + m.topTitle : "") + "). TOP codes are often out of date, so this course's TOP may need updating. Each is labeled with the TOP it belongs to; confirm against its definition before entering it in COCI."]);
     var built = false;
     function build() { if (built) return; built = true; body.appendChild(note); body.appendChild(recCardStack(m.beyond, null, false)); }
     body.style.display = auto ? "block" : "none";
@@ -1060,17 +1081,21 @@
     }
 
     if (!m.hasCross) {
-      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " yet. Here are the CIP codes whose definitions best match this course — check each against its definition:"]));
-      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
+      var altsNo = xwalkAlts(m.res.ranked, 6);
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk has no CIP mapping for TOP ", el("span", { class: "cipx-code" }, [m.top || "—"]), " — the course's TOP may be out of date. Here are crosswalk CIP codes (from other TOPs) whose definitions best match this course, each labeled with the TOP it belongs to. Verify the course's TOP, then confirm against the definition:"]));
+      if (altsNo.length) host.appendChild(recCardStack(altsNo, null, false));
+      else host.appendChild(el("div", { class: "cipx-fitmsg" }, ["No crosswalk CIP matches this course's description closely enough to suggest — check the course's TOP with your curriculum team."]));
       host.appendChild(recFoot());
       return;
     }
 
     if (!m.cands.length) {
-      // the crosswalk lists only generic noncredit codes for this TOP — fall back
-      // to the best description matches (like the no-crosswalk case).
-      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. The CIP codes whose definitions best match this course are below; check each against its definition:"]));
-      host.appendChild(recCardStack(nonBoiler(m.res.ranked).slice(0, 6), null, false));
+      // the crosswalk lists only generic noncredit codes for this TOP — offer crosswalk CIPs from
+      // OTHER (more-appropriate) TOPs, never free-range codes.
+      var altsGen = xwalkAlts(m.res.ranked, 6);
+      host.appendChild(el("div", { class: "cipx-rec-note" }, ["The official crosswalk lists only generic noncredit codes for TOP ", el("span", { class: "cipx-code" }, [m.top]), " — nothing course-specific. Here are crosswalk CIP codes from other TOPs whose definitions best match this course (each labeled with its TOP); the course's TOP may need updating:"]));
+      if (altsGen.length) host.appendChild(recCardStack(altsGen, null, false));
+      else host.appendChild(el("div", { class: "cipx-fitmsg" }, ["No course-specific crosswalk CIP matches closely — verify the course's TOP, or use a generic code below."]));
       if (m.boiler.length) host.appendChild(boilerExpander(m.boiler));
       host.appendChild(recFoot());
       return;
@@ -2063,23 +2088,29 @@
     // 1) FIELD CONSENSUS FIRST — the strongest, most-corroborated signal (Sam's ordering)
     var peer = peerConsensusBlock(r, candRow); if (peer) box.appendChild(peer);
 
-    // 2) the course's own TOP crosswalk candidates (or closest-by-description fallback)
-    var opts = r.m.cands.length ? r.m.cands : nonBoiler(r.m.res.ranked).slice(0, 6);
+    // 2) the course's own TOP crosswalk candidates (or, when that TOP has no course-specific CIP,
+    //    crosswalk CIPs from other TOPs — never free-range codes).
+    var opts = r.m.cands.length ? r.m.cands : xwalkAlts(r.m.res.ranked, 6);
     var fromCrosswalk = r.m.cands.length > 0;
-    box.appendChild(el("div", { class: "cipx-rev-siglabel" }, [fromCrosswalk ? "From this course’s TOP crosswalk" + (r.top ? " (" + r.top + ")" : "") : "Closest CIP codes by description"]));
-    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a code — search all codes below." : "No crosswalk match — search all codes below."]));
+    box.appendChild(el("div", { class: "cipx-rev-siglabel" }, [fromCrosswalk ? "From this course’s TOP crosswalk" + (r.top ? " (" + r.top + ")" : "") : "Crosswalk CIP codes under other TOPs (this TOP has none)"]));
+    if (!opts.length) box.appendChild(el("div", { class: "cipx-fitmsg" }, [r.m.thin ? "Too little catalog description to suggest a crosswalk code — verify the course's TOP." : "No crosswalk CIP matches — verify the course's TOP with your curriculum team."]));
     opts.slice(0, 6).forEach(function (o) {
-      var extraTag = (fromCrosswalk && r.top) ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top]) : null;
+      var altT = o.altTops && o.altTops[0];
+      var extraTag = (fromCrosswalk && r.top)
+        ? el("span", { class: "cipx-rev-candtop", title: "The official crosswalk maps this CIP from the course's TOP " + r.top }, ["← TOP ", r.top])
+        : (altT ? el("span", { class: "cipx-rev-candtop", title: "In the crosswalk under TOP " + altT.top + (altT.title ? " · " + altT.title : "") + " — the course's TOP may need updating." }, ["↔ TOP ", altT.top]) : null);
       box.appendChild(candRow(o.r, (o.dconf != null ? o.dconf : (o.conf != null ? o.conf : (o.rel || 0))), extraTag, null, o.matched));
     });
 
-    // 3) stronger description matches OUTSIDE the crosswalk (the lexical signal, weakest) — filtered to
-    // field-credible candidates (F3/F5): only those sharing the course field's or peer consensus's CIP family.
+    // 3) stronger matches in the crosswalk under a MORE-APPROPRIATE TOP (the mis-code nudge) — every one
+    // is a real crosswalk code (inXwalk), filtered to field-credible candidates (F3/F5: sharing the course
+    // field's or peer consensus's CIP family). No free-range codes are ever surfaced here.
     var bo = r.beyondOk || r.m.beyond;
     if (bo.length) {
-      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger description match" + (bo.length > 1 ? "es" : "") + " outside the crosswalk. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded, which would make the crosswalk recommendation misleading. Assign one only if it truly fits the course:"]));
+      box.appendChild(el("div", { class: "cipx-rev-flag" }, ["⚑ Stronger match" + (bo.length > 1 ? "es" : "") + " in the crosswalk under a more-appropriate TOP. This course is coded ", el("b", {}, ["TOP " + r.top + (r.topTitle ? " · " + r.topTitle : "")]), " — its TOP may be mis-coded. These ARE official crosswalk codes, just under a different TOP; verify the course's TOP, then pick one only if it truly fits:"]));
       bo.slice(0, 3).forEach(function (o) {
-        box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), el("span", { class: "cipx-rev-outtag" }, ["outside crosswalk"]), "cipx-rev-cand-out", o.matched));
+        var altT = o.altTops && o.altTops[0];
+        box.appendChild(candRow(o.r, (o.conf != null ? o.conf : (o.rel || 0)), el("span", { class: "cipx-rev-outtag", title: altT ? "In the crosswalk under TOP " + altT.top + (altT.title ? " · " + altT.title : "") : "" }, [altT ? "↔ TOP " + altT.top : "other TOP"]), "cipx-rev-cand-out", o.matched));
       });
     }
 
@@ -2464,6 +2495,7 @@
       ".cipx-recbadge{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;background:var(--cipx-recbadge-bg);color:#fff;padding:3px 8px;border-radius:6px;white-space:nowrap;}",
       ".cipx.cipx-theme-dark .cipx-recbadge{color:#0e1a2b;}",
       ".cipx-provlbl{font-size:.72rem;color:var(--cipx-muted);cursor:help;white-space:nowrap;}",
+      ".cipx-alttop{font-size:.66rem;font-weight:700;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);padding:2px 7px;border-radius:6px;white-space:nowrap;cursor:help;}",
       ".cipx-rec-meta{display:flex;flex-direction:column;align-items:flex-end;gap:5px;min-width:158px;}",
       ".cipx-tierlbl{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;}",
       ".cipx-tier-ok{color:var(--cipx-ok-fg);}.cipx-tier-warn{color:var(--cipx-warn-fg);}.cipx-tier-bad{color:var(--cipx-bad-fg);}",

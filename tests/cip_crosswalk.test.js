@@ -335,8 +335,14 @@ function fresh(withCollege) {
   check("recommend carries a provenance tier per candidate", mBiz.cands[0].prov === "o");
   // a nursing description under the business TOP → strong match OUTSIDE the crosswalk, no false winner
   const mNur = rApi._recommend(RCOURSES[1]);
-  check("recommend surfaces a strong match outside the crosswalk (⚠)", mNur.beyond.some((o) => o.r.code === "51.3801"));
+  check("recommend surfaces a match under a more-appropriate TOP (51.3801, in the crosswalk under TOP 1230.00)", mNur.beyond.some((o) => o.r.code === "51.3801"));
   check("recommend withholds a winner when the signals disagree", mNur.recommended === null);
+  // Crosswalk-only (Sam, 2026-07-28): every alternative we present is in the crosswalk under SOME TOP,
+  // carrying its source TOP(s); a truly free-range code (in no TOP's crosswalk) is never surfaced.
+  check("alt-TOP: every 'more-appropriate TOP' match carries its source TOP(s)", mNur.beyond.length > 0 && mNur.beyond.every((o) => o.altTops && o.altTops.length));
+  check("alt-TOP: the nursing alternative is tagged with its crosswalk TOP 1230.00", mNur.beyond.some((o) => o.r.code === "51.3801" && o.altTops.some((a) => a.top === "1230.00")));
+  const mFree = rApi._recommend(["MGT 1 — Managerial Economics", "A program in business administration and management and organization and accounting and economics and econometrics and quantitative analysis for managers.", "0505.00"]);
+  check("crosswalk-only: a free-range CIP (52.9001, in NO TOP's crosswalk) is never surfaced as an alternative", mFree.beyond.every((o) => o.r.code !== "52.9001"));
   // a TOP absent from the crosswalk → falls back to description matches, no crash
   const mOrphan = rApi._recommend(RCOURSES[3]);
   check("recommend handles a TOP absent from the crosswalk", mOrphan.hasCross === false && mOrphan.res.ranked.length >= 1);
@@ -442,9 +448,9 @@ function fresh(withCollege) {
   const mBoiler = rApi._recommend(["WKX 1 — Workplace Intro", "Career exploration and workforce development awareness training.", "1701.00"]);
   check("Fix D: boiler codes are excluded from the outside-the-crosswalk (beyond) list", mBoiler.beyond.every((o) => o.r.code !== "32.0107" && o.r.code !== "32.0111"));
 
-  // ── work-experience courses stay in their discipline (no outside-crosswalk nudge) ──
-  // Same description as mOut (which DOES surface 52.9001 in `beyond`), but a work-
-  // experience label suppresses the drawer — the units belong to the course's discipline.
+  // ── work-experience courses stay in their discipline (no more-appropriate-TOP nudge) ──
+  // A work-experience label suppresses the alt-TOP drawer entirely — the units belong to the
+  // course's own discipline, so "how peers code work experience across fields" doesn't apply.
   const mWE = rApi._recommend(["ACCT 200 — Accounting Work Experience", "business administration and management and organization and accounting and econometrics", "0505.00"]);
   check("work-experience courses stay in discipline — outside-crosswalk drawer suppressed", mWE.beyond.length === 0);
   const mWEcoop = rApi._recommend(["BUS 90 — Cooperative Work Experience Education", "business administration and management and organization and accounting and econometrics", "0505.00"]);
@@ -482,7 +488,8 @@ function fresh(withCollege) {
   rInput.focus();
   const nurOpt = Array.prototype.filter.call(rdoc.querySelector(".cipx-rec-combohost .cipx-fit-panel").querySelectorAll(".cipx-cb-opt"), (o) => /Nursing/.test(o.textContent))[0];
   nurOpt.dispatchEvent(new domR.window.MouseEvent("mousedown"));
-  check("recommend mode: a signal-disagreement opens the outside-the-crosswalk section", rHost.querySelector(".cipx-beyond-btn") && /outside the crosswalk/.test(rHost.querySelector(".cipx-beyond-btn").textContent));
+  check("recommend mode: a signal-disagreement opens the more-appropriate-TOP section", rHost.querySelector(".cipx-beyond-btn") && /more-appropriate TOP/.test(rHost.querySelector(".cipx-beyond-btn").textContent));
+  check("recommend mode: the alt-TOP card is labeled with its crosswalk TOP", rHost.querySelector(".cipx-beyond-body .cipx-alttop") && /TOP 1230\.00/.test(rHost.querySelector(".cipx-beyond-body .cipx-alttop").textContent));
   // changing the college IN recommend mode must rebuild the course-first view —
   // NOT call the browse render() (which throws on the absent countHost).
   let recSelThrew = false;
@@ -555,12 +562,15 @@ function fresh(withCollege) {
   check("F3: a wrong-family outside-crosswalk match is filtered from beyondOk (still present in m.beyond)",
     f3Row.m.beyond.some((o) => /^52\./.test(o.r.code)) && !f3Row.beyondOk.some((o) => /^52\./.test(o.r.code)));
   check("F3: with its only outside match filtered, the row flags no disagreement", f3Row.disagree === false);
-  // Crosswalk-primary (Sam, 2026-07-19): a strong same-family outside-crosswalk match is a "worth a look"
-  // hint (beyondOk), but the headline stays a CROSSWALK code — the outside code never auto-wins the box.
+  // Crosswalk-only (Sam, 2026-07-28): a code in NO TOP's crosswalk (52.9001, free-range) is never
+  // surfaced — not as the headline, not as a "more-appropriate TOP" alternative. The headline stays a
+  // real crosswalk code from the course's own TOP.
   const f5Course = ["BUS 90 — Econometrics", "Econometrics and econometric quantitative analysis for managers and economics.", "0505.00"];
   const f5Row = fxApi._reviewRows([f5Course])[0];
-  check("crosswalk-primary: a strong outside match (52.9001) surfaces as 'worth a look', not the headline",
-    f5Row.sug && /^52\.0[23]/.test(f5Row.sug.code) && f5Row.sug.code !== "52.9001" && f5Row.beyondOk.some((o) => o.r.code === "52.9001"));
+  check("crosswalk-only: a free-range match (52.9001) is never surfaced; the headline stays a crosswalk code",
+    f5Row.sug && /^52\.0[23]/.test(f5Row.sug.code) && f5Row.sug.code !== "52.9001"
+    && !(f5Row.m.beyond || []).some((o) => o.r.code === "52.9001")
+    && !(f5Row.beyondOk || []).some((o) => o.r.code === "52.9001"));
 
   // ── SUBJECT-SCOPED consensus (Sam's BIO 35 "Health Science" catch) ──
   // The same title can be a HEALTH course at most colleges and a BIOLOGY course at a few. A
