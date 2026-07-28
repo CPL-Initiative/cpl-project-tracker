@@ -69,7 +69,9 @@
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review" };
+  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false };
+  var SCOPE_KEY = "cipx_scope";
+  var PROGRAMS = null, PROGRAMS_LOADING = false;   // window.CPL_COCI_PROGRAMS (lazy — Programs scope only)
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
   // Precomputed engine-baseline status counts (per college + per subject + system-wide) — how the tool
   // classifies each course (Ready/Review/Suggested/Manual), NOT human progress. Built by
@@ -105,9 +107,12 @@
     // hard refresh starts with no college picked. (Per-college review decisions still persist
     // under cipx_rev_<college> — that's the user's work product, not the selection.)
     st.college = null;
+    st.progCollege = null;
     // Default mode = Review (Sam, 2026-07-18: the primary workflow). A returning user's explicit
     // choice (they clicked a tab, which writes MODE_KEY) is honored; anything else lands on Review.
     try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "browse" || _m === "recommend") ? _m : "review"; } catch (e) { st.mode = "review"; }
+    try { var _s = localStorage.getItem(SCOPE_KEY); st.scope = (_s === "programs") ? "programs" : "courses"; } catch (e) { st.scope = "courses"; }
+    if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";   // no course-first easy button for programs
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
@@ -1427,6 +1432,141 @@
     revOverviewHost.appendChild(el("div", { class: "cipx-rev-ovnote" }, ["Pick a subject above to start reviewing. These are the tool's classifications — your validated progress fills in as you confirm."]));
   }
 
+  // ── Programs review (Sam, 2026-07-28) ─────────────────────────────────────────
+  // Colleges have already assigned a CIP to each program in COCI (coci_programs_data.js row[4]), coded
+  // under the FIRST-GEN crosswalk. The current TOP→CIP crosswalk is authoritative, so a program whose
+  // assigned CIP isn't in it (for the program's TOP) is flagged "needs revision" — the interim signal
+  // until Sam supplies the old crosswalk, when we can flag the exact old→new differences.
+  function loadPrograms() {
+    if (PROGRAMS || PROGRAMS_LOADING) return;
+    if (typeof window !== "undefined" && window.CPL_COCI_PROGRAMS) { PROGRAMS = window.CPL_COCI_PROGRAMS; return; }
+    PROGRAMS_LOADING = true;
+    var done = function () { PROGRAMS = (typeof window !== "undefined" && window.CPL_COCI_PROGRAMS) || null; PROGRAMS_LOADING = false; if (st.scope === "programs" && st.mode === "review") rebuildShell(); };
+    if (typeof window !== "undefined" && window.CPL_TABS && window.CPL_TABS.loadScript) window.CPL_TABS.loadScript("coci_programs_data.js", "CPL_COCI_PROGRAMS", done);
+    else PROGRAMS_LOADING = false;
+  }
+  function prettyCollege(name) { return String(name || "").toLowerCase().replace(/\b([a-z])/g, function (m) { return m.toUpperCase(); }); }
+  function progNeedsRevision(top, cip) {
+    var tc = TOPCIP[top];
+    if (!tc || !tc.c || !tc.c.length || !cip) return false;   // no crosswalk for this TOP → can't judge
+    for (var i = 0; i < tc.c.length; i++) if (tc.c[i][0] === cip) return false;
+    return true;
+  }
+  function progKey() { return st.progCollege != null ? ("cipx_prog_" + st.progCollege) : null; }
+  function progStore() { var k = progKey(); if (!k) return {}; try { return JSON.parse(localStorage.getItem(k) || "{}") || {}; } catch (e) { return {}; } }
+  function progEntry(ctrl) { return progStore()[ctrl] || {}; }
+  function progSetField(ctrl, field, val) { var d = progStore(), e = d[ctrl] || {}; if (val) e[field] = val; else delete e[field]; if (Object.keys(e).length) d[ctrl] = e; else delete d[ctrl]; var k = progKey(); if (k) try { localStorage.setItem(k, JSON.stringify(d)); } catch (ex) {} }
+  function progCip(ctrl, assigned) { return progEntry(ctrl).cip || assigned || ""; }   // a curator revision overrides the COCI-assigned CIP
+  function progCollegeRows() { return (PROGRAMS && st.progCollege != null) ? PROGRAMS.rows.filter(function (r) { return r[0] === st.progCollege; }) : []; }
+
+  function programsView() {
+    var host = el("div", { class: "cipx-prog" }, []);
+    host.appendChild(el("div", { class: "cipx-prog-intro" }, [
+      "Review the CIP code your college assigned each ", el("b", {}, ["program"]), " in COCI. These were coded under the first-generation crosswalk; the current ",
+      el("b", {}, ["TOP → CIP"]), " crosswalk is authoritative, so a program whose CIP isn't in it is flagged ",
+      el("span", { class: "cipx-prog-flagword" }, ["needs revision"]), ". Choices stay in your browser — nothing reaches COCI until your college enters it there.",
+    ]));
+    if (!PROGRAMS) { loadPrograms(); host.appendChild(el("div", { class: "cipx-fitmsg" }, ["Loading your programs…"])); return host; }
+    if (!PROGRAMS._counts) { var cc = {}; PROGRAMS.rows.forEach(function (r) { cc[r[0]] = (cc[r[0]] || 0) + 1; }); PROGRAMS._counts = cc; }
+    var bar = el("div", { class: "cipx-collegebar" }, [el("span", { class: "cipx-college-l" }, [el("span", {}, ["Your college"])])]);
+    var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, ["Choose your college…"])]);
+    PROGRAMS.colleges.forEach(function (name, i) { sel.appendChild(el("option", { value: String(i) }, [prettyCollege(name) + "  ·  " + (PROGRAMS._counts[i] || 0) + " programs"])); });
+    if (st.progCollege != null) sel.value = String(st.progCollege);
+    sel.onchange = function () { st.progCollege = sel.value === "" ? null : parseInt(sel.value, 10); rebuildShell(); };
+    bar.appendChild(sel);
+    host.appendChild(bar);
+    if (st.progCollege == null) { host.appendChild(el("div", { class: "cipx-prog-nudge" }, ["Pick your college to review its programs' CIP codes."])); return host; }
+
+    var rows = progCollegeRows();
+    var summary = el("div", { class: "cipx-prog-summary" }, []);
+    var tools = el("div", { class: "cipx-prog-tools" }, []);
+    var q = el("input", { class: "cipx-search cipx-prog-search", type: "search", "aria-label": "Search programs", placeholder: "Search programs by title, CIP, or TOP…" });
+    q.value = st.progQ || "";
+    var _t; q.oninput = function () { var v = q.value; clearTimeout(_t); _t = setTimeout(function () { st.progQ = v.toLowerCase().trim(); repaintProgList(); }, 130); };
+    tools.appendChild(q);
+    var flagTog = el("label", { class: "cipx-prog-flagtog", title: "Show only programs whose assigned CIP isn't in the current crosswalk" }, []);
+    var fcb = el("input", { type: "checkbox" }); fcb.checked = !!st.progFlagOnly;
+    fcb.onchange = function () { st.progFlagOnly = fcb.checked; repaintProgList(); };
+    var flagTogTxt = document.createTextNode(" Needs revision only");
+    flagTog.appendChild(fcb); flagTog.appendChild(flagTogTxt);
+    tools.appendChild(flagTog);
+    host.appendChild(tools);
+    host.appendChild(summary);
+    var listHostP = el("div", { class: "cipx-prog-list" }, []);
+    host.appendChild(listHostP);
+    function repaintProgList() {
+      var flagged = rows.filter(function (r) { return progNeedsRevision(r[3], progCip(r[1], r[4])); });
+      var noCip = rows.filter(function (r) { return !progCip(r[1], r[4]); });
+      clear(summary);
+      summary.appendChild(document.createTextNode(rows.length.toLocaleString() + " programs · "));
+      summary.appendChild(el("b", { class: flagged.length ? "cipx-prog-flagword" : "" }, [flagged.length.toLocaleString() + " need revision"]));
+      summary.appendChild(document.createTextNode(" · " + noCip.length.toLocaleString() + " with no CIP yet."));
+      flagTogTxt.textContent = " Needs revision only (" + flagged.length + ")";
+      clear(listHostP);
+      var shown = rows.filter(function (r) {
+        if (st.progFlagOnly && !progNeedsRevision(r[3], progCip(r[1], r[4]))) return false;
+        if (st.progQ) { var hay = (r[2] + " " + (progCip(r[1], r[4]) || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
+        return true;
+      });
+      shown.sort(function (a, b) {
+        var fa = progNeedsRevision(a[3], progCip(a[1], a[4])) ? 0 : 1, fb = progNeedsRevision(b[3], progCip(b[1], b[4])) ? 0 : 1;
+        if (fa !== fb) return fa - fb;
+        return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
+      });
+      listHostP.appendChild(el("div", { class: "cipx-prog-showing" }, ["Showing " + shown.length.toLocaleString() + (shown.length === 1 ? " program" : " programs") + (st.progFlagOnly ? " needing revision" : "") + " — the ones needing a look are first."]));
+      shown.slice(0, 400).forEach(function (r) { listHostP.appendChild(programRow(r, repaintProgList)); });
+      if (shown.length > 400) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
+    }
+    repaintProgList();
+    return host;
+  }
+
+  function programRow(r, repaint) {
+    var ctrl = r[1], title = r[2], top = r[3], assigned = r[4], award = PROGRAMS.awards[r[5]] || "", cte = r[9] === 1;
+    var chosen = progCip(ctrl, assigned);
+    var needsRev = progNeedsRevision(top, chosen);
+    var cipRow = BYCODE[chosen];
+    var row = el("div", { class: "cipx-prog-item" + (needsRev ? " cipx-prog-item-flag" : "") }, []);
+    var l1 = el("div", { class: "cipx-prog-l1" }, [el("span", { class: "cipx-prog-title" }, [title])]);
+    if (award) l1.appendChild(el("span", { class: "cipx-prog-award", title: award }, [award.length > 40 ? award.slice(0, 38).trim() + "…" : award]));
+    if (cte) l1.appendChild(el("span", { class: catClass("CTE"), title: "CTE program (GOAL: Career Technical Education)" }, ["CTE"]));
+    row.appendChild(l1);
+    var l2 = el("div", { class: "cipx-prog-l2" }, [
+      el("span", { class: "cipx-prog-top" }, ["TOP ", el("b", {}, [top || "—"])]),
+      el("span", { class: "cipx-prog-arrow", "aria-hidden": "true" }, ["→"]),
+    ]);
+    l2.appendChild(el("span", { class: "cipx-prog-cip" + (needsRev ? " cipx-prog-cip-flag" : "") }, [
+      chosen ? el("span", { class: "cipx-code" }, [chosen]) : el("span", { class: "cipx-prog-nocip" }, ["— no CIP —"]),
+      cipRow ? el("span", { class: "cipx-prog-cipt" }, [cipRow.t]) : null,
+      (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [cipRow.cat]) : null,
+    ]));
+    row.appendChild(l2);
+    if (needsRev) {
+      var tc = TOPCIP[top];
+      var flag = el("div", { class: "cipx-prog-rev" }, [
+        el("span", { class: "cipx-prog-revflag" }, ["⚑ needs revision"]),
+        el("span", {}, [" — the assigned CIP isn't in the current crosswalk for TOP " + top + (tc && tc.t ? " · " + tc.t : "") + ". Choose the current-crosswalk CIP:"]),
+      ]);
+      var psel = el("select", { class: "cipx-fsel cipx-prog-revsel", "aria-label": "Revise the CIP for " + title }, [el("option", { value: "" }, ["Keep " + (chosen || "—") + " (assigned)"])]);
+      (tc && tc.c || []).forEach(function (ct) { var rr = BYCODE[ct[0]]; psel.appendChild(el("option", { value: ct[0] }, [ct[0] + (rr ? " · " + rr.t : "")])); });
+      if (progEntry(ctrl).cip) psel.value = progEntry(ctrl).cip;
+      psel.onchange = function () { progSetField(ctrl, "cip", psel.value); if (repaint) repaint(); };
+      flag.appendChild(psel);
+      row.appendChild(flag);
+    }
+    if (cipRow && cipRow.cat === "Both") {
+      var cur = progEntry(ctrl).cte || "";
+      var cteWrap = el("div", { class: "cipx-prog-cte" + (cur ? "" : " cipx-rev-cte-unset") }, [el("span", { class: "cipx-rev-ctelbl" }, ["This CIP is Both — use as:"])]);
+      [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
+        var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false" }, [o[1]]);
+        b.onclick = function () { progSetField(ctrl, "cte", cur === o[0] ? "" : o[0]); if (repaint) repaint(); };
+        cteWrap.appendChild(b);
+      });
+      row.appendChild(cteWrap);
+    }
+    return row;
+  }
+
   function reviewView() {
     loadStatusCounts();
     var v = el("div", { class: "cipx-rev" }, []);
@@ -2263,10 +2403,33 @@
   // ═══════════════════════════════════════════════════════════════════════════
   // Hairline tab glyphs (24-viewBox paths): an open book (browse the list), a
   // magnifier (find one course), a clipboard-with-check (review + confirm a catalog).
+  // Top-level scope toggle (Sam, 2026-07-28): Courses vs Programs is the FIRST decision — a curator is
+  // coding one or the other. It sits ABOVE the mode tabs; everything below adapts to the pick.
+  function scopeBar() {
+    var bar = el("div", { class: "cipx-scopebar", role: "tablist", "aria-label": "Code your courses or your programs" }, []);
+    bar.appendChild(el("span", { class: "cipx-scopebar-l", "aria-hidden": "true" }, ["Code my:"]));
+    [["courses", "Courses"], ["programs", "Programs"]].forEach(function (s) {
+      var on = st.scope === s[0];
+      var b = el("button", { class: "cipx-scopetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [s[1]]);
+      b.onclick = function () {
+        if (st.scope === s[0]) return;
+        st.scope = s[0];
+        try { localStorage.setItem(SCOPE_KEY, s[0]); } catch (e) {}
+        if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";   // no course-first easy button for programs
+        rebuildShell();
+      };
+      bar.appendChild(b);
+    });
+    return bar;
+  }
   function modeBar() {
     var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
     // Review leads — it's the primary workflow now (Sam, 2026-07-18: "make Review the first tab + default").
-    [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]].forEach(function (m) {
+    // Programs scope drops the course-first "Find my course's code" and relabels Review.
+    var tabs = (st.scope === "programs")
+      ? [["review", "Review my programs"], ["browse", "Browse codes"]]
+      : [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]];
+    tabs.forEach(function (m) {
       var on = st.mode === m[0];
       var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [m[1]])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
       b.onclick = function () {
@@ -2382,9 +2545,13 @@
     wrapEl = el("div", { class: "cipx" }, []);
     applyTheme(savedTheme() === "dark" ? "dark" : "light");
     wrapEl.appendChild(header());
+    wrapEl.appendChild(scopeBar());
     wrapEl.appendChild(modeBar());
     wrapEl.appendChild(collegeBar());
-    if (st.mode === "recommend") {
+    var programsReview = (st.scope === "programs" && st.mode === "review");
+    if (programsReview) {
+      wrapEl.appendChild(programsView());
+    } else if (st.mode === "recommend") {
       wrapEl.appendChild(recommendView());
     } else if (st.mode === "review") {
       wrapEl.appendChild(reviewView());
@@ -2399,8 +2566,9 @@
     wrapEl.appendChild(footer());
     root.appendChild(wrapEl);
     fetchColleges();
-    if (st.mode === "review" || st.mode === "recommend") loadConsensus();
-    if (st.college) loadCollege(st.college);
+    if (programsReview) loadPrograms();
+    if (st.mode === "review" && st.scope === "courses" || st.mode === "recommend") loadConsensus();
+    if (st.college && st.scope === "courses") loadCollege(st.college);
     bindStickyResize();
     (window.requestAnimationFrame || setTimeout)(syncStickyOffsets, 0);   // publish the college-bar height for the sticky tiles offset
   }
@@ -2549,6 +2717,37 @@
       ".cipx-cand-card .cipx-detail{padding:0 14px 16px 122px;}",
       ".cipx-fitfoot{font-size:.76rem;color:var(--cipx-muted);margin:12px 2px 2px;font-style:italic;line-height:1.55;max-width:80ch;}",
       // recommend mode — mode toggle + course-first result
+      ".cipx-scopebar{display:inline-flex;gap:8px;align-items:center;margin:14px 0 2px;}",
+      ".cipx-scopebar-l{font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-accent);}",
+      ".cipx-scopetab{font-family:inherit;font-size:.92rem;font-weight:700;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1.5px solid var(--cipx-border-strong);border-radius:9px;padding:7px 18px;cursor:pointer;}",
+      ".cipx-scopetab:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
+      ".cipx-scopetab.on{color:#fff;background:var(--cipx-accent);border-color:var(--cipx-accent);}",
+      ".cipx-scopetab:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      // Programs review
+      ".cipx-prog{margin-top:6px;}",
+      ".cipx-prog-intro{color:var(--cipx-text-soft);font-size:.95rem;line-height:1.5;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:4px 0 12px;}",
+      ".cipx-prog-flagword{color:var(--cipx-bad-fg);font-weight:700;}",
+      ".cipx-prog-nudge{color:var(--cipx-muted);font-size:.95rem;padding:16px 4px;}",
+      ".cipx-prog-tools{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:10px 0 6px;}",
+      ".cipx-prog-search{max-width:420px;flex:1 1 260px;}",
+      ".cipx-prog-flagtog{display:inline-flex;gap:7px;align-items:center;font-size:.86rem;color:var(--cipx-text-soft);cursor:pointer;white-space:nowrap;}",
+      ".cipx-prog-summary{font-size:.9rem;color:var(--cipx-text-soft);margin:2px 0 8px;}",
+      ".cipx-prog-showing{font-size:.82rem;color:var(--cipx-muted);margin:4px 2px 8px;}",
+      ".cipx-prog-list{display:flex;flex-direction:column;}",
+      ".cipx-prog-item{border:1px solid var(--cipx-border);border-radius:11px;padding:11px 14px;margin-bottom:8px;background:var(--cipx-surface);}",
+      ".cipx-prog-item-flag{border-color:var(--cipx-bad-stripe);border-left:4px solid var(--cipx-bad-stripe);background:var(--cipx-bad-bg);}",
+      ".cipx-prog-l1{display:flex;gap:9px;align-items:baseline;flex-wrap:wrap;min-width:0;}",
+      ".cipx-prog-title{font-weight:650;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 60%;}",
+      ".cipx-prog-award{font-size:.72rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px;flex:0 1 auto;min-width:0;}",
+      ".cipx-prog-l2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:.9rem;}",
+      ".cipx-prog-top{color:var(--cipx-text-soft);}.cipx-prog-arrow{color:var(--cipx-muted);}",
+      ".cipx-prog-cip{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0;}",
+      ".cipx-prog-cipt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;}",
+      ".cipx-prog-nocip{color:var(--cipx-bad-fg);font-weight:600;font-style:italic;}",
+      ".cipx-prog-rev{margin-top:8px;font-size:.86rem;color:var(--cipx-text-soft);line-height:1.5;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-prog-revflag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-bad-fg);background:var(--cipx-bad-bg);border:1px solid var(--cipx-bad-stripe);border-radius:6px;padding:2px 8px;white-space:nowrap;}",
+      ".cipx-prog-revsel{max-width:100%;}",
+      ".cipx-prog-cte{margin-top:8px;display:inline-flex;gap:5px;align-items:center;}",
       ".cipx-modebar{display:inline-flex;gap:4px;background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:4px;margin:14px 0 12px;}",
       ".cipx-modetab{font-family:inherit;font-size:.86rem;font-weight:650;color:var(--cipx-text-soft);background:transparent;border:0;border-radius:7px;padding:8px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}",
       ".cipx-tabico{flex:none;opacity:.9;}",
@@ -2814,6 +3013,7 @@
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
         ".cipx-vbody{padding:12px 13px;}.cipx-vpill{font-size:.68rem;padding:3px 8px;}.cipx-vtext{font-size:.92rem;}.cipx-vmeterrow{flex-wrap:wrap;gap:6px;}.cipx-vmeterlbl{white-space:normal;}" +
         ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
+        ".cipx-scopebar{flex-wrap:wrap;}.cipx-scopetab{flex:1 1 40%;text-align:center;}.cipx-prog-search{flex:1 1 100%;max-width:100%;}.cipx-prog-revsel{flex:1 1 100%;max-width:100%;width:100%;min-width:0;}.cipx-prog-cip{min-width:0;}.cipx-prog-cipt{overflow:hidden;text-overflow:ellipsis;}" +
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
         ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}" +
@@ -2859,6 +3059,10 @@
     _setColleges: function (m) { FIT_COLLEGES = m; },
     _setCourses: function (slug, arr) { FIT_CACHE[slug] = arr; },
     _setMode: function (mode) { st.mode = (mode === "browse" || mode === "recommend") ? mode : "review"; },
+    _setScope: function (s) { st.scope = (s === "programs") ? "programs" : "courses"; },
+    _setPrograms: function (p) { PROGRAMS = p; },
+    _setProgCollege: function (i) { st.progCollege = i; },
+    _progNeedsRevision: progNeedsRevision,
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
     _parseSubject: parseSubject, _reviewRows: function (courses) { return (courses || []).map(reviewRowOf); },
