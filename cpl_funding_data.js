@@ -141,7 +141,7 @@ window.CPL_FUNDING = {
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
  "rural_threshold": 0.5,
- "rural_source": "DRAFT roster \u2014 seeded from the CCCCO Rural College Transfer Collaborative cohort (10 colleges); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
+ "rural_source": "The 13 California Community Colleges federally categorized as rural (superseding the 10-college CCCCO Rural College Transfer Collaborative demo cohort, which was invitation-based); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
  "participation_deadline": "2026-09-01",
  "extra_reqs": [],
  "coord_req_label": "CPL Coordinator listed in MAP",
@@ -239,7 +239,6 @@ window.CPL_FUNDING = {
   {
    "order": 8,
    "college": "Butte",
-   "rural": true,
    "headcount": 13448,
    "district": "Butte-Glenn Community College District",
    "county": "Butte",
@@ -284,7 +283,6 @@ window.CPL_FUNDING = {
   {
    "order": 53,
    "college": "Lake Tahoe",
-   "rural": true,
    "headcount": 9259,
    "district": "Lake Tahoe Community College District",
    "county": "El Dorado",
@@ -329,6 +327,7 @@ window.CPL_FUNDING = {
   {
    "order": 112,
    "college": "West Hills Coalinga",
+   "rural": true,
    "headcount": 6593,
    "district": "West Hills Community College District",
    "county": "Fresno",
@@ -352,6 +351,7 @@ window.CPL_FUNDING = {
   {
    "order": 44,
    "college": "Imperial",
+   "rural": true,
    "headcount": 11715,
    "district": "Imperial Community College District",
    "county": "Imperial",
@@ -374,6 +374,7 @@ window.CPL_FUNDING = {
   {
    "order": 13,
    "college": "Cerro Coso",
+   "rural": true,
    "headcount": 11492,
    "district": "Kern Community College District",
    "county": "Kern",
@@ -385,6 +386,7 @@ window.CPL_FUNDING = {
   {
    "order": 109,
    "college": "Taft",
+   "rural": true,
    "headcount": 6861,
    "district": "West Kern Community College District",
    "county": "Kern",
@@ -672,7 +674,6 @@ window.CPL_FUNDING = {
   {
    "order": 61,
    "college": "Mendocino",
-   "rural": true,
    "headcount": 9311,
    "district": "Mendocino-Lake Community College District",
    "county": "Mendocino",
@@ -894,6 +895,7 @@ window.CPL_FUNDING = {
   {
    "order": 78,
    "college": "Palo Verde",
+   "rural": true,
    "headcount": 6472,
    "district": "Palo Verde Community College District",
    "county": "Riverside",
@@ -960,6 +962,7 @@ window.CPL_FUNDING = {
   {
    "order": 6,
    "college": "Barstow",
+   "rural": true,
    "headcount": 5274,
    "district": "Barstow Community College District",
    "county": "San Bernardino",
@@ -982,6 +985,7 @@ window.CPL_FUNDING = {
   {
    "order": 22,
    "college": "Copper Mountain",
+   "rural": true,
    "headcount": 2278,
    "district": "Copper Mountain Community College District",
    "county": "San Bernardino",
@@ -1369,6 +1373,7 @@ window.CPL_FUNDING = {
   {
    "order": 19,
    "college": "Columbia",
+   "rural": true,
    "headcount": 4795,
    "district": "Yosemite Community College District",
    "county": "Tuolumne",
@@ -1413,7 +1418,6 @@ window.CPL_FUNDING = {
   {
    "order": 116,
    "college": "Woodland",
-   "rural": true,
    "headcount": 7319,
    "district": "Yuba Community College District",
    "county": "Yolo",
@@ -1425,7 +1429,6 @@ window.CPL_FUNDING = {
   {
    "order": 117,
    "college": "Yuba",
-   "rural": true,
    "headcount": 10797,
    "district": "Yuba Community College District",
    "county": "Yuba",

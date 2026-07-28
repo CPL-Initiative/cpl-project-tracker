@@ -252,6 +252,9 @@
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
+    // Rural tree glyph (Sam, 2026-07-28): larger but muted (desaturated + dimmed)
+    // so it reads as a quiet marker, not a bright emoji.
+    ".cplfund-chip.cplfund-tree { font-size: 1.05rem; opacity: .5; filter: grayscale(.55); vertical-align: -1px; }",
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
@@ -2484,7 +2487,7 @@
   }
   function rowChips(c) {
     var chips = "";
-    if (c.rural) chips += '<span class="cplfund-chip" title="Rural college (DRAFT roster) — eligible for the rural performance allowance below">🌲</span>';
+    if (c.rural) chips += '<span class="cplfund-chip cplfund-tree" title="Rural college (federally categorized) — eligible for the rural allowance folded into its row + the section below">🌲</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
     return chips;
   }

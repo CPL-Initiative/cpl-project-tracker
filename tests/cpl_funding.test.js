@@ -868,13 +868,15 @@ check("data: disbursement defaults to even tranches", D.disbursement === "even")
 check("data: minimum-viable floor default $150K/window", D.pool.floor_window === 150000);
 check("data: rural carve-out default $1M", D.pool.rural_carveout === 1000000);
 check("data: rural threshold default 50%", D.rural_threshold === 0.5);
-check("data: exactly the 10 RCTC colleges are rural-flagged",
-  D.colleges.filter(function (c) { return c.rural; }).length === 10 &&
-  ["Butte", "Redwoods", "Siskiyous", "Feather River", "Lassen",
-   "Lake Tahoe", "Mendocino", "Shasta", "Woodland", "Yuba"].every(function (n) {
+check("data: exactly the 13 federally-rural colleges are rural-flagged",
+  D.colleges.filter(function (c) { return c.rural; }).length === 13 &&
+  ["Siskiyous", "Feather River", "Lassen", "Redwoods", "Shasta",
+   "Columbia", "Cerro Coso", "Taft", "West Hills Coalinga", "Barstow",
+   "Palo Verde", "Copper Mountain", "Imperial"].every(function (n) {
     return D.colleges.some(function (c) { return c.college === n && c.rural === true; });
   }));
-check("data: rural roster carries a DRAFT provenance note", /DRAFT/.test(D.rural_source || ""));
+check("data: rural roster provenance cites the federal rural categorization",
+  /federally categorized as rural/.test(D.rural_source || ""));
 check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
 
 // D1 — minimum-viable floor: waterfall math (model-level, via test hooks).
@@ -895,7 +897,10 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("floor model: largest college (East LA) stays proportional (well above floor)",
     m.W["East LA"] > 900000);
   const cm = T._alloc("Copper Mountain");
-  check("floored college's window total = the floor", Math.abs(cm.total - m.floor) < 0.01);
+  // Copper Mountain is now BOTH floored and (federally) rural — its window total
+  // is the floor PLUS its folded rural allowance.
+  check("floored college's window total = the floor + its rural allowance",
+    cm.rural_w > 0 && Math.abs(cm.total - (m.floor + cm.rural_w)) < 0.01);
   check("floored college is flagged for the ⬆ chip", cm.floored === true);
 
   // UI: floor pool card + chip + drill-in line.
@@ -980,40 +985,43 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "") &&
     /earmarked within the pool|folded into rural/.test(ruralCard.textContent)));
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
-  check("rural section lists the 10 rural-flagged colleges",
-    ruralTable && ruralTable.querySelectorAll("tbody tr").length === 10);
-  const perRural = D.pool.rural_carveout / 10;
+  check("rural section lists the 13 rural-flagged colleges",
+    ruralTable && ruralTable.querySelectorAll("tbody tr").length === 13);
+  const perRural = Math.round(D.pool.rural_carveout / 13);   // $76,923 (rendered rounds)
   check("each rural college can earn an equal share ($" + perRural.toLocaleString() + ")",
     ruralTable.textContent.indexOf("$" + perRural.toLocaleString("en-US")) !== -1);
   check("no actuals loaded → every rural row is pending data",
     Array.from(ruralTable.querySelectorAll("tbody tr")).every(function (tr) {
       return tr.textContent.indexOf("pending data") !== -1;
     }));
-  const butteRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Butte") !== -1;
+  const shastaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Shasta") !== -1;
   });
-  check("rural college row carries the 🌲 chip", butteRow && butteRow.innerHTML.indexOf("🌲") !== -1);
+  check("rural college row carries the 🌲 chip", shastaRow && shastaRow.innerHTML.indexOf("🌲") !== -1);
+  check("the rural 🌲 glyph is the larger, muted variant (cplfund-tree)",
+    !!(shastaRow && shastaRow.querySelector(".cplfund-tree")) &&
+    /\.cplfund-chip\.cplfund-tree \{[^}]*opacity: \.5;[^}]*filter: grayscale/.test(consumerSrc));
 
   // With actuals: each priority's slice is earned IN PROPORTION once it clears the
-  // floor (Sam, 2026-07-27 — per-priority + ≥50% floor). Feed Butte high on every
+  // floor (Sam, 2026-07-27 — per-priority + ≥50% floor). Feed Shasta high on every
   // src so all its measurable Year-1 slices fully unlock → earns its full allowance.
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
     statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
-    colleges: { "Butte": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } },
+    colleges: { "Shasta": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } },
     unmatched: {}
   };
   T.render();
   const ruralTable2 = doc.querySelectorAll(".cplfund-table")[2];
-  const butteRural = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Butte") !== -1;
+  const shastaRural = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Shasta") !== -1;
   });
   const perRuralStr = "$" + perRural.toLocaleString("en-US");
   check("rural: a college over its Year-1 targets earns (green chip) its full allowance",
-    butteRural && !!butteRural.querySelector(".cf-rchip.ok") &&
-    butteRural.textContent.indexOf(perRuralStr) !== -1);
-  check("rural tfoot counts colleges earning (1 of 10) on current data",
-    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 10 earning") !== -1);
+    shastaRural && !!shastaRural.querySelector(".cf-rchip.ok") &&
+    shastaRural.textContent.indexOf(perRuralStr) !== -1);
+  check("rural tfoot counts colleges earning (1 of 13) on current data",
+    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 13 earning") !== -1);
 
   // The threshold is the per-priority FLOOR: raise it to 200% → no slice can unlock
   // (attainment caps at 100%) → Butte earns $0 and no green chips.
@@ -1021,18 +1029,19 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   commit(window, thr, "200");
   check("threshold edit persisted (scenario)", T._getScenario().ruralThreshold === 2);
   const ruralTable3 = doc.querySelectorAll(".cplfund-table")[2];
-  check("raised floor locks every slice → 0 of 10 earning",
-    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 10 earning") !== -1 &&
+  check("raised floor locks every slice → 0 of 13 earning",
+    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 13 earning") !== -1 &&
     !ruralTable3.querySelector(".cf-rchip.ok"));
 
-  // Rural flag override via config (the drill-in button's write path).
-  T._setScenario({ ruralOverrides: { "Alameda": true, "Butte": false } });
+  // Rural flag override via config (the drill-in button's write path): add a
+  // non-rural college (Alameda) and remove a rural one (Shasta).
+  T._setScenario({ ruralOverrides: { "Alameda": true, "Shasta": false } });
   T.render();
   const ruralTable4 = doc.querySelectorAll(".cplfund-table")[2];
   check("rural overrides add/remove colleges from the roster",
     ruralTable4.textContent.indexOf("Alameda") !== -1 &&
     Array.from(ruralTable4.querySelectorAll("tbody tr")).every(function (tr) {
-      return tr.textContent.indexOf("Butte") === -1;
+      return tr.textContent.indexOf("Shasta") === -1;
     }));
   delete window.CPL_FUNDING_PERF;
 }
@@ -1949,20 +1958,20 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   // slices unlock and earn (green chips); the floor test (D3) covers the lock.
   window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
     statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
-    colleges: { "Butte": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } }, unmatched: {} };
+    colleges: { "Shasta": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } }, unmatched: {} };
   T.render();
   const rt2 = doc.querySelectorAll(".cplfund-table")[2];
-  const butteRow = Array.from(rt2.querySelectorAll("tbody tr")).find(function (tr) { return /Butte/.test(tr.textContent); });
+  const shastaRow = Array.from(rt2.querySelectorAll("tbody tr")).find(function (tr) { return /Shasta/.test(tr.textContent); });
   check("K2: a rural college over its Year-1 targets shows a green (unlocked) priority chip",
-    !!butteRow.querySelector(".cf-rchip.ok"));
+    !!shastaRow.querySelector(".cf-rchip.ok"));
   check("K2: that college's Earned-so-far cell shows a positive dollar",
-    /\$[1-9]/.test(butteRow.querySelectorAll("td")[3].textContent));
+    /\$[1-9]/.test(shastaRow.querySelectorAll("td")[3].textContent));
   check("K2: rural tfoot reports colleges earning + the earned pool",
     rt2.querySelector("tfoot").textContent.indexOf("earning on current data") !== -1);
   // Drill-in mirrors the per-priority earning (chips in the college row detail).
   // NOTE: click triggers a full re-render, so re-query the detail from the fresh DOM.
-  const butteMain = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) { return /Butte/.test(tr.textContent); });
-  click(window, butteMain);
+  const shastaMain = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) { return /Shasta/.test(tr.textContent); });
+  click(window, shastaMain);
   const detail = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-detail")).find(function (tr) { return tr.textContent.indexOf("Rural allowance") !== -1; });
   check("K3: the college drill-in rural line shows per-priority chips + earned-so-far",
     !!detail && detail.textContent.indexOf("split across the 3 priorities") !== -1 &&
@@ -2039,7 +2048,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
       .find(function (tr) { return tr.textContent.indexOf(name) !== -1; });
     return row ? (row.querySelector("td.cf-prio").getAttribute("title") || "") : "";
   }
-  const cmTitle = firstPrioTitle("Copper Mountain");
+  // Alameda is floored but NOT rural — a clean floor-only hover (Copper Mountain
+  // is now both floored AND federally rural, so it would mention both).
+  const cmTitle = firstPrioTitle("Alameda");
   check("L5: a floored college's cell hover explains the minimum-viable floor top-up + a /student rate",
     /minimum-viable floor/.test(cmTitle) && /\/student/.test(cmTitle));
   check("L5: a non-floored college's cell hover cites the statewide base rate",
@@ -2105,7 +2116,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const D = window.CPL_FUNDING;
-  const rc = T._alloc("Butte");      // rural
+  const rc = T._alloc("Shasta");     // rural (federally categorized)
   const pc = T._alloc("Alameda");    // not rural
   // M1 — a rural college carries a positive rural window; a plain one carries none.
   check("M1: a rural college's alloc carries a positive rural_w", rc.rural_w > 0);
@@ -2123,7 +2134,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     sysTot && sysTot.textContent.indexOf(Math.round(sumTotals).toLocaleString("en-US")) !== -1);
   // M4 — the rural college's cell hover discloses the folded allowance + the unlock assumption.
   const bRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (tr) { return /Butte/.test(tr.textContent); });
+    .find(function (tr) { return /Shasta/.test(tr.textContent); });
   const bTitle = bRow.querySelector("td.cf-prio").getAttribute("title") || "";
   check("M4: a rural college's cell hover names the rural allowance + the unlock assumption",
     /rural allowance/.test(bTitle) && /unlock/.test(bTitle));
