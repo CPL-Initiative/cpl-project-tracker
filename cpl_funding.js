@@ -59,7 +59,19 @@
 
   var CSS_ID = "cpl-funding-css";
   var CSS = [
-    ".cplfund { color: var(--text-body); }",
+    // Use the FULL width of the tab (Sam, 2026-07-28) — the shared .main-container
+    // caps every tab at 1400px; the funding model's wide college table wants the
+    // whole viewport, so drop the cap for THIS pane only (scoped — other tabs
+    // keep the 1400px cap). Injected from JS so it covers both HTMLs (no Rule-4
+    // mirror). Padding stays as the edge gutter.
+    "#tab-implementation-funding .main-container { max-width: none; }",
+    // Left-justify the whole tab for readability (Sam, 2026-07-28) — the mount
+    // div carries an inline text-align:center (the pre-boot placeholder); override
+    // it for everything the renderer draws. Stat cards re-center explicitly below.
+    ".cplfund { color: var(--text-body); text-align: left; }",
+    ".cplfund-card { text-align: center; }",
+    // Screen-reader-only utility (a11y, 2026-07-28).
+    ".cplfund-sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }",
     ".cplfund-src { font-size: .8rem; color: var(--text-faint); margin: -6px 0 14px; }",
     ".cplfund-src a { color: var(--accent-link); }",
     ".cplfund h3 { color: var(--navy-primary); margin: 22px 0 10px; font-size: 1.15rem; }",
@@ -130,8 +142,14 @@
     ".cplfund-timing-date { flex: 0 0 100px; width: 100px; text-align: right; }",
     ".cplfund-timing-row.nodate .cplfund-timing-label { font-style: italic; color: var(--text-muted); }",
     ".cplfund-timingadd { margin-top: 8px; }",
-    ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; }",
+    ".cplfund-formula { background: var(--surface-muted); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .9rem; line-height: 1.55; text-align: left; }",
     ".cplfund-formula code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 1px 6px; white-space: nowrap; }",
+    // Bulleted, left-justified explainer (Sam, 2026-07-28) — each idea is its own
+    // left-aligned bullet instead of one running paragraph.
+    ".cplfund-formula .lead { margin: 0 0 8px; }",
+    ".cplfund-formula ul.cplfund-formula-list { margin: 0; padding-left: 20px; list-style: disc; }",
+    ".cplfund-formula ul.cplfund-formula-list li { margin: 6px 0; padding-left: 2px; }",
+    ".cplfund-formula ul.cplfund-formula-list li::marker { color: var(--gold-accent); }",
     ".cplfund-toolbar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 10px; }",
     ".cplfund-toolbar input[type=search] { padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; font-size: .9rem; min-width: 220px; }",
     ".cplfund-toolbar input:focus { outline: none; border-color: var(--navy-secondary); }",
@@ -157,7 +175,11 @@
     ".cplfund-table tbody tr.cplfund-systemrow td { font-weight: 700; color: var(--navy-primary); background: var(--surface-muted); border-top: none; border-bottom: 2px solid var(--seal-blue); }",
     ".cplfund-table tbody tr.cplfund-systemrow:hover td { background: var(--surface-muted); }",
     ".cplfund-table td .sub { display: block; font-weight: 400; font-size: .75rem; color: var(--text-faint); }",
-    ".cplfund-caret { display: inline-block; width: 1em; color: var(--text-faint); transition: transform .12s; }",
+    // The caret is a real <button> (a11y, 2026-07-28) — reset the button chrome
+    // so it still reads as a bare caret glyph, keep it keyboard-focusable.
+    ".cplfund-caret { display: inline-block; width: 1.2em; color: var(--text-faint); transition: transform .12s; background: none; border: none; padding: 0; margin: 0 1px 0 0; font: inherit; line-height: 1; cursor: pointer; vertical-align: baseline; }",
+    ".cplfund-caret:hover { color: var(--navy-secondary); }",
+    ".cplfund-caret:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; border-radius: 3px; }",
     "tr.cplfund-open .cplfund-caret { transform: rotate(90deg); }",
     "tr.cplfund-detail td { background: var(--surface-subtle); border-top: none; text-align: left; white-space: normal; padding: 10px 16px 12px 30px; cursor: default; }",
     ".cplfund-detail-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 6px 22px; font-size: .83rem; }",
@@ -258,15 +280,21 @@
     ".cplfund-colmenu-panel { position: absolute; z-index: 30; top: 100%; left: 0; margin-top: 4px; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 9px 11px; box-shadow: 0 3px 12px rgba(0,0,0,.14); min-width: 180px; max-height: 320px; overflow-y: auto; display: grid; gap: 4px; }",
     ".cplfund-colmenu-h { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; margin-bottom: 2px; }",
     ".cplfund-colmenu-item { display: flex; align-items: center; gap: 7px; font-size: .8rem; white-space: nowrap; cursor: pointer; }",
-    // Per-priority P1/P2/P3 columns (Sam, 2026-07-24): each cell stacks the
-    // TARGET (top: projected students · cap) over the ACTUAL (bottom: students
-    // posted in MAP · earned, % of target) — so a college sees its standing
-    // inline, no drill-in needed.
-    ".cplfund-table td.cf-prio { line-height: 1.24; }",
+    // Per-priority P1/P2/P3 columns: each cell stacks the TARGET line
+    // (Tgt: projected students · funding cap) over the ACTUAL line (Now: students
+    // posted in MAP · earned $ · % of target) — so a college sees its standing
+    // inline, no drill-in needed. Redesigned 2026-07-28 (Sam): the per-student
+    // rate is no longer shown inline (it varies by college once the $150k floor
+    // tops up small colleges, which read as inequitable side-by-side) — instead
+    // the % of target is the shared yardstick and the effective rate + floor
+    // reason live in the cell hover. Real DOLLARS are bold; % + counts recede.
+    ".cplfund-table td.cf-prio { line-height: 1.28; }",
     ".cf-prio .cf-t { color: var(--text-muted); }",
-    // Actual line: the DOLLAR they're earning is the focal point (bold navy);
-    // the student count + % of target recede (Sam, 2026-07-27 — "get the focus
-    // in the right place"). Count sits directly in .cf-a (muted, normal weight).
+    // The row labels (Tgt / Now) — tiny, muted, so the numbers lead.
+    ".cf-prio .cf-lbl { font-size: .7rem; letter-spacing: .02em; color: var(--text-faint); font-weight: 600; margin-right: 2px; }",
+    // Real dollars are BOLD (Sam, 2026-07-28): the funding cap on the target line
+    // and the earned $ on the actual line. Counts + % stay normal weight.
+    ".cf-prio .cf-cap { font-weight: 700; color: var(--navy-secondary); }",
     ".cf-prio .cf-a { font-weight: 400; color: var(--text-muted); display: block; margin-top: 1px; }",
     ".cf-prio .cf-u { font-weight: 700; color: var(--navy-primary); }",
     ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 400; }",
@@ -288,8 +316,6 @@
     ".cplfund-sec-chev { color: var(--text-muted); transition: transform .15s; font-size: .8em; flex: 0 0 auto; }",
     ".cplfund-sec:not([open]) > summary .cplfund-sec-chev { transform: rotate(-90deg); }",
     ".cplfund-sec-body { padding: 2px 16px 14px; }",
-    // Per-priority cell: the per-student funding rate on the target line.
-    ".cf-prio .cf-rate { font-weight: 400; color: var(--navy-secondary); }",
     // Rural per-priority earning chips (Sam, 2026-07-27): one per priority, green
     // when its slice is unlocked (>= floor) + earning, muted when below the floor,
     // faint when not yet measurable.
@@ -302,7 +328,38 @@
     ".cplfund-fmeas-h { font-weight: 600; margin-bottom: 4px; }",
     ".cplfund-fmeas-list { margin: 0 0 6px; padding-left: 18px; }",
     ".cplfund-fmeas-list li { margin: 2px 0; }",
-    "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }"
+    // Sortable headers are keyboard-focusable (a11y, 2026-07-28) — give them a
+    // clear focus ring and an aria-sort arrow that mirrors the visible one.
+    ".cplfund-table th[tabindex]:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: -2px; }",
+    ".cplfund-seg button:focus-visible, .cplfund-optbtn:focus-visible, .cplfund-colmenu > summary:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    // ── mobile (Sam, 2026-07-28: make it mobile friendly) ──
+    "@media (max-width: 700px) { .cplfund-toolbar input[type=search] { min-width: 140px; flex: 1; } }",
+    // Reclaim the edge gutter + tighten the dense table on small screens so more
+    // fits before the horizontal-scroll safety net kicks in.
+    "@media (max-width: 640px) {",
+    "  #tab-implementation-funding .main-container { padding: 1rem 0.9rem; }",
+    "  .cplfund h3 { font-size: 1.05rem; }",
+    "  .cplfund-formula { font-size: .85rem; }",
+    "  .cplfund-formula code { white-space: normal; overflow-wrap: anywhere; }",
+    "  table.cplfund-table { font-size: .76rem; }",
+    "  .cplfund-table th, .cplfund-table td { padding: 4px 5px; }",
+    "  .cf-prio .cf-lbl { font-size: .62rem; }",
+    "  .cplfund-strip, .cplfund-basis { padding: 8px 10px; }",
+    // The project/scenario selects carry long option text — stack the strip and
+    // let the controls fill the row so a wide <select> can't push the page wider.
+    "  .cplfund-strip { flex-direction: column; align-items: stretch; gap: 8px; }",
+    "  .cplfund-ctl { max-width: 100%; }",
+    "  .cplfund-strip select, .cplfund-ed-sel, .cplfund-strip input, .cplfund-addproj select, .cplfund-addproj input { max-width: 100%; min-width: 0; }",
+    // The +Project name input carries an inline min-width:220px — override it so
+    // the curator add-state can't overflow on a narrow phone.
+    "  #cplFundProjName { min-width: 0 !important; }",
+    // The mount div carries an inline padding:28px (the pre-boot placeholder) —
+    // reclaim it on small screens. !important is needed to beat the inline style
+    // (the mount lives in the HTML, which this JS-only change doesn't touch).
+    "  #cplFundingMount { padding: 12px !important; }",
+    "  .cplfund-card { padding: 11px 12px; }",
+    "  .cplfund-card .v { font-size: 1.15rem; }",
+    "}"
   ].join("\n");
 
   function ensureCss() {
@@ -1936,13 +1993,25 @@
         "cap until their feed lands."
       : " Each priority&#39;s per-student rate sets its student <em>target</em> (funding &divide; rate); the target is a " +
         "performance goal &mdash; it doesn&#39;t move dollars, which are set by the allocation share.";
-    return '<div class="cplfund-formula">' +
+    // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
+    // instead of a single running paragraph. Each variable above is one <li>.
+    var trim = function (s) { return String(s).replace(/^\s+/, ""); };
+    var items = [
       "Each college&#39;s potential allocation of one annual tranche is " +
-      "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> " +
-      "per priority. " + shareSentence + ". " + cadenceSentence +
-      " Balance for Year " + state.viewSlot + ": <strong>" +
-      (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
-      "</strong>." + basisSentence + floorSentence + "</div>";
+        "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> per priority.",
+      shareSentence + ".",
+      cadenceSentence,
+      "Balance for Year " + state.viewSlot + ": <strong>" +
+        (balanced ? "$0 (exact)" : '<span class="cplfund-warn-text">' + balStr + "</span>") +
+        "</strong> &mdash; the annual pool is fully apportioned.",
+      trim(basisSentence)
+    ];
+    if (floorSentence) items.push(trim(floorSentence));
+    return '<div class="cplfund-formula">' +
+      '<p class="lead">How each college&#39;s allocation is built:</p>' +
+      '<ul class="cplfund-formula-list">' +
+      items.map(function (li) { return "<li>" + li + "</li>"; }).join("") +
+      "</ul></div>";
   }
 
   // ── college table state + shaping ─────────────────────────────────────
@@ -1977,41 +2046,65 @@
     return priorities(state.viewSlot).map(function (p, i) {
       return { key: "prio" + i, label: "P" + (i + 1), cls: "",
         title: p.label + " — " + p.title + ": " + stripTags(p.description) +
-          " · METRIC: " + stripTags(p.metric) + ". Funding rate " + fmtRate(p.per_student) + "/student. " +
-          "Cell: top = target (projected students · $/student rate), bottom = actual (posted in MAP · earned, % of target)." };
+          " · METRIC: " + stripTags(p.metric) + ". " +
+          "Each cell: top = Tgt (target students · funding cap), bottom = Now (students posted in MAP · earned $ · % of target). " +
+          "Hover a cell for the effective $/student rate." };
     });
   }
-  // One priority cell: TARGET (students · $/student rate) over ACTUAL (students ·
-  // earned · %). The per-student rate (Sam, 2026-07-27) is the priority's policy
-  // rate — funding ÷ target students — shown on the row so a college reads its
-  // funding as "$X per student" rather than a bare percent. c = shaped college
-  // row (or a base college); isSystem uses statewide totals.
+  // One priority cell: a TARGET line ("Tgt N stu · $cap") over an ACTUAL line
+  // ("Now N stu · $earned · %"). Redesigned 2026-07-28 (Sam) for non-techie
+  // clarity + an EQUITABLE look: the per-student rate is NOT shown inline —
+  // it varies by college once the $150k floor tops up small colleges, and a
+  // $38-vs-$47 spread side by side reads as unequal. Instead every college is
+  // measured on the same yardstick, "% of its own target," real dollars stay
+  // true (they match the Yr/Total columns), and the effective $/student + the
+  // floor reason live in the cell HOVER (Sam: "add a hover to explain the
+  // per-student amount difference"). Counts + % are normal weight; the real
+  // DOLLARS (cap + earned) are bold. c = shaped college row; isSystem = totals.
   function prioCellHtml(c, p, isSystem) {
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = heads * p.target_rate;
     var cap = isSystem ? (netCollege() * p.share / nYears()) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
     var earned = cap * fr.f;
-    var perStu = p.per_student || (target > 0 ? cap / target : 0);
-    var rateStr = perStu ? "$" + Math.round(perStu) + "/stu" : "—";
-    var actNum, pctStr = "";
+    // The row's OWN effective rate (cap ÷ target) — equals the statewide base for
+    // most colleges; higher for the small colleges topped up to the floor.
+    var effRate = target > 0 ? cap / target : 0;
+    var baseRate = p.per_student || effRate;   // statewide/average rate
+    var floored = !isSystem && c && c.floored;
+    // Actual line — a shared "% of target" yardstick, real earned dollars bold.
+    var actLine;
     if (fr.status === "earned") {
-      actNum = fmtCountK(fr.actual);
-      pctStr = target > 0 ? ' <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "";
-    } else if (fr.status === "suppressed") { actNum = '<span class="cf-gap">&lt;5</span>'; }
-    else if (fr.status === "gap") { actNum = '<span class="cf-gap">gap</span>'; }
-    else if (fr.status === "pending") { actNum = '<span class="cf-gap">&hellip;</span>'; }
-    else { actNum = "0"; }   // none — feed loaded, nothing posted
+      actLine = '<span class="cf-lbl">Now</span> ' + fmtCountK(fr.actual) + " stu &middot; " +
+        '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
+        (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
+    } else if (fr.status === "none") {
+      actLine = '<span class="cf-lbl">Now</span> 0 stu &middot; <span class="cf-u">' + fmtMoneyK(0) +
+        '</span> &middot; <span class="cf-pct">0%</span>';
+    } else if (fr.status === "suppressed") {
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">&lt;5</span> &middot; <span class="cf-u">' +
+        fmtMoneyK(earned) + "</span>";
+    } else {   // gap / pending — not measurable yet; advances at full cap
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
+        (fr.status === "gap" ? "gap" : "&hellip;") + '</span> &middot; <span class="cf-u">' + fmtMoneyK(earned) + "</span>";
+    }
     var actExplain = fr.status === "earned" ? fmtInt(fr.actual) + " students posted (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
       : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
       : "nothing posted in MAP yet";
-    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students · " + fmtRate(perStu) +
-      "/student policy rate · " + fmtMoney(cap) + " cap. Actual: " + actExplain + " → " + fmtMoney(earned) + " earned.";
+    // Hover — the full story incl. the effective per-student rate + WHY it differs.
+    var rateSentence = floored
+      ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
+        fmtRate(baseRate) + "/student statewide base because this college's window allocation was raised to the " +
+        fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up so they can stand up the program)."
+      : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(baseRate) + "/student statewide base rate.";
+    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" + fmtPctTrim(p.target_rate) +
+      " of headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) + '</span> <span class="cf-rate">' + rateStr + "</span></span>" +
-      '<span class="cf-a">' + actNum + ' <span class="cf-u">' + fmtMoneyK(earned) + pctStr + "</span></span>" +
+      '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtCountK(target) +
+      '</span> stu &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
+      '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
   }
   // CSV columns for the per-priority target/actual (matches the on-screen cells).
@@ -2074,12 +2167,20 @@
   // Open/closed is per-browser persisted (default open), so a curator can fold
   // away the parts they aren't working on and it stays folded across the many
   // re-renders that an edit triggers.
-  var SEC_STORE = "cplfund_sections_v1";
+  // v2 (Sam, 2026-07-28): every section starts COLLAPSED except the college
+  // allocation table — the tab leads with the table, the policy/model sections
+  // open on demand. Bumping the store key resets everyone to the new default
+  // (old v1 open-states are discarded). An explicit user toggle still persists.
+  var SEC_STORE = "cplfund_sections_v2";
+  var SECTION_DEFAULT_OPEN = { college: true };
   var SEC_STATE = (function () {
     try { var r = JSON.parse(localStorage.getItem(SEC_STORE)); if (r && typeof r === "object") return r; } catch (e) {}
     return {};
   })();
-  function sectionOpen(id) { return SEC_STATE[id] !== false; }   // default open
+  function sectionOpen(id) {
+    if (Object.prototype.hasOwnProperty.call(SEC_STATE, id)) return SEC_STATE[id] !== false;   // honor a saved toggle
+    return !!SECTION_DEFAULT_OPEN[id];   // default: only the college table is open
+  }
   function saveSectionState(id, open) {
     SEC_STATE[id] = !!open;
     try { localStorage.setItem(SEC_STORE, JSON.stringify(SEC_STATE)); } catch (e) {}
@@ -2358,9 +2459,14 @@
   }
   function collegeRowHtml(c) {
     var id = "c:" + c.order;
+    // The expand control is a real <button> on the caret (a11y, 2026-07-28) —
+    // keyboard-focusable + announced, WITHOUT overriding the row's table
+    // semantics. Its native Enter/Space fires a click that bubbles to the row's
+    // toggle handler; mouse users still click anywhere on the row.
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
-      '<td class="t"><span class="cplfund-caret">▸</span><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
+      '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
+      '" aria-label="' + esc(c.college + " — toggle per-priority detail") + '">▸</button><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
@@ -2494,7 +2600,9 @@
   function districtRowHtml(g) {
     var id = "d:" + g.district;
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
-      '<td class="t trunc" title="' + esc(g.district) + '"><span class="cplfund-caret">▸</span><strong>' + esc(districtShort(g.district)) + "</strong></td>" +
+      '<td class="t trunc" title="' + esc(g.district) + '"><button type="button" class="cplfund-caret" aria-expanded="' +
+      (state.open[id] ? "true" : "false") + '" aria-label="' + esc(g.district + " — toggle member colleges") +
+      '">▸</button><strong>' + esc(districtShort(g.district)) + "</strong></td>" +
       "<td>" + g.n + "</td>" +
       '<td class="t trunc" title="' + esc(g.counties) + '">' + esc(g.counties) + "</td>" +
       "<td>" + fmtInt(g.headcount) + "</td>" +
@@ -2518,10 +2626,16 @@
     var cols = activeCols();
     var sys = systemAlloc();
     var head = cols.map(function (col) {
-      var arr = state.sortKey === col.key ? ' <span class="arr">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
+      // Sortable headers are keyboard-operable (a11y, 2026-07-28): scope + role +
+      // tabindex + aria-sort mirror the visible arrow; the keydown handler in
+      // wireTable() sorts on Enter/Space.
+      var active = state.sortKey === col.key;
+      var arr = active ? ' <span class="arr" aria-hidden="true">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
+      var ariaSort = active ? (state.sortDir === 1 ? "ascending" : "descending") : "none";
       var titleVal = (col.key === "headcount" && base().headcount_label) ? base().headcount_label : col.title;
       var title = titleVal ? ' title="' + esc(titleVal) + '"' : "";
-      return '<th class="' + col.cls + '" data-sort="' + col.key + '"' + title + ">" + col.label + arr + "</th>";
+      return '<th class="' + col.cls + '" scope="col" role="columnheader" tabindex="0" aria-sort="' + ariaSort +
+        '" data-sort="' + col.key + '"' + title + ">" + col.label + arr + "</th>";
     }).join("");
     var body;
     if (!rows.length) {
@@ -2565,7 +2679,13 @@
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
     // sorted rows and is not itself a sortable/clickable .cplfund-row.
-    return colHideStyleHtml() + '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
+    var caption = "Potential CPL implementation funding allocation by " +
+      (state.view === "district" ? "district" : "college") +
+      ". Column headers are sortable — focus a header and press Enter or Space to sort. " +
+      "Rows expand for per-priority detail.";
+    return colHideStyleHtml() + '<div class="cplfund-tablewrap" role="region" aria-label="' + esc(caption) +
+      '" tabindex="0"><table class="cplfund-table">' +
+      '<caption class="cplfund-sr-only">' + esc(caption) + "</caption>" +
       "<thead><tr>" + head + "</tr></thead>" +
       "<tbody>" + foot + body + "</tbody>" +
       "</table></div>";
@@ -2964,10 +3084,18 @@
       "rest read <span class=\"cf-gap\">gap</span> and advance at full cap until their feed lands.</div>" + unLine;
   }
 
+  // Segmented single-choice control. role=group + a label for screen readers,
+  // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
+  var SEG_LABELS = {
+    cplFundView: "View by", cplFundYear: "Funding year", cplFundBasis: "Funding basis",
+    cplFundDisb: "Disbursement timing", cplFundDocType: "Document type"
+  };
   function segHtml(id, items, current) {
-    return '<span class="cplfund-seg" id="' + id + '">' + items.map(function (it) {
-      return '<button type="button" data-val="' + esc(it.val) + '"' +
-        (String(current) === String(it.val) ? ' class="on"' : "") + ">" + esc(it.label) + "</button>";
+    var lbl = SEG_LABELS[id] || "Options";
+    return '<span class="cplfund-seg" id="' + id + '" role="group" aria-label="' + esc(lbl) + '">' + items.map(function (it) {
+      var on = String(current) === String(it.val);
+      return '<button type="button" data-val="' + esc(it.val) + '" aria-pressed="' + (on ? "true" : "false") + '"' +
+        (on ? ' class="on"' : "") + ">" + esc(it.label) + "</button>";
     }).join("") + "</span>";
   }
 
@@ -3328,9 +3456,41 @@
       " students) funded via the " + fmtMoney(feederCarveout()) + " carve-out";
   }
 
+  // refreshTable() replaces the whole table subtree via innerHTML, which would
+  // drop keyboard focus to <body> on every sort/expand (WCAG 2.4.3). Capture the
+  // focused control by a STABLE key before the swap and re-focus its counterpart
+  // after, so a keyboard/SR user stays on the header they just sorted or the
+  // caret they just toggled. (a11y follow-through, 2026-07-28.)
+  function captureTableFocus(holder) {
+    var el = holder.ownerDocument.activeElement;
+    if (!el || !holder.contains(el)) return null;
+    if (el.getAttribute && el.getAttribute("data-sort")) return { kind: "th", key: el.getAttribute("data-sort") };
+    if (el.className && String(el.className).indexOf("cplfund-caret") !== -1) {
+      var tr = el.parentNode;
+      while (tr && tr.tagName !== "TR") tr = tr.parentNode;
+      if (tr) return { kind: "caret", id: tr.getAttribute("data-id") };
+    }
+    return null;
+  }
+  function restoreTableFocus(holder, f) {
+    if (!f) return;
+    var target = null, i;
+    if (f.kind === "th") {
+      var ths = holder.querySelectorAll("th[data-sort]");
+      for (i = 0; i < ths.length; i++) if (ths[i].getAttribute("data-sort") === f.key) { target = ths[i]; break; }
+    } else if (f.kind === "caret") {
+      var trs = holder.querySelectorAll("tr.cplfund-row");
+      for (i = 0; i < trs.length; i++) if (trs[i].getAttribute("data-id") === f.id) { target = trs[i].querySelector(".cplfund-caret"); break; }
+    }
+    if (target) { try { target.focus(); } catch (e) {} }
+  }
   function refreshTable() {
     var holder = document.getElementById("cplFundTable");
-    if (holder) holder.innerHTML = tableHtml();
+    if (holder) {
+      var f = captureTableFocus(holder);
+      holder.innerHTML = tableHtml();
+      restoreTableFocus(holder, f);
+    }
     updateCount();
     wireTable();
   }
@@ -3338,8 +3498,11 @@
   function wireTable() {
     var holder = document.getElementById("cplFundTable");
     if (!holder) return;
+    function activateKey(e) {   // Enter or Space activates a focusable control
+      return e.key === "Enter" || e.key === " " || e.key === "Spacebar" || e.keyCode === 13 || e.keyCode === 32;
+    }
     holder.querySelectorAll("th[data-sort]").forEach(function (th) {
-      th.addEventListener("click", function () {
+      function doSort() {
         var k = th.getAttribute("data-sort");
         if (state.sortKey === k) state.sortDir = -state.sortDir;
         else {
@@ -3347,8 +3510,12 @@
           state.sortDir = (k === "college" || k === "district" || k === "county" || k === "counties" || k === "order") ? 1 : -1;
         }
         refreshTable();
-      });
+      }
+      th.addEventListener("click", doSort);
+      th.addEventListener("keydown", function (e) { if (activateKey(e)) { e.preventDefault(); doSort(); } });
     });
+    // Row toggle: mouse click anywhere on the row; keyboard via the caret <button>
+    // (its native Enter/Space fires a click that bubbles here).
     holder.querySelectorAll("tr.cplfund-row").forEach(function (tr) {
       tr.addEventListener("click", function () {
         var id = tr.getAttribute("data-id");

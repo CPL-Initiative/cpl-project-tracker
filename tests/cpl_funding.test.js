@@ -1744,28 +1744,39 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("H2: changing the per-student rate moves NO dollars (allocation is share-based)",
     Math.abs(a50.total - a100.total) < 1);
 
-  // H3 — the per-student rate shows on each college row's P-cell.
-  const rateEl = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio .cf-rate");
-  check("H3: each P-cell surfaces the per-student rate (/stu)",
-    !!rateEl && rateEl.textContent.indexOf("/stu") !== -1);
+  // H3 — the per-student rate moved from the P-cell to its HOVER (Sam,
+  // 2026-07-28): it varies per college once the $150k floor tops up small
+  // colleges, so showing it inline reads as inequitable. It's now in the title.
+  const pcell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio");
+  check("H3: the per-student rate is no longer shown inline (.cf-rate removed)",
+    !!pcell && pcell.querySelector(".cf-rate") === null);
+  check("H3: the P-cell hover explains the per-student rate ($/student)",
+    !!pcell && /\/student/.test(pcell.getAttribute("title") || ""));
 }
 {
-  // H4 — collapsible sections: native <details>, default open, persisted.
+  // H4 — collapsible sections: native <details>; default COLLAPSED except the
+  // college table (Sam, 2026-07-28); explicit toggles persist across re-render.
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const secs = doc.querySelectorAll("#cplFundingMount details.cplfund-sec");
   check("H4: top-level sections render as collapsible <details> (>=6)", secs.length >= 6);
-  check("H4: sections default to open, each with an <h3> summary",
-    Array.from(secs).every(function (s) { return s.open && !!s.querySelector("summary h3"); }));
-  check("H4: the college table lives inside a section and still renders rows",
-    !!doc.querySelector("details.cplfund-sec #cplFundTable tbody tr.cplfund-row"));
+  check("H4: every section has an <h3> summary",
+    Array.from(secs).every(function (s) { return !!s.querySelector("summary h3"); }));
+  check("H4: only the college table is open by default; the policy/model sections collapse",
+    doc.querySelector('details.cplfund-sec[data-sec="college"]').open === true &&
+    doc.querySelector('details.cplfund-sec[data-sec="window"]').open === false &&
+    doc.querySelector('details.cplfund-sec[data-sec="priorities"]').open === false &&
+    doc.querySelector('details.cplfund-sec[data-sec="formula"]').open === false);
+  check("H4: the college table lives inside its section and still renders rows",
+    !!doc.querySelector('details.cplfund-sec[data-sec="college"] #cplFundTable tbody tr.cplfund-row'));
+  // A user OPENING a collapsed section persists across the re-render an edit triggers.
   const win = doc.querySelector('details.cplfund-sec[data-sec="window"]');
-  win.open = false;
+  win.open = true;
   win.dispatchEvent(new window.Event("toggle"));
   T.render();
-  check("H4: a collapsed section stays collapsed across a re-render (persisted)",
-    !doc.querySelector('details.cplfund-sec[data-sec="window"]').open);
+  check("H4: a user-opened section stays open across a re-render (persisted)",
+    doc.querySelector('details.cplfund-sec[data-sec="window"]').open === true);
 }
 {
   // H5 — reworded metrics: P1 'eligible' → the eligible (pe) count; P3 'portal'
@@ -1968,6 +1979,106 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     fSec2.textContent.indexOf("42 eligible in MAP") !== -1);
   check("K5: the F1 ladder line surfaces the eligible total once the feed lands",
     fSec2.textContent.indexOf("eligible NC students identified across the feeders") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part L — SkyHigh (2026-07-28): the readability + equity + a11y pass. (1) the
+// "How an allocation is computed" box is a left-justified bulleted list; (2) the
+// tab uses the FULL container width + left-aligns (cards stay centered); (3) the
+// college P-cell drops the inline per-student rate for an equitable "% of target"
+// yardstick, real dollars bold, with the effective $/student + floor reason in the
+// HOVER; (4) accessibility: keyboard-operable sortable headers, labelled segmented
+// toggles, a table region + caption, keyboard-expandable rows; (5) mobile CSS.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  // L1 — the formula explainer is a bulleted, left-justified list.
+  const formula = doc.querySelector(".cplfund-formula");
+  check("L1: the formula box is a bulleted list (≥4 bullets)",
+    formula.querySelectorAll("ul.cplfund-formula-list > li").length >= 4);
+  check("L1: the formula list still explains the core headcount×share formula",
+    formula.textContent.indexOf("headcount share") !== -1);
+  // L2 — full width: the shared 1400px container cap is dropped for THIS pane only.
+  check("L2: full-width CSS drops the .main-container cap for the funding tab only",
+    /#tab-implementation-funding \.main-container \{ max-width: none; \}/.test(consumerSrc));
+  // L3 — the tab left-justifies; stat cards stay centered.
+  check("L3: the tab left-justifies (.cplfund text-align:left)",
+    /\.cplfund \{ color: var\(--text-body\); text-align: left; \}/.test(consumerSrc));
+  check("L3: stat cards remain centered (.cplfund-card text-align:center)",
+    /\.cplfund-card \{ text-align: center; \}/.test(consumerSrc));
+  // L4 — the P-cell: Tgt/Now labels, a bold cap dollar, no inline rate, "stu" unit.
+  const pcell = doc.querySelector("#cplFundTable tbody tr.cplfund-row td.cf-prio");
+  check("L4: the P-cell has both Tgt and Now labels (.cf-lbl)",
+    pcell.querySelectorAll(".cf-lbl").length === 2);
+  check("L4: the target line shows a bold funding cap (.cf-cap)", !!pcell.querySelector(".cf-cap"));
+  check("L4: the per-student rate is NOT inline (.cf-rate absent)", pcell.querySelector(".cf-rate") === null);
+  check("L4: the target line labels the count as students (stu)",
+    pcell.querySelector(".cf-t").textContent.indexOf("stu") !== -1);
+  // L10 — real dollars bold, % normal weight (Sam, 2026-07-28).
+  check("L10: the cap dollar is bold (.cf-cap font-weight:700)",
+    /\.cf-prio \.cf-cap \{ font-weight: 700;/.test(consumerSrc));
+  check("L10: the % stays normal weight (.cf-pct font-weight:400)",
+    /\.cf-prio \.cf-pct \{ color: var\(--green-progress\); font-weight: 400; \}/.test(consumerSrc));
+  // L5 — the effective rate + WHY it differs lives in the cell hover: a floored
+  // college explains the floor top-up; a large one cites the statewide base.
+  function firstPrioTitle(name) {
+    const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+      .find(function (tr) { return tr.textContent.indexOf(name) !== -1; });
+    return row ? (row.querySelector("td.cf-prio").getAttribute("title") || "") : "";
+  }
+  const cmTitle = firstPrioTitle("Copper Mountain");
+  check("L5: a floored college's cell hover explains the minimum-viable floor top-up + a /student rate",
+    /minimum-viable floor/.test(cmTitle) && /\/student/.test(cmTitle));
+  check("L5: a non-floored college's cell hover cites the statewide base rate",
+    /statewide base rate/.test(firstPrioTitle("East LA")));
+  // L6 — sortable headers are keyboard-operable (aria-sort + tabindex).
+  const th = doc.querySelector("#cplFundTable th[data-sort]");
+  check("L6: sortable headers carry tabindex + aria-sort (keyboard-operable)",
+    th.getAttribute("tabindex") === "0" && th.hasAttribute("aria-sort"));
+  check("L6: the active sort column reports its direction via aria-sort",
+    !!doc.querySelector('#cplFundTable th[aria-sort="ascending"], #cplFundTable th[aria-sort="descending"]'));
+  // L7 — segmented toggles: role=group + aria-pressed reflecting the choice.
+  const seg = doc.querySelector("#cplFundView");
+  check("L7: segmented control is a labelled group",
+    seg.getAttribute("role") === "group" && !!seg.getAttribute("aria-label"));
+  check("L7: exactly one segment button is aria-pressed=true",
+    seg.querySelectorAll('button[aria-pressed="true"]').length === 1);
+  // L8 — the table is an accessible region with an sr-only caption.
+  check("L8: the table wrapper is a labelled region",
+    !!doc.querySelector('.cplfund-tablewrap[role="region"][aria-label]'));
+  check("L8: the table carries an sr-only caption",
+    !!doc.querySelector("table.cplfund-table > caption.cplfund-sr-only"));
+  // L9 — the expand control is a real <button> on the caret: keyboard-focusable
+  // + announced, WITHOUT overriding the row's table semantics. aria-expanded
+  // tracks state; activating it (native click, bubbles to the row) toggles.
+  const caret0 = doc.querySelector("#cplFundTable tbody tr.cplfund-row .cplfund-caret");
+  check("L9: the caret is a keyboard <button> carrying aria-expanded",
+    caret0.tagName === "BUTTON" && caret0.hasAttribute("aria-expanded"));
+  check("L9: a collapsed row's caret reports aria-expanded=false",
+    caret0.getAttribute("aria-expanded") === "false");
+  check("L9: the row keeps its table semantics (no role override on the <tr>)",
+    doc.querySelector("#cplFundTable tbody tr.cplfund-row").getAttribute("role") === null);
+  click(window, caret0);   // native button activation bubbles to the row toggle
+  check("L9: activating the caret expands the row (aria-expanded=true)",
+    doc.querySelector("#cplFundTable tbody tr.cplfund-row .cplfund-caret").getAttribute("aria-expanded") === "true");
+  // L11 — mobile CSS present.
+  check("L11: a mobile (≤640px) media query tightens the dense table",
+    /@media \(max-width: 640px\)/.test(consumerSrc));
+  // L12 — keyboard focus survives the innerHTML re-render that sort/expand
+  // trigger (WCAG 2.4.3): the sorted header + the toggled caret stay focused.
+  const th12 = doc.querySelector("#cplFundTable th[data-sort]");
+  const thKey = th12.getAttribute("data-sort");
+  th12.focus();
+  th12.dispatchEvent(new window.KeyboardEvent("keydown", { key: "Enter", bubbles: true }));
+  check("L12: focus stays on the sorted header after the table re-renders",
+    doc.activeElement && doc.activeElement.getAttribute &&
+    doc.activeElement.getAttribute("data-sort") === thKey);
+  const caret12 = doc.querySelector("#cplFundTable tbody tr.cplfund-row .cplfund-caret");
+  caret12.focus();
+  click(window, caret12);   // activation bubbles to the row toggle → refreshTable
+  check("L12: focus stays on the caret after the row expand re-renders",
+    doc.activeElement && String(doc.activeElement.className || "").indexOf("cplfund-caret") !== -1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
