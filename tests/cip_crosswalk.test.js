@@ -201,16 +201,42 @@ function fresh(withCollege) {
 
   const root = document.getElementById("cip-crosswalk-root");
   check("renders the .cipx container", root && root.querySelector(".cipx"));
-  check("renders the 'CIP Coder' header with a Beta badge", root && /CIP Coder/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
+  check("renders the 'Searchable CIP Code Taxonomy' header with a Beta badge", root && /Searchable CIP Code Taxonomy/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
   check("eyebrow names Academic Affairs", root && /Academic Affairs/.test(root.querySelector(".cipx-eyebrow").textContent));
   check("renders the theme toggle", root && root.querySelector(".cipx-themetog"));
   check("renders the search box", root && root.querySelector(".cipx-panel #cipx-q"));
   check("renders 5 category pills", root && root.querySelectorAll(".cipx-pills .cipx-pill").length === 5);
-  check("renders the family select (All + 3 fams)", root && root.querySelector(".cipx-fsel") && root.querySelector(".cipx-fsel").querySelectorAll("option").length === 4);
+  check("renders the sector (2-digit) select (All + 3 sectors)", root && root.querySelector(".cipx-fsel-cip") && root.querySelector(".cipx-fsel-cip").querySelectorAll("option").length === 4);
   check("renders the college selector bar", root && root.querySelector(".cipx-collegebar .cipx-college-sel"));
   check("college selector is populated (placeholder + 1 college)", root && root.querySelector(".cipx-college-sel").querySelectorAll("option").length === 2);
   check("hides retired/reserved by default (3 go-forward rows)", root && root.querySelectorAll(".cipx-item").length === 3);
   check("_filtered returns the 3 go-forward rows", api._filtered().length === 3);
+
+  // ── CIP-code hierarchy filters (2 / 4 / 6-digit) — leftmost + Select All (#6) ──
+  const cipGrp = root.querySelector(".cipx-controls .cipx-cipfilters");
+  check("CIP-code filter group renders", !!cipGrp);
+  check("CIP-code filters are the leftmost control", root.querySelector(".cipx-controls").firstElementChild === cipGrp);
+  const cipSels = root.querySelectorAll(".cipx-cipfilters .cipx-fsel-cip");
+  check("renders 3 CIP-code selects (2/4/6-digit)", cipSels.length === 3);
+  const csel2 = cipSels[0], csel4 = cipSels[1], csel6 = cipSels[2];
+  check("each CIP select has a Select-All option at the top",
+    csel2.options[0].value === "" && csel4.options[0].value === "" && csel6.options[0].value === "" &&
+    /All sectors/.test(csel2.options[0].textContent) && /All sub-series/.test(csel4.options[0].textContent) && /All codes/.test(csel6.options[0].textContent));
+  check("4-digit select lists All + the 3 sub-series", csel4.options.length === 4 && Array.prototype.some.call(csel4.options, (o) => o.value === "51.38"));
+  check("6-digit select lists All + the 3 codes with titles", csel6.options.length === 4 && Array.prototype.some.call(csel6.options, (o) => o.value === "51.3801" && /Registered Nursing/.test(o.textContent)));
+  // cascade: picking a sector narrows results AND the sub-series list
+  csel2.value = "51"; csel2.dispatchEvent(new window.Event("change"));
+  check("selecting a sector filters results to that sector", api._filtered().length === 1 && api._filtered()[0].code === "51.3801");
+  check("selecting a sector narrows the 4-digit list", Array.prototype.every.call(csel4.options, (o) => o.value === "" || o.value.slice(0, 2) === "51"));
+  csel2.value = ""; csel2.dispatchEvent(new window.Event("change"));
+  check("Select-All sector restores all go-forward rows", api._filtered().length === 3);
+  // a 6-digit pick filters to exactly that code
+  csel6.value = "52.0201"; csel6.dispatchEvent(new window.Event("change"));
+  check("selecting a 6-digit code filters to exactly that code", api._filtered().length === 1 && api._filtered()[0].code === "52.0201");
+  csel6.value = ""; csel6.dispatchEvent(new window.Event("change"));
+  check("clearing the 6-digit code restores all rows", api._filtered().length === 3);
+  // #4 — the CTE cat chip is bold + prominent (CSS)
+  check("CTE cat chip is bold + bordered (prominent)", /\.cipx-cat-CTE\{[^}]*font-weight:800[^}]*border:1px solid var\(--cipx-cte-stripe\)/.test(src));
 
   // engine seams
   const nurse = api._score("registered nursing").ranked;
