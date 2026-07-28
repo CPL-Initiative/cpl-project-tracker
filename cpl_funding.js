@@ -1861,6 +1861,11 @@
     var perPrio = ps.map(function () { return { cap: 0, earned: 0, statuses: {} }; });
     var winCap = 0, winEarned = 0;
     base().colleges.forEach(function (col) {
+      // perPrio drives the priority CARDS, which are main-pool POLICY (their
+      // "statewide $ ÷ per-student rate = target" identity requires the main
+      // allocation) — so keep the per-priority caps on the main entitlement.
+      // winCap/winEarned below fold rural in (via collegeAlloc) to match the
+      // distribution surfaces (Sam, 2026-07-28).
       var W = allocModel().W[col.college] || 0;
       ps.forEach(function (p, i) {
         var cap_i = W * p.share / ny;
@@ -2064,14 +2069,16 @@
   function prioCellHtml(c, p, isSystem) {
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = heads * p.target_rate;
-    var cap = isSystem ? (netCollege() * p.share / nYears()) : (c[p.key] || 0);
+    var cap = isSystem ? (netCollegeWithRural() * p.share / nYears()) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
     var earned = cap * fr.f;
     // The row's OWN effective rate (cap ÷ target) — equals the statewide base for
-    // most colleges; higher for the small colleges topped up to the floor.
+    // most colleges; higher for the small colleges topped up to the floor and/or
+    // carrying the rural allowance (both are folded into cap above).
     var effRate = target > 0 ? cap / target : 0;
     var baseRate = p.per_student || effRate;   // statewide/average rate
     var floored = !isSystem && c && c.floored;
+    var ruralBump = (!isSystem && c && c.rural_w) ? c.rural_w * p.share / nYears() : 0;
     // Actual line — a shared "% of target" yardstick, real earned dollars bold.
     var actLine;
     if (fr.status === "earned") {
@@ -2093,11 +2100,15 @@
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
       : "nothing posted in MAP yet";
-    // Hover — the full story incl. the effective per-student rate + WHY it differs.
-    var rateSentence = floored
+    // Hover — the full story incl. the effective per-student rate + WHY it differs
+    // (the $150k floor top-up and/or the folded rural allowance).
+    var reasons = [];
+    if (floored) reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up to stand up the program)");
+    if (ruralBump > 0) reasons.push("boosted by a " + fmtMoney(ruralBump) + "/yr rural allowance, folded in assuming the college clears the " +
+      fmtPctTrim(ruralThreshold()) + " achievement threshold that unlocks it (the precise unlock-based earning is in the Rural section below)");
+    var rateSentence = reasons.length
       ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
-        fmtRate(baseRate) + "/student statewide base because this college's window allocation was raised to the " +
-        fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up so they can stand up the program)."
+        fmtRate(baseRate) + "/student statewide base because this college's allocation is " + reasons.join(" and ") + "."
       : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(baseRate) + "/student statewide base rate.";
     var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" + fmtPctTrim(p.target_rate) +
       " of headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
@@ -2288,11 +2299,21 @@
   // floor/rural flags, plus the active-year per-priority breakdown for the
   // drill-in. FRONT-LOAD mode re-times the same total into Year 1 (later
   // years = carryover of unspent funds) — allocation itself is unchanged.
+  // The per-college rural allowance, FOLDED into the row (Sam, 2026-07-28)
+  // assuming the college clears the ≥50% achievement threshold that unlocks it —
+  // so the row rate + Yr/Total reflect it. The precise unlock-based earning stays
+  // in the Rural section + drill-in chips; the cell hover discloses the assumption.
+  function ruralWindow(c) { return (c && isRural(c)) ? ruralPerCollege() : 0; }
+  // The whole college pool once the rural carve-out is distributed into rural
+  // rows — Σ college rows == this, so the SYSTEM total stays consistent.
+  function netCollegeWithRural() { return netCollege() + ruralPerCollege() * ruralColleges().length; }
   function collegeAlloc(c) {
-    var W = allocModel().W[c.college] || 0;
+    var mainW = allocModel().W[c.college] || 0;
+    var ruralW = ruralWindow(c);         // 0 unless rural; assumes the ≥50% unlock
+    var W = mainW + ruralW;              // effective entitlement folds rural in uniformly
     var ny = nYears();
     var fl = frontloaded();
-    var out = { total: 0, w: W, floored: !!allocModel().floored[c.college] };
+    var out = { total: 0, w: W, main_w: mainW, rural_w: ruralW, floored: !!allocModel().floored[c.college] };
     var ys = [], eys = [], earnTotal = 0;
     selectedYears().forEach(function (_, i) {
       var slot = String(i + 1);
@@ -2316,7 +2337,7 @@
     return out;
   }
   function systemAlloc() {
-    var net = netCollege();
+    var net = netCollegeWithRural();   // includes the folded rural carve-out (Sam, 2026-07-28)
     var ny = nYears();
     var fl = frontloaded();
     var out = { total: 0, headcount: totalHeads() };
@@ -2495,11 +2516,12 @@
       } else if (meas.gap) {
         actual = ' &middot; actual: <span class="dk">' + esc(meas.gap_short || "data gap") + "</span>";
       }
-      // With the floor active the pure "headcount share × pool" identity no
-      // longer holds row-exactly (the split is renormalized) — show the
-      // college's own tranche instead.
-      var math = floorActive
-        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) + " annual tranche"
+      // With the floor active OR a folded rural allowance, the pure "headcount
+      // share × pool" identity no longer holds row-exactly (the split is
+      // renormalized / rural is added) — show the college's own tranche instead.
+      var math = (floorActive || c.rural)
+        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) +
+          " annual tranche" + (c.rural ? " (incl. rural allowance)" : "")
         : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " + fmtMoney(per);
       var earnSeg = "";
       if (earnedMode()) {
@@ -2723,6 +2745,9 @@
       edNum("rural-threshold", fmtRatePct(thr), { small: true, label: "rural allowance threshold percent" }) +
       "%</strong> of that priority&#39;s Year-1 target, then pays <strong>in proportion to attainment</strong> (capped at " +
       "the slice). Unearned slices stay in the carve-out; measured from the same MAP actuals as the priority cards. " +
+      "<span class='dk'>This allowance is <strong>folded into each rural college&#39;s allocation in the table above</strong> " +
+      "(assuming the &ge;" + fmtPctTrim(thr) + " unlock is met, so its per-student rate reflects it); the figures here show " +
+      "the <strong>precise</strong> unlock-based earning per priority.</span> " +
       "<span class='dk'>Roster is a DRAFT &mdash; " + esc(base().rural_source || "edit the per-college rural flags") +
       ".</span></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
