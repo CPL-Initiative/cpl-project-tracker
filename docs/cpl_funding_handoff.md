@@ -39,13 +39,18 @@ allowance** (floor-fill + bonus, no performance gate). One PR (`cpl_funding.js` 
   guaranteed rural to $0 in Earned mode (I'd only swept `collegeAlloc` + `prioCellHtml`). Story:
   `docs/cpl_funding_lessons.md` (SkyHighness section).
 
-### 🎯 QUEUED for you — the display rename (SkyHigh's "small nicety")
-The roster keys **"West Hills Coalinga"** (now *Coalinga College*) and **"Imperial"** (*Imperial
-Valley College*) are also the **join keys** to `cpl_funding_performance.js` (the actuals feed) via
-the short-name space. **Do NOT change the key** — rename display-only: add a `display` field to
-those 2 rows in `cpl_funding_data.js` and render `c.display || c.college` at the display sites
-(college table cell, rural section, drill-in, CSV label, chips). Keep `c.college` as the join key so
-the 13-college roster tests + the perf join keep resolving.
+### ✅ DONE — the display rename (SkyHighness follow-up, PR #PENDING2)
+Added a `display` field to the 2 rows ("West Hills Coalinga" → **Coalinga College**, "Imperial" →
+**Imperial Valley College**) + a `dispName()` helper; wrapped every human-readable site (table row +
+aria-label, rural section, district drill-in, memo/report table, award min/max card, CSV name column,
+CO-Monitor aria-label) and **added the display name to the search haystack** (so "Imperial Valley" /
+"Coalinga College" match). **`c.college` stays the join key everywhere** — perf actuals, short-name,
+rural/note/opt-in lookups unchanged; the 13-college roster tests still key on the short name. Tests
+484 → **490** (new Part P). Chromium-verified (both names render, old key gone, no h-scroll/errors).
+
+### Queue is now clear
+No open funding items. SkyHigh's remaining note (the Earned-mode "advance-credited folded rural"
+simplification) was **resolved** by PR4. Next asks come from Sam.
 
 ## Prior state — 2026-07-28 (SkyHigh)
 

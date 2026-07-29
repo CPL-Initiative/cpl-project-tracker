@@ -605,6 +605,20 @@
     return y.slice(0, 4);   // 2-year model; keep a small cap defensively
   }
   function nYears() { return Math.max(1, selectedYears().length); }
+  // Human-readable display name (Sam, 2026-07-29): a couple of roster keys are the
+  // short MIS join key ("West Hills Coalinga", "Imperial") while the college's
+  // current name differs (Coalinga College, Imperial Valley College). A `display`
+  // field on the row overrides the SHOWN name only — c.college stays the join key
+  // everywhere (perf actuals, short-name, rural/note/opt-in lookups). Cached map
+  // over the static roster (colleges never change within a session).
+  var _dispMap = null;
+  function dispName(name) {
+    if (!_dispMap) {
+      _dispMap = {};
+      base().colleges.forEach(function (c) { if (c.display) _dispMap[c.college] = c.display; });
+    }
+    return (name != null && _dispMap[name]) || name;
+  }
   function poolField(field) {
     return firstDefined(
       SCENARIO.pool && SCENARIO.pool[field],
@@ -1224,7 +1238,7 @@
         ["Eligibility (proposed)", "Rural", "Floor applied"], yHead,
         ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
       rowsFiltered().forEach(function (c) {
-        lines.push([c.order, c.college, c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
+        lines.push([c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
           [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""],
           yearKeys().map(function (yk) { return Math.round(c[yk]); }),
           [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]));
@@ -1693,8 +1707,8 @@
       { v: fmtMoney(s.min), l: "Minimum award &mdash; " +
           ((floorWindow() > 0 && allocModel().floorCount && s.minCount > 1)
             ? s.minCount + " colleges at the " + fmtMoney(floorWindow()) + " minimum-viable floor"
-            : esc(s.minC || "&mdash;")) },
-      { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(s.maxC || "&mdash;") }
+            : esc(dispName(s.minC) || "&mdash;")) },
+      { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(dispName(s.maxC) || "&mdash;") }
     ];
     return "<h3>Award range " +
       '<span class="dk" style="font-size:.8rem;font-weight:400;">(per college &middot; ' + esc(windowLabel()) + " window total)</span></h3>" +
@@ -2447,7 +2461,7 @@
       rows = rows.filter(function (r) {
         var hay = state.view === "district"
           ? [r.district, r.counties].join(" ")
-          : [r.college, r.district, r.county].join(" ");
+          : [r.college, dispName(r.college), r.district, r.county].join(" ");
         return hay.toLowerCase().indexOf(q) !== -1;
       });
     }
@@ -2520,7 +2534,7 @@
     return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
-      '" aria-label="' + esc(c.college + " — toggle per-priority detail") + '">▸</button><strong>' + esc(c.college) + "</strong>" + rowChips(c) + "</td>" +
+      '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
@@ -2643,7 +2657,7 @@
     if (unlocked()) {
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span><br>' +
         '<textarea class="cplfund-note" rows="2" data-note="' + esc(c.college) +
-        '" placeholder="Visible to team-phrase / reviewer users only" aria-label="CO Monitor note for ' + esc(c.college) + '">' +
+        '" placeholder="Visible to team-phrase / reviewer users only" aria-label="CO Monitor note for ' + esc(dispName(c.college)) + '">' +
         esc(noteRec && noteRec.note ? noteRec.note : "") + "</textarea>" +
         '<button type="button" class="cplfund-optbtn" data-notesave="' + esc(c.college) + '">Save note</button>' +
         (noteRec && noteRec.updated_at
@@ -2684,7 +2698,7 @@
   function districtDetailHtml(g) {
     var em = earnedMode();
     var rows = g.members.map(function (c) {
-      return '<div><span class="dk">' + esc(c.college) + ":</span> " + fmtInt(c.headcount) +
+      return '<div><span class="dk">' + esc(dispName(c.college)) + ":</span> " + fmtInt(c.headcount) +
         " students &middot; <strong>" + fmtMoney(em ? (c.earned_total || 0) : c.total) + "</strong> " +
         (em ? "earned of " + fmtMoney(c.total) + " cap" : "over " + esc(windowLabel())) + "</div>";
     }).join("");
@@ -2781,7 +2795,7 @@
         ? fmtMoney(ra.bonus)
         : '<span class="dk">&mdash;</span>';
       return "<tr>" +
-        '<td class="t"><strong>' + esc(c.college) + "</strong> 🌲</td>" +
+        '<td class="t"><strong>' + esc(dispName(c.college)) + "</strong> 🌲</td>" +
         "<td>" + fmtInt(c.headcount) + "</td>" +
         "<td>" + fmtMoney(ra.per) + "</td>" +
         '<td title="rural money that fills this college&#39;s gap up to the ' + fmtMoney(floorWindow()) +
@@ -3254,7 +3268,7 @@
       return { college: c.college, total: collegeAlloc(c).total };
     }).sort(function (a, b) { return b.total - a.total; });
     var body = rows.map(function (r) {
-      return "<tr><td class='t'>" + esc(r.college) + "</td><td>" + fmtMoney(r.total) + "</td></tr>";
+      return "<tr><td class='t'>" + esc(dispName(r.college)) + "</td><td>" + fmtMoney(r.total) + "</td></tr>";
     }).join("");
     return summary + "<p>Per-college allocation for the " + esc(m.window) + " window:</p>" +
       "<table><thead><tr><th class='t'>College</th><th>Window allocation</th></tr></thead><tbody>" + body +

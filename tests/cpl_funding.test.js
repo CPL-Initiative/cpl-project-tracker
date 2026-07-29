@@ -2325,6 +2325,42 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Part P — display rename (SkyHighness, 2026-07-29): show the current college
+// names ("Coalinga College", "Imperial Valley College") while keeping the MIS
+// short name as the JOIN KEY (perf actuals / short-name / rural / note lookups).
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const D = window.CPL_FUNDING;
+  check("P: data carries display overrides for the 2 renamed colleges",
+    D.colleges.find(function (c) { return c.college === "West Hills Coalinga"; }).display === "Coalinga College" &&
+    D.colleges.find(function (c) { return c.college === "Imperial"; }).display === "Imperial Valley College");
+  // The join KEY is unchanged — alloc/perf still resolve by the MIS short name.
+  check("P: the join key still resolves (alloc by the MIS short name)",
+    T._alloc("West Hills Coalinga").total > 0 && T._alloc("Imperial").total > 0);
+  // The rendered table shows the DISPLAY name, not the old short key.
+  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  const coRow = rows.find(function (r) { return /Coalinga College/.test(r.textContent); });
+  check("P: the table row shows 'Coalinga College' (display), not 'West Hills Coalinga'",
+    !!coRow && coRow.textContent.indexOf("West Hills Coalinga") === -1);
+  check("P: the table row shows 'Imperial Valley College'",
+    rows.some(function (r) { return /Imperial Valley College/.test(r.textContent); }));
+  // Search matches the display name (haystack includes dispName).
+  T._state.q = "Imperial Valley"; T.render();
+  const shown = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  check("P: searching the display name ('Imperial Valley') matches exactly that row",
+    shown.length >= 1 && shown.every(function (r) { return /Imperial Valley College/.test(r.textContent); }));
+  T._state.q = ""; T.render();
+  // Both renamed colleges are rural → the rural section shows the display names too.
+  const ruralSec = doc.querySelector('details.cplfund-sec[data-sec="rural"]');
+  check("P: the rural section shows the display names",
+    ruralSec.textContent.indexOf("Coalinga College") !== -1 &&
+    ruralSec.textContent.indexOf("Imperial Valley College") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

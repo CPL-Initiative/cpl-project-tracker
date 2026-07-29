@@ -1360,6 +1360,14 @@ dereference the null system `c` — scoped the reasons to a college-only bump. T
 edge-harness independently re-confirmed conservation across floor=0 / carve=0 / empty-roster /
 ruralPer>floor / degrade. **A skeptic re-derives the invariants your tests didn't think to assert.**
 
-**Next in queue:** the display rename — the roster keys `"West Hills Coalinga"`/`"Imperial"` are also the
-**join keys** to `cpl_funding_performance.js` (the actuals feed) via the short-name space, so rename by
-adding a display-only `display` field per row (render `c.display || c.college`), NOT by changing the key.
+**Follow-up shipped — the display rename.** The roster keys `"West Hills Coalinga"`/`"Imperial"` are also
+the **join keys** to `cpl_funding_performance.js` (actuals) via the short-name space, so I renamed
+display-only: a `display` field per row (`"Coalinga College"` / `"Imperial Valley College"`) + a cached
+`dispName()` helper wrapped around every human-readable site (table row + aria-label, rural section,
+district drill-in, memo/report table, award min/max card, CSV name column, CO-Monitor aria-label) and
+**added to the search haystack** so "Imperial Valley"/"Coalinga College" match. `c.college` stays the key
+everywhere. **Lesson: separate the join key from the display label the moment they diverge — a `display`
+override + one `dispName()` seam beats renaming a key that N other systems join on.** The existing tests
+kept passing because the new names are superstrings of the old short keys ("Imperial" ⊂ "Imperial Valley
+College"), but Part P guards it explicitly (display shown, old key gone, key still resolves, search works).
+Tests 484 → **490**.
