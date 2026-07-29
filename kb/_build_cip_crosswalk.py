@@ -21,6 +21,9 @@ Emits window.CIP_CROSSWALK:
     rows:   [ {code, t, cat, fam, def, ex, act, x} ]   # 2,325 CIP-2020 codes
     topcip: { "<TOP NNNN.NN>": {t:"<TOP title>", c:[["<cip>","<tier>"], ...]} }
     boiler: [ "<cip>", ... ]   # generic-noncredit CIPs mapped from nearly every TOP
+    sub4:   { "<fam4 NN.NN>": "<series title>" }   # OPTIONAL — only when an
+            # authoritative NCES all-levels export is present in kb/reference/
+            # (the CCCCO workbook is 6-digit-only). See load_sub4.
   }
     cat = certified CTE category: CTE | Both | Non-CTE | Noncredit | Retired | Reserved
     act = 2020-CIP action (New / Deleted / Moved from|to / No substantive changes)
@@ -67,6 +70,16 @@ CERT = os.path.join(HERE, "reference", "cip_cte_certified_260715.json")
 # COCI course inventory — used for the C-ID/CCN course-level floor flag.
 COCI_SRC = os.path.join(HERE, "reference", "coci_course_list.xlsx")
 OUT = os.path.join(REPO, "cip_crosswalk_data.js")
+# Optional AUTHORITATIVE NCES 4-digit SERIES titles (sub4). The CCCCO workbook we
+# build from was exported filtered to "6 Digit - Specific" rows, so it carries the
+# 2-digit family titles + 6-digit code titles but NOT the 4-digit series titles.
+# Those come ONLY from an authoritative file dropped into kb/reference/ — never
+# inferred, paraphrased, or invented (the tool is grounded). Supported inputs, in
+# priority order (see load_sub4): a simple {"51.38": "<series title>"} JSON, or the
+# NCES all-levels CIPCode2020 export (CSV or XLSX) which includes the 4-digit rows.
+SUB4_JSON = os.path.join(HERE, "reference", "cip_series4_titles.json")
+SUB4_NCES_CSV = os.path.join(HERE, "reference", "CIPCode2020.csv")
+SUB4_NCES_XLSX = os.path.join(HERE, "reference", "CIPCode2020.xlsx")
 BUILT_AT = "2026-07-16"
 SRC_LABEL = "kb/reference/cip_searchable_260715.xlsx (CCCCO CIP Searchable Workbook, 2026-07-15 cut) + kb/reference/cip_cte_certified_260715.json"
 
@@ -79,6 +92,79 @@ CATMAP = {
 
 def clean(v):
     return "" if v is None else str(v).strip()
+
+
+def _norm_cip(v):
+    """Normalize a CIP code cell to a plain string like '51.38' / '51.3801'.
+    NCES exports sometimes wrap codes as '="01.01"' or store a bare number; keep
+    only what looks like a dotted CIP code."""
+    s = clean(v).lstrip("=").strip('"').strip("'").strip()
+    return s
+
+
+def load_sub4(codes):
+    """AUTHORITATIVE NCES 4-digit SERIES titles, keyed 'NN.NN'. Sourced ONLY from a
+    file an operator dropped into kb/reference/ — never inferred (the tool is
+    grounded, so an unknown series simply shows its code + count, as before).
+
+    Priority:
+      1. cip_series4_titles.json  — {"51.38": "Registered Nursing, ...", ...}
+      2. CIPCode2020.csv / .xlsx  — the NCES all-levels export; we keep only rows
+         whose CIP code is a 4-digit series (matches ^\\d\\d\\.\\d\\d$).
+
+    Titles are retained ONLY for 4-digit prefixes that actually occur among the
+    built 6-digit codes, so the map can never carry a series the taxonomy lacks.
+    Returns {} when no authoritative source is present.
+    """
+    import re
+    prefixes = {c[:5] for c in codes if len(c) >= 5}   # "51.3801" -> "51.38"
+    out = {}
+
+    # 1) explicit JSON map
+    if os.path.exists(SUB4_JSON):
+        try:
+            with open(SUB4_JSON, encoding="utf-8") as f:
+                m = json.load(f)
+            for k, v in (m or {}).items():
+                k = _norm_cip(k)
+                if re.match(r"^\d\d\.\d\d$", k) and clean(v):
+                    out[k] = clean(v).rstrip(".")
+        except Exception as e:   # noqa: BLE001 — a bad optional file must not break the build
+            print(f"  sub4: could not read {SUB4_JSON}: {e}")
+
+    # 2) NCES all-levels export (CSV or XLSX) — pick the 4-digit series rows
+    def _add(code, title):
+        code = _norm_cip(code)
+        if re.match(r"^\d\d\.\d\d$", code) and clean(title):
+            out.setdefault(code, clean(title).rstrip("."))
+
+    if os.path.exists(SUB4_NCES_CSV):
+        try:
+            import csv
+            with open(SUB4_NCES_CSV, encoding="utf-8-sig", newline="") as f:
+                rd = csv.DictReader(f)
+                cols = {c.lower().replace(" ", ""): c for c in (rd.fieldnames or [])}
+                cc = cols.get("cipcode"); ct = cols.get("ciptitle")
+                if cc and ct:
+                    for r in rd:
+                        _add(r.get(cc), r.get(ct))
+        except Exception as e:   # noqa: BLE001
+            print(f"  sub4: could not read {SUB4_NCES_CSV}: {e}")
+    elif os.path.exists(SUB4_NCES_XLSX):
+        try:
+            w = openpyxl.load_workbook(SUB4_NCES_XLSX, read_only=True, data_only=True)
+            ws = w.worksheets[0]
+            rows_iter = ws.iter_rows(values_only=True)
+            hdr = [clean(c).lower().replace(" ", "") for c in next(rows_iter)]
+            ci = hdr.index("cipcode") if "cipcode" in hdr else None
+            ti = hdr.index("ciptitle") if "ciptitle" in hdr else None
+            if ci is not None and ti is not None:
+                for row in rows_iter:
+                    _add(row[ci], row[ti])
+        except Exception as e:   # noqa: BLE001
+            print(f"  sub4: could not read {SUB4_NCES_XLSX}: {e}")
+
+    return {k: v for k, v in out.items() if k in prefixes}
 
 
 def split_code_title(s):
@@ -291,6 +377,16 @@ def main():
         "boiler": boiler,
     }
 
+    # Optional authoritative 4-digit series titles (see load_sub4). Only emitted
+    # when a source file is present, so a no-source rebuild stays byte-compatible.
+    sub4 = load_sub4([r["code"] for r in rows])
+    if sub4:
+        payload["_sub4"] = ("sub4[<NN.NN>] = authoritative NCES 4-digit SERIES title "
+                            "(the workbook we build from is 6-digit-only; series titles "
+                            "come from an operator-supplied NCES all-levels export — never "
+                            "inferred).")
+        payload["sub4"] = sub4
+
     body = json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
     with open(OUT, "w", encoding="utf-8") as f:
         f.write("// cip_crosswalk_data.js — GENERATED by kb/_build_cip_crosswalk.py. Do not edit by hand.\n")
@@ -310,6 +406,7 @@ def main():
     print(f"Certified hits:   {cert_hits} of {len(certified)}  |  uncertified conflicts: {uncertified}")
     print(f"C-ID/CCN flagged: {flagged}")
     print(f"Families:         {len(fams)}")
+    print(f"4-digit titles:   {len(sub4)}  ({'from ' + ('cip_series4_titles.json / NCES export' ) if sub4 else 'none — drop an NCES all-levels export in kb/reference/ to populate'})")
     npairs = sum(len(v["c"]) for v in topcip.values())
     print(f"TOP→CIP map:      {len(topcip)} TOPs, {npairs} candidate pairs; boiler {boiler}")
     print(f"Wrote {OUT}  ({os.path.getsize(OUT) / 1024:.0f} KB)")

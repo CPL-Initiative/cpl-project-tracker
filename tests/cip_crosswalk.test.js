@@ -986,7 +986,7 @@ function fresh(withCollege) {
   pApi.activate();
   const pdoc = domP.window.document;
   check("programs: exposes the programs seams", typeof pApi._setPrograms === "function" && typeof pApi._progNeedsRevision === "function");
-  check("programs: the top-level scope toggle renders Courses + Programs", (function () { var t = pdoc.querySelectorAll(".cipx-scopebar .cipx-scopetab"); return t.length === 2 && /Courses/.test(t[0].textContent) && /Programs/.test(t[1].textContent); })());
+  check("programs: the scope toggle renders Programs leftmost, then Courses (Sam, 2026-07-28)", (function () { var t = pdoc.querySelectorAll(".cipx-scopebar .cipx-scopetab"); return t.length === 2 && /Programs/.test(t[0].textContent) && /Courses/.test(t[1].textContent); })());
   check("programs: the Programs scope tab is selected", (function () { var t = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Programs/.test(x.textContent))[0]; return t && t.classList.contains("on"); })());
   check("programs: the mode bar drops 'Find my course's code' and relabels Review", (function () { var tabs = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return tabs.length === 2 && /Review my programs/.test(tabs[0].textContent) && !/Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent); })());
   check("programs: needs-revision detector — a CIP outside the current crosswalk flags true", pApi._progNeedsRevision("0505.00", "52.9001") === true && pApi._progNeedsRevision("0505.00", "52.0201") === false);
@@ -998,6 +998,15 @@ function fresh(withCollege) {
   const pRows = pdoc.querySelectorAll(".cipx-prog-item");
   check("programs: picking a college lists its programs", pRows.length === 3);
   check("programs: the summary counts programs needing revision", /1 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
+  // Tweak 2 (Sam, 2026-07-28): the course college bar is suppressed in Programs review — only the
+  // program view's OWN selector shows (it was rendering twice).
+  check("programs: only ONE college selector renders (no duplicate course college bar)", pdoc.querySelectorAll(".cipx-collegebar").length === 1);
+  // Tweak 3 (Sam, 2026-07-28): programs are grouped under CIP sector headers, ascending by code.
+  const secHdrs = pdoc.querySelectorAll(".cipx-prog-sector");
+  check("programs: rows are grouped under CIP sector headers", secHdrs.length === 2);
+  check("programs: sectors are in ascending code order (01 before 52)", secHdrs.length === 2 && /^01$/.test(secHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()) && /^52$/.test(secHdrs[1].querySelector(".cipx-prog-sector-code").textContent.trim()));
+  check("programs: a sector header shows its family title", /Business/.test((secHdrs[1] && secHdrs[1].textContent) || ""));
+  check("programs: within-list order is CIP-ascending (01.0000 program first, 52.9001 last)", (function () { var items = pdoc.querySelectorAll(".cipx-prog-item"); return items.length === 3 && /General Agriculture/.test(items[0].textContent) && /Business Administration/.test(items[1].textContent) && /Managerial Accounting/.test(items[2].textContent); })());
   // needs-revision first
   const flagItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Managerial Accounting/.test(it.textContent))[0];
   check("programs: a mismatched-CIP program is flagged 'needs revision'", flagItem && flagItem.classList.contains("cipx-prog-item-flag") && !!flagItem.querySelector(".cipx-prog-revflag"));
@@ -1020,6 +1029,50 @@ function fresh(withCollege) {
   const coursesTab = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Courses/.test(x.textContent))[0];
   coursesTab.click(); await tick();
   check("programs: toggling back to Courses restores 3 modes incl. 'Find my course's code'", pdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent));
+
+  // ── Tweak 4 (Sam, 2026-07-28): authoritative 4-digit series titles in the Browse dropdown ──
+  // The builder emits sub4 (NN.NN -> series title) ONLY from an authoritative NCES export; the tab
+  // shows it when present and falls back to "code · N codes" otherwise (grounded — never invented).
+  {
+    const domS4 = makeDom();
+    const fx = JSON.parse(JSON.stringify(FIXTURE));
+    fx.sub4 = { "51.38": "Registered Nursing Series", "99.99": "Absent From Taxonomy" };
+    domS4.window.CIP_CROSSWALK = fx;
+    try { domS4.window.localStorage.setItem("cipx_mode", "browse"); } catch (e) {}
+    domS4.window.eval(src);
+    domS4.window.CPL_CIP_CROSSWALK.activate();
+    const s4doc = domS4.window.document;
+    const sel4 = Array.prototype.filter.call(s4doc.querySelectorAll(".cipx-fsel-cip"), (s) => /4-digit/.test(s.getAttribute("aria-label") || ""))[0];
+    const opt5138 = sel4 && Array.prototype.filter.call(sel4.options, (o) => o.value === "51.38")[0];
+    check("browse: a 4-digit option shows the authoritative series title when sub4 has it", !!opt5138 && /Registered Nursing Series/.test(opt5138.textContent) && /code/.test(opt5138.textContent));
+    const opt5202 = sel4 && Array.prototype.filter.call(sel4.options, (o) => o.value === "52.02")[0];
+    check("browse: a 4-digit option with no sub4 title still shows code + count (never invents one)", !!opt5202 && /52\.02/.test(opt5202.textContent) && /code/.test(opt5202.textContent) && !/Series/.test(opt5202.textContent));
+  }
+
+  // ── T3 cap-boundary guard (adversarial-review finding, 2026-07-29) ──
+  // A sector header must NEVER render with zero program rows beneath it when the 400-row render
+  // cap lands exactly on a sector boundary. Fixture: 400 programs in sector 01, then 3 in sector 52
+  // (entirely past the cap) — the 52 header must be omitted, not rendered empty.
+  {
+    const domCap = makeDom();
+    domCap.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+    try { domCap.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+    domCap.window.eval(src);
+    const capApi = domCap.window.CPL_CIP_CROSSWALK;
+    const bigRows = [];
+    for (let i = 0; i < 400; i++) bigRows.push([0, "A" + i, "Alpha " + String(i).padStart(3, "0"), "0505.00", "01.0000", 0, 0, "3.00", 0, 0]);
+    for (let i = 0; i < 3; i++) bigRows.push([0, "B" + i, "Beta " + i, "0505.00", "52.0201", 0, 0, "3.00", 0, 0]);
+    capApi._setPrograms({ colleges: ["CAP COLLEGE"], awards: ["A.S. Degree"], statuses: ["Active"], rows: bigRows });
+    capApi.activate();
+    const capDoc = domCap.window.document;
+    const capSel = capDoc.querySelector(".cipx-prog .cipx-college-sel");
+    capSel.value = "0"; capSel.dispatchEvent(new domCap.window.Event("change"));
+    await tick();
+    const capHdrs = capDoc.querySelectorAll(".cipx-prog-sector");
+    check("programs: the 400-row cap renders exactly 400 program rows", capDoc.querySelectorAll(".cipx-prog-item").length === 400);
+    check("programs: no empty sector header at the cap boundary (sector 52 omitted, not rendered empty)", capHdrs.length === 1 && /^01$/.test(capHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()));
+    check("programs: the 'first 400' cap note shows when truncated", /first 400/.test(capDoc.querySelector(".cipx-prog-list").textContent));
+  }
 
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
