@@ -867,7 +867,8 @@ function pieSlices(el) {
 check("data: disbursement defaults to even tranches", D.disbursement === "even");
 check("data: minimum-viable floor default $150K/window", D.pool.floor_window === 150000);
 check("data: rural carve-out default $1M", D.pool.rural_carveout === 1000000);
-check("data: rural threshold default 50%", D.rural_threshold === 0.5);
+check("data: rural allowance is now a guaranteed earmark (no ≥50% threshold)",
+  D.rural_threshold === undefined && /guaranteed/.test(D.pool.rural_carveout_label || ""));
 check("data: exactly the 13 federally-rural colleges are rural-flagged",
   D.colleges.filter(function (c) { return c.rural; }).length === 13 &&
   ["Siskiyous", "Feather River", "Lassen", "Redwoods", "Shasta",
@@ -886,21 +887,29 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const T = window.CPL_FUNDING_TAB;
   const m = T._model();
   const net = T._netCollege();
-  check("floor model: pool conserved (Σ window entitlements = net pool)",
+  check("floor model: MAIN pool conserved (Σ main entitlements = net main pool)",
     Math.abs(Object.values(m.W).reduce(function (s, w) { return s + w; }, 0) - net) < 1);
-  check("floor model: no college below the $150K floor",
-    Object.values(m.W).every(function (w) { return w >= m.floor - 0.01; }));
+  // PR4 (Sam, 2026-07-28): the floor now guarantees each college's TOTAL window
+  // (main + guaranteed rural) ≥ the floor — a rural college's MAIN entitlement can
+  // sit below the full floor (at the reduced floor = floor − ruralPer) because its
+  // guaranteed rural allowance funds the rest.
+  check("floor model: no college's TOTAL window falls below the $150K floor",
+    D.colleges.every(function (c) { return T._alloc(c.college).total >= m.floor - 0.01; }));
   check("floor model: floored set is non-empty and bounded (sub-scale colleges only)",
     m.floorCount > 0 && m.floorCount < 40);
-  check("floor model: smallest college (Copper Mountain) sits exactly at the floor",
-    Math.abs(m.W["Copper Mountain"] - m.floor) < 0.01);
+  const perRural = D.pool.rural_carveout / 13;
+  check("floor model: smallest college (Copper Mountain, rural) main entitlement sits at the REDUCED floor (floor − rural allowance)",
+    Math.abs(m.W["Copper Mountain"] - (m.floor - perRural)) < 1);
   check("floor model: largest college (East LA) stays proportional (well above floor)",
     m.W["East LA"] > 900000);
   const cm = T._alloc("Copper Mountain");
-  // Copper Mountain is now BOTH floored and (federally) rural — its window total
-  // is the floor PLUS its folded rural allowance.
-  check("floored college's window total = the floor + its rural allowance",
-    cm.rural_w > 0 && Math.abs(cm.total - (m.floor + cm.rural_w)) < 0.01);
+  // Copper Mountain is BOTH floored and (federally) rural. Under PR4 its rural
+  // allowance is consumed reaching the floor, so its window total = exactly the
+  // floor (main reduced-floor + guaranteed rural = floor; no on-top bonus).
+  check("PR4: floored rural college's window total = exactly the floor (rural fully funds the gap)",
+    cm.rural_w > 0 && Math.abs(cm.total - m.floor) < 1);
+  check("PR4: its rural allowance is fully consumed as floor-fill (no on-top bonus)",
+    Math.abs(cm.main_w + cm.rural_w - m.floor) < 1);
   check("floored college is flagged for the ⬆ chip", cm.floored === true);
 
   // UI: floor pool card + chip + drill-in line.
@@ -979,21 +988,52 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const ruralCard = doc.querySelector(".cplfund-card.rural");
-  // The label is now an editable input, so "carve-out" lives in its value, not textContent.
-  check("rural carve-out pool card is an earmark within the pool (no longer a deduction)", !!(ruralCard &&
+  // The label is now an editable input, so its text lives in the value.
+  check("rural pool card is a GUARANTEED earmark within the pool (no longer a deduction)", !!(ruralCard &&
     !ruralCard.querySelector(".v.neg") &&
-    /carve-out/.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "") &&
-    /earmarked within the pool|folded into rural/.test(ruralCard.textContent)));
+    /guaranteed/i.test((ruralCard.querySelector('input[data-edit="pool-label"]') || {}).value || "") &&
+    /funds rural colleges&#39;? floor first|floor first/.test(ruralCard.innerHTML)));
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
   check("rural section lists the 13 rural-flagged colleges",
     ruralTable && ruralTable.querySelectorAll("tbody tr").length === 13);
   const perRural = Math.round(D.pool.rural_carveout / 13);   // $76,923 (rendered rounds)
-  check("each rural college can earn an equal share ($" + perRural.toLocaleString() + ")",
+  check("each rural college gets an equal guaranteed share ($" + perRural.toLocaleString() + ")",
     ruralTable.textContent.indexOf("$" + perRural.toLocaleString("en-US")) !== -1);
-  check("no actuals loaded → every rural row is pending data",
+  // PR4: the allowance is GUARANTEED — it shows regardless of actuals, never "pending data".
+  check("guaranteed model: no rural row reads 'pending data' (allowance is not performance-gated)",
     Array.from(ruralTable.querySelectorAll("tbody tr")).every(function (tr) {
-      return tr.textContent.indexOf("pending data") !== -1;
+      return tr.textContent.indexOf("pending data") === -1;
     }));
+  check("guaranteed model: the ≥50% threshold input is gone", !doc.querySelector('input[data-edit="rural-threshold"]'));
+
+  // A floored rural college (Copper Mountain): its slice is fully consumed as
+  // floor-fill; bonus column is a dash; window total = exactly the floor.
+  const cmRuralRow = Array.from(ruralTable.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Copper Mountain") !== -1;
+  });
+  const cmCells = cmRuralRow ? cmRuralRow.querySelectorAll("td") : [];
+  check("floored rural college: floor-fill column shows the (nearly full) allowance",
+    cmCells.length === 6 && cmCells[3].textContent.indexOf("76,9") !== -1);
+  check("floored rural college: on-top bonus is a dash (allowance consumed by the floor)",
+    cmCells.length === 6 && cmCells[4].textContent.trim() === "—");
+  check("floored rural college: window total = exactly the $150K floor",
+    cmCells.length === 6 && cmCells[5].textContent.indexOf("150,000") !== -1);
+
+  // A large rural college (Imperial, proportional ≥ floor): no floor-fill, full bonus on top.
+  const imRuralRow = Array.from(ruralTable.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Imperial") !== -1;
+  });
+  const imCells = imRuralRow ? imRuralRow.querySelectorAll("td") : [];
+  check("large rural college: floor-fill is a dash (its share already meets the floor)",
+    imCells.length === 6 && imCells[3].textContent.trim() === "—");
+  check("large rural college: full allowance rides on top as a bonus",
+    imCells.length === 6 && imCells[4].textContent.indexOf("76,9") !== -1);
+
+  // tfoot: RURAL POOL conserves floor-fill + bonus = the carve-out; funding-their-floor count.
+  const rtFoot = ruralTable.querySelector("tfoot");
+  check("rural tfoot reports the count funding their floor (10 of 13 on current data)",
+    rtFoot && rtFoot.textContent.indexOf("10 of 13 funding their floor") !== -1);
+
   const shastaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Shasta") !== -1;
   });
@@ -1002,36 +1042,23 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     !!(shastaRow && shastaRow.querySelector(".cplfund-tree")) &&
     /\.cplfund-chip\.cplfund-tree \{[^}]*opacity: \.5;[^}]*filter: grayscale/.test(consumerSrc));
 
-  // With actuals: each priority's slice is earned IN PROPORTION once it clears the
-  // floor (Sam, 2026-07-27 — per-priority + ≥50% floor). Feed Shasta high on every
-  // src so all its measurable Year-1 slices fully unlock → earns its full allowance.
+  // Guaranteed regardless of performance: even when a rural college posts NOTHING
+  // in the feed, its allowance + window total are unchanged (no gate).
+  const cmTotalBefore = cmCells.length === 6 ? cmCells[5].textContent : "";
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
-    statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
-    colleges: { "Shasta": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } },
-    unmatched: {}
+    statewide: { pe: 100, p2: 100, p3: 100 },
+    colleges: {}, unmatched: {}
   };
   T.render();
   const ruralTable2 = doc.querySelectorAll(".cplfund-table")[2];
-  const shastaRural = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Shasta") !== -1;
+  const cmRow2 = Array.from(ruralTable2.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Copper Mountain") !== -1;
   });
-  const perRuralStr = "$" + perRural.toLocaleString("en-US");
-  check("rural: a college over its Year-1 targets earns (green chip) its full allowance",
-    shastaRural && !!shastaRural.querySelector(".cf-rchip.ok") &&
-    shastaRural.textContent.indexOf(perRuralStr) !== -1);
-  check("rural tfoot counts colleges earning (1 of 13) on current data",
-    ruralTable2.querySelector("tfoot").textContent.indexOf("1 of 13 earning") !== -1);
-
-  // The threshold is the per-priority FLOOR: raise it to 200% → no slice can unlock
-  // (attainment caps at 100%) → Butte earns $0 and no green chips.
-  const thr = doc.querySelector('input[data-edit="rural-threshold"]');
-  commit(window, thr, "200");
-  check("threshold edit persisted (scenario)", T._getScenario().ruralThreshold === 2);
-  const ruralTable3 = doc.querySelectorAll(".cplfund-table")[2];
-  check("raised floor locks every slice → 0 of 13 earning",
-    ruralTable3.querySelector("tfoot").textContent.indexOf("0 of 13 earning") !== -1 &&
-    !ruralTable3.querySelector(".cf-rchip.ok"));
+  check("guaranteed: a rural college that posts nothing keeps its full allowance + floor total",
+    cmRow2 && cmRow2.querySelectorAll("td")[5].textContent === cmTotalBefore &&
+    cmRow2.textContent.indexOf("76,9") !== -1);
+  delete window.CPL_FUNDING_PERF;
 
   // Rural flag override via config (the drill-in button's write path): add a
   // non-rural college (Alameda) and remove a rural one (Shasta).
@@ -1043,7 +1070,6 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     Array.from(ruralTable4.querySelectorAll("tbody tr")).every(function (tr) {
       return tr.textContent.indexOf("Shasta") === -1;
     }));
-  delete window.CPL_FUNDING_PERF;
 }
 
 // D4 — baseline eligibility badges (informational only).
@@ -1939,43 +1965,34 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part K — SkyMore round 2 (2026-07-27): (1) the rural allowance is earned
-// PER-PRIORITY with a ≥floor unlock (not the old binary ≥50%-average gate);
-// (2) the noncredit feeder measurables ladder (F1 eligible headcount, wired to
-// the feed; F2 waivers placeholder).
+// Part K — PR4 (SkyHighness, 2026-07-28) replaced SkyMore's ≥50% rural earning
+// with the GUARANTEED floor-fill model: (1) the rural section shows a Floor-fill
+// + On-top bonus split, guaranteed; (2) the drill-in rural line reflects it.
+// (K4 = the unrelated noncredit feeder measurables ladder, unchanged.)
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const ruralTable = doc.querySelectorAll(".cplfund-table")[2];
-  check("K1: rural table headers switched to Earned so far + per-priority",
-    ruralTable.querySelector("thead").textContent.indexOf("Earned so far") !== -1 &&
-    ruralTable.querySelector("thead").textContent.indexOf("By priority") !== -1);
-  check("K1: rural intro explains the per-priority split + floor unlock + proportional pay",
-    ruralTable.parentNode.parentNode.textContent.indexOf("split across the three priorities") !== -1);
-  // Feed one rural college well over target on every measurable src → its Year-1
-  // slices unlock and earn (green chips); the floor test (D3) covers the lock.
-  window.CPL_FUNDING_PERF = { as_of: "2026-07-27", suppress_below: 5,
-    statewide: { pe: 100000, p2: 100000, p3: 100000, pp: 100000 },
-    colleges: { "Shasta": { pe: 100000, p2: 100000, p3: 100000, pp: 100000 } }, unmatched: {} };
-  T.render();
-  const rt2 = doc.querySelectorAll(".cplfund-table")[2];
-  const shastaRow = Array.from(rt2.querySelectorAll("tbody tr")).find(function (tr) { return /Shasta/.test(tr.textContent); });
-  check("K2: a rural college over its Year-1 targets shows a green (unlocked) priority chip",
-    !!shastaRow.querySelector(".cf-rchip.ok"));
-  check("K2: that college's Earned-so-far cell shows a positive dollar",
-    /\$[1-9]/.test(shastaRow.querySelectorAll("td")[3].textContent));
-  check("K2: rural tfoot reports colleges earning + the earned pool",
-    rt2.querySelector("tfoot").textContent.indexOf("earning on current data") !== -1);
-  // Drill-in mirrors the per-priority earning (chips in the college row detail).
+  check("K1: rural table headers switched to Floor-fill + On-top bonus + Window total",
+    ruralTable.querySelector("thead").textContent.indexOf("Floor-fill") !== -1 &&
+    ruralTable.querySelector("thead").textContent.indexOf("On-top bonus") !== -1 &&
+    ruralTable.querySelector("thead").textContent.indexOf("Window total") !== -1);
+  check("K1: rural intro explains funding the college's own floor first (guaranteed)",
+    /funds the college.{0,6}s own minimum-viable floor first/.test(ruralTable.parentNode.parentNode.textContent) &&
+    /guaranteed/.test(ruralTable.parentNode.parentNode.textContent));
+  check("K2: rural tfoot reports the floor-fill / bonus split + funding-floor count",
+    ruralTable.querySelector("tfoot").textContent.indexOf("funding their floor") !== -1);
+  // Drill-in reflects the guaranteed allowance + floor-fill/bonus split (no chips).
   // NOTE: click triggers a full re-render, so re-query the detail from the fresh DOM.
   const shastaMain = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) { return /Shasta/.test(tr.textContent); });
   click(window, shastaMain);
   const detail = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-detail")).find(function (tr) { return tr.textContent.indexOf("Rural allowance") !== -1; });
-  check("K3: the college drill-in rural line shows per-priority chips + earned-so-far",
-    !!detail && detail.textContent.indexOf("split across the 3 priorities") !== -1 &&
-    !!detail.querySelector(".cf-rchip"));
+  check("K3: the college drill-in rural line reflects the guaranteed allowance (no ≥50% chips)",
+    !!detail && /guaranteed/.test(detail.textContent) &&
+    /rides on top|funds this college&#39;s floor/.test(detail.innerHTML) &&
+    !detail.querySelector(".cf-rchip"));
 }
 {
   // K4 — feeder measurables ladder: F1 (eligible headcount) + F2 (NC-cert waivers).
@@ -2106,10 +2123,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
 
 // ─────────────────────────────────────────────────────────────────────────────
 // Part M — SkyHigh (2026-07-28): the rural allowance is FOLDED into each rural
-// college's row (Sam: "calculate the rural bump assuming they hit the 50%
-// threshold and note it with a hover"). The row cap/rate/Yr/Total include it and
-// the SYSTEM total rises to match; the Rural section keeps the precise
-// unlock-based earning + notes the fold.
+// college's row. The row cap/rate/Yr/Total include it and the SYSTEM total rises
+// to match. (M4/M5 updated for PR4: the fold is now GUARANTEED — no ≥50% unlock,
+// and the Rural section shows a floor-fill / on-top-bonus split.)
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -2132,18 +2148,180 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const sysTot = doc.querySelector("#cplFundTable tr.cplfund-systemrow td.tot");
   check("M3: the SYSTEM total row equals Σ college totals (rural included consistently)",
     sysTot && sysTot.textContent.indexOf(Math.round(sumTotals).toLocaleString("en-US")) !== -1);
-  // M4 — the rural college's cell hover discloses the folded allowance + the unlock assumption.
+  // M4 — the rural college's cell hover discloses the GUARANTEED folded allowance (PR4).
   const bRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (tr) { return /Shasta/.test(tr.textContent); });
   const bTitle = bRow.querySelector("td.cf-prio").getAttribute("title") || "";
-  check("M4: a rural college's cell hover names the rural allowance + the unlock assumption",
-    /rural allowance/.test(bTitle) && /unlock/.test(bTitle));
-  // M5 — the Rural section still shows the precise unlock-based earning and notes the fold.
+  check("M4: a rural college's cell hover names the GUARANTEED rural allowance (no ≥50% unlock)",
+    /rural allowance/.test(bTitle) && /guaranteed/.test(bTitle) && !/unlock/.test(bTitle));
+  // M5 — the Rural section notes the fold and shows the guaranteed floor-fill/bonus split.
   const ruralSec = doc.querySelector('details.cplfund-sec[data-sec="rural"]');
   check("M5: the Rural section notes the allowance is folded into the table above",
     ruralSec && ruralSec.textContent.indexOf("folded into") !== -1);
-  check("M5: the Rural section still carries the precise per-priority chips",
-    !!(ruralSec && ruralSec.querySelector(".cf-rchip")));
+  check("M5: the Rural section shows the guaranteed floor-fill / on-top-bonus split (no ≥50% chips)",
+    !!ruralSec && ruralSec.textContent.indexOf("Floor-fill") !== -1 &&
+    ruralSec.textContent.indexOf("On-top bonus") !== -1 && !ruralSec.querySelector(".cf-rchip"));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part N — PR4 (SkyHighness, 2026-07-28): "combine the floor with the rural bump."
+// The GUARANTEED rural allowance funds each rural college's floor FIRST (reduced
+// main-pool floor), freeing main-pool dollars for non-rural colleges; the split
+// (floor-fill + on-top bonus) conserves the carve-out; and — Option B — the
+// allowance is guaranteed in Earned mode (only the MAIN allocation flexes).
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const m = T._model();
+  const floor = m.floor;
+  const per = D.pool.rural_carveout / 13;                       // ~76,923 per rural college
+  const ruralNames = D.colleges.filter(function (c) { return c.rural; }).map(function (c) { return c.college; });
+
+  // N1 — reduced floor: a rural college's MAIN entitlement can dip below the full
+  // floor (never below floor − per), while its TOTAL always meets the floor.
+  check("N1: every rural college's main entitlement ≥ the reduced floor (floor − per)",
+    ruralNames.every(function (n) { return m.W[n] >= (floor - per) - 1; }));
+  check("N1: every rural college's TOTAL window (main + guaranteed rural) ≥ the floor",
+    ruralNames.every(function (n) { return T._alloc(n).total >= floor - 1; }));
+  check("N1: at least one rural college sits at the REDUCED floor (its main < the full floor)",
+    ruralNames.some(function (n) { return m.W[n] < floor - 1 && m.W[n] >= (floor - per) - 1; }));
+
+  // N2 — the carve-out is conserved: Σ (floor-fill + on-top bonus) = the $1M rural pool.
+  let fill = 0, bonus = 0;
+  ruralNames.forEach(function (n) {
+    const gap = Math.max(0, floor - m.W[n]);
+    const ff = Math.min(per, gap);
+    fill += ff; bonus += (per - ff);
+  });
+  check("N2: rural floor-fill + on-top bonus conserve the carve-out ($1M)",
+    Math.abs((fill + bonus) - D.pool.rural_carveout) < 5);
+  check("N2: both parts are non-trivial (some colleges floored, some with bonus)",
+    fill > 100000 && bonus > 100000);
+
+  // N3 — the freed main pool flows to non-rural colleges: a floored rural college's
+  // main top-up is measured against its REDUCED floor (main pool pays less for it
+  // than a full-floor top-up would), while non-rural small colleges keep the full floor.
+  const cmMain = m.W["Copper Mountain"];                        // rural + floored
+  check("N3: a floored rural college's main entitlement = the reduced floor (main pool saves ~per)",
+    Math.abs(cmMain - (floor - per)) < 1 && cmMain < floor - 1);
+  const nonRuralFloored = D.colleges.find(function (c) {
+    return !c.rural && m.floored[c.college] && Math.abs(m.W[c.college] - floor) < 1;
+  });
+  check("N3: a non-rural floored college is still topped to the FULL floor", !!nonRuralFloored);
+  // Main pool is still fully conserved across all colleges (rural reduced floors just
+  // change the split, never the total the main pool distributes).
+  check("N3: Σ main entitlements still = the net main pool (freed dollars re-split, none lost)",
+    Math.abs(Object.values(m.W).reduce(function (s, w) { return s + w; }, 0) - T._netCollege()) < 1);
+}
+{
+  // N4 — GUARANTEED in Earned mode: a rural college underperforming on its MAIN
+  // allocation still receives its full rural allowance (it does not flex).
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-28", suppress_below: 5,
+    statewide: { p3: 999999 },
+    colleges: { "Shasta": { p3: 10 } }, unmatched: {} };   // Shasta far under its P1 target
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const per_ = D.pool.rural_carveout / 13;   // guaranteed rural window allowance per college
+  // Hold P3-slot as a data gap so only Year-1 P1 (any-transcribed → p3) flexes.
+  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
+  T._state.basis = "earned"; T.render();
+  const rc = T._alloc("Shasta");
+  check("N4: Shasta is rural (positive rural_w)", rc.rural_w > 0);
+  check("N4: its MAIN allocation flexes down (earned < cap when underperforming)",
+    rc.earned_total < rc.total - 1);
+  check("N4: its rural allowance is paid in FULL — earned ≥ the guaranteed rural window",
+    rc.earned_total >= rc.rural_w - 0.01);
+  // Sharp guard against re-folding rural into the earn fraction: toggling the rural
+  // flag off (same underperforming feed) drops earned by ~the full rural allowance.
+  T._setScenario({ ruralOverrides: { "Shasta": false } });
+  T.render();
+  const nr = T._alloc("Shasta");
+  check("N4: guaranteed rural adds ~its full allowance to earned even under-target",
+    Math.abs((rc.earned_total - nr.earned_total) - per_) < 2500);
+  delete window.CPL_FUNDING_PERF;
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part O — PR4 adversarial-review fixes (SkyHighness, 2026-07-28): three defects
+// the diverse-lens skeptics caught before merge. O1 = the per-priority DRILL-IN
+// earned line was the third earned site and still flexed the guaranteed rural
+// (contradicting the cell/row/pool). O2 = the cell hover claimed "funds the floor
+// first" for the 3 rural colleges already above the floor. O3 = an empty rural
+// roster stranded the $1M carve-out.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  // O1 — drill-in per-priority earned includes the guaranteed rural in FULL.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-28", suppress_below: 5,
+    statewide: { p3: 999999 }, colleges: {}, unmatched: {} };   // rural colleges post nothing
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
+  T._state.basis = "earned"; T.render();
+  const sh = window.CPL_FUNDING.colleges.find(function (c) { return c.college === "Shasta"; });
+  window.eval('CPL_FUNDING_TAB._state.open["c:' + sh.order + '"] = true;');
+  T.render();
+  const detail = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-detail")).find(function (tr) { return /Shasta/.test(tr.textContent) || tr.textContent.indexOf("Rural allowance") !== -1; });
+  check("O1: a rural college's drill-in earned lines disclose the guaranteed rural",
+    !!detail && detail.textContent.indexOf("guaranteed rural") !== -1);
+  // Sum the drill-in per-priority earned dollars for the viewed year; it must equal
+  // the row's Year-1 earned (ey1) — the rural is added in full, not dropped to $0.
+  const earnedNums = (detail.textContent.match(/earned:\s*\$([\d,]+)/g) || [])
+    .map(function (s) { return Number(s.replace(/[^\d]/g, "")); });
+  const a = T._alloc("Shasta");
+  const sumDrill = earnedNums.reduce(function (s, n) { return s + n; }, 0);
+  check("O1: Σ drill-in earned (viewed year) = the row's Year-1 earned (guaranteed rural not dropped)",
+    earnedNums.length === 3 && Math.abs(sumDrill - a.ey1) < 3);
+  // P1 (any-transcribed) is measurable + Shasta posted nothing → status none → the
+  // MAIN part earns $0, so the drill-in earned must equal exactly its guaranteed
+  // rural slice (a.p1 × rural_w / w). Before the fix this line showed $0.
+  check("O1: a none-status priority's drill-in earned = its guaranteed rural slice, not $0 (the bug)",
+    earnedNums[0] > 1000 && Math.abs(earnedNums[0] - (a.p1 * a.rural_w / a.w)) < 50);
+  delete window.CPL_FUNDING_PERF;
+}
+{
+  // O2 — the cell hover only claims floor-funding when floorFill actually happens.
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  const shastaTitle = (rows.find(function (tr) { return /Shasta/.test(tr.textContent); })
+    .querySelector("td.cf-prio").getAttribute("title") || "");           // above the floor → all bonus
+  const copperTitle = (rows.find(function (tr) { return /Copper Mountain/.test(tr.textContent); })
+    .querySelector("td.cf-prio").getAttribute("title") || "");           // floored → combined reason
+  check("O2: an above-floor rural college's hover says the allowance rides on top (not 'funds the floor first')",
+    /already meets the floor/.test(shastaTitle) && !/funds this college.{0,3}s floor first/.test(shastaTitle));
+  check("O2: a floored rural college's hover states the floor is funded partly by its rural allowance",
+    /funded partly by/.test(copperTitle) && /rural allowance/.test(copperTitle));
+  // O2b — the SYSTEM row hover must not crash / must not carry per-college reasons.
+  const sysCell = doc.querySelector("#cplFundTable tr.cplfund-systemrow td.cf-prio");
+  check("O2b: the SYSTEM row per-priority cell renders (no null-c crash) at the base rate",
+    !!sysCell && /statewide base rate|statewide base/.test(sysCell.getAttribute("title") || ""));
+}
+{
+  // O3 — clearing the whole rural roster returns the $1M to the main pool (no stranding).
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const D = window.CPL_FUNDING;
+  const wholePool = (D.pool.remaining_2025_26 + D.pool.one_time_2026_27 -
+    D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.feeder_carveout;   // 33.8M
+  const clear = {}; D.colleges.filter(function (c) { return c.rural; }).forEach(function (c) { clear[c.college] = false; });
+  T._setScenario({ ruralOverrides: clear });
+  T.render();
+  check("O3: with an empty rural roster, netCollege reclaims the carve-out (= the whole college pool)",
+    Math.abs(T._netCollege() - wholePool) < 1);
+  const sumTotals = D.colleges.reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
+  check("O3: Σ college totals = the whole pool — the $1M carve-out is not stranded",
+    Math.abs(sumTotals - wholePool) < 5);
+  // And the normal roster still distributes exactly the carve-out (no change).
+  T._setScenario({});
+  T.render();
+  check("O3: default roster unchanged — netCollege still = main pool (carve-out distributed)",
+    Math.abs(T._netCollege() - (wholePool - D.pool.rural_carveout)) < 1);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

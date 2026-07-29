@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-07-27
+updated: 2026-07-28
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1290,3 +1290,76 @@ colleges; ~$248k rural remainder on top). The load-bearing decision: the floor i
 the rural bump is *performance-earned* — so the carve-out splits into a guaranteed backfill + an
 earned remainder. Lock that split with Sam before building; it couples `allocModel()` +
 `collegeAlloc` + `ruralEarned`.
+
+## 2026-07-28 — SkyHighness: PR4 — combine the floor with the rural bump (the guaranteed floor-fill model)
+
+Shipped PR4. Sam's decision (AskUserQuestion, grounded in the live-computed split): **Option B —
+guarantee the whole $1M rural allowance** (floor-fill + bonus, no performance gate). That was the
+simpler *and* the more coherent call: it let me retire the entire ≥50%-per-priority rural-earning
+machinery (`ruralEarned`/`ruralChip`/`ruralThreshold`/`rural_threshold`/`cf-rchip`) that had become
+self-contradictory the moment the allowance stopped being "performance-earned."
+
+**The mechanism — a reduced main-pool floor.** The clean way to make the rural carve-out fund a rural
+college's floor *first* is not a second waterfall grafted onto the first — it's **one waterfall with a
+per-college floor.** A rural college's MAIN-pool floor becomes `max(0, floor − ruralPer)` ≈ $73,077;
+non-rural colleges keep the full $150k. Because the reduced floor guarantees `mainW ≥ floor − ruralPer`,
+`mainW + ruralPer ≥ floor` **always** — so the guaranteed rural slice always covers the remaining gap and
+there is **never a main-pool leftover top-up** (the edge case SkyHigh anticipated — "a floor gap > the
+slice" — provably cannot arise in this formulation). The main-pool dollars the reduced floors free
+re-split proportionally to the (mostly non-rural) unfloored colleges, and **`Σ mainW` still equals
+`netCollege()`** (conservation is untouched — the reduced floors change the *split*, never the total).
+
+**The equity truth I surfaced to Sam before building.** PR4 does *not* just move money's source — it
+**reduces the smallest rural colleges' totals**: the 5 tiniest (Columbia, Copper Mountain, Feather
+River, Lassen, Siskiyous) land at **exactly $150k** because their rural allowance is fully consumed by
+their own floor (today they'd get $150k + $77k = $227k). That's the intended "no double-dip"
+redistribution — but it's a real pull-down on the tiniest colleges, so I put the computed effect in
+front of Sam *with* the decision, not buried. **Lesson: when a re-plumbing changes who wins and who
+loses, compute the winners/losers on the live data and show them — don't frame it as a pure
+source-swap.** Live split: floor-fill **$654,148** + on-top bonus **$345,852** = the $1M (conserved);
+Σ college totals = **$33.8M** = `netCollege + carve` (SYSTEM total unchanged).
+
+**The earned-basis decoupling was the subtle correctness bit.** Before PR4, `collegeAlloc`/`prioCellHtml`
+computed earned as `(mainW + ruralW) × share/ny × earnFraction.f` — i.e. the folded rural *flexed* with
+achievement (the #916 "assume unlocked" simplification). Guaranteed means it must **not** flex: earned =
+`ruralW × shareSum/ny` (added in full) **+** `Σ priorities mainW × share/ny × fr.f` (only the main part
+flexes). Same split in `prioCellHtml` (`mainCap = cap − ruralBump`; `earned = mainCap × fr.f +
+ruralBump`) and in the SYSTEM row (`ruralBump = ruralCarve × share/ny`). This **resolves** the
+adversarial-review note SkyHigh had logged as an accepted simplification — rural is now genuinely
+guaranteed in Earned mode, not advance-credited. Guarded by a Part N test that toggles the rural flag
+off under an underperforming feed and asserts earned drops by ~the full allowance.
+
+**Disclosure gotcha caught in Chromium (not jsdom).** The per-priority hover listed "raised to the $150k
+floor" AND "boosted by a rural allowance" as two independent reasons — for a floored *rural* college that
+reads as $150k + rural = double-count, when the real total is exactly $150k (rural IS part of that floor).
+Fixed to ONE combined reason for the floored-and-rural case. **Lesson (again): a hover that concatenates
+independent "why" clauses silently double-counts when two of them are actually the same dollar.**
+
+**State.** One PR (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Rural section rewritten
+to a **Guaranteed allowance → Floor-fill → On-top bonus → Window total** table (tfoot "N of 13 funding
+their floor"); pool card + hero note + drill-in floor/rural lines all reworded to "guaranteed." Tests
+**460 → 475 → 484** (new Part N: reduced-floor + guaranteed-split conservation, freed-pool,
+earned-decoupling; Part O: the review fixes; Parts D1/D3/K/M4/M5 updated). Full suite 173 files green;
+real-Chromium clean (no h-scroll desktop/mobile, 0 console errors).
+
+**The adversarial review earned its keep — it caught a THIRD earned site I missed.** 475 green tests +
+a live-conservation proof + Chromium all passed, yet a 4-diverse-lens skeptic pass (Workflow) found
+three real defects before merge: (1) **MAJOR — the per-priority DRILL-IN earned line was a third earned
+site.** I decoupled the guaranteed rural in `collegeAlloc` (row/pool) and `prioCellHtml` (collapsed
+cell) but the drill-in `earnSeg` still computed `earned = capYr × fr.f` on the rural-*inclusive* cap, so
+in Earned mode it flexed the guaranteed rural to $0 — contradicting the same row's cell/column/pool for
+every rural college. **Lesson: when a value is computed at N call sites, a decoupling change must sweep
+ALL N — grep the formula (`× fr.f`, `c[p.key]`), don't trust that the two you edited are the whole set.**
+(2) MINOR — the cell hover claimed "funds this college's floor first" for the 3 rural colleges already
+above the floor (floorFill=$0), contradicting their own drill-in; gated the phrasing on the actual
+floorFill. (3) MINOR (pre-existing) — an empty rural roster stranded the $1M carve-out; `netCollege` now
+deducts what's actually distributed (`ruralPer × roster`), a no-op on real data that returns the earmark
+to the main pool when there are no rural colleges. **Fixing (2) surfaced a latent `prioCellHtml` crash:**
+my earlier edit had made `ruralBump` system-aware (>0 for the SYSTEM row), so the reasons block would
+dereference the null system `c` — scoped the reasons to a college-only bump. The review's own
+edge-harness independently re-confirmed conservation across floor=0 / carve=0 / empty-roster /
+ruralPer>floor / degrade. **A skeptic re-derives the invariants your tests didn't think to assert.**
+
+**Next in queue:** the display rename — the roster keys `"West Hills Coalinga"`/`"Imperial"` are also the
+**join keys** to `cpl_funding_performance.js` (the actuals feed) via the short-name space, so rename by
+adding a display-only `display` field per row (render `c.display || c.college`), NOT by changing the key.

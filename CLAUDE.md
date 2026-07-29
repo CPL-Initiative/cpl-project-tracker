@@ -569,6 +569,24 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyHighness side-lane — Implementation Funding PR4: combine the floor with the rural bump (2026-07-28, PR #PENDING)
+
+Shipped SkyHigh's queued PR4 (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Sam's
+call (AskUserQuestion, grounded in the live split): **Option B — guarantee the whole $1M rural
+allowance** (floor-fill + bonus, no performance gate) → let me retire the entire ≥50% rural-earning
+machinery. **Mechanism = one waterfall, per-college floor:** `allocModel()` gives rural colleges a
+REDUCED main-pool floor `max(0, floor − ruralPer)` ≈ $73,077, so the guaranteed rural allowance funds
+the top of their $150k floor and the main pool the rest — `mainW + ruralPer ≥ floor` **always** (no
+leftover top-up; the "gap > slice" edge case can't arise); `Σ mainW` still = `netCollege()`
+(conservation intact), freed main-pool dollars re-split to unfloored colleges. **Guaranteed in Earned
+mode:** rural added in full, only the MAIN allocation flexes (resolves the #916 advance-credit note).
+Live split: floor-fill **$654,148** + bonus **$345,852** = $1M; Σ totals **$33.8M**; the 5 smallest
+rural colleges land at exactly $150k (surfaced that pull-down to Sam). Rural section → **Guaranteed
+allowance → Floor-fill → On-top bonus → Window total**. Tests 460→**475** (new Part N); suite 173
+green; Chromium clean; adversarial review pre-merge. Story: `docs/cpl_funding_lessons.md` (SkyHighness)
+· handoff `docs/cpl_funding_handoff.md`. **Next: the display rename** (Coalinga/Imperial Valley —
+display-only, keep the join key). Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
 ### SkyHigh side-lane — Implementation Funding: readability + equitable cells + rural fold + 13-college roster (2026-07-28, #914/#916/#921 MERGED)
 
 Three merged PRs (JS + the data roster; **0 HTML**). **#914:** "How an allocation is computed" →

@@ -15,9 +15,9 @@
 // (even|frontload — front-load pulls the full window into Year 1 with
 // roll-forward), pool.floor_window (minimum viable per-college window
 // allocation, waterfall-funded within the pool), pool.rural_carveout + the
-// per-college `rural` flags (DRAFT roster = the CCCCO Rural College Transfer
-// Collaborative cohort) + rural_threshold (performance gate), and
-// participation_deadline (baseline-eligibility opt-in date).
+// per-college `rural` flags (DRAFT roster = the 13 federally-rural CCCs) — a
+// GUARANTEED earmark that funds rural colleges' floor first (PR4, 2026-07-28) —
+// and participation_deadline (baseline-eligibility opt-in date).
 //
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
@@ -43,7 +43,7 @@ window.CPL_FUNDING = {
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT FEEDER SUPPORT (carve-out)",
   "rural_carveout": 1000000.0,
-  "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (performance carve-out)",
+  "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (guaranteed — floor-fill + bonus)",
   "floor_window": 150000.0,
   "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
   "ccc_headcount": 2258784
@@ -140,7 +140,6 @@ window.CPL_FUNDING = {
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
- "rural_threshold": 0.5,
  "rural_source": "The 13 California Community Colleges federally categorized as rural (superseding the 10-college CCCCO Rural College Transfer Collaborative demo cohort, which was invitation-based); edit the per-college rural flags here (or via the in-tab override when unlocked) to true up",
  "participation_deadline": "2026-09-01",
  "extra_reqs": [],

@@ -9,7 +9,45 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-28 (SkyHigh), READ THIS FIRST
+## Latest state — 2026-07-28 (SkyHighness), READ THIS FIRST
+
+**PR4 shipped: "combine the floor with the rural bump" — the GUARANTEED floor-fill model.**
+Sam's decision (asked, grounded in the live split): **Option B — guarantee the whole $1M rural
+allowance** (floor-fill + bonus, no performance gate). One PR (`cpl_funding.js` +
+`cpl_funding_data.js` + test; **0 HTML**).
+
+- **Mechanism = one waterfall, per-college floor.** `allocModel()` gives RURAL colleges a REDUCED
+  main-pool floor `max(0, floor − ruralPer)` ≈ $73,077 (non-rural keep the full $150k). The
+  guaranteed rural allowance funds the top ~$77k of a rural college's floor; the main pool covers
+  the rest. The reduced floor guarantees `mainW + ruralPer ≥ floor` **always** — no main-pool
+  leftover top-up ever (the "gap > slice" edge case SkyHigh feared can't arise). `Σ mainW` still =
+  `netCollege()` (conservation intact); the freed main-pool dollars re-split to unfloored colleges.
+- **Guaranteed in Earned mode (the subtle bit).** `collegeAlloc`/`prioCellHtml` now add the rural
+  allowance IN FULL to earned (only the MAIN allocation flexes on achievement) — this *resolves*
+  the #916 "advance-credited folded rural" simplification. Retired the whole ≥50% machinery
+  (`ruralEarned`/`ruralChip`/`ruralThreshold`/`rural_threshold`/`cf-rchip`).
+- **Live split (13-college roster):** floor-fill **$654,148** + on-top bonus **$345,852** = $1M
+  (conserved); Σ college totals **$33.8M** = `netCollege + carve`. The 5 smallest rural colleges
+  (Columbia, Copper Mountain, Feather River, Lassen, Siskiyous) land at **exactly $150k** (rural
+  fully consumed by their floor; today they'd get $227k) — I surfaced that pull-down to Sam *with*
+  the decision. Rural section rewritten to **Guaranteed allowance → Floor-fill → On-top bonus →
+  Window total** (tfoot "10 of 13 funding their floor").
+- Tests **460 → 475 → 484** (new **Part N** + **Part O** = the review fixes; Parts D1/D3/K/M4/M5
+  updated). Full suite 173 files green; real-Chromium clean (no h-scroll desktop/mobile, 0 console
+  errors). **Adversarial review (4 diverse-lens skeptics) caught + fixed 3 real defects pre-merge** —
+  incl. a MAJOR one: the per-priority **drill-in** was a *third* earned site still flexing the
+  guaranteed rural to $0 in Earned mode (I'd only swept `collegeAlloc` + `prioCellHtml`). Story:
+  `docs/cpl_funding_lessons.md` (SkyHighness section).
+
+### 🎯 QUEUED for you — the display rename (SkyHigh's "small nicety")
+The roster keys **"West Hills Coalinga"** (now *Coalinga College*) and **"Imperial"** (*Imperial
+Valley College*) are also the **join keys** to `cpl_funding_performance.js` (the actuals feed) via
+the short-name space. **Do NOT change the key** — rename display-only: add a `display` field to
+those 2 rows in `cpl_funding_data.js` and render `c.display || c.college` at the display sites
+(college table cell, rural section, drill-in, CSV label, chips). Keep `c.college` as the join key so
+the 13-college roster tests + the perf join keep resolving.
+
+## Prior state — 2026-07-28 (SkyHigh)
 
 Four curator asks + two follow-ups, **three PRs, all merged** (`cpl_funding.js` /
 `cpl_funding_data.js` / test; **0 HTML** — the full-width fix is scoped injected CSS).
@@ -57,32 +95,16 @@ Tests **422 → 460**; full suite (173 files) green each time; real-Chromium ver
 (fold correctness + the pool-framing cascade) — all findings folded in. Side-lane — left
 `cpl_todos.json` + the numbered CCR handoff alone.
 
-### 🎯 QUEUED for you — PR4: combine the floor with the rural bump (Sam's idea, my ✅ rec)
-
-Route rural colleges' **floor-to-$150k through the rural carve-out FIRST**, then distribute any
-remainder on top. Effect (computed on the 13-college roster): frees **~$752k** of main-pool money
-for non-floored colleges (10 of 13 rural colleges are floored; 3 already ≥$150k proportionally),
-leaving **~$248k** of the $1M as a genuine on-top rural bonus. Clean equity story: *"rural money
-funds rural colleges' floor; the savings flow to everyone else."*
-- **THE decision to get from Sam first:** the $150k floor is a GUARANTEE but the rural bump is
-  currently PERFORMANCE-earned (≥50% achievement). If rural backfills to $150k, that backfill must
-  be guaranteed (else a low performer drops below the minimum) → the rural carve-out splits into a
-  **guaranteed floor-to-$150k part + a performance-earned remainder**. Ask: guarantee the whole
-  rural amount, or keep only the remainder performance-gated?
-- **Edge case:** a couple of the tiniest rural colleges have a floor gap > their ~$77k slice, so the
-  main pool would still top up the rest to reach $150k.
-- **Where the code lives:** `allocModel()` (the floor waterfall — currently main-pool only) +
-  `collegeAlloc` (the rural fold) + `ruralEarned` (the ≥50% precise earning). This couples the two
-  waterfalls, so it's architecturally significant — build it as its own PR with the decision locked.
+### ✅ PR4 — DONE by SkyHighness (see the Latest state block at the top)
+SkyHigh's queued PR4 shipped (Option B — guarantee the whole rural allowance). The "edge case"
+SkyHigh feared (a floor gap > the ~$77k slice) provably cannot arise under the reduced-floor
+formulation, and the "accepted simplification" adversarial-review note below is now **resolved**
+(rural is genuinely guaranteed in Earned mode, not advance-credited).
 
 ### Also queued / notes
-- **Display rename:** the data still uses **"West Hills Coalinga"** (now *Coalinga College*) and
-  **"Imperial"** (*Imperial Valley College*). #921 kept them as the roster keys; a display-rename
-  pass (data + any references) would be a small nicety.
-- **Adversarial-review note (accepted simplification, not a bug):** in Earned mode the pool "Earned"
-  card advance-credits the folded rural like the main pool (gap/pending → full advance), which can
-  exceed the Rural section's precise ≥50%-gated figure. That's the "assume unlocked" simplification;
-  the Rural section is the precise view.
+- **Display rename (now the top queue item — see the Latest state block):** the data still uses
+  **"West Hills Coalinga"** (now *Coalinga College*) and **"Imperial"** (*Imperial Valley College*).
+  Rename display-only (`display` field), never the join key.
 
 ### Read in order (SkyHigh)
 1. `docs/cpl_funding_lessons.md` — the SkyHigh section (equitable-cell design, the rural fold, the
