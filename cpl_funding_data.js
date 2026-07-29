@@ -326,6 +326,7 @@ window.CPL_FUNDING = {
   {
    "order": 112,
    "college": "West Hills Coalinga",
+   "display": "Coalinga College",
    "rural": true,
    "headcount": 6593,
    "district": "West Hills Community College District",
@@ -350,6 +351,7 @@ window.CPL_FUNDING = {
   {
    "order": 44,
    "college": "Imperial",
+   "display": "Imperial Valley College",
    "rural": true,
    "headcount": 11715,
    "district": "Imperial Community College District",

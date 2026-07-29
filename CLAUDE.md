@@ -569,7 +569,7 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyHighness side-lane — Implementation Funding PR4: combine the floor with the rural bump (2026-07-28, PR #PENDING)
+### SkyHighness side-lane — Implementation Funding PR4: combine the floor with the rural bump + display rename (2026-07-28/29, #925 MERGED + rename PR)
 
 Shipped SkyHigh's queued PR4 (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Sam's
 call (AskUserQuestion, grounded in the live split): **Option B — guarantee the whole $1M rural
@@ -582,10 +582,13 @@ leftover top-up; the "gap > slice" edge case can't arise); `Σ mainW` still = `n
 mode:** rural added in full, only the MAIN allocation flexes (resolves the #916 advance-credit note).
 Live split: floor-fill **$654,148** + bonus **$345,852** = $1M; Σ totals **$33.8M**; the 5 smallest
 rural colleges land at exactly $150k (surfaced that pull-down to Sam). Rural section → **Guaranteed
-allowance → Floor-fill → On-top bonus → Window total**. Tests 460→**475** (new Part N); suite 173
-green; Chromium clean; adversarial review pre-merge. Story: `docs/cpl_funding_lessons.md` (SkyHighness)
-· handoff `docs/cpl_funding_handoff.md`. **Next: the display rename** (Coalinga/Imperial Valley —
-display-only, keep the join key). Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+allowance → Floor-fill → On-top bonus → Window total**. Tests 460→475→**490** (new Parts N/O/P); suite
+173 green; Chromium clean. **The adversarial review (4-lens Workflow) earned its keep** — caught a real
+Earned-mode bug (a THIRD earned site, the per-priority drill-in, still flexed the guaranteed rural to
+$0) + 2 minor fixes, all pre-merge (Part O). **Follow-up: the display rename** ("West Hills Coalinga"→
+Coalinga College, "Imperial"→Imperial Valley College) via a `display` field + `dispName()`, display-only,
+join key kept (Part P). Story: `docs/cpl_funding_lessons.md` (SkyHighness) · handoff. Side-lane — left
+`cpl_todos.json` + the numbered CCR handoff alone.
 
 ### SkyHigh side-lane — Implementation Funding: readability + equitable cells + rural fold + 13-college roster (2026-07-28, #914/#916/#921 MERGED)
 
