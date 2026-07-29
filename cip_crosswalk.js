@@ -1517,9 +1517,9 @@
       shown.forEach(function (r) { var c = progCip(r[1], r[4]) || ""; var sec = c ? c.slice(0, 2) : ""; (groups[sec] = groups[sec] || []).push(r); });
       var secs = Object.keys(groups).filter(function (s) { return s !== ""; }).sort();
       if (groups[""]) secs.push("");   // no-CIP group last
-      var shownCount = 0, capped = false;
+      var shownCount = 0;
       secs.forEach(function (sec) {
-        if (capped) return;
+        if (shownCount >= 400) return;   // budget spent — emit NO header for a section that would render 0 rows under it
         var g = groups[sec].slice().sort(function (a, b) {
           var ca = progCip(a[1], a[4]) || "", cb = progCip(b[1], b[4]) || "";
           if (ca !== cb) return ca < cb ? -1 : 1;
@@ -1530,12 +1530,11 @@
           el("span", { class: "cipx-prog-sector-t" }, [sec ? (FAMS[sec] || ("CIP sector " + sec)) : "No CIP assigned yet"]),
           el("span", { class: "cipx-prog-sector-n" }, [g.length.toLocaleString() + (g.length === 1 ? " program" : " programs")]),
         ]));
-        for (var i = 0; i < g.length; i++) {
-          if (shownCount >= 400) { capped = true; break; }
+        for (var i = 0; i < g.length && shownCount < 400; i++) {
           listHostP.appendChild(programRow(g[i], repaintProgList)); shownCount++;
         }
       });
-      if (capped) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
+      if (shownCount < shown.length) listHostP.appendChild(el("div", { class: "cipx-fitmsg" }, ["Showing the first 400 — refine your search to see the rest."]));
     }
     repaintProgList();
     return host;

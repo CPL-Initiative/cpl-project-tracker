@@ -1049,6 +1049,31 @@ function fresh(withCollege) {
     check("browse: a 4-digit option with no sub4 title still shows code + count (never invents one)", !!opt5202 && /52\.02/.test(opt5202.textContent) && /code/.test(opt5202.textContent) && !/Series/.test(opt5202.textContent));
   }
 
+  // ── T3 cap-boundary guard (adversarial-review finding, 2026-07-29) ──
+  // A sector header must NEVER render with zero program rows beneath it when the 400-row render
+  // cap lands exactly on a sector boundary. Fixture: 400 programs in sector 01, then 3 in sector 52
+  // (entirely past the cap) — the 52 header must be omitted, not rendered empty.
+  {
+    const domCap = makeDom();
+    domCap.window.CIP_CROSSWALK = JSON.parse(JSON.stringify(RFIXTURE));
+    try { domCap.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+    domCap.window.eval(src);
+    const capApi = domCap.window.CPL_CIP_CROSSWALK;
+    const bigRows = [];
+    for (let i = 0; i < 400; i++) bigRows.push([0, "A" + i, "Alpha " + String(i).padStart(3, "0"), "0505.00", "01.0000", 0, 0, "3.00", 0, 0]);
+    for (let i = 0; i < 3; i++) bigRows.push([0, "B" + i, "Beta " + i, "0505.00", "52.0201", 0, 0, "3.00", 0, 0]);
+    capApi._setPrograms({ colleges: ["CAP COLLEGE"], awards: ["A.S. Degree"], statuses: ["Active"], rows: bigRows });
+    capApi.activate();
+    const capDoc = domCap.window.document;
+    const capSel = capDoc.querySelector(".cipx-prog .cipx-college-sel");
+    capSel.value = "0"; capSel.dispatchEvent(new domCap.window.Event("change"));
+    await tick();
+    const capHdrs = capDoc.querySelectorAll(".cipx-prog-sector");
+    check("programs: the 400-row cap renders exactly 400 program rows", capDoc.querySelectorAll(".cipx-prog-item").length === 400);
+    check("programs: no empty sector header at the cap boundary (sector 52 omitted, not rendered empty)", capHdrs.length === 1 && /^01$/.test(capHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()));
+    check("programs: the 'first 400' cap note shows when truncated", /first 400/.test(capDoc.querySelector(".cipx-prog-list").textContent));
+  }
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;
