@@ -1074,6 +1074,37 @@ function fresh(withCollege) {
     check("programs: the 'first 400' cap note shows when truncated", /first 400/.test(capDoc.querySelector(".cipx-prog-list").textContent));
   }
 
+  // ── 2021 first-gen crosswalk → precise old→new program-CIP flags (Sam, 2026-07-29) ──
+  // oldtopcip enriches the needs-revision message: a CIP that WAS a 2021-crosswalk value the current
+  // crosswalk changed reads differently from one off both maps; no 2021 data for a TOP → the generic msg.
+  {
+    const domOX = makeDom();
+    const fxOX = JSON.parse(JSON.stringify(RFIXTURE));
+    fxOX.oldtopcip = { "0505.00": ["52.0201", "52.9001"] };   // 52.9001 was a 2021 value now dropped; 52.0201 still current
+    domOX.window.CIP_CROSSWALK = fxOX;
+    try { domOX.window.localStorage.setItem("cipx_scope", "programs"); } catch (e) {}
+    domOX.window.eval(src);
+    const oxApi = domOX.window.CPL_CIP_CROSSWALK;
+    oxApi._setPrograms({
+      colleges: ["OLDX COLLEGE"], awards: ["A.S. Degree"], statuses: ["Active"],
+      rows: [
+        [0, "P1", "Was A 2021 Value", "0505.00", "52.9001", 0, 0, "18.00", 0, 0],   // ∈ old, ∉ current → "crosswalk changed"
+        [0, "P2", "Off Both Maps", "0505.00", "52.0399", 0, 0, "18.00", 0, 0],       // ∉ old, ∉ current → "not in 2021 or current"
+        [0, "P3", "No 2021 Data", "1230.00", "99.9999", 0, 0, "18.00", 0, 0],        // no 2021 data for 1230.00 → generic
+      ],
+    });
+    oxApi.activate();
+    const oxDoc = domOX.window.document;
+    const oxSel = oxDoc.querySelector(".cipx-prog .cipx-college-sel");
+    oxSel.value = "0"; oxSel.dispatchEvent(new domOX.window.Event("change"));
+    await tick();
+    const oxItem = (t) => Array.prototype.filter.call(oxDoc.querySelectorAll(".cipx-prog-item"), (it) => new RegExp(t).test(it.textContent))[0];
+    const p1 = oxItem("Was A 2021 Value"), p2 = oxItem("Off Both Maps"), p3 = oxItem("No 2021 Data");
+    check("old-xwalk: a former 2021-crosswalk CIP reads 'the 2021 crosswalk mapped … no longer lists it'", !!p1 && /2021 crosswalk mapped .*52\.9001.*no longer lists it/.test(p1.querySelector(".cipx-prog-rev").textContent));
+    check("old-xwalk: a CIP off both maps reads \"isn't in the 2021 or the current crosswalk\"", !!p2 && /52\.0399 isn.t in the 2021 or the current crosswalk/.test(p2.querySelector(".cipx-prog-rev").textContent));
+    check("old-xwalk: a TOP with no 2021 data falls back to the generic current-crosswalk message", !!p3 && /isn.t in the current crosswalk for TOP 1230\.00/.test(p3.querySelector(".cipx-prog-rev").textContent) && !/2021/.test(p3.querySelector(".cipx-prog-rev").textContent));
+  }
+
   // ── Part C — failure guards ──
   const dom2 = makeDom(); dom2.window.eval(src);
   let missThrew = false;

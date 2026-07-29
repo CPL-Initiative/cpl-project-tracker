@@ -67,7 +67,7 @@
 
   // ── state ──────────────────────────────────────────────────────────────────
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, SUB4 = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
-  var TOPCIP = {}, BOILER = {}, CIP_TOPS = {};
+  var TOPCIP = {}, BOILER = {}, CIP_TOPS = {}, OLDTOPCIP = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
   var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false };
   var SCOPE_KEY = "cipx_scope";
@@ -94,6 +94,7 @@
     BYCODE = {};
     ROWS.forEach(function (r) { BYCODE[r.code] = r; });
     TOPCIP = (D && D.topcip) || {};
+    OLDTOPCIP = (D && D.oldtopcip) || {};   // 2021 first-gen TOP→CIP crosswalk (what colleges used to set Program CIPs)
     BOILER = {}; ((D && D.boiler) || []).forEach(function (c) { BOILER[c] = 1; });
     // inverse crosswalk: CIP code -> {TOP: 1} — which TOPs map to each CIP. Lets the
     // inline "best matches" anchor on the crosswalk (a course belongs to a CIP's
@@ -1562,9 +1563,21 @@
     row.appendChild(l2);
     if (needsRev) {
       var tc = TOPCIP[top];
+      var topLbl = "TOP " + top + (tc && tc.t ? " · " + tc.t : "");
+      // The 2021 first-gen crosswalk (what colleges used to set the CIP) makes the flag precise:
+      // was the assigned CIP a valid 2021 value the crosswalk has since changed, or off both maps?
+      var oldList = OLDTOPCIP[top];   // undefined if we have no 2021 data for this TOP → fall back to the generic message
+      var revMsg;
+      if (oldList && oldList.length) {
+        revMsg = (oldList.indexOf(chosen) >= 0)
+          ? " — the 2021 crosswalk mapped " + topLbl + " to " + chosen + ", but the current crosswalk no longer lists it. Choose the current-crosswalk CIP:"
+          : " — " + chosen + " isn't in the 2021 or the current crosswalk for " + topLbl + ". Choose the current-crosswalk CIP:";
+      } else {
+        revMsg = " — the assigned CIP isn't in the current crosswalk for " + topLbl + ". Choose the current-crosswalk CIP:";
+      }
       var flag = el("div", { class: "cipx-prog-rev" }, [
         el("span", { class: "cipx-prog-revflag" }, ["⚑ needs revision"]),
-        el("span", {}, [" — the assigned CIP isn't in the current crosswalk for TOP " + top + (tc && tc.t ? " · " + tc.t : "") + ". Choose the current-crosswalk CIP:"]),
+        el("span", {}, [revMsg]),
       ]);
       var psel = el("select", { class: "cipx-fsel cipx-prog-revsel", "aria-label": "Revise the CIP for " + title }, [el("option", { value: "" }, ["Keep " + (chosen || "—") + " (assigned)"])]);
       (tc && tc.c || []).forEach(function (ct) { var rr = BYCODE[ct[0]]; psel.appendChild(el("option", { value: ct[0] }, [ct[0] + (rr ? " · " + rr.t : "")])); });
