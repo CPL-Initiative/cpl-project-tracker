@@ -1371,3 +1371,25 @@ override + one `dispName()` seam beats renaming a key that N other systems join 
 kept passing because the new names are superstrings of the old short keys ("Imperial" ⊂ "Imperial Valley
 College"), but Part P guards it explicitly (display shown, old key gone, key still resolves, search works).
 Tests 484 → **490**.
+
+## 2026-07-29 — SkyHighness cont.: reframe to the $35M apportionment (CBO workshop)
+
+Sam is presenting the model to a CBO at the CO budget workshop. Two reframes landed:
+- **The tab now models the 2026-27 $35M one-time apportionment**, not the combined $9M+$35M
+  pool. `$35M = $26,240,307 three-priority college pool (incl. $1M rural) + $1,000,000 NC feeder
+  + $1,200,000 CO Administration + $6,559,693 CPL Projects & Innovation` — ties out to the penny.
+  The 2025-26 **remaining ~$9M is a separate topic** (the $15M appropriation), so it's dropped from
+  the $35M model's revenue (`CORE_REVENUE` = one_time only). `scaling_projects_tech` → "CPL Projects
+  & Innovation" ($6,559,693); admin label → "CO Administration". Hero → **$26,240,307**; Total
+  Available → **$35M**; award range **avg $228,177 / min $150,000 / max $694,273** (all recomputed).
+- **Reconciliation lesson:** Sam's authoritative anchor ($26,240,307, with its min/max/avg) is
+  precise; his "~$8M for Projects & Innovation" was the round figure for **admin + P&I** ($7.76M).
+  Preserve the precise anchor, derive the P&I line as the residual ($6.56M) — don't let a rounded
+  side-figure move the anchor (it would have broken the min/max/avg the CBO answer is built on).
+- **Test churn from a smaller pool:** dropping $9M shrank the pool 33.8M→26.24M, which re-floored
+  colleges (Imperial fell below the floor; only Shasta stays above) and dropped the max (East LA
+  $694k). Lesson: **assert pool-*dependent* facts by deriving from the model, not hardcoding**
+  (East LA = the max & > 3× floor; the "N of 13 funding their floor" count computed from `_model()`).
+- **Sandbox-slow ≠ hang:** the local suite crossed ~120s and read as a hang; it was the throttled
+  sandbox (the *baseline* timed out too). Confirm with a progress trace + a generous timeout before
+  chasing a phantom infinite loop.

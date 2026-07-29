@@ -633,13 +633,15 @@
   //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
   //    carve-outs; with NO custom boxes and nothing hidden this equals the old
   //    remaining+one_time−admin−scaling formula (conservation is guarded by test). ──
+  // This tab models the 2026-27 $35M one-time apportionment (Sam, 2026-07-29). The
+  // 2025-26 remaining (~$9M) is a SEPARATE topic reported in the $15M Distributions
+  // sub-view, so it is NOT a revenue source of the $35M college pool.
   var CORE_REVENUE = [
-    { field: "remaining_2025_26", def: "2025-26 CPL remaining one-time funding" },
     { field: "one_time_2026_27", def: "2026-27 CPL one-time funding" }
   ];
   var CORE_DEDUCTION = [
-    { field: "admin_cost", def: null },   // default label = base().pool.admin_cost_label
-    { field: "scaling_projects_tech", def: "Scaling projects & tech" }
+    { field: "admin_cost", def: null },   // default label = base().pool.admin_cost_label ("CO Administration")
+    { field: "scaling_projects_tech", def: "CPL Projects & Innovation" }
   ];
   function poolLabel(field, def) {
     var v = firstDefined(
@@ -3214,7 +3216,7 @@
     var proj = activeProjectObj();
     return {
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
-      totalAvailable: (Number(poolField("remaining_2025_26")) || 0) + (Number(poolField("one_time_2026_27")) || 0),
+      totalAvailable: grossRevenue(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
       collegePool: netCollegeWithRural(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
@@ -3230,8 +3232,7 @@
   function memoOverview(m) {
     return "<h2>Funding Overview</h2><p>Each California Community College and each noncredit institution may receive " +
       "implementation funding to support local " + esc(m.area.full) + " efforts in accordance with AB 123 and Vision 2030 " +
-      "goals. A total of <strong>" + fmtMoney(m.totalAvailable) + "</strong> is available (" + fmtMoney(m.oneTime) +
-      " one-time 2026-27 funding plus " + fmtMoney(m.remaining) + " remaining from 2025-26), of which <strong>" +
+      "goals. A total of <strong>" + fmtMoney(m.totalAvailable) + "</strong> in one-time 2026-27 funding is available, of which <strong>" +
       fmtMoney(m.collegePool) + "</strong> is distributed to the " + m.nColleges + " colleges across the <strong>" +
       esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
       "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
