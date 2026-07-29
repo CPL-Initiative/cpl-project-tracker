@@ -42379,12 +42379,11 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAS-A-P2-1-001|MAPSAS-A:P2-1-001|MAPSAS-AE-P1-1-001|MAPSAS-AEP21-1-001|MAPSAS-AEP22-1-001",
+      "exhibit_id": "MAPSAS-A-P2-1-001|MAPSAS-A:P2-1-001|MAPSAS-AE-P1-1-001|MAPSAS-AEP22-1-001",
       "exhibit_ids": [
         "MAPSAS-A-P2-1-001",
         "MAPSAS-A:P2-1-001",
         "MAPSAS-AE-P1-1-001",
-        "MAPSAS-AEP21-1-001",
         "MAPSAS-AEP22-1-001"
       ],
       "title": "AP Physics 2: Algebra-Based",
@@ -42392,14 +42391,13 @@ window.CPL_STATEWIDE = {
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
-      "confidence_title": 0.98,
+      "confidence_title": 0.99,
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
         "AP - Physics 2: Algebra-Based",
         "AP : Physics 2: Algebra-Based",
         "AP Exam - Physics 2",
-        "AP Exam Physics 2: Algebra-Based (Score of 3)",
         "AP Exam Physics 2: Algebra-Based Score of 4 or 5"
       ],
       "cpl_type": "Standardized Assessment",
@@ -42533,16 +42531,12 @@ window.CPL_STATEWIDE = {
           "credit": "4 hours in General Physics II"
         },
         {
-          "course": "PHYSICS 012",
-          "credit": "3 hours in Physics Fundamentals"
+          "course": "PHYSICS 007",
+          "credit": "4 hours in General Physics II"
         },
         {
           "course": "LACCD GE 5",
           "credit": "3 hours in Natural Sciences"
-        },
-        {
-          "course": "PHYSICS 007",
-          "credit": "4 hours in General Physics II"
         },
         {
           "course": "Local GE Area 5",
@@ -45844,13 +45838,12 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAS-A-P1-1-001|MAPSAS-A-P11-1-001|MAPSAS-A:P11-1-001|MAPSAS-AE-P-1-001|MAPSAS-AEP11-1-001|MAPSAS-AEP12-1-001|MAPSAS-AEP13-1-001",
+      "exhibit_id": "MAPSAS-A-P1-1-001|MAPSAS-A-P11-1-001|MAPSAS-A:P11-1-001|MAPSAS-AE-P-1-001|MAPSAS-AEP12-1-001|MAPSAS-AEP13-1-001",
       "exhibit_ids": [
         "MAPSAS-A-P1-1-001",
         "MAPSAS-A-P11-1-001",
         "MAPSAS-A:P11-1-001",
         "MAPSAS-AE-P-1-001",
-        "MAPSAS-AEP11-1-001",
         "MAPSAS-AEP12-1-001",
         "MAPSAS-AEP13-1-001"
       ],
@@ -45859,7 +45852,7 @@ window.CPL_STATEWIDE = {
       "is_classified": true,
       "issuing_agency": "College Board",
       "training_agency": "",
-      "confidence_title": 0.98,
+      "confidence_title": 0.99,
       "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
@@ -46000,16 +45993,12 @@ window.CPL_STATEWIDE = {
           "credit": "4 hours in General Physics I"
         },
         {
-          "course": "PHYSICS 012",
-          "credit": "3 hours in Physics Fundamentals"
+          "course": "PHYSICS 006",
+          "credit": "4 hours in General Physics I"
         },
         {
           "course": "LACCD GE 5",
           "credit": "3 hours in Natural Sciences"
-        },
-        {
-          "course": "PHYSICS 006",
-          "credit": "4 hours in General Physics I"
         },
         {
           "course": "Local GE Area 5",
@@ -168305,7 +168294,7 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-ACB1-1-001|MAPSAH-ACBE-1-001|MAPSAH-ACBS-1-001|MAPSAP-AECA-1-001|MAPSAS-A-CB-1-001|MAPSAS-A:CB-1-001|MAPSAS-ACB(-1-001|MAPSAS-ACB(1-1-001|MAPSAS-ACB(2-1-001|MAPSAS-ACB1-1-001|MAPSAS-ACB2-1-001|MAPSAS-ACB3-1-001|MAPSAS-ACB4-1-001|MAPSAS-ACB5-1-001|MAPSAS-ACBA-1-001|MAPSAS-ACBA1-1-001|MAPSAS-ACBS1-1-001|MAPSAS-ACBS2-1-001|MAPSAS-ACBS3-1-001|MAPSAS-AECB-1-001|MAPSAS-AECB1-1-001|MAPSAS-AECB2-1-001|MAPSAS-AECB3-1-001|MAPSAS-AECB4-1-001|MAPSAS-AECB5-1-001|MAPSAS-AM-C-1-001|MAPSAS-AM-C1-1-001|MAPSAS-WAEC1-1-001",
+      "exhibit_id": "MAPSAH-ACB1-1-001|MAPSAH-ACBE-1-001|MAPSAH-ACBS-1-001|MAPSAP-AECA-1-001|MAPSAS-A-CB-1-001|MAPSAS-A:CB-1-001|MAPSAS-ACB(-1-001|MAPSAS-ACB(1-1-001|MAPSAS-ACB(2-1-001|MAPSAS-ACB1-1-001|MAPSAS-ACB3-1-001|MAPSAS-ACB4-1-001|MAPSAS-ACB5-1-001|MAPSAS-ACBA-1-001|MAPSAS-ACBA1-1-001|MAPSAS-ACBS1-1-001|MAPSAS-ACBS2-1-001|MAPSAS-ACBS3-1-001|MAPSAS-AECB-1-001|MAPSAS-AECB1-1-001|MAPSAS-AECB2-1-001|MAPSAS-AECB3-1-001|MAPSAS-AECB4-1-001|MAPSAS-AECB5-1-001|MAPSAS-AM-C-1-001|MAPSAS-AM-C1-1-001|MAPSAS-WAEC1-1-001",
       "exhibit_ids": [
         "MAPSAH-ACB1-1-001",
         "MAPSAH-ACBE-1-001",
@@ -168317,7 +168306,6 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ACB(1-1-001",
         "MAPSAS-ACB(2-1-001",
         "MAPSAS-ACB1-1-001",
-        "MAPSAS-ACB2-1-001",
         "MAPSAS-ACB3-1-001",
         "MAPSAS-ACB4-1-001",
         "MAPSAS-ACB5-1-001",
@@ -168555,18 +168543,6 @@ window.CPL_STATEWIDE = {
           "credit": "5 hours in Calculus I"
         },
         {
-          "course": "MATH 261",
-          "credit": "5 hours in Calculus I"
-        },
-        {
-          "course": "MATH 262",
-          "credit": "5 hours in Calculus II"
-        },
-        {
-          "course": "LACCD GE 2",
-          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
-        },
-        {
           "course": "Mathematics (MATH) 071",
           "credit": "5 hours in Calculus I With Analytic Geometry"
         },
@@ -168609,6 +168585,14 @@ window.CPL_STATEWIDE = {
         {
           "course": "MATH 238",
           "credit": "5 hours in Calculus for Business and Social Science I"
+        },
+        {
+          "course": "MATH 261",
+          "credit": "5 hours in Calculus I"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
         },
         {
           "course": "Local GE Area 2",
@@ -182347,14 +182331,12 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-APC(-1-001|MAPSAS-A-PC1-1-001|MAPSAS-A:PC-1-001|MAPSAS-AE-P3-1-001|MAPSAS-AEPC-1-001|MAPSAS-AEPC1-1-001|MAPSAS-AEPC4-1-001|MAPSAS-APC(1-1-001|MAPSAS-APC--1-001|MAPSAS-APC-1-1-001|MAPSAS-APCE-1-001|MAPSAS-APCE1-1-001|MAPSAS-APCE2-1-001|MAPSAS-APCE3-1-001|MAPSAS-APCE5-1-001|MAPSAS-APCE6-1-001|MAPSAS-APCE7-1-001",
+      "exhibit_id": "MAPSAH-APC(-1-001|MAPSAS-A-PC1-1-001|MAPSAS-A:PC-1-001|MAPSAS-AE-P3-1-001|MAPSAS-AEPC4-1-001|MAPSAS-APC(1-1-001|MAPSAS-APC--1-001|MAPSAS-APC-1-1-001|MAPSAS-APCE-1-001|MAPSAS-APCE1-1-001|MAPSAS-APCE2-1-001|MAPSAS-APCE3-1-001|MAPSAS-APCE5-1-001|MAPSAS-APCE6-1-001|MAPSAS-APCE7-1-001",
       "exhibit_ids": [
         "MAPSAH-APC(-1-001",
         "MAPSAS-A-PC1-1-001",
         "MAPSAS-A:PC-1-001",
         "MAPSAS-AE-P3-1-001",
-        "MAPSAS-AEPC-1-001",
-        "MAPSAS-AEPC1-1-001",
         "MAPSAS-AEPC4-1-001",
         "MAPSAS-APC(1-1-001",
         "MAPSAS-APC--1-001",
@@ -182380,8 +182362,6 @@ window.CPL_STATEWIDE = {
         "AP : Physics C: Electricity and Magnetism",
         "AP Exam - Physics C electricity/magnetism",
         "AP Exam Physics C: Electricity and Magnetism (Score 4-5)",
-        "AP Exam Physics C: Electricity and Magnetism Score of 3",
-        "AP Exam Physics C: Electricity and Magnetism Score of 4 or 5",
         "AP Physics C (Electricity and Magnetism)",
         "AP Physics C (electricity/magnetism)",
         "AP Physics C - Electricity/ Magnetism",
@@ -182555,22 +182535,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "PHYS C125",
           "credit": "4 hours in Algebra Based Physics: Electricity and Magnetism"
-        },
-        {
-          "course": "PHYSICS 012",
-          "credit": "3 hours in Physics Fundamentals"
-        },
-        {
-          "course": "LACCD GE 5",
-          "credit": "3 hours in Natural Sciences"
-        },
-        {
-          "course": "PHYSICS 067",
-          "credit": "5 hours in Physics for Life Science Majors II"
-        },
-        {
-          "course": "PHYSICS 102",
-          "credit": "5 hours in Physics for Engineers and Scientists II"
         },
         {
           "course": "PHYS 46",
@@ -183362,14 +183326,13 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-APC(1-1-001|MAPSAS-A-PC-1-001|MAPSAS-A:PC1-1-001|MAPSAS-AE-P2-1-001|MAPSAS-AEPC2-1-001|MAPSAS-AEPC3-1-001|MAPSAS-AEPC5-1-001|MAPSAS-AP3M-1-001|MAPSAS-APC(-1-001|MAPSAS-APC(2-1-001|MAPSAS-APC-2-1-001|MAPSAS-APCM-1-001|MAPSAS-APCM1-1-001|MAPSAS-APCM3-1-001|MAPSAS-APCM4-1-001|MAPSAS-APCM5-1-001|MAPSAS-APM-1-001|MAPSAS-PCM-1-001",
+      "exhibit_id": "MAPSAH-APC(1-1-001|MAPSAS-A-PC-1-001|MAPSAS-A:PC1-1-001|MAPSAS-AE-P2-1-001|MAPSAS-AEPC2-1-001|MAPSAS-AEPC5-1-001|MAPSAS-AP3M-1-001|MAPSAS-APC(-1-001|MAPSAS-APC(2-1-001|MAPSAS-APC-2-1-001|MAPSAS-APCM-1-001|MAPSAS-APCM1-1-001|MAPSAS-APCM3-1-001|MAPSAS-APCM4-1-001|MAPSAS-APCM5-1-001|MAPSAS-APM-1-001|MAPSAS-PCM-1-001",
       "exhibit_ids": [
         "MAPSAH-APC(1-1-001",
         "MAPSAS-A-PC-1-001",
         "MAPSAS-A:PC1-1-001",
         "MAPSAS-AE-P2-1-001",
         "MAPSAS-AEPC2-1-001",
-        "MAPSAS-AEPC3-1-001",
         "MAPSAS-AEPC5-1-001",
         "MAPSAS-AP3M-1-001",
         "MAPSAS-APC(-1-001",
@@ -183397,7 +183360,6 @@ window.CPL_STATEWIDE = {
         "AP Exam - Physics C mechanics",
         "AP Exam Physics C: Mechanics (Score 4-5)",
         "AP Exam Physics C: Mechanics Score of 3",
-        "AP Exam Physics C: Mechanics Score of 4 or 5",
         "AP Exam: Physics C- Mechanics",
         "AP Physics C (Mechanics)",
         "AP Physics C (mechanics)",
@@ -183580,14 +183542,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "LACCD GE 5",
           "credit": "3 hours in Natural Sciences"
-        },
-        {
-          "course": "PHYSICS 066",
-          "credit": "5 hours in Physics for Life Science Majors I"
-        },
-        {
-          "course": "PHYSICS 101",
-          "credit": "5 hours in Physics for Engineers and Scientists I"
         },
         {
           "course": "PHYS 45",
@@ -228834,12 +228788,12 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 380,
-        "exhibits": 305,
+        "credit_recs": 365,
+        "exhibits": 299,
         "disciplines": 16,
         "ccc_collaborative": 0,
         "industry_certs": 28,
-        "pct": 3.0
+        "pct": 2.9
       },
       {
         "college": "Cabrillo College",
@@ -229700,8 +229654,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5489,
-        "exhibits": 1776,
+        "credit_recs": 5484,
+        "exhibits": 1771,
         "courses": 298,
         "colleges": 84,
         "ccc_collaborative": 25,
@@ -229727,8 +229681,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Interdisciplinary Studies",
-        "credit_recs": 623,
-        "exhibits": 154,
+        "credit_recs": 622,
+        "exhibits": 153,
         "courses": 28,
         "colleges": 81,
         "ccc_collaborative": 1,
@@ -229768,7 +229722,7 @@ window.CPL_STATEWIDE = {
         "courses": 132,
         "colleges": 31,
         "ccc_collaborative": 23,
-        "pct": 2.2
+        "pct": 2.3
       },
       {
         "discipline": "Fine and Applied Arts",
@@ -229799,9 +229753,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Mathematics",
-        "credit_recs": 169,
-        "exhibits": 129,
-        "courses": 93,
+        "credit_recs": 167,
+        "exhibits": 128,
+        "courses": 92,
         "colleges": 33,
         "ccc_collaborative": 0,
         "pct": 1.3
@@ -229817,9 +229771,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Physical Sciences",
-        "credit_recs": 107,
-        "exhibits": 79,
-        "courses": 69,
+        "credit_recs": 100,
+        "exhibits": 74,
+        "courses": 65,
         "colleges": 20,
         "ccc_collaborative": 0,
         "pct": 0.8
@@ -229909,8 +229863,8 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6764,
-        "exhibits": 2162,
+        "credit_recs": 6749,
+        "exhibits": 2156,
         "colleges": 84,
         "pct": 53.2
       },
@@ -229953,10 +229907,10 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7891,
-        "exhibits": 2949,
+        "credit_recs": 7876,
+        "exhibits": 2943,
         "colleges": 91,
-        "pct": 62.1
+        "pct": 62.0
       },
       {
         "mode": "Industry training (I)",
@@ -230025,8 +229979,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11191,
-        "exhibits": 4772,
+        "credit_recs": 11176,
+        "exhibits": 4766,
         "colleges": 98,
         "disciplines": 23,
         "pct": 88.0
@@ -230451,6 +230405,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-28T14:43:50",
-  "total_credit_recs": 12713
+  "generated_at": "2026-07-29T09:12:05",
+  "total_credit_recs": 12698
 };

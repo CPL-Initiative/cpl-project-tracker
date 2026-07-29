@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-07-28T14:44:29.369660+00:00",
+  "scraped_at": "2026-07-29T09:12:42.248099+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26589,
+    "jst": 26315,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 122,
+      "jst": 123,
       "star": false
     },
     "Merced College": {
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 310,
+      "jst": 322,
       "star": true
     },
     "San Diego Mesa College": {
@@ -42,7 +42,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 969,
+      "jst": 970,
       "star": true
     },
     "San Diego Miramar College": {
@@ -77,7 +77,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 801,
+      "jst": 812,
       "star": false
     },
     "De Anza College": {
@@ -98,11 +98,6 @@
     "Mt. San Antonio College": {
       "vets": 699,
       "jst": 733,
-      "star": true
-    },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 451,
       "star": true
     },
     "Southwestern College": {
@@ -130,14 +125,19 @@
       "jst": 146,
       "star": true
     },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 135,
+      "star": true
+    },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 363,
+      "jst": 365,
       "star": true
     },
     "Los Angeles Valley College": {
       "vets": 247,
-      "jst": 359,
+      "jst": 360,
       "star": true
     },
     "Santa Rosa Junior College": {
@@ -157,7 +157,7 @@
     },
     "Mt. San Jacinto College": {
       "vets": 168,
-      "jst": 535,
+      "jst": 538,
       "star": true
     },
     "Fresno City College": {
@@ -167,7 +167,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 500,
+      "jst": 501,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -177,7 +177,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 215,
+      "jst": 220,
       "star": true
     },
     "Antelope Valley College": {
@@ -242,7 +242,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 233,
+      "jst": 234,
       "star": false
     },
     "Evergreen Valley College": {
@@ -257,7 +257,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 152,
+      "jst": 153,
       "star": true
     },
     "Golden West College": {
@@ -427,7 +427,7 @@
     },
     "Napa Valley College": {
       "vets": 38,
-      "jst": 49,
+      "jst": 51,
       "star": true
     },
     "Santa Monica College": {
@@ -492,7 +492,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 85,
+      "jst": 86,
       "star": false
     },
     "Gavilan College": {

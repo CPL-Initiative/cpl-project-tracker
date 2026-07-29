@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-28",
+ "as_of": "2026-07-29",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43308,
+  "pe": 43033,
   "p2": 4791,
-  "p3": 17136,
+  "p3": 16822,
   "pp": 5
  },
  "colleges": {
@@ -69,7 +69,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Canyons": {
-   "pe": 498,
+   "pe": 499,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -93,7 +93,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Chaffey": {
-   "pe": 1479,
+   "pe": 1490,
    "p2": 15,
    "p3": 32,
    "pp": 0
@@ -188,7 +188,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "East LA": {
-   "pe": 229,
+   "pe": 230,
    "p2": 0,
    "p3": 25,
    "pp": 0
@@ -240,7 +240,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Glendale": {
-   "pe": 215,
+   "pe": 220,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -288,7 +288,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "LA Pierce": {
-   "pe": 1859,
+   "pe": 1860,
    "p2": 1309,
    "p3": 1736,
    "pp": 0
@@ -300,7 +300,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "LA Valley": {
-   "pe": 359,
+   "pe": 360,
    "p2": 0,
    "p3": 189,
    "pp": 0
@@ -383,9 +383,9 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Moreno Valley": {
-   "pe": 2378,
+   "pe": 2379,
    "p2": 417,
-   "p3": 1945,
+   "p3": 1946,
    "pp": 0
   },
   "Mt San Antonio": {
@@ -395,13 +395,13 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Mt. San Jacinto": {
-   "pe": 530,
+   "pe": 533,
    "p2": 0,
    "p3": 0,
    "pp": 0
   },
   "Napa": {
-   "pe": 49,
+   "pe": 51,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -425,7 +425,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Oxnard": {
-   "pe": 151,
+   "pe": 152,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -467,13 +467,13 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Riverside": {
-   "pe": 818,
+   "pe": 829,
    "p2": 31,
    "p3": 691,
    "pp": 0
   },
   "Sacramento City": {
-   "pe": 52,
+   "pe": 53,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -533,7 +533,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Santa Ana": {
-   "pe": 443,
+   "pe": 445,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -627,7 +627,7 @@ window.CPL_FUNDING_PERF = {
   "West LA": {
    "pe": 732,
    "p2": 497,
-   "p3": 562,
+   "p3": 563,
    "pp": 1
   },
   "West Valley": {
@@ -645,9 +645,9 @@ window.CPL_FUNDING_PERF = {
  },
  "unmatched": {
   "Barstow Community College": {
-   "pe": 449,
+   "pe": 133,
    "p2": 0,
-   "p3": 316,
+   "p3": 0,
    "pp": 0
   },
   "Calbright College Credit": {
@@ -811,7 +811,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-07-28",
+ "vet_star_as_of": "2026-07-29",
  "vet_star_threshold": 0.75,
  "vet_star_n": 51
 };
