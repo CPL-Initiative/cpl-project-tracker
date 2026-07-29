@@ -196,6 +196,14 @@ jobs:
       - name: Build funding priority-metric actuals
         run: python3 funding/_build_funding_performance.py CustomReport_latest.json || echo "funding-performance build failed (non-fatal; prior artifact kept)"
 
+      # ── Step 4a3: ESS 25-82 outcome-2 rollup ──────────────────────
+      # Rolls credential_reference_data.js (regenerated in step 3 above) down to a
+      # compact per-college "adopted >= 1 statewide credit recommendation" sidecar
+      # for the $15M Distributions sub-view. Non-fatal: absent sidecar → the tab
+      # shows that outcome as pending rather than a false "not met".
+      - name: Build ESS 25-82 statewide-recommendation rollup
+        run: python3 funding/_build_funding_ess.py || echo "funding-ess build failed (non-fatal; prior artifact kept)"
+
       # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
       # Read-only over kb/coci_*.json; writes kb/row_audit/{latest.json,
       # <date>.md} that the UCL "⚠ hinky" badge consumes. See CLAUDE.md §11.
@@ -295,6 +303,7 @@ jobs:
                   kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
           # Funding priority-metric actuals (P2/P3, suppressed — ratified ADR)
           git add cpl_funding_performance.js 2>/dev/null || true
+          git add cpl_funding_ess.js 2>/dev/null || true
           # MIL/JST veteran data (aggregate per-college MIL/JST + Veteran Star;
           # no PII — same counts shown on the public MAP dashboard). Guarded:
           # absent until the first successful fetch_veteran_jst.py run.

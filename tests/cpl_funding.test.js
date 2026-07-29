@@ -1487,9 +1487,13 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  check("Report sub-tab renders alongside the Funding-model tab",
-    doc.querySelectorAll('#cplFundingMount [data-subview]').length === 2 &&
-    !!doc.querySelector('[data-subview="report"]'));
+  // Three sub-views since 2026-07-29: the $35M funding model, the $15M
+  // Distributions receipt, and the Report.
+  check("Report sub-tab renders alongside the Funding-model + $15M Distributions tabs",
+    doc.querySelectorAll('#cplFundingMount [data-subview]').length === 3 &&
+    !!doc.querySelector('[data-subview="report"]') &&
+    !!doc.querySelector('[data-subview="model"]') &&
+    !!doc.querySelector('[data-subview="grants"]'));
   T._setSubview("report");
   check("Report view renders an editable memo + doc-type toolbar + Copy/PDF/Word exports",
     !!doc.getElementById("cplFundMemo") &&
@@ -2367,6 +2371,123 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("P: the rural section shows the display names",
     ruralSec.textContent.indexOf("Coalinga College") !== -1 &&
     ruralSec.textContent.indexOf("Imperial Valley College") !== -1);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part Q — the $15M Distributions sub-view (SkyHighness, 2026-07-29): the ESS
+// 25-82 $50,000 grant receipt (118 recipients = 114 colleges + 4 noncredit
+// campuses; Sequoias declined) plus progress on the three ESS priority outcomes,
+// each measured from live MAP/CER data and fail-open when a feed is absent.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  // The ESS outcome-2 rollup producer is wired into the daily workflow and the
+  // consumer lazy-loads its sidecar.
+  const wf = fs.existsSync(".github/workflows/daily-dashboard.yml")
+    ? fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8") : "";
+  check("Q0: the ESS outcome-2 producer runs in the daily workflow",
+    /_build_funding_ess\.py/.test(wf));
+  check("Q0: the consumer lazy-loads the ESS sidecar (fail-open)",
+    /loadScript\("cpl_funding_ess\.js",\s*"CPL_FUNDING_ESS"/.test(consumerSrc));
+  check("Q0: the producer exists and documents the statewide-articulation basis",
+    fs.existsSync("funding/_build_funding_ess.py") &&
+    /statewide/i.test(fs.readFileSync("funding/_build_funding_ess.py", "utf8")));
+}
+{
+  const { window } = freshDom();
+  // Feed both the MAP perf artifact (vet_star + pe/p3) and the ESS sidecar.
+  window.CPL_FUNDING_PERF = {
+    as_of: "2026-07-29", suppress_below: 5,
+    statewide: { pe: 43000, p2: 5000, p3: 16000 },
+    vet_star: { "Alameda": true, "Laney": false },
+    vet_star_threshold: 0.75, vet_star_as_of: "2026-07-29",
+    colleges: {
+      "Alameda": { pe: 120, p3: 40 },              // outcome 3 met
+      "Laney": { pe: null, p3: null, pe_suppressed: true },   // suppressed → partial
+      "Butte": { pe: 0, p3: 0 }                    // in feed, nothing → not met
+    },
+    unmatched: {}
+  };
+  window.CPL_FUNDING_ESS = {
+    as_of: "2026-07-29", n_statewide_credentials: 84, n_adopters: 2,
+    statewide_adopters: { "Alameda": true, "Butte": true }, unmatched: {}
+  };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const D = window.CPL_FUNDING;
+
+  check("Q1: the sub-view toggle offers the $15M Distributions view",
+    !!doc.querySelector('[data-subview="grants"]'));
+  T._setSubview("grants");
+  const table = doc.querySelector("table.cplfund-grants");
+  check("Q1: the grants table renders", !!table);
+
+  // Recipients: every college except the decliner, plus the 4 noncredit feeders.
+  const nRecip = D.colleges.length - 1 + D.feeders.length;   // 115 - 1 + 4 = 118
+  const bodyRows = Array.from(table.querySelectorAll("tbody tr"));
+  const declined = bodyRows.filter(function (r) { return r.classList.contains("cplfund-declined"); });
+  check("Q2: 118 recipients + 1 declined row",
+    bodyRows.length - declined.length === nRecip && declined.length === 1 && nRecip === 118);
+  check("Q2: the decliner (Sequoias) is shown as declined, not as a recipient",
+    /Sequoias/.test(declined[0].textContent) && /declined/i.test(declined[0].textContent));
+  check("Q2: the 4 noncredit campuses are flagged NC",
+    table.querySelectorAll("tbody .cplfund-chip").length === D.feeders.length);
+  const grandTotal = nRecip * 50000;                          // $5,900,000
+  check("Q2: total distributed = 118 × $50,000 = $5,900,000",
+    grandTotal === 5900000 &&
+    table.querySelector("tfoot").textContent.indexOf("$" + grandTotal.toLocaleString("en-US")) !== -1);
+  const secTxt = doc.querySelector(".cplfund").textContent;
+  check("Q2: the remaining 2025-26 balance is shown alongside (separate from the $35M model)",
+    secTxt.indexOf("$" + Math.round(D.pool.remaining_2025_26).toLocaleString("en-US")) !== -1 &&
+    /Remaining 2025-26/.test(secTxt));
+  check("Q2: the $15M reconciliation states the residual honestly",
+    /Reconciliation:/.test(secTxt) && /15,000,000/.test(secTxt));
+
+  // Outcome marks per row, driven by the fixtures above.
+  function rowFor(name) {
+    return bodyRows.find(function (r) { return r.querySelector("td.t") && new RegExp(name).test(r.querySelector("td.t").textContent); });
+  }
+  const al = rowFor("Alameda"), la = rowFor("Laney"), bu = rowFor("Butte");
+  check("Q3: outcome 1 ✓ when the Veteran Star flag is met",
+    !!al.querySelectorAll("td.c")[0].querySelector(".cf-ess.ok"));
+  check("Q3: outcome 1 not-met when below the Veteran Star bar",
+    !!la.querySelectorAll("td.c")[0].querySelector(".cf-ess.no"));
+  check("Q3: outcome 1 hover names the Veteran Star basis (75%, not the memo's 100%)",
+    /Veteran Star/.test(al.querySelectorAll("td.c")[0].querySelector(".cf-ess").getAttribute("title")));
+  check("Q3: outcome 1 reads n/a for a college absent from the veteran feed",
+    !!bu.querySelectorAll("td.c")[0].textContent.match(/n\/a/));
+  check("Q4: outcome 2 ✓ for a statewide-recommendation adopter",
+    !!al.querySelectorAll("td.c")[1].querySelector(".cf-ess.ok") &&
+    /statewide credit recommendation/.test(al.querySelectorAll("td.c")[1].querySelector(".cf-ess").getAttribute("title")));
+  check("Q4: outcome 2 not-met for a non-adopter",
+    !!la.querySelectorAll("td.c")[1].querySelector(".cf-ess.no"));
+  check("Q5: outcome 3 ✓ when eligible/transcribed students exist in MAP",
+    !!al.querySelectorAll("td.c")[2].querySelector(".cf-ess.ok"));
+  check("Q5: outcome 3 ◐ (partial) when the count is privacy-suppressed",
+    !!la.querySelectorAll("td.c")[2].querySelector(".cf-ess.part"));
+  check("Q5: outcome 3 not-met when the feed is loaded but the college posted nothing",
+    !!bu.querySelectorAll("td.c")[2].querySelector(".cf-ess.no"));
+  check("Q6: the view tallies each outcome + an all-three count",
+    /Progress on current data:/.test(secTxt) && /meeting all three/.test(secTxt));
+  check("Q6: the legend explains every mark, incl. that a dash is not a compliance finding",
+    /not a finding that a college failed/.test(secTxt));
+  check("Q6: the ESS memo's certification date + expenditure deadline are stated",
+    /Jan 15, 2026/.test(secTxt) && /June 30, 2028/.test(secTxt));
+  delete window.CPL_FUNDING_PERF;
+  delete window.CPL_FUNDING_ESS;
+}
+{
+  // Q7 — fail-open: with NO feeds loaded, every outcome reads pending (⏳), never a
+  // false "not met", and the view still renders the grant receipt.
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setSubview("grants");
+  const table = doc.querySelector("table.cplfund-grants");
+  check("Q7: the grant receipt renders with no feeds loaded", !!table &&
+    table.querySelector("tfoot").textContent.indexOf("$5,900,000") !== -1);
+  check("Q7: outcomes read pending (⏳) rather than a false not-met",
+    table.querySelectorAll("tbody .cf-ess.pend").length > 300 &&
+    table.querySelectorAll("tbody .cf-ess.ok").length === 0);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
