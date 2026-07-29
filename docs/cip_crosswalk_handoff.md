@@ -19,7 +19,43 @@ related:
 
 # CIP workstream handoff → next session
 
-## 🟢 LATEST — 2026-07-28 (SkyLark): the CO-handoff enhancement series (Raul + Jenni)
+## 🟢 LATEST — 2026-07-29 (SkyMark): 4 more curator tweaks — Programs polish + a 4-digit-title seam
+
+Sam brought 4 tweaks off SkyLark's series. Shipped as **one PR (#926, MERGED)** — all in
+`cip_crosswalk.js` + the builder + tests, **0 HTML** — plus an adversarial-review fix.
+
+1. **Programs toggle leftmost** — the scope bar now reads `Programs · Courses` (default *selection*
+   unchanged — still Courses; just a `scopeBar()` array reorder).
+2. **No duplicate college selector in Programs review** — `rebuildShell()` skips `collegeBar()` when
+   `programsReview` (scope=programs && mode=review); `programsView()` has its OWN selector (program-export
+   names ≠ fitcheck names). Guarded ONLY on `programsReview`, so Programs + Browse still shows the course bar.
+3. **Programs grouped by CIP sector, ascending** — `repaintProgList()` groups by 2-digit sector (`FAMS`
+   family title in a `.cipx-prog-sector` header), rows ascending by full CIP code then title; a
+   "No CIP assigned yet" group falls last; the red flag styling + "Needs revision only" toggle are
+   retained. **Adversarial review caught + I fixed** an empty-header edge at the exact 400-row cap
+   boundary — the header is now emitted only when ≥1 row will render under it (the `shownCount>=400`
+   guard moved to the TOP of the sector loop; `capped` flag removed).
+4. **4-digit CIP series titles — a GROUNDED SEAM, ships inert.** The `SUB4`/`sub4` wiring is built:
+   builder `load_sub4()` reads an authoritative NCES all-levels export from `kb/reference/`
+   (`cip_series4_titles.json` OR `CIPCode2020.csv`/`.xlsx`), filtered to 4-digit prefixes present among
+   the built 6-digit codes; consumer `fillCip4()` shows the title when present, else the prior
+   "code · N codes". **No source is committable today** — the CCCCO workbook is exported 6-digit-only,
+   nces.ed.gov is egress-policy-blocked from the sandbox, and there's no lossless CIP-2020 GitHub
+   mirror / PyPI pkg. I refused to inject CIP-2010 or model-paraphrased federal titles (grounding
+   doctrine). A no-source rebuild is **byte-identical** (verified).
+
+**🎯 ACTION FOR SAM (to finish tweak 4):** drop the official **NCES all-levels CIP-2020 export** — the
+version WITH the 2-/4-digit series rows (`CIPCode2020.csv` or `.xlsx`, from NCES "use the data"; or the
+CO can export the workbook's *CIP Descriptions* sheet UNfiltered) — into `kb/reference/`, then re-run
+`python kb/_build_cip_crosswalk.py`. The 4-digit dropdown titles light up automatically (same pattern as
+sourcing the old first-gen program crosswalk from the CO). Or hand me the file and I'll wire it in one step.
+
+Tests **292 → 302**; full suite 173 files green; real-Chromium (desktop + phone, light + dark) clean incl.
+Mt. San Antonio (542 programs) → 39 sector headers, **0 empty**, 0 overflow, 0 console errors. Side-lane
+discipline honored: left `kb/cpl_todos.json` + the numbered `session_<N>_handoff.md` untouched. Full story:
+`docs/cip_crosswalk_lessons.md` (2026-07-29).
+
+## 2026-07-28 (SkyLark): the CO-handoff enhancement series (Raul + Jenni)
 
 Sam brought CO feedback from **Raul and Jenni** (who will **own the tab** once finalized): 7 asks + 2 rules
 he added mid-stream. Shipping as a short series of focused PRs. **Read `docs/cip_crosswalk_lessons.md`
