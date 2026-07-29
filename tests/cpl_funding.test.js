@@ -117,8 +117,8 @@ check("data: headcount_pct sums to 1 over the new roster",
   D && Math.abs(D.colleges.reduce(function (s, c) { return s + c.headcount_pct; }, 0) - 1) < 1e-4);
 
 // Pool math: the workbook chain still validates (before the feeder carve-out).
-check("data: pool math (remaining + one-time − admin − scaling = college_funding_before_feeder)",
-  D && Math.abs((D.pool.remaining_2025_26 + D.pool.one_time_2026_27 -
+check("data: pool math (one-time − admin − projects&innovation = college_funding_before_feeder)",
+  D && Math.abs((D.pool.one_time_2026_27 -
     D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.college_funding_before_feeder) < 0.01);
 check("data: SYSTEM headcount = Σ college rows",
   D && D.system.headcount === D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0));
@@ -220,9 +220,9 @@ function pieSlices(el) {
     tables[0].querySelector("tbody tr.cplfund-systemrow").textContent.indexOf("SYSTEM") !== -1);
   // PR-1 (Sam, 2026-07-23): Total Available Funds + Award range boxes.
   {
-    const totalAvail = D.pool.remaining_2025_26 + D.pool.one_time_2026_27;
+    const totalAvail = D.pool.one_time_2026_27;   // $35M — the 2025-26 remaining is a separate topic
     const totalCard = doc.querySelector(".cplfund-card.total");
-    check("Total Available Funds card = remaining + one-time",
+    check("Total Available Funds card = the 2026-27 one-time appropriation ($35M)",
       !!totalCard &&
       totalCard.querySelector(".v").textContent.indexOf("$" + Math.round(totalAvail).toLocaleString("en-US")) !== -1 &&
       totalCard.textContent.toLowerCase().indexOf("total available funds") !== -1);
@@ -371,20 +371,22 @@ function pieSlices(el) {
   const P = D.pool;
 
   // Conservation: with NO custom boxes and nothing hidden, netCollege equals the
-  // baked remaining + one_time − admin − scaling − feeder − rural formula.
-  const bakedNet = P.remaining_2025_26 + P.one_time_2026_27 - P.admin_cost -
+  // baked one_time − admin − scaling − feeder − rural formula (the 2025-26 remaining
+  // is NOT a revenue source of the $35M model — Sam, 2026-07-29).
+  const bakedNet = P.one_time_2026_27 - P.admin_cost -
     P.scaling_projects_tech - P.feeder_carveout - P.rural_carveout;
   check("net college funding matches the baked formula (conservation)", Math.round(T._netCollege()) === Math.round(bakedNet));
-  const gross = P.remaining_2025_26 + P.one_time_2026_27;
-  check("Total Available Funds = Σ revenue sources",
+  const gross = P.one_time_2026_27;
+  check("Total Available Funds = Σ revenue sources ($35M one-time)",
     doc.querySelector(".cplfund-card.total .v").textContent.indexOf("$" + Math.round(gross).toLocaleString("en-US")) !== -1);
 
-  // Editable label persists.
-  const remLabel = doc.querySelector('.cplfund-card input[data-edit="pool-label"][data-field="remaining_2025_26"]');
-  check("each core pool box has an editable label", !!remLabel);
-  commit(window, remLabel, "AB 123 rollover funds");
+  // Editable label persists (the one-time appropriation box; the 2025-26 remaining
+  // box is no longer a revenue source of this model).
+  const otLabel = doc.querySelector('.cplfund-card input[data-edit="pool-label"][data-field="one_time_2026_27"]');
+  check("each core pool box has an editable label", !!otLabel);
+  commit(window, otLabel, "AB 123 one-time (2026-27)");
   check("editing a pool label persists",
-    !!(T._getScenario().poolLabels && T._getScenario().poolLabels.remaining_2025_26 === "AB 123 rollover funds"));
+    !!(T._getScenario().poolLabels && T._getScenario().poolLabels.one_time_2026_27 === "AB 123 one-time (2026-27)"));
 
   // Add a revenue box → net rises by its amount; it flows into Total Available too.
   const netBefore = T._netCollege();
@@ -900,8 +902,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   const perRural = D.pool.rural_carveout / 13;
   check("floor model: smallest college (Copper Mountain, rural) main entitlement sits at the REDUCED floor (floor − rural allowance)",
     Math.abs(m.W["Copper Mountain"] - (m.floor - perRural)) < 1);
-  check("floor model: largest college (East LA) stays proportional (well above floor)",
-    m.W["East LA"] > 900000);
+  check("floor model: largest college (East LA) is the max entitlement, well above the floor",
+    m.W["East LA"] === Math.max.apply(null, Object.values(m.W)) && m.W["East LA"] > m.floor * 3);
   const cm = T._alloc("Copper Mountain");
   // Copper Mountain is BOTH floored and (federally) rural. Under PR4 its rural
   // allowance is consumed reaching the floor, so its window total = exactly the
@@ -1019,9 +1021,11 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("floored rural college: window total = exactly the $150K floor",
     cmCells.length === 6 && cmCells[5].textContent.indexOf("150,000") !== -1);
 
-  // A large rural college (Imperial, proportional ≥ floor): no floor-fill, full bonus on top.
+  // The largest rural college (Shasta — its proportional share ≥ the floor): no
+  // floor-fill, full bonus on top. (Which rural colleges clear the floor depends on
+  // the pool size, so pick the largest, which is the most robust "above-floor" case.)
   const imRuralRow = Array.from(ruralTable.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Imperial") !== -1;
+    return tr.textContent.indexOf("Shasta") !== -1;
   });
   const imCells = imRuralRow ? imRuralRow.querySelectorAll("td") : [];
   check("large rural college: floor-fill is a dash (its share already meets the floor)",
@@ -1029,10 +1033,15 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("large rural college: full allowance rides on top as a bonus",
     imCells.length === 6 && imCells[4].textContent.indexOf("76,9") !== -1);
 
-  // tfoot: RURAL POOL conserves floor-fill + bonus = the carve-out; funding-their-floor count.
+  // tfoot: RURAL POOL conserves floor-fill + bonus = the carve-out; funding-their-floor
+  // count is derived from the model (robust to pool size).
   const rtFoot = ruralTable.querySelector("tfoot");
-  check("rural tfoot reports the count funding their floor (10 of 13 on current data)",
-    rtFoot && rtFoot.textContent.indexOf("10 of 13 funding their floor") !== -1);
+  const mdl = T._model(); const perR3 = D.pool.rural_carveout / 13; let nFillR3 = 0;
+  D.colleges.filter(function (c) { return c.rural; }).forEach(function (c) {
+    if (Math.max(0, mdl.floor - (mdl.W[c.college] || 0)) > 0.5) nFillR3++;
+  });
+  check("rural tfoot reports the count funding their floor (derived N of 13)",
+    rtFoot && nFillR3 > 0 && rtFoot.textContent.indexOf(nFillR3 + " of 13 funding their floor") !== -1);
 
   const shastaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("Shasta") !== -1;
@@ -1494,7 +1503,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     check("memo includes the ESS section — " + sec, memo.indexOf(sec) !== -1);
   });
   // The memo reflects the live model numbers + priorities + allocation.
-  const totalAvail = "$" + Math.round(D.pool.remaining_2025_26 + D.pool.one_time_2026_27).toLocaleString("en-US");
+  const totalAvail = "$" + Math.round(D.pool.one_time_2026_27).toLocaleString("en-US");
   check("memo Funding Overview carries the Total Available Funds figure", memo.indexOf(totalAvail) !== -1);
   check("memo lists the three priorities",
     D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
@@ -2307,8 +2316,8 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const D = window.CPL_FUNDING;
-  const wholePool = (D.pool.remaining_2025_26 + D.pool.one_time_2026_27 -
-    D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.feeder_carveout;   // 33.8M
+  const wholePool = (D.pool.one_time_2026_27 -
+    D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.feeder_carveout;   // 26.24M
   const clear = {}; D.colleges.filter(function (c) { return c.rural; }).forEach(function (c) { clear[c.college] = false; });
   T._setScenario({ ruralOverrides: clear });
   T.render();
