@@ -19,7 +19,34 @@ related:
 
 # CIP workstream handoff → next session
 
-## 🟢 LATEST — 2026-07-29 (SkyMark): 4 more curator tweaks — Programs polish + a 4-digit-title seam
+## 🟢 LATEST — 2026-07-29 (SkyMark cont.): the CO files landed — 4-digit titles + the 2021 crosswalk
+
+Sam supplied the two reference files the queue was waiting on. Both shipped, both LIVE:
+
+- **#930 — 4-digit series titles (finishes tweak 4).** Sam dropped the official NCES all-levels
+  **CIPCode2020.csv** (string-coded, lossless, WITH the 2-/4-digit rows the CCCCO workbook lacked) into
+  `kb/reference/`. The `sub4` seam (built in #926) lit up: **473** four-digit series titles now populate
+  the Browse 4-digit dropdown (`51.38 · Registered Nursing, Nursing Administration, … · N codes`).
+  Grounded — titles come only from the NCES file. The earlier "ACTION FOR SAM" is **done**.
+- **#932 — the 2021 first-gen TOP↔CIP crosswalk (finishes the old→new program-flag follow-up).** Sam
+  supplied `topcip_2021_crosswalk.xlsx` (the reference colleges used to set Program CIPs). Builder
+  `load_old_topcip()` → `oldtopcip[<TOP>] = [old CIPs]` (**401 TOPs / 772 pairs, 100% join** the current
+  TOPs). The Programs needs-revision message is now PRECISE: *"the 2021 crosswalk mapped TOP N to X, but
+  the current crosswalk no longer lists it"* (crosswalk changed) vs *"X isn't in the 2021 or the current
+  crosswalk"* (off both maps) vs the generic fallback when a TOP has no 2021 data. The flag **trigger is
+  unchanged** (assigned ∉ current) — only the explanation sharpened. **Design choice flagged to Sam:** I
+  enriched the message rather than changing which programs flag — easy to flip the trigger if he'd prefer.
+  Real data (Mt. San Antonio, 13 flagged): **4 "crosswalk changed" + 9 "off both maps"**.
+
+Both are committed-only artifacts (no cron rebuilds `cip_crosswalk_data.js`), so the regenerated data file
+ships in each PR. Tests **302 → 305**; real-Chromium clean (0 overflow / 0 console errors).
+
+**Remaining open (none blocking):** the manual "+ Add another code" free-search scope (crosswalk-limited
+vs open-with-flag — Sam's call); the optional program-first "Find my program's code" easy button; the
+standing **WCAG** pre-field gate; **Phase B** (shared backend / progress store / editing-access model).
+Full story: `docs/cip_crosswalk_lessons.md` (2026-07-29 cont.).
+
+## 2026-07-29 (SkyMark): 4 curator tweaks (#926) — Programs polish + a 4-digit-title seam
 
 Sam brought 4 tweaks off SkyLark's series. Shipped as **one PR (#926, MERGED)** — all in
 `cip_crosswalk.js` + the builder + tests, **0 HTML** — plus an adversarial-review fix.
@@ -44,11 +71,8 @@ Sam brought 4 tweaks off SkyLark's series. Shipped as **one PR (#926, MERGED)** 
    mirror / PyPI pkg. I refused to inject CIP-2010 or model-paraphrased federal titles (grounding
    doctrine). A no-source rebuild is **byte-identical** (verified).
 
-**🎯 ACTION FOR SAM (to finish tweak 4):** drop the official **NCES all-levels CIP-2020 export** — the
-version WITH the 2-/4-digit series rows (`CIPCode2020.csv` or `.xlsx`, from NCES "use the data"; or the
-CO can export the workbook's *CIP Descriptions* sheet UNfiltered) — into `kb/reference/`, then re-run
-`python kb/_build_cip_crosswalk.py`. The 4-digit dropdown titles light up automatically (same pattern as
-sourcing the old first-gen program crosswalk from the CO). Or hand me the file and I'll wire it in one step.
+**🎯 ACTION FOR SAM — ✅ DONE 2026-07-29:** Sam supplied the NCES all-levels `CIPCode2020.csv`; the
+4-digit dropdown titles are now live (#930). See the LATEST section above.
 
 Tests **292 → 302**; full suite 173 files green; real-Chromium (desktop + phone, light + dark) clean incl.
 Mt. San Antonio (542 programs) → 39 sector headers, **0 empty**, 0 overflow, 0 console errors. Side-lane
