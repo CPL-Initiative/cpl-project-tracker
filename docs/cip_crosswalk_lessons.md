@@ -1801,3 +1801,70 @@ its own selector rather than forcing a fragile name match.**
 requesting) → precise old→new revision flags; (2) the open manual "+ Add another code" free-search scope
 question (crosswalk-limited vs open) — unanswered, applies to the COURSE review only; (3) optional
 program-first "Find my program's code" easy button. New KB note: `reference-cdcp-and-the-cip-count-rule.md`.
+
+## 2026-07-29 — SkyMark: 4 curator tweaks (Programs polish + a grounded 4-digit-title seam) — #926
+
+Sam (from Raul + Jenni) sent 4 more tweaks off SkyLark's series. All landed in **one PR (#926, MERGED)** —
+`cip_crosswalk.js` + `kb/_build_cip_crosswalk.py` + tests, **0 HTML** (no Rule-4 mirror). Adversarial review
+before merge caught one real edge, fixed in a follow-up commit on the same PR.
+
+**T1 — Programs toggle leftmost.** `scopeBar()` array reordered to `[["programs","Programs"],["courses","Courses"]]`.
+Default *selection* deliberately left as `courses` (Sam asked to move the toggle position, not change the default).
+
+**T2 — hide the duplicate college selector in Programs review.** Root cause confirmed: `rebuildShell()` appended
+the course `collegeBar()` unconditionally (L2550), AND `programsView()` builds its OWN `.cipx-collegebar` (L1471,
+because program-export college names differ from the fitcheck names), so Programs review showed TWO selectors.
+Fix: `if (!programsReview) wrapEl.appendChild(collegeBar())`. Guarded on `programsReview` (scope=programs &&
+mode=review) ONLY — Programs + Browse has no duplicate and its inline "check a course" feature depends on the
+course bar, so it must keep it. `syncStickyOffsets` is null-safe on a stale/absent `collegeBarEl` (height 0 → no-op).
+
+**T3 — Programs grouped by CIP sector, ascending.** `repaintProgList()` rewritten: group `shown` by the 2-digit
+sector of the *chosen* CIP (`progCip`), sectors ascending, rows within ascending by full CIP code then title, a
+`.cipx-prog-sector` header per group (code + `FAMS[sec]` family title + count), a "No CIP assigned yet" group last.
+The old *flagged-first, then alphabetical* order is replaced (per Sam) — findability of needs-revision rows is
+preserved by the retained red flag styling + the "Needs revision only" toggle (which pre-filters, max 34 flagged at
+any college << the 400 cap). Sector titles come **only** from `FAMS` (grounded), fallback "CIP sector NN".
+
+**T4 — 4-digit CIP series titles: a grounded seam that ships INERT.** The ask: put the NCES 4-digit *series* titles
+in the Browse 4-digit dropdown (today it labels "51.38 · N codes"). The blocker + the decision are the real lesson:
+- The CCCCO workbook (`cip_searchable_260715.xlsx`) is exported **6-digit-only** ("Level = 6 Digit - Specific",
+  2,325 rows; 0 two-/four-digit rows) — so it has 2-digit family titles + 6-digit code titles but **no 4-digit
+  series titles**. The official NCES all-levels CIP file DOES carry the 4-digit rows; our export just dropped them.
+- **Sourcing attempts, all dead ends from the sandbox:** nces.ed.gov = **egress-policy-blocked** (403 CONNECT,
+  non-retryable per the proxy README); no committed lossless CIP-**2020** GitHub raw mirror (SaiTeja/datamade/
+  RVA repos only *reference* the file; jbryer/ipeds has it but it's **CIP-2010** AND stores `CIPCode` as a **lossy
+  number** — `1.01`, trailing zeros dropped → 4-digit/6-digit collisions); no PyPI package.
+- **The call (grounding doctrine):** the whole tool is "grounded, no hallucination" — so I **refused** to inject
+  CIP-2010 or WebFetch-summarized (model-paraphrased) federal title strings. Instead I built the **seam**: builder
+  `load_sub4(codes)` reads an authoritative file from `kb/reference/` (`cip_series4_titles.json` OR the NCES
+  `CIPCode2020.csv`/`.xlsx`), keeps only 4-digit prefixes present among the built codes, strips trailing periods;
+  emits `sub4` **only when non-empty** so a no-source rebuild is **byte-identical** (verified — `git diff` clean).
+  Consumer `fillCip4()` shows `"NN.NN · <title> · N codes"` when `SUB4[k]` exists, else the prior label.
+- **To finish it:** drop the official NCES all-levels CIP-2020 export (with the 2-/4-digit rows) into
+  `kb/reference/` and re-run `python kb/_build_cip_crosswalk.py` — the titles light up. Same "source the
+  authoritative file from the CO" pattern as the old first-gen program crosswalk. **Reusable lesson: when the
+  only reachable source for grounded reference data is stale-edition or lossy or a summarizer, build the
+  populate-on-file-drop seam and name the exact file — never fabricate the data to avoid an empty deliverable.**
+
+**Adversarial review (3-lens workflow → adversarial verify) before merge — earned its keep.** Correctness /
+doctrine-UX / regression lenses; 3 raw findings all pointed at ONE thing, split 1 CONFIRMED / 2 REFUTED: the
+T3 sector header was appended **before** the per-row 400-cap check, so if the cumulative render count hit exactly
+400 at a sector boundary, the NEXT sector rendered an **empty labeled header** (count, 0 rows). The refuters proved
+it doesn't reproduce on *today's* data (the 400th row lands in the trailing no-CIP bucket for all 12 colleges with
+>400 programs) — but the program data is **regenerated daily**, so I fixed it defensively: move the `shownCount>=400`
+guard to the TOP of the sector loop (emit a header only when ≥1 row will render under it); drop the `capped` flag;
+the "first 400" note keys off `shownCount < shown.length`. New jsdom guard: a 400-in-sector-01 + 3-in-sector-52
+fixture proves the sector-52 header is omitted (not empty) at the exact boundary. **Method carried: "doesn't
+reproduce on current data" is not a fix when the data regenerates daily — guard the code path.**
+
+**Verification.** `cip_crosswalk.test.js` 292 → **302** (scope order, single college bar, sector grouping +
+ascending, the cap-boundary empty-header guard, `sub4` dropdown title + grounded fallback). Full suite 173 files
+green. Real-Chromium over HTTP (a preload-`_setPrograms`-then-activate harness, since the real tab lazy-loads
+`coci_programs_data.js` async): desktop + phone, light + dark — Programs leftmost, exactly ONE college selector,
+39 ascending sector headers with real family titles, **0 empty headers** on Mt. San Antonio's 542 programs, 0
+horizontal overflow, 0 console errors (favicon 404 only). Byte-identical `cip_crosswalk_data.js` (code-only PR).
+
+**Still open (unchanged from SkyLark, none blocking):** the OLD first-gen program crosswalk (Sam sourcing from CO);
+the manual "+ Add another code" free-search scope question (crosswalk-limited vs open-with-flag — Sam's call);
+optional program-first "Find my program's code" easy button; the standing WCAG pre-field gate + Phase B backend.
+Side-lane discipline honored: left `kb/cpl_todos.json` + the numbered `session_<N>_handoff.md` untouched.
