@@ -1868,3 +1868,47 @@ horizontal overflow, 0 console errors (favicon 404 only). Byte-identical `cip_cr
 the manual "+ Add another code" free-search scope question (crosswalk-limited vs open-with-flag — Sam's call);
 optional program-first "Find my program's code" easy button; the standing WCAG pre-field gate + Phase B backend.
 Side-lane discipline honored: left `kb/cpl_todos.json` + the numbered `session_<N>_handoff.md` untouched.
+
+## 2026-07-29 cont. — SkyMark: the CO files landed → tweak 4 + the 2021 crosswalk shipped (#930, #932)
+
+Same day, Sam supplied the two reference files the seams were waiting on. Both merged, both live.
+
+**#930 — the 4-digit series titles (finishes tweak 4).** The `sub4` seam (builder `load_sub4()` +
+consumer `fillCip4()`) had shipped inert in #926 because no authoritative source was reachable from the
+sandbox. Sam dropped the official **NCES all-levels `CIPCode2020.csv`** into `kb/reference/` — and it's
+exactly the right shape: **string-coded** (`="01.01"`, lossless — no leading/trailing-zero collisions
+like the jbryer CIP-2010 mirror had) with **473 four-digit series rows** carrying titles (the 2-/4-digit
+rows the CCCCO workbook was exported without). `load_sub4` parsed it unchanged — my `_norm_cip`
+(`lstrip("=").strip('"')`) already handled the Excel text-guard, and the prefix-filter kept only series
+present among the built codes. Regenerated → 473 titles; spot-checks perfect (51.38 → "Registered
+Nursing, Nursing Administration, Nursing Research and Clinical Nursing"). Browse 4-digit dropdown now
+reads `NN.NN · <series title> · N codes`. **The populate-on-file-drop seam paid off exactly as designed:
+one `cp` + one builder run, zero code change.**
+
+**#932 — the 2021 first-gen crosswalk (finishes the old→new program-flag follow-up, the handoff's
+reserved seam).** Sam supplied `topcip_2021_crosswalk.xlsx` (sheet "TOP-CIP raw data": TOP Code · TOP
+Title · CIP Code[dotless] · CIP Code[dotted] · CIP Title · Change/Addition). Builder `load_old_topcip()`
+→ `oldtopcip[<TOP NNNN.NN>] = [old CIPs]`. **The join key was the crux:** the old file strips TOP leading
+zeros + the `.00` (`"101"` = 0101.00, `"102.1"` = 0102.10), so `topnorm` = `left.zfill(4) + "." +
+(right+"00")[:2]`; CIPs come from **col D** (dotted, `"1.0102"`) through the existing `canon()`. Result:
+**401 TOPs / 772 pairs, 100% join** the current topcip keys (validated before wiring — the join is the
+whole feature, so I proved it in a scratch script first). Consumer: the needs-revision message branches on
+`OLDTOPCIP[top]` — *was a 2021 value the crosswalk changed* / *off both maps* / *no 2021 data → generic
+fallback*. **Design decision (flagged to Sam): ENRICH, don't change the trigger** — the flag still fires on
+"assigned ∉ current crosswalk" (unchanged counts), the 2021 map only sharpens the *why* + keeps the revise
+picker current-crosswalk-only. This matches the handoff's stated seam ("flag specifically the CIPs the old
+map produced that differ") and avoids surprising the baseline. Guarded with `OLDTOPCIP[top]` presence so a
+TOP with no 2021 data falls back to the prior message (no false "not in 2021" claims).
+
+**Real-data finding worth carrying:** on Mt. San Antonio's 13 flagged programs, only **4** were
+"crosswalk changed" (a 2021 value the current map dropped) — **9** were **off BOTH maps** (the college
+assigned a CIP that was never in the 2021 *or* the current crosswalk for that TOP). So the dominant
+revision driver isn't crosswalk drift, it's original off-crosswalk coding — the enriched message makes
+that visible, which the old "not in the current crosswalk" wording hid.
+
+**Methods reused:** (1) *prove the join in a throwaway script before wiring* — 100%-join + real old→new
+deltas (TOP 4930.00: old 24.0102 → current 24.0101) confirmed the normalization before a line of consumer
+code; (2) *committed-only artifact* — no workflow rebuilds `cip_crosswalk_data.js`, so the regenerated file
+is committed in each PR (verified no cron owns it); (3) two focused PRs (data-populate, then the feature)
+off sequential mains so each regeneration is clean. Tests 302 → **305**; real-Chromium verified both.
+Side-lane discipline honored: left `kb/cpl_todos.json` + the numbered `session_<N>_handoff.md` untouched.
