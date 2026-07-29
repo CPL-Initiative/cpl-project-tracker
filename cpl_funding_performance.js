@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43033,
+  "pe": 43034,
   "p2": 4791,
   "p3": 16822,
   "pp": 5
@@ -81,7 +81,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Cerro Coso": {
-   "pe": 164,
+   "pe": 165,
    "p2": 0,
    "p3": 0,
    "pp": 0

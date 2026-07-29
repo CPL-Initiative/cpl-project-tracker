@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-29T11:35:47.822736+00:00",
+  "scraped_at": "2026-07-29T14:40:08.662330+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26315,
+    "jst": 26316,
     "star_colleges": 55
   },
   "computed_star_colleges": 55,
@@ -232,7 +232,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 166,
+      "jst": 167,
       "star": true
     },
     "Lemoore College": {
