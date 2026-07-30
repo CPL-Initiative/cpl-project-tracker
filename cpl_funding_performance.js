@@ -4,13 +4,13 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-29",
+ "as_of": "2026-07-30",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43034,
-  "p2": 4791,
-  "p3": 16822,
+  "pe": 43082,
+  "p2": 4793,
+  "p3": 16829,
   "pp": 5
  },
  "colleges": {
@@ -208,7 +208,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Feather River": {
-   "pe": 9,
+   "pe": 10,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -383,9 +383,9 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Moreno Valley": {
-   "pe": 2379,
-   "p2": 417,
-   "p3": 1946,
+   "pe": 2389,
+   "p2": 419,
+   "p3": 1953,
    "pp": 0
   },
   "Mt San Antonio": {
@@ -473,7 +473,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Sacramento City": {
-   "pe": 53,
+   "pe": 59,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -491,19 +491,19 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "San Diego City": {
-   "pe": 4238,
+   "pe": 4251,
    "p2": 121,
    "p3": 2837,
    "pp": 0
   },
   "San Diego Mesa": {
-   "pe": 4616,
+   "pe": 4625,
    "p2": 117,
    "p3": 3095,
    "pp": 0
   },
   "San Diego Miramar": {
-   "pe": 3079,
+   "pe": 3087,
    "p2": 85,
    "p3": 1502,
    "pp": 0
@@ -533,7 +533,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Santa Ana": {
-   "pe": 445,
+   "pe": 446,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -791,14 +791,14 @@ window.CPL_FUNDING_PERF = {
   "LA City": false,
   "Ohlone": true,
   "Cuyamaca": false,
-  "Santa Barbara": true,
   "Sacramento City": false,
+  "Santa Barbara": true,
   "Gavilan": false,
   "Columbia": false,
   "Chabot": false,
   "Taft": false,
   "Butte": false,
-  "Feather River": false,
+  "Feather River": true,
   "Imperial": false,
   "Contra Costa": false,
   "Rio Hondo": false,
@@ -811,7 +811,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-07-29",
+ "vet_star_as_of": "2026-07-30",
  "vet_star_threshold": 0.75,
- "vet_star_n": 51
+ "vet_star_n": 52
 };

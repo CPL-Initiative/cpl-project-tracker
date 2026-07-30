@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-07-29T14:40:08.662330+00:00",
+  "scraped_at": "2026-07-30T09:05:03.915977+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26316,
+    "jst": 26362,
     "star_colleges": 55
   },
-  "computed_star_colleges": 55,
+  "computed_star_colleges": 56,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -27,7 +27,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1527,
+      "jst": 1536,
       "star": true
     },
     "Santiago Canyon College": {
@@ -37,17 +37,17 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1405,
+      "jst": 1418,
       "star": true
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 970,
+      "jst": 977,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1572,
+      "jst": 1580,
       "star": true
     },
     "Bakersfield College": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 365,
+      "jst": 366,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -227,7 +227,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 212,
+      "jst": 213,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -485,15 +485,15 @@
       "jst": 94,
       "star": false
     },
+    "Sacramento City College": {
+      "vets": 203,
+      "jst": 92,
+      "star": false
+    },
     "Santa Barbara City College": {
       "vets": 0,
       "jst": 86,
       "star": true
-    },
-    "Sacramento City College": {
-      "vets": 203,
-      "jst": 86,
-      "star": false
     },
     "Gavilan College": {
       "vets": 352,
@@ -522,8 +522,8 @@
     },
     "Feather River College": {
       "vets": 13,
-      "jst": 9,
-      "star": false
+      "jst": 10,
+      "star": true
     },
     "Imperial Valley College": {
       "vets": 489,
