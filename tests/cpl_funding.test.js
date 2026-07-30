@@ -16,6 +16,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding.test.js`).
 const fs = require("fs");
+const path = require("path");
 const { JSDOM } = require("jsdom");
 
 const results = [];
@@ -2776,6 +2777,106 @@ function shareSumAll(T) {
   check("T5: an override that AGREES with the ledger is not reported as drift",
     T._ledgerDrift().length === 0 && !doc.querySelector(".cplfund-ledgerdrift"));
   T._setScenario({});
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part U — PUBLIC MODE (Sam's ask #3, 2026-07-30): the lean college-audience
+// render served by cpl_funding_public.html. This is AUDIENCE SEPARATION, NOT
+// SECURITY (the data files are already public on Pages and PII-free by design),
+// so what these assertions actually protect is that a college never sees — or
+// worse, operates — a curate affordance meant for the CO.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PUBLIC = true;
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T.render();
+
+  // The registry sweep is the load-bearing guarantee: every curate attribute is
+  // gone from the DOM, so a missed emitter cannot leak one.
+  const CURATE = ["data-edit", "data-note", "data-notesave", "data-reqdel", "data-reqhide",
+    "data-reqshow", "data-stratadd", "data-stratdel", "data-timingdel",
+    "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
+  const leaked = CURATE.filter(function (a) { return !!doc.querySelector("[" + a + "]"); });
+  check("U1: no curate/edit affordance survives in public mode (" + CURATE.length + " attrs swept)",
+    leaked.length === 0);
+  check("U1: no editable inputs at all (the anonymous what-if path is closed too)",
+    doc.querySelectorAll("#cplFundingMount input:not([type=search]):not([type=checkbox]), " +
+      "#cplFundingMount textarea, #cplFundingMount select").length === 0);
+
+  // The three chrome surfaces a college should not see.
+  check("U2: no project/scenario control strip", !doc.querySelector("#cplFundProjSel, #cplFundScenSel"));
+  check("U2: no team-editing / unlock bar", !doc.querySelector("#cplFundLock, #cplFundUnlockSlot"));
+  check("U2: the internal Report sub-tab is not offered",
+    !doc.querySelector('[data-subview="report"]'));
+  check("U2: the two public sub-views ARE still offered",
+    !!doc.querySelector('[data-subview="model"]') && !!doc.querySelector('[data-subview="grants"]'));
+
+  // The actual product still works — this is a lean render, not a crippled one.
+  check("U3: every college row still renders",
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length);
+  check("U3: the money cells still stack cap over earned",
+    !!doc.querySelector("#cplFundTable td.tot .sub"));
+  check("U3: grouping still works for a public reader",
+    !!doc.querySelector("#cplFundGroup"));
+
+  // Public mode must not even ASK for the reviewer-gated notes table. (It is
+  // gated server-side too — cpl_funding_notes SELECT requires
+  // is_allowed_reviewer() OR team_pass_ok() — but not asking is the honest form.)
+  check("U4: no CO Monitor note textarea is rendered", !doc.querySelector(".cplfund-note"));
+}
+{
+  // ?college= deep link — a college mostly wants its own row.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PUBLIC = true;
+  const target = D.colleges[3].college;
+  window.history.replaceState({}, "", "/?college=" + encodeURIComponent(target));
+  const doc = boot(window);
+  check("U5: ?college= opens that college's drill-in",
+    !!doc.querySelector("tr.cplfund-detail"));
+  const hl = doc.querySelector("tr.cplfund-deeplink");
+  check("U5: ?college= highlights the row", !!hl && hl.textContent.indexOf(target) !== -1);
+  window.CPL_FUNDING_TAB.render();
+  check("U5: the highlight SURVIVES a re-render (sidecar loads re-render the tab)",
+    !!doc.querySelector("tr.cplfund-deeplink"));
+}
+{
+  // An unknown ?college= must be ignored, never an error state.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PUBLIC = true;
+  window.history.replaceState({}, "", "/?college=Hogwarts");
+  const doc = boot(window);
+  check("U6: an unknown ?college= is ignored, not an error",
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length &&
+    !doc.querySelector("tr.cplfund-deeplink"));
+}
+{
+  // The DEFAULT (dashboard) render must be completely unaffected.
+  const { window } = freshDom();
+  const doc = boot(window);
+  check("U7: without the flag the curate affordances are still present (no regression)",
+    !!doc.querySelector("[data-edit]") && !!doc.querySelector('[data-subview="report"]'));
+}
+
+// U8 — the standalone page itself (static greps: it is hand-maintained HTML).
+{
+  const pub = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_public.html"), "utf8");
+  check("U8: the public page sets the public-mode flag", /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(pub));
+  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
+    /src="cpl_funding_data\.js"/.test(pub) && /src="cpl_funding\.js"/.test(pub) &&
+    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(pub));
+  check("U8: it provides the CPL_TABS.loadScript contract so the sidecars still load",
+    /CPL_TABS\s*=\s*\{[\s\S]*loadScript/.test(pub));
+  check("U8: the sidecar loader FAILS OPEN (onerror still calls back)",
+    /onerror[\s\S]{0,80}cb\(\)/.test(pub));
+  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(pub));
+  check("U8: it states plainly that this is a draft model, not an award notice",
+    /not an award notice/i.test(pub));
+  check("U8: it documents that this is audience separation, NOT security",
+    /audience separation, NOT security/i.test(pub));
+  check("U8: it links back to the full dashboard rather than pretending to be the whole site",
+    /index\.html#implementation-funding/.test(pub));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
