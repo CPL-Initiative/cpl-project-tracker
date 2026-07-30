@@ -687,27 +687,45 @@ function pieSlices(el) {
   check("SYSTEM tfoot year cells carry the per-year tranche ($" + Math.round(tranche).toLocaleString() + ")",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("$" + Math.round(tranche).toLocaleString("en-US")) !== -1);
 
-  // District rollup: one row per district; headcount conserves.
+  // GROUP BY DISTRICT (Sam, 2026-07-30) replaced the Colleges|Districts VIEW
+  // toggle. The old toggle REPLACED the college rows, so the per-college
+  // numbers a curator wanted to compare vanished behind a drill-in. Grouping
+  // keeps every college row visible and only ADDS district subtotal headers.
   const distinct = new Set(D.colleges.map(function (c) { return c.district || "(no district)"; })).size;
-  click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
-  const dRows = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row");
-  check("district view renders one row per district (" + distinct + ")", dRows.length === distinct);
+  const flatN = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length;
+  check("the retired Colleges|Districts view toggle is gone", !doc.querySelector("#cplFundView"));
+  click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
+  const hdrs = doc.querySelectorAll("#cplFundTable tbody tr.cplfund-grouphdr");
+  check("grouping adds one district header per district (" + distinct + ")", hdrs.length === distinct);
+  check("grouping KEEPS every college row visible (the point of retiring the toggle)",
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === flatN);
   const listHeads = D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0);
-  const dHead = Array.from(dRows).reduce(function (s, tr) {
-    return s + Number(tr.querySelectorAll("td")[3].textContent.replace(/,/g, ""));
+  const gHead = Array.from(hdrs).reduce(function (s, tr) {
+    const m = tr.textContent.match(/·\s*([\d,]+) students/);
+    return s + (m ? Number(m[1].replace(/,/g, "")) : 0);
   }, 0);
-  check("district rollup conserves the college-list headcount", dHead === listHeads);
-  // District drill-in lists members.
+  check("district subtotals conserve the college-list headcount", gHead === listHeads);
+  // Groups are ordered by their subtotal, largest first (Sam's explicit call).
+  const gTotals = Array.from(hdrs).map(function (tr) {
+    const t = tr.querySelector("td.tot").textContent.match(/\$([\d,]+)/);
+    return t ? Number(t[1].replace(/,/g, "")) : 0;
+  });
+  check("district groups are ordered by subtotal, largest first",
+    gTotals.every(function (v, i) { return i === 0 || gTotals[i - 1] >= v; }));
+  // Σ district subtotals == Σ college rows (conservation across the grouping).
+  const sumCollege = D.colleges.reduce(function (s, c) {
+    return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0);
+  check("Σ district subtotals == Σ college allocations",
+    Math.abs(gTotals.reduce(function (a, b) { return a + b; }, 0) - sumCollege) < distinct + 2);
+  // A college drill-in still works while grouped.
   click(window, doc.querySelector("#cplFundTable tr.cplfund-row"));
-  check("district drill-in lists member colleges",
-    !!doc.querySelector("tr.cplfund-detail") &&
-    doc.querySelector("tr.cplfund-detail").querySelectorAll(".cplfund-detail-grid div").length >= 1);
-  // View switch resets a college-only sort key without crashing.
-  click(window, doc.querySelector('#cplFundView button[data-val="college"]'));
+  check("a college drill-in still opens while grouped", !!doc.querySelector("tr.cplfund-detail"));
+  // Back to flat, and a college sort still works.
+  click(window, doc.querySelector('#cplFundGroup button[data-val="none"]'));
   click(window, doc.querySelector('#cplFundTable th[data-sort="college"]'));
-  click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
-  check("view switch resets a college-only sort key without crashing",
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === distinct);
+  check("ungrouping restores the flat list with no district headers",
+    !doc.querySelector("#cplFundTable tbody tr.cplfund-grouphdr") &&
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === flatN);
 }
 
 // C9 — metric-measurability actuals: Year-1 P1 (any transcribed) IS measurable
@@ -1325,8 +1343,8 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("college-view SYSTEM row includes the noncredit feeders in the CCC total",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1 &&
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("noncredit") !== -1);
-  click(window, doc.querySelector('#cplFundView button[data-val="district"]'));
-  check("district-view SYSTEM row includes the noncredit feeders in the CCC total",
+  click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
+  check("the SYSTEM row still carries the noncredit feeders when grouped by district",
     doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1);
 }
 
@@ -2128,7 +2146,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("L6: the active sort column reports its direction via aria-sort",
     !!doc.querySelector('#cplFundTable th[aria-sort="ascending"], #cplFundTable th[aria-sort="descending"]'));
   // L7 — segmented toggles: role=group + aria-pressed reflecting the choice.
-  const seg = doc.querySelector("#cplFundView");
+  const seg = doc.querySelector("#cplFundGroup");
   check("L7: segmented control is a labelled group",
     seg.getAttribute("role") === "group" && !!seg.getAttribute("aria-label"));
   check("L7: exactly one segment button is aria-pressed=true",
