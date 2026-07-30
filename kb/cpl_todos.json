@@ -1,80 +1,98 @@
 {
- "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-07-15 · Session 117 (StarMarcus) — the merge/mint doctrine's LAST open forks closed (now v0.13); the ESL packaging DRY-RUN shipped (2,364 → 3 comprehensives + carve-outs), ready to apply",
- "_session": 117,
- "_status": "The interrogation room paid off. Two small scenario batches closed every remaining open rule question — Sam swept all six with the recommended calls: Honors folds into its base course (but standalone honors-program courses stay); a big spread of unit-counts on a non-standardized course means a whole course got lumped with its own pieces (split them, don't just cap); cross-discipline groups with the same subject code merge to that subject's canonical field; and of the variant marks, Lab folds while Refresher and Bridge stay their own courses. The doctrine is now v0.13 with EVERY named open fork resolved. Then the payoff: the ESL packaging dry-run maps the real 2,364 ESL courses to Beginning/Intermediate/Advanced ESL (2,149) plus three carve-outs kept separate — Citizenship (38), Vocational ESL (155), and Transfer-level (22, held for Sam because there's no transferable flag in the data). It WROTE NOTHING — it's a plan to eyeball first. NEXT: Sam skims the plan (and confirms the 22 transfer candidates), then the ESL apply lands (Rule 9), then the whole-worklist batch-apply and wave 4 (both staged).",
- "items": [
-  {
-   "id": "esl-review",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "🆕 The ESL packaging DRY-RUN is ready to eyeball (kb/esl_package_out/2026-07-15/esl_package_report.md + the visual). It maps all 2,364 ESL courses → Beginning/Intermediate/Advanced + carve-outs. Two things worth your look before it applies: (1) confirm the 22 'Transfer-level ESL' candidates (college-composition courses — no transferable flag in the data, so I held them out rather than fold them); (2) the ~629 no-level courses folded to Beginning as the safe under-claim. Green-light → it applies."
-  },
-  {
-   "id": "subjdisc-flags",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "302 'Subject-code outlier (likely mis-mint)' rows behind the Triage-dropdown filter — each carries a suggested discipline (the local subject code's usual field). Review + bulk re-discipline the clear ones. The HVAC family (41) already fired; this is the rest, and it feeds wave 4."
-  },
-  {
-   "id": "esl-apply",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "✅ Doctrine now v0.13 — ALL named open forks closed (P-13 honors/variant, P-5 whole-vs-part units, D-8 cross-discipline; #791). ESL dry-run shipped (#792). NEXT on Sam's green-light: run the ESL apply from the committed plan (Rule 9: fresh read, INSERT-only ON CONFLICT DO NOTHING, cohort package-esl-s117@bot; re-key the 6 promotions). Wire the letter-rung fix first (A/B/C/D ladders currently default to Beginning). Then the whole-worklist batch-apply (Doctrine Part V step 3)."
-  },
-  {
-   "id": "wave4-adjudicate",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "Wave 4 is STAGED (kb/ccr_out/2026-07-14/wave4_manifest.json — 2,000 multi-college IDs, ranks 2,001-4,000, 50 batches). Run the adjudication fan-out (blind under v0.13) + skeptic pass → fire-ready lanes for Sam's approval, like wave 3. Independent of the doctrine work."
-  },
-  {
-   "id": "blankdisc-reseed",
-   "for": "fable",
-   "tab": "unified-courses",
-   "text": "The ~77 blank-discipline pre-seeds (#763, 5 codes → live lexicon) apply only at the next coci RESEED — the reseed/backfill isn't in any workflow, and _infer_disciplines.py writes a compact format that doesn't match the committed files. Wire it into a dispatch (+ pretty-print its dump) so lexicon edits apply cleanly. The ~480 ambiguous blanks (NC/ATC/IXD/HTT/DANCFOLK/MCOM/LIS…) → wave-4 human disposition."
-  },
-  {
-   "id": "crnc-detector-wire",
-   "for": "fable",
-   "tab": "canonical-subj4",
-   "text": "Wire kb/crnc_mirrors.json into the auditor (kb/_row_audit.py) + CCR scanner so the D-3 'credit_mixed' flag is SUPPRESSED for the 1,337 mirror identities (they're CPL Credit-by-Exam pairings, not over-merges) — stops wave 4+ from re-flagging them. Add kb/_detect_crnc_mirrors.py to the post-apply chain."
-  },
-  {
-   "id": "cte-parse-gaps",
-   "for": "fable",
-   "tab": "canonical-subj4",
-   "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
-  },
-  {
-   "id": "homonym-recheck",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "~100 TOP-driven homonym splits still need a re-check against title/description/aligned-exhibit (P-12: TOP only tips the scales when the other three are inconclusive) before they fire. Ride into a wave-4 re-verify pass."
-  },
-  {
-   "id": "aviation-restage",
-   "for": "sam",
-   "tab": "unified-courses",
-   "text": "4 wave-2 discipline findings were proposing 'Aeronautics' (no canonical SUBJ4) — correct fill is 'Aviation' (WELD M10FF, FLGH M10AE/AF, AVIA M10AB). Ride into wave 4's re-verify; confirm the Aviation re-stage when you review discipline lanes."
-  },
-  {
-   "id": "carp-merge-confirms",
-   "for": "sam",
-   "tab": "credential-reference",
-   "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row. Plus 4 still-ambiguous CTCNC rows (CARP 707/710/713 + Work Experience) that carry TWO credit recs each — pick the right title in-cell."
-  },
-  {
-   "id": "cer-trail-lanes",
-   "for": "sam",
-   "tab": "credential-reference",
-   "text": "Trail Crew CER lanes still await your ✓: 18+1 merge candidates in the ⇒ lane · 7 issuer-canon clusters · 7 judgment calls (kb/trail_crew_out/2026-07-10/trail_report.md)."
-  },
-  {
-   "id": "csr-curator-3",
-   "for": "sam",
-   "tab": "canonical-subj4",
-   "text": "CSR curator queue (3): Furniture Making→CSTF · Upholstering→THAR · the truncated 'Disabled Student Programs and' name — kb/csr_out/2026-07-10/csr_report.md."
-  }
- ]
+  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
+  "_as_of": "2026-07-30 · SkyReconcile — the Sept-2026 BOG amendment became the funding authority, and the Budget tab became the full CPL ledger (editable, with the 2017-forward history)",
+  "_session": 117,
+  "_status": "The Budget tab is now the CPL ledger. The Sept-2026 BOG amendment governs the $35M model (it ties to the penny), and budget_funding carries all 45 rows — Sources, Uses, the combined $18M project pool, and the funding history back to 2017 — with project detail collapsible under every total and inline editing on every non-total field. The story it tells: both original asks were funded in two installments, and 2026-27 is the year the Legislature made good on each ($15M+$35M = the $50M implementation request; $5M+$2M = $7M/yr ongoing). Two errors were found in the amendment workbook itself and reported. The CCR/unified-courses items below are unchanged — that lane is still where the curation queue lives.",
+  "items": [
+    {
+      "id": "esl-review",
+      "for": "sam",
+      "tab": "unified-courses",
+      "text": "🆕 The ESL packaging DRY-RUN is ready to eyeball (kb/esl_package_out/2026-07-15/esl_package_report.md + the visual). It maps all 2,364 ESL courses → Beginning/Intermediate/Advanced + carve-outs. Two things worth your look before it applies: (1) confirm the 22 'Transfer-level ESL' candidates (college-composition courses — no transferable flag in the data, so I held them out rather than fold them); (2) the ~629 no-level courses folded to Beginning as the safe under-claim. Green-light → it applies."
+    },
+    {
+      "id": "subjdisc-flags",
+      "for": "sam",
+      "tab": "unified-courses",
+      "text": "302 'Subject-code outlier (likely mis-mint)' rows behind the Triage-dropdown filter — each carries a suggested discipline (the local subject code's usual field). Review + bulk re-discipline the clear ones. The HVAC family (41) already fired; this is the rest, and it feeds wave 4."
+    },
+    {
+      "id": "esl-apply",
+      "for": "fable",
+      "tab": "unified-courses",
+      "text": "✅ Doctrine now v0.13 — ALL named open forks closed (P-13 honors/variant, P-5 whole-vs-part units, D-8 cross-discipline; #791). ESL dry-run shipped (#792). NEXT on Sam's green-light: run the ESL apply from the committed plan (Rule 9: fresh read, INSERT-only ON CONFLICT DO NOTHING, cohort package-esl-s117@bot; re-key the 6 promotions). Wire the letter-rung fix first (A/B/C/D ladders currently default to Beginning). Then the whole-worklist batch-apply (Doctrine Part V step 3)."
+    },
+    {
+      "id": "wave4-adjudicate",
+      "for": "fable",
+      "tab": "unified-courses",
+      "text": "Wave 4 is STAGED (kb/ccr_out/2026-07-14/wave4_manifest.json — 2,000 multi-college IDs, ranks 2,001-4,000, 50 batches). Run the adjudication fan-out (blind under v0.13) + skeptic pass → fire-ready lanes for Sam's approval, like wave 3. Independent of the doctrine work."
+    },
+    {
+      "id": "blankdisc-reseed",
+      "for": "fable",
+      "tab": "unified-courses",
+      "text": "The ~77 blank-discipline pre-seeds (#763, 5 codes → live lexicon) apply only at the next coci RESEED — the reseed/backfill isn't in any workflow, and _infer_disciplines.py writes a compact format that doesn't match the committed files. Wire it into a dispatch (+ pretty-print its dump) so lexicon edits apply cleanly. The ~480 ambiguous blanks (NC/ATC/IXD/HTT/DANCFOLK/MCOM/LIS…) → wave-4 human disposition."
+    },
+    {
+      "id": "crnc-detector-wire",
+      "for": "fable",
+      "tab": "canonical-subj4",
+      "text": "Wire kb/crnc_mirrors.json into the auditor (kb/_row_audit.py) + CCR scanner so the D-3 'credit_mixed' flag is SUPPRESSED for the 1,337 mirror identities (they're CPL Credit-by-Exam pairings, not over-merges) — stops wave 4+ from re-flagging them. Add kb/_detect_crnc_mirrors.py to the post-apply chain."
+    },
+    {
+      "id": "cte-parse-gaps",
+      "for": "fable",
+      "tab": "canonical-subj4",
+      "text": "Fix top_categories.json parse gaps — ~30 legit TOP codes dropped leave 6,495 rows at cte:null (Music 1004, Sociology 2208, Art 1002.1x). Re-parse, re-run _join_cte_from_top.py (heals them), and fold that join into the post-apply chain (nothing re-stamps cte today)."
+    },
+    {
+      "id": "homonym-recheck",
+      "for": "sam",
+      "tab": "unified-courses",
+      "text": "~100 TOP-driven homonym splits still need a re-check against title/description/aligned-exhibit (P-12: TOP only tips the scales when the other three are inconclusive) before they fire. Ride into a wave-4 re-verify pass."
+    },
+    {
+      "id": "aviation-restage",
+      "for": "sam",
+      "tab": "unified-courses",
+      "text": "4 wave-2 discipline findings were proposing 'Aeronautics' (no canonical SUBJ4) — correct fill is 'Aviation' (WELD M10FF, FLGH M10AE/AF, AVIA M10AB). Ride into wave 4's re-verify; confirm the Aviation re-stage when you review discipline lanes."
+    },
+    {
+      "id": "carp-merge-confirms",
+      "for": "sam",
+      "tab": "credential-reference",
+      "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row. Plus 4 still-ambiguous CTCNC rows (CARP 707/710/713 + Work Experience) that carry TWO credit recs each — pick the right title in-cell."
+    },
+    {
+      "id": "cer-trail-lanes",
+      "for": "sam",
+      "tab": "credential-reference",
+      "text": "Trail Crew CER lanes still await your ✓: 18+1 merge candidates in the ⇒ lane · 7 issuer-canon clusters · 7 judgment calls (kb/trail_crew_out/2026-07-10/trail_report.md)."
+    },
+    {
+      "id": "csr-curator-3",
+      "for": "sam",
+      "tab": "canonical-subj4",
+      "text": "CSR curator queue (3): Furniture Making→CSTF · Upholstering→THAR · the truncated 'Disabled Student Programs and' name — kb/csr_out/2026-07-10/csr_report.md."
+    },
+    {
+      "id": "budget-ledger-review",
+      "for": "sam",
+      "tab": "budget",
+      "text": "🆕 The Budget tab is now the full CPL ledger — Sources, Uses, the $18M project pool and the 2017-forward history, with project detail collapsible under each total. Sign in and every field is editable, descriptions included. Two things only you can settle: the two $5M rows in the history look like one appropriation counted twice (the CO's P98 line and the RCCD grant of it), and whether the $7M ongoing should show a 2029-30 year (the amendment stops at 2028-29, but the money is ongoing)."
+    },
+    {
+      "id": "budget-amendment-errors",
+      "for": "sam",
+      "tab": "budget",
+      "text": "⚠️ Two errors are still in the Sept-2026 BOG amendment workbook itself — the copy heading to the Board. Its grand total says $74,000,000 but double-counts the $8,959,692 project slice (the real figure is $71,000,000), and its 'Max Award $665,971' is a typo for $665,791 computed over 115 colleges while its average uses 119. Our tab already shows the corrected numbers."
+    },
+    {
+      "id": "budget-next-build",
+      "for": "fable",
+      "tab": "budget",
+      "text": "Next on Budget, in order: (1) fold Implementation Funding in as a sub-view AND make the funding model read its $35M from the ledger instead of its own copy — that kills the drift class for good; (2) add/delete/reorder rows (the editor is edit-only, so a curator can't add a project without SQL); (3) a budget-vs-actual lane once Sam has actuals he trusts. Full list in docs/cpl_funding_handoff.md."
+    }
+  ]
 }

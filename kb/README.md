@@ -549,6 +549,18 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
 - `supabase_merge_doctrine.sql` — schema of record for `merge_doctrine_notes`
   (voice/text reasoning notes; reviewer-gated writes, no delete; applied live
   2026-07-03).
+- `supabase_budget_structure.sql` — **receipt of record for the Budget-tab
+  rework** (SkyReconcile, 2026-07-30; migration `budget_funding_structure` +
+  the seed, applied live the same day). Turns `budget_funding` from a flat
+  funding-source list into the whole CPL ledger: `description` · `archived`
+  (the 2025-26 cutoff) · `parent_id` (collapsible detail) · `section`
+  (`source_one_time|source_ongoing|use_35m|use_15m|use_ongoing|pool|history`) ·
+  `sort_order` · `window_label`. 45 rows; nothing deleted (the two existing
+  $6M rows are the natural parents of the seven $6M allocations). Idempotent —
+  every INSERT is guarded on a natural key. Carries the post-apply verification
+  block, and the two rules any consumer must honour: **totals sum PARENT rows
+  only** (children are detail, never addends) and **archived rows are excluded
+  from every total**. See `docs/kb-notes/methodology-parent-child-ledger-totals.md`.
 - `_doctrine_calibration_sample.py` — re-runnable, read-only stratified
   sampler over `unified_courses_suggestions.js` (13 doctrine-trigger strata,
   seeded). Outputs to `doctrine_out/<date>/`.

@@ -1511,3 +1511,70 @@ college stays unfloored with rural off — with the pool-independent invariant *
 (if rural were flexed, unearned would exceed it). O2 became a correspondence check across all 13.
 **A test that names a specific college as "the above-floor case" is a hardcoded pool fact wearing a
 data costume.** 515 → **531**.
+
+## 2026-07-30 cont. — SkyReconcile: the Budget tab becomes the CPL ledger
+
+Sam: *"consolidating the Budget and Implementation Funding tabs together under Budget — making sure
+everything stays wired with clear authoritative sources and workspaces."* Shipped the Budget half in
+one day (#938/#940/#941/#942); the Implementation Funding sub-view merge is still ahead.
+
+### The unlock was Sam's funding history, not the schema
+
+He offered the full 2017-forward history and judged it "distracting from the work at hand." It was
+the opposite — it carried the **organizing insight the whole tab now hangs on**: both major asks were
+funded in **two installments**, and 2026-27 is the year the Legislature made good on each.
+
+| Original ask | 2025 | 2026 | Now |
+|---|---|---|---|
+| $50M implementation one-time | $15M | + $35M | **fully funded** |
+| $7M ongoing operations | $5M | + $2M | **$7M/yr** |
+
+A flat list of six appropriations hides that. Grouped by *ask*, the tab tells the real story in two
+rows — and "the Legislature made good on both original requests" is a far better headline for a BOG
+or CBO audience than an inventory of Prop 98 line items. **Lesson: when a curator offers context they
+think is peripheral, take it. The organizing principle for a view often lives in the history, not in
+the current-state data.**
+
+It also *solved* two open puzzles for free: the row-5 anomaly (`total` = the $2M increment × 4;
+year cells = the combined $7M/yr — two concepts in one row, never a typo), and the $59,692
+(`$1,345,236` from the $6M + `$59,692` from the $15M = the `$1,404,928` N2N project).
+
+### Nothing had to be deleted — the existing rows were already the parents
+
+The plan called for archiving the two $6M rows and adding the history separately. Checking first
+showed the seven $6M allocations split *exactly* across them (CO `2,254,764`, RCCD `3,745,236`), so
+the history **nests under rows that already existed**. **Lesson: before repurposing or deleting
+curator data, test whether the new structure is already latent in it.** Ten seconds of arithmetic
+turned a lossy migration into a lossless one.
+
+### The double-count trap, three times in one day
+
+The amendment's `$74M`; then my own mockup, built to *explain* that error, which listed the $18M pool
+alongside the appropriation shares it comes from; then my own seeded data (all-archived `23,307,440`
+vs parents-only `17,307,440`). **Knowing about a trap does not protect you from it — only an enforced
+invariant does.** Now enforced in the read path, the renderer, and both test suites, with the tests
+asserting *both* the right total and that the naive sum is larger. Distilled:
+[`methodology-parent-child-ledger-totals`](kb-notes/methodology-parent-child-ledger-totals.md).
+
+### Computed totals earn their keep as detectors
+
+`total = Σ years`, read-only where a row has years; editable only where the source gives no split.
+Within a minute of existing it caught the `$15M` **source** row still carrying its old *spend*
+schedule in the out-years (`2,808,450.40 + 2,136,854.53 + 2,013,327.01 + 2,081,675.46 = 9,040,307.40`)
+— it would have displayed **$24,040,307**. The stored `total` had been masking it. **A source row
+carries the appropriation once, never the appropriation plus its own spend plan.** Post-fix every row
+with years satisfies `Σ years == total`; that one query is now the standing post-bulk-edit check.
+
+### Two process notes
+- **A test-harness failure is not a product failure.** Two assertions failed because jsdom reports
+  `readyState: "loading"`, so the module's own `DOMContentLoaded` boot never fired. The module was
+  right; the harness had to boot it the way the page does. Diagnose before "fixing" the code.
+- **The stop-hook went stale twice in one session** — `~/.claude/` sits outside the repo, so any merge
+  carrying a hook fix (here #939) silently leaves the installed copy behind. The tell is the hook
+  firing on a `noreply@github.com` committer: that is always GitHub's squash-merge, which is on `main`
+  and must never be amended (Rule 5). The fix is always re-copy, never amend.
+
+### State + next
+Live and merged. `budget_funding` = 45 rows; `budget_ledger.js` renders four sections with inline
+editing on every non-total field. Open with Sam: the two $5M rows (one appropriation seen twice?).
+Recommended next steps are enumerated in `docs/cpl_funding_handoff.md`.

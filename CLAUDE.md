@@ -586,6 +586,28 @@ over **115** colleges — while its average is that pool ÷ **119**. Method (inc
 first, from a $1 coincidence that assumed its own conclusion): `docs/cpl_funding_lessons.md` ·
 `docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md` · handoff `docs/cpl_funding_handoff.md`.
 
+**Cont. 2026-07-30 — the Budget tab becomes the CPL ledger (#938/#940/#941/#942 MERGED, LIVE).**
+Sam's full funding history back to 2017 unlocked the organizing insight: **both major asks were funded
+in TWO installments** — implementation one-time `$15M (2025) + $35M (2026) = the $50M requested`,
+ongoing ops `$5M + $2M = $7M/yr` — and 2026-27 is the year the Legislature made good on each. His three
+rulings (AskUserQuestion): one consolidated **$7M ongoing** row; the **amendment's 2-year shape governs
+the $35M**; **cutoff at 2025-26, ARCHIVE don't delete**. `budget_funding` stopped being a flat source
+list and became the whole ledger — **45 rows** (4 sources · 7 uses · 16 pool · 18 history) via
+`description`/`archived`/`parent_id`/`section`/`sort_order`/`window_label` (receipt
+`kb/supabase_budget_structure.sql`). **Nothing was deleted:** the two existing $6M rows turned out to be
+the *natural parents* of the seven $6M allocations (CO 2,254,764 · RCCD 3,745,236 — they sum exactly).
+New **`budget_ledger.js`** renders Sources · Uses · the $18M pool · History, each with collapsible
+detail, a Summary⇄Detail preset, and **inline editing on every non-total field incl. descriptions**;
+live-fetched so a curator's edit re-renders instantly. **`total` is computed = Σ years and read-only
+where a row has years, editable only where the source gives no split** — that rule immediately caught
+the $15M source row still carrying its old *spend* schedule (would have shown $24,040,307). Tests:
+`budget_ledger` 34 + `budget_ledger_structure` 21. ⚠️ **The load-bearing rule, hit THREE times in one
+day (the amendment's $74M, my first mockup, my own seed data): TOTALS SUM PARENT ROWS ONLY** —
+`docs/kb-notes/methodology-parent-child-ledger-totals.md`. Sam ruled the amendment's Lightleap $1.4M is
+**not** a double count (year-2 extension + more colleges) — do not re-raise. Open with Sam: the two $5M
+rows. Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`. Side-lane — left
+`cpl_todos.json`'s CCR items + the numbered handoff to the CCR mainline.
+
 ### SkyHighness cont. — Implementation Funding: the $35M reframe + the $15M Distributions view (2026-07-29, #931/#934 MERGED)
 
 A CBO question at the CO budget workshop ("what are the factors in the allocation formula?") cascaded
