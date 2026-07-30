@@ -132,7 +132,62 @@ Ordered by value-per-effort. **1–3 are the ones I'd actually do next.**
 **Two open data questions, both Sam's:** the two `$5M` rows in the history (one appropriation seen
 twice — the CO's P98 line and the RCCD grant of it?), and whether the ongoing `$7M` should carry a
 2029-30 year (the amendment budgets only through 2028-29; the appropriation itself is ongoing).
-## 🎯 QUEUED — Sam's 4 asks (2026-07-30), diagnosed + recommended, NOT yet built
+## ✅ 3 of Sam's 4 asks SHIPPED (2026-07-30, SkyQueue — #946, #947)
+
+**#1 DONE (#946) — the Potential⇄Earned basis toggle is RETIRED.** Both numbers now ride
+in every money cell (cap on top, `earned · %` beneath — the shape the P-cells already
+used), so nothing has to be toggled to be compared. Also: earned **splits three ways at
+the source** (`collegeAlloc` → `earned_measured` / `earned_advance` / `earned_guaranteed`)
+with an `adv` chip, because **~95% of a typical college's earned figure is a provisional
+ADVANCE**; the front-load first column is relabelled **"Window (front-loaded)"**; pool
+Earned/Unearned cards, priority earned lines and the CSV earned columns are unconditional.
+Targets were deliberately **NOT** doubled under front-load (timing-only by design).
+
+**#1b DONE (#946) — earned is gated on baseline participation.** Sam's four rulings, all
+taken before building: **only the 2 baseline reqs gate** (coordinator + participation
+request; Veteran Star/ESS stay performance measures) · **once cleared, cleared for the
+window** · **gate only the performance-earned main allocation** (guaranteed rural passes
+through, the cap always shows in full) · **held in reserve, rolls forward, never
+redistributed**. Fails open (no coordinator feed ⇒ nothing withheld). A gated cell reads
+`withheld · $X held`, **never a bare $0** (a plain zero would claim the college posted no
+CPL — a different and unfair claim). ⛔ row chip + "Held in reserve" pool card + drill-in
++ CSV column.
+
+**#2 DONE (#947) — "Group by district" replaced the Colleges|Districts view toggle.** The
+old toggle *replaced* the college rows; grouping only **adds** district header rows
+carrying the subtotal, so every college row stays visible/sortable/expandable. Groups
+ordered by subtotal, colleges sorted within groups. CSV interleaves `DISTRICT SUBTOTAL`
+lines. Deleted the stranded code: `COLS_DISTRICT`, `districtRowHtml`, `districtDetailHtml`,
+`districts()` + cache.
+
+Tests **531 → 552**; full suite **174 files green**; real-Chromium clean both rounds.
+Durable learning: **`docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md`** —
+when a mode toggle "reads wrong," suspect the *scopes it separates*, not its logic; a
+toggle structurally hides a scope mismatch, coexistence is self-policing.
+
+### 🎯 STILL OPEN — ask #3 + the Budget consolidation
+
+**#3 (not built) — the public college-audience view.** Recommendation unchanged and
+still right: build a **standalone lean PAGE**, not a `?view=` flag (a flag is cosmetic —
+the nav and every other tab still load). Precedent: `college_activity_template.html`,
+`Dashboard_Element_Map.html`. Load only `cpl_funding_data.js` + `cpl_funding.js`
+(+ perf/ess sidecars), render in a `public` mode: no left rail, no project/scenario strip,
+no curate affordances, no CO Monitor notes, no Report sub-tab. **Be plain with Sam that
+this is audience separation, NOT security** — the data files are already public on Pages
+and PII-free by design. Nice-to-have: `?college=Butte` opens with that college
+expanded. **Verify** the CO Monitor notes stay reviewer-gated server-side before publishing.
+
+**The Budget consolidation (Sam's "they're wired together").** Fold Implementation
+Funding in as a Budget sub-view — both tabs are JS-rendered, so it is a nav change plus a
+segmented control `[Sources & Uses | $35M model | $15M Distributions | Report]`. **Do the
+single-source wiring at the same time:** the funding model should read its
+`one_time_2026_27` from the ledger's `$35M` row rather than holding its own copy in
+`cpl_funding_data.js`. That permanently kills the drift class that cost a day this week.
+
+*(The pool-figure reconciliation these were queued alongside was already RESOLVED by
+SkyReconcile — the amendment governs.)*
+
+## 📋 Original diagnosis of the 4 asks (kept for the reasoning; #1/#1b/#2 now BUILT)
 
 *(The pool-figure reconciliation these were queued alongside is already RESOLVED above by
 SkyReconcile — the amendment governs. These four are independent of that.)*
