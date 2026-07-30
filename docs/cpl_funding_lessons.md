@@ -1578,3 +1578,94 @@ with years satisfies `Σ years == total`; that one query is now the standing pos
 Live and merged. `budget_funding` = 45 rows; `budget_ledger.js` renders four sections with inline
 editing on every non-total field. Open with Sam: the two $5M rows (one appropriation seen twice?).
 Recommended next steps are enumerated in `docs/cpl_funding_handoff.md`.
+
+---
+
+## 2026-07-30 — SkyQueue: the basis toggle retired, the baseline gate built, districts folded into one table (#946, #947)
+
+Picked up SkyReconcile's queued block of Sam's four asks. Three of the four shipped
+(#1, #1b, #2); #3 (the public college page) and the Budget consolidation are still open.
+
+### The load-bearing lesson: a mode toggle is where two scopes go to hide
+
+Both retired toggles failed the same way, and it's worth naming as a class.
+
+**The Potential⇄Earned basis toggle (#1).** Sam reported that the toggle "reads wrong."
+It did — but the toggle was innocent. Two *scope* mismatches sat underneath it:
+
+1. **Year vs window.** The P1/P2/P3 cells render the **viewed year**. The front-load
+   "Yr 1" money column renders the **whole window** (`out.y1 = out.total` when `fl`).
+   So the P-cells summed to *half* of Yr 1 and could never reconcile. Verified on Allan
+   Hancock: P-cells `$33,534 + $46,948 + $31,299 = $111,781` = the per-year cap;
+   Yr 1 = `$223,562` = the window. In even-tranche mode they reconcile exactly, which is
+   why this survived so long.
+2. **Earned silently spanned both years.** `earned_total` sums every selected year, and
+   Year-2's metrics are mostly data gaps that **advance at full cap**. So the Earned
+   figure was dominated by Year-2 advances the curator could not see anywhere in the
+   Year-1 cells.
+
+A toggle *guarantees* you can never see the two numbers at once, so a scope mismatch
+between them is structurally invisible. Putting both in the cell — cap on top, earned
+beneath, the shape the P-cells already used — makes the mismatch impossible to hide.
+**When a toggle "reads wrong," suspect the scopes it separates, not the toggle's logic.**
+
+**The Colleges⇄Districts view toggle (#2)** is the same failure in a different key: it
+swapped the *unit of analysis*, so asking for district context deleted the per-college
+rows the curator was comparing. Grouping only ADDS header rows; nothing disappears.
+
+Durable form of both: `docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md`.
+
+### What "honest" cost, concretely
+
+Splitting earned into **measured / advance / guaranteed** at the source (`collegeAlloc`)
+was ~15 lines, and it immediately surfaced the real number: on a typical college today
+**~95% of the "earned" figure is an ADVANCE** — full cap paid provisionally because MAP
+cannot measure that priority's metric yet. That was always true; it was just unnamed.
+An `adv $X` chip plus the hover now says so. *A figure that aggregates two different
+kinds of confidence needs to name the split, or it silently overstates the stronger one.*
+
+### The baseline gate (#1b) — Sam's four rulings, taken BEFORE building
+
+The handoff flagged four decisions as "decide with Sam before building." Asked all four
+in one batch; he took every recommendation:
+
+| Decision | Ruling |
+|---|---|
+| Which quals gate | **Only the 2 baseline reqs** (coordinator + participation request). Veteran Star / ESS outcomes stay performance measures that flex the *amount*. |
+| Timing | **Once cleared, cleared for the window** — no clawback. |
+| Scope | **Only the performance-earned main allocation.** Guaranteed rural passes through; the cap (incl. the $150K floor) always shows in full. |
+| Withheld dollars | **Held in reserve, roll forward, never redistributed.** |
+
+Two design properties fell out of those rulings and are worth keeping:
+
+- **The gate FAILS OPEN.** No coordinator feed ⇒ nothing withheld. Same standing rule as
+  every other mark on this tab: missing data must never render as a negative finding.
+- **A gated cell reads `withheld · $X held`, never a bare `$0`.** A plain zero would
+  claim the college *posted no CPL* — a different, and unfair, accusation. The wording
+  carries which claim is being made.
+
+Sam's own framing was the tell: gate the money, hold the dollars, keep it reversible.
+That is a **prompt**, not a penalty — and it's the difference between a gate colleges
+respond to and one they appeal.
+
+### State
+
+- **Tests 531 → 552.** Part E rewritten (stacked cells + the 3-way split); **new Part S**
+  covers the gate end-to-end; the old district-view assertions became grouping assertions
+  that additionally guard `Σ district subtotals == Σ college allocations`.
+- Full suite **174 files green**; real-Chromium at 1440px clean both times (0 console
+  errors, no horizontal scroll, 72 district headers over 115 college rows).
+- **Dead code removed** with the view toggle: `COLS_DISTRICT`, `districtRowHtml`,
+  `districtDetailHtml`, `districts()` + its cache.
+
+### Next concrete step
+
+**Ask #3 — the public college-audience page.** Build a standalone lean page (precedent:
+`college_activity_template.html`), NOT a `?view=` flag: a flag is cosmetic, since the nav
+and every other tab still load. Be plain with Sam that it is **audience separation, not
+security** — the data files are already public on Pages and PII-free by design.
+
+Then the **Budget consolidation**: fold Implementation Funding in as a Budget sub-view
+and — the part that actually pays — have the funding model read `one_time_2026_27` from
+the ledger's `$35M` row instead of holding its own copy in `cpl_funding_data.js`. That
+single-source wiring permanently kills the drift class that cost a day this week.

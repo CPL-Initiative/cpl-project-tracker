@@ -569,6 +569,27 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyQueue — Implementation Funding: two mode toggles retired + the baseline funding gate (2026-07-30, #946/#947 MERGED)
+
+Shipped 3 of SkyReconcile's queued 4 asks; **#3 (public college page) + the Budget consolidation stay open**.
+**#946 — the Potential⇄Earned basis toggle RETIRED.** Sam's "it reads wrong" was right but the toggle was
+innocent: two SCOPE mismatches hid under it — the P-cells render the viewed **year** while the front-load
+"Yr 1" money column renders the whole **WINDOW**, and `earned_total` silently summed both years (dominated by
+year-2 advances invisible in the year-1 cells). Fix = **coexistence**: every money cell stacks cap over earned
+(the P-cell shape), front-load column relabelled **"Window (front-loaded)"**, and earned **splits 3 ways at the
+source** — measured / advance / guaranteed — which surfaced that **~95% of a typical college's "earned" is a
+provisional ADVANCE**. Targets deliberately NOT doubled under front-load (timing-only by design). **#946 also —
+the baseline gate** on Sam's 4 rulings: only the 2 baseline reqs gate · once cleared, cleared for the window ·
+gate only the performance-earned main allocation (guaranteed rural + the cap untouched) · **held in reserve,
+never redistributed**. Fails open; a gated cell reads `withheld · $X held`, **never a bare $0** (that would
+claim the college posted no CPL). **#947 — "Group by district"** replaced the Colleges|Districts toggle (which
+*replaced* the college rows); grouping only ADDS subtotal headers, groups ordered by subtotal, colleges sorted
+within — deleted the stranded `COLS_DISTRICT`/`districtRowHtml`/`districtDetailHtml`/`districts()`. Tests
+531→**552**; suite 174 green; Chromium clean. Durable: **when a mode toggle "reads wrong," suspect the scopes
+it separates, not its logic** — `docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md`. Story:
+`docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`. Side-lane — left `cpl_todos.json` + the
+numbered handoff to the CCR mainline.
+
 ### SkyReconcile — Implementation Funding: the Sept-2026 BOG amendment becomes the pool authority (2026-07-30)
 
 Closed SkyHighness's queued reconciliation. Sam supplied `20260729_CPL_Amendment_Sep_BOG.xlsx` and ruled:
