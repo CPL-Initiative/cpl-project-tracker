@@ -1623,16 +1623,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
   T.render();
 
-  check("E: basis defaults to potential (cap)", T._state.basis === "potential");
-  check("E: basis toggle renders both options",
-    !!doc.querySelector('#cplFundBasis button[data-val="potential"]') &&
-    !!doc.querySelector('#cplFundBasis button[data-val="earned"]'));
+  // The Potential⇄Earned basis TOGGLE was RETIRED 2026-07-30 (Sam): both numbers
+  // now ride in every money cell, so there is no mode to get stuck in and the
+  // money columns can no longer disagree invisibly with the P-cells.
+  check("E: the basis toggle is gone (no mode to get stuck in)",
+    !doc.querySelector("#cplFundBasis") && !("basis" in T._state));
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
-  check("E: potential mode Total cell shows the cap (no earned sub)",
-    potRow.querySelector("td.tot").textContent.indexOf("of ") === -1);
-
-  T._state.basis = "earned"; T.render();
-  check("E: earned basis now selected", !!doc.querySelector('#cplFundBasis button[data-val="earned"].on'));
+  check("E: the Total cell stacks the cap over the earned figure, unconditionally",
+    !!potRow.querySelector("td.tot .sub") &&
+    /earned/i.test(potRow.querySelector("td.tot .sub").textContent));
+  check("E: the year cells stack earned under the cap too",
+    !!potRow.querySelector("td:not(.tot) .sub"));
 
   const la = T._alloc("Laney");   // in-feed, underachieving on the measurable P1
   const f = Math.min(1, 200 / la.p1_heads);
@@ -1645,7 +1646,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("E: a college absent from the feed earns $0 on the measurable priority (= cap − P1)",
     Math.abs(bc.earned_total - (bc.total - bc.p1)) < 1);
 
-  check("E: earned + unearned pool cards render in earned mode",
+  check("E: earned + unearned pool cards always render",
     !!doc.querySelector(".cplfund-card.earned") && !!doc.querySelector(".cplfund-card.unearned"));
 
   const pcards = doc.querySelectorAll(".cplfund-prio .p");
@@ -1655,13 +1656,26 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     pcards[1].textContent.indexOf("full advance") !== -1 && pcards[2].textContent.indexOf("full advance") !== -1);
 
   const earnRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
-  check("E: earned mode Total cell shows earned with the cap in a sub",
-    !!earnRow.querySelector("td.tot .sub") && earnRow.querySelector("td.tot").textContent.indexOf("of ") !== -1);
+  const totTxt = earnRow.querySelector("td.tot").textContent;
+  check("E: the Total cell carries BOTH the cap and the earned figure",
+    (totTxt.match(/\$/g) || []).length >= 2 && /earned/i.test(totTxt));
+  check("E: the Total cell hover breaks earned into measured / advance / guaranteed",
+    /measured|advance|guaranteed/.test(earnRow.querySelector("td.tot").getAttribute("title") || ""));
+
+  // Earned splits three ways and the parts must reconstitute the whole — this is
+  // what keeps an ADVANCE from silently reading as achievement.
+  check("E: earned splits into measured + advance + guaranteed, summing to earned_total",
+    Math.abs((la.earned_measured + la.earned_advance + la.earned_guaranteed) - la.earned_total) < 1);
+  check("E: the data-gap priorities land in the ADVANCE bucket, not measured",
+    la.earned_advance > 0);
 
   const csv = T._csv().split("\r\n");
-  check("E: CSV adds Earned + % of cap columns in earned mode",
+  check("E: CSV always carries Earned + % of cap columns",
     csv[1].indexOf("Earned ") !== -1 && csv[1].indexOf("% of cap") !== -1);
-  check("E: CSV meta flags the EARNED basis", csv[0].indexOf("EARNED basis") !== -1);
+  check("E: CSV carries the measured/advance split, not just a lump earned figure",
+    csv[1].indexOf("Earned: measured") !== -1 && csv[1].indexOf("Earned: advance") !== -1);
+  check("E: CSV meta describes caps-with-earned rather than a basis mode",
+    csv[0].indexOf("earned-to-date") !== -1 && csv[0].indexOf("EARNED basis") === -1);
 }
 {
   // Capped at 100%: an overachiever earns its FULL cap (never more).
@@ -2606,6 +2620,88 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     T._alloc(window.CPL_FUNDING.colleges.reduce(function (a, b) {
       return (a.headcount || 0) >= (b.headcount || 0) ? a : b;
     }).college).total === max);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part S — the BASELINE PARTICIPATION GATE (Sam, 2026-07-30): "actual funding
+// total should only be above 0 if they've met all of the quals as well."
+// Sam's four rulings, each with an assertion here:
+//   (1) only the 2 baseline reqs gate (coordinator + participation request);
+//   (2) the gate is a prompt, not a penalty — dollars are HELD, never lost;
+//   (3) the guaranteed rural allowance and the cap are NOT gated;
+//   (4) withheld dollars are held in reserve, never redistributed.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-30", suppress_below: 5,
+    statewide: { p2: 9000, p3: 16807 },
+    colleges: { "Laney": { p2: 120, p3: 200 }, "Berkeley City": { p2: 90, p3: 150 } },
+    unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  // Fail-open first: with no coordinator feed, NOTHING is gated (the standing
+  // rule — never a false "not qualified" from missing data).
+  T._setElig({ coordOk: false });
+  T.render();
+  check("S1: gate fails open — no coordinator feed means nothing is withheld",
+    (T._alloc("Laney").earned_withheld || 0) === 0 && !T._alloc("Laney").gate_blocked);
+
+  // Now load the feed: Laney fully qualified, Berkeley City missing the opt-in.
+  T._setElig({ coordOk: true,
+    coord: { "Laney": true, "Berkeley City": true },
+    optin: { "Laney": true } });
+  T.render();
+
+  const ok = T._alloc("Laney"), gated = T._alloc("Berkeley City");
+  check("S2: a fully qualified college is not gated", !ok.gate_blocked && (ok.earned_withheld || 0) === 0);
+  check("S2: a college missing the participation request IS gated", gated.gate_blocked === true);
+  check("S2: the gate names WHICH requirement is missing (not a bare failure)",
+    gated.gate_missing.length === 1 && /particip/i.test(gated.gate_missing[0]));
+
+  // (3) The CAP is untouched — the gate withholds earning, not the allocation.
+  const capBefore = gated.total;
+  check("S3: the gated college's allocation CAP is unchanged",
+    capBefore > 0 && Math.abs(capBefore - (gated.w * shareSumAll(T))) < 1);
+  check("S3: the gated college earns nothing on its performance-based main allocation",
+    Math.abs(gated.earned_measured + gated.earned_advance) < 0.5);
+  check("S3: what it would have earned is tracked as WITHHELD, not silently dropped",
+    gated.earned_withheld > 0);
+
+  // (4) Held, never redistributed — the qualified college's allocation is
+  // completely unaffected by its neighbour being gated.
+  check("S4: withheld dollars are NOT redistributed to qualified colleges",
+    Math.abs(ok.total - T._alloc("Laney").total) < 0.01 &&
+    ok.earned_total > 0);
+
+  // The cell must say "withheld", never a bare $0 — a plain zero would read as
+  // "posted no CPL", a different and unfairer claim.
+  const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (r) { return /Berkeley City/.test(r.textContent); });
+  check("S5: the gated row reads 'withheld', not a bare $0",
+    /withheld/i.test(gatedRow.querySelector("td.tot").textContent));
+  check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
+    !!gatedRow.querySelector(".cf-gatechip"));
+  check("S5: the gated cell's hover explains the dollars roll forward",
+    /roll forward|held in reserve/i.test(gatedRow.querySelector("td.tot").getAttribute("title") || "") ||
+    /roll forward|reserve/i.test(gatedRow.querySelector("td.tot .sub").getAttribute("title") || ""));
+
+  // The reserve pool card exists and equals the sum of what was withheld.
+  const heldCard = doc.querySelector(".cplfund-card.withheld");
+  check("S6: a 'held in reserve' pool card surfaces the parked total", !!heldCard);
+  check("S6: the reserve card states the dollars are not redistributed",
+    /NOT redistributed|held, NOT/i.test(heldCard.textContent) ||
+    /qualifying later/i.test(heldCard.textContent));
+
+  const csv = T._csv().split("\r\n");
+  check("S7: CSV carries the withheld column",
+    csv[1].indexOf("Withheld (baseline not met)") !== -1);
+}
+function shareSumAll(T) {
+  // Σ of the viewed window's per-year share sums ÷ nYears — the same factor
+  // collegeAlloc applies; derived, never hardcoded.
+  const s = T._alloc("Laney");
+  return s.total / s.w;
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
