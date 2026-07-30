@@ -103,6 +103,7 @@
     ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
     ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
+    ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
     ".cf-gatechip { filter: grayscale(.25); }",
     ".cf-adv { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 3px; font-size: .62rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-muted); border: 1px solid var(--border); white-space: nowrap; }",
@@ -960,6 +961,37 @@
   function setEligIntro(v) { activeOverride().eligIntro = v; persistActive(); }
 
   // ── Supabase shared config I/O ────────────────────────────────────────
+  // ── PUBLIC MODE (Sam's ask #3, 2026-07-30) ───────────────────────────────
+  // A lean, college-audience render served by cpl_funding_public.html. This is
+  // AUDIENCE SEPARATION, NOT SECURITY: cpl_funding_data.js is already public on
+  // Pages and PII-free by design, so this gives colleges a clean focused link —
+  // it does not stop anyone finding the full dashboard. The one thing that IS
+  // enforced server-side is the CO Monitor notes (cpl_funding_notes SELECT is
+  // `is_allowed_reviewer() OR team_pass_ok()`, verified 2026-07-30), so an
+  // anonymous reader gets nothing from that table regardless of this flag.
+  function publicMode() { return !!window.CPL_FUNDING_PUBLIC; }
+  // Every curate/edit affordance, as ONE registry. Public mode sweeps these out
+  // of the DOM after each render rather than relying on each emitter to check
+  // publicMode() — a missed call site is the failure mode that matters, and a
+  // declarative sweep cannot miss one. wire() reads the same list.
+  var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave",
+    "data-reqdel", "data-reqhide", "data-reqshow",
+    "data-stratadd", "data-stratdel", "data-timingdel",
+    "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
+  var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset", "cplFundLock",
+    "cplFundUnlockSlot", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
+    "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
+    "cplFundScenSel", "cplFundScenNew", "cplFundScenDel"];
+  function stripCurateAffordances(root) {
+    if (!root) return;
+    CURATE_ATTRS.forEach(function (a) {
+      root.querySelectorAll("[" + a + "]").forEach(function (el) { el.remove(); });
+    });
+    CURATE_IDS.forEach(function (id) {
+      var el = root.querySelector("#" + id);
+      if (el) el.remove();
+    });
+  }
   function remoteEnabled() {
     return !window.CPL_FUNDING_NO_REMOTE && typeof fetch === "function";
   }
@@ -1252,7 +1284,7 @@
   var NOTES = {};   // college -> {note, updated_by, updated_at}
   var NOTES_URL = SUPABASE_URL + "/rest/v1/cpl_funding_notes";
   function loadNotes() {
-    if (!remoteEnabled()) return;
+    if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
     var t = tp();
     if (t) t.decorateHeaders(headers, t.session());
@@ -1459,6 +1491,7 @@
   // ── editable input builders ───────────────────────────────────────────
   function edNum(edit, value, opts) {
     opts = opts || {};
+    if (publicMode()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -1470,6 +1503,7 @@
   }
   function edText(edit, value, opts) {
     opts = opts || {};
+    if (publicMode()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -1485,6 +1519,7 @@
   // as edText, so applyEdit + the change wiring handle it unchanged.
   function edArea(edit, value, opts) {
     opts = opts || {};
+    if (publicMode()) return esc(value);
     var attrs = ' data-edit="' + esc(edit) + '"';
     if (opts.slot != null) attrs += ' data-slot="' + esc(opts.slot) + '"';
     if (opts.idx != null) attrs += ' data-idx="' + esc(opts.idx) + '"';
@@ -1506,6 +1541,7 @@
   // (+ New clones current + Delete). Selecting is open to everyone; creating /
   // deleting projects + scenarios is a curator (unlocked) action.
   function controlStripHtml() {
+    if (publicMode()) return "";   // no project/scenario picker for a college audience
     var proj = activeProjectObj();
     var am = areaMeta(proj.area);
     var curator = unlocked();
@@ -1545,6 +1581,7 @@
     return '<div class="cplfund-strip">' + projBlock + scBlock + "</div>" + addForm;
   }
   function authbarHtml() {
+    if (publicMode()) return "";   // no unlock / team-editing affordance
     var dirty = isDirty();
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
@@ -2665,9 +2702,15 @@
     var earned = row["ey" + (i + 1)] == null ? 0 : row["ey" + (i + 1)];
     var tot = row.earned_total || 0;
     var f = tot > 0 ? earned / tot : 0;
+    // WITHHELD is pro-rated by the cell's share of the WINDOW CAP, not by 1/nYears.
+    // Those differ under front-load, where the year-1 cell carries the whole window
+    // (y1 == total) — a flat 1/nYears split would show the full cap over half the
+    // withheld amount. A gated college can also have earned_total == 0, so `f` is
+    // unusable here; the cap share is always well defined.
+    var capFrac = row.total > 0 ? ((row[yearKeys()[i]] || 0) / row.total) : 0;
     return { earned: earned, meas: (row.earned_measured || 0) * f,
       adv: (row.earned_advance || 0) * f, guar: (row.earned_guaranteed || 0) * f,
-      held: (row.earned_withheld || 0) * (yearKeys().length ? 1 / yearKeys().length : 0) };
+      held: (row.earned_withheld || 0) * capFrac };
   }
   function yearCellsHtml(row) {
     var ys = selectedYears();
@@ -2708,7 +2751,9 @@
     // keyboard-focusable + announced, WITHOUT overriding the row's table
     // semantics. Its native Enter/Space fires a click that bubbles to the row's
     // toggle handler; mouse users still click anywhere on the row.
-    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
+    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") +
+      (_deepLinkCollege && c.college === _deepLinkCollege ? " cplfund-deeplink" : "") +
+      '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
@@ -3551,7 +3596,11 @@
       '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">$35M Funding model</button>" +
       '<button type="button" data-subview="grants"' + (state.subview === "grants" ? ' class="on"' : "") +
       ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">$15M Distributions</button>' +
-      '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">📄 Report</button></div>";
+      // The Report is an internal drafting surface (an editable ESS memo), not
+      // something a college audience should see mid-draft.
+      (publicMode() ? ""
+        : '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">📄 Report</button>") +
+      "</div>";
   }
 
   // ── $15M Distributions sub-view (ESS 25-82 $50,000 grants) ─────────────────
@@ -3867,6 +3916,10 @@
     if (Number(state.viewSlot) > nYears()) state.viewSlot = "1";
     // Report sub-view (Sam, 2026-07-23) — the editable memo replaces the model body;
     // the control strip + sub-tabs stay so project/scenario/report all switch together.
+    // Public mode never offers the Report TAB; this also refuses to render its
+    // body if state.subview reached "report" by any other route (a test hook, a
+    // future entry point) — the tab being hidden is not on its own a guarantee.
+    if (state.subview === "report" && publicMode()) state.subview = "model";
     if (state.subview === "report") {
       mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
       wire();
@@ -3926,6 +3979,7 @@
       "</div></div>";
     updateCount();
     wire();
+    scrollToDeepLink();
   }
 
   function updateCount() {
@@ -3984,6 +4038,7 @@
   function wireTable() {
     var holder = document.getElementById("cplFundTable");
     if (!holder) return;
+    if (publicMode()) stripCurateAffordances(holder);   // the table re-renders on its own
     function activateKey(e) {   // Enter or Space activates a focusable control
       return e.key === "Enter" || e.key === " " || e.key === "Spacebar" || e.keyCode === 13 || e.keyCode === 32;
     }
@@ -4126,6 +4181,12 @@
   }
 
   function wire() {
+    // PUBLIC MODE: sweep every curate/edit affordance out of the DOM before any
+    // handler binds. Done here because wire() is the single funnel every render
+    // path ends with (model / grants / report), so a new sub-view cannot forget
+    // it. Belt-and-braces with the emitters' own publicMode() checks — a missed
+    // call site is the failure mode that matters for a page we hand to colleges.
+    if (publicMode()) stripCurateAffordances(document.getElementById("cplFundingMount"));
     // Persist each collapsible section's open/closed state so it survives the
     // re-render an edit triggers (native <details> resets otherwise).
     document.querySelectorAll("#cplFundingMount details.cplfund-sec").forEach(function (dt) {
@@ -4388,18 +4449,51 @@
       document.head.appendChild(s);
     }
   }
+  // ?college=Butte — a college mostly wants its own row. Matches on the join key,
+  // the display name, or a unique prefix; opens that row's drill-in and scrolls
+  // to it once the table exists. Unknown value = ignored (never an error page).
+  function applyCollegeDeepLink() {
+    var q;
+    try { q = new URLSearchParams(window.location.search).get("college"); } catch (e) { return; }
+    if (!q) return;
+    q = String(q).trim().toLowerCase();
+    if (!q) return;
+    var hit = null;
+    base().colleges.forEach(function (c) {
+      if (hit) return;
+      var k = String(c.college || "").toLowerCase(), disp = String(dispName(c.college) || "").toLowerCase();
+      if (k === q || disp === q || k.indexOf(q) === 0 || disp.indexOf(q) === 0) hit = c;
+    });
+    if (!hit) return;
+    state.open["c:" + hit.order] = true;
+    state.q = "";
+    _deepLinkCollege = hit.college;
+    _deepLinkPending = true;
+  }
+  var _deepLinkCollege = null;   // persistent — drives the row highlight
+  var _deepLinkPending = false;  // one-shot — drives the scroll
+  function scrollToDeepLink() {
+    if (!_deepLinkPending || !_deepLinkCollege) return;
+    var c = baseCollege(_deepLinkCollege);
+    if (!c) { _deepLinkPending = false; return; }
+    var row = document.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + c.order + '"]');
+    if (!row) return;   // table not built yet — try again on the next render
+    _deepLinkPending = false;
+    if (typeof row.scrollIntoView === "function") row.scrollIntoView({ block: "center" });
+  }
   function boot() {
     if (booted) { render(); return; }
     booted = true;
     loadScenario();
+    if (window.CPL_FUNDING) applyCollegeDeepLink();
     function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
     if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadRemotes(); });
+      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { applyCollegeDeepLink(); render(); loadRemotes(); });
     } else {
       var s = document.createElement("script");
       s.src = "cpl_funding_data.js";
-      s.onload = function () { render(); loadRemotes(); };
+      s.onload = function () { applyCollegeDeepLink(); render(); loadRemotes(); };
       s.onerror = render;
       document.head.appendChild(s);
     }
