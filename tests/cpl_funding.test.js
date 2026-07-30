@@ -2723,6 +2723,62 @@ function shareSumAll(T) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Part T — SINGLE-SOURCE: the Budget ledger is the authority for the
+// appropriation figures (Sam, 2026-07-30 — "they're wired together"). The
+// funding model no longer keeps its own copy of the $35M; it reads the
+// budget_funding row whose `model_field` names the pool field. Joining on that
+// column (never the row NAME) is what makes it rename-proof.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  // Fail-soft FIRST: no ledger ⇒ the committed value stands. This is the
+  // property that keeps an unreachable Supabase from rendering a $0 pool.
+  T._setLedger(null); T.render();
+  const committed = D.pool.one_time_2026_27;
+  check("T1: with no ledger the committed appropriation stands (fail-soft)",
+    T._pool("one_time_2026_27") === committed && committed > 0);
+  check("T1: no ledger ⇒ no drift and no ledger note",
+    T._ledgerDrift().length === 0 && !doc.querySelector(".cplfund-ledgernote"));
+
+  // The ledger REPLACES the committed literal.
+  T._setLedger({ one_time_2026_27: committed + 1000000 }); T.render();
+  check("T2: the ledger figure overrides the committed data-file copy",
+    T._pool("one_time_2026_27") === committed + 1000000);
+  check("T2: the pool section states the figure is sourced from the ledger",
+    !!doc.querySelector(".cplfund-ledgernote"));
+
+  // A garbage ledger value must NOT poison the model.
+  T._setLedger({ one_time_2026_27: NaN }); T.render();
+  check("T3: a non-finite ledger value falls back to the committed figure",
+    T._pool("one_time_2026_27") === committed);
+
+  // A scenario what-if still WINS — it is a deliberate modelling choice, not
+  // drift — but the disagreement is surfaced rather than left silent.
+  T._setLedger({ one_time_2026_27: 35000000 });
+  T._setScenario({ pool: { one_time_2026_27: 40000000 } });
+  T.render();
+  check("T4: a scenario override still beats the ledger (what-ifs keep working)",
+    T._pool("one_time_2026_27") === 40000000);
+  const drift = T._ledgerDrift();
+  check("T4: the override is reported as drift against the ledger",
+    drift.length === 1 && drift[0].field === "one_time_2026_27" &&
+    drift[0].ledger === 35000000 && drift[0].effective === 40000000);
+  check("T4: the drift is shown in the pool section, not just computed",
+    !!doc.querySelector(".cplfund-ledgerdrift"));
+  check("T4: the drift notice frames an override as deliberate, not an error",
+    /deliberate what-if/.test(doc.querySelector(".cplfund-ledgerdrift").textContent));
+
+  // Agreement is not drift.
+  T._setScenario({ pool: { one_time_2026_27: 35000000 } }); T.render();
+  check("T5: an override that AGREES with the ledger is not reported as drift",
+    T._ledgerDrift().length === 0 && !doc.querySelector(".cplfund-ledgerdrift"));
+  T._setScenario({});
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
