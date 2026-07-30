@@ -102,6 +102,9 @@
     ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
     ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
     ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
+    ".cplfund-card-eye { position: absolute; top: 4px; right: 22px; border: 0; background: none; cursor: pointer; font-size: .8rem; line-height: 1; padding: 2px; opacity: .5; }",
+    ".cplfund-card-eye:hover, .cplfund-card-eye:focus-visible { opacity: 1; }",
+    ".cplfund-card-eye.off { opacity: .85; }",
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
     ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
@@ -699,6 +702,27 @@
       base().pool_labels && base().pool_labels[field]);
     return v == null ? def : v;
   }
+  // PUBLIC-PAGE VISIBILITY (Sam, 2026-07-30) — deliberately SEPARATE from
+  // poolHidden(). poolHidden is STRUCTURAL: it drops the line item from
+  // grossRevenue()/grossDeduction(), which is right for a what-if ("what if we
+  // had no CO admin cost?") and WRONG for "don't show colleges this box" —
+  // hiding the $1.2M admin deduction that way would add $1.2M back into the
+  // college pool and every allocation on the public page would be overstated.
+  // This flag is display-only: the box is not rendered in public mode, and the
+  // math is untouched everywhere. Never consult it from grossRevenue/Deduction.
+  // Defaults: a college audience wants the pool that funds COLLEGES. The CO's
+  // own deductions answer a question they didn't ask and invite "why is the CO
+  // taking that?" A curator can show them again with 👁 at any time.
+  var DEFAULT_PUBLIC_HIDDEN = { admin_cost: true, scaling_projects_tech: true };
+  function poolPublicHidden(field) {
+    return !!firstDefined(
+      SCENARIO.publicHiddenPool && SCENARIO.publicHiddenPool[field],
+      SHARED.publicHiddenPool && SHARED.publicHiddenPool[field],
+      base().public_hidden_pool && base().public_hidden_pool[field],
+      DEFAULT_PUBLIC_HIDDEN[field]);
+  }
+  // Skip a box on the PUBLIC page only.
+  function poolSkip(field) { return poolHidden(field) || (publicMode() && poolPublicHidden(field)); }
   function poolHidden(field) {
     return !!firstDefined(
       SCENARIO.hiddenPool && SCENARIO.hiddenPool[field],
@@ -872,6 +896,14 @@
   function setPoolHidden(field, on) {
     var ov = activeOverride(); ov.hiddenPool = ov.hiddenPool || {};
     if (on) ov.hiddenPool[field] = true; else delete ov.hiddenPool[field];
+    persistActive();
+  }
+  // Display-only public visibility. Mirrors setPoolHidden's shape but writes a
+  // DIFFERENT key — and deliberately has no confirm(), because unlike hiding it
+  // cannot move a dollar.
+  function setPoolPublicHidden(field, on) {
+    var ov = activeOverride(); ov.publicHiddenPool = ov.publicHiddenPool || {};
+    if (on) ov.publicHiddenPool[field] = true; else delete ov.publicHiddenPool[field];
     persistActive();
   }
   function setCustomPool(list) { activeOverride().customPool = (list || []).slice(); persistActive(); }
@@ -1714,14 +1746,27 @@
     }
     function hideX(field, label) {
       return '<button type="button" class="cplfund-card-x" data-poolhide="' + esc(field) +
-        '" title="Hide this box — it changes the funding math (restore it below)" aria-label="Hide ' + esc(label) + '">✕</button>';
+        '" title="Remove this box from the FUNDING MATH (a what-if — restore it below). To keep the math but hide it from colleges, use the 👁 toggle instead." aria-label="Remove ' + esc(label) + ' from the funding math">✕</button>';
+    }
+    // Display-only visibility on the public college page. Curator-gated, and
+    // deliberately a DIFFERENT control from ✕ — this one never moves a dollar.
+    function pubEye(field, label) {
+      if (publicMode() || !unlocked()) return "";
+      var off = poolPublicHidden(field);
+      return '<button type="button" class="cplfund-card-eye' + (off ? " off" : "") +
+        '" data-poolpublic="' + esc(field) + '" title="' +
+        (off ? "Hidden from the public college page — click to show it there. The funding math is unaffected either way."
+             : "Visible on the public college page — click to hide it there. The funding math is unaffected either way.") +
+        '" aria-pressed="' + (off ? "true" : "false") +
+        '" aria-label="' + (off ? "Show " : "Hide ") + esc(label) + ' on the public page">' + (off ? "🙈" : "👁") + "</button>";
     }
 
     var out = [];
     // Revenue sources (skip hidden) → then Total available funds (computed gross).
     CORE_REVENUE.forEach(function (b) {
-      if (poolHidden(b.field)) return;
-      out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def), x: hideX(b.field, poolLabel(b.field, b.def)) }));
+      if (poolSkip(b.field)) return;
+      out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def),
+        x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
     });
     out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
       l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool (the rural allowance is part of that pool)" }));
@@ -1729,9 +1774,10 @@
     // Deductions (skip hidden).
     CORE_DEDUCTION.forEach(function (b) {
       var def = b.def || base().pool.admin_cost_label;
-      if (poolHidden(b.field)) return;
+      if (poolSkip(b.field)) return;
       out.push(card({ neg: true, v: valueEd(b.field, true),
-        l: labelEd(b.field, def) + ' <span class="dk">&mdash; deducted</span>', x: hideX(b.field, poolLabel(b.field, def)) }));
+        l: labelEd(b.field, def) + ' <span class="dk">&mdash; deducted</span>',
+        x: pubEye(b.field, poolLabel(b.field, def)) + hideX(b.field, poolLabel(b.field, def)) }));
     });
 
     // Custom boxes — editable label + amount + a kind toggle (+ revenue / − deduction) + delete.
@@ -1838,6 +1884,21 @@
       fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" }));
     out.push(card({ v: fmtRate(perStudent()), l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) + " headcount (informational)" }));
 
+    // Curate-view summary of what the PUBLIC page omits. Without this, a curator
+    // sets 👁 once and has no way to see the public page's shape from here.
+    var pubOff = CORE_REVENUE.concat(CORE_DEDUCTION).filter(function (b) {
+      return !poolHidden(b.field) && poolPublicHidden(b.field);
+    });
+    var pubNote = (pubOff.length && !publicMode() && unlocked())
+      ? '<div class="cplfund-reqrestore"><span class="dk">🙈 Hidden from the ' +
+        '<a href="cpl_funding_public.html" target="_blank" rel="noopener">public college page</a> ' +
+        '(display only &mdash; the funding math is unchanged):</span> ' +
+        pubOff.map(function (b) {
+          var def = b.def || base().pool.admin_cost_label;
+          return "<strong>" + esc(poolLabel(b.field, def)) + "</strong>";
+        }).join(" &middot; ") + "</div>"
+      : "";
+
     // Restore chips for any hidden core boxes.
     var hidden = CORE_REVENUE.concat(CORE_DEDUCTION).filter(function (b) { return poolHidden(b.field); });
     var restore = hidden.length
@@ -1854,7 +1915,7 @@
       '<button type="button" class="cplfund-optbtn" data-pooladd="deduction">&plus; Add deduction / carve-out</button>' +
       '<span class="dk">new boxes flow into the college-pool math &mdash; revenue adds, deduction subtracts</span></div>';
 
-    return '<div class="cplfund-cards">' + out.join("") + "</div>" + restore + add;
+    return '<div class="cplfund-cards">' + out.join("") + "</div>" + pubNote + restore + add;
   }
 
   // ── award distribution (per college, window total) ────────────────────
@@ -2677,9 +2738,10 @@
     // 2026-07-30). The dollars are held in reserve, not lost.
     if (held > 0.5) {
       return '<span class="sub cf-withheld" title="' +
-        esc(fmtMoney(held) + " withheld and held in reserve — baseline participation not met yet. " +
-          "The allocation cap is unchanged and the dollars roll forward.") +
-        '">withheld &middot; ' + fmtMoney(held) + " held</span>";
+        esc(fmtMoney(held) + " held in reserve — baseline participation not met yet. " +
+          "The allocation cap is unchanged and the dollars roll forward, so qualifying later still lets " +
+          "this college draw.") +
+        '">held ' + fmtMoney(held) + "</span>";
     }
     var pct = earned / cap;
     var advTag = adv > 0.5
@@ -3593,9 +3655,9 @@
   }
   function subviewTabsHtml() {
     return '<div class="cplfund-subtabs">' +
-      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">$35M Funding model</button>" +
+      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">2026&ndash;2028 College Implementation Funding</button>" +
       '<button type="button" data-subview="grants"' + (state.subview === "grants" ? ' class="on"' : "") +
-      ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">$15M Distributions</button>' +
+      ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">2025&ndash;2026 $50K Seed Funding</button>' +
       // The Report is an internal drafting surface (an editable ESS memo), not
       // something a college audience should see mid-draft.
       (publicMode() ? ""
@@ -3711,17 +3773,23 @@
         '<td class="c" colspan="3"><span class="dk">Declined the allocation, pending further review</span></td></tr>';
     }).join("");
     var APPROPRIATION = 15000000;                       // the 2025-26 AB 123 one-time
-    var otherUses = APPROPRIATION - distributed - remaining;   // whatever the two don't account for
+    // Sam's rule (2026-07-30): the PUBLIC view sees less; the PRIVATE (curator)
+    // view shows all the calculations. So the N2N carve-off and the remaining
+    // balance are not deleted — they are simply not shown publicly, where a big
+    // stat card invites "what projects?" that this tab isn't about.
+    var otherUses = APPROPRIATION - distributed - remaining;
     var cards = [
       { v: fmtMoney(distributed), l: "Distributed as $50,000 implementation grants &mdash; " + recips.length +
-          " institutions (" + nCredit + " colleges + " + nNc + " noncredit campuses)" },
-      { v: fmtMoney(Math.abs(otherUses)), l: "N2N Lightleap AI Apprenticeship Tools &mdash; partial funding, the carve-off completing " +
-          "the $1.4M project with Santiago Canyon College Construction Trades apprentices" },
-      { v: fmtMoney(remaining), l: "Remaining 2025-26 one-time balance &mdash; not part of the $35M model on the Funding model tab" },
-      { v: String(recips.length), l: "Recipients &mdash; every college and noncredit campus whose CIO certified by Jan 15, 2026 (" +
-          GRANT_DECLINED.length + " declined)" }
+          " institutions (" + nCredit + " colleges + " + nNc + " noncredit campuses)" }
     ];
-    return '<h3>$15M (2025-26) &mdash; ESS 25-82 $50,000 implementation grants ' +
+    if (!publicMode()) {
+      cards.push({ v: fmtMoney(Math.abs(otherUses)), l: "N2N Lightleap AI Apprenticeship Tools &mdash; partial funding, the carve-off completing " +
+        "the $1.4M project with Santiago Canyon College Construction Trades apprentices" });
+      cards.push({ v: fmtMoney(remaining), l: "Remaining 2025-26 one-time balance &mdash; not part of the College Implementation Funding model" });
+    }
+    cards.push({ v: String(recips.length), l: "Recipients &mdash; every college and noncredit campus whose CIO certified by Jan 15, 2026 (" +
+      GRANT_DECLINED.length + " declined)" });
+    return '<h3>2025&ndash;2026 $50K Seed Funding &mdash; ESS 25-82 implementation grants ' +
       '<span class="dk" style="font-size:.8rem;font-weight:400;">(AB 123 one-time)</span></h3>' +
       '<div class="cplfund-formula" style="margin-bottom:10px;">' +
       "<strong>ESS 25-82</strong> (Dec 9, 2025) directed <strong>" + fmtMoney(GRANT_AMOUNT) + "</strong> to each California " +
@@ -3736,13 +3804,22 @@
       }).join("") + "</div>" +
       // Honest reconciliation against the appropriation: state the residual rather
       // than forcing the two figures to add to $15M.
-      '<div class="cplfund-foot" style="margin-top:8px;">Reconciliation: ' +
-      fmtMoney(distributed) + " in grants + " + fmtMoney(remaining) + " remaining = " +
-      fmtMoney(distributed + remaining) + " of the " + fmtMoney(APPROPRIATION) + " 2025-26 appropriation" +
-      (Math.abs(otherUses) > 1
-        ? " + <strong>" + fmtMoney(Math.abs(otherUses)) + "</strong> carved off to complete the $1.4M N2N Lightleap AI " +
-          "Apprenticeship Tools project (Santiago Canyon College Construction Trades apprentices) = the full appropriation."
-        : " &mdash; fully reconciled.") + "</div>" +
+      (publicMode()
+        // PUBLIC: enough to add up, nothing to poke at. Not deleted entirely —
+        // a page that visibly doesn't reach $15M invites more questions than a
+        // single unglamorous sentence does.
+        ? '<div class="cplfund-foot" style="margin-top:8px;">The $50,000 grants account for ' +
+          fmtMoney(distributed) + " of the " + fmtMoney(APPROPRIATION) +
+          " 2025-26 appropriation; the balance is committed to CPL Initiative projects administered by the " +
+          "Chancellor&#39;s Office.</div>"
+        // PRIVATE: the full reconciliation, residual named.
+        : '<div class="cplfund-foot" style="margin-top:8px;">Reconciliation: ' +
+          fmtMoney(distributed) + " in grants + " + fmtMoney(remaining) + " remaining = " +
+          fmtMoney(distributed + remaining) + " of the " + fmtMoney(APPROPRIATION) + " 2025-26 appropriation" +
+          (Math.abs(otherUses) > 1
+            ? " + <strong>" + fmtMoney(Math.abs(otherUses)) + "</strong> carved off to complete the $1.4M N2N Lightleap AI " +
+              "Apprenticeship Tools project (Santiago Canyon College Construction Trades apprentices) = the full appropriation."
+            : " &mdash; fully reconciled.") + "</div>") +
       '<div class="cplfund-formula" style="margin:10px 0;">' +
       "<strong>The three ESS 25-82 priority outcomes</strong> (hover any mark for that institution&#39;s detail):" +
       "<ul style='margin:6px 0 0;padding-left:20px;'>" +
@@ -4354,6 +4431,13 @@
         savingState = "";
         var di = Number(b.getAttribute("data-pooldel")), list = customPool();
         if (di >= 0 && di < list.length) { list.splice(di, 1); setCustomPool(list); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-poolpublic]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var f = b.getAttribute("data-poolpublic");
+        setPoolPublicHidden(f, !poolPublicHidden(f));
       });
     });
     document.querySelectorAll("#cplFundingMount [data-poolhide]").forEach(function (b) {
