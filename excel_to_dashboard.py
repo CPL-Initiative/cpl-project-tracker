@@ -10773,12 +10773,39 @@ def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
         except (TypeError, ValueError):
             return 0.0
 
+    # Budget rework (2026-07-30): budget_funding now carries the whole ledger —
+    # sources, uses, the $18M project pool and the pre-cutoff history — keyed by
+    # `section`, with `parent_id` giving the collapsible detail beneath a total.
+    #
+    # TWO RULES, both load-bearing:
+    #   (a) TOTALS SUM PARENT ROWS ONLY. A child is detail, never additive —
+    #       summing parents+children double-counts (the exact mistake the
+    #       amendment's own $74M grand total makes; see docs/cpl_funding_lessons).
+    #   (b) ARCHIVED rows are excluded from every total. They precede the
+    #       2025-26 cutoff and are retained only so history still reconciles.
+    #
+    # The 5-Year Funding Plan table is the SOURCES view, so it takes the
+    # source_* sections only. Rows predating the rework carry section = NULL and
+    # are treated as sources so an un-migrated database still renders.
+    SOURCE_SECTIONS = ("source_one_time", "source_ongoing", None, "")
+
+    def _is_source(r):
+        return (r.get("section") in SOURCE_SECTIONS
+                and not r.get("archived")
+                and r.get("parent_id") in (None, ""))
+
     funding_sources = []
     for r in funding_rows:
+        if not _is_source(r):
+            continue
         funding_sources.append({
             "id": r.get("id"),               # carried for the inline editor's PATCH
             "name": r.get("name") or "",
             "source_code": r.get("source_code") or "",
+            "description": r.get("description") or "",
+            "window_label": r.get("window_label") or "",
+            "section": r.get("section") or "",
+            "_ord": r.get("sort_order"),
             # the 5 ANNUAL BUDGETS in year order (the 2025-26 EXPENSE is the
             # separate expense_2025 field, NOT a year column — the bug fix).
             "budget_by_year": [
@@ -10792,7 +10819,37 @@ def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
             "total": fnum(r.get("total")),
             "avg": fnum(r.get("avg_yearly")),
         })
+    funding_sources.sort(key=lambda s: (s.get("_ord") if s.get("_ord") is not None else 9999,
+                                        s.get("id") or 0))
     grand_total = sum(s["total"] for s in funding_sources)
+
+    # The FULL ledger — every row with its structure — for the JS-rendered
+    # Sources / Uses / Project pool / History view. Emitted verbatim; the
+    # consumer applies rules (a) and (b) above when it totals anything.
+    ledger = []
+    for r in funding_rows:
+        ledger.append({
+            "id": r.get("id"),
+            "name": r.get("name") or "",
+            "source_code": r.get("source_code") or "",
+            "description": r.get("description") or "",
+            "window_label": r.get("window_label") or "",
+            "section": r.get("section") or "",
+            "parent_id": r.get("parent_id"),
+            "archived": bool(r.get("archived")),
+            "sort_order": r.get("sort_order"),
+            "years": [
+                fnum(r.get("yr_2025_26_budget")),
+                fnum(r.get("yr_2026_27")),
+                fnum(r.get("yr_2027_28")),
+                fnum(r.get("yr_2028_29")),
+                fnum(r.get("yr_2029_30")),
+            ],
+            "expense_2025": fnum(r.get("yr_2025_26_expense")),
+            "total": fnum(r.get("total")),
+        })
+    ledger.sort(key=lambda r: (r.get("sort_order") if r.get("sort_order") is not None else 9999,
+                               r.get("id") or 0))
 
     personnel = []
     for r in personnel_rows:
@@ -10826,6 +10883,7 @@ def build_budget_from_supabase(funding_rows, personnel_rows, excel_budget):
             "year_labels", ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"]
         ),
         "grand_total": grand_total,
+        "ledger": ledger,               # the full structured ledger for budget_ledger.js
         "_expenditures_held": True,     # render shows a "pending" note
     }
 
