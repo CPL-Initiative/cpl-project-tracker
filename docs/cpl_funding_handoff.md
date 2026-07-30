@@ -9,7 +9,42 @@ related:
 
 # You are the next Implementation-Funding session
 
-## Latest state — 2026-07-28 (SkyHighness), READ THIS FIRST
+## Latest state — 2026-07-29 (SkyHighness cont.), READ THIS FIRST
+
+**The tab now carries BOTH one-time appropriations, in three sub-views:**
+`[$35M Funding model | $15M Distributions | 📄 Report]`.
+
+**#931 — the $35M reframe (live).** The model is the **2026-27 $35M** apportionment only; the
+2025-26 remaining ~$9M is a separate topic. Ties out to the penny:
+`$35M = $26,240,307 three-priority college pool (incl. $1M rural) + $1,000,000 NC feeder
++ $1,200,000 CO Administration + $6,559,693 CPL Projects & Innovation`. Hero = **$26,240,307**;
+Total Available = **$35M**; award range **avg $228,177 / min $150,000 / max $694,273**.
+`CORE_REVENUE` dropped `remaining_2025_26`; `scaling_projects_tech` → "CPL Projects & Innovation".
+⚠ **Sam's precise anchor is $26,240,307** — his "~$8M for Projects & Innovation" was the round figure
+for **admin + P&I** ($7.76M); P&I alone is the $6,559,693 residual. Preserve the anchor.
+
+**#934 — the $15M Distributions sub-view (live).** The ESS 25-82 receipt: **$50,000 × 118 =
+$5,900,000** (114 colleges + the 4 noncredit campuses; **Sequoias declined**, shown as such), the
+**$9,040,307 remaining** balance alongside, an honest reconciliation naming the **$59,693 residual**,
+and **progress on the three ESS priority outcomes** per recipient:
+- **1 · JSTs** → `vet_star` (≥75% Veteran Star; the memo's bar is 100% — caveat stated inline).
+- **2 · Statewide recs** → NEW producer `funding/_build_funding_ess.py` → `cpl_funding_ess.js`
+  (2.3KB sidecar off the 2.9MB CER; ≥1 local articulation on a statewide-flagged credential;
+  84 credentials → 71 adopters, 0 unmatched). Workflow **step 4a3**, after the CER regen.
+- **3 · Proactive CPL** → `pe` / `p3`.
+Marks ✓ / ◐ (suppressed <5) / — / n/a / ⏳; **fail-open** (no feed → pending, never a false not-met);
+the legend states a dash is NOT a compliance finding. Live: **51 · 70 · 94**, **38 meeting all three**.
+
+Tests **490 → 515** (Part Q). PII guard extended. Chromium desktop+mobile clean.
+
+### Queue / open items
+- **Confirm the $15M residual** ($59,693) before any external reporting — the view flags it.
+- **Outcome-1 threshold:** if the exact ESS bar (100% of enrolled veterans) is wanted, the raw
+  veteran/JST counts would need to ride in the perf artifact beside the boolean.
+- The Report/memo currently narrates the $35M model only; extending it to a combined
+  $15M+$35M legislative report is a natural follow-up.
+
+## Prior state — 2026-07-28 (SkyHighness), the PR4 build
 
 **PR4 shipped: "combine the floor with the rural bump" — the GUARANTEED floor-fill model.**
 Sam's decision (asked, grounded in the live split): **Option B — guarantee the whole $1M rural
