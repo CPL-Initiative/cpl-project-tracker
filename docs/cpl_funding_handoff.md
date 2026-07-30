@@ -152,11 +152,19 @@ the $6M era is behind the cutoff — the Budget tab does not show it.** He offer
 history back to 2017 and judged it distracting for this work; agreed — the place that history would
 earn its keep is a public/legislative narrative ("the CPL funding story"), not the working ledger.
 
-⚠️ **Label to confirm:** Sam describes the **$59K** as part of what supplemented 2025 *operations*,
-while the amendment line reads `$50k N2N Project Partial Funding (CO)` and the tab (#936) narrates it
-as the carve-off completing the $1.4M N2N Lightleap project with Santiago Canyon. Both may be true
-(the N2N disbursement being one of the operational uses), but the two descriptions should be
-reconciled before the combined $15M+$35M legislative report quotes either.
+✅ **The $59,692 and the N2N project — both CLOSED by Sam, 2026-07-30.**
+
+*The $59,692 label.* Sam's funding history resolves it: AI Apprenticeship CPL drew **$1,345,236**
+from the $6M P98 Scaling CPL and **$59,692** from the $15M = **$1,404,928** — "the $1.4M N2N
+project". Sam's "supplemented 2025 operations", the amendment's `$50k N2N Project Partial Funding
+(CO)` and #936's narrative are all the same fact, and the figure now carries that explanation in its
+own `budget_funding.description`.
+
+*The amendment's `Lightleap AI Apprenticeship Tools $1,400,000` in 2026-27 is **NOT** a double count*
+— a session flagged it as one; **Sam ruled it is not** (2026-07-30). The original contract was a
+**single year**; the amendment's $6.6M over 2026-29 **extends it another year and adds other
+colleges**. So the completed $1,404,928 and the forward $6,600,000 are different scopes of the same
+project, not the same dollars counted twice. **Do not re-raise this.**
 
 **Sam's three decisions (AskUserQuestion, 2026-07-30) — inputs to the Budget rework:**
 

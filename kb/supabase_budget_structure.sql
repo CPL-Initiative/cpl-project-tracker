@@ -287,3 +287,22 @@ where not exists (select 1 from public.budget_funding b where b.name = v.name);
 --
 -- Post-fix: every row that has year cells now satisfies Sum(years) == total.
 -- Zero drift. (That check is worth re-running after any bulk edit.)
+
+-- ── 9. Applied 2026-07-30 — Sam's N2N ruling ──────────────────────────────
+-- A session flagged the amendment's `Lightleap AI Apprenticeship Tools
+-- $1,400,000` (2026-27, year 1 of $6,600,000) as a possible double count of the
+-- already-completed $1,404,928. SAM RULED IT IS NOT: the original contract was a
+-- SINGLE YEAR; the amendment extends it another year and adds other colleges.
+-- Different scope, not the same dollars. Recorded on the row itself so the
+-- question is not re-raised:
+--   update public.budget_funding set description = 'Extends the AI Apprenticeship
+--     CPL contract with Santiago Canyon — the original was a single year
+--     (completed at $1,404,928 from the $6M plus $59,692 of the $15M); this adds
+--     another year and brings in additional colleges. Different scope, not the
+--     same dollars.'
+--   where name = 'Lightleap AI Apprenticeship Tools';
+--
+-- STILL OPEN (Sam is handling): the two $5M rows in the funding history
+-- ("State Funds Ongoing — MAP CPL Grant" and "P98 CPL Operations") look like one
+-- appropriation seen twice — the CO's P98 line and the RCCD grant of it. Only
+-- one should count or the 2025-26 operating year doubles.
