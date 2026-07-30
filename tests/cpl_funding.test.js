@@ -2697,8 +2697,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   // "posted no CPL", a different and unfairer claim.
   const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  check("S5: the gated row reads 'withheld', not a bare $0",
-    /withheld/i.test(gatedRow.querySelector("td.tot").textContent));
+  const gatedSub = gatedRow.querySelector("td.tot .sub");
+  check("S5: the gated row reads 'held', not a bare $0",
+    !!gatedSub && /held/i.test(gatedSub.textContent) && !/^\s*\$0\s*$/.test(gatedSub.textContent));
   check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
     !!gatedRow.querySelector(".cf-gatechip"));
   check("S5: the gated cell's hover explains the dollars roll forward",
@@ -2908,17 +2909,23 @@ function shareSumAll(T) {
   const cells = row.querySelectorAll("td");
   // The Yr-1 cell under front-load carries the WHOLE window, so its withheld
   // must be the WHOLE withheld — not half of it.
+  // Sam, 2026-07-30: the cell reads "held $X" — "withheld · $X held" was redundant.
+  // NB: target the .sub span, not the cell text — textContent concatenates the
+  // stacked lines with no separator ("$150,000held $106,500"), so a \b anchor
+  // never matches.
+  const subText = function (td) { var el = td.querySelector(".sub"); return el ? el.textContent : ""; };
   const y1 = Array.from(cells).find(function (td) {
-    return /withheld/i.test(td.textContent) && !td.classList.contains("tot");
+    return /held/i.test(subText(td)) && !td.classList.contains("tot");
   });
-  check("V1: the front-loaded window cell reports the FULL withheld amount",
-    !!y1 && y1.textContent.replace(/[^0-9]/g, "").indexOf(
-      String(Math.round(gated.earned_withheld)).replace(/[^0-9]/g, "")) !== -1);
+  const heldDigits = String(Math.round(gated.earned_withheld));
+  check("V1: the front-loaded window cell reports the FULL held amount",
+    !!y1 && subText(y1).replace(/[^0-9]/g, "") === heldDigits);
   // And it must agree with the window Total cell, which carries the same window.
   const tot = row.querySelector("td.tot");
   check("V1: the front-loaded window cell agrees with the window Total cell",
-    tot.textContent.replace(/\s/g, "") .indexOf(y1.textContent.replace(/\s/g, "").replace("withheld·", "")) !== -1 ||
-    /withheld/i.test(tot.textContent));
+    subText(tot).replace(/[^0-9]/g, "") === heldDigits);
+  check("V1: the cell says 'held', not the redundant 'withheld · held'",
+    !/withheld/i.test(subText(y1)));
   T._setScenario({});
 }
 {
