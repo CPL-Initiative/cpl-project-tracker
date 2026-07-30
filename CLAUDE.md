@@ -1305,6 +1305,32 @@ Handoff: `docs/session_116_handoff.md`.
 - Check for date gaps in the JSON. If yesterday is missing, backfill with
   `"_interpolated": true`.
 
+### Stop hook demands an amend on a `noreply@github.com` commit (REMOTE sessions)
+
+**Do NOT amend. That commit is GitHub's own squash-merge, it is on `main`, and
+amending it rewrites `main` — Rule 5.** The nag is a false positive.
+
+**Why it recurs in Claude-Code-on-the-web sessions (diagnosed 2026-07-30, three
+times in one session before the cause was found):** the repo ships an improved
+hook at [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) that
+excludes `noreply@github.com` (squash-merges) and
+`github-actions[bot]@users.noreply.github.com` (the daily cron, #939). CLAUDE.md's
+install step is `cp scripts/stop-hook-git-check.sh ~/.claude/` — **and that works
+on Sam's local machine, but NOT in the remote sandbox.** The harness *re-provisions
+its own copy* of `~/.claude/stop-hook-git-check.sh` (together with
+`session-start-git-identity.sh`, `stop-hook-reply-gate.py`,
+`user-prompt-submit-reply-reminder.py` and `launcher-settings.json` — all get the
+same fresh mtime), silently reverting the repo version mid-session.
+
+So in a remote session:
+- Copying the repo hook clears the nag **until the next re-provision**, then it
+  returns. Don't keep re-copying and don't treat it as newly broken.
+- Check with `grep -c 'noreply@github.com' ~/.claude/stop-hook-git-check.sh` —
+  `0` means the harness copy is active (the repo copy has 5).
+- The correct response is always: **verify the flagged commit's committer is
+  `noreply@github.com` (or the cron bot) and that it is an ancestor of
+  `origin/main`, then ignore it.** `git log -1 --format='%h %ce %s' <sha>`.
+
 ### docx library errors
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:
