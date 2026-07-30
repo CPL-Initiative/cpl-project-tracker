@@ -235,6 +235,11 @@ Supabase (hvuwhnbuahrtptokpqfh.supabase.co)
     │      cutover, PR #189); inline-editable. Dashboard config (title/desc/KPI
     │      params) moved to committed kb/dashboard_config.json (Excel-retirement P2).
     │      The master .xlsx is no longer WRITTEN on any run; a few readers remain.
+    │      2026-07-30: budget_funding is now the whole CPL LEDGER (45 rows) —
+    │      section/parent_id/archived/description/window_label give it Sources,
+    │      Uses, the combined $18M project pool and the 2017-forward history,
+    │      rendered by budget_ledger.js with collapsible detail and inline
+    │      editing on every non-total field. TOTALS SUM PARENT ROWS ONLY.
     └── kb_curation, allowed_reviewers   (UCL curation overlay)
 
 Cloudflare Worker (cpl-proxy.slee-548.workers.dev)

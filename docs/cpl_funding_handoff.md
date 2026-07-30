@@ -89,11 +89,49 @@ Foundation Event Regional CPL Training $300,000 · Military Base Demonstration S
 Capitol Impact Apprenticeship Skills & Advanced CTE Data $380,000 · RP Research Studies $300,000 ·
 Noncredit CPL $270,000.
 
-### 🎯 QUEUED (Sam, 2026-07-29) — rework the Budget COBI tab on this plan, connected to Implementation Funding
-Rebuild the **Budget** tab around the amendment above and **connect it to the Implementation Funding
-tab** so the one-time/ongoing story is told once. Start by reconciling the table at the top of this
-section with Sam; the amendment xlsx is the authoritative source. Budget data lives in Supabase
-(`budget_funding`, editor `budget_editor.js`) — see the Excel→Supabase Phase 3 notes in CLAUDE.md §11.
+### ✅ DONE (2026-07-30) — the Budget tab is now the CPL ledger
+
+`budget_funding` became the whole ledger (**45 rows**: 4 sources · 7 uses · 16 pool · 18 history) and
+**`budget_ledger.js`** renders Sources · Uses · the $18M project pool · the pre-cutoff History, each
+with collapsible detail, a Summary⇄Detail preset, and **inline editing on every non-total field
+including descriptions**. Live-fetched (public SELECT, reviewer-gated writes) so a curator's edit
+re-renders instantly. `total` is **computed = Σ years and read-only** where a row has years, editable
+only where the source gives no split (`TOTAL_ALWAYS_EDITABLE` flips it). Sam: *"the tab looks great to
+me for now."* PRs #938 · #940 · #941 · #942. Tests `budget_ledger` 34 + `budget_ledger_structure` 21.
+
+### 🎯 RECOMMENDED NEXT STEPS — Budget enhancements (SkyReconcile, 2026-07-30)
+
+Ordered by value-per-effort. **1–3 are the ones I'd actually do next.**
+
+1. **Fold Implementation Funding in as a Budget sub-view** — the original ask, now unblocked. Both
+   tabs are JS-rendered, so it is a nav change plus a segmented control:
+   `[Sources & Uses | $35M model | $15M Distributions | Report]`. **Do the single-source wiring at the
+   same time:** the funding model should read its `one_time_2026_27` from the ledger's `$35M` row
+   rather than holding its own copy in `cpl_funding_data.js`. That permanently kills the drift class
+   that cost a day this week.
+2. **Add / delete / reorder rows.** The editor is edit-only today; a curator cannot add a project or
+   retire one without SQL. Needs an ＋Add under each section, a delete behind a `confirm()`, and
+   drag-or-arrow reordering writing `sort_order`. This is the biggest gap between "editable" and
+   "curatable".
+3. **An expenditure lane — budget vs actual.** `budget_expenditures` exists and is deliberately held
+   empty ("accurate figures pending"). The ledger's shape (section + parent/child) is exactly what a
+   spend-against-plan view needs: a second numeric column per row and a variance chip. Highest
+   reporting value of anything on this list, gated on Sam having actuals he trusts.
+4. **A Report sub-view for Budget**, mirroring the Implementation Funding memo generator — a
+   legislative "how we used the $15M and the $35M" narrative built from the live ledger, exporting
+   Word/PDF via the existing `docx.min.js` stack.
+5. **Show the drift check in the UI.** `Σ years == total` is a one-query invariant; surface a quiet ⚠
+   on any row that violates it rather than only catching it in review.
+6. **Per-area isolation before other CO divisions use Budget.** Today both team phrases unlock the
+   same tables (Rule 9 / the org-layer ADR). This is the real blocker on Sam's "other CO divisions
+   use Budget for their funding" ambition — not the model, the RLS.
+7. **The public dashboard** (Sam's stated goal once Implementation Funding is final): a **read-only
+   projection of one blessed scenario**, with the what-if sandbox structurally excluded and the
+   Potential-vs-Earned basis stated loudly. Design note in the 2026-07-30 session narrative.
+
+**Two open data questions, both Sam's:** the two `$5M` rows in the history (one appropriation seen
+twice — the CO's P98 line and the RCCD grant of it?), and whether the ongoing `$7M` should carry a
+2029-30 year (the amendment budgets only through 2028-29; the appropriation itself is ongoing).
 
 ## Latest state — 2026-07-29 (SkyHighness cont.), READ THIS FIRST
 
