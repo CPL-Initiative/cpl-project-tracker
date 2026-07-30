@@ -8,7 +8,7 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43082,
+  "pe": 43084,
   "p2": 4793,
   "p3": 16829,
   "pp": 5
@@ -39,7 +39,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Bakersfield": {
-   "pe": 577,
+   "pe": 578,
    "p2": 49,
    "p3": 50,
    "pp": 0
@@ -425,7 +425,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Oxnard": {
-   "pe": 152,
+   "pe": 153,
    "p2": 0,
    "p3": 0,
    "pp": 0

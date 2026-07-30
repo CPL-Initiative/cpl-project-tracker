@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-30T14:37:52.764421+00:00",
+  "scraped_at": "2026-07-30T16:51:30.207067+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26362,
+    "jst": 26363,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -257,7 +257,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 153,
+      "jst": 154,
       "star": true
     },
     "Golden West College": {
