@@ -84,8 +84,16 @@ if [[ -n "$current_branch" ]]; then
   # noreply@anthropic.com. EXCLUDE commits committed by noreply@github.com —
   # those are GitHub's own merge/squash commits (Verified by GitHub, and never
   # a Claude local commit), which the session-branch-reuse flow leaves at HEAD.
+  # ALSO EXCLUDE github-actions[bot]@users.noreply.github.com — the daily
+  # dashboard cron pushes to main 3x/day (06:17/09:17/12:17 UTC), so any session
+  # that merges or rebases main picks up a cron commit it did not author and can
+  # never amend (it is on main — Rule 5). Without this the hook demands an
+  # `--amend --reset-author` on the CRON's commit, which would rewrite main.
+  # (The HEAD-is-ancestor-of-main early-exit above already covers the common
+  # reset-to-main case; this covers the case where the session has local commits
+  # sitting ON TOP of a cron commit, where that early-exit does not fire.)
   if [[ "$(git config --type=bool commit.gpgsign 2>/dev/null)" == "true" ]]; then
-    unverifiable=$(git log --format='%h %G? %ce' "$upstream..HEAD" 2>/dev/null | awk '$3 != "noreply@github.com" && ($2 == "N" || $3 != "noreply@anthropic.com")')
+    unverifiable=$(git log --format='%h %G? %ce' "$upstream..HEAD" 2>/dev/null | awk '$3 != "noreply@github.com" && $3 != "github-actions[bot]@users.noreply.github.com" && ($2 == "N" || $3 != "noreply@anthropic.com")')
     if [[ -n "$unverifiable" ]]; then
       echo "There are commit(s) on branch '$current_branch' that GitHub will show as Unverified (missing signature, or committer email is not noreply@anthropic.com):" >&2
       echo "$unverifiable" >&2
