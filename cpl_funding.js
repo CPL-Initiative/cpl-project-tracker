@@ -100,6 +100,8 @@
     ".cplfund-card.earned { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.unearned { border-left: 4px solid var(--mustard-fill); }",
     ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
+    ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
+    ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
     ".cf-gatechip { filter: grayscale(.25); }",
     ".cf-adv { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 3px; font-size: .62rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-muted); border: 1px solid var(--border); white-space: nowrap; }",
@@ -1273,31 +1275,35 @@
         Math.round(row.earned_withheld || 0)];
     }
     var lines = [];
-    if (state.view === "district") {
-      lines.push(["District", "Colleges", "Counties", "Headcount"].concat(yHead, ["Total " + windowLabel()], earnHead));
-      rowsFiltered().forEach(function (g) {
-        lines.push([g.district, g.n, (g.counties || []).join("; "), g.headcount].concat(
-          yearKeys().map(function (yk) { return Math.round(g[yk]); }), [Math.round(g.total)], earnCells(g)));
-      });
-      var sysd = systemAlloc();
-      lines.push(["SYSTEM (statewide)", base().colleges.length, "", sysd.headcount + feederHeads()].concat(
-        yearKeys().map(function (yk) { return Math.round(sysd[yk]); }), [Math.round(sysd.total)], earnCells(sysd)));
-    } else {
-      lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
-        ["Eligibility (proposed)", "Rural", "Floor applied"], yHead,
-        ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
-      rowsFiltered().forEach(function (c) {
-        lines.push([c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
-          [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""],
-          yearKeys().map(function (yk) { return Math.round(c[yk]); }),
-          [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]));
-      });
-      var sysc = systemAlloc();
-      lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads()].concat(prioCsvCells(null, true),
-        ["", "", ""],
-        yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
-        [Math.round(sysc.total)], earnCells(sysc), [""]));
+    lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
+      ["Eligibility (proposed)", "Rural", "Floor applied"], yHead,
+      ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
+    function collegeLine(c) {
+      return [c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
+        [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""],
+        yearKeys().map(function (yk) { return Math.round(c[yk]); }),
+        [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]);
     }
+    if (grouped()) {
+      // Grouping is a display concern, so the CSV keeps the college shape and
+      // interleaves a DISTRICT SUBTOTAL line — the one thing the retired
+      // Districts view's export gave that a flat college list doesn't.
+      groupRowsByDistrict(rowsFiltered()).forEach(function (g) {
+        lines.push(["", "DISTRICT SUBTOTAL — " + g.district, g.district, "", g.headcount].concat(
+          prioCsvCells(null, true).map(function () { return ""; }),
+          ["", "", ""],
+          yearKeys().map(function (yk) { return Math.round(g[yk]); }),
+          [Math.round(g.total)], earnCells(g), [""]));
+        g.rows.forEach(function (c) { lines.push(collegeLine(c)); });
+      });
+    } else {
+      rowsFiltered().forEach(function (c) { lines.push(collegeLine(c)); });
+    }
+    var sysc = systemAlloc();
+    lines.push(["", "SYSTEM (statewide)", "", "", sysc.headcount + feederHeads()].concat(prioCsvCells(null, true),
+      ["", "", ""],
+      yearKeys().map(function (yk) { return Math.round(sysc[yk]); }),
+      [Math.round(sysc.total)], earnCells(sysc), [""]));
     var meta = ["CPL Implementation Funding (DRAFT model " + base().model_version + ") — " + windowLabel() +
       (fl ? " · front-loaded disbursement" : "") +
       " · allocation caps with earned-to-date beside them (earned = cap × actual ÷ target, capped at 100%)" +
@@ -1305,7 +1311,7 @@
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
   }
   function downloadCsv() {
-    var name = "CPL_Implementation_Funding_" + (state.view === "district" ? "districts" : "colleges") + ".csv";
+    var name = "CPL_Implementation_Funding_" + (grouped() ? "by_district" : "colleges") + ".csv";
     var blob = new Blob(["﻿" + csvText()], { type: "text/csv;charset=utf-8" });
     var a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
@@ -2226,22 +2232,12 @@
       { key: "working_adults", label: "Working adults*", cls: "" }
     ]);
   }
-  function COLS_DISTRICT() {
-    return [
-      { key: "district", label: "District", cls: "t" },
-      { key: "n", label: "Colleges", cls: "" },
-      { key: "counties", label: "Counties", cls: "t" },
-      { key: "headcount", label: "Headcount", cls: "" }
-    ].concat(yearColDefs(), [
-      totalColDef()
-    ]);
-  }
   function districtShort(name) {
     return String(name || "").replace(/\s+Community College District$/i, " CCD");
   }
 
   var state = {
-    q: "", view: "college", viewSlot: "1",
+    q: "", view: "college", group: "none", viewSlot: "1",
     sortKey: "order", sortDir: 1, open: {}, addingProject: false,
     subview: "model",   // "model" | "report"
     docType: "memo",    // memo | letter | report | brief
@@ -2299,9 +2295,9 @@
     return { college: { working_adults: true } };   // default: county context hidden
   })();
   function saveColPrefs() { try { localStorage.setItem(COLS_STORE, JSON.stringify(COL_PREFS)); } catch (e) {} }
-  function hiddenCols() { return COL_PREFS[state.view] || (COL_PREFS[state.view] = {}); }
+  function hiddenCols() { return COL_PREFS.college || (COL_PREFS.college = {}); }
   function isColHidden(key) { return !!hiddenCols()[key]; }
-  function idColKey() { return state.view === "district" ? "district" : "college"; }
+  function idColKey() { return "college"; }
   function colHideStyleHtml() {
     var hid = hiddenCols(), id = idColKey(), rules = [];
     activeCols().forEach(function (col, i) {
@@ -2498,51 +2494,15 @@
     return out;
   }
 
-  var _districtsCache = null;
-  function districts() {
-    if (_districtsCache) return _districtsCache;
-    var by = {};
-    var yks = yearKeys();
-    var eyks = selectedYears().map(function (_, i) { return "ey" + (i + 1); });
-    base().colleges.forEach(function (c) {
-      var a = collegeAlloc(c);
-      var k = c.district || "(no district)";
-      var g = by[k];
-      if (!g) {
-        g = by[k] = { district: k, n: 0, counties: [], headcount: 0, total: 0, earned_total: 0,
-          earned_measured: 0, earned_advance: 0, earned_guaranteed: 0, earned_withheld: 0, members: [] };
-        yks.forEach(function (yk) { g[yk] = 0; });
-        eyks.forEach(function (yk) { g[yk] = 0; });
-      }
-      g.n += 1;
-      g.headcount += c.headcount || 0;
-      yks.forEach(function (yk) { g[yk] += a[yk]; });
-      eyks.forEach(function (yk) { g[yk] += a[yk] || 0; });
-      g.total += a.total;
-      g.earned_total += a.earned_total;
-      g.earned_measured += a.earned_measured || 0;
-      g.earned_advance += a.earned_advance || 0;
-      g.earned_guaranteed += a.earned_guaranteed || 0;
-      g.earned_withheld += a.earned_withheld || 0;
-      if (c.county && g.counties.indexOf(c.county) === -1) g.counties.push(c.county);
-      g.members.push({ college: c.college, headcount: c.headcount, total: a.total, earned_total: a.earned_total });
-    });
-    _districtsCache = Object.keys(by).map(function (k) {
-      var g = by[k];
-      g.counties = g.counties.sort().join(", ");
-      g.members.sort(function (a, b) { return b.total - a.total; });
-      return g;
-    });
-    return _districtsCache;
-  }
 
-  function activeCols() { return state.view === "district" ? COLS_DISTRICT() : COLS_COLLEGE(); }
+  function grouped() { return state.group === "district"; }
+  function activeCols() { return COLS_COLLEGE(); }
 
   function rowsFiltered() {
     var q = state.q.trim().toLowerCase();
     var rows;
-    if (state.view === "district") rows = districts();
-    else rows = base().colleges.map(function (c) {
+    {
+      rows = base().colleges.map(function (c) {
       var a = collegeAlloc(c);
       var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
@@ -2552,12 +2512,11 @@
       };
       Object.keys(a).forEach(function (k) { r[k] = a[k]; });
       return r;
-    });
+      });
+    }
     if (q) {
       rows = rows.filter(function (r) {
-        var hay = state.view === "district"
-          ? [r.district, r.counties].join(" ")
-          : [r.college, dispName(r.college), r.district, r.county].join(" ");
+        var hay = [r.college, dispName(r.college), r.district, r.county].join(" ");
         return hay.toLowerCase().indexOf(q) !== -1;
       });
     }
@@ -2824,28 +2783,50 @@
     return hit;
   }
 
-  function districtRowHtml(g) {
-    var id = "d:" + g.district;
-    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") + '" data-id="' + esc(id) + '">' +
-      '<td class="t trunc" title="' + esc(g.district) + '"><button type="button" class="cplfund-caret" aria-expanded="' +
-      (state.open[id] ? "true" : "false") + '" aria-label="' + esc(g.district + " — toggle member colleges") +
-      '">▸</button><strong>' + esc(districtShort(g.district)) + "</strong></td>" +
-      "<td>" + g.n + "</td>" +
-      '<td class="t trunc" title="' + esc(g.counties) + '">' + esc(g.counties) + "</td>" +
-      "<td>" + fmtInt(g.headcount) + "</td>" +
+  // A district GROUP HEADER inside the one college table (Sam, 2026-07-30).
+  // It spans the identity columns and carries the district's subtotal in the
+  // same money columns as its member colleges, so the subtotal lines up under
+  // the figure it totals. Not a .cplfund-row — it isn't expandable (its members
+  // are already visible right below it, which is the entire point).
+  function districtGroupHeaderHtml(g, colCount) {
+    var lead = 4;   // #, College, District, Headcount
+    var prioN = priorities(state.viewSlot).length;
+    return '<tr class="cplfund-grouphdr">' +
+      '<td class="t" colspan="' + lead + '"><strong>' + esc(districtShort(g.district)) + "</strong>" +
+      ' <span class="dk">&middot; ' + g.n + (g.n === 1 ? " college" : " colleges") +
+      " &middot; " + fmtInt(g.headcount) + " students</span></td>" +
+      '<td colspan="' + (prioN + 1) + '" class="dk">district subtotal</td>' +
       yearCellsHtml(g) +
       totalCellHtml(g) +
-      "</tr>" + (state.open[id] ? districtDetailHtml(g) : "");
+      "<td></td></tr>";
   }
-  function districtDetailHtml(g) {
-    var rows = g.members.map(function (c) {
-      var pct = c.total > 0 ? (c.earned_total || 0) / c.total : 0;
-      return '<div><span class="dk">' + esc(dispName(c.college)) + ":</span> " + fmtInt(c.headcount) +
-        " students &middot; <strong>" + fmtMoney(c.total) + "</strong> cap over " + esc(windowLabel()) +
-        ' <span class="dk">&middot; ' + fmtMoney(c.earned_total || 0) + " earned (" + fmtPctTrim(pct) + ")</span></div>";
-    }).join("");
-    return '<tr class="cplfund-detail"><td colspan="' + COLS_DISTRICT().length + '">' +
-      '<div class="cplfund-detail-grid">' + rows + "</div></td></tr>";
+  // Group the FILTERED college rows by district. Groups are ordered by their
+  // subtotal (largest first) and colleges keep the table's active sort WITHIN
+  // each group — sorting inside groups, groups by size (Sam's explicit call).
+  function groupRowsByDistrict(rows) {
+    var by = {}, order = [];
+    rows.forEach(function (r) {
+      var k = r.district || "(no district)";
+      if (!by[k]) { by[k] = { district: k, n: 0, headcount: 0, total: 0, earned_total: 0,
+        earned_measured: 0, earned_advance: 0, earned_guaranteed: 0, earned_withheld: 0, rows: [] };
+        yearKeys().forEach(function (yk) { by[k][yk] = 0; });
+        selectedYears().forEach(function (_, i) { by[k]["ey" + (i + 1)] = 0; });
+        order.push(k); }
+      var g = by[k];
+      g.n += 1;
+      g.headcount += r.headcount || 0;
+      g.total += r.total || 0;
+      g.earned_total += r.earned_total || 0;
+      g.earned_measured += r.earned_measured || 0;
+      g.earned_advance += r.earned_advance || 0;
+      g.earned_guaranteed += r.earned_guaranteed || 0;
+      g.earned_withheld += r.earned_withheld || 0;
+      yearKeys().forEach(function (yk) { g[yk] += r[yk] || 0; });
+      selectedYears().forEach(function (_, i) { g["ey" + (i + 1)] += r["ey" + (i + 1)] || 0; });
+      g.rows.push(r);
+    });
+    return order.map(function (k) { return by[k]; })
+      .sort(function (a, b) { return b.total - a.total; });
   }
 
   function tableHtml() {
@@ -2866,10 +2847,12 @@
     }).join("");
     var body;
     if (!rows.length) {
-      body = '<tr><td colspan="' + cols.length + '" class="t">No ' +
-        (state.view === "district" ? "districts" : "colleges") + " match the search.</td></tr>";
-    } else if (state.view === "district") {
-      body = rows.map(function (g) { return districtRowHtml(g); }).join("");
+      body = '<tr><td colspan="' + cols.length + '" class="t">No colleges match the search.</td></tr>';
+    } else if (grouped()) {
+      body = groupRowsByDistrict(rows).map(function (g) {
+        return districtGroupHeaderHtml(g, cols.length) +
+          g.rows.map(function (c) { return collegeRowHtml(c); }).join("");
+      }).join("");
     } else {
       body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
     }
@@ -2884,15 +2867,7 @@
       fmtInt(sys.headcount) +
       '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sys.headcount + fh) + " CCC total</span></td>";
     var foot;
-    if (state.view === "district") {
-      foot = '<tr class="cplfund-systemrow">' +
-        '<td class="t">SYSTEM (statewide)</td>' +
-        "<td>" + districts().reduce(function (s, g) { return s + g.n; }, 0) + "</td>" +
-        '<td class="t"></td>' +
-        sysHeadCell +
-        sysYearCells +
-        totalCellHtml(sys) + "</tr>";
-    } else {
+    {
       foot = '<tr class="cplfund-systemrow">' +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
@@ -2906,8 +2881,8 @@
     // SYSTEM (statewide) total pinned as the FIRST body row (Sam, 2026-07-23:
     // "Move the Total row from the bottom … to the top"). It sits above the
     // sorted rows and is not itself a sortable/clickable .cplfund-row.
-    var caption = "Potential CPL implementation funding allocation by " +
-      (state.view === "district" ? "district" : "college") +
+    var caption = "Potential CPL implementation funding allocation by college" +
+      (grouped() ? ", grouped under district subtotal rows" : "") +
       ". Column headers are sortable — focus a header and press Enter or Space to sort. " +
       "Rows expand for per-priority detail.";
     return colHideStyleHtml() + '<div class="cplfund-tablewrap" role="region" aria-label="' + esc(caption) +
@@ -3327,7 +3302,7 @@
   // Segmented single-choice control. role=group + a label for screen readers,
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
-    cplFundView: "View by", cplFundYear: "Funding year",
+    cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
     cplFundDisb: "Disbursement timing", cplFundDocType: "Document type"
   };
   function segHtml(id, items, current) {
@@ -3799,7 +3774,6 @@
     if (!mount) return;
     ensureCss();
     ensureDraftChip();
-    _districtsCache = null;
     _allocCache = null;
     _earnCache = null;
     var d = base();
@@ -3829,7 +3803,8 @@
     // its IDs (#cplFundSearch/#cplFundCount/#cplFundTable) live inside the fold.
     var collegeBody =
       '<div class="cplfund-toolbar">' +
-      segHtml("cplFundView", [{ val: "college", label: "Colleges" }, { val: "district", label: "Districts" }], state.view) +
+      segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
+        { val: "district", label: "Group by district" }], state.group) +
       '<input type="search" id="cplFundSearch" placeholder="Search college / district / county&hellip;" aria-label="Search colleges">' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
@@ -3875,13 +3850,12 @@
     var el = document.getElementById("cplFundCount");
     if (!el) return;
     var n = rowsFiltered().length;
-    var unit = state.view === "district" ? "districts" : "colleges";
-    var denom = state.view === "district" ? districts().length : base().colleges.length;
-    var avg = state.view === "college"
-      ? base().colleges.reduce(function (s, c) { return s + collegeAlloc(c).total; }, 0) / base().colleges.length
-      : null;
-    el.textContent = n + " of " + denom + " " + unit +
-      (avg != null ? " · average allocation " + fmtMoney(avg) + " over " + windowLabel() : "") +
+    var denom = base().colleges.length;
+    var avg = base().colleges.reduce(function (s, c) { return s + collegeAlloc(c).total; }, 0) / denom;
+    var groupN = grouped() ? groupRowsByDistrict(rowsFiltered()).length : 0;
+    el.textContent = n + " of " + denom + " colleges" +
+      (grouped() ? " in " + groupN + (groupN === 1 ? " district" : " districts") : "") +
+      " · average allocation " + fmtMoney(avg) + " over " + windowLabel() +
       " · plus " + feeders().length + " noncredit campuses (" + fmtInt(feederHeads()) +
       " students) funded via the " + fmtMoney(feederCarveout()) + " carve-out";
   }
@@ -4086,12 +4060,14 @@
         b.addEventListener("click", function () { apply(b.getAttribute("data-val")); });
       });
     }
-    wireSeg("cplFundView", function (v) {
-      if (v === state.view) return;
-      state.view = v;
-      state.open = {};
-      var valid = activeCols().some(function (c) { return c.key === state.sortKey; });
-      if (!valid) { state.sortKey = v === "district" ? "district" : "order"; state.sortDir = 1; }
+    // Grouping replaced the Colleges|Districts VIEW toggle (Sam, 2026-07-30):
+    // the old toggle REPLACED the college rows, so the per-college numbers the
+    // curator actually wanted to compare disappeared behind a drill-in. Now
+    // there is one table and one mental model; grouping only adds district
+    // header rows carrying the subtotal.
+    wireSeg("cplFundGroup", function (v) {
+      if (v === state.group) return;
+      state.group = v;
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
