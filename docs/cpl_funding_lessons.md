@@ -1393,3 +1393,48 @@ Sam is presenting the model to a CBO at the CO budget workshop. Two reframes lan
 - **Sandbox-slow ≠ hang:** the local suite crossed ~120s and read as a hang; it was the throttled
   sandbox (the *baseline* timed out too). Confirm with a progress trace + a generous timeout before
   chasing a phantom infinite loop.
+
+### 2026-07-29 cont. — the $15M Distributions sub-view + ESS 25-82 outcome tracking (#934)
+
+The CBO question ("what are the factors in the allocation formula?") cascaded into a reporting
+question Sam raised himself: *the Legislature will ask how we used the $15M **and** the $35M.* So the
+tab now carries both appropriations, in separate sub-views —
+`[$35M Funding model | $15M Distributions | 📄 Report]`.
+
+**What the $15M view is.** The ESS 25-82 receipt: **$50,000 × 118 institutions = $5,900,000**
+(114 colleges + the **4 noncredit campuses** — ESS 25-82 funded noncredit institutions too, a detail
+easy to miss), with **Sequoias** shown as *declined — pending further review* rather than as a
+recipient. The **remaining $9,040,307** sits alongside it, which is where the $9M dropped from the
+$35M model now honestly lives.
+
+**Reading the source beat inferring it.** Sam sent the actual ESS 25-82 PDF. Two things only the memo
+gave up: (a) the $50k was tied to a **CIO certification by Jan 15, 2026** — a *commitment* to advance
+the outcomes, with achievement then "tracked through MAP plus MIS," so the columns are honestly
+**progress**, not compliance; (b) outcome 1's bar is "**at least the number** of enrolled veterans
+reported to MIS" — i.e. 100%, not the 75% Veteran Star we compute daily. That gap gets stated inline
+rather than papered over. **Lesson: when a deliverable turns on a policy document, read the document —
+the KB summary had the outcomes but not the certification mechanism or the exact threshold.**
+
+**All three outcomes turned out measurable** (I expected at least one true data gap):
+- **1 · JSTs** → `vet_star` (already in the daily perf artifact): **51 of 110** colleges at ≥75%.
+- **2 · Statewide recs** → the one real lift. The signal lives in the CER: a college has adopted when
+  it carries ≥1 local articulation on a `statewide`-flagged credential. The CER is **2.9 MB** — far too
+  heavy to load in the funding tab for one boolean per college — so a new producer
+  (`funding/_build_funding_ess.py`) rolls it into a **2.3 KB** sidecar (`cpl_funding_ess.js`):
+  **84 statewide credentials → 71 adopting colleges**. **Lesson: the rollup-to-a-sidecar pattern
+  (`cpl_coci_course_keys.js`, `vet_star`) is the standing answer to "I need one field from a huge
+  artifact."** Getting the join right mattered: the first run left **14 unmatched** real colleges
+  (East Los Angeles, City College of San Francisco…) because `college_short_names.json` nests its
+  records under `colleges`, not `records` — fixed → **0 unmatched**.
+- **3 · Proactive CPL** → `pe` / `p3` (already wired): 98 / 95 colleges.
+
+**Two honesty mechanics worth keeping.** (a) **Fail-open marks**: no feed → ⏳ *pending*, never a
+false "not met" — and the legend says outright that *a dash is not a finding that a college failed to
+use its funds*. A compliance-looking table published against a partial feed would defame colleges by
+omission. (b) **State the residual**: $5.9M + $9,040,307 = **$14,940,307** of the $15M, so the view
+names the **$59,693** gap and flags confirming it before external reporting, rather than rounding the
+two figures into "$15M."
+
+Tests 490 → **515** (Part Q, incl. the no-feed fail-open asserting zero false ✓). PII guard extended
+to the new artifact. Chromium desktop + mobile clean. Live: **51 · 70 · 94**, with **38 meeting all
+three** outcomes.

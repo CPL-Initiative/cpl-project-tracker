@@ -569,6 +569,27 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyHighness cont. — Implementation Funding: the $35M reframe + the $15M Distributions view (2026-07-29, #931/#934 MERGED)
+
+A CBO question at the CO budget workshop ("what are the factors in the allocation formula?") cascaded
+into two reframes, both live. **#931 — the tab models the 2026-27 $35M apportionment only** (the
+2025-26 remaining ~$9M is a separate topic): `$35M = $26,240,307 three-priority college pool (incl.
+$1M rural) + $1M NC feeder + $1.2M CO Administration + $6,559,693 CPL Projects & Innovation` — ties
+out to the penny. Hero **$26,240,307**, award range **avg $228,177 / min $150,000 / max $694,273**.
+⚠ Sam's precise anchor is **$26,240,307**; his "~$8M for Projects & Innovation" = **admin + P&I**
+($7.76M), so P&I alone is the $6.56M residual. **#934 — a third sub-view** (`[$35M Funding model |
+$15M Distributions | Report]`): the **ESS 25-82** receipt ($50,000 × **118** = **$5,900,000**; 114
+colleges + the **4 noncredit campuses**; **Sequoias declined**), the **$9,040,307** remaining balance
+alongside (where the dropped $9M honestly lives), an honest reconciliation naming the **$59,693**
+residual, and **per-recipient progress on the three ESS priority outcomes** — JSTs (`vet_star` ≥75%,
+memo bar is 100% → caveat inline) · statewide recs (**new** `funding/_build_funding_ess.py` →
+`cpl_funding_ess.js`, a 2.3KB sidecar off the 2.9MB CER; 84 credentials → **71 adopters**, 0
+unmatched; workflow step 4a3) · proactive CPL (`pe`/`p3`). **Fail-open** marks (no feed → ⏳, never a
+false "not met"); the legend says a dash is NOT a compliance finding. Live: **51 · 70 · 94**, **38
+meeting all three**. Tests 490→**515**; PII guard extended; Chromium desktop+mobile clean. Method:
+*read the policy PDF, don't infer it* — the memo alone gave up the CIO-certification mechanism and the
+exact 100% JST bar. Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
+
 ### SkyHighness side-lane — Implementation Funding PR4: combine the floor with the rural bump + display rename (2026-07-28/29, #925 MERGED + rename PR)
 
 Shipped SkyHigh's queued PR4 (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Sam's
