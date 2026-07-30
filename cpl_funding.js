@@ -321,6 +321,15 @@
     ".cplfund-sec-chev { color: var(--text-muted); transition: transform .15s; font-size: .8em; flex: 0 0 auto; }",
     ".cplfund-sec:not([open]) > summary .cplfund-sec-chev { transform: rotate(-90deg); }",
     ".cplfund-sec-body { padding: 2px 16px 14px; }",
+    // ESS 25-82 outcome marks in the $15M Distributions view: met / partial
+    // (privacy-suppressed) / not-yet / pending-feed.
+    ".cf-ess { font-weight: 700; font-size: .95rem; }",
+    ".cf-ess.ok { color: var(--green-progress); }",
+    ".cf-ess.part { color: var(--gold-accent); }",
+    ".cf-ess.no { color: var(--text-muted); font-weight: 400; }",
+    ".cf-ess.pend { color: var(--text-faint); font-weight: 400; }",
+    ".cplfund-table th.c, .cplfund-table td.c { text-align: center; }",
+    ".cplfund-declined td { background: var(--surface-subtle); }",
     // Noncredit feeder measurables ladder (F1 / F2).
     ".cplfund-fmeas { margin-top: 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface-subtle); font-size: .8rem; }",
     ".cplfund-fmeas-h { font-weight: 600; margin-bottom: 4px; }",
@@ -3351,8 +3360,189 @@
   }
   function subviewTabsHtml() {
     return '<div class="cplfund-subtabs">' +
-      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">Funding model</button>" +
+      '<button type="button" data-subview="model"' + (state.subview === "model" ? ' class="on"' : "") + ">$35M Funding model</button>" +
+      '<button type="button" data-subview="grants"' + (state.subview === "grants" ? ' class="on"' : "") +
+      ' title="The 2025-26 $15M appropriation: the $50,000 ESS 25-82 implementation grants + progress on the three priority outcomes">$15M Distributions</button>' +
       '<button type="button" data-subview="report"' + (state.subview === "report" ? ' class="on"' : "") + ">📄 Report</button></div>";
+  }
+
+  // ── $15M Distributions sub-view (ESS 25-82 $50,000 grants) ─────────────────
+  // The 2025-26 $15M AB 123 appropriation is a SEPARATE topic from the $35M model
+  // (Sam, 2026-07-29) and the Legislature will ask how both were used. ESS 25-82
+  // (Dec 9, 2025) distributed $50,000 to every college + noncredit campus whose CIO
+  // certified by Jan 15, 2026, tied to three systemwide priority outcomes. This view
+  // is the receipt: who received, and each recipient's progress on the three
+  // outcomes, measured from live MAP/CER data with the caveats stated inline.
+  var GRANT_AMOUNT = 50000;
+  var GRANT_DECLINED = ["Sequoias"];    // one college declined, pending further review
+  function essData() { return window.CPL_FUNDING_ESS || null; }
+  function grantDeclined(name) { return GRANT_DECLINED.indexOf(name) !== -1; }
+  // Recipients = every college on the roster except those that declined, PLUS the
+  // 4 noncredit feeder campuses (ESS 25-82 funded noncredit institutions too).
+  function grantRecipients() {
+    var out = [];
+    base().colleges.forEach(function (c) {
+      if (grantDeclined(c.college)) return;
+      out.push({ name: c.college, display: dispName(c.college), kind: "credit" });
+    });
+    feeders().forEach(function (f) {
+      out.push({ name: f.short, display: f.name || f.short, kind: "noncredit" });
+    });
+    return out;
+  }
+  // Outcome 1 — JSTs uploaded for enrolled veterans. Signal: the Veteran Star flag
+  // (>= 75% of MIS-reported enrolled veterans have a JST in MAP). ESS asks for "at
+  // least the number" (100%); the Star is the 75% bar we compute daily, so it is
+  // labeled as such rather than presented as the exact ESS threshold.
+  function essOutcome1(name) {
+    var pf = perf();
+    var vs = pf && pf.vet_star;
+    if (!vs) return { state: "pending", why: "veteran/JST feed not loaded yet" };
+    if (vs[name] === true) {
+      return { state: "met", why: "Veteran Star met — ≥" + fmtPctTrim(pf.vet_star_threshold || 0.75) +
+        " of MIS-reported enrolled veterans have a JST uploaded in MAP" };
+    }
+    if (vs[name] === false) {
+      return { state: "not", why: "below the Veteran Star bar (≥" + fmtPctTrim(pf.vet_star_threshold || 0.75) +
+        " of enrolled veterans with a JST in MAP)" };
+    }
+    return { state: "na", why: "no MIS-reported enrolled veterans to measure against (or not in the veteran feed)" };
+  }
+  // Outcome 2 — adopt/adapt statewide credit recommendations (ASCCC Pathways to
+  // Credit). Signal: >= 1 local articulation on a statewide-flagged CER credential.
+  function essOutcome2(name) {
+    var e = essData();
+    if (!e || !e.statewide_adopters) return { state: "pending", why: "statewide-recommendation rollup not loaded yet" };
+    if (e.statewide_adopters[name]) {
+      return { state: "met", why: "articulates at least one of the " + (e.n_statewide_credentials || 0) +
+        " statewide credit recommendations in MAP" };
+    }
+    return { state: "not", why: "no local articulation yet against a statewide credit recommendation" };
+  }
+  // Outcome 3 — proactively offering CPL: identify/screen eligible students AND
+  // document CPL offered + transcribed in MAP. Signal: eligible identified (pe)
+  // and/or transcribed (p3/p2) in the daily MAP feed.
+  function essOutcome3(name) {
+    var pf = perf();
+    if (!pf || !pf.statewide) return { state: "pending", why: "MAP student feed not loaded yet" };
+    var rec = perfFor(name);
+    if (!rec) return { state: "not", why: "no CPL activity recorded in MAP yet" };
+    var pe = rec.pe, tr = rec.p3 != null ? rec.p3 : rec.p2;
+    var supp = rec.pe_suppressed || rec.p3_suppressed || rec.p2_suppressed;
+    if (pe > 0 || tr > 0) {
+      var bits = [];
+      if (pe > 0) bits.push(fmtInt(pe) + " students identified as CPL-eligible");
+      if (tr > 0) bits.push(fmtInt(tr) + " with transcribed CPL");
+      return { state: "met", why: bits.join(" · ") + " in MAP" };
+    }
+    if (supp) return { state: "partial", why: "activity present but fewer than 5 students (privacy-suppressed)" };
+    return { state: "not", why: "no CPL eligibility or transcription recorded in MAP yet" };
+  }
+  function essGlyph(o) {
+    var g = o.state === "met" ? "✓" : o.state === "partial" ? "◐" : o.state === "not" ? "—"
+      : o.state === "na" ? "n/a" : "⏳";
+    var cls = o.state === "met" ? "ok" : o.state === "partial" ? "part" : o.state === "pending" ? "pend" : "no";
+    return '<span class="cf-ess ' + cls + '" title="' + esc(o.why) + '">' + g + "</span>";
+  }
+  function grantsViewHtml() {
+    var recips = grantRecipients();
+    var nCredit = recips.filter(function (r) { return r.kind === "credit"; }).length;
+    var nNc = recips.length - nCredit;
+    var distributed = recips.length * GRANT_AMOUNT;
+    var remaining = Number(poolField("remaining_2025_26")) || 0;
+    var e = essData();
+    var counts = { 1: 0, 2: 0, 3: 0, all: 0 };
+    var rows = recips.map(function (r) {
+      var o1 = essOutcome1(r.name), o2 = essOutcome2(r.name), o3 = essOutcome3(r.name);
+      if (o1.state === "met") counts[1]++;
+      if (o2.state === "met") counts[2]++;
+      if (o3.state === "met") counts[3]++;
+      if (o1.state === "met" && o2.state === "met" && o3.state === "met") counts.all++;
+      return "<tr>" +
+        '<td class="t"><strong>' + esc(r.display) + "</strong>" +
+        (r.kind === "noncredit" ? ' <span class="cplfund-chip" title="Noncredit institution — ESS 25-82 funded noncredit campuses as well as credit colleges">NC</span>' : "") +
+        "</td>" +
+        "<td>" + fmtMoney(GRANT_AMOUNT) + "</td>" +
+        '<td class="c">' + essGlyph(o1) + "</td>" +
+        '<td class="c">' + essGlyph(o2) + "</td>" +
+        '<td class="c">' + essGlyph(o3) + "</td></tr>";
+    }).join("");
+    var declinedRows = GRANT_DECLINED.map(function (n) {
+      var c = baseCollege(n);
+      return '<tr class="cplfund-declined"><td class="t">' + esc(c ? dispName(c.college) : n) +
+        '</td><td><span class="dk">declined</span></td>' +
+        '<td class="c" colspan="3"><span class="dk">Declined the allocation, pending further review</span></td></tr>';
+    }).join("");
+    var APPROPRIATION = 15000000;                       // the 2025-26 AB 123 one-time
+    var otherUses = APPROPRIATION - distributed - remaining;   // whatever the two don't account for
+    var cards = [
+      { v: fmtMoney(distributed), l: "Distributed as $50,000 implementation grants &mdash; " + recips.length +
+          " institutions (" + nCredit + " colleges + " + nNc + " noncredit campuses)" },
+      { v: fmtMoney(remaining), l: "Remaining 2025-26 one-time balance &mdash; not part of the $35M model on the Funding model tab" },
+      { v: String(recips.length), l: "Recipients &mdash; every college and noncredit campus whose CIO certified by Jan 15, 2026 (" +
+          GRANT_DECLINED.length + " declined)" }
+    ];
+    return '<h3>$15M (2025-26) &mdash; ESS 25-82 $50,000 implementation grants ' +
+      '<span class="dk" style="font-size:.8rem;font-weight:400;">(AB 123 one-time)</span></h3>' +
+      '<div class="cplfund-formula" style="margin-bottom:10px;">' +
+      "<strong>ESS 25-82</strong> (Dec 9, 2025) directed <strong>" + fmtMoney(GRANT_AMOUNT) + "</strong> to each California " +
+      "Community College and each noncredit institution to support local CPL implementation under AB 123. To receive the funds, " +
+      "the Chief Instructional Officer had to certify by <strong>Jan 15, 2026</strong> a commitment to advancing the three " +
+      "systemwide priority outcomes below; funds were distributed in <strong>Spring 2026</strong> and must be fully expended by " +
+      "<strong>June 30, 2028</strong>. The outcome columns show each recipient&#39;s <em>progress</em>, tracked through MAP " +
+      "(as ESS 25-82 specifies) &mdash; they are not a compliance determination." +
+      "</div>" +
+      '<div class="cplfund-cards">' + cards.map(function (c) {
+        return '<div class="cplfund-card"><div class="v">' + c.v + '</div><div class="l">' + c.l + "</div></div>";
+      }).join("") + "</div>" +
+      // Honest reconciliation against the appropriation: state the residual rather
+      // than forcing the two figures to add to $15M.
+      '<div class="cplfund-foot" style="margin-top:8px;">Reconciliation: ' +
+      fmtMoney(distributed) + " in grants + " + fmtMoney(remaining) + " remaining = " +
+      fmtMoney(distributed + remaining) + " of the " + fmtMoney(APPROPRIATION) + " 2025-26 appropriation" +
+      (Math.abs(otherUses) > 1
+        ? " &mdash; a <strong>" + fmtMoney(Math.abs(otherUses)) + "</strong> " + (otherUses > 0 ? "residual" : "overage") +
+          " is accounted for elsewhere (confirm the line before external reporting)."
+        : " &mdash; fully reconciled.") + "</div>" +
+      '<div class="cplfund-formula" style="margin:10px 0;">' +
+      "<strong>The three ESS 25-82 priority outcomes</strong> (hover any mark for that institution&#39;s detail):" +
+      "<ul style='margin:6px 0 0;padding-left:20px;'>" +
+      "<li><strong>1 &middot; Awarding CPL through JSTs</strong> &mdash; upload Joint Services Transcripts into MAP for at least " +
+      "the number of enrolled veterans reported to MIS for 2024-25; award and transcribe Basic Training and JST-based credit. " +
+      "<span class='dk'>Measured here by the <strong>Veteran Star</strong> flag (≥" +
+      fmtPctTrim((perf() && perf().vet_star_threshold) || 0.75) + " of MIS-reported enrolled veterans have a JST in MAP) &mdash; " +
+      "the daily-computed bar, slightly below the memo&#39;s &ldquo;at least the number&rdquo; (100%) standard." +
+      (perf() && perf().vet_star_as_of ? " As of " + esc(String(perf().vet_star_as_of).slice(0, 10)) + "." : "") + "</span></li>" +
+      "<li><strong>2 &middot; Implementing statewide credit recommendations</strong> &mdash; adopt or adapt applicable ASCCC " +
+      "<em>Pathways to Credit</em> recommendations posted on MAP. <span class='dk'>Measured by at least one local articulation " +
+      "against a statewide credit recommendation" +
+      (e ? " (" + (e.n_statewide_credentials || 0) + " statewide credentials; " + (e.n_adopters || 0) +
+        " colleges adopting" + (e.as_of ? ", as of " + esc(e.as_of) : "") + ")" : "") + ".</span></li>" +
+      "<li><strong>3 &middot; Proactively offering CPL</strong> &mdash; establish or strengthen local procedures to identify and " +
+      "screen students eligible for CPL; document CPL offered and credit transcribed in MAP. <span class='dk'>Measured by " +
+      "students identified as CPL-eligible and/or transcribed CPL in the daily MAP feed.</span></li>" +
+      "</ul>" +
+      "<div style='margin-top:8px;'><strong>Progress on current data:</strong> " +
+      "outcome 1 &mdash; <strong>" + counts[1] + "</strong> of " + recips.length + " &middot; " +
+      "outcome 2 &mdash; <strong>" + counts[2] + "</strong> &middot; " +
+      "outcome 3 &mdash; <strong>" + counts[3] + "</strong> &middot; " +
+      "<strong>" + counts.all + "</strong> meeting all three.</div></div>" +
+      '<div class="cplfund-tablewrap"><table class="cplfund-table cplfund-grants">' +
+      "<thead><tr><th class='t'>Recipient</th><th>Grant</th>" +
+      "<th class='c' title='Outcome 1 — JSTs uploaded for enrolled veterans (Veteran Star ≥75%)'>1 &middot; JST</th>" +
+      "<th class='c' title='Outcome 2 — adopted/adapted a statewide credit recommendation'>2 &middot; Statewide recs</th>" +
+      "<th class='c' title='Outcome 3 — proactively identifying and documenting CPL in MAP'>3 &middot; Proactive CPL</th>" +
+      "</tr></thead><tbody>" + rows + declinedRows + "</tbody>" +
+      '<tfoot><tr><td class="t">TOTAL DISTRIBUTED</td><td>' + fmtMoney(distributed) + "</td>" +
+      '<td class="c">' + counts[1] + '</td><td class="c">' + counts[2] + '</td><td class="c">' + counts[3] +
+      "</td></tr></tfoot></table></div>" +
+      '<div class="cplfund-foot">Legend: <span class="cf-ess ok">✓</span> met &middot; ' +
+      '<span class="cf-ess part">◐</span> present but privacy-suppressed (&lt;5 students) &middot; ' +
+      '<span class="cf-ess no">—</span> not yet evidenced in MAP &middot; ' +
+      '<span class="cf-ess no">n/a</span> no enrolled veterans to measure &middot; ' +
+      '<span class="cf-ess pend">⏳</span> data feed not loaded. ' +
+      "Outcome tracking is through MAP plus MIS reporting per ESS 25-82; a dash reflects what MAP shows today, " +
+      "not a finding that a college failed to use its funds. Grants are expended through June 30, 2028.</div>";
   }
 
   // ── memo exports: Copy · PDF (print) · Word (docx) ────────────────────
@@ -3490,6 +3680,14 @@
     // the control strip + sub-tabs stay so project/scenario/report all switch together.
     if (state.subview === "report") {
       mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
+      wire();
+      return;
+    }
+    // $15M Distributions sub-view (Sam, 2026-07-29) — the ESS 25-82 $50,000 grant
+    // receipt + progress on the three priority outcomes. Separate appropriation from
+    // the $35M model, so it gets its own body (control strip + sub-tabs stay).
+    if (state.subview === "grants") {
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + grantsViewHtml() + "</div>";
       wire();
       return;
     }
@@ -3985,11 +4183,26 @@
       document.head.appendChild(s);
     }
   }
+  // ESS 25-82 outcome-2 sidecar (statewide-recommendation adopters, rolled up from
+  // the CER by funding/_build_funding_ess.py). Fail-open: absent → the column reads
+  // "awaiting the rollup" rather than a false ✗ (Sam, 2026-07-29).
+  function loadEss() {
+    if (window.CPL_FUNDING_ESS) { render(); return; }
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript("cpl_funding_ess.js", "CPL_FUNDING_ESS", render);
+    } else {
+      var s = document.createElement("script");
+      s.src = "cpl_funding_ess.js";
+      s.onload = render;
+      s.onerror = function () { /* keep the pending state */ };
+      document.head.appendChild(s);
+    }
+  }
   function boot() {
     if (booted) { render(); return; }
     booted = true;
     loadScenario();
-    function loadRemotes() { loadShared(); loadPerf(); loadEligibility(); loadNotes(); }
+    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); }
     if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
       window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadRemotes(); });
