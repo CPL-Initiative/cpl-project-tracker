@@ -271,3 +271,19 @@ where not exists (select 1 from public.budget_funding b where b.name = v.name);
 --   $6M children: parent 1 = 2,254,764 · parent 2 = 3,745,236
 --   history parents-only = 17,307,440   (all-archived = 23,307,440 DOUBLE-COUNTS
 --   the $6M — the render must always sum PARENTS ONLY).
+
+-- ── 8. Applied 2026-07-30 — stale spend schedule on the $15M SOURCE row ───
+-- Surfaced immediately by the new "total is computed from the years" rule: the
+-- $15M source row still carried its old SPEND schedule in the out-years
+-- (2,808,450.40 + 2,136,854.53 + 2,013,327.01 + 2,081,675.46 = 9,040,307.40 —
+-- the remaining balance, which now lives in Uses), so the row would have
+-- displayed $24,040,307. A SOURCE row carries the appropriation once, never the
+-- appropriation plus its own spend plan.
+--   update public.budget_funding set yr_2025_26_budget = 15000000,
+--          yr_2026_27 = 0, yr_2027_28 = 0, yr_2028_29 = 0, yr_2029_30 = 0
+--    where id = 4;
+--   update public.budget_funding set yr_2025_26_budget = 5000000 where id = 3;
+--   update public.budget_funding set yr_2025_26_budget = 3745236 where id = 2;
+--
+-- Post-fix: every row that has year cells now satisfies Sum(years) == total.
+-- Zero drift. (That check is worth re-running after any bulk edit.)
