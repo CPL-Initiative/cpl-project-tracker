@@ -11237,10 +11237,18 @@ def render_budget_html(budget, data_source_stamp=None):
     personnel_html += '    </div>\n'
 
     # ── Combine all sections ──
+    # The consolidated ledger view (budget_ledger.js) mounts here, ABOVE the
+    # 5-Year Funding Plan: Sources · Uses · the $18M project pool · the
+    # pre-cutoff history, each with collapsible detail and inline editing.
+    # It fetches budget_funding live (public SELECT, reviewer-gated writes), so
+    # a curator's edit re-renders immediately instead of waiting for the cron.
+    # Fails soft — if the fetch or the script is unavailable the mount stays
+    # empty and the funding plan below is untouched.
     budget_section = f'''<!-- Budget Section -->
     <div class="budget-section" style="background-color:#fafafa;padding:2rem;border-radius:8px;margin-bottom:2rem;">
         <h2>CPL Budget & Expenditure Plan</h2>
-{stamp_html}{funding_html}
+{stamp_html}        <div id="budgetLedgerMount"></div>
+{funding_html}
 {summary_html}
 {detail_html}
 {personnel_html}
