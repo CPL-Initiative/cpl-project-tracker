@@ -102,6 +102,7 @@
     ".cplfund-basis { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; margin: 4px 0 14px; padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
     ".cplfund-grouphdr td { background: var(--surface-subtle); border-top: 2px solid var(--border); font-size: .78rem; }",
     ".cplfund-grouphdr td.t { letter-spacing: .01em; }",
+    ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
     ".cf-gatechip { filter: grayscale(.25); }",
     ".cf-adv { display: inline-block; margin-left: 4px; padding: 0 4px; border-radius: 3px; font-size: .62rem; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; color: var(--text-muted); background: var(--surface-muted); border: 1px solid var(--border); white-space: nowrap; }",
@@ -633,12 +634,45 @@
     }
     return (name != null && _dispMap[name]) || name;
   }
+  // ── SINGLE-SOURCE: the Budget ledger is the authority for the appropriation
+  //    figures (Sam, 2026-07-30 — "Budget and Implementation Funding are wired
+  //    together"). `budget_funding` rows carry a `model_field` join key naming
+  //    the pool field they ARE the source for, so the model reads the ledger
+  //    instead of keeping its own copy in cpl_funding_data.js. The join is that
+  //    column, never the row NAME — a curator renames ledger rows freely.
+  //
+  //    PRECEDENCE: the ledger replaces the committed BASE literal only; the
+  //    scenario/what-if layers still win. A scenario override is a deliberate
+  //    modelling choice, not drift — but when one DISAGREES with the ledger we
+  //    say so (see ledgerDriftHtml) rather than letting it diverge silently.
+  //    Fail-soft: no fetch, no row, or a non-finite value ⇒ the committed value
+  //    stands, so the tab can never render $0 because Supabase was unreachable.
+  var LEDGER = { loaded: false, ok: false, pool: {} };
+  function ledgerPool(field) {
+    var v = LEDGER.ok ? LEDGER.pool[field] : undefined;
+    return (v == null || !isFinite(v)) ? undefined : v;
+  }
   function poolField(field) {
     return firstDefined(
       SCENARIO.pool && SCENARIO.pool[field],
       SHARED.pool && SHARED.pool[field],
+      ledgerPool(field),
       base().pool[field]
     );
+  }
+  // Rows where a scenario override shadows a DIFFERENT ledger figure. Surfaced
+  // in the pool section so the divergence is visible at the point of use — the
+  // silent version of this is exactly the drift class that cost a day.
+  function ledgerDrift() {
+    if (!LEDGER.ok) return [];
+    var out = [];
+    Object.keys(LEDGER.pool).forEach(function (f) {
+      var led = ledgerPool(f);
+      if (led == null) return;
+      var eff = Number(poolField(f));
+      if (isFinite(eff) && Math.abs(eff - led) > 0.5) out.push({ field: f, ledger: led, effective: eff });
+    });
+    return out;
   }
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
   function ruralCarve() { return Math.max(0, Number(poolField("rural_carveout")) || 0); }
@@ -1002,6 +1036,31 @@
   var ELIG = { loaded: false, coordOk: false, coord: {}, coordN: 0, optin: {}, asOf: null };
   function shortName(n) {
     return (typeof window.cplCollegeShort === "function") ? window.cplCollegeShort(n, "short") : String(n || "");
+  }
+  // Reads the Budget ledger's authoritative appropriation figures. Public SELECT
+  // on budget_funding (same anon read budget_ledger.js uses), archived rows
+  // excluded — an archived row is history, never a live source.
+  function loadLedger() {
+    if (!remoteEnabled()) return;
+    LEDGER.loaded = true;
+    fetch(SUPABASE_URL + "/rest/v1/budget_funding" +
+          "?select=model_field,total,archived&model_field=not.is.null&archived=is.false",
+          { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON } })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!rows || !rows.length) return;
+        var pool = {};
+        rows.forEach(function (row) {
+          var v = Number(row.total);
+          if (row.model_field && isFinite(v)) pool[row.model_field] = v;
+        });
+        if (!Object.keys(pool).length) return;
+        LEDGER.pool = pool;
+        LEDGER.ok = true;
+        _allocCache = null; _earnCache = null;
+        render();
+      })
+      .catch(function () { /* fail-soft: the committed values stand */ });
   }
   function loadEligibility() {
     if (!remoteEnabled()) return;
@@ -1575,6 +1634,29 @@
   }
 
   // ── pool cards ────────────────────────────────────────────────────────
+  // Provenance + drift for the figures now sourced from the Budget ledger.
+  // Silent agreement is stated once (so a reader knows WHERE the money figure
+  // comes from); disagreement is called out per field.
+  function ledgerNoteHtml() {
+    if (!LEDGER.ok) return "";
+    var names = { one_time_2026_27: "2026-27 one-time appropriation",
+      scaling_projects_tech: "CPL Projects & Innovation",
+      remaining_2025_26: "2025-26 remaining balance" };
+    var drift = ledgerDrift();
+    var fields = Object.keys(LEDGER.pool).map(function (f) { return names[f] || f; });
+    var base = '<p class="dk cplfund-ledgernote">📒 <strong>Sourced from the Budget ledger</strong> &mdash; ' +
+      esc(fields.join(", ")) + " read live from <code>budget_funding</code>, not held as a second copy here. " +
+      "Edit them on the Budget tab and this model follows.";
+    if (!drift.length) return base + "</p>";
+    return base + "</p>" +
+      '<p class="cplfund-warn-text cplfund-ledgerdrift">⚠ <strong>This scenario overrides the ledger.</strong> ' +
+      drift.map(function (d) {
+        return esc(names[d.field] || d.field) + ": modelling <strong>" + fmtMoney(d.effective) +
+          "</strong> against the ledger&#39;s " + fmtMoney(d.ledger);
+      }).join(" &middot; ") +
+      '. <span class="dk">A scenario override is a deliberate what-if, not an error &mdash; but the two now ' +
+      "disagree, so treat the ledger as the appropriation of record.</span></p>";
+  }
   function poolCardsHtml() {
     var per = perYear();
     var y = selectedYears();
@@ -3817,7 +3899,7 @@
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
-      section("pools", "Funding pools", poolCardsHtml() + awardStatsHtml()) +
+      section("pools", "Funding pools", ledgerNoteHtml() + poolCardsHtml() + awardStatsHtml()) +
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
       section("priorities", "The three funding priorities", yearFilterHtml() + prioritiesHtml() + timingSectionHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
@@ -4310,7 +4392,7 @@
     if (booted) { render(); return; }
     booted = true;
     loadScenario();
-    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); }
+    function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadLedger(); }
     if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
       window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { render(); loadRemotes(); });
@@ -4349,6 +4431,7 @@
     _model: function () { _allocCache = null; return allocModel(); },
     _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
     _netCollege: netCollege,
+    _pool: poolField,
     _csv: csvText,
     _printHtml: buildPrintHtml,
     _requirementsText: buildRequirementsText,
@@ -4362,6 +4445,12 @@
     _setSubview: function (v) { state.subview = v; render(); },
     _scenario: function () { return { name: activeScenario, project: activeProject, projects: projectIds(), config: SUPA_CONFIG }; },
     _setNotes: function (o) { NOTES = o || {}; },
+    _setLedger: function (o) {
+      if (!o) { LEDGER = { loaded: false, ok: false, pool: {} }; }
+      else { LEDGER = { loaded: true, ok: true, pool: o }; }
+      _allocCache = null; _earnCache = null;
+    },
+    _ledgerDrift: function () { return ledgerDrift(); },
     _setElig: function (o) {
       o = o || {};
       ELIG.loaded = true;
