@@ -131,9 +131,58 @@ Tests **490 → 515** (Part Q). PII guard extended. Chromium desktop+mobile clea
   Implementation Funding so colleges/districts see potential + current funding in real time; and
   eventually **other CO divisions using Budget for their own funding**. The multi-project /
   multi-scenario config (#879) + the org layer (`cobi_orgs.js`) are the seams this rides on.
-- **⚠️ `budget_funding` row 5 is inconsistent** (found 2026-07-30): named "$2M P98" but carries
-  $7,000,000 × 4 years in the year cells while its `total` column says $8,000,000. The amendment says
-  $7M × 3 = **$21,000,000** (2026-29). Needs Sam's call on the correct shape before the Budget rework.
+- **⚠️ `budget_funding` row 5 was inconsistent — DIAGNOSED + DECIDED 2026-07-30.** Named "$2M P98"
+  but carrying $7,000,000 × 4 years in the year cells while `total` said $8,000,000. Not a typo —
+  **two concepts in one row**: `total` = the *increment* ($2M × 4 = $8M); the year cells = the
+  *combined* ongoing ($5M base + $2M increment = $7M/yr). See the funding-history block below for why.
+
+### 📌 Sam's funding history + the three Budget-rework decisions (2026-07-30)
+
+**The organizing insight (Sam's background, 2026-07-30): both major asks were funded in TWO
+installments, and 2026-27 is the year the Legislature made good on each in full.**
+
+| Original ask | 2025 | 2026 | Now |
+|---|---|---|---|
+| **$7M ongoing operations** | got **$5M** | + the remaining **$2M** | **$7M/yr from 2026-27** |
+| **$50M implementation one-time** | got **$15M** | + the remaining **$35M** | **$50M total, fully funded** |
+
+The 2025 shortfall on operations was covered by supplementing to the ~$7.4M actually needed, using
+the remainder of a prior **2024-25 $6M allocation** plus the **$59K** from the $15M. **Sam's call:
+the $6M era is behind the cutoff — the Budget tab does not show it.** He offered the complete funding
+history back to 2017 and judged it distracting for this work; agreed — the place that history would
+earn its keep is a public/legislative narrative ("the CPL funding story"), not the working ledger.
+
+⚠️ **Label to confirm:** Sam describes the **$59K** as part of what supplemented 2025 *operations*,
+while the amendment line reads `$50k N2N Project Partial Funding (CO)` and the tab (#936) narrates it
+as the carve-off completing the $1.4M N2N Lightleap project with Santiago Canyon. Both may be true
+(the N2N disbursement being one of the operational uses), but the two descriptions should be
+reconciled before the combined $15M+$35M legislative report quotes either.
+
+**Sam's three decisions (AskUserQuestion, 2026-07-30) — inputs to the Budget rework:**
+
+1. **Ongoing → ONE consolidated $7M row** starting 2026-27, retiring the separate $5M/$2M future
+   years. Matches the amendment (`$7M Ongoing Operations 7,000,000 × 3 = 21,000,000`). The 2025-26
+   $5M stays as its own historical row (the cutoff keeps that year).
+   - *Sub-ambiguity to resolve at build time:* the amendment budgets the ongoing only **through
+     2028-29** (its 2.5-yr term ends 6/30/29), so a literal read puts **$0 in 2029-30** — but the
+     money is *ongoing* and conceptually continues. Assumption on file: follow the amendment
+     ($21M / 3 years, 2029-30 = 0) and note it, rather than inventing a 4th year.
+2. **The amendment's 2-year shape governs the $35M everywhere.** `budget_funding` row 6 splits into
+   the amendment's three components: College Implementation Awards `12,620,154 | 12,620,154 | 0`
+   (= $25,240,308), CO Staff `400,000 | 400,000 | 0` (= $800,000), CPL Projects (= $8,959,692).
+   Budget and Implementation Funding then tell ONE story. Sam accepted the flagged trade-off (losing
+   the 2028-29 cash-availability year) — consistent with his stated intent: *"flexibility to add a
+   third year if we have unspent funds to roll, but I'm hoping to spend it out in 2 years."* The
+   front-load + carryover mode already represents that roll without a schedule change.
+   - *Sub-ambiguity to resolve at build time:* the amendment gives a per-year split for the
+     **combined $18M** project pool (`5,557,000 | 5,681,000 | 6,762,000`, = RCCD $10,556,650 +
+     CO/TBA $7,443,350) but **never splits it by source**, so the $8,959,692 (from the $35M) vs
+     $9,040,308 (from the $15M) per-year split is not derivable. Do NOT invent one — carry the
+     $8,959,692 as a total and state that projects are budgeted as a combined $18M pool.
+3. **Cutoff at 2025-26; ARCHIVE, don't delete.** The two $6M-era rows (CO $2,254,764 + RCCD
+   $3,745,235.64) get an `active/archived` flag rather than a `DELETE`, so the ledger still
+   reconciles historically and nothing is lost if a legislative report needs it. Requires a small
+   `budget_funding` schema addition + a consumer filter in `budget_editor.js`/the Budget read path.
 - **⚠️ Scenario 2 breaks the floor** (found 2026-07-30): at P&I $16M the main pool ($16.2M) is smaller
   than the sum of the colleges' floors ($16.25M), so `allocModel()` degrades to its floor-proportional
   branch and the minimum award falls to $149,538 with 102 colleges pinned. If $16M is a live option
