@@ -19,13 +19,44 @@
 // GUARANTEED earmark that funds rural colleges' floor first (PR4, 2026-07-28) —
 // and participation_deadline (baseline-eligibility opt-in date).
 //
+// 2026-07-30 — THE SEPT-2026 BOG BUDGET AMENDMENT IS NOW THE AUTHORITY for the
+// $35M pool lines (Sam's ruling; source `20260729_CPL_Amendment_Sep_BOG.xlsx`,
+// Sept 2026 BOG / Oct 2026 RCCD agenda). Its own split is two lines —
+// `College CPL Outcomes Awards (CO) $26,040,308` (= $25,240,308 to institutions
+// + $800,000 CO staff, 2.0 FTE × 2 yrs) and `CPL Projects (CO & RCCD)
+// $8,959,692` — and it names NO noncredit or rural line. Sam's call: the
+// $25,240,308 institution total governs, and the two $1M policy earmarks are
+// carved FROM INSIDE it rather than riding on top:
+//
+//   $35,000,000 one-time
+//   − $  800,000  CO staff (2.0 FTE × 2 yrs)          ← amendment
+//   − $8,959,692  CPL Projects & Innovation           ← amendment
+//   = $25,240,308  TO INSTITUTIONS                    ← amendment, ties to the penny
+//   − $1,000,000  noncredit feeder carve-out          ← carved from inside
+//   − $1,000,000  rural college allowance (guaranteed)← carved from inside
+//   = $23,240,308  main proportional pool, 115 colleges, $150K floor
+//
+// So the hero (college pool incl. rural) is $24,240,308 and the 4 noncredit
+// campuses keep their own $1M rather than joining the proportional split.
+// `remaining_2025_26` is likewise the amendment's $9,040,308 (the $15M view's
+// N2N residual then computes to the amendment's exact $59,692).
+//
+// ⚠ Two ERRORS in that workbook, reported to Sam 2026-07-30 — do NOT copy them
+// forward: (1) its "Total All CPL Initiative Funding $74,000,000" double-counts
+// the $8,959,692 project slice (it sums $35M + the $18M project subtotal + $21M
+// ongoing); the true total is $35M + $15M + $21M = $71,000,000. (2) its header
+// "Max Award $665,971" is a digit transposition of $665,791, which is the max
+// when only the 115 COLLEGES share $25,240,308 — while its "Avg Award $212,103"
+// is $25,240,308 ÷ 119. Under this file's model the correct figures are
+// avg $210,785 / min $150,000 / max $623,871.
+//
 // To refresh the headcount vintage: edit the `colleges` headcounts + SYSTEM
 // total here directly (a rare modeling decision), keep headcount_pct in sync,
 // and bump model_version. The prior builder lives in git history if a full
 // workbook re-derive is ever needed again.
 window.CPL_FUNDING = {
- "model_version": "2026-07-06.2",
- "source": "committed data snapshot · MIS annual headcount (2025-26 update, 2026-07-03)",
+ "model_version": "2026-07-30.1",
+ "source": "Sept-2026 BOG budget amendment (20260729_CPL_Amendment_Sep_BOG.xlsx) · MIS annual headcount (2025-26 update, 2026-07-03)",
  "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (updated 2026-07-03; colleges not in the update carry 2022-2023)",
  "headcount_source": {
   "name": "CCCCO MIS DataMart — Annual/Term Student Count",
@@ -33,12 +64,12 @@ window.CPL_FUNDING = {
   "selection": "Collegewide Search"
  },
  "pool": {
-  "remaining_2025_26": 9040307.0,
+  "remaining_2025_26": 9040308.0,
   "one_time_2026_27": 35000000.0,
-  "admin_cost": 1200000.0,
-  "admin_cost_label": "CO ADMINISTRATION",
-  "scaling_projects_tech": 6559693.0,
-  "college_funding_before_feeder": 27240307.0,
+  "admin_cost": 800000.0,
+  "admin_cost_label": "CO STAFF — 2.0 FTE × 2 YRS",
+  "scaling_projects_tech": 8959692.0,
+  "college_funding_before_feeder": 25240308.0,
   "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before feeder carve-out)",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT FEEDER SUPPORT (carve-out)",

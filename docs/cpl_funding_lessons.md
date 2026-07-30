@@ -1438,3 +1438,76 @@ two figures into "$15M."
 Tests 490 → **515** (Part Q, incl. the no-feed fail-open asserting zero false ✓). PII guard extended
 to the new artifact. Chromium desktop + mobile clean. Live: **51 · 70 · 94**, with **38 meeting all
 three** outcomes.
+
+## 2026-07-30 — SkyReconcile: establishing which document is authoritative
+
+Sam: *"reconcile the differences between the budget table I just gave him and the funding tab —
+needing to establish which is authoritative."* Resolved in one session; the model now ties to the
+Sept-2026 BOG amendment to the penny.
+
+### The methodological lesson: I got it wrong first, from a real-looking coincidence
+
+Before reading the source I built a bridge that appeared to prove the two documents agreed:
+
+```
+tab   admin 1,200,000 + P&I 6,559,693 + feeder 1,000,000 + rural 1,000,000 = 9,759,693
+amdt  admin   800,000 + P&I 8,959,692                                      = 9,759,692
+→ tab main pool 25,240,307  vs  amendment "to institutions" 25,240,308   (Δ $1)
+```
+
+That $1 is real arithmetic — but it compares the tab's **main proportional pool** (after stripping
+BOTH $1M carve-outs) against the amendment's **institution total**. Different quantities. On what
+actually reaches institutions the two differ by **$1,999,999**, exactly the two earmarks. The
+identity only holds *if you already accept* that the carve-outs are project money — which was the
+very question. **A reconciliation that assumes the answer looks like a proof of it.** The tell I
+should have caught: a "$1 agreement" between two independently-authored documents is far more likely
+to be a definitional artifact than a coincidence, and the $2M gap sitting right beside it was the
+thing to explain, not to net out.
+
+Sam answered the fork on that faulty framing. The correction had to be made and the question
+re-put — the source settled it in one line.
+
+### Read the source; a summary of a budget is not the budget
+
+The workbook is explicit where every summary was ambiguous:
+`$35M Part: 115 Colleges & 4 Noncredit — 12,620,154 | 12,620,154 | 0 | 25,240,308`. The noncredit
+campuses are *inside* the institution pool and there is no rural line at all. Same lesson as the ESS
+25-82 memo a day earlier (*read the policy PDF, don't infer it*) — two for two.
+
+### Reproducing a source's own numbers is a defect detector
+
+Porting `allocModel()` to Python and validating it against three published figures
+(avg $228,177 / min $150,000 / max $694,273 — exact) turned the model into an instrument that could
+*audit the source*. It found two errors in a workbook bound for the Board of Governors:
+
+- **`Total All CPL Initiative Funding $74,000,000` overstates by $3,000,000.** It sums
+  $35M + the $18M project subtotal + $21M ongoing, but that $18M *is* $8,959,692 (of the $35M) +
+  $9,040,308 (of the $15M): double-counts the former, omits the $5,959,692 already spent from the
+  latter. `+8,959,692 − 5,959,692 = +3,000,000`, exactly. True total **$71,000,000**.
+- **`Max Award $665,971` is not reproducible from the amendment's own pool.** Over 119 institutions
+  at a $150K floor the max is $635,116; $665,971 is a transposition of **$665,791**, the max when
+  only the **115 colleges** share $25,240,308 — while its average ($212,103) is that pool ÷ **119**.
+  The header pairs a 119-recipient average with a 115-recipient maximum. Ruled out an alternative
+  floor: the floor producing $665,971 over 119 is $128,631, contradicting the printed $150,000 min.
+
+**Pattern worth keeping: when a source states summary statistics (avg/min/max/total), recompute them
+from the source's own line items. Where they disagree, the disagreement localizes the error** — here
+the avg/max split pinpointed exactly which recipient count each figure was built on.
+
+### What shipped
+Data-only (`cpl_funding_data.js` pool block + a provenance header), **zero consumer changes** —
+nothing downstream had hardcoded a pool figure, which is the #931 "derive, don't hardcode" discipline
+paying off a second time. New **Part R** pins each pool line to a workbook line. Supabase Scenario 1
+re-pointed ($8,000,000 → $8,959,692) under a guarded UPDATE after a fresh read; Scenario 2 untouched.
+
+### The four tests the smaller pool broke — and why that was correct
+$25.24M → $23.24M main pool re-floors 39 → **46** colleges, and drops Shasta ($144,128) below the
+full floor, so **no rural college's main share clears $150K any more**. Four assertions had encoded
+the old pool's *shape* (`floorCount < 40`; "Shasta is the above-floor rural case"). Rewritten to
+derive: bound the floored set by an invariant (a minority, all below mean headcount), pick the
+largest-`W` rural college and assert *whichever branch the model is in* (both branches assert
+floor-fill + bonus = the allowance), and replace N4's before/after delta — which silently assumed the
+college stays unfloored with rural off — with the pool-independent invariant **unearned ≤ main_w**
+(if rural were flexed, unearned would exceed it). O2 became a correspondence check across all 13.
+**A test that names a specific college as "the above-floor case" is a hardcoded pool fact wearing a
+data costume.** 515 → **531**.
