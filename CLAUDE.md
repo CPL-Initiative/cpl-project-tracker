@@ -569,6 +569,23 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyReconcile — Implementation Funding: the Sept-2026 BOG amendment becomes the pool authority (2026-07-30)
+
+Closed SkyHighness's queued reconciliation. Sam supplied `20260729_CPL_Amendment_Sep_BOG.xlsx` and ruled:
+**amendment governs · both $1M earmarks survive · 2-year window.** The amendment splits the $35M in just two
+lines (`College CPL Outcomes Awards $26,040,308` = **$25,240,308 to institutions** + `$800,000` CO staff;
+`CPL Projects $8,959,692`) and names no noncredit or rural line — so the earmarks are carved **from inside**
+the institution total: `35,000,000 − 800,000 − 8,959,692 = 25,240,308 − 1M feeder − 1M rural = $23,240,308`
+main pool; hero **$24,240,308**, avg $210,785 / min $150,000 / max $623,871. `remaining_2025_26` → $9,040,308,
+making the $15M N2N residual compute to the amendment's exact **$59,692**. **Data-only** (`cpl_funding_data.js`;
+0 consumer changes — nothing downstream hardcoded a pool figure) + **Part R** pinning each line to the workbook;
+Supabase Scenario 1 re-pointed ($8M → $8,959,692), Scenario 2 untouched. Tests 515 → **531**. ⚠️ **Two errors
+found IN the amendment**, both reported: its `$74,000,000` grand total **double-counts the $8,959,692 project
+slice** (true total **$71,000,000**), and its `Max Award $665,971` is a transposition of $665,791 — the max
+over **115** colleges — while its average is that pool ÷ **119**. Method (incl. a reconciliation I got wrong
+first, from a $1 coincidence that assumed its own conclusion): `docs/cpl_funding_lessons.md` ·
+`docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md` · handoff `docs/cpl_funding_handoff.md`.
+
 ### SkyHighness cont. — Implementation Funding: the $35M reframe + the $15M Distributions view (2026-07-29, #931/#934 MERGED)
 
 A CBO question at the CO budget workshop ("what are the factors in the allocation formula?") cascaded

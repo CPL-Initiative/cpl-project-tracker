@@ -9,33 +9,70 @@ related:
 
 # You are the next Implementation-Funding session
 
-## ⚠️ FIRST — the Sept-2026 BOG amendment supersedes some live figures (2026-07-29)
+## ✅ RESOLVED — the Sept-2026 BOG amendment is now the pool authority (2026-07-30, SkyReconcile)
 
-Sam completed a **2.5-yr budget amendment** to the 2025 CO→RCCD MAP CPL grant (Sept 2026 BOG /
-Oct 2026 RCCD agenda). Source files he supplied: `20260729_BOG_Amendment_CPL_InfrastructureOutgoing_Funds.docx`
-+ `20260729_CPL_Amendment_Sep_BOG.xlsx` (sheet "CPL BOG Sep 2026"). **Its figures differ from what
-the tab currently shows — reconcile with Sam BEFORE changing anything, because he cited the live
-numbers to a CBO on 2026-07-29.**
+The reconciliation SkyHighness queued is **done**. Sam supplied the source
+(`20260729_CPL_Amendment_Sep_BOG.xlsx`, sheet "CPL BOG Sep 2026", + the BOG docx) and made three
+rulings: **the amendment governs**, **both $1M earmarks survive**, **2-year window**.
 
-| Item | Live tab today | Sept BOG amendment |
-|---|---|---|
-| College pool | **$26,240,307** | **$26,040,308** (College CPL Outcomes Awards) |
-| ↳ to institutions | $26,240,307 (115 colleges; 4 NC funded by a separate $1M) | **$25,240,308 covering 115 colleges AND 4 noncredit together** ($12,620,154 × 2 yrs) |
-| ↳ CO staff/admin | $1,200,000 (2 FTE × 3 yrs) | **$800,000** (2.0 FTE × 2 yrs) |
-| Noncredit | separate **$1,000,000** carve-out | folded into the $25,240,308 |
-| Projects & Innovation | $6,559,693 | **$8,959,692** ($35M CPL Projects, CO & RCCD) |
-| Avg / Min / Max award | $228,177 / $150,000 / $694,273 | **$212,103 / $150,000 / $665,971** |
+**The amendment's own split is only two lines**, and it names no noncredit or rural line:
 
-Amendment identity: **$35M = $26,040,308 + $8,959,692.** Avg $212,103 = $25,240,308 ÷ **119**
-institutions — i.e. the amendment treats all 119 (115 colleges + 4 NC) as ONE pool, with no separate
-noncredit carve-out. **Decision needed from Sam:** does the amendment govern the tab? If yes, the
-model needs the NC carve-out folded in, admin → $800k, and P&I → $8,959,692 — which moves every
-per-college number.
+| Amendment line | Amount |
+|---|---:|
+| College CPL Outcomes Awards (CO) | $26,040,308 |
+| ↳ `$35M Part: 115 Colleges & 4 Noncredit` ($12,620,154 × 2 yrs) | $25,240,308 |
+| ↳ `$35M Part: CO Staff: 2.0 FTE` ($400,000 × 2 yrs) | $800,000 |
+| CPL Projects (CO & RCCD) | $8,959,692 |
+| **Total** | **$35,000,000** |
+
+**Sam's ruling — the $25,240,308 institution total governs, and the two $1M policy earmarks are
+carved FROM INSIDE it** (not riding on top). The live model is now:
+
+```
+  $35,000,000  one-time
+− $    800,000  CO staff (2.0 FTE × 2 yrs)            ← amendment
+− $  8,959,692  CPL Projects & Innovation             ← amendment
+= $ 25,240,308  TO INSTITUTIONS                       ← amendment, to the penny
+− $  1,000,000  noncredit feeder carve-out            ← carved from inside
+− $  1,000,000  rural college allowance (guaranteed)  ← carved from inside
+= $ 23,240,308  main proportional pool · 115 colleges · $150K floor
+```
+
+Hero (college pool incl. rural) = **$24,240,308**; award range **avg $210,785 / min $150,000 /
+max $623,871**. `remaining_2025_26` → the amendment's **$9,040,308**, which makes the $15M view's
+N2N residual compute to the amendment's exact **$59,692**. Landed in `cpl_funding_data.js`
+(data-only — 0 consumer changes; nothing downstream was hardcoded) + **Part R** in
+`tests/cpl_funding.test.js`, which pins every one of those figures to a line in the workbook.
+Live Supabase `Scenario 1` was re-pointed (`scaling_projects_tech` $8,000,000 → $8,959,692) so the
+default view and the base now agree; **Scenario 2 (Sam's $16M P&I what-if) was left untouched**.
+
+### ⚠️ Two errors IN THE AMENDMENT WORKBOOK — reported to Sam, do not copy forward
+
+1. **"Total All CPL Initiative Funding $74,000,000" overstates by $3,000,000.** It sums
+   $35M + the **$18M** "Project Available Funding" subtotal + $21M ongoing — but that $18M is itself
+   $8,959,692 (a slice of the $35M) + $9,040,308 (a slice of the $15M). So it double-counts the
+   $8,959,692 while omitting the $5,959,692 of the $15M already spent
+   (`+8,959,692 − 5,959,692 = +3,000,000`, exactly). **True total: $35M + $15M + $21M = $71,000,000.**
+2. **"Max Award $665,971" is not reproducible from the amendment's own model.** With 119 institutions
+   sharing $25,240,308 at a $150K floor the max is **$635,116**. $665,971 is a digit transposition of
+   **$665,791** — the max when only the **115 colleges** share that pool — while its "Avg Award
+   $212,103" is $25,240,308 ÷ **119**. The header therefore pairs a 119-recipient average with a
+   115-recipient maximum. A different floor cannot rescue it: the floor yielding $665,971 over 119 is
+   $128,631, contradicting the printed Min Award $150,000.
+
+### Consequence worth knowing (surfaced to Sam)
+The smaller pool re-floors more colleges: **46 of 115 now land at exactly $150,000** (was 39), and
+**no rural college's main share clears the full floor any more** (Shasta was the last, at $144,128) —
+so all 13 spend part of their allowance reaching the floor: floor-fill **$848,626** + bonus
+**$151,374** = $1M. Four tests had hardcoded the old pool's shape and now derive it instead.
 
 ### The full 2026-29 funding plan (from the amendment — the basis for the Budget-tab rework)
 
-**Totals:** $35M 2026 one-time + $15M 2025 one-time + $21M ongoing ($7M × 3) = **$74M all CPL
-Initiative funding**. Total CPL Initiative *project* funding available (CO & RCCD) = **$18M**.
+**Totals:** $35M 2026 one-time + $15M 2025 one-time + $21M ongoing ($7M × 3) = **$71M all CPL
+Initiative funding** (⚠️ the workbook's own summary says **$74M** — that line double-counts the
+$8,959,692 project slice; see the errors block above. Use **$71M**). Total CPL Initiative *project*
+funding available (CO & RCCD) = **$18M** (= $8,959,692 from the $35M + $9,040,308 from the $15M —
+this subtotal is correct, it just must not be added on top of the $35M).
 
 **$15M (2025) — now fully reconciled:** −$5,900,000 the $50k seed grants (CO) · −**$59,692** the
 N2N project partial funding (CO) · **$9,040,308** remaining balance (CO & RCCD).
@@ -87,7 +124,20 @@ the legend states a dash is NOT a compliance finding. Live: **51 · 70 · 94**, 
 Tests **490 → 515** (Part Q). PII guard extended. Chromium desktop+mobile clean.
 
 ### Queue / open items
-- **Confirm the $15M residual** ($59,693) before any external reporting — the view flags it.
+- ~~Confirm the $15M residual~~ **CLOSED 2026-07-30** — the amendment names it (`$50k N2N Project
+  Partial Funding (CO) −$59,692`) and the tab now carries the exact figure.
+- **🎯 Sam's next ask (2026-07-30): consolidate Budget + Implementation Funding under Budget**, with
+  clear authoritative sources and workspaces; then a **simplified public dashboard** off
+  Implementation Funding so colleges/districts see potential + current funding in real time; and
+  eventually **other CO divisions using Budget for their own funding**. The multi-project /
+  multi-scenario config (#879) + the org layer (`cobi_orgs.js`) are the seams this rides on.
+- **⚠️ `budget_funding` row 5 is inconsistent** (found 2026-07-30): named "$2M P98" but carries
+  $7,000,000 × 4 years in the year cells while its `total` column says $8,000,000. The amendment says
+  $7M × 3 = **$21,000,000** (2026-29). Needs Sam's call on the correct shape before the Budget rework.
+- **⚠️ Scenario 2 breaks the floor** (found 2026-07-30): at P&I $16M the main pool ($16.2M) is smaller
+  than the sum of the colleges' floors ($16.25M), so `allocModel()` degrades to its floor-proportional
+  branch and the minimum award falls to $149,538 with 102 colleges pinned. If $16M is a live option
+  the floor has to come down; the degrade path is graceful but the numbers are not meaningful.
 - **Outcome-1 threshold:** if the exact ESS bar (100% of enrolled veterans) is wanted, the raw
   veteran/JST counts would need to ride in the perf artifact beside the boolean.
 - The Report/memo currently narrates the $35M model only; extending it to a combined

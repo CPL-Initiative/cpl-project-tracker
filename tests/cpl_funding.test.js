@@ -897,8 +897,16 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // guaranteed rural allowance funds the rest.
   check("floor model: no college's TOTAL window falls below the $150K floor",
     D.colleges.every(function (c) { return T._alloc(c.college).total >= m.floor - 0.01; }));
+  // How MANY colleges the floor catches scales inversely with the pool, so bound it
+  // by the structural invariant (a minority, and only sub-scale colleges) rather
+  // than a literal that a pool change silently invalidates.
+  const meanHc = D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0) / D.colleges.length;
   check("floor model: floored set is non-empty and bounded (sub-scale colleges only)",
-    m.floorCount > 0 && m.floorCount < 40);
+    m.floorCount > 0 && m.floorCount < D.colleges.length / 2 &&
+    Object.keys(m.floored).every(function (n) {
+      const c = D.colleges.find(function (x) { return x.college === n; });
+      return c && (c.headcount || 0) < meanHc;
+    }));
   const perRural = D.pool.rural_carveout / 13;
   check("floor model: smallest college (Copper Mountain, rural) main entitlement sits at the REDUCED floor (floor − rural allowance)",
     Math.abs(m.W["Copper Mountain"] - (m.floor - perRural)) < 1);
@@ -1021,17 +1029,31 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("floored rural college: window total = exactly the $150K floor",
     cmCells.length === 6 && cmCells[5].textContent.indexOf("150,000") !== -1);
 
-  // The largest rural college (Shasta — its proportional share ≥ the floor): no
-  // floor-fill, full bonus on top. (Which rural colleges clear the floor depends on
-  // the pool size, so pick the largest, which is the most robust "above-floor" case.)
-  const imRuralRow = Array.from(ruralTable.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Shasta") !== -1;
+  // The rural college with the LARGEST main-pool entitlement. Whether ANY rural
+  // college's main share clears the FULL floor is a function of pool size — at the
+  // Sept-2026 amendment pool ($23.24M main) none do; before it, Shasta did. So
+  // assert whichever branch the model is actually in, and in BOTH branches assert
+  // the conservation identity (floor-fill + bonus = the guaranteed allowance).
+  const mdlBR = T._model();
+  const bigRural = D.colleges.filter(function (c) { return c.rural; })
+    .reduce(function (a, b) { return (mdlBR.W[a.college] || 0) >= (mdlBR.W[b.college] || 0) ? a : b; });
+  const brRow = Array.from(ruralTable.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf(bigRural.display || bigRural.college) !== -1;
   });
-  const imCells = imRuralRow ? imRuralRow.querySelectorAll("td") : [];
-  check("large rural college: floor-fill is a dash (its share already meets the floor)",
-    imCells.length === 6 && imCells[3].textContent.trim() === "—");
-  check("large rural college: full allowance rides on top as a bonus",
-    imCells.length === 6 && imCells[4].textContent.indexOf("76,9") !== -1);
+  const brCells = brRow ? brRow.querySelectorAll("td") : [];
+  const money = function (td) { return Number(String(td.textContent).replace(/[^0-9.]/g, "")) || 0; };
+  const brGap = Math.max(0, mdlBR.floor - (mdlBR.W[bigRural.college] || 0));
+  if (brGap <= 0.5) {
+    check("largest rural college (main share ≥ floor): floor-fill is a dash",
+      brCells.length === 6 && brCells[3].textContent.trim() === "—");
+    check("largest rural college (main share ≥ floor): the full allowance rides on top as a bonus",
+      brCells.length === 6 && Math.abs(money(brCells[4]) - perRural) < 2);
+  } else {
+    check("largest rural college (main share < floor): floor-fill equals its exact gap to the floor",
+      brCells.length === 6 && Math.abs(money(brCells[3]) - brGap) < 2);
+    check("largest rural college (main share < floor): floor-fill + bonus conserve the allowance",
+      brCells.length === 6 && Math.abs(money(brCells[3]) + money(brCells[4]) - perRural) < 2);
+  }
 
   // tfoot: RURAL POOL conserves floor-fill + bonus = the carve-out; funding-their-floor
   // count is derived from the model (robust to pool size).
@@ -2249,11 +2271,18 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     rc.earned_total >= rc.rural_w - 0.01);
   // Sharp guard against re-folding rural into the earn fraction: toggling the rural
   // flag off (same underperforming feed) drops earned by ~the full rural allowance.
+  // Sharp guard against re-folding rural into the earn fraction, stated as an
+  // invariant rather than a before/after delta: if the rural allowance were flexed
+  // on achievement, an underperforming college's UNEARNED amount would exceed its
+  // MAIN allocation. (The old delta form assumed the college stays unfloored with
+  // rural off, which stops holding once the pool shrinks enough to floor it.)
+  check("N4: guaranteed rural is never flexed — unearned can never exceed the MAIN allocation",
+    (rc.total - rc.earned_total) > 1 && (rc.total - rc.earned_total) <= rc.main_w + 0.01);
   T._setScenario({ ruralOverrides: { "Shasta": false } });
   T.render();
   const nr = T._alloc("Shasta");
-  check("N4: guaranteed rural adds ~its full allowance to earned even under-target",
-    Math.abs((rc.earned_total - nr.earned_total) - per_) < 2500);
+  check("N4: clearing the rural flag removes the guaranteed allowance from the row",
+    rc.rural_w > per_ - 1 && nr.rural_w === 0);
   delete window.CPL_FUNDING_PERF;
 }
 
@@ -2301,12 +2330,22 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const shastaTitle = (rows.find(function (tr) { return /Shasta/.test(tr.textContent); })
-    .querySelector("td.cf-prio").getAttribute("title") || "");           // above the floor → all bonus
   const copperTitle = (rows.find(function (tr) { return /Copper Mountain/.test(tr.textContent); })
     .querySelector("td.cf-prio").getAttribute("title") || "");           // floored → combined reason
-  check("O2: an above-floor rural college's hover says the allowance rides on top (not 'funds the floor first')",
-    /already meets the floor/.test(shastaTitle) && !/funds this college.{0,3}s floor first/.test(shastaTitle));
+  // Whether an above-floor rural college EXISTS depends on the pool size (none do
+  // at the Sept-2026 amendment pool), so assert the defect O2 actually fixed: the
+  // hover's floor-funding claim matches each rural college's REAL floor-fill state.
+  const mdlO2 = T._model();
+  const mismatched = D.colleges.filter(function (c) { return c.rural; }).filter(function (c) {
+    const tr = rows.find(function (r) { return r.textContent.indexOf(c.display || c.college) !== -1; });
+    const title = tr ? (tr.querySelector("td.cf-prio").getAttribute("title") || "") : "";
+    const fills = Math.max(0, mdlO2.floor - (mdlO2.W[c.college] || 0)) > 0.5;
+    const claimsFloor = /funds this college.{0,3}s floor first/.test(title) || /funded partly by/.test(title);
+    const claimsOnTop = /already meets the floor/.test(title);
+    return fills ? (!claimsFloor || claimsOnTop) : (!claimsOnTop || claimsFloor);
+  }).map(function (c) { return c.college; });
+  check("O2: every rural college's hover matches its ACTUAL floor-fill state (no false 'funds the floor first')",
+    D.colleges.filter(function (c) { return c.rural; }).length === 13 && mismatched.length === 0);
   check("O2: a floored rural college's hover states the floor is funded partly by its rural allowance",
     /funded partly by/.test(copperTitle) && /rural allowance/.test(copperTitle));
   // O2b — the SYSTEM row hover must not crash / must not carry per-college reasons.
@@ -2488,6 +2527,85 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("Q7: outcomes read pending (⏳) rather than a false not-met",
     table.querySelectorAll("tbody .cf-ess.pend").length > 300 &&
     table.querySelectorAll("tbody .cf-ess.ok").length === 0);
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part R — the Sept-2026 BOG budget amendment is the pool AUTHORITY (Sam,
+// 2026-07-30; `20260729_CPL_Amendment_Sep_BOG.xlsx`). The amendment splits the
+// $35M into just two lines — College CPL Outcomes Awards $26,040,308
+// (= $25,240,308 to institutions + $800,000 CO staff, 2.0 FTE × 2 yrs) and CPL
+// Projects $8,959,692 — and names NO noncredit or rural line. Sam's ruling: the
+// $25,240,308 institution total governs, and the two $1M policy earmarks are
+// carved FROM INSIDE it rather than riding on top.
+//
+// The failure mode these guard: a pool edit that silently stops reconciling with
+// the figures the Board approved. Every number below is traceable to a line in
+// that workbook, so a drift here is a drift from the board document.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const p = D.pool;
+  const AMEND_INSTITUTIONS = 25240308;   // "$35M Part: 115 Colleges & 4 Noncredit"
+  const AMEND_CO_STAFF = 800000;         // "$35M Part: CO Staff: 2.0 FTE"
+  const AMEND_PROJECTS = 8959692;        // "CPL Projects (CO & RCCD)"
+
+  check("R1: $35M − CO staff − CPL Projects ties to the amendment's $25,240,308 to institutions",
+    p.one_time_2026_27 - p.admin_cost - p.scaling_projects_tech === AMEND_INSTITUTIONS);
+  check("R1: the amendment's College-Awards line ($26,040,308) reconstructs from the pool",
+    AMEND_INSTITUTIONS + p.admin_cost === 26040308);
+  check("R1: the amendment's two lines still sum to the $35M appropriation",
+    26040308 + p.scaling_projects_tech === 35000000);
+  check("R2: CO staff carries the amendment's $800,000 (2.0 FTE × 2 yrs)",
+    p.admin_cost === AMEND_CO_STAFF);
+  check("R2: CPL Projects carries the amendment's $8,959,692",
+    p.scaling_projects_tech === AMEND_PROJECTS);
+  check("R3: college_funding_before_feeder mirrors the institution total",
+    p.college_funding_before_feeder === AMEND_INSTITUTIONS);
+  check("R4: both $1M earmarks are carved from INSIDE the institution total",
+    p.feeder_carveout === 1000000 && p.rural_carveout === 1000000);
+  check("R4: the data file records the amendment as the authority",
+    /20260729_CPL_Amendment_Sep_BOG/.test(dataSrc) && /BOG budget amendment/i.test(dataSrc));
+
+  // The $15M block: the amendment reconciles it to the penny as
+  // 15,000,000 − 5,900,000 seed − 59,692 N2N = 9,040,308 remaining.
+  check("R5: remaining_2025_26 carries the amendment's $9,040,308",
+    p.remaining_2025_26 === 9040308);
+  check("R5: the $15M residual computes to the amendment's exact $59,692 N2N carve-off",
+    15000000 - 118 * 50000 - p.remaining_2025_26 === 59692);
+}
+{
+  // The distribution engine must consume exactly the carved pool — Σ college
+  // window totals == institution total − the noncredit carve-out (the rural $1M
+  // is distributed back INTO the college rows, so it stays inside the sum).
+  const { window } = freshDom();
+  boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const p = window.CPL_FUNDING.pool;
+  const institutions = p.one_time_2026_27 - p.admin_cost - p.scaling_projects_tech;
+  const heroPool = institutions - p.feeder_carveout;          // colleges, incl. rural
+  const mainPool = heroPool - p.rural_carveout;               // proportional split
+
+  check("R6: netCollege() is the institution total less BOTH earmarks",
+    Math.abs(T._netCollege() - mainPool) < 0.5);
+
+  let sum = 0;
+  window.CPL_FUNDING.colleges.forEach(function (c) { sum += T._alloc(c.college).total; });
+  check("R7: Σ college window totals == the hero pool (conservation across the carve-outs)",
+    Math.abs(sum - heroPool) < 1);
+
+  // Under this pool the amendment-era award range is avg 210,785 / min 150,000 /
+  // max 623,871 — asserted by DERIVATION (never hardcoded), so a future pool
+  // change re-proves the relationships instead of failing on a stale literal.
+  const totals = window.CPL_FUNDING.colleges.map(function (c) { return T._alloc(c.college).total; });
+  const min = Math.min.apply(null, totals), max = Math.max.apply(null, totals);
+  check("R8: the average award is the hero pool over the 115 colleges",
+    Math.abs(sum / totals.length - heroPool / window.CPL_FUNDING.colleges.length) < 0.01);
+  check("R8: the minimum award is the floor (the floor binds at this pool size)",
+    Math.abs(min - p.floor_window) < 0.5);
+  check("R8: the maximum award goes to the largest college and clears the floor",
+    max > p.floor_window * 3 &&
+    T._alloc(window.CPL_FUNDING.colleges.reduce(function (a, b) {
+      return (a.headcount || 0) >= (b.headcount || 0) ? a : b;
+    }).college).total === max);
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
