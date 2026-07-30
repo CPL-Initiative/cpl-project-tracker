@@ -177,12 +177,31 @@ this is audience separation, NOT security** — the data files are already publi
 and PII-free by design. Nice-to-have: `?college=Butte` opens with that college
 expanded. **Verify** the CO Monitor notes stay reviewer-gated server-side before publishing.
 
-**The Budget consolidation (Sam's "they're wired together").** Fold Implementation
-Funding in as a Budget sub-view — both tabs are JS-rendered, so it is a nav change plus a
-segmented control `[Sources & Uses | $35M model | $15M Distributions | Report]`. **Do the
-single-source wiring at the same time:** the funding model should read its
-`one_time_2026_27` from the ledger's `$35M` row rather than holding its own copy in
-`cpl_funding_data.js`. That permanently kills the drift class that cost a day this week.
+**The Budget consolidation (Sam's "they're wired together").**
+
+✅ **The single-source wiring is DONE (#949)** — the half that actually pays. Three figures
+now read from `budget_funding` instead of being duplicated in `cpl_funding_data.js`:
+`one_time_2026_27` ($35M), `scaling_projects_tech` ($8,959,692), `remaining_2025_26`
+($9,040,308). New nullable **`budget_funding.model_field`** names the pool field each row
+is the source for — **the join is that column, never the row NAME**, because the Budget
+editor lets a curator rename rows freely (receipt `kb/supabase_budget_model_field.sql`).
+`poolField()` gained ONE layer: `SCENARIO ?? SHARED ?? LEDGER ?? BASE`, so no downstream
+reader changed. **Precedence is deliberate:** the ledger replaces the committed BASE
+literal only — a scenario what-if still wins (it's a modelling choice, not drift) but a
+disagreeing override is now reported inline (`ledgerDrift`) instead of diverging silently.
+**Fail-soft:** no fetch / no row / archived row / non-finite ⇒ the committed figure stands,
+so an unreachable Supabase can never render a $0 pool. Part T (10 assertions) covers it.
+⚠ The sandbox can't reach `*.supabase.co` (Rule 9c), so the **live fetch** is unexercised —
+worth eyeballing the pool section on the deployed site once.
+
+⬜ **Still open — the UI consolidation.** Fold Implementation Funding in as a Budget
+sub-view: both tabs are JS-rendered, so it is a nav change plus a segmented control
+`[Sources & Uses | $35M model | $15M Distributions | Report]`. Now unblocked and lower-risk,
+since the two tabs already agree on their numbers.
+
+**Also still open, from the Budget list:** add/delete/reorder ledger rows (the biggest gap
+between "editable" and "curatable"); the budget-vs-actual expenditure lane; a Budget Report
+sub-view; per-area RLS isolation before other CO divisions use Budget.
 
 *(The pool-figure reconciliation these were queued alongside was already RESOLVED by
 SkyReconcile — the amendment governs.)*
