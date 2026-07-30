@@ -132,6 +132,97 @@ Ordered by value-per-effort. **1–3 are the ones I'd actually do next.**
 **Two open data questions, both Sam's:** the two `$5M` rows in the history (one appropriation seen
 twice — the CO's P98 line and the RCCD grant of it?), and whether the ongoing `$7M` should carry a
 2029-30 year (the amendment budgets only through 2028-29; the appropriation itself is ongoing).
+## 🎯 QUEUED — Sam's 4 asks (2026-07-30), diagnosed + recommended, NOT yet built
+
+*(The pool-figure reconciliation these were queued alongside is already RESOLVED above by
+SkyReconcile — the amendment governs. These four are independent of that.)*
+
+### 1. The Potential/Earned toggle reads wrong in the college rows — retire it
+
+**Root cause is TWO scope mismatches, not the toggle itself:**
+- **(a) Year vs window.** The P1/P2/P3 columns show the **viewed year's per-year** cap/actual. The
+  **Yr 1 column in FRONT-LOAD mode shows the whole WINDOW** (`out.y1 = out.total` when `fl`). So the
+  P-cells sum to *half* of Yr 1 and can never reconcile. In Even-tranche mode they reconcile exactly.
+  Verified on Allan Hancock: P-cells $33,534+$46,948+$31,299 = $111,781 = the per-year cap; Yr 1 =
+  $223,562 = the window.
+- **(b) Earned spans BOTH years, invisibly.** `earned_total` sums every selected year. Year-2's
+  metrics differ from Year-1's and are mostly **data gaps → they advance at FULL cap**. So Earned is
+  dominated by Year-2 advances the curator cannot see in the Year-1 cells (Allan Hancock earned
+  $158,729 while its visible Year-1 P-cells earn ~$4.4K).
+
+**Recommendation (Sam's own two-line idea is right):**
+1. **Adopt the stacked money column and RETIRE the basis toggle.** Make Yr/Total cells stack exactly
+   like the P-cells already do: **cap on top, earned + % below**. Self-documenting, nothing to
+   misread, and it matches the pattern Sam already blessed for the priority cells. (The toggle also
+   drives the pool Earned/Unearned cards — keep those, drive them off the same numbers.)
+2. **Do NOT double the targets (or the per-student rate) under front-load.** Front-load is
+   **timing-only by deliberate design** (decoupled 2026-06-11); the tab explicitly promises
+   "per-year performance targets are unchanged — only the cash timing moves." Doubling targets would
+   mean a college must do two years of work in Year 1 to earn Year-1 money — a policy change, and it
+   would break that promise. Fix the *presentation*, not the model.
+3. **Relabel the front-load column** "Yr 1" → **"Window (front-loaded)"**. It *is* the window; naming
+   it that kills the "why is Yr 1 double?" question at the source.
+4. **Split earned into measured vs advance** (`earned = $X measured + $Y advance`). Today advances
+   silently dominate the earned figure; a small "adv" chip or a hover breakdown makes it honest.
+5. *Optional:* a **Year 1 / Window scope switch** so the money columns and the P columns always agree
+   on scope.
+
+### 1b. Earned should be $0 unless the college meets the baseline quals (Sam, 2026-07-30)
+
+Sam: *"Actual funding total should only be above 0 if they've met all of the quals as well."* Today
+**baseline eligibility is badge-only** (the Elig pie: CPL Coordinator in MAP + participation request
+by the deadline; the roadmap always anticipated "an *exclude ineligible + hold in reserve* toggle is
+a small extension of `allocModel()`"). This makes it real: **the participation gate becomes a
+precondition for drawing money**, not just a badge.
+
+**Recommendation — gate EARNED, not the cap:**
+- Keep the **cap** (potential allocation) intact so a college can always see what it stands to draw;
+  set **earned = $0** while any baseline qual is unmet. That's the incentive, and it's reversible.
+- Render it as a **distinct state**, not a plain $0: e.g. `$0 — baseline not met` with the missing
+  qual(s) named in the hover. A bare $0 would read as "posted no CPL," which is a different (and
+  possibly unfair) claim.
+- **Hold, don't redistribute.** Gated dollars should roll forward / sit in reserve so a college that
+  qualifies mid-window can still draw — redistributing them immediately makes the gate punitive and
+  irreversible. (A "held in reserve" pool card would show the total parked.)
+- **Decide with Sam before building:** (i) exactly WHICH quals gate — the 2 baseline requirements
+  only, or also the Veteran Star / the 3 ESS outcomes? (ii) is the gate point-in-time or
+  once-qualified-always-qualified for the window? (iii) does the gate apply to the **guaranteed**
+  rural allowance and the floor, or only to the performance-earned main allocation? (Recommend:
+  floor + guaranteed rural are guarantees and should NOT be gated — otherwise "guaranteed" is a
+  misnomer and the smallest colleges lose their minimum-viable funding.)
+- Pairs naturally with #1's stacked cap-over-earned column: the gate simply drives the lower line.
+
+
+### 2. District view — retire the toggle, add "Group by district" to ONE table
+
+Today the Districts toggle **replaces** the college rows, so the per-college numbers the curator
+actually wants to compare disappear; members are only visible via a drill-in.
+
+**Recommendation:** replace the `Colleges | Districts` toggle with a **"Group by district"** option on
+the single college table (Sam's alternative (b), generalized):
+- Off (default) = today's flat, sortable college list.
+- On = colleges nested under a **district header row carrying the district subtotal**; single-college
+  districts render without a header (or a light one) so the list doesn't bloat.
+- One table, one mental model; district subtotals stay conservation-tested; the drill-in becomes
+  unnecessary because members are visible.
+- **Decide explicitly:** how sorting interacts with grouping — recommend sorting *within* groups and
+  ordering groups by their subtotal.
+- Reuse `districts()` (already computes rollups + members) for the grouped render.
+
+### 3. A public, college-audience view — build a separate lean PAGE, not a URL flag
+
+- A `?view=` flag on the main dashboard is **cosmetic**: the nav and the other tabs still load. Not a
+  real boundary.
+- **Recommended:** a standalone page (precedent: `college_activity_template.html`,
+  `Dashboard_Element_Map.html`) that loads only `cpl_funding_data.js` + `cpl_funding.js`
+  (+ perf/ess sidecars) and renders the tab in a **`public` mode**: no left rail, no
+  project/scenario strip, no curate affordances, no CO Monitor notes, no Report sub-tab.
+- **Be plain with Sam about what it is: audience separation, not security.** The data files are
+  already public on Pages and PII-free by design, so this gives colleges a clean focused link — it
+  does not prevent someone from finding other files.
+- **Nice-to-have:** `?college=Butte` opens with that college expanded/highlighted — a college mostly
+  wants its own row.
+- **Verify** the CO Monitor notes stay reviewer-gated server-side (they are today) before publishing.
 
 ## Latest state — 2026-07-29 (SkyHighness cont.), READ THIS FIRST
 
