@@ -165,17 +165,33 @@ Durable learning: **`docs/kb-notes/methodology-retire-a-mode-toggle-by-coexisten
 when a mode toggle "reads wrong," suspect the *scopes it separates*, not its logic; a
 toggle structurally hides a scope mismatch, coexistence is self-policing.
 
-### 🎯 STILL OPEN — ask #3 + the Budget consolidation
+### 🎯 STILL OPEN — the Budget UI consolidation
 
-**#3 (not built) — the public college-audience view.** Recommendation unchanged and
-still right: build a **standalone lean PAGE**, not a `?view=` flag (a flag is cosmetic —
-the nav and every other tab still load). Precedent: `college_activity_template.html`,
-`Dashboard_Element_Map.html`. Load only `cpl_funding_data.js` + `cpl_funding.js`
-(+ perf/ess sidecars), render in a `public` mode: no left rail, no project/scenario strip,
-no curate affordances, no CO Monitor notes, no Report sub-tab. **Be plain with Sam that
-this is audience separation, NOT security** — the data files are already public on Pages
-and PII-free by design. Nice-to-have: `?college=Butte` opens with that college
-expanded. **Verify** the CO Monitor notes stay reviewer-gated server-side before publishing.
+✅ **#3 DONE (#951) — the public college-audience page.** `cpl_funding_public.html`, a
+standalone lean page (NOT a `?view=` flag — a flag is cosmetic, the nav and every other tab
+still load). Loads only `cpl_funding_data.js` + `cpl_funding.js` + the two sidecars.
+**Public mode** in `cpl_funding.js`: `edText`/`edNum`/`edArea` return static text (which
+also closes the ANONYMOUS what-if path), control strip + authbar return "", the Report
+sub-tab is dropped AND its body refused, `loadNotes()` skipped — plus
+**`stripCurateAffordances()`**, a declarative sweep of a REGISTRY of curate attributes/ids
+run from `wire()`/`wireTable()`. The sweep, not each emitter's own check, is the
+load-bearing guarantee: a missed call site is the failure mode that matters, and `wire()`
+is the single funnel every render path ends with. `?college=Butte` opens + highlights that
+row (survives re-render; unknown value ignored). The page says plainly it is a **draft
+planning model, not an award notice**.
+- **Verified before publishing** (the handoff's gate): `cpl_funding_notes` SELECT is
+  `is_allowed_reviewer() OR team_pass_ok()` server-side, so an anonymous reader gets
+  nothing from that table regardless — and public mode does not even ask.
+- **It is AUDIENCE SEPARATION, NOT SECURITY** — say so to anyone who asks. The data files
+  are already public on Pages and PII-free by design.
+- Added to the `pages.yml` **served-path assertion** so a future over-aggressive prune
+  fails the deploy instead of 404-ing a link handed to colleges.
+- ⚠️ **Two defects came from post-build SELF-review, after the adversarial-review workflow
+  errored out** (all 4 lenses failed to emit their schema — its "0 findings" was a tooling
+  failure, not a clean bill of health): `withheld` was pro-rated by `1/nYears` instead of
+  the cell's cap share (wrong under front-load, where year 1 carries the whole window), and
+  public mode hid the Report tab without refusing its body. Both fixed + tested (Part V).
+  **Lesson: a reviewer that fails silently looks exactly like one that found nothing.**
 
 **The Budget consolidation (Sam's "they're wired together").**
 

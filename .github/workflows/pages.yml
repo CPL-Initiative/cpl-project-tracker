@@ -109,6 +109,11 @@ jobs:
             "_site/tmc_college_courses.js"
             "_site/statewide_data.js"
             "_site/cpl_funding_data.js"
+            # The public college-audience funding page + the consumer it loads.
+            # This is a link handed to colleges, so a prune that 404s it must
+            # fail the deploy rather than ship a dead URL.
+            "_site/cpl_funding_public.html"
+            "_site/cpl_funding.js"
             "_site/fact-sheet/index.html"
             "_site/kb-portal/index.html"
             "_site/sierra/index.html"
