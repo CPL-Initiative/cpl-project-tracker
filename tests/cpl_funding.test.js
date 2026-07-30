@@ -2880,6 +2880,63 @@ function shareSumAll(T) {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
+// Part V — the two defects the post-build self-review caught (2026-07-30).
+// (The adversarial-review workflow errored out on tool plumbing, so these came
+// from reading the code by hand — worth naming, because "0 findings" from a
+// failed reviewer is not a clean bill of health.)
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  // V1 — WITHHELD must be pro-rated by the cell's share of the WINDOW CAP, not
+  // by 1/nYears. Those differ under FRONT-LOAD, where the year-1 cell carries
+  // the whole window: a flat split showed the full cap over HALF the withheld.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-07-30", suppress_below: 5,
+    statewide: { p2: 9000, p3: 16807 }, colleges: { "Laney": { p2: 120, p3: 200 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  // Gate a college so there IS withheld money, and turn front-load ON.
+  T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true } });
+  T._setScenario({ disbursement: "frontload" });
+  T.render();
+
+  const gated = T._alloc("Berkeley City");   // no coordinator ⇒ gated
+  check("V1: front-load setup — the gated college has withheld money",
+    gated.gate_blocked === true && gated.earned_withheld > 0);
+
+  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find(function (r) { return /Berkeley City/.test(r.textContent); });
+  const cells = row.querySelectorAll("td");
+  // The Yr-1 cell under front-load carries the WHOLE window, so its withheld
+  // must be the WHOLE withheld — not half of it.
+  const y1 = Array.from(cells).find(function (td) {
+    return /withheld/i.test(td.textContent) && !td.classList.contains("tot");
+  });
+  check("V1: the front-loaded window cell reports the FULL withheld amount",
+    !!y1 && y1.textContent.replace(/[^0-9]/g, "").indexOf(
+      String(Math.round(gated.earned_withheld)).replace(/[^0-9]/g, "")) !== -1);
+  // And it must agree with the window Total cell, which carries the same window.
+  const tot = row.querySelector("td.tot");
+  check("V1: the front-loaded window cell agrees with the window Total cell",
+    tot.textContent.replace(/\s/g, "") .indexOf(y1.textContent.replace(/\s/g, "").replace("withheld·", "")) !== -1 ||
+    /withheld/i.test(tot.textContent));
+  T._setScenario({});
+}
+{
+  // V2 — public mode must refuse to RENDER the Report body, not merely hide its
+  // tab. A hidden tab is not a guarantee if state reaches "report" another way.
+  const { window } = freshDom();
+  window.CPL_FUNDING_PUBLIC = true;
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setSubview("report");
+  check("V2: public mode refuses to render the internal Report body",
+    !doc.querySelector(".cplfund-memo, #cplFundMemo") &&
+    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length > 0);
+  check("V2: it falls back to the model view rather than blanking the page",
+    !!doc.querySelector('[data-subview="model"].on'));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

@@ -2702,9 +2702,15 @@
     var earned = row["ey" + (i + 1)] == null ? 0 : row["ey" + (i + 1)];
     var tot = row.earned_total || 0;
     var f = tot > 0 ? earned / tot : 0;
+    // WITHHELD is pro-rated by the cell's share of the WINDOW CAP, not by 1/nYears.
+    // Those differ under front-load, where the year-1 cell carries the whole window
+    // (y1 == total) — a flat 1/nYears split would show the full cap over half the
+    // withheld amount. A gated college can also have earned_total == 0, so `f` is
+    // unusable here; the cap share is always well defined.
+    var capFrac = row.total > 0 ? ((row[yearKeys()[i]] || 0) / row.total) : 0;
     return { earned: earned, meas: (row.earned_measured || 0) * f,
       adv: (row.earned_advance || 0) * f, guar: (row.earned_guaranteed || 0) * f,
-      held: (row.earned_withheld || 0) * (yearKeys().length ? 1 / yearKeys().length : 0) };
+      held: (row.earned_withheld || 0) * capFrac };
   }
   function yearCellsHtml(row) {
     var ys = selectedYears();
@@ -3910,6 +3916,10 @@
     if (Number(state.viewSlot) > nYears()) state.viewSlot = "1";
     // Report sub-view (Sam, 2026-07-23) — the editable memo replaces the model body;
     // the control strip + sub-tabs stay so project/scenario/report all switch together.
+    // Public mode never offers the Report TAB; this also refuses to render its
+    // body if state.subview reached "report" by any other route (a test hook, a
+    // future entry point) — the tab being hidden is not on its own a guarantee.
+    if (state.subview === "report" && publicMode()) state.subview = "model";
     if (state.subview === "report") {
       mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
       wire();
