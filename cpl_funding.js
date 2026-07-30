@@ -3478,6 +3478,8 @@
     var cards = [
       { v: fmtMoney(distributed), l: "Distributed as $50,000 implementation grants &mdash; " + recips.length +
           " institutions (" + nCredit + " colleges + " + nNc + " noncredit campuses)" },
+      { v: fmtMoney(Math.abs(otherUses)), l: "N2N Lightleap AI Apprenticeship Tools &mdash; partial funding, the carve-off completing " +
+          "the $1.4M project with Santiago Canyon College Construction Trades apprentices" },
       { v: fmtMoney(remaining), l: "Remaining 2025-26 one-time balance &mdash; not part of the $35M model on the Funding model tab" },
       { v: String(recips.length), l: "Recipients &mdash; every college and noncredit campus whose CIO certified by Jan 15, 2026 (" +
           GRANT_DECLINED.length + " declined)" }
@@ -3501,8 +3503,8 @@
       fmtMoney(distributed) + " in grants + " + fmtMoney(remaining) + " remaining = " +
       fmtMoney(distributed + remaining) + " of the " + fmtMoney(APPROPRIATION) + " 2025-26 appropriation" +
       (Math.abs(otherUses) > 1
-        ? " &mdash; a <strong>" + fmtMoney(Math.abs(otherUses)) + "</strong> " + (otherUses > 0 ? "residual" : "overage") +
-          " is accounted for elsewhere (confirm the line before external reporting)."
+        ? " + <strong>" + fmtMoney(Math.abs(otherUses)) + "</strong> carved off to complete the $1.4M N2N Lightleap AI " +
+          "Apprenticeship Tools project (Santiago Canyon College Construction Trades apprentices) = the full appropriation."
         : " &mdash; fully reconciled.") + "</div>" +
       '<div class="cplfund-formula" style="margin:10px 0;">' +
       "<strong>The three ESS 25-82 priority outcomes</strong> (hover any mark for that institution&#39;s detail):" +

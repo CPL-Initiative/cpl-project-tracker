@@ -1,13 +1,62 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-07-28
+updated: 2026-07-30
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
 ---
 
 # You are the next Implementation-Funding session
+
+## ⚠️ FIRST — the Sept-2026 BOG amendment supersedes some live figures (2026-07-29)
+
+Sam completed a **2.5-yr budget amendment** to the 2025 CO→RCCD MAP CPL grant (Sept 2026 BOG /
+Oct 2026 RCCD agenda). Source files he supplied: `20260729_BOG_Amendment_CPL_InfrastructureOutgoing_Funds.docx`
++ `20260729_CPL_Amendment_Sep_BOG.xlsx` (sheet "CPL BOG Sep 2026"). **Its figures differ from what
+the tab currently shows — reconcile with Sam BEFORE changing anything, because he cited the live
+numbers to a CBO on 2026-07-29.**
+
+| Item | Live tab today | Sept BOG amendment |
+|---|---|---|
+| College pool | **$26,240,307** | **$26,040,308** (College CPL Outcomes Awards) |
+| ↳ to institutions | $26,240,307 (115 colleges; 4 NC funded by a separate $1M) | **$25,240,308 covering 115 colleges AND 4 noncredit together** ($12,620,154 × 2 yrs) |
+| ↳ CO staff/admin | $1,200,000 (2 FTE × 3 yrs) | **$800,000** (2.0 FTE × 2 yrs) |
+| Noncredit | separate **$1,000,000** carve-out | folded into the $25,240,308 |
+| Projects & Innovation | $6,559,693 | **$8,959,692** ($35M CPL Projects, CO & RCCD) |
+| Avg / Min / Max award | $228,177 / $150,000 / $694,273 | **$212,103 / $150,000 / $665,971** |
+
+Amendment identity: **$35M = $26,040,308 + $8,959,692.** Avg $212,103 = $25,240,308 ÷ **119**
+institutions — i.e. the amendment treats all 119 (115 colleges + 4 NC) as ONE pool, with no separate
+noncredit carve-out. **Decision needed from Sam:** does the amendment govern the tab? If yes, the
+model needs the NC carve-out folded in, admin → $800k, and P&I → $8,959,692 — which moves every
+per-college number.
+
+### The full 2026-29 funding plan (from the amendment — the basis for the Budget-tab rework)
+
+**Totals:** $35M 2026 one-time + $15M 2025 one-time + $21M ongoing ($7M × 3) = **$74M all CPL
+Initiative funding**. Total CPL Initiative *project* funding available (CO & RCCD) = **$18M**.
+
+**$15M (2025) — now fully reconciled:** −$5,900,000 the $50k seed grants (CO) · −**$59,692** the
+N2N project partial funding (CO) · **$9,040,308** remaining balance (CO & RCCD).
+
+**RCCD amendment projects — $31,556,650 over 2.5 yrs (1/1/27–6/30/29):** $7M Ongoing Operations
+×3 = $21,000,000 · CPL Initiative RCCD Projects $10,556,650, comprising **Lightleap AI
+Apprenticeship Tools $6,600,000** (1.4/2.0/3.2M) · District Administrative Support $871,650 ·
+Credential Engine CTDL & Catalog Pathways $660,000 · Futuro Behavioral Health CPL $800,000 ·
+CPL Credential Registry Planning (WestEd) $600,000 · ASCCC Pathways to Credit $500,000 ·
+Foundation Event Regional CPL Training $300,000 · Military Base Demonstration Scaling $225,000.
+
+**Additional CPL Initiative Projects (CO or TBA) — $7,443,350:** Lake Tahoe Valid8 Portfolio Builder
+& CPL Navigators $2,520,000 · New Project TBA $3,373,350 · Foundation AI Skills to Course $600,000 ·
+Capitol Impact Apprenticeship Skills & Advanced CTE Data $380,000 · RP Research Studies $300,000 ·
+Noncredit CPL $270,000.
+
+### 🎯 QUEUED (Sam, 2026-07-29) — rework the Budget COBI tab on this plan, connected to Implementation Funding
+Rebuild the **Budget** tab around the amendment above and **connect it to the Implementation Funding
+tab** so the one-time/ongoing story is told once. Start by reconciling the table at the top of this
+section with Sam; the amendment xlsx is the authoritative source. Budget data lives in Supabase
+(`budget_funding`, editor `budget_editor.js`) — see the Excel→Supabase Phase 3 notes in CLAUDE.md §11.
 
 ## Latest state — 2026-07-29 (SkyHighness cont.), READ THIS FIRST
 
