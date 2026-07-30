@@ -314,6 +314,54 @@ the single college table (Sam's alternative (b), generalized):
   wants its own row.
 - **Verify** the CO Monitor notes stay reviewer-gated server-side (they are today) before publishing.
 
+## 🔴 STANDING RULES from 2026-07-30 (SkyQueue) — read before touching the pool boxes
+
+### 1. Public sees less; private sees ALL the calculations (Sam)
+
+Two DIFFERENT hide mechanisms exist and **must not be conflated**:
+
+| | `poolHidden` (✕) | `poolPublicHidden` (👁) |
+|---|---|---|
+| Nature | **STRUCTURAL** | **DISPLAY-ONLY** |
+| Effect | Drops the line item from `grossRevenue()`/`grossDeduction()` | Box not rendered in public mode |
+| Moves money? | **YES** | **Never** |
+| Use for | A what-if ("what if we had no CO admin cost?") | "Don't show colleges this box" |
+
+⚠️ **The trap:** reusing `poolHidden` to hide the $1.2M CO admin deduction from colleges would
+**ADD $1.2M back into the college pool** and overstate every allocation on the public page.
+`tests/cpl_funding_public_private.test.js` guards it — W1 asserts the pool + every college's
+allocation are IDENTICAL across modes; W3 asserts the structural hide still moves money.
+**If those two ever agree, the distinction has collapsed.**
+
+Defaults: `DEFAULT_PUBLIC_HIDDEN` = CO Administration + CPL Projects & Innovation (curator can
+flip either with 👁). The seed-funding tab follows the same rule — curator keeps the N2N box +
+full reconciliation, public gets one sentence (deleting it entirely would leave the page visibly
+not reaching $15M, which invites *more* questions than the box did).
+
+### 2. Front-load — Sam's rulings (2026-07-30), build NOT yet started
+
+- ✅ **Fiscal: funds are in hand and legally distributable at any time.** Front-load is a real
+  offer, not a presentation device. (This was my blocker; it's cleared.)
+- ✅ **"Rebalance" = HOLD unchanged, do NOT redistribute** (Sam took the recommendation).
+  Rationale: redistribution makes every college's cap unknowable until Year 2 (killing the
+  "here's your allocation" premise a college plans against), removes a struggling college's
+  reason to keep trying, and makes the model zero-sum between peers. Consistent with the
+  baseline-gate ruling (held, never redistributed).
+- 🎯 **Sam's idea to build: under front-load, DOUBLE the per-student RATE** (not the student
+  target — that would make it twice as hard). Same students, twice the money → a college doing
+  one year's work draws its two-year cap. Decays to 1× in Year 2, so a late joiner still gets
+  its money at a lower rate — a soft penalty that never takes anything away. **The rate, not
+  redistribution, is the incentive.**
+- ⛔ **BLOCKER, do this FIRST:** today ~95% of "earned" is an ADVANCE (`f = 1` for gap/pending
+  metrics), and front-load collapses both years into the Yr-1 cell — so **a college that does
+  nothing already shows its full window as earned.** Doubling the rate only moves MEASURED
+  metrics, so the incentive wouldn't be felt at all. Decide what an unmeasured metric pays
+  during the front-load year before building the doubling. **Question is open with Sam.**
+- Note: doubling does NOT over-commit the pool — the cap still binds at 100%, so the model
+  stays conserved. Worth saying to a CBO, it's the first thing they'll ask.
+- Equity caveat (raised, not disqualifying): the colleges able to sprint in Year 1 are usually
+  the already-resourced ones, i.e. not the laggards the bonus targets. Floor + rural blunt it.
+
 ## Latest state — 2026-07-29 (SkyHighness cont.), READ THIS FIRST
 
 **The tab now carries BOTH one-time appropriations, in three sub-views:**
