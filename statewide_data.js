@@ -166295,7 +166295,7 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AP(W-1-001|MAPSAS-AWH--1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
+      "exhibit_id": "MAPSAH-AHWW-1-001|MAPSAH-WHE-1-001|MAPSAS-A-WH-1-001|MAPSAS-A-WH1-1-001|MAPSAS-A:WH-1-001|MAPSAS-A:WH1-1-001|MAPSAS-A:WH2-1-001|MAPSAS-A:WH3-1-001|MAPSAS-AE-W-1-001|MAPSAS-AEWH-1-001|MAPSAS-AEWH1-1-001|MAPSAS-AEWH2-1-001|MAPSAS-AEWH4-1-001|MAPSAS-AH-W-1-001|MAPSAS-AHWH-1-001|MAPSAS-AWH--1-001|MAPSAS-AWH1-1-001|MAPSAS-AWH2-1-001|MAPSAS-AWH3-1-001|MAPSAS-AWH4-1-001|MAPSAS-AWHM-1-001|MAPSAS-AWHM1-1-001|MAPSAS-AWHM2-1-001|MAPSAS-AWHM3-1-001|MAPSAS-AWHM4-1-001|MAPSAS-AWHM5-1-001|MAPSAS-AWHM6-1-001|MAPSAS-AWHM7-1-001",
       "exhibit_ids": [
         "MAPSAH-AHWW-1-001",
         "MAPSAH-WHE-1-001",
@@ -166312,7 +166312,6 @@ window.CPL_STATEWIDE = {
         "MAPSAS-AEWH4-1-001",
         "MAPSAS-AH-W-1-001",
         "MAPSAS-AHWH-1-001",
-        "MAPSAS-AP(W-1-001",
         "MAPSAS-AWH--1-001",
         "MAPSAS-AWH1-1-001",
         "MAPSAS-AWH2-1-001",
@@ -166343,7 +166342,6 @@ window.CPL_STATEWIDE = {
         "AP : World History: Modern Area 3B",
         "AP : World History: Modern Area 4",
         "AP Exam - World History",
-        "AP Exam World History: Modern (prior to Fall 2025)",
         "AP Exam: World History",
         "AP Exam: World History - Modern",
         "AP Exam: World History: Modern",
@@ -230097,8 +230095,8 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5455,
-        "exhibits": 1743,
+        "credit_recs": 5454,
+        "exhibits": 1742,
         "courses": 294,
         "colleges": 83,
         "ccc_collaborative": 25,
@@ -230306,8 +230304,8 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6601,
-        "exhibits": 2084,
+        "credit_recs": 6600,
+        "exhibits": 2083,
         "colleges": 83,
         "pct": 52.5
       },
@@ -230350,8 +230348,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7728,
-        "exhibits": 2871,
+        "credit_recs": 7727,
+        "exhibits": 2870,
         "colleges": 90,
         "pct": 61.5
       },
@@ -230422,8 +230420,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11033,
-        "exhibits": 4698,
+        "credit_recs": 11032,
+        "exhibits": 4697,
         "colleges": 98,
         "disciplines": 23,
         "pct": 87.7
@@ -230848,6 +230846,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-07-31T02:25:45",
-  "total_credit_recs": 12574
+  "generated_at": "2026-07-31T09:18:42",
+  "total_credit_recs": 12573
 };
