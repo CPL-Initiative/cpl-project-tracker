@@ -57,7 +57,8 @@ Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
 
 College-name join: MAP college names resolve to the funding workbook's names
 via kb/college_short_names.json (canonical/alias → short) with a normalized
-fallback; unresolved colleges are emitted under "unmatched" for visibility
+fallback, then a collision-checked "College"/"Community College" STEM fallback
+(see _stem); unresolved colleges are emitted under "unmatched" for visibility
 (suppressed the same way).
 
 Graceful behavior: if the input JSON or the StudentAggregatedValues view is
@@ -87,6 +88,34 @@ TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City C
 
 def _norm(name):
     return re.sub(r"[^a-z0-9]", "", str(name).lower())
+
+
+# A trailing institutional suffix, normalized: "…College" or "…Community College".
+_SUFFIX_RE = re.compile(r"(?:community)?college$")
+
+
+def _stem(name):
+    """Normalized name with a TRAILING institutional suffix removed.
+
+    MAP and the funding workbook disagree on "X College" vs "X Community
+    College" — and in BOTH directions, so no single canonical spelling per
+    college can match both (2026-07-31):
+
+        workbook "Barstow College"              MAP "Barstow Community College"
+        workbook "Lassen Community College"     MAP "Lassen College"
+        workbook "Madera Community College"     MAP "Madera College"
+        workbook "Southwestern Community College"  MAP "Southwestern College"
+
+    Only a TRAILING suffix is stripped, so "College of Alameda", "College of
+    Marin" and "College of the Siskiyous" are untouched, and a distinguishing
+    mid-name word survives ("San Diego City College" -> "sandiegocity").
+    Callers must use this through a COLLISION-CHECKED index (see
+    _name_resolver) so it can never merge two distinct institutions.
+    """
+    n = _norm(name)
+    m = _SUFFIX_RE.search(n)
+    stemmed = n[:m.start()] if m else n
+    return stemmed or n          # never stem a bare "College" down to ""
 
 
 def _load_input(argv):
@@ -119,19 +148,50 @@ def _name_resolver():
         m = re.search(r"window\.CPL_FUNDING = (\{.*\});\s*$", f.read(), re.S)
     funding_names = [c["college"] for c in json.loads(m.group(1))["colleges"]]
     by_norm_funding = {_norm(n): n for n in funding_names}
+    _fstems = {}
+    for n in funding_names:
+        _fstems.setdefault(_stem(n), set()).add(n)
+    by_stem_funding = {s: next(iter(v)) for s, v in _fstems.items() if len(v) == 1 and s}
+
+    def _find_funding(*candidates):
+        """First candidate spelling that names a funding college, exact-then-stem."""
+        for c in candidates:
+            if not c:
+                continue
+            hit = by_norm_funding.get(_norm(c)) or by_stem_funding.get(_stem(c))
+            if hit:
+                return hit
+        return None
+
     # canonical + every alias -> the funding name whose normalized form matches
     # the entry's short (e.g. "College of Alameda" -> short "Alameda" -> "Alameda").
+    # `short_caps` is tried too: the workbook sometimes carries the CAPS form in
+    # title case instead of the short one, and matching on `short` ALONE silently
+    # skipped the whole entry — which is why "Los Angeles Southwest College"
+    # resolved to nothing (workbook "LA Swest" vs short "LA Southwest").
     lookup = {}
     for entry in shorts:
-        target = by_norm_funding.get(_norm(entry["short"]))
+        target = _find_funding(entry.get("short"), entry.get("short_caps"), entry.get("canonical"))
         if not target:
             continue
-        for alias in set([entry["canonical"], entry["short"]] + list(entry.get("aliases", []))):
-            lookup[_norm(alias)] = target
+        for alias in set([entry["canonical"], entry["short"], entry.get("short_caps")]
+                         + list(entry.get("aliases", []))):
+            if alias:
+                lookup[_norm(alias)] = target
+
+    # Suffix-tolerant fallback, COLLISION-CHECKED: a stem is usable only when
+    # every known spelling that reduces to it points at ONE funding college. A
+    # stem shared by two institutions is dropped rather than guessed, so this
+    # can add matches but can never merge distinct colleges.
+    stems = {}
+    for key, target in list(lookup.items()) + list(by_norm_funding.items()):
+        stems.setdefault(_stem(key), set()).add(target)
+    by_stem = {s: next(iter(t)) for s, t in stems.items() if len(t) == 1 and s}
 
     def resolve(map_name):
         key = _norm(map_name)
-        return lookup.get(key) or by_norm_funding.get(key)
+        return (lookup.get(key) or by_norm_funding.get(key)
+                or by_stem.get(_stem(key)))
     return resolve
 
 

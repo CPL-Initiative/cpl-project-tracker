@@ -54,6 +54,22 @@ const rows = [
   ["North Orange Continuing Education", "9", "FP", "yes", "no", "3"],  // Potential → excluded from F1
   ["Calbright College", "0", "C1", "no", "no", "3"],                    // Calbright pe=2 → suppressed
   ["Calbright College", "0", "C2", "no", "no", "3"],
+  // Institutional-suffix variance, in BOTH directions (2026-07-31). MAP and the
+  // funding workbook disagree on "X College" vs "X Community College", so a
+  // single canonical spelling per college matched neither reliably and 4 real
+  // colleges were landing in `unmatched` — reading as "posted nothing" once
+  // front-load removed the Year-2 advance that had been masking it.
+  //   workbook "Barstow College"                <- MAP "Barstow Community College"
+  //   workbook "Lassen Community College"       <- MAP "Lassen College"
+  ...Array.from({ length: 6 }, (_, i) =>
+    ["Barstow Community College", "6", "B" + i, "no", "no", "3"]),
+  ...Array.from({ length: 6 }, (_, i) =>
+    ["Lassen College", "6", "L" + i, "no", "no", "3"]),
+  // The workbook name is "LA Swest" but the short-names entry's `short` is
+  // "LA Southwest" (the CAPS form is "LA SWEST") — matching on `short` alone
+  // skipped the entry outright, so this college could never join.
+  ...Array.from({ length: 6 }, (_, i) =>
+    ["Los Angeles Southwest College", "6", "W" + i, "no", "no", "3"]),
 ];
 const fixture = [{
   viewName: "View_StudentAggregatedValues_APIDataset",
@@ -94,8 +110,12 @@ if (P) {
     !P.colleges["RivTest City College"] && !P.unmatched["RivTest City College"]);
   check("unresolvable college lands in unmatched (suppressed)",
     P.unmatched["Mystery University"] && P.unmatched["Mystery University"].p2 === null);
-  check("statewide dedupes the cross-college student (p2=9, p3=10 — not the cell sum)",
-    P.statewide.p2 === 9 && P.statewide.p3 === 10);
+  // Statewide is computed independently (union of student ids), NOT the sum of
+  // the per-college cells — S1 appears at both Alameda and Ventura and must be
+  // counted once. Was 9/10; the 2026-07-31 suffix-join fixture rows added 18
+  // distinct students (6 each at Barstow / Lassen / LA Swest), so 27/28.
+  check("statewide dedupes the cross-college student (p2=27, p3=28 — not the cell sum)",
+    P.statewide.p2 === 27 && P.statewide.p3 === 28);
   check("as_of carries the report date", P.as_of === "2026-06-11");
   check("suppress_below = 5 (ratified ADR)", P.suppress_below === 5);
   // F1 — noncredit feeder eligible headcount, keyed by feeder short name.
@@ -105,6 +125,20 @@ if (P) {
     P.feeders["Calbright"] && P.feeders["Calbright"].pe === null && P.feeders["Calbright"].pe_suppressed === true);
   check("feeder campuses do NOT leak into the unmatched bucket",
     !P.unmatched["North Orange Continuing Education"] && !P.unmatched["Calbright College"]);
+  // ── suffix-tolerant college join (2026-07-31) ────────────────────────────
+  check("join: MAP 'Barstow Community College' -> workbook 'Barstow College'",
+    !!P.colleges["Barstow"] && P.colleges["Barstow"].p3 === 6);
+  check("join: MAP 'Lassen College' -> workbook 'Lassen Community College' (other direction)",
+    !!P.colleges["Lassen"] && P.colleges["Lassen"].p3 === 6);
+  check("join: MAP 'Los Angeles Southwest College' -> workbook 'LA Swest' (via short_caps)",
+    !!P.colleges["LA Swest"] && P.colleges["LA Swest"].p3 === 6);
+  check("join: none of the suffix variants leak into unmatched",
+    !P.unmatched["Barstow Community College"] && !P.unmatched["Lassen College"] &&
+    !P.unmatched["Los Angeles Southwest College"]);
+  // The fallback must ADD matches without inventing them: a genuinely unknown
+  // institution still has to land in unmatched.
+  check("join: a genuinely unknown name is still NOT force-matched",
+    !P.colleges["Mystery University"] && !!P.unmatched["Mystery University"]);
 }
 
 // Graceful no-input behavior: exits 0, touches nothing.
