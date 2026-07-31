@@ -99,9 +99,24 @@ check("slotIsCarryover names the front-loaded later years",
 // scope any more. If this fires, a site has drifted back to the old formula and
 // the two modes can silently disagree again.
 {
-  const strays = (consumerSrc.match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
+  // ONE named exemption: prioEntitlement (added 2026-07-31 for the CPL-FTES
+  // target) computes the PRE-FLOOR, PRE-RURAL, PER-YEAR proportional entitlement
+  // and must NOT route through prioCap — prioCap returns the whole window in
+  // slot 1 under front-load, so a target built on it would double alongside the
+  // cap, the ratio would cancel, and the front-load incentive would silently
+  // vanish. Exempt the one function; assert the property that makes it safe.
+  const entBody = (consumerSrc.match(/function prioEntitlement\(c, p\)[\s\S]*?\n  \}/) || [""])[0];
+  check("prioEntitlement exists and is the only exemption",
+    /\* p\.share \/ nYears\(\)/.test(entBody));
+  check("prioEntitlement is front-load BLIND (a target must not double with the cap)",
+    entBody.length > 0 && !/frontload|slotEntitlement|prioCap/.test(entBody));
+  check("prioEntitlement is floor-free and rural-free (reads sizePct/netCollege, never allocModel W)",
+    /sizePct\(c\)/.test(entBody) && /netCollege\(\)/.test(entBody) &&
+    !/allocModel|\bW\b|rural/.test(entBody));
+
+  const strays = (consumerSrc.replace(entBody, "").match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
     (consumerSrc.match(/\*\s*p\.share\s*\/\s*ny\b/g) || []).length;
-  check("no site computes W × p.share ÷ nYears on its own any more (all go through prioCap)",
+  check("no OTHER site computes W × p.share ÷ nYears on its own (all go through prioCap)",
     strays === 0);
 }
 check("targets are NOT scaled by disbursement (per-student rate doubles, student count does not)",
