@@ -1897,9 +1897,12 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     !!doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]'));
   check("H1: no legacy 'target' (% of headcount) input is rendered",
     !doc.querySelector('input[data-edit="target"]'));
-  check("H1: the priority line reads 'per student' + shows the derived % of headcount",
+  // The reach percentage is now computed against STATEWIDE HEADCOUNT explicitly.
+  // It used to render p.target_rate, which since 2026-07-31 denominates on the
+  // allocation basis (credit FTES) and is therefore no longer a headcount %.
+  check("H1: the priority line reads 'per student' + shows the derived reach % of statewide headcount",
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("per student") !== -1 &&
-    doc.querySelector(".cplfund-prio .p").textContent.indexOf("of headcount") !== -1);
+    doc.querySelector(".cplfund-prio .p").textContent.indexOf("of statewide headcount") !== -1);
   check("H1: the default (legacy target_rate) shows a positive implied $/student",
     Number(doc.querySelector('input[data-edit="perstudent"][data-slot="1"][data-idx="0"]').value) > 0);
 
@@ -2197,8 +2200,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const cmTitle = firstPrioTitle("Alameda");
   check("L5: a floored college's cell hover explains the minimum-viable floor top-up + a /student rate",
     /minimum-viable floor/.test(cmTitle) && /\/student/.test(cmTitle));
-  check("L5: a non-floored college's cell hover cites the statewide base rate",
-    /statewide base rate/.test(firstPrioTitle("East LA")));
+  // A non-floored college's effective rate sits BELOW the statewide base: the
+  // $150K top-ups are funded by renormalising the split over exactly these
+  // colleges. The hover used to assert "at the statewide base rate" regardless,
+  // which the cell's own cap ÷ target contradicted by ~10% (caught 2026-07-31 by
+  // tests/cpl_funding_basis.test.js Part H). It must now name the renormalisation.
+  {
+    const elaTitle = firstPrioTitle("East LA");
+    check("L5: a non-floored college's cell hover reconciles its rate to the statewide base",
+      /statewide base/.test(elaTitle) &&
+      (/statewide base rate\./.test(elaTitle) || /renormalised over the colleges above the/.test(elaTitle)));
+  }
   // L6 — sortable headers are keyboard-operable (aria-sort + tabindex).
   const th = doc.querySelector("#cplFundTable th[data-sort]");
   check("L6: sortable headers carry tabindex + aria-sort (keyboard-operable)",

@@ -859,17 +859,45 @@
   //   target_rate = clamp((share × perYear) ÷ (per_student × totalHeads), 0..1)
   function prioPerStudent(slot, idx, share, target_rate) {
     var funding = share * perYear();
-    var heads = totalHeads();
+    var basis = totalSize();          // the ALLOCATION basis, so it inverts cleanly
     var stored = prioField(slot, idx, "per_student");
     if (stored != null && Number(stored) > 0) return Number(stored);
-    var reach = heads * target_rate;              // derived student target
+    var reach = basis * target_rate;              // derived student target
     return reach > 0 ? funding / reach : 0;
+  }
+  // ── the performance TARGET seam ───────────────────────────────────────
+  // A priority's target for one college. It was open-coded at five sites
+  // against `c.headcount`, which became WRONG the moment the allocation basis
+  // moved to credit FTES (2026-07-31): the cap was sized by FTES share while
+  // the target stayed sized by headcount share, so `cap ÷ target` no longer
+  // equalled the statewide per-student rate for any college whose two shares
+  // differ — 72 of 115, spanning 0.49x (Santa Ana) to 2.11x (Las Positas).
+  //
+  // A college was therefore being asked to hit a target sized for a different
+  // college, and the P-cell hover asserted "at the $X/student statewide base
+  // rate" while the real effective rate was half or double that.
+  //
+  // The target must ride the SAME basis as the cap. With prioTargetRate also
+  // denominated on totalSize(), cap ÷ target reduces to per_student exactly for
+  // every unfloored, non-rural college — which is the equal-yardstick property
+  // the per-priority cells were built around.
+  //
+  // c = a base-college or shaped row; pass null for the statewide total.
+  function prioTarget(c, p) {
+    return (c ? sizeOf(c) : totalSize()) * p.target_rate;
+  }
+  // The target's reach as a share of actual STUDENTS. `target_rate` denominates
+  // on the allocation basis (credit FTES), so it is no longer a headcount
+  // percentage and must not be rendered as one — compute the human-meaningful
+  // "how deep into the student body does this reach" figure explicitly.
+  function reachPct(c, target) {
+    var heads = c ? (c.headcount || 0) : totalHeads();
+    return heads > 0 ? target / heads : 0;
   }
   function prioTargetRate(slot, idx, share) {
     var stored = prioField(slot, idx, "per_student");
     if (stored != null && Number(stored) > 0) {
-      var heads = totalHeads();
-      var denom = Number(stored) * heads;
+      var denom = Number(stored) * totalSize();
       return denom > 0 ? Math.min(1, (share * perYear()) / denom) : 0;
     }
     return prioField(slot, idx, "target_rate");   // legacy: rate is the source
@@ -2192,7 +2220,7 @@
       // front-load changes is how much is on the table to earn against that same
       // target, which gets its own line below.
       var sysDollars = p.share * per;
-      var sysHeads = heads * p.target_rate;
+      var sysHeads = prioTarget(null, p);
       var winDollars = prioCap(netCollege(), slot, p);
       var frontLine = flPrio
         ? (slotIsCarryover(slot)
@@ -2214,7 +2242,7 @@
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
-        " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(p.target_rate) + " of headcount) " +
+        " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount) " +
         '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
         "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
         frontLine +
@@ -2306,7 +2334,7 @@
     var pf = perf();
     if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
     var rec = c ? perfFor(c.college) : pf.statewide;
-    var target = (c ? (c.headcount || 0) : totalHeads()) * p.target_rate;
+    var target = prioTarget(c, p);
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
     if (!rec || rec[meas.src] == null) {
       // Feed published, no value for this college: it has posted nothing → $0
@@ -2520,7 +2548,7 @@
   // DOLLARS (cap + earned) are bold. c = shaped college row; isSystem = totals.
   function prioCellHtml(c, p, isSystem) {
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
-    var target = heads * p.target_rate;
+    var target = prioTarget(isSystem ? null : c, p);
     var cap = isSystem ? prioCap(netCollegeWithRural(), state.viewSlot, p) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
     // A front-loaded later year has no new money on the table — say so rather
@@ -2604,12 +2632,23 @@
         fmtInt(target) + "-student target, so the statewide base works out to " + fmtRate(cmpBase) +
         "/student (" + fmtRate(baseRate) + " × " + nYears() + ")."
       : "";
+    // An UNFLOORED college's effective rate sits BELOW the statewide base, because
+    // the $150K floor top-ups are funded by renormalising the proportional split
+    // over exactly these colleges (see the Floor note in the formula box). Saying
+    // "at the statewide base rate" while the cell's own cap ÷ target is ~10% lower
+    // is a claim the cell itself contradicts — so name the renormalisation.
+    var offBase = cmpBase > 0 ? Math.abs(effRate - cmpBase) / cmpBase : 0;
     var rateSentence = (reasons.length
       ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
         fmtRate(cmpBase) + "/student statewide base because this college's allocation is " + reasons.join(" and ") + "."
-      : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
-    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" + fmtPctTrim(p.target_rate) +
-      " of headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
+      : offBase > 0.02
+        ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, " +
+          (effRate < cmpBase ? "below" : "above") + " the " + fmtRate(cmpBase) +
+          "/student statewide base because the proportional split is renormalised over the colleges above the " +
+          fmtMoney(floorWindow()) + " floor to fund the ones topped up to it."
+        : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
+    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" +
+      fmtPctTrim(reachPct(isSystem ? null : c, target)) + " of its headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
       '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtCountK(target) +
       '</span> stu &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
@@ -2626,7 +2665,7 @@
     var out = [];
     priorities(state.viewSlot).forEach(function (p) {
       var heads = isSystem ? totalHeads() : (c.headcount || 0);
-      out.push(Math.round(heads * p.target_rate));
+      out.push(Math.round(prioTarget(isSystem ? null : c, p)));
       var fr = earnFraction(isSystem ? null : c, p);
       out.push(fr.status === "earned" ? fr.actual :
         fr.status === "suppressed" ? "<5" :
@@ -2885,7 +2924,7 @@
       // (against an unchanged target → the doubled effective per-student rate)
       // and $0 in later years, which read as carryover.
       out[p.key] = prioCap(W, state.viewSlot, p);
-      out[p.key + "_heads"] = c.headcount * p.target_rate;
+      out[p.key + "_heads"] = prioTarget(c, p);
     });
     return out;
   }
@@ -3139,8 +3178,8 @@
       var tgtHeads = c[p.key + "_heads"] || 0;
       var effPrioRate = tgtHeads > 0 ? (c[p.key] || 0) / tgtHeads : 0;
       var rateSeg = " &middot; target " + fmtInt(tgtHeads) + " students at " +
-        fmtRate(flPrio ? effPrioRate : p.per_student) + "/student (" + fmtPctTrim(p.target_rate) +
-        " of headcount)" +
+        fmtRate(flPrio ? effPrioRate : p.per_student) + "/student (" + fmtPctTrim(reachPct(c, tgtHeads)) +
+        " of its headcount)" +
         (flPrio
           ? ' <span class="dk">&mdash; the same per-year target, funded at the full window rate (' +
             fmtRate(p.per_student) + "/student &times; " + nYears() + "): hit it in Year 1 and the whole " +
