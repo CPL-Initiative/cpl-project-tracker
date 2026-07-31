@@ -86,8 +86,13 @@ check("data: year_priorities has slots 1 and 2, 3 priorities each",
       return p.metric && p.share != null && p.target_rate != null && p.factor === undefined;
     }));
 });
-check("data: year-1 P1 metric is Sam's spec text",
-  D && D.year_priorities["1"][0].metric === "Headcount with any transcribed CPL");
+// Synced 2026-07-30 to the wording live in cpl_funding_config. The workbook +
+// builder were retired, so these baked defaults are hand-maintained and drift
+// silently — tests/cpl_funding_metric_wiring.test.js guards that they at least
+// stay MEASURABLE; this pins the exact text.
+check("data: year-1 P1 metric matches the live curated wording",
+  D && D.year_priorities["1"][0].metric ===
+    "Headcount of students eligible for at least one course offered through CPL");
 check("data: year-2 P1 metric differs from year-1",
   D && D.year_priorities["2"][0].metric === "Units of Transcribed CPL" &&
   D.year_priorities["2"][0].metric !== D.year_priorities["1"][0].metric);
@@ -468,7 +473,7 @@ function pieSlices(el) {
   const doc = boot(window);
   check("year filter has one button per selected year", doc.querySelectorAll("#cplFundYear button").length === 2);
   const m1 = doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]');
-  check("year 1 shows the year-1 P1 metric", m1 && m1.value === "Headcount with any transcribed CPL");
+  check("year 1 shows the year-1 P1 metric", m1 && m1.value === "Headcount of students eligible for at least one course offered through CPL");
   // switch to Year 2.
   click(window, doc.querySelector('#cplFundYear button[data-val="2"]'));
   const m2 = doc.querySelector('[data-edit="metric"][data-slot="2"][data-idx="0"]');
@@ -495,7 +500,7 @@ function pieSlices(el) {
   check("priority textareas carry the multi-line style class",
     desc.className.indexOf("cplfund-ed-area") !== -1 && metric.className.indexOf("cplfund-ed-area") !== -1);
   check("the textarea shows the baked value (from its text content, not a value attr)",
-    metric.value === "Headcount with any transcribed CPL");
+    metric.value === "Headcount of students eligible for at least one course offered through CPL");
   // Editing the textarea still commits on change, exactly like the old input.
   commit(window, metric, "Wrapped metric text");
   check("editing a metric textarea persists to the scenario",
@@ -580,7 +585,7 @@ function pieSlices(el) {
   click(window, doc.getElementById("cplFundReset"));
   check("reset clears the scenario (localStorage slot gone)", !scenSlot(window));
   check("reset restores the baked P1 metric",
-    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Headcount with any transcribed CPL");
+    doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "Headcount of students eligible for at least one course offered through CPL");
 }
 
 // C6 — config layers: baked ⊕ shared ⊕ scenario resolution.
@@ -736,8 +741,17 @@ function pieSlices(el) {
 // (no full-cap advance), so without the feed it reads as pending, not a hard gap.
 {
   // Without the perf artifact.
+  // These assertions are ABOUT a data-gap metric vs a wired one, so they SET the
+  // metrics instead of inheriting the baked defaults — which are hand-maintained
+  // and drifted out from under this block on 2026-07-30.
   const { window } = freshDom();
   const doc = boot(window);
+  window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
+    "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
+    "2": { metric: "Headcount with Transcribed Credit from either CPL Portal or CPL Landing Page" }
+  } } });
+  window.CPL_FUNDING_TAB.render();
   check("Y1-P1 card hints actuals arrive with the daily refresh (measurable metric)",
     doc.querySelector(".cplfund-prio .p").textContent.indexOf("next daily data refresh") !== -1);
   check("Y1-P2 card carries the exhibit-linkage data-gap label",
@@ -763,6 +777,12 @@ function pieSlices(el) {
     unmatched: { "Mystery University": { p2: null, p2_suppressed: true, p3: 7 } }
   };
   const doc = boot(window);
+  // Pin P1 to the any-transcribed metric this fixture's p3 numbers are written
+  // for (the baked default is now the ELIGIBLE metric → pe).
+  window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." }
+  } } });
+  window.CPL_FUNDING_TAB.render();
   const p1card = doc.querySelectorAll(".cplfund-prio .p")[0];
   check("Y1-P1 card shows the any-transcribed statewide actual vs target",
     p1card.textContent.indexOf("20,000") !== -1 && p1card.textContent.indexOf("of target") !== -1);
@@ -803,7 +823,7 @@ function pieSlices(el) {
   // (Success), slot-2 = origin/Portal (Capacity) — Sam's live arrangement.
   window.CPL_FUNDING_TAB._setShared({ yearPriorities: { "1": {
     "0": { title: "Access", metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations, Joint Services Transcripts, or High School Credit" },
-    "1": { title: "Success", metric: "Headcount with any transcribed CPL" },
+    "1": { title: "Success", metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "2": { title: "Capacity", metric: "Headcount with Transcribed Credit from either CPL Student Portal or CPL Landing Page" }
   } } });
   window.CPL_FUNDING_TAB.render();
@@ -1386,7 +1406,9 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   click(window, doc.querySelector("tr.cplfund-row"));
   check("drill-in still shows the county context",
     doc.querySelector("tr.cplfund-detail").textContent.indexOf("County context") !== -1);
-  // Priority-column actuals render from the perf artifact (measurable P1 = p3).
+  // Priority-column actuals render from the perf artifact. P1's live metric is
+  // the ELIGIBLE headcount → `pe` (Sam's 2026-07-30 wording), so the fixture's
+  // pe value is what the P1 cell must show.
   window.CPL_FUNDING_PERF = {
     as_of: "2026-07-06", suppress_below: 5,
     statewide: { pe: 50000, p2: 100, p3: 20000 },
@@ -1396,10 +1418,10 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const alamedaRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (tr) {
     return tr.textContent.indexOf("Alameda") !== -1;
   });
-  check("Alameda's P1 cell shows the measurable actual (300) in its actual line",
-    alamedaRow.querySelector("td.cf-prio .cf-a").textContent.indexOf("300") !== -1);
-  check("SYSTEM P1 cell shows the statewide measurable actual (20K, compact)",
-    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("20K") !== -1);
+  check("Alameda's P1 cell shows the measurable actual (777 eligible) in its actual line",
+    alamedaRow.querySelector("td.cf-prio .cf-a").textContent.indexOf("777") !== -1);
+  check("SYSTEM P1 cell shows the statewide measurable actual (50K eligible, compact)",
+    doc.querySelector("#cplFundTable .cplfund-systemrow td.cf-prio").textContent.indexOf("50K") !== -1);
   delete window.CPL_FUNDING_PERF;
 }
 
@@ -1592,7 +1614,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     ph.indexOf("<input") === -1 && ph.indexOf("<select") === -1 && ph.indexOf("<button") === -1 &&
     ph.indexOf("<textarea") === -1);
   check("print HTML: priority metric textarea flattens to its text (survives print)",
-    ph.indexOf("Headcount with any transcribed CPL") !== -1);
+    ph.indexOf("Headcount of students eligible for at least one course offered through CPL") !== -1);
   check("print HTML: the college table content survives",
     ph.indexOf("SYSTEM (statewide)") !== -1);
 }
@@ -1638,8 +1660,15 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  // Hold P3 as a data gap for this part (see the note above).
-  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
+  // Pin all three Year-1 metrics so exactly ONE (P1) is measurable and flexes —
+  // that is what this block verifies. Inheriting the baked defaults broke it on
+  // 2026-07-30 when P1's live metric became the ELIGIBLE headcount (`pe`, absent
+  // from this fixture) and P2 became the measurable transcribed one.
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
+    "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
+    "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+  } } });
   T.render();
 
   // The Potential⇄Earned basis TOGGLE was RETIRED 2026-07-30 (Sam): both numbers
@@ -1703,8 +1732,12 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Laney": { p3: 9999999 } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });  // hold P3 as a gap
-  T._state.basis = "earned"; T.render();
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
+    "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
+    "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+  T.render();
   const la = T._alloc("Laney");
   check("E: overachiever is capped at 100% of its cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
   window.eval('CPL_FUNDING_TAB._state.open["c:' + D.colleges.find(function (c) { return c.college === "Laney"; }).order + '"] = true;');
@@ -1717,7 +1750,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const { window } = freshDom();
   const doc = boot(window);   // no CPL_FUNDING_PERF
   const T = window.CPL_FUNDING_TAB;
-  T._state.basis = "earned"; T.render();
+  T.render();
   const la = T._alloc("Laney");
   check("E: feed not loaded → earned advances at full cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
 }
@@ -1728,8 +1761,12 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Yuba": { p3: null, p3_suppressed: true } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });  // hold P3 as a gap
-  T._state.basis = "earned"; T.render();
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
+    "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
+    "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+  T.render();
   const yu = T._alloc("Yuba");
   check("E: suppressed college earns $0 on the measurable priority (= cap − P1)",
     Math.abs(yu.earned_total - (yu.total - yu.p1)) < 1);
@@ -1745,7 +1782,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Laney": { p3: 200 }, "Alameda": { p3: 80 } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
-  T._state.basis = "earned"; T.render();
+  T.render();
   const D2 = window.CPL_FUNDING;
   let capSum = 0, earnSum = 0, everOver = false;
   D2.colleges.forEach(function (c) { var a = T._alloc(c.college); capSum += a.total; earnSum += a.earned_total; if (a.earned_total > a.total + 1) everOver = true; });
@@ -1799,6 +1836,12 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     statewide: { p3: 16807 }, colleges: { "Laney": { p3: 200 } }, unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
+    "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
+    "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+  T.render();
   const laney = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
   const cells = laney.querySelectorAll("td.cf-prio");
   check("G: three per-priority columns render per college row", cells.length === 3);
@@ -1918,7 +1961,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     cards[2].textContent.indexOf("advancing") === -1);
   // Achievement-based P3: a college with 0 portal students earns $0 on P3 (its
   // full P3 cap is unearned); a college with a portal count shows it in the cell.
-  T._state.basis = "earned"; T.render();
+  T.render();
   const oh = T._alloc("Ohlone");     // pp = 0 → P3 fully unearned
   check("H5: P3 earns $0 for a college with no portal students (P3 cap fully unearned, no advance)",
     oh.earned_total <= oh.total - oh.p3 + 1);
@@ -2295,7 +2338,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const per_ = D.pool.rural_carveout / 13;   // guaranteed rural window allowance per college
   // Hold P3-slot as a data gap so only Year-1 P1 (any-transcribed → p3) flexes.
   T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
-  T._state.basis = "earned"; T.render();
+  T.render();
   const rc = T._alloc("Shasta");
   check("N4: Shasta is rural (positive rural_w)", rc.rural_w > 0);
   check("N4: its MAIN allocation flexes down (earned < cap when underperforming)",
@@ -2335,7 +2378,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
-  T._state.basis = "earned"; T.render();
+  T.render();
   const sh = window.CPL_FUNDING.colleges.find(function (c) { return c.college === "Shasta"; });
   window.eval('CPL_FUNDING_TAB._state.open["c:' + sh.order + '"] = true;');
   T.render();

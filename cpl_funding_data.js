@@ -98,7 +98,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC certificate or degree completion through CPL awards.",
     "share": 0.3,
     "target_rate": 0.05,
-    "metric": "Headcount with any transcribed CPL"
+    "metric": "Headcount of students eligible for at least one course offered through CPL"
    },
    {
     "key": "p2",
@@ -106,7 +106,7 @@ window.CPL_FUNDING = {
     "description": "Increase college access through CPL.",
     "share": 0.42,
     "target_rate": 0.06,
-    "metric": "Headcount with Eligible CPL Based on Statewide Credit Recommendations"
+    "metric": "Headcount of students with transcribed CPL credit for at least one course."
    },
    {
     "key": "p3",
@@ -114,7 +114,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC CPL capacity, visibility, documentability, interoperability, mobility.",
     "share": 0.28,
     "target_rate": 0.046666666,
-    "metric": "Headcount with Transcribed Credit from either CPL Portal or CPL Landing Page"
+    "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page"
    }
   ],
   "2": [
