@@ -1793,3 +1793,112 @@ Open with Sam: his rule for the **nine colleges with genuinely no feed row**. Th
 which is the honest reading of "posted nothing" — but he said he'd supply gap data before the
 advance rule goes live, so it's worth confirming he wants a bare $0 there rather than a
 "⏳ awaiting data" mark.
+
+---
+
+## 2026-07-31 — SkyQueue cont. 2: the FTES move, and two defects my own tests caught (#955–#962)
+
+Sam moved the model off headcount and onto FTES — twice over, in two different
+senses that are easy to conflate: the **allocation basis** (how big is a college)
+and the **performance metric** (what did it produce). Eight PRs. The engineering
+story is mostly about the three defects found along the way, two of them mine.
+
+### The allocation basis: I argued the wrong side, and measured my way out
+
+I opposed switching the basis to FTES, reasoning that CPL serves working adults
+who enrol part-time, so FTES-weighting would penalise the colleges doing the most
+CPL. Plausible, and **wrong**: `corr(load factor, CPL penetration) = 0.086`, and
+the switch moves **+$307K toward** the 15 highest-CPL colleges and **−$348K away
+from** the 15 lowest. It is mildly *pro*-CPL.
+
+What actually decided it was data quality, which neither of us had raised: credit
+FTES is uniform 2025-26, while headcount had **41 of 115 rows on 2022-23** and
+**33 of 115** outside any credible load band — 20 of those on *current* vintage,
+so definitional drift rather than staleness. Pasadena read 14,936 headcount
+against 23,347 credit FTES: every student carrying 47 units a year.
+
+Sam then supplied a fresh DataMart pull that **confirmed the diagnosis** —
+Pasadena 14,936 → 41,521, Santa Rosa 11,889 → 34,538, Santa Ana 19,310 → 77,076.
+The lesson worth keeping: *the new series validated the old one*. Bringing in a
+second measurement of the same institutions is how you discover the first one is
+broken, and that value is independent of which one you end up using.
+
+I also overstated the "33 implausible rows" figure and said so: it conflated real
+data errors (now fixed), a **noncredit-denominator artifact** (credit FTES over
+*total* headcount; `corr(noncredit share, load) = −0.383`, which explains Santa
+Ana and Santiago Canyon but not the rest), and genuine load variation.
+
+### Defect 1 (mine, shipped): cap and target rode different bases
+
+#959 moved the allocation to credit FTES and left every target on headcount. For
+the 72 of 115 colleges whose two shares differ, `cap ÷ target` stopped equalling
+the statewide per-student rate — spanning **0.49×** (Santa Ana) to **2.11×** (Las
+Positas). Santa Ana's cap was $46,887 against a 3,854-student target = **$12.16
+per student** while the hover asserted **"$27.69/student statewide base rate."**
+
+Two failures in one: a college asked to hit a target sized for a college of a
+different size, and a tooltip contradicted by its own two numbers.
+
+It survived because **no test asserted the invariant that ties them together**.
+There were tests for conservation, for the floor, for the basis switch — and none
+for `cap ÷ target == per_student`. The fix introduced `prioTarget(c, p)` (the
+target had been open-coded at five sites) and denominated the rate on the same
+basis as the cap. **Lesson: when two quantities must reconcile, the test that
+matters is the one asserting the relationship, not the two asserting each side.**
+
+That new test then surfaced a *pre-existing* defect: an unfloored college's real
+rate is ~10.4% **below** the statewide base, because the $150K floor top-ups are
+funded by renormalising the split over exactly those colleges. The hover claimed
+base rate regardless. Disclosed in the floor note, never reflected per cell.
+
+### Defect 2 (mine, caught pre-merge): the policy dial ran backwards
+
+The target multiplier was wired onto the **rate** — so `0.5` made the target twice
+as **hard**, the exact opposite of what I'd told Sam it meant. Caught because the
+test encoded the *intended meaning* ("halving the multiplier makes it easier")
+rather than the formula. A test that asserted `target == ent / (rate × mult)`
+would have passed happily and shipped the inversion. **Assert what a knob is FOR,
+not what it computes.**
+
+### The unknown I couldn't resolve — so I made the pipeline resolve it
+
+Summing units required knowing the source view's row grain, and the two available
+readings gave opposite answers with nothing in the repo to settle them. Rather
+than guess, the builder now measures its own assumption every run against MAP's
+published totals. First run: **ratio 1.0054 / 1.0002** — the conservative reducer
+is right, residual = the Test/Potential rows we exclude. Full pattern:
+[[docs/kb-notes/methodology-ship-the-oracle-with-the-assumption]].
+
+### What the live numbers actually say
+
+| | units | CPL FTES | at $5,649.63 |
+|---|---:|---:|---:|
+| Eligible | 1,354,527 | 45,151 | **$255,085,870** |
+| Transcribed | 103,139 | 3,438 | **$19,423,230** |
+
+I had earlier estimated eligible at ~6,100 FTES / $34M from the CER — **off by
+7×**, because the CER covers only articulated exhibits. 43,203 students average
+**31.4 eligible units** each, which is what a complete JST looks like.
+
+Two consequences. For the SCFF argument: transcribed CPL is already worth ~$19.4M/yr
+in apportionment terms against a ~$11.6M/yr pool, so the state is *already* paying
+roughly apportionment rates — out of one-time money. And $255M of identified
+CPL sits untranscribed. For the model: **the three priorities are calibrated
+wildly differently by one rate.** P1 (eligible) is 22× over target and saturates
+instantly — it incentivises nothing; P2 (transcribed) at 1.7× actually
+discriminates; P3 (portal) is ~zero. Eligible units measure what is *possible*,
+not what a college *did*.
+
+### State
+
+- Tests: `cpl_funding` 539 · `basis` 35 · `cpl_ftes` 24 · `frontload` 40 ·
+  `metric_wiring` 26 · `gate_ledger_public` 53 (split out of the main file, which
+  had 70 JSDOM instances and OOM'd) · `performance` 24. Suite **180 files green**.
+- Real Chromium desktop + phone, 0 page errors.
+
+### Next concrete step
+
+Sam's call on P1: eligible-units saturates at any sane multiplier, so either it
+needs a different metric or the priorities need per-priority multipliers. Then
+the **Budget consolidation** — single-source `one_time_2026_27` off the ledger,
+still open and still the fix for the drift class that cost a day this week.

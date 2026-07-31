@@ -569,6 +569,34 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyQueue cont. 2 — Implementation Funding: the FTES move, and two defects my own tests caught (2026-07-31, #958–#962 MERGED)
+
+Sam moved the model **off headcount onto FTES — twice, in two senses the code now keeps rigidly apart**:
+**enrolment** credit FTES (`sizeOf`/`totalSize`, the ALLOCATION basis, 1,069,182 statewide) vs **CPL FTES**
+(prior learning awarded, a PERFORMANCE quantity, 10³–10⁴). ~500× apart; never a bare `ftes` for the second.
+**#959** switched the basis — I argued AGAINST it (working adults enrol part-time → FTES would penalise
+CPL-heavy colleges) and **measurement killed my objection**: corr 0.086, and the switch moves **+$307K TO**
+the top-15 CPL colleges. What decided it was DATA QUALITY (headcount: 41/115 rows on 2022-23, 33/115
+implausible — Pasadena read 14,936 against 23,347 credit FTES). Sam's fresh DataMart pull then **confirmed
+the diagnosis** (Pasadena → 41,521). **#960 — a defect I shipped in #959:** the cap moved to FTES and the
+target stayed on headcount, so `cap ÷ target` diverged 0.49×–2.11× for **72 of 115** colleges and a hover
+asserted a base rate its own two numbers contradicted. It survived because **no test asserted the
+RELATIONSHIP** — only each side. New `prioTarget()` seam (target had been open-coded at 5 sites).
+**#961** builder unit sums + FTES-aware `MEASURES` with **unit-mismatch** detection (Sam's 3 live strings
+had resolved to student COUNTS and a full advance; "measurable" was the only test). **#962** targets in
+**CPL FTES** = pre-floor entitlement ÷ $5,649.63 × multiplier; TLM as a per-calendar parameter (525/17.5=30
+semester, 525/11.67=45 quarter — same 900 units read 30.0 vs 20.0 FTES); factors box stores BASES, derives
+quotients. **Second self-caught defect:** the multiplier was wired onto the RATE, inverting it — caught
+because the test asserted what the knob is FOR, not what it computes. **The unknown I couldn't resolve
+(source row grain) is now measured by the pipeline every run** — first run ratio **1.0054/1.0002**, the
+conservative reducer is right. Tests 539·35·24·40·26·53·24; suite **180 green**; Chromium clean.
+**Live: eligible 1,354,527 units = 45,151 CPL FTES = $255.1M; transcribed 103,139 = 3,438 FTES = $19.4M**
+against a ~$11.6M/yr pool (an earlier CER estimate was **7× low**). ⚠ **Open for Sam: P1 (eligible)
+saturates at 22× target and incentivises nothing** — one rate can't calibrate all three priorities.
+Durable: `methodology-ship-the-oracle-with-the-assumption`. Story: `docs/cpl_funding_lessons.md` · handoff
+`docs/cpl_funding_handoff.md`. Still open: the Budget consolidation. Side-lane — left `cpl_todos.json` +
+the numbered handoff to the CCR mainline.
+
 ### SkyQueue cont. — Implementation Funding: front-load earns the window, and the mask comes off (2026-07-31, #955/#956/#957 MERGED)
 
 Three merges, one story. **#955** — the baked priority metrics had gone stale (the Excel workbook +
