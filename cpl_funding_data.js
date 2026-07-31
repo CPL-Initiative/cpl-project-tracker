@@ -77,7 +77,9 @@ window.CPL_FUNDING = {
   "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (guaranteed — floor-fill + bonus)",
   "floor_window": 150000.0,
   "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
-  "ccc_headcount": 2258784
+  "ccc_headcount": 2258784,
+  "ftes_rate_2026_27": 5649.63,
+  "ftes_rate_label": "2026-27 credit FTES reimbursement rate (SCFF base)"
  },
  "year_options": [
   "2026-27",
@@ -1348,7 +1350,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.011782252,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
-   "credit_ftes": 16628.07
+   "credit_ftes": 16628.07,
+   "quarter": true
   },
   {
    "order": 33,
@@ -1372,7 +1375,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010145034,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11018.64
+   "credit_ftes": 11018.64,
+   "quarter": true
   },
   {
    "order": 39,
@@ -1605,5 +1609,12 @@ window.CPL_FUNDING = {
   "selection": "Annual 2025-2026, by college"
  },
  "allocation_basis": "ftes",
- "ftes_vintage": "2025-26"
+ "ftes_vintage": "2025-26",
+ "ftes_factors": {
+  "contact_hours_per_ftes": 525,
+  "contact_hours_per_unit_semester": 17.5,
+  "contact_hours_per_unit_quarter": 11.67,
+  "note": "units per FTES is DERIVED: 525/17.5 = 30 semester units, 525/11.67 = 45 quarter units. Do not store the quotient."
+ },
+ "target_multiplier": 1.0
 };

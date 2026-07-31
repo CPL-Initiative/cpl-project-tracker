@@ -116,6 +116,12 @@
     ".cplfund-basis-lbl { font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; color: var(--text-muted); font-weight: 700; }",
     ".cplfund-basis-note { font-size: .8rem; flex: 1 1 320px; }",
     ".cplfund-basis-note code, .cplfund-earned-line code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; white-space: nowrap; }",
+    ".cplfund-ftesfactors { display: grid; gap: 2px; font-size: .8rem; }",
+    ".cplfund-ftesrow { display: grid; grid-template-columns: minmax(180px,auto) minmax(90px,auto) 1fr;" +
+      " gap: 10px; align-items: baseline; padding: 3px 0; border-bottom: 1px dotted var(--border); }",
+    ".cplfund-ftesrow .v { font-weight: 700; color: var(--navy-primary); }",
+    ".cplfund-ftesrow.derived { background: var(--surface-subtle); }",
+    ".cplfund-ftesrow.derived .v { color: var(--text-muted); }",
     ".cplfund-earned-line { border-top: 1px dotted var(--border-strong); padding-top: 5px; margin-top: 2px; }",
     // The front-load line — the whole window on the table in Year 1, against an
     // unchanged per-year target. Tinted so it reads as a policy call-out.
@@ -884,12 +890,84 @@
   //
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
-    return (c ? sizeOf(c) : totalSize()) * p.target_rate;
+    if (prioIsFtes(p)) {
+      var r = ftesRate();
+      // entitlement ÷ rate, then scaled by the policy multiplier.
+      return r > 0 ? (prioEntitlement(c, p) / r) * targetMultiplier() : 0;   // target in CPL FTES
+    }
+    return (c ? sizeOf(c) : totalSize()) * p.target_rate;   // target in students
   }
+  // What a target is counted in — drives every label and the actual's conversion.
+  function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
+  // ── CPL FTES ──────────────────────────────────────────────────────────
+  // NOTE ON NAMING. Two quantities in this tab are called FTES and they differ by
+  // ~500x. `credit_ftes` / sizeOf / totalSize are the college's ENROLMENT FTES
+  // (1,069,182 statewide) and are the ALLOCATION BASIS. What follows is CPL FTES
+  // — prior-learning units awarded, converted at the college's own calendar —
+  // and is a PERFORMANCE quantity, order 10^3-10^4. Everything here is named
+  // cplFtes*; nothing may use a bare `ftes` for it.
+  function ftesFactors() { return base().ftes_factors || {}; }
+  function contactHoursPerFtes() { return Number(ftesFactors().contact_hours_per_ftes) || 525; }
+  // Term-length multiplier is per CALENDAR, Sam's ruling (2026-07-31): 17.5 for
+  // everyone except the quarter-system colleges, which use 11.67. There is no
+  // separate conversion factor — the same formula with the right TLM produces
+  // 30 semester units or 45 quarter units per FTES.
+  function contactHoursPerUnit(c) {
+    var f = ftesFactors();
+    return Number(c && c.quarter ? f.contact_hours_per_unit_quarter : f.contact_hours_per_unit_semester)
+      || (c && c.quarter ? 11.67 : 17.5);
+  }
+  // DERIVED, never stored: 525/17.5 = 30, 525/11.67 = 45.
+  function unitsPerCplFtes(c) {
+    var chu = contactHoursPerUnit(c);
+    return chu > 0 ? contactHoursPerFtes() / chu : 30;
+  }
+  function unitsToCplFtes(c, units) {
+    var d = unitsPerCplFtes(c);
+    return d > 0 ? (Number(units) || 0) / d : 0;
+  }
+  // The 2026-27 SCFF credit rate x the policy multiplier. This is the price a
+  // target is denominated in: "produce the CPL FTES your allocation would have
+  // bought at the state rate". The multiplier is the ONLY policy dial.
+  function ftesRate() {
+    return Number(firstDefined(SCENARIO.ftesRate, SHARED.ftesRate, poolField("ftes_rate_2026_27"))) || 0;
+  }
+  function targetMultiplier() {
+    var v = firstDefined(SCENARIO.targetMultiplier, SHARED.targetMultiplier, base().target_multiplier);
+    return v == null ? 1 : Number(v);
+  }
+  // The multiplier scales the TARGET (its name), not the rate: >1 means a college
+  // must BEAT apportionment value to earn out, <1 makes it easier. Putting it on
+  // the rate inverted that — 0.5 made the target twice as hard.
+  // What a college is effectively paid per CPL FTES is therefore rate ÷ multiplier;
+  // at par (1.0) both reduce to the plain rate.
+  function effectiveFtesRate() {
+    var m = targetMultiplier();
+    return m > 0 ? ftesRate() / m : ftesRate();
+  }
+  function setFtesRate(v) { activeOverride().ftesRate = Math.max(0, Number(v) || 0); persistActive(); }
+  function setTargetMultiplier(v) { activeOverride().targetMultiplier = Math.max(0, Number(v) || 0); persistActive(); }
+  // Is this priority scored in CPL FTES rather than students?
+  function prioIsFtes(p) { return measurability(p.metric).unit === "units"; }
+  // The PRE-FLOOR, PRE-RURAL proportional per-year entitlement behind one
+  // priority. The target must ride THIS, never the topped-up cap: the floor
+  // raises a college's funding, not its targets, the guaranteed rural allowance
+  // is not performance-earned, and prioCap() would double under front-load —
+  // which would cancel the front-load incentive exactly.
+  function prioEntitlement(c, p) {
+    return (c ? sizePct(c) : 1) * netCollege() * p.share / nYears();
+  }
+
   // The target's reach as a share of actual STUDENTS. `target_rate` denominates
   // on the allocation basis (credit FTES), so it is no longer a headcount
   // percentage and must not be rendered as one — compute the human-meaningful
   // "how deep into the student body does this reach" figure explicitly.
+  function fmtNum2(v) {
+    return (Number(v) || 0).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
+  function fmtNum1(v) {
+    return (Number(v) || 0).toLocaleString("en-US", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  }
   function reachPct(c, target) {
     var heads = c ? (c.headcount || 0) : totalHeads();
     return heads > 0 ? target / heads : 0;
@@ -2221,6 +2299,50 @@
       'title="Add a timing item">＋ Add item</button></div>';
   }
 
+  // ── FTES factors + the reimbursement rate ─────────────────────────────
+  // Two editable CONTACT-HOUR bases; units-per-FTES is derived and read-only,
+  // because three numbers for one fact is two ways to drift. The contact-hour
+  // layer is kept (rather than just storing "30 units = 1 FTES") because the
+  // eventual SCFF/apportionment argument is made in 525 contact hours — Sam:
+  // "this also sets us up when we change regulations later to allow CPL to
+  // claim apportionment as part of the SCFF."
+  function ftesFactorsHtml() {
+    if (!priorities(state.viewSlot).some(prioIsFtes)) return "";   // no FTES metric in play
+    var f = ftesFactors();
+    var sem = Number(f.contact_hours_per_unit_semester) || 17.5;
+    var qtr = Number(f.contact_hours_per_unit_quarter) || 11.67;
+    var ch = contactHoursPerFtes();
+    var nQ = base().colleges.filter(function (c) { return c.quarter; }).length;
+    var mult = targetMultiplier();
+    var row = function (lbl, val, note, derived) {
+      return '<div class="cplfund-ftesrow' + (derived ? " derived" : "") + '">' +
+        '<span class="l">' + lbl + "</span><span class=\"v\">" + val + "</span>" +
+        '<span class="dk n">' + note + "</span></div>";
+    };
+    return section("ftes-factors", "FTES factors",
+      '<div class="cplfund-ftesfactors">' +
+      row("Contact hours per FTES", fmtInt(ch), "Title 5 definition") +
+      row("Contact hours per unit &mdash; semester", fmtNum2(sem), "1 hr/wk &times; 17.5 TLM") +
+      row("Contact hours per unit &mdash; quarter", fmtNum2(qtr),
+          nQ + " college" + (nQ === 1 ? "" : "s") + " on a quarter calendar") +
+      row("&rarr; Units per FTES", fmtNum1(ch / sem) + " semester &middot; " + fmtNum1(ch / qtr) + " quarter",
+          "derived &mdash; " + fmtInt(ch) + " &divide; the term-length multiplier", true) +
+      row("Reimbursement rate", fmtRate(ftesRate()) + "/FTES",
+          esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate")) +
+      row("Target multiplier", fmtNum1(mult) + "&times;",
+          mult === 1 ? "par &mdash; a college earns its allocation by producing the CPL FTES it would have bought at the state rate"
+            : (mult > 1 ? "above par &mdash; a college must BEAT apportionment value to earn out"
+                        : "below par &mdash; easier than apportionment value")) +
+      row("&rarr; Effective rate", fmtRate(effectiveFtesRate()) + "/FTES",
+          "derived &mdash; what a college is actually paid per CPL FTES at this multiplier", true) +
+      "</div>" +
+      '<p class="dk" style="font-size:.8rem;margin:6px 0 0;">A quarter unit is worth ' +
+      fmtPctTrim(qtr / sem) + " of a semester unit, so " + fmtNum1(ch / qtr) +
+      " quarter units make one FTES against " + fmtNum1(ch / sem) +
+      " semester ones. There is no separate conversion &mdash; the same formula with the college&#39;s own " +
+      "term-length multiplier produces both.</p>");
+  }
+
   // ── priority cards (for the active view year) ─────────────────────────
   function prioritiesHtml() {
     var slot = state.viewSlot;
@@ -2379,6 +2501,15 @@
     var rec = c ? perfFor(c.college) : pf.statewide;
     var target = prioTarget(c, p);
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
+    // A UNIT measure returns raw units; the target is in CPL FTES. Convert at the
+    // COLLEGE's own calendar (quarter colleges: 45 units per FTES, not 30) — a
+    // flat divisor would read a quarter college 1.5x high and clear a target it
+    // has not met. Statewide uses the semester default; the two quarter colleges
+    // are ~2% of enrolment so the statewide figure is unaffected at display
+    // precision.
+    var toActual = function (v) {
+      return meas.unit === "units" ? unitsToCplFtes(c ? baseCollege(c.college) || c : null, v) : v;
+    };
     if (!rec || rec[meas.src] == null) {
       // Feed published, no value for this college: it has posted nothing → $0
       // earned (this is the incentive). A privacy suppression (<5) is flagged
@@ -2386,7 +2517,9 @@
       var supp = rec && rec[meas.src + "_suppressed"];
       return { f: 0, status: supp ? "suppressed" : "none", target: target, meas: meas };
     }
-    return { f: Math.min(1, rec[meas.src] / target), status: "earned", actual: rec[meas.src], target: target, meas: meas };
+    var actual = toActual(rec[meas.src]);
+    return { f: Math.min(1, actual / target), status: "earned", actual: actual,
+      raw: rec[meas.src], target: target, meas: meas };
   }
   // Aggregate the earned picture once per render: per-priority (viewed year)
   // statewide cap+earned for the priority cards, and the window cap+earned totals
@@ -2590,6 +2723,7 @@
   // per-student amount difference"). Counts + % are normal weight; the real
   // DOLLARS (cap + earned) are bold. c = shaped college row; isSystem = totals.
   function prioCellHtml(c, p, isSystem) {
+    var isFtes = prioIsFtes(p);
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = prioTarget(isSystem ? null : c, p);
     var cap = isSystem ? prioCap(netCollegeWithRural(), state.viewSlot, p) : (c[p.key] || 0);
@@ -2619,11 +2753,11 @@
     // Actual line — a shared "% of target" yardstick, real earned dollars bold.
     var actLine;
     if (fr.status === "earned") {
-      actLine = '<span class="cf-lbl">Now</span> ' + fmtCountK(fr.actual) + " stu &middot; " +
+      actLine = '<span class="cf-lbl">Now</span> ' + fmtCountK(fr.actual) + " " + (isFtes ? "FTES" : "stu") + " &middot; " +
         '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
         (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
     } else if (fr.status === "none") {
-      actLine = '<span class="cf-lbl">Now</span> 0 stu &middot; <span class="cf-u">' + fmtMoneyK(0) +
+      actLine = '<span class="cf-lbl">Now</span> 0 ' + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-u">' + fmtMoneyK(0) +
         '</span> &middot; <span class="cf-pct">0%</span>';
     } else if (fr.status === "suppressed") {
       actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">&lt;5</span> &middot; <span class="cf-u">' +
@@ -2632,7 +2766,12 @@
       actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
         (fr.status === "gap" ? "gap" : "&hellip;") + '</span> &middot; <span class="cf-u">' + fmtMoneyK(earned) + "</span>";
     }
-    var actExplain = fr.status === "earned" ? fmtInt(fr.actual) + " students posted (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
+    var actExplain = fr.status === "earned"
+      ? (isFtes
+          ? fmtNum1(fr.actual) + " CPL FTES posted (" + fmtInt(fr.raw) + " units \u00f7 " +
+            fmtNum1(unitsPerCplFtes(c && baseCollege(c.college))) + " units/FTES" +
+            (c && baseCollege(c.college) && baseCollege(c.college).quarter ? ", quarter calendar" : "") + ")"
+          : fmtInt(fr.actual) + " students posted") + " (" + fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)"
       : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
@@ -2690,11 +2829,14 @@
           "/student statewide base because the proportional split is renormalised over the colleges above the " +
           fmtMoney(floorWindow()) + " floor to fund the ones topped up to it."
         : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
-    var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" +
-      fmtPctTrim(reachPct(isSystem ? null : c, target)) + " of its headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
+    var title = p.label + " — " + p.title + ". Target " +
+      (isFtes ? fmtNum1(target) + " CPL FTES (" + fmtInt(target * unitsPerCplFtes(c && baseCollege(c.college))) +
+                " units — its allocation \u00f7 " + fmtRate(effectiveFtesRate()) + "/FTES)"
+              : fmtInt(target) + " students (" + fmtPctTrim(reachPct(isSystem ? null : c, target)) +
+                " of its headcount)") + ". " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
       '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtCountK(target) +
-      '</span> stu &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
+      "</span> " + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
       '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
   }
@@ -4388,7 +4530,8 @@
       section("pools", "Funding pools", ledgerNoteHtml() + poolCardsHtml() + awardStatsHtml()) +
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
       section("priorities", "The three funding priorities",
-        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() + timingSectionHtml()) +
+        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() +
+        ftesFactorsHtml() + timingSectionHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
       collapseH3("feeder", feederSectionHtml()) +
