@@ -9,7 +9,73 @@ related:
 
 # You are the next Implementation-Funding session
 
-## 🔭 START HERE — where things stand (2026-07-31, SkyQueue cont.)
+## 🔭 START HERE — where things stand (2026-07-31 evening, SkyQueue cont. 2)
+
+The model moved **off headcount and onto FTES**, in two distinct senses that are
+easy to conflate and that the code now keeps rigidly apart:
+
+| | quantity | role | order of magnitude |
+|---|---|---|---|
+| **Enrolment FTES** | `credit_ftes`, `sizeOf`, `totalSize` | ALLOCATION basis — how big is the college | 1,069,182 statewide |
+| **CPL FTES** | `unitsToCplFtes`, `prioTarget` | PERFORMANCE — prior learning awarded | 10³–10⁴ |
+
+They differ ~500×. Never write a bare `ftes` for the second one.
+
+| PR | What |
+|---|---|
+| #959 | Allocation basis → **credit FTES** + fresh 2025-26 headcount (90 rows corrected) |
+| #960 | **Defect fix:** cap and target had been riding different bases. `prioTarget()` seam |
+| #961 | Builder emits **unit sums**; FTES-aware `MEASURES` with unit-mismatch detection |
+| #962 | **Targets in CPL FTES** at $5,649.63 × multiplier; TLM 17.5 / 11.67; factors box |
+
+### ⚠️ The open product question — ask Sam first
+
+**P1 (eligible units) saturates and incentivises nothing.** Live: 45,151 CPL FTES
+against a ~2,057/yr target = **22× over**. Every college maxes P1 instantly. P2
+(transcribed, 3,438 FTES) at 1.7× actually discriminates; P3 (portal) is ~zero.
+One rate cannot calibrate all three. Eligible units measure what is *possible*,
+not what a college *did*. Options: change P1's metric, or add per-priority
+multipliers. Do not just turn the global multiplier up — that would break P2.
+
+### Invariants established — do not break these
+
+- **`prioTarget(c, p)` is the ONLY place a target is computed** (was five sites).
+  `cap ÷ target == per_student` for every unfloored non-rural college, on either
+  basis. Test-locked; its absence is why #959's defect shipped.
+- **`prioEntitlement` is the target's basis** — pre-floor, pre-rural, per-year.
+  It has the ONE named exemption from the no-inline-scope guard, because routing
+  it through `prioCap` would double it under front-load, cancel the ratio, and
+  silently delete the front-load incentive.
+- **The floor raises funding, not targets.** A floored college's cap rises to
+  $150K; its target stays on its pre-floor share.
+- **TLM is a per-calendar parameter**, not a special case: 525/17.5 = 30 semester
+  units per FTES, 525/11.67 = 45 quarter. `quarter: true` on Foothill + De Anza.
+  Verified: the same 900 units read 30.0 FTES semester, 20.0 quarter.
+- **Store bases, derive quotients.** Units-per-FTES is computed and asserted
+  absent from the data file.
+- **The multiplier scales the TARGET** (>1 harder, <1 easier). It was briefly on
+  the rate, which inverted it.
+- **The builder measures its own grain assumption every run** (`unit_crosscheck`).
+  First run: ratio 1.0054 / 1.0002 → the conservative reducer is correct.
+
+### Live numbers as of 2026-07-31
+
+Eligible **1,354,527 units = 45,151 CPL FTES = $255.1M** at the credit rate.
+Transcribed **103,139 units = 3,438 FTES = $19.4M** against a ~$11.6M/yr pool —
+i.e. the state already pays ≈apportionment rates for CPL, out of one-time money.
+That pairing is the SCFF argument, now measured rather than estimated.
+(An earlier CER-based estimate of ~$34M eligible was **7× low** — the CER covers
+only articulated exhibits.)
+
+### ⏭️ Then: the Budget consolidation
+
+Still open, still the fix for the drift class that cost a day this week:
+single-source `one_time_2026_27` off the ledger instead of `cpl_funding_data.js`
+holding its own copy.
+
+---
+
+## Previous — where things stood (2026-07-31 midday, SkyQueue cont.)
 
 Three merges landed in one run and they are **one story**: a stale default caused a
 debugging round, removing it exposed a months-old join bug, and fixing that closed the loop.
