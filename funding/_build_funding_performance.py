@@ -140,6 +140,57 @@ def _load_input(argv):
     return None, path
 
 
+CREDIT_DIST_VIEW = "View_CreditDistributionByCollege_APIDataset"
+
+
+def _load_credit_distribution(path, resolve):
+    """MAP's OWN per-college credit totals, used purely as a CROSS-CHECK.
+
+    We sum units from the per-student view so the population matches the counts
+    exactly (Test/Potential excluded) and so portal-origin units — which only
+    exist at the student grain — come from the same place as the other two.
+    But that sum rests on an assumption about the view's row grain, so compare
+    it against MAP's published totals and REPORT the gap rather than assume.
+
+    The two are not expected to match exactly: this view carries no Test /
+    Potential flags, so it is a slightly wider population. A small positive gap
+    is the expected shape; a ~2x gap would mean our per-student rows are
+    partitions and the first-seen reducer is dropping units.
+    """
+    if not path or not os.path.exists(path):
+        return None
+    try:
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+    except (OSError, ValueError):
+        return None
+    for report in data if isinstance(data, list) else []:
+        if report.get("viewName") != CREDIT_DIST_VIEW or not report.get("columnValue"):
+            continue
+        cm = {c: i for i, c in enumerate(report.get("columnName", []))}
+        i_col, i_e, i_t = cm.get("College"), cm.get("Eligible Credits"), cm.get("Transcribed Credits")
+        if i_col is None or i_e is None or i_t is None:
+            return None
+        out = {}
+        for row in report["columnValue"]:
+            name = (row[i_col] or "").strip()
+            if not name or name in TEST_COLLEGES:
+                continue
+            target = resolve(name)
+            if not target:
+                continue
+            try:
+                e = float(row[i_e] or 0)
+                t = float(row[i_t] or 0)
+            except (TypeError, ValueError):
+                continue
+            rec = out.setdefault(target, {"pe_u": 0.0, "p3_u": 0.0})
+            rec["pe_u"] += e
+            rec["p3_u"] += t
+        return out or None
+    return None
+
+
 def _name_resolver():
     """MAP college name -> funding-workbook college name (or None)."""
     with open(SHORT_NAMES, encoding="utf-8") as f:
@@ -278,6 +329,26 @@ def main():
     counts = {}                                 # funding-name -> {pe,p2,p3,pp}
     unmatched = {}
     state = {m: 0 for m in metrics}
+    # ── UNIT sums (2026-07-31) ───────────────────────────────────────────
+    # The FTES priority metrics need UNITS, not student counts. The unit value
+    # rides the SAME first-seen-per-(college,sid) guard as its count, so a unit
+    # sum and its student count always describe exactly the same set of students
+    # — which is what makes "units per student" meaningful and lets one
+    # suppression decision cover both.
+    #
+    # Grain caveat: the source view requests dimensional columns (Catalog Year,
+    # CPL Mode of Learning, CPL Type Description) alongside the student id, so a
+    # student MAY have several rows. Taking the FIRST row per (college, sid)
+    # matches the existing count semantics exactly and can only ever UNDER-count;
+    # a naive sum would silently DOUBLE-count if the rows are redundant repeats
+    # (which is what the test fixture assumes). MAP's own per-college totals are
+    # read below as an independent cross-check so the real grain is measured
+    # rather than assumed.
+    UNIT_METRICS = ("pe", "p3", "pp")
+    unit_of = {"pe": "ecr", "p3": "tcr", "pp": "tcr"}
+    units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
+    unmatched_units = {}
+    state_units = {m: 0.0 for m in UNIT_METRICS}
     feeder_counts = {}                          # feeder-short -> {pe}  (F1 eligible headcount)
     feeder_seen = set()                         # per-(feeder,sid) dedupe
     rowno = 0
@@ -321,8 +392,10 @@ def main():
                         feeder_counts.setdefault(fshort, {"pe": 0})["pe"] += 1
                 continue
         bucket = counts if fname else unmatched
+        ubucket = units if fname else unmatched_units
         key = fname or college
         rec = bucket.setdefault(key, {m: 0 for m in metrics})
+        urec = ubucket.setdefault(key, {m + "_u": 0.0 for m in UNIT_METRICS})
         for metric, hit in (("pe", ecr > 0 and not is_potential),
                             ("p3", tcr > 0 and not is_potential),
                             ("p2", tcr >= P2_MIN_UNITS and not is_potential),
@@ -333,6 +406,19 @@ def main():
             if k not in seen[metric]:
                 seen[metric].add(k)
                 rec[metric] += 1
+                # Units ride the SAME guard as the count — same students, so the
+                # two are always describing the same set.
+                if metric in UNIT_METRICS:
+                    val = ecr if unit_of[metric] == "ecr" else tcr
+                    urec[metric + "_u"] += val
+                    # STATEWIDE units are a plain SUM of the per-college sums, NOT
+                    # sid-deduped like the counts: units are awarded per college, so
+                    # a student with CPL at two colleges legitimately contributes
+                    # both. (Measured on the live feed: cross-college overlap is
+                    # ~12 students in 43,000, so the two readings barely differ --
+                    # but summing is the semantically correct one.)
+                    state_units[metric] += val
+            # Statewide COUNTS keep their own cross-college dedupe by student id.
             sk = sid if sid else f"row{rowno}"
             if sk not in state_seen[metric]:
                 state_seen[metric].add(sk)
@@ -345,17 +431,31 @@ def main():
     # students — adr-funding-priority-metrics-privacy.md).
     NO_SUPPRESS = {"pp"}
 
-    def suppress(bucket):
+    def suppress(bucket, ubucket=None):
         outb = {}
         for name, rec in sorted(bucket.items()):
             o = {}
+            urec = (ubucket or {}).get(name, {})
             for metric in metrics:
                 n = rec.get(metric, 0)
-                if metric not in NO_SUPPRESS and 0 < n < SUPPRESS_BELOW:
+                hide = metric not in NO_SUPPRESS and 0 < n < SUPPRESS_BELOW
+                if hide:
                     o[metric] = None
                     o[metric + "_suppressed"] = True
                 else:
                     o[metric] = n
+                # A unit sum is suppressed by its STUDENT COUNT, never by its own
+                # magnitude: privacy is about how many people a cell describes,
+                # and 40 units held by 2 students is exactly the cell the <5 rule
+                # exists to hide. Keying off the units would both leak that cell
+                # and needlessly hide a large-cohort one.
+                uk = metric + "_u"
+                if uk in urec:
+                    if hide:
+                        o[uk] = None
+                        o[uk + "_suppressed"] = True
+                    else:
+                        o[uk] = round(urec[uk], 2)
             outb[name] = o
         return outb
 
@@ -376,15 +476,46 @@ def main():
                   "P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, "
                   "PE = any eligible CPL units identified, "
                   "PP = portal-origin (Potential Student = Yes) with any transcribed CPL "
-                  "(the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)"),
+                  "(the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). "
+                  "*_u keys are UNIT sums over exactly the same students as their count "
+                  "(first row per college+student, matching the count dedupe); statewide "
+                  "unit sums are the plain sum of the per-college sums, NOT sid-deduped, "
+                  "because units are awarded per college"),
         "suppress_below": SUPPRESS_BELOW,
-        "statewide": state,
-        "colleges": suppress(counts),
-        "unmatched": suppress(unmatched),
+        "statewide": dict(state, **{m + "_u": round(state_units[m], 2) for m in UNIT_METRICS}),
+        "colleges": suppress(counts, units),
+        "unmatched": suppress(unmatched, unmatched_units),
         # F1 (noncredit feeder eligible headcount) — per-feeder short -> {pe}.
         # Empty until the feeders attach exhibits to their NC records in MAP.
         "feeders": suppress_feeders(feeder_counts),
     }
+    # Cross-check our per-student unit sums against MAP's OWN published per-college
+    # totals. Reported, never used to overwrite: a gap is information about the
+    # source view's grain, and silently "correcting" to it would mix populations
+    # (that view has no Test/Potential filter).
+    xcheck = _load_credit_distribution(src, resolve)
+    if xcheck:
+        ours = {"pe_u": sum(u["pe_u"] for u in units.values()),
+                "p3_u": sum(u["p3_u"] for u in units.values())}
+        theirs = {k: sum(v[k] for v in xcheck.values()) for k in ("pe_u", "p3_u")}
+        payload["unit_crosscheck"] = {
+            "source": CREDIT_DIST_VIEW,
+            "note": ("MAP's own per-college totals, which include Test/Potential rows we "
+                     "exclude — so a small positive gap is expected. A ratio near 2.0 would "
+                     "mean our per-student rows are partitions, not repeats, and the "
+                     "first-seen reducer is dropping units."),
+            "ours": {k: round(v, 2) for k, v in ours.items()},
+            "map": {k: round(v, 2) for k, v in theirs.items()},
+            "ratio": {k: (round(theirs[k] / ours[k], 4) if ours[k] else None) for k in ours},
+        }
+        print("funding-performance: unit cross-check vs " + CREDIT_DIST_VIEW + " — "
+              + ", ".join("%s ours=%s map=%s ratio=%s" % (
+                  k, f"{ours[k]:,.0f}", f"{theirs[k]:,.0f}",
+                  (f"{theirs[k]/ours[k]:.3f}" if ours[k] else "n/a")) for k in ("pe_u", "p3_u")))
+    else:
+        print("funding-performance: unit cross-check unavailable ("
+              + CREDIT_DIST_VIEW + " not in the pull) — unit sums unverified this run.")
+
     # Veteran Star (>=75% of enrolled veterans' JSTs uploaded) — the auto-computed
     # eligibility qualifier for the funding tab's Elig glyph (Sam, 2026-07-27).
     vet = read_veteran_stars(resolve)
@@ -407,7 +538,9 @@ def main():
           f"({sup} suppressed cells), {len(payload['unmatched'])} unmatched, "
           f"{len(payload['feeders'])} feeders (F1 eligible), "
           f"statewide pe={state['pe']:,} p2={state['p2']:,} p3={state['p3']:,} "
-          f"pp={state['pp']:,}, as_of {payload['as_of']}")
+          f"pp={state['pp']:,} | units pe_u={state_units['pe']:,.0f} "
+          f"p3_u={state_units['p3']:,.0f} pp_u={state_units['pp']:,.0f}, "
+          f"as_of {payload['as_of']}")
 
 
 if __name__ == "__main__":

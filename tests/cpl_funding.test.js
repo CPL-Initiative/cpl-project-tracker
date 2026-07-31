@@ -1684,7 +1684,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
-  } } });
+    },
+    "2": {
+      // Pin Year 2 to NAMED GAPS. Inheriting the bake made these tests
+      // hostage to it: Y2 P1 "Units of Transcribed CPL" flipped from a gap
+      // to a real unit measure on 2026-07-31 and silently changed the
+      // earned totals these assertions are about.
+      "0": { metric: "Headcount with CPL Matched in MAP and MIS" },
+      "1": { metric: "Headcount with Completion and 3+ Transcribed CPL Units" },
+      "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+    }
+  } });
   T.render();
 
   // The Potential⇄Earned basis TOGGLE was RETIRED 2026-07-30 (Sam): both numbers
@@ -1752,7 +1762,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
-  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+    },
+    "2": {
+      // Pin Year 2 to NAMED GAPS. Inheriting the bake made these tests
+      // hostage to it: Y2 P1 "Units of Transcribed CPL" flipped from a gap
+      // to a real unit measure on 2026-07-31 and silently changed the
+      // earned totals these assertions are about.
+      "0": { metric: "Headcount with CPL Matched in MAP and MIS" },
+      "1": { metric: "Headcount with Completion and 3+ Transcribed CPL Units" },
+      "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+    }
+  } });
   T.render();
   const la = T._alloc("Laney");
   check("E: overachiever is capped at 100% of its cap (earned == cap)", Math.abs(la.earned_total - la.total) < 1);
@@ -1781,7 +1801,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
-  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+    },
+    "2": {
+      // Pin Year 2 to NAMED GAPS. Inheriting the bake made these tests
+      // hostage to it: Y2 P1 "Units of Transcribed CPL" flipped from a gap
+      // to a real unit measure on 2026-07-31 and silently changed the
+      // earned totals these assertions are about.
+      "0": { metric: "Headcount with CPL Matched in MAP and MIS" },
+      "1": { metric: "Headcount with Completion and 3+ Transcribed CPL Units" },
+      "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+    }
+  } });
   T.render();
   const yu = T._alloc("Yuba");
   check("E: suppressed college earns $0 on the measurable priority (= cap − P1)",
@@ -1856,7 +1886,17 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     "0": { metric: "Headcount of students with transcribed CPL credit for at least one course." },
     "1": { metric: "Headcount with Eligible CPL Based on Statewide Credit Recommendations" },
     "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
-  } } });   // pin: only P1 measurable (these fixtures supply p3 only)
+    },
+    "2": {
+      // Pin Year 2 to NAMED GAPS. Inheriting the bake made these tests
+      // hostage to it: Y2 P1 "Units of Transcribed CPL" flipped from a gap
+      // to a real unit measure on 2026-07-31 and silently changed the
+      // earned totals these assertions are about.
+      "0": { metric: "Headcount with CPL Matched in MAP and MIS" },
+      "1": { metric: "Headcount with Completion and 3+ Transcribed CPL Units" },
+      "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+    }
+  } });
   T.render();
   const laney = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
   const cells = laney.querySelectorAll("td.cf-prio");
