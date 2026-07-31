@@ -1,6 +1,6 @@
 {
   "_about": "Daily-cached snapshot of public.budget_funding + public.personnel. Written by kb/_load_budget.py after a successful Supabase fetch. Falls back to this file on a Supabase outage. Personnel is stored deduped. budget_expenditures intentionally omitted (held empty).",
-  "_fetched_at": "2026-07-30",
+  "_fetched_at": "2026-07-31",
   "_source_tables": [
     "public.budget_funding",
     "public.personnel"
@@ -323,7 +323,7 @@
       "yr_2029_30": 0,
       "total": 6600000,
       "avg_yearly": 0,
-      "description": "AI apprenticeship tooling, continuing the N2N project.",
+      "description": "Extends the AI Apprenticeship CPL contract with Santiago Canyon — the original was a single year (completed at $1,404,928 from the $6M plus $59,692 of the $15M); this adds another year and brings in additional colleges. Different scope, not the same dollars.",
       "archived": false,
       "parent_id": 13,
       "section": "pool",

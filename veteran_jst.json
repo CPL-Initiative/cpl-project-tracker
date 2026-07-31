@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-30T16:51:30.207067+00:00",
+  "scraped_at": "2026-07-31T02:26:23.450256+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26363,
+    "jst": 26400,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1166,
+      "jst": 1198,
       "star": true
     },
     "Norco College": {
@@ -132,7 +132,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 366,
+      "jst": 368,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -167,7 +167,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 501,
+      "jst": 504,
       "star": true
     },
     "San Joaquin Delta College": {

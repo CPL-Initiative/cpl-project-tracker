@@ -4,11 +4,11 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-30",
+ "as_of": "2026-07-31",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP)",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43084,
+  "pe": 43122,
   "p2": 4793,
   "p3": 16829,
   "pp": 5
@@ -44,6 +44,12 @@ window.CPL_FUNDING_PERF = {
    "p3": 50,
    "pp": 0
   },
+  "Barstow": {
+   "pe": 133,
+   "p2": 0,
+   "p3": 0,
+   "pp": 0
+  },
   "Berkeley City": {
    "pe": 16,
    "p2": 0,
@@ -69,7 +75,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Canyons": {
-   "pe": 499,
+   "pe": 502,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -148,7 +154,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Cuesta": {
-   "pe": 98,
+   "pe": 99,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -317,6 +323,12 @@ window.CPL_FUNDING_PERF = {
    "p3": 0,
    "pp": 0
   },
+  "Lassen": {
+   "pe": 140,
+   "p2": 0,
+   "p3": 0,
+   "pp": 0
+  },
   "Long Beach": {
    "pe": 806,
    "p2": 0,
@@ -325,6 +337,12 @@ window.CPL_FUNDING_PERF = {
   },
   "Los Medanos": {
    "pe": 221,
+   "p2": 0,
+   "p3": 0,
+   "pp": 0
+  },
+  "Madera": {
+   "pe": 43,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -509,7 +527,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "San Francisco": {
-   "pe": 1177,
+   "pe": 1209,
    "p2": 8,
    "p3": 15,
    "pp": 0
@@ -533,7 +551,7 @@ window.CPL_FUNDING_PERF = {
    "pp": 0
   },
   "Santa Ana": {
-   "pe": 446,
+   "pe": 448,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -593,6 +611,12 @@ window.CPL_FUNDING_PERF = {
    "p3": 0,
    "pp": 2
   },
+  "Southwestern": {
+   "pe": 571,
+   "p2": 0,
+   "p3": 0,
+   "pp": 0
+  },
   "Taft": {
    "pe": 11,
    "p2": 0,
@@ -644,20 +668,8 @@ window.CPL_FUNDING_PERF = {
   }
  },
  "unmatched": {
-  "Barstow Community College": {
-   "pe": 133,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
   "Calbright College Credit": {
    "pe": 117,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
-  "Lassen College": {
-   "pe": 140,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -669,21 +681,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0,
    "pp": 0
   },
-  "Madera College": {
-   "pe": 43,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
   "North Orange Continuing Education Credit": {
    "pe": null,
    "pe_suppressed": true,
-   "p2": 0,
-   "p3": 0,
-   "pp": 0
-  },
-  "Southwestern College": {
-   "pe": 571,
    "p2": 0,
    "p3": 0,
    "pp": 0
@@ -718,10 +718,12 @@ window.CPL_FUNDING_PERF = {
   "El Camino": true,
   "Coastline": true,
   "Mt San Antonio": true,
+  "Southwestern": true,
   "San Bernardino": false,
   "Desert": true,
   "Cypress": true,
   "Modesto": true,
+  "Barstow": true,
   "Santa Ana": true,
   "LA Valley": true,
   "Santa Rosa": true,
@@ -755,6 +757,7 @@ window.CPL_FUNDING_PERF = {
   "Solano": false,
   "Diablo Valley": true,
   "Reedley College": true,
+  "Lassen": true,
   "LA Harbor": true,
   "Irvine": false,
   "Saddleback": false,
@@ -774,6 +777,7 @@ window.CPL_FUNDING_PERF = {
   "Compton": false,
   "Redwoods": false,
   "Berkeley City": false,
+  "Madera": true,
   "Canada": false,
   "Alameda": false,
   "Merritt": false,
@@ -806,12 +810,13 @@ window.CPL_FUNDING_PERF = {
   "Yuba": false,
   "Grossmont": false,
   "Lake Tahoe": false,
+  "LA Swest": false,
   "Cosumnes River": false,
   "Folsom Lake": false,
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-07-30",
+ "vet_star_as_of": "2026-07-31",
  "vet_star_threshold": 0.75,
- "vet_star_n": 52
+ "vet_star_n": 56
 };
