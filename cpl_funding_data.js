@@ -57,7 +57,7 @@
 window.CPL_FUNDING = {
  "model_version": "2026-07-30.1",
  "source": "Sept-2026 BOG budget amendment (20260729_CPL_Amendment_Sep_BOG.xlsx) · MIS annual headcount (2025-26 update, 2026-07-03)",
- "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (updated 2026-07-03; colleges not in the update carry 2022-2023)",
+ "headcount_label": "2025-2026 MIS ANNUAL HEADCOUNT (refreshed 2026-07-31; 10 colleges not in that pull carry their prior vintage)",
  "headcount_source": {
   "name": "CCCCO MIS DataMart — Annual/Term Student Count",
   "url": "https://datamart.cccco.edu/Students/Student_Headcount_Term_Annual.aspx",
@@ -149,25 +149,33 @@ window.CPL_FUNDING = {
    "name": "North Orange Continuing Education",
    "short": "NOCE",
    "headcount": 15560,
-   "vintage": "2025-26"
+   "vintage": "2025-26",
+   "noncredit_ftes": 3828.02,
+   "ftes_vintage": "2025-26"
   },
   {
    "name": "San Diego College of Continuing Education",
    "short": "SD Cont. Ed",
    "headcount": 21561,
-   "vintage": "2025-26"
+   "vintage": "2025-26",
+   "noncredit_ftes": 9337.8,
+   "ftes_vintage": "2025-26"
   },
   {
    "name": "Mt. San Antonio College — Noncredit",
    "short": "Mt. SAC NC",
    "headcount": 35363,
-   "vintage": "2022-23"
+   "vintage": "2022-23",
+   "noncredit_ftes": 10829.3,
+   "ftes_vintage": "2025-26"
   },
   {
    "name": "Calbright College",
    "short": "Calbright",
    "headcount": 2484,
-   "vintage": "2022-23"
+   "vintage": "2022-23",
+   "noncredit_ftes": 21438.17,
+   "ftes_vintage": "2025-26"
   }
  ],
  "feeder_metric": "CPL-ready noncredit completions handed off to a partner credit college",
@@ -181,35 +189,38 @@ window.CPL_FUNDING = {
  "system": {
   "order": 0,
   "college": "SYSTEM",
-  "headcount": 2258784,
+  "headcount": 2517685,
   "headcount_pct": 1,
   "district": "CCCCO",
   "county": "CALIFORNIA",
   "working_adults": 5106199,
-  "county_pop_pct": 1
+  "county_pop_pct": 1,
+  "credit_ftes": 1069182.25
  },
  "colleges": [
   {
    "order": 1,
    "college": "Alameda",
-   "headcount": 9582,
+   "headcount": 10596,
    "district": "Peralta Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.004242105,
+   "headcount_pct": 0.004208628,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3111.6
   },
   {
    "order": 7,
    "college": "Berkeley City",
-   "headcount": 10515,
+   "headcount": 11842,
    "district": "Peralta Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.00465516,
+   "headcount_pct": 0.004703527,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3833.0
   },
   {
    "order": 14,
@@ -218,20 +229,22 @@ window.CPL_FUNDING = {
    "district": "Chabot-Las Positas Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.003075106,
+   "headcount_pct": 0.002758884,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5862.2
   },
   {
    "order": 54,
    "college": "Laney",
-   "headcount": 15939,
+   "headcount": 15242,
    "district": "Peralta Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.007056452,
+   "headcount_pct": 0.006053974,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5604.23
   },
   {
    "order": 55,
@@ -240,75 +253,82 @@ window.CPL_FUNDING = {
    "district": "Chabot-Las Positas Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.002010816,
+   "headcount_pct": 0.001804038,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4070.7
   },
   {
    "order": 63,
    "college": "Merritt",
-   "headcount": 11136,
+   "headcount": 11891,
    "district": "Peralta Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.004930086,
+   "headcount_pct": 0.00472299,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3887.04
   },
   {
    "order": 75,
    "college": "Ohlone",
-   "headcount": 16422,
+   "headcount": 16476,
    "district": "Ohlone Community College District",
    "county": "Alameda",
    "working_adults": 167785,
-   "headcount_pct": 0.007270283,
+   "headcount_pct": 0.006544107,
    "county_pop_pct": 0.03285908,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7585.0
   },
   {
    "order": 8,
    "college": "Butte",
-   "headcount": 13448,
+   "headcount": 17102,
    "district": "Butte-Glenn Community College District",
    "county": "Butte",
    "working_adults": 33835,
-   "headcount_pct": 0.005953646,
+   "headcount_pct": 0.006792748,
    "county_pop_pct": 0.00662626,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 10844.47
   },
   {
    "order": 21,
    "college": "Contra Costa",
-   "headcount": 9993,
+   "headcount": 12157,
    "district": "Contra Costa Community College District",
    "county": "Contra Costa",
    "working_adults": 146127,
-   "headcount_pct": 0.004424062,
+   "headcount_pct": 0.004828642,
    "county_pop_pct": 0.028617569,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5369.82
   },
   {
    "order": 30,
    "college": "Diablo Valley",
-   "headcount": 23983,
+   "headcount": 27191,
    "district": "Contra Costa Community College District",
    "county": "Contra Costa",
    "working_adults": 146127,
-   "headcount_pct": 0.01061766,
+   "headcount_pct": 0.010800001,
    "county_pop_pct": 0.028617569,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 14707.67
   },
   {
    "order": 58,
    "college": "Los Medanos",
-   "headcount": 11452,
+   "headcount": 13096,
    "district": "Contra Costa Community College District",
    "county": "Contra Costa",
    "working_adults": 146127,
-   "headcount_pct": 0.005069985,
+   "headcount_pct": 0.005201604,
    "county_pop_pct": 0.028617569,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7917.15
   },
   {
    "order": 53,
@@ -317,9 +337,10 @@ window.CPL_FUNDING = {
    "district": "Lake Tahoe Community College District",
    "county": "El Dorado",
    "working_adults": 37623,
-   "headcount_pct": 0.004099108,
+   "headcount_pct": 0.003677585,
    "county_pop_pct": 0.007368103,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 3860.86
   },
   {
    "order": 17,
@@ -328,20 +349,22 @@ window.CPL_FUNDING = {
    "district": "State Center Community College District",
    "county": "Fresno",
    "working_adults": 138085,
-   "headcount_pct": 0.008573197,
+   "headcount_pct": 0.00769159,
    "county_pop_pct": 0.02704262,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7590.0
   },
   {
    "order": 37,
    "college": "Fresno City",
-   "headcount": 44846,
+   "headcount": 45131,
    "district": "State Center Community College District",
    "county": "Fresno",
    "working_adults": 138085,
-   "headcount_pct": 0.019854045,
+   "headcount_pct": 0.017925594,
    "county_pop_pct": 0.02704262,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 21916.87
   },
   {
    "order": 83,
@@ -350,9 +373,10 @@ window.CPL_FUNDING = {
    "district": "State Center Community College District",
    "county": "Fresno",
    "working_adults": 138085,
-   "headcount_pct": 0.008202201,
+   "headcount_pct": 0.007358744,
    "county_pop_pct": 0.02704262,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7356.47
   },
   {
    "order": 112,
@@ -363,21 +387,23 @@ window.CPL_FUNDING = {
    "district": "West Hills Community College District",
    "county": "Fresno",
    "working_adults": 138085,
-   "headcount_pct": 0.002918827,
+   "headcount_pct": 0.002618675,
    "county_pop_pct": 0.02704262,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 2242.89
   },
   {
    "order": 82,
    "college": "Redwoods",
    "rural": true,
-   "headcount": 8451,
+   "headcount": 8454,
    "district": "Redwoods Community College District",
    "county": "Humboldt",
    "working_adults": 24550,
-   "headcount_pct": 0.003741394,
+   "headcount_pct": 0.003357847,
    "county_pop_pct": 0.004807882,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4296.33
   },
   {
    "order": 44,
@@ -388,44 +414,48 @@ window.CPL_FUNDING = {
    "district": "Imperial Community College District",
    "county": "Imperial",
    "working_adults": 23220,
-   "headcount_pct": 0.005186419,
+   "headcount_pct": 0.004653084,
    "county_pop_pct": 0.004547414,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 3966.9
   },
   {
    "order": 5,
    "college": "Bakersfield",
-   "headcount": 46102,
+   "headcount": 46171,
    "district": "Kern Community College District",
    "county": "Kern",
    "working_adults": 127203,
-   "headcount_pct": 0.020410097,
+   "headcount_pct": 0.018338672,
    "county_pop_pct": 0.024911485,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 21292.84
   },
   {
    "order": 13,
    "college": "Cerro Coso",
    "rural": true,
-   "headcount": 11492,
+   "headcount": 11498,
    "district": "Kern Community College District",
    "county": "Kern",
    "working_adults": 127203,
-   "headcount_pct": 0.005087693,
+   "headcount_pct": 0.004566894,
    "county_pop_pct": 0.024911485,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3686.49
   },
   {
    "order": 109,
    "college": "Taft",
    "rural": true,
-   "headcount": 6861,
+   "headcount": 9297,
    "district": "West Kern Community College District",
    "county": "Kern",
    "working_adults": 127203,
-   "headcount_pct": 0.003037475,
+   "headcount_pct": 0.003692678,
    "county_pop_pct": 0.024911485,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 2434.52
   },
   {
    "order": 113,
@@ -434,9 +464,10 @@ window.CPL_FUNDING = {
    "district": "West Hills Community College District",
    "county": "Kings",
    "working_adults": 20828,
-   "headcount_pct": 0.003843218,
+   "headcount_pct": 0.003448009,
    "county_pop_pct": 0.004078964,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3361.17
   },
   {
    "order": 56,
@@ -446,53 +477,58 @@ window.CPL_FUNDING = {
    "district": "Lassen Community College District",
    "county": "Lassen",
    "working_adults": null,
-   "headcount_pct": 0.001677894,
+   "headcount_pct": 0.001505351,
    "county_pop_pct": null,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 1633.16
   },
   {
    "order": 4,
    "college": "Antelope Valley",
-   "headcount": 15723,
+   "headcount": 20105,
    "district": "Antelope Valley Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.006960825,
+   "headcount_pct": 0.00798551,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11698.64
   },
   {
    "order": 11,
    "college": "Canyons",
-   "headcount": 33596,
+   "headcount": 38052,
    "district": "Santa Clarita Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.014873489,
+   "headcount_pct": 0.015113884,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 13528.6
   },
   {
    "order": 12,
    "college": "Cerritos",
-   "headcount": 36126,
+   "headcount": 36129,
    "district": "Cerritos Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.015993561,
+   "headcount_pct": 0.014350087,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 17753.91
   },
   {
    "order": 16,
    "college": "Citrus",
-   "headcount": 16383,
+   "headcount": 17283,
    "district": "Citrus Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.007253018,
+   "headcount_pct": 0.00686464,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9532.72
   },
   {
    "order": 20,
@@ -501,20 +537,22 @@ window.CPL_FUNDING = {
    "district": "Compton Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.00269924,
+   "headcount_pct": 0.002421669,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 2591.34
   },
   {
    "order": 31,
    "college": "East LA",
-   "headcount": 65933,
+   "headcount": 64167,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.029189599,
+   "headcount_pct": 0.025486508,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 19065.69
   },
   {
    "order": 32,
@@ -523,163 +561,178 @@ window.CPL_FUNDING = {
    "district": "El Camino Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.013536044,
+   "headcount_pct": 0.012144093,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 12613.2
   },
   {
    "order": 40,
    "college": "Glendale",
-   "headcount": 21852,
+   "headcount": 24570,
    "district": "Glendale Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.009674232,
+   "headcount_pct": 0.009758965,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 10663.48
   },
   {
    "order": 46,
    "college": "LA City",
-   "headcount": 31212,
+   "headcount": 30956,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.013818054,
+   "headcount_pct": 0.012295422,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9609.71
   },
   {
    "order": 47,
    "college": "LA Harbor",
-   "headcount": 21079,
+   "headcount": 21001,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.009332012,
+   "headcount_pct": 0.008341393,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 6405.29
   },
   {
    "order": 48,
    "college": "LA Mission",
-   "headcount": 24310,
+   "headcount": 24234,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.010762428,
+   "headcount_pct": 0.009625509,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 6777.9
   },
   {
    "order": 49,
    "college": "LA Pierce",
-   "headcount": 31635,
+   "headcount": 31228,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.014005323,
+   "headcount_pct": 0.012403458,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 12216.86
   },
   {
    "order": 50,
    "college": "LA Swest",
-   "headcount": 12511,
+   "headcount": 12270,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.005538821,
+   "headcount_pct": 0.004873525,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3008.91
   },
   {
    "order": 51,
    "college": "LA Trade",
-   "headcount": 23631,
+   "headcount": 23003,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.010461824,
+   "headcount_pct": 0.009136568,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 10570.39
   },
   {
    "order": 52,
    "college": "LA Valley",
-   "headcount": 32761,
+   "headcount": 32771,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.014503822,
+   "headcount_pct": 0.013016323,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 10920.37
   },
   {
    "order": 57,
    "college": "Long Beach",
-   "headcount": 34680,
+   "headcount": 38622,
    "district": "Long Beach Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.015353394,
+   "headcount_pct": 0.015340283,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 22535.85
   },
   {
    "order": 70,
    "college": "Mt San Antonio",
-   "headcount": 41950,
+   "headcount": 83727,
    "district": "Mt. San Antonio Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.01857194,
+   "headcount_pct": 0.03325555,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 26804.41
   },
   {
    "order": 80,
    "college": "Pasadena",
-   "headcount": 14936,
+   "headcount": 41521,
    "district": "Pasadena Area Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.006612407,
+   "headcount_pct": 0.016491737,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 23347.4
   },
   {
    "order": 84,
    "college": "Rio Hondo",
-   "headcount": 28241,
+   "headcount": 37194,
    "district": "Rio Hondo Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.012502745,
+   "headcount_pct": 0.014773095,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11693.54
   },
   {
    "order": 99,
    "college": "Santa Monica",
-   "headcount": 37289,
+   "headcount": 36714,
    "district": "Santa Monica Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.01650844,
+   "headcount_pct": 0.014582444,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 19453.51
   },
   {
    "order": 114,
    "college": "West LA",
-   "headcount": 21712,
+   "headcount": 21012,
    "district": "Los Angeles Community College District",
    "county": "Los Angeles",
    "working_adults": 1200796,
-   "headcount_pct": 0.009612252,
+   "headcount_pct": 0.008345762,
    "county_pop_pct": 0.235164356,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 6016.22
   },
   {
    "order": 59,
@@ -688,31 +741,34 @@ window.CPL_FUNDING = {
    "district": "State Center Community College District",
    "county": "Madera",
    "working_adults": 21685,
-   "headcount_pct": 0.00608469,
+   "headcount_pct": 0.005458983,
    "county_pop_pct": 0.004246799,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4234.67
   },
   {
    "order": 60,
    "college": "Marin",
-   "headcount": 9820,
+   "headcount": 9827,
    "district": "Marin Community College District",
    "county": "Marin",
    "working_adults": 25654,
-   "headcount_pct": 0.004347472,
+   "headcount_pct": 0.003903189,
    "county_pop_pct": 0.005024089,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3374.55
   },
   {
    "order": 61,
    "college": "Mendocino",
-   "headcount": 9311,
+   "headcount": 9259,
    "district": "Mendocino-Lake Community College District",
    "county": "Mendocino",
    "working_adults": 18778,
-   "headcount_pct": 0.004122129,
+   "headcount_pct": 0.003677585,
    "county_pop_pct": 0.003677491,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3729.36
   },
   {
    "order": 62,
@@ -721,86 +777,94 @@ window.CPL_FUNDING = {
    "district": "Merced Community College District",
    "county": "Merced",
    "working_adults": 35277,
-   "headcount_pct": 0.009616679,
+   "headcount_pct": 0.008627767,
    "county_pop_pct": 0.006908661,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11311.3
   },
   {
    "order": 43,
    "college": "Hartnell",
-   "headcount": 14832,
+   "headcount": 15185,
    "district": "Hartnell Community College District",
    "county": "Monterey",
    "working_adults": 44526,
-   "headcount_pct": 0.006566365,
+   "headcount_pct": 0.006031334,
    "county_pop_pct": 0.008719989,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8301.22
   },
   {
    "order": 67,
    "college": "Monterey",
-   "headcount": 10535,
+   "headcount": 10816,
    "district": "Monterey Peninsula Community College District",
    "county": "Monterey",
    "working_adults": 44526,
-   "headcount_pct": 0.004664014,
+   "headcount_pct": 0.00429601,
    "county_pop_pct": 0.008719989,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5681.07
   },
   {
    "order": 72,
    "college": "Napa",
-   "headcount": 6418,
+   "headcount": 7493,
    "district": "Napa Valley Community College District",
    "county": "Napa",
    "working_adults": 16949,
-   "headcount_pct": 0.002841352,
+   "headcount_pct": 0.002976147,
    "county_pop_pct": 0.003319299,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3722.51
   },
   {
    "order": 18,
    "college": "Coastline",
-   "headcount": 20799,
+   "headcount": 20804,
    "district": "Coast Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.009208052,
+   "headcount_pct": 0.008263147,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5342.65
   },
   {
    "order": 27,
    "college": "Cypress",
-   "headcount": 24026,
+   "headcount": 24055,
    "district": "North Orange County Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.010636697,
+   "headcount_pct": 0.009554412,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 12850.71
   },
   {
    "order": 38,
    "college": "Fullerton",
-   "headcount": 30846,
+   "headcount": 30857,
    "district": "North Orange County Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.01365602,
+   "headcount_pct": 0.0122561,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 15875.04
   },
   {
    "order": 41,
    "college": "Golden West",
-   "headcount": 22013,
+   "headcount": 22026,
    "district": "Coast Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.009745509,
+   "headcount_pct": 0.008748513,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8832.52
   },
   {
    "order": 45,
@@ -809,20 +873,22 @@ window.CPL_FUNDING = {
    "district": "South Orange County Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.00902034,
+   "headcount_pct": 0.008092752,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 5754.09
   },
   {
    "order": 76,
    "college": "Orange Coast",
-   "headcount": 24919,
+   "headcount": 24967,
    "district": "Coast Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.011032042,
+   "headcount_pct": 0.00991665,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 13996.65
   },
   {
    "order": 87,
@@ -831,42 +897,46 @@ window.CPL_FUNDING = {
    "district": "South Orange County Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.016140986,
+   "headcount_pct": 0.01448116,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 8580.18
   },
   {
    "order": 97,
    "college": "Santa Ana",
-   "headcount": 19310,
+   "headcount": 77076,
    "district": "Rancho Santiago Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.008548848,
+   "headcount_pct": 0.030613838,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 16043.58
   },
   {
    "order": 101,
    "college": "Santiago Canyon",
-   "headcount": 9733,
+   "headcount": 33777,
    "district": "Rancho Santiago Community College District",
    "county": "Orange",
    "working_adults": 399262,
-   "headcount_pct": 0.004308956,
+   "headcount_pct": 0.013415896,
    "county_pop_pct": 0.078191626,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7047.05
   },
   {
    "order": 104,
    "college": "Sierra",
-   "headcount": 30579,
+   "headcount": 30588,
    "district": "Sierra Joint Community College District",
    "county": "Placer",
    "working_adults": 71637,
-   "headcount_pct": 0.013537815,
+   "headcount_pct": 0.012149256,
    "county_pop_pct": 0.014029418,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 14544.06
   },
   {
    "order": 34,
@@ -876,31 +946,34 @@ window.CPL_FUNDING = {
    "district": "Feather River Community College District",
    "county": "Plumas",
    "working_adults": null,
-   "headcount_pct": 0.001212599,
+   "headcount_pct": 0.001087904,
    "county_pop_pct": null,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 1098.21
   },
   {
    "order": 29,
    "college": "Desert",
-   "headcount": 21113,
+   "headcount": 21112,
    "district": "Desert Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.009347065,
+   "headcount_pct": 0.008385481,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8658.49
   },
   {
    "order": 69,
    "college": "Moreno Valley",
-   "headcount": 15460,
+   "headcount": 21686,
    "district": "Riverside Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.006844391,
+   "headcount_pct": 0.008613468,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9743.03
   },
   {
    "order": 71,
@@ -909,20 +982,22 @@ window.CPL_FUNDING = {
    "district": "Mt. San Jacinto Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.011488482,
+   "headcount_pct": 0.010307088,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 13978.27
   },
   {
    "order": 73,
    "college": "Norco College",
-   "headcount": 15897,
+   "headcount": 20731,
    "district": "Riverside Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.007037858,
+   "headcount_pct": 0.008234152,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8008.4
   },
   {
    "order": 78,
@@ -932,132 +1007,144 @@ window.CPL_FUNDING = {
    "district": "Palo Verde Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.002865258,
+   "headcount_pct": 0.002570615,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 1414.04
   },
   {
    "order": 85,
    "college": "Riverside",
-   "headcount": 29205,
+   "headcount": 33234,
    "district": "Riverside Community College District",
    "county": "Riverside",
    "working_adults": 378406,
-   "headcount_pct": 0.012929523,
+   "headcount_pct": 0.013200222,
    "county_pop_pct": 0.074107178,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 18650.89
   },
   {
    "order": 3,
    "college": "American River",
-   "headcount": 49176,
+   "headcount": 49251,
    "district": "Los Rios Community College District",
    "county": "Sacramento",
    "working_adults": 257597,
-   "headcount_pct": 0.021771006,
+   "headcount_pct": 0.019562018,
    "county_pop_pct": 0.050447897,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 20744.56
   },
   {
    "order": 23,
    "college": "Cosumnes River",
-   "headcount": 27543,
+   "headcount": 27545,
    "district": "Los Rios Community College District",
    "county": "Sacramento",
    "working_adults": 257597,
-   "headcount_pct": 0.012193729,
+   "headcount_pct": 0.010940606,
    "county_pop_pct": 0.050447897,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11359.02
   },
   {
    "order": 35,
    "college": "Folsom Lake",
-   "headcount": 19692,
+   "headcount": 19697,
    "district": "Los Rios Community College District",
    "county": "Sacramento",
    "working_adults": 257597,
-   "headcount_pct": 0.008717965,
+   "headcount_pct": 0.007823457,
    "county_pop_pct": 0.050447897,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7835.21
   },
   {
    "order": 86,
    "college": "Sacramento City",
-   "headcount": 34885,
+   "headcount": 34915,
    "district": "Los Rios Community College District",
    "county": "Sacramento",
    "working_adults": 257597,
-   "headcount_pct": 0.01544415,
+   "headcount_pct": 0.013867898,
    "county_pop_pct": 0.050447897,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 14386.74
   },
   {
    "order": 6,
    "college": "Barstow",
    "rural": true,
-   "headcount": 5274,
+   "headcount": 5091,
    "district": "Barstow Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.002334885,
+   "headcount_pct": 0.002022096,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3019.15
   },
   {
    "order": 15,
    "college": "Chaffey",
-   "headcount": 30505,
+   "headcount": 36600,
    "district": "Chaffey Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.013505054,
+   "headcount_pct": 0.014537164,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 17951.0
   },
   {
    "order": 22,
    "college": "Copper Mountain",
    "rural": true,
-   "headcount": 2278,
+   "headcount": 4003,
    "district": "Copper Mountain Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.001008507,
+   "headcount_pct": 0.001589953,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 1687.97
   },
   {
    "order": 24,
    "college": "Crafton Hills",
-   "headcount": 10970,
+   "headcount": 10972,
    "district": "San Bernardino Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.004856595,
+   "headcount_pct": 0.004357972,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5038.88
   },
   {
    "order": 88,
    "college": "San Bernardino",
-   "headcount": 23732,
+   "headcount": 23737,
    "district": "San Bernardino Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.010506538,
+   "headcount_pct": 0.009428106,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11992.67
   },
   {
    "order": 111,
    "college": "Victor Valley",
-   "headcount": 18646,
+   "headcount": 25427,
    "district": "Victor Valley Community College District",
    "county": "San Bernardino",
    "working_adults": 311528,
-   "headcount_pct": 0.008254884,
+   "headcount_pct": 0.010099357,
    "county_pop_pct": 0.061009765,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 13946.87
   },
   {
    "order": 26,
@@ -1066,9 +1153,10 @@ window.CPL_FUNDING = {
    "district": "Grossmont-Cuyamaca Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.006531833,
+   "headcount_pct": 0.005860145,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4901.4
   },
   {
    "order": 42,
@@ -1077,42 +1165,46 @@ window.CPL_FUNDING = {
    "district": "Grossmont-Cuyamaca Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.009821656,
+   "headcount_pct": 0.008811666,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9099.42
   },
   {
    "order": 64,
    "college": "MiraCosta",
-   "headcount": 22485,
+   "headcount": 22486,
    "district": "MiraCosta Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.009954471,
+   "headcount_pct": 0.008931221,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9580.73
   },
   {
    "order": 79,
    "college": "Palomar",
-   "headcount": 27744,
+   "headcount": 30861,
    "district": "Palomar Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.012282715,
+   "headcount_pct": 0.012257689,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 15488.86
   },
   {
    "order": 90,
    "college": "San Diego City",
-   "headcount": 22038,
+   "headcount": 22039,
    "district": "San Diego Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.009756577,
+   "headcount_pct": 0.008753676,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8921.87
   },
   {
    "order": 91,
@@ -1121,130 +1213,142 @@ window.CPL_FUNDING = {
    "district": "San Diego Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.014067746,
+   "headcount_pct": 0.012621118,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 16732.18
   },
   {
    "order": 92,
    "college": "San Diego Miramar",
-   "headcount": 24092,
+   "headcount": 24302,
    "district": "San Diego Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.010665916,
+   "headcount_pct": 0.009652518,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11276.51
   },
   {
    "order": 108,
    "college": "Southwestern",
-   "headcount": 29292,
+   "headcount": 29302,
    "district": "Southwestern Community College District",
    "county": "San Diego",
    "working_adults": 468583,
-   "headcount_pct": 0.012968039,
+   "headcount_pct": 0.011638469,
    "county_pop_pct": 0.091767477,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 16346.82
   },
   {
    "order": 93,
    "college": "San Francisco",
-   "headcount": 42763,
+   "headcount": 42781,
    "district": "San Francisco Community College District",
    "county": "San Francisco",
    "working_adults": 72403,
-   "headcount_pct": 0.018931868,
+   "headcount_pct": 0.016992197,
    "county_pop_pct": 0.014179432,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 12951.79
   },
   {
    "order": 94,
    "college": "San Joaquin Delta",
-   "headcount": 32056,
+   "headcount": 32068,
    "district": "San Joaquin Delta Community College District",
    "county": "San Joaquin",
    "working_adults": 106683,
-   "headcount_pct": 0.014191707,
+   "headcount_pct": 0.012737098,
    "county_pop_pct": 0.02089284,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 17034.4
   },
   {
    "order": 25,
    "college": "Cuesta",
-   "headcount": 16728,
+   "headcount": 18500,
    "district": "San Luis Obispo County Community College District",
    "county": "San Luis Obispo",
    "working_adults": 45711,
-   "headcount_pct": 0.007405755,
+   "headcount_pct": 0.00734802,
    "county_pop_pct": 0.00895206,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7616.77
   },
   {
    "order": 10,
    "college": "Canada",
-   "headcount": 11888,
+   "headcount": 11891,
    "district": "San Mateo County Community College District",
    "county": "San Mateo",
    "working_adults": 78896,
-   "headcount_pct": 0.005263009,
+   "headcount_pct": 0.00472299,
    "county_pop_pct": 0.015451023,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4631.23
   },
   {
    "order": 96,
    "college": "San Mateo",
-   "headcount": 15579,
+   "headcount": 15589,
    "district": "San Mateo County Community College District",
    "county": "San Mateo",
    "working_adults": 78896,
-   "headcount_pct": 0.006897074,
+   "headcount_pct": 0.006191799,
    "county_pop_pct": 0.015451023,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8117.66
   },
   {
    "order": 106,
    "college": "Skyline",
-   "headcount": 18033,
+   "headcount": 18042,
    "district": "San Mateo County Community College District",
    "county": "San Mateo",
    "working_adults": 78896,
-   "headcount_pct": 0.007983499,
+   "headcount_pct": 0.007166107,
    "county_pop_pct": 0.015451023,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9029.24
   },
   {
    "order": 2,
    "college": "Allan Hancock",
-   "headcount": 21231,
+   "headcount": 21256,
    "district": "Allan Hancock Joint Community College District",
    "county": "Santa Barbara",
    "working_adults": 54159,
-   "headcount_pct": 0.009399305,
+   "headcount_pct": 0.008442677,
    "county_pop_pct": 0.01060652,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 8995.56
   },
   {
    "order": 98,
    "college": "Santa Barbara",
-   "headcount": 25673,
+   "headcount": 25675,
    "district": "Santa Barbara Community College District",
    "county": "Santa Barbara",
    "working_adults": 54159,
-   "headcount_pct": 0.01136585,
+   "headcount_pct": 0.01019786,
    "county_pop_pct": 0.01060652,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 10973.65
   },
   {
    "order": 28,
    "college": "De Anza",
-   "headcount": 27215,
+   "headcount": 29664,
    "district": "Foothill-De Anza Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.012048518,
+   "headcount_pct": 0.011782252,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 16628.07
   },
   {
    "order": 33,
@@ -1253,42 +1357,46 @@ window.CPL_FUNDING = {
    "district": "San Jose-Evergreen Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.005932838,
+   "headcount_pct": 0.005322747,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 3189.31
   },
   {
    "order": 36,
    "college": "Foothill",
-   "headcount": 24888,
+   "headcount": 25542,
    "district": "Foothill-De Anza Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.011018318,
+   "headcount_pct": 0.010145034,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11018.64
   },
   {
    "order": 39,
    "college": "Gavilan",
-   "headcount": 10789,
+   "headcount": 10797,
    "district": "Gavilan Joint Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.004776464,
+   "headcount_pct": 0.004288463,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5026.01
   },
   {
    "order": 65,
    "college": "Mission",
-   "headcount": 12670,
+   "headcount": 12685,
    "district": "West Valley-Mission Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.005609213,
+   "headcount_pct": 0.005038359,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5128.5
   },
   {
    "order": 95,
@@ -1297,55 +1405,60 @@ window.CPL_FUNDING = {
    "district": "San Jose-Evergreen Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.005769476,
+   "headcount_pct": 0.005176184,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2022-23",
+   "credit_ftes": 2722.08
   },
   {
    "order": 115,
    "college": "West Valley",
-   "headcount": 16145,
+   "headcount": 16147,
    "district": "West Valley-Mission Community College District",
    "county": "Santa Clara",
    "working_adults": 171522,
-   "headcount_pct": 0.007147651,
+   "headcount_pct": 0.006413431,
    "county_pop_pct": 0.033590935,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 6222.71
   },
   {
    "order": 9,
    "college": "Cabrillo",
-   "headcount": 15831,
+   "headcount": 15882,
    "district": "Cabrillo Community College District",
    "county": "Santa Cruz",
    "working_adults": 36341,
-   "headcount_pct": 0.007008638,
+   "headcount_pct": 0.006308176,
    "county_pop_pct": 0.007117036,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7616.71
   },
   {
    "order": 103,
    "college": "Shasta",
    "rural": true,
-   "headcount": 15232,
+   "headcount": 15234,
    "district": "Shasta-Tehama-Trinity Joint Community College District",
    "county": "Shasta",
    "working_adults": 40002,
-   "headcount_pct": 0.006743451,
+   "headcount_pct": 0.006050797,
    "county_pop_pct": 0.007834007,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7241.94
   },
   {
    "order": 105,
    "college": "Siskiyous",
    "rural": true,
-   "headcount": 4270,
+   "headcount": 4274,
    "district": "Siskiyou Joint Community College District",
    "county": "Siskiyou",
    "working_adults": null,
-   "headcount_pct": 0.001890398,
+   "headcount_pct": 0.001697591,
    "county_pop_pct": null,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 1725.39
   },
   {
    "order": 107,
@@ -1354,53 +1467,58 @@ window.CPL_FUNDING = {
    "district": "Solano County Community College District",
    "county": "Solano",
    "working_adults": 77534,
-   "headcount_pct": 0.005889009,
+   "headcount_pct": 0.005283425,
    "county_pop_pct": 0.015184289,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 7328.71
   },
   {
    "order": 100,
    "college": "Santa Rosa",
-   "headcount": 11889,
+   "headcount": 34538,
    "district": "Sonoma County Junior College District",
    "county": "Sonoma",
    "working_adults": 82997,
-   "headcount_pct": 0.005263451,
+   "headcount_pct": 0.013718158,
    "county_pop_pct": 0.016254165,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 13640.19
   },
   {
    "order": 66,
    "college": "Modesto",
-   "headcount": 27270,
+   "headcount": 27271,
    "district": "Yosemite Community College District",
    "county": "Stanislaus",
    "working_adults": 81075,
-   "headcount_pct": 0.012072868,
+   "headcount_pct": 0.010831776,
    "county_pop_pct": 0.01587776,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 15549.98
   },
   {
    "order": 81,
    "college": "Porterville",
-   "headcount": 8126,
+   "headcount": 8143,
    "district": "Kern Community College District",
    "county": "Tulare",
    "working_adults": 63560,
-   "headcount_pct": 0.003597511,
+   "headcount_pct": 0.00323432,
    "county_pop_pct": 0.012447615,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 3558.3
   },
   {
    "order": 102,
    "college": "Sequoias",
-   "headcount": 19886,
+   "headcount": 19888,
    "district": "Sequoias Community College District",
    "county": "Tulare",
    "working_adults": 63560,
-   "headcount_pct": 0.008803852,
+   "headcount_pct": 0.00789932,
    "county_pop_pct": 0.012447615,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 11473.97
   },
   {
    "order": 19,
@@ -1410,68 +1528,82 @@ window.CPL_FUNDING = {
    "district": "Yosemite Community College District",
    "county": "Tuolumne",
    "working_adults": null,
-   "headcount_pct": 0.002122824,
+   "headcount_pct": 0.001904527,
    "county_pop_pct": null,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 2077.98
   },
   {
    "order": 68,
    "college": "Moorpark",
-   "headcount": 19597,
+   "headcount": 24350,
    "district": "Ventura County Community College District",
    "county": "Ventura",
    "working_adults": 111435,
-   "headcount_pct": 0.008675907,
+   "headcount_pct": 0.009671583,
    "county_pop_pct": 0.021823474,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 12728.22
   },
   {
    "order": 77,
    "college": "Oxnard",
-   "headcount": 10620,
+   "headcount": 12835,
    "district": "Ventura County Community College District",
    "county": "Ventura",
    "working_adults": 111435,
-   "headcount_pct": 0.004701645,
+   "headcount_pct": 0.005097937,
    "county_pop_pct": 0.021823474,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 5628.96
   },
   {
    "order": 110,
    "college": "Ventura",
-   "headcount": 16543,
+   "headcount": 19290,
    "district": "Ventura County Community College District",
    "county": "Ventura",
    "working_adults": 111435,
-   "headcount_pct": 0.007323852,
+   "headcount_pct": 0.0076618,
    "county_pop_pct": 0.021823474,
-   "hc_vintage": "2022-23"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 9996.28
   },
   {
    "order": 116,
    "college": "Woodland",
-   "headcount": 7319,
+   "headcount": 7323,
    "district": "Yuba Community College District",
    "county": "Yolo",
    "working_adults": 25523,
-   "headcount_pct": 0.003240239,
+   "headcount_pct": 0.002908624,
    "county_pop_pct": 0.004998434,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 2589.18
   },
   {
    "order": 117,
    "college": "Yuba",
-   "headcount": 10797,
+   "headcount": 10800,
    "district": "Yuba Community College District",
    "county": "Yuba",
    "working_adults": 14117,
-   "headcount_pct": 0.004780006,
+   "headcount_pct": 0.004289655,
    "county_pop_pct": 0.002764679,
-   "hc_vintage": "2025-26"
+   "hc_vintage": "2025-26",
+   "credit_ftes": 4419.1
   }
  ],
  "footnotes": [
   "*Survey did not estimate counties <65K in population",
   "Source: U.S. Census 2022 American Community Survey: https://data.census.gov/table/ACSDT1Y2022.B16010?q=Educational%20Attainment%20by%20employment%20status%20and%20state&g=040XX00US06,06$0500000&y=2022&moe=false"
- ]
+ ],
+ "ftes_label": "2025-2026 CCCCO DataMart Annual FTES (credit); noncredit FTES carried separately and used only for the noncredit-feeder lane",
+ "ftes_source": {
+  "name": "CCCCO MIS DataMart — Annual FTES Summary",
+  "url": "https://datamart.cccco.edu/Outcomes/FTES_Summary.aspx",
+  "selection": "Annual 2025-2026, by college"
+ },
+ "allocation_basis": "ftes",
+ "ftes_vintage": "2025-26"
 };
