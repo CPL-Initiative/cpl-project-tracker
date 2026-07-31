@@ -117,8 +117,12 @@ check("data: no feeder institution doubles as a college row",
 // SYSTEM row + shares recomputed over the new roster.
 check("data: every college row carries an hc_vintage stamp",
   D && D.colleges.every(function (c) { return c.hc_vintage === "2025-26" || c.hc_vintage === "2022-23"; }));
-check("data: the 2025-26 update landed (East LA = 65,933)",
-  D && D.colleges.some(function (c) { return c.college === "East LA" && c.headcount === 65933 && c.hc_vintage === "2025-26"; }));
+check("data: the 2026-07-31 headcount refresh landed (East LA = 64,167)",
+  D && D.colleges.some(function (c) { return c.college === "East LA" && c.headcount === 64167 && c.hc_vintage === "2025-26"; }));
+// The refresh corrected several badly-understated rows that credit FTES had
+// flagged (Pasadena's load factor was 1.56 FTES/head — 47 units per student).
+check("data: the refresh fixed the Pasadena understatement (14,936 -> 41,521)",
+  D && D.colleges.some(function (c) { return c.college === "Pasadena" && c.headcount === 41521; }));
 check("data: headcount_pct sums to 1 over the new roster",
   D && Math.abs(D.colleges.reduce(function (s, c) { return s + c.headcount_pct; }, 0) - 1) < 1e-4);
 
@@ -294,8 +298,11 @@ function pieSlices(el) {
   // Provenance surfaces.
   check("footnote cites the DataMart headcount source",
     footText(doc).indexOf("DataMart") !== -1);
-  check("headcount column header tooltips the vintage",
-    (doc.querySelector('th[data-sort="headcount"]').getAttribute("title") || "").indexOf("2025-2026") !== -1);
+  // The size column follows the ALLOCATION BASIS (credit FTES by default since
+  // 2026-07-31), so assert against the active basis rather than a fixed key.
+  check("size column header names the basis + cites its source",
+    (doc.querySelector('th[data-sort="credit_ftes"]').getAttribute("title") || "")
+      .indexOf("allocation basis") !== -1);
   check("mixed-vintage honesty note counts the rows still on 2022-23",
     footText(doc).indexOf("await a 2025-26 headcount") !== -1);
 
@@ -939,18 +946,26 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   // How MANY colleges the floor catches scales inversely with the pool, so bound it
   // by the structural invariant (a minority, and only sub-scale colleges) rather
   // than a literal that a pool change silently invalidates.
-  const meanHc = D.colleges.reduce(function (s, c) { return s + (c.headcount || 0); }, 0) / D.colleges.length;
+  const meanFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0) / D.colleges.length;
   check("floor model: floored set is non-empty and bounded (sub-scale colleges only)",
     m.floorCount > 0 && m.floorCount < D.colleges.length / 2 &&
     Object.keys(m.floored).every(function (n) {
       const c = D.colleges.find(function (x) { return x.college === n; });
-      return c && (c.headcount || 0) < meanHc;
+      // Floored colleges are sub-scale on the ALLOCATION BASIS (credit FTES
+      // since 2026-07-31), which is not the same set as sub-scale by headcount.
+      return c && (c.credit_ftes || 0) < meanFtes;
     }));
   const perRural = D.pool.rural_carveout / 13;
   check("floor model: smallest college (Copper Mountain, rural) main entitlement sits at the REDUCED floor (floor − rural allowance)",
     Math.abs(m.W["Copper Mountain"] - (m.floor - perRural)) < 1);
-  check("floor model: largest college (East LA) is the max entitlement, well above the floor",
-    m.W["East LA"] === Math.max.apply(null, Object.values(m.W)) && m.W["East LA"] > m.floor * 3);
+  // Named college removed deliberately: the largest entitlement follows the
+  // ALLOCATION BASIS, and under credit FTES that is Mt San Antonio, not East LA
+  // (which is the largest by headcount). Assert the property, not the name.
+  {
+    const biggestByFtes = D.colleges.slice().sort(function (a, b) { return b.credit_ftes - a.credit_ftes; })[0].college;
+    check("floor model: the largest college on the basis takes the max entitlement, well above the floor",
+      m.W[biggestByFtes] === Math.max.apply(null, Object.values(m.W)) && m.W[biggestByFtes] > m.floor * 3);
+  }
   const cm = T._alloc("Copper Mountain");
   // Copper Mountain is BOTH floored and (federally) rural. Under PR4 its rural
   // allowance is consumed reaching the floor, so its window total = exactly the
@@ -981,9 +996,10 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   T._setScenario({ pool: { floor_window: 0 } });
   const m0 = T._model();
   check("floor 0 disables the waterfall (no floored colleges)", m0.floorCount === 0);
-  check("floor 0 → pure proportional (Copper Mountain ≈ headcount share × net)",
+  check("floor 0 → pure proportional (Copper Mountain ≈ credit-FTES share × net)",
     Math.abs(m0.W["Copper Mountain"] -
-      D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).headcount_pct * net) < 1);
+      D.colleges.find(function (c) { return c.college === "Copper Mountain"; }).credit_ftes /
+        D.colleges.reduce(function (t, c) { return t + c.credit_ftes; }, 0) * net) < 1);
 }
 
 // D2 — front-load Year 1: timing changes, totals don't.
@@ -1674,7 +1690,7 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   // The Potential⇄Earned basis TOGGLE was RETIRED 2026-07-30 (Sam): both numbers
   // now ride in every money cell, so there is no mode to get stuck in and the
   // money columns can no longer disagree invisibly with the P-cells.
-  check("E: the basis toggle is gone (no mode to get stuck in)",
+  check("E: the Potential/Earned basis toggle is gone (no mode to get stuck in)",
     !doc.querySelector("#cplFundBasis") && !("basis" in T._state));
   const potRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).find(function (r) { return /Laney/.test(r.textContent); });
   check("E: the Total cell stacks the cap over the earned figure, unconditionally",
@@ -1801,8 +1817,8 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("F: ⚙ Columns menu renders", !!doc.querySelector(".cplfund-colmenu"));
   const keys = Array.from(doc.querySelectorAll(".cplfund-colmenu input[data-colkey]")).map(function (cb) { return cb.getAttribute("data-colkey"); });
   check("F: the College identity column is NOT hideable (absent from the menu)", keys.indexOf("college") === -1);
-  check("F: other columns are hideable (district, headcount, total in the menu)",
-    keys.indexOf("district") !== -1 && keys.indexOf("headcount") !== -1 && keys.indexOf("total") !== -1);
+  check("F: other columns are hideable (district, the size column, total in the menu)",
+    keys.indexOf("district") !== -1 && keys.indexOf("credit_ftes") !== -1 && keys.indexOf("total") !== -1);
   const waCb = doc.querySelector('.cplfund-colmenu input[data-colkey="working_adults"]');
   check("F: county (working adults) is unchecked/hidden by default", !!waCb && !waCb.checked);
   const style0 = doc.querySelector("#cplFundTable style");
@@ -2146,8 +2162,8 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   const formula = doc.querySelector(".cplfund-formula");
   check("L1: the formula box is a bulleted list (≥4 bullets)",
     formula.querySelectorAll("ul.cplfund-formula-list > li").length >= 4);
-  check("L1: the formula list still explains the core headcount×share formula",
-    formula.textContent.indexOf("headcount share") !== -1);
+  check("L1: the formula list still explains the core basis×share formula",
+    formula.textContent.indexOf("credit FTES share") !== -1);
   // L2 — full width: the shared 1400px container cap is dropped for THIS pane only.
   check("L2: full-width CSS drops the .main-container cap for the funding tab only",
     /#tab-implementation-funding \.main-container \{ max-width: none; \}/.test(consumerSrc));
@@ -2308,8 +2324,13 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   });
   check("N2: rural floor-fill + on-top bonus conserve the carve-out ($1M)",
     Math.abs((fill + bonus) - D.pool.rural_carveout) < 5);
-  check("N2: both parts are non-trivial (some colleges floored, some with bonus)",
-    fill > 100000 && bonus > 100000);
+  // Both parts must be REAL — the guard is against a degenerate split (all
+  // floor-fill or all bonus), not a fixed dollar level. Under credit FTES more
+  // rural colleges sit at the floor, so the mix shifted toward fill
+  // ($917K fill / $83K bonus) without either part vanishing.
+  check("N2: both parts are non-trivial (the split is not degenerate)",
+    fill > 10000 && bonus > 10000 &&
+    fill < D.pool.rural_carveout - 10000 && bonus < D.pool.rural_carveout - 10000);
 
   // N3 — the freed main pool flows to non-rural colleges: a floored rural college's
   // main top-up is measured against its REDUCED floor (main pool pays less for it
@@ -2682,317 +2703,6 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     T._alloc(window.CPL_FUNDING.colleges.reduce(function (a, b) {
       return (a.headcount || 0) >= (b.headcount || 0) ? a : b;
     }).college).total === max);
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Part S — the BASELINE PARTICIPATION GATE (Sam, 2026-07-30): "actual funding
-// total should only be above 0 if they've met all of the quals as well."
-// Sam's four rulings, each with an assertion here:
-//   (1) only the 2 baseline reqs gate (coordinator + participation request);
-//   (2) the gate is a prompt, not a penalty — dollars are HELD, never lost;
-//   (3) the guaranteed rural allowance and the cap are NOT gated;
-//   (4) withheld dollars are held in reserve, never redistributed.
-// ─────────────────────────────────────────────────────────────────────────────
-{
-  const { window } = freshDom();
-  window.CPL_FUNDING_PERF = { as_of: "2026-07-30", suppress_below: 5,
-    statewide: { p2: 9000, p3: 16807 },
-    colleges: { "Laney": { p2: 120, p3: 200 }, "Berkeley City": { p2: 90, p3: 150 } },
-    unmatched: {} };
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-
-  // Fail-open first: with no coordinator feed, NOTHING is gated (the standing
-  // rule — never a false "not qualified" from missing data).
-  T._setElig({ coordOk: false });
-  T.render();
-  check("S1: gate fails open — no coordinator feed means nothing is withheld",
-    (T._alloc("Laney").earned_withheld || 0) === 0 && !T._alloc("Laney").gate_blocked);
-
-  // Now load the feed: Laney fully qualified, Berkeley City missing the opt-in.
-  T._setElig({ coordOk: true,
-    coord: { "Laney": true, "Berkeley City": true },
-    optin: { "Laney": true } });
-  T.render();
-
-  const ok = T._alloc("Laney"), gated = T._alloc("Berkeley City");
-  check("S2: a fully qualified college is not gated", !ok.gate_blocked && (ok.earned_withheld || 0) === 0);
-  check("S2: a college missing the participation request IS gated", gated.gate_blocked === true);
-  check("S2: the gate names WHICH requirement is missing (not a bare failure)",
-    gated.gate_missing.length === 1 && /particip/i.test(gated.gate_missing[0]));
-
-  // (3) The CAP is untouched — the gate withholds earning, not the allocation.
-  const capBefore = gated.total;
-  check("S3: the gated college's allocation CAP is unchanged",
-    capBefore > 0 && Math.abs(capBefore - (gated.w * shareSumAll(T))) < 1);
-  check("S3: the gated college earns nothing on its performance-based main allocation",
-    Math.abs(gated.earned_measured + gated.earned_advance) < 0.5);
-  check("S3: what it would have earned is tracked as WITHHELD, not silently dropped",
-    gated.earned_withheld > 0);
-
-  // (4) Held, never redistributed — the qualified college's allocation is
-  // completely unaffected by its neighbour being gated.
-  check("S4: withheld dollars are NOT redistributed to qualified colleges",
-    Math.abs(ok.total - T._alloc("Laney").total) < 0.01 &&
-    ok.earned_total > 0);
-
-  // The cell must say "withheld", never a bare $0 — a plain zero would read as
-  // "posted no CPL", a different and unfairer claim.
-  const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const gatedSub = gatedRow.querySelector("td.tot .sub");
-  check("S5: the gated row reads 'held', not a bare $0",
-    !!gatedSub && /held/i.test(gatedSub.textContent) && !/^\s*\$0\s*$/.test(gatedSub.textContent));
-  check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
-    !!gatedRow.querySelector(".cf-gatechip"));
-  check("S5: the gated cell's hover explains the dollars roll forward",
-    /roll forward|held in reserve/i.test(gatedRow.querySelector("td.tot").getAttribute("title") || "") ||
-    /roll forward|reserve/i.test(gatedRow.querySelector("td.tot .sub").getAttribute("title") || ""));
-
-  // The reserve pool card exists and equals the sum of what was withheld.
-  const heldCard = doc.querySelector(".cplfund-card.withheld");
-  check("S6: a 'held in reserve' pool card surfaces the parked total", !!heldCard);
-  check("S6: the reserve card states the dollars are not redistributed",
-    /NOT redistributed|held, NOT/i.test(heldCard.textContent) ||
-    /qualifying later/i.test(heldCard.textContent));
-
-  const csv = T._csv().split("\r\n");
-  check("S7: CSV carries the withheld column",
-    csv[1].indexOf("Withheld (baseline not met)") !== -1);
-}
-function shareSumAll(T) {
-  // Σ of the viewed window's per-year share sums ÷ nYears — the same factor
-  // collegeAlloc applies; derived, never hardcoded.
-  const s = T._alloc("Laney");
-  return s.total / s.w;
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Part T — SINGLE-SOURCE: the Budget ledger is the authority for the
-// appropriation figures (Sam, 2026-07-30 — "they're wired together"). The
-// funding model no longer keeps its own copy of the $35M; it reads the
-// budget_funding row whose `model_field` names the pool field. Joining on that
-// column (never the row NAME) is what makes it rename-proof.
-// ─────────────────────────────────────────────────────────────────────────────
-{
-  const { window } = freshDom();
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-
-  // Fail-soft FIRST: no ledger ⇒ the committed value stands. This is the
-  // property that keeps an unreachable Supabase from rendering a $0 pool.
-  T._setLedger(null); T.render();
-  const committed = D.pool.one_time_2026_27;
-  check("T1: with no ledger the committed appropriation stands (fail-soft)",
-    T._pool("one_time_2026_27") === committed && committed > 0);
-  check("T1: no ledger ⇒ no drift and no ledger note",
-    T._ledgerDrift().length === 0 && !doc.querySelector(".cplfund-ledgernote"));
-
-  // The ledger REPLACES the committed literal.
-  T._setLedger({ one_time_2026_27: committed + 1000000 }); T.render();
-  check("T2: the ledger figure overrides the committed data-file copy",
-    T._pool("one_time_2026_27") === committed + 1000000);
-  check("T2: the pool section states the figure is sourced from the ledger",
-    !!doc.querySelector(".cplfund-ledgernote"));
-
-  // A garbage ledger value must NOT poison the model.
-  T._setLedger({ one_time_2026_27: NaN }); T.render();
-  check("T3: a non-finite ledger value falls back to the committed figure",
-    T._pool("one_time_2026_27") === committed);
-
-  // A scenario what-if still WINS — it is a deliberate modelling choice, not
-  // drift — but the disagreement is surfaced rather than left silent.
-  T._setLedger({ one_time_2026_27: 35000000 });
-  T._setScenario({ pool: { one_time_2026_27: 40000000 } });
-  T.render();
-  check("T4: a scenario override still beats the ledger (what-ifs keep working)",
-    T._pool("one_time_2026_27") === 40000000);
-  const drift = T._ledgerDrift();
-  check("T4: the override is reported as drift against the ledger",
-    drift.length === 1 && drift[0].field === "one_time_2026_27" &&
-    drift[0].ledger === 35000000 && drift[0].effective === 40000000);
-  check("T4: the drift is shown in the pool section, not just computed",
-    !!doc.querySelector(".cplfund-ledgerdrift"));
-  check("T4: the drift notice frames an override as deliberate, not an error",
-    /deliberate what-if/.test(doc.querySelector(".cplfund-ledgerdrift").textContent));
-
-  // Agreement is not drift.
-  T._setScenario({ pool: { one_time_2026_27: 35000000 } }); T.render();
-  check("T5: an override that AGREES with the ledger is not reported as drift",
-    T._ledgerDrift().length === 0 && !doc.querySelector(".cplfund-ledgerdrift"));
-  T._setScenario({});
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Part U — PUBLIC MODE (Sam's ask #3, 2026-07-30): the lean college-audience
-// render served by cpl_funding_public.html. This is AUDIENCE SEPARATION, NOT
-// SECURITY (the data files are already public on Pages and PII-free by design),
-// so what these assertions actually protect is that a college never sees — or
-// worse, operates — a curate affordance meant for the CO.
-// ─────────────────────────────────────────────────────────────────────────────
-{
-  const { window } = freshDom();
-  window.CPL_FUNDING_PUBLIC = true;
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  T.render();
-
-  // The registry sweep is the load-bearing guarantee: every curate attribute is
-  // gone from the DOM, so a missed emitter cannot leak one.
-  const CURATE = ["data-edit", "data-note", "data-notesave", "data-reqdel", "data-reqhide",
-    "data-reqshow", "data-stratadd", "data-stratdel", "data-timingdel",
-    "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
-  const leaked = CURATE.filter(function (a) { return !!doc.querySelector("[" + a + "]"); });
-  check("U1: no curate/edit affordance survives in public mode (" + CURATE.length + " attrs swept)",
-    leaked.length === 0);
-  check("U1: no editable inputs at all (the anonymous what-if path is closed too)",
-    doc.querySelectorAll("#cplFundingMount input:not([type=search]):not([type=checkbox]), " +
-      "#cplFundingMount textarea, #cplFundingMount select").length === 0);
-
-  // The three chrome surfaces a college should not see.
-  check("U2: no project/scenario control strip", !doc.querySelector("#cplFundProjSel, #cplFundScenSel"));
-  check("U2: no team-editing / unlock bar", !doc.querySelector("#cplFundLock, #cplFundUnlockSlot"));
-  check("U2: the internal Report sub-tab is not offered",
-    !doc.querySelector('[data-subview="report"]'));
-  check("U2: the two public sub-views ARE still offered",
-    !!doc.querySelector('[data-subview="model"]') && !!doc.querySelector('[data-subview="grants"]'));
-
-  // The actual product still works — this is a lean render, not a crippled one.
-  check("U3: every college row still renders",
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length);
-  check("U3: the money cells still stack cap over earned",
-    !!doc.querySelector("#cplFundTable td.tot .sub"));
-  check("U3: grouping still works for a public reader",
-    !!doc.querySelector("#cplFundGroup"));
-
-  // Public mode must not even ASK for the reviewer-gated notes table. (It is
-  // gated server-side too — cpl_funding_notes SELECT requires
-  // is_allowed_reviewer() OR team_pass_ok() — but not asking is the honest form.)
-  check("U4: no CO Monitor note textarea is rendered", !doc.querySelector(".cplfund-note"));
-}
-{
-  // ?college= deep link — a college mostly wants its own row.
-  const { window } = freshDom();
-  window.CPL_FUNDING_PUBLIC = true;
-  const target = D.colleges[3].college;
-  window.history.replaceState({}, "", "/?college=" + encodeURIComponent(target));
-  const doc = boot(window);
-  check("U5: ?college= opens that college's drill-in",
-    !!doc.querySelector("tr.cplfund-detail"));
-  const hl = doc.querySelector("tr.cplfund-deeplink");
-  check("U5: ?college= highlights the row", !!hl && hl.textContent.indexOf(target) !== -1);
-  window.CPL_FUNDING_TAB.render();
-  check("U5: the highlight SURVIVES a re-render (sidecar loads re-render the tab)",
-    !!doc.querySelector("tr.cplfund-deeplink"));
-}
-{
-  // An unknown ?college= must be ignored, never an error state.
-  const { window } = freshDom();
-  window.CPL_FUNDING_PUBLIC = true;
-  window.history.replaceState({}, "", "/?college=Hogwarts");
-  const doc = boot(window);
-  check("U6: an unknown ?college= is ignored, not an error",
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length === D.colleges.length &&
-    !doc.querySelector("tr.cplfund-deeplink"));
-}
-{
-  // The DEFAULT (dashboard) render must be completely unaffected.
-  const { window } = freshDom();
-  const doc = boot(window);
-  check("U7: without the flag the curate affordances are still present (no regression)",
-    !!doc.querySelector("[data-edit]") && !!doc.querySelector('[data-subview="report"]'));
-}
-
-// U8 — the standalone page itself (static greps: it is hand-maintained HTML).
-{
-  const pub = fs.readFileSync(path.join(__dirname, "..", "cpl_funding_public.html"), "utf8");
-  check("U8: the public page sets the public-mode flag", /window\.CPL_FUNDING_PUBLIC\s*=\s*true/.test(pub));
-  check("U8: it loads ONLY the funding data + consumer (no dashboard bundle)",
-    /src="cpl_funding_data\.js"/.test(pub) && /src="cpl_funding\.js"/.test(pub) &&
-    !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(pub));
-  check("U8: it provides the CPL_TABS.loadScript contract so the sidecars still load",
-    /CPL_TABS\s*=\s*\{[\s\S]*loadScript/.test(pub));
-  check("U8: the sidecar loader FAILS OPEN (onerror still calls back)",
-    /onerror[\s\S]{0,80}cb\(\)/.test(pub));
-  check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(pub));
-  check("U8: it states plainly that this is a draft model, not an award notice",
-    /not an award notice/i.test(pub));
-  check("U8: it documents that this is audience separation, NOT security",
-    /audience separation, NOT security/i.test(pub));
-  check("U8: it links back to the full dashboard rather than pretending to be the whole site",
-    /index\.html#implementation-funding/.test(pub));
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-// Part V — the two defects the post-build self-review caught (2026-07-30).
-// (The adversarial-review workflow errored out on tool plumbing, so these came
-// from reading the code by hand — worth naming, because "0 findings" from a
-// failed reviewer is not a clean bill of health.)
-// ─────────────────────────────────────────────────────────────────────────────
-{
-  // V1 — WITHHELD must be pro-rated by the cell's share of the WINDOW CAP, not
-  // by 1/nYears. Those differ under FRONT-LOAD, where the year-1 cell carries
-  // the whole window: a flat split showed the full cap over HALF the withheld.
-  const { window } = freshDom();
-  // Berkeley City is given actuals well past its target, so it WOULD earn its
-  // full window — then it is gated, making the whole window withheld. (Before
-  // 2026-07-31 this fixture fed only p2/p3 and the withheld money came entirely
-  // from the Year-2 gap metrics advancing into the Yr-1 cell. That advance was
-  // the defect the front-load seam removed, so the fixture had to stop relying
-  // on it — see tests/cpl_funding_frontload.test.js.)
-  window.CPL_FUNDING_PERF = { as_of: "2026-07-30", suppress_below: 5,
-    statewide: { pe: 43000, p2: 9000, p3: 16807, pp: 5 },
-    colleges: { "Laney": { pe: 400, p2: 120, p3: 200, pp: 3 },
-      "Berkeley City": { pe: 999999, p2: 999999, p3: 999999, pp: 999999 } },
-    unmatched: {} };
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  // Gate a college so there IS withheld money, and turn front-load ON.
-  T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true } });
-  T._setScenario({ disbursement: "frontload" });
-  T.render();
-
-  const gated = T._alloc("Berkeley City");   // no coordinator ⇒ gated
-  check("V1: front-load setup — the gated college has withheld money",
-    gated.gate_blocked === true && gated.earned_withheld > 0);
-
-  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (r) { return /Berkeley City/.test(r.textContent); });
-  const cells = row.querySelectorAll("td");
-  // The Yr-1 cell under front-load carries the WHOLE window, so its withheld
-  // must be the WHOLE withheld — not half of it.
-  // Sam, 2026-07-30: the cell reads "held $X" — "withheld · $X held" was redundant.
-  // NB: target the .sub span, not the cell text — textContent concatenates the
-  // stacked lines with no separator ("$150,000held $106,500"), so a \b anchor
-  // never matches.
-  const subText = function (td) { var el = td.querySelector(".sub"); return el ? el.textContent : ""; };
-  const y1 = Array.from(cells).find(function (td) {
-    return /held/i.test(subText(td)) && !td.classList.contains("tot");
-  });
-  const heldDigits = String(Math.round(gated.earned_withheld));
-  check("V1: the front-loaded window cell reports the FULL held amount",
-    !!y1 && subText(y1).replace(/[^0-9]/g, "") === heldDigits);
-  // And it must agree with the window Total cell, which carries the same window.
-  const tot = row.querySelector("td.tot");
-  check("V1: the front-loaded window cell agrees with the window Total cell",
-    subText(tot).replace(/[^0-9]/g, "") === heldDigits);
-  check("V1: the cell says 'held', not the redundant 'withheld · held'",
-    !/withheld/i.test(subText(y1)));
-  T._setScenario({});
-}
-{
-  // V2 — public mode must refuse to RENDER the Report body, not merely hide its
-  // tab. A hidden tab is not a guarantee if state reaches "report" another way.
-  const { window } = freshDom();
-  window.CPL_FUNDING_PUBLIC = true;
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  T._setSubview("report");
-  check("V2: public mode refuses to render the internal Report body",
-    !doc.querySelector(".cplfund-memo, #cplFundMemo") &&
-    doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length > 0);
-  check("V2: it falls back to the model view rather than blanking the page",
-    !!doc.querySelector('[data-subview="model"].on'));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

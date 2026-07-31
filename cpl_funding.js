@@ -764,6 +764,70 @@
   function totalHeads() { return base().system.headcount; }
   function perStudent() { return totalHeads() ? perYear() / totalHeads() : 0; }
 
+  // ── allocation basis: how big is this college? ────────────────────────
+  // THE single seam for the proportional split (Sam, 2026-07-31). Default is
+  // **credit FTES**; headcount is kept selectable so the two can be compared,
+  // and the active basis is always NAMED on screen — never an invisible mode.
+  //
+  // Why FTES won, measured rather than argued:
+  //   • The objection was that FTES would penalise CPL-heavy colleges, since
+  //     working adults enrol part-time. It doesn't — corr(load factor, CPL
+  //     penetration) = 0.086, and switching the basis moves money TOWARD the
+  //     highest-CPL colleges (+$307K to the top 15, −$348K from the bottom 15).
+  //   • Decisively, it is better DATA. Credit FTES is uniform 2025-26 and
+  //     internally consistent; headcount has 41 of 115 rows on 2022-23 vintage
+  //     and 33 of 115 outside any credible FTES-per-head band — 20 of those on
+  //     CURRENT vintage, so it is definitional drift, not just staleness.
+  //     (Pasadena: 14,936 headcount against 23,347 credit FTES = every student
+  //     carrying 47 units a year. The FTES is plausible; the headcount is not.)
+  //   • It is also the Chancellor's Office's native currency, which is the unit
+  //     the eventual SCFF/apportionment argument has to be made in.
+  //
+  // CREDIT FTES specifically: CPL awards credit, and the noncredit feeders have
+  // their own carve-out — using total FTES would fund that population twice.
+  function allocationBasis() {
+    var v = firstDefined(SCENARIO.allocationBasis, SHARED.allocationBasis, base().allocation_basis);
+    return v === "headcount" ? "headcount" : "ftes";
+  }
+  function usesFtes() { return allocationBasis() === "ftes"; }
+  function basisLabel() { return usesFtes() ? "credit FTES" : "headcount"; }
+  // A college's size on the active basis. Falls back to headcount if a row has
+  // no FTES (fail-safe: a missing figure must never zero a college's allocation).
+  function sizeOf(c) {
+    if (!c) return 0;
+    if (usesFtes() && c.credit_ftes != null) return c.credit_ftes || 0;
+    return c.headcount || 0;
+  }
+  function totalSize() {
+    return base().colleges.reduce(function (s, c) { return s + sizeOf(c); }, 0);
+  }
+  // Share of the statewide basis — COMPUTED, never baked, so it cannot drift
+  // from the figure it is a share of.
+  function sizePct(c) {
+    var t = totalSize();
+    return t > 0 ? sizeOf(c) / t : 0;
+  }
+  function ftesVintage() { return base().ftes_vintage || "2025-26"; }
+  function sizeSortKey() { return usesFtes() ? "credit_ftes" : "headcount"; }
+  // Both figures ride in the hover, always — the basis decides which one is
+  // rendered, never which one exists. (A basis you can't see the alternative to
+  // is the same trap as a mode toggle: docs/kb-notes/methodology-retire-a-mode-
+  // toggle-by-coexistence.md.)
+  function sizeCellTitle(c) {
+    var pct = fmtPct(c.size_pct, 2);
+    return usesFtes()
+      ? fmtInt(c.credit_ftes) + " credit FTES (" + ftesVintage() + ") — " + pct +
+        " of statewide, the allocation basis. Headcount: " + fmtInt(c.headcount) +
+        " (" + (c.hc_vintage || "n/a") + "), context only."
+      : fmtInt(c.headcount) + " headcount (" + (c.hc_vintage || "n/a") + ") — " + pct +
+        " of statewide, the allocation basis. Credit FTES: " + fmtInt(c.credit_ftes) +
+        " (" + ftesVintage() + "), context only.";
+  }
+  function setAllocationBasis(v) {
+    activeOverride().allocationBasis = v === "headcount" ? "headcount" : "ftes";
+    persistActive();
+  }
+
   function prioField(slot, idx, field) {
     var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][idx];
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
@@ -1719,6 +1783,11 @@
         ". Per-year performance targets are unchanged — only the cash timing moves."
       : nYears() + "-year window · the pool splits into " + nYears() + " equal annual tranches";
     return '<div class="cplfund-years">' + selects +
+      (publicMode() ? "" :
+        '<label>Allocation basis ' + segHtml("cplFundAllocBasis", [
+          { val: "ftes", label: "Credit FTES" },
+          { val: "headcount", label: "Headcount" }
+        ], allocationBasis()) + "</label>") +
       '<label>Disbursement ' + segHtml("cplFundDisb", [
         { val: "even", label: "Even tranches" },
         { val: "frontload", label: "Front-load Year 1" }
@@ -2330,7 +2399,8 @@
     var balanced = Math.abs(shareSum - 1) < 0.0001;
     var shareSentence = balanced
       ? "The three Year-" + state.viewSlot + " priority shares (" + parts + ") sum to 100%, so a college&#39;s " +
-        "<strong>total potential allocation equals its share of statewide headcount</strong> applied to the " +
+        "<strong>total potential allocation equals its share of statewide " + basisLabel() +
+        "</strong> applied to the " +
         fmtMoney(per) + " annual pool"
       : "The three Year-" + state.viewSlot + " priority shares (" + parts + ") <span class=\"cplfund-warn-text\">sum to " +
         fmtPctTrim(shareSum) + " &mdash; the model " + (shareSum > 1 ? "over" : "under") +
@@ -2376,12 +2446,12 @@
       // annual tranche here contradicts the money cells + drill-in (Sam,
       // 2026-07-30: the toggle's job is to change the story, not hide a mismatch).
       (frontloaded()
-        ? "Each college&#39;s potential allocation is <code>headcount share &times; priority share &times; " +
+        ? "Each college&#39;s potential allocation is <code>" + basisLabel() + " share &times; priority share &times; " +
           fmtMoney(per * nYears()) + "</code> per priority &mdash; the full " + esc(windowLabel()) +
           " window, placed on the table in Year 1. The per-year performance target is unchanged, so the " +
           "effective rate per student is " + nYears() + "&times; the annual rate."
         : "Each college&#39;s potential allocation of one annual tranche is " +
-          "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> per priority."),
+          "<code>" + basisLabel() + " share &times; priority share &times; " + fmtMoney(per) + "</code> per priority."),
       shareSentence + ".",
       cadenceSentence,
       "Balance for Year " + state.viewSlot + ": <strong>" +
@@ -2569,7 +2639,10 @@
       { key: "order", label: "#", cls: "" },
       { key: "college", label: "College", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      { key: "headcount", label: "Headcount", cls: "" }
+      { key: sizeSortKey(), label: usesFtes() ? "Credit FTES" : "Headcount", cls: "",
+        title: usesFtes()
+          ? "2025-26 annual CREDIT FTES (CCCCO DataMart). This is the allocation basis — each college's share of statewide credit FTES sets its share of the pool. Noncredit FTES is excluded here; the noncredit campuses have their own carve-out. Hover a cell for that college's headcount."
+          : "Annual student headcount (CCCCO MIS DataMart). This is the allocation basis — each college's share of statewide headcount sets its share of the pool. Hover a cell for that college's credit FTES." }
     ].concat(prioColDefs(), [
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (the second line of each money cell)." }
@@ -2696,8 +2769,10 @@
     // rural allowance; non-rural colleges carry the full floor.
     function floorFor(c) { return isRural(c) ? Math.max(0, floor - ruralPer) : floor; }
     var F = {}, W = {};
-    var totHeads = 0, totFloor = 0;
-    cols.forEach(function (c) { totHeads += c.headcount || 0; totFloor += floorFor(c); });
+    // `totSize` is the statewide total on the ACTIVE basis (credit FTES by
+    // default, headcount if selected) — every proportional split below reads it.
+    var totSize = 0, totFloor = 0;
+    cols.forEach(function (c) { totSize += sizeOf(c); totFloor += floorFor(c); });
     if (floor > 0 && totFloor >= net) {
       // Floors set higher than the pool can honor — degrade to a floor-proportional
       // split (reduces to an equal split when every floor is equal).
@@ -2712,12 +2787,12 @@
         var usedFloor = 0;
         Object.keys(F).forEach(function (k) { usedFloor += floorFor(byName[k]); });
         var remaining = net - usedFloor;
-        var baseHc = 0;
-        cols.forEach(function (c) { if (!F[c.college]) baseHc += c.headcount || 0; });
+        var baseSize = 0;
+        cols.forEach(function (c) { if (!F[c.college]) baseSize += sizeOf(c); });
         cols.forEach(function (c) {
           if (F[c.college]) return;
           var fl = floorFor(c);
-          var w = baseHc > 0 ? (c.headcount || 0) / baseHc * remaining : 0;
+          var w = baseSize > 0 ? sizeOf(c) / baseSize * remaining : 0;
           if (fl > 0 && w < fl) { F[c.college] = true; changed = true; }
           else W[c.college] = w;
         });
@@ -2729,7 +2804,7 @@
     // their floor is funded by the rural carve-out, not the main pool).
     var cost = 0;
     cols.forEach(function (c) {
-      if (F[c.college] && totHeads > 0) cost += Math.max(0, floorFor(c) - (c.headcount || 0) / totHeads * net);
+      if (F[c.college] && totSize > 0) cost += Math.max(0, floorFor(c) - sizeOf(c) / totSize * net);
     });
     _allocCache = { W: W, floored: F, floor: floor, floorCount: Object.keys(F).length, floorCost: cost, net: net };
     return _allocCache;
@@ -2860,6 +2935,7 @@
       var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
         headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
+        credit_ftes: c.credit_ftes, size_pct: sizePct(c),
         working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
         rural: isRural(c)
       };
@@ -2993,7 +3069,8 @@
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      '<td title="' + fmtPct(c.headcount_pct, 2) + ' of statewide headcount">' + fmtInt(c.headcount) + "</td>" +
+      '<td title="' + esc(sizeCellTitle(c)) + '">' +
+        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</td>" +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
@@ -3029,7 +3106,7 @@
         ? fmtPctTrim(p.share) + " share &times; the college&#39;s " +
           fmtMoney(flPrio ? (c.w || 0) : ((c.w || 0) / nYears())) + trancheLbl +
           (c.rural_w > 0 ? " (incl. rural allowance)" : "")
-        : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
+        : fmtPctTrim(c.size_pct) + " " + basisLabel() + " share &times; " + fmtPctTrim(p.share) + " share &times; " +
           fmtMoney(flPrio ? per * nYears() : per) + (flPrio ? " (full window, front-loaded)" : "");
       var earnSeg = "";
       (function () {
@@ -3087,7 +3164,7 @@
     var ra = c.rural ? ruralAlloc(baseCollege(c.college) || c) : null;
     var floorLine = "";
     if (c.floored) {
-      var propShare = fmtMoney(c.headcount_pct * m.net);
+      var propShare = fmtMoney((c.size_pct || 0) * m.net);
       floorLine = (c.rural && ra)
         ? '<div><span class="dk">⬆ Floor applied:</span> a pure proportional main-pool share would be ' +
           propShare + " for the window. The main pool tops it up to <strong>" + fmtMoney(ra.mainW) +
@@ -3155,7 +3232,8 @@
     return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
-      fmtPct(c.headcount_pct, 3) + " of the statewide " + fmtInt(totalHeads()) + "</div>" +
+      fmtPct(c.size_pct, 3) + " of the statewide " +
+        (usesFtes() ? fmtInt(totalSize()) + " credit FTES" : fmtInt(totalHeads()) + " headcount") + "</div>" +
       floorLine + ruralLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
@@ -3687,7 +3765,8 @@
   // aria-pressed on each button reflecting the active choice (a11y, 2026-07-28).
   var SEG_LABELS = {
     cplFundView: "View by", cplFundGroup: "Grouping", cplFundYear: "Funding year",
-    cplFundDisb: "Disbursement timing", cplFundDocType: "Document type"
+    cplFundDisb: "Disbursement timing", cplFundAllocBasis: "Allocation basis",
+    cplFundDocType: "Document type"
   };
   function segHtml(id, items, current) {
     var lbl = SEG_LABELS[id] || "Options";
@@ -4487,6 +4566,11 @@
       render();
     });
     wireSeg("cplFundYear", function (v) { state.viewSlot = v; render(); });
+    wireSeg("cplFundAllocBasis", function (v) {
+      if (v === allocationBasis()) return;
+      savingState = "";
+      setAllocationBasis(v);
+    });
     wireSeg("cplFundDisb", function (v) {
       if (v === disbursement()) return;
       savingState = "";
