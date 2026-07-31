@@ -229,6 +229,68 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     pdoc.querySelectorAll("#cplFundTable tbody tr.cplfund-row").length > 0);
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Part H — cap and target must ride the SAME basis
+// ─────────────────────────────────────────────────────────────────────────────
+// The defect this guards (shipped in #959, fixed 2026-07-31): the allocation
+// basis moved to credit FTES while the performance target stayed denominated on
+// headcount. cap / target then diverged from the statewide per-student rate by
+// 0.49x (Santa Ana) to 2.11x (Las Positas) for 72 of 115 colleges — so a college
+// was asked to hit a target sized for a different college, and the P-cell hover
+// asserted "at the $X/student statewide base rate" while the real rate was half
+// or double it. Both bases must satisfy this; it is basis-independent by design.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+
+  ["ftes", "headcount"].forEach(function (basis) {
+    T._setScenario({ allocationBasis: basis });
+    T.render();
+    const m = T._model();
+    const rows = allRows(T);
+    // For an UNFLOORED, NON-RURAL college the cap is a pure proportional share
+    // and the target a pure proportional share of the same basis, so their ratio
+    // must be the statewide per-student rate exactly.
+    const plain = rows.filter(function (r) {
+      return !m.floored[r.college] && !(r.rural_w > 0);
+    });
+    const key = Object.keys(rows[0]).find(function (k) { return /_heads$/.test(k); });
+    const cap = key.replace(/_heads$/, "");
+    const rates = plain.map(function (r) { return r[key] > 0 ? r[cap] / r[key] : null; })
+      .filter(function (x) { return x != null; });
+    const spread = Math.max.apply(null, rates) / Math.min.apply(null, rates);
+    check(basis + ": cap ÷ target is the SAME rate for every unfloored college (no basis mismatch)",
+      plain.length > 20 && spread < 1.001);
+  });
+
+  // And whatever rate a P-cell STATES, it must equal that cell's own cap / target.
+  // Two sentence forms exist: "an effective $X/student" (floored, rural, or
+  // renormalised) and "at the $X/student statewide base rate" (exactly on base).
+  // Either way the number the reader sees has to survive dividing the two other
+  // numbers in the same tooltip.
+  T._setScenario({ allocationBasis: "ftes" });
+  T.render();
+  const cells = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio"));
+  const checked = [];
+  const lying = [];
+  cells.forEach(function (td) {
+    const t = td.getAttribute("title") || "";
+    const cap = (t.match(/Funding cap \$([\d,]+)/) || [])[1];
+    const tgt = (t.match(/Target ([\d,]+) students/) || [])[1];
+    const stated = (t.match(/an effective \$([\d,.]+)\/student/) ||
+                    t.match(/at the \$([\d,.]+)\/student statewide base rate/) || [])[1];
+    if (!cap || !tgt || !stated) return;
+    const eff = Number(cap.replace(/,/g, "")) / Number(tgt.replace(/,/g, ""));
+    const say = Number(stated.replace(/,/g, ""));
+    checked.push(td);
+    // 1c tolerance on the rate, plus the rounding of a whole-dollar cap.
+    if (Math.abs(eff - say) / say > 0.02) lying.push([eff, say, t.slice(0, 90)]);
+  });
+  check("every P-cell states a $/student rate that matches its OWN cap ÷ target",
+    checked.length > 100 && lying.length === 0);
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
