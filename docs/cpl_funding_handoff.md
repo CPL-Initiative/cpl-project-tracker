@@ -1,13 +1,69 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-07-30
+updated: 2026-07-31
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
 ---
 
 # You are the next Implementation-Funding session
+
+## 🔭 START HERE — where things stand (2026-07-31, SkyQueue cont.)
+
+Three merges landed in one run and they are **one story**: a stale default caused a
+debugging round, removing it exposed a months-old join bug, and fixing that closed the loop.
+Full narrative: [`cpl_funding_lessons.md`](cpl_funding_lessons.md) § 2026-07-31.
+
+| PR | What landed |
+|---|---|
+| **#955** | The baked priority metrics in `cpl_funding_data.js` had gone stale (the Excel workbook + builder were **retired 2026-07-03**, so nothing keeps the bake in sync with the live Supabase config). Synced them, added a **curator-only metric-wiring diagnostic** (`metricDiagnosticHtml` — per slot: MEASURABLE + src + live count, or a NAMED gap, plus "↩ inheriting baked default"), and guarded it with `tests/cpl_funding_metric_wiring.test.js`. |
+| **#956** | **Front-load now earns the whole window against the Year-1 targets.** Sam's "double the per-student amount, not the students" — built as a scope change, not a multiplier. New seam `slotEntitlement` / `prioCap` / `slotIsCarryover`. Removed a live defect where Year 2's three unmeasurable metrics paid every college a full advance for half the window. |
+| **#957** | The join bug #956 exposed: Barstow / Lassen / Madera / Southwestern had never matched the MAP feed (`College` vs `Community College`, in **both** directions) and were reading $0. Collision-checked stem join + a `short_caps` fix that also closed LA Southwest, Reedley, Norco, MiraCosta, Mt San Antonio. |
+
+**Read before touching the earning math:**
+[`methodology-a-default-payout-masks-the-gap-beneath-it`](kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md)
+— a "if we can't measure it, pay it anyway" rule is also a blindfold, and removing one
+must be paired with an audit of what was riding on it.
+
+### Invariants this run established — do not break them
+
+- **`prioCap(W, slot, p)` is the ONLY place disbursement scope is decided.** A test asserts
+  no site computes `W × p.share ÷ nYears` on its own. If you add a money surface, route it
+  through the seam; a site drifting back is how two modes silently disagree again.
+- **Targets are per-year and are NOT scaled by disbursement.** `prioTargetRate` derives from
+  `perYear()`. Front-load moves the money, never the student count — that was Sam's explicit
+  instruction ("rather than doubling the students, which would make it twice as hard").
+- **Under EVEN, everything must reduce exactly to the historical formula.** Guarded.
+- **The prose has to move with the money.** Three contradictions (the P-cell rate hover
+  calling a doubled cap "the statewide base rate", the annual-tranche bullet, a `/yr` on a
+  window figure) were caught by hand review, not by the suite. Re-read the explainers after
+  any scope change.
+- **A fuzzy entity join must be collision-checked** — drop a key reachable from two entities
+  rather than picking one, so it can add matches but never merge institutions.
+
+### ⏭️ Next concrete step
+
+**The Budget consolidation** (still the open item from #946): fold Implementation Funding in
+as a Budget sub-view and — the part that actually pays — have the funding model read
+`one_time_2026_27` from the ledger's `$35M` row instead of holding its own copy in
+`cpl_funding_data.js`. That single-source wiring permanently kills the drift class that cost
+a day this week; **#955 is the second instance of it.**
+
+### ❓ Open with Sam
+
+**Nine model colleges genuinely have no feed row** (Lake Tahoe, Imperial, Rio Hondo, Marin,
+Cosumnes River, Folsom Lake, Siskiyous, Yuba). They now read **$0**, which is the honest
+reading of "posted nothing" — and Sam did rule *"For those, the earned funding should be 0."*
+But he also said he'd **supply gap data before the advance rule goes live**, so confirm he
+wants a bare $0 there rather than an "⏳ awaiting data" mark. These are the colleges most
+likely to appeal.
+
+Lower stakes, noted not fixed: the noncredit-feeder resolver misses the `… Credit` variants
+of feeder names (`Calbright College Credit`, `North Orange Continuing Education Credit`) —
+both currently carry only suppressed 1–4 cells.
+
+---
 
 ## ✅ RESOLVED — the Sept-2026 BOG amendment is now the pool authority (2026-07-30, SkyReconcile)
 

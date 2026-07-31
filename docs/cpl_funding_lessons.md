@@ -1669,3 +1669,127 @@ Then the **Budget consolidation**: fold Implementation Funding in as a Budget su
 and — the part that actually pays — have the funding model read `one_time_2026_27` from
 the ledger's `$35M` row instead of holding its own copy in `cpl_funding_data.js`. That
 single-source wiring permanently kills the drift class that cost a day this week.
+
+---
+
+## 2026-07-31 — SkyQueue cont.: front-load earns the window, and the mask comes off (#955, #956, #957)
+
+Three merges in one run, and they're one story: a stale default caused a debugging round,
+removing it exposed a months-old join bug, and fixing that closed the loop.
+
+### #955 — make the stale baked configs announce themselves
+
+Sam's diagnosis was right and mine was wrong. He'd reworded P1/P2/P3 months ago and asked
+"can you fix the source of those baked configs" — the real answer being that the Excel
+workbook + builder were **retired 2026-07-03**, so `cpl_funding_data.js` is hand-maintained
+and *nothing* keeps its baked defaults in sync with the live Supabase config a curator
+actually edits. They can only go stale, silently. Year 1's live slots override the bake, so
+nothing looked wrong; **Year 2's three slots are `null`**, so they fell back to two-generation-old
+workbook wording that every `MEASURES` predicate reads as an unmeasurable gap.
+
+Fix was three-part: sync the bake, add a **curator-only metric-wiring diagnostic**
+(`prioMetricSource` → `scenario`/`curated`/`baked`; per slot MEASURABLE-with-src-and-live-count
+vs NAMED gap, plus "↩ inheriting baked default", opening automatically when anything needs
+attention), and guard it (`tests/cpl_funding_metric_wiring.test.js` — every Year-1 baked metric
+must be measurable; the Year-2 gap count is pinned at the KNOWN 3). The durable half of the test
+fix wasn't re-pointing 19 stale assertions — it was making them **SET** their metric via
+`_setShared` instead of inheriting whatever the bake happens to say.
+
+### #956 — front-load earns the whole window against Year-1 targets
+
+Sam's ask: *"if we doubled the per-student amount when Front Load is selected (rather than
+doubling the students, which would make it twice as hard) … I would love to be out of funding
+at the end of Year 1 because it would mean everyone is up and running."*
+
+**Not built as a multiplier.** Front-load already put the whole window in the Year-1 money
+cell; this makes the whole window *earned* against the Year-1 targets. The doubled per-student
+rate is then a consequence — same target, twice the money behind it — and it shows up in the
+P-cells and hovers on its own. Targets are deliberately not scaled: `prioTargetRate` still
+derives from `perYear()`, so the student count stays per-year. That was the half of the ask
+that was easy to get backwards.
+
+**The seam** — `slotEntitlement(W, slot)` / `prioCap(W, slot, p)` / `slotIsCarryover(slot)`,
+the single place disbursement scope is decided. Under EVEN, `prioCap` reduces *exactly* to the
+historical `W × p.share ÷ nYears`. Every site that used to compute that scope itself now routes
+through it, and **a test asserts zero strays remain** — a site drifting back to its own formula
+is precisely how two modes silently disagree again
+([[docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence]]).
+
+It also closed a live defect: front-load had been earning each year on *its own* slot's metrics
+and summing both into the Yr-1 cell, so Year 2's three gap metrics paid every college a **full
+advance for half the window** regardless of what it posted. Both live scenarios have front-load
+**ON**, with Year-2 slots overriding only `description` — real money, reading wrong.
+
+**The prose had to move with the money.** Every scope change that leaves an explainer behind
+recreates the mismatch the toggle retirement was for. Caught by hand-review, not by tests: the
+P-cell rate hover would have called the doubled cap "the statewide base rate" (flatly false),
+the "how an allocation is computed" bullet still quoted an annual tranche, and the rural
+allowance kept a `/yr` on a window figure. A front-loaded later year now reads **↻ carryover**
+in the P-cells, year filter, priority cards and drill-in rather than a wall of `$0`.
+
+### #957 — the mask comes off
+
+Removing the advance dropped four colleges to **$0 across the board** — Barstow (`pe` 133),
+Lassen (140), Madera (43), Southwestern (571) — because their names had never joined the MAP
+feed at all. The advance had been paying them the whole time. **The join bug was months old;
+it became visible the day the advance stopped.**
+
+The disagreement is `College` vs `Community College`, running in **both directions**, so no
+single canonical spelling per college could ever match both. Fixed with a trailing-suffix stem
+plus the property that makes a fuzzy join shippable: **collision-checked** — a stem reachable
+from two funding colleges is *dropped, not guessed*, so it can add matches but never merge
+institutions. Verified against the real roster: zero collisions across all names plus every
+alias, all 115 model names still self-resolving.
+
+A second instance of the same class surfaced on the way: the resolver located a short-names
+entry's funding college by matching `short` **alone**, so an entry whose workbook spelling is
+the CAPS form was skipped outright — which is why `Los Angeles Southwest College` resolved to
+nothing (workbook `LA Swest` vs short `LA Southwest`). Now tries short → short_caps → canonical,
+exact-then-stem. That also closed Reedley, Norco, MiraCosta and Mt San Antonio. LA Southwest has
+no feed row today, so it was latent — and would have gone wrong silently the first time it posted.
+
+Deliberately still unmatched: `Calbright College Credit`, `Launch Apprenticeship`, `North Orange
+Continuing Education Credit`. The first and third are noncredit **feeders**, resolved on a
+separate path — the `… Credit` variants of those feeder names are a real but low-stakes gap
+(both currently carry only suppressed 1–4 cells). **Nine model colleges genuinely have no feed
+row** (Lake Tahoe, Imperial, Rio Hondo, Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba) and
+correctly read as having posted nothing.
+
+### The durable lesson
+
+**A default payout masks the data gap beneath it** —
+[[docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it]]. "If we can't measure it,
+pay it anyway" is simultaneously a policy and a blindfold: it sits on the same code path as
+every upstream failure that produces "no value", so it reads as correct right up until you
+remove it — which is exactly when it turns into a false accusation against whoever the gap
+belonged to. Enumerate what reaches the default *before* removing it, and fix the defects in
+the same batch, because the window between "removed the mask" and "fixed what it hid" is a
+window where the product actively lies about real institutions.
+
+Process note: the adversarial-review Workflow failed outright on the prior run (all 4 agents hit
+the StructuredOutput retry cap), and its "0 findings" was **not** a clean bill of health — the
+hand review that replaced it found two real defects. Same again here: the three prose/unit
+contradictions above came from reading the code, not from the suite.
+
+### State
+
+- **Tests:** `cpl_funding` 591 · new `cpl_funding_frontload` **37** · new `cpl_funding_metric_wiring`
+  13 · `cpl_funding_performance` 24. Full suite **177 files green**.
+- Real Chromium desktop + phone: 0 JS errors, desktop h-overflow 0. Phone h-overflow of 50 is
+  **pre-existing on `main`** (verified against a stashed build) — not a regression.
+- Live shape confirmed in-browser: full window **$6,972,092** per priority, effective
+  **$61.73/student ($30.87 × 2)**, earned $1,781,667 — measured achievement, no advance.
+- `cpl_funding_performance.js` regenerates on the daily workflow (dispatched post-merge); the four
+  restored colleges appear on that run.
+
+### Next concrete step
+
+**The Budget consolidation** — fold Implementation Funding in as a Budget sub-view and, the part
+that actually pays, have the funding model read `one_time_2026_27` from the ledger's `$35M` row
+instead of holding its own copy in `cpl_funding_data.js`. That single-source wiring permanently
+kills the drift class that cost a day this week — and #955 is the second instance of it.
+
+Open with Sam: his rule for the **nine colleges with genuinely no feed row**. They now read $0,
+which is the honest reading of "posted nothing" — but he said he'd supply gap data before the
+advance rule goes live, so it's worth confirming he wants a bare $0 there rather than a
+"⏳ awaiting data" mark.
