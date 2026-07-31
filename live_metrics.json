@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-31T14:42:09.580Z",
+  "scraped_at": "2026-07-31T20:10:48.457Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -592,6 +592,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Solano Community College",
+          "students": 160,
+          "units": 1094,
+          "avgUnits": 6.8375,
+          "transcriptionRate": 1.1,
+          "avgTranscribed": 0.075,
+          "criteriaMetCount": 1,
+          "militaryStudents": 160,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1871860,
+          "yearImpact": 6564494,
+          "transcribedUnits": 12
+        },
+        {
           "college": "Los Angeles Mission College",
           "students": 154,
           "units": 946,
@@ -680,21 +695,6 @@
           "savings": 1017240,
           "yearImpact": 3567396,
           "transcribedUnits": 0
-        },
-        {
-          "college": "Solano Community College",
-          "students": 78,
-          "units": 530,
-          "avgUnits": 6.794871794871795,
-          "transcriptionRate": 2.3,
-          "avgTranscribed": 0.15384615384615385,
-          "criteriaMetCount": 1,
-          "militaryStudents": 78,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 896140,
-          "yearImpact": 3142706,
-          "transcribedUnits": 12
         },
         {
           "college": "Saddleback College",
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,908",
+      "value": "50,990",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,400"
+          "value": "26,482"
         },
         {
           "label": "Workforce/Other",
@@ -1775,12 +1775,12 @@
     },
     {
       "title": "ELIGIBLE UNITS",
-      "value": "242k",
+      "value": "243k",
       "avg": "4.8 avg",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "121k"
+          "value": "122k"
         },
         {
           "label": "Workforce/Other",
@@ -1813,11 +1813,11 @@
     },
     {
       "title": "SAVINGS",
-      "value": "$337M",
+      "value": "$338M",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$169M"
+          "value": "$170M"
         },
         {
           "label": "Workforce/Other",
@@ -1835,11 +1835,11 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$682M"
+          "value": "$685M"
         },
         {
           "label": "Workforce/Other",
-          "value": "$701M"
+          "value": "$702M"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50908,
-    "Units": 241995.15000000002,
+    "Students": 50990,
+    "Units": 242559.15000000002,
     "TranscribedUnits": 103163.95,
-    "Savings": 336952850.25,
-    "YearImpact": 1359121611.8999999,
-    "MilitaryStudents": 26400,
+    "Savings": 337928570.25,
+    "YearImpact": 1362543399.8999999,
+    "MilitaryStudents": 26482,
     "NonMilitaryStudents": 24588,
     "AprenticeStudents": 760,
-    "AverageUnits": 4.753578023100496,
-    "TranscribedAverage": 2.026478156674786
+    "AverageUnits": 4.756994508727202,
+    "TranscribedAverage": 2.0232192586781723
   }
 }

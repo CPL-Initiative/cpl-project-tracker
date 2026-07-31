@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-07-31T14:42:10.042704+00:00",
+  "scraped_at": "2026-07-31T20:10:48.994711+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26400,
+    "jst": 26482,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -200,6 +200,11 @@
       "jst": 560,
       "star": true
     },
+    "Solano Community College": {
+      "vets": 278,
+      "jst": 160,
+      "star": false
+    },
     "Victor Valley College": {
       "vets": 97,
       "jst": 336,
@@ -279,11 +284,6 @@
       "vets": 185,
       "jst": 167,
       "star": true
-    },
-    "Solano Community College": {
-      "vets": 278,
-      "jst": 78,
-      "star": false
     },
     "Diablo Valley College": {
       "vets": 211,
