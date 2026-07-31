@@ -2934,8 +2934,17 @@ function shareSumAll(T) {
   // by 1/nYears. Those differ under FRONT-LOAD, where the year-1 cell carries
   // the whole window: a flat split showed the full cap over HALF the withheld.
   const { window } = freshDom();
+  // Berkeley City is given actuals well past its target, so it WOULD earn its
+  // full window — then it is gated, making the whole window withheld. (Before
+  // 2026-07-31 this fixture fed only p2/p3 and the withheld money came entirely
+  // from the Year-2 gap metrics advancing into the Yr-1 cell. That advance was
+  // the defect the front-load seam removed, so the fixture had to stop relying
+  // on it — see tests/cpl_funding_frontload.test.js.)
   window.CPL_FUNDING_PERF = { as_of: "2026-07-30", suppress_below: 5,
-    statewide: { p2: 9000, p3: 16807 }, colleges: { "Laney": { p2: 120, p3: 200 } }, unmatched: {} };
+    statewide: { pe: 43000, p2: 9000, p3: 16807, pp: 5 },
+    colleges: { "Laney": { pe: 400, p2: 120, p3: 200, pp: 3 },
+      "Berkeley City": { pe: 999999, p2: 999999, p3: 999999, pp: 999999 } },
+    unmatched: {} };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   // Gate a college so there IS withheld money, and turn front-load ON.
