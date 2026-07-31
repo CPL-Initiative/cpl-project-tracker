@@ -2475,3 +2475,236 @@ anchored to **CA Title 5 §55050** ("similar," not identical), + learning-equiva
 sampler + payload present). Handoff: `docs/session_113_handoff.md`.
 
 ---
+
+---
+
+## Implementation Funding lane — narratives archived 2026-07-31 (SkyQueue cont.)
+
+> Verbatim move out of `CLAUDE.md` §11 per Rule 8's two-narrative budget. The
+> Implementation Funding lane had accumulated **nine** inline narratives; the two
+> most recent stay in CLAUDE.md, and the full story for all of them lives in
+> [`cpl_funding_lessons.md`](cpl_funding_lessons.md) — written once, there.
+
+### SkyReconcile — Implementation Funding: the Sept-2026 BOG amendment becomes the pool authority (2026-07-30)
+
+Closed SkyHighness's queued reconciliation. Sam supplied `20260729_CPL_Amendment_Sep_BOG.xlsx` and ruled:
+**amendment governs · both $1M earmarks survive · 2-year window.** The amendment splits the $35M in just two
+lines (`College CPL Outcomes Awards $26,040,308` = **$25,240,308 to institutions** + `$800,000` CO staff;
+`CPL Projects $8,959,692`) and names no noncredit or rural line — so the earmarks are carved **from inside**
+the institution total: `35,000,000 − 800,000 − 8,959,692 = 25,240,308 − 1M feeder − 1M rural = $23,240,308`
+main pool; hero **$24,240,308**, avg $210,785 / min $150,000 / max $623,871. `remaining_2025_26` → $9,040,308,
+making the $15M N2N residual compute to the amendment's exact **$59,692**. **Data-only** (`cpl_funding_data.js`;
+0 consumer changes — nothing downstream hardcoded a pool figure) + **Part R** pinning each line to the workbook;
+Supabase Scenario 1 re-pointed ($8M → $8,959,692), Scenario 2 untouched. Tests 515 → **531**. ⚠️ **Two errors
+found IN the amendment**, both reported: its `$74,000,000` grand total **double-counts the $8,959,692 project
+slice** (true total **$71,000,000**), and its `Max Award $665,971` is a transposition of $665,791 — the max
+over **115** colleges — while its average is that pool ÷ **119**. Method (incl. a reconciliation I got wrong
+first, from a $1 coincidence that assumed its own conclusion): `docs/cpl_funding_lessons.md` ·
+`docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md` · handoff `docs/cpl_funding_handoff.md`.
+
+**Cont. 2026-07-30 — the Budget tab becomes the CPL ledger (#938/#940/#941/#942 MERGED, LIVE).**
+Sam's full funding history back to 2017 unlocked the organizing insight: **both major asks were funded
+in TWO installments** — implementation one-time `$15M (2025) + $35M (2026) = the $50M requested`,
+ongoing ops `$5M + $2M = $7M/yr` — and 2026-27 is the year the Legislature made good on each. His three
+rulings (AskUserQuestion): one consolidated **$7M ongoing** row; the **amendment's 2-year shape governs
+the $35M**; **cutoff at 2025-26, ARCHIVE don't delete**. `budget_funding` stopped being a flat source
+list and became the whole ledger — **45 rows** (4 sources · 7 uses · 16 pool · 18 history) via
+`description`/`archived`/`parent_id`/`section`/`sort_order`/`window_label` (receipt
+`kb/supabase_budget_structure.sql`). **Nothing was deleted:** the two existing $6M rows turned out to be
+the *natural parents* of the seven $6M allocations (CO 2,254,764 · RCCD 3,745,236 — they sum exactly).
+New **`budget_ledger.js`** renders Sources · Uses · the $18M pool · History, each with collapsible
+detail, a Summary⇄Detail preset, and **inline editing on every non-total field incl. descriptions**;
+live-fetched so a curator's edit re-renders instantly. **`total` is computed = Σ years and read-only
+where a row has years, editable only where the source gives no split** — that rule immediately caught
+the $15M source row still carrying its old *spend* schedule (would have shown $24,040,307). Tests:
+`budget_ledger` 34 + `budget_ledger_structure` 21. ⚠️ **The load-bearing rule, hit THREE times in one
+day (the amendment's $74M, my first mockup, my own seed data): TOTALS SUM PARENT ROWS ONLY** —
+`docs/kb-notes/methodology-parent-child-ledger-totals.md`. Sam ruled the amendment's Lightleap $1.4M is
+**not** a double count (year-2 extension + more colleges) — do not re-raise. Open with Sam: the two $5M
+rows. Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`. Side-lane — left
+`cpl_todos.json`'s CCR items + the numbered handoff to the CCR mainline.
+
+### SkyHighness cont. — Implementation Funding: the $35M reframe + the $15M Distributions view (2026-07-29, #931/#934 MERGED)
+
+A CBO question at the CO budget workshop ("what are the factors in the allocation formula?") cascaded
+into two reframes, both live. **#931 — the tab models the 2026-27 $35M apportionment only** (the
+2025-26 remaining ~$9M is a separate topic): `$35M = $26,240,307 three-priority college pool (incl.
+$1M rural) + $1M NC feeder + $1.2M CO Administration + $6,559,693 CPL Projects & Innovation` — ties
+out to the penny. Hero **$26,240,307**, award range **avg $228,177 / min $150,000 / max $694,273**.
+⚠ Sam's precise anchor is **$26,240,307**; his "~$8M for Projects & Innovation" = **admin + P&I**
+($7.76M), so P&I alone is the $6.56M residual. **#934 — a third sub-view** (`[$35M Funding model |
+$15M Distributions | Report]`): the **ESS 25-82** receipt ($50,000 × **118** = **$5,900,000**; 114
+colleges + the **4 noncredit campuses**; **Sequoias declined**), the **$9,040,307** remaining balance
+alongside (where the dropped $9M honestly lives), an honest reconciliation naming the **$59,693**
+residual, and **per-recipient progress on the three ESS priority outcomes** — JSTs (`vet_star` ≥75%,
+memo bar is 100% → caveat inline) · statewide recs (**new** `funding/_build_funding_ess.py` →
+`cpl_funding_ess.js`, a 2.3KB sidecar off the 2.9MB CER; 84 credentials → **71 adopters**, 0
+unmatched; workflow step 4a3) · proactive CPL (`pe`/`p3`). **Fail-open** marks (no feed → ⏳, never a
+false "not met"); the legend says a dash is NOT a compliance finding. Live: **51 · 70 · 94**, **38
+meeting all three**. Tests 490→**515**; PII guard extended; Chromium desktop+mobile clean. Method:
+*read the policy PDF, don't infer it* — the memo alone gave up the CIO-certification mechanism and the
+exact 100% JST bar. Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
+
+### SkyHighness side-lane — Implementation Funding PR4: combine the floor with the rural bump + display rename (2026-07-28/29, #925 MERGED + rename PR)
+
+Shipped SkyHigh's queued PR4 (`cpl_funding.js` + `cpl_funding_data.js` + test; **0 HTML**). Sam's
+call (AskUserQuestion, grounded in the live split): **Option B — guarantee the whole $1M rural
+allowance** (floor-fill + bonus, no performance gate) → let me retire the entire ≥50% rural-earning
+machinery. **Mechanism = one waterfall, per-college floor:** `allocModel()` gives rural colleges a
+REDUCED main-pool floor `max(0, floor − ruralPer)` ≈ $73,077, so the guaranteed rural allowance funds
+the top of their $150k floor and the main pool the rest — `mainW + ruralPer ≥ floor` **always** (no
+leftover top-up; the "gap > slice" edge case can't arise); `Σ mainW` still = `netCollege()`
+(conservation intact), freed main-pool dollars re-split to unfloored colleges. **Guaranteed in Earned
+mode:** rural added in full, only the MAIN allocation flexes (resolves the #916 advance-credit note).
+Live split: floor-fill **$654,148** + bonus **$345,852** = $1M; Σ totals **$33.8M**; the 5 smallest
+rural colleges land at exactly $150k (surfaced that pull-down to Sam). Rural section → **Guaranteed
+allowance → Floor-fill → On-top bonus → Window total**. Tests 460→475→**490** (new Parts N/O/P); suite
+173 green; Chromium clean. **The adversarial review (4-lens Workflow) earned its keep** — caught a real
+Earned-mode bug (a THIRD earned site, the per-priority drill-in, still flexed the guaranteed rural to
+$0) + 2 minor fixes, all pre-merge (Part O). **Follow-up: the display rename** ("West Hills Coalinga"→
+Coalinga College, "Imperial"→Imperial Valley College) via a `display` field + `dispName()`, display-only,
+join key kept (Part P). Story: `docs/cpl_funding_lessons.md` (SkyHighness) · handoff. Side-lane — left
+`cpl_todos.json` + the numbered CCR handoff alone.
+
+### SkyHigh side-lane — Implementation Funding: readability + equitable cells + rural fold + 13-college roster (2026-07-28, #914/#916/#921 MERGED)
+
+Three merged PRs (JS + the data roster; **0 HTML**). **#914:** "How an allocation is computed" →
+left-justified bullets; **full-width** (scoped `#tab-implementation-funding .main-container{max-width:none}`)
++ left-justify; **mobile + a11y** (keyboard sortable headers `aria-sort`, a real `<button>` caret keeping
+`<tr>` semantics, `aria-pressed` toggles, table region + sr-only caption, focus restored after the
+innerHTML re-render — WCAG 2.4.3, ≤640px media query); **equitable per-priority cells** — `Tgt N stu ·
+$cap`/`Now N stu · $earned · %`, the per-student **rate moved OUT of the cell into the hover** (it varies
+with floor/rural → reads as inequitable inline; % of target is the shared yardstick); sections default
+collapsed except the college table. **#916 — rural allowance FOLDED into the rows** (`W = mainW +
+ruralWindow`, assume the ≥50% unlock, disclosed in the hover): `netCollegeWithRural()` so **Σ rows == the
+SYSTEM total**; `earnAgg.perPrio` stays main-pool (policy cards). Pool reconciled to **ONE number $33.8M**
+with a "$32.8M main + $1M rural" note; the **rural pool card is now an earmark, not a deduction**. **#921 —
+rural roster → the 13 federally-rural CCCs** (the 10 were the RCTC *demo* cohort); the per-college bump is
+**derived** so it auto-became $1M/13 ≈ $76,923 (data-only flip) + a muted, larger 🌲. Tests 422→**460**;
+two adversarial reviews per structural change caught the focus-restore a11y bug + the $1M pool-framing
+cascade. **QUEUED (PR4, Sam's ask): combine the floor with the rural bump** — backfill rural colleges to
+$150k from the carve-out first (frees ~$752k main-pool for non-floored colleges); lock the guaranteed-vs-
+earned split first. Story: `docs/cpl_funding_lessons.md` (SkyHigh) · handoff `docs/cpl_funding_handoff.md`.
+Side-lane — left `cpl_todos.json` + the numbered CCR handoff alone.
+
+### SkyMore side-lane — Implementation Funding: front-load-aware formula · cell re-weight · feeder 2-batch + F1/F2 · rural per-priority earn (2026-07-27, #908/#910 MERGED)
+
+Four curator asks, two JS-focused PRs. **#908:** (1) the **"How an allocation is computed" box now
+branches on the Even ⇄ Front-load toggle** (it read as an even-tranche explainer even when front-load
+was ON — one `cadenceSentence` tells each mode's whole story); (2) college-row P-cells **re-weighted**
+so the earned **dollar** (`.cf-u`) is bold navy and the count + % recede (CSS only); (3) noncredit
+**feeder rows show the 2-batch/yr cadence** (`feederBatchNote` "2 batches · $X ea", tied to the Timing
+section). **#910 (Sam's two AskUserQuestion picks):** (4) the **rural allowance earns PER PRIORITY with
+a ≥50% FLOOR** — `ruralEarned` splits each $100k by the 3 priority shares, each slice unlocks at ≥floor
+then pays in proportion (reuses `earnFraction`, same engine as the main pool; kills the old binary
+≥50%-of-average cliff; dead `ruralAttainment` deleted); (3b) **feeder measurables F1 + F2** — **F1
+(eligible headcount) is live-wired** (builder `_feeder_resolver` + per-feeder `pe` bucketing →
+`feeders:{short:{pe}}`, empty until NC campuses attach exhibits in MAP; consumer measurables ladder),
+**F2 (NC-cert CPL waivers)** an honest "awaiting a data source" placeholder; ladder states what's NOT
+tracked (transcription; JST/Veteran Star). Tests 390→411→**422** + builder 16→**19**; suite 173 green.
+Method: *wire computation+display end-to-end but resolve to a pending state — never seed a fake count.*
+Story: `docs/cpl_funding_lessons.md` (SkyMore + round 2) · `docs/cpl_funding_handoff.md`. Side-lane —
+left `cpl_todos.json` + the numbered CCR handoff alone.
+
+### SkyMoney side-lane — Implementation Funding: collapsible sections · per-student rate · P1/P3 metric wiring (2026-07-27, #901 MERGED)
+
+Three curator asks, one PR (`cpl_funding.js` + the actuals builder + tests; **0 HTML**).
+**(1) Collapsible sections** — every top-level section is a native `<details>` whose
+`<summary>` is its h3 (8); `section()`/`collapseH3()` helpers, open/closed persisted
+(`cplfund_sections_v1`, default open, saved on `toggle`) so it survives the re-render every
+edit triggers. **(2) Per-student rate replaces "% of headcount"** — curator types `$/student`,
+reach (# students / %) is DERIVED = `share × perYear ÷ per_student`; **`per_student` is the
+stored source of truth and `target_rate` is derived from it at the ONE seam (`priorities()`)**,
+so every downstream `target_rate` reader keeps reading it unchanged — no consumer re-wired for
+the inversion (display sites were edited to *show* the rate, not to change the target math; KB
+note `methodology-invert-an-input-derive-at-the-single-seam`); legacy rows fall back +
+self-migrate; rate shows inside each P-cell. Sam's $61.46 confirmed. **(3) Data-gap wiring** —
+P1's reworded "eligible" metric → the eligible count (`pe` ≈ **43,000**, 43,284 on the
+2026-07-27 feed) **already in the feed** (matcher only, no pipeline change); P3's portal metric
+→ new builder `pp` count (Potential Student = Yes + transcribed) with **`advance:true`** → a new
+`earnFraction` status **`advancing`** shows the count but pays full cap so the handful of
+mostly-test records (**pp = 5** post-dispatch) don't zero out P3 in Earned mode (flip off when
+the Portal is live). Tests 376 → **390**; real-Chromium clean. Two judgment calls
+flagged for Sam (uniform vs per-college `$/stu`; P3 advancing vs zeroing) — both 1-liners.
+`pp` published via the post-merge `daily-dashboard.yml` dispatch (pp = 5). Story:
+`docs/cpl_funding_lessons.md` · `docs/cpl_funding_handoff.md`. Side-lane — left
+`cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+### SkyFriend side-lane — COBI Implementation Funding: uniform fonts · metric-keyed actuals · allocation-balance box (2026-07-23)
+
+Three curator asks on the Implementation Funding tab, one JS-only PR in `cpl_funding.js`
+(continuing SkyFunder). **(1) Uniform fonts** — the whole priority box (desc/nums/metric/
+strategies) + Timing rows → `.8rem` (the smaller size already in use); only the priority
+**title** stays 1rem (strat/timing rows had been inheriting the page base). **(2) Actuals
+follow the METRIC, not the slot** — Sam reordered priorities (Access ⇄ Success) and the
+position-indexed `MEASURABILITY[slot][idx]` map left the "any transcribed" ACTUAL (16,807)
+pinned under the statewide-eligibility priority. Replaced with `MEASURES` = ordered
+`test(metric)` predicates (portal → eligible/statewide → matched-MIS → completion → units →
+any-transcribed), first match wins; the measure now travels with the metric wherever the
+curator drops it (default order resolves identically — all prior assertions green). Call
+sites `actualLineHtml`/`collegeDetailHtml`/`ruralAttainment` pass `p.metric`. **(3)
+Allocation-balance box** in the Funding Pool area (`perYear − perYear×Σshare`, viewed-year
+shares): `$0` at 100%, red **Over-allocated** > 100% (the modern N3-BALANCE cell), surplus
+< 100%; Projection-% line reworded. **Confirmation Sam asked for:** the **Allocation share**
+moves money; the **Projection %** is a performance target only — it does NOT cap funding
+(that coupling was the pre-2026-06-11 model, removed on purpose). Tests 325 → **337**; suite
+168 files green. Story: `docs/cpl_funding_lessons.md` (SkyFriend) · `docs/cpl_funding_handoff.md`.
+Side-lane — left `cpl_todos.json` + the numbered handoff to the CCR mainline.
+
+**Cont. 2026-07-24 — achievement-based funding (cap-and-earn):** the projection-% thread
+surfaced that the tab funds on **headcount, not achievement** — and never did (confirmed
+against Sam's actual workbook formulas). Told him plainly, then built what he confirmed
+(AskUserQuestion): allocation = a **CAP**; `earned = cap × min(1, actual ÷ target)`, capped
+at 100%, unearned rolls forward — so a college draws *proportional* funding (never needs the
+full target) and a non-participant earns **$0** (the incentive). A **Potential ⇄ Earned**
+basis toggle (default Potential) overlays pool Earned/Unearned cards, per-priority earned %,
+table earned-of-cap, drill-in per-priority earned. The projection % is now the achievement
+target. **Load-bearing rule** (new KB note
+`methodology-achievement-based-funding-cap-and-earn.md`): the default for an *unmeasured*
+cell depends on WHY — metric-gap/feed-pending → advance full cap; feed-loaded-but-college-
+posted-nothing → $0; suppressed(<5) → $0 flagged. Phase-in: only Year-1 "any transcribed"
+is measurable today; the rest advance and flip automatically as feeds land. Tests +20 →
+**357**. Story in the lessons doc.
+
+**Cont. 2 — column show/hide + eligibility audit:** a **⚙ Columns** menu (county hidden by
+default; per-view + persisted; hide via `nth-child` CSS off `activeCols()`, sparing detail
+rows; identity column never hideable) + reframed the Elig tooltip/drill-in as the
+**participation gate**, separate from earned funding. Tests → **367**. **Queued** (same batch):
+per-priority P1/P2/P3 columns with **stacked target/actual cells** (recommended over 2 physical
+rows), column resize, and per-column multi-select filters — see the lessons doc.
+
+**Cont. 3 — per-priority P1/P2/P3 columns + numbered Elig pie:** shipped #5+#6 — Eligible†/
+Transcribed† → **three P1/P2/P3 columns**, each cell **stacks target over actual** (`target·cap`
+top, `actual·earned·%` bottom, `earnFraction`-driven), header hover = goal+metric; compact
+`fmtCountK`/`fmtMoneyK` keep it narrow. The Elig ✓/◐/○ glyph → a **numbered SVG pie** (one green
+slice per met requirement; N-slice not forced-4 — 2 today, grows as more per-college-checkable
+reqs are wired). Tests → **376**. Deferred (Sam OK'd): column resize + per-column filters.
+
+### SkyFunder side-lane — COBI Implementation Funding tab reorg (2026-07-23, #878–#884 MERGED)
+
+Curator-facing asks on the Implementation Funding tab across three rounds, five JS-only
+PRs (all in `cpl_funding.js` — **0 HTML touched**, no Rule-4 mirror, clean of a parallel
+Fact Sheet session). **#878:** Total Available Funds card ($44,040,307 = remaining + one-time, live)
+· Award-range Avg/Min/Max cards · SYSTEM total row `<tfoot>`→pinned first `<tbody>` row.
+**#879 — the architecture:** the 3-layer config (`SCENARIO ?? SHARED ?? BASE`) generalized
+to a **shared multi-project / multi-scenario** model in the SAME `cpl_funding_config` row
+(no schema change — `SHARED` became a pointer into `projects[pid].scenarios[sid]`; every
+accessor unchanged). Top strip `[Project ▾ +Add · area badge][Scenario ▾ +New(clone) ✕]`;
+curator-gated create/delete; `+New` clones current; `+Project` clones the CPL template +
+tags a COBI area (CPL/C&I/CIP/GR via `CPL_ORGS`); backward-safe `normalizeConfig` migration.
+**#880:** the 📄 **Report** sub-tab — an editable **ESS-25-82 memo** generated from the live
+model (masthead·TO/FROM/RE·Funding Overview·Priority Outcomes·Allowable Use·Allocation
+table·Reporting·Conclusion·cc), doc-type toggle Memo/Letter/Report/Brief, exports Copy/PDF/
+**Word** (DOM→docx walker over the repo's `docx.min.js`). Pushback taken: the Letters tab is
+a cross-repo iframe (KB Supabase), so the memo lives native + reuses the docx stack.
+**#883 (round 2):** editable priority **titles** (Access/Success/Capacity, **year-specific** —
+ride the per-slot `prioField`/`setPrio` path) · **Recommended Strategies** editable list per
+priority · a **Timing** milestone list (label + optional date, add/delete, 9 seeded) · editable
+Baseline-eligibility intro. **#884 (round 3):** **editable/add/delete Funding Pool boxes** —
+editable labels (hover-title), ＋Add revenue/deduction + per-box kind toggle, delete-custom /
+hide-core behind a `confirm()` warning + restore strip; net generalized to
+Σrevenue−Σdeduction−carve-outs (**conserved** — identical to the old formula when no custom/
+hidden, test-guarded); carve-outs + computed cards non-deletable; also dropped the duplicate
+"% of each tranche" priority header. Tests 266→**325**; all three rounds real-Chromium verified
+(0 console errors, no horizontal scroll). Full story: `docs/cpl_funding_lessons.md`. Side-lane —
+left `cpl_todos.json` + the numbered handoff to the CCR mainline.
