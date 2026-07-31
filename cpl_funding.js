@@ -1885,11 +1885,26 @@
         // pay an advance — it is still worth showing (the curator may switch back
         // to even tranches) but it is not a live risk.
         var bearing = !slotIsCarryover(slot);
+        // UNIT AGREEMENT. "Measurable" is not enough — a metric asking for FTES
+        // that resolves to a student-count measure scores the right college
+        // against the wrong quantity and reports no error at all. That is exactly
+        // what Sam's three FTES strings did before 2026-07-31, and the old
+        // diagnostic showed them as a clean ✔ because both sides had a src.
+        var wantU = wantsUnits(String(p.metric || "").toLowerCase());
+        var mismatch = measurable && meas.unit &&
+          (wantU ? meas.unit !== "units" : meas.unit !== "students");
+        if (mismatch) anyRisk = true;
         if ((!measurable && bearing) || srcOf === "baked") anyRisk = true;
         rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
           (measurable
-            ? '<span class="cf-ok">✔ measurable</span> <span class="dk">&mdash; ' + esc(meas.src) +
-              (live ? " (" + live + ")" : "") + "</span>"
+            ? (mismatch
+                ? '<span class="cplfund-warn-text">⚠ UNIT MISMATCH &mdash; this metric asks for ' +
+                  (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
+                  esc(meas.unit) + '</span>'
+                : '<span class="cf-ok">✔ measurable</span>') +
+              ' <span class="dk">&mdash; ' + esc(meas.src) +
+              (meas.unit ? " (" + esc(meas.unit) + ")" : "") +
+              (live ? ", " + live : "") + "</span>"
             : bearing
               ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
                 esc(meas.gap_short || "no matching feed") + ")</span>"
@@ -2266,7 +2281,35 @@
   // the honest reason there's no feed yet + what closes it. Full analysis:
   // docs/kb-notes/reference-funding-metrics-measurability.md.
   function has(m, s) { return m.indexOf(s) !== -1; }
+  // Is this metric asking for UNITS/FTES rather than a headcount? (2026-07-31.)
+  // The discriminator is deliberately "does it say headcount", not "does it say
+  // units": several genuine HEADCOUNT metrics mention units in passing
+  // ("Headcount with =>3 Units Eligible CPL", "Headcount with Completion and 3+
+  // Transcribed CPL Units"), and a naive units-test would silently flip those to
+  // a unit measure. Every headcount metric in the repo literally begins with
+  // "Headcount"; none of the FTES ones do. That lets the unit entries sit FIRST
+  // without disturbing a single existing resolution.
+  function wantsUnits(m) {
+    return !has(m, "headcount") && (has(m, "ftes") || has(m, "unit"));
+  }
   var MEASURES = [
+    // ── UNIT/FTES measures ────────────────────────────────────────────────
+    // Sam moved the priorities to FTES (2026-07-31). Each entry carries an
+    // explicit `unit` so the diagnostic can catch a metric whose text asks for
+    // FTES but whose measure returns students — the exact mis-wire his three new
+    // strings hit, which nothing detected because both sides were "measurable".
+    { test: function (m) { return wantsUnits(m) && (has(m, "portal") || has(m, "landing page")); },
+      src: "pp_u", unit: "units",
+      basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    { test: function (m) { return wantsUnits(m) && has(m, "eligible"); },
+      src: "pe_u", unit: "units",
+      basis: "units of eligible CPL identified in MAP" },
+    // Must sit AFTER the completion/MIS gaps below in spirit — but those all say
+    // "Headcount", so wantsUnits() already excludes them and order is safe here.
+    { test: function (m) { return wantsUnits(m) && has(m, "transcribed"); },
+      src: "p3_u", unit: "units",
+      basis: "units of transcribed CPL, per MAP" },
+    // ── HEADCOUNT measures (unchanged) ────────────────────────────────────
     // Origin (CPL Student Portal / CPL Landing Page). The daily builder counts
     // portal-origin transcribed students (Potential Student = Yes, Test Student
     // ≠ Yes) into `pp` — a normal achievement-based metric (Sam, 2026-07-27):
@@ -2274,7 +2317,7 @@
     // (the incentive). The count is tiny/mostly-test until the Portal launches,
     // so P3 earns ≈$0 for now and grows as real portal traffic lands.
     { test: function (m) { return has(m, "portal") || has(m, "landing page"); },
-      src: "pp",
+      src: "pp", unit: "students",
       basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     // Eligible CPL tied to a STATEWIDE credit recommendation — needs exhibit linkage.
     { test: function (m) { return has(m, "credit recommendation") || (has(m, "eligible") && has(m, "statewide")); },
@@ -2287,7 +2330,7 @@
     // sit AFTER the statewide-eligible gap above, so "eligible + statewide credit
     // recommendation" still resolves to that gap (that one needs exhibit linkage).
     { test: function (m) { return has(m, "eligible"); },
-      src: "pe", basis: "distinct students with any eligible CPL identified in MAP" },
+      src: "pe", unit: "students", basis: "distinct students with any eligible CPL identified in MAP" },
     // MAP ↔ MIS student match (Year-2 P3) — the CO match-back build.
     { test: function (m) { return has(m, "matched in map and mis") || (has(m, "match") && /\bmis\b/.test(m)); },
       gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
@@ -2305,7 +2348,7 @@
       gap_short: "builder extension queued" },
     // Any transcribed CPL — MEASURABLE NOW (distinct-student count in the daily feed).
     { test: function (m) { return has(m, "transcribed"); },
-      src: "p3", basis: "distinct students with any transcribed CPL, per MAP" }
+      src: "p3", unit: "students", basis: "distinct students with any transcribed CPL, per MAP" }
   ];
   function measurability(metric) {
     var m = String(metric || "").toLowerCase();

@@ -28,6 +28,12 @@ const D = (function () {
 const has = (m, s) => String(m || "").toLowerCase().indexOf(s) !== -1;
 const start = consumerSrc.indexOf("var MEASURES = [");
 const end = consumerSrc.indexOf("];", start) + 2;
+// wantsUnits() is referenced from inside the predicates, so it must exist in
+// scope when they run — rebuild it from the consumer's own definition.
+const wantsUnits = (function () {
+  const m = consumerSrc.match(/function wantsUnits\(m\) \{[\s\S]*?\n  \}/);
+  return eval("(" + m[0].replace(/^function wantsUnits/, "function") + ")");
+})();
 const MEASURES = eval("(" + consumerSrc.slice(start + "var MEASURES = ".length, end - 1) + ")");
 function measure(metric) {
   const m = String(metric || "").toLowerCase();
@@ -57,8 +63,57 @@ const y2gaps = (D.year_priorities["2"] || []).filter(function (p) {
   const m = measure(p.metric);
   return !(m && m.src);
 });
-check("Year-2 gap count is the KNOWN 3 (update deliberately when a feed lands, don't let it drift)",
-  y2gaps.length === 3);
+// Was 3 until 2026-07-31: "Units of Transcribed CPL" became MEASURABLE when the
+// builder started emitting unit sums — that gap's own text said "builder
+// extension queued", and this is the extension. The remaining two both need the
+// CO's MIS match-back.
+check("Year-2 gap count is the KNOWN 2 (update deliberately when a feed lands, don't let it drift)",
+  y2gaps.length === 2);
+
+// ── UNIT AGREEMENT (2026-07-31) ─────────────────────────────────────────────
+// The assertion that would have caught Sam's mis-wire. "Measurable" is not
+// enough: "Eligible CPL Units as FTES" resolved to `pe`, a student COUNT, and
+// every existing check passed because `src` was truthy. A measure has to return
+// the QUANTITY its metric asks for.
+check("every measurable MEASURES entry declares its unit",
+  MEASURES.filter(function (x) { return x.src; }).every(function (x) {
+    return x.unit === "units" || x.unit === "students";
+  }));
+[["1", D.year_priorities["1"]], ["2", D.year_priorities["2"]]].forEach(function (pair) {
+  (pair[1] || []).forEach(function (p, i) {
+    const m = measure(p.metric);
+    if (!m || !m.src) return;                       // a named gap has no unit to agree with
+    const wantU = wantsUnits(String(p.metric || "").toLowerCase());
+    check("Y" + pair[0] + " P" + (i + 1) + " measure returns the quantity the metric asks for (" +
+      (wantU ? "units" : "students") + ")",
+      m.unit === (wantU ? "units" : "students"));
+  });
+});
+// Sam's live FTES strings must resolve to UNIT measures — the regression this
+// whole change exists to prevent.
+[["Eligible CPL Units as FTES (1 Unit = .0334 FTES)", "pe_u"],
+ ["Transcribed CPL Units as FTES (1 Unit = .0334 FTES)", "p3_u"],
+ ["Transcribed Units for Students from either CPL Student Portal or College CPL Landing Page", "pp_u"]
+].forEach(function (pair) {
+  const m = measure(pair[0]);
+  check("live FTES metric resolves to " + pair[1] + " (units): " + pair[0].slice(0, 44) + "…",
+    !!m && m.src === pair[1] && m.unit === "units");
+});
+// …and the headcount metrics that merely MENTION units must NOT flip to a unit
+// measure. This is the trap the "does it say headcount" discriminator avoids.
+[["Headcount with =>3 Units Eligible CPL", "pe"],
+ ["Headcount with any transcribed CPL", "p3"],
+ ["Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page", "pp"]
+].forEach(function (pair) {
+  const m = measure(pair[0]);
+  check("headcount metric mentioning units stays a STUDENT measure: " + pair[0].slice(0, 40) + "…",
+    !!m && m.src === pair[1] && m.unit === "students");
+});
+check("a headcount metric that mentions units still reaches its GAP, not a unit measure",
+  (function () { const m = measure("Headcount with Completion and 3+ Transcribed CPL Units");
+    return !!m && !m.src && /match-back/.test(m.gap_short || ""); })());
+check("the diagnostic flags a unit mismatch (not just measurable-vs-gap)",
+  /UNIT MISMATCH/.test(consumerSrc) && /function wantsUnits/.test(consumerSrc));
 
 // Every baked metric must at least MATCH a predicate — an unmatched metric falls
 // through to "no measure" and pays a silent advance with no explanation at all.
