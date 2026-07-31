@@ -105,6 +105,9 @@
     ".cplfund-card-eye { position: absolute; top: 4px; right: 22px; border: 0; background: none; cursor: pointer; font-size: .8rem; line-height: 1; padding: 2px; opacity: .5; }",
     ".cplfund-card-eye:hover, .cplfund-card-eye:focus-visible { opacity: 1; }",
     ".cplfund-card-eye.off { opacity: .85; }",
+    ".cplfund-metricdiag { margin: 0 0 12px; padding: 8px 12px; border: 1px solid var(--border); border-left: 4px solid var(--mustard-text); border-radius: 8px; background: var(--surface-subtle); font-size: .82rem; }",
+    ".cplfund-metricdiag summary { cursor: pointer; }",
+    ".cf-ok { color: var(--green-progress); font-weight: 600; }",
     ".cplfund-ledgernote, .cplfund-ledgerdrift { font-size: .78rem; margin: 0 0 8px; }",
     ".cplfund-row.cplfund-deeplink > td { background: var(--surface-subtle); box-shadow: inset 3px 0 0 var(--link); }",
     ".cf-withheld { color: var(--text-muted); font-style: italic; }",
@@ -762,6 +765,20 @@
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
     var bp = (base().year_priorities[slot] || base().year_priorities["2"])[idx];
     return firstDefined(sc && sc[field], sh && sh[field], bp[field]);
+  }
+  // Where did this metric come from — a curator edit, or the hand-maintained
+  // baked default? (Sam, 2026-07-30.) The Excel workbook + builder were retired
+  // 2026-07-03, so cpl_funding_data.js is hand-maintained and NOTHING keeps its
+  // baked defaults in sync with the live Supabase config a curator actually
+  // edits. They can only go stale, silently — which is exactly what happened to
+  // the Year-2 metrics. This makes the divergence self-announcing instead of
+  // relying on someone remembering.
+  function prioMetricSource(slot, idx) {
+    var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][idx];
+    var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
+    if (sc && sc.metric != null) return "scenario";
+    if (sh && sh.metric != null) return "curated";
+    return "baked";      // inheriting the hand-maintained default — the stale-drift risk
   }
   // A priority's projection target is now driven by a PER-STUDENT dollar rate
   // (Sam, 2026-07-27): the curator types "$/student" and the reach (# students
@@ -1700,6 +1717,50 @@
     return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
       fmtMoney(pp.cap) + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
       (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
+  }
+
+  // Curate-view diagnostic: per priority slot, is the metric MEASURABLE (and by
+  // which feed) or a GAP that silently pays a full advance — and is it curated
+  // or inheriting a baked default? Had this existed, the stale Year-2 metrics
+  // would have been obvious instead of costing a debugging round.
+  function metricDiagnosticHtml() {
+    if (publicMode()) return "";
+    var pf = perf();
+    var rows = [], anyRisk = false;
+    selectedYears().forEach(function (yr, i) {
+      var slot = String(i + 1);
+      priorities(slot).forEach(function (p, idx) {
+        var meas = measurability(p.metric);
+        var srcOf = prioMetricSource(slot, idx);
+        var measurable = !!meas.src;
+        var live = (measurable && pf && pf.statewide && pf.statewide[meas.src] != null)
+          ? fmtInt(pf.statewide[meas.src]) + " statewide" : null;
+        if (!measurable || srcOf === "baked") anyRisk = true;
+        rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
+          (measurable
+            ? '<span class="cf-ok">✔ measurable</span> <span class="dk">&mdash; ' + esc(meas.src) +
+              (live ? " (" + live + ")" : "") + "</span>"
+            : '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
+              esc(meas.gap_short || "no matching feed") + ")</span>") +
+          (srcOf === "baked"
+            ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
+            : ' <span class="dk">&middot; curated</span>') +
+          ' <span class="dk">&mdash; ' + esc(stripTags(p.metric || "(no metric set)")) + "</span></li>");
+      });
+    });
+    if (!rows.length) return "";
+    return '<details class="cplfund-metricdiag"' + (anyRisk ? " open" : "") + ">" +
+      "<summary><strong>Metric wiring</strong> " +
+      (anyRisk
+        ? '<span class="cplfund-warn-text">&mdash; needs attention</span>'
+        : '<span class="cf-ok">&mdash; all measurable &amp; curated</span>') +
+      ' <span class="dk">(curator view only)</span></summary>' +
+      '<div class="dk" style="margin:6px 0;">A priority whose metric MAP cannot measure pays every college its ' +
+      "full cap as an advance &mdash; so it earns nothing and incentivises nothing. A slot marked " +
+      '<em>inheriting baked default</em> is falling back to the hand-maintained defaults in ' +
+      "<code>cpl_funding_data.js</code>; nothing keeps those in sync with your edits here, so set the " +
+      "metric to pin it.</div>" +
+      "<ul style='margin:0;padding-left:20px;font-size:.8rem;line-height:1.7;'>" + rows.join("") + "</ul></details>";
   }
 
   // ── pool cards ────────────────────────────────────────────────────────
@@ -4031,7 +4092,8 @@
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
       section("pools", "Funding pools", ledgerNoteHtml() + poolCardsHtml() + awardStatsHtml()) +
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
-      section("priorities", "The three funding priorities", yearFilterHtml() + prioritiesHtml() + timingSectionHtml()) +
+      section("priorities", "The three funding priorities",
+        metricDiagnosticHtml() + yearFilterHtml() + prioritiesHtml() + timingSectionHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
       collapseH3("feeder", feederSectionHtml()) +
