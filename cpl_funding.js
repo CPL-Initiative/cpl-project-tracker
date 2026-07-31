@@ -117,6 +117,10 @@
     ".cplfund-basis-note { font-size: .8rem; flex: 1 1 320px; }",
     ".cplfund-basis-note code, .cplfund-earned-line code { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 4px; padding: 0 5px; white-space: nowrap; }",
     ".cplfund-earned-line { border-top: 1px dotted var(--border-strong); padding-top: 5px; margin-top: 2px; }",
+    // The front-load line — the whole window on the table in Year 1, against an
+    // unchanged per-year target. Tinted so it reads as a policy call-out.
+    ".cplfund-fl-line { border-left: 3px solid var(--gold-accent); background: var(--surface-subtle);" +
+      " padding: 5px 8px; margin: 6px 0 2px; border-radius: 0 4px 4px 0; }",
     // Editable/add/delete pool boxes (Sam, 2026-07-23).
     ".cplfund-card.custom-rev { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.custom-ded { border-left: 4px solid var(--red-alert); }",
@@ -847,6 +851,47 @@
     return v === "frontload" ? "frontload" : "even";
   }
   function frontloaded() { return disbursement() === "frontload"; }
+
+  // ── what money a year slot actually puts on the table ─────────────────
+  // THE single seam for "how much of an entitlement is earnable in slot N"
+  // (Sam, 2026-07-30). Every earning + per-priority-cap site routes through
+  // this, so the two disbursement modes can never disagree about scope again
+  // (docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md).
+  //
+  //   EVEN       — each year carries W × (that year's shares) ÷ nYears.
+  //   FRONT-LOAD — the WHOLE window disburses in Year 1, so Year 1's priorities
+  //                carry the entire window and later years carry nothing (they
+  //                are carryover). Targets are per-year and UNCHANGED, so the
+  //                effective per-student rate DOUBLES on a 2-year window — Sam's
+  //                "double the per-student amount, not the student count"
+  //                (2026-07-30): "offer big funding up front for a big push the
+  //                first year… I would love to be out of funding at the end of
+  //                Year 1 because it would mean everyone is up and running."
+  //
+  // This also closes a live defect: before the seam, front-load earned each year
+  // on ITS OWN slot's metrics and summed both into the Year-1 cell — so Year 2's
+  // three unmeasurable metrics paid every college a full ADVANCE for half the
+  // window, in the Year-1 money cell, no matter what it posted in MAP. Under
+  // front-load the Year-2 metrics are never consulted, because no Year-2 money
+  // is on the table.
+  function windowEntitlement(W) {
+    var ny = nYears(), s = 0;
+    selectedYears().forEach(function (_, i) { s += W * shareSum(String(i + 1)) / ny; });
+    return s;
+  }
+  function slotEntitlement(W, slot) {
+    if (!frontloaded()) return W * shareSum(slot) / nYears();
+    return String(slot) === "1" ? windowEntitlement(W) : 0;
+  }
+  // A single priority's slice of that slot's money. Under EVEN this reduces
+  // EXACTLY to the historical W × p.share ÷ nYears.
+  function prioCap(W, slot, p) {
+    var ss = shareSum(slot);
+    return ss > 0 ? slotEntitlement(W, slot) * p.share / ss : 0;
+  }
+  // Is the viewed year pure carryover — front-loaded, with no new money on the
+  // table? Drives the "↻ carryover" states so a $0 cap never reads as a defect.
+  function slotIsCarryover(slot) { return frontloaded() && String(slot) !== "1"; }
   // rural flag = config override ?? the baked per-college flag (DRAFT roster).
   function isRural(c) {
     var o = firstDefined(
@@ -1684,7 +1729,8 @@
   function yearFilterHtml() {
     var y = selectedYears();
     var items = y.map(function (yr, i) {
-      return { val: String(i + 1), label: "Year " + (i + 1) + " · " + yr };
+      return { val: String(i + 1), label: "Year " + (i + 1) + " · " + yr +
+        (slotIsCarryover(String(i + 1)) ? " ↻" : "") };
     });
     return '<div class="cplfund-toolbar" style="margin-bottom:6px;">' +
       '<span class="dk" style="font-size:.85rem;">Show priorities for:</span>' +
@@ -1712,10 +1758,13 @@
   function earnedLineHtml(i) {
     var pp = earnAgg().perPrio[i];
     if (!pp) return "";
+    // Front-loaded later years carry no money — the front-load line above already
+    // says so; a "$0 of $0 cap (0%)" line here would just read as broken.
+    if (pp.cap <= 0 && slotIsCarryover(state.viewSlot)) return "";
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
     var advancing = pp.statuses && !pp.statuses.earned && (pp.statuses.gap || pp.statuses.pending);
     return '<p class="nums cplfund-earned-line">Earned so far: <strong>' + fmtMoney(pp.earned) + "</strong> of " +
-      fmtMoney(pp.cap) + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
+      fmtMoney(pp.cap) + (frontloaded() ? " full-window" : "") + " cap <strong>(" + fmtPctTrim(pct) + ")</strong>" +
       (advancing ? ' <span class="dk">&mdash; full advance until this metric&#39;s MAP feed lands</span>' : "") + "</p>";
   }
 
@@ -1735,13 +1784,20 @@
         var measurable = !!meas.src;
         var live = (measurable && pf && pf.statewide && pf.statewide[meas.src] != null)
           ? fmtInt(pf.statewide[meas.src]) + " statewide" : null;
-        if (!measurable || srcOf === "baked") anyRisk = true;
+        // Under front-load a later year carries NO money, so its metric cannot
+        // pay an advance — it is still worth showing (the curator may switch back
+        // to even tranches) but it is not a live risk.
+        var bearing = !slotIsCarryover(slot);
+        if ((!measurable && bearing) || srcOf === "baked") anyRisk = true;
         rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
           (measurable
             ? '<span class="cf-ok">✔ measurable</span> <span class="dk">&mdash; ' + esc(meas.src) +
               (live ? " (" + live + ")" : "") + "</span>"
-            : '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
-              esc(meas.gap_short || "no matching feed") + ")</span>") +
+            : bearing
+              ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
+                esc(meas.gap_short || "no matching feed") + ")</span>"
+              : '<span class="dk">◦ not measurable &mdash; but no money rides on it (front-loaded: Year ' +
+                esc(slot) + " is carryover)</span>") +
           (srcOf === "baked"
             ? ' <span class="cplfund-warn-text" title="This slot has no curated metric, so it inherits the hand-maintained default baked into cpl_funding_data.js. Nothing keeps that in sync with what you edit here — set the metric to pin it.">↩ inheriting baked default</span>'
             : ' <span class="dk">&middot; curated</span>') +
@@ -2059,9 +2115,28 @@
     var ps = priorities(slot);
     var per = perYear();
     var heads = totalHeads();
+    var flPrio = frontloaded();
     return '<div class="cplfund-prio">' + ps.map(function (p, i) {
+      // The ANNUAL policy figures stay annual — share, per-student rate and the
+      // derived reach are the per-year target and front-load does not move them
+      // (Sam: double the per-student amount, NOT the student count). What
+      // front-load changes is how much is on the table to earn against that same
+      // target, which gets its own line below.
       var sysDollars = p.share * per;
       var sysHeads = heads * p.target_rate;
+      var winDollars = prioCap(netCollege(), slot, p);
+      var frontLine = flPrio
+        ? (slotIsCarryover(slot)
+          ? '<p class="nums cplfund-fl-line"><span class="dk">↻ Year ' + esc(slot) + " is carryover under " +
+            "front-loaded disbursement — the whole window was placed on the table in Year 1 and is earned " +
+            "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
+          : '<p class="nums cplfund-fl-line"><strong>Front-loaded:</strong> the full ' + esc(windowLabel()) +
+            " window &mdash; " + fmtMoney(winDollars) + " &mdash; is on the table in Year 1, earned against " +
+            "that same " + fmtInt(sysHeads) + "-student target. " +
+            '<span class="dk">Effective ' + fmtRate(sysHeads > 0 ? winDollars / sysHeads : 0) +
+            "/student (" + fmtRate(p.per_student) + " &times; " + nYears() + "). Hitting the Year-1 target " +
+            "draws the whole window; unspent funds roll forward.</span></p>")
+        : "";
       return '<div class="p">' +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
@@ -2073,6 +2148,7 @@
         " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(p.target_rate) + " of headcount) " +
         '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
         "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
+        frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
         '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
@@ -2190,7 +2266,7 @@
       // distribution surfaces (Sam, 2026-07-28).
       var W = allocModel().W[col.college] || 0;
       ps.forEach(function (p, i) {
-        var cap_i = W * p.share / ny;
+        var cap_i = prioCap(W, state.viewSlot, p);
         var fr = earnFraction(col, p);
         perPrio[i].cap += cap_i;
         perPrio[i].earned += cap_i * fr.f;
@@ -2296,8 +2372,16 @@
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
     var items = [
-      "Each college&#39;s potential allocation of one annual tranche is " +
-        "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> per priority.",
+      // Front-load puts the WHOLE window on the table in Year 1, so quoting the
+      // annual tranche here contradicts the money cells + drill-in (Sam,
+      // 2026-07-30: the toggle's job is to change the story, not hide a mismatch).
+      (frontloaded()
+        ? "Each college&#39;s potential allocation is <code>headcount share &times; priority share &times; " +
+          fmtMoney(per * nYears()) + "</code> per priority &mdash; the full " + esc(windowLabel()) +
+          " window, placed on the table in Year 1. The per-year performance target is unchanged, so the " +
+          "effective rate per student is " + nYears() + "&times; the annual rate."
+        : "Each college&#39;s potential allocation of one annual tranche is " +
+          "<code>headcount share &times; priority share &times; " + fmtMoney(per) + "</code> per priority."),
       shareSentence + ".",
       cadenceSentence,
       "Balance for Year " + state.viewSlot + ": <strong>" +
@@ -2367,13 +2451,22 @@
   function prioCellHtml(c, p, isSystem) {
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = heads * p.target_rate;
-    var cap = isSystem ? (netCollegeWithRural() * p.share / nYears()) : (c[p.key] || 0);
+    var cap = isSystem ? prioCap(netCollegeWithRural(), state.viewSlot, p) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
+    // A front-loaded later year has no new money on the table — say so rather
+    // than rendering a wall of $0 that reads as a defect.
+    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
+      return '<td class="cf-prio cplfund-carry" title="' +
+        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement — the whole " +
+          windowLabel() + " window was placed on the table in Year 1 and is earned against the Year-1 " +
+          "targets. Unspent Year-1 funds roll forward to be drawn here.") +
+        '">↻ carryover</td>';
+    }
     // The GUARANTEED rural allowance's slice for this priority (PR4, Sam
     // 2026-07-28): folded into cap, and — because it is guaranteed, not earned —
     // added in full to `earned` while only the MAIN cap flexes on achievement.
-    var ruralBump = isSystem ? (ruralCarve() * p.share / nYears())
-      : (c && c.rural_w ? c.rural_w * p.share / nYears() : 0);
+    var ruralBump = isSystem ? prioCap(ruralCarve(), state.viewSlot, p)
+      : (c && c.rural_w ? prioCap(c.rural_w, state.viewSlot, p) : 0);
     var mainCap = cap - ruralBump;             // the achievement-flexing part
     var earned = mainCap * fr.f + ruralBump;   // rural guaranteed in full
     // The row's OWN effective rate (cap ÷ target) — equals the statewide base for
@@ -2409,7 +2502,7 @@
     // The floor/rural reasons are per-COLLEGE (the SYSTEM row has no per-college
     // floor or rural — `ruralBump` above is system-aware for the earned math, so
     // use a college-scoped bump here and guard against the null system `c`).
-    var colRuralBump = (!isSystem && c && c.rural_w) ? c.rural_w * p.share / nYears() : 0;
+    var colRuralBump = (!isSystem && c && c.rural_w) ? prioCap(c.rural_w, state.viewSlot, p) : 0;
     var colMainW = (!isSystem && c) ? (c.main_w || 0) : 0;
     // For a floored RURAL college the guaranteed rural allowance IS what funds part
     // of that floor, so state it as one combined reason (avoid reading as two
@@ -2424,15 +2517,27 @@
       // fills (floorFill > 0) OR already sit above the floor (all bonus). Only claim
       // floor-funding when it actually happens — else it contradicts the drill-in.
       var ruralFloorFill = Math.min(c.rural_w || 0, Math.max(0, floorWindow() - colMainW));
-      reasons.push("boosted by a " + fmtMoney(colRuralBump) + "/yr guaranteed rural allowance " +
+      reasons.push("boosted by a " + fmtMoney(colRuralBump) +
+        (frontloaded() ? " guaranteed rural allowance (full window, front-loaded) " : "/yr guaranteed rural allowance ") +
         (ruralFloorFill > 0.5
           ? "(funds this college's floor first, any remainder on top — see the Rural section)"
           : "(this college's main-pool share already meets the floor, so the whole allowance rides on top — see the Rural section)"));
     }
-    var rateSentence = reasons.length
+    // Under front-load the WHOLE window sits behind an unchanged per-year target,
+    // so the statewide base to compare against is the window rate, not the annual
+    // one — otherwise a plain college reads "at the base rate" while its cap is
+    // nYears× that rate, which is simply false (Sam, 2026-07-30).
+    var flCell = frontloaded();
+    var cmpBase = flCell ? baseRate * nYears() : baseRate;
+    var flNote = flCell
+      ? " Front-loaded: the full " + windowLabel() + " window is on the table in Year 1 against the same " +
+        fmtInt(target) + "-student target, so the statewide base works out to " + fmtRate(cmpBase) +
+        "/student (" + fmtRate(baseRate) + " × " + nYears() + ")."
+      : "";
+    var rateSentence = (reasons.length
       ? "Funding cap " + fmtMoney(cap) + " — an effective " + fmtRate(effRate) + "/student, above the " +
-        fmtRate(baseRate) + "/student statewide base because this college's allocation is " + reasons.join(" and ") + "."
-      : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(baseRate) + "/student statewide base rate.";
+        fmtRate(cmpBase) + "/student statewide base because this college's allocation is " + reasons.join(" and ") + "."
+      : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
     var title = p.label + " — " + p.title + ". Target " + fmtInt(target) + " students (" + fmtPctTrim(p.target_rate) +
       " of headcount). " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
@@ -2675,12 +2780,15 @@
       // Earned this year: the MAIN allocation flexes on MAP achievement (Σ
       // priorities: cap × fraction; data-gap/absent priorities pay full cap).
       // The rural allowance is GUARANTEED (PR4) — added in full, never gated.
-      var ruralYr = ruralW * shareSum(slot) / ny;
+      // Both go through slotEntitlement/prioCap, so under front-load ALL of it
+      // is earnable in Year 1 against the Year-1 targets and later years carry
+      // nothing (their metrics never touch the money).
+      var ruralYr = slotEntitlement(ruralW, slot);
       var ey = ruralYr;
       earnGuaranteed += ruralYr;
       priorities(slot).forEach(function (p) {
         var fr = earnFraction(c, p);
-        var paid = (mainW * p.share / ny) * fr.f;
+        var paid = prioCap(mainW, slot, p) * fr.f;
         if (gate.blocked) { earnWithheld += paid; return; }   // held in reserve
         ey += paid;
         if (fr.status === "gap" || fr.status === "pending") earnAdvance += paid;
@@ -2697,7 +2805,11 @@
     out.earned_advance = earnAdvance;
     out.earned_guaranteed = earnGuaranteed;
     priorities(state.viewSlot).forEach(function (p) {
-      out[p.key] = W * p.share / ny;
+      // The per-priority CAP for the viewed year — the money actually on the
+      // table there. Under front-load that is the whole window in Year 1
+      // (against an unchanged target → the doubled effective per-student rate)
+      // and $0 in later years, which read as carryover.
+      out[p.key] = prioCap(W, state.viewSlot, p);
       out[p.key + "_heads"] = c.headcount * p.target_rate;
     });
     return out;
@@ -2911,10 +3023,14 @@
       // With the floor active OR a folded rural allowance, the pure "headcount
       // share × pool" identity no longer holds row-exactly (the split is
       // renormalized / rural is added) — show the college's own tranche instead.
+      var flPrio = frontloaded();
+      var trancheLbl = flPrio ? " full " + esc(windowLabel()) + " entitlement (front-loaded)" : " annual tranche";
       var math = (floorActive || c.rural_w > 0)
-        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " + fmtMoney((c.w || 0) / nYears()) +
-          " annual tranche" + (c.rural_w > 0 ? " (incl. rural allowance)" : "")
-        : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " + fmtMoney(per);
+        ? fmtPctTrim(p.share) + " share &times; the college&#39;s " +
+          fmtMoney(flPrio ? (c.w || 0) : ((c.w || 0) / nYears())) + trancheLbl +
+          (c.rural_w > 0 ? " (incl. rural allowance)" : "")
+        : fmtPctTrim(c.headcount_pct) + " headcount share &times; " + fmtPctTrim(p.share) + " share &times; " +
+          fmtMoney(flPrio ? per * nYears() : per) + (flPrio ? " (full window, front-loaded)" : "");
       var earnSeg = "";
       (function () {
         var fr = earnFraction(c, p);
@@ -2922,7 +3038,7 @@
         // The guaranteed rural slice is added in FULL (only the MAIN cap flexes on
         // achievement) — mirror collegeAlloc/prioCellHtml so the drill-in agrees
         // with the cell + row + pool totals (PR4, Sam 2026-07-28).
-        var ruralBumpYr = c.rural_w ? c.rural_w * p.share / nYears() : 0;
+        var ruralBumpYr = c.rural_w ? prioCap(c.rural_w, state.viewSlot, p) : 0;
         var mainCapYr = capYr - ruralBumpYr;
         var earnedYr = mainCapYr * fr.f + ruralBumpYr;
         var earnedPctYr = capYr > 0 ? earnedYr / capYr : 0;
@@ -2940,10 +3056,28 @@
           fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(earnedPctYr) + ")</strong>" + tail +
           (ruralBumpYr > 0 ? " <span class='dk'>&mdash; incl. " + fmtMoney(ruralBumpYr) + " guaranteed rural</span>" : "");
       })();
+      // Under front-load the TARGET is deliberately unchanged (per-year), so the
+      // effective $/student is the whole window over the same target — Sam's
+      // "double the per-student amount rather than doubling the students."
+      var tgtHeads = c[p.key + "_heads"] || 0;
+      var effPrioRate = tgtHeads > 0 ? (c[p.key] || 0) / tgtHeads : 0;
+      var rateSeg = " &middot; target " + fmtInt(tgtHeads) + " students at " +
+        fmtRate(flPrio ? effPrioRate : p.per_student) + "/student (" + fmtPctTrim(p.target_rate) +
+        " of headcount)" +
+        (flPrio
+          ? ' <span class="dk">&mdash; the same per-year target, funded at the full window rate (' +
+            fmtRate(p.per_student) + "/student &times; " + nYears() + "): hit it in Year 1 and the whole " +
+            "window is drawn</span>"
+          : "");
+      if (slotIsCarryover(state.viewSlot)) {
+        return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
+          '<span class="dk">↻ carryover &mdash; no new money on the table (front-loaded; the whole window is ' +
+          "placed and earned in Year 1). Unspent Year-1 funds roll forward to be drawn here.</span>" +
+          "<br><span class='dk'>metric:</span> " + esc(p.metric) + "</div>";
+      }
       return '<div><span class="dk">' + esc(p.label) + " (Year " + esc(state.viewSlot) + "):</span> " +
-        math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>/yr" +
-        " &middot; target " + fmtInt(c[p.key + "_heads"]) + " students at " + fmtRate(p.per_student) +
-        "/student (" + fmtPctTrim(p.target_rate) + " of headcount)" +
+        math + " = <strong>" + fmtMoney(c[p.key]) + "</strong>" + (flPrio ? " for the window" : "/yr") +
+        rateSeg +
         "<br><span class='dk'>metric:</span> " + esc(p.metric) + actual + earnSeg + "</div>";
     }).join("");
     var county = c.working_adults == null
