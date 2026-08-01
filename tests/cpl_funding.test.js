@@ -206,16 +206,46 @@ function pieSlices(el) {
   try { doc = boot(window); } catch (e) { threw = true; console.error(e); }
   check("boot() renders without throwing", !threw);
   check("renders pool cards (incl. feeder carve-out)", doc.querySelectorAll(".cplfund-card").length >= 6);
-  // Item-2 sanity (Sam, 2026-07-03): the headcount card shows the college
-  // basis + the noncredit-feeder heads + the combined CCC total.
+  // Item-2 sanity (Sam, 2026-07-03): the basis card shows the college basis +
+  // the noncredit-feeder side + the combined CCC total.
+  //
+  // BASIS-AWARE since 2026-08-01. This card hardcoded HEADCOUNT and called it
+  // "the allocation basis" — which stopped being true when the basis moved to
+  // credit FTES (#959), so it asserted a false thing on the live page for two
+  // days. It now follows the seam, and the feeder side switches with it:
+  // credit FTES on the college side pairs with NONCREDIT FTES on the feeder
+  // side (the feeders are noncredit campuses; pairing credit FTES with feeder
+  // HEADCOUNT would add two different quantities and call the sum a total).
   {
-    const feederSum = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
-    const combined = D.system.headcount + feederSum;
-    const hcCard = Array.from(doc.querySelectorAll(".cplfund-card .l"))
+    const feederFtes = D.feeders.reduce(function (s, f) { return s + (f.noncredit_ftes || 0); }, 0);
+    const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+    const combined = Math.round(collegeFtes + feederFtes);
+    const card = Array.from(doc.querySelectorAll(".cplfund-card .l"))
       .find(function (l) { return l.textContent.indexOf("CCC total") !== -1; });
-    check("headcount card shows colleges + feeders + combined CCC total",
-      hcCard && hcCard.textContent.indexOf(feederSum.toLocaleString("en-US")) !== -1 &&
-      hcCard.textContent.indexOf(combined.toLocaleString("en-US")) !== -1);
+    check("basis card names the ACTIVE basis, not a hardcoded 'headcount'",
+      card && /credit FTES \(allocation basis\)/.test(card.textContent));
+    check("basis card shows colleges + feeders + combined CCC total, all in FTES",
+      card && card.textContent.indexOf(Math.round(feederFtes).toLocaleString("en-US")) !== -1 &&
+      card.textContent.indexOf(combined.toLocaleString("en-US")) !== -1);
+    check("basis card does NOT pair credit FTES with feeder HEADCOUNT",
+      card && card.textContent.indexOf(
+        D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0).toLocaleString("en-US")) === -1);
+  }
+  // The rate card FOLLOWS THE METRICS. This fixture boots the committed baked
+  // defaults, whose Year-1 metrics are headcount-denominated ("Headcount of
+  // students eligible for..."), so the per-student card is the CORRECT render
+  // here and Scenario 2 keeps working. The CPL-FTES rate card that replaces it
+  // under FTES metrics is asserted in cpl_funding_cpl_ftes.test.js, which boots
+  // the FTES metric strings.
+  {
+    const cards = Array.from(doc.querySelectorAll(".cplfund-card .l"))
+      .map(function (l) { return l.textContent; });
+    check("headcount metrics keep the per-student rate card (Scenario 2 path)",
+      cards.some(function (t) { return /Per-student rate/.test(t); }));
+    check("...and say why it is headcount-denominated rather than asserting it bare",
+      cards.some(function (t) { return /metrics are headcount-denominated/.test(t); }));
+    check("the CPL-FTES rate card does NOT appear when no metric is in FTES",
+      !cards.some(function (t) { return /Reimbursement rate per/.test(t); }));
   }
   check("feeder carve-out card is a deduction", !!doc.querySelector(".cplfund-card.feeder"));
   check("renders 3 priority cards", doc.querySelectorAll(".cplfund-prio .p").length === 3);
@@ -1369,20 +1399,36 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   })());
 }
 
-// D5 — noncredit student counts are included in the totals (Sam, 2026-07-06):
-// the SYSTEM headcount total shows allocation basis + feeders = CCC total in
-// BOTH table views (the pool card already showed it).
+// D5 — the noncredit feeders are included in the totals (Sam, 2026-07-06):
+// the SYSTEM row shows allocation basis + feeders = CCC total in BOTH table
+// views (the pool card already showed it).
+//
+// BASIS-AWARE 2026-08-01. This row printed sys.headcount unconditionally, so
+// under the credit-FTES basis the column header read "Credit FTES" and the
+// SYSTEM row beneath it read 2,517,685 — the headcount — while every college
+// row above it correctly read credit FTES. A total not in the units of the
+// column it tops is worse than no total: it invites the reader to add up the
+// column, and it will not reconcile. The feeder side switches with it too
+// (noncredit FTES against credit FTES, never feeder headcount).
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const feederSum = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
-  const combined = (D.system.headcount + feederSum).toLocaleString("en-US");
+  const feederFtes = D.feeders.reduce(function (s, f) { return s + (f.noncredit_ftes || 0); }, 0);
+  const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+  const combined = Math.round(collegeFtes + feederFtes).toLocaleString("en-US");
+  const sysText = function () {
+    return doc.querySelector("#cplFundTable .cplfund-systemrow").textContent;
+  };
   check("college-view SYSTEM row includes the noncredit feeders in the CCC total",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1 &&
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf("noncredit") !== -1);
+    sysText().indexOf(combined) !== -1 && sysText().indexOf("noncredit") !== -1);
+  // The regression that shipped: the row total must be in the SAME unit as the
+  // column header above it, so assert the headcount total is NOT what's there.
+  check("SYSTEM row totals the ACTIVE basis, not headcount, under its own header",
+    sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1 &&
+    sysText().indexOf(D.system.headcount.toLocaleString("en-US")) === -1);
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
   check("the SYSTEM row still carries the noncredit feeders when grouped by district",
-    doc.querySelector("#cplFundTable .cplfund-systemrow").textContent.indexOf(combined) !== -1);
+    sysText().indexOf(combined) !== -1);
 }
 
 // D6 — consumer wiring for the eligibility reads (static greps).

@@ -375,6 +375,13 @@
     "  .cplfund-table th, .cplfund-table td { padding: 4px 5px; }",
     "  .cf-prio .cf-lbl { font-size: .62rem; }",
     "  .cplfund-strip, .cplfund-basis { padding: 8px 10px; }",
+    // FTES factors box: its three-column grid has a hard floor of
+    // 180px + 90px + 1fr + two 10px gaps, which cannot fit a 390px phone —
+    // it pushed the PAGE 42px wide (pre-existing since the box shipped;
+    // caught 2026-08-01 because the box only renders once a priority is
+    // FTES-denominated, which the committed defaults are not). Stack it.
+    "  .cplfund-ftesrow { grid-template-columns: 1fr; gap: 1px; }",
+    "  .cplfund-ftesrow .n { grid-column: 1; }",
     // The project/scenario selects carry long option text — stack the strip and
     // let the controls fill the row so a wide <select> can't push the page wider.
     "  .cplfund-strip { flex-direction: column; align-items: stretch; gap: 8px; }",
@@ -428,6 +435,12 @@
     return fmtInt(v);
   }
   function fmtRate(v) { return v == null ? "—" : "$" + v.toFixed(2); }
+  // Same as fmtRate but thousands-separated — for rates in the $1,000s (the CPL
+  // FTES reimbursement rate), where "$5649.63" reads as a typo.
+  function fmtMoney2(v) {
+    return v == null ? "—" : "$" + Number(v).toLocaleString("en-US",
+      { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+  }
   function fmtPct(v, dp) { return v == null ? "—" : (v * 100).toFixed(dp == null ? 1 : dp) + "%"; }
   function fmtPctTrim(v) { return v == null ? "—" : String(parseFloat((v * 100).toFixed(2))) + "%"; }
   function fmtRatePct(rate) { return String(parseFloat((rate * 100).toFixed(7))); }
@@ -1003,6 +1016,13 @@
   }
   function feederHeads() {
     return feeders().reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0);
+  }
+  // The feeder campuses' side of the allocation basis when that basis is FTES.
+  // NONCREDIT FTES specifically — the colleges' side uses CREDIT FTES, and the
+  // feeders are noncredit campuses, so this is the like-for-like counterpart,
+  // not a second helping of the same population.
+  function feederNoncreditFtes() {
+    return feeders().reduce(function (s, f) { return s + (Number(f.noncredit_ftes) || 0); }, 0);
   }
   // Shares can differ per year once edited — a year's allocated fraction.
   function shareSum(slot) {
@@ -2185,11 +2205,51 @@
           ? "<strong>" + allocModel().floorCount + " colleges topped up</strong> (&asymp;" + fmtMoney(allocModel().floorCost) + ", funded within the pool)"
           : "no top-ups needed at current settings") }));
 
-    // Computed context cards.
-    out.push(card({ v: fmtInt(totalHeads()), l: "College headcount (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
-      " college rows &middot; plus " + fmtInt(feederHeads()) + " noncredit-feeder students = <strong>" +
-      fmtInt(totalHeads() + feederHeads()) + " CCC total</strong>" }));
-    out.push(card({ v: fmtRate(perStudent()), l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) + " headcount (informational)" }));
+    // ── Computed context cards ────────────────────────────────────────────
+    // Both of these hardcoded HEADCOUNT until 2026-08-01, which left the first
+    // card asserting headcount was "the allocation basis" months after the
+    // basis moved to credit FTES, and the second dividing the pool by a figure
+    // the model no longer uses for anything. Sam: "we can eliminate headcount
+    // from the model altogether." Headcount survives as CONTEXT (the size-cell
+    // hover, the CSV) so a CBO can still sanity-check — it just stops being a
+    // denominator. These now follow the basis SEAM, so flipping the toggle
+    // relabels them instead of leaving one of the two lying.
+    var basisTotal = totalSize();
+    var feederSide = usesFtes() ? feederNoncreditFtes() : feederHeads();
+    out.push(card({ v: fmtInt(basisTotal),
+      l: "College " + basisLabel() + " (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
+        " college rows &middot; plus " + fmtInt(feederSide) + " noncredit-feeder " +
+        (usesFtes() ? "FTES" : "students") + " = <strong>" +
+        fmtInt(basisTotal + feederSide) + " CCC total</strong>",
+      note: basisTotal > 0
+        ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
+          basisLabel() + " &mdash; pool depth, informational"
+        : "" }));
+
+    // The RATE card. Under FTES-denominated priorities the operative price is
+    // the reimbursement rate per CPL FTES — what a college must actually
+    // produce to earn its allocation — not pool ÷ enrolment, which is a scale
+    // statistic and belongs in the note above. Under headcount metrics
+    // (Scenario 2) the per-student rate is still the right thing, so it stays
+    // as the fallback rather than being deleted.
+    if (priorities(state.viewSlot).some(prioIsFtes) && ftesRate() > 0) {
+      var cplFtesBought = per / effectiveFtesRate();
+      var upf = unitsPerCplFtes(null);
+      out.push(card({ v: fmtMoney2(effectiveFtesRate()),
+        l: "Reimbursement rate per <strong>CPL FTES</strong> &mdash; the price a performance target is " +
+          "denominated in: " + fmtMoney(per) + " &divide; " + fmtMoney2(effectiveFtesRate()) +
+          " = <strong>" + fmtNum1(cplFtesBought) + " CPL FTES</strong> the annual tranche buys",
+        note: "&asymp; " + fmtInt(cplFtesBought * upf) + " semester units (" + fmtNum1(upf) +
+          " units = 1 FTES) at " + fmtRate(effectiveFtesRate() / upf) + "/unit" +
+          (targetMultiplier() === 1
+            ? ""
+            : " &middot; " + fmtMoney2(ftesRate()) + " base &divide; the &times;" +
+              fmtNum2(targetMultiplier()) + " target multiplier") }));
+    } else {
+      out.push(card({ v: fmtRate(perStudent()),
+        l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) +
+          " headcount (informational; this year&#39;s metrics are headcount-denominated)" }));
+    }
 
     // Curate-view summary of what the PUBLIC page omits. Without this, a curator
     // sets 👁 once and has no way to see the public page's shape from here.
@@ -2358,6 +2418,12 @@
       // target, which gets its own line below.
       var sysDollars = p.share * per;
       var sysHeads = prioTarget(null, p);
+      // Under an FTES metric the target is CPL FTES, the per-student rate is a
+      // fossil of the dormant per_student layer, and "% of statewide headcount"
+      // divides FTES by people. All three read as fact on screen, so branch the
+      // whole line rather than patching a noun (2026-08-01).
+      var isFtesPrio = prioIsFtes(p);
+      var unitWord = isFtesPrio ? "CPL FTES" : "students";
       var winDollars = prioCap(netCollege(), slot, p);
       var frontLine = flPrio
         ? (slotIsCarryover(slot)
@@ -2366,10 +2432,13 @@
             "against the Year-1 targets. Unspent Year-1 funds roll forward to be drawn here.</span></p>"
           : '<p class="nums cplfund-fl-line"><strong>Front-loaded:</strong> the full ' + esc(windowLabel()) +
             " window &mdash; " + fmtMoney(winDollars) + " &mdash; is on the table in Year 1, earned against " +
-            "that same " + fmtInt(sysHeads) + "-student target. " +
-            '<span class="dk">Effective ' + fmtRate(sysHeads > 0 ? winDollars / sysHeads : 0) +
-            "/student (" + fmtRate(p.per_student) + " &times; " + nYears() + "). Hitting the Year-1 target " +
-            "draws the whole window; unspent funds roll forward.</span></p>")
+            "that same " + (isFtesPrio ? fmtNum1(sysHeads) : fmtInt(sysHeads)) + " " + unitWord + " target. " +
+            // fmtMoney2, not fmtRate: an effective CPL-FTES rate is in the
+            // $1,000s and rendered "$11299.26" without separators.
+            '<span class="dk">Effective ' + fmtMoney2(sysHeads > 0 ? winDollars / sysHeads : 0) +
+            "/" + (isFtesPrio ? "CPL FTES" : "student") +
+            (isFtesPrio ? "" : " (" + fmtRate(p.per_student) + " &times; " + nYears() + ")") +
+            ". Hitting the Year-1 target draws the whole window; unspent funds roll forward.</span></p>")
         : "";
       return '<div class="p">' +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
@@ -2378,10 +2447,18 @@
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
-        '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
-        " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount) " +
-        '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
-        "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>" +
+        (isFtesPrio
+          ? '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> (&asymp; " +
+            fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units) " +
+            '<span class="dk">(DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; " +
+            fmtMoney2(effectiveFtesRate()) + " per CPL FTES" +
+            (targetMultiplier() === 1 ? "" : ", at the &times;" + fmtNum2(targetMultiplier()) + " target multiplier") +
+            ". A performance target only; it does <strong>not</strong> move or cap the funding, " +
+            "which is set by the Allocation share above)</span></p>"
+          : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
+            " per student &rarr; " + fmtInt(sysHeads) + " students (" + fmtPctTrim(reachPct(null, sysHeads)) + " of statewide headcount) " +
+            '<span class="dk">(the reach is DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; the per-student rate. " +
+            "A performance target only; it does <strong>not</strong> move or cap the funding, which is set by the Allocation share above)</span></p>") +
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
@@ -2423,6 +2500,22 @@
     { test: function (m) { return wantsUnits(m) && (has(m, "portal") || has(m, "landing page")); },
       src: "pp_u", unit: "units",
       basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    // APPLIED units (added 2026-08-01 per Sam). Must sit BEFORE the eligible
+    // entry: "Applied CPL Units as FTES" contains neither "eligible" nor
+    // "transcribed", so without its own entry it fell through EVERY rule to
+    // `{}` — a data gap — and paid every college its full cap as an advance.
+    // The metric text is curator-editable live, so the moment Sam retyped P1
+    // the model would have silently gone to 100% advance with nothing on screen
+    // saying so (docs/kb-notes/methodology-a-default-payout-masks-the-gap-
+    // beneath-it.md). Shipping the measure WITH the data closes that window.
+    //
+    // Why applied is the right rung: MAP's funnel is eligible -> applied ->
+    // transcribed. Eligible is inflated upstream by the ACE/JST skill-level
+    // duplication we cannot fix (map_data_quality 10ad9e0a) and measures
+    // OPPORTUNITY; applying is a per-student action the college takes once.
+    { test: function (m) { return wantsUnits(m) && has(m, "applied"); },
+      src: "pa_u", unit: "units",
+      basis: "units of CPL APPLIED to student records in MAP" },
     { test: function (m) { return wantsUnits(m) && has(m, "eligible"); },
       src: "pe_u", unit: "units",
       basis: "units of eligible CPL identified in MAP" },
@@ -2453,6 +2546,9 @@
     // recommendation" still resolves to that gap (that one needs exhibit linkage).
     { test: function (m) { return has(m, "eligible"); },
       src: "pe", unit: "students", basis: "distinct students with any eligible CPL identified in MAP" },
+    // Headcount counterpart of the applied-units measure above.
+    { test: function (m) { return has(m, "applied"); },
+      src: "pa", unit: "students", basis: "distinct students with CPL applied to their record in MAP" },
     // MAP ↔ MIS student match (Year-2 P3) — the CO match-back build.
     { test: function (m) { return has(m, "matched in map and mis") || (has(m, "match") && /\bmis\b/.test(m)); },
       gap: "needs the MAP &harr; MIS student match (CO match-back) &mdash; the same build that " +
@@ -2579,7 +2675,22 @@
     return { per: per, mainW: mainW, gap: gap, floorFill: floorFill, bonus: bonus, total: mainW + per };
   }
 
-  function actualLineHtml(p, idx, targetHeads) {
+  // `target` is whatever prioTarget() returned for this priority — CPL FTES for
+  // a unit metric, students for a headcount metric.
+  //
+  // UNIT AGREEMENT (fixed 2026-08-01). This was the FOURTH site computing an
+  // actual, and the one the #960/#961/#962 sweep missed. A unit measure's `src`
+  // holds raw UNITS; the target is in CPL FTES. Rendering the raw value against
+  // that target overstated the ratio by units-per-FTES (30x) AND called units
+  // "students" — P1 read "Actual 1,354,527 students &mdash; 193,700% of target"
+  // while the per-college P-cells, which convert via earnFraction/toActual,
+  // correctly read 45,151 CPL FTES. Two surfaces on one screen disagreeing by
+  // 30x is exactly the class of defect prioTarget() was introduced to end.
+  //
+  // Statewide converts at the SEMESTER divisor (unitsPerCplFtes(null) = 30),
+  // which is the same divisor the statewide target is built on; the two quarter
+  // colleges are ~2% of enrolment and do not move the display at this precision.
+  function actualLineHtml(p, idx, target) {
     var meas = measurability(p.metric);
     if (meas.gap) {
       return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
@@ -2588,10 +2699,15 @@
     if (!pf || !pf.statewide || pf.statewide[meas.src] == null) {
       return '<p class="nums dk">Actuals (per MAP) arrive with the next daily data refresh.</p>';
     }
-    var act = pf.statewide[meas.src];
-    var pct = targetHeads ? act / targetHeads : null;
-    return '<p class="nums">Actual <strong>' + fmtInt(act) + "</strong> students per MAP (as of " +
-      esc(pf.as_of) + ")" + (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
+    var raw = pf.statewide[meas.src];
+    var isFtes = meas.unit === "units";
+    var act = isFtes ? unitsToCplFtes(null, raw) : raw;
+    var pct = target ? act / target : null;
+    return '<p class="nums">Actual <strong>' + (isFtes ? fmtNum1(act) : fmtInt(act)) + "</strong> " +
+      (isFtes ? "CPL FTES" : "students") + " per MAP (as of " + esc(pf.as_of) + ")" +
+      (pct != null ? " &mdash; <strong>" + fmtPctTrim(pct) + "</strong> of target" : "") +
+      (isFtes ? ' <span class="dk">(' + fmtInt(raw) + " units &divide; " +
+        fmtNum1(unitsPerCplFtes(null)) + " units/FTES)</span>" : "") +
       (meas.basis ? ' <span class="dk">(' + meas.basis + ")</span>" : "") + "</p>";
   }
 
@@ -3543,15 +3659,24 @@
       body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
     }
     var sysYearCells = yearCellsHtml(sys);
-    // The SYSTEM headcount total INCLUDES the noncredit feeder students (Sam,
+    // The SYSTEM size total INCLUDES the noncredit feeder side (Sam,
     // 2026-07-06) — shown as allocation basis + feeders = the CCC total, so
-    // the noncredit students are never invisible in a total while staying out
+    // the noncredit population is never invisible in a total while staying out
     // of the college split (their support is the feeder carve-out).
-    var fh = feederHeads();
-    var sysHeadCell = '<td title="Allocation basis = Σ of the ' + base().colleges.length +
-      ' college rows. The ' + fmtInt(fh) + ' noncredit-feeder students are counted in the CCC total; their support is the feeder carve-out, not the college split.">' +
-      fmtInt(sys.headcount) +
-      '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sys.headcount + fh) + " CCC total</span></td>";
+    //
+    // BASIS-AWARE 2026-08-01. This printed sys.headcount unconditionally, so
+    // under the credit-FTES basis the column header read "Credit FTES" and the
+    // SYSTEM row beneath it read 2,517,685 — the headcount — while every
+    // college row above it correctly read credit FTES. A total that is not in
+    // the units of the column it tops is worse than no total: it invites the
+    // reader to check the sum, and it will not add up.
+    var fh = usesFtes() ? feederNoncreditFtes() : feederHeads();
+    var sysSize = totalSize();
+    var sysHeadCell = '<td title="Allocation basis (' + basisLabel() + ') = Σ of the ' + base().colleges.length +
+      ' college rows. The ' + fmtInt(fh) + " noncredit-feeder " + (usesFtes() ? "FTES are" : "students are") +
+      ' counted in the CCC total; their support is the feeder carve-out, not the college split.">' +
+      fmtInt(sysSize) +
+      '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sysSize + fh) + " CCC total</span></td>";
     var foot;
     {
       foot = '<tr class="cplfund-systemrow">' +
