@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-07-30 · SkyReconcile — the Sept-2026 BOG amendment became the funding authority, and the Budget tab became the full CPL ledger (editable, with the 2017-forward history)",
+  "_as_of": "2026-08-01 · SkyUnit — Implementation Funding: headcount out of the model, the P1/P2/P3 numbers fixed (they were 30× off), and the FTES rate is now an editable variable",
   "_session": 117,
-  "_status": "The Budget tab is now the CPL ledger. The Sept-2026 BOG amendment governs the $35M model (it ties to the penny), and budget_funding carries all 45 rows — Sources, Uses, the combined $18M project pool, and the funding history back to 2017 — with project detail collapsible under every total and inline editing on every non-total field. The story it tells: both original asks were funded in two installments, and 2026-27 is the year the Legislature made good on each ($15M+$35M = the $50M implementation request; $5M+$2M = $7M/yr ongoing). Two errors were found in the amendment workbook itself and reported. The CCR/unified-courses items below are unchanged — that lane is still where the curation queue lives.",
+  "_status": "Implementation Funding had a real display bug: the priority cards were showing raw UNITS while calling them students and comparing them to an FTES target, so P1 read '193,700% of target'. Fixed — it now reads CPL FTES everywhere, and the college table's SYSTEM row no longer prints a headcount under a 'Credit FTES' header. Headcount is out of the model: the old '$4.62 per student' card is now the reimbursement rate, $5,649.63 per CPL FTES (= 2,057 CPL FTES a year's funding buys), and that rate is now an editable box you can change yourself. Per Sam's call, Priority 1 will move off ELIGIBLE units onto APPLIED units — eligible is inflated upstream by Marine Corps JSTs listing the same credit under every skill level, and applied doesn't double-count. The data for that publishes on tomorrow's daily run. The CCR/unified-courses and Budget items below are unchanged — those lanes still hold the curation queue.",
   "items": [
+    {
+      "id": "funding-applied-review",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🆕 Priority 1 is moving from ELIGIBLE units to APPLIED units, on your call — applied doesn't carry the Marine Corps JST double-count. The statewide picture: 1,354,527 eligible → 242,559 applied → 103,139 transcribed. The per-college split publishes on the next daily run; worth a look before we lock the new targets, because right now 79 of 99 colleges have ZERO transcribed CPL in MAP and the top 10 hold 95.7% of it. Applied should spread that out a lot — but let's see the real numbers."
+    },
+    {
+      "id": "funding-rate-editable",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "✅ The reimbursement rate ($5,649.63 per CPL FTES) is now an editable box — on the Funding pools card and in the FTES factors panel. Worth knowing before you turn the dial: raising the rate LOWERS every college's target (the target is just their allocation ÷ the rate). A zero is rejected rather than saved, because a 0 rate would silently drop every college to $0 earned."
+    },
+    {
+      "id": "funding-p1-applied-wire",
+      "for": "fable",
+      "tab": "implementation-funding",
+      "text": "After the 06:17 cron publishes pa/pa_u: wire P1 → Applied (a metric-string change in the live config — the MEASURES entry already exists) and make targets CUMULATIVE (drop the ÷nYears in prioEntitlement, routed through prioTarget — don't open-code it). Measure the per-college distribution BEFORE locking it. Then the Budget consolidation."
+    },
     {
       "id": "esl-review",
       "for": "sam",
