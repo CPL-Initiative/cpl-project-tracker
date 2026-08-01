@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-07-31
+updated: 2026-08-01
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
@@ -9,7 +9,121 @@ related:
 
 # You are the next Implementation-Funding session
 
-## 🔭 START HERE — where things stand (2026-07-31 evening, SkyQueue cont. 2)
+## 🔭 START HERE — where things stand (2026-08-01, SkyUnit)
+
+Two PRs merged. Sam's two observations on the pool cards were both right, and the
+second had a real defect under it.
+
+| PR | What |
+|---|---|
+| **#964** | Headcount out of the cards · **three summary surfaces were 30× wrong** · Applied units (`pa`/`pa_u`) now measured |
+| **#965** | The CPL FTES reimbursement rate is **curator-editable**, settled at $5,649.63 |
+
+### ⏭️ THE NEXT CONCRETE STEP — it needs the cron
+
+**`pa`/`pa_u` publish at 06:17 UTC.** Until then the per-college Applied split is
+invisible (the sandbox has no `MAP_API_KEY`). Once it lands:
+
+1. **Wire P1 → Applied.** The `MEASURES` entry already exists (`src: "pa_u"`), so
+   this is a metric-string change in the live Supabase config, not code.
+2. **Make targets cumulative** (Sam's call): drop the `÷ nYears` in
+   `prioEntitlement`, so the window total is the target. Route it through
+   `prioTarget()` — do not open-code it, that is what #960 existed to end.
+3. **Look at the distribution before committing.** Sam's two calls together mean
+   past work counts fully (LA Pierce maxes P2 on pre-program work) while
+   **79 of 99 colleges sit at zero transcribed** and the top 10 hold 95.7%.
+   Applied should widen that base (2.4× the units, and applying is the step
+   *before* the administratively hardest one) — **measure it, don't assume it.**
+
+Statewide, with Applied + cumulative, P1 goes from 64.6× over target to **5.8×**.
+Still saturated statewide; per-college is what actually pays.
+
+### 🧮 The numbers that anchor this model
+
+| | value |
+|---|---:|
+| Pool (window / per year) | $23,240,308 / $11,620,154 |
+| Rate | **$5,649.63** per CPL FTES ($188.32/unit) |
+| What a year's tranche buys | 2,056.8 CPL FTES = 61,704 units |
+| Statewide funnel | eligible 1,354,527 → **applied 242,559** → transcribed 103,139 units |
+| Enrolment basis | 1,069,182 credit FTES (+45,433 noncredit feeder FTES) |
+
+⚠️ **Raising the rate LOWERS the target** (target = allocation ÷ rate). There is
+no ~$8k figure in the dataset — the only rate is $5,649.63, labelled SCFF base.
+An all-in ~$8,071 would take the statewide target 2,057 → 1,440. The rate is not
+the lever on targets; the metric and the multiplier are.
+
+### Invariants — do not break these
+
+- **`prioTarget(c, p)` is the ONLY place a target is computed** (was five sites).
+- **`prioEntitlement` is the target's basis** — pre-floor, pre-rural, per-year.
+- **`prioCap(W, slot, p)` is the ONLY place disbursement scope is decided.**
+- **The floor raises funding, not targets.**
+- **TLM is a per-calendar parameter** — 525/17.5 = 30 semester, 525/11.67 = 45
+  quarter. Sam ruled 2026-08-01 that quarter colleges keep 11.67
+  (`map_data_quality` `7eb0c25a`, now verified). Flips to a flat 30 only if MAP
+  turns out to pre-normalise.
+- **Store bases, derive quotients.** Units-per-FTES is asserted absent from data.
+- **The multiplier scales the TARGET**, not the rate.
+- **NEW: a summary surface must share the unit of its detail.** Assert the
+  *relationship* (recompute "% of target" from the surface's own two numbers),
+  never each side alone. That gap is why a 30× error shipped three times.
+- **NEW: `pa` is omitted, never zeroed,** when the pull lacks the column — a
+  present zero reads as "posted nothing" and pays $0 statewide.
+- **NEW: the rate editor writes via `setFtesRate`, not `setPool`** — `ftesRate()`
+  reads `SCENARIO ?? SHARED ?? poolField(...)`, so a pool write is shadowed.
+- **NEW: a zero/negative/junk rate is rejected, not clamped** — a 0 rate zeroes
+  every target and silently earns every college $0.
+
+### ⚠️ Two process traps I actually fell into
+
+1. **I reported tests green from a run that predated the edit.** CI caught it.
+   Re-run the file *after* you touch it.
+2. **`origin/main` was 16 commits stale in the sandbox.** "Main is clean" was an
+   artifact of old data files, and I nearly attributed a pre-existing phone
+   overflow to myself. `git fetch` and check what your baseline ref points at
+   before concluding a regression is or isn't yours.
+
+### ⏭️ Then: the Budget consolidation
+
+Still open. Fold Implementation Funding in as a Budget sub-view — both tabs are
+JS-rendered, so it is a nav change plus a segmented control
+`[Sources & Uses | $35M model | $15M Distributions | Report]`. The single-source
+wiring (#949) is already done, so this is now the lower-risk half.
+
+### ❓ Open with Sam
+
+- **Nine colleges have genuinely no feed row** (Lake Tahoe, Imperial, Rio Hondo,
+  Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba) and read **$0**. He ruled
+  that's correct, but said he'd supply gap data before the advance rule goes live.
+- **`ae3e16d6`** (his idea, parked): normalize the unit basis in MAP — emit
+  semester-equivalent units *alongside* native, never overwriting. Retires the TLM
+  branch and permanently closes `7eb0c25a`.
+
+### Reading order
+
+1. [`cpl_funding_lessons.md`](cpl_funding_lessons.md) — the 2026-08-01 section
+2. KB notes: `methodology-a-summary-must-share-the-unit-of-its-detail`,
+   `methodology-omit-dont-zero-an-absent-measure`,
+   `methodology-move-down-the-funnel-to-route-around-an-upstream-defect`
+3. `tests/cpl_funding_cpl_ftes.test.js` Parts F/G/H — the unit-agreement guards
+
+### Verification pattern that works
+
+Rebuild a throwaway Chromium harness from the current data + consumer, stub
+`CPL_TABS.loadScript` and `CPL_TEAM_PHRASE` (as an **object** with `session()` —
+a string throws), set `CPL_FUNDING_NO_REMOTE=true`, and **boot with the LIVE
+Supabase Scenario-1 FTES metric strings** — the committed defaults are
+headcount-denominated and would not have exercised any of this run's surface.
+Playwright is at `/opt/node22/lib/node_modules/playwright`, Chromium under
+`/opt/pw-browsers`. Screenshot at 1440 + 390, force sections open, and read the
+rendered card text back as JSON.
+
+Moniker: **SkyUnit**. Claim your own if you like.
+
+---
+
+## Previous — 2026-07-31 evening (SkyQueue cont. 2)
 
 The model moved **off headcount and onto FTES**, in two distinct senses that are
 easy to conflate and that the code now keeps rigidly apart:
@@ -67,12 +181,7 @@ That pairing is the SCFF argument, now measured rather than estimated.
 (An earlier CER-based estimate of ~$34M eligible was **7× low** — the CER covers
 only articulated exhibits.)
 
-### ⏭️ Then: the Budget consolidation
-
-Still open, still the fix for the drift class that cost a day this week:
-single-source `one_time_2026_27` off the ledger instead of `cpl_funding_data.js`
-holding its own copy.
-
+#
 ---
 
 ## Previous — where things stood (2026-07-31 midday, SkyQueue cont.)

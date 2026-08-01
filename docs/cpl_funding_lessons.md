@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-07-28
+updated: 2026-08-01
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -1902,3 +1902,179 @@ Sam's call on P1: eligible-units saturates at any sane multiplier, so either it
 needs a different metric or the priorities need per-priority multipliers. Then
 the **Budget consolidation** — single-source `one_time_2026_27` off the ledger,
 still open and still the fix for the drift class that cost a day this week.
+
+## 2026-08-01 (SkyUnit) — the units answer, and the metric moves one rung down the funnel
+
+Sam opened with two observations on the pool cards, both correct, and the second
+one had a real defect under it: *"we should eliminate headcount from the model
+altogether — the card that allocates $4.62 per student should be a per FTES
+amount"*, and *"seems like we are miscalculating the P1,2,3 earned FTES, which
+seem way too high. Also the tgt FTES seem way too low."*
+
+Two PRs, both merged: **#964** (the units + the cards + Applied measurement) and
+**#965** (the rate as a curator-editable variable).
+
+### The defect — the summary surfaces disagreed with the detail by 30×
+
+The per-college P-cells convert units → CPL FTES through `earnFraction`/`toActual`.
+**Three summary surfaces did not**, and every one of them read as fact on the
+live page:
+
+| surface | rendered | should have read |
+|---|---|---|
+| priority card, actual | "Actual **1,354,527 students** — **193,700%** of target" | 45,150.9 CPL FTES — 6,456% |
+| priority card, target | "$73.90 per student → **699 students** (0.028% of headcount)" | Target 699.3 **CPL FTES** (≈20,979 units) |
+| college table, SYSTEM row | header *Credit FTES*, row beneath it **2,517,685** (a headcount) | 1,069,182 credit FTES |
+
+This is the **fourth, fifth and sixth** instance of the same defect in this
+workstream (#960/#961/#962 were one through three). They survived because the
+tests asserted each side's *presence* — never the *relationship* between a
+rendered number and its target's unit. The new assertions recompute "% of target"
+from the card's own two numbers, so the surface has to be internally consistent
+regardless of the data.
+
+**The SYSTEM row was caught by rendering the page in real Chromium and reading the
+column header next to its own total** — not by the suite, and not by reading the
+diff. A total that isn't in the units of the column it tops is worse than no
+total: it invites the reader to add up the column, and it will never reconcile.
+
+Durable: [`methodology-a-summary-must-share-the-unit-of-its-detail`](kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md).
+
+### The cards — and the counterintuitive bit about the rate
+
+Both hardcoded headcount, and the first still called headcount *"the allocation
+basis"* months after the basis moved to credit FTES (#959) — asserting a false
+thing on the live page. Both now follow the basis seam, and the feeder side
+follows with them: credit FTES on the college side pairs with **noncredit FTES**
+on the feeder side, never with feeder headcount.
+
+The `$4.62` card is retired under FTES metrics in favour of the operative price —
+**$5,649.63 per CPL FTES → 2,056.8 CPL FTES the tranche buys** (61,704 units,
+$188.32/unit). Pool depth per credit FTES (**$10.87** — the literal swap Sam
+asked for) rides as a *note*, because it is a scale statistic, not the rate the
+model runs on.
+
+**Three different "per something" numbers existed and only one belonged on that
+card.** Worth writing down, because Sam's message reasonably conflated two of
+them:
+
+| quantity | value | what it is |
+|---|---:|---|
+| pool ÷ statewide headcount | $4.62 | the retired card |
+| pool ÷ statewide credit FTES | $10.87 | pool depth — a scale statistic |
+| pool ÷ CPL FTES purchased | $5,649.63 | the price the model actually runs on |
+
+And the bit that cuts against intuition, now test-locked: **raising the rate
+LOWERS the target** (target = allocation ÷ rate). Sam thought the rate might be
+~$8k; there is no $8k figure in the dataset (the only rate is $5,649.63, labelled
+SCFF base), and moving to an all-in ~$8,071 would have taken the statewide target
+from 2,057 → 1,440 CPL FTES — the wrong direction for his own complaint. **The
+rate is not the lever on targets.** He settled on $5,649.63.
+
+### P1 → Applied: our arithmetic was right, the source was inflated
+
+I proposed dropping the eligible-units metric on the evidence that it does not
+discriminate (98 of 102 colleges over target, median 42×, max 605×). Sam pushed
+back on the *reasoning* and was right to: eligible units aren't free — they
+require approved articulations and matching students — and he pointed at the real
+cause. *"There will be another category of units called Applied, which is fewer
+units because it doesn't double count eligible units like we sometimes do for
+Marine Corps JSTs."*
+
+Measurement then localised it precisely: the producer's own cross-check against
+MAP's published per-college totals reads **1.0054** — we match the source to half
+a percent. **The inflation is upstream** (ACE JST exhibits repeat a credit
+recommendation under every skill level; `map_data_quality` `10ad9e0a`, and MAP's
+parser can't easily fix it because skill levels aren't canonically ordered). So
+the answer isn't a correction factor and isn't waiting on MAP — it's to **measure
+one rung later in the funnel**, where the defect can't reach:
+
+**eligible 1,354,527 → applied 242,559 (18%) → transcribed 103,139 (8%)**
+
+`Applied Credits` was already in the same view we read, so the producer now emits
+`pa`/`pa_u`. **P1 is not rewired yet** — the per-college Applied split isn't
+visible from a sandbox without `MAP_API_KEY`, so the measurement ships first and
+the policy call follows the numbers.
+
+Durable: [`methodology-move-down-the-funnel-to-route-around-an-upstream-defect`](kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md).
+
+### The two guards that mattered more than the feature
+
+1. **`pa` is OMITTED, never zeroed, when the pull lacks the column.**
+   `earnFraction()` reads a present-but-zero cell as "feed published, this college
+   posted nothing" and pays $0 — a column we never asked for would have zeroed out
+   every college in the state. Absent keys are the honest shape for absent data.
+   ([`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md) —
+   the mirror image of `methodology-a-default-payout-masks-the-gap-beneath-it`:
+   same root cause, opposite direction. Ask what a metric's absence pays in *both*.)
+2. **A `MEASURES` entry shipped WITH the data.** Metric text is curator-editable
+   live in Supabase, and "Applied CPL Units as FTES" matched no existing rule — it
+   fell through every predicate to `{}`, which `earnFraction` reads as a data gap
+   and pays at **full cap**. The moment Sam retyped P1 the model would have gone to
+   100% advance with nothing on screen saying so.
+
+### The rate is now editable (#965)
+
+Two entry points — the pool card and the FTES-factors row, which had been sitting
+frozen among editable siblings. Three calls worth remembering:
+
+- **The BASE rate is editable, not the derived effective rate** (`rate ÷ multiplier`).
+  Typing into a derived field pushes the number through a divisor and stores
+  something else — the store-a-quotient mistake `ftes_factors` already avoids.
+- **It writes via `setFtesRate`, not `setPool`.** `ftesRate()` reads
+  `SCENARIO ?? SHARED ?? poolField(...)`, so a pool write lands *underneath* any
+  top-level override: type a new rate, see nothing change, get no explanation.
+  (`setFtesRate` had existed since #962 and was wired to nothing.)
+- **Two entry points is only safe because they share one setter** — a test edits
+  via each and asserts the other follows.
+- **A zero rate is rejected, not clamped.** Every `prioTarget()` → 0,
+  `earnFraction` reads `target <= 0` as `"none"`, and every college in the state
+  silently earns $0. Guarded three ways (zero, negative, junk).
+
+### A process note on myself
+
+I reported "all funding tests green" from a run of `cpl_funding.test.js` that
+**predated** my SYSTEM-row edit, and CI caught the two assertions I'd invalidated.
+The stale-result trap is cheap to avoid and I walked into it: re-run the file you
+touched *after* you touch it, not before. Fixed in a second commit, with the
+assertion that would have caught the original defect (the total must not contain
+the headcount figure).
+
+Separately, a first pass at baselining the phone overflow against `origin/main`
+was **wrong** — that ref was 16 commits stale in the sandbox, so "main is clean"
+was an artifact of old data files. Re-baselined against `HEAD`: the 42px overflow
+was pre-existing in the FTES-factors box (invisible until now because that box
+only renders once a priority is FTES-denominated, which the committed defaults
+are not). Fixed while in there. **Check what your baseline ref actually points at
+before concluding a regression is yours — or isn't.**
+
+### Also settled this run
+
+- **Quarter colleges keep the 11.67 TLM** (→ 45 units/FTES). Sam's ruling closed
+  `map_data_quality` `7eb0c25a`, which had been open since the morning; it confirms
+  the shipped behaviour, so no code change. The row carries the caveat that the
+  reading flips to a flat 30 if MAP turns out to pre-normalise quarter units.
+- **New DQ item `ae3e16d6`** (Sam's idea, parked): normalize the unit basis in MAP
+  — emit semester-equivalent units *alongside* native, never overwriting, because a
+  quarter college's registrar and SIS think in quarter units. That would retire the
+  TLM branch entirely and permanently close `7eb0c25a`.
+
+### State
+
+- Tests: `cpl_funding` **545** · `cpl_funding_cpl_ftes` **54** (Parts F/G/H new) ·
+  new `cpl_funding_applied` **23** · basis 35 · metric_wiring 26 · performance 24 ·
+  frontload 40 · public_private 9 · gate_ledger_public 53. Suite **181 files green**.
+- Real Chromium at the **live Supabase Scenario-1 metrics** (the committed defaults
+  are headcount-denominated and would not have exercised any of this), desktop +
+  phone: 0 horizontal overflow, 0 console errors.
+
+### Next concrete step
+
+**The cron publishes `pa`/`pa_u` at 06:17 UTC.** Then: wire P1 → Applied and make
+targets cumulative (Sam's calls), with the per-college distribution actually in
+front of you. The thing to look at before committing to it — his two calls
+together mean past work counts fully (LA Pierce maxes P2 on pre-program work)
+while **79 of 99 colleges sit at zero transcribed** and the top 10 hold 95.7%.
+Applied should widen that base considerably; measure it, don't assume it.
+
+Then the **Budget consolidation** — still open, still the fix for the drift class.
