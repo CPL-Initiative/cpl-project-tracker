@@ -244,6 +244,125 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     (flC / flT) > (evenC / evenT) * 1.5);
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Part F — UNIT AGREEMENT on the SUMMARY surfaces (2026-08-01)
+//
+// The per-college P-cells convert units -> CPL FTES (Part C above). Three
+// summary surfaces did NOT, and shipped live saying so:
+//
+//   priority card, actual : "Actual 1,354,527 students — 193,700% of target"
+//                           (raw UNITS, against an FTES target, called students)
+//   priority card, target : "Per-student rate $73.90 per student -> 699
+//                           students (0.028% of statewide headcount)"
+//                           (CPL FTES relabelled students, divided by people)
+//   pool card, rate       : "$4.62 per student — $11,620,154 ÷ 2,517,685
+//                           headcount" (a denominator the model no longer uses)
+//
+// The failure mode is generic: a value and its target agreeing in MAGNITUDE is
+// not the same as agreeing in UNIT, and every one of these read as fact. So
+// these assert the RELATIONSHIP between the rendered number and the target's
+// unit, never just that each side is present.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const T = bootWithUnits(window, 900);
+  const doc = window.document;
+  const cardTexts = Array.from(doc.querySelectorAll(".cplfund-card .l"))
+    .map(function (l) { return l.textContent.replace(/\s+/g, " "); });
+  const prio = Array.from(doc.querySelectorAll(".cplfund-prio .p"))
+    .map(function (p) { return p.textContent.replace(/\s+/g, " "); });
+
+  // ── the actual line ──
+  // Fixture statewide pe_u = 181,975 units -> 6,065.8 CPL FTES at 30/FTES.
+  check("F: the priority-card actual is stated in CPL FTES, not students",
+    prio.some(function (t) { return /Actual 6,065\.8 CPL FTES per MAP/.test(t); }));
+  check("F: the raw UNIT count is no longer rendered as the actual",
+    !prio.some(function (t) { return /Actual 181,975/.test(t); }));
+  check("F: the actual shows its working (units ÷ units-per-FTES)",
+    prio.some(function (t) { return /181,975 units ÷ 30\.0 units\/FTES/.test(t); }));
+  // The ratio is the thing that was 30x wrong — assert it against the target
+  // the same card prints, not against a literal.
+  {
+    const m = prio.join(" ").match(/Target ([\d,.]+) CPL FTES[\s\S]*?Actual ([\d,.]+) CPL FTES[^%]*?— ([\d.]+)% of target/);
+    const num = function (s) { return parseFloat(String(s).replace(/,/g, "")); };
+    check("F: % of target = actual ÷ target on the card's OWN two numbers",
+      !!m && Math.abs(num(m[3]) - (num(m[2]) / num(m[1])) * 100) < 1);
+  }
+
+  // ── the target line ──
+  check("F: the FTES target is labelled CPL FTES, not students",
+    prio.some(function (t) { return /Target [\d,.]+ CPL FTES/.test(t); }));
+  check("F: the dormant per-student rate is gone from an FTES priority",
+    !prio.some(function (t) { return /Per-student rate/.test(t); }));
+  check("F: CPL FTES is never divided by headcount to make a reach %",
+    !prio.some(function (t) { return /of statewide headcount/.test(t); }));
+  check("F: the target names the rate it was derived from",
+    prio.some(function (t) { return /÷ \$5,649\.63 per CPL FTES/.test(t); }));
+
+  // ── the pool rate card ──
+  const rate = cardTexts.find(function (t) { return /Reimbursement rate per/.test(t); });
+  check("F: the $4.62-per-headcount card is retired under FTES metrics",
+    !cardTexts.some(function (t) { return /Per-student rate/.test(t) && /headcount/.test(t); }));
+  check("F: the rate card is denominated per CPL FTES", !!rate && /per CPL FTES/.test(rate));
+  check("F: the rate card states what the tranche buys, in CPL FTES",
+    !!rate && /CPL FTES the annual tranche buys/.test(rate));
+  {
+    // The card's own three numbers must reconcile: tranche ÷ rate = CPL FTES.
+    const m = rate && rate.match(/\$([\d,]+) ÷ \$([\d,.]+) = ([\d,.]+) CPL FTES/);
+    const num = function (s) { return parseFloat(String(s).replace(/,/g, "")); };
+    check("F: rate card arithmetic reconciles (tranche ÷ rate = CPL FTES bought)",
+      !!m && Math.abs(num(m[1]) / num(m[2]) - num(m[3])) < 1);
+  }
+
+  // ── the basis card ──
+  check("F: the basis card names credit FTES, not headcount",
+    cardTexts.some(function (t) { return /credit FTES \(allocation basis\)/.test(t); }));
+  check("F: pool-depth per credit FTES rides as a NOTE, not as the headline rate",
+    Array.from(doc.querySelectorAll(".cplfund-card")).some(function (c) {
+      return /per credit FTES — pool depth, informational/.test(c.textContent.replace(/\s+/g, " "));
+    }));
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Part G — Applied CPL units are wired (2026-08-01, Sam)
+//
+// Sam's call: P1 should score APPLIED units, not eligible. Eligible is inflated
+// upstream by the ACE/JST skill-level duplication we cannot fix
+// (map_data_quality 10ad9e0a) and measures opportunity rather than an action.
+//
+// The load-bearing assertion is the FIRST one. Metric text is curator-editable
+// live in Supabase, so the instant Sam retypes P1 the string must resolve to a
+// measure. Without its own MEASURES entry "Applied CPL Units as FTES" matched
+// NO rule — including none of the headcount ones — and fell through to `{}`,
+// which earnFraction() reads as a data gap and pays at FULL CAP as an advance.
+// The metric would have looked fine and quietly stopped measuring anything.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const T = bootWithUnits(window, 900);
+  const M = T._measurability || null;
+  if (!M) {
+    // No seam exported — assert on the source instead, which is still specific.
+    check("G: an applied-units MEASURES entry exists and precedes the eligible one",
+      consumerSrc.indexOf('src: "pa_u"') !== -1 &&
+      consumerSrc.indexOf('src: "pa_u"') < consumerSrc.indexOf('src: "pe_u"'));
+    check("G: a headcount counterpart exists too",
+      consumerSrc.indexOf('src: "pa",') !== -1);
+    check("G: applied is matched on the word 'applied', not on 'eligible'",
+      /wantsUnits\(m\) && has\(m, "applied"\)/.test(consumerSrc));
+  } else {
+    check("G: an applied-FTES metric resolves to the applied unit sum",
+      M("Applied CPL Units as FTES (1 Unit = .0334 FTES)").src === "pa_u");
+    check("G: it does NOT fall through to a data gap (which would pay full cap)",
+      !M("Applied CPL Units as FTES (1 Unit = .0334 FTES)").gap);
+    check("G: an applied HEADCOUNT metric resolves to the student count",
+      M("Headcount with any applied CPL").src === "pa");
+  }
+  check("G: eligible still resolves to eligible (the new rule did not shadow it)",
+    /src: "pe_u"/.test(consumerSrc) &&
+    consumerSrc.indexOf('units of eligible CPL identified in MAP') !== -1);
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

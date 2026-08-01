@@ -17,6 +17,25 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   identified in MAP, whether or not transcribed yet. Serves the
                   reworded P1 "eligible for at least one course offered through
                   CPL" metric (wired in cpl_funding.js MEASURES, 2026-07-27).
+  PA (added 2026-08-01 per Sam) = distinct students with Applied Credits > 0,
+                  and `pa_u` their unit sum. The middle rung of MAP's funnel
+                  (eligible -> APPLIED -> transcribed) and the one P1 should be
+                  scored on, for two reasons:
+                    1. ELIGIBLE is inflated upstream and we cannot fix it. ACE
+                       JST exhibits repeat a credit recommendation under every
+                       skill level, so a USMC veteran's eligibility multiplies
+                       (map_data_quality 10ad9e0a, high/open — MAP's parser
+                       can't easily keep only the highest level because skill
+                       levels aren't canonically ordered). Our own arithmetic is
+                       sound (the unit_crosscheck below reads 1.0054 against
+                       MAP's published totals) — the source figure is the one
+                       that's inflated. Applying credit is a per-student action
+                       taken once, so it does not carry the duplication.
+                    2. Eligible measures OPPORTUNITY, not performance: 98 of 102
+                       colleges clear an eligible-based target, median 42x. What
+                       a college controls is whether it ACTS on the eligibility.
+                  Statewide the funnel is 1,354,527 eligible -> 242,559 applied
+                  (18%) -> 103,139 transcribed (8%).
   PP (added 2026-07-27 per Sam) = distinct PORTAL-ORIGIN students (Potential
                   Student = Yes, Test Student != Yes) with any transcribed CPL —
                   the P3 "transcribed Credit from either CPL Student Portal or
@@ -169,6 +188,7 @@ def _load_credit_distribution(path, resolve):
             continue
         cm = {c: i for i, c in enumerate(report.get("columnName", []))}
         i_col, i_e, i_t = cm.get("College"), cm.get("Eligible Credits"), cm.get("Transcribed Credits")
+        i_a = cm.get("Applied Credits")
         if i_col is None or i_e is None or i_t is None:
             return None
         out = {}
@@ -182,10 +202,12 @@ def _load_credit_distribution(path, resolve):
             try:
                 e = float(row[i_e] or 0)
                 t = float(row[i_t] or 0)
+                a = float(row[i_a] or 0) if i_a is not None else 0.0
             except (TypeError, ValueError):
                 continue
-            rec = out.setdefault(target, {"pe_u": 0.0, "p3_u": 0.0})
+            rec = out.setdefault(target, {"pe_u": 0.0, "pa_u": 0.0, "p3_u": 0.0})
             rec["pe_u"] += e
+            rec["pa_u"] += a
             rec["p3_u"] += t
         return out or None
     return None
@@ -314,6 +336,7 @@ def main():
     i_col = cm.get("College", 0)
     i_tcr = cm.get("Transcribed Credits")
     i_ecr = cm.get("Eligible Credits")
+    i_acr = cm.get("Applied Credits")
     i_pot = cm.get("Potential Student")
     i_test = cm.get("Test Student")
     i_sid = cm.get("MAP Internal StudentID")
@@ -323,7 +346,16 @@ def main():
 
     resolve = _name_resolver()
     feeder_resolve = _feeder_resolver()
-    metrics = ("pe", "p2", "p3", "pp")
+    # `pa` only exists when the pull carried the Applied Credits column. It is
+    # OMITTED rather than emitted as zeros when the column is absent: a present-
+    # but-all-zero `pa` would read to earnFraction() as "feed published, this
+    # college posted nothing" and pay every college $0 on a column we simply
+    # never asked for. Absent keys are the honest shape for absent data.
+    has_applied = i_acr is not None
+    metrics = ("pe", "pa", "p2", "p3", "pp") if has_applied else ("pe", "p2", "p3", "pp")
+    if not has_applied:
+        print("funding-performance: NOTE — 'Applied Credits' not in this pull; "
+              "pa/pa_u omitted (not zeroed). Check fetch_custom_report.py's column list.")
     seen = {m: set() for m in metrics}          # per-(college,sid) dedupe
     state_seen = {m: set() for m in metrics}    # statewide distinct (cross-college dedupe by sid)
     counts = {}                                 # funding-name -> {pe,p2,p3,pp}
@@ -344,8 +376,8 @@ def main():
     # (which is what the test fixture assumes). MAP's own per-college totals are
     # read below as an independent cross-check so the real grain is measured
     # rather than assumed.
-    UNIT_METRICS = ("pe", "p3", "pp")
-    unit_of = {"pe": "ecr", "p3": "tcr", "pp": "tcr"}
+    UNIT_METRICS = tuple(m for m in ("pe", "pa", "p3", "pp") if m in metrics)
+    unit_of = {"pe": "ecr", "pa": "acr", "p3": "tcr", "pp": "tcr"}
     units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
     unmatched_units = {}
     state_units = {m: 0.0 for m in UNIT_METRICS}
@@ -374,7 +406,11 @@ def main():
             ecr = float((row[i_ecr] or "0").strip() or 0) if i_ecr is not None else 0.0
         except ValueError:
             ecr = 0.0
-        if tcr <= 0 and ecr <= 0:
+        try:
+            acr = float((row[i_acr] or "0").strip() or 0) if has_applied else 0.0
+        except ValueError:
+            acr = 0.0
+        if tcr <= 0 and ecr <= 0 and acr <= 0:
             continue
         sid = (row[i_sid] or "").strip()
         fname = resolve(college)
@@ -397,6 +433,9 @@ def main():
         rec = bucket.setdefault(key, {m: 0 for m in metrics})
         urec = ubucket.setdefault(key, {m + "_u": 0.0 for m in UNIT_METRICS})
         for metric, hit in (("pe", ecr > 0 and not is_potential),
+                            # `pa` is guarded by has_applied via acr staying 0.0
+                            # when the column is absent, so the hit never fires.
+                            ("pa", acr > 0 and not is_potential),
                             ("p3", tcr > 0 and not is_potential),
                             ("p2", tcr >= P2_MIN_UNITS and not is_potential),
                             ("pp", tcr > 0 and is_potential)):
@@ -409,7 +448,7 @@ def main():
                 # Units ride the SAME guard as the count — same students, so the
                 # two are always describing the same set.
                 if metric in UNIT_METRICS:
-                    val = ecr if unit_of[metric] == "ecr" else tcr
+                    val = {"ecr": ecr, "acr": acr, "tcr": tcr}[unit_of[metric]]
                     urec[metric + "_u"] += val
                     # STATEWIDE units are a plain SUM of the per-college sums, NOT
                     # sid-deduped like the counts: units are awarded per college, so
@@ -475,6 +514,9 @@ def main():
                   "Test students and test colleges excluded; "
                   "P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, "
                   "PE = any eligible CPL units identified, "
+                  "PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied "
+                  "-> transcribed; unlike eligible it does not carry the ACE/JST skill-level "
+                  "duplication, and unlike eligible it is an action the college took), "
                   "PP = portal-origin (Potential Student = Yes) with any transcribed CPL "
                   "(the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). "
                   "*_u keys are UNIT sums over exactly the same students as their count "
@@ -495,9 +537,12 @@ def main():
     # (that view has no Test/Potential filter).
     xcheck = _load_credit_distribution(src, resolve)
     if xcheck:
-        ours = {"pe_u": sum(u["pe_u"] for u in units.values()),
-                "p3_u": sum(u["p3_u"] for u in units.values())}
-        theirs = {k: sum(v[k] for v in xcheck.values()) for k in ("pe_u", "p3_u")}
+        # Only cross-check keys we actually produced this run (`pa_u` is absent
+        # when the pull carried no Applied Credits column).
+        xkeys = tuple(k for k in ("pe_u", "pa_u", "p3_u")
+                      if any(k in u for u in units.values()))
+        ours = {k: sum(u.get(k, 0.0) for u in units.values()) for k in xkeys}
+        theirs = {k: sum(v.get(k, 0.0) for v in xcheck.values()) for k in xkeys}
         payload["unit_crosscheck"] = {
             "source": CREDIT_DIST_VIEW,
             "note": ("MAP's own per-college totals, which include Test/Potential rows we "
@@ -511,7 +556,7 @@ def main():
         print("funding-performance: unit cross-check vs " + CREDIT_DIST_VIEW + " — "
               + ", ".join("%s ours=%s map=%s ratio=%s" % (
                   k, f"{ours[k]:,.0f}", f"{theirs[k]:,.0f}",
-                  (f"{theirs[k]/ours[k]:.3f}" if ours[k] else "n/a")) for k in ("pe_u", "p3_u")))
+                  (f"{theirs[k]/ours[k]:.3f}" if ours[k] else "n/a")) for k in xkeys))
     else:
         print("funding-performance: unit cross-check unavailable ("
               + CREDIT_DIST_VIEW + " not in the pull) — unit sums unverified this run.")
@@ -537,10 +582,12 @@ def main():
     print(f"wrote {os.path.normpath(out)}: {len(payload['colleges'])} colleges "
           f"({sup} suppressed cells), {len(payload['unmatched'])} unmatched, "
           f"{len(payload['feeders'])} feeders (F1 eligible), "
-          f"statewide pe={state['pe']:,} p2={state['p2']:,} p3={state['p3']:,} "
-          f"pp={state['pp']:,} | units pe_u={state_units['pe']:,.0f} "
-          f"p3_u={state_units['p3']:,.0f} pp_u={state_units['pp']:,.0f}, "
-          f"as_of {payload['as_of']}")
+          f"statewide pe={state['pe']:,} "
+          + (f"pa={state['pa']:,} " if has_applied else "")
+          + f"p2={state['p2']:,} p3={state['p3']:,} "
+          f"pp={state['pp']:,} | units "
+          + " ".join(f"{m}_u={state_units[m]:,.0f}" for m in UNIT_METRICS)
+          + f", as_of {payload['as_of']}")
 
 
 if __name__ == "__main__":
