@@ -2235,15 +2235,34 @@
     if (priorities(state.viewSlot).some(prioIsFtes) && ftesRate() > 0) {
       var cplFtesBought = per / effectiveFtesRate();
       var upf = unitsPerCplFtes(null);
-      out.push(card({ v: fmtMoney2(effectiveFtesRate()),
+      // EDITABLE (Sam, 2026-08-01) — and it is the BASE rate that is editable,
+      // never the derived effective one. effectiveFtesRate() is rate ÷ the
+      // target multiplier; letting a curator type into that would push their
+      // number through a divisor and store something else, which is the same
+      // store-a-quotient mistake ftes_factors deliberately avoids.
+      //
+      // It writes via setFtesRate (the override layer), NOT setPool. Both would
+      // "work" in isolation, but ftesRate() reads
+      // SCENARIO.ftesRate ?? SHARED.ftesRate ?? poolField(...), so a pool write
+      // sits UNDERNEATH any existing top-level override — the curator would
+      // type a new rate, see no change, and have nothing on screen explaining
+      // why. One writable layer above the committed default.
+      // No "$" prefix and comma-formatted, matching the other editable pool
+      // cards (35,000,000 / 800,000): a prefix glyph beside the input wraps to
+      // its own line at card width, and the label already says what it is.
+      out.push(card({ v: edNum("ftesrate", fmtNum2(ftesRate()),
+          { label: "Reimbursement rate per CPL FTES",
+            title: "The price a CPL FTES is valued at. Raising it LOWERS every target " +
+                   "(target = allocation ÷ rate); lowering it raises them." }),
         l: "Reimbursement rate per <strong>CPL FTES</strong> &mdash; the price a performance target is " +
           "denominated in: " + fmtMoney(per) + " &divide; " + fmtMoney2(effectiveFtesRate()) +
           " = <strong>" + fmtNum1(cplFtesBought) + " CPL FTES</strong> the annual tranche buys",
         note: "&asymp; " + fmtInt(cplFtesBought * upf) + " semester units (" + fmtNum1(upf) +
-          " units = 1 FTES) at " + fmtRate(effectiveFtesRate() / upf) + "/unit" +
+          " units = 1 FTES) at " + fmtRate(effectiveFtesRate() / upf) + "/unit &middot; " +
+          esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate") +
           (targetMultiplier() === 1
             ? ""
-            : " &middot; " + fmtMoney2(ftesRate()) + " base &divide; the &times;" +
+            : " &middot; effective " + fmtMoney2(effectiveFtesRate()) + " after the &times;" +
               fmtNum2(targetMultiplier()) + " target multiplier") }));
     } else {
       out.push(card({ v: fmtRate(perStudent()),
@@ -2387,7 +2406,15 @@
           nQ + " college" + (nQ === 1 ? "" : "s") + " on a quarter calendar") +
       row("&rarr; Units per FTES", fmtNum1(ch / sem) + " semester &middot; " + fmtNum1(ch / qtr) + " quarter",
           "derived &mdash; " + fmtInt(ch) + " &divide; the term-length multiplier", true) +
-      row("Reimbursement rate", fmtRate(ftesRate()) + "/FTES",
+      // Editable here TOO, and deliberately through the SAME data-edit hook as
+      // the pool card. Two entry points for one value is only dangerous when
+      // they write to different places; both land in setFtesRate, so they
+      // cannot disagree — and a curator reading a box of editable FTES
+      // parameters should not find the one that actually prices the targets
+      // frozen. (Guarded by a test that edits in either place and asserts the
+      // other reflects it.)
+      row("Reimbursement rate", "$" + edNum("ftesrate", fmtNum2(ftesRate()),
+            { small: true, label: "Reimbursement rate per CPL FTES" }) + "/FTES",
           esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate")) +
       row("Target multiplier", fmtNum1(mult) + "&times;",
           mult === 1 ? "par &mdash; a college earns its allocation by producing the CPL FTES it would have bought at the state rate"
@@ -4810,6 +4837,17 @@
       var n = parseNum(raw);
       if (n == null) { render(); return; }
       setPool(field, Math.max(0, n));
+      return;
+    }
+    if (edit === "ftesrate") {
+      // Reject <= 0 rather than clamping. A zero rate is not a cheap edit: every
+      // prioTarget() would come back 0, earnFraction() reads target <= 0 as
+      // "none", and every college in the state would silently earn $0 — a
+      // catastrophic-looking model state produced by a stray keystroke. Bounce
+      // it and re-render the last good value.
+      var fr = parseNum(raw);
+      if (fr == null || fr <= 0) { render(); return; }
+      setFtesRate(fr);   // persistActive()/saveShared() re-render; don't double up
       return;
     }
     if (edit === "pool-label") { setPoolLabel(el.getAttribute("data-field"), raw); return; }

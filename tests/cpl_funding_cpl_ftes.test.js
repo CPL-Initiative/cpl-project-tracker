@@ -363,6 +363,85 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     consumerSrc.indexOf('units of eligible CPL identified in MAP') !== -1);
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Part H — the reimbursement rate is CURATOR-EDITABLE (Sam, 2026-08-01)
+//
+// Sam settled the rate at the SCFF base $5,649.63 and asked for it as an
+// editable variable in the funding pools. Three things have to hold, and the
+// last two are the ones that bite:
+//
+//  1. it edits at all, from the pool card and from the FTES-factors box;
+//  2. the two entry points cannot DISAGREE — they share one setter, so an edit
+//     in either place is visible in the other;
+//  3. a bad value is REJECTED, not stored. A zero rate makes every prioTarget()
+//     zero, which earnFraction() reads as "none" — every college in the state
+//     silently earns $0 off one stray keystroke.
+//
+// Also asserted: the editable field is the BASE rate, never the derived
+// effective rate (rate ÷ multiplier). Typing into a derived field would push
+// the curator's number through a divisor and store something else.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  const { window } = freshDom();
+  const T = bootWithUnits(window, 900);
+  const doc = window.document;
+  const rateInputs = function () {
+    return Array.from(doc.querySelectorAll('[data-edit="ftesrate"]'));
+  };
+  check("H: the rate is editable (an ftesrate input exists)", rateInputs().length >= 1);
+  check("H: it is editable in BOTH the pool card and the FTES-factors box",
+    rateInputs().length >= 2);
+  check("H: the editable value is the BASE rate, not the derived effective rate",
+    rateInputs().every(function (i) { return i.value === "5,649.63"; }));
+
+  // Edit via the FIRST input; assert the model AND the other input follow.
+  const setVia = function (i, v) {
+    const el = rateInputs()[i];
+    el.value = v;
+    el.dispatchEvent(new window.Event("change", { bubbles: true }));
+  };
+  const targetNow = function () {
+    const row = T._alloc("Alameda");
+    const k = Object.keys(row).find(function (x) { return /_heads$/.test(x); });
+    return row[k];
+  };
+  const before = targetNow();
+  setVia(0, "8,071.00");   // comma-formatted, as the field renders it
+  check("H: editing the pool card changes the model's target",
+    Math.abs(targetNow() - before) > 0.01);
+  // Halving the price of a CPL FTES doubles what the same money buys, so the
+  // target must move INVERSELY — the relationship Sam flagged as counterintuitive.
+  check("H: raising the rate LOWERS the target (target = allocation ÷ rate)",
+    targetNow() < before);
+  check("H: a comma-formatted entry round-trips (the field renders with commas)",
+    rateInputs().every(function (i) { return i.value === "8,071.00"; }));
+  check("H: the OTHER entry point reflects the edit (one setter, cannot diverge)",
+    rateInputs().length >= 2 &&
+    rateInputs()[0].value === rateInputs()[1].value);
+
+  setVia(1, "5,649.63");
+  check("H: editing from the FTES-factors box works the same way",
+    Math.abs(targetNow() - before) < 0.01);
+
+  // Rejection: a zero (or junk) rate must leave the last good value standing.
+  const good = targetNow();
+  setVia(0, "0");
+  check("H: a ZERO rate is rejected, not stored (it would zero every target)",
+    Math.abs(targetNow() - good) < 0.01 &&
+    rateInputs().every(function (i) { return i.value === "5,649.63"; }));
+  setVia(0, "not a number");
+  check("H: junk is rejected too", Math.abs(targetNow() - good) < 0.01);
+  setVia(0, "-100");
+  check("H: a negative rate is rejected", Math.abs(targetNow() - good) < 0.01);
+
+  // Precedence: the edit must land where ftesRate() actually READS it. Writing
+  // the pool field instead would sit under any top-level override and silently
+  // do nothing, with nothing on screen to explain why.
+  check("H: the editor writes via setFtesRate, not setPool",
+    /if \(edit === "ftesrate"\)[\s\S]{0,600}setFtesRate\(/.test(consumerSrc) &&
+    !/if \(edit === "ftesrate"\)[\s\S]{0,600}setPool\(/.test(consumerSrc));
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
