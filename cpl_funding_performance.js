@@ -4,15 +4,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-07-31",
- "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
+ "as_of": "2026-08-01",
+ "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
   "pe": 43203,
+  "pa": 40533,
   "p2": 4793,
   "p3": 16829,
   "pp": 5,
   "pe_u": 1354526.95,
+  "pa_u": 241894.65,
   "p3_u": 103138.95,
   "pp_u": 25.0
  },
@@ -20,6 +22,8 @@ window.CPL_FUNDING_PERF = {
   "Alameda": {
    "pe": 13,
    "pe_u": 529.0,
+   "pa": 13,
+   "pa_u": 78.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -29,6 +33,8 @@ window.CPL_FUNDING_PERF = {
   "Allan Hancock": {
    "pe": 138,
    "pe_u": 6231.0,
+   "pa": 138,
+   "pa_u": 552.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -38,6 +44,8 @@ window.CPL_FUNDING_PERF = {
   "American River": {
    "pe": 44,
    "pe_u": 2377.0,
+   "pa": 44,
+   "pa_u": 132.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -47,6 +55,8 @@ window.CPL_FUNDING_PERF = {
   "Antelope Valley": {
    "pe": 278,
    "pe_u": 9474.0,
+   "pa": 278,
+   "pa_u": 1127.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -56,6 +66,8 @@ window.CPL_FUNDING_PERF = {
   "Bakersfield": {
    "pe": 578,
    "pe_u": 25280.5,
+   "pa": 571,
+   "pa_u": 8437.5,
    "p2": 49,
    "p3": 50,
    "p3_u": 962.5,
@@ -65,6 +77,8 @@ window.CPL_FUNDING_PERF = {
   "Barstow": {
    "pe": 133,
    "pe_u": 4759.0,
+   "pa": 133,
+   "pa_u": 1889.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -74,6 +88,8 @@ window.CPL_FUNDING_PERF = {
   "Berkeley City": {
    "pe": 16,
    "pe_u": 887.0,
+   "pa": 16,
+   "pa_u": 96.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -83,6 +99,8 @@ window.CPL_FUNDING_PERF = {
   "Butte": {
    "pe": 9,
    "pe_u": 435.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -92,6 +110,8 @@ window.CPL_FUNDING_PERF = {
   "Cabrillo": {
    "pe": 211,
    "pe_u": 8776.5,
+   "pa": 206,
+   "pa_u": 1249.5,
    "p2": 17,
    "p3": 44,
    "p3_u": 258.5,
@@ -101,6 +121,8 @@ window.CPL_FUNDING_PERF = {
   "Canada": {
    "pe": 29,
    "pe_u": 1066.0,
+   "pa": 29,
+   "pa_u": 87.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -110,6 +132,8 @@ window.CPL_FUNDING_PERF = {
   "Canyons": {
    "pe": 502,
    "pe_u": 21191.0,
+   "pa": 502,
+   "pa_u": 1506.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -119,6 +143,8 @@ window.CPL_FUNDING_PERF = {
   "Cerritos": {
    "pe": 166,
    "pe_u": 6634.0,
+   "pa": 166,
+   "pa_u": 533.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -128,6 +154,8 @@ window.CPL_FUNDING_PERF = {
   "Cerro Coso": {
    "pe": 165,
    "pe_u": 8465.5,
+   "pa": 161,
+   "pa_u": 805.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -137,6 +165,8 @@ window.CPL_FUNDING_PERF = {
   "Chabot": {
    "pe": 15,
    "pe_u": 983.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -146,6 +176,8 @@ window.CPL_FUNDING_PERF = {
   "Chaffey": {
    "pe": 1490,
    "pe_u": 32036.0,
+   "pa": 1484,
+   "pa_u": 18432.5,
    "p2": 15,
    "p3": 32,
    "p3_u": 240.0,
@@ -155,6 +187,8 @@ window.CPL_FUNDING_PERF = {
   "Citrus": {
    "pe": 206,
    "pe_u": 8065.0,
+   "pa": 206,
+   "pa_u": 824.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -164,6 +198,8 @@ window.CPL_FUNDING_PERF = {
   "Clovis": {
    "pe": 186,
    "pe_u": 8065.0,
+   "pa": 186,
+   "pa_u": 1123.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -173,6 +209,8 @@ window.CPL_FUNDING_PERF = {
   "Coastline": {
    "pe": 896,
    "pe_u": 63462.0,
+   "pa": 527,
+   "pa_u": 3280.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -182,6 +220,8 @@ window.CPL_FUNDING_PERF = {
   "Columbia": {
    "pe": 21,
    "pe_u": 1144.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -191,6 +231,8 @@ window.CPL_FUNDING_PERF = {
   "Compton": {
    "pe": 21,
    "pe_u": 600.0,
+   "pa": 21,
+   "pa_u": 131.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -202,6 +244,8 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -211,6 +255,8 @@ window.CPL_FUNDING_PERF = {
   "Copper Mountain": {
    "pe": 78,
    "pe_u": 3697.0,
+   "pa": 77,
+   "pa_u": 282.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -220,6 +266,8 @@ window.CPL_FUNDING_PERF = {
   "Crafton Hills": {
    "pe": 21,
    "pe_u": 1045.0,
+   "pa": 20,
+   "pa_u": 140.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -229,6 +277,8 @@ window.CPL_FUNDING_PERF = {
   "Cuesta": {
    "pe": 99,
    "pe_u": 4113.0,
+   "pa": 6,
+   "pa_u": 63.5,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -241,6 +291,8 @@ window.CPL_FUNDING_PERF = {
   "Cuyamaca": {
    "pe": 93,
    "pe_u": 6939.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -250,6 +302,8 @@ window.CPL_FUNDING_PERF = {
   "Cypress": {
    "pe": 640,
    "pe_u": 17353.5,
+   "pa": 640,
+   "pa_u": 2323.5,
    "p2": 10,
    "p3": 19,
    "p3_u": 131.0,
@@ -259,6 +313,8 @@ window.CPL_FUNDING_PERF = {
   "De Anza": {
    "pe": 976,
    "pe_u": 24231.5,
+   "pa": 974,
+   "pa_u": 4945.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -271,6 +327,8 @@ window.CPL_FUNDING_PERF = {
   "Desert": {
    "pe": 401,
    "pe_u": 16648.5,
+   "pa": 401,
+   "pa_u": 2287.5,
    "p2": 37,
    "p3": 37,
    "p3_u": 831.5,
@@ -280,6 +338,8 @@ window.CPL_FUNDING_PERF = {
   "Diablo Valley": {
    "pe": 172,
    "pe_u": 7441.0,
+   "pa": 172,
+   "pa_u": 516.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -289,6 +349,8 @@ window.CPL_FUNDING_PERF = {
   "East LA": {
    "pe": 230,
    "pe_u": 8994.0,
+   "pa": 228,
+   "pa_u": 684.0,
    "p2": 0,
    "p3": 25,
    "p3_u": 75.0,
@@ -298,6 +360,8 @@ window.CPL_FUNDING_PERF = {
   "El Camino": {
    "pe": 460,
    "pe_u": 21892.0,
+   "pa": 460,
+   "pa_u": 4140.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -310,6 +374,8 @@ window.CPL_FUNDING_PERF = {
   "Evergreen Valley": {
    "pe": 111,
    "pe_u": 5100.5,
+   "pa": 110,
+   "pa_u": 663.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -319,6 +385,8 @@ window.CPL_FUNDING_PERF = {
   "Feather River": {
    "pe": 10,
    "pe_u": 433.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -328,6 +396,8 @@ window.CPL_FUNDING_PERF = {
   "Foothill": {
    "pe": 73,
    "pe_u": 3300.0,
+   "pa": 73,
+   "pa_u": 292.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -337,6 +407,8 @@ window.CPL_FUNDING_PERF = {
   "Fresno City": {
    "pe": 559,
    "pe_u": 21190.0,
+   "pa": 559,
+   "pa_u": 1558.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -346,6 +418,8 @@ window.CPL_FUNDING_PERF = {
   "Fullerton": {
    "pe": 555,
    "pe_u": 21595.0,
+   "pa": 236,
+   "pa_u": 1083.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -358,6 +432,8 @@ window.CPL_FUNDING_PERF = {
   "Gavilan": {
    "pe": 46,
    "pe_u": 1891.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -367,6 +443,8 @@ window.CPL_FUNDING_PERF = {
   "Glendale": {
    "pe": 220,
    "pe_u": 9854.5,
+   "pa": 220,
+   "pa_u": 1192.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -376,6 +454,8 @@ window.CPL_FUNDING_PERF = {
   "Golden West": {
    "pe": 98,
    "pe_u": 5306.0,
+   "pa": 98,
+   "pa_u": 588.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -385,6 +465,8 @@ window.CPL_FUNDING_PERF = {
   "Grossmont": {
    "pe": 0,
    "pe_u": 0.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -394,6 +476,8 @@ window.CPL_FUNDING_PERF = {
   "Hartnell": {
    "pe": 39,
    "pe_u": 1790.5,
+   "pa": 38,
+   "pa_u": 114.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -403,6 +487,8 @@ window.CPL_FUNDING_PERF = {
   "Irvine": {
    "pe": 125,
    "pe_u": 5511.0,
+   "pa": 124,
+   "pa_u": 372.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -412,6 +498,8 @@ window.CPL_FUNDING_PERF = {
   "LA City": {
    "pe": 150,
    "pe_u": 5925.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -421,6 +509,8 @@ window.CPL_FUNDING_PERF = {
   "LA Harbor": {
    "pe": 135,
    "pe_u": 5172.0,
+   "pa": 135,
+   "pa_u": 405.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -430,6 +520,8 @@ window.CPL_FUNDING_PERF = {
   "LA Mission": {
    "pe": 153,
    "pe_u": 6818.0,
+   "pa": 153,
+   "pa_u": 946.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -439,6 +531,8 @@ window.CPL_FUNDING_PERF = {
   "LA Pierce": {
    "pe": 1860,
    "pe_u": 33198.0,
+   "pa": 1827,
+   "pa_u": 28429.0,
    "p2": 1309,
    "p3": 1736,
    "p3_u": 28060.0,
@@ -448,6 +542,8 @@ window.CPL_FUNDING_PERF = {
   "LA Trade": {
    "pe": 60,
    "pe_u": 1615.0,
+   "pa": 59,
+   "pa_u": 177.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -457,6 +553,8 @@ window.CPL_FUNDING_PERF = {
   "LA Valley": {
    "pe": 360,
    "pe_u": 15851.0,
+   "pa": 359,
+   "pa_u": 1795.0,
    "p2": 0,
    "p3": 189,
    "p3_u": 945.0,
@@ -466,6 +564,8 @@ window.CPL_FUNDING_PERF = {
   "Laney": {
    "pe": 49,
    "pe_u": 2181.0,
+   "pa": 49,
+   "pa_u": 294.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -475,6 +575,8 @@ window.CPL_FUNDING_PERF = {
   "Las Positas": {
    "pe": 18,
    "pe_u": 1266.0,
+   "pa": 18,
+   "pa_u": 118.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -484,6 +586,8 @@ window.CPL_FUNDING_PERF = {
   "Lassen": {
    "pe": 140,
    "pe_u": 5743.0,
+   "pa": 140,
+   "pa_u": 420.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -493,6 +597,8 @@ window.CPL_FUNDING_PERF = {
   "Long Beach": {
    "pe": 806,
    "pe_u": 36329.5,
+   "pa": 806,
+   "pa_u": 5520.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -502,6 +608,8 @@ window.CPL_FUNDING_PERF = {
   "Los Medanos": {
    "pe": 221,
    "pe_u": 8966.0,
+   "pa": 15,
+   "pa_u": 45.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -511,6 +619,8 @@ window.CPL_FUNDING_PERF = {
   "Madera": {
    "pe": 43,
    "pe_u": 1751.0,
+   "pa": 43,
+   "pa_u": 95.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -520,6 +630,8 @@ window.CPL_FUNDING_PERF = {
   "Mendocino": {
    "pe": 7,
    "pe_u": 62.0,
+   "pa": 7,
+   "pa_u": 35.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -529,6 +641,8 @@ window.CPL_FUNDING_PERF = {
   "Merced": {
    "pe": 3342,
    "pe_u": 29408.5,
+   "pa": 3340,
+   "pa_u": 19650.0,
    "p2": 1781,
    "p3": 3303,
    "p3_u": 19465.0,
@@ -538,6 +652,8 @@ window.CPL_FUNDING_PERF = {
   "Merritt": {
    "pe": 13,
    "pe_u": 671.0,
+   "pa": 13,
+   "pa_u": 66.0,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true,
@@ -551,6 +667,8 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -560,6 +678,8 @@ window.CPL_FUNDING_PERF = {
   "Mission": {
    "pe": 146,
    "pe_u": 6661.0,
+   "pa": 146,
+   "pa_u": 876.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -572,6 +692,8 @@ window.CPL_FUNDING_PERF = {
   "Modesto": {
    "pe": 346,
    "pe_u": 8182.0,
+   "pa": 333,
+   "pa_u": 2202.0,
    "p2": 73,
    "p3": 191,
    "p3_u": 1417.5,
@@ -581,6 +703,10 @@ window.CPL_FUNDING_PERF = {
   "Monterey": {
    "pe": 126,
    "pe_u": 5582.5,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": null,
+   "pa_u_suppressed": true,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -590,6 +716,10 @@ window.CPL_FUNDING_PERF = {
   "Moorpark": {
    "pe": 200,
    "pe_u": 8664.0,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": null,
+   "pa_u_suppressed": true,
    "p2": 0,
    "p3": null,
    "p3_suppressed": true,
@@ -601,6 +731,8 @@ window.CPL_FUNDING_PERF = {
   "Moreno Valley": {
    "pe": 2389,
    "pe_u": 50553.0,
+   "pa": 2058,
+   "pa_u": 12031.5,
    "p2": 419,
    "p3": 1953,
    "p3_u": 11210.0,
@@ -610,6 +742,8 @@ window.CPL_FUNDING_PERF = {
   "Mt San Antonio": {
    "pe": 732,
    "pe_u": 31389.5,
+   "pa": 731,
+   "pa_u": 2924.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -619,6 +753,8 @@ window.CPL_FUNDING_PERF = {
   "Mt. San Jacinto": {
    "pe": 533,
    "pe_u": 30779.0,
+   "pa": 532,
+   "pa_u": 1596.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -628,6 +764,8 @@ window.CPL_FUNDING_PERF = {
   "Napa": {
    "pe": 51,
    "pe_u": 2138.0,
+   "pa": 13,
+   "pa_u": 39.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -637,6 +775,8 @@ window.CPL_FUNDING_PERF = {
   "Norco College": {
    "pe": 710,
    "pe_u": 24236.5,
+   "pa": 709,
+   "pa_u": 6086.0,
    "p2": 150,
    "p3": 438,
    "p3_u": 3957.0,
@@ -646,6 +786,8 @@ window.CPL_FUNDING_PERF = {
   "Ohlone": {
    "pe": 130,
    "pe_u": 5231.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -655,6 +797,8 @@ window.CPL_FUNDING_PERF = {
   "Orange Coast": {
    "pe": 0,
    "pe_u": 0.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -664,6 +808,8 @@ window.CPL_FUNDING_PERF = {
   "Oxnard": {
    "pe": 153,
    "pe_u": 8364.0,
+   "pa": 152,
+   "pa_u": 608.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -673,6 +819,8 @@ window.CPL_FUNDING_PERF = {
   "Palo Verde": {
    "pe": 17,
    "pe_u": 596.25,
+   "pa": 17,
+   "pa_u": 173.25,
    "p2": 8,
    "p3": 8,
    "p3_u": 146.25,
@@ -682,6 +830,8 @@ window.CPL_FUNDING_PERF = {
   "Palomar": {
    "pe": 0,
    "pe_u": 0.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -691,6 +841,8 @@ window.CPL_FUNDING_PERF = {
   "Pasadena": {
    "pe": 130,
    "pe_u": 5926.0,
+   "pa": 130,
+   "pa_u": 266.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -700,6 +852,8 @@ window.CPL_FUNDING_PERF = {
   "Porterville": {
    "pe": 25,
    "pe_u": 593.0,
+   "pa": 25,
+   "pa_u": 125.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -709,6 +863,8 @@ window.CPL_FUNDING_PERF = {
   "Redwoods": {
    "pe": 33,
    "pe_u": 1432.0,
+   "pa": 33,
+   "pa_u": 99.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -718,6 +874,8 @@ window.CPL_FUNDING_PERF = {
   "Reedley College": {
    "pe": 123,
    "pe_u": 4571.5,
+   "pa": 106,
+   "pa_u": 520.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -727,6 +885,8 @@ window.CPL_FUNDING_PERF = {
   "Riverside": {
    "pe": 829,
    "pe_u": 36157.0,
+   "pa": 819,
+   "pa_u": 4251.0,
    "p2": 31,
    "p3": 691,
    "p3_u": 3494.0,
@@ -736,6 +896,8 @@ window.CPL_FUNDING_PERF = {
   "Sacramento City": {
    "pe": 59,
    "pe_u": 2298.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -745,6 +907,8 @@ window.CPL_FUNDING_PERF = {
   "Saddleback": {
    "pe": 57,
    "pe_u": 2683.0,
+   "pa": 57,
+   "pa_u": 342.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -754,6 +918,8 @@ window.CPL_FUNDING_PERF = {
   "San Bernardino": {
    "pe": 305,
    "pe_u": 9496.0,
+   "pa": 300,
+   "pa_u": 2624.0,
    "p2": 59,
    "p3": 87,
    "p3_u": 748.0,
@@ -763,6 +929,8 @@ window.CPL_FUNDING_PERF = {
   "San Diego City": {
    "pe": 4251,
    "pe_u": 92938.5,
+   "pa": 4250,
+   "pa_u": 14525.0,
    "p2": 121,
    "p3": 2837,
    "p3_u": 8844.0,
@@ -772,6 +940,8 @@ window.CPL_FUNDING_PERF = {
   "San Diego Mesa": {
    "pe": 4625,
    "pe_u": 101367.5,
+   "pa": 4625,
+   "pa_u": 15367.5,
    "p2": 117,
    "p3": 3095,
    "p3_u": 9249.5,
@@ -781,6 +951,8 @@ window.CPL_FUNDING_PERF = {
   "San Diego Miramar": {
    "pe": 3087,
    "pe_u": 92206.2,
+   "pa": 3087,
+   "pa_u": 11756.7,
    "p2": 85,
    "p3": 1502,
    "p3_u": 5390.7,
@@ -790,6 +962,8 @@ window.CPL_FUNDING_PERF = {
   "San Francisco": {
    "pe": 1209,
    "pe_u": 56341.0,
+   "pa": 1199,
+   "pa_u": 7756.0,
    "p2": 8,
    "p3": 15,
    "p3_u": 118.0,
@@ -799,6 +973,8 @@ window.CPL_FUNDING_PERF = {
   "San Joaquin Delta": {
    "pe": 493,
    "pe_u": 20764.0,
+   "pa": 492,
+   "pa_u": 1476.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -808,6 +984,8 @@ window.CPL_FUNDING_PERF = {
   "San Jose City": {
    "pe": 120,
    "pe_u": 6198.0,
+   "pa": 102,
+   "pa_u": 630.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -817,6 +995,8 @@ window.CPL_FUNDING_PERF = {
   "San Mateo": {
    "pe": 180,
    "pe_u": 9420.0,
+   "pa": 180,
+   "pa_u": 540.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -826,6 +1006,8 @@ window.CPL_FUNDING_PERF = {
   "Santa Ana": {
    "pe": 448,
    "pe_u": 16225.0,
+   "pa": 437,
+   "pa_u": 1958.2,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -835,6 +1017,8 @@ window.CPL_FUNDING_PERF = {
   "Santa Barbara": {
    "pe": 86,
    "pe_u": 4016.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -846,6 +1030,10 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": null,
+   "pa_u_suppressed": true,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -855,6 +1043,8 @@ window.CPL_FUNDING_PERF = {
   "Santa Rosa": {
    "pe": 438,
    "pe_u": 18840.0,
+   "pa": 435,
+   "pa_u": 1740.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -864,6 +1054,8 @@ window.CPL_FUNDING_PERF = {
   "Santiago Canyon": {
    "pe": 423,
    "pe_u": 17605.5,
+   "pa": 422,
+   "pa_u": 12682.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -873,6 +1065,8 @@ window.CPL_FUNDING_PERF = {
   "Sequoias": {
    "pe": 174,
    "pe_u": 8132.0,
+   "pa": 174,
+   "pa_u": 870.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -882,6 +1076,8 @@ window.CPL_FUNDING_PERF = {
   "Shasta": {
    "pe": 179,
    "pe_u": 7715.0,
+   "pa": 179,
+   "pa_u": 1089.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -891,6 +1087,8 @@ window.CPL_FUNDING_PERF = {
   "Sierra": {
    "pe": 338,
    "pe_u": 11639.0,
+   "pa": 338,
+   "pa_u": 1690.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -900,6 +1098,8 @@ window.CPL_FUNDING_PERF = {
   "Skyline": {
    "pe": 105,
    "pe_u": 3966.0,
+   "pa": 105,
+   "pa_u": 315.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -909,6 +1109,8 @@ window.CPL_FUNDING_PERF = {
   "Solano": {
    "pe": 157,
    "pe_u": 7591.0,
+   "pa": 157,
+   "pa_u": 1082.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -918,6 +1120,8 @@ window.CPL_FUNDING_PERF = {
   "Southwestern": {
    "pe": 571,
    "pe_u": 37156.0,
+   "pa": 552,
+   "pa_u": 2760.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -927,6 +1131,8 @@ window.CPL_FUNDING_PERF = {
   "Taft": {
    "pe": 11,
    "pe_u": 353.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -936,6 +1142,8 @@ window.CPL_FUNDING_PERF = {
   "Ventura": {
    "pe": 164,
    "pe_u": 9750.0,
+   "pa": 164,
+   "pa_u": 835.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -945,6 +1153,8 @@ window.CPL_FUNDING_PERF = {
   "Victor Valley": {
    "pe": 333,
    "pe_u": 13239.0,
+   "pa": 333,
+   "pa_u": 999.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -956,6 +1166,10 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "pa_u": null,
+   "pa_u_suppressed": true,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -965,6 +1179,8 @@ window.CPL_FUNDING_PERF = {
   "West Hills Lemoore": {
    "pe": 313,
    "pe_u": 2714.0,
+   "pa": 306,
+   "pa_u": 1053.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -974,6 +1190,8 @@ window.CPL_FUNDING_PERF = {
   "West LA": {
    "pe": 732,
    "pe_u": 14153.0,
+   "pa": 681,
+   "pa_u": 8076.0,
    "p2": 497,
    "p3": 563,
    "p3_u": 7446.5,
@@ -983,6 +1201,8 @@ window.CPL_FUNDING_PERF = {
   "West Valley": {
    "pe": 55,
    "pe_u": 2020.0,
+   "pa": 55,
+   "pa_u": 330.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -992,6 +1212,8 @@ window.CPL_FUNDING_PERF = {
   "Woodland": {
    "pe": 8,
    "pe_u": 222.0,
+   "pa": 8,
+   "pa_u": 17.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1003,6 +1225,8 @@ window.CPL_FUNDING_PERF = {
   "Calbright College Credit": {
    "pe": 117,
    "pe_u": 417.0,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1014,6 +1238,8 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1025,6 +1251,8 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true,
    "pe_u": null,
    "pe_u_suppressed": true,
+   "pa": 0,
+   "pa_u": 0.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1047,14 +1275,17 @@ window.CPL_FUNDING_PERF = {
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
    "pe_u": 1354050.45,
+   "pa_u": 241894.65,
    "p3_u": 103138.95
   },
   "map": {
-   "pe_u": 1361429.95,
+   "pe_u": 1361422.95,
+   "pa_u": 242558.15,
    "p3_u": 103163.95
   },
   "ratio": {
    "pe_u": 1.0054,
+   "pa_u": 1.0027,
    "p3_u": 1.0002
   }
  },
@@ -1175,7 +1406,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-07-31",
+ "vet_star_as_of": "2026-08-01",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };

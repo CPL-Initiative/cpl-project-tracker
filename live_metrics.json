@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-31T20:10:48.457Z",
+  "scraped_at": "2026-08-01T08:36:09.565Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -78,13 +78,13 @@
         },
         {
           "college": "Norco College",
-          "students": 740,
-          "units": 6150,
-          "avgUnits": 8.31081081081081,
+          "students": 741,
+          "units": 6155,
+          "avgUnits": 8.306342780026991,
           "transcriptionRate": 64.3,
-          "avgTranscribed": 5.347297297297297,
+          "avgTranscribed": 5.340080971659919,
           "criteriaMetCount": 5,
-          "militaryStudents": 494,
+          "militaryStudents": 495,
           "nonMilitaryStudents": 252,
           "apprenticeStudents": 93,
           "savings": 10352890,
@@ -183,17 +183,17 @@
         },
         {
           "college": "Long Beach City College",
-          "students": 818,
-          "units": 5562.5,
-          "avgUnits": 6.800122249388753,
+          "students": 817,
+          "units": 5556.5,
+          "avgUnits": 6.801101591187271,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 3,
-          "militaryStudents": 812,
+          "militaryStudents": 811,
           "nonMilitaryStudents": 6,
           "apprenticeStudents": 0,
-          "savings": 9635235,
-          "yearImpact": 33790156.5,
+          "savings": 9630045,
+          "yearImpact": 33771955.5,
           "transcribedUnits": 0
         },
         {
@@ -1878,14 +1878,14 @@
   ],
   "raw": {
     "Students": 50990,
-    "Units": 242559.15000000002,
+    "Units": 242558.15000000002,
     "TranscribedUnits": 103163.95,
-    "Savings": 337928570.25,
-    "YearImpact": 1362543399.8999999,
+    "Savings": 337923380.25,
+    "YearImpact": 1362525198.8999999,
     "MilitaryStudents": 26482,
     "NonMilitaryStudents": 24588,
     "AprenticeStudents": 760,
-    "AverageUnits": 4.756994508727202,
+    "AverageUnits": 4.756974897038636,
     "TranscribedAverage": 2.0232192586781723
   }
 }

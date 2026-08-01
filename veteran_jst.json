@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-07-31T20:10:48.994711+00:00",
+  "scraped_at": "2026-08-01T08:36:09.991115+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 494,
+      "jst": 495,
       "star": false
     },
     "West Los Angeles College": {
@@ -72,7 +72,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 812,
+      "jst": 811,
       "star": true
     },
     "Riverside City College": {

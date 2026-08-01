@@ -4,7 +4,7 @@
 // funding/_build_funding_ess.py in the daily workflow; do not hand-edit.
 // Institutional aggregates only — no person-level data.
 window.CPL_FUNDING_ESS = {
- "as_of": "2026-07-31",
+ "as_of": "2026-08-01",
  "source": "credential_reference_data.js — credentials flagged statewide (ASCCC Pathways to Credit) with >= 1 local articulation",
  "n_statewide_credentials": 84,
  "n_adopters": 71,
