@@ -1,6 +1,6 @@
 {
   "_source": "https://map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net/api/mapcollegelanding/GetData",
-  "_scraped_at": "2026-07-27T16:47:45+00:00",
+  "_scraped_at": "2026-08-03T16:58:00+00:00",
   "_note": "Landing links from the MAP College Landing Page API, base rewritten to cpldashboardcccco/<code>. INTERIM — superseded by the MAP Custom Report when it carries landing URLs.",
   "_count": 120,
   "_flagged_page_errors": [
@@ -499,6 +499,6 @@
   "_applied": {
     "updated": 0,
     "inserted": 0,
-    "at": "2026-07-27T16:47:46+00:00"
+    "at": "2026-08-03T16:58:01+00:00"
   }
 }
