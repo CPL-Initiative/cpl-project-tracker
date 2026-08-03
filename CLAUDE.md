@@ -569,6 +569,39 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyUnit cont. — Implementation Funding: P1 → APPLIED, and the funding model is settled (2026-08-03, #967 MERGED)
+
+Sam sent a pivot of the MAP Student Aggregated Values export and asked to switch P1 from eligible to
+applied units. **His pivot validated the producer exactly** — Bakersfield eligible 25,280.5 / applied
+8,437.5 / transcribed 962.5, all three matching `pe_u`/`pa_u`/`p3_u` to the decimal, built independently
+at the per-student grain we dedupe on. Applied **live** to the Scenario-1 config (receipt
+`kb/supabase_funding_p1_applied.sql`): **P1 = Applied · shares .50/.45/.05 · multiplier 2.0**. Pool now
+earns **$9.65M of $23.24M (41.5%**, was 30.1%), median college **50%** of cap (was 34%). **Cumulative
+targets came FREE:** `prioTarget = (entitlement ÷ nYears) ÷ rate × multiplier`, so with a 2-yr window
+**multiplier 2.0 IS the cumulative window target** — dropping the `÷ nYears` in `prioEntitlement` would
+give the same target and **cancel the front-load incentive**, so a new test (`cumulative_target`, 10)
+carries the REASON. **Sam's design intent, why these metrics:** P1 Applied = proxy for the upfront
+articulation work (the petition→outreach flip — onus on the college to create CPL opportunities BEFORE
+the student asks); P2 Transcribed = proxy that every step happened (counseling, program AND transfer
+destination, SIS→MIS); P3 outside submissions = outreach to not-yet-students, small share because it's
+"too much of an ask for the Y1 & 2 phase". **THREE of my proposals were wrong and withdrawn:** replacing
+P1 with a raw articulation count (corr only 0.334 — but a count rewards credentials nobody qualifies
+for, while applied proves the articulation was created AND useful); deleting the `credit recommendation`
+MEASURES rule (it would let "eligible + statewide" fall through to plain eligible — a wrong number in
+place of an honest gap); and a harsher multiplier (I'd read a WINDOW-denominated table as PER-YEAR, so
+my "2.0×" was really 4.0 — the same unit-scope class #964 fixed, made while fixing it). **A causal
+correction that had reached 3 artifacts:** I wrote eligible is "inflated at the SOURCE" by JST
+duplication; the gap is mostly **correct applicability filtering** (a JST lists 1 unit of marksmanship;
+no CCC offers it). Where a credential IS articulated colleges apply **79%** of eligible; across all
+eligibility it's 18%. Corrected in the KB note + `cpl_memory`. **Also:** the $0 colleges are THREE
+states, never one number — 9 absent (implementation gap, verified NOT a join miss, self-heals), 4
+privacy-suppressed (did the work, earn $0 anyway — open decision), 16 measured zero (outreach list).
+Suite **182 green**; Chromium clean. Durable: `methodology-omit-dont-zero-an-absent-measure` (extended:
+three kinds of zero). Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
+**Next: the Budget reconciliation** (fold Implementation Funding in as a Budget sub-view). Side-lane —
+left the numbered handoff to the CCR mainline.
+
+
 ### SkyUnit — Implementation Funding: headcount out, and the summary surfaces made to agree on units (2026-08-01, #964/#965 MERGED)
 
 Sam, on the pool cards: *"eliminate headcount from the model altogether — the card that allocates
@@ -605,34 +638,6 @@ in MAP, alongside native). Story: `docs/cpl_funding_lessons.md` · handoff `docs
 distribution first (79 of 99 colleges have ZERO transcribed; top 10 hold 95.7%).** Side-lane — left the
 numbered handoff to the CCR mainline.
 
-
-### SkyQueue cont. 2 — Implementation Funding: the FTES move, and two defects my own tests caught (2026-07-31, #958–#962 MERGED)
-
-Sam moved the model **off headcount onto FTES — twice, in two senses the code now keeps rigidly apart**:
-**enrolment** credit FTES (`sizeOf`/`totalSize`, the ALLOCATION basis, 1,069,182 statewide) vs **CPL FTES**
-(prior learning awarded, a PERFORMANCE quantity, 10³–10⁴). ~500× apart; never a bare `ftes` for the second.
-**#959** switched the basis — I argued AGAINST it (working adults enrol part-time → FTES would penalise
-CPL-heavy colleges) and **measurement killed my objection**: corr 0.086, and the switch moves **+$307K TO**
-the top-15 CPL colleges. What decided it was DATA QUALITY (headcount: 41/115 rows on 2022-23, 33/115
-implausible — Pasadena read 14,936 against 23,347 credit FTES). Sam's fresh DataMart pull then **confirmed
-the diagnosis** (Pasadena → 41,521). **#960 — a defect I shipped in #959:** the cap moved to FTES and the
-target stayed on headcount, so `cap ÷ target` diverged 0.49×–2.11× for **72 of 115** colleges and a hover
-asserted a base rate its own two numbers contradicted. It survived because **no test asserted the
-RELATIONSHIP** — only each side. New `prioTarget()` seam (target had been open-coded at 5 sites).
-**#961** builder unit sums + FTES-aware `MEASURES` with **unit-mismatch** detection (Sam's 3 live strings
-had resolved to student COUNTS and a full advance; "measurable" was the only test). **#962** targets in
-**CPL FTES** = pre-floor entitlement ÷ $5,649.63 × multiplier; TLM as a per-calendar parameter (525/17.5=30
-semester, 525/11.67=45 quarter — same 900 units read 30.0 vs 20.0 FTES); factors box stores BASES, derives
-quotients. **Second self-caught defect:** the multiplier was wired onto the RATE, inverting it — caught
-because the test asserted what the knob is FOR, not what it computes. **The unknown I couldn't resolve
-(source row grain) is now measured by the pipeline every run** — first run ratio **1.0054/1.0002**, the
-conservative reducer is right. Tests 539·35·24·40·26·53·24; suite **180 green**; Chromium clean.
-**Live: eligible 1,354,527 units = 45,151 CPL FTES = $255.1M; transcribed 103,139 = 3,438 FTES = $19.4M**
-against a ~$11.6M/yr pool (an earlier CER estimate was **7× low**). ⚠ **Open for Sam: P1 (eligible)
-saturates at 22× target and incentivises nothing** — one rate can't calibrate all three priorities.
-Durable: `methodology-ship-the-oracle-with-the-assumption`. Story: `docs/cpl_funding_lessons.md` · handoff
-`docs/cpl_funding_handoff.md`. Still open: the Budget consolidation. Side-lane — left `cpl_todos.json` +
-the numbered handoff to the CCR mainline.
 
 ## Troubleshooting
 

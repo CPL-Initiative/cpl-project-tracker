@@ -1,7 +1,7 @@
 ---
 title: Omit, don't zero, a measure your source didn't supply
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-03
 tags: [methodology, data-pipeline, funding, measurement]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -84,6 +84,39 @@ about a missing measure silently paying **zero**. Same root cause — a default
 standing in for "we don't know" — opposite direction, and both are invisible
 until someone reconciles a number by hand. Whenever you add a metric, ask what
 its absence pays, in *both* directions.
+
+## Extension, 2026-08-03 — there are THREE kinds of zero, not two
+
+The note above separates *absent* from *measured zero*. Production turned up a
+third, and all three were rendering identically as `$0`:
+
+| state | in the artifact | means | count (2026-08-03) |
+|---|---|---|---:|
+| **absent** | key missing / no row | we did not measure — the college has not implemented | 9 |
+| **withheld** | `null` + `*_suppressed: true` | we DID measure; privacy floor (<5 students) hides it | 4 |
+| **measured zero** | `0` | the college did the thing zero times | 16 |
+
+The middle state is the dangerous one, because it is the only one where the
+system **knows the college acted and pays it nothing anyway.** Four colleges had
+applied CPL credit for 1–4 students and earned $0 on that priority — not because
+they did nothing, but because the privacy rule that protects those students also
+erases the evidence they exist.
+
+That is not obviously wrong (blind-crediting a hidden cell is its own hazard —
+it pays for an unverifiable claim), but it must be a **decision**, not a
+side effect of the suppression rule. The failure mode is that nobody ever
+notices, because a withheld cell and an unearned cell look the same on screen
+and in the ledger.
+
+**The rule this generalises to:** whenever a privacy/suppression layer sits
+between a measurement and a consequence, enumerate what the suppressed state
+*costs* the subject. If suppression can only ever hurt, it has quietly become a
+penalty for being small.
+
+**And when reporting:** never fold the three states into one bucket in prose.
+"29 colleges earned nothing" is true and useless; "9 haven't started, 4 are
+hidden by the privacy floor, 16 have credit they haven't acted on" is three
+different conversations with three different owners.
 
 ## When this applies (and when it doesn't)
 
