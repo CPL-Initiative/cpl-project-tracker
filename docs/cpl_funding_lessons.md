@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-08-01
+updated: 2026-08-03
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -2078,3 +2078,103 @@ while **79 of 99 colleges sit at zero transcribed** and the top 10 hold 95.7%.
 Applied should widen that base considerably; measure it, don't assume it.
 
 Then the **Budget consolidation** — still open, still the fix for the drift class.
+
+## 2026-08-03 (SkyUnit cont.) — P1 → Applied went live, and I had the causal story wrong
+
+Sam sent a pivot of the MAP Student Aggregated Values export (Bakersfield tab, rows
+= MAP Internal StudentIDs, FTES row = column total ÷ 30) and asked to switch P1 from
+eligible to applied units.
+
+**The pivot validated the producer exactly** — eligible 25,280.5 / applied 8,437.5 /
+transcribed 962.5, all three matching `pe_u`/`pa_u`/`p3_u` to the decimal. Because he
+built it independently at the per-student grain we dedupe on, that is a real
+confirmation of the grain assumption rather than a circular one. His aside about
+outside submissions answered itself: **5 students / 25 units statewide.**
+
+### What I got wrong, twice
+
+**(1) The causal story.** On 2026-08-01 I wrote — into a KB note, a `cpl_memory` row
+and #964's PR body — that eligible is *"inflated at the SOURCE"* by the ACE/JST
+skill-level duplication. That framing is materially misleading. Sam: applying credit
+is a **low-burden checkmark** meaning *"this looks applicable to their program"*, and
+it *"eliminates a bunch of noise from Eligible credits that could never be applied…
+(e.g., 1 unit in marksmanship)."*
+
+The data shows it from the other side: where a credential **has** been articulated by
+someone (the CER population), colleges apply **79%** of eligible credit (75,027 of
+94,772 units). Across **all** identified eligibility in the student view it is **18%**.
+The gap is dominated by eligibility on credit recommendations nobody articulated —
+correct filtering, not loss. The duplication is real but **minor**.
+
+That matters because a wrong causal story propagates: it had reached three artifacts,
+and a future session would have gone hunting a defect that mostly isn't there.
+**Establish *why* a number shrinks downstream before describing the gap.** Corrected in
+the KB note + the memory row.
+
+**(2) A unit-scope error in my own recommendation.** I built a multiplier comparison
+on a **window**-denominated entitlement, then read it as if it were **per-year**, and
+recommended "2.0×" when that row was actually multiplier **4.0**. Precisely the class
+of defect I spent #964 fixing, made while fixing it. Caught by recomputing against the
+live config instead of trusting my own table.
+
+Re-examined with correct numbers I also **changed my mind on the substance**: 4.0
+drops the median college to 27.4% of cap, and P1 capping is not the failure I framed
+it as — a capped college has applied enough credit for its size, and you cannot apply
+credit infinitely. **The ongoing pull lives in P2**, where 79 colleges are at zero and
+nobody is capped. The ladder does the work; the multiplier didn't need to.
+
+### Sam's design intent, in his words — the reason the metrics are what they are
+
+- **P1 = Applied** — proxy for the upfront articulation work, "available to incoming
+  students and community members." The petition→outreach flip: the onus moves to the
+  college to create CPL opportunities *before* the student asks.
+- **P2 = Transcribed** — the checkbox is a proxy that *every* step happened:
+  articulation, counselling, appropriateness to program **and transfer destination**,
+  correctly coded in SIS and later reported to MIS.
+- **P3 = outside-submission activity** — evidences outreach to people who are *not yet
+  students*, "the real access booster we need long term."
+
+I proposed replacing P1 with a raw **articulation count** (corr with applied is only
+0.334, and colleges like American River have 151 credentials articulated against 4.4
+applied FTES). Sam's proxy logic is better and I withdrew it: a raw count rewards 264
+articulated credentials nobody qualifies for, while applied proves the articulation was
+both created *and* useful.
+
+### What shipped
+
+**Config, applied live** (receipt `kb/supabase_funding_p1_applied.sql`, guarded UPDATE):
+P1 → Applied units · shares **.50 / .45 / .05** · target multiplier **2.0**. Also fixed
+Year-2 P1, which had been set to *Transcribed* — duplicating P2, a curation artifact.
+
+**Cumulative targets came for free.** `prioTarget = (entitlement / nYears) / rate ×
+multiplier`, so with a 2-year window **multiplier 2.0 IS the cumulative window target**,
+exactly. Dropping the `/ nYears` in `prioEntitlement` would give the same target and
+**cancel the front-load incentive** — which that function's own comment names as the
+reason it is the one exemption from the no-inline-scope guard. So: no seam change, and
+a new test (`tests/cpl_funding_cumulative_target.test.js`, 10 assertions) carries the
+*reason* so the next session doesn't "implement cumulative targets" by breaking it.
+
+**I also withdrew my own proposal to delete the `credit recommendation` MEASURES rule.**
+Deleting it would let an "eligible + statewide" metric fall through to plain `eligible`
+and silently measure *all* eligibility — a wrong number in place of an honest gap.
+
+### Live result
+
+| | before | after |
+|---|---:|---:|
+| pool earned | $7.00M (30.1%) | **$9.65M (41.5%)** |
+| median college | 34.0% of cap | **50.0%** |
+| statewide target | 2,057 CPL FTES | 4,114 (cumulative) |
+
+29 colleges at $0 — 11 of them have no feed row at all, and **13 have eligible credit
+identified but have applied none of it** (Moorpark 8,664u · Cuyamaca 6,939u · LA City
+5,925u · Monterey 5,582u · Ohlone 5,231u · Santa Barbara 4,016u · Sacramento City
+2,298u · Gavilan 1,891u · Columbia 1,144u · Chabot 983u · Butte 435u · Feather River
+433u · Taft 353u). Since applying is a checkmark, that is an **outreach list**, not a
+performance verdict.
+
+### Next concrete step
+
+Watch the first cron after the config change to confirm the tab renders the new
+metric/shares live. Then the **Budget consolidation** — still open. Open question
+unchanged: the 11 colleges with no feed row, which Sam said he'd supply gap data for.

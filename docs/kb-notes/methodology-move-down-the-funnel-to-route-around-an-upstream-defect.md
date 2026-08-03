@@ -1,7 +1,7 @@
 ---
 title: Move one rung down the funnel to route around an upstream defect you can't fix
 created: 2026-08-01
-updated: 2026-08-01
+updated: 2026-08-03
 tags: [methodology, data-quality, map-platform, funding, measurement]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -77,6 +77,38 @@ sound and localised the inflation upstream.
 
 The column was already in the view we read, so the change was ~5 lines in the
 producer plus a `MEASURES` entry — the analysis was the whole cost.
+
+## Correction, 2026-08-03 — the gap is mostly CORRECT FILTERING, not defect
+
+The note above, as first written, implied the eligible→applied gap (82%) is
+dominated by the JST duplication. **That is wrong, and it matters.** Sam's
+correction: applying credit is a low-burden checkmark on the student's CPL plan
+meaning *"this looks applicable to their program"* — so the gap is mostly
+**eligibility that could never be applied to any program at all**. A JST lists
+1 unit of marksmanship; no CCC offers it; it is correctly never applied.
+
+The data shows the mechanism from the other side. Where a credential has
+actually been articulated by someone (the CER population), colleges apply
+**79%** of the eligible credit — 75,027 of 94,772 units. Across *all* identified
+eligibility in the student view it is **18%**. The difference is dominated by
+eligibility sitting on credit recommendations nobody has articulated, which
+never enter the CER at all. (Directional, not a clean decomposition — the two
+sources have different grains and populations.)
+
+So the duplication is real and worth fixing upstream, but it is the **minor**
+component. The dominant one is the system working as intended.
+
+**This strengthens rather than weakens the claim.** The reason to move down the
+funnel is not only "the earlier stage is inflated" but "the later stage carries
+a *semantic filter* the earlier one lacks" — here, human judgement about
+program applicability. When choosing a rung, ask what each stage *means*, not
+just which is cleaner.
+
+**And the generalisable lesson about the analysis itself:** "the number is
+smaller downstream" invites the assumption that the difference is loss or error.
+Establish *why* it shrinks before describing the gap — the explanation changes
+what you should do about it, and a wrong causal story propagates into every
+artifact that cites it (this one propagated into three).
 
 ## When this applies (and when it doesn't)
 
