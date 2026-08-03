@@ -220,6 +220,9 @@
     ".cplfund-authbar .mode.scenario { color: var(--navy-secondary); }",
     ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
     ".cplfund-authbar button.rst.warn { background: var(--red-alert); }",
+    // ── calculation sanity-check link (private tab only) ──
+    ".cplfund-sanity { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--seal-blue); border-radius: 8px; padding: 9px 14px; font-size: .83rem; margin: 0 0 14px; }",
+    ".cplfund-sanity a { font-weight: 600; }",
     // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
     ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 10px; padding: 10px 14px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; }",
     ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; }",
@@ -1823,6 +1826,22 @@
   }
   // Top control strip — Project (+ area badge + Add) to the LEFT of Scenario
   // (+ New clones current + Delete). Selecting is open to everyone; creating /
+  // Standalone interactive calculation sanity-check (a Claude artifact — a
+  // verifiable, in-browser port of this tab's own math: pool waterfall, the
+  // four-step engine, and a live-config per-college calculator for all 115
+  // colleges). A working tool for the CO team; NOT shown on the public college
+  // page (publicMode) — the artifact is access-controlled, so an anonymous
+  // reader would hit a permission wall, and its "internals" framing is team-only.
+  // Republish the same artifact file path to keep this URL stable.
+  var SANITY_URL = "https://claude.ai/code/artifact/e3a3ccf1-581c-42cf-b622-56fd7caf7221";
+  function sanityLinkHtml() {
+    if (publicMode()) return "";
+    return '<div class="cplfund-sanity">🧮 <a href="' + SANITY_URL + '" target="_blank" rel="noopener">' +
+      "Calculation sanity check</a> <span>&mdash; an interactive walk-through of the per-college FTES &amp; " +
+      "funding math (pool waterfall, four-step engine, live-config calculator).</span> " +
+      '<span class="dk">Team-access Claude artifact.</span></div>';
+  }
+
   // deleting projects + scenarios is a curator (unlocked) action.
   function controlStripHtml() {
     if (publicMode()) return "";   // no project/scenario picker for a college audience
@@ -4648,7 +4667,7 @@
     // future entry point) — the tab being hidden is not on its own a guarantee.
     if (state.subview === "report" && publicMode()) state.subview = "model";
     if (state.subview === "report") {
-      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + sanityLinkHtml() + reportViewHtml() + "</div>";
       wire();
       return;
     }
@@ -4656,7 +4675,7 @@
     // receipt + progress on the three priority outcomes. Separate appropriation from
     // the $35M model, so it gets its own body (control strip + sub-tabs stay).
     if (state.subview === "grants") {
-      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + grantsViewHtml() + "</div>";
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + sanityLinkHtml() + grantsViewHtml() + "</div>";
       wire();
       return;
     }
@@ -4676,6 +4695,7 @@
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
       subviewTabsHtml() +
+      sanityLinkHtml() +
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
