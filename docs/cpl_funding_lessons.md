@@ -2178,3 +2178,66 @@ performance verdict.
 Watch the first cron after the config change to confirm the tab renders the new
 metric/shares live. Then the **Budget consolidation** — still open. Open question
 unchanged: the 11 colleges with no feed row, which Sam said he'd supply gap data for.
+
+## 2026-08-03 (SkyUnit cont. 2) — the 9 no-feed colleges, and the third kind of zero
+
+Sam, on the colleges reading $0 with no feed row: *"there should be no data gap,
+just an implementation gap that will be remedied when they implement. Correct me
+if you think that's wrong."*
+
+**He's right, and it was worth verifying rather than agreeing** — #957 was exactly
+this shape (Barstow/Lassen/Madera/Southwestern read $0 for months because of a
+`College` vs `Community College` join miss that looked identical to an
+implementation gap). Check: the 9 absent colleges are **not** in the builder's
+`unmatched` bucket, which holds only 3 entries (`Calbright College Credit`,
+`North Orange Continuing Education Credit`, `Launch Apprenticeship` — the two
+known `… Credit` feeder variants plus one apprenticeship provider, none of them
+funding colleges). So MAP genuinely has no student rows for those 9.
+
+**And it demonstrably self-heals:** West Hills Coalinga and Santa Monica were on
+the no-feed list on 2026-08-01 and now have rows.
+
+### The finding: THREE states, one rendering
+
+Verifying Sam's claim surfaced something he didn't ask about. Three different
+things all render as `$0`:
+
+| state | in the artifact | means | n |
+|---|---|---|---:|
+| **absent** | no row | hasn't implemented (Sam's read) | 9 |
+| **withheld** | `null` + `_suppressed` | HAS implemented, 1–4 students, privacy floor | 4 |
+| **measured zero** | `0` | has eligible credit, applied none | 16 |
+
+The middle state is the one that matters: **West Hills Coalinga, Santa Monica,
+Monterey and Moorpark have applied CPL credit and earn $0 anyway**, because the
+<5 rule that protects those students also erases the evidence they exist. That is
+not the same as Sam's "let them earn $0 — that's the incentive" ruling, which was
+about colleges that posted nothing.
+
+It also **corrects Friday's outreach list**: Monterey and Moorpark were on it as
+"eligible but applied none," and they have in fact applied — it's just hidden.
+
+Not decided; surfaced to Sam. The generalisable form is in
+[`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md):
+**when a suppression layer sits between a measurement and a consequence, work out
+what the suppressed state costs the subject — if suppression can only ever hurt,
+it has become a penalty for being small.** And never fold the three into one
+bucket in prose: "29 colleges earned nothing" is true and useless.
+
+### State
+
+Config live: P1 = Applied · shares .50/.45/.05 · multiplier 2.0 (= the cumulative
+2-year window target). Pool earns **$9.65M of $23.24M (41.5%)**; median college
+**50%** of cap. Suite **182 files green**.
+
+### Next concrete step
+
+**Budget reconciliation** (Sam's call) — fold Implementation Funding in as a
+Budget sub-view. Both tabs are JS-rendered, so it's a nav change plus a segmented
+control `[Sources & Uses | $35M model | $15M Distributions | Report]`. The
+single-source wiring (#949) already landed, so the two tabs agree on their numbers
+and this is now the lower-risk half.
+
+Then, in rough order of value: the **suppressed-earns-zero** decision above; the
+**add/delete/reorder** gap in the ledger editor (the biggest distance between
+"editable" and "curatable"); the **budget-vs-actual** expenditure lane.

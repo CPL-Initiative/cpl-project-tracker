@@ -1,26 +1,26 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-01 · SkyUnit — Implementation Funding: headcount out of the model, the P1/P2/P3 numbers fixed (they were 30× off), and the FTES rate is now an editable variable",
+  "_as_of": "2026-08-03 · SkyUnit — the Implementation Funding model is settled and live: Priority 1 now scores APPLIED credit, and the next step is folding it into Budget",
   "_session": 117,
-  "_status": "Implementation Funding had a real display bug: the priority cards were showing raw UNITS while calling them students and comparing them to an FTES target, so P1 read '193,700% of target'. Fixed — it now reads CPL FTES everywhere, and the college table's SYSTEM row no longer prints a headcount under a 'Credit FTES' header. Headcount is out of the model: the old '$4.62 per student' card is now the reimbursement rate, $5,649.63 per CPL FTES (= 2,057 CPL FTES a year's funding buys), and that rate is now an editable box you can change yourself. Per Sam's call, Priority 1 will move off ELIGIBLE units onto APPLIED units — eligible is inflated upstream by Marine Corps JSTs listing the same credit under every skill level, and applied doesn't double-count. The data for that publishes on tomorrow's daily run. The CCR/unified-courses and Budget items below are unchanged — those lanes still hold the curation queue.",
+  "_status": "The $35M funding model is done and running. Priority 1 now scores credit a college has APPLIED to a student record (the checkmark saying 'this looks applicable to their program') rather than everything a student is eligible for — eligible includes JST recommendations no college offers, like marksmanship. Shares are 50/45/5 and targets are cumulative across the two years. The pool now pays out 41.5% (was 30%) and the typical college earns half its allocation. Next up is Budget reconciliation — folding Implementation Funding in as a Budget sub-view so there's one place for the money story. The CCR/unified-courses items below are unchanged.",
   "items": [
     {
-      "id": "funding-applied-review",
+      "id": "funding-suppressed-zero",
       "for": "sam",
       "tab": "implementation-funding",
-      "text": "🆕 Priority 1 is moving from ELIGIBLE units to APPLIED units, on your call — applied doesn't carry the Marine Corps JST double-count. The statewide picture: 1,354,527 eligible → 242,559 applied → 103,139 transcribed. The per-college split publishes on the next daily run; worth a look before we lock the new targets, because right now 79 of 99 colleges have ZERO transcribed CPL in MAP and the top 10 hold 95.7% of it. Applied should spread that out a lot — but let's see the real numbers."
+      "text": "⚖️ A decision worth making: 4 colleges (West Hills Coalinga, Santa Monica, Monterey, Moorpark) HAVE applied CPL credit but earn $0, because they have 1–4 students and the privacy rule hides the number. That's different from the colleges that posted nothing. Crediting a hidden cell has its own risk (we'd be paying on something we can't show), so it needs a call either way — the risk is that it stays an accident nobody chose."
     },
     {
-      "id": "funding-rate-editable",
+      "id": "funding-outreach-16",
       "for": "sam",
       "tab": "implementation-funding",
-      "text": "✅ The reimbursement rate ($5,649.63 per CPL FTES) is now an editable box — on the Funding pools card and in the FTES factors panel. Worth knowing before you turn the dial: raising the rate LOWERS every college's target (the target is just their allocation ÷ the rate). A zero is rejected rather than saved, because a 0 rate would silently drop every college to $0 earned."
+      "text": "📣 16 colleges have eligible CPL credit identified and have applied none of it — and applying is just a checkmark. That's an outreach list, not a performance verdict. Separately, 9 colleges have no MAP activity at all (Lake Tahoe, Imperial, LA Southwest, Rio Hondo, Marin, Cosumnes River, Folsom Lake, Siskiyous, Yuba) — an implementation gap that fixes itself as they come online. Barstow is healthy and earning."
     },
     {
-      "id": "funding-p1-applied-wire",
+      "id": "funding-budget-consolidation",
       "for": "fable",
-      "tab": "implementation-funding",
-      "text": "After the 06:17 cron publishes pa/pa_u: wire P1 → Applied (a metric-string change in the live config — the MEASURES entry already exists) and make targets CUMULATIVE (drop the ÷nYears in prioEntitlement, routed through prioTarget — don't open-code it). Measure the per-college distribution BEFORE locking it. Then the Budget consolidation."
+      "tab": "budget",
+      "text": "NEXT: the Budget reconciliation. Fold Implementation Funding in as a Budget sub-view — both tabs are JS-rendered, so it's a nav change plus a segmented control [Sources & Uses | $35M model | $15M Distributions | Report]. The single-source wiring (#949) already landed, so the two tabs agree on their numbers. Then: add/delete/reorder ledger rows, and the budget-vs-actual lane."
     },
     {
       "id": "esl-review",
