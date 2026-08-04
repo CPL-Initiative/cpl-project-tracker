@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-08-03
+updated: 2026-08-04
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -2241,3 +2241,59 @@ and this is now the lower-risk half.
 Then, in rough order of value: the **suppressed-earns-zero** decision above; the
 **add/delete/reorder** gap in the ledger editor (the biggest distance between
 "editable" and "curatable"); the **budget-vs-actual** expenditure lane.
+
+## 2026-08-04 — SkyUnit cont.: the per-priority PRICE FACTOR (the global 2× is retired) — #971
+
+Sam & Malone's ask: **decouple the funding split from the FTES difficulty.** The
+model welded them — for every priority `cap ÷ target = the rate`, uniformly, so a
+priority's FTES target was rigidly proportional to its dollar tranche. The single
+global **target multiplier** couldn't tune per-priority. Fix: **move the dial to the
+priority level.** Each priority now carries a `factor`; its **price per CPL FTES =
+factor × the SCFF base rate**, and **target = pot ÷ price**. Higher factor ⇒ pays
+more per FTES ⇒ **fewer** FTES earn the pot — the *price reading* Sam confirmed (a
+premium on the harder / more-valued behavior), which scales the target
+**inversely** (factor 2.0 halves it).
+
+**(a) Learned.** Three things worth carrying forward, distilled into
+[`methodology-retire-a-global-dial-into-per-item-dials`](kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md):
+1. **Make the neutral value an exact identity.** `factor 1.0` had to reproduce
+   today's model. The old ×2 was doing *double duty* — a policy dial **and** the
+   cumulative-window `nYears` conversion. Moving only the policy role would silently
+   halve targets. So the ×nYears became **structural** in `prioTarget`
+   (`perYear/rate × nYears/factor`), leaving `prioEntitlement` per-year (the
+   front-load invariant). Now `factor 1.0` is a true identity and **merging moved no
+   live numbers.**
+2. **Direction is a real decision, not a default.** A per-item factor can scale the
+   *target* (stringency) or the *price* (premium) — inverses that flip the incentive
+   180°. I asked before building; Sam meant price (2× on P3 = pay double for portal,
+   not make it twice as hard). The AskUserQuestion-worthy fork was the whole ballgame.
+3. **Split the merge from the activation; the config write is POST-DEPLOY.** With the
+   neutral default an identity, the code merge is behavior-neutral (live config still
+   carried `targetMultiplier: 2`, which the new code ignores → neutral). Setting the
+   real factors is a **separate Supabase write after Pages deploys** — removing the
+   old multiplier while old code is still live would fall back to a default and halve
+   every target. Order: merge → deploy → config.
+
+**(b) State.** Merged #971 (squash `93b80aa`), Pages deploy green, full suite green
+(545/545 on the big file). Live config activated post-deploy
+(`kb/supabase_funding_priority_factors.sql`, fresh-read + Rule-9-guarded — all six
+factors were null, so nothing of Sam's was overwritten): **shares .5/.3/.2 · factors
+P1 0.5 / P2 1.0 / P3 2.0**, `targetMultiplier` removed. Live now: pool unchanged
+**$23,240,308**; statewide target **5,759 CPL FTES** (was 4,114 neutral); pool earns
+**$8.62M = 35.6%** of cap; median college **31%**; 23 at ~$0. Prices P1 $2,824.82 /
+P2 $5,649.63 / P3 $11,299.26 per CPL FTES. Editable per-priority in the tab (retired
+`targetMultiplier`/`effectiveFtesRate`/`setTargetMultiplier` + the global "Target
+multiplier"/"Effective rate" FTES-factors rows). Tests rewritten for inverse scaling
++ cumulative default.
+
+**(c) Prototype → port.** Iterated the whole model in the calculation sanity-check
+**artifact** first (real-Chromium verified: neutral 1/1/1 reproduced the anchors
+before any code moved), locked the direction with Sam, then ported. The artifact is
+now synced to the live model and stays linked from the private tab — a durable shared
+sanity-check surface, not a throwaway.
+
+**(d) Next concrete step.** Still the **Budget reconciliation** (fold Implementation
+Funding in as a Budget sub-view + single-source the $35M from the ledger). Factor
+tuning is now self-serve in the tab; if 5,759 FTES / 35.6% isn't the intended
+calibration, the factor inputs are the dial (P2's factor has the most redistributive
+teeth today, since P2 is the biggest tranche and where most colleges sit mid-range).

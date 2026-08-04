@@ -1,13 +1,29 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-08-03
+updated: 2026-08-04
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
 ---
 
 # You are the next Implementation-Funding session
+
+## ✅ JUST SHIPPED (2026-08-04, SkyUnit) — the per-priority PRICE FACTOR is live
+
+The single global **target multiplier is retired.** Each priority now carries its
+own `factor`: **price per CPL FTES = factor × the SCFF base rate**, **target = pot ÷
+price** (higher factor ⇒ pays more per FTES ⇒ fewer FTES earn the pot — a premium on
+the harder/valued behavior; scales the target **inversely**). **`factor 1.0` = the
+prior model exactly** — the cumulative-window `×nYears` is now structural in
+`prioTarget`; `prioEntitlement` stays per-year. Merged #971, deployed, live config
+activated post-deploy (`kb/supabase_funding_priority_factors.sql`): **shares .5/.3/.2
+· factors P1 0.5 / P2 1.0 / P3 2.0**. Live: pool $23,240,308; statewide target
+**5,759 FTES**; pool earns **$8.62M · 35.6%**; median 31%. Editable per-priority in
+the tab. Full narrative + the reusable migration pattern:
+[`cpl_funding_lessons.md`](cpl_funding_lessons.md) §2026-08-04 ·
+[`kb-notes/methodology-retire-a-global-dial-into-per-item-dials`](kb-notes/methodology-retire-a-global-dial-into-per-item-dials.md).
+**Do NOT reintroduce a global multiplier** — the factor is THE dial now.
 
 ## 🎯 YOUR NEXT STEP — the Budget reconciliation (Sam's call, 2026-08-03)
 
@@ -39,21 +55,25 @@ Then, in rough order of value:
 | **P3** | portal / landing-page origin — outreach to not-yet-students |
 | **shares** | **.50 / .45 / .05**, both years |
 | **rate** | **$5,649.63** per CPL FTES (SCFF base), curator-editable |
-| **multiplier** | **2.0** — and this IS the cumulative target, see below |
+| **price factors** | **P1 0.5 · P2 1.0 · P3 2.0** — per-priority price = factor × base rate; **factor 1.0 = cumulative** (retired the global 2×, 2026-08-04) |
+| **shares** | **.50 / .30 / .20** (Sam's live curation as of 2026-08-04; changes often) |
 
-Live: pool earns **$9.65M of $23.24M (41.5%)**, median college **50%** of cap,
-statewide target **4,114 CPL FTES**. Receipt: `kb/supabase_funding_p1_applied.sql`.
+Live (2026-08-04): pool earns **$8.62M of $23.24M (35.6%)**, median college **31%**
+of cap, statewide target **5,759 CPL FTES**. Receipts:
+`kb/supabase_funding_priority_factors.sql` (factors), `kb/supabase_funding_p1_applied.sql`.
 
 ### ⛔ The trap that will bite you if you skip one paragraph
 
-`prioTarget = (entitlement ÷ nYears) ÷ rate × multiplier`. With a 2-year window,
-**multiplier 2.0 IS the cumulative window target, exactly.** "Make targets
-cumulative" reads like an instruction to drop the `÷ nYears` in
-`prioEntitlement` — **do not.** That produces the same target and **cancels the
-front-load incentive** (Sam, 2026-07-30: "double the per-student amount, not the
-students"), which that function's own comment names as the reason it is the ONE
-exemption from the no-inline-scope guard.
-`tests/cpl_funding_cumulative_target.test.js` (10 assertions) carries the reason.
+`prioTarget = (entitlement ÷ nYears) ÷ rate × (nYears ÷ factor)`. The **×nYears is
+structural** now, so **`factor 1.0` IS the cumulative window target, exactly** (it
+replaced the old ×2). "Make targets cumulative" reads like an instruction to drop the
+`÷ nYears` in `prioEntitlement` — **do not.** That produces the same target and
+**cancels the front-load incentive** (Sam, 2026-07-30: "double the per-student
+amount, not the students"), which that function's own comment names as the reason it
+is the ONE exemption from the no-inline-scope guard. The factor scales the target
+**inversely** (higher factor = fewer FTES = a price premium — NOT a stringency dial).
+`tests/cpl_funding_cumulative_target.test.js` carries the reason + the inverse-scaling
+guard.
 
 ### Other invariants — do not break these
 
