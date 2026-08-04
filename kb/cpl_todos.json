@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-03 · SkyUnit — the Implementation Funding model is settled and live: Priority 1 now scores APPLIED credit, and the next step is folding it into Budget",
+  "_as_of": "2026-08-04 · SkyUnit — each funding priority now carries its own PRICE FACTOR (the global 2× is retired); the split and the difficulty are separate dials now, and you can tune the factors right in the tab",
   "_session": 117,
-  "_status": "The $35M funding model is done and running. Priority 1 now scores credit a college has APPLIED to a student record (the checkmark saying 'this looks applicable to their program') rather than everything a student is eligible for — eligible includes JST recommendations no college offers, like marksmanship. Shares are 50/45/5 and targets are cumulative across the two years. The pool now pays out 41.5% (was 30%) and the typical college earns half its allocation. Next up is Budget reconciliation — folding Implementation Funding in as a Budget sub-view so there's one place for the money story. The CCR/unified-courses items below are unchanged.",
+  "_status": "The $35M funding model is running, and it just got a new dial. Each priority now has a PRICE FACTOR — how much a CPL FTES is worth on that priority, as a multiple of the state rate. A higher factor pays more per FTES, so a college earns that pot with fewer FTES (a premium on the harder work). This splits what used to be one knob into two: the SHARE sets the dollars, the FACTOR sets how hard the FTES target is. Set all factors to 1.0 and it's exactly the old model. Live now: shares 50/30/20, factors P1 0.5 / P2 1.0 / P3 2.0 — the pool pays out 35.6% and the typical college earns 31% of its cap. Nothing about the pool ($23.24M) changed. Tune the factors in the tab (or the sanity-check tool linked there) and watch every number move. Next up is still the Budget reconciliation. The CCR/unified-courses items below are unchanged.",
   "items": [
+    {
+      "id": "funding-price-factor-live",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🎚️ NEW: each priority now has a Price factor input (× the state rate per CPL FTES). Higher = pays more per FTES = the pot is earned with fewer FTES; set all three to 1.0 to get the old uniform model back. Live starting set is P1 0.5 / P2 1.0 / P3 2.0. Poke around — change a factor and every target, earned figure, and the statewide total recompute live. Same tool as the 🧮 calculation sanity-check linked at the top of the tab. If a different calibration is what you and Malone want, P2's factor has the most reach today (it's the biggest tranche)."
+    },
     {
       "id": "funding-suppressed-zero",
       "for": "sam",

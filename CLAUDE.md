@@ -569,6 +569,24 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)
+
+Sam & Malone: **decouple the funding split from the FTES difficulty.** Retired the single global
+**target multiplier**; each priority now carries a `factor` — **price/CPL FTES = factor × base rate**,
+**target = pot ÷ price** (higher factor ⇒ fewer FTES earn the pot ⇒ a *premium*; scales the target
+**inversely**). **`factor 1.0` = the prior model exactly**: the cumulative-window `×nYears` is now
+**structural** in `prioTarget`; `prioEntitlement` stays per-year (front-load invariant). **Behavior-neutral
+to merge** (live `targetMultiplier:2` ≡ factor 1.0), so the config activation was a **separate post-deploy**
+write (`kb/supabase_funding_priority_factors.sql`, Rule-9-guarded — factors were null, Sam's shares/metrics
+untouched). Live: **shares .5/.3/.2 · factors P1 .5/P2 1/P3 2** → pool $23.24M, statewide target **5,759 FTES**,
+earns **$8.62M (35.6%)**, median 31%. Retired `targetMultiplier`/`effectiveFtesRate`/`setTargetMultiplier`;
+factor is editable per-priority in the tab. Prototyped + real-Chromium-verified in the **sanity-check artifact**
+first (linked on the private tab). Suite **545/545**. ⚠ **Do NOT reintroduce a global multiplier** — the factor
+is THE dial. Durable: `methodology-retire-a-global-dial-into-per-item-dials`. Story:
+`docs/cpl_funding_lessons.md` §2026-08-04 · handoff `docs/cpl_funding_handoff.md`. **Next: Budget reconciliation.**
+Side-lane — left the numbered handoff to the CCR mainline.
+
+
 ### SkyUnit cont. — Implementation Funding: P1 → APPLIED, and the funding model is settled (2026-08-03, #967 MERGED)
 
 Sam sent a pivot of the MAP Student Aggregated Values export and asked to switch P1 from eligible to
@@ -600,43 +618,6 @@ Suite **182 green**; Chromium clean. Durable: `methodology-omit-dont-zero-an-abs
 three kinds of zero). Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
 **Next: the Budget reconciliation** (fold Implementation Funding in as a Budget sub-view). Side-lane —
 left the numbered handoff to the CCR mainline.
-
-
-### SkyUnit — Implementation Funding: headcount out, and the summary surfaces made to agree on units (2026-08-01, #964/#965 MERGED)
-
-Sam, on the pool cards: *"eliminate headcount from the model altogether — the card that allocates
-$4.62 per student should be a per FTES amount"* and *"the P1,2,3 earned FTES seem way too high, the
-tgt FTES way too low."* Both right; the second had a **live 30× defect** under it. The per-college
-P-cells convert units→CPL FTES; **three SUMMARY surfaces did not** — P1 read *"Actual 1,354,527
-students — 193,700% of target"*, the target line relabelled CPL FTES as "students" then divided by
-headcount, and the college table's **SYSTEM row printed a headcount under a "Credit FTES" header**.
-Sites **four, five and six** of the family #960/#961/#962 fixed; they survived because tests asserted
-each side's PRESENCE, never the RELATIONSHIP — the new ones recompute "% of target" from the card's
-own two numbers. The SYSTEM row was caught only by **rendering in real Chromium and reading the header
-next to its own total**. Cards now follow the basis seam (credit FTES pairs with **noncredit** feeder
-FTES, never feeder headcount); `$4.62` retired for the operative price — **$5,649.63/CPL FTES → 2,056.8
-CPL FTES the tranche buys** (61,704 units, $188.32/unit), with $10.87/credit FTES (the literal swap) as
-a note. ⚠ **Raising the rate LOWERS the target**; there is no ~$8k in the dataset, and $8,071 would take
-the target 2,057→1,440 — the wrong way for Sam's own complaint. He settled on **$5,649.63**, now
-**curator-editable** (#965: base rate not the derived effective one; writes `setFtesRate` NOT `setPool`
-— a pool write sits *under* the override and does nothing visible; two entry points, one setter;
-zero/negative/junk **rejected**, since a 0 rate silently earns every college $0). **P1 → Applied
-(Sam's call):** I proposed dropping eligible on the evidence it can't discriminate (98/102 colleges
-over target, median 42×); he located the real cause, and measurement confirmed **our arithmetic is
-right and the SOURCE is inflated** (producer cross-check vs MAP's own totals = **1.0054**; the ACE/JST
-skill-level duplication, `map_data_quality` 10ad9e0a, which MAP can't easily fix). So we **measure one
-rung down the funnel** — eligible 1,354,527 → **applied 242,559 (18%)** → transcribed 103,139. Producer
-emits `pa`/`pa_u`; **P1 not rewired yet** (per-college split needs the cron). Two guards mattered more
-than the feature: `pa` is **omitted, never zeroed** (a present 0 reads as "posted nothing" → $0
-statewide) and a **`MEASURES` entry shipped WITH the data** (the string matched no rule → full-cap
-advance). Tests 545 · 54 · new `applied` 23; suite **181 green**; Chromium clean. Durable:
-`methodology-a-summary-must-share-the-unit-of-its-detail`, `methodology-omit-dont-zero-an-absent-measure`,
-`methodology-move-down-the-funnel-to-route-around-an-upstream-defect`. Also: Sam's ruling closed DQ
-`7eb0c25a` (quarter colleges keep the 11.67 TLM → 45 units/FTES) and opened `ae3e16d6` (normalize units
-in MAP, alongside native). Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
-**Next: the cron publishes `pa`/`pa_u` → wire P1→Applied + cumulative targets, but look at the
-distribution first (79 of 99 colleges have ZERO transcribed; top 10 hold 95.7%).** Side-lane — left the
-numbered handoff to the CCR mainline.
 
 
 ## Troubleshooting
