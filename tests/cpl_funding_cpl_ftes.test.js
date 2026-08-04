@@ -90,7 +90,10 @@ check("the derivation is what the code does (525/17.5 = 30, 525/11.67 = 45)",
   near(525 / 17.5, 30, 0.001) && near(525 / 11.67, 45, 0.02));
 check("the 2026-27 credit FTES rate is configured",
   D.pool.ftes_rate_2026_27 === 5649.63);
-check("a policy multiplier exists and defaults to par (1.0)", D.target_multiplier === 1);
+check("each priority carries a price factor, defaulting to par (1.0); the global multiplier is retired",
+  D.target_multiplier === undefined &&
+  D.year_priorities["1"].every(function (p) { return p.factor === 1; }) &&
+  D.year_priorities["2"].every(function (p) { return p.factor === 1; }));
 check("exactly the two known quarter colleges are flagged",
   D.colleges.filter(function (c) { return c.quarter; }).map(function (c) { return c.college; })
     .sort().join(",") === "De Anza,Foothill");
@@ -162,10 +165,12 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   const worst = plain.reduce(function (mx, c) {
     const row = T._alloc(c.college);
     const key = Object.keys(row).find(function (k) { return /_heads$/.test(k); });
-    const expect = (c.credit_ftes / totFtes) * net * share / ny / 5649.63;
+    // factor 1.0 ⇒ CUMULATIVE window target — the ×nYears is structural now, so
+    // no ÷ ny here (dividing would give the retired per-year target).
+    const expect = (c.credit_ftes / totFtes) * net * share / 5649.63;
     return Math.max(mx, Math.abs(row[key] - expect));
   }, 0);
-  check("target == pre-floor proportional entitlement ÷ rate (max err < 0.01 FTES)",
+  check("target == pre-floor proportional CUMULATIVE entitlement ÷ rate (max err < 0.01 FTES)",
     plain.length > 5 && worst < 0.01);
 
   // THE FLOOR TRAP: a floored college's cap is topped up to $150K. Its TARGET
@@ -176,7 +181,7 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     const row = T._alloc(floored.college);
     const key = Object.keys(row).find(function (k) { return /_heads$/.test(k); });
     const cap = key.replace(/_heads$/, "");
-    const preFloor = (floored.credit_ftes / totFtes) * net * share / ny / 5649.63;
+    const preFloor = (floored.credit_ftes / totFtes) * net * share / 5649.63;
     check("FLOOR TRAP: a floored college's target stays on its PRE-floor share",
       near(row[key], preFloor, 0.01));
     check("...even though its cap was topped up above that share",
@@ -187,7 +192,9 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// Part E — the multiplier is the only policy dial
+// Part E — the per-priority PRICE FACTOR is the policy dial (the single global
+// multiplier is retired, Sam & Malone 2026-08-04). factor = price × the base
+// rate; target = pot ÷ price, so the factor scales the target INVERSELY.
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
@@ -197,19 +204,19 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     return row[Object.keys(row).find(function (k) { return /_heads$/.test(k); })];
   };
   const par = key();
-  T._setScenario({ targetMultiplier: 0.5 });
-  T.render();
-  const half = key();
-  // The multiplier scales the TARGET: <1 is easier, >1 means a college must beat
-  // apportionment value. (It was briefly wired onto the RATE, which inverted it.)
-  check("halving the multiplier halves the target — i.e. makes it EASIER",
-    par > 0 && near(half, par / 2, 0.001));
-  T._setScenario({ targetMultiplier: 2 });
-  T.render();
-  check("doubling it doubles the target — i.e. makes it HARDER", near(key(), par * 2, 0.001));
+  const setFac = function (f) {
+    T._setScenario({ yearPriorities: { "1": { "0": { factor: f } }, "2": { "0": { factor: f } } } });
+    T.render();
+  };
+  setFac(2);
+  check("a factor of 2 HALVES the target — pays more per FTES, so fewer FTES earn the pot",
+    par > 0 && near(key(), par / 2, 0.001));
+  setFac(0.5);
+  check("a factor of 0.5 DOUBLES the target — pays less per FTES, so more FTES are needed",
+    near(key(), par * 2, 0.001));
   T._setScenario({});
   T.render();
-  check("clearing the override returns to par", near(key(), par, 0.001));
+  check("clearing the override returns to par (factor 1.0)", near(key(), par, 0.001));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

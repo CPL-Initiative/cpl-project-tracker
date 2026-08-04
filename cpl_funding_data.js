@@ -100,6 +100,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC certificate or degree completion through CPL awards.",
     "share": 0.3,
     "target_rate": 0.05,
+    "factor": 1.0,
     "metric": "Headcount of students eligible for at least one course offered through CPL"
    },
    {
@@ -108,6 +109,7 @@ window.CPL_FUNDING = {
     "description": "Increase college access through CPL.",
     "share": 0.42,
     "target_rate": 0.06,
+    "factor": 1.0,
     "metric": "Headcount of students with transcribed CPL credit for at least one course."
    },
    {
@@ -116,6 +118,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC CPL capacity, visibility, documentability, interoperability, mobility.",
     "share": 0.28,
     "target_rate": 0.046666666,
+    "factor": 1.0,
     "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page"
    }
   ],
@@ -126,6 +129,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC certificate or degree completion through CPL awards.",
     "share": 0.3,
     "target_rate": 0.05,
+    "factor": 1.0,
     "metric": "Units of Transcribed CPL"
    },
    {
@@ -134,6 +138,7 @@ window.CPL_FUNDING = {
     "description": "Increase college access through CPL.",
     "share": 0.42,
     "target_rate": 0.06,
+    "factor": 1.0,
     "metric": "Headcount with Completion and 3+ Transcribed CPL Units"
    },
    {
@@ -142,6 +147,7 @@ window.CPL_FUNDING = {
     "description": "Increase CCC CPL capacity, visibility, documentability, interoperability, mobility.",
     "share": 0.28,
     "target_rate": 0.046666666,
+    "factor": 1.0,
     "metric": "Headcount with CPL Matched in MAP and MIS"
    }
   ]
@@ -1615,6 +1621,5 @@ window.CPL_FUNDING = {
   "contact_hours_per_unit_semester": 17.5,
   "contact_hours_per_unit_quarter": 11.67,
   "note": "units per FTES is DERIVED: 525/17.5 = 30 semester units, 525/11.67 = 45 quarter units. Do not store the quotient."
- },
- "target_multiplier": 1.0
+ }
 };

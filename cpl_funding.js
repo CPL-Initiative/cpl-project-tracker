@@ -907,9 +907,13 @@
   // c = a base-college or shaped row; pass null for the statewide total.
   function prioTarget(c, p) {
     if (prioIsFtes(p)) {
-      var r = ftesRate();
-      // entitlement ÷ rate, then scaled by the policy multiplier.
-      return r > 0 ? (prioEntitlement(c, p) / r) * targetMultiplier() : 0;   // target in CPL FTES
+      var r = ftesRate(), fac = prioFactor(p);
+      // target = pot ÷ price, price = factor × rate. The × nYears() makes it the
+      // CUMULATIVE window target (factor 1 ⇒ the old ×2 on a 2-yr window, exactly);
+      // dividing by the factor is the price premium (higher factor ⇒ fewer FTES).
+      // prioEntitlement stays PER-YEAR — never fold nYears into it (front-load
+      // invariant; see prioEntitlement + cpl_funding_cumulative_target.test.js).
+      return (r > 0 && fac > 0) ? (prioEntitlement(c, p) / r) * (nYears() / fac) : 0;   // target in CPL FTES
     }
     return (c ? sizeOf(c) : totalSize()) * p.target_rate;   // target in students
   }
@@ -942,27 +946,22 @@
     var d = unitsPerCplFtes(c);
     return d > 0 ? (Number(units) || 0) / d : 0;
   }
-  // The 2026-27 SCFF credit rate x the policy multiplier. This is the price a
-  // target is denominated in: "produce the CPL FTES your allocation would have
-  // bought at the state rate". The multiplier is the ONLY policy dial.
+  // The 2026-27 SCFF credit rate — the BASE price a CPL FTES is valued at.
   function ftesRate() {
     return Number(firstDefined(SCENARIO.ftesRate, SHARED.ftesRate, poolField("ftes_rate_2026_27"))) || 0;
   }
-  function targetMultiplier() {
-    var v = firstDefined(SCENARIO.targetMultiplier, SHARED.targetMultiplier, base().target_multiplier);
-    return v == null ? 1 : Number(v);
-  }
-  // The multiplier scales the TARGET (its name), not the rate: >1 means a college
-  // must BEAT apportionment value to earn out, <1 makes it easier. Putting it on
-  // the rate inverted that — 0.5 made the target twice as hard.
-  // What a college is effectively paid per CPL FTES is therefore rate ÷ multiplier;
-  // at par (1.0) both reduce to the plain rate.
-  function effectiveFtesRate() {
-    var m = targetMultiplier();
-    return m > 0 ? ftesRate() / m : ftesRate();
-  }
+  // ── per-priority PRICE factor (Sam & Malone, 2026-08-04) ──────────────────
+  // The single global "target multiplier" is RETIRED; each priority now carries
+  // its own `factor`. A priority's PRICE per CPL FTES = factor × the base rate,
+  // and its target = pot ÷ price — so a HIGHER factor pays MORE per FTES and the
+  // pot is earned with FEWER FTES (a premium on the harder / more-valued
+  // behavior). This decouples the two dials Sam wanted separated: the tranche
+  // split (share) sets the dollars, the price factor sets the FTES difficulty.
+  // factor 1.0 = the plain SCFF rate = today's uniform model, exactly (the ×nYears
+  // in prioTarget carries the cumulative-window conversion the old ×2 used to).
+  function prioFactor(p) { var v = p && p.factor; return v == null ? 1 : Number(v); }
+  function prioPrice(p) { return ftesRate() * prioFactor(p); }
   function setFtesRate(v) { activeOverride().ftesRate = Math.max(0, Number(v) || 0); persistActive(); }
-  function setTargetMultiplier(v) { activeOverride().targetMultiplier = Math.max(0, Number(v) || 0); persistActive(); }
   // Is this priority scored in CPL FTES rather than students?
   function prioIsFtes(p) { return measurability(p.metric).unit === "units"; }
   // The PRE-FLOOR, PRE-RURAL proportional per-year entitlement behind one
@@ -1009,6 +1008,7 @@
         strategies: prioStrategies(slot, i),
         share: share,
         target_rate: target_rate,
+        factor: (function () { var v = prioField(slot, i, "factor"); return v == null ? 1 : Number(v); })(),
         per_student: prioPerStudent(slot, i, share, target_rate)
       };
     });
@@ -2252,12 +2252,16 @@
     // (Scenario 2) the per-student rate is still the right thing, so it stays
     // as the fallback rather than being deleted.
     if (priorities(state.viewSlot).some(prioIsFtes) && ftesRate() > 0) {
-      var cplFtesBought = per / effectiveFtesRate();
+      // Pool-level card: the BASE (par) rate — what the tranche buys at factor 1.
+      // Each priority prices its own target off this via its factor (below).
+      var cplFtesBought = per / ftesRate();
       var upf = unitsPerCplFtes(null);
+      var facList = priorities(state.viewSlot).filter(prioIsFtes)
+        .map(function (pp) { return esc(pp.label) + " " + fmtNum2(prioFactor(pp)) + "×"; }).join(" · ");
       // EDITABLE (Sam, 2026-08-01) — and it is the BASE rate that is editable,
-      // never the derived effective one. effectiveFtesRate() is rate ÷ the
-      // target multiplier; letting a curator type into that would push their
-      // number through a divisor and store something else, which is the same
+      // never a derived per-priority price. Each priority's price is base × its
+      // own factor (prioPrice); letting a curator type into a derived price would
+      // push their number through the factor and store something else, the same
       // store-a-quotient mistake ftes_factors deliberately avoids.
       //
       // It writes via setFtesRate (the override layer), NOT setPool. Both would
@@ -2273,16 +2277,13 @@
           { label: "Reimbursement rate per CPL FTES",
             title: "The price a CPL FTES is valued at. Raising it LOWERS every target " +
                    "(target = allocation ÷ rate); lowering it raises them." }),
-        l: "Reimbursement rate per <strong>CPL FTES</strong> &mdash; the price a performance target is " +
-          "denominated in: " + fmtMoney(per) + " &divide; " + fmtMoney2(effectiveFtesRate()) +
-          " = <strong>" + fmtNum1(cplFtesBought) + " CPL FTES</strong> the annual tranche buys",
+        l: "Reimbursement rate per <strong>CPL FTES</strong> &mdash; the base price a performance target is " +
+          "denominated in: " + fmtMoney(per) + " &divide; " + fmtMoney2(ftesRate()) +
+          " = <strong>" + fmtNum1(cplFtesBought) + " CPL FTES</strong> the annual tranche buys at par",
         note: "&asymp; " + fmtInt(cplFtesBought * upf) + " semester units (" + fmtNum1(upf) +
-          " units = 1 FTES) at " + fmtRate(effectiveFtesRate() / upf) + "/unit &middot; " +
+          " units = 1 FTES) at " + fmtRate(ftesRate() / upf) + "/unit &middot; " +
           esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate") +
-          (targetMultiplier() === 1
-            ? ""
-            : " &middot; effective " + fmtMoney2(effectiveFtesRate()) + " after the &times;" +
-              fmtNum2(targetMultiplier()) + " target multiplier") }));
+          (facList ? " &middot; each priority prices its target at " + facList + " of this base (see below)" : "") }));
     } else {
       out.push(card({ v: fmtRate(perStudent()),
         l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) +
@@ -2411,7 +2412,6 @@
     var qtr = Number(f.contact_hours_per_unit_quarter) || 11.67;
     var ch = contactHoursPerFtes();
     var nQ = base().colleges.filter(function (c) { return c.quarter; }).length;
-    var mult = targetMultiplier();
     var row = function (lbl, val, note, derived) {
       return '<div class="cplfund-ftesrow' + (derived ? " derived" : "") + '">' +
         '<span class="l">' + lbl + "</span><span class=\"v\">" + val + "</span>" +
@@ -2432,15 +2432,10 @@
       // parameters should not find the one that actually prices the targets
       // frozen. (Guarded by a test that edits in either place and asserts the
       // other reflects it.)
-      row("Reimbursement rate", "$" + edNum("ftesrate", fmtNum2(ftesRate()),
+      row("Reimbursement rate (base)", "$" + edNum("ftesrate", fmtNum2(ftesRate()),
             { small: true, label: "Reimbursement rate per CPL FTES" }) + "/FTES",
-          esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate")) +
-      row("Target multiplier", fmtNum1(mult) + "&times;",
-          mult === 1 ? "par &mdash; a college earns its allocation by producing the CPL FTES it would have bought at the state rate"
-            : (mult > 1 ? "above par &mdash; a college must BEAT apportionment value to earn out"
-                        : "below par &mdash; easier than apportionment value")) +
-      row("&rarr; Effective rate", fmtRate(effectiveFtesRate()) + "/FTES",
-          "derived &mdash; what a college is actually paid per CPL FTES at this multiplier", true) +
+          esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate") +
+          " &mdash; each priority prices its target at its own factor × this base") +
       "</div>" +
       '<p class="dk" style="font-size:.8rem;margin:6px 0 0;">A quarter unit is worth ' +
       fmtPctTrim(qtr / sem) + " of a semester unit, so " + fmtNum1(ch / qtr) +
@@ -2494,11 +2489,15 @@
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         (isFtesPrio
-          ? '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> (&asymp; " +
+          ? '<p class="nums">Price factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, label: p.label + " price factor" }) +
+            "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong> " +
+            '<span class="dk">(' + (prioFactor(p) === 1 ? "par &mdash; the plain state rate"
+              : prioFactor(p) > 1 ? "a premium: pays more per FTES, so fewer FTES earn the pot"
+              : "a discount: pays less per FTES, so more FTES are needed to earn the pot") + ")</span></p>" +
+            '<p class="nums">Target <strong>' + fmtNum1(sysHeads) + " CPL FTES</strong> (&asymp; " +
             fmtInt(sysHeads * unitsPerCplFtes(null)) + " semester units) " +
             '<span class="dk">(DERIVED &mdash; ' + fmtMoney(sysDollars) + " priority funding &divide; " +
-            fmtMoney2(effectiveFtesRate()) + " per CPL FTES" +
-            (targetMultiplier() === 1 ? "" : ", at the &times;" + fmtNum2(targetMultiplier()) + " target multiplier") +
+            fmtMoney2(prioPrice(p)) + " per CPL FTES" +
             ". A performance target only; it does <strong>not</strong> move or cap the funding, " +
             "which is set by the Allocation share above)</span></p>"
           : '<p class="nums">Per-student rate $' + edNum("perstudent", (p.per_student || 0).toFixed(2), { small: true, slot: slot, idx: i, label: p.label + " funding dollars per student" }) +
@@ -2993,7 +2992,7 @@
         : "Funding cap " + fmtMoney(cap) + " at the " + fmtRate(cmpBase) + "/student statewide base rate.") + flNote;
     var title = p.label + " — " + p.title + ". Target " +
       (isFtes ? fmtNum1(target) + " CPL FTES (" + fmtInt(target * unitsPerCplFtes(c && baseCollege(c.college))) +
-                " units — its allocation \u00f7 " + fmtRate(effectiveFtesRate()) + "/FTES)"
+                " units — its allocation \u00f7 " + fmtRate(prioPrice(p)) + "/FTES)"
               : fmtInt(target) + " students (" + fmtPctTrim(reachPct(isSystem ? null : c, target)) +
                 " of its headcount)") + ". " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
@@ -4889,6 +4888,13 @@
       var pn = parseNum(raw);
       if (pn == null) { render(); return; }
       setPrio(slot, Number(idx), edit === "share" ? "share" : "target_rate", Math.max(0, pn) / 100);
+      return;
+    }
+    if (edit === "priofactor") {
+      // A raw multiple (0.5, 1, 2), NOT a percent — do not ÷100. 0 or junk reverts.
+      var pf = parseNum(raw);
+      if (pf == null || pf <= 0) { render(); return; }
+      setPrio(slot, Number(idx), "factor", pf);
       return;
     }
     if (edit === "perstudent") {

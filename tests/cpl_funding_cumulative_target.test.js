@@ -1,23 +1,25 @@
-// Cumulative targets are delivered by the MULTIPLIER, not by editing prioEntitlement
-// (Sam, 2026-08-01 "make the target cumulative"; applied 2026-08-03 as multiplier 2.0).
+// Cumulative targets + the per-priority PRICE FACTOR (Sam & Malone, 2026-08-04).
 //
-// THE TRAP THIS EXISTS TO PREVENT. "Make targets cumulative" reads like an
-// instruction to drop the `/ nYears` in prioEntitlement. It would produce the
+// The single global "target multiplier" is RETIRED. Each priority now carries its
+// own `factor`: a priority's PRICE per CPL FTES = factor × the base rate, and its
+// target = pot ÷ price. So a HIGHER factor pays MORE per FTES and the pot is
+// earned with FEWER FTES (target ÷ factor); a LOWER factor demands more.
+//
+// factor 1.0 = par = today's uniform model, exactly. The CUMULATIVE-window
+// conversion the old ×2 used to carry is now STRUCTURAL: prioTarget multiplies the
+// per-year entitlement by nYears(), so on a 2-year window factor 1.0 already gives
+// the cumulative target — no config multiplier needed.
+//
+// THE TRAP THIS EXISTS TO PREVENT (unchanged). "Make targets cumulative" reads like
+// an instruction to drop the `/ nYears` in prioEntitlement. It would produce the
 // right target — and silently destroy the front-load incentive, because under
-// front-load prioCap already puts the whole WINDOW on the table in Year 1 while
-// the target stays per-year, and that gap IS the incentive (Sam, 2026-07-30:
-// "double the per-student amount, not the students"). prioEntitlement's own
-// comment names this as the one reason it is exempt from the no-inline-scope
-// guard. A future session reading only the "cumulative" instruction would not
-// know that, so these assertions carry the reason.
-//
-// The identity that makes the multiplier the correct instrument:
+// front-load prioCap already puts the whole WINDOW on the table in Year 1 while the
+// target stays per-year, and that gap IS the incentive (Sam, 2026-07-30: "double
+// the per-student amount, not the students"). prioEntitlement stays per-year; the
+// ×nYears lives in prioTarget, never in prioEntitlement.
 //
 //     cumulative window target  ==  net x share / rate
-//     per-year x multiplier     ==  net x share / nYears / rate x multiplier
-//
-// which are equal exactly when multiplier == nYears. With the live 2-year
-// window, multiplier 2.0 IS the cumulative target — no seam change needed.
+//     per-year x nYears         ==  net x share / nYears / rate x nYears
 //
 // Run from repo root: `npm test`.
 const fs = require("fs");
@@ -31,13 +33,15 @@ const dataSrc = fs.readFileSync("cpl_funding_data.js", "utf8");
 const consumerSrc = fs.readFileSync("cpl_funding.js", "utf8");
 const D = (function () { const sb = { window: {} }; new Function("window", dataSrc)(sb.window); return sb.window.CPL_FUNDING; })();
 
-const FTES_METRICS = {
-  "0": { metric: "Applied CPL Units as FTES (1 Unit = .0334 FTES)", share: 0.50 },
-  "1": { metric: "Transcribed CPL Units as FTES (1 Unit = .0334 FTES)", share: 0.45 },
-  "2": { metric: "Transcribed Units for Students from either CPL Student Portal or College CPL Landing Page", share: 0.05 },
-};
+function metrics(factor) {
+  return {
+    "0": { metric: "Applied CPL Units as FTES (1 Unit = .0334 FTES)", share: 0.50, factor: factor },
+    "1": { metric: "Transcribed CPL Units as FTES (1 Unit = .0334 FTES)", share: 0.45, factor: factor },
+    "2": { metric: "Transcribed Units for Students from either CPL Student Portal or College CPL Landing Page", share: 0.05, factor: factor },
+  };
+}
 
-function boot(mult, disbursement) {
+function boot(factor, disbursement) {
   const dom = new JSDOM(
     "<!doctype html><html><body><div id='tab-implementation-funding'>" +
     "<div id='cplFundingMount'></div></div></body></html>",
@@ -54,8 +58,8 @@ function boot(mult, disbursement) {
   w.eval(dataSrc); w.eval(consumerSrc);
   w.CPL_FUNDING_TAB.boot();
   const T = w.CPL_FUNDING_TAB;
-  T._setShared({ yearPriorities: { "1": FTES_METRICS, "2": FTES_METRICS },
-                 targetMultiplier: mult, disbursement: disbursement || "frontload" });
+  T._setShared({ yearPriorities: { "1": metrics(factor), "2": metrics(factor) },
+                 disbursement: disbursement || "frontload" });
   T.render();
   return T;
 }
@@ -65,27 +69,34 @@ function targetOf(T, college) {
   return row[k];
 }
 
-// ── A. the identity: multiplier == nYears reproduces the cumulative target ──
+// ── A. factor 1.0 IS the cumulative window target, and the ×nYears is structural ──
 {
-  const pool = D.pool;
-  const net = pool.college_funding_before_feeder - pool.feeder_carveout - pool.rural_carveout;
-  const rate = pool.ftes_rate_2026_27;
-  const nY = D.default_years.length;
-  const share = 0.50;
-  const cumulative = net * share / rate;
-  const perYearTimesMult = (net * share / nY / rate) * nY;
-  check("A: multiplier == nYears reproduces the cumulative window target exactly",
-    near(cumulative, perYearTimesMult, 0.001));
-  check("A: the live window is 2 years, so the live multiplier for 'cumulative' is 2.0",
-    nY === 2);
+  const T = boot(1.0);
+  const m = T._model();
+  const rate = D.pool.ftes_rate_2026_27;
+  const net = T._netCollege();
+  const totFtes = D.colleges.reduce(function (s, c) { return s + c.credit_ftes; }, 0);
+  const share = 0.50;   // P1 (the first _heads on the row)
+  const col = D.colleges.find(function (c) { return !m.floored[c.college] && !c.rural; });
+  const tgt = targetOf(T, col.college);
+  const cumulative = (col.credit_ftes / totFtes) * net * share / rate;   // NO ÷ nYears
+  check("A: at factor 1.0 an unfloored college's target is its CUMULATIVE entitlement ÷ rate",
+    near(tgt, cumulative, 0.01));
+  check("A: the global target multiplier is retired — the ×nYears is structural in prioTarget",
+    D.default_years.length === 2 && !/targetMultiplier/.test(consumerSrc) && D.target_multiplier === undefined);
 }
 
-// ── B. the multiplier actually scales the target, in the right direction ──
+// ── B. the factor scales the target INVERSELY (the price reading) ────────────
 {
   const t1 = targetOf(boot(1.0), "Alameda");
-  const t2 = targetOf(boot(2.0), "Alameda");
-  check("B: multiplier 2.0 doubles the target (cumulative == 2 x per-year)", near(t2, t1 * 2, 0.01));
-  check("B: a HIGHER multiplier makes the target HARDER, not easier", t2 > t1);
+  const tHalf = targetOf(boot(2.0), "Alameda");   // factor 2 → pays 2x/FTES → target ÷2
+  const tDouble = targetOf(boot(0.5), "Alameda");  // factor 0.5 → pays half → target ×2
+  check("B: factor 2.0 HALVES the target — pays more per FTES, so fewer FTES earn the pot",
+    t1 > 0 && near(tHalf, t1 / 2, 0.01));
+  check("B: factor 0.5 DOUBLES the target — pays less per FTES, so more FTES are needed",
+    near(tDouble, t1 * 2, 0.01));
+  check("B: a HIGHER factor makes the pot EASIER to earn (the premium direction Sam confirmed)",
+    tHalf < t1 && tDouble > t1);
 }
 
 // ── C. prioEntitlement must STAY per-year — the load-bearing guard ──────────
@@ -95,19 +106,16 @@ function targetOf(T, college) {
     body.length > 0 && /nYears\(\)/.test(body) && /\/\s*nYears\(\)/.test(body));
   check("C: prioEntitlement does NOT route through prioCap (that would double under front-load)",
     body.length > 0 && body.indexOf("prioCap") === -1);
-  // And the reason has to survive in the source, or the next session re-breaks it.
   check("C: the reason is documented at the seam, not only in a commit message",
     /cancel the front-load incentive/.test(consumerSrc));
 }
 
 // ── D. front-load still pays more per CPL FTES than even tranches ───────────
-// This is the property that dropping the / nYears would silently destroy: under
-// front-load the whole window is earnable against a per-year target, so the
-// effective $/CPL FTES is higher. If a future edit makes targets scope with the
-// cap, these two collapse to equal and the incentive is gone with no test failing
-// anywhere else.
+// The property dropping the / nYears would silently destroy: under front-load the
+// whole window is earnable against a per-year target, so effective $/CPL FTES is
+// higher. Independent of the factor (held at 1.0 on both sides here).
 {
-  const even = boot(2.0, "even"), fl = boot(2.0, "frontload");
+  const even = boot(1.0, "even"), fl = boot(1.0, "frontload");
   const tE = targetOf(even, "Alameda"), tF = targetOf(fl, "Alameda");
   const capOf = function (T) {
     const row = T._alloc("Alameda");
