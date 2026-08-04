@@ -73,13 +73,16 @@ check("statewide credit FTES is stamped and equals Σ colleges",
 check("the FTES source is cited (DataMart annual, by college)",
   !!(D.ftes_source && /datamart/i.test(D.ftes_source.url || "")));
 check("default basis is ftes", D.allocation_basis === "ftes");
-// Noncredit is carried but deliberately NOT the basis — the noncredit campuses
-// have their own carve-out, so using total FTES would fund them twice.
-// Noncredit is deliberately NOT carried per college: the basis is credit-only
-// (the noncredit campuses have their own carve-out, so total FTES would fund
-// that population twice) and an unused field is just weight.
-check("colleges carry credit FTES only — noncredit lives with the feeders",
-  D.colleges.every(function (c) { return c.noncredit_ftes === undefined; }));
+// Colleges NOW carry an advisory per-college noncredit FTES (Sam, 2026-08-04) — a
+// visibility figure (the college's own noncredit program), shown as a companion
+// line in the table. The load-bearing invariant is unchanged: noncredit is NOT the
+// allocation basis. sizeOf() reads credit_ftes/headcount ONLY, so a college's
+// noncredit FTES earns nothing here and the noncredit campuses (their own carve-out)
+// are never funded twice.
+check("colleges carry an advisory per-college noncredit FTES (visibility column)",
+  D.colleges.every(function (c) { return typeof c.noncredit_ftes === "number"; }));
+check("...but noncredit is NOT the allocation basis — sizeOf reads credit_ftes/headcount only",
+  !/noncredit/.test((consumerSrc.match(/function sizeOf\(c\)[\s\S]*?\n  \}/) || [""])[0]));
 check("the noncredit feeders carry their own FTES",
   D.feeders.filter(function (f) { return typeof f.noncredit_ftes === "number"; }).length === D.feeders.length);
 
