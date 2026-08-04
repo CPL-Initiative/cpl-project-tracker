@@ -2297,3 +2297,47 @@ Funding in as a Budget sub-view + single-source the $35M from the ledger). Facto
 tuning is now self-serve in the tab; if 5,759 FTES / 35.6% isn't the intended
 calibration, the factor inputs are the dial (P2's factor has the most redistributive
 teeth today, since P2 is the biggest tranche and where most colleges sit mid-range).
+
+## 2026-08-04 — SkyBox: Sam's funding-model tweaks (display + report) + the NC decision (#973, #974)
+
+**(a) Learned.**
+- **A "redundant" box often encodes a real distinction that only *collapses in the current
+  data*.** The two $35M boxes (source vs computed total) are equal only because there is
+  exactly ONE revenue source; the collapse must be conditional (single-source → one editable
+  box; multi-source → sources + a computed total) or "+Add revenue source" silently breaks.
+  Same shape as the memo's two redundant "Total available / Distributed" rows.
+- **Changing a headline figure's *meaning* ripples into its invariants, not just its value.**
+  Moving the hero from the college pool ($24.24M) to the institution total ($25.24M =
+  `college_funding_before_feeder`) flipped one property: the hero used to *shrink* when the
+  feeder carve-out rose; now it's *invariant* (the feeder just moves money college→NC inside
+  the total). The test asserting "raising the feeder shrinks the hero" was right BEFORE and
+  wrong AFTER — the fix was to assert the new relationship (total holds, college pool absorbs
+  the shift), not to patch a number.
+- **A coincidental value collision causes real confusion.** "Earned so far" ≈ $1M read as the
+  $1M NC carve-out. The fix isn't to hide the number (it's honest earned-to-date) but to name
+  what it ISN'T ("…not the noncredit carve-out"). It drifts off $1M as MAP updates.
+- **Reframe a premise with the user's own data.** Sam worried he'd "left SF off" the NC
+  carve-out; the FTES sheet HE sent shows SF earning $236,645 in the credit "Funding?" column
+  and **$0 for the 4 standalone NC campuses** — proof the carve-out targets the credit-shut-out
+  institutions, and SF isn't excluded (it earns through the credit door). The strongest
+  pushback used his own file.
+- **A per-item distribution is dominated by its worst datum.** $1M split by NC FTES hands
+  Calbright ~$208K (21%) on an impossible figure (21,438 FTES / 2,484 heads = 8.6 FTES per
+  student). The current HEADCOUNT split keeps Calbright at ~$33K — don't "true up" to an
+  FTES split without excluding the bad datum first.
+
+**(b) State.** 6 of 7 tweaks shipped (#973: #4 award order + #7 report; #974: #1 box collapse
++ #2 institution-total hero + #3a earned relabel). Suite cpl_funding **545→552**, public/private
+11/11. NC direction locked: **targeted + advisory column** (not diluted). Sam pre-closed three
+open questions: no suppressed colleges, factors/shares fine, no-feed colleges at $0.
+
+**(c) Roadmap.** Finish the NC cluster — **#5** advisory NC column on the 115-college table,
+**#3b** gate the NC carve-out on the 2 baseline quals (fail-open, held-not-redistributed) —
+which mirrors the college gate. THEN the Budget reconciliation (the standing next-step).
+
+**(d) Next concrete step.** #5: decide the column's content with Sam — NC **FTES** (visibility,
+my rec) vs a recommended **$ amount** (his original words, but we chose not to distribute the
+$1M to colleges, so a per-college $ lacks a funded basis) — then add each college's MIS NC FTES
+to `cpl_funding_data.js` (Malone's 115-row table is in the 2026-08-04 chat) and render the
+column. #3b: gate `feederCarveout()` disbursement on `baselineGate()` per feeder, held + rolled
+forward, never redistributed.
