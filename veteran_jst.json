@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-04T11:35:52.848374+00:00",
+  "scraped_at": "2026-08-04T14:45:11.274817+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26495,
+    "jst": 26501,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 368,
+      "jst": 373,
       "star": true
     },
     "Cypress College": {
@@ -237,7 +237,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 167,
+      "jst": 168,
       "star": true
     },
     "Lemoore College": {

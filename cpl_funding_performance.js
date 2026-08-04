@@ -8,14 +8,14 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43214,
-  "pa": 40543,
+  "pe": 43220,
+  "pa": 40549,
   "p2": 4793,
-  "p3": 16829,
+  "p3": 16830,
   "pp": 5,
-  "pe_u": 1354967.45,
-  "pa_u": 242078.15,
-  "p3_u": 103138.95,
+  "pe_u": 1355082.45,
+  "pa_u": 242102.15,
+  "p3_u": 103141.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -152,10 +152,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 165,
-   "pe_u": 8465.5,
-   "pa": 161,
-   "pa_u": 805.0,
+   "pe": 166,
+   "pe_u": 8492.5,
+   "pa": 162,
+   "pa_u": 810.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -325,10 +325,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Desert": {
-   "pe": 401,
-   "pe_u": 16648.5,
-   "pa": 401,
-   "pa_u": 2287.5,
+   "pe": 405,
+   "pe_u": 16733.5,
+   "pa": 405,
+   "pa_u": 2303.5,
    "p2": 37,
    "p3": 37,
    "p3_u": 831.5,
@@ -729,13 +729,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2389,
-   "pe_u": 50553.0,
-   "pa": 2058,
-   "pa_u": 12031.5,
+   "pe": 2390,
+   "pe_u": 50556.0,
+   "pa": 2059,
+   "pa_u": 12034.5,
    "p2": 419,
-   "p3": 1953,
-   "p3_u": 11210.0,
+   "p3": 1954,
+   "p3_u": 11213.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -1274,14 +1274,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1354490.95,
-   "pa_u": 242078.15,
-   "p3_u": 103138.95
+   "pe_u": 1354605.95,
+   "pa_u": 242102.15,
+   "p3_u": 103141.95
   },
   "map": {
-   "pe_u": 1361867.45,
-   "pa_u": 242745.65,
-   "p3_u": 103163.95
+   "pe_u": 1361982.45,
+   "pa_u": 242769.65,
+   "p3_u": 103166.95
   },
   "ratio": {
    "pe_u": 1.0054,
