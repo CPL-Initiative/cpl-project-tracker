@@ -2346,12 +2346,14 @@
     var s = awardStats();
     if (!s) return "";
     var basis = "per college, window total (" + esc(windowLabel()) + ")";
+    // Sam, 2026-08-04: order the cards Minimum · Average · Maximum (low→high) so
+    // the range reads left-to-right.
     var cards = [
-      { v: fmtMoney(s.avg), l: "Average award &mdash; " + basis + " across " + s.n + " colleges" },
       { v: fmtMoney(s.min), l: "Minimum award &mdash; " +
           ((floorWindow() > 0 && allocModel().floorCount && s.minCount > 1)
             ? s.minCount + " colleges at the " + fmtMoney(floorWindow()) + " minimum-viable floor"
             : esc(dispName(s.minC) || "&mdash;")) },
+      { v: fmtMoney(s.avg), l: "Average award &mdash; " + basis + " across " + s.n + " colleges" },
       { v: fmtMoney(s.max), l: "Maximum award &mdash; " + esc(dispName(s.maxC) || "&mdash;") }
     ];
     return "<h3>Award range " +
@@ -4198,14 +4200,14 @@
   }
   function memoMasthead() {
     return '<div class="masthead"><strong>California Community Colleges Chancellor&#39;s Office</strong><br>' +
-      "Educational Services and Support Division<br>" +
+      "Academic Affairs Division<br>" +
       "1102 Q Street, Sacramento, CA 95811 &middot; (916) 445-8752 &middot; www.cccco.edu</div>";
   }
   function memoOverview(m) {
     return "<h2>Funding Overview</h2><p>Each California Community College and each noncredit institution may receive " +
       "implementation funding to support local " + esc(m.area.full) + " efforts in accordance with AB 123 and Vision 2030 " +
-      "goals. A total of <strong>" + fmtMoney(m.totalAvailable) + "</strong> in one-time 2026-27 funding is available, of which <strong>" +
-      fmtMoney(m.collegePool) + "</strong> is distributed to the " + m.nColleges + " colleges across the <strong>" +
+      "goals. A total of <strong>" + fmtMoney(m.collegePool) + "</strong> in one-time 2026-27 implementation funding is " +
+      "available to the " + m.nColleges + " colleges across the <strong>" +
       esc(m.window) + "</strong> window. To receive these funds, each institution&#39;s Chief Instructional Officer must " +
       "submit the required participation request by <strong>" + esc(m.deadline) + "</strong>, confirming the institution&#39;s " +
       "commitment to advancing the three systemwide priority outcomes below. Funds are expected to be fully expended by <strong>" +
@@ -4219,6 +4221,21 @@
     return "<h2>Priority Outcomes</h2><p>This funding prioritizes measurable progress on systemwide outcomes that " +
       "support working learners and advance Vision 2030 goals:</p><ul>" + lis + "</ul>";
   }
+  // Recommended strategies per priority (Sam, 2026-08-04) — pulls the editable
+  // per-priority strategy lists into the memo, one block per priority. Omitted
+  // entirely when no priority carries a strategy, so an empty model never prints
+  // a hollow header (same "no empty section" rule the rest of the memo follows).
+  function memoStrategies(m) {
+    var blocks = (m.priorities || []).map(function (p) {
+      var list = (p.strategies || []).filter(function (s) { return String(s || "").trim(); });
+      if (!list.length) return "";
+      return "<p><strong>" + esc(p.label) + ".</strong></p><ul>" +
+        list.map(function (s) { return "<li>" + esc(s) + "</li>"; }).join("") + "</ul>";
+    }).filter(Boolean);
+    if (!blocks.length) return "";
+    return "<h2>Recommended Strategies</h2><p>Suggested approaches for advancing each priority outcome:</p>" +
+      blocks.join("");
+  }
   function memoAllowable() {
     return "<h2>Allowable Use of Funds</h2><p>Funds must be used to advance the priority outcomes above and Vision 2030 " +
       "systemwide objectives. Allowable uses include developing or enhancing processes to identify and notify students who " +
@@ -4230,8 +4247,7 @@
   function memoAllocation(m, full) {
     var summary = "<h2>" + esc(m.area.label) + " Allocation (" + esc(m.window) + ")</h2>" +
       '<table><tbody>' +
-      "<tr><td class='t'>Total available funds</td><td>" + fmtMoney(m.totalAvailable) + "</td></tr>" +
-      "<tr><td class='t'>Distributed to colleges</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
+      "<tr><td class='t'>Total available funding</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
       "<tr><td class='t'>Colleges</td><td>" + m.nColleges + "</td></tr>" +
       "<tr><td class='t'>Average award (window)</td><td>" + fmtMoney(m.avg) + "</td></tr>" +
       "<tr><td class='t'>Minimum &middot; Maximum award</td><td>" + fmtMoney(m.min) + " &middot; " + fmtMoney(m.max) + "</td></tr>" +
@@ -4271,7 +4287,7 @@
     var toList = ["Chief Executive Officers", "Chief Instructional Officers", "Chief Student Services Officers",
       "Chief Business Officers", "Academic Senate Presidents"];
     var re = esc(m.area.full) + " Implementation Funding (" + esc(m.window) + ")";
-    var body = memoIntro(m) + memoOverview(m) + memoPriorities(m) + memoAllowable(m);
+    var body = memoIntro(m) + memoOverview(m) + memoPriorities(m) + memoStrategies(m) + memoAllowable(m);
     if (docType === "memo") {
       return memoMasthead() +
         '<h1>MEMORANDUM</h1>' +
