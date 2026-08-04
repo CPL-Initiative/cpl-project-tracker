@@ -4210,17 +4210,60 @@
     try { return new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" }); }
     catch (e) { return ""; }
   }
+  // Feeder→district map for the memo's per-district allocation table (Sam,
+  // 2026-08-04): each NC campus lists under its parent college's district;
+  // Calbright is a standalone statewide college (its own single-entry group).
+  var MEMO_FEEDER_DISTRICT = {
+    "NOCE": "North Orange County Community College District",
+    "SD Cont. Ed": "San Diego Community College District",
+    "Mt. SAC NC": "Mt. San Antonio Community College District",
+    "Calbright": "Calbright College"
+  };
+  // KB-sourced links for the memo (Sam, 2026-08-04) — filled from the public CPL
+  // Knowledge Base. Leave "" and the reference renders as PLAIN TEXT (never a
+  // fabricated URL in an official memo).
+  // Verified verbatim from the public CPL Knowledge Base (2026-08-04). Blanks are
+  // deliberate: the KB carries NO dedicated Office-Hours / "Get Involved" URL (it
+  // says "see the MAP website for the current schedule") and NO ESS-memo URL, so
+  // those render as plain text rather than a fabricated link in an official memo.
+  var ESS_MEMO_URL = "";
+  var MAP_LINKS = {
+    officeHours: "", getInvolved: "",
+    counselorHub: "https://map.rccd.edu/counselors/",
+    implementationGuide: "https://map.rccd.edu/cpl_implementation_guide/",
+    mapWebsite: "https://map.rccd.edu/",
+    supportEmail: "map@rccd.edu"
+  };
+  function memoLink(url, label) {
+    return url ? '<a href="' + esc(url) + '" target="_blank" rel="noopener">' + esc(label) + "</a>" : esc(label);
+  }
+  function essMemoRef() {
+    var label = "ESS 25-82, December 9, 2025";
+    return ESS_MEMO_URL ? memoLink(ESS_MEMO_URL, label) : "<strong>" + esc(label) + "</strong>";
+  }
   function memoModel() {
     var y = selectedYears();
     var endYr = y.length ? String(y[y.length - 1]).split("-") : ["", ""];
     var expendYear = endYr[1] ? (endYr[0].slice(0, 2) + endYr[1]) : (endYr[0] || "");
     var s = awardStats() || { avg: 0, min: 0, max: 0, minCount: 0 };
     var proj = activeProjectObj();
+    // The $1M noncredit feeder carve-out, split per campus by headcount (the same
+    // math the feeder section uses), so the memo can list each NC campus's support.
+    var carve = feederCarveout();
+    var flist = feeders();
+    var fhc = flist.reduce(function (ss, f) { return ss + (Number(f.headcount) || 0); }, 0) || 1;
+    var feederRows = flist.map(function (f) {
+      return { name: f.name, short: f.short,
+        district: MEMO_FEEDER_DISTRICT[f.short] || "Noncredit Campuses",
+        total: (Number(f.headcount) || 0) / fhc * carve };
+    });
     return {
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
       totalAvailable: grossRevenue(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
       collegePool: netCollegeWithRural(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
+      feederCarve: carve, nFeeders: flist.length, feederRows: feederRows,
+      institutionTotal: netCollegeWithRural() + carve,
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
       priorities: priorities("1")
@@ -4273,24 +4316,72 @@
       "senate-driven policies that honor statewide credit recommendations.</p>";
   }
   function memoAllocation(m, full) {
+    // Summary (Sam, 2026-08-04): the total now INCLUDES the $1M noncredit feeder
+    // support (the institution total), broken out; "Colleges" → "Funded Colleges"
+    // and a "Funded Noncredit Campuses" line is added.
     var summary = "<h2>" + esc(m.area.label) + " Allocation (" + esc(m.window) + ")</h2>" +
       '<table><tbody>' +
-      "<tr><td class='t'>Total available funding</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
-      "<tr><td class='t'>Colleges</td><td>" + m.nColleges + "</td></tr>" +
+      "<tr><td class='t'>Total available funding</td><td>" + fmtMoney(m.institutionTotal) + "</td></tr>" +
+      "<tr><td class='t' style='padding-left:1.5em;'>College implementation pool</td><td>" + fmtMoney(m.collegePool) + "</td></tr>" +
+      "<tr><td class='t' style='padding-left:1.5em;'>Noncredit feeder support</td><td>" + fmtMoney(m.feederCarve) + "</td></tr>" +
+      "<tr><td class='t'>Funded Colleges</td><td>" + m.nColleges + "</td></tr>" +
+      "<tr><td class='t'>Funded Noncredit Campuses</td><td>" + m.nFeeders + "</td></tr>" +
       "<tr><td class='t'>Average award (window)</td><td>" + fmtMoney(m.avg) + "</td></tr>" +
       "<tr><td class='t'>Minimum &middot; Maximum award</td><td>" + fmtMoney(m.min) + " &middot; " + fmtMoney(m.max) + "</td></tr>" +
       "</tbody></table>";
     if (!full) return summary;
-    var rows = base().colleges.map(function (c) {
-      return { college: c.college, total: collegeAlloc(c).total };
-    }).sort(function (a, b) { return b.total - a.total; });
-    var body = rows.map(function (r) {
-      return "<tr><td class='t'>" + esc(dispName(r.college)) + "</td><td>" + fmtMoney(r.total) + "</td></tr>";
+    // Per-district allocation (Sam, 2026-08-04): colleges + their noncredit feeder
+    // campus(es), grouped under a district header — districts A→Z, colleges A→Z
+    // within (NC campuses list after their district's colleges). Each district
+    // header carries its subtotal; the final row is the statewide institution total.
+    var items = base().colleges.map(function (c) {
+      return { name: dispName(c.college), total: collegeAlloc(c).total, district: c.district || "—", nc: false };
+    }).concat((m.feederRows || []).map(function (f) {
+      return { name: f.name, total: f.total, district: f.district, nc: true };
+    }));
+    var byDist = {};
+    items.forEach(function (it) { (byDist[it.district] = byDist[it.district] || []).push(it); });
+    var body = Object.keys(byDist).sort(function (a, b) { return a.localeCompare(b); }).map(function (d) {
+      var grp = byDist[d].slice().sort(function (a, b) {
+        if (a.nc !== b.nc) return a.nc ? 1 : -1;           // colleges first, NC campuses after
+        return a.name.localeCompare(b.name);
+      });
+      var sub = grp.reduce(function (ss, it) { return ss + it.total; }, 0);
+      return "<tr><td class='t'><strong>" + esc(d) + "</strong></td><td><strong>" + fmtMoney(sub) + "</strong></td></tr>" +
+        grp.map(function (it) {
+          return "<tr><td class='t' style='padding-left:1.5em;'>" + esc(it.name) +
+            (it.nc ? " <em>(noncredit)</em>" : "") + "</td><td>" + fmtMoney(it.total) + "</td></tr>";
+        }).join("");
     }).join("");
-    return summary + "<p>Per-college allocation for the " + esc(m.window) + " window:</p>" +
-      "<table><thead><tr><th class='t'>College</th><th>Window allocation</th></tr></thead><tbody>" + body +
-      "<tr><td class='t'><strong>SYSTEM (statewide)</strong></td><td><strong>" + fmtMoney(systemAlloc().total) +
+    return summary + "<p>Per-college allocation for the " + esc(m.window) +
+      " window, by district (colleges A&ndash;Z; each district&#39;s noncredit campus listed beneath it):</p>" +
+      "<table><thead><tr><th class='t'>District / College</th><th>Window allocation</th></tr></thead><tbody>" + body +
+      "<tr><td class='t'><strong>TOTAL (statewide, incl. noncredit)</strong></td><td><strong>" + fmtMoney(m.institutionTotal) +
       "</strong></td></tr></tbody></table>";
+  }
+  // Technical Assistance (Sam, 2026-08-04) — support channels + resources, sourced
+  // verbatim from the public CPL Knowledge Base (verified links only; Office Hours
+  // has no dedicated URL in the KB, so it points at the MAP website). Contacts are
+  // Sam-supplied (the KB excludes personnel by design), listed without emails.
+  function memoTechAssist(m) {
+    var site = MAP_LINKS.mapWebsite;
+    var lis =
+      "<li><strong>MAP Team Office Hours</strong> &mdash; recurring live support sessions with the MAP team; see the " +
+        memoLink(site, "MAP website") + " (Get Involved) for the current schedule.</li>" +
+      "<li><strong>CPL Implementation Guide</strong> &mdash; " + memoLink(MAP_LINKS.implementationGuide, MAP_LINKS.implementationGuide) +
+        " &mdash; a comprehensive guide to building, scaling, and institutionalizing CPL on the MAP platform.</li>" +
+      "<li><strong>Counselor Resources Hub</strong> &mdash; " + memoLink(MAP_LINKS.counselorHub, MAP_LINKS.counselorHub) +
+        " &mdash; CPL policy, standard operating procedures, and transfer guides for counselors.</li>" +
+      "<li><strong>MAP website</strong> &mdash; " + memoLink(site, site) +
+        " &mdash; the central hub for all CPL resources. For support, email " +
+        '<a href="mailto:' + esc(MAP_LINKS.supportEmail) + '">' + esc(MAP_LINKS.supportEmail) + "</a>.</li>";
+    return "<h2>Technical Assistance</h2>" +
+      "<p>The MAP team and the Chancellor&#39;s Office provide ongoing support to help institutions implement CPL. " +
+      "Technical assistance is delivered through the CPL Implementation Guide, regional CPL training events, by-request " +
+      "support to regional consortia, MAP Office Hours, and IEPI Partnership Resource Team support.</p>" +
+      "<ul>" + lis + "</ul>" +
+      "<p><strong>Contacts:</strong> Mari Estrada, Dean, California Community Colleges Chancellor&#39;s Office; " +
+      "Terence Nelson, Executive Director, Mapping Articulated Pathways (MAP).</p>";
   }
   function memoReporting(m) {
     return "<h2>Outcomes Reporting</h2><p>Outcome tracking will occur primarily through the Mapping Articulated Pathways " +
@@ -4306,7 +4397,13 @@
       "investment supports shared technology, coordinated professional development and technical assistance, and " +
       "student-centered policies and procedures &mdash; aligned with Vision 2030, the Chancellor&#39;s Office Workplan, " +
       "and the California Master Plan for Career Education. To maximize impact, the distribution of funds is aligned with " +
-      "systemwide expectations for progress, transparency, and return on investment.</p>";
+      "systemwide expectations for progress, transparency, and return on investment.</p>" +
+      "<p>This 2026-27 implementation funding builds on the <strong>$50,000</strong> CPL implementation seed grant the " +
+      "Chancellor&#39;s Office provided to each participating college and noncredit institution in 2025-26 (memo " +
+      essMemoRef() + "), which launched local CPL work toward three systemwide priority outcomes: " +
+      "(1) uploading Joint Services Transcripts for enrolled veterans; (2) adopting or adapting statewide credit " +
+      "recommendations; and (3) proactively identifying eligible students and documenting the CPL they earn in the " +
+      "Mapping Articulated Pathways (MAP) platform.</p>";
   }
   // Assemble the document for the chosen type. Body sections are shared; only the
   // header/greeting/closing framing differs.
@@ -4324,14 +4421,14 @@
         '<div class="fld"><span class="lab">TO:</span> ' + toList.map(esc).join("; ") + "</div>" +
         '<div class="fld"><span class="lab">FROM:</span> Office of the Vice Chancellor, Academic Affairs</div>' +
         '<div class="fld"><span class="lab">RE:</span> ' + re + "</div></div>" +
-        body + memoAllocation(m, true) + memoReporting(m) +
+        body + memoAllocation(m, true) + memoTechAssist(m) + memoReporting(m) +
         '<p>For questions regarding this memorandum, please contact the CPL Initiative team.</p>' +
         '<div class="cc"><span class="lab">cc:</span> Chancellor; Deputy Chancellor; Executive Vice Chancellor of Finance ' +
         "and Strategic Initiatives; Vice Chancellors</div>";
     }
     if (docType === "letter") {
       return memoMasthead() + "<p>" + esc(todayLong()) + "</p><p>Dear Colleague,</p>" +
-        body + memoAllocation(m, false) + memoReporting(m) +
+        body + memoAllocation(m, false) + memoTechAssist(m) + memoReporting(m) +
         '<div class="sig"><p>Sincerely,</p><p><strong>Office of the Vice Chancellor, Academic Affairs</strong><br>' +
         "California Community Colleges Chancellor&#39;s Office</p></div>";
     }
@@ -4344,7 +4441,7 @@
     return '<h1>' + esc(m.area.full) + " Implementation Funding</h1>" +
       '<p style="text-align:center;color:#5C5C55;">' + esc(m.projectLabel) + " &middot; " + esc(m.window) +
       " &middot; " + esc(todayLong()) + "</p>" +
-      body + memoAllocation(m, true) + memoReporting(m);
+      body + memoAllocation(m, true) + memoTechAssist(m) + memoReporting(m);
   }
 
   // ── report sub-view + doc-type toolbar ────────────────────────────────
