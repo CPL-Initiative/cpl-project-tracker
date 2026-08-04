@@ -1,0 +1,285 @@
+{
+  "_college": "American River College",
+  "_source": "credential_reference_data.js + coci_programs_data.js + kb/reference/coci_program_course_file.csv.gz",
+  "_note": "program->course join is a LOWER BOUND (partial program_course_file coverage); corroborate degrees vs the sponsor rollup + COCI program titles.",
+  "totals": {
+    "sponsors": 5,
+    "exhibits": 149,
+    "distinct_courses": 149,
+    "degree_programs_proven": 11
+  },
+  "sponsors": [
+    {
+      "sponsor": "NorCAL Carpenters (CTCNC)",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "exhibits": 120,
+      "courses": 120
+    },
+    {
+      "sponsor": "Iron Workers",
+      "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+      "exhibits": 16,
+      "courses": 16
+    },
+    {
+      "sponsor": "Elevator (NEIEP)",
+      "issuer": "National Elevator Industry Educational Program (NEIEP)",
+      "exhibits": 9,
+      "courses": 9
+    },
+    {
+      "sponsor": "Plumbers/Pipefitters/Sheet Metal (UA)",
+      "issuer": "United Association (UA) Local 342",
+      "exhibits": 3,
+      "courses": 3
+    },
+    {
+      "sponsor": "Electrical (IBEW)",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "exhibits": 1,
+      "courses": 1
+    }
+  ],
+  "degree_programs_with_cpl": [
+    {
+      "title": "Ironworkers Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0956.40",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Mill and Cabinet Maker Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.50",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Pile Driver Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.10",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Millwright Apprenticeship",
+      "award": "A.S. Degree",
+      "top": "0945.00",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Carpenter Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.10",
+      "cpl_courses": 14
+    },
+    {
+      "title": "Drywall/Lathing Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.80",
+      "cpl_courses": 13
+    },
+    {
+      "title": "Acoustical Installer Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.10",
+      "cpl_courses": 9
+    },
+    {
+      "title": "Elevator Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.00",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Sheet Metal Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0956.40",
+      "cpl_courses": 2
+    },
+    {
+      "title": "Electrical Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0952.20",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Sheet Metal Service Technician Apprenticeship",
+      "award": "A.A. Degree",
+      "top": "0956.40",
+      "cpl_courses": 1
+    }
+  ],
+  "certificate_programs_with_cpl": [
+    {
+      "title": "Millwright Level I",
+      "cpl_courses": 17
+    },
+    {
+      "title": "Millwright Level II",
+      "cpl_courses": 17
+    },
+    {
+      "title": "Millwright Level III",
+      "cpl_courses": 17
+    },
+    {
+      "title": "Ironworkers Apprenticeship",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Mill and Cabinet Maker Apprenticeship",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Ironworkers Apprenticeship Level I",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Ironworkers Apprenticeship Level II",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Ironworkers Apprenticeship Level III",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Mill and Cabinet Maker Level I",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Mill and Cabinet Maker Level II",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Mill and Cabinet Maker Level III",
+      "cpl_courses": 16
+    },
+    {
+      "title": "Millwright Apprenticeship",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Pile Driver Apprenticeship",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Pile Driver Level I",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Pile Driver Level II",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Pile Driver Level III",
+      "cpl_courses": 15
+    },
+    {
+      "title": "Carpenter Apprenticeship",
+      "cpl_courses": 14
+    },
+    {
+      "title": "Carpenter Apprenticeship Level II",
+      "cpl_courses": 14
+    },
+    {
+      "title": "Carpenter Apprenticeship Level III",
+      "cpl_courses": 14
+    },
+    {
+      "title": "Carpenter Apprenticeship Level I",
+      "cpl_courses": 14
+    },
+    {
+      "title": "Drywall/Lathing Apprenticeship",
+      "cpl_courses": 13
+    },
+    {
+      "title": "Drywall/Lathing Level I",
+      "cpl_courses": 13
+    },
+    {
+      "title": "Drywall/Lathing Level II",
+      "cpl_courses": 13
+    },
+    {
+      "title": "Drywall/Lathing Level III",
+      "cpl_courses": 13
+    },
+    {
+      "title": "Acoustical Installer Apprenticeship",
+      "cpl_courses": 10
+    },
+    {
+      "title": "Acoustical Installer Level I",
+      "cpl_courses": 10
+    },
+    {
+      "title": "Acoustical Installer Level II",
+      "cpl_courses": 10
+    },
+    {
+      "title": "Acoustical Installer Level III",
+      "cpl_courses": 10
+    },
+    {
+      "title": "Elevator Apprenticeship Level III",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Elevator Apprenticeship",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Elevator Apprenticeship Level I",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Elevator Apprenticeship Level II",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Elevator Apprenticeship Level IV",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Office Modular Systems Apprenticeship",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Office Modular Systems Level I",
+      "cpl_courses": 8
+    },
+    {
+      "title": "Shingler",
+      "cpl_courses": 4
+    },
+    {
+      "title": "Sheet Metal Apprenticeship",
+      "cpl_courses": 2
+    },
+    {
+      "title": "Electrical Apprenticeship",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Sheet Metal Service Technician Apprenticeship",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Electrical Apprenticeship Level I",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Electrical Apprenticeship Level II",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Electrical Apprenticeship Level III",
+      "cpl_courses": 1
+    },
+    {
+      "title": "Electrical Apprenticeship Level IV",
+      "cpl_courses": 1
+    }
+  ]
+}
