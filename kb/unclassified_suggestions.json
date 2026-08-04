@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-07-13T20:31:59Z",
- "count": 58,
+ "_generated_at": "2026-08-04T09:13:46Z",
+ "count": 59,
  "suggestions": {
   "ARMEN 1: Beginning Armenian": [
    {
@@ -563,6 +563,16 @@
     "id": "SPAN 110",
     "title": "Elementary Spanish II",
     "code": "SPAN 2"
+   }
+  ],
+  "WELD 770B (Non-Credit) Advanced Welding": [
+   {
+    "kind": "course",
+    "title": "ADVANCED WELDING",
+    "code": "WELD 770B",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
    }
   ]
  }

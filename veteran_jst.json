@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-08-03T15:22:23.867014+00:00",
+  "scraped_at": "2026-08-04T09:11:45.829116+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26482,
+    "jst": 26495,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 123,
+      "jst": 124,
       "star": false
     },
     "Merced College": {
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 322,
+      "jst": 323,
       "star": true
     },
     "San Diego Mesa College": {
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 495,
+      "jst": 496,
       "star": false
     },
     "West Los Angeles College": {
@@ -127,12 +127,12 @@
     },
     "Barstow Community College": {
       "vets": 106,
-      "jst": 135,
+      "jst": 139,
       "star": true
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 368,
+      "jst": 366,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -142,7 +142,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 439,
+      "jst": 440,
       "star": true
     },
     "Cabrillo College": {
@@ -197,7 +197,7 @@
     },
     "Fullerton College": {
       "vets": 291,
-      "jst": 560,
+      "jst": 561,
       "star": true
     },
     "Solano Community College": {
@@ -262,7 +262,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 154,
+      "jst": 155,
       "star": true
     },
     "Golden West College": {
@@ -292,7 +292,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 120,
+      "jst": 121,
       "star": true
     },
     "Lassen College": {
@@ -417,7 +417,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 166,
+      "jst": 167,
       "star": true
     },
     "Los Medanos College": {
@@ -480,14 +480,14 @@
       "jst": 132,
       "star": true
     },
+    "Sacramento City College": {
+      "vets": 203,
+      "jst": 95,
+      "star": false
+    },
     "Cuyamaca College": {
       "vets": 130,
       "jst": 94,
-      "star": false
-    },
-    "Sacramento City College": {
-      "vets": 203,
-      "jst": 92,
       "star": false
     },
     "Santa Barbara City College": {

@@ -4,17 +4,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-03",
+ "as_of": "2026-08-04",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43203,
-  "pa": 40533,
+  "pe": 43214,
+  "pa": 40543,
   "p2": 4793,
   "p3": 16829,
   "pp": 5,
-  "pe_u": 1354526.95,
-  "pa_u": 241894.65,
+  "pe_u": 1354967.45,
+  "pa_u": 242078.15,
   "p3_u": 103138.95,
   "pp_u": 25.0
  },
@@ -75,10 +75,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Barstow": {
-   "pe": 133,
-   "pe_u": 4759.0,
-   "pa": 133,
-   "pa_u": 1889.0,
+   "pe": 137,
+   "pe_u": 4904.0,
+   "pa": 137,
+   "pa_u": 1933.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -108,10 +108,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cabrillo": {
-   "pe": 211,
-   "pe_u": 8776.5,
-   "pa": 206,
-   "pa_u": 1249.5,
+   "pe": 212,
+   "pe_u": 8779.5,
+   "pa": 207,
+   "pa_u": 1252.5,
    "p2": 17,
    "p3": 44,
    "p3_u": 258.5,
@@ -174,10 +174,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Chaffey": {
-   "pe": 1490,
-   "pe_u": 32036.0,
-   "pa": 1484,
-   "pa_u": 18432.5,
+   "pe": 1491,
+   "pe_u": 32039.0,
+   "pa": 1485,
+   "pa_u": 18435.5,
    "p2": 15,
    "p3": 32,
    "p3_u": 240.0,
@@ -275,10 +275,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cuesta": {
-   "pe": 99,
-   "pe_u": 4113.0,
-   "pa": 6,
-   "pa_u": 63.5,
+   "pe": 100,
+   "pe_u": 4113.5,
+   "pa": 7,
+   "pa_u": 66.0,
    "p2": null,
    "p2_suppressed": true,
    "p3": null,
@@ -529,10 +529,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 1860,
-   "pe_u": 33198.0,
-   "pa": 1827,
-   "pa_u": 28429.0,
+   "pe": 1861,
+   "pe_u": 33229.0,
+   "pa": 1828,
+   "pa_u": 28435.0,
    "p2": 1309,
    "p3": 1736,
    "p3_u": 28060.0,
@@ -598,7 +598,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 806,
    "pe_u": 36329.5,
    "pa": 806,
-   "pa_u": 5520.5,
+   "pa_u": 5628.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -773,10 +773,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Norco College": {
-   "pe": 710,
-   "pe_u": 24236.5,
-   "pa": 709,
-   "pa_u": 6086.0,
+   "pe": 711,
+   "pe_u": 24282.5,
+   "pa": 710,
+   "pa_u": 6097.0,
    "p2": 150,
    "p3": 438,
    "p3_u": 3957.0,
@@ -806,10 +806,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Oxnard": {
-   "pe": 153,
-   "pe_u": 8364.0,
-   "pa": 152,
-   "pa_u": 608.0,
+   "pe": 154,
+   "pe_u": 8401.0,
+   "pa": 153,
+   "pa_u": 612.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -872,10 +872,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Reedley College": {
-   "pe": 123,
-   "pe_u": 4571.5,
-   "pa": 106,
-   "pa_u": 520.5,
+   "pe": 124,
+   "pe_u": 4589.5,
+   "pa": 107,
+   "pa_u": 522.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -894,8 +894,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Sacramento City": {
-   "pe": 59,
-   "pe_u": 2298.0,
+   "pe": 60,
+   "pe_u": 2340.0,
    "pa": 0,
    "pa_u": 0.0,
    "p2": 0,
@@ -1004,10 +1004,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santa Ana": {
-   "pe": 448,
-   "pe_u": 16225.0,
-   "pa": 437,
-   "pa_u": 1958.2,
+   "pe": 446,
+   "pe_u": 16184.0,
+   "pa": 435,
+   "pa_u": 1950.2,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1041,10 +1041,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santa Rosa": {
-   "pe": 438,
-   "pe_u": 18840.0,
-   "pa": 435,
-   "pa_u": 1740.0,
+   "pe": 439,
+   "pe_u": 18996.0,
+   "pa": 436,
+   "pa_u": 1744.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1121,7 +1121,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 571,
    "pe_u": 37156.0,
    "pa": 552,
-   "pa_u": 2760.0,
+   "pa_u": 2764.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1274,18 +1274,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1354050.45,
-   "pa_u": 241894.65,
+   "pe_u": 1354490.95,
+   "pa_u": 242078.15,
    "p3_u": 103138.95
   },
   "map": {
-   "pe_u": 1361422.95,
-   "pa_u": 242558.15,
+   "pe_u": 1361867.45,
+   "pa_u": 242745.65,
    "p3_u": 103163.95
   },
   "ratio": {
    "pe_u": 1.0054,
-   "pa_u": 1.0027,
+   "pa_u": 1.0028,
    "p3_u": 1.0002
   }
  },
@@ -1384,8 +1384,8 @@ window.CPL_FUNDING_PERF = {
   "Palomar": false,
   "LA City": false,
   "Ohlone": true,
-  "Cuyamaca": false,
   "Sacramento City": false,
+  "Cuyamaca": false,
   "Santa Barbara": true,
   "Gavilan": false,
   "Columbia": false,
@@ -1406,7 +1406,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-03",
+ "vet_star_as_of": "2026-08-04",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };
