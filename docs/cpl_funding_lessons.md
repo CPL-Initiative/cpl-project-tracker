@@ -2341,3 +2341,35 @@ $1M to colleges, so a per-college $ lacks a funded basis) — then add each coll
 to `cpl_funding_data.js` (Malone's 115-row table is in the 2026-08-04 chat) and render the
 column. #3b: gate `feederCarveout()` disbursement on `baselineGate()` per feeder, held + rolled
 forward, never redistributed.
+
+## 2026-08-04 — SkyBox cont. (#976): the advisory NC-FTES column shipped
+
+Sam chose **NC FTES (visibility)** for the advisory column. Built + merged as #976.
+
+**(a) Learned.**
+- **A whitelisting `.map()` silently drops new data-file fields from the render.** I added
+  `noncredit_ftes` to all 115 college rows and wrote the render — and it did NOT appear, while a
+  sibling change (the `display` override) DID. Root cause: `rowsFiltered()` projects each college
+  into a NEW object with an EXPLICIT field whitelist, so `noncredit_ftes` never reached the row.
+  (`display` survived only because `dispName()` looks it up from `base()` by the raw key, not from
+  the row copy.) The fix is one line — add the field to the projection — but the *lesson* is: when a
+  new field won't render, check for a row-copy projection before debugging the emitter.
+- **Cross-validate a name-match with a field you already trust.** Matching Malone's 116-row sheet to
+  the model's 115 colleges risked wrong-college NC values. The script aborts on any unmatched, AND the
+  model's own `credit_ftes` equals Malone's Credit-FTES column for the same row (Mt San Antonio
+  26,804.41, SF 12,951.79) — so a mis-match would show as a credit-FTES disagreement, not just a
+  silent bad NC value. Use an independent shared column as the match's checksum.
+- **When two of the user's standing rules collide, surface it — don't silently pick.** Sam asked for a
+  "column" AND has a hard "no horizontal scroll" rule. I shipped the lower-risk sub-line (no width
+  cost, delivers the visibility) and told him plainly he can promote it to a standalone sortable
+  column if he prefers. Deliver the value, name the tradeoff, leave the final form to him.
+- **`display` override, not a key rename, for a display-name fix.** "De Anza → DeAnza" is display-only;
+  the `college` key drives `perfFor()`/elig joins against the MAP feed, so renaming it would break
+  matching. Added `"display": "DeAnza"`; key unchanged. Chabot stayed "Chabot" (the alias was
+  lookup-only — the NC value 152.79 was already correct).
+
+**(b) State.** ALL 7 of Sam's tweaks + the NC rehaul are live (#973–#976). cpl_funding **555** green.
+Only #3b (NC gate) deferred as inert-today. Sam: *"From tweaks to rehaul, this was a big lift… Looking good."*
+
+**(c) Roadmap / (d) next.** The funding model itself is done — next real step is the **Budget
+reconciliation** (fold Implementation Funding in as a Budget sub-view; single-source wiring #949 landed).

@@ -9,9 +9,16 @@ related:
 
 # You are the next Implementation-Funding session
 
-## ✅ JUST SHIPPED (2026-08-04, SkyBox) — Sam's funding-model tweaks, 6 of 7 done
+## ✅ JUST SHIPPED (2026-08-04, SkyBox) — ALL of Sam's funding-model tweaks + the NC rehaul
 
-Sam sent 7 display/report tweaks + a big NC question. Shipped in two PRs:
+Sam sent 7 display/report tweaks + a big NC question. Shipped in **four PRs (#973/#974/#975/#976)**:
+- **#976** — #5 the **advisory noncredit-FTES column**: every college's own MIS 2025-26 NC FTES
+  as a compact "+N NC FTES" companion line under its size cell (sub-line, not a 12th column, to
+  keep the no-scroll rule). Matched all 115 via a verify-or-abort script (model `credit_ftes` ==
+  Malone's Credit-FTES column cross-confirmed it). Advisory only — NC $1M stays with the 4
+  campuses. Also **De Anza → "DeAnza"** display override (key unchanged); Chabot stays "Chabot".
+  ⚠ Gotcha: `rowsFiltered()` field-whitelists the row copy, so a NEW data-file field must be
+  added there or it silently won't render.
 - **#973** — #4 award boxes reordered **Min · Avg · Max**; Report: new **Recommended
   Strategies** section (per-priority, omitted when empty), division masthead
   **Educational Services & Support → Academic Affairs**, and **dropped the $35M gross**
@@ -35,19 +42,16 @@ noise). ⚠ **Calbright's 21,438 NC FTES is impossible** (2,484 headcount → 8.
 ask Malone before it drives any dollar; the feeder split is by HEADCOUNT (keeps Calbright
 small ~$33K), do NOT switch to NC-FTES split without excluding it.
 
-### ⬜ STILL TO BUILD (the NC cluster — the immediate next step, before Budget)
-- **#5 — advisory NC column** on the 115-college table. ❓**OPEN with Sam:** show NC **FTES**
-  (visibility — my rec) vs a recommended **$ amount** (his original words) — but we chose NOT
-  to distribute the $1M to colleges, so a per-college $ has no funded basis. Needs his call on
-  the column's content, + each college's MIS NC FTES added to the data file (Malone's 115-row
-  table is in the 2026-08-04 chat).
+### ⬜ STILL OPEN (one small deferred item — then the Budget reconciliation is the real next step)
 - **#3b — gate the NC carve-out** on the 2 baseline quals (coordinator + participation),
   fail-open, held-not-redistributed — mirrors the college gate exactly (JST auto-excluded, it
-  isn't a gate). ⚠ Fails open + feeders may not be in the coordinator feed → toothless until
-  their signals land. Refs: `feeders()`, `feederCarveout()`, feeder-support section ~L4096;
-  college gate `baselineGate()`.
+  isn't a gate). **Deferred (not shipped): low value TODAY** — the 4 feeders aren't in the
+  coordinator feed, so the gate is fail-open/inert until their signals land. Refs: `feeders()`,
+  `feederCarveout()`, feeder-support section ~L4096; college gate `baselineGate()`.
+- **THE next real step → the Budget reconciliation** (fold Implementation Funding in as a Budget
+  sub-view; see the section below). Everything Sam asked for on the funding model itself is done.
 
-Moniker: **SkyBox** (reworked the funding pool boxes). Claim your own if you like.
+Moniker: **SkyBox** (reworked the funding pool boxes + NC representation). Claim your own if you like.
 
 ---
 
