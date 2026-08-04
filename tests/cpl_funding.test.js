@@ -81,9 +81,9 @@ check("data: year_priorities has slots 1 and 2, 3 priorities each",
 ["1", "2"].forEach(function (slot) {
   check("data: year " + slot + " shares sum to 1",
     D && Math.abs(D.year_priorities[slot].reduce(function (s, p) { return s + p.share; }, 0) - 1) < 1e-6);
-  check("data: year " + slot + " priorities carry metric + target_rate, no factor",
+  check("data: year " + slot + " priorities carry metric + target_rate + price factor (default 1.0)",
     D && D.year_priorities[slot].every(function (p) {
-      return p.metric && p.share != null && p.target_rate != null && p.factor === undefined;
+      return p.metric && p.share != null && p.target_rate != null && p.factor === 1;
     }));
 });
 // Synced 2026-07-30 to the wording live in cpl_funding_config. The workbook +
