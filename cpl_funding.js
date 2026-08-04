@@ -3341,7 +3341,7 @@
       var r = {
         order: c.order, college: c.college, district: c.district, county: c.county,
         headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
-        credit_ftes: c.credit_ftes, size_pct: sizePct(c),
+        credit_ftes: c.credit_ftes, noncredit_ftes: c.noncredit_ftes, size_pct: sizePct(c),
         working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
         rural: isRural(c)
       };
@@ -3476,7 +3476,16 @@
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
       '<td title="' + esc(sizeCellTitle(c)) + '">' +
-        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</td>" +
+        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) +
+        // Advisory noncredit FTES companion line (Sam, 2026-08-04 — "targeted +
+        // advisory NC column"): the college's OWN noncredit program scale (MIS
+        // 2025-26), shown for visibility so a large embedded NC program (e.g. SF)
+        // is not invisible. It is NOT part of the credit-FTES allocation and earns
+        // nothing here — the $1M NC support stays with the 4 standalone campuses.
+        (c.noncredit_ftes != null && c.noncredit_ftes > 0
+          ? '<span class="sub" title="Noncredit FTES (MIS 2025-26) — this college&#39;s own noncredit program. Advisory: shown for scale, not part of the credit-FTES allocation and earns no funding here.">+' +
+            fmtInt(c.noncredit_ftes) + " NC FTES</span>"
+          : "") + "</td>" +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +

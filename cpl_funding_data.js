@@ -216,7 +216,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004208628,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3111.6
+   "credit_ftes": 3111.6,
+   "noncredit_ftes": 43.38
   },
   {
    "order": 7,
@@ -228,7 +229,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004703527,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3833.0
+   "credit_ftes": 3833.0,
+   "noncredit_ftes": 62.17
   },
   {
    "order": 14,
@@ -240,7 +242,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002758884,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5862.2
+   "credit_ftes": 5862.2,
+   "noncredit_ftes": 152.79
   },
   {
    "order": 54,
@@ -252,7 +255,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006053974,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5604.23
+   "credit_ftes": 5604.23,
+   "noncredit_ftes": 110.62
   },
   {
    "order": 55,
@@ -264,7 +268,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001804038,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4070.7
+   "credit_ftes": 4070.7,
+   "noncredit_ftes": 72.14
   },
   {
    "order": 63,
@@ -276,7 +281,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00472299,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3887.04
+   "credit_ftes": 3887.04,
+   "noncredit_ftes": 17.33
   },
   {
    "order": 75,
@@ -288,7 +294,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006544107,
    "county_pop_pct": 0.03285908,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7585.0
+   "credit_ftes": 7585.0,
+   "noncredit_ftes": 185.6
   },
   {
    "order": 8,
@@ -300,7 +307,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006792748,
    "county_pop_pct": 0.00662626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10844.47
+   "credit_ftes": 10844.47,
+   "noncredit_ftes": 428.83
   },
   {
    "order": 21,
@@ -312,7 +320,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004828642,
    "county_pop_pct": 0.028617569,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5369.82
+   "credit_ftes": 5369.82,
+   "noncredit_ftes": 173.71
   },
   {
    "order": 30,
@@ -324,7 +333,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010800001,
    "county_pop_pct": 0.028617569,
    "hc_vintage": "2025-26",
-   "credit_ftes": 14707.67
+   "credit_ftes": 14707.67,
+   "noncredit_ftes": 77.47
   },
   {
    "order": 58,
@@ -336,7 +346,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005201604,
    "county_pop_pct": 0.028617569,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7917.15
+   "credit_ftes": 7917.15,
+   "noncredit_ftes": 60.67
   },
   {
    "order": 53,
@@ -348,7 +359,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003677585,
    "county_pop_pct": 0.007368103,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3860.86
+   "credit_ftes": 3860.86,
+   "noncredit_ftes": 63.71
   },
   {
    "order": 17,
@@ -360,7 +372,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00769159,
    "county_pop_pct": 0.02704262,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7590.0
+   "credit_ftes": 7590.0,
+   "noncredit_ftes": 34.53
   },
   {
    "order": 37,
@@ -372,7 +385,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.017925594,
    "county_pop_pct": 0.02704262,
    "hc_vintage": "2025-26",
-   "credit_ftes": 21916.87
+   "credit_ftes": 21916.87,
+   "noncredit_ftes": 370.58
   },
   {
    "order": 83,
@@ -384,7 +398,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.007358744,
    "county_pop_pct": 0.02704262,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7356.47
+   "credit_ftes": 7356.47,
+   "noncredit_ftes": 284.64
   },
   {
    "order": 112,
@@ -398,7 +413,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002618675,
    "county_pop_pct": 0.02704262,
    "hc_vintage": "2025-26",
-   "credit_ftes": 2242.89
+   "credit_ftes": 2242.89,
+   "noncredit_ftes": 84.72
   },
   {
    "order": 82,
@@ -411,7 +427,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003357847,
    "county_pop_pct": 0.004807882,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4296.33
+   "credit_ftes": 4296.33,
+   "noncredit_ftes": 148.34
   },
   {
    "order": 44,
@@ -425,7 +442,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004653084,
    "county_pop_pct": 0.004547414,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3966.9
+   "credit_ftes": 3966.9,
+   "noncredit_ftes": 27.58
   },
   {
    "order": 5,
@@ -437,7 +455,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.018338672,
    "county_pop_pct": 0.024911485,
    "hc_vintage": "2025-26",
-   "credit_ftes": 21292.84
+   "credit_ftes": 21292.84,
+   "noncredit_ftes": 315.39
   },
   {
    "order": 13,
@@ -450,7 +469,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004566894,
    "county_pop_pct": 0.024911485,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3686.49
+   "credit_ftes": 3686.49,
+   "noncredit_ftes": 29.54
   },
   {
    "order": 109,
@@ -463,7 +483,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003692678,
    "county_pop_pct": 0.024911485,
    "hc_vintage": "2025-26",
-   "credit_ftes": 2434.52
+   "credit_ftes": 2434.52,
+   "noncredit_ftes": 0
   },
   {
    "order": 113,
@@ -475,7 +496,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003448009,
    "county_pop_pct": 0.004078964,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3361.17
+   "credit_ftes": 3361.17,
+   "noncredit_ftes": 243.72
   },
   {
    "order": 56,
@@ -488,7 +510,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001505351,
    "county_pop_pct": null,
    "hc_vintage": "2025-26",
-   "credit_ftes": 1633.16
+   "credit_ftes": 1633.16,
+   "noncredit_ftes": 60.76
   },
   {
    "order": 4,
@@ -500,7 +523,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00798551,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11698.64
+   "credit_ftes": 11698.64,
+   "noncredit_ftes": 115.67
   },
   {
    "order": 11,
@@ -512,7 +536,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.015113884,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 13528.6
+   "credit_ftes": 13528.6,
+   "noncredit_ftes": 2022.5
   },
   {
    "order": 12,
@@ -524,7 +549,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.014350087,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 17753.91
+   "credit_ftes": 17753.91,
+   "noncredit_ftes": 640.59
   },
   {
    "order": 16,
@@ -536,7 +562,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00686464,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9532.72
+   "credit_ftes": 9532.72,
+   "noncredit_ftes": 225.61
   },
   {
    "order": 20,
@@ -548,7 +575,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002421669,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2022-23",
-   "credit_ftes": 2591.34
+   "credit_ftes": 2591.34,
+   "noncredit_ftes": 31.21
   },
   {
    "order": 31,
@@ -560,7 +588,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.025486508,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 19065.69
+   "credit_ftes": 19065.69,
+   "noncredit_ftes": 1138.17
   },
   {
    "order": 32,
@@ -572,7 +601,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012144093,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2022-23",
-   "credit_ftes": 12613.2
+   "credit_ftes": 12613.2,
+   "noncredit_ftes": 1.54
   },
   {
    "order": 40,
@@ -584,7 +614,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009758965,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10663.48
+   "credit_ftes": 10663.48,
+   "noncredit_ftes": 2911.05
   },
   {
    "order": 46,
@@ -596,7 +627,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012295422,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9609.71
+   "credit_ftes": 9609.71,
+   "noncredit_ftes": 791.18
   },
   {
    "order": 47,
@@ -608,7 +640,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008341393,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6405.29
+   "credit_ftes": 6405.29,
+   "noncredit_ftes": 96.94
   },
   {
    "order": 48,
@@ -620,7 +653,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009625509,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6777.9
+   "credit_ftes": 6777.9,
+   "noncredit_ftes": 693.02
   },
   {
    "order": 49,
@@ -632,7 +666,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012403458,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 12216.86
+   "credit_ftes": 12216.86,
+   "noncredit_ftes": 607.73
   },
   {
    "order": 50,
@@ -644,7 +679,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004873525,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3008.91
+   "credit_ftes": 3008.91,
+   "noncredit_ftes": 249.38
   },
   {
    "order": 51,
@@ -656,7 +692,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009136568,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10570.39
+   "credit_ftes": 10570.39,
+   "noncredit_ftes": 233.75
   },
   {
    "order": 52,
@@ -668,7 +705,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013016323,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10920.37
+   "credit_ftes": 10920.37,
+   "noncredit_ftes": 991.68
   },
   {
    "order": 57,
@@ -680,7 +718,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.015340283,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 22535.85
+   "credit_ftes": 22535.85,
+   "noncredit_ftes": 518.14
   },
   {
    "order": 70,
@@ -692,7 +731,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.03325555,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 26804.41
+   "credit_ftes": 26804.41,
+   "noncredit_ftes": 10829.3
   },
   {
    "order": 80,
@@ -704,7 +744,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.016491737,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 23347.4
+   "credit_ftes": 23347.4,
+   "noncredit_ftes": 1470.35
   },
   {
    "order": 84,
@@ -716,7 +757,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.014773095,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11693.54
+   "credit_ftes": 11693.54,
+   "noncredit_ftes": 1568.27
   },
   {
    "order": 99,
@@ -728,7 +770,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.014582444,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 19453.51
+   "credit_ftes": 19453.51,
+   "noncredit_ftes": 877.74
   },
   {
    "order": 114,
@@ -740,7 +783,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008345762,
    "county_pop_pct": 0.235164356,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6016.22
+   "credit_ftes": 6016.22,
+   "noncredit_ftes": 234.7
   },
   {
    "order": 59,
@@ -752,7 +796,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005458983,
    "county_pop_pct": 0.004246799,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4234.67
+   "credit_ftes": 4234.67,
+   "noncredit_ftes": 46.54
   },
   {
    "order": 60,
@@ -764,7 +809,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003903189,
    "county_pop_pct": 0.005024089,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3374.55
+   "credit_ftes": 3374.55,
+   "noncredit_ftes": 366.48
   },
   {
    "order": 61,
@@ -776,7 +822,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.003677585,
    "county_pop_pct": 0.003677491,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3729.36
+   "credit_ftes": 3729.36,
+   "noncredit_ftes": 145.91
   },
   {
    "order": 62,
@@ -788,7 +835,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008627767,
    "county_pop_pct": 0.006908661,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11311.3
+   "credit_ftes": 11311.3,
+   "noncredit_ftes": 508.8
   },
   {
    "order": 43,
@@ -800,7 +848,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006031334,
    "county_pop_pct": 0.008719989,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8301.22
+   "credit_ftes": 8301.22,
+   "noncredit_ftes": 109.44
   },
   {
    "order": 67,
@@ -812,7 +861,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00429601,
    "county_pop_pct": 0.008719989,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5681.07
+   "credit_ftes": 5681.07,
+   "noncredit_ftes": 178.69
   },
   {
    "order": 72,
@@ -824,7 +874,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002976147,
    "county_pop_pct": 0.003319299,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3722.51
+   "credit_ftes": 3722.51,
+   "noncredit_ftes": 29.33
   },
   {
    "order": 18,
@@ -836,7 +887,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008263147,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5342.65
+   "credit_ftes": 5342.65,
+   "noncredit_ftes": 325.38
   },
   {
    "order": 27,
@@ -848,7 +900,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009554412,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 12850.71
+   "credit_ftes": 12850.71,
+   "noncredit_ftes": 41.62
   },
   {
    "order": 38,
@@ -860,7 +913,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.0122561,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 15875.04
+   "credit_ftes": 15875.04,
+   "noncredit_ftes": 0
   },
   {
    "order": 41,
@@ -872,7 +926,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008748513,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8832.52
+   "credit_ftes": 8832.52,
+   "noncredit_ftes": 242.16
   },
   {
    "order": 45,
@@ -884,7 +939,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008092752,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2022-23",
-   "credit_ftes": 5754.09
+   "credit_ftes": 5754.09,
+   "noncredit_ftes": 901.97
   },
   {
    "order": 76,
@@ -896,7 +952,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00991665,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 13996.65
+   "credit_ftes": 13996.65,
+   "noncredit_ftes": 256.49
   },
   {
    "order": 87,
@@ -908,7 +965,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.01448116,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2022-23",
-   "credit_ftes": 8580.18
+   "credit_ftes": 8580.18,
+   "noncredit_ftes": 2890.53
   },
   {
    "order": 97,
@@ -920,7 +978,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.030613838,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 16043.58
+   "credit_ftes": 16043.58,
+   "noncredit_ftes": 7817.68
   },
   {
    "order": 101,
@@ -932,7 +991,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013415896,
    "county_pop_pct": 0.078191626,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7047.05
+   "credit_ftes": 7047.05,
+   "noncredit_ftes": 3577.32
   },
   {
    "order": 104,
@@ -944,7 +1004,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012149256,
    "county_pop_pct": 0.014029418,
    "hc_vintage": "2025-26",
-   "credit_ftes": 14544.06
+   "credit_ftes": 14544.06,
+   "noncredit_ftes": 294.98
   },
   {
    "order": 34,
@@ -957,7 +1018,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001087904,
    "county_pop_pct": null,
    "hc_vintage": "2022-23",
-   "credit_ftes": 1098.21
+   "credit_ftes": 1098.21,
+   "noncredit_ftes": 25.62
   },
   {
    "order": 29,
@@ -969,7 +1031,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008385481,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8658.49
+   "credit_ftes": 8658.49,
+   "noncredit_ftes": 907.26
   },
   {
    "order": 69,
@@ -981,7 +1044,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008613468,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9743.03
+   "credit_ftes": 9743.03,
+   "noncredit_ftes": 62.84
   },
   {
    "order": 71,
@@ -993,7 +1057,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010307088,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2025-26",
-   "credit_ftes": 13978.27
+   "credit_ftes": 13978.27,
+   "noncredit_ftes": 319.32
   },
   {
    "order": 73,
@@ -1005,7 +1070,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008234152,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8008.4
+   "credit_ftes": 8008.4,
+   "noncredit_ftes": 100.91
   },
   {
    "order": 78,
@@ -1018,7 +1084,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002570615,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2022-23",
-   "credit_ftes": 1414.04
+   "credit_ftes": 1414.04,
+   "noncredit_ftes": 10.76
   },
   {
    "order": 85,
@@ -1030,7 +1097,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013200222,
    "county_pop_pct": 0.074107178,
    "hc_vintage": "2025-26",
-   "credit_ftes": 18650.89
+   "credit_ftes": 18650.89,
+   "noncredit_ftes": 208.81
   },
   {
    "order": 3,
@@ -1042,7 +1110,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.019562018,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 20744.56
+   "credit_ftes": 20744.56,
+   "noncredit_ftes": 0
   },
   {
    "order": 23,
@@ -1054,7 +1123,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010940606,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11359.02
+   "credit_ftes": 11359.02,
+   "noncredit_ftes": 0
   },
   {
    "order": 35,
@@ -1066,7 +1136,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.007823457,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7835.21
+   "credit_ftes": 7835.21,
+   "noncredit_ftes": 3.7
   },
   {
    "order": 86,
@@ -1078,7 +1149,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013867898,
    "county_pop_pct": 0.050447897,
    "hc_vintage": "2025-26",
-   "credit_ftes": 14386.74
+   "credit_ftes": 14386.74,
+   "noncredit_ftes": 1.51
   },
   {
    "order": 6,
@@ -1091,7 +1163,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002022096,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3019.15
+   "credit_ftes": 3019.15,
+   "noncredit_ftes": 43.22
   },
   {
    "order": 15,
@@ -1103,7 +1176,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.014537164,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 17951.0
+   "credit_ftes": 17951.0,
+   "noncredit_ftes": 229.53
   },
   {
    "order": 22,
@@ -1116,7 +1190,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001589953,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 1687.97
+   "credit_ftes": 1687.97,
+   "noncredit_ftes": 66.95
   },
   {
    "order": 24,
@@ -1128,7 +1203,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004357972,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5038.88
+   "credit_ftes": 5038.88,
+   "noncredit_ftes": 57.39
   },
   {
    "order": 88,
@@ -1140,7 +1216,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009428106,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11992.67
+   "credit_ftes": 11992.67,
+   "noncredit_ftes": 274.36
   },
   {
    "order": 111,
@@ -1152,7 +1229,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010099357,
    "county_pop_pct": 0.061009765,
    "hc_vintage": "2025-26",
-   "credit_ftes": 13946.87
+   "credit_ftes": 13946.87,
+   "noncredit_ftes": 621.33
   },
   {
    "order": 26,
@@ -1164,7 +1242,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005860145,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4901.4
+   "credit_ftes": 4901.4,
+   "noncredit_ftes": 2.89
   },
   {
    "order": 42,
@@ -1176,7 +1255,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008811666,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9099.42
+   "credit_ftes": 9099.42,
+   "noncredit_ftes": 95.68
   },
   {
    "order": 64,
@@ -1188,7 +1268,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008931221,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9580.73
+   "credit_ftes": 9580.73,
+   "noncredit_ftes": 1046.76
   },
   {
    "order": 79,
@@ -1200,7 +1281,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012257689,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 15488.86
+   "credit_ftes": 15488.86,
+   "noncredit_ftes": 476.72
   },
   {
    "order": 90,
@@ -1212,7 +1294,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008753676,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8921.87
+   "credit_ftes": 8921.87,
+   "noncredit_ftes": 0
   },
   {
    "order": 91,
@@ -1224,7 +1307,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012621118,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 16732.18
+   "credit_ftes": 16732.18,
+   "noncredit_ftes": 0
   },
   {
    "order": 92,
@@ -1236,7 +1320,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009652518,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11276.51
+   "credit_ftes": 11276.51,
+   "noncredit_ftes": 0
   },
   {
    "order": 108,
@@ -1248,7 +1333,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.011638469,
    "county_pop_pct": 0.091767477,
    "hc_vintage": "2025-26",
-   "credit_ftes": 16346.82
+   "credit_ftes": 16346.82,
+   "noncredit_ftes": 230.43
   },
   {
    "order": 93,
@@ -1260,7 +1346,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.016992197,
    "county_pop_pct": 0.014179432,
    "hc_vintage": "2025-26",
-   "credit_ftes": 12951.79
+   "credit_ftes": 12951.79,
+   "noncredit_ftes": 3896.56
   },
   {
    "order": 94,
@@ -1272,7 +1359,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.012737098,
    "county_pop_pct": 0.02089284,
    "hc_vintage": "2025-26",
-   "credit_ftes": 17034.4
+   "credit_ftes": 17034.4,
+   "noncredit_ftes": 183.06
   },
   {
    "order": 25,
@@ -1284,7 +1372,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00734802,
    "county_pop_pct": 0.00895206,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7616.77
+   "credit_ftes": 7616.77,
+   "noncredit_ftes": 510.61
   },
   {
    "order": 10,
@@ -1296,7 +1385,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00472299,
    "county_pop_pct": 0.015451023,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4631.23
+   "credit_ftes": 4631.23,
+   "noncredit_ftes": 1.43
   },
   {
    "order": 96,
@@ -1308,7 +1398,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006191799,
    "county_pop_pct": 0.015451023,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8117.66
+   "credit_ftes": 8117.66,
+   "noncredit_ftes": 0.26
   },
   {
    "order": 106,
@@ -1320,7 +1411,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.007166107,
    "county_pop_pct": 0.015451023,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9029.24
+   "credit_ftes": 9029.24,
+   "noncredit_ftes": 1.04
   },
   {
    "order": 2,
@@ -1332,7 +1424,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.008442677,
    "county_pop_pct": 0.01060652,
    "hc_vintage": "2025-26",
-   "credit_ftes": 8995.56
+   "credit_ftes": 8995.56,
+   "noncredit_ftes": 764.94
   },
   {
    "order": 98,
@@ -1344,11 +1437,13 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.01019786,
    "county_pop_pct": 0.01060652,
    "hc_vintage": "2025-26",
-   "credit_ftes": 10973.65
+   "credit_ftes": 10973.65,
+   "noncredit_ftes": 1232.6
   },
   {
    "order": 28,
    "college": "De Anza",
+   "display": "DeAnza",
    "headcount": 29664,
    "district": "Foothill-De Anza Community College District",
    "county": "Santa Clara",
@@ -1357,6 +1452,7 @@ window.CPL_FUNDING = {
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
    "credit_ftes": 16628.07,
+   "noncredit_ftes": 364.64,
    "quarter": true
   },
   {
@@ -1369,7 +1465,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005322747,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2022-23",
-   "credit_ftes": 3189.31
+   "credit_ftes": 3189.31,
+   "noncredit_ftes": 61.25
   },
   {
    "order": 36,
@@ -1382,6 +1479,7 @@ window.CPL_FUNDING = {
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
    "credit_ftes": 11018.64,
+   "noncredit_ftes": 242.66,
    "quarter": true
   },
   {
@@ -1394,7 +1492,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004288463,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5026.01
+   "credit_ftes": 5026.01,
+   "noncredit_ftes": 1591.4
   },
   {
    "order": 65,
@@ -1406,7 +1505,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005038359,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5128.5
+   "credit_ftes": 5128.5,
+   "noncredit_ftes": 254.1
   },
   {
    "order": 95,
@@ -1418,7 +1518,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005176184,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2022-23",
-   "credit_ftes": 2722.08
+   "credit_ftes": 2722.08,
+   "noncredit_ftes": 110.77
   },
   {
    "order": 115,
@@ -1430,7 +1531,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006413431,
    "county_pop_pct": 0.033590935,
    "hc_vintage": "2025-26",
-   "credit_ftes": 6222.71
+   "credit_ftes": 6222.71,
+   "noncredit_ftes": 924.09
   },
   {
    "order": 9,
@@ -1442,7 +1544,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006308176,
    "county_pop_pct": 0.007117036,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7616.71
+   "credit_ftes": 7616.71,
+   "noncredit_ftes": 782.32
   },
   {
    "order": 103,
@@ -1455,7 +1558,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.006050797,
    "county_pop_pct": 0.007834007,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7241.94
+   "credit_ftes": 7241.94,
+   "noncredit_ftes": 132.67
   },
   {
    "order": 105,
@@ -1468,7 +1572,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001697591,
    "county_pop_pct": null,
    "hc_vintage": "2025-26",
-   "credit_ftes": 1725.39
+   "credit_ftes": 1725.39,
+   "noncredit_ftes": 328.56
   },
   {
    "order": 107,
@@ -1480,7 +1585,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005283425,
    "county_pop_pct": 0.015184289,
    "hc_vintage": "2025-26",
-   "credit_ftes": 7328.71
+   "credit_ftes": 7328.71,
+   "noncredit_ftes": 8.43
   },
   {
    "order": 100,
@@ -1492,7 +1598,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.013718158,
    "county_pop_pct": 0.016254165,
    "hc_vintage": "2025-26",
-   "credit_ftes": 13640.19
+   "credit_ftes": 13640.19,
+   "noncredit_ftes": 3009.62
   },
   {
    "order": 66,
@@ -1504,7 +1611,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.010831776,
    "county_pop_pct": 0.01587776,
    "hc_vintage": "2025-26",
-   "credit_ftes": 15549.98
+   "credit_ftes": 15549.98,
+   "noncredit_ftes": 924.67
   },
   {
    "order": 81,
@@ -1516,7 +1624,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00323432,
    "county_pop_pct": 0.012447615,
    "hc_vintage": "2025-26",
-   "credit_ftes": 3558.3
+   "credit_ftes": 3558.3,
+   "noncredit_ftes": 45.46
   },
   {
    "order": 102,
@@ -1528,7 +1637,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.00789932,
    "county_pop_pct": 0.012447615,
    "hc_vintage": "2025-26",
-   "credit_ftes": 11473.97
+   "credit_ftes": 11473.97,
+   "noncredit_ftes": 224.92
   },
   {
    "order": 19,
@@ -1541,7 +1651,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.001904527,
    "county_pop_pct": null,
    "hc_vintage": "2025-26",
-   "credit_ftes": 2077.98
+   "credit_ftes": 2077.98,
+   "noncredit_ftes": 36.6
   },
   {
    "order": 68,
@@ -1553,7 +1664,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.009671583,
    "county_pop_pct": 0.021823474,
    "hc_vintage": "2025-26",
-   "credit_ftes": 12728.22
+   "credit_ftes": 12728.22,
+   "noncredit_ftes": 14.6
   },
   {
    "order": 77,
@@ -1565,7 +1677,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.005097937,
    "county_pop_pct": 0.021823474,
    "hc_vintage": "2025-26",
-   "credit_ftes": 5628.96
+   "credit_ftes": 5628.96,
+   "noncredit_ftes": 74.42
   },
   {
    "order": 110,
@@ -1577,7 +1690,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.0076618,
    "county_pop_pct": 0.021823474,
    "hc_vintage": "2025-26",
-   "credit_ftes": 9996.28
+   "credit_ftes": 9996.28,
+   "noncredit_ftes": 150.72
   },
   {
    "order": 116,
@@ -1589,7 +1703,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.002908624,
    "county_pop_pct": 0.004998434,
    "hc_vintage": "2025-26",
-   "credit_ftes": 2589.18
+   "credit_ftes": 2589.18,
+   "noncredit_ftes": 53.07
   },
   {
    "order": 117,
@@ -1601,7 +1716,8 @@ window.CPL_FUNDING = {
    "headcount_pct": 0.004289655,
    "county_pop_pct": 0.002764679,
    "hc_vintage": "2025-26",
-   "credit_ftes": 4419.1
+   "credit_ftes": 4419.1,
+   "noncredit_ftes": 81.09
   }
  ],
  "footnotes": [
