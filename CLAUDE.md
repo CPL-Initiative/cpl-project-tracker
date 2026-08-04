@@ -569,7 +569,7 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyBox — Implementation Funding: Sam's tweaks (6/7) + the NC decision (2026-08-04, #973/#974 MERGED)
+### SkyBox — Implementation Funding: ALL of Sam's tweaks + the NC rehaul (2026-08-04, #973–#976 MERGED)
 
 Sam's 7 display/report tweaks. **#973:** award boxes → **Min·Avg·Max**; Report gained a
 **Recommended Strategies** section, renamed the division **ESS → Academic Affairs**, dropped
@@ -582,7 +582,12 @@ Suite **545→552**; all mirror to the public page (shared JS). **Big NC questio
 credit column — its FTES sheet shows $236,645 vs $0 for the NC campuses — not shut out), add an
 advisory NC column, DON'T dilute across ~105 colleges. ⚠ **Calbright 21,438 NC FTES is
 impossible** (2,484 heads) — don't let it drive dollars; feeder split stays by headcount.
-**Next: #5 advisory NC column (❓FTES vs $ — ask Sam) + #3b gate the NC carve-out.** Full story:
+**#976 shipped #5:** an advisory per-college **NC-FTES sub-line** under the size cell (a sub-line, not
+a 12th column, to keep no-scroll; matched all 115 via a verify-or-abort script — model `credit_ftes` ==
+Malone's Credit-FTES column cross-confirmed it; **De Anza → "DeAnza"** display override, Chabot stays
+"Chabot"; ⚠ `rowsFiltered()` field-whitelists the row copy, so a new data-file field must be added there).
+Suite 552→555. **Deferred: #3b** (NC gate — inert today, feeders not in the coordinator feed). **Next:
+the Budget reconciliation.** Full story:
 `docs/cpl_funding_lessons.md` §2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
 
 ### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)
