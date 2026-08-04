@@ -9,7 +9,49 @@ related:
 
 # You are the next Implementation-Funding session
 
-## ✅ JUST SHIPPED (2026-08-04, SkyUnit) — the per-priority PRICE FACTOR is live
+## ✅ JUST SHIPPED (2026-08-04, SkyBox) — Sam's funding-model tweaks, 6 of 7 done
+
+Sam sent 7 display/report tweaks + a big NC question. Shipped in two PRs:
+- **#973** — #4 award boxes reordered **Min · Avg · Max**; Report: new **Recommended
+  Strategies** section (per-priority, omitted when empty), division masthead
+  **Educational Services & Support → Academic Affairs**, and **dropped the $35M gross**
+  (Report leads with the available college funding).
+- **#974** — #1 the duplicate $35M boxes **collapse to one editable box** (single source);
+  #2 the hero is now the **INSTITUTION total $25,240,308** ("Available funding to
+  institutions" = college pool + rural + the $1M NC feeder), rural-style 3-way note —
+  ⚠ so raising the feeder carve-out no longer shrinks the hero, it shifts money
+  college→NC *inside* the total; #3a relabel the "Earned so far" card **"…not the noncredit
+  carve-out"** (its ~$1M value was misread as the NC $1M — it's real earned-to-date).
+
+Tests cpl_funding **545 → 552**; public/private 11/11. All mirror to the public page
+automatically (shared `cpl_funding.js`); the Report is private-only.
+
+### The big NC question — Sam DECIDED: "targeted + advisory NC column"
+Keep the **$1M targeted to the 4 standalone NC campuses** (NOCE, SD Cont. Ed, Mt SAC NC,
+Calbright — pure-noncredit institutions that earn **$0** from the credit-FTES pool; SF etc.
+are NOT shut out, they earn through the credit column). Add an **advisory NC column** to the
+college table for visibility, WITHOUT diluting the $1M across ~105 colleges (~$9.5K each =
+noise). ⚠ **Calbright's 21,438 NC FTES is impossible** (2,484 headcount → 8.6 FTES/student) —
+ask Malone before it drives any dollar; the feeder split is by HEADCOUNT (keeps Calbright
+small ~$33K), do NOT switch to NC-FTES split without excluding it.
+
+### ⬜ STILL TO BUILD (the NC cluster — the immediate next step, before Budget)
+- **#5 — advisory NC column** on the 115-college table. ❓**OPEN with Sam:** show NC **FTES**
+  (visibility — my rec) vs a recommended **$ amount** (his original words) — but we chose NOT
+  to distribute the $1M to colleges, so a per-college $ has no funded basis. Needs his call on
+  the column's content, + each college's MIS NC FTES added to the data file (Malone's 115-row
+  table is in the 2026-08-04 chat).
+- **#3b — gate the NC carve-out** on the 2 baseline quals (coordinator + participation),
+  fail-open, held-not-redistributed — mirrors the college gate exactly (JST auto-excluded, it
+  isn't a gate). ⚠ Fails open + feeders may not be in the coordinator feed → toothless until
+  their signals land. Refs: `feeders()`, `feederCarveout()`, feeder-support section ~L4096;
+  college gate `baselineGate()`.
+
+Moniker: **SkyBox** (reworked the funding pool boxes). Claim your own if you like.
+
+---
+
+## ✅ Previously shipped (2026-08-04, SkyUnit) — the per-priority PRICE FACTOR is live
 
 The single global **target multiplier is retired.** Each priority now carries its
 own `factor`: **price per CPL FTES = factor × the SCFF base rate**, **target = pot ÷

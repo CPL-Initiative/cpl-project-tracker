@@ -3297,3 +3297,35 @@ in MAP, alongside native). Story: `docs/cpl_funding_lessons.md` · handoff `docs
 **Next: the cron publishes `pa`/`pa_u` → wire P1→Applied + cumulative targets, but look at the
 distribution first (79 of 99 colleges have ZERO transcribed; top 10 hold 95.7%).** Side-lane — left the
 numbered handoff to the CCR mainline.
+
+### SkyUnit cont. — Implementation Funding: P1 → APPLIED, and the funding model is settled (2026-08-03, #967 MERGED)
+
+Sam sent a pivot of the MAP Student Aggregated Values export and asked to switch P1 from eligible to
+applied units. **His pivot validated the producer exactly** — Bakersfield eligible 25,280.5 / applied
+8,437.5 / transcribed 962.5, all three matching `pe_u`/`pa_u`/`p3_u` to the decimal, built independently
+at the per-student grain we dedupe on. Applied **live** to the Scenario-1 config (receipt
+`kb/supabase_funding_p1_applied.sql`): **P1 = Applied · shares .50/.45/.05 · multiplier 2.0**. Pool now
+earns **$9.65M of $23.24M (41.5%**, was 30.1%), median college **50%** of cap (was 34%). **Cumulative
+targets came FREE:** `prioTarget = (entitlement ÷ nYears) ÷ rate × multiplier`, so with a 2-yr window
+**multiplier 2.0 IS the cumulative window target** — dropping the `÷ nYears` in `prioEntitlement` would
+give the same target and **cancel the front-load incentive**, so a new test (`cumulative_target`, 10)
+carries the REASON. **Sam's design intent, why these metrics:** P1 Applied = proxy for the upfront
+articulation work (the petition→outreach flip — onus on the college to create CPL opportunities BEFORE
+the student asks); P2 Transcribed = proxy that every step happened (counseling, program AND transfer
+destination, SIS→MIS); P3 outside submissions = outreach to not-yet-students, small share because it's
+"too much of an ask for the Y1 & 2 phase". **THREE of my proposals were wrong and withdrawn:** replacing
+P1 with a raw articulation count (corr only 0.334 — but a count rewards credentials nobody qualifies
+for, while applied proves the articulation was created AND useful); deleting the `credit recommendation`
+MEASURES rule (it would let "eligible + statewide" fall through to plain eligible — a wrong number in
+place of an honest gap); and a harsher multiplier (I'd read a WINDOW-denominated table as PER-YEAR, so
+my "2.0×" was really 4.0 — the same unit-scope class #964 fixed, made while fixing it). **A causal
+correction that had reached 3 artifacts:** I wrote eligible is "inflated at the SOURCE" by JST
+duplication; the gap is mostly **correct applicability filtering** (a JST lists 1 unit of marksmanship;
+no CCC offers it). Where a credential IS articulated colleges apply **79%** of eligible; across all
+eligibility it's 18%. Corrected in the KB note + `cpl_memory`. **Also:** the $0 colleges are THREE
+states, never one number — 9 absent (implementation gap, verified NOT a join miss, self-heals), 4
+privacy-suppressed (did the work, earn $0 anyway — open decision), 16 measured zero (outreach list).
+Suite **182 green**; Chromium clean. Durable: `methodology-omit-dont-zero-an-absent-measure` (extended:
+three kinds of zero). Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
+**Next: the Budget reconciliation** (fold Implementation Funding in as a Budget sub-view). Side-lane —
+left the numbered handoff to the CCR mainline.
