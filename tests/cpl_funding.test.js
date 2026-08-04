@@ -252,6 +252,20 @@ function pieSlices(el) {
   const tables = doc.querySelectorAll(".cplfund-table");
   check("three tables: college + feeder + rural allowance", tables.length === 3);
   check("renders one row per college", tables[0].querySelectorAll("tbody tr.cplfund-row").length === D.colleges.length);
+  // Sam, 2026-08-04: advisory noncredit-FTES companion line in the size cell + the DeAnza display override.
+  {
+    const bodyText = tables[0].textContent;
+    check("size cell shows the advisory 'NC FTES' companion line", bodyText.indexOf("NC FTES") !== -1);
+    check("De Anza renders via the display override 'DeAnza' (no space)",
+      bodyText.indexOf("DeAnza") !== -1 &&
+      D.colleges.some(function (c) { return c.college === "De Anza" && c.display === "DeAnza"; }));
+    const sf = D.colleges.find(function (c) { return c.college === "San Francisco"; });
+    const sfRow = Array.from(tables[0].querySelectorAll("tbody tr.cplfund-row"))
+      .find(function (tr) { return tr.textContent.indexOf("San Francisco") !== -1; });
+    check("a college's own noncredit FTES renders in its size cell (San Francisco)",
+      !!sfRow && sfRow.textContent.indexOf("NC FTES") !== -1 &&
+      sfRow.textContent.indexOf(Math.round(sf.noncredit_ftes).toLocaleString("en-US")) !== -1);
+  }
   check("renders one row per feeder (4)", tables[1].querySelectorAll("tbody tr").length === 4);
   // SYSTEM total moved from <tfoot> to the FIRST body row (Sam, 2026-07-23).
   check("SYSTEM pinned as the FIRST body row (moved from tfoot)",
