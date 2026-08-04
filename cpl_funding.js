@@ -2108,14 +2108,27 @@
     }
 
     var out = [];
-    // Revenue sources (skip hidden) → then Total available funds (computed gross).
-    CORE_REVENUE.forEach(function (b) {
-      if (poolSkip(b.field)) return;
-      out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def),
-        x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
-    });
-    out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
-      l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool (the rural allowance is part of that pool)" }));
+    // Sam, 2026-08-04: with a SINGLE revenue source the source box and the computed
+    // "Total available funds" box show the same number — redundant. Collapse to the
+    // ONE editable source box (already Budget-ledger-wired) and fold the net-down note
+    // into it. With >1 source, show each source + the computed total (which genuinely
+    // differs then).
+    var revShown = CORE_REVENUE.filter(function (b) { return !poolSkip(b.field); });
+    var hasCustomRev = customPool().some(function (it) { return it.kind !== "deduction"; });
+    if (revShown.length === 1 && !hasCustomRev) {
+      var b0 = revShown[0];
+      out.push(card({ cls: " total", v: valueEd(b0.field, false),
+        l: labelEd(b0.field, b0.def) +
+           ' <span class="dk">&mdash; total available funding; the deductions + feeder carve-out below net down to the college pool (rural allowance is part of that pool)</span>',
+        x: pubEye(b0.field, poolLabel(b0.field, b0.def)) + hideX(b0.field, poolLabel(b0.field, b0.def)) }));
+    } else {
+      revShown.forEach(function (b) {
+        out.push(card({ v: valueEd(b.field, false), l: labelEd(b.field, b.def),
+          x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
+      });
+      out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
+        l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool (the rural allowance is part of that pool)" }));
+    }
 
     // Deductions (skip hidden).
     CORE_DEDUCTION.forEach(function (b) {
@@ -2154,14 +2167,20 @@
     // Available college funding (computed hero) — the WHOLE college pool incl. the
     // folded rural allowance (Sam, 2026-07-28); ties out to the SYSTEM total row.
     // The note breaks out the $32.8M main proportional pool + the $1M rural.
+    // Sam, 2026-08-04: the hero is the INSTITUTION total — the college pool (incl.
+    // the folded rural allowance) PLUS the $1M noncredit feeder carve-out = the
+    // amendment's $25,240,308 "to institutions". The note breaks out all three
+    // (college main pool + rural + NC feeder) the way the rural line already did.
     var perTotal = netCollegeWithRural() / nYears();
     var ruralIn = netCollegeWithRural() - netCollege();
-    out.push(card({ cls: " hero", v: fmtMoney(netCollegeWithRural()),
+    var instTotal = netCollegeWithRural() + feederCarveout();
+    out.push(card({ cls: " hero", v: fmtMoney(instTotal),
       l: (frontloaded()
-        ? "Available college funding " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward)"
-        : "Available college funding " + windowLabel() + " &mdash; " + nYears() + " annual tranches of " + fmtMoney(perTotal) + " (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
+        ? "Available funding to institutions " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); colleges receive " + fmtMoney(perTotal) + "/yr"
+        : "Available funding to institutions " + windowLabel() + " &mdash; " + nYears() + " annual tranches; colleges receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
       note: fmtMoney(netCollege()) + " main proportional pool + " + fmtMoney(ruralIn) +
-            " Rural College allowance (folded into rural colleges&#39; rows)" }));
+            " Rural College allowance (folded into rural colleges&#39; rows) + " + fmtMoney(feederCarveout()) +
+            " noncredit feeder support (to the " + feeders().length + " NC campuses below)" }));
 
     // Allocation balance (Sam, 2026-07-23): available annual tranche − the
     // dollars the priority SHARES apportion = remainder. The allocation SHARE is
@@ -2200,8 +2219,8 @@
       var ea = earnAgg();
       var pctEarned = ea.winCap > 0 ? ea.winEarned / ea.winCap : 0;
       out.push(card({ cls: " earned", v: fmtMoney(ea.winEarned),
-        l: "Earned so far &mdash; paid on actual CPL in MAP across all colleges &mdash; <strong>" + fmtPctTrim(pctEarned) +
-           "</strong> of the " + fmtMoney(ea.winCap) + " college pool",
+        l: "Earned so far &mdash; colleges&#39; actual CPL posted in MAP, <strong>" + fmtPctTrim(pctEarned) +
+           "</strong> of the " + fmtMoney(ea.winCap) + " college pool (not the noncredit carve-out)",
         note: "each college earns cap &times; (actual &divide; target), capped at 100%; today only the measurable priority flexes, the rest advance at full cap" }));
       out.push(card({ cls: " unearned", v: fmtMoney(ea.winUnearned),
         l: "Unearned &mdash; rolls forward &amp; relevels",

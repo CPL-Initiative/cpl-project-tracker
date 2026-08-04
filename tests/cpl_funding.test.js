@@ -262,10 +262,14 @@ function pieSlices(el) {
   {
     const totalAvail = D.pool.one_time_2026_27;   // $35M — the 2025-26 remaining is a separate topic
     const totalCard = doc.querySelector(".cplfund-card.total");
-    check("Total Available Funds card = the 2026-27 one-time appropriation ($35M)",
+    // Sam, 2026-08-04: a single revenue source collapses to ONE editable box (no
+    // duplicate computed total). It carries the source value (editable input) + the
+    // total-available note.
+    check("Total Available Funding card = the one editable 2026-27 appropriation box ($35M)",
       !!totalCard &&
-      totalCard.querySelector(".v").textContent.indexOf("$" + Math.round(totalAvail).toLocaleString("en-US")) !== -1 &&
-      totalCard.textContent.toLowerCase().indexOf("total available funds") !== -1);
+      doc.querySelectorAll(".cplfund-card.total").length === 1 &&
+      totalCard.querySelector(".v").innerHTML.indexOf(Math.round(totalAvail).toLocaleString("en-US")) !== -1 &&
+      totalCard.textContent.toLowerCase().indexOf("total available funding") !== -1);
     const awardCards = Array.from(doc.querySelectorAll(".cplfund-card.award"));
     check("Award range shows Average / Minimum / Maximum (3 cards)",
       awardCards.length === 3 &&
@@ -425,8 +429,8 @@ function pieSlices(el) {
     P.scaling_projects_tech - P.feeder_carveout - P.rural_carveout;
   check("net college funding matches the baked formula (conservation)", Math.round(T._netCollege()) === Math.round(bakedNet));
   const gross = P.one_time_2026_27;
-  check("Total Available Funds = Σ revenue sources ($35M one-time)",
-    doc.querySelector(".cplfund-card.total .v").textContent.indexOf("$" + Math.round(gross).toLocaleString("en-US")) !== -1);
+  check("Total Available Funding card carries the single revenue source ($35M one-time)",
+    doc.querySelector(".cplfund-card.total .v").innerHTML.indexOf(Math.round(gross).toLocaleString("en-US")) !== -1);
 
   // Editable label persists (the one-time appropriation box; the 2025-26 remaining
   // box is no longer a revenue source of this model).
@@ -483,14 +487,15 @@ function pieSlices(el) {
   const { window } = freshDom();
   const doc = boot(window);
   check("two year dropdowns (2-year window)", doc.querySelectorAll('select[data-edit="year"]').length === 2);
-  // The hero is now the WHOLE college pool incl. the folded rural allowance
-  // (Sam, 2026-07-28): 34.8M − 1M feeder = 33.8M (rural is earmarked WITHIN the
-  // pool, not deducted). The note breaks out the 32.8M main + the 1M rural.
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // 33.8M
-  const mainNet = net - D.pool.rural_carveout;                                     // 32.8M main proportional pool
-  const perYear = net / 2;                                                         // 16.9M total per-year tranche
-  check("hero = the whole college pool incl. folded rural ($" + net.toLocaleString() + ")",
-    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net.toLocaleString("en-US")) !== -1);
+  // Sam, 2026-08-04: the hero is now the INSTITUTION total — the college pool (incl.
+  // the folded rural allowance) PLUS the $1M noncredit feeder carve-out = the
+  // amendment's $25,240,308. The note still breaks out the main pool + rural + NC.
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // college pool (main+rural)
+  const inst = D.pool.college_funding_before_feeder;                               // + feeder = institution total
+  const mainNet = net - D.pool.rural_carveout;                                     // main proportional pool
+  const perYear = net / 2;                                                         // college per-year tranche
+  check("hero = the institution total incl. the noncredit feeder carve-out ($" + inst.toLocaleString() + ")",
+    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst.toLocaleString("en-US")) !== -1);
   check("hero label states 2 annual tranches of the per-year amount ($" + Math.round(perYear).toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
   check("hero note breaks out the main proportional pool + the rural allowance",
@@ -584,13 +589,20 @@ function pieSlices(el) {
   check("feeder headcount edit persisted to the scenario",
     scenSlot(window).feeders[0].headcount === 40000);
 
-  // Raising the FEEDER carve-out still shrinks the hero (feeder is deducted); the
-  // hero is now the whole pool incl. rural, so rural is NOT subtracted here.
+  // Sam, 2026-08-04: the hero is now the INSTITUTION total (colleges + NC feeders),
+  // so raising the feeder carve-out does NOT change it — the money just moves from the
+  // college pool into the NC feeder line, both inside the total. The institution total
+  // holds; the college pool shrinks by the increase.
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
   commit(window, carveInput, "2,000,000");
-  const net2 = D.pool.college_funding_before_feeder - 2000000;
-  check("raising the feeder carve-out shrinks the college hero pool",
-    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + net2.toLocaleString("en-US")) !== -1);
+  const inst2 = D.pool.college_funding_before_feeder;   // colleges + NC = invariant to the feeder split
+  check("raising the feeder carve-out leaves the institution-total hero unchanged",
+    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst2.toLocaleString("en-US")) !== -1);
+  check("raising the feeder carve-out moves that money out of the college pool",
+    Math.round(window.CPL_FUNDING_TAB._netCollege()) ===
+      Math.round(D.pool.college_funding_before_feeder - 2000000 - D.pool.rural_carveout));
+  check("the hero note carries the $2,000,000 noncredit feeder line",
+    doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$2,000,000") !== -1);
 }
 
 // C5 — editable priority text + shares (scenario mode) + reset.
