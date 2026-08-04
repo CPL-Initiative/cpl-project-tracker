@@ -272,14 +272,19 @@ function pieSlices(el) {
       awardCards.some(function (c) { return c.textContent.indexOf("Average award") !== -1; }) &&
       awardCards.some(function (c) { return c.textContent.indexOf("Minimum award") !== -1; }) &&
       awardCards.some(function (c) { return c.textContent.indexOf("Maximum award") !== -1; }));
+    // Sam, 2026-08-04: ordered Minimum · Average · Maximum (low→high).
+    check("Award range cards ordered Minimum · Average · Maximum",
+      awardCards[0].textContent.indexOf("Minimum award") !== -1 &&
+      awardCards[1].textContent.indexOf("Average award") !== -1 &&
+      awardCards[2].textContent.indexOf("Maximum award") !== -1);
     const avgAward = D.colleges.reduce(function (s, c) {
       return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0) / D.colleges.length;
     check("Average award card = Σ college window totals ÷ N",
-      awardCards[0].querySelector(".v").textContent.indexOf("$" + Math.round(avgAward).toLocaleString("en-US")) !== -1);
+      awardCards[1].querySelector(".v").textContent.indexOf("$" + Math.round(avgAward).toLocaleString("en-US")) !== -1);
     // With the default floor active, many colleges share the minimum — the Min
     // card names the floor count, not one arbitrary college.
     check("Minimum award card reports the floored-college count (not one college)",
-      awardCards[1].textContent.indexOf("floor") !== -1);
+      awardCards[0].textContent.indexOf("floor") !== -1);
   }
   check("scoped CSS injected once", doc.querySelectorAll("#cpl-funding-css").length === 1);
   window.CPL_FUNDING_TAB.render();
@@ -1632,8 +1637,15 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     check("memo includes the ESS section — " + sec, memo.indexOf(sec) !== -1);
   });
   // The memo reflects the live model numbers + priorities + allocation.
-  const totalAvail = "$" + Math.round(D.pool.one_time_2026_27).toLocaleString("en-US");
-  check("memo Funding Overview carries the Total Available Funds figure", memo.indexOf(totalAvail) !== -1);
+  // Sam, 2026-08-04: the memo now leads with the AVAILABLE college funding (the
+  // pool colleges actually receive = Σ window totals), not the $35M gross
+  // appropriation — that reference was dropped.
+  const collegePool = D.colleges.reduce(function (s, c) {
+    return s + window.CPL_FUNDING_TAB._alloc(c.college).total; }, 0);
+  const poolFig = "$" + Math.round(collegePool).toLocaleString("en-US");
+  check("memo Funding Overview leads with the available college funding figure", memo.indexOf(poolFig) !== -1);
+  const gross35 = "$" + Math.round(D.pool.one_time_2026_27).toLocaleString("en-US");
+  check("memo no longer prints the $35M gross appropriation", memo.indexOf(gross35) === -1);
   check("memo lists the three priorities",
     D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
   check("memo allocation table carries the SYSTEM statewide total", memo.indexOf("SYSTEM (statewide)") !== -1);
@@ -1648,6 +1660,19 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
     report.indexOf("MEMORANDUM") === -1 && report.indexOf("Funding Overview") !== -1);
   // The memo tracks the active project's AREA framing.
   check("memo RE line reflects the project area (CPL Initiative)", memo.indexOf("CPL Initiative") !== -1);
+  // Sam, 2026-08-04: the CO division renamed Educational Services & Support → Academic Affairs.
+  check("memo masthead uses Academic Affairs (not the retired ESS Division name)",
+    memo.indexOf("Academic Affairs") !== -1 && memo.indexOf("Educational Services and Support") === -1);
+  // Recommended Strategies section (Sam, 2026-08-04) — per-priority strategy lists,
+  // omitted when empty and rendered when a priority carries strategies.
+  check("memo omits the Recommended Strategies section when no priority has one",
+    memo.indexOf("Recommended Strategies") === -1);
+  T._setShared({ yearPriorities: { "1": { "0": { strategies: ["Screen at onboarding", "Notify eligible veterans"] } } } });
+  const memoStrat = T._buildMemo("memo");
+  check("memo shows Recommended Strategies when a priority carries strategies",
+    memoStrat.indexOf("Recommended Strategies") !== -1 &&
+    memoStrat.indexOf("Screen at onboarding") !== -1 &&
+    memoStrat.indexOf("Notify eligible veterans") !== -1);
 }
 
 // E4 — exports.
