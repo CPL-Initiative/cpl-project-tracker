@@ -233,9 +233,9 @@
     },
     "San Diego College of Continuing Education Credit": {
       via: "curator", by: "Jessica", on: "2026-08-05",
-      // Jessica wrote "sdceecc@sdccd.ed"; every sibling SDCCD address is @sdccd.edu
-      // and .ed is not a TLD in use here, so recorded as .edu and flagged back to
-      // her. Change it if .ed turns out to be right.
+      // Supplied as "sdceecc@sdccd.ed"; every sibling SDCCD address is @sdccd.edu
+      // and .ed is not a TLD in use here, so recorded as .edu and flagged back.
+      // Jessica CONFIRMED .edu (2026-08-05) — settled, don't re-litigate.
       contacts: [
         { name: null, title: "ECC campus counseling", email: "sdceecc@sdccd.edu" },
       ],
