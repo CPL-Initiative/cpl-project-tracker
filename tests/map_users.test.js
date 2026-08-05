@@ -409,12 +409,26 @@ function makeWin(opts) {
   check("fallbacks: no mental-health/wellness inbox used as a CPL contact",
     keys.every((k) => (FB[k].contacts || []).every(
       (c) => !/bewell|be-well|wellness|mentalhealth/i.test(c.email))));
-  // A web LOOKUP may only ever yield a department inbox; a CURATOR may name a
-  // person, because they know who actually answers.
-  check("fallbacks: web-sourced entries are department inboxes, never individuals",
+  // SOURCING RULE — Jessica (MAP team), 2026-08-05. This supersedes the stricter
+  // "department inboxes only" rule I set for myself: she is the domain expert and
+  // the distinction she drew is sharper. A named INDIVIDUAL is fine when they are
+  // *the* designated contact on the counseling page; what's forbidden is picking
+  // one name off a list of all counselors (those stay blank), and an inbox for a
+  // different department is fine when the counseling page directs you there.
+  //
+  // The enforceable proxy: anything that isn't an obvious department inbox must
+  // carry a `note` saying why it's there. That's what stops a future contributor
+  // quietly pasting in a counselor's address.
+  check("fallbacks: a non-department address is justified in a note",
     keys.filter((k) => FB[k].via === "web").every((k) =>
-      (FB[k].contacts || []).every((c) =>
-        c.name === null && /counsel|advis|success|student/.test(c.email.split("@")[0].toLowerCase()))));
+      (FB[k].contacts || []).every((c) => {
+        const local = c.email.split("@")[0].toLowerCase();
+        const isDeptInbox = /counsel|advis|success|student|welcome|preguntas/.test(local);
+        return isDeptInbox || !!FB[k].note;
+      })));
+  check("fallbacks: colleges that publish only a counselor LIST are left blank",
+    (FB["Coalinga College"].contacts || []).length === 0
+      && (FB["Laney College"].contacts || []).length === 0);
   check("fallbacks: a college may carry more than one contact",
     (FB["Gavilan College"].contacts || []).length === 2);
 

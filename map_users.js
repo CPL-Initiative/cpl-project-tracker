@@ -211,14 +211,21 @@
   // NEITHER is a MAP designation, and neither is ever fed into the cascade —
   // the cascade stays strictly the college's own designations.
   //
-  // Rules for adding a web-sourced one (keep them):
-  //  · a DEPARTMENT inbox, never an individual counselor — individuals churn,
-  //    and naming a specific person is the determination we are avoiding. A
-  //    CURATOR may name an individual; they know who actually answers.
-  //  · ACADEMIC counseling/advising, never mental-health or wellness — several
-  //    of these colleges publish a "Be Well"-style address, and routing a credit
-  //    question to a mental-health service would be a genuinely bad outcome;
-  //  · if neither exists, record contacts: [] + the page, and let a human decide.
+  // SOURCING RULES — set by Jessica (MAP team), 2026-08-05. These supersede the
+  // stricter "department inboxes only" rule an earlier pass used; hers is sharper,
+  // and she is the one who works these contacts:
+  //  · a general counseling/advising inbox → use it;
+  //  · no general inbox, but ONE named person is the designated contact on the
+  //    counseling page → use them, and say so in `note`;
+  //  · just a LIST of all counselors → leave blank. Picking one name off a list
+  //    is the determination we don't get to make;
+  //  · the counseling page directs you to another department (Admissions &
+  //    Records, a Welcome Center) and gives its address → use that, note it;
+  //  · NEVER mental-health or wellness, whatever the page calls it. Several of
+  //    these colleges publish a "Be Well"-style address and routing a credit
+  //    question there would be a genuinely bad outcome for a student;
+  //  · nothing usable → contacts: [] plus the page, so the blank is a recorded
+  //    finding rather than an unchecked cell.
   var FALLBACK_CONTACTS = {
     "Gavilan College": {
       via: "curator", by: "Jessica", on: "2026-08-05",
@@ -272,6 +279,103 @@
       via: "web", source: "https://www.calbright.edu/talk-with-us/",
       contacts: [{ name: null, title: "Student Success", email: "success@calbright.org" }],
       note: "Calbright is online-only and has no campus counseling office." },
+    "American River College": {
+      via: "web", source: "https://arc.losrios.edu/student-resources/counseling",
+      contacts: [{ name: null, title: "Counseling Center", email: "counselingcenterarc@arc.losrios.edu" }], },
+    "Antelope Valley College": {
+      via: "web", source: "https://www.avc.edu/counseling/counseling-contact-information-hours-location",
+      contacts: [{ name: null, title: "Counseling", email: "counseling@avc.edu" }], },
+    "Barstow Community College": {
+      via: "web", source: "https://www.barstow.edu/student-services/counseling-services",
+      contacts: [{ name: null, title: "Counseling Services", email: "bcounselor@barstow.edu" }], },
+    "Berkeley City College": {
+      via: "web", source: "https://www.berkeleycitycollege.edu/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "counselingbcc@peralta.edu" }], },
+    "Butte College": {
+      via: "web", source: "https://www.butte.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@butte.edu" }], },
+    "Ca\u00f1ada College": {
+      via: "web", source: "https://canadacollege.edu/counselingcenter/contactus.php",
+      contacts: [{ name: null, title: "Welcome Center", email: "canadawelcomecenter@smccd.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Chaffey College": {
+      via: "web", source: "https://www.chaffey.edu/counseling/counseling-contact.php",
+      contacts: [{ name: null, title: "Academic & Career Counseling", email: "counseling@chaffey.edu" }], },
+    "Coalinga College": {
+      via: "web", source: "https://westhillscollege.com/coalinga/resources/counseling/counselors.php",
+      contacts: [],
+      note: "A list of individual counselors only \u2014 no department inbox", },
+    "College of Alameda": {
+      via: "web", source: "https://alameda.edu/students/counseling/",
+      contacts: [{ name: null, title: "e-Counseling", email: "coaecounseling@peralta.edu" }], },
+    "College of Marin": {
+      via: "web", source: "https://ss.marin.edu/counseling/ask-counselor",
+      contacts: [{ name: null, title: "Counseling", email: "counseling@marin.edu" }], },
+    "College of San Mateo": {
+      via: "web", source: "https://www.collegeofsanmateo.edu/counseling/contactus.php",
+      contacts: [{ name: null, title: "Welcome Center", email: "CSMWelcomeCenter@smccd.edu" }],
+      note: "Academic counseling directs students to the Welcome Center", },
+    "College of the Sequoias": {
+      via: "web", source: "https://www.cos.edu/en-us/student-support/counseling",
+      contacts: [{ name: null, title: "Student resources inbox", email: "Preguntas@cos.edu" }],
+      note: "Counseling itself is phone-based; this is the inbox published on the counseling page", },
+    "Compton College": {
+      via: "web", source: "https://www.compton.edu/admissions-aid/counseling/index.aspx",
+      contacts: [{ name: null, title: "Interim Dean of Counseling & Guided Pathways", email: "mgarcia74@compton.edu" }],
+      note: "Named contact on the counseling page", },
+    "Contra Costa College": {
+      via: "web", source: "https://www.contracosta.edu/counseling/",
+      contacts: [],
+      note: "Phone only. The one published email is wellness@ (mental health) \u2014 deliberately not used for CPL routing", },
+    "Cuyamaca College": {
+      via: "web", source: "https://www.cuyamaca.edu/student-support/counseling-center/",
+      contacts: [{ name: null, title: "Counseling Center", email: "cuyamaca.ecounseling@gcccd.edu" }], },
+    "Cypress College ": {
+      via: "web", source: "https://www.cypresscollege.edu/academics/divisions-special-programs/counseling/",
+      contacts: [{ name: null, title: "Online Counseling", email: "onlinecounselor@CypressCollege.edu" }], },
+    "Diablo Valley College": {
+      via: "web", source: "https://www.dvc.edu/student-services/academic-counseling",
+      contacts: [{ name: null, title: "Academic Counseling", email: "cwoodson@dvc.edu" }],
+      note: "The only address published on the counseling page \u2014 verify the role", },
+    "Fresno City College": {
+      via: "web", source: "https://www.fresnocitycollege.edu/academics/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling Services", email: "fcccounseling@fresnocitycollege.edu" }], },
+    "Golden West College": {
+      via: "web", source: "https://www.goldenwestcollege.edu/counseling/index.html",
+      contacts: [],
+      note: "Phone and chat only; the sole inbox published is the Career Center", },
+    "Imperial Valley College": {
+      via: "web", source: "https://www.imperial.edu/students/counseling/index.html",
+      contacts: [{ name: null, title: "Student Services Technician", email: "tiffany.tukes@imperial.edu" }],
+      note: "Named point of contact on the counseling page", },
+    "Irvine Valley College": {
+      via: "web", source: "https://www.ivc.edu/counseling-center/contact",
+      contacts: [{ name: null, title: "Counseling Center", email: "ivccounseling@ivc.edu" }], },
+    "Lake Tahoe Community College": {
+      via: "web", source: "https://www.ltcc.edu/campusresources/counseling.php",
+      contacts: [{ name: null, title: "Counseling Services", email: "counselor@ltcc.edu" }], },
+    "Laney College": {
+      via: "web", source: "https://laney.edu/counseling",
+      contacts: [],
+      note: "Co-chairs and individual counselors listed; no department inbox", },
+    "Lassen College": {
+      via: "web", source: "https://www.lassencollege.edu/new-students/",
+      contacts: [{ name: null, title: "Counseling", email: "lcccounseling@lassencollege.edu" }], },
+    "Los Angeles City College": {
+      via: "web", source: "https://www.lacc.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "Counseling@lacitycollege.edu" }], },
+    "Los Angeles Harbor College": {
+      via: "web", source: "https://www.lahc.edu/academics/pathways/scc/counseling",
+      contacts: [],
+      note: "Division chair by phone; the only inbox published is the Life Skills Center (personal counseling)", },
+    "Los Angeles Southwest College": {
+      via: "web", source: "https://www.lasc.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Chair, Counseling Department", email: "FORDLD@lasc.edu" }],
+      note: "Named contact on the counseling page", },
+    "Los Angeles Valley College": {
+      via: "web", source: "https://www.lavc.edu/student-services/counseling/help-desk",
+      contacts: [],
+      note: "Phone-based help desk; no department inbox published", },
   };
   function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
 
