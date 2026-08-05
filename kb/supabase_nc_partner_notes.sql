@@ -28,8 +28,14 @@
 -- Keyed by ITEM ID (Q-1 / OPP-3 / M2 / UC-7) so one affordance covers questions,
 -- opportunities, modes and use cases without a table per section.
 --
--- Apply via the Supabase MCP (the sandbox cannot reach *.supabase.co directly —
--- CLAUDE.md Rule 9c). Recorded here for the audit trail.
+-- ✅ APPLIED 2026-08-05 to the "Work Plan" project (hvuwhnbuahrtptokpqfh) via the
+-- Supabase MCP, migration name `nc_partner_notes` (the sandbox cannot reach
+-- *.supabase.co directly — CLAUDE.md Rule 9c). Verified after apply:
+--   * RLS on; 3 policies (SELECT/INSERT/UPDATE); 0 DELETE policies
+--   * revision chain round-trips — predecessor RETAINED, exactly 1 live note,
+--     forward + back links both set (probe rows removed; table left at 0 rows)
+--   * anon WITHOUT the team-pass header reads 0 rows; privileged reads 1
+--   * security advisor: 0 new findings from this migration
 
 -- ── Table ──────────────────────────────────────────────────────────────────
 create table if not exists public.nc_partner_notes (
@@ -80,7 +86,7 @@ create policy nc_partner_notes_update on public.nc_partner_notes for update
 
 -- ── updated_at ─────────────────────────────────────────────────────────────
 create or replace function public.nc_partner_notes_touch() returns trigger
-  language plpgsql as $$
+  language plpgsql set search_path = public as $$
   begin new.updated_at = now(); return new; end;
 $$;
 
@@ -109,3 +115,6 @@ create or replace function public.nc_partner_note_revise(
   end;
 $$;
 grant execute on function public.nc_partner_note_revise(text, text, text, uuid) to anon, authenticated;
+-- Table-level grants let anon/authenticated REACH the table; RLS above decides
+-- which rows they actually see. No delete grant — notes are superseded, never removed.
+grant select, insert, update on public.nc_partner_notes to anon, authenticated;
