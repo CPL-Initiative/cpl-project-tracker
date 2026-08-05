@@ -2373,3 +2373,33 @@ Only #3b (NC gate) deferred as inert-today. Sam: *"From tweaks to rehaul, this w
 
 **(c) Roadmap / (d) next.** The funding model itself is done — next real step is the **Budget
 reconciliation** (fold Implementation Funding in as a Budget sub-view; single-source wiring #949 landed).
+
+## 2026-08-05 — SkyBox cont. (#978): the Report/memo rework + KB research discipline
+
+Sam sent 6 Report/memo tweaks + a mid-turn 7th (the $50k-seed intro). Built + merged as #978.
+
+**(a) Learned.**
+- **Research an official deliverable's external content with a subagent, and make it report the GAPS,
+  not just the hits.** I spun a general-purpose agent to mine the public CPL KB for the Technical
+  Assistance links. Its most valuable output was the NEGATIVE space: the KB has **no** dedicated
+  Office-Hours/"Get Involved" URL (only "see the MAP website"), **no** public ESS-memo URL, and **no**
+  personnel (Estrada/Nelson absent by design). In an official memo, "not found — don't fabricate" is a
+  first-class result. I rendered those as plain text / a MAP-site pointer and left `ESS_MEMO_URL` +
+  `MAP_LINKS` slots for Sam — never inventing a link or an email. The subagent prompt explicitly asked
+  for "not found in KB" over a guess, which is why the gaps came back clean.
+- **A hardcoded map beats a data-file change when the mapping is consumer-specific.** Grouping the 4 NC
+  feeders by district is a MEMO concern only; a `MEMO_FEEDER_DISTRICT` map in the memo code avoided a
+  `cpl_funding_data.js` change (and the sibling-test re-run risk that #976's data change caused).
+- **Real-render, don't just assert.** After 562/562 green I booted the tab in node (reusing the test's
+  `freshDom`/`boot`, `NODE_PATH` at the repo's node_modules) and eyeballed the district groups: it
+  confirmed Mt SAC NC landed under Mt. San Antonio ($993,947 subtotal), the NOCE/SD/Calbright
+  placements, and the TA links — things the string assertions don't fully catch (layout, right group).
+- **Reuse an existing helper to render, don't reinvent.** The verification harness was 15 lines because
+  `freshDom`/`boot` already existed in the test file.
+
+**(b) State.** ALL of Sam's tweaks live (#973–#978). cpl_funding **562** green. Sam queued a forward
+item: an **administrator opt-in** button (VPAA/VPSS/CEO) — my "capture-at-opt-in + CO-confirm" design
+is in the handoff (build v1 next). Sam: *"From tweaks to rehaul, this was a big lift, Sky!"*
+
+**(c) Roadmap / (d) next.** Build the opt-in v1 (attest + CO-confirm → `baselineGate`), then the Budget
+reconciliation.

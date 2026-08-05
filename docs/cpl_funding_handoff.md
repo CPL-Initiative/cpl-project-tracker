@@ -11,7 +11,18 @@ related:
 
 ## ✅ JUST SHIPPED (2026-08-04, SkyBox) — ALL of Sam's funding-model tweaks + the NC rehaul
 
-Sam sent 7 display/report tweaks + a big NC question. Shipped in **four PRs (#973/#974/#975/#976)**:
+Sam sent 7 display/report tweaks + a big NC question, then **6 more Report/memo tweaks**. Shipped
+across **#973–#978** (+ the #977 checkpoint):
+- **#978 — the Report/memo rework (6 tweaks):** allocation summary is now the **institution total
+  $25,240,308** (college pool + $1M NC, broken out); **Funded Colleges (115) + Funded Noncredit
+  Campuses (4)**; per-college table **grouped by DISTRICT (A→Z, colleges A→Z within, subtotals)**
+  with each district's **NC feeder campus listed beneath it** (Mt SAC NC under Mt San Antonio, NOCE
+  under North Orange, SD Cont Ed under San Diego, Calbright standalone; per-campus $ = $1M split by
+  headcount); intro paragraph on the **$50k seed grant (ESS 25-82)** + its 3 outcomes; new
+  **Technical Assistance** section (KB-**verified** MAP links — Implementation Guide, Counselor
+  Resources Hub, MAP site/email — + contacts Estrada/Nelson). Honest gaps left plain text (no KB
+  Office-Hours URL → points at the MAP site; no public ESS-memo URL; KB excludes personnel);
+  `ESS_MEMO_URL` + `MAP_LINKS` slots ready to fill. Report-only (private).
 - **#976** — #5 the **advisory noncredit-FTES column**: every college's own MIS 2025-26 NC FTES
   as a compact "+N NC FTES" companion line under its size cell (sub-line, not a 12th column, to
   keep the no-scroll rule). Matched all 115 via a verify-or-abort script (model `credit_ftes` ==
@@ -30,8 +41,44 @@ Sam sent 7 display/report tweaks + a big NC question. Shipped in **four PRs (#97
   college→NC *inside* the total; #3a relabel the "Earned so far" card **"…not the noncredit
   carve-out"** (its ~$1M value was misread as the NC $1M — it's real earned-to-date).
 
-Tests cpl_funding **545 → 552**; public/private 11/11. All mirror to the public page
-automatically (shared `cpl_funding.js`); the Report is private-only.
+Tests cpl_funding **545 → 562**; public/private 11/11 (⚠ #976's advisory `noncredit_ftes` tripped a
+`cpl_funding_basis` guard — "colleges carry credit FTES only" — reddening the full suite; the #977
+follow-up updated the guard to the invariant that still holds: noncredit is advisory, NOT the
+allocation basis. Lesson: a data-file field add can break a sibling test that guards the *absence* of
+that field). The pool/column changes mirror to the public page automatically (shared `cpl_funding.js`);
+the Report/memo is private-only.
+
+## 🎯 QUEUED (Sam, 2026-08-05) — the administrator opt-in mechanism (my "method + magic" recommendation)
+
+Sam wants a **simple opt-in** (the participation-request qual — one of the 2 baseline gates) that an
+**administrator (VPAA / VPSS / CEO)** performs, via a button on the college rows. The snag: we have those
+roles in the dataset but they **go stale** (turnover). **Don't build this session; build next.**
+
+**My recommendation — reframe from "verify against our roster" to "capture the current admin at opt-in
+time + let the CO confirm."** The stale-roster problem dissolves because we never consult stored admin
+names; the opt-in EVENT captures who's current, and we can refresh our roster FROM it (self-healing).
+
+- **v1 (lean, ships fast, NO email infra) — attest + CO-confirm.** Opt-in button on each college row →
+  short form (**Name · Title dropdown VPAA/VPSS/CEO · college email**) → writes a **pending `cpl_optin`**
+  request (Supabase, INSERT-only public, rate-limited). It surfaces in a **CO-review lane** (reuse the
+  merge-confirm-lane / CO-Monitor pattern) where the CO **confirms** — the CO knows its current admins, so
+  its review IS a stronger identity check than any roster we could maintain. Confirmed → wire into
+  **`baselineGate`** (the "participation request by the deadline" qual) so the button *directly* satisfies
+  the gate. Fail-open until the feed loads (standing rule).
+- **v2 (the "magic," optional) — self-service magic link.** After submit, email a **one-time link to the
+  entered college-domain email**; clicking it auto-confirms (no CO step). Control of an `@college.edu`
+  address is the proof; the CO spot-checks the audit trail instead of confirming each. Needs an email path
+  (Supabase edge function + mail provider) + a **college→email-domain map** (far more stable than a person
+  roster — domains rarely change).
+- **Abuse posture = attest + audit, NOT pre-verify** (matches the funding model's existing philosophy):
+  require a college-domain email, record a full audit trail (name/title/email/timestamp), keep it
+  **reversible** (CO can revoke). Opting in only makes a college *eligible to earn* — it moves no money by
+  itself — so it's low-stakes and reversible, exactly the "held, never punitive" posture the earned gate
+  already uses. A false attestation is a compliance matter the CO owns.
+- **Schema sketch:** `cpl_optin` (college, name, title, email, requested_at, confirmed_at, confirmed_by,
+  revoked_at, status). RLS: public INSERT (rate-limited) pending; reviewer confirm/revoke.
+- **Recommendation: build v1 first.** Leanest, reuses an existing pattern, no email infra, CO review is
+  the strongest check. Add v2 only if the CO wants out of the per-opt-in loop.
 
 ### The big NC question — Sam DECIDED: "targeted + advisory NC column"
 Keep the **$1M targeted to the 4 standalone NC campuses** (NOCE, SD Cont. Ed, Mt SAC NC,
