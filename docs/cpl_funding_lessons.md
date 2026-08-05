@@ -2403,3 +2403,52 @@ is in the handoff (build v1 next). Sam: *"From tweaks to rehaul, this was a big 
 
 **(c) Roadmap / (d) next.** Build the opt-in v1 (attest + CO-confirm → `baselineGate`), then the Budget
 reconciliation.
+
+## Session checkpoint — 2026-08-05 (SkyOptIn; the self-service administrator opt-in v1)
+
+**(a) Learned.**
+- **The gate table already existed — the build was a role-flip, not a new surface.** The participation
+  half of `baselineGate` was already backed by `cpl_funding_participation` + `ELIG.optin`, but opt-in
+  was a *reviewer-only* toggle (`setOptIn` → "Mark opted-in"). "Add a self-service opt-in" was really
+  "let the public write a constrained row, and capture WHO." Reading the existing consumer end-to-end
+  before designing saved a parallel table.
+- **RLS gates rows; only column GRANTs (or a definer RPC) gate COLUMNS.** The attestor name/email are
+  PII, and the tab's own norm keeps contact PII reviewer-gated (the coordinator RPC exposes only a
+  boolean). Since reviewers use the *same* anon/authenticated role as the public (team-phrase is a
+  claim, not a distinct DB role), an RLS `is_allowed_reviewer()` policy can't reveal extra columns to
+  them. The working shape: **revoke SELECT on the PII columns from anon/authenticated, re-grant only the
+  non-PII columns, and read the PII back through a SECURITY DEFINER RPC that gates internally** — the
+  exact `map_coordinator_summary()` pattern already in the file. Verified as `anon` in a rolled-back txn:
+  a valid self-attest is allowed, a forged `confirmed` insert is RLS-rejected, and `select attestor_email`
+  is *permission denied*.
+- **Attest-first is the correct semantics, and Sam picked it.** The opt-in *is* the "participation
+  request by the deadline" — the admin's submission satisfies the gate immediately; the CO confirm/revoke
+  lane is the audit/fraud-catch, not a pre-gate. Matches the model's standing "attest + audit, not
+  pre-verify / fail-open / held-not-punitive" posture. A pending-then-confirm gate would have made the CO
+  a bottleneck on every college's money.
+- **A column-read revoke can 403 a successful WRITE.** Once anon/authenticated lose SELECT on the PII
+  columns, any write that returns a representation makes PostgREST SELECT them back → 403 on an otherwise-
+  successful insert/patch/delete. Fix: `Prefer: return=minimal` on *every* write (public submit AND the
+  three reviewer writes), then re-read status separately. PostgREST's default is minimal-ish, but making
+  it explicit is immune to version drift.
+- **The public opt-in button must survive the public sweep; the CO lane must not render at all.** The
+  form uses NON-`CURATE_ATTRS` data-attributes (so `stripCurateAffordances` leaves it), while the lane is
+  gated on `unlocked()` (never true publicly) AND its PII only arrives via the gated RPC (`[]` for anon).
+  A jsdom test asserts both directions, including that PII handed to the client is still not rendered in
+  public mode — a render-gate check on top of the RPC gate.
+
+**(b) State.** v1 shipped (PR #<tbd>): schema migration `kb/supabase_funding_optin.sql` applied live
+(`cpl_funding_participation` + attestation/status columns, constrained anon `cfp_insert_self`, PII column
+grants, `cpl_funding_optin_review()` RPC); consumer adds the per-row opt-in form (public + private), the
+reviewer confirm/revoke/remove lane in the eligibility section, and status-aware gate wiring. Tests
+`cpl_funding_optin` **18** green; the other 9 funding files green. The migration was **behavior-neutral
+to the currently-deployed code** (still reads only the non-PII columns), so it was safe to apply before
+the code merges. ⚠ The sandbox can't reach `*.supabase.co`, so the live public INSERT path is
+unexercised in-session — eyeball one real opt-in on the deployed site.
+
+**(c) Roadmap.** v2 (the "magic," optional): a one-time magic link to the entered @college.edu address
+that auto-confirms, so the CO drops out of the per-opt-in loop — needs an edge function + mail provider +
+a college→domain map (more stable than a person roster). Only build if the CO wants out of the loop.
+Then the deferred **#3b** NC-carve-out gate, and the **Budget reconciliation** (still the real next step).
+
+**(d) Next.** Confirm one live opt-in end-to-end on the deployed site once merged; then Budget.

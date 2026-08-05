@@ -589,10 +589,13 @@ Malone's Credit-FTES column cross-confirmed it; **De Anza → "DeAnza"** display
 Suite 552→555. **Deferred: #3b** (NC gate — inert today). **Then #978 reworked the funding memo**
 (institution total; district-grouped allocation with each district's NC campus beneath it; a
 $50k-seed intro; a Technical Assistance section w/ KB-verified MAP links + contacts). Suite →562.
-**Queued (Sam, 2026-08-05): an administrator (VPAA/VPSS/CEO) opt-in mechanism** — reframe past the
-stale-roster problem by capturing the current admin AT opt-in + CO-confirm, wired to `baselineGate`
-(full design in the handoff). **Next: the Budget reconciliation.** Full story:
-`docs/cpl_funding_lessons.md` §2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
+**Administrator (VPAA/VPSS/CEO) opt-in — v1 SHIPPED (SkyOptIn, 2026-08-05):** a public self-service
+opt-in on each college row (works on the public page) captures the attesting admin AT opt-in;
+**attest-first** (Sam's call — the submit clears `baselineGate`, the CO confirms/revokes in a lane, no
+pre-gate); PII-safe (attestor name/email reviewer-gated via column grants + the gated
+`cpl_funding_optin_review()` RPC; `kb/supabase_funding_optin.sql`). v2 (magic-link email) still queued.
+**Next: the Budget reconciliation.** Full story: `docs/cpl_funding_lessons.md` §2026-08-05 (SkyOptIn) ·
+§2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
 
 ### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)
 
