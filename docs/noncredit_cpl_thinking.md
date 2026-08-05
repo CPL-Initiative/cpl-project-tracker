@@ -10,6 +10,8 @@ artifacts:
   - "Apprenticeship & Noncredit Education one-pager (2026)"
   - "kb/credentials.json — issuing_agency / training_agency"
   - "cpl_funding_data.js — 2025-26 MIS DataMart credit + noncredit FTES"
+  - "credential_reference_data.js — 1,987 unified credential titles (the §7a evidence audit)"
+  - "Scaling Credit for Prior Learning in California — full 32-page monograph"
 related:
   - "[[docs/cpl_funding_handoff]]"
   - "[[docs/cpl_funding_lessons]]"
@@ -35,9 +37,10 @@ related:
 > dataset in the appendix), ⟨inferred⟩ (my analysis from sourced material), or
 > ⟨**NEEDS SAM**⟩ (a factual dependency I cannot resolve from the record).
 >
-> **Reading order if you have ten minutes:** §2 (the thesis and the Chancellor's
-> authorizing statement) → §4 (the scalability ladder) → §3a (EMS Corps, the reference
-> implementation) → §10b (the three 2026 commitments this delivers against).
+> **Reading order if you have ten minutes:** **§7a** (the MAP evidence audit — five
+> findings that change conclusions elsewhere, and the densest "things we didn't know"
+> section) → §2 (the thesis and the Chancellor's authorizing statement) → §4 (the
+> scalability ladder) → §12's ranked next moves.
 
 ---
 
@@ -150,6 +153,31 @@ of Achievement without retaking courses.
 auto-articulates. **What the field needs:** a replicable mirroring playbook and a
 model CPL rubric.
 
+**The monograph documents the instrument** ⟨sourced: *Scaling CPL in California*,
+"The Academic Process"⟩. This is the most substantive noncredit passage in the
+monograph and it names the mechanism precisely:
+
+> *"Students may be enrolled in a noncredit course that has equivalent instruction and
+> learning outcomes as a credit course… Faculty assess the learning to determine if it
+> is equivalent to a credit course. In this case, the college could use the CPL type
+> **credit by exam** or **portfolio review**… **A common approach is for noncredit
+> faculty to confer with their credit counterparts to agree on a summative exam that
+> demonstrates mastery of the student learning outcomes for a course.** …Provided that
+> the credit faculty have confidence in the noncredit exam process and results,
+> students who pass the noncredit summative exam would qualify for CPL for the credit
+> course based on the CPL type credit by exam."*
+
+⟨inferred⟩ **So there are two established instruments for the same move**, and the paper
+should present both rather than picking one: the **jointly-agreed summative exam**
+(monograph) and the **CPL rubric attached to the COR** (Cabrillo). Both do the same
+essential thing — put the assessment *inside* the noncredit course, agreed in advance
+with credit faculty. The exam suits skills with a clean summative test; the rubric suits
+performance and portfolio-shaped outcomes. **A college should be told it may choose.**
+
+Note also what the passage settles: the CPL *type* is **credit by exam** (or portfolio
+review). Mirroring is not a new CPL category needing new authority — it is an existing
+Title 5 §55050 type applied thoughtfully.
+
 **Already endorsed at the Chancellor level** ⟨sourced: Christian, Noncredit Summit,
 slide 8⟩. Describing what distinguishes California from other states:
 
@@ -237,14 +265,25 @@ term, met minimum qualifications, completed a Master's in Education (spring 2025
 and is now a **full-time tenure-track professor at West Los Angeles College**. Adult
 school to tenure track.
 
-**Market context ⟨sourced: deck slide 11⟩:** Dental Assisting — **24 CCC programs, 44
-non-CCC**, with an estimated **4,200–7,000 annual CPL candidates**. Nearly **two-thirds
-of the training capacity in this field sits outside the community colleges.** That
-ratio is the paper's most quotable structural fact: in at least one high-demand
-allied-health field, the majority of the pipeline is Learning Partners.
+✅ **Cleared by name, per her own authorization** ⟨Sam, 2026-08-05⟩.
 
-⟨**NEEDS SAM**⟩ Is Rocio cleared by name for external use? Is the 4,200–7,000 estimate
-methodologically defensible enough to print?
+**Market context — numbers checked** ⟨deck slide 11, verified against COCI and MAP
+2026-08-05; full working in §7a Finding 4⟩:
+
+| Claim | Status |
+|---|---|
+| **24 CCC dental assisting programs** | ✅ **substantially confirmed** — COCI shows **27 colleges** with Dental Assistant (TOP 1240.10) courses, 421 courses statewide |
+| **44 non-CCC programs** | ⚠ **unverifiable from anything in the record.** Needs an external inventory of ROP / adult-school / private programs. Cite as an estimate or drop |
+| **4,200–7,000 annual CPL candidates** | ⚠ **unverifiable.** No source in the repos supports it. Do not print as a finding |
+
+⭐ **And the checkable number is a better story than the estimate was.** Of the **27
+CCCs teaching dental assisting, exactly ONE — West Los Angeles — awards CPL for the RDA
+license**, converting **214 of 215 eligible units (99.5%)**. Rocio's 16 units came from
+the one college in the state that built the pathway.
+
+⟨inferred⟩ So the frame shifts from *"look what CPL made possible"* to **"one college
+figured this out and 26 peers teaching the identical program have not started."** The
+first is inspiring. The second is actionable and names 26 targets.
 
 ### UC-7 · High-school CTE articulation (Cx) ⟨sourced + NEEDS SAM⟩ — see §8
 
@@ -419,12 +458,24 @@ units.** For scale: the system has ~103k units transcribed to date. **A single a
 partner's back-catalog is a measurable fraction of statewide CPL volume**, from one
 crosswalk.
 
-⚠ **Reconcile the unit figures before anything is published.** The record currently
-carries four different numbers: **8–17 units** (Christian slide 17), **6–10 units**
-(Noncredit Summit slide 26), **8.5 units** (Moreno Valley pathway, both decks), and
-per-destination bands of **3–12** (slide 20). These are probably measuring different
-things — a stacked maximum, a typical award, one college's specific determination, and
-per-pathway ranges — but as published they read as contradictory. ⟨**NEEDS SAM**⟩
+**The unit figure to use — resolved** ⟨Sam, 2026-08-05 + §7a⟩. Sam's instruction was to
+check whether East LA has its articulations in MAP and, if not, to use the range for any
+EMT/EMS certification at colleges in MAP.
+
+**East Los Angeles College IS in MAP** — it appears under the statewide **"EMT
+Certification"** exhibit and the Cal-JAC **"Firefighter EMT Certificate."** And the
+statewide exhibit answers the range question directly:
+
+> **EMT Certification** (California EMSA, statewide, 28 colleges) — general
+> recommendation **7.5–14 hours**; actual local awards **0.5–12.3 units**.
+
+**Use 7.5–14 units as the headline**, noting that individual colleges award within
+0.5–12.3 depending on their local determination. That also explains the keynote's
+"8–17" — plausibly EMT stacked with a second credential. The other published figures
+(6–10, 8.5, per-pathway 3–12) are measuring different things: a destination-program
+band, Moreno Valley's specific determination, and per-pathway ranges respectively. They
+are not contradictory once labeled — **but they must be labeled**, because as published
+they read as four answers to one question.
 
 **Ask 2 — an EMS Corps CPL landing page.** Slide 20 is already a working prototype of
 exactly this. It shows six pathway cards, each with a demand rating, a CCC program
@@ -463,21 +514,18 @@ license with an objective standard**, the faculty determination is about *equiva
 not about *evidence*. That is why this case is Tier 2 and not Tier 4, and it is the
 single most transferable lesson to other agency programs. **Look for the licensure.**
 
-### The mechanism question ⟨NEEDS SAM⟩
+### The mechanism — **ISA, confirmed** ⟨Sam, 2026-08-05⟩
 
-Sam believes the colleges are funded through **RSI** (Related Supplemental Instruction);
-both decks say **Instructional Service Agreements (ISAs)**. These are different
-mechanisms — RSI is the apprenticeship-specific funding stream under Ed Code
-§§79140–79149.3, while an ISA is the general vehicle for a college to contract
-instruction with an outside entity. It is possible different sites use different
-mechanisms, or that RSI applies at sites where EMS Corps sits inside an apprenticeship
-structure.
+Sites are funded through **Instructional Service Agreements**, matching both decks. Not
+RSI. So this is *not* the apprenticeship funding stream carrying a cohort program, and
+UC-8 and UC-9 stay structurally separate.
 
-⟨inferred⟩ **This matters more than a footnote.** If EMS Corps is being funded through
-RSI, then the apprenticeship funding stream is already being used for a
-non-apprenticeship cohort program — which would be a **significant and reusable
-finding** for every other agency program in §3 UC-9, and it connects UC-8 and UC-9 in
-a way neither deck notices. Worth pinning down precisely.
+⟨inferred⟩ That is the cleaner answer for the paper, and it generalizes better: **the
+ISA is the standard, well-understood vehicle for a college to contract instruction with
+an outside entity**, available to every agency, ROP, adult school, and CBO in this
+document without touching apprenticeship law. The reusable pattern is therefore
+**"ISA for the going-forward cohorts, CPL for the back-catalog"** — two mechanisms that
+together convert a Learning Partner's whole population, past and future.
 
 ### What makes this generalizable
 
@@ -644,9 +692,46 @@ reason mirroring is the paper's lead recommendation. Route D is the ask that mak
 paper matter, and the hold-harmless framing is what makes it winnable, because it
 costs the state nothing it is not already paying.
 
-⟨**NEEDS SAM**⟩ Is this real demand from named colleges? Which ones, and in which
-certificate sequences? A concrete example with a named program makes route D arguable
-and keeps it from reading as a hypothetical.
+### Is this real demand? — **my recommendation, since Sam wasn't sure**
+
+Sam's answer on 2026-08-05 was *"Not sure, recommend…"* — so here is the recommendation.
+
+⟨inferred⟩ **Do not go looking for demand evidence before acting. Ship Route A and
+instrument the question at the same time.**
+
+The reasoning: this practice is, by its nature, **invisible in every dataset we have.**
+A waiver that is never recorded generates no row anywhere — not in MIS, not in MAP, not
+in COCI. Searching for it in data will return zero and that zero will mean nothing. The
+only way to find out is to **ask humans a direct question.**
+
+**The concrete move — one question, three existing venues:**
+
+> *"When a student in one of your noncredit certificate sequences demonstrates they
+> already have the skills for a required course — what happens? Do they get the
+> certificate?"*
+
+Ask it at **CPL Office Hours** (5–20 colleges/week already), at the **annual CPL
+Summit**, and directly of the **four standalone noncredit institutions plus the ten
+largest in-college noncredit operations** (Mt. SAC, Santa Ana, SF, Santiago Canyon,
+Santa Rosa, Glendale, Saddleback, Canyons, Gavilan, Rio Hondo — §11). That is roughly
+14 conversations and it can be done inside a month.
+
+**Why this is the right sequencing:**
+
+1. **Route A does not need the evidence.** Mirroring solves the student's problem today
+   with existing authority. Ship it regardless of what the survey finds.
+2. **Route D absolutely needs it.** A Title 5 or apportionment ask with no named college
+   and no named certificate sequence will not survive its first meeting. The survey is
+   what makes that ask real.
+3. **The question itself is an intervention.** Half the colleges asked will not have
+   thought of mirroring as the answer. Asking plants it.
+4. **It converts an unknown into a measured thing in weeks, cheaply** — no build, no
+   data work, using convenings that already happen.
+
+⚠ **One caution on how to ask.** Phrase it as *"what happens to the student"* — never
+*"do you waive courses?"* The second reads as an audit question about a practice that
+technically costs the college apportionment, and people will say no. The first is about
+a student outcome, and people will tell you the truth.
 
 ---
 
@@ -662,20 +747,23 @@ and keeps it from reading as a hypothetical.
 - **`issuing_agency`** — who awards the credential
 - **`training_agency`** — who *taught* it
 
-**2,188 credential entries. 374 (17.1%) carry a training agency.** Today those are
+**2,188 credential entries. 374 (17.1%) carry a training agency.** The largest are
 trade JATCs (Carpenters Training Committee for Northern California: 97), CAL FIRE
 (31), the U.S. Armed Forces (30), UA Local 342 JATC (23), Iron Workers Training
-Center (17), Sacramento Electrical Training Center (11) — **and exactly one high
-school, Fontana High School (9).**
+Center (17), and Sacramento Electrical Training Center (11).
 
-**Zero noncredit colleges. Zero adult schools. Zero ROPs.**
+> **⚠ Correction (2026-08-05).** An earlier draft of this section said "zero noncredit
+> colleges, zero adult schools, zero ROPs," reading only the top of that list. A full
+> audit — **§7a** — shows **high schools (~48 entries), ROPs (Baldy View), and adult
+> schools (Fontana Adult School) ARE present.** Only the **noncredit colleges** are
+> genuinely at zero. The corrected picture is stronger, not weaker: the hardest partner
+> lane populated itself organically, and the easiest one is empty.
 
-⟨inferred⟩ The apprenticeship world already populated this field because the sponsor
-*is* the trainer and the distinction was unavoidable. The noncredit world never did,
-because nobody asked the question. **The infrastructure for recognizing Learning
-Partners was built as a side effect of the trades work and has never been pointed at
-noncredit.** That is a genuinely fortunate position: this is a data-population
-project, not a schema project.
+⟨inferred⟩ The apprenticeship and high-school worlds populated this field because the
+sponsor *is* the trainer and the distinction was unavoidable. The noncredit colleges
+never did, because nobody asked them the question. **The infrastructure for recognizing
+Learning Partners already works — it has simply never been pointed at noncredit.** That
+is a fortunate position: this is a data-population project, not a schema project.
 
 ### The three-role model the paper should establish
 
@@ -683,7 +771,7 @@ Every CPL award has three roles, and today the system records one:
 
 | Role | Who | Recorded today? |
 |---|---|---|
-| **Originator** — taught the learning | NOCE, an adult school, an ROP, a JATC, an employer | `training_agency`, 17% populated, no NC |
+| **Originator** — taught the learning | NOCE, an adult school, an ROP, a JATC, an employer | `training_agency`, 17% populated — high schools/ROPs/adult schools yes, **noncredit colleges zero** (§7a) |
 | **Validator** — assessed and certified it | CompTIA, ASE, NREMT, a state licensing board, or the teaching faculty | `issuing_agency`, well populated |
 | **Awarder** — converted it to transcripted credit | the CCC, always | fully — this is what we measure |
 
@@ -721,59 +809,268 @@ ever reads as taking credit away from colleges, adoption dies immediately.
 
 ---
 
-## 8. The CATEMA void and how HS Cx actually works ⟨Sam's Q1⟩
+## 7a. What the MAP data actually says — an evidence audit
 
-### How Cx works ⟨sourced: public college catalogs, verified 2026-08-05⟩
+⟨sourced: `credential_reference_data.js` and `coci_lookup_data.js`, queried 2026-08-05⟩
+
+This section did not exist in the first draft. It exists because Sam asked me to find
+"things I don't know I don't know," and querying the live credential data against the
+taxonomy turned up five things that change conclusions elsewhere in this document.
+
+**Base counts:** 1,987 unified credential titles · 1,603 articulated · 4,240
+articulation lines · 84 statewide titles · 348 titles carrying a named training agency.
+
+### ⭐ Finding 1 — The high-school lane is already populated. The noncredit lane is at **zero**.
+
+I said in the first draft that MAP carried "zero noncredit colleges, adult schools, or
+ROPs." **That was wrong about adult schools and ROPs, and the correction is more
+interesting than the original claim.**
+
+| Learning Partner type | Entries in MAP | Examples |
+|---|---:|---|
+| **High schools** | **~48** | Fontana, Summit, Birmingham Community Charter, Cajon, Lemoore, Mater Dei, A.B. Miller, Cleveland, Jurupa Hills, Arroyo Valley, + "Local High School" (10) |
+| **ROPs** | 2–3 | **Baldy View Regional Occupational Program** |
+| **Adult schools** | 2 | **Fontana Adult School**, "Adult School (varies)" |
+| **HS districts** | 1 | Chaffey Joint Union High School District |
+| **Charter / private trainers** | several | Learn 4 Life, Cisco Networking Academy, CyberForward Academy, Riverside Flight Academy |
+| **Noncredit colleges** (NOCE · SD Cont. Ed · Mt. SAC NC · Calbright) | **0** | — |
+
+**Zero. Not "few" — none.** The four standalone noncredit institutions do not appear as
+issuer or training agency on a single one of the 1,987 credential titles.
+
+⟨inferred⟩ **This is the sharpest single fact in the document.** The *hardest* Learning
+Partner relationship — K-12, a different segment, different data rules, no shared
+governance — is the one that organically populated itself, because colleges have been
+entering high-school articulations as CPL exhibits for years. The *easiest* one — four
+institutions inside the CCC system, on the same platform, at the same summits, holding
+$1M in carve-out funding — is empty.
+
+The gap is not capability, permission, or infrastructure. **It is that nobody has done
+the data entry.** That makes it the cheapest high-value fix in this entire document,
+and it should be near the top of any action list.
+
+### ⭐ Finding 2 — EMT is already a statewide exhibit at 28 colleges, and it *outperforms* the system
+
+⟨answers Sam's Q2⟩ **East Los Angeles College IS in MAP with EMT articulations** — under
+both the statewide **"EMT Certification"** exhibit and the Cal-JAC **"Firefighter EMT
+Certificate."** No new articulation work is needed there.
+
+**"EMT Certification"** (issuer: California EMSA) — **statewide**, CPL types Credit By
+Exam · Industry Certification · Military · Portfolio Review:
+
+- **28 colleges**: Antelope Valley, Bakersfield, Cabrillo, Chabot, Chaffey, City College
+  of San Francisco, College of the Desert, Columbia, Contra Costa, Cuesta, **East Los
+  Angeles**, Lake Tahoe, Los Medanos, Mendocino, Merced, Modesto, Monterey Peninsula,
+  **Moreno Valley**, Mt. San Antonio, Napa Valley, Norco, Palo Verde, Rio Hondo,
+  Riverside City, San Diego Miramar, Santa Ana, West Los Angeles, Woodland
+- **General recommendation: 7.5–14 hours**; local awards range **0.5 – 12.3 units**
+- **Eligible 1,338.6 · transcribed 1,011.6 · applied 1,136.1**
+
+⭐ **That is a 75.6% transcription rate against a system average of roughly 43%.**
+EMT is one of the best-converting credentials in the entire CPL system, and nobody in
+either deck mentions it.
+
+⟨inferred⟩ **This materially changes the EMS Corps ask (§3a).** It is not "build
+articulations for 500 alumni." The articulations exist, at 28 colleges, in a statewide
+exhibit that already converts better than almost anything else. **The ask is outreach.**
+That is a far cheaper, faster, and more defensible proposal.
+
+**The unit range to use** ⟨per Sam's instruction⟩: the statewide EMT Certification
+exhibit's general recommendation is **7.5–14 hours**, with local awards **0.5–12.3
+units**. Use **7.5–14** as the headline until East LA's specific determination is
+confirmed. It also explains the keynote's "8–17 units" — that is plausibly EMT stacked
+with a second credential.
+
+Adjacent EMS credentials already in MAP:
+
+| Credential | Issuer | Colleges | Eligible | Transcribed |
+|---|---|---:|---:|---:|
+| Paramedic License | CA EMSA | 11 | 721.5 | 397 |
+| EMT-2 Certification | CA EMSA | 2 | 230 | 172 |
+| Paramedic Certification | NREMT | 1 (Bakersfield) | 118.5 | 79 |
+| **Firefighter EMT Certificate** | **Cal-JAC (statewide)** | **10** | **0** | **0** |
+| **Fire Fighter Paramedic Journeyperson** | **Cal-JAC (statewide)** | **4** | **0** | **0** |
+| **Paramedic Journeyperson** | **Cal-JAC (statewide)** | **2** | **0** | **0** |
+
+### ⭐ Finding 3 — Built-but-dormant statewide exhibits are a hidden inventory
+
+Look at the last three rows above. **Three Cal-JAC statewide exhibits, published across
+16 college-slots, with zero students served.** The articulation work is *done*. The
+faculty determinations are *made*. Nothing is flowing.
+
+⟨inferred⟩ **This is a category of opportunity nobody is tracking**, and it is the
+cheapest volume available anywhere in CPL: a published statewide exhibit with zero
+transcriptions is a completed asset awaiting outreach. MAP can enumerate these
+system-wide in one query — *statewide exhibits, ranked by (colleges published × zero
+uptake)* — and that list is an outreach worklist, not a build backlog.
+
+**Recommendation:** produce that list. It is a day of work and it likely surfaces
+dozens of Cal-JAC-style cases across every sector in this document.
+
+### ⭐ Finding 4 — Dental assisting: one college out of 27 ⟨Sam's Q5⟩
+
+**Confirming the numbers Sam asked about:**
+
+- **"24 CCC programs"** — ✅ **substantially confirmed.** COCI shows **27 colleges with
+  Dental Assistant (TOP 1240.10) courses**, 421 courses statewide. Also 16 colleges
+  with Dental Hygienist (1240.20). The deck's slide-11 college list is a subset of
+  these 27, so the figure holds.
+- **"44 non-CCC programs"** — ⚠ **cannot be verified from anything I hold.** It would
+  require an external inventory of ROP, adult-school, and private dental-assisting
+  programs. Cite it as an estimate or drop it.
+- **"4,200–7,000 annual CPL candidates"** — ⚠ **likewise unverifiable.** No source in
+  the repos supports it. Do not print it as a finding.
+
+**What the data does show, and it is a stronger story than the estimate was:**
+
+| Credential | Colleges awarding CPL | Eligible | Transcribed |
+|---|---|---:|---:|
+| **Registered Dental Assistant (RDA) License** | **1** — West Los Angeles | 215 | **214** |
+| Dental Board of California Certificates | 2 — Cabrillo, West LA | 121.5 | 106.5 |
+| Registered Dental Hygienist (RDH) License | 2 — Glendale, West LA | 3,216 | **3,136** |
+
+⭐ **27 California community colleges teach dental assisting. Exactly one awards CPL for
+the RDA license.** And that one — West LA — has a **99.5% transcription rate** on it.
+
+⟨inferred⟩ **That reframes the dental story completely.** It was "look what CPL made
+possible for Rocio." It should be: **"one college figured this out, converted 214 of 215
+eligible units, and 26 peer colleges teaching the same program have not started."** The
+first is inspiring; the second is actionable, and it names 26 specific colleges.
+
+Note also the **RDH line: 3,136 units transcribed across two colleges.** That is one of
+the largest single-credential CPL volumes in the system, and it is invisible in every
+deck. Allied health is quietly carrying enormous CPL weight.
+
+### ⭐ Finding 5 — "Local High School" as an issuer is a data-quality tell
+
+Ten credential entries carry the issuer **"Local High School"** and one carries training
+agency **"Adult School (varies)"** — generic placeholders standing in for a named
+institution.
+
+⟨inferred⟩ Harmless as data entry; **fatal to partner recognition.** You cannot report
+back to "Local High School," and you cannot build a landing page for it. Every §7
+recognition mechanism depends on the partner being *named*. Resolving these generics —
+and adding the same discipline going forward — is a precondition for the partner-facing
+work, not a cleanup task to do later.
+
+### What these five findings change
+
+1. §3a EMS Corps: **outreach, not articulation-building.** 28 colleges are ready.
+2. §7 recognition: the noncredit-institution gap is **absolute (zero)**, and the
+   high-school lane is the proof the model works.
+3. §8 HS Cx: MAP is **already doing this**, at ~48 credentials — the ask is step 3
+   (rosters), not entry into a new business.
+4. A **new workstream**: enumerate dormant statewide exhibits as an outreach worklist.
+5. A **new precondition**: resolve generic partner names before building partner
+   surfaces.
+
+---
+
+## 8. High-school CTE articulation and the Cx conversion ⟨Sam's Q1⟩
+
+> **Framing note (Sam, 2026-08-05).** The retirement of the incumbent third-party
+> articulation-management application is **not public knowledge**, so it is not named
+> here and must not be named in the white paper. The frame is positive and forward:
+> **MAP facilitating the high-school CTE articulation process and the opportunities it
+> opens.** Everything below works whether or not the reader knows a system is going
+> away.
+
+### The mechanism, and the distinction that actually matters
+
+Two things look similar and are not:
+
+| | **HS CTE articulation** (traditional) | **Credit by exam — "Cx"** |
+|---|---|---|
+| What the college does | Recognizes the HS course as equivalent; may hold credit in escrow | Awards credit by **examination** under Title 5 §55050 |
+| How it transcripts | As articulated credit | As **"credit by exam — high school articulation"** |
+| **CSU transfer** | **Not recognized for transfer** | **Recognized** |
+
+**⭐ That last row is the whole story, and it is the thing most people in this
+conversation do not know** ⟨sourced: Sam, 2026-08-05⟩:
+
+> **CSU does not recognize high-school CTE articulated courses for transfer. CSU does
+> recognize Cx.**
+
+⟨inferred⟩ **So the field has already converted — most HS CTE articulation is now
+processed as Cx**, and it converted for a *transfer* reason, not a CTE reason. A
+college that leaves a student's award as plain articulated credit hands them credit
+that dies at the CSU door. Cx is what makes it portable.
+
+This is the single most useful fact in this section, because it reframes the entire
+workstream: **HS CTE articulation is not a K-12 pipeline concern that happens to touch
+CPL. It is CPL** — specifically, it is credit by exam, one of the five Title 5 §55050
+types, applied at scale to teenagers. The monograph says exactly this in its own list
+of CPL modes ⟨sourced⟩:
+
+> *"High school coursework via articulation agreements **based on credit by exam**."*
+
+MAP's remit already covers it. Nothing needs to be extended for MAP to be the right
+home; it is the same instrument MAP already runs everywhere else.
+
+### How Cx works, step by step ⟨sourced: public college catalogs, verified 2026-08-05⟩
 
 1. College and high-school/ROP faculty align a HS CTE course to a college course —
    course outline, syllabus, textbook, and final exam must be comparable.
 2. The student earns an **A or B** in the articulated high-school course.
 3. The high-school teacher **certifies the student** against a class roster.
 4. The college awards **credit by examination** and transcripts it as
-   **"credit by exam — high school articulation,"** as required by Title 5.
+   **"credit by exam — high school articulation."**
 5. The student generally must apply and matriculate within a defined window.
 
-**CATEMA — the Career And Technology Education Management Application — is step 3.**
-It is the web application where college and secondary staff enter, update, and report
-articulation outcomes, and where teachers hold class rosters and refer students for
-credit. ⟨sourced: Palomar, Los Medanos, Cosumnes River, Las Positas⟩
+**Steps 1, 2, 4 and 5 are ordinary CPL. Step 3 is the part that needs a system** — the
+roster, the teacher certification event, the student referral, and the audit trail.
+An articulation agreement with no roster system is a document, not a pathway.
 
-### Why the sunset matters more than it sounds
+### What MAP already has, and what it would need
 
-⟨inferred⟩ **The articulation agreements survive a CATEMA sunset. The plumbing does
-not.** What disappears is the roster, the teacher certification event, the referral,
-and the audit trail — the entire mechanism by which a student who earned an A in a
-high-school course becomes a student the college can transcript. An articulation
-agreement with no roster system is a document, not a pathway.
+⟨sourced: `credential_reference_data.js`, 2026-08-05⟩ **The high-school lane is already
+the best-populated Learning Partner lane in MAP** — see §7a for the full audit. Roughly
+**48 credential entries** already carry a named high school as issuer or training
+agency (Fontana, Summit, Birmingham Community Charter, Cajon, Lemoore, Mater Dei,
+A.B. Miller, Valley, Century, Cleveland, Jurupa Hills, Colton, Orange, Santiago,
+Upland, Corona, University, Irvine, Garden Grove, El Modena, Rancho Cucamonga, Canyon,
+CHAMPS, Hanford West, Arroyo Valley, plus a generic **"Local High School"** with 10),
+along with **Baldy View Regional Occupational Program**, **Chaffey Joint Union High
+School District**, **Fontana Adult School**, and **Learn 4 Life**.
 
-⟨inferred⟩ **MAP is unusually well-suited to absorb this**, because Cx is structurally
-a **Tier 3 use case that MAP already handles in another costume.** A high-school
-articulation is an exhibit whose Originator is the high school, whose Validator is the
-teaching HS instructor, and whose Awarder is the college — the exact three-role model
-from §7, with the same `training_agency` field already waiting (and Fontana High
-School already sitting in it). The high-school landing page is already on the build
-list (§9).
+⟨inferred⟩ **This is a genuinely important discovery and it changes the ask.** MAP is
+not proposing to enter the high-school articulation business — **colleges have already
+been entering high-school articulations into MAP as CPL exhibits.** The three-role
+model (§7) fits without modification: the high school is the **Originator**, the
+certifying HS instructor is the **Validator**, the college is the **Awarder**.
 
-⚠ **But this is a step-function increase in scope**, and the paper should say so
-plainly. Cx brings **individual student rosters and per-student teacher certification**
-into MAP. That is a different operational posture from publishing standing
-articulations, and it carries FERPA and K-12 data-sharing obligations that the
-credit-college relationship does not. It should be scoped as its own workstream, not
-folded into "noncredit."
+**What MAP would have to add is step 3 at scale: per-student rosters and teacher
+certification.**
 
-### ⟨**NEEDS SAM** — I cannot write this section without⟩
+⚠ **That is a step-function increase in operational scope, and the paper should say so
+plainly.** Everything MAP does today is *standing articulations* — publish once, apply
+to anyone. Cx rosters are **per-student, per-term records certified by a non-college
+employee**, which brings FERPA obligations and K-12 data-sharing agreements that the
+credit-college relationship does not. It should be scoped as **its own workstream**,
+not folded into "noncredit," even though both live in this document.
 
-**Nothing in any of the three repositories mentions CATEMA.** Public sources still
-show it operating. Everything below is a dependency:
+### Why it is worth doing anyway
 
-1. **Who** is sunsetting it, and on what **date**?
-2. **How many** colleges/districts and high-school partners are on it?
-3. Which functions must MAP replace — rosters? teacher certification? student
-   referral? transcript triggering? reporting? all of it?
-4. Is MAP's role **decided, proposed, or aspirational**? This determines whether the
-   paper says "MAP will" or "MAP could."
-5. Is there a regional consortium (the San Diego & Imperial model) that should be the
-   pilot?
+⟨inferred⟩ Three reasons, in order of force:
+
+1. **It is the only lane in this document that reaches learners *before* they are
+   adults.** Every other use case recovers learning after the fact. Cx captures it in
+   real time, at 16 and 17, and gives a student a college transcript before they
+   graduate high school.
+2. **The volume is potentially larger than every other lane combined.** HS CTE
+   enrollment dwarfs noncredit CTE. If even a modest share converts, it changes the
+   statewide CPL numbers by more than any single agency or partner play.
+3. **The Cx/CSU fact makes it a transfer story, not just a CTE story** — which reaches
+   a completely different and more powerful set of stakeholders.
+
+### Open ⟨NEEDS SAM⟩
+
+- **Scale**: how many colleges and high-school partners are on the incumbent system
+  today? That number sizes the opportunity and nothing in the repos carries it.
+- **Is MAP's role decided, proposed, or aspirational?** This determines whether the
+  paper says "MAP will," "MAP can," or "MAP could." I have written it as *can*.
+- Is there a regional consortium (the San Diego & Imperial model) that should be the
+  pilot?
 
 ---
 
@@ -1074,54 +1371,74 @@ Calbright — the handoff already establishes this, and finding 3(b) is why.
 
 ## 12. Open items
 
-### ⟨NEEDS SAM⟩ — blocking
+**Sam's 2026-08-05 answers cleared six of the original blockers.** What remains:
 
-1. **CATEMA** (§8): who, when, scale, which functions, and whether MAP's role is
-   decided/proposed/aspirational.
-2. **NC-CPL demand** (§6): which colleges, which certificate sequences, real or
-   hypothetical.
-3. **Landing pages** (§9): is the two-tab structure locked; build status and dates.
-4. **Feeder metric** (§11): is the current metric a target or a placeholder, and what
-   is actually countable in MAP for a noncredit campus today?
-5. **Story clearances** (§3): Rocio by name? EMS Corps? Real estate? The 4,200–7,000
-   dental-assisting estimate?
-6. **Audience and deadline** for the white paper, and what decision it must survive.
-7. **EMS Corps unit figures** (§3a): the record carries **8–17**, **6–10**, **8.5**, and
-   per-pathway **3–12** units. Which is which? These must reconcile before publication.
-8. **EMS Corps funding mechanism** (§3a): **RSI or ISA?** The decks say ISA; Sam thinks
-   RSI. If RSI, the apprenticeship funding stream is being used for a
-   non-apprenticeship cohort program — a reusable finding for the whole agency lane.
-9. **Rising Scholars back-catalog** (§3 UC-10): can CDCR say how many already-released
+### ⟨NEEDS SAM⟩ — still open
+
+1. **HS articulation scale** (§8): how many colleges and high-school partners are on the
+   incumbent system today? That number sizes the biggest-volume lane in the document.
+2. **Is MAP's HS role decided, proposed, or aspirational?** (§8) — determines whether
+   the paper says "MAP will," "MAP can," or "MAP could." Written as **can**.
+3. **Landing pages** (§9): is the two-tab structure locked; build status and dates for
+   the NC, HS, agency, and industry-partner pages.
+4. **Rising Scholars back-catalog** (§3 UC-10): can CDCR say how many already-released
    learners hold CDCR-delivered credentials no college has evaluated?
-10. **Calbright FTES** (§3 UC-12, §11): needs Malone before Calbright appears in
-    anything external.
+5. **Calbright FTES** (§3 UC-12, §11): needs Malone before Calbright appears anywhere
+   external.
+6. **The "44 non-CCC dental programs" and "4,200–7,000 candidates" figures** (§3 UC-6,
+   §7a): unverifiable from anything in the record. Where did they originate? Otherwise
+   cite as estimates or drop.
 
-### ⟨NEEDS VERIFICATION⟩ — I can do these, they just need doing
+### ✅ Answered 2026-08-05
 
-11. **CDCP rate** for a portfolio-development course (§10). The *category* question is
-    now largely answered — the Chancellor's deck lists **Workforce Preparation** as a
-    CDCP area — but the current CDCP rate relative to the credit base still needs the
-    2025-26 SCFF figures, and the formal eligibility read is still outstanding.
-12. **Whether any California noncredit program runs an instructor-guided portfolio
-    course against CCC CPL opportunities** (§10) — **still the highest-value research
-    item in the document.** If nobody is doing it, it is the paper's flagship proposal;
-    if someone is, they are the pilot.
-13. Title 5 / PCAH position on competency substitution inside a noncredit certificate
-    (§6) — the load-bearing legal claim.
-14. Financial-aid and momentum-eligibility treatment of CPL units (§5⑤).
+| | Answer |
+|---|---|
+| **CATEMA** | Not public — reframed as **MAP facilitating HS CTE articulation**, with the Cx/CSU transfer distinction as the mechanism (§8) |
+| **EMS Corps units** | East LA **is** in MAP; use the statewide EMT exhibit's **7.5–14 hours** (local awards 0.5–12.3) (§3a, §7a) |
+| **EMS Corps mechanism** | **ISA**, not RSI (§3a) |
+| **NC-CPL demand** | Sam unsure → **recommendation supplied**: ship Route A, instrument the question at Office Hours + Summit (§6) |
+| **Rocio** | ✅ cleared by name, her own authorization (§3 UC-6) |
+| **Dental "24 CCC"** | ✅ substantially confirmed — COCI shows **27** (§7a) |
+| **Audience / deadline** | **Internal**, today. Hence: everything in one place, gaps and opportunities marked |
+| **Monograph** | Read in full. Dated but valid; noncredit content is genuinely thin — see the appendix note |
 
-### Recommended next moves, independent of the above
+### ⟨NEEDS VERIFICATION⟩ — I can do these
 
-15. **Write the mirroring playbook** (§3 UC-1) — the highest-yield artifact for the
-    field, the paper's lead recommendation, and already named as statewide practice by
-    the Chancellor. It needs to exist.
-16. **Scope the EMS Corps landing page + alumni outreach** (§3a) — the fastest visible
-    win available, Chancellor-endorsed, with slide 20 already serving as the prototype.
-17. **Populate `training_agency` for the four standalone institutions and the NOCE
-    five** (§7) — small, concrete, unblocks partner-level reporting.
-18. **Walk the twelve use cases against the three 2026 commitments** (§10b) — the
-    acceptance test for whether the taxonomy and the announced roadmap actually meet.
-19. **Fix the two funding data defects** (§11) — Mt. SAC double count, Calbright.
+7. **Whether any California noncredit program runs an instructor-guided portfolio course
+   against CCC CPL opportunities** (§10) — **the highest-value open research item.** If
+   nobody does, it is the flagship proposal; if someone does, they are the pilot.
+8. **CDCP rate** for a portfolio-development course (§10). Category largely answered
+   (Workforce Preparation is an enumerated CDCP area); the 2025-26 SCFF rate and the
+   formal eligibility read are outstanding.
+9. **Title 5 / PCAH position on competency substitution inside a noncredit certificate**
+   (§6) — the load-bearing legal claim behind Route D.
+10. **Financial-aid and momentum-eligibility treatment of CPL units** (§5⑤).
+
+### ⭐ Recommended next moves — ranked by value ÷ effort
+
+1. **Populate the four standalone noncredit institutions in MAP** (§7a Finding 1). They
+   are at **absolute zero** across 1,987 credential titles while ~48 high-school entries
+   exist. Highest value-to-effort ratio in the document — it is data entry, and it
+   unblocks every partner-recognition mechanism in §7.
+2. **Reframe EMS Corps as outreach, not articulation-building** (§3a, §7a Finding 2).
+   28 colleges already carry the statewide EMT exhibit at a **75.6% transcription rate**.
+   Build the landing page; it *is* the outreach vehicle.
+3. **Enumerate dormant statewide exhibits** (§7a Finding 3) — statewide exhibits ranked
+   by (colleges published × zero uptake). Three Cal-JAC EMS exhibits sit at 16
+   college-slots with zero students. **One query, and it yields an outreach worklist
+   rather than a build backlog.** Likely dozens more across every sector here.
+4. **Write the mirroring playbook** (§3 UC-1) — the lead recommendation, already named
+   as statewide practice by the Chancellor, with two documented instruments (summative
+   exam · CPL rubric). It needs to exist.
+5. **The 26-college dental list** (§7a Finding 4) — 27 CCCs teach dental assisting, one
+   awards RDA CPL at 99.5% conversion. That is a named, specific outreach list today.
+6. **Run the noncredit-waiver question** at Office Hours + the Summit (§6) — ~14
+   conversations, one month, converts an unknown into a measured thing.
+7. **Resolve generic partner names** — "Local High School" (10), "Adult School (varies)"
+   (§7a Finding 5). A precondition for partner-facing surfaces, not a later cleanup.
+8. **Walk the twelve use cases against the three 2026 commitments** (§10b) — the
+   acceptance test for whether the taxonomy and the announced roadmap actually meet.
+9. **Fix the two funding data defects** (§11) — Mt. SAC double count, Calbright.
 
 ---
 
@@ -1134,20 +1451,37 @@ Calbright — the handoff already establishes this, and finding 3(b) is why.
 | Apprenticeship & Noncredit Education one-pager (2026) | uploaded | §3 UC-8 |
 | `kb/credentials.json` — 2,188 entries, issuing/training agency | tracker | §7 |
 | `cpl_funding_data.js` — 2025-26 DataMart credit + NC FTES, pool config | tracker | §11 |
+| **`credential_reference_data.js`** — 1,987 unified titles, 4,240 articulation lines, issuer/trainer | tracker | **§7a** |
+| **`coci_lookup_data.js`** — 141,738 COCI course rows (dental program counts) | tracker | **§7a** |
 | `docs/cpl_funding_handoff.md` — NC decision, Calbright flag, #976 | tracker | §11 |
-| Scaling CPL in California (Oct 2024) | public KB | §2 — NC content is one line; see note |
+| **Scaling CPL in California (Oct 2024) — full 32-page monograph** | uploaded 2026-08-05 | §3 UC-1 (the summative-exam passage), §8; see the note below |
 | CPL — Perspectives for Policy & Advocacy, CTE lens (2026-07-19) | CPLBrain | §3 UC-2, UC-8 |
 | BOG prep — NOCCCD/NOCE (2026-07-06) | CPLBrain | §3 UC-2 |
 | ESS 25-82 funding memo; CPL Initiative Report 2026 | public KB | §11 |
 | Public college catalogs on Cx and CATEMA (Palomar, Los Medanos, Cosumnes River, Las Positas, SD & Imperial consortium) | web, 2026-08-05 | §8 |
 
-> **Note on the monograph.** Sam asked me to pay close attention to the NC sections of
-> *Scaling CPL in California*. **Both copies available to me — the public KB version
-> and the CPLBrain vault copy — are distillations (62 and 70 lines), not the 38-page
-> original.** Noncredit appears once, as an item in "CPL modes/settings." If the full
-> monograph has substantive NC sections, **I have not read them** — please point me at
-> the original and I will fold it in.
+> **Note on the monograph — resolved 2026-08-05.** Sam supplied the full 32-page
+> *Scaling Credit for Prior Learning in California* (the KB and vault copies are 62- and
+> 70-line distillations). **He flagged it as "a bit dated but I think still valid," and
+> that reads correctly** — the framework, CPL types, modes, and academic process hold;
+> the status counts are superseded by the dashboards, and it describes "the two
+> continuing and adult education campuses" where there are now four standalone
+> noncredit institutions.
 >
-> Related and worth noting on its own: across the entire public KB, **eight files
-> mention noncredit, one or two lines each.** The deck is substantially ahead of the
-> written record. That gap is itself an argument for the white paper.
+> **On the original ask — "pay close attention to the sections on NC CPL":** honestly,
+> **there aren't sections.** Across 32 pages, "noncredit" appears **six times**, "ROP"
+> twice, "adult ed" once. The noncredit content is (a) one bullet in the CPL-modes list
+> and (b) **one genuinely valuable passage** in "The Academic Process" describing the
+> noncredit→credit summative-exam mechanism — now quoted in full at §3 UC-1, where it
+> earns its place as the documented instrument behind mirroring.
+>
+> So the honest finding stands and is worth stating plainly in the paper: **the
+> monograph does not have a noncredit strategy. Neither does the public KB** — eight
+> files mention noncredit, one or two lines each. The decks, the MAP data, and this
+> document are well ahead of the written record. **That gap is itself the argument for
+> the white paper.**
+>
+> One thing the monograph *does* settle, quietly: its CPL-modes list already reads
+> *"High school coursework via articulation agreements **based on credit by exam**"* —
+> i.e. the Cx framing in §8 is not new positioning, it is what the initiative has said
+> all along.
