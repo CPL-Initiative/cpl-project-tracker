@@ -6,6 +6,7 @@ audience: "Sam Lee — pre-white-paper. NOT publishable as-is."
 tags: [noncredit, not-for-credit, adult-education, rop, high-school-articulation, apprenticeship, cpl, funding, learning-partners, thinking-doc]
 artifacts:
   - "Vision 2030 Noncredit Summit Fall 2025 deck (33 slides, Lee/Decelle)"
+  - "Chancellor Sonya Christian — Vision 2030 Noncredit Summit keynote, Oct 2025 (22 slides; CPL section from slide 14)"
   - "Apprenticeship & Noncredit Education one-pager (2026)"
   - "kb/credentials.json — issuing_agency / training_agency"
   - "cpl_funding_data.js — 2025-26 MIS DataMart credit + noncredit FTES"
@@ -18,14 +19,25 @@ related:
 # Noncredit & Learning-Partner CPL — a thinking document
 
 > **What this is.** The long-form cogitation Sam asked for on 2026-08-05, ahead of a
-> white paper. It carries the full use-case taxonomy, the funding analysis with real
-> numbers, and the open forks. It is **internal**: §11 contains allocation math that
-> should not travel without a decision about what's shareable. The white paper gets
-> **carved out of this**, not appended to it.
+> white paper. It carries the full use-case taxonomy, the mechanisms, the open forks,
+> and — parked at the back — the funding arithmetic. The white paper gets **carved out
+> of this**, not appended to it.
+>
+> **Scope, per Sam (2026-08-05):** *"Keep the focus primarily on understanding and
+> scaling NC Universe CPL, and then we will take what we've distilled and see how it
+> best applies to the funding formula."* So **§3–§10 are the work**; §11 is a holding
+> pen that exists only so the numbers aren't re-derived later.
+>
+> It is **internal**: §11 contains allocation math that should not travel without a
+> decision about what's shareable.
 >
 > **Confidence marking.** Claims are tagged ⟨sourced⟩ (traceable to a document or
 > dataset in the appendix), ⟨inferred⟩ (my analysis from sourced material), or
 > ⟨**NEEDS SAM**⟩ (a factual dependency I cannot resolve from the record).
+>
+> **Reading order if you have ten minutes:** §2 (the thesis and the Chancellor's
+> authorizing statement) → §4 (the scalability ladder) → §3a (EMS Corps, the reference
+> implementation) → §10b (the three 2026 commitments this delivers against).
 
 ---
 
@@ -81,11 +93,26 @@ is therefore the natural connective tissue between the credit system and everyth
 adjacent to it. The white paper's job is to make that argument and then make it
 operational.
 
+### The authorizing statement already exists ⟨sourced: Christian, Noncredit Summit, slide 14⟩
+
+The white paper does not need to argue that noncredit belongs in the CPL goal. The
+Chancellor has already said so, on the record, in the CPL section of her own Noncredit
+Summit keynote:
+
+> **220,000 working adults and apprentices, and 30,000 veterans and military-connected
+> learners.**
+> **Noncredit and Not-for-Credit learners will be key to meeting this goal.**
+
+⟨inferred⟩ That is the paper's opening. The argument is not "should noncredit count" —
+it is **"the statewide CPL goal is not reachable without it, and here is the
+operating system."** Everything in §3–§11 is the answer to a question the Chancellor
+has already asked in public.
+
 **The corollary that organizes everything below.** CPL's cost is not the credit — the
 credit is free to issue. The cost is **the assessment**: faculty time spent
 establishing that this learner knows this material. Every scaling move in CPL is a
 move that reduces, amortizes, or subsidizes assessment cost. That single lens sorts
-the eleven use cases into a ladder (§4) and produces the funding recommendation (§11).
+the twelve use cases into a ladder (§4) and, eventually, the funding metric (§11).
 
 ---
 
@@ -122,6 +149,17 @@ of Achievement without retaking courses.
 **Scalability: Tier 1.** **What MAP needs:** nothing new — this already
 auto-articulates. **What the field needs:** a replicable mirroring playbook and a
 model CPL rubric.
+
+**Already endorsed at the Chancellor level** ⟨sourced: Christian, Noncredit Summit,
+slide 8⟩. Describing what distinguishes California from other states:
+
+> *"Many districts build noncredit-to-credit bridges (**mirrored courses, competency
+> mapping, CPL**) so learners step into credit certificates/Associates/Bachelors."*
+
+⟨inferred⟩ Mirroring is therefore not a proposal — it is **named statewide practice
+that has never been systematized.** The paper's job is not to sell it but to supply
+the playbook, the model rubric, and the count of where it exists today. That is a
+much easier paper to write and a much harder one to argue with.
 
 ### UC-2 · Noncredit certificate → credit certificate or degree ⟨sourced⟩
 
@@ -251,25 +289,220 @@ awarded now**. Every mature Learning Partner program has an alumni back-catalog.
 That is the fastest available source of volume in the entire NC strategy, and it
 front-loads under the funding model's front-load design.
 
-### UC-10 · Justice-involved learning ⟨sourced: deck slide 25⟩
+### UC-10 · Justice-involved learning — Rising Scholars ⟨sourced: deck slide 25⟩
 
-Rising Scholars landing page in development, CDCR-branded, welding credentials (AWS,
-NCCER) mapped across LA Trade Tech, San Diego City, Fresno City, Long Beach City,
-Bakersfield, Mt. SAC, Riverside City, Cerritos, Pasadena City, Santa Monica, Orange
-Coast, Fullerton. Same landing-page architecture, different sponsor.
+**Mechanism.** Vocational training delivered inside CDCR facilities produces
+third-party industry credentials; those convert to credit at any CCC on release or
+during enrollment.
+
+**Already mocked up:** a CDCR-branded landing page (`www.CDCR.gov`,
+`CollegeCredit@CDCR.gov`), carrying **AWS D1.1/D1.3/D17.1 Supplemental**, **NCCER
+Welding Level 2**, and **AWS D1.1 SMAW** at 3–4 credits each, mapped across **LA Trade
+Tech, San Diego City, Fresno City, Long Beach City, Bakersfield, Mt. SAC, Riverside
+City, Cerritos, Pasadena City, Santa Monica, Orange Coast, and Fullerton.**
+
+⟨inferred⟩ **Why this is a big opportunity and not a niche one.** Rising Scholars has
+three properties that put it structurally close to EMS Corps (§3a):
+
+- **Third-party validated.** AWS and NCCER are national welding standards with
+  objective assessment. Same "look for the licensure" logic — Tier 2, not Tier 4.
+- **A single sponsor holding the whole population.** CDCR knows who completed what and
+  when. That is the same bounded-and-reachable property that makes the EMS Corps
+  alumni play work, at considerably larger scale.
+- **The credential travels but the person's record often doesn't.** Justice-involved
+  learners are among the most likely to have real, documented training that no
+  receiving institution ever sees. CPL is not a convenience here — it is frequently
+  **the only mechanism** by which that learning survives the transition.
+
+⟨inferred⟩ The equity argument writes itself and should be stated plainly rather than
+gestured at: for this population, CPL converts time that the system treats as a gap
+into transcripted progress. **There is a real back-catalog question here too** — how
+many people already released hold CDCR-delivered credentials that no college has ever
+evaluated? ⟨**NEEDS SAM** — is anyone at CDCR positioned to answer that?⟩
 
 ### UC-11 · CPL toward a *noncredit* award — Sam's "oxymoron" — see §6
+
+### UC-12 · Calbright — competency-based noncredit, statewide, online ⟨sourced: deck slide 23⟩
+
+**Mechanism.** Calbright is a fully online, tuition-free, **competency-based** statewide
+college classified as noncredit. Its landing page mockup is built and carries the same
+credential set as the others: **ASE G1**, **CompTIA Security+**, **CompTIA Network+**,
+with the **"At Calbright" | "To California Community Colleges"** tab pair.
+
+⟨inferred⟩ **Calbright is the most structurally interesting case in the entire
+taxonomy, and it is underexploited.**
+
+- **Competency-based by design.** Every other case in this document has to *retrofit*
+  a competency determination onto instruction that was built around seat time.
+  Calbright's programs are *already* expressed as demonstrated competencies. The
+  translation problem CPL usually solves has, in Calbright's case, largely been solved
+  upstream at the curriculum level.
+- **Statewide by charter.** It is the one Learning Partner with **no service area**.
+  A Calbright→CCC crosswalk is immediately useful to a learner in all 116 districts,
+  where a NOCE crosswalk is worth most in Orange County. Per unit of faculty
+  crosswalk effort, Calbright has the largest reachable population of any partner.
+- **Its credentials are already the ones with statewide exhibits.** CompTIA and ASE are
+  UC-5 credentials with existing determinations at many colleges. The crosswalk is
+  substantially **already built** — it just has not been pointed at Calbright's
+  completers.
+
+⟨inferred⟩ So Calbright is plausibly the **fastest** partner to light up: the
+credentials are pre-articulated, the population is statewide, and the landing page is
+already designed. If we want an early, visible statewide win, this is the shortest
+path to one.
+
+⚠ **But the data problem must be resolved first, and it is not cosmetic.** Calbright
+reports **21,438 noncredit FTES on 2,484 headcount** — 8.6 FTES per student, which is
+impossible (see §11). Any story we tell about Calbright's scale will be checked against
+that figure, and any funding logic that touches it inherits the defect.
+⟨**NEEDS SAM** — this needs Malone before Calbright appears in anything external.⟩
+
+---
+
+## 3a. EMS Corps — the reference implementation
+
+⟨sourced: Christian Noncredit Summit slides 16–20; Noncredit Summit deck slides 26–30; Sam, 2026-08-05⟩
+
+EMS Corps deserves its own section because it is the **only case in the record that
+exercises every mechanism in this document at once** — and because Sam has named two
+concrete asks against it. If we can do EMS Corps end to end, we have a template for
+every agency and cohort program in the state.
+
+### What it is
+
+A five-month intensive EMT licensing program for young people 18–26 facing barriers to
+employment. Paid monthly stipend, wraparound support, counseling, mentoring, career
+guidance, job placement. **85% success rate.** Operated by Public Works Alliance;
+Jeff Metcalfe is the New Site Implementation Lead.
+
+### Why it is the perfect case study
+
+**It is a Learning Partner that became a college program in one year, and the before
+state is still visible.**
+
+> *"Until this year, EMS training was offered through ROP, adult education, and private
+> training agencies and students had no pathway to college."*
+
+**That single sentence is the entire white paper in miniature.** The same instruction,
+the same students, the same outcomes — and the difference between "no pathway to
+college" and "college credit from day one" is not curriculum, it is **institutional
+plumbing.** Nothing about the teaching changed.
+
+Today: **11 new sites launched in 2025, all working with California Community Colleges
+to deliver the EMT training**, 16 sites nationally, via **Instructional Service
+Agreements**. Trainees are *"enrolled as college students from day one"* and *"earn
+college credit while they train."*
+
+### The two asks
+
+**Ask 1 — retroactive CPL outreach to 500+ alumni.** The Chancellor has already
+committed to this publicly:
+
+> *"We are working closely with Public Works Alliance to reach out to EMS Corps alumni
+> to ensure they can receive college credit toward associate and baccalaureate degree
+> programs in areas like Paramedicine, Fire Technology, Emergency Management, Public
+> Safety, and beyond."* — Chancellor Christian
+
+⟨inferred⟩ **This is the highest-value single action available anywhere in the NC
+universe right now**, and I want to be emphatic about why. It is:
+
+- **Bounded** — a known, finite, reachable population, held by a willing partner
+- **Homogeneous** — every alum holds the *same* credential, so it is **one** faculty
+  determination covering 500+ people. Tier 2 economics on a Tier 4-sized outcome.
+- **Retroactive** — the learning already happened; there is no pipeline to wait for
+- **Pre-endorsed** — the Chancellor has said it in public, so the political work is done
+- **Fan-out, not a single path** — the slide-20 analysis shows six destination
+  pathways, not one, so an alum who does not want Paramedicine still has five doors
+
+**The arithmetic.** 500 alumni × the 6–12 unit Paramedic band ⟨slide 20⟩ ≈ **3,000–6,000
+units.** For scale: the system has ~103k units transcribed to date. **A single agency
+partner's back-catalog is a measurable fraction of statewide CPL volume**, from one
+crosswalk.
+
+⚠ **Reconcile the unit figures before anything is published.** The record currently
+carries four different numbers: **8–17 units** (Christian slide 17), **6–10 units**
+(Noncredit Summit slide 26), **8.5 units** (Moreno Valley pathway, both decks), and
+per-destination bands of **3–12** (slide 20). These are probably measuring different
+things — a stacked maximum, a typical award, one college's specific determination, and
+per-pathway ranges — but as published they read as contradictory. ⟨**NEEDS SAM**⟩
+
+**Ask 2 — an EMS Corps CPL landing page.** Slide 20 is already a working prototype of
+exactly this. It shows six pathway cards, each with a demand rating, a CCC program
+count, a college list, and a unit band:
+
+| Pathway | Rating | CCC programs | Units |
+|---|---|---:|---|
+| **Paramedic** (EMS/Paramedic) | HIGHEST | 15+ | 6–12 |
+| **Fire Technology** / Fire Science | HIGH | 50+ | 6–10 |
+| **Respiratory Care** / Respiratory Therapy | MEDIUM | 25+ | 5–8 |
+| **Health Information** Technology | — | 10+ | 4–6 |
+| **Nursing (ADN)** | — | 60+ | 3–6 |
+| **Allied Health** (Biotech / Kinesiology / Public Health) | — | various | 3–6 |
+
+⟨inferred⟩ **The landing page and the alumni outreach are the same artifact.** The
+page *is* the outreach vehicle — you send 500 alumni one link, and the link shows each
+of them every college that will award them credit and every pathway it opens.
+Building the page first and mailing it second is strictly better than a mail-merge,
+because the page persists for the next cohort and the one after.
+
+And it slots into the existing template with **no new design work** (§9): EMS Corps
+branding, their contacts, the **"At EMS Corps" | "To California Community Colleges"**
+tab pair, the credential cards, the per-college course/unit tables. The Rising
+Scholars page proves the pattern already works for a non-college sponsor.
+
+### The three-role model, applied ⟨§7⟩
+
+| Role | Who |
+|---|---|
+| **Originator** | EMS Corps / Public Works Alliance — and, for pre-2025 alumni, the ROPs, adult schools, and private training agencies that delivered it |
+| **Validator** | The state EMT license and NREMT certification — third-party, scored, unambiguous |
+| **Awarder** | The 11 CCC sites, and any CCC an alum enrolls at |
+
+⟨inferred⟩ Note what the Validator column buys us: because EMT/NREMT is a **state
+license with an objective standard**, the faculty determination is about *equivalence*,
+not about *evidence*. That is why this case is Tier 2 and not Tier 4, and it is the
+single most transferable lesson to other agency programs. **Look for the licensure.**
+
+### The mechanism question ⟨NEEDS SAM⟩
+
+Sam believes the colleges are funded through **RSI** (Related Supplemental Instruction);
+both decks say **Instructional Service Agreements (ISAs)**. These are different
+mechanisms — RSI is the apprenticeship-specific funding stream under Ed Code
+§§79140–79149.3, while an ISA is the general vehicle for a college to contract
+instruction with an outside entity. It is possible different sites use different
+mechanisms, or that RSI applies at sites where EMS Corps sits inside an apprenticeship
+structure.
+
+⟨inferred⟩ **This matters more than a footnote.** If EMS Corps is being funded through
+RSI, then the apprenticeship funding stream is already being used for a
+non-apprenticeship cohort program — which would be a **significant and reusable
+finding** for every other agency program in §3 UC-9, and it connects UC-8 and UC-9 in
+a way neither deck notices. Worth pinning down precisely.
+
+### What makes this generalizable
+
+⟨inferred⟩ The EMS Corps pattern — **agency program + third-party license + alumni
+back-catalog + a landing page + a fan-out to multiple destinations** — should be the
+paper's template for the whole agency lane: Futuro, WDB, EDD, and every ROP or adult
+school running a licensure-terminal program. The screening question is short:
+
+1. Does it end in a **license or third-party certification**? (→ Tier 2, not Tier 4)
+2. Is there an **alumni back-catalog** with a willing partner to reach them?
+3. Do **multiple CCC pathways** accept it? (→ fan-out, not a single brittle path)
+4. Is there a **named partner** who wants a landing page?
+
+EMS Corps answers yes four times. That is why it goes first.
 
 ---
 
 ## 4. The scalability ladder — the central analytic move
 
-Sort the eleven use cases by **marginal assessment cost per award**:
+Sort the twelve use cases by **marginal assessment cost per award**:
 
 | Tier | Assessment happens | Priced per | Marginal cost of the Nth award | Use cases |
 |---|---|---|---|---|
 | **1** | **During instruction**, by the teaching faculty, pre-approved | course, once | ~$0 | UC-1 mirrored, UC-5 statewide exhibits |
-| **2** | **Once per credential**, by a faculty crosswalk | credential | ~$0 after setup | UC-2 NC certificates, UC-5 local exhibits, UC-8 JATC crosswalks |
+| **2** | **Once per credential**, by a faculty crosswalk | credential | ~$0 after setup | UC-2 NC certificates, UC-5 local exhibits, UC-8 JATC crosswalks, **UC-9 EMS Corps**, **UC-10 Rising Scholars**, **UC-12 Calbright** |
 | **3** | **Once per cohort/program**, by agreement | program | low | UC-9 agency cohorts, UC-7 HS articulation |
 | **4** | **Per student**, by faculty review | student | full cost, every time | UC-3 novel providers, UC-4 work experience, UC-11 |
 
@@ -364,6 +597,27 @@ credit — where the student at least does not pay a fee they would otherwise pa
 noncredit *the student already pays nothing*, so **100% of the financial loss falls on
 the institution.** CDCP courses carry the enhanced rate, which makes the loss larger
 precisely in the workforce sequences where competency substitution is most common.
+
+**The Chancellor's own deck states both halves of this** ⟨sourced: Christian, Noncredit
+Summit, slides 6–7⟩, which means the premise is not contested and the paper can move
+straight to the ask:
+
+> *"State apportionment pays for noncredit; students don't pay enrollment fees. A
+> priority subset (Career Development & College Preparation, 'CDCP') receives enhanced
+> funding to build pipelines in ESL, basic skills, short-term vocational, and workforce
+> prep."*
+
+CDCP's enhanced rate dates to **SB 361 (2006, Sen. Jack Scott; signed by Gov.
+Schwarzenegger 2026-09-29; Chancellor Mark Drummond)** — **$159M in new funding
+statewide**, covering **Workforce Preparation** and **Short-Term Vocational Training**.
+
+⟨inferred⟩ There is a useful historical rhyme here that the paper should use. **SB 361
+is the precedent for exactly the ask in Route D.** In 2006 the state decided that
+certain noncredit instruction was worth more than the base rate and funded it
+accordingly, because it built pipelines. The competency-recognition hold-harmless is
+the same argument twenty years on: **the state already accepted that noncredit funding
+should follow strategic value rather than raw contact hours.** We are asking it to do
+that once more, for the case where the strategic value is *not* delivering the hours.
 
 **That is why NC programs "waive but don't record."** The waiver is a favor to the
 student that costs the program money and earns it nothing. Recording it formally would
@@ -584,8 +838,21 @@ rather than optimized. The cost of portfolio CPL has two halves:
   programs**, because nobody funds it and most students abandon the process partway.
 
 **A noncredit course *is* a funding mechanism for the development half.** Noncredit
-generates apportionment on contact hours. If the course qualifies under **CDCP** — and
-"workforce preparation" is the plausible category — it draws the enhanced rate.
+generates apportionment on contact hours. If the course qualifies under **CDCP**, it
+draws the enhanced rate.
+
+**And the CDCP category question now has a strong answer.** The Chancellor's deck lists
+the CDCP program areas explicitly ⟨sourced: Christian slides 6–7⟩: **Workforce
+Preparation**, **Short-Term Vocational Training**, ESL, and basic skills. A course that
+teaches an adult learner to document their work experience against specific college
+credit opportunities is **squarely workforce preparation** on any plain reading — it is
+preparation for entry into a workforce-credentialing pathway, taught to incumbent and
+returning workers.
+
+⟨inferred⟩ That moves this from "an idea that might be fundable" to **"an idea that
+fits an existing funding category the state created in 2006 for exactly this kind of
+pipeline-building."** It still needs the formal read (§12), but it is no longer
+speculative.
 
 **So: the state pays for portfolio development, through the existing noncredit
 apportionment mechanism, at no new cost and requiring no new appropriation.** The
@@ -622,9 +889,96 @@ is the paper's flagship proposal, and if someone is, they are the pilot.
 
 ---
 
-## 11. Funding — the numbers, and what the NC metric should be
+## 10a. The sector is growing fast, and that changes the framing
 
-**Sam's decision (2026-08-05): FTES sets the pot; behavior distributes it.**
+⟨sourced: Christian, Noncredit Summit, slides 11–13 — COMIS⟩
+
+| Measure | 2012-13 | trough | **2024-25** |
+|---|---:|---:|---:|
+| Distinct students in ≥1 **noncredit CTE** course (SAM A/B/C) | 45,209 | 32,453 *(2020-21)* | **69,488** |
+| Distinct students **earning noncredit awards** | 6,291 | — | **29,649** |
+
+**Noncredit awards are up 4.7× over the series; CTE noncredit enrollment is up 114%
+from the 2020-21 trough and 54% over the full series — with the steepest climb in the
+last three years.**
+
+And the outcome holds up ⟨slide 13⟩: median quarterly wage for noncredit students goes
+from **$7,833** in the quarter before entry to **$10,479** one year after exit or
+award — **+34%**.
+
+⟨inferred⟩ Three consequences for the paper:
+
+1. **This is not a small or declining sector being offered a lifeline.** It is one of
+   the fastest-growing completion engines in the system. Lead with growth, not need.
+2. **29,649 noncredit awards a year is the addressable population for UC-2.** Every one
+   is a documented, college-issued credential — the cleanest possible CPL evidence —
+   and today essentially none are systematically crosswalked to credit. **That number
+   is the size of the prize.**
+3. **The wage gain answers "why bother converting to credit."** Noncredit already
+   produces a 34% wage lift on its own. CPL is what lets that learner keep climbing
+   without paying twice for the first rung.
+
+---
+
+## 10b. Three 2026 commitments this work already has to deliver
+
+⟨sourced: Christian, Noncredit Summit, slide 21⟩
+
+The Chancellor's deck closes its noncredit section with dated commitments. **All three
+are noncredit-CPL infrastructure, and all three are 2026:**
+
+- **"AI-enabled dashboard to match noncredit, ROP, and adult ed training to college
+  courses for potential CPL (2026)"**
+- **"AI-enabled common course crosswalk to standardize course identifiers (noncredit
+  and credit) to facilitate CPL (2026)"**
+- **"AI-enabled skills to outcomes alignment (noncredit and credit) to facilitate CPL
+  (2026)"**
+
+⟨inferred⟩ **This reframes the whole document from proposal to delivery plan**, and it
+may be the most useful thing the Chancellor's deck contributes.
+
+Commitment ② is **already substantially built** — it is the M-ID / unified-course
+identity layer in this repository, the canonical-SUBJ4 fold, and the CCR curation work.
+It was built for the credit side. **Extending it to noncredit course identifiers is
+the stated commitment**, and that is an increment on existing infrastructure, not a new
+system.
+
+Commitment ① is the noncredit matching engine — §7's `training_agency` population plus
+§9's landing pages, viewed from the Chancellor's side of the table.
+
+Commitment ③ is the SLO / skills-to-outcomes work already parked as Roadmap Phase 4.
+
+**So the white paper is not asking permission to start. It describes how three
+already-announced 2026 commitments get met**, with the §3 taxonomy as the specification
+for what they have to handle. That is a considerably stronger posture and should set
+the paper's tone throughout.
+
+⟨inferred⟩ It also gives the taxonomy an acceptance test: **if a use case in §3 cannot
+be served by ①②③, either that use case needs a different mechanism, or the commitments
+need scoping we have not done yet.** Worth walking the twelve cases against the three
+commitments once the taxonomy settles.
+
+---
+
+## 11. Funding — parked, deliberately
+
+> **Sam, 2026-08-05:** *"Keep the focus of this endeavor primarily on understanding and
+> scaling NC Universe CPL and then we will take what we've distilled and see how it
+> best applies to the funding formula. I don't want to get caught in the weeds of
+> funding model until we first have a clear grasp of all the moving parts and
+> opportunities."*
+
+**So this section is a holding pen, not a recommendation.** It records the arithmetic
+and the two data defects so nobody re-derives them later, plus one structural finding
+that should inform metric design whenever we return. **The metric ladder below is a
+sketch to react to, not a proposal to adopt.**
+
+Order of operations: finish §3–§10 (the moving parts), *then* decide what behavior we
+want to pay for, *then* design the metric. Designing the metric first is how you end up
+paying for the thing you can measure instead of the thing you want.
+
+**Sam's earlier framing (2026-08-05), retained as the working assumption for when we
+come back: FTES sets the pot; behavior distributes it.**
 
 ### The FTES arithmetic ⟨sourced: `cpl_funding_data.js`, 2025-26 MIS DataMart⟩
 
@@ -732,23 +1086,42 @@ Calbright — the handoff already establishes this, and finding 3(b) is why.
 5. **Story clearances** (§3): Rocio by name? EMS Corps? Real estate? The 4,200–7,000
    dental-assisting estimate?
 6. **Audience and deadline** for the white paper, and what decision it must survive.
+7. **EMS Corps unit figures** (§3a): the record carries **8–17**, **6–10**, **8.5**, and
+   per-pathway **3–12** units. Which is which? These must reconcile before publication.
+8. **EMS Corps funding mechanism** (§3a): **RSI or ISA?** The decks say ISA; Sam thinks
+   RSI. If RSI, the apprenticeship funding stream is being used for a
+   non-apprenticeship cohort program — a reusable finding for the whole agency lane.
+9. **Rising Scholars back-catalog** (§3 UC-10): can CDCR say how many already-released
+   learners hold CDCR-delivered credentials no college has evaluated?
+10. **Calbright FTES** (§3 UC-12, §11): needs Malone before Calbright appears in
+    anything external.
 
 ### ⟨NEEDS VERIFICATION⟩ — I can do these, they just need doing
 
-7. CDCP category eligibility and current rate for a portfolio-development course (§10).
-8. Whether any California noncredit program runs an instructor-guided portfolio course
-   against CCC CPL opportunities (§10) — **highest-value research item in the document.**
-9. Title 5 / PCAH position on competency substitution inside a noncredit certificate
-   (§6) — the load-bearing legal claim.
-10. Financial-aid and momentum-eligibility treatment of CPL units (§5⑤).
+11. **CDCP rate** for a portfolio-development course (§10). The *category* question is
+    now largely answered — the Chancellor's deck lists **Workforce Preparation** as a
+    CDCP area — but the current CDCP rate relative to the credit base still needs the
+    2025-26 SCFF figures, and the formal eligibility read is still outstanding.
+12. **Whether any California noncredit program runs an instructor-guided portfolio
+    course against CCC CPL opportunities** (§10) — **still the highest-value research
+    item in the document.** If nobody is doing it, it is the paper's flagship proposal;
+    if someone is, they are the pilot.
+13. Title 5 / PCAH position on competency substitution inside a noncredit certificate
+    (§6) — the load-bearing legal claim.
+14. Financial-aid and momentum-eligibility treatment of CPL units (§5⑤).
 
 ### Recommended next moves, independent of the above
 
-11. **Fix the two funding data defects** (§11.3) — Mt. SAC double count, Calbright.
-12. **Populate `training_agency` for the four standalone institutions and the NOCE
-    five** (§7) — small, concrete, and it unblocks NC-2.
-13. **Write the mirroring playbook** (§3 UC-1) — the highest-yield artifact for the
-    field, and the paper's lead recommendation needs it to exist.
+15. **Write the mirroring playbook** (§3 UC-1) — the highest-yield artifact for the
+    field, the paper's lead recommendation, and already named as statewide practice by
+    the Chancellor. It needs to exist.
+16. **Scope the EMS Corps landing page + alumni outreach** (§3a) — the fastest visible
+    win available, Chancellor-endorsed, with slide 20 already serving as the prototype.
+17. **Populate `training_agency` for the four standalone institutions and the NOCE
+    five** (§7) — small, concrete, unblocks partner-level reporting.
+18. **Walk the twelve use cases against the three 2026 commitments** (§10b) — the
+    acceptance test for whether the taxonomy and the announced roadmap actually meet.
+19. **Fix the two funding data defects** (§11) — Mt. SAC double count, Calbright.
 
 ---
 
@@ -756,7 +1129,8 @@ Calbright — the handoff already establishes this, and finding 3(b) is why.
 
 | Source | Location | Used in |
 |---|---|---|
-| Vision 2030 Noncredit Summit deck, Fall 2025 (33 slides; Lee/Decelle) | uploaded | §3, §5, §9 |
+| Vision 2030 Noncredit Summit deck, Fall 2025 (33 slides; Lee/Decelle) | uploaded | §3, §3a, §5, §9 |
+| **Chancellor Christian — Vision 2030 Noncredit Summit keynote, Oct 2025 (22 slides; CPL section from slide 14)** | uploaded | §2, §3 UC-1, §3a, §6, §10, §10a, §10b |
 | Apprenticeship & Noncredit Education one-pager (2026) | uploaded | §3 UC-8 |
 | `kb/credentials.json` — 2,188 entries, issuing/training agency | tracker | §7 |
 | `cpl_funding_data.js` — 2025-26 DataMart credit + NC FTES, pool config | tracker | §11 |
