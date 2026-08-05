@@ -30,7 +30,10 @@
   var TEAM_PASS_KEY = "cpl_team_pass";
   var REGISTER_URL = "kb/governance_register.json";
 
-  var state = { reg: null, live: null, loading: false, error: null };
+  var state = { reg: null, live: null, loading: false, error: null,
+                // curated owners keyed by register id (DR-01, CA-03, …); overlays
+                // the committed register, which ships every owner null on purpose
+                owners: {} };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
@@ -102,6 +105,24 @@
       ".gov-q { border-left:3px solid var(--border-strong); padding:6px 12px; margin:0 0 10px; }",
       ".gov-q .qq { font-weight:600; }",
       ".gov-q .qw { font-size:.8rem; color: var(--text-muted); }",
+      // Owner curation
+      ".gov-ownbtn { display:block; width:100%; text-align:left; background:none; border:1px dashed transparent;"
+        + " border-radius:6px; padding:3px 5px; cursor:pointer; font:inherit; color:inherit; }",
+      ".gov-ownbtn:hover { border-color: var(--seal-blue); background: var(--surface-subtle); }",
+      ".gov-owner { font-weight:600; color: var(--navy-primary); }",
+      ".gov-pencil { opacity:0; float:right; font-size:.8rem; color: var(--seal-blue); }",
+      ".gov-ownbtn:hover .gov-pencil { opacity:1; }",
+      ".gov-ov { position:fixed; inset:0; background:rgba(0,0,0,.42); z-index:400;"
+        + " display:flex; align-items:center; justify-content:center; padding:20px; }",
+      ".gov-dlg { background: var(--surface); border-radius:10px; padding:18px 20px; max-width:460px;"
+        + " width:100%; box-shadow:0 8px 30px rgba(0,0,0,.3); }",
+      ".gov-dlg h3 { margin:0 0 6px; font-size:1rem; color: var(--navy-primary); }",
+      ".gov-dlg label { display:block; font-size:.75rem; color: var(--text-muted); margin:10px 0 3px; }",
+      ".gov-dlg input, .gov-dlg textarea { width:100%; padding:7px 9px; border:1px solid var(--border);"
+        + " border-radius:6px; font:inherit; font-size:.85rem; background: var(--surface); color: var(--text-body); }",
+      ".gov-dlg textarea { min-height:56px; resize:vertical; }",
+      ".gov-dlg-actions { display:flex; gap:8px; justify-content:flex-end; margin-top:14px; }",
+      ".gov-dlg-what { font-size:.78rem; color: var(--text-muted); margin:0 0 4px; }",
       "@media (max-width: 820px) { .gov-table { display:block; overflow-x:auto; } }",
     ].join("\n");
     var el = document.createElement("style");
@@ -144,6 +165,48 @@
     return isNaN(d.getTime()) ? esc(String(s).slice(0, 10)) : d.toISOString().slice(0, 10);
   }
 
+  // ── Owner curation ────────────────────────────────────────────────────────
+  // The register is COMMITTED and rebuilt by sessions; owners are set LIVE by the
+  // team. Different lifecycles, different homes — governance_owners overlays the
+  // JSON by row id, so a session regenerating the register can never wipe an
+  // assignment. Same split that keeps the nudge log out of the contacts table.
+  function loadOwners() {
+    return fetch(REST + "/governance_owners?select=register_id,owner,note,set_by,set_at",
+      { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (o) { by[o.register_id] = o; });
+        state.owners = by;
+        return by;
+      }).catch(function () { return {}; });
+  }
+  // Resolved owner for a row: a curated value wins over the file's.
+  function ownerOf(row) {
+    if (!row || !row.id) return null;
+    var c = state.owners[row.id];
+    if (c && typeof c.owner === "string" && c.owner.trim()) {
+      return { name: c.owner.trim(), by: c.set_by, at: c.set_at, note: c.note, curated: true };
+    }
+    if (row.owner) return { name: row.owner, curated: false };
+    return null;
+  }
+  function saveOwner(id, name, note) {
+    var sess = getSession();
+    var payload = { register_id: id, owner: name || null, note: note || null,
+                    set_by: (sess && sess.email) || "(team)", set_at: new Date().toISOString() };
+    state.owners[id] = payload;   // optimistic — the row repaints immediately
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=minimal";
+    return fetch(REST + "/governance_owners", {
+      method: "POST", headers: h, body: JSON.stringify([payload]),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save " + r.status);
+      return true;
+    });
+  }
+
   // Renders the live figure a register row points at via its `live` key. Returns
   // "" when a row has nothing measurable — most don't, and that's fine.
   function liveCell(key) {
@@ -183,8 +246,17 @@
     var cls = /^authoritative/.test(stance) ? "auth" : (/corrobor/.test(stance) ? "corrob" : "advis");
     return '<span class="gov-chip ' + cls + '">' + esc(stance) + "</span>";
   }
-  function owner(o) {
-    return o ? esc(o) : '<span class="gov-noown">needs an owner</span>';
+  // Owner cell — click to assign. An unowned row stays visibly red rather than
+  // showing a tidy blank, because the gaps are the point of the page.
+  function owner(row) {
+    var o = ownerOf(row);
+    var body = o
+      ? '<span class="gov-owner">' + esc(o.name) + "</span>"
+        + (o.curated ? '<div class="gov-note">set by ' + esc(o.by || "?") + " · " + fmtDate(o.at) + "</div>" : "")
+        + (o.note ? '<div class="gov-note">' + esc(o.note) + "</div>" : "")
+      : '<span class="gov-noown">needs an owner</span>';
+    return '<button class="gov-ownbtn" data-own="' + esc(row.id)
+      + '" title="Click to assign an owner">' + body + '<span class="gov-pencil">✎</span></button>';
   }
 
   function render(root) {
@@ -202,15 +274,15 @@
       return;
     }
     var R = state.reg, L = state.live || {};
-    var unowned = (R.decision_rights || []).filter(function (d) { return !d.owner; }).length
-      + (R.cadences || []).filter(function (c) { return !c.owner; }).length;
+    var unowned = (R.decision_rights || []).concat(R.cadences || [])
+      .filter(function (r) { return !ownerOf(r); }).length;
 
     var h = '<div class="gov"><h2>Governance <span class="gov-draft">Draft · for review</span></h2>';
     h += '<p class="gov-intro">A starter register: <b>who decides what</b>, <b>how much we trust each input</b>, '
       + "and <b>which loops actually run</b>. Written after a session in which every problem turned out to be a "
       + "governance gap wearing a data-quality costume — a field nobody owned, a source nobody owned knowing, "
       + "a definition nobody owned. Reasoning is stored; anything measurable is computed live on this page, so "
-      + "it cannot quietly disagree with reality.</p>";
+      + "it cannot quietly disagree with reality. <b>Click any owner cell to assign one.</b></p>";
     h += '<div class="gov-principle">' + esc(R._principle || "") + "</div>";
 
     h += '<div class="gov-stat">'
@@ -239,7 +311,7 @@
         + (d.load_bearing ? ' <span class="gov-chip">load-bearing</span>' : "") + "</td>"
         + "<td>" + esc(d.drives) + liveCell(d.live) + "</td>"
         + "<td>" + esc(d.decides) + '<div class="gov-note">' + esc(d.maintained_in || "") + "</div></td>"
-        + "<td>" + owner(d.owner) + "</td>"
+        + "<td>" + owner(d) + "</td>"
         + "<td>" + esc(d.when_empty) + "</td></tr>";
     });
     h += "</tbody></table>";
@@ -266,7 +338,7 @@
       + "<th>Loop</th><th>Frequency</th><th>Owner</th><th>State</th></tr></thead><tbody>";
     (R.cadences || []).forEach(function (c) {
       h += "<tr><td><span class=\"gov-id\">" + esc(c.id) + '</span><br><span class="gov-el">'
-        + esc(c.loop) + "</span></td><td>" + esc(c.frequency) + "</td><td>" + owner(c.owner) + "</td>"
+        + esc(c.loop) + "</span></td><td>" + esc(c.frequency) + "</td><td>" + owner(c) + "</td>"
         + "<td>" + cadenceState(c) + (c.note ? '<div class="gov-note">' + esc(c.note) + "</div>" : "")
         + "</td></tr>";
     });
@@ -297,7 +369,7 @@
     out.push("## Who decides what", "", "| Element | Drives | Who decides | Our owner | When empty |", "|---|---|---|---|---|");
     (R.decision_rights || []).forEach(function (d) {
       out.push("| " + d.element + " | " + d.drives + " | " + d.decides + " | "
-        + (d.owner || "**needs an owner**") + " | " + d.when_empty + " |");
+        + ((ownerOf(d) || {}).name || "**needs an owner**") + " | " + d.when_empty + " |");
     });
     out.push("", "## How far each input is trusted", "", "| Input | Stance | Rule |", "|---|---|---|");
     (R.acceptance_standards || []).forEach(function (a) {
@@ -307,14 +379,66 @@
     (R.cadences || []).forEach(function (c) {
       var st = c.live === "nudge" ? (L.nudgeCount ? "last run " + fmtDate(L.lastNudge) : "**NEVER RUN**")
         : (c.live === "sync" ? "last sync " + fmtDate(L.synced) : (c.state || ""));
-      out.push("| " + c.loop + " | " + c.frequency + " | " + (c.owner || "**needs an owner**") + " | " + st + " |");
+      out.push("| " + c.loop + " | " + c.frequency + " | " + ((ownerOf(c) || {}).name || "**needs an owner**") + " | " + st + " |");
     });
     out.push("", "## Open questions", "");
     (R.open_questions || []).forEach(function (q) { out.push("- **" + q.q + "** — " + q.why); });
     return out.join("\n");
   }
 
+  // The assign-owner dialog. Deliberately plain — a name and an optional note.
+  // "Who is accountable" is a human answer; asking for more structure than that
+  // is how a review turns into a form nobody fills in.
+  function openOwnerDialog(root, id) {
+    var R = state.reg || {};
+    var row = (R.decision_rights || []).concat(R.cadences || [])
+      .filter(function (r) { return r.id === id; })[0];
+    if (!row) return;
+    var cur = ownerOf(row);
+    var old = document.getElementById("gov-own-dlg");
+    if (old) old.parentNode.removeChild(old);
+    var ov = document.createElement("div");
+    ov.id = "gov-own-dlg"; ov.className = "gov-ov";
+    ov.innerHTML = '<div class="gov-dlg" role="dialog" aria-label="Assign an owner">'
+      + "<h3>" + esc(row.element || row.loop) + "</h3>"
+      + '<p class="gov-dlg-what"><span class="gov-id">' + esc(id) + "</span> — "
+      + esc(row.drives || row.frequency || "") + "</p>"
+      + '<label for="gov-own-name">Owner — who is accountable for this?</label>'
+      + '<input id="gov-own-name" type="text" placeholder="e.g. Jessica, or Ashley + Malone" value="'
+      + esc(cur ? cur.name : "") + '">'
+      + '<label for="gov-own-note">Note (optional)</label>'
+      + '<textarea id="gov-own-note" placeholder="Scope, caveats, or what exactly they own">'
+      + esc(cur && cur.note ? cur.note : "") + "</textarea>"
+      + '<div class="gov-dlg-actions">'
+      + '<button class="gov-btn" data-own-cancel>Cancel</button>'
+      + '<button class="gov-btn" data-own-clear>Clear owner</button>'
+      + '<button class="gov-btn" data-own-save><b>Save</b></button>'
+      + "</div></div>";
+    document.body.appendChild(ov);
+    function close() { if (ov.parentNode) ov.parentNode.removeChild(ov); }
+    ov.addEventListener("click", function (e) { if (e.target === ov) close(); });
+    ov.querySelector("[data-own-cancel]").addEventListener("click", close);
+    var nameEl = ov.querySelector("#gov-own-name");
+    if (nameEl.focus) nameEl.focus();
+    function commit(name) {
+      var note = ov.querySelector("#gov-own-note").value.trim();
+      close();
+      render(root);                       // optimistic repaint
+      saveOwner(id, name, note).catch(function () {
+        alert("Could not save that owner. Sign in on the Team & RACI tab "
+          + "(reviewer or team phrase) and try again.");
+        loadOwners().then(function () { render(root); });
+      });
+    }
+    ov.querySelector("[data-own-save]").addEventListener("click", function () { commit(nameEl.value.trim()); });
+    ov.querySelector("[data-own-clear]").addEventListener("click", function () { commit(""); });
+    nameEl.addEventListener("keydown", function (e) { if (e.key === "Enter") commit(nameEl.value.trim()); });
+  }
+
   function wire(root) {
+    root.querySelectorAll("[data-own]").forEach(function (b) {
+      b.addEventListener("click", function () { openOwnerDialog(root, b.getAttribute("data-own")); });
+    });
     var btn = root.querySelector("[data-gov-copy]");
     if (!btn) return;
     btn.addEventListener("click", function () {
@@ -342,6 +466,7 @@
         return r.json();
       }),
       signedIn() ? loadLive() : Promise.resolve({}),
+      signedIn() ? loadOwners() : Promise.resolve({}),
     ]).then(function (res) {
       state.reg = res[0]; state.live = res[1] || {};
       state.loading = false; render(root);
@@ -358,6 +483,7 @@
     _liveCell: liveCell,
     _cadenceState: cadenceState,
     _owner: owner,
+    _ownerOf: ownerOf,
     _stanceChip: stanceChip,
   };
 
