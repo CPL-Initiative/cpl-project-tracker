@@ -9,7 +9,38 @@ related:
 
 # You are the next Implementation-Funding session
 
-## ✅ JUST SHIPPED (2026-08-04, SkyBox) — ALL of Sam's funding-model tweaks + the NC rehaul
+## ✅ JUST SHIPPED (2026-08-05, SkyOptIn) — the self-service administrator opt-in (v1)
+
+Sam: *"let's put on the afterburners… get the opt-in procedure figured out."* Built the whole v1 (his
+picks, taken up front: **attest-first** — a submit clears the gate immediately, CO can revoke — and
+**v1 now, no email infra**). PR #<tbd>.
+
+- **A public self-service opt-in** on every college row (works on `cpl_funding_public.html` too — the
+  point): ✎ *Opt in to participate* → a short form (**Name · Title VPAA/VPSS/CEO/Other · college email**)
+  → a constrained ANON insert. **Attest-first:** the row lands `self_attested` and satisfies
+  `baselineGate` on submit; no CO step needed to start earning.
+- **A CO confirm/revoke lane** in the Baseline-eligibility section (reviewer only): each self-attested
+  request with **✓ Confirm** / **✕ Reject**, plus collapsible Confirmed (Revoke) and Withdrawn (Remove)
+  groups. The CO's confirm is the record check, not a pre-gate.
+- **PII-safe** (the tab's norm — contact PII is reviewer-gated): the attestor name/email live in
+  `cpl_funding_participation` but anon/authenticated **lose column SELECT** on them; the public reads only
+  `college,status,…` (non-PII); the lane reads PII via a gated SECURITY DEFINER RPC
+  `cpl_funding_optin_review()`. Verified as `anon` in rolled-back txns: valid self-attest allowed, forged
+  `confirmed` RLS-rejected, `attestor_email` read *permission denied*.
+- Migration `kb/supabase_funding_optin.sql` **applied live** (behavior-neutral to the deployed code — it
+  still reads only the non-PII columns, so applying before merge was safe). Tests `cpl_funding_optin`
+  **18** green; the 9 other funding files green. ⚠ Sandbox can't reach `*.supabase.co`, so **eyeball one
+  real opt-in on the deployed site** once merged.
+- **⬜ Still open here:** **v2 magic-link** (email a one-time link to the @college.edu address that
+  auto-confirms — needs an edge function + mail provider + a college→domain map; build only if the CO
+  wants out of the per-opt-in loop) and the still-deferred **#3b** NC-carve-out gate. Full story:
+  `cpl_funding_lessons.md` §2026-08-05.
+
+Moniker: **SkyOptIn**. Claim your own if you like. **THE next real step is still the Budget reconciliation.**
+
+---
+
+## ✅ Previously shipped (2026-08-04, SkyBox) — ALL of Sam's funding-model tweaks + the NC rehaul
 
 Sam sent 7 display/report tweaks + a big NC question, then **6 more Report/memo tweaks**. Shipped
 across **#973–#978** (+ the #977 checkpoint):
@@ -48,24 +79,27 @@ allocation basis. Lesson: a data-file field add can break a sibling test that gu
 that field). The pool/column changes mirror to the public page automatically (shared `cpl_funding.js`);
 the Report/memo is private-only.
 
-## 🎯 QUEUED (Sam, 2026-08-05) — the administrator opt-in mechanism (my "method + magic" recommendation)
+## ✅ SHIPPED v1 / 🎯 v2 QUEUED — the administrator opt-in mechanism (the "method + magic" design)
 
-Sam wants a **simple opt-in** (the participation-request qual — one of the 2 baseline gates) that an
+**v1 is DONE (SkyOptIn, 2026-08-05 — see the banner at the very top).** The design below is the record of
+the reasoning; v1 built the "method" (attest + CO-confirm), v2 (the "magic" magic-link) is what's left.
+
+Sam wanted a **simple opt-in** (the participation-request qual — one of the 2 baseline gates) that an
 **administrator (VPAA / VPSS / CEO)** performs, via a button on the college rows. The snag: we have those
-roles in the dataset but they **go stale** (turnover). **Don't build this session; build next.**
+roles in the dataset but they **go stale** (turnover).
 
 **My recommendation — reframe from "verify against our roster" to "capture the current admin at opt-in
 time + let the CO confirm."** The stale-roster problem dissolves because we never consult stored admin
 names; the opt-in EVENT captures who's current, and we can refresh our roster FROM it (self-healing).
 
-- **v1 (lean, ships fast, NO email infra) — attest + CO-confirm.** Opt-in button on each college row →
+- **✅ v1 (SHIPPED 2026-08-05) — attest + CO-confirm.** Opt-in button on each college row →
   short form (**Name · Title dropdown VPAA/VPSS/CEO · college email**) → writes a **pending `cpl_optin`**
   request (Supabase, INSERT-only public, rate-limited). It surfaces in a **CO-review lane** (reuse the
   merge-confirm-lane / CO-Monitor pattern) where the CO **confirms** — the CO knows its current admins, so
   its review IS a stronger identity check than any roster we could maintain. Confirmed → wire into
   **`baselineGate`** (the "participation request by the deadline" qual) so the button *directly* satisfies
   the gate. Fail-open until the feed loads (standing rule).
-- **v2 (the "magic," optional) — self-service magic link.** After submit, email a **one-time link to the
+- **🎯 v2 (STILL QUEUED — the "magic," optional) — self-service magic link.** After submit, email a **one-time link to the
   entered college-domain email**; clicking it auto-confirms (no CO step). Control of an `@college.edu`
   address is the proof; the CO spot-checks the audit trail instead of confirming each. Needs an email path
   (Supabase edge function + mail provider) + a **college→email-domain map** (far more stable than a person

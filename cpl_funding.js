@@ -44,8 +44,12 @@
 //   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
 //     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
 //     map_coordinator_summary() RPC) + ② a participation request by the
-//     deadline (default 2026-09-01; editable) recorded in the
-//     cpl_funding_participation table (anon read, team-phrase write).
+//     deadline (default 2026-09-01; editable) — a college's VPAA/VPSS/CEO
+//     self-serves an opt-in from its own row (public + private page). ATTEST-
+//     FIRST: the request clears the gate on submit; the CO confirms/revokes in
+//     a review lane. cpl_funding_participation: anon status read + a constrained
+//     anon self-insert; the attestor name/email are reviewer-gated (PII) and
+//     read only via the cpl_funding_optin_review() RPC. (kb/supabase_funding_optin.sql.)
 //
 // Self-contained behind this file: scoped CSS injected from JS. Requires
 // team_phrase.js (window.CPL_TEAM_PHRASE, loaded eagerly before this).
@@ -58,6 +62,19 @@
   var CONFIG_URL = SUPABASE_URL + "/rest/v1/cpl_funding_config";
   var PART_URL = SUPABASE_URL + "/rest/v1/cpl_funding_participation";
   var COORD_RPC_URL = SUPABASE_URL + "/rest/v1/rpc/map_coordinator_summary";
+  // Reviewer-only PII read for the opt-in confirm lane. The RPC is SECURITY
+  // DEFINER and gates on is_allowed_reviewer() OR team_pass_ok() INSIDE, so an
+  // anonymous caller gets zero rows — the attestor name/email never reach the
+  // public page. (kb/supabase_funding_optin.sql.)
+  var OPTIN_REVIEW_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_optin_review";
+  // Valid administrator titles for the self-service opt-in. MUST stay in lockstep
+  // with the cfp_insert_self RLS check (attestor_title in (...)).
+  var OPTIN_TITLES = [
+    { val: "VPAA", label: "VP of Academic Affairs (VPAA)" },
+    { val: "VPSS", label: "VP of Student Services (VPSS)" },
+    { val: "CEO", label: "College President / CEO" },
+    { val: "Other", label: "Other senior administrator" }];
+  var OPTIN_EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 
   var CSS_ID = "cpl-funding-css";
   var CSS = [
@@ -336,6 +353,34 @@
     ".cplfund-note { width: 100%; max-width: 560px; font-family: inherit; font-size: .83rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; vertical-align: middle; }",
     ".cplfund-note:focus { outline: none; border-color: var(--gold-accent); }",
     ".cplfund-draftchip { display: inline-block; margin-left: 10px; vertical-align: middle; background: var(--mustard-fill); color: var(--text-strong); font-size: .42em; font-weight: 700; letter-spacing: .08em; padding: 3px 10px; border-radius: 12px; text-transform: uppercase; }",
+    // ── self-service opt-in (public + private) + the CO confirm lane ──────────
+    ".cplfund-optin { grid-column: 1 / -1; margin-top: 8px; }",
+    ".cplfund-optin-done { color: var(--green-progress); font-weight: 600; }",
+    ".cplfund-optin-done .dk { font-weight: 400; }",
+    ".cplfund-optin-tick { font-weight: 700; }",
+    ".cplfund-optin-open { border-color: var(--gold-accent); }",
+    ".cplfund-optin-form { background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 8px; padding: 10px 12px; max-width: 640px; }",
+    ".cplfund-optin-head { font-weight: 600; color: var(--navy-secondary); margin-bottom: 8px; }",
+    ".cplfund-optin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; }",
+    ".cplfund-optin-grid label { display: flex; flex-direction: column; gap: 3px; font-size: .8rem; color: var(--text-muted); }",
+    ".cplfund-optin-grid label:first-child { grid-column: 1 / -1; }",
+    ".cplfund-optin-grid input, .cplfund-optin-grid select { font-family: inherit; font-size: .86rem; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 5px 8px; }",
+    ".cplfund-optin-grid input:focus, .cplfund-optin-grid select:focus { outline: none; border-color: var(--gold-accent); }",
+    ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
+    ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
+    ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
+    ".cplfund-colane { border: 1px solid var(--gold-accent); border-radius: 8px; background: var(--surface-opaque); padding: 10px 13px; margin: 4px 0 14px; }",
+    ".cplfund-colane-head { font-weight: 700; color: var(--navy-primary); display: flex; align-items: center; gap: 9px; }",
+    ".cplfund-colane-badge { background: var(--mustard-fill); color: var(--text-strong); font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 11px; }",
+    ".cplfund-colane-intro { font-size: .78rem; margin: 5px 0 9px; line-height: 1.4; }",
+    ".cplfund-colane-sub { font-weight: 600; color: var(--navy-secondary); font-size: .82rem; margin: 6px 0 4px; }",
+    ".cplfund-colane-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--border); }",
+    ".cplfund-colane-who { font-size: .84rem; color: var(--text-body); line-height: 1.35; }",
+    ".cplfund-colane-act { flex: 0 0 auto; display: flex; gap: 6px; }",
+    ".cplfund-colane-ok { border-color: var(--green-progress); color: var(--green-progress); }",
+    ".cplfund-colane-no { border-color: var(--red-alert); color: var(--red-alert); }",
+    ".cplfund-colane-more { margin-top: 7px; }",
+    ".cplfund-colane-more > summary { cursor: pointer; font-size: .8rem; color: var(--text-muted); }",
     // ── collapsible sections (Sam, 2026-07-27): each top-level section folds ──
     ".cplfund-sec { border: 1px solid var(--border); border-radius: 8px; margin: 0 0 14px; background: var(--surface-opaque); }",
     ".cplfund-sec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 9px; padding: 0 16px; }",
@@ -1352,7 +1397,17 @@
   //    (anon read; team-phrase/reviewer write via the drill-in toggle).
   // College names join through cplCollegeShort() into short-name space —
   // the funding roster already uses the short names.
-  var ELIG = { loaded: false, coordOk: false, coord: {}, coordN: 0, optin: {}, asOf: null };
+  // optin  — ACTIVE opt-ins only (status self_attested|confirmed); the gate reads
+  //          this, so a revoked row correctly drops out of it.
+  // optinRow — EVERY row incl. revoked, non-PII fields only (status + timestamps),
+  //          so the college drill-in can show "withdrawn" honestly to anyone.
+  // optinReview — the PII rows (name/title/email) for the CO confirm lane, from
+  //          the reviewer-gated RPC; [] for a non-reviewer / public page.
+  var ELIG = { loaded: false, coordOk: false, coord: {}, coordN: 0,
+    optin: {}, optinRow: {}, optinReview: [], asOf: null };
+  // Per-college opt-in FORM ui state (open / submitting / done / error). Kept out
+  // of the persisted config — it is ephemeral browser state, never saved.
+  var OPTIN_UI = {};
   function shortName(n) {
     return (typeof window.cplCollegeShort === "function") ? window.cplCollegeShort(n, "short") : String(n || "");
   }
@@ -1386,15 +1441,22 @@
     var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
     var roster = {};
     base().colleges.forEach(function (c) { roster[shortName(c.college)] = c.college; });
+    // The confirm lane needs the reviewer headers to get PII back; a public /
+    // anon caller sends none and the RPC returns []. Fetched for everyone (cheap,
+    // fail-soft) — it self-populates the moment a reviewer unlocks and reloads.
+    var rh = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
+    var t0 = tp(); if (t0) t0.decorateHeaders(rh, t0.session());
     Promise.all([
       fetch(COORD_RPC_URL, {
         method: "POST", body: "{}",
         headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" }
       }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
-      fetch(PART_URL + "?select=college,requested_at,noted_by", { headers: h })
+      fetch(PART_URL + "?select=college,status,source,requested_at,noted_by,confirmed_at,revoked_at", { headers: h })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      fetch(OPTIN_REVIEW_RPC, { method: "POST", body: "{}", headers: rh })
         .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
     ]).then(function (res) {
-      var coord = res[0], part = res[1];
+      var coord = res[0], part = res[1], review = res[2];
       if (Array.isArray(coord)) {
         ELIG.coord = {}; ELIG.coordN = 0;
         coord.forEach(function (row) {
@@ -1405,9 +1467,21 @@
         ELIG.coordOk = true;
       }
       if (Array.isArray(part)) {
-        ELIG.optin = {};
+        ELIG.optin = {}; ELIG.optinRow = {};
         part.forEach(function (row) {
-          ELIG.optin[roster[shortName(row.college)] || row.college] = row;
+          var key = roster[shortName(row.college)] || row.college;
+          ELIG.optinRow[key] = row;
+          // ATTEST-FIRST (Sam, 2026-08-05): a self-attested row satisfies the gate
+          // straight away; only an explicit CO revoke drops it back out.
+          if (row.status !== "revoked") ELIG.optin[key] = row;
+        });
+      }
+      if (Array.isArray(review)) {
+        ELIG.optinReview = review.map(function (row) {
+          return { college: roster[shortName(row.college)] || row.college, name: row.attestor_name,
+            title: row.attestor_title, email: row.attestor_email, status: row.status,
+            source: row.source, requested_at: row.requested_at, confirmed_at: row.confirmed_at,
+            confirmed_by: row.confirmed_by, revoked_at: row.revoked_at };
         });
       }
       ELIG.loaded = true;
@@ -1551,8 +1625,13 @@
     var req = on
       ? fetch(PART_URL + "?on_conflict=college", {
           method: "POST",
-          headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
-          body: JSON.stringify({ college: college, noted_by: "(team)" })
+          // return=minimal: the row carries PII columns this role has no SELECT on,
+          // so a returned representation would 403 the successful write.
+          headers: (function (x) { x.Prefer = "resolution=merge-duplicates,return=minimal"; return x; })(headers),
+          // A reviewer mark is itself the confirmation; it also fully re-activates
+          // a previously revoked row (clears revoked_at) via the merge-upsert.
+          body: JSON.stringify({ college: college, noted_by: "(team)", source: "reviewer",
+            status: "confirmed", confirmed_at: nowIso(), confirmed_by: "(CO reviewer)", revoked_at: null })
         })
       : fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
     req.then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
@@ -1561,6 +1640,200 @@
         loadEligibility();
       })
       .catch(function () { loadEligibility(); });
+  }
+
+  // ── self-service opt-in (the participation request) ───────────────────────
+  // Sam, 2026-08-05: a college's VPAA / VPSS / CEO opts the institution in from
+  // its own row (works on the PUBLIC page — that is the whole point). The write
+  // is a constrained ANON insert (cfp_insert_self) capturing WHO attested; it is
+  // ATTEST-FIRST, so the participation gate clears on submit. The CO reviews in a
+  // lane (below) and can confirm or revoke. See kb/supabase_funding_optin.sql.
+  function nowIso() { try { return new Date().toISOString(); } catch (e) { return null; } }
+  function optinRowOf(college) { return ELIG.optinRow[college] || null; }
+  function optinActive(college) { var r = ELIG.optin[college]; return !!r; }
+  // The trust label for an active opt-in — self-attested (awaiting the CO's
+  // acknowledgement) vs CO-confirmed. Non-PII, so it is safe on the public page.
+  function optinStateLabel(college) {
+    var r = ELIG.optinRow[college];
+    if (!r || r.status === "revoked") return null;
+    var when = r.status === "confirmed"
+      ? (r.confirmed_at ? " on " + String(r.confirmed_at).slice(0, 10) : "")
+      : (r.requested_at ? " on " + String(r.requested_at).slice(0, 10) : "");
+    return r.status === "confirmed"
+      ? "CO-confirmed" + when
+      : "self-attested" + when + " — awaiting CO acknowledgement";
+  }
+
+  // Public write: INSERT a pending self-attestation. return=minimal because anon
+  // has no SELECT on the PII columns it just wrote (it cannot read the row back);
+  // the honest confirmation is the loadEligibility() re-read of the status.
+  function submitOptIn(college, form) {
+    var rec = { college: college, attestor_name: form.name, attestor_title: form.title,
+      attestor_email: form.email, status: "self_attested", source: "self" };
+    OPTIN_UI[college] = { open: true, submitting: true };
+    if (!remoteEnabled()) {
+      ELIG.optin[college] = rec;
+      ELIG.optinRow[college] = { college: college, status: "self_attested", requested_at: nowIso() };
+      OPTIN_UI[college] = { done: true };
+      render(); return;
+    }
+    refreshTable();   // show the disabled "Submitting…" state at once
+    fetch(PART_URL, {
+      method: "POST",
+      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+        "Content-Type": "application/json", Prefer: "return=minimal" },
+      body: JSON.stringify(rec)
+    }).then(function (r) {
+      // 409 = a row already exists for this college (a race, or already opted in);
+      // treat it as done and let the re-read show the true state.
+      OPTIN_UI[college] = (r.ok || r.status === 409) ? { done: true } : { error: true };
+      loadEligibility();
+      render();
+    }).catch(function () { OPTIN_UI[college] = { error: true }; render(); });
+  }
+
+  // Reviewer writes (confirm / revoke / remove). Each re-reads afterwards — a
+  // DELETE/PATCH filtered out by RLS returns 2xx having changed nothing, so the
+  // re-read, not the status, is the honest confirmation (#598).
+  function reviewerPatch(college, body) {
+    if (!remoteEnabled()) return;
+    // return=minimal — this role cannot SELECT the PII columns, so a returned
+    // representation would 403 the successful update.
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+      "Content-Type": "application/json", Prefer: "return=minimal" };
+    var t = tp(); if (t) t.decorateHeaders(headers, t.session());
+    fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "PATCH", headers: headers, body: JSON.stringify(body) })
+      .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
+      .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
+      .catch(function () { loadEligibility(); });
+  }
+  function confirmOptIn(college) {
+    if (!remoteEnabled()) { _localOptinStatus(college, "confirmed"); render(); return; }
+    reviewerPatch(college, { status: "confirmed", confirmed_at: nowIso(), confirmed_by: "(CO reviewer)", revoked_at: null });
+  }
+  function revokeOptIn(college) {
+    if (!remoteEnabled()) { _localOptinStatus(college, "revoked"); render(); return; }
+    reviewerPatch(college, { status: "revoked", revoked_at: nowIso() });
+  }
+  function removeOptIn(college) {
+    if (!remoteEnabled()) {
+      delete ELIG.optin[college]; delete ELIG.optinRow[college];
+      ELIG.optinReview = (ELIG.optinReview || []).filter(function (r) { return r.college !== college; });
+      render(); return;
+    }
+    var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, Prefer: "return=minimal" };
+    var t = tp(); if (t) t.decorateHeaders(headers, t.session());
+    fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers })
+      .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
+      .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
+      .catch(function () { loadEligibility(); });
+  }
+  // Local (NO_REMOTE / test) mirror of a status change.
+  function _localOptinStatus(college, status) {
+    var r = ELIG.optinRow[college] || { college: college };
+    r.status = status;
+    if (status === "confirmed") { r.confirmed_at = nowIso(); r.revoked_at = null; }
+    if (status === "revoked") r.revoked_at = nowIso();
+    ELIG.optinRow[college] = r;
+    if (status === "revoked") delete ELIG.optin[college]; else ELIG.optin[college] = r;
+    (ELIG.optinReview || []).forEach(function (x) { if (x.college === college) x.status = status; });
+  }
+
+  // The per-college opt-in affordance shown in the row drill-in — a plain button
+  // that expands to a short attestation form. Visible to EVERYONE (this is the
+  // college-facing action), so it must not use a CURATE_ATTRS attribute (those
+  // are swept in public mode). Idempotent: shows status once a row exists.
+  function optinAffordanceHtml(college) {
+    var row = ELIG.optinRow[college];
+    var ui = OPTIN_UI[college] || {};
+    if (row && row.status !== "revoked") {
+      return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
+        "<strong>Opted in to participate</strong> <span class=\"dk\">(" + esc(optinStateLabel(college)) + ")</span></div>";
+    }
+    if (ui.done) {
+      return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
+        "<strong>Thank you — your opt-in has been recorded.</strong> " +
+        '<span class="dk">The Chancellor&#39;s Office will acknowledge it; your college is counted as participating in the meantime.</span></div>';
+    }
+    var withdrawn = row && row.status === "revoked"
+      ? '<div class="cplfund-optin-note cplfund-warn-text">A previous opt-in for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
+      : "";
+    if (!ui.open) {
+      return '<div class="cplfund-optin">' + withdrawn +
+        '<button type="button" class="cplfund-optbtn cplfund-optin-open" data-optinbtn="' + esc(college) + '">' +
+        "✎ Opt in to participate</button> " +
+        '<span class="dk">for your college&#39;s VPAA / VP of Student Services / President</span></div>';
+    }
+    var titleOpts = OPTIN_TITLES.map(function (o) {
+      return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
+    }).join("");
+    return '<div class="cplfund-optin cplfund-optin-form" data-optinwrap="' + esc(college) + '">' + withdrawn +
+      '<div class="cplfund-optin-head">Opt <strong>' + esc(dispName(college)) + "</strong> in to CPL Implementation Funding</div>" +
+      '<div class="cplfund-optin-grid">' +
+      '<label>Your name<input type="text" data-optinfield="name" autocomplete="name" maxlength="120" placeholder="First Last"></label>' +
+      "<label>Your title<select data-optinfield=\"title\">" + titleOpts + "</select></label>" +
+      '<label>College email<input type="email" data-optinfield="email" autocomplete="email" maxlength="160" placeholder="you@college.edu"></label>' +
+      "</div>" +
+      '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '"></div>' +
+      '<div class="cplfund-optin-actions">' +
+      '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-optinsubmit="' + esc(college) + '"' +
+      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Submit opt-in") + "</button>" +
+      '<button type="button" class="cplfund-optbtn" data-optincancel="' + esc(college) + '">Cancel</button>' +
+      (ui.error ? ' <span class="cplfund-warn-text">Could not record the opt-in — please try again.</span>' : "") +
+      "</div>" +
+      '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
+      " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
+      "Office to acknowledge and are <strong>not shown publicly</strong>. Opting in makes the college eligible to earn — it moves no money by itself and is reversible.</div>" +
+      "</div>";
+  }
+
+  // The CO confirm lane — REVIEWER ONLY. Renders nothing on the public page (it
+  // is gated on unlocked(), and the PII it shows only arrives via the gated RPC).
+  function coReviewLaneHtml() {
+    if (!unlocked()) return "";
+    var rows = ELIG.optinReview || [];
+    if (!rows.length) return "";
+    function fmtWhen(v) { return v ? esc(String(v).slice(0, 10)) : ""; }
+    function line(r, actions) {
+      return '<div class="cplfund-colane-row"><div class="cplfund-colane-who">' +
+        "<strong>" + esc(dispName(r.college)) + "</strong> &middot; " + esc(r.name || "?") +
+        ' <span class="dk">(' + esc(r.title || "?") + ")</span><br>" +
+        '<span class="dk">' + esc(r.email || "") + " &middot; submitted " + fmtWhen(r.requested_at) +
+        (r.status === "confirmed" && r.confirmed_at ? " &middot; confirmed " + fmtWhen(r.confirmed_at) : "") +
+        (r.status === "revoked" && r.revoked_at ? " &middot; withdrawn " + fmtWhen(r.revoked_at) : "") +
+        "</span></div><div class=\"cplfund-colane-act\">" + actions + "</div></div>";
+    }
+    var pending = rows.filter(function (r) { return r.status === "self_attested"; });
+    var confirmed = rows.filter(function (r) { return r.status === "confirmed"; });
+    var revoked = rows.filter(function (r) { return r.status === "revoked"; });
+    var body = "";
+    if (pending.length) {
+      body += '<div class="cplfund-colane-sub">Awaiting your confirmation (' + pending.length + ")</div>" +
+        pending.map(function (r) {
+          return line(r,
+            '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(r.college) + '">✓ Confirm</button>' +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">✕ Reject</button>');
+        }).join("");
+    }
+    if (confirmed.length) {
+      body += '<details class="cplfund-colane-more"><summary>Confirmed (' + confirmed.length + ")</summary>" +
+        confirmed.map(function (r) {
+          return line(r, '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">Revoke</button>');
+        }).join("") + "</details>";
+    }
+    if (revoked.length) {
+      body += '<details class="cplfund-colane-more"><summary>Withdrawn (' + revoked.length + ")</summary>" +
+        revoked.map(function (r) {
+          return line(r,
+            '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(r.college) + '">Re-confirm</button>' +
+            '<button type="button" class="cplfund-optbtn" data-optinremove="' + esc(r.college) + '">Remove</button>');
+        }).join("") + "</details>";
+    }
+    return '<div class="cplfund-colane"><div class="cplfund-colane-head">🗳 CO opt-in review' +
+      (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " to confirm</span>" : "") +
+      "</div>" +
+      '<div class="dk cplfund-colane-intro">A college administrator self-attested each request below. Confirm to acknowledge it (the college already counts as participating — this is your record check), or Reject to withhold participation.</div>' +
+      body + "</div>";
   }
 
   // ── CO Monitor's notes (gated — internal working commentary) ──────────
@@ -3612,7 +3885,10 @@
     if (coordShown()) eligBits.push("CPL Coordinator in MAP &mdash; " +
       (!ELIG.coordOk ? '<span class="dk">pending</span>' : ELIG.coord[c.college] ? "✓" : '<span class="cplfund-warn-text">not on file</span>'));
     if (partShown()) eligBits.push("opted in by " + esc(participationDeadline()) + " &mdash; " +
-      (ELIG.optin[c.college] ? "✓" : '<span class="dk">not yet</span>'));
+      (ELIG.optin[c.college]
+        ? "✓ <span class=\"dk\">(" + (ELIG.optinRow[c.college] && ELIG.optinRow[c.college].status === "confirmed"
+            ? "CO-confirmed" : "self-attested") + ")</span>"
+        : '<span class="dk">not yet</span>'));
     var vsD = vetStar();
     extraReqs().forEach(function (txt) {
       if (isVetJstReq(txt)) eligBits.push("Veteran Star (&ge;75% veteran JSTs) &mdash; " +
@@ -3626,7 +3902,8 @@
           "this college would have earned that on its main allocation, but baseline participation is not met. " +
           "Its " + fmtMoney(c.total) + " cap is unchanged and the dollars roll forward &mdash; nothing is redistributed, " +
           "so qualifying later still lets it draw.</div>"
-        : "");
+        : "") +
+      optinAffordanceHtml(c.college);
     // CO Monitor's note — internal (gated read+write); editable when unlocked,
     // read-only for phrase-holders who haven't flipped team-editing on.
     var noteRec = NOTES[c.college];
@@ -3889,11 +4166,13 @@
         '" title="Remove this requirement" aria-label="Remove requirement ' + (i + 1) + '">✕</button>'
       ) + status + "</div>";
     }).join("");
+    var pendN = (ELIG.optinReview || []).filter(function (r) { return r.status === "self_attested"; }).length;
     var partStatus = "deadline " +
       edText("deadline", participationDeadline(), { label: "participation deadline", small: true }) +
       " &middot; <strong>" + optN + "</strong> opted in so far" +
-      (unlocked() ? ' <span class="dk">(mark a college opted-in from its row drill-in)</span>'
-                  : ' <span class="dk">(team members record opt-ins after unlocking)</span>');
+      (pendN ? " &middot; <strong>" + pendN + "</strong> awaiting CO confirmation" : "") +
+      ' <span class="dk">(a college&#39;s VPAA / VP of Student Services / President opts in from its own row below' +
+      (unlocked() ? "; confirm requests in the CO review panel above" : "") + ")</span>";
     var coordItem = coordShown()
       ? '<div class="cplfund-reqitem">' +
         bullet(edText("coord-label", coordLabel(), { label: "Coordinator requirement text",
@@ -3915,6 +4194,7 @@
     return '<div class="cplfund-elig">' +
       '<div class="cplfund-elig-intro">' +
       edArea("elig-intro", eligIntro(), { rows: 2, label: "Baseline eligibility introduction" }) + "</div>" +
+      coReviewLaneHtml() +
       coordItem + partItem + extraHtml +
       '<div class="cplfund-reqadd">' +
       '<button type="button" class="cplfund-optbtn" id="cplFundReqAdd" ' +
@@ -4962,6 +5242,45 @@
         setOptIn(b.getAttribute("data-optin"), b.getAttribute("data-on") === "1");
       });
     });
+    // Self-service opt-in form (public + private): open / cancel / submit. Clicks
+    // inside the form stop propagation so the row doesn't collapse under them.
+    holder.querySelectorAll("[data-optinbtn]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        OPTIN_UI[b.getAttribute("data-optinbtn")] = { open: true };
+        refreshTable();
+      });
+    });
+    holder.querySelectorAll("[data-optincancel]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        OPTIN_UI[b.getAttribute("data-optincancel")] = {};
+        refreshTable();
+      });
+    });
+    holder.querySelectorAll(".cplfund-optin-form input, .cplfund-optin-form select, .cplfund-optin-form label")
+      .forEach(function (el) { el.addEventListener("click", function (e) { e.stopPropagation(); }); });
+    holder.querySelectorAll("[data-optinsubmit]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-optinsubmit");
+        var wrap = null;
+        holder.querySelectorAll("[data-optinwrap]").forEach(function (w) {
+          if (w.getAttribute("data-optinwrap") === college) wrap = w;
+        });
+        if (!wrap) return;
+        var g = function (f) { var el = wrap.querySelector('[data-optinfield="' + f + '"]'); return el ? el.value : ""; };
+        var name = String(g("name")).trim(), title = String(g("title")), email = String(g("email")).trim();
+        var errEl = wrap.querySelector("[data-optinerr]");
+        var err = "";
+        if (!name) err = "Please enter your name.";
+        else if (OPTIN_TITLES.map(function (o) { return o.val; }).indexOf(title) === -1) err = "Please choose your title.";
+        else if (!OPTIN_EMAIL_RE.test(email)) err = "Please enter a valid college email address (name@college.edu).";
+        if (err) { if (errEl) errEl.textContent = err; return; }
+        if (errEl) errEl.textContent = "";
+        submitOptIn(college, { name: name, title: title, email: email });
+      });
+    });
     holder.querySelectorAll("[data-ruralflag]").forEach(function (b) {
       b.addEventListener("click", function (e) {
         e.stopPropagation();
@@ -5219,6 +5538,16 @@
         if (b.getAttribute("data-reqshow") === "coord") setCoordHidden(false); else setPartHidden(false);
       });
     });
+    // CO opt-in review lane (reviewer only — the panel doesn't render publicly).
+    document.querySelectorAll("#cplFundingMount [data-optinconfirm]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; confirmOptIn(b.getAttribute("data-optinconfirm")); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-optinrevoke]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; revokeOptIn(b.getAttribute("data-optinrevoke")); });
+    });
+    document.querySelectorAll("#cplFundingMount [data-optinremove]").forEach(function (b) {
+      b.addEventListener("click", function () { savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
+    });
     // Recommended strategies (per priority, per year): add a blank / remove one.
     document.querySelectorAll("#cplFundingMount [data-stratadd]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -5470,8 +5799,22 @@
       ELIG.coordOk = !!o.coordOk;
       ELIG.coord = o.coord || {};
       ELIG.coordN = Object.keys(ELIG.coord).length;
+      ELIG.optinRow = o.optinRow || {};
       ELIG.optin = o.optin || {};
+      if (o.optinRow && !o.optin) {   // derive the active map from the rows
+        ELIG.optin = {};
+        Object.keys(o.optinRow).forEach(function (k) {
+          if (o.optinRow[k].status !== "revoked") ELIG.optin[k] = o.optinRow[k];
+        });
+      }
+      ELIG.optinReview = o.optinReview || [];
       ELIG.asOf = o.asOf || null;
-    }
+    },
+    _gate: function (c) { return baselineGate(c); },
+    _optinActive: function (c) { return optinActive(c); },
+    _submitOptin: function (c, form) { return submitOptIn(c, form); },
+    _confirmOptin: function (c) { return confirmOptIn(c); },
+    _revokeOptin: function (c) { return revokeOptIn(c); },
+    _optinReview: function () { return ELIG.optinReview; }
   };
 })();
