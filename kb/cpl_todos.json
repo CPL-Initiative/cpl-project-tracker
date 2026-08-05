@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyWalker — we can now answer a training partner's \"which of our occupations already earn college credit, and where?\" in one pass.",
-  "_session": "SkyWalker (121)",
-  "_status": "Ashley brought a list of 160 occupations from an employment training center and asked which ones map to CPL and which colleges honor them. 139 unique occupations went through: 51 have a statewide credit recommendation, 53 have CPL at specific colleges only, and 35 have no CPL anywhere in California. Two things came out of it that matter beyond this one partner. First, utility line work is a complete blank — lineworker, substation electrician, hydro plant, gas control, metering, cable splicer, power dispatcher, about 20 job titles, have zero CPL in the entire system. Second, the college in the partner's own county (San Joaquin Delta) has 69 CPL credentials and exactly one of them is career/technical — the other 68 are AP and CLEP exams. Modesto Junior College, 40 minutes away, has 265. A referral plan built on the nearest college would have quietly sent students to the wrong place. The tool that produced all this is now reusable: point it at any partner's occupation list and it does the same job, and each run adds to a shared crosswalk so the next partner is cheaper.",
+  "_as_of": "2026-08-05 · SkyMail — the student-contact worklist and a governance starter are both live, and both are now waiting on people rather than on code.",
+  "_session": "SkyMail (120)",
+  "_status": "Two things shipped today. First: a student asking one of 25 colleges for CPL through MAP was reaching nobody, because MAP sends those requests to the college's Primary Contact email and those 25 had none on file. The MAP Users tab now lists exactly those colleges with a proposed contact for each, drawn only from people the COLLEGE already designated in MAP — 17 of 25 resolve that way; 8 need a human. Second: a Governance tab, because every problem hit along the way turned out to be a governance gap wearing a data-quality costume — a field nobody owned, a source nobody owned knowing, a definition nobody owned. It measures itself rather than asserting compliance, which is how it surfaced that the college contact-refresh cadence was decided back in June and has never run once. Nothing on either list is blocked on engineering.",
   "items": [
+    {
+      "id": "gov-owners",
+      "for": "sam",
+      "tab": "governance",
+      "text": "⚖️ NEW TAB — Governance. Three tables: who decides what, how far we trust each input, and which loops actually run. Every 'owner' is blank ON PURPOSE and shows in red — who's accountable on our side is the one thing I can't work out from data, so filling that column IS the review. Six open questions at the bottom; the first one gates all the others. There's a Copy-as-Markdown button for taking it into a meeting."
+    },
+    {
+      "id": "gov-cadence-never-run",
+      "for": "sam",
+      "tab": "governance",
+      "text": "⏰ THE UNCOMFORTABLE ONE: the college contact-refresh nudge was decided as a per-semester cadence back in June, and has never been run — not once. The tool works; nobody has fired it. A cadence nobody runs is a document, not governance. Running it once end-to-end with a named owner would do more than anything else on this list, and the worklist it needs now exists."
+    },
     {
       "id": "pcw-second-partner",
       "for": "fable",
@@ -69,12 +81,6 @@
       "for": "sam",
       "tab": "nc-learning-partners",
       "text": "⭐ THE BIG FINDING: 49 statewide exhibits are published across 252 college-slots with ZERO students served — only 30 of 84 statewide exhibits have ever converted a single unit. CompTIA Linux+ is live at 16 colleges and has never produced an award. The faculty work is DONE on all of these; what's missing is outreach. Cheapest volume available anywhere in CPL. The list is live in the tab and refreshes itself."
-    },
-    {
-      "id": "nc-four-institutions",
-      "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "⚠ NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit and Calbright appear on ZERO of MAP's 1,987 credential titles — while ~48 entries already name a specific high school. The gap isn't permission or capability; nobody has done the data entry. Highest value-for-effort item in the whole workstream."
     }
   ]
 }

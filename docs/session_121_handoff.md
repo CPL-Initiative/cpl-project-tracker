@@ -1,12 +1,13 @@
 ---
-title: Session 121 handoff — the student-contact worklist is live; two colleagues are in the loop, and their verification is the next move
+title: Session 121 handoff — the student-contact worklist and the governance starter are live; both are waiting on humans, not on code
 date: 2026-08-05
-tags: [handoff, map-users, contacts, provenance, cpl, onboarding]
+tags: [handoff, map-users, contacts, governance, decision-rights, onboarding, ai-team]
 related:
   - "[[docs/map_users_lessons]]"
-  - "[[docs/map_users_tab_scope]]"
+  - "[[docs/governance_lessons]]"
+  - "[[docs/working_with_claude_code]]"
   - "[[docs/kb-notes/methodology-route-to-a-determination-they-already-made]]"
-  - "[[docs/kb-notes/methodology-provenance-is-a-field]]"
+  - "[[docs/kb-notes/methodology-a-governance-artifact-must-measure-itself]]"
   - "[[docs/session_119_handoff]]"
 ---
 
@@ -15,108 +16,115 @@ related:
 Session 120 was **SkyMail** (named by Sam mid-session). Claim your own moniker or
 take one Sam offers.
 
-> **Numbering note — read this once so it stops propagating.** SkyPartner wrote
-> `session_119_handoff.md` *and* labelled itself `SkyPartner (119)` in
-> `kb/cpl_todos.json`, which can't both be right under the N-writes-N+1 rule. I
-> took **120** to avoid claiming a number already in use and wrote this as 121.
-> If Sam says otherwise, he wins. Don't re-derive it.
+> **Numbering note — read once so it stops propagating.** SkyPartner wrote
+> `session_119_handoff.md` *and* self-labelled `SkyPartner (119)` in
+> `kb/cpl_todos.json`, which can't both hold under the N-writes-N+1 rule. I took
+> **120** to avoid a collision and wrote this as 121. If Sam says otherwise, he
+> wins. Don't re-derive it.
 
-## What shipped (PRs #991, #992, #993 — all merged + deployed)
+## ⚠ Read this first: you have human colleagues
 
-The MAP Users tab gained a reviewer-only **⚠ No student contact** lens.
+**Ashley, Jessica and Malone** now use Claude Code directly. Most are new to it
+and expert in MAP. An enterprise account is coming.
 
-**Why it exists, in Sam's words:** *"The big goal is to have all College Landing
-Pages include contact so when students request CPL, it goes to a real person who
-can respond. MAP is set up to send requests to the Primary Contact using the PC
-email."* **25 of 123 colleges had no Primary Contact email; 24 of those had a
-live landing page.** Students asking those colleges reached nobody.
+- **`docs/working_with_claude_code.md`** is their guide — send new people there.
+- **`CLAUDE.md` §"Working with the MAP team"** is *your* half, and it is the
+  binding one. The principle: **a habit that depends on a new user remembering
+  it will fail on their first day.** Ask who's driving. Attribute what you're
+  told. Offer the tab when a deliverable will drift. Explain approval requests in
+  plain language. Flag cross-impact *before* acting. Offer the checkpoint.
+- **Their MAP knowledge outranks your inference.** Jessica named two Gavilan
+  counselors my own sourcing rules forbade me from naming — she was right, and
+  the rules were right to stop *me*. When someone supplies a value that breaks a
+  rule you set for yourself, check whether the rule was about *you*.
+- Flag-and-proceed beats both silently fixing and blocking: Jessica's SDCCE
+  address arrived as `sdceecc@sdccd.ed`; I recorded `.edu`, said so, and she
+  confirmed.
 
-- **Cascade** (`CPL Coordinator → CPL Assistant → CPL Counselor → Articulation
-  Officer → Lead Initiator → Faculty Lead`) resolves **17 of 25**. The other 8
+## What shipped (PRs #991–#994, #997, #998 — all merged + deployed)
+
+**① The student-contact worklist.** MAP routes a student's CPL request to a
+college's Primary Contact email. **25 of 123 colleges had none; 24 of those had a
+live landing page** — those requests reached nobody. New reviewer-only **⚠ No
+student contact** lens on MAP Users, with a proposed contact per college.
+
+- Cascade (`CPL Coordinator → CPL Assistant → CPL Counselor → Articulation
+  Officer → Lead Initiator → Faculty Lead`) resolves **17 of 25**; the other 8
   are *asked*, never defaulted.
-- **Contact sync 11 → 24 fields.** A probe found `View_CollegeContacts_APIDataset`
-  carried far more than we pulled: CPL Assistant Email 52/123, CPL Counselor 65,
-  Articulation Officer 87, Faculty Lead 84, Lead Initiator 82, SCO 101.
-- `map_contact_gaps` — a `security_invoker` view; RLS on the base tables gates it.
-  **Verified 0 rows for anon** on the view and both base tables.
-- Public headline corrected: **2,657 users / 120 colleges**, not 2,769 / 128
-  (7 sandbox entries + the statewide team account). Fixed by *labelling*
-  (`college_kind`), not filtering.
-- `disciplines` splits on the **pipe** now — MAP never used commas; a 150-code
-  value had been rendering as one 1,364-character cell for two months.
-- Tests **70 → 108**; 184 files green.
+- **The governing rule, from Sam:** colleges are locally governed, so **every
+  proposal is a person that college already designated in MAP.** We route; we
+  never appoint. Leadership (VPAA/CEO) is deliberately *not* a rung.
+- Contact sync **11 → 24 fields** after a probe found the view carried far more
+  than we read. Public headline corrected to **2,657 users / 120 colleges**.
+
+**② The governance starter** (#997). Team-gated ⚖️ Governance tab: decision
+rights, acceptance standards, cadences, open questions. **It measures itself** —
+the register says the contact-refresh cadence was decided each semester; the page
+reads `map_college_nudges`, finds zero rows, and prints **"never run."**
+
+**③ Team enablement** (#998). The guide + the standing obligations above.
+
+Suite **185 files green**.
 
 ## Read these first (in order)
 
-1. [`docs/map_users_lessons.md`](map_users_lessons.md) — the full story, incl. why
-   the shared-inbox design was rejected and what replaced it.
-2. [`docs/kb-notes/methodology-route-to-a-determination-they-already-made.md`](kb-notes/methodology-route-to-a-determination-they-already-made.md)
-   — the load-bearing idea. Read before touching the cascade.
-3. [`docs/kb-notes/methodology-provenance-is-a-field.md`](kb-notes/methodology-provenance-is-a-field.md)
-   — the three trust tiers and why they render differently.
-4. `CLAUDE.md` §11 (SkyMail) · `map/supabase_map_contact_gaps.sql` (schema of record).
+1. [`docs/map_users_lessons.md`](map_users_lessons.md) — the contact workstream.
+2. [`docs/governance_lessons.md`](governance_lessons.md) — the governance
+   diagnosis and the two design choices that made the register an instrument.
+3. [`docs/kb-notes/methodology-route-to-a-determination-they-already-made.md`](kb-notes/methodology-route-to-a-determination-they-already-made.md)
+   — read before touching the cascade.
+4. [`docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md`](kb-notes/methodology-a-governance-artifact-must-measure-itself.md)
+5. `CLAUDE.md` §11 (SkyMail) + §"Working with the MAP team".
 
-## ⚠ You have human colleagues in this session
+## The priority work — all of it is waiting on people, not code
 
-Sam brought in **Ashley and Jessica**, who *"live in MAP on the daily"* and are
-newer to Claude Code. Jessica already used the session well — she asked for a cut
-of the data I hadn't built (colleges missing a **CPL Assistant**, 71 of them,
-with Primary Contact as the *first* fallback) and supplied real contacts for two
-colleges my web lookup couldn't resolve.
+**① Fill the owner column** (Governance tab, OQ-01). Every `owner` is `null` by
+design; who is accountable is the one thing a session cannot infer. Everything
+else on that page waits on it. It's a review, not a writing task — deliberately.
 
-**How to work with them:**
-- Plain language, no repo jargon. They know MAP far better than the codebase.
-- **Their MAP knowledge outranks my inference every time.** Jessica named two
-  specific Gavilan counselors — something my own sourcing rules forbade me from
-  doing — and she was right.
-- When they hand you a value, check it and say what you did. Jessica's SDCCE
-  address arrived as `sdceecc@sdccd.ed`; I recorded `.edu` and flagged it; she
-  confirmed. Flag-and-proceed beat both silently fixing and blocking.
+**② Run the contact-refresh cadence once**, end to end, with a named owner. It
+was decided in June 2026 and has never fired. The worklist it needs now exists.
+*A cadence nobody runs is a document, not governance.*
 
-## The priority workstream — verification, not building
+**③ Jessica/Ashley verify the 6 web-sourced fallbacks** — Siskiyous, Cosumnes
+River, Feather River, Hartnell, NOCE, Calbright. Gavilan needed a human; assume
+at least one of those six does too. When corrected, flip the entry to
+`via: "curator"` with their name and date (`FALLBACK_CONTACTS` in `map_users.js`).
 
-**① The 6 web-sourced fallbacks need a human eye.** Siskiyous, Cosumnes River,
-Feather River, Hartnell, NOCE, Calbright — I found those by web search. Gavilan
-needed a human; assume at least one of the six does too. When a curator corrects
-one, flip it to `via: "curator"` with their name and date (see
-`FALLBACK_CONTACTS` in `map_users.js`).
+**④ Jessica's 71-college "no CPL Assistant" table is a chat snapshot** and will
+drift against the monthly sync. Make it a second lens — the plumbing exists
+(`state.lens`, `gapsHtml()`); it's a sibling function, not a rebuild. The query
+is in `docs/map_users_lessons.md`.
 
-**② Jessica's 71-college "no CPL Assistant" table is a chat snapshot.** It goes
-stale against a monthly sync. Make it a second lens in the tab — the query is in
-`docs/map_users_lessons.md` and the lens plumbing already exists (`state.lens`,
-`gapsHtml()`); it's a sibling function, not a rebuild.
+**⑤ Decide CIP's promotion criteria before the fall-2026 cutover** (OQ-03). TOP
+is the cautionary tale of an input trusted by default.
 
-**③ Open carryover:** the **MAP "manage users" URL** (open since Session 87 — the
-draft emails link each college's MAP CPL dashboard as an interim). And whether
-the 5 leadership-only colleges should show VPAA/CEO as *context* without
-auto-proposing.
+**Carryover:** the **MAP "manage users" URL** (open since Session 87).
 
 ## Patterns that worked (reuse them)
 
 - **Probe, don't ask a human to recall a spelling.** Sam knew the CPL Assistant
-  field existed but not its label. A runner probe answered in 90 seconds.
-  `map/probe_users_schema.py` + a `workflow_dispatch`.
-- **Measure before designing.** Every good decision this run came from a query.
-  The 17/25 outcome came from *wiring data we already had access to*, not clever
-  logic.
-- **Take the constraint seriously and the design gets better.** Sam's
-  local-governance objection killed my nicest idea and produced a stronger rule.
+  field existed but not its label; a runner probe settled it in 90 seconds.
+- **Measure before designing.** 17-of-25 came from wiring data we already had
+  access to, not from clever logic.
+- **Take the constraint seriously.** Sam's local-governance objection killed my
+  nicest design and produced a stronger rule.
+- **Answer strategy questions from the evidence you just collected.** The
+  governance advice landed because it was five things that had happened that day,
+  not a maturity model.
+- **To audit a process, measure whether it ran** — don't read it. The nudge code
+  was fine; the state said it had never been used.
 - **A two-state detector is wrong about the middle.** The probe's real/fake gate
-  hid sparse-but-real columns; a third `weak` state that reports to a human fixed
-  it.
-- **Adjacent findings are worth more than the thing you were looking for.** The
-  inflated public headline, the pipe delimiter, and the multi-email cells all
-  surfaced while measuring something else.
+  hid sparse-but-real columns.
 
 ## Safety patterns to honor
 
 - **MAP contact/user data never enters this public repo.** It lives only in gated
-  Supabase. The *one* exception is `FALLBACK_CONTACTS` in `map_users.js` —
-  institutional addresses published on public .edu sites. Keep that bar; a
-  personal address would violate it.
+  Supabase. The sole exception is `FALLBACK_CONTACTS` in `map_users.js` —
+  institutional addresses published on public .edu sites. A personal address
+  would violate it.
 - **`security_invoker = true` on `map_contact_gaps` is load-bearing.** Removing it
-  publishes every staff email to the anon key. Verify gating by *reading as anon*
+  publishes every staff email to the anon key. Verify by *reading as anon*
   (`set local role anon`), never by reading the policy.
-- **MAP has no write API.** Nothing here edits MAP; we propose and the team enters
-  it. See `adr-surface-dont-edit-readonly-system-of-record`.
+- **MAP has no write API.** We propose; a human enters it in MAP.
 - Sam runs concurrent sessions — re-read live tables before any bulk write.
