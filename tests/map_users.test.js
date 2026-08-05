@@ -423,7 +423,8 @@ function makeWin(opts) {
     keys.filter((k) => FB[k].via === "web").every((k) =>
       (FB[k].contacts || []).every((c) => {
         const local = c.email.split("@")[0].toLowerCase();
-        const isDeptInbox = /counsel|advis|success|student|welcome|preguntas/.test(local);
+        // "couns" not "counsel" — real inboxes abbreviate (SWCCounsCenter@swccd.edu)
+        const isDeptInbox = /couns|advis|success|student|welcome|preguntas|admissions|records/.test(local);
         return isDeptInbox || !!FB[k].note;
       })));
   check("fallbacks: colleges that publish only a counselor LIST are left blank",
