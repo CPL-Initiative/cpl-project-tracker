@@ -3401,3 +3401,24 @@ Suite **82** (tab) · full 184 files green. Durable: `methodology-dormant-asset-
 `methodology-register-is-the-spine-narrative-cites-it`, `adr-notes-alongside-the-curated-register`.
 Story: `docs/noncredit_cpl_lessons.md` · handoff `docs/session_119_handoff.md`.
 **Funding deliberately PARKED** until the NC universe is mapped (Sam).
+
+### SkyOptIn cont. — Implementation Funding: opt-in row CTA + the Budget reconciliation (2026-08-05, #986 + #1002)
+
+**Opt-in row ergonomics (#986 MERGED).** A one-click **✎ Opt in** chip on every not-opted-in college row
+(public + private) expands the drill-in, opens the attestation form, focuses the Name field; the CO
+**✓ Confirm / ✕ Reject** now shows **INLINE in the reviewer's row drill-in** (where Sam looked — not only
+the aggregate Baseline lane), with the attestor identity. Binding: holder-scoped in `wireTable()` so it
+survives `refreshTable()`; the lane copies scoped to `.cplfund-elig` in `wire()` (disjoint, no double-bind).
+`cpl_funding_optin` 18 → 28. **Budget reconciliation** vs the revised `20260729_CPL_Amendment_Sep_BOG.xlsx`:
+ties to the penny across the whole tree ($35M split, $15M reconciliation, $31,556,650 amendment, and the
+clean fold $8,959,692 = $1,516,342 RCCD + $7,443,350 CO/TBA). **Sam's 2 workbook fixes:** **$74M → $71M**
+(`=E2+E9+E10` double-counts the $8.96M project slice already in the $35M) and **award Max $665,971 → $522,239**
+(recomputed from live `awardStats()` over 115 colleges = Min $150K · Avg $210,785 · Max $522,239 Mt SAC;
+**report 115 Colleges SPLIT from 4 Noncredit** — Calbright $33,134 is below the $150K floor, never blend the
+119). **COBI ongoing → 2030-31 committed (#1002):** +$14M → $35M, the pre-amendment $5M 2025-26 archived,
+new `yr_2030_31` column (`budget_ledger.js` `USE_YEARS → [1..5]`); Supabase applied + verified
+(`kb/supabase_budget_extend_2030_31.sql`, guarded UPDATEs, no `model_field` touched). `budget_ledger` 34 → 40.
+**OPEN — NC equalization:** design LOCKED (floor + optional per-row factor, skip double-dip flag), build
+DEFERRED on Sam's **headcount → FTES** basis call (next session); award-card 115/4-NC split rides with it.
+Durable: `methodology-recompute-a-documents-figures-from-the-live-engine`. Story:
+`docs/cpl_funding_lessons.md` §2026-08-05 · handoff `docs/cpl_funding_handoff.md`.

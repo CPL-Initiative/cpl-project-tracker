@@ -2452,3 +2452,47 @@ a college→domain map (more stable than a person roster). Only build if the CO 
 Then the deferred **#3b** NC-carve-out gate, and the **Budget reconciliation** (still the real next step).
 
 **(d) Next.** Confirm one live opt-in end-to-end on the deployed site once merged; then Budget.
+
+## 2026-08-05 — SkyOptIn cont.: opt-in row CTA + the Budget reconciliation + ongoing → 2030-31
+
+**(a) Learned.**
+- **Put the action where the user looked.** Sam opted Alameda in, then "I don't see where to confirm,
+  other than the CO Note box." The CO confirm/reject lived in a *separate* Baseline-eligibility lane, not
+  on the college's own row. Fix = surface ✓ Confirm / ✕ Reject **inline in the row drill-in** (gated on
+  `unlocked()`), reusing `data-optinconfirm`/`revoke`. Binding gotcha: those buttons are re-rendered by
+  `refreshTable()` (partial), so they must be bound **holder-scoped in `wireTable()`**, and the aggregate
+  lane's copies scoped to `.cplfund-elig` in `wire()` — disjoint, so no double-bind / double-PATCH.
+- **A number in a human-authored document that your system also derives is a claim to VERIFY, not a
+  source to copy.** The amendment workbook's **$74M** grand total double-counts $3M (`=E2+E9+E10` sums the
+  $18M project cross-cut instead of the $15M pot; true = $71M) and its **Max Award $665,971** is ~$144K
+  stale vs the live model's **$522,239** (Mt. San Antonio) — it predates the $1M NC + $1M rural carve-outs
+  and the credit-FTES basis. Recompute headline figures from the live engine (`awardStats()` over the 115
+  colleges), reconcile the delta, and hand back the corrected numbers. New note:
+  `docs/kb-notes/methodology-recompute-a-documents-figures-from-the-live-engine.md`.
+- **The award range mixes two recipient sets.** The header's Avg $212,103 = $25,240,308 ÷ **119** (colleges
+  + 4 NC); the floor/rural/size model governs the **115 colleges** only. The 4 NC campuses share the $1M
+  feeder by headcount and are NOT floored — **Calbright $33,134 is below the $150K college floor**, so a
+  blended 119-recipient Min/Avg/Max is dishonest. Report the two groups separately.
+- **Extending a fixed-column ledger is a 3-line consumer change + a guarded data write.** `budget_ledger.js`
+  keys everything off `YEAR_COLS`/`YEAR_LABELS`/`USE_YEARS`; adding `yr_2030_31` + extending `USE_YEARS` to
+  `[1..5]` propagates to headers, cells, `sumYears`, and footers automatically (windowed Sources totals
+  pick it up for free). "Committed vs anticipated" = an accounting stance, not a styling problem — Sam chose
+  committed, so the years render normally and count; the source `window_label` carries the "committed
+  through 2030-31" statement.
+
+**(b) State.** Opt-in row CTA + inline confirm **MERGED (#986)**; `cpl_funding_optin` 18 → 28. Budget
+reconciliation delivered (verdict: ties to the penny; $74M→$71M + award recompute are Sam's workbook fixes).
+COBI ongoing → 2030-31 committed **in PR #1002** (bundled with this checkpoint): `budget_ledger.js` grows
+`yr_2030_31`, `USE_YEARS → [1..5]`; Supabase applied + verified (`kb/supabase_budget_extend_2030_31.sql` —
+$5M archived, ids 5/14 ongoing → $35M). `budget_ledger` 34 → 40; full suite 183 files green. The ledger was
+already reconciled to the revised budget (all sources/uses/projects match) — the #949 wiring + SkyReconcile
+did the heavy lifting; the extension was the only change needed.
+
+**(c) Roadmap.** **NC equalization** is the live open workstream: design LOCKED (floor + optional per-row
+factor, no double-dip flag), BUILD DEFERRED until Sam decides **headcount → FTES** for the NC split (next
+session). Then build the editable NC section + fold in the award-card 115/4-NC split. v2 opt-in magic-link
+and #3b NC-gate remain parked.
+
+**(d) Next.** Land Sam's headcount→FTES NC-basis decision, then build the editable NC section (floor ·
+optional factor · add-program dropdown) in one pass with the award-card split. Sam's workbook fixes ($74M,
+award Max, split line) are his to make.

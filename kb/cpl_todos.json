@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyMail — the student-contact worklist and a governance starter are both live, and both are now waiting on people rather than on code.",
-  "_session": "SkyMail (120)",
+  "_as_of": "2026-08-05 · SkyMail + SkyOptIn — SkyMail: the student-contact worklist + a governance starter are live (waiting on people, not code). SkyOptIn (funding, parallel): the opt-in row CTA shipped, the Budget reconciled to the revised BOG amendment, and COBI ongoing now runs through 2030-31; NC equalization is queued on one Sam decision.",
+  "_session": "SkyMail (120) + SkyOptIn (funding)",
   "_status": "Two things shipped today. First: a student asking one of 25 colleges for CPL through MAP was reaching nobody, because MAP sends those requests to the college's Primary Contact email and those 25 had none on file. The MAP Users tab now lists exactly those colleges with a proposed contact for each, drawn only from people the COLLEGE already designated in MAP — 17 of 25 resolve that way; 8 need a human. Second: a Governance tab, because every problem hit along the way turned out to be a governance gap wearing a data-quality costume — a field nobody owned, a source nobody owned knowing, a definition nobody owned. It measures itself rather than asserting compliance, which is how it surfaced that the college contact-refresh cadence was decided back in June and has never run once. Nothing on either list is blocked on engineering.",
   "items": [
+    {
+      "id": "fund-workbook-fixes",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "💰 TWO NUMBERS TO FIX in the Sep-BOG amendment workbook before it goes to the Board (everything else ties to the penny). (1) The $74M grand total double-counts $3M — it adds the $18M 'project available' cross-cut on top of the $35M that already contains $8.96M of it; the real total is $71M ($35M+$15M+$21M). (2) The Award range: Max should be $522,239 (Mt. San Antonio), not $665,971 — the old number predates the NC + rural carve-outs. Report it as 115 Colleges (Min $150,000 · Avg $210,785 · Max $522,239) SEPARATE from the 4 Noncredit campuses sharing $1M — Calbright is $33K, below the college floor, so don't blend them."
+    },
+    {
+      "id": "fund-nc-basis",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🎚️ ONE DECISION unlocks the NC equalization build: switch the $1M noncredit split from headcount to FTES (more consistent with the credit model — we have noncredit_ftes for every campus), or keep headcount? Once you decide, I'll build the editable NC section — a floor to guarantee small campuses a minimum (your Calbright concern), plus an optional per-row factor to fine-tune, plus a dropdown to add other NC programs. Also weigh whether Mt. SAC's big NC number ($472K) is fair given its large NC CPL potential; that's the equity call only you can make."
+    },
     {
       "id": "gov-owners",
       "for": "sam",
