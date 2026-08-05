@@ -262,3 +262,37 @@ $function$;
 
 revoke all on function public.map_users_summary() from public;
 grant execute on function public.map_users_summary() to anon, authenticated, service_role;
+
+-- ─────────────────────────────────────────────────────────────────────────
+-- governance_owners — the Governance tab's owner column, made curatable
+-- (Session 120, migration governance_owners_curation).
+--
+-- The register (kb/governance_register.json) is COMMITTED and rebuilt by
+-- sessions; owners are CURATED live by the team. Different lifecycles, so
+-- different homes — the same split that keeps map_college_nudges out of
+-- map_college_contacts, where the monthly full-refresh would wipe the curator's
+-- work. This table overlays the register by row id (DR-01, CA-03, …), so a
+-- session regenerating the register can never destroy an assignment.
+--
+-- NO delete policy, deliberately: clearing an owner is an UPDATE to null, so the
+-- record of who assigned what survives. Governance decisions should be
+-- revisable, not erasable.
+-- ─────────────────────────────────────────────────────────────────────────
+create table if not exists public.governance_owners (
+  register_id text primary key,
+  owner       text,
+  note        text,
+  set_by      text not null,
+  set_at      timestamptz not null default now()
+);
+alter table public.governance_owners enable row level security;
+drop policy if exists go_select on public.governance_owners;
+create policy go_select on public.governance_owners for select
+  using (is_allowed_reviewer() or team_pass_ok());
+drop policy if exists go_insert on public.governance_owners;
+create policy go_insert on public.governance_owners for insert
+  with check (is_allowed_reviewer() or team_pass_ok());
+drop policy if exists go_update on public.governance_owners;
+create policy go_update on public.governance_owners for update
+  using (is_allowed_reviewer() or team_pass_ok())
+  with check (is_allowed_reviewer() or team_pass_ok());

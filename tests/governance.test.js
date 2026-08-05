@@ -123,6 +123,47 @@ function makeWin(opts) {
                    G._state.live = s; return out === ""; })());
 })();
 
+// Owner curation. The register ships every owner null on purpose, so the tab HAS
+// to provide a way to fill them in — shipping the review without the pen was the
+// original defect (Sam: "how do I add an owner? Doesn't appear to be editable").
+// Curated owners live in a SEPARATE table so a session regenerating the register
+// can never wipe an assignment.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  const row = REG.decision_rights[0];
+
+  check("owner cell is clickable when unowned", /data-own="/.test(G._owner(row)));
+  check("unowned still renders as a visible gap, not an empty control",
+    /needs an owner/.test(G._owner(row)));
+  check("ownerOf: null curation + null file value → unowned", G._ownerOf(row) === null);
+  check("ownerOf: a field passed instead of a row degrades to null, never throws",
+    G._ownerOf(null) === null && G._ownerOf("Jessica") === null);
+
+  G._state.owners[row.id] = { register_id: row.id, owner: "Jessica", note: "contacts lane",
+                              set_by: "team@x", set_at: "2026-08-06T00:00:00Z" };
+  const o = G._ownerOf(row);
+  check("ownerOf: a curated value wins over the register file", o && o.name === "Jessica");
+  check("ownerOf: curated values are flagged as curated", o && o.curated === true);
+  check("owner cell shows who assigned it and when",
+    /set by team@x/.test(G._owner(row)) && /2026-08-06/.test(G._owner(row)));
+  check("a curated owner reaches the markdown export", /Jessica/.test(G._toMarkdown()));
+
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("the assigned row no longer shows as needing an owner in its own cell",
+    !/needs an owner<\/span><span class="gov-pencil">✎<\/span><\/button>[\s\S]{0,40}DR-01/.test(r.innerHTML));
+
+  // Clearing is an UPDATE to empty, not a delete — the row returns to the gap
+  // state while the audit trail of who assigned it survives server-side.
+  G._state.owners[row.id] = { register_id: row.id, owner: "", set_by: "team@x" };
+  check("clearing an owner returns the row to 'needs an owner'",
+    G._ownerOf(row) === null && /needs an owner/.test(G._owner(row)));
+  G._state.owners = {};
+})();
+
 // (e) markdown export carries the uncomfortable facts, not just the tidy ones
 (function () {
   const w = makeWin({ teamPass: "p" });
