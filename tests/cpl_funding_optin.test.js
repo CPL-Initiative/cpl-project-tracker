@@ -195,6 +195,88 @@ function teamPhrase() {
     T._optinActive(rowCollege) === true);
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Part F — row-level ergonomics (Sam, 2026-08-05): a one-click "Opt in" chip on
+// the collapsed row that opens the form focused, and the CO confirm/reject shown
+// INLINE in the reviewer's row drill-in (where he looked), not only the aggregate
+// Baseline-section lane.
+// ─────────────────────────────────────────────────────────────────────────────
+{
+  // F1 — a not-opted-in row offers the one-click chip; it opens THAT row's form.
+  const dom = freshDom();
+  const doc = boot(dom.window);
+  const T = dom.window.CPL_FUNDING_TAB;
+  T._setElig({ coordOk: true, coord: {}, optinRow: {} });
+  T.render();
+  const chip = doc.querySelector("[data-optinjump]");
+  check("F1: a not-opted-in row offers the one-click Opt-in chip", !!chip);
+  const chipCollege = chip ? chip.getAttribute("data-optinjump") : null;
+  if (chip) click(dom.window, chip);
+  const t1 = doc.getElementById("cplFundTable").innerHTML;
+  const wrap = doc.querySelector('[data-optinwrap="' + (chipCollege || "") + '"]');
+  check("F1b: clicking the chip opens that row's attestation form (name field present)",
+    !!wrap && !!wrap.querySelector('[data-optinfield="name"]'));
+
+  // F2 — the chip disappears once the college has opted in.
+  const selfRow2 = {}; selfRow2[COL] = { college: COL, status: "self_attested", source: "self" };
+  T._setElig({ coordOk: true, coord: {}, optinRow: selfRow2 });
+  T.render();
+  const stillThere = Array.from(doc.querySelectorAll("[data-optinjump]"))
+    .map(function (b) { return b.getAttribute("data-optinjump"); });
+  check("F2: the Opt-in chip is hidden once the college has opted in", stillThere.indexOf(COL) === -1);
+  check("F2b: other (not-opted-in) colleges still show the chip", stillThere.length > 0);
+}
+{
+  // F3/F4 — a reviewer sees Confirm/Reject INLINE in the row drill-in, with the
+  // attestor identity; and clicking inline Confirm actually confirms — proving the
+  // holder-scoped binding survives the expand's refreshTable (a dead button here
+  // was the real risk of moving the action onto the row).
+  const order = D.colleges[0].order;
+  const priv = freshDom();
+  priv.window.CPL_TEAM_PHRASE = teamPhrase();
+  const doc = boot(priv.window);
+  const P = priv.window.CPL_FUNDING_TAB;
+  const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
+  P._setElig({ coordOk: true, coord: {}, optinRow: selfRow, optinReview: [
+    { college: COL, name: "Jane Admin", title: "VPAA", email: "jane@college.edu",
+      status: "self_attested", requested_at: "2026-08-05" }
+  ] });
+  P.render();
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  click(priv.window, row);   // expand COL's drill-in (it's opted in → no chip)
+  const t = doc.getElementById("cplFundTable").innerHTML;
+  check("F3: the row drill-in shows the CO confirm block inline (where Sam looked)",
+    /cplfund-corow/.test(t));
+  check("F3b: the inline block offers Confirm + Reject with the attestor identity",
+    /data-optinconfirm=/.test(t) && /data-optinrevoke=/.test(t) &&
+    /Jane Admin/.test(t) && /jane@college\.edu/.test(t));
+
+  const confirmBtn = doc.querySelector("#cplFundTable [data-optinconfirm]");
+  check("F4: the inline Confirm button is present in the drill-in", !!confirmBtn);
+  if (confirmBtn) click(priv.window, confirmBtn);
+  const t2 = doc.getElementById("cplFundTable").innerHTML;
+  check("F4b: clicking inline Confirm confirms the opt-in (holder-scoped binding survives refreshTable)",
+    /CO-confirmed/.test(t2));
+}
+{
+  // F5 — a LOCKED (public / non-reviewer) drill-in never shows the CO controls,
+  // but still shows the college-facing opted-in status.
+  const order = D.colleges[0].order;
+  const dom = freshDom();
+  const doc = boot(dom.window);
+  const T = dom.window.CPL_FUNDING_TAB;
+  const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self" };
+  T._setElig({ coordOk: true, coord: {}, optinRow: selfRow });
+  T.render();
+  const row = doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + order + '"]');
+  click(dom.window, row);
+  const t = doc.getElementById("cplFundTable").innerHTML;
+  check("F5: a locked (non-reviewer) drill-in shows NO CO confirm controls",
+    !/cplfund-corow/.test(t) && !/data-optinconfirm/.test(t));
+  check("F5b: the locked drill-in still shows the college-facing opted-in status",
+    /Opted in to participate/.test(t));
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
