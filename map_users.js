@@ -26,7 +26,10 @@
   var REST = SUPABASE_URL + "/rest/v1";
   var TEAM_PASS_KEY = "cpl_team_pass";
 
-  var state = { summary: null, loading: false, error: null, q: "", sort: "users", rosterOpen: {}, nudges: {} };
+  var state = { summary: null, loading: false, error: null, q: "", sort: "users",
+                rosterOpen: {}, nudges: {},
+                // lens: "all" = the roster view; "gaps" = the student-contact worklist
+                lens: "all", gaps: null, gapsError: null };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -95,6 +98,19 @@
       ".mapu-st-active { color: var(--hunter,#2C601A); background: rgba(44,96,26,.10); }",
       ".mapu-st-inactive { color: var(--text-muted,#5C5C55); background: var(--surface-muted); }",
       ".mapu-disc { cursor: help; }",
+      // ── Student-contact worklist (Session 120) ──
+      ".mapu-lens { display:flex; gap:6px; margin:0 0 10px; flex-wrap:wrap; }",
+      ".mapu-lensbtn { font-size:.8rem; padding:5px 12px; border:1px solid var(--border);"
+        + " border-radius:14px; background: var(--surface); color: var(--text-muted); cursor:pointer; }",
+      ".mapu-lensbtn:hover { border-color: var(--seal-blue); color: var(--seal-blue); }",
+      ".mapu-lensbtn.on { background: var(--seal-blue); border-color: var(--seal-blue); color:#fff; }",
+      ".mapu-lenscount { font-weight:700; }",
+      ".mapu-subh { color: var(--navy-primary); margin:22px 0 2px; font-size:1rem; }",
+      ".mapu-gaptable td { vertical-align: top; }",
+      ".mapu-lp { text-decoration:none; color: var(--link); }",
+      ".mapu-propose { border-left:3px solid var(--seal-blue); padding-left:9px; }",
+      ".mapu-src { font-size:.72rem; color: var(--link); text-decoration:none; }",
+      ".mapu-src:hover { text-decoration:underline; }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
@@ -140,12 +156,18 @@
     var cls = /^active$/i.test(s) ? "mapu-st-active" : "mapu-st-inactive";
     return '<span class="mapu-st ' + cls + '">' + esc(s) + "</span>";
   }
-  // UserDisciplines (comma-delimited, can be long) → inline for ≤2, else a
-  // "N disciplines" chip with the full list in the title.
+  // UserDisciplines → inline for ≤2, else an "N disciplines" chip with the full
+  // list in the title.
+  //
+  // DELIMITER: MAP writes these PIPE-separated ("MATH | ENGL | BIOL"), not
+  // comma-separated as the original scope assumed. Splitting on "," alone made a
+  // multi-discipline value one giant part, so a user carrying their college's
+  // whole subject list rendered as a single 1,364-character cell instead of a
+  // chip. Split on both (Session 120).
   function discCell(d) {
     d = String(d == null ? "" : d).trim();
     if (!d) return "—";
-    var parts = d.split(",").map(function (x) { return x.trim(); }).filter(Boolean);
+    var parts = d.split(/[|,]/).map(function (x) { return x.trim(); }).filter(Boolean);
     var label = parts.length > 2 ? parts.length + " disciplines" : parts.join(", ");
     return '<span class="mapu-disc" title="' + esc(parts.join(", ")) + '">' + esc(label) + "</span>";
   }
@@ -169,6 +191,76 @@
       return r.json();
     });
   }
+  // ── Web-sourced fallback contacts (Sam, 2026-08-05) ───────────────────────
+  // For the colleges where MAP holds NO CPL-side designation, there is nobody to
+  // propose from their own data. Rather than defaulting to a vice president, we
+  // look up the college's published counseling/advising inbox and offer it as a
+  // clearly-labelled SUGGESTION with the page it came from, so whoever acts on it
+  // can verify the source themselves. It is never treated as a MAP designation.
+  //
+  // Rules used when sourcing these (keep them if you add more):
+  //  · a DEPARTMENT inbox, never an individual counselor — individuals churn, and
+  //    naming a specific person is the determination we are trying not to make;
+  //  · ACADEMIC counseling/advising, never mental-health or wellness — several of
+  //    these colleges publish a "Be Well"-style address, and routing a credit
+  //    question to a mental-health service would be a genuinely bad outcome;
+  //  · if neither exists, record null + the page, and let a human decide.
+  // Verified 2026-08-05. These are institutional addresses published on public
+  // .edu sites, which is why they can live in a public repo when MAP contact
+  // rows cannot.
+  var WEB_SOURCED = {
+    "College of the Siskiyous": {
+      email: "counselingservices@siskiyous.edu",
+      source: "https://www.siskiyous.edu/counseling/", label: "Counseling & Student Support" },
+    "Cosumnes River College": {
+      email: "crc-counseling@crc.losrios.edu",
+      source: "https://crc.losrios.edu/student-resources/counseling/contact-your-counselor",
+      label: "Counseling" },
+    "Feather River College": {
+      email: "frcadvising@frc.edu",
+      source: "https://www.frc.edu/advising/index", label: "Advising & Counseling Center" },
+    "Hartnell College": {
+      email: "Counseling@Hartnell.edu",
+      source: "https://www.hartnell.edu/support/counseling/index.html", label: "Counseling & Guidance" },
+    "North Orange Continuing Education Credit": {
+      email: "counseling@noce.edu",
+      source: "https://noce.edu/home/contact-us/", label: "NOCE Counseling" },
+    "Calbright College Credit": {
+      email: "success@calbright.org",
+      source: "https://www.calbright.edu/talk-with-us/", label: "Student Success (Calbright has no campus counseling office)" },
+    // Publishes no single address — a form and per-campus offices respectively.
+    "Gavilan College": {
+      email: null, source: "https://www.gavilan.edu/counseling/online-form.php",
+      label: "Counseling uses a web contact form, not an inbox" },
+    "San Diego College of Continuing Education Credit": {
+      email: null, source: "https://sdcce.edu/student-services/academic-support/counseling.html",
+      label: "Counseling is per-campus across 7 campuses — no single inbox" },
+  };
+  function webSourced(college) { return WEB_SOURCED[college] || null; }
+
+  // ── The student-contact worklist (Session 120) ────────────────────────────
+  // map_contact_gaps is a security_invoker view over the same gated tables, so
+  // a logged-out visitor gets zero rows exactly like the roster does.
+  function loadGaps() {
+    var cols = "college,college_kind,primary_contact,primary_contact_email,"
+      + "primary_contact_multi_email,has_student_contact,proposed_source,proposed_name,"
+      + "proposed_email,needs_ask,ask_reason,landing_page_url,active_users,"
+      + "cpl_coordinator_email,cpl_assistant_email";
+    return fetch(REST + "/map_contact_gaps?select=" + cols + "&order=college.asc",
+      { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("gaps " + r.status);
+        return r.json();
+      });
+  }
+  // Only real colleges belong on a worklist someone is going to act on — the
+  // MAP roster also carries sandbox entries and the statewide team account.
+  function gapRows() {
+    return (state.gaps || []).filter(function (g) {
+      return g.college_kind === "college" && !g.has_student_contact;
+    });
+  }
+
   function loadContacts(college) {
     // The gated contacts (Primary Contact / VPAA = VP Instruction / VPSS = VP
     // Student Services) for the refresh nudge. Reviewer/team-phrase only.
@@ -215,6 +307,77 @@
     return "Your college's current MAP CPL users (" + userRoster.length + "):\n"
       + lines.join("\n") + "\n\n";
   }
+  // Shared boilerplate. Kept in one place so both nudges say the same thing about
+  // who we are and where to get help.
+  var MAP_HELP_BLOCK = [
+    "NEED HELP?",
+    "The CPL Initiative team at the California Community Colleges Chancellor's Office",
+    "can walk you through it or make the change with you:",
+    "  Email: MAP@rccd.edu",
+    "  CPL Initiative dashboard: https://cpl-initiative.github.io/cpl-project-tracker/",
+  ].join("\n");
+
+  // The STUDENT-CONTACT nudge (Session 120). Different job from the roster-refresh
+  // nudge: this one tells a college their landing page has no CPL contact, names
+  // the person we propose to route to, and says plainly that the choice is theirs.
+  //
+  // The proposal is always someone the college ALREADY designated in MAP — we are
+  // not appointing anyone. That distinction is the whole reason this email can be
+  // sent at all under local governance, so it is stated outright, not implied.
+  function buildContactMailto(gap, picks, landingUrl) {
+    var to = (picks || []).map(function (p) { return p.email; }).filter(Boolean).join(";");
+    var college = gap.college;
+    var who = (picks || []).map(function (p) {
+      return p.label + (p.name ? ": " + p.name : "");
+    }).join("\n");
+    var proposed = gap.proposed_email
+      ? ["WHAT WE PROPOSE",
+         "So that no student request goes unanswered, we plan to set your Primary",
+         "Contact in MAP to:",
+         "",
+         "    " + (gap.proposed_name || gap.proposed_email)
+           + (gap.proposed_name ? "  <" + gap.proposed_email + ">" : ""),
+         "    (your college's " + gap.proposed_source + " in MAP today)",
+         "",
+         "We are not choosing someone new — this is a person your college already",
+         "designated in MAP. If it should be someone else, that is entirely your",
+         "call: reply with the name and we will set it, or update it yourselves.",
+        ].join("\n")
+      : ["WHAT WE NEED FROM YOU",
+         "We do not have a CPL-side contact on file for your college, so we cannot",
+         "propose one without guessing — and that is your decision to make, not ours.",
+         "Please reply with the name and email of the person who should receive",
+         "student CPL requests.",
+        ].join("\n");
+    var body = [
+      "Hello " + college + " team,",
+      "",
+      "WHY WE ARE WRITING",
+      "Your college's CPL landing page in the MAP platform has no Primary Contact",
+      "on file. MAP sends student CPL requests to the Primary Contact's email",
+      "address, so today a student asking " + college + " for credit for prior",
+      "learning through MAP does not reach anyone.",
+      "",
+      (who ? "This note is going to:\n" + who + "\n" : ""),
+      proposed,
+      "",
+      "HOW TO CHANGE IT YOURSELVES",
+      landingUrl
+        ? "Your MAP CPL Dashboard: " + landingUrl + "\nA signed-in MAP user with\nadministrator rights at your college can update the college's contacts there."
+        : "A signed-in MAP user with administrator rights at your college can update\nthe college's contacts in the MAP platform.",
+      "",
+      MAP_HELP_BLOCK,
+      "",
+      "Thank you for making sure your students reach a real person.",
+      "",
+      "— The CPL Initiative team",
+    ].join("\n");
+    return "mailto:" + encodeURIComponent(to)
+      + "?subject=" + encodeURIComponent(
+          "Action needed: no CPL contact on your MAP landing page — " + college)
+      + "&body=" + encodeURIComponent(body);
+  }
+
   function buildNudgeMailto(college, picks, landingUrl, userRoster) {
     // Semicolon-delimited — Outlook rejects comma-separated mailto recipient
     // lists (same fix as the RACI nudges, Sam 2026-07-02).
@@ -234,6 +397,7 @@
       + (who ? who + "\n\n" : "")
       + rosterEmailBlock(userRoster)
       + goLine
+      + MAP_HELP_BLOCK + "\n\n"
       + "Thank you for keeping your college's CPL team up to date.\n\n— The CPL Initiative team";
     return "mailto:" + encodeURIComponent(to)
       + "?subject=" + encodeURIComponent(subject)
@@ -265,7 +429,7 @@
         return by;
       }).catch(function () { return {}; });
   }
-  function openNudge(college) {
+  function openNudge(college, mode) {
     // Load the contacts (recipients) + the college's own user roster in parallel
     // so the email can carry the roster. The roster is optional — its failure
     // never blocks the nudge.
@@ -274,6 +438,27 @@
       loadRoster(college).catch(function () { return []; }),
     ]).then(function (res) {
       var c = res[0], userRoster = res[1] || [];
+      if (mode === "contact") {
+        var gap = (state.gaps || []).filter(function (g) { return g.college === college; })[0];
+        if (!gap) { alert("Could not find this college in the contact worklist."); return; }
+        // The person we propose to route to belongs on the email — being named as
+        // a college's student-facing CPL contact without being told is not on.
+        var picks = nudgeRoster(c);
+        if (gap.proposed_email && !picks.some(function (p) { return p.email === gap.proposed_email; })) {
+          picks.unshift({ key: "proposed", label: "Proposed CPL contact (" + gap.proposed_source + ")",
+                          name: gap.proposed_name || "", email: gap.proposed_email });
+        }
+        // For an ASK college, the published counseling inbox is often the only way
+        // to reach anyone at all. Offered, labelled as web-sourced, uncheckable.
+        var w = webSourced(college);
+        if (!gap.proposed_email && w && w.email
+            && !picks.some(function (p) { return p.email === w.email; })) {
+          picks.unshift({ key: "web", label: "Published counseling inbox (from their website)",
+                          name: w.label || "", email: w.email });
+        }
+        showNudgePicker(college, picks, (c && c.landing_page_url) || "", [], gap);
+        return;
+      }
       showNudgePicker(college, nudgeRoster(c), (c && c.landing_page_url) || "", userRoster);
     }).catch(function () {
       alert("Could not load this college's contacts. Sign in on the Team & RACI tab "
@@ -282,7 +467,7 @@
   }
   // The confirm/uncheck dialog. All present recipients start CHECKED; the draft
   // opens only after the user clicks "Open email draft".
-  function showNudgePicker(college, roster, landingUrl, userRoster) {
+  function showNudgePicker(college, roster, landingUrl, userRoster, gap) {
     var old = document.getElementById("mapu-picker");
     if (old) old.parentNode.removeChild(old);
     var ov = document.createElement("div");
@@ -320,10 +505,20 @@
       rosterBlock = '<div class="mapu-roster-pick">' + head
         + '<div class="mapu-roster-users">' + users + "</div></div>";
     }
+    var proposeLine = gap
+      ? (gap.proposed_email
+          ? '<p class="mapu-pick-note mapu-propose">Proposes routing student CPL requests to <b>'
+            + esc(gap.proposed_name || gap.proposed_email) + "</b> — this college’s <b>"
+            + esc(gap.proposed_source) + "</b> in MAP. The email says plainly that the choice is theirs."
+            + "</p>"
+          : '<p class="mapu-pick-note mapu-propose">No CPL-side contact is on file, so the email <b>asks</b> '
+            + "this college to name one rather than proposing anybody.</p>")
+      : "";
     ov.innerHTML = '<div class="mapu-picker" role="dialog" aria-label="Nudge recipients">'
-      + "<h3>Nudge " + esc(college) + "</h3>"
+      + "<h3>" + (gap ? "Student contact — " : "Nudge ") + esc(college) + "</h3>"
       + '<p class="mapu-pick-note">This opens a pre-filled <b>draft</b> in your email app — '
       + "<b>nothing is sent</b> until you review it and click Send there. Uncheck anyone you don’t want to email.</p>"
+      + proposeLine
       + '<div class="mapu-pick-list">' + list + "</div>"
       + rosterBlock
       + mapLine
@@ -357,7 +552,11 @@
       userBoxes.forEach(function (cb) {
         if (cb.checked) rosterForEmail.push(userRoster[parseInt(cb.getAttribute("data-roster-user"), 10)]);
       });
-      try { window.location.href = buildNudgeMailto(college, picks, landingUrl, rosterForEmail); } catch (e) {}
+      try {
+        window.location.href = gap
+          ? buildContactMailto(gap, picks, landingUrl)
+          : buildNudgeMailto(college, picks, landingUrl, rosterForEmail);
+      } catch (e) {}
       recordNudge(college);
       close();
       var root = document.getElementById("map-users-root");
@@ -420,6 +619,22 @@
       + '<div class="box"><div class="n">' + fmtDate(lastSynced) + '</div><div class="l">Data as of</div></div>'
       + "</div>";
 
+    // Lens switch. Reviewer-only: the worklist is built from gated contact rows,
+    // so there is nothing behind it for a logged-out visitor to see.
+    if (signedIn()) {
+      var nGaps = gapRows().length;
+      html += '<div class="mapu-lens">'
+        + '<button class="mapu-lensbtn' + (state.lens === "all" ? " on" : "") + '" data-lens="all">'
+        + "All colleges</button>"
+        + '<button class="mapu-lensbtn' + (state.lens === "gaps" ? " on" : "") + '" data-lens="gaps"'
+        + ' title="Colleges whose MAP landing page has no Primary Contact — the address MAP routes student CPL requests to">'
+        + "⚠ No student contact"
+        + (state.gaps ? ' <span class="mapu-lenscount">' + nGaps + "</span>" : "")
+        + "</button></div>";
+    }
+
+    if (state.lens === "gaps") { html += gapsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
+
     html += '<div class="mapu-toolbar">'
       + '<input class="q" type="text" placeholder="Filter colleges…" value="' + esc(state.q) + '">'
       + '<select class="mapu-select" data-sort>'
@@ -478,6 +693,106 @@
     rows.forEach(function (r) { if (state.rosterOpen[r.college]) fillRoster(root, r.college); });
   }
 
+  // ── The student-contact worklist ──────────────────────────────────────────
+  // One row per college with no Primary Contact email, showing WHO the cascade
+  // would route to and WHY that person. Colleges where we hold no CPL-side
+  // designation are separated out: those get asked, never defaulted.
+  function gapsHtml() {
+    if (state.gapsError) {
+      return '<div class="mapu-empty">Could not load the contact worklist ('
+        + esc(state.gapsError) + "). Sign in on the <b>Team &amp; RACI</b> tab and try again.</div>";
+    }
+    if (!state.gaps) return '<p class="mapu-gate">Loading the contact worklist…</p>';
+    var rows = gapRows();
+    var proposable = rows.filter(function (g) { return !!g.proposed_email; });
+    var asks = rows.filter(function (g) { return !g.proposed_email; });
+    if (!rows.length) {
+      return '<div class="mapu-empty">Every college has a Primary Contact email on file. '
+        + "Student CPL requests all route to a person.</div>";
+    }
+
+    var h = '<p class="mapu-intro"><b>MAP routes a student’s CPL request to the college’s '
+      + "Primary Contact email.</b> These " + rows.length + " colleges have none on file, so a "
+      + "student asking them for credit for prior learning through MAP reaches nobody. "
+      + "The proposal for each is a person <b>that college already designated in MAP</b> — "
+      + "colleges are locally governed, so we route to their people and never pick new ones.</p>";
+
+    h += '<div class="mapu-stat">'
+      + '<div class="box"><div class="n">' + rows.length + '</div><div class="l">No student contact</div></div>'
+      + '<div class="box"><div class="n">' + proposable.length + '</div><div class="l">Have a proposal</div></div>'
+      + '<div class="box"><div class="n">' + asks.length + '</div><div class="l">Must be asked</div></div>'
+      + "</div>";
+
+    h += '<div class="mapu-toolbar"><button class="mapu-rosterbtn" data-gap-csv>⬇ CSV</button>'
+      + '<span class="mapu-auth">Nothing here writes to MAP — MAP has no write API. '
+      + "Set the value in MAP; this list clears itself at the next sync.</span></div>";
+
+    h += '<table class="mapu-table mapu-gaptable"><thead><tr>'
+      + "<th>College</th><th>Proposed student contact</th><th>Because</th><th>Actions</th>"
+      + "</tr></thead><tbody>";
+    proposable.forEach(function (g) {
+      h += "<tr><td>" + esc(g.college)
+        + (g.landing_page_url
+            ? ' <a class="mapu-lp" href="' + esc(g.landing_page_url) + '" target="_blank" rel="noopener"'
+              + ' title="Their MAP CPL landing page — the page a student uses">↗</a>'
+            : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
+        + "</td>"
+        + "<td>" + (g.proposed_name ? "<b>" + esc(g.proposed_name) + "</b><br>" : "")
+        + '<span class="mapu-disc">' + esc(g.proposed_email) + "</span></td>"
+        + '<td><span class="mapu-chip">' + esc(g.proposed_source) + "</span></td>"
+        + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
+        + ' title="Draft the email telling this college we are routing their landing page to this person">'
+        + "\u{1F4E3} tell them</button></td></tr>";
+    });
+    h += "</tbody></table>";
+
+    if (asks.length) {
+      h += '<h3 class="mapu-subh">Must be asked (' + asks.length + ")</h3>"
+        + '<p class="mapu-intro">No CPL-side contact is on file for these, so there is nobody to '
+        + "propose from their own MAP data. Leadership addresses are not used as a default: "
+        + "routing student requests into a vice president’s inbox is the college’s call. "
+        + "Where the college <b>publishes</b> a counseling or advising inbox, it is offered "
+        + "below as a starting point — <b>check the source link before using it</b>; it is a "
+        + "public web page, not a MAP designation.</p>"
+        + '<table class="mapu-table mapu-gaptable"><thead><tr>'
+        + "<th>College</th><th>Why</th><th>Published counseling contact</th><th>Actions</th>"
+        + "</tr></thead><tbody>";
+      asks.forEach(function (g) {
+        var w = webSourced(g.college);
+        var wc = !w
+          ? '<span class="mapu-st mapu-st-inactive">not looked up</span>'
+          : (w.email
+              ? '<span class="mapu-disc">' + esc(w.email) + "</span>"
+                + '<br><a class="mapu-src" href="' + esc(w.source) + '" target="_blank" rel="noopener">'
+                + esc(w.label) + " ↗</a>"
+              : '<span class="mapu-st mapu-st-inactive">no published inbox</span>'
+                + '<br><a class="mapu-src" href="' + esc(w.source) + '" target="_blank" rel="noopener">'
+                + esc(w.label) + " ↗</a>");
+        h += "<tr><td>" + esc(g.college) + "</td>"
+          + '<td><span class="mapu-st mapu-st-inactive">' + esc(g.ask_reason || "—") + "</span></td>"
+          + "<td>" + wc + "</td>"
+          + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
+          + "\u{1F4E3} ask them</button></td></tr>";
+      });
+      h += "</tbody></table>";
+    }
+    return h;
+  }
+
+  function gapsCsv() {
+    var rows = gapRows();
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var head = ["College", "Proposed name", "Proposed email", "Because", "Needs ask",
+                "Ask reason", "Landing page"];
+    var lines = [head.map(q).join(",")];
+    rows.forEach(function (g) {
+      lines.push([g.college, g.proposed_name || "", g.proposed_email || "",
+                  g.proposed_source || "", g.needs_ask ? "yes" : "", g.ask_reason || "",
+                  g.landing_page_url || ""].map(q).join(","));
+    });
+    return lines.join("\n");
+  }
+
   function rosterHtml(rows) {
     if (!rows || !rows.length) {
       return '<div class="mapu-gate">No roster rows returned. '
@@ -528,6 +843,44 @@
     root.querySelectorAll("[data-nudge]").forEach(function (btn) {
       btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-nudge")); });
     });
+    root.querySelectorAll("[data-lens]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        state.lens = btn.getAttribute("data-lens");
+        // Fetch the worklist the first time the lens is opened, not on tab load —
+        // it is a second gated round-trip most visits never need.
+        if (state.lens === "gaps" && !state.gaps && !state.gapsError) {
+          render(root);
+          loadGaps().then(function (rows) {
+            state.gaps = Array.isArray(rows) ? rows : [];
+            render(root);
+          }).catch(function (e) {
+            state.gapsError = (e && e.message) || "error";
+            render(root);
+          });
+          return;
+        }
+        render(root);
+      });
+    });
+    root.querySelectorAll("[data-fix]").forEach(function (btn) {
+      btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-fix"), "contact"); });
+    });
+    var csv = root.querySelector("[data-gap-csv]");
+    if (csv) csv.addEventListener("click", function () { downloadCsv(gapsCsv()); });
+  }
+
+  // Client-side CSV download so the team can work the list in MAP. Contact data
+  // is gated, so this never touches the server — it serialises what the signed-in
+  // reviewer already has on screen.
+  function downloadCsv(text) {
+    try {
+      var blob = new Blob([text], { type: "text/csv;charset=utf-8;" });
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "map-student-contact-gaps.csv";
+      document.body.appendChild(a); a.click();
+      setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
+    } catch (e) {}
   }
 
   // Re-render preserving scroll/focus is overkill here; a full re-render is fine
@@ -570,6 +923,12 @@
     _showNudgePicker: showNudgePicker,
     _statusBadge: statusBadge,
     _discCell: discCell,
+    _gapRows: gapRows,
+    _webSourced: webSourced,
+    _WEB_SOURCED: WEB_SOURCED,
+    _gapsHtml: gapsHtml,
+    _gapsCsv: gapsCsv,
+    _buildContactMailto: buildContactMailto,
   };
 
   // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a
