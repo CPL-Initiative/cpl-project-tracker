@@ -37,10 +37,57 @@ related:
 > dataset in the appendix), ⟨inferred⟩ (my analysis from sourced material), or
 > ⟨**NEEDS SAM**⟩ (a factual dependency I cannot resolve from the record).
 >
-> **Reading order if you have ten minutes:** **§7a** (the MAP evidence audit — five
+> **Reading order if you have ten minutes:** **§0** (why this exists — the two-year gap
+> between when the noncredit thinking was done and where it lives) → **§7a** (the MAP evidence audit — five
 > findings that change conclusions elsewhere, and the densest "things we didn't know"
 > section) → §2 (the thesis and the Chancellor's authorizing statement) → §4 (the
 > scalability ladder) → §12's ranked next moves.
+
+---
+
+## 0. Why this document exists
+
+⟨Sam, 2026-08-05, on finding no noncredit sections in the monograph: *"I had thought we
+covered it at the time but I believe we didn't have it figured out back then… BUT the
+lack of clarity and examples and opportunities IS the reason for this session."*⟩
+
+That is worth stating precisely, because it is sharper than "the monograph is thin,"
+and it explains the shape of everything below.
+
+**There is a two-year gap between when the noncredit CPL thinking was done and where it
+lives.**
+
+| | State of the noncredit thinking |
+|---|---|
+| **Oct 2024** — *Scaling CPL in California* (32 pp.) | **Not yet figured out.** Noncredit appears **6 times**: one bullet in the CPL-modes list, and one genuinely good passage on the noncredit→credit summative exam (§3 UC-1). No framework, no examples, no opportunity map. |
+| **Fall 2025** — Vision 2030 Noncredit Summit decks | **Figured out.** Mirroring with its documentation and processing steps; the not-for-credit evidence hierarchy; four worked student cases (Pablo · Martha · Josias · Julio); the two-tab landing-page architecture; the EMS Corps play; the non-college landing-page roadmap. |
+| **Aug 2026** — the written record | **Still not written down.** The public KB has **8 files** mentioning noncredit, one or two lines each. No playbook. No taxonomy. No opportunity inventory. |
+
+⟨inferred⟩ **So the knowledge is real, current, and undocumented.** It exists in slides,
+in the MAP data (§7a), and in the heads of the people who built it. Slides do not
+survive contact with a field of 116 colleges — they get presented once, to the people
+already in the room, and then they stop working. A college that wants to mirror a
+noncredit course today has nowhere to look.
+
+**That is the gap this document is trying to close, and it sets three requirements:**
+
+1. **Write the mechanisms down, not just the examples.** The decks are strong on
+   *what happened* and thin on *how to do it*. §3's taxonomy is organized by
+   **mechanism** for exactly this reason — a college needs to know which of twelve
+   patterns it is in, and what that costs (§4).
+2. **Inventory the opportunities, with names.** "There are opportunities in noncredit"
+   is not actionable. "27 colleges teach dental assisting, one awards RDA CPL, here are
+   the other 26" is (§7a). Every opportunity claim in this document is either backed by
+   a query or explicitly marked as unverified.
+3. **Say what is *not* known.** The monograph's noncredit gap was invisible for two
+   years because nothing flagged it. §12 keeps the open items in the document rather
+   than in someone's memory.
+
+⚠ **And a pattern worth naming, since it will recur:** the CPL Initiative's thinking
+consistently runs **ahead of its written record**, because the work is presented before
+it is documented. The Chancellor's three 2026 commitments (§10b) are already public;
+the mechanisms that satisfy them are not yet written anywhere a college can find them.
+**Closing that lag is a durable capability, not a one-time task.**
 
 ---
 
