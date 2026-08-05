@@ -39,10 +39,14 @@
 
   var TOTAL_ALWAYS_EDITABLE = false;
 
-  var YEAR_COLS = ["yr_2025_26_budget", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30"];
-  var YEAR_LABELS = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30"];
-  // The Uses / pool tables show the amendment's three funded years.
-  var USE_YEARS = [1, 2, 3];
+  var YEAR_COLS = ["yr_2025_26_budget", "yr_2026_27", "yr_2027_28", "yr_2028_29", "yr_2029_30", "yr_2030_31"];
+  var YEAR_LABELS = ["2025-26", "2026-27", "2027-28", "2028-29", "2029-30", "2030-31"];
+  // The Uses / pool tables show the funded years 2026-27 → 2030-31. The Sept-2026
+  // amendment's Board window runs 2026-27 → 2028-29; ongoing operations are
+  // COMMITTED two years further (2029-30, 2030-31, Sam 2026-08-05), and those
+  // columns are also where project funding can later be shifted without changing
+  // any project total.
+  var USE_YEARS = [1, 2, 3, 4, 5];
 
   var SECTIONS = [
     { key: "sources", title: "Sources",

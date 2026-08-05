@@ -214,6 +214,43 @@ function money(n) { return n.toLocaleString("en-US", { maximumFractionDigits: 0 
     (story.match(/Fully funded/g) || []).length === 2);
 }
 
+// ── I. ongoing extension through 2030-31 (committed) + the $5M archived ───────
+// 2026-08-05 budget reconciliation: the $5M 2025-26 ongoing moves to history, the
+// $7M ongoing is carried two COMMITTED years further (2029-30 + 2030-31 = $35M),
+// and the Uses/pool tables grow the 2030-31 column — also the home for later
+// project-funding shifts (which must not change any project total).
+{
+  const { doc, T } = boot();
+  const EXT = [
+    { id: 6, name: "$35M", section: "source_one_time", sort_order: 11, total: 35000000, window_label: "2026-27 · 2027-28" },
+    { id: 3, name: "$5M ongoing (2025-26)", section: "source_ongoing", sort_order: 20, total: 5000000,
+      yr_2025_26_budget: 5000000, archived: true },
+    { id: 5, name: "$7M ongoing", section: "source_ongoing", sort_order: 21, total: 35000000,
+      yr_2026_27: 7000000, yr_2027_28: 7000000, yr_2028_29: 7000000, yr_2029_30: 7000000, yr_2030_31: 7000000,
+      window_label: "2026-27 → 2030-31 · committed" },
+    { id: 26, name: "Ongoing ops — RCCD", section: "use_ongoing", sort_order: 10, total: 35000000,
+      yr_2026_27: 7000000, yr_2027_28: 7000000, yr_2028_29: 7000000, yr_2029_30: 7000000, yr_2030_31: 7000000 },
+    { id: 30, name: "RCCD Projects", section: "pool", sort_order: 10, total: 10556650,
+      yr_2026_27: 3253650, yr_2027_28: 3161000, yr_2028_29: 4142000 }
+  ];
+  T._setRows(JSON.parse(JSON.stringify(EXT)));
+  T._render();
+  const body = doc.getElementById("budgetLedgerMount").textContent;
+  check("I1: the Uses table now shows the 2029-30 and 2030-31 columns",
+    /2029-30/.test(body) && /2030-31/.test(body));
+  check("I2: ongoing carries $7M through 2029-30 + 2030-31 → $35M (5 funded years)",
+    T._rowTotal(EXT.find(r => r.id === 26)) === 35000000);
+  const useRow = doc.querySelector('#budgetLedgerMount tr[data-row="26"]');
+  check("I3: the ongoing use row renders all five funded-year cells at $7,000,000",
+    !!useRow && (useRow.textContent.match(/7,000,000/g) || []).length >= 5);
+  check("I4: the committed window label shows on the ongoing source row",
+    /committed/i.test(body));
+  check("I5: the archived $5M ongoing stays OUT of the live ongoing total ($35M, not $40M)",
+    T._totalOf(EXT.filter(r => r.section === "source_ongoing" && !r.archived)) === 35000000);
+  check("I6: a pool row with no far-year money keeps its total (empty 2029-30/2030-31 cells)",
+    T._rowTotal(EXT.find(r => r.id === 30)) === 10556650);
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
