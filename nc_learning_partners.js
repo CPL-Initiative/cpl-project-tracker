@@ -60,17 +60,71 @@
   function chip(t, k) { return el("span", "nclp-chip" + (k ? " " + k : ""), t); }
   function num(n) { return Number(n).toLocaleString("en-US"); }
 
-  // Parse **bold** into real element nodes — never innerHTML with data.
+  // Parse **bold** and [[ITEM-ID]] cross-references into real element nodes —
+  // never innerHTML with data. A [[ref]] becomes a link that opens the target's
+  // section, scrolls to its card, and flashes it, so every claim in the
+  // narrative is traceable to the register row that backs it.
   function rich(node, text) {
-    String(text).split(/(\*\*[^*]+\*\*)/).forEach(function (part) {
+    String(text).split(/(\*\*[^*]+\*\*|\[\[[A-Za-z0-9-]+\]\])/).forEach(function (part) {
       if (!part) return;
       if (part.indexOf("**") === 0 && part.lastIndexOf("**") === part.length - 2) {
         node.appendChild(el("b", null, part.slice(2, -2)));
+      } else if (part.indexOf("[[") === 0 && part.lastIndexOf("]]") === part.length - 2) {
+        node.appendChild(refLink(part.slice(2, -2)));
       } else {
         node.appendChild(document.createTextNode(part));
       }
     });
     return node;
+  }
+
+  // ── Cross-references: narrative claim → the register row that backs it ─────
+  var ITEM_DOM_PREFIX = "nclp-item-";
+  function itemDomId(id) { return ITEM_DOM_PREFIX + id; }
+
+  // Which collapsible section holds a given item id, so a ref can open it.
+  function sectionForItem(id) {
+    if (/^OPP-/.test(id)) return "nclp-sec-opp";
+    if (/^UC-/.test(id)) return "nclp-sec-tax";
+    if (/^Q-/.test(id)) return "nclp-sec-q";
+    if (/^M\d/.test(id)) return "nclp-sec-narrative";
+    if (id === "DORMANT") return "nclp-sec-dorm";
+    return null;
+  }
+
+  function revealItem(id) {
+    var secId = sectionForItem(id);
+    if (secId) {
+      var sec = document.getElementById(secId);
+      if (sec) sec.open = true;
+    }
+    // A filter may be hiding the target — clear the one that governs it.
+    if (/^OPP-/.test(id) && state.opp !== "all") { state.opp = "all"; rerender(); }
+    else if (/^UC-/.test(id) && state.uc !== "all") { state.uc = "all"; rerender(); }
+    else if (/^Q-/.test(id) && state.q !== "all") { state.q = "all"; rerender(); }
+    if (secId) {
+      var s2 = document.getElementById(secId);
+      if (s2) s2.open = true;
+    }
+    var node = document.getElementById(itemDomId(id));
+    if (!node) return false;
+    if (typeof node.scrollIntoView === "function") {
+      node.scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+    node.classList.add("nclp-flash");
+    setTimeout(function () { node.classList.remove("nclp-flash"); }, 1600);
+    return true;
+  }
+
+  function refLink(id) {
+    var a = el("a", "nclp-ref", id);
+    a.href = "#" + itemDomId(id);
+    a.title = "Jump to " + id + " in the register";
+    a.addEventListener("click", function (ev) {
+      ev.preventDefault();
+      revealItem(id);
+    });
+    return a;
   }
 
   // ── CSS — COBI First Light tokens only (no raw hex) ────────────────────────
@@ -181,6 +235,16 @@
       R + " .nclp-mode .mwhy b{color:var(--text-strong);}",
       "@media (max-width:560px){" + R + " .nclp-mode dl{grid-template-columns:1fr;gap:.05rem;}",
       R + " .nclp-mode dt{margin-top:.3rem;}}",
+      // cross-reference links + target flash
+      R + " a.nclp-ref{color:var(--accent-link);text-decoration:none;font-weight:600;",
+      "font-size:.9em;font-variant-numeric:tabular-nums;border-bottom:1px dotted currentColor;",
+      "white-space:nowrap;padding:0 .05em;}",
+      R + " a.nclp-ref:hover{border-bottom-style:solid;}",
+      R + " a.nclp-ref:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}",
+      R + " .nclp-flash{animation:nclpFlash 1.6s ease-out;}",
+      "@keyframes nclpFlash{0%{box-shadow:0 0 0 3px var(--cobalt);}100%{box-shadow:0 0 0 3px transparent;}}",
+      "@media (prefers-reduced-motion:reduce){" + R + " .nclp-flash{animation:none;",
+      "outline:2px solid var(--cobalt);outline-offset:2px;}}",
       // narrative
       R + " .nclp-nar h4{font-size:.92rem;color:var(--text-strong);margin:1.1rem 0 .35rem;font-weight:700;}",
       R + " .nclp-nar h4:first-child{margin-top:0;}",
@@ -249,6 +313,7 @@
     var g = el("div", "nclp-modes");
     (d.modes || []).forEach(function (m) {
       var c = el("div", "nclp-mode p-" + m.priority);
+      c.id = itemDomId(m.id);
       var h = el("div", "mh");
       h.appendChild(el("span", "mid", m.id));
       h.appendChild(el("span", "mname", m.name));
@@ -267,6 +332,17 @@
       w.appendChild(el("b", null, "Why it matters: "));
       w.appendChild(document.createTextNode(m.why));
       c.appendChild(w);
+      // Which use cases this mode covers — clickable, so a mode definition is
+      // traceable to the mechanisms underneath it.
+      if (m.use_cases && m.use_cases.length) {
+        var cov = el("p", "mwhy");
+        cov.appendChild(el("b", null, "Covers: "));
+        m.use_cases.forEach(function (id, i) {
+          if (i) cov.appendChild(document.createTextNode(" · "));
+          cov.appendChild(refLink(id));
+        });
+        c.appendChild(cov);
+      }
       g.appendChild(c);
     });
     return g;
@@ -282,7 +358,7 @@
     var swPct = (swT && swC !== null) ? Math.round((1 - swC / swT) * 100) : null;
 
     h("The shape of it");
-    p("Noncredit is not a small sector being offered a lifeline. It is one of the fastest-growing completion engines in the system: CTE noncredit enrollment ran **45,209** in 2012-13 and **69,488** in 2024-25, and noncredit awards went from **6,291** to **29,649** — up **4.7×**. Median quarterly wages rise from $7,833 before entry to $10,479 a year after exit, **+34%**. Those 29,649 annual awards are the addressable population, and essentially none are systematically crosswalked to credit.");
+    p("Noncredit is not a small sector being offered a lifeline. It is one of the fastest-growing completion engines in the system: CTE noncredit enrollment ran **45,209** in 2012-13 and **69,488** in 2024-25, and noncredit awards went from **6,291** to **29,649** — up **4.7×**. Median quarterly wages rise from $7,833 before entry to $10,479 a year after exit, **+34%**. Those 29,649 annual awards are the addressable population, and essentially none are systematically crosswalked to credit.  [[M3]]");
     p("The Chancellor has already said noncredit and not-for-credit learners **“will be key to meeting”** the statewide CPL goal of 220,000 working adults and apprentices plus 30,000 veterans. So the question is not whether noncredit belongs. It is whether the machinery exists — and in what state.");
 
     h("The six ways CPL applies");
@@ -292,28 +368,28 @@
     h("What is already working");
     p("The mechanisms are proven and the credential layer is real: **" + (live && live.articulated ? num(live.articulated) : "1,603") +
       "** of " + (live && live.titles ? num(live.titles) : "1,987") +
-      " credential titles carry articulations. Mirroring — where the noncredit course is a copy of the credit curriculum and the assessment happens during instruction — works at Cabrillo today and is named statewide practice by the Chancellor. EMT is the standout: a statewide exhibit at **28 colleges** converting **75.6%** of eligible units, well above the system average.");
-    p("And the partner layer populated itself where nobody planned it. Roughly **48** credential entries already name a specific high school, alongside Baldy View ROP, Fontana Adult School, and Chaffey Joint Union HSD — colleges have been entering high-school articulations as CPL exhibits for years.");
+      " credential titles carry articulations. Mirroring — where the noncredit course is a copy of the credit curriculum and the assessment happens during instruction — works at Cabrillo today and is named statewide practice by the Chancellor.  [[M1]] [[UC-1]] EMT is the standout: a statewide exhibit at **28 colleges** converting **75.6%** of eligible units, well above the system average.  [[OPP-2]] [[UC-9]]");
+    p("And the partner layer populated itself where nobody planned it. Roughly **48** credential entries already name a specific high school, alongside Baldy View ROP, Fontana Adult School, and Chaffey Joint Union HSD — colleges have been entering high-school articulations as CPL exhibits for years.  [[M4]] [[UC-7]]");
 
     h("What is built and not flowing — the finding that changes the plan");
     if (dorm && dorm.length) {
       p("**" + dorm.length + " statewide exhibits are published across " + num(slots) +
-        " college-slots with zero transcriptions.**" +
+        " college-slots with zero transcriptions.**  [[OPP-3]]" +
         (swT ? " Only **" + swC + " of " + swT + "** statewide exhibits have ever converted a single unit — **" + swPct + "% have not**." : "") +
         " CompTIA Linux+ is live at 16 colleges and has never produced an award. Firefighter 1A sits at 11. The Correctional Officer Core Course and Standards & Training for Corrections — the Rising Scholars population — sit dormant at 11 and 10.");
-      p("This is the cheapest volume available anywhere in CPL, because **the expensive part is already done.** Faculty determinations made, exhibits published, colleges signed on. What is missing is outreach, not curriculum work. It reframes the near-term strategy from *build more articulations* to **light up the ones already built**.");
+      p("This is the cheapest volume available anywhere in CPL, because **the expensive part is already done.** Faculty determinations made, exhibits published, colleges signed on. What is missing is outreach, not curriculum work. It reframes the near-term strategy from *build more articulations* to **light up the ones already built**.  [[OPP-3]]");
     } else {
       p("The dormant-exhibit worklist arrives with the credential dataset — see the section below.");
     }
 
     h("What is missing entirely");
-    p("The four standalone noncredit institutions — NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit, and Calbright — appear as issuer or training agency on **zero** of the credential titles. Not few. None. The hardest partner lane (K-12, a different segment, different data rules) populated itself organically; the easiest one — four institutions inside the system, on the same platform, holding $1M in carve-out funding — is empty. The gap is not capability, permission, or infrastructure. **Nobody has done the data entry.**");
-    p("The same pattern repeats in the field: **27** colleges teach dental assisting and **one** awards CPL for the RDA license, at a 99.5% conversion rate. Twenty-six peers teaching the identical program have not started. And there is still no mirroring playbook — a college that decides today it wants to mirror a noncredit course has nowhere to look.");
+    p("The four standalone noncredit institutions — NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit, and Calbright — appear as issuer or training agency on **zero** of the credential titles. Not few. None. The hardest partner lane (K-12, a different segment, different data rules) populated itself organically; the easiest one — four institutions inside the system, on the same platform, holding $1M in carve-out funding — is empty. The gap is not capability, permission, or infrastructure. **Nobody has done the data entry.**  [[OPP-1]] [[M3]]");
+    p("The same pattern repeats in the field: **27** colleges teach dental assisting and **one** awards CPL for the RDA license, at a 99.5% conversion rate. Twenty-six peers teaching the identical program have not started.  [[OPP-4]] And there is still no mirroring playbook — a college that decides today it wants to mirror a noncredit course has nowhere to look.  [[OPP-5]] [[M1]]");
 
     h("What it adds up to");
-    p("The cheap modes — assessment during instruction, or once per credential — cover most of the available volume. The expensive one, per-student portfolio, will never scale and should be **subsidized rather than optimized**, which is what the noncredit portfolio-development course is for.");
-    p("So the near-term picture is unusually favorable: the infrastructure is built, the mechanisms are proven, the Chancellor has committed publicly, and the largest single opportunity is **outreach against work already completed**. The binding constraints are data entry, a playbook, and a set of phone calls — not curriculum, policy, or technology.");
-    p("**Funding is deliberately parked** until this picture is settled. The arithmetic is recorded so nobody re-derives it, but designing the metric before mapping the mechanisms is how you end up paying for the thing you can measure instead of the thing you want.");
+    p("The cheap modes — assessment during instruction, or once per credential — cover most of the available volume. The expensive one, per-student portfolio, will never scale and should be **subsidized rather than optimized**, which is what the noncredit portfolio-development course is for.  [[M5]] [[OPP-8]]");
+    p("So the near-term picture is unusually favorable: the infrastructure is built, the mechanisms are proven, the Chancellor has committed publicly, and the largest single opportunity is **outreach against work already completed**. The binding constraints are data entry  [[OPP-1]], a playbook  [[OPP-5]], and a set of phone calls  [[OPP-4]] [[OPP-6]] — not curriculum, policy, or technology.");
+    p("**Funding is deliberately parked** until this picture is settled. The arithmetic is recorded so nobody re-derives it, but designing the metric before mapping the mechanisms is how you end up paying for the thing you can measure instead of the thing you want.  [[M6]]");
     mount.appendChild(w);
   }
 
@@ -355,6 +431,7 @@
   // ── Cards ──────────────────────────────────────────────────────────────────
   function oppCard(o) {
     var c = el("div", "nclp-card"), h = el("h4");
+    c.id = itemDomId(o.id);
     h.appendChild(el("span", "id", o.id));
     h.appendChild(document.createTextNode(o.title));
     c.appendChild(h);
@@ -455,6 +532,7 @@
       d.use_cases.filter(function (u) { return state.uc === "all" || String(u.tier) === state.uc; })
         .forEach(function (u) {
           var c = el("div", "nclp-card"), h = el("h4");
+          c.id = itemDomId(u.id);
           h.appendChild(el("span", "id", u.id));
           h.appendChild(document.createTextNode(u.title));
           c.appendChild(h);
@@ -490,6 +568,7 @@
       d.questions.filter(function (q) { return state.q === "all" || q.status === state.q; })
         .forEach(function (q) {
           var c = el("div", "nclp-card"), h = el("h4");
+          c.id = itemDomId(q.id);
           h.appendChild(el("span", "id", q.id));
           h.appendChild(document.createTextNode(q.q));
           c.appendChild(h);
@@ -791,6 +870,11 @@
       });
       jump.appendChild(a);
     });
+  }
+
+  function rerender() {
+    var root = document.getElementById(ROOT_ID);
+    if (root && state.data) render(root, state.data, state.dorm, state.live);
   }
 
   function activate() {

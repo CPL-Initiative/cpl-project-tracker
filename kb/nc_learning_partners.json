@@ -2,7 +2,7 @@
   "_as_of": "2026-08-05",
   "_source": "docs/noncredit_cpl_thinking.md",
   "_note": "Curated register behind the Noncredit & Learning Partners tab. The PROSE reasoning lives in the thinking doc; this file carries only the structured, actionable state so the two do not fork. Derived college lists carry a _derived_at stamp and the query that produced them. The dormant-exhibit worklist is NOT in this file — it is computed live from credential_reference_data.js at render time.",
-  "_status": "Twelve use cases mapped by mechanism; nine opportunities open; six questions with Sam. Funding is deliberately parked until the NC universe is mapped.",
+  "_status": "Twelve use cases mapped by mechanism and sorted into six modes; nine opportunities open; six questions awaiting input. Funding is deliberately parked until the NC universe is mapped.",
   "tiers": [
     {
       "tier": 1,

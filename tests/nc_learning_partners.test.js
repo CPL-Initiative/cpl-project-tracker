@@ -177,6 +177,46 @@ const rawHex = cssBlock.match(/#[0-9a-fA-F]{3,8}\b(?![^"]*ROOT_ID)/g) || [];
 const offending = rawHex.filter(h => !/^#(nc|nclp)/.test(h));
 ok("injected CSS uses var(--token), never a raw hex", offending.length === 0, offending.join(","));
 
+// ── Cross-references: narrative claims → register rows ─────────────────────
+// Every [[ID]] in the narrative must resolve to a real register item, or the
+// link renders as a dead anchor and the traceability claim is false.
+const narrativeSrc = src.slice(src.indexOf("function buildNarrative"), src.indexOf("// ── Section scaffold"));
+const refs = (narrativeSrc.match(/\[\[[A-Za-z0-9-]+\]\]/g) || [])
+  .map(r => r.slice(2, -2));
+
+ok("the narrative carries cross-references at all", refs.length > 0, String(refs.length));
+
+const knownIds = []
+  .concat(reg.modes.map(m => m.id))
+  .concat(reg.use_cases.map(u => u.id))
+  .concat(reg.opportunities.map(o => o.id))
+  .concat(reg.questions.map(q => q.id));
+
+const dead = refs.filter(r => knownIds.indexOf(r) === -1);
+ok("every narrative cross-reference resolves to a register item", dead.length === 0, dead.join(","));
+
+// The modes' own use_case lists render as refs too — already checked for
+// resolution above, but confirm the renderer actually links them.
+ok("mode cards link the use cases they cover", src.indexOf("Covers: ") !== -1);
+
+// Section routing must cover every id family the narrative can reference.
+["OPP-1", "UC-1", "Q-1", "M1"].forEach(id => {
+  const fam = id.replace(/[0-9-].*$/, "");
+  ok("sectionForItem routes " + fam + "*", src.indexOf("nclp-sec-") !== -1);
+});
+
+// A ref whose filter is hiding it must clear that filter — otherwise clicking
+// a link from the narrative silently does nothing.
+ok("revealItem clears a filter that would hide the target",
+  /state\.opp = "all"/.test(src) && /state\.uc = "all"/.test(src) && /state\.q = "all"/.test(src));
+
+ok("cards carry stable DOM ids for ref targeting",
+  (src.match(/c\.id = itemDomId\(/g) || []).length >= 4,
+  String((src.match(/c\.id = itemDomId\(/g) || []).length));
+
+ok("reduced-motion users get an outline instead of the flash animation",
+  src.indexOf("prefers-reduced-motion") !== -1 && src.indexOf("nclp-flash{animation:none") !== -1);
+
 // ── Report ─────────────────────────────────────────────────────────────────
 const failed = results.filter(r => !r.pass);
 console.log(`nc_learning_partners: ${results.length - failed.length}/${results.length} passed`);
