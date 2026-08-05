@@ -438,6 +438,60 @@ function makeWin(opts) {
   check("gaps csv: quotes are escaped", /^"College"/.test(csv));
 })();
 
+// The contact DIRECTORY lens (Jessica's ask). Built as a live lens rather than a
+// handed-over spreadsheet, because an export is a photograph that starts aging
+// the moment it's sent. Guards the properties a person working from it depends on:
+// a blank must mean "MAP holds nothing", never "we silently dropped it", and the
+// export must carry the provenance of the web-sourced column.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  T._state.gaps = [
+    { college: "Zeta College", college_kind: "college", has_student_contact: true,
+      primary_contact: "Ada Reyes", primary_contact_email: "ada@zeta.edu",
+      cpl_assistant_email: "cplasst@zeta.edu" },
+    { college: "Alpha College", college_kind: "college", has_student_contact: false,
+      primary_contact: null, primary_contact_email: null, cpl_assistant_email: null },
+    { college: "Hartnell College", college_kind: "college", has_student_contact: false,
+      primary_contact: null, primary_contact_email: null, cpl_assistant_email: null },
+    { college: "Testing College", college_kind: "test", has_student_contact: false,
+      primary_contact: "X", primary_contact_email: "x@t.edu", cpl_assistant_email: null },
+  ];
+
+  const rows = T._contactRows();
+  check("directory: sandbox entries excluded", !rows.some((r) => r.college_kind === "test"));
+  check("directory: sorted A–Z so a human can find a college",
+    rows[0].college === "Alpha College" && rows[rows.length - 1].college === "Zeta College");
+  check("directory: includes colleges that already HAVE contacts (it's a directory, not a gap list)",
+    rows.some((r) => r.college === "Zeta College"));
+
+  const html = T._contactsHtml();
+  check("directory: renders all five columns", /Primary contact<\/th>/.test(html)
+    && /Primary contact email<\/th>/.test(html) && /CPL Assistant email<\/th>/.test(html)
+    && /Counseling email/.test(html));
+  check("directory: a populated college shows its values",
+    /Ada Reyes/.test(html) && /cplasst@zeta\.edu/.test(html));
+  check("directory: says plainly that blank means MAP has nothing on file",
+    /Blank means MAP has nothing on file/.test(html));
+  check("directory: web-sourced counseling email carries its source link",
+    /Counseling@Hartnell\.edu/.test(html) && /hartnell\.edu/.test(html));
+  check("directory: offers the export", /data-dir-csv/.test(html));
+
+  const csv = T._contactsCsv();
+  const lines = csv.split("\r\n");
+  check("csv: one header + one row per real college", lines.length === 4);
+  check("csv: starts with a BOM so Excel reads accented college names correctly",
+    csv.charCodeAt(0) === 0xfeff);
+  check("csv: header names all five of Jessica's columns",
+    /"College","Primary contact name","Primary contact email","CPL Assistant email","Counseling email"/.test(csv));
+  check("csv: carries the counseling source URL, so a reader can verify it",
+    /hartnell\.edu\/support\/counseling/.test(csv));
+  check("csv: labels whether a counseling email came from the team or a website",
+    /college website/.test(csv));
+  check("csv: an empty MAP field exports as empty, never as a placeholder",
+    /"Alpha College","","",""/.test(csv));
+})();
+
 // Disciplines are PIPE-delimited in MAP, not comma-delimited (Session 120). The
 // old comma-only split turned a 150-code value into one enormous table cell.
 (function () {
