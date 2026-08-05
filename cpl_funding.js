@@ -369,6 +369,12 @@
     ".cplfund-optin-actions { margin-top: 9px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }",
     ".cplfund-optin-err:not(:empty) { color: var(--red-alert); font-size: .8rem; margin-top: 6px; }",
     ".cplfund-optin-note { color: var(--text-muted); font-size: .76rem; margin-top: 8px; line-height: 1.4; }",
+    // Row-level one-click opt-in CTA (Sam, 2026-08-05) — a chip beside the college name.
+    ".cplfund-optin-jump { margin-left: 6px; padding: 1px 8px; font-size: .68rem; font-weight: 600; border: 1px solid var(--gold-accent); border-radius: 11px; background: var(--surface-opaque); color: var(--navy-primary); cursor: pointer; font-family: inherit; vertical-align: middle; white-space: nowrap; }",
+    ".cplfund-optin-jump:hover { background: var(--mustard-fill); }",
+    // CO confirm/revoke block shown inline in a reviewer's row drill-in.
+    ".cplfund-corow { border: 1px dashed var(--gold-accent); border-radius: 8px; background: var(--surface-opaque); padding: 7px 10px; margin-top: 8px; }",
+    ".cplfund-corow-head { font-weight: 700; color: var(--navy-primary); font-size: .8rem; margin-bottom: 3px; }",
     ".cplfund-colane { border: 1px solid var(--gold-accent); border-radius: 8px; background: var(--surface-opaque); padding: 10px 13px; margin: 4px 0 14px; }",
     ".cplfund-colane-head { font-weight: 700; color: var(--navy-primary); display: flex; align-items: center; gap: 9px; }",
     ".cplfund-colane-badge { background: var(--mustard-fill); color: var(--text-strong); font-size: .68rem; font-weight: 700; padding: 2px 9px; border-radius: 11px; }",
@@ -1739,6 +1745,35 @@
     (ELIG.optinReview || []).forEach(function (x) { if (x.college === college) x.status = status; });
   }
 
+  // Reviewer-only lookup of the PII attestation row for a college (from the gated
+  // RPC feed). Null when the caller isn't a reviewer, or the active row is a
+  // reviewer-created (on-behalf) one — the RPC returns only source='self' rows.
+  function optinReviewOf(college) {
+    var list = ELIG.optinReview || [];
+    for (var i = 0; i < list.length; i++) if (list[i].college === college) return list[i];
+    return null;
+  }
+  // The CO confirm / revoke actions shown INLINE in a college's row drill-in
+  // (Sam, 2026-08-05: "I don't see where to confirm" — the aggregate lane in the
+  // Baseline-eligibility section wasn't where he looked; the confirm action needs
+  // to live on the college's own row). Caller gates on unlocked(); the buttons
+  // reuse data-optinconfirm/revoke, bound holder-scoped in wireTable().
+  function coRowActionsHtml(college, row) {
+    var rev = optinReviewOf(college);
+    var who = rev
+      ? '<div class="cplfund-optin-note">Attested by <strong>' + esc(rev.name || "?") + "</strong> " +
+        '<span class="dk">(' + esc(rev.title || "?") + ")</span> &middot; " + esc(rev.email || "") +
+        (rev.requested_at ? ' <span class="dk">&middot; submitted ' + esc(String(rev.requested_at).slice(0, 10)) + "</span>" : "") + "</div>"
+      : "";
+    var actions = row.status === "confirmed"
+      ? '<span class="cplfund-optin-tick">✓</span> <strong>CO-confirmed</strong>' +
+        (rev && rev.confirmed_at ? ' <span class="dk">' + esc(String(rev.confirmed_at).slice(0, 10)) + "</span>" : "") +
+        ' <button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">Revoke</button>'
+      : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinconfirm="' + esc(college) + '">✓ Confirm</button>' +
+        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(college) + '">✕ Reject</button>';
+    return '<div class="cplfund-corow"><div class="cplfund-corow-head">🗳 Chancellor&#39;s Office</div>' +
+      who + '<div class="cplfund-optin-actions">' + actions + "</div></div>";
+  }
   // The per-college opt-in affordance shown in the row drill-in — a plain button
   // that expands to a short attestation form. Visible to EVERYONE (this is the
   // college-facing action), so it must not use a CURATE_ATTRS attribute (those
@@ -1747,8 +1782,10 @@
     var row = ELIG.optinRow[college];
     var ui = OPTIN_UI[college] || {};
     if (row && row.status !== "revoked") {
-      return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
+      var done = '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
         "<strong>Opted in to participate</strong> <span class=\"dk\">(" + esc(optinStateLabel(college)) + ")</span></div>";
+      // Reviewers get the confirm/revoke controls right here on the college's row.
+      return unlocked() ? done + coRowActionsHtml(college, row) : done;
     }
     if (ui.done) {
       return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
@@ -3733,6 +3770,14 @@
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
+    // One-click opt-in entry (Sam, 2026-08-05): opens THIS row's drill-in with the
+    // attestation form focused, so a college admin doesn't have to expand-then-hunt.
+    // Public + private; hidden once opted in. Not a CURATE_ATTR, so it survives the
+    // public-mode sweep like the form button does.
+    if (partShown() && !ELIG.optin[c.college]) {
+      chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
+        '" title="Opt ' + esc(dispName(c.college)) + ' in to CPL Implementation Funding — opens the short attestation form">✎ Opt in</button>';
+    }
     return chips;
   }
   function collegeRowHtml(c) {
@@ -3875,10 +3920,15 @@
     }
     var eligBtns = "";
     if (unlocked()) {
-      eligBtns = '<button type="button" class="cplfund-optbtn" data-optin="' + esc(c.college) + '" data-on="' +
-        (ELIG.optin[c.college] ? "0" : "1") + '">' +
-        (ELIG.optin[c.college] ? "Clear opt-in" : "Mark opted-in") + "</button>" +
-        '<button type="button" class="cplfund-optbtn" data-ruralflag="' + esc(c.college) + '" data-on="' +
+      // Once a college has an active opt-in (self-service OR reviewer-marked), the
+      // confirm / revoke controls live in the drill-in affordance below (via
+      // coRowActionsHtml). Only offer the manual "Mark opted-in" (a reviewer opting
+      // a college in on its behalf) when there is no active row yet.
+      if (!ELIG.optin[c.college]) {
+        eligBtns += '<button type="button" class="cplfund-optbtn" data-optin="' + esc(c.college) +
+          '" data-on="1">Mark opted-in</button>';
+      }
+      eligBtns += '<button type="button" class="cplfund-optbtn" data-ruralflag="' + esc(c.college) + '" data-on="' +
         (c.rural ? "0" : "1") + '">' + (c.rural ? "Remove rural flag" : "Mark rural") + "</button>";
     }
     var eligBits = [];
@@ -5204,6 +5254,23 @@
     wireTable();
   }
 
+  // One-shot: after a table (re)render, scroll a row's opt-in form into view and
+  // focus its name field — set by the row-level "Opt in" chip (data-optinjump).
+  var _optinFocusCollege = null;
+  function focusOptinForm() {
+    if (!_optinFocusCollege) return;
+    var holder = document.getElementById("cplFundTable");
+    if (!holder) { _optinFocusCollege = null; return; }
+    var target = _optinFocusCollege, wrap = null;
+    holder.querySelectorAll("[data-optinwrap]").forEach(function (w) {
+      if (w.getAttribute("data-optinwrap") === target) wrap = w;
+    });
+    _optinFocusCollege = null;
+    if (!wrap) return;
+    if (wrap.scrollIntoView) { try { wrap.scrollIntoView({ block: "center" }); } catch (e) {} }
+    var name = wrap.querySelector('[data-optinfield="name"]');
+    if (name) { try { name.focus(); } catch (e) {} }
+  }
   function wireTable() {
     var holder = document.getElementById("cplFundTable");
     if (!holder) return;
@@ -5296,6 +5363,33 @@
         if (ta) saveNote(college, ta.value);
       });
     });
+    // One-click opt-in entry from the collapsed row (Sam, 2026-08-05): open the
+    // row's drill-in + attestation form, then focus the name field post-render.
+    holder.querySelectorAll("[data-optinjump]").forEach(function (b) {
+      b.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var college = b.getAttribute("data-optinjump");
+        var c = baseCollege(college);
+        if (c) state.open["c:" + c.order] = true;
+        OPTIN_UI[college] = { open: true };
+        _optinFocusCollege = college;
+        refreshTable();
+      });
+    });
+    // CO confirm / revoke / remove shown INLINE in a reviewer's row drill-in.
+    // Holder-scoped so they rebind on every refreshTable (expand/sort); the
+    // Baseline-section lane's copies are bound in wire() scoped to .cplfund-elig,
+    // so the two sets never double-bind the same button.
+    holder.querySelectorAll("[data-optinconfirm]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; confirmOptIn(b.getAttribute("data-optinconfirm")); });
+    });
+    holder.querySelectorAll("[data-optinrevoke]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; revokeOptIn(b.getAttribute("data-optinrevoke")); });
+    });
+    holder.querySelectorAll("[data-optinremove]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
+    });
+    focusOptinForm();
   }
 
   // ── apply an edit from a [data-edit] control ──────────────────────────
@@ -5539,13 +5633,16 @@
       });
     });
     // CO opt-in review lane (reviewer only — the panel doesn't render publicly).
-    document.querySelectorAll("#cplFundingMount [data-optinconfirm]").forEach(function (b) {
+    // Scoped to .cplfund-elig (the Baseline-eligibility section) so it binds ONLY
+    // the aggregate lane; the identical buttons in the college row drill-ins are
+    // bound holder-scoped in wireTable(), and the two scopes are disjoint.
+    document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinconfirm]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; confirmOptIn(b.getAttribute("data-optinconfirm")); });
     });
-    document.querySelectorAll("#cplFundingMount [data-optinrevoke]").forEach(function (b) {
+    document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinrevoke]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; revokeOptIn(b.getAttribute("data-optinrevoke")); });
     });
-    document.querySelectorAll("#cplFundingMount [data-optinremove]").forEach(function (b) {
+    document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinremove]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
     });
     // Recommended strategies (per priority, per year): add a blank / remove one.
