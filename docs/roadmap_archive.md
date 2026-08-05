@@ -3329,3 +3329,20 @@ Suite **182 green**; Chromium clean. Durable: `methodology-omit-dont-zero-an-abs
 three kinds of zero). Story: `docs/cpl_funding_lessons.md` · handoff `docs/cpl_funding_handoff.md`.
 **Next: the Budget reconciliation** (fold Implementation Funding in as a Budget sub-view). Side-lane —
 left the numbered handoff to the CCR mainline.
+
+### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)
+
+Sam & Malone: **decouple the funding split from the FTES difficulty.** Retired the single global
+**target multiplier**; each priority now carries a `factor` — **price/CPL FTES = factor × base rate**,
+**target = pot ÷ price** (higher factor ⇒ fewer FTES earn the pot ⇒ a *premium*; scales the target
+**inversely**). **`factor 1.0` = the prior model exactly**: the cumulative-window `×nYears` is now
+**structural** in `prioTarget`; `prioEntitlement` stays per-year (front-load invariant). **Behavior-neutral
+to merge** (live `targetMultiplier:2` ≡ factor 1.0), so the config activation was a **separate post-deploy**
+write (`kb/supabase_funding_priority_factors.sql`, Rule-9-guarded — factors were null, Sam's shares/metrics
+untouched). Live: **shares .5/.3/.2 · factors P1 .5/P2 1/P3 2** → pool $23.24M, statewide target **5,759 FTES**,
+earns **$8.62M (35.6%)**, median 31%. Retired `targetMultiplier`/`effectiveFtesRate`/`setTargetMultiplier`;
+factor is editable per-priority in the tab. Prototyped + real-Chromium-verified in the **sanity-check artifact**
+first (linked on the private tab). Suite **545/545**. ⚠ **Do NOT reintroduce a global multiplier** — the factor
+is THE dial. Durable: `methodology-retire-a-global-dial-into-per-item-dials`. Story:
+`docs/cpl_funding_lessons.md` §2026-08-04 · handoff `docs/cpl_funding_handoff.md`. **Next: Budget reconciliation.**
+Side-lane — left the numbered handoff to the CCR mainline.
