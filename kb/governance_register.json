@@ -1,0 +1,248 @@
+{
+  "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
+  "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review.",
+  "_as_of": "2026-08-05",
+  "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
+
+  "decision_rights": [
+    {
+      "id": "DR-01",
+      "element": "Primary Contact email (MAP)",
+      "drives": "MAP routes a student's CPL request to this address. Empty = the request reaches nobody.",
+      "decides": "The college",
+      "maintained_in": "MAP platform (no write API — only the college can set it)",
+      "owner": null,
+      "when_empty": "We propose someone the college already designated in MAP and tell them we did. We never appoint.",
+      "load_bearing": true,
+      "live": "contact_pc"
+    },
+    {
+      "id": "DR-02",
+      "element": "CPL Coordinator (MAP)",
+      "drives": "The Implementation Funding baseline-eligibility badge.",
+      "decides": "The college",
+      "maintained_in": "MAP platform",
+      "owner": null,
+      "when_empty": "Eligibility badge is absent. No substitute is invented.",
+      "load_bearing": true,
+      "live": "contact_coord"
+    },
+    {
+      "id": "DR-03",
+      "element": "TOP code",
+      "drives": "Discipline inference, CTE flag, the CIP crosswalk.",
+      "decides": "College faculty at local curriculum approval",
+      "maintained_in": "COCI",
+      "owner": null,
+      "when_empty": "Nothing downstream may gate on it. See AS-03 — this is our most developed acceptance standard and the template for the rest.",
+      "load_bearing": true,
+      "live": null
+    },
+    {
+      "id": "DR-04",
+      "element": "M-ID identity + canonical SUBJ4",
+      "drives": "The whole unified-course layer and the eventual C-ID submission pathway.",
+      "decides": "CPL Initiative (CO) — explicitly AI-assisted STAGING, not faculty-published",
+      "maintained_in": "kb/ + Supabase kb_curation",
+      "owner": null,
+      "when_empty": "Re-mints permitted under the playbook. Rule re-locks to 'stable identifiers' once we declare the layer faculty-published — that declaration is itself a governance act with no owner today.",
+      "load_bearing": true,
+      "live": null
+    },
+    {
+      "id": "DR-05",
+      "element": "C-ID descriptors",
+      "drives": "Statewide course identity and articulation.",
+      "decides": "ASCCC — external authority",
+      "maintained_in": "c-id.net",
+      "owner": null,
+      "when_empty": "Never re-keyed, never invented. We submit; they decide.",
+      "load_bearing": true,
+      "live": null
+    },
+    {
+      "id": "DR-06",
+      "element": "Articulated exhibits (what a college grants credit for)",
+      "drives": "Every CPL award a student actually receives.",
+      "decides": "College faculty",
+      "maintained_in": "MAP platform",
+      "owner": null,
+      "when_empty": "The gap is an outreach worklist, not a build backlog.",
+      "load_bearing": true,
+      "live": null
+    },
+    {
+      "id": "DR-07",
+      "element": "Unified credential titles (CER)",
+      "drives": "How exhibits collapse into one credential across colleges.",
+      "decides": "CO curation, curator-confirmed",
+      "maintained_in": "Supabase kb_curation",
+      "owner": null,
+      "when_empty": "Falls back to the college's freehand title, which is why the canonicalization exists.",
+      "load_bearing": false,
+      "live": null
+    },
+    {
+      "id": "DR-08",
+      "element": "College landing page URL",
+      "drives": "Where a student actually lands, and where our nudges deep-link.",
+      "decides": "MAP platform team",
+      "maintained_in": "MAP platform",
+      "owner": null,
+      "when_empty": "3 of 123 have none. A college with no page cannot receive a routed request at all.",
+      "load_bearing": true,
+      "live": "landing"
+    },
+    {
+      "id": "DR-09",
+      "element": "Implementation funding model parameters",
+      "drives": "Dollar allocations per college.",
+      "decides": "CPL Initiative (CO)",
+      "maintained_in": "Supabase + kb/",
+      "owner": null,
+      "when_empty": "n/a — this is ours to set, and the one place on this list where WE are the authority rather than a router.",
+      "load_bearing": true,
+      "live": null
+    },
+    {
+      "id": "DR-10",
+      "element": "Who a college's MAP users are",
+      "drives": "Access to MAP; who can act on CPL at that college.",
+      "decides": "The college",
+      "maintained_in": "MAP platform",
+      "owner": null,
+      "when_empty": "3 institutions have ZERO active users. That is an onboarding problem, not a contact problem — do not paper over it with a routing fix.",
+      "load_bearing": true,
+      "live": "users"
+    }
+  ],
+
+  "acceptance_standards": [
+    {
+      "id": "AS-01",
+      "input": "MAP articulation data",
+      "stance": "authoritative",
+      "rule": "The system of record for what a college has articulated. We surface it; we never edit it (no write API by design — see the surface-don't-edit ADR)."
+    },
+    {
+      "id": "AS-02",
+      "input": "MAP contact fields",
+      "stance": "authoritative-but-unvalidated",
+      "rule": "Authoritative for WHO the college named, but the values are not validated at entry: 15 colleges hold several addresses in one cell and some hold single-character junk. Parse, never trust as a single clean value."
+    },
+    {
+      "id": "AS-03",
+      "input": "TOP code",
+      "stance": "corroborating only",
+      "rule": "Faculty-entered with no data-entry gatekeeper. NEVER gates a determination (discipline / identity / membership / merge). Usable only when a second independent signal agrees. Authoritative in exactly two places: the CTE flag and the CIP↔TOP crosswalk. This is the most developed standard we have — use it as the template for every new input."
+    },
+    {
+      "id": "AS-04",
+      "input": "CIP code (arriving fall 2026)",
+      "stance": "advisory until earned",
+      "rule": "Same posture as TOP: corroborate, don't gate, until it demonstrates reliability. Decide the promotion criteria BEFORE the cutover, not after we're depending on it."
+    },
+    {
+      "id": "AS-05",
+      "input": "COCI course + program data",
+      "stance": "authoritative for existence",
+      "rule": "Reliable that a course/program exists; lags on currency, and the program-course membership file is partially populated — treat joins through it as a LOWER BOUND."
+    },
+    {
+      "id": "AS-06",
+      "input": "Curator statement (a team member's knowledge)",
+      "stance": "strong, attributable",
+      "rule": "Record who said it and when, so it stays questionable later rather than only believable-or-deletable. A curator MAY name an individual where a lookup may not — they know who actually answers."
+    },
+    {
+      "id": "AS-07",
+      "input": "Web lookup / public college pages",
+      "stance": "advisory",
+      "rule": "A starting point to verify, never a designation. Show the source link. Department inboxes only — naming an individual from a web page is a determination we don't have standing to make."
+    },
+    {
+      "id": "AS-08",
+      "input": "Model-generated inference (mine)",
+      "stance": "advisory",
+      "rule": "Anything I derive is a proposal until a human or a second independent signal confirms it. Where I've guessed, the artifact should say so — that is what the provenance tiers are for."
+    }
+  ],
+
+  "cadences": [
+    {
+      "id": "CA-01",
+      "loop": "Daily dashboard rebuild",
+      "frequency": "Daily, 06:17 / 09:17 / 12:17 UTC",
+      "owner": "Automation (GitHub Actions)",
+      "state": "running",
+      "live": null
+    },
+    {
+      "id": "CA-02",
+      "loop": "MAP users + contacts sync",
+      "frequency": "Monthly, 1st at 13:00 UTC",
+      "owner": "Automation (GitHub Actions)",
+      "state": "running",
+      "live": "sync"
+    },
+    {
+      "id": "CA-03",
+      "loop": "College contact-refresh nudge",
+      "frequency": "Each semester (decided Session 87, 2026-06-30)",
+      "owner": null,
+      "state": "decided-never-run",
+      "note": "The instrument was built in June and has never been fired. A cadence nobody runs is a document, not governance. This is the single most actionable item on this page.",
+      "live": "nudge"
+    },
+    {
+      "id": "CA-04",
+      "loop": "Session checkpoint (docs, memory, To-Do feed)",
+      "frequency": "Every ~100K tokens + on request",
+      "owner": "Claude sessions",
+      "state": "running",
+      "live": null
+    },
+    {
+      "id": "CA-05",
+      "loop": "Public KB curation (vault → cpl-knowledge-base)",
+      "frequency": "On demand",
+      "owner": null,
+      "state": "human-gated",
+      "note": "Deliberately manual: a human-reviewed draft PR IS the sensitivity audit. Correct as designed; it just has no named reviewer.",
+      "live": null
+    }
+  ],
+
+  "open_questions": [
+    {
+      "id": "OQ-01",
+      "q": "Who owns each row above?",
+      "why": "Every `owner` is null. A decision right with no accountable person is a description of the past, not governance. This is the review."
+    },
+    {
+      "id": "OQ-02",
+      "q": "Is there an existing MOU or participation agreement with colleges that already allocates some of these rights?",
+      "why": "If so, this register should MIRROR it rather than invent a parallel structure. I can't see those documents."
+    },
+    {
+      "id": "OQ-03",
+      "q": "What are the promotion criteria for CIP — what would it have to demonstrate to move from advisory to corroborating to authoritative?",
+      "why": "Fall 2026 cutover. Decide before we depend on it; TOP shows what happens when an input is trusted by default."
+    },
+    {
+      "id": "OQ-04",
+      "q": "What declares the M-ID layer 'faculty-published'?",
+      "why": "The rules change materially at that moment (re-mints stop). Today no one owns making that call or knows what evidence it requires."
+    },
+    {
+      "id": "OQ-05",
+      "q": "Which fields are genuinely load-bearing?",
+      "why": "I marked 8 of 10 as load-bearing from the data's behavior, which is almost certainly too many. Governing everything is how governance dies — cut this list."
+    },
+    {
+      "id": "OQ-06",
+      "q": "Should this tab be team-gated or public?",
+      "why": "Gated today. A public decision-rights table could be genuinely good for college trust — but 'last run: never' is a bad look before it's addressed. Fix the cadence first, then consider opening it."
+    }
+  ]
+}

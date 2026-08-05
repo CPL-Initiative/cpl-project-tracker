@@ -1,0 +1,145 @@
+// Governance tab (governance.js) — jsdom test.
+//
+// Guards the properties that make this page worth having rather than harmful:
+//  (a) Rule 4 + nav/pane/lazy-boot present in BOTH HTMLs;
+//  (b) it is TEAM-GATED — internal working material must not render logged-out;
+//  (c) an UNOWNED row renders as a visible gap, not a blank cell. The empty
+//      owners are the point of the review; silently hiding them would turn the
+//      page into decoration;
+//  (d) measurable claims are MEASURED. Specifically: a cadence with zero
+//      recorded runs must say "never run" even though the register describes it
+//      as a decided cadence. A governance page that asserts its own compliance
+//      from a stored field is the exact failure this tab exists to expose;
+//  (e) the register itself is well-formed and its `live` keys resolve.
+//
+// Run from repo root: `npm test` (or `node tests/governance.test.js`).
+const fs = require("fs");
+const { JSDOM } = require("jsdom");
+
+const results = [];
+function check(name, cond) { results.push([name, !!cond]); }
+
+// ── Part A — static invariants ──
+const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
+const idx = fs.readFileSync("index.html", "utf8");
+check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
+[["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
+  check("nav button in " + p[0], /data-tab="governance"[^>]*>⚖️ Governance</.test(p[1]));
+  check("pane #governance-root in " + p[0], /id="governance-root"/.test(p[1]));
+  check("lazy boot in " + p[0], /loadScript\('governance\.js', 'CPL_GOVERNANCE'/.test(p[1]));
+});
+// A tab missing from GROUPS stays top-level rather than erroring, so this is the
+// kind of thing that silently looks wrong forever. Team-only tools belong together.
+check("nav: governance sits in the team-tools group",
+  /tabs: \['chatbot', 'sierra-training', 'map-users', 'governance'/.test(
+    fs.readFileSync("nav_groups.js", "utf8")));
+
+// ── The register ──
+const REG = JSON.parse(fs.readFileSync("kb/governance_register.json", "utf8"));
+check("register: has decision rights", (REG.decision_rights || []).length >= 5);
+check("register: has acceptance standards", (REG.acceptance_standards || []).length >= 5);
+check("register: has cadences", (REG.cadences || []).length >= 3);
+check("register: has open questions", (REG.open_questions || []).length >= 3);
+check("register: every decision right declares who decides",
+  REG.decision_rights.every((d) => !!d.decides));
+check("register: every decision right says what happens when empty",
+  REG.decision_rights.every((d) => !!d.when_empty));
+check("register: every acceptance standard declares a stance",
+  REG.acceptance_standards.every((a) => !!a.stance && !!a.rule));
+check("register: ids are unique",
+  new Set(REG.decision_rights.map((d) => d.id)).size === REG.decision_rights.length);
+// The starter ships with owners unset on purpose — that IS the review. If a
+// future edit fills them all in, this flips, which is the desired signal.
+check("register: unowned rows exist and are explicit null (the review queue)",
+  REG.decision_rights.some((d) => d.owner === null));
+// Every `live` key a row points at must be one the renderer knows how to
+// resolve, or the page silently shows nothing where a number was promised.
+const KNOWN_LIVE = ["contact_pc", "contact_coord", "landing", "users", "sync", "nudge"];
+check("register: every live key is one the renderer implements",
+  REG.decision_rights.concat(REG.cadences)
+    .every((r) => r.live == null || KNOWN_LIVE.indexOf(r.live) >= 0));
+
+// ── Part B — behavior ──
+const SRC = fs.readFileSync("governance.js", "utf8");
+function makeWin(opts) {
+  opts = opts || {};
+  const dom = new JSDOM('<!doctype html><html><head></head><body><div id="governance-root"></div></body></html>',
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  if (opts.teamPass) w.localStorage.setItem("cpl_team_pass", opts.teamPass);
+  w.fetch = function () { return new Promise(function () {}); };
+  w.eval(SRC);
+  return w;
+}
+
+// (b) gating
+(function () {
+  const out = makeWin();
+  const r = out.document.getElementById("governance-root");
+  out.CPL_GOVERNANCE._state.reg = REG;
+  out.CPL_GOVERNANCE.render(r);
+  check("gate: logged out sees a sign-in prompt, not the register",
+    /Team &amp; RACI|Team & RACI/.test(r.innerHTML) && !/Who decides what/.test(r.innerHTML));
+  check("gate: logged out leaks no decision-right content",
+    !/Primary Contact email/.test(r.innerHTML));
+})();
+
+// (c) + (d) the honesty properties
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3,
+                    synced: "2026-08-01T14:28:53Z", nudgeCount: 0, lastNudge: null };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  const html = r.innerHTML;
+
+  check("signed in: the register renders", /Who decides what/.test(html));
+  check("unowned rows render as a visible gap, never a blank cell",
+    /needs an owner/.test(html));
+  check("owner gap is counted in the headline", /Rows with no owner/.test(html));
+
+  // THE load-bearing test: the register describes the nudge as a decided
+  // semester cadence. Zero rows exist. The page must say so.
+  const neverRun = G._cadenceState({ live: "nudge" });
+  check("a cadence with no recorded runs reports 'never run'", /never run/.test(neverRun));
+  check("...and it surfaces in the rendered page", /never run/.test(html));
+  const ran = G._cadenceState({ live: "nudge" });
+  G._state.live.nudgeCount = 5; G._state.live.lastNudge = "2026-09-01T00:00:00Z";
+  check("...and flips to the real date once it HAS run",
+    /2026-09-01/.test(G._cadenceState({ live: "nudge" })) && /never run/.test(ran));
+
+  // live figures are computed, not asserted
+  G._state.live.nudgeCount = 0;
+  check("live cell states the measured gap, not a stored claim",
+    /25 route nowhere/.test(G._liveCell("contact_pc")));
+  check("live cell for a fully-populated field shows no alarm",
+    !/gov-bad/.test(G._liveCell("contact_coord")));
+  check("unknown live key degrades to empty, never to a broken number",
+    G._liveCell("not_a_key") === "");
+  check("no live data at all → no fabricated figures",
+    (function () { const s = G._state.live; G._state.live = {}; const out = G._liveCell("contact_pc");
+                   G._state.live = s; return out === ""; })());
+})();
+
+// (e) markdown export carries the uncomfortable facts, not just the tidy ones
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  const md = G._toMarkdown();
+  check("markdown: leads with the measured gap", /route a student's request nowhere/.test(md));
+  check("markdown: marks unowned rows so they survive the copy-paste",
+    /needs an owner/.test(md));
+  check("markdown: a never-run cadence stays never-run in the export",
+    /NEVER RUN/.test(md));
+  check("markdown: includes the open questions", /Open questions/.test(md));
+})();
+
+// ── report ──
+let failed = 0;
+for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
+console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
+process.exit(failed ? 1 : 0);
