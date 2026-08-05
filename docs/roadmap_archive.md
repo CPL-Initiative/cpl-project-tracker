@@ -3374,3 +3374,30 @@ pre-gate); PII-safe (attestor name/email reviewer-gated via column grants + the 
 `cpl_funding_optin_review()` RPC; `kb/supabase_funding_optin.sql`). v2 (magic-link email) still queued.
 **Next: the Budget reconciliation.** Full story: `docs/cpl_funding_lessons.md` §2026-08-05 (SkyOptIn) ·
 §2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
+
+---
+
+### SkyPartner — Noncredit & Learning-Partner CPL: thinking doc → live tab → write layer (2026-08-05, #981–#989 MERGED)
+
+Sam's cold ask (7 prompts + "ask me anything") became a shipped instrument in one session.
+**`docs/noncredit_cpl_thinking.md`** (~1,530 lines): §0 *why this exists* — the noncredit thinking
+**was** figured out (Fall-2025 decks) but never left a slide deck; the Oct-2024 monograph mentions
+noncredit **6× in 32 pages**. Twelve use cases by MECHANISM → **six MODES** for the team
+(M1 mirrored · M2 certificates/licenses · M3 NC certificates · M4 HS Cx · M5 portfolio · M6 CPL-toward-NC).
+**M2 holds the screening question:** *does the program END in a license/3rd-party cert?* Yes → one
+determination covers everyone, forever. **Sam's Q3 "oxymoron" is an apportionment problem** — a waived
+NC course earns **zero** apportionment and the student pays no fee, so 100% of the loss hits the
+institution (SB 361 is the precedent for a hold-harmless). ⭐ **Data findings (§7a):** **49 dormant
+statewide exhibits / 252 college-slots**, only **30 of 84** statewide exhibits have EVER converted a unit;
+the **4 standalone NC institutions are at ZERO** across 1,987 titles while ~48 HS entries exist; **27 CCCs
+teach dental assisting, 1 awards RDA CPL** (West LA, 99.5%); EMT converts at **75.6%** across 28 colleges
+(→ EMS Corps is **outreach**, not articulation-building). **Tab shipped** (#985): 5 collapsible sections,
+jump links, report generator (Copy·MD·Word·Print). **#987** narrative `[[ITEM-ID]]` cross-refs — an uncited
+claim is now *visibly* unbacked, and a test fails on a dead ref. **#988/#989** write layer — ✎ Add insight on
+every card; **"answering never closes, just revises"** enforced in schema (supersede RPC, **no DELETE policy**);
+notes sit ALONGSIDE the register with a **promotion packet**; applied to `hvuwhnbuahrtptokpqfh`, anon-gate
+verified (anon reads 0). ⚠ **Public `cpl-knowledge-base` untouched** — packet targets tracker lanes only.
+Suite **82** (tab) · full 184 files green. Durable: `methodology-dormant-asset-worklist`,
+`methodology-register-is-the-spine-narrative-cites-it`, `adr-notes-alongside-the-curated-register`.
+Story: `docs/noncredit_cpl_lessons.md` · handoff `docs/session_119_handoff.md`.
+**Funding deliberately PARKED** until the NC universe is mapped (Sam).
