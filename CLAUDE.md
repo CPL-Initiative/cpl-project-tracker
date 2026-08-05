@@ -560,6 +560,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
 | **Excel→Supabase Phase 2-4** | Migrate remaining Excel-driven tabs (Dashboard project cards, Budget, Vision 2030, Personnel). Per-tab inline editors. Excel file retires once Phase 4 cuts over; periodic Supabase→xlsx export retained as backup. **Phase 2 (projects) is COMPLETE: seeded + cut over + editor all landed (Session 15 build → Session 16 seed/cutover/editor).** Phases 3-5 (Budget/Vision/Personnel) follow the same five-step shape + the RLS-tighten step; Personnel already has 26 rows so its PR-3 has UPDATEs. | **Phase 2 DONE** (Session 16); **Phase 3 Budget read-path DONE** (PR #189); **Excel-retirement scope DONE** (PR #210, Session 23 — `docs/kb-notes/excel-retirement-final-scope.md`; corrected the surface: Personnel already Supabase, Vision 2030 is static/computed — neither needs migration); **Excel PR-1 (KPI-ladder keystone) DONE** (PR #211, Session 23 — ladder now sourced from `workplan_goals` not Excel, parity-exact across 49 projects; live 11-cell blank-vs-0 fix on `workplan_goals`, 1.4's real 0s kept); **Excel PR-2 (D.* rows RETIRED, not migrated) DONE** (PR #213, Session 24 — the 15 `D.*` sub-population helper rows were **100% vestigial**: sole value-reader `populate_current_metrics()` dead since 2026-05-28, every other ref excludes them, all 3 JS report gens skip them. Deleted the rows + the dead `populate_current_metrics()`/`_override_int`/`_pmetric_int`/`_ppct`/`_pcount` cluster; generator-only, proven parity-minus-D.* on snapshot + Excel-fallback paths. Method: `docs/kb-notes/methodology-verify-consumer-before-migrating.md`); **KPI-ladder editor = ALREADY DONE** (Session 24 measure-first — PR-1 sourced the ladder from `workplan_goals`, which `workplan_goals.js` already edits; 27 ladder-bearing projects all editable, 0 gaps — no build needed); **Budget inline editor DONE** (PR #215, Session 24 — click-to-edit dollar cells on the 5-Year Funding Plan, `budget_editor.js`; 7 cells/row PATCH `budget_funding`; no `total=Σyears`/`avg` formula yet per Sam; **budget_funding/budget_expenditures/personnel RLS tightened** to `is_allowed_reviewer()` live, `kb/supabase_budget_rls_tighten.sql`). **Excel-dependency audit + fix queue DONE** (PR #217, Session 24 — `docs/kb-notes/excel-dependency-audit.md`, the authoritative remaining-work catalog; triggered by a curator hitting the card "Update" button → it opened Excel-for-the-Web). **Excel retirement — Session 25 (Bruh 25) shipped P1+P2+P4, all merged:** **P1 ✅ (#219)** the "Update→Excel" card button now triggers the inline Latest Update editor (akpi copy dropped; `excel_row` no longer emitted; `dashboard_filters.js` rewire + toolbar button removed); **P2 ✅ (#221)** config tables moved to committed `kb/dashboard_config.json` via new `load_dashboard_config()` (`read_project_config`/`read_config_overrides`/`read_kpi_parameters` rewritten, all drop their `wb` param) + the `ensure_kpi_config_sheet` **WRITER deleted** — the master `.xlsx` is **no longer written on any run** (writer-blockers 2→1); measure-first found Col AG empty + KPI_Config == code defaults, so the JSON carries only the 4 real `project_config` fields; parity-proven (byte-identical readers + full A/B regen); **P4 ✅ (#220)** dead readers `read_annual_goals`/`read_workplan_goals` deleted (148 lines). **Remaining:** **P3** Update Log history (product fork — Sam **dismissed/parked** the decision 2026-06-01; measured: 38 projects / 120 stale entries (latest 2026-04-08); options = read-only **snapshot** / **retire** (keep `latest_update`) / **Supabase `project_update_log`** table); **P5** drop the `.xlsx` — now blocked only by `read_projects` (KPI-ladder + outage fallback), `read_budget_plan` (+ the carved-out budget `factors`/`year_labels`), and `read_update_log`/`archive_updates_to_log` (the **1 remaining writer**, gated on P3) + the `.bak`; keep a Supabase→xlsx backup. Independent: Budget `total`/`avg` formula layer (+ total read-only) + personnel editor (fix the 26→13 dedupe row-identity first). **Also Session 25:** new **daily data-pipeline reference doc** (`docs/kb-notes/reference-daily-dashboard-data-pipeline.md`, #222/#223) — accounts for all **7 data sources** + every headline KPI's lineage + the committed daily dataset; confirmed (via Sam's screenshot) the **MAP Custom Reporting Module's 9 categories are pulled in full** (151 fields), with **College Contacts + College Users & Roles fetched-but-unused** (drop-or-wire decision pending). |
 | **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ **Thinking doc + tab + write layer DONE** (SkyPartner, #981–#989). **Next by value÷effort:** ① populate the 4 standalone NC institutions in MAP (at ZERO); ② EMS Corps landing page + 500-alumni outreach (28 colleges already articulated); ③ work the 49 dormant statewide exhibits; ④ the mirroring playbook; ⑤ the 26-college dental list. **6 "Needs Input" items open in-tab** — biggest is HS-articulation scale. Funding metric PARKED by Sam until the mechanisms are mapped. |
+| **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`; 25 of 123 colleges had none (24 with a live landing page). | ✅ **Worklist LIVE** (SkyMail, #991–#993) — reviewer-only "⚠ No student contact" lens + cascade proposal + draft email. **17/25 resolve** from the colleges' own MAP designations; **8 need a human** (5 leadership-only, 3 no-MAP-presence = the standalone continuing-ed institutions the NC tab flagged at zero). Contact sync extended 11→24 fields. **Next:** Jessica/Ashley verify the 6 web-sourced fallbacks; make her "no CPL Assistant" cut (71 colleges) a live filter instead of a chat snapshot; the MAP manage-users URL is still open from S87. |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -569,6 +570,31 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
+
+### SkyMail — MAP Users: the student-contact worklist (2026-08-05, #991–#993 MERGED)
+
+Sam's "add some features" resolved to a goal one message later: *"all College Landing Pages
+include contact so when students request CPL, it goes to a real person."* MAP routes on
+`primary_contact_email` — **25 of 123 colleges had none, 24 of them with a live landing page.**
+A silent service outage: every dashboard counts what exists, not what's missing.
+**The design came from Sam's constraint, not from me.** My first cascade preferred a shared
+inbox (`cpl@college.edu`) since turnover is what causes these gaps; he killed it — colleges are
+**locally governed**, and adopting that convention for them is a determination we don't get to
+make. The surviving rule is stronger: **every proposal is a person the COLLEGE already
+designated in MAP.** We route, we don't appoint — and the email says so, so they can check it.
+Corollary: **leadership stopped being a rung** (5 colleges moved to *ask*) — routing student
+mail to a VP is their call. **17/25 resolved.** ⭐ The unlock was measurement, not logic: a probe
+found `View_CollegeContacts_APIDataset` carries **24 fields while the sync pulled 11** — CPL
+Assistant (52/123, Sam was right it existed and unsure of the label → probe, don't ask him to
+recall a spelling), CPL Counselor 65, AO 87, Faculty Lead 84, Lead Initiator 82, SCO 101.
+**Jessica's input added a third trust tier:** curator-supplied contacts render with *who and
+when*, web-sourced with a *source link + verify*; a lookup may only yield a department inbox,
+**a curator may name an individual** (they know who answers). Also found: the public headline
+overstated (**2,657/120**, not 2,769/128 — 7 sandbox colleges + the statewide account, fixed by
+*labelling* not filtering); `disciplines` is **pipe**-delimited (a 1,364-char cell, live 2
+months); 15 colleges hold multiple emails in one contact cell. Anon-gate verified (0 rows).
+Suite **70→108**, 184 files green. Durable: `methodology-route-to-a-determination-they-already-made`,
+`methodology-provenance-is-a-field`. Story: `docs/map_users_lessons.md` · handoff `docs/session_121_handoff.md`.
 
 ### SkyPartner — Noncredit & Learning-Partner CPL: thinking doc → live tab → write layer (2026-08-05, #981–#989 MERGED)
 
@@ -594,34 +620,6 @@ Suite **82** (tab) · full 184 files green. Durable: `methodology-dormant-asset-
 `methodology-register-is-the-spine-narrative-cites-it`, `adr-notes-alongside-the-curated-register`.
 Story: `docs/noncredit_cpl_lessons.md` · handoff `docs/session_119_handoff.md`.
 **Funding deliberately PARKED** until the NC universe is mapped (Sam).
-
-### SkyBox — Implementation Funding: ALL of Sam's tweaks + the NC rehaul (2026-08-04, #973–#976 MERGED)
-
-Sam's 7 display/report tweaks. **#973:** award boxes → **Min·Avg·Max**; Report gained a
-**Recommended Strategies** section, renamed the division **ESS → Academic Affairs**, dropped
-the **$35M gross** (leads with available college funding). **#974:** the duplicate $35M boxes
-**collapse to one editable box**; hero is now the **INSTITUTION total $25,240,308** (college
-pool + rural + $1M NC, 3-way note — raising the feeder now shifts money college→NC *inside* the
-total, no longer shrinks the hero); "Earned so far" relabeled **"…not the noncredit carve-out."**
-Suite **545→552**; all mirror to the public page (shared JS). **Big NC question — Sam chose
-"targeted + advisory NC column":** keep $1M with the 4 standalone NC campuses (SF earns via the
-credit column — its FTES sheet shows $236,645 vs $0 for the NC campuses — not shut out), add an
-advisory NC column, DON'T dilute across ~105 colleges. ⚠ **Calbright 21,438 NC FTES is
-impossible** (2,484 heads) — don't let it drive dollars; feeder split stays by headcount.
-**#976 shipped #5:** an advisory per-college **NC-FTES sub-line** under the size cell (a sub-line, not
-a 12th column, to keep no-scroll; matched all 115 via a verify-or-abort script — model `credit_ftes` ==
-Malone's Credit-FTES column cross-confirmed it; **De Anza → "DeAnza"** display override, Chabot stays
-"Chabot"; ⚠ `rowsFiltered()` field-whitelists the row copy, so a new data-file field must be added there).
-Suite 552→555. **Deferred: #3b** (NC gate — inert today). **Then #978 reworked the funding memo**
-(institution total; district-grouped allocation with each district's NC campus beneath it; a
-$50k-seed intro; a Technical Assistance section w/ KB-verified MAP links + contacts). Suite →562.
-**Administrator (VPAA/VPSS/CEO) opt-in — v1 SHIPPED (SkyOptIn, 2026-08-05):** a public self-service
-opt-in on each college row (works on the public page) captures the attesting admin AT opt-in;
-**attest-first** (Sam's call — the submit clears `baselineGate`, the CO confirms/revokes in a lane, no
-pre-gate); PII-safe (attestor name/email reviewer-gated via column grants + the gated
-`cpl_funding_optin_review()` RPC; `kb/supabase_funding_optin.sql`). v2 (magic-link email) still queued.
-**Next: the Budget reconciliation.** Full story: `docs/cpl_funding_lessons.md` §2026-08-05 (SkyOptIn) ·
-§2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
 
 ## Troubleshooting
 
