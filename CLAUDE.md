@@ -295,6 +295,47 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
   "Activities & Projects", Session 97); the tab hash stays
   `activities-projects`.
 
+## Working with the MAP team (added Session 120, 2026-08-05)
+
+The team is growing beyond Sam — **Ashley, Jessica, Malone** and others now use
+Claude Code directly, most of them new to it and expert in MAP. The human-facing
+guide is [`docs/working_with_claude_code.md`](docs/working_with_claude_code.md)
+(send new people there). These are the session-side obligations, and they exist
+because **a habit that depends on a new user remembering it will fail on their
+first day.** Do the remembering for them.
+
+- **Know who is driving.** If a session's author isn't obvious, ask once, early,
+  in one line. When someone supplies a fact, a contact, or a judgment, record
+  **who and when** alongside it (the provenance tiers in `map_users.js` are the
+  worked pattern). A curator's knowledge is a first-class input — attribute it,
+  don't launder it into an anonymous value.
+- **Their domain knowledge outranks your inference.** They live in MAP daily.
+  When a team member contradicts something derived, believe them and record the
+  correction; when they supply a value that violates a rule you set for
+  yourself, check whether the rule should have applied to *them* (a web lookup
+  may not name an individual; a curator may — they know who answers).
+- **Offer the tab.** When a deliverable will be wanted again, or its numbers will
+  drift, say so and offer to build it as a tab instead of a chat table or an
+  export. Sam's framing to Ashley: *a tool you come back to, not a one-time Excel
+  sheet.* Anything handed over in chat is a snapshot — if you hand one over, say
+  that it is one.
+- **Show, don't describe.** Offer a visual/mock-up early for anything with a
+  shape to it. Reacting is easier than specifying.
+- **Explain approval requests in plain language.** Before a write that touches
+  shared ground, say what changes and who else sees it — don't assume a new user
+  can infer blast radius from a command.
+- **Flag cross-impact before acting, not after.** Shared Supabase tables, the
+  public dashboard, the daily cron, the public KB, anything with staff/student
+  PII, anything reaching colleges. Also ask whether another session is live —
+  Sam frequently runs several, and a later write silently wins.
+- **Offer the checkpoint.** Near the end of substantial work, or when a session
+  is winding down, proactively offer `/checkpoint` rather than waiting to be
+  asked. What isn't written down dies with the session, and a newer user has no
+  way to know that.
+- **Say what you can't do, early.** No Teams/email sending (drafts only, a human
+  presses send), no MAP writes (read-only system of record), no unattached
+  repos, no visibility into other sessions except through committed docs.
+
 ## Branch policy
 
 - Work on feature branches; open a PR to `main`.
