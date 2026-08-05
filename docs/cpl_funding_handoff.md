@@ -1,13 +1,60 @@
 ---
 title: CPL Implementation Funding — next-session handoff
 created: 2026-06-11
-updated: 2026-08-04
+updated: 2026-08-05
 tags: [handoff, funding, implementation-funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
 ---
 
 # You are the next Implementation-Funding session
+
+## ✅ JUST SHIPPED (2026-08-05, SkyOptIn cont.) — opt-in row CTA + the Budget reconciliation
+
+Three things landed after the opt-in-v1 banner below (read that too):
+
+**1. Opt-in row ergonomics (#986, MERGED).** A one-click **✎ Opt in** chip on every not-opted-in college
+row (public + private) → expands the drill-in, opens the attestation form, focuses the Name field. And the
+CO **✓ Confirm / ✕ Reject** now shows **INLINE in the reviewer's row drill-in** (where Sam looked — the
+aggregate lane in the Baseline section wasn't where he expected), with the attestor identity. Dropped the
+ambiguous legacy "Clear opt-in". `cpl_funding_optin.test.js` 18 → 28.
+
+**2. Budget reconciliation vs the revised `20260729_CPL_Amendment_Sep_BOG.xlsx`.** Sam's revised budget
+**ties to the penny** across the whole tree — the $35M split ($26,040,308 college + $8,959,692 projects),
+the $15M reconciliation, the $31,556,650 amendment, and the clean fold where the $8,959,692 project
+carve-out = $1,516,342 (RCCD amendment) + $7,443,350 (Additional CO/TBA). **Two workbook fixes for Sam
+(his to make):**
+  - **$74M → $71M** grand total. `E11 =E2+E9+E10` adds the $18M project cross-cut instead of the $15M pot —
+    double-counts the $8,959,692 already inside the $35M. True = $35M+$15M+$21M = **$71M**.
+  - **Award Max $665,971 → $522,239.** Recomputed from the LIVE model (`awardStats()` over the 115
+    colleges): **Min $150,000 · Avg $210,785 · Max $522,239 (Mt. San Antonio)**. The $665,971 is ~$144K
+    stale (predates the $1M NC + $1M rural carve-outs + the credit-FTES basis). **Sam's call: split the
+    line** — report **115 Colleges** (Min/Avg/Max) SEPARATE from the **4 Noncredit** ($1M by headcount:
+    Calbright $33,134 · NOCE $207,555 · SD CCE $287,603 · Mt SAC NC $471,708 — Calbright is BELOW the
+    $150K floor, so never blend the 119).
+
+**3. COBI ongoing → 2030-31 committed (#1002).** The ledger already matched the revised budget to the
+penny (#949 wiring + SkyReconcile), so the ONLY change: extend the $7M ongoing two committed years →
+**$35M** (+$14M), archive the pre-amendment **$5M 2025-26** ongoing to history, add a **`yr_2030_31`**
+column (`budget_ledger.js` `USE_YEARS → [1..5]`). Supabase applied + re-read to verify
+(`kb/supabase_budget_extend_2030_31.sql`, guarded UPDATEs pinned to each row's pre-change shape; no
+`model_field` touched). `budget_ledger` 34 → 40. The two new columns are also where Sam may later shift
+project funding (no project-total change).
+
+### ⬜ THE OPEN ONE — NC equalization (design LOCKED, build DEFERRED on Sam's basis call)
+Sam wants the $1M NC feeder split **more equal** (Calbright too low; its headcount is stale + will rise).
+**Decision — Sam took the recommendation:** a **floor** as the primary equalizer (mirrors the college
+$150K floor — guarantees a minimum, robust to Calbright's stale count) **+ an optional per-row factor**
+(the priority-factor pattern, default 1×) as the fine-tuner. **Skip** the double-dipper flag (Sam: "easy
+enough to see"). **⛔ BLOCKED on Sam:** switch the NC split **headcount → FTES** next session (more
+consistent with the credit model; we have `noncredit_ftes` for all). Building on headcount now would just
+get reworked — **do NOT build until Sam lands the FTES call.** Then build the **editable NC section**
+(add/remove + dropdown seeded from NC-bearing colleges · floor · optional factor) and **fold in the
+award-card 115/4-NC split** at the same time (same numbers). Refs: `feeders()`, `feederCarveout()`,
+`awardStats()`/`awardStatsHtml()`, feeder section ~L4096. ⚠ Mt SAC has a big NC number ($472K) — Sam thinks
+its large NC CPL potential may justify it; equity is still his open question, don't force-equalize.
+
+---
 
 ## ✅ JUST SHIPPED (2026-08-05, SkyOptIn) — the self-service administrator opt-in (v1)
 
