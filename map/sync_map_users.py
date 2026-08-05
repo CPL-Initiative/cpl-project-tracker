@@ -76,6 +76,29 @@ CONTACTS_FIELD_MAP = [
     # stay reviewer-gated in map_college_contacts like every other contact).
     ("CPL Coordinator",       "cpl_coordinator"),
     ("CPL Coordinator Email", "cpl_coordinator_email"),
+    # ── Session 120: six MORE contact roles the colleges themselves populated ──
+    # The Contacts view carries 24 fields; we were syncing 11. A value-signature
+    # probe (run #11) confirmed these, with the fill rates in the comments. They
+    # matter because the student-contact cascade may only ever propose someone
+    # the COLLEGE already designated — local governance means we route to their
+    # people, we don't pick new ones — and these are exactly those designations.
+    # NOTE the asymmetries, they are real and not typos:
+    #   · "CPL Assistant" (a name column) does NOT exist — only the Email.
+    #   · the School Certifying Official's email column is spelled
+    #     "Veteran School Certifying Official Email".
+    ("CPL Assistant Email",        "cpl_assistant_email"),        # 52/123
+    ("CPL Counselor Contact",      "cpl_counselor"),              # 65/123
+    ("CPL Counselor Email",        "cpl_counselor_email"),
+    ("Articulation Officer",       "articulation_officer"),       # 87/123
+    ("Articulation Officer Email", "articulation_officer_email"),
+    ("Faculty Lead",               "faculty_lead"),               # 84/123
+    ("Faculty Lead Email",         "faculty_lead_email"),
+    ("Lead Initiator",             "lead_initiator"),             # 82/123
+    ("Lead Initiator Email",       "lead_initiator_email"),
+    ("Academic Senate President",       "senate_president"),      # 67/123
+    ("Academic Senate President Email", "senate_president_email"),
+    ("School Certifying Official",               "certifying_official"),  # 101/123
+    ("Veteran School Certifying Official Email", "certifying_official_email"),
 ]
 CONTACTS_COLUMNS = [a for a, _ in CONTACTS_FIELD_MAP]
 
@@ -199,11 +222,26 @@ def _contacts_summary(rows):
     have_coord = sum(1 for r in rows if (r.get("cpl_coordinator") or "").strip()
                      or (r.get("cpl_coordinator_email") or "").strip())
     print(f"  fetched {n} college contact rows")
-    print(f"  with a Primary Contact email: {have_pc}/{n}")
+    print(f"  with a Primary Contact email: {have_pc}/{n}"
+          f"   ← the address MAP routes STUDENT CPL requests to")
     print(f"  with a VPAA (VP Instruction) email: {have_vpaa}/{n}")
     print(f"  with a VPSS (VP Student Services) email: {have_vpss}/{n}")
     print(f"  with a CEO email: {have_ceo}/{n}")
     print(f"  with a CPL Coordinator on file: {have_coord}/{n}  (funding eligibility badge basis)")
+    # The cascade rungs (Session 120) — each is a designation the COLLEGE made,
+    # which is what lets us route a student-contact gap without deciding for them.
+    for label, col in (("CPL Assistant", "cpl_assistant_email"),
+                       ("CPL Counselor", "cpl_counselor_email"),
+                       ("Articulation Officer", "articulation_officer_email"),
+                       ("Lead Initiator", "lead_initiator_email"),
+                       ("Faculty Lead", "faculty_lead_email"),
+                       ("Academic Senate President", "senate_president_email"),
+                       ("School Certifying Official", "certifying_official_email")):
+        have = sum(1 for r in rows if (r.get(col) or "").strip())
+        print(f"  with a {label} email: {have}/{n}")
+    # The gap this whole workstream exists to close.
+    print(f"  ⚠ NO Primary Contact email: {n - have_pc}/{n} colleges — a student CPL "
+          f"request on those landing pages reaches nobody.")
 
 
 def main():

@@ -212,8 +212,11 @@ function makeWin(opts) {
   // the MAP dashboard deep-link (3rd arg) lands in the email body when present
   const mailtoUrl = decodeURIComponent(api._buildNudgeMailto("X", roster, "https://map.example/college/abc"));
   check("nudge mailto: includes the MAP dashboard URL when supplied", mailtoUrl.indexOf("https://map.example/college/abc") >= 0);
-  check("nudge mailto: omits the URL line when not supplied",
-    decodeURIComponent(api._buildNudgeMailto("X", roster)).indexOf("http") < 0);
+  // "No URL at all" was the original assertion, but the body now always carries
+  // the CPL Initiative help link (Session 120 boilerplate). What must still be
+  // absent is the per-college DEEP LINK when we don't have one.
+  check("nudge mailto: omits the college deep-link line when not supplied",
+    !/Open your MAP CPL Dashboard/.test(decodeURIComponent(api._buildNudgeMailto("X", roster))));
   // the college's user roster (4th arg) lands in the body, sorted by role then last name
   const userRoster = [
     { first_name: "Zoe", last_name: "Young", role_name: "Faculty Reviewer", email: "zoe@x.edu" },
@@ -304,6 +307,140 @@ function makeWin(opts) {
   const r2 = out.document.getElementById("map-users-root");
   out.CPL_MAP_USERS_TAB.render(r2);
   check("render: no nudge button when logged out", !/data-nudge=/.test(r2.innerHTML));
+})();
+
+// ── Session 120: the student-contact worklist ──
+// The failure this guards: proposing a contact the college did NOT designate.
+// Local governance means the cascade may only ever surface the college's own
+// people; anything else has to be an ASK. A regression here is not cosmetic —
+// it would put words in a college's mouth in an email we send on their behalf.
+(function () {
+  const GAPS = [
+    // proposable, from the college's own CPL Coordinator designation
+    { college: "Alpha College", college_kind: "college", has_student_contact: false,
+      proposed_source: "CPL Coordinator", proposed_name: "Pat Vega",
+      proposed_email: "pat@alpha.edu", needs_ask: false, ask_reason: null,
+      landing_page_url: "https://map.example/alpha", active_users: 4 },
+    // CPL Assistant rung — MAP has no name column for it, so name is null
+    { college: "Beta College", college_kind: "college", has_student_contact: false,
+      proposed_source: "CPL Assistant", proposed_name: null,
+      proposed_email: "asst@beta.edu", needs_ask: false, ask_reason: null,
+      landing_page_url: null, active_users: 2 },
+    // leadership-only → must be ASKED, never defaulted to the VP
+    { college: "Gamma College", college_kind: "college", has_student_contact: false,
+      proposed_source: null, proposed_name: null, proposed_email: null,
+      needs_ask: true, ask_reason: "leadership only",
+      landing_page_url: "https://map.example/gamma", active_users: 3 },
+    // already fine — must NOT appear on the worklist
+    { college: "Delta College", college_kind: "college", has_student_contact: true,
+      proposed_source: null, proposed_email: null, needs_ask: false },
+    // sandbox entry — must NOT appear on a list a human is going to work
+    { college: "Testing College", college_kind: "test", has_student_contact: false,
+      proposed_source: "CPL Coordinator", proposed_name: "Nobody",
+      proposed_email: "x@test.edu", needs_ask: false },
+  ];
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  T._state.gaps = GAPS;
+
+  const rows = T._gapRows();
+  check("gaps: only colleges MISSING a contact are listed",
+    rows.every((g) => g.has_student_contact === false));
+  check("gaps: colleges that already have a contact are excluded",
+    !rows.some((g) => g.college === "Delta College"));
+  check("gaps: sandbox/test entries excluded from the worklist",
+    !rows.some((g) => g.college_kind === "test"));
+  check("gaps: the three real gap colleges are listed", rows.length === 3);
+
+  const html = T._gapsHtml();
+  check("gaps html: proposal shows the person AND why they were picked",
+    /Pat Vega/.test(html) && /CPL Coordinator/.test(html));
+  check("gaps html: CPL Assistant rung renders without a name",
+    /asst@beta\.edu/.test(html));
+  check("gaps html: leadership-only college is in the ASK section, not proposed",
+    /Must be asked/.test(html) && /leadership only/.test(html));
+  // The leadership-only college must carry NO proposed address anywhere — the
+  // prose does mention vice presidents (explaining why we won't default to one),
+  // so assert on the absence of a routable proposal, not on the word.
+  check("gaps html: the leadership-only college gets no proposed address",
+    /Gamma College/.test(html) && !/@gamma\.edu/.test(html));
+  check("gaps html: says the proposal comes from the college's own designation",
+    /already designated in MAP/.test(html));
+  check("gaps html: states MAP has no write API (nothing here edits MAP)",
+    /no write API/i.test(html));
+
+  // The email is the artifact that actually reaches a college — check its claims.
+  const gap = GAPS[0];
+  const mail = decodeURIComponent(
+    T._buildContactMailto(gap, [{ label: "VPAA", name: "Dana Kim", email: "vpaa@alpha.edu" }],
+      "https://map.example/alpha"));
+  check("contact email: names the proposed person + their MAP role",
+    /Pat Vega/.test(mail) && /CPL Coordinator/.test(mail));
+  check("contact email: says we are NOT choosing someone new",
+    /not choosing someone new/i.test(mail));
+  check("contact email: says the choice is the college's",
+    /your call|entirely your/i.test(mail));
+  check("contact email: explains the student-facing consequence",
+    /does not reach anyone/i.test(mail));
+  check("contact email: carries the MAP team help contact",
+    /MAP@rccd\.edu/.test(mail));
+  check("contact email: semicolon-delimited recipients (Outlook rejects commas)",
+    !/^mailto:[^?]*,/.test(T._buildContactMailto(gap,
+      [{ label: "A", name: "", email: "a@x.edu" }, { label: "B", name: "", email: "b@x.edu" }], "")));
+
+  // The ask variant must not invent a person.
+  const askMail = decodeURIComponent(T._buildContactMailto(GAPS[2], [], "https://map.example/gamma"));
+  check("ask email: asks for a name instead of proposing one",
+    /Please reply with the name/.test(askMail) && !/WHAT WE PROPOSE/.test(askMail));
+
+  // Web-sourced fallbacks must never masquerade as a MAP designation, and must
+  // always carry the page they came from — that link IS the accountability.
+  const WS = T._WEB_SOURCED;
+  check("web-sourced: every entry carries a source URL",
+    Object.keys(WS).every((k) => /^https:\/\//.test(WS[k].source)));
+  check("web-sourced: entries without a published inbox record null, not a guess",
+    Object.keys(WS).every((k) => WS[k].email === null || /@/.test(WS[k].email)));
+  check("web-sourced: no mental-health/wellness inbox used as a CPL contact",
+    Object.keys(WS).every((k) => !/bewell|be-well|wellness|mentalhealth/i.test(WS[k].email || "")));
+  check("web-sourced: suggestions are department inboxes, not named individuals",
+    Object.keys(WS).every((k) => {
+      const e = WS[k].email;
+      if (!e) return true;
+      const local = e.split("@")[0].toLowerCase();
+      return /counsel|advis|success|student/.test(local);
+    }));
+
+  const csv = T._gapsCsv();
+  check("gaps csv: header + one line per real gap college", csv.split("\n").length === 4);
+  check("gaps csv: quotes are escaped", /^"College"/.test(csv));
+})();
+
+// Disciplines are PIPE-delimited in MAP, not comma-delimited (Session 120). The
+// old comma-only split turned a 150-code value into one enormous table cell.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const d = w.CPL_MAP_USERS_TAB._discCell("MATH | ENGL | BIOL | CHEM");
+  check("discCell: splits MAP's pipe-delimited disciplines", /4 disciplines/.test(d));
+  check("discCell: full list kept in the title attribute", /MATH, ENGL, BIOL, CHEM/.test(d));
+  check("discCell: still handles comma-delimited values",
+    /3 disciplines/.test(w.CPL_MAP_USERS_TAB._discCell("A,B,C")));
+  check("discCell: empty → em dash", w.CPL_MAP_USERS_TAB._discCell("") === "—");
+})();
+
+// The lens is reviewer-only — its data source is gated, so a logged-out visitor
+// must not even be offered it.
+(function () {
+  const out = makeWin();
+  out.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r = out.document.getElementById("map-users-root");
+  out.CPL_MAP_USERS_TAB.render(r);
+  check("lens: hidden when logged out", !/data-lens=/.test(r.innerHTML));
+
+  const inn = makeWin({ teamPass: "p" });
+  inn.CPL_MAP_USERS_TAB._state.summary = [{ college: "A", user_count: 1, role_mix: { Faculty: 1 } }];
+  const r2 = inn.document.getElementById("map-users-root");
+  inn.CPL_MAP_USERS_TAB.render(r2);
+  check("lens: offered when signed in", /data-lens="gaps"/.test(r2.innerHTML));
 })();
 
 // ── report ──
