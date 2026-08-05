@@ -80,7 +80,10 @@ The whole ecosystem, end-to-end:
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
    the 👍/👎 feedback queue from both chat surfaces with a triage status, and
    a gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for), a **MAP Users** tab (per-college MAP platform user
+   had no good source for), a **⚖️ Governance** tab (team-only: the decision-rights
+   register — who decides what, how far each input is trusted, and which cadences
+   actually run; it measures itself rather than asserting compliance, so a loop
+   that was decided but never run says so), a **MAP Users** tab (per-college MAP platform user
    counts + role mix publicly; for a signed-in reviewer, the staff roster and a
    **⚠ No student contact** worklist — the colleges whose landing page has no
    Primary Contact, which is the address MAP routes a student's CPL request to,

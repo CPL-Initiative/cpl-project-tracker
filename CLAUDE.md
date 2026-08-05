@@ -603,6 +603,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ **Thinking doc + tab + write layer DONE** (SkyPartner, #981–#989). **Next by value÷effort:** ① populate the 4 standalone NC institutions in MAP (at ZERO); ② EMS Corps landing page + 500-alumni outreach (28 colleges already articulated); ③ work the 49 dormant statewide exhibits; ④ the mirroring playbook; ⑤ the 26-college dental list. **6 "Needs Input" items open in-tab** — biggest is HS-articulation scale. Funding metric PARKED by Sam until the mechanisms are mapped. |
 | **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`; 25 of 123 colleges had none (24 with a live landing page). | ✅ **Worklist LIVE** (SkyMail, #991–#993) — reviewer-only "⚠ No student contact" lens + cascade proposal + draft email. **17/25 resolve** from the colleges' own MAP designations; **8 need a human** (5 leadership-only, 3 no-MAP-presence = the standalone continuing-ed institutions the NC tab flagged at zero). Contact sync extended 11→24 fields. **Next:** Jessica/Ashley verify the 6 web-sourced fallbacks; make her "no CPL Assistant" cut (71 colleges) a live filter instead of a chat snapshot; the MAP manage-users URL is still open from S87. |
 | **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — the reusable engine for workforce partners (training centers, workforce boards, AJCCs, COEs, apprenticeship sponsors). | ✅ **Engine LIVE** (SkyWalker, #995) — `kb/_build_partner_crosswalk.py` + the shared `kb/occupation_credential_map.json` (139 occupations / 406 rulings / 35 curated no-CPL findings) + region presets + 32-check test. SJCOE run 1: 51 statewide / 53 local-only / 35 no-CPL. **Next:** run a 2nd partner list and work its `unmapped.json` — the "coverage compounds" claim is a design intention until a second run demonstrates it. **Parked:** the COBI tab (Sam authorized; build the *regional-capacity* view, not the judgment-based occupation matching) and an **O\*NET SOC → certification spine**, which is what would let a match be defended rather than asserted. **Gap backlog:** the 35 no-CPL occupations, ~20 of them the utility/lineworker cluster. |
+| **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ **Starter LIVE** (SkyMail, #997/#998) — team-gated ⚖️ Governance tab: 10 decision rights · 8 acceptance standards · 5 cadences · 6 open questions. **Every `owner` is deliberately unset — filling them IS the review (OQ-01).** ⚠ It measures itself: the contact-refresh cadence was **decided in June and has never run once** (0 rows in `map_college_nudges`). **Next:** ① fill the owner column; ② run that cadence once end-to-end with a named owner; ③ decide CIP's promotion criteria BEFORE the fall-2026 cutover (OQ-03); ④ cut the load-bearing list — 8 of 10 is too many. Team guide: `docs/working_with_claude_code.md` + the CLAUDE.md §"Working with the MAP team" obligations. **Agents: recommended NOT yet** — an agent must be invoked, so it fails exactly when a new user forgets; standing instructions can't be. Build a cross-impact reviewer agent when concurrency makes collisions real. |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -664,6 +665,19 @@ overstated (**2,657/120**, not 2,769/128 — 7 sandbox colleges + the statewide 
 months); 15 colleges hold multiple emails in one contact cell. Anon-gate verified (0 rows).
 Suite **70→108**, 184 files green. Durable: `methodology-route-to-a-determination-they-already-made`,
 `methodology-provenance-is-a-field`. Story: `docs/map_users_lessons.md` · handoff `docs/session_121_handoff.md`.
+**Then Sam asked what would improve GOVERNANCE** — and the answer wrote itself from the day's evidence:
+every problem hit was a **governance gap wearing a data-quality costume** (a field nobody owned, a source
+nobody owned knowing, a definition nobody owned). ⚖️ **Governance tab** (#997, team-gated) — decision
+rights · acceptance standards · cadences. **It measures itself:** reasoning stored, facts computed at
+render time, so the register's "decided each semester" contact cadence renders **"never run"** off 0 rows
+in `map_college_nudges` — decided in June, never once fired. **Every `owner` ships null**, red, counted:
+the empty cells ARE the review. Then **team enablement** (#998) as the team grows past Sam — the guide
+`docs/working_with_claude_code.md` (built on Sam's own tips to Ashley: ask to see it · a tool you return
+to, not a one-time Excel sheet · ask for a tab) **plus the stronger half**, §"Working with the MAP team"
+here, as session OBLIGATIONS — *a habit that depends on a new user remembering it fails on their first
+day*. **Agents: not yet** (an agent must be invoked; standing instructions can't be forgotten). Suite
+**185** files green. Durable: `methodology-a-governance-artifact-must-measure-itself`. Story:
+`docs/governance_lessons.md`.
 
 ## Troubleshooting
 

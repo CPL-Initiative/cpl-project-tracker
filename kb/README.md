@@ -142,6 +142,23 @@ lazy on first tab open) + 25 `coci_lookup_desc_<A-Z>.js` description shards
 (fetched per expanded row). STATIC — rebuild on a fresh COCI extract; NOT
 daily-cron artifacts. The tab renderer is root `coci_lookup.js`.
 
+## Governance register (added Session 120, 2026-08-05)
+
+`kb/governance_register.json` backs the team-gated **⚖️ Governance** tab
+(root `governance.js`). It holds the parts that are true because a human decided
+them — **decision rights** (who decides each data element, and what we do when
+it's empty), **acceptance standards** (how far each input is trusted; generalises
+the TOP "corroborate, don't gate" doctrine to every other source), **cadences**,
+and the **open questions**.
+
+Deliberately absent from the file: anything measurable. Every fact the page could
+be *wrong* about — completeness counts, when a cadence last ran — is computed at
+render time from the gated MAP contact tables, because a stored fact is one that
+can quietly go stale. Rule of thumb when editing: *could this be false without
+anyone editing the file?* If yes, it does not belong here. Every `owner` field is
+intentionally `null` and renders as a visible gap; filling them is the review, not
+a defect. Story: [`docs/governance_lessons.md`](../docs/governance_lessons.md).
+
 ## Status
 
 **Phase 2 seed — hand-curated, 50 raw titles** (credential layer) plus
