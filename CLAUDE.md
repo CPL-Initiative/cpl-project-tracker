@@ -586,8 +586,12 @@ impossible** (2,484 heads) — don't let it drive dollars; feeder split stays by
 a 12th column, to keep no-scroll; matched all 115 via a verify-or-abort script — model `credit_ftes` ==
 Malone's Credit-FTES column cross-confirmed it; **De Anza → "DeAnza"** display override, Chabot stays
 "Chabot"; ⚠ `rowsFiltered()` field-whitelists the row copy, so a new data-file field must be added there).
-Suite 552→555. **Deferred: #3b** (NC gate — inert today, feeders not in the coordinator feed). **Next:
-the Budget reconciliation.** Full story:
+Suite 552→555. **Deferred: #3b** (NC gate — inert today). **Then #978 reworked the funding memo**
+(institution total; district-grouped allocation with each district's NC campus beneath it; a
+$50k-seed intro; a Technical Assistance section w/ KB-verified MAP links + contacts). Suite →562.
+**Queued (Sam, 2026-08-05): an administrator (VPAA/VPSS/CEO) opt-in mechanism** — reframe past the
+stale-roster problem by capturing the current admin AT opt-in + CO-confirm, wired to `baselineGate`
+(full design in the handoff). **Next: the Budget reconciliation.** Full story:
 `docs/cpl_funding_lessons.md` §2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
 
 ### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)

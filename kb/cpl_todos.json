@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-04 · SkyBox — ALL of Sam's funding-model tweaks are live (4 PRs, #973–#976), including the advisory noncredit-FTES column. The funding model itself is done; the Budget reconciliation is the next real step.",
+  "_as_of": "2026-08-05 · SkyBox — ALL of Sam's funding-model AND Report/memo tweaks are live (#973–#978): the advisory NC column, plus the district-grouped funding memo (institution total, Funded Colleges/Campuses, NC campuses under their districts, a $50k-seed intro, and a Technical Assistance section). Queued next: an administrator opt-in mechanism, then the Budget reconciliation.",
   "_session": 117,
-  "_status": "Sam sent 7 tweaks to the funding model plus a big noncredit (NC) question — all shipped in four PRs (#973–#976). The award-range boxes now read Min·Avg·Max; the Report gained a 'Recommended Strategies' section, renamed the division to Academic Affairs, and dropped the $35M gross; the two duplicate $35M boxes collapsed to one editable box; the big 'available funding' box now shows the $25,240,308 total to ALL institutions (colleges + the $1M noncredit feeders); the 'Earned so far' box was relabeled so its coincidental ~$1M isn't mistaken for the NC $1M; and every college row now shows its own noncredit FTES as an advisory '+N NC FTES' line under the size cell. On the NC question Sam chose to keep the $1M targeted to the 4 standalone NC campuses and just SHOW every college's NC scale (not split it thinly across ~105 colleges). Only small deferred item: gating the NC $1M on the baseline quals (#3b — low value today, the 4 feeders aren't in the coordinator feed yet). The next real step is the Budget reconciliation. The CCR/unified-courses items below are unchanged.",
+  "_status": "Two batches of tweaks, all shipped. Batch 1 (the tab, #973–#976): award boxes Min·Avg·Max; a 'Recommended Strategies' section; the division renamed to Academic Affairs; the $35M gross dropped; the two duplicate $35M boxes collapsed to one editable box; the big 'available funding' box now shows the $25,240,308 total to ALL institutions; the 'Earned so far' box relabeled; and every college row shows its own noncredit FTES as an advisory '+N NC FTES' line. Batch 2 (the Report/memo, #978): the allocation summary now leads with the $25.24M institution total (college pool + $1M NC, broken out) and counts 'Funded Colleges (115)' + 'Funded Noncredit Campuses (4)'; the per-college table is grouped by district (A→Z) with each district's noncredit campus listed beneath it; the intro cites the 2025-26 $50,000 seed grant (ESS 25-82) and its 3 goals; and a new Technical Assistance section lists MAP support links + contacts. Queued for next session: a simple ADMINISTRATOR opt-in button on the college rows (VPAA/VPSS/CEO), designed to sidestep the stale-roster problem — full recommendation in docs/cpl_funding_handoff.md. Then the Budget reconciliation. The CCR/unified-courses items below are unchanged.",
   "items": [
     {
       "id": "funding-price-factor-live",
@@ -17,6 +17,18 @@
       "text": "🆕 LIVE: every college row now shows its own noncredit FTES as an advisory '+N NC FTES' line under the size cell (e.g. San Francisco +3,897) — visibility only, it earns nothing; the $1M NC support still goes to the 4 standalone NC campuses. Poke around and tell me if you'd rather it be a standalone sortable column (I kept it as a sub-line to avoid horizontal scroll). ⚠ Still worth checking with Malone: Calbright's 21,438 NC FTES vs only 2,484 students looks impossible."
     },
     {
+      "id": "funding-memo-review",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🆕 The funding Report (📄 Report sub-tab) got a big rework: the allocation summary now shows the $25.24M institution total (college pool + $1M NC), 'Funded Colleges 115' + 'Funded Noncredit Campuses 4'; the per-college table is grouped by district with each district's noncredit campus beneath it; the intro cites the $50k seed grant (ESS 25-82) + its 3 goals; and there's a new Technical Assistance section with MAP links + contacts (Estrada, Nelson). Two things only you can fill: a public URL for the ESS 25-82 memo (the KB doesn't carry one — the link slot is ready), and the real Office Hours 'Get Involved' link on the MAP site (I point at map.rccd.edu since the KB has no dedicated URL)."
+    },
+    {
+      "id": "funding-optin",
+      "for": "fable",
+      "tab": "implementation-funding",
+      "text": "QUEUED (Sam's idea): a simple ADMINISTRATOR opt-in button on the college rows (VPAA/VPSS/CEO) — the participation-request qual. Recommended design (full write-up in docs/cpl_funding_handoff.md): don't verify against our stale admin roster — capture the current admin AT opt-in time (name/title/email form → pending cpl_optin row) and let the CO confirm in a review lane (reuse the merge-confirm pattern), then wire it into baselineGate. v2 = a magic-link email to a college-domain address for self-service. Build v1 next."
+    },
+    {
       "id": "funding-outreach-16",
       "for": "sam",
       "tab": "implementation-funding",
@@ -26,7 +38,7 @@
       "id": "funding-budget-consolidation",
       "for": "fable",
       "tab": "budget",
-      "text": "After the NC cluster (advisory NC column #5 + gating the NC $1M #3b): the Budget reconciliation. Fold Implementation Funding in as a Budget sub-view — both tabs are JS-rendered, so it's a nav change plus a segmented control [Sources & Uses | $35M model | $15M Distributions | Report]. The single-source wiring (#949) already landed, so the two tabs agree on their numbers. Then: add/delete/reorder ledger rows, and the budget-vs-actual lane."
+      "text": "The Budget reconciliation (the next big engineering step, after the queued opt-in). Fold Implementation Funding in as a Budget sub-view — both tabs are JS-rendered, so it's a nav change plus a segmented control [Sources & Uses | $35M model | $15M Distributions | Report]. The single-source wiring (#949) already landed, so the two tabs agree on their numbers. Then: add/delete/reorder ledger rows, and the budget-vs-actual lane. (The funding-model tweaks + Report memo rework are all done; only #3b — gating the NC $1M — is deferred, low value today.)"
     },
     {
       "id": "esl-review",
