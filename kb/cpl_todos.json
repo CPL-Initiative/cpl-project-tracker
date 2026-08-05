@@ -1,20 +1,38 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyPartner — the Noncredit & Learning Partners tab is LIVE with the six modes, a self-refreshing dormant-exhibit worklist, and an ✎ Add insight affordance on every card.",
-  "_session": "SkyPartner (119)",
-  "_status": "Noncredit/Learning-Partner CPL went from a cold research ask to a live instrument today: a ~1,530-line thinking document, a new COBI tab, narrative cross-references, and a write layer that's applied and working. The headline finding is that 49 statewide exhibits sit published-but-unused across 252 college-slots — the expensive faculty work is already done on all of them, so the near-term play is outreach rather than building more. The four standalone noncredit institutions are at zero in MAP, which is the cheapest fix available. Funding metrics are deliberately parked until the mechanisms are fully mapped. Six items are waiting on Sam's input, and they can now be answered directly in the tab.",
+  "_as_of": "2026-08-05 · SkyMail — the MAP Users tab can now show which colleges have NO student-facing CPL contact, and who to route each one to.",
+  "_session": "SkyMail (120)",
+  "_status": "A student asking one of 25 colleges for CPL through MAP was reaching nobody: MAP sends those requests to the college's Primary Contact email, and those 25 had none on file — 24 of them with a live landing page. The MAP Users tab now has a 'No student contact' filter listing exactly those colleges, with a proposed person for each. Every proposal is someone the COLLEGE already designated in MAP (CPL Coordinator, CPL Assistant, CPL Counselor, Articulation Officer...), because colleges are locally governed and we route to their people rather than choosing new ones — that resolves 17 of the 25. The other 8 need a human to name someone; Jessica already supplied contacts for two of them. Ashley and Jessica are in the session and their MAP knowledge is what the remaining work needs.",
   "items": [
     {
-      "id": "nc-tab-live",
+      "id": "mu-verify-fallbacks",
       "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "🤝 NEW TAB — Noncredit & Learning Partners. Start with 'Where this sits today': it opens with the SIX WAYS CPL applies (mirrored courses · certificates and licenses · noncredit certificates · high-school Cx · portfolio · CPL toward a noncredit award), each defined by what the student brings, what it costs, and where it stands — so the team can prioritize college by college. Sections collapse; there are jump links, Expand/Collapse all, and a report generator (Copy · Markdown · Word · Print)."
+      "tab": "map-users",
+      "text": "📇 MAP USERS — 6 colleges need your eye. Siskiyous, Cosumnes River, Feather River, Hartnell, NOCE and Calbright have no CPL contact in MAP, so I looked up the counseling inbox each college publishes on its own website. Those are a starting point, not a MAP designation — the tab shows the source link next to each one. Gavilan needed a human to get right, so at least one of these six probably does too. Tell me the correct person and I'll record it with your name on it."
     },
     {
-      "id": "nc-add-insight",
+      "id": "mu-no-contact-25",
       "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "✎ You can now ADD INSIGHT on any card — questions, opportunities, modes, use cases. Needs the team phrase set (same one as Team & RACI). Revising keeps the previous version; nothing is ever deleted and answering never closes an item. When you've added a few, '↑ Promote notes' exports a packet so they can be folded into the register properly."
+      "tab": "map-users",
+      "text": "⚠ THE HEADLINE: 25 of 123 colleges have no Primary Contact email — the address MAP sends student CPL requests to. 24 of them have a live landing page, so a student asking those colleges today reaches nobody. Open MAP Users → '⚠ No student contact' (needs sign-in). 17 have a proposed person drawn from their own MAP designations; the tab drafts the email telling the college who we routed them to."
+    },
+    {
+      "id": "mu-ask-8",
+      "for": "sam",
+      "tab": "map-users",
+      "text": "🙋 8 colleges have nobody to propose. 5 have only a VPAA or CEO on file — I deliberately did NOT route student requests to a vice president, since that's the college's call. 3 (Calbright Credit, North Orange Continuing Ed Credit, San Diego CCE Credit) have zero MAP users at all — that's the same standalone continuing-ed onboarding gap the Noncredit tab flagged, not a contact problem."
+    },
+    {
+      "id": "mu-cpl-assistant-lens",
+      "for": "fable",
+      "tab": "map-users",
+      "text": "Build Jessica's cut as a live tab filter: the 71 colleges with no CPL Assistant, with the best fallback user (Primary Contact first, then the cascade). It was delivered as a chat table, which goes stale against the monthly sync. The lens plumbing already exists — it's a sibling of the gap lens."
+    },
+    {
+      "id": "mu-map-url",
+      "for": "sam",
+      "tab": "map-users",
+      "text": "🔗 Still open since Session 87: the exact MAP URL you want the 'update your contacts' link to point at. The draft emails currently link each college's MAP CPL dashboard. One-line change once you send it."
     },
     {
       "id": "nc-needs-input",
@@ -35,46 +53,16 @@
       "text": "⚠ NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit and Calbright appear on ZERO of MAP's 1,987 credential titles — while ~48 entries already name a specific high school. The gap isn't permission or capability; nobody has done the data entry. Highest value-for-effort item in the whole workstream."
     },
     {
-      "id": "nc-dental-26",
-      "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "🦷 27 California colleges teach dental assisting. Exactly ONE (West LA) awards CPL for the RDA license — converting 214 of 215 eligible units. Rocio's 16 units came from the only college that built the pathway. The other 26 are a named outreach list today, no build required."
-    },
-    {
-      "id": "nc-ems-outreach",
-      "for": "fable",
-      "tab": "nc-learning-partners",
-      "text": "🚑 EMS Corps: build the landing page + alumni outreach. East LA IS already in MAP, and the statewide EMT exhibit converts at 75.6% across 28 colleges — so this is OUTREACH, not articulation-building. Keynote slide 20 is already the prototype (6 destination pathways). The page IS the outreach vehicle: one link to 500+ alumni."
-    },
-    {
-      "id": "nc-mirroring-playbook",
-      "for": "fable",
-      "tab": "nc-learning-partners",
-      "text": "📘 Write the mirroring playbook. It's the lead recommendation, the Chancellor already named it statewide practice, and there are two documented instruments (a jointly-agreed summative exam, or a CPL rubric on the course outline) — but a college that wants to do it today has nowhere to look."
-    },
-    {
       "id": "funding-optin",
       "for": "fable",
       "tab": "implementation-funding",
       "text": "QUEUED (Sam's idea): a simple ADMINISTRATOR opt-in button on the college rows (VPAA/VPSS/CEO) — the participation-request qual. Recommended design (full write-up in docs/cpl_funding_handoff.md): don't verify against our stale admin roster — capture the current admin AT opt-in time (name/title/email form → pending cpl_optin row) and let the CO confirm in a review lane (reuse the merge-confirm pattern), then wire it into baselineGate. v2 = a magic-link email to a college-domain address for self-service. Build v1 next."
     },
     {
-      "id": "funding-budget-consolidation",
-      "for": "fable",
-      "tab": "budget",
-      "text": "The Budget reconciliation (the next big engineering step, after the queued opt-in). Fold Implementation Funding in as a Budget sub-view — both tabs are JS-rendered, so it's a nav change plus a segmented control [Sources & Uses | $35M model | $15M Distributions | Report]. The single-source wiring (#949) already landed, so the two tabs agree on their numbers. Then: add/delete/reorder ledger rows, and the budget-vs-actual lane. (The funding-model tweaks + Report memo rework are all done; only #3b — gating the NC $1M — is deferred, low value today.)"
-    },
-    {
       "id": "esl-review",
       "for": "sam",
       "tab": "unified-courses",
       "text": "🆕 The ESL packaging DRY-RUN is ready to eyeball (kb/esl_package_out/2026-07-15/esl_package_report.md + the visual). It maps all 2,364 ESL courses → Beginning/Intermediate/Advanced + carve-outs. Two things worth your look before it applies: (1) confirm the 22 'Transfer-level ESL' candidates (college-composition courses — no transferable flag in the data, so I held them out rather than fold them); (2) the ~629 no-level courses folded to Beginning as the safe under-claim. Green-light → it applies."
-    },
-    {
-      "id": "esl-apply",
-      "for": "fable",
-      "tab": "unified-courses",
-      "text": "✅ Doctrine now v0.13 — ALL named open forks closed (P-13 honors/variant, P-5 whole-vs-part units, D-8 cross-discipline; #791). ESL dry-run shipped (#792). NEXT on Sam's green-light: run the ESL apply from the committed plan (Rule 9: fresh read, INSERT-only ON CONFLICT DO NOTHING, cohort package-esl-s117@bot; re-key the 6 promotions). Wire the letter-rung fix first (A/B/C/D ladders currently default to Beginning). Then the whole-worklist batch-apply (Doctrine Part V step 3)."
     },
     {
       "id": "carp-merge-confirms",

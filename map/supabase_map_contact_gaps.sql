@@ -1,6 +1,6 @@
 -- ─────────────────────────────────────────────────────────────────────────
 -- map/supabase_map_contact_gaps.sql — the STUDENT-CONTACT gap worklist
--- Session 120 (SkyRoute, 2026-08-05). Schema of record; applied live via the
+-- Session 120 (SkyMail, 2026-08-05). Schema of record; applied live via the
 -- Supabase MCP as migrations map_contact_gaps_worklist,
 -- map_contacts_six_more_roles_and_person_cascade, map_contact_gaps_person_cascade_v2.
 --

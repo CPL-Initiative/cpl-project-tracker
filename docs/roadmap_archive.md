@@ -3346,3 +3346,31 @@ first (linked on the private tab). Suite **545/545**. ⚠ **Do NOT reintroduce a
 is THE dial. Durable: `methodology-retire-a-global-dial-into-per-item-dials`. Story:
 `docs/cpl_funding_lessons.md` §2026-08-04 · handoff `docs/cpl_funding_handoff.md`. **Next: Budget reconciliation.**
 Side-lane — left the numbered handoff to the CCR mainline.
+
+### SkyBox — Implementation Funding: ALL of Sam's tweaks + the NC rehaul (2026-08-04, #973–#976 MERGED)
+
+Sam's 7 display/report tweaks. **#973:** award boxes → **Min·Avg·Max**; Report gained a
+**Recommended Strategies** section, renamed the division **ESS → Academic Affairs**, dropped
+the **$35M gross** (leads with available college funding). **#974:** the duplicate $35M boxes
+**collapse to one editable box**; hero is now the **INSTITUTION total $25,240,308** (college
+pool + rural + $1M NC, 3-way note — raising the feeder now shifts money college→NC *inside* the
+total, no longer shrinks the hero); "Earned so far" relabeled **"…not the noncredit carve-out."**
+Suite **545→552**; all mirror to the public page (shared JS). **Big NC question — Sam chose
+"targeted + advisory NC column":** keep $1M with the 4 standalone NC campuses (SF earns via the
+credit column — its FTES sheet shows $236,645 vs $0 for the NC campuses — not shut out), add an
+advisory NC column, DON'T dilute across ~105 colleges. ⚠ **Calbright 21,438 NC FTES is
+impossible** (2,484 heads) — don't let it drive dollars; feeder split stays by headcount.
+**#976 shipped #5:** an advisory per-college **NC-FTES sub-line** under the size cell (a sub-line, not
+a 12th column, to keep no-scroll; matched all 115 via a verify-or-abort script — model `credit_ftes` ==
+Malone's Credit-FTES column cross-confirmed it; **De Anza → "DeAnza"** display override, Chabot stays
+"Chabot"; ⚠ `rowsFiltered()` field-whitelists the row copy, so a new data-file field must be added there).
+Suite 552→555. **Deferred: #3b** (NC gate — inert today). **Then #978 reworked the funding memo**
+(institution total; district-grouped allocation with each district's NC campus beneath it; a
+$50k-seed intro; a Technical Assistance section w/ KB-verified MAP links + contacts). Suite →562.
+**Administrator (VPAA/VPSS/CEO) opt-in — v1 SHIPPED (SkyOptIn, 2026-08-05):** a public self-service
+opt-in on each college row (works on the public page) captures the attesting admin AT opt-in;
+**attest-first** (Sam's call — the submit clears `baselineGate`, the CO confirms/revokes in a lane, no
+pre-gate); PII-safe (attestor name/email reviewer-gated via column grants + the gated
+`cpl_funding_optin_review()` RPC; `kb/supabase_funding_optin.sql`). v2 (magic-link email) still queued.
+**Next: the Budget reconciliation.** Full story: `docs/cpl_funding_lessons.md` §2026-08-05 (SkyOptIn) ·
+§2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
