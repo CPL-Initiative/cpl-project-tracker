@@ -111,6 +111,9 @@
       ".mapu-propose { border-left:3px solid var(--seal-blue); padding-left:9px; }",
       ".mapu-src { font-size:.72rem; color: var(--link); text-decoration:none; }",
       ".mapu-src:hover { text-decoration:underline; }",
+      ".mapu-fb { margin:0 0 4px; }",
+      ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
+      ".mapu-via-cur { color: var(--hunter, #2c601a); }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
       ".mapu-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
@@ -191,52 +194,80 @@
       return r.json();
     });
   }
-  // ── Web-sourced fallback contacts (Sam, 2026-08-05) ───────────────────────
-  // For the colleges where MAP holds NO CPL-side designation, there is nobody to
-  // propose from their own data. Rather than defaulting to a vice president, we
-  // look up the college's published counseling/advising inbox and offer it as a
-  // clearly-labelled SUGGESTION with the page it came from, so whoever acts on it
-  // can verify the source themselves. It is never treated as a MAP designation.
+  // ── Fallback contacts, for colleges MAP holds no CPL designation for ──────
+  // These colleges have nobody to propose from their own MAP data. Rather than
+  // defaulting to a vice president, we offer a fallback — clearly labelled, with
+  // its PROVENANCE, because where a contact came from changes how much you should
+  // trust it. Two kinds, and the tab shows which:
   //
-  // Rules used when sourcing these (keep them if you add more):
-  //  · a DEPARTMENT inbox, never an individual counselor — individuals churn, and
-  //    naming a specific person is the determination we are trying not to make;
-  //  · ACADEMIC counseling/advising, never mental-health or wellness — several of
-  //    these colleges publish a "Be Well"-style address, and routing a credit
+  //   via "curator" — a CPL Initiative team member who knows the college gave it
+  //     to us directly. The strongest of the fallbacks: a person made a judgment
+  //     a lookup cannot. Records who and when, so it can be questioned later.
+  //   via "web" — found on the college's own published pages. A starting point
+  //     to VERIFY (the source link is shown for exactly that reason), not an
+  //     authority.
+  //
+  // NEITHER is a MAP designation, and neither is ever fed into the cascade —
+  // the cascade stays strictly the college's own designations.
+  //
+  // Rules for adding a web-sourced one (keep them):
+  //  · a DEPARTMENT inbox, never an individual counselor — individuals churn,
+  //    and naming a specific person is the determination we are avoiding. A
+  //    CURATOR may name an individual; they know who actually answers.
+  //  · ACADEMIC counseling/advising, never mental-health or wellness — several
+  //    of these colleges publish a "Be Well"-style address, and routing a credit
   //    question to a mental-health service would be a genuinely bad outcome;
-  //  · if neither exists, record null + the page, and let a human decide.
-  // Verified 2026-08-05. These are institutional addresses published on public
-  // .edu sites, which is why they can live in a public repo when MAP contact
-  // rows cannot.
-  var WEB_SOURCED = {
-    "College of the Siskiyous": {
-      email: "counselingservices@siskiyous.edu",
-      source: "https://www.siskiyous.edu/counseling/", label: "Counseling & Student Support" },
-    "Cosumnes River College": {
-      email: "crc-counseling@crc.losrios.edu",
-      source: "https://crc.losrios.edu/student-resources/counseling/contact-your-counselor",
-      label: "Counseling" },
-    "Feather River College": {
-      email: "frcadvising@frc.edu",
-      source: "https://www.frc.edu/advising/index", label: "Advising & Counseling Center" },
-    "Hartnell College": {
-      email: "Counseling@Hartnell.edu",
-      source: "https://www.hartnell.edu/support/counseling/index.html", label: "Counseling & Guidance" },
-    "North Orange Continuing Education Credit": {
-      email: "counseling@noce.edu",
-      source: "https://noce.edu/home/contact-us/", label: "NOCE Counseling" },
-    "Calbright College Credit": {
-      email: "success@calbright.org",
-      source: "https://www.calbright.edu/talk-with-us/", label: "Student Success (Calbright has no campus counseling office)" },
-    // Publishes no single address — a form and per-campus offices respectively.
+  //  · if neither exists, record contacts: [] + the page, and let a human decide.
+  var FALLBACK_CONTACTS = {
     "Gavilan College": {
-      email: null, source: "https://www.gavilan.edu/counseling/online-form.php",
-      label: "Counseling uses a web contact form, not an inbox" },
+      via: "curator", by: "Jessica", on: "2026-08-05",
+      contacts: [
+        { name: "Jessica Terry", title: "Skilled Trades & Industry CAP Counselor",
+          email: "jterry@gavilan.edu" },
+        { name: "Dewitt Stuckey", title: "Veterans Resource Center",
+          email: "dstuckey@gavilan.edu" },
+      ],
+      // kept for context: the lookup that came up empty before Jessica supplied these
+      source: "https://www.gavilan.edu/counseling/online-form.php",
+      note: "Gavilan publishes a web form rather than a counseling inbox.",
+    },
     "San Diego College of Continuing Education Credit": {
-      email: null, source: "https://sdcce.edu/student-services/academic-support/counseling.html",
-      label: "Counseling is per-campus across 7 campuses — no single inbox" },
+      via: "curator", by: "Jessica", on: "2026-08-05",
+      // Jessica wrote "sdceecc@sdccd.ed"; every sibling SDCCD address is @sdccd.edu
+      // and .ed is not a TLD in use here, so recorded as .edu and flagged back to
+      // her. Change it if .ed turns out to be right.
+      contacts: [
+        { name: null, title: "ECC campus counseling", email: "sdceecc@sdccd.edu" },
+      ],
+      source: "https://sdcce.edu/student-services/academic-support/counseling.html",
+      note: "Counseling is per-campus across 7 campuses; ECC is the one to use.",
+    },
+    "College of the Siskiyous": {
+      via: "web", source: "https://www.siskiyous.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling & Student Support",
+                   email: "counselingservices@siskiyous.edu" }] },
+    "Cosumnes River College": {
+      via: "web",
+      source: "https://crc.losrios.edu/student-resources/counseling/contact-your-counselor",
+      contacts: [{ name: null, title: "Counseling",
+                   email: "crc-counseling@crc.losrios.edu" }] },
+    "Feather River College": {
+      via: "web", source: "https://www.frc.edu/advising/index",
+      contacts: [{ name: null, title: "Advising & Counseling Center",
+                   email: "frcadvising@frc.edu" }] },
+    "Hartnell College": {
+      via: "web", source: "https://www.hartnell.edu/support/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Guidance",
+                   email: "Counseling@Hartnell.edu" }] },
+    "North Orange Continuing Education Credit": {
+      via: "web", source: "https://noce.edu/home/contact-us/",
+      contacts: [{ name: null, title: "NOCE Counseling", email: "counseling@noce.edu" }] },
+    "Calbright College Credit": {
+      via: "web", source: "https://www.calbright.edu/talk-with-us/",
+      contacts: [{ name: null, title: "Student Success", email: "success@calbright.org" }],
+      note: "Calbright is online-only and has no campus counseling office." },
   };
-  function webSourced(college) { return WEB_SOURCED[college] || null; }
+  function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
 
   // ── The student-contact worklist (Session 120) ────────────────────────────
   // map_contact_gaps is a security_invoker view over the same gated tables, so
@@ -448,13 +479,20 @@
           picks.unshift({ key: "proposed", label: "Proposed CPL contact (" + gap.proposed_source + ")",
                           name: gap.proposed_name || "", email: gap.proposed_email });
         }
-        // For an ASK college, the published counseling inbox is often the only way
-        // to reach anyone at all. Offered, labelled as web-sourced, uncheckable.
-        var w = webSourced(college);
-        if (!gap.proposed_email && w && w.email
-            && !picks.some(function (p) { return p.email === w.email; })) {
-          picks.unshift({ key: "web", label: "Published counseling inbox (from their website)",
-                          name: w.label || "", email: w.email });
+        // For an ASK college the fallback is often the only way to reach anyone.
+        // Offered pre-checked but uncheckable-away, labelled with its provenance
+        // so nobody mistakes a website lookup for a MAP designation.
+        var f = fallbackFor(college);
+        if (!gap.proposed_email && f) {
+          (f.contacts || []).slice().reverse().forEach(function (c) {
+            if (!c.email || picks.some(function (p) { return p.email === c.email; })) return;
+            picks.unshift({
+              key: "fallback",
+              label: f.via === "curator"
+                ? "Suggested by " + (f.by || "the CPL team")
+                : "Published on their website",
+              name: c.name || c.title || "", email: c.email });
+          });
         }
         showNudgePicker(college, picks, (c && c.landing_page_url) || "", [], gap);
         return;
@@ -755,27 +793,44 @@
         + "below as a starting point — <b>check the source link before using it</b>; it is a "
         + "public web page, not a MAP designation.</p>"
         + '<table class="mapu-table mapu-gaptable"><thead><tr>'
-        + "<th>College</th><th>Why</th><th>Published counseling contact</th><th>Actions</th>"
+        + "<th>College</th><th>Why</th><th>Fallback contact</th><th>Actions</th>"
         + "</tr></thead><tbody>";
       asks.forEach(function (g) {
-        var w = webSourced(g.college);
-        var wc = !w
-          ? '<span class="mapu-st mapu-st-inactive">not looked up</span>'
-          : (w.email
-              ? '<span class="mapu-disc">' + esc(w.email) + "</span>"
-                + '<br><a class="mapu-src" href="' + esc(w.source) + '" target="_blank" rel="noopener">'
-                + esc(w.label) + " ↗</a>"
-              : '<span class="mapu-st mapu-st-inactive">no published inbox</span>'
-                + '<br><a class="mapu-src" href="' + esc(w.source) + '" target="_blank" rel="noopener">'
-                + esc(w.label) + " ↗</a>");
         h += "<tr><td>" + esc(g.college) + "</td>"
           + '<td><span class="mapu-st mapu-st-inactive">' + esc(g.ask_reason || "—") + "</span></td>"
-          + "<td>" + wc + "</td>"
+          + "<td>" + fallbackCell(g.college) + "</td>"
           + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
           + "\u{1F4E3} ask them</button></td></tr>";
       });
       h += "</tbody></table>";
     }
+    return h;
+  }
+
+  // Renders a fallback with its provenance ALWAYS visible. A curator-supplied
+  // contact says who gave it; a web-sourced one links the page it came from.
+  // Showing the address without showing where it came from is the failure mode
+  // this is written to avoid.
+  function fallbackCell(college) {
+    var f = fallbackFor(college);
+    if (!f) return '<span class="mapu-st mapu-st-inactive">not looked up</span>';
+    var h = "";
+    (f.contacts || []).forEach(function (c) {
+      h += '<div class="mapu-fb">'
+        + (c.name ? "<b>" + esc(c.name) + "</b> " : "")
+        + '<span class="mapu-disc">' + esc(c.email) + "</span>"
+        + (c.title ? '<br><span class="mapu-fb-t">' + esc(c.title) + "</span>" : "")
+        + "</div>";
+    });
+    if (!(f.contacts || []).length) {
+      h += '<span class="mapu-st mapu-st-inactive">no published inbox</span>';
+    }
+    h += f.via === "curator"
+      ? '<div class="mapu-src mapu-via-cur">✔ from ' + esc(f.by || "the CPL team")
+        + (f.on ? ", " + esc(f.on) : "") + " — not a MAP designation</div>"
+      : '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+        + "from their website ↗</a> — verify before use</div>";
+    if (f.note) h += '<div class="mapu-fb-t">' + esc(f.note) + "</div>";
     return h;
   }
 
@@ -924,8 +979,9 @@
     _statusBadge: statusBadge,
     _discCell: discCell,
     _gapRows: gapRows,
-    _webSourced: webSourced,
-    _WEB_SOURCED: WEB_SOURCED,
+    _fallbackFor: fallbackFor,
+    _FALLBACK_CONTACTS: FALLBACK_CONTACTS,
+    _fallbackCell: fallbackCell,
     _gapsHtml: gapsHtml,
     _gapsCsv: gapsCsv,
     _buildContactMailto: buildContactMailto,

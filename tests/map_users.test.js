@@ -393,22 +393,42 @@ function makeWin(opts) {
   check("ask email: asks for a name instead of proposing one",
     /Please reply with the name/.test(askMail) && !/WHAT WE PROPOSE/.test(askMail));
 
-  // Web-sourced fallbacks must never masquerade as a MAP designation, and must
-  // always carry the page they came from — that link IS the accountability.
-  const WS = T._WEB_SOURCED;
-  check("web-sourced: every entry carries a source URL",
-    Object.keys(WS).every((k) => /^https:\/\//.test(WS[k].source)));
-  check("web-sourced: entries without a published inbox record null, not a guess",
-    Object.keys(WS).every((k) => WS[k].email === null || /@/.test(WS[k].email)));
-  check("web-sourced: no mental-health/wellness inbox used as a CPL contact",
-    Object.keys(WS).every((k) => !/bewell|be-well|wellness|mentalhealth/i.test(WS[k].email || "")));
-  check("web-sourced: suggestions are department inboxes, not named individuals",
-    Object.keys(WS).every((k) => {
-      const e = WS[k].email;
-      if (!e) return true;
-      const local = e.split("@")[0].toLowerCase();
-      return /counsel|advis|success|student/.test(local);
-    }));
+  // Fallbacks must never masquerade as a MAP designation, and must always show
+  // WHERE they came from — a curator's name, or the page. Displaying the address
+  // without its provenance is the failure mode worth a test.
+  const FB = T._FALLBACK_CONTACTS;
+  const keys = Object.keys(FB);
+  check("fallbacks: every entry declares a provenance",
+    keys.every((k) => FB[k].via === "curator" || FB[k].via === "web"));
+  check("fallbacks: every web-sourced entry carries a source URL",
+    keys.filter((k) => FB[k].via === "web").every((k) => /^https:\/\//.test(FB[k].source)));
+  check("fallbacks: every curator entry records who supplied it",
+    keys.filter((k) => FB[k].via === "curator").every((k) => !!FB[k].by));
+  check("fallbacks: every listed contact has a real address",
+    keys.every((k) => (FB[k].contacts || []).every((c) => /.+@.+\..+/.test(c.email))));
+  check("fallbacks: no mental-health/wellness inbox used as a CPL contact",
+    keys.every((k) => (FB[k].contacts || []).every(
+      (c) => !/bewell|be-well|wellness|mentalhealth/i.test(c.email))));
+  // A web LOOKUP may only ever yield a department inbox; a CURATOR may name a
+  // person, because they know who actually answers.
+  check("fallbacks: web-sourced entries are department inboxes, never individuals",
+    keys.filter((k) => FB[k].via === "web").every((k) =>
+      (FB[k].contacts || []).every((c) =>
+        c.name === null && /counsel|advis|success|student/.test(c.email.split("@")[0].toLowerCase()))));
+  check("fallbacks: a college may carry more than one contact",
+    (FB["Gavilan College"].contacts || []).length === 2);
+
+  const curCell = T._fallbackCell("Gavilan College");
+  check("fallback cell: curator-supplied shows who gave it", /from Jessica/.test(curCell));
+  check("fallback cell: curator-supplied says it is NOT a MAP designation",
+    /not a MAP designation/.test(curCell));
+  check("fallback cell: renders both Gavilan contacts",
+    /jterry@gavilan\.edu/.test(curCell) && /dstuckey@gavilan\.edu/.test(curCell));
+  const webCell = T._fallbackCell("Hartnell College");
+  check("fallback cell: web-sourced links its source and says to verify",
+    /from their website/.test(webCell) && /verify before use/.test(webCell));
+  check("fallback cell: unknown college is honest about not being looked up",
+    /not looked up/.test(T._fallbackCell("Nowhere College")));
 
   const csv = T._gapsCsv();
   check("gaps csv: header + one line per real gap college", csv.split("\n").length === 4);
