@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-08-04T14:45:11.274817+00:00",
+  "scraped_at": "2026-08-05T09:09:04.018200+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26501,
+    "jst": 26504,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 124,
+      "jst": 120,
       "star": false
     },
     "Merced College": {
@@ -107,7 +107,7 @@
     },
     "San Bernardino Valley College": {
       "vets": 907,
-      "jst": 207,
+      "jst": 208,
       "star": false
     },
     "College of the Desert": {
@@ -227,7 +227,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 164,
+      "jst": 167,
       "star": false
     },
     "Citrus College": {
@@ -262,7 +262,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 155,
+      "jst": 156,
       "star": true
     },
     "Golden West College": {
@@ -292,7 +292,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 121,
+      "jst": 122,
       "star": true
     },
     "Lassen College": {
@@ -467,7 +467,7 @@
     },
     "Palomar College": {
       "vets": 1019,
-      "jst": 1,
+      "jst": 2,
       "star": false
     },
     "Los Angeles City College": {

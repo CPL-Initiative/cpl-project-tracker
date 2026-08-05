@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-04",
+ "as_of": "2026-08-05",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 43220,
-  "pa": 40549,
-  "p2": 4793,
-  "p3": 16830,
+  "pe": 43151,
+  "pa": 40480,
+  "p2": 4752,
+  "p3": 16779,
   "pp": 5,
-  "pe_u": 1355082.45,
-  "pa_u": 242102.15,
-  "p3_u": 103141.95,
+  "pe_u": 1354676.45,
+  "pa_u": 241481.15,
+  "p3_u": 102566.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -529,13 +529,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 1861,
-   "pe_u": 33229.0,
-   "pa": 1828,
-   "pa_u": 28435.0,
-   "p2": 1309,
-   "p3": 1736,
-   "p3_u": 28060.0,
+   "pe": 1782,
+   "pe_u": 32438.0,
+   "pa": 1749,
+   "pa_u": 27740.0,
+   "p2": 1263,
+   "p3": 1680,
+   "p3_u": 27434.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -729,13 +729,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2390,
-   "pe_u": 50556.0,
-   "pa": 2059,
-   "pa_u": 12034.5,
-   "p2": 419,
-   "p3": 1954,
-   "p3_u": 11213.0,
+   "pe": 2395,
+   "pe_u": 50607.0,
+   "pa": 2064,
+   "pa_u": 12085.5,
+   "p2": 424,
+   "p3": 1959,
+   "p3_u": 11264.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -806,10 +806,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Oxnard": {
-   "pe": 154,
-   "pe_u": 8401.0,
-   "pa": 153,
-   "pa_u": 612.0,
+   "pe": 155,
+   "pe_u": 8438.0,
+   "pa": 154,
+   "pa_u": 616.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -872,10 +872,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Reedley College": {
-   "pe": 124,
-   "pe_u": 4589.5,
-   "pa": 107,
-   "pa_u": 522.5,
+   "pe": 125,
+   "pe_u": 4653.5,
+   "pa": 108,
+   "pa_u": 526.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1140,10 +1140,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Ventura": {
-   "pe": 164,
-   "pe_u": 9750.0,
-   "pa": 164,
-   "pa_u": 835.0,
+   "pe": 167,
+   "pe_u": 9983.0,
+   "pa": 167,
+   "pa_u": 850.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1274,17 +1274,17 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1354605.95,
-   "pa_u": 242102.15,
-   "p3_u": 103141.95
+   "pe_u": 1354199.95,
+   "pa_u": 241481.15,
+   "p3_u": 102566.95
   },
   "map": {
-   "pe_u": 1361982.45,
-   "pa_u": 242769.65,
-   "p3_u": 103166.95
+   "pe_u": 1361787.45,
+   "pa_u": 242159.65,
+   "p3_u": 102591.95
   },
   "ratio": {
-   "pe_u": 1.0054,
+   "pe_u": 1.0056,
    "pa_u": 1.0028,
    "p3_u": 1.0002
   }
@@ -1406,7 +1406,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-04",
+ "vet_star_as_of": "2026-08-05",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };

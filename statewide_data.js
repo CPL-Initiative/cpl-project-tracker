@@ -65983,8 +65983,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CCNA7-1-001"
       ],
-      "title": "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240",
-      "unified_title": "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240",
+      "title": "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
+      "unified_title": "Cisco Certified Network Associate (CCNA) CIS 210 and 240",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -65992,7 +65992,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Cisco Certified Network Associate (CCNA) CIS 210, 216 and 240"
+        "Cisco Certified Network Associate (CCNA) CIS 210 and 240"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Information Technology",
@@ -66097,10 +66097,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 210",
           "credit": "3 hours in Introduction to Computer Networking"
-        },
-        {
-          "course": "CIS 216",
-          "credit": "3 hours in Network Security"
         },
         {
           "course": "CIS 240",
@@ -66114,8 +66110,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CCNA8-1-001"
       ],
-      "title": "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225",
-      "unified_title": "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225",
+      "title": "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
+      "unified_title": "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -66123,7 +66119,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "Cisco Certified Network Associate (CCNA) - CIS 210, 216, 224 and 225"
+        "Cisco Certified Network Associate (CCNA) - CIS 210, 224 and 225"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Information Technology",
@@ -66228,10 +66224,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CIS 210",
           "credit": "3 hours in Introduction to Computer Networking"
-        },
-        {
-          "course": "CIS 216",
-          "credit": "3 hours in Network Security"
         },
         {
           "course": "CIS 224",
@@ -229377,11 +229369,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 245,
+        "credit_recs": 243,
         "exhibits": 223,
         "disciplines": 13,
         "ccc_collaborative": 0,
-        "industry_certs": 28,
+        "industry_certs": 26,
         "pct": 1.9
       },
       {
@@ -230234,9 +230226,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Information Technology",
-        "credit_recs": 381,
+        "credit_recs": 379,
         "exhibits": 218,
-        "courses": 261,
+        "courses": 260,
         "colleges": 44,
         "ccc_collaborative": 106,
         "pct": 3.0
@@ -230392,11 +230384,11 @@ window.CPL_STATEWIDE = {
         "credit_recs": 6591,
         "exhibits": 2083,
         "colleges": 83,
-        "pct": 52.4
+        "pct": 52.5
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3523,
+        "credit_recs": 3521,
         "exhibits": 1047,
         "colleges": 80,
         "pct": 28.0
@@ -230440,7 +230432,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 2670,
+        "credit_recs": 2668,
         "exhibits": 995,
         "colleges": 76,
         "pct": 21.2
@@ -230505,7 +230497,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11023,
+        "credit_recs": 11021,
         "exhibits": 4700,
         "colleges": 97,
         "disciplines": 23,
@@ -230931,6 +230923,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-08-04T14:44:32",
-  "total_credit_recs": 12567
+  "generated_at": "2026-08-05T09:08:24",
+  "total_credit_recs": 12565
 };
