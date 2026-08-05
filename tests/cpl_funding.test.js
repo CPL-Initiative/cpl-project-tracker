@@ -1674,7 +1674,29 @@ check("PII guard: consumer never renders coordinator names/emails (boolean only)
   check("memo no longer prints the $35M gross appropriation", memo.indexOf(gross35) === -1);
   check("memo lists the three priorities",
     D.year_priorities["1"].every(function (p) { return memo.indexOf(p.label) !== -1; }));
-  check("memo allocation table carries the SYSTEM statewide total", memo.indexOf("SYSTEM (statewide)") !== -1);
+  check("memo allocation table carries the statewide institution total", memo.indexOf("TOTAL (statewide") !== -1);
+  // Sam, 2026-08-04: the allocation summary leads with the INSTITUTION total (college
+  // pool + the $1M noncredit feeder support) and relabels the counts.
+  const instTotal = collegePool + (D.pool.feeder_carveout || 0);
+  check("memo allocation summary shows the institution total (incl. the $1M NC)",
+    memo.indexOf("$" + Math.round(instTotal).toLocaleString("en-US")) !== -1);
+  check("memo relabels the counts: Funded Colleges + Funded Noncredit Campuses",
+    memo.indexOf("Funded Colleges") !== -1 && memo.indexOf("Funded Noncredit Campuses") !== -1);
+  // Per-district grouping + the NC campuses listed under their districts.
+  check("memo allocation is grouped by district (a district header appears)",
+    memo.indexOf(D.colleges[0].district) !== -1);
+  check("memo lists every noncredit feeder campus, marked (noncredit)",
+    memo.indexOf("(noncredit)") !== -1 && D.feeders.every(function (f) { return memo.indexOf(f.name) !== -1; }));
+  // $50k seed-funding intro (Sam, 2026-08-04) + the ESS 25-82 reference.
+  check("memo intro cites the $50,000 seed grant and ESS 25-82",
+    memo.indexOf("$50,000") !== -1 && memo.indexOf("ESS 25-82") !== -1);
+  // Technical Assistance section (Sam, 2026-08-04) — verified KB links + Sam-supplied contacts.
+  check("memo has a Technical Assistance section with verified MAP links",
+    memo.indexOf("Technical Assistance") !== -1 &&
+    memo.indexOf("map.rccd.edu/counselors/") !== -1 &&
+    memo.indexOf("map.rccd.edu/cpl_implementation_guide/") !== -1);
+  check("memo Technical Assistance lists the contacts",
+    memo.indexOf("Mari Estrada") !== -1 && memo.indexOf("Terence Nelson") !== -1);
   // Doc-type variants share the body but differ in framing.
   const letter = T._buildMemo("letter");
   const brief = T._buildMemo("brief");
