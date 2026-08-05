@@ -1,0 +1,541 @@
+{
+  "_as_of": "2026-08-05",
+  "_source": "docs/noncredit_cpl_thinking.md",
+  "_note": "Curated register behind the Noncredit & Learning Partners tab. The PROSE reasoning lives in the thinking doc; this file carries only the structured, actionable state so the two do not fork. Derived college lists carry a _derived_at stamp and the query that produced them. The dormant-exhibit worklist is NOT in this file — it is computed live from credential_reference_data.js at render time.",
+  "_status": "Twelve use cases mapped by mechanism; nine opportunities open; six questions with Sam. Funding is deliberately parked until the NC universe is mapped.",
+  "tiers": [
+    {
+      "tier": 1,
+      "label": "Assessment during instruction",
+      "priced": "per course, once",
+      "marginal": "~$0",
+      "note": "Pre-approved as sufficient evidence. The hundredth award costs nothing."
+    },
+    {
+      "tier": 2,
+      "label": "Assessment once per credential",
+      "priced": "per credential",
+      "marginal": "~$0 after setup",
+      "note": "A faculty crosswalk, then it applies to everyone holding the credential."
+    },
+    {
+      "tier": 3,
+      "label": "Assessment once per cohort or program",
+      "priced": "per program",
+      "marginal": "low",
+      "note": "An agreement covers a defined population."
+    },
+    {
+      "tier": 4,
+      "label": "Assessment per student",
+      "priced": "per student",
+      "marginal": "full cost, every time",
+      "note": "Never scales. Must be subsidized rather than optimized."
+    }
+  ],
+  "modes": [
+    {
+      "id": "M1",
+      "name": "Mirrored courses",
+      "short": "The noncredit course IS the credit course.",
+      "definition": "The college builds its noncredit course as a copy of an existing credit course's curriculum, carrying noncredit codes and repeatability. A CPL rubric or a jointly-agreed summative exam is written into the course outline of record and approved by the curriculum committee in advance. A student who passes the noncredit course has already been assessed against the credit outcomes.",
+      "evidence": "The student's noncredit transcript record",
+      "cpl_type": "Credit by exam (or portfolio review)",
+      "fits": "Any college running noncredit alongside credit in the same discipline",
+      "tier": 1,
+      "cost": "One-time, per course",
+      "why": "Assessment happens DURING instruction, by the faculty who taught the student, pre-approved as sufficient. No portfolio, no challenge exam, no second review. The hundredth award costs nothing.",
+      "state": "Proven at Cabrillo; named statewide practice by the Chancellor; no playbook exists yet",
+      "priority": "highest",
+      "use_cases": [
+        "UC-1"
+      ]
+    },
+    {
+      "id": "M2",
+      "name": "Certificates and licenses",
+      "short": "A third-party credential the student already holds converts to credit.",
+      "definition": "An industry certification, state license, or apprenticeship credential with an objective standard becomes a published exhibit. Any student holding it receives a defined award. The assessment was done — and paid for — by the certifying body, so the college's faculty work is a one-time equivalence determination rather than a per-student evaluation.",
+      "evidence": "The certificate or license itself (CompTIA, ASE, AWS, NCCER, EMT/NREMT, RDA, journeyperson status, POST, State Fire Training)",
+      "cpl_type": "Industry certification · Credit by exam",
+      "fits": "Every Learning Partner whose program ends in a licensure or certification exam — adult schools, ROPs, agencies, apprenticeship sponsors, industry trainers, Calbright",
+      "tier": 2,
+      "cost": "One-time, per credential",
+      "why": "The single highest-leverage lane. One determination covers everyone who holds the credential, forever. This is where the screening question lives: does the program END in a license or third-party certification? If yes, it is cheap. If no, it is expensive.",
+      "state": "84 statewide exhibits exist — but only 30 have ever converted a unit",
+      "priority": "highest",
+      "use_cases": [
+        "UC-5",
+        "UC-6",
+        "UC-8",
+        "UC-9",
+        "UC-10",
+        "UC-12"
+      ]
+    },
+    {
+      "id": "M3",
+      "name": "Noncredit certificates",
+      "short": "The college's own noncredit certificate maps to credit.",
+      "definition": "A noncredit certificate sequence is crosswalked by faculty to credit courses at the same college or a partner college. Unlike mirrored courses, the curricula are aligned rather than identical, so it needs an equivalence determination rather than a copy — but that determination is made once and applies to every completer of the sequence.",
+      "evidence": "The noncredit certificate of completion or competency",
+      "cpl_type": "Credit by exam · Industry certification",
+      "fits": "The four standalone noncredit institutions and every college with a noncredit CTE program",
+      "tier": 2,
+      "cost": "One-time, per certificate",
+      "why": "29,649 students earned noncredit awards statewide in 2024-25 — every one a documented, college-issued credential, which is the cleanest CPL evidence there is. Essentially none are systematically crosswalked.",
+      "state": "NOCE has documented five (Google IT Support, ECE, Electricity, Medical Assisting, Pharmacy Technician); the four standalone noncredit institutions appear on ZERO credential titles in MAP",
+      "priority": "high",
+      "use_cases": [
+        "UC-2"
+      ]
+    },
+    {
+      "id": "M4",
+      "name": "High school CTE articulation (Cx)",
+      "short": "A high-school CTE course earns college credit by examination.",
+      "definition": "College and high-school or ROP faculty align a HS CTE course to a college course — outline, syllabus, text, and final exam must be comparable. The student earns an A or B, the HS teacher certifies them against a roster, and the college awards credit by examination.",
+      "evidence": "The high-school course grade plus teacher certification",
+      "cpl_type": "Credit by exam",
+      "fits": "High schools, ROPs, and regional consortia",
+      "tier": 3,
+      "cost": "One-time per articulation, then per-student certification",
+      "why": "CSU does NOT recognize high-school CTE articulated courses for transfer, but DOES recognize credit by exam — which is why the field converted to Cx. That makes this a TRANSFER story, not only a CTE one. It is also the only lane that reaches learners before they are adults.",
+      "state": "~48 credential entries in MAP already name a specific high school; the new operational scope is per-student rosters (FERPA, K-12 data sharing)",
+      "priority": "high",
+      "use_cases": [
+        "UC-7"
+      ]
+    },
+    {
+      "id": "M5",
+      "name": "Portfolio and work experience",
+      "short": "The student documents learning that produced no certificate.",
+      "definition": "Where there is no credential to point at, the student assembles evidence — training records, employer verification, job evaluations, work samples — and faculty assess it individually. This is the fallback when no other mode applies, and the only mode that can capture genuinely unstructured learning.",
+      "evidence": "Portfolio, employer verification, current job evaluation, combined certificates",
+      "cpl_type": "Portfolio review",
+      "fits": "Not-for-credit and contract education, on-the-job learning, incumbent workers, any provider without a terminal credential",
+      "tier": 4,
+      "cost": "Per student, every time",
+      "why": "Never scales — and should be SUBSIDIZED rather than optimized. The cost has two halves: faculty assessment (irreducible) and portfolio development (enormous, unfunded, and the half that actually kills portfolio programs). A noncredit portfolio-development course, plausibly CDCP-eligible under Workforce Preparation, would let the state fund the development half.",
+      "state": "Proven case-by-case (Josias, 9 units; Julio graduated a semester early). The Portfolio Builder is in development and has no instructional wrapper — that wrapper is the opportunity.",
+      "priority": "targeted",
+      "use_cases": [
+        "UC-3",
+        "UC-4"
+      ]
+    },
+    {
+      "id": "M6",
+      "name": "CPL toward a noncredit award",
+      "short": "Recognizing competency INSIDE a noncredit certificate — currently unresolved.",
+      "definition": "A noncredit program waives a required course for a student who already has the skills, but then cannot issue the certificate because the sequence requires the course. The obstacle is not curriculum: a waived noncredit course generates zero apportionment, and because the student never pays a fee, the entire loss falls on the institution. That is why programs waive informally and never record it.",
+      "evidence": "Demonstrated competency — currently unrecorded anywhere",
+      "cpl_type": "Open question — no established path",
+      "fits": "Any noncredit certificate sequence",
+      "tier": 4,
+      "cost": "Costs the institution apportionment",
+      "why": "Reframes the ask from 'may we award noncredit CPL?' to 'how do we stop penalizing a partner for recognizing competency instead of selling seat time?' SB 361 (2006) is the precedent — the state already accepted once that noncredit funding should follow strategic value rather than raw contact hours.",
+      "state": "Route A (mirror it, so the CPL happens credit-side) works TODAY with no permission needed. Route D (Title 5 plus an apportionment hold-harmless) is the real ask and needs named examples first.",
+      "priority": "policy",
+      "use_cases": [
+        "UC-11"
+      ]
+    }
+  ],
+  "use_cases": [
+    {
+      "id": "UC-1",
+      "title": "Mirrored noncredit → credit",
+      "tier": 1,
+      "sector": "Noncredit",
+      "mechanism": "The noncredit course is a copy of the credit curriculum. Assessment happens DURING instruction via a jointly-agreed summative exam or a CPL rubric attached to the COR, pre-approved as sufficient evidence. Auto-articulates in MAP.",
+      "evidence": "Noncredit transcript record",
+      "cpl_type": "Credit by exam (or portfolio review)",
+      "exemplar": "Cabrillo — Pablo, MUS 59A/B Game Audio, 3u · Martha, HS130/131 Community Health Worker, 8u",
+      "status": "proven",
+      "note": "The lead recommendation. Named statewide practice by the Chancellor; documented in the monograph. Needs a playbook."
+    },
+    {
+      "id": "UC-2",
+      "title": "Noncredit certificate → credit certificate or degree",
+      "tier": 2,
+      "sector": "Noncredit",
+      "mechanism": "A noncredit certificate sequence is crosswalked to credit courses at partner colleges. Curricula are aligned, not identical, so it needs a faculty crosswalk rather than a mirror.",
+      "evidence": "Noncredit certificate",
+      "cpl_type": "Credit by exam · Industry certification",
+      "exemplar": "NOCE — Google IT Support, Early Childhood Education, Electricity, Medical Assisting, Pharmacy Technician",
+      "status": "proven",
+      "note": "29,649 noncredit awards statewide in 2024-25 is the addressable population. Essentially none are systematically crosswalked."
+    },
+    {
+      "id": "UC-3",
+      "title": "Not-for-credit → credit",
+      "tier": 3,
+      "sector": "Not-for-credit",
+      "mechanism": "Extension, community ed, continuing ed, worksite training. Evidence is an industry certificate with evaluative scores, or a portfolio with employer verification.",
+      "evidence": "Industry certificate · portfolio + employer verification",
+      "cpl_type": "Portfolio review · Industry certification",
+      "exemplar": "Josias H. — Biodynamic Farmer + Permaculture Design → HORT 2/176/99, 9u",
+      "status": "proven",
+      "note": "Promote recurring UC-3 credentials into UC-5. The first award is a portfolio; the fifth should be an exhibit."
+    },
+    {
+      "id": "UC-4",
+      "title": "On-the-job training / work experience → credit",
+      "tier": 4,
+      "sector": "Employer",
+      "mechanism": "Portfolio of not-for-credit certificates plus employer skills verification, substituting for discipline electives or work-experience units.",
+      "evidence": "Portfolio + employer verification + job evaluation",
+      "cpl_type": "Portfolio review",
+      "exemplar": "Julio A. — 6u discipline electives, Construction degree; graduated immediately instead of a semester later",
+      "status": "proven",
+      "note": "The clearest time-to-degree story in the record. Speaks directly to the Jan 2028 statutory outcomes report."
+    },
+    {
+      "id": "UC-5",
+      "title": "Industry certification originated at a Learning Partner",
+      "tier": 2,
+      "sector": "Industry",
+      "mechanism": "A third-party credential with an evaluative score becomes a statewide or local exhibit. Assessment cost is borne entirely by the certifying body.",
+      "evidence": "Third-party certification",
+      "cpl_type": "Industry certification · Credit by exam",
+      "exemplar": "ASE G1 · CompTIA Security+ / Network+ · AWS D1.1 · NCCER Welding Level 2",
+      "status": "proven",
+      "note": "Highest leverage per unit of faculty effort. These partners are VALIDATORS, not originators — recognize them differently."
+    },
+    {
+      "id": "UC-6",
+      "title": "Adult school → credit",
+      "tier": 2,
+      "sector": "Adult education",
+      "mechanism": "Adult-school occupational programs produce state licenses and industry credentials that convert to credit at a CCC.",
+      "evidence": "State license · industry credential",
+      "cpl_type": "Industry certification",
+      "exemplar": "Rocio Garcia — adult school → 16u for CA RDA → BSDH a semester early → tenure-track at West LA College",
+      "status": "proven",
+      "note": "27 CCCs teach dental assisting; exactly ONE awards RDA CPL. See OPP-4."
+    },
+    {
+      "id": "UC-7",
+      "title": "High-school CTE articulation (Cx)",
+      "tier": 3,
+      "sector": "K-12",
+      "mechanism": "College and HS/ROP faculty align a HS CTE course to a college course; student earns an A or B; the HS teacher certifies against a roster; the college awards credit by examination.",
+      "evidence": "HS course grade + teacher certification",
+      "cpl_type": "Credit by exam",
+      "exemplar": "~48 credential entries in MAP already name a specific high school",
+      "status": "active",
+      "note": "CSU does NOT recognize HS CTE articulated courses for transfer but DOES recognize Cx — which is why the field converted. Makes this a transfer story, not only CTE. New scope = per-student rosters (FERPA, K-12 data sharing)."
+    },
+    {
+      "id": "UC-8",
+      "title": "Apprenticeship",
+      "tier": 2,
+      "sector": "Apprenticeship",
+      "mechanism": "Registered agreement, 2,000+ hrs OJT + 144 hrs/yr RSI, DAS oversight. Three entry points: existing apprentices, apprentice completers transferring in, qualified work experience.",
+      "evidence": "JATC certificate · journeyperson status",
+      "cpl_type": "Industry certification",
+      "exemplar": "Cal-JAC fire-service crosswalk, 12 colleges / 90 courses · Santiago Canyon, 310 apprentices",
+      "status": "proven",
+      "note": "44% of CA apprentices withdraw before completion — making partial progress count is a direct retention lever."
+    },
+    {
+      "id": "UC-9",
+      "title": "Agency and cohort programs",
+      "tier": 2,
+      "sector": "Agency",
+      "mechanism": "An agency program ending in a third-party license, delivered under an Instructional Service Agreement. Going-forward cohorts enroll as students; the alumni back-catalog converts via CPL.",
+      "evidence": "State license (EMT/NREMT)",
+      "cpl_type": "Credit by exam · Industry certification · Portfolio review",
+      "exemplar": "EMS Corps — 11 sites, 85% success rate, 500+ alumni; 8.5u at Moreno Valley",
+      "status": "active",
+      "note": "The reference implementation. See OPP-2. Screening test: licensure? back-catalog? multiple CCC pathways? named partner?"
+    },
+    {
+      "id": "UC-10",
+      "title": "Justice-involved learning",
+      "tier": 2,
+      "sector": "Agency",
+      "mechanism": "Vocational training inside CDCR facilities produces third-party industry credentials that convert on release or during enrollment.",
+      "evidence": "AWS · NCCER welding certifications",
+      "cpl_type": "Industry certification",
+      "exemplar": "Rising Scholars — landing page mocked, 12 colleges mapped for AWS/NCCER welding",
+      "status": "in-development",
+      "note": "For this population CPL is frequently the ONLY mechanism by which documented learning survives the transition."
+    },
+    {
+      "id": "UC-11",
+      "title": "CPL toward a noncredit award",
+      "tier": 4,
+      "sector": "Noncredit",
+      "mechanism": "A noncredit program waives a required course for demonstrated competency — but the student cannot then receive the certificate. Not a curriculum problem: a waived noncredit course generates ZERO apportionment, and the student pays no fee, so 100% of the loss falls on the institution.",
+      "evidence": "Demonstrated competency",
+      "cpl_type": "n/a — this is the open policy question",
+      "exemplar": "None named yet — the practice is invisible in every dataset by construction",
+      "status": "open-question",
+      "note": "Route A (mirror it) works today. Route D (Title 5 + apportionment hold-harmless) is the real ask. SB 361 is the precedent. See Q-7."
+    },
+    {
+      "id": "UC-12",
+      "title": "Calbright — competency-based, statewide, online",
+      "tier": 2,
+      "sector": "Noncredit",
+      "mechanism": "Competency-based by design, so the translation problem CPL usually solves is already solved upstream at the curriculum level. Statewide charter means no service area.",
+      "evidence": "Calbright competency records + industry certifications",
+      "cpl_type": "Industry certification",
+      "exemplar": "Landing page mocked with ASE G1, CompTIA Security+, CompTIA Network+",
+      "status": "in-development",
+      "note": "Plausibly the FASTEST partner to light up — credentials pre-articulated, population statewide, page designed. Gated on the impossible FTES figure (Q-5)."
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "OPP-1",
+      "title": "Populate the four standalone noncredit institutions in MAP",
+      "kind": "data-entry",
+      "value": "high",
+      "effort": "low",
+      "status": "open",
+      "section": "§7a Finding 1",
+      "detail": "NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit, and Calbright appear as issuer or training agency on ZERO of the 1,987 credential titles — while ~48 entries name a specific high school. The gap is not capability, permission, or infrastructure. Nobody has done the data entry.",
+      "targets": [
+        "North Orange Continuing Education",
+        "San Diego College of Continuing Education",
+        "Mt. San Antonio College — Noncredit",
+        "Calbright College"
+      ],
+      "next": "Start with the NOCE five (Google IT Support, ECE, Electricity, Medical Assisting, Pharmacy Technician)."
+    },
+    {
+      "id": "OPP-2",
+      "title": "EMS Corps — alumni outreach + landing page",
+      "kind": "outreach",
+      "value": "high",
+      "effort": "medium",
+      "status": "open",
+      "section": "§3a",
+      "detail": "500+ alumni holding the SAME credential — one faculty determination covers all of them. Tier 2 economics on a Tier 4-sized outcome. The articulations already exist at 28 colleges via the statewide EMT Certification exhibit (7.5–14 hours general recommendation). Chancellor Christian has already committed to this publicly. The landing page IS the outreach vehicle: one link shows every alum every college that will award them credit.",
+      "targets": [
+        "Public Works Alliance (Jeff Metcalfe)",
+        "East Los Angeles College",
+        "Moreno Valley College"
+      ],
+      "next": "Build the landing page from the six-pathway fan-out; mail one link to the alumni list."
+    },
+    {
+      "id": "OPP-3",
+      "title": "Enumerate dormant statewide exhibits",
+      "kind": "instrument",
+      "value": "high",
+      "effort": "low",
+      "status": "open",
+      "section": "§7a Finding 3",
+      "detail": "Three Cal-JAC EMS exhibits are published across 16 college-slots with zero students served. The faculty determinations are made; nothing is flowing. A published statewide exhibit with zero transcriptions is a completed asset awaiting outreach — the cheapest volume available anywhere in CPL. This tab computes the full list live.",
+      "targets": [
+        "Firefighter EMT Certificate",
+        "Fire Fighter Paramedic Journeyperson Certificate",
+        "Paramedic Journeyperson Certificate"
+      ],
+      "next": "See the live worklist in this tab — it self-refreshes from the credential data."
+    },
+    {
+      "id": "OPP-4",
+      "title": "The 26-college dental list",
+      "kind": "outreach",
+      "value": "high",
+      "effort": "low",
+      "status": "open",
+      "section": "§7a Finding 4",
+      "detail": "27 California community colleges teach dental assisting. Exactly one — West Los Angeles — awards CPL for the RDA license, converting 214 of 215 eligible units (99.5%). Twenty-six peer colleges teaching the identical program have not started. Separately, RDH shows 3,136 units transcribed across two colleges: allied health is quietly carrying enormous CPL weight.",
+      "targets": [
+        "Allan Hancock",
+        "Cerritos",
+        "Chaffey",
+        "Citrus",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "Cypress",
+        "Diablo Valley",
+        "Foothill",
+        "Fresno City",
+        "Lake Tahoe",
+        "Lassen",
+        "Monterey Peninsula",
+        "Moreno Valley",
+        "Orange Coast",
+        "Oxnard",
+        "Palomar",
+        "Pasadena City",
+        "Reedley",
+        "Sacramento City",
+        "San Diego Mesa",
+        "San Jose City",
+        "Santa Rosa Junior College"
+      ],
+      "_derived_at": "2026-08-05",
+      "_derived_by": "coci_lookup_data.js — colleges with TOP 1240.10 Dental Assistant courses, minus West Los Angeles (already awarding)",
+      "next": "A named outreach list today. No build required."
+    },
+    {
+      "id": "OPP-5",
+      "title": "Write the mirroring playbook",
+      "kind": "artifact",
+      "value": "high",
+      "effort": "medium",
+      "status": "open",
+      "section": "§3 UC-1",
+      "detail": "The lead recommendation, already named as statewide practice by the Chancellor, with two documented instruments — the jointly-agreed summative exam (monograph) and the CPL rubric attached to the COR (Cabrillo). A college that wants to mirror a noncredit course today has nowhere to look.",
+      "targets": [],
+      "next": "Draft it with a model CPL rubric and a model summative-exam agreement."
+    },
+    {
+      "id": "OPP-6",
+      "title": "Run the noncredit-waiver question",
+      "kind": "research",
+      "value": "medium",
+      "effort": "low",
+      "status": "open",
+      "section": "§6",
+      "detail": "An unrecorded waiver generates no row in MIS, MAP, or COCI, so searching returns a meaningless zero. The only way to find out is to ask. ~14 conversations at Office Hours and the Summit. Phrase it as 'what happens to the student' — never 'do you waive courses', which reads as an audit question about a practice that costs apportionment.",
+      "targets": [
+        "The 4 standalone NC institutions",
+        "Mt. SAC",
+        "Santa Ana",
+        "San Francisco",
+        "Santiago Canyon",
+        "Santa Rosa",
+        "Glendale",
+        "Saddleback",
+        "Canyons",
+        "Gavilan",
+        "Rio Hondo"
+      ],
+      "next": "Add the question to the next Office Hours agenda."
+    },
+    {
+      "id": "OPP-7",
+      "title": "Resolve generic partner names",
+      "kind": "data-quality",
+      "value": "medium",
+      "effort": "low",
+      "status": "open",
+      "section": "§7a Finding 5",
+      "detail": "Ten credential entries carry the issuer 'Local High School' and one carries 'Adult School (varies)'. Harmless as data entry, fatal to partner recognition — you cannot report back to a placeholder or build it a landing page. This is a precondition for the partner-facing work, not a later cleanup task.",
+      "targets": [
+        "Local High School (10 entries)",
+        "Adult School (varies)"
+      ],
+      "next": "Resolve to named institutions; add the same discipline going forward."
+    },
+    {
+      "id": "OPP-8",
+      "title": "The noncredit portfolio-development course",
+      "kind": "design",
+      "value": "high",
+      "effort": "high",
+      "status": "research",
+      "section": "§10",
+      "detail": "A noncredit counseling course whose curriculum IS portfolio development, targeted at specific CCC CPL opportunities. If it qualifies under CDCP — and Workforce Preparation is an enumerated CDCP area — the state pays for the DEVELOPMENT half of portfolio CPL, the half that kills portfolio programs everywhere because nobody funds it. Pairs directly with the Portfolio Builder already in development, which today has no instructional wrapper.",
+      "targets": [],
+      "next": "Research whether anyone in California already runs this (Q-8). If nobody does, it is the flagship proposal; if someone does, they are the pilot."
+    },
+    {
+      "id": "OPP-9",
+      "title": "Walk the twelve use cases against the three 2026 commitments",
+      "kind": "check",
+      "value": "medium",
+      "effort": "low",
+      "status": "open",
+      "section": "§10b",
+      "detail": "The Chancellor's deck carries three dated 2026 commitments: an AI-enabled dashboard matching noncredit/ROP/adult-ed training to college courses; an AI-enabled common course crosswalk standardizing noncredit and credit identifiers; AI-enabled skills-to-outcomes alignment. If a use case here cannot be served by those three, either it needs a different mechanism or the commitments need scoping nobody has done.",
+      "targets": [],
+      "next": "One pass across the twelve cases; record the misses."
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q-1",
+      "q": "How many colleges and high-school partners are on the incumbent articulation system today?",
+      "owner": "Sam",
+      "status": "open",
+      "section": "§8",
+      "why": "Sizes the largest-volume lane in the document. Nothing in the repos carries it."
+    },
+    {
+      "id": "Q-2",
+      "q": "Is MAP's high-school articulation role decided, proposed, or aspirational?",
+      "owner": "Sam",
+      "status": "open",
+      "section": "§8",
+      "why": "Determines whether the paper says 'MAP will', 'MAP can', or 'MAP could'. Currently written as CAN."
+    },
+    {
+      "id": "Q-3",
+      "q": "Is the two-tab landing-page structure locked? Build status and dates for the NC, HS, agency, and industry-partner pages?",
+      "owner": "Sam",
+      "status": "open",
+      "section": "§9",
+      "why": "The two-tab structure is the most consequential design decision in the deck."
+    },
+    {
+      "id": "Q-4",
+      "q": "Can CDCR say how many already-released learners hold CDCR-delivered credentials no college has evaluated?",
+      "owner": "Sam / CDCR",
+      "status": "open",
+      "section": "§3 UC-10",
+      "why": "Sizes the Rising Scholars back-catalog, the analogue of the EMS Corps alumni play."
+    },
+    {
+      "id": "Q-5",
+      "q": "Calbright reports 21,438 noncredit FTES on 2,484 headcount — 8.6 FTES per student, which is impossible.",
+      "owner": "Malone",
+      "status": "open",
+      "section": "§3 UC-12, §11",
+      "why": "21% of statewide NC FTES. Must be resolved before Calbright appears in anything external or drives any dollar."
+    },
+    {
+      "id": "Q-6",
+      "q": "Where did the '44 non-CCC dental programs' and '4,200–7,000 annual CPL candidates' figures originate?",
+      "owner": "Sam",
+      "status": "open",
+      "section": "§7a Finding 4",
+      "why": "Unverifiable from anything in the record. Cite as estimates or drop. The '24 CCC' figure IS confirmed (COCI shows 27)."
+    },
+    {
+      "id": "Q-7",
+      "q": "Title 5 / PCAH position on competency substitution inside a noncredit certificate.",
+      "owner": "Claude",
+      "status": "verify",
+      "section": "§6",
+      "why": "The load-bearing legal claim behind Route D."
+    },
+    {
+      "id": "Q-8",
+      "q": "Does any California noncredit program run an instructor-guided portfolio course against CCC CPL opportunities?",
+      "owner": "Claude",
+      "status": "verify",
+      "section": "§10",
+      "why": "The highest-value open research item. If nobody does, it is the flagship proposal."
+    },
+    {
+      "id": "Q-9",
+      "q": "CDCP rate for a portfolio-development course relative to the credit base (2025-26 SCFF).",
+      "owner": "Claude",
+      "status": "verify",
+      "section": "§10",
+      "why": "Category is largely answered — Workforce Preparation is an enumerated CDCP area. The rate and the formal eligibility read are outstanding."
+    },
+    {
+      "id": "Q-10",
+      "q": "Financial-aid and momentum-eligibility treatment of CPL units.",
+      "owner": "Claude",
+      "status": "verify",
+      "section": "§5",
+      "why": "Directionally right that transcripted units count where noncredit completion does not — but not printable without checking."
+    }
+  ]
+}
