@@ -148,3 +148,37 @@ what agents are actually for; habit enforcement is not.
 4. **Cut the load-bearing list** (OQ-05) — I marked 8 of 10 as load-bearing,
    which is almost certainly too many. Governing everything is how governance
    dies.
+
+---
+
+## 2026-08-05 (later) — the defect Sam caught in an hour
+
+Sam, on opening the tab: *"How do I curate by adding an owner? Doesn't appear to
+be editable."*
+
+He was right. I shipped a page whose **entire premise** was that the empty owner
+cells *are* the review — and gave nobody a way to fill them in. A review artifact
+without a pen is a poster.
+
+Worth recording because the failure is a specific, repeatable kind: I designed the
+*honesty* property carefully (render the absence, count it, keep it red) and never
+asked the next question, **"and then what does the reader DO?"** The gap was
+invisible to me precisely because I was admiring the diagnostic.
+
+**Fixed in #1000** — click any owner cell to assign a name and note. The design
+decision underneath it is the reusable part:
+
+> The register is **committed** and rebuilt by sessions; owners are **curated**
+> live by the team. Different lifecycles, so different homes.
+
+Owners live in a separate gated `governance_owners` table that overlays the
+register by row id, so a future session regenerating `kb/governance_register.json`
+can never wipe an assignment. Same split that keeps `map_college_nudges` out of
+`map_college_contacts`, where the monthly full refresh would eat the curator's
+work. No delete policy — clearing an owner writes null, so who-assigned-what
+survives.
+
+**Generalisation: any read-only artifact that names a gap should be checked for
+"can the reader close it here?"** If the answer is no, either add the affordance
+or say plainly where the work happens instead. Naming a gap and providing no
+handle is a small betrayal of the reader's attention.

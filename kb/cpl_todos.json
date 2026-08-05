@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyMail + SkyOptIn — SkyMail: the student-contact worklist + a governance starter are live (waiting on people, not code). SkyOptIn (funding, parallel): the opt-in row CTA shipped, the Budget reconciled to the revised BOG amendment, and COBI ongoing now runs through 2030-31; NC equalization is queued on one Sam decision.",
+  "_as_of": "2026-08-05 · SkyMail — student-contact worklist, contact directory with export, and a governance register you can now actually curate.",
   "_session": "SkyMail (120) + SkyOptIn (funding)",
-  "_status": "Two things shipped today. First: a student asking one of 25 colleges for CPL through MAP was reaching nobody, because MAP sends those requests to the college's Primary Contact email and those 25 had none on file. The MAP Users tab now lists exactly those colleges with a proposed contact for each, drawn only from people the COLLEGE already designated in MAP — 17 of 25 resolve that way; 8 need a human. Second: a Governance tab, because every problem hit along the way turned out to be a governance gap wearing a data-quality costume — a field nobody owned, a source nobody owned knowing, a definition nobody owned. It measures itself rather than asserting compliance, which is how it surfaced that the college contact-refresh cadence was decided back in June and has never run once. Nothing on either list is blocked on engineering.",
+  "_status": "Three things landed today. A student asking one of 25 colleges for CPL through MAP was reaching nobody — the MAP Users tab now lists them with a proposed contact drawn only from people the college already designated (17 of 25 resolve that way). A Contact directory lens gives the whole college-by-college picture with a CSV/Excel export, and all 71 colleges lacking a CPL Assistant have now been looked up: 56 have a counseling address, 15 publish nothing usable and say why. And a Governance tab records who decides what — it measures itself, which is how it surfaced that the college contact-refresh cadence was decided in June and has never once been run.",
   "items": [
+    {
+      "id": "mu-directory",
+      "for": "sam",
+      "tab": "map-users",
+      "text": "📇 NEW — Contact directory on MAP Users (sign-in required). Every college with its primary contact, CPL Assistant email, and published counseling inbox, plus a ⬇ CSV/Excel export. Built for Jessica and Malone's PD session. A blank means MAP holds nothing on file — not that it wasn't checked."
+    },
+    {
+      "id": "mu-15-blanks",
+      "for": "sam",
+      "tab": "map-users",
+      "text": "⚠ 15 colleges publish NO usable counseling route. Two of them (Contra Costa, LA Harbor) publish only a mental-health inbox — the address a person would grab by eye is actively the wrong door for a credit question. Five list individual counselors with no designated contact; six are phone/form only. Each carries its source link."
+    },
     {
       "id": "fund-workbook-fixes",
       "for": "sam",
@@ -53,12 +65,6 @@
       "text": "🧭 YOUR CALL — the COBI tab you green-lit. I'd build the 'what does each college actually offer CPL for, academic exams vs career/technical' view, because that's straight from the data. I would NOT publish the occupation-to-credential matching as a live tab: that part is my subject-matter judgment, and a tab makes it look more official than it is. The fix for that is a real occupation crosswalk (O*NET) — worth scoping if you want this to go public rather than hand-delivered."
     },
     {
-      "id": "mu-verify-fallbacks",
-      "for": "sam",
-      "tab": "map-users",
-      "text": "📇 MAP USERS — 6 colleges need your eye. Siskiyous, Cosumnes River, Feather River, Hartnell, NOCE and Calbright have no CPL contact in MAP, so I looked up the counseling inbox each college publishes on its own website. Those are a starting point, not a MAP designation — the tab shows the source link next to each one. Gavilan needed a human to get right, so at least one of these six probably does too. Tell me the correct person and I'll record it with your name on it."
-    },
-    {
       "id": "mu-no-contact-25",
       "for": "sam",
       "tab": "map-users",
@@ -71,12 +77,6 @@
       "text": "🙋 8 colleges have nobody to propose. 5 have only a VPAA or CEO on file — I deliberately did NOT route student requests to a vice president, since that's the college's call. 3 (Calbright Credit, North Orange Continuing Ed Credit, San Diego CCE Credit) have zero MAP users at all — that's the same standalone continuing-ed onboarding gap the Noncredit tab flagged, not a contact problem."
     },
     {
-      "id": "mu-cpl-assistant-lens",
-      "for": "fable",
-      "tab": "map-users",
-      "text": "Build Jessica's cut as a live tab filter: the 71 colleges with no CPL Assistant, with the best fallback user (Primary Contact first, then the cascade). It was delivered as a chat table, which goes stale against the monthly sync. The lens plumbing already exists — it's a sibling of the gap lens."
-    },
-    {
       "id": "mu-map-url",
       "for": "sam",
       "tab": "map-users",
@@ -87,12 +87,6 @@
       "for": "sam",
       "tab": "nc-learning-partners",
       "text": "❓ 6 items are waiting on you (filter: 'Needs Input'). The one that unlocks the most: HOW MANY colleges and high-school partners are on the incumbent articulation system? It sizes the largest-volume lane in the whole analysis and nothing in our repos carries it. Also open: is MAP's high-school role decided or aspirational, landing-page build dates, the CDCR back-catalog, Calbright's FTES (needs Malone), and where the '44 non-CCC dental programs' figure came from."
-    },
-    {
-      "id": "nc-dormant-49",
-      "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "⭐ THE BIG FINDING: 49 statewide exhibits are published across 252 college-slots with ZERO students served — only 30 of 84 statewide exhibits have ever converted a single unit. CompTIA Linux+ is live at 16 colleges and has never produced an award. The faculty work is DONE on all of these; what's missing is outreach. Cheapest volume available anywhere in CPL. The list is live in the tab and refreshes itself."
     }
   ]
 }

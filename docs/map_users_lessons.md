@@ -166,3 +166,71 @@ there," add the middle state.
 3. The **MAP "manage users" URL** is still open, carried since Session 87.
 4. Consider whether the 5 leadership-only colleges should show VPAA/CEO as
    *context* without letting them auto-propose.
+
+---
+
+## 2026-08-05 (later) — Session 120 (SkyMail): the contact directory, and Jessica's rules
+
+### What changed
+
+Jessica joined the session and asked for a college-by-college contact table for a
+professional-development session with Malone. I started building a static
+spreadsheet; **Sam redirected it in one line** — *"rather than a spreadsheet, have
+SkyMail rework the tab the way you need to see it and add an export button. That
+way you always have access to fresh data."* That's the right instinct and it's now
+the standing guidance in `docs/working_with_claude_code.md`: **anything handed
+over in chat is a photograph, and it starts aging immediately.**
+
+Shipped: a **📇 Contact directory** lens on the MAP Users tab (#1001) with all
+five columns and a CSV/Excel export, then the counseling lookups themselves
+(#1003, #1004) — **all 71 colleges** that lack a CPL Assistant.
+
+### ⭐ The curator's rules beat mine, specifically
+
+My sourcing rule was **department inboxes only, never an individual** — defensible
+in the abstract (individuals churn; naming one is a determination). Jessica
+replaced it with a sharper set:
+
+> a general counseling inbox → use it · **one named person who IS the designated
+> contact** → use them · **just a list of counselors** → leave blank · the page
+> **directs you to another department** → use that · never mental-health.
+
+Applied to the real data, my rule would have **discarded five genuine contacts** —
+Compton's Dean of Counseling, Imperial Valley's named point of contact, LA
+Southwest's department chair, Napa Valley's Dean, Palo Verde's Associate Dean.
+Each is what that college actually publishes.
+
+The distinction she drew is the one that matters and I'd missed it: **a designated
+person is not the same as a person picked off a list.** My rule collapsed both
+into "individual → reject." Hers separates them, and it's enforceable — a
+non-department address must now carry a note justifying it, which is what stops a
+future contributor quietly pasting in some counselor's address.
+
+**Generalisation:** when a domain expert relaxes a rule you set for yourself, check
+whether the rule was protecting against *your* failure mode rather than theirs. A
+web lookup can't tell a designated contact from a name on a list. A person who
+works those contacts daily can.
+
+### The 15 blanks are the finding
+
+56 of 71 have an address. The other 15 publish nothing usable, and *that's the
+output*, not a gap:
+
+- **individual counselors only** — Coalinga, Crafton Hills, Laney, Santa Rosa, Taft
+- **⚠ only a mental-health inbox** — Contra Costa, LA Harbor. The dangerous ones:
+  the obvious address on the page is actively the wrong door for a credit question,
+  so a human doing this by eye would likely get it wrong.
+- **phone/chat/form only** — Golden West, LA Valley, Mission, Mt. SAC, Sierra, West Valley
+- **special** — Orange Coast (specialized inboxes only), Pasadena (ticketing form;
+  its one inbox serves the noncredit division)
+
+Two entries carry an explicit "verify before routing" note: Copper Mountain's
+address contains an ampersand, and Diablo Valley publishes one individual whose
+role the page doesn't state.
+
+### Next concrete step
+
+1. Work the 15 blanks in the PD session — start with the two mental-health ones.
+2. The **52 colleges that DO have a CPL Assistant** were out of scope here and have
+   no counseling lookup. If that's wanted, it's the same grind.
+3. Flip any corrected entry to `via: "curator"` with the person's name and date.

@@ -57,10 +57,16 @@ student contact** lens on MAP Users, with a proposed contact per college.
 - Contact sync **11 → 24 fields** after a probe found the view carried far more
   than we read. Public headline corrected to **2,657 users / 120 colleges**.
 
-**② The governance starter** (#997). Team-gated ⚖️ Governance tab: decision
-rights, acceptance standards, cadences, open questions. **It measures itself** —
-the register says the contact-refresh cadence was decided each semester; the page
-reads `map_college_nudges`, finds zero rows, and prints **"never run."**
+**② The governance starter** (#997, editable in #1000). Team-gated ⚖️ Governance
+tab: decision rights, acceptance standards, cadences, open questions. **It measures
+itself** — the register says the contact-refresh cadence was decided each semester;
+the page reads `map_college_nudges`, finds zero rows, and prints **"never run."**
+Owners are curated live into a separate `governance_owners` table that overlays the
+committed register, so regenerating the JSON never wipes an assignment.
+
+**②b The contact directory** (#1001/#1003/#1004). A 📇 lens with all five contact
+columns and a CSV/Excel export, built for Jessica after Sam's steer: *a tab you
+return to, not a spreadsheet that ages.*
 
 **③ Team enablement** (#998). The guide + the standing obligations above.
 
@@ -86,15 +92,16 @@ else on that page waits on it. It's a review, not a writing task — deliberatel
 was decided in June 2026 and has never fired. The worklist it needs now exists.
 *A cadence nobody runs is a document, not governance.*
 
-**③ Jessica/Ashley verify the 6 web-sourced fallbacks** — Siskiyous, Cosumnes
-River, Feather River, Hartnell, NOCE, Calbright. Gavilan needed a human; assume
-at least one of those six does too. When corrected, flip the entry to
-`via: "curator"` with their name and date (`FALLBACK_CONTACTS` in `map_users.js`).
+**③ Work the 15 counseling blanks** (📇 Contact directory lens). All 71 colleges
+without a CPL Assistant are now looked up: 56 have a counseling address, 15
+publish nothing usable. **Start with Contra Costa and LA Harbor** — they publish
+*only* a mental-health inbox, so the address a human would grab by eye is
+actively the wrong door for a credit question. When a curator corrects one, flip
+the entry to `via: "curator"` with their name and date (`FALLBACK_CONTACTS` in
+`map_users.js`); the tab renders the difference.
 
-**④ Jessica's 71-college "no CPL Assistant" table is a chat snapshot** and will
-drift against the monthly sync. Make it a second lens — the plumbing exists
-(`state.lens`, `gapsHtml()`); it's a sibling function, not a rebuild. The query
-is in `docs/map_users_lessons.md`.
+**④ The 52 colleges that DO have a CPL Assistant have no counseling lookup** —
+they were out of Jessica's scope. Same grind if wanted.
 
 **⑤ Decide CIP's promotion criteria before the fall-2026 cutover** (OQ-03). TOP
 is the cautionary tale of an input trusted by default.
