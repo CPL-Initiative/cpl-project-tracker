@@ -227,9 +227,14 @@
         { name: "Dewitt Stuckey", title: "Veterans Resource Center",
           email: "dstuckey@gavilan.edu" },
       ],
-      // kept for context: the lookup that came up empty before Jessica supplied these
-      source: "https://www.gavilan.edu/counseling/online-form.php",
-      note: "Gavilan publishes a web form rather than a counseling inbox.",
+      // Jessica's own source — the strongest provenance we hold: a person who
+      // knows the college picked these two, AND named the page they came from.
+      // My automated lookup missed it because gavilan.edu returns 403 to
+      // programmatic fetches; the counseling team page lists individual
+      // counselors rather than a department inbox, which is why these are
+      // named people.
+      source: "https://www.gavilan.edu/counseling/counseling_team.php",
+      note: "Gavilan lists individual counselors rather than a department inbox.",
     },
     "San Diego College of Continuing Education Credit": {
       via: "curator", by: "Jessica", on: "2026-08-05",
@@ -825,11 +830,19 @@
     if (!(f.contacts || []).length) {
       h += '<span class="mapu-st mapu-st-inactive">no published inbox</span>';
     }
-    h += f.via === "curator"
-      ? '<div class="mapu-src mapu-via-cur">✔ from ' + esc(f.by || "the CPL team")
-        + (f.on ? ", " + esc(f.on) : "") + " — not a MAP designation</div>"
-      : '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+    if (f.via === "curator") {
+      h += '<div class="mapu-src mapu-via-cur">✔ from ' + esc(f.by || "the CPL team")
+        + (f.on ? ", " + esc(f.on) : "") + " — not a MAP designation</div>";
+      // A curator who also cites their source gives the strongest provenance we
+      // hold: a human judgment AND the page behind it. Show both.
+      if (f.source) {
+        h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+          + "their source ↗</a></div>";
+      }
+    } else {
+      h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
         + "from their website ↗</a> — verify before use</div>";
+    }
     if (f.note) h += '<div class="mapu-fb-t">' + esc(f.note) + "</div>";
     return h;
   }
