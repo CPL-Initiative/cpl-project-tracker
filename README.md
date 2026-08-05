@@ -80,7 +80,7 @@ The whole ecosystem, end-to-end:
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
    the 👍/👎 feedback queue from both chat surfaces with a triage status, and
    a gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for), a **🎓 CPL Pathways** tab (audience-facing
+   had no good source for), a **🤝 Noncredit & Learning Partners** tab (the noncredit / not-for-credit / adult-school / ROP / high-school-Cx / apprenticeship register — the six modes of Learning Partner CPL, a self-refreshing dormant-statewide-exhibit worklist, and an in-place ✎ Add insight affordance), a **🎓 CPL Pathways** tab (audience-facing
    apprenticeship-to-baccalaureate course maps with CPL check-offs derived
    live from the MAP articulation data — Cerritos's Field Ironworker
    Supervisor BS (31.5 units of journeyworker CPL) plus Foothill's Dental

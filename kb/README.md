@@ -569,3 +569,17 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
   exclusions / rationale / doctrine_cited / confidence / open_question — the
   same schema the future batch pass 2 plans in), `calibration_review.md`
   (the human review doc Sam reacts to).
+
+## Noncredit & Learning Partners register (2026-08-05, SkyPartner)
+
+Two files here back the **🤝 Noncredit & Learning Partners** tab:
+
+| File | What |
+|---|---|
+| `nc_learning_partners.json` | The curated **register** — 6 modes, 12 use cases, 9 opportunities, 10 questions. The *structured, actionable* half of `docs/noncredit_cpl_thinking.md`; the prose reasoning stays in the doc so the two can't drift. Derived college lists carry a `_derived_at` stamp + the query that produced them. |
+| `supabase_nc_partner_notes.sql` | Schema of record for the **write layer** (`public.nc_partner_notes`), **applied 2026-08-05** to `hvuwhnbuahrtptokpqfh`. Keyed by item ID so one ✎ affordance covers every section. Enforces two rulings structurally: a revision **supersedes** (there is **no DELETE policy** — answering never closes), and notes sit **alongside** the register, reaching it only via an explicit promotion packet. |
+
+⚠ The **dormant-statewide-exhibit worklist is NOT stored here** — it is computed live
+from `credential_reference_data.js` at render time, so it can't go stale the way a
+hand-copied list would. See
+[`docs/kb-notes/methodology-dormant-asset-worklist.md`](../docs/kb-notes/methodology-dormant-asset-worklist.md).

@@ -559,6 +559,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. | ✅ **DONE Session 107 (#698)** — Sam hit 6 collisions on 2026-07-08; shipped same-day: Save-time detect + confirm dialog → `unified_title_merge_confirm` row, pending-merges strip, dry-run `merges` lane, apply fold. His 6 await ✓ Confirm merge in the lane. |
 | **Activity↔Project PR-D** | (Optional) split Workplan Goals into its own top-level tab if the page gets dense (Sam's prior preference: one page with two sections). | parked unless curator usage signals demand |
 | **Excel→Supabase Phase 2-4** | Migrate remaining Excel-driven tabs (Dashboard project cards, Budget, Vision 2030, Personnel). Per-tab inline editors. Excel file retires once Phase 4 cuts over; periodic Supabase→xlsx export retained as backup. **Phase 2 (projects) is COMPLETE: seeded + cut over + editor all landed (Session 15 build → Session 16 seed/cutover/editor).** Phases 3-5 (Budget/Vision/Personnel) follow the same five-step shape + the RLS-tighten step; Personnel already has 26 rows so its PR-3 has UPDATEs. | **Phase 2 DONE** (Session 16); **Phase 3 Budget read-path DONE** (PR #189); **Excel-retirement scope DONE** (PR #210, Session 23 — `docs/kb-notes/excel-retirement-final-scope.md`; corrected the surface: Personnel already Supabase, Vision 2030 is static/computed — neither needs migration); **Excel PR-1 (KPI-ladder keystone) DONE** (PR #211, Session 23 — ladder now sourced from `workplan_goals` not Excel, parity-exact across 49 projects; live 11-cell blank-vs-0 fix on `workplan_goals`, 1.4's real 0s kept); **Excel PR-2 (D.* rows RETIRED, not migrated) DONE** (PR #213, Session 24 — the 15 `D.*` sub-population helper rows were **100% vestigial**: sole value-reader `populate_current_metrics()` dead since 2026-05-28, every other ref excludes them, all 3 JS report gens skip them. Deleted the rows + the dead `populate_current_metrics()`/`_override_int`/`_pmetric_int`/`_ppct`/`_pcount` cluster; generator-only, proven parity-minus-D.* on snapshot + Excel-fallback paths. Method: `docs/kb-notes/methodology-verify-consumer-before-migrating.md`); **KPI-ladder editor = ALREADY DONE** (Session 24 measure-first — PR-1 sourced the ladder from `workplan_goals`, which `workplan_goals.js` already edits; 27 ladder-bearing projects all editable, 0 gaps — no build needed); **Budget inline editor DONE** (PR #215, Session 24 — click-to-edit dollar cells on the 5-Year Funding Plan, `budget_editor.js`; 7 cells/row PATCH `budget_funding`; no `total=Σyears`/`avg` formula yet per Sam; **budget_funding/budget_expenditures/personnel RLS tightened** to `is_allowed_reviewer()` live, `kb/supabase_budget_rls_tighten.sql`). **Excel-dependency audit + fix queue DONE** (PR #217, Session 24 — `docs/kb-notes/excel-dependency-audit.md`, the authoritative remaining-work catalog; triggered by a curator hitting the card "Update" button → it opened Excel-for-the-Web). **Excel retirement — Session 25 (Bruh 25) shipped P1+P2+P4, all merged:** **P1 ✅ (#219)** the "Update→Excel" card button now triggers the inline Latest Update editor (akpi copy dropped; `excel_row` no longer emitted; `dashboard_filters.js` rewire + toolbar button removed); **P2 ✅ (#221)** config tables moved to committed `kb/dashboard_config.json` via new `load_dashboard_config()` (`read_project_config`/`read_config_overrides`/`read_kpi_parameters` rewritten, all drop their `wb` param) + the `ensure_kpi_config_sheet` **WRITER deleted** — the master `.xlsx` is **no longer written on any run** (writer-blockers 2→1); measure-first found Col AG empty + KPI_Config == code defaults, so the JSON carries only the 4 real `project_config` fields; parity-proven (byte-identical readers + full A/B regen); **P4 ✅ (#220)** dead readers `read_annual_goals`/`read_workplan_goals` deleted (148 lines). **Remaining:** **P3** Update Log history (product fork — Sam **dismissed/parked** the decision 2026-06-01; measured: 38 projects / 120 stale entries (latest 2026-04-08); options = read-only **snapshot** / **retire** (keep `latest_update`) / **Supabase `project_update_log`** table); **P5** drop the `.xlsx` — now blocked only by `read_projects` (KPI-ladder + outage fallback), `read_budget_plan` (+ the carved-out budget `factors`/`year_labels`), and `read_update_log`/`archive_updates_to_log` (the **1 remaining writer**, gated on P3) + the `.bak`; keep a Supabase→xlsx backup. Independent: Budget `total`/`avg` formula layer (+ total read-only) + personnel editor (fix the 26→13 dedupe row-identity first). **Also Session 25:** new **daily data-pipeline reference doc** (`docs/kb-notes/reference-daily-dashboard-data-pipeline.md`, #222/#223) — accounts for all **7 data sources** + every headline KPI's lineage + the committed daily dataset; confirmed (via Sam's screenshot) the **MAP Custom Reporting Module's 9 categories are pulled in full** (151 fields), with **College Contacts + College Users & Roles fetched-but-unused** (drop-or-wire decision pending). |
+| **NC / Learning Partners** | Noncredit + not-for-credit + adult-school + ROP + HS-Cx + apprenticeship CPL — the thinking doc, the six modes, and the COBI register tab. | ✅ **Thinking doc + tab + write layer DONE** (SkyPartner, #981–#989). **Next by value÷effort:** ① populate the 4 standalone NC institutions in MAP (at ZERO); ② EMS Corps landing page + 500-alumni outreach (28 colleges already articulated); ③ work the 49 dormant statewide exhibits; ④ the mirroring playbook; ⑤ the 26-college dental list. **6 "Needs Input" items open in-tab** — biggest is HS-articulation scale. Funding metric PARKED by Sam until the mechanisms are mapped. |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -568,6 +569,31 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
+
+### SkyPartner — Noncredit & Learning-Partner CPL: thinking doc → live tab → write layer (2026-08-05, #981–#989 MERGED)
+
+Sam's cold ask (7 prompts + "ask me anything") became a shipped instrument in one session.
+**`docs/noncredit_cpl_thinking.md`** (~1,530 lines): §0 *why this exists* — the noncredit thinking
+**was** figured out (Fall-2025 decks) but never left a slide deck; the Oct-2024 monograph mentions
+noncredit **6× in 32 pages**. Twelve use cases by MECHANISM → **six MODES** for the team
+(M1 mirrored · M2 certificates/licenses · M3 NC certificates · M4 HS Cx · M5 portfolio · M6 CPL-toward-NC).
+**M2 holds the screening question:** *does the program END in a license/3rd-party cert?* Yes → one
+determination covers everyone, forever. **Sam's Q3 "oxymoron" is an apportionment problem** — a waived
+NC course earns **zero** apportionment and the student pays no fee, so 100% of the loss hits the
+institution (SB 361 is the precedent for a hold-harmless). ⭐ **Data findings (§7a):** **49 dormant
+statewide exhibits / 252 college-slots**, only **30 of 84** statewide exhibits have EVER converted a unit;
+the **4 standalone NC institutions are at ZERO** across 1,987 titles while ~48 HS entries exist; **27 CCCs
+teach dental assisting, 1 awards RDA CPL** (West LA, 99.5%); EMT converts at **75.6%** across 28 colleges
+(→ EMS Corps is **outreach**, not articulation-building). **Tab shipped** (#985): 5 collapsible sections,
+jump links, report generator (Copy·MD·Word·Print). **#987** narrative `[[ITEM-ID]]` cross-refs — an uncited
+claim is now *visibly* unbacked, and a test fails on a dead ref. **#988/#989** write layer — ✎ Add insight on
+every card; **"answering never closes, just revises"** enforced in schema (supersede RPC, **no DELETE policy**);
+notes sit ALONGSIDE the register with a **promotion packet**; applied to `hvuwhnbuahrtptokpqfh`, anon-gate
+verified (anon reads 0). ⚠ **Public `cpl-knowledge-base` untouched** — packet targets tracker lanes only.
+Suite **82** (tab) · full 184 files green. Durable: `methodology-dormant-asset-worklist`,
+`methodology-register-is-the-spine-narrative-cites-it`, `adr-notes-alongside-the-curated-register`.
+Story: `docs/noncredit_cpl_lessons.md` · handoff `docs/session_119_handoff.md`.
+**Funding deliberately PARKED** until the NC universe is mapped (Sam).
 
 ### SkyBox — Implementation Funding: ALL of Sam's tweaks + the NC rehaul (2026-08-04, #973–#976 MERGED)
 
@@ -596,24 +622,6 @@ pre-gate); PII-safe (attestor name/email reviewer-gated via column grants + the 
 `cpl_funding_optin_review()` RPC; `kb/supabase_funding_optin.sql`). v2 (magic-link email) still queued.
 **Next: the Budget reconciliation.** Full story: `docs/cpl_funding_lessons.md` §2026-08-05 (SkyOptIn) ·
 §2026-08-04 (SkyBox) · handoff `docs/cpl_funding_handoff.md`.
-
-### SkyUnit cont. — Implementation Funding: per-priority PRICE FACTOR replaces the global multiplier (2026-08-04, #971 MERGED)
-
-Sam & Malone: **decouple the funding split from the FTES difficulty.** Retired the single global
-**target multiplier**; each priority now carries a `factor` — **price/CPL FTES = factor × base rate**,
-**target = pot ÷ price** (higher factor ⇒ fewer FTES earn the pot ⇒ a *premium*; scales the target
-**inversely**). **`factor 1.0` = the prior model exactly**: the cumulative-window `×nYears` is now
-**structural** in `prioTarget`; `prioEntitlement` stays per-year (front-load invariant). **Behavior-neutral
-to merge** (live `targetMultiplier:2` ≡ factor 1.0), so the config activation was a **separate post-deploy**
-write (`kb/supabase_funding_priority_factors.sql`, Rule-9-guarded — factors were null, Sam's shares/metrics
-untouched). Live: **shares .5/.3/.2 · factors P1 .5/P2 1/P3 2** → pool $23.24M, statewide target **5,759 FTES**,
-earns **$8.62M (35.6%)**, median 31%. Retired `targetMultiplier`/`effectiveFtesRate`/`setTargetMultiplier`;
-factor is editable per-priority in the tab. Prototyped + real-Chromium-verified in the **sanity-check artifact**
-first (linked on the private tab). Suite **545/545**. ⚠ **Do NOT reintroduce a global multiplier** — the factor
-is THE dial. Durable: `methodology-retire-a-global-dial-into-per-item-dials`. Story:
-`docs/cpl_funding_lessons.md` §2026-08-04 · handoff `docs/cpl_funding_handoff.md`. **Next: Budget reconciliation.**
-Side-lane — left the numbered handoff to the CCR mainline.
-
 
 ## Troubleshooting
 
