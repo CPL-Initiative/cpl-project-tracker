@@ -376,6 +376,128 @@
       via: "web", source: "https://www.lavc.edu/student-services/counseling/help-desk",
       contacts: [],
       note: "Phone-based help desk; no department inbox published", },
+    "Madera College": {
+      via: "web", source: "https://www.maderacollege.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@maderacollege.edu" }], },
+    "Mendocino College": {
+      via: "web", source: "https://www.mendocino.edu/counseling-center",
+      contacts: [{ name: null, title: "Counseling Center", email: "counselingappointments@mendocino.edu" }], },
+    "Merced College": {
+      via: "web", source: "https://www.mccd.edu/student-support/academic-counseling/",
+      contacts: [{ name: null, title: "Academic Counseling (e-counseling)", email: "ecounselor@mccd.edu" }], },
+    "Merritt College": {
+      via: "web", source: "https://merritt.edu/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "counseling.merritt@peralta.edu" }], },
+    "MiraCosta College": {
+      via: "web", source: "https://miracosta.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Academic Counseling", email: "onlineadvisor@miracosta.edu" }], },
+    "Mt. San Antonio College": {
+      via: "web", source: "https://www.mtsac.edu/counseling/",
+      contacts: [],
+      note: "Phone only; no department inbox published", },
+    "Napa Valley College": {
+      via: "web", source: "https://www.napavalley.edu/student-services-and-resources/general-counseling/index.html",
+      contacts: [{ name: null, title: "Dean of Counseling Services & Student Success", email: "ryan.smith@napavalley.edu" }],
+      note: "Named contact on the counseling page", },
+    "Oxnard College": {
+      via: "web", source: "https://www.oxnardcollege.edu/departments/student-services/counseling",
+      contacts: [{ name: null, title: "General Counseling", email: "occounseling@vcccd.edu" }], },
+    "Palo Verde College": {
+      via: "web", source: "https://www.paloverde.edu/counseling/index.html",
+      contacts: [{ name: null, title: "Associate Dean of Counseling", email: "irma.gonzalez@paloverde.edu" }],
+      note: "Named contact on the counseling page", },
+    "Pasadena City College": {
+      via: "web", source: "https://pasadena.edu/academics/support/counseling/about/contact.php",
+      contacts: [],
+      note: "General counseling uses an email ticketing form, not an address. The only published inbox is noncreditcounseling@pasadena.edu (noncredit division only) - flagged for review", },
+    "Porterville College": {
+      via: "web", source: "https://www.portervillecollege.edu/student-services/counseling-and-advising/index.html",
+      contacts: [{ name: null, title: "Counseling Center", email: "pccounselingcenter@portervillecollege.edu" }], },
+    "Reedley College": {
+      via: "web", source: "https://www.reedleycollege.edu/student-services/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling & Advising", email: "counseling@reedleycollege.edu" }], },
+    "Santa Barbara City College": {
+      via: "web", source: "https://www.sbcc.edu/counselingcenter/contactus.php",
+      contacts: [{ name: null, title: "Academic Counseling Center", email: "academiccounselingcenter@sbcc.edu" }], },
+    "Santa Rosa Junior College": {
+      via: "web", source: "https://counseling.santarosa.edu/staff",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Santiago Canyon College": {
+      via: "web", source: "https://www.sccollege.edu/students/studentservices/counseling/",
+      contacts: [{ name: null, title: "Welcome Center", email: "welcomecenter@sccollege.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Sierra College": {
+      via: "web", source: "https://www.sierracollege.edu/student-services/counseling/",
+      contacts: [],
+      note: "Uses a Counseling Intake Form rather than a published address", },
+    "Skyline College": {
+      via: "web", source: "https://skylinecollege.edu/counseling/contact.php",
+      contacts: [{ name: null, title: "Counseling", email: "skycounseling@smccd.edu" }], },
+    "Solano Community College": {
+      via: "web", source: "https://solano.edu/academic-counseling/index.php",
+      contacts: [{ name: null, title: "Academic Counseling", email: "counseling@solano.edu" }], },
+    "Southwestern College": {
+      via: "web", source: "https://www.swccd.edu/student-support/counseling-and-career-advisement/index.aspx",
+      contacts: [{ name: null, title: "Counseling & Career Advisement", email: "SWCCounsCenter@swccd.edu" }], },
+    "Taft College": {
+      via: "web", source: "https://www.taftcollege.edu/student-campus-life/student-support/counseling-center/index.php",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Ventura College": {
+      via: "web", source: "https://www.venturacollege.edu/departments/student-services/counseling",
+      contacts: [{ name: null, title: "Academic Counseling (e-counseling)", email: "vc_e-counseling@vcccd.edu" }], },
+    "West Los Angeles College": {
+      via: "web", source: "https://www.wlac.edu/student-services/counseling",
+      contacts: [{ name: null, title: "Welcome Center", email: "WelcomeCenter@wlac.edu" }],
+      note: "Counseling directs students to the Welcome Center", },
+    "Calbright College Non-Credit": {
+      via: "web", source: "https://www.calbright.edu/talk-with-us/",
+      contacts: [{ name: null, title: "Student Success", email: "success@calbright.org" }],
+      note: "Same institution as Calbright College Credit; online-only, no campus counseling office", },
+    "North Orange Continuing Education": {
+      via: "web", source: "https://noce.edu/home/contact-us/",
+      contacts: [{ name: null, title: "NOCE Counseling", email: "counseling@noce.edu" }],
+      note: "Same institution as the Credit entity in MAP", },
+    "San Diego College of Continuing Education": {
+      via: "curator", source: "https://sdcce.edu/student-services/academic-support/counseling.html", by: "Jessica", on: "2026-08-05",
+      contacts: [{ name: null, title: "ECC campus counseling", email: "sdceecc@sdccd.edu" }],
+      note: "Same institution as the Credit entity in MAP; supplied by Jessica", },
+    "Allan Hancock College": {
+      via: "web", source: "https://www.hancockcollege.edu/counseling/index.php",
+      contacts: [{ name: null, title: "Counseling Department", email: "counseling@hancockcollege.edu" }], },
+    "Copper Mountain College": {
+      via: "web", source: "https://www.cmccd.edu/contact/",
+      contacts: [{ name: null, title: "Admissions & Records", email: "Admissions&Records@cmccd.edu" }],
+      note: "Counseling page directs students to Admissions & Records. Note the ampersand in the address \u2014 worth confirming before use", },
+    "Crafton Hills College": {
+      via: "web", source: "https://www.craftonhills.edu/current-students/counseling/index.php",
+      contacts: [],
+      note: "Individual counselors listed only; no department inbox", },
+    "Folsom Lake College": {
+      via: "web", source: "https://flc.losrios.edu/student-resources/counseling",
+      contacts: [{ name: null, title: "Counseling", email: "flc-counseling@flc.losrios.edu" }], },
+    "Foothill College": {
+      via: "web", source: "https://foothill.edu/counseling/index.html",
+      contacts: [{ name: null, title: "Counseling Services", email: "fhcounseling@fhda.edu" }], },
+    "Grossmont College": {
+      via: "web", source: "https://www.grossmont.edu/student-support/counseling/",
+      contacts: [{ name: null, title: "Counseling Center", email: "grossmont.counselingcenter@gcccd.edu" }], },
+    "Mission College": {
+      via: "web", source: "https://missioncollege.edu/student-services/counseling/index.html",
+      contacts: [],
+      note: "Phone only (408-855-5034); no department inbox published", },
+    "Orange Coast College": {
+      via: "web", source: "https://orangecoastcollege.edu/services-support/counseling/index.html",
+      contacts: [],
+      note: "No general inbox; only specialized ones (occretention@ for probation/dismissal, transfercenter@)", },
+    "Sacramento City College": {
+      via: "web", source: "https://scc.losrios.edu/student-resources/counseling-and-transfer",
+      contacts: [{ name: null, title: "Counseling and Transfer", email: "counseling@scc.losrios.edu" }], },
+    "West Valley College": {
+      via: "web", source: "https://www.westvalley.edu/services/counseling/",
+      contacts: [],
+      note: "Phone and Starfish scheduling; no department inbox published", },
   };
   function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
 
