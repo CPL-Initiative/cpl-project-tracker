@@ -162,6 +162,60 @@ ok("report includes the open questions", report.indexOf("## Open questions") !==
 ok("report survives a null dormant list (dataset unavailable)",
   typeof M.buildReport(reg, null, live) === "string");
 
+// ── Write layer ────────────────────────────────────────────────────────────
+// Guards the two rulings that shape it: answering never closes (a revision
+// SUPERSEDES, nothing is deleted), and notes sit alongside the register rather
+// than rewriting it.
+const sql = fs.readFileSync(path.join(ROOT, "kb", "supabase_nc_partner_notes.sql"), "utf8");
+
+ok("notes table is keyed by item id, so one affordance covers every section",
+  /item_id\s+text\s+not null/.test(sql));
+ok("revision chain exists in both directions (supersedes / superseded_by)",
+  /supersedes\s+uuid/.test(sql) && /superseded_by\s+uuid/.test(sql));
+ok("there is NO delete policy — notes are superseded, never removed",
+  sql.indexOf("for delete") === -1);
+ok("promotion is recorded on the row, not implied",
+  /promoted_at\s+timestamptz/.test(sql) && /promoted_to\s+text/.test(sql));
+ok("RLS gates READ as well as write (the tab is private)",
+  /nc_partner_notes_read[\s\S]{0,200}team_pass_ok\(\) or public\.is_allowed_reviewer\(\)/.test(sql));
+ok("insert and update are both gated",
+  /nc_partner_notes_insert/.test(sql) && /nc_partner_notes_update/.test(sql));
+ok("the revise RPC links the pair atomically",
+  /nc_partner_note_revise/.test(sql) && /set superseded_by = new_id/.test(sql));
+ok("body length is bounded (no unbounded write)", /char_length\(body\) between/.test(sql));
+
+ok("client renders only LIVE notes (superseded_by is null)",
+  src.indexOf("superseded_by=is.null") !== -1);
+ok("client writes through the revise RPC, not a raw insert",
+  src.indexOf("nc_partner_note_revise") !== -1);
+ok("the ✎ affordance is attached to all four card types",
+  (src.match(/notesBlock\(/g) || []).length >= 5,
+  String((src.match(/notesBlock\(/g) || []).length));
+ok("locked (no team phrase) shows an explanation rather than a dead button",
+  src.indexOf("Unlock with the team phrase") !== -1);
+ok("notes load does not block the first render",
+  /render\(root, d, state\.dorm, state\.live\);\s*\n\s*loadNotes\(\)/.test(src));
+
+// Promotion packet
+const withNotes = {
+  notes: { "OPP-1": [{ id: "n1", item_id: "OPP-1", body: "A thing we learned.", author: "Sam",
+                        created_at: "2026-08-05T00:00:00Z", promoted_at: null }] }
+};
+Object.assign(M._state, withNotes);
+const packet = M.buildPromotionPacket(reg);
+ok("promotion packet is produced when notes are pending", typeof packet === "string" && packet.length > 0);
+ok("packet carries the note body", packet.indexOf("A thing we learned.") !== -1);
+ok("packet names the register item it came from", packet.indexOf("OPP-1") !== -1);
+ok("packet states the public-KB boundary explicitly",
+  packet.indexOf("cpl-knowledge-base") !== -1 && packet.indexOf("CURATION.md") !== -1);
+ok("packet offers a promote-to decision per note", packet.indexOf("**Promote to:**") !== -1);
+
+M._state.notes = { "OPP-1": [{ id: "n1", item_id: "OPP-1", body: "done", promoted_at: "2026-08-05T00:00:00Z" }] };
+ok("an already-promoted note is not re-offered", M.buildPromotionPacket(reg) === null);
+M._state.notes = {};
+ok("no notes means no packet (button says so rather than emitting an empty file)",
+  M.buildPromotionPacket(reg) === null);
+
 // ── Tab wiring in BOTH HTMLs (Rule 4) ──────────────────────────────────────
 ["CPL_Dashboard.html", "index.html"].forEach(f => {
   const html = fs.readFileSync(path.join(ROOT, f), "utf8");

@@ -47,7 +47,27 @@
   // "dormant" is interesting — a 1-college statewide exhibit is usually mid-rollout.
   var DORMANT_MIN_COLLEGES = 2;
 
-  var state = { data: null, dorm: null, live: null, opp: "all", uc: "all", q: "open" };
+  // ── Notes write layer (kb/supabase_nc_partner_notes.sql) ─────────────────
+  // Anon key is public + RLS-gated; reads AND writes require the team phrase
+  // (the same cpl_team_pass as Team & RACI) or a signed-in reviewer.
+  var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
+  var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
+  var NOTES_URL = SUPABASE_URL + "/rest/v1/nc_partner_notes";
+  var REVISE_RPC = SUPABASE_URL + "/rest/v1/rpc/nc_partner_note_revise";
+  var TEAM_KEY = "cpl_team_pass";
+
+  function teamPhrase() {
+    try { return window.localStorage.getItem(TEAM_KEY) || ""; } catch (e) { return ""; }
+  }
+  function canWrite() { return !!teamPhrase(); }
+  function authHeaders() {
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var p = teamPhrase();
+    if (p) h["x-team-pass"] = p;
+    return h;
+  }
+
+  var state = { data: null, dorm: null, live: null, notes: {}, author: "", opp: "all", uc: "all", q: "open" };
   var SECTIONS = [];
 
   // ── DOM helpers ────────────────────────────────────────────────────────────
@@ -235,6 +255,24 @@
       R + " .nclp-mode .mwhy b{color:var(--text-strong);}",
       "@media (max-width:560px){" + R + " .nclp-mode dl{grid-template-columns:1fr;gap:.05rem;}",
       R + " .nclp-mode dt{margin-top:.3rem;}}",
+      // notes / write layer
+      R + " .nclp-notes{margin:.6rem 0 0;border-top:1px solid var(--border);padding-top:.5rem;}",
+      R + " .nclp-note{background:var(--surface-subtle);border-left:3px solid var(--hunter);",
+      "border-radius:0 6px 6px 0;padding:.5rem .7rem;margin:0 0 .4rem;}",
+      R + " .nclp-note p.nt{margin:0 0 .3rem;font-size:.86rem;color:var(--text-body);white-space:pre-wrap;line-height:1.5;}",
+      R + " .nclp-chip.promoted{border-color:var(--hunter);color:var(--hunter);font-weight:600;}",
+      R + " button.nclp-addnote,#" + ROOT_ID + " button.nclp-revise{font:inherit;font-size:.76rem;cursor:pointer;",
+      "border:1px dashed var(--border-strong);border-radius:999px;padding:.18rem .6rem;",
+      "background:transparent;color:var(--accent-link);}",
+      R + " button.nclp-addnote:hover,#" + ROOT_ID + " button.nclp-revise:hover{border-style:solid;border-color:var(--cobalt);}",
+      R + " .nclp-locked{font-size:.78rem;color:var(--text-muted);font-style:italic;margin:0;}",
+      R + " .nclp-editor{background:var(--surface-subtle);border:1px solid var(--border-strong);",
+      "border-radius:6px;padding:.6rem;margin:0 0 .5rem;display:flex;flex-direction:column;gap:.4rem;}",
+      R + " .nclp-editor textarea,#" + ROOT_ID + " .nclp-editor input{font:inherit;font-size:.86rem;width:100%;",
+      "border:1px solid var(--border-strong);border-radius:5px;padding:.4rem .5rem;",
+      "background:var(--surface-opaque);color:var(--text-body);box-sizing:border-box;}",
+      R + " .nclp-editrow{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;}",
+      R + " .nclp-msg{font-size:.78rem;color:var(--text-muted);}",
       // cross-reference links + target flash
       R + " a.nclp-ref{color:var(--accent-link);text-decoration:none;font-weight:600;",
       "font-size:.9em;font-variant-numeric:tabular-nums;border-bottom:1px dotted currentColor;",
@@ -304,6 +342,124 @@
     return o;
   }
 
+  // ── Notes: fetch, group by item, write ───────────────────────────────────
+  // Only LIVE notes render (superseded_by is null) — a revision replaces its
+  // predecessor on screen while the predecessor is retained in the table, so
+  // "answering never closes, just revises" holds without losing the history.
+  function loadNotes() {
+    if (!canWrite()) { state.notes = {}; return Promise.resolve({}); }
+    var url = NOTES_URL + "?select=id,item_id,body,author,created_at,promoted_at,promoted_to" +
+      "&superseded_by=is.null&order=created_at.desc";
+    return fetch(url, { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (n) {
+          (by[n.item_id] = by[n.item_id] || []).push(n);
+        });
+        state.notes = by;
+        return by;
+      })
+      .catch(function () { state.notes = {}; return {}; });
+  }
+
+  function saveNote(itemId, body, supersedesId) {
+    return fetch(REVISE_RPC, {
+      method: "POST",
+      headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
+      body: JSON.stringify({
+        p_item_id: itemId, p_body: body,
+        p_author: state.author || null,
+        p_supersedes: supersedesId || null
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save failed (" + r.status + ")");
+      return r.json();
+    });
+  }
+
+  function fmtDate(iso) {
+    if (!iso) return "";
+    var d = new Date(iso);
+    return isNaN(d.getTime()) ? "" : d.toISOString().slice(0, 10);
+  }
+
+  // The ✎ affordance + rendered notes for one register item. Present on every
+  // card so a question, an opportunity, a mode or a use case can all take input.
+  function notesBlock(itemId) {
+    var wrap = el("div", "nclp-notes");
+    var list = (state.notes && state.notes[itemId]) || [];
+    list.forEach(function (n) {
+      var b = el("div", "nclp-note");
+      b.appendChild(el("p", "nt", n.body));
+      var meta = el("div", "nclp-meta");
+      if (n.author) meta.appendChild(chip(n.author));
+      if (n.created_at) meta.appendChild(chip(fmtDate(n.created_at)));
+      if (n.promoted_at) meta.appendChild(chip("promoted → " + (n.promoted_to || "register"), "promoted"));
+      if (canWrite()) {
+        var rev = el("button", "nclp-revise", "Revise");
+        rev.type = "button";
+        rev.addEventListener("click", function () { openEditor(wrap, itemId, n); });
+        meta.appendChild(rev);
+      }
+      b.appendChild(meta);
+      wrap.appendChild(b);
+    });
+    if (canWrite()) {
+      var add = el("button", "nclp-addnote", list.length ? "✎ Add insight" : "✎ Add insight or information");
+      add.type = "button";
+      add.addEventListener("click", function () { openEditor(wrap, itemId, null); });
+      wrap.appendChild(add);
+    } else if (!list.length) {
+      wrap.appendChild(el("p", "nclp-locked", "Unlock with the team phrase (Team & RACI) to add insight here."));
+    }
+    return wrap;
+  }
+
+  function openEditor(wrap, itemId, existing) {
+    if (wrap.querySelector(".nclp-editor")) return;
+    var form = el("div", "nclp-editor");
+    var ta = document.createElement("textarea");
+    ta.rows = 4;
+    ta.placeholder = existing
+      ? "Revise this — the previous version is kept, not overwritten."
+      : "What do you know that this item is missing?";
+    if (existing) ta.value = existing.body;
+    form.appendChild(ta);
+    var who = document.createElement("input");
+    who.type = "text";
+    who.placeholder = "Your name (optional)";
+    who.value = state.author || "";
+    who.setAttribute("maxlength", "80");
+    form.appendChild(who);
+    var row = el("div", "nclp-editrow");
+    var save = el("button", "nclp-btn", existing ? "Save revision" : "Save");
+    save.type = "button";
+    var cancel = el("button", "nclp-btn", "Cancel");
+    cancel.type = "button";
+    var msg = el("span", "nclp-msg");
+    row.appendChild(save); row.appendChild(cancel); row.appendChild(msg);
+    form.appendChild(row);
+    wrap.insertBefore(form, wrap.firstChild);
+    ta.focus();
+
+    cancel.addEventListener("click", function () { wrap.removeChild(form); });
+    save.addEventListener("click", function () {
+      var body = ta.value.trim();
+      if (!body) { msg.textContent = "Nothing to save yet."; return; }
+      state.author = who.value.trim();
+      save.disabled = true;
+      msg.textContent = "Saving…";
+      saveNote(itemId, body, existing ? existing.id : null)
+        .then(function () { return loadNotes(); })
+        .then(function () { rerender(); revealItem(itemId); })
+        .catch(function (e) {
+          save.disabled = false;
+          msg.textContent = e && e.message ? e.message : "Save failed.";
+        });
+    });
+  }
+
   // ── Modes ──────────────────────────────────────────────────────────────────
   function prioLabel(p) {
     return p === "highest" ? "Priority 1" : p === "high" ? "Priority 2"
@@ -343,6 +499,7 @@
         });
         c.appendChild(cov);
       }
+      c.appendChild(notesBlock(m.id));
       g.appendChild(c);
     });
     return g;
@@ -458,6 +615,7 @@
       if (o._derived_by) det.appendChild(el("p", "nclp-derived", "Derived " + (o._derived_at || "") + " — " + o._derived_by));
       c.appendChild(det);
     }
+    c.appendChild(notesBlock(o.id));
     return c;
   }
 
@@ -550,6 +708,7 @@
           m.appendChild(chip(u.status, u.status === "open-question" ? "open" : ""));
           if (u.cpl_type) m.appendChild(chip(u.cpl_type, "sec2"));
           c.appendChild(m);
+          c.appendChild(notesBlock(u.id));
           body.appendChild(c);
         });
     }
@@ -578,6 +737,7 @@
           m.appendChild(chip(q.status === "open" ? "needs input" : "needs research", q.status === "open" ? "open" : ""));
           if (q.section) m.appendChild(chip(q.section, "sec2"));
           c.appendChild(m);
+          c.appendChild(notesBlock(q.id));
           body.appendChild(c);
         });
     }
@@ -685,6 +845,68 @@
         (q.section ? ", " + q.section : "") + ") — " + q.q + (q.why ? " _" + q.why + "_" : ""));
     });
     push("");
+    return L.join("\n");
+  }
+
+  // ── Promotion: notes → the tracker's KB lanes ──────────────────────────────
+  // Sam's ask was to "wire it so the write layer ends up in the KB." Notes live
+  // in Supabase (immediate, revisable); the KB lanes are version-controlled.
+  // This emits a promotion packet: an unpromoted note becomes (a) a register
+  // patch proposal against kb/nc_learning_partners.json and (b) a KB-note draft
+  // in the docs/kb-notes/ format — both committed by a human/session, so the
+  // curated spine keeps its audit trail.
+  //
+  // ⚠ The tracker's lanes only. The public cpl-knowledge-base repo changes ONLY
+  // through its own CURATION.md pipeline behind a human-reviewed draft PR;
+  // nothing here writes there.
+  function buildPromotionPacket(d) {
+    var byItem = state.notes || {};
+    var ids = Object.keys(byItem);
+    var pending = [];
+    ids.forEach(function (id) {
+      (byItem[id] || []).forEach(function (n) { if (!n.promoted_at) pending.push(n); });
+    });
+    if (!pending.length) return null;
+
+    function labelFor(id) {
+      var hit = null;
+      ["modes", "use_cases", "opportunities", "questions"].forEach(function (k) {
+        (d[k] || []).forEach(function (x) { if (x.id === id) hit = x; });
+      });
+      if (!hit) return id;
+      return id + " — " + (hit.name || hit.title || hit.q || "");
+    }
+
+    var L = [], push = function (x) { L.push(x); };
+    push("---");
+    push("title: \"Noncredit & Learning Partners — promotion packet\"");
+    push("date: " + (d._as_of || ""));
+    push("status: draft");
+    push("tags: [noncredit, learning-partners, cpl, promotion-packet]");
+    push("source: COBI Noncredit & Learning Partners tab (nc_partner_notes)");
+    push("---");
+    push("");
+    push("# Promotion packet — " + pending.length + " note" + (pending.length === 1 ? "" : "s") + " awaiting promotion");
+    push("");
+    push("Captured in the tab, not yet folded into the curated register. For each:");
+    push("decide whether it revises a register field, becomes a standalone KB note,");
+    push("or both — then commit it and stamp `promoted_at` / `promoted_to` on the row.");
+    push("");
+    push("**Scope:** the tracker's lanes only — `kb/nc_learning_partners.json` and");
+    push("`docs/kb-notes/`. The public `cpl-knowledge-base` is reached only through");
+    push("its own `CURATION.md` pipeline behind a human-reviewed draft PR.");
+    push("");
+    pending.forEach(function (n, i) {
+      push("## " + (i + 1) + ". " + labelFor(n.item_id));
+      push("");
+      push("- **Item:** `" + n.item_id + "`  ·  **Note id:** `" + n.id + "`");
+      push("- **Added:** " + fmtDate(n.created_at) + (n.author ? " by " + n.author : ""));
+      push("");
+      push("> " + String(n.body).split("\n").join("\n> "));
+      push("");
+      push("**Promote to:**  ☐ register field (`" + n.item_id + "`)   ☐ `docs/kb-notes/`   ☐ both   ☐ hold");
+      push("");
+    });
     return L.join("\n");
   }
 
@@ -802,6 +1024,16 @@
         reportFilename(d, "md"));
     });
     btn("↓ Word", function (b) { exportWord(d, state.dorm, state.live, b); });
+    btn("↑ Promote notes", function (b) {
+      var packet = buildPromotionPacket(d);
+      if (!packet) {
+        b.textContent = canWrite() ? "Nothing to promote" : "Unlock to use";
+        setTimeout(function () { b.textContent = "↑ Promote notes"; }, 1800);
+        return;
+      }
+      downloadBlob(new Blob([packet], { type: "text/markdown;charset=utf-8" }),
+        String(d._as_of || "").replace(/-/g, "") + "_NC_Learning_Partners_Promotion_Packet.md");
+    });
     btn("🖨 Print / PDF", function () {
       Array.prototype.forEach.call(allSecs(), function (x) { x.open = true; });
       setTimeout(function () { window.print(); }, 60);
@@ -893,7 +1125,9 @@
         function done() {
           state.dorm = computeDormant(window.CPL_CREDENTIAL_REFERENCE);
           state.live = computeLive(window.CPL_CREDENTIAL_REFERENCE);
+          // Notes are additive — render immediately, fold them in when they land.
           render(root, d, state.dorm, state.live);
+          loadNotes().then(function () { rerender(); });
         }
         // The credential dataset is ~3 MB — load on demand for the live dormant
         // query, and render without it if it fails (the section says so honestly).
@@ -914,6 +1148,8 @@
     computeDormant: computeDormant,
     computeLive: computeLive,
     buildReport: buildReport,
+    buildPromotionPacket: buildPromotionPacket,
+    loadNotes: loadNotes,
     _state: state
   };
 })();
