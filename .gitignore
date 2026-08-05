@@ -63,3 +63,9 @@ nudges/nudges_preview.md
 raci/team_members_seed.json
 chatbox/coci_offerings_payload.json
 kb/program_course_graph.json
+
+# Partner occupation→CPL crosswalk deliverables (kb/_build_partner_crosswalk.py).
+# The workbook is a REGENERABLE artifact — re-run the tool rather than committing
+# ~130KB of binary per engagement. The small JSON receipts beside it
+# (summary.json / unmapped.json — the latter IS the curator worklist) are kept.
+kb/partner_crosswalk_out/**/*.xlsx

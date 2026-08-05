@@ -583,3 +583,32 @@ Two files here back the **🤝 Noncredit & Learning Partners** tab:
 from `credential_reference_data.js` at render time, so it can't go stale the way a
 hand-copied list would. See
 [`docs/kb-notes/methodology-dormant-asset-worklist.md`](../docs/kb-notes/methodology-dormant-asset-worklist.md).
+
+## Partner occupation → CPL crosswalk (2026-08-05, SkyWalker)
+
+Three files back the reusable **"which of the occupations we train for can our
+students already get college credit for, and where?"** instrument:
+
+| File | What |
+|---|---|
+| `_build_partner_crosswalk.py` | The engine. Reads any partner list (`.xlsx/.csv/.tsv/.txt`), joins the adoption view + the Common Exhibit Reference, emits a distributable workbook + `summary.json` + `unmapped.json`. `--region-preset` adds the Partner Region + Regional Capacity sheets. |
+| `occupation_credential_map.json` | The **shared, growable rulings** — occupation→credential is subject-matter JUDGMENT, so it accumulates here across engagements instead of being recomputed. Keyed by a normalized occupation string so `Plumber`/`PLUMBER` share one ruling. Seeded from the SJCOE list: 139 occupations, 406 credential rulings, 35 curated "no CPL exists" findings. |
+| `partner_crosswalk_regions.json` | Named college regions for `--region-preset`. College names must match MAP adopter names EXACTLY — a typo yields an empty region silently, which `tests/partner_crosswalk_test.py` guards. |
+
+⚠ **Statewide comes from the ADOPTION file.** `statewide_data.js`
+(`collaborative_type == "CCC Collaborative"`) carries **138** statewide titles;
+`credential_reference_data.js` (`statewide: true`) flags only **84**, a strict
+SUBSET. The 54-title delta is the newer CSLB-contractor-licence / Carpenters
+Apprenticeship / NCCER cohort — precisely the rows a trades-heavy partner list
+matches. The test asserts the subset relationship so an upstream change fails
+loudly instead of under-counting.
+
+⚠ **`adopters` is a UNION** across every exhibit record sharing a unified title
+(statewide adoptions AND local articulations), because the partner's question is
+"where can my student get credit?". Counts here can legally exceed the Statewide
+Exhibits tab, which counts the CCC-Collaborative record alone.
+
+Outputs land in `kb/partner_crosswalk_out/<date>-<slug>/`. The workbook is a
+regenerable artifact and is **not committed**; `summary.json` / `unmapped.json`
+are the run receipt, and `unmapped.json` **is the curator worklist**. Method:
+[`docs/kb-notes/methodology-partner-occupation-crosswalk.md`](../docs/kb-notes/methodology-partner-occupation-crosswalk.md).
