@@ -1,9 +1,33 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyMail — the MAP Users tab can now show which colleges have NO student-facing CPL contact, and who to route each one to.",
-  "_session": "SkyMail (120)",
-  "_status": "A student asking one of 25 colleges for CPL through MAP was reaching nobody: MAP sends those requests to the college's Primary Contact email, and those 25 had none on file — 24 of them with a live landing page. The MAP Users tab now has a 'No student contact' filter listing exactly those colleges, with a proposed person for each. Every proposal is someone the COLLEGE already designated in MAP (CPL Coordinator, CPL Assistant, CPL Counselor, Articulation Officer...), because colleges are locally governed and we route to their people rather than choosing new ones — that resolves 17 of the 25. The other 8 need a human to name someone; Jessica already supplied contacts for two of them. Ashley and Jessica are in the session and their MAP knowledge is what the remaining work needs.",
+  "_as_of": "2026-08-05 · SkyWalker — we can now answer a training partner's \"which of our occupations already earn college credit, and where?\" in one pass.",
+  "_session": "SkyWalker (121)",
+  "_status": "Ashley brought a list of 160 occupations from an employment training center and asked which ones map to CPL and which colleges honor them. 139 unique occupations went through: 51 have a statewide credit recommendation, 53 have CPL at specific colleges only, and 35 have no CPL anywhere in California. Two things came out of it that matter beyond this one partner. First, utility line work is a complete blank — lineworker, substation electrician, hydro plant, gas control, metering, cable splicer, power dispatcher, about 20 job titles, have zero CPL in the entire system. Second, the college in the partner's own county (San Joaquin Delta) has 69 CPL credentials and exactly one of them is career/technical — the other 68 are AP and CLEP exams. Modesto Junior College, 40 minutes away, has 265. A referral plan built on the nearest college would have quietly sent students to the wrong place. The tool that produced all this is now reusable: point it at any partner's occupation list and it does the same job, and each run adds to a shared crosswalk so the next partner is cheaper.",
   "items": [
+    {
+      "id": "pcw-second-partner",
+      "for": "fable",
+      "tab": "",
+      "text": "🔁 RUN IT AGAIN, on someone else's list. The crosswalk engine has been through exactly one partner (SJCOE). The whole promise is that each partner makes the next one cheaper — that's a design intention until a second list proves it. Any workforce board, AJCC, county office or apprenticeship sponsor will do. The run tells you what it couldn't match; that list is the work."
+    },
+    {
+      "id": "pcw-utility-gap",
+      "for": "sam",
+      "tab": "",
+      "text": "⚡ THE BIGGEST GAP WE'VE FOUND FROM A PARTNER LIST: utility line work has ZERO CPL anywhere in the system. Lineworker, lineman, substation electrician, hydro plant operator and mechanic, gas control, metering, cable splicer, power dispatcher — about 20 job titles, nothing to offer any of them. These are IBEW and PG&E-pipeline careers with formal apprenticeships, which is normally the easiest kind of CPL to build. Worth a conversation about whether we go after it."
+    },
+    {
+      "id": "pcw-delta-capacity",
+      "for": "sam",
+      "tab": "",
+      "text": "🏫 A college can look active on CPL and have nothing a working adult can use. San Joaquin Delta has 69 CPL credentials — 68 are AP and CLEP exams and exactly ONE is career/technical. Sacramento City and Folsom Lake have zero career credentials; Cosumnes River has none at all. Modesto Junior has 265, the most in the state. Our dashboards count credentials, not what KIND — so this is invisible today unless you go looking."
+    },
+    {
+      "id": "pcw-tab-decision",
+      "for": "sam",
+      "tab": "",
+      "text": "🧭 YOUR CALL — the COBI tab you green-lit. I'd build the 'what does each college actually offer CPL for, academic exams vs career/technical' view, because that's straight from the data. I would NOT publish the occupation-to-credential matching as a live tab: that part is my subject-matter judgment, and a tab makes it look more official than it is. The fix for that is a real occupation crosswalk (O*NET) — worth scoping if you want this to go public rather than hand-delivered."
+    },
     {
       "id": "mu-verify-fallbacks",
       "for": "sam",
@@ -51,30 +75,6 @@
       "for": "sam",
       "tab": "nc-learning-partners",
       "text": "⚠ NOCE, San Diego College of Continuing Education, Mt. SAC Noncredit and Calbright appear on ZERO of MAP's 1,987 credential titles — while ~48 entries already name a specific high school. The gap isn't permission or capability; nobody has done the data entry. Highest value-for-effort item in the whole workstream."
-    },
-    {
-      "id": "funding-optin",
-      "for": "fable",
-      "tab": "implementation-funding",
-      "text": "QUEUED (Sam's idea): a simple ADMINISTRATOR opt-in button on the college rows (VPAA/VPSS/CEO) — the participation-request qual. Recommended design (full write-up in docs/cpl_funding_handoff.md): don't verify against our stale admin roster — capture the current admin AT opt-in time (name/title/email form → pending cpl_optin row) and let the CO confirm in a review lane (reuse the merge-confirm pattern), then wire it into baselineGate. v2 = a magic-link email to a college-domain address for self-service. Build v1 next."
-    },
-    {
-      "id": "esl-review",
-      "for": "sam",
-      "tab": "unified-courses",
-      "text": "🆕 The ESL packaging DRY-RUN is ready to eyeball (kb/esl_package_out/2026-07-15/esl_package_report.md + the visual). It maps all 2,364 ESL courses → Beginning/Intermediate/Advanced + carve-outs. Two things worth your look before it applies: (1) confirm the 22 'Transfer-level ESL' candidates (college-composition courses — no transferable flag in the data, so I held them out rather than fold them); (2) the ~629 no-level courses folded to Beginning as the safe under-claim. Green-light → it applies."
-    },
-    {
-      "id": "carp-merge-confirms",
-      "for": "sam",
-      "tab": "credential-reference",
-      "text": "Carpentry folds still in the ⇒ Merge confirms lane: Rigging + Blueprint Reading-Residential rows + a few key collisions — ✓ Confirm merge (or rename apart) per row. Plus 4 still-ambiguous CTCNC rows (CARP 707/710/713 + Work Experience) that carry TWO credit recs each — pick the right title in-cell."
-    },
-    {
-      "id": "budget-amendment-errors",
-      "for": "sam",
-      "tab": "budget",
-      "text": "⚠️ Two errors are still in the Sept-2026 BOG amendment workbook itself — the copy heading to the Board. Its grand total says $74,000,000 but double-counts the $8,959,692 project slice (the real figure is $71,000,000), and its 'Max Award $665,971' is a typo for $665,791 computed over 115 colleges while its average uses 119. Our tab already shows the corrected numbers."
     }
   ]
 }
