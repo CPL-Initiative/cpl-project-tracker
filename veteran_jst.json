@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-05T11:31:18.863963+00:00",
+  "scraped_at": "2026-08-05T14:39:25.171300+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26504,
+    "jst": 26505,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -112,7 +112,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 373,
+      "jst": 374,
       "star": true
     },
     "Cypress College": {

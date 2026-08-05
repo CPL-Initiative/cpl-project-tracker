@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-05T11:31:18.288Z",
+  "scraped_at": "2026-08-05T14:39:24.592Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -308,17 +308,17 @@
         },
         {
           "college": "College of the Desert",
-          "students": 409,
-          "units": 2307.5,
-          "avgUnits": 5.641809290953545,
+          "students": 410,
+          "units": 2311.5,
+          "avgUnits": 5.63780487804878,
           "transcriptionRate": 36,
-          "avgTranscribed": 2.033007334963325,
+          "avgTranscribed": 2.0280487804878047,
           "criteriaMetCount": 2,
-          "militaryStudents": 373,
+          "militaryStudents": 374,
           "nonMilitaryStudents": 37,
           "apprenticeStudents": 0,
-          "savings": 3378072.5,
-          "yearImpact": 13000095,
+          "savings": 3384992.5,
+          "yearImpact": 13024363,
           "transcribedUnits": 831.5
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,953",
+      "value": "50,954",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,504"
+          "value": "26,505"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50953,
-    "Units": 242159.65000000002,
+    "Students": 50954,
+    "Units": 242163.65000000002,
     "TranscribedUnits": 102591.95,
-    "Savings": 337708240.25,
-    "YearImpact": 1360921688.3999999,
-    "MilitaryStudents": 26504,
+    "Savings": 337715160.25,
+    "YearImpact": 1360945956.3999999,
+    "MilitaryStudents": 26505,
     "NonMilitaryStudents": 24529,
     "AprenticeStudents": 751,
-    "AverageUnits": 4.752608286067553,
-    "TranscribedAverage": 2.0134624065315094
+    "AverageUnits": 4.752593515720061,
+    "TranscribedAverage": 2.0134228912352317
   }
 }
