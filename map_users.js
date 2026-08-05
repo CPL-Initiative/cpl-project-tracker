@@ -113,6 +113,7 @@
       ".mapu-src:hover { text-decoration:underline; }",
       ".mapu-fb { margin:0 0 4px; }",
       ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
+      ".mapu-dirtable td { vertical-align: top; font-size:.8rem; }",
       ".mapu-via-cur { color: var(--hunter, #2c601a); }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
       ".mapu-gate a { color: var(--navy-secondary); cursor:pointer; text-decoration:underline; }",
@@ -673,10 +674,17 @@
         + ' title="Colleges whose MAP landing page has no Primary Contact — the address MAP routes student CPL requests to">'
         + "⚠ No student contact"
         + (state.gaps ? ' <span class="mapu-lenscount">' + nGaps + "</span>" : "")
+        + "</button>"
+        + '<button class="mapu-lensbtn' + (state.lens === "contacts" ? " on" : "") + '" data-lens="contacts"'
+        + ' title="Every college with its Primary Contact, CPL Assistant, and published counseling inbox — exportable">'
+        + "📇 Contact directory"
+        + (state.gaps ? ' <span class="mapu-lenscount">' + state.gaps.filter(function (g) {
+            return g.college_kind === "college"; }).length + "</span>" : "")
         + "</button></div>";
     }
 
     if (state.lens === "gaps") { html += gapsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
+    if (state.lens === "contacts") { html += contactsHtml(); root.innerHTML = html + "</div>"; wire(root); return; }
 
     html += '<div class="mapu-toolbar">'
       + '<input class="q" type="text" placeholder="Filter colleges…" value="' + esc(state.q) + '">'
@@ -847,6 +855,98 @@
     return h;
   }
 
+  // ── Contact directory (Jessica, 2026-08-05) ───────────────────────────────
+  // Every college with the four contact fields the team works from, plus the
+  // college's PUBLISHED counseling inbox where we have verified one. Built as a
+  // lens rather than a handed-over spreadsheet so it refreshes off the monthly
+  // sync — an exported sheet is a photograph and starts aging immediately (Sam's
+  // steer). The ⬇ export is right here for when a snapshot IS what's wanted.
+  function contactRows() {
+    return (state.gaps || [])
+      .filter(function (g) { return g.college_kind === "college"; })
+      .slice()
+      .sort(function (a, b) { return (a.college || "").localeCompare(b.college || ""); });
+  }
+
+  function contactsHtml() {
+    if (state.gapsError) {
+      return '<div class="mapu-empty">Could not load the contact directory ('
+        + esc(state.gapsError) + "). Sign in on the <b>Team &amp; RACI</b> tab and try again.</div>";
+    }
+    if (!state.gaps) return '<p class="mapu-gate">Loading the contact directory…</p>';
+    var rows = contactRows();
+    var withPc = rows.filter(function (r) { return !!r.primary_contact_email; }).length;
+    var withAsst = rows.filter(function (r) { return !!r.cpl_assistant_email; }).length;
+    var withCouns = rows.filter(function (r) {
+      var f = fallbackFor(r.college);
+      return f && (f.contacts || []).some(function (c) { return c.email; });
+    }).length;
+
+    var h = '<p class="mapu-intro">Every college with the contacts MAP holds, plus the '
+      + "college's own published counseling inbox where we've verified one. "
+      + "<b>Blank means MAP has nothing on file</b> — not that it wasn't checked. "
+      + "Refreshes from the monthly MAP sync, so it stays current; use ⬇ when you need "
+      + "a snapshot to hand round.</p>";
+
+    h += '<div class="mapu-stat">'
+      + '<div class="box"><div class="n">' + rows.length + '</div><div class="l">Colleges</div></div>'
+      + '<div class="box"><div class="n">' + withPc + '</div><div class="l">Primary contact email</div></div>'
+      + '<div class="box"><div class="n">' + withAsst + '</div><div class="l">CPL Assistant email</div></div>'
+      + '<div class="box"><div class="n">' + withCouns + '</div><div class="l">Counseling inbox verified</div></div>'
+      + "</div>";
+
+    h += '<div class="mapu-toolbar">'
+      + '<button class="mapu-rosterbtn" data-dir-csv><b>⬇ Export to CSV / Excel</b></button>'
+      + '<span class="mapu-auth">Downloads a spreadsheet file — double-click it to open in Excel.</span>'
+      + "</div>";
+
+    h += '<table class="mapu-table mapu-dirtable"><thead><tr>'
+      + "<th>College</th><th>Primary contact</th><th>Primary contact email</th>"
+      + "<th>CPL Assistant email</th><th>Counseling email (from their website)</th>"
+      + "</tr></thead><tbody>";
+    rows.forEach(function (r) {
+      var f = fallbackFor(r.college);
+      var couns = "";
+      if (f) {
+        var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
+        if (withEmail.length) {
+          couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>")
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+            + (f.via === "curator" ? "✔ from " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
+        } else {
+          couns = '<span class="mapu-st mapu-st-inactive">none published</span>'
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked ↗</a>';
+        }
+      }
+      h += "<tr><td>" + esc(r.college) + "</td>"
+        + "<td>" + esc(r.primary_contact || "") + "</td>"
+        + "<td>" + esc(r.primary_contact_email || "") + "</td>"
+        + "<td>" + esc(r.cpl_assistant_email || "") + "</td>"
+        + "<td>" + couns + "</td></tr>";
+    });
+    return h + "</tbody></table>";
+  }
+
+  function contactsCsv() {
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var head = ["College", "Primary contact name", "Primary contact email",
+                "CPL Assistant email", "Counseling email", "Counseling email source",
+                "Counseling source type"];
+    var lines = [head.map(q).join(",")];
+    contactRows().forEach(function (r) {
+      var f = fallbackFor(r.college);
+      var emails = f ? (f.contacts || []).filter(function (c) { return c.email; })
+        .map(function (c) { return c.email; }).join("; ") : "";
+      lines.push([r.college, r.primary_contact || "", r.primary_contact_email || "",
+                  r.cpl_assistant_email || "", emails,
+                  f ? (f.source || "") : "",
+                  f ? (f.via === "curator" ? "CPL team (" + (f.by || "") + ")" : "college website") : ""
+                 ].map(q).join(","));
+    });
+    // BOM so Excel opens UTF-8 college names (Cañada) correctly on double-click.
+    return "﻿" + lines.join("\r\n");
+  }
+
   function gapsCsv() {
     var rows = gapRows();
     var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
@@ -916,7 +1016,8 @@
         state.lens = btn.getAttribute("data-lens");
         // Fetch the worklist the first time the lens is opened, not on tab load —
         // it is a second gated round-trip most visits never need.
-        if (state.lens === "gaps" && !state.gaps && !state.gapsError) {
+        if ((state.lens === "gaps" || state.lens === "contacts")
+            && !state.gaps && !state.gapsError) {
           render(root);
           loadGaps().then(function (rows) {
             state.gaps = Array.isArray(rows) ? rows : [];
@@ -934,18 +1035,24 @@
       btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-fix"), "contact"); });
     });
     var csv = root.querySelector("[data-gap-csv]");
-    if (csv) csv.addEventListener("click", function () { downloadCsv(gapsCsv()); });
+    if (csv) csv.addEventListener("click", function () {
+      downloadCsv(gapsCsv(), "map-student-contact-gaps.csv");
+    });
+    var dcsv = root.querySelector("[data-dir-csv]");
+    if (dcsv) dcsv.addEventListener("click", function () {
+      downloadCsv(contactsCsv(), "map-college-contact-directory.csv");
+    });
   }
 
   // Client-side CSV download so the team can work the list in MAP. Contact data
   // is gated, so this never touches the server — it serialises what the signed-in
   // reviewer already has on screen.
-  function downloadCsv(text) {
+  function downloadCsv(text, filename) {
     try {
       var blob = new Blob([text], { type: "text/csv;charset=utf-8;" });
       var a = document.createElement("a");
       a.href = URL.createObjectURL(blob);
-      a.download = "map-student-contact-gaps.csv";
+      a.download = filename || "export.csv";
       document.body.appendChild(a); a.click();
       setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 0);
     } catch (e) {}
@@ -997,6 +1104,9 @@
     _fallbackCell: fallbackCell,
     _gapsHtml: gapsHtml,
     _gapsCsv: gapsCsv,
+    _contactsCsv: contactsCsv,
+    _contactsHtml: contactsHtml,
+    _contactRows: contactRows,
     _buildContactMailto: buildContactMailto,
   };
 
