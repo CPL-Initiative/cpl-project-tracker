@@ -9,6 +9,43 @@ related:
 
 # You are the next Implementation-Funding session
 
+## ✅ JUST SHIPPED (2026-08-06, SkyPlan) — the $50k measure + headcount retired
+
+**The $50k/ESS-25-82 REWORK IS NOT BUILT** — this run found what it has to stand on.
+Full story: `docs/cpl_funding_lessons.md` §2026-08-06 · next-session prompt:
+`docs/session_123_handoff.md`.
+
+- **#1014 — the measure.** `funding/_build_cr_backlog.py`: the **disposition rate**
+  (share of a college's credit recommendations carrying any disposition — Applied /
+  **Not Applicable** / In Process). Median **4.7%**; MVC 3rd · Bakersfield 6th ·
+  Cabrillo 13th of 106 — the only metric of four that matched Sam's own pre-stated
+  ranking. **N/A counts as work done** and that is load-bearing: Cabrillo is 844 N/A
+  vs 320 Applied, so applied-only scores it 9% not 34%. Aggregate-only, `<5`
+  suppressed. ⏳ Waiting on Malone's view name (expected 8/7) → set `VIEW`, add the
+  view to `fetch_custom_report.py`, add the builder to `daily-dashboard.yml`.
+- **#1012 — headcount retired as a basis.** Explicit **layer-aware** `unit` on each
+  priority (the label was a policy switch: `wantsUnits()` string-matched "headcount"
+  so a retitle silently moved targets onto a headcount-era `target_rate` applied to
+  credit FTES). NC split **headcount → noncredit FTES** via a new `feederBasis(f)`
+  seam (was open-coded at FOUR sites). **Calbright placeholder 1,000** (reported
+  21,438.17 = 8.63 FTES/student, impossible), reported value retained + chipped.
+  5 prose strings fixed. ⚠ **FTES alone moves Calbright only $33K→$40K — the FLOOR
+  is what delivers equity** (~$161K at $150K); with a floor the basis barely matters.
+- **#1007 — CPL Type split** on `pe`/`pa`/`p3`, separating the military lane and
+  batch AP/IB/Cx auto-transcribes (which arrive already-transcribed by construction).
+- **#1013 — Pages concurrency rename**, routing around a wedged deploy during a
+  GitHub Actions incident (confirmed by GitHub, 17:40 UTC).
+
+### ⬜ Open here
+- **The rework itself** — stage ladder terminating at APPLIED (Sam's phase
+  correction), every step a **FRACTION not a check**, Veteran Star reframed as a
+  starting line, per-college top stranded exhibits. **Never rank colleges publicly.**
+- **The NC floor build** (unblocked by `feederBasis(f)`).
+- **Re-bake `year_priorities` → FTES** — deferred; rewrites ~15 assertions, own PR.
+- **Evaluator-hours number** from MVC/Bakersfield → connects backlog to the $50k.
+
+---
+
 ## ✅ JUST SHIPPED (2026-08-05, SkyOptIn cont.) — opt-in row CTA + the Budget reconciliation
 
 Three things landed after the opt-in-v1 banner below (read that too):

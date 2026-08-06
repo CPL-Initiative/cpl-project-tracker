@@ -1,9 +1,63 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-06 · SkyWalker — the partner crosswalk now also ships a flat, joinable extract with MAP exhibit IDs, and the findings are up as a shareable page.",
-  "_session": "SkyWalker (121)",
-  "_status": "Three things landed today. A student asking one of 25 colleges for CPL through MAP was reaching nobody — the MAP Users tab now lists them with a proposed contact drawn only from people the college already designated (17 of 25 resolve that way). A Contact directory lens gives the whole college-by-college picture with a CSV/Excel export, and all 71 colleges lacking a CPL Assistant have now been looked up: 56 have a counseling address, 15 publish nothing usable and say why. And a Governance tab records who decides what — it measures itself, which is how it surfaced that the college contact-refresh cadence was decided in June and has never once been run. Since then Ashley has the findings as a shareable web page and a flat spreadsheet — one row per occupation, credit recommendation, college and course, with the MAP exhibit IDs beside them so it can be joined against other systems. Both are produced by the same tool, so the next partner gets them without anyone rebuilding it.",
+  "_as_of": "2026-08-06 · SkyPlan — the $50k tab's real measure found: how much of the work sitting in students' CPL Plans a college has actually worked.",
+  "_session": "SkyPlan (122)",
+  "_status": "Today was about finding the right thing to measure on the $50k tab before redesigning it. Sam supplied a MAP export with one row per student per credit recommendation — and it carries the piece that was missing: whether the college has acted on each recommendation. Statewide, 81% of them have never been touched. The measure that comes out of it — the share of a college's recommendations that carry any decision, including 'not applicable' — is the first one that matches Sam's own read of which colleges are good at this (Moreno Valley, Cabrillo, Bakersfield all near the top; the typical college sits at 5%). It's also the fair one: Cabrillo ruled out 844 recommendations and applied 320, and a cruder measure would have scored that as failure. Two other things landed: student headcount is finally out of the funding model everywhere it decided money, and the noncredit split now uses noncredit FTES. The tab redesign itself is next. Separately, GitHub had an Actions outage all afternoon, so everything merged today publishes to the live site once that clears — nothing is lost.",
   "items": [
+    {
+      "id": "f50k-rework",
+      "for": "fable",
+      "tab": "implementation-funding",
+      "text": "🎯 NEXT — REBUILD THE $50k TAB on the new measure. Replace the three bare checkmarks with a stage per priority, each shown as a fraction (\"412 of 1,847 recommendations decided\") rather than a tick — a tick becomes the new finish line, which is exactly how colleges came to believe uploading a JST was the whole job. Show each college its own numbers only; never a league table."
+    },
+    {
+      "id": "f50k-star",
+      "for": "fable",
+      "tab": "implementation-funding",
+      "text": "⭐ REFRAME THE VETERAN STAR rather than repeating it. A college can earn the star without ever articulating a single credit recommendation. Pair it with what it produced: \"979 JSTs uploaded — those generated 18,264 credit recommendations, none articulated yet. The star is the starting line.\""
+    },
+    {
+      "id": "f50k-free-win",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "✅ A FREE WIN worth raising with Malone — 11,495 rows in students' plans say \"Credit Is Not Recommended\". ACE is stating outright that no credit exists, so no college can ever act on them, yet they sit in every queue looking like work. Marking them not-applicable automatically would shrink every college's list overnight with no judgement call."
+    },
+    {
+      "id": "f50k-focus",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🎯 WHERE TO POINT COLLEGES — just 20 military training documents account for about 40% of the 424,945 untouched recommendations statewide. A push on those few would move more than a broad ask ever could."
+    },
+    {
+      "id": "malone-view",
+      "for": "fable",
+      "tab": "",
+      "text": "🔌 WIRE MALONE'S NEW REPORT when it lands (expected 8/7). Three small steps: add the view to the daily pull, name it in the new builder, and add the builder to the daily job. Then this stops being a one-time file and refreshes every morning."
+    },
+    {
+      "id": "evaluator-hours",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "❓ ONE NUMBER NEEDED from MVC or Bakersfield — roughly how long does an Academic Records Evaluator take to work through one veteran's list of credit recommendations? That turns a college's backlog into hours, and hours into \"your $50,000 covers it\" — which is the whole point of the grant and the tab never says so."
+    },
+    {
+      "id": "nc-floor",
+      "for": "fable",
+      "tab": "implementation-funding",
+      "text": "🏗 BUILD THE NONCREDIT FLOOR. Switching the split to noncredit FTES only moved Calbright from $33K to $40K — the floor is what actually delivers the fairness Sam wanted (about $161K). Worth choosing the floor amount deliberately: with only four recipients, a $150K floor commits 60% of the $1M."
+    },
+    {
+      "id": "calbright-verify",
+      "for": "sam",
+      "tab": "implementation-funding",
+      "text": "🔍 ASK MALONE ABOUT CALBRIGHT'S NONCREDIT FTES. The reported 21,438 works out to 8.6 full-time-equivalent years per student, which isn't possible — it looks like a count of enrollments. A placeholder of 1,000 is in place and clearly marked; a real figure replaces it automatically."
+    },
+    {
+      "id": "actions-outage",
+      "for": "sam",
+      "tab": "",
+      "text": "⏳ GITHUB OUTAGE (8/6 afternoon) — GitHub confirmed an Actions incident: jobs weren't getting machines and pushes weren't triggering builds. Everything merged today is safe and publishes to the live site once it clears. No action needed unless the site is still stale tomorrow."
+    },
     {
       "id": "pcw-fourth-status",
       "for": "fable",
@@ -11,70 +65,10 @@
       "text": "🏷 SPLIT A STATUS THAT'S DOING TWO JOBS. 'Local CPL only' currently means both 'a college offers this' and 'the credential exists but nobody has adopted it' — very different answers for a student. Engineering Designer is the live example: 2 credentials, 0 colleges. The visual and the spreadsheet both say so honestly, but the underlying label is still coarse. Cheapest moment to fix it is the next partner run."
     },
     {
-      "id": "mu-directory",
-      "for": "sam",
-      "tab": "map-users",
-      "text": "📇 NEW — Contact directory on MAP Users (sign-in required). Every college with its primary contact, CPL Assistant email, and published counseling inbox, plus a ⬇ CSV/Excel export. Built for Jessica and Malone's PD session. A blank means MAP holds nothing on file — not that it wasn't checked."
-    },
-    {
       "id": "mu-15-blanks",
       "for": "sam",
       "tab": "map-users",
       "text": "⚠ 15 colleges publish NO usable counseling route. Two of them (Contra Costa, LA Harbor) publish only a mental-health inbox — the address a person would grab by eye is actively the wrong door for a credit question. Five list individual counselors with no designated contact; six are phone/form only. Each carries its source link."
-    },
-    {
-      "id": "fund-workbook-fixes",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "💰 TWO NUMBERS TO FIX in the Sep-BOG amendment workbook before it goes to the Board (everything else ties to the penny). (1) The $74M grand total double-counts $3M — it adds the $18M 'project available' cross-cut on top of the $35M that already contains $8.96M of it; the real total is $71M ($35M+$15M+$21M). (2) The Award range: Max should be $522,239 (Mt. San Antonio), not $665,971 — the old number predates the NC + rural carve-outs. Report it as 115 Colleges (Min $150,000 · Avg $210,785 · Max $522,239) SEPARATE from the 4 Noncredit campuses sharing $1M — Calbright is $33K, below the college floor, so don't blend them."
-    },
-    {
-      "id": "fund-nc-basis",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "🎚️ ONE DECISION unlocks the NC equalization build: switch the $1M noncredit split from headcount to FTES (more consistent with the credit model — we have noncredit_ftes for every campus), or keep headcount? Once you decide, I'll build the editable NC section — a floor to guarantee small campuses a minimum (your Calbright concern), plus an optional per-row factor to fine-tune, plus a dropdown to add other NC programs. Also weigh whether Mt. SAC's big NC number ($472K) is fair given its large NC CPL potential; that's the equity call only you can make."
-    },
-    {
-      "id": "gov-owners",
-      "for": "sam",
-      "tab": "governance",
-      "text": "⚖️ NEW TAB — Governance. Three tables: who decides what, how far we trust each input, and which loops actually run. Every 'owner' is blank ON PURPOSE and shows in red — who's accountable on our side is the one thing I can't work out from data, so filling that column IS the review. Six open questions at the bottom; the first one gates all the others. There's a Copy-as-Markdown button for taking it into a meeting."
-    },
-    {
-      "id": "gov-cadence-never-run",
-      "for": "sam",
-      "tab": "governance",
-      "text": "⏰ THE UNCOMFORTABLE ONE: the college contact-refresh nudge was decided as a per-semester cadence back in June, and has never been run — not once. The tool works; nobody has fired it. A cadence nobody runs is a document, not governance. Running it once end-to-end with a named owner would do more than anything else on this list, and the worklist it needs now exists."
-    },
-    {
-      "id": "pcw-second-partner",
-      "for": "fable",
-      "tab": "",
-      "text": "🔁 RUN IT AGAIN, on someone else's list. The crosswalk engine has been through exactly one partner (SJCOE). The whole promise is that each partner makes the next one cheaper — that's a design intention until a second list proves it. Any workforce board, AJCC, county office or apprenticeship sponsor will do. The run tells you what it couldn't match; that list is the work."
-    },
-    {
-      "id": "pcw-utility-gap",
-      "for": "sam",
-      "tab": "",
-      "text": "⚡ THE BIGGEST GAP WE'VE FOUND FROM A PARTNER LIST: utility line work has ZERO CPL anywhere in the system. Lineworker, lineman, substation electrician, hydro plant operator and mechanic, gas control, metering, cable splicer, power dispatcher — about 20 job titles, nothing to offer any of them. These are IBEW and PG&E-pipeline careers with formal apprenticeships, which is normally the easiest kind of CPL to build. Worth a conversation about whether we go after it."
-    },
-    {
-      "id": "pcw-delta-capacity",
-      "for": "sam",
-      "tab": "",
-      "text": "🏫 A college can look active on CPL and have nothing a working adult can use. San Joaquin Delta has 69 CPL credentials — 68 are AP and CLEP exams and exactly ONE is career/technical. Sacramento City and Folsom Lake have zero career credentials; Cosumnes River has none at all. Modesto Junior has 265, the most in the state. Our dashboards count credentials, not what KIND — so this is invisible today unless you go looking."
-    },
-    {
-      "id": "pcw-tab-decision",
-      "for": "sam",
-      "tab": "",
-      "text": "🧭 YOUR CALL — the COBI tab you green-lit. I'd build the 'what does each college actually offer CPL for, academic exams vs career/technical' view, because that's straight from the data. I would NOT publish the occupation-to-credential matching as a live tab: that part is my subject-matter judgment, and a tab makes it look more official than it is. The fix for that is a real occupation crosswalk (O*NET) — worth scoping if you want this to go public rather than hand-delivered."
-    },
-    {
-      "id": "mu-no-contact-25",
-      "for": "sam",
-      "tab": "map-users",
-      "text": "⚠ THE HEADLINE: 25 of 123 colleges have no Primary Contact email — the address MAP sends student CPL requests to. 24 of them have a live landing page, so a student asking those colleges today reaches nobody. Open MAP Users → '⚠ No student contact' (needs sign-in). 17 have a proposed person drawn from their own MAP designations; the tab drafts the email telling the college who we routed them to."
     }
   ]
 }

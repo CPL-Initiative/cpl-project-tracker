@@ -2496,3 +2496,106 @@ and #3b NC-gate remain parked.
 **(d) Next.** Land Sam's headcount→FTES NC-basis decision, then build the editable NC section (floor ·
 optional factor · add-program dropdown) in one pass with the award-card split. Sam's workbook fixes ($74M,
 award Max, split line) are his to make.
+
+## Session checkpoint — 2026-08-06 (SkyPlan; the $50k rework groundwork + headcount finally retired)
+
+Sam opened with the $50k/ESS-25-82 tab: *"see where we have simple check marks
+for each priority"* — he wants where-you-are / where-you-should-be / how-to-get-
+there, and his real goal underneath it: **get colleges unstuck and awarding real
+CPL to real students in MAP.** Four PRs merged. The design itself is NOT built
+yet — this run was the measurement and the plumbing it has to stand on.
+
+### What the data actually said (and how wrong my first read was)
+
+I led with the applied→transcribed cliff (65 colleges with applied CPL and zero
+transcribed). **Sam corrected the phase:** applied credit is this phase's focus;
+transcribing is a long-term ask that only actualises when outcomes funding is on
+the line. That correction made the finding *smaller and more fixable* — outcome
+3 currently fires on `pe > 0 || tr > 0`, i.e. ELIGIBLE, which is not an action a
+college takes. Moving it to APPLIED changes only 13 colleges' state, not 78.
+
+Then he explained the lifecycle in detail (JST/public/batch upload → CPL Plan →
+disposition each CR → create the articulation), and two things fell out that no
+amount of staring at aggregates would have produced:
+
+- **Batch Cx/AP/IB uploads land already-transcribed by construction.** So any
+  transcribed-based measure rewards batch loading identically to counselling.
+  Merced's 99% completion is a batch, not mastery.
+- **Colleges stop at upload because that is what the Veteran Star rewards.**
+  Applied-CPL students ≈ JSTs uploaded at a ratio of **1.00** for the median
+  college. The incentive drew a finish line nobody intended → KB note
+  `methodology-an-incentive-teaches-where-the-finish-line-is`.
+
+### The metric hunt — and the free test set I nearly wasted
+
+Sam named MVC / Cabrillo / Bakersfield as adept *before* anything was computed.
+Four metrics were tried; three ranked Cabrillo 24th–29th. Only the **disposition
+rate** (share of credit recommendations carrying any disposition — Applied /
+Not Applicable / In Process) put all three in the top thirteen of 106, against a
+**median of 4.7%**. Method → `methodology-validate-a-derived-metric-against-expert-ranking`.
+
+It is also the FAIR measure, and Cabrillo proves why: **844 Not Applicable vs
+320 Applied.** An applied-only metric scores them 9% instead of 34% and drops
+them ~40 places. Ruling a recommendation out *is* the work.
+
+### The dataset (Sam supplied it mid-session; Malone is productionising it)
+
+`StudentDetailCredits` — 537,908 rows, one per student × credit recommendation,
+carrying `CPLStatusPlan` and `CreditsInReview`, the two fields the funding model
+had been missing. Findings: **436,720 rows at Needs Action (81%)**; the top **20
+exhibits carry ~40%** of the backlog; and **11,495 rows are "Credit Is Not
+Recommended"** — unarticulable by construction, clogging every queue, and a free
+win to auto-N/A. Generator shipped as `funding/_build_cr_backlog.py` (#1014),
+aggregate-only, waiting on Malone's view name.
+
+### Headcount: Sam was right that something was trumping us
+
+*"There must be something in the config trumping our current understanding."*
+There was. `wantsUnits()` decided FTES-vs-students by **string-matching
+"headcount" in the metric LABEL** — so retitling a metric silently moved the
+target onto `sizeOf(c) × target_rate`, where `target_rate` is a headcount-era
+percentage applied to credit FTES. A category error reachable by a typo. Fixed
+with an explicit, **layer-aware** `unit` field (#1012) — the layer-awareness is
+the load-bearing part; a naive lookup would have inverted the bug and scored the
+live Scenario 2's headcount metrics as FTES. KB note
+`methodology-a-label-that-decides-behaviour-is-a-policy-switch`.
+
+Also #1012: **NC split moved headcount → noncredit FTES** via a new
+`feederBasis(f)` seam (the split was open-coded at FOUR sites while the
+aggregate already flipped with `usesFtes()`), plus **Calbright's placeholder**
+(Sam's 1,000, inside the peer-plausible 611–1,076 band; its reported 21,438.17
+is 8.63 FTES/student, impossible, and on the raw figure the smallest campus
+takes 47% of the $1M). The placeholder is a separate field — reported value
+retained, chip explains the arithmetic, a curator's real figure retires it.
+
+⚠️ **FTES alone barely moves Calbright ($33K → $40K). The FLOOR is what delivers
+Sam's equity goal** (~$161K at a $150K floor) — and with a floor in place the
+basis choice moves almost no money. Those are two independent decisions and were
+being conflated.
+
+### Deliberately not done
+
+**Re-baking `year_priorities` onto the FTES regime.** The baked defaults are the
+fail-soft fallback and are still the retired headcount model. I started it, saw
+it rewrite ~15 behavioural assertions at once, and backed it out — that is how a
+subtle regression ships. Baked rows now declare their *current* unit explicitly
+(behaviour-neutral, test asserts field == sniff); the re-bake is its own change.
+
+### The day's other lesson: two hours lost to CI
+
+Every workflow began failing at ~15 minutes and Pages wedged. I went through
+three wrong hypotheses (protection rule → billing → org policy) before reading
+the job record: **`runner_id: 0`** — no runner ever assigned, cancelled at the
+allocation timeout. Public repo, $0 billable, no budgets. Playbook →
+`playbook-diagnose-a-starved-actions-runner`. Repo-side lever taken: the
+`pages` concurrency group renamed to `pages-deploy` (#1013) to route around an
+uncancellable wedged run.
+
+### Next concrete step
+
+Build the **$50k tab rework** on the disposition rate: stage ladder terminating
+at APPLIED (transcribed shown as the $35M-era preview, explicitly unscored),
+every step a **fraction not a check**, the Veteran Star reframed as a starting
+line, and the per-college observation naming the top stranded exhibits. Then the
+NC floor. Wire Malone's view into `fetch_custom_report.py` + set `VIEW` in
+`_build_cr_backlog.py` when it lands.

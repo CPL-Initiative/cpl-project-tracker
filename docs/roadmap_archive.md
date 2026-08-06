@@ -3422,3 +3422,30 @@ new `yr_2030_31` column (`budget_ledger.js` `USE_YEARS → [1..5]`); Supabase ap
 DEFERRED on Sam's **headcount → FTES** basis call (next session); award-card 115/4-NC split rides with it.
 Durable: `methodology-recompute-a-documents-figures-from-the-live-engine`. Story:
 `docs/cpl_funding_lessons.md` §2026-08-05 · handoff `docs/cpl_funding_handoff.md`.
+
+### SkyWalker — Partner occupation → CPL crosswalk engine (2026-08-05, #995 MERGED)
+
+**Ashley opened this one, not Sam** — a training-center occupation list (SJCOE, 160 rows →
+**139 unique**) and a concrete goal: *"so they know which college offers CPL for their work
+experience and industry certs."* Sam's mid-session note — *"wire it so it can be scaled for
+other similar crosswalks"* — turned a favour into an instrument. ⭐ **The design insight: the
+two vocabularies don't join.** Partner lists carry JOB/apprenticeship titles, MAP is keyed by
+CREDENTIAL titles, and no authoritative crosswalk exists — so the match is JUDGMENT, and
+judgment is what gets persisted (`kb/occupation_credential_map.json`, normalized-key) while the
+run stays disposable. Every run's `unmapped.json` **is** the curator worklist, so coverage
+compounds across partners. Results: **51 statewide CPL · 53 local-only · 35 no CPL anywhere**;
+406 matches, 1,488 occupation×credential×college rows. ⭐ **Two findings.** ① **Utility line
+work is a total desert** — ~20 rows (lineworker, substation, hydro, gas control, metering, cable
+splicer, power dispatch) have ZERO CPL system-wide; also empty: tile/terrazzo, pest control,
+surgical tech, central sterile, painting, nuclear. ② **The obvious referral target fails
+silently** — San Joaquin Delta, the in-county college, has **69 credentials of which ONE is
+career/technical**; Sacramento City + Folsom Lake have zero, Cosumnes River none at all, while
+**Modesto Junior has 265, the largest in the state**. Hence the workbook splits regional
+capacity academic-exam vs career/technical. Also pinned in tests: statewide = the ADOPTION file
+(**138**), not the credential reference's **84** (a strict SUBSET whose 54-title delta is the
+contractor-licence/apprenticeship/NCCER cohort trades lists match); `adopters` is a deliberate
+UNION of statewide + local. Suite **32 checks**. **COBI tab authorized by Sam but deliberately
+NOT built** — Ashley chose engine-only; when revisited, build the *regional-capacity* view (pure
+data), not the occupation matching (judgment). Durable:
+`methodology-partner-occupation-crosswalk`. Story: `docs/partner_crosswalk_lessons.md` ·
+handoff `docs/session_122_handoff.md`.
