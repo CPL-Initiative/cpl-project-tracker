@@ -604,6 +604,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`; 25 of 123 colleges had none (24 with a live landing page). | ✅ **Worklist LIVE** (SkyMail, #991–#993) — reviewer-only "⚠ No student contact" lens + cascade proposal + draft email. **17/25 resolve** from the colleges' own MAP designations; **8 need a human** (5 leadership-only, 3 no-MAP-presence = the standalone continuing-ed institutions the NC tab flagged at zero). Contact sync extended 11→24 fields. **📇 Contact directory lens + CSV/Excel export** (#1001) — Sam's steer to Jessica: *a tab you return to, not a spreadsheet that ages.* **All 71 colleges without a CPL Assistant now looked up** (#1003/#1004): **56 with a counseling address, 15 blank-with-a-finding** (5 counselor-lists, **2 publish only a mental-health inbox — the wrong door for a credit question**, 6 phone/form-only, Orange Coast specialized-only, Pasadena noncredit-only). ⭐ **Jessica's sourcing rules replaced mine** — mine (department inboxes only) would have discarded 5 real contacts where a *named person IS* the college's designated contact; a designated person ≠ a name off a list. **Next:** work the 15 blanks (start with the 2 mental-health ones); the 52 colleges that DO have a CPL Assistant were out of scope and have no lookup; the MAP manage-users URL is still open from S87. |
 | **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — the reusable engine for workforce partners (training centers, workforce boards, AJCCs, COEs, apprenticeship sponsors). | ✅ **Engine LIVE** (SkyWalker, #995) — `kb/_build_partner_crosswalk.py` + the shared `kb/occupation_credential_map.json` (139 occupations / 406 rulings / 35 curated no-CPL findings) + region presets + 32-check test. SJCOE run 1: 51 statewide / 53 local-only / 35 no-CPL. **Next:** run a 2nd partner list and work its `unmapped.json` — the "coverage compounds" claim is a design intention until a second run demonstrates it. **Parked:** the COBI tab (Sam authorized; build the *regional-capacity* view, not the judgment-based occupation matching) and an **O\*NET SOC → certification spine**, which is what would let a match be defended rather than asserted. **Gap backlog:** the 35 no-CPL occupations, ~20 of them the utility/lineworker cluster. |
 | **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ **Starter LIVE** (SkyMail, #997/#998) — team-gated ⚖️ Governance tab: 10 decision rights · 8 acceptance standards · 5 cadences · 6 open questions. **Every `owner` is deliberately unset — filling them IS the review (OQ-01).** ⚠ It measures itself: the contact-refresh cadence was **decided in June and has never run once** (0 rows in `map_college_nudges`). **Owner column is EDITABLE** (#1000 — Sam: *"how do I add an owner? Doesn't appear to be editable"*; I shipped the review without the pen). Owners live in a separate gated `governance_owners` table overlaying the register by row id, so a session regenerating the JSON can never wipe an assignment; no delete policy. **Next:** ① fill the owner column; ② run that cadence once end-to-end with a named owner; ③ decide CIP's promotion criteria BEFORE the fall-2026 cutover (OQ-03); ④ cut the load-bearing list — 8 of 10 is too many. Team guide: `docs/working_with_claude_code.md` + the CLAUDE.md §"Working with the MAP team" obligations. **Agents: recommended NOT yet** — an agent must be invoked, so it fails exactly when a new user forgets; standing instructions can't be. Build a cross-impact reviewer agent when concurrency makes collisions real. |
+| **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 **GROUNDWORK DONE, REWORK NOT BUILT** (SkyPlan, #1007/#1012/#1014). ⭐ **The measure is the DISPOSITION RATE** — share of a college's credit recommendations carrying any disposition (Applied / **Not Applicable** / In Process). Median **4.7%**; MVC 3rd · Bakersfield 6th · Cabrillo 13th of 106 — the ONLY metric matching Sam's own read (three volume metrics ranked Cabrillo 24th–29th). Counting N/A as work done is load-bearing: Cabrillo is 844 N/A vs 320 Applied, so an applied-only metric scores it 9% not 34%. **Applied, not transcribed, is this phase's target** (Sam's correction — transcribing actualises when outcomes funding is live). Data: 436,720 rows at Needs Action (81%); **top 20 exhibits = ~40%** of the backlog; **11,495 rows are "Credit Is Not Recommended"** = a free auto-N/A win. **Build rules:** every step a FRACTION not a check (the Veteran Star taught colleges that uploading is the finish line — applied ≈ JSTs at ratio 1.00); reframe the Star as a starting line; **never rank colleges publicly**. **Next:** the rework itself, then wire Malone's view (expected 8/7) into `fetch_custom_report.py` + `_build_cr_backlog.py`. |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -614,32 +615,33 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyWalker — Partner occupation → CPL crosswalk engine (2026-08-05, #995 MERGED)
+### SkyPlan — the $50k tab's real measure, and headcount finally retired (2026-08-06, #1007 · #1012 · #1013 · #1014 MERGED)
 
-**Ashley opened this one, not Sam** — a training-center occupation list (SJCOE, 160 rows →
-**139 unique**) and a concrete goal: *"so they know which college offers CPL for their work
-experience and industry certs."* Sam's mid-session note — *"wire it so it can be scaled for
-other similar crosswalks"* — turned a favour into an instrument. ⭐ **The design insight: the
-two vocabularies don't join.** Partner lists carry JOB/apprenticeship titles, MAP is keyed by
-CREDENTIAL titles, and no authoritative crosswalk exists — so the match is JUDGMENT, and
-judgment is what gets persisted (`kb/occupation_credential_map.json`, normalized-key) while the
-run stays disposable. Every run's `unmapped.json` **is** the curator worklist, so coverage
-compounds across partners. Results: **51 statewide CPL · 53 local-only · 35 no CPL anywhere**;
-406 matches, 1,488 occupation×credential×college rows. ⭐ **Two findings.** ① **Utility line
-work is a total desert** — ~20 rows (lineworker, substation, hydro, gas control, metering, cable
-splicer, power dispatch) have ZERO CPL system-wide; also empty: tile/terrazzo, pest control,
-surgical tech, central sterile, painting, nuclear. ② **The obvious referral target fails
-silently** — San Joaquin Delta, the in-county college, has **69 credentials of which ONE is
-career/technical**; Sacramento City + Folsom Lake have zero, Cosumnes River none at all, while
-**Modesto Junior has 265, the largest in the state**. Hence the workbook splits regional
-capacity academic-exam vs career/technical. Also pinned in tests: statewide = the ADOPTION file
-(**138**), not the credential reference's **84** (a strict SUBSET whose 54-title delta is the
-contractor-licence/apprenticeship/NCCER cohort trades lists match); `adopters` is a deliberate
-UNION of statewide + local. Suite **32 checks**. **COBI tab authorized by Sam but deliberately
-NOT built** — Ashley chose engine-only; when revisited, build the *regional-capacity* view (pure
-data), not the occupation matching (judgment). Durable:
-`methodology-partner-occupation-crosswalk`. Story: `docs/partner_crosswalk_lessons.md` ·
-handoff `docs/session_122_handoff.md`.
+Sam opened on the $50k/ESS-25-82 tab — *"where we have simple check marks"* — with the goal underneath
+it: **get colleges unstuck and awarding real CPL to real students in MAP.** The rework is NOT built; this
+run found what it has to stand on. ⭐ **He named MVC / Cabrillo / Bakersfield as adept BEFORE anything was
+computed, and that offhand list was the free test set that killed three plausible metrics.** Applied-per-1,000
+ranked Cabrillo 29th; applied÷eligible 24th; transcribe-completion crowned a college whose 99% was a *batch
+AP/IB upload*. Only the **disposition rate** — share of credit recommendations carrying any disposition —
+put all three in the top thirteen of 106 against a **median 4.7%**. It is also the FAIR measure: Cabrillo is
+**844 Not Applicable vs 320 Applied**, so scoring "applied" alone reads 9% instead of 34%. ⭐ **Sam corrected
+my phase**: applied, not transcribed, is this phase's ask — which made the fix *smaller* (outcome 3 fires on
+ELIGIBLE, not an action a college takes; moving it to applied changes 13 colleges, not 78). ⭐ **His "something
+in the config is trumping us" was right**: `wantsUnits()` decided FTES-vs-students by string-matching
+"headcount" in the metric LABEL, so a retitle silently moved targets onto a headcount-era `target_rate`
+applied to credit FTES. Fixed with an explicit **layer-aware** `unit` (a naive lookup would have inverted the
+bug and scored live Scenario 2 as FTES). Also: **NC split headcount → noncredit FTES** via a new
+`feederBasis(f)` seam (open-coded at FOUR sites), Calbright placeholder 1,000 (reported 21,438 = 8.63
+FTES/student, impossible), and 5 prose strings that still claimed targets ride headcount. ⚠ **FTES alone
+moves Calbright only $33K→$40K — the FLOOR is what delivers equity**, and they were being conflated.
+**Deliberately NOT done:** re-baking `year_priorities` to FTES (rewrites ~15 behavioural assertions — its own
+PR). Malone is productionising the student×CR report; `funding/_build_cr_backlog.py` waits on the view name.
+A GitHub **Actions incident** (confirmed, 17:40 UTC) ate two hours — `runner_id: 0` was the tell.
+Durable: `methodology-validate-a-derived-metric-against-expert-ranking`,
+`methodology-an-incentive-teaches-where-the-finish-line-is`,
+`methodology-a-label-that-decides-behaviour-is-a-policy-switch`,
+`playbook-diagnose-a-starved-actions-runner`. Story: `docs/cpl_funding_lessons.md` §2026-08-06 ·
+handoff `docs/session_123_handoff.md`.
 
 ### SkyMail — MAP Users: the student-contact worklist (2026-08-05, #991–#993 MERGED)
 
