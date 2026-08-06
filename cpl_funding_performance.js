@@ -8,13 +8,13 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42547,
-  "pa": 39876,
+  "pe": 42549,
+  "pa": 39878,
   "p2": 4225,
   "p3": 16162,
   "pp": 5,
-  "pe_u": 1347398.95,
-  "pa_u": 232323.15,
+  "pe_u": 1347439.95,
+  "pa_u": 232333.15,
   "p3_u": 93264.95,
   "pp_u": 25.0
  },
@@ -773,10 +773,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Norco College": {
-   "pe": 712,
-   "pe_u": 24303.5,
-   "pa": 711,
-   "pa_u": 6107.5,
+   "pe": 714,
+   "pe_u": 24344.5,
+   "pa": 713,
+   "pa_u": 6117.5,
    "p2": 150,
    "p3": 438,
    "p3_u": 3957.0,
@@ -1274,13 +1274,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1346922.45,
-   "pa_u": 232323.15,
+   "pe_u": 1346963.45,
+   "pa_u": 232333.15,
    "p3_u": 93264.95
   },
   "map": {
-   "pe_u": 1354509.95,
-   "pa_u": 233001.65,
+   "pe_u": 1354550.95,
+   "pa_u": 233011.65,
    "p3_u": 93289.95
   },
   "ratio": {

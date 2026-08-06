@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-06T11:36:36.203Z",
+  "scraped_at": "2026-08-06T14:40:09.106Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -78,17 +78,17 @@
         },
         {
           "college": "Norco College",
-          "students": 743,
-          "units": 6176.5,
-          "avgUnits": 8.312920592193809,
-          "transcriptionRate": 64.1,
-          "avgTranscribed": 5.325706594885599,
+          "students": 744,
+          "units": 6181.5,
+          "avgUnits": 8.308467741935484,
+          "transcriptionRate": 64,
+          "avgTranscribed": 5.318548387096774,
           "criteriaMetCount": 5,
-          "militaryStudents": 496,
+          "militaryStudents": 497,
           "nonMilitaryStudents": 253,
           "apprenticeStudents": 94,
-          "savings": 10412450,
-          "yearImpact": 42908483,
+          "savings": 10421100,
+          "yearImpact": 42938818,
           "transcribedUnits": 3957
         },
         {
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "50,361",
+      "value": "50,362",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,564"
+          "value": "26,565"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 50361,
-    "Units": 233001.65000000002,
+    "Students": 50362,
+    "Units": 233006.65000000002,
     "TranscribedUnits": 93289.95,
-    "Savings": 329147880.25,
-    "YearImpact": 1318146729.8999999,
-    "MilitaryStudents": 26564,
+    "Savings": 329156530.25,
+    "YearImpact": 1318177064.8999999,
+    "MilitaryStudents": 26565,
     "NonMilitaryStudents": 23877,
     "AprenticeStudents": 678,
-    "AverageUnits": 4.626628740493636,
-    "TranscribedAverage": 1.8524244951450526
+    "AverageUnits": 4.626636154243279,
+    "TranscribedAverage": 1.8523877129581827
   }
 }
