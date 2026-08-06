@@ -35,8 +35,23 @@ permissions:
   id-token: write
 
 # Serialize deploys; let an in-progress one finish (don't cancel a live deploy).
+#
+# Group renamed `pages` -> `pages-deploy` (2026-08-06). Run #581 wedged in
+# `waiting` against a "github-pages deployment approval" gate that does not
+# exist — the environment has NO required reviewers and NO wait timer, and its
+# branch rule allows `main`, which that run was on. GitHub's cancel endpoint
+# 502s on it (four attempts, ~2h), so it can be neither approved nor cleared,
+# and `cancel-in-progress: false` means it holds the old group forever. Every
+# subsequent run — two merges plus the daily cron — queued behind it and the
+# site stopped publishing.
+#
+# Renaming the group puts new runs in a group the wedged run is not a member
+# of. Serialization is preserved WITHIN the new group; the only run outside it
+# is #581, which can never execute, so there is no deploy it could race.
+# If GitHub ever reaps that run, this can be renamed back — the name carries no
+# meaning beyond "runs sharing it are serialized".
 concurrency:
-  group: pages
+  group: pages-deploy
   cancel-in-progress: false
 
 jobs:
