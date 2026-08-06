@@ -57,9 +57,30 @@ Metrics (per docs/funding_priority_metrics_scope.md; forks ratified by Sam
                   Emitted as top-level `feeders`; empty until campuses attach
                   exhibits to their NC student records in MAP.
 
+  CPL_TYPES (added 2026-08-06) = per-college distinct-student counts BY
+                  `CPL Type Description` for the pe/pa/p3 rungs, emitted as
+                  `cpl_types` (+ `cpl_types_statewide`). Two things the
+                  undifferentiated counts cannot distinguish:
+                    1. A college whose CPL practice is still ONLY the military
+                       lane. Uploading a JST creates the Student CPL Plan and
+                       the DD-214/JST Basic Training rows auto-apply against an
+                       already-articulated exhibit — so applied credit can post
+                       WITHOUT the college ever performing the per-CR
+                       articulation step that is the actual ask. Statewide the
+                       fingerprint is stark: applied-students ≈ JSTs-uploaded at
+                       a ratio of ~1.00 for the median college.
+                    2. A transcribed figure that is really a BATCH. Batch
+                       Cx/AP/IB uploads land already-transcribed by construction
+                       (those students are in the college SIS and are merely
+                       being surfaced in MAP — Sam, 2026-08-06), so scoring an
+                       undifferentiated transcribed count rewards batch loading
+                       and real counselling identically.
+                  COUNTS ONLY, no per-type unit sums — see the block comment at
+                  the accumulator for why (rows are repeats, not partitions).
+
   The field -> priority mapping lives in cpl_funding.js (MEASURES), not here;
   this script only emits the raw pe/p2/p3/pp counts (+ the vet_star flags +
-  the per-feeder F1 eligible headcount).
+  the per-feeder F1 eligible headcount + the cpl_types breakdown).
 
 Privacy (docs/kb-notes/adr-funding-priority-metrics-privacy.md — RATIFIED):
   - aggregate per-college counts only; the student grain never leaves the
@@ -340,6 +361,7 @@ def main():
     i_pot = cm.get("Potential Student")
     i_test = cm.get("Test Student")
     i_sid = cm.get("MAP Internal StudentID")
+    i_type = cm.get("CPL Type Description")
     if i_tcr is None or i_sid is None:
         print("funding-performance: required columns missing — exiting 0 without changes.")
         return
@@ -383,6 +405,36 @@ def main():
     state_units = {m: 0.0 for m in UNIT_METRICS}
     feeder_counts = {}                          # feeder-short -> {pe}  (F1 eligible headcount)
     feeder_seen = set()                         # per-(feeder,sid) dedupe
+    # ── CPL TYPE split (2026-08-06) ──────────────────────────────────────
+    # Per-college distinct-student counts BY `CPL Type Description`, for the
+    # funnel rungs pe/pa/p3. Two questions it answers, neither of which the
+    # undifferentiated counts can:
+    #   1. Is a college's CPL practice still ONLY the military/JST lane? (The
+    #      JST upload creates the CPL Plan and the DD-214/JST Basic Training
+    #      rows auto-apply against an already-articulated exhibit, so a college
+    #      can post applied credit without ever performing the per-CR
+    #      articulation step it is actually being asked to do.)
+    #   2. Is a transcribed figure real lifecycle work, or a BATCH? Batch
+    #      Cx/AP/IB uploads land already-transcribed by construction (the
+    #      students are in the college SIS and are merely being surfaced in
+    #      MAP — Sam, 2026-08-06), so an undifferentiated transcribed count
+    #      rewards batch loading and real counselling identically.
+    #
+    # COUNTS ONLY — deliberately no unit sums per type. Each source row carries
+    # the student's TOTAL credit figures, not that type's portion (the
+    # unit_crosscheck below reads ~1.005 against MAP's own totals, i.e. the
+    # extra rows are redundant REPEATS, not partitions). Summing units per type
+    # would therefore attribute a student's whole total to every type they
+    # carry. Distinct-student counts are safe under repeats; unit sums are not.
+    has_type = i_type is not None
+    if not has_type:
+        print("funding-performance: NOTE — 'CPL Type Description' not in this pull; "
+              "cpl_types omitted (not zeroed). Check fetch_custom_report.py's column list.")
+    TYPE_METRICS = tuple(m for m in ("pe", "pa", "p3") if m in metrics)
+    type_counts = {}                            # funding-name -> type -> {pe,pa,p3}
+    type_seen = set()                           # per-(college,type,sid,metric) dedupe
+    state_types = {}                            # type -> {pe,pa,p3}
+    state_type_seen = set()                     # per-(type,sid,metric) dedupe
     rowno = 0
     for row in ds["rows"]:
         rowno += 1
@@ -462,6 +514,31 @@ def main():
             if sk not in state_seen[metric]:
                 state_seen[metric].add(sk)
                 state[metric] += 1
+        # CPL-type split — funding colleges only (the `unmatched` bucket already
+        # exists for name-join visibility and doesn't need a type breakdown).
+        # A student carrying rows of two types counts once under EACH; the
+        # dedupe key is (college, type, sid, metric), so repeated rows of the
+        # same type still count once.
+        if has_type and fname:
+            ctype = (row[i_type] or "").strip()
+            if ctype:
+                trec = type_counts.setdefault(fname, {}).setdefault(
+                    ctype, {m: 0 for m in TYPE_METRICS})
+                srec = state_types.setdefault(ctype, {m: 0 for m in TYPE_METRICS})
+                sid_key = sid if sid else f"row{rowno}"
+                for metric, hit in (("pe", ecr > 0 and not is_potential),
+                                    ("pa", acr > 0 and not is_potential),
+                                    ("p3", tcr > 0 and not is_potential)):
+                    if not hit or metric not in TYPE_METRICS:
+                        continue
+                    tk = (fname, ctype, sid_key, metric)
+                    if tk not in type_seen:
+                        type_seen.add(tk)
+                        trec[metric] += 1
+                    stk = (ctype, sid_key, metric)
+                    if stk not in state_type_seen:
+                        state_type_seen.add(stk)
+                        srec[metric] += 1
 
     # `pp` (portal-origin) is shown RAW, not <5-suppressed (Sam, 2026-07-27):
     # the privacy gate for it is the Test Student field (Test = Yes already
@@ -508,6 +585,53 @@ def main():
                 out[short] = {"pe": n}
         return out
 
+    def _suppress_type_rec(rec):
+        o = {}
+        for metric in TYPE_METRICS:
+            n = rec.get(metric, 0)
+            if 0 < n < SUPPRESS_BELOW:
+                o[metric] = None
+                o[metric + "_suppressed"] = True
+            else:
+                o[metric] = n
+        return o
+
+    def suppress_type_map(types):
+        # Drop all-zero types: a row can register a type while hitting none of
+        # pe/pa/p3 (a Potential-Student row routes to `pp` only), which would
+        # otherwise emit an empty cell that reads as a measured zero.
+        live = {t: r for t, r in sorted(types.items())
+                if any(r.get(m, 0) for m in TYPE_METRICS)}
+        out = {t: _suppress_type_rec(r) for t, r in live.items()}
+        # COMPLEMENTARY SUPPRESSION (the privacy ADR's subtraction threat).
+        # A lone suppressed cell is recoverable: subtract the visible types from
+        # the college's own count and the hidden one falls out. Multi-type
+        # students blunt that (the types deliberately over-count, so the residual
+        # is an upper bound rather than an equality) — but a college where no
+        # student holds two types leaks the cell exactly. So whenever a metric
+        # has exactly ONE suppressed type, hide the smallest visible one too.
+        for metric in TYPE_METRICS:
+            hidden = [t for t, r in live.items()
+                      if 0 < r.get(metric, 0) < SUPPRESS_BELOW]
+            if len(hidden) != 1:
+                continue
+            visible = [(r.get(metric, 0), t) for t, r in live.items()
+                       if r.get(metric, 0) >= SUPPRESS_BELOW]
+            if not visible:
+                continue                     # nothing to subtract from; no leak
+            _, t = min(visible)
+            out[t][metric] = None
+            out[t][metric + "_suppressed"] = True
+        return out
+
+    def suppress_types(bucket):
+        out = {}
+        for name, types in sorted(bucket.items()):
+            rec = suppress_type_map(types)
+            if rec:
+                out[name] = rec
+        return out
+
     payload = {
         "as_of": (ds["generated_at"] or "").split("T")[0] or date.today().isoformat(),
         "basis": ("MAP " + VIEW + " — distinct students per college; "
@@ -531,6 +655,22 @@ def main():
         # Empty until the feeders attach exhibits to their NC records in MAP.
         "feeders": suppress_feeders(feeder_counts),
     }
+    # CPL-type split — OMITTED (not zeroed) when the pull lacks the column, the
+    # same shape `pa` uses: an all-zero breakdown would read as "measured, this
+    # college has no non-military CPL" on a column we never asked for.
+    if has_type:
+        payload["cpl_types"] = suppress_types(type_counts)
+        payload["cpl_types_statewide"] = suppress_type_map(state_types)
+        payload["cpl_types_note"] = (
+            "Distinct-student counts per college per `CPL Type Description`, for the "
+            "funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row "
+            "carries the student's TOTAL credits rather than that type's portion, so a "
+            "per-type unit sum would attribute the whole total to every type a student "
+            "carries. A student holding two types counts once under each, so the types "
+            "do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads "
+            "arrive already-transcribed by construction (students already in the college "
+            "SIS, surfaced in MAP), so read p3 by type before treating a transcribed "
+            "figure as lifecycle work.")
     # Cross-check our per-student unit sums against MAP's OWN published per-college
     # totals. Reported, never used to overwrite: a gap is information about the
     # source view's grain, and silently "correcting" to it would mix populations
