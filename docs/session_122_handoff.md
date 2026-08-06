@@ -18,7 +18,7 @@ or take one Sam offers.
 > took 121 and wrote this as 122. If Sam says otherwise, he wins — don't
 > re-derive it.
 
-## What shipped (PR #995, merged)
+## What shipped (PRs #995, #996 + this checkpoint — all merged)
 
 A **reusable engine** for the question *"which of the occupations we train for
 can our students already get college credit for, and where?"*
@@ -35,7 +35,7 @@ can be scaled for other similar crosswalks."*
 | `kb/_build_partner_crosswalk.py` | The engine — any list in (`.xlsx/.csv/.tsv/.txt`), workbook + receipts out |
 | `kb/occupation_credential_map.json` | The shared rulings — 139 occupations, 406 credential rulings, 35 curated "no CPL exists" findings |
 | `kb/partner_crosswalk_regions.json` | Named college regions for `--region-preset` |
-| `tests/partner_crosswalk_test.py` | 32 checks — run `python3 tests/partner_crosswalk_test.py` |
+| `tests/partner_crosswalk_test.py` | **45** checks — run `python3 tests/partner_crosswalk_test.py` |
 
 Run it:
 
@@ -43,6 +43,22 @@ Run it:
 python3 kb/_build_partner_crosswalk.py --input <list.xlsx> \
     --partner "Name" --slug slug --column 2 --region-preset san-joaquin
 ```
+
+### Follow-ups Ashley asked for after the first delivery
+
+- **An HTML visual** — published as an artifact (findings + searchable occupation
+  table). Palettes were validated with the `dataviz` skill's checker; the first two
+  attempts failed CVD/contrast and were re-stepped. Don't eyeball chart color.
+- **A flat Excel extract** — now a **Flat Extract sheet** in the standard workbook
+  (occupation × credit recommendation × college × course, plus MAP exhibit IDs and
+  the original freehand exhibit titles). 5,060 rows for SJCOE.
+
+The exhibit-ID work is the part with a trap in it — read the KB note's *"Exhibit IDs
+attribute to a college; the obvious source for that is stale"* section before touching
+it. Short version: `kb/coci_articulations.json` looks perfect and is a **PREVIEW from
+2026-05-23** missing 21% of the credentials; real attribution comes from
+`statewide_data.js`, which groups exhibits by `(unified_title × cpl_type)` with each
+group carrying its own adopter list.
 
 ## Read these, in order
 
@@ -92,6 +108,13 @@ shows the normalization is too coarse. Everything else here is downstream of it.
   fallbacks; make the "no CPL Assistant" cut (71 colleges) a live filter; the MAP
   manage-users URL is open from S87.
 
+- **The status vocabulary needs a fourth state.** "Local CPL only" currently covers
+  both *a college offers this* and *the credential exists but nobody has adopted it* —
+  very different answers for a student. `Engineering Designer` is the live example
+  (2 credentials, 0 colleges). Both the artifact and the extract render it honestly,
+  but the underlying status is still coarse. Split it on the second partner run, when
+  re-issuing costs nothing.
+
 ## Patterns that worked
 
 - **Candidates first, then curate by hand.** Token-overlap generation is noisy on
@@ -101,6 +124,9 @@ shows the normalization is too coarse. Everything else here is downstream of it.
 - **Parity as the safety gate.** The committed engine reproduced the hand-built
   deliverable exactly — same 139/51/53/35, same 406 matches. That's what made it
   safe to commit the generator and throw the scratchpad away.
+- **Render it and look at it.** Screenshotting the artifact is what surfaced the
+  `Engineering Designer` mislabel — no test would have caught it, because the status
+  was internally consistent. Ship the page, open the page.
 - **Chase the zero.** San Joaquin Delta showing 0 rows on the region sheet looked
   like a join bug. It wasn't — it was the finding (68 of its 69 credentials are
   AP/CLEP). Verify before assuming a bug; sometimes the empty cell *is* the

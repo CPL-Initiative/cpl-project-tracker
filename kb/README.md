@@ -608,7 +608,7 @@ students already get college credit for, and where?"** instrument:
 
 | File | What |
 |---|---|
-| `_build_partner_crosswalk.py` | The engine. Reads any partner list (`.xlsx/.csv/.tsv/.txt`), joins the adoption view + the Common Exhibit Reference, emits a distributable workbook + `summary.json` + `unmapped.json`. `--region-preset` adds the Partner Region + Regional Capacity sheets. |
+| `_build_partner_crosswalk.py` | The engine. Reads any partner list (`.xlsx/.csv/.tsv/.txt`), joins the adoption view + the Common Exhibit Reference, emits a distributable workbook + `summary.json` + `unmapped.json`. `--region-preset` adds the Partner Region + Regional Capacity sheets. The **Flat Extract** sheet (added 2026-08-06) is the joinable one — occupation × credit recommendation × college × course, plus MAP exhibit IDs attributed to the exhibit GROUP each college adopted (`statewide_data.js` groups by `unified_title × cpl_type`, each group carrying its own adopter list). |
 | `occupation_credential_map.json` | The **shared, growable rulings** — occupation→credential is subject-matter JUDGMENT, so it accumulates here across engagements instead of being recomputed. Keyed by a normalized occupation string so `Plumber`/`PLUMBER` share one ruling. Seeded from the SJCOE list: 139 occupations, 406 credential rulings, 35 curated "no CPL exists" findings. |
 | `partner_crosswalk_regions.json` | Named college regions for `--region-preset`. College names must match MAP adopter names EXACTLY — a typo yields an empty region silently, which `tests/partner_crosswalk_test.py` guards. |
 
@@ -624,6 +624,13 @@ loudly instead of under-counting.
 (statewide adoptions AND local articulations), because the partner's question is
 "where can my student get credit?". Counts here can legally exceed the Statewide
 Exhibits tab, which counts the CCC-Collaborative record alone.
+
+⚠ **Do not reach for `kb/coci_articulations.json` for exhibit→college questions.** It
+has exactly the right shape (`exhibit_id`, `exhibit_title`, `earned_by_colleges`,
+`local_courses`) but its `_status` is **PREVIEW**, last re-keyed 2026-05-23: measured
+against the live index it misses **21% of the credentials** a partner list touches and
+disagrees on the college set for 18 more. Attribution comes from `statewide_data.js`
+instead — see the KB note.
 
 Outputs land in `kb/partner_crosswalk_out/<date>-<slug>/`. The workbook is a
 regenerable artifact and is **not committed**; `summary.json` / `unmapped.json`

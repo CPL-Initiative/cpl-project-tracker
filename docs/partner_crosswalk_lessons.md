@@ -158,3 +158,81 @@ Run the engine against a second partner list — any workforce board or AJCC —
 work the resulting `unmapped.json`. The second run is where the "coverage
 compounds" claim gets tested for real; until then it's a design intention, not a
 demonstrated property.
+
+---
+
+## 2026-08-06 — SkyWalker, checkpoint 2: the flat extract, and what asking for exhibit IDs taught us
+
+### What prompted it
+
+Ashley used the first deliverable, then asked for two follow-ups: an **HTML visual**
+of the findings (published as an artifact) and a **flat Excel extract** with a
+specific column list — occupation, credit recommendation + discipline, exhibit ID,
+exhibit title, college, course. The second one turned out to be the interesting
+request, because *exhibit ID* was a field the engine had never touched.
+
+### What we learned
+
+**1. The obvious source was a stale preview — check `_status` before trusting shape.**
+`kb/coci_articulations.json` has exactly the right shape for this question
+(`exhibit_id`, `exhibit_title`, `unified_title`, `earned_by_colleges`,
+`local_courses`) and would have been a one-file answer. Its `_status` reads
+**PREVIEW** and it was last re-keyed **2026-05-23**. Measured against the live index
+it **misses 41 of the 191 credentials (21%)** this partner list touches, and **18 of
+the 150 it does carry disagree on the college set**. Shape matching the question is
+not the same as being current. Cheap habit worth keeping: measure the divergence
+before choosing a spine, don't reason about it.
+
+**2. Exhibit→college attribution *is* available, one level up.** `statewide_data.js`
+groups exhibits by `(unified_title × cpl_type)` and **each group carries its own
+`adopter_names`**, so a college ties to the group it adopted rather than to the
+credential wholesale. This matters: `EMT Certification` spans four groups with
+different colleges in each, so credential-level tagging would have handed every
+college all 34 of its exhibit IDs. **All 1,488 college rows resolved to a group;
+none fell back.**
+
+**3. Freehand exhibit titles are why the unified title exists.** `Firefighter 1`
+carries seven college-entered spellings. Ship both columns and tell the partner which
+one to join on.
+
+**4. In a partner-facing sheet, absence has to be a phrase.** A spreadsheet travels
+without its schema docs, so an empty cell can't distinguish "we looked and found
+nothing" from "this column wasn't populated". Every absence became words, the 35
+no-CPL occupations stayed *in* the sheet so it still accounts for all 139, and MAP's
+internal `Not Mapped` sentinel (13 rows) now renders `— not assigned —`. A raw
+sentinel reads as a data error to someone outside the system.
+
+**5. Validating a chart palette is cheap and it changed the design.** For the HTML
+visual, the first status trio and the first categorical pair both **failed** the
+CVD/contrast validator — the red↔ochre pair sat at ΔE 11.7 for *normal* vision, below
+the hard floor. Re-stepping took one search over OKLCH space and produced palettes
+that pass in both light and dark. Never eyeball this.
+
+**6. Rendering the page caught a real data bug that no test would have.** Screenshotting
+the artifact surfaced `Engineering Designer` reading *Local only* with no colleges —
+its two matched credentials exist in the reference but **no college has ever
+articulated them**. The engine's status logic isn't wrong exactly, but the label
+misleads. It now renders as an explicit "none" in both the artifact and the extract;
+the underlying status vocabulary is a candidate fix (see next step).
+
+### Current state
+
+The flat extract is no longer a scratchpad script — it ships as a **Flat Extract
+sheet** in the standard workbook (`kb/_build_partner_crosswalk.py`), so every future
+partner gets it without anyone re-deriving the exhibit attribution. Suite **32 → 45
+checks**. Ashley has the workbook, the artifact, and the flat extract.
+
+### Strategic roadmap
+
+Unchanged from checkpoint 1 — the second partner run is still the priority, the COBI
+tab is still parked on the regional-capacity view, and an O\*NET SOC → certification
+spine is still the real unlock. One addition: the **status vocabulary needs a fourth
+state**. "Local CPL only" currently covers both *a college offers this* and *the
+credential exists but nobody has adopted it*, which are very different answers for a
+student.
+
+### Next concrete step
+
+Same as before — run a second partner list and work its `unmapped.json`. While doing
+it, split the fourth status out; the second run is the natural moment to change the
+vocabulary, because it is the first time the change costs nothing to re-issue.

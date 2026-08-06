@@ -200,6 +200,63 @@ for name, preset in sorted(presets.items()):
     check("preset %r: every college is a real MAP college name" % name, typos, [])
 
 print()
+print("── 8. exhibit IDs attribute to the college that adopted them ──")
+# MAP groups exhibits by (unified_title × cpl_type) and each GROUP carries its own
+# adopter list. Tagging every college with the credential's whole exhibit set would
+# over-claim; the index must narrow to the group(s) the college actually adopted.
+multi = [t for t, r in idx.items()
+         if len(r["exhibit_ids"]) > 1 and len(r["college_exhibits"]) > 1]
+check_true("some credentials consolidate >1 exhibit across >1 college", len(multi) > 0)
+
+narrowed = 0
+for t in multi:
+    r = idx[t]
+    for col, ce in r["college_exhibits"].items():
+        if set(ce["ids"]) < set(r["exhibit_ids"]):
+            narrowed += 1
+check_true("at least one college narrows to a subset of the credential's exhibits",
+           narrowed > 0)
+
+leaks = []
+for t, r in idx.items():
+    all_ids = set(r["exhibit_ids"])
+    for col, ce in r["college_exhibits"].items():
+        if not set(ce["ids"]) <= all_ids:
+            leaks.append((t, col))
+check("a college is never given an exhibit the credential doesn't have", leaks, [])
+
+# Every adopting college must be reachable in college_exhibits — otherwise the flat
+# extract silently falls back to the credential-wide set for that row.
+unattributed = []
+for t, r in idx.items():
+    for col in r["adopters"]:
+        if col not in r["college_exhibits"]:
+            unattributed.append((t, col))
+check("every adopting college has an attributed exhibit group", unattributed, [])
+
+print()
+print("── 9. absence is stated in words, never a bare sentinel ──")
+check("MAP's 'Not Mapped' becomes plain language",
+      pc.plain_discipline("Not Mapped"), pc.NO_DISCIPLINE_NOTE)
+check("...case-insensitively", pc.plain_discipline("not mapped"), pc.NO_DISCIPLINE_NOTE)
+check("empty becomes plain language", pc.plain_discipline(""), pc.NO_DISCIPLINE_NOTE)
+check("None is safe", pc.plain_discipline(None), pc.NO_DISCIPLINE_NOTE)
+check("a real discipline passes through untouched",
+      pc.plain_discipline("Fire Technology"), "Fire Technology")
+check("whitespace is trimmed, not mistaken for a value",
+      pc.plain_discipline("  Welding  "), "Welding")
+check_true("the three row-level notes are distinct",
+           len({pc.NO_CPL_NOTE, pc.NO_COLLEGE_NOTE, pc.NO_COURSE_NOTE}) == 3)
+# No sentinel may reach a partner sheet as a bare internal token.
+raw_sentinels = [t for t, r in idx.items()
+                 if (r.get("discipline") or "").strip().lower() in ("not mapped", "unmapped")]
+check_true("the sentinel really does occur in live data (so the guard earns its keep)",
+           len(raw_sentinels) > 0)
+check("...and every one of them renders as plain language",
+      sorted({pc.plain_discipline(idx[t]["discipline"]) for t in raw_sentinels}),
+      [pc.NO_DISCIPLINE_NOTE])
+
+print()
 if failures:
     print("%d FAILURE(S)" % len(failures))
     sys.exit(1)

@@ -1,7 +1,7 @@
 ---
 title: Crosswalking a partner's occupation list to CPL — curate the judgment, not the run
 created: 2026-08-05
-updated: 2026-08-05
+updated: 2026-08-06
 tags: [methodology, cpl, partners, crosswalk, occupations, workforce]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -97,6 +97,47 @@ which **exactly one** is career/technical (POST Basic Academy); Sacramento City 
 Folsom Lake have zero; Cosumnes River has none at all. The nearest real capacity is
 Modesto Junior College at **265** career credentials, the largest in the state. A
 referral plan built on the county college would have failed silently.
+
+### Exhibit IDs attribute to a college; the obvious source for that is stale
+
+A partner asking for MAP **exhibit IDs** next to college names looks like it needs a
+per-college exhibit table. Two traps.
+
+**The obvious file is a stale preview.** `kb/coci_articulations.json` has precisely the
+right shape — `exhibit_id`, `exhibit_title`, `unified_title`, `earned_by_colleges`,
+`local_courses` — and is the tempting one-stop source. It is a **PREVIEW** last re-keyed
+2026-05-23. Measured against the live index it **misses 41 of 191 (21%) of the
+credentials** a partner list touches, and **18 of the 150 it does carry disagree on the
+college set** (live is generally larger — adoptions accrued since). Check `_status` and
+the generated-at stamp on any `kb/*.json` before making it a deliverable's spine.
+
+**Attribution is possible anyway, one level up.** `statewide_data.js` groups exhibits by
+`(unified_title × cpl_type)`, and **each group carries its own `adopter_names`** — so a
+college can be tied to the group it adopted rather than to the credential as a whole.
+That is materially tighter: `EMT Certification` spans four groups (Credit By Exam,
+Portfolio Review, Industry Certification, Military) with different colleges in each, so
+credential-level tagging would hand every college all 34 exhibit IDs. On the SJCOE run
+**all 1,488 college rows resolved to a group, none fell back**. Within a group several
+MAP exhibits may still be consolidated, so IDs are listed pipe-separated — honest, and
+much narrower than the alternative.
+
+**Exhibit titles are freehand and will not match the credential name.** `Firefighter 1`
+carries seven distinct college-entered spellings ("Fire Fighter 1 Certification
+(CFSTES)", "Fire Fighter I", "Firefighter 1 Academy", …). Ship both columns and say
+which one to join on — the unified title, never the exhibit title.
+
+### State absence in words, in the cell
+
+A partner-facing sheet has no schema documentation attached to it, so an empty cell is
+unreadable: it could mean *we looked and found nothing*, *not applicable*, or *this
+column wasn't populated*. Every absence gets a phrase — `— no CPL recommendation
+found —`, `— no college has articulated this —`, `— course not published —` — and the
+35 no-CPL occupations stay **in** the sheet so it still accounts for all 139. The same
+rule kills internal sentinels: MAP's `Not Mapped` discipline (13 rows) ships as
+`— not assigned —`, because a raw sentinel reads to a partner as a data error rather
+than a known gap. `plain_discipline()` is the single seam, guarded by a test that
+asserts the sentinel still occurs live *and* that every occurrence renders in plain
+language.
 
 ## How we got here
 

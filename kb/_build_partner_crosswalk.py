@@ -85,6 +85,24 @@ OUT_ROOT = os.path.join(ROOT, "kb", "partner_crosswalk_out")
 
 TIER_LABEL = {"D": "Direct", "R": "Related"}
 
+# Absence is stated in words, never left as an empty cell or an internal sentinel —
+# a partner reading a blank cell can't tell "we looked and found nothing" from
+# "this column wasn't populated".
+NO_CPL_NOTE = "— no CPL recommendation found —"
+NO_COLLEGE_NOTE = "— no college has articulated this —"
+NO_COURSE_NOTE = "— course not published —"
+NO_DISCIPLINE_NOTE = "— not assigned —"
+
+# MAP's internal sentinels for "no discipline assigned". Shipping these verbatim to
+# a partner reads as a data error rather than as a known gap.
+_UNASSIGNED_DISCIPLINE = {"", "not mapped", "unmapped", "none", "n/a"}
+
+
+def plain_discipline(value):
+    """Render a discipline for a partner-facing sheet, sentinels spelled out."""
+    v = (value or "").strip()
+    return NO_DISCIPLINE_NOTE if v.lower() in _UNASSIGNED_DISCIPLINE else v
+
 # AP/CLEP/DSST-style credit-by-exam. Used only to split a college's portfolio
 # into "academic exam" vs "career/technical" on the Regional Capacity sheet —
 # the distinction a workforce partner actually cares about.
@@ -118,6 +136,12 @@ def build_credential_index():
             "adopters": set(), "potential": set(), "credit_recs": [],
             "raw_variants": set(), "college_courses": defaultdict(set),
             "ccc_rec": "", "discipline": "",
+            # MAP groups exhibits by (unified_title × cpl_type), and each GROUP
+            # carries its own adopter list — so an exhibit ID can be attributed
+            # to the colleges that adopted that group, which is far tighter than
+            # tagging every college with the credential's whole exhibit set.
+            "college_exhibits": defaultdict(lambda: {"ids": set(), "titles": set()}),
+            "exhibit_ids": set(), "exhibit_titles": set(),
         }
 
     for e in exhibits:
@@ -136,6 +160,13 @@ def build_credential_index():
             r["credit_recs"].append((cr.get("course", ""), cr.get("credit", "")))
         if not r["issuer"]:
             r["issuer"] = e.get("issuing_agency") or ""
+        rec_ids = [x for x in (e.get("exhibit_ids") or []) if x]
+        rec_titles = sorted({x.strip() for x in (e.get("raw_titles") or []) if x and x.strip()})
+        r["exhibit_ids"].update(rec_ids)
+        r["exhibit_titles"].update(rec_titles)
+        for col in (e.get("adopter_names") or []):
+            r["college_exhibits"][col]["ids"].update(rec_ids)
+            r["college_exhibits"][col]["titles"].update(rec_titles)
 
     for u in cref:
         t = u["ut"]
@@ -161,6 +192,10 @@ def build_credential_index():
         r["cpl_types"] = sorted(r["cpl_types"])
         r["raw_variants"] = sorted(r["raw_variants"])
         r["college_courses"] = {k: sorted(v) for k, v in r["college_courses"].items()}
+        r["exhibit_ids"] = sorted(r["exhibit_ids"])
+        r["exhibit_titles"] = sorted(r["exhibit_titles"])
+        r["college_exhibits"] = {k: {"ids": sorted(v["ids"]), "titles": sorted(v["titles"])}
+                                 for k, v in r["college_exhibits"].items()}
         if not r["discipline"] and r["disciplines"]:
             r["discipline"] = sorted(r["disciplines"])[0]
         del r["disciplines"]
@@ -356,6 +391,9 @@ def write_workbook(path, partner, rows, summary, idx, region, as_of, source_name
         ("b", "Crosswalk — one row per occupation × credential. The credential is what the student holds."),
         ("b", "College Detail — one row per occupation × credential × college, with the course(s) that "
               "college awards credit for. This is the row you hand a student."),
+        ("b", "Flat Extract — the same detail one row per course, plus the MAP exhibit IDs and the "
+              "original exhibit titles colleges entered. Every value repeats on every row, so you "
+              "can filter or pivot on any column, or join it against another system."),
         ("b", "Regional Capacity — what the nearest colleges actually offer CPL for."),
         ("b", "Gaps — occupations with no CPL anywhere. These are the build-it opportunities."),
         ("", ""),
@@ -468,6 +506,41 @@ def write_workbook(path, partner, rows, summary, idx, region, as_of, source_name
     widths(ws, [32, 42, 10, 9, 32, 66])
     ws.freeze_panes = "A2"
     ws.auto_filter.ref = "A1:F%d" % ws.max_row
+
+    # ---- Flat Extract ----
+    # One row per occupation × credential × college × course, every value repeated
+    # on every row, so a partner can filter or pivot on any column. Exhibit ID /
+    # Exhibit Title are attributed to the exhibit GROUP the college actually
+    # adopted (see build_credential_index), falling back to the credential's whole
+    # set only when the college can't be tied to a group.
+    ws = wb.create_sheet("Flat Extract")
+    hdr = ["Occupation", "Credit Recommendation", "Discipline", "Exhibit ID",
+           "Exhibit Title", "College", "Course"]
+    header(ws, hdr)
+    for row in rows:
+        occ = row["occupation"]
+        if not row["matched"]:
+            ws.append([occ, NO_CPL_NOTE, "", "", "", "", ""])
+            continue
+        for title, _tier, r_ in row["matched"]:
+            disc = plain_discipline(r_.get("discipline"))
+            if not r_["adopters"]:
+                ws.append([occ, title, disc, " | ".join(r_["exhibit_ids"]),
+                           " | ".join(r_["exhibit_titles"]), NO_COLLEGE_NOTE, ""])
+                continue
+            for col in r_["adopters"]:
+                ce = r_["college_exhibits"].get(col)
+                ids = " | ".join(ce["ids"]) if ce else " | ".join(r_["exhibit_ids"])
+                tls = " | ".join(ce["titles"]) if ce else " | ".join(r_["exhibit_titles"])
+                courses = r_["college_courses"].get(col, [])
+                if not courses:
+                    ws.append([occ, title, disc, ids, tls, col, NO_COURSE_NOTE])
+                for course in courses:
+                    ws.append([occ, title, disc, ids, tls, col, course])
+    style_body(ws, 2, len(hdr))
+    widths(ws, [30, 38, 26, 30, 44, 30, 46])
+    ws.freeze_panes = "A2"
+    ws.auto_filter.ref = "A1:G%d" % ws.max_row
 
     # ---- Partner Region (only when a region is supplied) ----
     if region:
