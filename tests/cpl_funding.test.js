@@ -81,9 +81,28 @@ check("data: year_priorities has slots 1 and 2, 3 priorities each",
 ["1", "2"].forEach(function (slot) {
   check("data: year " + slot + " shares sum to 1",
     D && Math.abs(D.year_priorities[slot].reduce(function (s, p) { return s + p.share; }, 0) - 1) < 1e-6);
-  check("data: year " + slot + " priorities carry metric + target_rate + price factor (default 1.0)",
+  check("data: year " + slot + " priorities carry metric + price factor (default 1.0)",
     D && D.year_priorities[slot].every(function (p) {
-      return p.metric && p.share != null && p.target_rate != null && p.factor === 1;
+      return p.metric && p.share != null && p.factor === 1;
+    }));
+  // 2026-08-06 — the unit is an EXPLICIT field, not sniffed from the metric text.
+  // It used to be decided by string-matching "headcount" in the LABEL, which made
+  // a curator retitling a metric silently move the target off the SCFF-rate path
+  // onto sizeOf(c) × target_rate — and target_rate is a headcount-era percentage,
+  // so the flip was also a category error under the credit-FTES basis.
+  check("data: year " + slot + " priorities declare an EXPLICIT unit",
+    D && D.year_priorities[slot].every(function (p) {
+      return p.unit === "ftes" || p.unit === "headcount";
+    }));
+  check("data: year " + slot + " explicit units agree with the legacy label sniff " +
+    "(the field is behaviour-neutral, it just stops the label being the switch)",
+    D && D.year_priorities[slot].every(function (p) {
+      const sniffed = !/headcount/i.test(p.metric) && /ftes|unit/i.test(p.metric);
+      return p.unit === (sniffed ? "ftes" : "headcount");
+    }));
+  check("data: year " + slot + " FTES rows carry NO leftover headcount-era target_rate",
+    D && D.year_priorities[slot].every(function (p) {
+      return p.unit !== "ftes" || p.target_rate == null;
     }));
 });
 // Synced 2026-07-30 to the wording live in cpl_funding_config. The workbook +
@@ -217,7 +236,14 @@ function pieSlices(el) {
   // side (the feeders are noncredit campuses; pairing credit FTES with feeder
   // HEADCOUNT would add two different quantities and call the sum a total).
   {
-    const feederFtes = D.feeders.reduce(function (s, f) { return s + (f.noncredit_ftes || 0); }, 0);
+    const feederFtes = D.feeders.reduce(function (s, f) {
+    // Placeholder-aware, matching feederBasis(): a campus whose reported figure
+    // is not yet trustworthy contributes its PLACEHOLDER to the basis. Summing
+    // the raw reported values here would silently re-admit the number the
+    // placeholder exists to keep out of the model.
+    const ph = Number(f.noncredit_ftes_placeholder);
+    return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
+  }, 0);
     const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
     const combined = Math.round(collegeFtes + feederFtes);
     const card = Array.from(doc.querySelectorAll(".cplfund-card .l"))
@@ -579,29 +605,68 @@ function pieSlices(el) {
   const { window } = freshDom();
   const doc = boot(window);
   const feederTable = doc.querySelectorAll(".cplfund-table")[1];
-  const totalHc = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
+  // 2026-08-06: the $1M split moved off HEADCOUNT onto NONCREDIT FTES via the
+  // feederBasis() seam — the like-for-like counterpart of the colleges'
+  // credit-FTES basis, and the only remaining place headcount converted to
+  // dollars. Headcount also mixed vintages here (NOCE/SD 2025-26 vs Mt. SAC NC
+  // and Calbright 2022-23) while every noncredit_ftes is 2025-26.
+  const fBasis = function (f) {
+    const ph = Number(f.noncredit_ftes_placeholder);
+    return (isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0);
+  };
+  const totalBasis = D.feeders.reduce(function (s, f) { return s + fBasis(f); }, 0);
   const perYearPool = D.pool.feeder_carveout / 2;
   check("feeder pool per year = carve-out ÷ years ($" + Math.round(perYearPool).toLocaleString() + ")",
     feederTable.querySelector("tfoot").textContent.indexOf("$" + Math.round(perYearPool).toLocaleString("en-US")) !== -1);
-  // NOCE's share = its headcount ÷ Σ feeder headcount.
   const noce = D.feeders.filter(function (f) { return f.short === "NOCE"; })[0];
-  const noceAlloc = Math.round((noce.headcount / totalHc) * perYearPool);
+  const noceAlloc = Math.round((fBasis(noce) / totalBasis) * perYearPool);
   const noceRow = Array.from(feederTable.querySelectorAll("tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("North Orange") !== -1;
   });
-  check("NOCE gets its headcount share of the feeder pool",
+  check("NOCE gets its noncredit-FTES share of the feeder pool",
     noceRow.textContent.indexOf("$" + noceAlloc.toLocaleString("en-US")) !== -1);
+  // Guard the TRANSITION, not just the new arithmetic: assert the old headcount
+  // split is gone, since the two bases would otherwise agree by coincidence.
+  const totalHc = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
+  const noceHcAlloc = Math.round((noce.headcount / totalHc) * perYearPool);
+  check("the feeder split is no longer headcount-denominated",
+    noceHcAlloc !== noceAlloc &&
+    noceRow.textContent.indexOf("$" + noceHcAlloc.toLocaleString("en-US")) === -1);
 
-  // Editing a feeder headcount re-splits the pool + drops the "est." flag.
-  const hcInput = noceRow.querySelector('input[data-edit="feeder-hc"]');
-  commit(window, hcInput, "40000");
+  // Calbright carries a PLACEHOLDER noncredit FTES. Its reported 21,438.17 over
+  // 2,484 headcount is 8.63 FTES/student — impossible (a full-time year is ~1.0),
+  // and on the raw figure it would take 47% of the $1M as the SMALLEST campus.
+  // The placeholder must drive the split, the reported figure must survive in the
+  // data, and the row must be chipped so a stand-in is never read as reported.
+  const cal = D.feeders.filter(function (f) { return f.short === "Calbright"; })[0];
+  check("Calbright keeps its REPORTED noncredit FTES alongside the placeholder",
+    cal.noncredit_ftes === 21438.17 && cal.noncredit_ftes_placeholder === 1000);
+  check("the placeholder, not the reported figure, drives the split", fBasis(cal) === 1000);
+  check("the placeholder records WHY it exists (a bare number would become fact)",
+    typeof cal.noncredit_ftes_placeholder_basis === "string" &&
+    cal.noncredit_ftes_placeholder_basis.length > 40);
+  const calRow = Array.from(feederTable.querySelectorAll("tbody tr")).find(function (tr) {
+    return tr.textContent.indexOf("Calbright") !== -1;
+  });
+  check("Calbright's row carries a placeholder chip that explains itself",
+    !!calRow.querySelector(".cplfund-ph") &&
+    /PLACEHOLDER/.test(calRow.querySelector(".cplfund-ph").getAttribute("title") || ""));
+  check("a placeholder in play is disclosed in the section footer, not only the chip",
+    /placeholder/i.test(doc.querySelector(".cplfund").textContent));
+  check("the raw reported figure never reaches the split",
+    calRow.textContent.indexOf("21,438") === -1);
+
+  // Editing a feeder's FTES re-splits the pool, drops "est.", and RETIRES the
+  // placeholder — otherwise the stand-in keeps beating the curator's own number.
+  const ftesInput = noceRow.querySelector('input[data-edit="feeder-ftes"]');
+  commit(window, ftesInput, "4000");
   const feederTable2 = doc.querySelectorAll(".cplfund-table")[1];
   const noceRow2 = Array.from(feederTable2.querySelectorAll("tbody tr")).find(function (tr) {
     return tr.textContent.indexOf("North Orange") !== -1;
   });
-  check("editing NOCE headcount clears its est. flag", noceRow2.querySelector(".cplfund-est") === null);
-  check("feeder headcount edit persisted to the scenario",
-    scenSlot(window).feeders[0].headcount === 40000);
+  check("editing NOCE noncredit FTES clears its est. flag", noceRow2.querySelector(".cplfund-est") === null);
+  check("feeder FTES edit persisted to the scenario",
+    scenSlot(window).feeders[0].noncredit_ftes === 4000);
 
   // Sam, 2026-08-04: the hero is now the INSTITUTION total (colleges + NC feeders),
   // so raising the feeder carve-out does NOT change it — the money just moves from the
@@ -1444,7 +1509,14 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const feederFtes = D.feeders.reduce(function (s, f) { return s + (f.noncredit_ftes || 0); }, 0);
+  const feederFtes = D.feeders.reduce(function (s, f) {
+    // Placeholder-aware, matching feederBasis(): a campus whose reported figure
+    // is not yet trustworthy contributes its PLACEHOLDER to the basis. Summing
+    // the raw reported values here would silently re-admit the number the
+    // placeholder exists to keep out of the model.
+    const ph = Number(f.noncredit_ftes_placeholder);
+    return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
+  }, 0);
   const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
   const combined = Math.round(collegeFtes + feederFtes).toLocaleString("en-US");
   const sysText = function () {
