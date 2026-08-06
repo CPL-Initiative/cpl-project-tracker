@@ -264,6 +264,18 @@ const TOPIC_SYNONYMS: Record<string, string[]> = {
   bls: ["cpr", "aed", "resuscitation"],
   lifesaving: ["cpr", "aed", "aid"],
   resuscitation: ["cpr", "bls", "aed"],
+  // Reached via the bigram pass ("first aid" → "firstaid"). Deliberately NOT a
+  // bare `aid` key: "financial aid" is a far commoner phrase in this domain and
+  // must never expand into the CPR family.
+  firstaid: ["cpr", "aed", "bls", "lifesaving", "heartsaver"],
+  // The expanded name. NOTE the asymmetry that makes this necessary: exhibit
+  // titles overwhelmingly say "CPR", so someone asking for "cardiopulmonary
+  // resuscitation" — the correct full term — matched almost nothing. Reached
+  // directly, or via the bigram pass for "cardio pulmonary", or via the fuzzy
+  // pass for misspellings ("cardiopulminary").
+  cardiopulmonary: ["cpr", "aed", "bls", "resuscitation", "lifesaving"],
+  defibrillation: ["aed", "cpr", "bls"],
+  defibrillator: ["aed", "cpr", "bls"],
 };
 
 // ── Topic keyword extraction ──────────────────────────────────
@@ -285,6 +297,15 @@ const TOPIC_STOP_WORDS = new Set([
   // refinement fold kicks in and carries the prior topic into retrieval.
   "think", "check", "checking", "checked", "again", "already",
   "exist", "exists", "existing", "colleges", "map",
+  // Domain META-words: they describe the ASK ("give CPL for a CPR cert"), not
+  // the TOPIC. Left in, they retrieve on themselves — "cert" alone matched 445
+  // of 2,397 exhibits (18.6%) and buried the 12 real CPR rows under the
+  // 200-row cap, which is half of why "which colleges give CPL for CPR"
+  // answered with 2 colleges instead of 5 (2026-08-06). The v2 RPC's
+  // document-frequency filter is the safety net for meta-words nobody
+  // anticipated; this list is the cheap first pass for the ones we know.
+  "cert", "certs", "certificate", "certification", "certifications",
+  "cpl", "ccc", "cccs", "articulation", "articulated",
 ]);
 
 function extractTopicKeywords(query: string): string[] {
@@ -312,14 +333,125 @@ const REFINE_NOISE = new Set([
   "tell", "give", "one", "ones",
 ]);
 
+/**
+ * Candidate lookup keys for a token, singular first-cousin included.
+ *
+ * TOPIC_SYNONYMS is keyed on singular forms ("firefighter", "nurse"), but
+ * people ask in the plural — "what CPL is available for firefighters?" — and
+ * the lookup was exact-match, so the ENTIRE synonym bridge was lost on the
+ * commoner phrasing (2026-08-06: "firefighter" expanded to 11 terms,
+ * "firefighters" to 1; "nurse" to 6, "nurses" to 1). Postgres' stemmer papers
+ * over part of this at match time, but the cross-vocabulary bridge — the whole
+ * point of the table, e.g. firefighter→nfpa/sft/wildland — never fired.
+ */
+function synonymKeys(kw: string): string[] {
+  const keys = [kw];
+  if (kw.endsWith("ies") && kw.length > 4) keys.push(kw.slice(0, -3) + "y");
+  if (kw.endsWith("es") && kw.length > 3) keys.push(kw.slice(0, -2));
+  if (kw.endsWith("s") && kw.length > 3) keys.push(kw.slice(0, -1));
+  return keys;
+}
+
+/** Padded character trigrams, the pg_trgm way (so behaviour matches the DB). */
+function trigrams(s: string): Set<string> {
+  const padded = `  ${s} `;
+  const out = new Set<string>();
+  for (let i = 0; i < padded.length - 2; i++) out.add(padded.slice(i, i + 3));
+  return out;
+}
+
+/** Jaccard overlap of trigram sets — 1.0 identical, ~0 unrelated. */
+function trigramSimilarity(a: string, b: string): number {
+  const A = trigrams(a);
+  const B = trigrams(b);
+  let shared = 0;
+  for (const t of A) if (B.has(t)) shared++;
+  const union = A.size + B.size - shared;
+  return union === 0 ? 0 : shared / union;
+}
+
+/**
+ * Closest synonym KEY to a token, for misspellings (Sam, 2026-08-06:
+ * "cardiopulminary resuscitation ... like my misspellings :)").
+ *
+ * Deliberately fuzzy-matches the KEY, not the corpus. Fuzzy-matching titles
+ * would not help here at all: the exhibits say "CPR", so no amount of string
+ * distance connects them to "cardiopulminary". Correcting the token to
+ * `cardiopulmonary` first, then expanding through the table, is what bridges it.
+ *
+ * Guards: >=6 chars (short tokens are mostly acronyms, where one character of
+ * distance is a DIFFERENT credential — CNA/CAN, EMT/EMR), and a 0.55 floor,
+ * which admits "cardiopulminary"→cardiopulmonary while rejecting near-miss
+ * pairs like "welding"/"welder" that are already distinct keys.
+ */
+const FUZZY_MIN_LEN = 6;
+const FUZZY_FLOOR = 0.55;
+function nearestSynonymKey(token: string): string | null {
+  if (token.length < FUZZY_MIN_LEN) return null;
+  if (TOPIC_SYNONYMS[token]) return token;
+  let best: string | null = null;
+  let bestScore = FUZZY_FLOOR;
+  for (const key of Object.keys(TOPIC_SYNONYMS)) {
+    if (key.length < FUZZY_MIN_LEN) continue;
+    const score = trigramSimilarity(token, key);
+    if (score > bestScore) {
+      bestScore = score;
+      best = key;
+    }
+  }
+  return best;
+}
+
 /** Expand topic keywords with synonyms to catch related exhibits */
 function expandWithSynonyms(keywords: string[]): string[] {
   const expanded = new Set(keywords);
-  for (const kw of keywords) {
-    const syns = TOPIC_SYNONYMS[kw];
-    if (syns) {
-      for (const s of syns) expanded.add(s);
+
+  const addFamily = (key: string): boolean => {
+    const syns = TOPIC_SYNONYMS[key];
+    if (!syns) return false;
+    expanded.add(key);
+    for (const s of syns) expanded.add(s);
+    return true;
+  };
+
+  // BIGRAMS FIRST (2026-08-06, Sam's phrasings). extractTopicKeywords splits on
+  // whitespace and strips punctuation, so the two-word and hyphenated spellings
+  // of a one-word credential family lost the bridge: "fire fighter" and
+  // "fire-fighter" resolved only through the loose "fire" key (missing
+  // emt/paramedic/emergency), and "life saving" / "first aid" expanded to
+  // nothing at all — the latter being the exact family behind the CPR question
+  // that started this. Joining adjacent tokens recovers them.
+  for (let i = 0; i < keywords.length - 1; i++) {
+    const joined = keywords[i] + keywords[i + 1];
+    for (const key of synonymKeys(joined)) {
+      if (addFamily(key)) break;
     }
+  }
+
+  for (const kw of keywords) {
+    // First key that resolves wins — we want "firefighters" to pick up the
+    // "firefighter" family, not to also drag in whatever "firefighte" might
+    // one day match. Stop at the first hit.
+    let hit = false;
+    for (const key of synonymKeys(kw)) {
+      if (addFamily(key)) { hit = true; break; }
+    }
+    // FUZZY LAST RESORT: only for tokens no exact/singular form could resolve,
+    // so a correctly-spelled query never pays for it and can never be dragged
+    // sideways into a neighbouring family by string distance.
+    if (!hit) {
+      const near = nearestSynonymKey(kw);
+      if (near) addFamily(near);
+    }
+  }
+
+  // Same courtesy for two-word spellings of a misspelt term
+  // ("cardio pulminary" → cardiopulmonary).
+  for (let i = 0; i < keywords.length - 1; i++) {
+    const joined = keywords[i] + keywords[i + 1];
+    if (TOPIC_SYNONYMS[joined]) continue;
+    const near = nearestSynonymKey(joined);
+    if (near) addFamily(near);
   }
   return [...expanded];
 }
@@ -336,7 +468,35 @@ async function searchExhibitsByTopic(
   // Expand keywords with synonyms (firefighter → fire, emt, paramedic, protective, etc.)
   const keywords = expandWithSynonyms(rawKeywords);
 
-  // Strategy 1: Full-text search using PostgreSQL ts_query
+  // Strategy 1 (v28a, 2026-08-06): hand the RAW TERMS to search_exhibits_by_topic_v2
+  // and let the database sanitise them next to the corpus it measures against.
+  //
+  // We used to build the tsquery here — `keywords.map(k => k + ":*").join(" | ")`
+  // — and that string was the bug. Parsed with the 'english' config, the Snowball
+  // stemmer reads the "-ed" in "aed" as a past-tense suffix and strips it, so
+  // `aed:*` became `'a':*`: a prefix match on the letter "a". OR'd against every
+  // other term, that one token matched most of the corpus, and the genuine CPR
+  // rows were pushed out by the 200-row cap. "Which colleges give CPL for a CPR
+  // cert?" answered with 2 colleges when the corpus held 5.
+  //
+  // v2 routes short/acronym terms to an UNSTEMMED 'simple' vector, drops terms
+  // whose document frequency exceeds 15% of the corpus, and normalises "/" so
+  // "First Aid/CPR/AED" stops tokenising as one file-path token. v1 is left in
+  // place untouched as the fallback below — rollback is deleting this block.
+  const { data: v2Results, error: v2Error } = await sb
+    .rpc("search_exhibits_by_topic_v2", {
+      search_terms: keywords,
+      college_filter: collegeFilter,
+      result_limit: 200,
+    });
+
+  if (!v2Error && v2Results && v2Results.length > 0) {
+    return v2Results;
+  }
+
+  // Strategy 1b: v1 fallback — only reached if v2 is missing (not yet migrated)
+  // or errored. Carries the original stemmer defect, so it is a safety net for
+  // availability, not a co-equal path.
   const tsQuery = keywords.map((k) => `${k}:*`).join(" | ");
 
   const { data: ftsResults, error: ftsError } = await sb
