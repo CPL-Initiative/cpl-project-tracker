@@ -193,8 +193,11 @@ ok("the ✎ affordance is attached to all four card types",
   String((src.match(/notesBlock\(/g) || []).length));
 ok("locked (no team phrase) shows an explanation rather than a dead button",
   src.indexOf("Unlock with the team phrase") !== -1);
+// Notes/artifacts/backlog are all additive: the page must paint from the
+// register first and fold the Supabase round trip in when it lands, so a slow
+// or unreachable database degrades to "no notes yet" instead of a blank tab.
 ok("notes load does not block the first render",
-  /render\(root, d, state\.dorm, state\.live\);\s*\n\s*loadNotes\(\)/.test(src));
+  /render\(root, d, state\.dorm, state\.live\);\s*\n\s*Promise\.all\(\[loadNotes\(\), loadArtifacts\(\), loadBacklog\(\)\]\)/.test(src));
 
 // Promotion packet
 const withNotes = {
@@ -270,6 +273,86 @@ ok("cards carry stable DOM ids for ref targeting",
 
 ok("reduced-motion users get an outline instead of the flash animation",
   src.indexOf("prefers-reduced-motion") !== -1 && src.indexOf("nclp-flash{animation:none") !== -1);
+
+// ── Refresh + artifacts (#1007) ────────────────────────────────────────────
+// The failure modes worth guarding here are all "looks fine, quietly wrong":
+//   * the tab caching so hard that a colleague's note never appears;
+//   * an artifact link rendered into an href without being re-checked;
+//   * the integration backlog being hidden, so unread insight piles up while
+//     the page looks healthy — the exact failure the Governance tab caught.
+
+ok("exports the refresh + artifact surface",
+  typeof M.refreshAll === "function" && typeof M.loadArtifacts === "function" &&
+  typeof M.loadBacklog === "function" && typeof M.changeSummary === "function");
+
+// The bug this whole change exists to fix: activate() used to hard early-return
+// when state.data was set, so re-entering the tab re-rendered stale data and
+// never re-fetched. If that early return comes back, this fails.
+ok("re-activating the tab re-fetches instead of returning stale cache",
+  /if \(state\.data\) \{\s*\n\s*render\([^)]*\);\s*\n\s*refreshAll\(\)/.test(src),
+  "activate() must refreshAll() on re-activation");
+ok("the old hard early-return is gone",
+  src.indexOf("if (state.data) { render(root, state.data, state.dorm, state.live); return; }") === -1);
+
+// Refresh must not re-pull the ~3 MB credential dataset — that is what makes it
+// cheap enough to press often.
+ok("refreshAll does not re-fetch the 3MB credential dataset",
+  /function refreshAll\(\)[\s\S]*?\n  \}/.exec(src)[0].indexOf("credential_reference_data") === -1);
+
+// safeUrl is the render-path guard. Storage has a check constraint too, but a
+// renderer that trusts storage is one migration away from an XSS.
+ok("safeUrl accepts https and rejects javascript:",
+  M.safeUrl("https://docs.google.com/x") === "https://docs.google.com/x" &&
+  M.safeUrl("javascript:alert(1)") === null &&
+  M.safeUrl("data:text/html,x") === null);
+ok("artifact hrefs are set only through safeUrl",
+  /var href = safeUrl\(a\.url\);/.test(src) && /link\.href = href;/.test(src));
+ok("artifact links are rel=noopener", /link\.rel = "noopener noreferrer";/.test(src));
+
+// Routing an artifact to the right reader: Drive links need the Drive MCP,
+// everything else is a plain fetch. Getting this wrong sends the integrator to
+// the wrong tool.
+ok("sourceForUrl routes Drive vs web",
+  M.sourceForUrl("https://docs.google.com/document/d/abc") === "drive" &&
+  M.sourceForUrl("https://drive.google.com/file/d/abc") === "drive" &&
+  M.sourceForUrl("https://www.cccco.edu/thing") === "web");
+
+// The backlog is the whole point of the honesty argument — if it can be
+// rendered as "all clear" while rows are pending, the strip is worse than none.
+ok("backlog strip renders a never-integrated state", src.indexOf("never integrated") !== -1);
+ok("backlog strip names the exact words that close the gap",
+  src.indexOf("run the NC integration") !== -1);
+ok("un-integrated notes are visibly marked", src.indexOf("awaiting integration") !== -1);
+ok("un-analyzed artifacts are visibly marked", src.indexOf("awaiting analysis") !== -1);
+
+// changeSummary drives the button's reply. First press has no baseline, so it
+// must stay silent rather than claim "up to date" it cannot vouch for.
+const st = M._state;
+const savedNotes = st.notes, savedArts = st.artifacts, savedSeen = st.seen;
+st.notes = {}; st.artifacts = {}; st.seen = null;
+ok("first refresh makes no claim it cannot back up", M.changeSummary() === "");
+st.notes = { "OPP-1": [{ id: 1 }] };
+ok("a new note is reported as new", M.changeSummary() === "✓ 1 new note");
+ok("no change reports up to date", M.changeSummary() === "✓ Up to date");
+st.artifacts = { "Q-1": [{ id: 1 }, { id: 2 }] };
+ok("new artifacts are pluralised", M.changeSummary() === "✓ 2 new artifacts");
+st.notes = savedNotes; st.artifacts = savedArts; st.seen = savedSeen;
+
+// Provenance is a field: a name typed once should persist, and the schema must
+// keep who-and-when on both notes and artifacts.
+ok("the curator's name persists across visits",
+  src.indexOf("cpl_nc_author") !== -1 && /function rememberAuthor/.test(src));
+
+const artSql = fs.readFileSync(path.join(ROOT, "kb", "supabase_nc_artifacts.sql"), "utf8");
+ok("artifacts schema keeps provenance", /added_by\s+text/.test(artSql));
+ok("artifacts are never deleted (no delete policy, no delete grant)",
+  !/for delete/i.test(artSql) && !/grant[^;]*delete/i.test(artSql));
+ok("artifact urls are constrained to http(s) in storage too",
+  /url\s*~\s*'\^https\?:\/\/'/.test(artSql));
+ok("the backlog view exists for a one-round-trip counter",
+  /create or replace view public\.nc_integration_backlog/.test(artSql));
+ok("integration runs record BOTH what was applied and what was proposed",
+  /applied\s+text/.test(artSql) && /proposed\s+text/.test(artSql));
 
 // ── Report ─────────────────────────────────────────────────────────────────
 const failed = results.filter(r => !r.pass);

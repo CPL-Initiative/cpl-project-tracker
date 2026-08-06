@@ -1,5 +1,5 @@
 {
-  "_as_of": "2026-08-05",
+  "_as_of": "2026-08-06",
   "_source": "docs/noncredit_cpl_thinking.md",
   "_note": "Curated register behind the Noncredit & Learning Partners tab. The PROSE reasoning lives in the thinking doc; this file carries only the structured, actionable state so the two do not fork. Derived college lists carry a _derived_at stamp and the query that produced them. The dormant-exhibit worklist is NOT in this file — it is computed live from credential_reference_data.js at render time.",
   "_status": "Twelve use cases mapped by mechanism and sorted into six modes; nine opportunities open; six questions awaiting input. Funding is deliberately parked until the NC universe is mapped.",
@@ -238,7 +238,15 @@
       "cpl_type": "Industry certification",
       "exemplar": "Cal-JAC fire-service crosswalk, 12 colleges / 90 courses · Santiago Canyon, 310 apprentices",
       "status": "proven",
-      "note": "44% of CA apprentices withdraw before completion — making partial progress count is a direct retention lever."
+      "note": "44% of CA apprentices withdraw before completion — making partial progress count is a direct retention lever. The scaling lever is the STANDING EVALUATION — a pre-approved credit determination for a named occupation that applies automatically to any student presenting a verified Certificate of Completion, publishable in MAP for other colleges to adopt; case-by-case turnaround is weeks to months, standing is days. It exists only on the REGISTERED side: non-registered training lacks the DAS/DOL Standards document and cannot become a standing evaluation without further validation.",
+      "_sources": [
+        {
+          "title": "Awarding Credit for Apprenticeship — CCC module",
+          "url": "https://drive.google.com/file/d/1NS5Q4vHrPtFj41-M-Onc8y5UmvHbhJI1/view",
+          "read_at": "2026-08-06",
+          "read_by": "SkyLoop (S123)"
+        }
+      ]
     },
     {
       "id": "UC-9",
@@ -305,7 +313,10 @@
         "Mt. San Antonio College — Noncredit",
         "Calbright College"
       ],
-      "next": "Start with the NOCE five (Google IT Support, ECE, Electricity, Medical Assisting, Pharmacy Technician)."
+      "next": "Start with the NOCE five (Google IT Support, ECE, Electricity, Medical Assisting, Pharmacy Technician).",
+      "_verified_at": "2026-08-06",
+      "_verified_by": "SkyLoop (S123) — re-check against kb/credentials.json, all 1,987 titles",
+      "_verified": "Zero-presence claim HOLDS: San Diego College of Continuing Education, Mt. SAC Noncredit and Calbright appear as neither issuing nor training agency. NOCE is likewise absent — but 'North Orange County ROP (NOCROP) — Los Alamitos HS' IS present and is a different North Orange entity, easily misread as NOCE. Adult schools are not wholly absent: Fontana Adult School appears as both issuer and trainer."
     },
     {
       "id": "OPP-2",
