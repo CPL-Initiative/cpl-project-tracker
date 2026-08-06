@@ -497,8 +497,9 @@ function makeWin(opts) {
   check("csv: one header + one row per real college", lines.length === 4);
   check("csv: starts with a BOM so Excel reads accented college names correctly",
     csv.charCodeAt(0) === 0xfeff);
-  check("csv: header names all five of Jessica's columns",
-    /"College","Primary contact name","Primary contact email","CPL Assistant email","Counseling email"/.test(csv));
+  check("csv: header names Jessica's columns in order",
+    /"College","Primary contact name","Primary contact email","CPL Assistant email","CPL contact title","CPL contact name","CPL contact email","CPL webpage URL"/.test(csv)
+      && /"Counseling email"/.test(csv));
   check("csv: carries the counseling source URL, so a reader can verify it",
     /hartnell\.edu\/support\/counseling/.test(csv));
   check("csv: labels whether a counseling email came from the team or a website",
@@ -533,6 +534,25 @@ function makeWin(opts) {
   const r2 = inn.document.getElementById("map-users-root");
   inn.CPL_MAP_USERS_TAB.render(r2);
   check("lens: offered when signed in", /data-lens="gaps"/.test(r2.innerHTML));
+})();
+
+// The CPL-page column must never cite one of OUR OWN MAP landing pages as the
+// college's published CPL page. A web search for "<college> credit for prior
+// learning" surfaces them near the top, so this is a live hazard, not theory.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const P = w.CPL_MAP_USERS_TAB._CPL_PAGES;
+  const urls = Object.keys(P).map((k) => P[k].url).filter(Boolean);
+  check("cpl page: never cites our own MAP landing pages as a college's CPL page",
+    urls.every((u) => !/cpldashboardcccco\.azurewebsites\.net|cpl-landing-pages/.test(u)));
+  check("cpl page: every entry records what kind of page was found",
+    Object.keys(P).every((k) => P[k].kind === null || ["site", "catalog", "military"].indexOf(P[k].kind) >= 0));
+  check("cpl page: an entry with no page found says so, rather than rendering blank",
+    /no CPL page found/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Allan Hancock College")));
+  check("cpl page: a page whose contact could not be read says 'page, no contact'",
+    /page, no contact/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Chaffey College")));
+  check("cpl page: an unchecked college is honest about being unchecked",
+    /not looked up/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Nowhere College")));
 })();
 
 // ── report ──

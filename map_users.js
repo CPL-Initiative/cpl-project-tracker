@@ -501,6 +501,81 @@
   };
   function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
 
+  // ── The college's OWN CPL webpage + its contact (Jessica, 2026-08-05) ──────
+  // Separate from FALLBACK_CONTACTS because it answers a different question: not
+  // "who can a student reach" but "does this college publish a CPL page of its
+  // own, and who does it name".
+  //
+  // TWO TRAPS, both hit while gathering these:
+  //  1. A web search for "<college> credit for prior learning" surfaces OUR OWN
+  //     MAP landing page (cpldashboardcccco.azurewebsites.net/<CODE>) near the
+  //     top. That is not the college's page. Recording it would make the column
+  //     circular — us citing us as evidence the college has published something.
+  //     Never enter a cpldashboardcccco.azurewebsites.net or cpl-landing-pages
+  //     URL here.
+  //  2. Many college sites (and asccc.org) return 403 to automated fetches, so a
+  //     page can be confirmed to EXIST from search results while its contact
+  //     stays unreadable. That is `url` set + contact blank + a note — not a
+  //     blank row, and not a guess.
+  //
+  // `kind` records what was actually found, because "no CPL page" and "a catalog
+  // paragraph" and "a real CPL site" are three different answers to Jessica's
+  // question and flattening them would lose the finding:
+  //   "site"     — a dedicated CPL section of the college's website
+  //   "catalog"  — CPL described only in the course catalog
+  //   "military" — only a veterans/military CPL page
+  //   null       — nothing found
+  var CPL_PAGES = {
+    "Chaffey College": {
+      kind: "site", url: "https://www.chaffey.edu/creditforpriorlearning/index.php",
+      title: null, name: null, email: null,
+      note: "A full CPL site (apply, methods, student + faculty FAQs). The site blocks automated reads, so the contact it names could not be captured — worth a human look.",
+    },
+    "American River College": {
+      kind: "catalog",
+      url: "https://arc.losrios.edu/2025-2026-official-catalog/while-you-are-here/credit-for-prior-learning-and-alternative-study-options",
+      title: "Area dean", name: null, email: null,
+      note: "No dedicated CPL page; the catalog covers CPL and directs students to \"the area dean\" — a role, with no name or address published.",
+    },
+    "Foothill College": {
+      kind: "military", url: "https://fhweb.foothill.edu/veterans/cpl_jst_military.html",
+      title: "Veterans Resource Center", name: null, email: "contactvrc@fhda.edu",
+      note: "The only CPL page is military/JST-specific, run by the Veterans Resource Center. No general CPL page found.",
+    },
+    "Allan Hancock College": {
+      kind: null, url: null, title: null, name: null, email: null,
+      note: "No CPL page found — only AP/CLEP/IB equivalency in the catalog.",
+    },
+  };
+  function cplPageFor(college) { return CPL_PAGES[college] || null; }
+
+  // Renders the CPL-page cell. Mirrors the counseling column's shape: the value,
+  // then where it came from, then why it is empty when it is.
+  function cplPageCell(college) {
+    var c = cplPageFor(college);
+    if (!c) return '<span class="mapu-st mapu-st-inactive">not looked up</span>';
+    var h = "";
+    if (c.name || c.email || c.title) {
+      h += '<div class="mapu-fb">'
+        + (c.name ? "<b>" + esc(c.name) + "</b> " : "")
+        + (c.email ? '<span class="mapu-disc">' + esc(c.email) + "</span>" : "")
+        + (c.title ? '<br><span class="mapu-fb-t">' + esc(c.title) + "</span>" : "")
+        + "</div>";
+    } else if (c.url) {
+      h += '<span class="mapu-st mapu-st-inactive">page, no contact</span>';
+    } else {
+      h += '<span class="mapu-st mapu-st-inactive">no CPL page found</span>';
+    }
+    if (c.url) {
+      h += '<div><a class="mapu-src" href="' + esc(c.url) + '" target="_blank" rel="noopener">'
+        + esc(c.kind === "catalog" ? "catalog section ↗"
+             : c.kind === "military" ? "veterans CPL page ↗" : "CPL page ↗") + "</a></div>";
+    }
+    if (c.note) h += '<div class="mapu-fb-t">' + esc(c.note) + "</div>";
+    return h;
+  }
+
+
   // ── The student-contact worklist (Session 120) ────────────────────────────
   // map_contact_gaps is a security_invoker view over the same gated tables, so
   // a logged-out visitor gets zero rows exactly like the roster does.
@@ -1128,7 +1203,8 @@
 
     h += '<table class="mapu-table mapu-dirtable"><thead><tr>'
       + "<th>College</th><th>Primary contact</th><th>Primary contact email</th>"
-      + "<th>CPL Assistant email</th><th>Counseling email (from their website)</th>"
+      + "<th>CPL Assistant email</th><th>CPL contact (their CPL page)</th>"
+      + "<th>Counseling email (from their website)</th>"
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
       var f = fallbackFor(r.college);
@@ -1148,6 +1224,7 @@
         + "<td>" + esc(r.primary_contact || "") + "</td>"
         + "<td>" + esc(r.primary_contact_email || "") + "</td>"
         + "<td>" + esc(r.cpl_assistant_email || "") + "</td>"
+        + "<td>" + cplPageCell(r.college) + "</td>"
         + "<td>" + couns + "</td></tr>";
     });
     return h + "</tbody></table>";
@@ -1156,15 +1233,19 @@
   function contactsCsv() {
     var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
     var head = ["College", "Primary contact name", "Primary contact email",
-                "CPL Assistant email", "Counseling email", "Counseling email source",
-                "Counseling source type"];
+                "CPL Assistant email", "CPL contact title", "CPL contact name",
+                "CPL contact email", "CPL webpage URL", "CPL page type",
+                "Counseling email", "Counseling email source", "Counseling source type"];
     var lines = [head.map(q).join(",")];
     contactRows().forEach(function (r) {
       var f = fallbackFor(r.college);
       var emails = f ? (f.contacts || []).filter(function (c) { return c.email; })
         .map(function (c) { return c.email; }).join("; ") : "";
+      var cp = cplPageFor(r.college) || {};
       lines.push([r.college, r.primary_contact || "", r.primary_contact_email || "",
-                  r.cpl_assistant_email || "", emails,
+                  r.cpl_assistant_email || "",
+                  cp.title || "", cp.name || "", cp.email || "", cp.url || "", cp.kind || "",
+                  emails,
                   f ? (f.source || "") : "",
                   f ? (f.via === "curator" ? "CPL team (" + (f.by || "") + ")" : "college website") : ""
                  ].map(q).join(","));
@@ -1328,6 +1409,9 @@
     _fallbackFor: fallbackFor,
     _FALLBACK_CONTACTS: FALLBACK_CONTACTS,
     _fallbackCell: fallbackCell,
+    _cplPageFor: cplPageFor,
+    _cplPageCell: cplPageCell,
+    _CPL_PAGES: CPL_PAGES,
     _gapsHtml: gapsHtml,
     _gapsCsv: gapsCsv,
     _contactsCsv: contactsCsv,
