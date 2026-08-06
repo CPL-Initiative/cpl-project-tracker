@@ -1,20 +1,15 @@
 {
-  "scraped_at": "2026-08-05T14:39:25.171300+00:00",
+  "scraped_at": "2026-08-06T09:09:24.426432+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26505,
+    "jst": 26564,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
   "colleges": {
-    "Los Angeles Pierce College": {
-      "vets": 296,
-      "jst": 120,
-      "star": false
-    },
     "Merced College": {
       "vets": 142,
       "jst": 273,
@@ -22,8 +17,13 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 323,
+      "jst": 325,
       "star": true
+    },
+    "Los Angeles Pierce College": {
+      "vets": 296,
+      "jst": 124,
+      "star": false
     },
     "San Diego Mesa College": {
       "vets": 1070,
@@ -57,7 +57,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1198,
+      "jst": 1237,
       "star": true
     },
     "Norco College": {
@@ -167,7 +167,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 504,
+      "jst": 506,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -215,6 +215,11 @@
       "jst": 152,
       "star": true
     },
+    "Ventura College": {
+      "vets": 254,
+      "jst": 174,
+      "star": false
+    },
     "Mission College": {
       "vets": 158,
       "jst": 146,
@@ -225,14 +230,9 @@
       "jst": 174,
       "star": false
     },
-    "Ventura College": {
-      "vets": 254,
-      "jst": 167,
-      "star": false
-    },
     "Citrus College": {
       "vets": 181,
-      "jst": 213,
+      "jst": 215,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -272,7 +272,7 @@
     },
     "Allan Hancock College": {
       "vets": 392,
-      "jst": 138,
+      "jst": 140,
       "star": false
     },
     "College of San Mateo": {
@@ -292,7 +292,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 122,
+      "jst": 123,
       "star": true
     },
     "Lassen College": {

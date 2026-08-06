@@ -1,6 +1,6 @@
 {
   "_about": "Daily-cached snapshot of public.budget_funding + public.personnel. Written by kb/_load_budget.py after a successful Supabase fetch. Falls back to this file on a Supabase outage. Personnel is stored deduped. budget_expenditures intentionally omitted (held empty).",
-  "_fetched_at": "2026-08-05",
+  "_fetched_at": "2026-08-06",
   "_source_tables": [
     "public.budget_funding",
     "public.personnel"
@@ -64,7 +64,7 @@
       "total": 5000000,
       "avg_yearly": 4978199.980555761,
       "description": "The 2025 ongoing appropriation. We asked for $7M and received $5M; the gap to the ~$7.4M actually needed was covered from the remaining $6M-era allocation plus $59,692 of the $15M.",
-      "archived": false,
+      "archived": true,
       "parent_id": null,
       "section": "source_ongoing",
       "sort_order": 20,
@@ -100,15 +100,15 @@
       "yr_2026_27": 7000000,
       "yr_2027_28": 7000000,
       "yr_2028_29": 7000000,
-      "yr_2029_30": 0,
-      "total": 21000000,
+      "yr_2029_30": 7000000,
+      "total": 35000000,
       "avg_yearly": 7000000,
       "description": "From 2026-27 the ongoing operations appropriation reaches the full $7M originally requested — the Legislature added the remaining $2M. Budgeted through 2028-29 in the Sept-2026 BOG amendment; the appropriation itself is ongoing.",
       "archived": false,
       "parent_id": null,
       "section": "source_ongoing",
       "sort_order": 21,
-      "window_label": "$7,000,000 × 3 yrs"
+      "window_label": "$7,000,000 × 5 yrs · committed through 2030-31"
     },
     {
       "id": 6,
@@ -280,8 +280,8 @@
       "yr_2026_27": 7000000,
       "yr_2027_28": 7000000,
       "yr_2028_29": 7000000,
-      "yr_2029_30": 0,
-      "total": 21000000,
+      "yr_2029_30": 7000000,
+      "total": 35000000,
       "avg_yearly": 0,
       "description": "MAP CPL Grant: team operations, platform development, training, partnerships and projects.",
       "archived": false,

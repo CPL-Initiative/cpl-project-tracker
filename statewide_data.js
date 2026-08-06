@@ -56149,6 +56149,173 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
+      "exhibit_id": "MAPCXS-CBES-1-001|MAPCXS-CBES3-1-001|MAPCXS-ESI-1-001|MAPCXS-ESI1-1-001|MAPCXS-S11--1-001|MAPCXS-S3-1-001|MAPCxS-ESIS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CBES-1-001",
+        "MAPCXS-CBES3-1-001",
+        "MAPCXS-ESI-1-001",
+        "MAPCXS-ESI1-1-001",
+        "MAPCXS-S11--1-001",
+        "MAPCXS-S3-1-001",
+        "MAPCxS-ESIS-1-001"
+      ],
+      "title": "Elementary Spanish 1",
+      "unified_title": "Elementary Spanish 1",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.88,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Credit by Exam SPAN 1B Elementary Spanish",
+        "Credit by Exam: Spanish 1 (SPA-1)",
+        "Elementary Spanish I",
+        "Elementary Spanish I SPAN 001 Cx",
+        "SPAN 101\tSpanish 1 - Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Foreign Languages",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 8,
+      "adopter_names": [
+        "Cabrillo College",
+        "Copper Mountain College",
+        "Las Positas College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "Ventura College"
+      ],
+      "potential": 90,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Berkeley City College",
+        "Butte College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 98,
+      "credit_recs": [
+        {
+          "course": "SPAN 1A",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN V01",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPA 1",
+          "credit": "5 hours in Spanish 1"
+        },
+        {
+          "course": "SPAN 101",
+          "credit": "5 hours in Spanish 1"
+        },
+        {
+          "course": "SPAN 1B",
+          "credit": "5 hours in Elementary Spanish"
+        },
+        {
+          "course": "SPAN 001",
+          "credit": "5 hours in Elementary Spanish I"
+        },
+        {
+          "course": "SPAN 1",
+          "credit": "5 hours in Elementary Spanish I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCXS-M1T1-1-001|MAPCXS-MTI-1-001|MAPCXS-MTI-2-1-001|MAPCXS-MTI4-1-001",
       "exhibit_ids": [
         "MAPCXS-M1T1-1-001",
@@ -58379,177 +58546,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CS  087",
           "credit": "3 hours in Assembler Language Programming"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CBES-1-001|MAPCXS-CBES3-1-001|MAPCXS-ESI-1-001|MAPCXS-ESI1-1-001|MAPCXS-S11--1-001|MAPCXS-S3-1-001|MAPCxS-ESIS-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CBES-1-001",
-        "MAPCXS-CBES3-1-001",
-        "MAPCXS-ESI-1-001",
-        "MAPCXS-ESI1-1-001",
-        "MAPCXS-S11--1-001",
-        "MAPCXS-S3-1-001",
-        "MAPCxS-ESIS-1-001"
-      ],
-      "title": "Elementary Spanish 1",
-      "unified_title": "Elementary Spanish 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.88,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Credit by Exam SPAN 1B Elementary Spanish",
-        "Credit by Exam: Spanish 1 (SPA-1)",
-        "Elementary Spanish I",
-        "Elementary Spanish I SPAN 001 Cx",
-        "SPAN 101\tSpanish 1 - Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Foreign Languages",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 9,
-      "adopter_names": [
-        "Cabrillo College",
-        "Copper Mountain College",
-        "Las Positas College",
-        "Merced College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "Ventura College"
-      ],
-      "potential": 89,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Berkeley City College",
-        "Butte College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 98,
-      "credit_recs": [
-        {
-          "course": "SPAN 1A",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 01",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN V01",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPA 1",
-          "credit": "5 hours in Spanish 1"
-        },
-        {
-          "course": "SPAN 101",
-          "credit": "5 hours in Spanish 1"
-        },
-        {
-          "course": "SPAN 1B",
-          "credit": "5 hours in Elementary Spanish"
-        },
-        {
-          "course": "SPAN 001",
-          "credit": "5 hours in Elementary Spanish I"
-        },
-        {
-          "course": "SPAN 1",
-          "credit": "5 hours in Elementary Spanish I"
         }
       ],
       "authoritative_recs": []
@@ -156193,82 +156189,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPCXS-A2-S-1-001",
-      "exhibit_ids": [
-        "MAPCXS-A2-S-1-001"
-      ],
-      "title": "Strength of Architectural Materials 1",
-      "unified_title": "Strength of Architectural Materials 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ARC 291 - Strength of Architectural Materials I"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Architecture and Related Technologies",
-      "sector": "Energy, Construction & Utilities",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 40,
-      "potential_names": [
-        "Allan Hancock College",
-        "Bakersfield College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Golden West College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "MiraCosta College",
-        "Mt. San Antonio College",
-        "Norco College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Southwestern College",
-        "Ventura College",
-        "West Valley College"
-      ],
-      "total_addressable": 41,
-      "credit_recs": [
-        {
-          "course": "ARC 291",
-          "credit": "3 hours in Strength of Architectural Materials I"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPCXS-CBEH-1-001",
       "exhibit_ids": [
         "MAPCXS-CBEH-1-001"
@@ -229369,8 +229289,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 243,
-        "exhibits": 223,
+        "credit_recs": 242,
+        "exhibits": 222,
         "disciplines": 13,
         "ccc_collaborative": 0,
         "industry_certs": 26,
@@ -229378,8 +229298,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Merced College",
-        "credit_recs": 221,
-        "exhibits": 170,
+        "credit_recs": 220,
+        "exhibits": 169,
         "disciplines": 15,
         "ccc_collaborative": 16,
         "industry_certs": 43,
@@ -230235,7 +230155,7 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Foreign Languages",
-        "credit_recs": 279,
+        "credit_recs": 278,
         "exhibits": 144,
         "courses": 130,
         "colleges": 29,
@@ -230361,9 +230281,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Architecture and Related Technologies",
-        "credit_recs": 27,
-        "exhibits": 13,
-        "courses": 25,
+        "credit_recs": 26,
+        "exhibits": 12,
+        "courses": 24,
         "colleges": 7,
         "ccc_collaborative": 0,
         "pct": 0.2
@@ -230395,8 +230315,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1844,
-        "exhibits": 1375,
+        "credit_recs": 1842,
+        "exhibits": 1374,
         "colleges": 58,
         "pct": 14.7
       },
@@ -230425,8 +230345,8 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7718,
-        "exhibits": 2870,
+        "credit_recs": 7716,
+        "exhibits": 2869,
         "colleges": 90,
         "pct": 61.4
       },
@@ -230497,8 +230417,8 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11021,
-        "exhibits": 4700,
+        "credit_recs": 11019,
+        "exhibits": 4699,
         "colleges": 97,
         "disciplines": 23,
         "pct": 87.7
@@ -230923,6 +230843,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-08-05T14:38:43",
-  "total_credit_recs": 12565
+  "generated_at": "2026-08-06T09:08:44",
+  "total_credit_recs": 12563
 };
