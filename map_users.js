@@ -546,6 +546,53 @@
       kind: null, url: null, title: null, name: null, email: null,
       note: "No CPL page found — only AP/CLEP/IB equivalency in the catalog.",
     },
+    "Antelope Valley College": {
+      kind: "site", url: "https://www.avc.edu/cpl",
+      title: "Extended Learning", name: null, email: "extendedlearning@avc.edu", },
+    "Berkeley City College": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta runs CPL at DISTRICT level \u2014 one page and inbox for all four colleges. Heather Sisneros is the District CPL Faculty Lead.", },
+    "College of Alameda": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta district-level CPL (shared with Berkeley City, Laney, Merritt).", },
+    "Laney College": {
+      kind: "site", url: "https://laney.edu/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Laney has its own CPL page; the contact is the Peralta district inbox.", },
+    "Merritt College": {
+      kind: "site", url: "https://www.peralta.edu/admissions/credit-for-prior-learning",
+      title: "District CPL contact", name: null, email: "cpl@peralta.edu",
+      note: "Peralta district-level CPL (shared with Berkeley City, Alameda, Laney).", },
+    "West Valley College": {
+      kind: "site", url: "https://www.westvalley.edu/services/articulation/credit-for-prior-learning/",
+      title: null, name: null, email: null,
+      note: "CPL sits under Articulation. No contact captured on the page.", },
+    "Los Angeles Valley College": {
+      kind: "site", url: "https://www.lavc.edu/academics/credit-for-prior-learning",
+      title: null, name: null, email: null,
+      note: "LACCD colleges each run their own CPL page under a district framework. Contact not captured.", },
+    "West Los Angeles College": {
+      kind: "site", url: "https://www.wlac.edu/academics/credit-for-prior-learning",
+      title: null, name: null, email: null,
+      note: "LACCD per-college CPL page. Contact not captured.", },
+    "Cosumnes River College": {
+      kind: "catalog", url: "https://crc.losrios.edu/2026-2027-unofficial-catalog-preview/while-you-are-here/credit-for-prior-learning-and-alternative-study-options",
+      title: null, name: null, email: null,
+      note: "Los Rios describes CPL in the catalog rather than on a dedicated page.", },
+    "Santa Barbara City College": {
+      kind: "site", url: "https://www.sbcc.edu/cpl/index.php",
+      title: null, name: null, email: null,
+      note: "A real CPL site with faculty FAQs. Notable: SBCC states it currently awards CPL only for AP and Credit by Exam \u2014 the other forms are still in planning.", },
+    "MiraCosta College": {
+      kind: "site", url: "https://www.miracosta.edu/academics/credit-for-prior-learning/",
+      title: "CPL program inbox", name: null, email: "cpl@miracosta.edu",
+      note: "Also names counsellors by CPL type (exams/certifications/portfolio vs military transcripts).", },
+    "San Diego College of Continuing Education": {
+      kind: "site", url: "https://www.sdccd.edu/students/credit-for-prior-learning/",
+      title: "District CPL", name: null, email: null,
+      note: "SDCCD runs CPL at district level with student and faculty resource pages.", },
   };
   function cplPageFor(college) { return CPL_PAGES[college] || null; }
 
