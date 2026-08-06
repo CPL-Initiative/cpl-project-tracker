@@ -99,27 +99,30 @@ window.CPL_FUNDING = {
     "label": "Priority 1",
     "description": "Increase CCC certificate or degree completion through CPL awards.",
     "share": 0.3,
-    "target_rate": 0.05,
     "factor": 1.0,
-    "metric": "Headcount of students eligible for at least one course offered through CPL"
+    "metric": "Headcount of students eligible for at least one course offered through CPL",
+    "unit": "headcount",
+    "target_rate": 0.05
    },
    {
     "key": "p2",
     "label": "Priority 2",
     "description": "Increase college access through CPL.",
     "share": 0.42,
-    "target_rate": 0.06,
     "factor": 1.0,
-    "metric": "Headcount of students with transcribed CPL credit for at least one course."
+    "metric": "Headcount of students with transcribed CPL credit for at least one course.",
+    "unit": "headcount",
+    "target_rate": 0.06
    },
    {
     "key": "p3",
     "label": "Priority 3",
     "description": "Increase CCC CPL capacity, visibility, documentability, interoperability, mobility.",
     "share": 0.28,
-    "target_rate": 0.046666666,
     "factor": 1.0,
-    "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page"
+    "metric": "Headcount of students with transcribed Credit from either CPL Student Portal or CPL Landing Page",
+    "unit": "headcount",
+    "target_rate": 0.046666666
    }
   ],
   "2": [
@@ -128,27 +131,29 @@ window.CPL_FUNDING = {
     "label": "Priority 1",
     "description": "Increase CCC certificate or degree completion through CPL awards.",
     "share": 0.3,
-    "target_rate": 0.05,
     "factor": 1.0,
-    "metric": "Units of Transcribed CPL"
+    "metric": "Units of Transcribed CPL",
+    "unit": "ftes"
    },
    {
     "key": "p2",
     "label": "Priority 2",
     "description": "Increase college access through CPL.",
     "share": 0.42,
-    "target_rate": 0.06,
     "factor": 1.0,
-    "metric": "Headcount with Completion and 3+ Transcribed CPL Units"
+    "metric": "Headcount with Completion and 3+ Transcribed CPL Units",
+    "unit": "headcount",
+    "target_rate": 0.06
    },
    {
     "key": "p3",
     "label": "Priority 3",
     "description": "Increase CCC CPL capacity, visibility, documentability, interoperability, mobility.",
     "share": 0.28,
-    "target_rate": 0.046666666,
     "factor": 1.0,
-    "metric": "Headcount with CPL Matched in MAP and MIS"
+    "metric": "Headcount with CPL Matched in MAP and MIS",
+    "unit": "headcount",
+    "target_rate": 0.046666666
    }
   ]
  },
@@ -183,6 +188,8 @@ window.CPL_FUNDING = {
    "headcount": 2484,
    "vintage": "2022-23",
    "noncredit_ftes": 21438.17,
+   "noncredit_ftes_placeholder": 1000,
+   "noncredit_ftes_placeholder_basis": "Sam's stand-in (2026-08-06), inside the peer-plausible band: the other three feeders run 0.25-0.43 noncredit FTES per student, which puts Calbright's 2,484 headcount at 611-1,076 FTES. The reported 21,438.17 implies 8.63 FTES per student, which is not physically possible (a full-time year is ~1.0) and most plausibly counts enrollments, not FTES. Pending Malone's verification.",
    "ftes_vintage": "2025-26"
   }
  ],

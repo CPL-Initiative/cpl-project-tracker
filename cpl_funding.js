@@ -1013,8 +1013,47 @@
   function prioFactor(p) { var v = p && p.factor; return v == null ? 1 : Number(v); }
   function prioPrice(p) { return ftesRate() * prioFactor(p); }
   function setFtesRate(v) { activeOverride().ftesRate = Math.max(0, Number(v) || 0); persistActive(); }
+  // ── the priority UNIT seam (2026-08-06) ───────────────────────────────
+  // A priority is scored in CPL FTES or in students, and that used to be
+  // decided by STRING-SNIFFING the metric label (wantsUnits: "does the text say
+  // headcount"). That made the label a policy switch wearing a label's clothes:
+  // a curator retitling a metric in the live config silently moved the target
+  // off the SCFF-rate/price-factor path onto `sizeOf(c) × target_rate` — and
+  // `target_rate` values are headcount-era percentages, so the flip also became
+  // a category error (a "5% of headcount" rate applied to credit FTES).
+  //
+  // The unit is now an EXPLICIT field. The string-sniff survives only as the
+  // seed for rows that predate it, so nothing had to be migrated in one shot,
+  // but an explicit `unit` always wins and a label edit can no longer reach it.
+  // The unit is a property of the METRIC, so it has to travel WITH it. A plain
+  // `prioField(…, "unit")` would resolve SCENARIO ?? SHARED ?? BASE independently
+  // of where the metric came from — so a config layer that RETITLES a metric
+  // without also setting `unit` (live Scenario 2 does exactly this: three
+  // headcount metrics, no unit) would inherit the baked "ftes" and be scored in
+  // the wrong denomination. That is the same silent mis-scoring this seam exists
+  // to prevent, merely inverted.
+  //
+  // So: walk the layers top-down. The first layer carrying an explicit unit
+  // wins; but a layer that sets the metric WITHOUT a unit stops the walk and
+  // falls back to sniffing that layer's own metric text.
+  function prioUnit(slot, i, metric) {
+    var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][i];
+    var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][i];
+    var bp = (base().year_priorities[slot] || base().year_priorities["2"])[i];
+    var layers = [sc, sh, bp];
+    for (var k = 0; k < layers.length; k++) {
+      var L = layers[k];
+      if (!L) continue;
+      if (L.unit === "ftes" || L.unit === "headcount") return L.unit;
+      if (L.metric != null) break;      // set the metric but not the unit → sniff it
+    }
+    return measurability(metric).unit === "units" ? "ftes" : "headcount";
+  }
   // Is this priority scored in CPL FTES rather than students?
-  function prioIsFtes(p) { return measurability(p.metric).unit === "units"; }
+  function prioIsFtes(p) {
+    if (p && (p.unit === "ftes" || p.unit === "headcount")) return p.unit === "ftes";
+    return measurability(p.metric).unit === "units";   // legacy rows: sniff the label
+  }
   // The PRE-FLOOR, PRE-RURAL proportional per-year entitlement behind one
   // priority. The target must ride THIS, never the topped-up cap: the floor
   // raises a college's funding, not its targets, the guaranteed rural allowance
@@ -1051,11 +1090,13 @@
     return base().year_priorities[slot].map(function (p, i) {
       var share = prioField(slot, i, "share");
       var target_rate = prioTargetRate(slot, i, share);
+      var metric = prioField(slot, i, "metric");
       return {
         key: p.key, label: p.label,
         title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
-        metric: prioField(slot, i, "metric"),
+        metric: metric,
+        unit: prioUnit(slot, i, metric),
         strategies: prioStrategies(slot, i),
         share: share,
         target_rate: target_rate,
@@ -1071,12 +1112,47 @@
   function feederHeads() {
     return feeders().reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0);
   }
-  // The feeder campuses' side of the allocation basis when that basis is FTES.
+  // ── the feeder ALLOCATION-BASIS seam (2026-08-06) ─────────────────────
+  // ONE place decides what a feeder campus's size is, so the aggregate basis
+  // and the per-campus $1M split can never disagree. They did before: the
+  // aggregate already flipped with usesFtes() while the split stayed hardcoded
+  // on `f.headcount` at four sites (feeder table ×2, Report/memo ×2).
+  //
   // NONCREDIT FTES specifically — the colleges' side uses CREDIT FTES, and the
   // feeders are noncredit campuses, so this is the like-for-like counterpart,
   // not a second helping of the same population.
+  //
+  // `noncredit_ftes_placeholder` is a curator-supplied stand-in for a campus
+  // whose reported figure is not yet trustworthy. It NEVER overwrites the
+  // reported value — both ride in the data so the discrepancy stays visible —
+  // and every surface that renders a placeholder-derived number must show
+  // feederPlaceholderChip() beside it.
+  function feederBasis(f) {
+    if (!f) return 0;
+    var ph = Number(f.noncredit_ftes_placeholder);
+    if (isFinite(ph) && ph > 0) return ph;
+    return Number(f.noncredit_ftes) || 0;
+  }
+  function feederIsPlaceholder(f) {
+    var ph = f && Number(f.noncredit_ftes_placeholder);
+    return !!(isFinite(ph) && ph > 0);
+  }
+  function feederPlaceholderChip(f) {
+    if (!feederIsPlaceholder(f)) return "";
+    var reported = Number(f.noncredit_ftes);
+    return ' <span class="cplfund-chip cplfund-ph" title="' +
+      esc("PLACEHOLDER — not a reported figure. " +
+        (isFinite(reported) && reported > 0
+          ? "The campus's reported noncredit FTES (" + Math.round(reported).toLocaleString("en-US") +
+            ") implies " + (f.headcount ? (reported / f.headcount).toFixed(2) : "?") +
+            " FTES per student, which is not physically possible (a full-time year is ~1.0). "
+          : "") +
+        (f.noncredit_ftes_placeholder_basis || "") +
+        " Replace with the verified MIS figure before this drives a disbursement.") +
+      '">placeholder</span>';
+  }
   function feederNoncreditFtes() {
-    return feeders().reduce(function (s, f) { return s + (Number(f.noncredit_ftes) || 0); }, 0);
+    return feeders().reduce(function (s, f) { return s + feederBasis(f); }, 0);
   }
   // Shares can differ per year once edited — a year's allocated fraction.
   function shareSum(slot) {
@@ -3109,8 +3185,8 @@
         " &mdash; " + m.floorCount + " colleges are topped up (&asymp;" + fmtMoney(m.floorCost) +
         ", " + fmtPctTrim(m.net > 0 ? m.floorCost / m.net : 0) + " of the pool), funded by renormalizing the " +
         "proportional split over the remaining colleges, so the pool still balances. <em>The floor raises a " +
-        "college&#39;s funding, not its targets:</em> performance targets stay proportional to headcount " +
-        "(target % &times; the college&#39;s own MAP headcount), so a floored college is NOT asked to exceed its " +
+        "college&#39;s funding, not its targets:</em> performance targets stay proportional to the college&#39;s " +
+        "PRE-FLOOR share of statewide " + basisLabel() + ", so a floored college is NOT asked to exceed its " +
         "size-appropriate numbers to receive the floor."
       : "";
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
@@ -3903,10 +3979,10 @@
           propShare + " for the window. The main pool tops it up to <strong>" + fmtMoney(ra.mainW) +
           "</strong>, and this college&#39;s guaranteed rural allowance funds the remaining " + fmtMoney(ra.floorFill) +
           " to reach the " + fmtMoney(m.floor) + " minimum-viable floor &mdash; rural money, not the main pool, lifts it the last stretch. " +
-          "Targets above stay scaled to this college&#39;s own headcount &mdash; the floor raises the funding, not the bar.</div>"
+          "Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " + basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>"
         : '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
           propShare + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
-          " minimum-viable floor. Targets above stay scaled to this college&#39;s own headcount &mdash; the floor raises the funding, not the bar.</div>";
+          " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " + basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
     }
     var ruralLine = "";
     if (c.rural && ra) {
@@ -3973,9 +4049,10 @@
     }
     return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
-      '<div><span class="dk">Headcount share:</span> ' + fmtInt(c.headcount) + " students = " +
-      fmtPct(c.size_pct, 3) + " of the statewide " +
-        (usesFtes() ? fmtInt(totalSize()) + " credit FTES" : fmtInt(totalHeads()) + " headcount") + "</div>" +
+      '<div><span class="dk">' + (usesFtes() ? "Credit FTES share:" : "Headcount share:") + "</span> " +
+      fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
+      fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() +
+      (usesFtes() ? ' <span class="dk">&mdash; ' + fmtInt(c.headcount) + " headcount, context only</span>" : "") + "</div>" +
       floorLine + ruralLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
@@ -4435,23 +4512,31 @@
     var list = feeders();
     var carve = feederCarveout();
     var perYearPool = frontloaded() ? carve : carve / nYears();
-    var totalHc = list.reduce(function (s, f) { return s + (Number(f.headcount) || 0); }, 0) || 1;
+    // The split rides feederBasis() — noncredit FTES (2026-08-06), the
+    // like-for-like counterpart of the colleges' credit-FTES basis. Headcount
+    // mixed vintages (NOCE/SD 2025-26 vs Mt. SAC NC/Calbright 2022-23) while
+    // every noncredit_ftes is 2025-26, so this is a data-quality win as well as
+    // a consistency one.
+    var totalBasis = list.reduce(function (s, f) { return s + feederBasis(f); }, 0) || 1;
     var anyEstimate = list.some(function (f) { return f.estimate; });
+    var anyPlaceholder = list.some(feederIsPlaceholder);
     // Batch cadence (Sam, 2026-07-27): a feeder's support is released in TWO
     // batches per funding year — the same cadence as the credit colleges (Timing
     // section) — so each campus row shows its per-batch amount, not just the annual.
     var rows = list.map(function (f, i) {
-      var hc = Number(f.headcount) || 0;
-      var supp = (hc / totalHc) * perYearPool;
+      var basis = feederBasis(f);
+      var supp = (basis / totalBasis) * perYearPool;
       return "<tr>" +
         '<td class="t"><strong>' + esc(f.name) + "</strong>" +
         (f.estimate ? ' <span class="cplfund-est" title="editable estimate — no authoritative noncredit MIS pull is wired here">est.</span>' : "") +
-        (f.vintage ? ' <span class="dk" style="font-size:.72rem;" title="headcount vintage">' + esc(f.vintage) + "</span>" : "") +
+        (f.ftes_vintage ? ' <span class="dk" style="font-size:.72rem;" title="noncredit FTES vintage">' + esc(f.ftes_vintage) + "</span>" : "") +
+        feederPlaceholderChip(f) +
         feederF1Note(f.short) + "</td>" +
-        '<td>' + edNum("feeder-hc", fmtInt(hc), { small: true, idx: i, label: f.name + " headcount" }) + "</td>" +
-        "<td>" + fmtPctTrim(hc / totalHc) + "</td>" +
+        '<td>' + edNum("feeder-ftes", fmtInt(basis), { small: true, idx: i, label: f.name + " noncredit FTES" }) +
+        '<span class="sub">' + fmtInt(Number(f.headcount) || 0) + " headcount, context</span></td>" +
+        "<td>" + fmtPctTrim(basis / totalBasis) + "</td>" +
         "<td>" + fmtMoney(supp) + feederBatchNote(supp) + "</td>" +
-        '<td class="tot">' + fmtMoney((hc / totalHc) * carve) + "</td></tr>";
+        '<td class="tot">' + fmtMoney((basis / totalBasis) * carve) + "</td></tr>";
     }).join("");
     return '<h3>Noncredit feeder support ' +
       '<span class="dk" style="font-size:.8rem;font-weight:400;">(carve-out &mdash; not a CPL award)</span></h3>' +
@@ -4462,22 +4547,28 @@
       "split above) funds a feeder pool of <strong>" + fmtMoney(perYearPool) +
       (frontloaded() ? " disbursed up front in Year 1 (front-loaded; unspent rolls forward)" : "/yr") +
       "</strong>, split among them by " +
-      "headcount &mdash; recognizing the feeder role without diluting the credit colleges&#39; allocations. " +
+      "<strong>noncredit FTES</strong> &mdash; the like-for-like counterpart of the credit colleges&#39; " +
+      "credit-FTES basis &mdash; recognizing the feeder role without diluting the credit colleges&#39; allocations. " +
       "Each feeder&#39;s support is released in <strong>two batches per funding year</strong> &mdash; the same " +
       "cadence as the credit colleges (see the <em>Timing</em> section) &mdash; tracking the cumulative eligible " +
       "CPL these campuses stand up in MAP." +
       "<div style='margin-top:8px;'><span class='dk'>Feeder metric:</span> " +
       edText("feeder-metric", feederMetric(), { label: "Feeder metric" }) + "</div></div>" +
       '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
-      "<thead><tr><th class='t'>Feeder</th><th>Noncredit headcount</th><th>Share</th>" +
+      "<thead><tr><th class='t'>Feeder</th><th>Noncredit FTES</th><th>Share</th>" +
       "<th>" + (frontloaded() ? "Support (Yr 1, front-loaded)" : "Support / yr") + "</th><th>Total " + esc(windowLabel()) + "</th></tr></thead>" +
       "<tbody>" + rows + "</tbody>" +
-      '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalHc) + "</td><td>100%</td>" +
+      '<tfoot><tr><td class="t">FEEDER POOL</td><td>' + fmtInt(totalBasis) + "</td><td>100%</td>" +
       "<td>" + fmtMoney(perYearPool) + feederBatchNote(perYearPool) + "</td>" +
       '<td class="tot">' + fmtMoney(carve) + "</td></tr></tfoot></table></div>" +
       feederMeasurablesHtml() +
-      (anyEstimate ? '<div class="cplfund-foot"><div>Noncredit headcounts are <strong>editable estimates</strong> ' +
-        "&mdash; replace them with each feeder&#39;s MIS noncredit annual headcount to true up the split.</div></div>" : "");
+      (anyPlaceholder ? '<div class="cplfund-foot"><div><strong>⚠ One or more campuses use a placeholder ' +
+        "noncredit-FTES figure</strong> &mdash; a stand-in, not a reported number, used so the split computes. " +
+        "The campus&#39;s own reported figure is retained in the data and shown in the chip&#39;s hover. " +
+        "Replace with the verified MIS figure before this drives a disbursement.</div></div>" : "") +
+      (anyEstimate ? '<div class="cplfund-foot"><div>Noncredit figures marked <strong>est.</strong> are ' +
+        "editable estimates &mdash; replace them with each feeder&#39;s MIS noncredit annual FTES to true up " +
+        "the split.</div></div>" : "");
   }
 
   // ── footnotes ─────────────────────────────────────────────────────────
@@ -4491,7 +4582,8 @@
     var stale = d.colleges.filter(function (c) { return c.hc_vintage === "2022-23"; }).length;
     var staleLine = stale
       ? "<div>" + stale + " of " + d.colleges.length + " college rows await a 2025-26 headcount " +
-        "(they carry the prior 2022-23 MIS figure; headcount shares mix vintages until the refresh completes).</div>"
+        "(they carry the prior 2022-23 MIS figure). Headcount is CONTEXT ONLY &mdash; the allocation basis is " +
+        basisLabel() + ", which is uniformly " + esc(ftesVintage()) + " &mdash; so this mixes no vintages in the split.</div>"
       : "";
     return "<div>College headcounts: " + esc(d.headcount_label || "per the committed snapshot") + " &mdash; " + linked + ".</div>" + staleLine;
   }
@@ -4577,15 +4669,17 @@
     var expendYear = endYr[1] ? (endYr[0].slice(0, 2) + endYr[1]) : (endYr[0] || "");
     var s = awardStats() || { avg: 0, min: 0, max: 0, minCount: 0 };
     var proj = activeProjectObj();
-    // The $1M noncredit feeder carve-out, split per campus by headcount (the same
-    // math the feeder section uses), so the memo can list each NC campus's support.
+    // The $1M noncredit feeder carve-out, split per campus by NONCREDIT FTES via
+    // feederBasis() — the same seam the feeder section uses, so the memo and the
+    // tab can never disagree (they did while both open-coded `f.headcount`).
     var carve = feederCarveout();
     var flist = feeders();
-    var fhc = flist.reduce(function (ss, f) { return ss + (Number(f.headcount) || 0); }, 0) || 1;
+    var fbasis = flist.reduce(function (ss, f) { return ss + feederBasis(f); }, 0) || 1;
     var feederRows = flist.map(function (f) {
       return { name: f.name, short: f.short,
         district: MEMO_FEEDER_DISTRICT[f.short] || "Noncredit Campuses",
-        total: (Number(f.headcount) || 0) / fhc * carve };
+        placeholder: feederIsPlaceholder(f),
+        total: feederBasis(f) / fbasis * carve };
     });
     return {
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
@@ -5463,11 +5557,17 @@
       setPrio(slot, Number(idx), edit, raw);
       return;
     }
-    if (edit === "feeder-hc") {
+    if (edit === "feeder-ftes") {
       var list = feeders();
       var fn = parseNum(raw);
-      list[Number(idx)].headcount = fn == null ? 0 : Math.max(0, fn);
-      list[Number(idx)].estimate = false;   // an explicit edit is no longer an estimate
+      var fRow = list[Number(idx)];
+      fRow.noncredit_ftes = fn == null ? 0 : Math.max(0, fn);
+      fRow.estimate = false;   // an explicit edit is no longer an estimate
+      // A curator typing a real figure RETIRES the placeholder — otherwise the
+      // stand-in would keep winning over the number they just entered, and the
+      // chip would keep claiming a placeholder that no longer drives anything.
+      delete fRow.noncredit_ftes_placeholder;
+      delete fRow.noncredit_ftes_placeholder_basis;
       setFeeders(list);
       return;
     }
