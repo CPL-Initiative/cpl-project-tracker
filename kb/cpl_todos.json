@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-05 · SkyMail — student-contact worklist, contact directory with export, and a governance register you can now actually curate.",
-  "_session": "SkyMail (120) + SkyOptIn (funding)",
-  "_status": "Three things landed today. A student asking one of 25 colleges for CPL through MAP was reaching nobody — the MAP Users tab now lists them with a proposed contact drawn only from people the college already designated (17 of 25 resolve that way). A Contact directory lens gives the whole college-by-college picture with a CSV/Excel export, and all 71 colleges lacking a CPL Assistant have now been looked up: 56 have a counseling address, 15 publish nothing usable and say why. And a Governance tab records who decides what — it measures itself, which is how it surfaced that the college contact-refresh cadence was decided in June and has never once been run.",
+  "_as_of": "2026-08-06 · SkyWalker — the partner crosswalk now also ships a flat, joinable extract with MAP exhibit IDs, and the findings are up as a shareable page.",
+  "_session": "SkyWalker (121)",
+  "_status": "Three things landed today. A student asking one of 25 colleges for CPL through MAP was reaching nobody — the MAP Users tab now lists them with a proposed contact drawn only from people the college already designated (17 of 25 resolve that way). A Contact directory lens gives the whole college-by-college picture with a CSV/Excel export, and all 71 colleges lacking a CPL Assistant have now been looked up: 56 have a counseling address, 15 publish nothing usable and say why. And a Governance tab records who decides what — it measures itself, which is how it surfaced that the college contact-refresh cadence was decided in June and has never once been run. Since then Ashley has the findings as a shareable web page and a flat spreadsheet — one row per occupation, credit recommendation, college and course, with the MAP exhibit IDs beside them so it can be joined against other systems. Both are produced by the same tool, so the next partner gets them without anyone rebuilding it.",
   "items": [
+    {
+      "id": "pcw-fourth-status",
+      "for": "fable",
+      "tab": "",
+      "text": "🏷 SPLIT A STATUS THAT'S DOING TWO JOBS. 'Local CPL only' currently means both 'a college offers this' and 'the credential exists but nobody has adopted it' — very different answers for a student. Engineering Designer is the live example: 2 credentials, 0 colleges. The visual and the spreadsheet both say so honestly, but the underlying label is still coarse. Cheapest moment to fix it is the next partner run."
+    },
     {
       "id": "mu-directory",
       "for": "sam",
@@ -69,24 +75,6 @@
       "for": "sam",
       "tab": "map-users",
       "text": "⚠ THE HEADLINE: 25 of 123 colleges have no Primary Contact email — the address MAP sends student CPL requests to. 24 of them have a live landing page, so a student asking those colleges today reaches nobody. Open MAP Users → '⚠ No student contact' (needs sign-in). 17 have a proposed person drawn from their own MAP designations; the tab drafts the email telling the college who we routed them to."
-    },
-    {
-      "id": "mu-ask-8",
-      "for": "sam",
-      "tab": "map-users",
-      "text": "🙋 8 colleges have nobody to propose. 5 have only a VPAA or CEO on file — I deliberately did NOT route student requests to a vice president, since that's the college's call. 3 (Calbright Credit, North Orange Continuing Ed Credit, San Diego CCE Credit) have zero MAP users at all — that's the same standalone continuing-ed onboarding gap the Noncredit tab flagged, not a contact problem."
-    },
-    {
-      "id": "mu-map-url",
-      "for": "sam",
-      "tab": "map-users",
-      "text": "🔗 Still open since Session 87: the exact MAP URL you want the 'update your contacts' link to point at. The draft emails currently link each college's MAP CPL dashboard. One-line change once you send it."
-    },
-    {
-      "id": "nc-needs-input",
-      "for": "sam",
-      "tab": "nc-learning-partners",
-      "text": "❓ 6 items are waiting on you (filter: 'Needs Input'). The one that unlocks the most: HOW MANY colleges and high-school partners are on the incumbent articulation system? It sizes the largest-volume lane in the whole analysis and nothing in our repos carries it. Also open: is MAP's high-school role decided or aspirational, landing-page build dates, the CDCR back-catalog, Calbright's FTES (needs Malone), and where the '44 non-CCC dental programs' figure came from."
     }
   ]
 }
