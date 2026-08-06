@@ -29,6 +29,18 @@
 // The report pulls the narrative from the RENDERED DOM, so it cannot drift from
 // what is on screen.
 //
+// ── Refresh runs at two speeds, and the tab is honest about both ───────────
+// MECHANICAL (↻ Refresh, and on every re-activation): re-pull the register,
+// the notes, the artifacts and the backlog. Pure fetch, about a second. This is
+// what makes a colleague's note visible without a hard reload.
+// ANALYTICAL (a Claude session): read what came in, weigh it against the
+// register, and revise the page to match. That is judgment — a browser button
+// cannot do it, and neither can a cron, because this repo has no LLM key in its
+// Actions secrets. So the tab COUNTS the gap in a backlog strip and says when it
+// last closed, rather than looking healthy while unread insight piles up.
+// Sam's ruling (2026-08-06) on what a run may do unaided: apply the routine,
+// propose the interpretive. See docs/kb-notes/playbook-nc-integration-run.md.
+//
 // PRIVATE for now (Sam, 2026-08-05: "private now, field-facing later"). Data
 // shapes are partner-safe so a public view can be added without rework — no PII,
 // no unverified figures presented as fact.
@@ -54,10 +66,36 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var NOTES_URL = SUPABASE_URL + "/rest/v1/nc_partner_notes";
   var REVISE_RPC = SUPABASE_URL + "/rest/v1/rpc/nc_partner_note_revise";
+  // ── Artifact layer (kb/supabase_nc_artifacts.sql) ─────────────────────────
+  // Artifacts are LINKS, not uploaded bytes: a file uploaded to Supabase Storage
+  // is one a Claude session can never read back (Rule 9c — the sandbox cannot
+  // reach *.supabase.co, there is no storage MCP tool, and the public object URL
+  // 403s through the proxy), which would put the artifact one inch beyond the
+  // thing meant to analyze it. A Drive link or a public URL is readable today.
+  var ARTIFACTS_URL = SUPABASE_URL + "/rest/v1/nc_artifacts";
+  var ARTIFACT_RPC = SUPABASE_URL + "/rest/v1/rpc/nc_artifact_revise";
+  var BACKLOG_URL = SUPABASE_URL + "/rest/v1/nc_integration_backlog";
   var TEAM_KEY = "cpl_team_pass";
+  // Remembered across visits so a curator types their name once, not once per
+  // note. Provenance is a field — an anonymous insight cannot be followed up on.
+  var AUTHOR_KEY = "cpl_nc_author";
 
   function teamPhrase() {
     try { return window.localStorage.getItem(TEAM_KEY) || ""; } catch (e) { return ""; }
+  }
+  function storedAuthor() {
+    try { return window.localStorage.getItem(AUTHOR_KEY) || ""; } catch (e) { return ""; }
+  }
+  function rememberAuthor(name) {
+    state.author = name || "";
+    try {
+      if (name) window.localStorage.setItem(AUTHOR_KEY, name);
+    } catch (e) { /* private browsing — the name just won't persist */ }
+  }
+  // Drive links are read with the Drive MCP, everything else is fetched. Storing
+  // which one saves the integrator a guess.
+  function sourceForUrl(url) {
+    return /^https?:\/\/(docs|drive)\.google\.com\//i.test(String(url)) ? "drive" : "web";
   }
   function canWrite() { return !!teamPhrase(); }
   function authHeaders() {
@@ -67,7 +105,14 @@
     return h;
   }
 
-  var state = { data: null, dorm: null, live: null, notes: {}, author: "", opp: "all", uc: "all", q: "open" };
+  var state = {
+    data: null, dorm: null, live: null,
+    notes: {}, artifacts: {}, backlog: null,
+    author: storedAuthor(), opp: "all", uc: "all", q: "open",
+    // Counts at last render, so Refresh can say what actually changed rather
+    // than claiming success and leaving the reader to spot the difference.
+    seen: null
+  };
   var SECTIONS = [];
 
   // ── DOM helpers ────────────────────────────────────────────────────────────
@@ -261,6 +306,23 @@
       "border-radius:0 6px 6px 0;padding:.5rem .7rem;margin:0 0 .4rem;}",
       R + " .nclp-note p.nt{margin:0 0 .3rem;font-size:.86rem;color:var(--text-body);white-space:pre-wrap;line-height:1.5;}",
       R + " .nclp-chip.promoted{border-color:var(--hunter);color:var(--hunter);font-weight:600;}",
+      R + " .nclp-chip.pending{border-color:var(--mustard-text);color:var(--mustard-text);}",
+      // artifacts — a linked document sitting alongside the written notes
+      R + " .nclp-note.nclp-art{border-left-color:var(--cobalt);}",
+      R + " .nclp-arthead{display:flex;align-items:baseline;gap:.4rem;}",
+      R + " a.nclp-artlink{font-size:.84rem;font-weight:600;color:var(--accent-link);text-decoration:none;",
+      "overflow-wrap:anywhere;}",
+      R + " a.nclp-artlink:hover{text-decoration:underline;}",
+      R + " .nclp-addrow{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;}",
+      R + " .nclp-hint{font-size:.76rem;color:var(--text-muted);margin:0;line-height:1.45;}",
+      // integration backlog strip
+      R + " .nclp-backlog{border:1px solid var(--border);border-radius:8px;padding:.7rem .85rem;",
+      "margin:0 0 1.2rem;background:var(--surface-opaque);}",
+      R + " .nclp-backlog.waiting{border-color:var(--mustard-text);background:var(--surface-subtle);}",
+      R + " .nclp-blhead{font-size:.88rem;color:var(--text-strong);}",
+      R + " .nclp-blsub{font-size:.79rem;color:var(--text-muted);margin:.3rem 0 0;max-width:74ch;line-height:1.5;}",
+      R + " .nclp-blsub code{font-size:.95em;background:var(--surface-subtle);border:1px solid var(--border);",
+      "border-radius:4px;padding:.05rem .3rem;color:var(--text-body);}",
       R + " button.nclp-addnote,#" + ROOT_ID + " button.nclp-revise{font:inherit;font-size:.76rem;cursor:pointer;",
       "border:1px dashed var(--border-strong);border-radius:999px;padding:.18rem .6rem;",
       "background:transparent;color:var(--accent-link);}",
@@ -378,6 +440,97 @@
     });
   }
 
+  // ── Artifacts: fetch, group by item, write ────────────────────────────────
+  // Same live-only rule as notes — a corrected link supersedes the bad one and
+  // the bad one stays in the table, so "attached the wrong deck" is recoverable
+  // without anything being deleted.
+  function loadArtifacts() {
+    if (!canWrite()) { state.artifacts = {}; return Promise.resolve({}); }
+    var url = ARTIFACTS_URL + "?select=id,item_id,url,title,source,why,added_by,created_at,integrated_at" +
+      "&superseded_by=is.null&order=created_at.desc";
+    return fetch(url, { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (a) {
+          (by[a.item_id] = by[a.item_id] || []).push(a);
+        });
+        state.artifacts = by;
+        return by;
+      })
+      .catch(function () { state.artifacts = {}; return {}; });
+  }
+
+  function saveArtifact(itemId, url, title, why, supersedesId) {
+    return fetch(ARTIFACT_RPC, {
+      method: "POST",
+      headers: Object.assign({ "Content-Type": "application/json" }, authHeaders()),
+      body: JSON.stringify({
+        p_item_id: itemId, p_url: url, p_title: title,
+        p_source: sourceForUrl(url),
+        p_why: why || null,
+        p_added_by: state.author || null,
+        p_supersedes: supersedesId || null
+      })
+    }).then(function (r) {
+      if (!r.ok) throw new Error("attach failed (" + r.status + ")");
+      return r.json();
+    });
+  }
+
+  // ── The integration backlog ───────────────────────────────────────────────
+  // The half of "refresh" a browser CANNOT do. Re-fetching notes is mechanical
+  // and instant; READING them, weighing them against the register and revising
+  // it is judgment, and it runs in a Claude session (there is no ANTHROPIC key
+  // in this repo's Actions secrets, so no cron can do it either). Rather than
+  // hide that gap, the tab counts it and says when it last closed — the same
+  // self-measuring rule that caught a contact cadence decided in June and never
+  // run once. A loop that quietly stops running will say so here.
+  function loadBacklog() {
+    if (!canWrite()) { state.backlog = null; return Promise.resolve(null); }
+    return fetch(BACKLOG_URL + "?select=*", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        state.backlog = rows && rows.length ? rows[0] : null;
+        return state.backlog;
+      })
+      .catch(function () { state.backlog = null; return null; });
+  }
+
+  // Everything the browser can refresh on its own, in one pass: the curated
+  // register (so a landed integration commit shows without a hard reload), the
+  // notes, the artifacts, and the backlog. Deliberately NOT the 3 MB credential
+  // dataset behind the dormant list — that is reloaded with the page.
+  function refreshAll() {
+    return Promise.all([
+      fetch(DATA_URL, { cache: "no-store" })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { if (d) state.data = d; })
+        .catch(function () { /* keep the register we already have */ }),
+      loadNotes(), loadArtifacts(), loadBacklog()
+    ]);
+  }
+
+  // What changed since the last render, phrased for a human.
+  function tally() {
+    function count(map) {
+      return Object.keys(map || {}).reduce(function (a, k) { return a + map[k].length; }, 0);
+    }
+    return { notes: count(state.notes), artifacts: count(state.artifacts) };
+  }
+  function changeSummary() {
+    var now = tally(), was = state.seen;
+    state.seen = now;
+    if (!was) return "";
+    var d = [];
+    if (now.notes > was.notes) d.push((now.notes - was.notes) + " new note" + (now.notes - was.notes === 1 ? "" : "s"));
+    if (now.artifacts > was.artifacts) {
+      var n = now.artifacts - was.artifacts;
+      d.push(n + " new artifact" + (n === 1 ? "" : "s"));
+    }
+    return d.length ? "✓ " + d.join(" · ") : "✓ Up to date";
+  }
+
   function fmtDate(iso) {
     if (!iso) return "";
     var d = new Date(iso);
@@ -386,9 +539,15 @@
 
   // The ✎ affordance + rendered notes for one register item. Present on every
   // card so a question, an opportunity, a mode or a use case can all take input.
+  // Only ever set href from a URL we have re-checked here. The column has a
+  // check constraint too, but a render path should not trust storage.
+  function safeUrl(u) { return /^https?:\/\//i.test(String(u)) ? String(u) : null; }
+
   function notesBlock(itemId) {
     var wrap = el("div", "nclp-notes");
     var list = (state.notes && state.notes[itemId]) || [];
+    var arts = (state.artifacts && state.artifacts[itemId]) || [];
+
     list.forEach(function (n) {
       var b = el("div", "nclp-note");
       b.appendChild(el("p", "nt", n.body));
@@ -396,6 +555,10 @@
       if (n.author) meta.appendChild(chip(n.author));
       if (n.created_at) meta.appendChild(chip(fmtDate(n.created_at)));
       if (n.promoted_at) meta.appendChild(chip("promoted → " + (n.promoted_to || "register"), "promoted"));
+      // Says plainly whether anyone has acted on this yet. A note that has sat
+      // unread for a week should look different from one that has been folded in.
+      else if (n.integrated_at) meta.appendChild(chip("integrated " + fmtDate(n.integrated_at), "promoted"));
+      else meta.appendChild(chip("awaiting integration", "pending"));
       if (canWrite()) {
         var rev = el("button", "nclp-revise", "Revise");
         rev.type = "button";
@@ -405,15 +568,121 @@
       b.appendChild(meta);
       wrap.appendChild(b);
     });
+
+    arts.forEach(function (a) {
+      var b = el("div", "nclp-note nclp-art");
+      var head = el("div", "nclp-arthead");
+      var href = safeUrl(a.url);
+      if (href) {
+        var link = el("a", "nclp-artlink", a.title || a.url);
+        link.href = href;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+        head.appendChild(link);
+      } else {
+        head.appendChild(el("span", "nclp-artlink", a.title || "(bad link)"));
+      }
+      b.appendChild(head);
+      if (a.why) b.appendChild(el("p", "nt", a.why));
+      var meta = el("div", "nclp-meta");
+      meta.appendChild(chip(a.source === "drive" ? "📄 Drive" : "🔗 Web"));
+      if (a.added_by) meta.appendChild(chip(a.added_by));
+      if (a.created_at) meta.appendChild(chip(fmtDate(a.created_at)));
+      meta.appendChild(a.integrated_at
+        ? chip("analyzed " + fmtDate(a.integrated_at), "promoted")
+        : chip("awaiting analysis", "pending"));
+      if (canWrite()) {
+        var rev2 = el("button", "nclp-revise", "Replace link");
+        rev2.type = "button";
+        rev2.addEventListener("click", function () { openArtifactEditor(wrap, itemId, a); });
+        meta.appendChild(rev2);
+      }
+      b.appendChild(meta);
+      wrap.appendChild(b);
+    });
+
     if (canWrite()) {
+      var row = el("div", "nclp-addrow");
       var add = el("button", "nclp-addnote", list.length ? "✎ Add insight" : "✎ Add insight or information");
       add.type = "button";
       add.addEventListener("click", function () { openEditor(wrap, itemId, null); });
-      wrap.appendChild(add);
-    } else if (!list.length) {
+      row.appendChild(add);
+      var att = el("button", "nclp-addnote", "📎 Attach artifact");
+      att.type = "button";
+      att.title = "Link a Google Drive document or a web page. Claude reads it on the next integration run.";
+      att.addEventListener("click", function () { openArtifactEditor(wrap, itemId, null); });
+      row.appendChild(att);
+      wrap.appendChild(row);
+    } else if (!list.length && !arts.length) {
       wrap.appendChild(el("p", "nclp-locked", "Unlock with the team phrase (Team & RACI) to add insight here."));
     }
     return wrap;
+  }
+
+  // Attach (or correct) a link. Deliberately three plain fields — a newcomer
+  // should not have to know what "source" or "supersede" mean to contribute.
+  function openArtifactEditor(wrap, itemId, existing) {
+    if (wrap.querySelector(".nclp-editor")) return;
+    var form = el("div", "nclp-editor");
+    form.appendChild(el("p", "nclp-hint",
+      existing
+        ? "Replacing a link keeps the old one in the history — nothing is deleted."
+        : "Paste a Google Drive link or a web address. Claude reads it on the next integration run and writes back what it found."));
+
+    var urlIn = document.createElement("input");
+    urlIn.type = "url";
+    urlIn.placeholder = "https://docs.google.com/… or any web address";
+    urlIn.setAttribute("maxlength", "2000");
+    if (existing) urlIn.value = existing.url || "";
+    form.appendChild(urlIn);
+
+    var titleIn = document.createElement("input");
+    titleIn.type = "text";
+    titleIn.placeholder = "What is it? (e.g. Apprenticeship CPL module)";
+    titleIn.setAttribute("maxlength", "300");
+    if (existing) titleIn.value = existing.title || "";
+    form.appendChild(titleIn);
+
+    var whyIn = document.createElement("textarea");
+    whyIn.rows = 2;
+    whyIn.placeholder = "Why does it matter here? What should Claude look for? (optional)";
+    if (existing) whyIn.value = existing.why || "";
+    form.appendChild(whyIn);
+
+    var who = document.createElement("input");
+    who.type = "text";
+    who.placeholder = "Your name";
+    who.value = state.author || "";
+    who.setAttribute("maxlength", "80");
+    form.appendChild(who);
+
+    var row = el("div", "nclp-editrow");
+    var save = el("button", "nclp-btn", existing ? "Save new link" : "Attach");
+    save.type = "button";
+    var cancel = el("button", "nclp-btn", "Cancel");
+    cancel.type = "button";
+    var msg = el("span", "nclp-msg");
+    row.appendChild(save); row.appendChild(cancel); row.appendChild(msg);
+    form.appendChild(row);
+    wrap.insertBefore(form, wrap.firstChild);
+    urlIn.focus();
+
+    cancel.addEventListener("click", function () { wrap.removeChild(form); });
+    save.addEventListener("click", function () {
+      var u = urlIn.value.trim(), t = titleIn.value.trim();
+      if (!safeUrl(u)) { msg.textContent = "That needs to be a web address starting with https://"; return; }
+      if (!t) { msg.textContent = "Give it a short name so the list is readable."; return; }
+      rememberAuthor(who.value.trim());
+      save.disabled = true;
+      msg.textContent = "Attaching…";
+      saveArtifact(itemId, u, t, whyIn.value.trim(), existing ? existing.id : null)
+        .then(function () { return Promise.all([loadArtifacts(), loadBacklog()]); })
+        .then(function () { state.seen = tally(); rerender(); revealItem(itemId); })
+        .catch(function (e) {
+          save.disabled = false;
+          msg.textContent = e && e.message ? e.message : "Attach failed.";
+        });
+    });
   }
 
   function openEditor(wrap, itemId, existing) {
@@ -428,7 +697,7 @@
     form.appendChild(ta);
     var who = document.createElement("input");
     who.type = "text";
-    who.placeholder = "Your name (optional)";
+    who.placeholder = "Your name — so we know who to follow up with";
     who.value = state.author || "";
     who.setAttribute("maxlength", "80");
     form.appendChild(who);
@@ -447,12 +716,12 @@
     save.addEventListener("click", function () {
       var body = ta.value.trim();
       if (!body) { msg.textContent = "Nothing to save yet."; return; }
-      state.author = who.value.trim();
+      rememberAuthor(who.value.trim());
       save.disabled = true;
       msg.textContent = "Saving…";
       saveNote(itemId, body, existing ? existing.id : null)
-        .then(function () { return loadNotes(); })
-        .then(function () { rerender(); revealItem(itemId); })
+        .then(function () { return Promise.all([loadNotes(), loadBacklog()]); })
+        .then(function () { state.seen = tally(); rerender(); revealItem(itemId); })
         .catch(function (e) {
           save.disabled = false;
           msg.textContent = e && e.message ? e.message : "Save failed.";
@@ -996,6 +1265,28 @@
       return b;
     }
     function allSecs() { return root.querySelectorAll("details.nclp-sec"); }
+    // Pulls the register, notes, artifacts and backlog again — everything a
+    // browser can refresh on its own. It reports what CHANGED rather than just
+    // flashing "done", because "nothing new" is a real and useful answer.
+    btn("↻ Refresh", function (b) {
+      var label = b.textContent;
+      b.disabled = true;
+      b.textContent = "Refreshing…";
+      refreshAll().then(function () {
+        var summary = changeSummary();
+        rerender();
+        // rerender() rebuilt the toolbar, so report on the NEW button.
+        var fresh = root.querySelector(".nclp-toolbar .nclp-btn");
+        if (fresh) {
+          fresh.textContent = summary || label;
+          setTimeout(function () { fresh.textContent = label; }, 2600);
+        }
+      }).catch(function () {
+        b.disabled = false;
+        b.textContent = "Refresh failed";
+        setTimeout(function () { b.textContent = label; }, 2200);
+      });
+    });
     btn("Expand all", function () {
       Array.prototype.forEach.call(allSecs(), function (x) { x.open = true; });
     });
@@ -1064,6 +1355,50 @@
     root.appendChild(m);
   }
 
+  // ── Integration backlog strip ─────────────────────────────────────────────
+  // The honest seam between the two halves of "refresh". Everything above this
+  // line the browser did by itself; everything the backlog counts is waiting on
+  // a person to ask a session to read it. Naming the gap — and naming the exact
+  // words that close it — is what stops it becoming another cadence that was
+  // agreed once and never ran.
+  function backlogStrip(root) {
+    if (!canWrite() || !state.backlog) return;
+    var b = state.backlog;
+    var pendingN = Number(b.notes_pending || 0);
+    var pendingA = Number(b.artifacts_pending || 0);
+    var total = pendingN + pendingA;
+    var strip = el("div", "nclp-backlog" + (total ? " waiting" : ""));
+
+    var head = el("div", "nclp-blhead");
+    if (total) {
+      var parts = [];
+      if (pendingN) parts.push(pendingN + " note" + (pendingN === 1 ? "" : "s"));
+      if (pendingA) parts.push(pendingA + " artifact" + (pendingA === 1 ? "" : "s"));
+      head.appendChild(el("b", null, "⏳ " + parts.join(" and ") + " waiting to be read"));
+    } else {
+      head.appendChild(el("b", null, "✓ Everything added here has been integrated"));
+    }
+    strip.appendChild(head);
+
+    var sub = el("p", "nclp-blsub");
+    if (total) {
+      sub.appendChild(document.createTextNode(
+        "Refresh pulls in what people have written. Working out what it MEANS — and revising this page to match — takes a Claude session. Ask for it in those words: "));
+      sub.appendChild(el("code", null, "run the NC integration"));
+      sub.appendChild(document.createTextNode("."));
+    } else {
+      sub.appendChild(document.createTextNode("New notes and artifacts will show up here as they arrive."));
+    }
+    strip.appendChild(sub);
+
+    var meta = el("div", "nclp-meta");
+    meta.appendChild(b.last_run_at
+      ? chip("last integration " + fmtDate(b.last_run_at) + (b.last_run_by ? " · " + b.last_run_by : ""))
+      : chip("never integrated", "pending"));
+    strip.appendChild(meta);
+    root.appendChild(strip);
+  }
+
   // ── Render ─────────────────────────────────────────────────────────────────
   function render(root, d, dorm, live) {
     SECTIONS = [];
@@ -1078,6 +1413,7 @@
       "While our colleges are working to articulate and award CPL, almost none of the learning that qualifies originates with them. Every opportunity here follows from that. This tab carries the picture as it sits today and the state that changes; the reasoning lives in the thinking document."));
     var jump = toolbar(root, d);
     statsRow(root, d, dorm);
+    backlogStrip(root);
 
     var oppOpen = d.opportunities.filter(function (o) { return o.status === "open"; }).length;
     var needsInput = d.questions.filter(function (q) { return q.status === "open"; }).length;
@@ -1113,7 +1449,16 @@
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     ensureCss();
-    if (state.data) { render(root, state.data, state.dorm, state.live); return; }
+    // Coming BACK to the tab: paint what we already have so there is no blank
+    // flash, then re-pull register + notes + artifacts + backlog in the
+    // background. This used to be a hard early-return, which meant a note a
+    // colleague wrote while you had the page open stayed invisible until a hard
+    // reload — fine when one person used this, wrong now that several do.
+    if (state.data) {
+      render(root, state.data, state.dorm, state.live);
+      refreshAll().then(function () { state.seen = tally(); rerender(); });
+      return;
+    }
     root.textContent = "Loading the noncredit register…";
     fetch(DATA_URL, { cache: "no-store" })
       .then(function (r) {
@@ -1125,9 +1470,11 @@
         function done() {
           state.dorm = computeDormant(window.CPL_CREDENTIAL_REFERENCE);
           state.live = computeLive(window.CPL_CREDENTIAL_REFERENCE);
-          // Notes are additive — render immediately, fold them in when they land.
+          // Notes and artifacts are additive — render immediately, fold them in
+          // when they land, so a slow Supabase round trip never blocks the page.
           render(root, d, state.dorm, state.live);
-          loadNotes().then(function () { rerender(); });
+          Promise.all([loadNotes(), loadArtifacts(), loadBacklog()])
+            .then(function () { state.seen = tally(); rerender(); });
         }
         // The credential dataset is ~3 MB — load on demand for the live dormant
         // query, and render without it if it fails (the section says so honestly).
@@ -1150,6 +1497,12 @@
     buildReport: buildReport,
     buildPromotionPacket: buildPromotionPacket,
     loadNotes: loadNotes,
+    loadArtifacts: loadArtifacts,
+    loadBacklog: loadBacklog,
+    refreshAll: refreshAll,
+    sourceForUrl: sourceForUrl,
+    safeUrl: safeUrl,
+    changeSummary: changeSummary,
     _state: state
   };
 })();
