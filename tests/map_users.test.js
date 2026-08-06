@@ -555,6 +555,29 @@ function makeWin(opts) {
     /not looked up/.test(w.CPL_MAP_USERS_TAB._cplPageCell("Nowhere College")));
 })();
 
+// The ASCCC CPL Liaison column. Distinct from the CPL-page contact: the Senate
+// asks each college to name a liaison, so where one exists it is a statewide
+// designation rather than whatever is printed on a college webpage.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+  const L = T._CPL_LIAISONS;
+  check("liaison: every entry cites its ASCCC source",
+    Object.keys(L).every((k) => /^https:\/\/(www\.)?asccc\.org/.test(L[k].source)));
+  check("liaison: every person has a name", 
+    Object.keys(L).every((k) => (L[k].people || []).every((p) => !!p.name)));
+  check("liaison: a college can carry more than one",
+    (L["Chaffey College"].people || []).length === 2);
+  const cell = T._cplLiaisonCell("Chaffey College");
+  check("liaison cell: shows both people and the ASCCC link",
+    /Stephen Lux/.test(cell) && /Jin Liu/.test(cell) && /ASCCC/.test(cell));
+  // asccc.org 403s automated fetches, so an empty cell means "not surfaced by a
+  // search", NOT "this college has no liaison". Saying "none" would misrepresent
+  // the Academic Senate.
+  check("liaison cell: an unknown college says 'none surfaced', not 'none'",
+    /none surfaced/.test(T._cplLiaisonCell("Nowhere College")));
+})();
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }

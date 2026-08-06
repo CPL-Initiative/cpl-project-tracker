@@ -549,6 +549,48 @@
   };
   function cplPageFor(college) { return CPL_PAGES[college] || null; }
 
+  // ── ASCCC CPL Liaison (Jessica, 2026-08-05) ───────────────────────────────
+  // A DIFFERENT thing from the CPL-page contact, and kept in its own column at
+  // Jessica's request. The Academic Senate asks each college to name a Credit
+  // for Prior Learning liaison; where one exists it is a statewide-registered
+  // designation, which makes it a stronger signal than whatever happens to be
+  // printed on a college webpage. A college can have one, the other, both, or
+  // neither.
+  //
+  // Sourced from ASCCC's per-college pages. asccc.org returns 403 to automated
+  // fetches, so these come from search results — meaning absence here means
+  // "not surfaced", NOT "the college has no liaison". The cell says so, because
+  // an unfilled cell that reads as "none" would misrepresent the Senate.
+  var CPL_LIAISONS = {
+    "Chaffey College": {
+      source: "https://www.asccc.org/content/chaffey-college",
+      people: [
+        { name: "Stephen Lux", title: "ASCCC CPL Liaison", email: "stephen.lux@chaffey.edu" },
+        { name: "Jin Liu", title: "Second ASCCC CPL Liaison (Biology)", email: "jin.liu@chaffey.edu" },
+      ],
+    },
+  };
+  function cplLiaisonFor(college) { return CPL_LIAISONS[college] || null; }
+
+  function cplLiaisonCell(college) {
+    var l = cplLiaisonFor(college);
+    if (!l || !(l.people || []).length) {
+      return '<span class="mapu-st mapu-st-inactive">none surfaced</span>';
+    }
+    var h = "";
+    (l.people || []).forEach(function (pp) {
+      h += '<div class="mapu-fb"><b>' + esc(pp.name) + "</b> "
+        + (pp.email ? '<span class="mapu-disc">' + esc(pp.email) + "</span>" : "")
+        + (pp.title ? '<br><span class="mapu-fb-t">' + esc(pp.title) + "</span>" : "")
+        + "</div>";
+    });
+    if (l.source) {
+      h += '<div><a class="mapu-src" href="' + esc(l.source) + '" target="_blank" rel="noopener">ASCCC ↗</a></div>';
+    }
+    return h;
+  }
+
+
   // Renders the CPL-page cell. Mirrors the counseling column's shape: the value,
   // then where it came from, then why it is empty when it is.
   function cplPageCell(college) {
@@ -1225,6 +1267,7 @@
         + "<td>" + esc(r.primary_contact_email || "") + "</td>"
         + "<td>" + esc(r.cpl_assistant_email || "") + "</td>"
         + "<td>" + cplPageCell(r.college) + "</td>"
+        + "<td>" + cplLiaisonCell(r.college) + "</td>"
         + "<td>" + couns + "</td></tr>";
     });
     return h + "</tbody></table>";
@@ -1235,6 +1278,7 @@
     var head = ["College", "Primary contact name", "Primary contact email",
                 "CPL Assistant email", "CPL contact title", "CPL contact name",
                 "CPL contact email", "CPL webpage URL", "CPL page type",
+                "ASCCC CPL Liaison", "ASCCC CPL Liaison email", "ASCCC source",
                 "Counseling email", "Counseling email source", "Counseling source type"];
     var lines = [head.map(q).join(",")];
     contactRows().forEach(function (r) {
@@ -1242,9 +1286,13 @@
       var emails = f ? (f.contacts || []).filter(function (c) { return c.email; })
         .map(function (c) { return c.email; }).join("; ") : "";
       var cp = cplPageFor(r.college) || {};
+      var li = ((cplLiaisonFor(r.college) || {}).people) || [];
       lines.push([r.college, r.primary_contact || "", r.primary_contact_email || "",
                   r.cpl_assistant_email || "",
                   cp.title || "", cp.name || "", cp.email || "", cp.url || "", cp.kind || "",
+                  li.map(function (x) { return x.name; }).join("; "),
+                  li.map(function (x) { return x.email; }).join("; "),
+                  (cplLiaisonFor(r.college) || {}).source || "",
                   emails,
                   f ? (f.source || "") : "",
                   f ? (f.via === "curator" ? "CPL team (" + (f.by || "") + ")" : "college website") : ""
@@ -1411,6 +1459,9 @@
     _fallbackCell: fallbackCell,
     _cplPageFor: cplPageFor,
     _cplPageCell: cplPageCell,
+    _cplLiaisonFor: cplLiaisonFor,
+    _cplLiaisonCell: cplLiaisonCell,
+    _CPL_LIAISONS: CPL_LIAISONS,
     _CPL_PAGES: CPL_PAGES,
     _gapsHtml: gapsHtml,
     _gapsCsv: gapsCsv,
