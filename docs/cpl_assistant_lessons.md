@@ -1331,3 +1331,67 @@ top — was **populated for this query**. Two candidate causes, and I did not me
 the ordered college set the context builders emit; extend it to this exact query. Inferring cause number 2 and
 rewriting prompt text would be precisely the mistake this workstream keeps re-learning: *when the code you were
 pointed at cannot be shown to produce the symptom, go measure the layer above it.*
+
+### SkyMiner, part 2 — the two edge cases, and a bug report that was three bugs (2026-08-07, #1032–#1036, deploy 12 = v35)
+
+Sam queued four more decisions and I asked them as a set rather than one at a time — the right call, because two
+of them (distance, the true dead end) were *consequences* of the tie-break he'd already set, and putting them
+together made that visible.
+
+**Distance is a fact, not a filter.** Part 3 names the nearest college that TEACHES the credential; near LA that
+is in-county, for a rural seeker it could be 200+ miles. Name it anyway, state the distance plainly, let the
+visitor judge. **The true dead end** — nobody articulated it, nobody nearby teaches it — say so plainly, then the
+portal *and* an invitation to email MAP so the gap is recorded, because an unmet request is how the system learns
+a credential is in demand. Plus the guard that matters most: **never invent a college, a course or an
+articulation to avoid an empty answer.** A model asked for three parts and holding one has an obvious temptation
+there. Live on **v35**, deployed 19:04:40Z, three minutes after the merge.
+
+### ⭐ "The save button needs two clicks" was three bugs, and the data was fine in all of them
+
+Sam reported a small UI annoyance. The cause was `commit()` calling `render(root)` **before** `saveOwner()`,
+which is what performs the optimistic local write — so the repaint painted the pre-change state. An adversarial
+verify (2 of 3 upheld; the dissenter had read the file *after* my fix landed mid-run) reproduced it in jsdom and
+sharpened it: it is not "works the second time", **the UI was always exactly one write behind.** A third save
+typing "Malone" still showed "Jessica". It only reads as second-time-works because the dialog pre-fills from the
+same state, so you re-submit the identical string and the stale paint coincidentally matches.
+
+Two more, found by the same sweep and both worse than the reported one:
+- **`r.ok ? r.json() : []`** turned any 401/500/RLS hiccup into "nobody has an owner" — every assignment gone
+  from the page, red gap count maxed, nothing saying a read had failed. Indistinguishable from deletion.
+- **`if (state.reg) return`** meant signing in after opening the tab never re-ran the gated reads: a
+  fully-populated-looking register with no owners and a cadence accused in red of never having run.
+
+⭐ **The unifying lesson, and why all three shipped:** in every case *the data was correct and only the screen
+lied*. That is the hardest defect class to report, because the reporter accurately describes a symptom that
+points away from the cause. And **every pre-existing test passed straight through all three** — they set state
+directly and called `render()`, never driving the button→dialog→Save path a user takes. A test that constructs
+the end state cannot catch a bug in how the end state is reached. Durable:
+`methodology-a-failed-read-is-not-an-empty-result`.
+
+### The drift detector, and two filters that looked fine on the page
+
+Sam chose **build it now**, all four surfaces — including the ones I'd flagged as noisiest, which made filtering
+the whole job. `kb/_build_governance_candidates.py` is pure static analysis (no Supabase, no secrets, no
+network): scheduled workflows, curated tables, write-capable tabs, and the inverse sweep for register rows citing
+files that no longer exist.
+
+⭐ **Both filter bugs survived writing and re-reading the code, and both were obvious within seconds of printing
+the list.** One was too loose (a file that POSTs to one table flagged every table it merely read). The other
+**silently matched nothing** — a tab's button and its `loadScript` sit 1.2M characters apart, so the proximity
+window could never fire, and a scan returning zero is indistinguishable from a clean result. It reports good
+news, and nobody investigates good news.
+
+39 unfiltered → **15 candidates** (6 mapped, 14 dismissed with reasons in a committed file so the reason lives in
+a diff). Top six: recurring jobs nobody listed. **Zero stale rows** — every path the register cites still exists.
+The noise budget is now a committed test (`< 25`). Durable:
+`methodology-judge-a-detector-by-what-it-prints`.
+
+### State at session end
+
+- **Merged:** #1029 · #1030 · #1032 · #1033 · #1034 · #1035 · #1036. cpl-chat **v35**. Main `4a9e303`.
+- **Open, and the next session's first job:** mode 7 part 3 still doesn't fire. Measure whether
+  `buildOfferingsContext`'s `others` list is populated for that query **before** touching prompt text — mode 8
+  proves the LA-county teaching colleges are in the data, so the two candidate causes need opposite fixes.
+- **Open:** 7 further owner-dialog defects reported in #1033. The one most likely to be mistaken for a
+  regression is `Clear owner` being a no-op on the three cadences carrying a register-file owner.
+- **Open:** the poaching audit was never reported; `creditforbeingyou.org/main/student` is still unverified.

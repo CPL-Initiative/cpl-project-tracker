@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-07 · SkyMiner — both of Sam's decisions are shipped and live. The feedback queue turned out to be 53% our own test robot, and it had already reported three of the last four fixes weeks early.",
+  "_as_of": "2026-08-07 · SkyMiner — both your decisions plus all four follow-ups are live. Sierra is on the governance register, the drift detector is built, and the save button takes one click now.",
   "_session": "SkyMiner (126)",
-  "_status": "Two questions were waiting for Sam and he answered both, so both are now live on Sierra (deploy 11). First: when someone asks about a certificate their college hasn't set up yet, Sierra used to go quiet to avoid looking like she was poaching students off a college's own web page. She no longer does. The new line is that she never HIDES anything that changes your outcome — she'll tell you where the credit exists today and that your college could adopt it — but she never SELLS you on going elsewhere. Second: when your college doesn't offer it, she now gives all three parts of the answer instead of stopping after two: your own college first, then the colleges that have already set this up (proof it works), then the nearest colleges that actually teach the subject — even if none of them has set up the credit yet. That last part is the one that had gone missing, and it's the only part that gives someone somewhere to go this month. Separately, opening the feedback inbox produced an uncomfortable finding: of 53 ratings, 28 were written by our own automated test, every one of them a thumbs-down, so the headline said 38 complaints when only 10 were real. Worse, the real ones had already told us what to fix — a reviewer described the student-portal problem on 17 July, three weeks before it came up in conversation and got fixed. The test rows are now filtered out of the queue and the counts, and four reports whose fixes have shipped are marked done.",
+  "_status": "Everything you decided today is shipped. Sierra now never hides a fact to be polite: if your college hasn't set up credit for something, she says so, says who HAS set it up, says the nearest college that actually teaches it (however far — she'll tell you the distance and let you judge), and if truly nobody offers it she says that plainly and offers to put the gap on record rather than inventing something. Live as v35. On governance: you were right that Sierra wasn't on the register at all — she is now, with three new rows, and the drift detector you asked for is built and runs daily. It found 39 things, filtered to 15 worth reading; six of them are recurring jobs nobody had listed. No register row points at anything that's disappeared. Your save-button bug turned out to be three bugs, and in all three the data was actually saved correctly — only the screen was wrong, which is the kind nobody can report accurately. Two of the others would have been worse: one made every owner vanish whenever a read hiccuped, which looks exactly like someone deleting them. Seven smaller ones are written up but not fixed; the one you'd hit first is Clear-owner doing nothing on three of the cadences, which will look like the same bug coming back. It isn't.",
   "items": [
     {
       "id": "sierra-feedback-unread",
@@ -35,28 +35,22 @@
       "text": "🔢 WIRE MALONE'S STUDENT×CREDIT-RECOMMENDATION VIEW into the funding backlog builder once the view name lands. The 11.8MB export could not be read directly (the Drive connector caps at 10MB). Agreed columns are the 8 non-identifying ones; Sam wants small-group suppression at fewer than 10."
     },
     {
-      "id": "sierra-mode7-verify",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "🔍 SIERRA STILL STOPS ONE STEP SHORT — you chose that when someone's own college doesn't offer a certificate, she should give three things: your college first, then who's already set it up, then the nearest colleges that actually TEACH it. The first two now work live. The third doesn't yet — asked about carpentry at LA Harbor she names Norco and Santiago Canyon (who award the credit, ~50 miles away) but not Rio Hondo or LA Trade Tech, which teach carpentry right there. We know that data exists because she lists exactly those colleges when asked the same question a different way. I've left it measured rather than guessed at — nothing to do on your side, just so you know it's half-landed."
-    },
-    {
       "id": "sierra-mode7-part3",
       "for": "fable",
       "tab": "cobi",
-      "text": "🧪 FIND OUT WHY SIERRA SKIPS THE NEAREST TEACHING COLLEGE — measure before touching prompt text. Either the course-catalog search returns a thin list when the question names a college (mode 7's wording includes 'Los Angeles Harbor College'; the working question doesn't), or the list is there and she just doesn't use it. Those need opposite fixes and guessing between them is how this workstream has burned weeks before. Extend tests/sierra_geo_ranking.test.js to assert the ordered college list for this exact query."
+      "text": "🧪 SIERRA STILL SKIPS THE NEAREST TEACHING COLLEGE — the one thing from today that isn't finished. Asked about carpentry at LA Harbor she names the colleges that award the credit (~50 mi) but not Rio Hondo or LA Trade Tech, which teach it right there. We know the data exists because she lists exactly those colleges when the same question is asked a different way. Next session measures WHY before changing anything — the two possible causes need opposite fixes and guessing has cost this workstream weeks before."
     },
     {
       "id": "gov-sierra-rows",
       "for": "sam",
       "tab": "governance",
-      "text": "⚖️ THREE NEW GOVERNANCE ROWS TO ASSIGN — you were right that neither the test invitation nor Sierra generally was on the register. Added: DR-11 (who decides what Sierra tells the public — in practice that's been you personally, four times in two days), CA-06 (Sierra feedback triage, which shows its own untriaged count live), and OQ-07 (what has to be true before we invite the MAP and CO teams). All three need an owner, same as every other row."
+      "text": "⚖️ FOUR GOVERNANCE ROWS NEED AN OWNER — DR-11 (who decides what Sierra tells the public — so far that's been you personally, four times in two days), CA-06 (Sierra feedback triage, which shows its own untriaged count live), OQ-07 (what must be true before inviting the MAP and CO teams) and OQ-08 (how new surfaces get onto the register at all). The ⚖️ tab now also shows a '🔎 Not on the register' strip — 15 things the daily scan found, six of them recurring jobs nobody listed. They're proposals; nothing gets added without you."
     },
     {
-      "id": "gov-candidate-detector",
+      "id": "gov-clear-owner",
       "for": "sam",
       "tab": "governance",
-      "text": "🔎 DECIDE: BUILD THE 'WHAT'S MISSING FROM THE REGISTER' DETECTOR? Your idea, now captured as OQ-08 with the numbers behind it. The register describes 32 things; the system has 80+ — 9 scheduled jobs vs 6 listed, 42 writable database tables vs 11 listed decision rights. A daily-cron sweep would propose what's missing (and flag rows pointing at things that no longer exist), with a Refresh button on the tab. It would PROPOSE only — never auto-add, since who-decides and is-this-load-bearing are judgment calls. Roughly half a day, most of it in deciding which surfaces are worth surfacing: an unfiltered list of 42 tables would just be a second queue nobody reads. Say the word and I'll build it."
+      "text": "⚠️ HEADS-UP, NOT A BUG YOU NEED TO REPORT — 'Clear owner' does nothing on three cadences (the daily dashboard, the users sync, and the checkpoint loop), because those carry an owner in the register file itself rather than an assigned one. It'll look exactly like the two-click save bug coming back. It isn't, it's already written up, and it's on the list to fix."
     }
   ]
 }
