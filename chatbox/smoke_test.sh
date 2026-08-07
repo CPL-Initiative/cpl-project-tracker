@@ -131,8 +131,22 @@ answer_must_not_match -i "focused on dental|don.?t see a real estate|no real est
 # SINGLE-turn (no history) = the production-widget path AND it bypasses the
 # multi-turn "ask a focusing follow-up first" gate, so the routing is named
 # directly rather than offered ("want me to show nearby colleges?").
+#
+# NOTE ON WHAT THIS MODE CAN AND CANNOT PROVE (2026-08-07). These assertions run
+# against MODEL PROSE, so they carry inherent flake — they can go red on a
+# rephrasing and green on genuinely broken retrieval. The deterministic guard for
+# the ranking underneath is tests/sierra_geo_ranking.test.js, which asserts the
+# ORDERED COLLEGE SET both context builders emit (methodology-assert-what-
+# retrieval-returns). Treat a red here as "look at the ordering", not as proof.
+#
+# The root cause found on 2026-08-07 was NOT the ranking but the DETECTION: the
+# home college never resolved (the word "angeles" matched 9 colleges and returned
+# before "harbor", which matches 1), so askedGeo was null and nothing could rank
+# by proximity. Hence the added assertion that LA Harbor is named at all — if
+# detection regresses, that is the line that goes red first.
 run "7 offerings adoption (LA Harbor NCCER carpentry)" \
   '{"query":"Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?","session_id":"smoke-ci"}'
+answer_must_match -i "Harbor" "7 home college detected (LA Harbor named)"
 answer_must_match -i "El Camino|Long Beach|Trade.?Tech|Rio Hondo|Compton|Cerritos" "7 nearby construction college"
 answer_must_match -i "construction|carpentry|trades|OSHA" "7 on-topic"
 
