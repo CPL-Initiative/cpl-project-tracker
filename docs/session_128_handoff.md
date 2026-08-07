@@ -22,7 +22,7 @@ honestly). Coin your own if you prefer.
 2. `docs/cpl_assistant_lessons.md` — §SkyMiner and §SkyMiner part 2 for the Sierra state you inherit.
 3. `funding/_student_detail_local.py` — the live workstream's tool. Its docstring carries the privacy reasoning.
 
-## What SkyGauge shipped (all merged; main `da2fb51`)
+## What SkyGauge shipped (all merged; main `145f790`)
 
 | PR | What |
 |---|---|
@@ -30,6 +30,8 @@ honestly). Coin your own if you prefer.
 | #1039 | The disposition gap diagnosed; MAP API probe (runner-side) |
 | #1040 | Aggregator takes the JSON export; per-exhibit rollup |
 | #1041 | The status column it matched was the workflow stage, not the disposition |
+| #1042 | KB note + this handoff — capture the findings (no checkpoint was run) |
+| #1043 | Sum the credit funnel; `CPLStatusPlan` confirmed present in the export |
 
 ## ✅ Priority 1 from the last handoff is DONE — do not re-open it
 
@@ -79,14 +81,26 @@ and **`CPLStatusPlan` appears in none of the nine.** That is why a live answer o
 - 3,644 exhibits reported, 2,371 suppressed as too thin
 - Top by distinct students: CCSF 1,238 · San Diego Miramar 995 · Moreno Valley 732 · San Diego Mesa 710
 
-**What is still OPEN:** the disposition breakdown. The run matched a column named `Status` (workflow stage:
-Needs Action / Implementation / Faculty / Initiator / Articulation Officer) instead of `CPLStatusPlan`, and
-reported a statewide disposition rate of **0.0%**. #1041 fixed the matcher and made it withhold rather than emit,
-but **we do not yet know whether Sam's stripped copy still contains `CPLStatusPlan`.** He was re-running when the
-session ended. The re-run prints every header — read it first.
+**What was OPEN and is now RESOLVED (#1043).** The run matched a column named `Status` (workflow stage: Needs
+Action / Implementation / Faculty / Initiator / Articulation Officer) instead of `CPLStatusPlan`, and reported a
+statewide disposition rate of **0.0%**. Sam then pasted the export's real header row, which settled it:
 
-If the column is gone, he needs a re-export carrying it. If it is present, you have the disposition rates and the
-next step is the Sierra corpus (below).
+- **`CPLStatusPlan` IS present** — the LAST of 29 columns. `Status` sits eighteen places earlier and is largely
+  **EMPTY**, which is both how the alternation matcher grabbed it and why "Needs Action" so dominated the output
+  (blank cells fall through to the default). **No re-export is needed.** The matcher was rebuilt against his
+  header order verbatim and now resolves correctly.
+- **The export also carries the CREDIT FUNNEL per row** — `PotentialCredits`, `CreditsInReview`,
+  `AppliedCredits`, `TranscribedCredits` — which the script had been ignoring while counting rows. This was Sam's
+  original ask in his own words ("eligible, applied, and transcribed"), and it is now summed statewide, per
+  family and per exhibit.
+  ⚠️ **Credits SUM; students DEDUPE.** Adding credits across rows is correct; adding students across rows
+  double-counts anyone holding several recommendations. They are separate fields for that reason — do not
+  collapse them.
+
+**So the one thing outstanding is a single re-run**, which Sam had not yet pasted back when the session ended.
+Expect `'status': 'CPLStatusPlan'` in the matched columns, a real disposition rate, and a
+`credits — eligible / in review / applied / transcribed` line under both the statewide block and the family.
+**Ask him for it before doing anything else** — those numbers are Priority 2's input.
 
 ## 🎯 Priority 2 — get it into Sierra
 
