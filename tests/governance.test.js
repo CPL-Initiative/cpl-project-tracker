@@ -235,6 +235,90 @@ function makeWin(opts) {
     /never-run/.test(r.innerHTML) && !/0 of 0/.test(r.innerHTML));
 })();
 
+// ⚠️ FIRST-CLICK SAVE. Sam, 2026-08-07: "the save button doesn't work the first
+// time clicked. Need to open it again and reclick, then it takes."
+//
+// Cause: commit() called render(root) BEFORE saveOwner(), but saveOwner is what
+// performs the optimistic local write (state.owners[id] = payload) — so the
+// repaint painted the pre-change state and nothing repainted on success. The
+// second open+click worked only because the FIRST click's write was by then in
+// state. The save had always reached Supabase; only the UI lied.
+//
+// Every existing owner test above passed straight through this bug, because they
+// all set state.owners directly and called render(). None of them drove the
+// actual button → dialog → Save path. This one does, and it asserts the thing
+// the user actually experiences: ONE click, value visible.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.owners = {};
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+
+  // The in-flight fetch never settles (makeWin's stub), which is exactly the
+  // real-world moment under test: the optimistic write has happened, the network
+  // has not come back yet. The row must already show the owner.
+  const openBtn = r.querySelector('[data-own="DR-01"]');
+  check("first-click: the owner cell is reachable as a button", !!openBtn);
+  openBtn.dispatchEvent(new w.Event("click", { bubbles: true }));
+
+  const dlg = w.document.getElementById("gov-own-dlg");
+  check("first-click: clicking the cell opens the dialog", !!dlg);
+  dlg.querySelector("#gov-own-name").value = "Jessica";
+  dlg.querySelector("[data-own-save]").dispatchEvent(new w.Event("click", { bubbles: true }));
+
+  check("first-click: the dialog closes on Save",
+    !w.document.getElementById("gov-own-dlg"));
+  check("first-click: the optimistic write reached state",
+    G._state.owners["DR-01"] && G._state.owners["DR-01"].owner === "Jessica");
+  // THE REGRESSION. Before the fix this was false — one click left the row
+  // reading "needs an owner" and the user had to reopen and save again.
+  check("⚠ first-click: the name is VISIBLE after a single Save",
+    /Jessica/.test(r.innerHTML));
+  check("first-click: DR-01 no longer advertises itself as unowned",
+    !/DR-01[\s\S]{0,600}?needs an owner/.test(r.innerHTML));
+})();
+
+// The same path for Clear owner — it shares commit(), so it shared the bug.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.owners = { "DR-01": { register_id: "DR-01", owner: "Jessica", set_by: "t@x",
+                                 set_at: "2026-08-06T00:00:00Z" } };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("clear: the assigned name renders before clearing", /Jessica/.test(r.innerHTML));
+
+  r.querySelector('[data-own="DR-01"]').dispatchEvent(new w.Event("click", { bubbles: true }));
+  w.document.getElementById("gov-own-dlg")
+    .querySelector("[data-own-clear]").dispatchEvent(new w.Event("click", { bubbles: true }));
+
+  check("⚠ clear: the row reverts on a single click", !/Jessica/.test(r.innerHTML));
+  check("clear: the row goes back to advertising the gap", /needs an owner/.test(r.innerHTML));
+})();
+
+// Enter in the name field is the same commit() path and must behave identically —
+// a keyboard user must not hit the bug the mouse user just stopped hitting.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.owners = {};
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  r.querySelector('[data-own="CA-06"]').dispatchEvent(new w.Event("click", { bubbles: true }));
+  const nameEl = w.document.getElementById("gov-own-name");
+  nameEl.value = "Malone";
+  const ev = new w.KeyboardEvent("keydown", { key: "Enter", bubbles: true });
+  nameEl.dispatchEvent(ev);
+  check("⚠ enter-key: a single Enter shows the owner too", /Malone/.test(r.innerHTML));
+})();
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
