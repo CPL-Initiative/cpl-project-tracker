@@ -144,9 +144,22 @@ answer_must_not_match -i "focused on dental|don.?t see a real estate|no real est
 # before "harbor", which matches 1), so askedGeo was null and nothing could rank
 # by proximity. Hence the added assertion that LA Harbor is named at all — if
 # detection regresses, that is the line that goes red first.
+# SAM'S DECISION, 2026-08-07 (Session 126) — this mode asserts a THREE-PART answer,
+# because the two candidate behaviours were BOTH defensible and he picked both, in
+# order. #1027's anti-poaching rule had made Sierra stop after part 2:
+#   (1) the HOST — LA Harbor, named and affirmed, invited to adopt;
+#   (2) PRECEDENT — the colleges that have ACTUALLY articulated NCCER (Norco,
+#       Barstow), cited as proof the adoption is workable;
+#   (3) the NEAREST REAL ROUTE — LA-basin colleges that TEACH construction
+#       (El Camino / Trade-Tech / Rio Hondo / …), even though NO LA-county college
+#       has a construction exhibit at all.
+# Part 3 is the one that regressed and the one that matters most to a seeker: it is
+# the only part that gives them somewhere local to go this month. Do NOT green this
+# by deleting an assertion — the three parts ARE the product decision.
 run "7 offerings adoption (LA Harbor NCCER carpentry)" \
   '{"query":"Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?","session_id":"smoke-ci"}'
 answer_must_match -i "Harbor" "7 home college detected (LA Harbor named)"
+answer_must_match -i "Norco|Barstow" "7 adoption precedent (college that articulated it)"
 answer_must_match -i "El Camino|Long Beach|Trade.?Tech|Rio Hondo|Compton|Cerritos" "7 nearby construction college"
 answer_must_match -i "construction|carpentry|trades|OSHA" "7 on-topic"
 

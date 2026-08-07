@@ -43,6 +43,7 @@ function rule(name) {
 }
 const PORTAL = rule("PORTAL_RULE");
 const LANDING = rule("LANDING_PAGE_RULE");
+const OFFERINGS = rule("OFFERINGS_RULE");
 const AUDIENCE = SRC.slice(SRC.indexOf("AUDIENCE_RULES"), SRC.indexOf("AUDIENCE_RULES") + 6000);
 const STUDENT = /student: `([\s\S]*?)`,/.exec(AUDIENCE);
 const STUDENT_RULE = STUDENT ? STUDENT[1] : "";
@@ -148,6 +149,59 @@ check("PORTAL_RULE still allows comparison when they have no college yet",
   /says they have not chosen one, compare freely/i.test(PORTAL));
 check("PORTAL_RULE states whose call the comparison is",
   /comparison is theirs to ask for/i.test(PORTAL));
+
+// ── The tie-break: restraint binds SALESMANSHIP, not FACTS ──────────────────
+// Sam, 2026-08-07 (Session 126), resolving the tension he named a day earlier:
+// "err on the side of CPL seekers…while supporting our colleges." #1027 shipped
+// only the PROHIBITION half, and read literally it tells Sierra to WITHHOLD —
+// a seeker asks about a credential their college hasn't articulated and gets a
+// polite dead end, to protect the host's feelings. That fails the seeker AND the
+// college, which never learns there was demand.
+//
+// ⚠️ THESE ARE THE CHECKS THAT MATTER MOST, and the reason is asymmetry: a
+// violated PROHIBITION is loud (a college complains and you hear about it); a
+// violated PERMISSION is silent (the person just isn't helped, leaves, and files
+// nothing). The prohibition will never rot unnoticed. This half would.
+// See docs/kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md
+check("PORTAL_RULE states the tie-break explicitly",
+  /RESTRAINT BINDS SALESMANSHIP, NOT FACTS/i.test(PORTAL));
+check("PORTAL_RULE forbids withholding an outcome-changing fact",
+  /NEVER WITHHOLD a fact that materially changes/i.test(PORTAL));
+check("PORTAL_RULE names withholding as failing BOTH parties",
+  /fails the visitor AND fails the host college/i.test(PORTAL));
+check("PORTAL_RULE bans editorialising rather than banning facts",
+  /does NOT do is EDITORIALISE/i.test(PORTAL));
+check("PORTAL_RULE spells out the un-articulated-credential case",
+  /SAY WHERE IT IS AVAILABLE TODAY/i.test(PORTAL) &&
+  /SAY THAT THE HOST CAN ADOPT IT/i.test(PORTAL));
+check("PORTAL_RULE forbids the polite dead end by name",
+  /Never stop at a polite dead end/i.test(PORTAL));
+check("PORTAL_RULE states who wins when the two cannot be reconciled",
+  /the visitor's outcome wins/i.test(PORTAL));
+check("the student rule also refuses the dead end",
+  /NEVER leave them at a dead end/i.test(STUDENT_RULE) &&
+  /which colleges DO award it today/i.test(STUDENT_RULE));
+
+// ── Mode 7's shape: host → precedent → nearest real route ───────────────────
+// Sam's second decision the same day. Sierra had been stopping after PRECEDENT
+// (Norco/Barstow ARTICULATED NCCER) and never reaching the LA-basin colleges
+// that merely TEACH construction — leaving a seeker near LA Harbor with no local
+// route, since NO LA-county college has a construction exhibit at all.
+// Part (3) is the one that regressed; assert all three so it cannot again.
+check("OFFERINGS_RULE is present", OFFERINGS.length > 200);
+check("OFFERINGS_RULE prescribes all three parts in order",
+  /give ALL THREE parts, in this order/i.test(OFFERINGS));
+check("OFFERINGS_RULE part 1 = the host first",
+  /THE HOST FIRST/i.test(OFFERINGS));
+check("OFFERINGS_RULE part 2 = precedent, framed as evidence not redirect",
+  /EVIDENCE FOR THE HOST'S ADOPTION, not a redirect/i.test(OFFERINGS));
+check("OFFERINGS_RULE part 3 = nearest teaching college, even with no exhibit",
+  /THE NEAREST REAL ROUTE/i.test(OFFERINGS) &&
+  /EVEN IF none of them has articulated/i.test(OFFERINGS));
+check("OFFERINGS_RULE calls stopping early a failure of the answer",
+  /that is a FAILURE of the answer, not politeness/i.test(OFFERINGS));
+check("OFFERINGS_RULE reconciles part 3 with the anti-poaching rule",
+  /is NOT poaching/i.test(OFFERINGS) && /HOLD THE BALANCE/.test(OFFERINGS));
 
 // ── Guardrails that must survive the rewrite ────────────────────────────────
 check("PORTAL_RULE still says credit is never guaranteed",
