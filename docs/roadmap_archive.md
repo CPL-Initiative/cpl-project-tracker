@@ -3449,3 +3449,41 @@ NOT built** — Ashley chose engine-only; when revisited, build the *regional-ca
 data), not the occupation matching (judgment). Durable:
 `methodology-partner-occupation-crosswalk`. Story: `docs/partner_crosswalk_lessons.md` ·
 handoff `docs/session_122_handoff.md`.
+
+### SkyMail — MAP Users: the student-contact worklist (2026-08-05, #991–#993 MERGED)
+
+Sam's "add some features" resolved to a goal one message later: *"all College Landing Pages
+include contact so when students request CPL, it goes to a real person."* MAP routes on
+`primary_contact_email` — **25 of 123 colleges had none, 24 of them with a live landing page.**
+A silent service outage: every dashboard counts what exists, not what's missing.
+**The design came from Sam's constraint, not from me.** My first cascade preferred a shared
+inbox (`cpl@college.edu`) since turnover is what causes these gaps; he killed it — colleges are
+**locally governed**, and adopting that convention for them is a determination we don't get to
+make. The surviving rule is stronger: **every proposal is a person the COLLEGE already
+designated in MAP.** We route, we don't appoint — and the email says so, so they can check it.
+Corollary: **leadership stopped being a rung** (5 colleges moved to *ask*) — routing student
+mail to a VP is their call. **17/25 resolved.** ⭐ The unlock was measurement, not logic: a probe
+found `View_CollegeContacts_APIDataset` carries **24 fields while the sync pulled 11** — CPL
+Assistant (52/123, Sam was right it existed and unsure of the label → probe, don't ask him to
+recall a spelling), CPL Counselor 65, AO 87, Faculty Lead 84, Lead Initiator 82, SCO 101.
+**Jessica's input added a third trust tier:** curator-supplied contacts render with *who and
+when*, web-sourced with a *source link + verify*; a lookup may only yield a department inbox,
+**a curator may name an individual** (they know who answers). Also found: the public headline
+overstated (**2,657/120**, not 2,769/128 — 7 sandbox colleges + the statewide account, fixed by
+*labelling* not filtering); `disciplines` is **pipe**-delimited (a 1,364-char cell, live 2
+months); 15 colleges hold multiple emails in one contact cell. Anon-gate verified (0 rows).
+Suite **70→108**, 184 files green. Durable: `methodology-route-to-a-determination-they-already-made`,
+`methodology-provenance-is-a-field`. Story: `docs/map_users_lessons.md` · handoff `docs/session_121_handoff.md`.
+**Then Sam asked what would improve GOVERNANCE** — and the answer wrote itself from the day's evidence:
+every problem hit was a **governance gap wearing a data-quality costume** (a field nobody owned, a source
+nobody owned knowing, a definition nobody owned). ⚖️ **Governance tab** (#997, team-gated) — decision
+rights · acceptance standards · cadences. **It measures itself:** reasoning stored, facts computed at
+render time, so the register's "decided each semester" contact cadence renders **"never run"** off 0 rows
+in `map_college_nudges` — decided in June, never once fired. **Every `owner` ships null**, red, counted:
+the empty cells ARE the review. Then **team enablement** (#998) as the team grows past Sam — the guide
+`docs/working_with_claude_code.md` (built on Sam's own tips to Ashley: ask to see it · a tool you return
+to, not a one-time Excel sheet · ask for a tab) **plus the stronger half**, §"Working with the MAP team"
+here, as session OBLIGATIONS — *a habit that depends on a new user remembering it fails on their first
+day*. **Agents: not yet** (an agent must be invoked; standing instructions can't be forgotten). Suite
+**185** files green. Durable: `methodology-a-governance-artifact-must-measure-itself`. Story:
+`docs/governance_lessons.md`.

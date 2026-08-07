@@ -517,7 +517,7 @@ and asserts El Camino is named + not falsely dismissed.
 
 ---
 
-## Session 90 — SkySherpa: the standalone Sierra page gets its brand (2026-07-01)
+## Session 90 — SkyRecall: the standalone Sierra page gets its brand (2026-07-01)
 
 Not response-logic this time — a **visual/branding pass** on the standalone
 `sierra/` page (the shareable chat surface from S89 #633). Three PRs, all merged
@@ -882,3 +882,114 @@ guardrails committed for the same week). Recommended path = iframe of
 `sierra/?ctx=external` now, native embed later. Full decision trail in
 `docs/sierra_integration_analysis.md`; implementation contract in
 `docs/sierra_integration_guide.md`.
+
+## SkyRecall (Session 123, 2026-08-06) — the CPR question, and why a fix became the next outage (#1016)
+
+Sam opened asking for the last Sierra handoff and where we left off. The real
+prompt arrived three messages later: *"a colleague at the CO asked me which
+colleges give CPL for a CPR or AED or related cert and Sierra could only find
+2. I know there are more."*
+
+**Sierra found 2. The corpus held 5. The CER knows 7** (plus 28 more via EMT
+Certification, a related but distinct credential).
+
+### Five defects, and the uncomfortable one
+
+This exact question broke once before — Session 93, 2026-07-01 — and was fixed.
+**None of the five defects found this run is the one fixed then. One of them was
+introduced by that fix.**
+
+1. **`aed` → `'a':*`.** The 07-01 fix added `aed` to the CPR synonym family so
+   any one term would find the whole group. But the caller built `aed:*` and
+   parsed it with the `english` config, where Snowball reads the trailing "-ed"
+   as a past-tense suffix and strips it. A prefix match on the letter "a"
+   matched most of the corpus; OR'd with every other term it swallowed the
+   query. **The remedy became the next outage, and it sat undetected for five
+   weeks** — until a Chancellor's Office colleague asked and got a wrong answer.
+2. **`cert` matched 445 of 2,397 exhibits (18.6%)** and was OR'd in, burying the
+   real hits under the 200-row cap.
+3. **No relevance floor** — a query matching nothing returned 200 arbitrary rows.
+4. **`Aid/CPR/AED` parses as one file-path token**, so `cpr` could not match a
+   title literally about CPR. Modesto's rows had only ever surfaced *by
+   accident*, via the unrelated word "Certificate".
+5. **Phrasing and spelling.** Plurals lost the synonym bridge entirely
+   (`firefighter` → 11 terms, `firefighters` → 1); two-word and hyphenated
+   spellings missed it (`first aid` and `life saving` → nothing); misspellings
+   had no path at all.
+
+### What made it findable
+
+⭐ **Sam supplied the test cases, and each one found a real bug.** He fed
+phrasings conversationally — *"also nursing, fire fighter, fire fighters"*, then
+*"cardio pulmonary resuscitation, cardiopulminary resuscitation and
+misspellings... like my misspellings :)"*, having just Googled the spelling
+himself, and holding a CPR card. Every one of them was a genuine miss. His
+framing became the design North Star: **"the way you magically understand me
+with all my garbed typos should be the way Sierra understands."** (The typo in
+that sentence was itself unintentional, and proved it again.)
+
+⭐ **The test caught a bug the moment it existed.** `tests/sierra_topic_keywords.test.js`
+was written to pin the keyword set a question produces. Its very first run went
+red on the plural case — a defect live for as long as the synonym table had
+existed, invisible to every previous answer-reading verification.
+
+⭐ **The battery caught a would-be production break.** Adding `fuzzy_floor` to
+the v2 RPC via `CREATE OR REPLACE` created an **overload** rather than replacing
+it; a 3-argument PostgREST call — exactly what the Edge Function makes — then
+failed `42725 "not unique"`. Caught by re-running the cases, not by review.
+
+### The design
+
+- **Raw terms (`text[]`) instead of a caller-built tsquery** — sanitising now
+  happens next to the corpus whose statistics decide it, and a caller can no
+  longer inject an over-broad query.
+- **Short tokens → unstemmed `simple` vector**; longer ones keep stemming.
+- **Document-frequency filter**, self-tuning: it caught `engine` (15.5%,
+  prefix-matches "Engineering") with nobody stoplisting it.
+- **Separator normalisation** before tokenising, on both the match and the DF count.
+- **Fuzzy over synonym KEYS, not titles** — `word_similarity('cardiopulminary',
+  'Adult CPR and Standard First Aid')` is 0.069; only the synonym table bridges
+  a vocabulary gap. Corpus-side typos (`Automotive Service Excellance` is real
+  data) get a trigram fallback reached only when full-text finds nothing.
+- **Guard:** `financial aid` must never expand into CPR, so the bigram pass keys
+  on `firstaid` and there is no bare `aid` key.
+
+**Result: 2 colleges → 5, at 100% precision**, regressions intact, nonsense
+returning nothing. Additive and reversible — v1 untouched, the function tries v2
+and falls back.
+
+### Also this run
+
+- **The contacts/landing-page "regression" was not one.** Live v28 was
+  byte-identical to the repo, and the guidance layer held only the naming rule.
+  Landing-page URLs fell 68% → 18% because the *question mix* shifted toward
+  topic queries, which take a path that never carries contacts — and whose
+  statewide branch is explicitly instructed not to attribute a landing page. A
+  design gap, not a break.
+- **Small-cell suppression fixed in the funding builder (#1017)** — see
+  `methodology-small-cell-suppression-must-survive-subtraction`.
+- **Sam's student dataset schema confirmed** from a pasted sample: names and
+  `StudentID` (an SSN field) arrive **masked with X's, not blank**;
+  `StudentMAPID` is **not** masked. `Notes` is free text — the highest-risk
+  column, no analytical value, drop at read time. Agreed allowlist: 8 of 32
+  columns.
+- ⭐ **Sam's military insight is right and the data supports it.** Row 1 of his
+  sample: Allan Hancock, ACE exhibit `AR-0701-0013`, *"1 hour in Basic Life
+  Support…"*, `College Course` blank, `Needs Action`. Allan Hancock is nowhere in
+  the CER's CPR list. The file separates *articulated* (College Course filled,
+  Source MAP, Applied) from *recommended-but-never-articulated* (blank, ACE,
+  Needs Action) — two different lists, both valuable.
+
+### Current state / next
+
+- **PRODUCTION IS STILL ON THE OLD BUILD.** The RPC is live and the code is
+  merged, but `cpl-chat` was **not deployed** — held for Sam's explicit go. It
+  hits the map.rccd.edu widget, the Sierra page, the COBI tab, the Fact Sheet
+  drawer and the vendor iframe at once, with no staging tier, and the MCP deploy
+  tool needs the whole 66 KB file inline (a prior session hit a mid-flight drop
+  at 55 KB).
+- **The corpus is the remaining gap.** `chatbox_exhibits` holds 2,397 exhibits
+  across **59 colleges**; MAP has **123**. That, not search, is what separates
+  the 5 CPR colleges Sierra now finds from the CER's 7.
+- Student aggregator waits on Malone's view name (or sub-7 MB tranches — the
+  Drive connector caps downloads at 10 MB and cannot range-request).

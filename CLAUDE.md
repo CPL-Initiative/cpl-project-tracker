@@ -604,6 +604,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **MAP Users / student contact** | Every college landing page routes a student's CPL request to a real person. MAP routes on `primary_contact_email`; 25 of 123 colleges had none (24 with a live landing page). | ✅ **Worklist LIVE** (SkyMail, #991–#993) — reviewer-only "⚠ No student contact" lens + cascade proposal + draft email. **17/25 resolve** from the colleges' own MAP designations; **8 need a human** (5 leadership-only, 3 no-MAP-presence = the standalone continuing-ed institutions the NC tab flagged at zero). Contact sync extended 11→24 fields. **📇 Contact directory lens + CSV/Excel export** (#1001) — Sam's steer to Jessica: *a tab you return to, not a spreadsheet that ages.* **All 71 colleges without a CPL Assistant now looked up** (#1003/#1004): **56 with a counseling address, 15 blank-with-a-finding** (5 counselor-lists, **2 publish only a mental-health inbox — the wrong door for a credit question**, 6 phone/form-only, Orange Coast specialized-only, Pasadena noncredit-only). ⭐ **Jessica's sourcing rules replaced mine** — mine (department inboxes only) would have discarded 5 real contacts where a *named person IS* the college's designated contact; a designated person ≠ a name off a list. **Next:** work the 15 blanks (start with the 2 mental-health ones); the 52 colleges that DO have a CPL Assistant were out of scope and have no lookup; the MAP manage-users URL is still open from S87. |
 | **Partner crosswalks** | "Which of the occupations we train for can our students already get college credit for, and where?" — the reusable engine for workforce partners (training centers, workforce boards, AJCCs, COEs, apprenticeship sponsors). | ✅ **Engine LIVE** (SkyWalker, #995) — `kb/_build_partner_crosswalk.py` + the shared `kb/occupation_credential_map.json` (139 occupations / 406 rulings / 35 curated no-CPL findings) + region presets + 32-check test. SJCOE run 1: 51 statewide / 53 local-only / 35 no-CPL. **Next:** run a 2nd partner list and work its `unmapped.json` — the "coverage compounds" claim is a design intention until a second run demonstrates it. **Parked:** the COBI tab (Sam authorized; build the *regional-capacity* view, not the judgment-based occupation matching) and an **O\*NET SOC → certification spine**, which is what would let a match be defended rather than asserted. **Gap backlog:** the 35 no-CPL occupations, ~20 of them the utility/lineworker cluster. |
 | **Governance & team enablement** | Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam. | ✅ **Starter LIVE** (SkyMail, #997/#998) — team-gated ⚖️ Governance tab: 10 decision rights · 8 acceptance standards · 5 cadences · 6 open questions. **Every `owner` is deliberately unset — filling them IS the review (OQ-01).** ⚠ It measures itself: the contact-refresh cadence was **decided in June and has never run once** (0 rows in `map_college_nudges`). **Owner column is EDITABLE** (#1000 — Sam: *"how do I add an owner? Doesn't appear to be editable"*; I shipped the review without the pen). Owners live in a separate gated `governance_owners` table overlaying the register by row id, so a session regenerating the JSON can never wipe an assignment; no delete policy. **Next:** ① fill the owner column; ② run that cadence once end-to-end with a named owner; ③ decide CIP's promotion criteria BEFORE the fall-2026 cutover (OQ-03); ④ cut the load-bearing list — 8 of 10 is too many. Team guide: `docs/working_with_claude_code.md` + the CLAUDE.md §"Working with the MAP team" obligations. **Agents: recommended NOT yet** — an agent must be invoked, so it fails exactly when a new user forgets; standing instructions can't be. Build a cross-impact reviewer agent when concurrency makes collisions real. |
+| **Sierra retrieval + corpus** | Sierra answers topic questions ("which colleges give CPL for X?") off `chatbox_exhibits` via Postgres FTS. | 🔨 **SEARCH FIXED, NOT DEPLOYED, CORPUS STILL STALE** (SkyRecall, #1016). Five defects — the sharp one is that **the 2026-07-01 CPR fix caused the 2026-08-06 CPR outage**: it added `aed` to the synonym family, and `to_tsquery('english','aed:*')` parses to `'a':*` (Snowball strips the "-ed"), so one token swallowed the corpus. Also: `cert` matched 445/2,397 (18.6%); no relevance floor; `Aid/CPR/AED` parses as ONE file-path token; plurals/two-word forms/misspellings lost the synonym bridge entirely. **2 colleges → 5 at 100% precision.** `search_exhibits_by_topic_v2` is LIVE and additive (v1 untouched, code falls back). ⚠️ **`cpl-chat` is NOT deployed — production still answers "2"**; held for Sam's go (one deploy hits the widget + Sierra page + COBI + Fact Sheet + vendor iframe, no staging tier). **Next:** ① deploy; ② **refresh the corpus — 2,397 exhibits / 59 colleges vs MAP's 123**, which is the whole remaining gap to the CER's 7 CPR colleges; ③ wire CER/EACR + the student dataset. Durable: `methodology-assert-what-retrieval-returns`, `reference-postgres-fts-pitfalls-for-credential-titles`. |
 | **$50k / ESS 25-82 tab** | Turn the three bare outcome checkmarks into where-you-are / where-you-should-be / how-to-get-there, so colleges get unstuck and award real CPL in MAP. | 🔨 **GROUNDWORK DONE, REWORK NOT BUILT** (SkyPlan, #1007/#1012/#1014). ⭐ **The measure is the DISPOSITION RATE** — share of a college's credit recommendations carrying any disposition (Applied / **Not Applicable** / In Process). Median **4.7%**; MVC 3rd · Bakersfield 6th · Cabrillo 13th of 106 — the ONLY metric matching Sam's own read (three volume metrics ranked Cabrillo 24th–29th). Counting N/A as work done is load-bearing: Cabrillo is 844 N/A vs 320 Applied, so an applied-only metric scores it 9% not 34%. **Applied, not transcribed, is this phase's target** (Sam's correction — transcribing actualises when outcomes funding is live). Data: 436,720 rows at Needs Action (81%); **top 20 exhibits = ~40%** of the backlog; **11,495 rows are "Credit Is Not Recommended"** = a free auto-N/A win. **Build rules:** every step a FRACTION not a check (the Veteran Star taught colleges that uploading is the finish line — applied ≈ JSTs at ratio 1.00); reframe the Star as a starting line; **never rank colleges publicly**. **Next:** the rework itself, then wire Malone's view (expected 8/7) into `fetch_custom_report.py` + `_build_cr_backlog.py`. |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
@@ -614,6 +615,35 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
+
+### SkyRecall — the CPR question, and a fix that became the next outage (2026-08-06, #1016 · #1017 MERGED)
+
+Sam asked for the last Sierra handoff; the real prompt came three messages later — *"a colleague at
+the CO asked which colleges give CPL for a CPR or AED cert and Sierra could only find 2."* **Sierra
+found 2, the corpus held 5, the CER knows 7** (+28 via EMT). Five defects, and **none of them was the
+one fixed the last time this same question broke** (Session 93, 2026-07-01) — ⭐ **one was INTRODUCED
+by that fix.** It added `aed` to the CPR synonym family; `to_tsquery('english','aed:*')` parses to
+**`'a':*`** because Snowball strips the "-ed", and OR'd against every other term that one token
+swallowed the corpus. It sat five weeks because **nothing ever asserted what retrieval RETURNED** —
+both prior verifications were "read the answer, it looks better." Also: `cert` matched 445/2,397
+(18.6%); no relevance floor; **`Aid/CPR/AED` parses as ONE file-path token**, so Modesto's rows had
+only ever surfaced via the unrelated word "Certificate". ⭐ **Sam supplied the test cases
+conversationally and every one found a real bug** — plurals (`firefighter` 11 terms vs
+`firefighters` **1**), two-word/hyphenated forms (`first aid`, `life saving` → nothing), and
+misspellings (*"like my misspellings :)"*, having just Googled "cardiopulmonary" while holding a CPR
+card). His framing is the North Star: *"the way you magically understand me with all my garbed typos
+should be the way Sierra understands."* Fuzzy had to target **synonym KEYS not titles** —
+`word_similarity('cardiopulminary', 'Adult CPR…')` = 0.069. **2 → 5 colleges, 100% precision.** ⭐ The
+new test went red on the plural bug *the minute it existed*; the battery also caught a
+`CREATE OR REPLACE` **overload** (42725) that would have broken Sierra outright. ⚠️ **NOT DEPLOYED —
+production still answers "2"**, held for Sam's go. The contacts/landing-page "regression" was **not
+one**: live v28 was byte-identical to repo; the question mix had shifted to a path that never carries
+contacts. Also **#1017** — small-cell suppression that didn't suppress (total + all-but-one cell
+recovers the hidden value; complementary suppression + row floor + the residual documented).
+Durable: `methodology-assert-what-retrieval-returns`,
+`reference-postgres-fts-pitfalls-for-credential-titles`,
+`methodology-small-cell-suppression-must-survive-subtraction`. Story:
+`docs/cpl_assistant_lessons.md` §SkyRecall · handoff `docs/session_124_handoff.md`.
 
 ### SkyPlan — the $50k tab's real measure, and headcount finally retired (2026-08-06, #1007 · #1012 · #1013 · #1014 MERGED)
 
@@ -642,44 +672,6 @@ Durable: `methodology-validate-a-derived-metric-against-expert-ranking`,
 `methodology-a-label-that-decides-behaviour-is-a-policy-switch`,
 `playbook-diagnose-a-starved-actions-runner`. Story: `docs/cpl_funding_lessons.md` §2026-08-06 ·
 handoff `docs/session_123_handoff.md`.
-
-### SkyMail — MAP Users: the student-contact worklist (2026-08-05, #991–#993 MERGED)
-
-Sam's "add some features" resolved to a goal one message later: *"all College Landing Pages
-include contact so when students request CPL, it goes to a real person."* MAP routes on
-`primary_contact_email` — **25 of 123 colleges had none, 24 of them with a live landing page.**
-A silent service outage: every dashboard counts what exists, not what's missing.
-**The design came from Sam's constraint, not from me.** My first cascade preferred a shared
-inbox (`cpl@college.edu`) since turnover is what causes these gaps; he killed it — colleges are
-**locally governed**, and adopting that convention for them is a determination we don't get to
-make. The surviving rule is stronger: **every proposal is a person the COLLEGE already
-designated in MAP.** We route, we don't appoint — and the email says so, so they can check it.
-Corollary: **leadership stopped being a rung** (5 colleges moved to *ask*) — routing student
-mail to a VP is their call. **17/25 resolved.** ⭐ The unlock was measurement, not logic: a probe
-found `View_CollegeContacts_APIDataset` carries **24 fields while the sync pulled 11** — CPL
-Assistant (52/123, Sam was right it existed and unsure of the label → probe, don't ask him to
-recall a spelling), CPL Counselor 65, AO 87, Faculty Lead 84, Lead Initiator 82, SCO 101.
-**Jessica's input added a third trust tier:** curator-supplied contacts render with *who and
-when*, web-sourced with a *source link + verify*; a lookup may only yield a department inbox,
-**a curator may name an individual** (they know who answers). Also found: the public headline
-overstated (**2,657/120**, not 2,769/128 — 7 sandbox colleges + the statewide account, fixed by
-*labelling* not filtering); `disciplines` is **pipe**-delimited (a 1,364-char cell, live 2
-months); 15 colleges hold multiple emails in one contact cell. Anon-gate verified (0 rows).
-Suite **70→108**, 184 files green. Durable: `methodology-route-to-a-determination-they-already-made`,
-`methodology-provenance-is-a-field`. Story: `docs/map_users_lessons.md` · handoff `docs/session_121_handoff.md`.
-**Then Sam asked what would improve GOVERNANCE** — and the answer wrote itself from the day's evidence:
-every problem hit was a **governance gap wearing a data-quality costume** (a field nobody owned, a source
-nobody owned knowing, a definition nobody owned). ⚖️ **Governance tab** (#997, team-gated) — decision
-rights · acceptance standards · cadences. **It measures itself:** reasoning stored, facts computed at
-render time, so the register's "decided each semester" contact cadence renders **"never run"** off 0 rows
-in `map_college_nudges` — decided in June, never once fired. **Every `owner` ships null**, red, counted:
-the empty cells ARE the review. Then **team enablement** (#998) as the team grows past Sam — the guide
-`docs/working_with_claude_code.md` (built on Sam's own tips to Ashley: ask to see it · a tool you return
-to, not a one-time Excel sheet · ask for a tab) **plus the stronger half**, §"Working with the MAP team"
-here, as session OBLIGATIONS — *a habit that depends on a new user remembering it fails on their first
-day*. **Agents: not yet** (an agent must be invoked; standing instructions can't be forgotten). Suite
-**185** files green. Durable: `methodology-a-governance-artifact-must-measure-itself`. Story:
-`docs/governance_lessons.md`.
 
 ## Troubleshooting
 
