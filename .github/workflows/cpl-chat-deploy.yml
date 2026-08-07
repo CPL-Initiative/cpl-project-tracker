@@ -1,0 +1,106 @@
+name: cpl-chat deploy
+
+# Deploy the shared cpl-chat Edge Function FROM THE REPO, on a runner.
+#
+# WHY THIS EXISTS
+# ---------------
+# Every cpl-chat deploy before this one was made by a Claude session passing the
+# entire function body inline to the Supabase MCP `deploy_edge_function` tool.
+# That has two failure modes, both already observed:
+#
+#   1. SIZE. A 55 KB payload dropped mid-flight once ("permission stream
+#      closed", Session 94). index.ts is now 66 KB and still growing.
+#   2. TRANSCRIPTION. The inline path means the exact bytes are re-emitted by
+#      hand. The file contains non-ASCII (Cañada, box-drawing rules, arrows),
+#      tabs inside string literals, and ~9 KB of prompt text where a single
+#      dropped line changes ANSWER BEHAVIOUR without breaking syntax — the
+#      failure the post-deploy byte-verify catches only after it is live on the
+#      map.rccd.edu widget, the Sierra page, the COBI tab, the Fact Sheet
+#      drawer and the vendor iframe.
+#
+# The runner checks the file out of git and deploys those bytes. Neither failure
+# mode exists here.
+#
+# `--no-verify-jwt` IS LOAD-BEARING and is why it is pinned in this file rather
+# than left to a caller: the MCP tool defaults verify_jwt to TRUE, and v25
+# shipped `true` for ~40 minutes once, which 401s the production widget. Encoded
+# here it cannot be forgotten.
+#
+# SETUP (one time, Sam): add a repository secret SUPABASE_ACCESS_TOKEN — a
+# Supabase *personal access token* from https://supabase.com/dashboard/account/tokens
+# (NOT the service-role key; that one is data-plane only and cannot deploy
+# functions). Nothing else is needed — the project ref is public and pinned below.
+#
+# AFTER A RUN: this triggers nothing automatically. Dispatch cpl-chat-smoke.yml
+# and read mode 7, per the deploy playbook in CLAUDE.md §7c.
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: 'Type DEPLOY to confirm this goes to production'
+        required: true
+        default: ''
+
+concurrency:
+  group: cpl-chat-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Guard — require explicit confirmation
+        run: |
+          if [ "${{ inputs.confirm }}" != "DEPLOY" ]; then
+            echo "::error::Refusing: type DEPLOY in the confirm input. Every run of this workflow reaches production; there is no staging tier."
+            exit 1
+          fi
+
+      - name: Checkout repo
+        uses: actions/checkout@v7
+        with:
+          ref: main
+
+      - name: Record the bytes we are about to ship
+        id: pre
+        run: |
+          F=chatbox/supabase/functions/cpl-chat/index.ts
+          echo "sha=$(sha256sum $F | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
+          echo "Deploying $F — $(wc -c < $F) bytes, $(wc -l < $F) lines"
+          sha256sum $F
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Deploy cpl-chat
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "::error::SUPABASE_ACCESS_TOKEN is not set. See the setup note at the top of this workflow."
+            exit 1
+          fi
+          # --no-verify-jwt is REQUIRED: the widget sends the anon key, not a
+          # user JWT. Shipping verify_jwt=true 401s every first-party surface.
+          supabase functions deploy cpl-chat \
+            --project-ref hvuwhnbuahrtptokpqfh \
+            --no-verify-jwt
+
+      - name: Byte-verify what actually landed
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          F=chatbox/supabase/functions/cpl-chat/index.ts
+          echo "Repo sha256:  ${{ steps.pre.outputs.sha }}"
+          echo
+          echo "The deploy step uploads the checked-out file directly, so a"
+          echo "transcription mismatch is not possible by construction."
+          echo "Confirm the live version incremented and verify_jwt is false:"
+          supabase functions list --project-ref hvuwhnbuahrtptokpqfh || true
+
+      - name: Next step
+        run: |
+          echo "::notice::Deployed. Now dispatch cpl-chat-smoke.yml and read mode 7 — it was red BEFORE this change because production returned a Dental Board certificate for an NCCER carpentry question (the generic-term flooding defect #1016 fixes). If it goes green, that closes the loop."
