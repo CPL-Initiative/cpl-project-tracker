@@ -40,6 +40,7 @@ import tempfile
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.normpath(os.path.join(HERE, ".."))
 BUILDER = os.path.join(ROOT, "funding", "_build_cr_backlog.py")
+DISPOSITION_KEYS = ("Applied to CPL Plan", "Not Applicable", "In Process", "Needs Action")
 
 COLLEGE = "Bakersfield College"        # resolves to funding name "Bakersfield"
 FUNDING_NAME = "Bakersfield"
@@ -128,6 +129,46 @@ def main():
           "(a summary must share the unit of its detail)",
           c3["disposition_rate"] == 0.2 and c3["total"] == 10,
           f"rate={c3['disposition_rate']} total={c3['total']}")
+
+    # ── COMPLEMENTARY SUPPRESSION ─────────────────────────────────────────
+    # Regression for a live defect (2026-08-06). Suppressing ONE cell while
+    # publishing `total` and every sibling leaves it recoverable by subtraction
+    # — the null protects nothing. The real 2026-08-06 build shipped exactly
+    # this shape for Allan Hancock:
+    #   total 47 | Applied null | N/A 6 | In Process 30 | Needs Action 10
+    # and 47 - (6+30+10) = 1 recovered the hidden cell exactly, confirmed a
+    # second way by acted 37 - (6+30) = 1.
+    p4 = build([row("Applied to CPL Plan")] * 1 + [row("Not Applicable")] * 6 +
+               [row("In Process")] * 30 + [row("Needs Action")] * 10)
+    c4 = p4["colleges"][FUNDING_NAME]
+    check("the small cell is suppressed", c4["Applied to CPL Plan"] is None)
+
+    hidden_acted = [d for d in ("Applied to CPL Plan", "Not Applicable", "In Process")
+                    if c4.get(d) is None]
+    check("a SECOND acted cell is suppressed alongside it (complementary suppression)",
+          len(hidden_acted) >= 2, f"only {hidden_acted} hidden — one equation, one unknown")
+
+    # The actual property: subtraction must not pin the hidden value. With two
+    # unknowns the reader recovers only their SUM.
+    visible = sum(v for d in DISPOSITION_KEYS
+                  if (v := c4.get(d)) is not None)
+    residual = c4["total"] - visible
+    check("subtraction yields only the SUM of the hidden cells, not either value",
+          residual > 1, f"residual={residual} — equals the true hidden Applied count, so it is pinned")
+    check("...and the true value is strictly inside the residual, not equal to it",
+          residual >= 7, f"residual={residual}, expected >= 7 (Applied 1 + N/A 6)")
+
+    # ── ROW-LEVEL FLOOR ───────────────────────────────────────────────────
+    # `Needs Action` provably cannot be hidden cell-by-cell: backlog ==
+    # total - acted and rate == acted/total, so any two of them give the third,
+    # and that trio is the deliverable. Thin colleges are protected by not
+    # being broken out at all.
+    p5 = build([row("Needs Action")] * 3)
+    c5 = p5["colleges"][FUNDING_NAME]
+    check("a college below the threshold in TOTAL is suppressed as a whole row",
+          c5.get("row_suppressed") is True and c5.get("total") is None, f"got {c5!r}")
+    check("...and its backlog is not published either",
+          c5.get("backlog") is None, f"got {c5.get('backlog')!r}")
 
     # no student grain anywhere in the artifact
     blob = json.dumps(p3)
