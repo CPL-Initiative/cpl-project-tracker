@@ -517,7 +517,7 @@ and asserts El Camino is named + not falsely dismissed.
 
 ---
 
-## Session 90 — SkyRecall: the standalone Sierra page gets its brand (2026-07-01)
+## Session 90 — SkyHunter: the standalone Sierra page gets its brand (2026-07-01)
 
 Not response-logic this time — a **visual/branding pass** on the standalone
 `sierra/` page (the shareable chat surface from S89 #633). Three PRs, all merged
@@ -883,7 +883,7 @@ guardrails committed for the same week). Recommended path = iframe of
 `docs/sierra_integration_analysis.md`; implementation contract in
 `docs/sierra_integration_guide.md`.
 
-## SkyRecall (Session 123, 2026-08-06) — the CPR question, and why a fix became the next outage (#1016)
+## SkyHunter (Session 123, 2026-08-06) — the CPR question, and why a fix became the next outage (#1016)
 
 Sam opened asking for the last Sierra handoff and where we left off. The real
 prompt arrived three messages later: *"a colleague at the CO asked me which
@@ -993,3 +993,79 @@ and falls back.
   the 5 CPR colleges Sierra now finds from the CER's 7.
 - Student aggregator waits on Malone's view name (or sub-7 MB tranches — the
   Drive connector caps downloads at 10 MB and cannot range-request).
+
+### SkyHunter, continued (2026-08-07) — the deploy, and mode 7's real defect (#1019 · #1020 · #1021)
+
+Sam gave the go. The fix reached production as **cpl-chat v29**, and the CPR
+question is answered correctly on the live function.
+
+**The deploy path was rebuilt rather than hand-fed.** The MCP
+`deploy_edge_function` tool takes the function body inline — 66 KB / 1,287
+lines re-emitted by hand into a surface with no staging tier, where a single
+dropped line inside ~9 KB of prompt text changes ANSWER BEHAVIOUR without
+breaking syntax. A 55 KB payload had already dropped mid-flight once
+(Session 94). So the deploy now runs on a runner from the git checkout:
+`.github/workflows/cpl-chat-deploy.yml`, dispatch-only, refusing unless
+`confirm` is literally `DEPLOY`, with **`--no-verify-jwt` pinned in the
+workflow** so the invariant that broke v25 cannot be forgotten by an operator.
+
+⭐ **Five attempts, five genuinely different causes** — and only one of them
+was Sam's. Full taxonomy in
+`docs/kb-notes/playbook-deploy-an-edge-function-from-the-runner.md`; the two
+worth carrying:
+
+- **403 ≠ 401.** 401 is a bad token; **403 means the credential was accepted
+  and the identity refused.** Supabase's renaming means three credentials look
+  plausible in the dashboard and the two wrong ones (`eyJ…` JWT, `sb_secret_…`
+  project key) 403 *exactly like* an under-privileged role. A prefix check in
+  the workflow — which never reveals the secret — converts that ambiguity into
+  a named cause. Ours came back `sbp_`, correctly.
+- **The CLI resolves functions at `<cwd>/supabase/functions/<slug>/`**, and in
+  this repo that tree lives under `chatbox/`. The path check fires AFTER auth
+  and AFTER a Docker pull, so it reads like a permissions failure. That was
+  mine, and it stayed masked while earlier runs died at auth.
+
+**Verified live.** Deploy confirmed at v29 with `verify_jwt: false`, and the
+Supabase API's own `entrypoint_path` now reads
+`…/cpl-project-tracker/chatbox/supabase/functions/cpl-chat/index.ts` — proof
+it shipped from git rather than a pasted blob.
+
+### The smoke battery: 15 green, 1 red — and the red one changed meaning
+
+**Mode 13 (CPR adopters) PASSES** on the live function, naming Modesto / Las
+Positas / Cypress / San Francisco / Cabrillo. Modes 14a/14b still hold the
+contacts gate in both directions. The feedback RPCs are green.
+
+**Mode 7 is still red — but it is a different bug now, and that is the
+evidence the fix worked.** Before the deploy, asked whether LA Harbor gives
+credit for NCCER carpentry, production answered:
+
+> "West Los Angeles College as the only local college with a matching CPL
+> exhibit in this area — and that's specifically for **Dental Board
+> certificates**, not NCCER."
+
+After the deploy, the dental false positive is **gone**; the answer is honest
+("I can't confirm from the data at hand") and names **Norco College** as the
+nearby peer.
+
+⚠️ **Norco is ~50 miles from LA Harbor.** The remaining defect is in the
+offerings/geography path: **volume is outranking distance.**
+
+| College | Exhibits in corpus | Near LA Harbor? |
+|---|---|---|
+| **Norco** | **107** | ✗ ~50 mi (Riverside County) |
+| LA Trade Tech | 45 | ✓ |
+| Long Beach City | 7 | ✓ |
+| Cerritos | 3 | ✓ |
+| Rio Hondo | 2 | ✓ |
+
+Norco wins on having the most exhibits, not on being close. The genuinely
+adjacent colleges are all in the corpus and all lose to it. **This is the
+queued item for the next session** (Sam: "queue me up to fix 7 in with
+SkyHero next"). Also confirmed: LA Harbor IS in `chatbox_college_profiles`
+but with `total_exhibits = 0`, so Sierra was right that it has no exhibit
+list — that part is not a bug.
+
+**Still open, unchanged:** the corpus covers **59 of MAP's 123 colleges**,
+which is the rest of the CPR gap (American River, LA Mission, West LA are
+simply absent); the student-detail aggregator waits on Malone's view name.

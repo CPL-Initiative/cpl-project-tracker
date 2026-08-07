@@ -1,20 +1,26 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-06 · SkyRecall — Sierra's search fixed (it was finding 2 colleges for CPR when there are 7); the fix is merged but NOT yet live.",
-  "_session": "SkyRecall (123)",
-  "_status": "A colleague at the Chancellor's Office asked Sam which colleges give college credit for a CPR or AED certificate. Sierra found two. There are seven. Today was spent finding out why, and it turned out the search had five separate faults — the sharpest being that a fix made five weeks ago for this exact same question is what caused today's failure: a shorthand added to help ('AED') was being mangled by the database into a match on the single letter 'a', which swamped everything else. Sierra now finds five of the seven, and every phrasing Sam threw at it works — plurals, two-word spellings, and misspellings included. Two things to know: the fix is merged but NOT yet switched on in production, because turning it on touches the public chat widget, the vendor's page and three tabs at the same moment, and Sam's go-ahead is wanted first. And the last two missing colleges are not a search problem — Sierra's copy of the exhibit list covers only 59 of the 123 colleges, and refreshing that is the next real job. Separately, a privacy fault was fixed in the funding builder: small counts were being hidden, but the totals published alongside them gave the hidden number straight back.",
+  "_as_of": "2026-08-07 · SkyHunter — Sierra's CPR fix is LIVE in production (v29). One known defect left in the smoke battery, queued for SkyHero.",
+  "_session": "SkyHunter (123)",
+  "_status": "The CPR fix is live. A colleague at the Chancellor's Office asked which colleges give college credit for a CPR or AED certificate; Sierra found two, and there are seven. The search had five separate faults — the sharpest being that a fix made five weeks ago for this exact question is what caused the failure. Sierra now finds five, and handles plurals, two-word spellings and misspellings. It is deployed and confirmed working against the live assistant, not just in testing. Deploying used to mean a person retyping a 66KB file by hand into the live system with no practice environment; it is now one button that publishes exactly what is in the repository, which is the quieter win from today. One known problem remains: when asked which nearby college teaches something, Sierra picks the college with the MOST records rather than the CLOSEST one — it suggested a college fifty miles away over four that are minutes from the campus asked about. That is queued next. And the deeper limit is unchanged: Sierra's copy of the exhibit list covers 59 of the 123 colleges, which is why two of the seven CPR colleges are still invisible to her.",
   "items": [
     {
-      "id": "sierra-deploy",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "🚦 ONE DECISION NEEDED — say go and Sierra's fixed search goes live. It is merged and tested but not switched on, so right now Sierra still gives the old wrong answer on CPR. It is held for your word because switching it on updates the public chat widget, the vendor's embedded page, the COBI tab and the Fact Sheet all at once, and there is no practice environment to try it in first. Rollback is ready if anything looks wrong."
-    },
-    {
-      "id": "sierra-corpus",
+      "id": "sierra-mode7-distance",
       "for": "fable",
       "tab": "cobi",
-      "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — this is the rest of the CPR gap. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she simply cannot see them. Rebuild it from the daily MAP pull. Touches a shared table that production reads, so walk Sam through the impact first."
+      "text": "📍 NEXT (SkyHero) — SIERRA PICKS THE BIGGEST COLLEGE, NOT THE NEAREST. Asked which college near Los Angeles Harbor teaches carpentry, she named Norco — about fifty miles away in Riverside County — over LA Trade Tech, Long Beach, Cerritos and Rio Hondo, all of which are close by and all of which are in her data. Norco simply has more records (107 vs 45/7/3/2). Distance is losing to volume. This is the last red check in the automated test battery."
+    },
+    {
+      "id": "sierra-corpus-59",
+      "for": "fable",
+      "tab": "cobi",
+      "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — the rest of the CPR gap. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she simply cannot see them. Touches a shared table that production reads, so walk Sam through the impact first."
+    },
+    {
+      "id": "sierra-deploy-button",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "✅ DEPLOYING SIERRA IS NOW ONE BUTTON — no more hand-copying a 66KB file into the live system. It publishes exactly what is in the repository, and refuses to run unless you type DEPLOY. Your Supabase token made this possible; it is stored in GitHub and does not need touching again."
     },
     {
       "id": "sierra-cpr-list",
@@ -69,12 +75,6 @@
       "for": "sam",
       "tab": "implementation-funding",
       "text": "🎯 WHERE TO POINT COLLEGES — just 20 military training documents account for about 40% of the 424,945 untouched recommendations statewide. A push on those few would move more than a broad ask ever could."
-    },
-    {
-      "id": "malone-view",
-      "for": "fable",
-      "tab": "",
-      "text": "🔌 WIRE MALONE'S NEW REPORT when it lands (expected 8/7). Three small steps: add the view to the daily pull, name it in the new builder, and add the builder to the daily job. Then this stops being a one-time file and refreshes every morning."
     }
   ]
 }
