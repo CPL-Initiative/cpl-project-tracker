@@ -1229,3 +1229,105 @@ code instead of with the goal.
   and filter `page='smoke'` out of the triage surface; (4) the corpus — still 59 of 123 colleges.
 - **Unfinished at checkpoint:** a five-surface poaching audit (prompt constants, audience rules, context
   builders, live `sierra_guidance` rows, sibling generators) was still running.
+
+## SkyMiner — the two decisions land, and the robot in the suggestion box (2026-08-07, #1029 MERGED · deploy 11 green)
+
+Sam: *"read SkyHero's handoff and let's pick up the string."* The handoff's Priority 1 was two questions
+explicitly marked **not mine to answer** — *"Do not resolve either of these by editing code or tests. Ask, then
+implement."* So the first substantive act of the session was to ask, and both answers changed the code.
+
+### Measuring the queue before asking turned out to be the whole story
+
+Before putting the questions to Sam I pulled `sierra_feedback`, partly to ground the questions and partly
+because Priority 2 said the queue had never been triaged. What came back reframed the session.
+
+**The queue had grown, not drained: 53 rows, still every one `status='new'`.** SkyHero counted 43 with 19 from
+the smoke test; a day later it was **53 with 28** — ⭐ **our own CI was 53% of the queue it fills**, and since
+mode 12's second upsert lands `rating='down'`, **every single one is a thumbs-down.** The review tab's headline
+"👎 total" therefore read **38 when the real number was 10.**
+
+⭐ **The queue had already reported three of the last four sessions' work**, weeks before each was raised
+conversationally:
+
+| Reported | What | Fixed by |
+|---|---|---|
+| 07-01 ×2, 08-06 | CPR / title-variant misses | #1016 (v29) |
+| 07-03 | "Moreno Valley is closer to Crafton than Bako" | #1023 |
+| **07-17** | *"'Find a College That Fits You' should not push students to map.rccd.edu… should push them to the student portal"* | #1025–#1027 |
+
+That third row is the sharp one. **A user described the student-routing problem on 17 July** — three weeks
+before Sam raised it in conversation and four passes of prompt rewriting followed. The fix we shipped is the
+fix that row asked for. `methodology-the-feedback-queue-already-knew` was written about *one* five-week-old
+report; it is worse than that. **The queue is not a nice-to-have signal, it is the roadmap, and it has been
+running three weeks ahead of us the whole time.**
+
+### Why the test cannot simply clean up after itself
+
+The instinct was to have the smoke test delete its rows. It can't, and the reason is *good*: mode 12 writes
+through the **anon** RPC because that is exactly what a visitor's browser does, and anon is deliberately
+**write-only** on that table — the mode's own final assertion is that `anon SELECT` returns `[]`. A test able
+to delete its row would run with more privilege than the path it verifies, and would quietly stop testing it.
+A fixed `turn_id` would leave one row forever but only ever exercise the UPDATE branch of the upsert. **The
+residue is the price of an honest end-to-end test, so the fix belongs at the reading surface** — hidden by
+default, disclosed with a count next to a toggle, and *the stats follow the same rule as the list* (a headline
+that disagrees with the rows below it is worse than no filter at all). Durable:
+`methodology-a-test-that-writes-to-the-queue-it-monitors`.
+
+### The two decisions
+
+**(a) Restraint binds salesmanship, not facts.** Sam took the recommended line. Never withhold a fact that
+materially changes what the visitor can do; never editorialise. If the host hasn't articulated it — say so, say
+where it *is* available today, say the host can adopt it. When the two interests can't be reconciled, **the
+visitor's outcome wins, stated plainly and never sold.**
+
+**(b) Mode 7: both, in order.** The assertion and the code encoded two different defensible products, and he
+picked **both** — host → precedent → nearest real route. Part 3 (the LA-basin colleges that merely *teach*
+construction) is the one #1027 had silently removed and the only one that gives a seeker somewhere to go this
+month; the rule now calls stopping early *a failure of the answer, not politeness*.
+
+⭐ **The lesson underneath (b) is not about construction.** Two rules written in different places were in direct
+conflict with nothing saying which governed, so the later one silently won. Encoding the tie-break in
+`PORTAL_RULE` was necessary but **not sufficient** — `OFFERINGS_RULE` had to cross-reference it explicitly
+(*"naming a nearer teaching college is NOT poaching; it is the factual completion of the answer"*). **A
+tie-break stated only where the conflict is defined never reaches the place where the conflict is resolved.**
+
+### Tests
+
+`sierra_student_portal` 44 → **59**, and the 15 new checks are deliberately the **permission** half, per the
+asymmetry the note names: a violated prohibition is loud (a college complains), a violated permission is silent
+(the person just isn't helped and files nothing). `sierra_training` 31 → **44**. Full Sierra suite green (382).
+
+### Smoke run 47 (post-deploy, live) — decision (a) verified, decision (b) HALF verified
+
+Deploy 11 succeeded and the smoke ran against the live function. Mode 7, **3 of 4 green**:
+
+- ✅ `7 home college detected (LA Harbor named)`
+- ✅ `7 adoption precedent (college that articulated it)` — **the assertion I added; Norco named.**
+- ❌ `7 nearby construction college` — Sierra's "Your Nearest Options with CPL Already in Place" table lists
+  **Norco · Santiago Canyon · Chaffey · San Bernardino Valley** — every one an *exhibit* college. **No LA-basin
+  teaching college appears.** Part 3 did not fire.
+- ✅ `7 on-topic`
+
+⭐ **And the same run refutes the premise the last two handoffs were reasoning from.** SkyHero wrote *"no
+LA-county college has a construction exhibit at all"* — true, and it was being used to imply part 3 was
+unreachable. **Mode 8, the very next question in the same run against the same deployed function, lists
+Rio Hondo (70 carpentry courses) · LA Trade Technical (32 carpentry + 26 construction crafts) · Long Beach City ·
+College of the Canyons — all Los Angeles County.** The teaching colleges exist in the catalog data. Part 3 is
+reachable; it simply didn't happen.
+
+**Where that leaves the diagnosis, honestly.** Sierra reproduced the asked-college line nearly verbatim from
+`buildOfferingsContext`'s no-match branch (*"does not appear in the current course catalog"*), so the offerings
+context was present and it read it. What is **not** established is whether that context's `others` list — which
+ranks core-discipline matches by county first, and would therefore have put Rio Hondo and Trade Tech at the very
+top — was **populated for this query**. Two candidate causes, and I did not measure which:
+
+1. **Retrieval:** `searchCollegeOfferings` is driven by the raw query text, and mode 7's text carries the college
+   name (*"Los Angeles Harbor College"*) while mode 8's is cleanly topical. A skewed catalog search would leave
+   `others` thin or empty — in which case no prompt wording can fix it.
+2. **Instruction-following:** the context had them and the model still framed its table as *"options with CPL
+   already in place."* The new ANSWER SHAPE block sits as one bullet among six in `OFFERINGS_RULE`.
+
+⚠️ **Do not guess between these — instrument it.** `tests/sierra_geo_ranking.test.js` already exists to assert
+the ordered college set the context builders emit; extend it to this exact query. Inferring cause number 2 and
+rewriting prompt text would be precisely the mistake this workstream keeps re-learning: *when the code you were
+pointed at cannot be shown to produce the symptom, go measure the layer above it.*
