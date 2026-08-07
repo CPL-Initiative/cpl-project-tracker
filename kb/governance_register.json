@@ -1,9 +1,8 @@
 {
   "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
   "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review.",
-  "_as_of": "2026-08-05",
+  "_as_of": "2026-08-07",
   "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
-
   "decision_rights": [
     {
       "id": "DR-01",
@@ -114,9 +113,19 @@
       "when_empty": "3 institutions have ZERO active users. That is an onboarding problem, not a contact problem — do not paper over it with a routing fix.",
       "load_bearing": true,
       "live": "users"
+    },
+    {
+      "id": "DR-11",
+      "element": "What Sierra tells the public (answer rules + guardrails)",
+      "drives": "Sierra is embedded on colleges' own pages and answers students, prospective students, faculty, administrators and employers. Her rule text IS the product — it decides what a CPL seeker is told exists, and how a host college is characterised on its own site.",
+      "decides": "CPL Initiative (CO) — in practice Sam personally, four consecutive times on 2026-08-06/07 (either/or → Yes/And → the portal's fuller portfolio → anti-poaching → the salesmanship/facts tie-break)",
+      "maintained_in": "chatbox/supabase/functions/cpl-chat/index.ts (prompt constants) + live sierra_guidance rows (🧭 pane)",
+      "owner": null,
+      "when_empty": "Each rule change gets resolved ad hoc by whichever session is running. Two consequences already observed: (1) a rule written purely as a prohibition made Sierra WITHHOLD facts from seekers, and nothing caught it because the prohibition was the only half tested; (2) two rules in different constants conflicted with nothing saying which governed, so the later one silently won. Also unowned: prompt text only takes effect ON DEPLOY, so 'decided' and 'live' are distinct states and no one tracks the gap between them.",
+      "load_bearing": true,
+      "live": null
     }
   ],
-
   "acceptance_standards": [
     {
       "id": "AS-01",
@@ -167,7 +176,6 @@
       "rule": "Anything I derive is a proposal until a human or a second independent signal confirms it. Where I've guessed, the artifact should say so — that is what the provenance tiers are for."
     }
   ],
-
   "cadences": [
     {
       "id": "CA-01",
@@ -210,9 +218,17 @@
       "state": "human-gated",
       "note": "Deliberately manual: a human-reviewed draft PR IS the sensitivity audit. Correct as designed; it just has no named reviewer.",
       "live": null
+    },
+    {
+      "id": "CA-06",
+      "loop": "Sierra feedback triage (👍/👎 + notes)",
+      "frequency": "Undecided — never established",
+      "owner": null,
+      "state": "never-run",
+      "note": "The same shape as CA-03, but a step worse: that loop was decided and never fired; this one was never even decided. Measured 2026-08-07 — of 56 ratings since 1 July, not one had ever moved off status='new'. 31 of them are our own CI smoke test, which writes through the public anon RPC on every run and CANNOT delete its own rows (anon is deliberately write-only on that table). That share is visibly growing: it went 28 -> 31 during a single working session, purely from re-running the test. The unread rows were not noise — a geography bug reported 2026-07-03 sat five weeks, and a student-routing report on 2026-07-17 described a problem only fixed three weeks later, after it happened to come up in conversation. 4 rows have now been marked addressed; 7 real thumbs-down remain. GATE: the MAP/CO test invitation should not go out until this has an owner — inviting people into a channel nobody reads manufactures unread rows and teaches the team their feedback goes nowhere.",
+      "live": "feedback"
     }
   ],
-
   "open_questions": [
     {
       "id": "OQ-01",
@@ -243,6 +259,11 @@
       "id": "OQ-06",
       "q": "Should this tab be team-gated or public?",
       "why": "Gated today. A public decision-rights table could be genuinely good for college trust — but 'last run: never' is a bad look before it's addressed. Fix the cadence first, then consider opening it."
+    },
+    {
+      "id": "OQ-07",
+      "q": "What has to be true before we invite the MAP and CO teams to test Sierra?",
+      "why": "Sam wants to open Sierra up to the wider team. The invitation is cheap; the failure is not. At minimum it needs CA-06 to have a named owner and a stated frequency, and DR-11 to have someone who decides when a reported behaviour is a bug versus a product choice — the last four rule changes were all the latter, and all of them needed Sam. Worth deciding whether the invitation is staged (MAP team first, CO second) so the queue's volume is survivable while the loop is new."
     }
   ]
 }

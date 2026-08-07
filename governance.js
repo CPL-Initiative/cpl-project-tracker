@@ -156,7 +156,19 @@
         out.lastNudge = (rows || []).reduce(function (m, r) {
           return (!m || (r.last_nudged_at && r.last_nudged_at > m)) ? r.last_nudged_at : m; }, null);
       }).catch(function () { out.nudgeCount = 0; });
-    return Promise.all([gaps, nudges]).then(function () { return out; });
+    // CA-06 — Sierra feedback triage. Counts only REAL rows: page='smoke' is the CI
+    // smoke test writing through the public anon RPC on every run, and it cannot
+    // delete its own rows (anon is deliberately write-only on that table). On
+    // 2026-08-07 it was 28 of 53, so an unfiltered "untriaged" figure here would be
+    // majority robot — a governance page reporting its own CI back to itself.
+    var fb = fetch(REST + "/sierra_feedback?select=page,status&limit=1000", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var real = (rows || []).filter(function (r) { return r.page !== "smoke"; });
+        out.fbTotal = real.length;
+        out.fbOpen = real.filter(function (r) { return (r.status || "new") !== "addressed"; }).length;
+      }).catch(function () {});
+    return Promise.all([gaps, nudges, fb]).then(function () { return out; });
   }
 
   function fmtDate(s) {
@@ -239,6 +251,12 @@
         : '<span class="gov-bad">never run</span>';
     }
     if (c.live === "sync") return '<span class="gov-live">last sync <b>' + fmtDate(L.synced) + "</b></span>";
+    if (c.live === "feedback") {
+      if (L.fbTotal == null) return '<span class="gov-live">' + esc(c.state || "—") + "</span>";
+      return L.fbOpen
+        ? '<span class="gov-bad">' + L.fbOpen + " of " + L.fbTotal + " untriaged</span>"
+        : '<span class="gov-live">all <b>' + L.fbTotal + "</b> triaged</span>";
+    }
     return '<span class="gov-live">' + esc(c.state || "—") + "</span>";
   }
 
@@ -378,7 +396,10 @@
     out.push("", "## Which loops actually run", "", "| Loop | Frequency | Owner | State |", "|---|---|---|---|");
     (R.cadences || []).forEach(function (c) {
       var st = c.live === "nudge" ? (L.nudgeCount ? "last run " + fmtDate(L.lastNudge) : "**NEVER RUN**")
-        : (c.live === "sync" ? "last sync " + fmtDate(L.synced) : (c.state || ""));
+        : (c.live === "sync" ? "last sync " + fmtDate(L.synced)
+        : (c.live === "feedback" && L.fbTotal != null
+            ? (L.fbOpen ? "**" + L.fbOpen + " of " + L.fbTotal + " UNTRIAGED**" : "all " + L.fbTotal + " triaged")
+            : (c.state || "")));
       out.push("| " + c.loop + " | " + c.frequency + " | " + ((ownerOf(c) || {}).name || "**needs an owner**") + " | " + st + " |");
     });
     out.push("", "## Open questions", "");
