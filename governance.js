@@ -33,7 +33,14 @@
   var state = { reg: null, live: null, loading: false, error: null,
                 // curated owners keyed by register id (DR-01, CA-03, …); overlays
                 // the committed register, which ships every owner null on purpose
-                owners: {} };
+                owners: {},
+                // true when the owners READ failed — the map below is then the
+                // last known-good, not the truth. Never silently render a failed
+                // read as "nobody has an owner".
+                ownersStale: false,
+                // whether the load that populated `owners`/`live` was made while
+                // signed in; a change means those gated reads must be redone
+                loadedSignedIn: false };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
@@ -183,15 +190,29 @@
   // JSON by row id, so a session regenerating the register can never wipe an
   // assignment. Same split that keeps the nudge log out of the contacts table.
   function loadOwners() {
+    // A FAILED READ IS NOT "NOBODY HAS AN OWNER". This used to be
+    // `r.ok ? r.json() : []`, which turned a 401, a 500 or an RLS change into an
+    // empty owner map — every colleague's assignment vanished from the page and
+    // the red "Rows with no owner" stat jumped to its maximum, with nothing on
+    // screen saying a read had failed. On a page whose entire purpose is showing
+    // who is accountable, silently reporting "no one" because the network hiccuped
+    // is the worst available answer. Keep the last known-good map and flag it.
     return fetch(REST + "/governance_owners?select=register_id,owner,note,set_by,set_at",
       { headers: authHeaders() })
-      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (r) {
+        if (!r.ok) throw new Error("owners " + r.status);
+        return r.json();
+      })
       .then(function (rows) {
         var by = {};
         (rows || []).forEach(function (o) { by[o.register_id] = o; });
         state.owners = by;
+        state.ownersStale = false;
         return by;
-      }).catch(function () { return {}; });
+      }).catch(function () {
+        state.ownersStale = true;   // render surfaces this; owners are NOT wiped
+        return null;
+      });
   }
   // Resolved owner for a row: a curated value wins over the file's.
   function ownerOf(row) {
@@ -296,6 +317,13 @@
       .filter(function (r) { return !ownerOf(r); }).length;
 
     var h = '<div class="gov"><h2>Governance <span class="gov-draft">Draft · for review</span></h2>';
+    // A failed owners read must announce itself. Without this the page renders a
+    // confident "N rows have no owner" computed from data it could not fetch.
+    if (state.ownersStale) {
+      h += '<div class="gov-gate"><b>Could not read the assigned owners.</b> The owner column below may be '
+        + "out of date, and the “no owner” count cannot be trusted until this loads. Re-open the tab, or "
+        + "renew your session on the <b>Team &amp; RACI</b> tab.</div>";
+    }
     h += '<p class="gov-intro">A starter register: <b>who decides what</b>, <b>how much we trust each input</b>, '
       + "and <b>which loops actually run</b>. Written after a session in which every problem turned out to be a "
       + "governance gap wearing a data-quality costume — a field nobody owned, a source nobody owned knowing, "
@@ -487,7 +515,13 @@
   function activate() {
     var root = document.getElementById("governance-root");
     if (!root) return;
-    if (state.reg) { render(root); return; }
+    // Re-fetch when the SIGN-IN STATE has changed since we loaded, not just when
+    // we have never loaded. The gated reads (live figures, curated owners) are
+    // skipped while logged out, so a tab first opened logged-out kept its empty
+    // results forever: sign in, come back, and you get a fully-populated-looking
+    // register with every owner missing and a cadence accused in red of having
+    // never run — all of it an artifact of the reads that were never made.
+    if (state.reg && state.loadedSignedIn === signedIn()) { render(root); return; }
     state.loading = true; render(root);
     Promise.all([
       fetch(REGISTER_URL).then(function (r) {
@@ -498,6 +532,7 @@
       signedIn() ? loadOwners() : Promise.resolve({}),
     ]).then(function (res) {
       state.reg = res[0]; state.live = res[1] || {};
+      state.loadedSignedIn = signedIn();   // what this load was ALLOWED to read
       state.loading = false; render(root);
     }).catch(function (e) {
       state.loading = false; state.error = (e && e.message) || "error"; render(root);
@@ -514,6 +549,8 @@
     _owner: owner,
     _ownerOf: ownerOf,
     _stanceChip: stanceChip,
+    _loadOwners: loadOwners,   // exported so the failed-read path is testable
+    _signedIn: signedIn,
   };
 
   // tabs.js dispatches cpl-tab-activated on WINDOW, not document.
