@@ -114,12 +114,22 @@ jobs:
           esac
 
       - name: Deploy cpl-chat
+        # MUST run from chatbox/. The CLI resolves functions at
+        # <cwd>/supabase/functions/<slug>/index.ts, and in this repo the
+        # supabase/ tree lives under chatbox/, not at the root — so running
+        # from the root looks for supabase/functions/cpl-chat/index.ts, which
+        # does not exist, and fails with "entrypoint path does not exist"
+        # AFTER authenticating and pulling the edge-runtime image. That late
+        # failure reads like a deploy problem but is purely a path problem.
+        working-directory: chatbox
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
         run: |
           # --no-verify-jwt is REQUIRED: the widget sends the anon key, not a
           # user JWT. Shipping verify_jwt=true 401s every first-party surface.
           # --debug so a 403 reports WHICH endpoint and identity was refused.
+          test -f supabase/functions/cpl-chat/index.ts \
+            || { echo "::error::entrypoint missing from $(pwd)"; exit 1; }
           supabase functions deploy cpl-chat \
             --project-ref hvuwhnbuahrtptokpqfh \
             --no-verify-jwt \
