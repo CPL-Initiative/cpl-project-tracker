@@ -319,8 +319,100 @@ function makeWin(opts) {
   check("⚠ enter-key: a single Enter shows the owner too", /Malone/.test(r.innerHTML));
 })();
 
+// A FAILED OWNERS READ MUST NOT READ AS "NOBODY HAS AN OWNER". Found by the
+// adversarial sweep run alongside the first-click fix. loadOwners used to do
+// `r.ok ? r.json() : []`, so a 401 / 500 / RLS change produced an empty map:
+// every colleague's assignment vanished from the page and the red "no owner"
+// count jumped to its maximum, with nothing saying a read had failed. On a page
+// whose whole job is showing who is accountable, silently answering "no one"
+// because the network hiccuped is the worst available answer.
+(function (done) {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.owners = { "DR-01": { register_id: "DR-01", owner: "Jessica", set_by: "t@x",
+                                 set_at: "2026-08-06T00:00:00Z" } };
+  // the shape that used to wipe everything: a reachable server refusing the read
+  w.fetch = function () { return Promise.resolve({ ok: false, status: 401,
+                                                   json: function () { return Promise.resolve([]); } }); };
+  G._loadOwners().then(function () {
+    check("⚠ failed owners read does NOT wipe the known owners",
+      G._state.owners["DR-01"] && G._state.owners["DR-01"].owner === "Jessica");
+    check("failed owners read raises the stale flag", G._state.ownersStale === true);
+    const r = w.document.getElementById("governance-root");
+    G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+    G.render(r);
+    check("⚠ a stale owners read announces itself instead of rendering a confident count",
+      /Could not read the assigned owners/.test(r.innerHTML));
+    check("the last known-good owner is still shown while stale", /Jessica/.test(r.innerHTML));
+    done();
+  });
+})(ownersOkTest);
+
+// ...and a SUCCESSFUL read clears the flag, so the banner cannot stick.
+function ownersOkTest() {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.ownersStale = true;
+  w.fetch = function () {
+    return Promise.resolve({ ok: true, json: function () {
+      return Promise.resolve([{ register_id: "CA-06", owner: "Ashley", set_by: "t@x",
+                                set_at: "2026-08-07T00:00:00Z" }]); } });
+  };
+  G._loadOwners().then(function () {
+    check("a successful read clears the stale flag", G._state.ownersStale === false);
+    check("a successful read replaces the map", G._state.owners["CA-06"].owner === "Ashley");
+    const r = w.document.getElementById("governance-root");
+    G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+    G.render(r);
+    check("the stale banner is gone once the read succeeds",
+      !/Could not read the assigned owners/.test(r.innerHTML));
+    signInRefreshTest();
+  });
+}
+
+// SIGNING IN AFTER OPENING THE TAB must re-run the gated reads. activate() used
+// to early-return on `if (state.reg)`, so a tab first opened logged-out kept its
+// empty owners and empty live figures forever — a fully-populated-looking
+// register with every owner missing and a cadence accused in red of never having
+// run, all of it an artifact of reads that were never made.
+function signInRefreshTest() {
+  const w = makeWin();                       // logged OUT
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.loadedSignedIn = false;           // loaded while logged out
+  G._state.loading = false;
+  check("precondition: the harness starts logged out", G._signedIn() === false);
+
+  G.activate();
+  check("no sign-in change → cheap re-render, no refetch", G._state.loading === false);
+
+  w.localStorage.setItem("cpl_team_pass", "phrase-1");   // the user signs in
+  check("precondition: now signed in", G._signedIn() === true);
+  G.activate();
+  check("⚠ signing in after load triggers a refetch of the gated reads",
+    G._state.loading === true);
+  finish();
+}
+
 // ── report ──
-let failed = 0;
-for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
-console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
-process.exit(failed ? 1 : 0);
+// finish() rather than a bare tail: the owners-read and sign-in checks above are
+// ASYNC (they exercise real promise paths in loadOwners/activate). A synchronous
+// report would print, and process.exit would fire, before those ever resolved —
+// silently scoring them as "not run" while looking green.
+let reported = false;
+function finish() {
+  if (reported) return;
+  reported = true;
+  let failed = 0;
+  for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
+  console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
+  process.exit(failed ? 1 : 0);
+}
+// Backstop: if an async chain never calls finish (a swallowed rejection), fail
+// loudly instead of exiting 0 with a short, cheerful list.
+setTimeout(function () {
+  if (!reported) { console.error("FAIL  async chain never completed — a promise path was swallowed"); 
+                   results.push(["async chain completed", false]); finish(); }
+}, 8000).unref?.();
