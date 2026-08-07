@@ -117,6 +117,23 @@ WANTED = {
                    r"student\s*map\s*id", r"student.*id"],
 }
 
+# THE CREDIT FUNNEL, per row. Sam's original ask was "student counts based on
+# ELIGIBLE, APPLIED and TRANSCRIBED CPL for exhibits that match the request" —
+# and the export carries all four, per credit recommendation, which the first
+# version ignored entirely while counting rows.
+#
+# Unlike headcounts these are ADDITIVE: summing credits across rows is correct,
+# whereas summing students across rows double-counts anyone holding several
+# recommendations. Same distinction excel_to_dashboard.py's
+# _rollup_exhibit_cr_catalog draws, for the same reason.
+CREDIT_COLS = {
+    "eligible":    [r"^potential\s*credits$", r"potential\s*credits",
+                    r"^eligible\s*credits$", r"eligible\s*credits"],
+    "in_review":   [r"^credits\s*in\s*review$", r"credits\s*in\s*review"],
+    "applied":     [r"^applied\s*credits$", r"applied\s*credits"],
+    "transcribed": [r"^transcribed\s*credits$", r"transcribed\s*credits"],
+}
+
 # The four values MAP writes into CPLStatusPlan. Used only to CHECK that the
 # column we matched is the one we meant — see _check_status_column.
 DISPOSITION_VOCAB = {"applied to cpl plan", "not applicable", "in process",
@@ -219,7 +236,7 @@ def resolve_columns(sample_keys):
     """Most-specific pattern first, ACROSS ALL COLUMNS, before falling back."""
     got = {}
     cols = [str(c) for c in sample_keys if c]
-    for key, patterns in WANTED.items():
+    for key, patterns in {**WANTED, **{f"credit_{k}": v for k, v in CREDIT_COLS.items()}}.items():
         for pat in patterns:
             hit = next((c for c in cols if re.search(pat, c, re.I)), None)
             if hit:
@@ -253,6 +270,14 @@ def check_status_column(observed, col_name):
     print("  dropped when the PII columns were stripped, re-export with it.")
     print("!" * 74)
     return False
+
+
+def _num(v):
+    """Credits arrive as numbers, numeric strings, blanks or None."""
+    try:
+        return float(v or 0)
+    except (TypeError, ValueError):
+        return 0.0
 
 
 def suppress(n):
@@ -301,6 +326,9 @@ def main():
     # ("CPR/AED") total real dispositions across the exhibits it matched — the
     # gap that made Sierra hedge. No college x exhibit cross-tab: that is where
     # cells get thin enough to point at a person.
+    credits_state = Counter()
+    credits_family = {name: Counter() for name in FAMILIES}
+    credits_exhibit = defaultdict(Counter)
     per_exhibit = defaultdict(Counter)
     exhibit_students = defaultdict(set)
     exhibit_colleges = defaultdict(set)
@@ -335,10 +363,17 @@ def main():
             exhibit_colleges[ex].add(loc)
             if sid:
                 exhibit_students[ex].add(sid)
+        row_credits = {k: _num(r.get(cols.get("credit_" + k))) for k in CREDIT_COLS}
+        for k, v in row_credits.items():
+            credits_state[k] += v
+            if ex:
+                credits_exhibit[ex][k] += v
         blob = cr + " " + g(r, "course")
         for name, pat in FAMILIES.items():
             if pat.search(blob):
                 fam_status[name][status] += 1
+                for k, v in row_credits.items():
+                    credits_family[name][k] += v
                 fam_colleges[name].add(loc)
                 if sid:
                     fam_students[name].add(sid)
@@ -354,6 +389,12 @@ def main():
         """None — never 0.0 — when the status column is not the disposition."""
         return round(a / t, 4) if (ok and t) else None
 
+
+    def credit_line(c, indent="  "):
+        return (f"{indent}credits — eligible {c['eligible']:,.1f} | in review "
+                f"{c['in_review']:,.1f} | applied {c['applied']:,.1f} | "
+                f"transcribed {c['transcribed']:,.1f}")
+
     print(f"\nROWS (non-test): {seen:,}  |  scored: {total:,}  |  "
           f"'credit is not recommended' carved out: {not_rec:,}")
     print(f"DISTINCT STUDENTS statewide: {len(students_state):,}" if students_state
@@ -363,6 +404,7 @@ def main():
               f"({acted:,} acted / {total:,})")
     else:
         print("DISPOSITION RATE statewide: WITHHELD (see the warning above)")
+    print(credit_line(credits_state, ""))
     print("\nby disposition:")
     for d, n in state.most_common():
         print(f"  {d or '(blank)':<26} {n:>9,}  ({100 * n / total:.1f}%)")
@@ -381,6 +423,7 @@ def main():
             "acted": acted,
             "disposition_rate": rate(acted, total),
             "not_recommended_carved": not_rec,
+            "credits": {k: round(v, 1) for k, v in credits_state.items()},
             "by_disposition": dict(state),
         },
         "families": {},
@@ -409,6 +452,7 @@ def main():
             "acted": a,
             "disposition_rate": rate(a, t),
             "by_disposition": dict(c),
+            "credits": {k: round(v, 1) for k, v in credits_exhibit[ex].items()},
         }
     payload["exhibits_suppressed"] = {
         "exhibits": ex_dropped, "recommendations": ex_dropped_rows,
@@ -424,6 +468,7 @@ def main():
         print(f"  DISTINCT STUDENTS      : {len(fam_students[name]):,}"
               if fam_students[name] else "  DISTINCT STUDENTS      : n/a")
         print(f"  colleges involved      : {len(fam_colleges[name])}")
+        print(credit_line(credits_family[name], "  "))
         for d, n in fs.most_common():
             print(f"    {d or '(blank)':<26} {n:>8,}  ({100 * n / ftotal:.1f}%)"
                   if ftotal else "")
@@ -439,6 +484,7 @@ def main():
             "acted": facted,
             "disposition_rate": rate(facted, ftotal),
             "by_disposition": dict(fs),
+            "credits": {k: round(v, 1) for k, v in credits_family[name].items()},
             "top_colleges": [
                 {"college": loc, "students": suppress(len(s))[0],
                  "_suppressed": suppress(len(s))[1]} for loc, s in top],
