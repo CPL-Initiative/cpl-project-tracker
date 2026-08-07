@@ -26,5 +26,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.11'
+      # Runs FIRST and never blocks on the catalog probe below, which pulls
+      # ~268k rows and can take minutes. This one answers a live question — does
+      # the API expose the student × credit-recommendation grain (and with it
+      # CPLStatusPlan, the action a college took) that none of the nine fetched
+      # views carries? Allowlisted columns only; no student identifier.
+      - name: Probe for the student-detail (disposition) view
+        run: python kb/_probe_student_detail_view.py
+
       - name: Probe MAP Custom Reporting Module for the new dataset schemas
+        if: ${{ always() }}
         run: python kb/_discover_map_datasets.py
