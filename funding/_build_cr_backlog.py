@@ -70,6 +70,9 @@ SUPPRESS_BELOW = 5
 # work done — see the fairness note above.
 NEEDS_ACTION = "Needs Action"
 DISPOSITIONS = ("Applied to CPL Plan", "Not Applicable", "In Process", NEEDS_ACTION)
+# The three that mean "a human acted". They are known to sum to `acted`, which
+# is what makes complementary suppression necessary — see _suppression_plan.
+ACTED_DISPOSITIONS = tuple(d for d in DISPOSITIONS if d != NEEDS_ACTION)
 
 # ACE says outright that no credit is recommended for these, yet they sit in
 # student plans as Needs Action. They are unarticulable BY CONSTRUCTION — no
@@ -138,6 +141,49 @@ def _num(v):
 
 def _suppress(n):
     return (None, True) if 0 < n < SUPPRESS_BELOW else (n, False)
+
+
+def _suppression_plan(c):
+    """Which disposition cells must be hidden for the hiding to actually hold.
+
+    PRIMARY suppression is the obvious part: any non-zero cell below
+    SUPPRESS_BELOW.
+
+    COMPLEMENTARY suppression is the part that was missing, and without it the
+    primary suppression is decoration. The published record also carries
+    `total` and `acted`, and the three acted dispositions are known to sum to
+    `acted` — so if exactly ONE of them is hidden, a reader recovers it by
+    subtraction. This was live: the 2026-08-06 build published Allan Hancock as
+
+        total 47 | Applied null (_suppressed) | Not Applicable 6
+        In Process 30 | Needs Action 10 | acted 37
+
+    and 47 - (6+30+10) = 1, confirmed twice over by 37 - (6+30) = 1. The null
+    protected nothing. Hiding a second cell leaves two unknowns against one
+    equation, which is genuinely underdetermined.
+
+    The complement is the SMALLEST remaining acted cell, including a zero —
+    hiding a zero costs the least analytically and adds a real unknown, and it
+    also breaks the "suppressed therefore 1..4" inference a reader would
+    otherwise be entitled to make.
+
+    KNOWN RESIDUAL, stated rather than papered over: `Needs Action` is NOT
+    protected and cannot be, because backlog == total - acted and the
+    disposition rate is acted/total. Any two of {total, acted, backlog, rate}
+    give the third. That trio IS the deliverable — a funding view whose whole
+    purpose is "how big is your backlog" cannot hide the backlog. The row-level
+    floor in main() is what covers the thin colleges instead: a college with
+    fewer than SUPPRESS_BELOW rows in total is not broken out at all.
+    """
+    hidden = {d for d in DISPOSITIONS if 0 < c.get(d, 0) < SUPPRESS_BELOW}
+    if len(hidden & set(ACTED_DISPOSITIONS)) == 1:
+        remaining = sorted(
+            (d for d in ACTED_DISPOSITIONS if d not in hidden),
+            key=lambda d: (c.get(d, 0), d),
+        )
+        if remaining:
+            hidden.add(remaining[0])
+    return hidden
 
 
 def main():
@@ -210,12 +256,36 @@ def main():
         total = sum(c.values())
         stuck = c.get(NEEDS_ACTION, 0)
         acted = total - stuck
+        # ROW-LEVEL FLOOR. A college with fewer than SUPPRESS_BELOW credit
+        # recommendations in total is too thin to break out at all: every cell
+        # in it is small by construction, and its disposition rate is noise
+        # (one row moving swings it by whole percentage points). Publish its
+        # existence and nothing else. This is what protects `Needs Action`,
+        # which cell-level suppression provably cannot — see _suppression_plan.
+        if total < SUPPRESS_BELOW:
+            # Keep the SHAPE consistent with a published row (every key present,
+            # all nulled) so consumers can read it without special-casing —
+            # a suppressed row that omits keys turns a privacy control into a
+            # KeyError downstream.
+            colleges[name] = {"total": None, "total_suppressed": True,
+                              "row_suppressed": True, "acted": None,
+                              "disposition_rate": None, "backlog": None,
+                              "backlog_credits": None, "in_review_rows": None,
+                              "not_recommended_carved": None,
+                              "top_exhibits": [], "top_recommendations": []}
+            for d in DISPOSITIONS:
+                colleges[name][d] = None
+                colleges[name][d + "_suppressed"] = True
+            continue
+
         rec = {"total": total}
+        hidden = _suppression_plan(c)
         for d in DISPOSITIONS:
-            v, hid = _suppress(c.get(d, 0))
-            rec[d] = v
-            if hid:
+            if d in hidden:
+                rec[d] = None
                 rec[d + "_suppressed"] = True
+            else:
+                rec[d] = c.get(d, 0)
         # The RATE is derived from the two unsuppressed totals, never from the
         # suppressed cells — a summary must share the unit of its detail, and a
         # rate rebuilt from hidden parts would silently disagree with them.
