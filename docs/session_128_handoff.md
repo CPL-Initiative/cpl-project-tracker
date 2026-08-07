@@ -132,6 +132,27 @@ Adding a CR-grain rollup is a small change to the same loop. Small-cell suppress
 level. Sam said he would **pick this up in a new session and explore** — start there, and start by asking him
 what a college should SEE, not what the table should hold.
 
+
+### ⭐ And the sharpest framing, Sam's last word on it
+
+> *"The CRs also show where students have eligible credit that has never been acted on or awarded... sitting
+> dormant."*
+
+That is the product in one sentence, and it is **only visible at CR grain**. A row with `PotentialCredits > 0`,
+`AppliedCredits = 0` and `CPLStatusPlan = 'Needs Action'` is **credit a real student has already earned that
+nobody has given them.** Roll that up and it is a statewide headline the CPL Initiative does not currently have:
+*how many units of already-earned credit are sitting unawarded, and at which colleges, for which credentials.*
+
+SkyPlan measured **436,720 rows at Needs Action (81%)** on the same export. Every one of them carries a
+`PotentialCredits` value. Nobody has summed it.
+
+That number is the reason to build this — the college-facing view ("you have N units of earned credit sitting
+unawarded, here are the CRs") and the seeker-facing one both fall out of it. Sum `PotentialCredits` where the
+disposition is `Needs Action`, per college and per CR, before anything else.
+
+⚠️ Do NOT publish it as a league table — the standing rule is **never rank colleges publicly** (`$50k / ESS`
+roadmap row). Frame it as unclaimed opportunity, not as a failing grade.
+
 ## 🎯 Priority 2b — the plumbing (my original framing, still true)
 
 `chatbox_exhibits` has 11 columns and none of them are the funnel. The per-exhibit rollup the aggregator now
