@@ -63,7 +63,13 @@
     /\bunable to find\b/i,
   ];
   var TURN_LIMIT = 500;   // newest N turns analyzed (surfaced in the UI)
-  var FEEDBACK_LIMIT = 200;
+  // Raised 200 → 500 (2026-08-07). The fetch is unfiltered, so the CI smoke rows
+  // (see isSmoke below — ~1 per run, and they can never be deleted) consume this
+  // budget alongside real reports. At 200 they would have started evicting real
+  // feedback from the queue within months. If this is ever hit, the next step is
+  // excluding page='smoke' server-side — use or=(page.is.null,page.neq.smoke),
+  // since a bare page=not.eq.smoke silently drops NULL-page rows too.
+  var FEEDBACK_LIMIT = 500;
 
   var STATUSES = ["new", "triaged", "addressed"];
 
@@ -71,7 +77,7 @@
     loading: false, error: null, gated: false,
     feedback: null, turns: null,
     // feedback-queue filters
-    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fDays: "",
+    fRating: "", fAudience: "", fPage: "", fStatus: "open", fNote: false, fSmoke: false, fDays: "",
     open: {},          // turn_id → expanded
     // gap-miner filters
     gKind: "all", gAudience: "", gDays: "",
@@ -402,8 +408,18 @@
   }
 
   // ── Feedback queue ──
+  // The smoke test (chatbox/smoke_test.sh MODE 12) exercises the anon 👍/👎 write
+  // path on every CI run, leaving one page='smoke' row behind each time. It CANNOT
+  // clean up after itself: the RPC is anon, and anon is deliberately write-only on
+  // this table (its SELECT returns [] — mode 12 asserts exactly that). So the rows
+  // accumulate, and by 2026-08-07 they were 28 of 53 — our own CI was 53% of the
+  // queue it fills, every row rated "down", drowning the real reports.
+  // They are hidden by DEFAULT, never silently: the count is shown next to the
+  // toggle, so a reviewer can always see how many were withheld and why.
+  function isSmoke(f) { return (f && f.page) === "smoke"; }
   function filteredFeedback() {
     var rows = (state.feedback || []).slice();
+    if (!state.fSmoke) rows = rows.filter(function (f) { return !isSmoke(f); });
     if (state.fRating) rows = rows.filter(function (f) { return f.rating === state.fRating; });
     if (state.fAudience) rows = rows.filter(function (f) { return (f.audience || "(not set)") === state.fAudience; });
     if (state.fPage) rows = rows.filter(function (f) { return (f.page || "(unknown)") === state.fPage; });
@@ -564,7 +580,13 @@
       return;
     }
 
-    var fb = state.feedback || [];
+    var fbAll = state.feedback || [];
+    var smokeCount = fbAll.filter(isSmoke).length;
+    // Stats follow the same rule as the queue: CI rows are excluded unless the
+    // reviewer opts in. Counting them made "👎 total" read 38 when only 10 were
+    // real reports — a headline that is 74% our own smoke test teaches a reviewer
+    // the number means nothing.
+    var fb = state.fSmoke ? fbAll : fbAll.filter(function (f) { return !isSmoke(f); });
     var turns = state.turns || [];
     var gaps = turns.filter(function (t) { return gapKinds(t).length > 0; });
     var openCount = fb.filter(function (f) { return (f.status || "new") !== "addressed"; }).length;
@@ -592,6 +614,9 @@
       + STATUSES.map(function (s) { return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + s + "</option>"; }).join("")
       + "</select>"
       + '<label class="sit-check"><input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> has note</label>"
+      + '<label class="sit-check" title="CI smoke-test rows (chatbox/smoke_test.sh MODE 12). The test writes as anon, which is write-only on this table, so it cannot delete its own rows.">'
+      + '<input type="checkbox" data-f-smoke' + (state.fSmoke ? " checked" : "") + "> show "
+      + smokeCount + " CI rows</label>"
       + '<select class="sit-select" data-f="fDays" aria-label="Feedback date range">' + dayOptions(state.fDays) + "</select>"
       + '<span class="sit-bulk">Mark all ' + rows.length + " filtered → "
       + '<select class="sit-select" data-bulk-status aria-label="Bulk triage status">'
@@ -682,6 +707,8 @@
     });
     var note = root.querySelector("[data-f-note]");
     if (note) note.addEventListener("change", function () { state.fNote = note.checked; render(root); });
+    var smoke = root.querySelector("[data-f-smoke]");
+    if (smoke) smoke.addEventListener("change", function () { state.fSmoke = smoke.checked; render(root); });
     root.querySelectorAll("[data-g]").forEach(function (sel) {
       sel.addEventListener("change", function () { state[sel.getAttribute("data-g")] = sel.value; render(root); });
     });

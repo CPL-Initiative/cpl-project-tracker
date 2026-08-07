@@ -176,7 +176,49 @@ function makeWin(opts) {
       done();
     }, 30);
   }, 30);
-})(finish);
+})(smokeFilterTest);
+
+// ── CI smoke rows must not drown the real queue (2026-08-07) ────────────────
+// chatbox/smoke_test.sh MODE 12 exercises the anon 👍/👎 write path on every CI
+// run and leaves a page='smoke' row behind. It CANNOT clean up: the RPC is anon,
+// and anon is write-only on this table by design. By 2026-08-07 those rows were
+// 28 of 53 — 53% of the queue, every one rated "down", so the headline "👎 total"
+// read 38 when only 10 were real reports.
+// The failure this guards is the SILENT one: a reviewer opening a queue that is
+// mostly CI noise concludes the feedback channel is worthless and stops reading
+// it. Assert both halves — hidden by default, AND still reachable on request.
+function smokeFilterTest() {
+  const done = finish;
+  const tok = "e" + "x".repeat(30) + "." + "y".repeat(30) + "." + "z".repeat(30);
+  const mk = function (id, page) {
+    return { turn_id: id, page: page, rating: "down", status: "new", question: "q " + id,
+             response: "a", note: "n", created_at: "2026-08-01T00:00:00Z" };
+  };
+  const w = makeWin({
+    reviewerToken: tok,
+    feedback: [mk("real1", "sierra"), mk("ci1", "smoke"), mk("ci2", "smoke"), mk("ci3", "smoke")],
+    turns: [],
+  });
+  w.CPL_SIERRA_TRAINING_TAB.activate();
+  setTimeout(function () {
+    const root = w.document.getElementById("sierra-training-root");
+    const html = root.innerHTML;
+    check("smoke rows are hidden from the queue by default", !!root.querySelector('[data-open="real1"]') && !root.querySelector('[data-open="ci1"]'));
+    // The stat box is the number a reviewer trusts at a glance — 1 real 👎, not 4.
+    check("stats count only real rows (👎 total excludes CI)", /<div class="n">1<\/div><div class="l">\u{1F44E} total/u.test(html));
+    check("the hidden CI rows are disclosed, not silently dropped", /show 3 CI rows/.test(html));
+    const box = root.querySelector("[data-f-smoke]");
+    check("a reviewer can still opt in to see CI rows", !!box);
+    box.checked = true;
+    box.dispatchEvent(new w.Event("change", { bubbles: true }));
+    setTimeout(function () {
+      const after = w.document.getElementById("sierra-training-root");
+      check("toggling CI rows on brings them back", !!after.querySelector('[data-open="ci1"]'));
+      check("stats follow the toggle too", /<div class="n">4<\/div><div class="l">\u{1F44E} total/u.test(after.innerHTML));
+      done();
+    }, 30);
+  }, 30);
+}
 
 function finish() {
   let fail = 0;
