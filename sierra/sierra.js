@@ -119,6 +119,75 @@
     return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
+
+  // ── Copy an answer (📋) ────────────────────────────────────────────────────
+  // People take Sierra's answers into email, Word and Teams, so the copy has to
+  // survive the trip. We write BOTH flavours when the browser allows it:
+  // text/html (the rendered bubble) so a paste into Word or Outlook keeps the
+  // headings, tables and links, and text/plain (the markdown Sierra actually
+  // emitted) so a paste into a plain editor is readable rather than a wall of
+  // run-together text.
+  //
+  // Three tiers, because this runs in three places: the standalone page, the
+  // dashboard tab, and a cross-origin vendor iframe. The async Clipboard API
+  // needs a secure context AND, inside an iframe, clipboard-write permission —
+  // so the execCommand path is not legacy cruft here, it is the iframe's only
+  // route. Every tier is best-effort and never throws into the chat flow; if
+  // all three fail we select the answer so the visitor can press Ctrl+C.
+  function copyRich(html, text) {
+    try {
+      if (html && navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+        return navigator.clipboard.write([new window.ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' }),
+        })]);
+      }
+    } catch (e) { /* fall through to plain */ }
+    return Promise.reject(new Error('rich copy unavailable'));
+  }
+  function copyPlain(text) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+    } catch (e) { /* fall through to execCommand */ }
+    return Promise.reject(new Error('async clipboard unavailable'));
+  }
+  function copyLegacy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = !!(document.execCommand && document.execCommand('copy'));
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  function selectNode(node) {
+    try {
+      var sel = window.getSelection();
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) { /* selection is a courtesy, not a requirement */ }
+  }
+  function copyAnswer(html, text, done) {
+    copyRich(html, text).then(
+      function () { done(true); },
+      function () {
+        copyPlain(text).then(
+          function () { done(true); },
+          function () { done(copyLegacy(text)); }
+        );
+      }
+    );
+  }
   function feedbackPayload(o) {
     return {
       p_turn_id: o.turnId,
@@ -149,6 +218,34 @@
     var rating = null;
     var bar = document.createElement('div');
     bar.className = 's-fb';
+
+    // Copy sits FIRST in the bar — it is what people reach for on a GOOD answer,
+    // and it should not sit behind the rating flow. Reuses the .s-fb-btn pill so
+    // it needs no new CSS and inherits the theme tokens.
+    var copyBtn = document.createElement('button');
+    copyBtn.type = 'button';
+    copyBtn.className = 's-fb-copy';
+    copyBtn.textContent = '📋 Copy';
+    copyBtn.title = 'Copy this answer — formatting is kept when you paste into Word, Outlook or Teams';
+    copyBtn.setAttribute('aria-label', 'Copy this answer to the clipboard');
+    var copyTimer = null;
+    copyBtn.addEventListener('click', function () {
+      var bub = afterRow && afterRow.querySelector ? afterRow.querySelector('.s-bubble') : null;
+      // `answer` is the markdown Sierra emitted; the bubble text is the fallback
+      // for turns that never streamed one (an error message, say).
+      var plain = answer || (bub ? bub.textContent : '') || '';
+      copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
+        copyBtn.textContent = ok ? '✓ Copied' : '⚠ Press Ctrl+C';
+        copyBtn.classList.toggle('on', ok);
+        if (!ok && bub) selectNode(bub);
+        if (copyTimer) clearTimeout(copyTimer);
+        copyTimer = setTimeout(function () {
+          copyBtn.textContent = '📋 Copy';
+          copyBtn.classList.remove('on');
+        }, 2200);
+      });
+    });
+    bar.appendChild(copyBtn);
 
     var hint = document.createElement('span');
     hint.textContent = 'Rate this answer:';
