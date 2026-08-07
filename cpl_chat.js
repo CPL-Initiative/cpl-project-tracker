@@ -242,6 +242,99 @@
     return (window.crypto && crypto.randomUUID) ? crypto.randomUUID()
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
+
+  // ── Copy an answer (📋) ────────────────────────────────────────────────────
+  // Mirrors sierra/sierra.js — the two chat surfaces have carried parallel
+  // implementations since the feedback bar, and a shared module would mean a new
+  // <script> in BOTH mirrored dashboard HTMLs (Rule 4) for ~40 lines. Keep the
+  // two copies identical; change them together.
+  //
+  // Writes text/html (the rendered bubble, so a paste into Word/Outlook/Teams
+  // keeps headings, tables and links) alongside text/plain (the markdown Sierra
+  // emitted). Falls back to writeText, then to execCommand — which is the only
+  // route inside a cross-origin iframe, where the async Clipboard API is denied.
+  // Never throws into the chat flow; on total failure it selects the answer so
+  // the visitor can press Ctrl+C.
+  function copyRich(html, text) {
+    try {
+      if (html && navigator.clipboard && navigator.clipboard.write && window.ClipboardItem) {
+        return navigator.clipboard.write([new window.ClipboardItem({
+          'text/html': new Blob([html], { type: 'text/html' }),
+          'text/plain': new Blob([text], { type: 'text/plain' }),
+        })]);
+      }
+    } catch (e) { /* fall through to plain */ }
+    return Promise.reject(new Error('rich copy unavailable'));
+  }
+  function copyPlain(text) {
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        return navigator.clipboard.writeText(text);
+      }
+    } catch (e) { /* fall through to execCommand */ }
+    return Promise.reject(new Error('async clipboard unavailable'));
+  }
+  function copyLegacy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.setAttribute('readonly', '');
+      ta.style.position = 'fixed';
+      ta.style.top = '-1000px';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = !!(document.execCommand && document.execCommand('copy'));
+      document.body.removeChild(ta);
+      return ok;
+    } catch (e) { return false; }
+  }
+  function selectNode(node) {
+    try {
+      var sel = window.getSelection();
+      var range = document.createRange();
+      range.selectNodeContents(node);
+      sel.removeAllRanges();
+      sel.addRange(range);
+    } catch (e) { /* selection is a courtesy, not a requirement */ }
+  }
+  function copyAnswer(html, text, done) {
+    copyRich(html, text).then(
+      function () { done(true); },
+      function () {
+        copyPlain(text).then(
+          function () { done(true); },
+          function () { done(copyLegacy(text)); }
+        );
+      }
+    );
+  }
+  // Builds the 📋 Copy pill for one assistant turn. `answer` is the markdown;
+  // the bubble is looked up from the row so an error turn still copies what the
+  // visitor can see.
+  function makeCopyBtn(afterRow, answer) {
+    var timer = null;
+    var btn = el('button', {
+      type: 'button', className: 'cplchat-fb-copy',
+      title: 'Copy this answer — formatting is kept when you paste into Word, Outlook or Teams',
+      'aria-label': 'Copy this answer to the clipboard',
+      onclick: function () {
+        var bub = afterRow && afterRow.querySelector ? afterRow.querySelector('.cplchat-bubble') : null;
+        var plain = answer || (bub ? bub.textContent : '') || '';
+        copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
+          btn.textContent = ok ? '✓ Copied' : '⚠ Press Ctrl+C';
+          btn.classList.toggle('on', ok);
+          if (!ok && bub) selectNode(bub);
+          if (timer) clearTimeout(timer);
+          timer = setTimeout(function () {
+            btn.textContent = '📋 Copy';
+            btn.classList.remove('on');
+          }, 2200);
+        });
+      },
+    }, '📋 Copy');
+    return btn;
+  }
   function feedbackPayload(o) {
     return {
       p_turn_id: o.turnId,
@@ -289,7 +382,9 @@
     }
 
     var btns = {};
-    var bar = el('div', { className: 'cplchat-fb' }, [hint]);
+    // Copy sits FIRST — it is what people reach for on a GOOD answer, and it
+    // should not sit behind the rating flow.
+    var bar = el('div', { className: 'cplchat-fb' }, [makeCopyBtn(afterRow, answer), hint]);
     [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
       .forEach(function (spec) {
         var b = el('button', {
@@ -346,6 +441,12 @@
       '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.85rem; line-height:1.4; opacity:.75; }',
       '.cplchat-fb-btn:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
       '.cplchat-fb-btn.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      // Copy shares the pill shape but NOT the .cplchat-fb-btn class — that class
+      // means "a rating button" to the code (btns.up/btns.down) and to the tests,
+      // which assert exactly two of them.
+      '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; opacity:.75; color:inherit; white-space:nowrap; }',
+      '.cplchat-fb-copy:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
+      '.cplchat-fb-copy.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
       '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
       '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
       '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',

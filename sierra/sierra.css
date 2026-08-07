@@ -138,6 +138,17 @@ body {
 }
 .s-fb-btn:hover { opacity: 1; border-color: var(--sierra-cobalt); }
 .s-fb-btn.on { opacity: 1; background: var(--sierra-subtle); border-color: var(--sierra-cobalt); }
+/* Copy shares the pill shape but NOT the .s-fb-btn class — that class means
+   "a rating button" to the code (btns.up/btns.down) and to the tests, which
+   assert exactly two of them. */
+.s-fb-copy {
+  border: 1px solid var(--sierra-border); background: var(--sierra-surface);
+  border-radius: 999px; padding: 2px 9px; cursor: pointer;
+  font-size: .78rem; line-height: 1.4; opacity: .75; color: inherit;
+  font-family: inherit; white-space: nowrap;
+}
+.s-fb-copy:hover { opacity: 1; border-color: var(--sierra-cobalt); }
+.s-fb-copy.on { opacity: 1; background: var(--sierra-subtle); border-color: var(--sierra-cobalt); }
 .s-fb-note { display: flex; flex: 1 1 100%; gap: 6px; margin-top: 4px; }
 .s-fb-note input {
   flex: 1; border: 1px solid var(--sierra-border-strong); border-radius: 8px;
