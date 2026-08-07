@@ -95,15 +95,32 @@ FAMILIES = {
 
 # Column names are matched loosely — exports rename things between versions, and
 # a hard-coded header that silently matches nothing is worse than an error.
+#
+# ORDERED, and that ordering is load-bearing. Each entry is a list of patterns
+# tried MOST-SPECIFIC FIRST, across all columns, before falling back. The first
+# version used one regex with alternation, which takes the first COLUMN matching
+# any branch — so on the 2026-08-06 export a column plainly named `Status` won
+# over `CPLStatusPlan` purely by sitting earlier in the header row. `Status`
+# holds the workflow STAGE (Needs Action / Implementation / Faculty / Initiator /
+# Articulation Officer), not the CPL disposition, and the run reported a
+# statewide disposition rate of 0.0% across 525,362 rows. A wrong column is far
+# more dangerous than a missing one: it produces a confident, plausible-looking,
+# completely false number.
 WANTED = {
-    "location":   re.compile(r"^(location|college)$", re.I),
-    "status":     re.compile(r"cpl\s*status\s*plan|^status$", re.I),
-    "cr":         re.compile(r"credit\s*recommendation", re.I),
-    "course":     re.compile(r"college\s*course|^course$", re.I),
-    "exhibit":    re.compile(r"exhibit\s*id", re.I),
-    "student_id": re.compile(r"internal.*map.*student.*id|student\s*map\s*id|"
-                             r"internalmapstudentid", re.I),
+    "location":   [r"^location$", r"^college$"],
+    "status":     [r"^cpl\s*status\s*plan$", r"cpl\s*status\s*plan",
+                   r"cpl.*status", r"disposition", r"^status$"],
+    "cr":         [r"^credit\s*recommendation$", r"credit\s*recommendation"],
+    "course":     [r"^college\s*course$", r"college\s*course", r"^course$"],
+    "exhibit":    [r"^exhibit\s*id$", r"exhibit\s*id"],
+    "student_id": [r"internal.*map.*student.*id", r"^student\s*map\s*id$",
+                   r"student\s*map\s*id", r"student.*id"],
 }
+
+# The four values MAP writes into CPLStatusPlan. Used only to CHECK that the
+# column we matched is the one we meant — see _check_status_column.
+DISPOSITION_VOCAB = {"applied to cpl plan", "not applicable", "in process",
+                     "needs action"}
 
 
 def load_salt():
@@ -199,13 +216,43 @@ def iter_rows(path):
 
 
 def resolve_columns(sample_keys):
+    """Most-specific pattern first, ACROSS ALL COLUMNS, before falling back."""
     got = {}
-    for key, pat in WANTED.items():
-        for col in sample_keys:
-            if col and pat.search(str(col)):
-                got[key] = col
+    cols = [str(c) for c in sample_keys if c]
+    for key, patterns in WANTED.items():
+        for pat in patterns:
+            hit = next((c for c in cols if re.search(pat, c, re.I)), None)
+            if hit:
+                got[key] = hit
                 break
     return got
+
+
+def check_status_column(observed, col_name):
+    """Did we match the DISPOSITION column, or something that merely looks like one?
+
+    Returns True when the values look like CPLStatusPlan. A statement of the
+    problem beats a silent wrong answer: the numbers downstream are only
+    meaningful if this column is the disposition, and every other column in the
+    export is plausible enough to pass unnoticed.
+    """
+    vals = {v.lower() for v in observed if v}
+    known = vals & DISPOSITION_VOCAB
+    # "Needs Action" alone is not enough — it appears in the workflow-stage
+    # column too, which is exactly how the wrong column passed the first time.
+    if known - {"needs action"}:
+        return True
+    print("\n" + "!" * 74)
+    print(f"  WRONG COLUMN: '{col_name}' does not hold CPL dispositions.")
+    print(f"  values seen: {sorted(vals)[:8]}")
+    print("  expected some of: Applied to CPL Plan / Not Applicable / In Process")
+    print("  This is the WORKFLOW STAGE, not the disposition. Every disposition")
+    print("  rate below is meaningless and has been withheld rather than printed")
+    print("  as 0%. Student and exhibit COUNTS are unaffected and still valid.")
+    print("  Fix: confirm the export carries a CPLStatusPlan column; if it was")
+    print("  dropped when the PII columns were stripped, re-export with it.")
+    print("!" * 74)
+    return False
 
 
 def suppress(n):
@@ -229,6 +276,9 @@ def main():
     except StopIteration:
         sys.exit("no rows")
     cols = resolve_columns(first.keys())
+    # ALWAYS print every header, not only on failure. The first run matched the
+    # wrong status column and there was no way to see what it could have picked.
+    print(f"  headers in file ({len(first)}): {list(first.keys())}")
     print(f"  columns matched: { {k: v for k, v in cols.items()} }")
     missing = [k for k in ("location", "status", "cr") if k not in cols]
     if missing:
@@ -298,13 +348,21 @@ def main():
 
     total = sum(state.values())
     acted = sum(state[d] for d in ACTED)
+    ok = check_status_column(state.keys(), cols.get("status", "?"))
+
+    def rate(a, t):
+        """None — never 0.0 — when the status column is not the disposition."""
+        return round(a / t, 4) if (ok and t) else None
 
     print(f"\nROWS (non-test): {seen:,}  |  scored: {total:,}  |  "
           f"'credit is not recommended' carved out: {not_rec:,}")
     print(f"DISTINCT STUDENTS statewide: {len(students_state):,}" if students_state
           else "DISTINCT STUDENTS: unavailable (no id column)")
-    print(f"DISPOSITION RATE statewide: {100 * acted / total:.1f}% "
-          f"({acted:,} acted / {total:,})" if total else "")
+    if ok and total:
+        print(f"DISPOSITION RATE statewide: {100 * acted / total:.1f}% "
+              f"({acted:,} acted / {total:,})")
+    else:
+        print("DISPOSITION RATE statewide: WITHHELD (see the warning above)")
     print("\nby disposition:")
     for d, n in state.most_common():
         print(f"  {d or '(blank)':<26} {n:>9,}  ({100 * n / total:.1f}%)")
@@ -315,11 +373,13 @@ def main():
                  "written here. 'students' = DISTINCT hashed ids; "
                  "'recommendations' = rows. Cells <5 suppressed."),
         "suppress_below": SUPPRESS_BELOW,
+        "status_column": cols.get("status"),
+        "disposition_rates_valid": ok,
         "statewide": {
             "recommendations": total,
             "students": len(students_state) or None,
             "acted": acted,
-            "disposition_rate": round(acted / total, 4) if total else None,
+            "disposition_rate": rate(acted, total),
             "not_recommended_carved": not_rec,
             "by_disposition": dict(state),
         },
@@ -347,7 +407,7 @@ def main():
             "students": suppress(len(exhibit_students[ex]))[0],
             "colleges": len(exhibit_colleges[ex]),
             "acted": a,
-            "disposition_rate": round(a / t, 4) if t else None,
+            "disposition_rate": rate(a, t),
             "by_disposition": dict(c),
         }
     payload["exhibits_suppressed"] = {
@@ -377,7 +437,7 @@ def main():
             "students": len(fam_students[name]) or None,
             "colleges": len(fam_colleges[name]),
             "acted": facted,
-            "disposition_rate": round(facted / ftotal, 4) if ftotal else None,
+            "disposition_rate": rate(facted, ftotal),
             "by_disposition": dict(fs),
             "top_colleges": [
                 {"college": loc, "students": suppress(len(s))[0],
@@ -393,7 +453,7 @@ def main():
             "recommendations": t,
             "students": suppress(len(college_students[loc]))[0],
             "acted": a,
-            "disposition_rate": round(a / t, 4) if t else None,
+            "disposition_rate": rate(a, t),
         }
 
     print(f"\nexhibits reported: {len(payload['exhibits']):,}  |  "
