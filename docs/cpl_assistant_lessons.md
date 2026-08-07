@@ -1395,3 +1395,101 @@ The noise budget is now a committed test (`< 25`). Durable:
 - **Open:** 7 further owner-dialog defects reported in #1033. The one most likely to be mistaken for a
   regression is `Clear owner` being a no-op on the three cadences carrying a register-file owner.
 - **Open:** the poaching audit was never reported; `creditforbeingyou.org/main/student` is still unverified.
+
+---
+
+## SkyGauge (Session 127) — 2026-08-07 · #1038–#1044
+
+### Mode 7 was already fixed, and the handoff couldn't know
+
+Session 127's handoff filed "mode 7 part 3" as Priority 1 and — correctly — forbade guessing between two
+candidate causes needing opposite fixes: retrieval thinning the offerings list, or the model not following the
+rule. Measuring settled it in one query.
+
+Running the offerings RPC with the **exact tsquery the deployed function builds** for mode 7
+(`los:* | angeles:* | harbor:* | nccer:* | carpentry:* | construction:* | …`) returns **613 rows across 117
+colleges**; the cap takes 150. Inside that window: **LA Trade Tech at rank 2, Rio Hondo 6, Long Beach City 19,
+College of the Canyons 22, El Camino 26.** Feeding the live window through the real builder prints **ten
+colleges, every one in LA Harbor's own county**, under the line *"Los Angeles Harbor College does NOT appear to
+teach courses in this area — point to the nearest colleges that do."* Part 3's whole answer was in the context,
+correctly ordered, the entire time.
+
+⭐ **And it had already started working.** Smoke run 47 — the red one the handoff describes — ran against
+**deploy 11**. #1035 shipped v35 *after* it. Runs 48, 49 and a fresh dispatch (50) are all green, and run 50's
+answer carries a literal *"Nearest Colleges That Teach Construction/Carpentry"* section citing Trade-Tech (131),
+Long Beach City (51) and El Camino (49) — the exact roll-up totals the builder computes, which is what pins the
+answer's provenance to that list rather than to the model's own knowledge of LA colleges.
+
+**So the session's own last PR fixed the item its handoff filed as Priority 1**, and the smoke run that proved
+it fired automatically on push, after the handoff was written and was never re-read. The practice that follows:
+**after your last deploy, re-read the smoke run that push triggered, before you write the handoff.**
+
+Incidental but load-bearing: on that query **`core` does no discriminating work at all** — every returned row is
+a construction/carpentry/welding/plumbing TOP program, so it scores 1000 for everyone — and the volume term
+saturates at `min(courses, 39)`, which every serious trades catalog clears. The **entire ordering rests on the
+proximity band**. Strip it and the same 150 rows answer an LA question with Oakland, Sacramento, San Diego and
+Riverside. Committed as a counterfactual so the band's value is measured rather than assumed.
+
+### Sierra can say what exists, never what a college has DONE
+
+Sam, on a live answer that hedged about CPR/AED student counts: *"You should have access to student counts based
+on eligible, applied, and transcribed CPL for exhibits that match the request."* He was right that the data
+exists and right that what we fetch is not it.
+
+Of the nine views in `fetch_custom_report.py`, `View_ExhibitCRsCatalog_Dataset` carries the credit funnel — but
+**statewide per exhibit, with no college dimension** — and **`CPLStatusPlan` appears in none of the nine.** So
+Sierra can be told *"this exhibit has X eligible credits statewide"* and never *"at YOUR college these twelve are
+sitting at Needs Action."* That is the difference between a number and an answer somebody can act on, and it is
+why the hedge was honest rather than evasive.
+
+Malone's API view is **not published**: `400 — View_StudentDetailCredits_APIDataset is not Valid`, same for two
+other spellings, still empty on a single-column retry (so it is the view name, not the columns).
+
+### The file kept failing to arrive, and that was the wrong problem
+
+The student-detail export has now failed to reach a session three times (Session 124, and twice today). ⭐ The
+decisive point is **not** the 10 MB cap: the Drive connector returns file content as a **base64 string into a
+session's context**, so a 9 MB tranche is ~12 MB of base64 — millions of tokens. **Splitting does not route
+around it**, because the rows pass through context either way. Six tranches would have failed six times.
+
+And they should not arrive anyway. `_build_cr_backlog.py` already states the rule — *the student grain never
+leaves the runner* — and Session 26 / #227 was a PII forward-stop needing a history rewrite. So the answer was to
+hand Sam a **local** aggregator: the grain stays on his machine, only counts travel. Salt lives at
+`~/.map_hash_salt`, outside any repo, because a hash of a small enumerable ID space is not anonymous without one.
+
+It worked first run: **537,908 rows · 42,345 distinct students statewide**, and **CPR / AED / first aid = 21,891
+credit recommendations held by 17,904 DISTINCT students across 106 colleges — 42% of every student in the system
+carrying a CPL recommendation.**
+
+### The 0.0% that looked like a finding
+
+That same run reported a **statewide disposition rate of 0.0% across 525,362 rows**. The matcher had taken a
+column named plainly `Status` — MAP's workflow stage (*Needs Action / Implementation / Faculty / Initiator /
+Articulation Officer*) — instead of `CPLStatusPlan`.
+
+⭐ **It was wrong in the direction that looked right.** This project already expects a low disposition rate
+(median 4.7%), so 0.0% read as a sharper version of a known finding rather than as a defect. A missing column
+errors out and somebody investigates; a wrong one produces a confident, plausible number that enters the record.
+
+The mechanism was **shape, not vocabulary**: one regex with alternation resolves to the first *column* matching
+*any* branch, so precedence is decided by header order in the file. Fixed by trying patterns most-specific-first
+across all columns, and by checking the observed **values** against what MAP writes — with the refinement that
+is the whole point, that the **shared** value (`Needs Action` appears in both columns) does not count as
+agreement. On disagreement it withholds the rate rather than emitting a zero. Full note:
+`docs/kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md`.
+
+Sam's pasted header row then closed it: `CPLStatusPlan` is the **last of 29 columns**, with the empty `Status`
+eighteen places earlier. No re-export needed. And the export carries the funnel **per row** — `PotentialCredits`,
+`CreditsInReview`, `AppliedCredits`, `TranscribedCredits` — which the script had been ignoring while counting
+rows. Now summed statewide, per family, per exhibit, with the standing caution that **credits SUM while students
+DEDUPE**.
+
+### Open
+
+- **Sam's re-run was never pasted back** — the disposition rates and credit funnel are one command away.
+- **Getting it into Sierra**: the per-exhibit rollup is keyed by `ExhibitID`, which joins to
+  `chatbox_exhibits.exhibit_id`. ⚠ Shared table feeding the production widget — blast radius first. And
+  `TotalStudentsForCR` varies within `(ExhibitID, CreditRecommendation)` in 19,461 of 108,911 groups, *still*
+  varying with `SkillLevel` added, so a naive per-exhibit student sum overstates.
+- Carried forward unresolved: the five-surface poaching audit, `creditforbeingyou.org/main/student` unverified,
+  the corpus at 59 of 123 colleges, and the 6 real feedback rows.

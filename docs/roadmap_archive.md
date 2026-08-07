@@ -3555,3 +3555,30 @@ Docker pull, so it reads like a permissions failure). 🔨 **Mode 7 stays red bu
 Dental-Board false positive is gone; it now names Norco (107 exhibits, ~50 mi) over the genuinely
 adjacent LA-basin colleges: **volume outranking distance** in the offerings path. Queued for SkyHero.
 Durable: `playbook-deploy-an-edge-function-from-the-runner`.
+
+
+---
+
+### SkyHero — the bug was one layer up, and four passes on what Sierra tells a seeker (2026-08-07, #1023 · #1024 · #1025 · #1026 · #1027 MERGED · deploys 7–10 green)
+
+Picked up SkyHunter's queued mode 7. The handoff diagnosed "volume outranking distance"; measuring found the
+cause **one layer up — the home college was never detected.** `detectAndFetchCollegeProfile` returned on the
+FIRST word with several matches, so `"angeles"` (9 colleges) short-circuited before `"harbor"` (exactly 1) — and
+⭐ **`.limit(3)` with no `ORDER BY` is non-deterministic**: two identical live calls returned different triples,
+so LA Harbor resolved only when it happened to land in an arbitrary window. **Retrieval itself was flaky**, which
+is a large share of what read as model flake. With no home college, `askedGeo` was null and nothing downstream
+*could* rank by distance. Also: the exhibit list had **no geography at all**. Three cases measured live —
+LA Harbor → every LA-county college above Norco; Fullerton/CPR → **Cypress (7 mi)** over Modesto (~300 mi);
+Crafton → **Chaffey (same county)** over Bakersfield. ⭐ **That third case was reported by a human in
+`sierra_feedback` on 2026-07-03** and sat at `status='new'` for five weeks — **43 rows, zero ever triaged**, 19 of
+them the smoke test polluting its own queue. Also **#1024** 📋 Copy on both surfaces (rich HTML + markdown, three
+tiers because the vendor iframe blocks the async Clipboard API). Then **four passes on student routing, each one
+Sam correcting the last**: both/and → **Yes/And** (a substance fix — my first version split them by FUNCTION,
+compare-there/act-here, but a seeker can see AND request review at BOTH) → the portal's **fuller portfolio
+process** → **anti-poaching** ("we don't want colleges angry at Sierra"). ⚠️ **Open, unresolved:** Sam's
+"err on the side of CPL seekers…while supporting our colleges" — #1027 as written can make Sierra **WITHHOLD**,
+which fails the seeker *and* the college; the restraint must bind salesmanship, not facts. **Mode 7 stays red on
+a NEW meaning** (see the roadmap row) and a 5-surface poaching audit was still running at checkpoint. Durable:
+`methodology-an-unordered-limit-is-a-correctness-bug`, `methodology-the-feedback-queue-already-knew`,
+`methodology-a-guardrail-that-only-forbids-disables-the-feature`. Story: `docs/cpl_assistant_lessons.md`
+§SkyHero · handoff `docs/session_125_handoff.md`.
