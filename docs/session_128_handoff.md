@@ -102,7 +102,58 @@ Expect `'status': 'CPLStatusPlan'` in the matched columns, a real disposition ra
 `credits — eligible / in review / applied / transcribed` line under both the statewide block and the family.
 **Ask him for it before doing anything else** — those numbers are Priority 2's input.
 
-## 🎯 Priority 2 — get it into Sierra
+
+## 🎯 Priority 2 — SAM'S DESIGN, and it supersedes mine (2026-08-07, end of session)
+
+I proposed an exhibit-grain rollup. **Sam corrected the grain, and he is right** — the value is not primarily
+student counts, it is the **CREDIT RECOMMENDATIONS inside an exhibit**:
+
+> *"The big opportunity lies in having the credit recommendations (CRs) associated with the exhibits, not just
+> for student counts but for analysis producing recommendations for colleges to adopt CRs in exhibits and to
+> show them where they are not being effective in awarding CRs."*
+
+A college can adopt an exhibit and still award only 2 of its 10 CRs. **Nobody can see that today, including
+them.** The same data drives the adoption pitch: *"colleges that adopted this typically award these seven."*
+
+⚠️ **I also overstated a constraint and it must not be inherited.** I told Sam Sierra could not query this. That
+is true only of RAW STUDENT ROWS at chat latency. A CR-grain AGGREGATE is entirely queryable: today's probe
+measured **108,911 distinct `(ExhibitID, CreditRecommendation)` pairs** statewide; crossed with college that is a
+few hundred thousand rows, which is nothing for indexed Postgres. Do not repeat "too big to query" — it is wrong.
+
+**His shape — two tables, not one:**
+
+1. **Exhibit aggregate** — credential level. Does it exist, who adopted it, how is it going.
+2. **CR aggregate** — `(exhibit × credit recommendation × college)` + counts + the credit funnel
+   (`PotentialCredits` / `CreditsInReview` / `AppliedCredits` / `TranscribedCredits`) + disposition split.
+   **This is the one that carries the analysis.**
+
+`funding/_student_detail_local.py` already reads every field this needs; it currently rolls up to exhibit only.
+Adding a CR-grain rollup is a small change to the same loop. Small-cell suppression still applies at the college
+level. Sam said he would **pick this up in a new session and explore** — start there, and start by asking him
+what a college should SEE, not what the table should hold.
+
+
+### ⭐ And the sharpest framing, Sam's last word on it
+
+> *"The CRs also show where students have eligible credit that has never been acted on or awarded... sitting
+> dormant."*
+
+That is the product in one sentence, and it is **only visible at CR grain**. A row with `PotentialCredits > 0`,
+`AppliedCredits = 0` and `CPLStatusPlan = 'Needs Action'` is **credit a real student has already earned that
+nobody has given them.** Roll that up and it is a statewide headline the CPL Initiative does not currently have:
+*how many units of already-earned credit are sitting unawarded, and at which colleges, for which credentials.*
+
+SkyPlan measured **436,720 rows at Needs Action (81%)** on the same export. Every one of them carries a
+`PotentialCredits` value. Nobody has summed it.
+
+That number is the reason to build this — the college-facing view ("you have N units of earned credit sitting
+unawarded, here are the CRs") and the seeker-facing one both fall out of it. Sum `PotentialCredits` where the
+disposition is `Needs Action`, per college and per CR, before anything else.
+
+⚠️ Do NOT publish it as a league table — the standing rule is **never rank colleges publicly** (`$50k / ESS`
+roadmap row). Frame it as unclaimed opportunity, not as a failing grade.
+
+## 🎯 Priority 2b — the plumbing (my original framing, still true)
 
 `chatbox_exhibits` has 11 columns and none of them are the funnel. The per-exhibit rollup the aggregator now
 emits is keyed by `ExhibitID`, which joins straight to `chatbox_exhibits.exhibit_id`. That is the bridge.
