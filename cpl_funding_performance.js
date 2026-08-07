@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-06",
+ "as_of": "2026-08-07",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42549,
-  "pa": 39878,
-  "p2": 4225,
-  "p3": 16162,
+  "pe": 41844,
+  "pa": 39147,
+  "p2": 3525,
+  "p3": 15374,
   "pp": 5,
-  "pe_u": 1347439.95,
-  "pa_u": 232333.15,
-  "p3_u": 93264.95,
+  "pe_u": 1334217.45,
+  "pa_u": 215571.65,
+  "p3_u": 76237.45,
   "pp_u": 25.0
  },
  "colleges": {
@@ -141,10 +141,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cerritos": {
-   "pe": 166,
-   "pe_u": 6634.0,
-   "pa": 166,
-   "pa_u": 533.0,
+   "pe": 169,
+   "pe_u": 6817.0,
+   "pa": 169,
+   "pa_u": 572.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -185,10 +185,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Citrus": {
-   "pe": 208,
-   "pe_u": 8126.0,
-   "pa": 208,
-   "pa_u": 832.0,
+   "pe": 210,
+   "pe_u": 8208.0,
+   "pa": 210,
+   "pa_u": 840.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -441,10 +441,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Glendale": {
-   "pe": 220,
-   "pe_u": 9854.5,
-   "pa": 220,
-   "pa_u": 1192.5,
+   "pe": 221,
+   "pe_u": 9892.5,
+   "pa": 221,
+   "pa_u": 1199.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -529,13 +529,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 1122,
-   "pe_u": 23022.0,
-   "pa": 1089,
-   "pa_u": 18264.0,
-   "p2": 720,
-   "p3": 1016,
-   "p3_u": 17943.0,
+   "pe": 328,
+   "pe_u": 5847.0,
+   "pa": 295,
+   "pa_u": 1194.0,
+   "p2": 19,
+   "p3": 223,
+   "p3_u": 879.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -551,10 +551,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Valley": {
-   "pe": 360,
-   "pe_u": 15851.0,
-   "pa": 359,
-   "pa_u": 1795.0,
+   "pe": 364,
+   "pe_u": 15980.0,
+   "pa": 363,
+   "pa_u": 1815.0,
    "p2": 0,
    "p3": 189,
    "p3_u": 945.0,
@@ -714,8 +714,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moorpark": {
-   "pe": 200,
-   "pe_u": 8664.0,
+   "pe": 226,
+   "pe_u": 9582.0,
    "pa": null,
    "pa_suppressed": true,
    "pa_u": null,
@@ -729,13 +729,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2395,
-   "pe_u": 50607.0,
-   "pa": 2064,
-   "pa_u": 12085.5,
-   "p2": 424,
-   "p3": 1959,
-   "p3_u": 11264.0,
+   "pe": 2400,
+   "pe_u": 50765.0,
+   "pa": 2069,
+   "pa_u": 12116.5,
+   "p2": 425,
+   "p3": 1964,
+   "p3_u": 11295.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -762,10 +762,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Napa": {
-   "pe": 51,
-   "pe_u": 2138.0,
-   "pa": 13,
-   "pa_u": 39.0,
+   "pe": 52,
+   "pe_u": 2253.0,
+   "pa": 14,
+   "pa_u": 42.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -773,10 +773,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Norco College": {
-   "pe": 714,
-   "pe_u": 24344.5,
-   "pa": 713,
-   "pa_u": 6117.5,
+   "pe": 720,
+   "pe_u": 24578.5,
+   "pa": 719,
+   "pa_u": 6147.5,
    "p2": 150,
    "p3": 438,
    "p3_u": 3957.0,
@@ -818,12 +818,12 @@ window.CPL_FUNDING_PERF = {
   },
   "Palo Verde": {
    "pe": 17,
-   "pe_u": 596.25,
+   "pe_u": 601.75,
    "pa": 17,
-   "pa_u": 173.25,
+   "pa_u": 178.75,
    "p2": 8,
    "p3": 8,
-   "p3_u": 146.25,
+   "p3_u": 151.75,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -927,10 +927,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego City": {
-   "pe": 4251,
-   "pe_u": 92938.5,
-   "pa": 4250,
-   "pa_u": 14525.0,
+   "pe": 4261,
+   "pe_u": 93424.5,
+   "pa": 4260,
+   "pa_u": 14565.0,
    "p2": 121,
    "p3": 2837,
    "p3_u": 8844.0,
@@ -938,10 +938,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego Mesa": {
-   "pe": 4625,
-   "pe_u": 101367.5,
-   "pa": 4625,
-   "pa_u": 15367.5,
+   "pe": 4642,
+   "pe_u": 102399.5,
+   "pa": 4642,
+   "pa_u": 15435.5,
    "p2": 117,
    "p3": 3095,
    "p3_u": 9249.5,
@@ -949,10 +949,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego Miramar": {
-   "pe": 3087,
-   "pe_u": 92206.2,
-   "pa": 3087,
-   "pa_u": 11756.7,
+   "pe": 3100,
+   "pe_u": 92754.2,
+   "pa": 3100,
+   "pa_u": 11808.7,
    "p2": 85,
    "p3": 1502,
    "p3_u": 5390.7,
@@ -1140,10 +1140,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Ventura": {
-   "pe": 173,
-   "pe_u": 10140.0,
-   "pa": 173,
-   "pa_u": 880.0,
+   "pe": 174,
+   "pe_u": 10164.0,
+   "pa": 174,
+   "pa_u": 885.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1270,29 +1270,1684 @@ window.CPL_FUNDING_PERF = {
    "pe_suppressed": true
   }
  },
+ "cpl_types": {
+  "Alameda": {
+   "Military": {
+    "pe": 13,
+    "pa": 13,
+    "p3": 0
+   }
+  },
+  "Allan Hancock": {
+   "Military": {
+    "pe": 140,
+    "pa": 140,
+    "p3": 0
+   }
+  },
+  "American River": {
+   "Military": {
+    "pe": 44,
+    "pa": 44,
+    "p3": 0
+   }
+  },
+  "Antelope Valley": {
+   "Military": {
+    "pe": 278,
+    "pa": 278,
+    "p3": 0
+   }
+  },
+  "Bakersfield": {
+   "Industry Certification": {
+    "pe": 33,
+    "pa": 30,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Military": {
+    "pe": 8,
+    "pa": 8,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 536,
+    "pa": 533,
+    "p3": 26
+   }
+  },
+  "Barstow": {
+   "Military": {
+    "pe": 137,
+    "pa": 137,
+    "p3": 0
+   }
+  },
+  "Berkeley City": {
+   "Military": {
+    "pe": 16,
+    "pa": 16,
+    "p3": 0
+   }
+  },
+  "Butte": {
+   "Military": {
+    "pe": 9,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Cabrillo": {
+   "Credit By Exam": {
+    "pe": 17,
+    "pa": 17,
+    "p3": 15
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification": {
+    "pe": 7,
+    "pa": 7,
+    "p3": 5
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 179,
+    "pa": 174,
+    "p3": 18
+   },
+   "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "Canada": {
+   "Military": {
+    "pe": 29,
+    "pa": 29,
+    "p3": 0
+   }
+  },
+  "Canyons": {
+   "Military": {
+    "pe": 504,
+    "pa": 504,
+    "p3": 0
+   }
+  },
+  "Cerritos": {
+   "Military": {
+    "pe": 169,
+    "pa": 169,
+    "p3": 0
+   }
+  },
+  "Cerro Coso": {
+   "Military": {
+    "pe": 166,
+    "pa": 162,
+    "p3": 0
+   }
+  },
+  "Chabot": {
+   "Military": {
+    "pe": 15,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Chaffey": {
+   "Industry Certification": {
+    "pe": 20,
+    "pa": 18,
+    "p3": 17
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 321,
+    "pa": 317,
+    "p3": 6
+   },
+   "Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Standardized Assessment": {
+    "pe": 1148,
+    "pa": 1148,
+    "p3": 6
+   }
+  },
+  "Citrus": {
+   "Military": {
+    "pe": 210,
+    "pa": 210,
+    "p3": 0
+   }
+  },
+  "Clovis": {
+   "Military": {
+    "pe": 186,
+    "pa": 186,
+    "p3": 0
+   }
+  },
+  "Coastline": {
+   "Military": {
+    "pe": 896,
+    "pa": 527,
+    "p3": 0
+   }
+  },
+  "Columbia": {
+   "Military": {
+    "pe": 21,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Compton": {
+   "Military": {
+    "pe": 21,
+    "pa": 21,
+    "p3": 0
+   }
+  },
+  "Contra Costa": {
+   "Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Copper Mountain": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 77,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "Crafton Hills": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 20,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "Cuesta": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 93,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "Cuyamaca": {
+   "Military": {
+    "pe": 93,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Cypress": {
+   "Credit By Exam": {
+    "pe": 115,
+    "pa": 115,
+    "p3": 13
+   },
+   "Credit By Exam | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 387,
+    "pa": 387,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Portfolio Review": {
+    "pe": 133,
+    "pa": 133,
+    "p3": 0
+   }
+  },
+  "De Anza": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": null,
+    "pa": null,
+    "p3": 0,
+    "pe_suppressed": true,
+    "pa_suppressed": true
+   }
+  },
+  "Desert": {
+   "Industry Certification": {
+    "pe": null,
+    "pa": null,
+    "p3": null,
+    "pe_suppressed": true,
+    "pa_suppressed": true,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 369,
+    "pa": 369,
+    "p3": 0
+   }
+  },
+  "Diablo Valley": {
+   "Military": {
+    "pe": 172,
+    "pa": 172,
+    "p3": 0
+   }
+  },
+  "East LA": {
+   "Military": {
+    "pe": 230,
+    "pa": 228,
+    "p3": 25
+   }
+  },
+  "El Camino": {
+   "Military": {
+    "pe": 460,
+    "pa": 460,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "Evergreen Valley": {
+   "Military": {
+    "pe": 111,
+    "pa": 110,
+    "p3": 0
+   }
+  },
+  "Feather River": {
+   "Military": {
+    "pe": 10,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Foothill": {
+   "Military": {
+    "pe": 73,
+    "pa": 73,
+    "p3": 0
+   }
+  },
+  "Fresno City": {
+   "Military": {
+    "pe": 559,
+    "pa": 559,
+    "p3": 0
+   }
+  },
+  "Fullerton": {
+   "Military": {
+    "pe": 555,
+    "pa": 236,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "Gavilan": {
+   "Military": {
+    "pe": 46,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Glendale": {
+   "Military": {
+    "pe": 221,
+    "pa": 221,
+    "p3": 0
+   }
+  },
+  "Golden West": {
+   "Military": {
+    "pe": 98,
+    "pa": 98,
+    "p3": 0
+   }
+  },
+  "Hartnell": {
+   "Military": {
+    "pe": 38,
+    "pa": 38,
+    "p3": 0
+   }
+  },
+  "Irvine": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 124,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "LA City": {
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 0,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "LA Harbor": {
+   "Military": {
+    "pe": 135,
+    "pa": 135,
+    "p3": 0
+   }
+  },
+  "LA Mission": {
+   "Military": {
+    "pe": 152,
+    "pa": 152,
+    "p3": 0
+   }
+  },
+  "LA Pierce": {
+   "Credit By Exam": {
+    "pe": 203,
+    "pa": 203,
+    "p3": 203
+   },
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": null,
+    "pa": null,
+    "p3": null,
+    "pe_suppressed": true,
+    "pa_suppressed": true,
+    "p3_suppressed": true
+   }
+  },
+  "LA Trade": {
+   "Military": {
+    "pe": 59,
+    "pa": 59,
+    "p3": 0
+   }
+  },
+  "LA Valley": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 363,
+    "p3": 189,
+    "pe_suppressed": true
+   }
+  },
+  "Laney": {
+   "Military": {
+    "pe": 49,
+    "pa": 49,
+    "p3": 0
+   }
+  },
+  "Las Positas": {
+   "Military": {
+    "pe": 18,
+    "pa": 18,
+    "p3": 0
+   }
+  },
+  "Lassen": {
+   "Military": {
+    "pe": 140,
+    "pa": 140,
+    "p3": 0
+   }
+  },
+  "Long Beach": {
+   "Military": {
+    "pe": 806,
+    "pa": 806,
+    "p3": 0
+   }
+  },
+  "Los Medanos": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 15,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "Madera": {
+   "Military": {
+    "pe": 43,
+    "pa": 43,
+    "p3": 0
+   }
+  },
+  "Mendocino": {
+   "Military": {
+    "pe": 7,
+    "pa": 7,
+    "p3": 0
+   }
+  },
+  "Merced": {
+   "Credit By Exam": {
+    "pe": 54,
+    "pa": 54,
+    "p3": 54
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Credit By Exam | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification": {
+    "pe": 8,
+    "pa": 7,
+    "p3": 7
+   },
+   "Industry Certification | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 270,
+    "pa": 270,
+    "p3": 233
+   },
+   "Military | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Portfolio Review": {
+    "pe": 17,
+    "pa": 17,
+    "p3": 17
+   },
+   "Portfolio Review | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Standardized Assessment": {
+    "pe": 2985,
+    "pa": 2985,
+    "p3": 2985
+   }
+  },
+  "Merritt": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": null,
+    "pa": null,
+    "p3": 0,
+    "pe_suppressed": true,
+    "pa_suppressed": true
+   }
+  },
+  "MiraCosta": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Mission": {
+   "Military": {
+    "pe": 146,
+    "pa": 146,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "Modesto": {
+   "Credit By Exam": {
+    "pe": 72,
+    "pa": 67,
+    "p3": 66
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": 8,
+    "pa": 7,
+    "p3": 7
+   },
+   "Credit By Exam | Industry Certification | Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Portfolio Review | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Standardized Assessment": {
+    "pe": 14,
+    "pa": 13,
+    "p3": 12
+   },
+   "Industry Certification": {
+    "pe": 45,
+    "pa": 43,
+    "p3": 40
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": 8,
+    "pa": 8,
+    "p3": 8
+   },
+   "Industry Certification | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 138,
+    "pa": 137,
+    "p3": 5
+   },
+   "Portfolio Review": {
+    "pe": 22,
+    "pa": 19,
+    "p3": 18
+   },
+   "Standardized Assessment": {
+    "pe": 26,
+    "pa": 26,
+    "p3": 25
+   }
+  },
+  "Monterey": {
+   "Military": {
+    "pe": 126,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Moorpark": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 223,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Moreno Valley": {
+   "Credit By Exam": {
+    "pe": 1070,
+    "pa": 741,
+    "p3": 741
+   },
+   "Credit By Exam | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification": {
+    "pe": 139,
+    "pa": 139,
+    "p3": 124
+   },
+   "Industry Certification | Military": {
+    "pe": 16,
+    "pa": 16,
+    "p3": 16
+   },
+   "Industry Certification | Military | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 962,
+    "pa": 960,
+    "p3": 873
+   },
+   "Standardized Assessment": {
+    "pe": 206,
+    "pa": 206,
+    "p3": 205
+   }
+  },
+  "Mt San Antonio": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 731,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "Mt. San Jacinto": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": null,
+    "pa": 532,
+    "p3": 0,
+    "pe_suppressed": true
+   }
+  },
+  "Napa": {
+   "Military": {
+    "pe": 49,
+    "pa": 14,
+    "p3": 0
+   }
+  },
+  "Norco College": {
+   "Credit By Exam": {
+    "pe": 133,
+    "pa": 133,
+    "p3": 113
+   },
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 487,
+    "pa": 487,
+    "p3": 249
+   },
+   "Portfolio Review": {
+    "pe": 90,
+    "pa": 90,
+    "p3": 72
+   }
+  },
+  "Ohlone": {
+   "Military": {
+    "pe": 130,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Oxnard": {
+   "Military": {
+    "pe": 154,
+    "pa": 154,
+    "p3": 0
+   }
+  },
+  "Palo Verde": {
+   "Industry Certification": {
+    "pe": 8,
+    "pa": 8,
+    "p3": 8
+   },
+   "Military": {
+    "pe": 9,
+    "pa": 9,
+    "p3": 0
+   }
+  },
+  "Pasadena": {
+   "Military": {
+    "pe": 130,
+    "pa": 130,
+    "p3": 0
+   }
+  },
+  "Porterville": {
+   "Military": {
+    "pe": 25,
+    "pa": 25,
+    "p3": 0
+   }
+  },
+  "Redwoods": {
+   "Military": {
+    "pe": 33,
+    "pa": 33,
+    "p3": 0
+   }
+  },
+  "Reedley College": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Military": {
+    "pe": 121,
+    "pa": 105,
+    "p3": 0
+   },
+   "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Riverside": {
+   "Industry Certification": {
+    "pe": null,
+    "pa": null,
+    "p3": null,
+    "pe_suppressed": true,
+    "pa_suppressed": true,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 809,
+    "pa": 799,
+    "p3": 671
+   }
+  },
+  "Sacramento City": {
+   "Military": {
+    "pe": 60,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Saddleback": {
+   "Military": {
+    "pe": 57,
+    "pa": 57,
+    "p3": 0
+   }
+  },
+  "San Bernardino": {
+   "Credit By Exam": {
+    "pe": 66,
+    "pa": 66,
+    "p3": 62
+   },
+   "Credit By Exam | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification": {
+    "pe": 21,
+    "pa": 19,
+    "p3": 13
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": 5,
+    "pa": 5,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 202,
+    "pa": 200,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Portfolio Review": {
+    "pe": 6,
+    "pa": 5,
+    "p3": 5
+   }
+  },
+  "San Diego City": {
+   "Credit By Exam": {
+    "pe": 2830,
+    "pa": 2830,
+    "p3": 2823
+   },
+   "Credit By Exam | Military": {
+    "pe": 8,
+    "pa": 8,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification": {
+    "pe": 6,
+    "pa": null,
+    "p3": 6,
+    "pa_suppressed": true
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 1414,
+    "pa": 1414,
+    "p3": 0
+   },
+   "Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "San Diego Mesa": {
+   "Credit By Exam": {
+    "pe": 3095,
+    "pa": 3095,
+    "p3": 3089
+   },
+   "Credit By Exam | Military": {
+    "pe": 6,
+    "pa": 6,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 1541,
+    "pa": 1541,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "San Diego Miramar": {
+   "Credit By Exam": {
+    "pe": 1476,
+    "pa": 1476,
+    "p3": 1468
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Credit By Exam | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification": {
+    "pe": 35,
+    "pa": 35,
+    "p3": 29
+   },
+   "Military": {
+    "pe": 1583,
+    "pa": 1583,
+    "p3": 0
+   }
+  },
+  "San Francisco": {
+   "Industry Certification": {
+    "pe": 7,
+    "pa": 7,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Industry Certification | Military | Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 1236,
+    "pa": 1227,
+    "p3": 9
+   },
+   "Standardized Assessment": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "San Joaquin Delta": {
+   "Military": {
+    "pe": 492,
+    "pa": 492,
+    "p3": 0
+   }
+  },
+  "San Jose City": {
+   "Military": {
+    "pe": 120,
+    "pa": 102,
+    "p3": 0
+   }
+  },
+  "San Mateo": {
+   "Military": {
+    "pe": 180,
+    "pa": 180,
+    "p3": 0
+   }
+  },
+  "Santa Ana": {
+   "Credit By Exam": {
+    "pe": 63,
+    "pa": 63,
+    "p3": 0
+   },
+   "Industry Certification": {
+    "pe": 11,
+    "pa": 10,
+    "p3": 0
+   },
+   "Industry Certification | Other": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": 0,
+    "p3": 0
+   },
+   "Military": {
+    "pe": 364,
+    "pa": 358,
+    "p3": 0
+   },
+   "Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Santa Barbara": {
+   "Military": {
+    "pe": 86,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Santa Monica": {
+   "Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "Santa Rosa": {
+   "Military": {
+    "pe": 439,
+    "pa": 436,
+    "p3": 0
+   }
+  },
+  "Santiago Canyon": {
+   "Industry Certification": {
+    "pe": null,
+    "pa": null,
+    "p3": 0,
+    "pe_suppressed": true,
+    "pa_suppressed": true
+   },
+   "Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Military": {
+    "pe": 109,
+    "pa": 109,
+    "p3": 0
+   },
+   "Portfolio Review": {
+    "pe": 308,
+    "pa": 307,
+    "p3": 0
+   }
+  },
+  "Sequoias": {
+   "Military": {
+    "pe": 174,
+    "pa": 174,
+    "p3": 0
+   }
+  },
+  "Shasta": {
+   "Military": {
+    "pe": 179,
+    "pa": 179,
+    "p3": 0
+   }
+  },
+  "Sierra": {
+   "Military": {
+    "pe": 338,
+    "pa": 338,
+    "p3": 0
+   }
+  },
+  "Skyline": {
+   "Military": {
+    "pe": 105,
+    "pa": 105,
+    "p3": 0
+   }
+  },
+  "Solano": {
+   "Military": {
+    "pe": 157,
+    "pa": 157,
+    "p3": 0
+   }
+  },
+  "Southwestern": {
+   "Military": {
+    "pe": 552,
+    "pa": 552,
+    "p3": 0
+   }
+  },
+  "Taft": {
+   "Military": {
+    "pe": 11,
+    "pa": 0,
+    "p3": 0
+   }
+  },
+  "Ventura": {
+   "Military": {
+    "pe": 174,
+    "pa": 174,
+    "p3": 0
+   }
+  },
+  "Victor Valley": {
+   "Military": {
+    "pe": 333,
+    "pa": 333,
+    "p3": 0
+   }
+  },
+  "West Hills Coalinga": {
+   "Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   }
+  },
+  "West Hills Lemoore": {
+   "Credit By Exam": {
+    "pe": 268,
+    "pa": 262,
+    "p3": 47
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": null,
+    "pa": null,
+    "p3": 0,
+    "pe_suppressed": true,
+    "pa_suppressed": true
+   },
+   "Credit By Exam | Industry Certification | Military | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Military": {
+    "pe": 30,
+    "pa": 29,
+    "p3": 0
+   }
+  },
+  "West LA": {
+   "Credit By Exam": {
+    "pe": null,
+    "pa": null,
+    "p3": 10,
+    "pe_suppressed": true,
+    "pa_suppressed": true
+   },
+   "Credit By Exam | Industry Certification": {
+    "pe": 18,
+    "pa": 18,
+    "p3": 14
+   },
+   "Industry Certification": {
+    "pe": 551,
+    "pa": 551,
+    "p3": 537
+   },
+   "Industry Certification | Military": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
+   "Military": {
+    "pe": 147,
+    "pa": 96,
+    "p3": null,
+    "p3_suppressed": true
+   }
+  },
+  "West Valley": {
+   "Military": {
+    "pe": 55,
+    "pa": 55,
+    "p3": 0
+   }
+  },
+  "Woodland": {
+   "Military": {
+    "pe": 8,
+    "pa": 8,
+    "p3": 0
+   }
+  }
+ },
+ "cpl_types_statewide": {
+  "Credit By Exam": {
+   "pe": 9477,
+   "pa": 9137,
+   "p3": 8704
+  },
+  "Credit By Exam | Industry Certification": {
+   "pe": 44,
+   "pa": 42,
+   "p3": 23
+  },
+  "Credit By Exam | Industry Certification | Military | Portfolio Review": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": 0
+  },
+  "Credit By Exam | Industry Certification | Other": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Credit By Exam | Industry Certification | Portfolio Review": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Credit By Exam | Military": {
+   "pe": 20,
+   "pa": 20,
+   "p3": 16
+  },
+  "Credit By Exam | Other": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Credit By Exam | Portfolio Review": {
+   "pe": 5,
+   "pa": 5,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Credit By Exam | Portfolio Review | Standardized Assessment": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Credit By Exam | Standardized Assessment": {
+   "pe": 16,
+   "pa": 15,
+   "p3": 14
+  },
+  "Industry Certification": {
+   "pe": 984,
+   "pa": 962,
+   "p3": 882
+  },
+  "Industry Certification | Military": {
+   "pe": 45,
+   "pa": 44,
+   "p3": 28
+  },
+  "Industry Certification | Military | Portfolio Review": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Industry Certification | Military | Standardized Assessment": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Industry Certification | Other": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": 0
+  },
+  "Industry Certification | Portfolio Review": {
+   "pe": 23,
+   "pa": 21,
+   "p3": 15
+  },
+  "Industry Certification | Standardized Assessment": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Military": {
+   "pe": 26094,
+   "pa": 23927,
+   "p3": 2330
+  },
+  "Military | Portfolio Review": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": 0
+  },
+  "Military | Standardized Assessment": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Other": {
+   "pe": 6,
+   "pa": 5,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Portfolio Review": {
+   "pe": 582,
+   "pa": 576,
+   "p3": 115
+  },
+  "Portfolio Review | Standardized Assessment": {
+   "pe": null,
+   "pe_suppressed": true,
+   "pa": null,
+   "pa_suppressed": true,
+   "p3": null,
+   "p3_suppressed": true
+  },
+  "Standardized Assessment": {
+   "pe": 4370,
+   "pa": 4368,
+   "p3": 3224
+  }
+ },
+ "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
  "unit_crosscheck": {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1346963.45,
-   "pa_u": 232333.15,
-   "p3_u": 93264.95
+   "pe_u": 1333740.95,
+   "pa_u": 215571.65,
+   "p3_u": 76237.45
   },
   "map": {
-   "pe_u": 1354550.95,
-   "pa_u": 233011.65,
-   "p3_u": 93289.95
+   "pe_u": 1341328.45,
+   "pa_u": 216250.15,
+   "p3_u": 76262.45
   },
   "ratio": {
-   "pe_u": 1.0056,
-   "pa_u": 1.0029,
+   "pe_u": 1.0057,
+   "pa_u": 1.0031,
    "p3_u": 1.0003
   }
  },
  "vet_star": {
   "Merced": true,
   "Chaffey": true,
-  "LA Pierce": false,
   "San Diego Mesa": true,
   "Santiago Canyon": false,
   "San Diego City": true,
@@ -1331,6 +2986,7 @@ window.CPL_FUNDING_PERF = {
   "Solano": false,
   "Victor Valley": true,
   "LA Mission": true,
+  "LA Pierce": false,
   "Ventura": false,
   "Mission": true,
   "Sequoias": false,
@@ -1342,9 +2998,9 @@ window.CPL_FUNDING_PERF = {
   "San Jose City": true,
   "Oxnard": true,
   "Golden West": false,
+  "Cerritos": true,
   "Allan Hancock": false,
   "San Mateo": true,
-  "Cerritos": true,
   "Diablo Valley": true,
   "Reedley College": true,
   "Lassen": true,
@@ -1406,7 +3062,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-06",
+ "vet_star_as_of": "2026-08-07",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };
