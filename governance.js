@@ -444,8 +444,16 @@
     function commit(name) {
       var note = ov.querySelector("#gov-own-note").value.trim();
       close();
-      render(root);                       // optimistic repaint
-      saveOwner(id, name, note).catch(function () {
+      // ORDER IS LOAD-BEARING. saveOwner() performs the optimistic local write
+      // (state.owners[id] = payload) synchronously, before its fetch — so the
+      // repaint must come AFTER it. It used to come before, which meant the
+      // first Save painted the pre-change state and the row still read "needs an
+      // owner"; the value only appeared when the dialog was reopened and saved a
+      // SECOND time, because by then the first click's write was in state. The
+      // save itself had always worked — only the UI lied. (Sam, 2026-08-07.)
+      var saving = saveOwner(id, name, note);
+      render(root);
+      saving.catch(function () {
         alert("Could not save that owner. Sign in on the Team & RACI tab "
           + "(reviewer or team phrase) and try again.");
         loadOwners().then(function () { render(root); });
