@@ -129,11 +129,38 @@ def probe(view):
     rows = ds.get("columnValue") or []
     print(f"    viewName={ds.get('viewName')!r} dataCount={ds.get('dataCount')} "
           f"parsed_rows={len(rows):,}")
-    print(f"    columns returned ({len(cols)}): {cols}")
+    # PRINT WHAT THE API SAID. The first run of this probe reported a bare
+    # "NOT FOUND" while the response carried `responseCode` and
+    # `responseMessage` — the endpoint was explaining itself and the probe threw
+    # it away. A detector is only as good as what it prints
+    # (docs/kb-notes/methodology-judge-a-detector-by-what-it-prints.md).
+    print(f"    responseCode={ds.get('responseCode')!r} "
+          f"responseMessage={ds.get('responseMessage')!r}")
+    print(f"    columns echoed ({len(cols)}): {cols}")
     if not rows:
         print("    NO ROWS — response keys:", list(ds.keys()))
-        print("    (a 200 with no rows usually means the view name is wrong, not "
-              "that the view is empty)")
+        # The echo is the REQUEST reflected back, not proof the view has those
+        # columns — so an unknown view and a rejected column look identical
+        # here. Re-ask for one ubiquitous column to tell them apart: still empty
+        # ⇒ the VIEW is unknown; rows now ⇒ a COLUMN in the allowlist was the
+        # problem, which is a completely different fix.
+        print("    disambiguating: re-requesting with a single column ('Location')…")
+        try:
+            raw2 = fetch(view, ["Location"])
+            d2 = json.loads(raw2)
+            ds2 = d2[0] if isinstance(d2, list) and d2 else d2
+            n2 = len(ds2.get("columnValue") or []) if isinstance(ds2, dict) else 0
+            print(f"      single-column rows={n2:,} "
+                  f"responseMessage={ds2.get('responseMessage')!r}"
+                  if isinstance(ds2, dict) else f"      unexpected: {ds2!r}")
+            if n2:
+                print("      → the VIEW EXISTS; one of the requested COLUMNS is "
+                      "what emptied the response. Bisect the allowlist next.")
+                return None
+            print("      → still empty on a single column ⇒ the VIEW NAME is unknown "
+                  "to the API, not a column problem.")
+        except Exception as e:                               # noqa: BLE001
+            print(f"      single-column retry failed: {type(e).__name__}: {e}")
         return None
     return ds
 
