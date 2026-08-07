@@ -54,7 +54,7 @@ check("register: unowned rows exist and are explicit null (the review queue)",
   REG.decision_rights.some((d) => d.owner === null));
 // Every `live` key a row points at must be one the renderer knows how to
 // resolve, or the page silently shows nothing where a number was promised.
-const KNOWN_LIVE = ["contact_pc", "contact_coord", "landing", "users", "sync", "nudge"];
+const KNOWN_LIVE = ["contact_pc", "contact_coord", "landing", "users", "sync", "nudge", "feedback"];
 check("register: every live key is one the renderer implements",
   REG.decision_rights.concat(REG.cadences)
     .every((r) => r.live == null || KNOWN_LIVE.indexOf(r.live) >= 0));
@@ -177,6 +177,62 @@ function makeWin(opts) {
   check("markdown: a never-run cadence stays never-run in the export",
     /NEVER RUN/.test(md));
   check("markdown: includes the open questions", /Open questions/.test(md));
+})();
+
+// (d2) CA-06 — the Sierra feedback loop must report its OWN backlog, and must
+// not count the CI smoke test toward it. The smoke test writes through the same
+// public anon RPC a visitor's browser uses and cannot delete its own rows, so on
+// 2026-08-07 it was 28 of 53 — an unfiltered count here would have this page
+// reporting our own robot back to us as if it were unread user feedback.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  // 4 real rows (3 still open, 1 addressed) + 6 smoke rows that must not count.
+  G._state.live = { fbTotal: 4, fbOpen: 3 };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  const html = r.innerHTML;
+  check("CA-06 renders the live untriaged count, not the stored state",
+    /3 of 4 untriaged/.test(html));
+  check("CA-06 flags the backlog as bad, not neutral",
+    /gov-bad[^>]*>3 of 4 untriaged/.test(html));
+  check("CA-06 is in the register as a never-run cadence",
+    REG.cadences.some((c) => c.id === "CA-06" && c.state === "never-run" && c.owner == null));
+  check("DR-11 covers what Sierra tells the public and is load-bearing",
+    REG.decision_rights.some((d) => d.id === "DR-11" && d.load_bearing === true && d.owner == null));
+  check("OQ-07 asks what must be true before the team is invited",
+    REG.open_questions.some((q) => q.id === "OQ-07" && /invite/i.test(q.q)));
+  // The markdown is what leaves the tab and enters a meeting — it must carry the
+  // same number, loudly. A register that reads clean on export while the tab
+  // shows a backlog is worse than not exporting at all.
+  const md = G._toMarkdown ? G._toMarkdown() : "";
+  if (md) check("markdown export carries the untriaged count", /3 of 4 UNTRIAGED/.test(md));
+})();
+
+// A triaged queue must read as triaged — the permission half of the same lens.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { fbTotal: 12, fbOpen: 0 };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("CA-06 reads as clear when nothing is untriaged",
+    /all <b>12<\/b> triaged/.test(r.innerHTML) && !/untriaged/.test(r.innerHTML));
+})();
+
+// When the live read fails, fall back to the stored state rather than claiming
+// zero — "0 untriaged" from a failed fetch is the worst possible lie here.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = {};            // fetch failed / not signed in
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("CA-06 falls back to stored state when the live read is unavailable",
+    /never-run/.test(r.innerHTML) && !/0 of 0/.test(r.innerHTML));
 })();
 
 // ── report ──

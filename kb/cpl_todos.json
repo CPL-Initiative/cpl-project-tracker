@@ -8,7 +8,7 @@
       "id": "sierra-feedback-unread",
       "for": "sam",
       "tab": "cobi",
-      "text": "📬 SIX FEEDBACK REPORTS STILL NEED YOU — the inbox is cleaned up (our test robot's 28 rows are filtered out, and 4 reports whose fixes have shipped are marked done). What's left is 6 real ones. The most useful: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she can name them one at a time — that's a build, not a bug. Two are data gaps you already know about (student counts per certificate). Three need your eye: Modesto showing 75 early-childhood credit recommendations when its landing page shows 4; Sierra reading the Fullerton catalogue in one answer and not the next; and a bare thumbs-down on College of the Canyons with no note. ⚠ Please don't invite the MAP and CO teams to test Sierra until someone owns this inbox — a few hundred unread rows would teach people their feedback goes nowhere."
+      "text": "📬 SEVEN FEEDBACK REPORTS STILL NEED YOU — the inbox is cleaned up (our test robot's 31 rows are filtered out of the queue and the counts, and 4 reports whose fixes have shipped are marked done). The most useful of what's left: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she names them one at a time — that's a build, not a bug. Two are data gaps you already know about (student counts per certificate). The rest need an eye: Modesto showing 75 early-childhood credit recommendations when its landing page shows 4; Sierra reading the Fullerton catalogue in one answer and not the next; a bare thumbs-down on College of the Canyons; and the 17 July 'I don't have a college yet' report, which the student-portal work probably fixed but nobody has confirmed. ⚠ Please don't invite the MAP and CO teams until this has an owner — it's now CA-06 on the ⚖️ Governance tab, and that tab will show you the untriaged count live."
     },
     {
       "id": "sierra-portal-link-check",
@@ -45,6 +45,12 @@
       "for": "fable",
       "tab": "cobi",
       "text": "🧪 FIND OUT WHY SIERRA SKIPS THE NEAREST TEACHING COLLEGE — measure before touching prompt text. Either the course-catalog search returns a thin list when the question names a college (mode 7's wording includes 'Los Angeles Harbor College'; the working question doesn't), or the list is there and she just doesn't use it. Those need opposite fixes and guessing between them is how this workstream has burned weeks before. Extend tests/sierra_geo_ranking.test.js to assert the ordered college list for this exact query."
+    },
+    {
+      "id": "gov-sierra-rows",
+      "for": "sam",
+      "tab": "governance",
+      "text": "⚖️ THREE NEW GOVERNANCE ROWS TO ASSIGN — you were right that neither the test invitation nor Sierra generally was on the register. Added: DR-11 (who decides what Sierra tells the public — in practice that's been you personally, four times in two days), CA-06 (Sierra feedback triage, which shows its own untriaged count live), and OQ-07 (what has to be true before we invite the MAP and CO teams). All three need an owner, same as every other row."
     }
   ]
 }
