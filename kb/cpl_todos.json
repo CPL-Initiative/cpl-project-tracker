@@ -1,50 +1,26 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-07 · SkyHero — Sierra now knows which college you're asking about, and points you to both your college and the student portal. Two decisions waiting on Sam.",
-  "_session": "SkyHero (124)",
-  "_status": "Sierra used to recommend a college fifty miles away when four were minutes down the road. The cause turned out not to be the distance ranking at all — she was never working out WHICH college you were asking about. The question 'Does Los Angeles Harbor College…' matched the word 'Angeles' against nine colleges, gave up, and never tried the word 'Harbor', which matches exactly one. Worse, the database was free to hand back any three of those nine, and did — two identical questions, two different answers. That is why she seemed unreliable in a way nobody could pin down: it was not the AI being vague, it was the lookup being random. Fixed, and she now offers a nearby college rather than a big distant one — a colleague reported this exact problem on 3 July and it sat unread in the feedback box for five weeks. Also new: a Copy button on every answer, and Sierra now tells people about BOTH their own college's CPL page AND Credit for Being You, explaining what each is for. Two things need your call: whether Sierra should point a student to a nearby college that teaches a subject (which colleges may not love), and the fact that nobody has ever read the feedback people have been leaving.",
+  "_as_of": "2026-08-07 · SkyMiner — both of Sam's decisions are shipped and live. The feedback queue turned out to be 53% our own test robot, and it had already reported three of the last four fixes weeks early.",
+  "_session": "SkyMiner (126)",
+  "_status": "Two questions were waiting for Sam and he answered both, so both are now live on Sierra (deploy 11). First: when someone asks about a certificate their college hasn't set up yet, Sierra used to go quiet to avoid looking like she was poaching students off a college's own web page. She no longer does. The new line is that she never HIDES anything that changes your outcome — she'll tell you where the credit exists today and that your college could adopt it — but she never SELLS you on going elsewhere. Second: when your college doesn't offer it, she now gives all three parts of the answer instead of stopping after two: your own college first, then the colleges that have already set this up (proof it works), then the nearest colleges that actually teach the subject — even if none of them has set up the credit yet. That last part is the one that had gone missing, and it's the only part that gives someone somewhere to go this month. Separately, opening the feedback inbox produced an uncomfortable finding: of 53 ratings, 28 were written by our own automated test, every one of them a thumbs-down, so the headline said 38 complaints when only 10 were real. Worse, the real ones had already told us what to fix — a reviewer described the student-portal problem on 17 July, three weeks before it came up in conversation and got fixed. The test rows are now filtered out of the queue and the counts, and four reports whose fixes have shipped are marked done.",
   "items": [
-    {
-      "id": "sierra-seeker-vs-college",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "⚖️ YOUR CALL — HOW FAR DO WE GO FOR THE STUDENT? You said err on the side of CPL seekers while supporting our colleges. The rule I wrote to stop Sierra 'poaching' students off a college's own page can backfire: told never to volunteer a comparison, she may stay quiet when someone asks about a certificate their college hasn't set up yet — which helps nobody. My proposed line: she never HIDES something that changes your outcome, but she never SELLS you on another college either. Say yes and I'll ship it."
-    },
-    {
-      "id": "sierra-mode7-intent",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "🧭 YOUR CALL — WHAT SHOULD SIERRA SAY WHEN YOUR COLLEGE DOESN'T OFFER IT? Asked about NCCER carpentry at LA Harbor, she now names Norco and Barstow, the two colleges that have actually SET UP that credit, and suggests LA Harbor adopt it too. Our old automated test expects her to instead name nearby colleges that merely TEACH construction (El Camino, Trade Tech). No LA-area college has the credit set up. Both answers are defensible — which do you want? I won't quietly change the test to match the code."
-    },
     {
       "id": "sierra-feedback-unread",
       "for": "sam",
       "tab": "cobi",
-      "text": "📬 NOBODY HAS EVER READ THE FEEDBACK — 43 thumbs-up/down have come in since 1 July and not one has been marked reviewed. 10 are genuine thumbs-down with notes. One of them found today's bug, five weeks early. Before inviting the MAP and CO teams to test Sierra, worth draining these 10 once — otherwise a few hundred unread notes teach people their feedback goes nowhere."
+      "text": "📬 SIX FEEDBACK REPORTS STILL NEED YOU — the inbox is cleaned up (our test robot's 28 rows are filtered out, and 4 reports whose fixes have shipped are marked done). What's left is 6 real ones. The most useful: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she can name them one at a time — that's a build, not a bug. Two are data gaps you already know about (student counts per certificate). Three need your eye: Modesto showing 75 early-childhood credit recommendations when its landing page shows 4; Sierra reading the Fullerton catalogue in one answer and not the next; and a bare thumbs-down on College of the Canyons with no note. ⚠ Please don't invite the MAP and CO teams to test Sierra until someone owns this inbox — a few hundred unread rows would teach people their feedback goes nowhere."
     },
     {
       "id": "sierra-portal-link-check",
       "for": "sam",
       "tab": "cobi",
-      "text": "🔗 CLICK THE LINK SIERRA NOW GIVES STUDENTS — creditforbeingyou.org/main/student. I could not open it from here (our sandbox blocks that site, nothing wrong with the site itself), so it is used exactly as you sent it. If students should land somewhere else, it is a one-line change."
-    },
-    {
-      "id": "sierra-copy-button",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "📋 SIERRA ANSWERS NOW HAVE A COPY BUTTON — paste into Word, Outlook or Teams and the headings, tables and links come with it. Live on both the Sierra page and the dashboard tab."
-    },
-    {
-      "id": "sierra-smoke-noise",
-      "for": "fable",
-      "tab": "cobi",
-      "text": "🧹 FILTER THE TEST ROBOT OUT OF THE FEEDBACK QUEUE — 19 of the 43 feedback rows are our own automated test writing into the box humans are meant to read. Filter page='smoke' out of the review surface so the queue is worth opening."
+      "text": "🔗 STILL UNCHECKED: THE LINK SIERRA GIVES STUDENTS — creditforbeingyou.org/main/student. I can't reach that domain from here, so it has never been confirmed and it's now in front of every student who asks. One click tells us; it's a one-line fix if it's wrong."
     },
     {
       "id": "sierra-poaching-audit",
       "for": "fable",
       "tab": "cobi",
-      "text": "🔍 FINISH THE POACHING AUDIT — a five-part review (Sierra's rule text, her per-audience voices, the section headings in her data, the live guidance rows in the database, and the college report generators) was still running when this session ended. It checks whether anything still steers a visitor away from the college hosting her."
+      "text": "🔍 FINISH THE POACHING AUDIT — now that the 'never hide facts, never sell' line is live, re-run the five-part review (Sierra's rule text, her per-audience voices, the context builders, the live guidance rows in the 🧭 pane, and the sibling report generators) to confirm nothing else still tells her to stay quiet. SkyHero's audit was still running when that session ended and was never reported."
     },
     {
       "id": "sierra-corpus-59",
@@ -57,6 +33,18 @@
       "for": "fable",
       "tab": "funding",
       "text": "🔢 WIRE MALONE'S STUDENT×CREDIT-RECOMMENDATION VIEW into the funding backlog builder once the view name lands. The 11.8MB export could not be read directly (the Drive connector caps at 10MB). Agreed columns are the 8 non-identifying ones; Sam wants small-group suppression at fewer than 10."
+    },
+    {
+      "id": "sierra-mode7-verify",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "🔍 SIERRA STILL STOPS ONE STEP SHORT — you chose that when someone's own college doesn't offer a certificate, she should give three things: your college first, then who's already set it up, then the nearest colleges that actually TEACH it. The first two now work live. The third doesn't yet — asked about carpentry at LA Harbor she names Norco and Santiago Canyon (who award the credit, ~50 miles away) but not Rio Hondo or LA Trade Tech, which teach carpentry right there. We know that data exists because she lists exactly those colleges when asked the same question a different way. I've left it measured rather than guessed at — nothing to do on your side, just so you know it's half-landed."
+    },
+    {
+      "id": "sierra-mode7-part3",
+      "for": "fable",
+      "tab": "cobi",
+      "text": "🧪 FIND OUT WHY SIERRA SKIPS THE NEAREST TEACHING COLLEGE — measure before touching prompt text. Either the course-catalog search returns a thin list when the question names a college (mode 7's wording includes 'Los Angeles Harbor College'; the working question doesn't), or the list is there and she just doesn't use it. Those need opposite fixes and guessing between them is how this workstream has burned weeks before. Extend tests/sierra_geo_ranking.test.js to assert the ordered college list for this exact query."
     }
   ]
 }

@@ -106,3 +106,30 @@ to a nearby teaching college") and went red once the anti-poaching rule delibera
 **Do not green it by editing the assertion.** A red test after a deliberate policy change is a question — *which
 behaviour do we actually want?* — and that question belongs to the product owner. Rewriting the check to match
 the new code is how a test stops encoding the goal and starts merely encoding the implementation.
+
+## Resolution — both halves shipped 2026-08-07 (Session 126, #1029)
+
+The pattern above was written while the tie-break was still drafted. The program lead was asked both questions
+directly rather than having either resolved in code, and answered both. Recording the outcome, because a note
+that leaves a decision open is read as *still open* long after it isn't:
+
+**The tie-break, as shipped.** *Restraint binds salesmanship, not facts.* Never withhold a fact that materially
+changes what the visitor can do; never editorialise. If the host college has not articulated the credential:
+say so, say where it **is** available today, and say the host can adopt it. When the two interests genuinely
+cannot be reconciled, the visitor's outcome wins — *stated plainly, never sold*.
+
+**The red assertion.** Both candidate behaviours were defensible, and he chose **both, in order** — which is the
+outcome the "ask, don't edit" rule exists to make reachable. A single answer now has three parts:
+
+1. **the host** — named, affirmed, invited to adopt;
+2. **precedent** — who has already articulated it, framed as *evidence for the host's adoption*, not a redirect;
+3. **the nearest real route** — the nearest colleges that *teach* it, **even where none has articulated it yet**.
+
+Part 3 is the one the prohibition had silently removed, and the only part that gives a seeker somewhere to go
+this month. The rule now names stopping early *a failure of the answer, not politeness*.
+
+⭐ **The generalisable half of the resolution:** the two rules had been written in different places and were in
+direct conflict, with nothing saying which governed. Encoding the tie-break was necessary but not sufficient —
+the *downstream* rule had to cross-reference it explicitly (*"naming a nearer teaching college is NOT poaching;
+it is the factual completion of the answer"*). **A tie-break stated only where the conflict is defined does not
+reach the place where the conflict is resolved.** Put it in both, and point one at the other.

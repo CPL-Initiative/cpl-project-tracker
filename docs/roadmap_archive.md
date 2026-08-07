@@ -3515,3 +3515,43 @@ Durable: `methodology-validate-a-derived-metric-against-expert-ranking`,
 `methodology-a-label-that-decides-behaviour-is-a-policy-switch`,
 `playbook-diagnose-a-starved-actions-runner`. Story: `docs/cpl_funding_lessons.md` §2026-08-06 ·
 handoff `docs/session_123_handoff.md`.
+
+### SkyHunter — the CPR question, and a fix that became the next outage (2026-08-06, #1016 · #1017 MERGED)
+
+Sam asked for the last Sierra handoff; the real prompt came three messages later — *"a colleague at
+the CO asked which colleges give CPL for a CPR or AED cert and Sierra could only find 2."* **Sierra
+found 2, the corpus held 5, the CER knows 7** (+28 via EMT). Five defects, and **none of them was the
+one fixed the last time this same question broke** (Session 93, 2026-07-01) — ⭐ **one was INTRODUCED
+by that fix.** It added `aed` to the CPR synonym family; `to_tsquery('english','aed:*')` parses to
+**`'a':*`** because Snowball strips the "-ed", and OR'd against every other term that one token
+swallowed the corpus. It sat five weeks because **nothing ever asserted what retrieval RETURNED** —
+both prior verifications were "read the answer, it looks better." Also: `cert` matched 445/2,397
+(18.6%); no relevance floor; **`Aid/CPR/AED` parses as ONE file-path token**, so Modesto's rows had
+only ever surfaced via the unrelated word "Certificate". ⭐ **Sam supplied the test cases
+conversationally and every one found a real bug** — plurals (`firefighter` 11 terms vs
+`firefighters` **1**), two-word/hyphenated forms (`first aid`, `life saving` → nothing), and
+misspellings (*"like my misspellings :)"*, having just Googled "cardiopulmonary" while holding a CPR
+card). His framing is the North Star: *"the way you magically understand me with all my garbed typos
+should be the way Sierra understands."* Fuzzy had to target **synonym KEYS not titles** —
+`word_similarity('cardiopulminary', 'Adult CPR…')` = 0.069. **2 → 5 colleges, 100% precision.** ⭐ The
+new test went red on the plural bug *the minute it existed*; the battery also caught a
+`CREATE OR REPLACE` **overload** (42725) that would have broken Sierra outright. ⚠️ **NOT DEPLOYED —
+production still answers "2"**, held for Sam's go. The contacts/landing-page "regression" was **not
+one**: live v28 was byte-identical to repo; the question mix had shifted to a path that never carries
+contacts. Also **#1017** — small-cell suppression that didn't suppress (total + all-but-one cell
+recovers the hidden value; complementary suppression + row floor + the residual documented).
+Durable: `methodology-assert-what-retrieval-returns`,
+`reference-postgres-fts-pitfalls-for-credential-titles`,
+`methodology-small-cell-suppression-must-survive-subtraction`. Story:
+`docs/cpl_assistant_lessons.md` §SkyHunter · handoff `docs/session_124_handoff.md`.
+**DEPLOYED 2026-08-07 (#1019–#1021): cpl-chat v29, CPR fix LIVE**, smoke **mode 13 green** on the live
+function. Deploy is now runner-based (byte-exact from git; `--no-verify-jwt` pinned in the workflow) —
+the 66 KB hand-transcription hazard is retired. ⭐ Five attempts, five different causes, only ONE Sam's:
+**403 ≠ 401** (403 = credential accepted, identity refused — and Supabase's renaming means a JWT or a
+project key 403s *exactly like* an under-privileged role, so test the `sbp_` prefix in the workflow), a
+GitHub CLI-release rate limit, and my own wrong working directory (the CLI resolves
+`<cwd>/supabase/functions/`, which lives under `chatbox/` here — and that check fires AFTER auth and a
+Docker pull, so it reads like a permissions failure). 🔨 **Mode 7 stays red but CHANGED MEANING** — the
+Dental-Board false positive is gone; it now names Norco (107 exhibits, ~50 mi) over the genuinely
+adjacent LA-basin colleges: **volume outranking distance** in the offerings path. Queued for SkyHero.
+Durable: `playbook-deploy-an-edge-function-from-the-runner`.
