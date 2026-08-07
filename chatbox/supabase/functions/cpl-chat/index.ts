@@ -189,8 +189,13 @@ async function detectAndFetchCollegeProfile(
     }
   }
 
-  // 2. Try fuzzy match against database — ilike search
-  const words = q.split(/\s+/).filter((w: string) => w.length >= 4 && ![
+  // 2. Try fuzzy match against database — ilike search.
+  // Punctuation is stripped first: the ilike pattern is `%word%`, so a trailing
+  // mark made the whole lookup miss ("Tell me about Cerritos." searched
+  // `%cerritos.%` and found nothing).
+  const words = q.split(/\s+/)
+    .map((w: string) => w.replace(/^[^a-z0-9]+|[^a-z0-9]+$/g, ""))
+    .filter((w: string) => w.length >= 4 && ![
     "what", "does", "have", "about", "their", "they", "credit",
     "college", "community", "many", "much", "with", "from",
     "that", "this", "there", "here", "where", "when", "which",
@@ -201,21 +206,67 @@ async function detectAndFetchCollegeProfile(
     "officer", "post", "apprentice", "military", "veteran",
   ].includes(w));
 
-  for (const word of words) {
+  // WHY THIS IS POOLED AND SCORED, NOT FIRST-MATCH-WINS (2026-08-07, smoke mode 7):
+  // "Does Los Angeles Harbor College give credit for NCCER carpentry?" used to
+  // resolve to the WRONG SHAPE — an ambiguous 3-college array — because the loop
+  // hit "angeles" (9 colleges) FIRST and returned on it, never reaching "harbor",
+  // which matches exactly ONE college. Worse, `.limit(3)` with no ORDER BY is
+  // non-deterministic: two identical calls returned {East LA, LA City, LA Harbor}
+  // and {LA Mission, LA Southwest, West LA}. So the question found its home
+  // college only when LA Harbor happened to fall inside an arbitrary window.
+  // With no home college resolved, askedGeo is null and NOTHING downstream can
+  // rank by proximity — which is how a college ~50 miles away came to outrank
+  // five adjacent ones. Fix the detection and the geography follows.
+  //
+  // Now: ask for every candidate word at once (ordered => deterministic), pool
+  // the candidates, and score each college by how many of the query's words its
+  // name contains. A strict winner wins outright; a lone single-word match is the
+  // fallback; a genuine tie still returns an ARRAY so the caller's topic-hit
+  // disambiguation (the West-LA real-estate path) keeps working.
+  const matchSets = await Promise.all(words.map(async (word: string) => {
     const { data } = await sb
       .from("chatbox_college_profiles")
-      .select("*")
+      .select("college")   // names only — the full row is fetched once, for the winner
       .ilike("college", `%${word}%`)
-      .limit(3);
-    if (data && data.length === 1) return data[0];
-    if (data && data.length > 1) {
-      for (const d of data) {
-        const name = d.college.toLowerCase();
-        if (words.filter((w: string) => name.includes(w)).length >= 2) return d;
-      }
-      return data;
+      .order("college")    // determinism: an arbitrary LIMIT window is what hid LA Harbor
+      .limit(12);          // "angeles" alone matches 9; a limit of 3 truncated the answer
+    return (data || []).map((r: any) => r.college);
+  }));
+
+  const pool = [...new Set(matchSets.flat())];
+  if (pool.length === 0) return null;
+
+  const fetchProfiles = async (names: string[]) => {
+    const { data } = await sb.from("chatbox_college_profiles").select("*").in("college", names);
+    return data || [];
+  };
+  const one = async (name: string) => (await fetchProfiles([name]))[0] || null;
+
+  const score = (name: string) =>
+    words.filter((w: string) => name.toLowerCase().includes(w)).length;
+  const scored = pool.map((c) => ({ college: c, n: score(c) })).sort((a, b) => b.n - a.n);
+
+  // A strict multi-word winner ("los ANGELES HARBOR college" = angeles + harbor)
+  // beats every single-word match. This is the whole point of the rewrite.
+  if (scored[0].n >= 2 && (scored.length === 1 || scored[1].n < scored[0].n)) {
+    const hit = await one(scored[0].college);
+    if (hit) return hit;
+  }
+
+  // Otherwise the previous contract: the first query word that resolves to
+  // exactly one college wins.
+  for (const names of matchSets) {
+    if (names.length === 1) {
+      const hit = await one(names[0]);
+      if (hit) return hit;
     }
   }
+
+  // Still ambiguous — hand the caller the tied candidates (an ARRAY), as before.
+  const tied = scored.filter((s) => s.n === scored[0].n).map((s) => s.college).slice(0, 3);
+  const rows = await fetchProfiles(tied);
+  if (rows.length === 1) return rows[0];
+  if (rows.length > 1) return rows;
 
   return null;
 }
@@ -580,11 +631,37 @@ async function searchCollegeOfferings(query: string, sb: any): Promise<any[] | n
   return data;
 }
 
-// Fetch a college's region/county so we can rank "nearby colleges that teach X".
-async function fetchCollegeGeo(college: string, sb: any): Promise<any | null> {
-  if (!college) return null;
-  const { data } = await sb.from("college_geo").select("region, county").eq("college", college).single();
-  return data || null;
+// Fetch region/county for EVERY college in one read (~120 rows) so BOTH lists —
+// the earned-exhibit list and the course-catalog list — can rank by proximity.
+// This replaces a single-row lookup that only the offerings path could use:
+// search_exhibits_by_topic returns no geography at all, so without this map the
+// exhibit list has nothing to sort on except volume. Cheap enough to fetch on
+// every question, and it doubles as the fallback when an offerings row's own
+// region/county is null.
+async function fetchCollegeGeoMap(sb: any): Promise<Map<string, any>> {
+  const { data } = await sb.from("college_geo").select("college, region, county");
+  const m = new Map<string, any>();
+  for (const r of data || []) {
+    m.set(r.college, { region: r.region || null, county: r.county || null });
+  }
+  return m;
+}
+
+// Proximity band for ranking: same county (2) > same region (1) > elsewhere (0).
+// Returns 0 for every college when no home college is known, which leaves the
+// pre-existing volume ordering untouched.
+function proximityBand(geo: any | null, askedGeo: any | null): number {
+  if (!askedGeo || !geo) return 0;
+  if (askedGeo.county && geo.county && geo.county === askedGeo.county) return 2;
+  if (askedGeo.region && geo.region && geo.region === askedGeo.region) return 1;
+  return 0;
+}
+
+// "Riverside County, Inland Empire" — the label that lets the model actually say
+// "nearby" instead of guessing from a college name.
+function geoLabel(geo: any | null): string {
+  if (!geo || (!geo.county && !geo.region)) return "";
+  return ` (${[geo.county && geo.county + " County", geo.region].filter(Boolean).join(", ")})`;
 }
 
 // ── Build offerings context (what colleges TEACH — the adoption basis) ──────────
@@ -593,6 +670,7 @@ function buildOfferingsContext(
   askedCollege: string | null,
   askedGeo: any | null,
   coreKeywords: string[] = [],
+  geoMap: Map<string, any> | null = null,
 ): string {
   if (!offerings || offerings.length === 0) return "";
 
@@ -609,7 +687,12 @@ function buildOfferingsContext(
   // Group by college; sum course counts across matching TOP programs.
   const byCollege = new Map<string, { rows: any[]; courses: number; core: boolean; region: string | null; county: string | null }>();
   for (const o of offerings) {
-    const g = byCollege.get(o.college) || { rows: [], courses: 0, core: false, region: o.region || null, county: o.county || null };
+    const fb = geoMap?.get(o.college) || null;
+    const g = byCollege.get(o.college) || {
+      rows: [], courses: 0, core: false,
+      region: o.region || fb?.region || null,
+      county: o.county || fb?.county || null,
+    };
     g.rows.push(o);
     g.courses += o.course_count || 0;
     if (isCore(o)) g.core = true;
@@ -618,10 +701,15 @@ function buildOfferingsContext(
 
   // Rank: colleges that teach the CORE discipline first, then proximity to the
   // asked college (same county > same region), then how much they teach.
+  //
+  // The bands are spread far enough apart to be strictly lexicographic
+  // (core > county > region > volume). They used to be 200/100/40 against a
+  // volume term of `min(courses, 39)` — so a college in another region with 39+
+  // courses scored 239 and a same-region college with none scored 240. One point
+  // apart is not an ordering, it is a coin flip, and volume won it often enough
+  // to matter. Volume is now only ever a tie-breaker WITHIN a proximity band.
   const rank = (g: any) => {
-    let p = g.core ? 200 : 0;
-    if (askedGeo?.county && g.county === askedGeo.county) p += 100;
-    if (askedGeo?.region && g.region === askedGeo.region) p += 40;
+    const p = (g.core ? 1000 : 0) + proximityBand(g, askedGeo) * 100;
     return p + Math.min(g.courses, 39);
   };
 
@@ -633,8 +721,7 @@ function buildOfferingsContext(
     .sort((a, b) => rank(b[1]) - rank(a[1]));
 
   const fmtCollege = (college: string, g: any) => {
-    let s = `\n## ${college}`;
-    if (g.county || g.region) s += ` (${[g.county && g.county + " County", g.region].filter(Boolean).join(", ")})`;
+    let s = `\n## ${college}${geoLabel(g)}`;
     s += ` — teaches ${g.courses} course(s) in this area:\n`;
     for (const o of g.rows.slice(0, 4)) {
       s += `  - ${o.top_title || o.top_code} (${o.course_count} course(s)`;
@@ -672,7 +759,12 @@ function buildOfferingsContext(
 }
 
 // ── Build topic context (organized by college) ─────────────────
-function buildTopicContext(results: any[], isCollegeSpecific: boolean = false): string {
+function buildTopicContext(
+  results: any[],
+  isCollegeSpecific: boolean = false,
+  geoMap: Map<string, any> | null = null,
+  askedGeo: any | null = null,
+): string {
   if (!results || results.length === 0) return "";
 
   // Separate statewide (CCC) exhibits from local ones
@@ -725,14 +817,28 @@ function buildTopicContext(results: any[], isCollegeSpecific: boolean = false): 
   }
 
   if (byCollege.size > 0) {
-    ctx += `\n### LOCAL EXHIBITS by college\n`;
-    // Sort colleges by number of exhibits (most first)
-    const sortedColleges = [...byCollege.entries()].sort((a, b) => b[1].length - a[1].length);
+    // Sort colleges NEAREST FIRST when a home college is known (same county, then
+    // same region), and only then by how many exhibits they hold.
+    //
+    // This list used to be ordered by volume alone, because search_exhibits_by_topic
+    // returns no geography — so an LA Harbor question led with Norco (Riverside,
+    // ~50 mi) ahead of five colleges in LA Harbor's own county, and a Sacramento
+    // question was offered peers in Orange and Riverside counties. The exhibits are
+    // the PROOF ("a peer college already did this"), so a peer 400 miles away is a
+    // materially worse answer than a neighbour with fewer exhibits. With no home
+    // college in the question, askedGeo is null, every band is 0, and the ordering
+    // stays exactly as it was — most exhibits first.
+    const geoOf = (c: string) => (geoMap ? geoMap.get(c) || null : null);
+    const sortedColleges = [...byCollege.entries()].sort((a, b) =>
+      (proximityBand(geoOf(b[0]), askedGeo) - proximityBand(geoOf(a[0]), askedGeo)) ||
+      (b[1].length - a[1].length));
+
+    ctx += `\n### LOCAL EXHIBITS by college${askedGeo ? " (nearest first)" : ""}\n`;
 
     for (const [college, exhibits] of sortedColleges) {
       const url = exhibits[0]?.landing_page_url;
       const collegeRecTotal = exhibits.reduce((sum: number, e: any) => sum + (e.rec_count || 0), 0);
-      ctx += `\n## ${college} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
+      ctx += `\n## ${college}${geoLabel(geoOf(college))} — ${exhibits.length} exhibit(s), ${collegeRecTotal} credit recommendation(s)`;
       if (url) ctx += ` | CPL Landing Page: ${url}`;
       ctx += `\n`;
 
@@ -1073,7 +1179,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -1084,6 +1190,7 @@ Deno.serve(async (req: Request) => {
       searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
       searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
       fetchTeamGuidance(sb),                  // sierra_guidance active rows (v25)
+      fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
     ]);
 
     const sections = searchResult.data;
@@ -1118,6 +1225,11 @@ Deno.serve(async (req: Request) => {
     const singleProfile = resolvedProfile && !Array.isArray(resolvedProfile) ? resolvedProfile :
                           (Array.isArray(resolvedProfile) && resolvedProfile.length === 1 ? resolvedProfile[0] : null);
 
+    // The home college's own region/county — the anchor BOTH lists rank against.
+    // Null whenever the question names no college, which leaves every list in its
+    // previous volume-first order.
+    const askedGeo = singleProfile ? geoMap.get(singleProfile.college) || null : null;
+
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
       searchMode = "college_topic";
@@ -1136,8 +1248,10 @@ Deno.serve(async (req: Request) => {
           topicContext += `\n(${atOtherColleges.length} additional matching exhibits found at ${otherCollegeCount} other college(s) — mention these as alternatives if helpful.)\n`;
         }
       } else {
-        // College has no matching exhibits for this topic — show all results
-        topicContext = buildTopicContext(topicResults, false);
+        // College has no matching exhibits for this topic — show all results,
+        // ordered nearest-first so the peer we hold up as proof is a plausible
+        // neighbour rather than whichever college happens to hold the most rows.
+        topicContext = buildTopicContext(topicResults, false, geoMap, askedGeo);
         topicContext = `\n\nNote: ${collegeName} does not currently have CPL exhibits matching this topic in our database.\n` + topicContext;
       }
 
@@ -1155,14 +1269,13 @@ Deno.serve(async (req: Request) => {
     // else: GENERAL MODE — just RAG + live metrics
 
     // Course-catalog offerings context — WHAT colleges teach (the adoption basis).
-    // Available in every mode. When a single college is in focus, fetch its
-    // region/county so we can rank "nearest colleges that teach this".
+    // Available in every mode; ranked against the same askedGeo anchor as the
+    // exhibit list above, with geoMap filling in any row the RPC left ungeocoded.
     let offeringsContext = "";
     if (offeringsResults && offeringsResults.length > 0) {
       const askedCollege = singleProfile?.college || null;
-      const askedGeo = askedCollege ? await fetchCollegeGeo(askedCollege, sb) : null;
       const coreKeywords = expandWithSynonyms(extractTopicKeywords(searchText));
-      offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords);
+      offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords, geoMap);
     }
 
     const systemPrompt = buildSystemPrompt(

@@ -138,8 +138,12 @@ function finish() {
   const fn = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
   check("cpl-chat defines fetchTeamGuidance with the row + char caps",
     /fetchTeamGuidance/.test(fn) && /GUIDANCE_MAX_RULES = 10/.test(fn) && /GUIDANCE_MAX_CHARS = 2500/.test(fn));
+  // Asserts guidance is IN the parallel batch, not that it is the LAST member —
+  // pinning the tail of the destructuring made this go red when v30 added
+  // fetchCollegeGeoMap to the same batch, which is exactly the change it should
+  // have been indifferent to.
   check("cpl-chat fetches guidance in the parallel lookup",
-    /offeringsResults, teamGuidance\] = await Promise\.all/.test(fn) && /fetchTeamGuidance\(sb\)/.test(fn));
+    /\[[^\]]*\bteamGuidance\b[^\]]*\] = await Promise\.all/.test(fn) && /fetchTeamGuidance\(sb\)/.test(fn));
   check("cpl-chat appends teamGuidance to the system prompt",
     /\$\{audienceRule\}\$\{teamGuidance\}/.test(fn));
   check("guidance reads only ACTIVE rows newest-first",

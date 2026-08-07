@@ -39,32 +39,18 @@ const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf
 // ── Lift the pure keyword functions out of the Deno module ──────────────────
 // They have no Deno dependencies, so we can evaluate them directly rather than
 // re-implementing (a re-implementation would drift and stop guarding anything).
-function lift(src) {
-  const start = src.indexOf("const TOPIC_SYNONYMS");
-  const endMarker = "// ── Topic-based exhibit search";
-  const end = src.indexOf(endMarker);
-  if (start < 0 || end < 0 || end < start) throw new Error("could not locate keyword block in index.ts");
-  // Strip TS annotations generically rather than by exact signature — an
-  // exact-match stripper broke TWICE while this block was being edited
-  // (synonymKeys, then nearestSynonymKey's `string | null`), each time turning
-  // real assertions into a silent lift error. Handles: generic instantiation
-  // (new Set<string>()), Record<>/Set<> annotations, primitives, array suffixes
-  // and `| null` unions. Safe here because the block holds no string literal
-  // containing a colon. If this ever gets hairier, the answer is to move these
-  // pure functions into a plain .js module both sides import — not a smarter
-  // regex.
-  const PRIM = "(?:string|boolean|number|void|any|unknown)";
-  const block = src
-    .slice(start, end)
-    .replace(/new\s+(Set|Map)<[^>]*>/g, "new $1")
-    .replace(/:\s*(?:Record|Set|Map|Array)<[^>]+>/g, "")
-    .replace(new RegExp(`:\\s*${PRIM}\\b(?:\\s*\\[\\s*\\])*(?:\\s*\\|\\s*(?:${PRIM}|null|undefined)\\b(?:\\s*\\[\\s*\\])*)*`, "g"), "");
-  // eslint-disable-next-line no-new-func
-  return new Function(block + "\nreturn { extractTopicKeywords, expandWithSynonyms, TOPIC_STOP_WORDS, TOPIC_SYNONYMS };")();
-}
+//
+// The lifter itself moved to tests/lib/lift_ts.js when a second test file needed
+// it (sierra_geo_ranking) and the stripper had to learn `Map<string, any> | null`.
+// That is exactly the escalation this comment used to prescribe: a shared module,
+// not the same regex maintained in two places.
+const { liftBlock } = require("./lib/lift_ts");
 
 let mod = null, liftErr = null;
-try { mod = lift(SRC); } catch (e) { liftErr = e; }
+try {
+  mod = liftBlock(SRC, "const TOPIC_SYNONYMS", "// ── Topic-based exhibit search",
+    ["extractTopicKeywords", "expandWithSynonyms", "TOPIC_STOP_WORDS", "TOPIC_SYNONYMS"]);
+} catch (e) { liftErr = e; }
 check("keyword block lifts out of index.ts cleanly", !liftErr && mod);
 
 if (mod) {
