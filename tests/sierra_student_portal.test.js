@@ -126,6 +126,29 @@ check("PORTAL_RULE starts from prior learning, not from enrolling",
 check("the student rule works for someone who hasn't pictured college",
   /never pictured themselves at a college/i.test(STUDENT_RULE));
 
+// ── The balancing act (Sam, 2026-08-07) ─────────────────────────────────────
+// "colleges will want to keep current and prospective students in their
+// wheelhouse, whereas we want them to also be able to see their options
+// systemwide". Sierra is embedded on COLLEGES' OWN PAGES, so an unprompted
+// "you'd get more credit at X" reads as poaching a college's student off its
+// own site. The systemwide view is offered as ADDED options; the comparison is
+// the visitor's to ask for. If they DO ask, or have no college yet, Sierra
+// compares freely — that is what the portal is for.
+check("PORTAL_RULE names the college as host, not competition",
+  /THE COLLEGE IS THE HOST, NOT THE COMPETITION/.test(PORTAL));
+check("PORTAL_RULE starts with the named college and affirms it",
+  /START with that college and affirm it/i.test(PORTAL));
+check("PORTAL_RULE forbids pitching the portal by disparaging the college",
+  /NEVER pitch the portal by disparaging their college/i.test(PORTAL));
+check("PORTAL_RULE forbids an UNPROMPTED you-would-get-more-elsewhere",
+  /never volunteer a comparison/i.test(PORTAL) && /reads as poaching/i.test(PORTAL));
+check("PORTAL_RULE still allows comparison when the visitor ASKS",
+  /If the visitor explicitly ASKS to compare colleges/i.test(PORTAL));
+check("PORTAL_RULE still allows comparison when they have no college yet",
+  /says they have not chosen one, compare freely/i.test(PORTAL));
+check("PORTAL_RULE states whose call the comparison is",
+  /comparison is theirs to ask for/i.test(PORTAL));
+
 // ── Guardrails that must survive the rewrite ────────────────────────────────
 check("PORTAL_RULE still says credit is never guaranteed",
   /Never imply credit is guaranteed/i.test(PORTAL));
