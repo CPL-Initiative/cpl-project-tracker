@@ -162,6 +162,16 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
+      # ── Step 4a0: Governance drift detector (OQ-08) ────────────────
+      # Regenerates kb/governance_candidates.json — surfaces that look governable
+      # and have no row in the governance register. PROPOSALS only; nothing is
+      # ever auto-added to the register itself. Pure static analysis of the repo:
+      # no Supabase, no secrets, no network, so it cannot fail the run for an
+      # external reason. `|| true` because a governance NICE-TO-HAVE must never
+      # be what breaks the daily dashboard.
+      - name: Rebuild governance drift candidates
+        run: python kb/_build_governance_candidates.py || true
+
       # ── Step 4a1: CPL Pathways — Common Course Reference enrichment ─
       # Rebuilds cpl_pathways_ccr_data.js from the CURRENT minted-identity +
       # articulation + catalog sources, so every mint / re-mint / merge in the
@@ -280,6 +290,8 @@ jobs:
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
           git add kb/credential_review_overlay.json 2>/dev/null || true
+          # OQ-08: governance drift candidates (what's missing from the register)
+          git add kb/governance_candidates.json 2>/dev/null || true
           # CER unclassified-triage PR-2: raw-title→unified-title assignment overlay
           git add kb/unclassified_assignments.json 2>/dev/null || true
           # CER unclassified-triage PR-3 (gated auto-fold): the credential KB the

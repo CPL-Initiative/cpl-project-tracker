@@ -396,6 +396,103 @@ function signInRefreshTest() {
   finish();
 }
 
+// ── Drift candidates (OQ-08) ────────────────────────────────────────────────
+// The detector PROPOSES; it must never look like it added anything. And the
+// strip must not become the thing it was built to prevent: the first draft
+// produced 39 undifferentiated candidates, which is a list read once and never
+// again. Grouping + the surface map are what make it usable, so both are
+// asserted here rather than left to inspection.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.cand = {
+    _counts: { candidates: 3, already_mapped: 6, dismissed: 14, scanned: 23 },
+    candidates: [
+      { key: "stale:DR-99", kind: "stale_row", label: "DR-99 — gone", detail: "References kb/nope.py" },
+      { key: "workflow:x.yml", kind: "cadence", label: "CPL News harvest", detail: "Scheduled: 17 13 * * *" },
+      { key: "table:projects", kind: "decision_right", label: "projects", detail: "Written from project_add.js" },
+    ],
+  };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  const html = r.innerHTML;
+
+  check("candidates strip renders with its count", /Not on the register \(3\)/.test(html));
+  check("⚠ the strip says PROPOSALS ONLY, never auto-added",
+    /proposals only/i.test(html) && /never added automatically/i.test(html));
+  check("the strip discloses what was mapped and dismissed, not just what's left",
+    /6 more surface\(s\) already map/.test(html) && /14 are dismissed/.test(html));
+  check("the strip names where a dismissal reason lives",
+    /governance_surface_map\.json/.test(html));
+  // Ranking: a register row that is actively WRONG outranks a missing one.
+  check("stale rows are grouped first", html.indexOf("no longer exists") < html.indexOf("no cadence row"));
+  check("cadences outrank decision rights",
+    html.indexOf("no cadence row") < html.indexOf("no decision right"));
+  check("each candidate shows its evidence, not just a name",
+    /Scheduled: 17 13/.test(html) && /Written from project_add\.js/.test(html));
+
+  // The button must not overclaim. It re-reads a committed scan; it cannot scan
+  // the repo from a browser, and saying otherwise would be the kind of quiet
+  // false claim this whole tab exists to prevent.
+  check("refresh button is present", !!r.querySelector("[data-gov-refresh]"));
+  check("⚠ refresh does not claim to re-scan the codebase",
+    /cannot re-scan the codebase from a browser/.test(html));
+})();
+
+// An empty candidate list must read as CLEAR, not as a broken scan.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.cand = { _counts: { candidates: 0, already_mapped: 9, dismissed: 14, scanned: 23 }, candidates: [] };
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("no candidates reads as accounted-for, not as an error",
+    /Nothing unaccounted for/.test(r.innerHTML));
+})();
+
+// A MISSING candidates file must not take the register down with it — the strip
+// is an addition to this page, not a dependency of it.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const G = w.CPL_GOVERNANCE;
+  G._state.reg = REG;
+  G._state.live = { total: 123, pc: 98, coord: 48, landing: 120, zeroUsers: 3, nudgeCount: 0 };
+  G._state.cand = null;
+  const r = w.document.getElementById("governance-root");
+  G.render(r);
+  check("a missing candidates file degrades to nothing, not to a broken page",
+    G._renderCandidates() === "" && /Who decides what/.test(r.innerHTML));
+})();
+
+// The committed artifact must match what the detector produces right now —
+// otherwise the tab shows yesterday's drift and quietly misleads.
+(function () {
+  const fsx = require("fs");
+  if (!fsx.existsSync("kb/governance_candidates.json")) {
+    check("committed candidates artifact exists", false);
+    return;
+  }
+  const d = JSON.parse(fsx.readFileSync("kb/governance_candidates.json", "utf8"));
+  check("committed candidates artifact exists", true);
+  check("artifact records which script produced it",
+    /_build_governance_candidates\.py/.test(d._generated_by || ""));
+  check("artifact carries counts the strip can disclose",
+    d._counts && typeof d._counts.candidates === "number" &&
+    typeof d._counts.dismissed === "number");
+  check("every candidate carries evidence a human can check",
+    (d.candidates || []).every((c) => c.key && c.label && c.detail && c.where));
+  check("candidate kinds are ones the renderer groups",
+    (d.candidates || []).every((c) => ["stale_row", "cadence", "decision_right"].indexOf(c.kind) >= 0));
+  // The noise guard, as a number. 39 was the unfiltered first draft; if the list
+  // ever climbs back there the filters have stopped doing their job and the strip
+  // is on its way to being ignored.
+  check("⚠ the candidate list stays readable (< 25)", (d.candidates || []).length < 25);
+})();
+
 // ── report ──
 // finish() rather than a bare tail: the owners-read and sign-in checks above are
 // ASYNC (they exercise real promise paths in loadOwners/activate). A synchronous
