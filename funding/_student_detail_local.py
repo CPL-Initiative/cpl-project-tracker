@@ -87,10 +87,52 @@ TEST_COLLEGES = {"RivTest City College", "MorTest City College", "Nortest City C
 # Same family the chat layer expands, so this answers the REAL question rather
 # than a tidier one: "how many students statewide are eligible for CPL based on
 # CPR, AED, or similar certs?"
+#
+# ONE RUN SHOULD ANSWER EVERY CREDENTIAL YOU CARE ABOUT, not just the one that
+# prompted the script. Sam's second question was POST, and needing a code change
+# per credential is a design failure — so the list below covers the families the
+# CPL Initiative asks about most, and `--family "Label=regex"` adds an ad-hoc one
+# from the command line without touching this file.
 FAMILIES = {
     "CPR / AED / first aid": re.compile(
         r"\b(cpr|aed|first\s*aid|basic\s*life\s*support|\bbls\b|cardiopulmonary|"
         r"defibrillat|lifesaving|life\s*saving|heartsaver)", re.I),
+    # POST = CA Commission on Peace Officer Standards and Training.
+    #
+    # ⚠ The bare acronym is UNUSABLE as a match on its own. `post\b` looks safe
+    # and is not: a hyphen IS a word boundary, so it fires on "Post-Test",
+    # "Post-Production" and "Post-Modern". The first draft did exactly that AND
+    # missed "Introduction to Policing" — wrong in both directions at once.
+    # So POST only counts when followed by a law-enforcement word, and the real
+    # work is done by the academy COURSE NAMES (taken verbatim from a live
+    # Sierra answer listing Norco / Bakersfield / Skyline / Miramar exhibits).
+    # Verified 0 false positives against a decoy set; "Community Relations" and
+    # "Introduction to Evidence" are deliberately NOT matched — they only mean
+    # POST in context, and a miss beats a false positive that inflates a count.
+    "POST / law enforcement": re.compile(
+        r"\b(peace\s*officer|police|policing|law\s*enforcement|"
+        r"administration\s*of\s*justice|criminal\s*(justice|law|investigation|procedure|court)|"
+        r"justice\s*system|corrections?\s*officer|reserve\s*officer|"
+        r"basic\s*academy|regional\s*academy|dispatch(er)?\s*academy|"
+        r"post\s*[-\s]?(certified|basic|academy|module|level)|p\.o\.s\.t)", re.I),
+    "EMT / paramedic / EMS": re.compile(
+        r"\b(emt\b|\bems\b|paramedic|emergency\s*medical|first\s*responder|"
+        r"national\s*registry)", re.I),
+    "Fire / firefighter": re.compile(
+        r"\b(firefight|fire\s*fighter|fire\s*academy|fire\s*technology|"
+        r"wildland|hazmat|hazardous\s*materials|\bfire\s*officer)", re.I),
+    "Welding / NCCER / trades": re.compile(
+        r"\b(nccer|weld(ing|er)?|smaw|gmaw|gtaw|fcaw|carpentry|carpenter|"
+        r"electrician|plumbing|pipefitting|osha)", re.I),
+    "IT / cybersecurity": re.compile(
+        r"\b(comptia|\ba\+|network\+|security\+|cisco|\bccna\b|\bcissp\b|"
+        r"cybersecurity|information\s*security|microsoft\s*certified)", re.I),
+    "Early childhood education": re.compile(
+        r"\b(child\s*development|early\s*childhood|\bcda\b|preschool|"
+        r"infant.{0,10}toddler)", re.I),
+    "Nursing / allied health": re.compile(
+        r"\b(\bcna\b|nurse\s*assistant|nursing\s*assistant|\blvn\b|\brn\b|"
+        r"medical\s*assist|phlebotom|pharmacy\s*tech|dental\s*assist)", re.I),
 }
 
 # Column names are matched loosely — exports rename things between versions, and
@@ -288,6 +330,18 @@ def main():
     if len(sys.argv) < 2:
         sys.exit(__doc__.strip().split("\n\n")[2])
     path = sys.argv[1]
+    # --family "Label=regex" adds an ad-hoc family without editing this file, so
+    # the next credential someone asks about does not need a code change.
+    for i, a in enumerate(sys.argv):
+        if a == "--family" and i + 1 < len(sys.argv) and "=" in sys.argv[i + 1]:
+            label, _, pat = sys.argv[i + 1].partition("=")
+            try:
+                FAMILIES[label.strip()] = re.compile(pat, re.I)
+                print(f"  added family {label.strip()!r} -> /{pat}/i")
+            except re.error as e:
+                sys.exit(f"bad --family regex: {e}")
+    if path.startswith("--"):
+        sys.exit("first argument must be the export path")
     if not os.path.exists(path):
         sys.exit(f"not found: {path}")
 
@@ -459,9 +513,12 @@ def main():
         "why": f"fewer than {SUPPRESS_BELOW} credit recommendations statewide",
     }
 
+    empty = [n for n in FAMILIES if not sum(fam_status[n].values())]
     for name in FAMILIES:
         fs = fam_status[name]
         ftotal = sum(fs.values())
+        if not ftotal:
+            continue
         facted = sum(fs[d] for d in ACTED)
         print(f"\n=== {name} ===")
         print(f"  credit recommendations : {ftotal:,}")
@@ -502,6 +559,8 @@ def main():
             "disposition_rate": rate(a, t),
         }
 
+    if empty:
+        print(f"\nfamilies with no matching rows: {', '.join(empty)}")
     print(f"\nexhibits reported: {len(payload['exhibits']):,}  |  "
           f"suppressed as too thin: {ex_dropped:,} "
           f"({ex_dropped_rows:,} recommendations)")
