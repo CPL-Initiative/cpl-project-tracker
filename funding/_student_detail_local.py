@@ -146,7 +146,36 @@ def hasher(salt):
 
 
 def iter_rows(path):
-    """Yield dicts, streaming. Never materialises the file."""
+    """Yield dicts, streaming. Never materialises the file.
+
+    Takes whichever export is to hand: .xlsx/.xlsm, .csv, or .json — the JSON
+    being either a bare array of row objects or the CustomReport envelope
+    ({viewName, columnName:[...], columnValue:[[...]]}), which is column-oriented
+    and NOT a list of dicts. Same two shapes funding/_build_cr_backlog.py already
+    accepts, so whichever file MAP hands over works without a conversion step.
+    """
+    if path.lower().endswith(".json"):
+        with open(path, encoding="utf-8", errors="replace") as f:
+            text = f.read()
+        start = text.find("[")
+        if start == -1:
+            return
+        if '"viewName"' in text[:4000]:
+            for report in json.loads(text) or []:
+                cols = report.get("columnName", [])
+                for row in report.get("columnValue") or []:
+                    yield dict(zip(cols, row))
+            return
+        dec = json.JSONDecoder()
+        i, n = start + 1, len(text)
+        while True:
+            while i < n and text[i] in " \n\r\t,":
+                i += 1
+            if i >= n or text[i] == "]":
+                return
+            obj, i = dec.raw_decode(text, i)
+            yield obj
+        return
     if path.lower().endswith((".xlsx", ".xlsm")):
         try:
             from openpyxl import load_workbook
@@ -217,6 +246,14 @@ def main():
     students_state = set()
     per_college = defaultdict(Counter)
     college_students = defaultdict(set)
+    # PER-EXHIBIT is the rollup Sierra actually needs. ExhibitID is the join key
+    # to chatbox_exhibits.exhibit_id, so this is what would let a topic question
+    # ("CPR/AED") total real dispositions across the exhibits it matched — the
+    # gap that made Sierra hedge. No college x exhibit cross-tab: that is where
+    # cells get thin enough to point at a person.
+    per_exhibit = defaultdict(Counter)
+    exhibit_students = defaultdict(set)
+    exhibit_colleges = defaultdict(set)
     fam_status = {name: Counter() for name in FAMILIES}
     fam_students = {name: set() for name in FAMILIES}
     fam_colleges = {name: set() for name in FAMILIES}
@@ -242,6 +279,12 @@ def main():
         if sid:
             students_state.add(sid)
             college_students[loc].add(sid)
+        ex = g(r, "exhibit")
+        if ex:
+            per_exhibit[ex][status] += 1
+            exhibit_colleges[ex].add(loc)
+            if sid:
+                exhibit_students[ex].add(sid)
         blob = cr + " " + g(r, "course")
         for name, pat in FAMILIES.items():
             if pat.search(blob):
@@ -282,6 +325,34 @@ def main():
         },
         "families": {},
         "colleges": {},
+        "exhibits": {},
+    }
+
+    # Keyed by ExhibitID, which joins to chatbox_exhibits.exhibit_id — the payload
+    # that would let Sierra say "how many students, and how far along" for the
+    # exhibits a topic search matched.
+    ex_dropped = ex_dropped_rows = 0
+    for ex, c in per_exhibit.items():
+        t = sum(c.values())
+        if t < SUPPRESS_BELOW:
+            # SAY SO rather than just shrinking the map. A quietly short list
+            # reads as "that is all the data there is", and a scan returning
+            # nothing looks like good news, which nobody investigates.
+            ex_dropped += 1
+            ex_dropped_rows += t
+            continue
+        a = sum(c[d] for d in ACTED)
+        payload["exhibits"][ex] = {
+            "recommendations": t,
+            "students": suppress(len(exhibit_students[ex]))[0],
+            "colleges": len(exhibit_colleges[ex]),
+            "acted": a,
+            "disposition_rate": round(a / t, 4) if t else None,
+            "by_disposition": dict(c),
+        }
+    payload["exhibits_suppressed"] = {
+        "exhibits": ex_dropped, "recommendations": ex_dropped_rows,
+        "why": f"fewer than {SUPPRESS_BELOW} credit recommendations statewide",
     }
 
     for name in FAMILIES:
@@ -324,6 +395,10 @@ def main():
             "acted": a,
             "disposition_rate": round(a / t, 4) if t else None,
         }
+
+    print(f"\nexhibits reported: {len(payload['exhibits']):,}  |  "
+          f"suppressed as too thin: {ex_dropped:,} "
+          f"({ex_dropped_rows:,} recommendations)")
 
     out = os.path.join(os.path.dirname(os.path.abspath(path)),
                        "student_detail_aggregate.json")
