@@ -1,0 +1,165 @@
+# The LIVE 150-row window search_college_offerings returns for smoke mode 7.
+#
+# Measured 2026-08-07 (Session 127) against the production database, using the
+# EXACT tsquery the deployed function builds for mode 7's question:
+#
+#   query : "Does Los Angeles Harbor College give credit for NCCER carpentry or
+#            construction certifications?"
+#   tsq   : los:* | angeles:* | harbor:* | nccer:* | carpentry:* | construction:*
+#           | welding:* | electrician:* | plumbing:* | carpenter:* | woodworking:*
+#
+# 613 rows across 117 colleges match; the RPC caps at 150. This file IS that cap
+# window, in RPC rank order, so a test can assert what buildOfferingsContext was
+# actually handed rather than what we imagine it was handed.
+#
+# Columns: college <TAB> top_title <TAB> course_count <TAB> cid_count <TAB> region <TAB> county
+Laney College	Carpentry	20	0	Bay Area	Alameda
+Los Angeles Trade Technical College	Carpentry	32	0	Los Angeles	Los Angeles
+College of the Redwoods	Carpentry	11	0	Far North	Humboldt
+San Diego City College	Carpentry	18	0	San Diego – Imperial	San Diego
+Santiago Canyon College	Carpentry	91	0	Orange County	Orange
+Rio Hondo College	Carpentry	70	0	Los Angeles	Los Angeles
+Palomar College	Carpentry	67	0	San Diego – Imperial	San Diego
+Copper Mountain College	Carpentry	4	0	Inland Empire	San Bernardino
+Pasadena City College	Carpentry	3	0	Los Angeles	Los Angeles
+City College of San Francisco	Carpentry	5	0	Bay Area	San Francisco
+College of the Sequoias	Carpentry	4	0	San Joaquin Valley	Tulare
+Fresno City College	Carpentry	5	0	San Joaquin Valley	Fresno
+American River College	Carpentry	133	0	Greater Sacramento	Sacramento
+Sierra College	Carpentry	2	0	Greater Sacramento	Placer
+Norco College	Carpentry	90	0	Inland Empire	Riverside
+College of Marin	Carpentry	1	0	Bay Area	Marin
+Mendocino College	Carpentry	1	0	Far North	Mendocino
+College of the Siskiyous	Carpentry	1	0	Far North	Siskiyou
+Long Beach City College	Carpentry	1	0	Los Angeles	Los Angeles
+Bakersfield College	Carpentry	1	0	San Joaquin Valley	Kern
+Allan Hancock College	Carpentry	1	0	Central Coast	Santa Barbara
+College of the Canyons	Carpentry	3	0	Los Angeles	Los Angeles
+Imperial Valley College	Carpentry	3	0	San Diego – Imperial	Imperial
+Palo Verde College	Carpentry	5	0	Inland Empire	Riverside
+Victor Valley College	Carpentry	4	0	Inland Empire	San Bernardino
+El Camino College	Carpentry	4	0	Los Angeles	Los Angeles
+Orange Coast College	Carpentry	2	0	Orange County	Orange
+San Jose City College	Carpentry	1	0	Bay Area	Santa Clara
+Merced College	Carpentry	1	0	San Joaquin Valley	Merced
+Santa Barbara City College	Construction Crafts Technology	40	0	Central Coast	Santa Barbara
+Ventura College	Civil and Construction Management Technology	24	0	Central Coast	Ventura
+Fullerton College	Construction Crafts Technology	28	0	Orange County	Orange
+College of the Desert	Civil and Construction Management Technology	47	0	Inland Empire	Riverside
+Diablo Valley College	Plumbing, Pipefitting and Steamfitting	66	0	Bay Area	Contra Costa
+Cuesta College	Construction Crafts Technology	18	0	Central Coast	San Luis Obispo
+Long Beach City College	Construction Crafts Technology	14	0	Los Angeles	Los Angeles
+College of the Redwoods	Construction Crafts Technology	11	0	Far North	Humboldt
+Cosumnes River College	Construction Crafts Technology	12	0	Greater Sacramento	Sacramento
+Santa Rosa Junior College	Construction Crafts Technology	7	0	Bay Area	Sonoma
+Chabot College	Plumbing, Pipefitting and Steamfitting	39	0	Bay Area	Alameda
+American River College	Plumbing, Pipefitting and Steamfitting	68	0	Greater Sacramento	Sacramento
+Orange Coast College	Construction Crafts Technology	27	0	Orange County	Orange
+Merced College	Welding Technology	18	0	San Joaquin Valley	Merced
+Mt. San Antonio College	Welding Technology	31	0	Los Angeles	Los Angeles
+Riverside City College	Welding Technology	13	0	Inland Empire	Riverside
+San Bernardino Valley College	Welding Technology	32	0	Inland Empire	San Bernardino
+Antelope Valley College	Welding Technology	16	1	Los Angeles	Los Angeles
+Cabrillo College	Civil and Construction Management Technology	31	0	Central Coast	Santa Cruz
+Fresno City College	Welding Technology	17	7	San Joaquin Valley	Fresno
+Los Angeles Trade Technical College	Construction Crafts Technology	26	0	Los Angeles	Los Angeles
+North Orange Continuing Education Credit	Construction Inspection	19	0	Orange County	Orange
+North Orange Continuing Education	Construction Inspection	19	0	Orange County	Orange
+Butte College	Welding Technology	28	0	Far North	Butte
+Palomar College	Construction Crafts Technology	2	0	San Diego – Imperial	San Diego
+College of the Desert	Construction Inspection	24	0	Inland Empire	Riverside
+Santa Ana College	Welding Technology	46	0	Orange County	Orange
+Palomar College	Welding Technology	16	0	San Diego – Imperial	San Diego
+Bakersfield College	Welding Technology	18	0	San Joaquin Valley	Kern
+Orange Coast College	Welding Technology	50	0	Orange County	Orange
+Victor Valley College	Welding Technology	27	0	Inland Empire	San Bernardino
+College of the Canyons	Welding Technology	28	4	Los Angeles	Los Angeles
+Lassen College	Welding Technology	21	0	Far North	Lassen
+Santa Rosa Junior College	Plumbing, Pipefitting and Steamfitting	18	0	Bay Area	Sonoma
+Los Medanos College	Welding Technology	17	0	Bay Area	Contra Costa
+Barstow Community College	Welding Technology	13	0	Inland Empire	San Bernardino
+El Camino College	Welding Technology	20	0	Los Angeles	Los Angeles
+Victor Valley College	Construction Crafts Technology	26	0	Inland Empire	San Bernardino
+College of the Sequoias	Welding Technology	17	0	San Joaquin Valley	Tulare
+College of the Siskiyous	Welding Technology	14	0	Far North	Siskiyou
+Ventura College	Welding Technology	13	0	Central Coast	Ventura
+Cerritos College	Welding Technology	76	0	Los Angeles	Los Angeles
+Pasadena City College	Welding Technology	10	0	Los Angeles	Los Angeles
+College of Marin	Welding Technology	10	0	Bay Area	Marin
+San Bernardino Valley College	Construction Inspection	27	0	Inland Empire	San Bernardino
+San Diego Mesa College	Civil and Construction Management Technology	15	0	San Diego – Imperial	San Diego
+Rio Hondo College	Plumbing, Pipefitting and Steamfitting	36	0	Los Angeles	Los Angeles
+Bakersfield College	Construction Crafts Technology	8	0	San Joaquin Valley	Kern
+Woodland Community College	Welding Technology	6	1	Greater Sacramento	Yolo
+Gavilan College	Civil and Construction Management Technology	6	0	Bay Area	Santa Clara
+Foothill College	Plumbing, Pipefitting and Steamfitting	69	0	Bay Area	Santa Clara
+Pasadena City College	Construction Inspection	12	0	Los Angeles	Los Angeles
+College of the Canyons	Construction Crafts Technology	5	0	Los Angeles	Los Angeles
+City College of San Francisco	Construction Crafts Technology	13	0	Bay Area	San Francisco
+El Camino College	Construction Crafts Technology	25	0	Los Angeles	Los Angeles
+Long Beach City College	Construction Inspection	4	0	Los Angeles	Los Angeles
+College of San Mateo	Construction Inspection	10	0	Bay Area	San Mateo
+College of the Sequoias	Construction Inspection	3	0	San Joaquin Valley	Tulare
+College of the Canyons	Construction Inspection	4	0	Los Angeles	Los Angeles
+Coastline Community College	Construction Inspection	14	0	Orange County	Orange
+Norco College	Construction Inspection	11	0	Inland Empire	Riverside
+Saddleback College	Construction Inspection	7	0	Orange County	Orange
+Foothill College	Construction Crafts Technology	6	0	Bay Area	Santa Clara
+Laney College	Construction Inspection	5	0	Bay Area	Alameda
+Fullerton College	Civil and Construction Management Technology	4	0	Orange County	Orange
+Cabrillo College	Construction Inspection	4	0	Central Coast	Santa Cruz
+Imperial Valley College	Civil and Construction Management Technology	2	0	San Diego – Imperial	Imperial
+Bakersfield College	Plumbing, Pipefitting and Steamfitting	1	0	San Joaquin Valley	Kern
+Laney College	Welding Technology	26	0	Bay Area	Alameda
+Los Angeles Trade Technical College	Welding Technology	42	0	Los Angeles	Los Angeles
+Los Angeles Trade Technical College	Plumbing, Pipefitting and Steamfitting	31	0	Los Angeles	Los Angeles
+Long Beach City College	Welding Technology	32	0	Los Angeles	Los Angeles
+Sierra College	Welding Technology	20	0	Greater Sacramento	Placer
+American River College	Welding Technology	22	0	Greater Sacramento	Sacramento
+Las Positas College	Welding Technology	27	0	Bay Area	Alameda
+Palo Verde College	Welding Technology	15	0	Inland Empire	Riverside
+Rio Hondo College	Welding Technology	25	0	Los Angeles	Los Angeles
+Yuba College	Welding Technology	16	0	Greater Sacramento	Yuba
+Shasta College	Welding Technology	16	0	Far North	Shasta
+Cosumnes River College	Welding Technology	15	0	Greater Sacramento	Sacramento
+College of the Redwoods	Welding Technology	13	0	Far North	Humboldt
+Compton College	Welding Technology	17	0	Los Angeles	Los Angeles
+Citrus College	Civil and Construction Management Technology	23	0	Los Angeles	Los Angeles
+Hartnell College	Civil and Construction Management Technology	14	0	Central Coast	Monterey
+Allan Hancock College	Welding Technology	32	0	Central Coast	Santa Barbara
+College of the Desert	Welding Technology	19	0	Inland Empire	Riverside
+Cosumnes River College	Civil and Construction Management Technology	17	0	Greater Sacramento	Sacramento
+Mt. San Antonio College	Civil and Construction Management Technology	12	0	Los Angeles	Los Angeles
+San Joaquin Delta College	Welding Technology	11	0	San Joaquin Valley	San Joaquin
+Laney College	Civil and Construction Management Technology	19	0	Bay Area	Alameda
+Cuesta College	Welding Technology	18	0	Central Coast	San Luis Obispo
+Chabot College	Welding Technology	13	0	Bay Area	Alameda
+Cabrillo College	Welding Technology	12	0	Central Coast	Santa Cruz
+Glendale Community College	Welding Technology	10	0	Los Angeles	Los Angeles
+Los Angeles Pierce College	Welding Technology	9	0	Los Angeles	Los Angeles
+College of the Canyons	Civil and Construction Management Technology	8	0	Los Angeles	Los Angeles
+Solano Community College	Welding Technology	9	0	Bay Area	Solano
+San Diego College of Continuing Education Credit	Welding Technology	8	0	San Diego – Imperial	San Diego
+San Diego College of Continuing Education	Welding Technology	8	0	San Diego – Imperial	San Diego
+Santa Rosa Junior College	Civil and Construction Management Technology	14	0	Bay Area	Sonoma
+Butte College	Construction Crafts Technology	14	0	Far North	Butte
+Diablo Valley College	Civil and Construction Management Technology	12	0	Bay Area	Contra Costa
+Santa Rosa Junior College	Welding Technology	9	0	Bay Area	Sonoma
+Columbia College	Welding Technology	8	0	San Joaquin Valley	Tuolumne
+Pasadena City College	Construction Crafts Technology	7	0	Los Angeles	Los Angeles
+San Jose City College	Construction Crafts Technology	15	0	Bay Area	Santa Clara
+Reedley College	Welding Technology	11	0	San Joaquin Valley	Fresno
+Napa Valley College	Welding Technology	7	0	Bay Area	Napa
+Modesto Junior College	Welding Technology	6	0	San Joaquin Valley	Stanislaus
+Chabot College	Civil and Construction Management Technology	6	0	Bay Area	Alameda
+Taft College	Welding Technology	6	0	San Joaquin Valley	Kern
+Madera College	Welding Technology	6	0	San Joaquin Valley	Madera
+Cerro Coso Community College	Welding Technology	6	0	San Joaquin Valley	Kern
+Imperial Valley College	Welding Technology	6	0	San Diego – Imperial	Imperial
+Southwestern College	Construction Inspection	11	0	San Diego – Imperial	San Diego
+Norco College	Construction Crafts Technology	9	0	Inland Empire	Riverside
+Hartnell College	Welding Technology	8	0	Central Coast	Monterey
+Mendocino College	Construction Crafts Technology	7	0	Far North	Mendocino
+Mendocino College	Welding Technology	6	0	Far North	Mendocino
+Fullerton College	Welding Technology	5	0	Orange County	Orange
+City College of San Francisco	Civil and Construction Management Technology	5	0	Bay Area	San Francisco

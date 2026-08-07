@@ -292,6 +292,100 @@ const LA_COLLEGES = [
     check("teaching the CORE discipline still outranks proximity",
       idx(coreVsNear, "Distant Carpentry College") < idx(coreVsNear, "Nearby Unrelated College"));
 
+    // ── 6b. Mode 7 part 3: the CONTEXT, built from the REAL 150-row window ───
+    // The two prior handoffs left one thing explicitly unmeasured: whether
+    // buildOfferingsContext's `others` list was populated at all for mode 7's
+    // query. Two candidate causes needed OPPOSITE fixes — retrieval thinning
+    // (no prompt wording could fix it) vs the model not following the rule —
+    // and guessing between them is the mistake this workstream keeps repeating.
+    //
+    // Measured 2026-08-07 against the live RPC with the EXACT tsquery the
+    // deployed function builds for mode 7 (see the fixture header): 613 rows
+    // across 117 colleges match, the RPC caps at 150, and the window contains
+    // Los Angeles Trade Technical at rank 2 and Rio Hondo at 6. Retrieval is
+    // NOT the cause. The whole of part 3's answer was in the context.
+    //
+    // These assertions run on that committed window, so if a future keyword,
+    // synonym, cap or ranking change starts thinning the LA colleges out, this
+    // goes red at the retrieval layer instead of surfacing as model flake.
+    const mode7Rows = fs.readFileSync("tests/fixtures/offerings_mode7_2026-08-07.tsv", "utf8")
+      .split("\n").filter((l) => l && !l.startsWith("#"))
+      .map((l) => {
+        const [college, top_title, course_count, cid_count, region, county] = l.split("\t");
+        return { college, top_title, top_code: "", course_count: +course_count,
+                 cid_count: +cid_count, region, county, sample_courses: [] };
+      });
+    check("mode 7 fixture is the full 150-row RPC window", mode7Rows.length === 150);
+    // The fixture is a snapshot of a CAPPED window. Cerritos sits at rank 71 and
+    // Compton at 111, so a smaller cap silently drops them out of part 3 — and
+    // the snapshot would keep passing while production regressed. Tie the two.
+    check("the offerings cap is still the 150 this window was measured at",
+      /result_limit: 150/.test(SRC));
+
+    // Core keywords come from the REAL query through the REAL keyword pipeline,
+    // not a hand-written list — a stop-word edit that dropped "carpentry" or
+    // "construction" would otherwise pass this test while breaking production.
+    const kwMod = liftBlock(SRC, "const TOPIC_SYNONYMS", "// ── Topic-based exhibit search",
+      ["extractTopicKeywords", "expandWithSynonyms"]);
+    const Q7_FULL = "Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?";
+    const q7Core = kwMod.expandWithSynonyms(kwMod.extractTopicKeywords(Q7_FULL));
+    check("mode 7's keywords still carry the discipline itself",
+      ["carpentry", "construction", "welding"].every((k) => q7Core.includes(k)));
+
+    const m7 = ctxMod.buildOfferingsContext(
+      mode7Rows, "Los Angeles Harbor College", harborGeo, q7Core, null);
+    const m7Heads = headings(m7);
+
+    // LA Harbor teaches none of this — so the branch that fires is the one that
+    // explicitly hands the model part 3. If this line stops being emitted, the
+    // rule in OFFERINGS_RULE is the ONLY thing left asking for part 3.
+    check("mode 7: LA Harbor is absent from the offerings window",
+      !mode7Rows.some((r) => r.college === "Los Angeles Harbor College"));
+    check("mode 7: the context tells the model to point at the nearest teaching colleges",
+      /Los Angeles Harbor College does NOT appear to teach[\s\S]*point to the nearest colleges that do/.test(m7));
+
+    // Part 3's answer WAS in the context, and every college offered was local.
+    check("mode 7: the offerings list is populated (10 colleges printed)",
+      m7Heads.length === 10);
+    const laCounty = new Set(mode7Rows.filter((r) => r.county === "Los Angeles").map((r) => r.college));
+    check("mode 7: every printed college is in LA Harbor's own county",
+      m7Heads.every((h) => laCounty.has(h)));
+
+    // The exact colleges smoke mode 7 greps for — all six are in the printed set.
+    check("mode 7: every college the smoke assertion accepts is in the context",
+      ["Los Angeles Trade Technical College", "Rio Hondo College", "Long Beach City College",
+        "El Camino College", "Cerritos College", "Compton College"]
+        .every((c) => m7Heads.includes(c)));
+
+    // Provenance: the roll-up totals the LIVE function quoted back on 2026-08-07
+    // (smoke run 49, deploy 12 / v35) are these numbers, which only exist after
+    // buildOfferingsContext sums a college's TOP programs. The answer came from
+    // this list, not from the model's own knowledge of LA colleges.
+    check("mode 7: the course totals Sierra quoted live are the ones this builder computes",
+      /Los Angeles Trade Technical College[^\n]*teaches 131 course/.test(m7) &&
+      /Long Beach City College[^\n]*teaches 51 course/.test(m7) &&
+      /El Camino College[^\n]*teaches 49 course/.test(m7) &&
+      /Cerritos College[^\n]*teaches 76 course/.test(m7));
+
+    // WHY PROXIMITY IS THE ONLY THING DOING WORK HERE. Every row in this window
+    // is a construction / carpentry / welding / plumbing TOP program, so the
+    // core term scores 1000 for EVERY college and discriminates nothing. The
+    // volume term saturates at min(courses, 39), which every serious trades
+    // catalog clears — so within a band the order is just the RPC's ts_rank
+    // order. Strip the proximity band and the LA question is answered with
+    // Oakland, Sacramento, San Diego and Riverside.
+    const isCore = (t) => q7Core.some((k) => k.length >= 4 && t.toLowerCase().includes(k));
+    check("mode 7: `core` does no discriminating work — every returned row is core",
+      mode7Rows.every((r) => isCore(r.top_title)));
+    const m7NoGeo = headings(
+      ctxMod.buildOfferingsContext(mode7Rows, "Los Angeles Harbor College", null, q7Core, null));
+    check("mode 7: without the proximity band, most of the offered list leaves LA County",
+      m7NoGeo.filter((h) => laCounty.has(h)).length <= 4);
+    check("mode 7: without it, the 223-course Sacramento catalog is offered to an LA visitor",
+      m7NoGeo.includes("American River College"));
+    check("mode 7: with it, that Sacramento catalog is not offered at all",
+      !m7Heads.includes("American River College"));
+
     // ── 7. The geo map fills in rows the RPC left ungeocoded ─────────────────
     const ungeocoded = ctxMod.buildOfferingsContext([
       off("Norco College", null, null, "Carpentry", 110),
