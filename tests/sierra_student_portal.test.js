@@ -1,4 +1,4 @@
-// Sierra and Credit for Being You — the student portal, framed as BOTH/AND.
+// Sierra and Credit for Being You — the student portal, framed as YES/AND.
 //
 // WHY THIS TEST EXISTS
 // --------------------
@@ -12,12 +12,16 @@
 // and LANDING_PAGE_RULE introduced the portal only as what to say when a
 // college's landing page is MISSING — i.e. as a fallback.
 //
-// Sam's correction (2026-08-07): it is a both/and. The landing page shows what
-// a student's own college will award; Credit for Being You shows what EVERY
-// college would award for the same prior learning. People choose a college on
-// exactly that comparison — proximity AND where their training is worth the
-// most credit — so naming only the local landing page takes the choice away
-// from them.
+// Sam's correction (2026-08-07), in two passes. First: it is not an either/or.
+// Then, sharper — "more accurate to say Yes/And rather than both/and", and that
+// is a correction to the SUBSTANCE, not the label. My first rewrite split the
+// two routes by FUNCTION: compare at the portal, act at the landing page. Wrong.
+// A student can see their CPL opportunities AND request a review in BOTH
+// places; Credit for Being You simply ADDS the view across every CCC. So Sierra
+// says yes to the college landing page and ADDS the portal — it never negates,
+// corrects, or hands off. People choose a college on how close it is AND where
+// their prior learning earns the most credit, and naming only the local page
+// quietly narrows that.
 //
 // Prompt text has no runtime behaviour to assert from Node, so these are
 // source-level assertions on the rule constants — the same posture as
@@ -63,25 +67,54 @@ for (const [label, text] of [["PORTAL_RULE", PORTAL], ["LANDING_PAGE_RULE", LAND
 }
 
 // ── Both/and, explicitly ────────────────────────────────────────────────────
-check("PORTAL_RULE states the both/and in as many words",
-  /BOTH\/AND, NOT EITHER\/OR/.test(PORTAL));
-check("PORTAL_RULE tells Sierra to point at BOTH routes",
-  /point to BOTH/i.test(PORTAL));
+check("PORTAL_RULE states the yes/and in as many words",
+  /YES\/AND, NOT EITHER\/OR/.test(PORTAL));
+// Sam, 2026-08-07: "more accurate to say Yes/And rather than both/and". The
+// difference is not cosmetic. My first pass split the two by FUNCTION —
+// compare at the portal, act at the landing page — and that is wrong: a
+// student can see opportunities AND request a review in BOTH places. The
+// portal simply ADDS the system-wide view. Never negate the landing page.
+check("PORTAL_RULE says YES to the landing page first, then adds",
+  /Say YES to the college landing page, AND add the portal/i.test(PORTAL));
+check("PORTAL_RULE forbids the compare-there / act-here split",
+  /not divided into "compare over there, act over here"/i.test(PORTAL));
+check("PORTAL_RULE grants the SAME capability to both routes",
+  /they can do THE SAME THING at CREDIT FOR BEING YOU/i.test(PORTAL));
+check("PORTAL_RULE says the portal is not a hand-off comparison tool",
+  /not a comparison tool that hands you off/i.test(PORTAL));
+check("the student rule frames it as yes/and, not one instead of the other",
+  /YES\/AND, never one instead of the other/i.test(STUDENT_RULE));
+check("the student rule grants review at BOTH routes",
+  /request a CPL review at their college's CPL landing page/i.test(STUDENT_RULE) &&
+  /do the very same thing at Credit for Being You/i.test(STUDENT_RULE));
+check("PORTAL_RULE gives Sierra the phrasing to use",
+  /Phrase it as an addition/i.test(PORTAL));
 check("PORTAL_RULE forbids demoting the portal to a fallback",
   /NOT present the portal as a fallback/i.test(PORTAL));
 check("the old either/or hinge is gone", !/If instead the student is ALREADY enrolled/i.test(PORTAL));
 check("the student audience rule gives BOTH routes",
-  /BOTH routes, not one/i.test(STUDENT_RULE));
+  /Give them BOTH routes/i.test(STUDENT_RULE));
 
 // ── The REASON — this is what makes the advice usable ───────────────────────
 // A student weighs proximity against how much credit they'd get. Sierra has to
 // say that out loud, or "here are two links" is just noise.
-check("PORTAL_RULE explains the landing page = what THAT college awards",
-  /THAT college specifically will award/i.test(PORTAL));
-check("PORTAL_RULE explains the portal = what EVERY college awards",
-  /EVERY college in the system would award/i.test(PORTAL));
+check("PORTAL_RULE says the portal ADDS the any-CCC view",
+  /shows their options at any California community college/i.test(PORTAL));
+// Sam, 2026-08-07: the portal "offers a much more comprehensive CPL portfolio
+// development procedure". That is the second half of the AND — the portal is
+// not merely a wider view, it helps a student build a stronger case, which is
+// worth more credit wherever they take it.
+check("PORTAL_RULE names the fuller portfolio development process",
+  /MUCH MORE COMPREHENSIVE CPL PORTFOLIO DEVELOPMENT PROCESS/i.test(PORTAL));
+check("PORTAL_RULE says what that process actually does",
+  /assemble and describe everything they have learned/i.test(PORTAL) &&
+  /evidence a college can actually assess/i.test(PORTAL));
+check("the student rule mentions the fuller portfolio build",
+  /fuller way of building out their CPL portfolio/i.test(STUDENT_RULE));
+check("the student rule connects a better portfolio to more credit",
+  /better-built portfolio tends to be worth more credit/i.test(STUDENT_RULE));
 check("PORTAL_RULE names the real decision: proximity AND most credit",
-  /how close it is AND where their training is worth the most credit/i.test(PORTAL));
+  /how close it is AND where their prior learning earns the most credit/i.test(PORTAL));
 check("the student rule names that same trade-off",
   /how close it is AND on where their training earns the most credit/i.test(STUDENT_RULE));
 
