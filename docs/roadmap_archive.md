@@ -3487,3 +3487,31 @@ here, as session OBLIGATIONS — *a habit that depends on a new user remembering
 day*. **Agents: not yet** (an agent must be invoked; standing instructions can't be forgotten). Suite
 **185** files green. Durable: `methodology-a-governance-artifact-must-measure-itself`. Story:
 `docs/governance_lessons.md`.
+
+### SkyPlan — the $50k tab's real measure, and headcount finally retired (2026-08-06, #1007 · #1012 · #1013 · #1014 MERGED)
+
+Sam opened on the $50k/ESS-25-82 tab — *"where we have simple check marks"* — with the goal underneath
+it: **get colleges unstuck and awarding real CPL to real students in MAP.** The rework is NOT built; this
+run found what it has to stand on. ⭐ **He named MVC / Cabrillo / Bakersfield as adept BEFORE anything was
+computed, and that offhand list was the free test set that killed three plausible metrics.** Applied-per-1,000
+ranked Cabrillo 29th; applied÷eligible 24th; transcribe-completion crowned a college whose 99% was a *batch
+AP/IB upload*. Only the **disposition rate** — share of credit recommendations carrying any disposition —
+put all three in the top thirteen of 106 against a **median 4.7%**. It is also the FAIR measure: Cabrillo is
+**844 Not Applicable vs 320 Applied**, so scoring "applied" alone reads 9% instead of 34%. ⭐ **Sam corrected
+my phase**: applied, not transcribed, is this phase's ask — which made the fix *smaller* (outcome 3 fires on
+ELIGIBLE, not an action a college takes; moving it to applied changes 13 colleges, not 78). ⭐ **His "something
+in the config is trumping us" was right**: `wantsUnits()` decided FTES-vs-students by string-matching
+"headcount" in the metric LABEL, so a retitle silently moved targets onto a headcount-era `target_rate`
+applied to credit FTES. Fixed with an explicit **layer-aware** `unit` (a naive lookup would have inverted the
+bug and scored live Scenario 2 as FTES). Also: **NC split headcount → noncredit FTES** via a new
+`feederBasis(f)` seam (open-coded at FOUR sites), Calbright placeholder 1,000 (reported 21,438 = 8.63
+FTES/student, impossible), and 5 prose strings that still claimed targets ride headcount. ⚠ **FTES alone
+moves Calbright only $33K→$40K — the FLOOR is what delivers equity**, and they were being conflated.
+**Deliberately NOT done:** re-baking `year_priorities` to FTES (rewrites ~15 behavioural assertions — its own
+PR). Malone is productionising the student×CR report; `funding/_build_cr_backlog.py` waits on the view name.
+A GitHub **Actions incident** (confirmed, 17:40 UTC) ate two hours — `runner_id: 0` was the tell.
+Durable: `methodology-validate-a-derived-metric-against-expert-ranking`,
+`methodology-an-incentive-teaches-where-the-finish-line-is`,
+`methodology-a-label-that-decides-behaviour-is-a-policy-switch`,
+`playbook-diagnose-a-starved-actions-runner`. Story: `docs/cpl_funding_lessons.md` §2026-08-06 ·
+handoff `docs/session_123_handoff.md`.

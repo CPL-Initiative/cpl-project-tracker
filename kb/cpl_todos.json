@@ -1,80 +1,62 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-07 · SkyHunter — Sierra's CPR fix is LIVE in production (v29). One known defect left in the smoke battery, queued for SkyHero.",
-  "_session": "SkyHunter (123)",
-  "_status": "The CPR fix is live. A colleague at the Chancellor's Office asked which colleges give college credit for a CPR or AED certificate; Sierra found two, and there are seven. The search had five separate faults — the sharpest being that a fix made five weeks ago for this exact question is what caused the failure. Sierra now finds five, and handles plurals, two-word spellings and misspellings. It is deployed and confirmed working against the live assistant, not just in testing. Deploying used to mean a person retyping a 66KB file by hand into the live system with no practice environment; it is now one button that publishes exactly what is in the repository, which is the quieter win from today. One known problem remains: when asked which nearby college teaches something, Sierra picks the college with the MOST records rather than the CLOSEST one — it suggested a college fifty miles away over four that are minutes from the campus asked about. That is queued next. And the deeper limit is unchanged: Sierra's copy of the exhibit list covers 59 of the 123 colleges, which is why two of the seven CPR colleges are still invisible to her.",
+  "_as_of": "2026-08-07 · SkyHero — Sierra now knows which college you're asking about, and points you to both your college and the student portal. Two decisions waiting on Sam.",
+  "_session": "SkyHero (124)",
+  "_status": "Sierra used to recommend a college fifty miles away when four were minutes down the road. The cause turned out not to be the distance ranking at all — she was never working out WHICH college you were asking about. The question 'Does Los Angeles Harbor College…' matched the word 'Angeles' against nine colleges, gave up, and never tried the word 'Harbor', which matches exactly one. Worse, the database was free to hand back any three of those nine, and did — two identical questions, two different answers. That is why she seemed unreliable in a way nobody could pin down: it was not the AI being vague, it was the lookup being random. Fixed, and she now offers a nearby college rather than a big distant one — a colleague reported this exact problem on 3 July and it sat unread in the feedback box for five weeks. Also new: a Copy button on every answer, and Sierra now tells people about BOTH their own college's CPL page AND Credit for Being You, explaining what each is for. Two things need your call: whether Sierra should point a student to a nearby college that teaches a subject (which colleges may not love), and the fact that nobody has ever read the feedback people have been leaving.",
   "items": [
     {
-      "id": "sierra-mode7-distance",
+      "id": "sierra-seeker-vs-college",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "⚖️ YOUR CALL — HOW FAR DO WE GO FOR THE STUDENT? You said err on the side of CPL seekers while supporting our colleges. The rule I wrote to stop Sierra 'poaching' students off a college's own page can backfire: told never to volunteer a comparison, she may stay quiet when someone asks about a certificate their college hasn't set up yet — which helps nobody. My proposed line: she never HIDES something that changes your outcome, but she never SELLS you on another college either. Say yes and I'll ship it."
+    },
+    {
+      "id": "sierra-mode7-intent",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "🧭 YOUR CALL — WHAT SHOULD SIERRA SAY WHEN YOUR COLLEGE DOESN'T OFFER IT? Asked about NCCER carpentry at LA Harbor, she now names Norco and Barstow, the two colleges that have actually SET UP that credit, and suggests LA Harbor adopt it too. Our old automated test expects her to instead name nearby colleges that merely TEACH construction (El Camino, Trade Tech). No LA-area college has the credit set up. Both answers are defensible — which do you want? I won't quietly change the test to match the code."
+    },
+    {
+      "id": "sierra-feedback-unread",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "📬 NOBODY HAS EVER READ THE FEEDBACK — 43 thumbs-up/down have come in since 1 July and not one has been marked reviewed. 10 are genuine thumbs-down with notes. One of them found today's bug, five weeks early. Before inviting the MAP and CO teams to test Sierra, worth draining these 10 once — otherwise a few hundred unread notes teach people their feedback goes nowhere."
+    },
+    {
+      "id": "sierra-portal-link-check",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "🔗 CLICK THE LINK SIERRA NOW GIVES STUDENTS — creditforbeingyou.org/main/student. I could not open it from here (our sandbox blocks that site, nothing wrong with the site itself), so it is used exactly as you sent it. If students should land somewhere else, it is a one-line change."
+    },
+    {
+      "id": "sierra-copy-button",
+      "for": "sam",
+      "tab": "cobi",
+      "text": "📋 SIERRA ANSWERS NOW HAVE A COPY BUTTON — paste into Word, Outlook or Teams and the headings, tables and links come with it. Live on both the Sierra page and the dashboard tab."
+    },
+    {
+      "id": "sierra-smoke-noise",
       "for": "fable",
       "tab": "cobi",
-      "text": "📍 NEXT (SkyHero) — SIERRA PICKS THE BIGGEST COLLEGE, NOT THE NEAREST. Asked which college near Los Angeles Harbor teaches carpentry, she named Norco — about fifty miles away in Riverside County — over LA Trade Tech, Long Beach, Cerritos and Rio Hondo, all of which are close by and all of which are in her data. Norco simply has more records (107 vs 45/7/3/2). Distance is losing to volume. This is the last red check in the automated test battery."
+      "text": "🧹 FILTER THE TEST ROBOT OUT OF THE FEEDBACK QUEUE — 19 of the 43 feedback rows are our own automated test writing into the box humans are meant to read. Filter page='smoke' out of the review surface so the queue is worth opening."
+    },
+    {
+      "id": "sierra-poaching-audit",
+      "for": "fable",
+      "tab": "cobi",
+      "text": "🔍 FINISH THE POACHING AUDIT — a five-part review (Sierra's rule text, her per-audience voices, the section headings in her data, the live guidance rows in the database, and the college report generators) was still running when this session ended. It checks whether anything still steers a visitor away from the college hosting her."
     },
     {
       "id": "sierra-corpus-59",
       "for": "fable",
       "tab": "cobi",
-      "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — the rest of the CPR gap. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she simply cannot see them. Touches a shared table that production reads, so walk Sam through the impact first."
+      "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — unchanged and still the biggest limit. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she cannot see them. Touches a shared table production reads, so walk Sam through the impact first."
     },
     {
-      "id": "sierra-deploy-button",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "✅ DEPLOYING SIERRA IS NOW ONE BUTTON — no more hand-copying a 66KB file into the live system. It publishes exactly what is in the repository, and refuses to run unless you type DEPLOY. Your Supabase token made this possible; it is stored in GitHub and does not need touching again."
-    },
-    {
-      "id": "sierra-cpr-list",
-      "for": "sam",
-      "tab": "cobi",
-      "text": "📋 THE CPR ANSWER IS READY TO SEND to your CO colleague — 7 colleges give credit for CPR/AED/First-Aid specifically (American River, Cabrillo, City College of SF, Las Positas, LA Mission, West LA, and Modesto with three separate credentials), plus 28 more via EMT certification, which is related but a different credential. Full detail with course numbers is in the session notes."
-    },
-    {
-      "id": "student-file-tranches",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "📦 THE STUDENT FILE COULD NOT BE READ — the Drive connector stops at 10 MB and yours is 11.8 MB, so nothing in it has been examined. Either split it into four zips under about 4 MB each, or (better) get the report's view name from Malone so it flows in automatically each day and never has to be handled by hand at all."
-    },
-    {
-      "id": "student-allowlist",
+      "id": "sierra-student-detail",
       "for": "fable",
-      "tab": "implementation-funding",
-      "text": "🔐 BUILD THE STUDENT AGGREGATOR ON AN ALLOWLIST — keep only 8 of the 32 columns (college, CPL mode, credit recommendation, college course, exhibit ID, source, status, and a scrambled student ID). Drop the Notes column outright: it is free text staff can type anything into. Names and the SSN field arrive masked rather than blank, so do not rely on them being empty — just never read them."
-    },
-    {
-      "id": "military-adoption",
-      "for": "fable",
-      "tab": "cobi",
-      "text": "🎖 MINE THE MILITARY RECORDS FOR ADOPTION LEADS — Sam's idea, and the data backs it. A student at Allan Hancock has a Basic Life Support recommendation sitting in their plan from a military course, yet Allan Hancock appears nowhere on the CPR list. The file cleanly separates colleges that HAVE articulated something from those where students are waiting and nobody has, which is two useful lists rather than one."
-    },
-    {
-      "id": "suppression-threshold",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "🔢 CONFIRM THE PRIVACY THRESHOLD — you said show '<10' when a count at one college is below ten. The funding builder currently uses five. Raising it is a one-line change; it just needs your decision on which number we stand behind."
-    },
-    {
-      "id": "f50k-rework",
-      "for": "fable",
-      "tab": "implementation-funding",
-      "text": "🎯 NEXT — REBUILD THE $50k TAB on the new measure. Replace the three bare checkmarks with a stage per priority, each shown as a fraction (\"412 of 1,847 recommendations decided\") rather than a tick — a tick becomes the new finish line, which is exactly how colleges came to believe uploading a JST was the whole job. Show each college its own numbers only; never a league table."
-    },
-    {
-      "id": "f50k-star",
-      "for": "fable",
-      "tab": "implementation-funding",
-      "text": "⭐ REFRAME THE VETERAN STAR rather than repeating it. A college can earn the star without ever articulating a single credit recommendation. Pair it with what it produced: \"979 JSTs uploaded — those generated 18,264 credit recommendations, none articulated yet. The star is the starting line.\""
-    },
-    {
-      "id": "f50k-free-win",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "✅ A FREE WIN worth raising with Malone — 11,495 rows in students' plans say \"Credit Is Not Recommended\". ACE is stating outright that no credit exists, so no college can ever act on them, yet they sit in every queue looking like work. Marking them not-applicable automatically would shrink every college's list overnight with no judgement call."
-    },
-    {
-      "id": "f50k-focus",
-      "for": "sam",
-      "tab": "implementation-funding",
-      "text": "🎯 WHERE TO POINT COLLEGES — just 20 military training documents account for about 40% of the 424,945 untouched recommendations statewide. A push on those few would move more than a broad ask ever could."
+      "tab": "funding",
+      "text": "🔢 WIRE MALONE'S STUDENT×CREDIT-RECOMMENDATION VIEW into the funding backlog builder once the view name lands. The 11.8MB export could not be read directly (the Drive connector caps at 10MB). Agreed columns are the 8 non-identifying ones; Sam wants small-group suppression at fewer than 10."
     }
   ]
 }

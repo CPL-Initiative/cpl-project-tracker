@@ -1069,3 +1069,163 @@ list — that part is not a bug.
 **Still open, unchanged:** the corpus covers **59 of MAP's 123 colleges**,
 which is the rest of the CPR gap (American River, LA Mission, West LA are
 simply absent); the student-detail aggregator waits on Malone's view name.
+
+---
+
+## SkyHero — the bug was one layer up, and four passes on what Sierra tells a seeker (2026-08-07)
+
+**Session 124 · #1023 · #1024 · #1025 · #1026 · #1027, all merged · cpl-chat deploys 7–10 all green**
+
+### What SkyHunter handed over, and why it was wrong in an interesting way
+
+The handoff was precise and confident: smoke mode 7 names Norco College (Riverside, ~50 mi) for a Los Angeles
+Harbor question, while LA Trade Tech (45 exhibits), Long Beach (7), Cerritos (3) and Rio Hondo (2) — all in LA
+Harbor's own county, all in the corpus — rank below it. Diagnosis: **volume outranking distance**. Look at
+`searchCollegeOfferings()` / `fetchCollegeGeo()` / the `formatOfferingsContext` ordering.
+
+Every fact in that handoff was true. The diagnosis was still wrong, because the ranking code it pointed at
+**was never reached**.
+
+`buildOfferingsContext` already ranked `core (200) + county (100) + region (40) + min(courses, 39)`. Volume caps
+at 39, *below* the region band — so proximity could not lose to volume there. The exhibit list was the one with
+no geography… but that path had no LA-county rows at all. Neither explained Norco.
+
+The actual cause was in `detectAndFetchCollegeProfile`, which nobody had looked at:
+
+```js
+for (const word of words) {
+  const { data } = await sb.from("chatbox_college_profiles")
+    .select("*").ilike("college", `%${word}%`).limit(3);
+  if (data && data.length === 1) return data[0];
+  if (data && data.length > 1) { /* …≥2-word check… */ return data; }   // ← returns HERE
+}
+```
+
+The loop **returns on the first word with several matches**. For *"Does Los Angeles Harbor College…"* the word
+list is `["angeles", "harbor", "give", "nccer", …]`. `"angeles"` matches **9** colleges → the `≥2 word` rescue
+runs against only the 3 rows fetched → if LA Harbor isn't among them, it returns the ambiguous **array** and
+**never reaches `"harbor"`, which matches exactly one college.**
+
+⭐ **And `.limit(3)` with no `ORDER BY` is non-deterministic.** Two identical live calls, minutes apart:
+
+```
+ilike '%angeles%' limit 3  →  {East LA, LA City, LA Harbor}        ← resolves correctly
+ilike '%angeles%' limit 3  →  {LA Mission, LA Southwest, West LA}  ← LA Harbor invisible
+```
+
+So the question found its home college **only when LA Harbor happened to fall inside an arbitrary window.**
+Postgres is free to return any 3 of the 9. That is the whole "mode 7 is flaky" story: not model prose,
+**retrieval was flaky**. And with no home college, `askedGeo` is `null`, every proximity band scores 0, and
+nothing downstream *can* rank by distance — the ranking code was innocent and unreachable.
+
+**The lesson that generalises:** a handoff's *facts* can all be right while its *causal arrow* points one layer
+too low. The tell was cheap and I nearly skipped it — I re-derived the rank function by hand, saw `min(courses,
+39) < 40`, and had to explain why the stated bug was arithmetically impossible. That contradiction is what sent
+me up a layer. **When the code you were pointed at cannot produce the symptom, stop fixing it.**
+
+### What changed
+
+1. **Detection** — query every candidate word at once (ordered → deterministic), pool the candidates, score each
+   college by how many query words its name contains. Strict multi-word winner wins; a lone single-word match is
+   the fallback; a genuine tie still returns an ARRAY so the West-LA real-estate disambiguation survives. Also
+   one round-trip instead of N sequential awaits, and punctuation is stripped (`"Cerritos."` searched
+   `%cerritos.%` and matched nothing).
+2. **Geography for the exhibit list** — `search_exhibits_by_topic` returns no region/county, so that list could
+   only ever sort by count. `college_geo` is now loaded once per question and both lists rank
+   county → region → volume.
+3. **Unambiguous bands** — the old `200/100/40` against `min(courses, 39)` meant a distant college with 39+
+   courses (239) versus a same-region college with none (240). One point apart is a coin flip.
+
+Three cases, all measured against live data on 2026-08-07:
+
+| Question | Before | After |
+|---|---|---|
+| LA Harbor / NCCER | Norco (~50 mi) | every LA-county college above Norco, and above American River's 223-course Sacramento catalog |
+| Fullerton / CPR | Modesto (Stanislaus, ~300 mi, 12 exhibits) | **Cypress** — 7 mi, same district |
+| Crafton / firefighter | Bakersfield (San Joaquin Valley, 9 exhibits) | **Chaffey** (same county), then Moreno Valley |
+
+### ⭐ The feedback queue already knew
+
+That third case was not mine. It is in `sierra_feedback`, dated **2026-07-03**, a thumbs-up with a caveat:
+
+> *"Good answer, but could be improved. Moreno Valley College is closer to Crafton than Bako and should have been
+> mentioned"*
+
+A human found this defect **five weeks before the smoke battery did**, wrote it down in the tool we built for
+exactly that, and it sat at `status='new'` until I went looking for something else. The measurements:
+
+- **43 rows** since 2026-07-01. **Zero have ever been triaged** — every row is still `status='new'`.
+- **19 of the 43 are `page='smoke'`** — the smoke test writes into the queue it is meant to fill.
+- 25 real rows, **10 real thumbs-down**, 26 carrying notes.
+
+The fix Sierra needed was in the inbox. The bottleneck was never collection.
+
+### Four passes on what Sierra tells a CPL seeker
+
+Sam corrected me four times in a row, and each correction was substantive rather than cosmetic:
+
+1. **Either/or → both/and.** The rule had read *"If **instead** the student is already enrolled…"*, and
+   `LANDING_PAGE_RULE` introduced the portal only as what to say when a landing page was **missing** — a
+   fallback.
+2. **Both/and → Yes/And**, and ⭐ **this was a correction to the substance, not the label.** My rewrite split the
+   two routes by FUNCTION: compare at the portal, act at the landing page. Wrong. A seeker can **see
+   opportunities AND request a review in both places**; Credit for Being You simply *adds* the any-CCC view. Say
+   yes to the college's page, then add — never negate, correct, or hand off.
+3. **The portal builds a fuller portfolio.** Not merely a wider view: the CPL Builder is a guided way to assemble
+   prior learning into evidence a college can assess. A better-built portfolio is worth more credit wherever it
+   goes, so it belongs in the pitch.
+4. **Anti-poaching.** *"colleges will want to keep current and prospective students in their wheelhouse… we don't
+   want colleges angry at Sierra for poaching."* Sierra sits **on colleges' own pages**, so an unprompted "you'd
+   get more credit at X" is poaching a college's student off its own site.
+
+### ⚠️ The tension that is NOT resolved, and the trap in my own fix
+
+Sam then said: *"we do want to err on the side of CPL seekers… while supporting our colleges… speaking out of
+both sides of my mouth."*
+
+He is right that it is a real tension, and **#1027 as written has a failure mode: over-restraint that hurts the
+seeker.** "Never volunteer a comparison" tells Sierra to **withhold** — a seeker asks about a credential their
+college hasn't articulated and gets a polite dead end, to protect the host's feelings. That is worse than
+poaching: it fails the student *and* the college, which never learns there was demand.
+
+The line to encode (drafted, **not yet shipped**): **the restraint binds salesmanship, not facts.** Sierra never
+withholds something that materially changes a seeker's outcome in order to protect a college's interest; what it
+does not do is *editorialise* — no unprompted "you'd do better at X", no ranking the host against neighbours, no
+framing the host as deficient. The honest version usually serves both, because **the gap is the product**: a
+college that learns via Sierra that its students keep asking for something unarticulated has been done a favour.
+
+### Mode 7 is still red, and the next session must not simply green it
+
+Live smoke run 44, against the deployed function:
+
+- ✅ `7 home college detected (LA Harbor named)` — **passes.** Sierra names LA Harbor, its CPL coordinator and
+  its landing page. The detection fix works end to end.
+- ✅ The Yes/And portal framing is live and reads well in the answer.
+- ✅ The anti-poaching rule is visibly working: it opens with LA Harbor, then cites peers as *proof* —
+  *"Norco College and Barstow College have already done this, proving it's workable nearby."*
+- ❌ `7 nearby construction college` — **fails**, because the answer names Norco and Barstow rather than
+  El Camino / Long Beach / Trade Tech / Rio Hondo / Cerritos.
+
+Those are two different sets. Norco and Barstow have **articulated** NCCER; the LA-basin colleges merely **teach**
+construction — and **no LA-county college has a construction exhibit at all**. Sierra cited the colleges that
+actually did the thing.
+
+⭐ **My own #1027 caused this.** Told to lead with the host and not push other colleges, Sierra never reached
+"here are nearby colleges that teach it." The assertion encodes the *pre-#1027* product intent from the Boys &
+Girls Club case. So the question is not "why is the test red" but **which behaviour do we want** — and that is
+Sam's call, not a test edit. Greening it by rewriting the assertion would be exactly the failure
+`methodology-assert-what-retrieval-returns` was written to prevent, one level up: making the check agree with the
+code instead of with the goal.
+
+### State + next step
+
+- **Live:** cpl-chat through deploy 10. Detection, dual-list proximity ranking, Copy button, Yes/And portal
+  framing, anti-poaching balance.
+- **Tests:** `sierra_geo_ranking` 36 · `sierra_copy_answer` 39 · `sierra_student_portal` 44, plus the shared
+  lifter at `tests/lib/lift_ts.js` (moved out of `sierra_topic_keywords.test.js` once two files needed it — the
+  escalation that file's own comment prescribed).
+- **Next:** (1) resolve the seeker-vs-college line with Sam and encode "restraint on salesmanship, not facts";
+  (2) decide mode 7's intent and fix the assertion to match the *decision*; (3) drain the 10 real feedback rows
+  and filter `page='smoke'` out of the triage surface; (4) the corpus — still 59 of 123 colleges.
+- **Unfinished at checkpoint:** a five-surface poaching audit (prompt constants, audience rules, context
+  builders, live `sierra_guidance` rows, sibling generators) was still running.
