@@ -264,6 +264,11 @@
       "id": "OQ-07",
       "q": "What has to be true before we invite the MAP and CO teams to test Sierra?",
       "why": "Sam wants to open Sierra up to the wider team. The invitation is cheap; the failure is not. At minimum it needs CA-06 to have a named owner and a stated frequency, and DR-11 to have someone who decides when a reported behaviour is a bug versus a product choice — the last four rule changes were all the latter, and all of them needed Sam. Worth deciding whether the invitation is staged (MAP team first, CO second) so the queue's volume is survivable while the loop is new."
+    },
+    {
+      "id": "OQ-08",
+      "q": "How does a new governable surface get onto this register — and who notices when one appears?",
+      "why": "Today: a human happens to notice. Sam noticed Sierra was missing; nothing else would have. Measured 2026-08-07 the drift is already large and one-directional — the register lists 6 cadences while 9 GitHub Actions workflows carry a schedule (only 2 overlap, so ~7 recurring loops run unlisted); it lists 11 decision rights while 42 Supabase tables accept writes; there are 31 dashboard tabs. 32 rows describing 80+ surfaces, and we add surfaces far faster than rows. Proposal (Sam, 2026-08-07): a detector in the daily cron writes kb/governance_candidates.json — scheduled workflows, write-policied tables and tabs with no matching row, PLUS the inverse sweep for rows pointing at things that no longer exist — and the tab grows a Refresh that re-fetches it alongside the live reads. TWO CONSTRAINTS. (1) The browser cannot see .github/workflows or the schema, so repo-side detection MUST run in the cron; only liveness can be computed client-side. (2) It must PROPOSE, never auto-add: `decides`, `load_bearing` and `when_empty` are judgment, and auto-generating 80 plausible rows nobody decided would be governance theatre — the exact failure this tab exists to expose. Candidates get a one-click promote that still lands owner:null. The real design work is FILTERING: 42 raw table candidates is a second queue nobody reads, which is how the Sierra feedback inbox failed."
     }
   ]
 }

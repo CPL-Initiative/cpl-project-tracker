@@ -51,6 +51,12 @@
       "for": "sam",
       "tab": "governance",
       "text": "⚖️ THREE NEW GOVERNANCE ROWS TO ASSIGN — you were right that neither the test invitation nor Sierra generally was on the register. Added: DR-11 (who decides what Sierra tells the public — in practice that's been you personally, four times in two days), CA-06 (Sierra feedback triage, which shows its own untriaged count live), and OQ-07 (what has to be true before we invite the MAP and CO teams). All three need an owner, same as every other row."
+    },
+    {
+      "id": "gov-candidate-detector",
+      "for": "sam",
+      "tab": "governance",
+      "text": "🔎 DECIDE: BUILD THE 'WHAT'S MISSING FROM THE REGISTER' DETECTOR? Your idea, now captured as OQ-08 with the numbers behind it. The register describes 32 things; the system has 80+ — 9 scheduled jobs vs 6 listed, 42 writable database tables vs 11 listed decision rights. A daily-cron sweep would propose what's missing (and flag rows pointing at things that no longer exist), with a Refresh button on the tab. It would PROPOSE only — never auto-add, since who-decides and is-this-load-bearing are judgment calls. Roughly half a day, most of it in deciding which surfaces are worth surfacing: an unfiltered list of 42 tables would just be a second queue nobody reads. Say the word and I'll build it."
     }
   ]
 }
