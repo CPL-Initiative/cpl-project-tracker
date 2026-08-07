@@ -203,6 +203,36 @@ check("OFFERINGS_RULE calls stopping early a failure of the answer",
 check("OFFERINGS_RULE reconciles part 3 with the anti-poaching rule",
   /is NOT poaching/i.test(OFFERINGS) && /HOLD THE BALANCE/.test(OFFERINGS));
 
+// ── Sam's two edge-case calls, 2026-08-07 ───────────────────────────────────
+// Both follow from the same tie-break: restraint binds salesmanship, not facts.
+// (a) DISTANCE. Part 3 names the nearest college that TEACHES the credential. In
+// LA that is in-county; for a rural seeker it may be 200+ miles. Sam's call: name
+// it anyway and state the distance plainly. Suppressing a far option leaves
+// someone who would travel — or study online — with nothing, which is the
+// withholding failure wearing a helpful face.
+check("OFFERINGS_RULE refuses to suppress a distant teaching college",
+  /DISTANCE IS A FACT, NOT A FILTER/i.test(OFFERINGS));
+check("OFFERINGS_RULE requires the distance be stated, not hidden",
+  /STATE THE DISTANCE PLAINLY/i.test(OFFERINGS));
+check("OFFERINGS_RULE lets the visitor judge the distance themselves",
+  /let the visitor judge/i.test(OFFERINGS));
+
+// (b) THE TRUE DEAD END — nobody articulated it AND nobody nearby teaches it.
+// The honest answer plus the two things that still help. The MAP referral is not
+// politeness: an unmet request is how the system learns a credential is in
+// demand, which is the same "the gap is the product" logic as the host-adoption
+// framing. Asserting the portal AND the MAP inbox because either alone loses
+// half the value — the seeker's option, or our demand signal.
+check("OFFERINGS_RULE handles the all-three-empty case explicitly",
+  /IF ALL THREE PARTS COME UP EMPTY/i.test(OFFERINGS));
+check("dead end is stated plainly rather than padded",
+  /SAY SO PLAINLY rather than padding/i.test(OFFERINGS));
+check("dead end still routes to the portal", /Credit for Being You/.test(OFFERINGS));
+check("dead end still captures the gap as demand signal",
+  /MAP@rccd\.edu/.test(OFFERINGS) && /in demand/i.test(OFFERINGS));
+check("⚠ dead end must never be filled with an invented college or articulation",
+  /Never invent a college, a course or an articulation/i.test(OFFERINGS));
+
 // ── Guardrails that must survive the rewrite ────────────────────────────────
 check("PORTAL_RULE still says credit is never guaranteed",
   /Never imply credit is guaranteed/i.test(PORTAL));
