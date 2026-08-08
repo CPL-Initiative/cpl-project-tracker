@@ -8,7 +8,7 @@
   "colleges": 121,
   "multi_college_districts": 26
  },
- "_note_non_colleges": "The college list includes adult/continuing-education entities (SAN DIEGO ADULT, SAN DIEGO CONTINUING, NORTH ORANGE ADULT, SANTA BARBARA CONT, SAN FRANCISCO CTRS, RANCHO SANTIAGO CED), which is why the count exceeds the usual college headcount. These may be the standalone continuing-ed institutions the NC / Learning Partners workstream found sitting at zero in MAP.",
+ "_note_non_colleges": "The list includes standalone adult / continuing-education CAMPUSES AND SITES (SAN DIEGO ADULT, SAN DIEGO CONTINUING, NORTH ORANGE ADULT, SANTA BARBARA CONT, SAN FRANCISCO CTRS, RANCHO SANTIAGO CED), which is why the count exceeds the usual CCC college headcount. ⭐ KEEP THEM — Sam, 2026-08-08: 'stand-alone campuses (sites) worth having since we give funding to some.' They are a FUNDED population, not list noise, so any consumer that filters this file down to 'real colleges' will silently drop entities the CPL Initiative writes cheques to. They are also likely the standalone continuing-ed institutions the NC / Learning Partners workstream found sitting at ZERO in MAP — the same entities, reached from two directions.",
  "_unparsed": [
   {
    "raw": "LA ITV 74A",
@@ -742,5 +742,6 @@
    "district_code": "290",
    "college_code": "291"
   }
- ]
+ ],
+ "_sites_are_first_class": true
 }
