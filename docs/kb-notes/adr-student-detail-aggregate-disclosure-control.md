@@ -57,8 +57,27 @@ tractable at all — the alternative is proving that no sequence of arbitrary
 
 2. **Two objects, not one.**
    - **Reviewer-only base** — `map_student_credit` and the fine-grain rollups.
-     Real numbers, no suppression. RLS `is_allowed_reviewer()`, the same gate as
-     `kb_curation`. **Never readable by the anon key Sierra's widget uses.**
+     Real numbers, no suppression. **Never readable by the anon key Sierra's
+     widget uses.** The SELECT policy is `USING (is_allowed_reviewer())` —
+     the `team_access` shape, *not* the `kb_curation` shape.
+
+     ⚠️ **Do not copy `kb_curation`'s policy set**, despite what
+     `docs/session_128_handoff.md` says ("Reviewer-only RLS, same gate as
+     `kb_curation`"). Measured 2026-08-08: `kb_curation_read` is
+     `SELECT / {public} / USING (true)` — **`kb_curation` is publicly
+     readable**, and only its writes are reviewer-gated. That is correct for
+     institutional curation data and catastrophic for student grain; applied
+     literally it would have published this table to the anon key, which the
+     very next line of the same handoff paragraph forbids. The tables that
+     actually gate reads are `team_access`
+     (`SELECT / {public} / USING (is_allowed_reviewer())`) and
+     `sierra_feedback` / `chat_interactions`
+     (`is_allowed_reviewer() OR team_pass_ok()`).
+
+     **`team_pass_ok()` is deliberately excluded here.** It is a single shared
+     phrase sent in a request header — a reasonable gate for editing a RACI
+     board, too weak to be the only thing between a shared password and
+     per-student rows.
    - **Published aggregate** — suppression already applied. Sierra reads this
      one, and reads it without restriction.
 
