@@ -45,6 +45,7 @@
 
   var state = {
     cells: null,      // rows from map_college_goal2
+    credits: null,    // rows from map_college_credit_summary, keyed by college_id
     load: null,       // latest map_data_loads row for map_student_credit
     names: null,      // { "<college_id>": "College Name" }
     namesMissing: false,
@@ -84,6 +85,10 @@
     });
   }
   function pct(x) { return (Math.round(x * 1000) / 10).toFixed(1) + "%"; }
+  function num(x) {
+    if (x == null) return null;
+    return Math.round(Number(x)).toLocaleString("en-US");
+  }
 
   var CSS_ID = "goal2-css";
   function ensureCss() {
@@ -151,6 +156,8 @@
     return Promise.all([
       jget(REST + "/map_college_goal2?select=college_id,dest,students,rows_n,suppressed,reason", { headers: h }),
       jget(REST + "/map_data_loads?table_name=eq.map_student_credit&order=loaded_at.desc&limit=1", { headers: h }),
+      jget(REST + "/map_college_credit_summary?select=college_id,students,suppressed,"
+                + "dormant_credits,articulated_waiting,applied_credits,transcribed_credits", { headers: h }),
       // A failed name lookup is a KNOWN state the UI discloses, not a silent
       // fallback to ids — otherwise "College 122" reads as a naming choice
       // rather than a gap.
@@ -160,9 +167,13 @@
     ]).then(function (res) {
       state.cells = res[0];
       state.load = (res[1] && res[1][0]) || null;
+      state.credits = {};
       if (Array.isArray(res[2])) {
+        res[2].forEach(function (c) { state.credits[String(c.college_id)] = c; });
+      }
+      if (Array.isArray(res[3])) {
         var m = {};
-        res[2].forEach(function (c) { m[String(c.college_id)] = c.college_name; });
+        res[3].forEach(function (c) { m[String(c.college_id)] = c.college_name; });
         state.names = m;
         state.namesMissing = false;
       } else {
@@ -201,6 +212,7 @@
       var course = r.cells.COURSE;
       r.share = (r.allShown && r.awardedRows > 0 && course && course.rows_n != null)
         ? course.rows_n / r.awardedRows : null;
+      r.credit = (state.credits && state.credits[String(r.id)]) || null;
       return r;
     });
   }
@@ -317,6 +329,29 @@
     html.push('<div class="box"><div class="n">' + withRate.length + " of " + rows.length
       + '</div><div class="l">colleges with a publishable rate<br>the rest are too thin to break out</div></div>');
     html.push('</div>');
+
+    var dormant = 0, ready = 0, creditRows = 0;
+    rows.forEach(function (r) {
+      if (r.credit && r.credit.dormant_credits != null) {
+        dormant += Number(r.credit.dormant_credits) || 0;
+        ready   += Number(r.credit.articulated_waiting) || 0;
+        creditRows++;
+      }
+    });
+    if (creditRows) {
+      html.push('<div class="g2-stat">');
+      html.push('<div class="box"><div class="n">' + num(dormant)
+        + '</div><div class="l">units of credit at Needs Action<br>already earned, never awarded</div></div>');
+      html.push('<div class="box"><div class="n">' + num(ready)
+        + '</div><div class="l">of those ALREADY ARTICULATED<br>everything built — nobody acted</div></div>');
+      html.push('</div>');
+      html.push('<div class="g2-principle">⭐ <b>' + num(ready) + ' units</b> is the number to act on. '
+        + 'That credit is articulated, valued and mapped to a course — roughly '
+        + num(Math.round(ready / 60)) + ' associate degrees\u2019 worth — and the only missing step is a '
+        + 'college acting on it. The larger figure is the ceiling; not all of it would be awarded, '
+        + 'since ruling a recommendation out is legitimate work. Of credit already reviewed, '
+        + 'about two-thirds was applied and a third correctly found not applicable.</div>');
+    }
     html.push(fresh);
 
     html.push('<p class="g2-intro"><b>Those first two numbers are different on purpose.</b> The statewide '
@@ -353,10 +388,13 @@
     html.push('</div>');
 
     html.push('<div class="g2-wrap"><table class="g2-table">');
-    html.push('<colgroup><col style="width:30%"><col style="width:10%"><col style="width:10%">'
-      + '<col style="width:10%"><col style="width:22%"><col style="width:18%"></colgroup>');
+    html.push('<colgroup><col style="width:26%"><col style="width:8%"><col style="width:8%">'
+      + '<col style="width:8%"><col style="width:20%"><col style="width:15%"><col style="width:15%"></colgroup>');
     html.push('<tr><th>College</th><th class="num">Course</th><th class="num">Area</th>'
-      + '<th class="num">Elective</th><th>Share to course credit</th><th class="num">Awarded rows</th></tr>');
+      + '<th class="num">Elective</th><th>Share to course credit</th>'
+      + '<th class="num" title="Credit recommended and still sitting at Needs Action">Dormant</th>'
+      + '<th class="num" title="Already articulated AND still at Needs Action — every piece of the work '
+      + 'is done except a college acting on it">Ready to award</th></tr>');
 
     view.forEach(function (r) {
       html.push("<tr>");
@@ -369,7 +407,15 @@
       } else {
         html.push('<td><div class="g2-bar"><i style="width:' + (r.share * 100).toFixed(1) + '%"></i></div>'
           + '<span class="g2-share">' + pct(r.share) + "</span></td>");
-        html.push('<td class="num">' + r.awardedRows + "</td>");
+      }
+      // Credit columns are suppressed independently of the goal-2 cells: their
+      // gate is the college's distinct-student count, not cell size.
+      if (r.credit && r.credit.dormant_credits != null) {
+        html.push('<td class="num">' + num(r.credit.dormant_credits) + "</td>");
+        html.push('<td class="num g2-share">' + num(r.credit.articulated_waiting) + "</td>");
+      } else {
+        html.push('<td class="num"><span class="g2-sup" title="Fewer than 10 students at this college">'
+          + '&lt;10 students</span></td><td class="num g2-sup">—</td>');
       }
       html.push("</tr>");
     });
