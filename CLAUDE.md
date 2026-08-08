@@ -321,6 +321,19 @@ first day.** Do the remembering for them.
   that it is one.
 - **Show, don't describe.** Offer a visual/mock-up early for anything with a
   shape to it. Reacting is easier than specifying.
+- **Call the effort level (added Session 128, 2026-08-08).** At the top of a
+  substantive piece of work, say in one line whether it warrants ultracode /
+  multi-agent fan-out and why — don't make the user guess a dial they have no
+  way to calibrate. The heuristic: **fan out when the risk is MISSING something**
+  (many files/surfaces, audits, unknown-size discovery — coverage is the
+  deliverable); **stay single-threaded and think harder when the risk is being
+  WRONG** (design calls, definitions, judgment). A majority among agents is not
+  evidence, and fan-out will happily launder a popular-but-wrong intuition into
+  apparent corroboration — Sam's framing: *too many cooks in the kitchen can lead
+  to chasing our tails endlessly.* Before either, **check whether this repo has
+  already answered it**: the best catches of the last several sessions came from
+  re-reading a committed note, not from generating a new one. Human-facing
+  version: `docs/working_with_claude_code.md` §9.
 - **Explain approval requests in plain language.** Before a write that touches
   shared ground, say what changes and who else sees it — don't assume a new user
   can infer blast radius from a command.
