@@ -1,219 +1,224 @@
 ---
-title: Session 128 handoff (SkyGauge → you) — mode 7 is closed; the disposition grain is the live workstream
+title: Session 128 handoff (SkyGauge → SkyNaut) — load Sam's tables, then build the three-axis measure
 created: 2026-08-07
-updated: 2026-08-07
-tags: [handoff, sierra, cpl-assistant, student-detail, disposition, map-api]
+updated: 2026-08-08
+tags: [handoff, sierra, student-detail, disposition, veteran-sprint, supabase, access]
 related:
   - "[[docs/cpl_assistant_lessons]]"
   - "[[docs/kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one]]"
   - "[[docs/kb-notes/methodology-judge-a-detector-by-what-it-prints]]"
 ---
 
-# You are Session 128
+# You are Session 128 — SkyNaut
 
-Previous session was **SkyGauge (127)**. The assistant is **Sierra**; the workstream is the "CPL AI Sherpa."
-Sam names monikers — if he doesn't, **SkyLedger** is the suggestion (the open work is counting things
-honestly). Coin your own if you prefer.
+Sam named you. Previous session was **SkyGauge (127)**, which ran long into overtime; most of what matters here
+was decided in the last hour, so read this before touching anything.
 
-## Read these first, in order
+**Sam's opening need, in his words:** *"I'll need a little help getting the table curated and up into Supabase
+since I've been relying on you through my Git connection to do the procedure."* He has built the aggregates in
+**Microsoft Access** and needs a walked path to get them live. **That is your Priority 1.** Do not start by
+building anything clever.
 
-1. `docs/kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md` — new, and the session's main
-   transferable finding. Read before writing any ingestion or matcher.
-2. `docs/cpl_assistant_lessons.md` — §SkyMiner and §SkyMiner part 2 for the Sierra state you inherit.
-3. `funding/_student_detail_local.py` — the live workstream's tool. Its docstring carries the privacy reasoning.
+## Read first, in order
 
-## What SkyGauge shipped (all merged; main `145f790`)
+1. This file, all of it.
+2. `docs/kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one.md` — before writing any matcher.
+3. `funding/_student_detail_local.py` — the tool; its docstring carries the privacy reasoning.
+4. `cpl_memory` rows: `dormant-earned-credit-is-the-headline`, `applied-is-not-the-finish-line-course-credit-is`,
+   `cplstatusplan-absent-from-fetched-map-views`.
+
+## What SkyGauge shipped (11 PRs, all merged; main `9fa2e89` + follow-ups)
 
 | PR | What |
 |---|---|
-| #1038 | Mode 7 measured and closed — retrieval was never the problem; live 150-row fixture + 13 checks |
+| #1038 | Mode 7 measured and CLOSED — retrieval was never the problem; live 150-row fixture + 13 checks |
 | #1039 | The disposition gap diagnosed; MAP API probe (runner-side) |
 | #1040 | Aggregator takes the JSON export; per-exhibit rollup |
 | #1041 | The status column it matched was the workflow stage, not the disposition |
-| #1042 | KB note + this handoff — capture the findings (no checkpoint was run) |
-| #1043 | Sum the credit funnel; `CPLStatusPlan` confirmed present in the export |
+| #1042 | KB note + handoff |
+| #1043 | Sum the credit funnel; `CPLStatusPlan` confirmed present |
+| #1044 | Handoff refresh |
+| #1045 | Rule 8 checkpoint |
+| #1046 | Eight credential families + `--family`; the POST regex was wrong in both directions |
+| #1047 | Sam's CR-grain design recorded |
 
-## ✅ Priority 1 from the last handoff is DONE — do not re-open it
+## ✅ DO NOT RE-OPEN: mode 7
 
-Session 127's handoff filed "mode 7 part 3" as Priority 1 and told you not to guess between two causes. Measured:
+Session 127's handoff filed it as Priority 1. It was already fixed. The RPC returns 613 rows/117 colleges for
+mode 7's exact tsquery, LA Trade Tech ranks 2, and the context held ten LA-county colleges the whole time. Smoke
+47 (red) ran against deploy 11; v35 shipped after and **48/49/50 are green**. Fixture + 13 checks committed.
+⭐ The lesson: **after your last deploy, re-read the smoke run that push triggered before writing your handoff.**
 
-- The offerings RPC returns **613 rows / 117 colleges** for mode 7's exact tsquery; the cap takes 150. **LA Trade
-  Tech ranks 2, Rio Hondo 6, Long Beach City 19, El Camino 26.** Retrieval was never thinning anything.
-- Feeding that live window through the real builder prints **ten colleges, all in LA Harbor's county**, under an
-  explicit "point to the nearest colleges that do" line. Part 3's answer was in the context all along.
-- **It already works.** Smoke run 47 (the red one the handoff describes) ran against **deploy 11**. #1035 shipped
-  v35 after it. Runs **48, 49 and a fresh dispatch 50 are all green**, and run 50's answer carries a literal
-  "Nearest Colleges That Teach Construction/Carpentry" section.
+---
 
-⭐ **The lesson worth carrying:** the session's own last PR fixed the item its handoff filed as Priority 1. The
-smoke that proved it ran automatically on push, after the handoff was written and never re-read. **After your
-last deploy, re-read the smoke run that the push triggered before you write your handoff.**
+# 🎯 PRIORITY 1 — get Sam's Access tables into Supabase
 
-Committed so it cannot regress to a guess: `tests/fixtures/offerings_mode7_2026-08-07.tsv` (the live window) plus
-13 checks in `sierra_geo_ranking.test.js`, including a guard tying the fixture to the RPC's `result_limit`.
+He has two exports built in Access. **He cannot send you the data** (51 MB source; the Drive connector returns
+files as base64 into context, so tranching does not help — this is settled, do not relitigate it). The division
+of labour that works:
 
-Incidental finding in there: on that query **`core` does no discriminating work** — every returned row is a
-construction/welding/carpentry TOP program — and the volume term saturates at `min(courses, 39)`. The entire
-ordering rests on the proximity band. Strip it and an LA question is answered with Oakland and Sacramento.
+**You do the DDL. He does the data.** You have the Supabase MCP; he has the dashboard's CSV import.
 
-## 🎯 Priority 1 (yours) — the disposition grain
+### The procedure, in order
 
-**The problem, stated exactly.** Sierra can say *"this exhibit has X eligible credits statewide"* and never
-*"at YOUR college these twelve are sitting at Needs Action."* Of the nine views in `fetch_custom_report.py`,
-`View_ExhibitCRsCatalog_Dataset` carries the credit funnel but statewide-per-exhibit with no college dimension —
-and **`CPLStatusPlan` appears in none of the nine.** That is why a live answer of Sam's hedged.
+1. **Ask for headers + ~200 rows + row counts** of each export if you do not have them. Design against real
+   column names — Access renames on export and the `Status` / `CPLStatusPlan` disaster (below) came from
+   exactly that.
+2. **Create the tables via `mcp__Supabase__apply_migration`** using the schema below.
+3. **Walk him through the dashboard import**: Table Editor → the table → Import data from CSV. Tell him what
+   to expect and what "success" looks like.
+4. **Verify after load via MCP** — row counts, a spot-check of a few known rows, nulls where you expect them.
+   Do not assume the import worked; a partial import looks like a successful one.
+5. **Then** build the aggregates as views on top.
 
-**Where it stands.**
+### The schema, as agreed with Sam
 
-- **Malone's API view is NOT live.** Probed 2026-08-07: `400 — View_StudentDetailCredits_APIDataset is not
-  Valid`, same for `_Dataset` and the bare name, still empty on a single-column retry (so it is the view name,
-  not the columns). Sam expects it "in the next few days."
-- **You can re-check it yourself, one click:** Actions → **"Discover MAP datasets (manual)"** → Run workflow. It
-  prints the endpoint's own `responseMessage`. When it returns rows, wire the name into
-  `fetch_custom_report.py`; `funding/_build_cr_backlog.py` already parses that shape.
-- **The file path works today.** Sam ran `funding/_student_detail_local.py` locally on the 2026-08-06 export.
+```sql
+-- one row per (student × college × exhibit × catalog year)
+create table map_student_credit (
+  student_key  integer not null,
+  college_id   integer not null,
+  exhibit_id   text    not null,   -- 'DEFAULT-BASIC-MIL' where the source is NULL
+  course_type  text    not null,   -- the real discriminator, from source
+  catalog_year text    not null,
+  primary key (student_key, college_id, exhibit_id, catalog_year)
+);
+create index on map_student_credit (exhibit_id);
+create index on map_student_credit (college_id);
+```
 
-**What that run established (trustworthy — none of it depends on the disputed column):**
+Four decisions in there, each with a reason — **do not simplify them away**:
 
-- **537,908 rows · 42,345 distinct students statewide**
-- **CPR / AED / first aid: 21,891 credit recommendations held by 17,904 DISTINCT students across 106 colleges** —
-  **42% of every student in the system with a CPL recommendation.** That is Sam's original question, answered.
-- 3,644 exhibits reported, 2,371 suppressed as too thin
-- Top by distinct students: CCSF 1,238 · San Diego Miramar 995 · Moreno Valley 732 · San Diego Mesa 710
+- **`college_id` is on the row, not in a lookup.** Sam confirmed students *swirl* between colleges in
+  multi-college districts (RCCD shares a catalog), so student→college is genuinely many-to-many.
+- **`exhibit_id` is NOT NULL with a sentinel.** The basic-military rows arrive with **`ExhibitID` and
+  `Source Code` both null**, and a NULL cannot participate in a primary key. Sam proposed a dummy id and was
+  right; SkyGauge initially said it added nothing, before seeing the nulls.
+- **`course_type` is the discriminator, not null-ness.** Every default row carries
+  `Course Type = 'Credit for Basic Military Service-Area'` (a few variants). Filtering on
+  `exhibit_id is null` would silently sweep them out of everything. Filter on `course_type`.
+- **`catalog_year` is IN THE KEY.** The same basic-military award is **3 credits in 2025-2026 and 4 in
+  2024-2025**. Collapse the year and you silently mix two different values.
 
-**What was OPEN and is now RESOLVED (#1043).** The run matched a column named `Status` (workflow stage: Needs
-Action / Implementation / Faculty / Initiator / Articulation Officer) instead of `CPLStatusPlan`, and reported a
-statewide disposition rate of **0.0%**. Sam then pasted the export's real header row, which settled it:
+### ⚠️ RLS — this is the part with blast radius
 
-- **`CPLStatusPlan` IS present** — the LAST of 29 columns. `Status` sits eighteen places earlier and is largely
-  **EMPTY**, which is both how the alternation matcher grabbed it and why "Needs Action" so dominated the output
-  (blank cells fall through to the default). **No re-export is needed.** The matcher was rebuilt against his
-  header order verbatim and now resolves correctly.
-- **The export also carries the CREDIT FUNNEL per row** — `PotentialCredits`, `CreditsInReview`,
-  `AppliedCredits`, `TranscribedCredits` — which the script had been ignoring while counting rows. This was Sam's
-  original ask in his own words ("eligible, applied, and transcribed"), and it is now summed statewide, per
-  family and per exhibit.
-  ⚠️ **Credits SUM; students DEDUPE.** Adding credits across rows is correct; adding students across rows
-  double-counts anyone holding several recommendations. They are separate fields for that reason — do not
-  collapse them.
+`map_student_credit` is **student grain**: one row per real person. The key is a surrogate (Sam's Access
+mapping table, which never leaves his machine), but a student with a rare combination of exhibits is still
+potentially re-identifiable.
 
-**So the one thing outstanding is a single re-run**, which Sam had not yet pasted back when the session ended.
-Expect `'status': 'CPLStatusPlan'` in the matched columns, a real disposition rate, and a
-`credits — eligible / in review / applied / transcribed` line under both the statewide block and the family.
-**Ask him for it before doing anything else** — those numbers are Priority 2's input.
+- **Reviewer-only RLS**, same gate as `kb_curation`. **Never readable by the anon key Sierra's widget uses.**
+- **Sierra reads DERIVED aggregates, never this table.**
+- Flag it to Sam in plain language before you flip it, per the CLAUDE.md team obligations.
 
+---
 
-## 🎯 Priority 2 — SAM'S DESIGN, and it supersedes mine (2026-08-07, end of session)
+# 🎯 PRIORITY 2 — the three-axis measure
 
-I proposed an exhibit-grain rollup. **Sam corrected the grain, and he is right** — the value is not primarily
-student counts, it is the **CREDIT RECOMMENDATIONS inside an exhibit**:
+⭐ **This is the part SkyGauge nearly got wrong, and Sam caught it — then handed over the framing that makes it
+obvious.** Do not invent a metric here. **The three Veteran Sprint goals ARE the three measures**, in Sam's own
+words (2026-08-07):
 
-> *"The big opportunity lies in having the credit recommendations (CRs) associated with the exhibits, not just
-> for student counts but for analysis producing recommendations for colleges to adopt CRs in exhibits and to
-> show them where they are not being effective in awarding CRs."*
+| Sprint goal | What it means | Measure from this data |
+|---|---|---|
+| **1. Obtain and upload all enrolled vet JSTs** | get the record in at all | already at ratio ~1.00 — SkyPlan found colleges treat uploading as the finish line |
+| **2. Award COURSE credit for basic training** | not generic elective / CSU-GE Area E | for `course_type like 'Credit for Basic Military Service%'`: `CourseCredits ÷ (CourseCredits + AreaCredits + ElectiveCredits + DefaultAreaCredits)` |
+| **3. Award more (or all possible) credit from the CRs on each JST** | work the rest of the JST, not just basic training | `PotentialCredits` at `Needs Action` across the exhibit rows + the disposition rate |
 
-A college can adopt an exhibit and still award only 2 of its 10 CRs. **Nobody can see that today, including
-them.** The same data drives the adoption pitch: *"colleges that adopted this typically award these seven."*
+**Goal 2 is why disposition rate alone is the wrong measure.** *"Area E is no longer very useful for transfer
+students"* — so a college that applies 100% of its backlog as Area E scores full marks while doing the exact
+thing the Sprint exists to change.
 
-⚠️ **I also overstated a constraint and it must not be inherited.** I told Sam Sierra could not query this. That
-is true only of RAW STUDENT ROWS at chat latency. A CR-grain AGGREGATE is entirely queryable: today's probe
-measured **108,911 distinct `(ExhibitID, CreditRecommendation)` pairs** statewide; crossed with college that is a
-few hundred thousand rows, which is nothing for indexed Postgres. Do not repeat "too big to query" — it is wrong.
+So **disposition rate alone is the wrong measure.** A college that applies 100% of its backlog as Area E scores
+full marks while doing the exact thing the Sprint exists to change. This is the same failure mode SkyPlan
+documented for the Veteran Star — colleges learned that *uploading JSTs* was the finish line — repeating one
+layer up. **Applying must not become the new false finish line.**
 
-**His shape — two tables, not one:**
+### The flagship case, where all three land at once
 
-1. **Exhibit aggregate** — credential level. Does it exist, who adopted it, how is it going.
-2. **CR aggregate** — `(exhibit × credit recommendation × college)` + counts + the credit funnel
-   (`PotentialCredits` / `CreditsInReview` / `AppliedCredits` / `TranscribedCredits`) + disposition split.
-   **This is the one that carries the analysis.**
+The basic-military-service rows: `MilitaryCredits 3 · ArticulatedCredits 3 · AppliedCredits 0 ·
+TranscribedCredits 0 · Needs Action`, mapped to **CSU-GE Area E**.
 
-`funding/_student_detail_local.py` already reads every field this needs; it currently rolls up to exhibit only.
-Adding a CR-grain rollup is a small change to the same loop. Small-cell suppression still applies at the college
-level. Sam said he would **pick this up in a new session and explore** — start there, and start by asking him
-what a college should SEE, not what the table should hold.
+**The articulation already exists.** Not blocked on faculty review, not blocked on building an exhibit — the
+credit is set up, valued and mapped. Nobody has awarded it. And it points at the wrong destination anyway, so
+fixing it means *acting AND remapping*, not pressing apply.
 
+Every military CPL student has one (14 of 15 in Sam's sample). It is plausibly both the **largest and cheapest**
+block of unawarded credit in the system. **Compute it first.**
 
-### ⭐ And the sharpest framing, Sam's last word on it
+⚠️ **Never rank colleges publicly** (standing rule, `$50k / ESS` roadmap row). Frame as unclaimed opportunity,
+never a failing grade.
 
-> *"The CRs also show where students have eligible credit that has never been acted on or awarded... sitting
-> dormant."*
+---
 
-That is the product in one sentence, and it is **only visible at CR grain**. A row with `PotentialCredits > 0`,
-`AppliedCredits = 0` and `CPLStatusPlan = 'Needs Action'` is **credit a real student has already earned that
-nobody has given them.** Roll that up and it is a statewide headline the CPL Initiative does not currently have:
-*how many units of already-earned credit are sitting unawarded, and at which colleges, for which credentials.*
+# 🎯 PRIORITY 3 — the bundle table (why the student grain exists at all)
 
-SkyPlan measured **436,720 rows at Needs Action (81%)** on the same export. Every one of them carries a
-`PotentialCredits` value. Nobody has summed it.
+`(student × exhibit)` answers what counts never can: **which exhibits travel together on the same student.**
+That turns *"here are 3,644 exhibits"* into *"articulate these four and you cover 60% of the students already in
+your queue"*, and it gives the honest denominator — how many **distinct** students an adoption would help.
 
-That number is the reason to build this — the college-facing view ("you have N units of earned credit sitting
-unawarded, here are the CRs") and the seeker-facing one both fall out of it. Sum `PotentialCredits` where the
-disposition is `Needs Action`, per college and per CR, before anything else.
+- **Exclude `course_type like 'Credit for Basic Military Service%'` from bundle logic.** It is on nearly every
+  military student, so it swamps co-occurrence ("everyone with X also has this" — true and useless). Keep it for
+  its own analysis; it is *not* junk, it is the most universal award in the system.
+- Sam's sample averages **~5.9 exhibits per student** → roughly **250k rows** statewide. Trivial for Postgres.
+- ⚠️ **"too big for Sierra to query" is FALSE** and must not be inherited. It applies only to raw rows at chat
+  latency. 108,911 distinct `(ExhibitID, CreditRecommendation)` pairs statewide is nothing for an indexed table.
 
-⚠️ Do NOT publish it as a league table — the standing rule is **never rank colleges publicly** (`$50k / ESS`
-roadmap row). Frame it as unclaimed opportunity, not as a failing grade.
+---
 
-## 🎯 Priority 2b — the plumbing (my original framing, still true)
+## Data-quality findings from Sam's actual exports — all still open
 
-`chatbox_exhibits` has 11 columns and none of them are the funnel. The per-exhibit rollup the aggregator now
-emits is keyed by `ExhibitID`, which joins straight to `chatbox_exhibits.exhibit_id`. That is the bridge.
-
-⚠️ **This writes to a shared table feeding the production widget on colleges' own pages. Walk Sam through blast
-radius before touching it** — and Session 124's roadmap 3.2 already scopes the committed regeneration.
-
-⚠️ **One correctness trap, measured:** `TotalStudentsForCR` **varies within `(ExhibitID, CreditRecommendation)`**
-in 19,461 of 108,911 groups — and *still* varies with `SkillLevel` added. There is a finer key nobody has
-identified, so any naive per-exhibit student sum overstates. `excel_to_dashboard.py`'s
-`_rollup_exhibit_cr_catalog` already handles this (MAX per exhibit, then SUM across distinct exhibits) — reuse
-its reasoning, do not re-derive it.
-
-## 🎯 Priority 3 — the feedback queue (6 real rows), unchanged
-
-Best value remains **"how many colleges have a CPL Counselor or Coordinator listed?"** — a build, not a bug; the
-data exists from SkyMail. See session 127's handoff for the other five.
+1. **`MaxOfStudent` is `1.00` on every row.** `Max()` of a per-row flag returns 1 forever. If a student count is
+   wanted it must be `Count(distinct student)`. As exported the column carries no information.
+2. **Case variants split the same CR.** `"EMT Special Populations"` vs `"Emt Special Populations"`,
+   `"CPR For The Healthcare Provider"` vs `"Cpr..."`. ⚠️ And the casing **correlates perfectly with disposition**
+   in the sample (upper = Needs Action, title = Not Applicable) — too consistent to be random, likely two write
+   paths in MAP. Harmless while disposition separates them; **fragments any group-by on CR text alone.**
+   Normalise for grouping, keep the original for display. Sam is raising the nulls with the MAP team.
+3. **`AppliedCredits` / `TranscribedCredits` are NULL, not 0**, on Not Applicable rows. Nulls propagate through
+   SUM differently. Coerce.
+4. The known grain of the first export is
+   `(college × exhibit × CR × College Course × CPLStatusPlan)` — disposition is part of the key.
 
 ## Carryover
 
-- **Sam's local clone is on a dead lineage** — 408 local vs 1,703 remote commits, add/add conflicts on `LICENSE`
-  and `README.md`, most likely predating the Session 26 / #227 PII history rewrite. He was given
-  `git reset --hard origin/main` (safe: `stash list` empty, only untracked `budget-support/` and
-  `reports - Copy/`, which a hard reset does not touch). **Confirm he ran it.** His **vault clone** may have
-  diverged the same way — `sync-vault-clones.ps1` only fast-forwards, so Obsidian may be silently stale. Check
-  `.vault-sync.log`.
-- **SkyHero's five-surface poaching audit was never reported.** Still open, two sessions running.
-- **`creditforbeingyou.org/main/student` remains unverified** — sandbox is egress-blocked from that domain, and
-  it is in front of every student who asks.
-- **The corpus covers 59 of MAP's 123 colleges.** Still the biggest single limit on Sierra.
-- **No checkpoint was run this session.** Sam was offered it three times and stayed in flow; §11 and the To-Do
-  feed do NOT yet reflect any of the four PRs above.
+- **Malone's API view is still unpublished** — `400 … is not Valid` on three candidate names. One-click re-check:
+  Actions → **"Discover MAP datasets (manual)"** → Run workflow; it prints the endpoint's own `responseMessage`.
+  When live, wire the name into `fetch_custom_report.py` (`_build_cr_backlog.py` already parses that shape) and
+  the Access path retires. **A drafted email to Malone is in the session-127 transcript**, asking for the view
+  name *and a stable per-student key, hashed on their side.*
+- **Sam's re-run of `_student_detail_local.py` was never pasted back.** It now covers eight credential families
+  and the credit funnel. Ask for it if you want a fast statewide read without waiting on the load.
+- Sam's local clone was on a dead lineage (408 vs 1,703 commits) and he ran `git reset --hard origin/main`.
+  **His vault clone may have diverged the same way** — `sync-vault-clones.ps1` only fast-forwards, so Obsidian
+  may be silently stale. `.vault-sync.log` will show a run of skips.
+- SkyHero's five-surface poaching audit was never reported. Still open, three sessions running.
+- `creditforbeingyou.org/main/student` remains unverified (sandbox is egress-blocked from that domain).
+- Sierra's corpus covers **59 of MAP's 123 colleges** — still the biggest single limit on her.
 
 ## Patterns that worked
 
-- **Check whether the last session's Priority 1 is still true before working it.** Ten minutes of reading the
-  smoke logs saved a day of prompt-tuning on an already-fixed bug.
-- **Measure the layer below before editing the layer above.** Running the RPC with the *exact* tsquery the
-  deployed function builds settled in one query what two handoffs had argued about.
-- **A number that looks like a sharper version of a known finding deserves MORE suspicion, not less.** 0.0%
-  passed because 4.7% was expected.
-- **Print what the API said.** Two separate bugs this session were solved by printing a field already in hand.
-- **Give the user the tool, not the data.** Sam's export could not reach a session three times; a local script
-  answered his question in one run and kept the student grain on his machine.
+- **Check whether the last session's Priority 1 is still true before working it.** Ten minutes of reading smoke
+  logs saved a day of prompt-tuning on an already-fixed bug.
+- **Measure the layer below before editing the layer above.**
+- **A number that looks like a sharper version of a known finding deserves MORE suspicion, not less.** A 0.0%
+  disposition rate passed unquestioned because 4.7% was expected.
+- **Build the decoy fixture.** The POST regex was wrong in *both* directions and only the decoys caught it.
+- **Sam's corrections were better than my designs, four times.** He lives in MAP; believe him and record it.
 
 ## Safety patterns to honour
 
-- **Never route per-student rows through a session's context.** `_build_cr_backlog.py` states it; Session 26 /
-  #227 was a PII forward-stop needing a history rewrite. The Drive connector returns files as **base64 into
-  context**, so "just split it into tranches" does not help — it is not a size problem.
-- **A salted hash of a small ID space is not anonymous.** The salt lives at `~/.map_hash_salt`, outside any repo.
-  Never suggest link-sharing student-level data — **this repo is public.**
-- The sandbox **cannot reach** `*.supabase.co`, `mapwebapinew.azurewebsites.net`, `creditforbeingyou.org`, or
-  `github.io`. The runner is the proxy; `discover-map-datasets.yml` is the worked pattern.
-- ⚠️ **`actions_list` returns enormous payloads** and ignores its `workflow_id` filter. Parse the saved
-  tool-result file with python; prefer `actions_get {method:"get_workflow_run"}`.
-- **After every squash-merge, `git fetch && git reset --hard origin/main`** before the next change.
-- Never widen `sierra_guidance` / feedback / contacts gates toward anon.
+- **Never route per-student rows through a session's context.** The Drive connector returns files as base64 into
+  context — a size problem, not a privacy one, and unfixable by splitting.
+- **A salted hash of a small ID space is not anonymous.** Sam's surrogate map lives only in his Access file.
+- **Never suggest link-sharing student data — this repo is public.** Do not commit any of these exports.
+- The sandbox cannot reach `*.supabase.co`, `mapwebapinew.azurewebsites.net`, `creditforbeingyou.org` or
+  `github.io`. MCP tools and the runner are the way through.
+- ⚠️ `actions_list` returns enormous payloads and ignores its `workflow_id` filter — parse the saved file.
+- **After every squash-merge: `git fetch && git reset --hard origin/main`.**
+- Merge on `clean` OR `unstable`; never force-push `main`.
 
 ## Rollback
 
-Nothing deployed this session — cpl-chat is unchanged at **v35** (`git show 3272bb4:chatbox/supabase/functions/cpl-chat/index.ts`).
-All four PRs are tests, docs and local/runner scripts; none touch a shared table or the production function.
+Nothing was deployed. cpl-chat is unchanged at **v35** —
+`git show 3272bb4:chatbox/supabase/functions/cpl-chat/index.ts`. Every PR this session was tests, docs, or
+local/runner scripts; none touched a shared table or the live function.
