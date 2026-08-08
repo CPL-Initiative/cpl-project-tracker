@@ -175,3 +175,91 @@ paragraph forbids. The correct template is `team_access`.
 Build the per-college goal-2 split off `map_student_credit`, applying the #1049
 suppression rules, then load `TblCOLL_STU_EXH_CR_UNIT` so the same analysis can
 speak in credits rather than row counts.
+
+---
+
+## 2026-08-08 (part 2) — SkyNaut: the second table, and the number that did not exist
+
+### (a) What shipped
+
+**`map_college_cr_unit` is live — 204,714 rows, reconciled exactly** against the Access count. Aggregate (no student
+identifier), carrying the credit funnel at `(college × exhibit × CR × college course × disposition × catalog year ×
+course type)`.
+
+Two published aggregates now sit on top, both with suppression applied at write time:
+`map_college_goal2` (the three-way destination split) and `map_college_credit_summary` (credits).
+Plus `map_colleges` (the id↔name↔kind lookup) and `map_data_loads` (provenance).
+
+### (b) ⭐ The numbers
+
+| | |
+|---|---|
+| **1,052,531** | units of credit at Needs Action — already earned, never awarded |
+| **64,074** | of those **already articulated** — everything built, nobody acted |
+| 111,779 → 60,246 | applied → transcribed (**54%**) — the next gap |
+| 60.0% / 71.7% | Sprint goal 2 statewide / median college |
+
+**Lead with the 64,074, not the million.** The million is a ceiling: of credit already dispositioned, ~65% was applied
+and ~30% correctly found **Not Applicable**. Ruling a recommendation out is legitimate work, and a public framing that
+implies otherwise will be corrected by someone else, less kindly. The 64,074 is a to-do list — no faculty review, no new
+exhibit, no negotiation, just action.
+
+### (c) The duplicate-key error was not a data defect
+
+The first import targeted the strict table and failed at ~8,008 rows. The instinct was that the export had duplicates.
+It did not: **zero colliding groups on the natural key, zero case-insensitive collisions, and staging landed at exactly
+204,714.**
+
+It was **Supabase Studio re-sending a batch** — the same bug that silently added 2,058 rows to the `map_student_credit`
+load. The difference is that the strict table had a **primary key**, so it stopped rather than absorbed.
+
+⭐ Two lessons, and they point in opposite directions until you hold both:
+- **Staging makes the load succeed** (it captures the file whatever its shape).
+- **The primary key is what DETECTS corruption** (it refuses to absorb it).
+Use both: stage to capture, then let the PK on the strict table be the gate. And note the bug did **not** recur on the
+staging import — it is **intermittent**, which is exactly why a count check that "passed last time" proves nothing.
+
+### (d) ⭐ Sam was right and I had not checked
+
+Asked three times for a `CollegeID → name` export. He pushed back: *"You should have all the variations we've used in
+memory."* **`map_college_users` had it all along** — the only table carrying MAP's numeric CollegeID beside a name, same
+namespace as the export (17 = Allan Hancock, verified against `TblSOURCE.Location`).
+
+The same failure this workstream keeps cataloguing — assuming instead of measuring — pointed at a person rather than at
+data. And checking produced a better result than the thing I set out to build: across five name-keyed tables, **123
+distinct names, 120 resolve, ZERO spelled differently.** Our tables do not disagree with each other; they all descend
+from one MAP sync. The variation is against **external** CCC sources, so `variants[]` should accumulate outside
+spellings as sessions meet them rather than being harvested internally. It ships empty and says so.
+
+### (e) `entity_kind`, and what it exposed
+
+Sam, on unnamed high IDs: *"they're probably our agency partners… CPL Landing Pages for outside training agencies."*
+MAP's `CollegeID` **1–118 are the CCC colleges alphabetically** (117 Woodland, 118 Yuba); above that sit continuing-ed
+institutions, agency partners and test entries.
+
+⭐ **Every non-college entity is at ZERO awarded credit** — 127 trainees across five institutions, not one award, while
+colleges convert 29% of recommendations. That reframes the NC roadmap row: they are **not at zero on recommendations**,
+they are at zero on **awards**. For the landing-page work that is the whole case — you would be sending people to a door
+that has never opened.
+
+Also verified, and it could have invalidated everything: **no test college appears in the student data**, so the 60.0%
+and 71.7% figures are clean.
+
+### (f) Current state
+
+- ✅ Both tables live and reconciled; both staging tables dropped; both loads recorded
+- ✅ Course Credit tab live with goal 2 **and** credits, 44 committed checks
+- ✅ Procedure committed as `playbook-access-export-to-supabase` — no longer needs a session
+- ⬜ **Sierra reaches none of it.** No retrieval path in `cpl-chat`, tables gated to reviewer/team
+- ⬜ Nightly still manual — blocked on MAP publishing the view (spec drafted, name expected next week)
+
+### (g) The decision blocking Sierra
+
+**May a public assistant state a named college's unawarded-credit figure?** Sierra sits on colleges' own pages, and
+*"your college has 12,000 units unawarded"* is a public per-college performance statement. "Never rank colleges
+publicly" is standing. This is Sam's call, not an engineering one, and it gates the retrieval work behind it.
+
+### (h) Next concrete step
+
+Get that decision, then wire Sierra: retrieval path against the published aggregates, service-role read (the function is
+server-side, so RLS need not be widened), prompt rules carrying the ceiling caveat, smoke assertions, deploy.
