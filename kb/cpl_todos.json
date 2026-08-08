@@ -1,32 +1,32 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-07 · SkyGauge — the mode-7 bug you'd been chasing was already fixed (I measured rather than guessed), and your CPR/AED question now has a real number: 17,904 students at 106 colleges.",
- "_session": "SkyGauge (127)",
- "_status": "Two things landed. First, the Sierra construction bug the last two sessions were chasing turned out to be fixed already — the data was always there, and the answer had started working a day earlier; I measured it properly and locked it down with a test so nobody re-chases it. Second, your CPR/AED question: 17,904 real students across 106 colleges have CPR-family credit recommendations — 42% of everyone in the system with any CPL recommendation. What Sierra still cannot tell you is what a college has DONE about them; that field isn't in anything we pull from MAP. There's now a script you run on your own machine that answers it without student data ever leaving your computer. One re-run and we'll have the applied/transcribed numbers too.",
+ "_as_of": "2026-08-08 · SkyNaut — your Access table is in Supabase and verified, and we now know what share of CPL credit actually reaches a real course: 60%.",
+ "_session": "SkyNaut (128)",
+ "_status": "Your student data is loaded — 220,588 rows, 42,346 students, 111 colleges — and it checks out exactly against your Access count. Out of it comes a number the CPL Initiative has never had: of all the credit colleges have actually awarded, 60% goes to a real course, 32% to a general-education area (nearly always CSU-GE Area E) and 8% to a generic elective. Put differently, 47% of every CPL student in the system — 20,098 people — has at least one award pointed at Area E, which is exactly what the Veteran Sprint is trying to move away from. And 71% of all recommendations have had nothing awarded at all. Two caveats worth holding onto: these are counts of recommendations, not credits — the credit totals need your second Access table — and the per-college version is deliberately not built yet, because publishing small per-college numbers safely needs the suppression rules we ratified today.",
  "items": [
   {
-   "id": "student-detail-rerun",
+   "id": "load-second-table",
    "for": "sam",
    "tab": "cobi",
-   "text": "📊 ONE RE-RUN AND WE HAVE THE REST — your export DOES have the column we needed (CPLStatusPlan, last of 29). The first run grabbed the wrong one and reported a 0% completion rate, which was false; that's fixed. Re-run the same command and we'll finally see, per credential, how many units are eligible, sitting in review, applied, and transcribed — which is what turns '17,904 students' into something a college can act on. Nothing leaves your machine but the totals."
+   "text": "📤 EXPORT THE SECOND TABLE — TblCOLL_STU_EXH_CR_UNIT, the one with the credit amounts. Everything we measured today counts recommendations, not credits, so we still can't answer the big one: how many units of already-earned credit are sitting unawarded. Same procedure as today and it'll go faster now that we've done it once. ⚠️ One thing to expect: Supabase's importer quietly duplicated about 2,000 rows on the first load and still said it succeeded. We caught it by comparing counts. We'll do the same check again — don't trust the success message on its own."
+  },
+  {
+   "id": "colleges-111-vs-123",
+   "for": "sam",
+   "tab": "cobi",
+   "text": "❓ WHY 111 COLLEGES AND NOT 123? — twelve of MAP's colleges have no rows at all in the export. That's either genuinely no CPL activity, or a filter somewhere in how the data was pulled. Worth knowing before we publish anything per-college, because a college that's missing looks identical to a college at zero, and those need very different conversations."
   },
   {
    "id": "malone-view-name",
    "for": "sam",
    "tab": "cobi",
-   "text": "📞 ASK MALONE FOR TWO THINGS — (1) the published name of the student-detail view; it isn't live yet (the API says 'not Valid'), and once it is, this becomes a daily refresh instead of a file that ages. (2) A stable per-student ID in it, ideally scrambled on their side — without one we can only count recommendations, not people, and any per-credential student total will be too high."
-  },
-  {
-   "id": "sierra-disposition-corpus",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "🔧 GIVE SIERRA THE 'WHAT HAPPENED' NUMBERS — she can say what credit exists but never what a college has acted on. The per-exhibit rollup now lines up with her exhibit list, so this is a join. ⚠ It writes to the shared table behind the widget on colleges' own pages — walk Sam through what changes and who sees it before touching it."
+   "text": "📞 ASK MALONE FOR TWO THINGS — (1) the published name of the student-detail view; it still isn't live (the API says 'not Valid'), and once it is, this whole Access export retires and becomes a daily refresh. (2) A stable per-student ID in it, ideally scrambled on their side — without one we can only count recommendations, not people."
   },
   {
    "id": "sierra-feedback-unread",
    "for": "sam",
    "tab": "cobi",
-   "text": "📬 SEVEN FEEDBACK REPORTS STILL NEED YOU — the inbox is cleaned up (our test robot's 31 rows are filtered out of the queue and the counts, and 4 reports whose fixes have shipped are marked done). The most useful of what's left: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she names them one at a time — that's a build, not a bug. Two are data gaps you already know about (student counts per certificate). The rest need an eye: Modesto showing 75 early-childhood credit recommendations when its landing page shows 4; Sierra reading the Fullerton catalogue in one answer and not the next; a bare thumbs-down on College of the Canyons; and the 17 July 'I don't have a college yet' report, which the student-portal work probably fixed but nobody has confirmed. ⚠ Please don't invite the MAP and CO teams until this has an owner — it's now CA-06 on the ⚖️ Governance tab, and that tab will show you the untriaged count live."
+   "text": "📬 SIX FEEDBACK REPORTS STILL NEED YOU — the inbox is clean (our test robot's rows are filtered out of both the queue and the counts). The most useful: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she names them one at a time — that's a build, not a bug, and the data already exists. The rest need an eye: Modesto showing 75 early-childhood recommendations against 4 on its landing page; Sierra reading the Fullerton catalogue in one answer and not the next. ⚠ Please don't invite the MAP and CO teams until this has an owner — it's CA-06 on the ⚖️ Governance tab."
   },
   {
    "id": "sierra-portal-link-check",
@@ -35,34 +35,46 @@
    "text": "🔗 STILL UNCHECKED: THE LINK SIERRA GIVES STUDENTS — creditforbeingyou.org/main/student. I can't reach that domain from here, so it has never been confirmed and it's now in front of every student who asks. One click tells us; it's a one-line fix if it's wrong."
   },
   {
-   "id": "sierra-poaching-audit",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "🔍 FINISH THE POACHING AUDIT — now that the 'never hide facts, never sell' line is live, re-run the five-part review (Sierra's rule text, her per-audience voices, the context builders, the live guidance rows in the 🧭 pane, and the sibling report generators) to confirm nothing else still tells her to stay quiet. SkyHero's audit was still running when that session ended and was never reported."
-  },
-  {
-   "id": "sierra-corpus-59",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — unchanged and still the biggest limit. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she cannot see them. Touches a shared table production reads, so walk Sam through the impact first."
-  },
-  {
-   "id": "sierra-student-detail",
-   "for": "fable",
-   "tab": "funding",
-   "text": "🔢 WIRE MALONE'S STUDENT×CREDIT-RECOMMENDATION VIEW into the funding backlog builder once the view name lands. The 11.8MB export could not be read directly (the Drive connector caps at 10MB). Agreed columns are the 8 non-identifying ones; Sam wants small-group suppression at fewer than 10."
-  },
-  {
    "id": "gov-sierra-rows",
    "for": "sam",
    "tab": "governance",
-   "text": "⚖️ FOUR GOVERNANCE ROWS NEED AN OWNER — DR-11 (who decides what Sierra tells the public — so far that's been you personally, four times in two days), CA-06 (Sierra feedback triage, which shows its own untriaged count live), OQ-07 (what must be true before inviting the MAP and CO teams) and OQ-08 (how new surfaces get onto the register at all). The ⚖️ tab now also shows a '🔎 Not on the register' strip — 15 things the daily scan found, six of them recurring jobs nobody listed. They're proposals; nothing gets added without you."
+   "text": "⚖️ FOUR GOVERNANCE ROWS NEED AN OWNER — DR-11 (who decides what Sierra tells the public — so far that's been you personally), CA-06 (Sierra feedback triage, which shows its own untriaged count live), OQ-07 (what must be true before inviting the MAP and CO teams) and OQ-08 (how new surfaces get onto the register at all)."
   },
   {
    "id": "gov-clear-owner",
    "for": "sam",
    "tab": "governance",
-   "text": "⚠️ HEADS-UP, NOT A BUG YOU NEED TO REPORT — 'Clear owner' does nothing on three cadences (the daily dashboard, the users sync, and the checkpoint loop), because those carry an owner in the register file itself rather than an assigned one. It'll look exactly like the two-click save bug coming back. It isn't, it's already written up, and it's on the list to fix."
+   "text": "⚠️ HEADS-UP, NOT A BUG YOU NEED TO REPORT — 'Clear owner' does nothing on three cadences (the daily dashboard, the users sync, and the checkpoint loop), because those carry an owner in the register file itself rather than an assigned one. It'll look exactly like the two-click save bug coming back. It isn't, it's written up, and it's on the list."
+  },
+  {
+   "id": "per-college-goal2",
+   "for": "fable",
+   "tab": "cobi",
+   "text": "📊 BUILD THE PER-COLLEGE VERSION — the statewide 60/32/8 split is the headline; the per-college split is what a coordinator can act on. ⚠ This is the one that needs care: cells get thin fast, so it follows the rules ratified today — hide anything under 10 students, hide a second cell alongside it (otherwise the hidden one is recoverable by subtraction), and never rank colleges publicly. Frame it as unclaimed opportunity, never a grade."
+  },
+  {
+   "id": "sierra-disposition-corpus",
+   "for": "fable",
+   "tab": "cobi",
+   "text": "🔧 GIVE SIERRA THE 'WHAT HAPPENED' NUMBERS — she can say what credit exists but never what a college has acted on. The data is now in Supabase, so this is a join plus a safely-suppressed summary. ⚠ It touches the shared table behind the widget on colleges' own pages — walk Sam through what changes and who sees it before touching it."
+  },
+  {
+   "id": "sierra-poaching-audit",
+   "for": "fable",
+   "tab": "cobi",
+   "text": "🔍 FINISH THE POACHING AUDIT — four sessions running now. Re-run the five-part review (Sierra's rule text, her per-audience voices, the context builders, the live guidance rows in the 🧭 pane, and the sibling report generators) to confirm nothing still tells her to stay quiet about a fact a student needs."
+  },
+  {
+   "id": "sierra-corpus-59",
+   "for": "fable",
+   "tab": "cobi",
+   "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — unchanged and still the biggest single limit on her. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123, and her college profiles were last refreshed 25 June. American River, LA Mission and West LA all give CPR credit and she cannot see them. Touches a shared table production reads, so walk Sam through the impact first."
+  },
+  {
+   "id": "flagship-remeasure",
+   "for": "fable",
+   "tab": "funding",
+   "text": "🔬 RE-MEASURE THE 'BIGGEST CHEAPEST WIN' CLAIM — we've been describing basic-training credit as the largest block of unawarded credit in the system. It's true at American River (32 students, every one pointed at Area E, none awarded) and false at Allan Hancock (all of it applied, to real courses). ⭐ The variance between colleges is probably the better story — 'some colleges have solved this, here's what solved looks like' lands better than 'colleges haven't done this.'"
   }
  ]
 }

@@ -3582,3 +3582,47 @@ a NEW meaning** (see the roadmap row) and a 5-surface poaching audit was still r
 `methodology-an-unordered-limit-is-a-correctness-bug`, `methodology-the-feedback-queue-already-knew`,
 `methodology-a-guardrail-that-only-forbids-disables-the-feature`. Story: `docs/cpl_assistant_lessons.md`
 §SkyHero · handoff `docs/session_125_handoff.md`.
+
+---
+
+### SkyMiner — both decisions land, and the robot in the suggestion box (2026-08-07, #1029 MERGED · deploy 11 green)
+
+Picked up SkyHero's two queued decisions, which the handoff marked **not mine to answer**. Asked; both answers
+changed the code. **(a) Restraint binds salesmanship, not facts** — `PORTAL_RULE` now carries the tie-break:
+never withhold a fact that materially changes the visitor's outcome, never editorialise; if the host hasn't
+articulated it, say so, say where it IS available today, say the host can adopt it; when the two can't be
+reconciled the **visitor's outcome wins, stated plainly and never sold**. **(b) Mode 7 = all three parts, in
+order** — host → precedent → **nearest real route** (colleges that merely *teach* it, even with no exhibit);
+`OFFERINGS_RULE` calls stopping early *a failure of the answer, not politeness*, and the smoke assertion now
+requires all three so it encodes the DECISION. ⭐ The transferable half of (b): two rules in different files
+conflicted with nothing saying which governed, so the later one silently won — **a tie-break stated only where
+the conflict is defined never reaches where the conflict is resolved**; `OFFERINGS_RULE` had to cross-reference
+`PORTAL_RULE` explicitly. ⭐ **Measuring the feedback queue before asking became the session's real finding:**
+53 rows, still ALL `status='new'`, and **28 written by our own smoke test** (up from 19 the day before) — CI was
+**53% of the queue it fills**, every row a thumbs-down, so the headline "👎 total" read **38 when only 10 were
+real**. It **cannot** clean up (mode 12 writes as anon; anon is write-only there *by design* — the mode asserts
+exactly that), so the fix is at the reading surface: hidden by default, disclosed with a count + toggle, stats
+following the same rule. ⭐ And the queue had **already reported three of the last four sessions' work** — the
+07-17 row said *"should push them to the student portal"* **three weeks before** Sam raised student routing.
+4 rows marked `addressed`; 6 remain. Tests `sierra_student_portal` 44→**59** (the added checks are the
+PERMISSION half — a violated prohibition is loud, a violated permission is silent), `sierra_training` 31→**44**.
+Durable: `methodology-a-test-that-writes-to-the-queue-it-monitors` + the Resolution section added to
+`methodology-a-guardrail-that-only-forbids-disables-the-feature`. Story: `docs/cpl_assistant_lessons.md`
+§SkyMiner · handoff `docs/session_126_handoff.md`.
+
+**Part 2 — four more decisions, then a bug report that was three bugs (#1032–#1036, deploy 12 = v35).**
+Sam's edge cases: **distance is a fact, not a filter** (name the nearest teaching college however far, state the
+distance, let the visitor judge) and **the true dead end** (say so plainly + portal + flag it to MAP so the gap
+is recorded — and *never invent a college or an articulation to avoid an empty answer*). Then his "save button
+needs two clicks": `commit()` repainted BEFORE `saveOwner()` did the optimistic write, so ⭐ **the UI was always
+exactly one write behind** (a 3rd save typing a new name still showed the old one; it reads as
+second-time-works only because the dialog pre-fills from the same state). An adversarial sweep found **9 more**;
+I fixed the two that misled him about his own data — `r.ok ? r.json() : []` turning a 401 into "nobody has an
+owner", and `if (state.reg) return` never re-reading after sign-in. ⭐ **In all three the data was fine and only
+the screen lied** — the hardest class to report, because the reporter accurately describes a symptom pointing
+away from the cause — and **every pre-existing test passed through them**, having set state directly rather than
+driving the button→dialog→Save path. Then **OQ-08 built** (`kb/_build_governance_candidates.py`): 39 → **15
+candidates**, 0 stale rows, noise budget committed as a test. ⭐ **Both filter bugs looked fine in code and were
+obvious on first print** — one too loose, one that *silently matched nothing* (1.2M chars between a tab's button
+and its loadScript), and a scan returning zero reports good news, which nobody investigates. Durable:
+`methodology-a-failed-read-is-not-an-empty-result`, `methodology-judge-a-detector-by-what-it-prints`.
