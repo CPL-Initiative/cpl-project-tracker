@@ -76,6 +76,15 @@ function seeded(opts) {
   G._state.cells = CELLS;
   G._state.load = LOAD;
   G._state.names = { "1": "Alpha College", "2": "Beta College", "3": "Gamma College" };
+  // Credit summary: college 1 published, college 3 suppressed (thin college).
+  G._state.credits = {
+    "1": { college_id: 1, students: 75, suppressed: false, dormant_credits: 12345,
+           articulated_waiting: 6789, applied_credits: 100, transcribed_credits: 50 },
+    "2": { college_id: 2, students: 60, suppressed: false, dormant_credits: 900,
+           articulated_waiting: 120, applied_credits: 10, transcribed_credits: 5 },
+    "3": { college_id: 3, students: 4,  suppressed: true,  dormant_credits: null,
+           articulated_waiting: null, applied_credits: null, transcribed_credits: null }
+  };
   G._state.namesMissing = false;
   G._state.loading = false;
   G._state.error = null;
@@ -191,6 +200,27 @@ function seeded(opts) {
   check("a failed name read is disclosed, not rendered as ids-by-choice",
     /namesMissing = true/.test(fs.readFileSync("college_goal2.js","utf8")));
   check("falls back to the MAP id rather than blank", /College 1</.test(r.innerHTML));
+})();
+
+// (i) the credits view
+(function () {
+  const w = seeded();
+  const r = w.document.getElementById("course-credit-root");
+  w.CPL_GOAL2.render(r);
+  const html = r.innerHTML;
+  check("credits come from map_college_credit_summary",
+    /map_college_credit_summary\?select=/.test(fs.readFileSync("college_goal2.js", "utf8")));
+  check("dormant credit total is shown, thousands-formatted", /13,245|12,345/.test(html));
+  check("⭐ the already-articulated figure is called out as the number to act on",
+    /Ready to award/.test(html) && /nobody acted/i.test(html));
+  check("the ceiling is qualified, not presented as all-awardable",
+    /not all of it would be awarded/i.test(html));
+
+  // A thin college must withhold BOTH credit measures — a 4-student college
+  // publishing its credit total discloses those four students.
+  const gammaRow = html.split("<tr>").filter((x) => /Gamma College/.test(x))[0] || "";
+  check("⭐ thin college withholds its dormant-credit figure", !/12,345|900/.test(gammaRow));
+  check("thin college says why", /&lt;10 students/.test(gammaRow));
 })();
 
 let reported = false;
