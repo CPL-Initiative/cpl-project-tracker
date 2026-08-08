@@ -324,16 +324,21 @@ first day.** Do the remembering for them.
 - **Call the effort level (added Session 128, 2026-08-08).** At the top of a
   substantive piece of work, say in one line whether it warrants ultracode /
   multi-agent fan-out and why — don't make the user guess a dial they have no
-  way to calibrate. The heuristic: **fan out when the risk is MISSING something**
-  (many files/surfaces, audits, unknown-size discovery — coverage is the
-  deliverable); **stay single-threaded and think harder when the risk is being
-  WRONG** (design calls, definitions, judgment). A majority among agents is not
-  evidence, and fan-out will happily launder a popular-but-wrong intuition into
-  apparent corroboration — Sam's framing: *too many cooks in the kitchen can lead
-  to chasing our tails endlessly.* Before either, **check whether this repo has
-  already answered it**: the best catches of the last several sessions came from
-  re-reading a committed note, not from generating a new one. Human-facing
-  version: `docs/working_with_claude_code.md` §9.
+  way to calibrate. **The governing test is whether a hit is cheap to VERIFY**
+  (Sam's refinement, 2026-08-08, from *"sometimes better to be lucky than smart"*):
+  fan-out is **manufactured luck** — more independent draws raise the odds one
+  lands — and luck only pays when you can recognise the hit. A bug reproduces; a
+  suppressed cell either is or isn't recoverable by subtraction; **fan out there**
+  (also the usual shape of MISS-risk: many files/surfaces, audits, unknown-size
+  discovery). A definition, a naming call, where credit belongs in the Sprint —
+  nothing to score candidates against, so **stay single-threaded and think harder**
+  (WRONG-risk). A majority among agents is not evidence; it regresses toward the
+  most common intuition, which is precisely what fails on a counter-intuitive
+  problem — Sam's framing: *too many cooks in the kitchen can lead to chasing our
+  tails endlessly.* Before either, **check whether this repo has already answered
+  it**: the best catches of the last several sessions came from re-reading a
+  committed note, not from generating a new one. Human-facing version:
+  `docs/working_with_claude_code.md` §9.
 - **Explain approval requests in plain language.** Before a write that touches
   shared ground, say what changes and who else sees it — don't assume a new user
   can infer blast radius from a command.

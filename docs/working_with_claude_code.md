@@ -170,19 +170,39 @@ once. Say *"ultracode"* or *"use a workflow"* in your message, or switch it on f
 the whole session.
 
 Cost is not really the deciding factor. The thing worth knowing is that **more
-agents is not automatically better**, and there's a clean way to tell which you
-want:
+agents is not automatically better** — and the cleanest way to tell which you want
+came from Sam, who observed that *sometimes it's better to be lucky than smart.*
 
-**Turn it up when the risk is that we MISS something.** Many files, many surfaces,
-*"check every X"*, *"find everything wrong with Y"*, an audit nobody has had the
-patience to finish. Fifteen agents genuinely beat one here — each is blind to what
-the others found, and the union is the answer.
+He's right, and luck has a shape. When you don't know where the answer is, more
+independent draws from a varied enough distribution raise the odds that one lands.
+**Fan-out is manufactured luck** — more tickets in the space of approaches. That is
+a completely legitimate thing to spend on, and it isn't the opposite of method.
 
-**Leave it down when the risk is that we get it WRONG.** A design decision, a
-definition, a judgment call. Fan-out gives you five plausible opinions and somebody
-still has to choose between them — except now there's a majority, and **a majority
-among agents is not evidence.** Sam's version: *too many cooks in the kitchen can
-lead to chasing our tails endlessly.*
+The condition is what decides it: **luck only pays when a hit is cheap to
+recognise.**
+
+- A bug — you reproduce it and you know. Verifiable.
+- A suppressed number recoverable by subtraction — the arithmetic either works or
+  it doesn't. Verifiable.
+- A metric definition, a naming call, where a piece of credit belongs in the Sprint
+  — **not** verifiable by looking. More draws hand you a bigger pile of candidates
+  and no way to score them.
+
+So the working rule:
+
+**Turn it up when a hit is cheap to verify** — which is usually when the risk is
+MISSING something. Many files, many surfaces, *"check every X"*, *"find everything
+wrong with Y"*, an audit nobody has had the patience to finish. Fifteen agents
+genuinely beat one here: each is blind to what the others found, the union is the
+answer, and you can check each finding on its own.
+
+**Leave it down when there's nothing to verify a hit against** — usually when the
+risk is being WRONG. A design decision, a definition, a judgment call. Fan-out
+gives you five plausible opinions and somebody still has to choose between them —
+except now there's a majority, and **a majority among agents is not evidence.**
+Worse, it regresses toward the most common intuition, which is exactly the thing
+that's wrong when a problem is counter-intuitive. Sam's version: *too many cooks in
+the kitchen can lead to chasing our tails endlessly.*
 
 A real example, from 2026-08-08. Sam proposed publishing student counts with small
 cells hidden as `<10` while keeping the real totals — which is the *intuitive*
