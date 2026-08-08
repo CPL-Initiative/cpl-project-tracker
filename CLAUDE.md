@@ -766,6 +766,28 @@ So in a remote session:
   `noreply@github.com` (or the cron bot) and that it is an ancestor of
   `origin/main`, then ignore it.** `git log -1 --format='%h %ce %s' <sha>`.
 
+**Variant — "There are N unpushed commit(s) on branch `claude/...`" (added
+Session 128, 2026-08-08, after it fired twice in one session).** Same root cause,
+different message, and **the answer is still: do not push.** After a squash-merge
+GitHub **auto-deletes the head branch** (Sam's toggle ②), so a session that then
+runs `git reset --hard origin/main` is left on a local branch whose remote is
+*gone* — and the hook reads "local has commits the remote doesn't" as unpushed
+work. The commit is the squash-merge itself, already on `main`. Pushing would
+recreate a merged branch for nothing.
+
+Confirm in one command, all local except the last:
+
+```bash
+git log -1 --format='%h %ce %s' HEAD                  # committer = noreply@github.com
+git log origin/main..HEAD --oneline | wc -l           # 0 = nothing unpushed
+git merge-base --is-ancestor HEAD origin/main && echo published
+git ls-remote --heads origin <branch> | wc -l         # 0 = auto-deleted at merge
+```
+
+`git branch --unset-upstream` clears the stale tracking ref and quiets it until
+the next merge. ⚠️ Wrap any networked git call in `timeout` — `git fetch --prune`
+hung for the full 2-minute limit in this sandbox at least once.
+
 ### docx library errors
 - Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
   **not** switch back to CDN. To refresh the local copy:
