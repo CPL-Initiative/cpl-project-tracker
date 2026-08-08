@@ -35,7 +35,11 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var REST = SUPABASE_URL + "/rest/v1";
   var TEAM_PASS_KEY = "cpl_team_pass";
-  var NAMES_URL = "kb/map_college_names.json";
+  // College names come from the live map_colleges lookup, not a committed file:
+  // map_college_users is the only source carrying MAP's numeric CollegeID next to
+  // a name, and a snapshot would drift the moment a college is added. Publicly
+  // readable, so this resolves even before sign-in.
+  var NAMES_URL = REST + "/map_colleges?select=college_id,college_name";
 
   var DESTS = ["COURSE", "AREA", "ELECTIVE"];
 
@@ -147,14 +151,24 @@
     return Promise.all([
       jget(REST + "/map_college_goal2?select=college_id,dest,students,rows_n,suppressed,reason", { headers: h }),
       jget(REST + "/map_data_loads?table_name=eq.map_student_credit&order=loaded_at.desc&limit=1", { headers: h }),
-      // Committed lookup; absent until the college_id→name export lands. Missing
-      // is a KNOWN state that the UI discloses, not a silent fallback.
-      fetch(NAMES_URL).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+      // A failed name lookup is a KNOWN state the UI discloses, not a silent
+      // fallback to ids — otherwise "College 122" reads as a naming choice
+      // rather than a gap.
+      fetch(NAMES_URL, { headers: h })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .catch(function () { return null; })
     ]).then(function (res) {
       state.cells = res[0];
       state.load = (res[1] && res[1][0]) || null;
-      state.names = res[2];
-      state.namesMissing = !res[2];
+      if (Array.isArray(res[2])) {
+        var m = {};
+        res[2].forEach(function (c) { m[String(c.college_id)] = c.college_name; });
+        state.names = m;
+        state.namesMissing = false;
+      } else {
+        state.names = null;
+        state.namesMissing = true;
+      }
       state.loading = false;
     }).catch(function (e) {
       state.error = e.message || String(e);

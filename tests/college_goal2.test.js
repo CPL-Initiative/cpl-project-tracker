@@ -184,6 +184,12 @@ function seeded(opts) {
   const r = w.document.getElementById("course-credit-root");
   G.render(r);
   check("missing name lookup is disclosed", /College names are not loaded yet/.test(r.innerHTML));
+  // The lookup is a LIVE table read, not a committed file — a snapshot would
+  // drift the moment a college is added.
+  check("names come from the live map_colleges lookup",
+    /map_colleges\?select=college_id,college_name/.test(fs.readFileSync("college_goal2.js","utf8")));
+  check("a failed name read is disclosed, not rendered as ids-by-choice",
+    /namesMissing = true/.test(fs.readFileSync("college_goal2.js","utf8")));
   check("falls back to the MAP id rather than blank", /College 1</.test(r.innerHTML));
 })();
 
