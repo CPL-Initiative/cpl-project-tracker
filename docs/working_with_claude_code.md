@@ -159,7 +159,51 @@ Worth knowing up front so you don't wait on something that isn't coming:
 - **I get things wrong.** Especially when I'm inferring something you'd simply
   know. When I mark something as a guess, treat it as one.
 
-## 9. A short list of things worth saying to me
+## 9. How hard should I work on this?
+
+There are two dials, and you can turn either up.
+
+**Reasoning effort** — how hard I think about one thing before answering.
+
+**Ultracode** — whether I split the work across many independent agents running at
+once. Say *"ultracode"* or *"use a workflow"* in your message, or switch it on for
+the whole session.
+
+Cost is not really the deciding factor. The thing worth knowing is that **more
+agents is not automatically better**, and there's a clean way to tell which you
+want:
+
+**Turn it up when the risk is that we MISS something.** Many files, many surfaces,
+*"check every X"*, *"find everything wrong with Y"*, an audit nobody has had the
+patience to finish. Fifteen agents genuinely beat one here — each is blind to what
+the others found, and the union is the answer.
+
+**Leave it down when the risk is that we get it WRONG.** A design decision, a
+definition, a judgment call. Fan-out gives you five plausible opinions and somebody
+still has to choose between them — except now there's a majority, and **a majority
+among agents is not evidence.** Sam's version: *too many cooks in the kitchen can
+lead to chasing our tails endlessly.*
+
+A real example, from 2026-08-08. Sam proposed publishing student counts with small
+cells hidden as `<10` while keeping the real totals — which is the *intuitive*
+answer, and a panel of fresh agents would quite plausibly have agreed with it. What
+actually got the right answer was reading a note this repo had written two days
+earlier explaining why it fails: you can recover the hidden number by subtracting
+the visible ones from the total. **No quantity of agents would have found that.
+Reading what we'd already written did.**
+
+That's the pattern worth keeping: this project has a large written memory, and
+several of the best catches lately came from *re-reading the last thing we wrote*
+rather than generating something new. One session discovered the bug it had been
+sent to fix was already fixed — by its own previous pull request.
+
+### You don't have to work this out
+
+I'll call it at the top of a piece of work — one line, *"this is worth ultracode
+because X"* or *"this one isn't."* If you disagree, say so; you know the stakes
+better than I do. And you can always force it either way in your own message.
+
+## 10. A short list of things worth saying to me
 
 Steal these:
 
@@ -169,6 +213,7 @@ Steal these:
 - *"Where did that number come from?"*
 - *"Does this affect anything else?"*
 - *"Make that a tab so we can keep using it."*
+- *"Is this worth ultracode?"*
 - *"What would you do?"*
 - *"/checkpoint"*
 
