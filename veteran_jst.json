@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-07T13:43:56.369454+00:00",
+  "scraped_at": "2026-08-08T07:18:40.654345+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26656,
+    "jst": 26689,
     "star_colleges": 55
   },
   "computed_star_colleges": 56,
@@ -52,7 +52,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1237,
+      "jst": 1261,
       "star": true
     },
     "Norco College": {
@@ -185,6 +185,11 @@
       "jst": 190,
       "star": true
     },
+    "Solano Community College": {
+      "vets": 278,
+      "jst": 161,
+      "star": false
+    },
     "Shasta College": {
       "vets": 343,
       "jst": 180,
@@ -194,11 +199,6 @@
       "vets": 291,
       "jst": 561,
       "star": true
-    },
-    "Solano Community College": {
-      "vets": 278,
-      "jst": 160,
-      "star": false
     },
     "Victor Valley College": {
       "vets": 97,
@@ -212,7 +212,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 123,
+      "jst": 125,
       "star": false
     },
     "Ventura College": {
@@ -417,7 +417,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 167,
+      "jst": 172,
       "star": true
     },
     "Los Medanos College": {
@@ -487,7 +487,7 @@
     },
     "Cuyamaca College": {
       "vets": 130,
-      "jst": 94,
+      "jst": 95,
       "star": false
     },
     "Santa Barbara City College": {

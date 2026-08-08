@@ -4,17 +4,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-07",
+ "as_of": "2026-08-08",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 41844,
-  "pa": 39147,
+  "pe": 41880,
+  "pa": 39176,
   "p2": 3525,
   "p3": 15374,
   "pp": 5,
-  "pe_u": 1334217.45,
-  "pa_u": 215571.65,
+  "pe_u": 1335779.45,
+  "pa_u": 215693.65,
   "p3_u": 76237.45,
   "pp_u": 25.0
  },
@@ -275,8 +275,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cuesta": {
-   "pe": 100,
-   "pe_u": 4113.5,
+   "pe": 106,
+   "pe_u": 4338.5,
    "pa": 7,
    "pa_u": 66.0,
    "p2": null,
@@ -347,10 +347,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "East LA": {
-   "pe": 230,
-   "pe_u": 8994.0,
-   "pa": 228,
-   "pa_u": 684.0,
+   "pe": 233,
+   "pe_u": 9064.0,
+   "pa": 231,
+   "pa_u": 693.0,
    "p2": 0,
    "p3": 25,
    "p3_u": 75.0,
@@ -529,10 +529,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 328,
-   "pe_u": 5847.0,
-   "pa": 295,
-   "pa_u": 1194.0,
+   "pe": 330,
+   "pe_u": 5880.0,
+   "pa": 296,
+   "pa_u": 1197.0,
    "p2": 19,
    "p3": 223,
    "p3_u": 879.0,
@@ -960,10 +960,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Francisco": {
-   "pe": 1248,
-   "pe_u": 57965.5,
-   "pa": 1238,
-   "pa_u": 7997.5,
+   "pe": 1272,
+   "pe_u": 59156.5,
+   "pa": 1262,
+   "pa_u": 8100.5,
    "p2": 8,
    "p3": 15,
    "p3_u": 118.0,
@@ -1107,10 +1107,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Solano": {
-   "pe": 157,
-   "pe_u": 7591.0,
-   "pa": 157,
-   "pa_u": 1082.0,
+   "pe": 158,
+   "pe_u": 7634.0,
+   "pa": 158,
+   "pa_u": 1089.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1536,7 +1536,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 93,
+    "pe": 98,
     "pa": null,
     "pa_suppressed": true,
     "p3": 0
@@ -1639,8 +1639,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "Military": {
-    "pe": 230,
-    "pa": 228,
+    "pe": 233,
+    "pa": 231,
     "p3": 25
    }
   },
@@ -2502,8 +2502,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1236,
-    "pa": 1227,
+    "pe": 1260,
+    "pa": 1251,
     "p3": 9
    },
    "Standardized Assessment": {
@@ -2652,8 +2652,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Solano": {
    "Military": {
-    "pe": 157,
-    "pa": 157,
+    "pe": 158,
+    "pa": 158,
     "p3": 0
    }
   },
@@ -2835,7 +2835,7 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 984,
+   "pe": 985,
    "pa": 962,
    "p3": 882
   },
@@ -2881,8 +2881,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26094,
-   "pa": 23927,
+   "pe": 26129,
+   "pa": 23956,
    "p3": 2330
   },
   "Military | Portfolio Review": {
@@ -2930,17 +2930,17 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1333740.95,
-   "pa_u": 215571.65,
+   "pe_u": 1335302.95,
+   "pa_u": 215693.65,
    "p3_u": 76237.45
   },
   "map": {
-   "pe_u": 1341328.45,
-   "pa_u": 216250.15,
+   "pe_u": 1342823.45,
+   "pa_u": 216363.15,
    "p3_u": 76262.45
   },
   "ratio": {
-   "pe_u": 1.0057,
+   "pe_u": 1.0056,
    "pa_u": 1.0031,
    "p3_u": 1.0003
   }
@@ -2981,9 +2981,9 @@ window.CPL_FUNDING_PERF = {
   "Glendale": true,
   "Antelope Valley": true,
   "Clovis": true,
+  "Solano": false,
   "Shasta": false,
   "Fullerton": true,
-  "Solano": false,
   "Victor Valley": true,
   "LA Mission": true,
   "LA Pierce": false,
@@ -3062,7 +3062,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-07",
+ "vet_star_as_of": "2026-08-08",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };
