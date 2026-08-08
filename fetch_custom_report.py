@@ -17,7 +17,12 @@ from datetime import datetime
 
 API_URL = "https://mapwebapinew.azurewebsites.net/api/CustomReport/getReport"
 
-# ── All 9 datasets with their full column lists ──────────────────────
+# ── The 8 datasets we fetch, with their full column lists ────────────
+# Was 9 in the MAP Custom Reporting Module; this list has drifted from that
+# count twice and the comment said "9" until 2026-08-08. Today: the two contact
+# views are deliberately dropped (PII minimisation, Session 34) and
+# View_ExhibitCRsCatalog_Dataset was added later. Count the entries, don't trust
+# a number in a comment — including this one.
 REQUEST_PAYLOAD = [
     {
         "viewName": "View_ArticulatedMAPExhibits_APIDataset",
