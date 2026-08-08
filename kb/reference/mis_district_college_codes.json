@@ -1,0 +1,746 @@
+{
+ "_about": "CCCCO Management Information Systems, Appendix A — District and College Codes. The authoritative CCC district structure and official MIS codes.",
+ "_source": "Appendix A, CCCCO MIS Data Element Dictionary (PDF supplied by Sam, 2026-08-08)",
+ "_extracted": "2026-08-08 (SkyNaut, Session 128) — parsed from the PDF text layer",
+ "_warning": "⚠ These MIS codes are NOT MAP's CollegeID. Allan Hancock is college_code 611 here and CollegeID 17 in MAP; Antelope Valley is 621 vs 19. Different namespaces. To bridge them you need MAP's CollegeID->name export; the join is by NAME and should be done ONCE, curated, with non-matches reported rather than fuzzy-matched.",
+ "_counts": {
+  "districts": 71,
+  "colleges": 121,
+  "multi_college_districts": 26
+ },
+ "_note_non_colleges": "The college list includes adult/continuing-education entities (SAN DIEGO ADULT, SAN DIEGO CONTINUING, NORTH ORANGE ADULT, SANTA BARBARA CONT, SAN FRANCISCO CTRS, RANCHO SANTIAGO CED), which is why the count exceeds the usual college headcount. These may be the standalone continuing-ed institutions the NC / Learning Partners workstream found sitting at zero in MAP.",
+ "_unparsed": [
+  {
+   "raw": "LA ITV 74A",
+   "why": "Non-numeric college code (74A) under LOS ANGELES CCD. Preserved rather than dropped: a parser exception that vanishes is how a reference file quietly becomes incomplete."
+  }
+ ],
+ "districts": [
+  {
+   "district": "ALLAN HANCOCK CCD",
+   "college": "ALLAN HANCOCK",
+   "district_code": "610",
+   "college_code": "611"
+  },
+  {
+   "district": "ANTELOPE CCD",
+   "college": "ANTELOPE VALLEY",
+   "district_code": "620",
+   "college_code": "621"
+  },
+  {
+   "district": "BARSTOW CCD",
+   "college": "BARSTOW",
+   "district_code": "910",
+   "college_code": "911"
+  },
+  {
+   "district": "BUTTE CCD",
+   "college": "BUTTE",
+   "district_code": "110",
+   "college_code": "111"
+  },
+  {
+   "district": "CABRILLO CCD",
+   "college": "CABRILLO",
+   "district_code": "410",
+   "college_code": "411"
+  },
+  {
+   "district": "CERRITOS CCD",
+   "college": "CERRITOS",
+   "district_code": "810",
+   "college_code": "811"
+  },
+  {
+   "district": "CHABOT-LAS POSITAS CCD",
+   "college": "CHABOT HAYWARD",
+   "district_code": "480",
+   "college_code": "482"
+  },
+  {
+   "district": "CHABOT-LAS POSITAS CCD",
+   "college": "LAS POSITAS",
+   "district_code": "480",
+   "college_code": "481"
+  },
+  {
+   "district": "CHAFFEY CCD",
+   "college": "CHAFFEY",
+   "district_code": "920",
+   "college_code": "921"
+  },
+  {
+   "district": "CITRUS CCD",
+   "college": "CITRUS",
+   "district_code": "820",
+   "college_code": "821"
+  },
+  {
+   "district": "COAST CCD",
+   "college": "COASTLINE",
+   "district_code": "830",
+   "college_code": "831"
+  },
+  {
+   "district": "COAST CCD",
+   "college": "GOLDEN WEST",
+   "district_code": "830",
+   "college_code": "832"
+  },
+  {
+   "district": "COAST CCD",
+   "college": "ORANGE COAST",
+   "district_code": "830",
+   "college_code": "833"
+  },
+  {
+   "district": "COMPTON CCD",
+   "college": "COMPTON",
+   "district_code": "710",
+   "college_code": "711"
+  },
+  {
+   "district": "CONTRA COSTA CCD",
+   "college": "CONTRA COSTA",
+   "district_code": "310",
+   "college_code": "311"
+  },
+  {
+   "district": "CONTRA COSTA CCD",
+   "college": "COPPER MOUNTAIN COPPER MOUNTAIN",
+   "district_code": "970",
+   "college_code": "971"
+  },
+  {
+   "district": "CONTRA COSTA CCD",
+   "college": "DIABLO VALLEY",
+   "district_code": "310",
+   "college_code": "312"
+  },
+  {
+   "district": "CONTRA COSTA CCD",
+   "college": "LOS MEDANOS",
+   "district_code": "310",
+   "college_code": "313"
+  },
+  {
+   "district": "DESERT CCD",
+   "college": "DESERT",
+   "district_code": "930",
+   "college_code": "931"
+  },
+  {
+   "district": "EL CAMINO CCD",
+   "college": "EL CAMINO",
+   "district_code": "720",
+   "college_code": "721"
+  },
+  {
+   "district": "FEATHER RIVER CCD",
+   "college": "FEATHER RIVER",
+   "district_code": "120",
+   "college_code": "121"
+  },
+  {
+   "district": "FOOTHILL CCD",
+   "college": "DEANZA",
+   "district_code": "420",
+   "college_code": "421"
+  },
+  {
+   "district": "FOOTHILL CCD",
+   "college": "FOOTHILL",
+   "district_code": "420",
+   "college_code": "422"
+  },
+  {
+   "district": "GAVILAN CCD",
+   "college": "GAVILAN",
+   "district_code": "440",
+   "college_code": "441"
+  },
+  {
+   "district": "GLENDALE CCD",
+   "college": "GLENDALE",
+   "district_code": "730",
+   "college_code": "731"
+  },
+  {
+   "district": "GROSSMONT CCD",
+   "college": "CUYAMACA",
+   "district_code": "020",
+   "college_code": "021"
+  },
+  {
+   "district": "GROSSMONT CCD",
+   "college": "GROSSMONT",
+   "district_code": "020",
+   "college_code": "022"
+  },
+  {
+   "district": "HARTNELL CCD",
+   "college": "HARTNELL",
+   "district_code": "450",
+   "college_code": "451"
+  },
+  {
+   "district": "IMPERIAL CCD",
+   "college": "IMPERIAL",
+   "district_code": "030",
+   "college_code": "031"
+  },
+  {
+   "district": "KERN CCD",
+   "college": "BAKERSFIELD",
+   "district_code": "520",
+   "college_code": "521"
+  },
+  {
+   "district": "KERN CCD",
+   "college": "CERRO COSO",
+   "district_code": "520",
+   "college_code": "522"
+  },
+  {
+   "district": "KERN CCD",
+   "college": "PORTERVILLE",
+   "district_code": "520",
+   "college_code": "523"
+  },
+  {
+   "district": "LAKE TAHOE CCD",
+   "college": "LAKE TAHOE",
+   "district_code": "220",
+   "college_code": "221"
+  },
+  {
+   "district": "LASSEN CCD",
+   "college": "LASSEN",
+   "district_code": "130",
+   "college_code": "131"
+  },
+  {
+   "district": "LONG BEACH CCD",
+   "college": "LONG BEACH",
+   "district_code": "840",
+   "college_code": "841"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "EAST LA",
+   "district_code": "740",
+   "college_code": "748"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA CITY",
+   "district_code": "740",
+   "college_code": "741"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA HARBOR",
+   "district_code": "740",
+   "college_code": "742"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA MISSION",
+   "district_code": "740",
+   "college_code": "743"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA PIERCE",
+   "district_code": "740",
+   "college_code": "744"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA SWEST",
+   "district_code": "740",
+   "college_code": "745"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA TRADE",
+   "district_code": "740",
+   "college_code": "746"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "LA VALLEY",
+   "district_code": "740",
+   "college_code": "747"
+  },
+  {
+   "district": "LOS ANGELES CCD",
+   "college": "WEST LA",
+   "district_code": "740",
+   "college_code": "749"
+  },
+  {
+   "district": "LOS RIOS CCD",
+   "college": "AMERICAN RIVER",
+   "district_code": "230",
+   "college_code": "231"
+  },
+  {
+   "district": "LOS RIOS CCD",
+   "college": "COSUMNES RIVER",
+   "district_code": "230",
+   "college_code": "232"
+  },
+  {
+   "district": "LOS RIOS CCD",
+   "college": "FOLSOM LAKE",
+   "district_code": "230",
+   "college_code": "234"
+  },
+  {
+   "district": "LOS RIOS CCD",
+   "college": "SACRAMENTO CITY",
+   "district_code": "230",
+   "college_code": "233"
+  },
+  {
+   "district": "MARIN CCD",
+   "college": "MARIN",
+   "district_code": "330",
+   "college_code": "334"
+  },
+  {
+   "district": "MARIN CCD",
+   "college": "MARIN CONTINUING",
+   "district_code": "330",
+   "college_code": "335"
+  },
+  {
+   "district": "MENDOCINO CCD",
+   "college": "MENDOCINO",
+   "district_code": "140",
+   "college_code": "141"
+  },
+  {
+   "district": "MERCED CCD",
+   "college": "MERCED",
+   "district_code": "530",
+   "college_code": "531"
+  },
+  {
+   "district": "MIRA COSTA CCD",
+   "college": "MIRA COSTA",
+   "district_code": "050",
+   "college_code": "051"
+  },
+  {
+   "district": "MONTEREY CCD",
+   "college": "MONTEREY",
+   "district_code": "460",
+   "college_code": "461"
+  },
+  {
+   "district": "MT. SAN ANTONIO CCD",
+   "college": "MT SAN ANTONIO",
+   "district_code": "850",
+   "college_code": "851"
+  },
+  {
+   "district": "MT. SAN JACINTO CCD",
+   "college": "MT. SAN JACINTO",
+   "district_code": "940",
+   "college_code": "941"
+  },
+  {
+   "district": "NAPA CCD",
+   "college": "NAPA",
+   "district_code": "240",
+   "college_code": "241"
+  },
+  {
+   "district": "NORTH ORANGE CCD",
+   "college": "CYPRESS",
+   "district_code": "860",
+   "college_code": "861"
+  },
+  {
+   "district": "NORTH ORANGE CCD",
+   "college": "FULLERTON",
+   "district_code": "860",
+   "college_code": "862"
+  },
+  {
+   "district": "NORTH ORANGE CCD",
+   "college": "NORTH ORANGE ADULT",
+   "district_code": "860",
+   "college_code": "863"
+  },
+  {
+   "district": "OHLONE CCD",
+   "college": "OHLONE",
+   "district_code": "430",
+   "college_code": "431"
+  },
+  {
+   "district": "PALO VERDE CCD",
+   "college": "PALO VERDE",
+   "district_code": "950",
+   "college_code": "951"
+  },
+  {
+   "district": "PALOMAR CCD",
+   "college": "PALOMAR",
+   "district_code": "060",
+   "college_code": "061"
+  },
+  {
+   "district": "PASADENA CCD",
+   "college": "PASADENA",
+   "district_code": "770",
+   "college_code": "771"
+  },
+  {
+   "district": "PERALTA CCD",
+   "college": "ALAMEDA",
+   "district_code": "340",
+   "college_code": "341"
+  },
+  {
+   "district": "PERALTA CCD",
+   "college": "BERKELEY CITY",
+   "district_code": "340",
+   "college_code": "345"
+  },
+  {
+   "district": "PERALTA CCD",
+   "college": "LANEY",
+   "district_code": "340",
+   "college_code": "343"
+  },
+  {
+   "district": "PERALTA CCD",
+   "college": "MERRITT",
+   "district_code": "340",
+   "college_code": "344"
+  },
+  {
+   "district": "RANCHO SANTIAGO CCD",
+   "college": "RANCHO SANTIAGO CED",
+   "district_code": "870",
+   "college_code": "872"
+  },
+  {
+   "district": "RANCHO SANTIAGO CCD",
+   "college": "SANTA ANA",
+   "district_code": "870",
+   "college_code": "871"
+  },
+  {
+   "district": "RANCHO SANTIAGO CCD",
+   "college": "SANTIAGO CANYON",
+   "district_code": "870",
+   "college_code": "873"
+  },
+  {
+   "district": "REDWOODS CCD",
+   "college": "REDWOODS",
+   "district_code": "160",
+   "college_code": "161"
+  },
+  {
+   "district": "RIO HONDO CCD",
+   "college": "RIO HONDO",
+   "district_code": "880",
+   "college_code": "881"
+  },
+  {
+   "district": "RIVERSIDE CCD",
+   "college": "MORENO VALLEY",
+   "district_code": "960",
+   "college_code": "962"
+  },
+  {
+   "district": "RIVERSIDE CCD",
+   "college": "NORCO COLLEGE",
+   "district_code": "960",
+   "college_code": "963"
+  },
+  {
+   "district": "RIVERSIDE CCD",
+   "college": "RIVERSIDE",
+   "district_code": "960",
+   "college_code": "961"
+  },
+  {
+   "district": "SAN BERNARDINO CCD",
+   "college": "CRAFTON HILLS",
+   "district_code": "980",
+   "college_code": "981"
+  },
+  {
+   "district": "SAN BERNARDINO CCD",
+   "college": "SAN BERNARDINO",
+   "district_code": "980",
+   "college_code": "982"
+  },
+  {
+   "district": "SAN DIEGO CCD",
+   "college": "SAN DIEGO ADULT",
+   "district_code": "070",
+   "college_code": "076"
+  },
+  {
+   "district": "SAN DIEGO CCD",
+   "college": "SAN DIEGO CITY",
+   "district_code": "070",
+   "college_code": "071"
+  },
+  {
+   "district": "SAN DIEGO CCD",
+   "college": "SAN DIEGO CONTINUING",
+   "district_code": "070",
+   "college_code": "078"
+  },
+  {
+   "district": "SAN DIEGO CCD",
+   "college": "SAN DIEGO MESA",
+   "district_code": "070",
+   "college_code": "072"
+  },
+  {
+   "district": "SAN DIEGO CCD",
+   "college": "SAN DIEGO MIRAMAR",
+   "district_code": "070",
+   "college_code": "073"
+  },
+  {
+   "district": "SAN FRANCISCO CCD",
+   "college": "SAN FRANCISCO",
+   "district_code": "360",
+   "college_code": "361"
+  },
+  {
+   "district": "SAN FRANCISCO CCD",
+   "college": "SAN FRANCISCO CTRS",
+   "district_code": "360",
+   "college_code": "363"
+  },
+  {
+   "district": "SAN JOAQUIN DELTA CCD",
+   "college": "SAN JOAQUIN DELTA",
+   "district_code": "550",
+   "college_code": "551"
+  },
+  {
+   "district": "SAN JOSE CCD",
+   "college": "EVERYGREEN VALLEY",
+   "district_code": "470",
+   "college_code": "471"
+  },
+  {
+   "district": "SAN JOSE CCD",
+   "college": "SAN JOSE CITY",
+   "district_code": "470",
+   "college_code": "472"
+  },
+  {
+   "district": "SAN LUIS OBISPO CCD",
+   "college": "CUESTA",
+   "district_code": "640",
+   "college_code": "641"
+  },
+  {
+   "district": "SAN MATEO CCD",
+   "college": "CANADA",
+   "district_code": "370",
+   "college_code": "371"
+  },
+  {
+   "district": "SAN MATEO CCD",
+   "college": "SAN MATEO",
+   "district_code": "370",
+   "college_code": "372"
+  },
+  {
+   "district": "SAN MATEO CCD",
+   "college": "SKYLINE",
+   "district_code": "370",
+   "college_code": "373"
+  },
+  {
+   "district": "SANTA BARBARA CCD",
+   "college": "SANTA BARBARA",
+   "district_code": "650",
+   "college_code": "651"
+  },
+  {
+   "district": "SANTA BARBARA CCD",
+   "college": "SANTA BARBARA CONT",
+   "district_code": "650",
+   "college_code": "652"
+  },
+  {
+   "district": "SANTA CLARITA CCD",
+   "college": "CANYONS",
+   "district_code": "660",
+   "college_code": "661"
+  },
+  {
+   "district": "SANTA MONICA CCD",
+   "college": "SANTA MONICA",
+   "district_code": "780",
+   "college_code": "781"
+  },
+  {
+   "district": "SEQUOIAS CCD",
+   "college": "SEQUOIAS",
+   "district_code": "560",
+   "college_code": "561"
+  },
+  {
+   "district": "SHASTA TEHAMA CCD",
+   "college": "SHASTA",
+   "district_code": "170",
+   "college_code": "171"
+  },
+  {
+   "district": "SIERRA CCD",
+   "college": "SIERRA",
+   "district_code": "270",
+   "college_code": "271"
+  },
+  {
+   "district": "SISKIYOUS CCD",
+   "college": "SISKIYOUS",
+   "district_code": "180",
+   "college_code": "181"
+  },
+  {
+   "district": "SOLANO CCD",
+   "college": "SOLANO",
+   "district_code": "280",
+   "college_code": "281"
+  },
+  {
+   "district": "SONOMA CCD",
+   "college": "SANTA ROSA",
+   "district_code": "260",
+   "college_code": "261"
+  },
+  {
+   "district": "SOUTH ORANGE COUNTY CCD",
+   "college": "IRVINE",
+   "district_code": "890",
+   "college_code": "892"
+  },
+  {
+   "district": "SOUTH ORANGE COUNTY CCD",
+   "college": "SADDLEBACK",
+   "district_code": "890",
+   "college_code": "891"
+  },
+  {
+   "district": "SOUTHWESTERN CCD",
+   "college": "SOUTHWESTERN",
+   "district_code": "090",
+   "college_code": "091"
+  },
+  {
+   "district": "STATE CENTER CCD",
+   "college": "CLOVIS",
+   "district_code": "570",
+   "college_code": "576"
+  },
+  {
+   "district": "STATE CENTER CCD",
+   "college": "FRESNO CITY",
+   "district_code": "570",
+   "college_code": "571"
+  },
+  {
+   "district": "STATE CENTER CCD",
+   "college": "REEDLEY COLLEGE",
+   "district_code": "570",
+   "college_code": "572"
+  },
+  {
+   "district": "VENTURA CCD",
+   "college": "MOORPARK",
+   "district_code": "680",
+   "college_code": "681"
+  },
+  {
+   "district": "VENTURA CCD",
+   "college": "OXNARD",
+   "district_code": "680",
+   "college_code": "682"
+  },
+  {
+   "district": "VENTURA CCD",
+   "college": "VENTURA",
+   "district_code": "680",
+   "college_code": "683"
+  },
+  {
+   "district": "VICTOR VALLEY CCD",
+   "college": "VICTOR VALLEY",
+   "district_code": "990",
+   "college_code": "991"
+  },
+  {
+   "district": "WEST HILLS CCD",
+   "college": "WEST HILLS COALINGA",
+   "district_code": "580",
+   "college_code": "581"
+  },
+  {
+   "district": "WEST HILLS CCD",
+   "college": "WEST HILLS LEMOORE",
+   "district_code": "580",
+   "college_code": "582"
+  },
+  {
+   "district": "WEST KERN CCD",
+   "college": "TAFT",
+   "district_code": "690",
+   "college_code": "691"
+  },
+  {
+   "district": "WEST VALLEY CCD",
+   "college": "MISSION",
+   "district_code": "490",
+   "college_code": "492"
+  },
+  {
+   "district": "WEST VALLEY CCD",
+   "college": "WEST VALLEY",
+   "district_code": "490",
+   "college_code": "493"
+  },
+  {
+   "district": "YOSEMITE CCD",
+   "college": "COLUMBIA",
+   "district_code": "590",
+   "college_code": "591"
+  },
+  {
+   "district": "YOSEMITE CCD",
+   "college": "MODESTO",
+   "district_code": "590",
+   "college_code": "592"
+  },
+  {
+   "district": "YUBA CCD",
+   "college": "WOODLAND",
+   "district_code": "290",
+   "college_code": "292"
+  },
+  {
+   "district": "YUBA CCD",
+   "college": "YUBA",
+   "district_code": "290",
+   "college_code": "291"
+  }
+ ]
+}
