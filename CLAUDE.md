@@ -163,7 +163,18 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    **2026-06-12 canonical-SUBJ4 fold** (Session 50) — 71,037-alias permutation,
    `kb/subj4_fold_out/2026-06-12/`, downstream chain `kb/_post_apply_chain.py`.
 
-8. **Document at context checkpoints.** Roughly every ~100K tokens of context
+8. **Document at context checkpoints.** **Run `python3 kb/_docs_audit.py` FIRST
+   at every checkpoint** — the docs **lint** pass (Rule 8 is *ingest*, sessions
+   are *query*; this is the third operation, and its absence is why the corpus
+   accretes). READ-ONLY, ~2s, writes `kb/docs_audit/<date>.md`. Act on what it
+   flags **in scope for this run**: an `oversized_doc` on the lessons doc you
+   were about to append to means compact it now instead of growing it; an
+   `always_loaded` flag on this file means move prose to `docs/reference/`.
+   After writing the new handoff, `--apply` stamps the now-superseded ones
+   (its only mutation — never the authoritative one, idempotent). Rationale +
+   the vault-weight finding:
+   [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
+   Roughly every ~100K tokens of context
    consumed in a session (heuristic — Claude Code doesn't expose an exact
    counter; use proxies: long conversations with many tool calls, large file
    reads, multi-phase strategic work), pause and update **every** artifact below

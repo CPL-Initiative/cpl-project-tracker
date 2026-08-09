@@ -4,6 +4,8 @@ description: Rule 8 checkpoint — refresh every documentation artifact so the n
 
 Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whatever else you're doing and update **every** artifact below — none are optional, all sync to the user's Obsidian via the repo:
 
+0. **`python3 kb/_docs_audit.py` — run this FIRST.** The docs **lint** pass (the third Karpathy operation: Rule 8 gives us *ingest*, sessions give us *query*, this is the missing *lint*). It is READ-ONLY and takes ~2 seconds; it writes `kb/docs_audit/<date>.md` + `latest.json`. Run it before writing anything, because its findings change what you write: an `oversized_doc` on the lessons doc you were about to append to means **compact it in this checkpoint instead of growing it**, and an `always_loaded` finding on `CLAUDE.md` means move prose to `docs/reference/` (the 2026-07-10 pare-down) rather than adding more. Read the report; act on what it flags that is in scope for this run; don't chase the whole backlog. Then, when you write the new `session_<N+1>_handoff.md` (step 8), run **`python3 kb/_docs_audit.py --apply`** to stamp every now-superseded handoff — that is the auditor's only mutation, it never touches the authoritative one, and it is idempotent. Commit `kb/docs_audit/<date>.{json,md}` with the checkpoint.
+
 1. **`CLAUDE.md`** — refresh §11 (or whichever section covers the active workstream): tag counts / scores / roadmap-table status. Make sure the "DONE" / "in progress" / "parked" status on the roadmap reflects what's actually shipped on the branch.
 
 2. **`kb/README.md`** — only if KB structure, generators, or audit artifacts have changed since the last checkpoint. Skip if nothing relevant changed.
@@ -30,7 +32,7 @@ For each artifact, capture:
 - (c) strategic roadmap (what's next, what's parked)
 - (d) the next concrete step
 
-Then commit all (however many actually changed) in **one commit** with a `Rule 8 checkpoint: <one-line summary>` subject. The commit body MUST include a "KB notes added this run" section listing any new `docs/kb-notes/` entries (or "(none)" if nothing crossed the durability bar). Push to the current branch.
+Then commit all (however many actually changed) in **one commit** with a `Rule 8 checkpoint: <one-line summary>` subject. Include the docs-audit artifacts from step 0 and, if `--apply` ran, the stamped handoffs. The commit body MUST include a "KB notes added this run" section listing any new `docs/kb-notes/` entries (or "(none)" if nothing crossed the durability bar). Push to the current branch.
 
 Before starting, briefly state what you're going to update and why — don't bombard with detailed plan, just one or two sentences. After committing + pushing, give a tight summary (which files changed, the new commit SHA, what the next session will pick up, and any new KB notes worth flagging (they'll already be in the vault via auto-sync, so no manual review queue).
 
