@@ -9,6 +9,8 @@ related:
   - docs/session_10_handoff.md (Nona → Sexy Dexy hand-off)
   - CLAUDE.md §11 (M-ID Lifecycle, roadmap)
 moniker_suggestion: Bruh El (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 11 Hand-off Prompt

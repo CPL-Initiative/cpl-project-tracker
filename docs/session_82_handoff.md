@@ -5,6 +5,8 @@ updated: 2026-06-28
 tags: [handoff, session-82, raci, nudges, fact-sheet, annual-report]
 obsidian-folder: cpl-project-tracker
 related: [[CLAUDE]], [[docs/cobi_raci_nudge_lessons]], [[docs/fact_sheet_lessons]]
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are Session 82 of the CPL Project Tracker — the RACI/nudge loop just shipped, and the Fact Sheet consumer wedge is yours to land.

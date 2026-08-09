@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/methodology-consumer-tolerate-omitted-baked-fields.md (NEW)
   - CLAUDE.md §11 "Session 32" subsection
 moniker_suggestion: "Busy Feynman" was Session 32 (branch claude/busy-feynman-jfdiR) — claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 33 Hand-off Prompt

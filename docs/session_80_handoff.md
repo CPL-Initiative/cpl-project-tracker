@@ -8,6 +8,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_raci_nudge_lessons]]"
   - "[[docs/fact_sheet_lessons]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 80

@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 96 handoff — you are Session 96
 
 **Session 95 (2026-07-02)** was the **Activity ⇄ Project separation day**,

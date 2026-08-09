@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/methodology-rekey-every-id-keyed-artifact.md (the durable lesson)
   - CLAUDE.md §11 "Session 40" subsection + the updated Rule 7 checklist
 moniker_suggestion: Session 40 ran as "Vibrant Ride" (branch name); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … live-curation loop (39) → Session 40: Sam's "rules-based

@@ -10,6 +10,8 @@ related:
   - docs/session_20_handoff.md (Wizardly Turing → Twenty)
   - CLAUDE.md §6a/§6b (generator strip/inject anchors), §7b (tab layout)
 moniker_suggestion: Bruh XXI / "Score-and-One" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 21 Hand-off Prompt

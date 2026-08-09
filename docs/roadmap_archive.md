@@ -3649,3 +3649,29 @@ named `Status` (workflow stage) over `CPLStatusPlan`, and ⭐ **it was wrong in 
 to the first COLUMN matching ANY branch. Fixed + value-checked + withholds rather than emits (#1041). Durable:
 `methodology-a-wrong-column-is-worse-than-a-missing-one`. Story: `docs/cpl_assistant_lessons.md` §SkyGauge ·
 handoff `docs/session_128_handoff.md`.
+
+### SkyNaut — the spec was wrong in four places, and 30 real rows found all of them (2026-08-08, #1049–#1062 MERGED)
+
+Sam's ask was procedural — *"I'll need a little help getting the table curated and up into Supabase."* **`map_student_credit`
+is live: 220,588 rows verified against his Access count**, 42,346 students, 111 colleges, reviewer-only, no write policies.
+⭐ **Sprint goal 2 is now a number: 60.0% of awarded credit reaches real COURSE credit, 31.8% a GE AREA, 8.2% ELECTIVE; 47% of
+all CPL students hold ≥1 area award; 71% of rows have nothing awarded.** The measure is `course_type`'s suffix — durable
+precisely because it is **MAP-generated**, while every field that broke mid-build was one colleges type themselves.
+⭐ **The whole session's method was: ask for real rows before designing.** The handoff's schema was wrong four ways — a PK
+colliding on 8%, `course_type` being 11 values in two vocabularies not 3, the null-sentinel premise holding for only one
+variant, and a goal-2 formula that **divides by zero on the entire backlog** (Sam caught that one first). None would have
+errored; all would have produced a table that looked right. Two landmines: the handoff's *"same gate as `kb_curation`"* would
+have published student grain to anon (**`kb_curation` is world-readable** — writes are gated, reads aren't), and **Supabase's
+CSV importer duplicated 2,058 rows while reporting success**, caught only by reconciling counts across the boundary. Durable:
+`methodology-a-successful-import-is-not-a-correct-one`, `adr-student-detail-aggregate-disclosure-control` (k=10, write-time
+suppression, complementary suppression), `playbook-access-export-to-supabase`.
+**Part 2 — the second table, and the number that did not exist.** `map_college_cr_unit` loaded (204,714, reconciled exact) →
+⭐ **1,051,870 units of credit at Needs Action, of which 63,991 are ALREADY ARTICULATED** — everything built, nobody acted,
+~1,000 degrees' worth. The tab leads with the 64k because the million is a ceiling (~30% of reviewed credit is correctly Not
+Applicable). ⭐ Its duplicate-key error was **not a data defect**: the file is provably unique and staged at exactly 204,714 —
+Studio re-sent a batch, the same intermittent bug that silently added 2,058 rows to the first load, except this time the
+strict table's **PK caught it**. ⭐ Sam pushed back on my asking him for a college lookup — **he was right, it was already in
+`map_college_users`**, and checking also produced a better finding: our internal names have **zero** variants (123 names, 120
+resolve, 0 differing), so the variation is against EXTERNAL sources. `entity_kind` then revealed **every non-college entity is
+at zero awarded credit**. ⚠️ **Sierra reaches none of it yet** and the blocking question is Sam's: may a public assistant state
+a named college's unawarded-credit figure? Story: `docs/student_detail_load_lessons.md` · handoff `docs/session_129_handoff.md`.

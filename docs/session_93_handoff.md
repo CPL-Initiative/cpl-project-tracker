@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 93 handoff — you are Session 93
 
 **Session 92 ran TWICE in parallel on 2026-07-01** — **StarFab** (TMC Builder:

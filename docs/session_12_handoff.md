@@ -9,6 +9,8 @@ related:
   - CLAUDE.md §11 (M-ID Lifecycle, roadmap)
   - docs/kb-notes/README.md (the new KB-notes lane contract)
 moniker_suggestion: Bruh Twelve / Bruh Dec / Bruh El-Two (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 12 Hand-off Prompt

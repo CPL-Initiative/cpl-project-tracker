@@ -9,6 +9,8 @@ related:
   - "[[docs/unverified_mid_renumber_scope]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
   - "[[docs/kb-notes/reference-ccr-curation-sync-and-live-merge]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 70

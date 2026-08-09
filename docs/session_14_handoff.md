@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/playbook-measure-first-supabase-migration.md (the playbook for Phases 2-4)
   - CLAUDE.md §11 (M-ID Lifecycle + Excel→Supabase roadmap)
 moniker_suggestion: Bruh Sonnet / Bruh Fortnight / Bruh XIV (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 14 Hand-off Prompt

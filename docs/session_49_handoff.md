@@ -5,6 +5,8 @@ updated: 2026-06-12
 tags: [handoff, session-49, first-light, retheme, design-system]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 49

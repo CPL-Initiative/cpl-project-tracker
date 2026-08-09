@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/eacr-consolidation-scope.md (the 3 audience views + gallery)
   - CLAUDE.md §11 "Session 35" subsection (end of §11)
 moniker_suggestion: Session 34 was "Lucid Wozniak"; Session 35 (branch claude/adoring-sagan-IB1bW) shipped the CER consolidation + the CCR worklist — claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: Sleepy Goodall (33) → Lucid Wozniak (34) → Session 35 (CER identity

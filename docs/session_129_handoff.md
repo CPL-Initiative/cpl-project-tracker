@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/adr-student-detail-aggregate-disclosure-control]]"
   - "[[docs/kb-notes/playbook-access-export-to-supabase]]"
   - "[[docs/map_nightly_feed_spec]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 129

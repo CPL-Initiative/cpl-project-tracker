@@ -13,6 +13,8 @@ related:
   - docs/kb-notes/playbook-deploy-shared-supabase-edge-function.md (redeploy a shared live edge fn safely)
   - CLAUDE.md §7c (CPL Assistant) + §11 "Session 26" subsection
 moniker_suggestion: Bruh 27 / "Two-Seven" / "Lucky 27" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 27 Hand-off Prompt

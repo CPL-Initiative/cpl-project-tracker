@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_132_handoff.md
+---
+
 # Session 89 handoff — you are Session 89
 
 You are **Session 89** of the CPL Project Tracker (COBI) build. Session 88

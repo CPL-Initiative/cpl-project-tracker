@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-fanin-alias-lexicon-contamination.md (the durable lesson)
   - kb/kin_pe_pass2_out/2026-06-12/ (alias map, merging analysis, HS fold, Supabase ops)
 moniker_suggestion: Session 51 was "Bruh Photonicus" (Sam's christening, 2026-06-12 20:54 UTC); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 53 Hand-off Prompt — the data lane

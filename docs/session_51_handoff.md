@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/methodology-apply-equals-spec-via-shared-allocator.md (the durable pattern)
   - kb/subj4_fold_out/2026-06-12/ (the apply receipts + rollback inverse)
 moniker_suggestion: Session 50 was "Bruh Dawnleader"; claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 51 Hand-off Prompt — the data lane

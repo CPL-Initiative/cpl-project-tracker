@@ -12,6 +12,8 @@ related:
   - docs/coursecontrolnumber_remint.md (the re-mint playbook discipline)
   - .claude/skills/exhibit-canonicalization/SKILL.md (operational rules)
 moniker_suggestion: Bruh Hex (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 6 Hand-off Prompt

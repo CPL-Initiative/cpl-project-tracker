@@ -10,6 +10,8 @@ related:
   - docs/exhibit_canonicalization_lessons.md (Cred-Ref Mode B shipped this session)
   - docs/kb-notes/adr-supersede-dont-mutate-synthetic-layer.md (the ADR Bruh Dec captured)
 moniker_suggestion: Bruh Thirteen / Bruh Tridec / Lucky Trez (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 13 Hand-off Prompt

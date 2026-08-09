@@ -7,6 +7,8 @@ obsidian-folder: cpl-project-tracker
 related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_lessons]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 97

@@ -7,6 +7,8 @@ related:
   - "[[docs/noncredit_cpl_thinking]]"
   - "[[docs/session_118_handoff]]"
   - "[[kb/nc_learning_partners.json]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 119.

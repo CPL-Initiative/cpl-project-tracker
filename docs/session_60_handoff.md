@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/reference-tmc-adt-data-model.md (TMC/ADT data model + auto-match)
   - docs/session_59_handoff.md (the DATA lane — Jaccard + Suggested-merges, paused)
 moniker_suggestion: Sam named you "Bruh Momentus" — own it
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 60 Hand-off Prompt — Bruh Momentus
