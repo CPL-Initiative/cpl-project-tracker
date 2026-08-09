@@ -7,6 +7,8 @@ related:
   - "[[docs/college_action_page_lessons]]"
   - "[[docs/kb-notes/methodology-a-written-backlog-decays-silently]]"
   - "[[docs/kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow]]"
+superseded: true
+superseded_by: session_133_handoff.md
 ---
 
 # You are Session 132

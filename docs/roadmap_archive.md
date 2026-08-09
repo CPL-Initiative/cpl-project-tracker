@@ -3675,3 +3675,24 @@ strict table's **PK caught it**. ⭐ Sam pushed back on my asking him for a coll
 resolve, 0 differing), so the variation is against EXTERNAL sources. `entity_kind` then revealed **every non-college entity is
 at zero awarded credit**. ⚠️ **Sierra reaches none of it yet** and the blocking question is Sam's: may a public assistant state
 a named college's unawarded-credit figure? Story: `docs/student_detail_load_lessons.md` · handoff `docs/session_129_handoff.md`.
+
+### SkyMind — the handoff said "no new disclosure decision"; two greps refuted it (2026-08-09, #1064–#1066 MERGED)
+
+Sam: *"I want Sierra to be able to query the new data."* **She does — cpl-chat v36 is live**, answering statewide and
+per named college, verified by 68 committed checks and live smoke run 55 (`ALL MODES OK`).
+⭐ **The session's whole value was checking the premise before building on it.** The handoff scoped Priority 1 as
+low-risk because "the COBI Sierra is INTERNAL" — but all three surfaces (COBI tab, the PUBLIC map.rccd.edu widget,
+the Fact Sheet drawer) POST to **one** function, which reads with the **service-role key** (so RLS constrains
+nothing) and ships `--no-verify-jwt` (so anyone can curl it). There was no internal Sierra to start with, and what
+was written down as *"no new disclosure decision"* **was** the disclosure decision. Sam made it explicitly: per-college
+open to all callers. ⭐ Blast radius turned out narrower than either of us assumed — **every non-college entity is
+already `suppressed=true`** under k=10, so partner figures cannot be stated at all. Framing is Sam's:
+**transparency and truth, framed as opportunity — colleges want to do this work and have not had the visibility.**
+⚠️ **I shipped the same defect twice, hours apart: an assertion that fires on CORRECT behaviour.** First it printed
+`STUDENT GRAIN LEAKED` at a PostgREST statement timeout; then a "tightening" that would have failed Sierra for being
+right (measured: of 17 colleges absent from the disposition data, exactly ONE has any exhibits, so "zero" is
+approximately TRUE for absent colleges). Both reverted/fixed with positive controls. Durable:
+`methodology-rls-is-not-a-gate-in-front-of-a-service-role-function`, `methodology-a-guard-that-fails-on-truth-gets-muted`.
+Also: **numbers are computed from the published table, never pasted** — which surfaced that the docs' headline
+(1,052,531) was unsourceable against the tab (1,051,870); Sam ruled published-everywhere. Story:
+`docs/cpl_assistant_lessons.md` §SkyMind · handoff `docs/session_130_handoff.md`.
