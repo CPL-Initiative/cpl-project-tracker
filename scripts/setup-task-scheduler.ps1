@@ -26,15 +26,15 @@
 #
 #   1. NO CONSOLE WINDOW. The task used to run with the default Interactive
 #      logon, so Windows painted a terminal over whatever he was doing on every
-#      tick. `-WindowStyle Hidden` never fixed that — the principal did. See the
+#      tick. `-WindowStyle Hidden` never fixed that -- the principal did. See the
 #      -Principal block below.
 #   2. Default cadence 15 -> 60. Work lands a few times a day (session PRs plus
 #      the three daily-dashboard crons at 06:17/09:17/12:17 UTC) and vault notes
 #      are not time-critical: 24 pulls/day instead of 96. When you want the
-#      vault current RIGHT NOW, run sync-vault-clones.ps1 by hand — that is the
+#      vault current RIGHT NOW, run sync-vault-clones.ps1 by hand -- that is the
 #      escape hatch, not a tighter cron.
 #
-# (1) is the actual fix. (2) is comfort — a window that interrupts you hourly
+# (1) is the actual fix. (2) is comfort -- a window that interrupts you hourly
 # is still a window that interrupts you.
 #
 # To verify after setup:
@@ -122,7 +122,7 @@ $settings = New-ScheduledTaskSettingsSet `
 # access to network resources and to Windows Credential Manager. Both synced
 # repos are public, so `git pull` needs no credentials and S4U is fine. If a
 # private repo is ever added to $repos in sync-vault-clones.ps1, the pull may
-# start failing silently under S4U — re-run with -Interactive to trade the
+# start failing silently under S4U -- re-run with -Interactive to trade the
 # hidden window back for full credentials.
 $logonType = if ($Interactive) { "Interactive" } else { "S4U" }
 $principal = New-ScheduledTaskPrincipal `
@@ -154,7 +154,7 @@ Write-Host "  Start-ScheduledTask -TaskName `"$taskName`""
 
 # -- smoke test --------------------------------------------------------
 # An S4U token has restricted credential access, so if a pull ever needs auth
-# it fails SILENTLY — the task still reports "Ready" and the vault just quietly
+# it fails SILENTLY -- the task still reports "Ready" and the vault just quietly
 # stops updating. That is the same silent-failure shape as the sparse-checkout
 # bug, so prove it works now rather than trusting it.
 Write-Host ""

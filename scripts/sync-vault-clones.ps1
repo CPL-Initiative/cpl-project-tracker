@@ -109,7 +109,7 @@ foreach ($repo in $repos) {
         Log "[$repo] pulled $behind commit(s) from origin/main"
 
         # Sparse-checkout watchdog (added 2026-08-09). The tracker's vault clone
-        # is meant to be a docs-only checkout (~11 MB, not ~1.07 GB) — see
+        # is meant to be a docs-only checkout (~11 MB, not ~1.07 GB) -- see
         # scripts/sparse-vault-clone.ps1. A pull preserves sparseness, but a
         # stray `git sparse-checkout disable` or a re-clone would silently
         # restore 1 GB of build artifacts into the vault, and the only symptom
