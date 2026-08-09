@@ -381,7 +381,13 @@
   function bulkTriage(root) {
     if (state.bulkBusy) return Promise.resolve();
     var target = state.bulkStatus;
-    var rows = filteredFeedback().filter(function (f) { return (f.status || "new") !== target; });
+    // CI rows are excluded even when the "show N CI rows" toggle is on. Bulk-triaging
+    // them would overwrite the server-side status='ci' label with a human triage
+    // state, quietly undoing the write-time fix and re-mixing robot rows into the
+    // counts. Reviewing them is fine; re-labelling them is not what the button means.
+    var rows = filteredFeedback().filter(function (f) {
+      return !isSmoke(f) && (f.status || "new") !== target;
+    });
     if (!rows.length) { alert('Every filtered row is already "' + target + '".'); return Promise.resolve(); }
     if (!confirm('Mark ' + rows.length + ' filtered feedback row(s) as "' + target + '"?')) return Promise.resolve();
     state.bulkBusy = true; render(root);
@@ -416,7 +422,15 @@
   // queue it fills, every row rated "down", drowning the real reports.
   // They are hidden by DEFAULT, never silently: the count is shown next to the
   // toggle, so a reviewer can always see how many were withheld and why.
-  function isSmoke(f) { return (f && f.page) === "smoke"; }
+  //
+  // FIXED AT THE SOURCE 2026-08-09 (SkyDesk): sierra_feedback_upsert now stamps
+  // status='ci' on these at write time, so they no longer enter the human queue
+  // at all (kb/supabase_sierra_feedback_ci_status.sql; the 43 existing rows were
+  // backfilled). This display filter stays as the second of two independent
+  // guards — `page` covers anything written before the migration or by a hand-run
+  // curl, `status` is the durable server-side label. They cannot disagree: the DB
+  // derives 'ci' from page='smoke'.
+  function isSmoke(f) { return !!f && (f.page === "smoke" || f.status === "ci"); }
   function filteredFeedback() {
     var rows = (state.feedback || []).slice();
     if (!state.fSmoke) rows = rows.filter(function (f) { return !isSmoke(f); });
@@ -832,6 +846,7 @@
     _themeCounts: themeCounts,
     _audienceCounts: audienceCounts,
     _filteredFeedback: filteredFeedback,
+    _isSmoke: isSmoke,
     _gapRows: gapRows,
     _feedbackRow: feedbackRow,
     _gapRow: gapRow,
