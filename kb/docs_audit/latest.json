@@ -10,13 +10,13 @@
   },
   "summary": {
     "files": 438,
-    "bytes": 5161706,
+    "bytes": 5162573,
     "over_budget": 6,
     "handoff_max": 133,
     "always_loaded_files": 1,
     "always_loaded_bytes": 94334,
-    "superseded_files": 1,
-    "superseded_bytes": 6824,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -40,12 +40,12 @@
       },
       "kb_note": {
         "files": 210,
-        "bytes": 1179872,
+        "bytes": 1180684,
         "over": 0
       },
       "handoff": {
         "files": 118,
-        "bytes": 935898,
+        "bytes": 935953,
         "over": 0
       }
     },
@@ -53,12 +53,11 @@
       "oversized_doc": 6,
       "unindexed_kb_note": 10,
       "kb_note_dialect": 54,
-      "superseded_handoff": 1,
       "vault_heavy_path": 42
     },
     "vault": {
-      "files": 1768,
-      "bytes": 1071881500,
+      "files": 1767,
+      "bytes": 1071864570,
       "heavy_bytes": 571251392,
       "heavy_share": 0.533,
       "ignore_filters": [
@@ -891,17 +890,6 @@
       },
       "message": "347,952 B is 2.3× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 132,
-        "authoritative": 133,
-        "has_frontmatter": true
-      },
-      "message": "handoff 132 is below the authoritative 133 but is not stamped `superseded: true`",
-      "path": "docs/session_132_handoff.md"
     },
     {
       "rule": "vault_heavy_path",

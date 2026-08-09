@@ -66,8 +66,23 @@ if (-not $Path) { $Path = Join-Path $vaultRoot "cpl-project-tracker" }
 $patterns = @(
     '/*.md',            # CLAUDE.md, README.md, the root-level notes
     '/docs/',           # kb-notes, lessons, handoffs, reference — the whole lane
-    '/kb/README.md'     # the KB lane's own readme; NOT kb/row_audit (418 MB)
+    '/kb/README.md',    # the KB lane's own readme; NOT kb/row_audit (418 MB)
+    '/scripts/'         # 40 KB — and NOT optional, see below
 )
+
+# Why /scripts/ is in that list and must stay there:
+#
+# The Task Scheduler job that keeps the vault fresh is registered against the
+# VAULT clone's own copy of the sync script —
+#   ...\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1
+# (see docs/kb-notes/playbook-vault-sync-setup.md). Sparse-checkout without
+# /scripts/ deletes that file, the scheduled task then fails silently, and the
+# vault quietly stops receiving commits — with no error anyone would see for
+# days. It would also delete THIS script, taking its own -Revert with it.
+#
+# Found before first run, by Sam asking whether he even keeps a local working
+# clone. If he does not, the vault clone is the ONLY copy on the machine, so
+# there is no second place to recover the scripts from.
 
 function Say { param([string]$m, [string]$c = "Gray") Write-Host $m -ForegroundColor $c }
 
@@ -173,6 +188,20 @@ try {
         Say "WARNING: the docs lane looks empty. Run -Revert and report this." "Red"
         exit 1
     }
+
+    # The scheduled task runs the VAULT clone's own copy of the sync script. If
+    # sparse-checkout ever removes it, the vault silently stops updating and the
+    # only symptom is stale notes days later. Fail loudly instead.
+    $syncScript = Join-Path $Path "scripts\sync-vault-clones.ps1"
+    if (-not (Test-Path $syncScript)) {
+        Say "FATAL: scripts\sync-vault-clones.ps1 was removed by this checkout." "Red"
+        Say "       Your Task Scheduler job runs THAT file — the vault would stop" "Red"
+        Say "       syncing silently. Restoring the full tree now." "Red"
+        git sparse-checkout disable
+        Say "       Restored. Do not re-run until '/scripts/' is in \$patterns." "Yellow"
+        exit 1
+    }
+    Say "Verify      : scripts\sync-vault-clones.ps1 present (Task Scheduler target)" "Green"
     Say ""
     Say "Done. Restart Obsidian to let it drop the removed files from its cache." "Cyan"
     Say "Reverse any time with:  .\scripts\sparse-vault-clone.ps1 -Revert" "Gray"
