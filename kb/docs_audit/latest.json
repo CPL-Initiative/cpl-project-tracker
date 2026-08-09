@@ -1,6 +1,5 @@
 {
   "generated": "2026-08-09",
-  "generated_at": "2026-08-09T16:47:12+00:00",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -11,56 +10,54 @@
   },
   "summary": {
     "files": 434,
-    "bytes": 5119924,
+    "bytes": 5122907,
     "over_budget": 6,
     "handoff_max": 132,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 90014,
+    "always_loaded_bytes": 91375,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 90014,
+        "bytes": 91375,
         "over": 1
       },
       "other": {
         "files": 59,
-        "bytes": 1320347,
+        "bytes": 1320670,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 169076,
+        "bytes": 169726,
         "over": 1
       },
       "lessons": {
         "files": 49,
-        "bytes": 1448704,
+        "bytes": 1448714,
         "over": 3
       },
       "kb_note": {
         "files": 207,
-        "bytes": 1165685,
+        "bytes": 1165936,
         "over": 0
       },
       "handoff": {
         "files": 117,
-        "bytes": 926098,
+        "bytes": 926486,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
-      "frontmatter_log_chain": 2,
       "unindexed_kb_note": 10,
       "kb_note_dialect": 54,
-      "kb_note_frontmatter": 3,
       "vault_heavy_path": 42
     },
     "vault": {
-      "files": 1766,
-      "bytes": 1071904898,
+      "files": 1762,
+      "bytes": 1071800853,
       "heavy_bytes": 571251392,
       "heavy_share": 0.533,
       "ignore_filters": [
@@ -114,41 +111,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 90014,
+        "bytes": 91375,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 30014,
-        "ratio": 1.5
+        "over_by": 31375,
+        "ratio": 1.52
       },
-      "message": "90,014 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "91,375 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 169076,
+        "bytes": 169726,
         "limit": 40000,
         "lane": "index",
-        "over_by": 129076,
-        "ratio": 4.23
+        "over_by": 129726,
+        "ratio": 4.24
       },
-      "message": "169,076 B is 4.2× the index budget (40,000 B) — candidate for compaction",
-      "path": "docs/INDEX.md"
-    },
-    {
-      "rule": "frontmatter_log_chain",
-      "fixable": false,
-      "detail": {
-        "fields": [
-          {
-            "key": "updated",
-            "chars": 1844,
-            "prior_entries": 5
-          }
-        ]
-      },
-      "message": "frontmatter `updated:` is 1,844 chars chaining 5 `prior:` entries — a field being used as a changelog",
+      "message": "169,726 B is 4.2× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -212,14 +194,15 @@
       "path": "docs/kb-notes/cer-ccr-crossover-integrations.md"
     },
     {
-      "rule": "kb_note_frontmatter",
+      "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
-        "problems": [
-          "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)"
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)",
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
     },
     {
@@ -231,18 +214,6 @@
         ]
       },
       "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/cpl-chatbox-integration-scope.md"
     },
     {
@@ -250,11 +221,10 @@
       "fixable": false,
       "detail": {
         "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
           "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/eacr-consolidation-scope.md"
     },
     {
@@ -262,11 +232,10 @@
       "fixable": false,
       "detail": {
         "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
           "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/excel-retirement-final-scope.md"
     },
     {
@@ -691,11 +660,10 @@
       "fixable": false,
       "detail": {
         "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
           "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/over-merge-remint-scope.md"
     },
     {
@@ -703,11 +671,10 @@
       "fixable": false,
       "detail": {
         "drift": [
-          "type via `kb-type:` (canonical: a type tag in `tags:`)",
           "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/phase-2-projects-migration-scope.md"
     },
     {
@@ -888,14 +855,15 @@
       "path": "docs/kb-notes/reference-tmc-confidence-data-requirements.md"
     },
     {
-      "rule": "kb_note_frontmatter",
+      "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
-        "problems": [
-          "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)"
+        "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)",
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/tmc-adt-document-upload-scope.md"
     },
     {
@@ -903,48 +871,12 @@
       "fixable": false,
       "detail": {
         "drift": [
+          "type via `type:` (canonical: a type tag in `tags:`)",
           "`date:` (canonical: `created:`)"
         ]
       },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/tmc-adt-document-upload-scope.md"
-    },
-    {
-      "rule": "kb_note_frontmatter",
-      "fixable": false,
-      "detail": {
-        "problems": [
-          "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)"
-        ]
-      },
-      "message": "no type in any dialect (tags:/type:/kb-type:; one of adr/glossary/meta/methodology/playbook/reference)",
+      "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/tmc-co-review-scope.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/tmc-co-review-scope.md"
-    },
-    {
-      "rule": "frontmatter_log_chain",
-      "fixable": false,
-      "detail": {
-        "fields": [
-          {
-            "key": "status",
-            "chars": 1253,
-            "prior_entries": 0
-          }
-        ]
-      },
-      "message": "frontmatter `status:` is 1,253 chars — a field being used as a changelog",
-      "path": "docs/official_id_fold_scope.md"
     },
     {
       "rule": "oversized_doc",

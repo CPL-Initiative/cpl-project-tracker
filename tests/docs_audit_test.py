@@ -95,7 +95,9 @@ check("R3: dialect — `date:` accepted in place of `created:`",
       da.rule_kb_note_frontmatter(note(date="2026-01-01", tags="[reference]", **BASE)) is None)
 # …and still fires on the genuinely broken
 check("R3: fires when NO dialect supplies a type",
-      da.rule_kb_note_frontmatter(note(created="2026-01-01", tags="[cpl, scope]", **BASE)) is not None)
+      da.rule_kb_note_frontmatter(note(created="2026-01-01", tags="[cpl, sierra]", **BASE)) is not None)
+check("R3: `scope` is a valid type (adopted in practice, added to the taxonomy 2026-08-09)",
+      da.rule_kb_note_frontmatter(note(date="2026-01-01", type="scope", tags="[tmc]", **BASE)) is None)
 check("R3: fires on missing title",
       da.rule_kb_note_frontmatter(note(created="2026-01-01", tags="[adr]", **{"kb-status": "published"})) is not None)
 check("R3: fires on invalid kb-status",
@@ -184,6 +186,41 @@ try:
     check("R6: counts the whole tree", vs["files"] == 3)
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
+
+# ── R6 must not count the auditor's OWN receipts ──────────────────────────
+# Self-reference bug: writing this run's JSON changes its size, so the next run
+# reported a different vault total and the committed receipt churned forever —
+# one no-op line of diff per run, enough to trip the stop-hook.
+tmp = tempfile.mkdtemp()
+try:
+    out = os.path.join(tmp, "kb", "docs_audit")
+    os.makedirs(out)
+    with open(os.path.join(out, "2026-01-01.json"), "wb") as fh:
+        fh.write(b"0" * (da.VAULT_HEAVY_FILE + 1))
+    with open(os.path.join(tmp, "payload.bin"), "wb") as fh:
+        fh.write(b"0" * (da.VAULT_HEAVY_FILE + 1))
+
+    _sr, _so = da.ROOT, da.OUT_DIR
+    da.ROOT, da.OUT_DIR = tmp, out
+    try:
+        _vf, vs = da.scan_vault_weight(tmp)
+    finally:
+        da.ROOT, da.OUT_DIR = _sr, _so
+
+    check("R6: excludes the auditor's own output dir (no self-reference)",
+          not any("docs_audit" in i for i in vs["ignore_filters"]))
+    check("R6: still counts everything else", vs["files"] == 1)
+    check("R6: vault total ignores our receipts",
+          vs["bytes"] == da.VAULT_HEAVY_FILE + 1)
+finally:
+    shutil.rmtree(tmp, ignore_errors=True)
+
+# payload must carry no wall-clock stamp — a sub-day timestamp is what made
+# committed receipts churn on every re-run
+import inspect as _inspect
+_src = _inspect.getsource(da.main)
+check("determinism: payload carries no sub-day timestamp",
+      "generated_at" not in _src)
 
 # ── --apply mutation invariants ───────────────────────────────────────────
 tmp = tempfile.mkdtemp()
