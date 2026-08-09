@@ -261,24 +261,53 @@ answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)
 # the student-grain table is the next thing to check.
 echo "===================================================================="
 echo "MODE: 15d aggregate tables stay gated to the anon key"
-for t in map_college_credit_summary map_college_goal2 map_college_cr_unit; do
-  sel=$(curl -sS "$REST_BASE/$t?select=college_id&limit=1" \
+# The property under test is "anon receives NO ROWS". Three distinct responses
+# satisfy or violate it, and the first version of this check conflated two of
+# them — it asserted `= "[]"` and so reported a PostgREST *error* as a leak,
+# printing "STUDENT GRAIN LEAKED" for a statement timeout (57014) on the first CI
+# run. A false alarm in that direction is worse than no alarm at all.
+#
+# The timeout is itself expected on the big tables: RLS is evaluated per row, and
+# map_college_cr_unit (204,714) / map_student_credit (220,588) exceed the
+# statement budget before they can return the empty set. No rows come back either
+# way, which is the thing that matters.
+#   []                    → gated, empty set returned          → PASS
+#   {"code":...,"message"} → error (timeout / 401 / 403); no rows → PASS (noted)
+#   [{...}]               → actual rows reached anon            → FAIL
+assert_anon_gets_no_rows() { # table  label
+  local t="$1" label="$2" sel
+  sel=$(curl -sS --max-time 30 "$REST_BASE/$t?select=college_id&limit=1" \
     -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
-  if [ "$sel" = "[]" ]; then
-    echo "  [assert ok] anon select on $t returns [] (reviewer/team gated)"
-  else
-    echo "::error::anon select on $t leaked rows: $sel"; fail=1
-  fi
-done
-# The reviewer-only STUDENT GRAIN. This one is not a policy preference — it is
-# per-student data and it has no write policies at all.
-sel=$(curl -sS "$REST_BASE/map_student_credit?select=college_id&limit=1" \
+  case "$sel" in
+    "[]")
+      echo "  [assert ok] anon select on $t returns [] ($label)" ;;
+    "["*)
+      echo "::error::$label — ROWS REACHED ANON from $t: $sel"; fail=1 ;;
+    "{"*)
+      # An error body. No rows were served; say which error so a 500 that starts
+      # masking a real regression is visible rather than silently "passing".
+      echo "  [assert ok] anon select on $t returned no rows ($label; PostgREST error: $(printf '%s' "$sel" | tr -d '\n' | cut -c1-120))" ;;
+    *)
+      echo "::error::$label — unrecognised response from $t: $sel"; fail=1 ;;
+  esac
+}
+# POSITIVE CONTROL, first — an expired or malformed anon key makes every gate
+# assertion below pass for the wrong reason. map_colleges is deliberately
+# world-readable (USING(true)), so it MUST return a row. If this fails, the rest
+# of this mode proves nothing and should not be read as a clean bill of health.
+ctl=$(curl -sS --max-time 30 "$REST_BASE/map_colleges?select=college_id&limit=1" \
   -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
-if [ "$sel" = "[]" ]; then
-  echo "  [assert ok] anon select on map_student_credit returns [] (student grain sealed)"
-else
-  echo "::error::STUDENT GRAIN LEAKED to anon: $sel"; fail=1
-fi
+case "$ctl" in
+  "[{"*) echo "  [assert ok] positive control: anon CAN read map_colleges (key is live)" ;;
+  *) echo "::error::positive control FAILED — anon cannot read the public map_colleges ($ctl). The gate assertions below are vacuous."; fail=1 ;;
+esac
+
+for t in map_college_credit_summary map_college_goal2 map_college_cr_unit; do
+  assert_anon_gets_no_rows "$t" "reviewer/team gated"
+done
+# The reviewer-only STUDENT GRAIN. Not a policy preference — per-student data,
+# with no write policies at all.
+assert_anon_gets_no_rows map_student_credit "student grain sealed"
 echo
 
 # sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
