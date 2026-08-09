@@ -648,9 +648,9 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### SkyDesk — the handoff's backlog was two-sixths wrong within two days (2026-08-09, #1072/#1073 MERGED)
+### SkyDesk / SkyTime — the handoff's backlog was two-sixths wrong within two days (2026-08-09, #1072/#1073 MERGED)
 
-Sam: *"let's crank!"* ⭐ **The session's value was measuring the handoff's six-item MAP-team backlog before building
+Sam: *"let's crank!"* **Name: Sam called it SkyTime at greeting and sign-off; it ran as SkyDesk because SkyTime was already Session 104's moniker. Sam's name wins — both are recorded here so either search term lands, the same reconciliation SkyWire/SkyMind got.** ⭐ **The session's value was measuring the handoff's six-item MAP-team backlog before building
 on it — fifteen minutes of SQL, and it came back materially different.** "Every governance owner unset" was FALSE
 (the team assigned **17 of 17** on Aug 5+7 — the register's own OQ-01 had been answered by people while the document
 still listed it as the work); "6 open Sierra feedback rows" was **23**; "56 proposed contact fills" was **14** (42 of
