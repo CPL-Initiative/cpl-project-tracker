@@ -11,7 +11,7 @@
 # watches all of it.
 #
 # The exclusion list in .obsidian/app.json does NOT fix this. Obsidian's
-# "Excluded files" is a RELEVANCE filter — it drops paths from search, graph and
+# "Excluded files" is a RELEVANCE filter -- it drops paths from search, graph and
 # link autocomplete, but the file watcher, the metadata cache and Obsidian Sync
 # still see them. Excluding makes the vault tidier to browse; only removing the
 # files from disk makes it lighter.
@@ -28,7 +28,7 @@
 #                                                               THIS is the target.
 #
 # The vault clone never builds anything, so it has no use for 1 GB of generated
-# .js/.json. Note kb/row_audit/ alone is ~418 MB — and it is MARKDOWN, so a naive
+# .js/.json. Note kb/row_audit/ alone is ~418 MB -- and it is MARKDOWN, so a naive
 # "markdown only" rule would not have helped. The patterns below are scoped to the
 # doc lanes, not to a file extension.
 #
@@ -37,7 +37,7 @@
 #   * Refuses to run outside the vault root unless -Force (so it can never
 #     strip your working clone).
 #   * Refuses on a dirty tree or unpushed commits.
-#   * Idempotent — re-running is a no-op.
+#   * Idempotent -- re-running is a no-op.
 #   * Fully reversible: -Revert restores the complete tree. Nothing is deleted
 #     from git, only from the working directory; every file is one command away.
 #
@@ -65,19 +65,19 @@ if (-not $Path) { $Path = Join-Path $vaultRoot "cpl-project-tracker" }
 # Non-cone sparse-checkout patterns (gitignore syntax; a match = INCLUDE).
 $patterns = @(
     '/*.md',            # CLAUDE.md, README.md, the root-level notes
-    '/docs/',           # kb-notes, lessons, handoffs, reference — the whole lane
+    '/docs/',           # kb-notes, lessons, handoffs, reference -- the whole lane
     '/kb/README.md',    # the KB lane's own readme; NOT kb/row_audit (418 MB)
-    '/scripts/'         # 40 KB — and NOT optional, see below
+    '/scripts/'         # 40 KB -- and NOT optional, see below
 )
 
 # Why /scripts/ is in that list and must stay there:
 #
 # The Task Scheduler job that keeps the vault fresh is registered against the
-# VAULT clone's own copy of the sync script —
+# VAULT clone's own copy of the sync script --
 #   ...\COG-second-brain\cpl-project-tracker\scripts\sync-vault-clones.ps1
 # (see docs/kb-notes/playbook-vault-sync-setup.md). Sparse-checkout without
 # /scripts/ deletes that file, the scheduled task then fails silently, and the
-# vault quietly stops receiving commits — with no error anyone would see for
+# vault quietly stops receiving commits -- with no error anyone would see for
 # days. It would also delete THIS script, taking its own -Revert with it.
 #
 # Found before first run, by Sam asking whether he even keeps a local working
@@ -96,7 +96,7 @@ function Get-TreeSize {
     return [pscustomobject]@{ Files = $sum.Count; MB = $mb }
 }
 
-# ── guards ────────────────────────────────────────────────────────────────
+# -- guards ----------------------------------------------------------------
 if (-not (Test-Path $Path)) {
     Say "FATAL: no clone at $Path" "Red"
     Say "       Pass -Path if your vault lives elsewhere." "Yellow"
@@ -108,7 +108,7 @@ if (-not (Test-Path (Join-Path $Path ".git"))) {
 }
 
 # The important guard. Stripping the WORKING clone would delete the tree you
-# build and run from — recoverable, but a genuinely bad afternoon.
+# build and run from -- recoverable, but a genuinely bad afternoon.
 $resolved = (Resolve-Path $Path).Path
 if ($resolved -notlike "*COG-second-brain*" -and -not $Force) {
     Say "REFUSING: $resolved is not inside the vault ($vaultRoot)." "Red"
@@ -116,6 +116,10 @@ if ($resolved -notlike "*COG-second-brain*" -and -not $Force) {
     Say "          If you really mean it, re-run with -Force." "Yellow"
     exit 1
 }
+
+Say "Vault clone : $resolved" "Cyan"
+Say "Checking     : working tree, unpushed commits, current footprint ..." "Gray"
+Say "               (a ~1 GB tree can take up to a minute here -- not hung)" "Gray"
 
 Push-Location $Path
 try {
@@ -139,9 +143,9 @@ try {
     $before = Get-TreeSize $Path
     $isSparse = (git config --get core.sparseCheckout) -eq "true"
 
-    # ── revert ────────────────────────────────────────────────────────────
+    # -- revert ------------------------------------------------------------
     if ($Revert) {
-        if (-not $isSparse) { Say "Already a full checkout — nothing to revert." "Green"; exit 0 }
+        if (-not $isSparse) { Say "Already a full checkout -- nothing to revert." "Green"; exit 0 }
         Say "Restoring the full tree at $Path ..." "Cyan"
         if ($DryRun) { Say "  [dry-run] would run: git sparse-checkout disable" "Yellow"; exit 0 }
         git sparse-checkout disable
@@ -152,9 +156,9 @@ try {
         exit 0
     }
 
-    # ── apply ─────────────────────────────────────────────────────────────
-    if ($isSparse) { Say "Already sparse — re-applying patterns (idempotent)." "Gray" }
-    Say "Vault clone : $Path" "Cyan"
+    # -- apply -------------------------------------------------------------
+    if ($isSparse) { Say "Already sparse -- re-applying patterns (idempotent)." "Gray" }
+    Say ""
     Say ("Before      : {0} files / {1} MB" -f $before.Files, $before.MB)
     Say "Keeping     : $($patterns -join '  ')" "Cyan"
 
@@ -181,7 +185,7 @@ try {
     $handoffs = @(Get-ChildItem -Path (Join-Path $Path "docs") -Filter "session_*_handoff.md" -ErrorAction SilentlyContinue).Count
     $index    = Test-Path (Join-Path $Path "docs\INDEX.md")
     Say ""
-    Say ("Verify      : kb-notes {0} · handoffs {1} · INDEX.md {2}" -f `
+    Say ("Verify      : kb-notes {0} | handoffs {1} | INDEX.md {2}" -f `
          $notes, $handoffs, $(if ($index) { "present" } else { "MISSING" })) `
          $(if ($notes -gt 0 -and $index) { "Green" } else { "Red" })
     if ($notes -eq 0 -or -not $index) {
@@ -195,10 +199,10 @@ try {
     $syncScript = Join-Path $Path "scripts\sync-vault-clones.ps1"
     if (-not (Test-Path $syncScript)) {
         Say "FATAL: scripts\sync-vault-clones.ps1 was removed by this checkout." "Red"
-        Say "       Your Task Scheduler job runs THAT file — the vault would stop" "Red"
+        Say "       Your Task Scheduler job runs THAT file -- the vault would stop" "Red"
         Say "       syncing silently. Restoring the full tree now." "Red"
         git sparse-checkout disable
-        Say "       Restored. Do not re-run until '/scripts/' is in \$patterns." "Yellow"
+        Say "       Restored. Do not re-run until '/scripts/' is in the '\$patterns' list." "Yellow"
         exit 1
     }
     Say "Verify      : scripts\sync-vault-clones.ps1 present (Task Scheduler target)" "Green"
