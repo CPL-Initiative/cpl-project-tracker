@@ -117,6 +117,10 @@ if ($resolved -notlike "*COG-second-brain*" -and -not $Force) {
     exit 1
 }
 
+Say "Vault clone : $resolved" "Cyan"
+Say "Checking     : working tree, unpushed commits, current footprint ..." "Gray"
+Say "               (a ~1 GB tree can take up to a minute here — not hung)" "Gray"
+
 Push-Location $Path
 try {
     $dirty = git status --porcelain
@@ -154,7 +158,7 @@ try {
 
     # ── apply ─────────────────────────────────────────────────────────────
     if ($isSparse) { Say "Already sparse — re-applying patterns (idempotent)." "Gray" }
-    Say "Vault clone : $Path" "Cyan"
+    Say ""
     Say ("Before      : {0} files / {1} MB" -f $before.Files, $before.MB)
     Say "Keeping     : $($patterns -join '  ')" "Cyan"
 
