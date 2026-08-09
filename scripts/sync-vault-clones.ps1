@@ -107,6 +107,22 @@ foreach ($repo in $repos) {
             continue
         }
         Log "[$repo] pulled $behind commit(s) from origin/main"
+
+        # Sparse-checkout watchdog (added 2026-08-09). The tracker's vault clone
+        # is meant to be a docs-only checkout (~11 MB, not ~1.07 GB) — see
+        # scripts/sparse-vault-clone.ps1. A pull preserves sparseness, but a
+        # stray `git sparse-checkout disable` or a re-clone would silently
+        # restore 1 GB of build artifacts into the vault, and the only symptom
+        # is Obsidian getting slow again weeks later. Log it so the cause is
+        # findable rather than mysterious. Report-only: never re-applies
+        # sparseness on its own, because that would delete files a human may
+        # have restored deliberately.
+        if ($repo -eq "cpl-project-tracker") {
+            $sparse = git config --get core.sparseCheckout 2>$null
+            if ($sparse -ne "true") {
+                Log "[$repo] NOTE -- full checkout (not sparse); vault carries the build artifacts. Run scripts\sparse-vault-clone.ps1 to shrink it."
+            }
+        }
     }
     catch {
         Log "[$repo] EXCEPTION -- $($_.Exception.Message)"
