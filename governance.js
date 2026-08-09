@@ -186,10 +186,21 @@
     // delete its own rows (anon is deliberately write-only on that table). On
     // 2026-08-07 it was 28 of 53, so an unfiltered "untriaged" figure here would be
     // majority robot — a governance page reporting its own CI back to itself.
+    //
+    // As of 2026-08-09 (SkyDesk) the rows are ALSO stamped status='ci' at write
+    // time by sierra_feedback_upsert — see kb/supabase_sierra_feedback_ci_status.sql.
+    // Both filters are kept deliberately, and this is not redundancy for its own
+    // sake: `status` is the durable server-side label that any FUTURE reader of
+    // this table inherits for free, while `page` is what the historical rows were
+    // written with and what a hand-run curl would still carry. Dropping either one
+    // makes this count depend on the other being remembered. They cannot disagree —
+    // the DB derives 'ci' FROM page='smoke'.
     var fb = fetch(REST + "/sierra_feedback?select=page,status&limit=1000", { headers: authHeaders() })
       .then(function (r) { return r.ok ? r.json() : []; })
       .then(function (rows) {
-        var real = (rows || []).filter(function (r) { return r.page !== "smoke"; });
+        var real = (rows || []).filter(function (r) {
+          return r.page !== "smoke" && r.status !== "ci";
+        });
         out.fbTotal = real.length;
         out.fbOpen = real.filter(function (r) { return (r.status || "new") !== "addressed"; }).length;
       }).catch(function () {});
@@ -636,6 +647,7 @@
     _ownerOf: ownerOf,
     _stanceChip: stanceChip,
     _loadOwners: loadOwners,   // exported so the failed-read path is testable
+    _loadLive: loadLive,       // exported so the CI-row exclusion is testable
     _renderCandidates: renderCandidates,
     _signedIn: signedIn,
   };
