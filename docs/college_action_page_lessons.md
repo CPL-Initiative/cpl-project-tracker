@@ -203,3 +203,40 @@ Build the briefing shell against **Scenario 1 / Year 1**, reusing
 `buildQueue(sources, now)` rather than forking the ranking rules, and resolving
 priorities through the **full** chain including the overlay. The top slot
 (inbound CPL requests) stays blocked on Malone's view name.
+
+### Addendum, same day — two corrections found while building
+
+**1. The config path in the section above is wrong.** Real location:
+`config.projects."cpl-implementation".scenarios."Scenario 1".yearPriorities."1"`
+— camelCase, three levels deeper than `config.year_priorities`. `config`'s only
+top-level key is `projects`, so the documented path returns `null`, which is
+**indistinguishable from the empty overlay the docs also claimed**. Two wrong
+statements that corroborate each other. Corrected in CLAUDE.md and in the KB note.
+
+**2. ⭐ `CPLStatusPlan` is in hand and always was — Sam's probe, 2026-08-09.**
+`map_college_cr_unit`, **204,714 rows, zero nulls**: Needs Action 182,941
+(1,053,332.50 potential units) · Not Applicable 15,272 · Applied to CPL Plan
+4,572 (111,778.65 applied → 60,246.45 transcribed) · In Process 1,929. It arrived
+via **Sam's Access import**, not the API. The standing line *"`CPLStatusPlan` is
+in NONE of the nine views"* is true **only of the API views**, and **two sessions
+read it as "we don't have the disposition data"** — so the briefing's disposition
+content was never blocked. Only **freshness** is. Sam: *"I've been wondering why
+you were waiting so hard on Malone's side of the deal."* Fair. Keep *do we have
+it* and *is it fresh* apart, in that order.
+
+**Reconciliation done before any of it reaches a college's screen.**
+`map_college_cr_unit` (raw) and `map_college_credit_summary` (suppression applied
+at write time) differ by **1,462.50 units** — and it resolves exactly: the 98
+unsuppressed colleges match to **0.00**, and the whole difference is the 13
+suppressed colleges the summary zeroes. Disclosure control working.
+
+⚠️ **But one published number does not reproduce.** Of the four in the standing
+NUMBER POLICY, three are exact — dormant published 1,051,870 ✓, articulated
+published 63,991 ✓, articulated unsuppressed 64,074 ✓ — and **dormant
+unsuppressed is 1,053,332.50, not the documented 1,052,531**. The policy says to
+publish both totals, so that figure is on a path to a public surface with no
+query behind it. **Decide the number before the chip ships.** (k≥3 holds
+comfortably: 13 suppressed colleges, 41 students among them.)
+
+**Build consequence:** the briefing reads `map_college_credit_summary`, the same
+suppression-applied table the 🎓 tab and Sierra use, so it cannot drift from them.

@@ -125,11 +125,23 @@ Design calls already made; do not re-derive them:
 - Leads with **opportunity**, never a ranking. Never rank colleges publicly.
 - Resolve priorities through the **full chain including the overlay**.
 
-⭐ Its top slot — **inbound CPL requests** — still needs the nightly feed, still
-blocked on **Malone's Custom Report view name**.
-`docs/map_custom_report_request_for_malone.md` is forwardable today. I dispatched
-`discover-map-datasets.yml` to re-check whether the view got published and
-**never read the result** — do that first, it is one workflow log.
+⚠️ **Its top slot — inbound CPL requests — needs FRESHNESS, not the data.** Sam
+probed this on 2026-08-09 and was right: **`cpl_status_plan` is 100% populated**
+in `map_college_cr_unit` (204,714 rows, zero nulls — Needs Action 182,941 /
+Not Applicable 15,272 / Applied to CPL Plan 4,572 / In Process 1,929). It came
+in through **his Access import**, not the API. The old line — *"`CPLStatusPlan`
+is in NONE of the nine views"* — is true only of the **API views**, and **two
+sessions in a row read it as "we don't have the disposition data."** Keep the
+questions apart: *do we have it* (yes) vs *is it fresh* (no). **Everything
+except the inbound-request slot is buildable from what we already hold.**
+
+Two forwardable asks now exist: `docs/map_custom_report_request_for_malone.md`
+(the one-view ask) and **`docs/map_dataset_sql_for_malone.md` (#1085)**, which
+gives server-side SQL for both datasets plus reconciliation counts so no view
+needs publishing at all.
+
+⚠️ I dispatched `discover-map-datasets.yml` to re-check whether the view got
+published and **never read the result** — one workflow log, still unread.
 
 ## 🥇 Cheapest real work
 
