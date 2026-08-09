@@ -674,6 +674,26 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
+### Sky -- the vault was never slow, and five diagnoses needed correcting (2026-08-09, #1071-#1083 MERGED)
+
+Sam asked which of ten "Claude + Obsidian memory" repos to adopt. Answer: **one** (kepano's skills, now
+committed to BOTH repos so remote sessions and the team get them -- a laptop install reaches neither).
+The real finding: eight of ten solve *retrieval*; this corpus's problem is **accretion**. Shipped
+`kb/_docs_audit.py`, the docs **lint** pass, as step 0 of `/checkpoint` -- `superseded_handoff`,
+`frontmatter_log_chain` and `kb_note_frontmatter` all now **0**. Vault clone **1,037 MB -> 10.2 MB**
+via a docs-only sparse checkout; sync now hourly with **no console window** (an S4U principal --
+`-WindowStyle Hidden` was never the fix). COG skills **22 -> 16** (8 structurally unable to run: every
+integration Disabled in `MY-INTEGRATIONS.md`); kept `daily-brief`/`weekly-checkin`/`onboarding` because
+**broken != unused**. + **The vault was never slow -- GRAPH VIEW was blank, for two weeks, unreported.**
+And the SIZE fixed it, not the `linkDistance: 250` I blamed: 418 MB of `row_audit` MARKDOWN loading into
+the metadata cache. **`linkDistance: 250` is still live** (default 30) -- next session's cheapest win.
+**Three bugs surfaced only on Sam's hardware**: a missing `/scripts/` sparse pattern that would have
+deleted the Task Scheduler's own target and silently killed vault sync, a 60-second silent hang, and em
+dashes that made all three `.ps1` unparseable under PowerShell 5.1 (ASCII guard now committed). Durable:
+`methodology-a-knowledge-base-needs-a-lint-pass`, `playbook-keep-build-artifacts-out-of-the-vault`,
+`methodology-the-plausible-cause-is-not-the-measured-one`.
+Story: `docs/vault_sync_lessons.md` - handoff `docs/session_134_handoff.md`.
+
 ### SkyHigh — the sweep method is gone, and the action library was already written (2026-08-09, #1078 MERGED)
 
 Sam: *"let's pick up the string."* **#1078** closed the cheapest item on the queue — the **seven colleges**
@@ -693,25 +713,6 @@ wrong priorities while claiming to be sourced. Durable:
 `methodology-a-tier-must-encode-what-you-could-not-check`, `methodology-verify-the-last-hop-of-a-resolution-chain`.
 **Open for Sam:** Scenario 1 vs 2, and Year 1 vs 2 (Year 2 has *no* strategies).
 Story: `docs/map_users_lessons.md` · `docs/college_action_page_lessons.md` · handoff `docs/session_133_handoff.md`.
-
-### SkyDesk / SkyTime — the handoff's backlog was two-sixths wrong within two days (2026-08-09, #1072/#1073 MERGED)
-
-Sam: *"let's crank!"* **Name: Sam called it SkyTime at greeting and sign-off; it ran as SkyDesk because SkyTime was already Session 104's moniker. Sam's name wins — both are recorded here so either search term lands, the same reconciliation SkyWire/SkyMind got.** ⭐ **The session's value was measuring the handoff's six-item MAP-team backlog before building
-on it — fifteen minutes of SQL, and it came back materially different.** "Every governance owner unset" was FALSE
-(the team assigned **17 of 17** on Aug 5+7 — the register's own OQ-01 had been answered by people while the document
-still listed it as the work); "6 open Sierra feedback rows" was **23**; "56 proposed contact fills" was **14** (42 of
-the 56 are colleges MAP already covers); "15 unroutable colleges" was **11**. ⭐ And **7 colleges with no primary
-contact had NEVER BEEN LOOKED UP** — Citrus · Canyons · Palomar · Saddleback · Yuba (+2 partner entities) — because
-the sweep scoped to *"colleges without a CPL Assistant"*, a **proxy** for the need that diverges on 28% of rows.
-Cheapest work on the board: one lookup each. **📥 MAP Team Queue tab LIVE** (#1073) — every item **measured at load**,
-never a list; unmeasurable items sit in `kb/map_team_tracked.json` rendering **their own staleness**; a failed read
-renders **`unknown` and sorts to the top**, never 0; cleared items stay visible. `buildQueue(sources, now)` is PURE —
-**the engine the college-facing briefing must reuse**. Also **#1072**: CI smoke rows out of the Sierra queue, fixed at
-the WRITE path (`status='ci'`), 43 backfilled → **23 real open · 4 addressed · 43 CI**. ⚠️ Two test assertions failed
-on first run and **both were the assertion, not the code** — one matched a legitimate backfill because it wasn't scoped
-to the `ON CONFLICT` clause, the proxy-instead-of-property mistake committed with that KB note open in the same session.
-Durable: `methodology-a-written-backlog-decays-silently`, `methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow`.
-Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handoff.md`.
 
 ## Troubleshooting
 

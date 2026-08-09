@@ -8,6 +8,8 @@ related:
   - "[[docs/map_users_lessons]]"
   - "[[docs/kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain]]"
   - "[[docs/kb-notes/methodology-a-tier-must-encode-what-you-could-not-check]]"
+superseded: true
+superseded_by: session_134_handoff.md
 ---
 
 # You are Session 133
