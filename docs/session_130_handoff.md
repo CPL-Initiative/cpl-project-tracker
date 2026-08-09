@@ -1,5 +1,5 @@
 ---
-title: Session 130 handoff (SkyWire → next) — Sierra reaches the data; now build the page that uses it
+title: Session 130 handoff (Bruh SkyMind → next) — Sierra reaches the data; now build the page that uses it
 created: 2026-08-09
 updated: 2026-08-09
 tags: [handoff, sierra, disposition, college-page, map-team, contacts, funding]
@@ -12,12 +12,15 @@ related:
 
 # You are Session 130
 
-Previous session was **SkyWire (129)** — three PRs, all merged, one production deploy. Take the name or coin one.
+Previous session was **Bruh SkyMind (129)** — five PRs, all merged, one production deploy. **Sam named it at sign-off**
+("Great work today, Bruh SkyMind"); it had been running as SkyWire, the name session 129's handoff suggested, and the
+docs were reconciled to Sam's name so a future session searching either term lands in the same place. Take a name or
+coin one.
 
 ## Read first, in order
 
 1. This file.
-2. `docs/cpl_assistant_lessons.md` § **2026-08-09 SkyWire** — the story, written once, there.
+2. `docs/cpl_assistant_lessons.md` § **2026-08-09 Bruh SkyMind** — the story, written once, there.
 3. `docs/kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function.md` — **before touching `cpl-chat` or any gated table.**
 4. `docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md` — before writing any assertion.
 5. `docs/map_custom_report_request_for_malone.md` — the forwardable ask for the MAP team.
@@ -34,7 +37,7 @@ path — and ships `--no-verify-jwt`, so anyone can curl it. **No caller-supplie
 `Origin`) is an authorisation.** Per-college disclosure to all callers is **Sam's explicit decision, 2026-08-09**.
 Do not re-litigate it; do not assume a future "internal-only" lane exists without building real JWT validation.
 
-## ✅ PRIORITY 1 — the proposed-fills build (SHIPPED 2026-08-09, SkyWire)
+## ✅ PRIORITY 1 — the proposed-fills build (SHIPPED 2026-08-09, Bruh SkyMind)
 
 Sam: *"the counseling contact is our best guess as to whom would serve as the best primary contact when the
 contact is blank"* — use them as **temporary fills on the COBI side so the MAP team can adopt them if they agree.**
