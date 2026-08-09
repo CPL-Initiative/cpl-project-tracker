@@ -180,10 +180,16 @@
           why: "map_contact_gaps where primary_contact_email is blank.",
           where: { tab: "map-users", label: "MAP Users" } });
       } else {
-        var hasProposal = [], lookedUpEmpty = [], neverLookedUp = [];
+        var hasProposal = [], lookedUpEmpty = [], neverLookedUp = [], searchOnly = [];
         blank.forEach(function (r) {
           var f = fb[r.college];
           if (!f) { neverLookedUp.push(r.college); return; }
+          // A "search" row was looked up but its page was never opened, so the
+          // sourcing rules were never applied to it. Its action is neither "hand
+          // it to the MAP team" nor "go find something" — it is "open the page and
+          // decide", which is its own bucket. Splitting by ACTION rather than by
+          // whether an address happens to be present is the rule this lane keeps.
+          if (f.via === "search") { searchOnly.push(r.college); return; }
           var withEmail = (f.contacts || []).filter(function (c) { return c && c.email; });
           if (withEmail.length) hasProposal.push(r.college); else lookedUpEmpty.push(r.college);
         });
@@ -204,6 +210,18 @@
             + "mental-health inbox, which was found and deliberately declined for CPL routing. These need a human.",
           count: lookedUpEmpty.length, personWaiting: true, since: syncedAt, names: lookedUpEmpty,
           why: "Blank in MAP and present in FALLBACK_CONTACTS with no email on any contact.",
+          where: { tab: "map-users", label: "MAP Users" } });
+
+        add({ id: "contacts-search-only",
+          title: "Candidate contacts found by search, waiting for someone to open the page",
+          detail: "Each has a page to open and a rule to apply: is this a counselling inbox, a list "
+            + "of counsellors, or a wellness address? Sessions are egress-blocked from college "
+            + "domains, so this last step needs a human — but it is seconds each, and the page is "
+            + "linked on the MAP Users tab.",
+          count: searchOnly.length, personWaiting: true, since: syncedAt, names: searchOnly,
+          why: "Blank in MAP and present in FALLBACK_CONTACTS with via='search'. These are "
+            + "deliberately NOT counted as proposals — proposedFillFor() refuses a search row, so "
+            + "none of them can reach the 'Proposed for MAP' column unconfirmed.",
           where: { tab: "map-users", label: "MAP Users" } });
 
         add({ id: "contacts-never-looked",

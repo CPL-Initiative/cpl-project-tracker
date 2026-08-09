@@ -399,9 +399,15 @@ function makeWin(opts) {
   const FB = T._FALLBACK_CONTACTS;
   const keys = Object.keys(FB);
   check("fallbacks: every entry declares a provenance",
-    keys.every((k) => FB[k].via === "curator" || FB[k].via === "web"));
+    keys.every((k) => FB[k].via === "curator" || FB[k].via === "web" || FB[k].via === "search"));
   check("fallbacks: every web-sourced entry carries a source URL",
     keys.filter((k) => FB[k].via === "web").every((k) => /^https:\/\//.test(FB[k].source)));
+  // A "search" row's ONLY value is the page a human still has to open, so the
+  // source URL is not optional decoration here — it is the entire deliverable.
+  check("fallbacks: every search-sourced entry carries the page to confirm",
+    keys.filter((k) => FB[k].via === "search").every((k) => /^https:\/\//.test(FB[k].source)));
+  check("fallbacks: every search-sourced entry says why it is unconfirmed",
+    keys.filter((k) => FB[k].via === "search").every((k) => !!FB[k].note));
   check("fallbacks: every curator entry records who supplied it",
     keys.filter((k) => FB[k].via === "curator").every((k) => !!FB[k].by));
   check("fallbacks: every listed contact has a real address",
@@ -612,6 +618,29 @@ function makeWin(opts) {
   const cc = T._FALLBACK_CONTACTS["Contra Costa College"];
   check("the declined mental-health inbox is recorded as a finding, not an address",
     (cc.contacts || []).length === 0 && /deliberately not used/i.test(cc.note || ""));
+
+  // 3b. A "search" row is a LEAD, not a proposal (Session 132). Its page was
+  //     never opened — sessions are egress-blocked from college domains — so
+  //     nobody has checked it against Jessica's rules, and the specific thing
+  //     those rules catch (a wellness inbox published as the counselling
+  //     contact) is exactly what a search snippet hides. Proposing one would
+  //     launder "we could not check this" into "we suggest you adopt it".
+  check("proposal: none for a search-sourced candidate, however good it looks",
+    T._proposedFillFor({ college: "Citrus College", primary_contact_email: "" }) === null);
+  // POSITIVE CONTROL for the line above: prove the null is the TIER refusing,
+  // not an empty contact list. Without this, deleting the Citrus entry entirely
+  // would still pass the assertion.
+  const citrus = T._FALLBACK_CONTACTS["Citrus College"];
+  check("…and that refusal is about provenance: the candidate DOES carry an address",
+    !!citrus && citrus.via === "search"
+    && (citrus.contacts || []).some((c) => /.+@.+\..+/.test(c.email)));
+  // POSITIVE CONTROL for the branch itself: a web-sourced row must still
+  // propose, so the new `via === "search"` guard cannot have swallowed everything.
+  const webKey = Object.keys(T._FALLBACK_CONTACTS).find((k) =>
+    T._FALLBACK_CONTACTS[k].via === "web"
+    && (T._FALLBACK_CONTACTS[k].contacts || []).some((c) => c.email));
+  check("…while a web-sourced row still proposes (the guard is not a blanket off-switch)",
+    !!webKey && !!T._proposedFillFor({ college: webKey, primary_contact_email: "" }));
 
   // 4. Unknown college → no proposal, no throw.
   check("proposal: unknown college yields null rather than throwing",

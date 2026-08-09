@@ -214,8 +214,17 @@
   //   via "web" — found on the college's own published pages. A starting point
   //     to VERIFY (the source link is shown for exactly that reason), not an
   //     authority.
+  //   via "search" — a CANDIDATE from search results where the page itself could
+  //     NOT be opened (added Session 132, 2026-08-09). Weaker than "web" in one
+  //     specific, load-bearing way: the sourcing rules below are rules about what
+  //     a PAGE shows — is this a department inbox, a list of counselors, a
+  //     wellness address? — and they cannot be applied to a snippet. Two of the
+  //     previous 71 lookups published ONLY a mental-health inbox, and that is
+  //     invisible from search results. So a "search" row is a lead for a human to
+  //     confirm, never a routing destination: proposedFillFor() refuses it by
+  //     construction, so it can never reach the "Proposed for MAP" column.
   //
-  // NEITHER is a MAP designation, and neither is ever fed into the cascade —
+  // NONE is a MAP designation, and none is ever fed into the cascade —
   // the cascade stays strictly the college's own designations.
   //
   // SOURCING RULES — set by Jessica (MAP team), 2026-08-05. These supersede the
@@ -505,6 +514,66 @@
       via: "web", source: "https://www.westvalley.edu/services/counseling/",
       contacts: [],
       note: "Phone and Starfish scheduling; no department inbox published", },
+
+    // ── The seven the original sweep never reached (Session 132, 2026-08-09) ──
+    // These have no primary_contact_email in MAP and were absent from this table
+    // entirely, because the 2026-08-05 sweep scoped to "colleges without a CPL
+    // Assistant" — a PROXY for the real need, which is "colleges MAP cannot route
+    // a student to". The two come apart on 7 of 25 rows.
+    //
+    // All seven are via "search": this sandbox is egress-blocked from college
+    // domains (verified — curl returns 000 for every one of these hosts), so the
+    // pages could not be opened and Jessica's sourcing rules could not be applied
+    // to them. Each carries the page a human should open to confirm it.
+    "Citrus College": {
+      via: "search", source: "https://www.citruscollege.edu/studentservices/counseling/contact.html",
+      contacts: [{ name: null, title: "Counseling and Advisement Center",
+                   email: "counseling@citruscollege.edu" }],
+      note: "Two independent searches agree on this address and the page is titled "
+        + "Counseling and Advisement Center (academic advising, not wellness). Confirm the "
+        + "address appears on the page before routing.", },
+    "College of the Canyons": {
+      via: "search", source: "https://www.canyons.edu/studentservices/counseling/contact.php",
+      contacts: [],
+      note: "No general counseling inbox surfaced. The only address found is "
+        + "ConnectsHelp@canyons.edu, which is TECHNICAL support for the Connects platform, not "
+        + "counselling — declined on Jessica's rules. The page otherwise lists individual "
+        + "counsellors and a phone number, which is the 'list of counsellors → leave blank' case. "
+        + "Worth a human check, since the page could not be opened.", },
+    "Palomar College": {
+      via: "search", source: "https://www.palomar.edu/counseling/",
+      contacts: [{ name: null, title: "Counseling Services", email: "counseling@palomar.edu" }],
+      note: "Palomar publishes a SEPARATE Behavioral Health Counseling Services department with its "
+        + "own contact page, so confirm this address belongs to the academic Counseling Department "
+        + "and not to BHCS before routing a credit question to it.", },
+    "Saddleback College": {
+      via: "search", source: "https://www.saddleback.edu/student-support/counseling-services",
+      contacts: [{ name: null, title: "eCounselor / Counselor Callback",
+                   email: "sc-ecounselor@saddleback.edu" }],
+      note: "Published for brief counselling questions; students are asked to include name and "
+        + "student ID. Confirm it accepts a CPL enquiry rather than only appointment requests.", },
+    "Yuba College": {
+      via: "search", source: "https://yc.yccd.edu/student/counseling/email-the-counseling-department/",
+      contacts: [{ name: null, title: "Counseling Department", email: "yubacounseling@yccd.edu" }],
+      note: "The strongest of the seven: the college publishes a page whose title is literally "
+        + "'email the counseling department'.", },
+
+    // The two non-college entities. Both are at ZERO awarded credit in the
+    // disposition data, so a working contact matters, but neither has the
+    // counselling structure the sourcing rules were written for.
+    "Futuro Health": {
+      via: "search", source: "https://futurohealth.org/student-support/",
+      contacts: [{ name: null, title: "Scholar support", email: "help@futurohealth.org" }],
+      note: "Not a college — a statewide allied-health training partner with Enrollment Advisors "
+        + "and Success Coaches rather than a counselling office. This is its general help address, "
+        + "so confirm who inside Futuro Health should own a CPL request before using it.", },
+    "Launch Apprenticeship": {
+      via: "search", source: "https://launchapprenticeship.org/connect/",
+      contacts: [],
+      note: "No student-facing inbox published — the site routes through an Apprenticeship Interest "
+        + "Form. Searches surfaced a regional manager at a different college's domain, which is the "
+        + "'name off a list' case Jessica's rules exclude. Needs a human to identify the right "
+        + "contact, most likely via the CCCCO apprenticeship team.", },
   };
   function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
 
@@ -531,6 +600,13 @@
     if (!row || row.primary_contact_email) return null;
     var f = fallbackFor(row.college);
     if (!f) return null;
+    // 3. A "search" row is a lead, not a proposal. Its page was never opened, so
+    //    nobody has checked it against the sourcing rules — and the specific thing
+    //    those rules catch (a wellness inbox published as the counselling contact)
+    //    is exactly what a search snippet hides. Proposing one to the MAP team
+    //    would launder "we could not check this" into "we suggest you adopt it".
+    //    It graduates to via "web" or "curator" when a human confirms the page.
+    if (f.via === "search") return null;
     var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
     if (!withEmail.length) return null;
     return { meta: f, contacts: withEmail };
@@ -1276,6 +1352,11 @@
         h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
           + "their source ↗</a></div>";
       }
+    } else if (f.via === "search") {
+      // Say plainly that nobody opened the page. The link is the whole point of
+      // the row: confirming it is a few seconds of work for someone unblocked.
+      h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+        + "candidate from search ↗</a> — <b>page not opened, confirm before routing</b></div>";
     } else {
       h += '<div><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
         + "from their website ↗</a> — verify before use</div>";
@@ -1358,6 +1439,13 @@
                 return '<span class="mapu-prop-em">' + esc(c.email) + "</span>"
                   + (c.name ? ' <span class="mapu-fb-t">' + esc(c.name) + "</span>" : "");
               }).join("<br>")
+            + "<br>" + srcLink + "</div>";
+        } else if (withEmail.length && f.via === "search") {
+          // MAP holds nothing here either, but this is NOT a proposal — the page
+          // was never opened. Labelled as a candidate so the two are never read as
+          // the same thing at a glance.
+          couns = '<div class="mapu-prop"><span class="mapu-prop-tag">Candidate — confirm</span><br>'
+            + withEmail.map(function (c) { return '<span class="mapu-prop-em">' + esc(c.email) + "</span>"; }).join("<br>")
             + "<br>" + srcLink + "</div>";
         } else if (withEmail.length) {
           // MAP already holds a primary contact — reference only, no proposal.

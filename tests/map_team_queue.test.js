@@ -120,6 +120,37 @@ function byId(items) {
     && m["contacts-never-looked"].names.sort().join(",") === "Palomar College,Yuba College");
   check("contacts: the three states are separate items, not one 'unroutable' number",
     m["contacts-proposed"] && m["contacts-empty"] && m["contacts-never-looked"]);
+
+  // Session 132 — the fourth state. A "search" row was looked up but its page was
+  // never opened, so its action ("open the page and apply the rules") is neither
+  // of the other three. It must not be counted as a proposal waiting on the MAP
+  // team: that would tell them a decision is ready when the check hasn't happened.
+  const S = {
+    gaps: GAPS.concat([
+      { college: "Citrus College", primary_contact_email: null, synced_at: "2026-08-05T00:00:00Z" },
+      { college: "Saddleback College", primary_contact_email: null, synced_at: "2026-08-05T00:00:00Z" }
+    ]),
+    fallback: Object.assign({}, FALLBACK, {
+      "Citrus College": { via: "search", contacts: [{ name: null, email: "counseling@citrus.edu" }] },
+      // A search row with NO usable address is still a search row: same action.
+      "Saddleback College": { via: "search", contacts: [] }
+    }),
+    feedback: FEEDBACK, owners: OWNERS, register: REGISTER, nudges: [],
+    loads: FULL.loads, tracked: FULL.tracked
+  };
+  const ms = byId(makeWin().CPL_MAP_QUEUE._buildQueue(S, NOW));
+  check("contacts: search-sourced candidates are their own bucket",
+    ms["contacts-search-only"].count === 2);
+  check("contacts: a search candidate is NOT counted as a proposal for the MAP team",
+    ms["contacts-proposed"].names.indexOf("Citrus College") === -1);
+  check("contacts: a search candidate with no address is NOT counted as looked-up-and-empty",
+    ms["contacts-empty"].names.indexOf("Saddleback College") === -1);
+  // POSITIVE CONTROL — the new branch must not have absorbed the other buckets.
+  check("…and the original three buckets still count what they did before",
+    ms["contacts-proposed"].count === 2 && ms["contacts-empty"].count === 1
+    && ms["contacts-never-looked"].count === 2);
+  check("contacts: a search candidate has someone waiting on it",
+    ms["contacts-search-only"].personWaiting === true);
   check("contacts: age measured from the MAP sync (2026-08-05 → 4 days)",
     m["contacts-proposed"].ageDays === 4);
 })();
