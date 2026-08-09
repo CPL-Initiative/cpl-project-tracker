@@ -1,74 +1,74 @@
 {
- "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-08 · SkyNaut — both your Access tables are loaded and verified, and we finally have the number: over a million units of earned credit sitting unawarded, 64,074 of it already articulated.",
- "_session": "SkyNaut (128)",
- "_status": "Both tables are in Supabase and reconciled exactly against your Access counts — 220,588 student rows and 204,714 credit rows. Out of them comes a figure the CPL Initiative has never had: 1,052,531 units of credit sitting at Needs Action across 106 colleges. Credit students have already earned and nobody has awarded. The number to actually act on is smaller and sharper: 64,074 of those units are ALREADY ARTICULATED — the exhibit exists, the value is agreed, it maps to a course, and the only missing step is a college acting. That's roughly a thousand associate degrees' worth of work that's already done. The new 🎓 Course Credit tab shows all of it per college, safely suppressed for small colleges, and it deliberately leads with the fourteen colleges already at 100% rather than naming laggards. Two honest caveats on the page: the million is a ceiling (about a third of reviewed credit is correctly ruled Not Applicable, which is real work), and only 54% of applied credit has reached a transcript. Sierra can't see any of this yet — that's the next job.",
- "items": [
-  {
-   "id": "sierra-decision",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "🤔 ONE DECISION BEFORE WE WIRE SIERRA — you mentioned Sierra only lives in COBI for now, with a different one for colleges and the portal. For the COBI one there's nothing to decide: it's internal, same audience as the new tab. But if the public one ever gets these numbers, 'your college has 12,000 units unawarded' is a public statement about that college's performance, and we've always said never rank colleges publicly. Worth deciding once, calmly, rather than in the moment."
-  },
-  {
-   "id": "read-map-spec",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "📄 READ THE MAP FEED SPEC BEFORE IT GOES TO MALONE — docs/map_nightly_feed_spec.md. Three feeds, the student-key ask, the college/district reference, and nine things we learned the hard way that they should preserve rather than tidy up. They'll build to whatever it says, so it's worth twenty minutes now. One open question inside: I'd recommend asking for a persistent surrogate key rather than a hashed one, and the spec still says hash — tell me which and I'll change it."
-  },
-  {
-   "id": "malone-view-name",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "📞 THE VIEW NAME FROM MALONE — you said next week. That single string unblocks the whole nightly refresh; on our side it's about four lines of code and the existing cron picks it up. Worth asking in the same message: who are colleges 122 and 131? They're in your data with real students and no name anywhere in MAP."
-  },
-  {
-   "id": "college-122",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "❓ COLLEGE 122 HAS 117 TRAINEES AND ZERO AWARDS — more than every other non-college partner combined. Your hunch was agency partners, and that fits (Futuro Health and LAUNCH are already 133 and 132, so these are two others). Until it's named it shows as 'College 122' on the tab. It's also the single clearest example of the landing-page problem: 117 people with credit identified and nothing awarded."
-  },
-  {
-   "id": "nc-row-correction",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "✏️ THE NONCREDIT LINE NEEDS REWORDING — we've been saying those standalone institutions are 'at zero' in MAP. They're not: they have students and credit recommendations. They're at zero on AWARDS. That's a stronger and more urgent thing to say to them, and it's the actual case for the landing pages — right now you'd be sending people to a door that's never opened."
-  },
-  {
-   "id": "sierra-wire-cobi",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "🔧 WIRE THE COBI SIERRA TO THE NEW NUMBERS — she can say what credit exists but still nothing about what's been acted on. The data's loaded and safely suppressed; this is a retrieval path, prompt rules and smoke tests. ⚠ Confirm which function each Sierra actually uses before touching anything — don't assume they share one."
-  },
-  {
-   "id": "sierra-disposition-corpus",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "📚 REFRESH SIERRA'S EXHIBIT LIST — still the biggest single limit on her. Her copy covers 2,397 exhibits across 59 colleges; MAP has 123. Touches a shared table production reads, so walk Sam through the impact first."
-  },
-  {
-   "id": "sierra-poaching-audit",
-   "for": "fable",
-   "tab": "cobi",
-   "text": "🔍 FINISH THE POACHING AUDIT — five sessions running now. Re-run the five-part review to confirm nothing still tells Sierra to stay quiet about a fact a student needs."
-  },
-  {
-   "id": "sierra-feedback-unread",
-   "for": "sam",
-   "tab": "cobi",
-   "text": "📬 SIX FEEDBACK REPORTS STILL NEED YOU — the inbox is clean (our test robot's rows are filtered out). Best of what's left: someone asked how many colleges have a CPL counsellor listed and Sierra couldn't answer, though she names them one at a time. That's a build, not a bug, and the data already exists."
-  },
-  {
-   "id": "gov-sierra-rows",
-   "for": "sam",
-   "tab": "governance",
-   "text": "⚖️ FOUR GOVERNANCE ROWS NEED AN OWNER — DR-11 (what Sierra tells the public), CA-06 (feedback triage, which shows its own untriaged count), OQ-07 (what must be true before inviting MAP and the CO) and OQ-08 (register drift)."
-  },
-  {
-   "id": "transcription-gap",
-   "for": "fable",
-   "tab": "funding",
-   "text": "📉 THE SECOND GAP, FOR LATER — 111,779 units have been applied to student plans but only 60,246 have reached a transcript. That's 54%. Applied is this phase's target so it's not today's problem, but it becomes the story the moment outcomes funding switches on, and it's worth having measured before someone asks."
-  }
- ]
+  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
+  "_as_of": "2026-08-09 · SkyWire — Sierra can now answer what colleges have ACTED on, not just what credit exists. Live and smoke-verified. Next: the college-facing action page, and using our settled counseling contacts as temporary fills the MAP team can adopt.",
+  "_session": "SkyWire (129)",
+  "_status": "Sierra is wired to the credit data and live (cpl-chat v36). Ask her how a college is doing on CPL and she answers with real numbers — statewide or for a named college — framed as opportunity rather than a report card, because colleges have wanted to do this work and simply haven't had the visibility until now. She leads with the credit that is ALREADY ARTICULATED (63,991 units) rather than the million-unit ceiling, and she always says that roughly a third of reviewed credit is correctly ruled Not Applicable, so nobody reads the total as a debt. One thing worth knowing: there is only ONE Sierra, not two — the COBI tab and the public college widget are the same service — so showing a named college's figures was a real decision, and Sam made it deliberately. Two safety notes: partner and continuing-ed institutions are already hidden automatically because each has fewer than 10 students, and the headline number now travels with a chip saying 13 of 111 colleges are withheld for privacy. Next up is the page colleges will actually work from, and the same thing pointed inward at the MAP team's own queue.",
+  "items": [
+    {
+      "id": "s129-contacts-adopt",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "Review the 56 counseling contacts we suggest MAP adopt as primary contact where MAP is blank, then send them to the MAP team. Gavilan's came from Jessica."
+    },
+    {
+      "id": "s129-15-blanks",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "15 colleges still have nowhere for a student CPL request to land. Start with Contra Costa and LA Harbor — the only address they publish is a mental-health inbox, which is the wrong door for a credit question."
+    },
+    {
+      "id": "s129-malone-view",
+      "for": "Sam",
+      "tab": "—",
+      "text": "Send Malone the Custom Report request (docs/map_custom_report_request_for_malone.md). We need one view name — everything else is ready and it's a 4-line change our side."
+    },
+    {
+      "id": "s129-nightly",
+      "for": "Sam",
+      "tab": "—",
+      "text": "The nightly feed is now a prerequisite, not a nice-to-have: a college page promising today's to-dos off month-old data will get caught in its first week."
+    },
+    {
+      "id": "s129-35m-metrics",
+      "for": "Sam",
+      "tab": "Implementation Funding",
+      "text": "Confirm the Year-2 metrics for the three $35M priorities are final — the page we're about to build reads them live, so changing them there changes the page."
+    },
+    {
+      "id": "s129-governance-owners",
+      "for": "Sam",
+      "tab": "Governance",
+      "text": "Still nobody named as owner on any governance row. The contact-refresh cadence was decided in June and has never run once."
+    },
+    {
+      "id": "s129-proposed-fills",
+      "for": "Fable",
+      "tab": "MAP Users",
+      "text": "Build the 'Proposed for MAP' column — populates only where MAP is blank, provenance attached, with a handover export. Never inside the Primary contact email column."
+    },
+    {
+      "id": "s129-college-page",
+      "for": "Fable",
+      "tab": "—",
+      "text": "Build the college action page: one page, pick your college and role, get a rendered briefing (not a blank chat box). Inbound CPL requests rank above every stat."
+    },
+    {
+      "id": "s129-map-queue",
+      "for": "Fable",
+      "tab": "—",
+      "text": "Same engine pointed at the MAP team — an inbox that leads with age ('sitting 34 days'). Their backlog is currently spread across six surfaces with no owner."
+    },
+    {
+      "id": "s129-suppression-chip",
+      "for": "Fable",
+      "tab": "Course Credit",
+      "text": "Add the suppression chip to the headline numbers: show both totals plus '13 of 111 colleges withheld, each under 10 students'. Only while 3+ are suppressed."
+    },
+    {
+      "id": "s129-action-library",
+      "for": "Fable",
+      "tab": "—",
+      "text": "Seed the to-do library from the IFM P1/P2/P3 strategies rather than inventing advice. Knowing a college's state is not the same as knowing what moves it."
+    }
+  ]
 }

@@ -3626,3 +3626,26 @@ candidates**, 0 stale rows, noise budget committed as a test. ⭐ **Both filter 
 obvious on first print** — one too loose, one that *silently matched nothing* (1.2M chars between a tab's button
 and its loadScript), and a scan returning zero reports good news, which nobody investigates. Durable:
 `methodology-a-failed-read-is-not-an-empty-result`, `methodology-judge-a-detector-by-what-it-prints`.
+
+### SkyGauge — the bug was already fixed, and a 0.0% that looked like a finding (2026-08-07, #1038–#1044 MERGED)
+
+Took the handoff's Priority 1 (mode 7 part 3) and **measured instead of guessing between its two candidate
+causes.** The offerings RPC returns **613 rows / 117 colleges** for mode 7's exact tsquery, cap 150, with **LA
+Trade Tech at rank 2 and Rio Hondo at 6** — retrieval never thinned anything, and the built context held **ten
+colleges, all in LA Harbor's county**. ⭐ **It was already working:** smoke 47 (the red run the handoff
+describes) ran against **deploy 11**; #1035 shipped v35 after it and runs 48/49/50 are all green. **The session's
+own last PR fixed the item its handoff filed as Priority 1** — the proving smoke fired on push, after the handoff
+was written, and was never re-read. Committed the live 150-row window as a fixture + 13 checks (#1038); found
+that `core` discriminates nothing on that query and the **whole ordering rests on the proximity band**.
+Then Sam's live CPR/AED question exposed a real gap: **`CPLStatusPlan` is in NONE of the nine fetched views**, so
+Sierra can say what credit exists but never what a college has ACTED on (#1039, + a runner probe — Malone's view
+is `400 … not Valid`, not yet published). The 51 MB export failed to reach a session a third time; ⭐ the
+decisive point is **not the 10 MB cap** but that the Drive connector returns files as **base64 into context**, so
+tranching cannot help. Shipped a **local** aggregator instead (#1040/#1043): grain stays on his machine, salt
+outside any repo. First run: **537,908 rows · 42,345 students · CPR/AED = 17,904 DISTINCT students at 106
+colleges, 42% of all CPL students.** ⚠️ It also reported a **0.0% disposition rate** — the matcher took a column
+named `Status` (workflow stage) over `CPLStatusPlan`, and ⭐ **it was wrong in the direction that looked right**
+(median is 4.7%, so it read as a sharper known finding). Cause was **shape not vocabulary**: alternation resolves
+to the first COLUMN matching ANY branch. Fixed + value-checked + withholds rather than emits (#1041). Durable:
+`methodology-a-wrong-column-is-worse-than-a-missing-one`. Story: `docs/cpl_assistant_lessons.md` §SkyGauge ·
+handoff `docs/session_128_handoff.md`.
