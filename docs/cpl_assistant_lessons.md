@@ -1496,7 +1496,7 @@ DEDUPE**.
 
 ---
 
-## 2026-08-09 — SkyWire: Sierra reaches the disposition data, and two guards that fired on truth
+## 2026-08-09 — SkyMind: Sierra reaches the disposition data, and two guards that fired on truth
 
 ### What shipped
 
