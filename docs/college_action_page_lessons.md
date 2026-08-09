@@ -132,3 +132,74 @@ inventing to-dos; the $35M priorities are **read at runtime** from
 ⚠️ Its top slot — **inbound CPL requests** — needs the nightly feed, which is
 blocked on Malone's view name. That blocker is now item 6 on the queue, aging in
 public where somebody will see it.
+
+## 2026-08-09 — Session 132 (SkyHigh): the action library was already written
+
+### The premise this session checked
+
+The handoff named the action library as the hard part — *"we know each college's
+STATE; we do not have the playbook that moves it"* — and recommended seeding it
+from the IFM P1/P2/P3 strategies by hand. Before inventing anything, I looked for
+those strategies in the repo, per the standing rule that the best recent catches
+came from re-reading a committed artefact rather than generating a new one.
+
+**They exist, fully written, and the team typed them.** Supabase
+`cpl_funding_config`, Scenario 1, Year 1: **10 P1 strategies, 7 P2, 6 P3.**
+Concrete and college-facing —
+
+> *"Act on all JST credit recommendations in MAP"* · *"Configure College CPL
+> Landing site, including adding a CPL Request Email"* · *"Batch upload to MAP
+> all transcribed CPL from 2023-24 to date"* · *"Ensure a CPL Coordinator and/or
+> Counselor is listed and responsive"* · *"Find top 15 ACE credit
+> recommendations and route to faculty for articulations"*
+
+### ⚠️ And the documented source is the wrong one
+
+CLAUDE.md and the handoff both say the overlay is *"currently EMPTY so defaults
+stand."* It is not, and the active scenario disagrees with the baked defaults on
+nearly everything a briefing would print:
+
+| | Baked `cpl_funding_data.js` | Live Scenario 1 |
+|---|---|---|
+| Shares | P1 30% · P2 42% · P3 28% | P1 **50%** · P2 **30%** · P3 **20%** |
+| P1 description | completion through CPL awards | consistent statewide **access** |
+| P1 metric | Headcount eligible | **Applied CPL Units as FTES** |
+| Strategies | none | **23** |
+
+A briefing built off the documented source would have shown wrong priorities,
+wrong weights and wrong measures — while being able to point at a file and claim
+it was sourced. Distilled into
+[`methodology-verify-the-last-hop-of-a-resolution-chain`](kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md).
+
+### Why this makes the briefing tractable
+
+Each strategy maps onto state already measured, so every to-do can be a
+**fraction rather than a checkmark** (SkyPlan's rule — the Veteran Star taught
+colleges that uploading is the finish line):
+
+| Strategy | Measured today |
+|---|---|
+| Configure CPL Landing site | which colleges have a live landing page |
+| CPL Coordinator listed *and responsive* | `primary_contact_email` blanks, incl. the 7 from #1078 |
+| Act on all JST credit recommendations | 1,051,870 units at Needs Action |
+| Complete the Transcribe step | applied 111,779 → transcribed 60,246 (**54%**) |
+
+### Two decisions still open (Sam's, asked and not yet answered)
+
+1. **Scenario 1 or Scenario 2?** They carry different shares *and* different
+   strategies. Scenario 1 is the code default (`activeScenario`).
+2. **Year 1 or Year 2?** Scenario 1's **Year 2 has no strategies at all** — so a
+   briefing aimed at the year ahead has an empty action library today.
+
+### Also flagged, deliberately not fixed
+
+Typos in the team's typed strategies: `"reuqests"` (×2), `"Support A&R and VRC
+staff **is** CPL efforts"`, and one empty-string strategy in P2 Year 1. Curator
+content — flag, don't silently edit.
+
+### Next concrete step
+
+Build the briefing shell against **Scenario 1 / Year 1**, reusing
+`buildQueue(sources, now)` rather than forking the ranking rules, and resolving
+priorities through the **full** chain including the overlay. The top slot
+(inbound CPL requests) stays blocked on Malone's view name.

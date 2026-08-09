@@ -234,3 +234,59 @@ role the page doesn't state.
 2. The **52 colleges that DO have a CPL Assistant** were out of scope here and have
    no counseling lookup. If that's wanted, it's the same grind.
 3. Flip any corrected entry to `via: "curator"` with the person's name and date.
+
+## 2026-08-09 — Session 132 (SkyHigh): the seven in the shadow, and a tier for what we could not check
+
+### What shipped
+
+**#1078** — the seven colleges the 2026-08-05 sweep never reached, plus a new
+provenance tier for them. Queue: never-looked-up **7 → 0**, search-only **0 → 7**,
+with proposals (14) and looked-up-empty (4) **unchanged** as the control.
+
+| College | Outcome |
+|---|---|
+| Yuba | `yubacounseling@yccd.edu` — publishes a page titled *"email the counseling department"* |
+| Citrus | `counseling@citruscollege.edu` — Counseling and Advisement Center |
+| Palomar | `counseling@palomar.edu` — ⚠ a separate Behavioral Health Counseling Services exists; confirm which |
+| Saddleback | `sc-ecounselor@saddleback.edu` — eCounselor / callback |
+| Futuro Health | `help@futurohealth.org` — a partner, not a college; general help address |
+| College of the Canyons | **blank** — only `ConnectsHelp@`, which is *technical* support for the Connects platform |
+| Launch Apprenticeship | **blank** — interest form only; the one name found sits on another college's domain |
+
+### ⭐ The finding: the sweep method no longer exists
+
+Sessions are **egress-blocked from college domains** — `curl` returns `000`,
+`WebFetch` returns `EGRESS_BLOCKED`, for every `.edu` host involved. Search
+results are reachable; pages are not.
+
+That is not a nuisance, it is a **capability loss**, and it invalidates a
+standing plan: this doc's own "next concrete step" #2 offers the 52 colleges
+with a CPL Assistant as *"the same grind if wanted."* **That grind is no longer
+available from a session.** It needs a human with a browser, a runner with
+different egress, or a curator.
+
+Nothing was broken — the code is fine and no test would ever catch this. The
+environment moved underneath a documented plan.
+
+### Why the addresses did not go in as `via: "web"`
+
+They would have passed every test in the repo. They would still have been
+mislabelled, because **a tier is a claim about method, not confidence**.
+`via: "web"` means *somebody opened the page and applied Jessica's rules* — and
+those rules are rules about what a *page* shows. A snippet cannot tell a
+department inbox from a name off a list, and **2 of the previous 71 published
+only a mental-health inbox** — invisible from search, and the one outcome that
+actively harms a student.
+
+So `via: "search"` exists, and `proposedFillFor()` refuses it **in code**: no
+search row can reach the "Proposed for MAP" column. Full reasoning:
+[`methodology-a-tier-must-encode-what-you-could-not-check`](kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md).
+
+### Next concrete step
+
+1. **Confirm the five candidates** — seconds each, links on the MAP Users tab.
+   Start with **Palomar** (the BHCS ambiguity) and **Canyons** (whether anything
+   usable exists at all). Flip each to `via: "curator"` with a name and date.
+2. **Decide how the remaining 52 get swept**, now that a session cannot do it.
+3. The 15 blank-with-a-finding colleges still need the PD session — start with
+   the two mental-health ones.
