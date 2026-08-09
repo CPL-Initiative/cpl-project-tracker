@@ -1580,7 +1580,8 @@ Gavilan's `primary_contact` empty and 27 of 130 profiles have no `primary_contac
 documented case: Jessica supplied it because gavilan.edu 403s programmatic fetches.
 
 Of the 15: 5 list individual counselors only, 6 are phone/form-only, **2 publish only a mental-health inbox**
-(Contra Costa `wellness@`, LA Harbor Life Skills Center) — the wrong door for a credit question — and 2 are
+(Contra Costa `wellness@`, LA Harbor Life Skills Center) — **found early, then deliberately DECLINED for CPL
+routing; declining them is precisely why those two are blank, and nothing routes there via us** — and 2 are
 specialized-only. Sam's call: use the settled counseling contacts as **temporary fills on the COBI side** so the
 MAP team can adopt them. Design: a dedicated **"Proposed for MAP"** column populating only where MAP is blank —
 never inside "Primary contact email", which means *what MAP holds*.

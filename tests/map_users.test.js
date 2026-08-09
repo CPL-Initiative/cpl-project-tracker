@@ -578,8 +578,76 @@ function makeWin(opts) {
     /none surfaced/.test(T._cplLiaisonCell("Nowhere College")));
 })();
 
+// ── Proposed fills for MAP (SkyWire, 2026-08-09) ────────────────────────────
+// Sam: "the counseling contact is our best guess as to whom would serve as the
+// best primary contact when the contact is blank" — offered as a TEMPORARY FILL
+// the MAP team can adopt. Two properties carry the whole risk of the feature:
+// a proposal must never appear where MAP already holds a designation, and it
+// must never be renderable as though MAP made it.
+(function () {
+  const w = makeWin({ teamPass: "p" });
+  const T = w.CPL_MAP_USERS_TAB;
+
+  // 1. Never propose over a value MAP already holds.
+  check("proposal: none when MAP already has a primary contact email",
+    T._proposedFillFor({ college: "Gavilan College", primary_contact_email: "someone@map.edu" }) === null);
+
+  // 2. Proposes where MAP is blank AND we settled on a contact.
+  const g = T._proposedFillFor({ college: "Gavilan College", primary_contact_email: "" });
+  check("proposal: offered where MAP is blank and we have a contact", !!g);
+  check("proposal: carries the curator provenance, not just an address",
+    !!g && g.meta.via === "curator" && g.meta.by === "Jessica");
+  check("proposal: every proposed contact actually has an email",
+    !!g && g.contacts.length > 0 && g.contacts.every((c) => !!c.email));
+
+  // 3. The 15 blank-with-a-finding colleges yield NO proposal. Contra Costa is
+  //    the sharp case: the only address its site publishes is a mental-health
+  //    inbox, which was DELIBERATELY DECLINED for CPL routing. Declining it is
+  //    precisely why the college is blank — a proposal here would undo that
+  //    judgment silently.
+  check("proposal: none for a blank-with-a-finding college",
+    T._proposedFillFor({ college: "Contra Costa College", primary_contact_email: "" }) === null);
+  check("proposal: none for LA Harbor either (personal-counseling inbox only)",
+    T._proposedFillFor({ college: "Los Angeles Harbor College", primary_contact_email: "" }) === null);
+  const cc = T._FALLBACK_CONTACTS["Contra Costa College"];
+  check("the declined mental-health inbox is recorded as a finding, not an address",
+    (cc.contacts || []).length === 0 && /deliberately not used/i.test(cc.note || ""));
+
+  // 4. Unknown college → no proposal, no throw.
+  check("proposal: unknown college yields null rather than throwing",
+    T._proposedFillFor({ college: "Nowhere College", primary_contact_email: "" }) === null);
+
+  // 5. The handover export carries the evidence, not just addresses. A list of
+  //    emails with no provenance is not something the MAP team should act on.
+  //    Seed real state first — an unloaded tab emits a header-only CSV, and the
+  //    row assertions below would then pass without ever being exercised.
+  T._state.gaps = [
+    { college: "Gavilan College", college_kind: "college", primary_contact_email: "" },
+    { college: "Contra Costa College", college_kind: "college", primary_contact_email: "" },
+    { college: "Butte College", college_kind: "college", primary_contact_email: "already@set.edu" },
+  ];
+  const csv = T._proposalsCsv();
+  check("handover CSV is exercised (has at least one data row)",
+    csv.split("\n").length > 1);
+  check("handover CSV includes the college whose MAP field is blank",
+    csv.indexOf("Gavilan College") >= 0);
+  check("handover CSV excludes a college MAP already has a contact for",
+    csv.indexOf("Butte College") < 0);
+  const head = csv.split("\n")[0];
+  ["College", "Proposed primary contact email", "Where it came from", "Source URL", "Decision (MAP team)"]
+    .forEach((col) => check("handover CSV has a '" + col + "' column", head.indexOf(col) >= 0));
+  check("handover CSV states MAP currently holds nothing",
+    /\(nothing — this field is blank in MAP\)/.test(csv));
+  check("handover CSV never claims a proposal is a MAP designation",
+    !/MAP designation/i.test(csv));
+  // Declined colleges must not appear in the handover list at all.
+  check("handover CSV excludes the declined mental-health-inbox colleges",
+    csv.indexOf("Contra Costa College") < 0 && csv.indexOf("Los Angeles Harbor College") < 0);
+})();
+
 // ── report ──
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
 console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
 process.exit(failed ? 1 : 0);
+

@@ -34,7 +34,7 @@ path — and ships `--no-verify-jwt`, so anyone can curl it. **No caller-supplie
 `Origin`) is an authorisation.** Per-college disclosure to all callers is **Sam's explicit decision, 2026-08-09**.
 Do not re-litigate it; do not assume a future "internal-only" lane exists without building real JWT validation.
 
-## 🎯 PRIORITY 1 — the proposed-fills build (scoped, agreed, not built)
+## ✅ PRIORITY 1 — the proposed-fills build (SHIPPED 2026-08-09, SkyWire)
 
 Sam: *"the counseling contact is our best guess as to whom would serve as the best primary contact when the
 contact is blank"* — use them as **temporary fills on the COBI side so the MAP team can adopt them if they agree.**
@@ -42,15 +42,21 @@ contact is blank"* — use them as **temporary fills on the COBI side so the MAP
 - `map_users.js` → `FALLBACK_CONTACTS` already holds all **71** looked-up colleges: **56 with a contact, 15
   blank-with-a-finding**, 3 curator-supplied (Jessica). `fallbackCell()` already renders provenance and the words
   *"not a MAP designation"*. The nudge picker already offers them. **Most of the mechanism exists — extend it.**
-- **Build: a dedicated "Proposed for MAP" column** that populates ONLY where MAP is blank, provenance attached,
-  plus a filter and a handover export the MAP team can act on in one pass.
+- ✅ **BUILT.** `proposedFillFor(row)` returns a suggestion **only** where `primary_contact_email` is blank; the
+  counseling column renders it under a **"Proposed for MAP"** badge with provenance and source link, and stays a
+  plain reference where MAP already holds a contact. Plus a `Proposed for MAP` stat box, a *show only colleges with
+  a proposed fill* filter, and a **handover CSV** (`cpl-proposed-contacts-for-map.csv`) carrying source, who
+  supplied it, the note, an explicit *"(nothing — this field is blank in MAP)"*, and an empty **Decision (MAP team)**
+  column to work down. `tests/map_users.test.js` **133 → 152**.
+- ⚠️ **No 7th column was added** — the existing counseling column became dual-state instead, per the
+  no-horizontal-scroll rule. Adding a column here is what would push the table off-pane.
 - ⚠️ **Never put a proposed fill inside the "Primary contact email" column.** That column means *what MAP holds*;
   a temporary fill there will eventually be exported or quoted as a MAP designation. Same failure family as
   "not in this dataset" being read as zero.
 - The **15 stay visibly blank** — they need a human. 5 list individual counselors only · 6 phone/form-only ·
-  **2 publish only a mental-health inbox** (Contra Costa `wellness@`, LA Harbor Life Skills) · 2 specialized-only.
+  **2 publish only a mental-health inbox** (Contra Costa `wellness@`, LA Harbor Life Skills) — **found and DELIBERATELY DECLINED for CPL routing; declining them is why those colleges are blank** · 2 specialized-only.
 
-## 🎯 PRIORITY 2 — the college action page, and the MAP-team queue
+## 🎯 PRIORITY 1 (was 2) — the college action page, and the MAP-team queue
 
 Sam's vision: **one page, not 123.** A college picks itself + a role and gets its stats, opportunities against the
 goals, and to-dos. The college-facing inverse of the student landing page.

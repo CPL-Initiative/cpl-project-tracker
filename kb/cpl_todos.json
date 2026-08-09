@@ -1,9 +1,15 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-09 · SkyWire — Sierra can now answer what colleges have ACTED on, not just what credit exists. Live and smoke-verified. Next: the college-facing action page, and using our settled counseling contacts as temporary fills the MAP team can adopt.",
+  "_as_of": "2026-08-09 · SkyWire — Sierra can now answer what colleges have ACTED on, and the MAP Users tab now proposes a primary contact wherever MAP has none, ready to hand to the MAP team.",
   "_session": "SkyWire (129)",
-  "_status": "Sierra is wired to the credit data and live (cpl-chat v36). Ask her how a college is doing on CPL and she answers with real numbers — statewide or for a named college — framed as opportunity rather than a report card, because colleges have wanted to do this work and simply haven't had the visibility until now. She leads with the credit that is ALREADY ARTICULATED (63,991 units) rather than the million-unit ceiling, and she always says that roughly a third of reviewed credit is correctly ruled Not Applicable, so nobody reads the total as a debt. One thing worth knowing: there is only ONE Sierra, not two — the COBI tab and the public college widget are the same service — so showing a named college's figures was a real decision, and Sam made it deliberately. Two safety notes: partner and continuing-ed institutions are already hidden automatically because each has fewer than 10 students, and the headline number now travels with a chip saying 13 of 111 colleges are withheld for privacy. Next up is the page colleges will actually work from, and the same thing pointed inward at the MAP team's own queue.",
+  "_status": "Sierra is wired to the credit data and live (cpl-chat v36). Ask her how a college is doing on CPL and she answers with real numbers — statewide or for a named college — framed as opportunity rather than a report card, because colleges have wanted to do this work and simply haven't had the visibility until now. She leads with the credit that is ALREADY ARTICULATED (63,991 units) rather than the million-unit ceiling, and she always says that roughly a third of reviewed credit is correctly ruled Not Applicable, so nobody reads the total as a debt. One thing worth knowing: there is only ONE Sierra, not two — the COBI tab and the public college widget are the same service — so showing a named college's figures was a real decision, and Sam made it deliberately. Two safety notes: partner and continuing-ed institutions are already hidden automatically because each has fewer than 10 students, and the headline number now travels with a chip saying 13 of 111 colleges are withheld for privacy. The MAP Users tab now also proposes a primary contact wherever MAP holds none — 56 colleges, each labelled 'Proposed for MAP' with the source attached, never mixed into the column that shows what MAP actually holds, plus a one-click handover file for the MAP team. Fifteen colleges are deliberately left blank because they publish no usable address; two of those publish only a mental-health inbox, which we found early and chose NOT to use for credit questions. Next up is the page colleges will actually work from, and the same thing pointed inward at the MAP team's own queue.",
   "items": [
+    {
+      "id": "s129-contacts-handover",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "The 'Proposed fills for MAP' export is live on the MAP Users tab — one file, 56 colleges, each row showing where the address came from and a blank Decision column. Download it and send it to the MAP team."
+    },
     {
       "id": "s129-contacts-adopt",
       "for": "Sam",
@@ -39,12 +45,6 @@
       "for": "Sam",
       "tab": "Governance",
       "text": "Still nobody named as owner on any governance row. The contact-refresh cadence was decided in June and has never run once."
-    },
-    {
-      "id": "s129-proposed-fills",
-      "for": "Fable",
-      "tab": "MAP Users",
-      "text": "Build the 'Proposed for MAP' column — populates only where MAP is blank, provenance attached, with a handover export. Never inside the Primary contact email column."
     },
     {
       "id": "s129-college-page",

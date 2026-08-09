@@ -113,6 +113,13 @@
       ".mapu-src:hover { text-decoration:underline; }",
       ".mapu-fb { margin:0 0 4px; }",
       ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
+      // Proposed-for-MAP treatment (SkyWire, 2026-08-09). Deliberately distinct
+      // from every "this is what MAP holds" cell: a temporary fill that reads as
+      // MAP data is the whole risk of this feature.
+      ".mapu-prop { border-left:3px solid var(--gold-accent); background:#FFFBEC; padding:4px 7px; border-radius:4px; }",
+      ".mapu-prop-tag { display:inline-block; font-size:.66rem; font-weight:700; letter-spacing:.02em; text-transform:uppercase; color:#92400E; background:#FEF3C7; padding:1px 6px; border-radius:9px; margin-bottom:3px; }",
+      ".mapu-prop-em { font-family:ui-monospace,Menlo,monospace; font-size:.74rem; }",
+      ".mapu-prop-none { font-size:.72rem; color: var(--text-muted); font-style:italic; }",
       ".mapu-dirtable td { vertical-align: top; font-size:.8rem; }",
       ".mapu-via-cur { color: var(--hunter, #2c601a); }",
       ".mapu-gate { color: var(--text-muted); font-size:.82rem; padding:8px 4px; }",
@@ -500,6 +507,38 @@
       note: "Phone and Starfish scheduling; no department inbox published", },
   };
   function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
+
+  // A PROPOSED FILL — the contact we suggest MAP adopt as primary, and ONLY where
+  // MAP currently holds nothing. Sam, 2026-08-09: "the counseling contact is our
+  // best guess as to whom would serve as the best primary contact when the contact
+  // is blank", to be offered as a temporary fill the MAP team can adopt if they
+  // agree.
+  //
+  // Two invariants, both load-bearing:
+  //  1. NEVER propose over a value MAP already holds. If primary_contact_email is
+  //     set, MAP has made a designation and this is not ours to second-guess.
+  //  2. A proposal is never rendered in a column that means "what MAP holds" — it
+  //     carries its own label and provenance wherever it appears. A temporary fill
+  //     mistaken for a MAP designation is the entire risk of this feature, and it
+  //     is the same failure family as "not in this dataset" read as zero.
+  //
+  // Returns null for the 15 colleges whose lookup came back blank-with-a-finding
+  // (no published department inbox). Those need a human, and an empty proposal is
+  // the honest output — notably Contra Costa and LA Harbor, where the only
+  // published address is a mental-health inbox that we DELIBERATELY DECLINED to
+  // use for CPL routing. Declining it is why they are blank.
+  function proposedFillFor(row) {
+    if (!row || row.primary_contact_email) return null;
+    var f = fallbackFor(row.college);
+    if (!f) return null;
+    var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
+    if (!withEmail.length) return null;
+    return { meta: f, contacts: withEmail };
+  }
+
+  function proposalRows() {
+    return contactRows().filter(function (r) { return !!proposedFillFor(r); });
+  }
 
   // ── The college's OWN CPL webpage + its contact (Jessica, 2026-08-05) ──────
   // Separate from FALLBACK_CONTACTS because it answers a different question: not
@@ -1271,6 +1310,10 @@
       var f = fallbackFor(r.college);
       return f && (f.contacts || []).some(function (c) { return c.email; });
     }).length;
+    // Proposals are counted over EVERY college, not the filtered view, so the
+    // stat and the export button never disagree with each other.
+    var nProp = rows.filter(function (r) { return !!proposedFillFor(r); }).length;
+    if (state.propOnly) rows = rows.filter(function (r) { return !!proposedFillFor(r); });
 
     var h = '<p class="mapu-intro">Every college with the contacts MAP holds, plus the '
       + "college's own published counseling inbox where we've verified one. "
@@ -1283,30 +1326,46 @@
       + '<div class="box"><div class="n">' + withPc + '</div><div class="l">Primary contact email</div></div>'
       + '<div class="box"><div class="n">' + withAsst + '</div><div class="l">CPL Assistant email</div></div>'
       + '<div class="box"><div class="n">' + withCouns + '</div><div class="l">Counseling inbox verified</div></div>'
+      + '<div class="box"><div class="n">' + nProp + '</div><div class="l">Proposed for MAP</div></div>'
       + "</div>";
 
     h += '<div class="mapu-toolbar">'
       + '<button class="mapu-rosterbtn" data-dir-csv><b>⬇ Export to CSV / Excel</b></button>'
+      + '<button class="mapu-rosterbtn" data-prop-csv><b>⬇ Proposed fills for MAP (' + nProp + ')</b></button>'
+      + '<label class="mapu-auth"><input type="checkbox" data-prop-only'
+      + (state.propOnly ? " checked" : "") + '> Show only colleges with a proposed fill</label>'
       + '<span class="mapu-auth">Downloads a spreadsheet file — double-click it to open in Excel.</span>'
       + "</div>";
 
     h += '<table class="mapu-table mapu-dirtable"><thead><tr>'
       + "<th>College</th><th>Primary contact</th><th>Primary contact email</th>"
       + "<th>CPL Assistant email</th><th>CPL contact (their CPL page)</th>"
-      + "<th>Counseling email (from their website)</th>"
+      + "<th>Counseling email / proposed fill</th>"
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
       var f = fallbackFor(r.college);
+      var prop = proposedFillFor(r);
       var couns = "";
       if (f) {
         var withEmail = (f.contacts || []).filter(function (c) { return c.email; });
-        if (withEmail.length) {
-          couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>")
-            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
-            + (f.via === "curator" ? "✔ from " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
+        var srcLink = '<a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">'
+          + (f.via === "curator" ? "✔ from " + esc(f.by || "the CPL team") : "source") + " ↗</a>";
+        if (prop) {
+          // MAP holds nothing here, so this reads as a PROPOSAL — labelled, and
+          // never presented as something MAP has designated.
+          couns = '<div class="mapu-prop"><span class="mapu-prop-tag">Proposed for MAP</span><br>'
+            + withEmail.map(function (c) {
+                return '<span class="mapu-prop-em">' + esc(c.email) + "</span>"
+                  + (c.name ? ' <span class="mapu-fb-t">' + esc(c.name) + "</span>" : "");
+              }).join("<br>")
+            + "<br>" + srcLink + "</div>";
+        } else if (withEmail.length) {
+          // MAP already holds a primary contact — reference only, no proposal.
+          couns = withEmail.map(function (c) { return esc(c.email); }).join("<br>") + "<br>" + srcLink;
         } else {
           couns = '<span class="mapu-st mapu-st-inactive">none published</span>'
-            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked ↗</a>';
+            + '<br><a class="mapu-src" href="' + esc(f.source) + '" target="_blank" rel="noopener">checked ↗</a>'
+            + (f.note ? '<div class="mapu-prop-none">' + esc(f.note) + "</div>" : "");
         }
       }
       h += "<tr><td>" + esc(r.college) + "</td>"
@@ -1318,6 +1377,30 @@
         + "<td>" + couns + "</td></tr>";
     });
     return h + "</tbody></table>";
+  }
+
+  // The handover list: exactly the colleges where MAP holds no primary contact and
+  // we have a suggestion, with the evidence attached. Shaped so the MAP team can
+  // work it top-to-bottom and adopt or reject each row on its own merits — every
+  // row carries WHERE it came from and an explicit empty Decision column, because
+  // a list of addresses with no provenance is not something anyone should act on.
+  function proposalsCsv() {
+    var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
+    var head = ["College", "Proposed primary contact email", "Proposed contact name",
+                "Proposed contact title", "Where it came from", "Source URL",
+                "Supplied by", "Date", "Note", "MAP currently holds", "Decision (MAP team)"];
+    var lines = [head.map(q).join(",")];
+    proposalRows().forEach(function (r) {
+      var pr = proposedFillFor(r); if (!pr) return;
+      var m = pr.meta;
+      pr.contacts.forEach(function (c) {
+        lines.push([r.college, c.email, c.name || "", c.title || "",
+                    m.via === "curator" ? "CPL team member" : "the college's own website",
+                    m.source || "", m.via === "curator" ? (m.by || "") : "", m.on || "",
+                    m.note || "", "(nothing — this field is blank in MAP)", ""].map(q).join(","));
+      });
+    });
+    return lines.join("\n");
   }
 
   function contactsCsv() {
@@ -1440,6 +1523,15 @@
     if (csv) csv.addEventListener("click", function () {
       downloadCsv(gapsCsv(), "map-student-contact-gaps.csv");
     });
+    var pcsv = root.querySelector("[data-prop-csv]");
+    if (pcsv) pcsv.addEventListener("click", function () {
+      downloadCsv(proposalsCsv(), "cpl-proposed-contacts-for-map.csv");
+    });
+    var ponly = root.querySelector("[data-prop-only]");
+    if (ponly) ponly.addEventListener("change", function () {
+      state.propOnly = !!ponly.checked;
+      renderInto(root, true);   // keepData: this is a view filter, not a refetch
+    });
     var dcsv = root.querySelector("[data-dir-csv]");
     if (dcsv) dcsv.addEventListener("click", function () {
       downloadCsv(contactsCsv(), "map-college-contact-directory.csv");
@@ -1503,6 +1595,8 @@
     _gapRows: gapRows,
     _fallbackFor: fallbackFor,
     _FALLBACK_CONTACTS: FALLBACK_CONTACTS,
+    _proposedFillFor: proposedFillFor,
+    _proposalsCsv: proposalsCsv,
     _fallbackCell: fallbackCell,
     _cplPageFor: cplPageFor,
     _cplPageCell: cplPageCell,
