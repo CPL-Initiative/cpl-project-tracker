@@ -647,6 +647,204 @@ async function fetchCollegeGeoMap(sb: any): Promise<Map<string, any>> {
   return m;
 }
 
+// ── Credit disposition (v36) — what colleges have ACTED on ─────────────────────
+// Until now Sierra could say what credit EXISTS and never what a college has
+// DONE with it. These are the published, suppression-applied aggregates
+// (`adr-student-detail-aggregate-disclosure-control`): k=10 applied at WRITE
+// time, thin cells carrying `suppressed=true` with their measures nulled. The
+// reviewer-only student grain (`map_student_credit`) is never read here.
+//
+// ⚠️ This function runs on the SERVICE ROLE key, so RLS does not constrain it —
+// the gate on these tables (`is_allowed_reviewer() OR team_pass_ok()`) stops the
+// widget's anon key reading PostgREST directly, and does nothing about this code
+// path. Per-college disclosure through Sierra is therefore a deliberate decision
+// (Sam, 2026-08-09), not a side effect of RLS.
+//
+// Totals are rolled up HERE from the same four objects `college_goal2.js` reads,
+// rather than hardcoded in prompt text, so Sierra and the 🎓 Course Credit tab
+// cannot drift apart. Note this means the sums are POST-suppression and land
+// slightly under the pre-suppression figures quoted in the project docs, because
+// suppressed cells carry NULL measures — the tab has the same property, and the
+// published number is the sourceable one. `sierra_credit_disposition.test.js`
+// asserts no headline figure is ever pasted in here, so do not write one into
+// this comment either.
+interface CreditStatus {
+  asOf: string | null;
+  collegesWithData: number;
+  statewide: {
+    students: number; dormant: number; ready: number;
+    applied: number; transcribed: number; transcribedPct: number | null;
+  };
+  goal2: { dest: string; students: number; rows: number }[];
+  college: {
+    name: string; suppressed: boolean; students: number | null;
+    dormant: number | null; ready: number | null;
+    applied: number | null; transcribed: number | null;
+    goal2: { dest: string; students: number | null; rows: number | null; suppressed: boolean }[];
+  } | null;
+  collegeAsked: string | null;
+  collegeHasNoRow: boolean;
+}
+
+// Split fetch from shape: the four tables do not depend on which college was
+// detected, so they ride in the main Promise.all (no extra round-trip), and the
+// per-college pick happens afterwards once detection has resolved. It also
+// leaves `shapeCreditStatus` a pure function — testable without a database,
+// which is where the roll-up and suppression logic actually live.
+async function fetchCreditData(sb: any): Promise<any | null> {
+  try {
+    const [summaryRes, collegesRes, goal2Res, loadRes] = await Promise.all([
+      sb.from("map_college_credit_summary").select(
+        "college_id,students,suppressed,dormant_credits,articulated_waiting,applied_credits,transcribed_credits"),
+      sb.from("map_colleges").select("college_id,college_name,entity_kind"),
+      sb.from("map_college_goal2").select("college_id,dest,students,rows_n,suppressed"),
+      sb.from("map_data_loads").select("loaded_at").order("loaded_at", { ascending: false }).limit(1),
+    ]);
+    if (!summaryRes.data || summaryRes.data.length === 0) return null;
+    return {
+      summary: summaryRes.data,
+      colleges: collegesRes.data || [],
+      goal2: goal2Res.data || [],
+      load: loadRes.data || [],
+    };
+  } catch (e) {
+    console.error("fetchCreditData failed:", e);
+    return null;  // a failed read is NOT "no credit anywhere" — the context is omitted
+  }
+}
+
+// Returns a CreditStatus (see the interface above); typed `any` at the
+// boundary so tests/lib/lift_ts.js can lift this block into Node.
+function shapeCreditStatus(
+  raw: any | null,
+  collegeName: string | null
+): any {
+  if (!raw) return null;
+  {
+    const summary: any[] = raw.summary || [];
+    const collegeRows: any[] = raw.colleges || [];
+    const goal2Rows: any[] = raw.goal2 || [];
+    const loadRows: any[] = raw.load || [];
+    if (summary.length === 0) return null;
+
+    // `map_colleges` carries 8 MAP test fixtures ("CabTest College", "NORCO
+    // College - Syllabus Manager", …). None has credit data, but leaving them in
+    // the lookup lets Sierra discuss a test fixture as if it were an institution.
+    const nameById = new Map<number, string>();
+    const idByName = new Map<string, number>();
+    for (const c of collegeRows) {
+      if (c.is_test === true || c.entity_kind === "test") continue;
+      nameById.set(c.college_id, c.college_name);
+      idByName.set(String(c.college_name).trim().toLowerCase(), c.college_id);
+    }
+
+    // Statewide roll-up. Suppressed cells carry NULL measures; skipping them is
+    // what makes the published total lower than the true one, by design.
+    const st = { students: 0, dormant: 0, ready: 0, applied: 0, transcribed: 0, transcribedPct: null };
+    for (const r of summary) {
+      st.students += Number(r.students) || 0;
+      st.dormant += Number(r.dormant_credits) || 0;
+      st.ready += Number(r.articulated_waiting) || 0;
+      st.applied += Number(r.applied_credits) || 0;
+      st.transcribed += Number(r.transcribed_credits) || 0;
+    }
+    st.transcribedPct = st.applied > 0 ? Math.round((st.transcribed / st.applied) * 1000) / 10 : null;
+
+    const g2map = new Map<string, { dest: string; students: number; rows: number }>();
+    for (const g of goal2Rows) {
+      const e = g2map.get(g.dest) || { dest: g.dest, students: 0, rows: 0 };
+      e.students += Number(g.students) || 0;
+      e.rows += Number(g.rows_n) || 0;
+      g2map.set(g.dest, e);
+    }
+
+    // The named college, if one was detected AND it resolves. A college with no
+    // row is a KNOWN gap (111 of 128 entities have credit data) and is reported
+    // as such — never silently omitted, which would read as "zero".
+    let college: any = null;
+    let collegeHasNoRow = false;
+    if (collegeName) {
+      const cid = idByName.get(collegeName.trim().toLowerCase());
+      const row = cid != null ? summary.find((r: any) => r.college_id === cid) : null;
+      if (row) {
+        college = {
+          name: nameById.get(row.college_id) || collegeName,
+          suppressed: !!row.suppressed,
+          students: row.students ?? null,
+          dormant: row.dormant_credits != null ? Number(row.dormant_credits) : null,
+          ready: row.articulated_waiting != null ? Number(row.articulated_waiting) : null,
+          applied: row.applied_credits != null ? Number(row.applied_credits) : null,
+          transcribed: row.transcribed_credits != null ? Number(row.transcribed_credits) : null,
+          goal2: goal2Rows
+            .filter((g: any) => g.college_id === cid)
+            .map((g: any) => ({
+              dest: g.dest,
+              students: g.students ?? null,
+              rows: g.rows_n ?? null,
+              suppressed: !!g.suppressed,
+            })),
+        };
+      } else {
+        collegeHasNoRow = true;
+      }
+    }
+
+    return {
+      asOf: loadRows[0]?.loaded_at ? String(loadRows[0].loaded_at).slice(0, 10) : null,
+      collegesWithData: summary.length,
+      statewide: st,
+      goal2: Array.from(g2map.values()).sort((a, b) => b.rows - a.rows),
+      college,
+      collegeAsked: collegeName,
+      collegeHasNoRow,
+    };
+  }
+}
+
+function fmtN(n: any): string {
+  if (n == null) return "not published";
+  return Math.round(n).toLocaleString("en-US");
+}
+
+function buildCreditContext(cs: any): string {
+  if (!cs) return "";
+  const s = cs.statewide;
+  let out = `\n\n--- CPL CREDIT DISPOSITION (what colleges have ACTED on${cs.asOf ? `, as of ${cs.asOf}` : ""}) ---\n`;
+  out += `Statewide, across ${cs.collegesWithData} colleges with credit data:\n`;
+  out += `- Credit recommended but not yet acted on ("Needs Action"): ${fmtN(s.dormant)} units\n`;
+  out += `- Of that, ALREADY ARTICULATED and simply waiting on a decision: ${fmtN(s.ready)} units\n`;
+  out += `- Applied to a student record: ${fmtN(s.applied)} units; of those, transcribed: ${fmtN(s.transcribed)} units`;
+  out += s.transcribedPct != null ? ` (${s.transcribedPct}%)\n` : `\n`;
+  out += `- CPL students represented: ${fmtN(s.students)}\n`;
+  if (cs.goal2.length > 0) {
+    const tot = cs.goal2.reduce((a, g) => a + g.rows, 0);
+    out += `Where awarded credit LANDS (Sprint goal 2): `
+      + cs.goal2.map((g) => `${g.dest} ${tot > 0 ? Math.round((g.rows / tot) * 1000) / 10 : 0}%`).join(" · ") + `\n`;
+  }
+
+  if (cs.college) {
+    const c = cs.college;
+    out += `\nAt ${c.name} specifically:\n`;
+    if (c.suppressed) {
+      out += `- Fewer than 10 CPL students — the breakdown is withheld to protect their privacy. Confirm that CPL activity exists there, give no figures, and do not estimate.\n`;
+    } else {
+      out += `- CPL students: ${fmtN(c.students)}\n`;
+      out += `- Credit recommended, not yet acted on: ${fmtN(c.dormant)} units\n`;
+      out += `- Of that, ALREADY ARTICULATED and waiting on a decision: ${fmtN(c.ready)} units\n`;
+      out += `- Applied: ${fmtN(c.applied)} units; transcribed: ${fmtN(c.transcribed)} units\n`;
+      const g2 = c.goal2.filter((g) => !g.suppressed && g.rows != null);
+      if (g2.length > 0) {
+        out += `- Awarded credit lands as: ${g2.map((g) => `${g.dest} (${fmtN(g.rows)} awards)`).join(" · ")}\n`;
+      }
+    }
+  } else if (cs.collegeHasNoRow && cs.collegeAsked) {
+    out += `\nNOTE: there is no credit-disposition data for ${cs.collegeAsked} in this dataset `
+      + `(it covers ${cs.collegesWithData} institutions). Say so plainly rather than implying zero — `
+      + `"zero credit awarded" and "not in this dataset" are completely different statements.\n`;
+  }
+  return out;
+}
+
 // Proximity band for ranking: same county (2) > same region (1) > elsewhere (0).
 // Returns 0 for every college when no home college is known, which leaves the
 // pre-existing volume ordering untouched.
@@ -974,6 +1172,37 @@ THE RESTRAINT BINDS SALESMANSHIP, NOT FACTS. This is the tie-break whenever the 
 // driving case: students must never get system inside-baseball. Callers that
 // omit the field (the production map.rccd.edu widget) get the default voice,
 // unchanged. Keys must match the AUDIENCES list in cpl_chat.js / sierra.js.
+// v36 — how to TALK about the credit-disposition numbers.
+//
+// Sam's framing, 2026-08-09, and it is a claim about CAUSE, not a politeness
+// setting: colleges would love to do this work and have not had the tools or the
+// data visibility to support it until now. That is credible precisely because
+// these figures lived in an Access database until 2026-08-08 — nobody could act
+// on what nobody could see. A backlog is therefore evidence of a visibility gap
+// being closed, never of indifference.
+//
+// Paired with his other directive: err toward transparency and truth. The
+// resolution of the two is that we state every real number plainly and frame it
+// as an opportunity — we do not soften figures, and we do not editorialise them
+// into failures.
+const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
+This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
+
+HOW TO FRAME IT — this matters as much as the numbers:
+- Lead with the ALREADY ARTICULATED figure, not the total. Those are cases where the agreement is built, the credit is mapped, and all that is missing is the decision to award it. That is the cheapest, most actionable win available and it is the honest headline.
+- Frame every figure as an OPPORTUNITY, never a deficiency, and never a report card. The premise to work from is that colleges WANT to do this work and have not had the tools or the data visibility to support it until now — this data was not visible to anyone until recently. So a large number means "here is credit ready to be awarded to real students," not "this college has been failing."
+- Be transparent and truthful about the actual numbers. Do not round them away, hedge them into meaninglessness, or decline to state them. A coordinator who learns their college has thousands of units ready to award is being helped; one who gets a vague answer is not.
+- Say what the next step IS. Credit at "Needs Action" moves when someone reviews it — the college's CPL coordinator or articulation officer. Point there.
+
+TRUTHFULNESS GUARDS:
+- The "Needs Action" total is a CEILING, not a backlog of mistakes. Roughly 30% of credit that gets reviewed is correctly ruled Not Applicable — a recommendation that does not fit a student's program SHOULD be declined, and doing so is real work, not a failure. Say this whenever you quote the total, so nobody reads the ceiling as a debt.
+- These totals are sourced from published aggregates with small-cell privacy suppression already applied, so they run slightly BELOW the raw internal figures. If someone compares against another number, that is why — do not accuse either of being wrong.
+- If a college's cell is marked suppressed (fewer than 10 CPL students), confirm activity exists and give NO figures. Never estimate a suppressed value, and never derive one by subtracting from a total.
+- If a college is not in the dataset, say exactly that. "Not in this dataset" and "zero credit awarded" are completely different statements and must never be blurred.
+- Never invent a figure for a college the context does not carry.
+
+COMPARATIVE QUESTIONS: if asked to compare colleges or find where the most credit is waiting, answer it — this is useful and the data is real. Frame it as where the biggest OPPORTUNITIES are, and name what makes them tractable. Never present it as a ranking of best-to-worst performers, never label colleges as lagging or failing, and do not volunteer an unsolicited worst-performers list.`;
+
 const AUDIENCE_RULES: Record<string, string> = {
   student: `\n\nAUDIENCE: a STUDENT or prospective student. Speak directly to them ("you"). Plain, encouraging language — no system inside-baseball: do NOT mention articulation mechanics, "exhibits", TOP codes, COCI, C-ID governance, apportionment/funding, MIS, or Chancellor's Office process; if such a concept is unavoidable, translate it into plain words (e.g. "credit the college has already approved for this certification"). Focus on what THEY can do: what their license/training/experience could be worth in credit, which courses it may cover, and the concrete next step. Give them BOTH routes as a YES/AND, never one instead of the other: yes, they can see their CPL opportunities and request a CPL review at their college's CPL landing page (or through its counseling office) — AND they can do the very same thing at Credit for Being You, the CPL Student Portal at ${PORTAL_STUDENT_URL}, where a free account and the CPL Builder also show them what their prior learning is worth at every California community college — and walk them through a much fuller way of building out their CPL portfolio than a landing-page request form does. Say plainly why the second one is worth a look: people pick a college on how close it is AND on where their training earns the most credit, and they can only weigh that if they can see it all — and a better-built portfolio tends to be worth more credit wherever they take it. This works even for someone who has never pictured themselves at a college — start from what they have already learned, not from enrolling. If their college has not set up credit for what they are asking about, NEVER leave them at a dead end to be polite about it: tell them plainly, tell them which colleges DO award it today, and tell them their own college can adopt it — that is a fact they need, not a sales pitch, and withholding it helps nobody. Never imply credit is guaranteed; the college makes the final call.`,
   faculty: `\n\nAUDIENCE: COLLEGE FACULTY. Curricular vocabulary is welcome (articulation, credit recommendation, C-ID, units). Emphasize how the credential maps to specific courses, what peer colleges have already articulated (evidence a local review is warranted), and that faculty ratify CPL through their local process. Where relevant, note that adopting an existing Statewide Collaborative (CCC) recommendation is a lighter lift than building one from scratch.`,
@@ -991,7 +1220,8 @@ function buildSystemPrompt(
   multiTurn: boolean = false,
   offeringsContext: string = "",
   audienceRule: string = "",
-  teamGuidance: string = ""
+  teamGuidance: string = "",
+  creditContext: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -1061,7 +1291,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -1209,7 +1439,7 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
-    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap] = await Promise.all([
+    const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, teamGuidance, geoMap, creditData] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
         match_threshold: MATCH_THRESHOLD,
@@ -1221,6 +1451,7 @@ Deno.serve(async (req: Request) => {
       searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
       fetchTeamGuidance(sb),                  // sierra_guidance active rows (v25)
       fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
+      fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
     ]);
 
     const sections = searchResult.data;
@@ -1308,10 +1539,16 @@ Deno.serve(async (req: Request) => {
       offeringsContext = buildOfferingsContext(offeringsResults, askedCollege, askedGeo, coreKeywords, geoMap);
     }
 
+    // Credit disposition — shaped once detection has resolved, so "at MY college"
+    // questions get the named row. With no college detected it still carries the
+    // statewide roll-up, which is what a "how is CPL going?" question needs.
+    const creditContext = buildCreditContext(
+      shapeCreditStatus(creditData, singleProfile?.college || null));
+
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
-      teamGuidance || "");
+      teamGuidance || "", creditContext);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {

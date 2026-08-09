@@ -15,6 +15,8 @@ set -uo pipefail
 
 URL="${CPL_CHAT_URL:-https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat}"
 ANON="${CPL_CHAT_ANON:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM}"
+# PostgREST base for the direct-table assertions (modes 12 and 15d).
+REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
 
 fail=0
 
@@ -219,6 +221,66 @@ run "14b contacts gated (ctx external — contact suppressed)" \
   '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci","ctx":"external"}'
 answer_must_not_match -i "romero|mdromero" "14b external ctx never names the contact"
 
+# ── 15. Credit disposition (v36) — what colleges have ACTED on ───────────────
+# Sierra could always say what credit EXISTS; these modes cover what has been
+# DONE with it. Assertions are deliberately loose on wording (a stochastic model
+# won't reproduce a phrase) and tight on the two things that are product
+# decisions: the numbers appear, and they are framed as opportunity.
+run "15a credit disposition statewide" \
+  '{"query":"How much CPL credit has been recommended but not yet awarded across the system?","session_id":"smoke-ci"}'
+# A real figure, not a hedge. Any 4+ digit comma-grouped number.
+answer_must_match "[0-9],[0-9]{3}" "15a states an actual credit figure"
+# The ceiling caveat must ride along with the total — otherwise the number reads
+# as a debt, which is the single most likely way this feature misleads.
+answer_must_match -i "not applicable|ceiling|correctly (ruled|declined|closed)|doesn.?t fit|not every" \
+  "15a carries the Not-Applicable ceiling caveat"
+# Framing guard: never a report card.
+answer_must_not_match -i "failing|failure to|worst|poorly|negligent|shameful" \
+  "15a does not frame the backlog as failure"
+
+run "15b credit disposition per-college (San Diego Mesa)" \
+  '{"query":"How is San Diego Mesa College doing on awarding CPL credit?","session_id":"smoke-ci"}'
+answer_must_match -i "mesa" "15b names the college asked about"
+answer_must_match "[0-9],[0-9]{3}" "15b states an actual per-college figure"
+# The lead is the already-articulated block — everything built, nobody acted.
+answer_must_match -i "articulat" "15b surfaces the already-articulated opportunity"
+answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as opportunity"
+
+# A college genuinely absent from the dataset must NOT be rendered as zero.
+run "15c absent college is not zero (Calbright)" \
+  '{"query":"How many CPL credits has Calbright College awarded?","session_id":"smoke-ci"}'
+answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
+  "15c does not report an absent college as zero"
+
+# ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
+# The edge function reads these aggregates with the SERVICE ROLE key, so RLS does
+# not constrain Sierra. It must still constrain everyone else: per-college
+# disclosure is a deliberate decision routed through the function's own prompt
+# rules (Sam, 2026-08-09), NOT an open table. If these ever return rows to the
+# anon key, the published aggregates have become world-readable by accident and
+# the student-grain table is the next thing to check.
+echo "===================================================================="
+echo "MODE: 15d aggregate tables stay gated to the anon key"
+for t in map_college_credit_summary map_college_goal2 map_college_cr_unit; do
+  sel=$(curl -sS "$REST_BASE/$t?select=college_id&limit=1" \
+    -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+  if [ "$sel" = "[]" ]; then
+    echo "  [assert ok] anon select on $t returns [] (reviewer/team gated)"
+  else
+    echo "::error::anon select on $t leaked rows: $sel"; fail=1
+  fi
+done
+# The reviewer-only STUDENT GRAIN. This one is not a policy preference — it is
+# per-student data and it has no write policies at all.
+sel=$(curl -sS "$REST_BASE/map_student_credit?select=college_id&limit=1" \
+  -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+if [ "$sel" = "[]" ]; then
+  echo "  [assert ok] anon select on map_student_credit returns [] (student grain sealed)"
+else
+  echo "::error::STUDENT GRAIN LEAKED to anon: $sel"; fail=1
+fi
+echo
+
 # sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
 # the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
 # would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately
@@ -226,7 +288,6 @@ answer_must_not_match -i "romero|mdromero" "14b external ctx never names the con
 # same turn_id carries the note and updates the SAME row.
 echo "===================================================================="
 echo "MODE: 12 sierra_feedback anon upsert (RPC)"
-REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
 TID="smoke-$(date +%s)-$RANDOM"
 code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
   -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
