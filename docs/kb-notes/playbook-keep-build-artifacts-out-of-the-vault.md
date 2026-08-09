@@ -79,7 +79,19 @@ The patterns kept (non-cone sparse-checkout; a match means *include*):
 /*.md            CLAUDE.md, README.md, the root notes
 /docs/           kb-notes, lessons, handoffs, reference — the whole lane
 /kb/README.md    the KB lane readme; NOT kb/row_audit (418 MB)
+/scripts/        40 KB — NOT optional, see below
 ```
+
+⚠️ **`/scripts/` is load-bearing, and leaving it out is a silent-failure bug.**
+The Task Scheduler job that keeps the vault fresh is registered against the
+**vault clone's own copy** of `scripts\sync-vault-clones.ps1` (see
+[`playbook-vault-sync-setup`](playbook-vault-sync-setup.md)). A sparse checkout
+without `/scripts/` deletes that file; the scheduled task then fails with no
+visible error and the vault quietly stops receiving commits for days. It would
+also delete `sparse-vault-clone.ps1` itself, taking its own `-Revert` with it —
+and if there is no separate working clone on the machine, the vault clone is the
+only copy, so there is nowhere to recover them from. The script now verifies the
+sync script survived and auto-reverts if it did not.
 
 ## What the script guards
 
@@ -96,7 +108,7 @@ The patterns kept (non-cone sparse-checkout; a match means *include*):
 
 Measured on the real repo before shipping, not assumed:
 
-- 1,766 files / 1,072 MB → **447 files / 11 MB** (−99.0%).
+- 1,766 files / 1,072 MB → **452 files / 12 MB** (−98.9%).
 - Doc lanes complete after the switch: **207/207** kb-notes, **49/49** lessons
   docs, **117/117** session handoffs, `INDEX.md` present.
 - **Sparseness survives `git pull`** and `git checkout` across commits — checked
