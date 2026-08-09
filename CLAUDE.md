@@ -575,12 +575,21 @@ one, which is why the list is now generated from what is actually on disk.)
 
 ⚠️ **Exclusion is a relevance filter, not a performance one.** It drops paths
 from search, graph and link autocomplete; it does **not** stop Obsidian's file
-watcher, metadata cache, or Sync. The tracker working tree is **~1.07 GB across
-~1,754 files**, all inside the vault because the repo is cloned into it, and
-only ~430 of those files are markdown. If the vault is slow to open, excluding
-more paths will not fix it — keeping the artifacts out of the vault will (a
-markdown-only clone vault-side, or the working clone sited outside the vault).
-Full finding:
+watcher, metadata cache, or Sync. If the vault is slow to OPEN, excluding more
+paths will not fix it — the files have to leave the disk.
+
+**The fix is a docs-only sparse checkout of the vault clone
+(`scripts/sparse-vault-clone.ps1`): 1,766 files / 1,072 MB → 447 files / 11 MB,
+verified, reversible with `-Revert`.** The vault clone is a read-only mirror
+(`sync-vault-clones.ps1` only fast-forward pulls it; real work happens in the
+working clone at `Documents\GitHub\cpl-project-tracker`), so it has no use for
+build outputs. Sparseness survives `git pull`; the sync script logs a NOTE if it
+ever regresses. ⚠️ Do **not** re-scope this by file extension —
+**`kb/row_audit/` is 418 MB of MARKDOWN**, so a "materialise `**/*.md`" rule
+would keep 423 MB and look like it worked. Scope by LANE. Procedure + the
+measurements:
+[`docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md`](docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md);
+corpus finding:
 [`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
 
 **Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
