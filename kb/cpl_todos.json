@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-09 · SkyHigh — the seven colleges nobody had checked are checked, and the to-do list we thought we had to write from scratch turned out to be already written.",
+  "_as_of": "2026-08-09 · Sky — the vault is 100x smaller, the docs now get linted like the data does, and five confident diagnoses had to be corrected along the way.",
   "_session": "SkyHigh (132)",
-  "_status": "Two things happened today, and both were about looking before building. First, the seven colleges that had no way to receive a student's CPL request — the ones nobody had ever looked up — have now been looked up. Five publish a counselling address we can suggest; two publish nothing usable (College of the Canyons offers only a technical-support address, and Launch Apprenticeship only a web form). Important caveat, and it is the reason they are labelled 'Candidate — confirm' rather than treated as settled: this session could not actually open the colleges' web pages. Something in the network now blocks them, so the addresses come from search results only. That matters because the rule we follow — never send a credit question to a mental-health inbox — can only be applied by looking at the page, and two of the seventy-one colleges checked back in August turned out to publish exactly that trap. So each of the five needs about ten seconds from a human with a browser. It also means the fifty-two remaining colleges cannot be checked this way any more; that job now needs a person, not a session. Second, and better news: the college-facing page needs a library of concrete advice, and we had written down that inventing it would be the hard part. It already exists — the team typed twenty-three specific strategies into the funding tool months ago, things like 'act on all JST credit recommendations in MAP' and 'configure your CPL landing page'. Each of those lines up with something we already measure, so the page can tell a college how far along it is rather than just ticking a box. One catch: the funding settings that are actually live disagree with what our notes said they were, so before that page gets built, two choices need your call — which funding scenario colleges should see, and which year.",
+  "_status": "Two sessions ran today. SkyHigh worked the college contacts and the action library; this one (Sky) spent the day on the machinery underneath - the notes, the vault, and the scripts that keep them in sync. The headline: the folder Obsidian reads went from about a gigabyte to ten megabytes, because it had been carrying a thousand generated files it never needed. The vault sync now runs once an hour instead of every fifteen minutes, and no longer pops a black terminal window over whatever you are doing. There is also a new habit: the project's written notes are now checked automatically at every checkpoint, the same way the course data already was - which immediately found 115 old handoff notes that nobody had marked as superseded, and a landing page whose date field had quietly become a 1,800-character changelog. Both fixed. Of the twenty-two helper skills in the second brain, eight were deleted because the services they depend on are switched off, so they could never have run. Worth knowing: three real bugs were only found because Sam ran the scripts on his own machine - they all looked fine here. One of them would have silently stopped the vault updating altogether. Two small things are left for Sam, both listed below and both under a minute.",
   "items": [
     {
       "id": "s132-confirm-five",
@@ -63,6 +63,18 @@
       "for": "Fable",
       "tab": "—",
       "text": "Build the college briefing against the live funding settings, not the copy baked into the code — they disagree. Reuse the queue's existing ranking engine rather than writing a second one."
+    },
+    {
+      "id": "s133-graph-linkdistance",
+      "for": "Sam",
+      "tab": "(Obsidian)",
+      "text": "Your Obsidian graph view went blank for about two weeks. It is working again now, but only because the vault got 100x smaller today - the setting that likely contributed is still set the way it was. In graph view, click the gear, open Forces, and drag Link distance from 250 down to about 30. It takes five seconds, you will see the effect immediately, and it stops the graph drifting off-screen again as the vault grows back."
+    },
+    {
+      "id": "s133-cplbrain-autodelete",
+      "for": "Sam",
+      "tab": "(GitHub)",
+      "text": "In the CPLBrain repo: Settings, then General, then tick 'Automatically delete head branches'. It is the same setting already on the project tracker. Without it, finished branches linger and every Claude session gets a false 'you have unpushed work' warning that costs a few minutes to disprove. One click, permanent."
     }
   ]
 }

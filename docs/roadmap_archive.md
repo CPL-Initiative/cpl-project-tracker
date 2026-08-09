@@ -3696,3 +3696,22 @@ approximately TRUE for absent colleges). Both reverted/fixed with positive contr
 Also: **numbers are computed from the published table, never pasted** — which surfaced that the docs' headline
 (1,052,531) was unsourceable against the tab (1,051,870); Sam ruled published-everywhere. Story:
 `docs/cpl_assistant_lessons.md` §SkyMind · handoff `docs/session_130_handoff.md`.
+
+### SkyDesk / SkyTime — the handoff's backlog was two-sixths wrong within two days (2026-08-09, #1072/#1073 MERGED)
+
+Sam: *"let's crank!"* **Name: Sam called it SkyTime at greeting and sign-off; it ran as SkyDesk because SkyTime was already Session 104's moniker. Sam's name wins — both are recorded here so either search term lands, the same reconciliation SkyWire/SkyMind got.** ⭐ **The session's value was measuring the handoff's six-item MAP-team backlog before building
+on it — fifteen minutes of SQL, and it came back materially different.** "Every governance owner unset" was FALSE
+(the team assigned **17 of 17** on Aug 5+7 — the register's own OQ-01 had been answered by people while the document
+still listed it as the work); "6 open Sierra feedback rows" was **23**; "56 proposed contact fills" was **14** (42 of
+the 56 are colleges MAP already covers); "15 unroutable colleges" was **11**. ⭐ And **7 colleges with no primary
+contact had NEVER BEEN LOOKED UP** — Citrus · Canyons · Palomar · Saddleback · Yuba (+2 partner entities) — because
+the sweep scoped to *"colleges without a CPL Assistant"*, a **proxy** for the need that diverges on 28% of rows.
+Cheapest work on the board: one lookup each. **📥 MAP Team Queue tab LIVE** (#1073) — every item **measured at load**,
+never a list; unmeasurable items sit in `kb/map_team_tracked.json` rendering **their own staleness**; a failed read
+renders **`unknown` and sorts to the top**, never 0; cleared items stay visible. `buildQueue(sources, now)` is PURE —
+**the engine the college-facing briefing must reuse**. Also **#1072**: CI smoke rows out of the Sierra queue, fixed at
+the WRITE path (`status='ci'`), 43 backfilled → **23 real open · 4 addressed · 43 CI**. ⚠️ Two test assertions failed
+on first run and **both were the assertion, not the code** — one matched a legitimate backfill because it wasn't scoped
+to the `ON CONFLICT` clause, the proxy-instead-of-property mistake committed with that KB note open in the same session.
+Durable: `methodology-a-written-backlog-decays-silently`, `methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow`.
+Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handoff.md`.

@@ -192,6 +192,29 @@ before build). Conflicts stay safely surfaced via the "C-ID conflict" badge;
 Phase B clean consolidation is the automatic stopping point. See CLAUDE.md
 "Crosswalk re-key initiative" for the full diagnosis.
 
+**Docs-corpus auditor (2026-08-09, `kb/_docs_audit.py`)** — the PROSE
+counterpart to `_row_audit.py`, and deliberately the same shape: READ-ONLY by
+default, dated JSON + markdown receipts under `kb/docs_audit/`, one narrowly
+scoped mutation behind `--apply`. `_row_audit.py` keeps the DATA honest;
+nothing kept the docs honest, and the docs corpus is the larger of the two.
+Wired as **step 0 of `/checkpoint`** so its findings shape what the checkpoint
+writes rather than arriving after.
+
+Seven rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
+`session_<N>_handoff.md` below the highest, so search can filter them),
+`oversized_doc` (per-LANE budgets — an always-loaded file, a KB note and a
+lessons doc have different economics), `kb_note_frontmatter`,
+`kb_note_dialect` (informational, not a defect — the corpus states a note's
+type three ways and its date two), `frontmatter_log_chain` (a frontmatter field
+being used as a changelog), `unindexed_kb_note`, and `vault_heavy_path` (emits a
+paste-able Obsidian `userIgnoreFilters` block from what is actually on disk).
+
+Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
+frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
+stamp) and the scan excludes its own output directory, so two runs on the same
+day are byte-identical and never dirty the tree. Guarded by
+`tests/docs_audit_test.py` (56 checks). Run: `python3 kb/_docs_audit.py`.
+
 **Row Trust-Card auditor (2026-05-23, `kb/_row_audit.py`)** — read-only
 auditor over every M-ID + Cluster, producing per-row Trust Cards with two
 scores: `faculty_trust_score` (today's cross-college articulation adoption
