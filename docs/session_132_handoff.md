@@ -1,5 +1,5 @@
 ---
-title: Session 132 handoff (SkyDesk → next) — the inbox is live; now build the college half
+title: Session 132 handoff (SkyTime/SkyDesk → next) — the inbox is live; now build the college half
 created: 2026-08-09
 updated: 2026-08-09
 tags: [handoff, college-action-page, map-team-queue, contacts, sierra, governance]
@@ -11,18 +11,24 @@ related:
 
 # You are Session 132
 
-Previous session was **SkyDesk (131)** — two PRs, both merged, one production
-migration. Sam opened by calling it SkyTime; that name belongs to Session 104,
-so it ran as SkyDesk (the session-130 handoff's suggestion). He also flagged that
-he'd muddled the previous session's name: **SkyWire and SkyMind are the same
-session** — it ran as SkyWire (hence the branch name) and he named it SkyMind at
-sign-off. Take a name or coin one.
+Previous session was **SkyTime (131)**, which also ran under the name **SkyDesk** —
+two PRs merged plus a checkpoint, and one production migration. Sam called it SkyTime
+at both greeting and sign-off; it had been running as SkyDesk because SkyTime was
+already Session 104's moniker. **Sam's name wins, and both are recorded so either
+term finds this work** — the same reconciliation SkyWire/SkyMind got. Note the
+numbering: this session was **131**, and the branch says 129 only because it was
+named off a stale number. The highest-numbered handoff is always the
+authoritative one.
+
+Sam separately flagged that he'd muddled the session before that: **SkyWire and
+SkyMind are the same session** — it ran as SkyWire (hence the branch name) and he
+named it SkyMind at sign-off. Take a name or coin one.
 
 ## Read first, in order
 
 1. This file.
-2. `docs/college_action_page_lessons.md` § **2026-08-09 SkyDesk** — the story,
-   written once, there.
+2. `docs/college_action_page_lessons.md` § **2026-08-09 SkyTime / SkyDesk** — the
+   story, written once, there.
 3. `docs/kb-notes/methodology-a-written-backlog-decays-silently.md` — **before
    you trust any count in this file.** Including the ones below.
 4. `docs/kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md` —

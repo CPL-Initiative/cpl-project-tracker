@@ -24,7 +24,7 @@ for both halves. Append a dated section every checkpoint.
 
 ---
 
-## 2026-08-09 — SkyDesk (Session 131): the inbox half, and why it measures
+## 2026-08-09 — SkyTime / SkyDesk (Session 131): the inbox half, and why it measures
 
 ### What shipped
 
