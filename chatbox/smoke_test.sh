@@ -246,11 +246,29 @@ answer_must_match "[0-9],[0-9]{3}" "15b states an actual per-college figure"
 answer_must_match -i "articulat" "15b surfaces the already-articulated opportunity"
 answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as opportunity"
 
-# A college genuinely absent from the dataset must NOT be rendered as zero.
+# A college genuinely absent from the credit-disposition dataset must NOT be
+# rendered as zero. Calbright has no row in map_college_credit_summary.
+#
+# WHAT THIS MODE CAN AND CANNOT PROVE. It is a NEGATIVE assertion, so it passes
+# both when Sierra behaves and when she simply never goes near the subject — on
+# the 2026-08-09 run she answered from the EXHIBIT data instead ("0 credit
+# recommendations and 0 exhibits", which is true: Calbright's profile really does
+# carry total_exhibits 0 / total_credit_recs 0), so the check never fired. Do not
+# read a green here as proof the absence/zero distinction held.
+#
+# The exercised guard for that property is the unit test — see
+# tests/sierra_credit_disposition.test.js §4, which asserts the built context
+# carries the explicit "not in this dataset" note and no zero.
+#
+# Both word orders are matched, since "awarded 0 credits" and "0 credits awarded"
+# are equally wrong. Statements about EXHIBITS or ARTICULATIONS being zero are
+# deliberately NOT matched — those come from a different dataset and are true.
 run "15c absent college is not zero (Calbright)" \
   '{"query":"How many CPL credits has Calbright College awarded?","session_id":"smoke-ci"}'
-answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
-  "15c does not report an absent college as zero"
+answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none|no)\b" \
+  "15c does not report an absent college as zero (verb first)"
+answer_must_not_match -i "\b(0|zero|no)\b[^.]{0,40}(credits?|units?)[^.]{0,20}(awarded|applied|transcribed)" \
+  "15c does not report an absent college as zero (noun first)"
 
 # ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
 # The edge function reads these aggregates with the SERVICE ROLE key, so RLS does
