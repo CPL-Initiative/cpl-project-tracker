@@ -564,9 +564,24 @@ safe: never auto-merges, skips repos with uncommitted work, logs to
 `.vault-sync.log`. Setup walkthrough:
 [`docs/kb-notes/playbook-vault-sync-setup.md`](docs/kb-notes/playbook-vault-sync-setup.md).
 
-Vault-side hygiene: heavy non-markdown paths (`kb/coci_*.json`,
-`unified_courses_*.js`, `kb/row_audit/`, `cip_fitcheck/`, etc.) are excluded in
-Obsidian's **Files & Links → Excluded files** so the graph stays clean.
+Vault-side hygiene: heavy non-markdown paths are excluded in Obsidian's
+**Files & Links → Excluded files** so the graph stays clean. **The authoritative
+list is generated, not prose** — `python3 kb/_docs_audit.py` emits a paste-able
+`userIgnoreFilters` block in `kb/docs_audit/<date>.md`; the live copy is
+`CPLBrain/.obsidian/app.json`. (Corrected 2026-08-09: this paragraph used to
+*claim* `unified_courses_*.js` and `cip_fitcheck/` were excluded and the live
+`app.json` excluded neither — 164 MB. A documented exclusion is not an applied
+one, which is why the list is now generated from what is actually on disk.)
+
+⚠️ **Exclusion is a relevance filter, not a performance one.** It drops paths
+from search, graph and link autocomplete; it does **not** stop Obsidian's file
+watcher, metadata cache, or Sync. The tracker working tree is **~1.07 GB across
+~1,754 files**, all inside the vault because the repo is cloned into it, and
+only ~430 of those files are markdown. If the vault is slow to open, excluding
+more paths will not fix it — keeping the artifacts out of the vault will (a
+markdown-only clone vault-side, or the working clone sited outside the vault).
+Full finding:
+[`docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md`](docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md).
 
 **Checkpoint scope — vault, never the public KB.** Rule 8 / `/checkpoint`
 refreshes *this* repo's docs (`docs/kb-notes/`, lessons, §11, the To-Do feed),

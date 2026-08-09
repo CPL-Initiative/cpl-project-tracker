@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-08-07 (SkyHunter — Sierra's CPR fix DEPLOYED, cpl-chat v29 live and confirmed by smoke mode 13; deploy is now runner-based and byte-exact from git, retiring the 66 KB hand-transcription hazard; mode 7 stays red on a NEW defect — volume outranking distance in the offerings path — queued for SkyHero; #1016/#1017/#1019-#1021) · prior: 2026-08-06 (SkyHunter — Sierra's topic retrieval fixed: five defects, the sharpest being that the 2026-07-01 CPR fix CAUSED the 2026-08-06 CPR outage (`aed:*` parses to `'a':*`); 2 colleges → 5 at 100% precision, plus small-cell suppression that actually suppresses; #1016/#1017) · prior: 2026-08-03 (SkyCobi side-lane — ARC / NorCAL Carpenters apprenticeship-CPL slides: pulled the college-program roster straight from the source artifacts (5 sponsors · 149 exhibits · ~13 A.A./A.S. apprenticeship degrees; CTCNC = 120 exhibits → 8 degrees), shipped a 2-slide PPTX, and committed the reusable `kb/_college_apprenticeship_cpl_roster.js` + methodology note as the seed of the COBI "College CPL Summary" tool) · prior: 2026-08-03 (SkyUnit — the Implementation Funding model is SETTLED and live: P1 scores APPLIED units, shares .50/.45/.05, multiplier 2.0 (= the cumulative window target); next step is the Budget reconciliation; #967) · prior: 2026-08-01 (SkyUnit — Implementation Funding: headcount out of the cards, three summary surfaces made to agree on units with their detail (the 30× family, sites 4-6), Applied CPL units now measured, and the CPL FTES reimbursement rate made curator-editable at $5,649.63; #964/#965) · prior: 2026-07-27 (SkyElemental — Annual Workplan Goals now reflects EVERY Activities-tab project + the #872 reorg re-key FINISHED on the tables it missed (`workplan_goals` + associations); Path A entity-table/overlay model, X.Y.Z nesting, 4.7→4.5.1 re-home; #900/#902/#905/#909)
+updated: 2026-08-09
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -478,6 +478,23 @@ Commissioned by Sam for integrating Sierra into a vendor-built platform:
 
 Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
+
+## Update history
+
+> Moved out of the `updated:` frontmatter field on 2026-08-09. It had grown to a
+> **1,853-character single line chaining five `prior:` entries** — a field being used
+> as a changelog, which is what `frontmatter_log_chain` in `kb/_docs_audit.py`
+> detects. It was also two sessions stale, because nobody maintains a line that long.
+> Keep this list to the most recent few; older entries belong in
+> [`roadmap_archive.md`](roadmap_archive.md).
+
+- **2026-08-09** — Sky: docs lint pass (`kb/_docs_audit.py`) landed and wired into `/checkpoint`; 115 superseded handoffs stamped; this field collapsed (#1071).
+- **2026-08-07** — (SkyHunter — Sierra's CPR fix DEPLOYED, cpl-chat v29 live and confirmed by smoke mode 13; deploy is now runner-based and byte-exact from git, retiring the 66 KB hand-transcription hazard; mode 7 stays red on a NEW defect — volume outranking distance in the offerings path — queued for SkyHero; #1016/#1017/#1019-#1021)
+- **2026-08-06** — (SkyHunter — Sierra's topic retrieval fixed: five defects, the sharpest being that the 2026-07-01 CPR fix CAUSED the 2026-08-06 CPR outage (`aed:*` parses to `'a':*`); 2 colleges → 5 at 100% precision, plus small-cell suppression that actually suppresses; #1016/#1017)
+- **2026-08-03** — (SkyCobi side-lane — ARC / NorCAL Carpenters apprenticeship-CPL slides: pulled the college-program roster straight from the source artifacts (5 sponsors · 149 exhibits · ~13 A.A./A.S. apprenticeship degrees; CTCNC = 120 exhibits → 8 degrees), shipped a 2-slide PPTX, and committed the reusable `kb/_college_apprenticeship_cpl_roster.js` + methodology note as the seed of the COBI "College CPL Summary" tool)
+- **2026-08-03** — (SkyUnit — the Implementation Funding model is SETTLED and live: P1 scores APPLIED units, shares .50/.45/.05, multiplier 2.0 (= the cumulative window target); next step is the Budget reconciliation; #967)
+- **2026-08-01** — (SkyUnit — Implementation Funding: headcount out of the cards, three summary surfaces made to agree on units with their detail (the 30× family, sites 4-6), Applied CPL units now measured, and the CPL FTES reimbursement rate made curator-editable at $5,649.63; #964/#965)
+- **2026-07-27** — (SkyElemental — Annual Workplan Goals now reflects EVERY Activities-tab project + the #872 reorg re-key FINISHED on the tables it missed (`workplan_goals` + associations); Path A entity-table/overlay model, X.Y.Z nesting, 4.7→4.5.1 re-home; #900/#902/#905/#909)
 
 ---
 

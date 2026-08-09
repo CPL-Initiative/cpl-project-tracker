@@ -87,7 +87,7 @@ import json
 import os
 import re
 import sys
-from datetime import date, timezone, datetime
+from datetime import date
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT_DIR = os.path.join(ROOT, "kb", "docs_audit")
@@ -114,7 +114,12 @@ FM_PRIOR_CHAIN_MIN = 2
 # Measured 2026-08-09 across 202 notes: type comes from `tags:` (135), `type:`
 # (43) or `kb-type:` (21); the creation date from `created:` (154) or `date:`
 # (48). All are accepted; R3b reports which dialect was used.
-KB_TYPE_TAGS = {"methodology", "reference", "adr", "glossary", "playbook", "meta"}
+# `scope` is the seventh type: adopted in practice by three notes (all
+# `type: scope`, all coherent scope documents) before it was ever written down.
+# The lane README says the taxonomy should "grow as needed" — the corpus voted,
+# so the lint follows it rather than calling three valid notes broken.
+KB_TYPE_TAGS = {"methodology", "reference", "adr", "glossary", "playbook", "meta",
+                "scope"}
 KB_STATUSES = {"published", "archived", "internal", "candidate", "promoted"}
 KB_TYPE_KEYS = ("type", "kb-type")          # canonical is a type tag inside `tags:`
 KB_CREATED_KEYS = ("created", "date")        # canonical is `created:`
@@ -398,6 +403,12 @@ def scan_vault_weight(root: str):
     dir_bytes, dir_md = {}, {}
     for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in VAULT_SKIP_DIRS]
+        # Skip our OWN receipts. Counting them makes the total self-referential:
+        # writing this run's JSON changes its size, so the next run reports a
+        # different vault total and the committed receipt churns forever.
+        if os.path.abspath(dirpath) == os.path.abspath(OUT_DIR):
+            dirnames[:] = []
+            continue
         d = rel(dirpath) if os.path.abspath(dirpath) != ROOT else ""
         for fn in filenames:
             p = os.path.join(dirpath, fn)
@@ -472,6 +483,11 @@ def apply_superseded(findings, handoff_max, verbose=True):
     authoritative handoff itself. Idempotent — a file already carrying the key
     produces no finding, so a second run is a no-op.
     """
+    # `superseded_by` records the authoritative handoff AT STAMP TIME. It does
+    # not self-heal when a newer handoff lands, and that is deliberate: the
+    # statement "132 superseded this" stays TRUE forever, it merely stops being
+    # the latest. Refreshing it would rewrite ~130 files on every checkpoint to
+    # restate a rule ("read the highest-numbered") that CLAUDE.md already owns.
     changed = []
     target = f"session_{handoff_max}_handoff.md"
     for f in findings:
@@ -667,9 +683,13 @@ def main():
     for f in findings:
         by_rule[f["rule"]] = by_rule.get(f["rule"], 0) + 1
 
+    # Deliberately date-only, no wall-clock stamp: the receipts are committed, so
+    # a sub-day timestamp makes every verification re-run dirty the working tree
+    # by one line per file and trip the stop-hook with a no-op diff. The dated
+    # filename already identifies the run; two runs on the same day that find the
+    # same things should produce byte-identical receipts.
     payload = {
         "generated": date.today().isoformat(),
-        "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "thresholds": THRESHOLDS,
         "summary": {
             "files": len(entries),

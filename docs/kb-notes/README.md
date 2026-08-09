@@ -58,6 +58,10 @@ artifacts:
 - `glossary` — single-concept lookup card (terms, agencies, roles)
 - `playbook` — step-by-step procedure (re-mints, releases, recovery)
 - `meta` — about this lane / about the repo's KB plumbing itself
+- `scope` — a build's scope document: what we're building, the decisions taken,
+  the gates. (Added to the written taxonomy 2026-08-09; it had already been in
+  *use* since 2026-06-19 via `type: scope`, which is how `kb/_docs_audit.py`
+  found it.)
 
 **Topic tags** (pick as many as fit): `cpl-tracker`, `auditor`, `re-mint`,
 `supabase`, `obsidian-target`, `cred-ref`, `quickstart`, `pipeline-ui`,
