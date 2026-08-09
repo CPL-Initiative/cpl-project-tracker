@@ -32,7 +32,7 @@
       "id": "s131-malone-view",
       "for": "Sam",
       "tab": "—",
-      "text": "Send Malone the Custom Report request (docs/map_custom_report_request_for_malone.md). One view name unblocks the nightly refresh, which the college page needs before it can promise anyone today's to-dos."
+      "text": "Send Malone the dataset request. Two versions exist — docs/map_dataset_sql_for_malone.md gives him ready-to-run SQL (no view needed), docs/map_custom_report_request_for_malone.md asks for one view name. IMPORTANT correction: we already HAVE the disposition data (Sam checked — it came in via his Access import and is 100% complete). What is missing is only a DAILY refresh, so the college page can be built now and simply states how old its numbers are."
     },
     {
       "id": "s131-4-blank",

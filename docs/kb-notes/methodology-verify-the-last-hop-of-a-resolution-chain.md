@@ -28,6 +28,26 @@ never pasted** — and the docs even wrote down the chain:
 Everything about that is right except the parenthetical, and the parenthetical
 is what a reader acts on. It says: *you may stop at hop one.*
 
+## ⚠️ The path in that quote is also wrong — and I repeated it
+
+Worth recording, because it happened *while writing this note*. The real
+location is three levels deeper and camelCase:
+
+```
+config → projects → "cpl-implementation" → scenarios → "Scenario 1"
+       → yearPriorities → "1" → { "0": {…}, "1": {…}, "2": {…} }
+```
+
+`config.year_priorities` does not exist; `config`'s only top-level key is
+`projects`. A session following the documented path gets `null` and — having
+been told the overlay is empty — has every reason to read that null as
+confirmation. **A wrong path and an empty overlay are indistinguishable from
+the outside.** That is the whole failure in one line, and it is why the fix
+below is "document how to CHECK", not "document the value".
+
+Verified 2026-08-09 by walking the keys rather than asserting a path:
+`select jsonb_object_keys(config::jsonb) from cpl_funding_config;`
+
 ## What was actually there
 
 `cpl_funding_config` was not empty. It held two full scenarios, and the active
