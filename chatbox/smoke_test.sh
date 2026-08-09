@@ -15,6 +15,8 @@ set -uo pipefail
 
 URL="${CPL_CHAT_URL:-https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat}"
 ANON="${CPL_CHAT_ANON:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM}"
+# PostgREST base for the direct-table assertions (modes 12 and 15d).
+REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
 
 fail=0
 
@@ -219,6 +221,95 @@ run "14b contacts gated (ctx external — contact suppressed)" \
   '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci","ctx":"external"}'
 answer_must_not_match -i "romero|mdromero" "14b external ctx never names the contact"
 
+# ── 15. Credit disposition (v36) — what colleges have ACTED on ───────────────
+# Sierra could always say what credit EXISTS; these modes cover what has been
+# DONE with it. Assertions are deliberately loose on wording (a stochastic model
+# won't reproduce a phrase) and tight on the two things that are product
+# decisions: the numbers appear, and they are framed as opportunity.
+run "15a credit disposition statewide" \
+  '{"query":"How much CPL credit has been recommended but not yet awarded across the system?","session_id":"smoke-ci"}'
+# A real figure, not a hedge. Any 4+ digit comma-grouped number.
+answer_must_match "[0-9],[0-9]{3}" "15a states an actual credit figure"
+# The ceiling caveat must ride along with the total — otherwise the number reads
+# as a debt, which is the single most likely way this feature misleads.
+answer_must_match -i "not applicable|ceiling|correctly (ruled|declined|closed)|doesn.?t fit|not every" \
+  "15a carries the Not-Applicable ceiling caveat"
+# Framing guard: never a report card.
+answer_must_not_match -i "failing|failure to|worst|poorly|negligent|shameful" \
+  "15a does not frame the backlog as failure"
+
+run "15b credit disposition per-college (San Diego Mesa)" \
+  '{"query":"How is San Diego Mesa College doing on awarding CPL credit?","session_id":"smoke-ci"}'
+answer_must_match -i "mesa" "15b names the college asked about"
+answer_must_match "[0-9],[0-9]{3}" "15b states an actual per-college figure"
+# The lead is the already-articulated block — everything built, nobody acted.
+answer_must_match -i "articulat" "15b surfaces the already-articulated opportunity"
+answer_must_not_match -i "failing|worst|poorly|negligent" "15b frames it as opportunity"
+
+# A college genuinely absent from the dataset must NOT be rendered as zero.
+run "15c absent college is not zero (Calbright)" \
+  '{"query":"How many CPL credits has Calbright College awarded?","session_id":"smoke-ci"}'
+answer_must_not_match -i "(awarded|applied|transcribed)[^.]{0,40}\b(0|zero|none)\b" \
+  "15c does not report an absent college as zero"
+
+# ── 15d. THE GATE (deterministic, and the reason this feature is safe) ────────
+# The edge function reads these aggregates with the SERVICE ROLE key, so RLS does
+# not constrain Sierra. It must still constrain everyone else: per-college
+# disclosure is a deliberate decision routed through the function's own prompt
+# rules (Sam, 2026-08-09), NOT an open table. If these ever return rows to the
+# anon key, the published aggregates have become world-readable by accident and
+# the student-grain table is the next thing to check.
+echo "===================================================================="
+echo "MODE: 15d aggregate tables stay gated to the anon key"
+# The property under test is "anon receives NO ROWS". Three distinct responses
+# satisfy or violate it, and the first version of this check conflated two of
+# them — it asserted `= "[]"` and so reported a PostgREST *error* as a leak,
+# printing "STUDENT GRAIN LEAKED" for a statement timeout (57014) on the first CI
+# run. A false alarm in that direction is worse than no alarm at all.
+#
+# The timeout is itself expected on the big tables: RLS is evaluated per row, and
+# map_college_cr_unit (204,714) / map_student_credit (220,588) exceed the
+# statement budget before they can return the empty set. No rows come back either
+# way, which is the thing that matters.
+#   []                    → gated, empty set returned          → PASS
+#   {"code":...,"message"} → error (timeout / 401 / 403); no rows → PASS (noted)
+#   [{...}]               → actual rows reached anon            → FAIL
+assert_anon_gets_no_rows() { # table  label
+  local t="$1" label="$2" sel
+  sel=$(curl -sS --max-time 30 "$REST_BASE/$t?select=college_id&limit=1" \
+    -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+  case "$sel" in
+    "[]")
+      echo "  [assert ok] anon select on $t returns [] ($label)" ;;
+    "["*)
+      echo "::error::$label — ROWS REACHED ANON from $t: $sel"; fail=1 ;;
+    "{"*)
+      # An error body. No rows were served; say which error so a 500 that starts
+      # masking a real regression is visible rather than silently "passing".
+      echo "  [assert ok] anon select on $t returned no rows ($label; PostgREST error: $(printf '%s' "$sel" | tr -d '\n' | cut -c1-120))" ;;
+    *)
+      echo "::error::$label — unrecognised response from $t: $sel"; fail=1 ;;
+  esac
+}
+# POSITIVE CONTROL, first — an expired or malformed anon key makes every gate
+# assertion below pass for the wrong reason. map_colleges is deliberately
+# world-readable (USING(true)), so it MUST return a row. If this fails, the rest
+# of this mode proves nothing and should not be read as a clean bill of health.
+ctl=$(curl -sS --max-time 30 "$REST_BASE/map_colleges?select=college_id&limit=1" \
+  -H "apikey: $ANON" -H "Authorization: Bearer $ANON")
+case "$ctl" in
+  "[{"*) echo "  [assert ok] positive control: anon CAN read map_colleges (key is live)" ;;
+  *) echo "::error::positive control FAILED — anon cannot read the public map_colleges ($ctl). The gate assertions below are vacuous."; fail=1 ;;
+esac
+
+for t in map_college_credit_summary map_college_goal2 map_college_cr_unit; do
+  assert_anon_gets_no_rows "$t" "reviewer/team gated"
+done
+# The reviewer-only STUDENT GRAIN. Not a policy preference — per-student data,
+# with no write policies at all.
+assert_anon_gets_no_rows map_student_credit "student grain sealed"
+echo
+
 # sierra_feedback anon write path — the exact call the pages' 👍/👎 performs:
 # the SECURITY DEFINER RPC sierra_feedback_upsert (a direct PostgREST upsert
 # would 401 — ON CONFLICT needs SELECT visibility, which anon deliberately
@@ -226,7 +317,6 @@ answer_must_not_match -i "romero|mdromero" "14b external ctx never names the con
 # same turn_id carries the note and updates the SAME row.
 echo "===================================================================="
 echo "MODE: 12 sierra_feedback anon upsert (RPC)"
-REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
 TID="smoke-$(date +%s)-$RANDOM"
 code=$(curl -sS -o /tmp/fb_out.txt -w '%{http_code}' -X POST "$REST_BASE/rpc/sierra_feedback_upsert" \
   -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \

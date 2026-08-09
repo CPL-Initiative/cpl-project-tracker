@@ -246,8 +246,20 @@ check("LANDING_PAGE_RULE still gives the MAP team as a route",
   /MAP@rccd\.edu/.test(LANDING));
 
 // ── Wiring ──────────────────────────────────────────────────────────────────
+// The failure mode worth guarding is a rule silently dropping out of the system
+// prompt. This originally asserted the exact adjacency
+// `${OFFERINGS_RULE}${PORTAL_RULE}${LANDING_PAGE_RULE}`, which also failed the
+// first time an unrelated rule was inserted between them (CREDIT_STATUS_RULE,
+// 2026-08-09) — a false alarm on a prompt that was entirely correct. Assert
+// membership in the returned template instead: order between rule constants
+// carries no meaning, presence does.
+const PROMPT_TEMPLATE = SRC.slice(SRC.indexOf("return `You are the CPL Chatbox"));
 check("PORTAL_RULE is still injected into the system prompt",
-  /\$\{OFFERINGS_RULE\}\$\{PORTAL_RULE\}\$\{LANDING_PAGE_RULE\}/.test(SRC));
+  /\$\{PORTAL_RULE\}/.test(PROMPT_TEMPLATE));
+check("LANDING_PAGE_RULE is still injected into the system prompt",
+  /\$\{LANDING_PAGE_RULE\}/.test(PROMPT_TEMPLATE));
+check("OFFERINGS_RULE is still injected into the system prompt",
+  /\$\{OFFERINGS_RULE\}/.test(PROMPT_TEMPLATE));
 
 // ── report ──
 let pass = 0;
