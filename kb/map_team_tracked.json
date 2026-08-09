@@ -1,0 +1,40 @@
+{
+  "_about": "The MAP Team Queue's HAND-TRACKED lane. Everything else on that tab is MEASURED from a live source at page load and therefore cannot go stale. These items have no live source — nothing in Supabase or the repo knows whether they are done — so they are listed here, deliberately separated, and rendered with their staleness showing.",
+  "_why_separate": "Session 131 measured the six-item MAP-team backlog that the session-130 handoff carried in prose. Two of its items were already wrong within two days: it said 'every governance owner unset' when the team had filled all 17 owner-bearing rows on Aug 5 and 7, and it said '6 open Sierra feedback rows' when there were 23 real ones. A written list of work decays silently, because nothing re-checks it. So the rule for this tab is: if it can be measured, measure it; if it cannot, put it HERE, where the UI shows how long it has been since a human last confirmed it. A hand-tracked item that nobody has confirmed in weeks should LOOK unreliable, because it is.",
+  "_rule": "Add an item here ONLY after checking that no live source could answer it. When one becomes measurable, delete it here and measure it instead. Bump last_confirmed whenever a human actually re-checks the item — not when the file is edited for other reasons.",
+  "items": [
+    {
+      "id": "malone-view-name",
+      "title": "Malone: the Custom Report view name that unblocks the nightly feed",
+      "detail": "docs/map_custom_report_request_for_malone.md is written and forwardable. It is blocked on one thing — the name of the published API view carrying CPLStatusPlan. Everything on our side is a ~4-line change once we have it. Until then the credit-disposition data is a manual Access export and cannot refresh nightly.",
+      "blocks": "The college action page promises current to-dos. Daily to-dos computed off month-old data get caught in the first week, so the nightly feed is a prerequisite for that page, not a nice-to-have.",
+      "owner": "Sam",
+      "waiting_on": "Malone",
+      "since": "2026-08-07",
+      "last_confirmed": "2026-08-09",
+      "where": { "tab": null, "label": "docs/map_custom_report_request_for_malone.md" }
+    },
+    {
+      "id": "portal-url-unverified",
+      "title": "Verify creditforbeingyou.org/main/student resolves",
+      "detail": "Sierra sends CPL seekers to the Credit for Being You student portal in several rules. No session has been able to confirm the URL loads — the sandbox is egress-blocked from that domain, so this needs a human with a browser. A wrong link here sends a real student to a dead end.",
+      "blocks": "Nothing structurally, but it is the one externally-visible claim Sierra makes that we have never checked.",
+      "owner": null,
+      "waiting_on": "anyone with a browser",
+      "since": "2026-08-07",
+      "last_confirmed": "2026-08-09",
+      "where": { "tab": "sierra-training", "label": "Sierra Training" }
+    },
+    {
+      "id": "poaching-audit-unreported",
+      "title": "SkyHero's five-surface anti-poaching audit was never reported",
+      "detail": "Sierra is embedded on colleges' own pages, so an unprompted 'you would get more credit elsewhere' is poaching. A five-surface audit of where that rule is enforced was started and its findings were never written down anywhere, so nobody knows whether it passed.",
+      "blocks": "Not blocking, but it is an unfinished check on a live public surface.",
+      "owner": null,
+      "waiting_on": "a session",
+      "since": "2026-08-07",
+      "last_confirmed": "2026-08-09",
+      "where": { "tab": "sierra-training", "label": "Sierra Training" }
+    }
+  ]
+}
