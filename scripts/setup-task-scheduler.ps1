@@ -1,7 +1,7 @@
 # setup-task-scheduler.ps1
 #
 # Creates the "CPL Vault Sync" Windows scheduled task that runs
-# sync-vault-clones.ps1 every N minutes (default 15). Idempotent --
+# sync-vault-clones.ps1 every N minutes (default 60). Idempotent --
 # re-running with different cadence updates the existing task instead
 # of erroring out.
 #
@@ -10,11 +10,17 @@
 # message if not.
 #
 # Usage:
-#   # Default cadence (15 min):
+#   # Default cadence (60 min):
 #   powershell -ExecutionPolicy Bypass -File setup-task-scheduler.ps1
 #
-#   # Custom cadence (every 5 min for active-session days):
-#   powershell -ExecutionPolicy Bypass -File setup-task-scheduler.ps1 -CadenceMinutes 5
+#   # Tighter cadence for an active-session day:
+#   powershell -ExecutionPolicy Bypass -File setup-task-scheduler.ps1 -CadenceMinutes 30
+#
+# Why 60 and not 15 (changed 2026-08-09, Sam's call): work lands a few times a
+# day -- session PRs plus the three daily-dashboard cron runs (06:17/09:17/12:17
+# UTC) -- and vault notes are not time-critical. 60 min is 24 pulls/day instead
+# of 96 at 15 or 288 at 5. When you want the vault current RIGHT NOW, just run
+# sync-vault-clones.ps1 by hand; that is the escape hatch, not a tighter cron.
 #
 #   # Remove the task entirely:
 #   powershell -ExecutionPolicy Bypass -File setup-task-scheduler.ps1 -Remove
@@ -26,7 +32,7 @@
 # See docs/kb-notes/playbook-vault-sync-setup.md for the full playbook.
 
 param(
-    [int]$CadenceMinutes = 15,
+    [int]$CadenceMinutes = 60,
     [switch]$Remove
 )
 

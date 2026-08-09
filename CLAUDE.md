@@ -555,7 +555,9 @@ published` (no review-queue middle state — sessions author at final
 quality). The checkpoint commit body lists new notes for the audit trail.
 
 **Vault auto-sync (added Session 11, 2026-05-27):** `scripts/sync-vault-clones.ps1`
-runs on Sam's Windows Task Scheduler every 5–15 minutes, fast-forward-pulling
+runs on Sam's Windows Task Scheduler every 60 minutes (default lowered from 15
+on 2026-08-09 — work lands a few times a day, so 24 pulls/day is plenty; run the
+script by hand when you want the vault current immediately), fast-forward-pulling
 `cpl-project-tracker` + `cpl-knowledge-base` from origin into the canonical
 `Documents\GitHub\COG-second-brain` vault root (`$vaultRoot` repointed
 2026-05-28, PR #178). KB notes (and every other repo doc) appear in Obsidian
