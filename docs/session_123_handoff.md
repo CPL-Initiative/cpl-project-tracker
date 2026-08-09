@@ -6,6 +6,8 @@ tags: [handoff, funding, implementation-funding, cpl-lifecycle]
 related:
   - "[[docs/cpl_funding_lessons]]"
   - "[[docs/cpl_funding_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 123

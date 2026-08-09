@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/methodology-parity-test-cutover-proof.md (NEW — the cutover proof)
   - CLAUDE.md §11 (Excel→Supabase roadmap; Phase 2 rows are now DONE)
 moniker_suggestion: Bruh Q (17th letter) / Bruh Heptadec — open door to claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 17 Hand-off Prompt

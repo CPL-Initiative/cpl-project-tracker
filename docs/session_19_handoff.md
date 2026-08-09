@@ -11,6 +11,8 @@ related:
   - docs/session_18_handoff.md (Qualitastic → Cascade — note: its Budget priority was set aside)
   - CLAUDE.md §11 (over-merge re-mint roadmap row)
 moniker_suggestion: Bruh S (19th letter) / Nonadec — open door to claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 19 Hand-off Prompt

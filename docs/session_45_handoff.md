@@ -8,6 +8,8 @@ related:
   - docs/statewide_kpi_lessons.md (the day's full story)
   - CLAUDE.md §11 "Session 44" subsection
 moniker_suggestion: Session 44 ran unnamed (feature day, Sam drove live); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … Bruh Starlord (43, troubleshooting) → Session 44: Sam's

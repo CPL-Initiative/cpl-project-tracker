@@ -9,6 +9,8 @@ related:
   - "[[docs/kb-notes/methodology-route-to-a-determination-they-already-made]]"
   - "[[docs/kb-notes/methodology-a-governance-artifact-must-measure-itself]]"
   - "[[docs/session_119_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 121.

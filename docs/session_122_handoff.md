@@ -7,6 +7,8 @@ related:
   - "[[docs/kb-notes/methodology-partner-occupation-crosswalk]]"
   - "[[docs/session_121_handoff]]"
   - "[[docs/map_users_lessons]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 122.

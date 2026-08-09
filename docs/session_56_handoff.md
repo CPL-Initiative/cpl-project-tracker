@@ -10,6 +10,8 @@ related:
   - docs/coursecontrolnumber_remint.md (the canonical re-mint playbook)
   - docs/kb-notes/methodology-promoted-record-ghosts-in-worklists.md (Session 55 KB note)
 moniker_suggestion: Session 55 was "Bruh Nebula"; claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 56 Hand-off Prompt — the data lane

@@ -6,6 +6,8 @@ obsidian-folder: cpl-project-tracker
 related:
   - "[[CLAUDE]]"
   - "[[docs/session_65_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 66

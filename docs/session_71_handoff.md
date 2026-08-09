@@ -10,6 +10,8 @@ related:
   - "[[docs/kb-notes/reference-common-vs-local-subj-and-discipline-cardinality]]"
   - "[[docs/unverified_mid_renumber_scope]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 71

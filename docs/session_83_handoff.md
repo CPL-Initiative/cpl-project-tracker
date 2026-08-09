@@ -5,6 +5,8 @@ updated: 2026-06-28
 tags: [handoff, session-83, fact-sheet, m-id-renumber, tmc, cpl-assistant]
 obsidian-folder: cpl-project-tracker
 related: [[CLAUDE]], [[docs/fact_sheet_lessons]], [[docs/kb-notes/methodology-stable-dom-keys-exclude-live-text]]
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 You are Session 83 of the CPL Project Tracker. Session 82 (SkyFlyer) finished a focused Fact Sheet

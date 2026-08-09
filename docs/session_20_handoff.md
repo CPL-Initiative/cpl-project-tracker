@@ -12,6 +12,8 @@ related:
   - docs/session_19_handoff.md (Cascade → Wizardly Turing)
   - CLAUDE.md §11 (roadmap rows for both workstreams)
 moniker_suggestion: Bruh T (T = 20th letter) or Twenty — open door to claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 20 Hand-off Prompt

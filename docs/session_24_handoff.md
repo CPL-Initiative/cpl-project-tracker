@@ -11,6 +11,8 @@ related:
   - docs/dashboard_cleanup_lessons.md (Session 23: #2 + #3 close-out)
   - CLAUDE.md §11 roadmap (Excel→Supabase + the Session 23 row)
 moniker_suggestion: Bruh 24 / "Two-Four" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 24 Hand-off Prompt

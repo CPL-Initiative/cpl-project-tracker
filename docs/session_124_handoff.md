@@ -7,6 +7,8 @@ related:
   - "[[docs/cpl_assistant_lessons]]"
   - "[[docs/kb-notes/methodology-assert-what-retrieval-returns]]"
   - "[[docs/kb-notes/playbook-deploy-an-edge-function-from-the-runner]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 124 — **SkyHero**

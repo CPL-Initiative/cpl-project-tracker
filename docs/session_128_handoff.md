@@ -7,6 +7,8 @@ related:
   - "[[docs/cpl_assistant_lessons]]"
   - "[[docs/kb-notes/methodology-a-wrong-column-is-worse-than-a-missing-one]]"
   - "[[docs/kb-notes/methodology-judge-a-detector-by-what-it-prints]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 128 — SkyNaut

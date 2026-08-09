@@ -12,6 +12,8 @@ related:
   - docs/eacr_consolidation_lessons.md (Session 36 section)
   - CLAUDE.md §11 "Session 36" subsection
 moniker_suggestion: Session 35 was unnamed; 36 (branch claude/stoic-bardeen-voov40) shipped the perf fix + cross-disc re-mint + the CER Eligible column — claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: Lucid Wozniak (34) → CER consolidation (35) → Session 36 (perf +

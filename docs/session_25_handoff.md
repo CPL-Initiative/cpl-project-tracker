@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/methodology-parity-test-cutover-proof.md (the cutover proof discipline)
   - CLAUDE.md §11 roadmap (Excel→Supabase row + the Session 24 PR-2 entry)
 moniker_suggestion: Bruh 25 / "Two-Five" / "Quarter" — or claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 25 Hand-off Prompt

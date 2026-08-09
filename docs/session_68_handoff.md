@@ -9,6 +9,8 @@ related:
   - "[[docs/cpl_news_lessons]]"
   - "[[docs/kb-notes/playbook-cpl-news-aggregation]]"
   - "[[docs/kb-notes/tmc-co-review-scope]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 68 — SkyAlizarin

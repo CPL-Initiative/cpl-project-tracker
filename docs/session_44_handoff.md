@@ -9,6 +9,8 @@ related:
   - docs/ccr_cluster_cleanup_lessons.md (Session 43 section)
   - CLAUDE.md §11 "Session 43" subsection
 moniker_suggestion: Session 43 ran as "Bruh Starlord" (Sam's coinage on arrival); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … slot-fix (42) → Session 43: verification + front-end

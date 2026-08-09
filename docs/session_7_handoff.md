@@ -12,6 +12,8 @@ related:
   - .github/codeql/codeql-config.yml (CodeQL exclusion + audit trail from Session 6's detour)
   - docs/exhibit_unification_vision.md (credential-identity design doc)
 moniker_suggestion: Bruh Hept (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 7 Hand-off Prompt

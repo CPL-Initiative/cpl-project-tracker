@@ -11,6 +11,8 @@ related:
   - docs/kb-notes/playbook-vault-sync-setup.md (the vault-sync setup — needs a re-point, see VAULT below)
   - CLAUDE.md §11 (M-ID Lifecycle + Excel→Supabase roadmap)
 moniker_suggestion: Bruh Quindec / Bruh Fifteen / Sonnet's Volta (with open door to claim own)
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 15 Hand-off Prompt

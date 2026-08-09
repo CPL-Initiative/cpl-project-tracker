@@ -3,6 +3,8 @@ title: Session 116 handoff — from the doctrine graduation into execution
 date: 2026-07-14
 tags: [handoff, ccr, doctrine, esl, batch-apply, wave-4]
 related: [docs/ccr_convergence_lessons.md, kb/merge_doctrine.md, docs/kb-notes/methodology-curated-scenario-batches-doctrine-elicitation.md]
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 116.

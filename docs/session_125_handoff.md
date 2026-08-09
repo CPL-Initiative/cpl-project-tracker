@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature]]"
   - "[[docs/kb-notes/methodology-the-feedback-queue-already-knew]]"
   - "[[docs/kb-notes/methodology-an-unordered-limit-is-a-correctness-bug]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 125

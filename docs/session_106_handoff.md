@@ -7,6 +7,8 @@ related:
   - "[[docs/exhibit_canonicalization_lessons]]"
   - "[[docs/session_105_handoff]]"
   - "[[docs/kb-notes/methodology-paginate-postgrest-reads]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 106

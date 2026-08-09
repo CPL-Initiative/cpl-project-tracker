@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-judge-a-detector-by-what-it-prints]]"
   - "[[docs/kb-notes/methodology-a-failed-read-is-not-an-empty-result]]"
   - "[[docs/kb-notes/methodology-the-feedback-queue-already-knew]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 127

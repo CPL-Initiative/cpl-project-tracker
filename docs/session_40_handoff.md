@@ -10,6 +10,8 @@ related:
   - docs/cis_cs_convergence_scope.md (GATED on Sam's §5 sign-off)
   - CLAUDE.md §11 "Session 39" + "Session 39 (cont.)" subsections
 moniker_suggestion: Session 39 ran as "Lucid Hamilton" (branch name); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 <!-- Lineage: … CCR refinements + fan-in convergences (38) → Session 39: cron

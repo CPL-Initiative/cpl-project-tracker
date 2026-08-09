@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-rls-is-not-a-gate-in-front-of-a-service-role-function]]"
   - "[[docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted]]"
   - "[[docs/map_custom_report_request_for_malone]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 130

@@ -6,6 +6,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/cpl_funding_lessons]]"
   - "[[docs/ccr_convergence_handoff]]"
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # You are Session 99

@@ -10,6 +10,8 @@ related:
   - docs/similar_course_family_scope.md (the consolidation loosening + measure-first)
   - docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md (the Supabase re-key tool)
 moniker_suggestion: Session 58 was "Bruh Skyleader"; Sam named you "Bruh StarNavicus" — own it or claim another
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 59 Hand-off Prompt — the data lane

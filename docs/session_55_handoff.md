@@ -9,6 +9,8 @@ related:
   - docs/kb-notes/playbook-gated-bulk-autocuration.md (the durable pattern + the second-look surfacing)
   - kb/automerge_out/2026-06-12/ (pass-1 plan · report · apply_log)
 moniker_suggestion: Session 54 was "Bruh Spaceranger" (Sam's christening, opening message — "explore new worlds"); claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 55 Hand-off Prompt — the data lane

@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md (Session 56 KB note)
   - docs/coursecontrolnumber_remint.md (the canonical re-mint playbook)
 moniker_suggestion: Session 56 was "Star Treader"; claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 57 Hand-off Prompt — the data lane

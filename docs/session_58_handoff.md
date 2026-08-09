@@ -10,6 +10,8 @@ related:
   - docs/kb-notes/adr-level-collapsing-consolidation.md (the over-merge decision)
   - docs/kb-notes/playbook-rekey-shared-db-from-alias-map.md (the Supabase re-key tool)
 moniker_suggestion: Session 57 was "Bruh Skydriver"; claim your own
+superseded: true
+superseded_by: session_132_handoff.md
 ---
 
 # Session 58 Hand-off Prompt — the data lane
