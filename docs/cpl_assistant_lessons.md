@@ -1493,3 +1493,102 @@ DEDUPE**.
   varying with `SkillLevel` added, so a naive per-exhibit student sum overstates.
 - Carried forward unresolved: the five-surface poaching audit, `creditforbeingyou.org/main/student` unverified,
   the corpus at 59 of 123 colleges, and the 6 real feedback rows.
+
+---
+
+## 2026-08-09 — SkyWire: Sierra reaches the disposition data, and two guards that fired on truth
+
+### What shipped
+
+**cpl-chat v36 (#1064–#1066), live and smoke-verified.** Sierra can now answer what a college has *acted on* —
+statewide and per named college — off the published aggregates (`map_college_credit_summary`,
+`map_college_goal2`). 68 committed checks; live smoke run 55 `ALL MODES OK`; deploy byte-verified from the
+runner with `verify_jwt:false` intact.
+
+### The finding that reframed the task
+
+The session-129 handoff scoped Priority 1 as carrying **"no new disclosure decision"** because the COBI Sierra
+was internal. It also, to its credit, said *"confirm the deployment topology before touching anything."* Two
+greps:
+
+| Caller | Endpoint |
+|---|---|
+| `cpl_chat.js` (COBI tab) | `/functions/v1/cpl-chat` |
+| `sierra/sierra.js` (PUBLIC map.rccd.edu widget) | **the same** |
+| `fact-sheet/factsheet_sierra.js` | **the same** |
+
+One function, reading with the **service-role key** (RLS constrains nothing on that path) and deployed
+`--no-verify-jwt` (anyone can curl it). There was no internal Sierra to start with — so what the handoff recorded
+as "no decision" **was** the decision. Sam made it explicitly: per-college open to all callers.
+
+⭐ **Blast radius was narrower than either of us assumed.** Every non-college entity carrying data is *already*
+`suppressed=true` under k=10 — North Orange (1 student), San Diego CCE (4), Launch (2); Futuro Health has no row.
+Partner figures cannot be stated at all, and the write-time suppression already covered the case we were worried
+about. Durable: `methodology-rls-is-not-a-gate-in-front-of-a-service-role-function`.
+
+### Sam's framing, which was a substance decision not a tone one
+
+*Transparency and truth, framed as opportunity rather than deficiency — colleges want to do this work and have
+not had the tools or the data visibility until now.* That last clause is a claim about **cause**, and it is
+credible precisely because these figures sat in an Access database until 2026-08-08. A backlog is evidence of a
+visibility gap closing, not indifference. `CREDIT_STATUS_RULE` encodes it: lead with the already-articulated
+block, state real numbers plainly, never a report card, and answer comparative questions as opportunities rather
+than a best-to-worst ranking.
+
+Live proof, from smoke 55 on San Diego Mesa:
+
+> **🟡 The Biggest Opportunity: Credit Ready to Act On** — 83,656 units recommended but not yet acted on… Of
+> that, **4,593 units are already articulated** — the agreement is already built, and all that's needed is a
+> decision to award it… **Note:** roughly 30% of recommendations reviewed system-wide are correctly ruled "Not
+> Applicable"… **🔑 Next Step:** Mesa's CPL contact is **Monica Romero**…
+
+### The mistake, twice, hours apart
+
+**Both guards I wrote fired on CORRECT behaviour**, and the second was written *after* diagnosing the first.
+
+1. The anon-key boundary check asserted `response == "[]"` and printed **`STUDENT GRAIN LEAKED to anon`** for a
+   PostgREST statement timeout (`57014`). Nothing leaked — it conflated "not the empty array" with "rows were
+   served."
+2. Then "tightening" the absent-college regex. One query before shipping: of the **17** institutions absent from
+   the disposition aggregate, exactly **one** has any exhibits at all. So for an absent college "zero" is
+   approximately **true**, and the wider pattern would have failed Sierra for being right. Reverted the same day.
+
+Durable: `methodology-a-guard-that-fails-on-truth-gets-muted`. The rule that would have caught both: *enumerate
+the response space and name what failure looks like positively; before widening a pattern, query which real cases
+it would newly catch.* Positive controls added — an expired anon key would otherwise make every gate assertion
+pass vacuously.
+
+### Numbers must be computed, and now carry their provenance
+
+Rolling totals up from the same four objects `college_goal2.js` reads (rather than pasting a headline into prompt
+text) immediately surfaced that the docs' figure was unsourceable: **docs said 1,052,531 / 64,074; the published
+table sums to 1,051,870 / 63,991**, because 13 of 111 cells carry NULL measures. The 🎓 tab had the same property
+all along.
+
+Sam's first ruling was published-everywhere; **on reflection he revised it to show BOTH with a suppression chip**
+— *13 of 111 colleges withheld, each under 10 students*. That is the better answer and the same pattern as the
+ceiling caveat. ⚠️ With one safety condition: showing both implicitly publishes their difference (661 units).
+Across 13 cells that identifies nobody; at **one** suppressed cell the difference *is* that college's figure.
+**Show both only while ≥3 cells are suppressed**, and re-check after every refresh.
+
+### Confirmed, not assumed: the CPL contacts
+
+Sam recalled assigning contacts to all remaining nulls. Measured: `map_users.js` → `FALLBACK_CONTACTS` holds all
+**71** looked-up colleges — **56 with a contact, 15 blank-with-a-finding**, 3 curator-supplied. But it is a
+**display-layer fallback, not a write to MAP** (read-only system of record), so `map_college_contacts` still shows
+Gavilan's `primary_contact` empty and 27 of 130 profiles have no `primary_contact_email`. Gavilan is the
+documented case: Jessica supplied it because gavilan.edu 403s programmatic fetches.
+
+Of the 15: 5 list individual counselors only, 6 are phone/form-only, **2 publish only a mental-health inbox**
+(Contra Costa `wellness@`, LA Harbor Life Skills Center) — the wrong door for a credit question — and 2 are
+specialized-only. Sam's call: use the settled counseling contacts as **temporary fills on the COBI side** so the
+MAP team can adopt them. Design: a dedicated **"Proposed for MAP"** column populating only where MAP is blank —
+never inside "Primary contact email", which means *what MAP holds*.
+
+### Next
+
+1. The proposed-fills build (above), with the **MAP-team queue designed in from the start**, not bolted on.
+2. The college action page — one page, pick college + role, briefing-first (never a blank chat box). ⭐ **Inbound
+   CPL requests outrank every stat**: colleges will start receiving them daily for the first time, and the 15
+   unroutable colleges become urgent. This also makes the nightly feed a **prerequisite**.
+3. `docs/map_custom_report_request_for_malone.md` is forwardable; blocked only on the view name.
