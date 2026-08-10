@@ -307,9 +307,38 @@ full replace, which is what the swap in SQL 5 does.
 
 ## The one trap that has already bitten
 
-**Supabase Studio's CSV importer silently duplicated 2,058 rows and reported
-success** on the last load — 222,646 staged from a 220,588-row file, each
-duplicate exactly 2×. It did not error. It did not warn.
+**Supabase Studio's CSV importer silently duplicates rows and reports success.**
+It does not error. It does not warn. And **the damage scales with file size** —
+measured twice now:
+
+| Attempt | Expected | Staged | Extra | Rate |
+|---|---:|---:|---:|---:|
+| 2026-08-08, 220,588-row file | 220,588 | 222,646 | **2,058** | 0.9% |
+| 2026-08-10, 537,908-row file | 537,908 | 546,197 | **8,289** | 1.5% |
+
+⚠️ **So DO NOT import 537,908 rows as one file.** Split it into 3–4 chunks of
+~150k. The count gate still applies — the total must equal your export's count
+once every chunk is in — and smaller files also fail faster when something is
+wrong, instead of after 30 minutes.
+
+⭐ **Better still, skip the browser importer.** `\copy` streams server-side, has
+no size limit and does not have this bug:
+
+```
+psql "postgresql://postgres:[PASSWORD]@db.hvuwhnbuahrtptokpqfh.supabase.co:5432/postgres" \
+  -c "\copy public.stg_student_credit FROM 'C:/path/to/export.csv' WITH (FORMAT csv, HEADER true)"
+```
+
+(Connection string: Supabase dashboard → Project Settings → Database → Connection
+string → URI. It contains the DB password — do not paste it into a chat or commit
+it.)
+
+⚠️ **2026-08-10, the other half of the same failure:** the file imported that day
+was the OLD 14-column export. Every column landed EXCEPT `source_row_id` and
+`credit_rec`, which were 0% present — a clean signature of importing a file with
+fewer columns than the staging table, since the importer maps by name and leaves
+the rest null. **Check `source_row_id_present > 0` before trusting a load**, not
+just the row count.
 
 That is why every step below goes through a **permissive staging table** and a
 **count check** before anything touches the real one. Do not import straight into
@@ -348,8 +377,16 @@ Supabase Studio → Table Editor → `stg_student_credit` → Import data from C
 ### The gate. Do not skip.
 
 ```sql
-select count(*) as staged from public.stg_student_credit;
+select count(*)                                       as staged,
+       count(*) filter (where source_row_id is not null) as source_row_id_present,
+       count(*) filter (where credit_rec    is not null) as credit_rec_present
+from public.stg_student_credit;
 ```
+
+⛔ **All three matter.** `staged` must equal your export's count, and both
+`*_present` figures must equal `staged`. A zero in either means you imported a
+file that lacks that column — which is how the 2026-08-10 attempt failed, with a
+plausible-looking row count and two silently absent columns.
 
 **`staged` must equal the row count your export tool reported.**
 
