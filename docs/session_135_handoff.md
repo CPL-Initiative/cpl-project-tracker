@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record]]"
   - "[[docs/kb-notes/methodology-emit-the-threshold-with-the-label-it-prints]]"
   - "[[docs/college_action_page_lessons]]"
+superseded: true
+superseded_by: session_137_handoff.md
 ---
 
 # You are Session 135

@@ -9,18 +9,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 450,
-    "bytes": 5300696,
+    "files": 451,
+    "bytes": 5284360,
     "over_budget": 6,
-    "handoff_max": 136,
+    "handoff_max": 137,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 107004,
-    "superseded_files": 1,
-    "superseded_bytes": 8332,
+    "always_loaded_bytes": 84449,
+    "superseded_files": 2,
+    "superseded_bytes": 15643,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 107004,
+        "bytes": 84449,
         "over": 1
       },
       "other": {
@@ -44,22 +44,21 @@
         "over": 0
       },
       "handoff": {
-        "files": 121,
-        "bytes": 957560,
+        "files": 122,
+        "bytes": 963779,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
-      "stacked_roadmap_cell": 1,
       "unindexed_kb_note": 11,
       "kb_note_dialect": 54,
-      "superseded_handoff": 1,
+      "superseded_handoff": 2,
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1804,
-      "bytes": 1079810020,
+      "files": 1805,
+      "bytes": 1079793684,
       "heavy_bytes": 581258916,
       "heavy_share": 0.538,
       "ignore_filters": [
@@ -114,43 +113,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 107004,
+        "bytes": 84449,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 47004,
-        "ratio": 1.78
+        "over_by": 24449,
+        "ratio": 1.41
       },
-      "message": "107,004 B is 1.8× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
-      "rule": "stacked_roadmap_cell",
-      "fixable": false,
-      "detail": {
-        "cells": [
-          {
-            "row": "Disposition grain / student detail",
-            "chars": 14338,
-            "priors": 3,
-            "corrections": 3
-          },
-          {
-            "row": "Sierra retrieval + corpus",
-            "chars": 8620,
-            "priors": 1,
-            "corrections": 0
-          },
-          {
-            "row": "College action page / MAP-team queue",
-            "chars": 5335,
-            "priors": 0,
-            "corrections": 0
-          }
-        ],
-        "cell_max": 4000,
-        "prior_max": 1
-      },
-      "message": "3 roadmap cell(s) have become append-only logs — worst is \"Disposition grain / student detail\" at 14,338 chars / 3 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
+      "message": "84,449 B is 1.4× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -938,11 +907,22 @@
       "fixable": true,
       "detail": {
         "session": 135,
-        "authoritative": 136,
+        "authoritative": 137,
         "has_frontmatter": true
       },
-      "message": "handoff 135 is below the authoritative 136 but is not stamped `superseded: true`",
+      "message": "handoff 135 is below the authoritative 137 but is not stamped `superseded: true`",
       "path": "docs/session_135_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 136,
+        "authoritative": 137,
+        "has_frontmatter": true
+      },
+      "message": "handoff 136 is below the authoritative 137 but is not stamped `superseded: true`",
+      "path": "docs/session_136_handoff.md"
     },
     {
       "rule": "vault_heavy_path",

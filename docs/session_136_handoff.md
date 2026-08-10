@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide]]"
   - "[[docs/kb-notes/reference-cpl-at-the-pre-apprenticeship-stage]]"
   - "[[docs/noncredit_cpl_thinking]]"
+superseded: true
+superseded_by: session_137_handoff.md
 ---
 
 # Session 136 handoff
