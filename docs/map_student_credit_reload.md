@@ -13,6 +13,30 @@ related:
 
 # Re-loading `map_student_credit` with its credit columns
 
+## Do this — the whole job in 9 steps
+
+Each step is one action. Copy-paste the SQL block named in it. **Steps 3 and 6
+are gates: if the number is wrong, stop and redo the import.** Everything below
+the horizontal rule is *why*; you don't need it to run this.
+
+| # | Do | Where |
+|---|---|---|
+| **1** | Export the 9 columns to CSV. **Write down the row count** your tool reports. | Access, your machine |
+| **2** | Run **SQL 1 — staging table**. | Supabase → SQL Editor |
+| **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ The number must equal step 1's count. If it doesn't: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
+| **4** | Run **SQL 3 — build the new table**. | SQL Editor |
+| **5** | Run **SQL 4 — verify**. | SQL Editor |
+| **6** | ⛔ Check: `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ 42,346**. If either is bigger, the load duplicated — go back to step 3. | read the output |
+| **7** | Run **SQL 5 — swap**. The live table is replaced here. | SQL Editor |
+| **8** | Run **SQL 6 — restore RLS**. ⚠️ Until this runs the 🎓 Course Credit tab is blank. | SQL Editor |
+| **9** | Open the 🎓 Course Credit tab and confirm it loads. Then run **SQL 7 — cleanup**. | dashboard, then SQL Editor |
+
+If anything looks wrong at step 5 or 6, **nothing has changed yet** — the live
+table isn't touched until step 7. Just drop `map_student_credit_v2` and start over.
+
+---
+
+
 **Who runs this:** Sam, on his machine + Supabase Studio. A session cannot — the
 51 MB export can't reach one, and the sandbox can't reach `*.supabase.co`.
 
@@ -86,7 +110,7 @@ That is why every step below goes through a **permissive staging table** and a
 
 ---
 
-## Step 1 — staging table (permissive on purpose)
+## SQL 1 — staging table
 
 Everything is `text`, nothing is constrained. A staging table that rejects rows
 hides exactly the problem you are staging to find.
@@ -108,11 +132,11 @@ alter table public.stg_student_credit enable row level security;
 -- No policies at all: service role only. Staging must never be readable.
 ```
 
-## Step 2 — import the CSV into `stg_student_credit`
+## SQL 2 — count check (after importing the CSV)
 
 Supabase Studio → Table Editor → `stg_student_credit` → Import data from CSV.
 
-## Step 3 — the gate. Do not skip.
+### The gate. Do not skip.
 
 ```sql
 select count(*) as staged from public.stg_student_credit;
@@ -126,7 +150,7 @@ select count(*) as staged from public.stg_student_credit;
   the source and an importer artefact are indistinguishable afterwards.
 - **Lower** → the import was truncated or a row broke the parse. Re-import.
 
-## Step 4 — build the new table beside the live one
+## SQL 3 — build the new table beside the live one
 
 Building `_v2` rather than altering in place means the 🎓 Course Credit tab and
 Sierra keep serving the whole time, and a bad load is thrown away rather than
@@ -164,7 +188,7 @@ where nullif(btrim(student_key), '') is not null;
 `SELECT DISTINCT` is the second line of defence, not the first — step 3 is the
 first. Both, always.
 
-## Step 5 — verify before you swap
+## SQL 4 — verify before you swap
 
 ```sql
 select
@@ -196,7 +220,7 @@ authoritative check is the row and student counts, not the sums.** If the sums
 are wildly off — an order of magnitude — something mapped to the wrong column;
 check that `applied_credits` didn't pick up `potential_credits`.
 
-## Step 6 — swap, in one transaction
+## SQL 5 — swap, in one transaction
 
 ```sql
 begin;
@@ -205,7 +229,7 @@ begin;
 commit;
 ```
 
-## Step 7 — restore RLS. **This is the step that must not be forgotten.**
+## SQL 6 — restore RLS. **The step that must not be forgotten.**
 
 The new table has **no policies**, so it is unreadable — which fails safe, but
 the 🎓 tab will go blank until this runs. Re-apply the same gate the old table
@@ -232,7 +256,7 @@ from pg_policy where polrelid = 'public.map_student_credit_old'::regclass;
 `SELECT / {public} / USING (true)` — world-readable. Following it here would
 publish student grain to anon.
 
-## Step 8 — clean up, once the 🎓 tab looks right
+## SQL 7 — clean up, once the 🎓 tab looks right
 
 ```sql
 drop table public.map_student_credit_old;
