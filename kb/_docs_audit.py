@@ -239,12 +239,32 @@ def find_handoff_max(docs):
     return max(ns) if ns else None
 
 
-def rule_superseded_handoff(entry, handoff_max):
+def rule_superseded_handoff(entry, handoff_max, authoritative_created=None):
+    """A lower-numbered handoff is superseded — UNLESS it is a parallel sibling.
+
+    ⚠️ FIXED 2026-08-10, same day the bug bit. The rule assumed handoffs form a
+    LINEAR CHAIN. They do not: Sam runs concurrent sessions, and on 2026-08-10 two
+    checkpointed independently — SkyDeck wrote 136 (the CAC apprenticeship deck),
+    SkyLine wrote 137 (Sierra + the corpus). `--apply` stamped 136 `superseded`,
+    which is simply false: 137 does not carry the deck workstream at all, and a
+    future session could reasonably skip a live document because of the stamp.
+
+    A mechanical rule silently discarding a still-current document is the exact
+    failure class this file was extended to catch, so it should not commit it.
+
+    Fix: handoffs created on the SAME DATE as the authoritative one are treated as
+    parallel siblings and left alone. Same-day is the available signal — sessions
+    do not record a parent — and it is conservative in the right direction: the
+    cost of not stamping a genuinely superseded sibling is one extra file in the
+    reading list, while the cost of stamping a live one is a lost workstream.
+    """
     if entry["lane"] != "handoff" or handoff_max is None:
         return None
     n = int(HANDOFF_RE.match(os.path.basename(entry["path"])).group(1))
     if n >= handoff_max:
         return None
+    if authoritative_created and entry["fm"].get("created") == authoritative_created:
+        return None   # parallel sibling, not superseded
     if str(entry["fm"].get("superseded", "")).lower() == "true":
         return None
     return {
@@ -723,9 +743,16 @@ def main():
         entries.append({"path": path, "rel": r, "lane": lane_of(r), "fm": fm,
                         "has_fm": has_fm, "bytes": len(text.encode("utf-8"))})
 
+    auth_created = None
+    for e in entries:
+        if e["lane"] == "handoff" and handoff_max is not None:
+            m = HANDOFF_RE.match(os.path.basename(e["path"]))
+            if m and int(m.group(1)) == handoff_max:
+                auth_created = e["fm"].get("created")
+
     findings = []
     for e in entries:
-        for f in (rule_superseded_handoff(e, handoff_max),
+        for f in (rule_superseded_handoff(e, handoff_max, auth_created),
                   rule_oversized_doc(e),
                   rule_kb_note_frontmatter(e),
                   rule_kb_note_dialect(e),
