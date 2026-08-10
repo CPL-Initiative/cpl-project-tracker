@@ -123,40 +123,41 @@ type returns 0 and reads as *"we do no apprenticeship CPL."* Apprenticeship cred
 is tracked as a **credit bucket**, not a category. This column is the only way to
 measure it.
 
-### Access queries to confirm the key (run these first)
+### ✅ The key question is SETTLED — do not run verification queries
 
-⚠️ **Access SQL view runs ONE statement at a time and rejects inline comments**
+**`StudentMAPID` is the student identifier.** Sam, 2026-08-10, unprompted and
+twice. He built the Access file; that is the authoritative answer and it needed no
+confirming.
+
+`TblSOURCE.Student` is a **constant** — a counter he added so he could take
+`MAX(Student) = 1` once per matching MAP Student ID. Measured: `COUNT(*)` over
+`SELECT Student ... GROUP BY Student` returns **1**, i.e. one distinct value in
+537,908 rows. It is meaningless as a key under any reading.
+
+⚠️ **A session asked him to run three queries to verify this after he had already
+stated it.** That is the failure the same day's Rule 8 change forbids — a
+human-sourced fact may not be second-guessed by a session's inference. If a
+curator states how their own data is built, that IS the finding. Record it and
+move on.
+
+<details>
+<summary>The queries, kept only in case the key layer is ever rebuilt</summary>
+
+⚠️ Access SQL view runs **ONE statement at a time and rejects inline comments**
 ("Invalid SQL query. Comments are only allowed at the beginning of the query").
-Paste one, run it, replace it with the next. The `AS T` aliases are there because
+⚠️ Jet SQL has **no `COUNT(DISTINCT)`** — hence the subquery form. `AS T` because
 Jet/ACE is inconsistent about requiring an alias on a derived table.
-
-⚠️ **Jet SQL has no `COUNT(DISTINCT)`** — hence the subquery form.
-
-```sql
-SELECT COUNT(*) AS distinct_student
-FROM (SELECT Student FROM TblSOURCE GROUP BY Student) AS T;
-```
 
 ```sql
 SELECT COUNT(*) AS distinct_mapid
 FROM (SELECT StudentMAPID FROM TblSOURCE GROUP BY StudentMAPID) AS T;
 ```
 
-```sql
-SELECT COUNT(*) AS students_with_multiple_mapids
-FROM (SELECT Student
-      FROM (SELECT Student, StudentMAPID FROM TblSOURCE GROUP BY Student, StudentMAPID) AS P
-      GROUP BY Student
-      HAVING COUNT(*) > 1) AS T;
-```
+Expect **≈ 42,345**, matching what `funding/_student_detail_local.py` measured
+independently from `InternalMAPStudentID` — which is what confirms the live
+`student_key` (1…42,346) is correctly derived and that **42,346 counts people**.
 
-**Reading the answers**
-
-- `distinct_mapid` **≈ 42,345** confirms the live `student_key` is correctly derived
-  from `StudentMAPID`, so the published **42,346 counts people**.
-- `students_with_multiple_mapids` **large** confirms `Student` groups rows and must
-  never be exported as the key (Sam, 2026-08-10: *"Student is a grouping counter"*).
-- `students_with_multiple_mapids` **= 0** would mean the two are 1:1.
+</details>
 
 ### ⚠️ The person key is NOT `TblSOURCE.Student`
 
