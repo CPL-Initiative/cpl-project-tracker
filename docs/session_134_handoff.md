@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass]]"
   - "[[docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault]]"
   - "[[docs/kb-notes/methodology-the-plausible-cause-is-not-the-measured-one]]"
+superseded: true
+superseded_by: session_135_handoff.md
 ---
 
 # You are Session 134
