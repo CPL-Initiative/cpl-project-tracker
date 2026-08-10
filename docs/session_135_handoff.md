@@ -1,95 +1,159 @@
 ---
-title: Session 135 handoff (SkyDeck → next) — the CAC deck is built and scripted; two unit totals are still unreconciled
+title: Session 135 handoff (SkyLine → next) — the naming layer was already built; wire CRED·STD into cpl-chat
 created: 2026-08-10
 updated: 2026-08-10
-tags: [handoff, presentations, apprenticeship, cac, pre-apprenticeship, pptx]
+tags: [handoff, sierra, retrieval, credentials, naming, routing, privacy]
 related:
-  - "[[docs/cpl_presentations_lessons]]"
-  - "[[docs/kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide]]"
-  - "[[docs/kb-notes/reference-cpl-at-the-pre-apprenticeship-stage]]"
-  - "[[docs/noncredit_cpl_thinking]]"
+  - "[[docs/sierra_credential_naming_lessons]]"
+  - "[[docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record]]"
+  - "[[docs/kb-notes/methodology-emit-the-threshold-with-the-label-it-prints]]"
+  - "[[docs/college_action_page_lessons]]"
 ---
 
-# Session 135 handoff
+# You are Session 135
 
-You are **Session 135**. Session 134 went by **SkyDeck** — claim your own moniker or take one from
-the Sky\* family (SkyDeck, Sky, SkyHigh, SkyMind, SkyDesk, SkyGauge, SkyNaut are taken).
+Session 134 ran as **SkyLine** (Sam named it at greeting). Four PRs merged,
+#1091–#1094. Sam was live in the session throughout and made three explicit
+calls — they are recorded below and are **decisions, not suggestions**.
 
-## What shipped (2026-08-10, no PR — deliverables went to Sam directly)
+⚠️ A second session was started for an **apprenticeship PPT** around 15:00 UTC.
+Check `main` before assuming anything here is the latest.
 
-A rebuild of the three pathway slides in the **CAC deck** for the **13 August California
-Apprenticeship Council** meeting (audience: trade reps, employers, CCC/state staff, **DAS**),
-plus a full speaker script. Presented by **Crystal Nasio**, who owns slides 5→end.
+## Read first, in order
 
-- **3 slides → 6.** A shared spine slide ("One road. Every trade.") with a 120-unit credit ladder,
-  three trade slides (Carpentry · Ironworkers · Fire/Cal JAC) each built in **3 clicks**
-  (*the road → who does what → what it's worth*), and two appendix crosswalk slides.
-- Native `python-pptx` shapes on the deck's own master; the three originals kept as **hidden**
-  slides at the end. Click-build animation injected as `<p:timing>` XML.
-- **Speaker notes on all 15 visible slides** + a two-page printable run sheet.
-  **13:00 of script inside the 15:00 slot.**
-- Build assets committed to `presentations/cac_2026-08/`. **The decks themselves are not
-  committed** — 27 MB each (the source embeds a 23 MB MP4) and this repo lives inside the vault.
+1. This file.
+2. `docs/sierra_credential_naming_lessons.md` § 2026-08-10 — the story, including
+   both premises that turned out wrong.
+3. `docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md`
+   — **before you touch any ranking code.**
+4. `kb/supabase_chatbox_credentials.sql` — the route contract, with the reasoning
+   for each decision in comments.
 
-## Read these, in order
+## 🎯 PRIORITY 1 — wire CRED·STD into `cpl-chat`
 
-1. [`docs/cpl_presentations_lessons.md`](cpl_presentations_lessons.md) — the 2026-08-10 section.
-2. [`docs/kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md`](kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md)
-3. [`docs/kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md`](kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md)
-4. `presentations/cac_2026-08/README.md` — what's there and what deliberately isn't.
+Everything below it is built, probed and committed. **Nothing is user-visible
+yet.** The remaining work is: call `search_statewide_recommendations()` from the
+edge function, add the answer skeleton, and commit the route assertion.
 
-## ⚠ Carryover — the three things that need a human
+The two functions are live in Supabase and version-controlled:
 
-1. **Two unit totals do not reconcile, and they are printed on the appendix slides.**
-   Carpentry's visible course list totals **20.0 units** against **26** cited; Cerritos totals
-   **31.5** against **38**. American River reconciles exactly at **29.5**. The cause is that the
-   original graphics **clipped their own tables** at the slide edge. The missing rows must come
-   from Santiago Canyon College and Cerritos College. Until then the caveat stays printed.
-2. **The 44% apprentice-withdrawal figure is not ours.** "44% of California apprentices withdraw
-   before completion (DAS, 2000–2026)" reaches us through a CTE policy source citing DAS — and
-   **DAS is in the room on the 13th**. It is flagged three times in the pack as *attribute, don't
-   assert*. If someone confirms it with DAS, record the confirmation.
-3. **Apprentice headcount drift.** Live dashboard says **589**; the 2026 Initiative Report says
-   692; the noncredit thinking doc says 755. The pack uses 589 (live). Worth understanding why
-   the number moved down while total CPL students moved up — possible reclassification.
+```sql
+search_statewide_recommendations(asked, limit)  -- statewide only; 0 rows = none exist
+search_credentials_any(asked, limit)            -- the honest fallback
+```
 
-## Open questions Sam may come back on
+Verified live: `post` → POST Basic Academy · `peace officer` → POST (not
+Correctional Officer) · `police academy certificate` → POST **with no "POST" in
+the ask** · `real estate salesperson` → CA Real Estate Salesperson License ·
+`cpr` → **none**, fallback names *First Aid, CPR & AED [local only]* ·
+`basket weaving` → none → not in catalogue.
 
-- Does the **spine slide** stay? It is an addition, not a rebuild — he has not ruled on it.
-- Does **pre-apprenticeship deserve its own slide** now that the three mechanisms are named?
-- Crystal may edit slides. **The notes reference slide positions and click counts** — if she
-  reorders, the timing ladder needs re-checking.
+⚠️ **Deploying `cpl-chat` reaches production with no staging tier.** Deploy from
+the runner (`cpl-chat-deploy.yml`), never by hand — `--no-verify-jwt` is pinned
+there and forgetting it breaks the v25 invariant.
 
-## Priority workstreams (unchanged by this run)
+## ✅ What shipped
 
-This was a self-contained deliverable. The standing queue is in `CLAUDE.md` §11 — the college
-briefing page, the MAP-team inbox, the nightly feed ask to Malone
-(`docs/map_dataset_sql_for_malone.md`), and the NC/Learning-Partner next steps (populate the four
-standalone NC institutions, still at zero).
+| PR | What |
+|---|---|
+| #1091 | Suppression floor **k=5 → 10**; mask now derived from an emitted value |
+| #1092 | `chatbox_credentials` — **1,987 rows live**, 0 suppressed counts leaked |
+| #1093 | Fixed the one test the floor change broke |
+| #1094 | CRED·STD retrieval functions, version-controlled |
 
-**The NC row moved slightly**: pre-apprenticeship CPL now has a named mechanism set, and
-mechanism 1 is *noncredit coursework* — which sharpens "the four standalone NC institutions are at
-zero" from a tidiness problem into a pathway gap.
+## ⭐ The finding that reframes the workstream
+
+**The naming layer was already built.** `kb/unified_titles.json` (3,813 variants →
+1,987 canonical) → `credential_reference_data.js`, curated by `map@rccd.edu`. POST
+folds **16** freehand titles and knows **32 adopters vs 71 potential, zero
+overlap**. It had simply never reached the database Sierra queries. **A publish
+step, not a build** — the third session running where the best catch came from
+reading a committed artefact rather than generating a new one. Check the repo
+first.
+
+## ⚠️ Two things that will mislead you if you skip them
+
+**1. Sam's student measures are NOT computable today.** He defined them precisely:
+*students served* = distinct student records (**42,346**, fine); *applied* =
+distinct records where **Applied Credits > 0**; *transcribed* = **Transcribed
+Credits > 0**. But `map_student_credit` has **five columns** and **the four credit
+columns were dropped at load**; `map_college_cr_unit` has the amounts and **no
+`student_key`**. The join does not exist. Fix = **re-load with those columns**
+(his 29-col export carries them). Do not substitute `course_type <> ''`
+(**39,712**) — that is *"something was awarded"*, a different question.
+
+**2. Exhibit-grain student counts are mostly unnameable.** Only **6.1%** of
+220,588 rows. Student grain is **ACE** military ids plus 32,360 `Default *`
+sentinels; Sierra's catalogue is `MAPICI-*`; overlap **624 of 6,280**. Control:
+CPR/AED is **17,904** students locally and **17** through the obvious join.
+
+## Sam's three calls (decisions)
+
+1. **k=10 everywhere a public surface can reach a headcount.** Suppress the
+   **cell**; compute **totals from actuals**; publish the total when it clears the
+   floor. `funding/_build_cr_backlog.py` already did exactly this, including
+   complementary suppression — keep that.
+2. **"Students served" = distinct student records in MAP**, regardless of other
+   factors. The other two measures are the Applied>0 / Transcribed>0 splits above.
+3. **Adopter-vs-potential wording**, verbatim: *"I recommend you go to the Mt. SAC
+   CPL Landing Page and use the Request Review button to submit a request for the
+   college to consider approving POST credit. You may also visit
+   CreditforBeingYou.org and create a CPL portfolio to see all options
+   statewide."* ⭐ This dissolves the poaching tension — route the seeker to
+   **their own college's** Request Review, not to a rival. Use it in COLLEGE·CRED.
+
+## The route map (Sam: "work through the router list systematically")
+
+Nine routes, four families. **Six are served by the naming layer alone**, so the
+router and the layer are the same work. Order: **CRED·STD** (done, unwired) →
+**CRED·ADOPT** → **COLLEGE·CRED** (carries call 3) → the rest. `CRED·VOLUME` waits
+on the re-load.
+
+Per route: write the contract → answer POST **and a second credential** by hand
+from live data (Real Estate is the honest control — a fix validated only on its
+motivating example tends to be shaped like it) → **commit the assertion before
+touching prompt text.**
+
+⭐ **A route's purpose changes its ranking.** Not one function with per-route
+filters — the ordering itself is route-specific. And a router's own failure mode
+is **misrouting**: a route must never be the only path, so low confidence falls
+back to general retrieval.
 
 ## Patterns that worked
 
-- **Open the file before believing the request.** Sam asked for a styling fix; the slides were
-  screenshots that were also truncating data. Ten minutes of `python-pptx` + PIL changed the job.
-- **Re-key a flattened graphic, then check its arithmetic against its own stated totals.** That is
-  what surfaced both defects. Nothing else would have.
-- **The curator's domain knowledge outranked the inference.** The draft pre-apprenticeship section
-  led with credit-by-exam; Sam's three mechanisms replaced it. Recorded with attribution and date.
-- **Verify the environment before blaming the file.** `soffice --convert-to pdf` failed on a
-  trivial probe deck too — Impress simply wasn't installed.
+- **Probe with real phrasings, then verify the probe.** Three of my design
+  decisions were wrong and only testing found them. One *apparent* fourth defect
+  was an artefact of my own `string_agg` — the function was right. Verify the
+  probe before fixing what it accuses.
+- **Measure the constant, don't pick it.** The tier-4 floor is 0.25 because 0.098
+  (wrong) and 0.727/0.711 (right) leave open space there.
+- **Positive controls.** POST must carry a variant with **no "POST" substring";
+  the suppression guard was verified by re-inlining a literal and watching it go
+  red.
 
 ## Safety patterns to honour
 
-- **Live-data rule is mandatory.** Every number in the pack was pulled from `live_metrics.json` /
-  `fact_sheet_metrics.json` at 2026-08-10 13:50 UTC, and each carries its source and as-of date in
-  the notes. Do not cite skill-file snapshots.
-- **Naming:** "CPL Initiative", "MAP platform". Never "MAP Initiative". "Military Articulation
-  Platform" is 2017 history only.
-- **Mark what you could not verify** rather than smoothing it. Three flags in this pack exist for
-  exactly that reason.
-- **Sam runs concurrent sessions.** One was on the Sierra college-briefing tab during this run.
-  Ask before touching shared surfaces.
+- Aggregates only — never route per-student rows through a session's context.
+- Sandbox cannot reach `*.supabase.co`; all Supabase access via MCP. Sessions are
+  also **egress-blocked from college domains**.
+- Never commit a MAP export — this repo is public.
+- Merge on `clean` OR `unstable`; never force-push `main`.
+- Rule 4: `CPL_Dashboard.html` ≡ `index.html`. Static JS needs no mirror.
+- ⚠️ **The Bash cwd resets to `/home/user`** mid-session — `cd` in the same
+  command. And `git reset --hard` after a squash-merge discards uncommitted work;
+  the branch auto-deletes at merge, so rebuild from `origin/main`.
+
+## Carryover
+
+| # | Item | State |
+|---|---|---|
+| 1 | Wire CRED·STD into `cpl-chat` + assertion | **next** |
+| 2 | Re-load `map_student_credit` with 4 credit columns | blocks CRED·VOLUME |
+| 3 | **L3 credential families don't exist** — grow from `kb/occupation_credential_map.json` | blocks CRED·VOLUME/SEEKER·ROUTE |
+| 4 | `docs/INDEX.md` **4.36× budget**, `roadmap_archive.md` 2.33× | lint, untouched |
+| 5 | `linkDistance: 250` in `CPLBrain/.obsidian/graph.json` | from S134, still live |
+| 6 | MAP has **no "Apprenticeship" CPL type** — filters return 0, reads as "we do none" | tell anyone doing apprenticeship work |
+
+## Moniker
+
+**SkyRoute** fits what you're inheriting — but take whatever Sam offers at greeting.

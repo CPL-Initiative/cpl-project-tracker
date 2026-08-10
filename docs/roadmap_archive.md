@@ -3716,6 +3716,28 @@ to the `ON CONFLICT` clause, the proxy-instead-of-property mistake committed wit
 Durable: `methodology-a-written-backlog-decays-silently`, `methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow`.
 Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handoff.md`.
 
+## Archived session narratives
+
+### Sky -- the vault was never slow, and five diagnoses needed correcting (2026-08-09, #1071-#1083 MERGED)
+
+Sam asked which of ten "Claude + Obsidian memory" repos to adopt. Answer: **one** (kepano's skills, now
+committed to BOTH repos so remote sessions and the team get them -- a laptop install reaches neither).
+The real finding: eight of ten solve *retrieval*; this corpus's problem is **accretion**. Shipped
+`kb/_docs_audit.py`, the docs **lint** pass, as step 0 of `/checkpoint` -- `superseded_handoff`,
+`frontmatter_log_chain` and `kb_note_frontmatter` all now **0**. Vault clone **1,037 MB -> 10.2 MB**
+via a docs-only sparse checkout; sync now hourly with **no console window** (an S4U principal --
+`-WindowStyle Hidden` was never the fix). COG skills **22 -> 16** (8 structurally unable to run: every
+integration Disabled in `MY-INTEGRATIONS.md`); kept `daily-brief`/`weekly-checkin`/`onboarding` because
+**broken != unused**. + **The vault was never slow -- GRAPH VIEW was blank, for two weeks, unreported.**
+And the SIZE fixed it, not the `linkDistance: 250` I blamed: 418 MB of `row_audit` MARKDOWN loading into
+the metadata cache. **`linkDistance: 250` is still live** (default 30) -- next session's cheapest win.
+**Three bugs surfaced only on Sam's hardware**: a missing `/scripts/` sparse pattern that would have
+deleted the Task Scheduler's own target and silently killed vault sync, a 60-second silent hang, and em
+dashes that made all three `.ps1` unparseable under PowerShell 5.1 (ASCII guard now committed). Durable:
+`methodology-a-knowledge-base-needs-a-lint-pass`, `playbook-keep-build-artifacts-out-of-the-vault`,
+`methodology-the-plausible-cause-is-not-the-measured-one`.
+Story: `docs/vault_sync_lessons.md` - handoff `docs/session_134_handoff.md`.
+
 ---
 
 ### SkyHigh — the sweep method is gone, and the action library was already written (2026-08-09, #1078 MERGED)

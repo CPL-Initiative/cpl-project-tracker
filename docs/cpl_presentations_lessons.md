@@ -138,3 +138,12 @@ import doesn't work here.
 **Next.** Crystal owns slides 5→end. Open: the two unit totals; whether the spine slide stays; and
 whether pre-apprenticeship deserves its own slide now that the mechanisms are named. Build assets:
 `presentations/cac_2026-08/` (decks not committed — 27 MB each, vault weight).
+
+**⚠ Concurrency footnote.** A second session (**SkyLine**, Sierra credential naming) ran in
+parallel and both of us wrote `docs/session_135_handoff.md`. Theirs landed first, so this lane's
+handoff was resequenced to **136**. The docs auditor's R1 rule then stamped SkyLine's 135
+`superseded_by: session_136` — **false, and reverted**: R1 assumes handoffs are a total order, which
+concurrency breaks. `superseded_handoff: 1` is now a known standing finding rather than a false
+stamp. Sam had flagged the concurrent session at the start; the collision still landed in six files
+(`CLAUDE.md`, `roadmap_archive`, `INDEX`, `cpl_todos.json`, the handoff, the audit artifacts) —
+worth knowing that "it shouldn't collide" and "it didn't collide" are different claims.

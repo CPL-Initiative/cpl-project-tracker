@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-10 · SkyDeck — the three \"busy\" CAC slides turned out to be screenshots, and they were quietly cutting off their own course lists.",
- "_session": "SkyDeck (134)",
- "_status": "The CAC apprenticeship deck is rebuilt and scripted, ready for the 13th. The three pathway slides were not really a design problem — each one was a single flat picture, so none of the text could be edited, searched or read aloud by a screen reader, and the course tables inside them ran off the bottom of the slide where nobody could see them. They are now built properly out of real shapes, in the deck's own fonts and colours, and each one reveals itself in three clicks: the road, then who does what, then what it is worth. The long course lists moved to two appendix pages where they fit. Crystal has a script for every slide and a printed run sheet, timed to thirteen minutes inside the fifteen-minute slot, with every figure pulled fresh from the dashboard this morning. Two things need a person before the meeting: two of the course lists do not add up to the unit totals printed beside them (because of that clipping), and one striking statistic about apprentices dropping out did not come from us — and the agency it is attributed to will be sitting in the room. Everything else on this list is unchanged from yesterday.",
+ "_as_of": "2026-08-10 · SkyDeck + SkyLine — two sessions ran today: the CAC apprenticeship deck was rebuilt and scripted, and Sierra finally got a canonical list of credential names.",
+ "_session": "SkyDeck (134) + SkyLine (134)",
+ "_status": "Two sessions ran in parallel today. SkyLine worked on Sierra: it turns out the tidy list of credential names we needed had already been curated months ago and simply never reached the database Sierra reads, so asking it about POST returned 20 colleges instead of the 32 we actually know about. That list is now published. SkyDeck rebuilt the three apprenticeship pathway slides for the Apprenticeship Council meeting on the 13th. Those slides were not really a design problem - each was a single flat picture, so none of the text could be edited or read aloud by a screen reader, and the course tables inside them ran off the bottom of the slide where nobody could see them. They are rebuilt properly now, revealing themselves in three clicks, with a script and a printed run sheet timed to thirteen minutes. Two things need a person before the meeting, and they are the first two items below.",
  "items": [
   {
    "id": "s134-cac-units",
@@ -21,12 +21,6 @@
    "for": "Sam",
    "tab": "MAP Users",
    "text": "Five colleges now have a suggested counselling address, but nobody has been able to open their web pages to check it — the network blocks them from here. Each needs about ten seconds in a browser to confirm. Start with Palomar, which runs a separate behavioural-health department that must not be the one we use, and College of the Canyons, where we found nothing usable at all."
-  },
-  {
-   "id": "s132-scenario-year",
-   "for": "Sam",
-   "tab": "Implementation Funding",
-   "text": "Two decisions before the college page can be built: which funding scenario should colleges see (there are two, with different percentages AND different advice), and which year. Year 2 currently has no advice written against it at all, so only Year 1 works today."
   },
   {
    "id": "s131-sierra-23",
@@ -59,22 +53,10 @@
    "text": "The college contact-refresh cadence was decided in June and still has not run once. Owners are all assigned now, so this is the one governance item with nothing behind it."
   },
   {
-   "id": "s131-college-page",
-   "for": "Fable",
-   "tab": "—",
-   "text": "Build the college-facing briefing on the same engine as the queue — a college picks itself and a role and gets a rendered briefing, never a blank chat box."
-  },
-  {
    "id": "s132-sweep-52",
    "for": "Sam",
    "tab": "MAP Users",
    "text": "The fifty-two colleges that do have a CPL Assistant were never checked for a student contact, and that check can no longer be done by a session — the college websites are unreachable from here. Decide who does it: a person, or a differently-configured automated run."
-  },
-  {
-   "id": "s132-briefing-build",
-   "for": "Fable",
-   "tab": "—",
-   "text": "Build the college briefing against the live funding settings, not the copy baked into the code — they disagree. Reuse the queue's existing ranking engine rather than writing a second one."
   },
   {
    "id": "s133-graph-linkdistance",
@@ -87,6 +69,24 @@
    "for": "Sam",
    "tab": "(GitHub)",
    "text": "In the CPLBrain repo: Settings, then General, then tick 'Automatically delete head branches'. It is the same setting already on the project tracker. Without it, finished branches linger and every Claude session gets a false 'you have unpushed work' warning that costs a few minutes to disprove. One click, permanent."
+  },
+  {
+   "id": "s134-wire-credstd",
+   "for": "Fable",
+   "tab": "Sierra Training",
+   "text": "Sierra can now look a credential up by its proper name, but she is not using it yet. The lookup is built and tested; the last step is connecting it to the chat itself so a question like 'what is the statewide recommendation for POST?' gets the real answer. Nothing changes for anyone until that connection is made."
+  },
+  {
+   "id": "s134-reload-credits",
+   "for": "Fable",
+   "tab": "Course Credit",
+   "text": "Reload the student credit table with its four credit columns. They were dropped when the table was first loaded, which is why we cannot yet answer 'how many students have applied credit for X'. Sam's own export already has the columns, so this is a reload, not a new request to anyone."
+  },
+  {
+   "id": "s134-apprenticeship-type",
+   "for": "Sam",
+   "tab": "Credential Reference",
+   "text": "Worth knowing before any apprenticeship presentation: MAP has no 'Apprenticeship' category for CPL. There are only six - Credit By Exam, Industry Certification, Portfolio Review, Standardized Assessment, Military, Other. So any count filtered on apprenticeship comes back zero, which reads as 'we do none' when the truth is that MAP files it under Industry Certification or Portfolio Review."
   }
  ]
 }

@@ -806,6 +806,113 @@ function fmtN(n: any): string {
   return Math.round(n).toLocaleString("en-US");
 }
 
+/**
+ * Route CRED-STD — the ASCCC statewide credit recommendation for a credential.
+ *
+ * Sierra's only credential source used to be chatbox_exhibits: the RAW freehand
+ * titles colleges typed into MAP. Asked "what colleges articulate POST?" it
+ * matched the literal string and found 20 colleges; the curated canonical record
+ * folds 16 variants — including "Peace Officer Standardized Training Academy",
+ * which contains no "POST" — and knows 32 adopters. chatbox_credentials is that
+ * record, and search_statewide_recommendations() is its CRED-STD lens.
+ *
+ * TWO-WORD PAIRS ARE ESSENTIAL, not a nicety. Credential names are overwhelmingly
+ * multi-word ("peace officer", "real estate", "medical assistant") and the single
+ * tokens are useless on their own — "peace" and "officer" separately match
+ * nothing a person meant. We probe pairs FIRST for that reason.
+ */
+async function fetchStatewideRecommendations(query: string, sb: any): Promise<any[] | null> {
+  const kws = extractTopicKeywords(query);
+  if (kws.length === 0) return null;
+
+  // Adjacent pairs first (longest, most specific), then singles. Capped so a
+  // rambling question cannot fan out into a dozen round-trips.
+  const probes: string[] = [];
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+
+  const byTitle = new Map<string, any>();
+  for (const asked of probes.slice(0, 8)) {
+    const { data, error } = await sb.rpc("search_statewide_recommendations", {
+      asked, result_limit: 4,
+    });
+    if (error || !data) continue;
+    for (const r of data) {
+      const prev = byTitle.get(r.unified_title);
+      // Keep the STRONGEST evidence across probes: a pair matching at tier 3
+      // beats a single token matching at tier 4 for the same credential.
+      if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, { ...r, asked });
+    }
+  }
+  if (byTitle.size === 0) return null;
+  return [...byTitle.values()]
+    .sort((a, b) => a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
+    .slice(0, 5);
+}
+
+/**
+ * The honest fallback. Zero statewide hits is a RESULT, not a failure: it means
+ * ASCCC has not adopted a statewide recommendation for that credential. Saying
+ * whether the credential exists LOCALLY is what turns "I don't know" into
+ * something useful — and it is what stops the model reaching for a neighbouring
+ * credential to avoid an empty answer.
+ */
+async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null> {
+  const kws = extractTopicKeywords(query);
+  if (kws.length === 0) return null;
+  const probes: string[] = [];
+  for (let i = 0; i < kws.length - 1 && probes.length < 3; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (const k of kws.slice(0, 3)) if (!probes.includes(k)) probes.push(k);
+
+  const byTitle = new Map<string, any>();
+  for (const asked of probes.slice(0, 6)) {
+    const { data, error } = await sb.rpc("search_credentials_any", { asked, result_limit: 3 });
+    if (error || !data) continue;
+    for (const r of data) {
+      const prev = byTitle.get(r.unified_title);
+      if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
+    }
+  }
+  if (byTitle.size === 0) return null;
+  return [...byTitle.values()]
+    .sort((a, b) => a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
+    .slice(0, 4);
+}
+
+function buildCredentialContext(statewide: any[] | null, any_: any[] | null): string {
+  if ((!statewide || statewide.length === 0) && (!any_ || any_.length === 0)) return "";
+  let out = `\n\n--- CANONICAL CREDENTIAL RECORD (curated names, not the freehand titles colleges typed) ---\n`;
+
+  if (statewide && statewide.length > 0) {
+    out += `STATEWIDE credit recommendations (ASCCC Pathways to Credit) matching this question:\n`;
+    for (const r of statewide) {
+      out += `- ${r.unified_title}`;
+      if (r.issuer) out += ` (issued by ${r.issuer})`;
+      out += `\n  Statewide recommendation: ${r.ccc_rec}\n`;
+      out += `  Colleges that have ADOPTED it: ${r.n_adopters}\n`;
+      if (r.matched_via && r.matched_via !== r.unified_title) {
+        out += `  (matched on the college-entered variant "${r.matched_via}")\n`;
+      }
+    }
+    out += `A statewide recommendation is a system-wide standard. Any college can adopt it; `
+        + `the adopter count is how many already have, NOT a limit on where it is available.\n`;
+  } else {
+    out += `NO STATEWIDE RECOMMENDATION matches this question. Say that plainly — do NOT `
+        + `substitute a different credential that happens to look similar.\n`;
+  }
+
+  if (any_ && any_.length > 0) {
+    const locals = any_.filter((r) => !r.statewide);
+    if (locals.length > 0) {
+      out += `\nIn the credential catalogue but NOT adopted statewide (local articulations only):\n`;
+      for (const r of locals) {
+        out += `- ${r.unified_title} — ${r.n_adopters} college(s) articulate it locally\n`;
+      }
+    }
+  }
+  return out;
+}
+
 function buildCreditContext(cs: any): string {
   if (!cs) return "";
   const s = cs.statewide;
@@ -1185,6 +1292,13 @@ THE RESTRAINT BINDS SALESMANSHIP, NOT FACTS. This is the tie-break whenever the 
 // resolution of the two is that we state every real number plainly and frame it
 // as an opportunity — we do not soften figures, and we do not editorialise them
 // into failures.
+const CREDENTIAL_RULE = `\n\nABOUT THE "CANONICAL CREDENTIAL RECORD" SECTION (if present) — USE IT AHEAD OF THE FREEHAND EXHIBIT TITLES:
+- These are CURATED credential names. Colleges type the same credential many different ways into MAP ("CA POST", "POST Academy prior Fall 2025", "Peace Officer Standardized Training Academy"), and this record folds those variants into one name. When both this section and the exhibit list are present, the credential NAME and the ADOPTER COUNT here are the accurate ones — a count taken from matching raw titles undercounts.
+- When asked what the STATEWIDE recommendation is for a credential, quote the "Statewide recommendation" line exactly as given (e.g. "3 hours in Criminal Investigation"). Never paraphrase it into a different number of units, and never present a locally-negotiated award as if it were the statewide standard.
+- If the section says NO STATEWIDE RECOMMENDATION matches, say exactly that. Then, if the credential appears under "local articulations only", say it exists and is articulated locally at some colleges but has not been adopted as a statewide standard. This is a genuinely useful answer and it is the TRUTH — a nearby-sounding credential is not a substitute, and offering one sends the person after something they did not ask about.
+- If the credential is in neither list, say we do not have it in the catalogue, and invite them to email MAP@rccd.edu so the gap is on record. Do NOT invent a credential, a recommendation, or a unit value to fill the silence.
+- Multiple entries mean the question was genuinely ambiguous (e.g. "peace officer" matches both the POST Basic Academy and the Correctional Officer Core Course). Name the options and let the person choose rather than silently picking one.`;
+
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
 This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
 
@@ -1221,7 +1335,8 @@ function buildSystemPrompt(
   offeringsContext: string = "",
   audienceRule: string = "",
   teamGuidance: string = "",
-  creditContext: string = ""
+  creditContext: string = "",
+  credentialContext: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -1291,7 +1406,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -1545,10 +1660,29 @@ Deno.serve(async (req: Request) => {
     const creditContext = buildCreditContext(
       shapeCreditStatus(creditData, singleProfile?.college || null));
 
+    // Route CRED-STD — the canonical credential record. Looked up on every
+    // question because a credential can be named in any of them, and the two
+    // RPCs are cheap indexed reads over 1,987 rows. The statewide lens runs
+    // first; the catalogue-wide lens only when it comes back empty, so the
+    // "no statewide recommendation, but it exists locally" answer is available
+    // without a second round-trip on the common path.
+    let credentialContext = "";
+    try {
+      const stdRecs = await fetchStatewideRecommendations(searchText, sb);
+      const anyCreds = stdRecs && stdRecs.length > 0
+        ? null
+        : await fetchAnyCredentials(searchText, sb);
+      credentialContext = buildCredentialContext(stdRecs, anyCreds);
+    } catch (e) {
+      // A credential lookup failing must never take the whole answer down —
+      // every other context section is still valid without it.
+      console.error("credential lookup failed:", e);
+    }
+
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
-      teamGuidance || "", creditContext);
+      teamGuidance || "", creditContext, credentialContext);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
