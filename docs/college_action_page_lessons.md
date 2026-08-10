@@ -364,3 +364,43 @@ unusually heavy per-exhibit load that is interesting independent of the naming.
 Note this is the mirror image of the mistake three paragraphs up: there I
 distrusted a correct figure, here a plausible identification is wrong. Both are
 resolved the same way — measure the scope, don't reason from the neighbourhood.
+
+
+### ⚠️ Unidentified entity 122 is INSIDE the published total (2026-08-09)
+
+Raised by Sam — *"One possibility is our sandbox location CA MAP Initiative, but
+that should be suppressed in reporting...sometimes slips through"* — and the
+check says the risk is real for exactly one entity.
+
+Of the five non-college entities in `map_college_credit_summary`:
+
+| id | Name | Suppressed | Students | Dormant |
+|---|---|---|---:|---:|
+| **122** | **(absent from `map_colleges`)** | **NO** | **117** | **417.00** |
+| 119 | San Diego CCE | yes | 4 | — |
+| 121 | North Orange CE | yes | 1 | — |
+| 131 | (absent) | yes | 3 | — |
+| 132 | Launch Apprenticeship | yes | 2 | — |
+
+**Four are suppressed by k=10 and contribute nothing. 122 is not, so its 417.00
+units are inside the published 1,051,870.** k-anonymity suppressed the small
+partners as a side effect of them being small — it is not an entity-type filter,
+and nothing else is filtering by type on that path.
+
+**Not the sandbox, probably:** `CA MAP INITIATIVE COLLEGE` is id **120**,
+classified `test`, and has **no credit data at all**. 117 students is also a lot
+for a sandbox. But "probably" is doing real work in that sentence, and the entity
+is unnamed.
+
+**Do not silently drop it.** 417 of 1,051,870 is 0.04% — immaterial to the
+headline, and removing it unilaterally would change a published number to fix a
+suspicion. The decision is Sam's, and the options are: (a) name 122 and classify
+it, which resolves the question outright; (b) filter the published aggregate to
+`entity_kind = 'college'`, which is what the *unsuppressed* figure already does
+and would make the two bases consistent; (c) accept it and note it.
+
+⭐ **The transferable point: k-anonymity is not a type filter.** Small non-college
+entities got excluded here by luck — they happened to be tiny. A large partner or
+a seeded sandbox would sail straight into a published college total. If the
+number means *colleges*, filter on **entity kind**, and let suppression do only
+the job it is for.
