@@ -118,7 +118,7 @@ One statement, no comments. `[Course Type]` and `[Catalog Year]` need the bracke
 (spaces in the names).
 
 ```sql
-SELECT k.student_key,
+SELECT k.StudentKey          AS student_key,
        s.CollegeID              AS college_id,
        s.ExhibitID              AS exhibit_id,
        s.[Course Type]          AS course_type,
@@ -136,8 +136,16 @@ FROM TblSOURCE AS s
 INNER JOIN tblStudentKey AS k ON s.StudentMAPID = k.StudentMAPID;
 ```
 
-⚠️ Adjust `tblStudentKey`'s column names if they differ — `StudentMAPID` and
-`student_key` are assumed here.
+✅ **`tblStudentKey` columns confirmed by Sam 2026-08-10: `StudentMAPID` and
+`StudentKey`** (note the casing — `StudentKey`, not `student_key`). It is a dense
+sequential surrogate ordered by MAP id: 39026→1, 39028→2, 39029→3, … running to
+42,346, which is exactly the distinct `StudentMAPID` count.
+
+⭐ **So the surrogate is stable, and the re-load preserves key continuity** as long
+as `tblStudentKey` has not been regenerated since the 2026-08-08 export — the same
+person keeps the same `student_key`. That is not required for the swap (SQL 5 is a
+full replace either way), but it means `new_students = 42,346` at step 6 confirms
+the join worked rather than merely counting rows.
 
 **Why straight off `TblSOURCE` and not the query that built the 5-column table:**
 that one is `DISTINCT`-collapsed (537,908 → 220,588). Adding credit columns to a
