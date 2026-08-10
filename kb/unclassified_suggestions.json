@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-04T09:13:46Z",
- "count": 59,
+ "_generated_at": "2026-08-10T13:52:34Z",
+ "count": 60,
  "suggestions": {
   "ARMEN 1: Beginning Armenian": [
    {
@@ -88,6 +88,16 @@
     "kind": "course",
     "title": "Introduction to the Biology of Humans",
     "code": "BIOL 55",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "BIOTECH 470": [
+   {
+    "kind": "course",
+    "title": "Capstone Seminar in Biomanufacturing Quality",
+    "code": "BIOTECH 470",
     "share": 1.0,
     "colleges": 2,
     "scoped": true

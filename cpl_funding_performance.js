@@ -9,13 +9,13 @@ window.CPL_FUNDING_PERF = {
  "suppress_below": 5,
  "statewide": {
   "pe": 41880,
-  "pa": 39176,
-  "p2": 3525,
-  "p3": 15374,
+  "pa": 39154,
+  "p2": 3528,
+  "p3": 15353,
   "pp": 5,
-  "pe_u": 1335779.45,
-  "pa_u": 215693.65,
-  "p3_u": 76237.45,
+  "pe_u": 1335788.45,
+  "pa_u": 215577.65,
+  "p3_u": 76177.45,
   "pp_u": 25.0
  },
  "colleges": {
@@ -65,9 +65,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 578,
-   "pe_u": 25280.5,
+   "pe_u": 25282.5,
    "pa": 571,
-   "pa_u": 8437.5,
+   "pa_u": 8439.5,
    "p2": 49,
    "p3": 50,
    "p3_u": 962.5,
@@ -76,9 +76,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Barstow": {
    "pe": 137,
-   "pe_u": 4904.0,
+   "pe_u": 4865.0,
    "pa": 137,
-   "pa_u": 1933.0,
+   "pa_u": 1894.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -348,12 +348,12 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "pe": 233,
-   "pe_u": 9064.0,
-   "pa": 231,
-   "pa_u": 693.0,
+   "pe_u": 9067.0,
+   "pa": 232,
+   "pa_u": 696.0,
    "p2": 0,
-   "p3": 25,
-   "p3_u": 75.0,
+   "p3": 26,
+   "p3_u": 78.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -520,8 +520,8 @@ window.CPL_FUNDING_PERF = {
   "LA Mission": {
    "pe": 153,
    "pe_u": 6818.0,
-   "pa": 153,
-   "pa_u": 946.0,
+   "pa": 152,
+   "pa_u": 940.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -530,12 +530,12 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Pierce": {
    "pe": 330,
-   "pe_u": 5880.0,
+   "pe_u": 5883.0,
    "pa": 296,
-   "pa_u": 1197.0,
-   "p2": 19,
+   "pa_u": 1209.0,
+   "p2": 20,
    "p3": 223,
-   "p3_u": 879.0,
+   "p3_u": 891.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -641,11 +641,11 @@ window.CPL_FUNDING_PERF = {
   "Merced": {
    "pe": 3342,
    "pe_u": 29408.5,
-   "pa": 3340,
-   "pa_u": 19650.0,
-   "p2": 1781,
-   "p3": 3303,
-   "p3_u": 19465.0,
+   "pa": 3318,
+   "pa_u": 19535.0,
+   "p2": 1780,
+   "p3": 3281,
+   "p3_u": 19350.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -774,12 +774,12 @@ window.CPL_FUNDING_PERF = {
   },
   "Norco College": {
    "pe": 720,
-   "pe_u": 24578.5,
+   "pe_u": 24618.5,
    "pa": 719,
-   "pa_u": 6147.5,
-   "p2": 150,
+   "pa_u": 6187.5,
+   "p2": 153,
    "p3": 438,
-   "p3_u": 3957.0,
+   "p3_u": 3997.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -919,7 +919,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 305,
    "pe_u": 9496.0,
    "pa": 300,
-   "pa_u": 2624.0,
+   "pa_u": 2611.0,
    "p2": 59,
    "p3": 87,
    "p3_u": 748.0,
@@ -1640,8 +1640,8 @@ window.CPL_FUNDING_PERF = {
   "East LA": {
    "Military": {
     "pe": 233,
-    "pa": 231,
-    "p3": 25
+    "pa": 232,
+    "p3": 26
    }
   },
   "El Camino": {
@@ -1861,8 +1861,8 @@ window.CPL_FUNDING_PERF = {
   "Merced": {
    "Credit By Exam": {
     "pe": 54,
-    "pa": 54,
-    "p3": 54
+    "pa": 32,
+    "p3": 32
    },
    "Credit By Exam | Industry Certification": {
     "pe": null,
@@ -2771,8 +2771,8 @@ window.CPL_FUNDING_PERF = {
  "cpl_types_statewide": {
   "Credit By Exam": {
    "pe": 9477,
-   "pa": 9137,
-   "p3": 8704
+   "pa": 9115,
+   "p3": 8682
   },
   "Credit By Exam | Industry Certification": {
    "pe": 44,
@@ -2882,8 +2882,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Military": {
    "pe": 26129,
-   "pa": 23956,
-   "p3": 2330
+   "pa": 23957,
+   "p3": 2331
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -2930,14 +2930,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1335302.95,
-   "pa_u": 215693.65,
-   "p3_u": 76237.45
+   "pe_u": 1335311.95,
+   "pa_u": 215577.65,
+   "p3_u": 76177.45
   },
   "map": {
-   "pe_u": 1342823.45,
-   "pa_u": 216363.15,
-   "p3_u": 76262.45
+   "pe_u": 1342832.45,
+   "pa_u": 216247.15,
+   "p3_u": 76202.45
   },
   "ratio": {
    "pe_u": 1.0056,
