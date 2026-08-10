@@ -71,3 +71,79 @@ Distilled, reusable version:
 Nothing pending unless Sam requests a follow-up (brief / photos / PDF, or the typo fix). This is a
 self-contained side-lane; the CCR mainline handoff + `cpl_todos.json` were intentionally left
 untouched.
+
+---
+
+## 2026-08-10 — SkyDeck: CAC apprenticeship-pathway slides + a 15-minute script
+
+**Ask.** Sam: the three pre-apprenticeship→baccalaureate pathway slides in the 2026-08-03 CAC deck
+are "busy," but they carry information that "clarifies for the first time how we can embed CPL on
+full pathways" — don't lose the impact. Audience: trade reps, employers, CCC/state, **DAS**, at the
+13 August California Apprenticeship Council. Later: add a speaker script for the 15-minute slot,
+which Crystal Nasio presents from slide 5 on.
+
+**The diagnosis changed the job.** All three slides were **single full-bleed PNGs** — every word
+pixels, nothing editable or accessible. And the course tables inside them **ran off the bottom edge
+of the slide**: rows below the fold were never visible to anyone, including whoever built them.
+Busyness was the symptom; reference data pasted into a narrative slide was the cause.
+
+**Shipped.** 3 slides → 6, native shapes on the deck's own master (Cambria/Calibri, CCC navy+gold,
+master logo and footer rule intact), stage colors sampled from the originals so it still reads as
+the same system:
+
+- a shared **spine** slide ("One road. Every trade.") carrying a 120-unit **credit ladder** — CPL
+  award 26–38 units of the 60 in the associate, which then satisfies the first 60 of the bachelor's;
+- three trade slides (Carpentry · Ironworkers · Fire/Cal JAC), each built in **3 clicks**:
+  *the road → who does what → what it's worth*;
+- two **appendix** crosswalk slides carrying the course tables as real, legible, un-clipped tables;
+- the three originals retained as **hidden** slides at the end.
+
+Ironworkers was normalised from the original's 1-2-2-3-4 numbering onto the same five stages and
+redrawn as two explicit lanes (American River 29.5 units · Cerritos 38), so each route reads
+straight across.
+
+**⭐ The transcription caught two real data defects.** Carpentry's visible courses total **20.0
+units** against **26** cited; Cerritos totals **31.5** against **38**. American River reconciles
+exactly at 29.5. Both gaps are the clipped rows. The appendix slides print the discrepancy as a
+caveat so a number can't be quoted without its flag — still open with Santiago Canyon and Cerritos.
+
+**Speaker notes.** All 15 visible slides, structured identically — THE POINT / SCRIPT (speakable
+sentences with `[CLICK]` cues) / NUMBERS (each with source + as-of date) / IF SHORT ON TIME.
+Budget **13:00 of script inside the 15:00 slot**. Plus a two-page printable run sheet (timing
+ladder, the sayable numbers, page 2 the pre-apprenticeship brief). Every figure pulled live at
+2026-08-10 13:50 UTC per the mandatory live-data rule — **49,696 CPL students / 589 apprentices**
+(~1.2%, the runway number), $313M saved, and the actionable one: **45 colleges could adopt an
+existing Fire Technology statewide exhibit today** (welding 27, automotive 65).
+
+**⭐ Sam corrected the pre-apprenticeship framing, and the correction is the durable output.** My
+draft led with credit-by-exam as *the* stage-1 instrument. His three mechanisms: **noncredit
+coursework**, **industry certifications** (welding), and — the one nobody names — **clearing
+admission requirements** for the apprenticeship itself. That third one speeds *entry*, not just
+completion, and the people who set entry requirements were the audience. Distilled to
+[`reference-cpl-at-the-pre-apprenticeship-stage`](kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md).
+And the Ironworkers slide's stage 1 already *shows* mechanisms 1 and 2 — pointing at an existing
+slide beat adding one.
+
+**Three numbers flagged for verification before the 13th:** the **44% apprentice withdrawal**
+figure (via a CTE policy source citing DAS — and DAS is in the room; attribute, don't assert), the
+apprentice headcount (589 live vs 692/755 in older docs — use live), and the two appendix unit
+totals.
+
+**Sandbox note.** `soffice --convert-to pdf` failed on *every* pptx including a trivial probe —
+that's the tell it's the environment, not the file. LibreOffice Impress simply wasn't installed
+(`libsdlo.so` absent); `apt-get install libreoffice-impress poppler-utils` fixed rendering.
+Chromium `--print-to-pdf` (preinstalled at `/opt/pw-browsers`) covers HTML→PDF; LibreOffice's HTML
+import doesn't work here.
+
+**Next.** Crystal owns slides 5→end. Open: the two unit totals; whether the spine slide stays; and
+whether pre-apprenticeship deserves its own slide now that the mechanisms are named. Build assets:
+`presentations/cac_2026-08/` (decks not committed — 27 MB each, vault weight).
+
+**⚠ Concurrency footnote.** A second session (**SkyLine**, Sierra credential naming) ran in
+parallel and both of us wrote `docs/session_135_handoff.md`. Theirs landed first, so this lane's
+handoff was resequenced to **136**. The docs auditor's R1 rule then stamped SkyLine's 135
+`superseded_by: session_136` — **false, and reverted**: R1 assumes handoffs are a total order, which
+concurrency breaks. `superseded_handoff: 1` is now a known standing finding rather than a false
+stamp. Sam had flagged the concurrent session at the start; the collision still landed in six files
+(`CLAUDE.md`, `roadmap_archive`, `INDEX`, `cpl_todos.json`, the handoff, the audit artifacts) —
+worth knowing that "it shouldn't collide" and "it didn't collide" are different claims.

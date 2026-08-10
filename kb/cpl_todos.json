@@ -1,9 +1,21 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-10 · SkyLine — the credential naming layer the team built months ago is finally visible to Sierra, and two numbers we were about to publish turned out not to mean what we thought.",
- "_session": "SkyLine (134)",
- "_status": "Sierra could not name a credential. Asked which colleges give credit for POST, she searched the raw titles colleges had typed into MAP and found twenty. The real answer is thirty-two - because the team had already done the hard work of folding sixteen different spellings of 'POST' into one proper name, and that work had simply never been loaded into the database Sierra reads. It is loaded now: 1,987 credentials, with the statewide recommendation, who has adopted each one, and who could. Two cautions came out of the day, both about numbers. First, we cannot yet say how many students have had credit applied for a given credential - the credit amounts were dropped when the student table was loaded, so the question has no answer until it is reloaded. Second, a credential can be counted three different ways that all look reasonable and all disagree, so the measure has to be named as carefully as the credential is. The privacy floor also moved from five students to ten across every public page, which is why a few small credentials now read 'under 10' where they used to show an exact number.",
+ "_as_of": "2026-08-10 · SkyDeck + SkyLine — two sessions ran today: the CAC apprenticeship deck was rebuilt and scripted, and Sierra finally got a canonical list of credential names.",
+ "_session": "SkyDeck (134) + SkyLine (134)",
+ "_status": "Two sessions ran in parallel today. SkyLine worked on Sierra: it turns out the tidy list of credential names we needed had already been curated months ago and simply never reached the database Sierra reads, so asking it about POST returned 20 colleges instead of the 32 we actually know about. That list is now published. SkyDeck rebuilt the three apprenticeship pathway slides for the Apprenticeship Council meeting on the 13th. Those slides were not really a design problem - each was a single flat picture, so none of the text could be edited or read aloud by a screen reader, and the course tables inside them ran off the bottom of the slide where nobody could see them. They are rebuilt properly now, revealing themselves in three clicks, with a script and a printed run sheet timed to thirteen minutes. Two things need a person before the meeting, and they are the first two items below.",
  "items": [
+  {
+   "id": "s134-cac-units",
+   "for": "Sam",
+   "tab": "—",
+   "text": "Before the 13th: two course lists in the CAC deck do not add up to the unit totals printed next to them. Carpentry shows twelve courses worth 20 units against 26 claimed; Cerritos shows fifteen worth 31.5 against 38 claimed. American River is exactly right at 29.5, so this is not a counting mistake — the original pictures cut off the bottom rows. Santiago Canyon and Cerritos need to send the full lists. Until they do, the appendix pages carry a printed warning so nobody quotes a number without it."
+  },
+  {
+   "id": "s134-cac-44pct",
+   "for": "Sam",
+   "tab": "—",
+   "text": "Before the 13th: the line that 44% of California apprentices withdraw before finishing is a powerful argument, but it did not come from our dashboard — it reaches us second hand, credited to DAS. DAS will be in the audience. Either check it with them beforehand or say out loud that it is their figure rather than stating it as ours. It is flagged three times in the pack."
+  },
   {
    "id": "s132-confirm-five",
    "for": "Sam",

@@ -3737,3 +3737,38 @@ dashes that made all three `.ps1` unparseable under PowerShell 5.1 (ASCII guard 
 `methodology-a-knowledge-base-needs-a-lint-pass`, `playbook-keep-build-artifacts-out-of-the-vault`,
 `methodology-the-plausible-cause-is-not-the-measured-one`.
 Story: `docs/vault_sync_lessons.md` - handoff `docs/session_134_handoff.md`.
+
+---
+
+### SkyHigh — the sweep method is gone, and the action library was already written (2026-08-09, #1078 MERGED)
+
+Sam: *"let's pick up the string."* **#1078** closed the cheapest item on the queue — the **seven colleges**
+SkyTime found had never been looked up. Five have a candidate address (Yuba · Citrus · Palomar · Saddleback ·
+Futuro Health), two are blank-with-a-finding (Canyons publishes only a *technical*-support inbox; Launch has an
+interest form only). Queue: never-looked-up **7 → 0**, search-only **0 → 7**, proposals (14) and empty (4)
+**unchanged** as the control. ⚠️ **None is verified, and that is structural: sessions are egress-blocked from
+college domains** (`curl` → `000`). So this doc's standing offer that the other **52 colleges** could get "the
+same grind if wanted" **is no longer true** — that needs a human, a differently-egressed runner, or a curator.
+The addresses did NOT go in as `via: "web"`: a tier is a claim about METHOD, and Jessica's rules are rules about
+what a PAGE shows — 2 of the previous 71 published only a mental-health inbox, invisible from a snippet. New
+`via: "search"` tier, refused by `proposedFillFor()` **in code**. ⭐ **The action library the roadmap called "the
+hard part" already exists** — Supabase `cpl_funding_config` Scenario 1 Year 1 holds **23 team-typed strategies**.
+⚠️ **And the overlay this file calls "currently EMPTY" is not**: live Scenario 1 is **50/30/20**, not the
+documented 30/42/28 (real path `…scenarios."Scenario 1".yearPriorities."1"`, camelCase, three levels deeper than
+the `config.year_priorities` this file used to claim). ✅ **🏫 COLLEGE BRIEFING SHIPPED (#1086)** — Sam chose
+**Scenario 1 / Year 1**; it walks **every project** in the config so the **$50k / ESS 25-82** strategies wire in
+with no code change when he writes them, names any program it could not read, and renders the 3 measurable
+strategies as **fractions** and the other 19 as advice with **no score**. ✅ **Y1 ≡ Y2, byte-identical, 22
+strategies each** — Sam: *"a 2-year project with unchanging priorities"*, **"Year 1 is the authoritative set"**;
+a year selector over this config is now inert, so build no year-specific logic. ⚠️ **I broke a good number and
+put it back (#1087 → #1088):** dormant-unsuppressed **1,052,531 is correct**, scoped to `entity_kind='college'`;
+I "corrected" it to an all-entities 1,053,332.50 while leaving articulated college-scoped — **never change one
+half of a pair alone**, and the real defect was that the figure shipped **without its scope**. ⚠️ **Unidentified
+entity 122** (117 students, 417.00 units) is **inside the published total** — k-anonymity hid the other four
+non-colleges only because they were tiny; **suppression is not a type filter**. Durable:
+`methodology-a-tier-must-encode-what-you-could-not-check`, `methodology-verify-the-last-hop-of-a-resolution-chain`.
+**Open for Sam (all small, deferred to 2026-08-10):** 4 curator typos (now ×2 via the mirror), Y1's borrowed P3
+description, 5 contact confirmations, and the 122 call.
+Story: `docs/map_users_lessons.md` · `docs/college_action_page_lessons.md` · handoff `docs/session_133_handoff.md`.
+
+*(archived from `CLAUDE.md` §11 at the 2026-08-10 checkpoint — Rule 8 keeps at most 2 session narratives inline.)*

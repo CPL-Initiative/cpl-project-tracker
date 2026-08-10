@@ -1,8 +1,8 @@
 ---
 title: Playbook — build a CPL executive/board deck, and fill an existing brand PPTX template
 created: 2026-07-20
-updated: 2026-07-20
-tags: [playbook, presentations, pptx, funding, communications]
+updated: 2026-08-10
+tags: [playbook, presentations, pptx, funding, communications, speaker-notes]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -94,6 +94,32 @@ notes_text_frame`** on every slide (users present from Presenter View). See `bui
   --no-install-recommends libreoffice-impress poppler-utils` (run with `dangerouslyDisableSandbox`).
   Until then, `.pptx` won't render — fall back to reading each shape and emitting positioned HTML,
   screenshotting with the preinstalled Chromium (`/opt/pw-browsers/...`).
+
+### 6. Speaker notes: write them into the deck, and give the presenter a run sheet
+
+A deck someone *else* presents is not finished at the last slide. Two artifacts close it:
+
+**Notes in the notes field, one structure per slide** so the presenter can find things under
+pressure — `THE POINT` (the single thing this slide must land) / `SCRIPT` (speakable sentences, not
+bullet fragments, with `[CLICK]` cues marked) / `NUMBERS` (every figure with its source and as-of
+date) / `IF SHORT ON TIME` (what to cut). Set them with `python-pptx`
+(`slide.notes_slide.notes_text_frame`), and **preserve any production note already in the deck** —
+the CAC deck's slide 9 carried "Video – Need Audio", which is exactly the kind of thing that
+matters on the day.
+
+**Budget the time explicitly and under-fill it.** For a 15-minute slot, write ~13:00 of script and
+say so. Put a running clock on each slide's note and name which slides to cut to headlines if the
+session runs behind.
+
+**A one-page run sheet beats scrolling presenter view.** A timing ladder (time · clicks · slide ·
+the one thing it must land), the numbers that can be said out loud, and a boxed "check before you
+present" list. Long background goes on page 2, not into the middle of the script. Render HTML with
+headless Chromium `--print-to-pdf` — LibreOffice's HTML import is unreliable, and `@page` +
+`page-break-before` give clean pagination.
+
+**Mark every number that is not from the live dashboard.** The CAC pack's riskiest line was a
+retention statistic reaching us through a policy source citing DAS — with DAS in the audience.
+Flagging it as *attribute, don't assert* is worth more than the statistic.
 
 ## How we got here
 

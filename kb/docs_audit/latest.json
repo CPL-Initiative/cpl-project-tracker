@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 445,
-    "bytes": 5240292,
+    "files": 449,
+    "bytes": 5281029,
     "over_budget": 6,
-    "handoff_max": 135,
+    "handoff_max": 136,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 103976,
+    "always_loaded_bytes": 103672,
     "superseded_files": 1,
-    "superseded_bytes": 5080,
+    "superseded_bytes": 8114,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 103976,
+        "bytes": 103672,
         "over": 1
       },
       "other": {
-        "files": 60,
-        "bytes": 1338970,
+        "files": 61,
+        "bytes": 1352382,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 175794,
+        "bytes": 178468,
         "over": 1
       },
       "lessons": {
         "files": 50,
-        "bytes": 1477575,
+        "bytes": 1482179,
         "over": 3
       },
       "kb_note": {
-        "files": 213,
-        "bytes": 1194001,
+        "files": 215,
+        "bytes": 1208022,
         "over": 0
       },
       "handoff": {
-        "files": 120,
-        "bytes": 949976,
+        "files": 121,
+        "bytes": 956306,
         "over": 0
       }
     },
@@ -57,8 +57,8 @@
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1791,
-      "bytes": 1079505134,
+      "files": 1802,
+      "bytes": 1079763909,
       "heavy_bytes": 581258916,
       "heavy_share": 0.538,
       "ignore_filters": [
@@ -113,26 +113,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 103976,
+        "bytes": 103672,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 43976,
+        "over_by": 43672,
         "ratio": 1.73
       },
-      "message": "103,976 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "103,672 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 175794,
+        "bytes": 178468,
         "limit": 40000,
         "lane": "index",
-        "over_by": 135794,
-        "ratio": 4.39
+        "over_by": 138468,
+        "ratio": 4.46
       },
-      "message": "175,794 B is 4.4× the index budget (40,000 B) — candidate for compaction",
+      "message": "178,468 B is 4.5× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -884,25 +884,25 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 351995,
+        "bytes": 355323,
         "limit": 150000,
         "lane": "other",
-        "over_by": 201995,
-        "ratio": 2.35
+        "over_by": 205323,
+        "ratio": 2.37
       },
-      "message": "351,995 B is 2.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "355,323 B is 2.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
       "rule": "superseded_handoff",
       "fixable": true,
       "detail": {
-        "session": 134,
-        "authoritative": 135,
+        "session": 135,
+        "authoritative": 136,
         "has_frontmatter": true
       },
-      "message": "handoff 134 is below the authoritative 135 but is not stamped `superseded: true`",
-      "path": "docs/session_134_handoff.md"
+      "message": "handoff 135 is below the authoritative 136 but is not stamped `superseded: true`",
+      "path": "docs/session_135_handoff.md"
     },
     {
       "rule": "vault_heavy_path",
