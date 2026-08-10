@@ -100,6 +100,8 @@ Export these columns:
 | **the existing person key** (via `tblStudentKey` on `StudentMAPID`) | `student_key` (integer) | ⚠️ **NOT `TblSOURCE.Student`** — see below |
 | `CollegeID` | `college_id` (integer) | |
 | `ExhibitID` | `exhibit_id` (text) | |
+| `ID` | `source_row_id` (integer) | ⛔ **required** — makes `DISTINCT` safe, see below |
+| `Credit Recommendation` | `credit_rec` (text) | ⛔ **required** — disambiguates, and is the naming bridge |
 | `Course Type` | `course_type` (text) | award destination |
 | `Catalog Year` | `catalog_year` (text) | |
 | `PotentialCredits` | `potential_credits` (numeric) | **the point of this re-load** |
@@ -121,6 +123,8 @@ One statement, no comments. `[Course Type]` and `[Catalog Year]` need the bracke
 SELECT k.StudentKey          AS student_key,
        s.CollegeID              AS college_id,
        s.ExhibitID              AS exhibit_id,
+       s.ID                     AS source_row_id,
+       s.[Credit Recommendation] AS credit_rec,
        s.[Course Type]          AS course_type,
        s.[Catalog Year]         AS catalog_year,
        s.PotentialCredits       AS potential_credits,
@@ -147,6 +151,29 @@ person keeps the same `student_key`. That is not required for the swap (SQL 5 is
 full replace either way), but it means `new_students = 42,346` at step 6 confirms
 the join worked rather than merely counting rows.
 
+⛔ **`source_row_id` AND `credit_rec` ARE NOT OPTIONAL — a 14-column export gets
+silently corrupted by `SELECT DISTINCT`.** Caught 2026-08-10 on Sam's first
+sample. Two rows for student 1:
+
+```
+257151  AR-2201-0479  1 hour in Cardiopulmonary Resuscitation   potential 1.00
+257152  AR-2201-0479  1 hour in Orienteering                    potential 1.00
+```
+
+Same student, same exhibit, same units, **different credit recommendations** —
+and byte-identical on every one of the original 14 columns. `SELECT DISTINCT` in
+SQL 3 would have discarded one. Across 537,908 rows the potential-credit total
+comes out LOW, reconciles against nothing, and carries no signal that it is wrong.
+
+`source_row_id` (TblSOURCE's own `ID`, dense and unique — 257150, 257151, …) makes
+every row provably distinct, so `DISTINCT` protects against importer duplication
+without destroying real data. That is the only reason `DISTINCT` is safe to keep.
+
+⭐ **`credit_rec` is a second win, not just a disambiguator.** It is the bridge for
+naming the **94% of student rows that currently cannot be named** — 11,427
+recommendation texts against a `MAPICI-*` catalogue that covers only 6.1%. It was
+filed as separate work; this export gets it for free.
+
 **Why straight off `TblSOURCE` and not the query that built the 5-column table:**
 that one is `DISTINCT`-collapsed (537,908 → 220,588). Adding credit columns to a
 `DISTINCT` breaks the collapse, because rows identical in five columns differ in
@@ -154,7 +181,11 @@ their credit values. The grain has to be the raw one.
 
 **`StudentMAPID` is deliberately not in the SELECT.** It never leaves Access.
 
-⛔ **BUILT-IN CHECK — this must return exactly 537,908 rows.** It is an INNER JOIN
+✅ **BUILT-IN CHECK PASSED 2026-08-10: returned exactly 537,908 rows.** No
+`StudentMAPID` lacks a key row, and `tblStudentKey` has no duplicates — the join
+is clean. Re-check this if the export is ever regenerated.
+
+⛔ **It must return exactly 537,908 rows.** It is an INNER JOIN
 on the same table that count came from, so:
 
 - **fewer** → some `StudentMAPID`s have no row in `tblStudentKey`
@@ -297,6 +328,8 @@ create table public.stg_student_credit (
   student_key         text,
   college_id          text,
   exhibit_id          text,
+  source_row_id       text,
+  credit_rec          text,
   course_type         text,
   catalog_year        text,
   potential_credits   text,
@@ -338,6 +371,8 @@ create table public.map_student_credit_v2 (
   student_key         integer not null,
   college_id          integer not null,
   exhibit_id          text    not null,
+  source_row_id       integer,
+  credit_rec          text,
   course_type         text    not null default '',
   catalog_year        text,
   potential_credits   numeric,
@@ -351,6 +386,8 @@ select distinct
   nullif(btrim(student_key), '')::integer,
   nullif(btrim(college_id), '')::integer,
   btrim(coalesce(exhibit_id, '')),
+  nullif(btrim(coalesce(source_row_id, '')), '')::integer,
+  nullif(btrim(coalesce(credit_rec, '')), ''),
   btrim(coalesce(course_type, '')),
   nullif(btrim(coalesce(catalog_year, '')), ''),
   nullif(btrim(coalesce(potential_credits,   '')), '')::numeric,
@@ -363,6 +400,37 @@ where nullif(btrim(student_key), '') is not null;
 
 `SELECT DISTINCT` is the second line of defence, not the first — step 3 is the
 first. Both, always.
+
+### ⚠️ Before you build a measure on `applied_credits` — it disagrees with the disposition
+
+Observed in Sam's sample, 2026-08-10:
+
+```
+257168  Default Credit  Fitness & Wellness  Credit for Basic Military Service-Course
+        potential 1  in_review 0  applied 0  transcribed 0  articulated 1  military 1
+        cpl_status_plan = "Applied to CPL Plan"
+```
+
+The disposition says **Applied to CPL Plan** while `applied_credits` is **0** — the
+credit is sitting in `articulated_credits` / `military_credits`.
+
+So the two candidate readings of *"students with applied credit"* do not agree:
+
+| Reading | Catches this student? |
+|---|---|
+| `applied_credits > 0` | ❌ no |
+| `cpl_status_plan = 'Applied to CPL Plan'` | ✅ yes |
+
+Basic-military-service credit is a large share of the population, so choosing the
+first would publish a number well below the truth. ⚠️ **This does not block the
+load** — load the columns as they are, then compute BOTH readings against the
+loaded table and take the difference to Sam. A measure disagreement is much easier
+to settle with the data in hand than by inspecting samples.
+
+Also note **NULL is not 0 here**: `Not Applicable` rows leave `applied_credits`
+blank while `Needs Action` rows carry `0`. The `nullif()` in SQL 3 preserves that
+distinction deliberately — blank means never evaluated, `0` means evaluated and
+zero.
 
 ## SQL 4 — verify before you swap
 
