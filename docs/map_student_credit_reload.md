@@ -13,17 +13,25 @@ related:
 
 # Re-loading `map_student_credit` with its credit columns
 
+> ✅ **RAN SUCCESSFULLY 2026-08-10 (SkyLine, Session 137).** Live table is now
+> **537,908 rows / 16 columns**; prior 5-column table retained as
+> `map_student_credit_prev`. Verified: collapses to the prior 220,588 rows
+> exactly; `(college_id, student_key, course_type)` set-identical (81,007
+> triples, 0 diff); Needs Action reproduces **1,053,332.50** all-entity to the
+> cent; both published aggregates rebuilt with **0 change** to any published
+> figure. See `docs/student_detail_load_lessons.md` § 2026-08-10.
+
 ## Do this — the whole job in 9 steps
 
 Each step is one action. Copy-paste the SQL block named in it. **Steps 3 and 6
-are gates: if the number is wrong, stop and redo the import.** Everything below
-the horizontal rule is *why*; you don't need it to run this.
+are gates: if the number is wrong, stop.** Everything below the horizontal rule
+is *why*; you don't need it to run this.
 
 | # | Do | Where |
 |---|---|---|
 | **1** | Export the columns below **from `TblSOURCE`** to CSV. **Write down the row count** (expect ~537,908). | Access, your machine |
 | **2** | Run **SQL 1 — staging table**. | Supabase → SQL Editor |
-| **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ The number must equal step 1's count. If it doesn't: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
+| **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ **`distinct_source_rows` must equal step 1's count.** `count(*)` being *higher* is expected and fine — see the note below. `count(*)` being **lower**, or `distinct_source_rows` not matching, means a genuinely bad import: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
 | **4** | Run **SQL 3 — build the new table**. | SQL Editor |
 | **5** | Run **SQL 4 — verify**. | SQL Editor |
 | **6** | ⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` = **42,346** (confirmed 2026-08-10), and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
@@ -33,6 +41,30 @@ the horizontal rule is *why*; you don't need it to run this.
 
 If anything looks wrong at step 5 or 6, **nothing has changed yet** — the live
 table isn't touched until step 7. Just drop `map_student_credit_v2` and start over.
+
+### ⚠️ Expect the import to insert MORE rows than your file has
+
+**The Supabase Studio CSV import duplicates a small fraction of rows.** Measured
+three times, on three different files:
+
+| Load | File rows | Imported | Excess |
+|---|---:|---:|---:|
+| 2026-08-08 | 220,588 | 222,646 | +2,058 (0.9%) |
+| 2026-08-10 (first attempt) | 537,908 | 546,197 | +8,289 (1.5%) |
+| 2026-08-10 (final) | 537,908 | 543,579 | +5,671 (1.05%) |
+
+**Re-importing does not fix this** — it recurs at a different rate each time. It
+is a property of the importer, not of your file.
+
+This is why **`source_row_id` is mandatory** and why SQL 3 builds the table with
+`distinct on (source_row_id)`. On the 2026-08-10 load every duplicate was
+**byte-identical across all 15 payload columns, 0 conflicts**, so the dedupe was
+provably lossless and recovered exactly 537,908.
+
+⛔ **The check that matters is `payload_conflicts = 0`, not the row count.** If
+two rows share a `source_row_id` but differ on any other column, the export is
+wrong (or `source_row_id` isn't unique in the source) — stop and re-export.
+`count(*)` being high is benign; a payload conflict never is.
 
 ---
 

@@ -3772,3 +3772,29 @@ description, 5 contact confirmations, and the 122 call.
 Story: `docs/map_users_lessons.md` · `docs/college_action_page_lessons.md` · handoff `docs/session_133_handoff.md`.
 
 *(archived from `CLAUDE.md` §11 at the 2026-08-10 checkpoint — Rule 8 keeps at most 2 session narratives inline.)*
+
+---
+
+### SkyLine — the naming layer already existed; Sierra just couldn't see it (2026-08-10, #1091-#1094 MERGED)
+
+Sam: *"Sierra's access to student-level data"* — then a real transcript where Sierra said exhibit-level
+student counts *"aren't available."* ⚠️ **Both premises were wrong.** (1) Not an access problem: only
+**6.1% of student rows are nameable** (student grain is **ACE military ids** `AR-`/`MC-`/`NV-`/`NER-` +
+32,360 `Default *` sentinels; Sierra's catalogue is `MAPICI-*`; overlap **624 of 6,280**). Control: CPR/AED,
+**17,904** students locally, reproduces as **17** through the obvious join — three orders of magnitude,
+silently, from real tables. The naive fix is WORSE than today's honest "I don't have that". (2) The naming
+layer **was already built and curated** by `map@rccd.edu` — POST folds **16** freehand titles into
+`POST Basic Academy` with the ASCCC rec and **32 adopters vs 71 potential, zero overlap**. It never reached
+the DB Sierra queries. **A publish step, not a build** — third session running where the best catch came
+from reading a committed artefact. Shipped: **k=10** floor (#1091/#1093 — the real defect was the mask
+`"<5"` hard-coded in **8** places, one printing the live floor beside a stale label), **1,987 credentials
+live** in `chatbox_credentials` (#1092, 0 suppressed counts leaked), **CRED·STD retrieval** (#1094).
+⭐ **A route's purpose changes its ranking** — three passes, each failure informative; the sharp one is that
+length-normalised similarity makes **the best-curated records rank WORST** (POST's 16 variants diluted it
+below a rival with two). ⚠️ **Sam's "students with Applied Credits > 0" is NOT computable** — the four credit
+columns are NOT in the 5-column export and never were (my "dropped at load" was a wrong inference, corrected
+same day); the raw `TblSOURCE` — 537,908 rows — has them. A re-load, not a
+Malone dependency. ⚠️ **MAP has no "Apprenticeship" CPL type** (6 values only) — any such filter returns 0
+and reads as "we do none". Durable: `methodology-a-concatenated-haystack-penalises-your-best-record`,
+`methodology-emit-the-threshold-with-the-label-it-prints`.
+Story: `docs/sierra_credential_naming_lessons.md` · handoff `docs/session_135_handoff.md`.

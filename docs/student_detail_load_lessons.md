@@ -255,11 +255,136 @@ and 71.7% figures are clean.
 
 ### (g) The decision blocking Sierra
 
-**May a public assistant state a named college's unawarded-credit figure?** Sierra sits on colleges' own pages, and
-*"your college has 12,000 units unawarded"* is a public per-college performance statement. "Never rank colleges
-publicly" is standing. This is Sam's call, not an engineering one, and it gates the retrieval work behind it.
+**May a public assistant state a named college's unawarded-credit figure?** Sierra is **deployed on COBI only** (Sam,
+2026-08-08 and again 2026-08-10) but is *intended* for colleges' pages, and `cpl-chat` ships `--no-verify-jwt`, so
+*"your college has 12,000 units unawarded"* is a public per-college performance statement either way. "Never rank
+colleges publicly" is standing. This is Sam's call, not an engineering one, and it gates the retrieval work behind it.
 
 ### (h) Next concrete step
 
 Get that decision, then wire Sierra: retrieval path against the published aggregates, service-role read (the function is
 server-side, so RLS need not be widened), prompt rules carrying the ceiling caveat, smoke assertions, deploy.
+
+---
+
+## 2026-08-10 — SkyLine (Session 137): the re-load landed, and two measures came apart
+
+### (a) What shipped
+
+`map_student_credit` is **537,908 rows, 16 columns**, re-loaded from `TblSOURCE` (the raw MAP extract) and live.
+The prior 5-column table is retained as `map_student_credit_prev`; rollback is renaming the two back.
+
+The load was gated, not assumed. What the gates caught, in order:
+
+| Gate | Result |
+|---|---|
+| Row count | 543,579 — **+5,671 over expected** |
+| `source_row_id` distinct | **537,908** ✅ |
+| Duplicate payload conflicts | **0** — every duplicate byte-identical on all 15 payload columns |
+| `student_key` range | dense **1…42,346**, 42,346 distinct |
+| Credit columns parseable | 8/8, 0 bad |
+
+⭐ **The importer duplicated for the third measured time** (0.9% at 220k, 1.5% on the first 537k attempt, 1.05% here).
+It is a property of the Studio CSV import, not of any one file. `source_row_id` was made mandatory *because* of the
+earlier occurrences, and it is what made this load recoverable — `distinct on (source_row_id)` was provably lossless.
+**Never load this table without a row identity column.**
+
+### (b) The reconciliations that made the swap safe
+
+Two independent checks, from a *different source file* than the original load:
+
+1. Collapsed to the old five columns, the new table yields **exactly 220,588** — the prior table's row count to the row.
+2. Needs Action sums to **1,053,332.50** — the all-entity figure already documented in `CLAUDE.md`, **to the cent**.
+   Also 81.2% of rows at Needs Action (documented 81%) and 31.1% of reviewed credit Not Applicable (documented ~30%).
+
+And the one that actually licensed the swap: `(college_id, student_key, course_type)` is **set-identical** between old
+and new — 81,007 triples, 0 differences either direction. That is what guaranteed `map_college_goal2.students` and
+every suppression decision would be unchanged. After rebuild they were: **0 diffs both directions**, all three of the
+script's own assertions returning 0, and `map_college_credit_summary` **byte-identical** (headline still
+1,051,870.00 / 63,991.00).
+
+### (c) ⭐ The two "applied" measures disagree by 55%
+
+| Basis | Students |
+|---|---:|
+| `applied_credits > 0` (Sam's definition) | **18,889** |
+| `cpl_status_plan = 'Applied to CPL Plan'` | **29,292** |
+
+The gap is **24,885 rows** marked applied carrying zero applied units — and **24,561 of them have articulated credit
+behind them**, so it is not "nothing to award". 12,375 students across **32 colleges**.
+
+**Sam's call: publish both, name the gap** — surface it as a data-quality finding for colleges rather than silently
+resolving it. Shipped as the view `map_applied_zero_units` (reviewer-only, `security_invoker = true`).
+
+⚠️ One thing that looked like evidence and was not: every college in that worklist shows **0.0% transcribed**, which
+reads as a finding until you check that `transcribed > applied` **never occurs** (0 rows) — credit cannot be
+transcribed without first being applied. The 0.0% is a tautology. Verify that a striking number *can* vary before
+reporting it.
+
+### (d) ⭐ Batch-uploaded transcribed credit (Sam's domain knowledge)
+
+Sam: *"some colleges batch upload student lists where they have already transcribed credit. Credit by exam, AP, IB,
+and CLEP are frequent examples… SDCCD was the first to do this for thousands of students."*
+
+It is visible in the data as a **shape**, and it explains three of the largest movers:
+
+| College | Rows | Students | Exhibits | Rows/student |
+|---|---:|---:|---:|---:|
+| San Diego City | 2,982 | 2,836 | 28 | **1.05** |
+| San Diego Mesa | 3,487 | 3,094 | 37 | **1.13** |
+| San Diego Miramar | 1,776 | 1,502 | 44 | 1.18 |
+| Merced | 4,819 | 3,048 | 63 | 1.58 |
+| *West LA (individual review)* | *2,580* | *563* | *28* | *4.58* |
+| *Norco (individual review)* | *830* | *270* | *140* | *3.07* |
+
+**Batch upload ≈ 1 row per student, few exhibits, thousands of students.** Individual review ≈ several rows per
+student across many exhibits (Modesto 207 exhibits).
+
+⚠️ **Consequence: transcribed credit exists at only 24 of 111 colleges.** It measures *recording practice* as much as
+student outcomes, and a college that batch-uploads is transformed overnight without changing what it does for
+students. This independently supports Sam's standing call that **applied, not transcribed, is this phase's target** —
+and it is a strong argument never to rank on transcribed.
+
+### (e) ⚠️ A documented fact was half artefact
+
+`Default Area` does **not exist** in the raw extract — 0 rows. The prior load synthesised it for 18,127 rows where
+`ExhibitID` was null. `Default Credit` is genuine MAP data (24,556). So the recorded "32,360 `Default *` sentinels" was
+part MAP, part invention. No code consumes it (the three code hits are the unrelated Custom Report field
+*"Default Area Credits"*), so the new table preserves the raw values.
+
+Same family as the `dropped at load` error corrected earlier the same day: **a transformation applied at load time
+becomes, one document later, a stated fact about MAP.**
+
+### (f) ⭐ A correction I had to make to my own recommendation, mid-conversation
+
+`rows_n` changed with the finer grain (59,586 → 91,793), which moved the **COURSE share** for 43 of 96 colleges
+(avg 2.6 pts, max 43.3). I recommended switching the share to a **distinct-student** basis, because that measure is
+provably grain-invariant — 96 of 96 colleges unchanged.
+
+Sam asked to see the colleges first. **The data killed the recommendation:** a student-based share **saturates at
+exactly 100.0% for 34 of 96 colleges**, because nearly every student has at least one course-credit award. It is
+grain-invariant and useless — it stops answering the question Goal 2 exists to ask.
+
+⭐ **Grain-invariance is a property, not a virtue.** A measure that cannot move is not thereby a good measure; check it
+still *discriminates* before preferring it for stability. Distilled to
+`methodology-a-grain-invariant-measure-can-still-be-the-wrong-one`.
+
+The rows-based share is kept. The new values are a **correction**, not drift, and the direction is explicable: the old
+export collapsed rows sharing (student, college, exhibit, course_type, catalog_year), so an exhibit recommending
+credit for *several specific courses* became one row while a *single area* award did not — systematically
+under-counting course awards. **38 of the 43 moved up**, as that bias predicts. The one to know about is
+**San Diego City College, −15.7 points at 4,252 students**.
+
+### (g) Current state
+
+- ✅ `map_student_credit` 537,908 rows live, reviewer-only RLS, 0 write policies, 4 indexes, 2 check constraints
+- ✅ Both published aggregates rebuilt and verified unchanged; all three loads recorded in `map_data_loads`
+- ✅ `map_applied_zero_units` follow-up view live
+- ✅ **CRED·VOLUME unblocked** — applied/transcribed computable for the first time
+- ⬜ `stg_student_credit` + `map_student_credit_prev` retained deliberately (both RLS-safe) until the tab is eyeballed
+- ⬜ Nightly refresh still manual — the runbook is the procedure
+
+### (h) Next concrete step
+
+**CRED·ADOPT** (needs no new data), then **COLLEGE·CRED** carrying Sam's Mt. SAC Request-Review language. Anything
+publishing a student number takes the pair from (c) with the gap named, and must not rank on transcribed per (d).
