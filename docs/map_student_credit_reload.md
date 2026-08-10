@@ -123,6 +123,41 @@ type returns 0 and reads as *"we do no apprenticeship CPL."* Apprenticeship cred
 is tracked as a **credit bucket**, not a category. This column is the only way to
 measure it.
 
+### Access queries to confirm the key (run these first)
+
+⚠️ **Access SQL view runs ONE statement at a time and rejects inline comments**
+("Invalid SQL query. Comments are only allowed at the beginning of the query").
+Paste one, run it, replace it with the next. The `AS T` aliases are there because
+Jet/ACE is inconsistent about requiring an alias on a derived table.
+
+⚠️ **Jet SQL has no `COUNT(DISTINCT)`** — hence the subquery form.
+
+```sql
+SELECT COUNT(*) AS distinct_student
+FROM (SELECT Student FROM TblSOURCE GROUP BY Student) AS T;
+```
+
+```sql
+SELECT COUNT(*) AS distinct_mapid
+FROM (SELECT StudentMAPID FROM TblSOURCE GROUP BY StudentMAPID) AS T;
+```
+
+```sql
+SELECT COUNT(*) AS students_with_multiple_mapids
+FROM (SELECT Student
+      FROM (SELECT Student, StudentMAPID FROM TblSOURCE GROUP BY Student, StudentMAPID) AS P
+      GROUP BY Student
+      HAVING COUNT(*) > 1) AS T;
+```
+
+**Reading the answers**
+
+- `distinct_mapid` **≈ 42,345** confirms the live `student_key` is correctly derived
+  from `StudentMAPID`, so the published **42,346 counts people**.
+- `students_with_multiple_mapids` **large** confirms `Student` groups rows and must
+  never be exported as the key (Sam, 2026-08-10: *"Student is a grouping counter"*).
+- `students_with_multiple_mapids` **= 0** would mean the two are 1:1.
+
 ### ⚠️ The person key is NOT `TblSOURCE.Student`
 
 **Sam, 2026-08-10: `Student` is a GROUPING COUNTER.** It is not a person. His
