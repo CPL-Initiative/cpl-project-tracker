@@ -9,23 +9,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 449,
-    "bytes": 5281029,
+    "files": 450,
+    "bytes": 5300696,
     "over_budget": 6,
     "handoff_max": 136,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 103672,
+    "always_loaded_bytes": 107004,
     "superseded_files": 1,
-    "superseded_bytes": 8114,
+    "superseded_bytes": 8332,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 103672,
+        "bytes": 107004,
         "over": 1
       },
       "other": {
         "files": 61,
-        "bytes": 1352382,
+        "bytes": 1358793,
         "over": 1
       },
       "index": {
@@ -35,30 +35,31 @@
       },
       "lessons": {
         "files": 50,
-        "bytes": 1482179,
+        "bytes": 1484333,
         "over": 3
       },
       "kb_note": {
-        "files": 215,
-        "bytes": 1208022,
+        "files": 216,
+        "bytes": 1214538,
         "over": 0
       },
       "handoff": {
         "files": 121,
-        "bytes": 956306,
+        "bytes": 957560,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
-      "unindexed_kb_note": 10,
+      "stacked_roadmap_cell": 1,
+      "unindexed_kb_note": 11,
       "kb_note_dialect": 54,
       "superseded_handoff": 1,
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1802,
-      "bytes": 1079763909,
+      "files": 1804,
+      "bytes": 1079810020,
       "heavy_bytes": 581258916,
       "heavy_share": 0.538,
       "ignore_filters": [
@@ -113,13 +114,43 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 103672,
+        "bytes": 107004,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 43672,
-        "ratio": 1.73
+        "over_by": 47004,
+        "ratio": 1.78
       },
-      "message": "103,672 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "107,004 B is 1.8× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "stacked_roadmap_cell",
+      "fixable": false,
+      "detail": {
+        "cells": [
+          {
+            "row": "Disposition grain / student detail",
+            "chars": 14338,
+            "priors": 3,
+            "corrections": 3
+          },
+          {
+            "row": "Sierra retrieval + corpus",
+            "chars": 8620,
+            "priors": 1,
+            "corrections": 0
+          },
+          {
+            "row": "College action page / MAP-team queue",
+            "chars": 5335,
+            "priors": 0,
+            "corrections": 0
+          }
+        ],
+        "cell_max": 4000,
+        "prior_max": 1
+      },
+      "message": "3 roadmap cell(s) have become append-only logs — worst is \"Disposition grain / student detail\" at 14,338 chars / 3 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
@@ -441,6 +472,15 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-lead-with-the-steps-not-the-rationale"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale.md"
     },
     {
       "rule": "kb_note_dialect",

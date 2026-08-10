@@ -273,6 +273,75 @@ def rule_oversized_doc(entry):
     }
 
 
+# ── stacked_roadmap_cell ─────────────────────────────────────────────────────
+# WHY (added 2026-08-10, Sam's diagnosis): checkpoint discipline was never the
+# problem — 182 cpl_memory rows, fed continuously since June. The problem is that
+# NOTHING RETIRES. CLAUDE.md's §11 roadmap cells are append-only: each session
+# prefixes its finding and the superseded text survives verbatim behind "*Prior:*".
+#
+# Measured the day this rule was written: the "Disposition grain" cell was 14,338
+# characters in ONE table cell, carrying 3 "*Prior:*" markers, 3 corrections and
+# 14 warnings — four generations of claims, including corrections of corrections.
+# §11 was 45,037 chars, 44% of a 102,587-char file that auto-loads EVERY session.
+#
+# The consequence is not bloat, it is CONTRADICTION. That file simultaneously said
+# Sierra "sits on colleges' own pages" and that "there is no internal COBI Sierra"
+# — so Sam had to correct the same point on two consecutive days. No reading ORDER
+# fixes a contradiction inside a single document.
+#
+# This is the repo's own documented lesson turned on itself: "two rules conflicted
+# with nothing saying which governed, so the later one silently won."
+#
+# A roadmap cell must state CURRENT TRUTH. History belongs in the lessons doc,
+# which Rule 8 already says to write ONCE. Sam does not review checkpoint output
+# by design, so this has to be caught mechanically or not at all.
+CELL_MAX_CHARS = 4_000     # a cell you cannot read in one breath is a log
+CELL_MAX_PRIOR = 1         # one "*Prior:*" is context; two is an unretired log
+
+
+def rule_stacked_roadmap_cell(entry):
+    """Roadmap cells that have become append-only logs rather than current state."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    try:
+        sec = text[text.index("### Roadmap"):]
+    except ValueError:
+        return None
+    sec = sec.split("The auditor is the foundational instrument")[0]
+
+    offenders = []
+    for line in sec.split("\n"):
+        if not line.startswith("| ") or line.count("|") < 4:
+            continue
+        cells = line.split("|")
+        name = cells[1].strip().replace("*", "")[:40]
+        status = cells[3] if len(cells) > 3 else ""
+        priors = status.count("*Prior:*")
+        if len(status) > CELL_MAX_CHARS or priors > CELL_MAX_PRIOR:
+            offenders.append({"row": name, "chars": len(status), "priors": priors,
+                              "corrections": status.count("CORRECT")})
+    if not offenders:
+        return None
+    offenders.sort(key=lambda o: -o["chars"])
+    worst = offenders[0]
+    return {
+        "rule": "stacked_roadmap_cell",
+        "fixable": False,
+        "detail": {"cells": offenders, "cell_max": CELL_MAX_CHARS,
+                   "prior_max": CELL_MAX_PRIOR},
+        "message": (
+            f"{len(offenders)} roadmap cell(s) have become append-only logs — worst is "
+            f"\"{worst['row']}\" at {worst['chars']:,} chars / {worst['priors']} *Prior:* "
+            f"markers. A cell must state CURRENT truth; retire superseded text to the "
+            f"lessons doc instead of prefixing it. Contradictory claims inside one "
+            f"auto-loaded file are why the same correction gets made twice."),
+    }
+
+
 def _is_kb_note(entry):
     if entry["lane"] != "kb_note":
         return False
@@ -661,7 +730,8 @@ def main():
                   rule_kb_note_frontmatter(e),
                   rule_kb_note_dialect(e),
                   rule_frontmatter_log_chain(e),
-                  rule_unindexed_kb_note(e, index_text)):
+                  rule_unindexed_kb_note(e, index_text),
+                  rule_stacked_roadmap_cell(e)):
             if f:
                 f["path"] = e["rel"]
                 findings.append(f)

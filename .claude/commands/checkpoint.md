@@ -4,6 +4,21 @@ description: Rule 8 checkpoint — refresh every documentation artifact so the n
 
 Execute a **Rule 8 checkpoint** (see `CLAUDE.md` Critical Rule 8). Pause whatever else you're doing and update **every** artifact below — none are optional, all sync to the user's Obsidian via the repo:
 
+0a. **Retire before you append.** Act on `stacked_roadmap_cell` if the lint
+   flags it. A §11 roadmap cell states **current truth**; when this run's finding
+   contradicts what a cell says, **delete the superseded text** rather than
+   prefixing it with `*Prior:*`. History goes to the workstream's lessons doc —
+   once. (Added 2026-08-10: the "Disposition grain" cell had reached 14,338 chars
+   with 3 `*Prior:*` markers and 14 warnings, and `CLAUDE.md` was simultaneously
+   asserting that Sierra "sits on colleges' own pages" and that "there is no
+   internal COBI Sierra". Sam had to make the same correction on two consecutive
+   days. A checkpoint that only ever ADDS will eventually contradict itself.)
+
+0b. **Record the DECISIONS the user made this run**, not just what the session
+   shipped. Corrections, rulings and constraints they stated are inputs the
+   narrative loses — write them to `cpl_memory` with the human named in
+   `verified_by`, and to the handoff under an explicit heading.
+
 0. **`python3 kb/_docs_audit.py` — run this FIRST.** The docs **lint** pass (the third Karpathy operation: Rule 8 gives us *ingest*, sessions give us *query*, this is the missing *lint*). It is READ-ONLY and takes ~2 seconds; it writes `kb/docs_audit/<date>.md` + `latest.json`. Run it before writing anything, because its findings change what you write: an `oversized_doc` on the lessons doc you were about to append to means **compact it in this checkpoint instead of growing it**, and an `always_loaded` finding on `CLAUDE.md` means move prose to `docs/reference/` (the 2026-07-10 pare-down) rather than adding more. Read the report; act on what it flags that is in scope for this run; don't chase the whole backlog. Then, when you write the new `session_<N+1>_handoff.md` (step 8), run **`python3 kb/_docs_audit.py --apply`** to stamp every now-superseded handoff — that is the auditor's only mutation, it never touches the authoritative one, and it is idempotent. Commit `kb/docs_audit/<date>.{json,md}` with the checkpoint.
 
 1. **`CLAUDE.md`** — refresh §11 (or whichever section covers the active workstream): tag counts / scores / roadmap-table status. Make sure the "DONE" / "in progress" / "parked" status on the roadmap reflects what's actually shipped on the branch.

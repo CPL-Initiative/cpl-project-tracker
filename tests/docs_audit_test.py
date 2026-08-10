@@ -260,6 +260,50 @@ try:
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
+# ── stacked_roadmap_cell ──────────────────────────────────────────────────
+# Guards the failure Sam diagnosed 2026-08-10: checkpoint discipline was fine,
+# but NOTHING RETIRED, so CLAUDE.md asserted contradictory things at once and the
+# same correction had to be made on two consecutive days. The rule must fire on a
+# cell that has become a log, and must NOT fire on an ordinary current-state cell
+# — a guard that flags healthy input gets muted, which is how three earlier rules
+# in this same file nearly shipped broken.
+import tempfile, os as _os
+
+def _claude_md_with(cell_status):
+    body = ("### Roadmap\n\n| Phase | What | Status |\n|---|---|---|\n"
+            f"| **Test row** | a thing | {cell_status} |\n\n"
+            "The auditor is the foundational instrument for everything.\n")
+    fd, path = tempfile.mkstemp(suffix=".md"); _os.write(fd, body.encode()); _os.close(fd)
+    return {"rel": "CLAUDE.md", "path": path}
+
+_healthy = _claude_md_with("in progress — one clear sentence about where this stands.")
+check("stacked cell: silent on an ordinary current-state cell",
+      da.rule_stacked_roadmap_cell(_healthy) is None)
+
+_logged = _claude_md_with("done. " + ("x" * 5000) + " *Prior:* old. *Prior:* older.")
+_f = da.rule_stacked_roadmap_cell(_logged)
+check("stacked cell: fires on an oversized cell with stacked *Prior:* markers",
+      _f is not None and _f["rule"] == "stacked_roadmap_cell")
+check("stacked cell: reports the offending row and its size",
+      _f is not None and _f["detail"]["cells"][0]["chars"] > da.CELL_MAX_CHARS
+      and _f["detail"]["cells"][0]["priors"] == 2)
+
+# Two *Prior:* markers alone are enough — a short cell can still be a log.
+_short_log = _claude_md_with("now. *Prior:* then. *Prior:* before that.")
+check("stacked cell: fires on stacked *Prior:* even when the cell is short",
+      da.rule_stacked_roadmap_cell(_short_log) is not None)
+
+# One *Prior:* is legitimate context, not a log.
+_one_prior = _claude_md_with("current state. *Prior:* the thing it replaced.")
+check("stacked cell: tolerates a single *Prior:* as context",
+      da.rule_stacked_roadmap_cell(_one_prior) is None)
+
+check("stacked cell: only ever inspects CLAUDE.md",
+      da.rule_stacked_roadmap_cell({"rel": "docs/other.md", "path": _logged["path"]}) is None)
+
+for _e in (_healthy, _logged, _short_log, _one_prior):
+    _os.unlink(_e["path"])
+
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
             "summary": {"files": 1, "bytes": 10, "over_budget": 0, "handoff_max": 130,

@@ -127,3 +127,37 @@ from public.cpl_memory m where m.slug in ('<slug1>','<slug2>');
 
 *Authoring check: durable (the loop is standing), reusable (every checkpoint),
 distilled (one procedure), self-contained.*
+
+## ⚠️ The missing half: READ it (added 2026-08-10)
+
+This playbook is named *auto-write-at-checkpoint*, and until now that was the
+whole contract. **There was no read step, and it cost a full session.**
+
+On 2026-08-10 a session re-derived three settled facts — that `TblSOURCE.Student`
+is a grouping counter, that the MAP internal student id must never reach Supabase,
+and that 537k rows had already been assessed for Sierra — while all three sat in
+this table. It wrote 8 rows that day and queried the table **zero** times. The
+corpus had 182 rows, 174 of them predating that session, 85 verified.
+
+**Query before you work:**
+
+```sql
+select slug, title, summary, status, event_date from cpl_memory
+where status <> 'superseded'
+  and (tags && array['<workstream-tag>'] or summary ilike '%<keyword>%')
+order by event_date desc nulls last limit 40;
+```
+
+### A human-sourced row may not be silently superseded
+
+`two-sierras-internal-and-public` carried Sam's own words — *"Sierra only lives in
+COBY for now"* — and a later session marked it `superseded` after reading the code
+(three callers, one shared function). **Both claims were true.** His was about
+where the widget is *deployed*; the code finding was about what it *calls*. But
+only `verified` shows by default, so the fact left the working set and he had to
+restate it two days later.
+
+Rule: if `source` or `verified_by` names a human, either supersede it **explicitly
+and say why**, or file a NEW row and flag the conflict for them. A measured
+topology and a stated deployment are different kinds of claim, and one does not
+retire the other.
