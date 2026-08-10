@@ -77,7 +77,9 @@ first.
 *students served* = distinct student records (**42,346**, fine); *applied* =
 distinct records where **Applied Credits > 0**; *transcribed* = **Transcribed
 Credits > 0**. But `map_student_credit` has **five columns** and **the four credit
-columns were dropped at load**; `map_college_cr_unit` has the amounts and **no
+columns are NOT in that export and never were** (⚠️ my "dropped at load" was a WRONG inference, corrected
+2026-08-10: the source is `TblSOURCE`, the raw MAP extract, 537,908 rows, which carries all of them plus
+`CPLStatusPlan` at student grain); `map_college_cr_unit` has the amounts and **no
 `student_key`**. The join does not exist. Fix = **re-load with those columns**
 (his 29-col export carries them). Do not substitute `course_type <> ''`
 (**39,712**) — that is *"something was awarded"*, a different question.
