@@ -879,6 +879,112 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
     .slice(0, 4);
 }
 
+/**
+ * Route CRED-VOLUME — how many students actually hold credit for a credential.
+ *
+ * This is the route that was missing when Sierra was asked "how many students
+ * statewide are eligible for credit for a CompTIA cert, and for which certs?"
+ * It answered that no statewide recommendation had been adopted (MAP holds TEN
+ * for CompTIA) and then listed certs from general world knowledge. The listed
+ * certs happened to be right, which is the most dangerous kind of wrong.
+ *
+ * Retrieval was never the problem — the credential lookup returns CompTIA
+ * correctly. The gap was the one Sierra named honestly: no student numbers.
+ *
+ * Reuses the CRED-STD probe shape (pairs first, then singles) because credential
+ * names are overwhelmingly multi-word.
+ */
+async function fetchCredentialVolume(query: string, sb: any): Promise<any[] | null> {
+  const kws = extractTopicKeywords(query);
+  if (kws.length === 0) return null;
+  const probes: string[] = [];
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+
+  const byTitle = new Map<string, any>();
+  for (const asked of probes.slice(0, 8)) {
+    const { data, error } = await sb.rpc("search_credential_volume", { asked, result_limit: 6 });
+    if (error || !data) continue;
+    for (const r of data) {
+      const prev = byTitle.get(r.unified_title);
+      if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
+    }
+  }
+  if (byTitle.size === 0) return null;
+  // Rank by students because the question is "how many" — but keep rows with no
+  // student data, since "21 colleges adopted it and none has student data yet"
+  // is a real answer to "which certs?".
+  return [...byTitle.values()]
+    .sort((a, b) => a.match_tier - b.match_tier ||
+      (b.students ?? -1) - (a.students ?? -1) || b.colleges_adopted - a.colleges_adopted)
+    .slice(0, 8);
+}
+
+/** Route COLLEGE-ADOPT — "what could MY college pick up that peers already run?" */
+async function fetchAdoptionOpportunities(college: string | null, sb: any): Promise<any[] | null> {
+  if (!college) return null;
+  const { data, error } = await sb.rpc("college_adoption_opportunities", {
+    college, result_limit: 8,
+  });
+  if (error || !data || data.length === 0) return null;
+  return data;
+}
+
+/**
+ * THE FLOOR TRAVELS WITH THE NUMBER. Only ~4% of student rows can be named at
+ * all (the exhibit corpus covers 59 of MAP's 123 colleges), so every count here
+ * is a floor. Emitting `students` without `colleges_adopted` would let the model
+ * state a floor as a system total — the same failure as reading "not in this
+ * dataset" as zero. So the two are printed on the same line, always.
+ */
+function buildVolumeContext(vol: any[] | null, adopt: any[] | null, college: string | null): string {
+  if ((!vol || vol.length === 0) && (!adopt || adopt.length === 0)) return "";
+  let out = `\n\n--- STUDENT VOLUME BY CREDENTIAL (measured from MAP student records) ---\n`;
+
+  if (vol && vol.length > 0) {
+    for (const r of vol) {
+      out += `- ${r.unified_title}`;
+      if (r.statewide) out += ` [statewide recommendation]`;
+      out += `\n`;
+      if (r.students != null) {
+        out += `  Students with this credit: AT LEAST ${r.students}, across ${r.colleges_with_student_data} college(s)\n`;
+        if (r.potential_units != null) {
+          out += `  Units: ${r.potential_units} recommended`;
+          if (r.applied_units != null) out += `, ${r.applied_units} already applied to a record`;
+          out += `\n`;
+        }
+        if (r.rows_needs_action) out += `  Recommendations still at "Needs Action": ${r.rows_needs_action}\n`;
+      } else if (r.students_suppressed) {
+        out += `  Students with this credit: FEWER THAN 10 — report it exactly that way, never an exact number and never an estimate.\n`;
+      } else {
+        out += `  No student records carry this credential yet.\n`;
+      }
+      out += `  Colleges that have ADOPTED it: ${r.colleges_adopted}`
+          + ` (we can see student data at ${r.colleges_with_student_data} of them)\n`;
+    }
+    out += `\nHOW TO STATE THESE: the student counts are FLOORS, not totals. We can name a credential `
+        + `for only about 4% of student records, because the exhibit corpus covers 59 of MAP's 123 `
+        + `colleges. Always give the count WITH its coverage — "at least N students across X colleges; `
+        + `Y colleges have adopted it, so the real figure is higher." A college we cannot see is a `
+        + `BLIND SPOT, never a zero.\n`;
+  }
+
+  if (adopt && adopt.length > 0) {
+    out += `\nWHAT ${college ? college.toUpperCase() : "THIS COLLEGE"} COULD ADOPT `
+        + `(peers already articulate these; this college does not):\n`;
+    for (const r of adopt) {
+      out += `- ${r.unified_title}`;
+      if (r.statewide) out += ` [statewide standard — adoptable as-is]`;
+      out += ` — ${r.peers_already_adopted} peer college(s) already articulate it`;
+      if (r.ccc_rec) out += `; statewide recommendation: ${r.ccc_rec}`;
+      out += `\n`;
+    }
+    out += `These are concrete, checkable opportunities — name them specifically rather than `
+        + `describing the category.\n`;
+  }
+  return out;
+}
+
 function buildCredentialContext(statewide: any[] | null, any_: any[] | null): string {
   if ((!statewide || statewide.length === 0) && (!any_ || any_.length === 0)) return "";
   let out = `\n\n--- CANONICAL CREDENTIAL RECORD (curated names, not the freehand titles colleges typed) ---\n`;
@@ -1299,6 +1405,20 @@ const CREDENTIAL_RULE = `\n\nABOUT THE "CANONICAL CREDENTIAL RECORD" SECTION (if
 - If the credential is in neither list, say we do not have it in the catalogue, and invite them to email MAP@rccd.edu so the gap is on record. Do NOT invent a credential, a recommendation, or a unit value to fill the silence.
 - Multiple entries mean the question was genuinely ambiguous (e.g. "peace officer" matches both the POST Basic Academy and the Correctional Officer Core Course). Name the options and let the person choose rather than silently picking one.`;
 
+// Added after Sierra was asked "how many students statewide are eligible for
+// credit for a CompTIA cert, and for which certs?" It said no statewide
+// recommendation had been adopted — MAP holds ten for CompTIA — and then listed
+// certs from world knowledge. The list was accidentally correct, which is worse
+// than being wrong: nobody catches it, and the next guess misses.
+const VOLUME_RULE = `\n\nABOUT THE "STUDENT VOLUME BY CREDENTIAL" SECTION (if present) — HOW MANY STUDENTS:
+- These counts are measured from real MAP student records. State them plainly; they are far more useful than declining to answer.
+- EVERY COUNT IS A FLOOR, NOT A TOTAL. Give the number WITH its coverage, in the same breath: "at least 115 students across 7 colleges — 21 colleges have adopted CompTIA A+, so the true figure is higher." Never state the bare count as if it were the systemwide total.
+- A college we cannot see is a BLIND SPOT, NOT A ZERO. Never say a college has no students for a credential because it is absent here; say we cannot yet name credentials at that college.
+- WHEN A COUNT IS UNDER TEN, say "fewer than 10 students" — exactly that. Never give an exact number, never estimate one, and never derive one by subtracting from a larger total. This is a FERPA small-cell protection, and if the person asks why, say so plainly: counts below ten are reported as a range to protect student privacy. Reporting "fewer than 10" is the correct, complete answer — not a failure to retrieve.
+- If a credential shows no student records, say that directly. It means nobody has been awarded credit through it yet, which is itself worth knowing — it does NOT mean the credential is unavailable.
+- NEVER supply a credential, a certification name, or a student number from general knowledge of the world. If the section does not contain it, we do not have it. A list of certifications that sounds right but was not read from this data is exactly the failure this section exists to prevent — say what MAP holds, and invite them to email MAP@rccd.edu for anything beyond it.
+- When the section lists WHAT A COLLEGE COULD ADOPT, name the specific credentials and how many peer colleges already run each one. That is the actionable answer; "you could explore industry certifications" is not.`;
+
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
 This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
 
@@ -1336,7 +1456,8 @@ function buildSystemPrompt(
   audienceRule: string = "",
   teamGuidance: string = "",
   creditContext: string = "",
-  credentialContext: string = ""
+  credentialContext: string = "",
+  volumeContext: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -1406,7 +1527,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -1679,10 +1800,25 @@ Deno.serve(async (req: Request) => {
       console.error("credential lookup failed:", e);
     }
 
+    // Routes CRED-VOLUME + COLLEGE-ADOPT. Both read pre-computed rollups, never
+    // the 537,908-row student grain — aggregating that live measured >60s
+    // against a 1.7-5.0s budget. Adoption only fires once a college is known,
+    // since "what could I adopt?" is meaningless without a subject.
+    let volumeContext = "";
+    try {
+      const [vol, adopt] = await Promise.all([
+        fetchCredentialVolume(searchText, sb),
+        fetchAdoptionOpportunities(singleProfile?.college || null, sb),
+      ]);
+      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null);
+    } catch (e) {
+      console.error("credential volume lookup failed:", e);
+    }
+
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
-      teamGuidance || "", creditContext, credentialContext);
+      teamGuidance || "", creditContext, credentialContext, volumeContext);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {

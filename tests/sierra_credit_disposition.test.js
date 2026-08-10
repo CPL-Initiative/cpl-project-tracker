@@ -183,10 +183,22 @@ check("8 fetchCreditData rides in the main Promise.all",
   /fetchCreditData\(sb\),/.test(SRC));
 check("8 the per-college pick uses the resolved single profile",
   /shapeCreditStatus\(creditData, singleProfile\?\.college \|\| null\)/.test(SRC));
+// These two used to pin the EXACT neighbours — `..., creditContext)` as the last
+// argument, and `${offeringsContext}${creditContext}` as adjacent in the
+// template. Both went red the moment a later route (CRED·STD) inserted
+// credentialContext between them, and stayed red unnoticed because this check
+// is non-required. The assertion was testing argument ORDER, which no failure
+// mode depends on, instead of the contract that actually matters: the context
+// reaches the prompt builder, and the builder emits it.
+//
+// Now they assert exactly that, so adding a seventh context section doesn't
+// falsely accuse the sixth.
 check("8 creditContext is passed to buildSystemPrompt",
-  /teamGuidance \|\| "", creditContext\)/.test(SRC));
+  /buildSystemPrompt\([^;]*\bcreditContext\b[^;]*\)/.test(SRC),
+  "the context is built but never handed to the prompt builder");
 check("8 creditContext is interpolated into the system prompt",
-  /\$\{offeringsContext\}\$\{creditContext\}/.test(SRC));
+  /\$\{creditContext\}/.test(SRC),
+  "the context reaches the builder but is never emitted into the prompt");
 // The rule is dead weight (and confusing) when there is no data to talk about.
 check("8 CREDIT_STATUS_RULE only ships when credit context is present",
   /\$\{creditContext \? CREDIT_STATUS_RULE : ""\}/.test(SRC));
