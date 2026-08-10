@@ -260,6 +260,33 @@ try:
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
+# ── superseded_handoff: parallel siblings ─────────────────────────────────
+# Sam runs CONCURRENT sessions. On 2026-08-10 two checkpointed independently
+# (SkyDeck 136, SkyLine 137) and --apply stamped 136 superseded — false, since
+# 137 does not carry the deck workstream. A mechanical rule silently discarding a
+# live document is the failure this file exists to catch, so it must not commit
+# it. Same-day handoffs are siblings, not a chain.
+def _handoff(n, created):
+    return {"lane": "handoff", "path": f"docs/session_{n}_handoff.md",
+            "rel": f"docs/session_{n}_handoff.md", "has_fm": True,
+            "fm": {"created": created}}
+
+check("handoff: a lower-numbered handoff from an EARLIER day is superseded",
+      da.rule_superseded_handoff(_handoff(134, "2026-08-09"), 137, "2026-08-10") is not None)
+
+check("handoff: a SAME-DAY sibling is NOT superseded (parallel sessions)",
+      da.rule_superseded_handoff(_handoff(136, "2026-08-10"), 137, "2026-08-10") is None)
+
+check("handoff: the authoritative one is never flagged",
+      da.rule_superseded_handoff(_handoff(137, "2026-08-10"), 137, "2026-08-10") is None)
+
+check("handoff: with no authoritative date known, the old behaviour holds",
+      da.rule_superseded_handoff(_handoff(134, "2026-08-09"), 137, None) is not None)
+
+_already = _handoff(130, "2026-08-01"); _already["fm"]["superseded"] = "true"
+check("handoff: an already-stamped handoff is not re-flagged (idempotent)",
+      da.rule_superseded_handoff(_already, 137, "2026-08-10") is None)
+
 # ── stacked_roadmap_cell ──────────────────────────────────────────────────
 # Guards the failure Sam diagnosed 2026-08-10: checkpoint discipline was fine,
 # but NOTHING RETIRED, so CLAUDE.md asserted contradictory things at once and the
