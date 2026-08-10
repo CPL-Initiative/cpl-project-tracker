@@ -26,7 +26,7 @@ the horizontal rule is *why*; you don't need it to run this.
 | **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ The number must equal step 1's count. If it doesn't: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
 | **4** | Run **SQL 3 — build the new table**. | SQL Editor |
 | **5** | Run **SQL 4 — verify**. | SQL Editor |
-| **6** | ⛔ Check: `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
+| **6** | ⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
 | **7** | Run **SQL 5 — swap**. The live table is replaced here. | SQL Editor |
 | **8** | Run **SQL 6 — restore RLS**. ⚠️ Until this runs the 🎓 Course Credit tab is blank. | SQL Editor |
 | **9** | Open the 🎓 Course Credit tab and confirm it loads. Then run **SQL 7 — cleanup**. | dashboard, then SQL Editor |
@@ -144,8 +144,30 @@ Exporting `Student` instead would produce a key that *looks* like a person, coun
 like a person, and is not one — a failure that surfaces only as a wrong headline
 number nobody can trace.
 
+### 🔒 The MAP internal student ID must never reach Supabase
+
+**Standing constraint, settled in an earlier session and reaffirmed by Sam
+2026-08-10.** `StudentMAPID` is MAP's internal identifier for a real person. The
+entire reason `tblStudentKey` exists is to swap it for a meaningless sequential
+surrogate *inside Access*, so the MAP id never leaves that file.
+
 ⚠️ **DO NOT export `StudentMAPID`, `Location`, `Notes`, or any name/SSN column.**
-The whole point of `tblStudentKey` is that the MAP id never leaves Access.
+
+This is checkable, so **check it rather than trusting it** — SQL 4 includes the
+guard below. The surrogate runs 1…~42,346; MAP ids are five-digit values in a
+different range entirely (Sam's sample: 60581, 60874). If a MAP id were exported
+into `student_key` by mistake, the values would be obviously out of range, and the
+verify step fails before the swap:
+
+```sql
+-- Fails loudly if the wrong column was exported as the key.
+select count(*) as keys_outside_surrogate_range
+from public.map_student_credit_v2
+where student_key > 50000;        -- expect 0
+```
+
+A privacy rule that depends on someone remembering it will eventually be
+forgotten. This one now has a tripwire.
 
 ⚠️ **Expect ~537,908 rows, not 220,588.** A student holds many credit
 recommendations, and the 5-column table was DISTINCT-collapsed. The step-3 gate
@@ -257,7 +279,9 @@ select
   (select round(sum(transcribed_credits), 2) from public.map_student_credit_v2) as transcribed,
   (select count(*) from public.map_student_credit_v2 where applied_credits    > 0) as rows_applied_gt0,
   (select count(distinct student_key) from public.map_student_credit_v2 where applied_credits    > 0) as students_applied_gt0,
-  (select count(distinct student_key) from public.map_student_credit_v2 where transcribed_credits > 0) as students_transcribed_gt0;
+  (select count(distinct student_key) from public.map_student_credit_v2 where transcribed_credits > 0) as students_transcribed_gt0,
+  -- 🔒 privacy tripwire: MAP ids are ~60000+; the surrogate is 1..~42,346.
+  (select count(*) from public.map_student_credit_v2 where student_key > 50000)   as keys_outside_surrogate_range;
 ```
 
 **Gates:**
@@ -266,7 +290,9 @@ select
    changed — fine, but know it before you publish anything.
 2. `new_rows` should equal `staged` from step 3 (or be slightly lower if the
    source genuinely contains exact duplicate rows).
-3. `students_applied_gt0` and `students_transcribed_gt0` are **the two numbers
+3. 🔒 `keys_outside_surrogate_range` must be **0**. Anything else means a MAP
+   internal student id was exported as the key — **stop, do not swap, re-export**.
+4. `students_applied_gt0` and `students_transcribed_gt0` are **the two numbers
    this whole exercise exists to produce.** They must be **≤ 42,346**. If either
    exceeds it, the load duplicated — stop and re-import.
 
