@@ -302,3 +302,65 @@ Sam: *"OK to go."* Dormant-unsuppressed is **1,053,332.50**, not the documented
 1,052,531 — which reproduces from no query. The other three figures in the policy
 verify exactly. CLAUDE.md now carries the derivation and says to **re-derive both
 totals rather than quote them**, since they move with every refresh.
+
+
+### ⚠️ Correction to the correction — the number was right all along (2026-08-09, same session)
+
+**I merged a wrong "fix" in #1087 and reverted it within the hour.** Recording it
+because the failure is instructive and I had the disproving fact in hand.
+
+The standing figure was **dormant unsuppressed = 1,052,531**. I measured
+1,053,332.50, could not reproduce 1,052,531, and called it unreproducible. It
+reproduces **exactly** — scoped to `entity_kind = 'college'`:
+
+| `entity_kind` | Entities | Dormant | Articulated |
+|---|---:|---:|---:|
+| **college** | **106** | **1,052,531.00** | **64,074.00** |
+| continuing_education | 2 | 325.00 | 0 |
+| *(absent from `map_colleges`)* | 2 | 432.50 | 0 |
+| partner | 1 | 44.00 | 0 |
+
+**The disproving fact was in the memory row I was correcting.** It said
+*"across 106 colleges"*; I measured 111 and treated the mismatch as evidence the
+NUMBER was wrong rather than as evidence the SCOPES differed. A count that
+disagrees alongside a total that disagrees is not two errors — it is one scope.
+
+**And the fix was worse than the defect.** Articulated (64,074) is college-scoped
+too, so publishing an all-entities dormant beside a college-scoped articulated
+made the pair internally inconsistent — worse than either basis applied
+consistently. **Never change one half of a pair alone.**
+
+**Root cause, and the actual repair:** the figure was published *without its
+scope*. That is what made a correct number look unreproducible and invited a
+"correction". The revert therefore restores 1,052,531 **and attaches the
+derivation**, which is what should have been there originally — the same
+prescription as
+[`methodology-verify-the-last-hop-of-a-resolution-chain`](kb-notes/methodology-verify-the-last-hop-of-a-resolution-chain.md):
+document how to CHECK a figure, never just the figure. I applied that lesson to
+someone else's number and not to my own conclusion.
+
+⭐ **Sam identified the excluded set on sight** — *"106 may be due to the NC
+campuses and agency landing pages for Futuro and LAUNCH"* — which is confirmed:
+SD CCE (119) + North Orange CE (121) as `continuing_education`, and Launch (132)
+/ Futuro (133) as `partner`. Domain knowledge beat my measurement to the
+explanation.
+
+**Two findings fall out of it:**
+1. **Ids 122 and 131 are absent from `map_colleges`** (128 rows, max id 133), and
+   hold **432.50 dormant units** between them. This is the roadmap's open "name
+   colleges 122/131" item — now with a measured cost attached.
+2. `map_colleges` carries **8 `entity_kind='test'` rows**. None have credit data,
+   but a query filtering `!= 'college'` instead of `= 'college'` sweeps them in.
+
+⚠️ **122/131 are NOT Futuro and Launch.** Sam's guess, and a reasonable one given
+the id neighbourhood — but refuted: **Launch is 132** (12 rows, 44.00 dormant)
+and **Futuro is 133** (named, and carries *no* credit data). So `map_colleges`
+(128 rows, max id 133) is **incomplete relative to the credit data**, which has
+111 distinct ids. Resolving these two needs **MAP's current college list**, not
+more inference from id adjacency — the sync either missed them or they postdate
+it. Worth doing: **122 holds 417.00 dormant units across only 3 exhibits**, an
+unusually heavy per-exhibit load that is interesting independent of the naming.
+
+Note this is the mirror image of the mistake three paragraphs up: there I
+distrusted a correct figure, here a plausible identification is wrong. Both are
+resolved the same way — measure the scope, don't reason from the neighbourhood.
