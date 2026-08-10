@@ -240,3 +240,38 @@ comfortably: 13 suppressed colleges, 41 students among them.)
 
 **Build consequence:** the briefing reads `map_college_credit_summary`, the same
 suppression-applied table the 🎓 tab and Sierra use, so it cannot drift from them.
+
+### Live config writes, 2026-08-09 (SkyHigh) — audit trail
+
+Two writes to the shared Supabase `cpl_funding_config`, both on Sam's explicit
+instruction the same day. Recorded here because that row is read by the funding
+tab AND the new College Briefing, and a config change leaves no PR trail.
+
+1. **Year 2 strategies filled** (Sam: *"Same strategies for year 2 as year 1"*;
+   then *"I didn't set year 2 strategies because it was a lot of copy paste"* —
+   which is exactly why it stayed empty). Copied Year 1 → Year 2: **10 / 6 / 6**.
+   P2 is 6 not 7 because the empty-string entry was dropped rather than
+   propagated as a blank bullet.
+2. **Year 2 metrics mirrored to Year 1** (Sam: *"Year 2 metrics and strategies
+   should mirror year 1. I changed them 2 days ago"*).
+
+**Preserved deliberately, NOT mirrored:** Year 2 P3 carries a description Year 1
+lacks. Sam asked for metrics + strategies; mirroring would have DELETED curator
+prose, and the gap arguably runs the other way (Y1 P3 has only a `title`).
+Flagged to him, left intact.
+
+⚠️ **Side effect worth knowing:** the metric mirror dropped Year 2's
+*"(1 Unit = .0334 FTES)"* conversion text, since Year 1's wording omits it.
+
+**Method note.** Both writes were surgical `jsonb_set` on specific paths, never a
+whole-object overwrite — the config is Chancellor/team-editable and a blind
+rewrite would clobber concurrent curator edits. The first was additionally
+guarded (`where … strategies is null`) so re-running it could not overwrite real
+content. `updated_by` records the instruction verbatim.
+
+### The number policy figure, corrected
+
+Sam: *"OK to go."* Dormant-unsuppressed is **1,053,332.50**, not the documented
+1,052,531 — which reproduces from no query. The other three figures in the policy
+verify exactly. CLAUDE.md now carries the derivation and says to **re-derive both
+totals rather than quote them**, since they move with every refresh.
