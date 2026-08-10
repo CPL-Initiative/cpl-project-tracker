@@ -1,80 +1,80 @@
 {
-  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-09 · Sky — the vault is 100x smaller, the docs now get linted like the data does, and five confident diagnoses had to be corrected along the way.",
-  "_session": "SkyHigh (132)",
-  "_status": "Two sessions ran today. SkyHigh worked the college contacts and the action library; this one (Sky) spent the day on the machinery underneath - the notes, the vault, and the scripts that keep them in sync. The headline: the folder Obsidian reads went from about a gigabyte to ten megabytes, because it had been carrying a thousand generated files it never needed. The vault sync now runs once an hour instead of every fifteen minutes, and no longer pops a black terminal window over whatever you are doing. There is also a new habit: the project's written notes are now checked automatically at every checkpoint, the same way the course data already was - which immediately found 115 old handoff notes that nobody had marked as superseded, and a landing page whose date field had quietly become a 1,800-character changelog. Both fixed. Of the twenty-two helper skills in the second brain, eight were deleted because the services they depend on are switched off, so they could never have run. Worth knowing: three real bugs were only found because Sam ran the scripts on his own machine - they all looked fine here. One of them would have silently stopped the vault updating altogether. Two small things are left for Sam, both listed below and both under a minute.",
-  "items": [
-    {
-      "id": "s132-confirm-five",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Five colleges now have a suggested counselling address, but nobody has been able to open their web pages to check it — the network blocks them from here. Each needs about ten seconds in a browser to confirm. Start with Palomar, which runs a separate behavioural-health department that must not be the one we use, and College of the Canyons, where we found nothing usable at all."
-    },
-    {
-      "id": "s132-scenario-year",
-      "for": "Sam",
-      "tab": "Implementation Funding",
-      "text": "Two decisions before the college page can be built: which funding scenario should colleges see (there are two, with different percentages AND different advice), and which year. Year 2 currently has no advice written against it at all, so only Year 1 works today."
-    },
-    {
-      "id": "s131-sierra-23",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "Twenty-three pieces of real feedback on Sierra are waiting to be read, nine of them thumbs-down. The oldest has been sitting since 1 July. The robot rows that used to drown this list are gone."
-    },
-    {
-      "id": "s131-14-proposals",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Fourteen colleges have no contact in MAP and we have a suggested one for each. Send them to the MAP team to accept or reject. (Not 56 — the other 42 already have a contact in MAP, so there is nothing to decide there.)"
-    },
-    {
-      "id": "s131-malone-view",
-      "for": "Sam",
-      "tab": "—",
-      "text": "Send Malone the dataset request. Two versions exist — docs/map_dataset_sql_for_malone.md gives him ready-to-run SQL (no view needed), docs/map_custom_report_request_for_malone.md asks for one view name. IMPORTANT correction: we already HAVE the disposition data (Sam checked — it came in via his Access import and is 100% complete). What is missing is only a DAILY refresh, so the college page can be built now and simply states how old its numbers are."
-    },
-    {
-      "id": "s131-4-blank",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Four colleges publish no usable address at all for a credit question. These need a human to make a call, not another search."
-    },
-    {
-      "id": "s131-cadence",
-      "for": "Sam",
-      "tab": "Governance",
-      "text": "The college contact-refresh cadence was decided in June and still has not run once. Owners are all assigned now, so this is the one governance item with nothing behind it."
-    },
-    {
-      "id": "s131-college-page",
-      "for": "Fable",
-      "tab": "—",
-      "text": "Build the college-facing briefing on the same engine as the queue — a college picks itself and a role and gets a rendered briefing, never a blank chat box."
-    },
-    {
-      "id": "s132-sweep-52",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "The fifty-two colleges that do have a CPL Assistant were never checked for a student contact, and that check can no longer be done by a session — the college websites are unreachable from here. Decide who does it: a person, or a differently-configured automated run."
-    },
-    {
-      "id": "s132-briefing-build",
-      "for": "Fable",
-      "tab": "—",
-      "text": "Build the college briefing against the live funding settings, not the copy baked into the code — they disagree. Reuse the queue's existing ranking engine rather than writing a second one."
-    },
-    {
-      "id": "s133-graph-linkdistance",
-      "for": "Sam",
-      "tab": "(Obsidian)",
-      "text": "Your Obsidian graph view went blank for about two weeks. It is working again now, but only because the vault got 100x smaller today - the setting that likely contributed is still set the way it was. In graph view, click the gear, open Forces, and drag Link distance from 250 down to about 30. It takes five seconds, you will see the effect immediately, and it stops the graph drifting off-screen again as the vault grows back."
-    },
-    {
-      "id": "s133-cplbrain-autodelete",
-      "for": "Sam",
-      "tab": "(GitHub)",
-      "text": "In the CPLBrain repo: Settings, then General, then tick 'Automatically delete head branches'. It is the same setting already on the project tracker. Without it, finished branches linger and every Claude session gets a false 'you have unpushed work' warning that costs a few minutes to disprove. One click, permanent."
-    }
-  ]
+ "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
+ "_as_of": "2026-08-10 · SkyLine — the credential naming layer the team built months ago is finally visible to Sierra, and two numbers we were about to publish turned out not to mean what we thought.",
+ "_session": "SkyLine (134)",
+ "_status": "Sierra could not name a credential. Asked which colleges give credit for POST, she searched the raw titles colleges had typed into MAP and found twenty. The real answer is thirty-two - because the team had already done the hard work of folding sixteen different spellings of 'POST' into one proper name, and that work had simply never been loaded into the database Sierra reads. It is loaded now: 1,987 credentials, with the statewide recommendation, who has adopted each one, and who could. Two cautions came out of the day, both about numbers. First, we cannot yet say how many students have had credit applied for a given credential - the credit amounts were dropped when the student table was loaded, so the question has no answer until it is reloaded. Second, a credential can be counted three different ways that all look reasonable and all disagree, so the measure has to be named as carefully as the credential is. The privacy floor also moved from five students to ten across every public page, which is why a few small credentials now read 'under 10' where they used to show an exact number.",
+ "items": [
+  {
+   "id": "s132-confirm-five",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "Five colleges now have a suggested counselling address, but nobody has been able to open their web pages to check it — the network blocks them from here. Each needs about ten seconds in a browser to confirm. Start with Palomar, which runs a separate behavioural-health department that must not be the one we use, and College of the Canyons, where we found nothing usable at all."
+  },
+  {
+   "id": "s131-sierra-23",
+   "for": "Sam",
+   "tab": "Sierra Training",
+   "text": "Twenty-three pieces of real feedback on Sierra are waiting to be read, nine of them thumbs-down. The oldest has been sitting since 1 July. The robot rows that used to drown this list are gone."
+  },
+  {
+   "id": "s131-14-proposals",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "Fourteen colleges have no contact in MAP and we have a suggested one for each. Send them to the MAP team to accept or reject. (Not 56 — the other 42 already have a contact in MAP, so there is nothing to decide there.)"
+  },
+  {
+   "id": "s131-malone-view",
+   "for": "Sam",
+   "tab": "—",
+   "text": "Send Malone the dataset request. Two versions exist — docs/map_dataset_sql_for_malone.md gives him ready-to-run SQL (no view needed), docs/map_custom_report_request_for_malone.md asks for one view name. IMPORTANT correction: we already HAVE the disposition data (Sam checked — it came in via his Access import and is 100% complete). What is missing is only a DAILY refresh, so the college page can be built now and simply states how old its numbers are."
+  },
+  {
+   "id": "s131-4-blank",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "Four colleges publish no usable address at all for a credit question. These need a human to make a call, not another search."
+  },
+  {
+   "id": "s131-cadence",
+   "for": "Sam",
+   "tab": "Governance",
+   "text": "The college contact-refresh cadence was decided in June and still has not run once. Owners are all assigned now, so this is the one governance item with nothing behind it."
+  },
+  {
+   "id": "s132-sweep-52",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "The fifty-two colleges that do have a CPL Assistant were never checked for a student contact, and that check can no longer be done by a session — the college websites are unreachable from here. Decide who does it: a person, or a differently-configured automated run."
+  },
+  {
+   "id": "s133-graph-linkdistance",
+   "for": "Sam",
+   "tab": "(Obsidian)",
+   "text": "Your Obsidian graph view went blank for about two weeks. It is working again now, but only because the vault got 100x smaller today - the setting that likely contributed is still set the way it was. In graph view, click the gear, open Forces, and drag Link distance from 250 down to about 30. It takes five seconds, you will see the effect immediately, and it stops the graph drifting off-screen again as the vault grows back."
+  },
+  {
+   "id": "s133-cplbrain-autodelete",
+   "for": "Sam",
+   "tab": "(GitHub)",
+   "text": "In the CPLBrain repo: Settings, then General, then tick 'Automatically delete head branches'. It is the same setting already on the project tracker. Without it, finished branches linger and every Claude session gets a false 'you have unpushed work' warning that costs a few minutes to disprove. One click, permanent."
+  },
+  {
+   "id": "s134-wire-credstd",
+   "for": "Fable",
+   "tab": "Sierra Training",
+   "text": "Sierra can now look a credential up by its proper name, but she is not using it yet. The lookup is built and tested; the last step is connecting it to the chat itself so a question like 'what is the statewide recommendation for POST?' gets the real answer. Nothing changes for anyone until that connection is made."
+  },
+  {
+   "id": "s134-reload-credits",
+   "for": "Fable",
+   "tab": "Course Credit",
+   "text": "Reload the student credit table with its four credit columns. They were dropped when the table was first loaded, which is why we cannot yet answer 'how many students have applied credit for X'. Sam's own export already has the columns, so this is a reload, not a new request to anyone."
+  },
+  {
+   "id": "s134-apprenticeship-type",
+   "for": "Sam",
+   "tab": "Credential Reference",
+   "text": "Worth knowing before any apprenticeship presentation: MAP has no 'Apprenticeship' category for CPL. There are only six - Credit By Exam, Industry Certification, Portfolio Review, Standardized Assessment, Military, Other. So any count filtered on apprenticeship comes back zero, which reads as 'we do none' when the truth is that MAP files it under Industry Certification or Portfolio Review."
+  }
+ ]
 }
