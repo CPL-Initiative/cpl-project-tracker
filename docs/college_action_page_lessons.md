@@ -255,13 +255,40 @@ tab AND the new College Briefing, and a config change leaves no PR trail.
 2. **Year 2 metrics mirrored to Year 1** (Sam: *"Year 2 metrics and strategies
    should mirror year 1. I changed them 2 days ago"*).
 
-**Preserved deliberately, NOT mirrored:** Year 2 P3 carries a description Year 1
-lacks. Sam asked for metrics + strategies; mirroring would have DELETED curator
-prose, and the gap arguably runs the other way (Y1 P3 has only a `title`).
-Flagged to him, left intact.
+3. **Full mirror completed** after Sam escalated the instruction twice —
+   *"Yah mirror them. I'll get in and correct it"*, then **"Year 1 is the
+   authoritative set"**, under the framing *"a 2-year project with unchanging
+   priorities, metrics, strategies"*. End state verified: the two year objects
+   are **byte-identical** (`yearPriorities.1 = yearPriorities.2` → true),
+   **22 strategies each**.
+
+   Three further edits, all named because two of them changed Year 1:
+   - **Y1 P2's blank strategy removed** — 7 entries → 6 real ones.
+   - **`target_rate` 0.03 copied Y1 → Y2.** ⚠️ This one feeds **funding math**,
+     not display: `per_student = (share × perYear) ÷ (totalHeads × target_rate)`.
+     Y2 P3 previously had none. Scenario 2 Y1 also carries 0.03.
+   - ⚠️ **Y2 P3's description was copied UP into Y1** — done under *"mirror
+     them"*, BEFORE *"Year 1 is authoritative"* arrived. Under the final rule the
+     strictly correct move was to delete it from Y2 instead. The end state is
+     self-consistent (both years carry it; it matches the P3 title) but **Year 1
+     gained prose Sam did not put there**, so it is flagged rather than left to
+     be discovered.
+
+**Sequencing lesson.** Three instructions arrived in three messages, each
+widening the last, and acting on each as it landed produced one edit in the
+wrong direction. Nothing was lost — but with a curator actively typing, the
+cheap move is to let an instruction settle for one exchange before writing to a
+shared table, or to make the reversible edit first (add, don't delete) so a
+later refinement costs nothing. Adding rather than deleting is what saved this
+one.
 
 ⚠️ **Side effect worth knowing:** the metric mirror dropped Year 2's
 *"(1 Unit = .0334 FTES)"* conversion text, since Year 1's wording omits it.
+
+⚠️ **Still typos, still not silently edited:** `"reuqests"` and *"Support A&R and
+VRC staff **is** CPL efforts"* — and the mirror has now **duplicated both into
+Year 2**, so fixing them is four edits rather than two. Offered to Sam; curator
+text, so his call.
 
 **Method note.** Both writes were surgical `jsonb_set` on specific paths, never a
 whole-object overwrite — the config is Chancellor/team-editable and a blind
