@@ -6599,10 +6599,18 @@ def export_credential_reference():
     # CustomReport file is fetched daily but NOT committed (PII policy, gitignored)
     # → absent in a clean checkout / local regen, present during the cron, so this
     # lights up on the next daily run. PRIVACY (Sam, 2026-06-04): small-cell
-    # suppression below 5 — counts 1-4 are masked as "<5" and the exact number is
-    # NEVER baked, so a credential served by a handful of students at one college
-    # can't be singled out in the public payload.
-    SERVED_SUPPRESS_BELOW = 5
+    # suppression — counts below the floor are masked as "<floor" and the exact
+    # number is NEVER baked, so a credential served by a handful of students at
+    # one college can't be singled out in the public payload.
+    #
+    # RAISED 5 → 10 (Sam, 2026-08-10). Sierra answers credential questions to an
+    # unauthenticated public (cpl-chat ships --no-verify-jwt), and the student
+    # aggregates already use k=10; two different floors for the same anonymous
+    # asker was the inconsistency. Cost: 52 credentials that showed an exact
+    # 5-9 now read "<10". The floor is EMITTED in _stats so consumers render the
+    # mask from it — never hard-code "<5" again (that literal was in eight
+    # places, one of which already printed the floor beside a stale "<5").
+    SERVED_SUPPRESS_BELOW = 10
     exid_to_ut = {}
     for _a in articulations:
         _ex, _utx = _a.get("exhibit_id"), _a.get("unified_title")
@@ -7186,6 +7194,9 @@ def export_credential_reference():
             "articulated_titles": sum(1 for r in rows if r["articulations"]),
             "total_articulation_lines": sum(r["n_articulation_lines"] for r in rows),
             "statewide_titles": sum(1 for r in rows if r["statewide"]),
+            # Consumers render the students_served mask as "<" + this value.
+            # Emitted so the label can never drift from the threshold.
+            "served_suppress_below": SERVED_SUPPRESS_BELOW,
         },
         "top_categories": top_categories,
         # MQ discipline → GE division(s), for the consumer's GE-Area coherence

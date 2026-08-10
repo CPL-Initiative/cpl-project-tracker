@@ -502,6 +502,20 @@
 
   // ─── data loading ───────────────────────────────────────────────────────
 
+  // Small-cell suppression floor for students_served, read from the payload the
+  // generator baked it into (excel_to_dashboard.py: SERVED_SUPPRESS_BELOW).
+  // NEVER hard-code the mask string: the floor rose 5 → 10 on 2026-08-10 and the
+  // literal "<5" was scattered across eight call sites, one of which printed the
+  // live floor beside a stale label. The fallback matches the generator's current
+  // value so an old cached payload still masks at the safer threshold.
+  var SERVED_FLOOR_FALLBACK = 10;
+  function servedFloor() {
+    var s = (window.CPL_CREDENTIAL_REFERENCE || {})._stats || {};
+    var n = s.served_suppress_below;
+    return (typeof n === "number" && n > 0) ? n : SERVED_FLOOR_FALLBACK;
+  }
+  function servedMask() { return "<" + servedFloor(); }
+
   // Adapter — converts a row from the baked payload (window.CPL_CREDENTIAL_REFERENCE)
   // to the row shape the renderer expects. Same shape as buildRows() output below
   // so render code is unified across both paths (baked vs runtime fetch).
@@ -539,8 +553,9 @@
       // System-level GE-Area credit for AP/IB/CLEP exams — null otherwise.
       ge_credit: b.ge_credit || null,
       // Student-impact roll-up (path 1): total CPL students served across
-      // articulating colleges. null + served_suppressed when 1-4 (masked "<5");
-      // null + !served_suppressed when 0 / no data. Populates on the daily cron.
+      // articulating colleges. null + served_suppressed when below the floor
+      // (masked via servedMask(), currently "<10"); null + !served_suppressed
+      // when 0 / no data. Populates on the daily cron.
       students_served: (typeof b.students_served === "number") ? b.students_served : null,
       served_suppressed: !!b.served_suppressed,
       // Eligible-credit FUNNEL (units) from the Exhibit CRs Catalog (2026-06-09):
@@ -877,8 +892,9 @@
       audit_tag_total: function (r) { return r.audit_tag_total; },
       flag_label:      function (r) { return r.flag_label || "~"; },
       reviewed:        function (r) { return r.curator_reviewed_at ? 1 : 0; },
-      // Students-served sort: known count (≥5) → its value; suppressed (1-4) →
-      // 0.5 (above no-data, below any real count); none → 0. So "sort desc"
+      // Students-served sort: known count (≥ floor) → its value; suppressed
+      // (below floor) → 0.5 (above no-data, below any real count); none → 0.
+      // 0.5 stays correct at any floor ≥ 1. So "sort desc"
       // floats the highest-impact credentials to the top for curation triage.
       students:        function (r) {
         return (typeof r.students_served === "number") ? r.students_served
@@ -1207,7 +1223,7 @@
         cpl_types: cplTypesOf(r),
         statewide_ccc: !!r.statewide,
         students_served: (typeof r.students_served === "number") ? r.students_served
-          : (r.served_suppressed ? "<5" : null),
+          : (r.served_suppressed ? servedMask() : null),
         eligible_credit_units: (typeof r.eligible_credits === "number") ? r.eligible_credits : null,
         quality_flag: r.flag_label || null,
         confidence_title: (typeof r.conf_modal === "number") ? r.conf_modal : null,
@@ -2567,8 +2583,9 @@
           [r.students_served.toLocaleString()]));
       } else if (r.served_suppressed) {
         servedTd.appendChild(el("span", { class: "cr-served-sup",
-          title: "Fewer than 5 students — exact count withheld (small-cell privacy suppression)." },
-          ["<5"]));
+          title: "Fewer than " + servedFloor() +
+                 " students — exact count withheld (small-cell privacy suppression)." },
+          [servedMask()]));
       } else {
         servedTd.appendChild(el("span", { class: "cr-null" }, ["—"]));
       }
@@ -3146,7 +3163,7 @@
       "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
       "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}" +
       // Students-served column (path 1) — the count stands out for triage; the
-      // masked "<5" is muted (small-cell suppression).
+      // masked "<N" is muted (small-cell suppression).
       "#tab-credential-reference .cr-served-n{font-weight:600;color:var(--text-strong);}" +
       "#tab-credential-reference .cr-served-sup{color:#94a3b8;font-style:italic;font-size:.85em;}" +
       // GE-Area coherence (item #3) — per-identity "off GE Area" badge (warn) +
