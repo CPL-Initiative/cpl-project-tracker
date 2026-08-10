@@ -26,7 +26,7 @@ the horizontal rule is *why*; you don't need it to run this.
 | **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ The number must equal step 1's count. If it doesn't: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
 | **4** | Run **SQL 3 — build the new table**. | SQL Editor |
 | **5** | Run **SQL 4 — verify**. | SQL Editor |
-| **6** | ⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
+| **6** | ⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` = **42,346** (confirmed 2026-08-10), and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
 | **7** | Run **SQL 5 — swap**. The live table is replaced here. | SQL Editor |
 | **8** | Run **SQL 6 — restore RLS**. ⚠️ Until this runs the 🎓 Course Credit tab is blank. | SQL Editor |
 | **9** | Open the 🎓 Course Credit tab and confirm it loads. Then run **SQL 7 — cleanup**. | dashboard, then SQL Editor |
@@ -153,9 +153,14 @@ SELECT COUNT(*) AS distinct_mapid
 FROM (SELECT StudentMAPID FROM TblSOURCE GROUP BY StudentMAPID) AS T;
 ```
 
-Expect **≈ 42,345**, matching what `funding/_student_detail_local.py` measured
-independently from `InternalMAPStudentID` — which is what confirms the live
-`student_key` (1…42,346) is correctly derived and that **42,346 counts people**.
+✅ **CONFIRMED 2026-08-10: returns 42,346 — an EXACT match with the live
+`map_student_credit.student_key` distinct count.** The surrogate is 1:1 with
+`StudentMAPID`, so the published **42,346 counts PEOPLE, not MAP records**, and
+every figure built on it holds.
+
+(`funding/_student_detail_local.py` measured 42,345 from `InternalMAPStudentID`
+on the 2026-08-06 `.xlsx`. One student's difference between export vintages —
+ordinary, not a defect. The Access file is the newer of the two.)
 
 </details>
 
