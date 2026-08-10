@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-10 · SkyDeck + SkyLine — two sessions ran today: the CAC apprenticeship deck was rebuilt and scripted, and Sierra finally got a canonical list of credential names.",
- "_session": "SkyDeck (134) + SkyLine (134)",
- "_status": "Two sessions ran in parallel today. SkyLine worked on Sierra: it turns out the tidy list of credential names we needed had already been curated months ago and simply never reached the database Sierra reads, so asking it about POST returned 20 colleges instead of the 32 we actually know about. That list is now published. SkyDeck rebuilt the three apprenticeship pathway slides for the Apprenticeship Council meeting on the 13th. Those slides were not really a design problem - each was a single flat picture, so none of the text could be edited or read aloud by a screen reader, and the course tables inside them ran off the bottom of the slide where nobody could see them. They are rebuilt properly now, revealing themselves in three clicks, with a script and a printed run sheet timed to thirteen minutes. Two things need a person before the meeting, and they are the first two items below.",
+ "_as_of": "2026-08-10 (evening) · SkyLine — the student credit table was reloaded with the numbers we were missing.",
+ "_session": "SkyLine (137)",
+ "_status": "The student credit table has been reloaded from MAP's raw extract and is live: 537,908 rows instead of 220,588, and it now carries the actual credit amounts, which the old export never had. That unblocks the question we could not answer before — how many students have had credit APPLIED. The answer is 18,889 of 42,346. But counting a different, equally reasonable way gives 29,292, and the difference is the interesting part: 24,885 records are marked 'applied to CPL plan' while recording zero units applied, and 24,561 of those have articulated credit sitting behind them. That is a real follow-up list, now available as its own view, concentrated in just 32 colleges. Nothing published changed — the dashboard's headline figures were checked before and after and are identical to the cent.",
  "items": [
   {
    "id": "s134-cac-units",
@@ -35,12 +35,6 @@
    "text": "Fourteen colleges have no contact in MAP and we have a suggested one for each. Send them to the MAP team to accept or reject. (Not 56 — the other 42 already have a contact in MAP, so there is nothing to decide there.)"
   },
   {
-   "id": "s131-malone-view",
-   "for": "Sam",
-   "tab": "—",
-   "text": "Send Malone the dataset request. Two versions exist — docs/map_dataset_sql_for_malone.md gives him ready-to-run SQL (no view needed), docs/map_custom_report_request_for_malone.md asks for one view name. IMPORTANT correction: we already HAVE the disposition data (Sam checked — it came in via his Access import and is 100% complete). What is missing is only a DAILY refresh, so the college page can be built now and simply states how old its numbers are."
-  },
-  {
    "id": "s131-4-blank",
    "for": "Sam",
    "tab": "MAP Users",
@@ -71,22 +65,28 @@
    "text": "In the CPLBrain repo: Settings, then General, then tick 'Automatically delete head branches'. It is the same setting already on the project tracker. Without it, finished branches linger and every Claude session gets a false 'you have unpushed work' warning that costs a few minutes to disprove. One click, permanent."
   },
   {
-   "id": "s134-wire-credstd",
-   "for": "Fable",
-   "tab": "Sierra Training",
-   "text": "Sierra can now look a credential up by its proper name, but she is not using it yet. The lookup is built and tested; the last step is connecting it to the chat itself so a question like 'what is the statewide recommendation for POST?' gets the real answer. Nothing changes for anyone until that connection is made."
-  },
-  {
-   "id": "s134-reload-credits",
-   "for": "Fable",
-   "tab": "Course Credit",
-   "text": "Reload the student credit table with its four credit columns. They were dropped when the table was first loaded, which is why we cannot yet answer 'how many students have applied credit for X'. Sam's own export already has the columns, so this is a reload, not a new request to anyone."
-  },
-  {
    "id": "s134-apprenticeship-type",
    "for": "Sam",
    "tab": "Credential Reference",
-   "text": "Worth knowing before any apprenticeship presentation: MAP has no 'Apprenticeship' category for CPL. There are only six - Credit By Exam, Industry Certification, Portfolio Review, Standardized Assessment, Military, Other. So any count filtered on apprenticeship comes back zero, which reads as 'we do none' when the truth is that MAP files it under Industry Certification or Portfolio Review."
+   "text": "Worth knowing before any apprenticeship presentation: MAP has no 'Apprenticeship' category for CPL. There are only six - Credit By Exam, Industry Certification, Portfolio Review, Standardized Assessment, Military, Other. So any count filtered on apprenticeship comes back zero, which reads as 'we do none' when the truth is that MAP files it elsewhere. GOOD NEWS as of today: it IS measurable after all, just not by type - the reloaded table has an apprenticeship credits column, showing 309 students across 12 colleges and 6,617.80 units. Use that figure, not a type filter."
+  },
+  {
+   "id": "s137-applied-zero-units",
+   "for": "Sam",
+   "tab": "Course Credit",
+   "text": "A new follow-up list exists: 24,885 records where a college marked the credit 'applied to the student's CPL plan' but recorded zero units actually applied - and 24,561 of them have articulated credit already sitting behind them. That is 12,375 students across just 32 colleges, so it is a workable list rather than a systemic problem. It may be a recording habit rather than missing work, but it is why our two ways of counting 'applied' differ by 55%, so it is worth understanding before we publish either number."
+  },
+  {
+   "id": "s137-eyeball-tab",
+   "for": "Sam",
+   "tab": "Course Credit",
+   "text": "Open the Course Credit tab once and confirm it still looks right. The table underneath it was replaced today. Everything published was checked before and after and is identical, but a human glance is the last gate - once you confirm, we can delete the two backup copies still sitting in the database."
+  },
+  {
+   "id": "s137-cred-adopt",
+   "for": "Fable",
+   "tab": "Sierra Training",
+   "text": "Build the next Sierra route: 'which colleges already articulate this credential, and I am thinking of adopting it.' No new data is needed - the adopter and potential-adopter lists are already published and tested. After that comes the route that tells a student to use their OWN college's Request Review button."
   }
  ]
 }
