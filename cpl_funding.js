@@ -2004,7 +2004,7 @@
   function csvActual(college, key) {
     var rec = perfFor(college);
     if (!rec) return "";
-    if (rec[key] == null) return rec[key + "_suppressed"] ? "<5" : "";
+    if (rec[key] == null) return rec[key + "_suppressed"] ? maskLt(false) : "";
     return rec[key];
   }
   function csvEligText(college) {
@@ -2151,13 +2151,22 @@
 
   // ── priority-metric actuals (cron artifact; may not exist yet) ─────────
   function perf() { return window.CPL_FUNDING_PERF || null; }
+  // Small-cell suppression floor for student headcounts, read from the payload
+  // (funding/_build_cr_backlog.py: SUPPRESS_BELOW). Raised 5 → 10 on 2026-08-10;
+  // the mask label used to be the literal "<5" in six places here, so a floor
+  // change silently understated the protection. Always render from this.
+  function suppressFloor() {
+    var pf = perf(); var n = pf && pf.suppress_below;
+    return (typeof n === "number" && n > 0) ? n : 10;
+  }
+  function maskLt(esc) { return (esc ? "&lt;" : "<") + suppressFloor(); }
   function perfFor(collegeName) {
     var p = perf();
     return (p && p.colleges && p.colleges[collegeName]) || null;
   }
   function fmtActual(rec, key) {
     if (!rec) return "—";
-    if (rec[key] == null) return rec[key + "_suppressed"] ? "&lt;5" : "—";
+    if (rec[key] == null) return rec[key + "_suppressed"] ? maskLt(true) : "—";
     return fmtInt(rec[key]);
   }
 
@@ -3328,7 +3337,7 @@
       actLine = '<span class="cf-lbl">Now</span> 0 ' + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-u">' + fmtMoneyK(0) +
         '</span> &middot; <span class="cf-pct">0%</span>';
     } else if (fr.status === "suppressed") {
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">&lt;5</span> &middot; <span class="cf-u">' +
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' + maskLt(true) + '</span> &middot; <span class="cf-u">' +
         fmtMoneyK(earned) + "</span>";
     } else {   // gap / pending — not measurable yet; advances at full cap
       actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
@@ -3421,7 +3430,7 @@
       out.push(Math.round(prioTarget(isSystem ? null : c, p)));
       var fr = earnFraction(isSystem ? null : c, p);
       out.push(fr.status === "earned" ? fr.actual :
-        fr.status === "suppressed" ? "<5" :
+        fr.status === "suppressed" ? maskLt(false) :
         (fr.status === "gap" || fr.status === "pending") ? "" : 0);
     });
     return out;
@@ -4468,7 +4477,7 @@
     var fp = feederPerf(); var r = fp && fp[short];
     if (!r) return "";
     if (r.pe == null) return r.pe_suppressed
-      ? ' <span class="dk" style="font-size:.72rem;">&middot; &lt;5 eligible in MAP</span>' : "";
+      ? ' <span class="dk" style="font-size:.72rem;">&middot; ' + maskLt(true) + ' eligible in MAP</span>' : "";
     return ' <span class="dk" style="font-size:.72rem;">&middot; ' + fmtInt(r.pe) + " eligible in MAP</span>";
   }
   // The noncredit measurables ladder (Sam, 2026-07-27): F1 (eligible headcount —
@@ -4602,7 +4611,8 @@
     return "<div>The <strong>P1 / P2 / P3</strong> columns stack each priority&#39;s <strong>target</strong> " +
       "(top: projected students &middot; cap) over its <strong>actual</strong> (bottom: students posted in MAP &middot; " +
       "earned, % of target) &mdash; hover the header for the priority&#39;s goal + metric. Actuals per MAP as of " + esc(pf.as_of) +
-      "; test/potential records excluded; counts under " + pf.suppress_below + " read &lt;5; statewide figures " +
+      "; test/potential records excluded; counts under " + pf.suppress_below +
+      " read &lt;" + pf.suppress_below + "; statewide figures " +
       "deduplicate across colleges (not the column sum). Only the metric(s) MAP can measure today show an actual; the " +
       "rest read <span class=\"cf-gap\">gap</span> and advance at full cap until their feed lands.</div>" + unLine;
   }
@@ -5086,7 +5096,7 @@
       '<td class="c">' + counts[1] + '</td><td class="c">' + counts[2] + '</td><td class="c">' + counts[3] +
       "</td></tr></tfoot></table></div>" +
       '<div class="cplfund-foot">Legend: <span class="cf-ess ok">✓</span> met &middot; ' +
-      '<span class="cf-ess part">◐</span> present but privacy-suppressed (&lt;5 students) &middot; ' +
+      '<span class="cf-ess part">◐</span> present but privacy-suppressed (' + maskLt(true) + ' students) &middot; ' +
       '<span class="cf-ess no">—</span> not yet evidenced in MAP &middot; ' +
       '<span class="cf-ess no">n/a</span> no enrolled veterans to measure &middot; ' +
       '<span class="cf-ess pend">⏳</span> data feed not loaded. ' +

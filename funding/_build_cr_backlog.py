@@ -64,7 +64,9 @@ OUT_JS = os.path.join(ROOT, "cpl_funding_cr_backlog.js")
 # artifact can be produced from a manual pull without waiting on the wiring.
 VIEW = "View_StudentDetailCredits_APIDataset"
 
-SUPPRESS_BELOW = 5
+SUPPRESS_BELOW = 10  # raised 5 → 10 (Sam, 2026-08-10) — one floor for every
+                     # student headcount a public surface can reach. See
+                     # excel_to_dashboard.py: SERVED_SUPPRESS_BELOW.
 
 # The four dispositions MAP writes. Anything other than NEEDS_ACTION counts as
 # work done — see the fairness note above.

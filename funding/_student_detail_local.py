@@ -67,7 +67,8 @@ import secrets
 import sys
 from collections import Counter, defaultdict
 
-SUPPRESS_BELOW = 5
+SUPPRESS_BELOW = 10  # raised 5 → 10 (Sam, 2026-08-10) to match the published
+                     # floor; this script's output is pasted into shared docs.
 NEEDS_ACTION = "Needs Action"
 
 # Anything other than Needs Action means a human looked at it. Not Applicable
