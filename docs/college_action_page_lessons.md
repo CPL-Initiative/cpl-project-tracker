@@ -240,3 +240,65 @@ comfortably: 13 suppressed colleges, 41 students among them.)
 
 **Build consequence:** the briefing reads `map_college_credit_summary`, the same
 suppression-applied table the 🎓 tab and Sierra use, so it cannot drift from them.
+
+### Live config writes, 2026-08-09 (SkyHigh) — audit trail
+
+Two writes to the shared Supabase `cpl_funding_config`, both on Sam's explicit
+instruction the same day. Recorded here because that row is read by the funding
+tab AND the new College Briefing, and a config change leaves no PR trail.
+
+1. **Year 2 strategies filled** (Sam: *"Same strategies for year 2 as year 1"*;
+   then *"I didn't set year 2 strategies because it was a lot of copy paste"* —
+   which is exactly why it stayed empty). Copied Year 1 → Year 2: **10 / 6 / 6**.
+   P2 is 6 not 7 because the empty-string entry was dropped rather than
+   propagated as a blank bullet.
+2. **Year 2 metrics mirrored to Year 1** (Sam: *"Year 2 metrics and strategies
+   should mirror year 1. I changed them 2 days ago"*).
+
+3. **Full mirror completed** after Sam escalated the instruction twice —
+   *"Yah mirror them. I'll get in and correct it"*, then **"Year 1 is the
+   authoritative set"**, under the framing *"a 2-year project with unchanging
+   priorities, metrics, strategies"*. End state verified: the two year objects
+   are **byte-identical** (`yearPriorities.1 = yearPriorities.2` → true),
+   **22 strategies each**.
+
+   Three further edits, all named because two of them changed Year 1:
+   - **Y1 P2's blank strategy removed** — 7 entries → 6 real ones.
+   - **`target_rate` 0.03 copied Y1 → Y2.** ⚠️ This one feeds **funding math**,
+     not display: `per_student = (share × perYear) ÷ (totalHeads × target_rate)`.
+     Y2 P3 previously had none. Scenario 2 Y1 also carries 0.03.
+   - ⚠️ **Y2 P3's description was copied UP into Y1** — done under *"mirror
+     them"*, BEFORE *"Year 1 is authoritative"* arrived. Under the final rule the
+     strictly correct move was to delete it from Y2 instead. The end state is
+     self-consistent (both years carry it; it matches the P3 title) but **Year 1
+     gained prose Sam did not put there**, so it is flagged rather than left to
+     be discovered.
+
+**Sequencing lesson.** Three instructions arrived in three messages, each
+widening the last, and acting on each as it landed produced one edit in the
+wrong direction. Nothing was lost — but with a curator actively typing, the
+cheap move is to let an instruction settle for one exchange before writing to a
+shared table, or to make the reversible edit first (add, don't delete) so a
+later refinement costs nothing. Adding rather than deleting is what saved this
+one.
+
+⚠️ **Side effect worth knowing:** the metric mirror dropped Year 2's
+*"(1 Unit = .0334 FTES)"* conversion text, since Year 1's wording omits it.
+
+⚠️ **Still typos, still not silently edited:** `"reuqests"` and *"Support A&R and
+VRC staff **is** CPL efforts"* — and the mirror has now **duplicated both into
+Year 2**, so fixing them is four edits rather than two. Offered to Sam; curator
+text, so his call.
+
+**Method note.** Both writes were surgical `jsonb_set` on specific paths, never a
+whole-object overwrite — the config is Chancellor/team-editable and a blind
+rewrite would clobber concurrent curator edits. The first was additionally
+guarded (`where … strategies is null`) so re-running it could not overwrite real
+content. `updated_by` records the instruction verbatim.
+
+### The number policy figure, corrected
+
+Sam: *"OK to go."* Dormant-unsuppressed is **1,053,332.50**, not the documented
+1,052,531 — which reproduces from no query. The other three figures in the policy
+verify exactly. CLAUDE.md now carries the derivation and says to **re-derive both
+totals rather than quote them**, since they move with every refresh.
