@@ -21,12 +21,12 @@ the horizontal rule is *why*; you don't need it to run this.
 
 | # | Do | Where |
 |---|---|---|
-| **1** | Export the 9 columns to CSV. **Write down the row count** your tool reports. | Access, your machine |
+| **1** | Export the columns below **from `TblSOURCE`** to CSV. **Write down the row count** (expect ~537,908). | Access, your machine |
 | **2** | Run **SQL 1 — staging table**. | Supabase → SQL Editor |
 | **3** | Import your CSV into `stg_student_credit`. Then run **SQL 2 — count check**. ⛔ The number must equal step 1's count. If it doesn't: `truncate public.stg_student_credit;` and re-import. | Supabase → Table Editor, then SQL Editor |
 | **4** | Run **SQL 3 — build the new table**. | SQL Editor |
 | **5** | Run **SQL 4 — verify**. | SQL Editor |
-| **6** | ⛔ Check: `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ 42,346**. If either is bigger, the load duplicated — go back to step 3. | read the output |
+| **6** | ⛔ Check: `keys_outside_surrogate_range` is **0** (privacy tripwire), `new_students` ≈ **42,346**, and both `students_applied_gt0` and `students_transcribed_gt0` are **≤ `new_students`**. If either is bigger, the load duplicated — go back to step 3. | read the output |
 | **7** | Run **SQL 5 — swap**. The live table is replaced here. | SQL Editor |
 | **8** | Run **SQL 6 — restore RLS**. ⚠️ Until this runs the 🎓 Course Credit tab is blank. | SQL Editor |
 | **9** | Open the 🎓 Course Credit tab and confirm it loads. Then run **SQL 7 — cleanup**. | dashboard, then SQL Editor |
@@ -52,8 +52,18 @@ table isn't touched until step 7. Just drop `map_student_credit_v2` and start ov
 student_key · college_id · exhibit_id · course_type · catalog_year
 ```
 
-**The four credit columns were dropped when it was loaded.** So these questions
-have no answer today:
+**The four credit columns are not in it — and were never in the export it was
+built from.**
+
+⚠️ **Correction (2026-08-10, same day):** an earlier version of this doc said the
+columns were *"dropped at load."* That was an inference and it was WRONG. Sam's
+`20260808_Tbl_MAP_STUDENT_CREDIT` export is five columns by construction, so
+nothing was lost in loading. The credits live in `TblSOURCE`, the raw MAP
+extract, which the 5-column table is a projection of. Correcting it here because
+this project has twice been misled by a confident wrong sentence about exactly
+this dataset.
+
+So these questions have no answer today:
 
 | Measure (Sam's definitions, 2026-08-10) | Computable now? |
 |---|---|
@@ -72,31 +82,101 @@ answered this one.
 
 ---
 
-## Before you start
+## Before you start — export from `TblSOURCE`
 
-Your export needs these nine columns. The first five must match the current
-table exactly or the reconciliation below is meaningless.
+**Source: the query that already produces `student_key`, extended with the credit
+columns** — its base is `TblSOURCE`, the original full extract from MAP at
+**537,908 rows** (confirmed by Sam, 2026-08-10). Not `Tbl_MAP_STUDENT_CREDIT`, which is the
+5-column projection already loaded, and not `Qry3_export` /
+`TblCOLL_STU_EXH_CR_UNIT`, which are aggregates with no student key and are
+**already in Supabase, exactly** — 204,714 rows reconciling to the cent
+(potential 1,285,289.35 · applied 112,950.75 · transcribed 61,161.45). Re-loading
+either of those accomplishes nothing.
 
-| Column | Becomes |
-|---|---|
-| StudentKey / student id | `student_key` (integer) |
-| CollegeID | `college_id` (integer) |
-| ExhibitID | `exhibit_id` (text) |
-| CourseType | `course_type` (text) |
-| CatalogYear | `catalog_year` (text) |
-| **PotentialCredits** | `potential_credits` (numeric) |
-| **CreditsInReview** | `credits_in_review` (numeric) |
-| **AppliedCredits** | `applied_credits` (numeric) |
-| **TranscribedCredits** | `transcribed_credits` (numeric) |
+Export these columns:
 
-⚠️ **Export as CSV with a header row, and write down the row count your export
-tool reports.** You will need that number twice. It should be **220,588** if the
-population hasn't changed since the last load; a different number is fine, but
-then it — not 220,588 — is the figure everything below must match.
+| `TblSOURCE` column | Becomes | Why |
+|---|---|---|
+| **the existing person key** (via `tblStudentKey` on `StudentMAPID`) | `student_key` (integer) | ⚠️ **NOT `TblSOURCE.Student`** — see below |
+| `CollegeID` | `college_id` (integer) | |
+| `ExhibitID` | `exhibit_id` (text) | |
+| `Course Type` | `course_type` (text) | award destination |
+| `Catalog Year` | `catalog_year` (text) | |
+| `PotentialCredits` | `potential_credits` (numeric) | **the point of this re-load** |
+| `CreditsInReview` | `credits_in_review` (numeric) | |
+| `AppliedCredits` | `applied_credits` (numeric) | |
+| `TranscribedCredits` | `transcribed_credits` (numeric) | |
+| `CPLStatusPlan` | `cpl_status_plan` (text) | ⭐ disposition **per student** — new |
+| `ApprenticeshipCredits` | `apprenticeship_credits` (numeric) | see note |
+| `MilitaryCredits` | `military_credits` (numeric) | |
+| `NonMilitaryCredits` | `non_military_credits` (numeric) | |
+| `ArticulatedCredits` | `articulated_credits` (numeric) | |
+
+⭐ **`CPLStatusPlan` at student grain is new capability**, not just a column. Today
+disposition exists only as a college × exhibit aggregate; per-student it becomes
+possible to say *"this student holds credit sitting at Needs Action"*, which is
+the actual unit of the backlog.
+
+⭐ **`ApprenticeshipCredits` matters more than it looks.** MAP has **no
+"Apprenticeship" CPL *type*** — `cpl_types` is six values only, so any filter on
+type returns 0 and reads as *"we do no apprenticeship CPL."* Apprenticeship credit
+is tracked as a **credit bucket**, not a category. This column is the only way to
+measure it.
+
+### ⚠️ The person key is NOT `TblSOURCE.Student`
+
+**Sam, 2026-08-10: `Student` is a GROUPING COUNTER.** It is not a person. His
+sample shows `Student = 1` carrying two different `StudentMAPID`s at the same
+college, which is what gave it away.
+
+The real person key is the sequential id built from `StudentMAPID` via
+`tblStudentKey` — that is what `QrySTUID_KEY` / `Qry_MAP_STUDENT_CREDIT` already
+produce, and it is what the live table's `student_key` (1…42,346, globally unique,
+one college each) actually is. It also matches the 42,345 distinct students the
+local script measured independently from `InternalMAPStudentID`.
+
+**So the export is not a raw `TblSOURCE` dump.** Extend the query that ALREADY
+emits `student_key` — add the credit columns and `CPLStatusPlan` to it — rather
+than starting from `TblSOURCE`. That keeps key continuity with what is loaded and
+avoids re-deriving a mapping that already exists.
+
+Exporting `Student` instead would produce a key that *looks* like a person, counts
+like a person, and is not one — a failure that surfaces only as a wrong headline
+number nobody can trace.
+
+### 🔒 The MAP internal student ID must never reach Supabase
+
+**Standing constraint, settled in an earlier session and reaffirmed by Sam
+2026-08-10.** `StudentMAPID` is MAP's internal identifier for a real person. The
+entire reason `tblStudentKey` exists is to swap it for a meaningless sequential
+surrogate *inside Access*, so the MAP id never leaves that file.
+
+⚠️ **DO NOT export `StudentMAPID`, `Location`, `Notes`, or any name/SSN column.**
+
+This is checkable, so **check it rather than trusting it** — SQL 4 includes the
+guard below. The surrogate runs 1…~42,346; MAP ids are five-digit values in a
+different range entirely (Sam's sample: 60581, 60874). If a MAP id were exported
+into `student_key` by mistake, the values would be obviously out of range, and the
+verify step fails before the swap:
+
+```sql
+-- Fails loudly if the wrong column was exported as the key.
+select count(*) as keys_outside_surrogate_range
+from public.map_student_credit_v2
+where student_key > 50000;        -- expect 0
+```
+
+A privacy rule that depends on someone remembering it will eventually be
+forgotten. This one now has a tripwire.
+
+⚠️ **Expect ~537,908 rows, not 220,588.** A student holds many credit
+recommendations, and the 5-column table was DISTINCT-collapsed. The step-3 gate
+compares against **your new export's count**, not the old one.
+
+⚠️ **Key values will not match the current table** and do not need to — this is a
+full replace, which is what the swap in SQL 5 does.
 
 ⚠️ **Never commit the export to any repo.** This one is public.
-
----
 
 ## The one trap that has already bitten
 
@@ -199,7 +279,9 @@ select
   (select round(sum(transcribed_credits), 2) from public.map_student_credit_v2) as transcribed,
   (select count(*) from public.map_student_credit_v2 where applied_credits    > 0) as rows_applied_gt0,
   (select count(distinct student_key) from public.map_student_credit_v2 where applied_credits    > 0) as students_applied_gt0,
-  (select count(distinct student_key) from public.map_student_credit_v2 where transcribed_credits > 0) as students_transcribed_gt0;
+  (select count(distinct student_key) from public.map_student_credit_v2 where transcribed_credits > 0) as students_transcribed_gt0,
+  -- 🔒 privacy tripwire: MAP ids are ~60000+; the surrogate is 1..~42,346.
+  (select count(*) from public.map_student_credit_v2 where student_key > 50000)   as keys_outside_surrogate_range;
 ```
 
 **Gates:**
@@ -208,7 +290,9 @@ select
    changed — fine, but know it before you publish anything.
 2. `new_rows` should equal `staged` from step 3 (or be slightly lower if the
    source genuinely contains exact duplicate rows).
-3. `students_applied_gt0` and `students_transcribed_gt0` are **the two numbers
+3. 🔒 `keys_outside_surrogate_range` must be **0**. Anything else means a MAP
+   internal student id was exported as the key — **stop, do not swap, re-export**.
+4. `students_applied_gt0` and `students_transcribed_gt0` are **the two numbers
    this whole exercise exists to produce.** They must be **≤ 42,346**. If either
    exceeds it, the load duplicated — stop and re-import.
 

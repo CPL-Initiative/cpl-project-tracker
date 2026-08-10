@@ -127,6 +127,33 @@ general retrieval, and routing predicts the *question*, never the data.
    Grow it from `kb/occupation_credential_map.json`, and prove it on Real Estate
    rather than POST.
 
+### ⚠️ A correction I had to make the same day
+
+I wrote, in four places, that `map_student_credit`'s four credit columns were
+**"dropped at load."** That was an *inference* from two true facts — the table has
+five columns, and `funding/_student_detail_local.py` sums four credit columns from
+a 29-column export — and it was **wrong**. Sam's `Tbl_MAP_STUDENT_CREDIT` export is
+five columns by construction. Nothing was lost in loading.
+
+He caught it by asking the obvious question — *"isn't it just a Supabase issue
+needing the re-load?"* — and uploading the actual files. Measured:
+
+| File | Rows | Credits | Student key |
+|---|---|---|---|
+| `20260808_Tbl_MAP_STUDENT_CREDIT` | 220,588 | no | yes |
+| `Qry3_export` | 204,714 | yes | **no** |
+| `TblCOLL_STU_EXH_CR_UNIT` | 171,439 | yes | **no** |
+
+`Qry3_export` is already live and reconciles to the cent. The real source is
+**`TblSOURCE`, the raw MAP extract at 537,908 rows**, which carries the credits
+*and* `CPLStatusPlan` at student grain.
+
+The lesson is not "check your facts" — it is that **"dropped" and "never present"
+are different claims with the same symptom**, and I asserted the one that implied
+someone had made a mistake. The symptom (five columns) was compatible with both.
+Prefer the description of the observation over the reconstruction of its cause,
+especially when the reconstruction assigns fault.
+
 ### Open for Sam
 
 - Adopter-vs-potential wording when the asker's own college isn't an adopter.
