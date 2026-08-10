@@ -112,6 +112,53 @@ Export these columns:
 | `NonMilitaryCredits` | `non_military_credits` (numeric) | |
 | `ArticulatedCredits` | `articulated_credits` (numeric) | |
 
+### The export query — paste this into Access
+
+One statement, no comments. `[Course Type]` and `[Catalog Year]` need the brackets
+(spaces in the names).
+
+```sql
+SELECT k.student_key,
+       s.CollegeID              AS college_id,
+       s.ExhibitID              AS exhibit_id,
+       s.[Course Type]          AS course_type,
+       s.[Catalog Year]         AS catalog_year,
+       s.PotentialCredits       AS potential_credits,
+       s.CreditsInReview        AS credits_in_review,
+       s.AppliedCredits         AS applied_credits,
+       s.TranscribedCredits     AS transcribed_credits,
+       s.ArticulatedCredits     AS articulated_credits,
+       s.MilitaryCredits        AS military_credits,
+       s.NonMilitaryCredits     AS non_military_credits,
+       s.ApprenticeshipCredits  AS apprenticeship_credits,
+       s.CPLStatusPlan          AS cpl_status_plan
+FROM TblSOURCE AS s
+INNER JOIN tblStudentKey AS k ON s.StudentMAPID = k.StudentMAPID;
+```
+
+⚠️ Adjust `tblStudentKey`'s column names if they differ — `StudentMAPID` and
+`student_key` are assumed here.
+
+**Why straight off `TblSOURCE` and not the query that built the 5-column table:**
+that one is `DISTINCT`-collapsed (537,908 → 220,588). Adding credit columns to a
+`DISTINCT` breaks the collapse, because rows identical in five columns differ in
+their credit values. The grain has to be the raw one.
+
+**`StudentMAPID` is deliberately not in the SELECT.** It never leaves Access.
+
+⛔ **BUILT-IN CHECK — this must return exactly 537,908 rows.** It is an INNER JOIN
+on the same table that count came from, so:
+
+- **fewer** → some `StudentMAPID`s have no row in `tblStudentKey`
+- **more** → `tblStudentKey` has duplicate `StudentMAPID`s
+
+Either is a keying problem. Stop and resolve it here — it is far cheaper to find
+before the export than after the load.
+
+**To export:** right-click the query → Export → Text File → tick *"Include Field
+Names on First Row"*, comma-delimited, `.csv`. Note the row count Access reports;
+that is the figure step 3's gate compares against.
+
 ⭐ **`CPLStatusPlan` at student grain is new capability**, not just a column. Today
 disposition exists only as a college × exhibit aggregate; per-student it becomes
 possible to say *"this student holds credit sitting at Needs Action"*, which is
