@@ -6016,6 +6016,33 @@
     _ess: function (name) {
       return { o1: essOutcome1(name), o2: essOutcome2(name), o3: essOutcome3(name) };
     },
+    // The per-priority split of ONE college's allocation cap, with the target
+    // it is measured against. The briefing shows a coordinator what the money
+    // is FOR; the caps and targets come from here so nothing is re-derived.
+    //
+    // ⚠ `slot` is EXPLICIT and defaults to "1" — this deliberately does NOT
+    // read state.viewSlot. That is the Implementation Funding tab's view
+    // state, and under front-loaded disbursement every slot after Year 1 has a
+    // ZERO cap (slotIsCarryover). A briefing that inherited a Year-2 view
+    // would render "$0" against all three priorities and read as a finding
+    // about the college rather than as the carryover state of another tab.
+    // Year 1 is also the authoritative set (Sam, 2026-08-09: Y1 ≡ Y2).
+    _prios: function (name, slot) {
+      var c = baseCollege(name);
+      if (!c) return null;
+      slot = String(slot || "1");
+      var W = collegeAlloc(c).w;   // effective entitlement, rural folded in
+      return priorities(slot).map(function (p) {
+        return {
+          key: p.key, label: p.label, title: p.title || null,
+          description: p.description || null, metric: p.metric || null,
+          share: p.share,
+          unit: prioUnitLabel(p),
+          cap: prioCap(W, slot, p),
+          target: prioTarget(c, p)
+        };
+      });
+    },
     // The $50K ESS 25-82 seed grant for one college. `declined` is a real
     // state and must not render as $0 — one college declined pending review.
     _grant: function (name) {

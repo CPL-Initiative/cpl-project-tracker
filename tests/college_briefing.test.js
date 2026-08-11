@@ -561,6 +561,322 @@ check("roster: primary contact is flagged as the lead row",
   ros.filled[0].lead === true && ros.filled[0].email === "ann@x.edu");
 check("roster: carries the landing page through", ros.landing === "https://x.edu/cpl");
 
+// ── Part K — what the waiting credit actually is (SkyLink, 2026-08-11) ──
+// `articulated_waiting` is the page's lead figure. This section says what it
+// CONSISTS of, and the answer is startlingly uniform: measured statewide,
+// 98.8% of all 64,074 waiting units are Credit for Basic Military Service,
+// and 65 of the 73 colleges with any are at 100%.
+//
+// ⚠ THE LOAD-BEARING GUARD IS SUPPRESSION. map_college_cr_unit carries NO
+// k-anonymity of its own — only map_college_credit_summary applies the k=10
+// rule. So a college whose headline figures are withheld must not get a
+// per-recommendation breakdown of the same credit: publishing the parts of a
+// withheld whole hands back exactly what withholding removed. This is the same
+// failure family as recovering a suppressed cell by subtracting published
+// siblings from a published total, which shipped undetected two days earlier.
+const WROWS = [
+  { credit_rec: "CSU GE and Local Degree Health", course_type: "Credit for Basic Military Service-Area",
+    college_course: "-", sum_articulated_credits: "4488.00", distinct_students: 1496 },
+  { credit_rec: "General Education Elective Credit", course_type: "Credit for Basic Military Service-Elective",
+    college_course: "-", sum_articulated_credits: "500.00", distinct_students: 100 },
+  { credit_rec: "Welding Technology", course_type: "Elective credit",
+    college_course: "WELD 101", sum_articulated_credits: "12.00", distinct_students: 4 }
+];
+
+const wbSupp = M._waitingBreakdown({ waiting: WROWS }, { suppressed: true });
+check("(K) SUPPRESSED college gets NO breakdown of its withheld credit",
+  wbSupp && wbSupp.suppressed === true && !wbSupp.groups,
+  "breaking out a withheld total returns exactly what suppression removed");
+
+const wb = M._waitingBreakdown({ waiting: WROWS }, { suppressed: false });
+check("(K) breakdown reconciles to the headline figure", wb.total === 5000);
+check("(K) groups are ordered by size", wb.groups[0].units === 4488 && wb.groups[2].units === 12);
+check("(K) military share is measured, not assumed",
+  Math.round(wb.militaryShare * 1000) / 1000 === 0.998);
+check("(K) each course type gets a plain-language label",
+  /Basic training credit/.test(wb.groups[0].label) && wb.groups[0].label !== wb.groups[0].type);
+check("(K) shares sum to 1", Math.abs(wb.groups.reduce(function (s, g) { return s + g.share; }, 0) - 1) < 1e-9);
+check("(K) names the credit recommendation the units count toward",
+  wb.groups[0].top[0].name === "CSU GE and Local Degree Health" && wb.groups[0].top[0].units === 4488);
+
+// A FAILED READ IS NOT AN EMPTY QUEUE. detail===null must render nothing at
+// all, never "nothing is waiting" — the whole point of the tab's `unknown`
+// discipline.
+check("(K) a failed read is null, NOT an empty queue", M._waitingBreakdown(null, { suppressed: false }) === null);
+const wbEmpty = M._waitingBreakdown({ waiting: [] }, { suppressed: false });
+check("(K) a genuinely clear queue is `empty`, and is distinguishable from a failed read",
+  wbEmpty && wbEmpty.empty === true && wbEmpty.total === 0);
+check("(K) an empty queue renders as a FINISHED queue, not a missing measurement",
+  /Nothing is waiting|finished queue/.test(briefingSrc));
+
+// A blank credit_rec is a real state in this data (2,111 units, 7 colleges).
+const wbBlank = M._waitingBreakdown({ waiting: [
+  { credit_rec: "", course_type: "Elective credit", sum_articulated_credits: "10.00" }] }, {});
+check("(K) a blank credit recommendation is NAMED, not dropped",
+  wbBlank.total === 10 && /no recommendation named/.test(wbBlank.groups[0].top[0].name));
+
+// One string in the source carries a U+FFFD replacement character — the byte
+// was already lost before MAP stored it, so it cannot be recovered here.
+check("(K) an unrecoverable byte renders legibly, not as a broken glyph",
+  M._cleanText("CSU GE E � Lifelong Understanding") === "CSU GE E Lifelong Understanding");
+
+// ── Part L — the funding pool breakdown (SkyLink, 2026-08-11) ──
+// ⚠ THE HAZARD: _alloc() keys its per-priority caps off state.viewSlot, the
+// Implementation Funding tab's VIEWED year. Under front-loaded disbursement
+// every slot after Year 1 has a zero cap, so a briefing that inherited a
+// Year-2 view would render "$0" against all three priorities — plausible,
+// unqueryable, and read as a finding about the college. The briefing must
+// therefore pass the slot EXPLICITLY.
+check("(L) the briefing passes Year 1 explicitly, never inheriting the funding tab's view",
+  /_prios\(key,\s*["']1["']\)/.test(briefingSrc),
+  "front-load makes every later year a zero cap");
+// Assert the BEHAVIOUR, not the comment: _prios' own body must never reach for
+// the shared view state. A comment saying so is not a guard.
+const prioSrc = (function () {
+  const src = fs.readFileSync("cpl_funding.js", "utf8");
+  const at = src.indexOf("_prios: function");
+  return at === -1 ? null : src.slice(at, src.indexOf("\n    },", at));
+})();
+check("(L) _prios exists in the funding module", !!prioSrc);
+check("(L) _prios never reads state.viewSlot — the slot is the caller's to choose",
+  prioSrc && prioSrc.indexOf("state.viewSlot") === -1,
+  "inheriting a Year-2 view would render $0 against every priority");
+check("(L) _prios takes the slot as a parameter and defaults it to Year 1",
+  prioSrc && /function \(name, slot\)/.test(prioSrc) && /slot \|\| "1"/.test(prioSrc));
+check("(L) the briefing still re-derives no dollar figure",
+  !/\*\s*pool|pool\s*\*|share\s*\*\s*[a-z]*[Pp]ool/.test(briefingCode),
+  "an allocation is a floor waterfall — call _alloc(), never share x pool");
+
+// Sam, 2026-08-11: use the funding tab's own names, never "$35M".
+check("(L) uses the real funding tab names",
+  /2025&ndash;2026 \$50K Seed Funding/.test(briefingSrc) &&
+  /2026&ndash;2028 College Implementation Funding/.test(briefingSrc));
+check("(L) does NOT label the pool '$35M' to a college", !/\$35M/.test(briefingCode));
+check("(L) a target is framed as proportional, not a pass mark",
+  /not a pass mark|proportional part/.test(briefingSrc));
+
+// Next steps come from the team's config, never authored by the page.
+const NEXT = { programs: [{ label: "IFM", priorities: [
+  { index: 0, share: 0.3, description: "Lower", strategies: ["Do the smaller thing"] },
+  { index: 1, share: 0.5, title: "Bigger", strategies: ["Do the bigger thing"] }
+] }] };
+const top = M._topStrategy(NEXT);
+check("(L) the next step is the highest-SHARE priority's first strategy",
+  top.text === "Do the bigger thing" && top.priority === "Bigger");
+check("(L) no strategies written → no step invented",
+  M._topStrategy({ programs: [{ label: "x", priorities: [{ index: 0, share: 1, strategies: [] }] }] }) === null);
+check("(L) next ESS outcome puts 'not started' ahead of 'partial'",
+  M._nextEssOutcome([{ title: "b", o: { state: "partial" } }, { title: "a", o: { state: "not" } }]).title === "a");
+check("(L) an outcome the college cannot act on here is never proposed",
+  M._nextEssOutcome([{ title: "x", o: { state: "na" } }, { title: "y", o: { state: "pending" } }]) === null);
+check("(L) all outcomes met → no seed step", M._nextEssOutcome([{ title: "x", o: { state: "met" } }]) === null);
+
+// ── Part M — resources (SkyLink, 2026-08-11) ──
+// ⚠ The public fact sheet's first entry is titled "MAP Initiative Website",
+// which the 2026-07-03 naming convention retired. It must be FIXED here, not
+// copied forward — and the fact sheet is read to prove the old title really is
+// what we are correcting, so this cannot pass on a stale assumption.
+check("(M) resources are present and substantial", M._RESOURCES.length >= 12);
+check("(M) the retired 'MAP Initiative' name is NOT carried forward",
+  !M._RESOURCES.some(function (r) { return /MAP Initiative/i.test(r[1]) || /MAP Initiative/i.test(r[2]); }),
+  "the programme is the CPL Initiative; the platform is the MAP platform");
+check("(M) …and the fact sheet really does still carry it (so this guards a real fix)",
+  /MAP Initiative Website/.test(fs.readFileSync("fact-sheet/index.html", "utf8")));
+check("(M) every resource has a URL, a title and a description",
+  M._RESOURCES.every(function (r) { return r.length === 3 && /^https:\/\//.test(r[0]) && r[1] && r[2]; }));
+check("(M) links open safely", /rel="noopener"/.test(briefingSrc));
+check("(M) the coordinator's four action links lead the list",
+  /implementation_guide/.test(M._RESOURCES[0][0]) && /statewidecpl/.test(M._RESOURCES[1][0]));
+
+// ── Part N — the three new sections render end-to-end (SkyLink) ──
+// The helpers above are exercised in isolation; this walks the real render()
+// with the waiting breakdown, the priority split and the resources all live,
+// so a throw or a missing branch fails here rather than on the page.
+const wn2 = load(true);
+wn2.cplCollegeShort = S;
+wn2.CPL_FUNDING = jw.window.CPL_FUNDING;
+wn2.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
+wn2.CPL_FUNDING_TAB = {
+  _alloc: function () { return { total: 414856, floored: false }; },
+  _grant: FAKE._grant, _ess: FAKE._ess, _isRural: function () { return false; },
+  _district: function () { return "Kern CCD"; }, _model: function () { return { floor: 150000 }; },
+  _prios: function (name, slot) {
+    check("(N) the briefing asks for Year 1 explicitly", slot === "1");
+    return [
+      { key: "p1", label: "Priority 1", title: null, description: "Increase access.",
+        metric: "Applied CPL Units measured in FTES", share: 0.5, unit: "FTES", cap: 207428, target: 36.7 },
+      { key: "p2", label: "Priority 2", title: null, description: "Institutionalize.",
+        metric: "Transcribed CPL Units", share: 0.3, unit: "FTES", cap: 124457, target: 22.0 },
+      { key: "p3", label: "Priority 3", title: "Capacity, Visibility, Mobility",
+        metric: "Transcribed Units from the portal or landing page", share: 0.2, unit: "students",
+        cap: 82971, target: 17.5 }
+    ];
+  }
+};
+const N = wn2.CPL_COLLEGE_BRIEFING;
+N._state.funding = "ready";
+N._state.college = "Bakersfield College";
+N._state.detail = { rollup: [], adopted: [], potential: [], goal2: [], waiting: WROWS };
+N._state.data = {
+  colleges: ["Bakersfield College"],
+  summaryByName: { "Bakersfield College": { dormant_credits: 100000, articulated_waiting: 5000,
+    applied_credits: 1252, transcribed_credits: 688, students: 582 } },
+  briefing: N._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" })
+};
+const nr2 = wn2.document.getElementById("college-briefing-root");
+N.render(nr2);
+const ntxt = nr2.textContent;
+check("(N) the waiting breakdown renders", /What that waiting credit actually is/.test(ntxt));
+check("(N) …and reconciles to the headline in the box above", /5,000 units/.test(ntxt));
+check("(N) …and names basic military service as the good news",
+  /basic military service/i.test(ntxt) && /one decision applied repeatedly/.test(ntxt));
+check("(N) the priority split renders with real tab names",
+  /2026–2028 College Implementation Funding/.test(ntxt) && /2025–2026 \$50K Seed Funding/.test(ntxt));
+check("(N) each priority shows its cap AND this college's target",
+  /\$207,428/.test(ntxt) && /36\.7 FTES/.test(ntxt));
+check("(N) 'Do this next' names a step from the team's own config",
+  /Do this next/.test(ntxt) && /Act on all JST credit recommendations in MAP/.test(ntxt));
+check("(N) resources render as links", nr2.querySelectorAll(".cb-resi a").length >= 12);
+// The waiting breakdown emits its own .cb-bar progress bars, and finish()
+// relocates the FIRST .cb-bar in document order into the Sierra AI box. The
+// picker bar is built first in the string, so it still wins — asserted here
+// WITH the new bars present, which is the only fixture that could break it.
+check("(N) the pickers still land inside Sierra AI with the new bars present",
+  !!nr2.querySelector(".cb-assist .cb-bar select#cb-college"),
+  "finish() takes the first .cb-bar in document order");
+check("(N) no script or img injected by any new section",
+  nr2.querySelectorAll("script").length === 0 && nr2.querySelectorAll("img").length === 0);
+
+// A suppressed college must lose the breakdown but keep the rest of the page.
+const wn3 = load(true);
+wn3.cplCollegeShort = S;
+wn3.CPL_FUNDING = jw.window.CPL_FUNDING;
+const N3 = wn3.CPL_COLLEGE_BRIEFING;
+N3._state.college = "Bakersfield College";
+N3._state.detail = { rollup: [], adopted: [], potential: [], goal2: [], waiting: WROWS };
+N3._state.data = {
+  colleges: ["Bakersfield College"],
+  summaryByName: { "Bakersfield College": { suppressed: true, students: 4 } },
+  briefing: N3._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" })
+};
+const nr3 = wn3.document.getElementById("college-briefing-root");
+N3.render(nr3);
+check("(N) a suppressed college's per-recommendation credit is NOT published",
+  !/CSU GE and Local Degree Health/.test(nr3.textContent) && /Withheld/.test(nr3.textContent),
+  "the parts of a withheld whole give the whole back");
+
+// ── Part O — the tier block (carryover item 3, SkyLink 2026-08-11) ──
+// "Advancing" alone is a verdict with no next step, and 77% of colleges are in
+// that bucket. This names the five criteria with the college's own value.
+//
+// ⚠ THE COUNT IS THE WORKER'S. live_metrics.json publishes transcriptionRate
+// ROUNDED to one decimal while the worker's criterion tests the UNROUNDED
+// ratio, so recomputing can disagree at the boundary. criteriaMetCount is
+// authoritative; the per-criterion list is display only; `mismatch` fires when
+// they disagree and the render withholds the list rather than showing one that
+// does not add up to the number printed above it.
+const LIVE = JSON.parse(fs.readFileSync("live_metrics.json", "utf8"));
+
+// Every college in the shipped file, checked against the worker's own count.
+let tiered = 0, mismatches = 0;
+const tierCounts = {};
+["leading", "advancing", "inactive"].forEach(function (k) {
+  (LIVE.tiers[k].colleges || []).forEach(function (c) {
+    const t = M._tierStanding(LIVE, c.college);
+    if (!t) return;
+    tiered++;
+    tierCounts[t.label] = (tierCounts[t.label] || 0) + 1;
+    if (t.mismatch) mismatches++;
+  });
+});
+check("(O) every college in live_metrics resolves to a tier", tiered === 115);
+check("(O) our per-criterion list reconciles with the worker's count for ALL of them",
+  mismatches === 0, "a list that does not sum to the printed figure is worse than no list");
+check("(O) tier counts match the published classification",
+  tierCounts.Leading === 14 && tierCounts.Advancing === 89 && tierCounts.Inactive === 12);
+
+// THE ROUNDING HAZARD, pinned. live_metrics publishes transcriptionRate
+// rounded to one decimal, so a true 24.96% appears as "25.0". Reading the
+// PUBLISHED RATE would score this criterion as met and disagree with the
+// worker; reading the UNROUNDED ratio scores it correctly. This asserts we
+// read the ratio — the display still shows the rounded 25%.
+function tierFixture(over) {
+  const c = Object.assign({ college: "Edge College", students: 100, units: 1000,
+    transcribedUnits: 249.6, avgUnits: 10, transcriptionRate: 25.0, avgTranscribed: 1,
+    criteriaMetCount: 1 }, over || {});
+  return { tiers: { leading: { colleges: [] }, inactive: { colleges: [] },
+                    advancing: { colleges: [c] } } };
+}
+const edge = M._tierStanding(tierFixture(), "Edge College");
+check("(O) the 25%-criterion reads the UNROUNDED ratio, not the published rate",
+  edge.criteria[3].met === false && edge.criteria[3].actual === "25%",
+  "24.96% publishes as 25.0 — scoring off the published rate disagrees with the worker");
+check("(O) …so the boundary case still reconciles", edge.mismatch === false && edge.met === 1);
+
+// And if a published count ever DOES disagree with the fields behind it, the
+// list is withheld rather than shown summing to a different number.
+const bad = M._tierStanding(tierFixture({ criteriaMetCount: 4 }), "Edge College");
+check("(O) a published count that contradicts its own fields is CAUGHT",
+  bad.mismatch === true && bad.met === 4,
+  "the worker's count stays authoritative; the list that disagrees is withheld");
+check("(O) …and the render withholds the list when it cannot reconcile",
+  /held back rather than/.test(briefingSrc));
+
+// Prove the withholding actually happens on the page, not just in the model.
+const wbad = load(true);
+wbad.cplCollegeShort = S;
+const BAD = wbad.CPL_COLLEGE_BRIEFING;
+BAD._state.college = "Edge College";
+BAD._state.live = tierFixture({ criteriaMetCount: 4 });
+BAD._state.data = { colleges: ["Edge College"], summaryByName: {},
+  briefing: BAD._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const badRoot = wbad.document.getElementById("college-briefing-root");
+BAD.render(badRoot);
+check("(O) an unreconcilable tier renders the count but NOT the criteria list",
+  badRoot.querySelectorAll(".cb-tlist li").length === 0 && /4 of 5/.test(badRoot.textContent));
+
+// A college absent from live_metrics, or a failed read, must render NOTHING —
+// never "0 of 5", which reads as a finding about the college.
+check("(O) a college not in live_metrics yields null, never 0 of 5",
+  M._tierStanding(LIVE, "Not A Real College") === null);
+check("(O) a failed live_metrics read yields null", M._tierStanding(null, "Bakersfield College") === null);
+// The loader is keyed on its OWN status field, not on live == null: null is
+// also the failed-read value, so a nullness-keyed loader either never runs or
+// runs forever depending on how the field was initialised.
+check("(O) the live loader has an explicit status field",
+  /liveState: "idle"/.test(briefingSrc) && /state\.liveState !== "idle"/.test(briefingSrc));
+
+// Three of the five are size measures — a small college cannot reach them
+// however well it runs CPL, and the page must say so rather than imply fault.
+check("(O) the size limitation is stated, not left to be inferred",
+  /Three of the five are <b>size<\/b> measures/.test(briefingSrc));
+check("(O) never presented as a ranking against other colleges",
+  /Never read this as a ranking against other colleges/.test(briefingSrc));
+check("(O) the batch-upload distortion is named where it would mislead",
+  /batch-upload already-posted credit/.test(briefingSrc),
+  "two of the five count transcribed units; some colleges bulk-load AP/IB/CLEP");
+
+// Render the tier block end-to-end on real data.
+const wt = load(true);
+wt.cplCollegeShort = S;
+const T = wt.CPL_COLLEGE_BRIEFING;
+T._state.college = "City College of San Francisco";
+T._state.live = LIVE;
+T._state.data = {
+  colleges: ["City College of San Francisco"],
+  summaryByName: {},
+  briefing: T._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" })
+};
+const tierRoot = wt.document.getElementById("college-briefing-root");
+T.render(tierRoot);
+check("(O) the tier and the fraction both render",
+  /Advancing/.test(tierRoot.textContent) && /2 of 5 criteria met/.test(tierRoot.textContent));
+check("(O) all five criteria are listed with the college's own value",
+  tierRoot.querySelectorAll(".cb-tlist li").length === 5 && /2,250 students/.test(tierRoot.textContent));
+check("(O) met and unmet are visually distinguished",
+  tierRoot.querySelectorAll(".cb-tlist li.met").length === 2 &&
+  tierRoot.querySelectorAll(".cb-tlist li.not").length === 3);
+
 // ── report ──
 let pass = 0;
 results.forEach(function (r) {
