@@ -61,7 +61,13 @@
     // (cpl_funding.js, ~370KB) is pulled only when a college is chosen and
     // there is actually a money box to fill.
     roster: "idle",   // idle | loading | ready | error
-    funding: "idle"   // idle | loading | ready | error
+    funding: "idle",  // idle | loading | ready | error
+    // The daily tier classification (live_metrics.json). Its own status field
+    // rather than a bare `live == null` check: null is also the FAILED-read
+    // value, and a loader keyed on nullness would either never run or run
+    // forever depending on how the field was initialised.
+    liveState: "idle", // idle | loading | ready | error
+    live: null
   };
 
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
@@ -349,6 +355,47 @@
       ".cb-tag.sw{border-color:var(--mustard-fill,#E3B341);color:var(--mustard-text,#8B6800);}",
       ".cb-opp{font-size:.81rem;color:var(--text-body);border-top:1px solid var(--border);padding-top:8px;display:flex;flex-direction:column;gap:3px;}",
       ".cb-opp em{font-style:normal;color:var(--text-strong);font-weight:600;}",
+      // ── What the waiting credit consists of (2026-08-11) ──
+      ".cb-wait{display:flex;flex-direction:column;gap:12px;}",
+      ".cb-wrow{border:1px solid var(--border);border-radius:9px;padding:12px 14px;background:var(--surface);}",
+      ".cb-whead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;font-size:.87rem;}",
+      ".cb-whead .v{color:var(--text-muted);font-size:.8rem;font-variant-numeric:tabular-nums;white-space:nowrap;}",
+      ".cb-wrow .cb-bar{height:6px;border-radius:3px;background:var(--surface-muted,#ECE9E2);overflow:hidden;margin:8px 0 0;padding:0;border:0;min-width:0;display:block;}",
+      ".cb-wrow .cb-bar i{display:block;height:100%;background:var(--mustard-fill,#E3B341);border-radius:3px;}",
+      ".cb-wrecs{font-size:.76rem;color:var(--text-muted);margin-top:8px;line-height:1.5;}",
+      ".cb-wrecs span{font-variant-numeric:tabular-nums;}",
+      ".cb-good{border-left:3px solid var(--ok,#2f7a3d);padding-left:10px;}",
+      // Tier + the five criteria named (carryover item 3).
+      ".cb-tier{border:1px solid var(--border);border-radius:9px;padding:13px 15px;background:var(--surface);}",
+      ".cb-thead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}",
+      ".cb-thead b{font-size:1.15rem;color:var(--text-strong);}",
+      ".cb-thead .v{font-size:.82rem;color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;}",
+      ".cb-tlist{list-style:none;margin:11px 0 0;padding:0;display:flex;flex-direction:column;gap:0;}",
+      ".cb-tlist li{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--border);padding:8px 0;font-size:.84rem;}",
+      ".cb-tlist li:first-child{border-top:0;}",
+      ".cb-tlist .m{flex:0 0 auto;width:1.3em;text-align:center;font-weight:700;}",
+      ".cb-tlist li.met .m{color:var(--ok,#2f7a3d);}",
+      ".cb-tlist li.not .m{color:var(--text-muted);}",
+      ".cb-tlist li.not b{color:var(--text-muted);font-weight:600;}",
+      ".cb-tlist .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;}",
+      // Per-priority split of the allocation cap + the per-pool next step.
+      ".cb-plab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin-bottom:7px;}",
+      ".cb-prios{margin-top:12px;border-top:1px solid var(--border);padding-top:11px;}",
+      ".cb-prow{padding:8px 0;border-top:1px solid var(--border);}",
+      ".cb-prow:first-of-type{border-top:0;padding-top:0;}",
+      ".cb-prow .cb-whead{font-size:.85rem;}",
+      ".cb-prow .cb-whead .v{font-weight:700;color:var(--text-strong);font-size:.85rem;}",
+      ".cb-ptarget{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
+      ".cb-next{border:1px solid var(--border-strong);border-left:4px solid var(--brand);border-radius:8px;padding:13px 15px;margin-top:14px;background:var(--surface-subtle);}",
+      ".cb-next ul{margin:0;padding-left:18px;font-size:.84rem;line-height:1.55;}",
+      ".cb-next li{margin-bottom:5px;}",
+      ".cb-next li:last-child{margin-bottom:0;}",
+      // Resources — mirrors the public CPL fact sheet's §resources.
+      ".cb-res{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;}",
+      ".cb-resi{border:1px solid var(--border);border-radius:8px;padding:11px 13px;background:var(--surface);}",
+      ".cb-resi a{font-size:.86rem;font-weight:600;color:var(--link,#0b5cad);text-decoration:none;}",
+      ".cb-resi a:hover{text-decoration:underline;}",
+      ".cb-resi div{font-size:.76rem;color:var(--text-muted);margin-top:3px;line-height:1.45;}",
       // ── Funding, district roster, Sierra asks (2026-08-11) ──
       ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}",
       ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
@@ -432,9 +479,20 @@
       jget(REST + "/chatbox_credentials?potential_colleges=cs." + q
          + "&select=unified_title,cpl_types,statewide,ccc_rec,adopter_colleges", { headers: h }),
       jget(REST + "/map_college_goal2?college_id=eq." + id
-         + "&select=dest,rows_n,students,suppressed,reason", { headers: h })
+         + "&select=dest,rows_n,students,suppressed,reason", { headers: h }),
+      // What the "already articulated, waiting" units actually CONSIST of.
+      // Same filter as map_college_credit_summary.articulated_waiting
+      // (kb/supabase_map_college_credit_summary.sql line 33) so the breakdown
+      // sums to the headline exactly — a list that did not reconcile with the
+      // number above it would be worse than no list.
+      jget(REST + "/map_college_cr_unit?college_id=eq." + id
+         + "&cpl_status_plan=eq." + encodeURIComponent("Needs Action")
+         + "&sum_articulated_credits=gt.0"
+         + "&select=credit_rec,college_course,course_type,sum_articulated_credits,distinct_students",
+         { headers: h })
     ]).then(function (r) {
-      state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [], goal2: r[3] || [] };
+      state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [],
+                       goal2: r[3] || [], waiting: r[4] || [] };
       state.detailLoading = false;
     }).catch(function (e) {
       state.detail = null; state.detailLoading = false;
@@ -497,6 +555,158 @@
     }
     return { eligible: elig, articulatedWaiting: art, applied: app, transcribed: tr,
              students: stu, apprenticeshipUnits: appr };
+  }
+
+  /* ── What the waiting credit actually is ─────────────────────────────────
+   * PURE. `articulated_waiting` is the page's lead figure — "the cheapest
+   * credit you will ever give a student". This says what it CONSISTS of, and
+   * the answer is startlingly uniform.
+   *
+   * Measured 2026-08-11 across all 64,074 waiting units statewide:
+   *   87.7%  Credit for Basic Military Service → a GE area
+   *   10.5%  Credit for Basic Military Service → elective
+   *    0.6%  Credit for Basic Military Service → a specific course
+   *    1.3%  everything else (814 units, 8 colleges, 310 rows)
+   * 65 of the 73 colleges with any waiting credit are 100% basic military
+   * service; the average college is 96.2%.
+   *
+   * That matters for the copy. A coordinator reading "already articulated,
+   * waiting" pictures a varied pile of CTE certifications and braces for 300
+   * judgment calls. It is very nearly one repeated decision — which is the
+   * best news on this page, and is only visible if the breakdown is shown.
+   *
+   * ⚠ SUPPRESSION. map_college_cr_unit carries NO k-anonymity of its own
+   * (only map_college_credit_summary applies the k=10 rule). A college whose
+   * headline figures are withheld must NOT get a per-recommendation breakdown
+   * of the same credit — publishing the parts of a withheld whole hands back
+   * exactly what suppression removed. Same failure family as the statewide
+   * total minus its published siblings.
+   */
+  var MIL_PREFIX = "Credit for Basic Military Service";
+  var COURSE_TYPE_LABEL = {
+    "Credit for Basic Military Service-Area": "Basic training credit → a GE or graduation area",
+    "Credit for Basic Military Service-Elective": "Basic training credit → elective credit",
+    "Credit for Basic Military Service-Course": "Basic training credit → a specific course",
+    "Elective credit": "Elective credit"
+  };
+
+  /* One string in the source carries a U+FFFD replacement character ("CSU GE E
+   * <?> Lifelong Understanding…") — the original byte was already lost before
+   * MAP stored it, so it cannot be recovered here. Render the legible
+   * remainder rather than a broken glyph; the stored value is untouched. */
+  function cleanText(s) {
+    return String(s == null ? "" : s).replace(/�/g, " ").replace(/\s+/g, " ").trim();
+  }
+
+  /* A percentage that never rounds UP into a claim it cannot support.
+   * 99.76% rounding to "100%" while a non-military row sits visibly above it
+   * is a self-contradiction, and it is the same trap the tier block guards
+   * against, where a published 25.0% is really 24.96%. 100 is returned only
+   * when the share genuinely reaches it. */
+  function safePct(x, dp) {
+    var f = Math.pow(10, dp || 0), p = (Number(x) || 0) * 100;
+    if (p >= 100) return 100;
+    return Math.min(100 - 1 / f, Math.round(p * f) / f);
+  }
+
+  function waitingBreakdown(detail, summary) {
+    if (summary && summary.suppressed) return { suppressed: true };
+    if (!detail || !detail.waiting) return null;
+    var rows = detail.waiting;
+    if (!rows.length) return { empty: true, total: 0, groups: [] };
+    var by = {}, total = 0, mil = 0;
+    rows.forEach(function (r) {
+      var u = Number(r.sum_articulated_credits) || 0;
+      if (u <= 0) return;
+      total += u;
+      var ct = cleanText(r.course_type) || "Not categorised";
+      if (ct.indexOf(MIL_PREFIX) === 0) mil += u;
+      if (!by[ct]) by[ct] = { type: ct, label: COURSE_TYPE_LABEL[ct] || ct, units: 0, rows: 0, recs: {} };
+      by[ct].units += u; by[ct].rows++;
+      // A blank credit_rec is a real state in this data (2,111 units across 7
+      // colleges statewide) — name it rather than dropping the row.
+      var rec = cleanText(r.credit_rec) || "(no recommendation named in MAP)";
+      by[ct].recs[rec] = (by[ct].recs[rec] || 0) + u;
+    });
+    if (!total) return { empty: true, total: 0, groups: [] };
+    var groups = Object.keys(by).map(function (k) {
+      var g = by[k];
+      g.share = g.units / total;
+      g.top = Object.keys(g.recs).map(function (name) { return { name: name, units: g.recs[name] }; })
+        .sort(function (a, b) { return b.units - a.units; }).slice(0, 4);
+      delete g.recs;
+      return g;
+    }).sort(function (a, b) { return b.units - a.units; });
+    return { suppressed: false, empty: false, total: total, groups: groups,
+             militaryUnits: mil, militaryShare: mil / total };
+  }
+
+  /* ── Where this college sits in the three tiers ───────────────────────────
+   * PURE. The tier system already exists (Leading 14 / Advancing 89 /
+   * Inactive 12, ≥3 of 5 criteria) and is computed by the Cloudflare worker
+   * into live_metrics.json. What it has never done is tell a college WHICH of
+   * the five it meets — so "Advancing" arrives as a verdict with no next step,
+   * and 77% of colleges sit in that one bucket.
+   *
+   * This turns it into "Advancing — 2 of 5" with the missing three named and
+   * the college's own value beside each threshold. Deliberately NOT a
+   * percentile: a percentile bar hands a top-5% badge to a 21-student college
+   * (Compton 96th on 21 students vs Chaffey 97th on 1,495; 16 colleges tied at
+   * exactly zero), so the band below the top is noise dressed as a ranking.
+   *
+   * ⚠ THE COUNT IS THE WORKER'S, NOT OURS. The emitted `transcriptionRate` is
+   * ROUNDED to one decimal while the worker's own criterion tests the
+   * UNROUNDED ratio — so recomputing the count here can disagree at the
+   * boundary (a true 24.96% rounds to 25.0). `criteriaMetCount` is therefore
+   * authoritative for the number, the per-criterion list is for display, and
+   * if the two disagree we say so rather than show a list that does not add up
+   * to the figure printed above it.
+   */
+  var TIER_CRITERIA = [
+    { label: "At least 500 CPL students", kind: "size",
+      get: function (c) { return num(c.students); },
+      met: function (c) { return num(c.students) >= 500; },
+      show: function (c) { return fmt(num(c.students)) + " students"; } },
+    { label: "At least 3,000 units of eligible credit", kind: "size",
+      get: function (c) { return num(c.units); },
+      met: function (c) { return num(c.units) >= 3000; },
+      show: function (c) { return fmt(Math.round(num(c.units))) + " units"; } },
+    { label: "At least 5 eligible units per student", kind: "depth",
+      met: function (c) { return num(c.avgUnits) >= 5; },
+      show: function (c) { return (Math.round(num(c.avgUnits) * 10) / 10) + " per student"; } },
+    { label: "At least 25% of eligible units marked transcribed in MAP", kind: "mark",
+      met: function (c) { return num(c.units) > 0 && (num(c.transcribedUnits) / num(c.units)) >= 0.25; },
+      show: function (c) { return (num(c.transcriptionRate) || 0) + "%"; } },
+    { label: "At least 3 transcribed units per student", kind: "mark",
+      met: function (c) { return num(c.avgTranscribed) >= 3; },
+      show: function (c) { return (Math.round(num(c.avgTranscribed) * 100) / 100) + " per student"; } }
+  ];
+  var TIER_LABEL = { leading: "Leading", advancing: "Advancing", inactive: "Inactive" };
+
+  function tierStanding(live, collegeName) {
+    if (!live || !live.tiers || !collegeName) return null;
+    var t = live.tiers, found = null, tier = null;
+    ["leading", "advancing", "inactive"].forEach(function (k) {
+      if (found || !t[k] || !t[k].colleges) return;
+      (t[k].colleges || []).forEach(function (c) {
+        if (!found && c && c.college === collegeName) { found = c; tier = k; }
+      });
+    });
+    if (!found) return null;
+    var list = TIER_CRITERIA.map(function (cr) {
+      return { label: cr.label, kind: cr.kind, met: !!cr.met(found), actual: cr.show(found) };
+    });
+    var computed = list.filter(function (c) { return c.met; }).length;
+    var stated = num(found.criteriaMetCount);
+    return {
+      tier: tier, label: TIER_LABEL[tier] || tier,
+      met: stated == null ? computed : stated,
+      total: TIER_CRITERIA.length,
+      criteria: list,
+      missing: list.filter(function (c) { return !c.met; }),
+      // The list is shown only when it reconciles with the worker's own count.
+      mismatch: stated != null && stated !== computed
+    };
   }
 
   /* PURE. The goal-2 course share — absorbed from the retired Course Credit
@@ -565,6 +775,13 @@
       // college pool — it is funded through the $1M noncredit carve-out, a
       // different mechanism. _alloc returns null and we say so.
       alloc: grant.kind === "credit" ? M._alloc(key) : null,
+      // The per-priority split of that cap. Year 1 is passed EXPLICITLY: the
+      // module would otherwise use the Implementation Funding tab's viewed
+      // year, and under front-loaded disbursement every year after the first
+      // has a zero cap — so a briefing that inherited a Year-2 view would show
+      // $0 against all three priorities. Year 1 is also the authoritative set
+      // (Sam, 2026-08-09: Year 1 and Year 2 are deliberately identical).
+      prios: (grant.kind === "credit" && typeof M._prios === "function") ? M._prios(key, "1") : null,
       ess: M._ess(key),
       rural: M._isRural(key),
       district: M._district(key)
@@ -603,6 +820,96 @@
         frac: null,
         next: "Identifying a student is the cheap half; the credit still has to be applied to their record to count." }
     ];
+  }
+
+  /* PURE. The seed-funding outcome with the most ground still to cover.
+   * "not" outranks "partial" — furthest from done first. States the college
+   * cannot act on from this page (`na`, and `pending` awaiting confirmation)
+   * are never proposed as a next step. Returns null when all three are met,
+   * which the caller renders as no seed-funding step rather than a filler. */
+  function nextEssOutcome(ess) {
+    if (!ess || !ess.length) return null;
+    var rank = { not: 0, partial: 1 };
+    var open = ess.filter(function (e) { return e.o && rank[e.o.state] != null; });
+    if (!open.length) return null;
+    open.sort(function (a, b) { return rank[a.o.state] - rank[b.o.state]; });
+    return open[0];
+  }
+
+  /* PURE. The team's first strategy under the highest-share priority — the
+   * single next step for the implementation pool. Read from the curator's own
+   * configuration, never authored here: if the team rewrites the strategy this
+   * follows it, and if they write none this returns null and the page shows no
+   * step rather than inventing one. */
+  function topStrategy(briefing) {
+    if (!briefing || !briefing.programs) return null;
+    var best = null;
+    briefing.programs.forEach(function (prog) {
+      (prog.priorities || []).forEach(function (pr) {
+        if (!pr.strategies || !pr.strategies.length) return;
+        var share = pr.share == null ? -1 : pr.share;
+        if (!best || share > best.share) {
+          best = { share: share, text: pr.strategies[0],
+                   priority: pr.title || pr.description || (prog.label + " priority " + (pr.index + 1)) };
+        }
+      });
+    });
+    return best;
+  }
+
+  /* ── Resources ────────────────────────────────────────────────────────────
+   * Mirrors the public CPL fact sheet's §resources (fact-sheet/index.html),
+   * re-ordered for a college coordinator: what you DO first, what you read
+   * second. All public, all already linked from the fact sheet.
+   *
+   * ⚠ The fact sheet's first entry is titled "MAP Initiative Website", which
+   * the 2026-07-03 naming convention retired — the programme is the CPL
+   * Initiative and the platform is the MAP platform, and "MAP Initiative" is
+   * never used in new writing. Fixed here rather than copied forward; the
+   * fact sheet still carries the old title.
+   */
+  var RESOURCES = [
+    ["https://map.rccd.edu/cpl_implementation_guide/", "CPL Implementation & Sustainability Guide",
+     "Step-by-step guide for establishing or expanding a college CPL programme."],
+    ["https://map.rccd.edu/statewidecpl/", "Statewide CPL Credit Recommendations",
+     "The faculty-approved opportunities shared across the system — what your college can adopt."],
+    ["https://map.rccd.edu/cpllandingpages/", "Find CPL at Your College",
+     "The college CPL landing pages, including yours — where a student's request begins."],
+    ["https://map.rccd.edu/counselors/", "Counselor Resources Hub",
+     "Tools and guides for counselors advising CPL-eligible students."],
+    ["https://cpldashboardcccco.azurewebsites.net/insights/dashboard", "MAP CPL Dashboard",
+     "Live data on students served, units awarded and savings by college and region."],
+    ["https://map.rccd.edu/", "MAP platform website",
+     "Central hub for CPL resources, college implementation tools and statewide data."],
+    ["https://map.rccd.edu/library", "MAP Resource Library",
+     "Full archive of research, training materials and policy briefs."],
+    ["https://map.rccd.edu/wp-content/uploads/2025/07/07292025-AB-123-Chaptered-Version.pdf", "Assembly Bill 123 (2025)",
+     "The chaptered legislation advancing CPL across the California Community Colleges."],
+    ["https://map.rccd.edu/wp-content/uploads/2025/07/credit-for-prior-learning-workplan.pdf", "Vision 2030 CPL Workplan",
+     "The implementation roadmap and milestones for CPL across all colleges."],
+    ["https://map.rccd.edu/wp-content/uploads/2025/07/vision-2030-report.pdf", "Vision 2030 — July 2025 Edition",
+     "The Board of Governors strategic plan; CPL is a central pillar of equity in access."],
+    ["https://map.rccd.edu/wp-content/uploads/2025/06/Scaling-Credit-for-Prior-Learning-in-California.pdf",
+     "Scaling CPL in California", "Vision 2030 goals, MAP strategy and CPL implementation (2025 edition)."],
+    ["https://map.rccd.edu/wp-content/uploads/2024/07/Expected-Economic-Benefits-of-CPL-in-California.pdf",
+     "Economic Impact Study", "Beacon Economics (2024): the $32.5B projected economic benefit analysis."],
+    ["https://map.rccd.edu/wp-content/uploads/2025/07/2025-CA-Master-Plan-for-Career-Education.pdf",
+     "2025 CA Master Plan for Career Education", "The statewide workforce and career-education framework including CPL."],
+    ["https://www.asccc.org/pathways-credit", "ASCCC Pathways to Credit",
+     "Academic Senate guidance on CPL."],
+    ["https://www.wiche.edu/wp-content/uploads/2020/10/PLA-Boost-Report-CAEL-WICHE-Revised-Dec-2020.pdf",
+     "CAEL & WICHE — The PLA Boost",
+     "The 72-institution study behind “the CPL bump” — the research under the equity and completion figures."]
+  ];
+
+  function resourcesHtml() {
+    return '<h3 class="cb-h">Resources</h3>'
+      + '<div class="cb-note" style="margin-top:0">All public. The first four are the ones a coordinator uses; '
+      + "the rest is the evidence and policy behind the work.</div>"
+      + '<div class="cb-res">' + RESOURCES.map(function (r) {
+          return '<div class="cb-resi"><a href="' + esc(r[0]) + '" target="_blank" rel="noopener">'
+            + esc(r[1]) + " ↗</a><div>" + esc(r[2]) + "</div></div>";
+        }).join("") + "</div>";
   }
 
   function essMark(o) {
@@ -791,6 +1098,36 @@
       h += '<div class="cb-warn">Could not read this college\'s detail: ' + esc(state.detailError)
         + '. That is a <b>failed read, not an empty result</b> — nothing below should be taken as "this college has none".</div>';
     }
+    // ── Your tier, with the criteria named ────────────────────────────────
+    // "Advancing" on its own is a verdict with no next step, and 77% of
+    // colleges are in that bucket. Naming the five turns it into a checklist.
+    var ts = tierStanding(state.live, state.college);
+    if (ts) {
+      h += '<h3 class="cb-h">Your tier on the systemwide dashboard</h3>';
+      h += '<div class="cb-tier"><div class="cb-thead"><b>' + esc(ts.label) + "</b>"
+        + '<span class="v">' + ts.met + " of " + ts.total + " criteria met</span></div>";
+      if (ts.mismatch) {
+        h += '<div class="cb-note" style="margin-top:8px">The published count is ' + ts.met
+          + ", but the individual criteria do not reconcile with it here — the transcription rate is published "
+          + "rounded, so a borderline college can fall either side. The criteria list is held back rather than "
+          + "shown disagreeing with the number above it.</div>";
+      } else {
+        h += '<ul class="cb-tlist">';
+        ts.criteria.forEach(function (c) {
+          h += '<li class="' + (c.met ? "met" : "not") + '"><span class="m">' + (c.met ? "✓" : "○")
+            + "</span><div><b>" + esc(c.label) + "</b><div class=\"cb-d\">You: " + esc(c.actual) + "</div></div></li>";
+        });
+        h += "</ul>";
+      }
+      h += "</div>";
+      h += '<div class="cb-note" style="margin-top:10px">Three of the five are <b>size</b> measures, so a small '
+        + "college cannot reach them however well it runs CPL — that is a limit of the tier system, not a "
+        + "judgment on the college. The other two count units <b>marked transcribed in MAP</b>, which is your own "
+        + "step and entirely within your control. <b>Never read this as a ranking against other colleges</b>: "
+        + "colleges that batch-upload already-posted credit (AP, IB, CLEP) score on those two for reasons that "
+        + "have nothing to do with how much CPL they award.</div>";
+    }
+
     if (st && st.eligible != null) {
       var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
       h += '<h3 class="cb-h">Where you stand</h3>';
@@ -814,6 +1151,52 @@
     } else if (summary && summary.suppressed) {
       h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
         + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
+    }
+
+    // ── What the waiting credit is ────────────────────────────────────────
+    // Explains the lead figure directly above it. Placed here, not lower down,
+    // because "63,991 units already articulated" invites a coordinator to
+    // imagine 300 judgment calls when it is very nearly one repeated decision.
+    var wb = waitingBreakdown(state.detail, summary);
+    if (wb && !wb.suppressed && !wb.empty) {
+      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
+      h += '<div class="cb-note" style="margin-top:0">These add up to the <b>' + fmt(Math.round(wb.total))
+        + " units</b> in the first box above — same credit, broken out by what it would count toward.</div>";
+      h += '<div class="cb-wait">';
+      wb.groups.forEach(function (g) {
+        var p = safePct(g.share, 1);
+        h += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
+          + '<span class="v">' + fmt(Math.round(g.units)) + " units · " + p + "%</span></div>"
+          + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, p)) + '%"></i></div>';
+        if (g.top.length) {
+          h += '<div class="cb-wrecs">Counts toward: '
+            + g.top.map(function (t) {
+                return esc(t.name) + " <span>(" + fmt(Math.round(t.units)) + ")</span>"; }).join(" · ")
+            + "</div>";
+        }
+        h += "</div>";
+      });
+      h += "</div>";
+      if (wb.militaryShare >= 0.6) {
+        var allMil = wb.militaryShare >= 1;
+        h += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
+          + " of it is credit for basic military service.</b> That is the good news on this page: it is not "
+          + "hundreds of separate judgment calls, it is " + (allMil ? "" : "close to ")
+          + "<b>one decision applied repeatedly</b> — you have "
+          + "already articulated the exhibit, and every one of these students has a DD-214 or JST on file. "
+          + "Statewide the pattern is the same: <b>98.8%</b> of all waiting credit is basic military service, and "
+          + "65 of the 73 colleges with any are at 100%.</div>";
+      }
+    } else if (wb && wb.suppressed) {
+      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
+      h += '<div class="cb-note" style="margin-top:0">Withheld — this college has fewer than 10 CPL students, so its '
+        + "figures are not published at that size. Breaking a withheld total into its parts would give back exactly "
+        + "what withholding it removed.</div>";
+    } else if (wb && wb.empty) {
+      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
+      h += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
+        + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
+        + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
     }
 
     // ── By CPL type ───────────────────────────────────────────────────────
@@ -847,7 +1230,7 @@
     } else if (f) {
       // (a) the $50,000 ESS 25-82 seed grant — already distributed
       h += '<div class="cb-fund">';
-      h += '<div class="cb-fbox"><header><h4>$50,000 seed grant</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
+      h += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
       if (f.grant.declined) {
         h += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
           + "That is a decision on record, not a missed payment.</div>";
@@ -876,8 +1259,10 @@
       }
       h += "</div>";
 
-      // (b) this college's share of the $35M implementation pool
-      h += '<div class="cb-fbox"><header><h4>Implementation funding</h4><span class="cb-tag">$35M pool · allocation cap</span></header>';
+      // (b) this college's share of the implementation pool. Sam, 2026-08-11:
+      // use the funding tab's own names — "$35M" is his shorthand with the
+      // session, not a label a college would recognise.
+      h += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
       if (!f.alloc) {
         h += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
       } else {
@@ -900,10 +1285,47 @@
           bits.push("Participation is recorded but not yet confirmed.");
         }
         if (bits.length) h += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
+
+        // ── What the cap is FOR — the three priorities, each with this
+        // college's own target. Caps and targets both come from the funding
+        // module; nothing here multiplies a share by a pool.
+        if (f.prios && f.prios.length) {
+          h += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
+          f.prios.forEach(function (p) {
+            var name = p.title || p.description || p.label;
+            h += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
+              + '<span class="v">' + money(p.cap) + "</span></div>";
+            h += '<div class="cb-ptarget">Your target: <b>'
+              + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
+              + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
+            h += "</div>";
+          });
+          h += "</div>";
+          h += '<div class="cb-lab" style="margin-top:8px;">A target is what earns the <b>whole</b> share, not a '
+            + "pass mark — partial progress earns a proportional part of it, so there is no cliff to miss.</div>";
+        }
       }
       h += "</div></div>";
+
+      // ── Do this next, per pool ──────────────────────────────────────────
+      // The steps come from the team's own strategies, not from this page.
+      var nextSeed = nextEssOutcome(ess);
+      var nextImpl = topStrategy(b);
+      if (nextSeed || nextImpl) {
+        h += '<div class="cb-next"><div class="cb-plab">Do this next</div><ul>';
+        if (nextSeed) {
+          h += "<li><b>For the seed funding:</b> " + esc(nextSeed.title)
+            + " — the outcome with the most ground still to cover.</li>";
+        }
+        if (nextImpl) {
+          h += "<li><b>For the implementation funding:</b> " + esc(nextImpl.text)
+            + " — the team's first strategy under " + esc(nextImpl.priority) + ".</li>";
+        }
+        h += "</ul></div>";
+      }
+
       h += '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
-        + "open it for the full derivation, the year split and the priority breakdown.</div>";
+        + "open it for the full derivation and the year split.</div>";
     }
 
     // ── Course share — absorbed from the retired Course Credit tab ────────
@@ -975,6 +1397,8 @@
           + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
       }
     }
+
+    h += resourcesHtml();
 
     h += '<div class="cb-note">Nothing here is irreversible, and a recommendation ruled Not Applicable can be revisited — '
       + 'ruling one is real work, not a failure. Strategies come from the team’s funding configuration ('
@@ -1058,6 +1482,23 @@
       state.roster = window.CPL_FUNDING ? "ready" : "error";
       if (root) render(root);
     });
+  }
+
+  /* The daily tier classification, from the same committed live_metrics.json
+   * the dashboard KPIs are built from. Same-origin static file, 55KB, no auth.
+   * A failed read leaves state.live null and the tier block simply does not
+   * render — never a "0 of 5", which would read as a finding about the
+   * college. */
+  function loadLive(root) {
+    if (state.liveState !== "idle") return;
+    state.liveState = "loading";
+    fetch("live_metrics.json").then(function (r) { return r.ok ? r.json() : null; })
+      .catch(function () { return null; })
+      .then(function (j) {
+        state.live = j || null;
+        state.liveState = j ? "ready" : "error";
+        if (root) render(root);
+      });
   }
 
   /* Stage 2 — the model, for the money. We call the module's own boot() via
@@ -1208,13 +1649,14 @@
   function activate() {
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
-    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); render(root); return; }
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadLive(root); render(root); return; }
     if (!signedIn()) { state.data = null; render(root); return; }
     state.loading = true; render(root);
     // The roster is small and powers the district picker, so it starts now,
     // in parallel with the Supabase reads. The 370KB model waits until a
     // college is actually chosen.
     loadRoster(root);
+    loadLive(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
     }).catch(function (e) {
@@ -1231,6 +1673,18 @@
     // Exposed for tests. courseShare in particular carries the suppression
     // logic absorbed from the retired Course Credit tab.
     _courseShare: courseShare,
+    // waitingBreakdown carries the suppression guard: map_college_cr_unit has
+    // no k-anonymity of its own, so breaking out a withheld college's credit
+    // would hand back what suppression removed.
+    _waitingBreakdown: waitingBreakdown,
+    _nextEssOutcome: nextEssOutcome,
+    // The tier count is the WORKER's (criteriaMetCount); the per-criterion
+    // list is display only, and `mismatch` fires when the two disagree.
+    _tierStanding: tierStanding,
+    _topStrategy: topStrategy,
+    _cleanText: cleanText,
+    _safePct: safePct,
+    _RESOURCES: RESOURCES,
     _byCplType: byCplType,
     _standing: standing,
     _measureFor: measureFor,
