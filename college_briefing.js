@@ -375,6 +375,14 @@
       ".cb-dist td{padding:7px 8px;border-bottom:1px solid var(--border);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
       ".cb-pick{background:none;border:0;padding:0;font:inherit;color:var(--link,#0b5cad);cursor:pointer;text-align:left;}",
       ".cb-pick:hover{text-decoration:underline;}",
+      ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
+      // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
+      ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
+      ".cb-assist>header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px;}",
+      ".cb-assist h3{margin:0;font-size:1.05rem;color:var(--text-strong);}",
+      ".cb-assist .cb-bar{margin-bottom:0;padding-bottom:12px;border-bottom:1px solid var(--border);}",
+      ".cb-assist .cb-asks{margin-top:12px;}",
+      ".cb-assist-mount{margin-top:12px;}",
       ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
       ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text);cursor:pointer;}",
       ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}"
@@ -603,6 +611,52 @@
     return '<span class="cb-ess ' + esc(o.state) + '">' + g + "</span>";
   }
 
+  /* PURE. Who MAP currently has on file for this college, so the college can
+   * keep it current (Sam, 2026-08-11: "we don't want to withhold user contacts
+   * in this view… have a section to show who's currently in the system so they
+   * can keep things current"). This is the college's OWN roster shown to the
+   * college — the `ctx=external` suppression exists for vendor embeds, and does
+   * not apply here.
+   *
+   * MAP stores several of these as multi-value strings; Moreno Valley's primary
+   * contact is literally the same address repeated eleven times. So every value
+   * is split, trimmed, de-duplicated case-insensitively and re-joined before it
+   * reaches the page — otherwise a 300-character run-on prints where a person's
+   * name should be. */
+  var CONTACT_ROLES = [
+    { k: "primary_contact",     e: "primary_contact_email",     label: "Primary contact", lead: true },
+    { k: "cpl_coordinator",     e: "cpl_coordinator_email",     label: "CPL coordinator" },
+    { k: "cpl_counselor",       e: "cpl_counselor_email",       label: "CPL counselor" },
+    { k: "articulation_officer", e: "articulation_officer_email", label: "Articulation officer" },
+    { k: "faculty_lead",        e: "faculty_lead_email",        label: "Faculty lead" },
+    { k: "certifying_official", e: "certifying_official_email", label: "Certifying official" },
+    { k: "vpaa",                e: "vpaa_email",                label: "VP Academic Affairs" },
+    { k: "vpss",                e: "vpss_email",                label: "VP Student Services" }
+  ];
+
+  function dedupeValue(v) {
+    if (v == null) return null;
+    var parts = String(v).split(/[,;\n]+/).map(function (x) { return x.trim(); }).filter(Boolean);
+    var seen = {}, out = [];
+    parts.forEach(function (x) {
+      var k = x.toLowerCase();
+      if (seen[k]) return;
+      seen[k] = 1; out.push(x);
+    });
+    return out.length ? out.join(", ") : null;
+  }
+
+  function contactRoster(row) {
+    if (!row) return null;
+    var filled = [], blank = [];
+    CONTACT_ROLES.forEach(function (r) {
+      var name = dedupeValue(row[r.k]), email = dedupeValue(row[r.e]);
+      (name || email ? filled : blank).push({ label: r.label, name: name, email: email, lead: !!r.lead });
+    });
+    return { filled: filled, blank: blank, landing: row.landing_page_url || null,
+             updated: row.last_updated_on || null };
+  }
+
   function standBox(big, of, lab, frac, cls) {
     var w = (frac == null) ? null : Math.max(0, Math.min(1, frac));
     return '<div class="cb-box' + (cls ? " " + cls : "") + '">'
@@ -671,10 +725,20 @@
       ROLES.map(function (r) { return '<option value="' + r.id + '"' + (r.id === state.role ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
       "</select></div></div>";
 
+    // ── Sierra AI, first on the tab, holding the pickers ──────────────────
+    // Sam, 2026-08-11: the assistant leads, the pickers live inside it, and
+    // it is named "Sierra AI" — "Sierra" alone reads as Sierra College.
+    h += '<section class="cb-assist"><header><h3>Sierra AI</h3>'
+      + '<span class="cb-tag">Answers come from the CPL Initiative records and knowledge base.</span></header>'
+      + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
+      + (state.college ? '<div class="cb-asks" id="cb-asks"></div>' : "")
+      + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
+      + "</section>";
+
     if (state.error) h += '<div class="cb-warn">Could not load everything: ' + esc(state.error) + ". Figures below may be incomplete — treat a missing number as unknown, not zero.</div>";
 
     var b = state.data && state.data.briefing;
-    if (!b) { root.innerHTML = h; wire(root); return; }
+    if (!b) { finish(root, h, null); return; }
 
     if (b.unread && b.unread.length) {
       h += '<div class="cb-warn"><b>' + b.unread.length + " funding program" + (b.unread.length === 1 ? "" : "s") + " not read.</b><ul style=\"margin:6px 0 0 18px;\">" +
@@ -704,7 +768,7 @@
         h += '<div class="cb-note">“Withheld” means fewer than 10 CPL students, not zero activity. '
           + "A dash means this college is not in the credit summary at all — an absent figure, which is not the same as a measured zero.</div>";
       }
-      root.innerHTML = h; wire(root); return;
+      finish(root, h, null); return;
     }
 
     if (b.leads.length) {
@@ -886,25 +950,57 @@
       h += "</div>";
     });
 
-    // ── Ask Sierra ────────────────────────────────────────────────────────
-    // Deep link into the one chat instance; the question is prefilled and NOT
-    // sent, so it can be edited first.
-    h += '<h3 class="cb-h">Ask Sierra about ' + esc(state.college) + "</h3>";
-    h += '<div class="cb-note">These open the CPL Assistant with the question filled in. '
-      + "Nothing is sent until you press send — edit it first if it is not quite your question. "
-      + "Sierra answers from MAP's own records, and says so when it cannot see something.</div>";
-    h += '<div class="cb-asks">';
-    sierraQuestions(state.college).forEach(function (q) {
-      h += '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>";
-    });
-    h += "</div>";
+    // ── Who MAP has on file ───────────────────────────────────────────────
+    var roster = contactRoster(state.data && state.data.raw && state.data.raw.contactRowByName
+      && state.data.raw.contactRowByName[state.college]);
+    if (roster) {
+      h += '<h3 class="cb-h">Who MAP has on file for you</h3>';
+      h += '<div class="cb-note" style="margin-top:0">This is what MAP shows today. <b>The primary contact is where a '
+        + "student's CPL request from your landing page is sent</b> — if that is wrong, the request reaches nobody. "
+        + "Update these in MAP; this page reflects whatever is there.</div>";
+      h += '<table class="cb-dist cb-roster"><colgroup><col style="width:30%"><col style="width:31%"><col style="width:39%"></colgroup>'
+        + "<thead><tr><th>Role</th><th>Name</th><th>Email</th></tr></thead><tbody>";
+      roster.filled.forEach(function (r) {
+        h += "<tr" + (r.lead ? ' class="lead"' : "") + "><td>" + esc(r.label) + "</td><td>"
+          + esc(r.name || "—") + "</td><td>" + esc(r.email || "—") + "</td></tr>";
+      });
+      h += "</tbody></table>";
+      if (roster.blank.length) {
+        h += '<div class="cb-note">Not filled in: <b>'
+          + roster.blank.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
+          + "Blank is not a problem in itself — but a blank primary contact means student requests have nowhere to land.</div>";
+      }
+      if (roster.landing) {
+        h += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
+          + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
+      }
+    }
 
     h += '<div class="cb-note">Nothing here is irreversible, and a recommendation ruled Not Applicable can be revisited — '
       + 'ruling one is real work, not a failure. Strategies come from the team’s funding configuration ('
       + esc(b.scenario) + ", Year " + esc(b.year) + "); edit them there and they change here. "
       + "Student figures are withheld below 10 CPL students, to protect student privacy.</div>";
 
+    finish(root, h, st);
+  }
+
+  /* Every exit path from render() goes through here, so the Sierra AI box is
+   * assembled once: pickers relocated into it, suggested questions built from
+   * this college's own figures, and the shared assistant mounted. */
+  function finish(root, h, st) {
     root.innerHTML = h;
+    // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
+    // selectors in the CPL Assistant box for simplicity"). They are built in
+    // the main string, then relocated, so the bar markup stays in one place.
+    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar");
+    if (pickHost && bar) pickHost.appendChild(bar);
+    var asks = root.querySelector("#cb-asks");
+    if (asks && state.college) {
+      asks.innerHTML = sierraQuestions(state.college, state.detail, st || null)
+        .map(function (q) { return '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>"; })
+        .join("");
+    }
+    mountAssistant(root);
     wire(root);
   }
 
@@ -986,16 +1082,28 @@
     });
   }
 
-  /* ── Ask Sierra ───────────────────────────────────────────────────────────
-   * A DEEP LINK, not a second chat. cpl_chat.js already owns one chat instance
-   * and already has a prefill handoff (the Sierra Training tab uses it): write
-   * the question to sessionStorage, navigate to #chatbot, and it fills the box
-   * WITHOUT sending. Embedding a second Sierra here would mean two chat states,
-   * two feedback paths and two places for the audience rules to drift. The
-   * never-auto-send behaviour is inherited, which matters: the question below
-   * is a starting point a person should be able to edit before asking. */
+  /* ── The CPL Assistant, embedded ──────────────────────────────────────────
+   * Sam, 2026-08-11: "embed the functionality right on the page… so they can
+   * type their question there and not leave the tab." This mounts the SAME
+   * assistant cpl_chat.js owns — one instance in a second place — so the
+   * audience rules, feedback path and conversation history stay in one file
+   * and cannot drift. Clicking a suggested question PREFILLS without sending,
+   * so the person can edit it first.
+   *
+   * Falls back to the deep link if the chat module has not loaded. */
   var SIERRA_Q_KEY = "cplSierraTestQ.v1";
+  function chatModule() {
+    var C = window.CPL_CHAT;
+    return (C && typeof C.mountInto === "function") ? C : null;
+  }
+  function mountAssistant(root) {
+    var C = chatModule(), host = root && root.querySelector("#cb-assistant-mount");
+    if (!C || !host) return false;
+    try { C.mountInto(host); return true; } catch (e) { return false; }
+  }
   function askSierra(question) {
+    var C = chatModule();
+    if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
     try { sessionStorage.setItem(SIERRA_Q_KEY, String(question || "").slice(0, 1000)); }
     catch (e) { /* storage unavailable — the chat still opens, just unprefilled */ }
     if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
@@ -1005,17 +1113,36 @@
     }
   }
 
-  /* PURE. The questions worth asking about a named college. Phrased as a person
-   * would ask them, with the college named, because Sierra resolves a home
-   * college from the question text. */
-  function sierraQuestions(college) {
+  /* PURE. The questions worth asking about THIS college — computed from its own
+   * figures, not a fixed list (Sam, 2026-08-11: "questions that would lead them
+   * to opportunities at their own college"). Because they are derived, they
+   * stay right as a college's position changes and nobody maintains a list.
+   * The first is constant and is the one Sam asked for: how are we doing, and
+   * what should we do about it. */
+  function sierraQuestions(college, detail, standing) {
     if (!college) return [];
-    return [
-      "What credit for prior learning does " + college + " already articulate?",
-      "Which statewide credit recommendations could " + college + " adopt that it has not yet?",
-      "How many students at " + college + " have prior learning that has not been applied to their record?",
-      "Who should a student at " + college + " contact to request a credit review?"
-    ];
+    var qs = ["How is " + college + " doing on CPL, and what quick steps do you recommend?"];
+    var waiting = standing && standing.articulatedWaiting;
+    if (waiting > 0) {
+      qs.push("What is the fastest way to award the " + fmt(waiting) + " units already waiting at " + college + "?");
+    } else if (standing && standing.eligible > 0) {
+      qs.push("Nothing is set up and waiting at " + college + " — where should we look for credit to award?");
+    }
+    // The single best adoption opportunity, by peers already doing it. Names a
+    // COUNT of peer colleges, never the colleges — this page never turns into
+    // a comparison of one college against another.
+    var best = null;
+    if (detail && detail.potential) {
+      detail.potential.forEach(function (c) {
+        var n = (c.adopter_colleges || []).length;
+        if (!best || n > best.peers) best = { title: c.unified_title, peers: n };
+      });
+    }
+    if (best && best.title) {
+      qs.push("Should " + college + " add " + best.title + "? " + best.peers + " other colleges already give credit for it.");
+    }
+    qs.push("Who does a student at " + college + " contact to ask for a credit review?");
+    return qs;
   }
 
   /* ── Load ────────────────────────────────────────────────────────────── */
@@ -1052,22 +1179,25 @@
       jget(REST + "/cpl_funding_config?id=eq.default&select=config"),
       jget(REST + "/map_colleges?select=college_id,college_name&order=college_name"),
       jget(REST + "/map_college_credit_summary?select=*"),
-      jget(REST + "/map_college_contacts?select=college,primary_contact_email")
+      jget(REST + "/map_college_contacts?select=college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on")
     ]).then(function (res) {
       var cfgRow = res[0] && res[0][0], colleges = res[1] || [], summary = res[2] || [], contacts = res[3] || [];
       var nameToId = {}, names = [];
       colleges.forEach(function (r) { nameToId[r.college_name] = r.college_id; names.push(r.college_name); });
       var summaryById = {};
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
-      var contactByName = {};
-      contacts.forEach(function (r) { contactByName[r.college] = r.primary_contact_email || null; });
+      var contactByName = {}, contactRowByName = {};
+      contacts.forEach(function (r) {
+        contactByName[r.college] = r.primary_contact_email || null;
+        contactRowByName[r.college] = r;
+      });
       var summaryByName = {};
       names.forEach(function (n) { summaryByName[n] = summaryById[nameToId[n]] || null; });
       state.data = {
         colleges: names,
         nameToId: nameToId,
         summaryByName: summaryByName,
-        raw: { config: (cfgRow && cfgRow.config) || {}, nameToId: nameToId, summaryById: summaryById, contactByName: contactByName }
+        raw: { config: (cfgRow && cfgRow.config) || {}, nameToId: nameToId, summaryById: summaryById, contactByName: contactByName, contactRowByName: contactRowByName }
       };
       if (!res[0]) state.error = "the funding configuration did not load";
       recompute();
@@ -1112,6 +1242,8 @@
     _districtIndex: districtIndex,
     _shortName: shortName,
     _sierraQuestions: sierraQuestions,
+    _dedupeValue: dedupeValue,
+    _contactRoster: contactRoster,
     _askSierra: askSierra,
     _SIERRA_Q_KEY: SIERRA_Q_KEY,
     _money: money,

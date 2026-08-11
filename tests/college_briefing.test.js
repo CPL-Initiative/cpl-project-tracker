@@ -408,24 +408,47 @@ check("districts: null when the roster has not loaded",
   (function () { const saved = win.CPL_FUNDING; win.CPL_FUNDING = undefined;
     const r = M._districtIndex(["Bakersfield College"]); win.CPL_FUNDING = saved; return r === null; })());
 
-// Ask Sierra — a deep link into the ONE chat instance, prefilled and NOT sent.
-const qs = M._sierraQuestions("Bakersfield College");
-check("Sierra: questions name the college so Sierra can resolve it",
-  qs.length === 4 && qs.every(function (q) { return q.indexOf("Bakersfield College") !== -1; }));
-check("Sierra: no questions without a college", M._sierraQuestions(null).length === 0);
-check("Sierra: reuses cpl_chat's existing prefill key", M._SIERRA_Q_KEY === "cplSierraTestQ.v1");
+// ── Sierra AI: ONE assistant, embedded — not a second chat ──
+// Sam, 2026-08-11: "embed the functionality right on the page… so they can type
+// their question there and not leave the tab", and name it Sierra AI so it is
+// not read as Sierra College. The guard that matters is that this tab never
+// builds its own chat: it mounts cpl_chat.js's instance, so the audience rules,
+// the feedback path and the history stay in one file.
 const chatSrc = fs.readFileSync("cpl_chat.js", "utf8");
-check("Sierra: that key is the one cpl_chat.js actually consumes",
-  chatSrc.indexOf("'cplSierraTestQ.v1'") !== -1 || chatSrc.indexOf('"cplSierraTestQ.v1"') !== -1);
-let sent = 0;
-win.CPL_TABS = { navigate: function () { sent++; } };
-M._askSierra("What credit does Bakersfield College articulate?");
-check("Sierra: the question is staged for the chat to prefill",
-  win.sessionStorage.getItem("cplSierraTestQ.v1") === "What credit does Bakersfield College articulate?");
-check("Sierra: navigates to the chat rather than embedding a second one", sent === 1);
-check("Sierra: the briefing never calls the chat endpoint itself",
-  !/cpl-chat|functions\/v1/.test(briefingSrc),
-  "one chat instance means one set of audience rules");
+check("Sierra AI: cpl_chat exposes a second-mount hook", /mountInto:\s*mountInto/.test(chatSrc));
+check("Sierra AI: cpl_chat exposes prefill (fill the box, never auto-send)",
+  /prefill:\s*function/.test(chatSrc) && !/\bsubmit\(\)/.test(chatSrc.slice(chatSrc.indexOf("prefill: function"), chatSrc.indexOf("prefill: function") + 400)));
+check("Sierra AI: the briefing mounts that instance rather than building a chat",
+  /CPL_CHAT/.test(briefingSrc) && /mountInto/.test(briefingSrc));
+check("Sierra AI: the briefing never calls the chat endpoint itself",
+  !/functions\/v1|cpl-chat/.test(briefingSrc),
+  "one assistant means one set of audience rules");
+check("Sierra AI: named so it is not confused with Sierra College",
+  /Sierra AI/.test(briefingSrc));
+check("Sierra AI: falls back to the deep link when the chat module is absent",
+  M._SIERRA_Q_KEY === "cplSierraTestQ.v1"
+  && (chatSrc.indexOf("'cplSierraTestQ.v1'") !== -1 || chatSrc.indexOf('"cplSierraTestQ.v1"') !== -1));
+
+// ⭐ The suggested questions are COMPUTED from this college's own figures, so
+// they stay right as its position changes and nobody maintains a list.
+const qWait = M._sierraQuestions("Example College",
+  { potential: [{ unified_title: "CompTIA A+", adopter_colleges: ["a","b","c"] },
+                { unified_title: "Rare Thing",  adopter_colleges: ["a"] }] },
+  { articulatedWaiting: 4306, eligible: 11793 });
+check("questions: the first is always how-are-we-doing + what to do",
+  /How is Example College doing on CPL, and what quick steps/.test(qWait[0]));
+check("questions: name the college so the assistant can resolve it",
+  qWait.every(function (q) { return q.indexOf("Example College") !== -1; }));
+check("questions: carry this college's OWN waiting figure", /4,306 units already waiting/.test(qWait.join(" ")));
+check("questions: name the best adoption opportunity by PEER COUNT, never by naming colleges",
+  /Should Example College add CompTIA A\+\? 3 other colleges/.test(qWait.join(" ")),
+  "a college page must never turn into a comparison against a named college");
+
+// The zero case must not ask a question with no answer.
+const qZero = M._sierraQuestions("Example College", { potential: [] }, { articulatedWaiting: 0, eligible: 17253 });
+check("questions: nothing waiting → asks where to look instead",
+  /Nothing is set up and waiting/.test(qZero.join(" ")) && !/fastest way to award/.test(qZero.join(" ")));
+check("questions: none without a college", M._sierraQuestions(null, null, null).length === 0);
 
 // A failed model read must read as a failed read.
 check("funding: a failed model load renders 'failed read', not an empty result",
@@ -473,8 +496,13 @@ check("render: the guaranteed rural allowance is named", /rural allowance/.test(
 check("render: an outstanding participation requirement is surfaced",
   /Participation requirements are outstanding/.test(ftxt) && /CPL Coordinator/.test(ftxt));
 check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
-check("render: Sierra asks are buttons, one per question",
-  fr.querySelectorAll("button.cb-ask").length === 4);
+check("render: Sierra AI suggested questions render as buttons",
+  fr.querySelectorAll("button.cb-ask").length >= 3);
+check("render: the pickers sit INSIDE the Sierra AI box",
+  !!fr.querySelector(".cb-assist .cb-bar"),
+  "Sam: put the selectors in the assistant box");
+check("render: a mount point exists for the shared assistant",
+  !!fr.querySelector("#cb-assistant-mount"));
 check("render: the district picker is present", !!fr.querySelector("#cb-district"));
 check("render: no script/img injected anywhere in the new sections",
   fr.querySelectorAll("script").length === 0 && fr.querySelectorAll("img").length === 0);
@@ -516,6 +544,22 @@ check("transcribed: names Admissions & Records as who actually posts it",
   "otherwise a coordinator reads the checkbox as the credit being posted");
 check("transcribed: says there is no automatic link to the college's own system",
   /no automatic link|does not do that for you|no SIS integration/i.test(stripped));
+
+// ── Part J — who MAP has on file (Sam, 2026-08-11) ──
+// The college's OWN roster, shown to the college. MAP stores several of these
+// as multi-value strings — Moreno Valley's primary contact is the same address
+// eleven times — so values are de-duplicated before display.
+check("roster: de-duplicates a repeated address",
+  M._dedupeValue("a@x.edu,\na@x.edu,\nA@x.edu") === "a@x.edu");
+check("roster: keeps genuinely different addresses",
+  M._dedupeValue("a@x.edu,\nb@x.edu") === "a@x.edu, b@x.edu");
+check("roster: empty stays empty, never a stray comma", M._dedupeValue("") === null && M._dedupeValue(null) === null);
+const ros = M._contactRoster({ primary_contact: "Ann Lee", primary_contact_email: "ann@x.edu,\nann@x.edu",
+  cpl_coordinator: null, landing_page_url: "https://x.edu/cpl" });
+check("roster: splits filled from blank roles", ros.filled.length >= 1 && ros.blank.length >= 1);
+check("roster: primary contact is flagged as the lead row",
+  ros.filled[0].lead === true && ros.filled[0].email === "ann@x.edu");
+check("roster: carries the landing page through", ros.landing === "https://x.edu/cpl");
 
 // ── report ──
 let pass = 0;
