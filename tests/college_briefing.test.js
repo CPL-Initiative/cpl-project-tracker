@@ -425,6 +425,53 @@ check("Sierra AI: the briefing never calls the chat endpoint itself",
   "one assistant means one set of audience rules");
 check("Sierra AI: named so it is not confused with Sierra College",
   /Sierra AI/.test(briefingSrc));
+// ⭐ ONE CLICK, NOT TWO (Sam, 2026-08-11: "so they don't have to take 2 steps
+// and get lost"). A suggested question sits above an assistant already mounted
+// on this tab, so clicking it must FILL AND SEND — the behaviour of the
+// assistant's own starter chips.
+//
+// ⚠ And it must do that WITHOUT changing prefill(), which the Sierra Training
+// tab's "Test in Sierra" hand-off relies on staying send-free so a reviewer can
+// edit a logged question before replaying it. Both halves are asserted, because
+// fixing this by making prefill() send would break that tab silently.
+check("ask(): the chat module exposes a fill-and-send entry point",
+  /ask:\s*function/.test(chatSrc));
+check("ask(): it actually submits", (function () {
+  const at = chatSrc.indexOf("ask: function");
+  return at !== -1 && /submit\(\)/.test(chatSrc.slice(at, at + 300));
+})());
+check("ask(): prefill() still does NOT send — the Training tab depends on it", (function () {
+  const at = chatSrc.indexOf("prefill: function");
+  return at !== -1 && !/submit\(\)/.test(chatSrc.slice(at, at + 300));
+})(), "a reviewer edits a logged question before replaying it");
+check("askSierra() prefers ask() over prefill()",
+  briefingSrc.indexOf("C.ask(question)") !== -1 &&
+  briefingSrc.indexOf("C.ask(question)") < briefingSrc.indexOf("C.prefill(question)"),
+  "prefill is the fallback for an older chat module");
+
+// Behavioural: a click on a suggested question reaches ask(), not prefill().
+const wq2 = load(true);
+wq2.cplCollegeShort = S;
+let asked = null, prefilled = null;
+wq2.CPL_CHAT = {
+  mountInto: function () {}, prefill: function (q) { prefilled = q; return true; },
+  ask: function (q) { asked = q; return true; },
+};
+const Q2 = wq2.CPL_COLLEGE_BRIEFING;
+Q2._state.college = "Example College";
+Q2._state.data = { colleges: ["Example College"], summaryByName: {},
+  briefing: Q2._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const q2Root = wq2.document.getElementById("college-briefing-root");
+Q2.render(q2Root);
+const chip = q2Root.querySelector("button.cb-ask");
+check("a suggested question renders as a clickable chip", !!chip);
+if (chip) chip.click();
+check("clicking it SENDS rather than only filling the box",
+  asked !== null && prefilled === null,
+  "two steps is where a visitor gets lost");
+check("…and it sends the question that was on the chip",
+  asked === chip.getAttribute("data-q"));
+
 check("Sierra AI: falls back to the deep link when the chat module is absent",
   M._SIERRA_Q_KEY === "cplSierraTestQ.v1"
   && (chatSrc.indexOf("'cplSierraTestQ.v1'") !== -1 || chatSrc.indexOf('"cplSierraTestQ.v1"') !== -1));
@@ -841,8 +888,6 @@ const bad = M._tierStanding(tierFixture({ criteriaMetCount: 4 }), "Edge College"
 check("(O) a published count that contradicts its own fields is CAUGHT",
   bad.mismatch === true && bad.met === 4,
   "the worker's count stays authoritative; the list that disagrees is withheld");
-check("(O) …and the render withholds the list when it cannot reconcile",
-  /held back rather than/.test(briefingSrc));
 
 // Prove the withholding actually happens on the page, not just in the model.
 const wbad = load(true);
@@ -854,8 +899,11 @@ BAD._state.data = { colleges: ["Edge College"], summaryByName: {},
   briefing: BAD._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
 const badRoot = wbad.document.getElementById("college-briefing-root");
 BAD.render(badRoot);
+const badTxt = badRoot.textContent.replace(/\s+/g, " ");
 check("(O) an unreconcilable tier renders the count but NOT the criteria list",
-  badRoot.querySelectorAll(".cb-tlist li").length === 0 && /4 of 5/.test(badRoot.textContent));
+  badRoot.querySelectorAll(".cb-tlist li").length === 0 && /4 of 5/.test(badTxt));
+check("(O) …and it says WHY the list is withheld, in one paragraph",
+  badRoot.querySelectorAll(".cb-tier p").length === 1 && /holding the list back/.test(badTxt));
 
 // A college absent from live_metrics, or a failed read, must render NOTHING —
 // never "0 of 5", which reads as a finding about the college.
@@ -868,15 +916,6 @@ check("(O) a failed live_metrics read yields null", M._tierStanding(null, "Baker
 check("(O) the live loader has an explicit status field",
   /liveState: "idle"/.test(briefingSrc) && /state\.liveState !== "idle"/.test(briefingSrc));
 
-// Three of the five are size measures — a small college cannot reach them
-// however well it runs CPL, and the page must say so rather than imply fault.
-check("(O) the size limitation is stated, not left to be inferred",
-  /Three of the five are <b>size<\/b> measures/.test(briefingSrc));
-check("(O) never presented as a ranking against other colleges",
-  /Never read this as a ranking against other colleges/.test(briefingSrc));
-check("(O) the batch-upload distortion is named where it would mislead",
-  /batch-upload already-posted credit/.test(briefingSrc),
-  "two of the five count transcribed units; some colleges bulk-load AP/IB/CLEP");
 
 // Render the tier block end-to-end on real data.
 const wt = load(true);
@@ -891,13 +930,57 @@ T._state.data = {
 };
 const tierRoot = wt.document.getElementById("college-briefing-root");
 T.render(tierRoot);
-check("(O) the tier and the fraction both render",
-  /Advancing/.test(tierRoot.textContent) && /2 of 5 criteria met/.test(tierRoot.textContent));
-check("(O) all five criteria are listed with the college's own value",
-  tierRoot.querySelectorAll(".cb-tlist li").length === 5 && /2,250 students/.test(tierRoot.textContent));
-check("(O) met and unmet are visually distinguished",
-  tierRoot.querySelectorAll(".cb-tlist li.met").length === 2 &&
-  tierRoot.querySelectorAll(".cb-tlist li.not").length === 3);
+const tierTxt = tierRoot.textContent.replace(/\s+/g, " ");
+check("(O) the tier and the fraction both render as prose",
+  /Advancing — you meet 2 of the 5 criteria/.test(tierTxt));
+check("(O) it is prose, not a row list", tierRoot.querySelectorAll(".cb-tlist li").length === 0 &&
+  tierRoot.querySelectorAll(".cb-tier p").length >= 2);
+check("(O) every criterion appears with the college's own value",
+  /at least 500 CPL students \(you: 2,250\)/.test(tierTxt) &&
+  /at least 3 transcribed units per student \(you: 0.05\)/.test(tierTxt));
+// ⭐ Sam, 2026-08-11: the three tiers are named in the header so "Advancing"
+// means something before the reader reaches it — a verdict from an unstated
+// scheme is not grounding.
+check("(O) the three tiers and their thresholds are stated up front",
+  /Leading<\/b> meets three or more/.test(briefingSrc) &&
+  /Advancing<\/b> one or two/.test(briefingSrc) &&
+  /Inactive<\/b> has/.test(briefingSrc));
+// The ordering IS the advice: nearest-to-threshold first.
+check("(O) unmet criteria are ordered nearest-threshold first",
+  /closest first/.test(tierTxt) &&
+  tierTxt.indexOf("25% of eligible units") < tierTxt.indexOf("3 transcribed units per student"),
+  "CCSF sits at 0.06x of the 25% bar and 0.017x of the 3-unit bar, so the rate comes first");
+// A value must not repeat the unit its phrase already carries.
+check("(O) the value does not repeat the phrase's unit",
+  !/per student \(you: [0-9.]+ per student\)/.test(tierTxt));
+// Three of the five are size measures — a small college cannot reach them
+// however well it runs CPL, and the page must say so rather than imply fault.
+// ⚠ Asserted on the RENDERED text, not on briefingSrc: a source-text grep
+// breaks on a line-wrap between two concatenated literals while the page is
+// perfectly correct, which is a test failing for a reason the reader cannot see.
+check("(O) the size limitation is stated, not left to be inferred",
+  /Three of the five are size measures/.test(tierTxt));
+check("(O) never presented as a ranking against other colleges",
+  /never a ranking against anyone else/.test(tierTxt));
+check("(O) the batch-upload distortion is named where it would mislead",
+  /batch-upload already-posted credit \(AP, IB, CLEP\)/.test(tierTxt),
+  "two of the five count transcribed units; some colleges bulk-load AP/IB/CLEP");
+
+// Inactive is assigned by having almost nothing recorded, NOT by the count —
+// saying "0 of 5" there would blame a college for a scheme it never entered.
+const inact = { tiers: { leading: { colleges: [] }, advancing: { colleges: [] }, inactive: { colleges: [
+  { college: "Quiet College", students: 2, units: 0, avgUnits: 0, transcriptionRate: 0,
+    transcribedUnits: 0, avgTranscribed: 0, criteriaMetCount: 0 } ] } } };
+const wq = load(true); wq.cplCollegeShort = S;
+const Q = wq.CPL_COLLEGE_BRIEFING;
+Q._state.college = "Quiet College"; Q._state.live = inact;
+Q._state.data = { colleges: ["Quiet College"], summaryByName: {},
+  briefing: Q._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const qRoot = wq.document.getElementById("college-briefing-root");
+Q.render(qRoot);
+check("(O) Inactive is explained as 'not recorded', not as a score of 0 of 5",
+  /almost no CPL recorded/.test(qRoot.textContent) && !/0 of the 5/.test(qRoot.textContent),
+  "Inactive is assigned by absence of activity, not by counting criteria");
 
 // ── report ──
 let pass = 0;

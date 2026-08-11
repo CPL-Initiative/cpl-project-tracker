@@ -370,14 +370,10 @@
       ".cb-thead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;}",
       ".cb-thead b{font-size:1.15rem;color:var(--text-strong);}",
       ".cb-thead .v{font-size:.82rem;color:var(--text-muted);font-variant-numeric:tabular-nums;white-space:nowrap;}",
-      ".cb-tlist{list-style:none;margin:11px 0 0;padding:0;display:flex;flex-direction:column;gap:0;}",
-      ".cb-tlist li{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--border);padding:8px 0;font-size:.84rem;}",
-      ".cb-tlist li:first-child{border-top:0;}",
-      ".cb-tlist .m{flex:0 0 auto;width:1.3em;text-align:center;font-weight:700;}",
-      ".cb-tlist li.met .m{color:var(--ok,#2f7a3d);}",
-      ".cb-tlist li.not .m{color:var(--text-muted);}",
-      ".cb-tlist li.not b{color:var(--text-muted);font-weight:600;}",
-      ".cb-tlist .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;}",
+      ".cb-tier p{margin:0 0 9px;font-size:.87rem;line-height:1.6;color:var(--text-body);}",
+      ".cb-tier p:last-child{margin-bottom:0;}",
+      ".cb-tier p b{color:var(--text-strong);}",
+      ".cb-tier em{font-style:normal;color:var(--text-muted);font-variant-numeric:tabular-nums;}",
       // Per-priority split of the allocation cap + the per-pool next step.
       ".cb-plab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin-bottom:7px;}",
       ".cb-prios{margin-top:12px;border-top:1px solid var(--border);padding-top:11px;}",
@@ -662,24 +658,39 @@
    * if the two disagree we say so rather than show a list that does not add up
    * to the figure printed above it.
    */
+  /* `short` is the mid-sentence form ("500 CPL students"), because the prose
+   * reads "at least 500 CPL students (you: 216)" and a capitalised label
+   * stranded mid-clause reads like a heading that lost its box.
+   *
+   * `ratio` is how close the college is, as actual ÷ threshold, so the unmet
+   * criteria can be ordered NEAREST FIRST — the difference between a list and
+   * a next step. It is a display ordering only: `met` remains the sole
+   * authority on whether a criterion is satisfied, and criterion 4 computes
+   * from the UNROUNDED ratio for the same reason `met` does. */
   var TIER_CRITERIA = [
-    { label: "At least 500 CPL students", kind: "size",
+    { label: "At least 500 CPL students", short: "500 CPL students", kind: "size",
       get: function (c) { return num(c.students); },
       met: function (c) { return num(c.students) >= 500; },
-      show: function (c) { return fmt(num(c.students)) + " students"; } },
-    { label: "At least 3,000 units of eligible credit", kind: "size",
+      ratio: function (c) { return (num(c.students) || 0) / 500; },
+      show: function (c) { return fmt(num(c.students)); } },
+    { label: "At least 3,000 units of eligible credit", short: "3,000 units of eligible credit", kind: "size",
       get: function (c) { return num(c.units); },
       met: function (c) { return num(c.units) >= 3000; },
-      show: function (c) { return fmt(Math.round(num(c.units))) + " units"; } },
-    { label: "At least 5 eligible units per student", kind: "depth",
+      ratio: function (c) { return (num(c.units) || 0) / 3000; },
+      show: function (c) { return fmt(Math.round(num(c.units))); } },
+    { label: "At least 5 eligible units per student", short: "5 eligible units per student", kind: "depth",
       met: function (c) { return num(c.avgUnits) >= 5; },
-      show: function (c) { return (Math.round(num(c.avgUnits) * 10) / 10) + " per student"; } },
-    { label: "At least 25% of eligible units marked transcribed in MAP", kind: "mark",
+      ratio: function (c) { return (num(c.avgUnits) || 0) / 5; },
+      show: function (c) { return String(Math.round(num(c.avgUnits) * 10) / 10); } },
+    { label: "At least 25% of eligible units marked transcribed in MAP",
+      short: "25% of eligible units marked transcribed in MAP", kind: "mark",
       met: function (c) { return num(c.units) > 0 && (num(c.transcribedUnits) / num(c.units)) >= 0.25; },
+      ratio: function (c) { return num(c.units) > 0 ? (num(c.transcribedUnits) / num(c.units)) / 0.25 : 0; },
       show: function (c) { return (num(c.transcriptionRate) || 0) + "%"; } },
-    { label: "At least 3 transcribed units per student", kind: "mark",
+    { label: "At least 3 transcribed units per student", short: "3 transcribed units per student", kind: "mark",
       met: function (c) { return num(c.avgTranscribed) >= 3; },
-      show: function (c) { return (Math.round(num(c.avgTranscribed) * 100) / 100) + " per student"; } }
+      ratio: function (c) { return (num(c.avgTranscribed) || 0) / 3; },
+      show: function (c) { return String(Math.round(num(c.avgTranscribed) * 100) / 100); } }
   ];
   var TIER_LABEL = { leading: "Leading", advancing: "Advancing", inactive: "Inactive" };
 
@@ -694,7 +705,8 @@
     });
     if (!found) return null;
     var list = TIER_CRITERIA.map(function (cr) {
-      return { label: cr.label, kind: cr.kind, met: !!cr.met(found), actual: cr.show(found) };
+      return { label: cr.label, short: cr.short, kind: cr.kind, met: !!cr.met(found),
+               actual: cr.show(found), ratio: cr.ratio(found) };
     });
     var computed = list.filter(function (c) { return c.met; }).length;
     var stated = num(found.criteriaMetCount);
@@ -703,7 +715,10 @@
       met: stated == null ? computed : stated,
       total: TIER_CRITERIA.length,
       criteria: list,
-      missing: list.filter(function (c) { return !c.met; }),
+      met_list: list.filter(function (c) { return c.met; }),
+      // Nearest first — the ordering is the advice.
+      missing: list.filter(function (c) { return !c.met; })
+                   .sort(function (a, b) { return b.ratio - a.ratio; }),
       // The list is shown only when it reconciles with the worker's own count.
       mismatch: stated != null && stated !== computed
     };
@@ -1103,29 +1118,50 @@
     // colleges are in that bucket. Naming the five turns it into a checklist.
     var ts = tierStanding(state.live, state.college);
     if (ts) {
+      // Prose, not a checklist (Sam, 2026-08-11). The three tiers are named in
+      // the header so the label means something before the reader gets to it —
+      // "Advancing" alone is a verdict from an unstated scheme.
       h += '<h3 class="cb-h">Your tier on the systemwide dashboard</h3>';
-      h += '<div class="cb-tier"><div class="cb-thead"><b>' + esc(ts.label) + "</b>"
-        + '<span class="v">' + ts.met + " of " + ts.total + " criteria met</span></div>";
+      h += '<div class="cb-note" style="margin-top:-4px">Every college is placed in one of three tiers by the same '
+        + "five criteria: <b>Leading</b> meets three or more, <b>Advancing</b> one or two, <b>Inactive</b> has "
+        + "essentially no CPL recorded. The five count students, eligible units, units per student, and how much "
+        + "of that credit is <b>marked transcribed in MAP</b>.</div>";
+      h += '<div class="cb-tier">';
       if (ts.mismatch) {
-        h += '<div class="cb-note" style="margin-top:8px">The published count is ' + ts.met
-          + ", but the individual criteria do not reconcile with it here — the transcription rate is published "
-          + "rounded, so a borderline college can fall either side. The criteria list is held back rather than "
-          + "shown disagreeing with the number above it.</div>";
+        h += "<p><b>" + esc(ts.label) + "</b> — " + ts.met + " of " + ts.total + " criteria met. The individual "
+          + "criteria do not reconcile with that published count here, because the transcription rate is "
+          + "published rounded and a borderline college can fall either side of it. Rather than show you a list "
+          + "that disagrees with the figure above it, we are holding the list back.</p>";
+      } else if (ts.tier === "inactive") {
+        h += "<p><b>Inactive</b> is assigned when a college has almost no CPL recorded in MAP at all — fewer than "
+          + "ten students and no eligible units — rather than by counting the five criteria. It reflects what has "
+          + "been <b>recorded</b>, so if CPL is happening here it is not reaching MAP, and that is the thing to "
+          + "fix first.</p>";
       } else {
-        h += '<ul class="cb-tlist">';
-        ts.criteria.forEach(function (c) {
-          h += '<li class="' + (c.met ? "met" : "not") + '"><span class="m">' + (c.met ? "✓" : "○")
-            + "</span><div><b>" + esc(c.label) + "</b><div class=\"cb-d\">You: " + esc(c.actual) + "</div></div></li>";
-        });
-        h += "</ul>";
+        var mets = ts.met_list, miss = ts.missing;
+        h += "<p><b>" + esc(ts.label) + "</b> — you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria";
+        if (mets.length) {
+          h += ": " + mets.map(function (c) {
+            return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
+        }
+        h += ".</p>";
+        if (miss.length) {
+          h += "<p>" + (miss.length === 1 ? "The one you have not reached" : "The " + miss.length
+              + " you have not reached, <b>closest first</b>") + ": "
+            + miss.map(function (c) {
+                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ")
+            + ".</p>";
+        } else {
+          h += "<p>There is nothing left to reach on this scale — you meet all five.</p>";
+        }
       }
       h += "</div>";
-      h += '<div class="cb-note" style="margin-top:10px">Three of the five are <b>size</b> measures, so a small '
-        + "college cannot reach them however well it runs CPL — that is a limit of the tier system, not a "
-        + "judgment on the college. The other two count units <b>marked transcribed in MAP</b>, which is your own "
-        + "step and entirely within your control. <b>Never read this as a ranking against other colleges</b>: "
-        + "colleges that batch-upload already-posted credit (AP, IB, CLEP) score on those two for reasons that "
-        + "have nothing to do with how much CPL they award.</div>";
+      h += '<div class="cb-note" style="margin-top:10px">Two things to hold alongside it. <b>Three of the five are '
+        + "size measures</b>, so a small college cannot reach them however well it runs CPL — that is a limit of "
+        + "the scheme, not a judgment on you. And the other two count units <b>marked transcribed in MAP</b>, "
+        + "which is your own step and entirely within your control — but it also means colleges that batch-upload "
+        + "already-posted credit (AP, IB, CLEP) score on them for reasons unrelated to how much CPL they award. "
+        + "<b>So this is a checklist for you, never a ranking against anyone else.</b></div>";
     }
 
     if (st && st.eligible != null) {
@@ -1542,8 +1578,18 @@
     if (!C || !host) return false;
     try { C.mountInto(host); return true; } catch (e) { return false; }
   }
+  /* One click, not two. The suggested questions sit above an assistant that is
+   * already mounted on this tab, so clicking one fills the box AND sends —
+   * matching the assistant's own starter chips. Sam, 2026-08-11: "so they
+   * don't have to take 2 steps and get lost."
+   *
+   * ask() is preferred; prefill() is the fallback for an older chat module and
+   * deliberately does NOT send (the Sierra Training tab replays a logged
+   * question through it and the reviewer edits first). If neither is
+   * available the question is stashed and we navigate to the full tab. */
   function askSierra(question) {
     var C = chatModule();
+    if (C && typeof C.ask === "function" && C.ask(question)) return;          // fills + sends
     if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
     try { sessionStorage.setItem(SIERRA_Q_KEY, String(question || "").slice(0, 1000)); }
     catch (e) { /* storage unavailable — the chat still opens, just unprefilled */ }
