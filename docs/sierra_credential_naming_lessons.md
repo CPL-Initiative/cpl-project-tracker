@@ -161,3 +161,127 @@ especially when the reconstruction assigns fault.
   Industry Certification 671 · Portfolio Review 238 · Standardized Assessment 125
   · Military 43 · Other 22). Any apprenticeship filter returns 0, which reads as
   "we do none" when the truth is "MAP doesn't classify it separately."
+
+---
+
+## 2026-08-10/11 — SkyRoute (Session 138): the answer that looked like a search failure
+
+### ⭐ The premise was wrong a third time
+
+Sam pasted a live transcript: *"How many students statewide are eligible for
+credit for a CompTIA cert? And for which certs?"* Sierra replied that no
+statewide CCC recommendation *"has been adopted yet"* for CompTIA, that the query
+*"didn't surface specific CompTIA exhibit records,"* and then listed A+,
+Network+, Security+, Cloud+ and CySA+ as certs *"commonly articulated at
+community colleges nationally."*
+
+MAP holds **14 CompTIA credentials, 10 of them with statewide ASCCC
+recommendations**, 114 adopter-college lines.
+
+Every signal pointed at retrieval. **Retrieval was fine.** One query settled it:
+`search_statewide_recommendations('comptia')` returns A+, Tech+, CySA+, Cloud+ at
+tier 3, and every other probe that question generates (`students`, `statewide`,
+`eligible`, `students statewide`, `eligible comptia`) correctly returns nothing.
+Had the fix followed the accusation it would have been a rewrite of a working
+function — the `aed` shape again.
+
+The real gap was the half Sierra stated **honestly** and that is easy to skim
+past: *"I don't have a CompTIA-specific student count."*
+
+Distilled: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`.
+
+### The invented list was correct, which is worse
+
+"A+, Network+, Security+, Cloud+, CySA+" is right. A reviewer sees a plausible,
+accurate answer and files no bug — so the behaviour survives to a question where
+the guess is wrong. **Accidental correctness is not evidence of grounding.** The
+prohibition is now explicit in `VOLUME_RULE`, because a fluent invented list is
+indistinguishable from a retrieved one at read time.
+
+### The bridge was already in the curation
+
+`map_student_credit` carries per-college exhibit ids and no credential name
+(`MAPICI-CAC1-1-001` is Long Beach's A+, `MAPICI-CA-1-001` is West LA's).
+Folding those is exactly what curated `raw_variants` does:
+
+`exhibit_id` → `chatbox_exhibits.exhibit_title` → `raw_variants` → `unified_title`
+
+**1,886 of 2,050 ids fold (92%)**, 13 ambiguous (benign near-duplicates like "AP
+Physics 1" vs "AP Physics 1: Algebra-Based") and flagged rather than silently
+resolved. Fourth run in a row where the catch came from an existing artefact.
+
+Answers now: CompTIA A+ **115 students / 7 of 21 colleges**, Security+ 57 / 6 of
+17, Network+ 20 / 5 of 21, POST Basic Academy 27 / 10 of 32.
+
+### The floor is a column, not a caveat
+
+Only **22,606 of 537,908 rows (4.2%)** can be named — 436 credentials, 36
+colleges — because the corpus covers 59 of 123 colleges. So `colleges_adopted`
+sits in the same row as `students`; a caveat in prose survives exactly as long as
+the paragraph around it, and dies the moment a figure moves to a slide.
+
+Two states must never render alike: `students_suppressed = true` (real students,
+under k) versus `colleges_with_student_data = 0` (nothing there). Bakersfield
+makes it vivid — 57 nameable students of 582, so a bare "2" for Credit by Exam is
+a visibility artefact, not a finding.
+
+Distilled: `methodology-publish-the-denominator-with-the-number`.
+
+### ⚠️ I shipped a disclosure leak, and the checkpoint caught it
+
+Two privacy defects, one caught during the build and one only at checkpoint:
+
+1. **Masking the count while publishing the units.** At one student, "3.0
+   potential units" *is* that student's record. Caught before shipping; under k
+   every measure now nulls together.
+2. **No complementary suppression** — shipped, live, and only found because the
+   checkpoint re-read ADR decision 5 and tested it. Units sum, so
+   `statewide − Σ(published siblings)` recovered a lone hidden cell exactly:
+   **AP Chemistry 755.00 − 695.00 = 60.00**, twelve-plus credentials in that
+   shape.
+
+The row-level assertion returned **0 leaks the whole time**. **A suppression test
+must model the attack, not the field.** Fixed by suppressing the smallest
+published sibling when a cell would otherwise stand alone (16 complement cells);
+both assertions now live in the committed SQL.
+
+### Sam's decisions this run
+
+1. **Floor + coverage, always** — never a bare per-credential count.
+2. **Map the CPL-type boxes to MAP's real six**, and source Apprenticeship from
+   `apprenticeship_credits` instead (no such type exists; a filter returns 0 and
+   reads as "we do none").
+3. **"Fewer than 10", not silence** — a bounded range confirms activity exists,
+   stays FERPA-safe, and Sierra explains the protection when asked.
+4. **Revisit the k=10 floor later.** Measured for him: it hides **320 of 436
+   credentials but only 5.1% of students and 5.4% of units** — the price is
+   breadth, not volume.
+5. **The 100% on the Course Credit tab is unhelpful** — *"makes me think I can
+   check the box and be done."* Confirmed: the 14 colleges at 100% carry
+   **155,153 dormant units**, averaging 11,082 each.
+6. **Show the design before publishing.** Mock-up built on real Bakersfield data,
+   then extended on his direction: expandable boxes with per-population funding,
+   Eligible + Transcribed boxes, averages in the header, a funding box, per-type
+   student counts.
+
+### Also worth keeping
+
+- **Two "average applied" figures differ 2.2×** — 4.78 across all 582 CPL
+  students, **10.62 among the 262 who actually received credit.** Show both.
+- **Two CI assertions were already red on `main`** before this branch, broken by
+  CRED·STD and unnoticed because `test` is non-required. They pinned argument
+  order and template adjacency, not the contract.
+  `methodology-assert-the-contract-not-the-argument-order`.
+- **The smoke test validates the version it replaces** — it auto-triggers on
+  push, the deploy is a manual dispatch, so the green run at 23:35 tested v37
+  while v38 landed at 23:47.
+  `methodology-order-the-post-deploy-check-after-the-deploy`.
+
+### Next
+
+1. **EACR prescriptive layer → Supabase.** `statewide_prescriptive.js` knows *the
+   likely local course each college already teaches*, which turns "adopt CompTIA
+   A+" into "adopt it against CIS-25, which you already run." Sam spotted this.
+2. **Build the College tab** once he has reacted to the mock-up.
+3. **COLLEGE·CRED**, carrying his Mt. SAC Request-Review language.
+4. Re-point the Course Credit tab's headline off the saturating course share.

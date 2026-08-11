@@ -9,6 +9,8 @@ related:
   - "[[docs/kb-notes/methodology-a-grain-invariant-measure-can-still-be-the-wrong-one]]"
   - "[[docs/kb-notes/reference-batch-uploaded-transcribed-credit]]"
   - "[[docs/session_137_handoff]]"
+superseded: true
+superseded_by: session_139_handoff.md
 ---
 
 # You are Session 138

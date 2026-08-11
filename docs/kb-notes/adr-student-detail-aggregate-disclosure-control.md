@@ -1,7 +1,7 @@
 ---
 title: ADR — Student-detail aggregates: k=10, published grain, and the reviewer/published split
 created: 2026-08-08
-updated: 2026-08-08
+updated: 2026-08-11
 tags: [adr, privacy, ferpa, disclosure-control, student-data, sierra, supabase]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -139,6 +139,84 @@ tractable at all — the alternative is proving that no sequence of arbitrary
 - Whether the published aggregate should also carry a `_suppressed_siblings`
   count so a reader can tell a complement from a genuinely thin cell. Leaning
   no — it re-narrows the unknown.
+
+## Amendment 2026-08-11 — suppress the WHOLE ROW, not just the count
+
+Building the per-credential rollups (`map_credential_volume`,
+`map_credential_student_rollup`) surfaced a hole in how this ADR had been
+applied. The first cut masked `students` when the cell was under k=10 but still
+published the measures beside it:
+
+```
+students: null   potential_units: 3.0   rows_needs_action: 1
+```
+
+**That defeats the floor entirely.** At one student, "3.0 potential units" *is*
+that student's credit record; hiding the count while publishing the amount
+discloses more than the count would have. Caught before shipping, not after.
+
+The rule is now explicit: **under k, every measure in the row goes null**, and
+the row survives only to assert that the cell exists (`students_suppressed =
+true`). Verified with a standing assertion — *no published measure may be
+non-null on a suppressed row* — which returns 0 on both rollups.
+
+### And decision 5 was violated in the same build — caught at checkpoint
+
+Row-level suppression was necessary and **not sufficient**. These rollups publish
+a statewide unit total *and* its per-college components, and **units sum**. Where
+exactly one college cell was hidden, the residual
+
+```
+statewide_units − Σ(published sibling units)  =  the hidden cell, exactly
+```
+
+Measured before the fix: **AP Chemistry 755.00 − 695.00 = 60.00**, AP Calculus BC
+48.00, AP 2-D Art and Design 24.00 — twelve-plus credentials in that shape.
+
+That is precisely what decision 5 above already required, written down two days
+earlier, and the first implementation did not do it. **Writing the control down
+is not implementing it, and neither is passing the row-level test** — the
+row-level assertion returned 0 leaks while every one of those cells was
+arithmetically recoverable.
+
+Fix: within a credential, if only one cell would be suppressed, suppress the
+**smallest published cell** alongside it, so two unknowns share the residual.
+Smallest = cheapest real information lost. Cost: **16 complement cells** (123 of
+543 rows published, down from 139).
+
+**Both assertions now stand in the committed SQL** and must return 0:
+no published measure on a suppressed row, *and* no credential with exactly one
+suppressed cell.
+
+The generalisable lesson: **a suppression test must model the attack, not the
+field.** `assert cell is None` and "does any measure survive on a hidden row"
+both pass on a schema that leaks by subtraction. Ask instead: *what can be
+derived from everything published, taken together?*
+
+Two consequences worth carrying:
+
+- **Suppression is a property of the ROW, not of the identifying field.** Any
+  measure derived from the same small population leaks at the same rate. Ask of
+  every column: *at n=1, what does this reveal?*
+- **"Suppressed" and "no data" must remain distinguishable.**
+  `students_suppressed = true` (real students, below k) and
+  `colleges_with_student_data = 0` (nothing recorded) are different facts, and
+  collapsing them turns a blind spot into a reported zero. See
+  [[docs/kb-notes/methodology-publish-the-denominator-with-the-number]].
+
+Sam's refinement on the reporting side (2026-08-10): Sierra states **"fewer than
+10"** rather than declining. A bounded range confirms activity exists, stays
+FERPA-safe, and is strictly more useful than silence — and it explains the
+privacy protection when asked. Still never an exact number, never estimated,
+never derived by subtraction.
+
+**Measured cost of k=10**, for the open question of whether the floor is too
+blunt (Sam flagged wanting to revisit): suppression hides **320 of 436
+credentials — but only 5.1% of students and 5.4% of units.** It is a long tail.
+The price is *breadth* (three-quarters of credentials cannot be named
+individually), not *volume*. That reframes the revisit: the question is whether
+per-credential naming is worth a different technique (e.g. banding), not whether
+the totals are being distorted.
 
 ---
 
