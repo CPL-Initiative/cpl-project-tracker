@@ -729,7 +729,7 @@
     // Sam, 2026-08-11: the assistant leads, the pickers live inside it, and
     // it is named "Sierra AI" — "Sierra" alone reads as Sierra College.
     h += '<section class="cb-assist"><header><h3>Sierra AI</h3>'
-      + '<span class="cb-tag">answers from MAP\'s own records</span></header>'
+      + '<span class="cb-tag">Answers come from the CPL Initiative records and knowledge base.</span></header>'
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
       + (state.college ? '<div class="cb-asks" id="cb-asks"></div>' : "")
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
