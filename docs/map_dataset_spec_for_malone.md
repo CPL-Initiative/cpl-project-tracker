@@ -60,9 +60,30 @@ aggregate — tell us, it changes R1.
 
 ### Q2 · Measure the exclusion gap ⚠️ highest priority
 
-The dashboard already excludes `Potential Student = Yes` and `Test Student = Yes`
-from student counts. The student-detail load does **not** — neither flag is in
-today's export. So two live surfaces may be counting different people.
+**`Potential Student` is the record-source field.** Sam, 2026-08-11: *a `Yes`
+indicates the record was sourced from a College Landing Page or the Student
+Portal.* (There is no field called "Public Upload" — that name was a slip.) This
+is the field that later splits into CLP / SP / BU / ME / QA. **Leave it exactly
+as it is for now.**
+
+Two places in our daily pipeline currently **drop every `Potential Student = Yes`
+row**:
+
+| Function | What it feeds |
+|---|---|
+| `_compute_college_last_activity` | each college's last-activity date |
+| `_compute_college_military_students` | **per-college military / JST student counts** |
+
+The second is the one to look at. Under Sam's definition it means the JST student
+count **excludes every veteran who came in through a college landing page or the
+Student Portal** — the public front doors. And the exclusion grows with the
+portal: the better Credit for Being You performs, the more real activity drops
+out of that count, silently.
+
+That may have been right when the flag was read as "prospective, not yet
+enrolled." It is worth a deliberate decision now rather than an inherited one.
+
+So measure it:
 
 ```sql
 SELECT [Potential Student] AS potential_student, [Test Student] AS test_student, Count(*) AS rows_n, Sum(EligibleCredits) AS eligible_units, Sum(AppliedCredits) AS applied_units
@@ -70,8 +91,9 @@ FROM TblCOLL_STU_EXH_CR_UNIT
 GROUP BY [Potential Student], [Test Student];
 ```
 
-**Check:** send us the four-row result. If the `Yes` rows are negligible we say
-so; if they are material, several published figures need restating.
+**Check:** send us the four-row result. It tells us how much CPL activity is
+reaching MAP through the landing pages and the Student Portal — which is worth
+knowing on its own, and decides whether the two filters above should stay.
 
 ⛔ **Do not filter these rows out of any export.** Send the flags; we apply the
 rule, so both surfaces can be reconciled instead of diverging again.
@@ -120,16 +142,18 @@ FROM TblSOURCE AS s INNER JOIN tblStudentKey AS k ON s.StudentMAPID = k.StudentM
 
 ---
 
-### Q5 · Build R1 again when Public Upload lands (later)
+### Q5 · Rebuild R1 when the source values are configured (later)
 
-Same as Q4 with two more columns, once the field is added to `TblSOURCE`:
+`Potential Student` is already in Q4, so **nothing to do now**. When MAP is
+configured to record CLP / SP / BU / ME / QA, add the new column *alongside* it —
+do not convert the existing one:
 
 ```sql
-       s.[Public Upload] AS public_upload, s.[Public Upload Timestamp] AS public_upload_at
+       s.[Record Source] AS record_source, s.[Source Timestamp] AS record_source_at
 ```
 
-Keep `public_upload` as its **Yes/No** value even after the five codes exist —
-see the appendix for why.
+Sam's own note: settling the values, configuring MAP, and exposing them on Custom
+Reports will take time. Q4 is not waiting on any of it.
 
 ---
 
@@ -161,7 +185,7 @@ Grain: student × exhibit × credit recommendation. ~537,908 rows.
 `applied_credits` · `transcribed_credits` · `articulated_credits` ·
 `military_credits` · `non_military_credits` · `apprenticeship_credits` ·
 `cpl_status_plan` · `source_code` · `college_course` · `potential_student` ·
-`test_student` · *(later)* `public_upload` · `public_upload_at` ·
+`test_student` · *(later)* `record_source` · `record_source_at` ·
 `sending_entity_id`
 
 ⛔ **No `StudentMAPID`.** ⛔ **No pre-filtering.** ⛔ **No pre-suppression** —
@@ -183,16 +207,19 @@ credit data but missing from our current lookup — resolve from MAP's own list.
 
 ## Appendix — the three things worth knowing why
 
-**1. Keep Yes/No *and* add the code.** Today's Public Upload Yes/No is a lawful
-roll-up of the five future values (CLP + SP = Yes; BU + ME + QA = No). Keeping
-both lets the codes be *validated* on arrival — a row that was `Yes` must resolve
-to `CLP` or `SP`. Overwrite it and that check is gone permanently. Store the
-short codes; keep long labels in a lookup.
+**1. Keep Yes/No *and* add the code — never convert.** `Potential Student = Yes`
+is a lawful roll-up of the five future values (CLP + SP = Yes; BU + ME + QA =
+No). Keeping the Yes/No lets the codes be *validated* on arrival — a row that was
+`Yes` must resolve to `CLP` or `SP`, and any row that doesn't is a migration
+defect caught immediately rather than silently. Convert the column in place and
+that check is gone permanently. Store short codes; keep long labels in a lookup.
 
-**2. `Potential Student` is not Public Upload.** It sits beside `Test Student`
-and we already exclude both from dashboard counts, so it describes *who the
-record is about* (a prospective, not-yet-enrolled person), not *how it arrived*.
-Three separate columns: `potential_student`, `test_student`, `public_upload`.
+**2. `Potential Student` and `Test Student` are different things.**
+`Potential Student` is **record source** (Yes = College Landing Page or Student
+Portal). `Test Student` is a **QA record** and should always be excluded. They
+sit next to each other and are filtered together in two of our functions today,
+which is what made them easy to conflate — including by me, until Sam corrected
+it. Two columns, two meanings, two different rules.
 
 **3. Why `source_code` matters more than it looks.** Applied rates by source:
 **MAP 69.5 %, ACE 1.9 %, blank 0 %.** A 36× difference — so the ~1 M-unit Needs
