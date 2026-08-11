@@ -1169,7 +1169,7 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════════════
-  // "Review my catalog" — the whole-catalog triage sheet (Phase 2)
+  // "Review my courses" — the whole-catalog triage sheet (Phase 2)
   //
   // A faculty member has 800–1,500 courses. Doing them one at a time is a slog, so
   // this shows a whole DEPARTMENT at once: each course → its suggested CIP (the
@@ -2390,7 +2390,7 @@
   }
   // Recommend-view consensus block: the shared summary + (when the consensus is CONFIDENT)
   // the peer field's CIP as a flat, expandable card. Advisory — recommend mode doesn't
-  // persist a choice, so no selectable affordance (that lives in Review my catalog).
+  // persist a choice, so no selectable affordance (that lives in Review my courses).
   function recommendConsensusBlock(m, label, ownTop, topTitle) {
     var subj = parseSubject(label);
     var sum = consensusSummaryEls(m, label, ownTop, topTitle, subj); if (!sum) return null;
@@ -2542,38 +2542,44 @@
   // magnifier (find one course), a clipboard-with-check (review + confirm a catalog).
   // Top-level scope toggle (Sam, 2026-07-28): Courses vs Programs is the FIRST decision — a curator is
   // coding one or the other. It sits ABOVE the mode tabs; everything below adapts to the pick.
-  function scopeBar() {
-    var bar = el("div", { class: "cipx-scopebar", role: "tablist", "aria-label": "Code your courses or your programs" }, []);
-    bar.appendChild(el("span", { class: "cipx-scopebar-l", "aria-hidden": "true" }, ["Code my:"]));
-    // Programs sits leftmost, before Courses (Sam, 2026-07-28).
-    [["programs", "Programs"], ["courses", "Courses"]].forEach(function (s) {
-      var on = st.scope === s[0];
-      var b = el("button", { class: "cipx-scopetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [s[1]]);
-      b.onclick = function () {
-        if (st.scope === s[0]) return;
-        st.scope = s[0];
-        try { localStorage.setItem(SCOPE_KEY, s[0]); } catch (e) {}
-        if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";   // no course-first easy button for programs
-        rebuildShell();
-      };
-      bar.appendChild(b);
-    });
-    return bar;
+  // ── One flat nav of four destinations (Sam, 2026-08-11) ────────────────────────────────────────
+  // This replaced a two-level `Code my: [Programs][Courses]` scope bar sitting above a mode bar.
+  // Sam's read: the labels were confusing — "Courses" sat directly above "Review my catalog", and in
+  // Programs scope the word "Programs" appeared twice in a row.
+  //
+  // The structural reason the nesting never earned its keep: THE SCOPE ONLY EVER SPLIT *REVIEW*.
+  // Browse is scope-free (the whole 2,325-code CIP taxonomy — nothing to do with programs vs courses)
+  // and the course-first easy button is courses-only by definition, so the nav made every visitor
+  // pick a scope that two of its three destinations ignored. Worse, the scope tab went on asserting
+  // "Courses" while you were browsing — a label claiming an action you are not taking. Flattening
+  // removes the redundancy AND the false assertion, and puts every destination one click away.
+  //
+  // st.scope / st.mode are UNCHANGED internally — every downstream reader (programsView, the
+  // consensus/college loaders, the seams) keeps working. Only this bar collapses them into a single
+  // choice, so `scope` is now set as a CONSEQUENCE of the destination rather than picked separately.
+  var NAV = [
+    { scope: "programs", mode: "review", label: "Review my programs" },
+    { scope: "courses", mode: "review", label: "Review my courses" },
+    { scope: null, mode: "browse", label: "Browse CIP codes" },            // scope-free — keeps whatever it was
+    { scope: "courses", mode: "recommend", label: "Find a course’s code" },
+  ];
+  function navSelected(n) {
+    if (n.mode !== st.mode) return false;
+    return n.scope === null || n.scope === st.scope;   // Browse matches on mode alone
   }
-  function modeBar() {
-    var bar = el("div", { class: "cipx-modebar", role: "tablist", "aria-label": "What do you want to do" }, []);
-    // Review leads — it's the primary workflow now (Sam, 2026-07-18: "make Review the first tab + default").
-    // Programs scope drops the course-first "Find my course's code" and relabels Review.
-    var tabs = (st.scope === "programs")
-      ? [["review", "Review my programs"], ["browse", "Browse codes"]]
-      : [["review", "Review my catalog"], ["browse", "Browse codes"], ["recommend", "Find my course’s code"]];
-    tabs.forEach(function (m) {
-      var on = st.mode === m[0];
-      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [m[1]])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
+  function navBar() {
+    var bar = el("div", { class: "cipx-modebar cipx-navbar", role: "tablist", "aria-label": "What do you want to do" }, []);
+    NAV.forEach(function (n) {
+      var on = navSelected(n);
+      var b = el("button", { class: "cipx-modetab" + (on ? " on" : ""), type: "button", role: "tab", "aria-selected": on ? "true" : "false" }, [el("span", {}, [n.label])]);   // tab glyphs dropped (Sam, 2026-07-20) — labels only
       b.onclick = function () {
-        if (st.mode === m[0]) return;
-        st.mode = m[0];
-        try { localStorage.setItem(MODE_KEY, m[0]); } catch (e) {}
+        if (on) return;
+        st.mode = n.mode;
+        if (n.scope) st.scope = n.scope;
+        // A stale stored pair can still read programs+recommend; there is no course-first easy button
+        // for programs, so normalise here as well as at ingest.
+        if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";
+        try { localStorage.setItem(MODE_KEY, st.mode); localStorage.setItem(SCOPE_KEY, st.scope); } catch (e) {}
         rebuildShell();
       };
       bar.appendChild(b);
@@ -2687,8 +2693,7 @@
     wrapEl = el("div", { class: "cipx" }, []);
     applyTheme(savedTheme() === "dark" ? "dark" : "light");
     wrapEl.appendChild(header());
-    wrapEl.appendChild(scopeBar());
-    wrapEl.appendChild(modeBar());
+    wrapEl.appendChild(navBar());
     var programsReview = (st.scope === "programs" && st.mode === "review");
     // Programs review has its OWN college selector (program-export names differ); don't render the course
     // college bar there too — it was showing twice (Sam, 2026-07-28).
@@ -2861,12 +2866,8 @@
       ".cipx-cand-card .cipx-detail{padding:0 14px 16px 122px;}",
       ".cipx-fitfoot{font-size:.76rem;color:var(--cipx-muted);margin:12px 2px 2px;font-style:italic;line-height:1.55;max-width:80ch;}",
       // recommend mode — mode toggle + course-first result
-      ".cipx-scopebar{display:inline-flex;gap:8px;align-items:center;margin:14px 0 2px;}",
-      ".cipx-scopebar-l{font-size:.74rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-accent);}",
-      ".cipx-scopetab{font-family:inherit;font-size:.92rem;font-weight:700;color:var(--cipx-text-soft);background:var(--cipx-surface);border:1.5px solid var(--cipx-border-strong);border-radius:9px;padding:7px 18px;cursor:pointer;}",
-      ".cipx-scopetab:hover{border-color:var(--cipx-accent);color:var(--cipx-accent);}",
-      ".cipx-scopetab.on{color:#fff;background:var(--cipx-accent);border-color:var(--cipx-accent);}",
-      ".cipx-scopetab:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      // .cipx-scopebar / .cipx-scopetab retired 2026-08-11 with the two-level nav — the four
+      // destinations now ride the single .cipx-modebar (see NAV / navBar).
       // Programs review
       ".cipx-prog{margin-top:6px;}",
       ".cipx-prog-intro{color:var(--cipx-text-soft);font-size:.95rem;line-height:1.5;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:4px 0 12px;}",
@@ -3188,8 +3189,10 @@
         ".cipx-cbwrap,.cipx-fitta{max-width:100%;}" +
         ".cipx-cand-row{grid-template-columns:13px 56px 1fr;gap:9px;}.cipx-cand-rel{grid-column:2/-1;margin-top:2px;}.cipx-meterwrap{max-width:none;min-width:0;}" +
         ".cipx-vbody{padding:12px 13px;}.cipx-vpill{font-size:.68rem;padding:3px 8px;}.cipx-vtext{font-size:.92rem;}.cipx-vmeterrow{flex-wrap:wrap;gap:6px;}.cipx-vmeterlbl{white-space:normal;}" +
-        ".cipx-modebar{width:100%;}.cipx-modetab{flex:1;padding:8px 6px;font-size:.8rem;text-align:center;}" +
-        ".cipx-scopebar{flex-wrap:wrap;}.cipx-scopetab{flex:1 1 40%;text-align:center;}.cipx-prog-search{flex:1 1 100%;max-width:100%;}.cipx-prog-revsel{flex:1 1 100%;max-width:100%;width:100%;min-width:0;}.cipx-prog-cip{min-width:0;}.cipx-prog-cipt{overflow:hidden;text-overflow:ellipsis;}" +
+        // Four destinations in one bar: at phone width `flex:1` would squeeze them to ~85px each and
+        // wrap the labels mid-word, so they lay out two-per-row instead (2026-08-11).
+        ".cipx-modebar{width:100%;flex-wrap:wrap;}.cipx-modetab{flex:1 1 44%;padding:8px 6px;font-size:.8rem;text-align:center;justify-content:center;}" +
+        ".cipx-prog-search{flex:1 1 100%;max-width:100%;}.cipx-prog-revsel{flex:1 1 100%;max-width:100%;width:100%;min-width:0;}.cipx-prog-cip{min-width:0;}.cipx-prog-cipt{overflow:hidden;text-overflow:ellipsis;}" +
         ".cipx-rec-row{grid-template-columns:13px 58px 1fr;gap:8px;}.cipx-rec-meta{grid-column:2/-1;flex-direction:row;align-items:center;min-width:0;margin-top:4px;}.cipx-rec-row-flat{grid-template-columns:13px 58px 1fr;}" +
         ".cipx-rec-card .cipx-detail{padding-left:14px;}" +
         ".cipx-rev-deptinline{flex:1 1 100%;}.cipx-rev-deptsel{max-width:100%;flex:1 1 auto;}" +

@@ -329,7 +329,7 @@ function fresh(withCollege) {
 
   // ── Part B2 — "Find my course's code" (TOP→CIP easy button) ──
   check("cip_crosswalk_data.js carries topcip{} + boiler[]", /"topcip":/.test(dataSrc) && /"boiler":/.test(dataSrc));
-  check("cip_crosswalk.js has the two-mode toggle", /cipx-modebar/.test(src) && /Find my course/.test(src));
+  check("cip_crosswalk.js has the flat four-destination nav", /cipx-modebar/.test(src) && /Find a course/.test(src) && /Review my programs/.test(src) && /Review my courses/.test(src));
   check("cip_crosswalk.js exposes the recommend seam", /_recommend:/.test(src));
 
   // logic (via the _recommend seam — no DOM)
@@ -484,8 +484,8 @@ function fresh(withCollege) {
   // DOM: recommend mode renders + picking a course produces a recommendation card
   const domR = freshR("recommend");
   const rdoc = domR.window.document;
-  check("recommend mode: the toggle shows all three modes", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3);
-  check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find my course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
+  check("recommend mode: the nav shows all four destinations", rdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 4);
+  check("recommend mode: the recommend tab is selected", rdoc.querySelector(".cipx-modetab.on") && /Find a course/.test(rdoc.querySelector(".cipx-modetab.on").textContent));
   check("recommend mode: shows the course-first panel, not the browse list", rdoc.querySelector(".cipx-rec .cipx-panel") && !rdoc.querySelector(".cipx-list"));
   await tick(); await tick();  // let loadCollege() resolve
   const rInput = rdoc.querySelector(".cipx-rec-combohost .cipx-cbwrap .cipx-fit-cb");
@@ -532,7 +532,7 @@ function fresh(withCollege) {
   check("recommend mode: the consensus block names the peer field's CIP", rcHost && /51\.3801/.test(rcHost.querySelector(".cipx-rev-peer").textContent));
 
   // ── Part B3 — "Review my catalog" (Phase 2 whole-catalog triage) ──
-  check("cip_crosswalk.js has the review-catalog mode", /Review my catalog/.test(src) && /cipx-rev-list/.test(src));
+  check("cip_crosswalk.js has the review-catalog mode", /Review my courses/.test(src) && /cipx-rev-list/.test(src));
   check("exposes the review seams", typeof rApi._reviewRows === "function" && typeof rApi._parseSubject === "function");
   check("parseSubject strips the course number to the department", rApi._parseSubject("BUS 101 — Business Basics") === "BUS" && rApi._parseSubject("NC ES140 — Esthetician I") === "NC");
   const revRows = rApi._reviewRows(RCOURSES);
@@ -657,10 +657,10 @@ function fresh(withCollege) {
   const domRev = freshR("review");
   domRev.window.CPL_CIP_CROSSWALK._setConsensus(RCONSENSUS);   // peer-consensus fixture (fetch is a no-op in jsdom)
   const revdoc = domRev.window.document;
-  check("review mode: three tabs, review selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Review my catalog/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
+  check("review mode: four destinations, Review-my-courses selected", revdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 4 && /Review my courses/.test(revdoc.querySelector(".cipx-modetab.on").textContent));
   // Sam's point 3 (2026-07-18): Review is the FIRST tab and the default mode.
-  check("Review is the FIRST mode tab (Sam's point 3)", /Review my catalog/.test(revdoc.querySelectorAll(".cipx-modebar .cipx-modetab")[0].textContent));
-  check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my catalog/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
+  check("the two Review destinations lead the nav — programs, then courses (Sam, 2026-08-11)", (function () { var t = revdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return /Review my programs/.test(t[0].textContent) && /Review my courses/.test(t[1].textContent); })());
+  check("Review is the DEFAULT mode when nothing is stored (point 3)", (function () { var d = freshR(); var doc = d.window.document; return !!doc.querySelector(".cipx-rev") && /Review my courses/.test(doc.querySelector(".cipx-modetab.on").textContent); })());
   check("source: review status glyph is a visible '?', suggested is a distinct '⇄'", /review:\s*\{\s*g:\s*"\?"/.test(src) && /suggest:\s*\{\s*g:\s*"⇄"/.test(src));
   check("mode tabs are label-only — no glyphs (Sam, 2026-07-20)", revdoc.querySelectorAll(".cipx-modetab .cipx-tabico").length === 0 && !/📖|🎯|📋/.test(revdoc.querySelector(".cipx-modebar").textContent));
   check("review mode: shows the trust banner", revdoc.querySelector(".cipx-rev-banner") && /starting point you confirm/.test(revdoc.querySelector(".cipx-rev-banner").textContent));
@@ -993,9 +993,15 @@ function fresh(withCollege) {
   pApi.activate();
   const pdoc = domP.window.document;
   check("programs: exposes the programs seams", typeof pApi._setPrograms === "function" && typeof pApi._progNeedsRevision === "function");
-  check("programs: the scope toggle renders Programs leftmost, then Courses (Sam, 2026-07-28)", (function () { var t = pdoc.querySelectorAll(".cipx-scopebar .cipx-scopetab"); return t.length === 2 && /Programs/.test(t[0].textContent) && /Courses/.test(t[1].textContent); })());
-  check("programs: the Programs scope tab is selected", (function () { var t = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Programs/.test(x.textContent))[0]; return t && t.classList.contains("on"); })());
-  check("programs: the mode bar drops 'Find my course's code' and relabels Review", (function () { var tabs = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return tabs.length === 2 && /Review my programs/.test(tabs[0].textContent) && !/Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent); })());
+  // ── One flat nav (Sam, 2026-08-11) ────────────────────────────────────────────────────────────
+  // The two-level `Code my: [Programs][Courses]` + mode bar is gone. It made every visitor pick a
+  // scope that two of the three destinations ignored, and the scope tab kept reading "Courses"
+  // while you were browsing — a label asserting an action you are not taking.
+  check("nav: one flat bar of four destinations, no separate scope bar", (function () { var t = pdoc.querySelectorAll(".cipx-modebar .cipx-modetab"); return t.length === 4 && pdoc.querySelectorAll(".cipx-scopebar, .cipx-scopetab").length === 0; })());
+  check("nav: the four destinations read Review my programs · Review my courses · Browse CIP codes · Find a course's code", (function () { var t = Array.prototype.map.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => x.textContent.trim()); return t[0] === "Review my programs" && t[1] === "Review my courses" && t[2] === "Browse CIP codes" && /^Find a course.s code$/.test(t[3]); })());
+  check("nav: only ONE destination is selected at a time", pdoc.querySelectorAll(".cipx-modetab.on").length === 1);
+  check("nav: scope=programs + mode=review selects 'Review my programs', not 'Review my courses'", /Review my programs/.test(pdoc.querySelector(".cipx-modetab.on").textContent));
+  check("nav: the old 'Code my:' label and 'Review my catalog' tab no longer render", !/Code my:/.test(pdoc.querySelector(".cipx").textContent) && !/Review my catalog/.test(pdoc.querySelector(".cipx").textContent));
   check("programs: needs-revision detector — a CIP outside the current crosswalk flags true", pApi._progNeedsRevision("0505.00", "52.9001") === true && pApi._progNeedsRevision("0505.00", "52.0201") === false);
   // pick the college
   const pcsel = pdoc.querySelector(".cipx-prog .cipx-college-sel");
@@ -1065,10 +1071,17 @@ function fresh(withCollege) {
   check("programs: the old 'This CIP is Both — use as' phrasing no longer renders", !!pcte && !/This CIP is Both/.test(pcte.textContent));
   if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
   check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
-  // switching scope back to Courses restores the course modes
-  const coursesTab = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-scopetab"), (x) => /Courses/.test(x.textContent))[0];
-  coursesTab.click(); await tick();
-  check("programs: toggling back to Courses restores 3 modes incl. 'Find my course's code'", pdoc.querySelectorAll(".cipx-modebar .cipx-modetab").length === 3 && /Find my course/.test(pdoc.querySelector(".cipx-modebar").textContent));
+  // Browse is scope-FREE — it is the whole CIP taxonomy, so reaching it from Programs must not
+  // silently flip the scope; coming back to a Review destination is what sets it.
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Browse CIP codes/.test(x.textContent))[0].click(); await tick();
+  check("nav: Browse selects on mode alone and leaves the scope alone", (function () { var on = pdoc.querySelector(".cipx-modetab.on"); return /Browse CIP codes/.test(on.textContent) && domP.window.localStorage.getItem("cipx_scope") === "programs"; })());
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my courses/.test(x.textContent))[0].click(); await tick();
+  check("nav: 'Review my courses' sets scope AND mode in one click", (function () { return domP.window.localStorage.getItem("cipx_scope") === "courses" && domP.window.localStorage.getItem("cipx_mode") === "review" && /Review my courses/.test(pdoc.querySelector(".cipx-modetab.on").textContent); })());
+  // The course-first easy button is courses-only by definition; picking it from Programs must carry
+  // the scope across rather than land on the impossible programs+recommend pair.
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Review my programs/.test(x.textContent))[0].click(); await tick();
+  Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-modetab"), (x) => /Find a course/.test(x.textContent))[0].click(); await tick();
+  check("nav: 'Find a course's code' from Programs switches scope to courses (never programs+recommend)", domP.window.localStorage.getItem("cipx_scope") === "courses" && domP.window.localStorage.getItem("cipx_mode") === "recommend");
 
   // ── Tweak 4 (Sam, 2026-07-28): authoritative 4-digit series titles in the Browse dropdown ──
   // The builder emits sub4 (NN.NN -> series title) ONLY from an authoritative NCES export; the tab
