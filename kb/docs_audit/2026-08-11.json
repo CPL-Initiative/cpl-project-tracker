@@ -9,55 +9,54 @@
     "other": 150000
   },
   "summary": {
-    "files": 463,
-    "bytes": 5415860,
+    "files": 467,
+    "bytes": 5464243,
     "over_budget": 6,
-    "handoff_max": 141,
+    "handoff_max": 142,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 87005,
+    "always_loaded_bytes": 88535,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 87005,
+        "bytes": 88535,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1400640,
+        "bytes": 1403106,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 183983,
+        "bytes": 190054,
         "over": 1
       },
       "lessons": {
         "files": 50,
-        "bytes": 1504289,
+        "bytes": 1516666,
         "over": 3
       },
       "kb_note": {
-        "files": 224,
-        "bytes": 1251308,
+        "files": 227,
+        "bytes": 1266653,
         "over": 0
       },
       "handoff": {
-        "files": 125,
-        "bytes": 988635,
+        "files": 126,
+        "bytes": 999229,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
-      "unindexed_kb_note": 11,
       "kb_note_dialect": 54,
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1820,
-      "bytes": 1087605534,
+      "files": 1824,
+      "bytes": 1087703432,
       "heavy_bytes": 581688985,
       "heavy_share": 0.535,
       "ignore_filters": [
@@ -112,26 +111,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 87005,
+        "bytes": 88535,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 27005,
-        "ratio": 1.45
+        "over_by": 28535,
+        "ratio": 1.48
       },
-      "message": "87,005 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "88,535 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 183983,
+        "bytes": 190054,
         "limit": 40000,
         "lane": "index",
-        "over_by": 143983,
-        "ratio": 4.6
+        "over_by": 150054,
+        "ratio": 4.75
       },
-      "message": "183,983 B is 4.6× the index budget (40,000 B) — candidate for compaction",
+      "message": "190,054 B is 4.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -172,15 +171,6 @@
       },
       "message": "150,825 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/exhibit_canonicalization_lessons.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "adr-unified-memory-table"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/adr-unified-memory-table.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -318,15 +308,6 @@
       "path": "docs/kb-notes/methodology-conflicting-source-tabs-use-certified-value.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-conflicting-source-tabs-use-certified-value"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-conflicting-source-tabs-use-certified-value.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -335,15 +316,6 @@
         ]
       },
       "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-crowd-consensus-beats-single-item-signal"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/methodology-crowd-consensus-beats-single-item-signal.md"
     },
     {
@@ -391,15 +363,6 @@
       "path": "docs/kb-notes/methodology-fix-the-root-not-a-counter-rule.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-fix-the-root-not-a-counter-rule"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-fix-the-root-not-a-counter-rule.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -422,15 +385,6 @@
       "path": "docs/kb-notes/methodology-grounded-lexical-cip-confidence.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-grounded-lexical-cip-confidence"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-grounded-lexical-cip-confidence.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -440,15 +394,6 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-lead-with-the-steps-not-the-rationale"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -483,15 +428,6 @@
         ]
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-map-api-value-signature-probe.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-map-api-value-signature-probe"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/methodology-map-api-value-signature-probe.md"
     },
     {
@@ -722,15 +658,6 @@
       "path": "docs/kb-notes/playbook-nc-integration-run.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "playbook-nc-integration-run"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/playbook-nc-integration-run.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -752,15 +679,6 @@
         ]
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "playbook-trail-crew-method-magic-audit"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
     },
     {
@@ -810,24 +728,6 @@
       },
       "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/reference-course-level-convention.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "reference-funding-metrics-measurability"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/reference-funding-metrics-measurability.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "reference-humans-principles"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/reference-humans-principles.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -892,13 +792,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 362073,
+        "bytes": 364132,
         "limit": 150000,
         "lane": "other",
-        "over_by": 212073,
-        "ratio": 2.41
+        "over_by": 214132,
+        "ratio": 2.43
       },
-      "message": "362,073 B is 2.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "364,132 B is 2.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

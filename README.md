@@ -121,8 +121,13 @@ The whole ecosystem, end-to-end:
    news feed — California-first, then national, plus adjacent systems
    (Career Passport, CA Master Plan, workforce/upskilling) and CA budget
    items; harvested daily from free sources + a suggest-a-story queue and
-   Claude-triaged, read live so it never goes stale), and a **Pipeline**
-   progress board.
+   Claude-triaged, read live so it never goes stale), a **My College** tab
+   (team-only: one page, not 123 — pick a college and get where it stands
+   against the goals, what its already-articulated-and-waiting credit actually
+   consists of, its share of both funding pools with each priority's target,
+   its tier with the missing criteria named, who MAP has on file for it, and a
+   Sierra AI box with questions computed from that college's own figures), and
+   a **Pipeline** progress board.
 2. **The data pipeline** — daily GitHub Actions cron pulls fresh statewide
    metrics from the CCCCO MAP CPL Dashboard via a Cloudflare Worker proxy,
    then `excel_to_dashboard.py` regenerates the dashboard HTML, exports the
