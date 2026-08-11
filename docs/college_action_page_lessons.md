@@ -611,3 +611,124 @@ Mock carries three more sections not yet ported.
 Port the funding-pool breakdown, the waiting-credit list and the resources
 section from the mock. Then the access shape: a per-college URL with **no
 picker**, `noindex`, team members keep the picker.
+
+---
+
+## 2026-08-11 — SkyLink (Session 141): the lead figure was one decision, not three hundred
+
+### What we learned
+
+**1. Nobody had asked what the headline number is made of.** `articulated_waiting`
+has been the page's lead figure for three sessions, described as *the cheapest
+credit you will ever give a student*. One `group by course_type` over
+`map_college_cr_unit` — filtered exactly as `kb/supabase_map_college_credit_summary.sql`
+filters — showed **98.8% of all 64,074 units is Credit for Basic Military
+Service**: 87.7% to a GE/graduation area, 10.5% to elective, 0.6% to a named
+course. **65 of the 73** colleges with any are at **100%**; the average is 96.2%.
+The whole backlog is **592 rows**.
+
+That is not a detail, it is the framing. "63,991 units already articulated,
+waiting" invites a coordinator to picture a varied pile of CTE certifications and
+several hundred judgment calls, so they defer it. It is close to **one decision
+applied repeatedly**, against an exhibit they already articulated, for students
+who already have a DD-214 or JST on file — which ties back to the incentive note:
+basic-training credit *auto-applies* once the JST lands, so the platform computed
+this credit itself and left it for a human. Full numbers:
+`docs/kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md`.
+
+**2. Thirty-three of 106 colleges have nothing waiting** — Moreno Valley (2,404
+CPL students), CCSF, De Anza, Coastline, Riverside City among them. A zero there
+is a *finished queue*. The section renders it as one, and distinguishes it from a
+failed read, which stays `null` and renders nothing at all.
+
+**3. `map_college_cr_unit` has no k-anonymity of its own.** Only
+`map_college_credit_summary` applies the k = 10 rule. So the breakdown had to
+carry its own suppression check: a college whose headline figures are withheld
+gets **no** per-recommendation list, because publishing the parts of a withheld
+whole hands back exactly what withholding removed.
+
+**4. The funding module's per-priority caps are keyed off the *other tab's*
+viewed year.** `collegeAlloc()` writes `out[p.key]` using `priorities(state.viewSlot)`,
+and under front-loaded disbursement every slot after Year 1 has a zero cap. A
+briefing that inherited a Year-2 view would have rendered **$0 against all three
+priorities** — plausible, unqueryable, and read as a finding about the college.
+The new `_prios(name, slot)` takes the year explicitly and defaults to Year 1,
+and the test asserts the *behaviour* (the function body never mentions
+`state.viewSlot`) rather than the comment that says so.
+
+**5. ⭐ A percentage must never round UP into a claim it cannot support.** With
+4,988 of 5,000 units military, the summary line printed *"100% of it is credit for
+basic military service"* while a row reading *"Elective credit · 12 units · 0.2%"*
+sat three lines above it. True share: 99.76%. **Every assertion passed.** It was
+caught by rendering the page and reading the output.
+
+The same PR already contained a guard against the *inbound* form of the identical
+bug — `live_metrics.json` publishes a transcription rate rounded to one decimal
+while the worker's tier criterion tests the unrounded ratio, so a true 24.96%
+publishes as `25.0`. Having written that guard, the session shipped the outbound
+form in the same file. One lesson, two ends:
+`docs/kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md`.
+
+**6. The access shape (carryover #4) is not a UI change.** The handoff described
+`?college=` + no picker + `noindex` as designed-and-ready. The design does not
+touch the half that actually blocks it: four of the tab's reads are gated at the
+**database** — `map_college_credit_summary`, `map_college_cr_unit`,
+`map_college_goal2`, `map_college_contacts` all require
+`is_allowed_reviewer() OR team_pass_ok()`. An unauthenticated college hitting the
+URL would not get a picker-free page; it would get nothing, because the reads
+fail. Serving colleges their own view is an **RLS policy decision** about
+publishing student-derived aggregates and staff contact details — outward-facing,
+hard to reverse once URLs are out, and not a session's call.
+
+**7. One read has no policy beneath it at all.** Auditing that gate found
+`map_credential_student_rollup` is a **materialized view** — `relkind = 'm'`, RLS
+disabled, zero policies — and `anon` holds the SELECT grant. Postgres does not
+implement RLS for matviews; `security_invoker` does not apply. Nothing is
+currently exposed: 543 rows, 123 published, **0 below k = 10**, minimum published
+exactly 10, and all 420 suppressed rows null out *every* measure including the
+unit columns, so nothing leaks by magnitude either. The finding is structural —
+its suppression is enforced solely by the build script, with no second line, and
+it is the only read on this tab in that position.
+`docs/kb-notes/methodology-a-materialized-view-cannot-carry-rls.md`.
+
+### Current state
+
+**My College is 8 sections + the tier block.** Shipped this run (#1121): the
+waiting-credit breakdown, the funding-pool split (real tab names, each priority's
+cap and the college's own target, a *Do this next* per pool), a 15-entry Resources
+section, and the tier block — *"Advancing — 2 of 5"* with the missing criteria
+named and the college's own value beside each threshold, validated against
+`live_metrics.json` for all **115 colleges: 0 mismatches**, tiers 14/89/12.
+
+`tests/college_briefing.test.js` **104 → 170**. Full suite green, 196 files.
+
+The Resources list also **fixes** the public fact sheet's retired *"MAP Initiative
+Website"* title rather than copying it forward — and `fact-sheet/index.html` still
+carries the old one, which a test now asserts, so the guard cannot pass on a stale
+assumption.
+
+### Strategic roadmap
+
+**Blocked on people, not code:** the MAP deep links (Sam is checking with **Malone
+and Pedro** for the right URL shapes — adopt an exhibit / work student records /
+update contacts; the three host sections are built and waiting) and the access
+shape, which needs the RLS decision above.
+
+**Unblocked and next by value:** the student-request feed still needs a MAP-side
+portal source; EACR's `statewide_prescriptive.js` → Supabase is four sessions old
+and is what turns "adopt A+" into "adopt it against your CIS-25"; 25 Sierra
+feedback rows remain untriaged.
+
+**Recommended for the tier block's next pass:** it currently names the missing
+criteria but does not say *how far* — "you are at 3.6 of the 5 units-per-student
+threshold" is one line away and is the difference between a checklist and a
+target.
+
+### Next concrete step
+
+Wire the three MAP deep links the moment Malone and Pedro settle the URL shapes —
+each has a section already waiting for it. If that stalls, put the RLS decision in
+front of Sam as a written option set (revoke `anon` on the matview · assert the
+suppression invariant in CI · declare it public by design, as `chatbox_credentials`
+already is), because it gates the access shape *and* closes the one structural
+gap found this run.

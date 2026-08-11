@@ -3842,3 +3842,23 @@ unchanged) — Sam asked to see the colleges first and the data killed it: that 
 stability. Rows-based share kept — its movement (43 of 96, 38 of them UP) is a correction, since the old export collapsed
 multi-course-recommendation exhibits. Durable: `methodology-a-grain-invariant-measure-can-still-be-the-wrong-one`,
 `reference-batch-uploaded-transcribed-credit`. Story: `docs/student_detail_load_lessons.md` · handoff `docs/session_138_handoff.md`.
+
+### SkyRoute — the answer that looked like a search failure, and the leak the checkpoint caught (2026-08-10/11, Session 138)
+
+Sam pasted a live transcript: Sierra said no statewide CCC recommendation for CompTIA *"has been adopted yet"* — **MAP holds
+ten** — then listed A+/Network+/Security+/Cloud+/CySA+ from world knowledge. ⭐ **The list was CORRECT, which is worse than
+wrong**: a reviewer files no bug, so it survives to a question where the guess misses. ⭐ **Retrieval was never at fault** —
+one query proved it, and had the fix followed the accusation it would have rewritten a working function. The gap was the
+half Sierra stated honestly: no per-credential student numbers. Shipped **CRED·VOLUME + COLLEGE·ADOPT** (#1113, **v38
+deployed, smoke-tested against v38 not v37**): bridge `exhibit_id`→`raw_variants`→`unified_title`, **1,886 of 2,050 fold**;
+CompTIA A+ **115 students / 7 of 21 colleges**; **120 colleges** have adoption opportunities (avg 126).
+⚠️ **I shipped a disclosure leak and only the checkpoint found it.** Row-level suppression passed its assertion the whole
+time while units summed: `statewide − Σ(published siblings)` recovered a lone hidden cell **exactly** (AP Chemistry
+755.00−695.00 = **60.00**, 12+ credentials). ADR decision 5 had required complementary suppression two days earlier.
+**A suppression test must model the ATTACK, not the field.** Fixed (16 complement cells); both assertions now committed.
+Also: two CI checks were **already red on `main`** (pinned argument order, non-required so nobody saw), and the 14 colleges
+at **100%** on the Course Credit tab carry **155,153 dormant units** — Sam: *"makes me think I can check the box and be
+done."* Durable: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`,
+`methodology-publish-the-denominator-with-the-number`, `methodology-assert-the-contract-not-the-argument-order`,
+`methodology-order-the-post-deploy-check-after-the-deploy`.
+Story: `docs/sierra_credential_naming_lessons.md` · handoff `docs/session_139_handoff.md`.
