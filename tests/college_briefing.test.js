@@ -497,6 +497,26 @@ Bn.render(nr);
 check("render: a failed model read says so, and attributes NO money to the college",
   /failed read, not a finding/.test(nr.textContent) && nr.querySelectorAll(".cb-fbig").length === 0);
 
+// ── Part I — "transcribed" in MAP is a MARK, not a posting ──
+// Sam, 2026-08-11: a college checks the Transcribe step in MAP when it judges
+// the CPL on a student's plan ready, then forwards the plan to Admissions &
+// Records, who post the credit in the college SIS BY HAND — there is no SIS
+// integration with MAP. So map_student_credit.transcribed_credits means "the
+// college marked it done", never "it is on the student's transcript". Copy
+// that says otherwise asserts something MAP cannot know, and it also misleads
+// a coordinator into thinking A&R's step is already handled.
+const stripped = briefingSrc.replace(/\/\*[\s\S]*?\*\//g, "").replace(/^\s*\/\/.*$/gm, "");
+check("transcribed: never claims credit reached a transcript",
+  !/reached the transcript|onto the transcript|Written onto the transcript|on their transcript/i.test(stripped),
+  "MAP records a mark, not a posting");
+check("transcribed: the figure is labelled as a MARK",
+  /marked transcribed/i.test(stripped));
+check("transcribed: names Admissions & Records as who actually posts it",
+  /Admissions &(amp;)? Records/i.test(stripped),
+  "otherwise a coordinator reads the checkbox as the credit being posted");
+check("transcribed: says there is no automatic link to the college's own system",
+  /no automatic link|does not do that for you|no SIS integration/i.test(stripped));
+
 // ── report ──
 let pass = 0;
 results.forEach(function (r) {
