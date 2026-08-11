@@ -3823,3 +3823,22 @@ citing DAS, with DAS in the room — attribute, don't assert). Durable:
 `methodology-rebuild-a-flattened-diagram-as-a-built-slide`, `reference-cpl-at-the-pre-apprenticeship-stage`.
 Assets `presentations/cac_2026-08/` (decks not committed — 27 MB each).
 Story: `docs/cpl_presentations_lessons.md` · handoff `docs/session_136_handoff.md`.
+
+### SkyLine — the student re-load landed, and two "applied" measures came apart (2026-08-10, Session 137)
+
+Re-loaded `map_student_credit` from **`TblSOURCE`**: **537,908 rows / 16 columns**, live, reviewer-only, prior table kept
+as `_prev`. ⭐ **The swap was licensed by a set identity, not a hope**: `(college_id, student_key, course_type)` identical
+old-vs-new (81,007 triples, **0 diff**), so `map_college_goal2.students` + every suppression decision provably could not
+move — and after rebuild they didn't (0 diff, all 3 file assertions 0); `map_college_credit_summary` **byte-identical**
+(1,051,870.00 / 63,991.00). Collapsing to the old 5 columns reproduces **220,588 exactly**; Needs Action reproduces
+**1,053,332.50 to the cent**. ⚠️ **The Studio CSV importer duplicates — third time measured** (0.9% / 1.5% / 1.05%);
+re-importing does NOT fix it, which is why `source_row_id` is mandatory (all 5,671 dupes byte-identical, 0 conflicts →
+dedupe lossless). ⚠️ **`Default Area` is NOT MAP data** — 0 rows in the raw extract; the prior load synthesised it for
+18,127 null-exhibit rows, so the documented "32,360 `Default *` sentinels" was part invention. Same family as the
+`dropped at load` error: **a load-time transformation becomes, one document later, a stated fact about MAP.**
+⭐ **I recommended re-basing the Goal 2 share on distinct students because it's provably grain-invariant (96/96
+unchanged) — Sam asked to see the colleges first and the data killed it: that measure saturates at exactly 100.0% for
+34 of 96.** Grain-invariance is a property, not a virtue; check a measure still *discriminates* before preferring it for
+stability. Rows-based share kept — its movement (43 of 96, 38 of them UP) is a correction, since the old export collapsed
+multi-course-recommendation exhibits. Durable: `methodology-a-grain-invariant-measure-can-still-be-the-wrong-one`,
+`reference-batch-uploaded-transcribed-credit`. Story: `docs/student_detail_load_lessons.md` · handoff `docs/session_138_handoff.md`.
