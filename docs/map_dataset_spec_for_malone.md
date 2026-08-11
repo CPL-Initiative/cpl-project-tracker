@@ -147,8 +147,8 @@ This defines **R1**, the Custom Report the cron fetches. It is also what you run
 for a full reload.
 
 💡 **For the immediate job — just adding `Potential Student` — you do not need
-this.** Use the narrow two-column export in **Part 3 / A2** instead: no reload,
-no student key, no swap. Come back to Q4 when R1 itself is being rebuilt.
+this.** Use the narrow export in **Part 3 / A2** instead: no reload, no student
+key, no swap. Come back to Q4 when R1 itself is being rebuilt.
 
 This is the current 16-column export **plus up to four columns**, depending on
 what Q1 found on `TblSOURCE`.
@@ -285,21 +285,26 @@ alter table public.map_student_credit
 Not the full export — just the key plus whatever is new. Two to five columns.
 
 ```sql
-SELECT s.ID AS source_row_id, s.[Potential Student] AS potential_student, s.[Test Student] AS test_student
+SELECT s.ID AS source_row_id, s.ExhibitID AS chk_exhibit_id, s.PotentialCredits AS chk_potential_credits, s.[Potential Student] AS potential_student, s.[Test Student] AS test_student
 FROM TblSOURCE AS s;
 ```
 
 ⚠️ No `tblStudentKey` join needed — this file carries no student identifier at
 all, which makes it the safest export in the set.
 
+**The two `chk_` columns are not padding — they are the alignment proof.** See
+the box below.
+
 #### A3 · Stage it
 
 ```sql
 drop table if exists public.stg_col_append;
 create table public.stg_col_append (
-  source_row_id     bigint,
-  potential_student text,
-  test_student      text
+  source_row_id         bigint,
+  chk_exhibit_id        text,
+  chk_potential_credits numeric,
+  potential_student     text,
+  test_student          text
 );
 alter table public.stg_col_append enable row level security;
 ```
@@ -327,6 +332,40 @@ from (select source_row_id from public.stg_col_append
   `conflicting_ids = 0`, because duplicate rows carrying the same value make the
   update idempotent.
 - `conflicting_ids > 0` → the same row has two different values. Stop.
+
+#### A4b · 🚨 The alignment gate. This is the one that matters most.
+
+**`source_row_id` is almost certainly an Access autonumber, not a stable MAP
+identifier.** Measured 2026-08-11: it runs `1…537,908` with **zero gaps**. A real
+MAP-side row id would carry gaps from edits and deletions; perfect density is the
+signature of a number assigned when the Access table was populated.
+
+**So if `TblSOURCE` has been re-imported since the last load, every id may point
+at a different row — and the update would still "succeed" on all 537,908 rows.**
+Silent, complete, and wrong.
+
+The `chk_` columns catch it. This must return **0**:
+
+```sql
+select count(*) as misaligned_rows
+from public.stg_col_append s
+join public.map_student_credit m on m.source_row_id = s.source_row_id
+where m.exhibit_id        is distinct from s.chk_exhibit_id
+   or m.potential_credits is distinct from s.chk_potential_credits;
+```
+
+- **0** → the ids still mean what they meant. Proceed to A5.
+- **Non-zero** → `TblSOURCE` was renumbered. **Do not run A5.** The append is not
+  recoverable in that state; it becomes a full reload
+  ([`map_student_credit_reload.md`](map_student_credit_reload.md)), which is safe
+  because it replaces the ids and the payload together.
+
+⭐ **Worth raising with MAP separately:** if `TblSOURCE.ID` is Access-assigned,
+we have **no durable row identifier from MAP at all**, and every future
+incremental update depends on Access not being rebuilt in between. A stable
+MAP-side row id would remove that dependency permanently. Same question applies
+to `tblStudentKey.StudentKey` — it is an autonumber over `StudentMAPID`, so it
+survives only as long as that table is not regenerated.
 
 #### A5 · Apply it
 
@@ -512,7 +551,8 @@ it is not applied at all.
 | ☐ | A1 add columns | `alter table` returns immediately |
 | ☐ | A2 narrow export from Malone | CSV has `source_row_id` + the new fields |
 | ☐ | A3 stage | `stg_col_append` loaded |
-| ☐ | A4 **both gates** | `distinct_ids` = file rows **and** `conflicting_ids` = 0 |
+| ☐ | A4 both load gates | `distinct_ids` = file rows **and** `conflicting_ids` = 0 |
+| ☐ | **A4b alignment gate** | `misaligned_rows` = **0** ← do not skip |
 | ☐ | A5 update | rows updated ≈ 537,908 |
 | ☐ | A6 coverage + vacuum | `still_null` = 0 |
 | ☐ | **A7 refresh 3 MVs in order** | all three return `REFRESH MATERIALIZED VIEW` |
