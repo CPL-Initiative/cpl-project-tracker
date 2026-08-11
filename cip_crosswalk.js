@@ -69,7 +69,7 @@
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, SUB4 = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {}, OLDTOPCIP = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false };
+  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false, progOpen: {} };
   var SCOPE_KEY = "cipx_scope";
   var PROGRAMS = null, PROGRAMS_LOADING = false;   // window.CPL_COCI_PROGRAMS (lazy — Programs scope only)
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
@@ -1462,6 +1462,85 @@
   function progCip(ctrl, assigned) { return progEntry(ctrl).cip || assigned || ""; }   // a curator revision overrides the COCI-assigned CIP
   function progCollegeRows() { return (PROGRAMS && st.progCollege != null) ? PROGRAMS.rows.filter(function (r) { return r[0] === st.progCollege; }) : []; }
 
+  // ── Every approved CIP for a TOP, on every program row (Jenni + Raul, 2026-08-11) ───────────────
+  // 381 of 419 TOPs (91%) map to MORE THAN ONE CIP — median 5 — yet the revise picker only existed
+  // inside the `needsRev` branch, so a program whose assigned CIP was merely *valid* had no way to
+  // see the alternatives at all. Child Development is the case Jenni caught: TOP 1305.00 approves 17
+  // CIPs, 600 statewide programs sit on it, and the 205 assigned 19.0709 (CTE) saw exactly one code —
+  // with no route to 19.0706 (Non-CTE), which is where many colleges must land as the program's
+  // designation changes. The option list is now unconditional; the flag only decides whether it
+  // opens by default.
+  //
+  // Peer usage is counted from the committed COCI program export, NOT from the Chancellor's Office's
+  // own "Count of Colleges" column — the two are close but not identical (68 vs 67 for 1305.00 →
+  // 19.0709), so the label names the source and its date rather than implying it reproduces the CO's
+  // table. Distinct COLLEGES, not programs: a college with three Child Development certificates on
+  // one CIP counts once, which is what "how many colleges use this code" means.
+  function progUsage(top) {
+    if (!PROGRAMS || !top) return {};
+    if (!PROGRAMS._usage) PROGRAMS._usage = {};
+    if (PROGRAMS._usage[top]) return PROGRAMS._usage[top];
+    var seen = {}, out = {};
+    PROGRAMS.rows.forEach(function (r) {
+      if (r[3] !== top || !r[4]) return;
+      var k = r[4] + "|" + r[0];
+      if (seen[k]) return;
+      seen[k] = 1;
+      out[r[4]] = (out[r[4]] || 0) + 1;
+    });
+    PROGRAMS._usage[top] = out;
+    return out;
+  }
+  // Name the extract the counts come from. Raul and Jenni read this beside the Chancellor's Office's
+  // own TOP↔CIP table, whose "Count of Colleges" column runs a little lower (67 vs our 68 for
+  // 1305.00 → 19.0709) — a different vintage, not a different question. Dating our column is what
+  // lets someone reconcile the two instead of doubting both.
+  function progExtractDate() {
+    var src = (PROGRAMS && PROGRAMS._source) || "";
+    var m = src.match(/(\d{4})-(\d{2})-(\d{2})/);
+    if (!m) return "";
+    var MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    return " of " + parseInt(m[3], 10) + " " + MON[parseInt(m[2], 10) - 1] + " " + m[1];
+  }
+  // The crosswalk's candidate list for a TOP, ascending by code — the same order the Chancellor's
+  // Office's TOP↔CIP table uses, so a curator can read the two side by side.
+  function progOptions(top) {
+    var tc = TOPCIP[top];
+    return ((tc && tc.c) || []).slice().sort(function (a, b) { return a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0); });
+  }
+  function progOptionList(ctrl, top, assigned, chosen, repaint) {
+    var opts = progOptions(top), use = progUsage(top), tc = TOPCIP[top];
+    var box = el("div", { class: "cipx-prog-opts" }, []);
+    box.appendChild(el("div", { class: "cipx-prog-optshdr" }, [
+      "Every CIP code the current crosswalk approves for ", el("b", {}, ["TOP " + top]), tc && tc.t ? " · " + tc.t : "",
+      ". Pick the one your college will use — you can change it as often as you like. ",
+      el("span", { class: "cipx-prog-optsrc-note" }, ["College counts are colleges with a program on that pairing in the COCI program export" + progExtractDate() + "."]),
+    ]));
+    opts.forEach(function (ct) {
+      var code = ct[0], rr = BYCODE[code], on = code === chosen, n = use[code] || 0;
+      var b = el("button", {
+        class: "cipx-prog-opt" + (on ? " cipx-prog-opt-on" : ""), type: "button", "aria-pressed": on ? "true" : "false",
+        title: on ? "This is the code this program is set to" : "Use " + code + " for this program",
+      }, [
+        el("span", { class: "cipx-prog-optmark", "aria-hidden": "true" }, [on ? "●" : "○"]),
+        el("span", { class: "cipx-code" }, [code]),
+        el("span", { class: "cipx-prog-optt" }, [rr ? rr.t : "(not in the CIP catalog)"]),
+      ]);
+      if (rr && rr.cat) b.appendChild(el("span", { class: catClass(rr.cat), title: catTip(rr.cat) }, [rr.cat]));
+      if (ct[1] === "f") b.appendChild(el("span", { class: "cipx-prog-optsrc", title: "This pairing was submitted by the field rather than published in the Chancellor's Office crosswalk" }, ["field-submitted"]));
+      b.appendChild(el("span", { class: "cipx-prog-optuse" + (n ? "" : " cipx-prog-optuse-none") }, [n ? (n + (n === 1 ? " college" : " colleges")) : "no colleges yet"]));
+      if (code === assigned) b.appendChild(el("span", { class: "cipx-prog-optasg", title: "The code your college has in COCI today" }, ["in COCI"]));
+      b.onclick = function () {
+        // Storing the COCI-assigned code as a "revision" would be a lie in the export, so selecting it
+        // clears the override instead of recording a no-op change.
+        progSetField(ctrl, "cip", code === assigned ? "" : code);
+        if (repaint) repaint();
+      };
+      box.appendChild(b);
+    });
+    return box;
+  }
+
   function programsView() {
     var host = el("div", { class: "cipx-prog" }, []);
     host.appendChild(el("div", { class: "cipx-prog-intro" }, [
@@ -1561,6 +1640,13 @@
       (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [cipRow.cat]) : null,
     ]));
     row.appendChild(l2);
+    // A curator revision shows what changed — the COCI code is still the fact of record until the
+    // college enters the new one, so never let the row read as though COCI already holds the change.
+    if (assigned && chosen !== assigned) {
+      l2.appendChild(el("span", { class: "cipx-prog-changed", title: "Your choice here. COCI still has " + assigned + " until your college enters the change." }, [
+        "changed from ", el("span", { class: "cipx-code" }, [assigned]),
+      ]));
+    }
     if (needsRev) {
       var tc = TOPCIP[top];
       var topLbl = "TOP " + top + (tc && tc.t ? " · " + tc.t : "");
@@ -1575,20 +1661,39 @@
       } else {
         revMsg = " — the assigned CIP isn't in the current crosswalk for " + topLbl + ". Choose the current-crosswalk CIP:";
       }
-      var flag = el("div", { class: "cipx-prog-rev" }, [
+      row.appendChild(el("div", { class: "cipx-prog-rev" }, [
         el("span", { class: "cipx-prog-revflag" }, ["⚑ needs revision"]),
         el("span", {}, [revMsg]),
+      ]));
+    }
+    // The option list is available on EVERY row — a valid CIP is not necessarily the RIGHT one, and
+    // before this it was reachable only from a flagged row. A flagged row opens it by default.
+    var nOpts = progOptions(top).length;
+    if (nOpts) {
+      var openKey = String(st.progCollege) + "|" + ctrl;   // control numbers are unique per college, not globally
+      if (st.progOpen[openKey] === undefined && needsRev) st.progOpen[openKey] = true;
+      var isOpen = !!st.progOpen[openKey];
+      var optHost = el("div", { class: "cipx-prog-optwrap" }, []);
+      var tog = el("button", {
+        class: "cipx-prog-optbtn" + (isOpen ? " cipx-prog-optbtn-on" : ""), type: "button",
+        "aria-expanded": isOpen ? "true" : "false",
+        title: "The crosswalk approves " + nOpts + " CIP code" + (nOpts === 1 ? "" : "s") + " for TOP " + top,
+      }, [
+        el("span", { class: "cipx-prog-optcaret", "aria-hidden": "true" }, [isOpen ? "▾" : "▸"]),
+        nOpts === 1
+          ? "The 1 approved CIP code for TOP " + top
+          : "All " + nOpts + " approved CIP codes for TOP " + top,
       ]);
-      var psel = el("select", { class: "cipx-fsel cipx-prog-revsel", "aria-label": "Revise the CIP for " + title }, [el("option", { value: "" }, ["Keep " + (chosen || "—") + " (assigned)"])]);
-      (tc && tc.c || []).forEach(function (ct) { var rr = BYCODE[ct[0]]; psel.appendChild(el("option", { value: ct[0] }, [ct[0] + (rr ? " · " + rr.t : "")])); });
-      if (progEntry(ctrl).cip) psel.value = progEntry(ctrl).cip;
-      psel.onchange = function () { progSetField(ctrl, "cip", psel.value); if (repaint) repaint(); };
-      flag.appendChild(psel);
-      row.appendChild(flag);
+      tog.onclick = function () { st.progOpen[openKey] = !isOpen; if (repaint) repaint(); };
+      optHost.appendChild(tog);
+      if (isOpen) optHost.appendChild(progOptionList(ctrl, top, assigned, chosen, repaint));
+      row.appendChild(optHost);
     }
     if (cipRow && cipRow.cat === "Both") {
       var cur = progEntry(ctrl).cte || "";
-      var cteWrap = el("div", { class: "cipx-prog-cte" + (cur ? "" : " cipx-rev-cte-unset") }, [el("span", { class: "cipx-rev-ctelbl" }, ["This CIP is Both — use as:"])]);
+      // Jenni's wording (2026-08-11): the old "This CIP is Both — use as:" read as a property of the code
+      // rather than a choice the college makes. She wrote it for "this program/course"; specialise per surface.
+      var cteWrap = el("div", { class: "cipx-prog-cte" + (cur ? "" : " cipx-rev-cte-unset") }, [el("span", { class: "cipx-rev-ctelbl" }, ["This CIP can be either CTE or Non-CTE. Select the designation your college will use for this program:"])]);
       [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
         var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false" }, [o[1]]);
         b.onclick = function () { progSetField(ctrl, "cte", cur === o[0] ? "" : o[0]); if (repaint) repaint(); };
@@ -1811,7 +1916,7 @@
       // record which use applies for this course. Only shown on an assigned box (opts.cteLabel set).
       if (opts.cteLabel && row.cat === "Both") {
         var cur = revCteChoice(opts.cteLabel, row.code);
-        var cteWrap = el("span", { class: "cipx-rev-cte" + (cur ? "" : " cipx-rev-cte-unset"), title: "This CIP is certified BOTH CTE and non-CTE — choose which use applies to this course" }, []);
+        var cteWrap = el("span", { class: "cipx-rev-cte" + (cur ? "" : " cipx-rev-cte-unset"), title: "This CIP can be either CTE or Non-CTE. Select the designation your college will use for this course." }, []);
         if (!cur) cteWrap.appendChild(el("span", { class: "cipx-rev-ctelbl" }, ["CTE?"]));
         [["cte", "CTE"], ["noncte", "Non-CTE"]].forEach(function (o) {
           var b = el("button", { class: "cipx-rev-ctebtn" + (cur === o[0] ? " cipx-rev-ctebtn-on" : ""), type: "button", "aria-pressed": cur === o[0] ? "true" : "false", title: "Use this CIP as " + o[1] + " for this course" }, [o[1]]);
@@ -2480,7 +2585,11 @@
     var head = el("div", { class: "cipx-head" }, [
       el("div", { class: "cipx-eyebrow" }, ["California Community Colleges · Chancellor's Office · Academic Affairs"]),
       el("h2", { class: "cipx-h2" }, ["California Community College Searchable CIP Code Taxonomy", el("span", { class: "cipx-beta" }, ["Beta"])]),
-      el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your courses, get a CIP code suggested from its current TOP and description, and confirm the fit — soon, sync your settled codes straight to COCI."]),
+      // Intro copy (Jenni, 2026-08-11). Her wording for the first half; the second half rewritten because
+      // "sync your settled codes straight to COCI" read as a feature that exists — it does not. There is no
+      // upload from this page today (the Tech Center batch/API push is Phase B, `cip_submission_access_plan.md`
+      // §3c). Say what is true now, and mark the future as future.
+      el("p", { class: "cipx-sub" }, ["A simplified process supporting the Fall 2026 ", el("b", {}, ["TOP → CIP"]), " transition. Start from one of your current TOP codes, get a list of approved CIP codes that map to the TOP code, and confirm the fit. Your work stays in this browser — ", el("b", {}, ["your college enters the codes it settles on in COCI"]), "; there is no upload from this page. A direct hand-off to COCI is planned for a later release."]),
       el("div", { class: "cipx-hlinks" }, [
         el("a", { href: COE_CROSSWALK, target: "_blank", rel: "noopener" }, ["TOP ↔ CIP crosswalk (COE) ↗"]),
         el("a", { href: NCES, target: "_blank", rel: "noopener" }, ["NCES CIP-2020 taxonomy ↗"]),
@@ -2788,7 +2897,33 @@
       ".cipx-prog-rev{margin-top:8px;font-size:.86rem;color:var(--cipx-text-soft);line-height:1.5;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}",
       ".cipx-prog-revflag{font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-bad-fg);background:var(--cipx-bad-bg);border:1px solid var(--cipx-bad-stripe);border-radius:6px;padding:2px 8px;white-space:nowrap;}",
       ".cipx-prog-revsel{max-width:100%;}",
-      ".cipx-prog-cte{margin-top:8px;display:inline-flex;gap:5px;align-items:center;}",
+      ".cipx-prog-changed{font-size:.72rem;font-weight:700;color:var(--cipx-warn-fg);background:var(--cipx-warn-bg);border:1px solid var(--cipx-warn-stripe);border-radius:6px;padding:2px 8px;white-space:nowrap;display:inline-flex;gap:5px;align-items:center;}",
+      // The "Both" prompt carries a full sentence (Jenni's wording), so it cannot ride the .6rem
+      // uppercase chip label the course chip uses — it wraps as normal sentence text on its own line.
+      ".cipx-prog-cte{margin-top:8px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;}",
+      ".cipx-prog-cte .cipx-rev-ctelbl{font-size:.84rem;font-weight:600;text-transform:none;letter-spacing:0;color:var(--cipx-warn-fg);line-height:1.45;flex:1 1 240px;min-width:0;}",
+      ".cipx-prog-cte .cipx-rev-ctebtn{font-size:.72rem;padding:3px 11px;}",
+      // ── All approved CIP codes for the TOP, on every row ──
+      ".cipx-prog-optwrap{margin-top:9px;}",
+      ".cipx-prog-optbtn{font-family:inherit;font-size:.82rem;font-weight:650;color:var(--cipx-accent);background:none;border:1px solid var(--cipx-border);border-radius:8px;padding:5px 11px;cursor:pointer;display:inline-flex;gap:7px;align-items:center;text-align:left;}",
+      ".cipx-prog-optbtn:hover{background:var(--cipx-surface-sub);border-color:var(--cipx-border-strong);}",
+      ".cipx-prog-optbtn-on{background:var(--cipx-surface-sub);border-color:var(--cipx-border-strong);}",
+      ".cipx-prog-optbtn:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:2px;}",
+      ".cipx-prog-optcaret{font-size:.7rem;color:var(--cipx-muted);}",
+      ".cipx-prog-opts{margin-top:8px;border:1px solid var(--cipx-border);border-radius:10px;padding:9px;background:var(--cipx-surface-sub);}",
+      ".cipx-prog-optshdr{font-size:.8rem;color:var(--cipx-text-soft);line-height:1.5;margin:1px 3px 8px;}",
+      ".cipx-prog-optsrc-note{color:var(--cipx-muted);}",
+      ".cipx-prog-opt{width:100%;font-family:inherit;font-size:.86rem;color:var(--cipx-text);background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:8px;padding:6px 10px;margin-bottom:5px;cursor:pointer;display:flex;gap:9px;align-items:center;flex-wrap:wrap;text-align:left;}",
+      ".cipx-prog-opt:last-child{margin-bottom:0;}",
+      ".cipx-prog-opt:hover{border-color:var(--cipx-accent);background:var(--cipx-accent-soft);}",
+      ".cipx-prog-opt:focus-visible{outline:2px solid var(--cipx-focus);outline-offset:1px;}",
+      ".cipx-prog-opt-on{border-color:var(--cipx-accent);border-left:4px solid var(--cipx-accent);background:var(--cipx-accent-soft);font-weight:600;}",
+      ".cipx-prog-optmark{color:var(--cipx-accent);font-size:.7rem;flex:0 0 auto;}",
+      ".cipx-prog-optt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;flex:1 1 40%;}",
+      ".cipx-prog-optuse{font-size:.72rem;font-weight:600;color:var(--cipx-muted);white-space:nowrap;flex:0 0 auto;}",
+      ".cipx-prog-optuse-none{font-style:italic;opacity:.75;}",
+      ".cipx-prog-optsrc{font-size:.66rem;font-weight:700;text-transform:uppercase;letter-spacing:.02em;color:var(--cipx-muted);border:1px dashed var(--cipx-border-strong);border-radius:5px;padding:1px 6px;white-space:nowrap;}",
+      ".cipx-prog-optasg{font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--cipx-ok-fg);background:var(--cipx-ok-bg);border:1px solid var(--cipx-ok-stripe);border-radius:5px;padding:1px 6px;white-space:nowrap;}",
       ".cipx-modebar{display:inline-flex;gap:4px;background:var(--cipx-surface-2);border:1px solid var(--cipx-border);border-radius:10px;padding:4px;margin:14px 0 12px;}",
       ".cipx-modetab{font-family:inherit;font-size:.86rem;font-weight:650;color:var(--cipx-text-soft);background:transparent;border:0;border-radius:7px;padding:8px 15px;cursor:pointer;display:inline-flex;align-items:center;gap:7px;}",
       ".cipx-tabico{flex:none;opacity:.9;}",

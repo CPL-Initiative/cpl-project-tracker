@@ -19,7 +19,42 @@ related:
 
 # CIP workstream handoff → next session
 
-## 🟢 LATEST — 2026-07-29 (SkyMark cont.): the CO files landed — 4-digit titles + the 2021 crosswalk
+## 🟢 LATEST — 2026-08-11 (SkyMap): Jenni + Raul's three asks — the crosswalk was never single-valued, the UI was
+
+Sam brought three items from **Jenni and Raul** (the CO owners of the tab). All three shipped in one PR —
+`cip_crosswalk.js` + tests only, **0 HTML, no data rebuild**. Tests **305 → 322**.
+
+1. **Intro copy.** Jenni asked what *"soon, sync your settled codes straight to COCI"* meant — *"can they
+   upload directly from this page?"* **No.** The Tech Center push is Phase B (`cip_submission_access_plan.md`
+   §3c), unbuilt. Her proposed first half adopted nearly verbatim (TOP-first, plural: *"get a list of
+   approved CIP codes that map to the TOP code"*); the second half now says the work stays in the browser,
+   the college enters codes in COCI, there is no upload from this page, and a hand-off is planned later.
+2. **"Both" label.** Her wording adopted: *"This CIP can be either CTE or Non-CTE. Select the designation
+   your college will use for this program/course"* — specialised per surface, and taken off the `.6rem`
+   uppercase chip style that was rendering it as `THIS CIP IS BOTH — USE AS:`.
+3. **⭐ The headline — all approved CIPs on EVERY program row.** Child Development showed one CIP
+   (`19.0709`, CTE) where the crosswalk approves **17**. The data was always right; the revise picker was
+   written **inside the `if (needsRev)` branch**, so a program whose CIP is merely *valid* got no
+   affordance at all. **381 of 419 TOPs (91%) map to >1 CIP** (median 5); **600 programs sit on TOP
+   1305.00, 205 of them on the unflagged `19.0709`** — exactly the population Jenni needs to move to
+   `19.0706` (Non-CTE). The list is now unconditional; the flag only decides whether it opens expanded.
+   Each option carries its **CTE/Non-CTE/Both/Noncredit designation** (the decision is unmakeable without
+   it), a field-submitted marker, peer-college usage, an `IN COCI` marker, and a `changed from` chip.
+   Re-picking the assigned code **clears** the override rather than logging a no-op revision.
+
+**Verification worth reusing:** rendered TOP 1305.00 headless and diffed it against Jenni's screenshot of
+the CO's own table — **all 17 codes, titles and categories matched**. Only the college-count column differs
+(11 of 17 exact, rest slightly higher: 68 vs 67), and **no status filter reproduces the CO's numbers** — a
+vintage difference, our export is **17 Jun 2026**. The header names the source + date rather than
+publishing an undated near-match.
+
+**🎯 OPEN FOR RAUL:** what does the CO table's *"Count of Colleges"* column filter on? That closes the last gap.
+**New + unbuilt:** a TOP-first lookup in Browse (type a TOP → its full approved-CIP list, no college needed) —
+same component, reachable without picking a college. Sam also has his own tweak list pending.
+Full story: `docs/cip_crosswalk_lessons.md` (2026-08-11) · durable:
+`docs/kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md`.
+
+## 2026-07-29 (SkyMark cont.): the CO files landed — 4-digit titles + the 2021 crosswalk
 
 Sam supplied the two reference files the queue was waiting on. Both shipped, both LIVE:
 

@@ -204,6 +204,13 @@ function fresh(withCollege) {
   const root = document.getElementById("cip-crosswalk-root");
   check("renders the .cipx container", root && root.querySelector(".cipx"));
   check("renders the 'Searchable CIP Code Taxonomy' header with a Beta badge", root && /Searchable CIP Code Taxonomy/.test(root.querySelector(".cipx-h2").textContent) && !!root.querySelector(".cipx-h2 .cipx-beta"));
+  // Intro copy (Jenni, 2026-08-11). She asked what "sync your settled codes straight to COCI" meant —
+  // whether a college could upload from this page. It cannot: the Tech Center batch/API push is Phase B
+  // (docs/cip_submission_access_plan.md §3c). A promise a reader mistakes for a feature is worse than
+  // no promise, so the copy states today's truth and marks the future as future.
+  check("intro: starts from the TOP code and its list of approved CIPs (Jenni's wording)", root && /Start from one of your current TOP codes, get a list of approved CIP codes that map to the TOP code/.test(root.querySelector(".cipx-sub").textContent));
+  check("intro: says plainly that nothing uploads from this page", root && /no upload from this page/.test(root.querySelector(".cipx-sub").textContent) && /your college enters the codes it settles on in COCI/i.test(root.querySelector(".cipx-sub").textContent));
+  check("intro: no longer implies a COCI sync exists today", src.indexOf("soon, sync your settled codes") === -1);
   check("eyebrow names Academic Affairs", root && /Academic Affairs/.test(root.querySelector(".cipx-eyebrow").textContent));
   check("renders the theme toggle", root && root.querySelector(".cipx-themetog"));
   check("renders the search box", root && root.querySelector(".cipx-panel #cipx-q"));
@@ -1011,11 +1018,40 @@ function fresh(withCollege) {
   const flagItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Managerial Accounting/.test(it.textContent))[0];
   check("programs: a mismatched-CIP program is flagged 'needs revision'", flagItem && flagItem.classList.contains("cipx-prog-item-flag") && !!flagItem.querySelector(".cipx-prog-revflag"));
   check("programs: a CTE program shows a bold CTE chip on the row", flagItem && !!flagItem.querySelector(".cipx-cat-CTE"));
-  // the revise picker offers ONLY crosswalk CIPs (rule #7)
-  const psel = flagItem.querySelector(".cipx-prog-revsel");
-  check("programs: the revise picker offers only the current-crosswalk CIPs for this TOP", (function () { var vals = Array.prototype.map.call(psel.querySelectorAll("option"), (o) => o.value).filter(Boolean); return vals.length >= 2 && vals.indexOf("52.0201") >= 0 && vals.indexOf("52.9001") < 0; })());
-  psel.value = "52.0301"; psel.dispatchEvent(new domP.window.Event("change"));
+  // ── All approved CIP codes on EVERY row (Jenni + Raul, 2026-08-11) ─────────────────────────────
+  // The regression this guards: the option list used to live inside the `needs revision` branch, so a
+  // program whose assigned CIP was merely VALID showed one code and offered no way to see the other
+  // 16. Child Development (TOP 1305.00 → 19.0709, valid, CTE) is the real case — colleges moving to
+  // 19.0706 (Non-CTE) had no route to it. "Business Administration" is the fixture's stand-in: TOP
+  // 0505.00, assigned 52.0201, in the crosswalk, NOT flagged.
+  const okItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Business Administration/.test(it.textContent))[0];
+  check("programs: an UNFLAGGED row still offers the full approved-CIP list (the Child Development case)", !!okItem && !okItem.classList.contains("cipx-prog-item-flag") && !!okItem.querySelector(".cipx-prog-optbtn"));
+  check("programs: the toggle names how many codes the TOP approves", !!okItem && /All 5 approved CIP codes for TOP 0505\.00/.test(okItem.querySelector(".cipx-prog-optbtn").textContent));
+  check("programs: an unflagged row's list starts collapsed", !!okItem && !okItem.querySelector(".cipx-prog-opts") && okItem.querySelector(".cipx-prog-optbtn").getAttribute("aria-expanded") === "false");
+  okItem.querySelector(".cipx-prog-optbtn").click(); await tick();
+  const okOpen = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Business Administration/.test(it.textContent))[0];
+  const okOpts = okOpen.querySelectorAll(".cipx-prog-opt");
+  check("programs: expanding lists EVERY crosswalk CIP for the TOP, ascending by code", (function () { var v = Array.prototype.map.call(okOpts, (o) => o.querySelector(".cipx-code").textContent); return v.join(",") === "32.0107,32.0111,52.0201,52.0301,52.0302"; })());
+  // The whole point of Jenni's Child Development catch: the code is changing CTE→Non-CTE, so each
+  // option has to SHOW its designation or the choice can't be made from this list.
+  check("programs: every option carries its CTE / Non-CTE designation", Array.prototype.every.call(okOpts, (o) => !!o.querySelector(".cipx-cat")));
+  check("programs: the assigned code is marked as the one COCI holds", (function () { var a = Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0]; return a && !!a.querySelector(".cipx-prog-optasg") && a.classList.contains("cipx-prog-opt-on"); })());
+  check("programs: a field-submitted pairing is labelled as such", (function () { var f = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-opt"), (o) => o.querySelector(".cipx-prog-optsrc"))[0]; return f === undefined || /field-submitted/.test(f.textContent); })());
+  // Peer usage counts distinct COLLEGES, not programs — a college with three certificates on one CIP
+  // counts once, which is what "how many colleges use this code" means.
+  check("programs: peer usage counts distinct colleges, not programs", (function () { var a = Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0]; return a && a.querySelector(".cipx-prog-optuse").textContent.trim() === "1 college"; })());
+  check("programs: a CIP no college uses says so rather than showing a bare 0", (function () { var z = Array.prototype.filter.call(okOpts, (o) => /52\.0302/.test(o.textContent))[0]; return z && z.querySelector(".cipx-prog-optuse").textContent.trim() === "no colleges yet"; })());
+  // Selecting the already-assigned code must CLEAR the override, not record a no-op "revision" that
+  // would later read as a change the college made.
+  Array.prototype.filter.call(okOpts, (o) => /52\.0201/.test(o.textContent))[0].click(); await tick();
+  check("programs: re-selecting the COCI-assigned code records no revision", (function () { try { return !(JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1001"] || {}).cip; } catch (e) { return false; } })());
+  // a flagged row opens its list by default — it is the row that most needs the alternatives
+  check("programs: a needs-revision row opens the option list by default", !!flagItem.querySelector(".cipx-prog-opts"));
+  const fOpt = Array.prototype.filter.call(flagItem.querySelectorAll(".cipx-prog-opt"), (o) => /52\.0301/.test(o.textContent))[0];
+  check("programs: the option list offers only current-crosswalk CIPs for this TOP (rule #7)", (function () { var v = Array.prototype.map.call(flagItem.querySelectorAll(".cipx-prog-opt .cipx-code"), (c) => c.textContent); return v.indexOf("52.0201") >= 0 && v.indexOf("52.9001") < 0; })());
+  fOpt.click();
   await tick();
+  check("programs: a revised row shows what it changed FROM (COCI still holds the old code)", (function () { var it = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (x) => /Managerial Accounting/.test(x.textContent))[0]; return it && /changed from/.test(it.textContent) && /52\.9001/.test(it.querySelector(".cipx-prog-changed").textContent); })());
   check("programs: choosing a crosswalk CIP persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1002"].cip === "52.0301"; } catch (e) { return false; } })());
   check("programs: after revising, the program is no longer flagged (moves out of 'needs revision')", (function () { var it = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (x) => /Managerial Accounting/.test(x.textContent))[0]; return it && !it.classList.contains("cipx-prog-item-flag"); })());
   check("programs: the summary count drops after a revision", /0 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
@@ -1023,6 +1059,10 @@ function fresh(withCollege) {
   const bothItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /General Agriculture/.test(it.textContent))[0];
   const pcte = bothItem && bothItem.querySelector(".cipx-prog-cte");
   check("programs: a 'Both'-category program CIP surfaces a CTE / Non-CTE toggle", !!pcte && pcte.querySelectorAll(".cipx-rev-ctebtn").length === 2);
+  // Jenni's wording (2026-08-11). The old label — "This CIP is Both — use as:" — read as a property
+  // of the code rather than a decision the college makes.
+  check("programs: the 'Both' prompt uses Jenni's wording (a choice the college makes, not a property of the code)", !!pcte && /This CIP can be either CTE or Non-CTE\. Select the designation your college will use for this program/.test(pcte.textContent));
+  check("programs: the old 'This CIP is Both — use as' phrasing no longer renders", !!pcte && !/This CIP is Both/.test(pcte.textContent));
   if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
   check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
   // switching scope back to Courses restores the course modes
