@@ -303,6 +303,200 @@ check("Course Credit nav/pane/boot removed from BOTH HTMLs",
 check("the briefing nav reads My College in BOTH HTMLs",
   /My College/.test(cpl) && /My College/.test(idx));
 
+// ── Part G — the money join, the district picker and the Sierra hand-off ──
+// (Session 140.) The join is the dangerous one: it decides WHICH COLLEGE'S
+// MONEY is shown. The funding roster keys on short names ("Bakersfield"), the
+// briefing on MAP's full names ("Bakersfield College"), so an unchecked join
+// either drops a college silently or — far worse — attaches one college's
+// allocation to another. These assert against the REAL shipped rosters, not a
+// fixture, so drift in either file fails here instead of on the page.
+const shortSrc = fs.readFileSync("college_short_names.js", "utf8");
+const fundSrc = fs.readFileSync("cpl_funding_data.js", "utf8");
+const jw = { window: {} };
+new Function("window", shortSrc).call(jw, jw.window);
+new Function("window", fundSrc).call(jw, jw.window);
+const S = jw.window.cplCollegeShort;
+const ROSTER = jw.window.CPL_FUNDING.colleges;
+
+// Every funding row must resolve to a DISTINCT key, or two colleges collapse
+// onto one allocation.
+const rosterKeys = {};
+ROSTER.forEach(function (c) { const k = S(c.college); (rosterKeys[k] = rosterKeys[k] || []).push(c.college); });
+const rosterDupes = Object.keys(rosterKeys).filter(function (k) { return rosterKeys[k].length > 1; });
+check("join: every funding row resolves to a distinct key (0 collisions)",
+  rosterDupes.length === 0 && Object.keys(rosterKeys).length === ROSTER.length,
+  "collisions: " + JSON.stringify(rosterDupes));
+
+// The resolver must round-trip its own output. It did NOT before 2026-08-11:
+// only `canonical` + `aliases` were indexed, so cplCollegeShort("LA Swest")
+// hit the safe fallback and returned the input — and a caller joining two
+// datasets THROUGH the resolver lost Los Angeles Southwest College entirely.
+check("join: the resolver round-trips its own short names",
+  ROSTER.every(function (c) { return S(S(c.college)) === S(c.college); }));
+check("join: LA Swest resolves (the round-trip regression)",
+  S("LA Swest") === S("Los Angeles Southwest College"));
+
+// Every college on the funding roster must be REACHABLE from a MAP-style full
+// name — an unreachable row is a college whose money box would never render.
+const MAP_STYLE = ROSTER.map(function (c) { return c.college; })
+  .concat(["Bakersfield College", "City College of San Francisco", "College of Alameda",
+           "Mt. San Antonio College", "MiraCosta College", "Norco College", "Reedley College",
+           "Los Angeles Southwest College", "Cañada College"]);
+const reached = {};
+MAP_STYLE.forEach(function (n) { const k = S(n); if (rosterKeys[k]) reached[k] = true; });
+check("join: every funding roster row is reachable (0 orphans)",
+  Object.keys(reached).length === ROSTER.length,
+  "unreached: " + Object.keys(rosterKeys).filter(function (k) { return !reached[k]; }).join(", "));
+
+// ⭐ The three states must stay distinguishable. A model that has not loaded,
+// a college that is not on the roster, and a college with a real $0 are
+// DIFFERENT CLAIMS — collapsing them is how a blind spot becomes a zero.
+check("funding: model not loaded returns null, never a zero", M._fundingFor("Bakersfield College") === null);
+
+const FAKE = {
+  _alloc: function (k) { return k === "Bakersfield" ? { total: 426000, floored: false, rural_w: 0 } : null; },
+  _grant: function (k) {
+    if (k === "Bakersfield") return { amount: 50000, declined: false, kind: "credit", display: "Bakersfield" };
+    if (k === "Sequoias") return { amount: 50000, declined: true, kind: "credit", display: "Sequoias" };
+    if (k === "Calbright") return { amount: 50000, declined: false, kind: "noncredit", display: "Calbright" };
+    return null;   // not on either roster
+  },
+  _ess: function () { return { o1: { state: "met", why: "w1" }, o2: { state: "not", why: "w2" }, o3: { state: "pending", why: "w3" } }; },
+  _isRural: function () { return false; },
+  _district: function () { return "Kern CCD"; },
+  _model: function () { return { floor: 150000 }; }
+};
+win.CPL_FUNDING_TAB = FAKE;
+win.cplCollegeShort = S;
+win.CPL_FUNDING = jw.window.CPL_FUNDING;   // the real roster, for districtIndex
+
+const fB = M._fundingFor("Bakersfield College");
+check("funding: full MAP name resolves to the right roster row", fB && fB.key === "Bakersfield" && fB.onRoster);
+check("funding: reads the model's allocation, not a re-derived one", fB && fB.alloc && fB.alloc.total === 426000);
+check("funding: carries the floor from the model", fB && fB.floor === 150000);
+
+const fC = M._fundingFor("Calbright College Non-Credit");
+check("funding: a noncredit feeder gets no college-pool allocation", fC && fC.onRoster && fC.alloc === null,
+  "it is funded by the $1M noncredit carve-out — a different route, not an absence");
+
+check("funding: an off-roster college is flagged, not zeroed",
+  (function () { const r = M._fundingFor("Some Other College"); return r && r.onRoster === false && !("alloc" in r); })());
+
+const fS = M._fundingFor("College of the Sequoias");
+check("funding: a DECLINED grant is a state, not $0", fS && fS.grant.declined === true && fS.grant.amount === 50000);
+
+// ESS outcome 2 carries the real fraction — a bare tick is what taught colleges
+// that uploading is the finish line.
+const prog = M._essProgress(fB, {
+  adopted: [{ statewide: true }, { statewide: true }, { statewide: false }],
+  potential: [{ statewide: true }, { statewide: true }, { statewide: true }, { statewide: false }]
+}, { n_statewide_credentials: 84 });
+check("ESS: three outcomes returned", prog && prog.length === 3);
+check("ESS: outcome 2 is a FRACTION, not a tick",
+  prog[1].frac && prog[1].frac.have === 2 && prog[1].frac.of === 84 && prog[1].frac.available === 3);
+check("ESS: the outcome states survive verbatim from the model",
+  prog[0].o.state === "met" && prog[2].o.state === "pending");
+check("ESS: no detail loaded → no invented fraction",
+  (function () { const p = M._essProgress(fB, null, { n_statewide_credentials: 84 }); return p[1].frac === null; })());
+
+// District picker
+const dIdx = M._districtIndex(["Bakersfield College", "Cerro Coso Community College", "Porterville College"]);
+check("districts: index built from the roster", !!dIdx && Object.keys(dIdx).length >= 1);
+check("districts: a college lands in exactly one district",
+  Object.keys(dIdx).reduce(function (n, d) { return n + dIdx[d].length; }, 0) === 3);
+check("districts: null when the roster has not loaded",
+  (function () { const saved = win.CPL_FUNDING; win.CPL_FUNDING = undefined;
+    const r = M._districtIndex(["Bakersfield College"]); win.CPL_FUNDING = saved; return r === null; })());
+
+// Ask Sierra — a deep link into the ONE chat instance, prefilled and NOT sent.
+const qs = M._sierraQuestions("Bakersfield College");
+check("Sierra: questions name the college so Sierra can resolve it",
+  qs.length === 4 && qs.every(function (q) { return q.indexOf("Bakersfield College") !== -1; }));
+check("Sierra: no questions without a college", M._sierraQuestions(null).length === 0);
+check("Sierra: reuses cpl_chat's existing prefill key", M._SIERRA_Q_KEY === "cplSierraTestQ.v1");
+const chatSrc = fs.readFileSync("cpl_chat.js", "utf8");
+check("Sierra: that key is the one cpl_chat.js actually consumes",
+  chatSrc.indexOf("'cplSierraTestQ.v1'") !== -1 || chatSrc.indexOf('"cplSierraTestQ.v1"') !== -1);
+let sent = 0;
+win.CPL_TABS = { navigate: function () { sent++; } };
+M._askSierra("What credit does Bakersfield College articulate?");
+check("Sierra: the question is staged for the chat to prefill",
+  win.sessionStorage.getItem("cplSierraTestQ.v1") === "What credit does Bakersfield College articulate?");
+check("Sierra: navigates to the chat rather than embedding a second one", sent === 1);
+check("Sierra: the briefing never calls the chat endpoint itself",
+  !/cpl-chat|functions\/v1/.test(briefingSrc),
+  "one chat instance means one set of audience rules");
+
+// A failed model read must read as a failed read.
+check("funding: a failed model load renders 'failed read', not an empty result",
+  /failed read, not a finding/.test(briefingSrc));
+check("funding: the allocation is labelled a cap, not a payment",
+  /cap, not a cheque/.test(briefingSrc));
+
+// ⭐ The floor waterfall must not be re-implemented here. The handoff's
+// worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
+// PROPORTIONAL number, and it is wrong for every college the waterfall pins to
+// the floor. Guard the absence of a second implementation.
+check("funding: no re-derived allocation arithmetic in the briefing",
+  !/headcount_pct|floor_window|ruralPerCollege|23240308|0\.0183/.test(briefingCode),
+  "the allocation comes from cpl_funding.js via _alloc(); a second implementation drifts");
+
+// ── Part H — the funding section renders end-to-end ──
+// The pure helpers above are exercised in isolation; this walks the real
+// render() with a college selected, so a throw or a missing branch fails here
+// rather than on the page.
+const wf = load(true);
+wf.cplCollegeShort = S;
+wf.CPL_FUNDING = jw.window.CPL_FUNDING;
+wf.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
+wf.CPL_FUNDING_TAB = {
+  _alloc: function () { return { total: 150000, floored: true, rural_w: 76923, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
+  _grant: FAKE._grant, _ess: FAKE._ess, _isRural: function () { return true; },
+  _district: function () { return "Kern CCD"; }, _model: function () { return { floor: 150000 }; }
+};
+const B = wf.CPL_COLLEGE_BRIEFING;
+B._state.funding = "ready";
+B._state.college = "Bakersfield College";
+B._state.data = {
+  colleges: ["Bakersfield College"],
+  summaryByName: { "Bakersfield College": { dormant_credits: 1000, articulated_waiting: 100, applied_credits: 50, transcribed_credits: 10, students: 582 } },
+  briefing: B._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" })
+};
+const fr = wf.document.getElementById("college-briefing-root");
+B.render(fr);
+const ftxt = fr.textContent;
+check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
+check("render: the allocation appears as money", /\$150,000/.test(ftxt));
+check("render: a floored college is TOLD it is at the floor, not left to infer",
+  /minimum-viable floor/.test(ftxt) && /not.{0,3} its share of the pool/i.test(ftxt));
+check("render: the guaranteed rural allowance is named", /rural allowance/.test(ftxt) && /\$76,923/.test(ftxt));
+check("render: an outstanding participation requirement is surfaced",
+  /Participation requirements are outstanding/.test(ftxt) && /CPL Coordinator/.test(ftxt));
+check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
+check("render: Sierra asks are buttons, one per question",
+  fr.querySelectorAll("button.cb-ask").length === 4);
+check("render: the district picker is present", !!fr.querySelector("#cb-district"));
+check("render: no script/img injected anywhere in the new sections",
+  fr.querySelectorAll("script").length === 0 && fr.querySelectorAll("img").length === 0);
+
+// The same page with the model absent must not imply the college gets nothing.
+const wn = load(true);
+wn.cplCollegeShort = S;
+wn.CPL_FUNDING = jw.window.CPL_FUNDING;
+const Bn = wn.CPL_COLLEGE_BRIEFING;
+Bn._state.funding = "error";
+Bn._state.college = "Bakersfield College";
+Bn._state.data = { colleges: ["Bakersfield College"], summaryByName: {},
+  briefing: Bn._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const nr = wn.document.getElementById("college-briefing-root");
+Bn.render(nr);
+// Assert the CONTRACT — "no money is attributed to this college" — via the
+// element that carries a college's money, not via a "$" substring. The page
+// legitimately contains "$50k ESS 25-82" as a PROGRAM NAME, so a text-level
+// dollar match fails on correct output.
+check("render: a failed model read says so, and attributes NO money to the college",
+  /failed read, not a finding/.test(nr.textContent) && nr.querySelectorAll(".cb-fbig").length === 0);
+
 // ── report ──
 let pass = 0;
 results.forEach(function (r) {

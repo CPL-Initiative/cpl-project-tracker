@@ -5220,7 +5220,20 @@
     h2.appendChild(chip);
   }
 
+  // ── model-change subscribers (My College tab, #college-briefing) ───────────
+  // Every remote loader (shared config, perf, ESS, eligibility, notes, ledger)
+  // ends by calling render(), so render IS the "the model moved" event. Other
+  // tabs that read this module's math subscribe here rather than re-deriving
+  // it. Fired BEFORE the mount guard on purpose: the funding pane may not be
+  // in the DOM at all (lean site, tests), and a subscriber still needs to know
+  // the ledger landed and its figures changed underneath it.
+  var _subs = [];
+  function notifyModel() {
+    _subs.forEach(function (fn) { try { fn(); } catch (e) { /* a subscriber must never break a load */ } });
+  }
+
   function render() {
+    notifyModel();
     var mount = document.getElementById("cplFundingMount");
     if (!mount) return;
     ensureCss();
@@ -5979,6 +5992,46 @@
     _getShared: function () { return SHARED; },
     _model: function () { _allocCache = null; return allocModel(); },
     _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
+
+    // ── read-only API for the My College tab (#college-briefing) ────────────
+    // The briefing shows one college its own money. It MUST NOT re-derive any
+    // of this: the allocation is a floor waterfall (iterative — colleges below
+    // the $150K minimum are pinned and the remainder re-splits over the rest),
+    // with a guaranteed rural allowance layered on top. A flat
+    // "headcount share x pool" reads plausible and is wrong for every college
+    // the waterfall touches. So the briefing calls _alloc()/_ess() here and
+    // renders what this module returns.
+    onModelChange: function (fn) {
+      if (typeof fn !== "function") return function () {};
+      _subs.push(fn);
+      return function () { var i = _subs.indexOf(fn); if (i >= 0) _subs.splice(i, 1); };
+    },
+    // Ensure the roster + the remote figures (ledger, perf, ESS) are loaded.
+    // Reuses boot() so the briefing reads the SAME numbers the Implementation
+    // Funding tab shows — including the ledger appropriations, which override
+    // the baked pool figures. Subscribe via onModelChange for the re-render.
+    ensureLoaded: function () { boot(); },
+    // The three ESS 25-82 priority outcomes for one college, verbatim from the
+    // functions the $15M Distributions view uses.
+    _ess: function (name) {
+      return { o1: essOutcome1(name), o2: essOutcome2(name), o3: essOutcome3(name) };
+    },
+    // The $50K ESS 25-82 seed grant for one college. `declined` is a real
+    // state and must not render as $0 — one college declined pending review.
+    _grant: function (name) {
+      if (!name) return null;
+      var onRoster = !!baseCollege(name);
+      var feeder = feeders().filter(function (f) { return f.short === name; })[0] || null;
+      if (!onRoster && !feeder) return null;
+      return {
+        amount: GRANT_AMOUNT,
+        declined: grantDeclined(name),
+        kind: feeder ? "noncredit" : "credit",
+        display: feeder ? (feeder.name || feeder.short) : dispName(name)
+      };
+    },
+    _isRural: function (name) { var c = baseCollege(name); return c ? isRural(c) : null; },
+    _district: function (name) { var c = baseCollege(name); return c ? (c.district || null) : null; },
     _netCollege: netCollege,
     _pool: poolField,
     _csv: csvText,

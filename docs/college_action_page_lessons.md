@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-09
+updated: 2026-08-11
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -404,3 +404,110 @@ entities got excluded here by luck — they happened to be tiny. A large partner
 a seeded sandbox would sail straight into a published college total. If the
 number means *colleges*, filter on **entity kind**, and let suppression do only
 the job it is for.
+
+---
+
+## 2026-08-11 (SkyBridge, Session 140) — the funding box, and why a plausible dollar figure is the dangerous kind
+
+The four threads #1115 deferred. Three built (funding box · district picker ·
+Ask Sierra); the fourth — student CPL request uploads — is still blocked on a
+portal feed that does not exist in Supabase, so it stays unbuilt rather than
+faked.
+
+### ⭐ The handoff handed me a number, and the number was wrong
+
+Handoff 139 modelled Bakersfield at **≈$426K**, derived as 1.83% of the $23.24M
+pool from 46,171 headcount, and flagged the **$150K floor waterfall** as the
+thing to resolve before shipping. That warning was correct and it was
+understated. Resolved against the live model:
+
+| College | Flat proportional | Model | |
+|---|---:|---:|---|
+| Palo Verde | $59,742 | **$150,000** | pinned at the floor |
+| Lassen | $34,985 | **$150,000** | pinned at the floor |
+| LA Southwest | $113,262 | **$150,000** | pinned at the floor |
+| Bakersfield | $426,196 | **$414,856** | **not floored — still wrong by $11,340** |
+| Mt. San Antonio | $772,869 | **$522,239** | not floored |
+
+**50 of 115 colleges are pinned at the floor** — the flat figure is wrong for
+43% of the state outright. The part worth keeping is the last two rows: the
+flat figure is *also* wrong for colleges the floor never touches, because the
+floor's **$1,999,687** cost is funded out of the same pool, so every unfloored
+college's proportional share is reduced. **A derivation can be wrong for
+colleges its special case does not apply to.** I would not have predicted that
+from reading the rule; it fell out of running the model.
+
+The failure mode this avoids is specific: $426K is *plausible*. Nobody at
+Bakersfield would have queried it, and it disagrees with the Implementation
+Funding tab by an amount too small to notice and too large to be rounding —
+the same shape as the Sierra CompTIA answer that was accidentally correct.
+
+**So nothing on this page derives a dollar.** `cpl_funding.js` gained a small
+read-only API (`onModelChange` / `ensureLoaded` / `_ess` / `_grant` /
+`_isRural` / `_district`) and the briefing renders what it returns.
+`ensureLoaded()` reuses the module's own `boot()`, so the briefing reads the
+**same** figures the funding tab shows, ledger overrides included; the sidecars
+land async, hence the subscription. Independent cross-check: Mt. San Antonio
+returns **$522,239**, matching the figure the Sep-BOG workbook reconciliation
+settled on by a completely different route.
+
+### ⭐ The join was the real risk, and measuring it found a defect in the resolver
+
+The funding roster keys colleges by short name (`Bakersfield`), the briefing by
+MAP's full name (`Bakersfield College`). An unchecked join does one of two
+things, and the second is much worse than the first: it drops a college
+silently, or it attaches **one college's money to another**.
+
+Both sides now resolve through `cplCollegeShort()` — the curator-owned
+crosswalk — rather than a private guess. Measured against the real rosters:
+**115 of 116 MAP colleges reach a distinct funding row, 0 collisions on either
+side, 0 funding rows orphaned.** The residue is Calbright, a noncredit feeder
+genuinely off the 115-college credit roster; it renders as its own state.
+
+Running that measurement is what exposed the defect. The **first** attempt
+resolved only the MAP side and matched against raw roster strings — 110 of 116,
+with 5 misses that were spelling drift *inside the roster* (`Reedley College`
+vs `Reedley`, `LA Swest` vs `LA Southwest`, `MiraCosta` vs `Mira Costa`).
+Running **both sides through the resolver** took it to 114, and the last one
+exposed the actual bug: the JS resolver indexes `canonical` + `aliases`, while
+its Python twin (`funding/_build_funding_performance.py`) also indexes `short`
+and `short_caps`. So **the resolver could not round-trip its own output** —
+`cplCollegeShort("LA Swest")` fell through to the safe fallback, returned the
+input, and any caller joining two datasets through it lost Los Angeles
+Southwest College entirely. Fixed in `kb/_seed_college_short_names.py` and
+regenerated; verified collision-free (146 normalized keys, 0 conflicts).
+
+⚠️ **A "safe fallback" is only safe for the caller it was written for.**
+Returning the input unmatched is right for a chip (never render blank) and
+quietly wrong for a money join (the row vanishes). The fallback did not change;
+the second caller arrived. That is why `fundingFor()` distinguishes
+model-not-loaded from off-roster from a real figure — three states that a
+single `null` would have collapsed.
+
+### The ESS outcomes are fractions
+
+The $50k row's build rule, earned from the Veteran Star: **every step a
+fraction, not a check.** Outcome 2 now reads *"2 articulated of the 84
+statewide credit recommendations in MAP · 3 more available to adopt"* — where
+you are and what is left, from data the page already held. A bare ✓ is what
+taught colleges that uploading is the finish line.
+
+### Current state
+
+Live on `#college-briefing` behind the team gate: the $50K seed grant (with
+`declined` as a real state, not $0), the implementation allocation labelled a
+**cap, not a cheque**, with floor / rural-allowance / participation-gate all
+named; a 72-district picker that narrows the college list and lists a
+district's colleges **alphabetically, never ranked**; and four Ask-Sierra
+deep-links that reuse `cpl_chat.js`'s existing `cplSierraTestQ.v1` prefill —
+**one chat instance, one set of audience rules, and the question is not sent**
+so it can be edited first. `tests/college_briefing.test.js` **49 → 87**, with
+the join assertions running against the real shipped rosters so drift fails in
+CI, not on the page.
+
+### Next concrete step
+
+The student-request box needs a portal feed before it can be built — that is a
+MAP-side ask, not a build. Otherwise: **EACR's `statewide_prescriptive.js` →
+Supabase** (carryover 2), which would turn "adopt CompTIA A+" into "adopt it
+against CIS-25, which you already run" on both this tab and Sierra.
