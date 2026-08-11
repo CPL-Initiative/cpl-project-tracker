@@ -978,6 +978,22 @@ Q._state.data = { colleges: ["Quiet College"], summaryByName: {},
   briefing: Q._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
 const qRoot = wq.document.getElementById("college-briefing-root");
 Q.render(qRoot);
+// "you meet 0 of the 5 criteria" is arithmetic, not a sentence.
+const zero = { tiers: { leading: { colleges: [] }, inactive: { colleges: [] }, advancing: { colleges: [
+  { college: "Zero College", students: 12, units: 40, avgUnits: 3.3, transcriptionRate: 0,
+    transcribedUnits: 0, avgTranscribed: 0, criteriaMetCount: 0 } ] } } };
+const wz = load(true); wz.cplCollegeShort = S;
+const Z = wz.CPL_COLLEGE_BRIEFING;
+Z._state.college = "Zero College"; Z._state.live = zero;
+Z._state.data = { colleges: ["Zero College"], summaryByName: {},
+  briefing: Z._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const zRoot = wz.document.getElementById("college-briefing-root");
+Z.render(zRoot);
+const zTxt = zRoot.textContent.replace(/\s+/g, " ");
+check("(O) a college meeting none reads as a sentence, not as '0 of the 5'",
+  /you do not yet meet any of the five/.test(zTxt) && !/meet 0 of the/.test(zTxt));
+check("(O) …and it still lists all five, closest first", /The 5 you have not reached, closest first/.test(zTxt));
+
 check("(O) Inactive is explained as 'not recorded', not as a score of 0 of 5",
   /almost no CPL recorded/.test(qRoot.textContent) && !/0 of the 5/.test(qRoot.textContent),
   "Inactive is assigned by absence of activity, not by counting criteria");

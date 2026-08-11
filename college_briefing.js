@@ -1139,10 +1139,14 @@
           + "fix first.</p>";
       } else {
         var mets = ts.met_list, miss = ts.missing;
-        h += "<p><b>" + esc(ts.label) + "</b> — you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria";
+        h += "<p><b>" + esc(ts.label) + "</b> — ";
         if (mets.length) {
-          h += ": " + mets.map(function (c) {
-            return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
+          h += "you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria: "
+            + mets.map(function (c) {
+                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
+        } else {
+          // "you meet 0 of the 5" is arithmetic, not a sentence.
+          h += "you do not yet meet any of the five";
         }
         h += ".</p>";
         if (miss.length) {
