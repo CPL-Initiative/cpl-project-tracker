@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-11 (later) · SkyLink — My College is complete except the MAP links.",
+  "_as_of": "2026-08-11 (evening) · SkyLink — one-click questions and the tier section in plain prose.",
   "_session": 141,
-  "_status": "My College is finished apart from three links. Shipped today: a breakdown of what a college's waiting credit actually consists of, both funding pools with each priority's target for that college, a resources list, and your tier with the missing criteria spelled out instead of just a label. The headline finding is that the waiting credit is almost entirely one thing — basic military service credit — which makes it far easier to clear than the number suggests. Two things now need you rather than another build: the three MAP links (Malone and Pedro), and a decision about who is allowed to see a college's own page.",
+  "_status": "My College is finished apart from three links. Today it gained a breakdown of what a college's waiting credit actually is, both funding pools with each priority's target, a resources list, and a tier section that now reads as prose — naming the three tiers up front and listing the criteria you haven't reached closest-first. The suggested questions send in one click. The headline finding is that the waiting credit is almost entirely one thing, basic military service credit, which makes it far easier to clear than the number suggests. Two things now need you rather than another build: the three MAP links (Malone and Pedro), and a decision about who is allowed to see a college's own page.",
   "items": [
     {
       "id": "s140-sierra-feedback",
@@ -59,10 +59,16 @@
       "text": "A decision only you can make, and it blocks two things at once. Letting a college open its own page without the team phrase isn't a design change — the figures are locked at the database, so an outside visitor currently sees nothing at all. Opening it means agreeing to publish per-college student numbers and staff contact details. Separately, one of our data tables can't be locked that way even in principle (a technical limit); nothing is exposed today and the privacy rules are being applied correctly, but there's no safety net under them if a future rebuild forgets. Both want the same conversation."
     },
     {
-      "id": "s141-tier-distance",
-      "for": "Fable",
+      "id": "s141b-tier-prose",
+      "for": "Sam",
       "tab": "My College",
-      "text": "The tier block now tells a college which of the five criteria it's missing. Add how far: 'you're at 3.6 of the 5 units-per-student threshold' turns a checklist into a target, and the numbers are already on the page."
+      "text": "The tier section now reads as a paragraph instead of five rows, and the header says what the three tiers mean before it tells you yours. The criteria you haven't reached are listed closest-first, so a college sitting just under a threshold sees that first. Worth a look to check the wording sounds right to you — it's the part a college is most likely to read as a judgment."
+    },
+    {
+      "id": "s141b-one-click",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "The suggested questions above Sierra AI now send in one click instead of just filling the box. If any of them come back with a weak answer, that's worth telling us — the questions are generated from each college's own numbers, so a bad one usually means a gap in what Sierra can see rather than a bad question."
     }
   ]
 }
