@@ -39,6 +39,7 @@ wait for it. The export splits cleanly into two passes:
 |---|---|---|
 | **1a — run now** | the 16 existing + `source_code` + `college_course` | nothing |
 | **1b — run when the field lands** | `+ public_upload`, `+ public_upload_at` | Sam's `TblSOURCE` change |
+| **2a — answerable now** | is `Potential Student` the same flag, or enrolment status? | a look at the aggregate |
 | **3 — anytime** | `map_sending_entities` | nothing (start the id space early) |
 
 Pass 1a is worth running on its own: moving `source_code` down to student grain
@@ -151,6 +152,84 @@ portal"* and *"how many **students**"* — the second is the one a college can a
 on, and it is only possible at grain.
 
 It stays on the aggregate too; no reason to remove it there.
+
+### ⚠️ The field is called `Potential Student` on the aggregate extract
+
+Sam, 2026-08-11: on the **Student Aggregates extract** the Yes/No field is named
+**`Potential Student`**, *not* `Public Upload`. Use that name when reading the
+aggregate; grepping for "Public Upload" there finds nothing.
+
+**Before treating them as the same field, confirm they mean the same thing.**
+The two names describe different concepts on their face:
+
+- *Public Upload* — **how the record arrived** (a public-facing channel)
+- *Potential Student* — **who the person is** (someone not yet enrolled)
+
+They correlate strongly — a portal upload from a prospective student is both —
+but they can come apart in both directions: an *enrolled* student uploading
+through the college landing page is a public upload and not a potential student;
+a batch-uploaded prospect is the reverse.
+
+If `Potential Student` is genuinely the same flag under an older name, say so and
+we will treat `public_upload` as its rename. If it means enrolment status, then
+it is a **separate column** and we need both — because "did this arrive through a
+public channel" and "was this person already our student" answer different
+questions, and neither substitutes for the other.
+
+This is worth thirty seconds now: conflating them would put the wrong label on
+every row, and the error would be invisible in the totals.
+
+### The query that settles it
+
+Sam is importing a fresh Aggregate report from MAP Custom Reports into Access
+(2026-08-11), so this can be run immediately. Substitute the real table name for
+`<AggregateTable>`; run each statement on its own.
+
+**A — what values actually exist:**
+
+```sql
+SELECT [Potential Student] AS potential_student, Count(*) AS rows_n
+FROM <AggregateTable>
+GROUP BY [Potential Student];
+```
+
+**B — the discriminating cross-tab (this is the one that answers it):**
+
+```sql
+SELECT [Potential Student] AS potential_student, SourceCode AS source_code, Count(*) AS rows_n, Sum(PotentialCredits) AS potential_units, Sum(AppliedCredits) AS applied_units
+FROM <AggregateTable>
+GROUP BY [Potential Student], SourceCode;
+```
+
+**How to read B:**
+
+- If `Potential Student = Yes` sits almost entirely on `source_code = MAP` and
+  almost never on `ACE`, it is behaving like an **arrival-channel** flag →
+  it is `public_upload` under an older name, and we treat it as a rename.
+- If `Yes` spreads across **both** `MAP` and `ACE`, it is describing **the
+  person, not the channel** → it is enrolment status, it is a **separate
+  column**, and we keep both.
+
+Either answer is fine and cheap to act on. What is expensive is assuming.
+
+**C — a free reconciliation while you are in there.** The fresh extract should
+match what is already live in Supabase; if it doesn't, the extract changed and we
+want to know before anything is rebuilt on it:
+
+```sql
+SELECT SourceCode AS source_code, Count(*) AS rows_n, Sum(PotentialCredits) AS potential_units, Sum(AppliedCredits) AS applied_units
+FROM <AggregateTable>
+GROUP BY SourceCode;
+```
+
+Expected, from Supabase `map_college_cr_unit` on 2026-08-11:
+
+| `source_code` | rows | potential | applied |
+|---|---:|---:|---:|
+| `ACE` | 200,840 | 1,078,640.00 | 20,357.00 |
+| `MAP` | 3,255 | 133,181.35 | 92,593.75 |
+| *(blank)* | 619 | 73,468.00 | 0.00 |
+| **total** | **204,714** | **1,285,289.35** | **112,950.75** |
 
 ### Keep Yes/No **and** add the code — do not replace
 
