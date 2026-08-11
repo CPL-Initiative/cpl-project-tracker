@@ -1,29 +1,29 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-08-10T13:50:27.769Z",
+ "_as_of": "2026-08-11T07:41:04.048Z",
  "credit_recommendations": {
-  "total": "12,517",
-  "ccc": "1,319",
-  "local": "11,198",
+  "total": "12,569",
+  "ccc": "1,322",
+  "local": "11,247",
   "by_type": [
    "Standardized Assessment: 6,543",
-   "Industry Certification: 3,522",
-   "Credit By Exam: 1,843",
+   "Industry Certification: 3,544",
+   "Credit By Exam: 1,871",
    "Portfolio Review: 402",
-   "Military: 116"
+   "Military: 118"
   ]
  },
  "map_exhibits": {
-  "total": "2,111",
+  "total": "2,150",
   "ccc": "138",
-  "local": "1,973",
+  "local": "2,012",
   "originating_colleges": "87"
  },
  "statewide_exhibits": {
   "total": "138",
   "program_areas": "12",
-  "distinct_credit_recs": "1,152",
-  "adoptions": "1,313",
+  "distinct_credit_recs": "1,154",
+  "adoptions": "1,316",
   "adopting_colleges": "61",
   "by_sector": [
    {
@@ -85,8 +85,8 @@
    {
     "sector": "Real Estate",
     "exhibits": 2,
-    "credit_recs": 27,
-    "adoptions": 41,
+    "credit_recs": 28,
+    "adoptions": 43,
     "could_adopt": 27
    },
    {
@@ -113,8 +113,8 @@
    {
     "sector": "Other Statewide",
     "exhibits": 7,
-    "credit_recs": 27,
-    "adoptions": 27,
+    "credit_recs": 28,
+    "adoptions": 28,
     "could_adopt": 12
    }
   ],
@@ -129,7 +129,7 @@
   "adopting_ccc": "61"
  },
  "veteran_sprint": {
-  "star_colleges": "55",
+  "star_colleges": "56",
   "basic_training_colleges": "89 Colleges"
  }
 }
