@@ -30,6 +30,39 @@ applies unchanged.
 
 ---
 
+## The Access file — objects, and what each maps to
+
+From Sam's snapshot, 2026-08-11. Mappings marked *(inferred)* are read from the
+name, not confirmed — correct any that are wrong.
+
+| Access object | What it is | Supabase counterpart |
+|---|---|---|
+| `TblSOURCE` | the raw student grain, 537,908 rows | `map_student_credit` |
+| `tblStudentKey` | `StudentMAPID` → dense surrogate (1…42,346) | *(never leaves Access)* |
+| `TblCOLL_STU_EXH_CR_UNIT` | college × student × exhibit × CR × unit aggregate | `map_college_cr_unit` (204,714) |
+| `Tbl_MAP_STUDENT_CREDIT` | the 5-column export shape | `map_student_credit_prev` (220,588) |
+| `20260808_Tbl_MAP_STUDENT_CREDIT` | dated snapshot of the above | — |
+| `TblSTU_EXH_BUNDLE` | **unknown to us** *(inferred: student ↔ exhibit bundling)* | none |
+| `Data` | **probably the fresh Aggregate import** *(inferred)* | none |
+| `Qry3_export` | the export that fed `map_college_cr_unit` | — |
+| `Qry1_base` · `Qry2_students` · `QryStudentKey` · `QrySTUID_*` | staging steps | — |
+
+### ⚠️ Two things worth a minute
+
+**1. A table called `Data` is a hazard.** That is Access's default name for an
+imported sheet, and the *next* import doesn't overwrite it — it creates `Data1`,
+then `Data2`. Queries keep pointing at the original while everyone believes they
+are looking at the fresh pull, and nothing about the result says otherwise.
+Rename it to something dated and explicit (e.g.
+`Tbl_AGG_20260811`) before writing any query against it.
+
+**2. What is `TblSTU_EXH_BUNDLE`?** It appears in no runbook we have. If it
+carries the student↔exhibit relationship at a different grain than `TblSOURCE`,
+it may already answer questions we have been deriving the hard way — or it may be
+a dead staging artifact. Worth one sentence either way.
+
+---
+
 ## What to run, in what order
 
 `[Public Upload]` does not exist on `TblSOURCE` yet — Sam is adding it. Don't
@@ -182,14 +215,19 @@ every row, and the error would be invisible in the totals.
 ### The query that settles it
 
 Sam is importing a fresh Aggregate report from MAP Custom Reports into Access
-(2026-08-11), so this can be run immediately. Substitute the real table name for
-`<AggregateTable>`; run each statement on its own.
+(2026-08-11), so this can be run immediately. **Run it against whichever table
+actually carries `[Potential Student]`** — most likely the fresh import (`Data`,
+see the rename note above) or `TblCOLL_STU_EXH_CR_UNIT`. If a statement errors
+with *"no such field"*, that table isn't the one; try the other.
+
+Run each statement on its own — the Access SQL view takes one at a time and
+rejects inline comments.
 
 **A — what values actually exist:**
 
 ```sql
 SELECT [Potential Student] AS potential_student, Count(*) AS rows_n
-FROM <AggregateTable>
+FROM TblCOLL_STU_EXH_CR_UNIT
 GROUP BY [Potential Student];
 ```
 
@@ -197,7 +235,7 @@ GROUP BY [Potential Student];
 
 ```sql
 SELECT [Potential Student] AS potential_student, SourceCode AS source_code, Count(*) AS rows_n, Sum(PotentialCredits) AS potential_units, Sum(AppliedCredits) AS applied_units
-FROM <AggregateTable>
+FROM TblCOLL_STU_EXH_CR_UNIT
 GROUP BY [Potential Student], SourceCode;
 ```
 
@@ -218,7 +256,7 @@ want to know before anything is rebuilt on it:
 
 ```sql
 SELECT SourceCode AS source_code, Count(*) AS rows_n, Sum(PotentialCredits) AS potential_units, Sum(AppliedCredits) AS applied_units
-FROM <AggregateTable>
+FROM TblCOLL_STU_EXH_CR_UNIT
 GROUP BY SourceCode;
 ```
 
