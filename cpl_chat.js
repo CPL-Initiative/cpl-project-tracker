@@ -752,10 +752,24 @@
     // Embed the one assistant elsewhere (My College). See mountInto above.
     mountInto: mountInto,
     // Prefill the box without sending — the visitor edits before asking.
+    // ⚠ Do NOT make this send. The Sierra Training tab's "Test in Sierra"
+    // hand-off depends on the reviewer being able to tweak a logged question
+    // before replaying it. Use ask() when you want one click to be enough.
     prefill: function (q) {
       if (!inputEl) return false;
       inputEl.value = String(q == null ? '' : q).slice(0, 1000);
       try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+      return true;
+    },
+    // Fill AND send — the behaviour of this assistant's own starter chips,
+    // exposed so an embedding tab's suggested questions cost one click rather
+    // than two (Sam, 2026-08-11: "so they don't have to take 2 steps and get
+    // lost"). Returns false if the assistant is not mounted, so the caller can
+    // fall back to navigating to the full tab.
+    ask: function (q) {
+      if (!inputEl) return false;
+      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
+      submit();
       return true;
     },
   };
