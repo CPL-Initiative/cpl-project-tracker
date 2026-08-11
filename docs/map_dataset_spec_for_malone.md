@@ -1,5 +1,5 @@
 ---
-title: MAP → Supabase datasets — Access query sequence and the reports to build (for Malone)
+title: MAP → Supabase datasets — Access query sequence, the reports to build, and the Supabase pass
 created: 2026-08-11
 updated: 2026-08-11
 tags: [spec, map, access, supabase, student-detail, record-source, custom-reports]
@@ -11,6 +11,9 @@ related:
 ---
 
 # MAP → Supabase — what to run, then what to build
+
+**Part 1** Malone runs in Access · **Part 2** the MAP Custom Reports he builds ·
+**Part 3** what Sam does in Supabase.
 
 Access SQL: **one statement at a time, no inline comments**, `[Brackets]` around
 any name containing a space.
@@ -227,6 +230,130 @@ credit data but missing from our current lookup — resolve from MAP's own list.
 ### R3 · CPL Sending Entities
 
 `sending_entity_id` · `entity_name` · `entity_type` · `college_id`
+
+---
+
+## Part 3 — What Sam does in Supabase
+
+The proven swap is [`docs/map_student_credit_reload.md`](map_student_credit_reload.md)
+(SQL 1–7). **Follow that, unchanged.** Below are only the deltas for this round —
+what to add, and two steps that did not exist before 2026-08-11.
+
+### S1 · Add the new columns to the staging table
+
+In `SQL 1`, extend the `create table public.stg_student_credit (...)` with
+whichever of these R1 actually delivered. All `text`/`numeric`, all nullable:
+
+```sql
+  source_code       text,
+  college_course    text,
+  potential_student text,
+  test_student      text
+```
+
+### S2 · Import and gate — unchanged, and the gate still matters
+
+`SQL 2`. ⛔ **The gate is `count(distinct source_row_id)`, never `count(*)`.**
+The Studio CSV importer has duplicated on three separate measured occasions
+(0.9 % / 1.5 % / 1.05 %), and re-importing does **not** fix it. A `count(*)`
+*higher* than your file is expected; `distinct_source_rows` not matching your
+row count means a bad import — `truncate` and re-import.
+
+### S3–S6 · Build, verify, swap, restore RLS — unchanged
+
+`SQL 3` → `SQL 4` → `SQL 5` → `SQL 6`, carrying the new columns through `SQL 3`'s
+select list.
+
+🔒 **`SQL 6` is the step that must not be forgotten.** The swap creates a table
+with **no RLS**. Until `SQL 6` runs, student-grain rows are readable by the anon
+key Sierra's widget uses.
+
+### S7 · Add the live columns (if you skipped the full swap)
+
+If R1 only added columns and you are **not** doing a full reload, this is enough:
+
+```sql
+alter table public.map_student_credit
+  add column if not exists source_code       text,
+  add column if not exists college_course    text,
+  add column if not exists potential_student text,
+  add column if not exists test_student      text;
+```
+
+### S8 · Create the sending-entity table (when R3 exists)
+
+```sql
+create table if not exists public.map_sending_entities (
+  sending_entity_id integer primary key,
+  entity_name       text not null,
+  entity_type       text,
+  college_id        integer
+);
+alter table public.map_sending_entities enable row level security;
+create policy map_sending_entities_read on public.map_sending_entities
+  for select to public using (true);
+grant select on public.map_sending_entities to anon, authenticated, service_role;
+```
+
+Public-read is right here — it is a registry of organisations, no student data.
+
+### S9 · ⚠️ Refresh the three materialized views, IN THIS ORDER
+
+**New 2026-08-11 — these did not exist at the last reload, and nothing refreshes
+them automatically.** Skip this and Sierra keeps answering from the old grain
+while every other surface has moved.
+
+```sql
+refresh materialized view public.map_exhibit_credential;
+refresh materialized view public.map_credential_student_rollup;
+refresh materialized view public.map_credential_volume;
+```
+
+The bridge must go first — both rollups read it.
+
+### S10 · ⚠️ Run the two disclosure assertions. **Both must return 0.**
+
+**New 2026-08-11.** The second one exists because the first passed while every
+hidden cell was still recoverable by subtraction.
+
+```sql
+select count(*) as leak_1_published_measure_on_suppressed_row
+from public.map_credential_student_rollup
+where students_suppressed
+  and (students is not null or potential_units is not null or rows_total is not null);
+```
+
+```sql
+with per_col as (
+  select unified_title,
+         count(*) filter (where students_suppressed) as suppressed_cells
+  from public.map_credential_student_rollup group by 1)
+select count(*) as leak_2_single_hidden_cell_recoverable
+from public.map_credential_volume v
+join per_col p using (unified_title)
+where v.potential_units is not null and p.suppressed_cells = 1;
+```
+
+**Non-zero on either → stop and tell a session.** Do not publish, and do not
+"fix" it by hiding a number on the tab — suppression is applied at write time or
+it is not applied at all.
+
+### S11 · Clean up
+
+`SQL 7`. `drop table public.stg_student_credit;` — never leave staging around.
+
+### The whole Supabase pass, as a checklist
+
+| | Step | Done when |
+|---|---|---|
+| ☐ | S1 staging columns | `SQL 1` runs clean |
+| ☐ | S2 import + gate | `distinct_source_rows` = your file's row count |
+| ☐ | S3–S5 build, verify, swap | `SQL 4` checks pass, swap committed |
+| ☐ | **S6 restore RLS** | reviewer-only policy present, 0 write policies |
+| ☐ | S8 sending entities | table exists (skip if no R3 yet) |
+| ☐ | **S9 refresh 3 MVs in order** | all three return `REFRESH MATERIALIZED VIEW` |
+| ☐ | **S10 both assertions** | both return **0** |
+| ☐ | S11 drop staging | `stg_student_credit` gone |
 
 ---
 
