@@ -19,10 +19,11 @@ related:
 
 # CIP workstream handoff → next session
 
-## 🟢 LATEST — 2026-08-11 (SkyMap): Jenni + Raul's three asks — the crosswalk was never single-valued, the UI was
+## 🟢 LATEST — 2026-08-11 (SkyMap): Jenni + Raul's three asks, plus Sam's nav — the crosswalk was never single-valued, the UI was
 
-Sam brought three items from **Jenni and Raul** (the CO owners of the tab). All three shipped in one PR —
-`cip_crosswalk.js` + tests only, **0 HTML, no data rebuild**. Tests **305 → 322**.
+Sam brought three items from **Jenni and Raul** (the CO owners of the tab), then a fourth of his own. Items
+1–3 shipped as **#1124**, the nav as **#1125** — `cip_crosswalk.js` + tests only, **0 HTML, no data
+rebuild**. Tests **305 → 326**.
 
 1. **Intro copy.** Jenni asked what *"soon, sync your settled codes straight to COCI"* meant — *"can they
    upload directly from this page?"* **No.** The Tech Center push is Phase B (`cip_submission_access_plan.md`
@@ -41,6 +42,14 @@ Sam brought three items from **Jenni and Raul** (the CO owners of the tab). All 
    Each option carries its **CTE/Non-CTE/Both/Noncredit designation** (the decision is unmakeable without
    it), a field-submitted marker, peer-college usage, an `IN COCI` marker, and a `changed from` chip.
    Re-picking the assigned code **clears** the override rather than logging a no-op revision.
+
+4. **⭐ The nav flattened (#1125).** Sam: *"these labels are a bit confusing."* The two-level
+   `Code my: [Programs][Courses]` + mode bar is gone. **The scope only ever split Review** — Browse
+   is scope-free and the course-first easy button is courses-only, so the nav made every visitor
+   pick a dimension two of its three destinations ignored, and the scope tab kept asserting
+   "Courses" while you browsed. Now one bar: **Review my programs · Review my courses · Browse CIP
+   codes · Find a course's code**. `st.scope`/`st.mode` unchanged internally; scope is set as a
+   consequence of the destination. Tests → **326**.
 
 **Verification worth reusing:** rendered TOP 1305.00 headless and diffed it against Jenni's screenshot of
 the CO's own table — **all 17 codes, titles and categories matched**. Only the college-count column differs

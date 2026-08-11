@@ -1970,6 +1970,27 @@ field-submitted marker where the pairing came from the field, peer-college usage
 the code the college actually holds, and a `changed from <code>` chip once a curator picks something else.
 Re-selecting the assigned code **clears** the override rather than recording a no-op revision.
 
+### 4. The nav — Sam: "these labels are a bit confusing"
+
+Same session, a fourth item. The tab had a two-level nav: `Code my: [Programs][Courses]` above
+`[Review my catalog][Browse codes][Find my course's code]`. In Programs scope the word **Programs
+appeared twice in a row**; in Courses scope, "Courses" sat directly above "Review my catalog".
+
+Sam proposed deleting "Review my catalog" and renaming the scope tabs to *Review my Programs* /
+*Review my Courses*. Right instinct, wrong lever — it breaks the moment you leave Review: the scope
+tab would go on asserting **"Review my Courses" while you were browsing**, `Code my: Review my
+Programs` doesn't parse, and **Browse is scope-free** (the whole 2,325-code taxonomy — nothing to
+do with programs vs courses).
+
+**The structural finding: the scope only ever split *Review*.** Two of the three modes ignored it,
+so the nav made every visitor pick a dimension that mostly did nothing, and one tab spent most of
+its life claiming an action the visitor wasn't taking. **A selector that governs only one of the
+things beneath it isn't a level of hierarchy — it's a duplicate of one child.** Flattened to four
+destinations in one bar (#1125): `Review my programs · Review my courses · Browse CIP codes · Find
+a course's code`. `st.scope`/`st.mode` unchanged internally, so nothing downstream moved — scope is
+now set as a *consequence* of the destination. Browse selects on mode alone; "Find a course's code"
+carries the scope to `courses`, so `programs + recommend` is unreachable from the UI. Tests 322 → 326.
+
 ### Verification method worth reusing: reproduce the authority's own table
 
 Rendering TOP 1305.00 headless and diffing it against Jenni's screenshot of the CO's TOP↔CIP table matched
@@ -1981,7 +2002,8 @@ publish an undated near-match, the header now names the source and its date — 
 doubt about the whole surface; a dated one invites reconciliation. **Open for Raul: what does the CO table's
 "Count of Colleges" filter on?**
 
-Real-Chromium verified at 980px light + dark and 390px phone: 0 horizontal overflow, 0 console errors.
+Real-Chromium verified at 980px light + dark and 390px phone, on both the option list and the new nav
+(every destination clicked in turn, exactly one selected each time): 0 horizontal overflow, 0 console errors.
 
 **Still open (unchanged):** the manual "+ Add another code" free-search scope; the optional program-first
 "Find my program's code" easy button; the standing WCAG pre-field gate; Phase B. **New and unbuilt:** a
