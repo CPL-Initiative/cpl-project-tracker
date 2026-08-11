@@ -1912,3 +1912,79 @@ code; (2) *committed-only artifact* — no workflow rebuilds `cip_crosswalk_data
 is committed in each PR (verified no cron owns it); (3) two focused PRs (data-populate, then the feature)
 off sequential mains so each regeneration is clean. Tests 302 → **305**; real-Chromium verified both.
 Side-lane discipline honored: left `kb/cpl_todos.json` + the numbered `session_<N>_handoff.md` untouched.
+
+---
+
+## 2026-08-11 (SkyMap) — Jenni + Raul's three asks: the crosswalk was never single-valued, the UI was
+
+Sam brought three items of Chancellor's Office feedback from **Jenni and Raul**, who will own the tab. All
+three shipped in one PR against `cip_crosswalk.js` + `tests/cip_crosswalk.test.js` (no HTML, no data
+rebuild). Tests **305 → 322**.
+
+### 1. The intro promised a COCI sync that does not exist
+
+Jenni: *"I don't understand the 'sync' — can they upload directly from this page?"*
+
+**They cannot, and that is the whole finding.** The copy read *"soon, sync your settled codes straight to
+COCI"*; the Tech Center batch/API push is **Phase B** (`cip_submission_access_plan.md` §3c), unbuilt. A
+reader cannot tell a roadmap item from a feature when both are written in the present tense with a "soon"
+in front. Her own proposed first half was adopted nearly verbatim (*"Start from one of your current TOP
+codes, get a list of approved CIP codes that map to the TOP code, and confirm the fit"*) — note that her
+wording is **TOP-first and plural**, which is the same mental model as her third ask. The second half now
+states today's truth (*your work stays in this browser · your college enters the codes in COCI · there is
+no upload from this page*) and marks the future as future.
+
+### 2. "This CIP is Both — use as:" described the code instead of asking the college
+
+Her replacement: *"This CIP can be either CTE or Non-CTE. Select the designation your college will use for
+this program/course."* Adopted, specialised per surface (`…for this program.` on a program row, `…for this
+course.` in the course chip's tooltip — the chip is inline and has no room for a sentence). The old label
+also rode a `.6rem` uppercase chip style, which is why it rendered as `THIS CIP IS BOTH — USE AS:`; the
+program row now gets a sentence-case, wrapping label.
+
+### 3. The headline: Child Development looked like it mapped to one CIP. It maps to 17.
+
+Jenni: *"Most of the Program TOP codes have more than one CIP it can map to. We should be able to see all
+the options for all codes… The list only shows it mapping to a single CTE CIP code (19.0709). In many
+cases, colleges need to use CIP 19.0706 (not-CTE)."*
+
+**The data was always right — `topcip["1305.00"]` held all 17 codes.** The bug was that `programRow` built
+its revise picker *inside* the `if (needsRev)` branch. A program whose assigned CIP is in the crosswalk is
+not flagged, so it rendered one code and **no affordance whatsoever**. Measured blast radius:
+
+- **381 of 419 TOP codes (91%) map to more than one CIP** — median 5 (median 3 excluding the two universal
+  noncredit boilerplate codes). Single-valued is the exception.
+- **600 programs statewide sit on TOP 1305.00**; **205 are assigned `19.0709`** (valid, CTE, therefore
+  unflagged, therefore no picker) against **60 already on `19.0706`** (Non-CTE) and 139 on `13.1210`.
+
+So the exact population Jenni is trying to move — CTE → Non-CTE as the designation changes — was the
+population the UI had no path for. The durable form of this is
+[`methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one`](kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md):
+**gate the warning on the problem, never gate the choice.** The needs-revision flag now decides only
+whether the list opens *expanded*.
+
+Every program row carries `▸ All N approved CIP codes for TOP nnnn`, expanding to every crosswalk code
+ascending by code — the Chancellor's Office's own table order — each with its **CTE / Non-CTE / Both /
+Noncredit designation** (without which the CTE→Non-CTE decision cannot be made from the list), a
+field-submitted marker where the pairing came from the field, peer-college usage, an `IN COCI` marker on
+the code the college actually holds, and a `changed from <code>` chip once a curator picks something else.
+Re-selecting the assigned code **clears** the override rather than recording a no-op revision.
+
+### Verification method worth reusing: reproduce the authority's own table
+
+Rendering TOP 1305.00 headless and diffing it against Jenni's screenshot of the CO's TOP↔CIP table matched
+on **all 17 codes, all 17 titles, and all 17 CTE categories**. That localised the only difference to one
+column — peer college counts, **11 of 17 exact**, the rest slightly higher (68 vs 67 for `19.0709`; 62 vs 52
+for `13.1210`). No program-status filter reproduces the CO's numbers, so it is a **vintage difference**: our
+counts come from the COCI program export of **17 Jun 2026**. Rather than drop a genuinely useful column or
+publish an undated near-match, the header now names the source and its date — an undated near-match invites
+doubt about the whole surface; a dated one invites reconciliation. **Open for Raul: what does the CO table's
+"Count of Colleges" filter on?**
+
+Real-Chromium verified at 980px light + dark and 390px phone: 0 horizontal overflow, 0 console errors.
+
+**Still open (unchanged):** the manual "+ Add another code" free-search scope; the optional program-first
+"Find my program's code" easy button; the standing WCAG pre-field gate; Phase B. **New and unbuilt:** a
+TOP-first lookup in Browse (type a TOP, get its full approved-CIP list) — the same component, reachable
+without picking a college. Side-lane discipline honored: `kb/cpl_todos.json` and the numbered
+`session_<N>_handoff.md` untouched.
