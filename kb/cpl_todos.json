@@ -1,20 +1,14 @@
 {
  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
- "_as_of": "2026-08-11 (late) · SkyBridge — My College now shows each college its own money.",
+ "_as_of": "2026-08-11 (end of day) · SkyBridge — Sierra AI now lives on My College.",
  "_session": "SkyBridge (Session 140)",
- "_status": "My College is finished apart from one section. It now shows a college the $50,000 seed grant it received under ESS 25-82 with real progress on the three priority outcomes (as fractions — '2 of the 84 statewide credit recommendations, 3 more available to adopt' — rather than bare ticks), its share of the $35 million implementation pool, a district picker, and four one-click questions that open Sierra with the question already typed. Worth knowing where the money figure comes from: the earlier estimate for Bakersfield, $426K, was a simple share of the pool, and that turns out to be wrong for most colleges — 50 of the 115 are lifted to the $150,000 minimum, and paying for that minimum reduces everyone else's share too. Bakersfield is really $414,856. The page now reads the funding model directly rather than doing its own arithmetic, so it can never drift from the Implementation Funding tab. The one section still missing is student CPL requests, and that needs MAP to publish a feed — it is not something a session can build.",
+ "_status": "My College now opens with Sierra AI itself — not a link to it. You pick your college in that box, and it suggests questions built from your own numbers: your waiting credit, the credential your peers already give credit for that you don't, and how you're doing overall. Below it there's a new section showing who MAP has on file for your college, so you can keep it current. Two corrections Sam caught went in the same day: the page had been saying credit was 'written onto the transcript' when checking Transcribe in MAP is a record-keeping step — Admissions & Records still enters it in the college's own system, by hand. And the funding pools now use their real tab names. Next session picks up MAP links, so the page can hand you off to where the work actually happens.",
  "items": [
   {
    "id": "s140-sierra-feedback",
    "for": "Sam",
    "tab": "Sierra Training",
    "text": "Twenty-five pieces of real feedback on Sierra are waiting to be read, eleven of them thumbs-down, the oldest sitting since 1 July. Measured live today — the automated test rows are excluded, and only four rows have ever been marked addressed."
-  },
-  {
-   "id": "s138-comptia-live",
-   "for": "Sam",
-   "tab": "Sierra Training",
-   "text": "Worth re-asking Sierra your CompTIA question. It can now answer with real numbers — at least 115 students at 7 colleges for CompTIA A+, and the ten statewide recommendations it previously said did not exist. It also now says 'fewer than 10' instead of an exact number for small groups, and explains that this is to protect student privacy."
   },
   {
    "id": "s138-k10-revisit",
@@ -41,24 +35,6 @@
    "text": "Two things here need a person, not a session: four colleges publish no usable address at all for a credit question, and the fifty-two colleges that do have a CPL Assistant were never checked for a student contact. Sessions are blocked from opening college websites, so this needs a human or a differently-connected runner."
   },
   {
-   "id": "s139-my-college",
-   "for": "Sam",
-   "tab": "My College",
-   "text": "The College Briefing tab is now 'My College' and has been reworked from the design you reacted to: pick your college, see where you stand, and a box for each kind of CPL showing what you already accept and what you could adopt. The old Course Credit tab has been folded into it and retired. Worth a look — four more sections (Sierra, funding, district picker, student requests) come next session."
-  },
-  {
-   "id": "s139-malone-spec",
-   "for": "Sam",
-   "tab": "—",
-   "text": "Malone has a step-by-step spec ready: six Access queries then three MAP Custom Reports. Nothing blocks him. Three things worth getting back from him — how much CPL activity arrives through college landing pages and the Student Portal, whether the fresh extract still matches our live figures, and one sentence on a table called TblSTU_EXH_BUNDLE that appears in none of our runbooks."
-  },
-  {
-   "id": "s140-my-college-money",
-   "for": "Sam",
-   "tab": "My College",
-   "text": "My College now has the funding box. Pick a college and you get the $50,000 seed grant, progress on the three ESS 25-82 outcomes, and that college's share of the $35 million pool — labelled a cap it earns against, not a cheque. Worth a look to see whether the wording lands for a coordinator."
-  },
-  {
    "id": "s140-district-picker",
    "for": "Sam",
    "tab": "My College",
@@ -75,6 +51,30 @@
    "for": "Fable",
    "tab": "Sierra Training",
    "text": "Wire EACR's prescriptive layer into Supabase. It knows the local course each college most likely already teaches for a credential, which turns 'adopt CompTIA A+' into 'adopt it against the CIS-25 you already run' — on both My College and Sierra. Sam's catch, now carried three sessions."
+  },
+  {
+   "id": "s140-sierra-ai",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "Sierra AI is now embedded at the top of My College — same assistant as the CPL Assistant tab, just mounted there too, so you never leave the page. Worth trying the suggested questions; they're built from the selected college's own figures."
+  },
+  {
+   "id": "s140-who-on-file",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "New section: who MAP has on file for a college — primary contact, coordinator, counselor, articulation officer and more, with blanks named. Moreno Valley's primary contact is one address stored eleven times; the page de-duplicates it now, but MAP still holds it that way."
+  },
+  {
+   "id": "s140-map-links",
+   "for": "Fable",
+   "tab": "My College",
+   "text": "Next: embed MAP links so someone with a MAP sign-in can jump straight to adopting an exhibit, working student records, or updating contacts. Each has a section on the page already waiting for it."
+  },
+  {
+   "id": "s140-port-rest",
+   "for": "Fable",
+   "tab": "My College",
+   "text": "Port the three mock sections not yet live: the funding breakdown by goal, the list of what the waiting credit actually consists of, and a resources section like the CPL Fact Sheet's."
   }
  ]
 }
