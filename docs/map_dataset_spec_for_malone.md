@@ -47,14 +47,31 @@ FROM TblCOLL_STU_EXH_CR_UNIT
 GROUP BY [Potential Student], [Test Student];
 ```
 
+**Then probe `TblSOURCE` itself** — this is the one that decides Q4. Run each
+line separately; an error means that field is **not yet on the grain**:
+
 ```sql
 SELECT SourceCode AS source_code, Count(*) AS rows_n
 FROM TblSOURCE
 GROUP BY SourceCode;
 ```
 
-**Check:** if `SourceCode` errors on `TblSOURCE`, it exists only on the
-aggregate — tell us, it changes R1.
+```sql
+SELECT [College Course] AS college_course, Count(*) AS rows_n
+FROM TblSOURCE
+GROUP BY [College Course];
+```
+
+```sql
+SELECT [Potential Student] AS potential_student, [Test Student] AS test_student, Count(*) AS rows_n
+FROM TblSOURCE
+GROUP BY [Potential Student], [Test Student];
+```
+
+**Check:** note which of the four fields exist on `TblSOURCE`. Sam is adding
+`Potential Student` there, so it may not be present yet — that is expected, not a
+problem. **Whatever errors, drop from the Q4 SELECT and run Q4 anyway.** Every
+missing field is additive later; none of them blocks the export.
 
 ---
 
@@ -123,9 +140,17 @@ A mismatch means the extract changed — stop and tell us before rebuilding on i
 
 ### Q4 · Build R1 — the student credit detail export (run now)
 
-This is the current 16-column export **plus four columns**. Confirm the real
-`TblSOURCE` names first; keep the `AS` aliases exactly as written — Supabase
-keys off those, not off the MAP names.
+This is the current 16-column export **plus up to four columns**, depending on
+what Q1 found on `TblSOURCE`.
+
+⚠️ **Drop any of the last four that Q1 said isn't there** — `source_code`,
+`college_course`, `potential_student`, `test_student`. `Potential Student` in
+particular is being added by Sam and may not exist on the grain yet. **Do not
+wait for it.** The 16 core columns are the export; the rest are bonuses, and
+each can be added in a later run without redoing anything.
+
+Keep the `AS` aliases exactly as written — Supabase keys off those, not off the
+MAP names.
 
 ```sql
 SELECT k.StudentKey AS student_key, s.CollegeID AS college_id, s.ExhibitID AS exhibit_id, s.ID AS source_row_id, s.[Credit Recommendation] AS credit_rec, s.[Course Type] AS course_type, s.[Catalog Year] AS catalog_year, s.PotentialCredits AS potential_credits, s.CreditsInReview AS credits_in_review, s.AppliedCredits AS applied_credits, s.TranscribedCredits AS transcribed_credits, s.ArticulatedCredits AS articulated_credits, s.MilitaryCredits AS military_credits, s.NonMilitaryCredits AS non_military_credits, s.ApprenticeshipCredits AS apprenticeship_credits, s.CPLStatusPlan AS cpl_status_plan, s.SourceCode AS source_code, s.[College Course] AS college_course, s.[Potential Student] AS potential_student, s.[Test Student] AS test_student
