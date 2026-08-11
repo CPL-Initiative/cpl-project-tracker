@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 467,
-    "bytes": 5464243,
+    "files": 469,
+    "bytes": 5491742,
     "over_budget": 6,
     "handoff_max": 142,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 88535,
+    "always_loaded_bytes": 89630,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 88535,
+        "bytes": 89630,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1403106,
+        "bytes": 1406096,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 190054,
+        "bytes": 192031,
         "over": 1
       },
       "lessons": {
         "files": 50,
-        "bytes": 1516666,
+        "bytes": 1526730,
         "over": 3
       },
       "kb_note": {
-        "files": 227,
-        "bytes": 1266653,
+        "files": 229,
+        "bytes": 1275658,
         "over": 0
       },
       "handoff": {
         "files": 126,
-        "bytes": 999229,
+        "bytes": 1001597,
         "over": 0
       }
     },
@@ -55,8 +55,8 @@
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1824,
-      "bytes": 1087703432,
+      "files": 1826,
+      "bytes": 1087758398,
       "heavy_bytes": 581688985,
       "heavy_share": 0.535,
       "ignore_filters": [
@@ -111,39 +111,39 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 88535,
+        "bytes": 89630,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 28535,
-        "ratio": 1.48
+        "over_by": 29630,
+        "ratio": 1.49
       },
-      "message": "88,535 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "89,630 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 190054,
+        "bytes": 192031,
         "limit": 40000,
         "lane": "index",
-        "over_by": 150054,
-        "ratio": 4.75
+        "over_by": 152031,
+        "ratio": 4.8
       },
-      "message": "190,054 B is 4.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "192,031 B is 4.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 148319,
+        "bytes": 153758,
         "limit": 120000,
         "lane": "lessons",
-        "over_by": 28319,
-        "ratio": 1.24
+        "over_by": 33758,
+        "ratio": 1.28
       },
-      "message": "148,319 B is 1.2× the lessons budget (120,000 B) — candidate for compaction",
+      "message": "153,758 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/cip_crosswalk_lessons.md"
     },
     {

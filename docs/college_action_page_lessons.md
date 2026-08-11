@@ -732,3 +732,83 @@ front of Sam as a written option set (revoke `anon` on the matview · assert the
 suppression invariant in CI · declare it public by design, as `chatbox_credentials`
 already is), because it gates the access shape *and* closes the one structural
 gap found this run.
+
+### 2026-08-11 (later) — SkyLink part 2: Sam read the live tab
+
+Two changes he asked for after using it, both shipped in **#1123**.
+
+**8. A suggested question that only fills the box is two steps, and the second
+one loses people.** Sam: *"so they don't have to take 2 steps and get lost."*
+The questions sit directly above an assistant that is **already mounted on the
+same tab**, so the obvious fix was to make `prefill()` send.
+
+That would have broken the **Sierra Training** tab silently. Its "Test in
+Sierra" hand-off depends on `prefill()` *not* sending, so a reviewer can edit a
+logged question before replaying it — a constraint recorded only in a code
+comment. `cpl_chat.js` gained a sibling **`ask()`** (fill + submit, matching the
+assistant's own starter chips); `askSierra()` prefers it and keeps `prefill()`
+as the fallback. Both halves are now asserted, because the failure mode of
+getting this wrong is silent in the other tab.
+
+**When two callers need different behaviour from one helper, add the sibling —
+do not retune the shared one.** The existing caller's requirement was invisible
+from the call site that wanted the change.
+
+**9. A classification label must ship with its scheme.** Sam asked for the tier
+block to read as prose and to *"add a very brief note in the title that shows
+the 3 tiers and brief criteria so users are grounded."* He was identifying a
+real gap, not asking for decoration: **"Advancing" alone is a verdict from a
+scheme the reader has never been shown.** The header now states it — Leading
+meets three or more, Advancing one or two, Inactive has essentially no CPL
+recorded — before the label lands.
+
+**10. In prose, the ORDER is the advice.** Rows are equal-weight by
+construction; a paragraph is not. The unmet criteria are now sorted by
+`actual ÷ threshold`, nearest first, so a college at 20.6% against a 25% bar
+reads that first instead of finding it fourth in a list. This is the "say how
+far" idea from the previous checkpoint, delivered by ordering rather than by
+adding a number. `met` remains the sole authority on whether a criterion is
+satisfied; `ratio` is display ordering only, and computes from the **unrounded**
+transcribed ratio for the same reason `met` does.
+
+**11. Inactive is not a score of zero.** The Cloudflare worker assigns that tier
+by *absence of recorded activity* (fewer than ten students AND zero units), not
+by counting the five criteria. Rendering it as "0 of 5" would blame a college
+for a scheme it never entered, so it gets its own sentence: what it reflects is
+that CPL is not reaching MAP, and that is the thing to fix first. Sam confirmed
+both this and the nearest-first ordering.
+
+**12. ⭐ A source-text assertion is unsound in BOTH directions.** Four tier
+checks grepped `briefingSrc` for exact phrases. Rewording broke them — and so
+did *reflowing*, because the copy is built from concatenated literals, so
+`/batch-upload already-posted credit/` never matches a source where the string
+is split across a `+`. Four tests went red on a correct page.
+
+That is the same root cause as the previous checkpoint's shipped "100%" bug seen
+from the other side: **the false green** (163 assertions passing on a page that
+contradicted itself) and **the false red** (four failures on a page that was
+fine), in one file, within an hour. Assertions about copy now run against
+`root.textContent`; source-greps are reserved for genuine source invariants like
+"this function body must never reference `state.viewSlot`". New note:
+`docs/kb-notes/methodology-assert-what-the-reader-sees.md`.
+
+**13. Reading the render found a defect no assertion would have named.** With
+all four tier states printed side by side, the zero-met case read *"you meet 0
+of the 5 criteria"* — arithmetic, not a sentence. Now *"you do not yet meet any
+of the five."* Thirty seconds of looking; nothing was ever going to grep for it.
+
+### Current state (part 2)
+
+`tests/college_briefing.test.js` **170 → 183**. My College is feature-complete
+apart from the three MAP links. Both remaining blockers are unchanged and both
+need a person: the URL shapes (Sam ← Malone and Pedro) and the RLS decision.
+
+⚠️ A concurrent session landed **#1124** (CIP tab) on `main` during this run.
+Sam frequently runs several at once — fetch before assuming your branch base is
+current, and expect `CLAUDE.md` to have moved.
+
+### Next concrete step (part 2)
+
+Unchanged: wire the three MAP links when the URL shapes arrive. If that stalls,
+put the RLS option set in front of Sam — it gates the access shape *and* closes
+the matview gap, and both are the same conversation.
