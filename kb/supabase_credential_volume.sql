@@ -90,6 +90,24 @@ create unique index map_exhibit_credential_pk on public.map_exhibit_credential (
 create index map_exhibit_credential_title on public.map_exhibit_credential (unified_title);
 
 -- ── Layer 2a: per (credential x college) ────────────────────────────────────
+--
+-- ⚠️ COMPLEMENTARY SUPPRESSION IS LOAD-BEARING (ADR decision 5). Suppressing
+-- the row was necessary and NOT sufficient. This view publishes the per-college
+-- components of a statewide total that layer 2b also publishes, and units SUM —
+-- so where exactly ONE college cell was hidden, the residual
+--     statewide_units - sum(published sibling units)
+-- WAS that college's figure, exactly. Measured on the first cut, before the fix:
+--     AP Chemistry            755.00 - 695.00 = 60.00   (1 hidden cell of 3)
+--     AP Calculus BC          588.00 - 540.00 = 48.00
+--     AP 2-D Art and Design    66.00 -  42.00 = 24.00
+-- Twelve-plus credentials were in that shape. Hiding one cell of a set that sums
+-- to a published total hides nothing.
+--
+-- Fix: within a credential, if only ONE cell would be suppressed, suppress the
+-- SMALLEST published cell alongside it, so two unknowns share the residual and
+-- no single college is pinned. Smallest = cheapest real information to lose.
+-- Cost measured: 16 complement cells (139 -> 123 published of 543).
+-- Standing assertion: `suppressed_cells = 1` must return ZERO rows.
 drop materialized view if exists public.map_credential_student_rollup cascade;
 
 create materialized view public.map_credential_student_rollup as
@@ -106,20 +124,33 @@ with grain as (
   from public.map_student_credit m
   join public.map_exhibit_credential k on k.exhibit_id = m.exhibit_id
   group by 1, 2
+), flagged as (
+  select g.*,
+         (g.students < 10) as base_supp,
+         count(*) filter (where g.students < 10)
+           over (partition by g.unified_title) as n_supp,
+         row_number() over (
+           partition by g.unified_title, (g.students < 10)
+           order by g.students, g.college_id) as rn_in_band
+  from grain g
 ), pub as (
-  select g.*, (g.students < 10) as supp from grain g
+  select f.*,
+         (f.base_supp
+          or (f.n_supp = 1 and not f.base_supp and f.rn_in_band = 1)) as supp
+  from flagged f
 )
 select p.unified_title, p.college_id, col.college_name,
        c.cpl_types, c.statewide, c.discipline,
-       p.supp                                                       as students_suppressed,
-       case when not p.supp then p.students end                     as students,
-       case when not p.supp then round(p.potential_units,2) end     as potential_units,
-       case when not p.supp then round(p.applied_units,2) end       as applied_units,
-       case when not p.supp then round(p.transcribed_units,2) end   as transcribed_units,
-       case when not p.supp then round(p.articulated_units,2) end   as articulated_units,
+       p.supp                                                        as students_suppressed,
+       (p.supp and not p.base_supp)                                  as suppressed_as_complement,
+       case when not p.supp then p.students end                      as students,
+       case when not p.supp then round(p.potential_units,2) end      as potential_units,
+       case when not p.supp then round(p.applied_units,2) end        as applied_units,
+       case when not p.supp then round(p.transcribed_units,2) end    as transcribed_units,
+       case when not p.supp then round(p.articulated_units,2) end    as articulated_units,
        case when not p.supp then round(p.apprenticeship_units,2) end as apprenticeship_units,
-       case when not p.supp then p.rows_needs_action end            as rows_needs_action,
-       case when not p.supp then p.rows_total end                   as rows_total
+       case when not p.supp then p.rows_needs_action end             as rows_needs_action,
+       case when not p.supp then p.rows_total end                    as rows_total
 from pub p
 left join public.chatbox_credentials c on c.unified_title = p.unified_title
 left join public.map_colleges col on col.college_id = p.college_id;
@@ -318,3 +349,18 @@ grant execute on function public.college_adoption_opportunities(text, integer)
 --              Officer Core (11)
 --   Server+/Tech+/Cloud+ -> colleges_with_student_data = 0, NOT suppressed:
 --              genuinely no student data, which must not render as a blind spot
+--
+-- ── Standing disclosure assertions (both must return 0) ─────────────────────
+-- 1. No published measure survives on a suppressed row:
+--      select count(*) from map_credential_student_rollup
+--       where students_suppressed and (students is not null
+--          or potential_units is not null or rows_total is not null);
+-- 2. No suppressed cell is recoverable by subtracting published siblings from
+--    the published statewide total:
+--      with per_col as (
+--        select unified_title,
+--               count(*) filter (where students_suppressed) as suppressed_cells
+--        from map_credential_student_rollup group by 1)
+--      select count(*) from map_credential_volume v
+--        join per_col p using (unified_title)
+--       where v.potential_units is not null and p.suppressed_cells = 1;

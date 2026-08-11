@@ -3798,3 +3798,28 @@ Malone dependency. ⚠️ **MAP has no "Apprenticeship" CPL type** (6 values onl
 and reads as "we do none". Durable: `methodology-a-concatenated-haystack-penalises-your-best-record`,
 `methodology-emit-the-threshold-with-the-label-it-prints`.
 Story: `docs/sierra_credential_naming_lessons.md` · handoff `docs/session_135_handoff.md`.
+
+### SkyDeck — the busy slides were screenshots, and they were clipping their own tables (2026-08-10, not a PR)
+
+Sam asked for a calmer version of the CAC deck's three pre-apprenticeship→baccalaureate pathway slides
+(13 Aug, California Apprenticeship Council: trade reps, employers, CCC/state, **DAS**). ⭐ **All three were
+single full-bleed PNGs** — every word pixels, nothing editable or accessible — **and their course tables ran
+off the bottom edge of the slide**, so rows below the fold were never visible to anyone, including the author.
+Busyness was the symptom; reference data pasted into a narrative slide was the cause. 3 slides → 6, native
+shapes on the deck's own master: a **spine** slide with a 120-unit credit ladder (CPL = 26–38 of the 60 in the
+associate, which satisfies the first 60 of the bachelor's), three trade slides each built in **3 clicks**
+(*the road → who does what → what it's worth*), two **appendix** crosswalks, originals kept as **hidden**
+slides. ⚠️ **The transcription caught two live data defects**: Carpentry's visible courses total **20.0 units**
+vs **26** cited, Cerritos **31.5** vs **38** (American River reconciles exactly at 29.5) — printed as caveats on
+the appendix so no number can be quoted without its flag; **still open with the two colleges**. Then speaker
+notes for all 15 slides + a printable run sheet, **13:00 of script inside the 15:00 slot**, every figure live at
+2026-08-10 13:50 UTC (**49,696 CPL students / 589 apprentices** = 1.2%, the runway number; **45 colleges could
+adopt an existing Fire Technology statewide exhibit today**). ⭐ **Sam corrected the pre-apprenticeship framing
+and that is the durable output**: a pre-apprentice earns CPL from **noncredit coursework**, **industry
+certifications**, and — the one nobody names — **clearing admission requirements for the apprenticeship
+itself**, which speeds *entry* not just completion; the Ironworkers slide's stage 1 already showed the first
+two. ⚠️ **Verify before the 13th**: the **44% apprentice-withdrawal** figure is NOT ours (a CTE policy source
+citing DAS, with DAS in the room — attribute, don't assert). Durable:
+`methodology-rebuild-a-flattened-diagram-as-a-built-slide`, `reference-cpl-at-the-pre-apprenticeship-stage`.
+Assets `presentations/cac_2026-08/` (decks not committed — 27 MB each).
+Story: `docs/cpl_presentations_lessons.md` · handoff `docs/session_136_handoff.md`.

@@ -8,6 +8,8 @@ related:
   - "[[docs/map_student_credit_reload]]"
   - "[[docs/session_136_handoff]]"
   - "[[docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale]]"
+superseded: true
+superseded_by: session_139_handoff.md
 ---
 
 # You are Session 137
