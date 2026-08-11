@@ -1,44 +1,14 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-11 · SkyRoute — Sierra can now say how many students hold a given credential, and a College page design is waiting for your reaction.",
+  "_as_of": "2026-08-11 (evening) · SkyRoute — Sierra answers per-credential student questions, and My College replaces Course Credit.",
   "_session": "SkyRoute (Session 138)",
   "_status": "Sierra can now answer questions like 'how many students statewide are eligible for a CompTIA certification, and which ones?' It previously said no statewide recommendation existed for CompTIA — there are ten — and then listed certifications from general knowledge rather than from MAP. The search itself was never broken; what was missing were student numbers per credential, because the student records carry exhibit codes rather than credential names. Those are now joined up, so CompTIA A+ shows at least 115 students across 7 colleges. Every such number is deliberately shown with its coverage, because we can only put a credential name to about 4% of student records so far — a college we cannot see is a blind spot, never a zero. Sierra also now reports groups under ten students as 'fewer than 10' to protect student privacy, and explains that if asked. Separately, a design for the new College page is ready for you to react to, built on real Bakersfield numbers, and your point about the 100% figure was confirmed: the colleges showing it are carrying 155,153 units of unacted-on credit between them.",
   "items": [
-    {
-      "id": "s134-cac-units",
-      "for": "Sam",
-      "tab": "—",
-      "text": "Before the 13th: two course lists in the CAC deck do not add up to the unit totals printed next to them. Carpentry shows twelve courses worth 20 units against 26 claimed; Cerritos shows fifteen worth 31.5 against 38 claimed. American River is exactly right at 29.5, so this is not a counting mistake — the original pictures cut off the bottom rows. Santiago Canyon and Cerritos need to send the full lists. Until they do, the appendix pages carry a printed warning so nobody quotes a number without it."
-    },
-    {
-      "id": "s134-cac-44pct",
-      "for": "Sam",
-      "tab": "—",
-      "text": "Before the 13th: the line that 44% of California apprentices withdraw before finishing is a powerful argument, but it did not come from our dashboard — it reaches us second hand, credited to DAS. DAS will be in the audience. Either check it with them beforehand or say out loud that it is their figure rather than stating it as ours. It is flagged three times in the pack."
-    },
     {
       "id": "s131-sierra-23",
       "for": "Sam",
       "tab": "Sierra Training",
       "text": "Twenty-three pieces of real feedback on Sierra are waiting to be read, nine of them thumbs-down. The oldest has been sitting since 1 July. The robot rows that used to drown this list are gone."
-    },
-    {
-      "id": "s137-applied-zero-units",
-      "for": "Sam",
-      "tab": "Course Credit",
-      "text": "A new follow-up list exists: 24,885 records where a college marked the credit 'applied to the student's CPL plan' but recorded zero units actually applied - and 24,561 of them have articulated credit already sitting behind them. That is 12,375 students across just 32 colleges, so it is a workable list rather than a systemic problem. It may be a recording habit rather than missing work, but it is why our two ways of counting 'applied' differ by 55%, so it is worth understanding before we publish either number."
-    },
-    {
-      "id": "s138-college-tab-design",
-      "for": "Sam",
-      "tab": "Course Credit",
-      "text": "A design for the new College page is ready for you to react to: pick your college or district, then see where you stand, what to do first, and a box for each kind of CPL with what you already accept and what you could adopt. Every number in it is real Bakersfield data. Nothing has been built yet on purpose — tell me what to change, and it would be worth showing the MAP team and a few colleagues in the field first."
-    },
-    {
-      "id": "s138-hundred-pct",
-      "for": "Sam",
-      "tab": "Course Credit",
-      "text": "You were right that the 100% figure is unhelpful. Confirmed with the data: the fourteen colleges showing 100% are sitting on 155,153 units of credit nobody has acted on, about 11,000 each. The percentage only measures the credit they already awarded, so a small amount awarded perfectly reads as finished. Proposal is to keep it but move it down and label it honestly."
     },
     {
       "id": "s138-comptia-live",
@@ -75,6 +45,36 @@
       "for": "Sam",
       "tab": "MAP Users",
       "text": "Two things here need a person, not a session: four colleges publish no usable address at all for a credit question, and the fifty-two colleges that do have a CPL Assistant were never checked for a student contact. Sessions are blocked from opening college websites, so this needs a human or a differently-connected runner."
+    },
+    {
+      "id": "s139-my-college",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "The College Briefing tab is now 'My College' and has been reworked from the design you reacted to: pick your college, see where you stand, and a box for each kind of CPL showing what you already accept and what you could adopt. The old Course Credit tab has been folded into it and retired. Worth a look — four more sections (Sierra, funding, district picker, student requests) come next session."
+    },
+    {
+      "id": "s139-malone-spec",
+      "for": "Sam",
+      "tab": "—",
+      "text": "Malone has a step-by-step spec ready: six Access queries then three MAP Custom Reports. Nothing blocks him. Three things worth getting back from him — how much CPL activity arrives through college landing pages and the Student Portal, whether the fresh extract still matches our live figures, and one sentence on a table called TblSTU_EXH_BUNDLE that appears in none of our runbooks."
+    },
+    {
+      "id": "s139-durable-id",
+      "for": "Sam",
+      "tab": "—",
+      "text": "Worth raising with MAP: the row id we rely on to add columns without a full reload appears to be assigned by Access, not by MAP — it runs 1 to 537,908 with no gaps at all, which is what a freshly numbered table looks like. If Access is ever rebuilt, that id changes meaning silently. A stable row id from MAP would remove the risk permanently. There is a safety check in place meanwhile."
+    },
+    {
+      "id": "s139-eacr",
+      "for": "Fable",
+      "tab": "Sierra Training",
+      "text": "Wire EACR's prescriptive layer into Supabase — Sam's catch. It knows, per credential, which colleges could adopt it and the course each already teaches, which turns 'you could adopt CompTIA A+' into 'adopt it against the course you already run'."
+    },
+    {
+      "id": "s139-finish-tab",
+      "for": "Fable",
+      "tab": "My College",
+      "text": "Finish My College: the Sierra ask box, the funding box showing potential and current funding, a district picker, and the student CPL request box once a feed exists. Design is locked; four of eight sections are built."
     }
   ]
 }

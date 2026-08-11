@@ -24,30 +24,51 @@ where status <> 'superseded'
 order by event_date desc nulls last limit 40;
 ```
 
-## 🎯 PRIORITY 1 — wire EACR's prescriptive layer (Sam's catch)
+## 🎯 PRIORITY 1 — finish the My College tab
 
-Sam: *"You might notice that Sierra would need to be wired to EACR, CER, etc. on
-COBI…"* **CER is already in** — `chatbox_credentials` was synced from
-`credential_reference_data.js`, which is why the CompTIA records exist. **EACR is
-not.**
+Four sections built and merged; **four remain**, and Sam explicitly deferred them
+to you (2026-08-11: *"We'll pick up those remaining threads in the next
+session"*).
 
-`statewide_prescriptive.js` (`window.CPL_STATEWIDE_PRESCRIPTIVE`, keyed by
-`unified_title`) holds, per credential, **the colleges that could adopt it + the
-likely local course each already teaches**. That is strictly richer than the
-`potential_colleges` answer COLLEGE·ADOPT gives today: it turns *"adopt CompTIA
-A+"* into *"adopt it against CIS-25, which you already run."* Sync it the way
-`kb/_sync_credential_catalog.py` syncs the catalogue.
+| Thread | State |
+|---|---|
+| **Ask Sierra about \<college\>** | not built — decide embed vs deep-link to the CPL Assistant tab |
+| **Funding box** ($50k ESS 25-82 · $35M share) | not built — `cpl_funding_data.js` is **not loaded** on the page; lazy-load it. Bakersfield models ≈ **$426K** from 46,171 headcount (1.83% of the $23.24M pool) — but resolve the **$150K floor waterfall**, don't ship my flat proportional number |
+| **District picker** | not built — needs a district→colleges map; `cpl_funding_data.js` carries `district` per college |
+| **Student CPL request uploads** | designed, **blocked** — no portal feed exists in Supabase |
 
-## 🎯 PRIORITY 2 — build the College tab, after Sam reacts
+⭐ **Design is locked and Sam reacted to it twice.** Mock:
+`https://claude.ai/code/artifact/8788b96a-b67b-4844-b7b9-4b7e5bce6b22` —
+expandable boxes, per-population funding detail, averages in the header.
 
-Design published as an artifact and **updated twice on his direction**; he has
-NOT signed off. Real Bakersfield data throughout. Shape: college/district picker →
-Sierra ask box → "Where you stand" (every figure a fraction, never a bare %) →
-"Start here" (3 steps, each with a done state) → CPL-type boxes (expandable, each
-with *how funding is achieved with that population*) → student-request box →
-coverage/FERPA footer.
+⚠️ **Two averages, 2.2× apart, must both appear** (Bakersfield: 4.78 units across
+all 582 CPL students, **10.62 among the 262 who actually received credit**).
+Quoting one alone misleads in opposite directions.
 
-⚠️ **Do not build it before he reacts** — he asked to see designs first, twice.
+## 🎯 PRIORITY 2 — Malone's dataset spec is waiting on him
+
+`docs/map_dataset_spec_for_malone.md` (branch `claude/malone-dataset-spec`, PR
+open). Nothing blocks him. **Three things to expect back:**
+
+1. **Q2's four-row result** — how much CPL activity arrives via landing pages /
+   Student Portal. This decides whether two live filters stay.
+2. **Q3 reconciliation** against the live figures (204,714 / 1,285,289.35 /
+   112,950.75). A mismatch means the extract changed.
+3. One sentence on **`TblSTU_EXH_BUNDLE`** — it appears in no runbook we hold.
+
+⚠️ **`source_row_id` is an Access autonumber, not a stable MAP id** — `1…537,908`
+with **zero gaps**. If `TblSOURCE` is re-imported it renumbers, and an append
+would misalign silently while succeeding on all 537,908 rows. Gate **A4b** (the
+`chk_` columns) is the compensating control. **Worth asking MAP for a durable row
+id** — same exposure applies to `tblStudentKey.StudentKey`.
+
+## 🎯 PRIORITY 3 — EACR's prescriptive layer → Supabase
+
+Sam's catch, still unbuilt. `statewide_prescriptive.js` knows *the likely local
+course each college already teaches*, turning "adopt CompTIA A+" into "adopt it
+against CIS-25, which you already run." Sync it the way
+`kb/_sync_credential_catalog.py` syncs the catalogue. **CER is already in**;
+EACR is not.
 
 ## ✅ What shipped — #1113, Sierra **v38** live
 
@@ -130,16 +151,30 @@ timestamp against the function's `updated_at`.**
 
 | # | Item | State |
 |---|---|---|
-| 1 | **EACR `statewide_prescriptive.js` → Supabase** | **next** |
-| 2 | College tab build | awaiting Sam's reaction to the design |
-| 3 | Course Credit tab still leads with the saturating 100% | diagnosed, not rebuilt |
-| 4 | Student CPL request uploads box | designed, needs a portal feed |
+| 1 | **My College tab** — Sierra ask · funding box · district picker · student-requests | 4 of 8 sections built; Sam deferred the rest |
+| 2 | **EACR `statewide_prescriptive.js` → Supabase** | Sam's catch, unbuilt |
+| 3 | Malone's Q2 / Q3 / `TblSTU_EXH_BUNDLE` answers | waiting on him |
+| 4 | Ask MAP for a **durable row id** (`TblSOURCE.ID` is an Access autonumber) | raised, not asked |
 | 5 | COLLEGE·CRED (Mt. SAC Request-Review language) | queued |
 | 6 | k=10 revisit — breadth vs volume | Sam flagged, measured |
 | 7 | 6 real Sierra feedback rows untriaged | from S135 |
 | 8 | `docs/INDEX.md` 4.5× budget, `roadmap_archive.md` 2.4× | lint, untouched |
 
+## ⚠️ One thing about the My College tab you must not undo
+
+`courseShare()` carries the suppression logic **absorbed from the deleted
+`college_goal2.js`**: a rate is published ONLY when every goal-2 cell is visible,
+because publishing a share beside a hidden cell hands back exactly what
+suppression removed (any two of {total, part, rate} give the third). Its
+assertions moved into `college_briefing.test.js` — **49 checks, do not let that
+count fall.**
+
+Also: the "pot share is not rendered" guard **strips comments before matching**,
+because the file explains *why* the pot share was removed and that explanation
+necessarily contains the phrase. Match the code, not the prose — otherwise the
+guard is unfixable without deleting the explanation.
+
 ## Moniker
 
-**SkyBridge** — the bridge from student rows to credential names exists now;
-the next one runs from EACR to the answer a college can act on.
+**SkyBridge** — the bridge from student rows to credential names exists; the next
+runs from EACR to something a college can act on.

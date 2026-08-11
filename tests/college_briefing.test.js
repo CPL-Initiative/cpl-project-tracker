@@ -210,6 +210,99 @@ check("XSS: strategy text produced no elements", (function () {
   return prog && prog.querySelectorAll("script, img").length === 0 && /alert\(2\)/.test(prog.textContent);
 })());
 
+/* ── Absorbed from the retired Course Credit tab (2026-08-11) ──────────────
+ * college_goal2.js and its test were deleted when the Course Credit tab was
+ * folded into this page. Its load-bearing assertion moves here, because the
+ * logic did — courseShare() carries it now.
+ *
+ * The rule: a rate is published ONLY when every cell is visible. Publishing a
+ * share beside a suppressed cell hands back exactly what suppression removed,
+ * since any two of {total, part, rate} give you the third.
+ */
+check("courseShare: withholds the rate when ANY cell is suppressed",
+  (function () {
+    const r = M._courseShare([
+      { dest: "COURSE", rows_n: 80, suppressed: false },
+      { dest: "AREA", rows_n: null, suppressed: true, reason: "k" },
+      { dest: "ELECTIVE", rows_n: 20, suppressed: false }
+    ]);
+    return r && r.share === null && r.suppressed === true;
+  })(),
+  "a share published beside a hidden cell reveals the hidden cell");
+
+check("courseShare: publishes the rate when every cell is visible",
+  (function () {
+    const r = M._courseShare([
+      { dest: "COURSE", rows_n: 75, suppressed: false },
+      { dest: "AREA", rows_n: 15, suppressed: false },
+      { dest: "ELECTIVE", rows_n: 10, suppressed: false }
+    ]);
+    return r && Math.abs(r.share - 0.75) < 1e-9 && r.awarded === 100;
+  })());
+
+check("courseShare: no goal-2 rows is null, never 0%",
+  M._courseShare([]) === null && M._courseShare(null) === null,
+  "0% would read as 'this college awards nothing to courses' — a different claim");
+
+check("byCplType: a suppressed cell and an absent one do NOT collapse",
+  (function () {
+    const supp = M._byCplType({
+      rollup: [{ cpl_types: ["Military"], students: null, students_suppressed: true }],
+      adopted: [], potential: [], goal2: []
+    }).find(function (t) { return t.key === "Military"; });
+    const none = M._byCplType({ rollup: [], adopted: [], potential: [], goal2: [] })
+      .find(function (t) { return t.key === "Military"; });
+    return supp.students === null && supp.suppressedCells === 1
+        && none.students === null && none.suppressedCells === 0;
+  })(),
+  "'fewer than 10' (real students) must not render like 'none nameable' (a blind spot)");
+
+check("byCplType: counts adopted and adoptable separately",
+  (function () {
+    const t = M._byCplType({
+      rollup: [],
+      adopted:   [{ unified_title: "A", cpl_types: ["Industry Certification"] }],
+      potential: [{ unified_title: "B", cpl_types: ["Industry Certification"], statewide: true,
+                    adopter_colleges: ["x", "y", "z"] }],
+      goal2: []
+    }).find(function (t) { return t.key === "Industry Certification"; });
+    return t.articulated === 1 && t.couldAdopt === 1 && t.couldAdoptStatewide === 1
+        && t.candidates[0].peers === 3;
+  })());
+
+check("byCplType: ranks candidates by peer adoption, not alphabetically",
+  (function () {
+    const t = M._byCplType({
+      rollup: [], adopted: [],
+      potential: [
+        { unified_title: "Aaa", cpl_types: ["Military"], adopter_colleges: ["x"] },
+        { unified_title: "Zzz", cpl_types: ["Military"], adopter_colleges: ["x", "y", "z"] }
+      ],
+      goal2: []
+    }).find(function (t) { return t.key === "Military"; });
+    return t.candidates[0].title === "Zzz";
+  })(),
+  "peer adoption proxies well-trodden; it ranks OPPORTUNITIES, never colleges");
+
+// Strip comments before asserting: the file explains WHY the pot share was
+// removed, and that explanation necessarily contains the phrase. Matching the
+// prose instead of the code would make this guard unfixable.
+const briefingSrc = fs.readFileSync("college_briefing.js", "utf8");
+const briefingCode = briefingSrc
+  .replace(/\/\*[\s\S]*?\*\//g, "")
+  .replace(/^\s*\/\/.*$/gm, "");
+check("the pot share is NOT rendered",
+  !/% of the pot/.test(briefingCode),
+  "state allocation logic a coordinator cannot act on — Sam, 2026-08-10");
+check("advice is demoted below the data",
+  /Advice from the team/.test(briefingSrc));
+
+check("Course Credit nav/pane/boot removed from BOTH HTMLs",
+  !/course-credit/.test(cpl) && !/course-credit/.test(idx)
+  && !/college_goal2/.test(cpl) && !/college_goal2/.test(idx));
+check("the briefing nav reads My College in BOTH HTMLs",
+  /My College/.test(cpl) && /My College/.test(idx));
+
 // ── report ──
 let pass = 0;
 results.forEach(function (r) {
