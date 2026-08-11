@@ -141,7 +141,14 @@ A mismatch means the extract changed — stop and tell us before rebuilding on i
 
 ---
 
-### Q4 · Build R1 — the student credit detail export (run now)
+### Q4 · Build R1 — the student credit detail export
+
+This defines **R1**, the Custom Report the cron fetches. It is also what you run
+for a full reload.
+
+💡 **For the immediate job — just adding `Potential Student` — you do not need
+this.** Use the narrow two-column export in **Part 3 / A2** instead: no reload,
+no student key, no swap. Come back to Q4 when R1 itself is being rebuilt.
 
 This is the current 16-column export **plus up to four columns**, depending on
 what Q1 found on `TblSOURCE`.
@@ -235,9 +242,165 @@ credit data but missing from our current lookup — resolve from MAP's own list.
 
 ## Part 3 — What Sam does in Supabase
 
-The proven swap is [`docs/map_student_credit_reload.md`](map_student_credit_reload.md)
-(SQL 1–7). **Follow that, unchanged.** Below are only the deltas for this round —
-what to add, and two steps that did not exist before 2026-08-11.
+### ✅ You do NOT need to reload the 537,908 rows
+
+Adding a column is an **append in place**, not a reload. Verified 2026-08-11:
+
+```
+rows 537,908 · distinct source_row_id 537,908 · nulls 0 · range 1…537,908
+source_row_id IS the PRIMARY KEY (unique btree index)
+```
+
+So a narrow two-column file keyed on `source_row_id` updates the existing table
+directly. This is the payoff from making `source_row_id` mandatory back when the
+`SELECT DISTINCT` bug forced it — it was added to make a duplicated import
+recoverable, and it also makes every future column cheap.
+
+**The append path is strictly safer than a reload**, not just faster: there is no
+swap, so there is **no window where the table exists without RLS**. `SQL 6` — the
+step that must not be forgotten — simply doesn't apply.
+
+Use the full reload ([`map_student_credit_reload.md`](map_student_credit_reload.md),
+SQL 1–7) **only** when the underlying rows themselves change.
+
+---
+
+### The append path — A1 to A8
+
+#### A1 · Add the column. Instant.
+
+Nullable with no default is metadata-only in Postgres — it does not rewrite the
+table, regardless of row count.
+
+```sql
+alter table public.map_student_credit
+  add column if not exists potential_student text,
+  add column if not exists test_student      text,
+  add column if not exists source_code       text,
+  add column if not exists college_course    text;
+```
+
+#### A2 · Malone exports a NARROW file
+
+Not the full export — just the key plus whatever is new. Two to five columns.
+
+```sql
+SELECT s.ID AS source_row_id, s.[Potential Student] AS potential_student, s.[Test Student] AS test_student
+FROM TblSOURCE AS s;
+```
+
+⚠️ No `tblStudentKey` join needed — this file carries no student identifier at
+all, which makes it the safest export in the set.
+
+#### A3 · Stage it
+
+```sql
+drop table if exists public.stg_col_append;
+create table public.stg_col_append (
+  source_row_id     bigint,
+  potential_student text,
+  test_student      text
+);
+alter table public.stg_col_append enable row level security;
+```
+
+Import the CSV via Studio → Table Editor → Import data from CSV.
+
+#### A4 · Gate before you touch the live table. Both must pass.
+
+```sql
+select count(*)                        as rows_loaded,
+       count(distinct source_row_id)   as distinct_ids,
+       count(*) filter (where source_row_id is null) as null_ids
+from public.stg_col_append;
+```
+
+```sql
+select count(*) as conflicting_ids
+from (select source_row_id from public.stg_col_append
+      group by source_row_id
+      having count(distinct coalesce(potential_student,'~')) > 1) x;
+```
+
+- `distinct_ids` must equal your file's row count. `rows_loaded` being **higher**
+  is the known Studio importer duplication — harmless here **provided**
+  `conflicting_ids = 0`, because duplicate rows carrying the same value make the
+  update idempotent.
+- `conflicting_ids > 0` → the same row has two different values. Stop.
+
+#### A5 · Apply it
+
+```sql
+update public.map_student_credit m
+set potential_student = s.potential_student,
+    test_student      = s.test_student
+from (select distinct source_row_id, potential_student, test_student
+      from public.stg_col_append) s
+where m.source_row_id = s.source_row_id;
+```
+
+The `distinct` is safe **here** — unlike in the reload, where it destroyed rows —
+because A4 proved there are no conflicting payloads per id.
+
+#### A6 · Verify coverage
+
+```sql
+select count(*)                 as rows_total,
+       count(potential_student) as got_a_value,
+       count(*) filter (where potential_student is null) as still_null
+from public.map_student_credit;
+```
+
+`still_null` should be **0**. Anything else means the export did not cover every
+row — tell a session before building on it.
+
+Then see the distribution, which is also the answer to Q2 at student grain:
+
+```sql
+select potential_student, test_student, count(*) as rows_n,
+       count(distinct student_key) as students,
+       round(sum(potential_credits),2) as potential_units,
+       round(sum(applied_credits),2)   as applied_units
+from public.map_student_credit
+group by potential_student, test_student
+order by rows_n desc;
+```
+
+Then, because the update rewrote every row:
+
+```sql
+vacuum analyze public.map_student_credit;
+```
+
+#### A7 · ⚠️ Refresh the three materialized views, IN THIS ORDER
+
+**New 2026-08-11 — nothing does this automatically**, and skipping it leaves
+Sierra answering from the pre-append data while every other surface has moved.
+
+```sql
+refresh materialized view public.map_exhibit_credential;
+refresh materialized view public.map_credential_student_rollup;
+refresh materialized view public.map_credential_volume;
+```
+
+The bridge goes first — both rollups read it.
+
+#### A8 · ⚠️ Run both disclosure assertions. Both must return 0.
+
+See S10 below for the two queries — they apply to the append path identically.
+
+#### A9 · Clean up
+
+```sql
+drop table public.stg_col_append;
+```
+
+---
+
+### The full-reload path — only when the ROWS change
+
+Below are the deltas to [`map_student_credit_reload.md`](map_student_credit_reload.md)
+(SQL 1–7) if you ever do need it.
 
 ### S1 · Add the new columns to the staging table
 
@@ -342,7 +505,21 @@ it is not applied at all.
 
 `SQL 7`. `drop table public.stg_student_credit;` — never leave staging around.
 
-### The whole Supabase pass, as a checklist
+### Checklist — the append path (what you will actually do)
+
+| | Step | Done when |
+|---|---|---|
+| ☐ | A1 add columns | `alter table` returns immediately |
+| ☐ | A2 narrow export from Malone | CSV has `source_row_id` + the new fields |
+| ☐ | A3 stage | `stg_col_append` loaded |
+| ☐ | A4 **both gates** | `distinct_ids` = file rows **and** `conflicting_ids` = 0 |
+| ☐ | A5 update | rows updated ≈ 537,908 |
+| ☐ | A6 coverage + vacuum | `still_null` = 0 |
+| ☐ | **A7 refresh 3 MVs in order** | all three return `REFRESH MATERIALIZED VIEW` |
+| ☐ | **A8 both assertions** | both return **0** |
+| ☐ | A9 drop staging | `stg_col_append` gone |
+
+### Checklist — the full reload (only if the rows themselves changed)
 
 | | Step | Done when |
 |---|---|---|
