@@ -716,6 +716,26 @@
     consumeTestQuestion();
   }
 
+  // ── Mount the SAME assistant somewhere else (Sam, 2026-08-11) ──────────────
+  // The My College tab embeds the assistant rather than linking out to
+  // #chatbot, so a coordinator never leaves the page. This is deliberately a
+  // SECOND MOUNT of the one instance, not a second assistant: the audience
+  // rules, the feedback path, the markdown renderer and the conversation
+  // history all stay in this file, so they cannot drift apart. `convo` is
+  // module-level on purpose — the thread follows you between the two places.
+  //
+  // Only one host is live at a time (they are tab panes), and build() re-points
+  // the module's element refs, so re-mounting on tab switch is correct rather
+  // than duplicative. `_host` tracks which one currently owns the widget.
+  var _host = null;
+  function mountInto(host) {
+    if (!host || host === _host) return;
+    _host = host;
+    host.innerHTML = '';
+    host.setAttribute('data-cplchat-mounted', '1');
+    build(host);
+  }
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', mount);
   } else {
@@ -729,5 +749,14 @@
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
     consumeTestQuestion: consumeTestQuestion,
+    // Embed the one assistant elsewhere (My College). See mountInto above.
+    mountInto: mountInto,
+    // Prefill the box without sending — the visitor edits before asking.
+    prefill: function (q) {
+      if (!inputEl) return false;
+      inputEl.value = String(q == null ? '' : q).slice(0, 1000);
+      try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+      return true;
+    },
   };
 })();
