@@ -739,23 +739,24 @@ done."* Durable: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`,
 `methodology-order-the-post-deploy-check-after-the-deploy`.
 Story: `docs/sierra_credential_naming_lessons.md` · handoff `docs/session_139_handoff.md`.
 
-### SkyBridge — the funding box, and a plausible dollar figure is the dangerous kind (2026-08-11, Session 140)
+### SkyBridge — Sam drove the design live, and eleven steers later My College works (2026-08-11, Session 140)
 
-Built 3 of the 4 threads #1115 deferred (#1117): the **funding box**, a **72-district picker**, and **Ask Sierra** (a deep
-link reusing `cpl_chat.js`'s `cplSierraTestQ.v1` prefill — one chat instance, question filled in and **not sent**). The
-student-request box stays unbuilt: no portal feed exists to read. ⭐ **The handoff's worked figure was wrong and measuring
-it was the whole job** — Bakersfield modelled flat at $426,196 vs the model's **$414,856**. **50 of 115 colleges are pinned
-at the $150K floor**, and because the floor's **$1,999,687** cost comes out of the same pool the flat number is wrong for
-the colleges it *never touches* too. **A derivation can be wrong for cases its special case does not apply to** — and $426K
-is plausible enough that nobody would have queried it. So nothing re-derives a dollar: `cpl_funding.js` gained a read-only
-API (`onModelChange`/`ensureLoaded`/`_ess`/`_grant`) and the page renders what it returns (Mt. SAC cross-checks to
-**$522,239**, matching Sep-BOG). ⭐ **The join was the real risk** — funding keys on short names, MAP on full names, so an
-unchecked join attaches one college's money to another. Both sides now go through `cplCollegeShort()`: **115 of 116, 0
-collisions, 0 orphans**. That measurement exposed the resolver **could not round-trip its own output** (`"LA Swest"` →
-safe fallback → LA Southwest lost). ⚠️ **A safe fallback is safe only for the caller it was written for**: returning the
-input unmatched is right for a chip, silently wrong for a money join. Tests **49 → 87**, join asserted against the real
-rosters. Durable: `methodology-a-safe-fallback-is-caller-specific`, `methodology-reuse-the-model-not-its-formula`.
-Story: `docs/college_action_page_lessons.md` · handoff `docs/session_141_handoff.md`.
+Shipped **#1117** (funding box · 72-district picker · Ask Sierra), **#1118** (the transcribed correction) and **#1119**
+(**Sierra AI embedded at the top**, pickers inside it, per-college computed questions, and **"Who MAP has on file"**).
+Tests **49 → 104**. Mock (all real figures): `https://claude.ai/code/artifact/aa252c19-bdd3-485b-980c-1fed3a3edc7f`.
+⭐ **The handoff's own worked figure was wrong** — an allocation is an iterative **floor waterfall**: 50 of 115 colleges
+pinned at $150K, and the floor's **$1,999,687** comes out of the same pool, so a flat share is wrong for the floored
+colleges *and* for those it never touches (Bakersfield off by $11,340). Never re-derive; call `_alloc()`.
+⭐ **Sam's rulings:** "transcribed" in MAP is a **MARK**, not a posting — the college forwards the plan to **A&R, who
+enter it in the SIS by hand; there is no SIS integration**; Priority 3 routing is **standard practice, not gaming**;
+use the **funding tab names**, never "$35M"; **show contacts** on a college's own view; **"Sierra AI"**, not Sierra.
+⭐ **A percentile bar would hand a top-5% badge to a 21-student college** (Compton 96th on 21 vs Chaffey 97th on 1,495;
+median 4.5%, **16 tied at zero**). The tier system already exists — **Leading 14 / Advancing 89 / Inactive 12** — and
+**77% sit in one bucket**; fix is *"Advancing — 2 of 5"* with the missing criteria named, not a new scheme.
+⚠️ **A MAP↔MIS side-by-side will mostly show MIS ABOVE MAP** (87 of 111 have marked zero transcribed) — the *stronger*
+anti-"double work" argument. Durable: `methodology-reuse-the-model-not-its-formula`,
+`methodology-a-safe-fallback-is-caller-specific`. Story: `docs/college_action_page_lessons.md` · handoff
+`docs/session_141_handoff.md`.
 
 ## Troubleshooting
 

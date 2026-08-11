@@ -511,3 +511,103 @@ The student-request box needs a portal feed before it can be built — that is a
 MAP-side ask, not a build. Otherwise: **EACR's `statewide_prescriptive.js` →
 Supabase** (carryover 2), which would turn "adopt CompTIA A+" into "adopt it
 against CIS-25, which you already run" on both this tab and Sierra.
+
+---
+
+## 2026-08-11, later (SkyBridge) — the session where Sam drove the design live
+
+A long working session with Sam reacting in real time. Eleven steers, each one
+correcting or sharpening the last. What survived is worth more than the code.
+
+### ⭐ The corrections that mattered most
+
+**"Transcribed" in MAP is a MARK, not a posting.** A college checks the
+Transcribe step when it judges the CPL on a plan ready, then **forwards the plan
+to Admissions & Records, who enter the credit in the college SIS by hand**.
+There is **no SIS integration with MAP**, and closing that gap is hard because
+SIS setups and the coding of transcribed CPL differ markedly college to college.
+The tab had said *"Written onto the transcript"* and *"have not reached the
+transcript yet"* — asserting what MAP cannot know, and worse, telling a
+coordinator A&R's step was already handled. Fixed in #1118, guarded by four
+checks.
+
+The *why* now sits on the page, because without it marking a box reads as
+duplicate data entry: **MAP is the only real-time view of the CPL lifecycle.**
+The alternative is CO MIS reporting, which lags a semester to a year and is
+widely under-reported and mis-coded — hence the long-term goal of reconciling
+MAP to MIS.
+
+**"Without making it sound like gaming."** Priority 3 pays on students arriving
+through the Student Portal or a college landing page. Colleges can move it fast
+by routing students they already work with through those pages. Sam's first
+steer was *state that plainly*; his second was *don't frame it as a shortcut* —
+and the second was the better instinct, because **routing existing students
+through the public pages is not working the system, it is adopting the process
+the system is standardizing around.** Accepted deliberately: it defeats the
+primary purpose (community visibility) but standardizes procedures and
+technology, which is the long-run win.
+
+**Not "$35M" — the tab names.** *"That's just the term I use with you."* The
+pools are **2025–2026 $50K Seed Funding** and **2026–2028 College
+Implementation Funding**, lifted from the sub-tab buttons.
+
+**Sierra AI, not Sierra.** *"Just didn't want it to be confused with Sierra
+College."*
+
+**Show the contacts, don't withhold them.** The `ctx=external` suppression is
+for vendor embeds; a college's own view should show who MAP has on file so they
+can keep it current.
+
+### ⭐ Measurements that changed a design decision
+
+**The allocation is a floor waterfall, and a flat figure is wrong for colleges
+the floor never touches.** 50 of 115 colleges are pinned at the $150K minimum,
+and the floor's $1,999,687 cost comes out of the same pool — so Bakersfield, not
+floored, is still off by $11,340. Never re-derive; call `_alloc()`.
+
+**A rate-based percentile hands a top-5% badge to a college with 21 students.**
+Compton is 96th percentile on disposition rate with 21 students; Chaffey is 97th
+with 1,495. 26 of 111 colleges have fewer than 30 students. And the bottom half
+is degenerate — median 4.5%, p25 0.3%, 16 tied at exactly zero. **Recognition at
+the top is meaningful; a band anywhere else is noise wearing a rank.**
+
+**The existing tier system already exists and 77% of colleges are in one
+bucket** — Leading 14 / Advancing 89 / Inactive 12, from ≥3 of 5 criteria
+computed off the CCCCO Dashboard API. Three of the five are size; two are
+transcribed, colliding with this project's own "never rank on transcribed" rule.
+The fix is not a new scheme: show *"Advancing — 2 of 5"* with the missing three
+named, which turns a meaningless bucket into a to-do list.
+
+**For most colleges MAP undercounts, not MIS.** 87 of 111 have marked zero
+transcribed. So a MAP↔MIS side-by-side will mostly show MIS *above* MAP — which
+is a **stronger** argument against "double work," not a weaker one: the college
+is already doing the work and MAP cannot see it.
+
+**The waiting pile is almost all elective and PE.** Bakersfield's 4,306
+"articulated and waiting" units are three recommendations — GE Elective (3,073),
+PE (876), GE Elective again (357). Statewide the top 12 buckets are ~69% of the
+pile and nearly all GE/health/PE/lifelong-learning. The lead box calls this "the
+cheapest credit you will ever give" and should probably say what kind it is.
+
+### On the student-list question
+
+Sam asked whether we could list the students who could be awarded credit now.
+**No, for three reasons and the third is the one that would bite us:** the data
+carries only a surrogate `student_key` (no names, by design); it is 545 students
+at Bakersfield, not a short list; and **the tab is gated by a shared team
+phrase, so anyone signed in can pick any college.** What shipped instead is the
+grouping a coordinator acts on — approve the recommendation, and every student
+behind it moves.
+
+### Current state
+
+Live: Sierra AI embedded at the top of My College (`mountInto` on
+`cpl_chat.js` — one assistant, two mounts), pickers inside it, suggested
+questions computed per college, and "Who MAP has on file" with de-duplication.
+Mock carries three more sections not yet ported.
+
+### Next concrete step
+
+Port the funding-pool breakdown, the waiting-credit list and the resources
+section from the mock. Then the access shape: a per-college URL with **no
+picker**, `noindex`, team members keep the picker.
