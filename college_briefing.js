@@ -48,7 +48,25 @@
     { id: "admin", label: "Dean / Administrator" }
   ];
 
-  var state = { college: null, role: "any", data: null, loading: false, error: null, loadedSignedIn: null };
+  var state = {
+    college: null, role: "any", data: null, loading: false, error: null, loadedSignedIn: null,
+    // Per-college detail, fetched on selection rather than up front — 123
+    // colleges' worth of credential rows is not worth loading to show one.
+    detail: null, detailFor: null, detailLoading: false, detailError: null
+  };
+
+  // MAP's six CPL types, in the order a coordinator thinks about them, with the
+  // plain-language name beside MAP's own. Apprenticeship is deliberately NOT
+  // here: MAP has no such type, so a type filter returns 0 and reads as "we do
+  // none" — it is sourced from apprenticeship_credits instead.
+  var CPL_TYPES = [
+    { key: "Industry Certification", label: "Industry Certifications" },
+    { key: "Credit By Exam",         label: "Credit by Exam" },
+    { key: "Standardized Assessment", label: "Standardized Assessment" },
+    { key: "Military",               label: "Military" },
+    { key: "Portfolio Review",       label: "Portfolio Review" },
+    { key: "Other",                  label: "Other" }
+  ];
 
   function esc(s) {
     return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -268,7 +286,29 @@
       ".cb-bfrac{height:5px;border-radius:3px;background:var(--border);margin-top:6px;overflow:hidden;max-width:320px;}",
       ".cb-bfrac>i{display:block;height:100%;background:var(--brand);}",
       ".cb-warn{border:1px solid var(--warn,#b45309);border-radius:8px;padding:12px 14px;margin:14px 0;font-size:.83rem;}",
-      ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}"
+      ".cb-note{font-size:.78rem;color:var(--text-muted);margin-top:18px;line-height:1.5;}",
+      // ── Rework 2026-08-11: steps first, then data, advice last ──
+      ".cb-h{margin:26px 0 10px;font-size:1.02rem;color:var(--text-strong);}",
+      ".cb-stand{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;}",
+      ".cb-box{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:7px;}",
+      ".cb-box.lead{border-color:var(--mustard-fill,#E3B341);border-width:1.5px;}",
+      ".cb-big{font-size:1.45rem;font-weight:700;color:var(--text-strong);line-height:1.1;}",
+      ".cb-of{font-size:.83rem;color:var(--text-muted);}",
+      ".cb-lab{font-size:.82rem;color:var(--text-body);line-height:1.45;}",
+      ".cb-box .cb-bar{height:6px;border-radius:3px;background:var(--surface-muted,#ECE9E2);overflow:hidden;padding:0;border:0;min-width:0;}",
+      ".cb-box .cb-bar i{display:block;height:100%;background:var(--mustard-fill,#E3B341);border-radius:3px;}",
+      ".cb-floor{margin-top:0;margin-bottom:12px;border-left:3px solid var(--crimson,#920000);padding-left:10px;}",
+      ".cb-types{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px;}",
+      ".cb-type{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);display:flex;flex-direction:column;gap:9px;}",
+      ".cb-type header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;}",
+      ".cb-type h4{margin:0;font-size:.94rem;color:var(--text-strong);}",
+      ".cb-rows{display:flex;flex-direction:column;gap:6px;font-size:.85rem;}",
+      ".cb-r{display:flex;justify-content:space-between;gap:10px;align-items:baseline;}",
+      ".cb-r .v{font-weight:700;color:var(--text-strong);font-variant-numeric:tabular-nums;}",
+      ".cb-tag{font-size:.66rem;padding:2px 7px;border-radius:999px;border:1px solid var(--border-strong);color:var(--text-muted);white-space:nowrap;}",
+      ".cb-tag.sw{border-color:var(--mustard-fill,#E3B341);color:var(--mustard-text,#8B6800);}",
+      ".cb-opp{font-size:.81rem;color:var(--text-body);border-top:1px solid var(--border);padding-top:8px;display:flex;flex-direction:column;gap:3px;}",
+      ".cb-opp em{font-style:normal;color:var(--text-strong);font-weight:600;}"
     ].join("\n");
     document.head.appendChild(s);
   }
@@ -287,6 +327,147 @@
       if (i.measure.detail) h += '<div class="cb-d">' + esc(i.measure.detail) + "</div>";
     } else if (i.noData) {
       h += '<div class="cb-d">We hold no figure for this college — that is not the same as zero.</div>';
+    }
+    return h + "</div>";
+  }
+
+  /* ── Per-college detail ──────────────────────────────────────────────────
+   * Fetched when a college is picked. Three reads, all of published aggregates
+   * — never the student grain, which is reviewer-gated and too slow to
+   * aggregate live (measured >60s against a 1.7-5.0s budget).
+   *
+   * A FAILED READ IS `null`, NEVER 0. Every consumer below distinguishes "we
+   * could not read this" from "this college has none", because collapsing them
+   * is how a blind spot becomes a reported zero.
+   */
+  function loadCollege(name, root) {
+    var id = state.data && state.data.nameToId && state.data.nameToId[name];
+    if (id == null) { state.detail = null; state.detailFor = name; return Promise.resolve(); }
+    state.detailLoading = true; state.detailError = null; state.detailFor = name;
+    var h = authHeaders();
+    var q = encodeURIComponent('{"' + name.replace(/"/g, '\\"') + '"}');
+    return Promise.all([
+      jget(REST + "/map_credential_student_rollup?college_id=eq." + id
+         + "&select=unified_title,cpl_types,students,students_suppressed,potential_units,"
+         + "applied_units,transcribed_units,apprenticeship_units,rows_needs_action", { headers: h }),
+      jget(REST + "/chatbox_credentials?adopter_colleges=cs." + q
+         + "&select=unified_title,cpl_types,statewide", { headers: h }),
+      jget(REST + "/chatbox_credentials?potential_colleges=cs." + q
+         + "&select=unified_title,cpl_types,statewide,ccc_rec,adopter_colleges", { headers: h }),
+      jget(REST + "/map_college_goal2?college_id=eq." + id
+         + "&select=dest,rows_n,students,suppressed,reason", { headers: h })
+    ]).then(function (r) {
+      state.detail = { rollup: r[0] || [], adopted: r[1] || [], potential: r[2] || [], goal2: r[3] || [] };
+      state.detailLoading = false;
+    }).catch(function (e) {
+      state.detail = null; state.detailLoading = false;
+      state.detailError = e.message || String(e);
+    }).then(function () { if (root) render(root); });
+  }
+
+  /* PURE. Roll the per-college reads up per CPL type. Counts are FLOORS: only
+   * ~4% of student rows carry a nameable credential, so `students` here is what
+   * we can SEE, never a total. That is why `articulated` (from the curated
+   * catalogue, which is complete) and `students` (from the grain, which is not)
+   * are reported side by side rather than as one number. */
+  function byCplType(detail) {
+    if (!detail) return null;
+    var out = CPL_TYPES.map(function (t) {
+      var adopted = detail.adopted.filter(function (c) {
+        return (c.cpl_types || []).indexOf(t.key) >= 0; });
+      var pot = detail.potential.filter(function (c) {
+        return (c.cpl_types || []).indexOf(t.key) >= 0; });
+      var roll = detail.rollup.filter(function (r) {
+        return (r.cpl_types || []).indexOf(t.key) >= 0; });
+      var students = 0, seen = false, supp = 0;
+      roll.forEach(function (r) {
+        if (r.students != null) { students += r.students; seen = true; }
+        else if (r.students_suppressed) supp++;
+      });
+      // Best three adoption candidates, by how many peers already run it —
+      // peer adoption is the honest proxy for "well-trodden", and it ranks
+      // OPPORTUNITIES, never colleges.
+      var cands = pot.slice().sort(function (a, b) {
+        return (b.adopter_colleges || []).length - (a.adopter_colleges || []).length;
+      }).slice(0, 3).map(function (c) {
+        return { title: c.unified_title, peers: (c.adopter_colleges || []).length,
+                 statewide: !!c.statewide, rec: c.ccc_rec || null };
+      });
+      return {
+        key: t.key, label: t.label,
+        articulated: adopted.length,
+        couldAdopt: pot.length,
+        couldAdoptStatewide: pot.filter(function (c) { return c.statewide; }).length,
+        students: seen ? students : null,
+        suppressedCells: supp,
+        candidates: cands
+      };
+    });
+    return out;
+  }
+
+  /* PURE. The five headline figures. Each carries its own denominator. */
+  function standing(summary, detail) {
+    if (!summary) return null;
+    var elig = num(summary.dormant_credits), art = num(summary.articulated_waiting),
+        app = num(summary.applied_credits), tr = num(summary.transcribed_credits),
+        stu = num(summary.students);
+    var appr = null;
+    if (detail) {
+      appr = 0;
+      detail.rollup.forEach(function (r) {
+        if (r.apprenticeship_units != null) appr += Number(r.apprenticeship_units) || 0; });
+    }
+    return { eligible: elig, articulatedWaiting: art, applied: app, transcribed: tr,
+             students: stu, apprenticeshipUnits: appr };
+  }
+
+  /* PURE. The goal-2 course share — absorbed from the retired Course Credit
+   * tab. It is DEMOTED here on purpose: it divides by credit a college has
+   * ALREADY AWARDED, so a small amount awarded perfectly reads 100% and looks
+   * finished. Measured 2026-08-11: the 14 colleges at 100% carry 155,153
+   * dormant units between them. It is never shown without that context. */
+  function courseShare(goal2) {
+    if (!goal2 || !goal2.length) return null;
+    var tot = 0, course = null, anySupp = false;
+    goal2.forEach(function (c) {
+      if (c.suppressed) { anySupp = true; return; }
+      tot += (c.rows_n || 0);
+      if (c.dest === "COURSE") course = c.rows_n || 0;
+    });
+    if (anySupp || !tot || course == null) return { share: null, suppressed: anySupp };
+    return { share: course / tot, suppressed: false, awarded: tot };
+  }
+
+  function standBox(big, of, lab, frac, cls) {
+    var w = (frac == null) ? null : Math.max(0, Math.min(1, frac));
+    return '<div class="cb-box' + (cls ? " " + cls : "") + '">'
+      + '<div><span class="cb-big">' + esc(big) + '</span> <span class="cb-of">' + esc(of) + '</span></div>'
+      + (w == null ? "" : '<div class="cb-bar"><i style="width:' + (w * 100).toFixed(1) + '%"></i></div>')
+      + '<div class="cb-lab">' + lab + '</div></div>';
+  }
+
+  function typeBox(t) {
+    var h = '<div class="cb-type"><header><h4>' + esc(t.label) + "</h4>"
+      + (t.couldAdoptStatewide ? '<span class="cb-tag sw">' + t.couldAdoptStatewide + " statewide</span>" : "")
+      + "</header><div class=\"cb-rows\">";
+    h += '<div class="cb-r"><span>You articulate</span><span class="v">' + t.articulated + "</span></div>";
+    h += '<div class="cb-r"><span>You could adopt</span><span class="v">' + t.couldAdopt + "</span></div>";
+    // A suppressed cell and an absent one are different facts and must not
+    // render alike: "fewer than 10" means real students, "none nameable" means
+    // we cannot see any.
+    var stu = t.students != null && t.students > 0 ? String(t.students)
+            : (t.suppressedCells > 0 ? "fewer than 10" : "none nameable");
+    h += '<div class="cb-r"><span>Your students <span class="cb-tag">floor</span></span><span class="v">'
+       + esc(stu) + "</span></div>";
+    h += "</div>";
+    if (t.candidates.length) {
+      h += '<div class="cb-opp"><span>Top candidates, by peers already doing it:</span>';
+      t.candidates.forEach(function (c) {
+        h += "<span><em>" + esc(c.title) + "</em> — " + c.peers + " peer college"
+           + (c.peers === 1 ? "" : "s") + (c.statewide ? " · statewide standard" : "") + "</span>";
+      });
+      h += "</div>";
     }
     return h + "</div>";
   }
@@ -331,12 +512,89 @@
       });
     }
 
+    // ── Where you stand ───────────────────────────────────────────────────
+    // Every figure carries its denominator. Nothing here can reach 100% and
+    // stop: the fractions are over the OPPORTUNITY, not over what was already
+    // done.
+    var summary = state.data && state.data.summaryByName && state.data.summaryByName[state.college];
+    var st = standing(summary, state.detail);
+    if (state.detailLoading) {
+      h += '<div class="cb-note">Measuring this college…</div>';
+    } else if (state.detailError) {
+      h += '<div class="cb-warn">Could not read this college\'s detail: ' + esc(state.detailError)
+        + '. That is a <b>failed read, not an empty result</b> — nothing below should be taken as "this college has none".</div>';
+    }
+    if (st && st.eligible != null) {
+      var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
+      h += '<h3 class="cb-h">Where you stand</h3>';
+      h += '<div class="cb-stand">';
+      h += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
+        "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
+        st.eligible > 0 ? (st.articulatedWaiting || 0) / st.eligible : 0, "lead");
+      h += standBox(fmt(st.applied), "units applied",
+        "Credit you have put on a student record — the measure the funding formula rewards.",
+        pctApplied, "");
+      h += standBox(fmt(st.transcribed), "units transcribed",
+        "Written onto the transcript. <b>Never compare this across colleges</b> — some batch-upload already-transcribed AP/IB/CLEP credit, so it measures recording practice as much as outcomes.",
+        st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
+      h += standBox(fmt(st.students), "CPL students",
+        "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
+        null, "");
+      h += "</div>";
+    } else if (summary && summary.suppressed) {
+      h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
+        + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
+    }
+
+    // ── By CPL type ───────────────────────────────────────────────────────
+    var types = byCplType(state.detail);
+    if (types) {
+      h += '<h3 class="cb-h">By CPL type</h3>';
+      h += '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
+        + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
+        + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
+        + 'are complete.</div>';
+      h += '<div class="cb-types">';
+      types.forEach(function (t) { h += typeBox(t); });
+      h += "</div>";
+    }
+
+    // ── Course share — absorbed from the retired Course Credit tab ────────
+    var cs = courseShare(state.detail && state.detail.goal2);
+    if (cs) {
+      h += '<h3 class="cb-h">Of the credit you have already awarded</h3>';
+      if (cs.share == null) {
+        h += '<div class="cb-note">Some cells are withheld for this college, so the course share is not published — '
+          + 'publishing it alongside a hidden cell would hand back what suppression removed.</div>';
+      } else {
+        h += '<div class="cb-note"><b>' + (Math.round(cs.share * 1000) / 10).toFixed(1) + '%</b> of the credit this '
+          + 'college has <b>already awarded</b> landed on a real course rather than a generic elective or a GE area — '
+          + 'across ' + fmt(cs.awarded) + ' awarded rows.'
+          + (st && st.eligible != null
+              ? ' It says nothing about the <b>' + fmt(st.eligible) + ' units still waiting</b>, which is the number to act on.'
+              : '')
+          + (cs.share >= 1 ? ' <b>100% here does not mean finished</b> — it means everything awarded so far went to a course.' : '')
+          + "</div>";
+      }
+    }
+
+    // ── Advice — the team's strategies, demoted below the steps ───────────
+    if (b.programs.length) {
+      h += '<h3 class="cb-h">Advice from the team\'s funding plan</h3>';
+      h += '<div class="cb-note">These are written by the team, not by this page. '
+        + esc(b.measuredTotal) + ' of ' + esc(b.strategyTotal) + ' carry a measurement; the rest are advice, '
+        + 'shown without a score rather than as an unticked box.</div>';
+    }
+
     b.programs.forEach(function (p) {
       h += '<div class="cb-prog"><h3>' + esc(p.label) + "</h3>";
       p.priorities.forEach(function (pr) {
-        var share = pr.share != null ? Math.round(pr.share * 100) + "% of the pot" : null;
+        // The pot share is deliberately NOT shown. "50% of the pot" is state
+        // allocation logic — true, and nothing a coordinator can act on. Sam,
+        // 2026-08-10: "we tend to get buried in rationale rather than just
+        // telling them the simple steps."
         h += '<div class="cb-pri"><h4>' + esc(pr.title || pr.description || "Priority " + (pr.index + 1)) + "</h4>";
-        h += '<div class="cb-meta">' + [share, pr.metric ? "Measured as: " + esc(pr.metric) : null].filter(Boolean).join(" · ");
+        h += '<div class="cb-meta">' + [pr.metric ? "Measured as: " + esc(pr.metric) : null].filter(Boolean).join(" · ");
         if (pr.title && pr.description) h += "<br>" + esc(pr.description);
         h += "</div>";
         pr.items.forEach(function (i) { h += itemHtml(i); });
@@ -345,10 +603,10 @@
       h += "</div>";
     });
 
-    h += '<div class="cb-note">Strategies come from the team’s own funding configuration (' + esc(b.scenario) + ", Year " + esc(b.year) +
-      "), not from this page — edit them there and they change here. " + esc(b.measuredTotal) +
-      " of " + esc(b.strategyTotal) + " have a measurement today; the rest are advice, shown without a score rather than as an unticked box. " +
-      "Figures are suppressed for colleges with fewer than 10 CPL students.</div>";
+    h += '<div class="cb-note">Nothing here is irreversible, and a recommendation ruled Not Applicable can be revisited — '
+      + 'ruling one is real work, not a failure. Strategies come from the team’s funding configuration ('
+      + esc(b.scenario) + ", Year " + esc(b.year) + "); edit them there and they change here. "
+      + "Student figures are withheld below 10 CPL students, to protect student privacy.</div>";
 
     root.innerHTML = h;
     wire(root);
@@ -356,7 +614,12 @@
 
   function wire(root) {
     var c = root.querySelector("#cb-college"), r = root.querySelector("#cb-role");
-    if (c) c.onchange = function () { state.college = c.value || null; recompute(); render(root); };
+    if (c) c.onchange = function () {
+      state.college = c.value || null;
+      state.detail = null; state.detailFor = null; state.detailError = null;
+      recompute(); render(root);
+      if (state.college) loadCollege(state.college, root);
+    };
     if (r) r.onchange = function () { state.role = r.value; render(root); };
   }
 
@@ -403,8 +666,12 @@
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
       var contactByName = {};
       contacts.forEach(function (r) { contactByName[r.college] = r.primary_contact_email || null; });
+      var summaryByName = {};
+      names.forEach(function (n) { summaryByName[n] = summaryById[nameToId[n]] || null; });
       state.data = {
         colleges: names,
+        nameToId: nameToId,
+        summaryByName: summaryByName,
         raw: { config: (cfgRow && cfgRow.config) || {}, nameToId: nameToId, summaryById: summaryById, contactByName: contactByName }
       };
       if (!res[0]) state.error = "the funding configuration did not load";
@@ -432,6 +699,11 @@
     // exposed for tests — all three are pure
     _collectPrograms: collectPrograms,
     _buildBriefing: buildBriefing,
+    // Exposed for tests. courseShare in particular carries the suppression
+    // logic absorbed from the retired Course Credit tab.
+    _courseShare: courseShare,
+    _byCplType: byCplType,
+    _standing: standing,
     _measureFor: measureFor,
     _state: state,
     _SCENARIO: SCENARIO,
