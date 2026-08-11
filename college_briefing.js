@@ -201,11 +201,21 @@
         var applied = num(c.applied_credits), tr = num(c.transcribed_credits);
         if (applied == null || tr == null || applied <= 0) return null;
         var p = pct(tr, applied);
+        // ⚠️ "Transcribed" in MAP means the COLLEGE MARKED THE STEP DONE — it does
+        // NOT mean the credit is on the student's transcript. The college
+        // forwards the CPL plan to Admissions & Records, who post it in the
+        // college SIS by hand: there is NO SIS integration with MAP (Sam,
+        // 2026-08-11), and closing that gap is hard because SIS setups and
+        // the coding of transcribed CPL differ markedly college to college.
+        // Saying "reached the transcript" asserts something MAP cannot know.
         return {
-          headline: fmt(tr) + " of " + fmt(applied) + " applied units transcribed (" + p + "%)",
+          headline: fmt(tr) + " of " + fmt(applied) + " applied units marked transcribed in MAP (" + p + "%)",
           detail: p >= 100
-            ? "Every applied unit has been transcribed."
-            : fmt(applied - tr) + " applied units have not reached the transcript yet.",
+            ? "Every applied unit has been marked."
+            : fmt(applied - tr) + " applied units have not been marked yet. Forward the student's CPL plan to "
+              + "Admissions & Records, who post the credit in your own student system — MAP does not do that for "
+              + "you. Marking the step here is what puts these numbers in front of people now rather than a year "
+              + "from now.",
           fraction: { n: tr, d: applied, pct: p },
           emphasis: p < 60 ? "high" : "normal"
         };
@@ -727,8 +737,11 @@
       h += standBox(fmt(st.applied), "units applied",
         "Credit you have put on a student record — the measure the funding formula rewards.",
         pctApplied, "");
-      h += standBox(fmt(st.transcribed), "units transcribed",
-        "Written onto the transcript. <b>Never compare this across colleges</b> — some batch-upload already-transcribed AP/IB/CLEP credit, so it measures recording practice as much as outcomes.",
+      h += standBox(fmt(st.transcribed), "units marked transcribed",
+        "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
+        + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
+        + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
+        + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
         st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
       h += standBox(fmt(st.students), "CPL students",
         "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
