@@ -598,6 +598,17 @@
     return String(s == null ? "" : s).replace(/�/g, " ").replace(/\s+/g, " ").trim();
   }
 
+  /* A percentage that never rounds UP into a claim it cannot support.
+   * 99.76% rounding to "100%" while a non-military row sits visibly above it
+   * is a self-contradiction, and it is the same trap the tier block guards
+   * against, where a published 25.0% is really 24.96%. 100 is returned only
+   * when the share genuinely reaches it. */
+  function safePct(x, dp) {
+    var f = Math.pow(10, dp || 0), p = (Number(x) || 0) * 100;
+    if (p >= 100) return 100;
+    return Math.min(100 - 1 / f, Math.round(p * f) / f);
+  }
+
   function waitingBreakdown(detail, summary) {
     if (summary && summary.suppressed) return { suppressed: true };
     if (!detail || !detail.waiting) return null;
@@ -1153,7 +1164,7 @@
         + " units</b> in the first box above — same credit, broken out by what it would count toward.</div>";
       h += '<div class="cb-wait">';
       wb.groups.forEach(function (g) {
-        var p = Math.round(g.share * 1000) / 10;
+        var p = safePct(g.share, 1);
         h += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
           + '<span class="v">' + fmt(Math.round(g.units)) + " units · " + p + "%</span></div>"
           + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, p)) + '%"></i></div>';
@@ -1167,9 +1178,11 @@
       });
       h += "</div>";
       if (wb.militaryShare >= 0.6) {
-        h += '<div class="cb-note cb-good"><b>' + Math.round(wb.militaryShare * 100)
-          + "% of it is credit for basic military service.</b> That is the good news on this page: it is not "
-          + "hundreds of separate judgment calls, it is close to <b>one decision applied repeatedly</b> — you have "
+        var allMil = wb.militaryShare >= 1;
+        h += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
+          + " of it is credit for basic military service.</b> That is the good news on this page: it is not "
+          + "hundreds of separate judgment calls, it is " + (allMil ? "" : "close to ")
+          + "<b>one decision applied repeatedly</b> — you have "
           + "already articulated the exhibit, and every one of these students has a DD-214 or JST on file. "
           + "Statewide the pattern is the same: <b>98.8%</b> of all waiting credit is basic military service, and "
           + "65 of the 73 colleges with any are at 100%.</div>";
@@ -1670,6 +1683,7 @@
     _tierStanding: tierStanding,
     _topStrategy: topStrategy,
     _cleanText: cleanText,
+    _safePct: safePct,
     _RESOURCES: RESOURCES,
     _byCplType: byCplType,
     _standing: standing,

@@ -615,6 +615,28 @@ const wbBlank = M._waitingBreakdown({ waiting: [
 check("(K) a blank credit recommendation is NAMED, not dropped",
   wbBlank.total === 10 && /no recommendation named/.test(wbBlank.groups[0].top[0].name));
 
+// ⚠ A PERCENTAGE MUST NEVER ROUND UP INTO A CLAIM IT CANNOT SUPPORT.
+// Caught by reading the rendered page, not by an assertion: 4,488 + 500 of
+// 5,000 military units is 99.76%, which rounded to "100% of it is credit for
+// basic military service" while a non-military row sat visibly above it. Same
+// trap as the tier block's published 25.0% that is really 24.96%.
+check("(K) 99.76% never renders as 100%", M._safePct(0.9976) === 99);
+check("(K) …nor at one decimal place", M._safePct(0.9976, 1) === 99.8);
+check("(K) a genuine 100% still renders as 100", M._safePct(1) === 100 && M._safePct(1, 1) === 100);
+check("(K) ordinary values are unharmed",
+  M._safePct(0.877, 1) === 87.7 && M._safePct(0.105, 1) === 10.5 && M._safePct(0.5) === 50);
+
+const wbNear = M._waitingBreakdown({ waiting: WROWS }, {});
+check("(K) the near-total case says a number below 100, not '100%'",
+  M._safePct(wbNear.militaryShare) === 99);
+
+// All-military is a real state and reads as "All", not "100%" — the sentence
+// also drops its "close to" hedge, which is wrong when it IS all of it.
+const wbAll = M._waitingBreakdown({ waiting: WROWS.slice(0, 2) }, {});
+check("(K) a genuinely all-military college is exactly 1", wbAll.militaryShare === 1);
+check("(K) …and the copy has an unhedged branch for it",
+  /allMil \? "" : "close to "/.test(briefingSrc));
+
 // One string in the source carries a U+FFFD replacement character — the byte
 // was already lost before MAP stored it, so it cannot be recovered here.
 check("(K) an unrecoverable byte renders legibly, not as a broken glyph",
