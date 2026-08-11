@@ -52,7 +52,16 @@
     college: null, role: "any", data: null, loading: false, error: null, loadedSignedIn: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
-    detail: null, detailFor: null, detailLoading: false, detailError: null
+    detail: null, detailFor: null, detailLoading: false, detailError: null,
+    // District filter for the college picker (from the funding roster, which
+    // carries a district per college). "" = every college.
+    district: "",
+    // The funding model. Two stages on purpose: the ROSTER (cpl_funding_data.js,
+    // ~49KB) powers the district picker as soon as the tab opens; the MODEL
+    // (cpl_funding.js, ~370KB) is pulled only when a college is chosen and
+    // there is actually a money box to fill.
+    roster: "idle",   // idle | loading | ready | error
+    funding: "idle"   // idle | loading | ready | error
   };
 
   // MAP's six CPL types, in the order a coordinator thinks about them, with the
@@ -88,6 +97,27 @@
   function num(v) { var n = Number(v); return isFinite(n) ? n : null; }
   function fmt(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
   function pct(a, b) { return (!b || b <= 0 || a == null) ? null : Math.round((a / b) * 1000) / 10; }
+  function money(n) {
+    if (n == null || !isFinite(n)) return "—";
+    return "$" + Math.round(Number(n)).toLocaleString("en-US");
+  }
+
+  /* PURE. district -> [MAP college names]. Both sides resolve through
+   * cplCollegeShort(), the same crosswalk the money join uses, so a college
+   * can never land in one district here and another there. */
+  function districtIndex(names) {
+    var roster = window.CPL_FUNDING && window.CPL_FUNDING.colleges;
+    if (!roster || !names) return null;
+    var byShort = {};
+    roster.forEach(function (c) { byShort[shortName(c.college)] = c.district || null; });
+    var idx = {};
+    names.forEach(function (n) {
+      var d = byShort[shortName(n)];
+      if (!d) return;
+      (idx[d] = idx[d] || []).push(n);
+    });
+    return idx;
+  }
 
   /* ── The strategy library ────────────────────────────────────────────────
    * PURE. config → { programs, unread }. Walks every project so a program the
@@ -308,7 +338,36 @@
       ".cb-tag{font-size:.66rem;padding:2px 7px;border-radius:999px;border:1px solid var(--border-strong);color:var(--text-muted);white-space:nowrap;}",
       ".cb-tag.sw{border-color:var(--mustard-fill,#E3B341);color:var(--mustard-text,#8B6800);}",
       ".cb-opp{font-size:.81rem;color:var(--text-body);border-top:1px solid var(--border);padding-top:8px;display:flex;flex-direction:column;gap:3px;}",
-      ".cb-opp em{font-style:normal;color:var(--text-strong);font-weight:600;}"
+      ".cb-opp em{font-style:normal;color:var(--text-strong);font-weight:600;}",
+      // ── Funding, district roster, Sierra asks (2026-08-11) ──
+      ".cb-fund{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;}",
+      ".cb-fbox{border:1px solid var(--border);border-radius:9px;padding:14px 15px;background:var(--surface);}",
+      ".cb-fbox header{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px;}",
+      ".cb-fbox h4{margin:0;font-size:.94rem;color:var(--text-strong);}",
+      ".cb-fbig{font-size:1.6rem;font-weight:700;color:var(--text-strong);line-height:1.1;margin-bottom:6px;font-variant-numeric:tabular-nums;}",
+      ".cb-flags{margin:10px 0 0;padding-left:18px;font-size:.79rem;color:var(--text-body);line-height:1.45;}",
+      ".cb-flags li{margin-bottom:5px;}",
+      ".cb-ess-list{list-style:none;margin:12px 0 0;padding:0;display:flex;flex-direction:column;gap:9px;}",
+      ".cb-ess-list li{display:flex;gap:9px;align-items:flex-start;border-top:1px solid var(--border);padding-top:9px;font-size:.83rem;}",
+      ".cb-ess-list li:first-child{border-top:0;padding-top:0;}",
+      ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand);margin-top:2px;}",
+      ".cb-ess-list .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
+      ".cb-ess{flex:0 0 auto;width:1.5em;text-align:center;font-weight:700;font-size:.9rem;}",
+      ".cb-ess.met{color:var(--ok,#2f7a3d);}",
+      ".cb-ess.partial{color:var(--mustard-text,#8B6800);}",
+      ".cb-ess.not{color:var(--text-muted);}",
+      ".cb-ess.pending,.cb-ess.na{color:var(--text-muted);font-size:.7rem;font-weight:600;}",
+      // Fixed layout + an explicit colgroup: auto layout parks columns past the
+      // wrapper's right edge on some filtered row sets (Session 43 finding).
+      ".cb-dist{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.85rem;}",
+      ".cb-dist th{text-align:left;font-size:.72rem;color:var(--text-muted);font-weight:600;padding:6px 8px;border-bottom:1px solid var(--border-strong);}",
+      ".cb-dist th:not(:first-child),.cb-dist td.n{text-align:right;font-variant-numeric:tabular-nums;}",
+      ".cb-dist td{padding:7px 8px;border-bottom:1px solid var(--border);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}",
+      ".cb-pick{background:none;border:0;padding:0;font:inherit;color:var(--link,#0b5cad);cursor:pointer;text-align:left;}",
+      ".cb-pick:hover{text-decoration:underline;}",
+      ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
+      ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text);cursor:pointer;}",
+      ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}"
     ].join("\n");
     document.head.appendChild(s);
   }
@@ -439,6 +498,101 @@
     return { share: course / tot, suppressed: false, awarded: tot };
   }
 
+  /* ── The college's money ──────────────────────────────────────────────────
+   * Two appropriations, and they are not interchangeable:
+   *   • the $50,000 ESS 25-82 seed grant — already distributed, Spring 2026
+   *   • this college's share of the $35M implementation pool — an allocation
+   *     CAP earned against MAP performance, never a cheque in the post
+   *
+   * Both come from cpl_funding.js, which owns the model. NOTHING here
+   * re-derives a dollar figure. The allocation is a floor waterfall — every
+   * college below the $150K minimum-viable floor is pinned to it and the
+   * remainder re-splits across the rest, iteratively — with a guaranteed rural
+   * allowance layered on top. "headcount share x pool" reads perfectly
+   * plausible and is wrong for every college the waterfall touches, which is
+   * most of the small ones. So we call the model and render what it returns.
+   */
+  function fundingModule() {
+    var M = window.CPL_FUNDING_TAB;
+    return (M && typeof M._alloc === "function" && typeof M._grant === "function") ? M : null;
+  }
+
+  /* The funding roster keys its colleges by SHORT name ("Bakersfield"), the
+   * briefing by MAP's full name ("Bakersfield College"). Both sides go through
+   * cplCollegeShort() — the curator-owned crosswalk — so the join is one
+   * resolver rather than a private guess. Measured 2026-08-11: 115 of 116 MAP
+   * colleges resolve to a distinct funding row, 0 collisions on either side,
+   * 0 funding rows unreachable. The one residue is Calbright, a NONCREDIT
+   * FEEDER that is genuinely not on the 115-college credit roster — handled as
+   * its own state below, never as $0. */
+  function shortName(name) {
+    return (typeof window.cplCollegeShort === "function") ? window.cplCollegeShort(name) : name;
+  }
+
+  /* Returns null when the model has not loaded — which the caller must render
+   * as "not loaded yet", never as "this college gets nothing". An unresolved
+   * name and a measured zero are different claims. */
+  function fundingFor(name) {
+    var M = fundingModule();
+    if (!M || !name) return null;
+    var key = shortName(name);
+    var grant = M._grant(key);
+    if (!grant) return { key: key, onRoster: false };
+    var model = null;
+    try { model = M._model(); } catch (e) { /* the model renders its own empty state */ }
+    return {
+      key: key, onRoster: true, grant: grant,
+      floor: model ? model.floor : null,
+      // A noncredit feeder receives the seed grant but is not in the $35M
+      // college pool — it is funded through the $1M noncredit carve-out, a
+      // different mechanism. _alloc returns null and we say so.
+      alloc: grant.kind === "credit" ? M._alloc(key) : null,
+      ess: M._ess(key),
+      rural: M._isRural(key),
+      district: M._district(key)
+    };
+  }
+
+  /* PURE. The three ESS 25-82 priority outcomes as WHERE YOU ARE, not as
+   * ticks. A bare checkmark is what taught colleges that uploading is the
+   * finish line, so outcome 2 — the one this page can actually measure —
+   * carries the real fraction: how many statewide credit recommendations this
+   * college articulates, and how many more are sitting there to adopt. */
+  function essProgress(f, detail, essMeta) {
+    if (!f || !f.ess) return null;
+    var swAdopted = null, swPotential = null;
+    if (detail) {
+      swAdopted = detail.adopted.filter(function (c) { return c.statewide; }).length;
+      swPotential = detail.potential.filter(function (c) { return c.statewide; }).length;
+    }
+    return [
+      { n: 1, o: f.ess.o1,
+        title: "Upload a JST for every enrolled veteran",
+        frac: null,
+        next: "Every JST uploaded creates a Student CPL Plan — that is the step that puts a veteran's credit in front of somebody." },
+      { n: 2, o: f.ess.o2,
+        title: "Adopt or adapt the statewide credit recommendations",
+        frac: swAdopted == null ? null : {
+          have: swAdopted,
+          of: (essMeta && essMeta.n_statewide_credentials) || null,
+          available: swPotential
+        },
+        next: swPotential
+          ? "The By CPL type section below ranks your best candidates by how many peer colleges already run them."
+          : null },
+      { n: 3, o: f.ess.o3,
+        title: "Proactively identify and serve CPL-eligible students",
+        frac: null,
+        next: "Identifying a student is the cheap half; the credit still has to be applied to their record to count." }
+    ];
+  }
+
+  function essMark(o) {
+    var g = o.state === "met" ? "✓" : o.state === "partial" ? "◐" : o.state === "not" ? "—"
+          : o.state === "na" ? "n/a" : "⏳";
+    return '<span class="cb-ess ' + esc(o.state) + '">' + g + "</span>";
+  }
+
   function standBox(big, of, lab, frac, cls) {
     var w = (frac == null) ? null : Math.max(0, Math.min(1, frac));
     return '<div class="cb-box' + (cls ? " " + cls : "") + '">'
@@ -481,8 +635,28 @@
     if (state.loading) { root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Measuring…</div>'; return; }
 
     var names = (state.data && state.data.colleges) || [];
-    var h = '<div class="cb-bar"><div><label for="cb-college">College</label><select id="cb-college"><option value="">Choose a college…</option>' +
-      names.map(function (n) { return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") +
+    var dIdx = districtIndex(names);
+    var districts = dIdx ? Object.keys(dIdx).sort() : [];
+    // The district picker NARROWS the college list; it never changes a figure.
+    // A college with no district on the funding roster stays reachable under
+    // "All districts" — filtering it out of every option would make it
+    // unselectable, which is a worse failure than showing it unfiltered.
+    var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
+
+    var h = '<div class="cb-bar">';
+    if (districts.length) {
+      h += '<div><label for="cb-district">District</label><select id="cb-district">'
+        + '<option value="">All districts (' + names.length + " colleges)</option>"
+        + districts.map(function (d) {
+            return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
+              + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
+          }).join("")
+        + "</select></div>";
+    } else if (state.roster === "loading") {
+      h += '<div><label>District</label><select disabled><option>Loading districts…</option></select></div>';
+    }
+    h += '<div><label for="cb-college">College</label><select id="cb-college"><option value="">Choose a college…</option>' +
+      shown.map(function (n) { return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") +
       '</select></div><div><label for="cb-role">Your role</label><select id="cb-role">' +
       ROLES.map(function (r) { return '<option value="' + r.id + '"' + (r.id === state.role ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
       "</select></div></div>";
@@ -501,6 +675,25 @@
     if (!state.college) {
       h += '<div class="cb-note">Choose a college to see where it stands against the ' + esc(b.strategyTotal) +
         " strategies the team has written for " + esc(b.scenario) + ", Year " + esc(b.year) + ".</div>";
+      // A district was picked but no college yet — show the district's colleges
+      // and the one figure that matters, so a district office has somewhere to
+      // start. Ordered ALPHABETICALLY, never by the figure: this is a list of
+      // work to do, not a league table.
+      if (state.district && dIdx && dIdx[state.district]) {
+        h += '<h3 class="cb-h">' + esc(state.district) + "</h3>";
+        h += '<table class="cb-dist"><colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>'
+          + "<thead><tr><th>College</th><th>Articulated, waiting</th><th>CPL students</th></tr></thead><tbody>";
+        dIdx[state.district].slice().sort().forEach(function (n) {
+          var s = state.data.summaryByName && state.data.summaryByName[n];
+          var waiting = s && !s.suppressed ? fmt(num(s.articulated_waiting)) : (s && s.suppressed ? "withheld" : "—");
+          var stu = s && !s.suppressed ? fmt(num(s.students)) : (s && s.suppressed ? "&lt;10" : "—");
+          h += '<tr><td><button type="button" class="cb-pick" data-college="' + esc(n) + '">' + esc(n) + "</button></td>"
+            + '<td class="n">' + waiting + '</td><td class="n">' + stu + "</td></tr>";
+        });
+        h += "</tbody></table>";
+        h += '<div class="cb-note">“Withheld” means fewer than 10 CPL students, not zero activity. '
+          + "A dash means this college is not in the credit summary at all — an absent figure, which is not the same as a measured zero.</div>";
+      }
       root.innerHTML = h; wire(root); return;
     }
 
@@ -559,6 +752,83 @@
       h += "</div>";
     }
 
+    // ── Your funding ──────────────────────────────────────────────────────
+    // Two appropriations, kept visibly apart. Neither figure is derived here.
+    var f = fundingFor(state.college);
+    h += '<h3 class="cb-h">Your funding</h3>';
+    if (state.funding !== "ready" && state.funding !== "error") {
+      h += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (state.funding === "ready" && !f) {
+      h += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (state.funding === "error") {
+      h += '<div class="cb-warn">The funding model did not load. That is a <b>failed read, not a finding</b> — '
+        + "it does not mean this college has no allocation.</div>";
+    } else if (f && !f.onRoster) {
+      h += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
+        + "The noncredit institutions are funded through the $1M noncredit carve-out, a separate mechanism from the "
+        + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
+    } else if (f) {
+      // (a) the $50,000 ESS 25-82 seed grant — already distributed
+      h += '<div class="cb-fund">';
+      h += '<div class="cb-fbox"><header><h4>$50,000 seed grant</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
+      if (f.grant.declined) {
+        h += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
+          + "That is a decision on record, not a missed payment.</div>";
+      } else {
+        h += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
+          + '<div class="cb-lab">Received. Must be fully expended by <b>June 30, 2028</b>. '
+          + "It was directed at the three priority outcomes below — progress on them is tracked through MAP, "
+          + "as ESS 25-82 specifies. <b>These are not a compliance determination.</b></div>";
+      }
+      var ess = essProgress(f, state.detail, window.CPL_FUNDING_ESS);
+      if (ess) {
+        h += '<ol class="cb-ess-list">';
+        ess.forEach(function (e) {
+          h += "<li>" + essMark(e.o) + "<div><b>" + esc(e.title) + "</b>";
+          if (e.frac && e.frac.have != null) {
+            h += '<div class="cb-num">' + e.frac.have + " articulated"
+              + (e.frac.of ? " of the " + e.frac.of + " statewide credit recommendations in MAP" : "")
+              + (e.frac.available ? " · <b>" + e.frac.available + " more</b> available to adopt" : "")
+              + "</div>";
+          }
+          h += '<div class="cb-d">' + esc(e.o.why) + "</div>";
+          if (e.next) h += '<div class="cb-d">' + e.next + "</div>";
+          h += "</div></li>";
+        });
+        h += "</ol>";
+      }
+      h += "</div>";
+
+      // (b) this college's share of the $35M implementation pool
+      h += '<div class="cb-fbox"><header><h4>Implementation funding</h4><span class="cb-tag">$35M pool · allocation cap</span></header>';
+      if (!f.alloc) {
+        h += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
+      } else {
+        h += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
+        h += '<div class="cb-lab">This is a <b>cap, not a cheque</b> — the college earns against it on what MAP records it '
+          + "doing. It is modelled, and the model is under active revision.</div>";
+        var bits = [];
+        if (f.alloc.floored) {
+          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
+            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+        }
+        if (f.alloc.rural_w) {
+          bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");
+        }
+        if (f.alloc.gate_blocked) {
+          bits.push("<b>Participation requirements are outstanding</b>" +
+            (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
+            ". The cap is unchanged and the dollars roll forward; nothing is lost by fixing it late, but nothing is earned until it is.");
+        } else if (f.alloc.gate_pending) {
+          bits.push("Participation is recorded but not yet confirmed.");
+        }
+        if (bits.length) h += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
+      }
+      h += "</div></div>";
+      h += '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
+        + "open it for the full derivation, the year split and the priority breakdown.</div>";
+    }
+
     // ── Course share — absorbed from the retired Course Credit tab ────────
     var cs = courseShare(state.detail && state.detail.goal2);
     if (cs) {
@@ -603,6 +873,19 @@
       h += "</div>";
     });
 
+    // ── Ask Sierra ────────────────────────────────────────────────────────
+    // Deep link into the one chat instance; the question is prefilled and NOT
+    // sent, so it can be edited first.
+    h += '<h3 class="cb-h">Ask Sierra about ' + esc(state.college) + "</h3>";
+    h += '<div class="cb-note">These open the CPL Assistant with the question filled in. '
+      + "Nothing is sent until you press send — edit it first if it is not quite your question. "
+      + "Sierra answers from MAP's own records, and says so when it cannot see something.</div>";
+    h += '<div class="cb-asks">';
+    sierraQuestions(state.college).forEach(function (q) {
+      h += '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>";
+    });
+    h += "</div>";
+
     h += '<div class="cb-note">Nothing here is irreversible, and a recommendation ruled Not Applicable can be revisited — '
       + 'ruling one is real work, not a failure. Strategies come from the team’s funding configuration ('
       + esc(b.scenario) + ", Year " + esc(b.year) + "); edit them there and they change here. "
@@ -612,15 +895,114 @@
     wire(root);
   }
 
+  function selectCollege(name, root) {
+    state.college = name || null;
+    state.detail = null; state.detailFor = null; state.detailError = null;
+    recompute(); render(root);
+    if (state.college) {
+      loadCollege(state.college, root);
+      loadFunding(root);
+    }
+  }
+
   function wire(root) {
-    var c = root.querySelector("#cb-college"), r = root.querySelector("#cb-role");
-    if (c) c.onchange = function () {
-      state.college = c.value || null;
-      state.detail = null; state.detailFor = null; state.detailError = null;
-      recompute(); render(root);
-      if (state.college) loadCollege(state.college, root);
-    };
+    var c = root.querySelector("#cb-college"), r = root.querySelector("#cb-role"),
+        d = root.querySelector("#cb-district");
+    if (c) c.onchange = function () { selectCollege(c.value, root); };
     if (r) r.onchange = function () { state.role = r.value; render(root); };
+    if (d) d.onchange = function () {
+      state.district = d.value || "";
+      // Clear a selection the new filter no longer contains, rather than
+      // leaving a college on screen that the picker above it does not list.
+      if (state.college && state.district) {
+        var idx = districtIndex((state.data && state.data.colleges) || []);
+        var inDistrict = idx && idx[state.district] && idx[state.district].indexOf(state.college) >= 0;
+        if (!inDistrict) { state.college = null; state.detail = null; state.detailFor = null; }
+      }
+      recompute(); render(root);
+    };
+    Array.prototype.forEach.call(root.querySelectorAll(".cb-pick"), function (b) {
+      b.onclick = function () { selectCollege(b.getAttribute("data-college"), root); };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll(".cb-ask"), function (b) {
+      b.onclick = function () { askSierra(b.getAttribute("data-q")); };
+    });
+  }
+
+  /* ── Lazy loads: the funding roster, then the funding model ───────────── */
+  function loadScript(src, globalName, cb) {
+    if (window[globalName]) { cb(); return; }
+    if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+      window.CPL_TABS.loadScript(src, globalName, cb);
+      return;
+    }
+    var s = document.createElement("script");
+    s.src = src; s.onload = cb; s.onerror = cb;
+    document.head.appendChild(s);
+  }
+
+  /* Stage 1 — the roster alone, for the district picker. */
+  function loadRoster(root) {
+    if (state.roster !== "idle") return;
+    state.roster = "loading";
+    loadScript("cpl_funding_data.js", "CPL_FUNDING", function () {
+      state.roster = window.CPL_FUNDING ? "ready" : "error";
+      if (root) render(root);
+    });
+  }
+
+  /* Stage 2 — the model, for the money. We call the module's own boot() via
+   * ensureLoaded() rather than re-implementing its load sequence, so this page
+   * reads the SAME figures the Implementation Funding tab shows — including the
+   * Budget ledger appropriations, which override the baked pool values. The
+   * ledger/perf/ESS sidecars land asynchronously, so we subscribe to the
+   * module's change notification and re-render when they do; without that the
+   * ESS outcomes would sit on "⏳ not loaded yet" forever. */
+  function loadFunding(root) {
+    if (state.funding !== "idle") return;
+    state.funding = "loading";
+    loadScript("cpl_funding.js", "CPL_FUNDING_TAB", function () {
+      var M = fundingModule();
+      if (!M) { state.funding = "error"; if (root) render(root); return; }
+      if (typeof M.onModelChange === "function") {
+        M.onModelChange(function () { if (state.funding === "ready" && root) render(root); });
+      }
+      try { M.ensureLoaded(); } catch (e) { /* the model renders its own empty state */ }
+      state.funding = "ready";
+      if (root) render(root);
+    });
+  }
+
+  /* ── Ask Sierra ───────────────────────────────────────────────────────────
+   * A DEEP LINK, not a second chat. cpl_chat.js already owns one chat instance
+   * and already has a prefill handoff (the Sierra Training tab uses it): write
+   * the question to sessionStorage, navigate to #chatbot, and it fills the box
+   * WITHOUT sending. Embedding a second Sierra here would mean two chat states,
+   * two feedback paths and two places for the audience rules to drift. The
+   * never-auto-send behaviour is inherited, which matters: the question below
+   * is a starting point a person should be able to edit before asking. */
+  var SIERRA_Q_KEY = "cplSierraTestQ.v1";
+  function askSierra(question) {
+    try { sessionStorage.setItem(SIERRA_Q_KEY, String(question || "").slice(0, 1000)); }
+    catch (e) { /* storage unavailable — the chat still opens, just unprefilled */ }
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate("chatbot");
+    } else {
+      location.hash = "#chatbot";
+    }
+  }
+
+  /* PURE. The questions worth asking about a named college. Phrased as a person
+   * would ask them, with the college named, because Sierra resolves a home
+   * college from the question text. */
+  function sierraQuestions(college) {
+    if (!college) return [];
+    return [
+      "What credit for prior learning does " + college + " already articulate?",
+      "Which statewide credit recommendations could " + college + " adopt that it has not yet?",
+      "How many students at " + college + " have prior learning that has not been applied to their record?",
+      "Who should a student at " + college + " contact to request a credit review?"
+    ];
   }
 
   /* ── Load ────────────────────────────────────────────────────────────── */
@@ -683,9 +1065,13 @@
   function activate() {
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
-    if (state.data && state.loadedSignedIn === signedIn()) { render(root); return; }
+    if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); render(root); return; }
     if (!signedIn()) { state.data = null; render(root); return; }
     state.loading = true; render(root);
+    // The roster is small and powers the district picker, so it starts now,
+    // in parallel with the Supabase reads. The 370KB model waits until a
+    // college is actually chosen.
+    loadRoster(root);
     loadAll().then(function () {
       state.loading = false; state.loadedSignedIn = signedIn(); render(root);
     }).catch(function (e) {
@@ -705,6 +1091,17 @@
     _byCplType: byCplType,
     _standing: standing,
     _measureFor: measureFor,
+    // Funding / district / Sierra — pure, and the join is the risky one: it
+    // decides which college's money is shown, so it is tested against the
+    // real rosters rather than a fixture.
+    _fundingFor: fundingFor,
+    _essProgress: essProgress,
+    _districtIndex: districtIndex,
+    _shortName: shortName,
+    _sierraQuestions: sierraQuestions,
+    _askSierra: askSierra,
+    _SIERRA_Q_KEY: SIERRA_Q_KEY,
+    _money: money,
     _state: state,
     _SCENARIO: SCENARIO,
     _YEAR: YEAR
