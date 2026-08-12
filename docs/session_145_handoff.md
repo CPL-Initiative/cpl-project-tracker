@@ -1,150 +1,116 @@
 ---
-title: Session 145 handoff (SkyLink → next) — Sierra Training needs to be usable by a human, and the identity write is queued
+title: Session 145 handoff (SkyTouch → next) — Ashley's HTH crosswalk shipped; the MAP-side step is the blocker
 created: 2026-08-12
 updated: 2026-08-12
-tags: [handoff, sierra-training, triage, identity, taxonomy, districts]
+tags: [handoff, futuro-health, crosswalk, cna, partners, data-quality]
 related:
-  - "[[docs/college_identity_lessons]]"
-  - "[[docs/cpl_assistant_lessons]]"
-  - "[[docs/kb-notes/methodology-validate-a-code-column-by-its-structural-invariant]]"
-  - "[[docs/session_144_handoff]]"
+  - "[[docs/futuro_hth_crosswalk_lessons]]"
+  - "[[docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence]]"
+  - "[[docs/kb-notes/reference-course-level-mis-beats-program-level-coci]]"
 ---
 
 # You are Session 145
 
-Two sessions ran in parallel on 2026-08-12: **SkyPro** (My College fold-down,
-handoff 144) and **SkyLink** (the college/district identity crosswalk, this
-one). Both are merged. Read 144 too — its carryover is real and is repeated
-below where it is still open.
+Session 144 ran as **SkyTouch** and shipped **#1134** — the Futuro Health
+**Human Touch Healthcare → CCC CNA** statewide crosswalk, for **Ashley**.
 
-⚠️ **Sam runs three or four sessions at once.** Fetch before assuming your base
-is current, and expect `CLAUDE.md` to move under you mid-run.
+**Note who drove this one.** Ashley opened the session, not Sam. She referenced
+the San Joaquin (SJCOE) crosswalk as the model and supplied two documents: the
+**HTH General Syllabus 3.0 v2.2** and a **Top-10 CCC decision guide** she had
+already built from HTH scholar-proximity analysis. Mid-request she added *"please
+show me an html visual of this work"* — so the deliverable is a **pair**, workbook
+and published page, and any follow-up should keep both in sync.
 
 ## ⚠️ FIRST — read the memory table. This is Rule 8.
 
 ```sql
-select slug, title, summary, status, event_date, verified_by from cpl_memory
+select slug, title, summary, status, event_date from cpl_memory
 where status <> 'superseded'
-  and (tags && array['sierra','triage','identity','taxonomy','my-college']
-       or summary ilike '%feedback%' or summary ilike '%college_id%')
+  and (tags && array['futuro-health','crosswalk','partners','cna']
+       or summary ilike '%Futuro%' or summary ilike '%crosswalk%')
 order by event_date desc nulls last limit 40;
 ```
 
-## 🎯 PRIORITY 1 — make Sierra Training triageable by a human
+This paid for itself in one query last session. The actionable headline of the
+whole deliverable — *Futuro Health is already MAP entity 133 with a live landing
+page and ZERO exhibits* — came out of `non-college-entities-are-at-zero-awarded`,
+not out of the data I was building.
 
-**This is Sam's stated next job.** In his words, 2026-08-12:
+## What shipped — #1134 (merged `085abbe`)
 
-> *"I'll want some help on the Sierra Training tab to be sure I can triage and
-> respond easily — currently it's not very clear how I should do that and there
-> is too much reliance on techie, opaque language."*
+A 5-sheet workbook (gitignored as regenerable) + a published HTML view, backed by
+`kb/_build_futuro_hth_crosswalk.py` and `kb/_write_futuro_hth_workbook.py`.
 
-Two distinct complaints in that sentence, and they need different fixes:
+- **61 of 118** colleges teach a CNA course (153 courses).
+- **59** have a plausible receiving course · **25** health-discipline · **22**
+  score 4–5 · **24** already run CPL in MAP.
+- **2** genuinely have none (Lassen, Santa Monica) — verified by hand.
 
-1. **The workflow is unclear** — a reviewer opening the tab cannot tell what
-   they are supposed to *do*, in what order, or what "done" looks like for one
-   row.
-2. **The language is opaque** — it is written in the vocabulary of the people
-   who built it, not of the person triaging.
+## The one judgment the whole thing rests on
 
-⚠️ **Do not start by writing code.** Start by opening the tab, taking one real
-feedback row, and trying to triage it end to end as Sam would. Write down where
-you stall. That list *is* the spec. The tab was built by people who already knew
-the model; the failure is invisible from the inside.
+**HTH cannot articulate into the CNA course.** A California CNA program is a
+**CDPH-approved 160-hour course** (60 theory / 100 clinical) fixed in regulation.
+It maps to the course *beside* it — interpersonal/intercultural communication,
+healthcare ethics. If someone asks you to "just list the CNA colleges", that list
+is not actionable; this is why.
 
-Context you will need:
-- **25 feedback rows are untriaged**, 11 thumbs-down, the oldest sitting for
-  weeks. That backlog is the thing the tab exists to clear, and it has never
-  been cleared — the tab measuring itself (`live:"feedback"` on the Governance
-  register) says *21 of 25 untriaged*.
-- **CI rows are excluded** from the counts already — a smoke test writes one
-  feedback row per run through the real anon RPC and cannot clean up after
-  itself. 28 of 53 rows were CI, every one rated down. See
-  `methodology-a-test-that-writes-to-the-queue-it-monitors`.
-- **`prefill()` must stay send-free.** The "Test in Sierra" replay depends on a
-  reviewer editing a logged question before replaying it. If you need one-click
-  send, add a sibling — `cpl_chat.js` already has `ask()` for exactly this.
+## The blocker, and it is not an engineering one
 
-Prior art worth copying: **the tier block on My College** (#1123). Sam asked for
-the same thing there — *"make this more prose than rows"* and *"add a very brief
-note in the title… so users are grounded."* Three rules came out of it and all
-three apply here: **a classification label must ship with its scheme**; **in
-prose the ORDER is the advice**; and **a state assigned by absence must not be
-rendered as a score of zero**.
+**Nothing reaches those 61 colleges until HTH exists in MAP as an exhibit under
+Futuro Health (ID 133).** That is a MAP-side curation step, not a session task —
+MAP is our read-only system of record. Say so plainly rather than building around
+it. Everything else on this workstream is downstream.
 
-## 🎯 PRIORITY 2 — write the identity crosswalk to Supabase
+## Five things that will save you time
 
-Built and merged as a **dry run only** (#1131–#1133). The write is the step that
-actually ends the problem Sam keeps hitting.
+1. **`recalc.py` cannot run in this sandbox.** LibreOffice timed out at 119s and
+   again at 539s. If you touch the workbook, verify formulas by asserting each
+   one's **target column and expected value** against `crosswalk.json` instead —
+   and say which check you ran, so its absence never reads as a pass.
+2. **The MIS course file abbreviates its own titles** (`INTERCULTURAL COMM`,
+   `Interpersonal Commun`, `BIO-ETHICS`). Route every regex through
+   `tidy_title()` and match the `comm` stem. Fixing only the module patterns
+   leaves the **fit** regexes carrying the same assumption — that reproduced the
+   identical symptom once already.
+3. **The join asserts both sides and exits on any miss.** Keep it. It caught
+   `MIRA COSTA COLLEGE` vs `MiraCosta College` on the very first run.
+4. **`fit_of()` is load-bearing, not decoration.** Without it the health TOP
+   family ranks *Funeral Service Law and Ethics* above *Interpersonal
+   Communication*.
+5. **Render the HTML and read it.** That is how the sort-tiebreak bug was found —
+   the negation was flipping the secondary key, so every top row showed 0 credit
+   recs and the page recommended the worst possible starting point.
 
-**What exists:** `kb/college_identity/2026-08-12/crosswalk.json` —
-**116 colleges · 116 with a district code · 73 districts · 0 unresolved · 262
-name variants, none empty.** Rebuild any time:
+## Carryover
 
-```bash
-python3 kb/_build_college_identity_crosswalk.py --map-json <map_colleges export>
-```
-
-**What the write does:** populate `map_colleges.variants` (empty on all 128 rows
-today) and add the district columns. That makes all **16 name-keyed tables**
-resolvable through one authority — `coci_college_programs` alone is 22,335 rows.
-
-**Two questions for Sam first:**
-1. Do districts get their own `districts` table (73 rows, keyed on
-   `district_code`) or ride along as columns on `map_colleges`?
-2. Should **North Orange Continuing Education** and **San Diego College of
-   Continuing Education** become `entity_kind='college'` rows? Both have their
-   own CEO in the 2026 list; neither has a college row; both are among the
-   standalone NC institutions the Learning-Partners workstream found at **ZERO**.
-
-## ⚠️ Four things that will mislead you
-
-**1. `map_colleges.variants` is EMPTY on all 128 rows.** Any measurement showing
-names "resolve fine" is flattering — Supabase sources agree with each other, not
-with the repo. 24 of 116 colleges are spelled differently between the two.
-
-**2. Validate a supplied code column by its STRUCTURAL INVARIANT.** A roster's
-`LocationID` had plausible codes and a first row matching the authority exactly;
-**3 of 106 agreed**. MIS codes are district-prefixed — that one-line test caught
-it. Spot-checking cannot. `methodology-validate-a-code-column-by-its-structural-invariant`.
-
-**3. `cplCollegeShort()` returns its input unchanged on a miss.** A lookup that
-fails *looks* like it worked. **Futuro Health is `college_id` 133 with
-`entity_kind='partner'`** (Launch Apprenticeship 132) and is deliberately absent
-from the crosswalk — key partners on `college_id`, never on the name. Ashley had
-a Futuro crosswalk session live on 2026-08-12.
-
-**4. Contacts and staff are NOT PII** (Sam, 2026-08-12) — directory information
-for a public programme. **Don't invent caution he hasn't asked for.** I withheld
-CEO emails on a "public repo" argument and had to withdraw it; they are in
-`kb/reference/ccc_colleges_ceo_2026.json` now.
-
-## Still open from handoff 144
-
-| # | Item | State |
-|---|---|---|
-| 1 | MAP deep links · RLS · MIS · student counts | **all held by Sam** |
-| 2 | **EACR `statewide_prescriptive.js` → Supabase** | **7 sessions** — still the biggest unblocked item |
-| 3 | Two My College design questions | do closed-row summaries earn their place? should *Start here* default open? |
-| 4 | `pp` flag cannot separate new reach from routed students | capture before field comms |
-| 5 | **`CLAUDE.md` is ~1.5× its lint budget** | concrete fix: move the ⚠️ lists out of the largest §11 cells into `docs/reference/`, leaving pointers |
-| 6 | `docs/INDEX.md` 4.7×, `roadmap_archive.md` 2.4× | lint, untouched |
+- **Confirm the 2 "none found" colleges** (Lassen, Santa Monica) against live
+  catalogs. Sessions are **egress-blocked from college domains**, so this needs a
+  human or a differently-egressed runner.
+- **Offer the COBI tab.** Ashley has not asked; I offered twice and she has not
+  taken it up. The MAP columns drift, and what was handed over is a snapshot.
+  Do not build it unprompted.
+- **The partner engine's 2nd run is STILL outstanding.** #1134 is a second partner
+  *engagement*, not a second *engine* run — different question shape entirely
+  (see the §11 row, which now says this explicitly so nobody mis-ticks it).
+- Everything Sam held on **My College** (MAP deep links, the RLS decision, the MIS
+  side-by-side) is still held. Don't route around it.
 
 ## Safety patterns to honour
 
-- Aggregates only; **`StudentMAPID` must never reach Supabase.**
-- Never commit a MAP export — this repo is public.
-- Merge on `clean` OR `unstable`; **never force-push `main`**.
-- ⚠️ `kb/cpl_todos.json` is rewritten wholesale each checkpoint — **last write
-  wins with no merge conflict**. With three or four sessions live it is the file
-  most likely to lose someone's work. Re-read it immediately before writing.
-- ⚠️ The stop hook fires *"N unpushed commits"* after every squash-merge. **False
-  positive** — verify committer = `noreply@github.com`, `origin/main..HEAD` = 0.
-- ⚠️ `tests/cpl_funding.test.js` alone takes **>4 minutes**; the full suite ~20.
-- ⚠️ The sandbox cannot reach `*.supabase.co`, college domains, or
-  `cpl-initiative.github.io`. Supabase goes through the MCP tools only.
-- ⚠️ Bash cwd resets to `/home/user` — `cd` in the same command.
+- **MAP is read-only.** No writes, ever. Contacts/staff in MAP are **not** PII
+  (Sam's ruling), but student data is — `map_student_credit` is reviewer-only.
+- **An absence gets a phrase, never a blank cell.** A partner-facing sheet travels
+  without its schema, so "we looked and found nothing" must be distinguishable
+  from "this column was not filled in". Both deliverables do this; keep it.
+- **A tier must encode what you could not check.** The readiness scale here is
+  **A–D from MAP itself** and is deliberately *not* Ashley's 1–3 web-review scale.
+  Never let the two be read as the same number.
+- **TOP is a filter aid, never a gatekeeper** — two signals must agree.
+- Artifacts published to claude.ai are **private until the user shares them**.
 
 ## Moniker
 
-**SkyLink** joined the systems that name things. Yours makes one of them
-speakable by a human — suggest **SkyPlain**, or coin your own.
+I was **SkyTouch** — the course is about the human touch in healthcare, and the
+run turned on noticing that a data file's own abbreviations were manufacturing
+absences. Take it or coin your own; if Sam or Ashley names you in their greeting,
+that wins.

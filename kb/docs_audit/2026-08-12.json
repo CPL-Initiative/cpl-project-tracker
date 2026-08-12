@@ -9,54 +9,54 @@
     "other": 150000
   },
   "summary": {
-    "files": 477,
-    "bytes": 5564534,
+    "files": 479,
+    "bytes": 5585495,
     "over_budget": 6,
-    "handoff_max": 145,
+    "handoff_max": 146,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 92442,
+    "always_loaded_bytes": 92023,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 92442,
+        "bytes": 92023,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1408682,
+        "bytes": 1411842,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 194272,
+        "bytes": 197531,
         "over": 1
       },
       "lessons": {
         "files": 52,
-        "bytes": 1554084,
+        "bytes": 1558937,
         "over": 3
       },
       "kb_note": {
-        "files": 233,
-        "bytes": 1298478,
+        "files": 234,
+        "bytes": 1301836,
         "over": 0
       },
       "handoff": {
-        "files": 128,
-        "bytes": 1016576,
+        "files": 129,
+        "bytes": 1023326,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
-      "kb_note_dialect": 55,
+      "kb_note_dialect": 54,
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1852,
-      "bytes": 1096113011,
+      "files": 1854,
+      "bytes": 1096146315,
       "heavy_bytes": 582280847,
       "heavy_share": 0.531,
       "ignore_filters": [
@@ -111,26 +111,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 92442,
+        "bytes": 92023,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 32442,
-        "ratio": 1.54
+        "over_by": 32023,
+        "ratio": 1.53
       },
-      "message": "92,442 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "92,023 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 194272,
+        "bytes": 197531,
         "limit": 40000,
         "lane": "index",
-        "over_by": 154272,
-        "ratio": 4.86
+        "over_by": 157531,
+        "ratio": 4.94
       },
-      "message": "194,272 B is 4.9× the index budget (40,000 B) — candidate for compaction",
+      "message": "197,531 B is 4.9× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -239,17 +239,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md"
-    },
-    {
-      "rule": "kb_note_dialect",
-      "fixable": false,
-      "detail": {
-        "drift": [
-          "`date:` (canonical: `created:`)"
-        ]
-      },
-      "message": "`date:` (canonical: `created:`)",
-      "path": "docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -803,13 +792,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 366010,
+        "bytes": 369170,
         "limit": 150000,
         "lane": "other",
-        "over_by": 216010,
-        "ratio": 2.44
+        "over_by": 219170,
+        "ratio": 2.46
       },
-      "message": "366,010 B is 2.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "369,170 B is 2.5× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
