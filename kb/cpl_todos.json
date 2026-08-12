@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-12 · SkyPro — My College folds down around Sierra AI, and five colleges get their funding back.",
-  "_session": 143,
-  "_status": "My College is finished apart from three MAP links. Today it was rebuilt around Sierra AI: she leads the page, and everything under her is now a closed section you open only if you want it — each one still showing its own headline figure so the page reads at a glance. The 22 strategies stopped being a long list at the bottom and now sit inside the funding priority that pays for them. Reading every version of the page then caught two real problems: five colleges were being told they had no implementation funding when they do (Mt. San Antonio's is $522,239), and a college with no data at all was being congratulated for having finished its queue. Both fixed. MAP deep links, the sign-in question, and the MIS comparison are all held at your direction; the two disagreeing student counts are parked on your explanation that MAP records are mid-correction.",
+  "_as_of": "2026-08-12 (evening) · SkyLink — one college/district taxonomy, ready to write.",
+  "_session": 141,
+  "_status": "Two things landed today. My College folded down around Sierra AI (SkyPro), and we finally assembled one college and district list: every spelling any of our systems uses — yours, MAP's and the Chancellor's Office's — tied to a single ID, with the district each college belongs to. 116 colleges, 73 districts, nothing unresolved. It is built but not yet switched on, because turning it on changes how every screen matches college names and needs two decisions from Sam first. Next session: making the Sierra Training tab something a person can triage from without technical vocabulary.",
   "items": [
     {
       "id": "s143-mycollege-look",
@@ -75,6 +75,18 @@
       "for": "Sam",
       "tab": "My College",
       "text": "Worth knowing before you talk to any college about their waiting credit: almost all of it is the same thing. Of the 64,074 units already articulated and waiting on a decision, 98.8% is credit for basic military service — mostly landing on a GE or graduation area rather than a named course. Sixty-five of the 73 colleges with any are at 100%. So it isn't hundreds of separate judgment calls, it's close to one decision applied over and over, for students who already have a DD-214 or JST on file. The page now says this. Thirty-three colleges have nothing waiting at all — that's a finished queue, not a gap."
+    },
+    {
+      "id": "s141c-identity-write",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "A decision before we can finish the college-name cleanup. We now have one list that ties every spelling of every college — yours, MAP's, and the Chancellor's Office's — to a single ID, plus the district each belongs to. 116 colleges, 73 districts, nothing unresolved. Two questions: should districts get their own table, and should North Orange Continuing Education and San Diego College of Continuing Education be counted as colleges? Both have their own president but neither exists as a college in MAP, which may be why they show zero activity."
+    },
+    {
+      "id": "s141c-sierra-triage",
+      "for": "Fable",
+      "tab": "Sierra Training",
+      "text": "Sam's next priority: make this tab something he can actually triage from. Two separate problems — it isn't clear what to DO with a piece of feedback or when you're finished with it, and it's written in build-team language. Start by triaging one real row end to end and writing down where you stall; that list is the spec. 25 rows are waiting, 11 of them thumbs-down."
     }
   ]
 }
