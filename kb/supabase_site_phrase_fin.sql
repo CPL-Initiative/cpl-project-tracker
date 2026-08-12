@@ -69,7 +69,11 @@ $$;
 grant execute on function public.fin_pass_check(text) to anon, authenticated;
 grant execute on function public.fin_pass_ok() to anon, authenticated;
 
--- ── Step 2 — THE SWAP (applied only after the client shipped).
+-- ── Step 2 — THE SWAP. ✅ APPLIED 2026-08-12 (migration `site_phrase_fin_contracts_swap`),
+-- after the client shipped (#1137) AND after Sam rotated the Finance phrase himself on the
+-- new Team Phrases tab (team_access.fin updated 20:33 UTC) and said "we're good to turn on".
+-- Verified post-apply: 12 policies on fin_pass_ok(), 0 still on team_pass_ok(), 4 DELETEs
+-- reviewer-only.
 -- Sequenced deliberately: contracts.js sends the Finance phrase when held and
 -- the shared phrase otherwise, so before this step both open the register and
 -- after it only Finance does. Landing the swap first would have left Contracts

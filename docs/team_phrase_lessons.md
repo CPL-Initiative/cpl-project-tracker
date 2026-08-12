@@ -117,14 +117,16 @@ save must prove it touched a row.
 | Shared ("the CPL phrase") | `raci` | every `team_pass_ok()` table | `cpl_team_pass` |
 | C&I | `ci` | nothing of its own | — |
 | Government Relations | `gr` | `gr_content` + all shared | `cpl_gr_pass` |
-| Finance | `fin` | *(pending)* contracts + all shared | `cpl_fin_pass` |
+| Finance | `fin` | **contracts** (`fin_pass_ok`, live 2026-08-12) + all shared | `cpl_fin_pass` |
 
 ## Open — needs Sam
 
-1. **The Contracts policy swap is NOT applied.** Written and tested
-   (`kb/supabase_site_phrase_fin.sql`, step 2); held because the Finance phrase
-   has not been distributed, and applying it would darken a working tab for
-   everyone. Sam said 2026-08-12 he would rotate the phrase himself first.
+1. ~~The Contracts policy swap~~ — ✅ **APPLIED 2026-08-12.** Sam rotated the
+   Finance phrase himself on the new tab (confirming it works end to end), then
+   authorised the cutover. 12 policies on `fin_pass_ok()`, DELETE still
+   reviewer-only, `team_pass_ok()` gone from the register. **The sequencing was
+   the whole point** — applying before the phrase was distributed would have
+   darkened a working register for everyone holding only the shared phrase.
 2. **Is a site phrase meant to be a superset?** Under "allow either" it opens its
    own tabs *plus* every shared one. Safe only while every holder is trusted with
    all shared CPL data. **Decide before the Finance phrase reaches anyone in
@@ -140,6 +142,6 @@ save must prove it touched a row.
 
 ## Next concrete step
 
-Wait for Sam's rotation, then apply step 2 of `kb/supabase_site_phrase_fin.sql`
-(12 policies, one migration, rollback = re-widen). After that, take the
-Projects Editor win.
+Settle the superset question (open item 2) before the Finance phrase spreads
+beyond the core team, then take the Projects Editor win — `projects` already
+accepts `team_pass_ok()` and the tab offers magic-link only.
