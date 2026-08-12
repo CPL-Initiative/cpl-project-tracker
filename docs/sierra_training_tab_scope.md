@@ -1,7 +1,7 @@
 ---
 title: Sierra Training tab — recommendation + phased scope
 created: 2026-07-01
-updated: 2026-07-02  # Session 94: Phase 2 shipped + P1 affordances
+updated: 2026-08-12  # Sam's usability pass: plain language + the silent cap
 tags: [scope, sierra, cpl-assistant, training, feedback, rag, guardrails]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -166,3 +166,61 @@ filters, bulk triage, feedback→log-turn link). Phase 2 (guidance table)
 Malone for the guardrails thresholds (rate, daily budget, launch date);
 Phase 3 (artifact ingestion) waits for the gap miner to show which
 artifacts are missing.
+
+---
+
+## 2026-08-12 — Sam used it, and two things were wrong
+
+Sam worked the tab directly for the first time in a while and reported: *"the
+Sierra Training tab uses a bunch of jargon I don't understand"*, *"when I click
+Triage, there's no prompt for me to add any adjustments — not sure what it or
+Addresses is doing"*, and *"I don't need all your smoke tests in the training
+(CI) — though I don't know what CI stands for."* Shipped **#1138**; the language
+pass is in the PR. Two findings outlast it.
+
+### ⭐ The composer was silently eating his instructions
+
+`maxlength="500"` on the textarea, and an independent `.slice(0, 500)` in
+`cpl-chat`. Three rules written that morning were cut — two at exactly 500, one
+at 499 ending mid-table (`| ASE A1 –`). Nothing told him. He only found out by
+asking, separately, why his instructions did not seem to be taking effect.
+
+Raised to **1,500 on both sides** (raising one alone only relocates the
+truncation) and made visible with a live counter. `cpl-chat` deployed **v39**.
+Full lesson, including the *identical-length fingerprint* that catches this:
+[`docs/kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md`](kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md).
+
+⚠️ The **total** budget fails the same silent way and is now surfaced too: past
+it the function stops adding rules and the *oldest* stop reaching Sierra — and
+the oldest is the naming rule the whole platform depends on.
+
+### ⭐ A queue that tracks attention but not remedy reports itself complete
+
+This is the sibling lesson to the cap, and the more general one. `new → triaged
+→ addressed` recorded **that a human looked**, never **what was done**. Marking
+an item "addressed" changed nothing about how Sierra answers — yet the queue
+then reported itself clear. Both panes needed to fix it sat on the same screen,
+unconnected: the finding above, the instruction composer below.
+
+Sam's instinct on clicking Triage — *where do I type the adjustment?* — was the
+correct product instinct, and the tab had no answer.
+
+Fixed by relabelling the buttons as bookkeeping ("Mark this:", each stating
+outright that it does not change how Sierra answers) and adding **"✍️ Write an
+instruction about this"**, which seeds the composer from the question and
+scrolls to it. It deliberately writes nothing: only a human knows what the right
+answer was.
+
+**Generalise it:** when a workflow has a *status* lane and a *remedy* lane, the
+status lane must either link to the remedy or refuse to close without it.
+Otherwise "done" measures attention, and attention is not outcome — the same
+shape as the disposition-rate finding on the $50k tab, and as
+`contact-refresh-cadence-never-run`.
+
+### Phase status, corrected
+
+Phase 2 (guidance → Sierra) has been wired since Session 94 and **does** reach
+every surface, including the Sierra AI section of My College — `fetchTeamGuidance`
+runs per request with no cache. The tab now says so in plain words instead of
+naming phases at the reader. Phase 3 (artifact ingestion) is still the open one.
+
