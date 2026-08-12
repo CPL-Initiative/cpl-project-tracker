@@ -13,14 +13,22 @@ knew about the others:
                        short / short_caps, curator-owned, NO id of any kind.
   3. CCCCO MIS      -- `kb/reference/mis_district_college_codes.json`
                        (Appendix A of the MIS Data Element Dictionary, supplied
-                       by Sam): district_code + college_code, ALL CAPS names,
-                       and the ONLY authoritative DISTRICT structure we hold.
+                       by Sam): district_code + college_code, ALL CAPS names.
+                       THE CODE AUTHORITY.
+  4. CCC roster     -- `kb/reference/ccc_coll_dist_2025.json` (Sam, 2026-08-12,
+                       dated 2025-09-29). Carries FULL district names and a
+                       `map_college` column bridging the CCCCO roster to MAP's
+                       own names. THE NAME/BRIDGE AUTHORITY -- and it retires
+                       the 30 bridges this script used to curate by hand.
+                       ⚠ Its LocationID and DistrictType columns are BOTH
+                       unreliable; see that file's own _warning_* fields.
 
 Measured 2026-08-12: 24 of 116 colleges are spelled differently between (1) and
 (2) -- including `Mt. San Antonio College` vs `Mt San Antonio College`, which is
 the mismatch Sam kept hitting. And MIS names are abbreviated so hard
 (`LA SWEST`, `DESERT`, `SAN FRANCISCO`) that only 80 of 116 join to MAP on a
-normalised name.
+normalised name -- which is why source (4) matters: it supplies the bridge and
+takes the hand-curated table below to zero.
 
 `mis_district_college_codes.json` says it plainly in its own `_warning`:
 
@@ -79,12 +87,19 @@ MIS_PATCHES = {
     },
 }
 
-# ── Curated MIS -> MAP name bridges ────────────────────────────────────────
-# MIS abbreviates aggressively and inconsistently. Every entry here was read
-# against the district it sits in, because the abbreviation alone is ambiguous
-# (`MARIN` is College of Marin; `SAN FRANCISCO` is City College of San
-# Francisco). Keyed by (district_code, college_code) -- NOT by name -- so a
-# later name repair upstream cannot silently re-point a bridge.
+# ── Curated MIS -> MAP name bridges — FALLBACK ONLY, currently unused ──────
+# ⚠ Measured 2026-08-12: with `ccc_coll_dist_2025.json` present, this table
+# resolves ZERO colleges. The roster's own `map_college` column bridges all
+# 114 non-placeholder rows, so nothing here fires. It is retained only for the
+# case where that file is missing -- editing it will otherwise have NO effect,
+# which is exactly the trap a silently-dead lookup table sets. Check the
+# receipt's `curated_bridges` count before assuming an edit here did anything.
+#
+# MIS abbreviates aggressively and inconsistently. Every entry was read against
+# the district it sits in, because the abbreviation alone is ambiguous (`MARIN`
+# is College of Marin; `SAN FRANCISCO` is City College of San Francisco). Keyed
+# by (district_code, college_code) -- NOT by name -- so a later name repair
+# upstream cannot silently re-point a bridge.
 #
 # ⚠ `LA SWEST` is the string that broke cplCollegeShort() on 2026-08-11: the
 # resolver emitted it and then could not resolve its own output. It comes from
@@ -165,6 +180,38 @@ def verify_source(rows):
             "doubled_college_name": doubled}
 
 
+ROSTER_PATH = os.path.join(HERE, "reference", "ccc_coll_dist_2025.json")
+
+# Placeholder codes for colleges no CCCCO source we hold carries (Sam,
+# 2026-08-12: "we can just add a placeholder ID for Calbright and Madera").
+# Deliberately NON-NUMERIC so a placeholder can never be mistaken for, sorted
+# beside, or collide with a real MIS code, and every row carries an explicit
+# `mis_code_is_placeholder` flag rather than relying on the reader noticing.
+# Madera keeps its REAL district (State Center, 570) because the district is
+# known even though the college code is not -- so district rollups stay correct.
+PLACEHOLDER_CODES = {
+    "Madera College": {"mis_district_code": "570", "mis_college_code": "X01",
+                       "district": "State Center Community College District"},
+    "Calbright College Non-Credit": {"mis_district_code": "X00", "mis_college_code": "X02",
+                                     "district": "Calbright College (statewide)"},
+}
+
+
+def load_roster():
+    """The 2025 CCC roster. Used for the MAP bridge and full district names
+    ONLY -- never for LocationID, which has lost its row alignment."""
+    if not os.path.exists(ROSTER_PATH):
+        return {}, {}
+    raw = json.load(open(ROSTER_PATH, encoding="utf-8"))
+    by_short, by_map = {}, {}
+    for r in raw["colleges"]:
+        k = norm(r["college_short_caps"])
+        by_short[k] = r
+        if r.get("map_college"):
+            by_map[norm(r["map_college"])] = r
+    return by_short, by_map
+
+
 def load_mis():
     raw = json.load(open(MIS_PATH, encoding="utf-8"))
     rows = [dict(r) for r in raw["districts"]]
@@ -177,6 +224,8 @@ def load_mis():
             why = patch.pop("_repaired", "")
             before = {k: r[k] for k in patch}
             if before != patch:
+                if "college" in patch:
+                    r["_original_college"] = r["college"]
                 r.update(patch)
                 applied.append({"key": list(key), "before": before,
                                 "after": patch, "why": why})
@@ -209,11 +258,21 @@ def main():
             if e.get(f):
                 repo_by.setdefault(norm(e[f]), e)
 
+    # Index Appendix A under BOTH its repaired and its ORIGINAL name. The
+    # EVERYGREEN VALLEY misspelling is in the CCCCO source, not our parse -- it
+    # appears in Appendix A *and* in the 2025 roster -- so repairing ours would
+    # otherwise break the join to a roster row that still carries the typo.
     mis_by_norm = defaultdict(list)
+    seen_pairs = set()
     for m in mis:
-        mis_by_norm[norm(m["college"])].append(m)
+        for nm in {m["college"], m.get("_original_college") or m["college"]}:
+            if (norm(nm), id(m)) in seen_pairs:
+                continue
+            seen_pairs.add((norm(nm), id(m)))
+            mis_by_norm[norm(nm)].append(m)
     mis_by_key = {(m["district_code"], m["college_code"]): m for m in mis}
     curated = {v: k for k, v in MIS_TO_MAP.items()}
+    roster_by_short, roster_by_map = load_roster()
 
     out, unresolved = [], []
     used_mis = set()
@@ -221,12 +280,28 @@ def main():
         cid, cname = c["college_id"], c["college_name"]
         k = norm(cname)
 
+        rost = roster_by_map.get(k) or roster_by_short.get(k)
+        if rost is None:
+            # last resort: MAP's name starts with the roster's, or vice versa —
+            # covers MAP suffixes the CCCCO roster does not carry.
+            for cand in roster_by_map.values():
+                ck = norm(cand["map_college"])
+                if ck and (k.startswith(ck) or ck.startswith(k)):
+                    rost = cand
+                    break
         m, how = None, None
-        if cname in curated and curated[cname] in mis_by_key:
+        # PREFERENCE ORDER. The 2025 roster's map_college column is a
+        # CCCCO-supplied bridge, so it outranks anything curated here: it
+        # reaches Appendix A via the ALL-CAPS short name the two files share.
+        if rost:
+            cands = mis_by_norm.get(norm(rost["college_short_caps"]), [])
+            if len(cands) == 1:
+                m, how = cands[0], "roster-bridge"
+        if m is None and cname in curated and curated[cname] in mis_by_key:
             m, how = mis_by_key[curated[cname]], "curated"
-        elif len(mis_by_norm.get(k, [])) == 1:
+        elif m is None and len(mis_by_norm.get(k, [])) == 1:
             m, how = mis_by_norm[k][0], "normalised-name"
-        elif len(mis_by_norm.get(k, [])) > 1:
+        elif m is None and len(mis_by_norm.get(k, [])) > 1:
             how = "ambiguous"
 
         repo = repo_by.get(k)
@@ -242,6 +317,11 @@ def main():
             variants.add(m["college"])
             used_mis.add((m["district_code"], m["college_code"]))
 
+        if rost:
+            variants.add(rost["college_name"])
+            variants.add(rost["college_short_caps"])
+            variants.add(rost["map_college"])
+
         row = {
             "college_id": cid,
             "college_name": cname,
@@ -249,16 +329,41 @@ def main():
             "short": (repo or {}).get("short"),
             "mis_college_code": (m or {}).get("college_code"),
             "mis_district_code": (m or {}).get("district_code"),
-            "district": (m or {}).get("district"),
+            # Prefer the roster's FULL district name over Appendix A's ALL-CAPS
+            # abbreviation ("Los Angeles Community College District", not
+            # "LOS ANGELES CCD") — it is what a college would recognise.
+            "district": (rost or {}).get("district") or (m or {}).get("district"),
+            "district_caps": (m or {}).get("district"),
             "mis_name": (m or {}).get("college"),
             "mis_match": how,
+            "mis_code_is_placeholder": False,
         }
+        if not m and cname in PLACEHOLDER_CODES:
+            row.update(PLACEHOLDER_CODES[cname])
+            # The 2025 roster names a real district for both placeholder
+            # colleges (Calbright sits in the California Online CCD), so use it
+            # rather than the invented label in PLACEHOLDER_CODES.
+            if rost and rost.get("district"):
+                row["district"] = rost["district"]
+            row["mis_code_is_placeholder"] = True
+            row["mis_match"] = "placeholder"
         if not m and cname in KNOWN_ABSENT_FROM_MIS:
-            row["mis_match"] = "absent-from-source"
             row["mis_absent_why"] = KNOWN_ABSENT_FROM_MIS[cname]
         out.append(row)
-        if not m and cname not in KNOWN_ABSENT_FROM_MIS:
+        if not m and cname not in KNOWN_ABSENT_FROM_MIS and cname not in PLACEHOLDER_CODES:
             unresolved.append(row)
+
+    # Multi vs single college district, DERIVED from the college count rather
+    # than read from the roster's DistrictType column, which disagrees with its
+    # own data on 37 rows and carries both values for 14 districts.
+    per_district = defaultdict(list)
+    for r in out:
+        if r["mis_district_code"]:
+            per_district[r["mis_district_code"]].append(r["college_name"])
+    for r in out:
+        n = len(per_district.get(r["mis_district_code"], []))
+        r["district_type"] = ("M" if n > 1 else "S") if n else None
+        r["district_college_count"] = n or None
 
     orphans = [m for m in mis
                if (m["district_code"], m["college_code"]) not in used_mis]
@@ -288,6 +393,8 @@ def main():
             "mis_rows_unused": len(orphans),
             "districts": len({r["mis_district_code"] for r in out
                               if r["mis_district_code"]}),
+            "placeholder_codes": sum(1 for r in out if r.get("mis_code_is_placeholder")),
+            "roster_bridged": sum(1 for r in out if r["mis_match"] == "roster-bridge"),
         },
         "_source_defects_found": {
             k: (v if k == "district_name_split_across_codes"
@@ -319,7 +426,16 @@ def main():
             lines.append(f"  before `{p['before']}` → after `{p['after']}`")
     else:
         lines.append("- None still present (upstream re-parse appears to have fixed them).")
+    placeholders = [r for r in out if r.get("mis_code_is_placeholder")]
     absent = [r for r in out if r.get("mis_match") == "absent-from-source"]
+    lines += ["", "## Placeholder codes (Sam, 2026-08-12)", "",
+              "Non-numeric on purpose, so a placeholder can never be mistaken for or sorted "
+              "beside a real MIS code. Every row also carries `mis_code_is_placeholder: true`.", ""]
+    for r in placeholders:
+        lines.append(f"- **{r['college_name']}** (MAP id {r['college_id']}) → "
+                     f"`{r['mis_district_code']}/{r['mis_college_code']}` — {r['district']}")
+    if not placeholders:
+        lines.append("- None.")
     lines += ["", "## Colleges Appendix A does not carry (measured, not a join failure)", ""]
     for r in absent:
         lines.append(f"- **{r['college_name']}** (MAP id {r['college_id']}) — {r['mis_absent_why']}")

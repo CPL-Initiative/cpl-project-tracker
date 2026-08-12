@@ -3,8 +3,8 @@
 MAP `college_id` is the key. Nothing here is written to Supabase.
 
 - Colleges: **116**
-- Carrying an MIS district/college code: **114** (30 via a curated bridge)
-- Districts reached: **72**
+- Carrying an MIS district/college code: **116** (0 via a curated bridge)
+- Districts reached: **73**
 - Still unresolved: **0**
 - MIS rows matching no MAP college: **7**
 
@@ -15,10 +15,16 @@ MAP `college_id` is the key. Nothing here is written to Supabase.
 - `470/471` — spelling: source read EVERYGREEN VALLEY  
   before `{'college': 'EVERYGREEN VALLEY'}` → after `{'college': 'EVERGREEN VALLEY'}`
 
+## Placeholder codes (Sam, 2026-08-12)
+
+Non-numeric on purpose, so a placeholder can never be mistaken for or sorted beside a real MIS code. Every row also carries `mis_code_is_placeholder: true`.
+
+- **Calbright College Non-Credit** (MAP id 24) → `X00/X02` — California Online Community College District
+- **Madera College** (MAP id 77) → `570/X01` — State Center Community College District
+
 ## Colleges Appendix A does not carry (measured, not a join failure)
 
-- **Calbright College Non-Credit** (MAP id 24) — not in the supplied Appendix A (searched CALBRIGHT); statewide online college, launched 2018
-- **Madera College** (MAP id 77) — not in the supplied Appendix A (searched MADERA, WILLOW); State Center CCD holds only Clovis/Fresno City/Reedley there
+- None.
 
 ## Colleges with no MIS code — need a curator
 

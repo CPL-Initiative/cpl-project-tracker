@@ -8,12 +8,14 @@
   },
   "_counts": {
     "colleges": 116,
-    "with_mis_code": 114,
-    "curated_bridges": 30,
+    "with_mis_code": 116,
+    "curated_bridges": 0,
     "unresolved": 0,
-    "absent_from_source": 2,
+    "absent_from_source": 0,
     "mis_rows_unused": 7,
-    "districts": 72
+    "districts": 73,
+    "placeholder_codes": 2,
+    "roster_bridged": 114
   },
   "_source_defects_found": {
     "district_name_split_across_codes": {
@@ -68,9 +70,13 @@
       "short": "Allan Hancock",
       "mis_college_code": "611",
       "mis_district_code": "610",
-      "district": "ALLAN HANCOCK CCD",
+      "district": "Allan Hancock Joint Community College District",
+      "district_caps": "ALLAN HANCOCK CCD",
       "mis_name": "ALLAN HANCOCK",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 18,
@@ -82,9 +88,13 @@
       "short": "American River",
       "mis_college_code": "231",
       "mis_district_code": "230",
-      "district": "LOS RIOS CCD",
+      "district": "Los Rios Community College District",
+      "district_caps": "LOS RIOS CCD",
       "mis_name": "AMERICAN RIVER",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 19,
@@ -96,9 +106,13 @@
       "short": "Antelope Valley",
       "mis_college_code": "621",
       "mis_district_code": "620",
-      "district": "ANTELOPE CCD",
+      "district": "Antelope Valley Community College District",
+      "district_caps": "ANTELOPE CCD",
       "mis_name": "ANTELOPE VALLEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 20,
@@ -110,9 +124,13 @@
       "short": "Bakersfield",
       "mis_college_code": "521",
       "mis_district_code": "520",
-      "district": "KERN CCD",
+      "district": "Kern Community College District",
+      "district_caps": "KERN CCD",
       "mis_name": "BAKERSFIELD",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 10,
@@ -125,9 +143,13 @@
       "short": "Barstow",
       "mis_college_code": "911",
       "mis_district_code": "910",
-      "district": "BARSTOW CCD",
+      "district": "Barstow Community College District",
+      "district_caps": "BARSTOW CCD",
       "mis_name": "BARSTOW",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 21,
@@ -139,9 +161,13 @@
       "short": "Berkeley City",
       "mis_college_code": "345",
       "mis_district_code": "340",
-      "district": "PERALTA CCD",
+      "district": "Peralta Community College District",
+      "district_caps": "PERALTA CCD",
       "mis_name": "BERKELEY CITY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 22,
@@ -153,9 +179,13 @@
       "short": "Butte",
       "mis_college_code": "111",
       "mis_district_code": "110",
-      "district": "BUTTE CCD",
+      "district": "Butte-Glenn Community College District",
+      "district_caps": "BUTTE CCD",
       "mis_name": "BUTTE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 23,
@@ -167,21 +197,32 @@
       "short": "Cabrillo",
       "mis_college_code": "411",
       "mis_district_code": "410",
-      "district": "CABRILLO CCD",
+      "district": "Cabrillo Community College District",
+      "district_caps": "CABRILLO CCD",
       "mis_name": "CABRILLO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 24,
       "college_name": "Calbright College Non-Credit",
-      "variants": [],
+      "variants": [
+        "CALBRIGHT",
+        "Calbright College"
+      ],
       "short": null,
-      "mis_college_code": null,
-      "mis_district_code": null,
-      "district": null,
+      "mis_college_code": "X02",
+      "mis_district_code": "X00",
+      "district": "California Online Community College District",
+      "district_caps": null,
       "mis_name": null,
-      "mis_match": "absent-from-source",
-      "mis_absent_why": "not in the supplied Appendix A (searched CALBRIGHT); statewide online college, launched 2018"
+      "mis_match": "placeholder",
+      "mis_code_is_placeholder": true,
+      "mis_absent_why": "not in the supplied Appendix A (searched CALBRIGHT); statewide online college, launched 2018",
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 25,
@@ -195,9 +236,13 @@
       "short": "Canada",
       "mis_college_code": "371",
       "mis_district_code": "370",
-      "district": "SAN MATEO CCD",
+      "district": "San Mateo County Community College District",
+      "district_caps": "SAN MATEO CCD",
       "mis_name": "CANADA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 26,
@@ -209,9 +254,13 @@
       "short": "Cerritos",
       "mis_college_code": "811",
       "mis_district_code": "810",
-      "district": "CERRITOS CCD",
+      "district": "Cerritos Community College District",
+      "district_caps": "CERRITOS CCD",
       "mis_name": "CERRITOS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 27,
@@ -223,9 +272,13 @@
       "short": "Cerro Coso",
       "mis_college_code": "522",
       "mis_district_code": "520",
-      "district": "KERN CCD",
+      "district": "Kern Community College District",
+      "district_caps": "KERN CCD",
       "mis_name": "CERRO COSO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 28,
@@ -239,9 +292,13 @@
       "short": "Chabot",
       "mis_college_code": "482",
       "mis_district_code": "480",
-      "district": "CHABOT-LAS POSITAS CCD",
+      "district": "Chabot-Las Positas Community College District",
+      "district_caps": "CHABOT-LAS POSITAS CCD",
       "mis_name": "CHABOT HAYWARD",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 9,
@@ -253,9 +310,13 @@
       "short": "Chaffey",
       "mis_college_code": "921",
       "mis_district_code": "920",
-      "district": "CHAFFEY CCD",
+      "district": "Chaffey Community College District",
+      "district_caps": "CHAFFEY CCD",
       "mis_name": "CHAFFEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 29,
@@ -267,9 +328,13 @@
       "short": "Citrus",
       "mis_college_code": "821",
       "mis_district_code": "820",
-      "district": "CITRUS CCD",
+      "district": "Citrus Community College District",
+      "district_caps": "CITRUS CCD",
       "mis_name": "CITRUS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 30,
@@ -282,9 +347,13 @@
       "short": "San Francisco",
       "mis_college_code": "361",
       "mis_district_code": "360",
-      "district": "SAN FRANCISCO CCD",
+      "district": "San Francisco Community College District",
+      "district_caps": "SAN FRANCISCO CCD",
       "mis_name": "SAN FRANCISCO",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 31,
@@ -296,9 +365,13 @@
       "short": "Clovis",
       "mis_college_code": "576",
       "mis_district_code": "570",
-      "district": "STATE CENTER CCD",
+      "district": "State Center Community College District",
+      "district_caps": "STATE CENTER CCD",
       "mis_name": "CLOVIS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 113,
@@ -312,9 +385,13 @@
       "short": "West Hills Coalinga",
       "mis_college_code": "581",
       "mis_district_code": "580",
-      "district": "WEST HILLS CCD",
+      "district": "West Hills Community College District",
+      "district_caps": "WEST HILLS CCD",
       "mis_name": "WEST HILLS COALINGA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 32,
@@ -326,9 +403,13 @@
       "short": "Coastline",
       "mis_college_code": "831",
       "mis_district_code": "830",
-      "district": "COAST CCD",
+      "district": "Coast Community College District",
+      "district_caps": "COAST CCD",
       "mis_name": "COASTLINE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 33,
@@ -340,9 +421,13 @@
       "short": "Alameda",
       "mis_college_code": "341",
       "mis_district_code": "340",
-      "district": "PERALTA CCD",
+      "district": "Peralta Community College District",
+      "district_caps": "PERALTA CCD",
       "mis_name": "ALAMEDA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 34,
@@ -355,9 +440,13 @@
       "short": "Marin",
       "mis_college_code": "334",
       "mis_district_code": "330",
-      "district": "MARIN CCD",
+      "district": "Marin Community College District",
+      "district_caps": "MARIN CCD",
       "mis_name": "MARIN",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 35,
@@ -369,9 +458,13 @@
       "short": "San Mateo",
       "mis_college_code": "372",
       "mis_district_code": "370",
-      "district": "SAN MATEO CCD",
+      "district": "San Mateo County Community College District",
+      "district_caps": "SAN MATEO CCD",
       "mis_name": "SAN MATEO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 36,
@@ -384,9 +477,13 @@
       "short": "Canyons",
       "mis_college_code": "661",
       "mis_district_code": "660",
-      "district": "SANTA CLARITA CCD",
+      "district": "Santa Clarita Community College District",
+      "district_caps": "SANTA CLARITA CCD",
       "mis_name": "CANYONS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 11,
@@ -399,9 +496,13 @@
       "short": "Desert",
       "mis_college_code": "931",
       "mis_district_code": "930",
-      "district": "DESERT CCD",
+      "district": "Desert Community College District",
+      "district_caps": "DESERT CCD",
       "mis_name": "DESERT",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 37,
@@ -414,9 +515,13 @@
       "short": "Redwoods",
       "mis_college_code": "161",
       "mis_district_code": "160",
-      "district": "REDWOODS CCD",
+      "district": "Redwoods Community College District",
+      "district_caps": "REDWOODS CCD",
       "mis_name": "REDWOODS",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 38,
@@ -429,9 +534,13 @@
       "short": "Sequoias",
       "mis_college_code": "561",
       "mis_district_code": "560",
-      "district": "SEQUOIAS CCD",
+      "district": "Sequoias Community College District",
+      "district_caps": "SEQUOIAS CCD",
       "mis_name": "SEQUOIAS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 39,
@@ -444,9 +553,13 @@
       "short": "Siskiyous",
       "mis_college_code": "181",
       "mis_district_code": "180",
-      "district": "SISKIYOUS CCD",
+      "district": "Siskiyou Joint Community College District",
+      "district_caps": "SISKIYOUS CCD",
       "mis_name": "SISKIYOUS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 40,
@@ -458,9 +571,13 @@
       "short": "Columbia",
       "mis_college_code": "591",
       "mis_district_code": "590",
-      "district": "YOSEMITE CCD",
+      "district": "Yosemite Community College District",
+      "district_caps": "YOSEMITE CCD",
       "mis_name": "COLUMBIA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 41,
@@ -472,9 +589,13 @@
       "short": "Compton",
       "mis_college_code": "711",
       "mis_district_code": "710",
-      "district": "COMPTON CCD",
+      "district": "Compton Community College District",
+      "district_caps": "COMPTON CCD",
       "mis_name": "COMPTON",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 42,
@@ -486,9 +607,13 @@
       "short": "Contra Costa",
       "mis_college_code": "311",
       "mis_district_code": "310",
-      "district": "CONTRA COSTA CCD",
+      "district": "Contra Costa Community College District",
+      "district_caps": "CONTRA COSTA CCD",
       "mis_name": "CONTRA COSTA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 12,
@@ -500,9 +625,13 @@
       "short": "Copper Mountain",
       "mis_college_code": "971",
       "mis_district_code": "970",
-      "district": "COPPER MOUNTAIN CCD",
+      "district": "Copper Mountain Community College District",
+      "district_caps": "COPPER MOUNTAIN CCD",
       "mis_name": "COPPER MOUNTAIN",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 43,
@@ -514,9 +643,13 @@
       "short": "Cosumnes River",
       "mis_college_code": "232",
       "mis_district_code": "230",
-      "district": "LOS RIOS CCD",
+      "district": "Los Rios Community College District",
+      "district_caps": "LOS RIOS CCD",
       "mis_name": "COSUMNES RIVER",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 7,
@@ -528,9 +661,13 @@
       "short": "Crafton Hills",
       "mis_college_code": "981",
       "mis_district_code": "980",
-      "district": "SAN BERNARDINO CCD",
+      "district": "San Bernardino Community College District",
+      "district_caps": "SAN BERNARDINO CCD",
       "mis_name": "CRAFTON HILLS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 44,
@@ -542,9 +679,13 @@
       "short": "Cuesta",
       "mis_college_code": "641",
       "mis_district_code": "640",
-      "district": "SAN LUIS OBISPO CCD",
+      "district": "San Luis Obispo County Community College District",
+      "district_caps": "SAN LUIS OBISPO CCD",
       "mis_name": "CUESTA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 45,
@@ -556,23 +697,32 @@
       "short": "Cuyamaca",
       "mis_college_code": "021",
       "mis_district_code": "020",
-      "district": "GROSSMONT CCD",
+      "district": "Grossmont-Cuyamaca Community College District",
+      "district_caps": "GROSSMONT CCD",
       "mis_name": "CUYAMACA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 46,
       "college_name": "Cypress College",
       "variants": [
         "CYPRESS",
-        "Cypress"
+        "Cypress",
+        "Cypress College "
       ],
       "short": "Cypress",
       "mis_college_code": "861",
       "mis_district_code": "860",
-      "district": "NORTH ORANGE CCD",
+      "district": "North Orange County Community College District",
+      "district_caps": "NORTH ORANGE CCD",
       "mis_name": "CYPRESS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 47,
@@ -584,9 +734,13 @@
       "short": "De Anza",
       "mis_college_code": "421",
       "mis_district_code": "420",
-      "district": "FOOTHILL CCD",
+      "district": "Foothill-De Anza Community College District",
+      "district_caps": "FOOTHILL CCD",
       "mis_name": "DEANZA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 48,
@@ -598,9 +752,13 @@
       "short": "Diablo Valley",
       "mis_college_code": "312",
       "mis_district_code": "310",
-      "district": "CONTRA COSTA CCD",
+      "district": "Contra Costa Community College District",
+      "district_caps": "CONTRA COSTA CCD",
       "mis_name": "DIABLO VALLEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 49,
@@ -612,9 +770,13 @@
       "short": "East LA",
       "mis_college_code": "748",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "EAST LA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 50,
@@ -626,23 +788,32 @@
       "short": "El Camino",
       "mis_college_code": "721",
       "mis_district_code": "720",
-      "district": "EL CAMINO CCD",
+      "district": "El Camino Community College District",
+      "district_caps": "EL CAMINO CCD",
       "mis_name": "EL CAMINO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 51,
       "college_name": "Evergreen Valley College",
       "variants": [
         "EVERGREEN VALLEY",
+        "EVERYGREEN VALLEY",
         "Evergreen Valley"
       ],
       "short": "Evergreen Valley",
       "mis_college_code": "471",
       "mis_district_code": "470",
-      "district": "SAN JOSE CCD",
+      "district": "San Jose-Evergreen Community College District",
+      "district_caps": "SAN JOSE CCD",
       "mis_name": "EVERGREEN VALLEY",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 52,
@@ -654,9 +825,13 @@
       "short": "Feather River",
       "mis_college_code": "121",
       "mis_district_code": "120",
-      "district": "FEATHER RIVER CCD",
+      "district": "Feather River Community College District",
+      "district_caps": "FEATHER RIVER CCD",
       "mis_name": "FEATHER RIVER",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 53,
@@ -668,9 +843,13 @@
       "short": "Folsom Lake",
       "mis_college_code": "234",
       "mis_district_code": "230",
-      "district": "LOS RIOS CCD",
+      "district": "Los Rios Community College District",
+      "district_caps": "LOS RIOS CCD",
       "mis_name": "FOLSOM LAKE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 54,
@@ -682,9 +861,13 @@
       "short": "Foothill",
       "mis_college_code": "422",
       "mis_district_code": "420",
-      "district": "FOOTHILL CCD",
+      "district": "Foothill-De Anza Community College District",
+      "district_caps": "FOOTHILL CCD",
       "mis_name": "FOOTHILL",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 55,
@@ -696,9 +879,13 @@
       "short": "Fresno City",
       "mis_college_code": "571",
       "mis_district_code": "570",
-      "district": "STATE CENTER CCD",
+      "district": "State Center Community College District",
+      "district_caps": "STATE CENTER CCD",
       "mis_name": "FRESNO CITY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 56,
@@ -710,9 +897,13 @@
       "short": "Fullerton",
       "mis_college_code": "862",
       "mis_district_code": "860",
-      "district": "NORTH ORANGE CCD",
+      "district": "North Orange County Community College District",
+      "district_caps": "NORTH ORANGE CCD",
       "mis_name": "FULLERTON",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 57,
@@ -724,9 +915,13 @@
       "short": "Gavilan",
       "mis_college_code": "441",
       "mis_district_code": "440",
-      "district": "GAVILAN CCD",
+      "district": "Gavilan Joint Community College District",
+      "district_caps": "GAVILAN CCD",
       "mis_name": "GAVILAN",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 58,
@@ -738,9 +933,13 @@
       "short": "Glendale",
       "mis_college_code": "731",
       "mis_district_code": "730",
-      "district": "GLENDALE CCD",
+      "district": "Glendale Community College District",
+      "district_caps": "GLENDALE CCD",
       "mis_name": "GLENDALE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 59,
@@ -752,9 +951,13 @@
       "short": "Golden West",
       "mis_college_code": "832",
       "mis_district_code": "830",
-      "district": "COAST CCD",
+      "district": "Coast Community College District",
+      "district_caps": "COAST CCD",
       "mis_name": "GOLDEN WEST",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 60,
@@ -766,9 +969,13 @@
       "short": "Grossmont",
       "mis_college_code": "022",
       "mis_district_code": "020",
-      "district": "GROSSMONT CCD",
+      "district": "Grossmont-Cuyamaca Community College District",
+      "district_caps": "GROSSMONT CCD",
       "mis_name": "GROSSMONT",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 61,
@@ -780,9 +987,13 @@
       "short": "Hartnell",
       "mis_college_code": "451",
       "mis_district_code": "450",
-      "district": "HARTNELL CCD",
+      "district": "Hartnell Community College District",
+      "district_caps": "HARTNELL CCD",
       "mis_name": "HARTNELL",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 62,
@@ -794,9 +1005,13 @@
       "short": "Imperial",
       "mis_college_code": "031",
       "mis_district_code": "030",
-      "district": "IMPERIAL CCD",
+      "district": "Imperial Community College District",
+      "district_caps": "IMPERIAL CCD",
       "mis_name": "IMPERIAL",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 63,
@@ -808,9 +1023,13 @@
       "short": "Irvine",
       "mis_college_code": "892",
       "mis_district_code": "890",
-      "district": "SOUTH ORANGE COUNTY CCD",
+      "district": "South Orange County Community College District",
+      "district_caps": "SOUTH ORANGE COUNTY CCD",
       "mis_name": "IRVINE",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 64,
@@ -822,9 +1041,13 @@
       "short": "Lake Tahoe",
       "mis_college_code": "221",
       "mis_district_code": "220",
-      "district": "LAKE TAHOE CCD",
+      "district": "Lake Tahoe Community College District",
+      "district_caps": "LAKE TAHOE CCD",
       "mis_name": "LAKE TAHOE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 65,
@@ -836,9 +1059,13 @@
       "short": "Laney",
       "mis_college_code": "343",
       "mis_district_code": "340",
-      "district": "PERALTA CCD",
+      "district": "Peralta Community College District",
+      "district_caps": "PERALTA CCD",
       "mis_name": "LANEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 66,
@@ -850,9 +1077,13 @@
       "short": "Las Positas",
       "mis_college_code": "481",
       "mis_district_code": "480",
-      "district": "CHABOT-LAS POSITAS CCD",
+      "district": "Chabot-Las Positas Community College District",
+      "district_caps": "CHABOT-LAS POSITAS CCD",
       "mis_name": "LAS POSITAS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 67,
@@ -865,9 +1096,13 @@
       "short": "Lassen",
       "mis_college_code": "131",
       "mis_district_code": "130",
-      "district": "LASSEN CCD",
+      "district": "Lassen Community College District",
+      "district_caps": "LASSEN CCD",
       "mis_name": "LASSEN",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 114,
@@ -881,9 +1116,13 @@
       "short": "West Hills Lemoore",
       "mis_college_code": "582",
       "mis_district_code": "580",
-      "district": "WEST HILLS CCD",
+      "district": "West Hills Community College District",
+      "district_caps": "WEST HILLS CCD",
       "mis_name": "WEST HILLS LEMOORE",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 68,
@@ -895,9 +1134,13 @@
       "short": "Long Beach",
       "mis_college_code": "841",
       "mis_district_code": "840",
-      "district": "LONG BEACH CCD",
+      "district": "Long Beach Community College District",
+      "district_caps": "LONG BEACH CCD",
       "mis_name": "LONG BEACH",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 69,
@@ -909,9 +1152,13 @@
       "short": "LA City",
       "mis_college_code": "741",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA CITY",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 70,
@@ -923,9 +1170,13 @@
       "short": "LA Harbor",
       "mis_college_code": "742",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA HARBOR",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 71,
@@ -937,9 +1188,13 @@
       "short": "LA Mission",
       "mis_college_code": "743",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA MISSION",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 72,
@@ -951,9 +1206,13 @@
       "short": "LA Pierce",
       "mis_college_code": "744",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA PIERCE",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 73,
@@ -965,9 +1224,13 @@
       "short": "LA Southwest",
       "mis_college_code": "745",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA SWEST",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 74,
@@ -979,9 +1242,13 @@
       "short": "LA Trade",
       "mis_college_code": "746",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA TRADE",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 75,
@@ -993,9 +1260,13 @@
       "short": "LA Valley",
       "mis_college_code": "747",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "LA VALLEY",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 76,
@@ -1007,9 +1278,13 @@
       "short": "Los Medanos",
       "mis_college_code": "313",
       "mis_district_code": "310",
-      "district": "CONTRA COSTA CCD",
+      "district": "Contra Costa Community College District",
+      "district_caps": "CONTRA COSTA CCD",
       "mis_name": "LOS MEDANOS",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 77,
@@ -1020,12 +1295,16 @@
         "Madera Community College"
       ],
       "short": "Madera",
-      "mis_college_code": null,
-      "mis_district_code": null,
-      "district": null,
+      "mis_college_code": "X01",
+      "mis_district_code": "570",
+      "district": "State Center Community College District",
+      "district_caps": null,
       "mis_name": null,
-      "mis_match": "absent-from-source",
-      "mis_absent_why": "not in the supplied Appendix A (searched MADERA, WILLOW); State Center CCD holds only Clovis/Fresno City/Reedley there"
+      "mis_match": "placeholder",
+      "mis_code_is_placeholder": true,
+      "mis_absent_why": "not in the supplied Appendix A (searched MADERA, WILLOW); State Center CCD holds only Clovis/Fresno City/Reedley there",
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 78,
@@ -1037,9 +1316,13 @@
       "short": "Mendocino",
       "mis_college_code": "141",
       "mis_district_code": "140",
-      "district": "MENDOCINO CCD",
+      "district": "Mendocino-Lake Community College District",
+      "district_caps": "MENDOCINO CCD",
       "mis_name": "MENDOCINO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 79,
@@ -1051,9 +1334,13 @@
       "short": "Merced",
       "mis_college_code": "531",
       "mis_district_code": "530",
-      "district": "MERCED CCD",
+      "district": "Merced Community College District",
+      "district_caps": "MERCED CCD",
       "mis_name": "MERCED",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 80,
@@ -1065,9 +1352,13 @@
       "short": "Merritt",
       "mis_college_code": "344",
       "mis_district_code": "340",
-      "district": "PERALTA CCD",
+      "district": "Peralta Community College District",
+      "district_caps": "PERALTA CCD",
       "mis_name": "MERRITT",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 81,
@@ -1080,9 +1371,13 @@
       "short": "Mira Costa",
       "mis_college_code": "051",
       "mis_district_code": "050",
-      "district": "MIRA COSTA CCD",
+      "district": "MiraCosta Community College District",
+      "district_caps": "MIRA COSTA CCD",
       "mis_name": "MIRA COSTA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 82,
@@ -1094,9 +1389,13 @@
       "short": "Mission",
       "mis_college_code": "492",
       "mis_district_code": "490",
-      "district": "WEST VALLEY CCD",
+      "district": "West Valley-Mission Community College District",
+      "district_caps": "WEST VALLEY CCD",
       "mis_name": "MISSION",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 83,
@@ -1108,9 +1407,13 @@
       "short": "Modesto",
       "mis_college_code": "592",
       "mis_district_code": "590",
-      "district": "YOSEMITE CCD",
+      "district": "Yosemite Community College District",
+      "district_caps": "YOSEMITE CCD",
       "mis_name": "MODESTO",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 84,
@@ -1122,9 +1425,13 @@
       "short": "Monterey",
       "mis_college_code": "461",
       "mis_district_code": "460",
-      "district": "MONTEREY CCD",
+      "district": "Monterey Peninsula Community College District",
+      "district_caps": "MONTEREY CCD",
       "mis_name": "MONTEREY",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 85,
@@ -1136,9 +1443,13 @@
       "short": "Moorpark",
       "mis_college_code": "681",
       "mis_district_code": "680",
-      "district": "VENTURA CCD",
+      "district": "Ventura County Community College District",
+      "district_caps": "VENTURA CCD",
       "mis_name": "MOORPARK",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 3,
@@ -1150,9 +1461,13 @@
       "short": "Moreno Valley",
       "mis_college_code": "962",
       "mis_district_code": "960",
-      "district": "RIVERSIDE CCD",
+      "district": "Riverside Community College District",
+      "district_caps": "RIVERSIDE CCD",
       "mis_name": "MORENO VALLEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 86,
@@ -1165,9 +1480,13 @@
       "short": "Mt. San Antonio",
       "mis_college_code": "851",
       "mis_district_code": "850",
-      "district": "MT. SAN ANTONIO CCD",
+      "district": "Mt. San Antonio Community College District",
+      "district_caps": "MT. SAN ANTONIO CCD",
       "mis_name": "MT SAN ANTONIO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 6,
@@ -1180,23 +1499,32 @@
       "short": "Mt. San Jacinto",
       "mis_college_code": "941",
       "mis_district_code": "940",
-      "district": "MT. SAN JACINTO CCD",
+      "district": "Mt. San Jacinto Community College District",
+      "district_caps": "MT. SAN JACINTO CCD",
       "mis_name": "MT. SAN JACINTO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 87,
       "college_name": "Napa Valley College",
       "variants": [
         "NAPA",
+        "NAPA ",
         "Napa"
       ],
       "short": "Napa",
       "mis_college_code": "241",
       "mis_district_code": "240",
-      "district": "NAPA CCD",
+      "district": "Napa Valley Community College District",
+      "district_caps": "NAPA CCD",
       "mis_name": "NAPA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 1,
@@ -1209,9 +1537,13 @@
       "short": "Norco",
       "mis_college_code": "963",
       "mis_district_code": "960",
-      "district": "RIVERSIDE CCD",
+      "district": "Riverside Community College District",
+      "district_caps": "RIVERSIDE CCD",
       "mis_name": "NORCO COLLEGE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 88,
@@ -1223,9 +1555,13 @@
       "short": "Ohlone",
       "mis_college_code": "431",
       "mis_district_code": "430",
-      "district": "OHLONE CCD",
+      "district": "Ohlone Community College District",
+      "district_caps": "OHLONE CCD",
       "mis_name": "OHLONE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 89,
@@ -1237,9 +1573,13 @@
       "short": "Orange Coast",
       "mis_college_code": "833",
       "mis_district_code": "830",
-      "district": "COAST CCD",
+      "district": "Coast Community College District",
+      "district_caps": "COAST CCD",
       "mis_name": "ORANGE COAST",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 90,
@@ -1251,9 +1591,13 @@
       "short": "Oxnard",
       "mis_college_code": "682",
       "mis_district_code": "680",
-      "district": "VENTURA CCD",
+      "district": "Ventura County Community College District",
+      "district_caps": "VENTURA CCD",
       "mis_name": "OXNARD",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 13,
@@ -1265,9 +1609,13 @@
       "short": "Palo Verde",
       "mis_college_code": "951",
       "mis_district_code": "950",
-      "district": "PALO VERDE CCD",
+      "district": "Palo Verde Community College District",
+      "district_caps": "PALO VERDE CCD",
       "mis_name": "PALO VERDE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 15,
@@ -1279,9 +1627,13 @@
       "short": "Palomar",
       "mis_college_code": "061",
       "mis_district_code": "060",
-      "district": "PALOMAR CCD",
+      "district": "Palomar Community College District",
+      "district_caps": "PALOMAR CCD",
       "mis_name": "PALOMAR",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 91,
@@ -1293,9 +1645,13 @@
       "short": "Pasadena",
       "mis_college_code": "771",
       "mis_district_code": "770",
-      "district": "PASADENA CCD",
+      "district": "Pasadena Area Community College District",
+      "district_caps": "PASADENA CCD",
       "mis_name": "PASADENA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 92,
@@ -1307,9 +1663,13 @@
       "short": "Porterville",
       "mis_college_code": "523",
       "mis_district_code": "520",
-      "district": "KERN CCD",
+      "district": "Kern Community College District",
+      "district_caps": "KERN CCD",
       "mis_name": "PORTERVILLE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 93,
@@ -1322,9 +1682,13 @@
       "short": "Reedley",
       "mis_college_code": "572",
       "mis_district_code": "570",
-      "district": "STATE CENTER CCD",
+      "district": "State Center Community College District",
+      "district_caps": "STATE CENTER CCD",
       "mis_name": "REEDLEY COLLEGE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 94,
@@ -1336,9 +1700,13 @@
       "short": "Rio Hondo",
       "mis_college_code": "881",
       "mis_district_code": "880",
-      "district": "RIO HONDO CCD",
+      "district": "Rio Hondo Community College District",
+      "district_caps": "RIO HONDO CCD",
       "mis_name": "RIO HONDO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 2,
@@ -1350,9 +1718,13 @@
       "short": "Riverside",
       "mis_college_code": "961",
       "mis_district_code": "960",
-      "district": "RIVERSIDE CCD",
+      "district": "Riverside Community College District",
+      "district_caps": "RIVERSIDE CCD",
       "mis_name": "RIVERSIDE",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 95,
@@ -1364,9 +1736,13 @@
       "short": "Sacramento City",
       "mis_college_code": "233",
       "mis_district_code": "230",
-      "district": "LOS RIOS CCD",
+      "district": "Los Rios Community College District",
+      "district_caps": "LOS RIOS CCD",
       "mis_name": "SACRAMENTO CITY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 4
     },
     {
       "college_id": 16,
@@ -1378,9 +1754,13 @@
       "short": "Saddleback",
       "mis_college_code": "891",
       "mis_district_code": "890",
-      "district": "SOUTH ORANGE COUNTY CCD",
+      "district": "South Orange County Community College District",
+      "district_caps": "SOUTH ORANGE COUNTY CCD",
       "mis_name": "SADDLEBACK",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 8,
@@ -1392,9 +1772,13 @@
       "short": "San Bernardino",
       "mis_college_code": "982",
       "mis_district_code": "980",
-      "district": "SAN BERNARDINO CCD",
+      "district": "San Bernardino Community College District",
+      "district_caps": "SAN BERNARDINO CCD",
       "mis_name": "SAN BERNARDINO",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 96,
@@ -1406,9 +1790,13 @@
       "short": "San Diego City",
       "mis_college_code": "071",
       "mis_district_code": "070",
-      "district": "SAN DIEGO CCD",
+      "district": "San Diego Community College District",
+      "district_caps": "SAN DIEGO CCD",
       "mis_name": "SAN DIEGO CITY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 97,
@@ -1420,9 +1808,13 @@
       "short": "San Diego Mesa",
       "mis_college_code": "072",
       "mis_district_code": "070",
-      "district": "SAN DIEGO CCD",
+      "district": "San Diego Community College District",
+      "district_caps": "SAN DIEGO CCD",
       "mis_name": "SAN DIEGO MESA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 98,
@@ -1434,9 +1826,13 @@
       "short": "San Diego Miramar",
       "mis_college_code": "073",
       "mis_district_code": "070",
-      "district": "SAN DIEGO CCD",
+      "district": "San Diego Community College District",
+      "district_caps": "SAN DIEGO CCD",
       "mis_name": "SAN DIEGO MIRAMAR",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 99,
@@ -1448,23 +1844,32 @@
       "short": "San Joaquin Delta",
       "mis_college_code": "551",
       "mis_district_code": "550",
-      "district": "SAN JOAQUIN DELTA CCD",
+      "district": "San Joaquin Delta Community College District",
+      "district_caps": "SAN JOAQUIN DELTA CCD",
       "mis_name": "SAN JOAQUIN DELTA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 100,
       "college_name": "San Jose City College",
       "variants": [
         "SAN JOSE CITY",
-        "San Jose City"
+        "San Jose City",
+        "San Jose City College "
       ],
       "short": "San Jose City",
       "mis_college_code": "472",
       "mis_district_code": "470",
-      "district": "SAN JOSE CCD",
+      "district": "San Jose-Evergreen Community College District",
+      "district_caps": "SAN JOSE CCD",
       "mis_name": "SAN JOSE CITY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 101,
@@ -1476,9 +1881,13 @@
       "short": "Santa Ana",
       "mis_college_code": "871",
       "mis_district_code": "870",
-      "district": "RANCHO SANTIAGO CCD",
+      "district": "Rancho Santiago Community College District",
+      "district_caps": "RANCHO SANTIAGO CCD",
       "mis_name": "SANTA ANA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 102,
@@ -1490,9 +1899,13 @@
       "short": "Santa Barbara",
       "mis_college_code": "651",
       "mis_district_code": "650",
-      "district": "SANTA BARBARA CCD",
+      "district": "Santa Barbara Community College District",
+      "district_caps": "SANTA BARBARA CCD",
       "mis_name": "SANTA BARBARA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 103,
@@ -1504,9 +1917,13 @@
       "short": "Santa Monica",
       "mis_college_code": "781",
       "mis_district_code": "780",
-      "district": "SANTA MONICA CCD",
+      "district": "Santa Monica Community College District",
+      "district_caps": "SANTA MONICA CCD",
       "mis_name": "SANTA MONICA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 104,
@@ -1518,9 +1935,13 @@
       "short": "Santa Rosa",
       "mis_college_code": "261",
       "mis_district_code": "260",
-      "district": "SONOMA CCD",
+      "district": "Sonoma County Junior College District",
+      "district_caps": "SONOMA CCD",
       "mis_name": "SANTA ROSA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 105,
@@ -1532,9 +1953,13 @@
       "short": "Santiago Canyon",
       "mis_college_code": "873",
       "mis_district_code": "870",
-      "district": "RANCHO SANTIAGO CCD",
+      "district": "Rancho Santiago Community College District",
+      "district_caps": "RANCHO SANTIAGO CCD",
       "mis_name": "SANTIAGO CANYON",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 106,
@@ -1546,9 +1971,13 @@
       "short": "Shasta",
       "mis_college_code": "171",
       "mis_district_code": "170",
-      "district": "SHASTA TEHAMA CCD",
+      "district": "Shasta-Tehama-Trinity Joint Community College District",
+      "district_caps": "SHASTA TEHAMA CCD",
       "mis_name": "SHASTA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 107,
@@ -1560,9 +1989,13 @@
       "short": "Sierra",
       "mis_college_code": "271",
       "mis_district_code": "270",
-      "district": "SIERRA CCD",
+      "district": "Sierra Joint Community College District",
+      "district_caps": "SIERRA CCD",
       "mis_name": "SIERRA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 108,
@@ -1574,9 +2007,13 @@
       "short": "Skyline",
       "mis_college_code": "373",
       "mis_district_code": "370",
-      "district": "SAN MATEO CCD",
+      "district": "San Mateo County Community College District",
+      "district_caps": "SAN MATEO CCD",
       "mis_name": "SKYLINE",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 109,
@@ -1588,9 +2025,13 @@
       "short": "Solano",
       "mis_college_code": "281",
       "mis_district_code": "280",
-      "district": "SOLANO CCD",
+      "district": "Solano County Community College District",
+      "district_caps": "SOLANO CCD",
       "mis_name": "SOLANO",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 110,
@@ -1603,9 +2044,13 @@
       "short": "Southwestern",
       "mis_college_code": "091",
       "mis_district_code": "090",
-      "district": "SOUTHWESTERN CCD",
+      "district": "Southwestern Community College District",
+      "district_caps": "SOUTHWESTERN CCD",
       "mis_name": "SOUTHWESTERN",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 111,
@@ -1617,9 +2062,13 @@
       "short": "Taft",
       "mis_college_code": "691",
       "mis_district_code": "690",
-      "district": "WEST KERN CCD",
+      "district": "West Kern Community College District",
+      "district_caps": "WEST KERN CCD",
       "mis_name": "TAFT",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 112,
@@ -1631,9 +2080,13 @@
       "short": "Ventura",
       "mis_college_code": "683",
       "mis_district_code": "680",
-      "district": "VENTURA CCD",
+      "district": "Ventura County Community College District",
+      "district_caps": "VENTURA CCD",
       "mis_name": "VENTURA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 3
     },
     {
       "college_id": 14,
@@ -1645,9 +2098,13 @@
       "short": "Victor Valley",
       "mis_college_code": "991",
       "mis_district_code": "990",
-      "district": "VICTOR VALLEY CCD",
+      "district": "Victor Valley Community College District",
+      "district_caps": "VICTOR VALLEY CCD",
       "mis_name": "VICTOR VALLEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "S",
+      "district_college_count": 1
     },
     {
       "college_id": 115,
@@ -1659,9 +2116,13 @@
       "short": "West LA",
       "mis_college_code": "749",
       "mis_district_code": "740",
-      "district": "LOS ANGELES CCD",
+      "district": "Los Angeles Community College District",
+      "district_caps": "LOS ANGELES CCD",
       "mis_name": "WEST LA",
-      "mis_match": "curated"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 9
     },
     {
       "college_id": 116,
@@ -1673,9 +2134,13 @@
       "short": "West Valley",
       "mis_college_code": "493",
       "mis_district_code": "490",
-      "district": "WEST VALLEY CCD",
+      "district": "West Valley-Mission Community College District",
+      "district_caps": "WEST VALLEY CCD",
       "mis_name": "WEST VALLEY",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 117,
@@ -1687,9 +2152,13 @@
       "short": "Woodland",
       "mis_college_code": "292",
       "mis_district_code": "290",
-      "district": "YUBA CCD",
+      "district": "Yuba Community College District",
+      "district_caps": "YUBA CCD",
       "mis_name": "WOODLAND",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     },
     {
       "college_id": 118,
@@ -1701,9 +2170,13 @@
       "short": "Yuba",
       "mis_college_code": "291",
       "mis_district_code": "290",
-      "district": "YUBA CCD",
+      "district": "Yuba Community College District",
+      "district_caps": "YUBA CCD",
       "mis_name": "YUBA",
-      "mis_match": "normalised-name"
+      "mis_match": "roster-bridge",
+      "mis_code_is_placeholder": false,
+      "district_type": "M",
+      "district_college_count": 2
     }
   ],
   "mis_rows_not_matched_to_a_map_college": [
