@@ -3881,3 +3881,36 @@ done."* Durable: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`,
 `methodology-publish-the-denominator-with-the-number`, `methodology-assert-the-contract-not-the-argument-order`,
 `methodology-order-the-post-deploy-check-after-the-deploy`.
 Story: `docs/sierra_credential_naming_lessons.md` · handoff `docs/session_139_handoff.md`.
+
+## Archived session narrative — Session 141 (SkyLink, moved out Session 144)
+
+### SkyLink — the lead figure was one decision, not three hundred (2026-08-11, Session 141)
+
+Shipped **#1121**: the waiting-credit breakdown, the funding-pool split (real tab names, each priority's cap + the
+college's own target, a *Do this next* per pool), 15-entry Resources, and the tier block — *"Advancing — 2 of 5"* with the
+missing criteria named, validated across **all 115 colleges, 0 mismatches**. Tests **104 → 170**.
+⭐ **98.8% of the 64,074 articulated-and-waiting units is Credit for Basic Military Service** (87.7% to a GE/graduation
+area); **65 of 73** colleges are at 100%, the whole backlog is **592 rows**, and **33 of 106 colleges have none** — a
+finished queue, not a missing measurement. It is one decision applied repeatedly, not 300 judgment calls.
+⭐ **A percentage must never round UP into a claim it cannot support** — "100% military" printed with a non-military row
+visibly above it (true 99.76%); every assertion passed, and it was caught by *rendering the page and reading it*. Same PR
+already guarded the inbound form (published 25.0% is really 24.96%).
+⚠️ **The access shape is an RLS decision, not a UI change** — four of the tab's reads are DB-gated, so `?college=` for an
+unauthenticated college returns nothing. ⚠️ **`map_credential_student_rollup` is a MATVIEW: Postgres cannot give it RLS,
+and `anon` holds the grant.** Nothing exposed today (0 published cells under k=10; all 420 suppressed rows null *every*
+measure) — but its suppression has no backstop beneath the build script. Durable:
+`methodology-a-percentage-must-not-round-up-into-a-claim`, `methodology-a-materialized-view-cannot-carry-rls`,
+`reference-the-waiting-credit-backlog-is-basic-military-service`.
+**Then Sam read the live tab (#1123):** suggested questions now **fill AND send** in one click (`cpl_chat.js` gained a
+sibling `ask()` — ⚠️ **`prefill()` stays send-free**, the Sierra Training replay depends on it; add the sibling, never
+retune the shared helper), and the tier block is **prose**, with the three tiers named in the header because *a
+classification label must ship with its scheme*. Unmet criteria sort **nearest-threshold first — in prose the ORDER is
+the advice** — and **Inactive gets its own sentence, never "0 of 5"** (the worker assigns it by absence of recorded
+activity, so a score blames a college for a scheme it never entered). Both confirmed by Sam.
+⭐ **A source-text assertion is unsound in BOTH directions** — four tier checks went red on a correct page because the
+copy is built from concatenated literals and reflowing split the phrase, one hour after 163 assertions went green on the
+self-contradicting "100%". Assert `root.textContent`; reserve source-greps for real source invariants.
+**Reading all four tier states then found copy no assertion would name** ("you meet 0 of the 5 criteria" → "you do not
+yet meet any of the five"). Tests **104 → 183**. Durable: `methodology-assert-what-the-reader-sees`.
+Story: `docs/college_action_page_lessons.md` · handoff `docs/session_142_handoff.md`.
+

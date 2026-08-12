@@ -151,6 +151,16 @@ def build(outpath):
         ("HTH course profile - the six modules and six SLOs, from the syllabus.", "p"),
         ("Statewide summary - the counts, as live formulas.", "p"),
         ("", ""),
+        ("MAP college ID (last column)", "h"),
+        ("Each college is matched to MAP through its state MIS college code rather than by "
+         "name, using the shared college identity crosswalk the MAP team maintains. A code "
+         "cannot be defeated by a spelling, so this is more reliable than matching "
+         "\"MOUNT SAN ANTONIO COLLEGE\" to \"Mt. San Antonio College\" by hand. 60 of the 61 "
+         "colleges matched that way. The exception is San Diego College of Continuing "
+         "Education, which is a real MAP entity but sits outside that crosswalk\'s scope "
+         "(it covers the 116 credit colleges), so it was matched by name instead and its "
+         "ID cell says so rather than sitting empty.", "p"),
+        ("", ""),
         ("One note on the Statewide summary tab", "h"),
         ("Its figures are live formulas over the College crosswalk tab, so they stay correct if you "
          "filter or edit rows. They compute the moment Excel opens the file. If you preview the "
@@ -184,7 +194,7 @@ def build(outpath):
         "Alignment score (1-5)", "MAP CPL readiness",
         "MAP exhibits", "MAP credit recs",
         "MAP primary contact", "Contact email", "MAP landing page",
-        "Suggested next step",
+        "Suggested next step", "MAP college ID",
     ]
     ws.append(headers)
     for r in rows:
@@ -197,12 +207,16 @@ def build(outpath):
             r["map_exhibits"], r["map_credit_recs"],
             r["contact"], r["email"], r["landing"],
             next_step(r),
+            # Appended LAST on purpose: it is a join key, not reading matter, and
+            # adding it here leaves columns A-S (and the summary formulas that
+            # reference them) untouched.
+            r.get("map_college_id") or "Not in the identity crosswalk (continuing ed)",
         ])
     style_header(ws)
     widths(ws, {"A": 30, "B": 19, "C": 15, "D": 8, "E": 22, "F": 26, "G": 52, "H": 26,
                 "I": 10, "J": 10, "K": 34, "L": 9, "M": 30, "N": 9, "O": 9, "P": 22,
-                "Q": 30, "R": 44, "S": 60})
-    body(ws, wrap_cols=("E", "F", "G", "H", "K", "M", "P", "Q", "S"))
+                "Q": 30, "R": 44, "S": 60, "T": 16})
+    body(ws, wrap_cols=("E", "F", "G", "H", "K", "M", "P", "Q", "S", "T"))
     for r in range(2, ws.max_row + 1):
         for c in (4, 9, 10, 12, 14, 15):
             ws.cell(row=r, column=c).alignment = Alignment(horizontal="center", vertical="top")

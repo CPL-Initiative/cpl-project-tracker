@@ -626,6 +626,39 @@ from `credential_reference_data.js` at render time, so it can't go stale the way
 hand-copied list would. See
 [`docs/kb-notes/methodology-dormant-asset-worklist.md`](../docs/kb-notes/methodology-dormant-asset-worklist.md).
 
+## Futuro Health HTH → CCC CNA crosswalk (2026-08-12, Session 144)
+
+Ashley's second partner deliverable, and deliberately **NOT** the partner engine
+above. That engine reconciles a partner's **occupation vocabulary** against MAP's
+**credential vocabulary** (many-to-many, judgment-heavy). This asks **one known
+course × one known program type** across every college — no vocabulary to
+reconcile — so it gets its own simple generator. *Match the instrument to the
+question's shape, not to the word "crosswalk".*
+
+| File | What |
+|---|---|
+| `_build_futuro_hth_crosswalk.py` | The matcher. Universe = colleges teaching a CNA course (MIS `cb_course_basic_fall2025.csv`, TOP 1230.30); award level from the COCI program export; receiving-course candidates gated on **two signals** (HTH-module title lens AND a related TOP family) then ranked by `fit_of()`. Emits `futuro_hth_out/crosswalk.json`. **The join asserts BOTH sides through `norm()` and exits on any miss.** |
+| `_write_futuro_hth_workbook.py` | The 5-sheet workbook (Read me · College crosswalk · Receiving course detail · HTH course profile · Statewide summary). Consumes `crosswalk.json`. The `.xlsx` is **gitignored as regenerable**, matching the partner-crosswalk precedent. |
+| `futuro_hth_map_reference.json` | MAP snapshot for the 61 colleges — exhibits, credit recs, contacts, landing pages, region/county — synced from Supabase 2026-08-12. Also records that **Futuro Health is MAP entity 133 with a live landing page and ZERO exhibits**. |
+
+⚠ **`fit_of()` exists because tier alone ranks badly.** The health TOP family
+covers *every* allied-health occupation, so *Funeral Service Law and Ethics* and
+*RDA Law and Ethics* out-ranked the canonical *Interpersonal Communication*. Those
+teach another occupation's scope of practice; they are scored down, as are
+placements (internship/practicum).
+
+⚠ **The MIS course file ABBREVIATES titles** — `INTERCULTURAL COMM`,
+`Interpersonal Commun`, `BIO-ETHICS`. Matching full words produced **six false
+"none found"** rows. Titles pass through `tidy_title()` and the patterns match the
+`comm` stem — **in the fit regexes as well as the module patterns**, since fixing
+only the latter reproduces the identical symptom. See
+`docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md`.
+
+⚠ **Course-level MIS finds 61 colleges; program-level COCI finds 32.** Many
+colleges run CNA as a noncredit course with no award record. For "which colleges
+offer X", start at the course file and use COCI only for the award level —
+`docs/kb-notes/reference-course-level-mis-beats-program-level-coci.md`.
+
 ## Partner occupation → CPL crosswalk (2026-08-05, SkyWalker)
 
 Three files back the reusable **"which of the occupations we train for can our

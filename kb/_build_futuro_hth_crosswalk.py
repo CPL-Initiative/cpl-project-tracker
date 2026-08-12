@@ -47,6 +47,10 @@ REPO = os.path.dirname(HERE)
 MIS = os.path.join(REPO, "kb", "reference", "cb_course_basic_fall2025.csv")
 COCI = os.path.join(REPO, "tmc", "source_data", "coci_program_export_2026-06-17.csv")
 MAPREF = os.path.join(HERE, "futuro_hth_map_reference.json")
+# The shared identity crosswalk (SkyLink, 2026-08-12) — MAP college_id <-> MIS
+# college code <-> every spelling our systems use. Preferred over name matching:
+# `cb_course_basic.CB_COLLEGE_ID` IS the MIS college code, so this is a CODED join.
+IDENTITY = os.path.join(HERE, "college_identity", "2026-08-12", "crosswalk.json")
 
 CNA_TOP = "123030"          # MIS form (no dot) -- Certified Nurse Assistant
 CNA_TOP_DOTTED = "1230.30"  # COCI form
@@ -212,9 +216,12 @@ def build():
 
     # --- 1. the universe: colleges teaching a CNA course --------------------
     cna_courses = collections.defaultdict(list)
+    mis_code = {}          # MIS college_name_long -> CB_COLLEGE_ID (the MIS code)
     for r in mis:
         if (r.get("CB_TOP_CODE") or "").strip().startswith(CNA_TOP):
-            cna_courses[r["College_name_long"].strip()].append(r)
+            name = r["College_name_long"].strip()
+            cna_courses[name].append(r)
+            mis_code.setdefault(name, (r.get("CB_COLLEGE_ID") or "").strip())
 
     # --- 2. CNA programs (award level) from COCI ----------------------------
     kw = re.compile(r"\b(cna|nurse assistant|nursing assistant|nurse aide|nursing aide)\b", re.I)
@@ -254,15 +261,44 @@ def build():
             "modules_all": mods,
         })
 
-    # --- 4. join to MAP -- normalise BOTH sides, then assert ----------------
+    # --- 4. join to MAP -- CODED key first, names only as a fallback --------
+    # Preference order, and the reason for it:
+    #   1. MIS college CODE via the shared identity crosswalk. A code join cannot
+    #      be defeated by a spelling, and the crosswalk asserts its codes are unique.
+    #   2. name matching with norm() applied to BOTH sides, then a de-spaced retry
+    #      ('MIRA COSTA COLLEGE' vs 'MiraCosta College' differ only by a space).
+    # The fallback is NOT redundant: the identity crosswalk scopes to the 116 CREDIT
+    # colleges, so the continuing-education institutions -- which are real MAP
+    # entities with their own college_id -- are absent from it. San Diego College of
+    # Continuing Education (MIS code 076) teaches 4 CNA courses and would silently
+    # drop out of a 61-row deliverable if the coded join were the only path.
+    identity_by_code = {}
+    if os.path.exists(IDENTITY):
+        with open(IDENTITY, encoding="utf-8") as f:
+            ident = json.load(f)
+        for c in ident.get("colleges", []):
+            code = (c.get("mis_college_code") or "").strip()
+            if code:
+                identity_by_code[code] = c
+
     map_by_norm = {norm(k): (k, v) for k, v in mapref["colleges"].items()}
-    # De-spaced fallback: 'MIRA COSTA COLLEGE' vs 'MiraCosta College' differ only by a
-    # space. Built from the same norm() output, so both sides stay normalised.
     map_by_squash = {k.replace(" ", ""): v for k, v in map_by_norm.items()}
     rows, unmatched = [], []
     for col in sorted(cna_courses):
-        key = norm(col)
-        hit = map_by_norm.get(key) or map_by_squash.get(key.replace(" ", ""))
+        hit, how, map_id = None, "", None
+        key = norm(col)          # also the COCI-program lookup key, below
+
+        ident_hit = identity_by_code.get(mis_code.get(col, ""))
+        if ident_hit:
+            k = norm(ident_hit["college_name"])
+            hit = map_by_norm.get(k) or map_by_squash.get(k.replace(" ", ""))
+            if hit:
+                how, map_id = "mis_code", ident_hit["college_id"]
+
+        if not hit:
+            hit = map_by_norm.get(key) or map_by_squash.get(key.replace(" ", ""))
+            how = "name"
+
         if not hit:
             unmatched.append(col)
             continue
@@ -300,6 +336,9 @@ def build():
         rows.append({
             "college": map_name,
             "mis_name": col,
+            "mis_college_code": mis_code.get(col, ""),
+            "map_college_id": map_id,
+            "joined_via": how,
             "region": m["region"],
             "county": m["county"],
             "cna_courses": len(cc),
@@ -341,6 +380,8 @@ def build():
             "with_receiving": sum(1 for r in rows if r["n_candidates"]),
             "with_tier1": sum(1 for r in rows if r["n_tier1"]),
             "cpl_operating": sum(1 for r in rows if r["readiness"].startswith("A")),
+            "joined_via_mis_code": sum(1 for r in rows if r["joined_via"] == "mis_code"),
+            "joined_via_name": sum(1 for r in rows if r["joined_via"] == "name"),
         },
     }
 
@@ -360,3 +401,4 @@ if __name__ == "__main__":
     print(f"  CNA courses: {t['cna_courses']} | COCI CNA programs: {t['coci_programs']}")
     print(f"  with >=1 receiving candidate: {t['with_receiving']} | with a Tier 1: {t['with_tier1']}")
     print(f"  CPL already operating in MAP: {t['cpl_operating']}")
+    print(f"  joined via MIS code: {t['joined_via_mis_code']} | via name fallback: {t['joined_via_name']}")
