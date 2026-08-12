@@ -973,8 +973,17 @@ check("(O) the value does not repeat the phrase's unit",
 // perfectly correct, which is a test failing for a reason the reader cannot see.
 check("(O) the size limitation is stated, not left to be inferred",
   /Three of the five are size measures/.test(tierTxt));
+// The INVARIANT is "this is not a league table", not one particular sentence.
+// Pinned to the exact old wording, this went red on a correct page when the
+// heading changed to "How this college compares statewide" and the closing
+// line was reworded to agree with it. Assert the guarantee, and separately
+// assert the absence of the language that would break it.
 check("(O) never presented as a ranking against other colleges",
-  /never a ranking against anyone else/.test(tierTxt));
+  /never (a ranking against anyone else|against any particular one)/.test(tierTxt)
+  && /never as a league table|never a ranking/.test(tierTxt));
+check("(O) …and no percentile or rank-position language appears",
+  !/percentile|\b\d+(st|nd|rd|th) of \d+\b|rank(ed|s)? #?\d/.test(tierTxt),
+  "a percentile hands a top-5% badge to a 21-student college — Sam, 2026-08-11");
 check("(O) the batch-upload distortion is named where it would mislead",
   /batch-upload already-posted credit \(AP, IB, CLEP\)/.test(tierTxt),
   "two of the five count transcribed units; some colleges bulk-load AP/IB/CLEP");

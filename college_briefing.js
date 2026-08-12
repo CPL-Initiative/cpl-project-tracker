@@ -1294,176 +1294,6 @@
       h += sec("start", "Start here", esc(b.leads[0].item.measure.headline), leadBody);
     }
 
-    // ── Where you stand ───────────────────────────────────────────────────
-    // Every figure carries its denominator. Nothing here can reach 100% and
-    // stop: the fractions are over the OPPORTUNITY, not over what was already
-    // done.
-    var summary = state.data && state.data.summaryByName && state.data.summaryByName[state.college];
-    var st = standing(summary, state.detail);
-    if (state.detailLoading) {
-      h += '<div class="cb-note">Measuring this college…</div>';
-    } else if (state.detailError) {
-      h += '<div class="cb-warn">Could not read this college\'s detail: ' + esc(state.detailError)
-        + '. That is a <b>failed read, not an empty result</b> — nothing below should be taken as "this college has none".</div>';
-    }
-    // ── Your tier, with the criteria named ────────────────────────────────
-    // "Advancing" on its own is a verdict with no next step, and 77% of
-    // colleges are in that bucket. Naming the five turns it into a checklist.
-    var ts = tierStanding(state.live, state.college);
-    if (ts) {
-      // Prose, not a checklist (Sam, 2026-08-11). The three tiers are named in
-      // the header so the label means something before the reader gets to it —
-      // "Advancing" alone is a verdict from an unstated scheme.
-      var tierBody = "";
-      tierBody += '<div class="cb-note" style="margin-top:-4px">Every college is placed in one of three tiers by the same '
-        + "five criteria: <b>Leading</b> meets three or more, <b>Advancing</b> one or two, <b>Inactive</b> has "
-        + "essentially no CPL recorded. The five count students, eligible units, units per student, and how much "
-        + "of that credit is <b>marked transcribed in MAP</b>.</div>";
-      tierBody += '<div class="cb-tier">';
-      if (ts.mismatch) {
-        tierBody += "<p><b>" + esc(ts.label) + "</b> — " + ts.met + " of " + ts.total + " criteria met. The individual "
-          + "criteria do not reconcile with that published count here, because the transcription rate is "
-          + "published rounded and a borderline college can fall either side of it. Rather than show you a list "
-          + "that disagrees with the figure above it, we are holding the list back.</p>";
-      } else if (ts.tier === "inactive") {
-        tierBody += "<p><b>Inactive</b> is assigned when a college has almost no CPL recorded in MAP at all — fewer than "
-          + "ten students and no eligible units — rather than by counting the five criteria. It reflects what has "
-          + "been <b>recorded</b>, so if CPL is happening here it is not reaching MAP, and that is the thing to "
-          + "fix first.</p>";
-      } else {
-        var mets = ts.met_list, miss = ts.missing;
-        tierBody += "<p><b>" + esc(ts.label) + "</b> — ";
-        if (mets.length) {
-          tierBody += "you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria: "
-            + mets.map(function (c) {
-                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
-        } else {
-          // "you meet 0 of the 5" is arithmetic, not a sentence.
-          tierBody += "you do not yet meet any of the five";
-        }
-        tierBody += ".</p>";
-        if (miss.length) {
-          tierBody += "<p>" + (miss.length === 1 ? "The one you have not reached" : "The " + miss.length
-              + " you have not reached, <b>closest first</b>") + ": "
-            + miss.map(function (c) {
-                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ")
-            + ".</p>";
-        } else {
-          tierBody += "<p>There is nothing left to reach on this scale — you meet all five.</p>";
-        }
-      }
-      tierBody += "</div>";
-      tierBody += '<div class="cb-note" style="margin-top:10px">Two things to hold alongside it. <b>Three of the five are '
-        + "size measures</b>, so a small college cannot reach them however well it runs CPL — that is a limit of "
-        + "the scheme, not a judgment on you. And the other two count units <b>marked transcribed in MAP</b>, "
-        + "which is your own step and entirely within your control — but it also means colleges that batch-upload "
-        + "already-posted credit (AP, IB, CLEP) score on them for reasons unrelated to how much CPL they award. "
-        + "<b>So this is a checklist for you, never a ranking against anyone else.</b></div>";
-      // Inactive is assigned by ABSENCE of recorded activity, not by counting
-      // the five — so it never carries a score, here or in the body.
-      h += sec("tier", "Your tier on the systemwide dashboard",
-        esc(ts.label) + (ts.tier === "inactive" ? "" : " — " + ts.met + " of " + ts.total + " criteria"),
-        tierBody);
-    }
-
-    if (st && st.eligible != null) {
-      var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
-      var standBody = '<div class="cb-stand">';
-      standBody += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
-        "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
-        st.eligible > 0 ? (st.articulatedWaiting || 0) / st.eligible : 0, "lead");
-      standBody += standBox(fmt(st.applied), "units applied",
-        "Credit you have put on a student record — the measure the funding formula rewards.",
-        pctApplied, "");
-      standBody += standBox(fmt(st.transcribed), "units marked transcribed",
-        "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
-        + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
-        + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
-        + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
-        st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
-      standBody += standBox(fmt(st.students), "CPL students",
-        "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
-        null, "");
-      standBody += "</div>";
-      h += sec("stand", "Where you stand",
-        fmt(st.articulatedWaiting) + " units waiting · " + fmt(st.students) + " CPL students", standBody);
-    } else if (summary && summary.suppressed) {
-      h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
-        + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
-    }
-
-    // ── What the waiting credit is ────────────────────────────────────────
-    // Explains the lead figure directly above it. Placed here, not lower down,
-    // because "63,991 units already articulated" invites a coordinator to
-    // imagine 300 judgment calls when it is very nearly one repeated decision.
-    var wb = waitingBreakdown(state.detail, summary);
-    var waitBody = "", waitSum = "";
-    if (wb && !wb.suppressed && !wb.empty && !wb.unmeasured) {
-      waitSum = fmt(Math.round(wb.total)) + " units"
-        + (wb.militaryShare >= 1 ? " · all basic military service" : "");
-      waitBody += '<div class="cb-note" style="margin-top:0">These add up to the <b>' + fmt(Math.round(wb.total))
-        + " units</b> in the first box above — same credit, broken out by what it would count toward.</div>";
-      waitBody += '<div class="cb-wait">';
-      wb.groups.forEach(function (g) {
-        var p = safePct(g.share, 1);
-        waitBody += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
-          + '<span class="v">' + fmt(Math.round(g.units)) + " units · " + p + "%</span></div>"
-          + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, p)) + '%"></i></div>';
-        if (g.top.length) {
-          waitBody += '<div class="cb-wrecs">Counts toward: '
-            + g.top.map(function (t) {
-                return esc(t.name) + " <span>(" + fmt(Math.round(t.units)) + ")</span>"; }).join(" · ")
-            + "</div>";
-        }
-        waitBody += "</div>";
-      });
-      waitBody += "</div>";
-      if (wb.militaryShare >= 0.6) {
-        var allMil = wb.militaryShare >= 1;
-        waitBody += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
-          + " of it is credit for basic military service.</b> That is the good news on this page: it is not "
-          + "hundreds of separate judgment calls, it is " + (allMil ? "" : "close to ")
-          + "<b>one decision applied repeatedly</b> — you have "
-          + "already articulated the exhibit, and every one of these students has a DD-214 or JST on file. "
-          + "Statewide the pattern is the same: <b>98.8%</b> of all waiting credit is basic military service, and "
-          + "65 of the 73 colleges with any are at 100%.</div>";
-      }
-    } else if (wb && wb.suppressed) {
-      waitSum = "withheld";
-      waitBody += '<div class="cb-note" style="margin-top:0">Withheld — this college has fewer than 10 CPL students, so its '
-        + "figures are not published at that size. Breaking a withheld total into its parts would give back exactly "
-        + "what withholding it removed.</div>";
-    } else if (wb && wb.unmeasured) {
-      waitSum = "no figures held";
-      waitBody += '<div class="cb-note" style="margin-top:0"><b>We hold no credit figures for this college.</b> It is not '
-        + "in the credit summary at all, so there is nothing here to break down — and that is an <b>absent "
-        + "measurement, not a finished queue</b>. If CPL is happening here, it is not reaching MAP, which is the "
-        + "thing to fix first.</div>";
-    } else if (wb && wb.empty) {
-      waitSum = "nothing waiting";
-      waitBody += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
-        + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
-        + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
-    }
-
-    h += sec("waiting", "What that waiting credit actually is", waitSum, waitBody);
-
-    // ── By CPL type ───────────────────────────────────────────────────────
-    var types = byCplType(state.detail);
-    if (types) {
-      var typeBody = '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
-        + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
-        + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
-        + 'are complete.</div>';
-      typeBody += '<div class="cb-types">';
-      types.forEach(function (t) { typeBody += typeBox(t); });
-      typeBody += "</div>";
-      var nAd = 0, nOpp = 0;
-      types.forEach(function (t) { nAd += (t.articulated || 0); nOpp += (t.couldAdopt || 0); });
-      h += sec("types", "By CPL type",
-        fmt(nAd) + " articulated · " + fmt(nOpp) + " you could adopt", typeBody);
-    }
-
     // ── Your funding ──────────────────────────────────────────────────────
     // Two appropriations, kept visibly apart. Neither figure is derived here.
     var f = fundingFor(state.college);
@@ -1605,7 +1435,179 @@
       if (f.grant) fundSum = f.grant.declined ? "seed declined" : money(f.grant.amount) + " seed";
       if (f.alloc) fundSum += (fundSum ? " · " : "") + money(f.alloc.total) + " cap";
     }
-    h += sec("funding", "Your funding", esc(fundSum), fundBody);
+    h += sec("funding", "My CPL Funding", esc(fundSum), fundBody);
+
+    // ── Where you stand ───────────────────────────────────────────────────
+    // Every figure carries its denominator. Nothing here can reach 100% and
+    // stop: the fractions are over the OPPORTUNITY, not over what was already
+    // done.
+    var summary = state.data && state.data.summaryByName && state.data.summaryByName[state.college];
+    var st = standing(summary, state.detail);
+    if (state.detailLoading) {
+      h += '<div class="cb-note">Measuring this college…</div>';
+    } else if (state.detailError) {
+      h += '<div class="cb-warn">Could not read this college\'s detail: ' + esc(state.detailError)
+        + '. That is a <b>failed read, not an empty result</b> — nothing below should be taken as "this college has none".</div>';
+    }
+    // ── Your tier, with the criteria named ────────────────────────────────
+    // "Advancing" on its own is a verdict with no next step, and 77% of
+    // colleges are in that bucket. Naming the five turns it into a checklist.
+    var ts = tierStanding(state.live, state.college);
+    if (ts) {
+      // Prose, not a checklist (Sam, 2026-08-11). The three tiers are named in
+      // the header so the label means something before the reader gets to it —
+      // "Advancing" alone is a verdict from an unstated scheme.
+      var tierBody = "";
+      tierBody += '<div class="cb-note" style="margin-top:-4px">Every college is placed in one of three tiers by the same '
+        + "five criteria: <b>Leading</b> meets three or more, <b>Advancing</b> one or two, <b>Inactive</b> has "
+        + "essentially no CPL recorded. The five count students, eligible units, units per student, and how much "
+        + "of that credit is <b>marked transcribed in MAP</b>.</div>";
+      tierBody += '<div class="cb-tier">';
+      if (ts.mismatch) {
+        tierBody += "<p><b>" + esc(ts.label) + "</b> — " + ts.met + " of " + ts.total + " criteria met. The individual "
+          + "criteria do not reconcile with that published count here, because the transcription rate is "
+          + "published rounded and a borderline college can fall either side of it. Rather than show you a list "
+          + "that disagrees with the figure above it, we are holding the list back.</p>";
+      } else if (ts.tier === "inactive") {
+        tierBody += "<p><b>Inactive</b> is assigned when a college has almost no CPL recorded in MAP at all — fewer than "
+          + "ten students and no eligible units — rather than by counting the five criteria. It reflects what has "
+          + "been <b>recorded</b>, so if CPL is happening here it is not reaching MAP, and that is the thing to "
+          + "fix first.</p>";
+      } else {
+        var mets = ts.met_list, miss = ts.missing;
+        tierBody += "<p><b>" + esc(ts.label) + "</b> — ";
+        if (mets.length) {
+          tierBody += "you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria: "
+            + mets.map(function (c) {
+                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
+        } else {
+          // "you meet 0 of the 5" is arithmetic, not a sentence.
+          tierBody += "you do not yet meet any of the five";
+        }
+        tierBody += ".</p>";
+        if (miss.length) {
+          tierBody += "<p>" + (miss.length === 1 ? "The one you have not reached" : "The " + miss.length
+              + " you have not reached, <b>closest first</b>") + ": "
+            + miss.map(function (c) {
+                return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ")
+            + ".</p>";
+        } else {
+          tierBody += "<p>There is nothing left to reach on this scale — you meet all five.</p>";
+        }
+      }
+      tierBody += "</div>";
+      tierBody += '<div class="cb-note" style="margin-top:10px">Two things to hold alongside it. <b>Three of the five are '
+        + "size measures</b>, so a small college cannot reach them however well it runs CPL — that is a limit of "
+        + "the scheme, not a judgment on you. And the other two count units <b>marked transcribed in MAP</b>, "
+        + "which is your own step and entirely within your control — but it also means colleges that batch-upload "
+        + "already-posted credit (AP, IB, CLEP) score on them for reasons unrelated to how much CPL they award. "
+        + "<b>So it measures you against the same five benchmarks as every other college — "
+        + "never against any particular one, and never as a league table.</b></div>";
+      // Inactive is assigned by ABSENCE of recorded activity, not by counting
+      // the five — so it never carries a score, here or in the body.
+      h += sec("tier", "Statewide CPL Benchmarks",
+        esc(ts.label) + (ts.tier === "inactive" ? "" : " — " + ts.met + " of " + ts.total + " criteria"),
+        tierBody);
+    }
+
+    if (st && st.eligible != null) {
+      var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
+      var standBody = '<div class="cb-stand">';
+      standBody += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
+        "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
+        st.eligible > 0 ? (st.articulatedWaiting || 0) / st.eligible : 0, "lead");
+      standBody += standBox(fmt(st.applied), "units applied",
+        "Credit you have put on a student record — the measure the funding formula rewards.",
+        pctApplied, "");
+      standBody += standBox(fmt(st.transcribed), "units marked transcribed",
+        "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
+        + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
+        + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
+        + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
+        st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
+      standBody += standBox(fmt(st.students), "CPL students",
+        "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
+        null, "");
+      standBody += "</div>";
+      h += sec("stand", "Where you stand",
+        fmt(st.articulatedWaiting) + " units waiting · " + fmt(st.students) + " CPL students", standBody);
+    } else if (summary && summary.suppressed) {
+      h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
+        + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
+    }
+
+    // ── What the waiting credit is ────────────────────────────────────────
+    // Explains the lead figure directly above it. Placed here, not lower down,
+    // because "63,991 units already articulated" invites a coordinator to
+    // imagine 300 judgment calls when it is very nearly one repeated decision.
+    var wb = waitingBreakdown(state.detail, summary);
+    var waitBody = "", waitSum = "";
+    if (wb && !wb.suppressed && !wb.empty && !wb.unmeasured) {
+      waitSum = fmt(Math.round(wb.total)) + " units"
+        + (wb.militaryShare >= 1 ? " · all basic military service" : "");
+      waitBody += '<div class="cb-note" style="margin-top:0">These add up to the <b>' + fmt(Math.round(wb.total))
+        + " units</b> in the first box above — same credit, broken out by what it would count toward.</div>";
+      waitBody += '<div class="cb-wait">';
+      wb.groups.forEach(function (g) {
+        var p = safePct(g.share, 1);
+        waitBody += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
+          + '<span class="v">' + fmt(Math.round(g.units)) + " units · " + p + "%</span></div>"
+          + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, p)) + '%"></i></div>';
+        if (g.top.length) {
+          waitBody += '<div class="cb-wrecs">Counts toward: '
+            + g.top.map(function (t) {
+                return esc(t.name) + " <span>(" + fmt(Math.round(t.units)) + ")</span>"; }).join(" · ")
+            + "</div>";
+        }
+        waitBody += "</div>";
+      });
+      waitBody += "</div>";
+      if (wb.militaryShare >= 0.6) {
+        var allMil = wb.militaryShare >= 1;
+        waitBody += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
+          + " of it is credit for basic military service.</b> That is the good news on this page: it is not "
+          + "hundreds of separate judgment calls, it is " + (allMil ? "" : "close to ")
+          + "<b>one decision applied repeatedly</b> — you have "
+          + "already articulated the exhibit, and every one of these students has a DD-214 or JST on file. "
+          + "Statewide the pattern is the same: <b>98.8%</b> of all waiting credit is basic military service, and "
+          + "65 of the 73 colleges with any are at 100%.</div>";
+      }
+    } else if (wb && wb.suppressed) {
+      waitSum = "withheld";
+      waitBody += '<div class="cb-note" style="margin-top:0">Withheld — this college has fewer than 10 CPL students, so its '
+        + "figures are not published at that size. Breaking a withheld total into its parts would give back exactly "
+        + "what withholding it removed.</div>";
+    } else if (wb && wb.unmeasured) {
+      waitSum = "no figures held";
+      waitBody += '<div class="cb-note" style="margin-top:0"><b>We hold no credit figures for this college.</b> It is not '
+        + "in the credit summary at all, so there is nothing here to break down — and that is an <b>absent "
+        + "measurement, not a finished queue</b>. If CPL is happening here, it is not reaching MAP, which is the "
+        + "thing to fix first.</div>";
+    } else if (wb && wb.empty) {
+      waitSum = "nothing waiting";
+      waitBody += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
+        + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
+        + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
+    }
+
+    h += sec("waiting", "What that waiting credit actually is", waitSum, waitBody);
+
+    // ── By CPL type ───────────────────────────────────────────────────────
+    var types = byCplType(state.detail);
+    if (types) {
+      var typeBody = '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
+        + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
+        + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
+        + 'are complete.</div>';
+      typeBody += '<div class="cb-types">';
+      types.forEach(function (t) { typeBody += typeBox(t); });
+      typeBody += "</div>";
+      var nAd = 0, nOpp = 0;
+      types.forEach(function (t) { nAd += (t.articulated || 0); nOpp += (t.couldAdopt || 0); });
+      h += sec("types", "By CPL type",
+        fmt(nAd) + " articulated · " + fmt(nOpp) + " you could adopt", typeBody);
+    }
+
 
     // ── Course share — absorbed from the retired Course Credit tab ────────
     var cs = courseShare(state.detail && state.detail.goal2);
