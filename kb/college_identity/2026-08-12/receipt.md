@@ -30,6 +30,13 @@ Non-numeric on purpose, so a placeholder can never be mistaken for or sorted bes
 
 None — every MAP college reached a district.
 
+## Colleges in the 2026 CEO list that MAP does not carry
+
+Each has its own CEO, so they are institutions rather than sites. These are the standalone continuing-education institutions the NC / Learning Partners workstream found sitting at ZERO in MAP.
+
+- **North Orange Continuing Education** — North Orange County Community College District (President)
+- **San Diego College of Continuing Education** — San Diego Community College District (President)
+
 ## MIS rows matching no MAP college
 
 Mostly standalone adult/continuing-education SITES, which Sam ruled worth keeping (they are a funded population). Not defects.
