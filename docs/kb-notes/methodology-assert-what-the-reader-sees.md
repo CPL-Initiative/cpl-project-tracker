@@ -1,7 +1,7 @@
 ---
 title: Assert what the reader sees, not what the source says
 created: 2026-08-11
-updated: 2026-08-11
+updated: 2026-08-12
 tags: [methodology, testing, ui, my-college]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -97,11 +97,47 @@ The cheap version of all of this, worth doing before any of the above: **print
 the output and read it.** It is the single highest-yield check available and it
 requires no framework.
 
+## Corollary: never pin an assertion to a value that changes on its own (2026-08-12)
+
+A third way to be wrong about what the reader sees — this one fires on a
+schedule. An assertion read:
+
+```js
+/at least 500 CPL students \(you: 2,250\)/.test(tierTxt)
+```
+
+and went red on 2026-08-12 with nothing broken. The figure comes from
+`live_metrics.json`, which the daily cron refreshes from the CCCCO dashboard
+scrape, and City College of San Francisco had moved to **2,251**.
+
+That is not a flaky test, it is a **scheduled false alarm**: it was always going
+to fire, on a day nobody could predict, at whoever happened to be working. And
+its cost is worse than the wasted hour — a suite that cries wolf trains the next
+session to skim failures, which is exactly when the real one lands.
+
+Assert the **shape**, and source the number from the same file the page reads:
+
+```js
+const ccsfLive = /* … look the college up in LIVE.tiers … */;
+check("the tier fixture college is present in live_metrics.json", !!ccsfLive);
+check("every criterion appears with the college's own value",
+  new RegExp("at least 500 CPL students \\(you: "
+    + ccsfLive.students.toLocaleString("en-US") + "\\)").test(tierTxt));
+```
+
+Note the added presence check. Deriving the expectation from the same source as
+the render can pass vacuously if the lookup returns `undefined` and both sides
+become "nothing" — so assert the fixture exists before asserting what it renders.
+
+**Rule of thumb: if a committed value would change without anyone editing the
+repo, it is data, not an expectation.** Pin the invariant; look the value up.
+
 ## See also
 
 - `[[docs/kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim]]` — the bug the render caught
 - `[[docs/kb-notes/methodology-commit-the-test-harness]]` — the practice this refines
 - PR `#1121`, `#1123` — the false green and the false red
+- PR `#1128` — the scheduled false alarm (a daily-refreshed figure pinned in an assertion)
 
 ---
 

@@ -3718,6 +3718,25 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### SkyBridge — Sam drove the design live, and eleven steers later My College works (2026-08-11, Session 140)
+
+Shipped **#1117** (funding box · 72-district picker · Ask Sierra), **#1118** (the transcribed correction) and **#1119**
+(**Sierra AI embedded at the top**, pickers inside it, per-college computed questions, and **"Who MAP has on file"**).
+Tests **49 → 104**. Mock (all real figures): `https://claude.ai/code/artifact/aa252c19-bdd3-485b-980c-1fed3a3edc7f`.
+⭐ **The handoff's own worked figure was wrong** — an allocation is an iterative **floor waterfall**: 50 of 115 colleges
+pinned at $150K, and the floor's **$1,999,687** comes out of the same pool, so a flat share is wrong for the floored
+colleges *and* for those it never touches (Bakersfield off by $11,340). Never re-derive; call `_alloc()`.
+⭐ **Sam's rulings:** "transcribed" in MAP is a **MARK**, not a posting — the college forwards the plan to **A&R, who
+enter it in the SIS by hand; there is no SIS integration**; Priority 3 routing is **standard practice, not gaming**;
+use the **funding tab names**, never "$35M"; **show contacts** on a college's own view; **"Sierra AI"**, not Sierra.
+⭐ **A percentile bar would hand a top-5% badge to a 21-student college** (Compton 96th on 21 vs Chaffey 97th on 1,495;
+median 4.5%, **16 tied at zero**). The tier system already exists — **Leading 14 / Advancing 89 / Inactive 12** — and
+**77% sit in one bucket**; fix is *"Advancing — 2 of 5"* with the missing criteria named, not a new scheme.
+⚠️ **A MAP↔MIS side-by-side will mostly show MIS ABOVE MAP** (87 of 111 have marked zero transcribed) — the *stronger*
+anti-"double work" argument. Durable: `methodology-reuse-the-model-not-its-formula`,
+`methodology-a-safe-fallback-is-caller-specific`. Story: `docs/college_action_page_lessons.md` · handoff
+`docs/session_141_handoff.md`.
+
 ### Sky -- the vault was never slow, and five diagnoses needed correcting (2026-08-09, #1071-#1083 MERGED)
 
 Sam asked which of ten "Claude + Obsidian memory" repos to adopt. Answer: **one** (kepano's skills, now

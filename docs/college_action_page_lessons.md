@@ -812,3 +812,175 @@ current, and expect `CLAUDE.md` to have moved.
 Unchanged: wire the three MAP links when the URL shapes arrive. If that stalls,
 put the RLS option set in front of Sam — it gates the access shape *and* closes
 the matview gap, and both are the same conversation.
+
+---
+
+## 2026-08-12 — SkyPro (Session 143): the tab folds down, and two things it was quietly saying wrong
+
+Sam redirected mid-session. MAP deep links, the RLS decision and the MIS
+side-by-side are all **held** at his instruction; the work is the tab itself.
+His brief, after the MAP team used it:
+
+> The team … were very impressed by how useful Sierra AI was and how accurate
+> and appropriate her responses were. That leads me to want to reinforce her as
+> the main focus of the page and make all the content below in collapsible
+> sections (default collapsed).
+>
+> Also for the Strategies section, that just looks like a long list of
+> intimidating to-dos that any staff or college admin would prefer to
+> avoid — what with all their other squeaky wheels chirping and unscheduled
+> fires burning … basically, I want a minimal initial view on this tab with
+> nested expandable details for the inquisitive :)
+
+Shipped as **#1128**. Tests **183 → 228**.
+
+### 14. Collapsing is not the same as hiding
+
+The literal request — wrap each section in `<details>` — produces nine identical
+rows and a page you must click nine times to read. So every closed header
+carries that college's own figure (*"My CPL Funding · $50,000 seed · $414,856
+cap"*, *"Statewide CPL Benchmarks · Leading — 3 of 5 criteria"*). Shut, the tab
+is an eight-line standing report; open, it is everything it was.
+
+Two implementation details that are not optional: **every branch needs a
+summary** (a blank right-hand side reads as broken, and "not loaded" ≠
+"nothing"), and **open state lives in `state.open`, not the DOM** — `render()`
+rewrites `innerHTML`, so a `<details open>` in markup alone slams shut whenever
+anything re-renders. Note:
+[`methodology-a-collapsed-section-must-still-inform`](kb-notes/methodology-a-collapsed-section-must-still-inform.md).
+
+### 15. The 22 strategies were not too many; they were in the wrong place
+
+Sam's diagnosis was precise. As a flat list at the bottom of the page they had
+no consequence attached, and **19 of the 22 carried an identical "not measured
+here" flag** — which was honest, and was the single thing making advice read as
+an audit you are already failing. They now nest inside the funding priority they
+earn against: 10 under Access, 6 under Success, 6 under Capacity, each behind a
+closed *"N steps the team suggests"*. The flag is dropped in that view; measured
+steps keep their figure.
+
+**The join is by position and that is sound by construction** —
+`cpl_funding.js`'s `priorities(slot)` walks the ordered priority list and
+overlays Supabase *by the same index* (`prioField(slot, i, …)`), while
+`collectPrograms()` here sorts that config's own numeric keys. Both are `i` over
+one set. So `prioritiesAlign()` gates on **count equality**, deliberately *not*
+metric equality: the funding module loads its overlay asynchronously, so a
+metric gate drops the steps out of the box during that window and puts them back
+after — a flap caused by the check rather than by a fault. Real drift is caught
+in the tests instead.
+
+Guarantee (c) survives the move: only `cpl-implementation` folds into the funding
+box, so any program the team adds later still gets its own section with no code
+change.
+
+### 16. ⭐ Five colleges were being told they have no implementation funding
+
+Found by rendering every branch and reading it. `fundingFor()` normalised MAP's
+college name through `cplCollegeShort()` and handed the result to
+`cpl_funding.js`, whose `baseCollege()` compares it against the roster's **raw**
+string. Only one side of the join went through the resolver.
+
+It worked for ~110 colleges whose two spellings already agreed and failed for the
+five where they do not — **Mt. San Antonio** (roster: `Mt San Antonio`, no
+period), **Norco**, **Reedley**, **MiraCosta**, **Los Angeles Southwest**. Each
+rendered *"is not on the 115-college funding roster."* Mt. SAC is the largest CPL
+programme in the system; its real allocation is **$522,239**, and the roster row
+was there the whole time.
+
+**The existing join test asserted `S(roster)` against `S(roster)`** — distinctness
+of one side — and reported "0 collisions, 0 orphans" while five colleges were
+orphaned in production. A join test has to exercise *the direction the code joins
+in*. The new one asserts against the real shipped roster and the real funding
+module, and checks the bug directly in both directions. Verified against a figure
+derived outside this repo: `$522,239` matches the Sep-BOG reconciliation. Note:
+[`methodology-normalise-both-sides-of-a-join`](kb-notes/methodology-normalise-both-sides-of-a-join.md).
+
+### 17. ⭐ A college with no data was being congratulated
+
+Imperial Valley College — three CPL students, no rows in the credit summary —
+was told *"Nothing is waiting. Every credit recommendation with an articulated
+exhibit behind it has been acted on. That is a finished queue, not a missing
+measurement."*
+
+That is the "not in this dataset read as zero" failure pointing the other way: an
+absence rendering as an **accomplishment**. `waitingBreakdown()` now returns a
+distinct `unmeasured` state when there is no summary row. **Congratulatory copy
+needs a stricter guard than neutral copy** — "0 units" is merely wrong when the
+truth is unknown; "you have finished" is wrong *and* tells someone to stop
+working. Folded into
+[`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md).
+
+Adding the state also broke the branch above it (`if (wb && !wb.suppressed &&
+!wb.empty)` let `unmeasured` fall through into code expecting grouped rows, and
+threw). **Adding a state means auditing every `if` that tested for its absence** —
+caught by rendering, not by any assertion.
+
+### 18. A test pinned to a daily-refreshed number is a scheduled false alarm
+
+An assertion read `(you: 2,250)`; the cron moved CCSF to **2,251** and it went red
+on a correct page. Pre-existing, unrelated to this run, fixed here: it now looks
+the figure up in `live_metrics.json` — plus a presence check, because deriving the
+expectation from the render's own source can pass vacuously when both sides
+become `undefined`. **If a committed value changes without anyone editing the
+repo, it is data, not an expectation.**
+
+### 19. The two student counts — asked, measured, and parked by Sam
+
+The tab shows two "CPL students" figures from two feeds. Measured: **36 of 104
+colleges match exactly**, 16 differ by ≥5% and ≥10 students, 3 by more than half
+(CCSF 2,251 vs 1,248; Chaffey 3,652 vs 1,495; **LA Pierce reversed**, 336 vs 767).
+
+Three theories were tested and eliminated — the dashboard sub-population split,
+batch-uploaded AP/IB/CLEP volume, and an `indExcludeSA` scrape parameter that I
+offered and **Sam correctly rejected** (it is set to `0`, meaning *exclude =
+false*). What survived is worth keeping: **our aggregation is faithful** —
+`map_college_credit_summary.students` equals `count(distinct student_key)` in the
+raw extract exactly, for every college sampled. The divergence is entirely
+between MAP's dashboard API and MAP's own extract.
+
+**Sam supplied the cause**, which no amount of querying from this side would have
+produced:
+
+> the MAP team has been pulling some records off MAP to correct Exhibit
+> references and get them reloaded. I think this is the divergence … our uploaded
+> data is a bit stale now but will reconcile better as the data is corrected and
+> reloaded in MAP. Once we get the MAP Custom Report fetch enabled, this should
+> resolve. Let's park the problem for now assuming that's the discrepancy.
+
+⚠ **This changed the design answer.** I had recommended shipping a sentence
+naming the gap on the divergent colleges. If the divergence is transient reload
+state, that sentence would permanently narrate a temporary condition. When this
+is picked back up, prefer labelling each figure with its source — or leaving it
+until the Custom Report fetch closes the question. The measured before-picture is
+in `cpl_memory` so reconciliation has something to be checked against.
+
+### Sam's calls this run
+
+- **Contacts and staff are not PII.** I had used synthetic placeholders in a
+  scratch fixture; over-cautious, corrected. MAP college staff contacts are
+  directory information for a public programme.
+- **Hold** MAP deep links, the RLS decision, and MIS.
+- **`My CPL Funding`**, moved up directly under *Start here* — money is the second
+  thing a coordinator wants, and it was sitting seventh behind four measurement
+  sections.
+- **`Current MAP Users and Contacts`** replaces "Who MAP has on file for you".
+- **`Statewide CPL Benchmarks`** for the tier section. He rejected "How this
+  college compares statewide" on the same grounds he rejected "tier": both imply
+  a ranking, and this section is explicitly not one. All five criteria measure
+  activity against *fixed thresholds* — that is a benchmark. The section's own
+  closing line was reworded from "compares you against" so the heading and the
+  body agree.
+
+### Current state
+
+My College is feature-complete apart from the three MAP links, and all three
+of the previously-named blockers are held by Sam. The tab now opens as Sierra AI
+plus nine closed rows.
+
+### Next concrete step
+
+Nothing on this workstream is unblocked. The largest genuinely-open engineering
+item elsewhere is **EACR's `statewide_prescriptive.js` → Supabase** (carryover,
+five sessions). On this tab, two unanswered design questions: whether the closed-row
+summaries earn their place, and whether *Start here* should be the one section
+open by default.
