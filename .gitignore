@@ -74,4 +74,7 @@ kb/partner_crosswalk_out/**/*.xlsx
 # Same rule as the partner crosswalk above: the workbook is REGENERABLE, so re-run
 # the two scripts rather than committing the binary. crosswalk.json (the receipt)
 # and the HTML view are kept -- they are the deliverable's committed record.
-kb/futuro_hth_out/*.xlsx
+# `*` does not cross a directory boundary, so the single-star form missed the
+# per-lens subdirectories (kb/futuro_hth_out/noncredit/) and one workbook was
+# committed by accident in #1142. `**` is required here.
+kb/futuro_hth_out/**/*.xlsx
