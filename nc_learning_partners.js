@@ -1505,4 +1505,11 @@
     changeSummary: changeSummary,
     _state: state
   };
+
+  // tabs.js dispatches cpl-tab-activated on WINDOW, not document. This tab had
+  // no listener, so a phrase entered anywhere else (now: the masthead control)
+  // never reached it — it kept telling the curator to go unlock on Team & RACI.
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "nc-learning-partners") activate();
+  });
 })();

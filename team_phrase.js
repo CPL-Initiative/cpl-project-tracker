@@ -32,6 +32,27 @@
   var SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM';
   var KEY = 'cpl_team_pass';
 
+  // ── Site-scoped phrases (Sam, 2026-08-12) ────────────────────────────────
+  // A tab that appears under ONE site only (cobi_orgs.js EXCLUSIVE) answers to
+  // that site's own phrase; every SHARED tab keeps team_pass_ok(), which matches
+  // any secret in team_access — so "allow either" on shared tabs is free and
+  // nobody loses access they have today.
+  //
+  // Each site phrase gets its OWN localStorage slot, so a person can hold the
+  // shared phrase AND a site phrase at once with no swapping. That is not a new
+  // invention: gr_priorities.js has stored to `cpl_gr_pass` since it shipped —
+  // this generalises the pattern it proved.
+  var SITES = {
+    gr:  { key: 'cpl_gr_pass',  rpc: 'gr_pass_ok',  label: 'GR' },
+    fin: { key: 'cpl_fin_pass', rpc: 'fin_pass_ok', label: 'Finance' }
+  };
+  function siteDef(site) {
+    return (site && Object.prototype.hasOwnProperty.call(SITES, site)) ? SITES[site] : null;
+  }
+  // Which localStorage slot backs this site (the shared slot when unscoped).
+  function keyFor(site) { var d = siteDef(site); return d ? d.key : KEY; }
+  function rpcFor(site) { var d = siteDef(site); return d ? d.rpc : 'team_pass_ok'; }
+
   function get() {
     try { return localStorage.getItem(KEY) || null; } catch (e) { return null; }
   }
@@ -46,11 +67,42 @@
     try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
   }
 
+  // ── Site-scoped accessors ────────────────────────────────────────────────
+  function siteGet(site) {
+    try { return localStorage.getItem(keyFor(site)) || null; } catch (e) { return null; }
+  }
+  function siteClear(site) {
+    try { localStorage.removeItem(keyFor(site)); } catch (e) { /* ignore */ }
+  }
+  // The phrase to SEND for a surface on `site`: that site's own phrase when the
+  // user holds it, else the shared one. Sending the shared phrase to an
+  // already-swapped policy simply fails closed and the tab re-offers its unlock
+  // — which is what lets the policy swap land independently of this deploy.
+  function passFor(site) { return siteGet(site) || (siteDef(site) ? get() : get()); }
+  // Pseudo-session for a site surface, shape-compatible with `session()`.
+  function sessionFor(site) {
+    var p = passFor(site);
+    if (!p) return null;
+    var d = siteDef(site);
+    return { teamPass: p, site: site || null, email: d && siteGet(site) ? '(' + d.label.toLowerCase() + ')' : '(team)' };
+  }
+
+  // Announce a successful unlock so already-rendered tabs can re-read. Tabs
+  // that gate a READ (Contracts, MAP Queue, College Briefing…) render a locked
+  // pane; without this they would sit locked until a manual reload — the exact
+  // "re-open this tab" friction the header control exists to remove.
+  function announceUnlock(site) {
+    try {
+      window.dispatchEvent(new CustomEvent('cpl-team-pass-unlocked', { detail: { site: site || null } }));
+    } catch (e) { /* ignore */ }
+  }
+
   // Server-side check WITHOUT storing. Resolves strict true (phrase matches),
   // false (server said no), or null (TRANSIENT — network error / 429 / 5xx:
   // we could not verify either way, so never report "wrong phrase").
-  function verify(phrase) {
-    return fetch(SUPABASE_URL + '/rest/v1/rpc/team_pass_ok', {
+  // `site` picks the RPC: the site's own gate, or the shared team gate.
+  function verify(phrase, site) {
+    return fetch(SUPABASE_URL + '/rest/v1/rpc/' + rpcFor(site), {
       method: 'POST',
       headers: {
         apikey: SUPABASE_ANON,
@@ -68,12 +120,16 @@
 
   // Validate-then-store. Resolves true on success (phrase persisted),
   // false on a rejected phrase, null on a transient verification failure
-  // (nothing stored in either non-true case).
-  function unlock(phrase) {
+  // (nothing stored in either non-true case). `site` stores into that site's
+  // own slot, leaving the shared phrase untouched.
+  function unlock(phrase, site) {
     phrase = (phrase || '').trim();
     if (!phrase) return Promise.resolve(false);
-    return verify(phrase).then(function (ok) {
-      if (ok === true) { try { localStorage.setItem(KEY, phrase); } catch (e) { /* ignore */ } }
+    return verify(phrase, site).then(function (ok) {
+      if (ok === true) {
+        try { localStorage.setItem(keyFor(site), phrase); } catch (e) { /* ignore */ }
+        announceUnlock(site);
+      }
       return ok;
     });
   }
@@ -84,8 +140,10 @@
   // so this is harmless for reviewers and it un-shadows the phrase for a
   // signed-in NON-reviewer (their JWT alone fails is_allowed_reviewer(),
   // and without the header the valid phrase they hold would never engage).
-  function decorateHeaders(headers, sess) {
-    var p = (sess && sess.teamPass) || get();
+  // `site` scopes which phrase rides along: that site's own when held, else the
+  // shared one. PostgREST carries exactly ONE x-team-pass, so this must choose.
+  function decorateHeaders(headers, sess, site) {
+    var p = (sess && sess.teamPass) || passFor(site);
     if (p) headers['x-team-pass'] = p;
     return headers;
   }
@@ -113,13 +171,21 @@
 
   // Rotated/stale phrase recovery: on an auth failure under a phrase session,
   // drop the stored phrase and tell the caller to re-render its lock state.
-  function handleWriteFailure(sess, status) {
-    if (sess && sess.teamPass && isAuthError(status)) { clear(); return true; }
-    return false;
+  // Drops the SLOT the failing phrase actually came from — clearing the shared
+  // phrase because a site-scoped write was refused would log the user out of
+  // every other tab for a failure that had nothing to do with it.
+  function handleWriteFailure(sess, status, site) {
+    if (!(sess && sess.teamPass && isAuthError(status))) return false;
+    var scoped = site || (sess && sess.site) || null;
+    if (scoped && siteGet(scoped) === sess.teamPass) { siteClear(scoped); return true; }
+    clear();
+    return true;
   }
 
   // Small reusable unlock row (password input + button + inline error) for a
-  // tab's auth bar. opts: {label?, placeholder?, blurb?, onUnlocked(sess)}.
+  // tab's auth bar. opts: {label?, placeholder?, blurb?, site?, onUnlocked(sess)}.
+  // `site` targets a site-scoped phrase (validated against that site's RPC and
+  // stored in its own slot); omit it for the shared team phrase.
   function unlockRow(opts) {
     opts = opts || {};
     var wrap = document.createElement('span');
@@ -145,11 +211,11 @@
     function go() {
       msg.textContent = '';
       btn.disabled = true;
-      unlock(input.value).then(function (ok) {
+      unlock(input.value, opts.site).then(function (ok) {
         btn.disabled = false;
         if (ok === true) {
           input.value = '';
-          if (typeof opts.onUnlocked === 'function') opts.onUnlocked(session());
+          if (typeof opts.onUnlocked === 'function') opts.onUnlocked(sessionFor(opts.site));
         } else if (ok === null) {
           msg.textContent = "couldn't reach the server — try again in a moment";
         } else {
@@ -169,6 +235,7 @@
 
   var api = {
     KEY: KEY,
+    SITES: SITES,
     get: get,
     session: session,
     clear: clear,
@@ -179,6 +246,14 @@
     handleWriteFailure: handleWriteFailure,
     checkWrite: checkWrite,
     unlockRow: unlockRow,
+    // site-scoped
+    siteDef: siteDef,
+    keyFor: keyFor,
+    rpcFor: rpcFor,
+    siteGet: siteGet,
+    siteClear: siteClear,
+    passFor: passFor,
+    sessionFor: sessionFor,
   };
   if (typeof window !== 'undefined') window.CPL_TEAM_PHRASE = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
