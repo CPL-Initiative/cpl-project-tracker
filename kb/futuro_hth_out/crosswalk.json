@@ -1,0 +1,5451 @@
+{
+ "built_at": "2026-08-12",
+ "rows": [
+  {
+   "college": "College of Alameda",
+   "mis_name": "ALAMEDA, COLLEGE OF",
+   "region": "Bay Area",
+   "county": "Alameda",
+   "cna_courses": 3,
+   "cna_course_list": "HLTED502 Certified Nursing Assistant; HLTED502A Certified Nursing Assistant; HLTED502B Certified Nursing Assistant",
+   "cna_delivery": "Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM6 INTERCULTURAL COMM | COMM20 Interpersonal Comm. Skills | COMM4 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Karl Seelbach",
+   "email": "kseelbach@peralta.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COA",
+   "candidates": [
+    {
+     "course": "COMM6",
+     "title": "INTERCULTURAL COMM",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM20",
+     "title": "Interpersonal Comm. Skills",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM4",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Allan Hancock College",
+   "mis_name": "ALLAN HANCOCK COLLEGE",
+   "region": "Central Coast",
+   "county": "Santa Barbara",
+   "cna_courses": 5,
+   "cna_course_list": "HLTH7001 Personal Care Attendant I; NURS300 CNA/Acute Care Aide; NURS420 Restorative Aide; NURS422 EKG/Monitor Observer; NURS480 CNA Skills Lab",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM110 Intercultural Communication | COMM103 Interpersonal Communication | HLCR100 Introduction to Health Careers",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 9,
+   "n_tier1": 2,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Empathy and Compassion, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 6,
+   "score": 5,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/allan",
+   "candidates": [
+    {
+     "course": "COMM110",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM103",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HLCR100",
+     "title": "Introduction to Health Careers",
+     "top": "123000",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "DA332",
+     "title": "RDA Law and Ethics",
+     "top": "124010",
+     "tier": 1,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "0.5",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "COMM102",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "HUSV103",
+     "title": "Basic Counseling Skills",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "HUSV127",
+     "title": "Emotional Intelligence",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "PSY127",
+     "title": "Emotional Intelligence",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "HUSV135",
+     "title": "Ethics for Human Services Prof",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "American River College",
+   "mis_name": "AMERICAN RIVER COLLEGE",
+   "region": "Greater Sacramento",
+   "county": "Sacramento",
+   "cna_courses": 1,
+   "cna_course_list": "NURS100-4696 Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM325-5815 Intercultural Communication | COMM321-6402 Interpersonal Communication | PSY359-24579 Stress Management and Health",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Ethics and Integrity",
+   "n_modules": 4,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "John Mccormack",
+   "email": "mccormj@arc.losrios.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/AMEC",
+   "candidates": [
+    {
+     "course": "COMM325-5815",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM321-6402",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "PSY359-24579",
+     "title": "Stress Management and Health",
+     "top": "200100",
+     "tier": 3,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "HSE310-11532",
+     "title": "Ethical Issues/Client Rights",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Bakersfield College",
+   "mis_name": "BAKERSFIELD COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Kern",
+   "cna_courses": 3,
+   "cna_course_list": "MEDSB69 Nurse Assistant; MEDSB69NC Nurse Assistant; MEDSB70NC Nurse Assistant Essentials",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMMB6 Intercultural Communication | COMMB2 Interpersonal Communication | COMMB9 Health Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 21,
+   "map_credit_recs": 105,
+   "map_disciplines": 9,
+   "contact": "Anna Melby",
+   "email": "anna.melby@bakersfieldcollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/Bakersfieldcollege",
+   "candidates": [
+    {
+     "course": "COMMB6",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMMB2",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMMB9",
+     "title": "Health Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMMB8",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Barstow Community College",
+   "mis_name": "BARSTOW COLLEGE",
+   "region": "Inland Empire",
+   "county": "San Bernardino",
+   "cna_courses": 6,
+   "cna_course_list": "NUAS10 Nursing Assistant Lecture; NUAS100 Nursing Assistant Lecture; NUAS101 Nursing Assistant Clinical Lab; NUAS102 Nursing Assistant Skills Lab; NUAS11 Nursing Assistant Clinical Lab; NUAS12 Nursing Assistant Skills Lab",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "best_fit": "COMM6 Intercultural Communication | COMM3 Interpersonal Communications",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 40,
+   "map_credit_recs": 182,
+   "map_disciplines": 2,
+   "contact": "Melissa Church",
+   "email": "mchurch@barstow.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/BC",
+   "candidates": [
+    {
+     "course": "COMM6",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM3",
+     "title": "Interpersonal Communications",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Butte College",
+   "mis_name": "BUTTE COLLEGE",
+   "region": "Far North",
+   "county": "Butte",
+   "cna_courses": 2,
+   "cna_course_list": "NSG-100 CNA Basic Nursing Care, Theory; NSG-101 CNA Nursing Care, Clinical",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "CMST-9 Intercultural Communication | CMST-10 Interpersonal Communication | CMST-4 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Jessica Jackson",
+   "email": "jacksonje@butte.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/BUTC",
+   "candidates": [
+    {
+     "course": "CMST-9",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST-10",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "CMST-4",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Cerro Coso Community College",
+   "mis_name": "CERRO COSO COMMUNITY COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Kern",
+   "cna_courses": 1,
+   "cna_course_list": "HCRSC055 Certified Nursing Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "HCRSC130 Communication in Healthcare | HCRSC181 Cultural Diversity in Health Care | HCRSC183 Ethics for the Health Professional",
+   "best_fit_tier": "Tier 1 - health discipline (same faculty as CNA)",
+   "n_candidates": 7,
+   "n_tier1": 3,
+   "n_tier2": 0,
+   "modules": "Cultural Competence, Effective Communication, Empathy and Compassion, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 3,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 1,
+   "map_credit_recs": 28,
+   "map_disciplines": 5,
+   "contact": "Jess Kawelmacher",
+   "email": "jessica.kawelmacher@cerrocoso.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CCCC",
+   "candidates": [
+    {
+     "course": "HCRSC130",
+     "title": "Communication in Healthcare",
+     "top": "120800",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HCRSC181",
+     "title": "Cultural Diversity in Health Care",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "HCRSC183",
+     "title": "Ethics for the Health Professional",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "ADMJC805",
+     "title": "Conflict Management and Crowd Control",
+     "top": "210500",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "ADSTC302",
+     "title": "Counseling Skills and Competencies",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "HMSVC102",
+     "title": "Cultural Competence in Human S",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SWHSC102",
+     "title": "Cultural Competence in Social Work and Human Services",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Citrus College",
+   "mis_name": "CITRUS COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "NRS101 Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SPCH150 Intercultural Communication | SPCH100 Interpersonal Communication | SPCH100H Interpersonal Communication - Honors",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CITR",
+   "candidates": [
+    {
+     "course": "SPCH150",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SPCH100",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "SPCH100H",
+     "title": "Interpersonal Communication - Honors",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "SPCH106",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Columbia College",
+   "mis_name": "COLUMBIA COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Tuolumne",
+   "cna_courses": 3,
+   "cna_course_list": "CNURSE-100 Nurse Assistant; CNURSE-153 Certified Home Health Aide; CNURSE-300 Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "CCOMM-5 Intercultural Communication | CCOMM-3 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 4,
+   "map_credit_recs": 4,
+   "map_disciplines": 2,
+   "contact": "Donna Cooper",
+   "email": "cooperdo@yosemite.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CC",
+   "candidates": [
+    {
+     "course": "CCOMM-5",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CCOMM-3",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Compton College",
+   "mis_name": "COMPTON COMMUNITY COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 3,
+   "cna_course_list": "NURS03A NC-NursAssistant Lab; NURS03B NC Nursing Assistant Lecture; NURS103 Nurse Assistant",
+   "cna_delivery": "Credit - not degree applicable, Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMS130 Interpersonal Communication | COMS260 Introduction to Intercultural Communication | COMS140 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Sheri Berger",
+   "email": "sberger@compton.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COMC",
+   "candidates": [
+    {
+     "course": "COMS130",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMS260",
+     "title": "Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMS140",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "AJ115",
+     "title": "Community and Human Relations",
+     "top": "210500",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Contra Costa College",
+   "mis_name": "CONTRA COSTA COLLEGE",
+   "region": "Bay Area",
+   "county": "Contra Costa",
+   "cna_courses": 1,
+   "cna_course_list": "NURS-198 Nurse Assistant Certification Course",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SPCH-122 Intercultural Communication | SPCH-128 Interpersonal Communication | MEDIC-210 Medical Law and Ethics",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 7,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Empathy and Compassion, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 6,
+   "score": 5,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 2,
+   "map_credit_recs": 2,
+   "map_disciplines": 1,
+   "contact": "Jason Berner",
+   "email": "jberner@contracosta.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CONC",
+   "candidates": [
+    {
+     "course": "SPCH-122",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SPCH-128",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "MEDIC-210",
+     "title": "Medical Law and Ethics",
+     "top": "120800",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "HHS-234",
+     "title": "Emotional Intelligence",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "HHS-220",
+     "title": "Group Process and Leadership",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "HHS-226",
+     "title": "Introduction to Counseling Skills",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "HHS-225",
+     "title": "Law and Ethics for Human Service Professionals",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Crafton Hills College",
+   "mis_name": "CRAFTON HILLS COLLEGE",
+   "region": "Inland Empire",
+   "county": "San Bernardino",
+   "cna_courses": 6,
+   "cna_course_list": "CNA/N-621 Nursing Assistant Theory; CNA/N-622 Nursing Assistant Skills Lab; CNA/N-623 Nursing Assistant Clinical; CNA/N-631 Acute Care Nursing Assistant Theory; CNA/N-632 Acute Care Nursing Assistant Skills Lab; CNA/N-633 Acute Care Nursing Assistant Clinical",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM-174 Intercultural Communication in A Diverse World | COMM-111 Interpersonal Communication | COMM-111H Interpersonal Communication-Honors",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 9,
+   "n_tier1": 4,
+   "n_tier2": 5,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 5,
+   "score": 5,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CRAFC",
+   "candidates": [
+    {
+     "course": "COMM-174",
+     "title": "Intercultural Communication in A Diverse World",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-111",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-111H",
+     "title": "Interpersonal Communication-Honors",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "RESP-301",
+     "title": "Medical Ethics and Patient Advocacy",
+     "top": "121000",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "RESP-302",
+     "title": "Multicultural Human Relations in Health",
+     "top": "121000",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "EMS-091",
+     "title": "Continuing Education for the Health Professional",
+     "top": "125000",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "4",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "EMS-025",
+     "title": "Customer Service and Professionalism For the Emergency Services Work",
+     "top": "125000",
+     "tier": 1,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "0.5",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM-155",
+     "title": "Human Relations in the Workplace",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "COMM-140",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Cuesta College",
+   "mis_name": "CUESTA COLLEGE",
+   "region": "Central Coast",
+   "county": "San Luis Obispo",
+   "cna_courses": 3,
+   "cna_course_list": "NAST148 Nursing Assistant; NAST148L Nursing Assistant Lab; NAST193 NURSING ASSISTANT SPECIAL TOPIC",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM212 Intercultural Comm. | COMM230 Interpersonal Communication | NRAD204D Nrs Caring At Risk",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 9,
+   "n_tier1": 5,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Empathy and Compassion, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 5,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 6,
+   "map_credit_recs": 18,
+   "map_disciplines": 9,
+   "contact": "Christopher Mutshnick",
+   "email": "christopher_mutshnic@cuesta.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CUEC",
+   "candidates": [
+    {
+     "course": "COMM212",
+     "title": "Intercultural Comm.",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM230",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "NRAD204D",
+     "title": "Nrs Caring At Risk",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "NRAD203A",
+     "title": "Nrs Caring Concepts",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "NRAD202B",
+     "title": "Nurs Caring Prac II",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "7",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "NRAD201B",
+     "title": "Nurs Caring Pract I",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "5",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "NRAD201A",
+     "title": "Nurse Caring",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "ASHS280",
+     "title": "Counseling Skills, Law/Ethics",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "ASHS271",
+     "title": "Group Process and Prac, Law/Et",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Coalinga College",
+   "mis_name": "Coalinga College",
+   "region": "San Joaquin Valley",
+   "county": "Fresno",
+   "cna_courses": 2,
+   "cna_course_list": "HS-061 Nurse Assistant Training; NC-061 Nurse Assistant Training",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COM-005 Interpersonal Communication | HS-088 Medical Terminology for Health Careers",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 1,
+   "n_tier2": 1,
+   "modules": "Effective Communication",
+   "n_modules": 1,
+   "score": 3,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Mg Swarts",
+   "email": "marygraceswarts@whccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COAL",
+   "candidates": [
+    {
+     "course": "COM-005",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HS-088",
+     "title": "Medical Terminology for Health Careers",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Copper Mountain College",
+   "mis_name": "Copper Mountain College",
+   "region": "Inland Empire",
+   "county": "San Bernardino",
+   "cna_courses": 1,
+   "cna_course_list": "NA-064 Nurse Assistant",
+   "cna_delivery": "Credit - not degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SP-015 Intercultural Communication | SP-001 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 198,
+   "map_credit_recs": 200,
+   "map_disciplines": 1,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CMC",
+   "candidates": [
+    {
+     "course": "SP-015",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SP-001",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "College of the Desert",
+   "mis_name": "DESERT, COLLEGE OF THE",
+   "region": "Inland Empire",
+   "county": "Riverside",
+   "cna_courses": 1,
+   "cna_course_list": "NNA-364 Nursing Assistant",
+   "cna_delivery": "Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM-017 Intercultural Communication | COMM-009 Intro to Interpersonal Communication | HS-075 Cultural Competence in Health and Social Services",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 1,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 4,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 19,
+   "map_credit_recs": 58,
+   "map_disciplines": 8,
+   "contact": "Cameron Miller",
+   "email": "camiller@collegeofthedesert.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COD",
+   "candidates": [
+    {
+     "course": "COMM-017",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-009",
+     "title": "Intro to Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HS-075",
+     "title": "Cultural Competence in Health and Social Services",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-013",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Evergreen Valley College",
+   "mis_name": "EVERGREEN VALLEY COLLEGE",
+   "region": "Bay Area",
+   "county": "Santa Clara",
+   "cna_courses": 1,
+   "cna_course_list": "NURS-109 Nurse Assistant Training/Home Health Aide Training",
+   "cna_delivery": "Credit - not degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMS-035 Intercultural Communication | COMS-010 Interpersonal Communication | COMS-045 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 13,
+   "map_credit_recs": 14,
+   "map_disciplines": 4,
+   "contact": "Juan Gil",
+   "email": "juan.gil@evc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/EVEC",
+   "candidates": [
+    {
+     "course": "COMS-035",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMS-010",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMS-045",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Feather River College",
+   "mis_name": "FEATHER RIVER COLLEGE",
+   "region": "Far North",
+   "county": "Plumas",
+   "cna_courses": 2,
+   "cna_course_list": "NURS100 NURSE'S AIDE; NURS102 HOME HEALTH AIDE",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "ENGL119 INTERPERSONAL COMMUNICATIONS | ENGL118 SMALL GROUP COMMUNICATIONS",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Effective Communication, Teamwork and Collaboration",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/FEAC",
+   "candidates": [
+    {
+     "course": "ENGL119",
+     "title": "INTERPERSONAL COMMUNICATIONS",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "ENGL118",
+     "title": "SMALL GROUP COMMUNICATIONS",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Folsom Lake College",
+   "mis_name": "FOLSOM LAKE COLLEGE",
+   "region": "Greater Sacramento",
+   "county": "Sacramento",
+   "cna_courses": 1,
+   "cna_course_list": "NUR100-28379 Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "best_fit": "COM325-22004 Intercultural Communication | COM321-22319 Interpersonal Communication | PSY368-25027 Cross Cultural Psychology",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Ethics and Integrity",
+   "n_modules": 4,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Mark Swink (CPL coordinator)",
+   "email": "swinkm@flc.losrios.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/FLC",
+   "candidates": [
+    {
+     "course": "COM325-22004",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COM321-22319",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "PSY368-25027",
+     "title": "Cross Cultural Psychology",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SWH331-27969",
+     "title": "Cross Cultural Psychology",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SWH350-27926",
+     "title": "Ethical Issues in SW/HS",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "SWH302-27917",
+     "title": "Intro Psyc of Human Relations",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Gavilan College",
+   "mis_name": "GAVILAN COLLEGE",
+   "region": "Bay Area",
+   "county": "Santa Clara",
+   "cna_courses": 5,
+   "cna_course_list": "AH270 Basic Clinical Medical Assisting; AH271 Advanced Clinical Medical Assisting; AH280 Fundamentals of Nursing--Convalescent; AH282 HOME HEALTH CARE; LIB740 Information Competency for Nursing Assistants",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "CMUN4 Intercultural Communication | CMUN8 Interpersonal Communication | CMUN6 Introduction to Conflict Resolution",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/GAVC",
+   "candidates": [
+    {
+     "course": "CMUN4",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMUN8",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "CMUN6",
+     "title": "Introduction to Conflict Resolution",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "PSYC6",
+     "title": "Introduction to Conflict Resolution",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Glendale Community College",
+   "mis_name": "GLENDALE COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 2,
+   "cna_course_list": "STV  220 Certified Nursing Aide -Theory; STV  221 Cert Nursing Aide - Clinical",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM 108 Intercultural Communication | COMM 100 Interpersonal Comm | STV  060 Pathways to Health Careers",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 4,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 39,
+   "map_credit_recs": 51,
+   "map_disciplines": 21,
+   "contact": "Bridget Bershad",
+   "email": "bbershad@glendale.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/GLEC",
+   "candidates": [
+    {
+     "course": "COMM 108",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM 100",
+     "title": "Interpersonal Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "STV  060",
+     "title": "Pathways to Health Careers",
+     "top": "129900",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Golden West College",
+   "mis_name": "GOLDEN WEST COLLEGE",
+   "region": "Orange County",
+   "county": "Orange",
+   "cna_courses": 2,
+   "cna_course_list": "NURSG060N Certified Nurse Assistant; NURSG061N Cert. Nurse Assist Practicum",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "CMSTG255 Intercultural Communication | CMSTG100 Interpersonal Communication | NURSG103 Medical Terminology for Healthcare Professionals",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 4,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Meridith Randall",
+   "email": "mrandall12@gwc.cccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/GOLC",
+   "candidates": [
+    {
+     "course": "CMSTG255",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMSTG100",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "NURSG103",
+     "title": "Medical Terminology for Healthcare Professionals",
+     "top": "123000",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Hartnell College",
+   "mis_name": "HARTNELL COLLEGE",
+   "region": "Central Coast",
+   "county": "Monterey",
+   "cna_courses": 1,
+   "cna_course_list": "NRN-224 Success Strategies for Nursing: Returning Students",
+   "cna_delivery": "Credit - not degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COM-700 Interpersonal Communication for Healthcare Professionals | COM-8 Interpersonal Communication | PSY-41 Psychology of Human Relations",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Effective Communication, Emotional Intelligence",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/HARC",
+   "candidates": [
+    {
+     "course": "COM-700",
+     "title": "Interpersonal Communication for Healthcare Professionals",
+     "top": "150600",
+     "tier": 2,
+     "fit": 6,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication",
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COM-8",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "PSY-41",
+     "title": "Psychology of Human Relations",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Imperial Valley College",
+   "mis_name": "IMPERIAL VALLEY COLLEGE",
+   "region": "San Diego - Imperial",
+   "county": "Imperial",
+   "cna_courses": 1,
+   "cna_course_list": "AHP060 Health Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM125 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 1,
+   "n_tier1": 0,
+   "n_tier2": 1,
+   "modules": "Effective Communication",
+   "n_modules": 1,
+   "score": 1,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Paige Lovitt",
+   "email": "paige.lovitt@imperial.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/IMPC",
+   "candidates": [
+    {
+     "course": "COMM125",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Las Positas College",
+   "mis_name": "LAS POSITAS COLLEGE",
+   "region": "Bay Area",
+   "county": "Alameda",
+   "cna_courses": 1,
+   "cna_course_list": "CNA 50 NURSING ASSISTANT FUNDAMENTALS",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "CMST 11 Intercultural Communication | CMST 10 Interpersonal Communication | CMST 3 Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 67,
+   "map_credit_recs": 78,
+   "map_disciplines": 18,
+   "contact": "Evelyn Andrews",
+   "email": "eandrews@laspositascollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/LPCC",
+   "candidates": [
+    {
+     "course": "CMST 11",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST 10",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "CMST 3",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Lassen College",
+   "mis_name": "LASSEN COLLEGE",
+   "region": "Far North",
+   "county": "Lassen",
+   "cna_courses": 2,
+   "cna_course_list": "HO-150 Nurse Assistant; HO-151 Nurse Assistant Clinical",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "None found in the statewide course file",
+   "best_fit_tier": "None found in the statewide course file",
+   "n_candidates": 0,
+   "n_tier1": 0,
+   "n_tier2": 0,
+   "modules": "No HTH module matched in this catalog",
+   "n_modules": 0,
+   "score": 1,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 13,
+   "map_credit_recs": 236,
+   "map_disciplines": 5,
+   "contact": "Adam Runyan",
+   "email": "arunyan@lassencollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/LCC",
+   "candidates": []
+  },
+  {
+   "college": "Long Beach City College",
+   "mis_name": "LONG BEACH CITY COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "VN215 Fundamentals of Nursing",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM25 Elements of Intercultural Comm | COMM20 Elements of Interpersonal Comm | HLED200 Intro Community Health Worker",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 5,
+   "score": 5,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 9,
+   "map_credit_recs": 47,
+   "map_disciplines": 8,
+   "contact": "Garrett Whelan",
+   "email": "gwhelan@lbcc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/LBCC",
+   "candidates": [
+    {
+     "course": "COMM25",
+     "title": "Elements of Intercultural Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM20",
+     "title": "Elements of Interpersonal Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HLED200",
+     "title": "Intro Community Health Worker",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "ADJUS5",
+     "title": "Community & Human Relations",
+     "top": "210500",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "SW242",
+     "title": "Conflict Resolution/Mediation",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "HS_AS50",
+     "title": "Law and Ethics",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Los Angeles Harbor College",
+   "mis_name": "LOS ANGELES HARBOR COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "NRS-HCA399A Nurse Assistant Prog",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM   121 Interpersonal Commun",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 1,
+   "n_tier1": 0,
+   "n_tier2": 1,
+   "modules": "Effective Communication",
+   "n_modules": 1,
+   "score": 1,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Jessica Cruz",
+   "email": "cruzj@lahc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/HLAC",
+   "candidates": [
+    {
+     "course": "COMM   121",
+     "title": "Interpersonal Commun",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Los Angeles Mission College",
+   "mis_name": "LOS ANGELES MISSION COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "NRS-HCA399A Nurse Assistant Prog",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM   122 Intercultural Comm | COMM   121 Interpersonal Commun | VOC ED 393CE Intro to Healthcare Careers",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 1,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 4,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Katherine Kirst",
+   "email": "kirstk@laccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MLAC",
+   "candidates": [
+    {
+     "course": "COMM   122",
+     "title": "Intercultural Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM   121",
+     "title": "Interpersonal Commun",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "VOC ED 393CE",
+     "title": "Intro to Healthcare Careers",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM   151",
+     "title": "Small Group Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Los Angeles Southwest College",
+   "mis_name": "LOS ANGELES SOUTHWEST COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 2,
+   "cna_course_list": "NRS-HCA399A Nurse Assistant Prog; NRS-HCA399B Home Health Aide",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM   121 Interpersonal Commun | COMM   151 Small Group Comm",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Effective Communication, Teamwork and Collaboration",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Lawrence Bradford",
+   "email": "bradfoll@lasc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SLAC",
+   "candidates": [
+    {
+     "course": "COMM   121",
+     "title": "Interpersonal Commun",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM   151",
+     "title": "Small Group Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Los Angeles Valley College",
+   "mis_name": "LOS ANGELES VALLEY COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 2,
+   "cna_course_list": "VOC ED 342CE Certified Nurse Assistant; VOC ED 343CE Essen Prac Skls Nur",
+   "cna_delivery": "Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM   122 Intercultural Comm | COMM   121 Interpersonal Commun | COMM   151 Small Group Comm",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "B - exhibits loaded, no credit recommendations yet",
+   "map_exhibits": 40,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Krixa Lim",
+   "email": "limko@lavc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/LAVC",
+   "candidates": [
+    {
+     "course": "COMM   122",
+     "title": "Intercultural Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM   121",
+     "title": "Interpersonal Commun",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM   151",
+     "title": "Small Group Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Lemoore College",
+   "mis_name": "Lemoore College",
+   "region": "San Joaquin Valley",
+   "county": "Kings",
+   "cna_courses": 1,
+   "cna_course_list": "HS-061 Nurse Assistant Training",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COM-005 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 1,
+   "n_tier1": 0,
+   "n_tier2": 1,
+   "modules": "Effective Communication",
+   "n_modules": 1,
+   "score": 1,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 9,
+   "map_credit_recs": 11,
+   "map_disciplines": 8,
+   "contact": "Callie Branan",
+   "email": "calliebranan@whccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/LECC",
+   "candidates": [
+    {
+     "course": "COM-005",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Merced College",
+   "mis_name": "MERCED COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Merced",
+   "cna_courses": 1,
+   "cna_course_list": "ALLH-63 Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM-15 Interpersonal Communication | COMM-30 Introduction to Intercultural Communication | COMM-14 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 5,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence, Empathy and Compassion, Teamwork and Collaboration",
+   "n_modules": 5,
+   "score": 3,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Jeanette Martin",
+   "email": "martin.j@mccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MC",
+   "candidates": [
+    {
+     "course": "COMM-15",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-30",
+     "title": "Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-14",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "CRIM-05",
+     "title": "Community and Human Relations",
+     "top": "210500",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    },
+    {
+     "course": "HMSV-42",
+     "title": "Introduction to Counseling Skills",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "MiraCosta College",
+   "mis_name": "MIRA COSTA COLLEGE",
+   "region": "San Diego - Imperial",
+   "county": "San Diego",
+   "cna_courses": 1,
+   "cna_course_list": "NURS160 Certified Nursing Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM215 Intercultural Communication | COMM207 Interpersonal Communication | COMM106 Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Benjamin Gamboa",
+   "email": "bgamboa@miracosta.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MIRC",
+   "candidates": [
+    {
+     "course": "COMM215",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM207",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM106",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "ADM230",
+     "title": "Policing in a Diverse and Multicultural Society",
+     "top": "210500",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Mission College",
+   "mis_name": "MISSION COLLEGE",
+   "region": "Bay Area",
+   "county": "Santa Clara",
+   "cna_courses": 6,
+   "cna_course_list": "HOC001 Medical Terminology; HOC019A Nursing Assistant Fundamentals; HOC019AL Nursing Assistant Fundamentals; HOC019B Nursing Assistant Clinical Ex; HOC019F Home Health Aide Fundamentals; HOC019G Home Health Aide Clinical",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COM012 Intercultural Communication | HOC010 Health Communication: Health L | HOC012 Community Health Worker Intern",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 2,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 5,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Melanie Booth (CPL coordinator)",
+   "email": "boothmelanie@gmail.com",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MISC",
+   "candidates": [
+    {
+     "course": "COM012",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "HOC010",
+     "title": "Health Communication: Health L",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HOC012",
+     "title": "Community Health Worker Intern",
+     "top": "126100",
+     "tier": 1,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COM014",
+     "title": "Teamwork and Leadership in Small Groups    (3.0 Lecture)",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Modesto Junior College",
+   "mis_name": "MODESTO JUNIOR COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Stanislaus",
+   "cna_courses": 5,
+   "cna_course_list": "MNURSE-52 Nurse Assistant; MNURSE-54 Acute Care Nurse Assistant; MNURSE-55 Dementia Care Nurse Assistant; MNURSE-56 Restorative Nurse Assistant; MNURSE-57 Senior Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "MCOMM-130 Intercultural Communication | MCOMM-103 Interpersonal Communication | MRSCR-416 Education and Teaching Strategies for Healthcare Professionals",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 4,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Tina Giron",
+   "email": "giront@yosemite.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MJC",
+   "candidates": [
+    {
+     "course": "MCOMM-130",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "MCOMM-103",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "MRSCR-416",
+     "title": "Education and Teaching Strategies for Healthcare Professionals",
+     "top": "121000",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "MHUMSR-119",
+     "title": "Introduction to Group Leadership and Group Process",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "mis_name": "MOUNT SAN ANTONIO COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "VOCHTH01 Certified Nurse Assistant",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM7 Intercultural Communication | COMM26 Interpersonal Communication | VOCHTH05 Health Careers Skills Lab",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 7,
+   "n_tier1": 1,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 4,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 26,
+   "map_credit_recs": 135,
+   "map_disciplines": 18,
+   "contact": "Bernie Somers",
+   "email": "bsomers@mtsac.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/MT.C",
+   "candidates": [
+    {
+     "course": "COMM7",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM26",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "VOCHTH05",
+     "title": "Health Careers Skills Lab",
+     "top": "123010",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM300",
+     "title": "Conflict Management",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "COMM6",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "AD8",
+     "title": "Group Process/Leadership",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "AD15A",
+     "title": "Introduction AD Law and Ethics",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Mt. San Jacinto College",
+   "mis_name": "MOUNT SAN JACINTO COLLEGE",
+   "region": "Inland Empire",
+   "county": "Riverside",
+   "cna_courses": 2,
+   "cna_course_list": "NURS-584 Nursing Skills Lab - Certified Nursing Assistant (formerly NURS-084A; NURS-585 Certified Nursing Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM-103H Honors Interpersonal Communication | COMM-108 Intercultural Communication | COMM-103 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 7,
+   "n_tier1": 3,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 5,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Jasmine Port",
+   "email": "jport@msjc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/m.sjc",
+   "candidates": [
+    {
+     "course": "COMM-103H",
+     "title": "Honors Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-108",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-103",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "MA-122",
+     "title": "Medical Ethics",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "CEP-974",
+     "title": "Introduction to Health Careers 1",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "CEP-975",
+     "title": "Introduction to Health Careers 2",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM-106",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Palo Verde College",
+   "mis_name": "PALO VERDE COLLEGE",
+   "region": "Inland Empire",
+   "county": "Riverside",
+   "cna_courses": 2,
+   "cna_course_list": "NUR-100 Certified Nursing Assistant-Lecture; NUR-118 Certified Nursing Assistant-Clinical",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SPE-130 Interpersonal Communications | SPE-105 Introduction to Intercultural Communication | PSY-145 Human Relations",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Emotional Intelligence",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "B - exhibits loaded, no credit recommendations yet",
+   "map_exhibits": 5,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Sam Robinson",
+   "email": "sam.robinson@paloverde.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/PVC",
+   "candidates": [
+    {
+     "course": "SPE-130",
+     "title": "Interpersonal Communications",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "SPE-105",
+     "title": "Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "PSY-145",
+     "title": "Human Relations",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Emotional Intelligence"
+     ],
+     "modules_all": [
+      "Emotional Intelligence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Pasadena City College",
+   "mis_name": "PASADENA CITY COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "NURS103 NURSING ASSISTANT",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SPCH010 INTERPERSONAL COMMUNICATION | SPCH009 SMALL GROUP COMMUNICATION",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Effective Communication, Teamwork and Collaboration",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Carol Calandra",
+   "email": "CMCALANDRA@pasadena.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/PCC",
+   "candidates": [
+    {
+     "course": "SPCH010",
+     "title": "INTERPERSONAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "SPCH009",
+     "title": "SMALL GROUP COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "College of the Redwoods",
+   "mis_name": "REDWOODS, COLLEGE OF THE",
+   "region": "Far North",
+   "county": "Humboldt",
+   "cna_courses": 1,
+   "cna_course_list": "HO-110 Basic Patient Care",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM-8 Intercultural Communication | COMM-C1004 Interpersonal Communication | COMM-6 Small Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Empathy and Compassion, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Crystal Morse",
+   "email": "crystal-morse@redwoods.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COR",
+   "candidates": [
+    {
+     "course": "COMM-8",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-C1004",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-6",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "ADCT-15",
+     "title": "Introduction to Counseling Skills",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Reedley College",
+   "mis_name": "REEDLEY COLLEGE COMMUNITY COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "Fresno",
+   "cna_courses": 3,
+   "cna_course_list": "NAT-101 NURSING ASSISTANT TRAINING; NAT-102 NURSING ASSISTANT THEORY; NAT-103 NURSING ASSISTANT CLINICAL",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "best_fit": "COMM-10 INTERCULTURAL COMMUNICATION | COMM-2 INTERPERSONAL COMMUNICATION | COMM-8 GROUP COMMUNICATION",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "David Shoemaker",
+   "email": "david.shoemaker@reedleycollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/REEC",
+   "candidates": [
+    {
+     "course": "COMM-10",
+     "title": "INTERCULTURAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-2",
+     "title": "INTERPERSONAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-8",
+     "title": "GROUP COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Rio Hondo College",
+   "mis_name": "RIO HONDO COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 8,
+   "cna_course_list": "HS050 Nursing Assist Pre-Cert; HS050L Nurse Assistant Pre-Certification Training Course Lab; HS051 Certified Nurse Assist Acute; HS051L Cert. Nurse Assist Acute Lab; NHSN050 Nurse Assistant Pre-Certification; NHSN050L Nurse Assistant Pre-Certification Lab",
+   "cna_delivery": "Credit - degree applicable, Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "SPCH150 Intercultural Communication | SPCH100 Interpersonal Communication | SPCH100H Interpersonal Communication Honors",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 9,
+   "n_tier1": 1,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Empathy and Compassion, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 5,
+   "score": 5,
+   "readiness": "B - exhibits loaded, no credit recommendations yet",
+   "map_exhibits": 2,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Claudia Romo",
+   "email": "claudia.romo@riohondo.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/RIOC",
+   "candidates": [
+    {
+     "course": "SPCH150",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "SPCH100",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "SPCH100H",
+     "title": "Interpersonal Communication Honors",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "NHSN040",
+     "title": "Healthcare Careers Exploration",
+     "top": "120820",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "SPCH120",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "CORR235",
+     "title": "Conflict Resolution",
+     "top": "210510",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "HUSR130",
+     "title": "Essential Counseling Skills",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "CORR134",
+     "title": "Introduction to Interviewing and Counseling Skills for Correctional",
+     "top": "210510",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    },
+    {
+     "course": "HUSR135",
+     "title": "Law and Ethics in Human Services",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Riverside City College",
+   "mis_name": "RIVERSIDE CITY COLLEGE",
+   "region": "Inland Empire",
+   "county": "Riverside",
+   "cna_courses": 5,
+   "cna_course_list": "NNA-79 Medical Terminology for Healthcare Professionals; NNA-80 Nursing Assistant Training Program: Natp; NNA-80A Nursing Learning Laboratory; NNA-80B Nursing Learning Laboratory; NNA-86 Acute Care Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable, Credit - not degree applicable",
+   "cna_award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "best_fit": "COMM-9H Honors Interpersonal Communication | COMM-12 Intercultural Communication | COMM-9 Interpersonal Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 30,
+   "map_credit_recs": 48,
+   "map_disciplines": 10,
+   "contact": "Jeanine Gardner",
+   "email": "jeanine.gardner@rccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/RCC",
+   "candidates": [
+    {
+     "course": "COMM-9H",
+     "title": "Honors Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-12",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-9",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-6",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Saddleback College",
+   "mis_name": "SADDLEBACK COLLEGE",
+   "region": "Orange County",
+   "county": "Orange",
+   "cna_courses": 3,
+   "cna_course_list": "CNA422NC CNA THEORY; CNA423NC CERTIFIED NURSE ASSISTANT PRACTICUM; CNA424NC NURSING ASSISTANT",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM20 INTERCULTURAL COMMUNICATION | COMM5S INTERPERSONAL COMMUNICATION | PH204 INTERPROFESSIONAL COMMUNICATION IN HEALTHCARE",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 7,
+   "n_tier1": 2,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 5,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/Saddleback",
+   "candidates": [
+    {
+     "course": "COMM20",
+     "title": "INTERCULTURAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM5S",
+     "title": "INTERPERSONAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "PH204",
+     "title": "INTERPROFESSIONAL COMMUNICATION IN HEALTHCARE",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "PH404NC",
+     "title": "INTERPROFESSIONAL COMMUNICATION IN HEALTHCARE",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HS105",
+     "title": "ETHICAL ISSUES AND CLIENTS' RIGHTS",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "HS140",
+     "title": "GROUP LEADERSHIP AND GROUP PROCESS",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "PSYC16",
+     "title": "INTRODUCTION TO CROSS-CULTURAL PSYCHOLOGY",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "City College of San Francisco",
+   "mis_name": "SAN FRANCISCO, CITY COLLEGE OF",
+   "region": "Bay Area",
+   "county": "San Francisco",
+   "cna_courses": 2,
+   "cna_course_list": "VOCN 23 Nurse Assistant/Convalescent Care; VOCN 25 Nurse Assistant/Acute Care",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "best_fit": "CMST  5 Intercultural Communication | CMST 20 Interpersonal Communication | MED 62 Communication and Professionalism in Health Care",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 10,
+   "n_tier1": 7,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 5,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 26,
+   "map_credit_recs": 44,
+   "map_disciplines": 12,
+   "contact": "Lisa King",
+   "email": "eking@ccsf.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/CITC",
+   "candidates": [
+    {
+     "course": "CMST  5",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST 20",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "MED 62",
+     "title": "Communication and Professionalism in Health Care",
+     "top": "120800",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLTH116",
+     "title": "Conflict Resolution Skills in Health",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "HLTH 59",
+     "title": "Intro to the Community Health Worker Field",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLTH203",
+     "title": "Professional Skills for Community Health Workers",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLTH105",
+     "title": "Professional Skills for Community Mental Health Workers",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HCT 61",
+     "title": "Introduction to Health Care",
+     "top": "122300",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLTH 91K",
+     "title": "Language Access Strategies and Effective Collaboration with Healthca",
+     "top": "129900",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "CMST  4",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "mis_name": "SAN JOAQUIN DELTA COLLEGE",
+   "region": "San Joaquin Valley",
+   "county": "San Joaquin",
+   "cna_courses": 2,
+   "cna_course_list": "H S 170 Nurse Assistant Training; H S 70 Nurse Assistant Training",
+   "cna_delivery": "Credit - not degree applicable, Noncredit",
+   "cna_award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units; Noncredit program",
+   "best_fit": "COMM 7 Intercultural Communication | COMM 3 Interpersonal Communication | H S 139 Survey of Health Careers",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 2,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Empathy and Compassion, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 5,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Dr. Ricardo Marmolejo",
+   "email": "ricardo.marmolejo@deltacollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SJDC",
+   "candidates": [
+    {
+     "course": "COMM 7",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM 3",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "H S 139",
+     "title": "Survey of Health Careers",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "H S 39",
+     "title": "Survey of Health Careers",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM 8",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "PSYC 16",
+     "title": "Intro to Counseling Skills",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Empathy and Compassion"
+     ],
+     "modules_all": [
+      "Empathy and Compassion"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Santa Ana College",
+   "mis_name": "SANTA ANA COLLEGE",
+   "region": "Orange County",
+   "county": "Orange",
+   "cna_courses": 9,
+   "cna_course_list": "VHLTH-101 Overview of the Nursing Assistant Training Program; VHLTH-102 Certified Nursing Asst Training - Theory Training; VHLTH-102 Certified Nursing Asst Training - Theory Training; VHLTH-103 Certified Nursing Assistant (cna) Traini Training; VHLTH-104 Certified Nursing Asst Training Clinical Training; VHLTH-105 Overview Acute Care Nursing Asst Program Training",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "CMST-103H Honors Introduction to Intercultural Communication | CMST-101H Honors Introduction to Interpersonal Communication | CMST-103 Introduction to Intercultural Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 5,
+   "n_tier1": 0,
+   "n_tier2": 5,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 192,
+   "map_credit_recs": 241,
+   "map_disciplines": 40,
+   "contact": "Matthew Morin",
+   "email": "Morin_Matthew@sac.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SAC",
+   "candidates": [
+    {
+     "course": "CMST-103H",
+     "title": "Honors Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST-101H",
+     "title": "Honors Introduction to Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "CMST-103",
+     "title": "Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST-101",
+     "title": "Introduction to Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "CMST-307",
+     "title": "Health Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Santa Monica College",
+   "mis_name": "SANTA MONICA COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 4,
+   "cna_course_list": "CNA    901 CNA CORE; HEALTH 989 ACUTE CARE; HEALTH 990 ACUTE CARE LAB; HHA    901 HHA CORE",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "None found in the statewide course file",
+   "best_fit_tier": "None found in the statewide course file",
+   "n_candidates": 0,
+   "n_tier1": 0,
+   "n_tier2": 0,
+   "modules": "No HTH module matched in this catalog",
+   "n_modules": 0,
+   "score": 1,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 5,
+   "map_credit_recs": 51,
+   "map_disciplines": 3,
+   "contact": "Kevin Benitez",
+   "email": "benitez_kevin@smc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SMC",
+   "candidates": []
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "mis_name": "SANTA ROSA JUNIOR COLLEGE",
+   "region": "Bay Area",
+   "county": "Sonoma",
+   "cna_courses": 1,
+   "cna_course_list": "NRA150A Certified Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM7 Intercultural Communication | COMM6 Interpersonal Communication | EMC170 Community Health Worker",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 4,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity",
+   "n_modules": 3,
+   "score": 5,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Farrel Dobbins",
+   "email": "fdobbins@santarosa.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SRJC",
+   "candidates": [
+    {
+     "course": "COMM7",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM6",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "EMC170",
+     "title": "Community Health Worker",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "4",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "MA161",
+     "title": "Law and Ethics for Medical Assistants",
+     "top": "120800",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "HLC120",
+     "title": "Health Careers Institute",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "4",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLC51",
+     "title": "Introduction to Health Careers",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Santiago Canyon College",
+   "mis_name": "SANTIAGO CANYON COLLEGE",
+   "region": "Orange County",
+   "county": "Orange",
+   "cna_courses": 4,
+   "cna_course_list": "VMED-010 Overview of the Nursing Assistant Training Program; VMED-011 Certified Nursing Assistant (CNA) Training; VMED-070 Acute Care Theory for Nurse Assistants; VMED-071 Acute Care Practice for Nurse Assistants",
+   "cna_delivery": "Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM-120H Honors Introduction to Intercultural Communication | COMM-100H Honors Introduction to Interpersonal Communication | COMM-120 Introduction to Intercultural Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 9,
+   "map_credit_recs": 189,
+   "map_disciplines": 7,
+   "contact": "LaKyshia Perez",
+   "email": "Perez_Lakyshia@sccollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SCC",
+   "candidates": [
+    {
+     "course": "COMM-120H",
+     "title": "Honors Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-100H",
+     "title": "Honors Introduction to Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM-120",
+     "title": "Introduction to Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-100",
+     "title": "Introduction to Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "College of the Sequoias",
+   "mis_name": "SEQUOIAS, COLLEGE OF THE",
+   "region": "San Joaquin Valley",
+   "county": "Tulare",
+   "cna_courses": 1,
+   "cna_course_list": "NURS260 Nursing Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM009 Intercultural Communication | COMM004 Interpersonal Communication | COMM103 Health Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 1,
+   "map_credit_recs": 1,
+   "map_disciplines": 1,
+   "contact": "Ashley Land",
+   "email": "ashleyla@cos.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/sequoias",
+   "candidates": [
+    {
+     "course": "COMM009",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM004",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM103",
+     "title": "Health Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMM008",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Shasta College",
+   "mis_name": "SHASTA COLLEGE",
+   "region": "Far North",
+   "county": "Shasta",
+   "cna_courses": 2,
+   "cna_course_list": "HEOC-130 Nurse Assistant; HEOC-131 Home Health Aide",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM-20 Intercultural Communication | COMM-10 Interpersonal Communication | HIMS-408 Ethics in Healthcare Administration",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 5,
+   "n_tier1": 1,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 4,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Buffy Tanner",
+   "email": "btanner@shastacollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/shasta",
+   "candidates": [
+    {
+     "course": "COMM-20",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-10",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HIMS-408",
+     "title": "Ethics in Healthcare Administration",
+     "top": "122300",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "COMM-54",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "PSYC-20",
+     "title": "Cross-Cultural Psychology",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Sierra College",
+   "mis_name": "SIERRA COLLEGE",
+   "region": "Greater Sacramento",
+   "county": "Placer",
+   "cna_courses": 1,
+   "cna_course_list": "NRSA0003 Precertification Nursing Assistant Training",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM0007 Intercultural Communication | ALH0027 Law and Ethics for Allied Health Professionals | NRSR0034 Pathways to Professionalism in Nursing",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 2,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 5,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 3,
+   "map_credit_recs": 6,
+   "map_disciplines": 3,
+   "contact": "Jill Alcorn",
+   "email": "jalcorn1@sierracollege.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SIEC",
+   "candidates": [
+    {
+     "course": "COMM0007",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "ALH0027",
+     "title": "Law and Ethics for Allied Health Professionals",
+     "top": "120100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "2",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity",
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "NRSR0034",
+     "title": "Pathways to Professionalism in Nursing",
+     "top": "123010",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "1",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM0003",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "College of the Siskiyous",
+   "mis_name": "SISKIYOUS, COLLEGE OF THE",
+   "region": "Far North",
+   "county": "Siskiyou",
+   "cna_courses": 1,
+   "cna_course_list": "NURS9062 Certified Nurse Assistant",
+   "cna_delivery": "Credit - not degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMS1038 Intercultural Communication | COMS1300 Interpersonal Communication | COMS1600 Conflict Resolution/Mediation",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 0,
+   "n_tier2": 4,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity, Teamwork and Collaboration",
+   "n_modules": 4,
+   "score": 2,
+   "readiness": "D - MAP page live, no contact on file, no CPL activity",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "MAP holds no primary contact for this college",
+   "email": "MAP holds no primary contact for this college",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/COSY",
+   "candidates": [
+    {
+     "course": "COMS1038",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMS1300",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMS1600",
+     "title": "Conflict Resolution/Mediation",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "COMS1200",
+     "title": "Small Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "ADHS1521",
+     "title": "Identity and Cultural Awareness",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "ADHS1517",
+     "title": "Law and Ethics for Helping Professions",
+     "top": "210440",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Solano Community College",
+   "mis_name": "SOLANO COMMUNITY COLLEGE",
+   "region": "Bay Area",
+   "county": "Solano",
+   "cna_courses": 3,
+   "cna_course_list": "NURS103 CNA; NURS104 Nursing 104 HHA; NURS105 Acute Care CNA",
+   "cna_delivery": "Credit - not degree applicable",
+   "cna_award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units; Noncredit program",
+   "best_fit": "COMM012 Intercultural Comm | COMM008 Group Communication | PSYC007 Cross-Cultural Psyc",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 4,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Teamwork and Collaboration",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Amy Kennedy",
+   "email": "Amy.Kennedy@solano.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SOLC",
+   "candidates": [
+    {
+     "course": "COMM012",
+     "title": "Intercultural Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM008",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    },
+    {
+     "course": "PSYC007",
+     "title": "Cross-Cultural Psyc",
+     "top": "200100",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "HSW085",
+     "title": "Introduction to Group Process",
+     "top": "210400",
+     "tier": 3,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Southwestern College",
+   "mis_name": "SOUTHWESTERN COLLEGE",
+   "region": "San Diego - Imperial",
+   "county": "San Diego",
+   "cna_courses": 8,
+   "cna_course_list": "CNA-20 CERTIFIED NURSING ASSISTANT (CNA); CNA-20L CERTIFIED NURSING ASSISTANT LAB; CNA-21 ACUTE CARE NURSING ASSISTANT; CNA-21L ACUTE CARE NURSING ASSISTANT LAB; NC-441 CERTIFIED NURSING ASSISTANT (CNA); NC-442 CERTIFIED NURSING ASSISTANT LAB",
+   "cna_delivery": "Credit - not degree applicable, Noncredit",
+   "cna_award": "Noncredit program",
+   "best_fit": "COMM-176 INTERCULTURAL COMMUNICATION | COMM-174 INTERPERSONAL COMMUNICATION",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 2,
+   "n_tier1": 0,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication",
+   "n_modules": 2,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Mink Stavenga",
+   "email": "mstavenga@swccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/southwestern",
+   "candidates": [
+    {
+     "course": "COMM-176",
+     "title": "INTERCULTURAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMM-174",
+     "title": "INTERPERSONAL COMMUNICATION",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "mis_name": "San Diego College of Continuing Ed",
+   "region": "San Diego - Imperial",
+   "county": "San Diego",
+   "cna_courses": 4,
+   "cna_course_list": "HLTH605 NURSING ASSISTANT TRAINING; HLTH607 ACUTE CARE NURSE ASSISTANT; HLTH608 RESTORATIVE NURSE ASSISTANT; HLTH611 BEHAVIORAL HEALTH AIDE",
+   "cna_delivery": "Noncredit",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "HLTH609 HEALTHCARE CAREERS",
+   "best_fit_tier": "Tier 1 - health discipline (same faculty as CNA)",
+   "n_candidates": 1,
+   "n_tier1": 1,
+   "n_tier2": 0,
+   "modules": "No HTH module matched in this catalog",
+   "n_modules": 0,
+   "score": 2,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Shelly Hess",
+   "email": "shess@sdccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/SDCCE",
+   "candidates": [
+    {
+     "course": "HLTH609",
+     "title": "HEALTHCARE CAREERS",
+     "top": "120100",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Ventura College",
+   "mis_name": "VENTURA COLLEGE",
+   "region": "Central Coast",
+   "county": "Ventura",
+   "cna_courses": 1,
+   "cna_course_list": "HSV10 Certified Nurse Assistant",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMMV12 Intercultural Communication | COMMV15 Interpersonal Communication | COMMV03 Group Communication",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 0,
+   "n_tier2": 3,
+   "modules": "Cultural Competence, Effective Communication, Teamwork and Collaboration",
+   "n_modules": 3,
+   "score": 2,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 45,
+   "map_credit_recs": 48,
+   "map_disciplines": 12,
+   "contact": "Lissanna Follari",
+   "email": "lfollari@vcccd.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/VENC",
+   "candidates": [
+    {
+     "course": "COMMV12",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "COMMV15",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "COMMV03",
+     "title": "Group Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "Victor Valley College",
+   "mis_name": "VICTOR VALLEY COMMUNITY COLLEGE",
+   "region": "Inland Empire",
+   "county": "San Bernardino",
+   "cna_courses": 2,
+   "cna_course_list": "ALDH-60 Nursing Assistant; ALDH-62 Acute Care C.N.A.",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "CMST-105 Intercultural Communication | CMST-106 Interpersonal Communication | HLTH-0108 Community Health Worker I",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 6,
+   "n_tier1": 4,
+   "n_tier2": 2,
+   "modules": "Cultural Competence, Effective Communication, Ethics and Integrity",
+   "n_modules": 3,
+   "score": 5,
+   "readiness": "C - MAP page live and staffed, no CPL activity yet",
+   "map_exhibits": 0,
+   "map_credit_recs": 0,
+   "map_disciplines": 0,
+   "contact": "Lorena Dorn",
+   "email": "lorena.dorn@vvc.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/VVC",
+   "candidates": [
+    {
+     "course": "CMST-105",
+     "title": "Intercultural Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Cultural Competence"
+     ],
+     "modules_all": [
+      "Cultural Competence"
+     ]
+    },
+    {
+     "course": "CMST-106",
+     "title": "Interpersonal Communication",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "HLTH-0108",
+     "title": "Community Health Worker I",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "HLTH-0109",
+     "title": "Community Health Worker II",
+     "top": "126100",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Noncredit",
+     "units": "0",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "BSRT-301",
+     "title": "Medical and Bioethics",
+     "top": "121000",
+     "tier": 1,
+     "fit": 3,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Ethics and Integrity"
+     ],
+     "modules_all": [
+      "Ethics and Integrity"
+     ]
+    },
+    {
+     "course": "BSRT-302",
+     "title": "Education and Teaching Strategies for Healthcare Professionals",
+     "top": "121000",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    }
+   ]
+  },
+  {
+   "college": "West Los Angeles College",
+   "mis_name": "WEST LOS ANGELES COLLEGE",
+   "region": "Los Angeles",
+   "county": "Los Angeles",
+   "cna_courses": 1,
+   "cna_course_list": "NRS-HCA399A Nurse Assistant Prog",
+   "cna_delivery": "Credit - degree applicable",
+   "cna_award": "No award-level CNA program in COCI (course only)",
+   "best_fit": "COMM   121 Interpersonal Commun | DEN HY 461 Teaching Health Careers | COMM   151 Small Group Comm",
+   "best_fit_tier": "Tier 2 - communication studies (interpersonal / intercultural)",
+   "n_candidates": 3,
+   "n_tier1": 1,
+   "n_tier2": 2,
+   "modules": "Effective Communication, Teamwork and Collaboration",
+   "n_modules": 2,
+   "score": 4,
+   "readiness": "A - CPL operating in MAP",
+   "map_exhibits": 23,
+   "map_credit_recs": 177,
+   "map_disciplines": 15,
+   "contact": "Tiffany Miller",
+   "email": "millerts@wlac.edu",
+   "landing": "https://cpldashboardcccco.azurewebsites.net/WLAC",
+   "candidates": [
+    {
+     "course": "COMM   121",
+     "title": "Interpersonal Commun",
+     "top": "150600",
+     "tier": 2,
+     "fit": 4,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Effective Communication"
+     ],
+     "modules_all": [
+      "Effective Communication"
+     ]
+    },
+    {
+     "course": "DEN HY 461",
+     "title": "Teaching Health Careers",
+     "top": "124020",
+     "tier": 1,
+     "fit": 2,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Professionalism (allied health)"
+     ],
+     "modules_all": [
+      "Professionalism (allied health)"
+     ]
+    },
+    {
+     "course": "COMM   151",
+     "title": "Small Group Comm",
+     "top": "150600",
+     "tier": 2,
+     "fit": 1,
+     "credit": "Credit - degree applicable",
+     "units": "3",
+     "modules": [
+      "Teamwork and Collaboration"
+     ],
+     "modules_all": [
+      "Teamwork and Collaboration"
+     ]
+    }
+   ]
+  }
+ ],
+ "partner": {
+  "name": "Futuro Health",
+  "map_college_id": 133,
+  "entity_kind": "partner",
+  "landing_page": "https://cpldashboardcccco.azurewebsites.net/FUTURO",
+  "total_exhibits": 0,
+  "total_credit_recs": 0,
+  "primary_contact": "",
+  "note": "Futuro Health already exists in MAP as a partner entity with a live landing page, but holds ZERO exhibits and ZERO credit recommendations - no CPL credit recommendation for HTH (or any Futuro course) exists in MAP today."
+ },
+ "totals": {
+  "cna_colleges": 61,
+  "mis_colleges": 118,
+  "cna_courses": 153,
+  "coci_programs": 57,
+  "with_receiving": 59,
+  "with_tier1": 25,
+  "cpl_operating": 24
+ }
+}
