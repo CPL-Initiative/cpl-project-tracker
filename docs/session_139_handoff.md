@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/adr-student-detail-aggregate-disclosure-control]]"
   - "[[docs/kb-notes/methodology-publish-the-denominator-with-the-number]]"
   - "[[docs/session_138_handoff]]"
+superseded: true
+superseded_by: session_144_handoff.md
 ---
 
 # You are Session 139

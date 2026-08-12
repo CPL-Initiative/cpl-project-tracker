@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/methodology-a-materialized-view-cannot-carry-rls]]"
   - "[[docs/kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim]]"
   - "[[docs/kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service]]"
+superseded: true
+superseded_by: session_144_handoff.md
 ---
 
 # You are Session 142

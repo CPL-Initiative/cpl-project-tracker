@@ -1,20 +1,56 @@
 {
   "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-11 (evening) · SkyLink — one-click questions and the tier section in plain prose.",
-  "_session": 141,
-  "_status": "My College is finished apart from three links. Today it gained a breakdown of what a college's waiting credit actually is, both funding pools with each priority's target, a resources list, and a tier section that now reads as prose — naming the three tiers up front and listing the criteria you haven't reached closest-first. The suggested questions send in one click. The headline finding is that the waiting credit is almost entirely one thing, basic military service credit, which makes it far easier to clear than the number suggests. Two things now need you rather than another build: the three MAP links (Malone and Pedro), and a decision about who is allowed to see a college's own page.",
+  "_as_of": "2026-08-12 · SkyPro — My College folds down around Sierra AI, and five colleges get their funding back.",
+  "_session": 143,
+  "_status": "My College is finished apart from three MAP links. Today it was rebuilt around Sierra AI: she leads the page, and everything under her is now a closed section you open only if you want it — each one still showing its own headline figure so the page reads at a glance. The 22 strategies stopped being a long list at the bottom and now sit inside the funding priority that pays for them. Reading every version of the page then caught two real problems: five colleges were being told they had no implementation funding when they do (Mt. San Antonio's is $522,239), and a college with no data at all was being congratulated for having finished its queue. Both fixed. MAP deep links, the sign-in question, and the MIS comparison are all held at your direction; the two disagreeing student counts are parked on your explanation that MAP records are mid-correction.",
   "items": [
+    {
+      "id": "s143-mycollege-look",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "The My College tab now opens as Sierra AI plus nine closed sections, each showing one figure. Two things I'd like your eye on: do those one-line summaries on the closed rows earn their place, or would you rather the rows were bare? And should 'Start here' be the one section already open when the page loads?"
+    },
+    {
+      "id": "s143-five-colleges",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "Five colleges were being told they had no implementation funding at all — Mt. San Antonio, Norco, Reedley, MiraCosta and LA Southwest. A name-matching bug, now fixed; Mt. SAC correctly shows $522,239. Worth knowing in case anyone at those colleges saw the old page and drew a conclusion from it."
+    },
+    {
+      "id": "s143-map-links-held",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "Three sections on My College are built and waiting for MAP links — adopt an exhibit, work student records, update contacts. You're checking with Malone and Pedro on the right URL shapes. Nothing else is blocked on this."
+    },
+    {
+      "id": "s143-rls-held",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "Still your call when you're ready: whether a college should be able to open its own page without signing in. It isn't a display change — four of the tab's figures are locked at the database, so opening it means deciding to publish student-derived totals and staff contacts."
+    },
+    {
+      "id": "s143-student-counts-parked",
+      "for": "Sam",
+      "tab": "My College",
+      "text": "Parked on your explanation: the two student counts on the tab disagree for most colleges because MAP records are being pulled for Exhibit correction and reloaded, so our copy is stale. Nothing to do until the MAP Custom Report fetch is on — we'll re-check then."
+    },
+    {
+      "id": "s143-eacr-prescriptive",
+      "for": "Fable",
+      "tab": "EACR",
+      "text": "Wire the EACR prescriptive list into Supabase so Sierra can say which local course a college would most likely map a credential onto. Your catch, and it's now been open six sessions — the biggest piece of work nothing is blocking."
+    },
+    {
+      "id": "s143-claudemd-diet",
+      "for": "Fable",
+      "tab": "—",
+      "text": "The project's always-loaded instruction file is half again as big as it should be, which taxes every session that starts. Move the long warning lists out of the two biggest roadmap entries into a reference doc and leave a pointer."
+    },
     {
       "id": "s140-sierra-feedback",
       "for": "Sam",
       "tab": "Sierra Training",
       "text": "Twenty-five pieces of real feedback on Sierra are waiting to be read, eleven of them thumbs-down, the oldest sitting since 1 July. Measured live today — the automated test rows are excluded, and only four rows have ever been marked addressed."
-    },
-    {
-      "id": "s138-k10-revisit",
-      "for": "Sam",
-      "tab": "Course Credit",
-      "text": "You asked whether hiding groups under ten students loses useful data. Measured: it hides 320 of 436 credentials but only about 5% of students and 5% of units. So the cost is not the totals — it is that three quarters of individual credentials cannot be named. Worth deciding whether a different technique would keep the names."
     },
     {
       "id": "s138-contacts-confirm",
@@ -35,40 +71,10 @@
       "text": "Two things to ask the MAP team for, in one conversation: a feed of the CPL requests students submit (the one section of My College that cannot be built without it), and a durable row id for the student extract — the one we rely on today is an Access autonumber that renumbers on re-import."
     },
     {
-      "id": "s140-eacr",
-      "for": "Fable",
-      "tab": "Sierra Training",
-      "text": "Wire EACR's prescriptive layer into Supabase. It knows the local course each college most likely already teaches for a credential, which turns 'adopt CompTIA A+' into 'adopt it against the CIS-25 you already run' — on both My College and Sierra. Sam's catch, now carried three sessions."
-    },
-    {
-      "id": "s140-map-links",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "The three MAP links are the last piece of My College. You're checking with Malone and Pedro for the right ones: where a college adopts an exhibit, where it works student records, and where it updates its contacts. Each already has a section on the page waiting for it. Paste the three URLs from your address bar once you're signed in and the next session wires them in."
-    },
-    {
       "id": "s141-waiting-is-military",
       "for": "Sam",
       "tab": "My College",
       "text": "Worth knowing before you talk to any college about their waiting credit: almost all of it is the same thing. Of the 64,074 units already articulated and waiting on a decision, 98.8% is credit for basic military service — mostly landing on a GE or graduation area rather than a named course. Sixty-five of the 73 colleges with any are at 100%. So it isn't hundreds of separate judgment calls, it's close to one decision applied over and over, for students who already have a DD-214 or JST on file. The page now says this. Thirty-three colleges have nothing waiting at all — that's a finished queue, not a gap."
-    },
-    {
-      "id": "s141-rls-decision",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "A decision only you can make, and it blocks two things at once. Letting a college open its own page without the team phrase isn't a design change — the figures are locked at the database, so an outside visitor currently sees nothing at all. Opening it means agreeing to publish per-college student numbers and staff contact details. Separately, one of our data tables can't be locked that way even in principle (a technical limit); nothing is exposed today and the privacy rules are being applied correctly, but there's no safety net under them if a future rebuild forgets. Both want the same conversation."
-    },
-    {
-      "id": "s141b-tier-prose",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "The tier section now reads as a paragraph instead of five rows, and the header says what the three tiers mean before it tells you yours. The criteria you haven't reached are listed closest-first, so a college sitting just under a threshold sees that first. Worth a look to check the wording sounds right to you — it's the part a college is most likely to read as a judgment."
-    },
-    {
-      "id": "s141b-one-click",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "The suggested questions above Sierra AI now send in one click instead of just filling the box. If any of them come back with a weak answer, that's worth telling us — the questions are generated from each college's own numbers, so a bad one usually means a gap in what Sierra can see rather than a bad question."
     }
   ]
 }

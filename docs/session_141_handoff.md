@@ -7,6 +7,8 @@ related:
   - "[[docs/college_action_page_lessons]]"
   - "[[docs/kb-notes/methodology-reuse-the-model-not-its-formula]]"
   - "[[docs/kb-notes/methodology-a-safe-fallback-is-caller-specific]]"
+superseded: true
+superseded_by: session_144_handoff.md
 ---
 
 # You are Session 141

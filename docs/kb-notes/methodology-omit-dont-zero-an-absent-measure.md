@@ -1,8 +1,8 @@
 ---
 title: Omit, don't zero, a measure your source didn't supply
 created: 2026-08-01
-updated: 2026-08-03
-tags: [methodology, data-pipeline, funding, measurement]
+updated: 2026-08-12
+tags: [methodology, data-pipeline, funding, measurement, ui, my-college]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -135,11 +135,53 @@ It also does not license absent keys as a general style: prefer explicit
 another reason (privacy, small cells). Absence should mean **we did not
 measure**, and nothing else.
 
+## The render-side inverse: absence read as an ACHIEVEMENT (2026-08-12)
+
+The producer-side rule above stops an absence becoming a **zero**. On the
+consumer side the same confusion has a second, worse form: an absence becoming
+**praise**.
+
+My College told Imperial Valley College:
+
+> **Nothing is waiting.** Every credit recommendation with an articulated
+> exhibit behind it has been acted on. That is a finished queue, not a missing
+> measurement.
+
+Imperial Valley has three CPL students and **no rows in the credit summary at
+all**. Nothing had been acted on; nothing had been measured. The copy was
+written for the genuinely-good case — 33 of 106 colleges really have cleared
+theirs — and the branch that produced it could not tell "we looked and found
+none" from "there was nothing to look at":
+
+```js
+if (!detail || !detail.waiting) return null;
+if (!rows.length) return { empty: true, total: 0, groups: [] };   // ← both land here
+```
+
+The fix is a third state, not a reworded second one:
+
+```js
+if (!summary) return { unmeasured: true };   // no credit-summary row = nothing recorded
+if (!rows.length) return { empty: true, … }; // a real, measured zero
+```
+
+Two things generalise:
+
+1. **Congratulatory copy needs a stricter guard than neutral copy.** "0 units"
+   is merely wrong when the truth is unknown; "you have finished" is wrong *and*
+   tells someone to stop working. The more the sentence rewards the reader, the
+   more certain the branch behind it has to be.
+2. **Adding a state means auditing every `if` that tested for its absence.** The
+   new `unmeasured` flag fell straight through `if (wb && !wb.suppressed &&
+   !wb.empty)` into the branch that expects grouped rows, and threw. Caught by
+   rendering the page; nothing else would have.
+
 ## See also
 
 - `[[docs/cpl_funding_lessons]]` — the 2026-08-01 section
 - `[[docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it]]` — the full-cap twin
 - PR `#964` — the implementation + `tests/cpl_funding_applied.test.js`
+- PR `#1128` — the render-side inverse (`waitingBreakdown()` `unmeasured` state)
 
 ---
 
