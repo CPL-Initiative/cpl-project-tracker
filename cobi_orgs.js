@@ -50,12 +50,19 @@
     // gets zero rows back). So: pick GR freely; view/curate only with the phrase.
     { id: "gr", label: "GR", tag: "GR", full: "Government Relations",
       tabs: ["gr-priorities"], home: "gr-priorities" },
+    // FIN — Finance. Contracts is EXCLUSIVE (below) so vendor payment terms
+    // never appear in the default CPL nav; Budget and Implementation Funding are
+    // ALSO listed here, which does not move them — the org layer is a filtered
+    // VIEW, so both stay exactly where they are in the CPL site too. Sam,
+    // 2026-08-12: FIN should be a real Finance site on day one, not a one-tab site.
+    { id: "fin", label: "FIN", tag: "FIN", full: "Finance",
+      tabs: ["contracts", "budget", "implementation-funding"], home: "contracts" },
   ];
 
   // Tabs that must NOT appear in the default "show everything" view — they
   // surface only when their own org is active (sensitive / gated areas). This
   // keeps even the tab's existence out of the public/default nav.
-  var EXCLUSIVE = ["gr-priorities"];
+  var EXCLUSIVE = ["gr-priorities", "contracts"];
 
   function orgById(id) {
     for (var i = 0; i < ORGS.length; i++) if (ORGS[i].id === id) return ORGS[i];
