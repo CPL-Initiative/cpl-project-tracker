@@ -142,3 +142,61 @@ could not check.
 3. Confirm the **2 "none found"** colleges against their live catalogs.
 4. If this becomes recurring, offer it as a **COBI tab** rather than a spreadsheet —
    the MAP-side columns drift, and a sheet handed over in chat is a snapshot.
+
+---
+
+## 2026-08-12 (checkpoint) — what the workbook build itself taught
+
+Appended at the Rule 8 checkpoint, after #1134 merged (`085abbe`).
+
+### A summary formula counted a different thing than its label said
+
+The Statewide summary tab claimed *"Colleges with at least one plausible receiving
+course"* but pointed `COUNTIF` at the **HTH-modules-covered** column. **58 vs 59.**
+San Diego College of Continuing Education has one candidate course that matches the
+allied-health *professionalism* lens — the 7th lens — and none of the six named
+modules, so it counted in one and not the other.
+
+Caught by verifying each formula's **target column and expected value** against the
+source JSON rather than by reading the formula, which looked fine. Fixed by adding
+a real `Candidate courses` column and pointing the formula at it, then publishing
+**both** counts with the discrepancy explained in the "How it is counted" column.
+**A label and a range are two separate claims; verify them separately.**
+
+### `recalc.py` cannot run in this sandbox
+
+LibreOffice timed out at **119s, then 539s**, twice. The verification step the
+`xlsx` skill mandates was simply unavailable — not a failure, an absence. What
+replaced it: every formula's target column asserted, every expected value computed
+independently from `crosswalk.json` (61 / 59 / 58 / 24 / 22 / 9), and the formulas
+kept to quoted Excel-2007-era `COUNTA`/`COUNTIF` that Excel computes on open. The
+Read me tab tells the reader those cells may look empty in a non-calculating
+preview pane. **When a verification tool is unavailable, say which check you ran
+instead — don't let its absence read as a pass.**
+
+### Rendering the page found a bug no assertion would have
+
+The HTML sorted by alignment score descending, then by CPL activity — except the
+tiebreak was **inside the negation**, so within equal scores the colleges with the
+*most* CPL activity sank to the bottom. Every top row showed 0 credit recs. Nothing
+was factually wrong; the page just gave the worst possible advice about where to
+start. Found by screenshotting the render and reading it. (Same lesson as
+`methodology-assert-what-the-reader-sees`, one session earlier.)
+
+### A second partner engagement is not a second engine run
+
+Recorded in §11 because it is the kind of thing that gets misread later: the
+partner engine's roadmap row says *"next: run a 2nd partner list"*, and this run
+could look like it. It is not. The engine reconciles a **partner's occupation
+vocabulary** against MAP's **credential vocabulary** — many-to-many, judgment-heavy.
+This was **one known course × one known program type** across every college, with no
+vocabulary to reconcile. A separate, simpler generator was right; forcing the engine
+would have been wrong. The engine's second run is still outstanding.
+
+### Next concrete step (unchanged)
+
+1. Load **HTH as an exhibit in MAP** under Futuro Health (ID 133) — everything is
+   downstream of it.
+2. Work the **readiness A + score 4–5** rows first: Long Beach, CCSF, Cuesta.
+3. Confirm the **2 "none found"** colleges (Lassen, Santa Monica) against live catalogs.
+4. Offer this as a **COBI tab** if Ashley wants it as the MAP columns drift.

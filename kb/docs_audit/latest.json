@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 472,
-    "bytes": 5526220,
+    "files": 476,
+    "bytes": 5555845,
     "over_budget": 6,
-    "handoff_max": 144,
+    "handoff_max": 145,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 89548,
+    "always_loaded_bytes": 89129,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 89548,
+        "bytes": 89129,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1408682,
+        "bytes": 1411842,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 191746,
+        "bytes": 195005,
         "over": 1
       },
       "lessons": {
-        "files": 50,
-        "bytes": 1538018,
+        "files": 51,
+        "bytes": 1548508,
         "over": 3
       },
       "kb_note": {
-        "files": 231,
-        "bytes": 1289414,
+        "files": 233,
+        "bytes": 1296518,
         "over": 0
       },
       "handoff": {
-        "files": 127,
-        "bytes": 1008812,
+        "files": 128,
+        "bytes": 1014843,
         "over": 0
       }
     },
@@ -55,9 +55,9 @@
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1832,
-      "bytes": 1095451588,
-      "heavy_bytes": 582125179,
+      "files": 1851,
+      "bytes": 1096101088,
+      "heavy_bytes": 582258056,
       "heavy_share": 0.531,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -111,26 +111,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 89548,
+        "bytes": 89129,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 29548,
+        "over_by": 29129,
         "ratio": 1.49
       },
-      "message": "89,548 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "89,129 B is 1.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 191746,
+        "bytes": 195005,
         "limit": 40000,
         "lane": "index",
-        "over_by": 151746,
-        "ratio": 4.79
+        "over_by": 155005,
+        "ratio": 4.88
       },
-      "message": "191,746 B is 4.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "195,005 B is 4.9× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -792,13 +792,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 366010,
+        "bytes": 369170,
         "limit": 150000,
         "lane": "other",
-        "over_by": 216010,
-        "ratio": 2.44
+        "over_by": 219170,
+        "ratio": 2.46
       },
-      "message": "366,010 B is 2.4× the other budget (150,000 B) — candidate for compaction",
+      "message": "369,170 B is 2.5× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -806,10 +806,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 79607986,
+        "bytes": 79740863,
         "kind": "dir"
       },
-      "message": "directory totals 79,607,986 B inside the vault"
+      "message": "directory totals 79,740,863 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

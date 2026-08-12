@@ -1,13 +1,19 @@
 ---
 title: A source file that abbreviates titles fakes an absence
-type: methodology
-kb-status: published
-date: 2026-08-12
+created: 2026-08-12
+updated: 2026-08-12
 tags: [methodology, data-quality, matching, absence, mis, crosswalk]
+kb-status: published
+obsidian-folder: cpl-project-tracker/kb-notes
 related:
+  - "[[CLAUDE]]"
   - "[[docs/kb-notes/methodology-a-tier-must-encode-what-you-could-not-check]]"
   - "[[docs/futuro_hth_crosswalk_lessons]]"
+artifacts:
+  - kb/_build_futuro_hth_crosswalk.py
+  - kb/reference/cb_course_basic_fall2025.csv
 ---
+
 
 # A source file that abbreviates titles fakes an absence
 

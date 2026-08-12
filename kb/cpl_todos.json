@@ -1,80 +1,80 @@
 {
-  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-12 · SkyPro — My College folds down around Sierra AI, and five colleges get their funding back.",
-  "_session": 143,
-  "_status": "My College is finished apart from three MAP links. Today it was rebuilt around Sierra AI: she leads the page, and everything under her is now a closed section you open only if you want it — each one still showing its own headline figure so the page reads at a glance. The 22 strategies stopped being a long list at the bottom and now sit inside the funding priority that pays for them. Reading every version of the page then caught two real problems: five colleges were being told they had no implementation funding when they do (Mt. San Antonio's is $522,239), and a college with no data at all was being congratulated for having finished its queue. Both fixed. MAP deep links, the sign-in question, and the MIS comparison are all held at your direction; the two disagreeing student counts are parked on your explanation that MAP records are mid-correction.",
-  "items": [
-    {
-      "id": "s143-mycollege-look",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "The My College tab now opens as Sierra AI plus nine closed sections, each showing one figure. Two things I'd like your eye on: do those one-line summaries on the closed rows earn their place, or would you rather the rows were bare? And should 'Start here' be the one section already open when the page loads?"
-    },
-    {
-      "id": "s143-five-colleges",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Five colleges were being told they had no implementation funding at all — Mt. San Antonio, Norco, Reedley, MiraCosta and LA Southwest. A name-matching bug, now fixed; Mt. SAC correctly shows $522,239. Worth knowing in case anyone at those colleges saw the old page and drew a conclusion from it."
-    },
-    {
-      "id": "s143-map-links-held",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Three sections on My College are built and waiting for MAP links — adopt an exhibit, work student records, update contacts. You're checking with Malone and Pedro on the right URL shapes. Nothing else is blocked on this."
-    },
-    {
-      "id": "s143-rls-held",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Still your call when you're ready: whether a college should be able to open its own page without signing in. It isn't a display change — four of the tab's figures are locked at the database, so opening it means deciding to publish student-derived totals and staff contacts."
-    },
-    {
-      "id": "s143-student-counts-parked",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Parked on your explanation: the two student counts on the tab disagree for most colleges because MAP records are being pulled for Exhibit correction and reloaded, so our copy is stale. Nothing to do until the MAP Custom Report fetch is on — we'll re-check then."
-    },
-    {
-      "id": "s143-eacr-prescriptive",
-      "for": "Fable",
-      "tab": "EACR",
-      "text": "Wire the EACR prescriptive list into Supabase so Sierra can say which local course a college would most likely map a credential onto. Your catch, and it's now been open six sessions — the biggest piece of work nothing is blocking."
-    },
-    {
-      "id": "s143-claudemd-diet",
-      "for": "Fable",
-      "tab": "—",
-      "text": "The project's always-loaded instruction file is half again as big as it should be, which taxes every session that starts. Move the long warning lists out of the two biggest roadmap entries into a reference doc and leave a pointer."
-    },
-    {
-      "id": "s140-sierra-feedback",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "Twenty-five pieces of real feedback on Sierra are waiting to be read, eleven of them thumbs-down, the oldest sitting since 1 July. Measured live today — the automated test rows are excluded, and only four rows have ever been marked addressed."
-    },
-    {
-      "id": "s138-contacts-confirm",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Student-contact worklist, about ten minutes total: five colleges have a suggested counselling address nobody could verify (the network blocks their websites from here) — each needs about ten seconds in a browser to confirm; then fourteen colleges with no contact in MAP have a suggested one ready to send to the MAP team."
-    },
-    {
-      "id": "s138-contacts-blocked",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Two things here need a person, not a session: four colleges publish no usable address at all for a credit question, and the fifty-two colleges that do have a CPL Assistant were never checked for a student contact. Sessions are blocked from opening college websites, so this needs a human or a differently-connected runner."
-    },
-    {
-      "id": "s140-portal-feed",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Two things to ask the MAP team for, in one conversation: a feed of the CPL requests students submit (the one section of My College that cannot be built without it), and a durable row id for the student extract — the one we rely on today is an Access autonumber that renumbers on re-import."
-    },
-    {
-      "id": "s141-waiting-is-military",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Worth knowing before you talk to any college about their waiting credit: almost all of it is the same thing. Of the 64,074 units already articulated and waiting on a decision, 98.8% is credit for basic military service — mostly landing on a GE or graduation area rather than a named course. Sixty-five of the 73 colleges with any are at 100%. So it isn't hundreds of separate judgment calls, it's close to one decision applied over and over, for students who already have a DD-214 or JST on file. The page now says this. Thirty-three colleges have nothing waiting at all — that's a finished queue, not a gap."
-    }
-  ]
+ "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
+ "_as_of": "2026-08-12 (later) · SkyTouch — Ashley's Futuro Health crosswalk: 61 CNA colleges mapped, and the one MAP step that unlocks all of them.",
+ "_session": 144,
+ "_status": "Ashley asked for a statewide crosswalk between Futuro Health's Human Touch Healthcare course — six weeks, 80 hours, online, all about empathy and communication — and the community colleges that train CNAs. That shipped today as a spreadsheet and a web page. The useful finding is not the college list. It is that Human Touch Healthcare cannot be credited against the CNA course itself: a California CNA program is a state-regulated 160-hour course with 100 hours of hands-on clinical work, and its content is fixed in regulation. What it CAN be credited against is the course sitting next to it in the catalog — interpersonal communication, cultural competence, healthcare ethics — which is also a much easier conversation to have with faculty. 61 colleges teach CNA; 59 have such a course; 24 of them already run CPL in MAP. But none of it can move yet: Futuro Health is already set up in MAP with a live page and no courses loaded against it, so there is nothing for a college to say yes to. That one step comes first.",
+ "items": [
+  {
+   "id": "s144-futuro-map-exhibit",
+   "for": "Sam",
+   "tab": "—",
+   "text": "The blocker on Ashley's whole Futuro Health crosswalk, and it is a MAP step rather than an engineering one: Futuro Health already exists in MAP as a partner with its own live landing page, but no courses are loaded against it — zero exhibits, zero credit recommendations. Until Human Touch Healthcare is in MAP as an exhibit there is nothing for any of the 61 colleges to agree to. Everything else on that list waits behind it."
+  },
+  {
+   "id": "s144-futuro-first-three",
+   "for": "Sam",
+   "tab": "—",
+   "text": "When the Futuro conversation does start, three colleges are the obvious first calls: Long Beach City, City College of San Francisco, and Cuesta. All three already run CPL in MAP AND already teach a clearly matching communication course, so the ask is about one course rather than about setting up CPL from scratch."
+  },
+  {
+   "id": "s144-futuro-two-blanks",
+   "for": "Sam",
+   "tab": "—",
+   "text": "Two colleges on the CNA list — Lassen and Santa Monica — show no matching course to credit Human Touch Healthcare against. I checked both by hand against the state course file, but that file is a snapshot and abbreviates course titles, so someone with catalog access should confirm before we tell Ashley it is a real gap."
+  },
+  {
+   "id": "s143-mycollege-look",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "The My College tab now opens as Sierra AI plus nine closed sections, each showing one figure. Two things I'd like your eye on: do those one-line summaries on the closed rows earn their place, or would you rather the rows were bare? And should 'Start here' be the one section already open when the page loads?"
+  },
+  {
+   "id": "s143-five-colleges",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "Five colleges were being told they had no implementation funding at all — Mt. San Antonio, Norco, Reedley, MiraCosta and LA Southwest. A name-matching bug, now fixed; Mt. SAC correctly shows $522,239. Worth knowing in case anyone at those colleges saw the old page and drew a conclusion from it."
+  },
+  {
+   "id": "s143-map-links-held",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "Three sections on My College are built and waiting for MAP links — adopt an exhibit, work student records, update contacts. You're checking with Malone and Pedro on the right URL shapes. Nothing else is blocked on this."
+  },
+  {
+   "id": "s143-rls-held",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "Still your call when you're ready: whether a college should be able to open its own page without signing in. It isn't a display change — four of the tab's figures are locked at the database, so opening it means deciding to publish student-derived totals and staff contacts."
+  },
+  {
+   "id": "s143-student-counts-parked",
+   "for": "Sam",
+   "tab": "My College",
+   "text": "Parked on your explanation: the two student counts on the tab disagree for most colleges because MAP records are being pulled for Exhibit correction and reloaded, so our copy is stale. Nothing to do until the MAP Custom Report fetch is on — we'll re-check then."
+  },
+  {
+   "id": "s143-eacr-prescriptive",
+   "for": "Fable",
+   "tab": "EACR",
+   "text": "Wire the EACR prescriptive list into Supabase so Sierra can say which local course a college would most likely map a credential onto. Your catch, and it's now been open six sessions — the biggest piece of work nothing is blocking."
+  },
+  {
+   "id": "s140-sierra-feedback",
+   "for": "Sam",
+   "tab": "Sierra Training",
+   "text": "Twenty-five pieces of real feedback on Sierra are waiting to be read, eleven of them thumbs-down, the oldest sitting since 1 July. Measured live today — the automated test rows are excluded, and only four rows have ever been marked addressed."
+  },
+  {
+   "id": "s138-contacts-confirm",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "Student-contact worklist, about ten minutes total: five colleges have a suggested counselling address nobody could verify (the network blocks their websites from here) — each needs about ten seconds in a browser to confirm; then fourteen colleges with no contact in MAP have a suggested one ready to send to the MAP team."
+  },
+  {
+   "id": "s143-claudemd-diet",
+   "for": "Fable",
+   "tab": "—",
+   "text": "Still outstanding, and today it moved barely at all: the project's always-loaded instruction file is 89,000 characters against a 60,000 budget, so every session pays for it before doing any work. This checkpoint archived an old session write-up but added a new one, so it came out level. It needs prose moved into the reference docs, not another trim at the edges."
+  }
+ ]
 }
