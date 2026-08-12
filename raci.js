@@ -1383,36 +1383,74 @@
   // team_access (gated by is_allowed_reviewer() RLS, so the public can't see it).
   function openPhraseAdmin() {
     if (!state.sess || state.sess.teamPass) { alert("Sign in as a reviewer to manage the team phrase."); return; }
+    // Every phrase in team_access is managed here — not just the shared one.
+    // This was hardcoded to id=raci, so the site phrases (GR, and now Finance)
+    // had no rotation path at all: a phrase you cannot change is a phrase you
+    // cannot un-share when someone leaves.
+    var PHRASES = [
+      { id: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
+        blurb: "Unlocks the RACI matrix, members, updates, nudges, Mission Control — and every shared team tab." },
+      { id: "ci",   label: "C&I", slot: null,
+        blurb: "Curriculum & Instruction. Opens the shared team tabs; C&I has no gated tables of its own today." },
+      { id: "gr",   label: "Government Relations", slot: "cpl_gr_pass",
+        blurb: "Required for the GR Priorities tab (pre-decisional advocacy). Also opens the shared team tabs." },
+      { id: "fin",  label: "Finance", slot: "cpl_fin_pass",
+        blurb: "Required for the Contracts register (vendor payment terms). Also opens the shared team tabs." }
+    ];
+    function phraseDef(id) {
+      for (var i = 0; i < PHRASES.length; i++) if (PHRASES[i].id === id) return PHRASES[i];
+      return PHRASES[0];
+    }
+    var pick = el("select", { "class": "raci-in" });
+    PHRASES.forEach(function (p) {
+      var o = el("option", { value: p.id }, [p.label]);
+      pick.appendChild(o);
+    });
     var inp = el("input", { type: "text", "class": "raci-in", placeholder: "loading…" });
     inp.disabled = true;
     var msg = el("div", { "class": "raci-modal-msg" }, ["Loading the current phrase…"]);
     var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save phrase"]);
-    // Fetch the current phrase (reviewer-gated read — refresh the token first).
-    ensureFresh().then(function (s) {
-      return fetch(SUPABASE_URL + "/rest/v1/team_access?id=eq.raci&select=secret", { headers: headersFor(s) });
-    }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("read " + r.status)); })
-      .then(function (rows) {
-        var cur = (rows && rows[0] && rows[0].secret) || "";
-        inp.value = cur; inp.disabled = false; inp.placeholder = "team phrase";
-        msg.textContent = "Anyone you share this with can edit. Changing it means the team re-enters the new phrase.";
-      })
-      .catch(function () { msg.textContent = "Couldn't load the phrase — are you a signed-in reviewer?"; });
+    function loadPhrase() {
+      var def = phraseDef(pick.value);
+      inp.disabled = true; inp.value = ""; inp.placeholder = "loading…";
+      msg.textContent = "Loading the current phrase…";
+      // Fetch the current phrase (reviewer-gated read — refresh the token first).
+      return ensureFresh().then(function (s) {
+        return fetch(SUPABASE_URL + "/rest/v1/team_access?id=eq." + encodeURIComponent(def.id) + "&select=secret",
+          { headers: headersFor(s) });
+      }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("read " + r.status)); })
+        .then(function (rows) {
+          var cur = (rows && rows[0] && rows[0].secret) || "";
+          inp.value = cur; inp.disabled = false; inp.placeholder = "team phrase";
+          msg.textContent = def.blurb + " Changing it means everyone re-enters the new phrase.";
+        })
+        .catch(function () { msg.textContent = "Couldn't load the phrase — are you a signed-in reviewer?"; });
+    }
+    pick.addEventListener("change", loadPhrase);
+    loadPhrase();
     save.addEventListener("click", function () {
+      var def = phraseDef(pick.value);
       var v = (inp.value || "").trim();
       if (!v) { msg.textContent = "The phrase can't be empty."; return; }
       msg.textContent = "Saving…"; save.disabled = true;
-      sbWrite("PATCH", "team_access?id=eq.raci", { secret: v, updated_at: new Date().toISOString() }, "return=minimal")
+      sbWrite("PATCH", "team_access?id=eq." + encodeURIComponent(def.id),
+        { secret: v, updated_at: new Date().toISOString() }, "return=minimal")
         .then(function (r) {
           if (!r.ok) throw new Error("save failed (" + r.status + ")");
-          // Keep the editor's own stored phrase (if any) in sync so they aren't locked out.
-          try { if (localStorage.getItem(TEAM_PASS_KEY)) localStorage.setItem(TEAM_PASS_KEY, v); } catch (e) {}
-          msg.textContent = "✓ Saved. Share the new phrase with the team."; save.disabled = false;
+          // Keep the editor's own stored phrase (if any) in sync so they aren't
+          // locked out — the slot this phrase actually lives in, not always the
+          // shared one.
+          try {
+            if (def.slot && localStorage.getItem(def.slot)) localStorage.setItem(def.slot, v);
+          } catch (e) {}
+          msg.textContent = "✓ Saved. Share the new " + def.label + " phrase with the people who need it.";
+          save.disabled = false;
         })
         .catch(function (e) { msg.textContent = e.message; save.disabled = false; });
     });
-    showModal("Manage team phrase", [
-      el("div", { "class": "raci-modal-sub" }, ["The shared phrase that unlocks editing of the RACI matrix, members, updates, nudges, and Mission Control. Reviewers only."]),
-      inp, msg], [save]);
+    showModal("Manage team phrases", [
+      el("div", { "class": "raci-modal-sub" }, ["Every phrase COBI accepts. A site phrase opens that site's own tabs plus the shared ones; the shared phrase does not open the site tabs. Reviewers only."]),
+      pick, inp, msg], [save]);
   }
 
   // ─── CSS (var(--token), injected once) ─────────────────────────────────────

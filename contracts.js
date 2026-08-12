@@ -56,6 +56,13 @@
   var STORAGE = SUPABASE_URL + "/storage/v1";
   var BUCKET = "contract-docs";
   var TEAM_PASS_KEY = "cpl_team_pass";
+  // Contracts is EXCLUSIVE to the Finance site (cobi_orgs.js), so it is one of
+  // only two tabs that can carry a site phrase without locking out CPL users —
+  // every other gated tab is also a CPL tab. Its policies answer to
+  // fin_pass_ok(). We still SEND the shared phrase when Finance's is not held,
+  // so this file works either side of the policy swap: before it, both open the
+  // register; after it, only Finance does and the unlock box appears.
+  var SITE = "fin";
   var MAX_BYTES = 25 * 1024 * 1024;
   var DOC_MIME = {
     "application/pdf": "pdf",
@@ -69,6 +76,7 @@
     open: {},              // goalKey -> bool. NOT in the DOM; render() rewrites innerHTML.
     openItem: {},          // deliverable id -> bool. Same reason. Default collapsed.
     signedIn: false,       // whether the load ran with a reviewer JWT
+    cred: null,            // credential fingerprint the last load ran under
     busy: false
   };
 
@@ -79,11 +87,22 @@
       var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
       if (s && isValidJwt(s.access_token)) return { access_token: s.access_token, email: s.email || "(reviewer)" };
     } catch (e) {}
+    // Prefer the Finance phrase; fall back to the shared one (see SITE above).
+    var tp = window.CPL_TEAM_PHRASE;
+    if (tp) {
+      var s2 = tp.sessionFor(SITE);
+      if (s2) return s2;
+    }
     try {
       var p = localStorage.getItem(TEAM_PASS_KEY);
       if (p) return { teamPass: p, email: "(team)" };
     } catch (e) {}
     return null;
+  }
+  // Does this browser hold the Finance phrase specifically?
+  function hasFinPass() {
+    var tp = window.CPL_TEAM_PHRASE;
+    return !!(tp && tp.siteGet(SITE));
   }
   // A reviewer JWT — the only credential Storage will honour for this bucket.
   function reviewerToken() {
@@ -394,6 +413,25 @@
     return null;
   }
 
+  // A locked pane must carry its own way out. The header control offers the same
+  // unlock, but someone who lands here deep-linked should not have to find it —
+  // the "go to another tab and come back" bounce is what this replaces.
+  function appendUnlock(root) {
+    var tp = window.CPL_TEAM_PHRASE;
+    if (!tp || !tp.unlockRow || hasFinPass()) return;
+    var box = document.createElement("div");
+    box.className = "ctr-msg";
+    box.style.cssText = "margin-top:.6rem;";
+    box.appendChild(tp.unlockRow({
+      site: SITE,
+      blurb: "Finance phrase:",
+      label: "🔓 Unlock",
+      placeholder: "finance phrase…",
+      onUnlocked: function () { activate(); }
+    }));
+    root.appendChild(box);
+  }
+
   // ── render ────────────────────────────────────────────────────────────────
   function render() {
     var root = document.getElementById("contracts-root");
@@ -410,12 +448,14 @@
     }
     if (state.error) {
       root.innerHTML = '<div class="ctr-msg ctr-err"><b>Could not read the contract register.</b><br>' +
-        esc(state.error) + '<br><span style="color:var(--text-muted)">This tab is team-gated — sign in or enter the team phrase, then reopen it.</span></div>';
+        esc(state.error) + '<br><span style="color:var(--text-muted)">This register belongs to the Finance site — it opens with the Finance phrase.</span></div>';
+      appendUnlock(root);
       return;
     }
     if (!state.contracts.length) {
       root.innerHTML = '<div class="ctr-msg"><b>No contracts on file yet.</b><br>' +
-        'Either none has been added, or this session is not signed in — the register is team-gated.</div>';
+        '<span style="color:var(--text-muted)">Either none has been added, or this browser does not hold the Finance phrase.</span></div>';
+      appendUnlock(root);
       return;
     }
 
@@ -1128,10 +1168,15 @@
     ensureCss();
     var root = document.getElementById("contracts-root");
     if (!root) return;
-    // Re-read when the sign-in state changed since the last load — a gated read
-    // made while signed out must not linger as though it were the truth.
+    // Re-read when the CREDENTIAL changed since the last load — a gated read
+    // made while locked out must not linger as though it were the truth.
+    // This tracked the reviewer JWT only, so unlocking with a phrase left the
+    // "could not read the register" pane on screen until a manual reload — the
+    // exact friction the header control exists to remove.
     var nowSignedIn = !!reviewerToken();
-    if (booted && nowSignedIn === state.signedIn) { render(); return; }
+    var nowCred = (nowSignedIn ? "jwt" : "") + "|" + ((getSession() && getSession().teamPass) || "");
+    if (booted && nowCred === state.cred) { render(); return; }
+    state.cred = nowCred;
     booted = true;
     render();
     load().then(render);
@@ -1148,6 +1193,15 @@
     _doneCount: doneCount,
     _termMonths: termMonths,
     _monthsPhrase: monthsPhrase,
-    _count: count
+    _count: count,
+    _hasFinPass: hasFinPass,
+    _SITE: SITE
   };
+
+  // tabs.js dispatches cpl-tab-activated on WINDOW, not document. The header
+  // unlock re-dispatches it for the live tab, which is how an unlock reaches an
+  // already-rendered pane. activate() is cheap when the credential is unchanged.
+  window.addEventListener("cpl-tab-activated", function (e) {
+    if (e && e.detail && e.detail.tab === "contracts") activate();
+  });
 })();
