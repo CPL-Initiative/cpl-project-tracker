@@ -163,7 +163,8 @@ function makeWin(opts) {
   api.activate();
   setTimeout(function () {
     const root = w.document.getElementById("sierra-training-root");
-    check("signed-in: queue + gap panes render", /Feedback queue/.test(root.innerHTML) && /Gap miner/.test(root.innerHTML));
+    check("signed-in: queue + gap panes render",
+      /What people said about/.test(root.innerHTML) && /struggled with/.test(root.innerHTML));
     // expand the row, click "triaged" → the RPC is called
     root.querySelector('[data-open="t1"]').dispatchEvent(new w.Event("click", { bubbles: true }));
     const btn = root.querySelector('[data-status="triaged"]');
@@ -205,8 +206,8 @@ function smokeFilterTest() {
     const html = root.innerHTML;
     check("smoke rows are hidden from the queue by default", !!root.querySelector('[data-open="real1"]') && !root.querySelector('[data-open="ci1"]'));
     // The stat box is the number a reviewer trusts at a glance — 1 real 👎, not 4.
-    check("stats count only real rows (👎 total excludes CI)", /<div class="n">1<\/div><div class="l">\u{1F44E} total/u.test(html));
-    check("the hidden CI rows are disclosed, not silently dropped", /show 3 CI rows/.test(html));
+    check("stats count only real rows (👎 total excludes CI)", /<div class="n">1<\/div><div class="l">\u{1F44E} Thumbs-down/u.test(html));
+    check("the hidden CI rows are disclosed, not silently dropped", /include 3 automated test messages/.test(html));
     const box = root.querySelector("[data-f-smoke]");
     check("a reviewer can still opt in to see CI rows", !!box);
     box.checked = true;
@@ -214,7 +215,7 @@ function smokeFilterTest() {
     setTimeout(function () {
       const after = w.document.getElementById("sierra-training-root");
       check("toggling CI rows on brings them back", !!after.querySelector('[data-open="ci1"]'));
-      check("stats follow the toggle too", /<div class="n">4<\/div><div class="l">\u{1F44E} total/u.test(after.innerHTML));
+      check("stats follow the toggle too", /<div class="n">4<\/div><div class="l">\u{1F44E} Thumbs-down/u.test(after.innerHTML));
       done();
     }, 30);
   }, 30);

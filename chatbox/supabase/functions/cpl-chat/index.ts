@@ -1549,8 +1549,15 @@ async function fetchLiveMetrics(): Promise<any> {
 // active rows, each ≤500 chars, ~2,500 chars total, so a runaway guidance
 // list can't crowd out the retrieval context. Fails soft (no guidance on any
 // error). Schema of record: chatbox/supabase_sierra_guidance.sql.
+// Raised 2026-08-12 (Sam): per-rule 500 → 1500, total 2500 → 9000. The tab's
+// textarea carried maxlength="500" and this function sliced to the same 500, so
+// a longer rule was cut in BOTH places with no warning — three rules written on
+// 2026-08-12 were silently truncated, one mid-table. These MUST stay equal to
+// GUIDANCE_RULE_MAX / GUIDANCE_TOTAL_MAX in sierra_training.js; raising one
+// side alone just moves the silent truncation to the other side.
 const GUIDANCE_MAX_RULES = 10;
-const GUIDANCE_MAX_CHARS = 2500;
+const GUIDANCE_MAX_CHARS = 9000;
+const GUIDANCE_MAX_CHARS_PER_RULE = 1500;
 async function fetchTeamGuidance(sb: any): Promise<string> {
   try {
     const { data, error } = await sb
@@ -1562,7 +1569,7 @@ async function fetchTeamGuidance(sb: any): Promise<string> {
     if (error || !data || data.length === 0) return "";
     let out = "";
     for (const r of data) {
-      const rule = String(r.rule || "").trim().slice(0, 500);
+      const rule = String(r.rule || "").trim().slice(0, GUIDANCE_MAX_CHARS_PER_RULE);
       if (!rule) continue;
       if (out.length + rule.length > GUIDANCE_MAX_CHARS) break;
       out += `\n- ${rule}`;

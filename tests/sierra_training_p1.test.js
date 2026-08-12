@@ -90,12 +90,13 @@ function makeWin(opts) {
 
   api._state.open = { t1: true };
   const rowHtml = api._feedbackRow(fb);
-  check("expanded feedback row shows the log-turn similarity", /Chat-log turn/.test(rowHtml) && /KB similarity <b>0\.31<\/b>/.test(rowHtml));
-  check("expanded feedback row carries the gap chips from the matched turn", /low similarity/.test(rowHtml) && /punt/.test(rowHtml));
+  check("expanded feedback row shows the log-turn similarity", /What Sierra had to work with/.test(rowHtml) && /Closest match in the knowledge base: <b>0\.31<\/b>/.test(rowHtml));
+  check("expanded feedback row carries the gap chips from the matched turn",
+    /nothing close/.test(rowHtml) && /didn\u2019t know/.test(rowHtml));
   const rowMiss = api._feedbackRow({ turn_id: "t2", created_at: iso(1), question: "unmatched", rating: "up", status: "new" });
   api._state.open = { t2: true };
   const rowMiss2 = api._feedbackRow({ turn_id: "t2", created_at: iso(1), question: "unmatched", rating: "up", status: "new" });
-  check("unmatched feedback row states the honest miss", /No matching turn in the newest/.test(rowMiss2) && !/No matching turn/.test(rowMiss));
+  check("unmatched feedback row states the honest miss", /older than the/.test(rowMiss2) && !/older than the/.test(rowMiss));
 })();
 
 // ── (c) Test in Sierra — producer + cpl_chat consumer ──

@@ -67,9 +67,9 @@ const iso = (i) => new Date(Date.now() - i * 3600000).toISOString();
   api._state.guidance = [];
   api.render(root);
   check("Guidance pane renders with the production-widget warning",
-    /🧭 Guidance/.test(root.innerHTML) && /map\.rccd\.edu/.test(root.innerHTML));
+    /🧭 Instructions for Sierra/.test(root.innerHTML) && /public assistant/.test(root.innerHTML));
   check("composer (textarea + add button) present", root.querySelector(".sit-guid-input") && root.querySelector("[data-guid-add]"));
-  check("empty state invites the first rule", /No guidance rules yet/.test(root.innerHTML));
+  check("empty state invites the first rule", /No instructions yet/.test(root.innerHTML));
 
   api._state.guidance = null;
   api.render(root);
@@ -119,8 +119,8 @@ function step2() {
     api._state.guidance = rows;
     api.render(root);
     const html = root.innerHTML;
-    check("newest 10 active rules marked sent", (html.match(/active · sent/g) || []).length === 10);
-    check("active rules beyond the cap marked not-sent", (html.match(/not sent/g) || []).length === 2);
+    check("newest 10 active rules marked sent", (html.match(/Sierra is using this/g) || []).length === 10);
+    check("active rules beyond the cap marked not-sent", (html.match(/not reaching Sierra/g) || []).length === 2);
     check("inactive rule doesn't consume a cap slot and renders struck",
       /inactive rule/.test(html) && root.querySelectorAll(".sit-rule-off").length === 1);
 
@@ -137,7 +137,8 @@ function step2() {
 function finish() {
   const fn = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
   check("cpl-chat defines fetchTeamGuidance with the row + char caps",
-    /fetchTeamGuidance/.test(fn) && /GUIDANCE_MAX_RULES = 10/.test(fn) && /GUIDANCE_MAX_CHARS = 2500/.test(fn));
+    /fetchTeamGuidance/.test(fn) && /GUIDANCE_MAX_RULES = 10/.test(fn)
+    && /GUIDANCE_MAX_CHARS = 9000/.test(fn) && /GUIDANCE_MAX_CHARS_PER_RULE = 1500/.test(fn));
   // Asserts guidance is IN the parallel batch, not that it is the LAST member —
   // pinning the tail of the destructuring made this go red when v30 added
   // fetchCollegeGeoMap to the same batch, which is exactly the change it should
