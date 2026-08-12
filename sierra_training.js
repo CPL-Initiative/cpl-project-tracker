@@ -73,6 +73,62 @@
 
   var STATUSES = ["new", "triaged", "addressed"];
 
+  // ── Plain language (Sam, 2026-08-12) ─────────────────────────────────────
+  // "the Sierra Training tab uses a bunch of jargon I don't understand; can you
+  //  switch to using plain language and add hover overs on chips and filter to
+  //  explain what they do and how to respond?"
+  //
+  // The stored values stay as they are — `new`/`triaged`/`addressed` are written
+  // by an RPC and read by tests, so only the LABEL changes. Every hover-over
+  // answers two questions, because a definition alone still leaves you stuck:
+  // what this means, and what you should DO about it.
+  var STATUS_LABEL = { "new": "Not reviewed", triaged: "Looking into it", addressed: "Done" };
+  var STATUS_HELP = {
+    "new": "Nobody on the team has looked at this yet. Open it, read Sierra's answer, "
+      + "then mark it “Looking into it” if it needs work or “Done” if it is fine.",
+    triaged: "Someone has read this and it needs a fix. Usually the fix is a new instruction "
+      + "for Sierra — use “Write an instruction about this” below. Mark it “Done” once that is in place.",
+    addressed: "Finished — either it was fine as-is, or you have added an instruction that "
+      + "fixes it. Done items drop out of the default view."
+  };
+  var HELP = {
+    rating: "Filter by whether the person pressed thumbs-up or thumbs-down on Sierra's answer. "
+      + "Start with thumbs-down — those are the answers someone thought were wrong.",
+    audience: "Who Sierra thought she was talking to — a student, a college, or the MAP team. "
+      + "She answers differently for each, so a bad answer for one audience may be fine for another.",
+    page: "Which page the person was chatting on. Useful for telling a question asked from "
+      + "My College apart from one asked on the public assistant.",
+    status: "How far the team has got with each item. “Still to do” is the working view: "
+      + "everything except the ones marked Done.",
+    note: "Show only items where the person typed a comment explaining what was wrong. "
+      + "These are the most useful ones to read first.",
+    smoke: "Automated messages our own daily test leaves behind when it checks that the "
+      + "thumbs-up/down button still works. They are not real people and need no action — "
+      + "they are hidden unless you tick this.",
+    days: "Only show items from the last week, month, and so on. Leave it on “Any time” to see everything.",
+    bulk: "Set every item currently listed above to the same state at once. Use it to clear a "
+      + "batch you have already read — it skips the automated test messages.",
+    gapKind: "“Nothing close in the knowledge base” means Sierra had no good source to answer from. "
+      + "“Sierra said she did not know” means she declined to answer. Both point at something missing.",
+    similarity: "How closely the best thing Sierra could find matched the question, from 0 (nothing "
+      + "alike) to 1 (near-identical). Below " + LOW_SIM + " she is answering from very little.",
+    topicMatch: "Whether Sierra found a matching credential exhibit for the question. If not, either "
+      + "no college has articulated it, or it is filed under a different name.",
+    ruleSent: "This instruction is currently being sent to Sierra with every question she answers.",
+    ruleOff: "Turned off — Sierra never sees this one. Kept as a record of what was tried.",
+    testInSierra: "Opens the CPL Assistant with this exact question filled in, so you can see whether "
+      + "Sierra answers it better now. It does not send it — you press enter yourself.",
+    writeRule: "Start a new instruction for Sierra with this question already quoted, so you can tell "
+      + "her how to handle this kind of question in future."
+  };
+  function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
+  // Depends on GUIDANCE_SENT_CAP, which is declared below — read it at call time,
+  // not at definition time, or it bakes in `undefined`.
+  function ruleNotSentHelp() {
+    return "Sierra only receives the newest " + GUIDANCE_SENT_CAP + " active instructions. Newer ones "
+      + "have pushed this one out, so it is NOT reaching her. Turn off an older one to make room.";
+  }
+
   var state = {
     loading: false, error: null, gated: false,
     feedback: null, turns: null,
@@ -94,6 +150,21 @@
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
   // so the tab can honestly mark which rules are actually reaching Sierra.
   var GUIDANCE_SENT_CAP = 10;
+
+  // Per-instruction character budget. RAISED 500 → 1500 (Sam, 2026-08-12).
+  // The textarea carried maxlength="500", which stops accepting keystrokes with
+  // NO feedback — so three rules written that day were silently cut, one of them
+  // mid-table ("| ASE A1 –"). A limit the user cannot see is a limit that eats
+  // their work. Two changes, and both were needed: raise it, and SHOW it.
+  // MUST stay ==       GUIDANCE_MAX_CHARS_PER_RULE in
+  // chatbox/supabase/functions/cpl-chat/index.ts — the function slices to its own
+  // cap, so raising only this one moves the silent truncation server-side.
+  var GUIDANCE_RULE_MAX = 1500;
+  var GUIDANCE_NOTE_MAX = 300;
+  // Total budget across all sent rules, mirroring the function. Shown in the UI
+  // because exceeding it silently DROPS the oldest active rules — and the oldest
+  // is the naming rule the whole platform depends on.
+  var GUIDANCE_TOTAL_MAX = 9000;
 
   // "Test in Sierra" handoff — same-origin sessionStorage key the CPL Assistant
   // tab (cpl_chat.js) consumes on #chatbot activation: it prefills the input
@@ -172,6 +243,18 @@
       ".sit-btn:hover { background: var(--surface-muted); }",
       ".sit-btn[disabled] { opacity:.5; cursor:default; }",
       ".sit-btn.on { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); }",
+      // The action that actually changes Sierra should not look like the ones
+      // that only record where the team got to.
+      ".sit-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
+      ".sit-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
+      ".sit-btn-primary[disabled] { opacity:.5; }",
+      // Anything carrying a hover-over says so, or nobody discovers it.
+      ".sit-toolbar [title], .sit-chip[title], .sit-stat .box[title] { cursor:help; }",
+      ".sit-check-dim { color: var(--text-muted, #6b7280); }",
+      ".sit-guid-count { font-size:.72rem; color: var(--text-muted, #6b7280); margin:2px 0 6px; }",
+      ".sit-guid-count.warn { color: var(--danger-text, #c00); font-weight:600; }",
+      ".sit-guid-budget { font-size:.75rem; color: var(--text-muted, #6b7280); margin:.2rem 0 .6rem; cursor:help; }",
+      ".sit-guid-budget.warn { color: var(--danger-text, #c00); font-weight:600; }",
       ".sit-themes { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 12px; }",
       ".sit-theme { font-size:.76rem; background: var(--surface-muted); color: var(--text-body); border:1px solid var(--border); border-radius:12px; padding:2px 10px; }",
       ".sit-theme b { color: var(--navy-primary); }",
@@ -457,7 +540,8 @@
   }
   function statusChip(s) {
     s = s || "new";
-    return '<span class="sit-chip sit-chip-' + esc(s) + '">' + esc(s) + "</span>";
+    return '<span class="sit-chip sit-chip-' + esc(s) + '" title="' + esc(STATUS_HELP[s] || "") + '">'
+      + esc(statusLabel(s)) + "</span>";
   }
   function feedbackRow(f) {
     var open = !!state.open[f.turn_id];
@@ -478,27 +562,42 @@
       // Retrieval telemetry from the matching chat_interactions turn — was
       // this a knowledge gap (low similarity / punt) or a wording problem?
       var m = logMatch(f);
-      h += '<div class="lbl">Chat-log turn</div>';
+      h += '<div class="lbl">What Sierra had to work with</div>';
       if (m) {
-        var sim = m.top_similarity == null ? "none" : Number(m.top_similarity).toFixed(2);
-        h += '<div class="sit-logmatch">KB similarity <b>' + sim + "</b>"
-          + (m.topic_match ? " · exhibit topic-match ✓" : " · no exhibit topic-match")
+        var sim = m.top_similarity == null ? "nothing" : Number(m.top_similarity).toFixed(2);
+        h += '<div class="sit-logmatch"><span title="' + esc(HELP.similarity) + '">Closest match in the '
+          + "knowledge base: <b>" + sim + "</b></span>"
+          + '<span title="' + esc(HELP.topicMatch) + '"> · '
+          + (m.topic_match ? "found a matching credential ✓" : "no matching credential") + "</span>"
           + gapKinds(m).map(function (k) {
-            return ' · <span class="sit-chip sit-chip-gap">' + (k === "low-sim" ? "⚠ low similarity" : "\u{1F6A7} punt") + "</span>";
+            return ' · <span class="sit-chip sit-chip-gap">'
+              + (k === "low-sim" ? "⚠ nothing close" : "\u{1F6A7} said she didn’t know") + "</span>";
           }).join("")
-          + " · logged " + fmtWhen(m.created_at) + "</div>";
+          + " · asked " + fmtWhen(m.created_at) + "</div>";
       } else {
-        h += '<div class="sit-logmatch sit-dim">No matching turn in the newest ' + TURN_LIMIT
-          + " loaded — likely older than the analysis window.</div>";
+        h += '<div class="sit-logmatch sit-dim">This conversation is older than the '
+          + TURN_LIMIT + " we look through, so we can’t show what she had to work with.</div>";
       }
-      h += '<div class="sit-actions"><span class="lbl" style="margin:0">Triage:</span>';
+      // These buttons only RECORD where the team has got to — they change nothing
+      // about Sierra. That was the confusion: "when I click Triage, there's no
+      // prompt for me to add any adjustments" (Sam, 2026-08-12). Marking is
+      // bookkeeping; the thing that actually changes Sierra is an instruction,
+      // so the button that writes one now sits right here beside them.
+      h += '<div class="sit-actions"><span class="lbl" style="margin:0" '
+        + 'title="Records how far the team has got with this item. It does not change how Sierra answers — '
+        + 'use “Write an instruction about this” for that.">Mark this:</span>';
       STATUSES.forEach(function (s) {
         var on = (f.status || "new") === s;
         h += '<button class="sit-btn' + (on ? " on" : "") + '" data-status="' + esc(s) + '" data-turn="' + esc(f.turn_id) + '"'
-          + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(s) + "</button>";
+          + ' title="' + esc(STATUS_HELP[s] || "") + '"'
+          + (on || state.busy[f.turn_id] ? " disabled" : "") + ">" + esc(statusLabel(s)) + "</button>";
       });
-      h += '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '">🧪 Test in Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '">⧉ Copy question</button>';
+      h += '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="fb:' + esc(f.turn_id) + '"'
+        + ' title="' + esc(HELP.writeRule) + '">✍️ Write an instruction about this</button>'
+        + '<button class="sit-btn" data-qact="test" data-qsrc="fb:' + esc(f.turn_id) + '"'
+        + ' title="' + esc(HELP.testInSierra) + '">🧪 Try it on Sierra</button>'
+        + '<button class="sit-btn" data-qact="copy" data-qsrc="fb:' + esc(f.turn_id) + '"'
+        + ' title="Copies the question to your clipboard.">⧉ Copy question</button>';
       h += "</div></div>";
     }
     return h + "</div>";
@@ -517,9 +616,13 @@
     var open = !!state.gOpen[t.id];
     var kinds = gapKinds(t).map(function (k) {
       var label = k === "low-sim"
-        ? "⚠ low similarity" + (t.top_similarity == null ? " (none)" : " (" + Number(t.top_similarity).toFixed(2) + ")")
-        : "\u{1F6A7} punt";
-      return '<span class="sit-chip sit-chip-gap">' + label + "</span>";
+        ? "⚠ nothing close in the knowledge base"
+          + (t.top_similarity == null ? "" : " (" + Number(t.top_similarity).toFixed(2) + ")")
+        : "\u{1F6A7} Sierra said she didn’t know";
+      var tip = k === "low-sim" ? HELP.similarity
+        : "Sierra answered that she could not find this. Either the knowledge base is missing it, "
+          + "or she needs an instruction telling her where to look.";
+      return '<span class="sit-chip sit-chip-gap" title="' + esc(tip) + '">' + label + "</span>";
     }).join("");
     var h = '<div class="sit-row">'
       + '<div class="sit-row-head" data-gopen="' + esc(t.id) + '">'
@@ -532,8 +635,12 @@
         + '<div class="lbl">Question</div><div class="txt">' + esc(t.question || "—") + "</div>"
         + '<div class="lbl">Sierra’s answer</div><div class="txt">' + esc(t.response || "—") + "</div>"
         + '<div class="sit-actions">'
-        + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '">🧪 Test in Sierra</button>'
-        + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '">⧉ Copy question</button>'
+        + '<button class="sit-btn sit-btn-primary" data-qact="rule" data-qsrc="gap:' + esc(t.id) + '"'
+        + ' title="' + esc(HELP.writeRule) + '">✍️ Write an instruction about this</button>'
+        + '<button class="sit-btn" data-qact="test" data-qsrc="gap:' + esc(t.id) + '"'
+        + ' title="' + esc(HELP.testInSierra) + '">🧪 Try it on Sierra</button>'
+        + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '"'
+        + ' title="Copies the question to your clipboard.">⧉ Copy question</button>'
         + "</div></div>";
     }
     return h + "</div>";
@@ -543,16 +650,19 @@
   function guidanceRow(r, sent) {
     var chip = r.active
       ? (sent
-        ? '<span class="sit-chip sit-chip-addressed" title="Within the newest ' + GUIDANCE_SENT_CAP + ' active rules — sent to Sierra on every question">active · sent</span>'
-        : '<span class="sit-chip sit-chip-triaged" title="More than ' + GUIDANCE_SENT_CAP + ' newer active rules exist — this one is NOT currently sent">active · beyond top-' + GUIDANCE_SENT_CAP + ", not sent</span>")
-      : '<span class="sit-chip">inactive</span>';
+        ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">✓ Sierra is using this</span>'
+        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp()) + '">⚠ On, but not reaching Sierra</span>')
+      : '<span class="sit-chip" title="' + esc(HELP.ruleOff) + '">Switched off</span>';
     var h = '<div class="sit-row' + (r.active ? "" : " sit-rule-off") + '">'
       + '<div class="sit-row-head" style="cursor:default">'
       + chip
       + '<span class="sit-q">' + esc(r.rule) + "</span>"
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
-      + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "") + ">"
-      + (r.active ? "Deactivate" : "Reactivate") + "</button>"
+      + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
+      + ' title="' + (r.active
+        ? "Stops sending this to Sierra. It stays on the list so you can turn it back on."
+        : "Starts sending this to Sierra again, from her next answer.") + '">'
+      + (r.active ? "Switch off" : "Switch on") + "</button>"
       + "</div>";
     if (r.note) {
       h += '<div class="sit-row-body" style="padding:6px 14px;border-top:none"><span class="lbl" style="margin:0;display:inline">Note:</span> ' + esc(r.note) + "</div>";
@@ -567,11 +677,11 @@
 
     var html = '<div class="sit">';
     html += '<h2>Sierra Training <span class="sit-gatechip">Team only</span></h2>';
-    html += '<p class="sit-intro">The improvement loop for <b>Sierra</b>, the CPL assistant: the '
-      + "\u{1F44D}/\u{1F44E} <b>feedback queue</b> from both chat surfaces, and a <b>gap miner</b> over the "
-      + "chat logs — turns where the knowledge base had nothing close (low similarity) or Sierra "
-      + "explicitly punted. Triage the queue; the recurring themes point at the artifacts and "
-      + "guidance Sierra is missing.</p>";
+    html += '<p class="sit-intro">Where you teach <b>Sierra</b>, the CPL assistant, to answer better. '
+      + "Three parts, in the order you would use them: what people told us was wrong "
+      + "(\u{1F44D}/\u{1F44E}), the questions she struggled to answer, and the "
+      + "<b>instructions</b> you give her — plain-English rules she follows on every question, live "
+      + "within a minute. Hover anything you don’t recognise; every filter and label explains itself.</p>";
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
@@ -608,34 +718,48 @@
     var activeGuidance = (state.guidance || []).filter(function (r) { return r.active; }).length;
 
     html += '<div class="sit-stat">'
-      + '<div class="box"><div class="n">' + openCount + '</div><div class="l">Open feedback</div></div>'
-      + '<div class="box"><div class="n">' + downCount + '</div><div class="l">\u{1F44E} total</div></div>'
-      + '<div class="box"><div class="n">' + gaps.length + '</div><div class="l">Gap turns</div></div>'
-      + '<div class="box"><div class="n">' + turns.length + '</div><div class="l">Turns analyzed</div></div>'
-      + '<div class="box"><div class="n">' + activeGuidance + '</div><div class="l">🧭 Active guidance</div></div>'
+      + '<div class="box" title="People who rated an answer and whose report nobody has finished with yet.">'
+      + '<div class="n">' + openCount + '</div><div class="l">Still to do</div></div>'
+      + '<div class="box" title="How many people pressed thumbs-down. These are the answers someone thought were wrong.">'
+      + '<div class="n">' + downCount + '</div><div class="l">\u{1F44E} Thumbs-down</div></div>'
+      + '<div class="box" title="' + esc(HELP.gapKind) + '">'
+      + '<div class="n">' + gaps.length + '</div><div class="l">Questions she struggled with</div></div>'
+      + '<div class="box" title="How many recent conversations we looked through to find those.">'
+      + '<div class="n">' + turns.length + '</div><div class="l">Conversations checked</div></div>'
+      + '<div class="box" title="Instructions you have given Sierra that are currently switched on.">'
+      + '<div class="n">' + activeGuidance + '</div><div class="l">🧭 Instructions in use</div></div>'
       + "</div>";
 
     // ── Pane 1: feedback queue ──
     var rows = filteredFeedback();
-    html += "<h3>\u{1F4EC} Feedback queue</h3>";
+    html += "<h3>\u{1F4EC} What people said about Sierra’s answers "
+      + "<span class=\"sit-meta\">(from the 👍/👎 buttons wherever Sierra appears)</span></h3>";
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-f="fRating">' + options(["down", "up"], state.fRating, "Any rating") + "</select>"
-      + '<select class="sit-select" data-f="fAudience">' + options(distinct(fb, "audience", "(not set)"), state.fAudience, "Any audience") + "</select>"
-      + '<select class="sit-select" data-f="fPage">' + options(distinct(fb, "page", "(unknown)"), state.fPage, "Any page") + "</select>"
-      + '<select class="sit-select" data-f="fStatus">'
-      + '<option value="open"' + (state.fStatus === "open" ? " selected" : "") + ">Open (new + triaged)</option>"
-      + '<option value=""' + (state.fStatus === "" ? " selected" : "") + ">Any status</option>"
-      + STATUSES.map(function (s) { return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + s + "</option>"; }).join("")
+      + '<select class="sit-select" data-f="fRating" title="' + esc(HELP.rating) + '">'
+      + options(["down", "up"], state.fRating, "Thumbs up or down") + "</select>"
+      + '<select class="sit-select" data-f="fAudience" title="' + esc(HELP.audience) + '">'
+      + options(distinct(fb, "audience", "(not set)"), state.fAudience, "Anyone asking") + "</select>"
+      + '<select class="sit-select" data-f="fPage" title="' + esc(HELP.page) + '">'
+      + options(distinct(fb, "page", "(unknown)"), state.fPage, "Any page") + "</select>"
+      + '<select class="sit-select" data-f="fStatus" title="' + esc(HELP.status) + '">'
+      + '<option value="open"' + (state.fStatus === "open" ? " selected" : "") + ">Still to do</option>"
+      + '<option value=""' + (state.fStatus === "" ? " selected" : "") + ">Everything</option>"
+      + STATUSES.map(function (s) {
+        return '<option value="' + s + '"' + (state.fStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
+      }).join("")
       + "</select>"
-      + '<label class="sit-check"><input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> has note</label>"
-      + '<label class="sit-check" title="CI smoke-test rows (chatbox/smoke_test.sh MODE 12). The test writes as anon, which is write-only on this table, so it cannot delete its own rows.">'
-      + '<input type="checkbox" data-f-smoke' + (state.fSmoke ? " checked" : "") + "> show "
-      + smokeCount + " CI rows</label>"
-      + '<select class="sit-select" data-f="fDays" aria-label="Feedback date range">' + dayOptions(state.fDays) + "</select>"
-      + '<span class="sit-bulk">Mark all ' + rows.length + " filtered → "
-      + '<select class="sit-select" data-bulk-status aria-label="Bulk triage status">'
+      + '<label class="sit-check" title="' + esc(HELP.note) + '">'
+      + '<input type="checkbox" data-f-note' + (state.fNote ? " checked" : "") + "> only ones with a comment</label>"
+      + '<label class="sit-check sit-check-dim" title="' + esc(HELP.smoke) + '">'
+      + '<input type="checkbox" data-f-smoke' + (state.fSmoke ? " checked" : "") + "> include "
+      + smokeCount + " automated test messages</label>"
+      + '<select class="sit-select" data-f="fDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.fDays) + "</select>"
+      + '<span class="sit-bulk" title="' + esc(HELP.bulk) + '">Mark all ' + rows.length + " shown as "
+      + '<select class="sit-select" data-bulk-status aria-label="State to set them all to" '
+      + 'title="' + esc(HELP.bulk) + '">'
       + ["triaged", "addressed"].map(function (s) {
-        return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + s + "</option>";
+        return '<option value="' + s + '"' + (state.bulkStatus === s ? " selected" : "") + ">" + esc(statusLabel(s)) + "</option>";
       }).join("")
       + "</select>"
       + '<button class="sit-btn" data-bulk-apply' + (state.bulkBusy || !rows.length ? " disabled" : "") + ">"
@@ -652,20 +776,23 @@
     var g = gapRows();
     var themes = themeCounts(gaps);
     var byAud = audienceCounts(gaps);
-    html += "<h3>⛏️ Gap miner <span class=\"sit-meta\">(newest " + turns.length + " turns; low similarity &lt; " + LOW_SIM + " or Sierra punted)</span></h3>";
+    html += "<h3>⛏️ Questions Sierra struggled with <span class=\"sit-meta\">(from the newest "
+      + turns.length + " conversations — she either had nothing close to answer from, or said she didn’t know)</span></h3>";
     if (themes.length) {
       html += '<div class="sit-themes">' + themes.map(function (t) {
         return '<span class="sit-theme">' + esc(t.word) + " <b>×" + t.n + "</b></span>";
       }).join("") + "</div>";
     }
     html += '<div class="sit-toolbar">'
-      + '<select class="sit-select" data-g="gKind">'
-      + '<option value="all"' + (state.gKind === "all" ? " selected" : "") + ">All gaps</option>"
-      + '<option value="low-sim"' + (state.gKind === "low-sim" ? " selected" : "") + ">Low similarity</option>"
-      + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Punts</option>"
+      + '<select class="sit-select" data-g="gKind" title="' + esc(HELP.gapKind) + '">'
+      + '<option value="all"' + (state.gKind === "all" ? " selected" : "") + ">Both kinds</option>"
+      + '<option value="low-sim"' + (state.gKind === "low-sim" ? " selected" : "") + ">Nothing close in the knowledge base</option>"
+      + '<option value="punt"' + (state.gKind === "punt" ? " selected" : "") + ">Sierra said she didn’t know</option>"
       + "</select>"
-      + '<select class="sit-select" data-g="gAudience">' + options(Object.keys(byAud).sort(), state.gAudience, "Any audience") + "</select>"
-      + '<select class="sit-select" data-g="gDays" aria-label="Gap date range">' + dayOptions(state.gDays) + "</select>"
+      + '<select class="sit-select" data-g="gAudience" title="' + esc(HELP.audience) + '">'
+      + options(Object.keys(byAud).sort(), state.gAudience, "Anyone asking") + "</select>"
+      + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
+      + dayOptions(state.gDays) + "</select>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
       + '<span class="sit-count">' + g.length + " of " + gaps.length + "</span>"
       + "</div>";
@@ -676,26 +803,55 @@
     }
 
     // ── Pane 3: guidance layer (Phase 2) ──
-    html += "<h3>🧭 Guidance <span class=\"sit-meta\">(response directives Sierra follows — live within a minute, no redeploy)</span></h3>";
-    html += '<p class="sit-guid-warn">⚠ Guidance steers <b>every</b> Sierra surface, including the production '
-      + "map.rccd.edu widget. Sierra receives the newest <b>" + GUIDANCE_SENT_CAP + " active</b> rules on every "
-      + "question (each ≤500 characters). Deactivate instead of deleting — the list is its own audit trail.</p>";
+    html += "<h3>🧭 Instructions for Sierra <span class=\"sit-meta\">(plain-English rules she follows — "
+      + "they reach her within a minute, with nothing to deploy)</span></h3>";
+    html += '<p class="sit-guid-warn">⚠ These change <b>every</b> place Sierra appears, including My College '
+      + "and the public assistant. She is sent the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "
+      + "instructions with every question. Switch one off rather than deleting it — the list is its own record "
+      + "of what has been tried.</p>";
+    // The total budget is a SILENT failure: past it, the function stops adding
+    // rules and the oldest simply never reach Sierra. Show it before it bites.
+    var sentChars = 0, sentRank = 0;
+    (state.guidance || []).forEach(function (r) {
+      if (!r.active) return;
+      sentRank++;
+      if (sentRank <= GUIDANCE_SENT_CAP) sentChars += Math.min(String(r.rule || "").length, GUIDANCE_RULE_MAX) + 3;
+    });
+    var budgetPct = Math.round((sentChars / GUIDANCE_TOTAL_MAX) * 100);
+    html += '<p class="sit-guid-budget' + (budgetPct >= 80 ? " warn" : "") + '" '
+      + 'title="All the switched-on instructions are sent to Sierra together, and there is a size limit on the '
+      + 'whole set. Past it the oldest ones stop being sent — without warning. Switch off what you no longer need.">'
+      + "Space used: <b>" + sentChars.toLocaleString() + "</b> of " + GUIDANCE_TOTAL_MAX.toLocaleString()
+      + " characters (" + budgetPct + "%)"
+      + (budgetPct >= 80 ? " — getting full. Switch off an instruction you no longer need." : "")
+      + "</p>";
     if (state.guidance === null) {
       html += '<div class="sit-empty">Could not load the guidance rules — renew your session on the '
         + "<b>Team &amp; RACI</b> tab and re-open this tab.</div>";
     } else {
+      var used = String(state.draftRule || "").length;
       html += '<div class="sit-guid-composer">'
-        + '<textarea class="sit-guid-input" maxlength="500" rows="2" '
-        + 'placeholder="e.g. When a visitor asks about CPR or First Aid credit, always mention the statewide EMS pathway alongside local exhibits.">'
+        + '<textarea class="sit-guid-input" maxlength="' + GUIDANCE_RULE_MAX + '" rows="3" '
+        + 'title="Write it as you would say it to a colleague. Sierra follows these literally, so be specific '
+        + 'about what she should say and when." '
+        + 'placeholder="e.g. When someone asks about CPR or First Aid credit, always mention the statewide EMS '
+        + 'pathway alongside the local exhibits.">'
         + esc(state.draftRule) + "</textarea>"
+        // A visible counter is the whole fix. maxlength alone just stops
+        // accepting keystrokes, which reads as a broken keyboard, not a limit.
+        + '<div class="sit-guid-count' + (used > GUIDANCE_RULE_MAX - 150 ? " warn" : "") + '" data-guid-count>'
+        + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
+        + "</div>"
         + '<div class="sit-guid-row">'
-        + '<input class="sit-guid-note" maxlength="300" value="' + esc(state.draftNote) + '" '
-        + 'placeholder="Optional note — why this rule exists (e.g. which feedback it answers)">'
-        + '<button class="sit-btn" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
-        + (state.addBusy ? "Adding…" : "➕ Add rule") + "</button>"
+        + '<input class="sit-guid-note" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
+        + 'title="Just for the team — why you added this. Sierra never sees the note." '
+        + 'placeholder="Optional note for the team — why this exists (e.g. which feedback it answers)">'
+        + '<button class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
+        + (state.addBusy ? "Adding…" : "➕ Add instruction") + "</button>"
         + "</div></div>";
       if (!state.guidance.length) {
-        html += '<div class="sit-empty">No guidance rules yet — add the first one above. '
+        html += '<div class="sit-empty">No instructions yet — add the first one above. '
           + "It reaches Sierra on her next answer.</div>";
       } else {
         var activeRank = 0;
@@ -706,10 +862,11 @@
       }
     }
 
-    html += '<p class="sit-gov">Phases 1 + 2 of the Sierra Training scope (review queue + gap miner + the '
-      + "guidance layer). Ingesting artifacts into Sierra’s knowledge (Phase 3) comes next, and nothing here "
-      + "ever writes to the public CPL Knowledge Base (that stays behind its human-reviewed curation "
-      + "pipeline).</p>";
+    html += '<p class="sit-gov">Instructions are wired through to Sierra and reach every surface she appears '
+      + "on, including the Sierra AI section of <b>My College</b> — she is sent them with every question, so a "
+      + "change here shows up on her next answer with nothing to deploy. Still to come: adding documents to "
+      + "her knowledge so she can quote them. Nothing on this tab ever writes to the public CPL Knowledge "
+      + "Base — that stays behind its human-reviewed curation pipeline.</p>";
     html += "</div>";
     root.innerHTML = html;
     wire(root);
@@ -752,13 +909,23 @@
     if (bulkBtn) bulkBtn.addEventListener("click", function () { bulkTriage(root); });
     // guidance composer (drafts live in state so re-renders don't eat typing)
     var gi = root.querySelector(".sit-guid-input");
-    if (gi) gi.addEventListener("input", function () { state.draftRule = gi.value; });
+    if (gi) gi.addEventListener("input", function () {
+      state.draftRule = gi.value;
+      // Update the counter in place — a full render() here would move the caret
+      // to the end on every keystroke.
+      var c = root.querySelector("[data-guid-count]");
+      if (!c) return;
+      var n = gi.value.length;
+      c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
+      c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+    });
     var gn = root.querySelector(".sit-guid-note");
     if (gn) gn.addEventListener("input", function () { state.draftNote = gn.value; });
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
-      if (rule.length < 3) { alert("Rule text is required (3–500 characters)."); return; }
+      if (rule.length < 3) { alert("Type the instruction first (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
       addGuidance(rule, (state.draftNote || "").trim(), root);
     });
     root.querySelectorAll("[data-guid-toggle]").forEach(function (btn) {
@@ -772,10 +939,39 @@
         e.stopPropagation();
         var q = lookupQuestion(btn.getAttribute("data-qsrc"));
         if (!q) return;
-        if (btn.getAttribute("data-qact") === "copy") copyText(q, btn);
+        var act = btn.getAttribute("data-qact");
+        if (act === "copy") copyText(q, btn);
+        else if (act === "rule") startRuleFrom(q, root);
         else testInSierra(q);
       });
     });
+  }
+
+  // The missing half of triage: marking an item "Done" recorded that somebody
+  // looked, but there was no path from "this answer was wrong" to "here is how
+  // Sierra should answer it" — the two panes sat on the same page, unconnected.
+  // This seeds the instruction composer with the question and scrolls to it. It
+  // deliberately does NOT write anything: the curator still types the rule and
+  // presses Add, because only a human knows what the right answer was.
+  function startRuleFrom(q, root) {
+    var seed = "When someone asks something like “" + String(q || "").trim().slice(0, 160) + "”, ";
+    if (!state.draftRule) state.draftRule = seed;
+    if (!state.draftNote) state.draftNote = "From a thumbs-down on: " + String(q || "").trim().slice(0, 120);
+    render(root);
+    var ta = root.querySelector(".sit-guid-input");
+    if (!ta) return;
+    // Guard on the METHOD, not just the exception — the smooth-scroll options
+    // object is the part that varies, but jsdom has no scrollIntoView at all,
+    // so a bare retry in the catch throws again.
+    if (typeof ta.scrollIntoView === "function") {
+      try { ta.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { ta.scrollIntoView(); }
+    }
+    try {
+      ta.focus();
+      if (typeof ta.setSelectionRange === "function") {
+        ta.setSelectionRange(ta.value.length, ta.value.length);   // caret after the seed
+      }
+    } catch (e) { /* ignore */ }
   }
 
   // Resolve a row's question from the id-typed data-qsrc handle ("fb:<turn_id>"
@@ -865,6 +1061,12 @@
     _toggleGuidance: toggleGuidance,
     _loadGuidance: loadGuidance,
     GUIDANCE_SENT_CAP: GUIDANCE_SENT_CAP,
+    GUIDANCE_RULE_MAX: GUIDANCE_RULE_MAX,
+    GUIDANCE_TOTAL_MAX: GUIDANCE_TOTAL_MAX,
+    _statusLabel: statusLabel,
+    _STATUS_HELP: STATUS_HELP,
+    _HELP: HELP,
+    _startRuleFrom: startRuleFrom,
   };
 
   // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a
