@@ -3914,3 +3914,20 @@ self-contradicting "100%". Assert `root.textContent`; reserve source-greps for r
 yet meet any of the five"). Tests **104 → 183**. Durable: `methodology-assert-what-the-reader-sees`.
 Story: `docs/college_action_page_lessons.md` · handoff `docs/session_142_handoff.md`.
 
+### SkyPro — the tab folds down, and two things it was quietly saying wrong (2026-08-12, Session 143)
+
+Sam **held** MAP deep links, the RLS decision and MIS; the work is the tab. After the MAP team used it he asked that
+**Sierra AI lead** and everything under her collapse (default closed) — *"a minimal initial view with nested expandable
+details for the inquisitive"* — and that the **22 strategies stop reading as "a long list of intimidating to-dos"*.
+Shipped **#1128**; tests **183 → 228**.
+⭐ **Collapsing is not hiding** — every closed header carries that college's own figure, so shut the tab is an eight-line
+standing report. Strategies now nest under the funding priority they earn against (10/6/6).
+⭐ **Five colleges were being told they have NO implementation funding** — Mt. SAC, Norco, Reedley, MiraCosta, LA
+Southwest. Only ONE side of the name join went through `cplCollegeShort()`. The old join test asserted `S(roster)` vs
+`S(roster)` and reported "0 orphans" while five were orphaned live. Mt. SAC now returns **$522,239** (Sep-BOG).
+⭐ **An absent measurement was rendering as an achievement** — a college with no data was told its queue was finished.
+⚠️ Sam's corrections: contacts/staff are **not PII**; "Statewide CPL Benchmarks", not a tier or a comparison (fixed
+thresholds ≠ ranking); the `indExcludeSA` lead I offered was wrong (it is set to *include*). The two student counts are
+**parked** — MAP records are mid-correction, so our extract is stale. Durable:
+`methodology-normalise-both-sides-of-a-join`, `methodology-a-collapsed-section-must-still-inform`.
+Story: `docs/college_action_page_lessons.md` · handoff `docs/session_144_handoff.md`.
