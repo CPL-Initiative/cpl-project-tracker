@@ -228,3 +228,55 @@ ed)"* rather than sitting empty.
 **Reported back to SkyLink** as a scope finding on their file, not a defect: the CE
 institutions carry their own MAP `college_id` and are invisible to anything joining
 through that crosswalk alone.
+
+---
+
+## 2026-08-12 (later) — the noncredit lens, and a count that overstated by 6x
+
+Ashley: *"can you please run this for non credit courses."* Two readings, materially
+different, so both were measured before choosing: restrict the **CNA side** to
+noncredit (23 of 61 colleges) or restrict the **receiving side** to noncredit. Built
+as a `--lens noncredit` flag on the same generator — same instrument, a lens, not a
+fork — which answers both at once.
+
+### The finding is the opposite of the intuition
+
+Noncredit is where a non-college provider's 80-hour course *ought* to land: no unit
+cost, no transcript friction, the cleanest possible ask. **It is almost never
+available.**
+
+- **23** colleges teach CNA as noncredit (63 of the 153 CNA courses).
+- **6** of those have any noncredit receiving course.
+- ⭐ **1** has a noncredit course that matches an actual HTH module — Saddleback's
+  `PH404NC INTERPROFESSIONAL COMMUNICATION IN HEALTHCARE`, which is close to a
+  perfect fit.
+- **15** would have to route through the **credit** course.
+
+Cause: community-college noncredit catalogs in health are **clinical and technical**.
+Of 372 noncredit courses at these colleges in the accepted TOP families, only 12
+survive the HTH lens — the rest are Home Health Aide, CPR/BLS, paramedic life
+support, nursing skills labs, phlebotomy, pharmacy law. The lens was not
+under-finding; the courses genuinely are not there.
+
+### ⚠️ The count overstated by 6x until it was checked
+
+"6 colleges have a noncredit receiving course" was true and misleading. Five of the
+six matched only the **7th lens — allied-health professionalism** — which catches
+*Survey of Health Careers*, *Pathways to Health Careers*, *Healthcare Careers
+Exploration*. A career-survey course is not where an interpersonal-skills course
+articulates. Only Saddleback matched one of HTH's **six named modules**.
+
+Fixed with a `real_module_match` flag carried per candidate, surfaced in the cell
+text itself (`[career-survey course — matches allied-health professionalism broadly,
+NOT one of HTH's six modules]`) and in the summary. **A broad catch-all lens must be
+distinguishable from the named ones in the OUTPUT, not just in the code** — otherwise
+the headline number silently absorbs it. Same family as the absence rules: a weak
+match rendered like a strong one is a false positive that reads as a finding.
+
+### Deriving formula columns from header NAMES
+
+The two lenses ship different column sets (22 vs 20). Hard-coded summary-formula
+letters would have pointed at the wrong column on one of them — silently, since
+`COUNTIF` over the wrong column still returns a plausible number. `col_of(headers,
+name)` removes the failure mode; verification confirmed the noncredit workbook's
+formulas correctly land on **K/L/O/N/R** where the full one uses **I/J/M/L/P**.
