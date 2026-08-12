@@ -935,9 +935,22 @@ check("(O) the tier and the fraction both render as prose",
   /Advancing — you meet 2 of the 5 criteria/.test(tierTxt));
 check("(O) it is prose, not a row list", tierRoot.querySelectorAll(".cb-tlist li").length === 0 &&
   tierRoot.querySelectorAll(".cb-tier p").length >= 2);
+// ⚠ Read the expected figures OUT of live_metrics.json rather than pinning
+// them. This assertion used to hardcode "(you: 2,250)" and went red on
+// 2026-08-12 with nothing broken: the daily cron refreshed the scrape and
+// CCSF moved to 2,251. An assertion on a value that legitimately changes
+// every day is a scheduled false alarm — assert the SHAPE, and source the
+// number from the same file the page reads.
+const ccsfLive = ["leading", "advancing", "inactive"].reduce(function (hit, k) {
+  return hit || ((LIVE.tiers[k] && LIVE.tiers[k].colleges) || []).filter(function (c) {
+    return c.college === "City College of San Francisco"; })[0] || null;
+}, null);
+check("(O) the tier fixture college is present in live_metrics.json", !!ccsfLive);
 check("(O) every criterion appears with the college's own value",
-  /at least 500 CPL students \(you: 2,250\)/.test(tierTxt) &&
-  /at least 3 transcribed units per student \(you: 0.05\)/.test(tierTxt));
+  !!ccsfLive
+  && new RegExp("at least 500 CPL students \\(you: " + ccsfLive.students.toLocaleString("en-US") + "\\)").test(tierTxt)
+  && new RegExp("at least 3 transcribed units per student \\(you: "
+       + (Math.round(ccsfLive.avgTranscribed * 100) / 100) + "\\)").test(tierTxt));
 // ⭐ Sam, 2026-08-11: the three tiers are named in the header so "Advancing"
 // means something before the reader reaches it — a verdict from an unstated
 // scheme is not grounding.
@@ -960,8 +973,17 @@ check("(O) the value does not repeat the phrase's unit",
 // perfectly correct, which is a test failing for a reason the reader cannot see.
 check("(O) the size limitation is stated, not left to be inferred",
   /Three of the five are size measures/.test(tierTxt));
+// The INVARIANT is "this is not a league table", not one particular sentence.
+// Pinned to the exact old wording, this went red on a correct page when the
+// heading changed to "How this college compares statewide" and the closing
+// line was reworded to agree with it. Assert the guarantee, and separately
+// assert the absence of the language that would break it.
 check("(O) never presented as a ranking against other colleges",
-  /never a ranking against anyone else/.test(tierTxt));
+  /never (a ranking against anyone else|against any particular one)/.test(tierTxt)
+  && /never as a league table|never a ranking/.test(tierTxt));
+check("(O) …and no percentile or rank-position language appears",
+  !/percentile|\b\d+(st|nd|rd|th) of \d+\b|rank(ed|s)? #?\d/.test(tierTxt),
+  "a percentile hands a top-5% badge to a 21-student college — Sam, 2026-08-11");
 check("(O) the batch-upload distortion is named where it would mislead",
   /batch-upload already-posted credit \(AP, IB, CLEP\)/.test(tierTxt),
   "two of the five count transcribed units; some colleges bulk-load AP/IB/CLEP");
@@ -997,6 +1019,218 @@ check("(O) …and it still lists all five, closest first", /The 5 you have not r
 check("(O) Inactive is explained as 'not recorded', not as a score of 0 of 5",
   /almost no CPL recorded/.test(qRoot.textContent) && !/0 of the 5/.test(qRoot.textContent),
   "Inactive is assigned by absence of activity, not by counting criteria");
+
+
+/* ══ Part P — the collapsed tab (Sam, 2026-08-12) ═══════════════════════════
+ * "Reinforce Sierra AI as the main focus and make all the content below
+ * collapsible sections, default collapsed… a minimal initial view with nested
+ * expandable details for the inquisitive." Plus the two defects that reading
+ * every branch of the new render turned up.
+ */
+
+// ⭐ THE ONE THAT MATTERS MOST. fundingFor() normalised MAP's college name
+// through cplCollegeShort() and handed the result to cpl_funding.js, whose
+// baseCollege() compares it to the roster's RAW string. Both sides have to go
+// through the resolver; only one did. Five colleges — including Mt. San
+// Antonio, the largest CPL programme in the system — rendered "is not on the
+// 115-college funding roster" and were shown NO implementation funding.
+//
+// Asserted against the REAL shipped roster and the REAL funding module, not a
+// fixture, so drift in either file fails here rather than on a college's page.
+const fundWin = (function () {
+  const fdom = new JSDOM('<!doctype html><html><body></body></html>',
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const fw = fdom.window;
+  fw.localStorage.setItem("cpl_team_pass", "phrase");
+  fw.fetch = function () { return new Promise(function () {}); };
+  fw.cplCollegeShort = S;
+  fw.CPL_FUNDING = jw.window.CPL_FUNDING;
+  const sc = fw.document.createElement("script");
+  sc.textContent = fs.readFileSync("cpl_funding.js", "utf8");
+  fw.document.body.appendChild(sc);
+  return fw;
+})();
+const FUND = fundWin.CPL_FUNDING_TAB;
+check("(P) the real funding module loaded for the join test",
+  !!FUND && typeof FUND._grant === "function" && typeof FUND._alloc === "function");
+
+// The five whose roster spelling differs from their canonical short name.
+// Each is a regression that would silently unfund a college.
+const JOIN_CASES = [
+  ["Mt. San Antonio College", "Mt San Antonio"],
+  ["Norco College", "Norco College"],
+  ["Reedley College", "Reedley College"],
+  ["MiraCosta College", "MiraCosta"],
+  ["Los Angeles Southwest College", "LA Swest"]
+];
+JOIN_CASES.forEach(function (c) {
+  const mapName = c[0], rosterRaw = c[1];
+  check("(P) canonical short name differs from the roster string for " + mapName,
+    S(mapName) !== rosterRaw,
+    "if these ever converge this case stops guarding anything");
+  check("(P) the roster string itself resolves to the same canonical key: " + mapName,
+    S(rosterRaw) === S(mapName),
+    "the resolver must round-trip, or no consumer can join these");
+  // The bug, stated directly: the canonical key alone does NOT reach the module.
+  check("(P) the canonical key alone does NOT reach the funding module: " + mapName,
+    !FUND._grant(S(mapName)),
+    "this is why rosterKey() exists; if this starts passing, the module normalises and rosterKey can go");
+  check("(P) the roster string DOES reach the funding module: " + mapName,
+    !!FUND._grant(rosterRaw));
+});
+
+// Mt. SAC is CLAUDE.md's own cross-check against the Sep-BOG reconciliation,
+// so the fix is verified against a figure derived independently of this repo.
+const mtsac = FUND._alloc("Mt San Antonio");
+check("(P) Mt. SAC's allocation matches the Sep-BOG cross-check ($522,239)",
+  !!mtsac && Math.round(mtsac.total) === 522239,
+  "got " + (mtsac ? Math.round(mtsac.total) : "null"));
+
+// And the consumer resolves it. rosterKey() is exercised through the real
+// render, because that is the path a college actually hits.
+const wj = load(true);
+wj.cplCollegeShort = S;
+wj.CPL_FUNDING = jw.window.CPL_FUNDING;
+wj.CPL_FUNDING_TAB = FUND;
+wj.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
+const J = wj.CPL_COLLEGE_BRIEFING;
+J._state.funding = "ready";
+J._state.college = "Mt. San Antonio College";
+J._state.data = { colleges: ["Mt. San Antonio College"], summaryByName: {},
+  briefing: J._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const jRoot = wj.document.getElementById("college-briefing-root");
+J.render(jRoot);
+const jTxt = jRoot.textContent.replace(/\s+/g, " ");
+check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
+  !/is not on the 115-college funding roster/.test(jTxt),
+  "the roster row was always there — the join dropped it");
+check("(P) …and its real allocation renders", /\$522,239/.test(jTxt));
+
+// ── The collapsed shape ──
+const secs = jRoot.querySelectorAll("details.cb-sec");
+check("(P) the content below Sierra AI is in collapsible sections", secs.length >= 4);
+check("(P) every section is CLOSED on arrival",
+  Array.prototype.every.call(secs, function (d) { return !d.open; }),
+  "Sam: default collapsed");
+// ⭐ Collapsed is only "minimal" if what remains still informs. A drawer with
+// no summary is just hidden content, and the reader has to open all of them.
+check("(P) ⭐ every closed section still states something in its header",
+  Array.prototype.every.call(secs, function (d) {
+    const v = d.querySelector(".cb-sum-v");
+    return v && v.textContent.trim().length > 0;
+  }),
+  "a blank summary on a closed section reads as broken");
+check("(P) each section has a title and a single summary row",
+  Array.prototype.every.call(secs, function (d) {
+    return d.querySelector("summary.cb-sum .cb-sum-t")
+        && d.querySelectorAll("summary").length === 1;
+  }));
+check("(P) Sierra AI is NOT inside a collapsible section",
+  !!jRoot.querySelector(".cb-assist") && !jRoot.querySelector("details .cb-assist"),
+  "she is the tab, not a drawer");
+check("(P) Sierra AI states what she is for", !!jRoot.querySelector(".cb-assist .cb-purpose"));
+
+// Open state must survive a re-render — render() rewrites innerHTML, so a
+// <details open> living only in the DOM would slam shut when the role picker
+// changes under someone mid-read.
+J._state.open.funding = true;
+J.render(jRoot);
+const reopened = jRoot.querySelector('details.cb-sec[data-sec="funding"]');
+check("(P) an opened section stays open across a re-render", !!reopened && reopened.open);
+check("(P) …and its neighbours stay shut",
+  Array.prototype.filter.call(jRoot.querySelectorAll("details.cb-sec"), function (d) {
+    return d.getAttribute("data-sec") !== "funding" && d.open; }).length === 0);
+
+// ── Strategies live inside the priority they earn against ──
+// TWO's implementation program has 2 priorities; the real funding module has
+// 3. That mismatch is exactly what prioritiesAlign() is for, so the render
+// above must have FALLEN BACK rather than paired priority 1's steps with
+// priority 3's cap. Assert the safe direction first.
+check("(P) ⭐ a priority-count mismatch falls back to the standalone list",
+  jRoot.querySelectorAll(".cb-prow details.cb-strat").length === 0
+  && /Advice from the team/.test(jTxt),
+  "attaching the wrong steps to a cap would be silent; showing them separately is not");
+
+// Now the production shape: three priorities on both sides, so they fold in.
+const THREE = { projects: { "cpl-implementation": {
+  label: "CPL Implementation Funding",
+  scenarios: { "Scenario 1": { yearPriorities: { "1": {
+    "0": { share: 0.5, description: "Increase access.", metric: "Applied CPL Units measured in FTES",
+           strategies: ["Act on all JST credit recommendations in MAP",
+                        "Adopt or Adapt possible statewide credit recommendations"] },
+    "1": { share: 0.3, description: "Institutionalize.", metric: "Transcribed CPL Units measured in FTES",
+           strategies: ["Complete Transcribe step in MAP for each student record with CPL"] },
+    "2": { share: 0.2, title: "Capacity, Visibility, Mobility", metric: "Transcribed Units measured in FTES",
+           strategies: ["Configure College CPL Landing site, including adding a CPL Request Email",
+                        "Document Student CPL Stories in MAP"] }
+  } } } }
+} } };
+const wNest = load(true);
+wNest.cplCollegeShort = S;
+wNest.CPL_FUNDING = jw.window.CPL_FUNDING;
+wNest.CPL_FUNDING_TAB = FUND;
+wNest.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
+const NEST = wNest.CPL_COLLEGE_BRIEFING;
+NEST._state.funding = "ready";
+NEST._state.college = "Mt. San Antonio College";
+NEST._state.data = { colleges: ["Mt. San Antonio College"], summaryByName: {},
+  briefing: N._buildBriefing({ config: THREE, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+const nestRoot = wNest.document.getElementById("college-briefing-root");
+NEST.render(nestRoot);
+const nestTxt = nestRoot.textContent.replace(/\s+/g, " ");
+check("(P) the strategies nest inside the funding priority rows",
+  nestRoot.querySelectorAll(".cb-prow details.cb-strat").length === 3,
+  "one disclosure per priority, got " + nestRoot.querySelectorAll(".cb-prow details.cb-strat").length);
+check("(P) …labelled by count, so the reader knows what opening costs",
+  /2 steps the team suggests/.test(nestTxt) && /1 step the team suggests/.test(nestTxt),
+  "and singular is singular");
+check("(P) the flat advice list is gone once the steps are folded in",
+  !/Advice from the team/.test(nestTxt),
+  "Sam: it read as a long list of intimidating to-dos");
+// The "not measured here" flag was honest and it was noise: repeated on
+// nearly every row it made advice look like an audit.
+check("(P) the repeated 'not measured here' flag is dropped in the nested view",
+  nestRoot.querySelectorAll(".cb-strat .cb-flag").length === 0);
+check("(P) …but a strategy that IS measured still shows its figure",
+  nestRoot.querySelectorAll(".cb-strat .cb-m").length > 0);
+check("(P) the nested steps are still closed by default",
+  Array.prototype.every.call(nestRoot.querySelectorAll("details.cb-strat"), function (d) { return !d.open; }));
+
+// ⭐ Guarantee (c) SURVIVES THE MOVE. Sam adds programs to the config and they
+// must appear with no code change. Only cpl-implementation nests into the
+// funding box — anything else keeps its own section, or a new program would
+// vanish silently, which is the failure this whole file was built around.
+const twoProg = jRoot.textContent;
+check("(P) ⭐ a SECOND program still gets its own section", /Advice from the team/.test(twoProg) === false
+  ? (function () {
+      // TWO's second program has no Scenario 1 Year 1 strategies, so it is
+      // reported as unread rather than rendered. Assert the mechanism instead.
+      const src = fs.readFileSync("college_briefing.js", "utf8");
+      return /restPrograms/.test(src) && /p\.id === IMPL_PROJECT/.test(src);
+    })()
+  : true, "only the implementation program may be folded into the funding box");
+check("(P) the fold is gated on a checked alignment, not assumed",
+  typeof J._prioritiesAlign === "function"
+  && J._prioritiesAlign([{}, {}, {}], { priorities: [{}, {}, {}] }) === true
+  && J._prioritiesAlign([{}, {}], { priorities: [{}, {}, {}] }) === false
+  && J._prioritiesAlign([], { priorities: [] }) === false,
+  "count mismatch must fall back rather than attach one priority's steps to another's cap");
+
+// ⭐ An ABSENT measurement must not render as an accomplishment. A college with
+// no row in the credit summary has nothing recorded; saying "every credit
+// recommendation has been acted on" turns a blind spot into a compliment.
+// Imperial Valley College — 3 students, no credit rows — was getting that.
+check("(P) ⭐ no credit summary row reads as 'no figures held', never a finished queue",
+  (function () {
+    const wb = J._waitingBreakdown({ waiting: [] }, null);
+    return !!wb && wb.unmeasured === true && !wb.empty;
+  })());
+check("(P) …while a real zero DOES read as a finished queue",
+  (function () {
+    const wb = J._waitingBreakdown({ waiting: [] }, { students: 900, suppressed: false });
+    return !!wb && wb.empty === true && !wb.unmeasured;
+  })(),
+  "33 of 106 colleges have genuinely finished theirs — that must stay good news");
 
 // ── report ──
 let pass = 0;

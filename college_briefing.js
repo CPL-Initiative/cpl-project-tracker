@@ -38,6 +38,11 @@
   // than inlined so changing his mind is a one-line edit, not a rewrite.
   var SCENARIO = "Scenario 1";
   var YEAR = "1";
+  /* The one project the funding box on this tab actually models — the money
+   * comes from CPL_FUNDING_TAB, which is scoped to it. Its strategies nest
+   * inside the funding priorities; ANY OTHER project keeps its own section,
+   * so a program the team adds later still appears with no code change. */
+  var IMPL_PROJECT = "cpl-implementation";
 
   var ROLES = [
     { id: "any", label: "Anyone at the college" },
@@ -56,6 +61,12 @@
     // District filter for the college picker (from the funding roster, which
     // carries a district per college). "" = every college.
     district: "",
+    // Which collapsible sections the reader has opened, by section id. Sam,
+    // 2026-08-12: Sierra AI is the tab; everything under it opens on demand.
+    // Held in state rather than read off the DOM because render() rewrites
+    // innerHTML — a <details open> that lived only in the markup would snap
+    // shut every time the role picker changed.
+    open: {},
     // The funding model. Two stages on purpose: the ROSTER (cpl_funding_data.js,
     // ~49KB) powers the district picker as soon as the tab opens; the MODEL
     // (cpl_funding.js, ~370KB) is pulled only when a college is chosen and
@@ -428,12 +439,126 @@
       ".cb-assist-mount{margin-top:12px;}",
       ".cb-asks{display:flex;flex-wrap:wrap;gap:8px;}",
       ".cb-ask{font:inherit;font-size:.82rem;text-align:left;padding:9px 12px;border:1px solid var(--border-strong);border-radius:999px;background:var(--surface);color:var(--text);cursor:pointer;}",
-      ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}"
+      ".cb-ask:hover{border-color:var(--brand);color:var(--brand);}",
+      // ── Sierra AI leads the tab (Sam, 2026-08-12) ──────────────────────
+      // The team's read was that she is the useful part, so she gets the
+      // weight: a heavier frame, real breathing room, and a stated purpose.
+      // Everything below is deliberately quieter so the contrast does the
+      // work — no section under here competes with this box.
+      ".cb-assist{border-width:2px;border-color:var(--border-strong);padding:20px 22px 18px;margin-bottom:26px;box-shadow:0 1px 3px rgba(28,28,26,.06);}",
+      ".cb-assist h3{font-size:1.3rem;letter-spacing:-.01em;}",
+      ".cb-assist .cb-purpose{font-size:.86rem;color:var(--text-body);line-height:1.55;margin:2px 0 12px;max-width:62ch;}",
+      ".cb-asks-lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin:14px 0 7px;}",
+      // ── Collapsible detail sections ────────────────────────────────────
+      // A closed section still has to say something, or "minimal" becomes
+      // "blank": the summary line carries this college's own figure, so the
+      // whole page is scannable shut and only opens where the reader digs.
+      ".cb-sec{border:1px solid var(--border);border-radius:9px;background:var(--surface);margin-bottom:10px;}",
+      ".cb-sec[open]{background:var(--surface-subtle);border-color:var(--border-strong);}",
+      ".cb-sum{list-style:none;cursor:pointer;padding:13px 16px;display:flex;align-items:baseline;justify-content:space-between;gap:14px;border-radius:9px;}",
+      ".cb-sum::-webkit-details-marker{display:none;}",
+      ".cb-sum:hover .cb-sum-t{color:var(--brand);}",
+      ".cb-sum:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:-2px;}",
+      ".cb-sum-t{font-size:.97rem;font-weight:600;color:var(--text-strong);display:flex;align-items:baseline;gap:8px;}",
+      ".cb-sum-t::before{content:'▸';font-size:.8em;color:var(--text-muted);transition:transform .12s ease;display:inline-block;}",
+      ".cb-sec[open] .cb-sum-t::before{transform:rotate(90deg);}",
+      ".cb-sum-v{font-size:.82rem;color:var(--text-muted);text-align:right;font-variant-numeric:tabular-nums;}",
+      ".cb-sec-b{padding:2px 16px 17px;border-top:1px solid var(--border);margin-top:-1px;}",
+      ".cb-sec-b>h3:first-child,.cb-sec-b>.cb-h:first-child{margin-top:14px;}",
+      "@media (prefers-reduced-motion:reduce){.cb-sum-t::before{transition:none;}}",
+      // Strategies, nested inside the funding priority they belong to.
+      ".cb-strat{margin-top:9px;border-top:1px solid var(--border);padding-top:8px;}",
+      ".cb-strat>summary{list-style:none;cursor:pointer;font-size:.79rem;color:var(--accent-link,var(--brand));display:inline-flex;align-items:baseline;gap:6px;}",
+      ".cb-strat>summary::-webkit-details-marker{display:none;}",
+      ".cb-strat>summary::before{content:'▸';font-size:.85em;display:inline-block;transition:transform .12s ease;}",
+      ".cb-strat[open]>summary::before{transform:rotate(90deg);}",
+      ".cb-strat>summary:hover{text-decoration:underline;}",
+      ".cb-strat>summary:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;border-radius:3px;}",
+      ".cb-strat ol{margin:9px 0 0;padding-left:19px;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
+      ".cb-strat li{margin-bottom:7px;}",
+      ".cb-strat li:last-child{margin-bottom:0;}",
+      ".cb-strat li .cb-m{font-size:.8rem;margin-top:3px;}",
+      ".cb-strat li .cb-d{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}"
     ].join("\n");
     document.head.appendChild(s);
   }
 
   /* ── Render ──────────────────────────────────────────────────────────── */
+
+  /* One collapsible detail section. Sam, 2026-08-12: Sierra AI is the tab and
+   * everything under her opens on demand — "a minimal initial view with nested
+   * expandable details for the inquisitive".
+   *
+   * ⚠ A CLOSED SECTION MUST STILL SAY SOMETHING. `summary` carries this
+   * college's own figure into the header, so the shut page is a scannable
+   * eight-line standing report rather than eight anonymous drawers. Collapsing
+   * content is only "minimal" if what remains still informs; otherwise it is
+   * just hidden, and a coordinator has to open all of it to find anything.
+   *
+   * Returns "" for an empty body, so a section with nothing to show never
+   * renders as a drawer that opens onto blankness. */
+  function sec(id, title, summary, body) {
+    if (!body) return "";
+    return '<details class="cb-sec" data-sec="' + esc(id) + '"' + (state.open[id] ? " open" : "") + ">"
+      + '<summary class="cb-sum"><span class="cb-sum-t">' + esc(title) + "</span>"
+      + (summary ? '<span class="cb-sum-v">' + summary + "</span>" : "")
+      + "</summary>"
+      + '<div class="cb-sec-b">' + body + "</div></details>";
+  }
+
+  /* The team's strategies for ONE funding priority, nested inside that
+   * priority's row. Sam, 2026-08-12: as a flat list of 22 they "look like a
+   * long list of intimidating to-dos" — 19 of which carried a bare "not
+   * measured here" flag. Attached to the money they earn, in groups of six to
+   * ten, they read as what they are: the team's suggestions for this pool.
+   *
+   * The "not measured here" flag is dropped in this view. It was honest and
+   * it was noise: a reader opening a priority wants the advice, and a row of
+   * identical disclaimers is what made the list feel like an audit. Measures
+   * still show wherever one exists. */
+  /* PURE. Is it safe to nest THIS program's strategies inside THOSE funding
+   * priority rows? The money is on one side and the advice on the other, and
+   * attaching priority 1's steps to priority 3's cap would be silent and
+   * wrong in a way a reader would act on — so the join is worth stating.
+   *
+   * POSITION IS THE JOIN, and it holds by construction: cpl_funding.js's
+   * priorities(slot) walks year_priorities[slot] as an ordered list and
+   * overlays the Supabase config BY THE SAME INDEX (prioField(slot, i, …)),
+   * while collectPrograms() here sorts that config's own numeric keys. Both
+   * are `i` over one ordered set. So the gate is COUNT EQUALITY.
+   *
+   * ⚠ It is deliberately NOT metric equality, which looks stricter and is
+   * worse: the funding module loads its Supabase overlay asynchronously, so
+   * between `state.funding = "ready"` and onModelChange it is still on the
+   * baked defaults and its metric strings legitimately differ from ours. A
+   * metric gate would drop the strategies out of the funding box for that
+   * window and then move them back — a visible flap caused by a check, not by
+   * a fault. Real drift between the two lists is caught in
+   * tests/college_briefing.test.js against the SHIPPED config and module,
+   * which is where a structural change should fail. */
+  function prioritiesAlign(prios, program) {
+    if (!prios || !program || !program.priorities) return false;
+    return !!prios.length && prios.length === program.priorities.length;
+  }
+
+  function stratHtml(items, label) {
+    if (!items || !items.length) return "";
+    var n = items.length;
+    return '<details class="cb-strat"><summary>' + n + " " + (n === 1 ? "step" : "steps")
+      + " the team suggests" + (label ? " for " + esc(label) : "") + "</summary><ol>"
+      + items.map(function (i) {
+          var s = "<li>" + esc(i.text);
+          if (i.measure) {
+            s += '<div class="cb-m"><b>' + esc(i.measure.headline) + "</b></div>";
+            if (i.measure.detail) s += '<div class="cb-d">' + esc(i.measure.detail) + "</div>";
+          } else if (i.noData) {
+            s += '<div class="cb-d">We hold no figure for this college — that is not the same as zero.</div>';
+          }
+          return s + "</li>";
+        }).join("")
+      + "</ol></details>";
+  }
+
   function itemHtml(i) {
     var h = '<div class="cb-item"><div class="cb-t">' + esc(i.text);
     if (!i.measured) h += '<span class="cb-flag" title="No measurement exists for this step yet — it is advice, not a score.">not measured here</span>';
@@ -608,6 +733,15 @@
   function waitingBreakdown(detail, summary) {
     if (summary && summary.suppressed) return { suppressed: true };
     if (!detail || !detail.waiting) return null;
+    /* ⚠ NO SUMMARY ROW IS NOT A FINISHED QUEUE. A college absent from the
+     * credit summary has no measured figures at all, and its `waiting` read
+     * comes back empty for the same reason — nothing about it is recorded.
+     * Reporting that as "every credit recommendation has been acted on" turns
+     * a blind spot into a compliment, which is the "not in this dataset read
+     * as zero" failure pointing the other way. Imperial Valley College — 3
+     * students on the systemwide dashboard, no credit rows — was being
+     * congratulated on a finished queue. */
+    if (!summary) return { unmeasured: true };
     var rows = detail.waiting;
     if (!rows.length) return { empty: true, total: 0, groups: [] };
     var by = {}, total = 0, mil = 0;
@@ -772,13 +906,63 @@
     return (typeof window.cplCollegeShort === "function") ? window.cplCollegeShort(name) : name;
   }
 
+  /* The funding roster's OWN string for a college — which is NOT the same as
+   * the canonical short name, and that difference silently unfunded five
+   * colleges (found 2026-08-12).
+   *
+   * The join was only half-normalised. `fundingFor()` sent MAP's full name
+   * through cplCollegeShort() and handed the result to cpl_funding.js, whose
+   * baseCollege()/_grant() compare it with `c.college` EXACTLY — the raw
+   * roster string, never normalised. So it worked for the ~110 colleges whose
+   * roster string already equals their canonical short name, and failed for
+   * the five where it does not:
+   *
+   *     MAP name                        canonical      roster string
+   *     Mt. San Antonio College         Mt. San Antonio   "Mt San Antonio"
+   *     Norco College                   Norco             "Norco College"
+   *     Reedley College                 Reedley           "Reedley College"
+   *     MiraCosta College               Mira Costa        "MiraCosta"
+   *     Los Angeles Southwest College   LA Southwest      "LA Swest"
+   *
+   * Each of those five rendered "is not on the 115-college funding roster" —
+   * telling Mt. SAC, the largest CPL programme in the system, that it has no
+   * implementation funding. The roster row was there the whole time.
+   *
+   * CLAUDE.md's rule is right and was applied to one side only: join through
+   * cplCollegeShort() on BOTH. We resolve the canonical key back to the
+   * roster's own spelling here, in the consumer, rather than normalising
+   * inside cpl_funding.js — the Implementation Funding tab passes roster-raw
+   * names internally and works today, so this stays a local fix.
+   *
+   * The index is rebuilt whenever the roster's length changes, because the
+   * roster script loads asynchronously and an index built from an absent
+   * roster would otherwise be cached empty forever. */
+  var _rosterKeys = null, _rosterKeysN = -1;
+  function rosterKey(name) {
+    var canon = shortName(name);
+    var F = window.CPL_FUNDING, rows = F && F.colleges;
+    if (!rows || !rows.length || typeof window.cplCollegeShort !== "function") return canon;
+    if (_rosterKeys === null || _rosterKeysN !== rows.length) {
+      _rosterKeys = {}; _rosterKeysN = rows.length;
+      rows.forEach(function (c) {
+        var k = window.cplCollegeShort(c.college);
+        // First writer wins, so a later duplicate cannot steal an earlier
+        // college's money. The roster is asserted collision-free in the tests.
+        if (k && !Object.prototype.hasOwnProperty.call(_rosterKeys, k)) _rosterKeys[k] = c.college;
+      });
+    }
+    return Object.prototype.hasOwnProperty.call(_rosterKeys, canon) ? _rosterKeys[canon] : canon;
+  }
+
   /* Returns null when the model has not loaded — which the caller must render
    * as "not loaded yet", never as "this college gets nothing". An unresolved
    * name and a measured zero are different claims. */
   function fundingFor(name) {
     var M = fundingModule();
     if (!M || !name) return null;
-    var key = shortName(name);
+    // The roster's own spelling, not merely the canonical short name — see
+    // rosterKey(). Passing the canonical form here unfunded five colleges.
+    var key = rosterKey(name);
     var grant = M._grant(key);
     if (!grant) return { key: key, onRoster: false };
     var model = null;
@@ -917,8 +1101,10 @@
      "The 72-institution study behind “the CPL bump” — the research under the equity and completion figures."]
   ];
 
-  function resourcesHtml() {
-    return '<h3 class="cb-h">Resources</h3>'
+  /* `bare` omits the heading — the collapsible section already supplies one,
+   * and a second inside the drawer reads as a duplicate. */
+  function resourcesHtml(bare) {
+    return (bare ? "" : '<h3 class="cb-h">Resources</h3>')
       + '<div class="cb-note" style="margin-top:0">All public. The first four are the ones a coordinator uses; '
       + "the rest is the evidence and policy behind the work.</div>"
       + '<div class="cb-res">' + RESOURCES.map(function (r) {
@@ -1052,8 +1238,12 @@
     // it is named "Sierra AI" — "Sierra" alone reads as Sierra College.
     h += '<section class="cb-assist"><header><h3>Sierra AI</h3>'
       + '<span class="cb-tag">Answers come from the CPL Initiative records and knowledge base.</span></header>'
+      + '<p class="cb-purpose">Ask her anything about CPL at your college — what credit is sitting unawarded, '
+      + "what other colleges give credit for, who a student should contact, what your funding is earned against. "
+      + "She reads the same records the sections below are built from, so it is usually faster to ask than to "
+      + "go looking.</p>"
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
-      + (state.college ? '<div class="cb-asks" id="cb-asks"></div>' : "")
+      + (state.college ? '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks" id="cb-asks"></div>' : "")
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
       + "</section>";
 
@@ -1094,12 +1284,158 @@
     }
 
     if (b.leads.length) {
-      h += "<h3 style=\"margin:0 0 8px;font-size:1rem;\">Start here</h3>";
+      var leadBody = "";
       b.leads.forEach(function (l) {
-        h += '<div class="cb-lead"><h4>' + esc(l.item.text) + '</h4><div class="cb-num">' + esc(l.item.measure.headline) + "</div>" +
+        leadBody += '<div class="cb-lead"><h4>' + esc(l.item.text) + '</h4><div class="cb-num">' + esc(l.item.measure.headline) + "</div>" +
           (l.item.measure.detail ? '<div class="cb-d">' + esc(l.item.measure.detail) + "</div>" : "") + "</div>";
       });
+      // The summary carries the single biggest thing, so the closed row is
+      // still the answer to "what should I do?".
+      h += sec("start", "Start here", esc(b.leads[0].item.measure.headline), leadBody);
     }
+
+    // ── Your funding ──────────────────────────────────────────────────────
+    // Two appropriations, kept visibly apart. Neither figure is derived here.
+    var f = fundingFor(state.college);
+    // The program whose priorities the funding box describes. _prios() (in
+    // cpl_funding.js) and collectPrograms() (here) walk the SAME ordered
+    // priority set out of the SAME config, so position joins them — but
+    // ASSERT that rather than assume it. Attaching one priority's strategies
+    // to another priority's money is the bad failure here, so a disagreement
+    // falls back to the standalone list instead.
+    var implProg = null;
+    b.programs.forEach(function (p) { if (p.id === IMPL_PROJECT) implProg = p; });
+    var stratsInline = implProg && f && prioritiesAlign(f.prios, implProg);
+    var fundBody = "";
+    if (state.funding !== "ready" && state.funding !== "error") {
+      fundBody += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (state.funding === "ready" && !f) {
+      fundBody += '<div class="cb-note">Loading the funding model…</div>';
+    } else if (state.funding === "error") {
+      fundBody += '<div class="cb-warn">The funding model did not load. That is a <b>failed read, not a finding</b> — '
+        + "it does not mean this college has no allocation.</div>";
+    } else if (f && !f.onRoster) {
+      fundBody += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
+        + "The noncredit institutions are funded through the $1M noncredit carve-out, a separate mechanism from the "
+        + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
+    } else if (f) {
+      // (a) the $50,000 ESS 25-82 seed grant — already distributed
+      fundBody += '<div class="cb-fund">';
+      fundBody += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
+      if (f.grant.declined) {
+        fundBody += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
+          + "That is a decision on record, not a missed payment.</div>";
+      } else {
+        fundBody += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
+          + '<div class="cb-lab">Received. Must be fully expended by <b>June 30, 2028</b>. '
+          + "It was directed at the three priority outcomes below — progress on them is tracked through MAP, "
+          + "as ESS 25-82 specifies. <b>These are not a compliance determination.</b></div>";
+      }
+      var ess = essProgress(f, state.detail, window.CPL_FUNDING_ESS);
+      if (ess) {
+        fundBody += '<ol class="cb-ess-list">';
+        ess.forEach(function (e) {
+          fundBody += "<li>" + essMark(e.o) + "<div><b>" + esc(e.title) + "</b>";
+          if (e.frac && e.frac.have != null) {
+            fundBody += '<div class="cb-num">' + e.frac.have + " articulated"
+              + (e.frac.of ? " of the " + e.frac.of + " statewide credit recommendations in MAP" : "")
+              + (e.frac.available ? " · <b>" + e.frac.available + " more</b> available to adopt" : "")
+              + "</div>";
+          }
+          fundBody += '<div class="cb-d">' + esc(e.o.why) + "</div>";
+          if (e.next) fundBody += '<div class="cb-d">' + e.next + "</div>";
+          fundBody += "</div></li>";
+        });
+        fundBody += "</ol>";
+      }
+      fundBody += "</div>";
+
+      // (b) this college's share of the implementation pool. Sam, 2026-08-11:
+      // use the funding tab's own names — "$35M" is his shorthand with the
+      // session, not a label a college would recognise.
+      fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
+      if (!f.alloc) {
+        fundBody += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
+      } else {
+        fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
+        fundBody += '<div class="cb-lab">This is a <b>cap, not a cheque</b> — the college earns against it on what MAP records it '
+          + "doing. It is modelled, and the model is under active revision.</div>";
+        var bits = [];
+        if (f.alloc.floored) {
+          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
+            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+        }
+        if (f.alloc.rural_w) {
+          bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");
+        }
+        if (f.alloc.gate_blocked) {
+          bits.push("<b>Participation requirements are outstanding</b>" +
+            (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
+            ". The cap is unchanged and the dollars roll forward; nothing is lost by fixing it late, but nothing is earned until it is.");
+        } else if (f.alloc.gate_pending) {
+          bits.push("Participation is recorded but not yet confirmed.");
+        }
+        if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
+
+        // ── What the cap is FOR — the three priorities, each with this
+        // college's own target. Caps and targets both come from the funding
+        // module; nothing here multiplies a share by a pool.
+        if (f.prios && f.prios.length) {
+          fundBody += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
+          f.prios.forEach(function (p, i) {
+            var name = p.title || p.description || p.label;
+            fundBody += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
+              + '<span class="v">' + money(p.cap) + "</span></div>";
+            fundBody += '<div class="cb-ptarget">Your target: <b>'
+              + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
+              + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
+            // The team's steps for THIS pool, nested under the money they
+            // earn (Sam, 2026-08-12). As one flat list of 22 they read as an
+            // intimidating audit; six to ten attached to a priority read as
+            // advice about that priority.
+            if (stratsInline) fundBody += stratHtml(implProg.priorities[i].items, null);
+            fundBody += "</div>";
+          });
+          fundBody += "</div>";
+          fundBody += '<div class="cb-lab" style="margin-top:8px;">A target is what earns the <b>whole</b> share, not a '
+            + "pass mark — partial progress earns a proportional part of it, so there is no cliff to miss.</div>";
+        }
+      }
+      fundBody += "</div></div>";
+
+      // ── Do this next, per pool ──────────────────────────────────────────
+      // The steps come from the team's own strategies, not from this page.
+      var nextSeed = nextEssOutcome(ess);
+      var nextImpl = topStrategy(b);
+      if (nextSeed || nextImpl) {
+        fundBody += '<div class="cb-next"><div class="cb-plab">Do this next</div><ul>';
+        if (nextSeed) {
+          fundBody += "<li><b>For the seed funding:</b> " + esc(nextSeed.title)
+            + " — the outcome with the most ground still to cover.</li>";
+        }
+        if (nextImpl) {
+          fundBody += "<li><b>For the implementation funding:</b> " + esc(nextImpl.text)
+            + " — the team's first strategy under " + esc(nextImpl.priority) + ".</li>";
+        }
+        fundBody += "</ul></div>";
+      }
+
+      fundBody += '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
+        + "open it for the full derivation and the year split.</div>";
+    }
+    // Summary: the two appropriations, so the shut row still answers "what
+    // money is on the table?". EVERY branch says something — a blank summary
+    // on a money section reads as broken, and "not loaded" and "nothing" are
+    // different claims.
+    var fundSum = "";
+    if (state.funding === "error") fundSum = "not loaded";
+    else if (state.funding !== "ready" || (state.funding === "ready" && !f)) fundSum = "loading…";
+    else if (f && !f.onRoster) fundSum = "noncredit carve-out";
+    else if (f) {
+      if (f.grant) fundSum = f.grant.declined ? "seed declined" : money(f.grant.amount) + " seed";
+      if (f.alloc) fundSum += (fundSum ? " · " : "") + money(f.alloc.total) + " cap";
+    }
+    h += sec("funding", "My CPL Funding", esc(fundSum), fundBody);
 
     // ── Where you stand ───────────────────────────────────────────────────
     // Every figure carries its denominator. Nothing here can reach 100% and
@@ -1121,73 +1457,80 @@
       // Prose, not a checklist (Sam, 2026-08-11). The three tiers are named in
       // the header so the label means something before the reader gets to it —
       // "Advancing" alone is a verdict from an unstated scheme.
-      h += '<h3 class="cb-h">Your tier on the systemwide dashboard</h3>';
-      h += '<div class="cb-note" style="margin-top:-4px">Every college is placed in one of three tiers by the same '
+      var tierBody = "";
+      tierBody += '<div class="cb-note" style="margin-top:-4px">Every college is placed in one of three tiers by the same '
         + "five criteria: <b>Leading</b> meets three or more, <b>Advancing</b> one or two, <b>Inactive</b> has "
         + "essentially no CPL recorded. The five count students, eligible units, units per student, and how much "
         + "of that credit is <b>marked transcribed in MAP</b>.</div>";
-      h += '<div class="cb-tier">';
+      tierBody += '<div class="cb-tier">';
       if (ts.mismatch) {
-        h += "<p><b>" + esc(ts.label) + "</b> — " + ts.met + " of " + ts.total + " criteria met. The individual "
+        tierBody += "<p><b>" + esc(ts.label) + "</b> — " + ts.met + " of " + ts.total + " criteria met. The individual "
           + "criteria do not reconcile with that published count here, because the transcription rate is "
           + "published rounded and a borderline college can fall either side of it. Rather than show you a list "
           + "that disagrees with the figure above it, we are holding the list back.</p>";
       } else if (ts.tier === "inactive") {
-        h += "<p><b>Inactive</b> is assigned when a college has almost no CPL recorded in MAP at all — fewer than "
+        tierBody += "<p><b>Inactive</b> is assigned when a college has almost no CPL recorded in MAP at all — fewer than "
           + "ten students and no eligible units — rather than by counting the five criteria. It reflects what has "
           + "been <b>recorded</b>, so if CPL is happening here it is not reaching MAP, and that is the thing to "
           + "fix first.</p>";
       } else {
         var mets = ts.met_list, miss = ts.missing;
-        h += "<p><b>" + esc(ts.label) + "</b> — ";
+        tierBody += "<p><b>" + esc(ts.label) + "</b> — ";
         if (mets.length) {
-          h += "you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria: "
+          tierBody += "you meet <b>" + ts.met + " of the " + ts.total + "</b> criteria: "
             + mets.map(function (c) {
                 return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ");
         } else {
           // "you meet 0 of the 5" is arithmetic, not a sentence.
-          h += "you do not yet meet any of the five";
+          tierBody += "you do not yet meet any of the five";
         }
-        h += ".</p>";
+        tierBody += ".</p>";
         if (miss.length) {
-          h += "<p>" + (miss.length === 1 ? "The one you have not reached" : "The " + miss.length
+          tierBody += "<p>" + (miss.length === 1 ? "The one you have not reached" : "The " + miss.length
               + " you have not reached, <b>closest first</b>") + ": "
             + miss.map(function (c) {
                 return "at least " + esc(c.short) + " <em>(you: " + esc(c.actual) + ")</em>"; }).join("; ")
             + ".</p>";
         } else {
-          h += "<p>There is nothing left to reach on this scale — you meet all five.</p>";
+          tierBody += "<p>There is nothing left to reach on this scale — you meet all five.</p>";
         }
       }
-      h += "</div>";
-      h += '<div class="cb-note" style="margin-top:10px">Two things to hold alongside it. <b>Three of the five are '
+      tierBody += "</div>";
+      tierBody += '<div class="cb-note" style="margin-top:10px">Two things to hold alongside it. <b>Three of the five are '
         + "size measures</b>, so a small college cannot reach them however well it runs CPL — that is a limit of "
         + "the scheme, not a judgment on you. And the other two count units <b>marked transcribed in MAP</b>, "
         + "which is your own step and entirely within your control — but it also means colleges that batch-upload "
         + "already-posted credit (AP, IB, CLEP) score on them for reasons unrelated to how much CPL they award. "
-        + "<b>So this is a checklist for you, never a ranking against anyone else.</b></div>";
+        + "<b>So it measures you against the same five benchmarks as every other college — "
+        + "never against any particular one, and never as a league table.</b></div>";
+      // Inactive is assigned by ABSENCE of recorded activity, not by counting
+      // the five — so it never carries a score, here or in the body.
+      h += sec("tier", "Statewide CPL Benchmarks",
+        esc(ts.label) + (ts.tier === "inactive" ? "" : " — " + ts.met + " of " + ts.total + " criteria"),
+        tierBody);
     }
 
     if (st && st.eligible != null) {
       var pctApplied = st.eligible > 0 && st.applied != null ? (st.applied / st.eligible) : null;
-      h += '<h3 class="cb-h">Where you stand</h3>';
-      h += '<div class="cb-stand">';
-      h += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
+      var standBody = '<div class="cb-stand">';
+      standBody += standBox(fmt(st.articulatedWaiting), "of " + fmt(st.eligible) + " units",
         "<b>Already articulated, waiting on a decision.</b> The agreement exists and the credit is mapped — only the award is missing. This is the cheapest credit you will ever give a student.",
         st.eligible > 0 ? (st.articulatedWaiting || 0) / st.eligible : 0, "lead");
-      h += standBox(fmt(st.applied), "units applied",
+      standBody += standBox(fmt(st.applied), "units applied",
         "Credit you have put on a student record — the measure the funding formula rewards.",
         pctApplied, "");
-      h += standBox(fmt(st.transcribed), "units marked transcribed",
+      standBody += standBox(fmt(st.transcribed), "units marked transcribed",
         "Marked as transcribed <b>in MAP</b> — your record-keeping step, not the posting itself. You forward the "
         + "student's CPL plan to Admissions &amp; Records, who enter the credit in your own student system; there is "
         + "no automatic link between MAP and that system. <b>Never compare this across colleges</b> — some batch-upload "
         + "credit that was already posted (AP/IB/CLEP), so it reflects record-keeping practice as much as outcomes.",
         st.eligible > 0 && st.transcribed != null ? st.transcribed / st.eligible : null, "");
-      h += standBox(fmt(st.students), "CPL students",
+      standBody += standBox(fmt(st.students), "CPL students",
         "Students at this college with prior learning in MAP. Their credit is what every number here is made of.",
         null, "");
-      h += "</div>";
+      standBody += "</div>";
+      h += sec("stand", "Where you stand",
+        fmt(st.articulatedWaiting) + " units waiting · " + fmt(st.students) + " CPL students", standBody);
     } else if (summary && summary.suppressed) {
       h += '<div class="cb-note">This college has fewer than 10 CPL students, so its figures are withheld. '
         + 'Activity exists — the numbers are not published at that size, to protect student privacy.</div>';
@@ -1198,28 +1541,30 @@
     // because "63,991 units already articulated" invites a coordinator to
     // imagine 300 judgment calls when it is very nearly one repeated decision.
     var wb = waitingBreakdown(state.detail, summary);
-    if (wb && !wb.suppressed && !wb.empty) {
-      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
-      h += '<div class="cb-note" style="margin-top:0">These add up to the <b>' + fmt(Math.round(wb.total))
+    var waitBody = "", waitSum = "";
+    if (wb && !wb.suppressed && !wb.empty && !wb.unmeasured) {
+      waitSum = fmt(Math.round(wb.total)) + " units"
+        + (wb.militaryShare >= 1 ? " · all basic military service" : "");
+      waitBody += '<div class="cb-note" style="margin-top:0">These add up to the <b>' + fmt(Math.round(wb.total))
         + " units</b> in the first box above — same credit, broken out by what it would count toward.</div>";
-      h += '<div class="cb-wait">';
+      waitBody += '<div class="cb-wait">';
       wb.groups.forEach(function (g) {
         var p = safePct(g.share, 1);
-        h += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
+        waitBody += '<div class="cb-wrow"><div class="cb-whead"><b>' + esc(g.label) + "</b>"
           + '<span class="v">' + fmt(Math.round(g.units)) + " units · " + p + "%</span></div>"
           + '<div class="cb-bar"><i style="width:' + Math.max(0, Math.min(100, p)) + '%"></i></div>';
         if (g.top.length) {
-          h += '<div class="cb-wrecs">Counts toward: '
+          waitBody += '<div class="cb-wrecs">Counts toward: '
             + g.top.map(function (t) {
                 return esc(t.name) + " <span>(" + fmt(Math.round(t.units)) + ")</span>"; }).join(" · ")
             + "</div>";
         }
-        h += "</div>";
+        waitBody += "</div>";
       });
-      h += "</div>";
+      waitBody += "</div>";
       if (wb.militaryShare >= 0.6) {
         var allMil = wb.militaryShare >= 1;
-        h += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
+        waitBody += '<div class="cb-note cb-good"><b>' + (allMil ? "All" : safePct(wb.militaryShare) + "%")
           + " of it is credit for basic military service.</b> That is the good news on this page: it is not "
           + "hundreds of separate judgment calls, it is " + (allMil ? "" : "close to ")
           + "<b>one decision applied repeatedly</b> — you have "
@@ -1228,155 +1573,51 @@
           + "65 of the 73 colleges with any are at 100%.</div>";
       }
     } else if (wb && wb.suppressed) {
-      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
-      h += '<div class="cb-note" style="margin-top:0">Withheld — this college has fewer than 10 CPL students, so its '
+      waitSum = "withheld";
+      waitBody += '<div class="cb-note" style="margin-top:0">Withheld — this college has fewer than 10 CPL students, so its '
         + "figures are not published at that size. Breaking a withheld total into its parts would give back exactly "
         + "what withholding it removed.</div>";
+    } else if (wb && wb.unmeasured) {
+      waitSum = "no figures held";
+      waitBody += '<div class="cb-note" style="margin-top:0"><b>We hold no credit figures for this college.</b> It is not '
+        + "in the credit summary at all, so there is nothing here to break down — and that is an <b>absent "
+        + "measurement, not a finished queue</b>. If CPL is happening here, it is not reaching MAP, which is the "
+        + "thing to fix first.</div>";
     } else if (wb && wb.empty) {
-      h += '<h3 class="cb-h">What that waiting credit actually is</h3>';
-      h += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
+      waitSum = "nothing waiting";
+      waitBody += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
         + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
         + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
     }
 
+    h += sec("waiting", "What that waiting credit actually is", waitSum, waitBody);
+
     // ── By CPL type ───────────────────────────────────────────────────────
     var types = byCplType(state.detail);
     if (types) {
-      h += '<h3 class="cb-h">By CPL type</h3>';
-      h += '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
+      var typeBody = '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
         + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
         + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
         + 'are complete.</div>';
-      h += '<div class="cb-types">';
-      types.forEach(function (t) { h += typeBox(t); });
-      h += "</div>";
+      typeBody += '<div class="cb-types">';
+      types.forEach(function (t) { typeBody += typeBox(t); });
+      typeBody += "</div>";
+      var nAd = 0, nOpp = 0;
+      types.forEach(function (t) { nAd += (t.articulated || 0); nOpp += (t.couldAdopt || 0); });
+      h += sec("types", "By CPL type",
+        fmt(nAd) + " articulated · " + fmt(nOpp) + " you could adopt", typeBody);
     }
 
-    // ── Your funding ──────────────────────────────────────────────────────
-    // Two appropriations, kept visibly apart. Neither figure is derived here.
-    var f = fundingFor(state.college);
-    h += '<h3 class="cb-h">Your funding</h3>';
-    if (state.funding !== "ready" && state.funding !== "error") {
-      h += '<div class="cb-note">Loading the funding model…</div>';
-    } else if (state.funding === "ready" && !f) {
-      h += '<div class="cb-note">Loading the funding model…</div>';
-    } else if (state.funding === "error") {
-      h += '<div class="cb-warn">The funding model did not load. That is a <b>failed read, not a finding</b> — '
-        + "it does not mean this college has no allocation.</div>";
-    } else if (f && !f.onRoster) {
-      h += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
-        + "The noncredit institutions are funded through the $1M noncredit carve-out, a separate mechanism from the "
-        + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
-    } else if (f) {
-      // (a) the $50,000 ESS 25-82 seed grant — already distributed
-      h += '<div class="cb-fund">';
-      h += '<div class="cb-fbox"><header><h4>2025&ndash;2026 $50K Seed Funding</h4><span class="cb-tag">ESS 25-82 · distributed Spring 2026</span></header>';
-      if (f.grant.declined) {
-        h += '<div class="cb-fbig">Declined</div><div class="cb-lab">This college declined the grant pending further review. '
-          + "That is a decision on record, not a missed payment.</div>";
-      } else {
-        h += '<div class="cb-fbig">' + money(f.grant.amount) + "</div>"
-          + '<div class="cb-lab">Received. Must be fully expended by <b>June 30, 2028</b>. '
-          + "It was directed at the three priority outcomes below — progress on them is tracked through MAP, "
-          + "as ESS 25-82 specifies. <b>These are not a compliance determination.</b></div>";
-      }
-      var ess = essProgress(f, state.detail, window.CPL_FUNDING_ESS);
-      if (ess) {
-        h += '<ol class="cb-ess-list">';
-        ess.forEach(function (e) {
-          h += "<li>" + essMark(e.o) + "<div><b>" + esc(e.title) + "</b>";
-          if (e.frac && e.frac.have != null) {
-            h += '<div class="cb-num">' + e.frac.have + " articulated"
-              + (e.frac.of ? " of the " + e.frac.of + " statewide credit recommendations in MAP" : "")
-              + (e.frac.available ? " · <b>" + e.frac.available + " more</b> available to adopt" : "")
-              + "</div>";
-          }
-          h += '<div class="cb-d">' + esc(e.o.why) + "</div>";
-          if (e.next) h += '<div class="cb-d">' + e.next + "</div>";
-          h += "</div></li>";
-        });
-        h += "</ol>";
-      }
-      h += "</div>";
-
-      // (b) this college's share of the implementation pool. Sam, 2026-08-11:
-      // use the funding tab's own names — "$35M" is his shorthand with the
-      // session, not a label a college would recognise.
-      h += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
-      if (!f.alloc) {
-        h += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
-      } else {
-        h += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        h += '<div class="cb-lab">This is a <b>cap, not a cheque</b> — the college earns against it on what MAP records it '
-          + "doing. It is modelled, and the model is under active revision.</div>";
-        var bits = [];
-        if (f.alloc.floored) {
-          bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
-            + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
-        }
-        if (f.alloc.rural_w) {
-          bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");
-        }
-        if (f.alloc.gate_blocked) {
-          bits.push("<b>Participation requirements are outstanding</b>" +
-            (f.alloc.gate_missing && f.alloc.gate_missing.length ? " — " + esc(f.alloc.gate_missing.join(" and ")) : "") +
-            ". The cap is unchanged and the dollars roll forward; nothing is lost by fixing it late, but nothing is earned until it is.");
-        } else if (f.alloc.gate_pending) {
-          bits.push("Participation is recorded but not yet confirmed.");
-        }
-        if (bits.length) h += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
-
-        // ── What the cap is FOR — the three priorities, each with this
-        // college's own target. Caps and targets both come from the funding
-        // module; nothing here multiplies a share by a pool.
-        if (f.prios && f.prios.length) {
-          h += '<div class="cb-prios"><div class="cb-plab">What it is earned against</div>';
-          f.prios.forEach(function (p) {
-            var name = p.title || p.description || p.label;
-            h += '<div class="cb-prow"><div class="cb-whead"><b>' + esc(name) + "</b>"
-              + '<span class="v">' + money(p.cap) + "</span></div>";
-            h += '<div class="cb-ptarget">Your target: <b>'
-              + (p.target != null ? fmt(Math.round(p.target * 10) / 10) + " " + esc(p.unit) : "—")
-              + "</b>" + (p.metric ? " · " + esc(p.metric) : "") + "</div>";
-            h += "</div>";
-          });
-          h += "</div>";
-          h += '<div class="cb-lab" style="margin-top:8px;">A target is what earns the <b>whole</b> share, not a '
-            + "pass mark — partial progress earns a proportional part of it, so there is no cliff to miss.</div>";
-        }
-      }
-      h += "</div></div>";
-
-      // ── Do this next, per pool ──────────────────────────────────────────
-      // The steps come from the team's own strategies, not from this page.
-      var nextSeed = nextEssOutcome(ess);
-      var nextImpl = topStrategy(b);
-      if (nextSeed || nextImpl) {
-        h += '<div class="cb-next"><div class="cb-plab">Do this next</div><ul>';
-        if (nextSeed) {
-          h += "<li><b>For the seed funding:</b> " + esc(nextSeed.title)
-            + " — the outcome with the most ground still to cover.</li>";
-        }
-        if (nextImpl) {
-          h += "<li><b>For the implementation funding:</b> " + esc(nextImpl.text)
-            + " — the team's first strategy under " + esc(nextImpl.priority) + ".</li>";
-        }
-        h += "</ul></div>";
-      }
-
-      h += '<div class="cb-note">Both figures come from the Implementation Funding tab\'s model, not from this page — '
-        + "open it for the full derivation and the year split.</div>";
-    }
 
     // ── Course share — absorbed from the retired Course Credit tab ────────
     var cs = courseShare(state.detail && state.detail.goal2);
     if (cs) {
-      h += '<h3 class="cb-h">Of the credit you have already awarded</h3>';
+      var csBody = "";
       if (cs.share == null) {
-        h += '<div class="cb-note">Some cells are withheld for this college, so the course share is not published — '
+        csBody += '<div class="cb-note">Some cells are withheld for this college, so the course share is not published — '
           + 'publishing it alongside a hidden cell would hand back what suppression removed.</div>';
       } else {
-        h += '<div class="cb-note"><b>' + (Math.round(cs.share * 1000) / 10).toFixed(1) + '%</b> of the credit this '
+        csBody += '<div class="cb-note"><b>' + (Math.round(cs.share * 1000) / 10).toFixed(1) + '%</b> of the credit this '
           + 'college has <b>already awarded</b> landed on a real course rather than a generic elective or a GE area — '
           + 'across ' + fmt(cs.awarded) + ' awarded rows.'
           + (st && st.eligible != null
@@ -1385,60 +1626,73 @@
           + (cs.share >= 1 ? ' <b>100% here does not mean finished</b> — it means everything awarded so far went to a course.' : '')
           + "</div>";
       }
+      h += sec("courseshare", "Of the credit you have already awarded",
+        cs.share == null ? "withheld" : safePct(cs.share, 1) + "% to a real course", csBody);
     }
 
-    // ── Advice — the team's strategies, demoted below the steps ───────────
-    if (b.programs.length) {
-      h += '<h3 class="cb-h">Advice from the team\'s funding plan</h3>';
-      h += '<div class="cb-note">These are written by the team, not by this page. '
-        + esc(b.measuredTotal) + ' of ' + esc(b.strategyTotal) + ' carry a measurement; the rest are advice, '
-        + 'shown without a score rather than as an unticked box.</div>';
-    }
-
-    b.programs.forEach(function (p) {
-      h += '<div class="cb-prog"><h3>' + esc(p.label) + "</h3>";
-      p.priorities.forEach(function (pr) {
-        // The pot share is deliberately NOT shown. "50% of the pot" is state
-        // allocation logic — true, and nothing a coordinator can act on. Sam,
-        // 2026-08-10: "we tend to get buried in rationale rather than just
-        // telling them the simple steps."
-        h += '<div class="cb-pri"><h4>' + esc(pr.title || pr.description || "Priority " + (pr.index + 1)) + "</h4>";
-        h += '<div class="cb-meta">' + [pr.metric ? "Measured as: " + esc(pr.metric) : null].filter(Boolean).join(" · ");
-        if (pr.title && pr.description) h += "<br>" + esc(pr.description);
-        h += "</div>";
-        pr.items.forEach(function (i) { h += itemHtml(i); });
-        h += "</div>";
-      });
-      h += "</div>";
+    // ── Advice — only for programs NOT already nested in the funding box ──
+    // The implementation strategies now live inside the priority they earn
+    // against (Sam, 2026-08-12). Anything else the team adds to the config
+    // still gets its own section here, so guarantee (c) — every project is
+    // walked, a new program appears with no code change — survives the move.
+    var restPrograms = b.programs.filter(function (p) {
+      return !(stratsInline && p.id === IMPL_PROJECT);
     });
+    if (restPrograms.length) {
+      var advBody = '<div class="cb-note" style="margin-top:0">These are written by the team, not by this page. '
+        + "They are advice; the ones we can measure for this college carry a figure.</div>";
+      var advCount = 0;
+      restPrograms.forEach(function (p) {
+        advCount += p.strategyCount;
+        advBody += '<div class="cb-prog"><h3>' + esc(p.label) + "</h3>";
+        p.priorities.forEach(function (pr) {
+          // The pot share is deliberately NOT shown. "50% of the pot" is state
+          // allocation logic — true, and nothing a coordinator can act on. Sam,
+          // 2026-08-10: "we tend to get buried in rationale rather than just
+          // telling them the simple steps."
+          advBody += '<div class="cb-pri"><h4>' + esc(pr.title || pr.description || "Priority " + (pr.index + 1)) + "</h4>";
+          advBody += '<div class="cb-meta">' + [pr.metric ? "Measured as: " + esc(pr.metric) : null].filter(Boolean).join(" · ");
+          if (pr.title && pr.description) advBody += "<br>" + esc(pr.description);
+          advBody += "</div>";
+          pr.items.forEach(function (i) { advBody += itemHtml(i); });
+          advBody += "</div>";
+        });
+        advBody += "</div>";
+      });
+      h += sec("advice", "Advice from the team's funding plan",
+        esc(advCount + (advCount === 1 ? " step" : " steps")), advBody);
+    }
 
-    // ── Who MAP has on file ───────────────────────────────────────────────
+    // ── Current MAP Users and Contacts ─────────────────────────────────────
     var roster = contactRoster(state.data && state.data.raw && state.data.raw.contactRowByName
       && state.data.raw.contactRowByName[state.college]);
     if (roster) {
-      h += '<h3 class="cb-h">Who MAP has on file for you</h3>';
-      h += '<div class="cb-note" style="margin-top:0">This is what MAP shows today. <b>The primary contact is where a '
+      var contactBody = "";
+      contactBody += '<div class="cb-note" style="margin-top:0">This is what MAP shows today. <b>The primary contact is where a '
         + "student's CPL request from your landing page is sent</b> — if that is wrong, the request reaches nobody. "
         + "Update these in MAP; this page reflects whatever is there.</div>";
-      h += '<table class="cb-dist cb-roster"><colgroup><col style="width:30%"><col style="width:31%"><col style="width:39%"></colgroup>'
+      contactBody += '<table class="cb-dist cb-roster"><colgroup><col style="width:30%"><col style="width:31%"><col style="width:39%"></colgroup>'
         + "<thead><tr><th>Role</th><th>Name</th><th>Email</th></tr></thead><tbody>";
       roster.filled.forEach(function (r) {
-        h += "<tr" + (r.lead ? ' class="lead"' : "") + "><td>" + esc(r.label) + "</td><td>"
+        contactBody += "<tr" + (r.lead ? ' class="lead"' : "") + "><td>" + esc(r.label) + "</td><td>"
           + esc(r.name || "—") + "</td><td>" + esc(r.email || "—") + "</td></tr>";
       });
-      h += "</tbody></table>";
+      contactBody += "</tbody></table>";
       if (roster.blank.length) {
-        h += '<div class="cb-note">Not filled in: <b>'
+        contactBody += '<div class="cb-note">Not filled in: <b>'
           + roster.blank.map(function (r) { return esc(r.label); }).join("</b>, <b>") + "</b>. "
           + "Blank is not a problem in itself — but a blank primary contact means student requests have nowhere to land.</div>";
       }
       if (roster.landing) {
-        h += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
+        contactBody += '<div class="cb-note">Your CPL landing page: <a href="' + esc(roster.landing)
           + '" target="_blank" rel="noopener">' + esc(roster.landing) + "</a></div>";
       }
+      var nFilled = roster.filled.length, nAll = nFilled + roster.blank.length;
+      h += sec("contacts", "Current MAP Users and Contacts",
+        esc(nFilled + " of " + nAll + " roles filled"), contactBody);
     }
 
-    h += resourcesHtml();
+    h += sec("resources", "Resources", esc(RESOURCES.length + " links"), resourcesHtml(true));
 
     h += '<div class="cb-note">Nothing here is irreversible, and a recommendation ruled Not Applicable can be revisited — '
       + 'ruling one is real work, not a failure. Strategies come from the team’s funding configuration ('
@@ -1494,6 +1748,15 @@
       }
       recompute(); render(root);
     };
+    // Remember which sections the reader opened. render() rewrites innerHTML,
+    // so without this a change of role or district would slam every drawer
+    // shut under someone mid-read.
+    Array.prototype.forEach.call(root.querySelectorAll("details.cb-sec"), function (d) {
+      d.addEventListener("toggle", function () {
+        var id = d.getAttribute("data-sec");
+        if (id) state.open[id] = d.open;
+      });
+    });
     Array.prototype.forEach.call(root.querySelectorAll(".cb-pick"), function (b) {
       b.onclick = function () { selectCollege(b.getAttribute("data-college"), root); };
     });
@@ -1727,6 +1990,8 @@
     // no k-anonymity of its own, so breaking out a withheld college's credit
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
+    _prioritiesAlign: prioritiesAlign,
+    _rosterKey: rosterKey,
     _nextEssOutcome: nextEssOutcome,
     // The tier count is the WORKER's (criteriaMetCount); the per-criterion
     // list is display only, and `mismatch` fires when the two disagree.
