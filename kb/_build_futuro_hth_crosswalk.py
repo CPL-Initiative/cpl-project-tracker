@@ -208,7 +208,7 @@ def load_coci():
         return list(csv.DictReader(f))
 
 
-def build():
+def build(lens="all"):
     mis = load_mis()
     coci = load_coci()
     with open(MAPREF, encoding="utf-8") as f:
@@ -222,6 +222,16 @@ def build():
             name = r["College_name_long"].strip()
             cna_courses[name].append(r)
             mis_code.setdefault(name, (r.get("CB_COLLEGE_ID") or "").strip())
+
+    # --- the noncredit lens ------------------------------------------------
+    # Restricts the universe to colleges teaching CNA as a NONCREDIT course
+    # (CB_CREDIT_STATUS "N"). Noncredit CNA is typically free or near-free to the
+    # student, which is why it is worth looking at separately for a workforce
+    # partner's scholars. Receiving-course matching is unchanged -- what changes is
+    # that noncredit vs credit receivers are reported SEPARATELY per college.
+    if lens == "noncredit":
+        cna_courses = {c: rs for c, rs in cna_courses.items()
+                       if any(r.get("CB_CREDIT_STATUS") == "N" for r in rs)}
 
     # --- 2. CNA programs (award level) from COCI ----------------------------
     kw = re.compile(r"\b(cna|nurse assistant|nursing assistant|nurse aide|nursing aide)\b", re.I)
@@ -259,6 +269,12 @@ def build():
             "units": (r.get("CB_UNITS_MAXIMUM") or "").strip(),
             "modules": [m for m in mods if m in HTH_MODULES] or mods,
             "modules_all": mods,
+            # TRUE only if the course matches one of HTH's SIX named modules. The
+            # 7th lens (allied-health professionalism) catches career-survey courses
+            # -- "Survey of Health Careers", "Pathways to Health Careers" -- which are
+            # NOT where an 80-hour interpersonal-skills course articulates. Without
+            # this flag the noncredit count overstates by 6x.
+            "real_module_match": any(m in HTH_MODULES for m in mods),
         })
 
     # --- 4. join to MAP -- CODED key first, names only as a fallback --------
@@ -347,6 +363,8 @@ def build():
                 for c in cc[:6]),
             "cna_delivery": ", ".join(sorted({CREDIT_STATUS.get(c.get("CB_CREDIT_STATUS"), "?") for c in cc})),
             "cna_award": "; ".join(awards) if awards else "No award-level CNA program in COCI (course only)",
+            "nc_candidates": [c for c in cands if c["credit"].startswith("Noncredit")],
+            "cr_candidates": [c for c in cands if not c["credit"].startswith("Noncredit")],
             "best_fit": " | ".join(f"{c['course']} {c['title']}" for c in cands[:3]) or NONE_FOUND,
             "best_fit_tier": TIER_LABEL[cands[0]["tier"]] if cands else NONE_FOUND,
             "n_candidates": len(cands),
@@ -370,6 +388,7 @@ def build():
 
     return {
         "built_at": dt.date.today().isoformat(),
+        "lens": lens,
         "rows": rows,
         "partner": mapref["partner"],
         "totals": {
@@ -382,6 +401,10 @@ def build():
             "cpl_operating": sum(1 for r in rows if r["readiness"].startswith("A")),
             "joined_via_mis_code": sum(1 for r in rows if r["joined_via"] == "mis_code"),
             "joined_via_name": sum(1 for r in rows if r["joined_via"] == "name"),
+            "with_nc_receiver": sum(1 for r in rows if r["nc_candidates"]),
+            "with_nc_real_match": sum(
+                1 for r in rows if any(c["real_module_match"] for c in r["nc_candidates"])),
+            "nc_only_route_is_credit": sum(1 for r in rows if r["cr_candidates"] and not r["nc_candidates"]),
         },
     }
 
@@ -389,8 +412,13 @@ def build():
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--outdir", default=os.path.join(HERE, "futuro_hth_out"))
+    ap.add_argument("--lens", choices=("all", "noncredit"), default="all",
+                    help="'noncredit' restricts the universe to colleges teaching CNA "
+                         "as a noncredit course")
     a = ap.parse_args()
-    data = build()
+    data = build(a.lens)
+    if a.lens != "all":
+        a.outdir = os.path.join(a.outdir, a.lens)
     os.makedirs(a.outdir, exist_ok=True)
     p = os.path.join(a.outdir, "crosswalk.json")
     with open(p, "w", encoding="utf-8") as f:
@@ -402,3 +430,5 @@ if __name__ == "__main__":
     print(f"  with >=1 receiving candidate: {t['with_receiving']} | with a Tier 1: {t['with_tier1']}")
     print(f"  CPL already operating in MAP: {t['cpl_operating']}")
     print(f"  joined via MIS code: {t['joined_via_mis_code']} | via name fallback: {t['joined_via_name']}")
+    print(f"  with a NONCREDIT receiving course: {t['with_nc_receiver']}"
+          f" | credit is the only route: {t['nc_only_route_is_credit']}")
