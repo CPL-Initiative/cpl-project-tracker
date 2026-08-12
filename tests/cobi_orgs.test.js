@@ -44,7 +44,9 @@ const HEADER_NAV = `
     <div class="cpl-nav-group" data-nav-group="funding">
       <button class="cpl-nav-group-head">Funding</button>
       <div class="cpl-nav-group-body">
+        <button class="cpl-tab" data-tab="contracts">Contracts</button>
         <button class="cpl-tab" data-tab="budget">Budget</button>
+        <button class="cpl-tab" data-tab="implementation-funding">Implementation Funding</button>
       </div>
     </div>
   </nav>`;
@@ -71,12 +73,24 @@ function tagText(document) {
   check("init does not throw on default load", !threw);
   check("default site is CPL", window.CPL_ORGS.current().id === "cpl");
   check("switcher injected into the masthead", !!document.querySelector(".cobi-brand .cobi-orgswitch-sel"));
-  check("switcher lists all sites (CPL, C&I, CIP, GR)",
-    document.querySelectorAll(".cobi-orgswitch-sel option").length === 4);
+  // Derived from ORGS rather than hardcoded: a fixed count breaks every time a
+  // site is added (it did, when FIN landed) and then gets bumped without thought,
+  // which is exactly when a silently-dropped site would slip through. `unlisted`
+  // orgs are reachable via ?org= but deliberately kept out of the switcher.
+  check("switcher lists every listed site",
+    document.querySelectorAll(".cobi-orgswitch-sel option").length ===
+      window.CPL_ORGS.ORGS.filter((o) => !o.unlisted).length);
   check("GR is listed in the switcher (selecting it is open; content is phrase-gated)",
     document.querySelectorAll(".cobi-orgswitch-sel option[value='gr']").length === 1);
+  check("FIN is listed in the switcher",
+    document.querySelectorAll(".cobi-orgswitch-sel option[value='fin']").length === 1);
   check("default view HIDES the EXCLUSIVE gr-priorities tab (content gated, tab off the flagship nav)",
     !shown(btn(document, "gr-priorities")));
+  // The same property for Contracts, and the one that matters most: vendor
+  // payment terms and staff contacts must not sit in the flagship nav. This
+  // failure is invisible from inside the FIN site, where it always looks right.
+  check("⚠ default view HIDES the EXCLUSIVE contracts tab (vendor terms off the flagship nav)",
+    !shown(btn(document, "contracts")));
   check("REGRESSION GUARD: default CPL view shows Dashboard", shown(btn(document, "dashboard")));
   check("REGRESSION GUARD: default CPL view shows Budget (all tabs)", shown(btn(document, "budget")));
   check("REGRESSION GUARD: default CPL view shows the Funding group",
@@ -107,6 +121,23 @@ function tagText(document) {
   check("GR: Dashboard is hidden from the rail", !shown(btn(document, "dashboard")));
   check("GR: Budget is hidden from the rail", !shown(btn(document, "budget")));
   check("GR: identity tag flips to GR", tagText(document) === "GR");
+
+  // ── switch to FIN: Contracts is EXCLUSIVE so it shows ONLY here, and the
+  //    site is a real three-tab Finance view rather than a one-tab site ──
+  window.CPL_ORGS.setOrg("fin");
+  check("FIN: the EXCLUSIVE Contracts tab is visible under its own site",
+    shown(btn(document, "contracts")));
+  check("FIN: Budget stays visible (listing it in FIN does not move it)",
+    shown(btn(document, "budget")));
+  check("FIN: Implementation Funding stays visible",
+    shown(btn(document, "implementation-funding")));
+  check("FIN: the Funding group is visible",
+    shown(document.querySelector('.cpl-nav-group[data-nav-group="funding"]')));
+  check("FIN: Dashboard is hidden from the rail", !shown(btn(document, "dashboard")));
+  check("FIN: GR Priorities stays hidden (one EXCLUSIVE tab does not unlock another)",
+    !shown(btn(document, "gr-priorities")));
+  check("FIN: identity tag flips to FIN", tagText(document) === "FIN");
+  check("FIN: home tab is Contracts", window.CPL_ORGS.current().home === "contracts");
 
   // ── back to CPL restores everything ──
   window.CPL_ORGS.setOrg("cpl");

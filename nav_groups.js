@@ -29,7 +29,9 @@
   // Order here = display order. Tabs within a group keep this listed order.
   var GROUPS = [
     { id: 'workplan', label: 'Workplan', tabs: ['activities-projects', 'workplan-goals', 'raci', 'annual-report'] },
-    { id: 'funding', label: 'Funding', tabs: ['budget', 'implementation-funding'] },
+    // 'contracts' is EXCLUSIVE in cobi_orgs.js, so it is hidden in the default CPL
+    // view and appears only under the FIN site — where it leads this group.
+    { id: 'funding', label: 'Funding', tabs: ['contracts', 'budget', 'implementation-funding'] },
     { id: 'strategy', label: 'Strategy & Impact', tabs: ['vision-2030', 'military-partnerships', 'cpl-news'] },
     { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'canonical-subj4', 'coci-lookup', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
     { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'knowledge-base', 'letters'] },
