@@ -69,3 +69,9 @@ kb/program_course_graph.json
 # ~130KB of binary per engagement. The small JSON receipts beside it
 # (summary.json / unmapped.json — the latter IS the curator worklist) are kept.
 kb/partner_crosswalk_out/**/*.xlsx
+
+# Futuro Health HTH -> CNA crosswalk deliverable (kb/_write_futuro_hth_workbook.py).
+# Same rule as the partner crosswalk above: the workbook is REGENERABLE, so re-run
+# the two scripts rather than committing the binary. crosswalk.json (the receipt)
+# and the HTML view are kept -- they are the deliverable's committed record.
+kb/futuro_hth_out/*.xlsx
