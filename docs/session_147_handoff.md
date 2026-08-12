@@ -1,5 +1,5 @@
 ---
-title: Session 147 handoff (SkyFund → next) — a phrase swap is queued, and the trainer's backlog has still never been worked
+title: Session 147 handoff (SkyFund → next) — Contracts is on the Finance phrase, and the trainer's backlog has still never been worked
 created: 2026-08-12
 updated: 2026-08-12
 tags: [handoff, team-phrase, auth, sierra-training, rls, governance]
@@ -12,8 +12,9 @@ related:
 
 # You are Session 147
 
-Session 146 was **SkyFund**. Sam named it. Five PRs (**#1137–#1141**), one
-production deploy (**cpl-chat v39**), one additive migration.
+Session 146 was **SkyFund**. Sam named it. Six PRs (**#1137–#1141**, **#1144**), one
+production deploy (**cpl-chat v39**), and two migrations — `site_phrase_fin_additive`
+and `site_phrase_fin_contracts_swap`, the second applied last, on Sam's go.
 
 ## ⚠️ FIRST — read the memory table. This is Rule 8.
 
@@ -40,26 +41,23 @@ Then read, in order: `docs/team_phrase_lessons.md` → `docs/sierra_training_tab
   magic-link reviewer sign-in. The phrase deliberately does not open it.
 - **Sierra Training is usable by a human** (#1138) — SkyLink's Priority 1,
   closed. Plain language, hover-overs everywhere, and the character limit fixed.
-- Two KB notes (#1139, and a third in the checkpoint).
+- Three KB notes (#1139 + two in the checkpoint, #1144).
 
-## 🎯 PRIORITY 1 — apply the Contracts swap, once Sam has rotated
+## ✅ DONE at the very end of 146 — the Contracts swap landed
 
-**Sam said 2026-08-12: "I'll rotate the phrase in a bit."** He has not confirmed
-it is done, so **check before you act** — the ⚙ Manage team phrases button on
-Team & RACI now opens the tab, and `team_access.updated_at` for `id='fin'` tells
-you whether he rotated.
+Do **not** redo this. Sam rotated the Finance phrase himself on the new 🔑 Team
+Phrases tab (`team_access.fin` updated 2026-08-12 20:33 UTC — which also proved
+the tab works end to end), then said *"we're good to turn on"*. Migration
+`site_phrase_fin_contracts_swap` applied: **12 policies to `fin_pass_ok()`**,
+DELETE still reviewer-only, `team_pass_ok()` gone from the register. Verified
+post-apply.
 
-Then apply **step 2 of `kb/supabase_site_phrase_fin.sql`** — 12 policies across
-the 4 contract tables, `team_pass_ok()` → `fin_pass_ok()`. Rollback is re-widening
-them; no data moves.
+**If Contracts looks broken to someone**, the answer is almost always that they
+hold the shared phrase and not the Finance one — the tab renders its own unlock
+box for exactly that case. Rollback, if it is ever needed, is re-widening those
+12 to `(is_allowed_reviewer() or team_pass_ok())`; no data moves.
 
-⚠️ **Do NOT apply it before the phrase is distributed.** `contracts.js` sends the
-shared phrase until Finance is held, so today both open the register. The moment
-you swap, anyone holding only the shared phrase sees a locked pane — with an
-unlock box, but no phrase to type. That sequencing is the whole reason it was
-held; do not undo the care.
-
-## 🎯 PRIORITY 2 — the decision that outranks the swap
+## 🎯 PRIORITY 1 — the superset decision (now the top open item)
 
 **Is a site phrase meant to be a superset?** Under Sam's "allow either" ruling it
 opens its own tabs *plus* every shared one, because `team_pass_check()` matches
@@ -67,7 +65,7 @@ any secret in `team_access`. That is safe only while **every phrase holder is
 trusted with all shared CPL data** — budget, personnel, projects, memory, MAP
 contacts.
 
-**Raise it before the Finance phrase reaches anyone in Finance.** The split is
+**Raise it before the Finance phrase reaches anyone in Finance — it is live now, so this is no longer hypothetical.** The split is
 small: a `scope` column, with `team_pass_check()` matching only `scope='shared'`.
 It is a decision about *who you hand a credential to*, not about code — so it is
 Sam's, and it should be asked rather than assumed either way.
