@@ -200,3 +200,31 @@ would have been wrong. The engine's second run is still outstanding.
 2. Work the **readiness A + score 4–5** rows first: Long Beach, CCSF, Cuesta.
 3. Confirm the **2 "none found"** colleges (Lassen, Santa Monica) against live catalogs.
 4. Offer this as a **COBI tab** if Ashley wants it as the MAP columns drift.
+
+### Late addition — the coded join, via Sam relaying SkyLink
+
+Sam passed on, mid-checkpoint, that a concurrent session had landed
+`kb/college_identity/2026-08-12/crosswalk.json` — 262 name variants resolving to a
+MAP `college_id`. Adopted, and it is a genuine upgrade, but **not** in the form
+offered.
+
+**Name lookup against it resolved only 47 of 61.** Its variant list does not carry
+the MIS `College_name_long` inversions (`ALAMEDA, COLLEGE OF`, `DESERT, COLLEGE OF
+THE`) that this build's `norm()` already handled. Joining on the **MIS college
+code** instead — `cb_course_basic.CB_COLLEGE_ID` *is* `mis_college_code` — resolved
+**60 of 61**, with the crosswalk asserting its codes are unique. A code cannot be
+defeated by a spelling; that is the whole point of the file, and the name list is
+the weaker half of it.
+
+⚠️ **The name fallback had to stay.** The identity crosswalk scopes to the **116
+credit colleges**, so the continuing-education institutions are outside it — they
+appear in its own `mis_rows_not_matched_to_a_map_college` list. **San Diego College
+of Continuing Education (MIS code 076) is a real MAP entity (id 119) teaching 4 CNA
+courses**, and a naive swap to the coded join would have silently dropped it from a
+61-row deliverable. Coded key first, name fallback second, and the 61/61 assertion
+holds either way. Its ID cell says *"Not in the identity crosswalk (continuing
+ed)"* rather than sitting empty.
+
+**Reported back to SkyLink** as a scope finding on their file, not a defect: the CE
+institutions carry their own MAP `college_id` and are invisible to anything joining
+through that crosswalk alone.
