@@ -181,6 +181,7 @@ def verify_source(rows):
 
 
 ROSTER_PATH = os.path.join(HERE, "reference", "ccc_coll_dist_2025.json")
+CEO_PATH = os.path.join(HERE, "reference", "ccc_colleges_ceo_2026.json")
 
 # Placeholder codes for colleges no CCCCO source we hold carries (Sam,
 # 2026-08-12: "we can just add a placeholder ID for Calbright and Madera").
@@ -210,6 +211,17 @@ def load_roster():
         if r.get("map_college"):
             by_map[norm(r["map_college"])] = r
     return by_short, by_map
+
+
+def load_ceo():
+    """The 2026 CEO list — the most CURRENT college names we hold. Used for
+    NAME VARIANTS only. Its district names carry a repeated typo
+    ('San Bernadino') and several informal forms, so districts still come from
+    the 2025 roster."""
+    if not os.path.exists(CEO_PATH):
+        return {}
+    raw = json.load(open(CEO_PATH, encoding="utf-8"))
+    return {norm(c["college_name"]): c for c in raw["colleges"]}
 
 
 def load_mis():
@@ -273,6 +285,14 @@ def main():
     mis_by_key = {(m["district_code"], m["college_code"]): m for m in mis}
     curated = {v: k for k, v in MIS_TO_MAP.items()}
     roster_by_short, roster_by_map = load_roster()
+    ceo_by = load_ceo()
+    # "Los Angeles Trade-Tech College" folds to the same key as "Los Angeles
+    # Trade Technical College" only if the hyphenated short form is folded
+    # explicitly -- norm() cannot know Tech abbreviates Technical.
+    ceo_extra = {}
+    for k, c in ceo_by.items():
+        ceo_extra.setdefault(k.replace("tradetech", "tradetechnical"), c)
+    ceo_by = {**ceo_extra, **ceo_by}
 
     out, unresolved = [], []
     used_mis = set()
@@ -321,6 +341,9 @@ def main():
             variants.add(rost["college_name"])
             variants.add(rost["college_short_caps"])
             variants.add(rost["map_college"])
+        ceo = ceo_by.get(k)
+        if ceo:
+            variants.add(ceo["college_name"])
 
         row = {
             "college_id": cid,
@@ -365,6 +388,13 @@ def main():
         r["district_type"] = ("M" if n > 1 else "S") if n else None
         r["district_college_count"] = n or None
 
+    mapped_keys = set()
+    for r in out:
+        mapped_keys.add(norm(r["college_name"]))
+        for v in r["variants"]:
+            mapped_keys.add(norm(v))
+    ceo_not_in_map = [c for k, c in load_ceo().items() if k not in mapped_keys]
+
     orphans = [m for m in mis
                if (m["district_code"], m["college_code"]) not in used_mis]
 
@@ -403,6 +433,7 @@ def main():
             for k, v in findings.items()
         },
         "_patches_applied": patched,
+        "ceo_colleges_map_does_not_carry": ceo_not_in_map,
         "colleges": out,
         "mis_rows_not_matched_to_a_map_college": orphans,
     }
@@ -449,6 +480,14 @@ def main():
             lines.append(f"| {r['college_id']} | {r['college_name']} |")
     else:
         lines.append("None — every MAP college reached a district.")
+    lines += ["", "## Colleges in the 2026 CEO list that MAP does not carry", "",
+              "Each has its own CEO, so they are institutions rather than sites. "
+              "These are the standalone continuing-education institutions the NC / "
+              "Learning Partners workstream found sitting at ZERO in MAP.", ""]
+    for c in ceo_not_in_map:
+        lines.append(f"- **{c['college_name']}** — {c['district_name_unreliable']} ({c['ceo_title']})")
+    if not ceo_not_in_map:
+        lines.append("- None.")
     lines += ["", "## MIS rows matching no MAP college", "",
               "Mostly standalone adult/continuing-education SITES, which Sam ruled "
               "worth keeping (they are a funded population). Not defects.", "",

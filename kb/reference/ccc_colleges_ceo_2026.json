@@ -1,0 +1,604 @@
+{
+  "_about": "Current CCC college + district list, derived from the CEO tab of 20260812_COLL_DIST.xlsx (supplied by Sam, 2026-08-12). One row per college.",
+  "_source": "20260812_COLL_DIST.xlsx, sheet 'CEO'",
+  "_extracted": "2026-08-12 (SkyLink, Session 141)",
+  "_value": "The most CURRENT college list we hold — 118 colleges, 76 districts. It confirms the post-Appendix-A renames (Coalinga College, Lemoore College) and is the only source naming North Orange Continuing Education and San Diego College of Continuing Education as colleges with their own CEO.",
+  "_privacy": "⚠ CEO NAME, EMAIL and WEBSITE columns are deliberately NOT extracted here. This repo is PUBLIC. Each address is published on its college's own site, but a compiled directory is a different artifact from 118 separate pages, and nothing in the identity work needs them. Sam has ruled that staff contacts are not PII (2026-08-12), so this is a publication-surface call, not a privacy one — the workbook is committed alongside if the columns are wanted. Ask before extracting them.",
+  "_warning_district_names": "⚠ District names here are NOT reliable. 'San Bernadino Community College District' (missing the r) appears on BOTH of that district's rows; the college's own name spells it San Bernardino. Six other district names differ from the 2025 Veteran Sprint tab -- San Mateo vs San Mateo County, Siskiyous vs Siskiyou, Sonoma County CCD vs Sonoma County JUNIOR College District. Trust this file for COLLEGE names; take district names from ccc_coll_dist_2025.json.",
+  "_counts": {
+    "colleges": 118,
+    "districts": 76
+  },
+  "colleges": [
+    {
+      "college_name": "Allan Hancock College",
+      "district_name_unreliable": "Allan Hancock Joint Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "American River College",
+      "district_name_unreliable": "Los Rios Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Antelope Valley College",
+      "district_name_unreliable": "Antelope Valley Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Bakersfield College",
+      "district_name_unreliable": "Kern Community College District",
+      "ceo_title": "Interim President"
+    },
+    {
+      "college_name": "Barstow Community College",
+      "district_name_unreliable": "Barstow Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Berkeley City College",
+      "district_name_unreliable": "Peralta Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Butte College",
+      "district_name_unreliable": "Butte-Glenn Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Cabrillo College",
+      "district_name_unreliable": "Cabrillo Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Calbright College",
+      "district_name_unreliable": null,
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Cañada College",
+      "district_name_unreliable": "San Mateo County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Cerritos College",
+      "district_name_unreliable": "Cerritos Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Cerro Coso Community College",
+      "district_name_unreliable": "Kern Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Chabot College",
+      "district_name_unreliable": "Chabot-Las Positas Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Chaffey College",
+      "district_name_unreliable": "Chaffey Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Citrus College",
+      "district_name_unreliable": "Citrus Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "City College of San Francisco",
+      "district_name_unreliable": "San Francisco Community College District",
+      "ceo_title": "Chancellor"
+    },
+    {
+      "college_name": "Clovis Community College",
+      "district_name_unreliable": "State Center Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Coalinga College",
+      "district_name_unreliable": "West Hills Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Coastline College",
+      "district_name_unreliable": "Coast Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "College of Alameda",
+      "district_name_unreliable": "Peralta Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "College of Marin",
+      "district_name_unreliable": "Marin Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "College of San Mateo",
+      "district_name_unreliable": "San Mateo Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "College of the Canyons",
+      "district_name_unreliable": "Santa Clarita Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "College of the Desert",
+      "district_name_unreliable": "Desert Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "College of the Redwoods",
+      "district_name_unreliable": "Redwoods Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "College of the Sequoias",
+      "district_name_unreliable": "Sequoias Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "College of the Siskiyous",
+      "district_name_unreliable": "Siskiyous Joint Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Columbia College",
+      "district_name_unreliable": "Yosemite Community College District",
+      "ceo_title": "Interim President"
+    },
+    {
+      "college_name": "Compton College",
+      "district_name_unreliable": "Compton Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Contra Costa College",
+      "district_name_unreliable": "Contra Costa Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Copper Mountain College",
+      "district_name_unreliable": "Copper Mountain Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Cosumnes River College",
+      "district_name_unreliable": "Los Rios Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Crafton Hills College",
+      "district_name_unreliable": "San Bernadino Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Cuesta College",
+      "district_name_unreliable": "San Luis Obispo County Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Cuyamaca College",
+      "district_name_unreliable": "Grossmont-Cuyamaca Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Cypress College",
+      "district_name_unreliable": "North Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "De Anza College",
+      "district_name_unreliable": "Foothill-De Anza Community College District",
+      "ceo_title": "Acting President"
+    },
+    {
+      "college_name": "Diablo Valley College",
+      "district_name_unreliable": "Contra Costa Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "East Los Angeles College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "El Camino College",
+      "district_name_unreliable": "El Camino Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Evergreen Valley College",
+      "district_name_unreliable": "San Jose-Evergreen Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Feather River College",
+      "district_name_unreliable": "Feather River Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Folsom Lake College",
+      "district_name_unreliable": "Los Rios Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Foothill College",
+      "district_name_unreliable": "Foothill-De Anza Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Fresno City College",
+      "district_name_unreliable": "State Center Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Fullerton College",
+      "district_name_unreliable": "North Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Gavilan College",
+      "district_name_unreliable": "Gavilan Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Glendale Community College",
+      "district_name_unreliable": "Glendale Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Golden West College",
+      "district_name_unreliable": "Coast Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Grossmont College",
+      "district_name_unreliable": "Grossmont-Cuyamaca Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Hartnell College",
+      "district_name_unreliable": "Hartnell Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Imperial Valley College",
+      "district_name_unreliable": "Imperial Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Irvine Valley College",
+      "district_name_unreliable": "South Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Lake Tahoe Community College",
+      "district_name_unreliable": "Lake Tahoe Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Laney College",
+      "district_name_unreliable": "Peralta Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Las Positas College",
+      "district_name_unreliable": "Chabot-Las Positas Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Lassen College",
+      "district_name_unreliable": "Lassen Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Lemoore College",
+      "district_name_unreliable": "West Hills Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Long Beach City College",
+      "district_name_unreliable": "Long Beach Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Los Angeles City College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Harbor College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Mission College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Pierce College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Southwest College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Trade-Tech College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Angeles Valley College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Los Medanos College",
+      "district_name_unreliable": "Contra Costa Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Madera Community College",
+      "district_name_unreliable": "State Center Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Mendocino College",
+      "district_name_unreliable": "Mendocino-Lake Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Merced College",
+      "district_name_unreliable": "Merced Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Merritt College",
+      "district_name_unreliable": "Peralta Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "MiraCosta College",
+      "district_name_unreliable": "MiraCosta Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Mission College",
+      "district_name_unreliable": "West Valley-Mission Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Modesto Junior College",
+      "district_name_unreliable": "Yosemite Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Monterey Peninsula College",
+      "district_name_unreliable": "Monterey Peninsula Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Moorpark College",
+      "district_name_unreliable": "Ventura County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Moreno Valley College",
+      "district_name_unreliable": "Riverside Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Mt. San Antonio College",
+      "district_name_unreliable": "Mt. San Antonio Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Mt. San Jacinto College",
+      "district_name_unreliable": "Mt. San Jacinto Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Napa Valley College",
+      "district_name_unreliable": "Napa Valley Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Norco College",
+      "district_name_unreliable": "Riverside Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "North Orange Continuing Education",
+      "district_name_unreliable": "North Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Ohlone College",
+      "district_name_unreliable": "Ohlone Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Orange Coast College",
+      "district_name_unreliable": "Coast Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Oxnard College",
+      "district_name_unreliable": "Ventura County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Palo Verde College",
+      "district_name_unreliable": "Palo Verde Community College District",
+      "ceo_title": "Interim Superintendent/President"
+    },
+    {
+      "college_name": "Palomar College",
+      "district_name_unreliable": "Palomar Community College District",
+      "ceo_title": "Interim Superintendent/President"
+    },
+    {
+      "college_name": "Pasadena City College",
+      "district_name_unreliable": "Pasadena Area Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Porterville College",
+      "district_name_unreliable": "Kern Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Reedley College",
+      "district_name_unreliable": "State Center Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Rio Hondo College",
+      "district_name_unreliable": "Rio Hondo Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Riverside City College",
+      "district_name_unreliable": "Riverside Community College District",
+      "ceo_title": "Interim President"
+    },
+    {
+      "college_name": "Sacramento City College",
+      "district_name_unreliable": "Los Rios Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Saddleback College",
+      "district_name_unreliable": "South Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Bernardino Valley College",
+      "district_name_unreliable": "San Bernadino Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Diego City College",
+      "district_name_unreliable": "San Diego Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Diego College of Continuing Education",
+      "district_name_unreliable": "San Diego Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Diego Mesa College",
+      "district_name_unreliable": "San Diego Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Diego Miramar College",
+      "district_name_unreliable": "San Diego Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Joaquin Delta College",
+      "district_name_unreliable": "San Joaquin Delta Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "San Jose City College",
+      "district_name_unreliable": "San Jose-Evergreen Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Santa Ana College",
+      "district_name_unreliable": "Rancho Santiago Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Santa Barbara City College",
+      "district_name_unreliable": "Santa Barbara Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Santa Monica College",
+      "district_name_unreliable": "Santa Monica Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Santa Rosa Junior College",
+      "district_name_unreliable": "Sonoma County Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Santiago Canyon College",
+      "district_name_unreliable": "Rancho Santiago Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Shasta College",
+      "district_name_unreliable": "Shasta-Tehama-Trinity Joint Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Sierra College",
+      "district_name_unreliable": "Sierra Joint Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Skyline College",
+      "district_name_unreliable": "San Mateo County Community College",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Solano Community College",
+      "district_name_unreliable": "Solano Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Southwestern College",
+      "district_name_unreliable": "Southwestern Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Taft College",
+      "district_name_unreliable": "West Kern Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "Ventura College",
+      "district_name_unreliable": "Ventura County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Victor Valley College",
+      "district_name_unreliable": "Victor Valley Community College District",
+      "ceo_title": "Superintendent/President"
+    },
+    {
+      "college_name": "West Los Angeles College",
+      "district_name_unreliable": "Los Angeles Community College District",
+      "ceo_title": "Interim President"
+    },
+    {
+      "college_name": "West Valley College",
+      "district_name_unreliable": "West Valley-Mission Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Woodland Community College",
+      "district_name_unreliable": "Yuba Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "Yuba College",
+      "district_name_unreliable": "Yuba Community College District",
+      "ceo_title": "President"
+    }
+  ]
+}

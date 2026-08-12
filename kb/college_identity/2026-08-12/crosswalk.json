@@ -59,6 +59,18 @@
       "why": "spelling: source read EVERYGREEN VALLEY"
     }
   ],
+  "ceo_colleges_map_does_not_carry": [
+    {
+      "college_name": "North Orange Continuing Education",
+      "district_name_unreliable": "North Orange County Community College District",
+      "ceo_title": "President"
+    },
+    {
+      "college_name": "San Diego College of Continuing Education",
+      "district_name_unreliable": "San Diego Community College District",
+      "ceo_title": "President"
+    }
+  ],
   "colleges": [
     {
       "college_id": 17,
@@ -398,7 +410,8 @@
       "college_name": "Coastline Community College",
       "variants": [
         "COASTLINE",
-        "Coastline"
+        "Coastline",
+        "Coastline College"
       ],
       "short": "Coastline",
       "mis_college_code": "831",
@@ -1237,7 +1250,8 @@
       "college_name": "Los Angeles Trade Technical College",
       "variants": [
         "LA TRADE",
-        "LA Trade"
+        "LA Trade",
+        "Los Angeles Trade-Tech College"
       ],
       "short": "LA Trade",
       "mis_college_code": "746",
