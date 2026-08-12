@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-11T07:43:02Z",
- "count": 100,
+ "_generated_at": "2026-08-12T07:56:58Z",
+ "count": 120,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -461,6 +461,14 @@
     "scoped": true
    }
   ],
+  "CRIM-11 Introduction to Corrections": [
+   {
+    "kind": "cid",
+    "id": "AJ 200",
+    "title": "Introduction to Corrections",
+    "code": "CRIM 11"
+   }
+  ],
   "CRIM-35 Narcotics": [
    {
     "kind": "course",
@@ -479,6 +487,14 @@
     "share": 1.0,
     "colleges": 1,
     "scoped": true
+   }
+  ],
+  "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY": [
+   {
+    "kind": "cid",
+    "id": "ITIS 160",
+    "title": "Introduction to Information Systems Security",
+    "code": "CTIS 20"
    }
   ],
   "ECON 25: Introduction to Economics": [
@@ -839,6 +855,66 @@
     "scoped": true
    }
   ],
+  "INDT-25 FLUID POWER": [
+   {
+    "kind": "course",
+    "title": "Fluid Power",
+    "code": "INDT 25",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "INDT-40 COMMERCIAL REFRIGERATION SYSTEMS": [
+   {
+    "kind": "course",
+    "title": "Commercial Refrigeration Systems",
+    "code": "INDT 40",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "INDT-41 INDUSTRIAL POWER TRANSMISSION": [
+   {
+    "kind": "course",
+    "title": "Industrial Power Transmission",
+    "code": "INDT 41",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "INDT-50 HVAC -- HEATING AND CONTROL SYSTEMS": [
+   {
+    "kind": "course",
+    "title": "HVAC - Heating and Control Systems",
+    "code": "INDT 50",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "INDT-51 HVAC -- VENTILATION AND AIR CONDITIONING SYSTEMS": [
+   {
+    "kind": "course",
+    "title": "Ventilation and Air Conditioning Systems",
+    "code": "INDT 51",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "INDT-52 REFRIGERANT USAGE CERTIFICATION AND R-410A SAFETY": [
+   {
+    "kind": "course",
+    "title": "Refrigerant Usage Certification and R-410A Safety",
+    "code": "INDT 52",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "JAPAN 1: Beginning Japanese": [
    {
     "kind": "course",
@@ -857,6 +933,44 @@
     "share": 1.0,
     "colleges": 9,
     "scoped": true
+   }
+  ],
+  "MUSA-21A VOICE I": [
+   {
+    "kind": "course",
+    "title": "Voice I",
+    "code": "MUSA 21A",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "MUSA-25A GUITAR I": [
+   {
+    "kind": "course",
+    "title": "Guitar I",
+    "code": "MUSA 25A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "MUSA-27A CLASS PIANO I": [
+   {
+    "kind": "course",
+    "title": "Class Piano I",
+    "code": "MUSA 27A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "MUSG-10 MUSIC FUNDAMENTALS": [
+   {
+    "kind": "cid",
+    "id": "MUS 110",
+    "title": "Music Fundamentals",
+    "code": "MUSG 10"
    }
   ],
   "PHIL 1A: Theories of Knowledge and Reality": [
@@ -947,6 +1061,66 @@
     "scoped": true
    }
   ],
+  "REGN-01 TRANSITION LVN TO RN": [
+   {
+    "kind": "course",
+    "title": "Transition LVN to RN",
+    "code": "REGN 1",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "REGN-02 CLINICAL SKILLS TRANSITION - LVN TO RN": [
+   {
+    "kind": "course",
+    "title": "Clinical Skills Transition LVN to RN",
+    "code": "REGN 2",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "REGN-15 FOUNDATIONS OF NURSING": [
+   {
+    "kind": "course",
+    "title": "Foundations of Nursing",
+    "code": "REGN 15",
+    "share": 1.0,
+    "colleges": 2,
+    "scoped": true
+   }
+  ],
+  "REGN-24 ACUTE MEDICAL/SURGICAL AND NURSING OF THE CHILDBEARING FAMILY": [
+   {
+    "kind": "course",
+    "title": "Acute Medical/Surgical and Nursing of the Childbearing Family",
+    "code": "REGN 24",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "REGN-34 ADVANCED MEDICAL/SURGICAL NURSING AND PEDIATRIC NURSING": [
+   {
+    "kind": "course",
+    "title": "Advanced Medical/Surgical Nursing and Pediatric Nursing",
+    "code": "REGN 34",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "REGN-44 ADVANCED MEDICAL SURGICAL NURSING AND PSYCHIATRIC MENTAL HEALTH NURSING": [
+   {
+    "kind": "course",
+    "title": "Acute Medical/Surgical Nursing and Mental Health Nursing",
+    "code": "REGN 44",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "SPAN 1: Beginning Spanish": [
    {
     "kind": "cid",
@@ -963,6 +1137,16 @@
     "code": "SPAN 2"
    }
   ],
+  "VOCN-46A Applied Mathematics for Pharmacology": [
+   {
+    "kind": "course",
+    "title": "Applied Mathematics for Pharmacology",
+    "code": "VOCN 46A",
+    "share": 1.0,
+    "colleges": 1,
+    "scoped": true
+   }
+  ],
   "WELD 770B (Non-Credit) Advanced Welding": [
    {
     "kind": "course",
@@ -970,6 +1154,16 @@
     "code": "WELD 770B",
     "share": 1.0,
     "colleges": 1,
+    "scoped": true
+   }
+  ],
+  "WELD-01 FUNDAMENTALS OF SHIELDED METAL ARC WELDING (Formerly WELD-06)": [
+   {
+    "kind": "course",
+    "title": "Fundamentals of Shielded Metal Arc Welding",
+    "code": "WELD 1",
+    "share": 1.0,
+    "colleges": 3,
     "scoped": true
    }
   ]

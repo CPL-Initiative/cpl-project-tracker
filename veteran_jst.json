@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-11T13:51:14.890049+00:00",
+  "scraped_at": "2026-08-12T07:55:29.226389+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26723,
+    "jst": 26817,
     "star_colleges": 56
   },
   "computed_star_colleges": 56,
@@ -22,7 +22,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1553,
+      "jst": 1560,
       "star": true
     },
     "Santiago Canyon College": {
@@ -32,7 +32,7 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1428,
+      "jst": 1441,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,12 +42,12 @@
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1593,
+      "jst": 1600,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 548,
+      "jst": 555,
       "star": true
     },
     "City College of San Francisco": {
@@ -57,7 +57,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 514,
+      "jst": 529,
       "star": false
     },
     "West Los Angeles College": {
@@ -72,7 +72,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 812,
+      "jst": 816,
       "star": false
     },
     "De Anza College": {
@@ -107,7 +107,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 374,
+      "jst": 381,
       "star": true
     },
     "Cypress College": {
@@ -127,7 +127,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 366,
+      "jst": 370,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -150,19 +150,19 @@
       "jst": 339,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 581,
+      "star": true
+    },
     "Mt. San Jacinto College": {
       "vets": 168,
       "jst": 538,
       "star": true
     },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 567,
-      "star": true
-    },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 506,
+      "jst": 507,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -175,14 +175,14 @@
       "jst": 222,
       "star": true
     },
+    "Clovis Community College": {
+      "vets": 117,
+      "jst": 191,
+      "star": true
+    },
     "Antelope Valley College": {
       "vets": 281,
       "jst": 280,
-      "star": true
-    },
-    "Clovis Community College": {
-      "vets": 117,
-      "jst": 190,
       "star": true
     },
     "Solano Community College": {
@@ -212,12 +212,12 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 125,
+      "jst": 127,
       "star": false
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 175,
+      "jst": 180,
       "star": false
     },
     "Mission College": {
@@ -237,7 +237,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 168,
+      "jst": 169,
       "star": true
     },
     "Lemoore College": {
@@ -277,7 +277,7 @@
     },
     "Allan Hancock College": {
       "vets": 392,
-      "jst": 140,
+      "jst": 142,
       "star": false
     },
     "College of San Mateo": {
@@ -307,7 +307,7 @@
     },
     "Irvine Valley College": {
       "vets": 217,
-      "jst": 125,
+      "jst": 127,
       "star": false
     },
     "Saddleback College": {
@@ -327,7 +327,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 50,
+      "jst": 51,
       "star": false
     },
     "Foothill College": {
@@ -482,7 +482,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 95,
+      "jst": 96,
       "star": false
     },
     "Cuyamaca College": {

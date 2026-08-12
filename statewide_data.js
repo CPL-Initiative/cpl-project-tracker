@@ -44217,210 +44217,6 @@ window.CPL_STATEWIDE = {
       ]
     },
     {
-      "exhibit_id": "MAPSAH-ASA-1-1-001|MAPSAS-A2AA-1-001|MAPSAS-A2AA1-1-001|MAPSAS-A2AA2-1-001|MAPSAS-A2AA3-1-001|MAPSAS-AAS2-1-001|MAPSAS-AESA1-1-001|MAPSAS-AESA4-1-001|MAPSAS-ASA--1-001|MAPSAS-ASA-3-1-001|MAPSAS-ASA2-1-001|MAPSAS-ASA21-1-001",
-      "exhibit_ids": [
-        "MAPSAH-ASA-1-1-001",
-        "MAPSAS-A2AA-1-001",
-        "MAPSAS-A2AA1-1-001",
-        "MAPSAS-A2AA2-1-001",
-        "MAPSAS-A2AA3-1-001",
-        "MAPSAS-AAS2-1-001",
-        "MAPSAS-AESA1-1-001",
-        "MAPSAS-AESA4-1-001",
-        "MAPSAS-ASA--1-001",
-        "MAPSAS-ASA-3-1-001",
-        "MAPSAS-ASA2-1-001",
-        "MAPSAS-ASA21-1-001"
-      ],
-      "title": "AP 2-D Art and Design",
-      "unified_title": "AP 2-D Art and Design",
-      "is_classified": true,
-      "issuing_agency": "College Board",
-      "training_agency": "",
-      "confidence_title": 0.92,
-      "confidence_issuer": 0.99,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP 2-D Art and Design",
-        "AP 2-D Art and Design (Score of 3 or higher)",
-        "AP 2D Art and Design",
-        "AP 2D- Art and Design (Score of 3-5)",
-        "AP Art Studio 2-D (Score 3-5)",
-        "AP Exam: Studio Art - 2D",
-        "AP Exam: Studio Art: 2-D Art and Design",
-        "AP Studio Art - 2-D Design / 2-D Art and Design",
-        "AP Studio Art - 2D",
-        "AP Studio Art - 2D Design",
-        "AP Studio Art- 2D Design"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Humanities (Letters)",
-      "sector": "Academic Transfer & General Education",
-      "collaborative_type": "Local",
-      "adopters": 13,
-      "adopter_names": [
-        "Chaffey College",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of the Canyons",
-        "Foothill College",
-        "Moreno Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Yuba College"
-      ],
-      "potential": 95,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College"
-      ],
-      "total_addressable": 108,
-      "credit_recs": [
-        {
-          "course": "CPL 1",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "COMM 8",
-          "credit": "3 hours in Elective Course Credits"
-        },
-        {
-          "course": "ART 22",
-          "credit": "3 hours in Two Dimensional Design"
-        },
-        {
-          "course": "Art (ART) 012",
-          "credit": "3 hours in Two-Dimensional Design"
-        },
-        {
-          "course": "ART C110",
-          "credit": "3 hours in Color and Design: 2-D"
-        },
-        {
-          "course": "ART 110",
-          "credit": "3 hours in Two-Dimensional Design"
-        },
-        {
-          "course": "GE 3 Area 3",
-          "credit": "3 hours in Arts and Humanities"
-        },
-        {
-          "course": "ART 140",
-          "credit": "3 hours in Beginning Design: Two-Dimensional Media"
-        },
-        {
-          "course": "ART 6A",
-          "credit": "3 hours in Beginning Basic Design"
-        },
-        {
-          "course": "Elective Units",
-          "credit": "4.5 hours in Foothill College Elective Units"
-        },
-        {
-          "course": "Local GE Area 8",
-          "credit": "3 hours in Participatory Arts"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPSAH-ASA-2-1-001|MAPSAS-A3AA1-1-001|MAPSAS-A3AA2-1-001|MAPSAS-AAS3-1-001|MAPSAS-AESA2-1-001|MAPSAS-AESA5-1-001|MAPSAS-ASA-1-1-001|MAPSAS-ASA-4-1-001|MAPSAS-ASA3-1-001",
       "exhibit_ids": [
         "MAPSAH-ASA-2-1-001",
@@ -45403,6 +45199,210 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPSAH-ASA-1-1-001|MAPSAS-A2AA-1-001|MAPSAS-A2AA1-1-001|MAPSAS-A2AA2-1-001|MAPSAS-A2AA5-1-001|MAPSAS-AAS2-1-001|MAPSAS-AESA1-1-001|MAPSAS-AESA4-1-001|MAPSAS-ASA--1-001|MAPSAS-ASA-3-1-001|MAPSAS-ASA2-1-001|MAPSAS-ASA21-1-001",
+      "exhibit_ids": [
+        "MAPSAH-ASA-1-1-001",
+        "MAPSAS-A2AA-1-001",
+        "MAPSAS-A2AA1-1-001",
+        "MAPSAS-A2AA2-1-001",
+        "MAPSAS-A2AA5-1-001",
+        "MAPSAS-AAS2-1-001",
+        "MAPSAS-AESA1-1-001",
+        "MAPSAS-AESA4-1-001",
+        "MAPSAS-ASA--1-001",
+        "MAPSAS-ASA-3-1-001",
+        "MAPSAS-ASA2-1-001",
+        "MAPSAS-ASA21-1-001"
+      ],
+      "title": "AP 2-D Art and Design",
+      "unified_title": "AP 2-D Art and Design",
+      "is_classified": true,
+      "issuing_agency": "College Board",
+      "training_agency": "",
+      "confidence_title": 0.92,
+      "confidence_issuer": 0.99,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP 2-D Art and Design",
+        "AP 2-D Art and Design (Score of 3 or higher)",
+        "AP 2D Art and Design",
+        "AP 2D- Art and Design (Score of 3-5)",
+        "AP Art Studio 2-D (Score 3-5)",
+        "AP Exam: Studio Art - 2D",
+        "AP Exam: Studio Art: 2-D Art and Design",
+        "AP Studio Art - 2-D Design / 2-D Art and Design",
+        "AP Studio Art - 2D",
+        "AP Studio Art - 2D Design",
+        "AP Studio Art- 2D Design"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Humanities (Letters)",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 14,
+      "adopter_names": [
+        "Chaffey College",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of the Canyons",
+        "Foothill College",
+        "Los Angeles Pierce College",
+        "Moreno Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Yuba College"
+      ],
+      "potential": 94,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 108,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "COMM 8",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "ART 22",
+          "credit": "3 hours in Two Dimensional Design"
+        },
+        {
+          "course": "Art (ART) 012",
+          "credit": "3 hours in Two-Dimensional Design"
+        },
+        {
+          "course": "ART C110",
+          "credit": "3 hours in Color and Design: 2-D"
+        },
+        {
+          "course": "ART 110",
+          "credit": "3 hours in Two-Dimensional Design"
+        },
+        {
+          "course": "GE 3 Area 3",
+          "credit": "3 hours in Arts and Humanities"
+        },
+        {
+          "course": "ART 140",
+          "credit": "3 hours in Beginning Design: Two-Dimensional Media"
+        },
+        {
+          "course": "ART 6A",
+          "credit": "3 hours in Beginning Basic Design"
+        },
+        {
+          "course": "Elective Units",
+          "credit": "4.5 hours in Foothill College Elective Units"
+        },
+        {
+          "course": "Local GE Area 8",
+          "credit": "3 hours in Participatory Arts"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAH-ADE-1-001|MAPSAH-ASA--1-001|MAPSAS-AAD-1-001|MAPSAS-AD(O-1-001|MAPSAS-AD(S-1-001|MAPSAS-AE-S3-1-001|MAPSAS-AESA3-1-001|MAPSAS-AESA6-1-001|MAPSAS-ASA-2-1-001|MAPSAS-ASA-5-1-001|MAPSAS-ASAD-1-001",
       "exhibit_ids": [
         "MAPSAH-ADE-1-001",
@@ -46022,6 +46022,140 @@ window.CPL_STATEWIDE = {
         {
           "course": "PHIL 1B",
           "credit": "3 hours in Social and Political Philosophy"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPICI-CITC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-CITC1-1-001"
+      ],
+      "title": "CRIM-11 Introduction to Corrections",
+      "unified_title": "CRIM-11 Introduction to Corrections",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CRIM-11 Introduction to Corrections"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 94,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 95,
+      "credit_recs": [
+        {
+          "course": "CPSC 01",
+          "credit": "4 hours in Introduction to Computer Information Systems"
+        },
+        {
+          "course": "CRIM 11",
+          "credit": "3 hours in Introduction to Corrections"
         }
       ],
       "authoritative_recs": []
@@ -48505,6 +48639,135 @@ window.CPL_STATEWIDE = {
         {
           "course": "BUS 10",
           "credit": "3 hours in Introduction to Business"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-MMF-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MMF-1-001"
+      ],
+      "title": "MUSG-10 MUSIC FUNDAMENTALS",
+      "unified_title": "MUSG-10 MUSIC FUNDAMENTALS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MUSG-10 MUSIC FUNDAMENTALS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 93,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "MUSG 10",
+          "credit": "3 hours in Music Fundamentals"
         }
       ],
       "authoritative_recs": []
@@ -64976,6 +65239,256 @@ window.CPL_STATEWIDE = {
         {
           "course": "MUS 15",
           "credit": "3 hours in Global Music Appreciation"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-MVI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MVI-1-001"
+      ],
+      "title": "MUSA-21A VOICE I",
+      "unified_title": "MUSA-21A VOICE I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MUSA-21A VOICE I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 89,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 90,
+      "credit_recs": [
+        {
+          "course": "MUSA 21A",
+          "credit": "3 hours in Voice I"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-MCPI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MCPI-1-001"
+      ],
+      "title": "MUSA-27A CLASS PIANO I",
+      "unified_title": "MUSA-27A CLASS PIANO I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MUSA-27A CLASS PIANO I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 89,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 90,
+      "credit_recs": [
+        {
+          "course": "MUSA 27B",
+          "credit": "3 hours in Class Piano II"
         }
       ],
       "authoritative_recs": []
@@ -83039,6 +83552,571 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-RTLT-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RTLT-1-001"
+      ],
+      "title": "REGN-01 TRANSITION LVN TO RN",
+      "unified_title": "REGN-01 TRANSITION LVN TO RN",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-01 TRANSITION LVN TO RN"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 78,
+      "credit_recs": [
+        {
+          "course": "REGN 01",
+          "credit": "2 hours in Transition LVN to RN"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-RCST-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RCST-1-001"
+      ],
+      "title": "REGN-02 CLINICAL SKILLS TRANSITION - LVN TO RN",
+      "unified_title": "REGN-02 CLINICAL SKILLS TRANSITION - LVN TO RN",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-02 CLINICAL SKILLS TRANSITION - LVN TO RN"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 78,
+      "credit_recs": [
+        {
+          "course": "REGN 02",
+          "credit": "1 hour in Clinical Skills Transition LVN to RN"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-RFON-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RFON-1-001"
+      ],
+      "title": "REGN-15 FOUNDATIONS OF NURSING",
+      "unified_title": "REGN-15 FOUNDATIONS OF NURSING",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-15 FOUNDATIONS OF NURSING"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 78,
+      "credit_recs": [
+        {
+          "course": "REGN 15",
+          "credit": "9 hours in Foundations of Nursing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-RAMN-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RAMN-1-001"
+      ],
+      "title": "REGN-34 ADVANCED MEDICAL/SURGICAL NURSING AND PEDIATRIC NURSING",
+      "unified_title": "REGN-34 ADVANCED MEDICAL/SURGICAL NURSING AND PEDIATRIC NURSING",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-34 ADVANCED MEDICAL/SURGICAL NURSING AND PEDIATRIC NURSING"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 78,
+      "credit_recs": [
+        {
+          "course": "REGN 34",
+          "credit": "10 hours in Advanced Medical/Surgical Nursing and Pediatric Nursing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-RAMS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RAMS-1-001"
+      ],
+      "title": "REGN-44 ADVANCED MEDICAL SURGICAL NURSING AND PSYCHIATRIC MENTAL HEALTH NURSING",
+      "unified_title": "REGN-44 ADVANCED MEDICAL SURGICAL NURSING AND PSYCHIATRIC MENTAL HEALTH NURSING",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-44 ADVANCED MEDICAL SURGICAL NURSING AND PSYCHIATRIC MENTAL HEALTH NURSING"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Health",
+      "sector": "Health",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 77,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 78,
+      "credit_recs": [
+        {
+          "course": "REGN 44",
+          "credit": "9 hours in Acute Medical/Surgical Nursing and Mental Health Nursing"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPICI-C–CC1-1-001",
       "exhibit_ids": [
         "MAPICI-C–CC1-1-001"
@@ -92124,121 +93202,6 @@ window.CPL_STATEWIDE = {
         }
       ],
       "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPICI-CCCA-1-001",
-      "exhibit_ids": [
-        "MAPICI-CCCA-1-001"
-      ],
-      "title": "Cisco Certified CyberOps Associate",
-      "unified_title": "Cisco Certified CyberOps Associate",
-      "is_classified": true,
-      "issuing_agency": "Cisco",
-      "training_agency": "Cisco Networking Academy",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "Cisco Certified CyberOps Associate Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 2,
-      "adopter_names": [
-        "Merced College",
-        "Santa Ana College"
-      ],
-      "potential": 69,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Credit",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 71,
-      "credit_recs": [
-        {
-          "course": "CMPR 175",
-          "credit": "3 hours in Cybersecurity Operations- CCNA CyberOps"
-        },
-        {
-          "course": "CTIS 19",
-          "credit": "3 hours in Cybersecurity Operations- CCNA CyberOps"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Cybersecurity Operations- CCNA CyberOps",
-          "cid": "ITIS 166"
-        }
-      ]
     },
     {
       "exhibit_id": "MAPICI-CI(T-1-001|MAPICS-CIF(-1-001",
@@ -113552,6 +114515,104 @@ window.CPL_STATEWIDE = {
         {
           "course": "WELD 270B",
           "credit": "3 hours in ADVANCED WELDING"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-WFOS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-WFOS-1-001"
+      ],
+      "title": "WELD-01 FUNDAMENTALS OF SHIELDED METAL ARC WELDING (Formerly WELD-06)",
+      "unified_title": "WELD-01 FUNDAMENTALS OF SHIELDED METAL ARC WELDING (Formerly WELD-06)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "WELD-01 FUNDAMENTALS OF SHIELDED METAL ARC WELDING (Formerly WELD-06)"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 62,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 63,
+      "credit_recs": [
+        {
+          "course": "WELD 01",
+          "credit": "3 hours in Fundamentals of Shielded Metal Arc Welding"
         }
       ],
       "authoritative_recs": []
@@ -156337,6 +157398,87 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPICS-CITI-1-001",
+      "exhibit_ids": [
+        "MAPICS-CITI-1-001"
+      ],
+      "title": "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY",
+      "unified_title": "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CTIS-20 INTRODUCTION TO INFORMATION SYSTEMS SECURITY"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "Coalinga College",
+        "College of the Redwoods",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Sierra College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 46,
+      "credit_recs": [
+        {
+          "course": "CTIS 20",
+          "credit": "3 hours in Introduction to Information Systems Security"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-SMS-1-001",
       "exhibit_ids": [
         "MAPCBEN-SMS-1-001"
@@ -158246,6 +159388,162 @@ window.CPL_STATEWIDE = {
         {
           "course": "HCTM 110",
           "credit": "3 hours in Culinary Production and Operations for Hospitality Professionals"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IFP-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IFP-1-001"
+      ],
+      "title": "INDT-25 FLUID POWER",
+      "unified_title": "INDT-25 FLUID POWER",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-25 FLUID POWER"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 42,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 43,
+      "credit_recs": [
+        {
+          "course": "INDT 25",
+          "credit": "3 hours in Fluid Power"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IIPT-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IIPT-1-001"
+      ],
+      "title": "INDT-41 INDUSTRIAL POWER TRANSMISSION",
+      "unified_title": "INDT-41 INDUSTRIAL POWER TRANSMISSION",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-41 INDUSTRIAL POWER TRANSMISSION"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 42,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Clovis Community College",
+        "College of Alameda",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mission College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Porterville College",
+        "Reedley College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "Santa Ana College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Los Angeles College",
+        "Yuba College"
+      ],
+      "total_addressable": 43,
+      "credit_recs": [
+        {
+          "course": "INDT 41",
+          "credit": "3 hours in Industrial Power Transmission"
         }
       ],
       "authoritative_recs": []
@@ -163571,6 +164869,81 @@ window.CPL_STATEWIDE = {
         {
           "course": "CLDV 30L",
           "credit": "3 hours in Infant/Toddler Practicum"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-VAMF-1-001",
+      "exhibit_ids": [
+        "MAPCXS-VAMF-1-001"
+      ],
+      "title": "VOCN-46A Applied Mathematics for Pharmacology",
+      "unified_title": "VOCN-46A Applied Mathematics for Pharmacology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "VOCN-46A Applied Mathematics for Pharmacology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Allan Hancock College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Calbright College Credit",
+        "Calbright College Non-Credit",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Feather River College",
+        "Gavilan College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Napa Valley College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Southwestern College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "VOCN 46A",
+          "credit": "1 hour in Applied Mathematics for Pharmacology"
         }
       ],
       "authoritative_recs": []
@@ -173364,7 +174737,7 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-AAH1-1-001|MAPSAH-AAHE-1-001|MAPSAS-A-AH-1-001|MAPSAS-A:AH-1-001|MAPSAS-AAH(-1-001|MAPSAS-AAH(1-1-001|MAPSAS-AAH-1-001|MAPSAS-AAH1-1-001|MAPSAS-AAH10-1-001|MAPSAS-AAH12-1-001|MAPSAS-AAH13-1-001|MAPSAS-AAH2-1-001|MAPSAS-AAH4-1-001|MAPSAS-AAH7-1-001|MAPSAS-AAH8-1-001|MAPSAS-AEAH-1-001|MAPSAS-AEAH2-1-001|MAPSAS-AEAH3-1-001|MAPSAS-AEAH4-1-001|MAPSAS-WAEA-1-001",
+      "exhibit_id": "MAPSAH-AAH1-1-001|MAPSAH-AAHE-1-001|MAPSAS-A-AH-1-001|MAPSAS-A:AH-1-001|MAPSAS-AAH(-1-001|MAPSAS-AAH(1-1-001|MAPSAS-AAH(3-1-001|MAPSAS-AAH-1-001|MAPSAS-AAH1-1-001|MAPSAS-AAH10-1-001|MAPSAS-AAH12-1-001|MAPSAS-AAH13-1-001|MAPSAS-AAH2-1-001|MAPSAS-AAH4-1-001|MAPSAS-AAH7-1-001|MAPSAS-AAH8-1-001|MAPSAS-AEAH-1-001|MAPSAS-AEAH2-1-001|MAPSAS-AEAH3-1-001|MAPSAS-AEAH4-1-001|MAPSAS-WAEA-1-001",
       "exhibit_ids": [
         "MAPSAH-AAH1-1-001",
         "MAPSAH-AAHE-1-001",
@@ -173372,6 +174745,7 @@ window.CPL_STATEWIDE = {
         "MAPSAS-A:AH-1-001",
         "MAPSAS-AAH(-1-001",
         "MAPSAS-AAH(1-1-001",
+        "MAPSAS-AAH(3-1-001",
         "MAPSAS-AAH-1-001",
         "MAPSAS-AAH1-1-001",
         "MAPSAS-AAH10-1-001",
@@ -173639,6 +175013,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "ART 002A",
           "credit": "4.5 hours in HISTORY OF ART: HISTORY OF WESTERN ART FROM PREHISTORY THROUGH EARLY CHRISTIANITY"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
         }
       ],
       "authoritative_recs": []
@@ -231565,6 +232943,3592 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-ICRS-1-001",
+      "exhibit_ids": [
+        "MAPCXS-ICRS-1-001"
+      ],
+      "title": "INDT-40 COMMERCIAL REFRIGERATION SYSTEMS",
+      "unified_title": "INDT-40 COMMERCIAL REFRIGERATION SYSTEMS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-40 COMMERCIAL REFRIGERATION SYSTEMS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "INDT 40",
+          "credit": "3 hours in Commercial Refrigeration Systems"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IH-H-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IH-H-1-001"
+      ],
+      "title": "INDT-50 HVAC -- HEATING AND CONTROL SYSTEMS",
+      "unified_title": "INDT-50 HVAC -- HEATING AND CONTROL SYSTEMS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-50 HVAC -- HEATING AND CONTROL SYSTEMS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "INDT 50",
+          "credit": "6 hours in HVAC - Heating and Control Systems"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IH-V-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IH-V-1-001"
+      ],
+      "title": "INDT-51 HVAC -- VENTILATION AND AIR CONDITIONING SYSTEMS",
+      "unified_title": "INDT-51 HVAC -- VENTILATION AND AIR CONDITIONING SYSTEMS",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-51 HVAC -- VENTILATION AND AIR CONDITIONING SYSTEMS"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "INDT 51",
+          "credit": "6 hours in Ventilation and Air Conditioning Systems"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-IRUC-1-001",
+      "exhibit_ids": [
+        "MAPCXS-IRUC-1-001"
+      ],
+      "title": "INDT-52 REFRIGERANT USAGE CERTIFICATION AND R-410A SAFETY",
+      "unified_title": "INDT-52 REFRIGERANT USAGE CERTIFICATION AND R-410A SAFETY",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "INDT-52 REFRIGERANT USAGE CERTIFICATION AND R-410A SAFETY"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Merced College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "INDT 52",
+          "credit": "1 hour in Refrigerant Usage Certification and R-410A Safety"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-A3AA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-A3AA4-1-001"
+      ],
+      "title": "AP 3-D Art and Design (Score of 3 or higher)",
+      "unified_title": "AP 3-D Art and Design (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP 3-D Art and Design (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AB(O-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AB(O-1-001"
+      ],
+      "title": "AP Biology (Score of 3 or higher)",
+      "unified_title": "AP Biology (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Biology (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "2 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACA(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACA(3-1-001"
+      ],
+      "title": "AP Calculus AB (Score of 3 or higher)",
+      "unified_title": "AP Calculus AB (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus AB (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACB(4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACB(4-1-001"
+      ],
+      "title": "AP Calculus BC (Score of 3 or higher)",
+      "unified_title": "AP Calculus BC (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus BC (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACBS5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACBS5-1-001"
+      ],
+      "title": "AP Calculus BC/AB Sub-score (Score of 3 or higher)",
+      "unified_title": "AP Calculus BC/AB Sub-score (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Calculus BC/AB Sub-score (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AC(O3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AC(O3-1-001"
+      ],
+      "title": "AP Chemistry (Score of 3 or higher)",
+      "unified_title": "AP Chemistry (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Chemistry (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "2 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACLA9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACLA9-1-001"
+      ],
+      "title": "AP Chinese Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP Chinese Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Chinese Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACGA7-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACGA7-1-001"
+      ],
+      "title": "AP Comparative Government and Politics (Score of 3 or higher)",
+      "unified_title": "AP Comparative Government and Politics (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Comparative Government and Politics (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACSA12-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACSA12-1-001"
+      ],
+      "title": "AP Computer Science A (Score of 3 or higher)",
+      "unified_title": "AP Computer Science A (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Computer Science A (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACSA13-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACSA13-1-001"
+      ],
+      "title": "AP Computer Science AB (Score of 3 or higher)",
+      "unified_title": "AP Computer Science AB (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Computer Science AB (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ACSP6-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ACSP6-1-001"
+      ],
+      "title": "AP Computer Science Principles (Score of 3 or higher)",
+      "unified_title": "AP Computer Science Principles (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Computer Science Principles (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AD(O2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AD(O2-1-001"
+      ],
+      "title": "AP Drawing (Score of 3 or higher)",
+      "unified_title": "AP Drawing (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Drawing (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA16-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA16-1-001"
+      ],
+      "title": "AP English Language and Composition (Score of 3 or higher)",
+      "unified_title": "AP English Language and Composition (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Language and Composition (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AEL(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEL(2-1-001"
+      ],
+      "title": "AP English Language (Score of 3 or higher)",
+      "unified_title": "AP English Language (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Language (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AELA17-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AELA17-1-001"
+      ],
+      "title": "AP English Literature and Composition (Score of 3 or higher)",
+      "unified_title": "AP English Literature and Composition (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Literature and Composition (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AEL(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEL(3-1-001"
+      ],
+      "title": "AP English Literature (Score of 3 or higher)",
+      "unified_title": "AP English Literature (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP English Literature (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 1A",
+          "credit": "3 hours in English Composition"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AES(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AES(2-1-001"
+      ],
+      "title": "AP Environmental Science (Score of 3 or higher)",
+      "unified_title": "AP Environmental Science (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Environmental Science (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "1 hour in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AEH(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEH(2-1-001"
+      ],
+      "title": "AP European History (Score of 3 or higher) Area 3",
+      "unified_title": "AP European History (Score of 3 or higher) Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP European History (Score of 3 or higher) Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AEH(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AEH(3-1-001"
+      ],
+      "title": "AP European History (Score of 3 or higher) Area 4B",
+      "unified_title": "AP European History (Score of 3 or higher) Area 4B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP European History (Score of 3 or higher) Area 4B"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AFLA9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AFLA9-1-001"
+      ],
+      "title": "AP French Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP French Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP French Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AGLA6-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AGLA6-1-001"
+      ],
+      "title": "AP German Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP German Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP German Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AHG(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AHG(2-1-001"
+      ],
+      "title": "AP Human Geography (Score of 3 or higher)",
+      "unified_title": "AP Human Geography (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Human Geography (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AILA8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AILA8-1-001"
+      ],
+      "title": "AP Italian Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP Italian Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Italian Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AJLA9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AJLA9-1-001"
+      ],
+      "title": "AP Japanese Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP Japanese Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Japanese Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AL(O1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AL(O1-1-001"
+      ],
+      "title": "AP Latin (Score of 3 or higher)",
+      "unified_title": "AP Latin (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Latin (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AM(O2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AM(O2-1-001"
+      ],
+      "title": "AP Macroeconomics (Score of 3 or higher)",
+      "unified_title": "AP Macroeconomics (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Macroeconomics (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AM(O3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AM(O3-1-001"
+      ],
+      "title": "AP Microeconomics (Score of 3 or higher)",
+      "unified_title": "AP Microeconomics (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Microeconomics (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AMT(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AMT(1-1-001"
+      ],
+      "title": "AP Music Theory (Score of 3 or higher)",
+      "unified_title": "AP Music Theory (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Music Theory (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(3-1-001"
+      ],
+      "title": "AP Physics C (Electricity and Magnetism) (Score of 3)",
+      "unified_title": "AP Physics C (Electricity and Magnetism) (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C (Electricity and Magnetism) (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(4-1-001"
+      ],
+      "title": "AP Physics C (Electricity and Magnetism) (Score of 4 or 5)",
+      "unified_title": "AP Physics C (Electricity and Magnetism) (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C (Electricity and Magnetism) (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(5-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(5-1-001"
+      ],
+      "title": "AP Physics C (Mechanics) (Score of 3)",
+      "unified_title": "AP Physics C (Mechanics) (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C (Mechanics) (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-APC(6-1-001",
+      "exhibit_ids": [
+        "MAPSAS-APC(6-1-001"
+      ],
+      "title": "AP Physics C (Mechanics) (Score of 4 or 5)",
+      "unified_title": "AP Physics C (Mechanics) (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Physics C (Mechanics) (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP(O3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP(O3-1-001"
+      ],
+      "title": "AP Psychology (Score of 3 or higher)",
+      "unified_title": "AP Psychology (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Psychology (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AP(O4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AP(O4-1-001"
+      ],
+      "title": "AP Precalculus (Score of 3 or higher)",
+      "unified_title": "AP Precalculus (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Precalculus (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AS(O1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AS(O1-1-001"
+      ],
+      "title": "AP Seminar (Score of 3 or higher)",
+      "unified_title": "AP Seminar (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Seminar (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASL(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASL(2-1-001"
+      ],
+      "title": "AP Spanish Language (Score of 3)",
+      "unified_title": "AP Spanish Language (Score of 3)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Language (Score of 3)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASL(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASL(3-1-001"
+      ],
+      "title": "AP Spanish Language (Score of 4 or 5)",
+      "unified_title": "AP Spanish Language (Score of 4 or 5)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Language (Score of 4 or 5)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA23-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA23-1-001"
+      ],
+      "title": "AP Spanish Literature and Culture (Score of 3 or higher)",
+      "unified_title": "AP Spanish Literature and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Literature and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASL(4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASL(4-1-001"
+      ],
+      "title": "AP Spanish Literature (Score of 3 or higher)",
+      "unified_title": "AP Spanish Literature (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Literature (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AS(O2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AS(O2-1-001"
+      ],
+      "title": "AP Statistics (Score of 3 or higher)",
+      "unified_title": "AP Statistics (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Statistics (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AUGA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUGA2-1-001"
+      ],
+      "title": "AP U.S. Government and Politics (Score of 3 or higher)",
+      "unified_title": "AP U.S. Government and Politics (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP U.S. Government and Politics (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AUH(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUH(1-1-001"
+      ],
+      "title": "AP U.S. History (Score of 3 or higher) Area 3",
+      "unified_title": "AP U.S. History (Score of 3 or higher) Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP U.S. History (Score of 3 or higher) Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AUH(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AUH(2-1-001"
+      ],
+      "title": "AP U.S. History (Score of 3 or higher) Area 4A",
+      "unified_title": "AP U.S. History (Score of 3 or higher) Area 4A",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP U.S. History (Score of 3 or higher) Area 4A"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-AWHM9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-AWHM9-1-001"
+      ],
+      "title": "AP World History: Modern (Score of 3 or higher)",
+      "unified_title": "AP World History: Modern (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP World History: Modern (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IBH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IBH(-1-001"
+      ],
+      "title": "IB Biology HL (Score of 5 or higher)",
+      "unified_title": "IB Biology HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Biology HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ICH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ICH(-1-001"
+      ],
+      "title": "IB Chemistry HL (Score of 5 or higher)",
+      "unified_title": "IB Chemistry HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Chemistry HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IEH(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IEH(2-1-001"
+      ],
+      "title": "IB Economics HL (Score of 5 or higher)",
+      "unified_title": "IB Economics HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Economics HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IGH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IGH(-1-001"
+      ],
+      "title": "IB Geography HL (Score of 5 or higher)",
+      "unified_title": "IB Geography HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Geography HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IH(R2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IH(R2-1-001"
+      ],
+      "title": "IB History (any region) HL (Score of 5 or higher) Area 3",
+      "unified_title": "IB History (any region) HL (Score of 5 or higher) Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB History (any region) HL (Score of 5 or higher) Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IH(R3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IH(R3-1-001"
+      ],
+      "title": "IB History (any region) HL (Score of 5 or higher) Area 4B",
+      "unified_title": "IB History (any region) HL (Score of 5 or higher) Area 4B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB History (any region) HL (Score of 5 or higher) Area 4B"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ILAL14-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ILAL14-1-001"
+      ],
+      "title": "IB Language A: Literature HL (Score of 4 or higher)",
+      "unified_title": "IB Language A: Literature HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Language A: Literature HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ILAL15-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ILAL15-1-001"
+      ],
+      "title": "IB Language A: Language and Literature HL (Score of 4 or higher)",
+      "unified_title": "IB Language A: Language and Literature HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Language A: Language and Literature HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ILB(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ILB(1-1-001"
+      ],
+      "title": "IB Language B (any language) HL (Score of 4 or higher)",
+      "unified_title": "IB Language B (any language) HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Language B (any language) HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IMAA2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IMAA2-1-001"
+      ],
+      "title": "IB Mathematics: Analysis and Approaches HL (Score of 4 or higher)",
+      "unified_title": "IB Mathematics: Analysis and Approaches HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Mathematics: Analysis and Approaches HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IMAA3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IMAA3-1-001"
+      ],
+      "title": "IB Mathematics: Applications and Interpretation HL (Score of 4 or higher)",
+      "unified_title": "IB Mathematics: Applications and Interpretation HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Mathematics: Applications and Interpretation HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IPH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IPH(-1-001"
+      ],
+      "title": "IB Physics HL (Score of 5 or higher)",
+      "unified_title": "IB Physics HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Physics HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-IPH(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-IPH(1-1-001"
+      ],
+      "title": "IB Psychology HL (Score of 5 or higher)",
+      "unified_title": "IB Psychology HL (Score of 5 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Psychology HL (Score of 5 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ITH(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ITH(-1-001"
+      ],
+      "title": "IB Theatre HL (Score of 4 or higher)",
+      "unified_title": "IB Theatre HL (Score of 4 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "IB Theatre HL (Score of 4 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAG(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAG(2-1-001"
+      ],
+      "title": "CLEP American Government (Score of 50 or higher)",
+      "unified_title": "CLEP American Government (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP American Government (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAL(2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAL(2-1-001"
+      ],
+      "title": "CLEP American Literature (Score of 50 or higher)",
+      "unified_title": "CLEP American Literature (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP American Literature (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CAAI33-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CAAI33-1-001"
+      ],
+      "title": "CLEP Analyzing and Interpreting Literature (Score of 50 or higher)",
+      "unified_title": "CLEP Analyzing and Interpreting Literature (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Analyzing and Interpreting Literature (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CB(O-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CB(O-1-001"
+      ],
+      "title": "CLEP Biology (Score of 50 or higher)",
+      "unified_title": "CLEP Biology (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Biology (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CC(O1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CC(O1-1-001"
+      ],
+      "title": "CLEP Calculus (Score of 50 or higher)",
+      "unified_title": "CLEP Calculus (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Calculus (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CC(O2-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CC(O2-1-001"
+      ],
+      "title": "CLEP Chemistry (Score of 50 or higher)",
+      "unified_title": "CLEP Chemistry (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Chemistry (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CCA(3-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CCA(3-1-001"
+      ],
+      "title": "CLEP College Algebra (Score of 50 or higher)",
+      "unified_title": "CLEP College Algebra (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP College Algebra (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CCA-16-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CCA-16-1-001"
+      ],
+      "title": "CLEP College Algebra - Trigonometry (Score of 50 or higher)",
+      "unified_title": "CLEP College Algebra - Trigonometry (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP College Algebra - Trigonometry (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CEL(4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CEL(4-1-001"
+      ],
+      "title": "CLEP English Literature (Score of 50 or higher)",
+      "unified_title": "CLEP English Literature (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP English Literature (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CFA(1-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CFA(1-1-001"
+      ],
+      "title": "CLEP Financial Accounting (Score of 50 or higher)",
+      "unified_title": "CLEP Financial Accounting (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Financial Accounting (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CFLL6-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CFLL6-1-001"
+      ],
+      "title": "CLEP French Language, Level I (Score of 50 or higher)",
+      "unified_title": "CLEP French Language, Level I (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP French Language, Level I (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CFLL7-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CFLL7-1-001"
+      ],
+      "title": "CLEP French Language, Level II (Score of 59 or higher)",
+      "unified_title": "CLEP French Language, Level II (Score of 59 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP French Language, Level II (Score of 59 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CGLL7-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CGLL7-1-001"
+      ],
+      "title": "CLEP German Language, Level I (Score of 50 or higher)",
+      "unified_title": "CLEP German Language, Level I (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP German Language, Level I (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CGLL8-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CGLL8-1-001"
+      ],
+      "title": "CLEP German Language, Level II (Score of 60 or higher)",
+      "unified_title": "CLEP German Language, Level II (Score of 60 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP German Language, Level II (Score of 60 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CHUS64-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CHUS64-1-001"
+      ],
+      "title": "CLEP History, United States I (Score of 50 or higher)",
+      "unified_title": "CLEP History, United States I (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP History, United States I (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CHUS65-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CHUS65-1-001"
+      ],
+      "title": "CLEP History, United States II (Score of 50 or higher)",
+      "unified_title": "CLEP History, United States II (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP History, United States II (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4A",
+          "credit": "3 hours in American Institutions"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CHGA33-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CHGA33-1-001"
+      ],
+      "title": "CLEP Human Growth and Development (Score of 50 or higher)",
+      "unified_title": "CLEP Human Growth and Development (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Human Growth and Development (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CH(O-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CH(O-1-001"
+      ],
+      "title": "CLEP Humanities (Score of 50 or higher)",
+      "unified_title": "CLEP Humanities (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Humanities (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CISA4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CISA4-1-001"
+      ],
+      "title": "CLEP Information Systems and Computer Apps (Score of 50 or higher)",
+      "unified_title": "CLEP Information Systems and Computer Apps (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Information Systems and Computer Apps (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CITE4-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CITE4-1-001"
+      ],
+      "title": "CLEP Introduction to Educational Psychology (Score of 50 or higher)",
+      "unified_title": "CLEP Introduction to Educational Psychology (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Introduction to Educational Psychology (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CIBL9-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CIBL9-1-001"
+      ],
+      "title": "CLEP Introductory Business Law (Score of 50 or higher)",
+      "unified_title": "CLEP Introductory Business Law (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Introductory Business Law (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CIP(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CIP(-1-001"
+      ],
+      "title": "CLEP Introductory Psychology (Score of 50 or higher)",
+      "unified_title": "CLEP Introductory Psychology (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Introductory Psychology (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CIS(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CIS(-1-001"
+      ],
+      "title": "CLEP Introductory Sociology (Score of 50 or higher)",
+      "unified_title": "CLEP Introductory Sociology (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Introductory Sociology (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CNS(-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CNS(-1-001"
+      ],
+      "title": "CLEP Natural Sciences (Score of 50 or higher)",
+      "unified_title": "CLEP Natural Sciences (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Natural Sciences (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 5",
+          "credit": "3 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CP(O-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CP(O-1-001"
+      ],
+      "title": "CLEP Precalculus (Score of 50 or higher)",
+      "unified_title": "CLEP Precalculus (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Precalculus (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 2",
+          "credit": "3 hours in Mathematical Concepts and Quantitative Reasoning"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CPOM92-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CPOM92-1-001"
+      ],
+      "title": "CLEP Principles of Macroeconomics (Score of 50 or higher)",
+      "unified_title": "CLEP Principles of Macroeconomics (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Principles of Macroeconomics (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CPOM93-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CPOM93-1-001"
+      ],
+      "title": "CLEP Principles of Management (Score of 50 or higher)",
+      "unified_title": "CLEP Principles of Management (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Principles of Management (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CPOM94-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CPOM94-1-001"
+      ],
+      "title": "CLEP Principles of Marketing (Score of 50 or higher)",
+      "unified_title": "CLEP Principles of Marketing (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Principles of Marketing (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CPOM95-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CPOM95-1-001"
+      ],
+      "title": "CLEP Principles of Microeconomics (Score of 50 or higher)",
+      "unified_title": "CLEP Principles of Microeconomics (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Principles of Microeconomics (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CSLI40-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CSLI40-1-001"
+      ],
+      "title": "CLEP Spanish Level I (Score of 50 or higher)",
+      "unified_title": "CLEP Spanish Level I (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Spanish Level I (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CSLI41-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CSLI41-1-001"
+      ],
+      "title": "CLEP Spanish Level II (Score of 63 or higher)",
+      "unified_title": "CLEP Spanish Level II (Score of 63 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Spanish Level II (Score of 63 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CSWW26-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CSWW26-1-001"
+      ],
+      "title": "CLEP Spanish with Writing I (Score of 50 or higher)",
+      "unified_title": "CLEP Spanish with Writing I (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Spanish with Writing I (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CSWW27-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CSWW27-1-001"
+      ],
+      "title": "CLEP Spanish with Writing Level II (Score of 63 or higher)",
+      "unified_title": "CLEP Spanish with Writing Level II (Score of 63 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Spanish with Writing Level II (Score of 63 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "6 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CWCI85-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CWCI85-1-001"
+      ],
+      "title": "CLEP Western Civilization I (Score of 50 or higher) Area 3",
+      "unified_title": "CLEP Western Civilization I (Score of 50 or higher) Area 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Western Civilization I (Score of 50 or higher) Area 3"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CWCI86-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CWCI86-1-001"
+      ],
+      "title": "CLEP Western Civilization I (Score of 50 or higher) Area 4B",
+      "unified_title": "CLEP Western Civilization I (Score of 50 or higher) Area 4B",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Western Civilization I (Score of 50 or higher) Area 4B"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-CWCI87-1-001",
+      "exhibit_ids": [
+        "MAPSAS-CWCI87-1-001"
+      ],
+      "title": "CLEP Western Civilization II (Score of 50 or higher)",
+      "unified_title": "CLEP Western Civilization II (Score of 50 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "CLEP Western Civilization II (Score of 50 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 4B",
+          "credit": "3 hours in Social and Behavioral Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPCBEN-PP-1-001",
       "exhibit_ids": [
         "MAPCBEN-PP-1-001"
@@ -233361,6 +238325,62 @@ window.CPL_STATEWIDE = {
       "total_addressable": 0,
       "credit_recs": [],
       "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-MGI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MGI-1-001"
+      ],
+      "title": "MUSA-25A GUITAR I",
+      "unified_title": "MUSA-25A GUITAR I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MUSA-25A GUITAR I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPCXS-RAMA-1-001",
+      "exhibit_ids": [
+        "MAPCXS-RAMA-1-001"
+      ],
+      "title": "REGN-24 ACUTE MEDICAL/SURGICAL AND NURSING OF THE CHILDBEARING FAMILY",
+      "unified_title": "REGN-24 ACUTE MEDICAL/SURGICAL AND NURSING OF THE CHILDBEARING FAMILY",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "REGN-24 ACUTE MEDICAL/SURGICAL AND NURSING OF THE CHILDBEARING FAMILY"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 0,
+      "adopter_names": [],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 0,
+      "credit_recs": [],
+      "authoritative_recs": []
     }
   ],
   "analysis": {
@@ -233372,21 +238392,21 @@ window.CPL_STATEWIDE = {
         "disciplines": 20,
         "ccc_collaborative": 2,
         "industry_certs": 163,
-        "pct": 4.5
+        "pct": 4.4
       },
       {
         "college": "Santa Ana College",
-        "credit_recs": 474,
-        "exhibits": 333,
+        "credit_recs": 473,
+        "exhibits": 332,
         "disciplines": 20,
-        "ccc_collaborative": 148,
-        "industry_certs": 212,
-        "pct": 3.8
+        "ccc_collaborative": 147,
+        "industry_certs": 211,
+        "pct": 3.7
       },
       {
         "college": "Chaffey College",
-        "credit_recs": 453,
-        "exhibits": 389,
+        "credit_recs": 457,
+        "exhibits": 392,
         "disciplines": 18,
         "ccc_collaborative": 59,
         "industry_certs": 93,
@@ -233399,7 +238419,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 449,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "college": "Norco College",
@@ -233417,7 +238437,16 @@ window.CPL_STATEWIDE = {
         "disciplines": 15,
         "ccc_collaborative": 126,
         "industry_certs": 194,
-        "pct": 2.9
+        "pct": 2.8
+      },
+      {
+        "college": "Los Angeles Pierce College",
+        "credit_recs": 354,
+        "exhibits": 299,
+        "disciplines": 12,
+        "ccc_collaborative": 0,
+        "industry_certs": 26,
+        "pct": 2.8
       },
       {
         "college": "San Diego Miramar College",
@@ -233438,13 +238467,22 @@ window.CPL_STATEWIDE = {
         "pct": 2.8
       },
       {
+        "college": "Merced College",
+        "credit_recs": 277,
+        "exhibits": 225,
+        "disciplines": 18,
+        "ccc_collaborative": 15,
+        "industry_certs": 58,
+        "pct": 2.2
+      },
+      {
         "college": "Moreno Valley College",
         "credit_recs": 272,
         "exhibits": 190,
         "disciplines": 16,
         "ccc_collaborative": 13,
         "industry_certs": 106,
-        "pct": 2.2
+        "pct": 2.1
       },
       {
         "college": "Saddleback College",
@@ -233465,15 +238503,6 @@ window.CPL_STATEWIDE = {
         "pct": 2.1
       },
       {
-        "college": "Merced College",
-        "credit_recs": 259,
-        "exhibits": 208,
-        "disciplines": 17,
-        "ccc_collaborative": 16,
-        "industry_certs": 56,
-        "pct": 2.1
-      },
-      {
         "college": "Bakersfield College",
         "credit_recs": 257,
         "exhibits": 142,
@@ -233481,15 +238510,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 90,
         "industry_certs": 156,
         "pct": 2.0
-      },
-      {
-        "college": "Los Angeles Pierce College",
-        "credit_recs": 218,
-        "exhibits": 203,
-        "disciplines": 12,
-        "ccc_collaborative": 0,
-        "industry_certs": 26,
-        "pct": 1.7
       },
       {
         "college": "West Los Angeles College",
@@ -233507,7 +238527,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 8,
         "industry_certs": 8,
-        "pct": 1.6
+        "pct": 1.5
       },
       {
         "college": "Barstow Community College",
@@ -233561,7 +238581,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 1.3
+        "pct": 1.2
       },
       {
         "college": "De Anza College",
@@ -233597,7 +238617,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 14,
         "ccc_collaborative": 0,
         "industry_certs": 57,
-        "pct": 1.2
+        "pct": 1.1
       },
       {
         "college": "Fresno City College",
@@ -233660,7 +238680,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 15,
         "industry_certs": 33,
-        "pct": 1.0
+        "pct": 0.9
       },
       {
         "college": "San Jose City College",
@@ -233723,7 +238743,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 0,
         "industry_certs": 1,
-        "pct": 0.9
+        "pct": 0.8
       },
       {
         "college": "Cuesta College",
@@ -233795,7 +238815,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 0,
         "industry_certs": 3,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "college": "Evergreen Valley College",
@@ -233804,7 +238824,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 10,
         "ccc_collaborative": 0,
         "industry_certs": 10,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "college": "Contra Costa College",
@@ -233903,7 +238923,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "college": "Oxnard College",
@@ -234137,7 +239157,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 9,
         "ccc_collaborative": 0,
         "industry_certs": 16,
-        "pct": 0.4
+        "pct": 0.3
       },
       {
         "college": "Fullerton College",
@@ -234269,30 +239289,30 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5450,
-        "exhibits": 1738,
-        "courses": 293,
+        "credit_recs": 5592,
+        "exhibits": 1836,
+        "courses": 300,
         "colleges": 83,
         "ccc_collaborative": 25,
-        "pct": 43.4
+        "pct": 43.9
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2115,
-        "exhibits": 921,
-        "courses": 1029,
+        "credit_recs": 2122,
+        "exhibits": 928,
+        "courses": 1036,
         "colleges": 52,
         "ccc_collaborative": 499,
-        "pct": 16.8
+        "pct": 16.7
       },
       {
         "discipline": "Public and Protective Services",
-        "credit_recs": 1405,
-        "exhibits": 466,
+        "credit_recs": 1406,
+        "exhibits": 467,
         "courses": 591,
         "colleges": 50,
         "ccc_collaborative": 541,
-        "pct": 11.2
+        "pct": 11.0
       },
       {
         "discipline": "Interdisciplinary Studies",
@@ -234301,7 +239321,7 @@ window.CPL_STATEWIDE = {
         "courses": 22,
         "colleges": 81,
         "ccc_collaborative": 1,
-        "pct": 4.2
+        "pct": 4.1
       },
       {
         "discipline": "Business and Management",
@@ -234314,9 +239334,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 441,
-        "exhibits": 207,
-        "courses": 290,
+        "credit_recs": 446,
+        "exhibits": 212,
+        "courses": 295,
         "colleges": 44,
         "ccc_collaborative": 31,
         "pct": 3.5
@@ -234324,10 +239344,10 @@ window.CPL_STATEWIDE = {
       {
         "discipline": "Information Technology",
         "credit_recs": 379,
-        "exhibits": 218,
-        "courses": 260,
+        "exhibits": 219,
+        "courses": 261,
         "colleges": 44,
-        "ccc_collaborative": 106,
+        "ccc_collaborative": 104,
         "pct": 3.0
       },
       {
@@ -234341,10 +239361,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Fine and Applied Arts",
-        "credit_recs": 226,
-        "exhibits": 186,
-        "courses": 184,
-        "colleges": 31,
+        "credit_recs": 229,
+        "exhibits": 189,
+        "courses": 187,
+        "colleges": 32,
         "ccc_collaborative": 0,
         "pct": 1.8
       },
@@ -234391,7 +239411,7 @@ window.CPL_STATEWIDE = {
         "courses": 60,
         "colleges": 19,
         "ccc_collaborative": 0,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "discipline": "Education",
@@ -234445,7 +239465,7 @@ window.CPL_STATEWIDE = {
         "courses": 13,
         "colleges": 28,
         "ccc_collaborative": 0,
-        "pct": 0.4
+        "pct": 0.3
       },
       {
         "discipline": "Environmental Sciences and Technologies",
@@ -234478,24 +239498,24 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6543,
-        "exhibits": 2040,
+        "credit_recs": 6682,
+        "exhibits": 2135,
         "colleges": 83,
-        "pct": 52.1
+        "pct": 52.5
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3544,
-        "exhibits": 1066,
+        "credit_recs": 3545,
+        "exhibits": 1067,
         "colleges": 79,
-        "pct": 28.2
+        "pct": 27.9
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1871,
-        "exhibits": 1402,
+        "credit_recs": 1889,
+        "exhibits": 1420,
         "colleges": 59,
-        "pct": 14.9
+        "pct": 14.8
       },
       {
         "cpl_type": "Portfolio Review",
@@ -234522,24 +239542,24 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 7697,
-        "exhibits": 2854,
+        "credit_recs": 7855,
+        "exhibits": 2968,
         "colleges": 91,
-        "pct": 61.2
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
         "credit_recs": 2691,
         "exhibits": 1014,
         "colleges": 75,
-        "pct": 21.4
+        "pct": 21.1
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
         "credit_recs": 1307,
         "exhibits": 396,
         "colleges": 40,
-        "pct": 10.4
+        "pct": 10.3
       },
       {
         "mode": "High school coursework (H)",
@@ -234567,7 +239587,7 @@ window.CPL_STATEWIDE = {
         "credit_recs": 82,
         "exhibits": 55,
         "colleges": 10,
-        "pct": 0.7
+        "pct": 0.6
       },
       {
         "mode": "State and federal government training, professional development (G)",
@@ -234594,19 +239614,19 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11021,
-        "exhibits": 4705,
+        "credit_recs": 11181,
+        "exhibits": 4820,
         "colleges": 97,
         "disciplines": 23,
-        "pct": 87.7
+        "pct": 87.9
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1322,
-        "exhibits": 168,
+        "credit_recs": 1320,
+        "exhibits": 167,
         "colleges": 62,
         "disciplines": 11,
-        "pct": 10.5
+        "pct": 10.4
       },
       {
         "category": "Industry/Other",
@@ -234620,9 +239640,9 @@ window.CPL_STATEWIDE = {
     "top_exhibits": [
       {
         "title": "AP Biology (score 3-5): Cal-GETC Area 5B and 5C",
-        "credit_recs": 156,
+        "credit_recs": 158,
         "courses": 2,
-        "colleges": 78,
+        "colleges": 79,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -234691,10 +239711,26 @@ window.CPL_STATEWIDE = {
         "discipline": "Foreign Languages"
       },
       {
+        "title": "AP Calculus AB (score 3-5): Cal-GETC Area 2",
+        "credit_recs": 79,
+        "courses": 1,
+        "colleges": 79,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
         "title": "AP Psychology (score 3-5): Cal-GETC Area 4",
         "credit_recs": 79,
         "courses": 2,
         "colleges": 78,
+        "cpl_type": "Standardized Assessment",
+        "discipline": "Interdisciplinary Studies"
+      },
+      {
+        "title": "AP Art History (score 3-5): Cal-GETC Area 3A or 3B",
+        "credit_recs": 79,
+        "courses": 1,
+        "colleges": 79,
         "cpl_type": "Standardized Assessment",
         "discipline": "Interdisciplinary Studies"
       },
@@ -234737,14 +239773,6 @@ window.CPL_STATEWIDE = {
         "colleges": 78,
         "cpl_type": "Standardized Assessment",
         "discipline": "Fine and Applied Arts"
-      },
-      {
-        "title": "AP Calculus AB (score 3-5): Cal-GETC Area 2",
-        "credit_recs": 78,
-        "courses": 1,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
       },
       {
         "title": "AP Calculus BC (score 3-5): Cal-GETC Area 2",
@@ -234883,14 +239911,6 @@ window.CPL_STATEWIDE = {
         "discipline": "Interdisciplinary Studies"
       },
       {
-        "title": "AP Art History (score 3-5): Cal-GETC Area 3A or 3B",
-        "credit_recs": 78,
-        "courses": 1,
-        "colleges": 78,
-        "cpl_type": "Standardized Assessment",
-        "discipline": "Interdisciplinary Studies"
-      },
-      {
         "title": "IB Biology HL (score 5-7): Cal-GETC Area 5B",
         "credit_recs": 78,
         "courses": 1,
@@ -235020,6 +240040,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-08-11T13:50:32",
-  "total_credit_recs": 12569
+  "generated_at": "2026-08-12T07:54:48",
+  "total_credit_recs": 12727
 };
