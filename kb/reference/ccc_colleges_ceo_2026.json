@@ -3,7 +3,7 @@
   "_source": "20260812_COLL_DIST.xlsx, sheet 'CEO'",
   "_extracted": "2026-08-12 (SkyLink, Session 141)",
   "_value": "The most CURRENT college list we hold — 118 colleges, 76 districts. It confirms the post-Appendix-A renames (Coalinga College, Lemoore College) and is the only source naming North Orange Continuing Education and San Diego College of Continuing Education as colleges with their own CEO.",
-  "_privacy": "⚠ CEO NAME, EMAIL and WEBSITE columns are deliberately NOT extracted here. This repo is PUBLIC. Each address is published on its college's own site, but a compiled directory is a different artifact from 118 separate pages, and nothing in the identity work needs them. Sam has ruled that staff contacts are not PII (2026-08-12), so this is a publication-surface call, not a privacy one — the workbook is committed alongside if the columns are wanted. Ask before extracting them.",
+  "_privacy": "CEO name, title, email and website ARE included. Sam ruled 2026-08-12 that contacts and staff are NOT PII — they are directory information for a public programme — and the Session-144 handoff adds: 'don't invent caution he hasn't asked for.' An earlier pass of this file withheld the columns on a publication-surface argument; that was caution he had not asked for, and it is corrected here. Every value is already published on its own college's website.",
   "_warning_district_names": "⚠ District names here are NOT reliable. 'San Bernadino Community College District' (missing the r) appears on BOTH of that district's rows; the college's own name spells it San Bernardino. Six other district names differ from the 2025 Veteran Sprint tab -- San Mateo vs San Mateo County, Siskiyous vs Siskiyou, Sonoma County CCD vs Sonoma County JUNIOR College District. Trust this file for COLLEGE names; take district names from ccc_coll_dist_2025.json.",
   "_counts": {
     "colleges": 118,
@@ -13,592 +13,1064 @@
     {
       "college_name": "Allan Hancock College",
       "district_name_unreliable": "Allan Hancock Joint Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Walthers",
+      "ceo_first_name": "Kevin",
+      "ceo_email": "kevin.walthers@hancockcollege.edu",
+      "ceo_website": "https://www.hancockcollege.edu/president/index.php"
     },
     {
       "college_name": "American River College",
       "district_name_unreliable": "Los Rios Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Cardoza",
+      "ceo_first_name": "Lisa",
+      "ceo_email": "Cardoza@arc.losrios.edu",
+      "ceo_website": "https://arc.losrios.edu/faculty-and-staff-directory/faculty-and-staff-directory/faculty-and-staff-directory"
     },
     {
       "college_name": "Antelope Valley College",
       "district_name_unreliable": "Antelope Valley Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Zellet",
+      "ceo_first_name": "Jennifer",
+      "ceo_email": "jennifer.zellet@avc.edu",
+      "ceo_website": "https://www.avc.edu/administration/president"
     },
     {
       "college_name": "Bakersfield College",
       "district_name_unreliable": "Kern Community College District",
-      "ceo_title": "Interim President"
+      "ceo_title": "Interim President",
+      "ceo_last_name": "Pfluger",
+      "ceo_first_name": "Stacy",
+      "ceo_email": "president@bakersfieldcollege.edu",
+      "ceo_website": "https://www.bakersfieldcollege.edu/about/administration/president/index.html"
     },
     {
       "college_name": "Barstow Community College",
       "district_name_unreliable": "Barstow Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Bagg",
+      "ceo_first_name": "Eva",
+      "ceo_email": "ebagg@barstow.edu",
+      "ceo_website": "https://www.barstow.edu/about-bcc/office-president"
     },
     {
       "college_name": "Berkeley City College",
       "district_name_unreliable": "Peralta Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Richardson",
+      "ceo_first_name": "Denise",
+      "ceo_email": "drichardson@peralta.edu",
+      "ceo_website": "https://www.berkeleycitycollege.edu/president/"
     },
     {
       "college_name": "Butte College",
       "district_name_unreliable": "Butte-Glenn Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Guleff",
+      "ceo_first_name": "Virginia",
+      "ceo_email": "president@butte.edu",
+      "ceo_website": "https://www.butte.edu/president/"
     },
     {
       "college_name": "Cabrillo College",
       "district_name_unreliable": "Cabrillo Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Capps",
+      "ceo_first_name": "Jenn",
+      "ceo_email": "jecapps@cabrillo.edu",
+      "ceo_website": "https://www.cabrillo.edu/president/"
     },
     {
       "college_name": "Calbright College",
       "district_name_unreliable": null,
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Talwalker Menon",
+      "ceo_first_name": "Ajita",
+      "ceo_email": "ajita@calbright.org",
+      "ceo_website": "https://www.calbright.org/about/team/"
     },
     {
       "college_name": "Cañada College",
       "district_name_unreliable": "San Mateo County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Lopez",
+      "ceo_first_name": "Kim",
+      "ceo_email": "lopezk@smccd.edu",
+      "ceo_website": "https://canadacollege.edu/officeofthepresident/bio.php"
     },
     {
       "college_name": "Cerritos College",
       "district_name_unreliable": "Cerritos Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Fierro",
+      "ceo_first_name": "Jose",
+      "ceo_email": "jfierro@cerritos.edu",
+      "ceo_website": "https://www.cerritos.edu/president/default.htm"
     },
     {
       "college_name": "Cerro Coso Community College",
       "district_name_unreliable": "Kern Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Hancock",
+      "ceo_first_name": "Sean",
+      "ceo_email": "sean.hancock@cerrocoso.edu",
+      "ceo_website": "https://www.cerrocoso.edu/about/welcome-president.html"
     },
     {
       "college_name": "Chabot College",
       "district_name_unreliable": "Chabot-Las Positas Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Cooks",
+      "ceo_first_name": "Jamal",
+      "ceo_email": "jcooks@chabotcollege.edu",
+      "ceo_website": "http://www.chabotcollege.edu/president/?ref=menu-d"
     },
     {
       "college_name": "Chaffey College",
       "district_name_unreliable": "Chaffey Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Shannon",
+      "ceo_first_name": "Henry",
+      "ceo_email": "henry.shannon@chaffey.edu",
+      "ceo_website": "https://www.chaffey.edu/leadership/superintendent-president.php"
     },
     {
       "college_name": "Citrus College",
       "district_name_unreliable": "Citrus Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Schulz",
+      "ceo_first_name": "Greg",
+      "ceo_email": "gschulz@citruscollege.edu",
+      "ceo_website": "https://www.citruscollege.edu/admin/spoffice/"
     },
     {
       "college_name": "City College of San Francisco",
       "district_name_unreliable": "San Francisco Community College District",
-      "ceo_title": "Chancellor"
+      "ceo_title": "Chancellor",
+      "ceo_last_name": "Messina",
+      "ceo_first_name": "Kimberlee",
+      "ceo_email": "chancellor@ccsf.edu",
+      "ceo_website": "https://www.ccsf.edu/about-ccsf/administration/office-chancellor"
     },
     {
       "college_name": "Clovis Community College",
       "district_name_unreliable": "State Center Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Armstrong",
+      "ceo_first_name": "Kim",
+      "ceo_email": "Kim.Armstrong@cloviscollege.edu",
+      "ceo_website": "https://www.cloviscollege.edu/about/president/index.html"
     },
     {
       "college_name": "Coalinga College",
       "district_name_unreliable": "West Hills Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Tweed",
+      "ceo_first_name": "Carla",
+      "ceo_email": "carlatweed@whccd.edu",
+      "ceo_website": "https://coalingacollege.edu/about/administrators/"
     },
     {
       "college_name": "Coastline College",
       "district_name_unreliable": "Coast Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Rodriguez",
+      "ceo_first_name": "Vincent",
+      "ceo_email": "vrodriguez@coastline.edu",
+      "ceo_website": "https://www.coastline.edu/about/college-president.php"
     },
     {
       "college_name": "College of Alameda",
       "district_name_unreliable": "Peralta Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Dixon",
+      "ceo_first_name": "Melanie",
+      "ceo_email": "melaniedixon@peralta.edu",
+      "ceo_website": "https://alameda.edu/leadership"
     },
     {
       "college_name": "College of Marin",
       "district_name_unreliable": "Marin Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Eldridge",
+      "ceo_first_name": "Jonathan",
+      "ceo_email": "jeldridge@marin.edu",
+      "ceo_website": "https://profiles.marin.edu/profiles/Office-of-the-President"
     },
     {
       "college_name": "College of San Mateo",
       "district_name_unreliable": "San Mateo Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Pérez",
+      "ceo_first_name": "Manuel Alejandro",
+      "ceo_email": "csmpresident@smccd.edu",
+      "ceo_website": "https://collegeofsanmateo.edu/president/"
     },
     {
       "college_name": "College of the Canyons",
       "district_name_unreliable": "Santa Clarita Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Ruys",
+      "ceo_first_name": "Jasmine",
+      "ceo_email": "jasmine.ruys@canyons.edu",
+      "ceo_website": "https://www.canyons.edu/administration/president/index.php"
     },
     {
       "college_name": "College of the Desert",
       "district_name_unreliable": "Desert Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Martinez Garcia",
+      "ceo_first_name": "Val",
+      "ceo_email": "vmartinezgarcia@collegeofthedesert.edu",
+      "ceo_website": "https://collegeofthedesert.edu/community/pres/pres-bio.php"
     },
     {
       "college_name": "College of the Redwoods",
       "district_name_unreliable": "Redwoods Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Flamer",
+      "ceo_first_name": "Keith",
+      "ceo_email": "keith-flamer@redwoods.edu",
+      "ceo_website": "https://www.redwoods.edu/about/president/index.php"
     },
     {
       "college_name": "College of the Sequoias",
       "district_name_unreliable": "Sequoias Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Calvin",
+      "ceo_first_name": "Brent",
+      "ceo_email": "brentc@cos.edu",
+      "ceo_website": "https://www.cos.edu/en-us/administration/governance/superintendent-president"
     },
     {
       "college_name": "College of the Siskiyous",
       "district_name_unreliable": "Siskiyous Joint Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Perlas",
+      "ceo_first_name": "Char",
+      "ceo_email": "cperlas@siskiyous.edu",
+      "ceo_website": "http://www.siskiyous.edu/president/"
     },
     {
       "college_name": "Columbia College",
       "district_name_unreliable": "Yosemite Community College District",
-      "ceo_title": "Interim President"
+      "ceo_title": "Interim President",
+      "ceo_last_name": "Redwing",
+      "ceo_first_name": "Chad",
+      "ceo_email": "redwingc@yosemite.edu",
+      "ceo_website": "https://www.gocolumbia.edu/president/default.php"
     },
     {
       "college_name": "Compton College",
       "district_name_unreliable": "Compton Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Curry",
+      "ceo_first_name": "Keith",
+      "ceo_email": "kcurry@compton.edu",
+      "ceo_website": "https://www.compton.edu/about/presidentceo/index.aspx"
     },
     {
       "college_name": "Contra Costa College",
       "district_name_unreliable": "Contra Costa Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Rogers",
+      "ceo_first_name": "Kimberly",
+      "ceo_email": "krogers@contracosta.edu",
+      "ceo_website": "https://www.contracosta.edu/about/administration/"
     },
     {
       "college_name": "Copper Mountain College",
       "district_name_unreliable": "Copper Mountain Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Otten",
+      "ceo_first_name": "Daren",
+      "ceo_email": "dotten@cmccd.edu",
+      "ceo_website": "https://www.cmccd.edu/campus/operations/office-of-the-president/"
     },
     {
       "college_name": "Cosumnes River College",
       "district_name_unreliable": "Los Rios Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Bush",
+      "ceo_first_name": "Edward",
+      "ceo_email": "bushe@crc.losrios.edu",
+      "ceo_website": "https://crc.losrios.edu/about-us/contact-us/crc-college-administration"
     },
     {
       "college_name": "Crafton Hills College",
       "district_name_unreliable": "San Bernadino Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Horan",
+      "ceo_first_name": "Kevin",
+      "ceo_email": "khoran@craftonhills.edu",
+      "ceo_website": "https://www.craftonhills.edu/about-chc/college-administration.php"
     },
     {
       "college_name": "Cuesta College",
       "district_name_unreliable": "San Luis Obispo County Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Stearns",
+      "ceo_first_name": "Jill",
+      "ceo_email": "president@cuesta.edu",
+      "ceo_website": "https://www.cuesta.edu/about/leadership/president/index.html"
     },
     {
       "college_name": "Cuyamaca College",
       "district_name_unreliable": "Grossmont-Cuyamaca Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Robinson",
+      "ceo_first_name": "Jessica",
+      "ceo_email": "jessica.robinson@gcccd.edu",
+      "ceo_website": "https://www.cuyamaca.edu/administrative-services/president/index.php"
     },
     {
       "college_name": "Cypress College",
       "district_name_unreliable": "North Orange County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Thayer",
+      "ceo_first_name": "Scott",
+      "ceo_email": "kvaldez@cypresscollege.edu",
+      "ceo_website": "https://www.cypresscollege.edu/office-of-the-president/"
     },
     {
       "college_name": "De Anza College",
       "district_name_unreliable": "Foothill-De Anza Community College District",
-      "ceo_title": "Acting President"
+      "ceo_title": "Acting President",
+      "ceo_last_name": "Wain Coon",
+      "ceo_first_name": "David",
+      "ceo_email": null,
+      "ceo_website": "https://www.deanza.edu/president/"
     },
     {
       "college_name": "Diablo Valley College",
       "district_name_unreliable": "Contra Costa Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Chahal",
+      "ceo_first_name": "Monica",
+      "ceo_email": "mchahal@dvc.edu",
+      "ceo_website": "https://www.dvc.edu/about/administration/president.html"
     },
     {
       "college_name": "East Los Angeles College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Perez",
+      "ceo_first_name": "Monte",
+      "ceo_email": "presidentsoffice@elac.edu",
+      "ceo_website": "https://www.elac.edu/about/administration/members"
     },
     {
       "college_name": "El Camino College",
       "district_name_unreliable": "El Camino Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Thames",
+      "ceo_first_name": "Brenda",
+      "ceo_email": "presidentsoffice@elcamino.edu",
+      "ceo_website": "https://www.elcamino.edu/leadership/president/staff-directory.aspx"
     },
     {
       "college_name": "Evergreen Valley College",
       "district_name_unreliable": "San Jose-Evergreen Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "López",
+      "ceo_first_name": "Vinicio",
+      "ceo_email": "Penny.Garibay@evc.edu",
+      "ceo_website": "https://www.evc.edu/support-resources/campus-administration/presidents-office"
     },
     {
       "college_name": "Feather River College",
       "district_name_unreliable": "Feather River Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Trutna",
+      "ceo_first_name": "Kevin",
+      "ceo_email": "ktrutna@frc.edu",
+      "ceo_website": "https://www.frc.edu/administration"
     },
     {
       "college_name": "Folsom Lake College",
       "district_name_unreliable": "Los Rios Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Pimentel",
+      "ceo_first_name": "Artemio",
+      "ceo_email": "pimentel@flc.losrios.edu",
+      "ceo_website": "https://flc.losrios.edu/about-us/contact-us/college-administration"
     },
     {
       "college_name": "Foothill College",
       "district_name_unreliable": "Foothill-De Anza Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Whalen",
+      "ceo_first_name": "Kristina",
+      "ceo_email": "whalenkristina@fhda.edu",
+      "ceo_website": "https://foothill.edu/president/"
     },
     {
       "college_name": "Fresno City College",
       "district_name_unreliable": "State Center Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Whisenhunt",
+      "ceo_first_name": "Denise",
+      "ceo_email": "denise.whisenhunt@fresnocitycollege.edu",
+      "ceo_website": "https://www.fresnocitycollege.edu/faculty-and-staff/administrative-offices/office-of-the-president.html"
     },
     {
       "college_name": "Fullerton College",
       "district_name_unreliable": "North Orange County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Olivo",
+      "ceo_first_name": "Cynthia",
+      "ceo_email": "colivo@fullcoll.edu",
+      "ceo_website": "https://www.fullcoll.edu/president/"
     },
     {
       "college_name": "Gavilan College",
       "district_name_unreliable": "Gavilan Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Avila",
+      "ceo_first_name": "Pedro",
+      "ceo_email": "pedroavila@gavilan.edu",
+      "ceo_website": "https://www.gavilan.edu/about/president/index.php"
     },
     {
       "college_name": "Glendale Community College",
       "district_name_unreliable": "Glendale Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Cornner",
+      "ceo_first_name": "Ryan",
+      "ceo_email": "rcornner@glendale.edu",
+      "ceo_website": "https://www.glendale.edu/about-gcc/administration/superintendent-president"
     },
     {
       "college_name": "Golden West College",
       "district_name_unreliable": "Coast Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Randall",
+      "ceo_first_name": "Meridith",
+      "ceo_email": "mrandall12@gwc.cccd.edu",
+      "ceo_website": "https://www.goldenwestcollege.edu/about/office-of-the-president/index.html"
     },
     {
       "college_name": "Grossmont College",
       "district_name_unreliable": "Grossmont-Cuyamaca Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Luster",
+      "ceo_first_name": "Pamela",
+      "ceo_email": "pamela.luster@gcccd.edu",
+      "ceo_website": "https://www.grossmont.edu/about-grossmont/office-of-the-president.php"
     },
     {
       "college_name": "Hartnell College",
       "district_name_unreliable": "Hartnell Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Gutierrez",
+      "ceo_first_name": "Michael",
+      "ceo_email": "mjgutierrez@hartnell.edu",
+      "ceo_website": "https://www.hartnell.edu/about/president/index.html"
     },
     {
       "college_name": "Imperial Valley College",
       "district_name_unreliable": "Imperial Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Johnson",
+      "ceo_first_name": "Lennor",
+      "ceo_email": "lennor.johnson@imperial.edu",
+      "ceo_website": "https://www.imperial.edu/about/presidents-office/"
     },
     {
       "college_name": "Irvine Valley College",
       "district_name_unreliable": "South Orange County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Hernandez",
+      "ceo_first_name": "John",
+      "ceo_email": "johnhernandez@ivc.edu",
+      "ceo_website": "https://www.ivc.edu/president"
     },
     {
       "college_name": "Lake Tahoe Community College",
       "district_name_unreliable": "Lake Tahoe Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "DeFranco",
+      "ceo_first_name": "Jeff",
+      "ceo_email": "president@ltcc.edu",
+      "ceo_website": "https://www.ltcc.edu/about/President/index.php"
     },
     {
       "college_name": "Laney College",
       "district_name_unreliable": "Peralta Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Opsata",
+      "ceo_first_name": "Rebecca",
+      "ceo_email": "ropsata@peralta.edu",
+      "ceo_website": "https://laney.edu/president/"
     },
     {
       "college_name": "Las Positas College",
       "district_name_unreliable": "Chabot-Las Positas Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Foster",
+      "ceo_first_name": "Dyrell",
+      "ceo_email": "dfoster@laspositascollege.edu",
+      "ceo_website": "http://www.laspositascollege.edu/president/index.php"
     },
     {
       "college_name": "Lassen College",
       "district_name_unreliable": "Lassen Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Camacho",
+      "ceo_first_name": "Carie",
+      "ceo_email": "ccamacho@lassencollege.edu",
+      "ceo_website": "https://www.lassencollege.edu/about-lcc/presidents-message/"
     },
     {
       "college_name": "Lemoore College",
       "district_name_unreliable": "West Hills Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Preston",
+      "ceo_first_name": "James",
+      "ceo_email": "jamespreston@whccd.edu",
+      "ceo_website": "https://www.westhillscollege.com/lemoore/about/administrators/"
     },
     {
       "college_name": "Long Beach City College",
       "district_name_unreliable": "Long Beach Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Muñoz",
+      "ceo_first_name": "Mike",
+      "ceo_email": "mmunoz@lbcc.edu",
+      "ceo_website": "https://www.lbcc.edu/office-president"
     },
     {
       "college_name": "Los Angeles City College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Gebru",
+      "ceo_first_name": "Amanuel",
+      "ceo_email": "gebrua@lacitycollege.edu",
+      "ceo_website": "https://www.lacitycollege.edu/About/Presidents-Office/Department-Home"
     },
     {
       "college_name": "Los Angeles Harbor College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Dorado",
+      "ceo_first_name": "Luis",
+      "ceo_email": "doradol@lahc.edu",
+      "ceo_website": "https://www.lahc.edu/offices/president"
     },
     {
       "college_name": "Los Angeles Mission College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Ornelas",
+      "ceo_first_name": "Armida",
+      "ceo_email": "ornelaao@lamission.edu",
+      "ceo_website": "https://www.lamission.edu/offices/president"
     },
     {
       "college_name": "Los Angeles Pierce College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Aguiar",
+      "ceo_first_name": "Aracely",
+      "ceo_email": "aguiara@piercecollege.edu",
+      "ceo_website": "https://www.piercecollege.edu/pierce_president.asp"
     },
     {
       "college_name": "Los Angeles Southwest College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Culpepper",
+      "ceo_first_name": "Anthony",
+      "ceo_email": "lascpresidentsoffice@lasc.edu",
+      "ceo_website": "https://www.lasc.edu/about-lasc/administration/president/president"
     },
     {
       "college_name": "Los Angeles Trade-Tech College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "McQuarters",
+      "ceo_first_name": "Alfred",
+      "ceo_email": "mcquarad@lattc.edu",
+      "ceo_website": "https://www.lattc.edu/about/administrative-offices/president"
     },
     {
       "college_name": "Los Angeles Valley College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Gribbons",
+      "ceo_first_name": "Barry",
+      "ceo_email": "gribbobc@lavc.edu",
+      "ceo_website": "https://www.lavc.edu/presidentsoffice/index.aspx"
     },
     {
       "college_name": "Los Medanos College",
       "district_name_unreliable": "Contra Costa Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Ralston",
+      "ceo_first_name": "Pamela",
+      "ceo_email": "pralston@losmedanos.edu",
+      "ceo_website": "https://www.losmedanos.edu/president/index.aspx"
     },
     {
       "college_name": "Madera Community College",
       "district_name_unreliable": "State Center Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Reyna",
+      "ceo_first_name": "Angel",
+      "ceo_email": "angel.reyna@scccd.edu",
+      "ceo_website": "https://www.maderacenter.com/about/administration/index.html"
     },
     {
       "college_name": "Mendocino College",
       "district_name_unreliable": "Mendocino-Lake Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Karas",
+      "ceo_first_name": "Timothy",
+      "ceo_email": "tkaras@mendocino.edu",
+      "ceo_website": "https://www.mendocino.edu/about/leadership/presidents-office"
     },
     {
       "college_name": "Merced College",
       "district_name_unreliable": "Merced Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Vitelli",
+      "ceo_first_name": "Chris",
+      "ceo_email": "chris.vitelli@mccd.edu",
+      "ceo_website": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/"
     },
     {
       "college_name": "Merritt College",
       "district_name_unreliable": "Peralta Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Johnson",
+      "ceo_first_name": "David",
+      "ceo_email": "dmjohnson@peralta.edu",
+      "ceo_website": "https://www.merritt.edu/presidents-office/"
     },
     {
       "college_name": "MiraCosta College",
       "district_name_unreliable": "MiraCosta Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Cooke",
+      "ceo_first_name": "Sunita",
+      "ceo_email": "scooke@miracosta.edu",
+      "ceo_website": "https://www.miracosta.edu/office-of-the-president/"
     },
     {
       "college_name": "Mission College",
       "district_name_unreliable": "West Valley-Mission Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Awan",
+      "ceo_first_name": "Seher",
+      "ceo_email": "seher.awan@missioncollege.edu",
+      "ceo_website": "https://missioncollege.edu/about/president/"
     },
     {
       "college_name": "Modesto Junior College",
       "district_name_unreliable": "Yosemite Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Sanders",
+      "ceo_first_name": "Brian",
+      "ceo_email": "SandersB@yosemite.edu",
+      "ceo_website": "https://www.mjc.edu/administration/president/index.html"
     },
     {
       "college_name": "Monterey Peninsula College",
       "district_name_unreliable": "Monterey Peninsula Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Fulbright III",
+      "ceo_first_name": "Marshall",
+      "ceo_email": "mfulbright@mpc.edu",
+      "ceo_website": "https://www.mpc.edu/about/leadership/office-of-the-president.html"
     },
     {
       "college_name": "Moorpark College",
       "district_name_unreliable": "Ventura County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Sokenu",
+      "ceo_first_name": "Julius",
+      "ceo_email": "jsokenu@vcccd.edu",
+      "ceo_website": "https://www.moorparkcollege.edu/departments/administrative/presidents-office"
     },
     {
       "college_name": "Moreno Valley College",
       "district_name_unreliable": "Riverside Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Besikof",
+      "ceo_first_name": "Rudy",
+      "ceo_email": "rudy.besikof@mvc.edu",
+      "ceo_website": "https://mvc.edu/admin/departments/president.php"
     },
     {
       "college_name": "Mt. San Antonio College",
       "district_name_unreliable": "Mt. San Antonio Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Garcia",
+      "ceo_first_name": "Martha",
+      "ceo_email": "martha.garcia@mtsac.edu",
+      "ceo_website": "https://www.mtsac.edu/president/index.html"
     },
     {
       "college_name": "Mt. San Jacinto College",
       "district_name_unreliable": "Mt. San Jacinto Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Dotson",
+      "ceo_first_name": "Tawny",
+      "ceo_email": "tdotson@msjc.edu",
+      "ceo_website": "https://www.msjc.edu/collegeinformation/leadership.html"
     },
     {
       "college_name": "Napa Valley College",
       "district_name_unreliable": "Napa Valley Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Pitman",
+      "ceo_first_name": "Gayle",
+      "ceo_email": "gayle.pitman@napavalley.edu",
+      "ceo_website": "https://www.napavalley.edu/about/office-of-the-president/index.html"
     },
     {
       "college_name": "Norco College",
       "district_name_unreliable": "Riverside Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Green",
+      "ceo_first_name": "Monica",
+      "ceo_email": "monica.green@norcocollege.edu",
+      "ceo_website": "https://www.norcocollege.edu/about/president/"
     },
     {
       "college_name": "North Orange Continuing Education",
       "district_name_unreliable": "North Orange County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Purtell",
+      "ceo_first_name": "Valentina",
+      "ceo_email": "vpurtell@noce.edu",
+      "ceo_website": "https://noce.edu/about/administration/presidents-office/"
     },
     {
       "college_name": "Ohlone College",
       "district_name_unreliable": "Ohlone Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Sasaki",
+      "ceo_first_name": "Charles",
+      "ceo_email": "csasaki@ohlone.edu",
+      "ceo_website": "https://www.ohlone.edu/president"
     },
     {
       "college_name": "Orange Coast College",
       "district_name_unreliable": "Coast Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Suarez",
+      "ceo_first_name": "Angelica (Lorea)",
+      "ceo_email": "angelica.suarez@occ.cccd.edu",
+      "ceo_website": "https://orangecoastcollege.edu/about/president/index.html"
     },
     {
       "college_name": "Oxnard College",
       "district_name_unreliable": "Ventura County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Gonzalez",
+      "ceo_first_name": "Roberto",
+      "ceo_email": "rogonzalez@vcccd.edu",
+      "ceo_website": "https://www.oxnardcollege.edu/departments/administrative/office-of-the-president"
     },
     {
       "college_name": "Palo Verde College",
       "district_name_unreliable": "Palo Verde Community College District",
-      "ceo_title": "Interim Superintendent/President"
+      "ceo_title": "Interim Superintendent/President",
+      "ceo_last_name": "Knudson",
+      "ceo_first_name": "Ed",
+      "ceo_email": "ed.knudson@paloverde.edu",
+      "ceo_website": "https://www.paloverde.edu/president/index.html"
     },
     {
       "college_name": "Palomar College",
       "district_name_unreliable": "Palomar Community College District",
-      "ceo_title": "Interim Superintendent/President"
+      "ceo_title": "Interim Superintendent/President",
+      "ceo_last_name": "Recalde",
+      "ceo_first_name": "Tina",
+      "ceo_email": "officeofthepresident@palomar.edu",
+      "ceo_website": "https://www.palomar.edu/presidentsoffice/"
     },
     {
       "college_name": "Pasadena City College",
       "district_name_unreliable": "Pasadena Area Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Gomez",
+      "ceo_first_name": "Jose",
+      "ceo_email": "pccprez@pasadena.edu",
+      "ceo_website": "https://pasadena.edu/about/president/index.php"
     },
     {
       "college_name": "Porterville College",
       "district_name_unreliable": "Kern Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Monarrez",
+      "ceo_first_name": "Primavera",
+      "ceo_email": "pmonarrez@portervillecollege.edu",
+      "ceo_website": "https://www.portervillecollege.edu/about-pc/presidents-message/index.html"
     },
     {
       "college_name": "Reedley College",
       "district_name_unreliable": "State Center Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Buckley",
+      "ceo_first_name": "Jerry",
+      "ceo_email": "jerry.buckley@reedleycollege.edu",
+      "ceo_website": "https://www.reedleycollege.edu/about/administration/presidents-message.html"
     },
     {
       "college_name": "Rio Hondo College",
       "district_name_unreliable": "Rio Hondo Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Moya-Miller",
+      "ceo_first_name": "Don",
+      "ceo_email": "DMoya-Miller@riohondo.edu",
+      "ceo_website": "https://www.riohondo.edu/administration/president/"
     },
     {
       "college_name": "Riverside City College",
       "district_name_unreliable": "Riverside Community College District",
-      "ceo_title": "Interim President"
+      "ceo_title": "Interim President",
+      "ceo_last_name": "Bishop",
+      "ceo_first_name": "Eric",
+      "ceo_email": "president@rcc.edu",
+      "ceo_website": "https://www.rcc.edu/about/presidents-office.html"
     },
     {
       "college_name": "Sacramento City College",
       "district_name_unreliable": "Los Rios Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Garcia",
+      "ceo_first_name": "Albert",
+      "ceo_email": "garciaaj@scc.losrios.edu",
+      "ceo_website": "https://scc.losrios.edu/presidents-message/presidents-message/presidents-message"
     },
     {
       "college_name": "Saddleback College",
       "district_name_unreliable": "South Orange County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Cordova",
+      "ceo_first_name": "Lonita",
+      "ceo_email": "scpresident@saddleback.edu",
+      "ceo_website": "https://www.saddleback.edu/administration/office-president"
     },
     {
       "college_name": "San Bernardino Valley College",
       "district_name_unreliable": "San Bernadino Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Contreras",
+      "ceo_first_name": "Gilbert",
+      "ceo_email": "gcontreras@valleycollege.edu",
+      "ceo_website": "https://www.valleycollege.edu/about-sbvc/office-of-president/index.php"
     },
     {
       "college_name": "San Diego City College",
       "district_name_unreliable": "San Diego Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Shabazz",
+      "ceo_first_name": "Ricky",
+      "ceo_email": "rshabazz@sdccd.edu",
+      "ceo_website": "https://www.sdcity.edu/about/leadership/president.aspx"
     },
     {
       "college_name": "San Diego College of Continuing Education",
       "district_name_unreliable": "San Diego Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "King",
+      "ceo_first_name": "Tina",
+      "ceo_email": "sdccepresident@sdccd.edu",
+      "ceo_website": "https://sdcce.edu/organization/president"
     },
     {
       "college_name": "San Diego Mesa College",
       "district_name_unreliable": "San Diego Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Hands",
+      "ceo_first_name": "Ashanti",
+      "ceo_email": "ahands@sdccd.edu",
+      "ceo_website": "https://www.sdmesa.edu/about-mesa/office-of-the-president/index.shtml/"
     },
     {
       "college_name": "San Diego Miramar College",
       "district_name_unreliable": "San Diego Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Lundburg",
+      "ceo_first_name": "Wesley",
+      "ceo_email": "wlundburg@sdccd.edu",
+      "ceo_website": "https://sdmiramar.edu/services/president"
     },
     {
       "college_name": "San Joaquin Delta College",
       "district_name_unreliable": "San Joaquin Delta Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Aguilera Lawrenson",
+      "ceo_first_name": "Lisa",
+      "ceo_email": "lisa.lawrenson@deltacollege.edu",
+      "ceo_website": "https://deltacollege.edu/department/presidents-office"
     },
     {
       "college_name": "San Jose City College",
       "district_name_unreliable": "San Jose-Evergreen Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Flores",
+      "ceo_first_name": "Marilyn",
+      "ceo_email": "SJCCPres@sjcc.edu",
+      "ceo_website": "https://www.sjcc.edu/about/presidents-office.aspx"
     },
     {
       "college_name": "Santa Ana College",
       "district_name_unreliable": "Rancho Santiago Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Nery",
+      "ceo_first_name": "Annebelle",
+      "ceo_email": "nery_annebelle@sac.edu",
+      "ceo_website": "https://sac.edu/presidentoffice/"
     },
     {
       "college_name": "Santa Barbara City College",
       "district_name_unreliable": "Santa Barbara Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Endrijonas",
+      "ceo_first_name": "Erika",
+      "ceo_email": "endrijonas@sbcc.edu",
+      "ceo_website": "https://www.sbcc.edu/presidentsoffice/about.php"
     },
     {
       "college_name": "Santa Monica College",
       "district_name_unreliable": "Santa Monica Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Jeffery",
+      "ceo_first_name": "Kathryn",
+      "ceo_email": "jeffery_kathryn@smc.edu",
+      "ceo_website": "https://www.smc.edu/directory/jeffery-kathryn.php"
     },
     {
       "college_name": "Santa Rosa Junior College",
       "district_name_unreliable": "Sonoma County Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Garcia",
+      "ceo_first_name": "Angelica",
+      "ceo_email": "angelicagarcia@santarosa.edu",
+      "ceo_website": "https://president.santarosa.edu/biography-dr-angelica-garcia-presidentsuperintendent"
     },
     {
       "college_name": "Santiago Canyon College",
       "district_name_unreliable": "Rancho Santiago Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Kim",
+      "ceo_first_name": "Jeannie",
+      "ceo_email": "kim_jeannie@sccollege.edu",
+      "ceo_website": "https://www.sccollege.edu/campus/administration/SitePages/Biography.aspx"
     },
     {
       "college_name": "Shasta College",
       "district_name_unreliable": "Shasta-Tehama-Trinity Joint Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Nigro",
+      "ceo_first_name": "Frank",
+      "ceo_email": "presidentsoffice@shastacollege.edu",
+      "ceo_website": "https://www.shastacollege.edu/about/leadership-organization/president/"
     },
     {
       "college_name": "Sierra College",
       "district_name_unreliable": "Sierra Joint Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Duncan",
+      "ceo_first_name": "William",
+      "ceo_email": "wduncan@sierracollege.edu",
+      "ceo_website": "https://www.sierracollege.edu/administration/presidents-office/"
     },
     {
       "college_name": "Skyline College",
       "district_name_unreliable": "San Mateo County Community College",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Carter",
+      "ceo_first_name": "Nate",
+      "ceo_email": "skypresidentsoffice@smccd.edu",
+      "ceo_website": "https://skylinecollege.edu/presidentsoffice/"
     },
     {
       "college_name": "Solano Community College",
       "district_name_unreliable": "Solano Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Sims Butler",
+      "ceo_first_name": "Kellie",
+      "ceo_email": "Tiffany.Casimere@solano.edu",
+      "ceo_website": "https://solano.omniweb.cloud/administrative-offices/superintendent-president/index.php"
     },
     {
       "college_name": "Southwestern College",
       "district_name_unreliable": "Southwestern Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Sanchez",
+      "ceo_first_name": "Mark",
+      "ceo_email": "msanchez@swccd.edu",
+      "ceo_website": "https://www.swccd.edu/about-swc/leadership/office-of-the-superintendent-president/index.aspx"
     },
     {
       "college_name": "Taft College",
       "district_name_unreliable": "West Kern Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Aunai",
+      "ceo_first_name": "Sam",
+      "ceo_email": null,
+      "ceo_website": "https://www.taftcollege.edu/about/campus-leadership/president/index.php"
     },
     {
       "college_name": "Ventura College",
       "district_name_unreliable": "Ventura County Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Lewis",
+      "ceo_first_name": "Luca",
+      "ceo_email": "vcpresoffice@vcccd.edu",
+      "ceo_website": "https://www.venturacollege.edu/departments/administrative/president"
     },
     {
       "college_name": "Victor Valley College",
       "district_name_unreliable": "Victor Valley Community College District",
-      "ceo_title": "Superintendent/President"
+      "ceo_title": "Superintendent/President",
+      "ceo_last_name": "Walden",
+      "ceo_first_name": "Daniel",
+      "ceo_email": "daniel.walden@vvc.edu",
+      "ceo_website": "https://www.vvc.edu/presidents-office-welcome-message"
     },
     {
       "college_name": "West Los Angeles College",
       "district_name_unreliable": "Los Angeles Community College District",
-      "ceo_title": "Interim President"
+      "ceo_title": "Interim President",
+      "ceo_last_name": "Jordan",
+      "ceo_first_name": "Matthew",
+      "ceo_email": "jordanmt@wlac.edu",
+      "ceo_website": "https://www.wlac.edu/office-president/index.aspx"
     },
     {
       "college_name": "West Valley College",
       "district_name_unreliable": "West Valley-Mission Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Taylor-Mendoza",
+      "ceo_first_name": "Jennifer",
+      "ceo_email": "j.taylormendoza@westvalley.edu",
+      "ceo_website": "https://www.westvalley.edu/about/administration/"
     },
     {
       "college_name": "Woodland Community College",
       "district_name_unreliable": "Yuba Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Navarette",
+      "ceo_first_name": "Lizette",
+      "ceo_email": "lnavarette@yccd.edu",
+      "ceo_website": "https://wcc.yccd.edu/about/college-administration/"
     },
     {
       "college_name": "Yuba College",
       "district_name_unreliable": "Yuba Community College District",
-      "ceo_title": "President"
+      "ceo_title": "President",
+      "ceo_last_name": "Dotson",
+      "ceo_first_name": "Tawny",
+      "ceo_email": "tdotson@yccd.edu",
+      "ceo_website": "https://yc.yccd.edu/about/office-of-the-president/"
     }
   ]
 }
