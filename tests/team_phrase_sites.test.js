@@ -287,10 +287,13 @@ function makeWin(opts) {
     const r = fs.readFileSync("raci.js", "utf8");
     check("phrase admin: no longer hardcoded to id=eq.raci",
       !/team_access\?id=eq\.raci/.test(r));
-    check("phrase admin: every phrase is selectable, so a site phrase can be rotated",
-      /PHRASES = \[[\s\S]{0,600}id: "fin"/.test(r));
+    // The editor is its own tab now (team_phrases.js) — these two properties
+    // still matter, they just live there. Full coverage: tests/team_phrases.test.js
+    const tpx = fs.readFileSync("team_phrases.js", "utf8");
+    check("phrase admin: every phrase is rotatable, including the site ones",
+      /PHRASES = \[[\s\S]{0,900}id: "fin"/.test(tpx));
     check("phrase admin: syncs the slot the phrase actually lives in",
-      /def\.slot && localStorage\.getItem\(def\.slot\)/.test(r));
+      /def\.slot && localStorage\.getItem\(def\.slot\)/.test(tpx));
 
     // The shared helper must not have lost its original contract.
     check("back-compat: unlock()/verify() still work unscoped",

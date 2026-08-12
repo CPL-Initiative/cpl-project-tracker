@@ -1353,10 +1353,15 @@
     if (state.sess) {
       var who = state.sess.teamPass ? "team phrase" : (state.sess.email || "(no email)");
       w.appendChild(el("span", {}, ["✓ Editing unlocked (", who, ")"]));
-      // A magic-link reviewer (not a team-phrase user) can see + rotate the phrase.
-      if (!state.sess.teamPass) {
-        w.appendChild(el("button", { "class": "raci-btn", title: "View or change the shared team phrase", onclick: openPhraseAdmin }, ["⚙ Manage team phrase"]));
-      }
+      // Shown to phrase users too, now that it just opens the Team Phrases TAB.
+      // Hiding it was half of why Sam lost track of it: a phrase holder had no
+      // way to learn the surface existed. The tab states plainly that viewing
+      // needs a reviewer sign-in, which is a better answer than an absent button.
+      w.appendChild(el("button", {
+        "class": "raci-btn",
+        title: "Open the Team Phrases tab — viewing or changing a phrase needs a reviewer sign-in",
+        onclick: openPhraseAdmin
+      }, ["⚙ Manage team phrases"]));
       w.appendChild(el("button", { "class": "raci-btn", onclick: function () { signOut(); load(render); } }, ["Lock"]));
     } else {
       var inp = el("input", { type: "password", placeholder: "team phrase", "class": "raci-in" });
@@ -1379,78 +1384,18 @@
     }
     return w;
   }
-  // Reviewer-only admin: view + change the shared team phrase. Reads/writes
-  // team_access (gated by is_allowed_reviewer() RLS, so the public can't see it).
+  // The phrase admin is its own TAB now (team_phrases.js, #team-phrases) —
+  // Sam, 2026-08-12: "I lost track of where Manage team phrases is. It should
+  // be a tab that requires a magic link to view." It was a modal only a
+  // signed-in reviewer ever saw, buried in this auth bar, so a phrase holder
+  // never knew it existed. This keeps the familiar button and sends it there
+  // rather than carrying a second implementation of the same editor.
   function openPhraseAdmin() {
-    if (!state.sess || state.sess.teamPass) { alert("Sign in as a reviewer to manage the team phrase."); return; }
-    // Every phrase in team_access is managed here — not just the shared one.
-    // This was hardcoded to id=raci, so the site phrases (GR, and now Finance)
-    // had no rotation path at all: a phrase you cannot change is a phrase you
-    // cannot un-share when someone leaves.
-    var PHRASES = [
-      { id: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
-        blurb: "Unlocks the RACI matrix, members, updates, nudges, Mission Control — and every shared team tab." },
-      { id: "ci",   label: "C&I", slot: null,
-        blurb: "Curriculum & Instruction. Opens the shared team tabs; C&I has no gated tables of its own today." },
-      { id: "gr",   label: "Government Relations", slot: "cpl_gr_pass",
-        blurb: "Required for the GR Priorities tab (pre-decisional advocacy). Also opens the shared team tabs." },
-      { id: "fin",  label: "Finance", slot: "cpl_fin_pass",
-        blurb: "Required for the Contracts register (vendor payment terms). Also opens the shared team tabs." }
-    ];
-    function phraseDef(id) {
-      for (var i = 0; i < PHRASES.length; i++) if (PHRASES[i].id === id) return PHRASES[i];
-      return PHRASES[0];
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate("team-phrases");
+      return;
     }
-    var pick = el("select", { "class": "raci-in" });
-    PHRASES.forEach(function (p) {
-      var o = el("option", { value: p.id }, [p.label]);
-      pick.appendChild(o);
-    });
-    var inp = el("input", { type: "text", "class": "raci-in", placeholder: "loading…" });
-    inp.disabled = true;
-    var msg = el("div", { "class": "raci-modal-msg" }, ["Loading the current phrase…"]);
-    var save = el("button", { "class": "raci-btn raci-btn-go" }, ["Save phrase"]);
-    function loadPhrase() {
-      var def = phraseDef(pick.value);
-      inp.disabled = true; inp.value = ""; inp.placeholder = "loading…";
-      msg.textContent = "Loading the current phrase…";
-      // Fetch the current phrase (reviewer-gated read — refresh the token first).
-      return ensureFresh().then(function (s) {
-        return fetch(SUPABASE_URL + "/rest/v1/team_access?id=eq." + encodeURIComponent(def.id) + "&select=secret",
-          { headers: headersFor(s) });
-      }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("read " + r.status)); })
-        .then(function (rows) {
-          var cur = (rows && rows[0] && rows[0].secret) || "";
-          inp.value = cur; inp.disabled = false; inp.placeholder = "team phrase";
-          msg.textContent = def.blurb + " Changing it means everyone re-enters the new phrase.";
-        })
-        .catch(function () { msg.textContent = "Couldn't load the phrase — are you a signed-in reviewer?"; });
-    }
-    pick.addEventListener("change", loadPhrase);
-    loadPhrase();
-    save.addEventListener("click", function () {
-      var def = phraseDef(pick.value);
-      var v = (inp.value || "").trim();
-      if (!v) { msg.textContent = "The phrase can't be empty."; return; }
-      msg.textContent = "Saving…"; save.disabled = true;
-      sbWrite("PATCH", "team_access?id=eq." + encodeURIComponent(def.id),
-        { secret: v, updated_at: new Date().toISOString() }, "return=minimal")
-        .then(function (r) {
-          if (!r.ok) throw new Error("save failed (" + r.status + ")");
-          // Keep the editor's own stored phrase (if any) in sync so they aren't
-          // locked out — the slot this phrase actually lives in, not always the
-          // shared one.
-          try {
-            if (def.slot && localStorage.getItem(def.slot)) localStorage.setItem(def.slot, v);
-          } catch (e) {}
-          msg.textContent = "✓ Saved. Share the new " + def.label + " phrase with the people who need it.";
-          save.disabled = false;
-        })
-        .catch(function (e) { msg.textContent = e.message; save.disabled = false; });
-    });
-    showModal("Manage team phrases", [
-      el("div", { "class": "raci-modal-sub" }, ["Every phrase COBI accepts. A site phrase opens that site's own tabs plus the shared ones; the shared phrase does not open the site tabs. Reviewers only."]),
-      pick, inp, msg], [save]);
+    location.hash = "#team-phrases";
   }
 
   // ─── CSS (var(--token), injected once) ─────────────────────────────────────
