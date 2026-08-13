@@ -1,62 +1,80 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions) and For Fable (engineering). Items are DELETED when done, never left checked.",
-  "_as_of": "2026-08-13 · SkyTop — the answer looked right, and five confirmed matches were being dropped.",
-  "_session": 149,
-  "_status": "Two things were quietly broken and both are now fixed and live. First: when Sierra was asked whether Cerritos should adopt the POST police-academy credit, she told faculty to 'go check your catalog' for five courses Cerritos already teaches — and which we already held, matched by C-ID, the statewide course-identity standard. The data was right the whole time; the answer was drowning it. Two causes: a limit that trimmed one half of the results but left the other half unbounded (3,807 rows of 'here is what other colleges did' against 9 rows of 'here is your own matching course'), and peer colleges' own phrasing being treated as if it were a real recommendation — so POST's TEN recommendations became FORTY-THREE, most of them phantoms that each honestly reported 'no match'. Second: the Cerritos ironworker question Sam has reported three times. He asked as a student would — 'I have a journey worker license as Iron and Steel worker' — and got nothing, against thirteen real Cerritos ironworker credentials. Three separate causes, including that we never searched the awarding body (three of those thirteen are only findable through 'Field Ironworkers Local 416' — their own titles say nothing about iron) and that the word 'iron' was never actually asked, having fallen off the end of an internal list. That one is not a Cerritos quirk: 90% of our credentials have an issuer carrying a word that appears nowhere in the title. Sam has also set the direction for the next piece — a Common CR Reference, matched on many factors the way the CCR is, with C-ID as one signal among several rather than the key.",
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-08-13 · SkyRef — one feedback line about one college was a third of the colleges.",
+  "_session": 150,
+  "_status": "Sam reported one thing — 'Wrong contact information for RCC' — and it turned out Sierra was giving a wrong or missing CPL contact for 54 of 122 colleges. She had been reading a copy of MAP's contact list that was taken on 25 June and that nothing ever refreshed: no job in the whole project updates it. RCC was ordinary — she named Rene Felix while MAP holds Jeanine Gardner, and had never seen Lisa Martin, the CPL coordinator, at all. Rather than refresh the stale copy (which would just go stale again) Sierra now reads MAP directly, so 115 of 122 colleges route to the right person. Separately, the ironworker question was reported a third time — and that third report was a different complaint from the first two. The first two said 'you found nothing'; the newest said 'you found it and still didn't tell me what I'd get.' Sierra now lists the actual courses and units a credential converts into, not just the credential's name. The Sierra Training tab's 'Try it on Sierra' button was also broken in a way that looked like nothing: after you had once visited My College, it typed your question into a hidden box. That, the copy button, and being unable to select the question text are all fixed. Nothing in this list has been read by anyone yet — sessions cannot reach Sierra to see her actual words, so the two test questions below are the real acceptance check.",
   "items": [
     {
-      "id": "s149-test-ironworker",
+      "id": "s150-test-ironworker",
       "for": "Sam",
       "tab": "CPL Assistant",
-      "text": "Re-ask the ironworker question — 'I have a journey worker license as Iron and Steel worker. What CPL can I get here?' — with Cerritos selected. She should now name the Ironworker Apprenticeship credentials, including the three whose own titles say nothing about ironwork (FIW Orientation, Foreman Training, Post Tensioning 3). This is the one you have reported three times; it is the acceptance test."
+      "text": "Ask the ironworker question one more time — 'I have a journey worker license as Iron and Steel worker. What CPL can I get here?' — with Cerritos selected. She should now name the credentials AND the courses each one converts into, with units (for example IWAP 40.09, 2 hours). Your last feedback on this asked for exactly that. This is the acceptance test; no session can see her answer."
     },
     {
-      "id": "s149-test-post-again",
+      "id": "s150-test-rcc-contact",
       "for": "Sam",
       "tab": "CPL Assistant",
-      "text": "Re-ask the Cerritos POST question. All six C-ID matches should now appear (AJ 101, 102, 103, 104, 107, 222) instead of 'check your catalog'. The line worth watching is Physical Training and Health Education — it shares a C-ID with Intro to Administration of Justice, so it is deliberately flagged as a mismatch rather than quietly resolved."
+      "text": "Ask 'Does Riverside City College offer firefighter CPL?' and check the contact she gives. It should be Lisa Martin (Lisa.Martin@rcc.edu), the CPL coordinator MAP actually holds — not Rene Felix, which is what she had been saying since June."
     },
     {
-      "id": "s149-cr-reference-factors",
+      "id": "s150-test-post-cerritos",
       "for": "Sam",
-      "tab": "—",
-      "text": "Confirm the matching factors for the Common CR Reference. You named title, course name and number, course description, subject, 'etc.' — the etc. is doing real work and it has been recorded as illustrative, not final. Worth pinning down before anything gets built."
+      "tab": "CPL Assistant",
+      "text": "Still unread from last session: ask the Cerritos POST question and confirm all six C-ID matches appear as matches rather than 'check your catalog'. The data was fixed but nobody has seen the answer."
     },
     {
-      "id": "s149-rcc-contact",
+      "id": "s150-decide-blank-contacts",
       "for": "Sam",
       "tab": "MAP Users",
-      "text": "You flagged 'Wrong contact information for RCC' when asking about Riverside firefighter CPL. Confirming what the right contact is would let this be fixed — MAP is read-only for us, so it would land as a proposed fill rather than a change to MAP itself."
+      "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
     },
     {
-      "id": "s149-export-request",
+      "id": "s150-try-proposals",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "You can now edit the proposed contact on any of the 25 colleges that have none — including the 8 that had nothing to suggest. Whatever you type is labelled 'curator-set' with your name and date, is never presented as something MAP holds, and is deliberately invisible to Sierra. The CSV export is your correction list to work through in MAP."
+    },
+    {
+      "id": "s150-gavilan-hartnell",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "Worth knowing: five of those eight are not empty colleges. Gavilan has 13 active MAP users and Hartnell 15 — they simply have nobody designated in any CPL role, only a vice president or president. Those five are the realistic correction list; the other three have no MAP presence at all."
+    },
+    {
+      "id": "s150-clear-feedback",
       "for": "Sam",
       "tab": "Sierra Training",
-      "text": "Someone asked, after a good answer about students served statewide, whether they could export or download it to share with constituents. Worth deciding whether Sierra answers get a copy/export affordance — it was a thumbs-up, so the ask came from a satisfied user."
+      "text": "Three of your five open feedback items are now fixed in code (both ironworker reports and the POST '10 courses, you listed 1' one). Once you have checked the answers above, they can be marked done. 'Try it on Sierra' and 'Copy question' both work now, and you can select the question text with the mouse again."
     },
     {
-      "id": "s149-read-the-prose",
+      "id": "s150-common-cr-reference",
       "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "Both defects this run were found in an answer Sam pasted back, not in the code — the database function and the renderer each verified clean on their own, and the loss was between them. Sessions cannot reach Sierra from the sandbox, so the live answer is the only place this class of bug is visible. Ask for one."
+      "tab": "Knowledge Base",
+      "text": "Scope the Common CR Reference Sam asked for, against the CCR's actual matching factors, before building anything. His ruling stands: C-ID is one factor and not the key — only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all."
     },
     {
-      "id": "s149-cr-reference-scope",
-      "for": "Fable",
-      "tab": "—",
-      "text": "Scope the Common CR Reference against how the CCR actually matches courses, before building. Starting numbers: 2,344 distinct recommendation wordings, and only about 7% of them collapse by tidying punctuation and casing — so this is curation work, not text cleanup. Only 17% carry a C-ID at all."
-    },
-    {
-      "id": "s149-statewide-titles-missing",
+      "id": "s150-missing-statewide-titles",
       "for": "Fable",
       "tab": "Credential Reference",
-      "text": "12 credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried over from the previous session."
+      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
     },
     {
-      "id": "s149-profiles-stale",
+      "id": "s150-corpus-coverage",
       "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "The college profile data Sierra reads has not been refreshed since 25 June, and the exhibit corpus still covers only 59 of 123 colleges. A college we cannot see is a blind spot, never a zero — and this run is a reminder of how expensive a false zero is."
+      "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
+    },
+    {
+      "id": "s150-search-tier-contacts",
+      "for": "Fable",
+      "tab": "MAP Users",
+      "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
+    },
+    {
+      "id": "s150-site-phrase-scope",
+      "for": "Sam",
+      "tab": "Team Phrases",
+      "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
     }
   ]
 }

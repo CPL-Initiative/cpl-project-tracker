@@ -367,3 +367,115 @@ The §11 "MAP Users / student contact" cell had reached **5,261 chars** and trip
 superseded per-session narrative (SkyMail's worklist build, the 71-college sweep,
 SkyHigh's seven, SkyMind's confirmation) lives in the earlier sections of this
 document, which is where the history belongs.
+
+---
+
+## 2026-08-13 — SkyRef: the contacts Sierra read were a fossil, and the chip never said why
+
+### One report, a third of the system
+
+Sam filed one line of Sierra feedback: *"Wrong contact information for RCC."* The
+useful first move was not to fix RCC but to ask **how many colleges disagree**.
+
+Sierra read `chatbox_college_profiles.contacts` — a JSONB blob written
+**2026-06-25** that **nothing refreshes**. `map/sync_map_users.py` *writes*
+`map_college_contacts` and only *reads* the profiles table (for dashboard URLs);
+no builder for that blob exists anywhere in the repo. Seeded once, left.
+
+Measured over the 122 colleges present in both tables, applying Sierra's own
+preference logic (coordinator, else primary) to each side:
+
+| | colleges |
+|---|---|
+| Sierra printed a **different** email than MAP holds | **41** |
+| Sierra printed **nothing** while MAP had someone | **13** |
+| agreed | 50 |
+
+RCC was ordinary: Sierra said *Rene Felix*; MAP holds *Jeanine Gardner* as
+primary contact and *Lisa Martin* as CPL coordinator — the slot Sierra's code
+**prefers**, blank in the fossil.
+
+**Re-seeding the blob was the wrong fix.** A fresher fossil is still a fossil.
+The consumer changed instead (cpl-chat v45), which ends the staleness class —
+the same lesson this repo learned the day before on the `statewide` flag: *a
+settled ruling does not enforce itself, the consumer has to change.*
+
+### Reading the authority is harder than reading the flattened copy
+
+Four things the fossil had already smoothed away, each now a committed test in
+`tests/sierra_college_contacts.test.js` (28 checks):
+
+- **Normalise both sides.** Two real colleges carry a trailing space in MAP —
+  `"Cypress College "`, `"San Jose City College "`. Exact matching drops them
+  *silently back to the fossil*. Third occurrence of this in the repo.
+- **Validate, don't just split.** 22 of 115 routable colleges hold several people
+  in one field (semicolons, commas, embedded newlines). Cypress's coordinator
+  field is `jgarcia@…, jrangel@cypresscollege,\njgrande@…` — the middle address
+  has **no TLD**. A dead address is a false route.
+- **Name and email from the same tier.** The old code used two independent `||`
+  fallbacks, so a tier with a name but no email would pair that name with someone
+  else's address. Zero colleges hit it — closed as a latent hazard.
+- **Leadership is excluded from the cascade.** Routing a CPL question to a
+  college president is worse than admitting we don't know. 115 of 122 route
+  without them; **7 genuinely cannot**.
+
+Fails safe: any error, or a college with no authority row, keeps the old blob —
+*never worse than what it replaces*.
+
+### The "Because" chip was right and unreadable
+
+Sam: *"the Because column chips are unclear… Some are listed as CPL Assistant.
+Does that mean that we have a CPL Assistant contact on file but nothing marked
+Primary Contact? If so, I would think that our cascade process would assign the
+assistant as the primary contact."*
+
+**He was right, and the cascade already did it** — the address beside the chip
+*was* the promoted assistant. The chip answered *why is this person here?* while
+reading as *what is this person?* Now: header `Proposed because`, chip
+`CPL Assistant in MAP`, hover stating the implication, and the cascade spelled
+out once above the table.
+
+Citrus showing a bare email next to Allan Hancock's named row was also not a
+lookup failure: `map_college_contacts` has `cpl_assistant_email` with **no
+matching name column**. The row now says so.
+
+### Curator proposals are data now, not code
+
+Curator-supplied contacts were **hardcoded in `map_users.js`** (Jessica's three),
+so adding one meant a code change and a deploy. `map_contact_proposals` (gated,
+reviewer-or-team-phrase) now overlays the worklist:
+
+- **All 25 rows editable**, cascade pre-filled as the default (Sam's call).
+- Curator values chip `curator-set` with **who** and **when**, and never claim
+  MAP holds them.
+- **Sierra does not read it** — Sam's call: MAP to-do only. A test asserts
+  `cpl-chat` never references the table.
+- Keyed on the **trimmed** college name, matching the table's check constraint.
+- **Clearing writes nulls rather than deleting** — the table has no delete policy
+  (matching `governance_owners`), and `governance_owners` already showed what a
+  "clear" with no path becomes: a button that silently does nothing.
+- An RLS-filtered write returns **200 with an empty body**, so a write touching
+  no row is reported as a failure with the typed text kept.
+- The CSV ships **both layers in separate columns** — it is the list someone
+  works through *in MAP*, so a curator's suggestion must never be
+  indistinguishable from a role the college designated.
+
+### About those 8
+
+**Five are not empty colleges.** Gavilan has **13 active MAP users**, Hartnell
+**15** — they simply have nobody in any CPL role, only a VPAA or CEO. Those are
+the real correction list. The other three (Calbright, North Orange Continuing
+Education, San Diego College of Continuing Education) have zero MAP presence.
+
+### Open
+
+- **8 colleges keep a fossil contact where MAP is now blank.** They fall back
+  under the fail-safe, which is conservative but arguable — MAP is the system of
+  record, and a blank there could mean the person left the role. Flagged for Sam
+  rather than decided.
+- The 7 `via:"search"` fallback entries still need confirming; the 17 blanks
+  still need working.
+
+Durable: [`methodology-a-copy-with-no-refresh-path-is-a-fossil`](kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md),
+[`methodology-a-provenance-label-must-say-why-not-what`](kb-notes/methodology-a-provenance-label-must-say-why-not-what.md).
+PRs #1164, #1167.
