@@ -83,10 +83,12 @@ def main() -> int:
         print("dry run — nothing written.")
         return 0
 
-    url = os.environ.get("SUPABASE_URL")
+    # Same default as _sync_credential_catalog.py — the two run back to back and
+    # must never end up pointed at different projects.
+    url = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SERVICE_KEY")
-    if not url or not key:
-        print("NOTE: SUPABASE_URL / SUPABASE_SERVICE_KEY unset — nothing written.")
+    if not key:
+        print("NOTE: SUPABASE_SERVICE_KEY unset — nothing written.")
         return 0
 
     n = upsert(rows, url, key)
