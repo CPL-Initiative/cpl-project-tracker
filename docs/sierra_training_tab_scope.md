@@ -224,3 +224,52 @@ every surface, including the Sierra AI section of My College — `fetchTeamGuida
 runs per request with no cache. The tab now says so in plain words instead of
 naming phases at the reader. Phase 3 (artifact ingestion) is still the open one.
 
+
+---
+
+## 2026-08-13 — SkyRef: the hand-off was typing into a hidden box
+
+Sam, mid-triage: *"tried to use Try it With Sierra button but it didn't copy the
+question into Sierra and when I tried to copy and paste the question, it doesn't
+the training tab doesn't allow it."*
+
+Three defects, and the reason this needed a report rather than a code read is
+that **all three fail silently** — a button that does nothing is
+indistinguishable from a button that was never wired.
+
+1. **Wrong target.** `cpl_chat.js` keeps `inputEl` at module scope. My College
+   mounts the *same* widget via `mountInto()`, and `build()` re-points `inputEl`
+   at that pane's input; `mount()` is idempotent, so returning to `#chatbot`
+   never re-points it back. **After one visit to My College, every hand-off for
+   the rest of the session typed into a hidden pane.** The consumer now resolves
+   the `#chatbot` pane's own input from the DOM.
+2. **The key was burned on failure.** `removeItem` ran *before* the guard that
+   could abort, so a consume that could not deliver also destroyed the pending
+   question — the retry was gone too. It is now removed only after the value
+   lands, so a failed hand-off stays pending and completes on the next
+   activation.
+3. **Selecting the question collapsed the row.** The question sits inside
+   `.sit-row-head`, which carries the open/close click handler, so releasing the
+   mouse after a drag re-rendered the row and destroyed the selection
+   milliseconds after it was made. The text was never unselectable — it was being
+   thrown away. The toggle now ignores a click that ended a selection inside that
+   row, and `.sit-q` is explicitly `user-select:text`.
+
+Two more silent no-ops in the same file: the `[data-qact]` handler returned
+silently when a row carried no question, and `copyText()` passed an **empty
+rejection handler** to `navigator.clipboard.writeText` — which rejects in
+entirely ordinary situations (unfocused document, permissions policy, non-secure
+context), so "⧉ Copy question" could do nothing and say nothing. Both now report
+on the button.
+
+`tests/sierra_test_handoff.test.js` — 18 checks, and **verified against the
+pre-fix file**: 5 fail there. A test written after a fix that passes on both
+versions guards nothing. The test has to reproduce the *two-mount* condition; the
+single-mount happy path passed throughout.
+
+Durable: [`methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver`](kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md).
+PR #1166. Front-end only — shipped with Pages, no cpl-chat deploy.
+
+**Still open:** Phase 3 (documents in her knowledge). Sam had already triaged the
+feedback backlog 25 → **5** himself; three of those five are now fixed in code
+and can be cleared.

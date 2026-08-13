@@ -378,3 +378,76 @@ since 2026-06-25; 12 adoption-file statewide titles absent from
 Next: Sam re-asks the ironworker question against v44 to confirm the prose —
 sessions remain egress-blocked from `*.supabase.co`, so no session has read her
 actual words on this path.
+
+---
+
+## 2026-08-13 — SkyRef: the third ironworker report was a different complaint
+
+### The handoff read three feedback rows as one issue. They were not.
+
+Session 150's handoff listed the two ironworker rows as the false zero, fixed by
+v44. There were **three**, and the newest (2026-08-13 12:04, ~4h before v44
+deployed) said something else entirely:
+
+| when | note | meaning |
+|---|---|---|
+| 08-12 23:39 | *"You should have data on iron and steel articulations at Cerritos."* | **the false zero** — fixed v44 |
+| 08-13 12:04 | *"You should have provided a list of courses I could get credit for and the industry certificates or licenses needed"* | **found it, still didn't say what I'd get** |
+
+The first says *you found nothing*. The second says *you found it and told me
+nothing useful*. Reading them as one issue would have closed the ticket with the
+defect live.
+
+### Route COLLEGE-CRED never asked for the recommendations
+
+`buildCollegeCredentialContext()` listed credential **names** and stopped. A
+student was told Cerritos awards CPL for `Ironworker Apprenticeship — General
+Rigging` and never learned it is worth **IWAP 40.09, 2 hours**.
+
+The recommendations were never missing. `chatbox_credential_recs` carries a line
+for **every** ironworker credential. COLLEGE-CRED — added in v44, the newest of
+the credential routes — was simply the only one that never called
+`fetchCredentialRecs`; statewide, volume and adoption all did. **Verified against
+live data before building**, so this was not a no-op.
+
+### Wiring it without breaking the guarantee above it
+
+The section is appended **outside** the recs try/catch on purpose: a
+recommendation failure must never restore the false zero. So the lines had to
+become *enrichment on top of that guarantee*, not a new precondition for it:
+
+- titles join the **existing** batched `fetchCredentialRecs` call — one round
+  trip, and no second matcher that could drift from the first;
+- the map is declared **outside** the try and stays null if the enrichment
+  throws, degrading the section to names-only rather than losing it;
+- lines render through the **shared** `renderRecLines`, so `local_modal` awards
+  ("the most common award among adopting colleges") are never presented as
+  statewide standards;
+- **a credential with no line is still named**, with the model told the award is
+  set at review — dropping it would re-create the exact false zero the route
+  exists to end.
+
+`tests/sierra_college_credentials.test.js` 18 → **31**, and the new checks assert
+the **wiring** (`...(collegeCreds || [])` reaches the batch), not only the
+renderer. SkyTop's alignment bug the day before was a loss *between* two
+individually-correct halves; asserting only the renderer would have missed this
+one the same way.
+
+### The contact line was reading a fossil
+
+Not a retrieval defect, but it lands on the same answers: Sierra's CPL-contact
+line came from a 2026-06-25 snapshot nothing refreshes, and **41 of 122 colleges
+got a wrong address**. Full story in `docs/map_users_lessons.md`; durable note
+`methodology-a-copy-with-no-refresh-path-is-a-fossil`. Fixed cpl-chat v45.
+
+### State
+
+cpl-chat **v46** live. Still unread by any session: Sierra's actual prose on
+both the ironworker and POST × Cerritos paths — the sandbox remains
+egress-blocked from `*.supabase.co`, so the acceptance cases need Sam.
+
+Open, unchanged: 12 adoption-file statewide titles absent from
+`chatbox_credentials`; corpus covers 59 of 123 colleges;
+`chatbox_college_profiles` still stale for everything *except* contacts.
+
+PRs #1164, #1165.
