@@ -1,0 +1,60 @@
+-- Route ALIGN — "which of MY courses should I articulate against this credit
+-- recommendation, and how did other colleges do it?"
+--
+-- APPLIED LIVE 2026-08-13 via Supabase MCP (migrations
+-- chatbox_college_courses_and_alignment_rpc, alignment_content_tokens_stopword_fix).
+-- Committed so the schema is reproducible and reviewable; re-running is safe.
+--
+-- Sam, 2026-08-13: "If Sierra is answering for Cerritos College, I would want
+-- her to recommend the most aligned Cerritos welding courses to be articulated
+-- so the faculty don't have to guess, and have a link or access to the other
+-- college articulations for this same welding certificate."
+--
+-- TWO SIGNALS, ONE ROUND TRIP, NEVER MERGED
+-- ------------------------------------------
+--   row_kind 'peer'      FACT     — a named college really articulated that
+--                                   course against that recommendation
+--                                   (chatbox_peer_articulations, #1153)
+--   row_kind 'candidate' PROPOSAL — this college's own courses ranked by title
+--                                   match (chatbox_college_courses)
+--
+-- Neither is sufficient alone. Title similarity is structurally blind to the
+-- broader-course pattern: Santa Ana articulated `WELD 240 Structural Welding
+-- SMAW` against an **FCAW** recommendation, and no lexical matcher proposes
+-- that at any threshold. Peer precedent is the only signal that surfaces it.
+-- docs/kb-notes/methodology-two-signals-for-a-judgment-proposal.md
+--
+-- THE STOPWORD GATE WAS EARNED BY A FAILING RESULT, NOT ANTICIPATED
+-- -----------------------------------------------------------------
+-- The first cut scored plain token overlap and ranked
+--   `ART 100 — Introduction To World Art`  third
+-- for "Introduction to Flux Cored Arc Welding (FCAW)" at Cerritos, on the
+-- strength of "introduction" and "to" alone. A welding instructor shown an
+-- art-history course stops trusting every other suggestion on the page, so a
+-- plausible-looking false positive costs far more here than a missed match.
+--
+-- cx_align_tokens() drops structural words and the scorer requires >= 1 CONTENT
+-- token in common. After the fix every Cerritos candidate is a welding course
+-- and WELD 214L rises to 0.761 (the denominator no longer counts "introduction"
+-- and "to").
+--
+-- Deliberately NOT stopped: advanced / beginning / basic — those are exactly
+-- what separates "Introduction to FCAW" from "Advanced FCAW", two DIFFERENT
+-- recommendations on the same credential.
+--
+-- ⚠️ CANDIDATES ARE DRAWN FROM THE COLLEGE'S WHOLE CATALOGUE. Scoping by TOP
+-- code would gate a determination on TOP, which CLAUDE.md Rule 7 forbids;
+-- top_code rides along so a caller can note corroboration, never to filter.
+--
+-- Recs come from the peer table UNION the published recommendation sets, so a
+-- credential nobody has articulated yet still aligns — that is exactly the
+-- ready-to-adopt shelf surfaced in #1150.
+--
+-- Tables + loaders: kb/_build_college_courses.py, kb/_sync_college_courses.py,
+--                   kb/_build_peer_articulations.py, kb/_sync_peer_articulations.py
+-- Workflow:         .github/workflows/credential-catalog-sync.yml
+-- Consumer:         chatbox/supabase/functions/cpl-chat/index.ts (fetchAlignment)
+-- Tests:            tests/sierra_alignment.test.js (21 checks, behavioural)
+--
+-- The live definitions are the two migrations named above; this file documents
+-- them and is the receipt of record.

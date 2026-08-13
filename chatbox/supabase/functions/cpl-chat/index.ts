@@ -955,6 +955,110 @@ async function fetchCredentialRecs(titles: string[], sb: any): Promise<Map<strin
 }
 
 /**
+ * Route ALIGN — "which of MY courses should I articulate against this, and how
+ * did other colleges do it?"
+ *
+ * Sam, 2026-08-13: "I would want her to recommend the most aligned Cerritos
+ * welding courses to be articulated so the faculty don't have to guess, and
+ * have a link or access to the other college articulations for this same
+ * welding certificate."
+ *
+ * One RPC returns BOTH signals, discriminated by row_kind, because they answer
+ * different questions and neither is sufficient alone. Only fires when a
+ * credential AND a college are both in play — "which of my courses" is
+ * meaningless without a subject.
+ */
+async function fetchAlignment(
+  credential: string | null,
+  college: string | null,
+  sb: any,
+): Promise<any[] | null> {
+  if (!credential || !college) return null;
+  const { data, error } = await sb.rpc("credential_alignment_for_college", {
+    credential, college, per_rec: 3,
+  });
+  if (error || !data || data.length === 0) return null;
+  return data;
+}
+
+/**
+ * THE PROPOSAL AND THE EVIDENCE, NEVER MERGED.
+ *
+ * `peer` rows are FACT — a college really did articulate that course against
+ * that recommendation. `candidate` rows are a PROPOSAL computed from title
+ * similarity, and title similarity is systematically blind to the broader-course
+ * pattern (Santa Ana articulated `WELD 240 Structural Welding SMAW` against an
+ * FCAW recommendation). Printing them in one list would let the model present a
+ * guess with the authority of a precedent.
+ *
+ * `attribution: group_wide` means the source repeated ONE college list across
+ * every course in the articulation, so we know which colleges articulated and
+ * which courses were used but not which used which. Those are phrased as a
+ * group, never as an attribution — sending a welding instructor to a peer that
+ * never taught that course is the same failure as inventing an articulation.
+ */
+function buildAlignmentContext(rows: any[] | null, credential: string, college: string): string {
+  if (!rows || rows.length === 0) return "";
+  // No non-null assertions here: the test harness lifts this function out of the
+  // .ts and strips type annotations, and `!` is indistinguishable from the JS
+  // operator to a regex stripper. Reading the entry into a local is clearer
+  // anyway.
+  const byRec = new Map<string, { peers: any[]; cands: any[]; recCourse: string }>();
+  for (const r of rows) {
+    const k = r.credit_rec || "";
+    let g = byRec.get(k);
+    if (!g) {
+      g = { peers: [], cands: [], recCourse: r.rec_course || k };
+      byRec.set(k, g);
+    }
+    (r.row_kind === "peer" ? g.peers : g.cands).push(r);
+  }
+
+  let out = `\n\n--- ARTICULATING ${credential.toUpperCase()} AT ${college.toUpperCase()} ---\n`;
+  out += `For each credit recommendation: ${college}'s own closest-matching courses, and how `
+      + `other colleges articulated the SAME recommendation.\n`;
+
+  for (const [rec, g] of byRec) {
+    out += `\nRECOMMENDATION: ${rec}\n`;
+
+    if (g.cands.length > 0) {
+      out += `  ${college}'s closest-matching courses (SUGGESTIONS for faculty to weigh — `
+          + `ranked by how closely the course TITLE matches, nothing more):\n`;
+      for (const c of g.cands) {
+        out += `    - ${c.subject} ${c.course_number} — ${c.course_title}`;
+        if (c.units != null) out += ` (${c.units} units)`;
+        out += `\n`;
+      }
+    } else {
+      out += `  No ${college} course has a similar title. Say that plainly — and note that a `
+          + `peer's choice below may still point at a course this college teaches under a `
+          + `different name.\n`;
+    }
+
+    if (g.peers.length > 0) {
+      const exact = g.peers.filter((p) => p.attribution !== "group_wide");
+      const group = g.peers.filter((p) => p.attribution === "group_wide");
+      if (exact.length > 0) {
+        out += `  Colleges that ALREADY articulate this recommendation, and the course each used:\n`;
+        for (const p of exact) {
+          out += `    - ${p.college_name}: ${p.subject} ${p.course_number} — ${p.course_title}\n`;
+        }
+      }
+      if (group.length > 0) {
+        const cols = [...new Set(group.map((p) => p.college_name))];
+        const courses = [...new Set(group.map((p) => `${p.subject} ${p.course_number} — ${p.course_title}`))];
+        out += `  Also articulated by ${cols.join(", ")} using courses such as `
+            + `${courses.join("; ")} — our source does not record which college used which, `
+            + `so name them as a group and do NOT pair a college to a course here.\n`;
+      }
+    } else {
+      out += `  No college has articulated this recommendation yet — this college would be first.\n`;
+    }
+  }
+  return out;
+}
+
+/**
  * Render one credential's recommendation lines.
  *
  * LEAD WITH THE LIST, NEVER A COUNT. POST carries AJ 110 on two different lines
@@ -1568,6 +1672,20 @@ const VOLUME_RULE = `\n\nABOUT THE "STUDENT VOLUME BY CREDENTIAL" SECTION (if pr
 - NEVER supply a credential, a certification name, or a student number from general knowledge of the world. If the section does not contain it, we do not have it. A list of certifications that sounds right but was not read from this data is exactly the failure this section exists to prevent — say what MAP holds, and invite them to email MAP@rccd.edu for anything beyond it.
 - When the section lists WHAT A COLLEGE COULD ADOPT, name the specific credentials and how many peer colleges already run each one. That is the actionable answer; "you could explore industry certifications" is not.`;
 
+// Sam asked for this so faculty don't have to guess which of their own courses
+// to put forward. The hard-won constraint is that the two halves are different
+// KINDS of claim: one is computed, one is recorded. Presenting them as one list
+// would let a guess borrow the authority of a precedent.
+const ALIGNMENT_RULE = `\n\nABOUT THE "ARTICULATING <CREDENTIAL> AT <COLLEGE>" SECTION (if present) — THE ARTICULATION WORKLIST:
+This is the most actionable thing you can give a college. Walk the recommendations one at a time; for each, name the college's own closest-matching courses AND how other colleges articulated that same recommendation. Give both, every time, and keep them clearly distinct.
+- THE COLLEGE'S OWN COURSES ARE A SUGGESTION, NOT A DETERMINATION. They are ranked by how closely the course TITLE matches the recommendation — nothing more. Say so: these are starting points for faculty to weigh, and the college's curriculum committee decides. Never say a course "qualifies", "counts", "is equivalent" or "will be accepted".
+- THE PEER ARTICULATIONS ARE FACT. A named college really did articulate that exact course against that exact recommendation. Name the college and the course number so faculty can look up the precedent themselves — that is the evidence, and it is what makes a suggestion checkable rather than a guess.
+- WHEN THE TWO DISAGREE, SAY SO — it is useful, not a problem. A peer may have articulated a BROADER course whose title looks nothing like the recommendation (a structural-welding course against a flux-cored-arc-welding recommendation). That is a legitimate faculty judgment about scope, and it is exactly the option a title match would never surface. Point it out.
+- WHERE OUR SOURCE SAYS A GROUP OF COLLEGES USED A SET OF COURSES WITHOUT SAYING WHICH USED WHICH, present it that way. Never pair a specific college to a specific course there. Sending someone to a college that did not teach that course is as damaging as inventing the articulation.
+- IF NO COLLEGE HAS ARTICULATED A RECOMMENDATION YET, say that plainly and frame it as being first — the credit is already defined statewide, so it is a local curriculum decision rather than a negotiation.
+- IF THE COLLEGE HAS NO SIMILARLY-TITLED COURSE, say so honestly rather than stretching for a match, and point at what peers used — they may teach it under a different name.
+- NEVER invent a course, a course number, or a college. If the section does not list it, we do not have it.`;
+
 const CREDIT_STATUS_RULE = `\n\nABOUT THE "CPL CREDIT DISPOSITION" SECTION (if present) — WHAT COLLEGES HAVE ACTED ON:
 This is the newest and least-known part of the picture: not what credit EXISTS, but what has been DONE with it. Use it whenever someone asks how a college (or the system) is doing on CPL, what is outstanding, or where to focus.
 
@@ -1606,7 +1724,8 @@ function buildSystemPrompt(
   teamGuidance: string = "",
   creditContext: string = "",
   credentialContext: string = "",
-  volumeContext: string = ""
+  volumeContext: string = "",
+  alignmentContext: string = ""
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -1676,7 +1795,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${(credentialContext || volumeContext) ? CREDIT_RECS_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${(credentialContext || volumeContext) ? CREDIT_RECS_RULE : ""}${alignmentContext ? ALIGNMENT_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -1954,6 +2073,7 @@ Deno.serve(async (req: Request) => {
     // its own failure: one dead route must never take the whole answer down.
     let credentialContext = "";
     let volumeContext = "";
+    let alignmentContext = "";
     let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
 
     await Promise.all([
@@ -1992,6 +2112,17 @@ Deno.serve(async (req: Request) => {
       const recs = await fetchCredentialRecs(titles, sb);
       credentialContext = buildCredentialContext(stdRecs, anyCreds, recs);
       volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs);
+
+      // Route ALIGN. Runs on the STRONGEST-matched credential only: the answer
+      // is a per-recommendation worklist, and running it for every loosely
+      // matched credential would bury the one the person asked about.
+      const college = singleProfile?.college || null;
+      const topTitle = (stdRecs && stdRecs[0]?.unified_title)
+        || (anyCreds && anyCreds[0]?.unified_title) || null;
+      if (college && topTitle) {
+        const align = await fetchAlignment(topTitle, college, sb);
+        alignmentContext = buildAlignmentContext(align, topTitle, college);
+      }
     } catch (e) {
       // The lines are an enrichment. Losing them must cost the DETAIL, never the
       // credential sections themselves — so rebuild without them rather than
@@ -2004,7 +2135,7 @@ Deno.serve(async (req: Request) => {
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
-      teamGuidance || "", creditContext, credentialContext, volumeContext);
+      teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
