@@ -388,3 +388,69 @@ under-counting course awards. **38 of the 43 moved up**, as that bias predicts. 
 
 **CRED·ADOPT** (needs no new data), then **COLLEGE·CRED** carrying Sam's Mt. SAC Request-Review language. Anything
 publishing a student number takes the pair from (c) with the gap named, and must not rank on transcribed per (d).
+
+---
+
+## 2026-08-13 — SkyBridge: military and non-military CRs are different shapes
+
+Sam raised this after reading a chat response that totalled inert credit
+recommendations without distinguishing them.
+
+### (a) What was learned
+
+**The two sources have different CARDINALITY per student, by construction.**
+Every service member has a JST, and ACE Faculty Reviewers have already written
+credit recommendations against its contents — a few to **scores**, scaling with
+length of service and depth of training. The whole transcript arrives at once: a
+**push**, where the student picks nothing. A non-military exhibit is a **pull** and
+is targeted — a student says they hold CompTIA Network+, the exhibit joins their
+CPL plan, and its **1–2** CRs need acting on.
+
+**The lifecycle is identical for both** — articulate to a local course where
+possible (which is what makes a CR *applicable* to a CPL plan), then Applied or
+Not Applicable, then Transcribe where appropriate. Most colleges are not at that
+level of implementation yet, so most JST CRs sit inert. Sam expects improvement.
+
+**Measured, and it is more lopsided than expected:**
+
+| Bucket | Inert CRs | Inert units | Students | Colleges | CRs/student |
+|---|---:|---:|---:|---:|---:|
+| Military | 432,693 (99.1%) | **1,040,447 (98.8%)** | 24,920 | 108 | **17.4** |
+| Non-military | 3,305 (0.8%) | 10,698 (1.0%) | 868 | 28 | **3.8** |
+| Unclassified | 722 | 2,188 | 109 | 36 | 6.6 |
+
+So "over a million units awaiting action" is **1,040,447 units of military
+credit**, and the non-military backlog — the tractable, few-per-student kind — is
+**10,698 units across 868 students at 28 colleges**, invisible inside the total.
+A college reads the million as an impossible mountain rather than a work queue.
+
+**⚠️ The guard Sam was explicit about: bucketing is not discounting.** We want all
+eligible CRs acted upon. Never rank the military bucket lower, never drop it from
+a total, never let "separated" become "stopped counting".
+
+**⚠️ And raw inert volume is not a performance measure.** A college with many
+veterans has a huge denominator by construction — which is why the disposition
+RATE, not volume, is the $50k tab's measure, and why colleges are never ranked
+publicly.
+
+### (b) Two classifier traps, both hit while measuring
+
+1. **`military_credits` / `non_military_credits` do NOT classify.** They are
+   applied-credit *amounts*, zero on **84% of rows** (449,781 of 537,908). A first
+   cut using them would have mis-split the corpus while looking authoritative.
+2. **`Credit for Basic Military Service` rows carry no ACE-style `exhibit_id`.**
+   Keying only on exhibit codes dropped them into *unclassified*, where they were
+   **97%** of that bucket — making military look like 93% instead of 99%. Any
+   classifier must cover both the JST exhibit codes and that `course_type`.
+
+There is no military flag on `map_student_credit`; the working heuristic is in
+`docs/kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md`.
+
+### (c) Roadmap · (d) Next concrete step
+
+Nothing is wired to this yet — it is doctrine plus a measurement. The consuming
+surfaces are the Course Credit tab, the $50k / ESS 25-82 rework, the College
+Briefing, and Sierra's disposition answers. **Next: split the buckets wherever a
+college reads an awaiting-action figure**, leading with the tractable
+non-military number and giving the military figure with its per-student context
+("~17 recommendations per veteran, because a JST carries the whole record").
