@@ -63,8 +63,12 @@ check("volumeContext is emitted into the prompt body",
       /\$\{volumeContext\}/.test(src));
 check("VOLUME_RULE is attached when the section is present",
       /\$\{volumeContext\s*\?\s*VOLUME_RULE\s*:\s*""\}/.test(src));
+// Assert that volumeContext REACHES buildSystemPrompt, not that it is the last
+// argument. Pinning the position made this fail the moment alignmentContext was
+// appended (Session 148) — a passing test that breaks on an unrelated addition
+// is testing the call's punctuation, not its behaviour.
 check("the handler passes volumeContext to buildSystemPrompt",
-      /credentialContext,\s*volumeContext\)/.test(src));
+      /buildSystemPrompt\([^;]*\bvolumeContext\b[^;]*\)/.test(src));
 
 /* ── 5. The floor travels WITH the number ──────────────────────────────────── */
 const volFn = (src.match(/function buildVolumeContext[\s\S]*?\n\}/) || [""])[0];
