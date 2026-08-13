@@ -53,12 +53,12 @@
       "oversized_doc": 6,
       "stacked_roadmap_cell": 1,
       "kb_note_dialect": 57,
-      "vault_heavy_path": 43
+      "vault_heavy_path": 44
     },
     "vault": {
-      "files": 1911,
-      "bytes": 1104745935,
-      "heavy_bytes": 582835963,
+      "files": 1917,
+      "bytes": 1111782098,
+      "heavy_bytes": 586599980,
       "heavy_share": 0.528,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -95,6 +95,7 @@
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/unified_courses_index.js",
+        "cpl-project-tracker/kb/peer_articulations_payload.json",
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
@@ -1198,6 +1199,16 @@
         "kind": "file"
       },
       "message": "3,910,759 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/peer_articulations_payload.json",
+      "detail": {
+        "bytes": 3764017,
+        "kind": "file"
+      },
+      "message": "3,764,017 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

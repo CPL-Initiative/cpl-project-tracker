@@ -99,6 +99,43 @@ if (!haveArtifact) {
   check("A12 rung 5 never acts automatically (similarity suggests, never merges)",
     groups.filter(g => g.rung === 5).every(g => !g.acts_automatically));
 
+  // ── The naming cascade (Sam, 2026-08-13) ────────────────────────────────
+  // "as is the procedure with CCR, when there is a C-ID or CCN title and
+  // number, we go with that... Once we get M-IDs in good shape, those will rule
+  // as well — third in the cascade."
+  const applied = groups.filter(g => g.official_applied);
+  check("A15 official identities NAME the reference (cascade is live)",
+    applied.length > 200);
+  check("A16 an applied official name carries its system and id",
+    applied.every(g => g.official_system && g.official_id));
+  check("A17 an applied canonical is 'ID — Official Title'",
+    applied.every(g => g.canonical.indexOf(g.official_id) === 0 && /—/.test(g.canonical)));
+  check("A18 the modal college wording is preserved beside it, never discarded",
+    applied.every(g => typeof g.modal_wording === "string" && g.modal_wording.length > 0));
+
+  // ⚠️ THE CASE THAT WOULD HAVE CORRUPTED DATA. `AJ 110` reaches the "Physical
+  // Training and Health Education" group only through the denormalised
+  // (credential, course) pairing — the POST cross-join the scope doc names.
+  // Applying its official title there does not mislabel, it ASSERTS that
+  // Physical Training is Introduction to Criminal Justice. Sam's standing rule
+  // on the AJ 110 repeat is flagged, never auto-resolved.
+  const pt = groups.find(g => /physical training/.test(g.key));
+  check("A19 the Physical Training group exists and is reached by AJ 110",
+    !!pt && pt.official_id === "AJ 110");
+  check("A20 ...and the divergent official title was NOT applied to it",
+    !!pt && pt.official_applied === false && pt.title_divergent === true);
+  check("A21 ...so its canonical is still what colleges actually wrote",
+    !!pt && /physical training/i.test(pt.canonical));
+  check("A22 no group with a divergent official title had it applied",
+    groups.filter(g => g.title_divergent).every(g => !g.official_applied));
+
+  // M-ID is wired but gated: Rule 7 keeps the M-ID layer in AI-assisted STAGING
+  // where re-mints are still permitted, so an M-ID canonical could be re-keyed.
+  check("A23 M-ID naming is wired but disabled until M-IDs are declared ready",
+    /MID_RULES = False/.test(fs.readFileSync("kb/_build_cr_reference.py", "utf8")));
+  check("A24 no group is named by an M-ID while the gate is off",
+    groups.every(g => g.official_system !== "M-ID"));
+
   // Units are an attribute, not identity (SPAN 100 at 4/4.5/5), but a group
   // whose units vary must still SAY so — the Engine Performance case merges
   // 2/3-4/4/5 units under a published statewide line and is correct, yet a

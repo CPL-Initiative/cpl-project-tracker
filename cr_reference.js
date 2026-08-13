@@ -459,7 +459,24 @@
     var open = !!state.open[g.key];
 
     var badges = ['<span class="crr-b ' + rung.tone + '" title="' + esc(rung.why) + '">' + esc(rung.label) + "</span>"];
-    if (g.cid) badges.push('<span class="crr-b ok" title="C-ID declared on this recommendation">' + esc(g.cid) + "</span>");
+    // THE NAMING CASCADE (Sam, 2026-08-13): CCN > C-ID > M-ID > published line >
+    // most-colleges wording. An applied official name and a merely PROPOSED one
+    // must never look the same — the proposed ones are exactly where the
+    // denormalised (credential, course) pairing would otherwise rename
+    // "Physical Training and Health Education" to "Introduction to Criminal
+    // Justice", so the badge has to carry that difference on its face.
+    if (g.official_applied && g.official_system) {
+      badges.push('<span class="crr-b ok" title="Named by its ' + esc(g.official_system)
+        + " — the official title and number rule the reference, as in the CCR.\">"
+        + esc(g.official_system) + " " + esc(g.official_id) + "</span>");
+    } else if (g.official_id && g.title_divergent) {
+      badges.push('<span class="crr-b held" title="' + esc(g.official_system || "C-ID") + " "
+        + esc(g.official_id) + " reaches this group through the articulation pairing, but its official "
+        + "title shares no word with what any college wrote. NOT applied — confirm it yourself, or reject it.\">"
+        + esc(g.official_id) + "? &mdash; check</span>");
+    } else if (g.cid) {
+      badges.push('<span class="crr-b ok" title="C-ID declared on this recommendation">' + esc(g.cid) + "</span>");
+    }
     (g.screens_objecting || []).forEach(function (sc) {
       badges.push('<span class="crr-b held" title="Held back from an automatic merge because the wordings disagree on '
         + esc(sc) + '. Confirm it yourself if they are the same recommendation.">held: ' + esc(sc) + "</span>");
@@ -493,6 +510,23 @@
     if (open) {
       out.push('<div class="crr-body">');
       out.push('<div class="crr-why">' + esc(rung.why) + "</div>");
+
+      // The cascade, stated plainly. Where an official title was APPLIED, show
+      // what colleges actually wrote beside it; where it was only PROPOSED, say
+      // why it is being withheld rather than hiding the candidate.
+      if (g.official_applied && g.official_title) {
+        out.push('<div class="crr-why"><b>Named by its ' + esc(g.official_system) + ".</b> "
+          + "The official title and number rule the reference, as in the CCR. Colleges most often wrote "
+          + "&ldquo;" + esc(g.modal_wording || "") + "&rdquo;.</div>");
+      } else if (g.official_id && g.title_divergent) {
+        out.push('<div class="crr-why"><b>&#9888; ' + esc(g.official_system || "C-ID") + " "
+          + esc(g.official_id) + " is proposed but NOT applied.</b> Its official title &mdash; &ldquo;"
+          + esc(g.official_title || "") + "&rdquo; &mdash; shares no word with any wording below, and it "
+          + "reaches this group through the course pairing, which is denormalised. Applying it "
+          + "automatically is how &ldquo;Physical Training and Health Education&rdquo; would get renamed "
+          + "&ldquo;Introduction to Criminal Justice&rdquo;. Confirm it only if it is genuinely the same "
+          + "recommendation.</div>");
+      }
 
       g.members.forEach(function (m) {
         var isOut = excluded.indexOf(m.rec) >= 0;

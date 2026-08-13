@@ -79,7 +79,53 @@ import collections
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PEERS = os.path.join(ROOT, "kb", "peer_articulations_payload.json")
 CREDS = os.path.join(ROOT, "kb", "credential_recs.json")
+CIDS = os.path.join(ROOT, "kb", "reference", "cid_descriptors.json")
+CCNS = os.path.join(ROOT, "kb", "reference", "ccn_courses.json")
 OUT = os.path.join(ROOT, "kb", "cr_reference_worklist.json")
+
+# ── THE NAMING CASCADE (Sam, 2026-08-13) ───────────────────────────────────
+#
+#   "as is the procedure with CCR, when there is a C-ID or CCN title and number,
+#    we go with that for the Common CR Reference (CCRR). Once we get M-IDs in
+#    good shape, those will rule as well — third in the cascade."
+#
+# So the CCRR's NAME is not the most popular freehand wording when an official
+# identity exists — it is that identity's official title and number. This is the
+# CCR's own §10 precedence (CCN > C-ID > M-ID > Unified) transposed onto
+# recommendations, which is exactly what "as is the procedure with CCR" asks for.
+#
+#   1. CCN   — AB1111 Common Course Number, the newest and most authoritative
+#   2. C-ID  — ASCCC-approved descriptor
+#   3. M-ID  — GATED OFF (see below)
+#   4. the published statewide line
+#   5. the wording the most colleges actually wrote
+#
+# ⚠️ M-ID IS WIRED BUT DISABLED. Sam's condition is "once we get M-IDs in good
+# shape", and Rule 7 says the M-ID layer is AI-assisted STAGING, not yet
+# faculty-published — re-mints are still permitted, so an M-ID chosen as a
+# public canonical name today could be re-keyed tomorrow. Flip this to True in
+# the same change that declares the M-ID layer faculty-published; the rung is
+# already implemented and tested below.
+MID_RULES = False
+
+CID_TITLES, CCN_TITLES = {}, {}
+
+# An official identity only names the group when the group resolves to exactly
+# ONE of them. The course↔rec-line pairing is denormalised wherever it is
+# multi-line (scope §3: of the (credential, course) pairs touching >1 line, ZERO
+# have differing college sets), so a group spanning several identities cannot
+# safely borrow any one of their names.
+def load_official():
+    cid, ccn = {}, {}
+    if os.path.exists(CIDS):
+        for d in load(CIDS, "C-ID descriptors").get("descriptors") or []:
+            if d.get("descriptor") and d.get("title"):
+                cid[d["descriptor"].strip().upper()] = d["title"].strip()
+    if os.path.exists(CCNS):
+        for c in load(CCNS, "CCN courses").get("courses") or []:
+            if c.get("ccn") and c.get("title"):
+                ccn[c["ccn"].strip().upper()] = c["title"].strip()
+    return cid, ccn
 
 # ── The shape: "<units-expr> <unit-word> in <topic>" ────────────────────────
 # 2,323 of 2,344 distinct strings (99.1%) fit this strictly; the 21 misses are
@@ -200,6 +246,8 @@ def load(path, label):
 
 
 def build():
+    global CID_TITLES, CCN_TITLES
+    CID_TITLES, CCN_TITLES = load_official()
     peers = load(PEERS, "peer articulations payload")["peer_articulations"]
     creds = load(CREDS, "credential recs")["rows"]
 
@@ -341,9 +389,80 @@ def build():
         if not screen_ok:
             acts = False
 
-        # Canonical proposal: the published line when there is one (it is the
-        # authority), otherwise the wording the most colleges actually wrote.
-        canonical = pub["credit"] if pub else members[0]["rec"]
+        # ── Canonical name: the cascade (Sam, 2026-08-13) ──────────────────
+        # CCN > C-ID > M-ID (gated) > published statewide line > most-colleges
+        # wording. An official identity NAMES the reference; it does not merely
+        # corroborate it.
+        #
+        # Prefer the C-ID declared on the PUBLISHED line over one derived from
+        # articulations: the published pairing is curated, the articulation
+        # pairing is denormalised (scope §3).
+        official_id = (pub or {}).get("cid") or (sorted(cids_all)[0] if len(cids_all) == 1 else None)
+        mids = sorted(c for c in courses_all if c not in cids_all)
+        official_title, official_system = None, None
+        if official_id:
+            key_up = official_id.strip().upper()
+            if key_up in CCN_TITLES:
+                official_title, official_system = CCN_TITLES[key_up], "CCN"
+            elif key_up in CID_TITLES:
+                official_title, official_system = CID_TITLES[key_up], "C-ID"
+        if not official_title and MID_RULES and len(mids) == 1:
+            official_id, official_system = mids[0], "M-ID"
+            official_title = None          # M-ID titles come from the CCR, not a descriptor file
+
+        # ⚠️ A DIVERGENT OFFICIAL TITLE IS FLAGGED, NEVER SILENTLY APPLIED.
+        # `AJ 122 — Criminal Court Process` renames a group whose colleges all
+        # wrote "Principles and Procedures of the Justice System"; that is the
+        # cascade doing its job, but it is also the shape of a real error, because
+        # POST carries `AJ 110` on two genuinely different lines and Sam ruled that
+        # repeat must be FLAGGED and never auto-resolved. So when the official
+        # title shares no content word with what colleges actually wrote, say so
+        # and let a curator look — the same posture the alignment layer's
+        # `cid_title_divergent` takes.
+        title_divergent = False
+        if official_title:
+            off_toks = set(topic_key(official_title).split())
+            mod_toks = set(topic_key(members[0]["topic"]).split())
+            # Compare squashed forms too, so "Pre-Calculus Mathematics" is not
+            # called divergent from "Precalculus" over a hyphen.
+            off_sq = "".join(sorted(off_toks)).replace(" ", "")
+            mod_sq = "".join(mod_toks)
+            squash_hit = any(t in mod_sq.replace(" ", "") or mod_sq.replace(" ", "") in t
+                             for t in ["".join(off_toks)]) or \
+                         any(o in "".join(sorted(mod_toks)) for o in [off_sq] if o)
+            title_divergent = bool(off_toks) and not (off_toks & mod_toks) and not squash_hit
+
+        # ⚠️ A DIVERGENT OFFICIAL TITLE IS OFFERED, NOT APPLIED.
+        # Flagging alone is not enough here. `AJ 110` reaches this group through
+        # the denormalised (credential, course) pairing, and two of the groups it
+        # would rename are "Physical Training and Health Education" and "CSU GE E
+        # — Lifelong Understanding" — the exact cross-join the scope doc names.
+        # Auto-applying the C-ID title there does not merely mislabel, it asserts
+        # that Physical Training IS Introduction to Criminal Justice. So a
+        # divergent title keeps the freehand canonical and rides along as a
+        # PROPOSAL for a curator to accept. Sam's rule on the AJ 110 repeat —
+        # flagged, never auto-resolved — is the same rule.
+        if title_divergent:
+            official_applied = False
+        elif official_title:
+            official_applied = True
+            canonical = official_id + " — " + official_title
+            canonical_source = official_system
+        elif official_system == "M-ID":
+            official_applied = True
+            canonical = official_id
+            canonical_source = "M-ID"
+        elif pub:
+            official_applied = False
+            canonical = pub["credit"]
+            canonical_source = "published_statewide"
+        else:
+            official_applied = False
+            canonical = members[0]["rec"]
+            canonical_source = "most_colleges"
+        if title_divergent:
+            canonical = pub["credit"] if pub else members[0]["rec"]
+            canonical_source = ("published_statewide" if pub else "most_colleges") + "_official_proposed"
 
         # COLLAPSE VALUE — the ranking rule. (wordings − 1) × colleges touched.
         # The −1 is the real gain: collapsing N wordings removes N−1 of them.
@@ -354,8 +473,17 @@ def build():
         groups.append({
             "key": key if not key.startswith("\x00") else "",
             "canonical": canonical,
-            "canonical_source": "published_statewide" if pub else "most_colleges",
-            "cid": (pub or {}).get("cid") or (sorted(cids_all)[0] if len(cids_all) == 1 else None),
+            "canonical_source": canonical_source,
+            "official_id": official_id,
+            "official_title": official_title,
+            "official_system": official_system,
+            "title_divergent": title_divergent,
+            "official_applied": official_applied,
+            # The freehand wording the most colleges actually wrote, kept even
+            # when an official identity supplies the name — a curator has to be
+            # able to see what the field says as well as what it resolves to.
+            "modal_wording": members[0]["rec"],
+            "cid": official_id,
             "rung": rung,
             "rung_why": rung_why,
             "acts_automatically": acts,
