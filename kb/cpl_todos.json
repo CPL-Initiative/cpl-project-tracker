@@ -1,74 +1,80 @@
 {
-  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 button on every tab. Refreshed at every Rule 8 checkpoint alongside the session handoff.",
-  "_as_of": "2026-08-13 · SkyPeak — POST's ten credit recommendations are published, and Sierra still can't read them.",
-  "_session": 147,
-  "_status": "Two wrong Sierra answers turned out to be the same problem, and it wasn't the one it looked like. Asked what Cerritos might adopt for POST, Sierra named one course; there are ten. Asked about Cerritos and ironworkers she said there was none; there is plenty. In both cases the right answer was already in our data — it had just never been copied to the one place Sierra can read. POST's full set of ten (eight C-ID courses plus two electives) has been sitting in the same file that feeds the public CPL Fact Sheet all along. That set is now published for all 2,205 credentials, and where a credential has no statewide standard we publish the most common recommendations across the colleges that use it, with the number of colleges behind each. Separately, Sierra had been calling 42 statewide credentials 'local' — including Paramedic License — because the flag was read from the wrong one of two files. That is corrected. IMPORTANT: none of this changes what Sierra says yet. The data is in place; connecting her to it is one more piece of work, and it is the next thing. Also shipped: you can now edit a Sierra instruction after saving it, and test it without leaving the tab.",
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions) and For Fable (engineering). Items are DELETED when done, never left checked.",
+  "_as_of": "2026-08-13 · SkyBridge — Sierra now reads all ten of POST's credit recommendations, and 38 hidden statewide exhibits came back into view.",
+  "_session": 148,
+  "_status": "Sierra is live on the full credit-recommendation set (cpl-chat v40). Ask her about POST now and she lists all ten courses instead of one. Wiring that up turned up something bigger: a field called ccc_rec was quietly acting as a filter, and because it is built from adoptions, any statewide exhibit that no college had adopted yet was invisible to her — 38 of them, 36 carrying 75 published credit recommendations. That is the whole construction and apprenticeship shelf MAP builds ahead of demand: the Carpenters trades, NCCER, the contractor licences, OSHA 10 and 30. They were not ranked low, they were missing. They are back, in their own clearly-labelled band so nobody is ever told that peer colleges already run something nobody has adopted. Once visible, the shelf turned out to be small: 36 credentials but only 32 distinct courses, and one course — Introduction to Construction Safety — unlocks twelve of them. The MAP Users contact list was audited and the wiring is correct; two content issues came out of it. Next up, at Sam's direction: telling a college which of its OWN courses to articulate against a credit recommendation, with the other colleges' articulations alongside as evidence.",
   "items": [
     {
-      "id": "s147-sierra-answers-unchanged",
+      "id": "s148-alignment-build",
       "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "THE NEXT THING. Connect Sierra to the new credit-recommendation table and deploy her. Until that happens she still answers POST with one course, even though all ten are published. Same piece of work should fix the Cerritos ironworker answer and stop ready-to-adopt exhibits from being sorted last."
+      "text": "THE NEXT THING, and Sam asked for it directly. When Sierra answers for a college about a certificate, she should name that college's own most-aligned courses to articulate — so faculty don't have to guess — and show how other colleges articulated the same certificate. Proven offline already: for Cerritos and the FCAW welding certificate, WELD 214L is the clear match. Build it: peer-articulations table first (exact data, no guessing), then the per-course table, then wire Sierra."
     },
     {
-      "id": "s147-cerritos-ironworker",
+      "id": "s148-two-signals",
       "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "Cerritos ironworker CPL reads as zero because the exhibit list stores the titles as 'FIW Orientation' and 'IW- Mixed Base' — no 'iron' anywhere — while the curated list has 16 Cerritos credentials, 11 of them named 'Ironworker Apprenticeship'. Sierra searches the raw titles and never checks the curated names. Also: searching the plural 'ironworkers' returns nothing at all."
+      "text": "When building that alignment, matching course titles is NOT enough on its own. Santa Ana articulated 'Structural Welding SMAW' and a 'D1.1 Code Clinic' against FCAW recommendations — neither title says FCAW anywhere. Colleges often map a broader course to a specific recommendation. Always show both what matches by name AND what peers actually did."
     },
     {
-      "id": "s147-unadopted-prominent",
+      "id": "s148-offerings-caps",
       "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "Sam's rule: exhibits created before any college adopts them are deliberate, and should be prominent choices for adoption. Right now the adoption suggestions are ordered by how many colleges already use something, which puts a brand-new ready-to-adopt exhibit dead last — exactly backwards."
+      "text": "The course-catalogue table Sierra searches keeps only the first 900 characters of course titles and 8 sample courses per program. 801 programs are cut off — the biggest ones. So for those, Sierra cannot see most of the courses a college teaches. Worth fixing on its own, separately from the alignment work."
     },
     {
-      "id": "s147-sierra-feedback-backlog",
+      "id": "s148-cerritos-false-absence",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "Still open from last session: Sierra says Cerritos has no ironworker CPL when it has a lot. The exhibit list stores the titles as 'FIW Orientation' and 'IW- Mixed Base' — no 'iron' anywhere — while the curated list has 11 rows named 'Ironworker Apprenticeship'. The college-specific search never checks the curated names."
+    },
+    {
+      "id": "s148-mission-gmail",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "Mission College's CPL coordinator email in MAP is a personal Gmail address (boothmelanie@gmail.com). It is the only one like it across all 123 colleges, and because it is first in the cascade it is what we would propose as the address students get routed to. It is flagged on the tab, not hidden — it is their designation to change, not ours. Worth a word with the MAP team."
+    },
+    {
+      "id": "s148-search-tier-candidates",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "7 college contacts are marked 'Candidate — confirm' because we could only find them through a web search, never opening the actual page. Confirming each takes seconds using the links on the tab. Start with Palomar (it has a separate behavioural-health department, so the wrong address is a real risk) and Canyons."
+    },
+    {
+      "id": "s148-cluster-surface",
+      "for": "Sam",
+      "tab": "Credential Reference",
+      "text": "A finding worth a decision: the 36 never-adopted statewide credentials share courses heavily — only 32 distinct courses between them, and 'Introduction to Construction Safety' alone unlocks 12. A college that adds one or two courses could articulate a dozen statewide standards. Want this built as a view colleges can use?"
+    },
+    {
+      "id": "s148-sierra-feedback-backlog",
       "for": "Sam",
       "tab": "Sierra Training",
-      "text": "25 pieces of feedback on Sierra have never been looked at, the oldest since 1 July. The tab is now easy to use — you can mark what you've read, and write an instruction straight from a bad answer. Worth half an hour."
+      "text": "25 pieces of feedback about Sierra have never been triaged — the oldest has been sitting since 1 July. The tab now has buttons to mark each one and to write an instruction about it. This is the single easiest way to make Sierra better."
     },
     {
-      "id": "s147-retype-three-instructions",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "Three instructions you wrote on 12 August were cut off at 500 characters before that limit was fixed, and the lost text can't be recovered. You can now edit an instruction after saving it, so retyping them is quicker than it was."
-    },
-    {
-      "id": "s147-twelve-missing-titles",
+      "id": "s148-statewide-missing-12",
       "for": "Fable",
       "tab": "Credential Reference",
-      "text": "12 credentials are marked statewide in the adoption file but don't exist in the credential list at all, so the statewide fix couldn't reach them. Worth finding out whether they're renames or genuinely missing."
+      "text": "12 credentials are marked statewide in the adoption file but are missing from Sierra's credential list entirely, so she cannot answer about them at all."
     },
     {
-      "id": "s147-cpl-funding-test-hangs",
+      "id": "s147-corpus-coverage",
       "for": "Fable",
-      "tab": "—",
-      "text": "The test file for the funding tab runs for over four minutes and never finishes, so the full test suite can't complete. It is not a new problem — that file hasn't changed — but it means nobody is running the whole suite."
-    },
-    {
-      "id": "s146-tell-finance-holders",
-      "for": "Sam",
-      "tab": "Contracts",
-      "text": "Now that Contracts is locked to the Finance phrase, tell whoever works the contract register what the new phrase is. Until they have it they will see a locked page — with a box to type it into, but nothing to type. Nobody else is affected; every other tab still takes the general team phrase."
+      "tab": "CPL Assistant",
+      "text": "Sierra's exhibit list covers 59 of the 123 colleges, and the college profiles behind it have not been refreshed since 25 June. Any 'no college does this' answer she gives is measured against half the system."
     },
     {
       "id": "s146-site-phrase-superset",
       "for": "Sam",
       "tab": "Team Phrases",
-      "text": "A decision only you can make, and it is live now rather than hypothetical: someone holding the Finance phrase can also open every shared CPL tab — budget, personnel, projects, MAP contacts. That is fine if everyone you give it to is trusted with all of it. If not, say so and the scopes get split."
-    },
-    {
-      "id": "s143-map-deep-links",
-      "for": "Sam",
-      "tab": "My College",
-      "text": "Still waiting on the MAP deep links from Malone and Pedro. Three sections on My College are built and ready for them."
+      "text": "Decision needed before the Finance phrase goes to anyone in Finance: right now a site phrase opens its own tabs PLUS every shared CPL tab. That is fine only if everyone holding it should see all shared CPL data. If not, the scopes need splitting."
     },
     {
       "id": "s145-identity-crosswalk-write",
       "for": "Fable",
-      "tab": "—",
-      "text": "The college/district name crosswalk is built and merged but never written to Supabase — that write is what actually ends the 'Mt San Antonio vs Mt. San Antonio' mismatch."
+      "tab": "Colleges",
+      "text": "The college/district name crosswalk is built and verified but has never been written to the database — that write is what actually ends the 'Mt San Antonio vs Mt. San Antonio' mismatch."
     }
   ]
 }

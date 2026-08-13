@@ -1,7 +1,7 @@
 /**
  * MAP Users — the contact list's join and its address quality.
  *
- * Audited 2026-08-13 (Session 149) against live data. The WIRING turned out to
+ * Audited 2026-08-13 (Session 148) against live data. The WIRING turned out to
  * be sound: all 78 FALLBACK_CONTACTS keys, all 16 CPL_PAGES keys and the one
  * CPL_LIAISONS key resolve to a real `map_college_contacts.college`, with zero
  * misses. The defects found were in the CONTENT and in a latent fragility:

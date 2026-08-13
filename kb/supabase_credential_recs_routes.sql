@@ -8,7 +8,7 @@
 -- string — so asked about POST Basic Academy Sierra named ONE course when the
 -- statewide set is TEN lines (9 carrying a C-ID, 8 distinct, AJ 110 twice).
 --
--- Then the second, sharper consequence, measured 2026-08-13 (Session 149):
+-- Then the second, sharper consequence, measured 2026-08-13 (Session 148):
 -- ccc_rec is not merely a lossy summary, it is a RETRIEVAL GATE.
 --
 --   search_statewide_recommendations had `and c.ccc_rec is not null`.
