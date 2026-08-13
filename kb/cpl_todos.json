@@ -1,62 +1,74 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-13 (evening) · SkyRef — the gap list was 83% robot, and the sandbox flag already existed.",
-  "_session": 150,
-  "_status": "Sam asked to bulk-clear the list of questions Sierra struggled with. Measuring it first changed the answer: of 78 rows, 65 were the automated test suite that runs on every deploy — only 13 were real questions from real people. That also explained something he had spotted earlier, the same question appearing twice minutes apart with one good answer and one bad one: the test suite asks everything twice, and one of the two is deliberately given less information. Nothing was broken there. The list now excludes the robot traffic (with a toggle to show it), you can mark items handled individually or in bulk, and the sandbox colleges MAP accidentally leaked into its reports are out of the College dropdown — the field to suppress them already existed and nobody was reading it. The roster sync now runs daily instead of monthly, so the MAP team's contact fixes reach Sierra within a day. Next up, by Sam's choice: plan and build the Common CR Reference tab, then fix the EACR filters.",
-  "items": [
-    {
-      "id": "s150-eacr-filters",
-      "for": "Sam",
-      "tab": "Exhibit Adoption",
-      "text": "Which of the Exhibit Adoption filters actually fail? There are eight — collaborative type, CPL type, sector, discipline, issuing agency, college, district, region. I checked the underlying data and all of it is present, so the fault is in the controls rather than the records, and knowing which ones misbehave will save the next session guessing. You also asked for dropdowns instead of the current checkbox lists; that part is clear."
-    },
-    {
-      "id": "s150-check-gap-list",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
-    },
-    {
-      "id": "s150-check-dropdown",
-      "for": "Sam",
-      "tab": "College Briefing",
-      "text": "The sandbox colleges should be gone from the College dropdown — CabTest, MorTest City, Nortest City, RivTest City, SantTest Ana, Testing College, NORCO College - Syllabus Manager and CA MAP INITIATIVE COLLEGE. Futuro Health, Launch Apprenticeship and the two continuing-education institutions are still there on purpose."
-    },
-    {
-      "id": "s150-decide-blank-contacts",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
-    },
-    {
-      "id": "s150-common-cr-reference",
-      "for": "Fable",
-      "tab": "Knowledge Base",
-      "text": "QUEUED BY SAM as the next build: plan and create the Common CR Reference tab. Scope it against the CCR's actual matching factors first. His ruling stands — C-ID is one factor and not the key, because only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all, and the ones that do include a case (AJ 110) where the same C-ID sits on two genuinely different lines."
-    },
-    {
-      "id": "s150-missing-statewide-titles",
-      "for": "Fable",
-      "tab": "Credential Reference",
-      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
-    },
-    {
-      "id": "s150-corpus-coverage",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
-    },
-    {
-      "id": "s150-search-tier-contacts",
-      "for": "Fable",
-      "tab": "MAP Users",
-      "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
-    },
-    {
-      "id": "s150-site-phrase-scope",
-      "for": "Sam",
-      "tab": "Team Phrases",
-      "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-13 (late) · SkyRunner — the filter dropdowns were invisible, not missing.",
+ "_session": 151,
+ "_status": "Two things closed. The Exhibit Adoption filters: you said they need dropdowns and don't all work — it turned out to be one fault, not two. The dropdowns were there the whole time, but a styling rule on the surrounding panel was cutting them off, so clicking a filter opened a list you couldn't see. Fixed. Calbright College Non-Credit was also being dropped from the District and Region filters because it was missing from our college list — 88 records' worth — and the sandbox college is now hidden. Second, the Common CR Reference is scoped and measured before any building. The honest headline: automatic matching can only ever handle about a tenth of it. Roughly 90% needs a person, because 'Racial Issues and the Police' and 'Community Relations' are the same academy topic written in completely different words, and no software finds that. So it should be built as a working queue for curators, not a matching engine. The encouraging part: the work is very top-heavy. The 50 most common recommendation wordings account for half of everything, and 1,593 of the 2,344 wordings appear exactly once. You don't have to boil the ocean.",
+ "items": [
+  {
+   "id": "s151-check-filters",
+   "for": "Sam",
+   "tab": "Exhibit Adoption",
+   "text": "Please re-open the Exhibit Adoption filters. All eight should now drop open properly when clicked — collaborative type, CPL type, sector, discipline, issuing agency, college, district and region. They are still tick-box lists so you can pick several at once; if you specifically want single-choice dropdowns instead, say so and I'll swap them, but that would mean losing multi-select."
+  },
+  {
+   "id": "s151-cr-reference-grain",
+   "for": "Sam",
+   "tab": "Common Course Reference",
+   "text": "One decision needed before the Common CR Reference gets built: should a canonical recommendation be one entry for the whole system, or one per credential? 83% of wordings only ever appear under a single credential, so per-credential is nearly free — but the most valuable ones appear under as many as 61 credentials, and those are exactly the ones worth canonicalising once."
+  },
+  {
+   "id": "s151-cr-reference-worklist",
+   "for": "Fable",
+   "tab": "Common Course Reference",
+   "text": "Build the Common CR Reference as a ranked worklist, not a matcher — the measurement says automation reaches only ~10%. Rank topics by how much they collapse (wordings × colleges), offer group/split/confirm with curator attribution, and pre-apply the four automated rungs labelled by which one fired. Model the affordances on the CCR merge workspace. Read docs/common_cr_reference_scope.md first."
+  },
+  {
+   "id": "s151-ccr-head-check",
+   "for": "Fable",
+   "tab": "Common Course Reference",
+   "text": "Before the CCR's next push, measure whether the CCR's own course distribution is as top-heavy as the credit recommendations turned out to be (top 50 = half of everything). If it is, the same work-the-head strategy makes the CCR tractable, and the 2,344-string CR Reference is the cheap place to prove it first."
+  },
+  {
+   "id": "s150-check-gap-list",
+   "for": "Sam",
+   "tab": "Sierra Training",
+   "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
+  },
+  {
+   "id": "s150-decide-blank-contacts",
+   "for": "Sam",
+   "tab": "MAP Users",
+   "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
+  },
+  {
+   "id": "s150-common-cr-reference",
+   "for": "Fable",
+   "tab": "Knowledge Base",
+   "text": "QUEUED BY SAM as the next build: plan and create the Common CR Reference tab. Scope it against the CCR's actual matching factors first. His ruling stands — C-ID is one factor and not the key, because only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all, and the ones that do include a case (AJ 110) where the same C-ID sits on two genuinely different lines."
+  },
+  {
+   "id": "s150-missing-statewide-titles",
+   "for": "Fable",
+   "tab": "Credential Reference",
+   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
+  },
+  {
+   "id": "s150-corpus-coverage",
+   "for": "Fable",
+   "tab": "CPL Assistant",
+   "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
+  },
+  {
+   "id": "s150-search-tier-contacts",
+   "for": "Fable",
+   "tab": "MAP Users",
+   "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
+  },
+  {
+   "id": "s150-site-phrase-scope",
+   "for": "Sam",
+   "tab": "Team Phrases",
+   "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
+  }
+ ]
 }
