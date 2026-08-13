@@ -113,6 +113,7 @@
       ".mapu-src:hover { text-decoration:underline; }",
       ".mapu-fb { margin:0 0 4px; }",
       ".mapu-fb-t { font-size:.72rem; color: var(--text-muted); }",
+      ".mapu-warn { font-size:.72rem; color: var(--red-alert,#920000); cursor:help; }",
       // Proposed-for-MAP treatment (SkyWire, 2026-08-09). Deliberately distinct
       // from every "this is what MAP holds" cell: a temporary fill that reads as
       // MAP data is the whole risk of this feature.
@@ -575,7 +576,60 @@
         + "'name off a list' case Jessica's rules exclude. Needs a human to identify the right "
         + "contact, most likely via the CCCCO apprenticeship team.", },
   };
-  function fallbackFor(college) { return FALLBACK_CONTACTS[college] || null; }
+  // MAP's college names are the join key for every display map in this file, and
+  // they are typed by hand: `map_college_contacts` carries "Cypress College " and
+  // "San Jose City College " WITH a trailing space today. The keys above match
+  // that exactly, so the lookup works — and would break the day MAP tidies the
+  // spelling, silently, rendering a college we DID research as "not looked up".
+  //
+  // Normalising BOTH sides is the lesson this repo already paid for once, when
+  // the funding tab normalised one side of a join and five colleges showed no
+  // implementation funding. Exact match still wins; the normalised index is only
+  // consulted on a miss, so nothing changes today.
+  var _fbNorm = null;
+  function normCollege(s) {
+    return String(s == null ? "" : s).normalize("NFC").replace(/\s+/g, " ").trim().toLowerCase();
+  }
+  function fallbackFor(college) {
+    if (FALLBACK_CONTACTS[college]) return FALLBACK_CONTACTS[college];
+    if (!_fbNorm) {
+      _fbNorm = {};
+      Object.keys(FALLBACK_CONTACTS).forEach(function (k) {
+        _fbNorm[normCollege(k)] = FALLBACK_CONTACTS[k];
+      });
+    }
+    return _fbNorm[normCollege(college)] || null;
+  }
+
+  // ── Address quality: FLAG, never filter ───────────────────────────────────
+  // Found 2026-08-13 auditing the worklist: Mission College's proposal is
+  // `boothmelanie@gmail.com`, sitting in MAP's own cpl_coordinator_email and
+  // therefore FIRST in the cascade. It is a real designation, so the standing
+  // doctrine applies — propose only someone the college already designated, and
+  // never adopt a convention on their behalf. Suppressing it would substitute
+  // our judgment for theirs and hide the finding.
+  //
+  // So this warns and lets a human decide. The two things worth a second look
+  // before a public college's CPL landing page routes students there:
+  //   * a free-mail provider — a personal inbox, which usually means the person
+  //     moved, or nobody set up a college address for the role;
+  //   * a placeholder — College of Marin carries the literal string "na" in
+  //     cpl_counselor_email. map_first_email() already nulls that one out, so it
+  //     never reaches the cascade; the guard is here for the next one.
+  var FREE_MAIL = /@(gmail|yahoo|hotmail|outlook|aol|icloud|me|comcast|sbcglobal|att|verizon|protonmail|live|msn)\./i;
+  function addressWarning(addr) {
+    var a = String(addr == null ? "" : addr).trim();
+    if (!a) return null;
+    if (!/^[^@\s]+@[^@\s]+\.[a-z]{2,}$/i.test(a)) {
+      return "Not a usable email address — check MAP; a student request routed here reaches nobody.";
+    }
+    if (FREE_MAIL.test(a)) {
+      return "Personal email provider, not a college address. Worth confirming with the college "
+        + "before a public landing page routes students to it — it is still their designation, "
+        + "not ours to change.";
+    }
+    return null;
+  }
 
   // A PROPOSED FILL — the contact we suggest MAP adopt as primary, and ONLY where
   // MAP currently holds nothing. Sam, 2026-08-09: "the counseling contact is our
@@ -1294,7 +1348,12 @@
             : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
         + "</td>"
         + "<td>" + (g.proposed_name ? "<b>" + esc(g.proposed_name) + "</b><br>" : "")
-        + '<span class="mapu-disc">' + esc(g.proposed_email) + "</span></td>"
+        + '<span class="mapu-disc">' + esc(g.proposed_email) + "</span>"
+        + (addressWarning(g.proposed_email)
+            ? '<br><span class="mapu-warn" title="' + esc(addressWarning(g.proposed_email))
+              + '">&#9888; check this address</span>'
+            : "")
+        + "</td>"
         + '<td><span class="mapu-chip">' + esc(g.proposed_source) + "</span></td>"
         + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
         + ' title="Draft the email telling this college we are routing their landing page to this person">'
