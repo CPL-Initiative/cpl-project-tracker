@@ -931,13 +931,98 @@ async function fetchAdoptionOpportunities(college: string | null, sb: any): Prom
 }
 
 /**
+ * THE FULL CREDIT-RECOMMENDATION SET — chatbox_credential_recs, 2,205 rows.
+ *
+ * Until this existed, every credential route printed `ccc_rec`: ONE string,
+ * the modal credit recommendation across a credential's articulation rows. For
+ * POST Basic Academy that is "3 hours in Criminal Investigation", so Sierra
+ * named ONE course when the statewide set is TEN lines. The Fact Sheet has
+ * carried all ten publicly the whole time — a publish gap, never a build gap.
+ *
+ * Batched deliberately: the titles come from whatever route already matched, so
+ * there is exactly one round-trip no matter how many routes fired, and no
+ * second matcher that could drift from the first and attach recommendations to
+ * a credential Sierra did not name.
+ */
+async function fetchCredentialRecs(titles: string[], sb: any): Promise<Map<string, any>> {
+  const out = new Map<string, any>();
+  const uniq = [...new Set(titles.filter(Boolean))];
+  if (uniq.length === 0) return out;
+  const { data, error } = await sb.rpc("credential_recs_for_titles", { titles: uniq });
+  if (error || !data) return out;
+  for (const r of data) out.set(r.unified_title, r);
+  return out;
+}
+
+/**
+ * Render one credential's recommendation lines.
+ *
+ * LEAD WITH THE LIST, NEVER A COUNT. POST carries AJ 110 on two different lines
+ * ("Intro to Administration of Justice" and "Physical Training and Health
+ * Education"), so it has 10 lines, 9 of them carrying a C-ID, but only 8
+ * DISTINCT C-IDs. Any single number is therefore contestable and a bare count
+ * invites the model to state the one that happens to be wrong. Sam's ruling on
+ * the repeat: "AJ 110 may be C-ID and it is Elective" — it is FLAGGED, never
+ * auto-resolved, because resolving it is a curriculum judgement and not ours.
+ *
+ * Two row shapes, one per rec_kind:
+ *   statewide_authoritative — {cid, title, units, credit}, from the Fact Sheet
+ *                             builder, so Sierra cannot drift from the public
+ *                             document.
+ *   local_modal             — {cid, credit, colleges, example_course}, the most
+ *                             common local awards with the college count behind
+ *                             each, which is what makes them weighable.
+ */
+function renderRecLines(rec: any, indent = "  "): string {
+  if (!rec || !Array.isArray(rec.recs) || rec.recs.length === 0) return "";
+  const statewide = rec.rec_kind === "statewide_authoritative";
+  let out = "";
+
+  if (statewide) {
+    out += `${indent}STATEWIDE CREDIT RECOMMENDATIONS — the full set, ${rec.n_recs} line(s). `
+        + `LIST THESE; do not summarise them as a number:\n`;
+  } else {
+    out += `${indent}CREDIT RECOMMENDATIONS AT ADOPTING COLLEGES — no statewide set exists for this `
+        + `credential, so these are the most common LOCAL awards (${rec.n_recs} line(s)), with the `
+        + `number of colleges behind each:\n`;
+  }
+
+  for (const line of rec.recs) {
+    const label = line.title || line.credit || "(unnamed)";
+    out += `${indent}  • `;
+    out += line.cid ? `C-ID ${line.cid} — ` : (statewide ? `(no C-ID, elective) — ` : "");
+    out += label;
+    if (line.units) out += ` — ${line.units} unit(s)`;
+    if (line.title && line.credit && line.credit !== line.title) out += ` [${line.credit}]`;
+    if (line.colleges) out += ` — ${line.colleges} college(s) award this`;
+    if (line.example_course) out += ` (e.g. ${line.example_course})`;
+    out += `\n`;
+  }
+
+  if (statewide && Array.isArray(rec.cid_repeats) && rec.cid_repeats.length > 0) {
+    out += `${indent}NOTE — ${rec.cid_repeats.join(", ")} appears on more than one line above. `
+        + `That is why the counts differ: ${rec.n_recs} recommendation lines, ${rec.n_cid_lines} `
+        + `carrying a C-ID, ${rec.n_cid_recs} DISTINCT C-IDs. Report the lines exactly as listed and `
+        + `mention the repeat if you give a count at all. Do NOT silently merge the lines or pick one `
+        + `count as the true one — whether that repeat is an error is a curriculum question MAP has `
+        + `not settled.\n`;
+  }
+  return out;
+}
+
+/**
  * THE FLOOR TRAVELS WITH THE NUMBER. Only ~4% of student rows can be named at
  * all (the exhibit corpus covers 59 of MAP's 123 colleges), so every count here
  * is a floor. Emitting `students` without `colleges_adopted` would let the model
  * state a floor as a system total — the same failure as reading "not in this
  * dataset" as zero. So the two are printed on the same line, always.
  */
-function buildVolumeContext(vol: any[] | null, adopt: any[] | null, college: string | null): string {
+function buildVolumeContext(
+  vol: any[] | null,
+  adopt: any[] | null,
+  college: string | null,
+  recs?: Map<string, any>,
+): string {
   if ((!vol || vol.length === 0) && (!adopt || adopt.length === 0)) return "";
   let out = `\n\n--- STUDENT VOLUME BY CREDENTIAL (measured from MAP student records) ---\n`;
 
@@ -970,22 +1055,54 @@ function buildVolumeContext(vol: any[] | null, adopt: any[] | null, college: str
   }
 
   if (adopt && adopt.length > 0) {
-    out += `\nWHAT ${college ? college.toUpperCase() : "THIS COLLEGE"} COULD ADOPT `
-        + `(peers already articulate these; this college does not):\n`;
-    for (const r of adopt) {
-      out += `- ${r.unified_title}`;
-      if (r.statewide) out += ` [statewide standard — adoptable as-is]`;
-      out += ` — ${r.peers_already_adopted} peer college(s) already articulate it`;
-      if (r.ccc_rec) out += `; statewide recommendation: ${r.ccc_rec}`;
-      out += `\n`;
+    const who = college ? college.toUpperCase() : "THIS COLLEGE";
+    // TWO BANDS, TWO DIFFERENT CLAIMS — never merge them into one list. Saying
+    // "N peers already articulate it" about a credential with zero adopters
+    // fabricates a route, which is the failure the catalogue loader guards
+    // against by keeping adopter_colleges and potential_colleges disjoint.
+    const peerBand = adopt.filter((r) => r.band !== "ready_to_adopt");
+    const readyBand = adopt.filter((r) => r.band === "ready_to_adopt");
+
+    if (peerBand.length > 0) {
+      out += `\nWHAT ${who} COULD ADOPT — already running at peer colleges `
+          + `(peers teach the course and have articulated it; this college has not):\n`;
+      for (const r of peerBand) {
+        out += `- ${r.unified_title}`;
+        if (r.statewide) out += ` [statewide standard — adoptable as-is]`;
+        out += ` — ${r.peers_already_adopted} peer college(s) already articulate it\n`;
+        const lines = renderRecLines(recs?.get(r.unified_title), "    ");
+        if (lines) out += lines;
+        else if (r.ccc_rec) out += `    Statewide recommendation: ${r.ccc_rec}\n`;
+      }
     }
+
+    if (readyBand.length > 0) {
+      out += `\nREADY TO ADOPT — statewide standards NO college has taken up yet:\n`;
+      for (const r of readyBand) {
+        out += `- ${r.unified_title}`;
+        if (r.issuer) out += ` (issued by ${r.issuer})`;
+        out += `\n`;
+        const lines = renderRecLines(recs?.get(r.unified_title), "    ");
+        if (lines) out += lines;
+      }
+      out += `These are NOT a lesser tier and their zero adopter count is NOT a quality signal. `
+          + `MAP creates statewide exhibits ahead of demand so the credit is ready when a student `
+          + `arrives, which means ${who} would be the FIRST to offer them — the credit is already `
+          + `defined, so adopting is a local curriculum decision rather than a negotiation. `
+          + `Present them as concrete openings, and never imply they were passed over.\n`;
+    }
+
     out += `These are concrete, checkable opportunities — name them specifically rather than `
         + `describing the category.\n`;
   }
   return out;
 }
 
-function buildCredentialContext(statewide: any[] | null, any_: any[] | null): string {
+function buildCredentialContext(
+  statewide: any[] | null,
+  any_: any[] | null,
+  recs?: Map<string, any>,
+): string {
   if ((!statewide || statewide.length === 0) && (!any_ || any_.length === 0)) return "";
   let out = `\n\n--- CANONICAL CREDENTIAL RECORD (curated names, not the freehand titles colleges typed) ---\n`;
 
@@ -994,8 +1111,27 @@ function buildCredentialContext(statewide: any[] | null, any_: any[] | null): st
     for (const r of statewide) {
       out += `- ${r.unified_title}`;
       if (r.issuer) out += ` (issued by ${r.issuer})`;
-      out += `\n  Statewide recommendation: ${r.ccc_rec}\n`;
-      out += `  Colleges that have ADOPTED it: ${r.n_adopters}\n`;
+      out += `\n`;
+      const full = recs?.get(r.unified_title);
+      const lines = renderRecLines(full);
+      if (lines) {
+        out += lines;
+      } else if (r.ccc_rec) {
+        // Fallback only. ccc_rec is the modal single line across a credential's
+        // articulations — a summary of the record, not the record.
+        out += `  Statewide recommendation: ${r.ccc_rec}\n`;
+      }
+      // ZERO ADOPTERS IS A SHELF ITEM, NOT AN ABSENCE. These credentials were
+      // unreachable until 2026-08-13: ccc_rec is derived from adoptions, so a
+      // never-adopted exhibit had none, and the CRED-STD gate required one.
+      if (r.n_adopters === 0) {
+        out += `  Colleges that have ADOPTED it: NONE YET. MAP publishes statewide exhibits `
+            + `BEFORE any college takes them up, deliberately, so the credit is ready when a `
+            + `student arrives. Present this as an open opportunity — a standard any college can `
+            + `adopt as-is — NEVER as the credential being unavailable, unsupported or a dead end.\n`;
+      } else {
+        out += `  Colleges that have ADOPTED it: ${r.n_adopters}\n`;
+      }
       if (r.matched_via && r.matched_via !== r.unified_title) {
         out += `  (matched on the college-entered variant "${r.matched_via}")\n`;
       }
@@ -1013,6 +1149,7 @@ function buildCredentialContext(statewide: any[] | null, any_: any[] | null): st
       out += `\nIn the credential catalogue but NOT adopted statewide (local articulations only):\n`;
       for (const r of locals) {
         out += `- ${r.unified_title} — ${r.n_adopters} college(s) articulate it locally\n`;
+        out += renderRecLines(recs?.get(r.unified_title), "    ");
       }
     }
   }
@@ -1405,6 +1542,18 @@ const CREDENTIAL_RULE = `\n\nABOUT THE "CANONICAL CREDENTIAL RECORD" SECTION (if
 - If the credential is in neither list, say we do not have it in the catalogue, and invite them to email MAP@rccd.edu so the gap is on record. Do NOT invent a credential, a recommendation, or a unit value to fill the silence.
 - Multiple entries mean the question was genuinely ambiguous (e.g. "peace officer" matches both the POST Basic Academy and the Correctional Officer Core Course). Name the options and let the person choose rather than silently picking one.`;
 
+// Sierra told Sam that POST Basic Academy carried ONE credit recommendation.
+// The statewide set is ten lines, and it had been on the public CPL Fact Sheet
+// the whole time — she was reading ccc_rec, a single modal string, as if it
+// were the whole record. This rule exists so a summary can never again be
+// mistaken for the record.
+const CREDIT_RECS_RULE = `\n\nABOUT "CREDIT RECOMMENDATIONS" LINES (if present) — THE FULL SET, NOT A SUMMARY:
+- LIST THE COURSES. When a credential's recommendation lines are given, name them — the course titles, their C-IDs where present, and the units each carries. NEVER answer with just a count ("this carries 10 recommendations") and never name one line as though it were the whole award. If the list is long, give the full list anyway; that IS the answer to "what credit do I get".
+- These lines are the same ones published on the CPL Fact Sheet. Quote them as given. Do not re-unit them, re-title them, merge them, or add a course that is not listed.
+- STATEWIDE OVERRIDES LOCAL, AND YOU NEVER GIVE BOTH. If a credential has a statewide set, that is the answer — do not also recite what individual colleges award locally, and do not present local variation as disagreement with the standard. If there is NO statewide set, the local lines are the answer, and each carries the number of colleges awarding it: give the common ones with their college counts so the person can weigh them, not every variant that exists.
+- A REPEATED C-ID IS FLAGGED, NOT FIXED. If a note says a C-ID appears on more than one line, report the lines as listed and say the repeat is there. Whether it is an error is a curriculum question MAP has not settled, so do not resolve it, do not drop the duplicate, and do not present one count as the correct one.
+- ZERO ADOPTERS IS AN OPPORTUNITY, NOT AN ABSENCE. MAP publishes statewide exhibits before any college adopts them, on purpose, so the credit is defined and waiting when a student turns up. If a credential shows no adopters, say the standard exists and is ready to be adopted, and say which credit it carries. Never describe it as unavailable, unsupported, not offered, or something nobody wanted — and never let a student conclude the credit does not exist.`;
+
 // Added after Sierra was asked "how many students statewide are eligible for
 // credit for a CompTIA cert, and for which certs?" It said no statewide
 // recommendation had been adopted — MAP holds ten for CompTIA — and then listed
@@ -1527,7 +1676,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${(credentialContext || volumeContext) ? CREDIT_RECS_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -1794,32 +1943,62 @@ Deno.serve(async (req: Request) => {
     // first; the catalogue-wide lens only when it comes back empty, so the
     // "no statewide recommendation, but it exists locally" answer is available
     // without a second round-trip on the common path.
+    // Routes CRED-VOLUME + COLLEGE-ADOPT read pre-computed rollups, never the
+    // 537,908-row student grain — aggregating that live measured >60s against a
+    // 1.7-5.0s budget. Adoption only fires once a college is known, since "what
+    // could I adopt?" is meaningless without a subject.
+    //
+    // The credential group and the volume group are independent, so they now run
+    // CONCURRENTLY (they used to be sequential). That buys back more than the
+    // one round-trip the recommendation lookup below adds. Each group swallows
+    // its own failure: one dead route must never take the whole answer down.
     let credentialContext = "";
-    try {
-      const stdRecs = await fetchStatewideRecommendations(searchText, sb);
-      const anyCreds = stdRecs && stdRecs.length > 0
-        ? null
-        : await fetchAnyCredentials(searchText, sb);
-      credentialContext = buildCredentialContext(stdRecs, anyCreds);
-    } catch (e) {
-      // A credential lookup failing must never take the whole answer down —
-      // every other context section is still valid without it.
-      console.error("credential lookup failed:", e);
-    }
-
-    // Routes CRED-VOLUME + COLLEGE-ADOPT. Both read pre-computed rollups, never
-    // the 537,908-row student grain — aggregating that live measured >60s
-    // against a 1.7-5.0s budget. Adoption only fires once a college is known,
-    // since "what could I adopt?" is meaningless without a subject.
     let volumeContext = "";
+    let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
+
+    await Promise.all([
+      (async () => {
+        try {
+          stdRecs = await fetchStatewideRecommendations(searchText, sb);
+          anyCreds = stdRecs && stdRecs.length > 0
+            ? null
+            : await fetchAnyCredentials(searchText, sb);
+        } catch (e) {
+          console.error("credential lookup failed:", e);
+        }
+      })(),
+      (async () => {
+        try {
+          const both = await Promise.all([
+            fetchCredentialVolume(searchText, sb),
+            fetchAdoptionOpportunities(singleProfile?.college || null, sb),
+          ]);
+          vol = both[0];
+          adopt = both[1];
+        } catch (e) {
+          console.error("credential volume lookup failed:", e);
+        }
+      })(),
+    ]);
+
+    // ONE batched lookup of the full credit-recommendation set for every
+    // credential the routes above matched — the fix for Sierra naming one of
+    // POST's ten courses. Batched after the fact rather than joined into each
+    // RPC so there is a single round-trip however many routes fired.
     try {
-      const [vol, adopt] = await Promise.all([
-        fetchCredentialVolume(searchText, sb),
-        fetchAdoptionOpportunities(singleProfile?.college || null, sb),
-      ]);
-      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null);
+      const titles = [
+        ...(stdRecs || []), ...(anyCreds || []), ...(vol || []), ...(adopt || []),
+      ].map((r: any) => r?.unified_title).filter(Boolean);
+      const recs = await fetchCredentialRecs(titles, sb);
+      credentialContext = buildCredentialContext(stdRecs, anyCreds, recs);
+      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs);
     } catch (e) {
-      console.error("credential volume lookup failed:", e);
+      // The lines are an enrichment. Losing them must cost the DETAIL, never the
+      // credential sections themselves — so rebuild without them rather than
+      // leaving Sierra with no credential context at all.
+      console.error("credential recs lookup failed:", e);
+      credentialContext = buildCredentialContext(stdRecs, anyCreds);
+      volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null);
     }
 
     const systemPrompt = buildSystemPrompt(
