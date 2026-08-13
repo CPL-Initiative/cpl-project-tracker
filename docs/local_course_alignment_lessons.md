@@ -32,7 +32,11 @@ Two deliverables in one sentence, and they need **different data**:
 1. *"the most aligned Cerritos courses"* — a **proposal**, computed.
 2. *"the other college articulations for this same certificate"* — a **fact**, looked up.
 
-## 2026-08-13 — SkyBridge (Session 148): proven offline, not built
+## 2026-08-13 — SkyBridge (Session 148), design pass: proving it offline
+
+> **Superseded by the section below** — this records the investigation and the
+> design decisions, which still hold. The three gaps it lists were all closed the
+> same day; the build is live as cpl-chat v41.
 
 ### (a) What was learned
 
@@ -151,3 +155,84 @@ course.
   on one credential. It is a starting point, not a validated model; the acronym
   bonus is doing a lot of work and will not generalise to credentials whose recs
   carry no acronym.
+
+---
+
+## 2026-08-13 (later) — SkyBridge: built and live (cpl-chat v41)
+
+Shipped the same day it was designed. **#1153** peer articulations · **#1154**
+per-college catalogue + RPC · **#1155** the cpl-chat wiring.
+
+### (a) What was learned
+
+**Neither source carried both halves, and the join key was already there.**
+`coci_articulations.json` has `credit_recommendations` but no college attribution
+on its `local_courses`; `credential_reference_data.js` has per-course
+`local[].colleges` but no recommendation. CER's `cid` holds the same value as
+COCI's `course_id`, so the join is `(unified_title, identity)`.
+
+**⚠️ Attribution is not always per-course, and that had to be MEASURED.** Of 366
+articulations carrying >1 local course, **208 (57%) list differing college sets
+per course** — real attribution (`ASL 1 → Copper Mountain`, `ASL V01 → Ventura`).
+The other **158 (43%) repeat one identical set onto every course**, which is the
+signature of a group-level list denormalised down. The example that exposed it:
+Correctional Officer Core Course listed the same five colleges against five
+different courses (`ADJ 20`, `ADJUS 200`, `AOJ 3`, `CJ 30`, `CJ 51`) — read
+literally, that claims five colleges each teach five equivalents under five
+subject prefixes. Hence the `attribution` column: `per_course` (8,809 rows) vs
+`group_wide` (604), and the renderer names group-wide peers as a **group**,
+never pairing a college to a course.
+
+**⭐ The scorer's first output was the most useful thing that happened.**
+Plain token overlap ranked `ART 100 — Introduction To World Art` **third** for
+*"Introduction to Flux Cored Arc Welding (FCAW)"*, on `introduction` + `to`.
+That is not a minor precision issue on this surface: a welding instructor who
+sees an art course concludes the tool does not understand the domain, and the
+*correct* top suggestion loses its authority too. Fixed with `cx_align_tokens()`
++ a hard **≥1 content token** gate. `advanced`/`beginning`/`basic` deliberately
+kept — they separate the Introduction rec from the Advanced one. Tightening
+*raised* the right answer (`WELD 214L` 0.604 → **0.761**), because the
+denominator stopped counting structural words.
+Durable: `methodology-a-false-positive-costs-more-than-a-miss`.
+
+**`cx_rec_course_name()` matters more than it looks.** A credit rec reads
+"3-4 hours in Introduction to FCAW"; leaving the award prefix in makes every rec
+look alike to a trigram and swamps the course name.
+
+### (b) Current state — LIVE
+
+| Surface | Shape |
+|---|---|
+| `chatbox_peer_articulations` | 9,413 rows · 1,516 credentials · 82 colleges |
+| `chatbox_college_courses` | 141,696 rows · 120 colleges |
+| `credential_alignment_for_college()` | both signals, one round trip, `row_kind` |
+| `cpl-chat` | **v41**, `fetchAlignment` + `buildAlignmentContext` + `ALIGNMENT_RULE` |
+
+Verified live for the acceptance case (Cerritos × ASME BPVC Section IX — FCAW):
+`WELD 214L` tops both recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`,
+Santa Ana `WELD 240`/`244`.
+`tests/sierra_alignment.test.js` — 21 behavioural checks.
+
+### (c) Strategic roadmap
+
+Sam and the team will **test this and feed back through Sierra Training**. That
+tab is the intended loop: a bad suggestion becomes a logged question, which
+becomes an instruction. Two things follow from that:
+
+- The **25-row feedback backlog is now load-bearing**, not just hygiene — it is
+  the channel this feature will be corrected through.
+- The scorer is a **starting point tuned on one credential**. Expect the
+  stoplist and the 0.45/0.55 weighting to need adjustment across disciplines;
+  the acronym-in-parentheses case (FCAW) is doing real work in welding and will
+  not generalise to credentials whose recs carry no acronym.
+
+### (d) Next concrete step
+
+Watch what the team reports. The first tuning signal will come from a discipline
+whose course titles are less literal than welding's.
+
+### Not verified from a session
+
+Sierra's actual prose. The sandbox is egress-blocked from `*.supabase.co`, so the
+RPC was verified directly and the renderer against live fixtures, but nobody has
+read an answer she wrote. That is the first thing to check.
