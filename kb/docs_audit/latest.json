@@ -10,22 +10,22 @@
   },
   "summary": {
     "files": 505,
-    "bytes": 5820280,
+    "bytes": 5821387,
     "over_budget": 6,
     "handoff_max": 151,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 104651,
+    "always_loaded_bytes": 103351,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 104651,
+        "bytes": 103351,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1432948,
+        "bytes": 1434087,
         "over": 1
       },
       "index": {
@@ -45,7 +45,7 @@
       },
       "handoff": {
         "files": 134,
-        "bytes": 1058832,
+        "bytes": 1060100,
         "over": 0
       }
     },
@@ -56,7 +56,7 @@
     },
     "vault": {
       "files": 1906,
-      "bytes": 1104668518,
+      "bytes": 1104669625,
       "heavy_bytes": 582835963,
       "heavy_share": 0.528,
       "ignore_filters": [
@@ -111,13 +111,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 104651,
+        "bytes": 103351,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 44651,
-        "ratio": 1.74
+        "over_by": 43351,
+        "ratio": 1.72
       },
-      "message": "104,651 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "103,351 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -825,13 +825,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 384179,
+        "bytes": 384845,
         "limit": 150000,
         "lane": "other",
-        "over_by": 234179,
-        "ratio": 2.56
+        "over_by": 234845,
+        "ratio": 2.57
       },
-      "message": "384,179 B is 2.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "384,845 B is 2.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

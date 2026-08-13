@@ -55,6 +55,25 @@ Also still unread: **POST × Cerritos**, where the six C-ID matches should rende
 - He confirmed the cascade reading himself and was right; treat his inferences
   about MAP semantics as strong evidence.
 
+## 🧹 PRIORITY 2 — `CLAUDE.md` needs the §11 pare-down, and this run made it worse
+
+The lint has flagged `CLAUDE.md` `always_loaded` for several sessions. It is now
+**103,351 bytes against a 60,000 budget (1.72×)**, and the 2026-08-13 checkpoint
+**grew it by ~5 KB** despite deleting superseded text — four substantive roadmap
+updates plus a session narrative outweighed what came out. Trimming the new prose
+recovered under 1 KB before it started costing load-bearing facts, and archiving
+the one genuinely-finished row (`Cred-Ref PR-5b/2`) recovered 432 bytes. Those are
+rounding errors against the real problem.
+
+**Every session pays this as context tax on turn one.** The structural fix is the
+one Rule 9 already names and the 2026-07-10 pare-down already demonstrated: move
+prose to `docs/reference/`. Concretely, the fattest §11 cells are *Disposition
+grain*, *College action page*, *Local course ↔ CR alignment*, *Sierra retrieval*
+and *MAP Users* — each is now several thousand characters of narrative that
+belongs in its lessons doc, with the cell reduced to current state + a pointer.
+Doing that properly is a session's work, not a checkpoint's, which is exactly why
+it keeps not happening. **Consider doing it first, before taking new work.**
+
 ## ⚠️ NEEDS SAM — one decision left open
 
 **8 colleges keep a 2026-06-25 snapshot contact where MAP is now blank.** They

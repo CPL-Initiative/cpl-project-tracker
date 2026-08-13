@@ -4036,3 +4036,12 @@ positive costs more than a missed match on a trust-building surface; content-tok
 Durable: `methodology-a-summary-field-can-be-a-retrieval-gate`, `methodology-two-signals-for-a-judgment-proposal`,
 `methodology-an-unadopted-item-is-a-shelf-not-an-absence`, `methodology-a-false-positive-costs-more-than-a-miss`.
 Story: `docs/sierra_credit_recs_lessons.md` · `docs/local_course_alignment_lessons.md` · handoff `docs/session_149_handoff.md`.
+
+### Archived from §11 at the 2026-08-13 checkpoint (SkyRef)
+
+Fully shipped with no open follow-up, moved out of the always-loaded file
+per the "Completed rows archived" convention.
+
+| Phase | What | Status |
+|---|---|---|
+| **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. | ✅ **DONE Session 107 (#698)** — Sam hit 6 collisions on 2026-07-08; shipped same-day: Save-time detect + confirm dialog → `unified_title_merge_confirm` row, pending-merges strip, dry-run `merges` lane, apply fold. His 6 await ✓ Confirm merge in the lane. |
