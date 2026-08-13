@@ -10,27 +10,27 @@
   },
   "summary": {
     "files": 505,
-    "bytes": 5821387,
+    "bytes": 5827666,
     "over_budget": 6,
     "handoff_max": 151,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 103351,
+    "always_loaded_bytes": 106617,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 103351,
+        "bytes": 106617,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1434087,
+        "bytes": 1436704,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 209346,
+        "bytes": 209629,
         "over": 1
       },
       "lessons": {
@@ -45,18 +45,19 @@
       },
       "handoff": {
         "files": 134,
-        "bytes": 1060100,
+        "bytes": 1060213,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
+      "stacked_roadmap_cell": 1,
       "kb_note_dialect": 57,
       "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1906,
-      "bytes": 1104669625,
+      "files": 1907,
+      "bytes": 1104703168,
       "heavy_bytes": 582835963,
       "heavy_share": 0.528,
       "ignore_filters": [
@@ -111,26 +112,44 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 103351,
+        "bytes": 106617,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 43351,
-        "ratio": 1.72
+        "over_by": 46617,
+        "ratio": 1.78
       },
-      "message": "103,351 B is 1.7× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "106,617 B is 1.8× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "stacked_roadmap_cell",
+      "fixable": false,
+      "detail": {
+        "cells": [
+          {
+            "row": "MAP Users / student contact",
+            "chars": 4447,
+            "priors": 0,
+            "corrections": 0
+          }
+        ],
+        "cell_max": 4000,
+        "prior_max": 1
+      },
+      "message": "1 roadmap cell(s) have become append-only logs — worst is \"MAP Users / student contact\" at 4,447 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 209346,
+        "bytes": 209629,
         "limit": 40000,
         "lane": "index",
-        "over_by": 169346,
-        "ratio": 5.23
+        "over_by": 169629,
+        "ratio": 5.24
       },
-      "message": "209,346 B is 5.2× the index budget (40,000 B) — candidate for compaction",
+      "message": "209,629 B is 5.2× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {

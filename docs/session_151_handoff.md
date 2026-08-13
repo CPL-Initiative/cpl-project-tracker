@@ -1,146 +1,153 @@
 ---
-title: Session 151 handoff (SkyRef → next) — read the prose, then decide the 8
+title: Session 151 handoff (SkyRef → next) — the CR Reference tab, and the EACR filters
 created: 2026-08-13
 updated: 2026-08-13
-tags: [handoff, sierra, contacts, map-users, silent-failure]
+tags: [handoff, cr-reference, eacr, sierra, contacts]
 related:
-  - "[[docs/map_users_lessons]]"
   - "[[docs/sierra_credit_recs_lessons]]"
+  - "[[docs/map_users_lessons]]"
   - "[[docs/sierra_training_tab_scope]]"
-  - "[[docs/session_150_handoff]]"
 ---
 
 # You are Session 151
 
-Session 150 was **SkyRef** — four PRs (**#1164**, **#1165**, **#1166**, **#1167**),
-cpl-chat **v44 → v46**, one migration. Everything below is merged and live.
+Session 150 was **SkyRef** — eight PRs (**#1164–#1171**), cpl-chat **v44 → v47**,
+three migrations, one cron change. All merged and live.
+
+**Sam queued two things for you, in this order.**
 
 ## ⚠️ FIRST — read the memory table. This is Rule 8.
 
 ```sql
 select slug, title, summary, status, event_date from cpl_memory
 where status <> 'superseded'
-  and (tags && array['sierra','contacts','map-users','staleness','retrieval']
-       or summary ilike '%contact%')
+  and (tags && array['sierra','cr-reference','curation','retrieval','contacts']
+       or summary ilike '%credit_rec%')
 order by event_date desc nulls last limit 40;
 ```
 
-Then read, in order: `docs/map_users_lessons.md` (the 2026-08-13 SkyRef section)
-→ CLAUDE.md §11 rows *MAP Users / student contact*, *Sierra retrieval + corpus*,
-*Sierra: false absences*, *Sierra Training* → `docs/sierra_training_tab_scope.md`.
+## 🎯 PRIORITY 1 — Plan and build the Common CR Reference tab
 
-## 🎯 PRIORITY 1 — Sam is testing. Nobody has read Sierra's prose.
+Sam proposed this 2026-08-13 and has now asked for it to be built. **Scope it
+before you write code** — CLAUDE.md §11 *Common CR Reference* has the full row.
 
-**This is the third handoff in a row to say this, and it is still true.** The
-sandbox is egress-blocked from `*.supabase.co`, so a session can verify the data
-layer and the renderers and still be wrong about the answer — which is exactly
-how SkyTop's alignment bug survived three deploys. Two acceptance cases:
+⭐ **His design ruling, and do not quietly re-litigate it:** *"CID is only one
+factor in determining common CR references. Similar to the CCR, we take into
+account matching factors like title, course name and number, course description,
+subject, etc."* His list is **illustrative, not exhaustive** — ask before
+freezing it. Recorded verified + attributed as
+`cpl_memory:common-cr-reference-is-multi-factor-not-cid-keyed`.
 
-1. **Cerritos ironworker**, on v46: *"I have a journey worker license as Iron and
-   Steel worker. What CPL can I get here?"* Should now name the credentials **and**
-   the IWAP courses with units (`IWAP 40.09 — 2 hours in IW - GEN Rigging`).
-2. **RCC contact**: *"Does Riverside City College offer firefighter CPL?"* should
-   give **Lisa Martin / Lisa.Martin@rcc.edu**, not Rene Felix.
+The measurement backs him harder than the session's own caution did. C-ID as key
+fails **both** ways:
+- **over-merges** — POST carries `AJ 110` on two genuinely different lines, a
+  repeat Sam ruled must be FLAGGED, never auto-resolved;
+- **under-merges, far bigger** — only **402 of 2,344** distinct `credit_rec`
+  strings carry a C-ID at all (**~17%**), stranding ~1,942 as their own canonical.
 
-Also still unread: **POST × Cerritos**, where the six C-ID matches should render.
+Numbers to start from: **2,344** distinct strings → **2,187** after mechanical
+normalisation (**~7% collapse, so this is CURATION, not string-cleaning** —
+exactly the CER's situation); 402 C-ID-bearing → **175 distinct C-IDs**, 81
+carrying 2+ wordings, worst `AJ 110` → **10 wordings**; curated spine already in
+place = **351 statewide lines / 134 credentials**.
+
+**Read the CCR's actual matching factors first** and model on them — that is what
+Sam asked for. The CER is the other precedent worth reading for how a freehand
+vocabulary got canonicalised.
+
+## 🎯 PRIORITY 2 — Debug the EACR tab filters
+
+Sam: *"filters need drop downs and they don't all work."*
+
+Surface is mapped for you — tab **`exhibit-adoption`**, file
+**`statewide_interactive.js`**, **8 checkbox multi-selects** in `state.filters`:
+`collabType · cplType · sector · discipline · issuer · college · district ·
+swRegion`. He wants **dropdowns** instead of checkbox lists.
+
+**The data layer is sound — I verified it, so do not start there.** 2,672
+exhibits: `cpl_type`/`discipline`/`collaborative_type` **100%** populated,
+`sector` 85%, `issuing_agency` 75%; `college_lookup` resolves **120 of 122**
+adopter/potential names.
+
+⚠️ The two misses are **`CA MAP INITIATIVE COLLEGE`** and **`Calbright College
+Non-Credit`**, and `collegeMatchesFilters()` **fails closed** on a `LOOKUP` miss —
+so the district and swRegion filters silently drop them. Note the first is the
+same sandbox org Sam flagged in the dropdowns: **the EACR data carries it too**,
+so it wants the same `entity_kind` treatment.
+
+⚠️ **ASK SAM WHICH FILTERS FAIL before building.** The fields all carry data, so
+the defect is in the control wiring or the option lists, and guessing which of
+eight is wrong would waste the run.
 
 ## 📌 Decisions Sam made this run
 
-- **Editable contact proposals: all 25 rows, cascade pre-filled as the default** —
-  not just the 8. A curator's knowledge of who answers outranks the cascade.
-- ⭐ **A curator proposal is a MAP to-do ONLY — Sierra must not read it.** She keeps
-  routing strictly on MAP's own designations. `tests/map_users_proposals.test.js`
-  asserts `cpl-chat` never references `map_contact_proposals`. Do not "improve"
-  this by wiring it in.
-- He confirmed the cascade reading himself and was right; treat his inferences
-  about MAP semantics as strong evidence.
-
-## 🧹 PRIORITY 2 — `CLAUDE.md` needs the §11 pare-down, and this run made it worse
-
-The lint has flagged `CLAUDE.md` `always_loaded` for several sessions. It is now
-**103,351 bytes against a 60,000 budget (1.72×)**, and the 2026-08-13 checkpoint
-**grew it by ~5 KB** despite deleting superseded text — four substantive roadmap
-updates plus a session narrative outweighed what came out. Trimming the new prose
-recovered under 1 KB before it started costing load-bearing facts, and archiving
-the one genuinely-finished row (`Cred-Ref PR-5b/2`) recovered 432 bytes. Those are
-rounding errors against the real problem.
-
-**Every session pays this as context tax on turn one.** The structural fix is the
-one Rule 9 already names and the 2026-07-10 pare-down already demonstrated: move
-prose to `docs/reference/`. Concretely, the fattest §11 cells are *Disposition
-grain*, *College action page*, *Local course ↔ CR alignment*, *Sierra retrieval*
-and *MAP Users* — each is now several thousand characters of narrative that
-belongs in its lessons doc, with the cell reduced to current state + a pointer.
-Doing that properly is a session's work, not a checkpoint's, which is exactly why
-it keeps not happening. **Consider doing it first, before taking new work.**
-
-## ⚠️ NEEDS SAM — one decision left open
-
-**8 colleges keep a 2026-06-25 snapshot contact where MAP is now blank.** They
-fall back under the fail-safe, so they are never worse than before — but MAP is
-the system of record, and a blank there could mean that person left the role.
-Flagged rather than decided. Ask him; do not decide it silently.
+- **Roster sync is DAILY** (was monthly). Sierra reads contacts live now, so
+  stale means a student emails the wrong person.
+- **Curator contact proposals are a MAP to-do ONLY — Sierra must never read
+  them.** A test asserts `cpl-chat` never references `map_contact_proposals`.
+  This is a decision, not an oversight; do not "improve" it by wiring it in.
+- **All 25 gap-contact rows editable**, cascade pre-filled as the default.
 
 ## ⚠️ Things that will mislead you
 
-1. **`chatbox_college_profiles` is stale for everything EXCEPT contacts now.**
-   Contacts read live from `map_college_contacts` (v45). Don't re-report the
-   contacts half as broken, and don't "fix" it by re-seeding the blob — that
-   makes a fresher fossil.
-2. **Feedback is at 5, not 25.** Sam triaged it himself. Three of the five are now
-   fixed in code and can be cleared.
-3. **`map_users.js` `FALLBACK_CONTACTS` is still a hardcoded display layer** — the
-   new proposals table did NOT replace it. Two different mechanisms.
-4. **Don't pin an implementation detail in a test.** `map_users_contact_quality`
-   had pinned the literal `addressWarning(g.proposed_email)` and broke on a
-   refactor while the rule it guards was intact. Third session in a row this has
-   come up. Guard the behaviour.
-5. **`tests/cpl_funding.test.js` hangs** (pre-existing), so `node tests/run.js`
-   can't finish; run suites individually. `npm install` first — jsdom isn't
-   vendored.
+1. **The Sierra Training gap pane is no longer 78 rows — it is ~13.** 83% was the
+   CI smoke test. If you see a big number again, check `session_id='smoke-ci'`
+   before treating it as a backlog.
+2. **Duplicate question pairs are NOT flapping.** The smoke suite asks each
+   question twice and one probe deliberately has no college context. 43% of
+   punts have a successful twin within 45 seconds. Do not "fix" it.
+3. **`chatbox_college_profiles` is stale for everything EXCEPT contacts** — those
+   read live from `map_college_contacts` since v45. Do not re-seed the blob.
+4. **`map_colleges.entity_kind` already exists and is correct.** Three times this
+   run the bug was "the right value existed and the consumer never asked it"
+   (contacts, the statewide flag, the sandbox orgs). **Worth a deliberate sweep**
+   for other reads that ignore a classifier.
+5. **`CLAUDE.md` is 1.7× its lint budget** — see below.
+6. **`tests/cpl_funding.test.js` hangs** (pre-existing), so `node tests/run.js`
+   cannot finish; run suites individually. `npm install` first.
 
-## Carryover
+## 🧹 Carryover — the §11 pare-down is still owed
 
-- **The Common CR Reference** — still unscoped. Sam's ruling stands: C-ID is ONE
-  factor, not the key (only ~17% of rec strings carry one). Scope it against the
-  CCR's actual matching factors before building.
-- 12 adoption-file statewide titles absent from `chatbox_credentials`.
-- Sierra corpus covers 59 of 123 colleges.
-- The 7 `via:"search"` fallback contacts still need confirming; the 17 blanks
-  still need working.
-- The site-phrase **superset decision** (from 146) still needs Sam.
-- The identity crosswalk write to Supabase is still queued.
-- The partner-crosswalk engine's **2nd run** is still outstanding.
+`CLAUDE.md` is **~105 KB against a 60,000 budget**. The 2026-08-13 checkpoints
+grew it despite deleting superseded text. The fix Rule 9 names: move narrative
+out of the fattest cells (*Disposition grain*, *College action page*, *Local
+course ↔ CR alignment*, *Sierra retrieval*, *MAP Users*, *Sierra Training*) into
+their lessons docs, leaving current state plus a pointer. A session's work, which
+is why it keeps not happening.
+
+Other carryover: 12 adoption-file statewide titles absent from
+`chatbox_credentials` · corpus covers 59 of 123 colleges · the 7 `via:"search"`
+fallback contacts need confirming · the site-phrase superset decision (from 146)
+· the identity crosswalk write to Supabase · the partner-crosswalk engine's 2nd
+run.
 
 ## Patterns that worked
 
-- **Ask "how many?" before fixing "this one."** One feedback line about RCC was a
-  third of the colleges. The query cost 30 seconds and changed the whole shape of
-  the fix.
-- **Grep for the writer.** "What job refreshes this table?" found the fossil
-  faster than reading any consumer. No writer = the copy is a snapshot.
-- **Run the new test against the OLD file.** 5 of 18 failed, which is the only
-  reason the hand-off test is trustworthy. A test written after a fix that passes
-  on both versions guards nothing.
-- **Believe the user's reading of the domain.** Sam's inference about the
-  Assistant cascade was correct and saved a wrong-headed investigation.
+- **Ask "how many?" before fixing "this one."** One feedback line about RCC was
+  41 colleges. One request to bulk-mark a list revealed 83% of it was robots.
+- **Measure before advising.** Sam chose group-by-question before either of us
+  knew the list was 83% CI; the measurement made it unnecessary, and saying so
+  was better than building it.
+- **Grep for the writer.** "What job refreshes this table?" found the contacts
+  fossil faster than reading any consumer.
+- **Run the new test against the OLD file.** 5 of 18 failed on the hand-off test,
+  which is the only reason it is trustworthy.
 - **Two reports with similar words can be different complaints.** The three
-  ironworker rows looked like one issue in the handoff; the newest was a distinct
-  defect that would have shipped closed.
+  ironworker rows looked like one issue; the newest was a distinct defect.
 
 ## Safety patterns to honour
 
 - Rule 4 — `CPL_Dashboard.html` / `index.html` byte-identical.
 - Never force-push `main`; merge on `unstable`, not just `clean`.
-- Sandbox is egress-blocked from `*.supabase.co`, college domains and
-  `cpl-initiative.github.io` — Supabase via MCP only.
-- Sam curates live; fresh-read before any bulk write.
-- Migrations apply **immediately** — live before their PR merges. Say so.
+- Sandbox is egress-blocked from `*.supabase.co` and college domains — Supabase
+  via MCP only. **You cannot read Sierra's prose; Sam has to.**
+- Migrations apply **immediately**, ahead of the PR merge. Say so when reporting.
 - `cpl-chat` deploy is `workflow_dispatch` + typed `DEPLOY`; verify the version
-  bumped (`list_edge_functions`) and `verify_jwt` stayed **false**.
-- Front-end JS changes ship with **Pages**, no cpl-chat deploy — don't conflate.
+  bumped and `verify_jwt` stayed **false**. Front-end JS ships with Pages instead
+  — do not conflate the two.
+- The stop hook's "unpushed commits" nag after a squash-merge is a false
+  positive. Verify, then ignore. Never amend.
 
 ## Moniker
 
-**SkyProse** is still unclaimed and still apt — the run that finally reads what
-Sierra actually says. Take it or coin your own; if Sam names one, his wins.
+**SkyProse** is still unclaimed. Or coin your own; if Sam names one, his wins.
