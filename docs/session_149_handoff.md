@@ -12,8 +12,8 @@ related:
 
 # You are Session 149
 
-Session 148 was **SkyBridge** — Sam's greeting named it. Six PRs (**#1150–#1155**),
-four migrations, two edge-function deploys, **cpl-chat v41 live**.
+Session 148 was **SkyBridge** — Sam's greeting named it. Nine PRs (**#1150–#1158**),
+seven migrations, three edge-function deploys, **cpl-chat v42 live**.
 
 ## ⚠️ FIRST — read the memory table. This is Rule 8.
 
@@ -46,9 +46,23 @@ how other colleges articulated the same recommendation (a **fact**). Live as
 2. **Triage the Sierra Training backlog — it is now load-bearing.** 25 rows,
    oldest 1 July. That tab is the channel this feature gets corrected through:
    a bad suggestion becomes a logged question, which becomes an instruction.
-3. **Expect the scorer to need tuning on a less literal discipline.** It was
-   tuned on welding, where titles are almost self-describing and the acronym
-   (FCAW) does real work. Nursing, business and the arts will not behave that way.
+3. **Expect the LADDER to behave differently by discipline.** C-ID coverage is
+   partial — 16,067 of 141,696 courses, 112 colleges — so transfer-heavy fields
+   (AJ, English, Math, Psych) land on rung 1 while CTE often falls to rung 3,
+   where the wording scorer was tuned on welding and will be weakest.
+
+⚠️ **The ladder is a FALLBACK, not a blend — do not merge the rungs into one
+score.** Rung 1 (the college teaches a course carrying the recommendation's C-ID)
+says the equivalence is ESTABLISHED by the statewide standard; rung 3 says "this
+is the closest thing you have". Blending lets a guess outrank a fact. Only the
+best available rung renders, and that — not threshold tuning — is what removed
+`MUS 202E Community Symphonic Band` and `ADN 210 Foundational Concepts of
+Nursing` from the results. `methodology-use-the-identity-key-before-you-score-strings`.
+
+⚠️ **A C-ID match whose NAMES diverge is FLAGGED, never suppressed.** POST carries
+`AJ 110` on two recommendation lines, so rung 1 pairs an Administration-of-Justice
+course with the **Physical Training** recommendation. Suppressing it auto-resolves
+the repeat Sam ruled must never be auto-resolved. `cid_title_divergent`.
 
 ⚠️ **Do NOT loosen the content-token gate to catch more.** It exists because the
 first cut ranked `ART 100 — Introduction To World Art` third for a **welding**
