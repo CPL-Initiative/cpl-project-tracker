@@ -1641,6 +1641,112 @@ function buildTopicContext(
   return ctx;
 }
 
+// ── Live CPL contacts (v45, 2026-08-13) ────────────────────────
+// WHY THIS READS map_college_contacts AND NOT THE PROFILE ROW.
+// chatbox_college_profiles.contacts is a ONE-OFF SNAPSHOT taken 2026-06-25, and
+// nothing refreshes it — map/sync_map_users.py WRITES map_college_contacts and
+// only READS the profiles table (for dashboard URLs). There is no builder for
+// that JSONB anywhere in the repo. Measured the day this landed, over the 122
+// colleges present in both: Sierra printed a DIFFERENT email than MAP holds for
+// 41, and was SILENT for 13 more where MAP had someone. Only 50 agreed.
+// Sam reported it as "Wrong contact information for RCC" — RCC was one of the
+// 41 (she named Rene Felix; MAP holds Jeanine Gardner as primary contact and
+// Lisa Martin as CPL coordinator, whose slot the snapshot has blank).
+// Reading live ends the staleness class rather than re-freezing a new snapshot.
+//
+// Leadership roles (VPAA / VPSS / CEO / senate president / certifying official)
+// are deliberately ABSENT from the cascade. The MAP Users workstream classified
+// the colleges that have only those as "leadership-only", i.e. NOT routable for
+// a student's CPL request — sending a CPL question to a college president is
+// worse than saying we do not know who to ask. 115 of 122 route without them.
+const CONTACT_CASCADE: Array<[string, string, string]> = [
+  ["cpl_coordinator",      "cpl_coordinator_email",      "CPL Coordinator"],
+  ["primary_contact",      "primary_contact_email",      "CPL Contact"],
+  ["",                     "cpl_assistant_email",        "CPL Office"],
+  ["cpl_counselor",        "cpl_counselor_email",        "CPL Counselor"],
+  ["articulation_officer", "articulation_officer_email", "Articulation Officer"],
+  ["lead_initiator",       "lead_initiator_email",       "CPL Lead"],
+  ["faculty_lead",         "faculty_lead_email",         "Faculty Lead"],
+];
+
+const CONTACT_COLUMNS = [
+  "college",
+  ...CONTACT_CASCADE.flatMap(([n, e]) => (n ? [n, e] : [e])),
+].join(",");
+
+// 22 of the 115 routable colleges carry MULTIPLE people in one field, separated
+// by semicolons, commas or embedded newlines. Cypress College's coordinator slot
+// is the worst of them and shows why the address is validated rather than merely
+// split: "jgarcia@cypresscollege.edu, jrangel@cypresscollege,\njgrande@..." —
+// the middle address has no TLD. Sending a student to an address that cannot
+// receive mail is a false route, the same class of harm as the false zero.
+const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/;
+
+function firstEmail(raw: any): string {
+  for (const part of String(raw ?? "").split(/[;,\n]/)) {
+    const v = part.trim();
+    if (v && v.toUpperCase() !== "NA" && EMAIL_RE.test(v)) return v;
+  }
+  return "";
+}
+
+function firstName(raw: any): string {
+  const v = String(raw ?? "").split(/[;,\n]/)[0].trim();
+  return v && v.toUpperCase() !== "NA" ? v : "";
+}
+
+// A tier must yield the name and the email OF THE SAME PERSON. The pre-v45 code
+// picked them with two independent `||` fallbacks, so a tier holding a name but
+// no email silently paired that name with a different person's address. Zero
+// colleges hit that today — it is a latent hazard, closed here rather than left
+// waiting for the data to drift into it.
+// Returns `{ name, email, role }` or null. Annotated `any` rather than with the
+// object literal because tests/lib/lift_ts.js strips only primitive and generic
+// annotations, and its own note says to fix the block, not widen the regexes.
+function resolveLiveContact(row: any): any {
+  if (!row) return null;
+  for (const [nameCol, emailCol, role] of CONTACT_CASCADE) {
+    const email = firstEmail(row[emailCol]);
+    if (!email) continue;
+    return { name: nameCol ? firstName(row[nameCol]) : "", email, role };
+  }
+  return null;
+}
+
+// Both sides of the join are normalised. MAP's college names are hand-typed and
+// two REAL colleges carry a trailing space — "Cypress College " and "San Jose
+// City College " — so an exact-match lookup drops them silently and they fall
+// back to the stale snapshot, which is precisely the bug this function exists to
+// end. The table is ~123 rows, so it is fetched whole and keyed in memory.
+async function fetchLiveContacts(sb: any): Promise<Map<string, any>> {
+  const out = new Map<string, any>();
+  try {
+    const { data } = await sb.from("map_college_contacts").select(CONTACT_COLUMNS);
+    for (const row of data || []) {
+      const c = resolveLiveContact(row);
+      if (c) out.set(String(row.college ?? "").trim().toLowerCase(), c);
+    }
+  } catch (_e) {
+    // Fail SAFE — on any error the caller keeps the profile's own snapshot, so
+    // this can never be worse than the pre-v45 behaviour it replaces.
+  }
+  return out;
+}
+
+// Overlays the live contact onto whatever shape the caller resolved (single
+// profile or array). Skipped entirely when contacts are suppressed, so the
+// external/vendor embeds pay nothing for a line they never print.
+async function withLiveContacts(profile: any, sb: any, includeContacts: boolean): Promise<any> {
+  if (!profile || !includeContacts) return profile;
+  const live = await fetchLiveContacts(sb);
+  if (live.size === 0) return profile;
+  const attach = (p: any) => {
+    const c = p && live.get(String(p.college ?? "").trim().toLowerCase());
+    return c ? { ...p, live_contact: c } : p;
+  };
+  return Array.isArray(profile) ? profile.map(attach) : attach(profile);
+}
+
 // includeContacts (v27): false suppresses the CPL-contact name/email line —
 // the external/vendor embeds (ctx:"external"). Default true = every existing
 // caller unchanged (fail-open).
@@ -1667,13 +1773,26 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
     }
 
     if (includeContacts) {
-      const contacts = p.contacts || {};
-      const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
-      const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
-      if (coordinator && coordinator !== "" && coordinator !== "NA") {
-        ctx += `\nCPL Contact: ${coordinator}`;
-        if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
+      const live = p.live_contact || null;
+      if (live) {
+        // Live wins. The role is named because "CPL Contact: <articulation
+        // officer>" tells the visitor less than the role does, and the cascade
+        // can legitimately land several tiers down.
+        ctx += `\n${live.role}: ${live.name || live.email}`;
+        if (live.name) ctx += ` (${live.email})`;
         ctx += `\n`;
+      } else {
+        // Fallback: the 2026-06-25 snapshot. Reached only when the live read
+        // failed or the college has no map_college_contacts row at all (8 such
+        // profiles, all test rows, a partner and two non-CCC institutions).
+        const contacts = p.contacts || {};
+        const coordinator = contacts.cpl_coordinator || contacts.primary_contact;
+        const email = contacts.cpl_coordinator_email || contacts.primary_contact_email;
+        if (coordinator && coordinator !== "" && coordinator !== "NA") {
+          ctx += `\nCPL Contact: ${coordinator}`;
+          if (email && email !== "" && email !== "NA") ctx += ` (${email})`;
+          ctx += `\n`;
+        }
       }
     }
 
@@ -2135,7 +2254,8 @@ Deno.serve(async (req: Request) => {
     if (singleProfile && topicResults && topicResults.length > 0) {
       // COMBINED MODE: both college and topic detected
       searchMode = "college_topic";
-      collegeContext = buildCollegeContext(singleProfile, !externalCtx);
+      collegeContext = buildCollegeContext(
+        await withLiveContacts(singleProfile, sb, !externalCtx), !externalCtx);
 
       // Filter topic results: show college-specific matches first, then others
       const collegeName = singleProfile.college;
@@ -2160,7 +2280,8 @@ Deno.serve(async (req: Request) => {
     } else if (singleProfile || (Array.isArray(resolvedProfile) && resolvedProfile.length > 0)) {
       // COLLEGE-ONLY MODE
       searchMode = "college";
-      collegeContext = buildCollegeContext(resolvedProfile, !externalCtx);
+      collegeContext = buildCollegeContext(
+        await withLiveContacts(resolvedProfile, sb, !externalCtx), !externalCtx);
 
     } else if (topicResults && topicResults.length > 0) {
       // TOPIC-ONLY MODE

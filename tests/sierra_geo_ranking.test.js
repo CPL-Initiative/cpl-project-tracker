@@ -47,7 +47,10 @@ const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf
 
 let ctxMod = null, detectMod = null, liftErr = null;
 try {
-  ctxMod = liftBlock(SRC, "// Proximity band for ranking", "// includeContacts (v27)",
+  // End marker moved to the live-contacts block (v45) — the geo block still ends
+  // exactly where it did, but "// includeContacts (v27)" is no longer the next
+  // thing after it, so lifting to there would drag the contact cascade in too.
+  ctxMod = liftBlock(SRC, "// Proximity band for ranking", "// ── Live CPL contacts (v45",
     ["proximityBand", "geoLabel", "buildOfferingsContext", "buildTopicContext"]);
   detectMod = liftBlock(SRC, "const COLLEGE_ALIASES", "// ── Topic synonym expansion",
     ["detectAndFetchCollegeProfile", "COLLEGE_ALIASES"]);
