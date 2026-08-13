@@ -1,26 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-13 · SkyRef — one feedback line about one college was a third of the colleges.",
+  "_as_of": "2026-08-13 (evening) · SkyRef — the gap list was 83% robot, and the sandbox flag already existed.",
   "_session": 150,
-  "_status": "Sam reported one thing — 'Wrong contact information for RCC' — and it turned out Sierra was giving a wrong or missing CPL contact for 54 of 122 colleges. She had been reading a copy of MAP's contact list that was taken on 25 June and that nothing ever refreshed: no job in the whole project updates it. RCC was ordinary — she named Rene Felix while MAP holds Jeanine Gardner, and had never seen Lisa Martin, the CPL coordinator, at all. Rather than refresh the stale copy (which would just go stale again) Sierra now reads MAP directly, so 115 of 122 colleges route to the right person. Separately, the ironworker question was reported a third time — and that third report was a different complaint from the first two. The first two said 'you found nothing'; the newest said 'you found it and still didn't tell me what I'd get.' Sierra now lists the actual courses and units a credential converts into, not just the credential's name. The Sierra Training tab's 'Try it on Sierra' button was also broken in a way that looked like nothing: after you had once visited My College, it typed your question into a hidden box. That, the copy button, and being unable to select the question text are all fixed. Nothing in this list has been read by anyone yet — sessions cannot reach Sierra to see her actual words, so the two test questions below are the real acceptance check.",
+  "_status": "Sam asked to bulk-clear the list of questions Sierra struggled with. Measuring it first changed the answer: of 78 rows, 65 were the automated test suite that runs on every deploy — only 13 were real questions from real people. That also explained something he had spotted earlier, the same question appearing twice minutes apart with one good answer and one bad one: the test suite asks everything twice, and one of the two is deliberately given less information. Nothing was broken there. The list now excludes the robot traffic (with a toggle to show it), you can mark items handled individually or in bulk, and the sandbox colleges MAP accidentally leaked into its reports are out of the College dropdown — the field to suppress them already existed and nobody was reading it. The roster sync now runs daily instead of monthly, so the MAP team's contact fixes reach Sierra within a day. Next up, by Sam's choice: plan and build the Common CR Reference tab, then fix the EACR filters.",
   "items": [
     {
-      "id": "s150-test-ironworker",
+      "id": "s150-eacr-filters",
       "for": "Sam",
-      "tab": "CPL Assistant",
-      "text": "Ask the ironworker question one more time — 'I have a journey worker license as Iron and Steel worker. What CPL can I get here?' — with Cerritos selected. She should now name the credentials AND the courses each one converts into, with units (for example IWAP 40.09, 2 hours). Your last feedback on this asked for exactly that. This is the acceptance test; no session can see her answer."
+      "tab": "Exhibit Adoption",
+      "text": "Which of the Exhibit Adoption filters actually fail? There are eight — collaborative type, CPL type, sector, discipline, issuing agency, college, district, region. I checked the underlying data and all of it is present, so the fault is in the controls rather than the records, and knowing which ones misbehave will save the next session guessing. You also asked for dropdowns instead of the current checkbox lists; that part is clear."
     },
     {
-      "id": "s150-test-rcc-contact",
+      "id": "s150-check-gap-list",
       "for": "Sam",
-      "tab": "CPL Assistant",
-      "text": "Ask 'Does Riverside City College offer firefighter CPL?' and check the contact she gives. It should be Lisa Martin (Lisa.Martin@rcc.edu), the CPL coordinator MAP actually holds — not Rene Felix, which is what she had been saying since June."
+      "tab": "Sierra Training",
+      "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
     },
     {
-      "id": "s150-test-post-cerritos",
+      "id": "s150-check-dropdown",
       "for": "Sam",
-      "tab": "CPL Assistant",
-      "text": "Still unread from last session: ask the Cerritos POST question and confirm all six C-ID matches appear as matches rather than 'check your catalog'. The data was fixed but nobody has seen the answer."
+      "tab": "College Briefing",
+      "text": "The sandbox colleges should be gone from the College dropdown — CabTest, MorTest City, Nortest City, RivTest City, SantTest Ana, Testing College, NORCO College - Syllabus Manager and CA MAP INITIATIVE COLLEGE. Futuro Health, Launch Apprenticeship and the two continuing-education institutions are still there on purpose."
     },
     {
       "id": "s150-decide-blank-contacts",
@@ -29,28 +29,10 @@
       "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
     },
     {
-      "id": "s150-try-proposals",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "You can now edit the proposed contact on any of the 25 colleges that have none — including the 8 that had nothing to suggest. Whatever you type is labelled 'curator-set' with your name and date, is never presented as something MAP holds, and is deliberately invisible to Sierra. The CSV export is your correction list to work through in MAP."
-    },
-    {
-      "id": "s150-gavilan-hartnell",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "Worth knowing: five of those eight are not empty colleges. Gavilan has 13 active MAP users and Hartnell 15 — they simply have nobody designated in any CPL role, only a vice president or president. Those five are the realistic correction list; the other three have no MAP presence at all."
-    },
-    {
-      "id": "s150-clear-feedback",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "Three of your five open feedback items are now fixed in code (both ironworker reports and the POST '10 courses, you listed 1' one). Once you have checked the answers above, they can be marked done. 'Try it on Sierra' and 'Copy question' both work now, and you can select the question text with the mouse again."
-    },
-    {
       "id": "s150-common-cr-reference",
       "for": "Fable",
       "tab": "Knowledge Base",
-      "text": "Scope the Common CR Reference Sam asked for, against the CCR's actual matching factors, before building anything. His ruling stands: C-ID is one factor and not the key — only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all."
+      "text": "QUEUED BY SAM as the next build: plan and create the Common CR Reference tab. Scope it against the CCR's actual matching factors first. His ruling stands — C-ID is one factor and not the key, because only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all, and the ones that do include a case (AJ 110) where the same C-ID sits on two genuinely different lines."
     },
     {
       "id": "s150-missing-statewide-titles",

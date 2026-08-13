@@ -273,3 +273,53 @@ PR #1166. Front-end only — shipped with Pages, no cpl-chat deploy.
 **Still open:** Phase 3 (documents in her knowledge). Sam had already triaged the
 feedback backlog 25 → **5** himself; three of those five are now fixed in code
 and can be cleared.
+
+## 2026-08-13 (later) — SkyRef: the list was 83% robot
+
+Sam: *"I want to mark all the items Sierra said she could answer previously as
+Handled but I can only do that for the items in the Notes category. Seems like
+all items should be together and have the same functionality. Advise."*
+
+**Measured before advising, and the measurement changed the advice.** Over the
+newest 500 conversations the gap pane was showing **78 rows, 65 of them
+`session_id='smoke-ci'` — 83%.** Only **13** were real, and they were 13 distinct
+questions. He was about to bulk-mark 72 rows of robot traffic.
+
+The feedback pane has excluded CI rows since it shipped ("include N automated
+test messages"). The gap pane, reading `chat_interactions` directly, never had
+the equivalent.
+
+**It also explained the duplicate pairs.** He had spotted the same question twice
+at 16:51, once answered and once punted, and I had read that as model variance.
+It is not: the smoke suite asks each question **twice**, and one probe is *meant*
+to carry no college context. **43% of punts in the last 10 days have a
+SUCCESSFUL answer to the same question within 45 seconds.** Nothing was flapping.
+His own real-session turn (21:25) answered correctly throughout.
+
+The theme strip had the same disease — `san ×35 · contact ×24 · diego ×22 ·
+mesa ×24` is the smoke suite asking about San Diego Mesa, presented as a pattern
+in what people want. Now computed from the filtered set.
+
+### On merging the two panes — advised against
+
+They look alike and are different objects. Feedback is a **human report**
+(someone pressed a button; it is evidence). A gap is a **heuristic suspicion** (a
+regex saw "I don't have"). Merging makes a machine's guess indistinguishable from
+a person's complaint and destroys the question "what did humans actually flag?"
+
+His real complaint was that they *behave* differently, which was fair and is
+fixed: same CI exclusion, same marking controls, same bulk apply on both.
+
+**Group-by-question was chosen but deliberately not built** — the 83% finding
+landed after the choice, and at 13 real rows it solves a problem the CI filter
+already removed. Offered rather than shipped.
+
+### Marking, and why absence is the outstanding state
+
+`sierra_turn_review` is keyed on `turn_id` with `resolved`/`wont_fix`. **Absence
+of a row IS "still outstanding"** — so the pane defaults to still-to-do and
+"↩ Still to do" is a DELETE, not a third status. A stored `open` state would make
+"never looked at" and "looked at, then reopened" indistinguishable, which is the
+one thing this pane exists to tell apart.
+
+PRs #1169, #1171.
