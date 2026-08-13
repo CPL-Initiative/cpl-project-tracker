@@ -111,3 +111,116 @@ curator-confirm pattern for course identity.
 per-credential — 83% of strings appear under exactly one credential, so
 per-credential is nearly free, but the top strings span up to 61 credentials
 and that is where the value is.
+
+## 2026-08-13 — SkyCall (Session 152), the build
+
+SkyRunner scoped it; this run built it. **PR #1176** — `kb/_build_cr_reference.py`,
+`kb/cr_reference_worklist.json`, `cr_reference.js`, `tests/cr_reference.test.js`
+(42 checks), gated Supabase `cr_reference_decisions`.
+
+### Sam's two rulings this run
+
+1. **Scope is GLOBAL, with a split affordance.** One vocabulary across all
+   credentials, credential as context, curator can split a wording out.
+2. **The naming cascade — CCN > C-ID > M-ID > published line > modal wording.**
+   Verbatim: *"as is the procedure with CCR, when there is a C-ID or CCN title
+   and number, we go with that for the Common CR Reference (CCRR). Once we get
+   M-IDs in good shape, those will rule as well — third in the cascade."*
+   An official identity **names** the reference; it does not merely corroborate
+   it. M-ID is wired but `MID_RULES = False` — Rule 7 keeps that layer in
+   staging where re-mints are permitted, so an M-ID canonical could be re-keyed
+   out from under a published name.
+
+### The ranking premise in handoff 152 was backwards
+
+It said *"the top strings span up to 61 credentials, and that is where the value
+is."* The 61-credential string is `3 hours in Elective Course Credits` — 61
+credentials, 61 rows, **one college**. A placeholder, not a topic. Ranking by
+credentials-spanned puts the corpus's least useful string at #1.
+
+**Collapse value — (wordings − 1) × colleges touched** — sinks it to #174 with
+no special case, and surfaces the real head: `Intro to Administration of
+Justice` (5 wordings / 26 colleges), Principles & Procedures (5 / 16), Criminal
+Investigation (3 / 24). ⭐ **A ranking rule that needs a special case to avoid an
+absurd result is usually the wrong rule.** The fix was not an exclusion list.
+
+### Three bugs, one shape: two places normalising the same text differently
+
+1. **`screen_profile()` judged the RAW topic while the group key used the
+   ABBREVIATION-FOLDED one.** `Intro to Administration of Justice` read as
+   level-absent, `Introduction to…` as level-present; they disagreed, the level
+   safety screen fired, and it **blocked the single highest-value merge in the
+   corpus**. The abbreviation fold was silently undone by the screen that ran
+   before it.
+2. **The first test re-implemented the folds**, missed `adv`→`advanced`, and
+   failed two *correct* groups (`Adv Acoustical Ceiling Layout` / `Advanced
+   Acoustical Ceiling Layout`). Fixed by **emitting** the screen profile from
+   the builder — delete the duplicate derivation, don't sync it.
+3. **The first acceptance probe tested a proxy**, not the condition: it asked
+   whether a group's KEY contained both "introduction" and "advanced", and
+   reported 2 failures that were single-wording groups whose one string
+   legitimately carries both words (*"Advanced Composition & Introduction to
+   Literature"*). Nothing was being merged. This is SkyRunner's cartesian-gate
+   lesson recurring inside the very run that documented it.
+
+### The cascade caught a live data-corruption case
+
+Applying the official title wherever a C-ID resolves would have renamed
+**`3 hours in Physical Training and Health Education` → `AJ 110 — Introduction
+to Criminal Justice`**. `AJ 110` reaches that group only through the
+denormalised (credential, course) pairing — the POST cross-join the scope doc
+names. That is not a mislabel; it **asserts that Physical Training is
+Introduction to Criminal Justice**.
+
+⭐ **So a divergent official title is OFFERED, never APPLIED.** 38 groups have an
+official title sharing no content word with any college wording; all 38 keep
+their freehand canonical and carry the identity as a proposal badged
+`AJ 110? — check`. Sam's standing rule on the `AJ 110` repeat — *flagged, never
+auto-resolved* — turned out to be the same rule. **295 groups do get an official
+name applied**, far more than the 36 the scope doc counted (that counted only
+C-IDs declared on published lines).
+
+### What the MAP dataset says about "assign a CCRR to each CR"
+
+Sam: *"What we need to then focus on is assigning a CCRR to each CR in the MAP
+dataset. The military ones may be the stickiest."* Measured on
+`map_college_cr_unit` (204,683 rows):
+
+| Lane | Rows | Distinct CR strings |
+|---|---:|---:|
+| `source_code = 'ACE'` | 200,840 (98.1%) | **10,117 (88.5%)** |
+| `source_code = 'MAP'` | 3,254 | 1,231 |
+| blank | 589 | 171 |
+
+**11,426 distinct strings in MAP — roughly 5× the 2,344 the articulated corpus
+carries.** Sam's instinct is right and now quantified, and the *reason* is
+structural rather than a matter of volume:
+
+⭐ **ACE recommendations are SUBJECT AREAS, not courses.** `3 hours in
+Supervision` (2,986 rows) · `Computer Applications` · `Communications` ·
+`Industrial Safety` · `Leadership` · `1 hour in First Aid`. **There is no C-ID
+for "Supervision".** So the entire cascade — CCN, C-ID, and M-ID when it comes —
+has nothing to bite on, and the military lane falls through to rung 5, curator
+judgement, almost in full. The local MAP lane by contrast is course-shaped
+(`Criminal Investigation`, `Academic Reading and Writing`, `Introduction to
+Corrections`) and is exactly what the worklist already resolves.
+
+⚠️ **`source_code` IS a usable military-lane discriminator at the CR grain.**
+This does not contradict the standing note that "no military flag exists" —
+that one is about `map_student_credit.military_credits`, an *applied amount*
+that is zero on 84% of rows. Different column, different grain.
+
+⭐ **Two of the top ACE strings are not recommendations at all:** `0 hours in
+Credit Is Not Recommended` (3,242 rows) and `0 hours in Credit may be granted on
+the basis of an individualized assessment of the student` (2,269). Both are the
+**not-a-topic** class the tab already has a button for, and the first is the
+same population §11 already calls "a free auto-N/A win".
+
+### Next concrete step
+
+Sam works the head — the top ~50 groups — and we watch **which rungs he
+overrides**. That is the cheapest available signal on whether the rung order is
+right, and it costs him minutes rather than a review cycle. Then: extend the
+corpus from the articulated 2,344 to MAP's 11,426, where the shape of the work
+is different enough that it deserves its own scoping pass rather than an
+assumption that the same instrument fits.

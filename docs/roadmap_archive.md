@@ -26,6 +26,32 @@ Session-25 strategic queue, and the most-recent session narrative, see
 
 ---
 
+
+### SkyRef — one report, a third of the system (2026-08-13, Session 150)
+
+Four PRs (**#1164**, **#1165**, **#1166**, **#1167**), cpl-chat **v44 → v46**, one migration.
+⭐ **A COPY WITH NO REFRESH PATH IS A FOSSIL.** Sam filed *"Wrong contact information for RCC."* The
+right move was not to fix RCC but to ask how many disagree: Sierra read a JSONB blob written
+**2026-06-25** that **nothing writes** — `sync_map_users.py` writes `map_college_contacts` and only
+*reads* the profiles table. **41 of 122 colleges got a wrong email, 13 more got silence, 50 agreed.**
+Re-seeding would have made a fresher fossil; the CONSUMER changed. Reading the authority is harder
+than reading the flattened copy: trailing spaces in two real college names, 22 fields holding several
+people, one address with **no TLD**.
+⭐ **THREE IRONWORKER REPORTS WERE THREE COMPLAINTS.** The newest — *"you should have provided a list
+of courses I could get credit for"* — is not the false zero; COLLEGE·CRED was the only credential
+route never asking for `chatbox_credential_recs`.
+⭐ **SILENT FAILURE WAS THE THEME.** The Training hand-off typed into a **hidden pane** (a module-level
+`inputEl` re-pointed by a second mount), burned its own retry (`removeItem` before the guard), and ate
+text selections. `copyText` passed an **empty rejection handler** to a clipboard API that rejects
+routinely. Every one is invisible from the code and obvious from a user's sentence.
+⭐ **Sam read the cascade correctly** — `CPL Assistant` DID mean "assistant on file, nobody as Primary
+Contact", and it was already promoted. The chip said *what*, not *why*.
+Durable: `methodology-a-copy-with-no-refresh-path-is-a-fossil`,
+`methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver`,
+`methodology-a-provenance-label-must-say-why-not-what`.
+Story: `docs/map_users_lessons.md` · `docs/sierra_credit_recs_lessons.md` ·
+`docs/sierra_training_tab_scope.md` · handoff `docs/session_151_handoff.md`.
+
 ## Archived session narrative — Session 147 (SkyPeak, moved out Session 148)
 
 ### SkyPeak — the one course that should have been ten, and the zero that wasn't (2026-08-13, Session 147)
