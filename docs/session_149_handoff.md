@@ -1,5 +1,5 @@
 ---
-title: Session 149 handoff (SkyBridge → next) — Sierra reads the recs; now align local courses
+title: Session 149 handoff (SkyBridge → next) — the alignment layer is live; now test it
 created: 2026-08-13
 updated: 2026-08-13
 tags: [handoff, sierra, alignment, coci, adoption, credit-recommendations]
@@ -12,8 +12,8 @@ related:
 
 # You are Session 149
 
-Session 148 was **SkyBridge** — Sam's greeting named it. Two PRs (**#1150**,
-**#1151**), one migration, **cpl-chat v40 live**.
+Session 148 was **SkyBridge** — Sam's greeting named it. Six PRs (**#1150–#1155**),
+four migrations, two edge-function deploys, **cpl-chat v41 live**.
 
 ## ⚠️ FIRST — read the memory table. This is Rule 8.
 
@@ -28,51 +28,45 @@ order by event_date desc nulls last limit 40;
 Then read, in order: `docs/local_course_alignment_lessons.md` → CLAUDE.md §11
 (the "Local course ↔ CR alignment" row) → `docs/sierra_credit_recs_lessons.md`.
 
-## 🎯 PRIORITY 1 — Sam asked for this explicitly, and it is proven but not built
+## 🎯 PRIORITY 1 — the alignment layer is LIVE. Watch it, don't rebuild it.
 
-> *"If Sierra is answering for Cerritos College, I would want her to recommend the
-> most aligned Cerritos welding courses to be articulated so the faculty don't have
-> to guess, and have a link or access to the other college articulations for this
-> same welding certificate."*
+Sam, on handover: *"We'll do lots of testing on this and feedback using Sierra
+Trainer."* **That is your priority: the feedback loop, not more building.**
 
-I proved it works offline. **Build it.** Full design in
-`docs/local_course_alignment_lessons.md` §(c). Order:
+Sierra now answers, for a college + a certificate, with BOTH halves per credit
+recommendation — the college's own closest-matching courses (a **proposal**) and
+how other colleges articulated the same recommendation (a **fact**). Live as
+**cpl-chat v41**, verified against Sam's acceptance case.
 
-1. **`chatbox_credential_peer_articulations`** — credential × rec × (college,
-   subject, number, title), straight from `kb/coci_articulations.json`. **Do this
-   first**: exact data, no matching, small table, and alone it delivers half the ask
-   with zero risk of proposing a wrong course.
-2. **`chatbox_college_courses`** — per college × course from the 141k-row
-   `kb/reference/coci_course_list.xlsx` (college, subject, number, title, units,
-   credit type, TOP, C-ID).
-3. **One RPC** `credential_alignment_for_college(credential, college)` returning
-   both signals per rec, each labelled for what it is.
-4. **cpl-chat wiring** + a rule: propose with evidence, never determine.
+**What to do:**
+1. **Ask her the Cerritos welding question yourself.** Nobody has read her actual
+   prose — the sandbox is egress-blocked from `*.supabase.co`, so the RPC was
+   verified directly and the renderer against live fixtures, but not the answer.
+   Use the Sierra AI box on My College, or the CPL Assistant tab.
+2. **Triage the Sierra Training backlog — it is now load-bearing.** 25 rows,
+   oldest 1 July. That tab is the channel this feature gets corrected through:
+   a bad suggestion becomes a logged question, which becomes an instruction.
+3. **Expect the scorer to need tuning on a less literal discipline.** It was
+   tuned on welding, where titles are almost self-describing and the acronym
+   (FCAW) does real work. Nursing, business and the arts will not behave that way.
 
-⭐ **THE DESIGN CONSTRAINT — do not skip this.** Title similarity ALONE is
-systematically biased. Santa Ana articulated `WELD 240 Structural Welding SMAW`
-and `WELD 244 D1.1 Code Clinic` against **FCAW** recs — neither title contains
-"FCAW". Colleges map a *broader* course to a *specific* rec, and that is a faculty
-judgment, not a lexical fact. Two signals, labelled separately:
-`methodology-two-signals-for-a-judgment-proposal`.
+⚠️ **Do NOT loosen the content-token gate to catch more.** It exists because the
+first cut ranked `ART 100 — Introduction To World Art` third for a **welding**
+recommendation. On this surface a plausible false positive costs more than a
+miss: an expert who sees one absurd row stops trusting the correct row above it.
+`docs/kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md`.
 
-⚠️ **Do NOT scope candidates by TOP code** — that gates on TOP (Rule 7). The
-offline demo did, for speed. The build must not.
+⚠️ **Do NOT merge the two signals into one ranked list.** Santa Ana articulated
+`WELD 240 Structural Welding SMAW` and `WELD 244 D1.1 Code Clinic` against
+**FCAW** recommendations — neither title contains "FCAW". Title similarity is
+structurally blind to the broader-course pattern; peer precedent is the only
+signal that surfaces it. Merging lets a guess borrow a precedent's authority.
 
-## What shipped
-
-- **#1150** — `cpl-chat` **v40**: `credential_recs_for_titles(titles)` batches the
-  full rec set; `renderRecLines()` lists courses/C-IDs/units; `AJ 110` flagged with
-  both counts, never auto-resolved. Credential + volume route groups now run
-  concurrently. `tests/sierra_credential_recs.test.js` — 23 **behavioural** checks.
-- ⭐ **`ccc_rec` was a RETRIEVAL GATE.** Derived from adoptions, so **38 statewide
-  credentials with zero adopters (36 carrying 75 published rec lines)** were
-  excluded from *every* credential route. Gate widened; `college_adoption_opportunities`
-  now returns **two labelled bands** (`peer_leverage`, `ready_to_adopt`) with
-  reserved slots.
-- **#1151** — MAP Users audit. **Wiring sound** (78 + 16 + 1 keys, zero misses).
-  Mission College's proposal is `boothmelanie@gmail.com` — **flagged, never
-  filtered**. Trailing-space join fragility normalised.
+⚠️ **Never pair a college to a course on a `group_wide` row.** 604 of the 9,413
+peer rows come from articulations where the source repeated ONE college list
+across every course, so we know which colleges and which courses but not which
+used which. Sending a welding instructor to a college that never taught that
+course is the same failure as inventing the articulation.
 
 ## 📌 Decisions Sam made this run
 
@@ -80,7 +74,10 @@ offline demo did, for speed. The build must not.
   courses AND give access to peer articulations for the same certificate — *"so the
   faculty don't have to guess."*
 - **Sequencing**: checkpoint first, then build the alignment feature. He deferred
-  the cluster-adoption surface until alignment lands.
+  the cluster-adoption surface until alignment lands. **Alignment has now landed**,
+  so the cluster surface is unblocked — but he asked to TEST alignment first.
+- **Testing route**: *"We'll do lots of testing on this and feedback using Sierra
+  Trainer."* Feedback arrives through the Sierra Training tab, not chat.
 
 ## ⚠️ Things that will mislead you
 
@@ -104,12 +101,13 @@ offline demo did, for speed. The build must not.
 - **Cerritos false absence still unfixed** — and it is a false absence *twice over*:
   the corpus abbreviates its titles (`FIW Orientation`), and the leverage layer omits
   it from welding adoption.
-- 25-row Sierra feedback backlog, still never triaged.
+- 25-row Sierra feedback backlog, still never triaged — **now the correction
+  channel for alignment**, so it is no longer just hygiene.
 - Exhibit corpus covers **59 of 123**; `chatbox_college_profiles` stale since 2026-06-25.
 - 12 adoption-file statewide titles absent from `chatbox_credentials`.
 - The **cluster-adoption surface** (32 courses unlock the whole 36-credential shelf;
   *Introduction to Construction Safety* alone unlocks 12) — Sam called it "amazing",
-  deferred until alignment lands.
+  deferred until alignment lands — **now unblocked**, but test alignment first.
 - From 146: the site-phrase **superset decision** still needs Sam; the identity
   crosswalk write to Supabase is still queued.
 
