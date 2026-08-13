@@ -1022,12 +1022,36 @@ function buildAlignmentContext(rows: any[] | null, credential: string, college: 
     out += `\nRECOMMENDATION: ${rec}\n`;
 
     if (g.cands.length > 0) {
-      out += `  ${college}'s closest-matching courses (SUGGESTIONS for faculty to weigh — `
-          + `ranked by how closely the course TITLE matches, nothing more):\n`;
+      // THE LADDER, and each rung is a different STRENGTH of evidence — say
+      // which one a row came from. A C-ID match means the statewide course
+      // identity already establishes the equivalence; a title match is strong
+      // but lexical; "closest available" is a judgement call and must read as
+      // one. Sam, 2026-08-13: C-ID first, then titles, then most aligned as a
+      // last resort, qualified as our best judgement from the data we hold.
+      const kind = g.cands[0]?.match_kind || "aligned";
+      if (kind === "c_id") {
+        out += `  ${college} ALREADY TEACHES A COURSE CARRYING THIS RECOMMENDATION'S C-ID `
+            + `— the strongest match there is, because C-ID is the statewide course-identity `
+            + `standard and the equivalence is therefore already established:\n`;
+      } else if (kind === "title") {
+        out += `  ${college}'s matching course by TITLE (no C-ID on either side to confirm it, `
+            + `so faculty confirm the content):\n`;
+      } else {
+        out += `  No C-ID or title match at ${college}. CLOSEST AVAILABLE by wording — `
+            + `these are a best judgement from the data we hold, not a determination, `
+            + `and faculty should expect to reject some:\n`;
+      }
       for (const c of g.cands) {
         out += `    - ${c.subject} ${c.course_number} — ${c.course_title}`;
         if (c.units != null) out += ` (${c.units} units)`;
+        if (c.match_kind === "c_id" && c.course_cid) out += ` [C-ID ${c.course_cid}]`;
         out += `\n`;
+        if (c.cid_title_divergent) {
+          out += `      ⚠ The C-ID agrees but the NAMES do not. Say so plainly and let faculty `
+              + `judge it — do NOT quietly drop the row and do NOT assert the courses are `
+              + `equivalent. In this credential's data one C-ID is known to appear on two `
+              + `different recommendation lines, which is an open question MAP has not settled.\n`;
+        }
       }
     } else {
       out += `  No ${college} course has a similar title. Say that plainly — and note that a `
@@ -1678,7 +1702,10 @@ const VOLUME_RULE = `\n\nABOUT THE "STUDENT VOLUME BY CREDENTIAL" SECTION (if pr
 // would let a guess borrow the authority of a precedent.
 const ALIGNMENT_RULE = `\n\nABOUT THE "ARTICULATING <CREDENTIAL> AT <COLLEGE>" SECTION (if present) — THE ARTICULATION WORKLIST:
 This is the most actionable thing you can give a college. Walk the recommendations one at a time; for each, name the college's own closest-matching courses AND how other colleges articulated that same recommendation. Give both, every time, and keep them clearly distinct.
-- THE COLLEGE'S OWN COURSES ARE A SUGGESTION, NOT A DETERMINATION. They are ranked by how closely the course TITLE matches the recommendation — nothing more. Say so: these are starting points for faculty to weigh, and the college's curriculum committee decides. Never say a course "qualifies", "counts", "is equivalent" or "will be accepted".
+- THE LADDER — SAY WHICH RUNG A SUGGESTION CAME FROM, because they are different strengths of evidence. (1) The college ALREADY TEACHES A COURSE CARRYING THE RECOMMENDATION'S C-ID — the strongest match there is, because C-ID is the statewide course-identity standard, so the equivalence is already established rather than guessed; name the C-ID. (2) The course TITLE matches, with no C-ID to confirm it. (3) CLOSEST AVAILABLE BY WORDING — a judgement call from the data we hold; say so in those words, and say faculty should expect to reject some. Never present rung 3 with the confidence of rung 1.
+- THE COLLEGE'S OWN COURSES ARE STILL A SUGGESTION, NOT A DETERMINATION — even a C-ID match. These are starting points for faculty to weigh, and the college's curriculum committee decides. Never say a course "qualifies", "counts", "is equivalent" or "will be accepted".
+- IF A C-ID MATCHES BUT THE NAMES DIVERGE, SAY SO rather than dropping the row or asserting equivalence. In POST's data one C-ID appears on two different recommendation lines, which MAP has not settled — a faculty member is exactly the right person to judge it.
+- IF NOTHING MATCHES A RECOMMENDATION, SAY NOTHING MATCHED IT. An honest blank beats a stretch: one absurd suggestion costs the credibility of every good one on the page.
 - THE PEER ARTICULATIONS ARE FACT. A named college really did articulate that exact course against that exact recommendation. Name the college and the course number so faculty can look up the precedent themselves — that is the evidence, and it is what makes a suggestion checkable rather than a guess.
 - WHEN THE TWO DISAGREE, SAY SO — it is useful, not a problem. A peer may have articulated a BROADER course whose title looks nothing like the recommendation (a structural-welding course against a flux-cored-arc-welding recommendation). That is a legitimate faculty judgment about scope, and it is exactly the option a title match would never surface. Point it out.
 - WHERE OUR SOURCE SAYS A GROUP OF COLLEGES USED A SET OF COURSES WITHOUT SAYING WHICH USED WHICH, present it that way. Never pair a specific college to a specific course there. Sending someone to a college that did not teach that course is as damaging as inventing the articulation.
