@@ -26,6 +26,52 @@ Session-25 strategic queue, and the most-recent session narrative, see
 
 ---
 
+## Archived session narrative — Session 147 (SkyPeak, moved out Session 148)
+
+### SkyPeak — the one course that should have been ten, and the zero that wasn't (2026-08-13, Session 147)
+
+Sam asked to edit a saved Sierra instruction and test it without leaving the tab, then handed over two wrong answers.
+Three PRs (**#1146–#1148**), two migrations, 2,205 rows published, 42 live corrections.
+⭐ **Every finding was a PUBLISH gap, not a build.** POST's ten credit recs (8 C-IDs + 2 electives) sat in
+`statewide_data.js` and on the public Fact Sheet the whole time; Sierra reads only Supabase, so she quoted the
+single-string `ccc_rec` and named one course. Same for the statewide flag: the sync used the CER (84) not the
+adoption file (137), so **42 credentials read as local** — the EMT/Paramedic mismatch Sam has reported for weeks.
+⭐ **`cpl_memory` had already ruled on it** (*"use the adoption file"*) and nothing enforced it. **A settled ruling
+does not enforce itself — the consumer has to change.**
+⚠️ **Cerritos "has no ironworker CPL" is a FALSE ABSENCE**: the corpus stores `FIW Orientation` / `IW- Mixed Base`
+while the curated layer holds 11 `Ironworker Apprenticeship —` rows. Diagnosed, **not fixed**.
+⚠️ **A conditional key breaks a bulk upsert** — one `cid_repeats` row in 2,205 (POST's AJ 110) PGRST102'd the load
+at batch 9 and left the table **two-thirds full and looking populated**.
+⚠️ **Sierra's answers are UNCHANGED until `cpl-chat` is wired to the new table.** Durable:
+`methodology-a-summary-field-is-not-the-record`, `methodology-a-conditional-key-breaks-a-bulk-upsert`,
+`methodology-a-settled-ruling-does-not-enforce-itself`.
+Story: `docs/sierra_credit_recs_lessons.md` · handoff `docs/session_148_handoff.md`.
+
+## Archived session narrative — Session 146 (SkyFund, moved out Session 148)
+
+### SkyFund — a phrase box everywhere, and the limit that was eating Sam's work (2026-08-12, Session 146)
+
+Sam asked for a place to enter the team phrase "wherever curation is needed", and suggested the header. Five PRs
+(**#1137–#1141**), one production deploy (**cpl-chat v39**), one additive migration.
+⭐ **Site-awareness was a smaller problem than it looked, and the app already held the answer.** A tab can demand a
+site phrase ONLY if it is EXCLUSIVE to that site — `cobi_orgs.js` already listed those. Two qualify. **C&I and CIP have
+no gated tables at all**, so their phrase protects nothing. Sam's own steer settled it: *"if they show up on two tabs,
+allow either"* — which is free, because `team_pass_ok()` already matches any secret.
+⭐ **The Sierra composer was silently truncating his instructions at 500 characters**, in the textarea *and* in the edge
+function. Two rules landed on exactly 500 and one on 499, cut mid-table. **Identical lengths across independent inputs
+are a fingerprint of truncation, not a coincidence.** Raised to 1,500 on both sides and, more importantly, made visible.
+⭐ **A queue that tracks attention but not remedy reports itself complete** — Triage recorded that someone *looked*,
+never what was *done*, with the composer that would fix it sitting unconnected on the same screen.
+⚠️ **A filtered read is not an empty one.** `team_access` returns `200 + []` to a non-reviewer; "no phrases configured"
+would be the opposite of the truth. Three distinct renders now.
+✅ **Contracts landed on the Finance phrase at the end of the run** — Sam rotated it himself on the new tab first, which
+is also what proved the tab works end to end. ⚠️ **Still open and needing Sam:** whether a site phrase should stay a
+superset of the shared one — it is live now, so that is no longer hypothetical.
+Durable: `methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface`,
+`methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts`,
+`methodology-a-status-lane-must-link-to-the-remedy-lane`.
+Story: `docs/team_phrase_lessons.md` · `docs/sierra_training_tab_scope.md` · handoff `docs/session_147_handoff.md`.
+
 ## Archived session narrative — Session 113 (SkyTeleo, moved out Session 117)
 
 ### Session 113 — SkyTeleo: the HVAC mis-mint thread → a new auditor rule + blank-discipline cleanup (2026-07-13)

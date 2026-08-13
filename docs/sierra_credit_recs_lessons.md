@@ -176,3 +176,102 @@ nothing a visitor sees has changed.
 the pre-session commit (this run changed seven files; that is not one of them),
 so it is pre-existing. `js-tests.yml` is non-required and did not run on any of
 the three merge commits, so nothing was gated on it. Worth someone's attention.
+
+---
+
+## 2026-08-13 — SkyBridge (Session 148): the gate nobody knew was a gate
+
+SkyPeak published 2,205 rows and left one instruction: wire `cpl-chat` to them.
+Doing that took an afternoon. **Finding out why some credentials were unreachable
+at all took the rest of the day, and it was the bigger result.**
+
+### (a) What was learned
+
+**`ccc_rec` was not merely a lossy summary — it was a RETRIEVAL GATE.**
+
+`search_statewide_recommendations` carried `and c.ccc_rec is not null`. That looks
+like a null-guard. It is a **membership test**, because of where `ccc_rec` comes
+from: `excel_to_dashboard.py` builds it as `ccc_recs.most_common(1)` over a
+credential's **articulation rows**. No adoptions → no articulations → no rec
+strings → `ccc_rec` is NULL. So the gate silently reads *"has any college already
+adopted this?"* and excludes everything that has not.
+
+Measured live:
+
+| | |
+|---|---|
+| Statewide credentials with zero adopters | 38 |
+| …with `ccc_rec` NULL | **38 of 38** |
+| …with published recs in `chatbox_credential_recs` | 36, carrying **75** rec lines |
+| `search_statewide_recommendations('carpenters apprenticeship')` | **0 rows** |
+| `college_adoption_opportunities('Bakersfield College', 50)` → zero-adopter rows | **0** |
+
+The adoption route missed them for a **second, independent** reason:
+`potential_colleges` derives from `adoption_leverage`, which derives from
+articulations, which do not exist yet. Two different code paths, same blind spot,
+neither aware of the other.
+
+So the exhibits MAP deliberately creates **ahead of demand** — the Carpenters
+ladder (10 trades), NCCER (13 levels), the CSLB contractor licences, ICC
+inspector/plans-examiner, OSHA 10 and 30, Commercial + Residential Electrical
+Apprenticeship — were unreachable on **every** credential route. Not ranked last.
+Excluded. The exact inverse of Sam's ruling that they be *prominent choices for
+adoption*.
+
+**The generalisable form:** a derived summary field is dangerous as a lossy value
+and *far* more dangerous as a **filter**, because a filter's failure is invisible —
+the row does not appear wrong, it does not appear. And the derivation chain here
+(adoptions → recs → `ccc_rec` → retrieval gate) meant the credentials hardest to
+find any other way were exactly the ones excluded.
+
+**Two bands, not one re-sorted list.** The obvious fix to "unadopted sorts last"
+is to flip the sort. That would have been wrong. `peer_leverage` ("peers teach the
+course and articulated it, you have not") and `ready_to_adopt` ("a statewide
+standard nobody has taken up") are **different claims**, and merging them lets
+Sierra say *"N peers already articulate it"* about a zero-adopter credential — a
+fabricated route to a counter where nobody expects the student. Slot reservation
+(a third of the budget, min 3) makes the shelf prominent without letting the same
+38 construction credentials head every college's answer.
+
+**The shelf collapses to almost nothing.** 36 credentials · 75 rec lines · but only
+**32 distinct courses**; 18 of those serve 2+ credentials and **31 of the 36 are
+reachable through a course shared with another**. *Introduction to Construction
+Safety* alone appears in **12**. It is a small course cluster, not 38 independent
+adoption decisions — which is a completely different pitch to a college.
+
+### (b) Current state
+
+`cpl-chat` **v40 live**. `credential_recs_for_titles(titles)` batches the full set
+for whatever titles a route matched — one round-trip, and deliberately *not* a
+second search function, because a second matcher over the same vocabulary would
+drift from the first and attach recommendations to a credential Sierra never
+named. The credential and volume route groups now run **concurrently**, buying
+back more than the batched lookup costs.
+
+`renderRecLines()` leads with the LIST. POST renders **10 lines · 9 carrying a
+C-ID · 8 distinct · 1 with none**, and the `AJ 110` repeat ships both counts,
+flagged and never auto-resolved.
+
+### (c) Roadmap
+
+The local-course↔CR alignment layer (`docs/local_course_alignment_lessons.md`) is
+the next build and Sam has asked for it. Then the Cerritos false absence, which is
+**still open** — and note Cerritos is now a false absence in *two independent
+ways*: the raw corpus abbreviates its titles, and the M-ID leverage layer omits it
+from welding adoption entirely.
+
+### (d) Next concrete step
+
+Build the alignment layer: a per-course table from the 141k-row COCI list, a
+peer-articulation table keyed by credential + rec, one RPC returning both signals.
+
+### Verification note
+
+`tests/sierra_credential_recs.test.js` is **behavioural, not source-regex**: it
+lifts the three renderers out of the `.ts` and runs them against fixtures copied
+verbatim from live RPC output. The failure being guarded — "does the context
+actually list the ten courses" — is invisible to a grep. Doing that forced
+`tests/lib/lift_ts.js` to learn nested generics (`Promise<Map<string, any>>`) and
+optional parameters; **both broke a sibling test at lift time with a `SyntaxError`
+pointing at the parameter rather than at the signature that changed.** One
+stripper in the repo, not two.

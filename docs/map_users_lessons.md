@@ -290,3 +290,80 @@ search row can reach the "Proposed for MAP" column. Full reasoning:
 2. **Decide how the remaining 52 get swept**, now that a session cannot do it.
 3. The 15 blank-with-a-finding colleges still need the PD session — start with
    the two mental-health ones.
+
+---
+
+## 2026-08-13 — SkyBridge (Session 148): the audit that found the wiring sound
+
+Sam asked to "make sure the MAP Users list is correctly wired to give correct
+college contacts." Measured rather than read through.
+
+### (a) What was learned
+
+**The wiring is sound, and saying so plainly was the result.** I went in expecting
+the raw-string join bug — the one that once showed five colleges no implementation
+funding (`methodology-normalise-both-sides-of-a-join`). It is not there:
+
+- All **78** `FALLBACK_CONTACTS` keys, **16** `CPL_PAGES` keys and the one
+  `CPL_LIAISONS` key resolve to a real `map_college_contacts.college`. Zero misses,
+  zero dead keys.
+- `map_contact_gaps`' cascade is faithful: **17** proposable / **5** leadership-only
+  / **3** no-MAP-presence.
+- The 3 "no MAP presence" colleges (Calbright Credit, North Orange CE Credit, San
+  Diego CCE Credit) are **genuinely** the standalone continuing-ed institutions —
+  re-checked under trimming, so not a join artifact.
+- Addresses shared across colleges (`shess@sdccd.edu` ×4, `beckm@smccd.edu` ×3,
+  `kseelbach@peralta.edu` ×2) are **legitimate district officers**, not copy-paste.
+
+Not manufacturing a fix for an absent bug is the point. The temptation on an audit
+is to return *something*.
+
+**⚠️ Mission College's proposed student contact is a personal Gmail.**
+`boothmelanie@gmail.com`, sitting in MAP's own `cpl_coordinator_email` and
+therefore **first in the cascade** — it is what we would ask the MAP team to adopt
+as the address a public college's landing page routes students to. It is the
+**only** free-mail address anywhere in the contact table.
+
+**Flagged, never filtered.** It is a real designation, and the standing doctrine is
+*propose only someone the college already designated*. Suppressing it would
+substitute our judgment for theirs **and hide the finding**. The warning says so in
+words: *"it is still their designation, not ours to change."*
+
+**A latent join fragility, caught before it fired.** MAP's college names are
+hand-typed and two carry a **trailing space** — `"Cypress College "` and `"San Jose
+City College "`. The fallback keys match that *exactly*, so the lookup works today
+and would break **silently** the day MAP tidies the spelling, rendering a college
+we *did* research as "not looked up". `fallbackFor()` now tries the exact key
+first, then a normalised index. Nothing changes today, and nothing changes when
+MAP fixes its typo either — which is the whole point.
+
+**College of Marin** carries the literal string `"na"` in `cpl_counselor_email`;
+`map_first_email()` already nulls it, so the guard is for the next one.
+
+**Scope discipline on the flag.** `addressWarning()` flags a free-mail provider or
+an unusable value and nothing else — `canyons.edu`, `sdccd.edu`, `smccd.edu`,
+`peralta.edu`, `yccd.edu`, `futurohealth.org` and a departmental `sc-ecounselor@`
+inbox are all asserted clean in the test. **A false positive here trains the team
+to ignore the warning**, which costs more than the one true positive is worth.
+
+### (b) Current state
+
+`tests/map_users_contact_quality.test.js` — 18 checks against the real fallback map
+lifted out of `map_users.js`, including that no code path *filters* on the warning.
+`map_users.test.js` still 157/157. Shipped in #1151.
+
+### (c) Roadmap · (d) Next concrete step
+
+Unchanged by this run: confirm the 7 `via:"search"` candidates (start with Palomar
+and Canyons) and flip them to `via:"curator"` with a name and date; work the 17
+blanks; the 52 colleges *with* a CPL Assistant still need a differently-egressed
+sweep. Ask the MAP team about Mission College's Gmail — that is a conversation, not
+a data fix.
+
+### Retired from CLAUDE.md this run
+
+The §11 "MAP Users / student contact" cell had reached **5,261 chars** and tripped
+`stacked_roadmap_cell`. It was compacted to current truth (2,334 chars); the
+superseded per-session narrative (SkyMail's worklist build, the 71-college sweep,
+SkyHigh's seven, SkyMind's confirmation) lives in the earlier sections of this
+document, which is where the history belongs.
