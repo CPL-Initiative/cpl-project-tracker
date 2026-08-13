@@ -1,74 +1,74 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-13 (late) · SkyRunner — the filter dropdowns were invisible, not missing.",
- "_session": 151,
- "_status": "Two things closed. The Exhibit Adoption filters: you said they need dropdowns and don't all work — it turned out to be one fault, not two. The dropdowns were there the whole time, but a styling rule on the surrounding panel was cutting them off, so clicking a filter opened a list you couldn't see. Fixed. Calbright College Non-Credit was also being dropped from the District and Region filters because it was missing from our college list — 88 records' worth — and the sandbox college is now hidden. Second, the Common CR Reference is scoped and measured before any building. The honest headline: automatic matching can only ever handle about a tenth of it. Roughly 90% needs a person, because 'Racial Issues and the Police' and 'Community Relations' are the same academy topic written in completely different words, and no software finds that. So it should be built as a working queue for curators, not a matching engine. The encouraging part: the work is very top-heavy. The 50 most common recommendation wordings account for half of everything, and 1,593 of the 2,344 wordings appear exactly once. You don't have to boil the ocean.",
- "items": [
-  {
-   "id": "s151-check-filters",
-   "for": "Sam",
-   "tab": "Exhibit Adoption",
-   "text": "Please re-open the Exhibit Adoption filters. All eight should now drop open properly when clicked — collaborative type, CPL type, sector, discipline, issuing agency, college, district and region. They are still tick-box lists so you can pick several at once; if you specifically want single-choice dropdowns instead, say so and I'll swap them, but that would mean losing multi-select."
-  },
-  {
-   "id": "s151-cr-reference-grain",
-   "for": "Sam",
-   "tab": "Common Course Reference",
-   "text": "One decision needed before the Common CR Reference gets built: should a canonical recommendation be one entry for the whole system, or one per credential? 83% of wordings only ever appear under a single credential, so per-credential is nearly free — but the most valuable ones appear under as many as 61 credentials, and those are exactly the ones worth canonicalising once."
-  },
-  {
-   "id": "s151-cr-reference-worklist",
-   "for": "Fable",
-   "tab": "Common Course Reference",
-   "text": "Build the Common CR Reference as a ranked worklist, not a matcher — the measurement says automation reaches only ~10%. Rank topics by how much they collapse (wordings × colleges), offer group/split/confirm with curator attribution, and pre-apply the four automated rungs labelled by which one fired. Model the affordances on the CCR merge workspace. Read docs/common_cr_reference_scope.md first."
-  },
-  {
-   "id": "s151-ccr-head-check",
-   "for": "Fable",
-   "tab": "Common Course Reference",
-   "text": "Before the CCR's next push, measure whether the CCR's own course distribution is as top-heavy as the credit recommendations turned out to be (top 50 = half of everything). If it is, the same work-the-head strategy makes the CCR tractable, and the 2,344-string CR Reference is the cheap place to prove it first."
-  },
-  {
-   "id": "s150-check-gap-list",
-   "for": "Sam",
-   "tab": "Sierra Training",
-   "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
-  },
-  {
-   "id": "s150-decide-blank-contacts",
-   "for": "Sam",
-   "tab": "MAP Users",
-   "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
-  },
-  {
-   "id": "s150-common-cr-reference",
-   "for": "Fable",
-   "tab": "Knowledge Base",
-   "text": "QUEUED BY SAM as the next build: plan and create the Common CR Reference tab. Scope it against the CCR's actual matching factors first. His ruling stands — C-ID is one factor and not the key, because only about 17% of the 2,344 distinct recommendation wordings carry a C-ID at all, and the ones that do include a case (AJ 110) where the same C-ID sits on two genuinely different lines."
-  },
-  {
-   "id": "s150-missing-statewide-titles",
-   "for": "Fable",
-   "tab": "Credential Reference",
-   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
-  },
-  {
-   "id": "s150-corpus-coverage",
-   "for": "Fable",
-   "tab": "CPL Assistant",
-   "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
-  },
-  {
-   "id": "s150-search-tier-contacts",
-   "for": "Fable",
-   "tab": "MAP Users",
-   "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
-  },
-  {
-   "id": "s150-site-phrase-scope",
-   "for": "Sam",
-   "tab": "Team Phrases",
-   "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-08-13 (late) · SkyCall — the Common CR Reference worklist is live.",
+  "_session": "Session 152 (SkyCall)",
+  "_status": "The Common CR Reference is built. Colleges have typed 2,344 different wordings for what is often the same credit recommendation, and the new tab groups them and asks you to confirm. It is ranked by how much each decision is worth, so the top of the list is always the best use of your next five minutes — and only 156 groups carry a decision at all. Where an official C-ID or CCN title exists we now name the reference with it, exactly as the Common Course Reference does; M-IDs are wired in as the third step and switch on when you say they are ready. The one thing we held back: when an official title shares no words at all with what colleges wrote, we show it as a suggestion rather than applying it, because in a handful of cases that rename would have been flatly wrong. Next up is the military side, which is about five times larger and will need its own plan.",
+  "items": [
+    {
+      "id": "s151-ccr-head-check",
+      "for": "Fable",
+      "tab": "Common Course Reference",
+      "text": "Before the CCR's next push, measure whether the CCR's own course distribution is as top-heavy as the credit recommendations turned out to be (top 50 = half of everything). If it is, the same work-the-head strategy makes the CCR tractable, and the 2,344-string CR Reference is the cheap place to prove it first."
+    },
+    {
+      "id": "s150-check-gap-list",
+      "for": "Sam",
+      "tab": "Sierra Training",
+      "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
+    },
+    {
+      "id": "s150-decide-blank-contacts",
+      "for": "Sam",
+      "tab": "MAP Users",
+      "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
+    },
+    {
+      "id": "s150-missing-statewide-titles",
+      "for": "Fable",
+      "tab": "Credential Reference",
+      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
+    },
+    {
+      "id": "s150-corpus-coverage",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
+    },
+    {
+      "id": "s150-search-tier-contacts",
+      "for": "Fable",
+      "tab": "MAP Users",
+      "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
+    },
+    {
+      "id": "s150-site-phrase-scope",
+      "for": "Sam",
+      "tab": "Team Phrases",
+      "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
+    },
+    {
+      "id": "s152-work-the-head",
+      "for": "Sam",
+      "tab": "Common CR Reference",
+      "text": "The Common CR Reference tab is live — a new tab beside the Common Course/Subjects/Exhibit References. Please work the top of the list (it is ranked so the most valuable decision is always first) and confirm or reject the groupings. The top 50 wordings account for about half of every articulation in the system, so this is an afternoon, not an ocean."
+    },
+    {
+      "id": "s152-check-flagged",
+      "for": "Sam",
+      "tab": "Common CR Reference",
+      "text": "Inside that tab, 38 groups are badged with an orange 'AJ 110? — check'. Those are cases where an official C-ID title says something completely different from what every college wrote. We deliberately did NOT apply the official name — one of them would have renamed 'Physical Training and Health Education' to 'Introduction to Criminal Justice'. Tell us if we are being too cautious."
+    },
+    {
+      "id": "s152-military-lane",
+      "for": "Fable",
+      "tab": "Common CR Reference",
+      "text": "Scope the military lane before building anything for it. MAP holds 11,426 distinct credit-recommendation wordings — about 5x what the tab covers today — and 88% of them come from ACE (military). They are subject areas like 'Supervision' and 'Leadership', not courses, so the C-ID/CCN naming cascade has nothing to attach to. Different problem, needs its own scoping pass."
+    },
+    {
+      "id": "s152-free-na-win",
+      "for": "Fable",
+      "tab": "Course Credit",
+      "text": "A free win: 3,242 rows say '0 hours in Credit Is Not Recommended' and 2,269 say 'Credit may be granted on the basis of an individualized assessment'. Neither is a credit recommendation at all. They belong in the 'not a topic' bucket and are the same population we already flagged as an automatic Not-Applicable win."
+    }
+  ]
 }
