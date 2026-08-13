@@ -246,6 +246,34 @@ function fakeSb(rows, opts = {}) {
   })();
 }
 
+// ── 9. A contact in context must be ANSWERED, not hedged over ───────────────
+// Sam, 2026-08-13: asked "Who is the CPL contact at San Diego Mesa College?" and
+// Sierra replied "I don't have the specific CPL coordinator contact details … on
+// hand", offering the landing page instead — while the contact line naming
+// Rachel Russell was in her context. Two other turns on the same question, one
+// of them NINE SECONDS earlier, answered it correctly. So retrieval was right
+// and the model hedged; the instruction now travels with the contact line itself
+// so the two cannot be separated.
+{
+  (async () => {
+    const out = await withLiveContacts(RCC_PROFILE, fakeSb([RCC]), true);
+    const ctx = buildCollegeContext(out, true);
+    check("the contact line carries its own answer-it instruction",
+          /THE LINE ABOVE IS THE ANSWER/.test(ctx));
+    check("hedging over a contact in context is forbidden explicitly",
+          /Do NOT say you do not have the contact/.test(ctx));
+    check("the landing page is named as an ADDITION, never a substitute",
+          /never a substitute for it/.test(ctx));
+
+    // The instruction must NOT appear when there is no live contact — telling
+    // the model to state a name it does not have invites it to invent one,
+    // which is the failure this whole area exists to avoid.
+    const noRow = await withLiveContacts(RCC_PROFILE, fakeSb([SISKIYOUS]), true);
+    check("no live contact => no answer-it instruction",
+          !/THE LINE ABOVE IS THE ANSWER/.test(buildCollegeContext(noRow, true)));
+  })();
+}
+
 // The async blocks above resolve on already-settled promises, so a single
 // macrotask tick is enough for every check to land before the summary.
 setTimeout(() => {

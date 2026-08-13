@@ -73,6 +73,19 @@
 
   var STATUSES = ["new", "triaged", "addressed"];
 
+  // Review state for the gap pane ("questions she struggled with").
+  //
+  // WHY IT IS A SEPARATE LANE (Sam, 2026-08-13): "How can I click this
+  // resolved?" — he could not. The feedback pane has Mark this: buttons backed
+  // by sierra_feedback.status; the gap pane reads chat_interactions, an
+  // append-only log of every turn with NO status column. So the list could never
+  // shrink, and a question already fixed sat there indistinguishable from one
+  // nobody had touched. Absence of a review row means STILL OUTSTANDING.
+  var TURN_STATUSES = ["resolved", "wont_fix"];
+  function turnStatusLabel(s) {
+    return s === "resolved" ? "Handled" : s === "wont_fix" ? "Leave it" : "Still to do";
+  }
+
   // ── Plain language (Sam, 2026-08-12) ─────────────────────────────────────
   // "the Sierra Training tab uses a bunch of jargon I don't understand; can you
   //  switch to using plain language and add hover overs on chips and filter to
@@ -143,6 +156,9 @@
     open: {},          // turn_id → expanded
     // gap-miner filters
     gKind: "all", gAudience: "", gDays: "",
+    // Gap-pane review filter. Defaults to "open" so the pane shows what is
+    // still outstanding, not every question Sierra ever struggled with.
+    gRev: "open", turnReviews: {},
     gOpen: {},         // interaction id → expanded
     busy: {},          // turn_id → status write in flight
     bulkStatus: "triaged", bulkBusy: false,
@@ -443,6 +459,64 @@
       return r.json();
     });
   }
+  // Review state for the gap pane. Soft-fails to {} so a review-table hiccup
+  // costs the ✓ marks, never the list of questions itself.
+  function loadTurnReviews() {
+    var url = REST + "/sierra_turn_review?select=turn_id,status,note,updated_by,updated_at";
+    return fetch(url, { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (t) { by[t.turn_id] = t; });
+        return by;
+      }).catch(function () { return {}; });
+  }
+
+  // Mark one gap row handled / left / back to outstanding. A null status DELETEs
+  // the row, because "still outstanding" is the ABSENCE of a review — storing it
+  // as a third status would make "never looked at" and "looked at and reopened"
+  // indistinguishable, which is the whole thing this pane needs to tell apart.
+  function setTurnReview(turnId, status, root) {
+    if (state.busy[turnId]) return Promise.resolve();
+    state.busy[turnId] = true; render(root);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    var req;
+    if (status == null) {
+      req = fetch(REST + "/sierra_turn_review?turn_id=eq." + encodeURIComponent(turnId),
+                  { method: "DELETE", headers: h })
+        .then(function (r) {
+          if (!r.ok) throw new Error("clear " + r.status);
+          delete state.turnReviews[turnId];
+        });
+    } else {
+      h["Prefer"] = "resolution=merge-duplicates,return=representation";
+      var s = getSession();
+      req = fetch(REST + "/sierra_turn_review", {
+        method: "POST", headers: h,
+        body: JSON.stringify([{
+          turn_id: turnId, status: status,
+          updated_by: (s && s.email) || "(unknown)",
+          updated_at: new Date().toISOString(),
+        }]),
+      }).then(function (r) {
+        if (!r.ok) throw new Error("review " + r.status);
+        return r.json();
+      }).then(function (rows) {
+        // RLS FILTERS a disallowed write to 200 + an EMPTY body rather than 403,
+        // so an "ok" that touched no row is a failure. Reporting it as success
+        // would show a ✓ that vanishes on the next load.
+        if (!Array.isArray(rows) || rows.length === 0) throw new Error("not saved");
+        state.turnReviews[turnId] = rows[0];
+      });
+    }
+    return req.catch(function () {
+      alert("Could not save that — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+    }).then(function () {
+      delete state.busy[turnId]; render(root);
+    });
+  }
+
   // Guidance rows (Phase 2). Soft-fails to null so a guidance hiccup never
   // takes down the queue/miner panes.
   function loadGuidance() {
@@ -727,11 +801,20 @@
     if (state.gKind === "low-sim") rows = rows.filter(isLowSim);
     else if (state.gKind === "punt") rows = rows.filter(isPunt);
     if (state.gAudience) rows = rows.filter(function (t) { return ((t.audience || "(not set)")) === state.gAudience; });
+    // Absence of a review row IS "still outstanding", so the default view hides
+    // anything already handled. Without this the pane never shrinks and a
+    // question Sam fixed weeks ago still reads as an open gap.
+    if (state.gRev === "open") rows = rows.filter(function (t) { return !(state.turnReviews || {})[t.id]; });
+    else if (state.gRev) rows = rows.filter(function (t) {
+      var rv = (state.turnReviews || {})[t.id];
+      return !!rv && rv.status === state.gRev;
+    });
     if (state.gDays) rows = rows.filter(function (t) { return withinDays(t.created_at, +state.gDays); });
     return rows;
   }
   function gapRow(t) {
     var open = !!state.gOpen[t.id];
+    var rv = (state.turnReviews || {})[t.id] || null;
     var kinds = gapKinds(t).map(function (k) {
       var label = k === "low-sim"
         ? "⚠ nothing close in the knowledge base"
@@ -759,6 +842,31 @@
         + ' title="' + esc(HELP.testInSierra) + '">🧪 Try it on Sierra</button>'
         + '<button class="sit-btn" data-qact="copy" data-qsrc="gap:' + esc(t.id) + '"'
         + ' title="Copies the question to your clipboard.">⧉ Copy question</button>'
+        + "</div>"
+        // The status lane the gap pane never had. Kept BESIDE the remedy button
+        // above, not in a separate strip, so "handled" is one glance from the
+        // thing that actually changes Sierra.
+        + '<div class="sit-actions">'
+        + '<span class="lbl" style="margin:0" title="Records that someone has dealt with this '
+        + 'question. It does not change how Sierra answers — the instruction button above does '
+        + 'that. Marking it only takes it off the &quot;still to do&quot; list.">Mark this:</span>'
+        + TURN_STATUSES.map(function (s) {
+          var on = rv && rv.status === s;
+          return '<button class="sit-btn' + (on ? " on" : "") + '" data-turnrev="' + esc(s)
+            + '" data-turnid="' + esc(t.id) + '"'
+            + ' title="' + esc(s === "resolved"
+                ? "You have handled this — an instruction is written, or she answers it correctly now."
+                : "Nothing to do here (a one-off, or a question we do not intend to answer).")
+            + '"' + (on || state.busy[t.id] ? " disabled" : "") + ">"
+            + esc(turnStatusLabel(s)) + "</button>";
+        }).join("")
+        + (rv
+            ? '<button class="sit-btn" data-turnrev="" data-turnid="' + esc(t.id) + '"'
+              + ' title="Put it back on the still-to-do list."'
+              + (state.busy[t.id] ? " disabled" : "") + ">↩ Still to do</button>"
+              + '<span class="sit-meta" style="margin-left:8px">' + esc(turnStatusLabel(rv.status))
+              + (rv.updated_by ? " · " + esc(rv.updated_by) : "") + "</span>"
+            : "")
         + "</div></div>";
     }
     return h + "</div>";
@@ -959,6 +1067,14 @@
       + "</select>"
       + '<select class="sit-select" data-g="gAudience" title="' + esc(HELP.audience) + '">'
       + options(Object.keys(byAud).sort(), state.gAudience, "Anyone asking") + "</select>"
+      + '<select class="sit-select" data-g="gRev" title="Whether to show questions somebody has already dealt with. Marking one handled does not change Sierra — it only takes it off this list.">'
+      + '<option value="open"' + (state.gRev === "open" ? " selected" : "") + ">Still to do</option>"
+      + '<option value=""' + (state.gRev === "" ? " selected" : "") + ">Everything</option>"
+      + TURN_STATUSES.map(function (s2) {
+        return '<option value="' + s2 + '"' + (state.gRev === s2 ? " selected" : "") + ">"
+          + esc(turnStatusLabel(s2)) + "</option>";
+      }).join("")
+      + "</select>"
       + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
       + dayOptions(state.gDays) + "</select>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
@@ -1049,6 +1165,13 @@
     if (note) note.addEventListener("change", function () { state.fNote = note.checked; render(root); });
     var smoke = root.querySelector("[data-f-smoke]");
     if (smoke) smoke.addEventListener("change", function () { state.fSmoke = smoke.checked; render(root); });
+    root.querySelectorAll("[data-turnrev]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var v = btn.getAttribute("data-turnrev");
+        setTurnReview(btn.getAttribute("data-turnid"), v === "" ? null : v, root);
+      });
+    });
     root.querySelectorAll("[data-g]").forEach(function (sel) {
       sel.addEventListener("change", function () { state[sel.getAttribute("data-g")] = sel.value; render(root); });
     });
@@ -1281,10 +1404,14 @@
     if (keepData && (state.feedback || state.turns)) { render(root); return; }
     if (!signedIn()) { state.loading = false; render(root); return; }
     state.loading = true; state.error = null; state.gated = false; render(root);
-    Promise.all([loadFeedback(), loadTurns(), loadGuidance()]).then(function (res) {
+    Promise.all([loadFeedback(), loadTurns(), loadGuidance(), loadTurnReviews()]).then(function (res) {
       state.feedback = Array.isArray(res[0]) ? res[0] : [];
       state.turns = Array.isArray(res[1]) ? res[1] : [];
       state.guidance = Array.isArray(res[2]) ? res[2] : null;  // null = load failed (soft)
+      // {} on failure, never null: the gap pane defaults to "still to do", and a
+      // failed read must not silently mark every handled question outstanding
+      // again — it just shows them all, which is the honest degradation.
+      state.turnReviews = res[3] || {};
       // RLS returns 200 + [] to a non-unlocking session — surface that honestly
       // instead of rendering a confusing all-zeros dashboard.
       state.gated = state.feedback.length === 0 && state.turns.length === 0;
