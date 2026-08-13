@@ -82,3 +82,5 @@ kb/futuro_hth_out/**/*.xlsx
 # Built by kb/_build_credential_recs.py from statewide_data.js (committed).
 # Rebuildable, ~1.2MB — the runner builds it before syncing.
 kb/credential_recs.json
+# Built by kb/_build_peer_articulations.py on the runner each sync (~2 MB).
+kb/peer_articulations_payload.json
