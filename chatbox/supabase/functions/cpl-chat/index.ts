@@ -860,12 +860,20 @@ async function fetchStatewideRecommendations(query: string, sb: any): Promise<an
 async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null> {
   const kws = extractTopicKeywords(query);
   if (kws.length === 0) return null;
+  // WIDENED to 4/4/8 to match the statewide route (2026-08-13). At 3/3/6 this —
+  // the ONLY route that reaches LOCAL credentials — had the narrowest probe
+  // budget of the three, and dropped content tokens past the third keyword.
+  // Measured on Sam's question, "I have a journey worker license as Iron and
+  // Steel worker": keywords are [journey, worker, license, iron, steel, worker],
+  // so the probes were [journey worker, worker license, license iron, journey,
+  // worker, license] and "iron" was NEVER asked — while search_credentials_any
+  // ('iron') returns 25 rows. The subject of the sentence fell off the end.
   const probes: string[] = [];
-  for (let i = 0; i < kws.length - 1 && probes.length < 3; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
-  for (const k of kws.slice(0, 3)) if (!probes.includes(k)) probes.push(k);
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
 
   const byTitle = new Map<string, any>();
-  for (const asked of probes.slice(0, 6)) {
+  for (const asked of probes.slice(0, 8)) {
     const { data, error } = await sb.rpc("search_credentials_any", { asked, result_limit: 3 });
     if (error || !data) continue;
     for (const r of data) {
@@ -877,6 +885,77 @@ async function fetchAnyCredentials(query: string, sb: any): Promise<any[] | null
   return [...byTitle.values()]
     .sort((a, b) => a.match_tier - b.match_tier || b.n_adopters - a.n_adopters)
     .slice(0, 4);
+}
+
+/**
+ * Route COLLEGE-CRED — "what CPL can I get HERE?", answered from the CURATED
+ * credential names rather than the raw titles colleges typed into MAP.
+ *
+ * THE FALSE ABSENCE THIS EXISTS TO END. Sam asked twice, once AFTER v42:
+ * "I have a journey worker license as Iron and Steel worker. What CPL can I get
+ * here?" — and was told there was nothing. Cerritos has THIRTEEN ironworker
+ * credentials. The raw corpus calls them "FIW Orientation" and "IW- Mixed Base",
+ * which contain no substring of "iron", so the college-scoped topic route
+ * returned 0 and there was no other college-scoped route to fall back to.
+ *
+ * The curated layer knew the whole time: ten are named "Ironworker
+ * Apprenticeship — …" and three more carry the issuer "Field Ironworkers
+ * Local 416". A topic search over RAW titles and a topic search over CURATED
+ * names are different questions, and the raw one must never be the only one
+ * asked of a named college.
+ */
+async function fetchCollegeCredentials(
+  query: string,
+  college: string | null,
+  sb: any,
+): Promise<any[] | null> {
+  if (!college) return null;
+  const kws = extractTopicKeywords(query);
+  if (kws.length === 0) return null;
+  const probes: string[] = [];
+  for (let i = 0; i < kws.length - 1 && probes.length < 4; i++) probes.push(`${kws[i]} ${kws[i + 1]}`);
+  for (const k of kws.slice(0, 4)) if (!probes.includes(k)) probes.push(k);
+
+  const byTitle = new Map<string, any>();
+  for (const asked of probes.slice(0, 8)) {
+    const { data, error } = await sb.rpc("search_college_credentials", {
+      asked, college, result_limit: 8,
+    });
+    if (error || !data) continue;
+    for (const r of data) {
+      const prev = byTitle.get(r.unified_title);
+      if (!prev || r.match_tier < prev.match_tier) byTitle.set(r.unified_title, r);
+    }
+  }
+  if (byTitle.size === 0) return null;
+  return [...byTitle.values()]
+    .sort((a, b) => a.match_tier - b.match_tier ||
+      a.unified_title.localeCompare(b.unified_title))
+    .slice(0, 10);
+}
+
+function buildCollegeCredentialContext(rows: any[] | null, college: string): string {
+  if (!rows || rows.length === 0) return "";
+  let out = `\n\n--- ${college.toUpperCase()} ALREADY AWARDS CPL FOR THESE (curated credential names) ---\n`;
+  out += `These are ${college}'s OWN articulated credentials matching the question, read from the `
+      + `curated catalogue rather than the freehand titles the college typed into MAP. State them `
+      + `as established fact — this college awards credit for these today.\n`;
+  for (const r of rows) {
+    out += `- ${r.unified_title}`;
+    if (r.issuer) out += ` (issued by ${r.issuer})`;
+    if (r.statewide) out += ` [statewide standard]`;
+    out += `\n`;
+    // Tier 5+ means the TITLE did not match — the issuer or the search text did.
+    // Saying so keeps the model from claiming the college named it this way.
+    if (r.match_tier >= 5) {
+      out += `    (matched through the awarding body, not the credential's own title)\n`;
+    }
+  }
+  out += `⚠ The raw exhibit titles for these may be ABBREVIATED beyond recognition — Cerritos's `
+      + `ironworker exhibits are literally recorded as "FIW Orientation" and "IW- Mixed Base". So a `
+      + `topic search that finds nothing is NOT evidence the college lacks that CPL, and you must `
+      + `never say a college has none of something when this section lists it.\n`;
+  return out;
 }
 
 /**
@@ -2126,6 +2205,7 @@ Deno.serve(async (req: Request) => {
     let volumeContext = "";
     let alignmentContext = "";
     let stdRecs: any = null, anyCreds: any = null, vol: any = null, adopt: any = null;
+    let collegeCreds: any = null;
 
     await Promise.all([
       (async () => {
@@ -2136,6 +2216,18 @@ Deno.serve(async (req: Request) => {
             : await fetchAnyCredentials(searchText, sb);
         } catch (e) {
           console.error("credential lookup failed:", e);
+        }
+      })(),
+      // Route COLLEGE-CRED, in its own lane. Runs UNCONDITIONALLY when a college
+      // is known — deliberately NOT gated on the topic route coming back empty,
+      // because the raw corpus returning rows does not mean it returned the
+      // RIGHT rows, and the curated names are the more trustworthy of the two.
+      (async () => {
+        try {
+          collegeCreds = await fetchCollegeCredentials(
+            searchText, singleProfile?.college || null, sb);
+        } catch (e) {
+          console.error("college credential lookup failed:", e);
         }
       })(),
       (async () => {
@@ -2181,6 +2273,15 @@ Deno.serve(async (req: Request) => {
       console.error("credential recs lookup failed:", e);
       credentialContext = buildCredentialContext(stdRecs, anyCreds);
       volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null);
+    }
+
+    // Appended OUTSIDE the try/catch above, deliberately: both branches rebuild
+    // credentialContext from scratch, so appending inside either one would drop
+    // this section on the path that fails. Telling a student a college has no
+    // ironworker CPL when it has thirteen is a worse failure than losing
+    // recommendation detail, so it must survive the enrichment breaking.
+    if (collegeCreds && singleProfile && singleProfile.college) {
+      credentialContext += buildCollegeCredentialContext(collegeCreds, singleProfile.college);
     }
 
     const systemPrompt = buildSystemPrompt(
