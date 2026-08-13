@@ -78,3 +78,7 @@ kb/partner_crosswalk_out/**/*.xlsx
 # per-lens subdirectories (kb/futuro_hth_out/noncredit/) and one workbook was
 # committed by accident in #1142. `**` is required here.
 kb/futuro_hth_out/**/*.xlsx
+
+# Built by kb/_build_credential_recs.py from statewide_data.js (committed).
+# Rebuildable, ~1.2MB — the runner builds it before syncing.
+kb/credential_recs.json
