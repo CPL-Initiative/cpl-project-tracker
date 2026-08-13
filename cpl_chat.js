@@ -692,15 +692,35 @@
   // before replaying it. Consumed on tab activation (tabs.js dispatches
   // cpl-tab-activated on WINDOW) + once at mount for the deep-link landing.
   var TEST_Q_KEY = 'cplSierraTestQ.v1';
+
+  // The #chatbot pane's OWN input, which is not necessarily `inputEl`.
+  //
+  // WHY (Sam, 2026-08-13: "tried to use Try it With Sierra but it didn't copy
+  // the question into Sierra"). My College mounts this SAME widget through
+  // mountInto(), and build() re-points the module-level `inputEl` at THAT
+  // pane's input. mount() then early-returns on the data-cplchat-mounted flag,
+  // so coming back to #chatbot never re-points it. After one visit to My
+  // College, `inputEl` is the hidden pane's input for the rest of the session —
+  // so the handoff typed the question into an invisible box.
+  function chatbotInputEl() {
+    var pane = document.getElementById('tab-chatbot');
+    return (pane && pane.querySelector('#cplchat-input, .cplchat-input')) || null;
+  }
+
   function consumeTestQuestion() {
     var q = null;
-    try {
-      q = sessionStorage.getItem(TEST_Q_KEY);
-      if (q) sessionStorage.removeItem(TEST_Q_KEY);
-    } catch (e) { /* storage unavailable */ }
-    if (!q || !inputEl) return;
-    inputEl.value = q.slice(0, 1000);
-    try { inputEl.focus(); } catch (e) { /* hidden pane */ }
+    try { q = sessionStorage.getItem(TEST_Q_KEY); } catch (e) { return; }
+    if (!q) return;
+    var el = chatbotInputEl() || inputEl;
+    // KEY IS NOT REMOVED ON FAILURE. It used to be deleted before the input was
+    // known to exist, so an activation that fired before the widget was built
+    // consumed the question and dropped it — and because the key was gone, the
+    // reviewer could not retry: the button appeared to do nothing, twice. The
+    // handoff now survives until it is actually delivered.
+    if (!el) return;
+    el.value = q.slice(0, 1000);
+    try { sessionStorage.removeItem(TEST_Q_KEY); } catch (e) { /* storage unavailable */ }
+    try { el.focus(); } catch (e) { /* hidden pane */ }
   }
   window.addEventListener('cpl-tab-activated', function (e) {
     if (e && e.detail && e.detail.tab === 'chatbot') consumeTestQuestion();

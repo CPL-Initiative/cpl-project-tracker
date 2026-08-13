@@ -265,7 +265,13 @@
       ".sit-row { border:1px solid var(--border); border-radius:8px; margin:0 0 8px; background: var(--surface-opaque); }",
       ".sit-row-head { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; padding:8px 12px; cursor:pointer; }",
       ".sit-row-head:hover { background: var(--surface-subtle); }",
-      ".sit-q { flex:1 1 340px; font-size:.88rem; font-weight:600; color: var(--text-strong); min-width:220px; }",
+      // user-select:text is explicit because the whole header is a click target
+      // and `cursor:pointer` reads as "this is a button, do not try to select
+      // it". The click handler now ignores a click that ends a selection, so
+      // dragging across the question really does select it.
+      ".sit-q { flex:1 1 340px; font-size:.88rem; font-weight:600; color: var(--text-strong); min-width:220px;"
+        + " user-select:text; -webkit-user-select:text; cursor:text; }",
+      ".sit-row-body .txt { user-select:text; -webkit-user-select:text; }",
       ".sit-meta { font-size:.72rem; color: var(--text-muted); white-space:nowrap; }",
       ".sit-chip { font-size:.68rem; border-radius:10px; padding:1px 8px; white-space:nowrap; background: var(--surface-muted); color: var(--text-muted); }",
       ".sit-chip-down { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
@@ -1048,6 +1054,14 @@
     });
     root.querySelectorAll("[data-open]").forEach(function (el) {
       el.addEventListener("click", function () {
+        // A click that ENDS a text selection is someone copying the question,
+        // not asking to collapse the row (Sam, 2026-08-13: "when I tried to
+        // copy and paste the question ... the training tab doesn't allow it").
+        // The question sits inside this clickable header, so releasing the
+        // mouse re-rendered the row and destroyed the selection before it could
+        // reach the clipboard — the text was never unselectable, it was being
+        // thrown away a few milliseconds after being selected.
+        if (hasTextSelection(el)) return;
         var id = el.getAttribute("data-open");
         state.open[id] = !state.open[id];
         render(root);
@@ -1149,7 +1163,10 @@
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
         var q = lookupQuestion(btn.getAttribute("data-qsrc"));
-        if (!q) return;
+        // A silent return is indistinguishable from a broken button. If the row
+        // carries no question text there is nothing to hand off, and the person
+        // clicking deserves to be told that rather than left clicking again.
+        if (!q) { flashBtn(btn, "no question on this row"); return; }
         var act = btn.getAttribute("data-qact");
         if (act === "copy") copyText(q, btn);
         else if (act === "rule") startRuleFrom(q, root);
@@ -1196,27 +1213,64 @@
     var hit = (rows || []).filter(function (r) { return String(r[key]) === m[2]; })[0];
     return (hit && hit.question) || null;
   }
+  // Is the user mid-selection inside this element? Used to tell "collapse this
+  // row" apart from "I am selecting the question so I can copy it".
+  function hasTextSelection(el) {
+    try {
+      var sel = window.getSelection && window.getSelection();
+      if (!sel || sel.isCollapsed) return false;
+      if (!String(sel).trim()) return false;
+      // Only OUR element's selection counts — a stale selection elsewhere on
+      // the page must not make the row permanently unclickable.
+      return !!(el && sel.anchorNode && el.contains(sel.anchorNode));
+    } catch (e) { return false; }
+  }
+
+  // Say something on the button itself. A button that does nothing when clicked
+  // reads as broken, and the person clicking has no way to tell the difference.
+  function flashBtn(btn, msg, ms) {
+    if (!btn) return;
+    if (btn.getAttribute("data-flashing") === "1") return;
+    var o = btn.textContent;
+    btn.setAttribute("data-flashing", "1");
+    btn.textContent = msg;
+    setTimeout(function () {
+      btn.textContent = o;
+      btn.removeAttribute("data-flashing");
+    }, ms || 1400);
+  }
+
   function copyText(q, btn) {
-    function flash() {
-      var o = btn.textContent;
-      btn.textContent = "✓ copied";
-      setTimeout(function () { btn.textContent = o; }, 1200);
+    function flash() { flashBtn(btn, "✓ copied", 1200); }
+    // The execCommand path, kept as a named fallback because the async
+    // clipboard REJECTS in ordinary situations — an unfocused document, a
+    // permissions policy, any non-secure context. It used to reject into an
+    // empty handler, so the button did nothing and said nothing.
+    function legacyCopy() {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = q;
+        ta.setAttribute("readonly", "readonly");
+        ta.style.position = "fixed";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        if (ok) { flash(); return true; }
+      } catch (e) { /* fall through to the message below */ }
+      // Both paths failed. SAY SO — a copy button that silently does nothing is
+      // the same defect as a hand-off that silently drops the question.
+      flashBtn(btn, "couldn’t copy — select the text", 2200);
+      return false;
     }
     try {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(q).then(flash, function () {});
+        navigator.clipboard.writeText(q).then(flash, legacyCopy);
         return;
       }
     } catch (e) { /* fall through */ }
-    try {
-      var ta = document.createElement("textarea");
-      ta.value = q;
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand("copy");
-      document.body.removeChild(ta);
-      flash();
-    } catch (e2) { /* clipboard unavailable */ }
+    legacyCopy();
   }
 
   function renderInto(root, keepData) {
