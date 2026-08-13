@@ -148,6 +148,11 @@ jobs:
             "_site/kb/unclassified_preseed.json"
             "_site/kb/unclassified_suggestions.json"
             "_site/kb/issuer_preseed.json"
+            # The Common CR Reference worklist. The tab is USELESS without it —
+            # a prune that drops it renders an empty queue rather than an error,
+            # which reads as "nothing left to curate".
+            "_site/kb/cr_reference_worklist.json"
+            "_site/cr_reference.js"
             "_site/prototype/cer_triage_redesign_v1.html"
           )
           missing=0

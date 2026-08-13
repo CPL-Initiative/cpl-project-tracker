@@ -172,6 +172,30 @@ jobs:
       - name: Rebuild governance drift candidates
         run: python kb/_build_governance_candidates.py || true
 
+      # ── Step 4a0b: Common CR Reference worklist ────────────────────
+      # Regenerates kb/cr_reference_worklist.json — the ranked curation queue
+      # over the ~2,344 distinct credit-recommendation wordings colleges typed.
+      #
+      # The chain is three PURE LOCAL transforms over committed inputs
+      # (kb/coci_articulations.json, credential_reference_data.js,
+      # statewide_data.js) — no Supabase, no secrets, no network. The first two
+      # payloads are gitignored intermediates that credential-catalog-sync.yml
+      # also builds for its own Supabase push; rebuilding them here costs
+      # seconds and removes a cross-workflow ordering dependency.
+      #
+      # ⚠️ The worklist is a PROPOSAL surface. Curator decisions live in the
+      # gated Supabase table cr_reference_decisions and are keyed on group_key,
+      # so regenerating this file can never overwrite a judgement — the same
+      # separation governance_owners uses.
+      #
+      # `|| true` for the same reason as 4a0: a curation nice-to-have must never
+      # be what breaks the daily dashboard.
+      - name: Rebuild Common CR Reference worklist
+        run: |
+          python kb/_build_peer_articulations.py \
+            && python kb/_build_credential_recs.py \
+            && python kb/_build_cr_reference.py || true
+
       # ── Step 4a1: CPL Pathways — Common Course Reference enrichment ─
       # Rebuilds cpl_pathways_ccr_data.js from the CURRENT minted-identity +
       # articulation + catalog sources, so every mint / re-mint / merge in the
@@ -292,6 +316,10 @@ jobs:
           git add kb/credential_review_overlay.json 2>/dev/null || true
           # OQ-08: governance drift candidates (what's missing from the register)
           git add kb/governance_candidates.json 2>/dev/null || true
+          # Common CR Reference: the ranked curation worklist the tab fetches.
+          # Curator decisions are NOT here — they live in Supabase, so a rebuild
+          # cannot overwrite one.
+          git add kb/cr_reference_worklist.json 2>/dev/null || true
           # CER unclassified-triage PR-2: raw-title→unified-title assignment overlay
           git add kb/unclassified_assignments.json 2>/dev/null || true
           # CER unclassified-triage PR-3 (gated auto-fold): the credential KB the
