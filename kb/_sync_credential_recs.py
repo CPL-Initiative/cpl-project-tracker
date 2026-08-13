@@ -33,8 +33,25 @@ def load_built(path: str = BUILT) -> list:
         return json.load(fh)["rows"]
 
 
+def normalize_keys(rows: list) -> list:
+    """Give every row the SAME keys, filling absences with None.
+
+    PostgREST rejects a bulk payload whose objects differ in shape — PGRST102,
+    "All object keys must match" — and the failure is POSITIONAL, so a rarely
+    present field sails through the early batches and 400s partway in, leaving
+    the table partly loaded and looking like a size limit rather than a schema
+    mismatch. Normalising here means a future optional field cannot
+    reintroduce that.
+    """
+    keys: set = set()
+    for r in rows:
+        keys.update(r.keys())
+    return [{k: r.get(k) for k in sorted(keys)} for r in rows]
+
+
 def upsert(rows: list, url: str, key: str) -> int:
     endpoint = f"{url.rstrip('/')}/rest/v1/{TABLE}?on_conflict=unified_title"
+    rows = normalize_keys(rows)
     sent = 0
     for i in range(0, len(rows), BATCH):
         chunk = rows[i:i + BATCH]
