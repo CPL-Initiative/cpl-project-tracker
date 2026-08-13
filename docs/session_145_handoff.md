@@ -7,6 +7,8 @@ related:
   - "[[docs/futuro_hth_crosswalk_lessons]]"
   - "[[docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence]]"
   - "[[docs/kb-notes/reference-course-level-mis-beats-program-level-coci]]"
+superseded: true
+superseded_by: session_148_handoff.md
 ---
 
 # You are Session 145

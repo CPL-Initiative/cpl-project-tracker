@@ -3931,3 +3931,38 @@ thresholds ≠ ranking); the `indExcludeSA` lead I offered was wrong (it is set 
 **parked** — MAP records are mid-correction, so our extract is stale. Durable:
 `methodology-normalise-both-sides-of-a-join`, `methodology-a-collapsed-section-must-still-inform`.
 Story: `docs/college_action_page_lessons.md` · handoff `docs/session_144_handoff.md`.
+
+
+### SkyTouch — Ashley's second crosswalk, and the file that abbreviates its own titles (2026-08-12, Session 144)
+
+**Ashley drove this one**, not Sam: Futuro Health's **Human Touch Healthcare** (6 weeks / 80 hrs / online soft skills)
+crosswalked to every CCC **CNA** program. Shipped **#1134** — 5-sheet workbook + published HTML view.
+⭐ **The literal ask would have produced an unusable list.** HTH cannot articulate into the CNA course: that is a
+**CDPH-approved 160-hour course** (60 theory / 100 clinical) fixed in regulation. It maps to the course *beside* it —
+interpersonal/intercultural communication, healthcare ethics — which is also the easier faculty ask.
+⭐ **Course-level MIS beats program-level COCI for "who offers X"** — **61** colleges teach CNA (153 courses) vs **32**
+with a COCI award record; many run it as a noncredit course with no award. 59 have a receiving course, 22 score 4–5,
+24 already run CPL in MAP.
+⭐ **Futuro Health is ALREADY a MAP partner entity (ID 133)** with a live landing page and **ZERO exhibits / ZERO credit
+recs** — surfaced by *querying `cpl_memory` first*, and it is upstream of all 61 colleges.
+⚠️ **The MIS course file ABBREVIATES titles** (`INTERCULTURAL COMM`, `Interpersonal Commun`, `BIO-ETHICS`) — six colleges
+were about to be reported as having **no receiving course** when the canonical course was in their catalog. A false
+absence is worse than a missing row: it closes the question. Fixing the module patterns alone left the *fit* regexes
+carrying the same assumption and reproduced the identical symptom.
+⚠️ `recalc.py` **cannot run in this sandbox** (LibreOffice timed out at 539s, twice) — formulas verified by column +
+expected value against the source JSON instead. Durable:
+`methodology-a-source-file-that-abbreviates-titles-fakes-an-absence`, `reference-course-level-mis-beats-program-level-coci`.
+Story: `docs/futuro_hth_crosswalk_lessons.md` · handoff `docs/session_145_handoff.md`.
+
+
+### Excel→Supabase Phase 2-4 — full shipped-phase log (retired from CLAUDE.md §11, 2026-08-13)
+
+The cell below is the verbatim changelog that had accumulated in the roadmap table. The live cell
+now states current truth only (P3 + P5 remaining).
+
+| **Excel→Supabase Phase 2-4** | Migrate remaining Excel-driven tabs (Dashboard project cards, Budget, Vision 2030, Personnel). Per-tab inline editors. Excel file retires once Phase 4 cuts over; periodic Supabase→xlsx export retained as backup. **Phase 2 (projects) is COMPLETE: seeded + cut over + editor all landed (Session 15 build → Session 16 seed/cutover/editor).** Phases 3-5 (Budget/Vision/Personnel) follow the same five-step shape + the RLS-tighten step; Personnel already has 26 rows so its PR-3 has UPDATEs. | **Phase 2 DONE** (Session 16); **Phase 3 Budget read-path DONE** (PR #189); **Excel-retirement scope DONE** (PR #210, Session 23 — `docs/kb-notes/excel-retirement-final-scope.md`; corrected the surface: Personnel already Supabase, Vision 2030 is static/computed — neither needs migration); **Excel PR-1 (KPI-ladder keystone) DONE** (PR #211, Session 23 — ladder now sourced from `workplan_goals` not Excel, parity-exact across 49 projects; live 11-cell blank-vs-0 fix on `workplan_goals`, 1.4's real 0s kept); **Excel PR-2 (D.* rows RETIRED, not migrated) DONE** (PR #213, Session 24 — the 15 `D.*` sub-population helper rows were **100% vestigial**: sole value-reader `populate_current_metrics()` dead since 2026-05-28, every other ref excludes them, all 3 JS report gens skip them. Deleted the rows + the dead `populate_current_metrics()`/`_override_int`/`_pmetric_int`/`_ppct`/`_pcount` cluster; generator-only, proven parity-minus-D.* on snapshot + Excel-fallback paths. Method: `docs/kb-notes/methodology-verify-consumer-before-migrating.md`); **KPI-ladder editor = ALREADY DONE** (Session 24 measure-first — PR-1 sourced the ladder from `workplan_goals`, which `workplan_goals.js` already edits; 27 ladder-bearing projects all editable, 0 gaps — no build needed); **Budget inline editor DONE** (PR #215, Session 24 — click-to-edit dollar cells on the 5-Year Funding Plan, `budget_editor.js`; 7 cells/row PATCH `budget_funding`; no `total=Σyears`/`avg` formula yet per Sam; **budget_funding/budget_expenditures/personnel RLS tightened** to `is_allowed_reviewer()` live, `kb/supabase_budget_rls_tighten.sql`). **Excel-dependency audit + fix queue DONE** (PR #217, Session 24 — `docs/kb-notes/excel-dependency-audit.md`, the authoritative remaining-work catalog; triggered by a curator hitting the card "Update" button → it opened Excel-for-the-Web). **Excel retirement — Session 25 (Bruh 25) shipped P1+P2+P4, all merged:** **P1 ✅ (#219)** the "Update→Excel" card button now triggers the inline Latest Update editor (akpi copy dropped; `excel_row` no longer emitted; `dashboard_filters.js` rewire + toolbar button removed); **P2 ✅ (#221)** config tables moved to committed `kb/dashboard_config.json` via new `load_dashboard_config()` (`read_project_config`/`read_config_overrides`/`read_kpi_parameters` rewritten, all drop their `wb` param) + the `ensure_kpi_config_sheet` **WRITER deleted** — the master `.xlsx` is **no longer written on any run** (writer-blockers 2→1); measure-first found Col AG empty + KPI_Config == code defaults, so the JSON carries only the 4 real `project_config` fields; parity-proven (byte-identical readers + full A/B regen); **P4 ✅ (#220)** dead readers `read_annual_goals`/`read_workplan_goals` deleted (148 lines). **Remaining:** **P3** Update Log history (product fork — Sam **dismissed/parked** the decision 2026-06-01; measured: 38 projects / 120 stale entries (latest 2026-04-08); options = read-only **snapshot** / **retire** (keep `latest_update`) / **Supabase `project_update_log`** table); **P5** drop the `.xlsx` — now blocked only by `read_projects` (KPI-ladder + outage fallback), `read_budget_plan` (+ the carved-out budget `factors`/`year_labels`), and `read_update_log`/`archive_updates_to_log` (the **1 remaining writer**, gated on P3) + the `.bak`; keep a Supabase→xlsx backup. Independent: Budget `total`/`avg` formula layer (+ total read-only) + personnel editor (fix the 26→13 dedupe row-identity first). **Also Session 25:** new **daily data-pipeline reference doc** (`docs/kb-notes/reference-daily-dashboard-data-pipeline.md`, #222/#223) — accounts for all **7 data sources** + every headline KPI's lineage + the committed daily dataset; confirmed (via Sam's screenshot) the **MAP Custom Reporting Module's 9 categories are pulled in full** (151 fields), with **College Contacts + College Users & Roles fetched-but-unused** (drop-or-wire decision pending). |
+
+
+### docs/INDEX.md update history — entries retired 2026-08-13
+
+- **2026-08-10** — SkyDeck: CAC apprenticeship-pathway slides rebuilt from flattened PNGs (3 → 6 slides, 3-click builds, speaker notes on all 15 + a printable run sheet); ⭐ the re-key caught two source unit totals that do not reconcile because the originals clipped their own tables; pre-apprenticeship CPL mechanisms recorded from Sam.

@@ -1,9 +1,51 @@
 {
-  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 To-Do button on every tab. Refreshed at every Rule-8 checkpoint alongside the session handoff (this file is the handoff distilled for the dashboard). Check-off state lives in each viewer's browser (localStorage) and resets when _as_of changes. Keep it SHORT — ≤ ~12 items; done items are deleted, not checked.",
-  "_as_of": "2026-08-12 (late) · SkyFund — the team phrase has a home on every tab, and Contracts is on the Finance phrase.",
-  "_session": 146,
-  "_status": "Two things today. First, the team phrase. Seven tabs needed it and had nowhere to type it — they told you to go to the Team & RACI tab, unlock there, and come back, and two of them wouldn't show you anything at all until you did. There is now one lock button in the header, on every tab, and it knows which site you have selected. Along the way we found that selecting a site never actually changed which phrase was needed: any of the phrases already opened everything. Only a tab that belongs to ONE site can sensibly ask for that site's own phrase, and exactly two do — GR Priorities, which already worked that way, and Contracts. Contracts is now live on the Finance phrase: Sam changed that password himself on the new tab and gave the go-ahead, so the register asks for Finance rather than the general team password, and anyone who only has the team one sees a box to enter it. Managing the phrases is also its own tab now, since it was buried in a button most people never saw. Second, Sierra's trainer. Sam wrote three new instructions for her and all three were being silently cut off at 500 characters — one stopped in the middle of a table. Nothing warned him. The limit is now 1,500 with a counter you can watch as you type, and Sierra is already running with it. The tab itself has been rewritten in plain English with explanations on every filter and label, and clicking Triage now leads somewhere: there is a button that starts a new instruction from the question you are looking at, because marking something 'done' never changed how Sierra answers.",
+  "_about": "The dashboard To-Do feed: a short, layman-readable daily checklist of curation work (for Sam) and engineering/pre-curation work (for Fable, the Claude session), rendered by cpl_todos.js as the 📋 button on every tab. Refreshed at every Rule 8 checkpoint alongside the session handoff.",
+  "_as_of": "2026-08-13 · SkyPeak — POST's ten credit recommendations are published, and Sierra still can't read them.",
+  "_session": 147,
+  "_status": "Two wrong Sierra answers turned out to be the same problem, and it wasn't the one it looked like. Asked what Cerritos might adopt for POST, Sierra named one course; there are ten. Asked about Cerritos and ironworkers she said there was none; there is plenty. In both cases the right answer was already in our data — it had just never been copied to the one place Sierra can read. POST's full set of ten (eight C-ID courses plus two electives) has been sitting in the same file that feeds the public CPL Fact Sheet all along. That set is now published for all 2,205 credentials, and where a credential has no statewide standard we publish the most common recommendations across the colleges that use it, with the number of colleges behind each. Separately, Sierra had been calling 42 statewide credentials 'local' — including Paramedic License — because the flag was read from the wrong one of two files. That is corrected. IMPORTANT: none of this changes what Sierra says yet. The data is in place; connecting her to it is one more piece of work, and it is the next thing. Also shipped: you can now edit a Sierra instruction after saving it, and test it without leaving the tab.",
   "items": [
+    {
+      "id": "s147-sierra-answers-unchanged",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "THE NEXT THING. Connect Sierra to the new credit-recommendation table and deploy her. Until that happens she still answers POST with one course, even though all ten are published. Same piece of work should fix the Cerritos ironworker answer and stop ready-to-adopt exhibits from being sorted last."
+    },
+    {
+      "id": "s147-cerritos-ironworker",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "Cerritos ironworker CPL reads as zero because the exhibit list stores the titles as 'FIW Orientation' and 'IW- Mixed Base' — no 'iron' anywhere — while the curated list has 16 Cerritos credentials, 11 of them named 'Ironworker Apprenticeship'. Sierra searches the raw titles and never checks the curated names. Also: searching the plural 'ironworkers' returns nothing at all."
+    },
+    {
+      "id": "s147-unadopted-prominent",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "Sam's rule: exhibits created before any college adopts them are deliberate, and should be prominent choices for adoption. Right now the adoption suggestions are ordered by how many colleges already use something, which puts a brand-new ready-to-adopt exhibit dead last — exactly backwards."
+    },
+    {
+      "id": "s147-sierra-feedback-backlog",
+      "for": "Sam",
+      "tab": "Sierra Training",
+      "text": "25 pieces of feedback on Sierra have never been looked at, the oldest since 1 July. The tab is now easy to use — you can mark what you've read, and write an instruction straight from a bad answer. Worth half an hour."
+    },
+    {
+      "id": "s147-retype-three-instructions",
+      "for": "Sam",
+      "tab": "Sierra Training",
+      "text": "Three instructions you wrote on 12 August were cut off at 500 characters before that limit was fixed, and the lost text can't be recovered. You can now edit an instruction after saving it, so retyping them is quicker than it was."
+    },
+    {
+      "id": "s147-twelve-missing-titles",
+      "for": "Fable",
+      "tab": "Credential Reference",
+      "text": "12 credentials are marked statewide in the adoption file but don't exist in the credential list at all, so the statewide fix couldn't reach them. Worth finding out whether they're renames or genuinely missing."
+    },
+    {
+      "id": "s147-cpl-funding-test-hangs",
+      "for": "Fable",
+      "tab": "—",
+      "text": "The test file for the funding tab runs for over four minutes and never finishes, so the full test suite can't complete. It is not a new problem — that file hasn't changed — but it means nobody is running the whole suite."
+    },
     {
       "id": "s146-tell-finance-holders",
       "for": "Sam",
@@ -11,52 +53,22 @@
       "text": "Now that Contracts is locked to the Finance phrase, tell whoever works the contract register what the new phrase is. Until they have it they will see a locked page — with a box to type it into, but nothing to type. Nobody else is affected; every other tab still takes the general team phrase."
     },
     {
-      "id": "s146-superset-decision",
+      "id": "s146-site-phrase-superset",
       "for": "Sam",
       "tab": "Team Phrases",
-      "text": "A decision worth making before the Finance phrase leaves the core team: right now a site phrase opens that site's tabs PLUS everything the shared phrase opens — budget, personnel, projects, memory, MAP contacts. That is fine while everyone holding a phrase is trusted with all of it. If Finance's phrase is going to someone outside that circle, say so and we will split them properly."
+      "text": "A decision only you can make, and it is live now rather than hypothetical: someone holding the Finance phrase can also open every shared CPL tab — budget, personnel, projects, MAP contacts. That is fine if everyone you give it to is trusted with all of it. If not, say so and the scopes get split."
     },
     {
-      "id": "s146-retype-instructions",
+      "id": "s143-map-deep-links",
       "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "Retype your three Sierra instructions from today. They were cut off at 500 characters before the fix and the missing text was never saved, so raising the limit does not bring it back. Two stop mid-sentence and one stops in the middle of a table. You now have 1,500 characters and a counter."
+      "tab": "My College",
+      "text": "Still waiting on the MAP deep links from Malone and Pedro. Three sections on My College are built and ready for them."
     },
     {
-      "id": "s146-feedback-backlog",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "There are about 25 pieces of real feedback on Sierra nobody has worked through, 11 of them thumbs-down, the oldest sitting since the start of July. The tab is finally readable — this is the first time it is worth opening. Start with the thumbs-down ones that have a written comment."
-    },
-    {
-      "id": "s146-check-header-unlock",
-      "for": "Sam",
+      "id": "s145-identity-crosswalk-write",
+      "for": "Fable",
       "tab": "—",
-      "text": "Quick sanity check when you next open COBI: there should be a small 🔒 button next to the Site dropdown at the top. Click it, enter the team phrase once, and Contracts / Governance / MAP Users / Sierra Training / the MAP Queue should all open without going anywhere else first."
-    },
-    {
-      "id": "s146-projects-editor",
-      "for": "Fable",
-      "tab": "Dashboard",
-      "text": "Free win: the Projects editor asks for an email sign-in, but the underlying table already accepts the team phrase. Offer the phrase there too — no database change needed."
-    },
-    {
-      "id": "s146-curation-phase2",
-      "for": "Fable",
-      "tab": "Credential Reference",
-      "text": "Credential Reference, Unified Courses and Canonical SUBJ4 still cannot take the team phrase, and it is not an oversight: their table stamps who made each edit from the signed-in email address, and a shared phrase has no email. Widening them needs a decision from Sam about how phrase edits should be attributed."
-    },
-    {
-      "id": "s146-sierra-phase3",
-      "for": "Fable",
-      "tab": "Sierra Training",
-      "text": "The next real step for Sierra is letting her quote actual documents rather than only following instructions. That is the part of the training plan still unbuilt."
-    },
-    {
-      "id": "s146-caps-are-a-pair",
-      "for": "Fable",
-      "tab": "Sierra Training",
-      "text": "Careful with Sierra's instruction length limit: the same number lives in the tab and in the server function, and they must match. Changing one alone just moves the silent cut-off to the other side, and any change needs the chat function redeployed. There is a test that fails if they drift apart."
+      "text": "The college/district name crosswalk is built and merged but never written to Supabase — that write is what actually ends the 'Mt San Antonio vs Mt. San Antonio' mismatch."
     }
   ]
 }

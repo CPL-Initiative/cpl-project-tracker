@@ -661,6 +661,22 @@ offer X", start at the course file and use COCI only for the award level —
 
 ## Partner occupation → CPL crosswalk (2026-08-05, SkyWalker)
 
+## Sierra's credit-recommendation layer (added 2026-08-13, Session 147)
+
+Sierra could say *that* a credential is articulated and by whom, but not **what
+credit it earns**: `chatbox_credentials.ccc_rec` is a SINGLE string, so asked what
+Cerritos might adopt for POST she named one course where there are ten. The other
+nine were never missing — they sit in `statewide_data.js` and are already rendered
+on the public CPL Fact Sheet — they had just never reached Supabase, the only place
+Sierra reads.
+
+| File | What |
+|---|---|
+| `_build_credential_recs.py` | Builds one recommendation SET per credential into `kb/credential_recs.json` (gitignored, ~1.2MB, rebuilt each run). **Sam's rule, 2026-08-13:** a statewide exhibit exists → emit its `authoritative_recs` and **largely ignore the local versions**; no statewide → the **most common** local `credit_recs` with the DISTINCT-college count behind each, capped at 8. Never both. Delegates the statewide half to `fact-sheet/_build_statewide_recs.py` — **imported, not reimplemented**, because Sierra quoting different credit from the published Fact Sheet is a credibility failure and two copies of the parsing rules would drift into exactly that. Emits BOTH C-ID counts (`n_cid_recs` distinct, `n_cid_lines`) plus `cid_repeats`, because POST carries `AJ 110` on two lines and whether that is an error or a C-ID legitimately backing an elective is a curator's call. |
+| `_sync_credential_recs.py` | Publishes the built rows to Supabase `chatbox_credential_recs` (public-read, no write policy). Runs on `credential-catalog-sync.yml` straight after the catalog step — the two tables join on `unified_title` and must not drift apart in time. `normalize_keys()` expands every row to the union of keys before sending: PostgREST rejects a bulk payload whose objects differ in shape (`PGRST102`), and that fails POSITIONALLY, so one odd row in 2,205 left the table two-thirds loaded and looking populated. Refuses to publish if the statewide sets ever come back empty. |
+
+Current: **2,205 rows — 134 statewide (351 lines) · 2,071 local (3,357)**.
+
 Three files back the reusable **"which of the occupations we train for can our
 students already get college credit for, and where?"** instrument:
 

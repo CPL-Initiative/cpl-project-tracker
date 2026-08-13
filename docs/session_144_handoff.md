@@ -7,6 +7,8 @@ related:
   - "[[docs/college_action_page_lessons]]"
   - "[[docs/kb-notes/methodology-normalise-both-sides-of-a-join]]"
   - "[[docs/kb-notes/methodology-a-collapsed-section-must-still-inform]]"
+superseded: true
+superseded_by: session_148_handoff.md
 ---
 
 # You are Session 144

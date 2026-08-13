@@ -8,6 +8,8 @@ related:
   - "[[docs/cpl_assistant_lessons]]"
   - "[[docs/kb-notes/methodology-validate-a-code-column-by-its-structural-invariant]]"
   - "[[docs/session_144_handoff]]"
+superseded: true
+superseded_by: session_148_handoff.md
 ---
 
 # You are Session 146
