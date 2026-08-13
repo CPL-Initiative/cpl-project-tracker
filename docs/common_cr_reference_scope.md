@@ -72,7 +72,16 @@ Police`, `Community and the Justice System` and `Community Relations` are the
 same POST topic in three unrelated sets of words. **No string metric reaches
 that. A reference does.**
 
-## 3. The strongest available factor is one nobody named: the CCR itself
+## 3. The CCR's own course identity — it looks decisive, and it is not
+
+⚠️ **This section was rewritten after testing the gate it originally proposed.**
+The first draft called course identity "the strongest available factor" and
+specified a cartesian gate based on what fraction of a credential's lines a
+course pairs with. **That gate does not work, and the factor is far weaker than
+it looks.** The corrected finding is below; the wrong version is not preserved
+here (Rule 9 — a doc states current truth), but the sequence is in
+`docs/common_cr_reference_lessons.md` because the *way* it failed is the
+reusable part.
 
 Sam's list — title, course name and number, course description, subject — is
 *illustrative*, and the measurement turned up a factor stronger than all of
@@ -101,53 +110,58 @@ Units are an **attribute of the line**, not part of the reference — exactly as
 the CCR treats units (a property of the row, and a *screen* on the twin merge,
 never the identity).
 
-### But it is a corroborator, not a key — and the data says so twice
+### The pairing carries no per-line information. Anywhere.
 
-**First: it barely collapses anything on its own.** 2,180 of 2,344 rec strings
-(93%) reach exactly **one** CCR course identity, and 1,874 of 2,183 courses
-serve exactly **one** rec string. That near-1:1 makes course identity mostly a
-*relabelling*. All the collapse lives in the **309 courses that serve ≥2
-wordings**.
+The course↔rec-line pairing in `chatbox_peer_articulations` is **denormalised
+everywhere it is multi-line**, and that is measurable exactly:
 
-**Second: where it does collapse, it sometimes over-merges.** `AJ 110`
-(*Introduction to Criminal Justice*) absorbs ten wordings — including
-**`3 hours in Physical Training and Health Education (CSU GE Area E)`** and
-**`3 hours in Community Relations`**, which also sits under `AJ 160` where it
-belongs. Physical Training is emphatically not Introduction to Administration
-of Justice.
+```
+(credential, course) pairs touching >1 rec line
+  ...with DIFFERING college sets across those lines   →      0
+  ...with an IDENTICAL college set across those lines →    223   (579 rec lines)
+```
 
-This is the same `AJ 110` repeat Sam ruled must be **FLAGGED, never
-auto-resolved** — and it is the empirical proof of his ruling. C-ID as key
-fails in both directions: it under-merges (only ~17% of rec strings resolve to
-an official C-ID at all) *and* it over-merges (this).
+**Zero.** Not one multi-line pairing in the whole table distinguishes between
+the lines it touches. `POST Basic Academy` × `AJ 110` pairs with 8 lines and all
+8 carry the identical 18-college set — one articulation cross-joined onto eight
+recommendations, which is how *Physical Training and Health Education* ends up
+attached to *Introduction to Administration of Justice*.
 
-### Why it over-merges, and the gate that fixes it
+⚠️ **`attribution = 'per_course'` does NOT catch this** — every one of those
+`AJ 110` rows is labelled `per_course`. The column is more optimistic than
+reality. **Do not use it as the gate; it passes the exact case it appears to
+catch.**
 
-The signature is in the row counts. Under `AJ 110`, nine of the ten wordings
-carry **137–142 rows / 18 colleges** — near-identical. That is one articulation
-paired with *every* line of the credential: a cartesian product at credential
-grain.
+⚠️ **Nor does a line-fraction gate**, which this document originally proposed.
+`AJ 110` pairs with 8 of POST's 43 lines, so it reads *non*-cartesian and sails
+through. The cross-join is a block *inside* a large credential, not a pairing
+with all of it.
 
-⚠️ **`attribution = 'per_course'` does NOT protect against this.** Every one of
-those `AJ 110` rows is labelled `per_course`. The column is more optimistic
-than reality, which matches the standing memory row
-(`peer-attribution-is-per-course-57-percent`: 43% of multi-course articulations
-repeat one identical college set onto every course). **Do not use
-`attribution` as the gate — it will pass the exact case it looks like it
-catches.**
+### What survives: single-course credentials
 
-The gate that *does* work is computable. For each (credential, course), measure
-what fraction of that credential's rec lines the course pairs with:
+The good merges are real but they live somewhere narrower. `HIST 130`'s six
+wordings — *The United States to 1877* · *United States History through 1877* ·
+*United States History, 1550-1877* … — all sit under **one credential**,
+`AP United States History`. The denormalisation destroyed which college wrote
+which wording, but every wording belongs to the same credential and the same
+course, so they are unambiguously **six phrasings of one recommendation**.
 
-| Pairing | Course↔credential pairs |
+`POST` differs only because it has 43 lines across many courses: there, the
+cross-join is genuinely ambiguous.
+
+So the usable gate is **the credential's course count**, not the line fraction:
+
+| | |
 |---|---|
-| Pairs with exactly **1** line — strong evidence | **1,681** |
-| Credential has only 1 line — uninformative by construction | 1,249 |
-| Pairs with a **subset** — partial evidence | 180 |
-| **Pairs with ALL lines — cartesian, no evidence** | **43** |
+| Credentials resolving to exactly **1** course identity | **1,211** |
+| ...of those, carrying **more than one wording** | **30** |
+| Wordings in scope | 70 |
+| **Strings this rung collapses** | **40** |
 
-**Only 43 pairs are cartesian.** The problem is small, identifiable and
-excludable — course identity survives as a corroborator behind that gate.
+**40 of 2,344 — 1.7%.** The strongest-*looking* factor, once it is not allowed
+to lean on denormalisation, is the smallest rung in the ladder. It is still
+worth having (its merges are unimpeachable, and they are ones no string metric
+reaches) but it is a rounding error against the problem.
 
 ### And the algorithm is not connected components
 
@@ -183,7 +197,7 @@ strictest rule in the system. Transposed to recommendations:
 |---|---|---|
 | **1** | **The published set says so.** A line in `statewide_authoritative` — MAP's own curated recommendation, already public on the Fact Sheet. | Yes — it is the authority |
 | **2** | **The exhibit names a C-ID** and a second factor agrees (subject or CCR course identity). Two-signals-agree, per Rule 7's posture. | Yes |
-| **3** | **CCR course identity agrees**, the pairing is *not* cartesian (§3 gate), *and* subject agrees. | Yes |
+| **3** | **CCR course identity agrees** *within a credential that resolves to exactly ONE course* (§3) — so the wordings are unambiguously phrasings of one recommendation. | Yes — but only **40 strings** |
 | **4** | **Twin merge** — same word set after normalisation (order, punctuation, `&`/`and`, Roman/Arabic, `Intro`/`Introduction` aside), same subject, and no safety screen objects (level, Honors/Lab variant, sport, gender). | Yes — strictest rule, mirrors the CCR twin merge exactly |
 | **5** | Title similarity · description similarity · issuer · units agreement | **Suggestion only — never merges** |
 
@@ -198,17 +212,33 @@ absorbs *4 hours in Academic Reading and Writing - Honors* and *5 hours in
 Intensive Reading, Writing, and Reasoning for English Language Learners*, both
 of which must be held), sport, and gender.
 
-## 6. What this predicts
+## 6. What this predicts — and what it means for what we build
 
-Rungs 1–4 are expected to resolve a **minority** of the 2,344, and that is the
-honest headline, not a disappointment: rung 3's whole reachable population is
-the 309 multi-wording courses minus the 43 cartesian pairs, and rung 4 is the
-~7% mechanical collapse. **The remainder is curator work by design** — which is
-the finding, and the reason this is a *reference* with a worklist rather than a
-build script.
+Measured, not projected:
 
-The CER is the precedent for that shape: a canonical layer plus a human queue,
-not an algorithm that finishes.
+| Rung | Mechanism | Strings it resolves |
+|---|---|---|
+| 1 | Published statewide set (the authority) | 351 lines / 134 credentials |
+| 2 | C-ID declared on the line | 36 of those 351 (~10%) |
+| 3 | CCR course identity, single-course credentials | **40** |
+| 4 | Twin merge (mechanical) | **~160** (the 6.9%) |
+| 5 | Title / description / issuer similarity | **0 — suggestions only** |
+
+**Automation reaches roughly a tenth of the problem. Around 90% of the 2,344 is
+curator judgement, and no achievable matcher changes that** — because
+*Racial Issues and the Police* and *Community Relations* are one POST topic in
+unrelated words.
+
+⭐ **So the deliverable is a curation workbench with a small automated spine —
+not a merge engine.** That is the single most important consequence of this
+measurement, and it should drive the build order: the worklist, the grouping
+affordance, the curator attribution and the receipt matter far more than the
+matcher. Building the matcher first would spend the run on the tenth that is
+easy and ship nothing for the nine tenths that are the actual job.
+
+The CER is the precedent for exactly that shape: a canonical layer plus a human
+queue, not an algorithm that finishes. Sam said as much when he proposed this —
+*"just as we have pretty well developed CER"* — and the numbers now say it too.
 
 ## 7. Open questions for Sam
 

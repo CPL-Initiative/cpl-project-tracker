@@ -4045,3 +4045,31 @@ per the "Completed rows archived" convention.
 | Phase | What | Status |
 |---|---|---|
 | **Cred-Ref PR-5b/2** | Collision-resolution UX in the Credential Reference tab — "Confirm merge" affordance when a rename target collides with an existing credential key. | ✅ **DONE Session 107 (#698)** — Sam hit 6 collisions on 2026-07-08; shipped same-day: Save-time detect + confirm dialog → `unified_title_merge_confirm` row, pending-merges strip, dry-run `merges` lane, apply fold. His 6 await ✓ Confirm merge in the lane. |
+
+
+### SkyTop — the answer that looked right (2026-08-13, Session 149)
+
+Sam tested the alignment layer himself and sent the prose back. It read well; that is why the defect
+survived three deploys. Two PRs (**#1161**, **#1162**), three migrations, **cpl-chat v43 → v44**.
+⭐ **THE RPC WAS RIGHT AND THE ANSWER WAS WRONG** — five C-ID-confirmed matches (`AJ 102`·`103`·`101`·
+`107`·`222`) rendered as *"⬜ check catalog"*. `per_rec` bounded **one side of a union** (3,807 peers vs
+9 candidates), and peers were never resolved to the recommendation set, manufacturing **~34 phantom
+rec groups** — and **a phantom empty group is indistinguishable from a real one**. 43→10 groups,
+3,816→94 rows, 1→**6 of 6**. Cost: one peer college of 31.
+⭐ **THE FALSE ZERO IS THE WORST ANSWER** — the Cerritos ironworker miss, carried three sessions, was
+**three** defects: an abbreviating raw corpus with **no college-scoped curated route beside it**, a
+matcher that never read **issuer/trainer** and failed on the plural, and the **narrowest probe budget
+on the route reaching local data** — which dropped "iron", the subject of Sam's sentence. All 13 now
+return; **three are reachable ONLY via issuer**. Not local colour: **90%** of the catalogue has an
+issuer word absent from title+variants.
+⚠️ **Sam's "closest match unless obviously wrong" was built, measured, WITHDRAWN** — `AUTO 160
+Introduction to Automotive Electrical` for a *policing* rec. Not tunable: a rec with no candidate is
+one where nothing shares a subject word. His request was right; the mechanism wasn't, and fixing the
+phantom groups answered it.
+⭐ **Sam's CR Reference ruling: C-ID is ONE factor, not the key** — match like the CCR (title, course
+name and number, description, subject). Only **17%** of rec strings carry a C-ID.
+Durable: `methodology-bound-both-sides-of-a-union`,
+`methodology-a-grouping-key-must-come-from-the-authoritative-set`,
+`methodology-search-the-awarding-body-not-just-the-name`.
+Story: `docs/local_course_alignment_lessons.md` · `docs/sierra_credit_recs_lessons.md` · handoff
+`docs/session_150_handoff.md`.
