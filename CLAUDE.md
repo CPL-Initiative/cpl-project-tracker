@@ -392,6 +392,13 @@ first day.** Do the remembering for them.
 - **Say what you can't do, early.** No Teams/email sending (drafts only, a human
   presses send), no MAP writes (read-only system of record), no unattached
   repos, no visibility into other sessions except through committed docs.
+- **Sign off with your MONIKER and the NEXT HANDOFF NUMBER (Sam, 2026-08-13).**
+  At the end of a session — or anything that looks like the end (a checkpoint, a
+  "thanks, that's it", a long quiet) — close with both, e.g. *"SkyRef signing
+  off. Next is Session 151 — `docs/session_151_handoff.md`."* Sam pastes that
+  number into the next session's first message, so leaving him to scroll for it
+  taxes every single handover. Cheap for you, and it also catches the stale-number
+  failure Rule 9 warns about, since you have to look at the file to say it.
 
 ## Branch policy
 
