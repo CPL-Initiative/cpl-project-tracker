@@ -84,3 +84,5 @@ kb/futuro_hth_out/**/*.xlsx
 kb/credential_recs.json
 # Built by kb/_build_peer_articulations.py on the runner each sync (~2 MB).
 kb/peer_articulations_payload.json
+# Built by kb/_build_college_courses.py on the runner each sync (~30 MB).
+kb/college_courses_payload.json
