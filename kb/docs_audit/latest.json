@@ -9,63 +9,62 @@
     "other": 150000
   },
   "summary": {
-    "files": 497,
-    "bytes": 5735546,
+    "files": 501,
+    "bytes": 5776758,
     "over_budget": 6,
-    "handoff_max": 149,
+    "handoff_max": 150,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 95498,
+    "always_loaded_bytes": 98399,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 95498,
+        "bytes": 98399,
         "over": 1
       },
       "other": {
         "files": 62,
-        "bytes": 1427989,
+        "bytes": 1430145,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 205438,
+        "bytes": 207486,
         "over": 1
       },
       "lessons": {
         "files": 55,
-        "bytes": 1608283,
+        "bytes": 1619397,
         "over": 3
       },
       "kb_note": {
-        "files": 246,
-        "bytes": 1352310,
+        "files": 249,
+        "bytes": 1368792,
         "over": 0
       },
       "handoff": {
-        "files": 132,
-        "bytes": 1046028,
+        "files": 133,
+        "bytes": 1052539,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
       "kb_note_dialect": 57,
-      "vault_heavy_path": 45
+      "vault_heavy_path": 43
     },
     "vault": {
-      "files": 1896,
-      "bytes": 1148088577,
-      "heavy_bytes": 626426170,
-      "heavy_share": 0.546,
+      "files": 1899,
+      "bytes": 1104557801,
+      "heavy_bytes": 582835963,
+      "heavy_share": 0.528,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/unified_courses_member_desc.js",
-        "cpl-project-tracker/kb/college_courses_payload.json",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
         "cpl-project-tracker/unified_courses_details.js",
@@ -95,7 +94,6 @@
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/unified_courses_index.js",
-        "cpl-project-tracker/kb/peer_articulations_payload.json",
         "cpl-project-tracker/unified_courses_suggestions.js",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
@@ -113,26 +111,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 95498,
+        "bytes": 98399,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 35498,
-        "ratio": 1.59
+        "over_by": 38399,
+        "ratio": 1.64
       },
-      "message": "95,498 B is 1.6× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "98,399 B is 1.6× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 205438,
+        "bytes": 207486,
         "limit": 40000,
         "lane": "index",
-        "over_by": 165438,
-        "ratio": 5.14
+        "over_by": 167486,
+        "ratio": 5.19
       },
-      "message": "205,438 B is 5.1× the index budget (40,000 B) — candidate for compaction",
+      "message": "207,486 B is 5.2× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -827,13 +825,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 382023,
+        "bytes": 384179,
         "limit": 150000,
         "lane": "other",
-        "over_by": 232023,
-        "ratio": 2.55
+        "over_by": 234179,
+        "ratio": 2.56
       },
-      "message": "382,023 B is 2.5× the other budget (150,000 B) — candidate for compaction",
+      "message": "384,179 B is 2.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -885,16 +883,6 @@
         "kind": "file"
       },
       "message": "48,285,325 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/college_courses_payload.json",
-      "detail": {
-        "bytes": 39826190,
-        "kind": "file"
-      },
-      "message": "39,826,190 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1185,16 +1173,6 @@
         "kind": "file"
       },
       "message": "3,910,759 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/peer_articulations_payload.json",
-      "detail": {
-        "bytes": 3764017,
-        "kind": "file"
-      },
-      "message": "3,764,017 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

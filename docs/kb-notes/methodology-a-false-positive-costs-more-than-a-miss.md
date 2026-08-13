@@ -90,3 +90,57 @@ You are probably over-tuned for recall if a hand-run of one realistic query
 returns a row you would be embarrassed to show the person who asked for the
 feature. Run that query before shipping. One example from the actual domain is
 worth more than an aggregate precision number.
+
+---
+
+## Second worked example — the fallback that proved the rule (2026-08-13)
+
+Sam asked for what sounds like the opposite of this note, and the request was
+reasonable:
+
+> *"When there is no match, it would be helpful below that note to show the
+> closest match you could find… unless if obviously wrong. Maybe even list it
+> but with a note that it appears to be a mismatch."*
+
+It was built, measured and withdrawn the same hour. Asked for POST Basic
+Academy's *Introduction to Policing* recommendation at Cerritos, it proposed:
+
+> **`AUTO 160 — Introduction to Automotive Electrical`**
+
+matched on the word "introduction" — the `ART 100` failure verbatim, on the very
+surface this note was written about. Across a 40-credential sample it fired
+**zero** other times.
+
+### Why it could not be tuned into working
+
+The reason is structural, and it generalises past this one feature:
+
+> **The scorer already returns the best row whenever any course shares a content
+> token. So a recommendation with NO candidate is precisely one where nothing
+> shares a subject word at all — and anything shown there is a spelling
+> coincidence.**
+
+The empty set is not the tail of the ranking. It is a different regime: every
+member of it is noise by construction. No threshold separates a good fallback
+from a bad one because there are no good ones. "Unless obviously wrong" turns
+out to select *everything*, which is why Sam's own qualifier resolved the
+question rather than the label he proposed attaching.
+
+### What satisfied the request instead
+
+The six "no match" rows he had actually seen were **phantom recommendation
+groups** manufactured by an unresolved grouping key — not real empty results
+(see
+[[docs/kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set]]).
+Fixing that removed the complaint at source. Genuine empties now point at the
+**peer courses**, which are the closest *true* thing available, and the renderer
+explicitly forbids reaching for the nearest-sounding course.
+
+### The transferable move
+
+When a stakeholder asks for a fallback, **build it, run it on one real query,
+and show them the output** before deciding. The AUTO 160 row settled a design
+argument in one line that no amount of reasoning about thresholds would have
+settled — and it distinguished the *request* (don't leave me with a bare "no")
+from the *proposed mechanism* (show a low-confidence match), which turned out to
+be separable. The request was right; only the mechanism was wrong.
