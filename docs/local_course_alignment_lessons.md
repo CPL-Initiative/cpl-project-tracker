@@ -236,3 +236,76 @@ whose course titles are less literal than welding's.
 Sierra's actual prose. The sandbox is egress-blocked from `*.supabase.co`, so the
 RPC was verified directly and the renderer against live fixtures, but nobody has
 read an answer she wrote. That is the first thing to check.
+
+---
+
+## 2026-08-13 (later still) — SkyBridge: Sam's ladder, and the column I never read
+
+Sam read a live Sierra answer and asked for C-ID first, then titles, then most
+aligned as a last resort. He was right, and the defect was mine.
+
+### (a) What was learned
+
+**THE SCORER NEVER READ THE `cid` COLUMN.** `grep -c "c.cid"` on the function
+returned 0. `chatbox_college_courses` had carried it since the table was built.
+
+The symptom Sam saw: asked to match POST to Cerritos, Sierra said *"I don't have
+Cerritos's full Administration of Justice catalog… look for an AJ 101 or
+equivalent."* **`AJ 101` was in the table, carrying C-ID `AJ 110`** — the exact
+C-ID of that recommendation. She sent faculty hunting for something we held.
+
+Six of POST's eight distinct C-IDs match a Cerritos course exactly:
+`AJ 110→AJ 101`, `AJ 120→AJ 102`, `AJ 122→AJ 103`, `AJ 124→AJ 104`,
+`AJ 200→AJ 107`, `AJ 220→AJ 222`. **16,067 of 141,696 courses carry a C-ID across
+112 colleges**, so the rung fires well beyond Administration of Justice.
+
+**A ladder, not a blended score.** The obvious fix — a C-ID bonus in the formula —
+would be wrong for the same reason peer precedent stays out of the similarity
+ranking: these are different KINDS of claim. Rung 1 says *the equivalence is
+established by a statewide standard*; rung 3 says *this is the closest thing you
+have*. Blending lets a guess outrank a fact and presents them as commensurable.
+Only the best available rung renders.
+Durable: `methodology-use-the-identity-key-before-you-score-strings`.
+
+**The side benefit was bigger than the feature.** Returning only the best rung is
+the most effective noise filter built so far: "Concepts of Criminal Law" had been
+returning the correct `AJ 102` (1.000) *beside* `ADN 210 Foundational Concepts of
+Nursing`, and "Community and the Justice System" returned `MUS 202E Community
+Symphonic Band`. With a rung-1 or rung-2 hit present those never render — no
+threshold tuning required. Tuning a scorer chases false positives forever;
+establishing identity first stops needing to.
+
+### (b) Three corrections found by RUNNING it, none anticipated
+
+1. **Statewide overrides local here too.** The RPC unioned peer wordings, giving
+   POST **~27 near-duplicate recommendations** where the statewide set is TEN.
+   Sam's standing rule was implemented on the credential route and not this one.
+2. **A C-ID match whose names diverge is FLAGGED, never suppressed.** POST carries
+   `AJ 110` on two lines, so rung 1 pairs an Administration-of-Justice course with
+   the **Physical Training and Health Education** recommendation. Suppressing it
+   would auto-resolve the repeat Sam ruled must never be auto-resolved; dropping
+   the rung would discard the strongest signal. `cid_title_divergent` ships and
+   the consumer must say so.
+3. **`elective` is structural** — "Introduction to Policing (Elective Course)"
+   matched `NRSG 48T Elective Nursing - Tutorial`. Stopped; that rec now returns
+   NOTHING, which is the right answer. Plus a **relative floor** on rung 3 (≥60%
+   of that rec's best score), because no absolute threshold separates
+   `AJ 105 Community Relations` from `MUS 203E Community Band` — what separates
+   them is that one is far closer *to the same recommendation*.
+
+### (c) Current state — LIVE, cpl-chat v42
+
+POST × Cerritos: **9 of 10 recommendations resolve to exactly one course**
+(6 `c_id`, 1 `title`, 1 `aligned`, 1 flagged); the 10th honestly returns none.
+`tests/sierra_alignment.test.js` 21 → **24**.
+
+Two older assertions **correctly failed** when the ladder superseded the phrasing
+they pinned (`"SUGGESTIONS for faculty to weigh"`, `"ranked by how closely the
+course TITLE matches, nothing more"`). Both were rewritten to guard the enduring
+intent rather than the old words — a test that pins wording blocks the
+improvement it was written to protect.
+
+### (d) Next concrete step
+
+Sierra's prose at v42 is still unread from a session (egress). Ask the Cerritos
+POST question; the flagged `AJ 110` line is the one most likely to need rewording.

@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions) and For Fable (engineering). Items are DELETED when done, never left checked.",
-  "_as_of": "2026-08-13 · SkyBridge — Sierra now tells a college which of its own courses to articulate, with how other colleges did it alongside.",
+  "_as_of": "2026-08-13 · SkyBridge — Sierra now names the college's own matching courses, C-ID first.",
   "_session": 148,
-  "_status": "The alignment feature Sam asked for is LIVE (cpl-chat v41). Ask Sierra about a certificate with a college in context and she now walks each credit recommendation twice over: first that college's own closest-matching courses, clearly labelled as suggestions for faculty to weigh, and then how other colleges articulated the very same recommendation, named with their course numbers so the precedent can be checked. For Cerritos and the FCAW welding certificate she lands on WELD 214L for both recommendations, and Barstow's near-identical course backs it up. Two things are deliberate and should not be 'tidied' away. The suggestions and the peer examples are kept apart, because Santa Ana articulated two courses whose titles do not contain 'FCAW' at all — matching by title alone would never find those, so both signals have to be shown. And the matcher is deliberately strict: an early version suggested an art-history course for a welding certificate, and one absurd suggestion is enough to make a faculty member distrust the good ones. Earlier today Sierra also started reading the full credit-recommendation sets, and 38 statewide exhibits that no college has adopted yet came back into view. Next: real testing, with feedback through the Sierra Training tab.",
+  "_status": "The alignment feature is LIVE (cpl-chat v42) and Sam's ladder is in: Sierra looks first for a course at that college carrying the SAME C-ID as the credit recommendation — the strongest possible match, because C-ID is the statewide course-identity standard, so the equivalence is already established rather than guessed. If there is no C-ID she falls back to matching titles, and only then to a best-judgement wording match, clearly labelled as such. For POST at Cerritos, nine of the ten recommendations now land on exactly one course and six of those are exact C-ID matches; the tenth honestly returns nothing. One line is deliberately flagged: POST lists the same C-ID against two different recommendations, so the match there looks odd and Sierra is told to say so rather than hide it or claim the courses are equivalent. Earlier today she also started reading the full credit-recommendation sets, 38 hidden statewide exhibits came back into view, and the military/non-military split was measured. Next: real testing, with feedback through the Sierra Training tab.",
   "items": [
+    {
+      "id": "s148-test-ladder",
+      "for": "Sam",
+      "tab": "CPL Assistant",
+      "text": "Re-ask the Cerritos POST question. She should now name AJ 101, AJ 102, AJ 103, AJ 104, AJ 107 and AJ 222 by C-ID rather than telling faculty to go look. The line worth watching is Physical Training and Health Education — POST lists the same C-ID twice, so that match looks odd on purpose and she is told to say so. If the wording there reads badly, that is the first thing to fix."
+    },
+    {
+      "id": "s148-alignment-tuning",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "C-ID coverage is partial (16,067 of 141,696 courses, 112 colleges), so transfer-heavy subjects land on the strong rung while CTE often falls through to the wording match — which was tuned on welding and is weakest there. Do NOT loosen it to catch more, and do not merge the rungs into one score: a wrong-looking suggestion costs more than a missed one."
+    },
     {
       "id": "s148-test-alignment",
       "for": "Sam",
@@ -15,12 +27,6 @@
       "for": "Sam",
       "tab": "Sierra Training",
       "text": "When a suggestion looks wrong, use the thumbs-down and then 'Write an instruction about this' on the Sierra Training tab. That is how this feature gets corrected — the 25 older untriaged items are now in the way of that, so clearing them is worth an hour."
-    },
-    {
-      "id": "s148-alignment-tuning",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "The course matcher was tuned on welding, where course titles almost describe themselves and the FCAW acronym does a lot of work. Expect it to behave differently in nursing, business and the arts. Do NOT loosen the strictness to catch more — a wrong-looking suggestion costs more than a missed one here."
     },
     {
       "id": "s148-bucket-military-crs",
