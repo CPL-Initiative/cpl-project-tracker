@@ -58,3 +58,50 @@
 --
 -- The live definitions are the two migrations named above; this file documents
 -- them and is the receipt of record.
+
+-- ── 2026-08-13, later: THE TIERED LADDER (Sam) ──────────────────────────────
+-- Migrations: alignment_cid_first_tiered_ladder_v2,
+--             alignment_statewide_only_and_cid_divergence_flag,
+--             alignment_elective_stopword_and_relative_floor
+--
+-- Sam, after reading a live answer: "Can we enhance the algo to recommend actual
+-- Cerritos courses? first preference would be the Cerritos matching C-ID if they
+-- exist, then matching titles, then most aligned as last resort. You can always
+-- qualify it to say these recommendations are just my best judgement based on
+-- available data."
+--
+-- He was right, and the defect was mine: the scorer never read the `cid` column
+-- at all. Asked to match POST to Cerritos, Sierra had answered "I don't have
+-- Cerritos's full Administration of Justice catalog… look for an AJ 101 or
+-- equivalent" — while AJ 101 sat in chatbox_college_courses carrying C-ID
+-- AJ 110, the exact C-ID of the recommendation. Six of POST's eight distinct
+-- C-IDs match a Cerritos course exactly. 16,067 of 141,696 courses carry a
+-- C-ID across 112 colleges, so tier 1 fires broadly.
+--
+--   1. c_id    the college teaches a course carrying the rec's C-ID — the
+--              equivalence is established by the statewide standard, not guessed
+--   2. title   the titles match, with no C-ID to confirm it
+--   3. aligned closest by wording — a judgement call, labelled as one
+--
+-- ONLY THE BEST AVAILABLE TIER RENDERS. That is what removed the noise: the old
+-- scorer offered `MUS 202E Community Symphonic Band` for "Community and the
+-- Justice System" and `ADN 210 Foundational Concepts of Nursing` for "Concepts
+-- of Criminal Law", beside the correct AJ 102 at 1.000.
+--
+-- Three corrections found by RUNNING it, none anticipated:
+--   * STATEWIDE OVERRIDES LOCAL HERE TOO. Unioning peer wordings gave POST ~27
+--     near-duplicate recs where the statewide set is TEN. Sam's standing rule was
+--     implemented on the credential route but not this one.
+--   * A C-ID MATCH WHOSE NAMES DIVERGE IS FLAGGED, NEVER SUPPRESSED. POST carries
+--     AJ 110 on two lines, so tier 1 matched an Administration of Justice course
+--     to the PHYSICAL TRAINING recommendation. Sam ruled that repeat must never be
+--     auto-resolved, so `cid_title_divergent` ships and the consumer must say so.
+--   * "elective" is structural: "Introduction to Policing (Elective Course)"
+--     matched `NRSG 48T Elective Nursing - Tutorial`. Stopped, and that rec now
+--     correctly returns NOTHING.
+--   * A RELATIVE FLOOR on tier 3 (>= 60% of the best score for that rec) drops
+--     the also-rans where there is a clear winner — an absolute threshold cannot
+--     separate `AJ 105 Community Relations` from `MUS 203E Community Band`.
+--
+-- Result for POST x Cerritos: nine of ten recs get exactly one course —
+-- 6 c_id, 1 title, 1 aligned, 1 flagged — and the tenth honestly returns none.

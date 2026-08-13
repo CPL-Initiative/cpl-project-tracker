@@ -57,10 +57,12 @@ const ROWS = [
   // The proposal: Cerritos' own closest course (the one the offerings rollup hid).
   { row_kind: "candidate", credit_rec: INTRO, rec_course: "Introduction to Flux Cored Arc Welding (FCAW)",
     college_name: "Cerritos College", subject: "WELD", course_number: "214L",
-    course_title: "Flux Cored Arc Welding (FCAW) Certification Laboratory", units: 2, score: 0.671, attribution: null },
+    course_title: "Flux Cored Arc Welding (FCAW) Certification Laboratory", units: 2, score: 0.671, attribution: null,
+    match_kind: "title", rec_cid: null, course_cid: null, cid_title_divergent: false },
   { row_kind: "candidate", credit_rec: INTRO, rec_course: "Introduction to Flux Cored Arc Welding (FCAW)",
     college_name: "Cerritos College", subject: "WELD", course_number: "120",
-    course_title: "Beginning Arc Welding", units: 5, score: 0.275, attribution: null },
+    course_title: "Beginning Arc Welding", units: 5, score: 0.275, attribution: null,
+    match_kind: "title", rec_cid: null, course_cid: null, cid_title_divergent: false },
   // The evidence: peers, INCLUDING the broader-course pattern a title match
   // cannot see (Santa Ana's SMAW course against an FCAW recommendation).
   { row_kind: "peer", credit_rec: INTRO, rec_course: "Introduction to Flux Cored Arc Welding (FCAW)",
@@ -71,7 +73,8 @@ const ROWS = [
     course_title: "Structural Welding SMAW", units: null, score: null, attribution: "per_course" },
   { row_kind: "candidate", credit_rec: ADV, rec_course: "Advanced Flux Cored Arc Welding (FCAW)",
     college_name: "Cerritos College", subject: "WELD", course_number: "214L",
-    course_title: "Flux Cored Arc Welding (FCAW) Certification Laboratory", units: 2, score: 0.715, attribution: null },
+    course_title: "Flux Cored Arc Welding (FCAW) Certification Laboratory", units: 2, score: 0.715, attribution: null,
+    match_kind: "title", rec_cid: null, course_cid: null, cid_title_divergent: false },
   { row_kind: "peer", credit_rec: ADV, rec_course: "Advanced Flux Cored Arc Welding (FCAW)",
     college_name: "Santa Ana College", subject: "WELD", course_number: "244",
     course_title: "Welding Certification D1.1 Code Clinic", units: null, score: null, attribution: "per_course" },
@@ -105,12 +108,18 @@ if (!liftErr) {
   check("candidates are listed BEFORE the peer-articulation heading, not inside it",
         candIdx > -1 && peerHeadIdx > -1 && candIdx < peerHeadIdx);
 
-  check("candidates are labelled as suggestions, peers as already articulating",
-        /SUGGESTIONS for faculty to weigh/.test(ctx) &&
+  // These two used to pin the pre-ladder wording ("SUGGESTIONS for faculty to
+  // weigh", "ranked by how closely the course TITLE matches, nothing more").
+  // The ladder replaced that with a rung-specific heading, so the assertions
+  // now guard the ENDURING intent — candidates read differently from peers, and
+  // the basis for a suggestion is always stated — rather than the old phrasing.
+  check("candidates are labelled by their evidence rung, peers as already articulating",
+        /matching course by TITLE/.test(ctx) &&
         /ALREADY articulate this recommendation/.test(ctx));
 
-  check("the ranking basis is stated as title match and nothing more",
-        /ranked by how closely the course TITLE matches, nothing more/.test(ctx),
+  check("the evidence basis is stated explicitly, never left implicit",
+        /no C-ID on either side to confirm it/.test(ctx) &&
+        /faculty confirm the content/.test(ctx),
         "an unqualified ranking reads as an equivalence judgment");
 
   check("no similarity score is rendered to the model",
@@ -174,6 +183,17 @@ check("the rule forbids equivalence language on a suggestion",
 
 check("the rule tells the model to surface a peer/title disagreement",
       /WHEN THE TWO DISAGREE, SAY SO/.test(src));
+
+check("the rule teaches the ladder and its rungs",
+      /THE LADDER — SAY WHICH RUNG A SUGGESTION CAME FROM/.test(src) &&
+      /statewide course-identity standard/.test(src) &&
+      /Never present rung 3 with the confidence of rung 1/.test(src));
+
+check("the rule requires flagging a divergent C-ID rather than dropping it",
+      /IF A C-ID MATCHES BUT THE NAMES DIVERGE, SAY SO/.test(src));
+
+check("the rule prefers an honest blank to a stretch",
+      /IF NOTHING MATCHES A RECOMMENDATION, SAY NOTHING MATCHED IT/.test(src));
 
 check("the rule forbids inventing a course or college",
       /NEVER invent a course, a course number, or a college/.test(src));
