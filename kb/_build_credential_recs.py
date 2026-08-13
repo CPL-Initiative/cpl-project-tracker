@@ -229,10 +229,17 @@ def build(data: dict) -> list:
             "n_cid_lines": len(cids),              # lines carrying a C-ID (POST: 9)
             "n_non_cid_recs": len(recs) - len(cids),
             "n_adopter_colleges": n_colleges,
+            # ALWAYS emit this key, null when there are no repeats. PostgREST
+            # rejects a bulk payload whose objects do not all carry the SAME
+            # keys (PGRST102 "All object keys must match"), and an optional key
+            # fails POSITIONALLY: the first eight 200-row batches were
+            # homogeneous and succeeded, then batch nine held the first row
+            # with a repeat and 400'd — which reads like a size or content
+            # problem rather than a schema-shape one. Exactly ONE row of 2,205
+            # carries a repeat (POST Basic Academy), and it took the load down.
+            "cid_repeats": repeats or None,
             "source_generated_at": data.get("generated_at"),
         }
-        if repeats:
-            row["cid_repeats"] = repeats
         rows.append(row)
     return rows
 
