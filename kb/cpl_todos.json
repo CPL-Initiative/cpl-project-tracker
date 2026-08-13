@@ -23,6 +23,12 @@
       "text": "The course matcher was tuned on welding, where course titles almost describe themselves and the FCAW acronym does a lot of work. Expect it to behave differently in nursing, business and the arts. Do NOT loosen the strictness to catch more — a wrong-looking suggestion costs more than a missed one here."
     },
     {
+      "id": "s148-bucket-military-crs",
+      "for": "Fable",
+      "tab": "Course Credit",
+      "text": "Split military from non-military wherever a college sees an 'awaiting action' total. Right now the million-plus units is 98.8% military — a service member's transcript brings ~17 recommendations at once, while a certificate brings 1 or 2. Undifferentiated, it reads as an impossible mountain and hides the genuinely achievable part: 10,698 units across 868 students at 28 colleges. Lead with that, then give the military figure with its per-student context. Never present the military bucket as lesser — it all still needs acting on."
+    },
+    {
       "id": "s148-offerings-caps",
       "for": "Fable",
       "tab": "CPL Assistant",
