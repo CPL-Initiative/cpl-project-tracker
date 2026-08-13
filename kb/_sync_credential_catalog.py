@@ -107,6 +107,34 @@ def search_text_for(rec: dict, adopters: list) -> str:
     return _WS.sub(" ", " ".join(p for p in parts if p)).strip().lower()
 
 
+_STATEWIDE_TITLES: set | None = None
+
+
+def statewide_titles() -> set:
+    """Unified titles carrying a CCC-Collaborative (statewide) exhibit.
+
+    Read from statewide_data.js — the adoption file — because it is the one MAP
+    publishes the statewide exhibit in. Missing file degrades to the empty set,
+    which reproduces the old behaviour rather than failing the sync.
+    """
+    global _STATEWIDE_TITLES
+    if _STATEWIDE_TITLES is None:
+        path = os.path.join(REPO, "statewide_data.js")
+        titles: set = set()
+        try:
+            with open(path, encoding="utf-8") as fh:
+                src = fh.read()
+            doc = json.loads(src[src.index("{"):].rstrip().rstrip(";"))
+            for e in doc.get("exhibits") or []:
+                if e.get("collaborative_type") == "CCC Collaborative" and e.get("unified_title"):
+                    titles.add(e["unified_title"])
+        except Exception as exc:                        # noqa: BLE001 — degrade, never block
+            print(f"NOTE: could not read statewide_data.js ({exc}) — "
+                  "statewide flags fall back to the CER artifact alone.")
+        _STATEWIDE_TITLES = titles
+    return _STATEWIDE_TITLES
+
+
 def to_row(rec: dict, generated_at: str | None) -> dict:
     adopters = adopters_of(rec)
     served = rec.get("students_served")
@@ -117,7 +145,16 @@ def to_row(rec: dict, generated_at: str | None) -> dict:
         "discipline": rec.get("disc_modal") or None,
         "top_code": rec.get("top_modal") or None,
         "cpl_types": rec.get("cpl_types") or [],
-        "statewide": bool(rec.get("statewide")),
+        # UNION with the adoption file, do not trust this artifact alone.
+        # credential_reference_data.js flags 84 titles statewide; statewide_data.js
+        # carries 137 CCC-Collaborative exhibits, and the 54-title gap is not
+        # cosmetic — Paramedic License and 53 others read as NOT statewide here
+        # while the public Fact Sheet (which reads the adoption file) shows them
+        # WITH their statewide credit recs. Sierra syncs from this file, so she
+        # has been contradicting the Fact Sheet on 54 credentials. The KB already
+        # said which file wins — cpl_memory `statewide-is-138-not-84`: "Use the
+        # adoption file" — and this sync predated that note.
+        "statewide": bool(rec.get("statewide")) or (rec.get("ut") in statewide_titles()),
         "ccc_rec": rec.get("ccc_rec") or None,
         "gen_rec": rec.get("gen_rec") or None,
         "has_local": bool(rec.get("has_local")),

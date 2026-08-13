@@ -119,7 +119,13 @@
     testInSierra: "Opens the CPL Assistant with this exact question filled in, so you can see whether "
       + "Sierra answers it better now. It does not send it — you press enter yourself.",
     writeRule: "Start a new instruction for Sierra with this question already quoted, so you can tell "
-      + "her how to handle this kind of question in future."
+      + "her how to handle this kind of question in future.",
+    ruleEdit: "Change the wording of this instruction. Saving keeps it in the same place in the list, "
+      + "so it keeps its spot among the newest instructions Sierra is actually sent.",
+    ruleTestQ: "The question you want to get a better answer to. It is kept with this editor while you "
+      + "go back and forth to Sierra, so you do not have to retype it each round.",
+    ruleSaveTest: "Saves the new wording, then opens Sierra with your test question filled in. Come back "
+      + "to this tab and the editor is still open, so you can adjust and try again."
   };
   function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
   // Depends on GUIDANCE_SENT_CAP, which is declared below — read it at call time,
@@ -145,6 +151,14 @@
     guidBusy: {},      // id → toggle write in flight
     addBusy: false,
     draftRule: "", draftNote: "",   // composer drafts survive re-renders
+    // Edit-in-place (2026-08-13). A saved instruction had no way back in: the
+    // only controls were Switch off / Switch on, so fixing a typo meant
+    // switching the old one off and retyping the whole rule as a new row —
+    // which also loses its place in the newest-N window that decides whether
+    // Sierra is sent it at all.
+    editId: null,      // id of the row being edited (null = none)
+    editRule: "", editNote: "", editTestQ: "",
+    editBusy: false,
   };
 
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
@@ -174,6 +188,32 @@
   function testInSierra(q) {
     try { sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000)); } catch (e) {}
     location.hash = "#chatbot";
+  }
+
+  // Testing an instruction MEANS leaving this tab — the assistant lives at
+  // #chatbot, so the module is torn down and `state` is lost. Without this the
+  // edit-test-edit loop Sam asked for is impossible by construction: you come
+  // back to a closed editor and have to find the rule and re-open it every
+  // round. Persist the open editor (and its test question) so the return trip
+  // lands you exactly where you left off.
+  var EDIT_KEY = "cplSierraGuidEdit.v1";
+  function saveEditDraft() {
+    try {
+      if (state.editId == null) { sessionStorage.removeItem(EDIT_KEY); return; }
+      sessionStorage.setItem(EDIT_KEY, JSON.stringify({
+        id: state.editId, rule: state.editRule, note: state.editNote, testQ: state.editTestQ,
+      }));
+    } catch (e) { /* private mode — the editor still works, it just won't survive the hop */ }
+  }
+  function restoreEditDraft() {
+    try {
+      var d = JSON.parse(sessionStorage.getItem(EDIT_KEY) || "null");
+      if (!d || d.id == null) return;
+      state.editId = d.id;
+      state.editRule = String(d.rule || "");
+      state.editNote = String(d.note || "");
+      state.editTestQ = String(d.testQ || "");
+    } catch (e) { /* ignore */ }
   }
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
@@ -269,6 +309,13 @@
       ".sit-guid-composer textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
       ".sit-guid-row { display:flex; gap:6px; }",
       ".sit-guid-note { flex:1; padding:6px 11px; border:1px solid var(--border); border-radius:8px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
+      ".sit-guid-editing { border-color: var(--brand, #1d4ed8); box-shadow: 0 0 0 2px var(--brand-soft, rgba(29,78,216,.12)); }",
+      ".sit-guid-editbox { display:flex; flex-direction:column; gap:6px; padding:12px 14px; }",
+      ".sit-guid-editlbl { font-size:.75rem; font-weight:600; color: var(--text-muted, #6b7280); }",
+      ".sit-guid-editbox textarea { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong); border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque); color: var(--text-body); }",
+      ".sit-guid-edit-note, .sit-guid-edit-testq { padding:6px 11px; border:1px solid var(--border); border-radius:8px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
+      ".sit-guid-editrow { display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; }",
+      ".sit-guid-editnote { font-size:.72rem; color: var(--text-muted, #6b7280); }",
       ".sit-rule-off .sit-q { color: var(--text-muted); text-decoration: line-through; }",
     ].join("\n");
     var el = document.createElement("style");
@@ -423,6 +470,71 @@
     }).catch(function () {
       alert("Could not add the rule — renew your session on the Team & RACI tab (reviewer or team phrase) and try again.");
     }).then(function () { state.addBusy = false; render(root); });
+  }
+  // Edit a saved instruction in place (2026-08-13). RLS already allowed this —
+  // sierra_guidance_team_update covers every column for a reviewer or a team-phrase
+  // holder — so this was a missing affordance, not a missing permission.
+  function openEdit(id, root) {
+    var row = (state.guidance || []).filter(function (r) { return String(r.id) === String(id); })[0];
+    if (!row) return;
+    state.editId = row.id;
+    state.editRule = String(row.rule || "");
+    state.editNote = String(row.note || "");
+    // Keep whatever question was last used to test THIS rule; otherwise blank.
+    if (String(state.editId) !== String(id)) state.editTestQ = "";
+    saveEditDraft();
+    render(root);
+  }
+  function cancelEdit(root) {
+    state.editId = null; state.editRule = ""; state.editNote = ""; state.editTestQ = "";
+    saveEditDraft();
+    render(root);
+  }
+  // `then` runs only on a CONFIRMED write. A PATCH that RLS filters out answers
+  // 200 with an empty body, so "ok" is not proof it touched a row (the
+  // team_access lesson, 2026-08-12) — require the representation back.
+  function saveGuidance(id, rule, note, root, then) {
+    if (state.editBusy) return Promise.resolve();
+    var row = (state.guidance || []).filter(function (r) { return String(r.id) === String(id); })[0];
+    if (!row) return Promise.resolve();
+    state.editBusy = true; render(root);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "return=representation";
+    return fetch(REST + "/sierra_guidance?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: h,
+      body: JSON.stringify({
+        rule: rule, note: note || null,
+        updated_by: whoAmI(), updated_at: new Date().toISOString(),
+      }),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      var saved = Array.isArray(rows) ? rows[0] : rows;
+      if (!saved) throw new Error("no row");   // filtered by RLS — not a save
+      row.rule = saved.rule;
+      row.note = saved.note;
+      row.updated_by = saved.updated_by;
+      row.updated_at = saved.updated_at;
+      state.editBusy = false;
+      if (typeof then === "function") then();
+      else { state.editId = null; state.editRule = ""; state.editNote = ""; state.editTestQ = ""; saveEditDraft(); }
+      render(root);
+    }).catch(function () {
+      // Hold the ATTEMPTED text, not whatever the editor last rendered. In the
+      // browser the input handler keeps state.editRule current, but a failed
+      // save must not depend on that — the whole promise of the message below
+      // is that the curator's words are still there.
+      state.editId = id;
+      state.editRule = rule;
+      state.editNote = note || "";
+      state.editBusy = false;
+      saveEditDraft();
+      render(root);
+      alert("Could not save the change — your edit is still in the box. Renew your session on the "
+        + "Team & RACI tab (or enter the team phrase in the header) and press Save again.");
+    });
   }
   function toggleGuidance(id, root) {
     if (state.guidBusy[id]) return Promise.resolve();
@@ -658,6 +770,8 @@
       + chip
       + '<span class="sit-q">' + esc(r.rule) + "</span>"
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
+      + '<button class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
+      + ' title="' + esc(HELP.ruleEdit) + '">✏️ Edit</button>'
       + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
       + ' title="' + (r.active
         ? "Stops sending this to Sierra. It stays on the list so you can turn it back on."
@@ -667,7 +781,55 @@
     if (r.note) {
       h += '<div class="sit-row-body" style="padding:6px 14px;border-top:none"><span class="lbl" style="margin:0;display:inline">Note:</span> ' + esc(r.note) + "</div>";
     }
+    if (String(r.updated_at || "") && r.updated_by && String(r.updated_at) !== String(r.created_at)) {
+      h += '<div class="sit-row-body" style="padding:2px 14px 6px;border-top:none">'
+        + '<span class="sit-meta">Last edited by ' + esc(r.updated_by) + " · " + fmtWhen(r.updated_at) + "</span></div>";
+    }
     return h + "</div>";
+  }
+
+  // The editor, rendered IN PLACE of the row being edited. It carries a test
+  // question with it: the point of editing an instruction is to change what
+  // Sierra SAYS, and the only way to know whether it worked is to ask her —
+  // so the loop (edit → ask → edit again) belongs in one control, not spread
+  // across two tabs the curator has to remember to walk between.
+  function guidanceEditor(r) {
+    var used = String(state.editRule || "").length;
+    var h = '<div class="sit-row sit-guid-editing">'
+      + '<div class="sit-guid-editbox">'
+      + '<div class="sit-guid-editlbl">Editing this instruction — Sierra follows it literally.</div>'
+      + '<textarea class="sit-guid-edit-input" maxlength="' + GUIDANCE_RULE_MAX + '" rows="4" '
+      + 'title="Change the wording and press Save. Sierra uses the new text on her very next answer.">'
+      + esc(state.editRule) + "</textarea>"
+      + '<div class="sit-guid-count' + (used > GUIDANCE_RULE_MAX - 150 ? " warn" : "") + '" data-guid-edit-count>'
+      + used.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+      + (used >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "")
+      + "</div>"
+      + '<input class="sit-guid-edit-note" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.editNote) + '" '
+      + 'title="Just for the team — Sierra never sees the note." '
+      + 'placeholder="Optional note for the team — why this instruction exists">'
+      + '<div class="sit-guid-editlbl" style="margin-top:8px">Try it on Sierra</div>'
+      + '<input class="sit-guid-edit-testq" maxlength="500" value="' + esc(state.editTestQ) + '" '
+      + 'title="' + esc(HELP.ruleTestQ) + '" '
+      + 'placeholder="A question that should get better because of this instruction — '
+      + 'e.g. What CPL does Cerritos College offer for ironworkers?">'
+      + '<div class="sit-guid-editrow">'
+      + '<button class="sit-btn sit-btn-primary" data-guid-save="' + esc(r.id) + '"'
+      + (state.editBusy ? " disabled" : "") + ' title="Saves the new wording. Sierra uses it on her next answer.">'
+      + (state.editBusy ? "Saving…" : "💾 Save") + "</button>"
+      + '<button class="sit-btn" data-guid-savetest="' + esc(r.id) + '"'
+      + (state.editBusy ? " disabled" : "") + ' title="' + esc(HELP.ruleSaveTest) + '">'
+      + "💾 Save &amp; ask Sierra →</button>"
+      + '<button class="sit-btn" data-guid-cancel title="Closes without saving. Your changes are discarded.">'
+      + "Cancel</button>"
+      + "</div>"
+      + '<div class="sit-guid-editnote">Saving does not switch the instruction on. '
+      + (r.active
+        ? "This one is <b>on</b>, so the new wording reaches Sierra immediately."
+        : "This one is <b>switched off</b> — switch it on for Sierra to use it.")
+      + " Coming back from Sierra reopens this editor where you left it.</div>"
+      + "</div></div>";
+    return h;
   }
 
   // ── Render ──
@@ -857,7 +1019,8 @@
         var activeRank = 0;
         state.guidance.forEach(function (r) {
           if (r.active) activeRank++;
-          html += guidanceRow(r, r.active && activeRank <= GUIDANCE_SENT_CAP);
+          if (String(state.editId) === String(r.id)) html += guidanceEditor(r);
+          else html += guidanceRow(r, r.active && activeRank <= GUIDANCE_SENT_CAP);
         });
       }
     }
@@ -932,6 +1095,54 @@
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
         toggleGuidance(btn.getAttribute("data-guid-toggle"), root);
+      });
+    });
+    // ── edit-in-place ──
+    root.querySelectorAll("[data-guid-edit]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openEdit(btn.getAttribute("data-guid-edit"), root);
+      });
+    });
+    var ei = root.querySelector(".sit-guid-edit-input");
+    if (ei) ei.addEventListener("input", function () {
+      state.editRule = ei.value;
+      saveEditDraft();
+      // Same reason as the composer: a full render() here parks the caret at the end.
+      var c = root.querySelector("[data-guid-edit-count]");
+      if (!c) return;
+      var n = ei.value.length;
+      c.className = "sit-guid-count" + (n > GUIDANCE_RULE_MAX - 150 ? " warn" : "");
+      c.textContent = n.toLocaleString() + " / " + GUIDANCE_RULE_MAX.toLocaleString() + " characters"
+        + (n >= GUIDANCE_RULE_MAX ? " — at the limit; anything more will not be saved." : "");
+    });
+    var en = root.querySelector(".sit-guid-edit-note");
+    if (en) en.addEventListener("input", function () { state.editNote = en.value; saveEditDraft(); });
+    var eq = root.querySelector(".sit-guid-edit-testq");
+    if (eq) eq.addEventListener("input", function () { state.editTestQ = eq.value; saveEditDraft(); });
+    var ec = root.querySelector("[data-guid-cancel]");
+    if (ec) ec.addEventListener("click", function (e) { e.stopPropagation(); cancelEdit(root); });
+    root.querySelectorAll("[data-guid-save]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var rule = (state.editRule || "").trim();
+        if (rule.length < 3) { alert("The instruction cannot be empty (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
+        saveGuidance(btn.getAttribute("data-guid-save"), rule, (state.editNote || "").trim(), root);
+      });
+    });
+    root.querySelectorAll("[data-guid-savetest]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var rule = (state.editRule || "").trim();
+        if (rule.length < 3) { alert("The instruction cannot be empty (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
+        var q = (state.editTestQ || "").trim();
+        if (!q) { alert("Type the question you want to test with first — it is the box just above the buttons."); return; }
+        // Save FIRST, hop only on a confirmed write. Hopping on an unsaved edit
+        // would test the OLD wording and read as "the instruction did nothing".
+        saveGuidance(btn.getAttribute("data-guid-savetest"), rule, (state.editNote || "").trim(), root, function () {
+          saveEditDraft();          // editor stays open for the return trip
+          testInSierra(q);
+        });
       });
     });
     root.querySelectorAll("[data-qact]").forEach(function (btn) {
@@ -1009,6 +1220,10 @@
   }
 
   function renderInto(root, keepData) {
+    // Hash routing keeps this page alive, so `state` normally survives the hop to
+    // #chatbot on its own. This is the reload case: a curator who hard-refreshes
+    // (or lands here from a fresh tab) still gets their open editor back.
+    if (state.editId == null) restoreEditDraft();
     if (keepData && (state.feedback || state.turns)) { render(root); return; }
     if (!signedIn()) { state.loading = false; render(root); return; }
     state.loading = true; state.error = null; state.gated = false; render(root);
@@ -1057,8 +1272,15 @@
     _testInSierra: testInSierra,
     TEST_Q_KEY: TEST_Q_KEY,
     _guidanceRow: guidanceRow,
+    _guidanceEditor: guidanceEditor,
     _addGuidance: addGuidance,
     _toggleGuidance: toggleGuidance,
+    _saveGuidance: saveGuidance,
+    _openEdit: openEdit,
+    _cancelEdit: cancelEdit,
+    _saveEditDraft: saveEditDraft,
+    _restoreEditDraft: restoreEditDraft,
+    EDIT_KEY: EDIT_KEY,
     _loadGuidance: loadGuidance,
     GUIDANCE_SENT_CAP: GUIDANCE_SENT_CAP,
     GUIDANCE_RULE_MAX: GUIDANCE_RULE_MAX,
