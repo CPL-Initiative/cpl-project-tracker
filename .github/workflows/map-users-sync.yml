@@ -26,7 +26,13 @@ on:
         type: boolean
         default: false
   schedule:
-    - cron: '0 13 1 * *'   # 1st of each month, 13:00 UTC — the roster changes slowly
+    # DAILY (Sam, 2026-08-13). Was monthly, on the reasoning that "the roster
+    # changes slowly" — true of the roster, and irrelevant once Sierra started
+    # reading these contacts live (cpl-chat v45). A stale roster no longer costs
+    # a stale COUNT on a tab; it costs a STUDENT THE WRONG PERSON TO EMAIL. And
+    # the MAP team is actively filling in the missing users right now, so a
+    # monthly cadence would have hidden their work until 1 September.
+    - cron: '0 13 * * *'   # every day, 13:00 UTC
 
 permissions:
   contents: read
