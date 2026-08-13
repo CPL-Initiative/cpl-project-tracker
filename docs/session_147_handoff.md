@@ -8,6 +8,8 @@ related:
   - "[[docs/sierra_training_tab_scope]]"
   - "[[docs/kb-notes/methodology-a-shared-credential-can-only-scope-to-an-exclusive-surface]]"
   - "[[docs/session_146_handoff]]"
+superseded: true
+superseded_by: session_148_handoff.md
 ---
 
 # You are Session 147

@@ -78,9 +78,11 @@ The whole ecosystem, end-to-end:
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`
    Supabase Edge Function that also powers the live map.rccd.edu widget),
    a **Sierra Training** tab (team-only: the assistant's improvement loop —
-   the 👍/👎 feedback queue from both chat surfaces with a triage status, and
-   a gap miner over the chat logs surfacing the questions the knowledge base
-   had no good source for), a **⚖️ Governance** tab (team-only: the decision-rights
+   the 👍/👎 feedback queue from both chat surfaces with a triage status, a
+   gap miner over the chat logs surfacing the questions the knowledge base
+   had no good source for, and the plain-English **instructions** Sierra
+   follows on every question — editable in place after saving, with a test
+   question you can put straight to her and come back to), a **⚖️ Governance** tab (team-only: the decision-rights
    register — who decides what, how far each input is trusted, and which cadences
    actually run; it measures itself rather than asserting compliance, so a loop
    that was decided but never run says so), a **MAP Users** tab (per-college MAP platform user
