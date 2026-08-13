@@ -15,6 +15,15 @@
   // these vars and only execute after start() has run.
   var DATA = null;
   var LOOKUP = window.CCC_COLLEGE_LOOKUP || {};
+  // MAP's sandbox organisations, as named by Sam 2026-08-13. Supabase carries the
+  // same list as map_colleges.entity_kind='test' (college_briefing.js reads it as
+  // entity_kind=neq.test); this static artifact has no such column, so the EACR
+  // keeps the names. Do NOT add real institutions here — the two continuing-ed
+  // colleges and the partner entities are legitimate and must stay visible.
+  var TEST_ORGS = [
+    "CabTest", "MorTest City", "Nortest City", "RivTest City", "SantTest Ana",
+    "Testing College", "NORCO College - Syllabus Manager", "CA MAP INITIATIVE COLLEGE"
+  ];
   var exhibits = null;
   var container = null;
 
@@ -131,15 +140,36 @@
     exhibits.forEach(function (e) {
       (e.adopter_names || []).concat(e.potential_names || []).forEach(function (c) { allColleges[c] = 1; });
     });
-    collegeNames = Object.keys(allColleges).sort();
+    // MAP's sandbox orgs leak into the adoption data (Sam, 2026-08-13). Supabase
+    // tags them map_colleges.entity_kind='test', but statewide_data.js is a static
+    // artifact with no such column, so the EACR excludes them by name. Only
+    // CA MAP INITIATIVE COLLEGE actually appears here today (2 rows) — the rest of
+    // Sam's list is absent — but the set is kept whole so a future rebuild that
+    // pulls one in is covered.
+    collegeNames = Object.keys(allColleges).filter(function (c) {
+      return TEST_ORGS.indexOf(c) === -1;
+    }).sort();
     districtSet = {}; swRegionSet = {};
+    // A LOOKUP miss makes a college unfilterable by district/SW region, because
+    // collegeMatchesFilters() fails closed (correctly — we must not claim an
+    // unknown college sits in the district you asked for). The danger is that it
+    // does so SILENTLY, which is how Calbright College Non-Credit lost 88 rows.
+    // Fail closed, but say so.
+    var unresolved = [];
     collegeNames.forEach(function (c) {
       var info = LOOKUP[c];
       if (info) {
         if (info.district) districtSet[info.district] = 1;
         if (info.swRegion) swRegionSet[info.swRegion] = 1;
+      } else {
+        unresolved.push(c);
       }
     });
+    if (unresolved.length && window.console && console.warn) {
+      console.warn("[EACR] " + unresolved.length + " college name(s) missing from " +
+        "CCC_COLLEGE_LOOKUP — excluded from the District and SW Region filters. " +
+        "Add them to college_lookup.js: " + unresolved.join(" | "));
+    }
     districts = Object.keys(districtSet).sort();
     swRegions = Object.keys(swRegionSet).sort();
   }
@@ -220,7 +250,13 @@
     + '.sw-gallery-tag{font-size:0.62rem;background:rgba(227,179,65,0.22);color:var(--mustard-text);padding:1px 5px;border-radius:3px;margin-left:0.35rem;font-weight:600;}'
     // Page-level filter bar — lifted out of the v1 card so search + filters sit
     // above the whole gallery and apply to every view (not repeated per card).
-    + '.sw-filterbar{margin-bottom:0.6rem;}'
+    // overflow:visible is LOAD-BEARING — .sw-interactive sets overflow:hidden (it
+    // clips the v1 table's corners to the card radius), and the filter bar reuses
+    // that class. Every .sw-filter-dropdown is position:absolute; top:100%, so
+    // inside a ~70px-tall wrapper they were clipped to a sliver: all 8 filters
+    // opened into nothing. That is why they read as "not dropdowns" AND as
+    // "don't work" — one defect, both halves of the report (Sam, 2026-08-13).
+    + '.sw-filterbar{margin-bottom:0.6rem;overflow:visible;}'
     + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
     + '.sw-filterbar-hint{font-size:0.64rem;color:var(--text-muted);padding:0 0.8rem 0.6rem;font-style:italic;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —

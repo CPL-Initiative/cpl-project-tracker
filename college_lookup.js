@@ -116,6 +116,11 @@ window.CCC_COLLEGE_LOOKUP = {
   "Berkeley City College": { district: "Peralta Community College District", swRegion: "Bay Area (Region 3)" },
   "Butte College": { district: "Butte-Glenn Community College District", swRegion: "North Far North (Region 1)" },
   "Calbright College Credit": { district: "Calbright College", swRegion: "Capital (Region 2)" },
+  // Added 2026-08-13: this variant appears 88 times in statewide_data.js as a real
+  // adopter/potential name, but had no entry here — and collegeMatchesFilters()
+  // fails closed on a LOOKUP miss, so the EACR district + SW-region filters were
+  // silently dropping every one of its adoptions.
+  "Calbright College Non-Credit": { district: "Calbright College", swRegion: "Capital (Region 2)" },
   "Cañada College": { district: "San Mateo County Community College District", swRegion: "Bay Area (Region 3)" },
   "Cerro Coso Community College": { district: "Kern Community College District", swRegion: "Central/Mother Lode (Region 5)" },
   "Clovis Community College": { district: "State Center Community College District", swRegion: "Central/Mother Lode (Region 5)" },
