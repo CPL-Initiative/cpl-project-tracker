@@ -934,12 +934,35 @@ async function fetchCollegeCredentials(
     .slice(0, 10);
 }
 
-function buildCollegeCredentialContext(rows: any[] | null, college: string): string {
+// `recs` (v45) is the batched credit-recommendation map. OPTIONAL, and the
+// credential names must render without it — see the caller, where this section is
+// appended outside the enrichment try/catch on purpose.
+//
+// WHY THE LINES WERE ADDED (Sam, 2026-08-13, sierra_feedback 7e76cdeb).
+// He asked the ironworker question a THIRD time, after v44 had already ended the
+// false zero, and rated it DOWN with a different complaint than before:
+// "You should have provided a list of courses I could get credit for and the
+// industry certificates or licenses needed". He was right — this section listed
+// credential NAMES and nothing else, so a student was told Cerritos awards CPL
+// for "Ironworker Apprenticeship — General Rigging" and never learned that it is
+// worth IWAP 40.09, 2 hours. The recommendations were already in
+// chatbox_credential_recs; every one of the ironworker credentials carries a
+// line. This route simply never asked for them, while the statewide, volume and
+// adoption routes all did.
+function buildCollegeCredentialContext(
+  rows: any[] | null, college: string, recs?: Map<string, any> | null,
+): string {
   if (!rows || rows.length === 0) return "";
   let out = `\n\n--- ${college.toUpperCase()} ALREADY AWARDS CPL FOR THESE (curated credential names) ---\n`;
   out += `These are ${college}'s OWN articulated credentials matching the question, read from the `
       + `curated catalogue rather than the freehand titles the college typed into MAP. State them `
       + `as established fact — this college awards credit for these today.\n`;
+  out += `ANSWER WITH BOTH HALVES: name the CREDENTIAL (the certificate, licence or apprenticeship `
+      + `stage the person needs to hold) AND the COURSES it converts into, with units, exactly as `
+      + `listed beneath it. A visitor who is told only that "the college awards CPL for this" still `
+      + `does not know what they would get. Where a credential below has no course lines, say the `
+      + `college awards credit for it and that the specific course award is set at review — never `
+      + `invent a course, and never drop the credential for lacking one.\n`;
   for (const r of rows) {
     out += `- ${r.unified_title}`;
     if (r.issuer) out += ` (issued by ${r.issuer})`;
@@ -950,6 +973,10 @@ function buildCollegeCredentialContext(rows: any[] | null, college: string): str
     if (r.match_tier >= 5) {
       out += `    (matched through the awarding body, not the credential's own title)\n`;
     }
+    // Same renderer as every other credential route — deliberately not a local
+    // variant, so the statewide/local distinction, the C-ID handling and the
+    // repeated-C-ID note cannot drift between routes.
+    if (recs) out += renderRecLines(recs.get(r.unified_title), "    ");
   }
   out += `⚠ The raw exhibit titles for these may be ABBREVIATED beyond recognition — Cerritos's `
       + `ironworker exhibits are literally recorded as "FIW Orientation" and "IW- Mixed Base". So a `
@@ -2369,11 +2396,20 @@ Deno.serve(async (req: Request) => {
     // credential the routes above matched — the fix for Sierra naming one of
     // POST's ten courses. Batched after the fact rather than joined into each
     // RPC so there is a single round-trip however many routes fired.
+    // Declared OUTSIDE the try so the college-credential section below can render
+    // its course lines from the same single lookup. Stays null if the enrichment
+    // throws, which degrades that section to names-only rather than losing it.
+    let recsMap: Map<string, any> | null = null;
     try {
       const titles = [
         ...(stdRecs || []), ...(anyCreds || []), ...(vol || []), ...(adopt || []),
+        // COLLEGE-CRED joins the SAME batch (v45). Its titles come from the same
+        // curated table, so they resolve identically — and batching keeps the
+        // one-round-trip guarantee this block was built around.
+        ...(collegeCreds || []),
       ].map((r: any) => r?.unified_title).filter(Boolean);
       const recs = await fetchCredentialRecs(titles, sb);
+      recsMap = recs;
       credentialContext = buildCredentialContext(stdRecs, anyCreds, recs);
       volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs);
 
@@ -2402,7 +2438,8 @@ Deno.serve(async (req: Request) => {
     // ironworker CPL when it has thirteen is a worse failure than losing
     // recommendation detail, so it must survive the enrichment breaking.
     if (collegeCreds && singleProfile && singleProfile.college) {
-      credentialContext += buildCollegeCredentialContext(collegeCreds, singleProfile.college);
+      credentialContext += buildCollegeCredentialContext(
+        collegeCreds, singleProfile.college, recsMap);
     }
 
     const systemPrompt = buildSystemPrompt(
