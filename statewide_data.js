@@ -196316,7 +196316,7 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA24-1-001|MAPSAS-ASLA25-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
+      "exhibit_id": "MAPSAH-AS(O-1-001|MAPSAH-ASLA-1-001|MAPSAH-ASLL-1-001|MAPSAS-A-SL-1-001|MAPSAS-A-SL2-1-001|MAPSAS-A:SL-1-001|MAPSAS-A:SL1-1-001|MAPSAS-AE-S-1-001|MAPSAS-AESA-1-001|MAPSAS-AESL4-1-001|MAPSAS-AESL5-1-001|MAPSAS-AS-A-1-001|MAPSAS-ASL&-1-001|MAPSAS-ASL1-1-001|MAPSAS-ASL2-1-001|MAPSAS-ASL5-1-001|MAPSAS-ASL6-1-001|MAPSAS-ASLA-1-001|MAPSAS-ASLA1-1-001|MAPSAS-ASLA10-1-001|MAPSAS-ASLA11-1-001|MAPSAS-ASLA15-1-001|MAPSAS-ASLA17-1-001|MAPSAS-ASLA25-1-001|MAPSAS-ASLA4-1-001|MAPSAS-ASLA6-1-001|MAPSAS-ASLA7-1-001|MAPSAS-ASLA9-1-001|MAPSAS-ASLC-1-001",
       "exhibit_ids": [
         "MAPSAH-AS(O-1-001",
         "MAPSAH-ASLA-1-001",
@@ -196341,7 +196341,6 @@ window.CPL_STATEWIDE = {
         "MAPSAS-ASLA11-1-001",
         "MAPSAS-ASLA15-1-001",
         "MAPSAS-ASLA17-1-001",
-        "MAPSAS-ASLA24-1-001",
         "MAPSAS-ASLA25-1-001",
         "MAPSAS-ASLA4-1-001",
         "MAPSAS-ASLA6-1-001",
@@ -244389,8 +244388,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAS-AP1A4-1-001"
       ],
-      "title": "AP Physics 1: Algebra-based (Score of 3)",
-      "unified_title": "AP Physics 1: Algebra-based (Score of 3)",
+      "title": "AP Physics 1: Algebra-based (Score of 3 or higher)",
+      "unified_title": "AP Physics 1: Algebra-based (Score of 3 or higher)",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -244398,7 +244397,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "AP Physics 1: Algebra-based (Score of 3)"
+        "AP Physics 1: Algebra-based (Score of 3 or higher)"
       ],
       "cpl_type": "Standardized Assessment",
       "discipline": "Not Mapped",
@@ -244520,6 +244519,45 @@ window.CPL_STATEWIDE = {
         {
           "course": "LACCD GE 5",
           "credit": "4 hours in Natural Sciences"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
+      "exhibit_id": "MAPSAS-ASLA24-1-001",
+      "exhibit_ids": [
+        "MAPSAS-ASLA24-1-001"
+      ],
+      "title": "AP Spanish Language and Culture (Score of 3 or higher)",
+      "unified_title": "AP Spanish Language and Culture (Score of 3 or higher)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AP Spanish Language and Culture (Score of 3 or higher)"
+      ],
+      "cpl_type": "Standardized Assessment",
+      "discipline": "Not Mapped",
+      "sector": "",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 1,
+      "credit_recs": [
+        {
+          "course": "CPL 1",
+          "credit": "3 hours in Elective Course Credits"
+        },
+        {
+          "course": "LACCD GE 3",
+          "credit": "3 hours in Arts and Humanities"
         }
       ],
       "authoritative_recs": []
@@ -248561,6 +248599,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-08-13T10:29:34",
+  "generated_at": "2026-08-13T13:53:24",
   "total_credit_recs": 12894
 };
