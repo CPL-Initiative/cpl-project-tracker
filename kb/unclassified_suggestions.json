@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-12T07:56:58Z",
- "count": 120,
+ "_generated_at": "2026-08-13T07:58:41Z",
+ "count": 132,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -151,6 +151,22 @@
     "share": 1.0,
     "colleges": 2,
     "scoped": true
+   }
+  ],
+  "Autodesk Certified Professional (ACP) Certification": [
+   {
+    "kind": "cos",
+    "id": "12900-D",
+    "title": "Autodesk Certified Professional in Design for Manufacturing",
+    "org": "Autodesk, Inc."
+   }
+  ],
+  "Autodesk Certified User (ACU) Certification": [
+   {
+    "kind": "cos",
+    "id": "13957-D",
+    "title": "Autodesk Certified User",
+    "org": "Autodesk, Inc."
    }
   ],
   "BIOL 55: Introduction to the Biology of Humans": [
@@ -495,6 +511,14 @@
     "id": "ITIS 160",
     "title": "Introduction to Information Systems Security",
     "code": "CTIS 20"
+   }
+  ],
+  "Cisco Certified Network Professional (CCNP) Security Certification": [
+   {
+    "kind": "cos",
+    "id": "1271-D",
+    "title": "Cisco Certified Network Professional",
+    "org": "Cisco Systems, Inc."
    }
   ],
   "ECON 25: Introduction to Economics": [
@@ -973,6 +997,70 @@
     "code": "MUSG 10"
    }
   ],
+  "Microsoft Certified: Power BI Data Analyst Associate": [
+   {
+    "kind": "cos",
+    "id": "12366-D",
+    "title": "Microsoft Certified: Power BI Data Analyst Associate",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): Excel Associate (Microsoft 365 Apps)": [
+   {
+    "kind": "cos",
+    "id": "12772-D",
+    "title": "Microsoft Office Specialist: Excel Associate (Excel and Excel 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): Excel Associate (Office 2019)": [
+   {
+    "kind": "cos",
+    "id": "12772-D",
+    "title": "Microsoft Office Specialist: Excel Associate (Excel and Excel 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): Outlook Associate (Office 2019)": [
+   {
+    "kind": "cos",
+    "id": "12773-D",
+    "title": "Microsoft Office Specialist: Outlook Associate (Outlook and Outlook 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): PowerPoint Associate (Microsoft 365 Apps)": [
+   {
+    "kind": "cos",
+    "id": "12769-D",
+    "title": "Microsoft Office Specialist: PowerPoint Associate (PowerPoint and PowerPoint 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): PowerPoint Associate (Office 2019)": [
+   {
+    "kind": "cos",
+    "id": "12769-D",
+    "title": "Microsoft Office Specialist: PowerPoint Associate (PowerPoint and PowerPoint 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): Word Associate (Microsoft 365 Apps)": [
+   {
+    "kind": "cos",
+    "id": "12775-D",
+    "title": "Microsoft Office Specialist: Word Associate (Word and Word 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
+  "Microsoft Office Specialist (MOS): Word Associate (Office 2019)": [
+   {
+    "kind": "cos",
+    "id": "12775-D",
+    "title": "Microsoft Office Specialist: Word Associate (Word and Word 2019)",
+    "org": "Microsoft Corporation"
+   }
+  ],
   "PHIL 1A: Theories of Knowledge and Reality": [
    {
     "kind": "cid",
@@ -1059,6 +1147,14 @@
     "share": 1.0,
     "colleges": 4,
     "scoped": true
+   }
+  ],
+  "Qualified Water Efficient Landscaper (QWEL) Certification": [
+   {
+    "kind": "cos",
+    "id": "13375-A",
+    "title": "Qualified Water Efficient Landscaper",
+    "org": "Environmental Protection Agency"
    }
   ],
   "REGN-01 TRANSITION LVN TO RN": [

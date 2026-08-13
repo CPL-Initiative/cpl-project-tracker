@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-12T13:53:51.791061+00:00",
+  "scraped_at": "2026-08-13T07:56:44.059830+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -17,7 +17,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 325,
+      "jst": 326,
       "star": true
     },
     "San Diego Mesa College": {
@@ -52,7 +52,7 @@
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1261,
+      "jst": 1260,
       "star": true
     },
     "Norco College": {
@@ -67,18 +67,18 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 812,
+      "jst": 813,
       "star": true
-    },
-    "Riverside City College": {
-      "vets": 1508,
-      "jst": 816,
-      "star": false
     },
     "De Anza College": {
       "vets": 903,
       "jst": 979,
       "star": true
+    },
+    "Riverside City College": {
+      "vets": 1508,
+      "jst": 815,
+      "star": false
     },
     "El Camino College": {
       "vets": 327,
@@ -217,7 +217,7 @@
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 180,
+      "jst": 181,
       "star": false
     },
     "Mission College": {
@@ -292,7 +292,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 123,
+      "jst": 125,
       "star": true
     },
     "Lassen College": {
@@ -327,7 +327,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 51,
+      "jst": 50,
       "star": false
     },
     "Foothill College": {
@@ -465,11 +465,6 @@
       "jst": 3,
       "star": false
     },
-    "Palomar College": {
-      "vets": 1019,
-      "jst": 2,
-      "star": false
-    },
     "Los Angeles City College": {
       "vets": 301,
       "jst": 150,
@@ -572,6 +567,11 @@
     },
     "Folsom Lake College": {
       "vets": 65,
+      "jst": 0,
+      "star": false
+    },
+    "Palomar College": {
+      "vets": 1019,
       "jst": 0,
       "star": false
     },
