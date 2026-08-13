@@ -159,6 +159,70 @@ M._state.gKind = "all"; M._state.gAudience = ""; M._state.gDays = "";
         "the buttons sit inside the row body, under a header that toggles");
 }
 
+// ── 7. The CI smoke test is excluded, like the feedback pane ────────────────
+// MEASURED 2026-08-13 over the newest 500 conversations: 78 gap rows, 65 of them
+// the CI smoke test — 83%. Sam was looking at a list of "questions Sierra
+// struggled with" that was five parts robot to one part person, and was about to
+// bulk-mark 72 rows of it as handled.
+//
+// It also explains the duplicate pairs he spotted: the smoke suite asks each
+// question twice, so 43% of punts had a SUCCESSFUL answer to the same question
+// within 45 seconds. Never two verdicts on one question — two different probes.
+{
+  const CI = {
+    id: "cccccccc-0000-0000-0000-000000000001",
+    session_id: "smoke-ci",
+    created_at: "2026-08-13T16:51:42.657Z",
+    question: "Who is the CPL contact at San Diego Mesa College?",
+    response: "Based on the information available to me, I don't have the specific "
+      + "CPL coordinator contact details for San Diego Mesa College on hand.",
+    top_similarity: 0.879, topic_match: true, audience: null,
+  };
+  M._state.turns = [MESA, OTHER, CI];
+  M._state.turnReviews = {};
+  M._state.gRev = "open"; M._state.gSmoke = false;
+
+  const ids = M._gapRows().map((t) => t.id);
+  check("a smoke-ci turn is excluded from the gap list by default",
+        !ids.includes(CI.id),
+        "83% of the list was robot traffic before this");
+  check("real turns are unaffected by the exclusion",
+        ids.includes(MESA.id) && ids.includes(OTHER.id));
+
+  M._state.gSmoke = true;
+  check("the toggle brings the CI rows back", M._gapRows().map((t) => t.id).includes(CI.id),
+        "excluding must be visible and reversible, not a silent filter");
+  M._state.gSmoke = false;
+
+  check("the CI marker is matched on session_id, not the response text",
+        /session_id[\s\S]{0,80}\/\^smoke\/i/.test(SRC),
+        "keying on wording would drop real punts that happen to look like the suite's");
+  check("loadTurns actually fetches session_id",
+        /chat_interactions\?select=id,session_id,/.test(SRC),
+        "the column has to be selected or every turn reads as real");
+  M._state.turns = [MESA, OTHER];
+}
+
+// ── 8. Bulk marking, and what it refuses to touch ───────────────────────────
+{
+  check("the gap pane offers a bulk control", /data-gbulk-apply/.test(SRC));
+  check("bulk skips CI rows even when the toggle is showing them",
+        /!isTurnSmoke\(t\) && !\(rv && rv\.status === target\)/.test(SRC),
+        "marking robot traffic handled records a human decision nobody made");
+  check("bulk confirms before writing", /confirm\(/.test(SRC));
+  check("bulk says it does not change Sierra",
+        /does not change how Sierra answers/.test(SRC));
+  check("an RLS-filtered bulk write is treated as a failure",
+        /if \(!Array\.isArray\(out\) \|\| out\.length === 0\) throw new Error\("not saved"\)/.test(SRC));
+}
+
+// ── 9. Themes describe PEOPLE, not the smoke suite ──────────────────────────
+{
+  check("the theme strip is computed from the CI-filtered set",
+        /gapKinds\(t\)\.length > 0 && \(state\.gSmoke \|\| !isTurnSmoke\(t\)\)/.test(SRC),
+        'otherwise the chips read "san x35 / diego x22 / mesa x24" — the robot\'s vocabulary');
+}
+
 // ── Report ──────────────────────────────────────────────────────────────────
 let failed = 0;
 for (const [ok, name] of results) {

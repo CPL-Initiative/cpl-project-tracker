@@ -1931,7 +1931,24 @@
   function loadAll() {
     return Promise.all([
       jget(REST + "/cpl_funding_config?id=eq.default&select=config"),
-      jget(REST + "/map_colleges?select=college_id,college_name&order=college_name"),
+      // entity_kind=neq.test EXCLUDES MAP's sandbox orgs (Sam, 2026-08-13:
+      // "the MAP Custom reports mistakenly let our sandbox environment orgs slip
+      // into the users and contacts reports and now show up in our drop downs").
+      // Seven of them: CabTest / MorTest City / Nortest City / RivTest City /
+      // SantTest Ana / Testing College / NORCO College - Syllabus Manager, plus
+      // CA MAP INITIATIVE COLLEGE (also tagged test).
+      //
+      // The flag was NOT missing — map_colleges.entity_kind already carried the
+      // right value for every one of them. This consumer simply never read it,
+      // which is the same shape as the contacts fossil and the statewide flag:
+      // the data was right and nobody asked it. Filtering here, not upstream,
+      // because MAP fixing its report would clean map_college_users and
+      // map_college_contacts on the daily cron but NOT this lookup table.
+      //
+      // Deliberately neq.test rather than eq.college: partners (Futuro Health,
+      // Launch Apprenticeship) and the two standalone continuing-ed institutions
+      // are real entities and stay.
+      jget(REST + "/map_colleges?select=college_id,college_name&entity_kind=neq.test&order=college_name"),
       jget(REST + "/map_college_credit_summary?select=*"),
       jget(REST + "/map_college_contacts?select=college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on")
     ]).then(function (res) {
