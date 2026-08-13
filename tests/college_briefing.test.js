@@ -861,8 +861,21 @@ const tierCounts = {};
 check("(O) every college in live_metrics resolves to a tier", tiered === 115);
 check("(O) our per-criterion list reconciles with the worker's count for ALL of them",
   mismatches === 0, "a list that does not sum to the printed figure is worse than no list");
-check("(O) tier counts match the published classification",
-  tierCounts.Leading === 14 && tierCounts.Advancing === 89 && tierCounts.Inactive === 12);
+// ⚠️ Do NOT pin the three tier counts as literals. They are LIVE SCRAPED values:
+// a single college crossing a criterion threshold in the daily 06:17 cron moves
+// one between Advancing and Inactive and turns this red with no code change at
+// all (2026-08-13: 89/12 → 88/13, which cost two sessions a diagnosis). The
+// invariant that actually matters is that our tier standing agrees with what the
+// worker PUBLISHED — assert that against the file, not against a remembered number.
+["leading", "advancing", "inactive"].forEach(function (k) {
+  const label = k[0].toUpperCase() + k.slice(1);
+  check(`(O) our ${label} count matches the published classification`,
+    (tierCounts[label] || 0) === (LIVE.tiers[k].colleges || []).length,
+    `we say ${tierCounts[label] || 0}, live_metrics ships ${(LIVE.tiers[k].colleges || []).length}`);
+});
+check("(O) every tier is populated", ["Leading", "Advancing", "Inactive"].every(function (l) {
+  return (tierCounts[l] || 0) > 0;
+}), "an empty tier means the classifier stopped resolving, which the totals alone would hide");
 
 // THE ROUNDING HAZARD, pinned. live_metrics publishes transcriptionRate
 // rounded to one decimal, so a true 24.96% appears as "25.0". Reading the
