@@ -146,10 +146,39 @@ if (!liftErr) {
   /* ── 4. Honest empties ──────────────────────────────────────────────────── */
   const noCand = buildAlignmentContext(
     [ROWS[2]], CRED, "Cerritos College");   // a peer row only
+  // This used to pin the sentence "No Cerritos College course has a similar
+  // title". Sam asked (2026-08-13) that an empty result show the closest match
+  // it could find unless obviously wrong; the honest answer turned out to be
+  // POINT AT THE PEERS, because a recommendation only reaches this branch when
+  // nothing shares a subject word with it — building the nearest-by-wording
+  // version proposed "Introduction to Automotive Electrical" for POST's
+  // "Introduction to Policing". So the assertion now guards the three enduring
+  // guarantees rather than the sentence that happened to carry them.
   check("no similarly-titled course is stated plainly, and points at peers",
-        /No Cerritos College course has a similar title/.test(noCand) &&
-        /different name/.test(noCand),
+        /No Cerritos College course/.test(noCand) &&
+        /different name/.test(noCand) &&
+        /do NOT reach for the nearest-sounding course/.test(noCand),
         "stretching for a match is worse than saying there isn't one");
+
+  /* ── 4b. A capped peer list must never read as a complete one ───────────── */
+  // POST x Cerritos returned 3,807 peer rows against 9 candidates before the RPC
+  // bounded them, which is what buried five C-ID-confirmed matches. The cap is
+  // right; a cap the model cannot see is not.
+  const CAPPED_PEER = {
+    row_kind: "peer", credit_rec: INTRO, rec_course: "x", college_name: "Barstow College",
+    subject: "WELD", course_number: "54B", course_title: "Flux Cored Arc Welding (FCAW)",
+    units: null, score: null, attribution: "per_course", peer_total: 261,
+  };
+  const capped = buildAlignmentContext([CAPPED_PEER], CRED, "Cerritos College");
+  check("a capped peer list states how many of the true total it is showing",
+        /showing 1 of 261/.test(capped) && /never present this as the full list/.test(capped),
+        "a sample that reads as a census is the silent-cap failure this repo keeps rediscovering");
+
+  const whole = buildAlignmentContext(
+    [{ ...CAPPED_PEER, peer_total: 1 }], CRED, "Cerritos College");
+  check("a complete peer list is NOT hedged as a sample",
+        !/showing 1 of/.test(whole),
+        "hedging a full list teaches the model to doubt data that is actually complete");
 
   const noPeer = buildAlignmentContext([ROWS[0]], CRED, "Cerritos College");
   check("an unarticulated recommendation is framed as being FIRST, not as absent",
