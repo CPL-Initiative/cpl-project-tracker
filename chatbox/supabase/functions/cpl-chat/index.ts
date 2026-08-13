@@ -1808,6 +1808,24 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
         ctx += `\n${live.role}: ${live.name || live.email}`;
         if (live.name) ctx += ` (${live.email})`;
         ctx += `\n`;
+        // The instruction travels WITH the contact rather than living in a
+        // separate rule block, so the two can never be separated.
+        //
+        // WHY (Sam, 2026-08-13, a logged punt): asked "Who is the CPL contact at
+        // San Diego Mesa College?" Sierra answered "I don't have the specific
+        // CPL coordinator contact details … on hand" and offered the landing
+        // page instead — while THIS LINE was in her context naming Rachel
+        // Russell. Two other turns on the same question, one of them nine
+        // seconds earlier, answered it correctly, so the data was right and the
+        // model simply hedged. Hedging over a contact you were handed is the
+        // same failure as reporting a zero you can see is wrong: the visitor is
+        // sent away from an answer that exists.
+        ctx += `⚠ THE LINE ABOVE IS THE ANSWER to "who do I contact / who is the CPL `
+            + `contact at <college>". It comes from that college's own MAP designations. `
+            + `STATE THE NAME AND EMAIL PLAINLY. Do NOT say you do not have the contact, `
+            + `do not say it is unavailable, and do not answer only with the landing page `
+            + `or a suggestion to call the counseling office — those are useful ADDITIONS `
+            + `after the name, never a substitute for it.\n`;
       } else {
         // Fallback: the 2026-06-25 snapshot. Reached only when the live read
         // failed or the college has no map_college_contacts row at all (8 such
