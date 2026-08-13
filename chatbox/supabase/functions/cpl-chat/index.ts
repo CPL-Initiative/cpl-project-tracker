@@ -1054,16 +1054,40 @@ function buildAlignmentContext(rows: any[] | null, credential: string, college: 
         }
       }
     } else {
-      out += `  No ${college} course has a similar title. Say that plainly — and note that a `
-          + `peer's choice below may still point at a course this college teaches under a `
-          + `different name.\n`;
+      // Sam, 2026-08-13: "when there is no match it would be helpful to show the
+      // closest match you could find... unless if obviously wrong."
+      //
+      // The closest TRUE thing is the peer list below, not a nearest-by-wording
+      // course. A recommendation reaches this branch only when NO course at this
+      // college shares even one subject word with it — the scorer already returns
+      // the best content match whenever one exists — so anything named here would
+      // be a spelling coincidence. Measured: proposing one gave "Introduction to
+      // Automotive Electrical" for POST's "Introduction to Policing".
+      out += `  No ${college} course shares subject-matter wording with this recommendation. `
+          + `Say that plainly and do NOT reach for the nearest-sounding course — a wrong `
+          + `suggestion here costs more than an honest gap. Point instead at the peer courses `
+          + `below as the concrete thing to look for: this college may well teach the same `
+          + `content under a different name, and the peers show what that content is called `
+          + `elsewhere.\n`;
     }
 
     if (g.peers.length > 0) {
       const exact = g.peers.filter((p) => p.attribution !== "group_wide");
       const group = g.peers.filter((p) => p.attribution === "group_wide");
       if (exact.length > 0) {
-        out += `  Colleges that ALREADY articulate this recommendation, and the course each used:\n`;
+        // NEVER let a capped list read as a complete one. The RPC bounds peers
+        // per recommendation (POST x Cerritos returned 3,807 peer rows before it
+        // did, burying the candidates), and `peer_total` is what it actually
+        // holds. Stating "9 of 261" is the difference between a sample and a
+        // census — the silent-cap failure this repo keeps rediscovering.
+        const shown = exact.length + group.length;
+        const total = g.peers[0] && g.peers[0].peer_total;
+        out += `  Colleges that ALREADY articulate this recommendation, and the course each used`;
+        if (total && total > shown) {
+          out += ` — showing ${shown} of ${total} articulated course entries, so say "for example" `
+              + `or "among others" and never present this as the full list`;
+        }
+        out += `:\n`;
         for (const p of exact) {
           out += `    - ${p.college_name}: ${p.subject} ${p.course_number} — ${p.course_title}\n`;
         }
