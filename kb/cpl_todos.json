@@ -1,98 +1,62 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions) and For Fable (engineering). Items are DELETED when done, never left checked.",
-  "_as_of": "2026-08-13 · SkyBridge — Sierra now names the college's own matching courses, C-ID first.",
-  "_session": 148,
-  "_status": "The alignment feature is LIVE (cpl-chat v42) and Sam's ladder is in: Sierra looks first for a course at that college carrying the SAME C-ID as the credit recommendation — the strongest possible match, because C-ID is the statewide course-identity standard, so the equivalence is already established rather than guessed. If there is no C-ID she falls back to matching titles, and only then to a best-judgement wording match, clearly labelled as such. For POST at Cerritos, nine of the ten recommendations now land on exactly one course and six of those are exact C-ID matches; the tenth honestly returns nothing. One line is deliberately flagged: POST lists the same C-ID against two different recommendations, so the match there looks odd and Sierra is told to say so rather than hide it or claim the courses are equivalent. Earlier today she also started reading the full credit-recommendation sets, 38 hidden statewide exhibits came back into view, and the military/non-military split was measured. Next: real testing, with feedback through the Sierra Training tab.",
+  "_as_of": "2026-08-13 · SkyTop — the answer looked right, and five confirmed matches were being dropped.",
+  "_session": 149,
+  "_status": "Two things were quietly broken and both are now fixed and live. First: when Sierra was asked whether Cerritos should adopt the POST police-academy credit, she told faculty to 'go check your catalog' for five courses Cerritos already teaches — and which we already held, matched by C-ID, the statewide course-identity standard. The data was right the whole time; the answer was drowning it. Two causes: a limit that trimmed one half of the results but left the other half unbounded (3,807 rows of 'here is what other colleges did' against 9 rows of 'here is your own matching course'), and peer colleges' own phrasing being treated as if it were a real recommendation — so POST's TEN recommendations became FORTY-THREE, most of them phantoms that each honestly reported 'no match'. Second: the Cerritos ironworker question Sam has reported three times. He asked as a student would — 'I have a journey worker license as Iron and Steel worker' — and got nothing, against thirteen real Cerritos ironworker credentials. Three separate causes, including that we never searched the awarding body (three of those thirteen are only findable through 'Field Ironworkers Local 416' — their own titles say nothing about iron) and that the word 'iron' was never actually asked, having fallen off the end of an internal list. That one is not a Cerritos quirk: 90% of our credentials have an issuer carrying a word that appears nowhere in the title. Sam has also set the direction for the next piece — a Common CR Reference, matched on many factors the way the CCR is, with C-ID as one signal among several rather than the key.",
   "items": [
     {
-      "id": "s148-test-ladder",
+      "id": "s149-test-ironworker",
       "for": "Sam",
       "tab": "CPL Assistant",
-      "text": "Re-ask the Cerritos POST question. She should now name AJ 101, AJ 102, AJ 103, AJ 104, AJ 107 and AJ 222 by C-ID rather than telling faculty to go look. The line worth watching is Physical Training and Health Education — POST lists the same C-ID twice, so that match looks odd on purpose and she is told to say so. If the wording there reads badly, that is the first thing to fix."
+      "text": "Re-ask the ironworker question — 'I have a journey worker license as Iron and Steel worker. What CPL can I get here?' — with Cerritos selected. She should now name the Ironworker Apprenticeship credentials, including the three whose own titles say nothing about ironwork (FIW Orientation, Foreman Training, Post Tensioning 3). This is the one you have reported three times; it is the acceptance test."
     },
     {
-      "id": "s148-alignment-tuning",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "C-ID coverage is partial (16,067 of 141,696 courses, 112 colleges), so transfer-heavy subjects land on the strong rung while CTE often falls through to the wording match — which was tuned on welding and is weakest there. Do NOT loosen it to catch more, and do not merge the rungs into one score: a wrong-looking suggestion costs more than a missed one."
-    },
-    {
-      "id": "s148-test-alignment",
+      "id": "s149-test-post-again",
       "for": "Sam",
       "tab": "CPL Assistant",
-      "text": "Try it: pick a college and ask Sierra about a certificate they have not adopted yet — she should name that college's own closest courses AND how other colleges articulated the same thing. The welding example to start with is Cerritos and the FCAW welder qualification. Nobody has read her actual wording yet, so this is the real test."
+      "text": "Re-ask the Cerritos POST question. All six C-ID matches should now appear (AJ 101, 102, 103, 104, 107, 222) instead of 'check your catalog'. The line worth watching is Physical Training and Health Education — it shares a C-ID with Intro to Administration of Justice, so it is deliberately flagged as a mismatch rather than quietly resolved."
     },
     {
-      "id": "s148-alignment-feedback",
+      "id": "s149-cr-reference-factors",
       "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "When a suggestion looks wrong, use the thumbs-down and then 'Write an instruction about this' on the Sierra Training tab. That is how this feature gets corrected — the 25 older untriaged items are now in the way of that, so clearing them is worth an hour."
+      "tab": "—",
+      "text": "Confirm the matching factors for the Common CR Reference. You named title, course name and number, course description, subject, 'etc.' — the etc. is doing real work and it has been recorded as illustrative, not final. Worth pinning down before anything gets built."
     },
     {
-      "id": "s148-bucket-military-crs",
-      "for": "Fable",
-      "tab": "Course Credit",
-      "text": "Split military from non-military wherever a college sees an 'awaiting action' total. Right now the million-plus units is 98.8% military — a service member's transcript brings ~17 recommendations at once, while a certificate brings 1 or 2. Undifferentiated, it reads as an impossible mountain and hides the genuinely achievable part: 10,698 units across 868 students at 28 colleges. Lead with that, then give the military figure with its per-student context. Never present the military bucket as lesser — it all still needs acting on."
-    },
-    {
-      "id": "s148-offerings-caps",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "The course-catalogue table Sierra searches keeps only the first 900 characters of course titles and 8 sample courses per program. 801 programs are cut off — the biggest ones. So for those, Sierra cannot see most of the courses a college teaches. Worth fixing on its own, separately from the alignment work."
-    },
-    {
-      "id": "s148-cerritos-false-absence",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "Still open from last session: Sierra says Cerritos has no ironworker CPL when it has a lot. The exhibit list stores the titles as 'FIW Orientation' and 'IW- Mixed Base' — no 'iron' anywhere — while the curated list has 11 rows named 'Ironworker Apprenticeship'. The college-specific search never checks the curated names."
-    },
-    {
-      "id": "s148-mission-gmail",
+      "id": "s149-rcc-contact",
       "for": "Sam",
       "tab": "MAP Users",
-      "text": "Mission College's CPL coordinator email in MAP is a personal Gmail address (boothmelanie@gmail.com). It is the only one like it across all 123 colleges, and because it is first in the cascade it is what we would propose as the address students get routed to. It is flagged on the tab, not hidden — it is their designation to change, not ours. Worth a word with the MAP team."
+      "text": "You flagged 'Wrong contact information for RCC' when asking about Riverside firefighter CPL. Confirming what the right contact is would let this be fixed — MAP is read-only for us, so it would land as a proposed fill rather than a change to MAP itself."
     },
     {
-      "id": "s148-search-tier-candidates",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "7 college contacts are marked 'Candidate — confirm' because we could only find them through a web search, never opening the actual page. Confirming each takes seconds using the links on the tab. Start with Palomar (it has a separate behavioural-health department, so the wrong address is a real risk) and Canyons."
-    },
-    {
-      "id": "s148-cluster-surface",
-      "for": "Sam",
-      "tab": "Credential Reference",
-      "text": "A finding worth a decision: the 36 never-adopted statewide credentials share courses heavily — only 32 distinct courses between them, and 'Introduction to Construction Safety' alone unlocks 12. A college that adds one or two courses could articulate a dozen statewide standards. Want this built as a view colleges can use?"
-    },
-    {
-      "id": "s148-sierra-feedback-backlog",
+      "id": "s149-export-request",
       "for": "Sam",
       "tab": "Sierra Training",
-      "text": "25 pieces of feedback about Sierra have never been triaged — the oldest has been sitting since 1 July. The tab now has buttons to mark each one and to write an instruction about it. This is the single easiest way to make Sierra better."
+      "text": "Someone asked, after a good answer about students served statewide, whether they could export or download it to share with constituents. Worth deciding whether Sierra answers get a copy/export affordance — it was a thumbs-up, so the ask came from a satisfied user."
     },
     {
-      "id": "s148-statewide-missing-12",
-      "for": "Fable",
-      "tab": "Credential Reference",
-      "text": "12 credentials are marked statewide in the adoption file but are missing from Sierra's credential list entirely, so she cannot answer about them at all."
-    },
-    {
-      "id": "s147-corpus-coverage",
+      "id": "s149-read-the-prose",
       "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "Sierra's exhibit list covers 59 of the 123 colleges, and the college profiles behind it have not been refreshed since 25 June. Any 'no college does this' answer she gives is measured against half the system."
+      "text": "Both defects this run were found in an answer Sam pasted back, not in the code — the database function and the renderer each verified clean on their own, and the loss was between them. Sessions cannot reach Sierra from the sandbox, so the live answer is the only place this class of bug is visible. Ask for one."
     },
     {
-      "id": "s146-site-phrase-superset",
-      "for": "Sam",
-      "tab": "Team Phrases",
-      "text": "Decision needed before the Finance phrase goes to anyone in Finance: right now a site phrase opens its own tabs PLUS every shared CPL tab. That is fine only if everyone holding it should see all shared CPL data. If not, the scopes need splitting."
-    },
-    {
-      "id": "s145-identity-crosswalk-write",
+      "id": "s149-cr-reference-scope",
       "for": "Fable",
-      "tab": "Colleges",
-      "text": "The college/district name crosswalk is built and verified but has never been written to the database — that write is what actually ends the 'Mt San Antonio vs Mt. San Antonio' mismatch."
+      "tab": "—",
+      "text": "Scope the Common CR Reference against how the CCR actually matches courses, before building. Starting numbers: 2,344 distinct recommendation wordings, and only about 7% of them collapse by tidying punctuation and casing — so this is curation work, not text cleanup. Only 17% carry a C-ID at all."
+    },
+    {
+      "id": "s149-statewide-titles-missing",
+      "for": "Fable",
+      "tab": "Credential Reference",
+      "text": "12 credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried over from the previous session."
+    },
+    {
+      "id": "s149-profiles-stale",
+      "for": "Fable",
+      "tab": "CPL Assistant",
+      "text": "The college profile data Sierra reads has not been refreshed since 25 June, and the exhibit corpus still covers only 59 of 123 colleges. A college we cannot see is a blind spot, never a zero — and this run is a reminder of how expensive a false zero is."
     }
   ]
 }

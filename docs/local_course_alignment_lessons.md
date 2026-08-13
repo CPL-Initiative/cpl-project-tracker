@@ -309,3 +309,123 @@ improvement it was written to protect.
 
 Sierra's prose at v42 is still unread from a session (egress). Ask the Cerritos
 POST question; the flagged `AJ 110` line is the one most likely to need rewording.
+
+---
+
+## 2026-08-13 (next day, same corpus) — SkyTop: the answer looked right
+
+Sam ran the acceptance case himself on live v42 and sent the prose back. It read
+well. That is why the defect had survived three deploys.
+
+### (a) What was learned
+
+**THE RPC WAS RIGHT AND THE ANSWER WAS WRONG.** Asked whether Cerritos should
+adopt POST Basic Academy, Sierra reported *"⬜ No close title match found —
+check catalog"* for five recommendations whose courses Cerritos **already
+teaches**, and which `credential_alignment_for_college` was returning correctly:
+`AJ 102`, `AJ 103`, `AJ 101`, `AJ 107`, `AJ 222`. Only `AJ 124 → AJ 104` made it
+through. #1158 had built rung 1 correctly; something downstream was eating it.
+
+The loss was **between the RPC and the answer**, which is a place nobody had
+looked, because both ends verified clean.
+
+**⭐ `per_rec` BOUNDED ONE SIDE OF A UNION.** The call returned **3,807 peer
+rows beside 9 candidates**. `where p.rn <= per_rec` sits only on `picked`; the
+`peers` CTE had no bound at all. `buildAlignmentContext` renders every row it
+receives, so nine candidate lines were interleaved into ~3,800 peer lines and
+the model summarised what dominated. Those "peer colleges use ADJUS 120, ADMJ
+52…" bullets in his answer *are* the peer rows, standing in for the answer.
+Durable: `methodology-bound-both-sides-of-a-union`.
+
+**⭐ THE PEERS WERE NEVER RESOLVED TO THE RECOMMENDATION SET.** `recs_raw`
+correctly drops peer wordings when a statewide set exists — and the `peers` CTE
+keyed on the peer's *own* `credit_rec` text with no equivalent gate. So peers
+arrived under **43 wordings where POST's statewide set is TEN**, and grouping by
+`credit_rec` manufactured **~34 phantom recommendation groups**, each rendering
+the honest sentence *"No course has a similar title"* against a recommendation
+that does not exist.
+
+That is the sharp part: **a phantom empty group is indistinguishable from a real
+one.** A reader counting "6 of 10 unmatched" concludes the college is
+unprepared; in fact 6 of 6 real recommendations matched. Durable:
+`methodology-a-grouping-key-must-come-from-the-authoritative-set`.
+
+| | before | after |
+|---|---|---|
+| recommendation groups | 43 | **10** |
+| total rows | 3,816 | **94** |
+| C-ID matches rendered | 1 of 6 | **6 of 6** |
+
+Gating cost **one peer college of 31**. The `AJ 110` repeat stays flagged. The
+welding acceptance case is unchanged (`WELD 214L` 0.761 / 0.668).
+
+### (b) Sam's fallback request — built, measured, withdrawn
+
+> *"When there is no match … show the closest match you could find … unless if
+> obviously wrong. Maybe even list it but with a note that it appears to be a
+> mismatch."*
+
+Built as a `fallback` tier. It proposed **`AUTO 160 — Introduction to Automotive
+Electrical`** for *Introduction to Policing*, on the word "introduction" — the
+`ART 100` failure verbatim. Zero other firings across 40 credentials.
+
+**It cannot be tuned, for a structural reason.** `picked` already returns the
+best row whenever *any* course shares a content token, so a recommendation with
+no candidate is one where **nothing shares a subject word** — every candidate
+there is a spelling coincidence, i.e. "obviously wrong" by his own qualifier.
+
+His *request* was right; only the *mechanism* was wrong. The six empty rows he
+saw were phantom groups, so fixing the grouping key answered him at source. Real
+empties now point at the peer courses — the closest true thing we hold — and the
+renderer forbids reaching for the nearest-sounding course.
+
+### (c) Current state
+
+Live: **cpl-chat v43** (renderer) on top of two migrations
+(`alignment_gate_peers_to_recs_and_cap`,
+`alignment_drop_fallback_keep_peer_gate`). `peer_total` ships as a column so the
+renderer can say *"showing 9 of 261"* — a capped list must never read as a
+census. `tests/sierra_alignment.test.js` **24 → 26**.
+
+An assertion pinning `"No Cerritos College course has a similar title"` had to
+be rewritten to guard the enduring guarantees instead of the sentence — the same
+trap #1158 hit. **That is now twice in two sessions**; when writing an assertion
+about prompt text, pin the guarantee, not the wording.
+
+### (d) Next concrete step
+
+Sierra's prose at v43/v44 is still unread from a session (egress). Sam re-runs
+the acceptance case; the flagged `AJ 110` line remains the most likely to need
+rewording.
+
+### The successor — a Common CR Reference (Sam, 2026-08-13)
+
+Sam, reading the 43-wordings finding: *"Makes me think we should have a Common
+CR Reference just as we have pretty well developed CER, CSR, and the beginnings
+of a CCR."* Then, correcting the session's proposed design:
+
+> *"CID is only one factor in determining common CR references. Similar to the
+> CCR, we take into account matching factors like title, course name and number,
+> course description, subject, etc."*
+
+He is right, and the measurement argues it harder than the session's own
+caution did. The session had flagged that C-ID over-merges (POST carries
+`AJ 110` on two different lines). The larger half: **only 402 of 2,344 distinct
+`credit_rec` strings carry a C-ID at all (~17%)** — so a C-ID-keyed reference
+strands ~1,942 strings as their own canonical and leaves the 43-wordings problem
+entirely unsolved. C-ID-as-key fails in **both** directions.
+
+Scale of the vocabulary:
+
+| | |
+|---|---|
+| distinct `credit_rec` strings | **2,344** |
+| after mechanical normalisation | 2,187 — **only ~7% collapse** |
+| strings carrying a C-ID | 402 → **175 distinct C-IDs** |
+| C-IDs with 2+ wordings | 81 — worst `AJ 110` → **10 wordings** |
+| curated spine already in place | 351 statewide lines / 134 credentials |
+
+The 7% is the tell: this is a **curation** problem, not string-cleaning —
+exactly the CER's situation with freehand credential titles. Recorded as
+`cpl_memory` `common-cr-reference-is-multi-factor-not-cid-keyed`, verified,
+attributed to Sam, with his factor list held as *illustrative, not exhaustive*.

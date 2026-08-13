@@ -275,3 +275,106 @@ actually list the ten courses" — is invisible to a grep. Doing that forced
 optional parameters; **both broke a sibling test at lift time with a `SyntaxError`
 pointing at the parameter rather than at the signature that changed.** One
 stripper in the repo, not two.
+
+---
+
+## 2026-08-13 — SkyTop: the false zero, and the three defects behind it
+
+The Cerritos ironworker false absence has been carried as a diagnosed-not-fixed
+item across three sessions. It is fixed. It was never one defect.
+
+### (a) What was learned
+
+Sam asked, as a student would, and reported it twice — the second time at
+**12:04 UTC on 2026-08-13, four hours after v42 shipped**:
+
+> *"I have a journey worker license as Iron and Steel worker. What CPL can I get
+> here?"* → nothing.
+> *"You should have data on iron and steel articulations at Cerritos."*
+
+Cerritos has **thirteen** ironworker credentials. Three independent defects hid
+them, and none of the week's alignment work touched any of them.
+
+**① The raw corpus abbreviates, and there was no curated route beside it.**
+`search_exhibits_by_topic_v2('iron')` returns **0 STATEWIDE** — there is no
+"iron" substring anywhere in `chatbox_exhibits`. The prior diagnosis framed this
+as a Cerritos problem; it is corpus-wide. And there was **no college-scoped
+curated credential search in existence**, so for a named college the raw corpus
+was the only thing ever asked.
+
+**② `search_credentials_any` never searched `issuer` or `trainer`.** It is a
+whole-string `LIKE` matcher over title and variants only. So the plural failed
+outright (`ironworkers` → **0**, `ironworker` → 25), and the awarding bodies —
+*Field Ironworkers Local 416*, *International Association of … Reinforcing Iron
+Workers* — were invisible.
+
+**③ The route reaching LOCAL credentials had the narrowest probe budget.**
+`fetchAnyCredentials` used 3 pairs / 3 singles against 4/4 elsewhere. Simulated
+against Sam's actual sentence, keywords are `[journey, worker, license, iron,
+steel, worker]` and the probes were `[journey worker, worker license, license
+iron, journey, worker, license]` — **"iron" was never asked**, while
+`search_credentials_any('iron')` returns 25 rows. The subject of the sentence
+was dropped by a `slice`.
+
+**⭐ It generalises far past Cerritos.** Measured across the 1,987-credential
+catalogue:
+
+| | |
+|---|---|
+| issuer carries a word absent from title **and** all variants | **1,795 (90%)** |
+| curated title carries a word absent from every raw variant | **597 (30%)**, 465 adopted somewhere |
+
+So the name-only search was structurally unable to find a large fraction of the
+catalogue by the term a person would actually use.
+
+### (b) What shipped
+
+Migration `credential_search_issuer_plural_and_college_scope`:
+
+- **`search_college_credentials(asked, college, limit)`** — the curated names a
+  *named college* has articulated. Runs **unconditionally** when a college is
+  known, deliberately not gated on the topic route being empty: the raw corpus
+  returning rows does not mean it returned the *right* rows.
+- **`cx_credential_match_tier()`** — one shared ladder so the two entry points
+  cannot drift. Tiers 1–4 unchanged; **new tier 5 issuer/trainer**, **tier 6
+  `search_text`**, both below the title tiers because an issuer match is weaker
+  evidence. Ranking still scores the **best single name**, never the
+  concatenation.
+- **`cx_needles()`** — singular/plural folding, mirroring `synonymKeys()`.
+- `fetchAnyCredentials` widened to 4/4/8.
+
+Result: `search_college_credentials('iron','Cerritos College')` → **all 13**.
+Ten at tier 3 by title; **three at tier 5** (`FIW Orientation`, `Foreman
+Training`, `Post Tensioning 3`) that **no query could reach before**, because
+only their issuer says "iron". Plural works. No regression on welding/CompTIA.
+Live as **cpl-chat v44**. `tests/sierra_college_credentials.test.js` — 18 checks.
+
+### (c) The two guards that matter in the renderer
+
+**A false zero is the worst answer Sierra can give.** A wrong answer invites
+correction; *"there is nothing"* closes the conversation and nobody files
+feedback about a door they were told did not exist. Sam only caught it because
+he already knew the answer. So:
+
+- the section carries an explicit instruction — *never say a college has none of
+  something when this section lists it* — plus the concrete abbreviation example
+  rather than an abstract warning;
+- it is appended **outside** the recommendation `try/catch`, because both
+  branches rebuild `credentialContext` from scratch and a false zero must
+  survive the enrichment breaking;
+- a tier-5 hit **discloses** that the title did not match, so the model never
+  reports `FIW Orientation` as though the college named it for ironwork.
+
+Durable: `methodology-search-the-awarding-body-not-just-the-name`.
+
+### (d) Current state and next step
+
+Open from the 5-row feedback queue (Sam had triaged the backlog from 25 down to
+5 himself): **"Wrong contact information for RCC"** and an up-rated **export /
+download** request. Still open corpus-wide: `chatbox_college_profiles` stale
+since 2026-06-25; 12 adoption-file statewide titles absent from
+`chatbox_credentials`; corpus covers 59 of 123 colleges.
+
+Next: Sam re-asks the ironworker question against v44 to confirm the prose —
+sessions remain egress-blocked from `*.supabase.co`, so no session has read her
+actual words on this path.

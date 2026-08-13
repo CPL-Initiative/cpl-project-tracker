@@ -4012,3 +4012,27 @@ now states current truth only (P3 + P5 remaining).
 ### docs/INDEX.md update history — entries retired 2026-08-13
 
 - **2026-08-10** — SkyDeck: CAC apprenticeship-pathway slides rebuilt from flattened PNGs (3 → 6 slides, 3-click builds, speaker notes on all 15 + a printable run sheet); ⭐ the re-key caught two source unit totals that do not reconcile because the originals clipped their own tables; pre-apprenticeship CPL mechanisms recorded from Sam.
+
+
+### SkyBridge — the gate nobody knew was a gate (2026-08-13, Session 148)
+
+Wire Sierra to SkyPeak's 2,205 rows, check MAP Users contacts, experiment with local↔adoption alignment.
+Two PRs (**#1150**, **#1151**), one migration, **cpl-chat v40 live**.
+⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary.** It is derived from *adoptions*, and
+`search_statewide_recommendations` required it non-null — so **38 never-adopted statewide credentials (36 carrying
+75 published rec lines)** were **excluded from every credential route**, not merely ranked last. The whole
+construction shelf MAP builds ahead of demand — the inverse of Sam's *prominent choices for adoption* ruling.
+⭐ **Two bands, not one re-sorted list**: "N peers already articulate it" said of a zero-adopter credential
+fabricates a route, so `ready_to_adopt` is slot-reserved and separately labelled.
+⭐ **The shelf collapses to 32 distinct courses**, one of which (*Introduction to Construction Safety*) unlocks **12**.
+⭐ **MAP Users was SOUND** — I expected the raw-string join bug; it wasn't there, and I said so rather than
+manufacture a fix. Real findings: a personal Gmail first in Mission College's cascade, and a trailing-space
+fragility caught before it fired.
+⭐ **Then the alignment layer SHIPPED** (#1153/#1154/#1155, **v41**): peer articulations 9,413 · college courses
+141,696 · one RPC returning both. Cerritos `WELD 214L` tops both FCAW recs, with Barstow's near-identical course as
+corroboration. It needs TWO signals — Santa Ana mapped courses whose titles contain no "FCAW".
+⚠️ **The first scorer ranked `ART 100 Introduction To World Art` third for a WELDING rec.** A plausible false
+positive costs more than a missed match on a trust-building surface; content-token gate added.
+Durable: `methodology-a-summary-field-can-be-a-retrieval-gate`, `methodology-two-signals-for-a-judgment-proposal`,
+`methodology-an-unadopted-item-is-a-shelf-not-an-absence`, `methodology-a-false-positive-costs-more-than-a-miss`.
+Story: `docs/sierra_credit_recs_lessons.md` · `docs/local_course_alignment_lessons.md` · handoff `docs/session_149_handoff.md`.
