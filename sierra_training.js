@@ -158,7 +158,7 @@
     gKind: "all", gAudience: "", gDays: "",
     // Gap-pane review filter. Defaults to "open" so the pane shows what is
     // still outstanding, not every question Sierra ever struggled with.
-    gRev: "open", turnReviews: {},
+    gRev: "open", turnReviews: {}, gSmoke: false, gBulkBusy: false,
     gOpen: {},         // interaction id → expanded
     busy: {},          // turn_id → status write in flight
     bulkStatus: "triaged", bulkBusy: false,
@@ -452,7 +452,7 @@
     });
   }
   function loadTurns() {
-    var url = REST + "/chat_interactions?select=id,created_at,question,response,top_similarity,topic_match,audience"
+    var url = REST + "/chat_interactions?select=id,session_id,created_at,question,response,top_similarity,topic_match,audience"
       + "&order=created_at.desc&limit=" + TURN_LIMIT;
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("turns " + r.status);
@@ -514,6 +514,51 @@
       alert("Could not save that — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
+    });
+  }
+
+  // Bulk-mark every row currently shown. Sequential, like the feedback pane's
+  // bulkTriage — the list is small once the CI rows are excluded (13 real rows
+  // on the day this shipped, against 78 before), and there is no batch endpoint.
+  //
+  // CI rows are skipped even when the toggle is showing them: marking robot
+  // traffic "handled" would be recording a human decision about something no
+  // human asked, and it is the same reasoning that keeps them out of bulkTriage.
+  function bulkTurnReview(root) {
+    if (state.gBulkBusy) return Promise.resolve();
+    var target = state.gBulkStatus || TURN_STATUSES[0];
+    var rows = gapRows().filter(function (t) {
+      var rv = (state.turnReviews || {})[t.id];
+      return !isTurnSmoke(t) && !(rv && rv.status === target);
+    });
+    if (!rows.length) { alert('Every row shown is already "' + turnStatusLabel(target) + '".'); return Promise.resolve(); }
+    if (!confirm("Mark " + rows.length + " question(s) as " + turnStatusLabel(target)
+                 + "?\n\nThis only clears them off the still-to-do list — it does not change how Sierra answers.")) {
+      return Promise.resolve();
+    }
+    state.gBulkBusy = true; render(root);
+    var s2 = getSession();
+    var by = (s2 && s2.email) || "(unknown)";
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    var at = new Date().toISOString();
+    return fetch(REST + "/sierra_turn_review", {
+      method: "POST", headers: h,
+      body: JSON.stringify(rows.map(function (t) {
+        return { turn_id: t.id, status: target, updated_by: by, updated_at: at };
+      })),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("bulk " + r.status);
+      return r.json();
+    }).then(function (out) {
+      // 200 with an empty body means RLS filtered the whole write.
+      if (!Array.isArray(out) || out.length === 0) throw new Error("not saved");
+      out.forEach(function (rv) { state.turnReviews[rv.turn_id] = rv; });
+    }).catch(function () {
+      alert("Could not mark those — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+    }).then(function () {
+      state.gBulkBusy = false; render(root);
     });
   }
 
@@ -706,6 +751,20 @@
   // curl, `status` is the durable server-side label. They cannot disagree: the DB
   // derives 'ci' from page='smoke'.
   function isSmoke(f) { return !!f && (f.page === "smoke" || f.status === "ci"); }
+  // The SAME exclusion for the gap pane, which never had one.
+  //
+  // MEASURED 2026-08-13, over the newest 500 conversations: of the 78 rows this
+  // pane was showing, 65 were the CI smoke test — 83%. Sam was looking at a list
+  // of 78 "questions Sierra struggled with" of which only 13 were real, and was
+  // about to bulk-mark 72 rows of robot traffic as handled.
+  //
+  // It also explains the duplicate pairs: the smoke test asks each question
+  // twice, so 43% of punts had a SUCCESSFUL answer to the same question within
+  // 45 seconds. Those were never two verdicts on one question — they were two
+  // different probes, one of which is meant to have no college context.
+  function isTurnSmoke(t) {
+    return !!t && typeof t.session_id === "string" && /^smoke/i.test(t.session_id);
+  }
   function filteredFeedback() {
     var rows = (state.feedback || []).slice();
     if (!state.fSmoke) rows = rows.filter(function (f) { return !isSmoke(f); });
@@ -798,6 +857,7 @@
   // ── Gap miner ──
   function gapRows() {
     var rows = (state.turns || []).filter(function (t) { return gapKinds(t).length > 0; });
+    if (!state.gSmoke) rows = rows.filter(function (t) { return !isTurnSmoke(t); });
     if (state.gKind === "low-sim") rows = rows.filter(isLowSim);
     else if (state.gKind === "punt") rows = rows.filter(isPunt);
     if (state.gAudience) rows = rows.filter(function (t) { return ((t.audience || "(not set)")) === state.gAudience; });
@@ -988,7 +1048,14 @@
     // the number means nothing.
     var fb = state.fSmoke ? fbAll : fbAll.filter(function (f) { return !isSmoke(f); });
     var turns = state.turns || [];
-    var gaps = turns.filter(function (t) { return gapKinds(t).length > 0; });
+    // Excludes the CI smoke test, like the gap list itself — otherwise the
+    // theme chips and the audience counts describe the robot's vocabulary. On
+    // 2026-08-13 the top themes read "san ×35 · contact ×24 · diego ×22 ·
+    // mesa ×24", which is the smoke suite asking about San Diego Mesa, not a
+    // pattern in what people want.
+    var gaps = turns.filter(function (t) {
+      return gapKinds(t).length > 0 && (state.gSmoke || !isTurnSmoke(t));
+    });
     var openCount = fb.filter(function (f) { return (f.status || "new") !== "addressed"; }).length;
     var downCount = fb.filter(function (f) { return f.rating === "down"; }).length;
     var activeGuidance = (state.guidance || []).filter(function (r) { return r.active; }).length;
@@ -1050,6 +1117,11 @@
 
     // ── Pane 2: gap miner ──
     var g = gapRows();
+    // How many the CI toggle is hiding — printed on the label so the exclusion
+    // is visible rather than a silent filter.
+    var gapSmokeCount = (state.turns || []).filter(function (t) {
+      return gapKinds(t).length > 0 && isTurnSmoke(t);
+    }).length;
     var themes = themeCounts(gaps);
     var byAud = audienceCounts(gaps);
     html += "<h3>⛏️ Questions Sierra struggled with <span class=\"sit-meta\">(from the newest "
@@ -1075,9 +1147,24 @@
           + esc(turnStatusLabel(s2)) + "</option>";
       }).join("")
       + "</select>"
+      + '<label class="sit-check sit-check-dim" title="The CI smoke test asks a fixed set of questions on every deploy, twice each — robot traffic, not people. They were 83% of this list before being excluded.">'
+      + '<input type="checkbox" data-g-smoke' + (state.gSmoke ? " checked" : "") + "> include "
+      + gapSmokeCount + " automated test messages</label>"
       + '<select class="sit-select" data-g="gDays" aria-label="How far back to look" title="' + esc(HELP.days) + '">'
       + dayOptions(state.gDays) + "</select>"
       + '<span class="sit-meta">' + Object.keys(byAud).sort().map(function (a) { return esc(a) + " " + byAud[a]; }).join(" · ") + "</span>"
+      + '<span class="sit-bulk" title="Marks every row currently shown. It does not change how Sierra answers — it only clears them off the still-to-do list.">Mark all ' + g.length + " shown as "
+      + '<select class="sit-select" data-gbulk-status aria-label="State to set them all to"'
+      + ' title="What to mark every shown row as. &quot;Handled&quot; means you have dealt with it — '
+      + 'an instruction is written, or Sierra answers it correctly now. &quot;Leave it&quot; means there is '
+      + 'nothing to do. Neither changes how Sierra answers.">'
+      + TURN_STATUSES.map(function (s2) {
+        return '<option value="' + s2 + '"' + (state.gBulkStatus === s2 ? " selected" : "") + ">"
+          + esc(turnStatusLabel(s2)) + "</option>";
+      }).join("")
+      + "</select>"
+      + '<button class="sit-btn" data-gbulk-apply' + (state.gBulkBusy || !g.length ? " disabled" : "") + ">"
+      + (state.gBulkBusy ? "Working…" : "Apply") + "</button></span>"
       + '<span class="sit-count">' + g.length + " of " + gaps.length + "</span>"
       + "</div>";
     if (!g.length) {
@@ -1165,6 +1252,14 @@
     if (note) note.addEventListener("change", function () { state.fNote = note.checked; render(root); });
     var smoke = root.querySelector("[data-f-smoke]");
     if (smoke) smoke.addEventListener("change", function () { state.fSmoke = smoke.checked; render(root); });
+    var gsm = root.querySelector("[data-g-smoke]");
+    if (gsm) gsm.addEventListener("change", function () {
+      state.gSmoke = !!gsm.checked; render(root);
+    });
+    var gbs = root.querySelector("[data-gbulk-status]");
+    if (gbs) gbs.addEventListener("change", function () { state.gBulkStatus = gbs.value; });
+    var gba = root.querySelector("[data-gbulk-apply]");
+    if (gba) gba.addEventListener("click", function () { bulkTurnReview(root); });
     root.querySelectorAll("[data-turnrev]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
         e.stopPropagation();
