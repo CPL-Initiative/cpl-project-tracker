@@ -129,9 +129,15 @@ check("an empty or missing address produces no warning",
 /* ── 3. The flag WARNS, it does not filter ────────────────────────────────── */
 // Filtering would drop a real MAP designation off the worklist, which is both a
 // silent data loss and a decision the college gets to make, not us.
+// Guards the BEHAVIOUR, not the call site. This used to pin the exact
+// expression `addressWarning(g.proposed_email)`, and broke the moment that call
+// moved into proposalCell() — while the guarantee it exists to protect was
+// completely intact. A test that pins an implementation detail reports a
+// refactor as a regression and tells you nothing about the rule.
 check("addressWarning is rendered as a warning, never used to drop a row",
-      /addressWarning\(g\.proposed_email\)/.test(src) &&
-      !/filter\([^)]*addressWarning/.test(src),
+      /addressWarning\(/.test(src) &&
+      !/filter\([^)]*addressWarning/.test(src) &&
+      !/if\s*\(\s*addressWarning\([^)]*\)\s*\)\s*(return|continue)/.test(src),
       "no code path may exclude a proposal because of its address");
 
 check("the warning ships its explanation in a title attribute",

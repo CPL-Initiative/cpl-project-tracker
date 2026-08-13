@@ -29,7 +29,10 @@
   var state = { summary: null, loading: false, error: null, q: "", sort: "users",
                 rosterOpen: {}, nudges: {},
                 // lens: "all" = the roster view; "gaps" = the student-contact worklist
-                lens: "all", gaps: null, gapsError: null };
+                lens: "all", gaps: null, gapsError: null,
+                // Curator-proposed contacts, keyed on the TRIMMED college name.
+                // `propEdit` is the college whose editor is open (one at a time).
+                proposals: {}, propEdit: null, propBusy: false, propErr: null };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -86,6 +89,18 @@
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
       ".mapu-roles { display:flex; flex-wrap:wrap; gap:4px; }",
       ".mapu-chip { font-size:.68rem; background: var(--surface-muted); color: var(--text-muted); border-radius:10px; padding:1px 8px; white-space:nowrap; }",
+      // A curator-set proposal must be visibly different from a MAP-derived one:
+      // one is what a college designated, the other is what we would ask it to.
+      ".mapu-chip-cur { background: var(--navy-primary); color: var(--surface-page,#fff); }",
+      ".mapu-propedit > td { background: var(--surface-subtle); }",
+      ".mapu-propedit-in { padding:10px 12px; }",
+      ".mapu-propedit-hd { font-weight:600; color: var(--navy-primary); margin-bottom:4px; }",
+      ".mapu-propedit-lbl { display:inline-block; margin:0 14px 8px 0; font-size:.74rem;"
+        + " color: var(--text-muted); }",
+      ".mapu-propedit-inp { display:block; margin-top:3px; padding:4px 7px; font-size:.82rem;"
+        + " min-width:230px; border:1px solid var(--border-subtle,#ccc); border-radius:4px;"
+        + " background: var(--surface-page,#fff); color: var(--text-body); }",
+      ".mapu-propedit-act { margin-top:2px; }",
       ".mapu-rosterbtn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:2px 9px; cursor:pointer; color: var(--text-body); font-size:.76rem; }",
       ".mapu-rosterbtn:hover { background: var(--surface-muted); }",
       ".mapu-roster { background: var(--surface-subtle); }",
@@ -849,6 +864,165 @@
         return r.json();
       });
   }
+  // ── Curator-proposed contacts (2026-08-13) ───────────────────────────────
+  // Sam: "I don't see a way I can edit them if needed and keep them categorized
+  // as Proposed so they can serve as a short list of corrections needed in MAP."
+  // Before this, a curator-supplied contact meant editing FALLBACK_CONTACTS in
+  // this file and shipping a deploy — which is why only three exist, all typed
+  // by a session on Jessica's behalf.
+  //
+  // A proposal NEVER becomes what MAP holds: MAP has no write API, and Sam ruled
+  // the same day that Sierra keeps routing strictly on MAP's own designations,
+  // so nothing here reaches her. It is a worklist of corrections to make IN MAP.
+  //
+  // Keyed on the TRIMMED college name, matching the table's own check
+  // constraint — map_college_contacts is hand-typed and two colleges carry a
+  // trailing space, so an untrimmed key would split one college into two rows.
+  function ckey(college) { return String(college == null ? "" : college).trim(); }
+
+  function loadProposals() {
+    if (!signedIn()) { state.proposals = {}; return Promise.resolve({}); }
+    return fetch(REST + "/map_contact_proposals?select=college,proposed_name,proposed_email,"
+        + "note,status,updated_by,updated_at", { headers: authHeaders() })
+      .then(function (r) { return r.ok ? r.json() : []; })
+      .then(function (rows) {
+        var by = {};
+        (rows || []).forEach(function (p) { by[ckey(p.college)] = p; });
+        state.proposals = by;
+        return by;
+      }).catch(function () { state.proposals = {}; return {}; });
+  }
+
+  // Upsert. Clearing is an UPDATE to nulls rather than a DELETE: the table has
+  // no delete policy (matching governance_owners), and governance_owners already
+  // taught us what happens when "clear" has no path — it silently becomes a
+  // no-op. A row whose name AND email are both empty reads as "no proposal".
+  function saveProposal(college, name, email, note) {
+    var s = getSession();
+    var rec = {
+      college: ckey(college),
+      proposed_name: name || null,
+      proposed_email: email || null,
+      note: note || null,
+      status: "proposed",
+      updated_by: (s && s.email) || "(unknown)",
+      updated_at: new Date().toISOString(),
+    };
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    return fetch(REST + "/map_contact_proposals", {
+      method: "POST", headers: h, body: JSON.stringify([rec]),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("save " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      // RLS FILTERS a write it disallows — PostgREST answers 200 with an EMPTY
+      // body rather than 403. So an "ok" that touched no row is a FAILURE, and
+      // reporting it as success would tell a locked-out curator their correction
+      // was recorded when nothing was. Same guarantee the Sierra guidance editor
+      // needed for the same reason.
+      if (!Array.isArray(rows) || rows.length === 0) {
+        throw new Error("not saved — your sign-in does not allow writing proposals");
+      }
+      state.proposals[ckey(college)] = rows[0];
+      return rows[0];
+    });
+  }
+
+  // The curator's proposal for a college, or null. Both fields empty = cleared.
+  function curatorProposalFor(college) {
+    var p = (state.proposals || {})[ckey(college)];
+    if (!p) return null;
+    if (!p.proposed_email && !p.proposed_name) return null;
+    return p;
+  }
+
+  // What the row should SHOW: the curator's value when they set one, otherwise
+  // the cascade's. Kept in one place so the table, the editor's pre-fill and the
+  // CSV can never disagree about which value is in force.
+  function effectiveProposal(g) {
+    var c = curatorProposalFor(g.college);
+    if (c) {
+      return { name: c.proposed_name || "", email: c.proposed_email || "",
+               source: "curator", note: c.note || "",
+               by: c.updated_by || "", at: c.updated_at || "" };
+    }
+    return { name: g.proposed_name || "", email: g.proposed_email || "",
+             source: g.proposed_source || "", note: "", by: "", at: "" };
+  }
+
+  // The proposed contact as rendered: curator's value when set, else MAP's.
+  function proposalCell(g) {
+    var p = effectiveProposal(g);
+    if (!p.email && !p.name) return '<span class="mapu-st mapu-st-inactive">none proposed</span>';
+    var h = p.name ? "<b>" + esc(p.name) + "</b><br>" : "";
+    h += '<span class="mapu-disc">' + esc(p.email) + "</span>";
+    // An email-only tier is not a lookup failure — MAP's cpl_assistant_email
+    // column has NO matching name column, so the assistant is on file as an
+    // address and nothing else. Saying so stops it reading as missing data.
+    if (!p.name && p.source === "CPL Assistant") {
+      h += '<br><span class="mapu-fb-t" title="MAP stores the CPL Assistant as an email address '
+        + 'only — there is no assistant name field to read.">MAP has no name for this address</span>';
+    }
+    if (addressWarning(p.email)) {
+      h += '<br><span class="mapu-warn" title="' + esc(addressWarning(p.email))
+        + '">&#9888; check this address</span>';
+    }
+    return h;
+  }
+
+  // The "Proposed because" chip. It records PROVENANCE — why this person is
+  // being suggested — which is what the bare role name failed to convey (Sam,
+  // 2026-08-13: "the Because column chips are unclear as to their meaning").
+  function becauseCell(g) {
+    var p = effectiveProposal(g);
+    if (!p.email && !p.name) return '<span class="mapu-st mapu-st-inactive">—</span>';
+    if (p.source === "curator") {
+      var who = p.by ? " by " + p.by : "";
+      return '<span class="mapu-chip mapu-chip-cur" title="Typed in here' + esc(who)
+        + '. A proposal for MAP — MAP itself still holds nothing.">curator-set</span>';
+    }
+    return '<span class="mapu-chip" title="This college designated this person as its '
+      + esc(p.source) + ' in MAP. Nobody is marked Primary Contact, so the cascade proposes '
+      + 'them as the student contact.">' + esc(p.source) + " in MAP</span>";
+  }
+
+  // The inline editor, rendered as a full-width row beneath the one being edited.
+  function propEditorRow(g, cols) {
+    var p = effectiveProposal(g);
+    var cur = curatorProposalFor(g.college);
+    var h = '<tr class="mapu-propedit"><td colspan="' + cols + '">';
+    h += '<div class="mapu-propedit-in">';
+    h += '<div class="mapu-propedit-hd">Propose a student contact for <b>' + esc(g.college) + "</b></div>";
+    h += '<p class="mapu-intro" style="margin:0 0 8px">This does <b>not</b> change MAP — MAP has no '
+      + "write API. It records what we would ask this college to set, so the list below doubles as "
+      + "the correction list to work through in MAP. It is not used by Sierra.</p>";
+    h += '<label class="mapu-propedit-lbl">Name'
+      + '<input class="mapu-propedit-inp" data-prop-name type="text" maxlength="120" value="'
+      + esc(cur ? (cur.proposed_name || "") : (p.name || "")) + '" placeholder="e.g. April Reardon"></label>';
+    h += '<label class="mapu-propedit-lbl">Email'
+      + '<input class="mapu-propedit-inp" data-prop-email type="email" maxlength="180" value="'
+      + esc(cur ? (cur.proposed_email || "") : (p.email || "")) + '" placeholder="name@college.edu"></label>';
+    h += '<label class="mapu-propedit-lbl">Note (optional)'
+      + '<input class="mapu-propedit-inp" data-prop-note type="text" maxlength="300" value="'
+      + esc(cur ? (cur.note || "") : "") + '" placeholder="Why this person — who told us, when"></label>';
+    if (state.propErr) h += '<div class="mapu-warn" style="margin:6px 0">' + esc(state.propErr) + "</div>";
+    h += '<div class="mapu-propedit-act">'
+      + '<button class="mapu-rosterbtn" data-prop-save="' + esc(ckey(g.college)) + '"'
+      + (state.propBusy ? " disabled" : "") + ">💾 Save proposal</button> "
+      + '<button class="mapu-rosterbtn" data-prop-cancel>Cancel</button>'
+      + (cur ? ' <button class="mapu-rosterbtn" data-prop-clear="' + esc(ckey(g.college)) + '"'
+               + ' title="Remove our proposal. The row falls back to whatever MAP designates.">'
+               + "Clear proposal</button>" : "");
+    if (cur && cur.updated_by) {
+      h += '<span class="mapu-fb-t" style="margin-left:10px">last set by ' + esc(cur.updated_by)
+        + (cur.updated_at ? " · " + esc(String(cur.updated_at).slice(0, 10)) : "") + "</span>";
+    }
+    h += "</div></div></td></tr>";
+    return h;
+  }
+
   // Only real colleges belong on a worklist someone is going to act on — the
   // MAP roster also carries sandbox entries and the statewide team account.
   function gapRows() {
@@ -1325,7 +1499,16 @@
       + "Primary Contact email.</b> These " + rows.length + " colleges have none on file, so a "
       + "student asking them for credit for prior learning through MAP reaches nobody. "
       + "The proposal for each is a person <b>that college already designated in MAP</b> — "
-      + "colleges are locally governed, so we route to their people and never pick new ones.</p>";
+      + "colleges are locally governed, so we route to their people and never pick new ones.</p>"
+      + '<p class="mapu-intro">The <b>Proposed because</b> chip says <i>why</i> that person is '
+      + "suggested, not what kind of person they are: <span class=\"mapu-chip\">CPL Assistant in "
+      + "MAP</span> means this college has designated a CPL Assistant and <b>nobody as Primary "
+      + "Contact</b>, so the cascade — CPL Coordinator, then Assistant, Counselor, Articulation "
+      + "Officer, Lead Initiator, Faculty Lead — proposes them. "
+      + "<b>You can override any of these</b>; yours is recorded as "
+      + '<span class="mapu-chip mapu-chip-cur">curator-set</span> and never presented as '
+      + "something MAP holds. Sierra ignores these proposals — she keeps answering from MAP's "
+      + "own designations.</p>";
 
     h += '<div class="mapu-stat">'
       + '<div class="box"><div class="n">' + rows.length + '</div><div class="l">No student contact</div></div>'
@@ -1338,7 +1521,10 @@
       + "Set the value in MAP; this list clears itself at the next sync.</span></div>";
 
     h += '<table class="mapu-table mapu-gaptable"><thead><tr>'
-      + "<th>College</th><th>Proposed student contact</th><th>Because</th><th>Actions</th>"
+      + "<th>College</th><th>Proposed student contact</th>"
+      + '<th title="Where this proposal came from — the role that college has '
+      + 'designated in MAP, or a person a curator typed in here.">Proposed because</th>'
+      + "<th>Actions</th>"
       + "</tr></thead><tbody>";
     proposable.forEach(function (g) {
       h += "<tr><td>" + esc(g.college)
@@ -1347,17 +1533,16 @@
               + ' title="Their MAP CPL landing page — the page a student uses">↗</a>'
             : ' <span class="mapu-st mapu-st-inactive" title="No landing page URL on file">no page</span>')
         + "</td>"
-        + "<td>" + (g.proposed_name ? "<b>" + esc(g.proposed_name) + "</b><br>" : "")
-        + '<span class="mapu-disc">' + esc(g.proposed_email) + "</span>"
-        + (addressWarning(g.proposed_email)
-            ? '<br><span class="mapu-warn" title="' + esc(addressWarning(g.proposed_email))
-              + '">&#9888; check this address</span>'
-            : "")
-        + "</td>"
-        + '<td><span class="mapu-chip">' + esc(g.proposed_source) + "</span></td>"
-        + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
+        + "<td>" + proposalCell(g) + "</td>"
+        + "<td>" + becauseCell(g) + "</td>"
+        + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '"'
+        + ' title="Propose a different person. Yours replaces the suggestion above on this list;'
+        + ' it never changes MAP.">'
+        + (curatorProposalFor(g.college) ? "✏️ edit" : "✏️ change") + "</button> "
+        + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '"'
         + ' title="Draft the email telling this college we are routing their landing page to this person">'
         + "\u{1F4E3} tell them</button></td></tr>";
+      if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
     });
     h += "</tbody></table>";
 
@@ -1368,16 +1553,23 @@
         + "routing student requests into a vice president’s inbox is the college’s call. "
         + "Where the college <b>publishes</b> a counseling or advising inbox, it is offered "
         + "below as a starting point — <b>check the source link before using it</b>; it is a "
-        + "public web page, not a MAP designation.</p>"
+        + "public web page, not a MAP designation. "
+        + "<b>You can propose a person here</b> once you know who it should be; it is recorded "
+        + "as ours, never as MAP's, and these rows stay on this list until the value is actually "
+        + "set in MAP.</p>"
         + '<table class="mapu-table mapu-gaptable"><thead><tr>'
-        + "<th>College</th><th>Why</th><th>Fallback contact</th><th>Actions</th>"
+        + "<th>College</th><th>Why</th><th>Proposed / fallback contact</th><th>Actions</th>"
         + "</tr></thead><tbody>";
       asks.forEach(function (g) {
+        var c = curatorProposalFor(g.college);
         h += "<tr><td>" + esc(g.college) + "</td>"
           + '<td><span class="mapu-st mapu-st-inactive">' + esc(g.ask_reason || "—") + "</span></td>"
-          + "<td>" + fallbackCell(g.college) + "</td>"
-          + '<td><button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
+          + "<td>" + (c ? proposalCell(g) : fallbackCell(g.college)) + "</td>"
+          + '<td><button class="mapu-rosterbtn" data-prop-edit="' + esc(ckey(g.college)) + '">'
+          + (c ? "✏️ edit proposal" : "✏️ propose") + "</button> "
+          + '<button class="mapu-rosterbtn" data-fix="' + esc(g.college) + '">'
           + "\u{1F4E3} ask them</button></td></tr>";
+        if (state.propEdit === ckey(g.college)) h += propEditorRow(g, 4);
       });
       h += "</tbody></table>";
     }
@@ -1582,12 +1774,24 @@
   function gapsCsv() {
     var rows = gapRows();
     var q = function (v) { return '"' + String(v == null ? "" : v).replace(/"/g, '""') + '"'; };
-    var head = ["College", "Proposed name", "Proposed email", "Because", "Needs ask",
-                "Ask reason", "Landing page"];
+    // Both layers ship, side by side and separately labelled. Collapsing them
+    // into one "proposed" column would make a curator's suggestion
+    // indistinguishable from a role the college actually designated in MAP —
+    // and this file is the list someone works through IN MAP, so that
+    // distinction is the whole point of it.
+    var head = ["College", "Proposed name", "Proposed email", "Proposed because",
+                "Curator name", "Curator email", "Curator note", "Curator set by",
+                "Curator set on", "Status", "Needs ask", "Ask reason", "Landing page"];
     var lines = [head.map(q).join(",")];
     rows.forEach(function (g) {
-      lines.push([g.college, g.proposed_name || "", g.proposed_email || "",
-                  g.proposed_source || "", g.needs_ask ? "yes" : "", g.ask_reason || "",
+      var c = curatorProposalFor(g.college) || {};
+      var p = effectiveProposal(g);
+      lines.push([g.college, p.name || "", p.email || "",
+                  p.source === "curator" ? "curator-set" : (g.proposed_source || ""),
+                  c.proposed_name || "", c.proposed_email || "", c.note || "",
+                  c.updated_by || "", c.updated_at ? String(c.updated_at).slice(0, 10) : "",
+                  c.proposed_email ? (c.status || "proposed") : "",
+                  g.needs_ask ? "yes" : "", g.ask_reason || "",
                   g.landing_page_url || ""].map(q).join(","));
     });
     return lines.join("\n");
@@ -1651,8 +1855,11 @@
         if ((state.lens === "gaps" || state.lens === "contacts")
             && !state.gaps && !state.gapsError) {
           render(root);
-          loadGaps().then(function (rows) {
-            state.gaps = Array.isArray(rows) ? rows : [];
+          // Proposals ride along with the worklist. loadProposals never rejects
+          // (a failed read yields {}), so a proposals outage costs the curator's
+          // overlay, never the worklist itself.
+          Promise.all([loadGaps(), loadProposals()]).then(function (res) {
+            state.gaps = Array.isArray(res[0]) ? res[0] : [];
             render(root);
           }).catch(function (e) {
             state.gapsError = (e && e.message) || "error";
@@ -1665,6 +1872,64 @@
     });
     root.querySelectorAll("[data-fix]").forEach(function (btn) {
       btn.addEventListener("click", function () { openNudge(btn.getAttribute("data-fix"), "contact"); });
+    });
+    // ── Curator proposals ──
+    root.querySelectorAll("[data-prop-edit]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var k = btn.getAttribute("data-prop-edit");
+        state.propEdit = (state.propEdit === k) ? null : k;
+        state.propErr = null;
+        renderInto(root, true);   // view state only — never refetch the worklist
+      });
+    });
+    var cancel = root.querySelector("[data-prop-cancel]");
+    if (cancel) cancel.addEventListener("click", function () {
+      state.propEdit = null; state.propErr = null; renderInto(root, true);
+    });
+    root.querySelectorAll("[data-prop-save]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var college = btn.getAttribute("data-prop-save");
+        var box = btn.closest(".mapu-propedit-in") || root;
+        var name = (box.querySelector("[data-prop-name]") || {}).value || "";
+        var email = ((box.querySelector("[data-prop-email]") || {}).value || "").trim();
+        var note = (box.querySelector("[data-prop-note]") || {}).value || "";
+        // Read the boxes at SAVE time rather than tracking keystrokes in state:
+        // the guarantee then lives in this function, not in whether an input
+        // handler fired (the same reason the Sierra guidance editor works this
+        // way). An address is required — a name alone routes nobody.
+        if (!email) { state.propErr = "An email address is required — a name alone routes nobody."; renderInto(root, true); return; }
+        if (!/^[^@\s]+@[^@\s]+\.[A-Za-z]{2,}$/.test(email)) {
+          state.propErr = "That does not look like an email address: " + email;
+          renderInto(root, true); return;
+        }
+        state.propBusy = true; state.propErr = null; renderInto(root, true);
+        saveProposal(college, name.trim(), email, note.trim()).then(function () {
+          state.propBusy = false; state.propEdit = null; renderInto(root, true);
+        }).catch(function (e) {
+          // The typed values stay on screen — re-rendering the editor from
+          // state.proposals would silently discard what they just wrote.
+          state.propBusy = false;
+          state.propErr = (e && e.message) || "could not save";
+          renderInto(root, true);
+        });
+      });
+    });
+    root.querySelectorAll("[data-prop-clear]").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        var college = btn.getAttribute("data-prop-clear");
+        state.propBusy = true; state.propErr = null; renderInto(root, true);
+        // Clearing is a WRITE of nulls, not a delete — the table has no delete
+        // policy, and governance_owners already showed what a "clear" with no
+        // path becomes: a button that silently does nothing.
+        saveProposal(college, "", "", "").then(function () {
+          delete state.proposals[college];
+          state.propBusy = false; state.propEdit = null; renderInto(root, true);
+        }).catch(function (e) {
+          state.propBusy = false;
+          state.propErr = (e && e.message) || "could not clear";
+          renderInto(root, true);
+        });
+      });
     });
     var csv = root.querySelector("[data-gap-csv]");
     if (csv) csv.addEventListener("click", function () {
@@ -1744,6 +2009,14 @@
     _FALLBACK_CONTACTS: FALLBACK_CONTACTS,
     _proposedFillFor: proposedFillFor,
     _proposalsCsv: proposalsCsv,
+    // Curator proposals (2026-08-13)
+    _state: state,
+    _ckey: ckey,
+    _curatorProposalFor: curatorProposalFor,
+    _effectiveProposal: effectiveProposal,
+    _proposalCell: proposalCell,
+    _becauseCell: becauseCell,
+    _gapsCsv: gapsCsv,
     _fallbackCell: fallbackCell,
     _cplPageFor: cplPageFor,
     _cplPageCell: cplPageCell,
