@@ -280,3 +280,34 @@ re-litigated per tab.
 are "config that lives in code should live in a curatable table, overlaying code
 defaults." Worth checking whether one schema pattern serves both before building
 two.
+
+### …and it should live in an **Admin tab** (Sam, same conversation)
+
+> "perhaps the COBI menu items should be part of an Admin tab"
+
+⭐ **This is the better home, and for a structural reason:** it makes the
+display-vs-security distinction *visible* instead of something a tooltip has to
+keep insisting on. Put the nav manager beside the real gates — which tables carry
+RLS, which tabs gate a READ vs only a render, who holds which phrase — and the
+difference is apparent. Ship it alone and the trap above gets re-learned by
+whoever opens it next.
+
+It also collects the config surfaces that arrived separately and are now
+scattered across four places: **Team Phrases** (own tab), **governance owners**
+(Governance tab), **Sierra instructions** (Sierra Training), and the proposed
+**`sierra_rules`**. All the same *kind* of thing — configuration a curator edits.
+The ADR is the general form; an Admin tab is where it lands in the UI.
+
+**Two questions to settle BEFORE building:**
+
+1. **What gates Admin itself?** It would control visibility and access for every
+   other tab, making it the most consequential surface on the site.
+   **Recommend reviewer magic-link ONLY, not a team phrase** — a phrase holder
+   able to re-scope what other phrase holders see is the unresolved site-phrase
+   superset problem one level up, and worse.
+2. **Does it absorb Team Phrases?** That tab deliberately does *not* open to a
+   phrase holder (a holder who can rotate makes rotation meaningless). If Admin
+   is reviewer-gated anyway they may be the same gate — **merge deliberately or
+   keep them apart deliberately, not by accident.**
+
+`cpl_memory`: `cobi-nav-manager-lives-in-an-admin-tab`.
