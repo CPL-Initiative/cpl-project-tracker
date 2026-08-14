@@ -1930,7 +1930,26 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
 
 // Reusable response rules (tuned ongoing — see docs/cpl_assistant_lessons.md).
 // #1 — Statewide credit recommendations are not housed at one college.
-const STATEWIDE_RULE = `\n\nABOUT STATEWIDE COLLABORATIVE (CCC) CREDIT RECOMMENDATIONS: these are system-wide standards developed through statewide faculty workgroups — they are NOT housed at, or owned by, any single college (one college may serve as the initiator or lead that signs off, but that does not make it "the place" to get the credit). Local colleges ADOPT or ADAPT them, and a student earns/accesses them through THEIR OWN college's CPL landing page. So when presenting a statewide standard: describe it as available system-wide, and point the visitor to their own (or a chosen) college's CPL landing page to pursue it — never tell them to go to one specific college's page to "access" a statewide credit.`;
+// Rewritten 2026-08-14 (Sam, session 154). The previous version ended with
+// "never tell them to go to one specific college's page to access a statewide
+// credit" — written to stop Sierra implying a statewide standard is OWNED by its
+// lead college, which is a real error worth forbidding. But it could not tell
+// that apart from "these four colleges have already articulated it, here are
+// their pages", which is a FACT and is the answer. So it suppressed the answer:
+// asked where teens with an AWS D1.1 certificate could get credit, Sierra named a
+// college that merely TEACHES welding and told the visitor to go ask, while four
+// colleges that had articulated it went unmentioned. It also outranked a team
+// guidance rule saying the opposite, which is why precedence has to become data
+// (sierra_rules) rather than a sentence promising "team guidance wins".
+const STATEWIDE_RULE = `\n\nABOUT STATEWIDE COLLABORATIVE (CCC) CREDIT RECOMMENDATIONS: these are system-wide standards developed through statewide faculty workgroups — they are NOT housed at, or owned by, any single college (one college may serve as the initiator or lead that signs off, but that does not make it "the place" to get the credit). ANY college can adopt one.
+
+WHEN ASKED WHERE SOMEONE CAN GET CREDIT FOR IT, ANSWER IN TWO BANDS, IN THIS ORDER, NEVER BLENDED INTO ONE LIST:
+
+(1) COLLEGES THAT HAVE ALREADY ARTICULATED IT — lead with these, as a markdown TABLE (college | credit awarded | CPL landing page). Name them even when you do not know where the person is; state the facts and let them decide what is near. Say plainly that these colleges have the credit set up TODAY, so a student can explore it or request review there now. Naming them is a FACT about who has adopted the standard — it is NOT a claim that the credential is housed at or owned by them.
+
+(2) COLLEGES THAT TEACH THE SUBJECT BUT HAVE NOT ARTICULATED IT — a SEPARATE, clearly labelled table AFTER the first one, described as colleges that teach it and may be able to articulate it ON REQUEST. Never present these as places the credit already exists, and never merge them into band 1: sending someone to a college that has not set the credit up sends them to a counter where nobody is expecting them.
+
+Also tell the visitor they can pursue the standard at their OWN college, since any college can adopt it. Use ONLY landing-page URLs present in the context above — if a college's URL is not there, name the college without a link rather than guessing one.`;
 // #2 — List course titles + units, not a bare count.
 const CREDIT_LIST_RULE = `\n\nWHEN DESCRIBING WHAT CREDIT IS AVAILABLE: do NOT just state a count like "6 credit recommendations." Instead, LIST the specific course titles and the units/credit each is eligible for, using the "Eligible courses (title — units/credit)" lines provided, e.g. "Fire Behavior and Combustion (3 units); Principles of Emergency Services (3 units)". If more exist than are listed in the context, add "…and more" rather than inventing course names.`;
 // #4 — Use the course catalog (what colleges TEACH) to reason about ADOPTION and to
