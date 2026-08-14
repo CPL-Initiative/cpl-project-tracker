@@ -1060,6 +1060,53 @@ async function fetchCredentialRecs(titles: string[], sb: any): Promise<Map<strin
   return out;
 }
 
+// How many adopter names to print before summarising. A capped list must never
+// read as a census, so past this we print the count alongside (see ADOPTER_CAP
+// handling in buildCredentialContext).
+const ADOPTER_CAP = 12;
+
+/**
+ * The adopter NAMES — the half Sierra never had (v47).
+ *
+ * THE FAILURE THIS ENDS. Sam, 2026-08-14, as a civic leader: "Our teens earned
+ * an AWS D1.1 welding certificate with a practical test. Where can they get
+ * college credit for it?" Sierra named Victor Valley and Orange Coast and told
+ * him to go ASK whether they had adopted it. Bakersfield, Barstow, Orange Coast
+ * and Santa Ana have all articulated AWS D1.1 SMAW — she never listed them, and
+ * Victor Valley is not an adopter at all: it merely teaches welding.
+ *
+ * She was not disobeying. Every credential RPC reduces the array to a count —
+ * `cardinality(c.adopter_colleges)::integer` — so the prompt said "Colleges that
+ * have ADOPTED it: 4" and the four names did not exist anywhere in her context.
+ * A team-guidance rule telling her to list them (written 13:33, tested 14:49)
+ * could not be obeyed. **The data was curated, present and nightly-synced; the
+ * consumer simply never read it** — the same shape as the statewide flag and
+ * the `ccc_rec` retrieval gate before it.
+ *
+ * Keyed on titles ALREADY matched, so this is a lookup and not a second matcher
+ * that can drift from the first — the reason it is a batched exact-key select
+ * rather than another search RPC. Fails soft: no names is the status quo ante,
+ * which is degraded but never wrong.
+ */
+async function fetchCredentialAdopters(titles: string[], sb: any): Promise<Map<string, string[]>> {
+  const out = new Map<string, string[]>();
+  const uniq = [...new Set(titles.filter(Boolean))];
+  if (uniq.length === 0) return out;
+  try {
+    const { data, error } = await sb
+      .from("chatbox_credentials")
+      .select("unified_title, adopter_colleges")
+      .in("unified_title", uniq);
+    if (error || !data) return out;
+    for (const r of data) {
+      if (Array.isArray(r.adopter_colleges) && r.adopter_colleges.length > 0) {
+        out.set(r.unified_title, r.adopter_colleges);
+      }
+    }
+  } catch { /* enrichment only — see doc comment */ }
+  return out;
+}
+
 /**
  * Route ALIGN — "which of MY courses should I articulate against this, and how
  * did other colleges do it?"
@@ -1356,10 +1403,36 @@ function buildVolumeContext(
   return out;
 }
 
+/**
+ * Render the adopter names for one credential, or the bare count if we have no
+ * names. NAMES FIRST, because "4 colleges have adopted it" is unusable to a
+ * person deciding where to send their kid, while four names with landing pages
+ * is the answer. Capped at ADOPTER_CAP and the total always shipped alongside,
+ * so a truncated list can never read as the whole set.
+ */
+function renderAdopters(n: number, names?: string[]): string {
+  if (!names || names.length === 0) {
+    // No names available — say the count, and say plainly that the names are
+    // missing rather than letting the model infer they do not exist.
+    return `  Colleges that have ADOPTED it: ${n}`
+         + ` (names unavailable for this credential — do NOT guess which colleges they are)\n`;
+  }
+  const shown = names.slice(0, ADOPTER_CAP);
+  const suffix = names.length > shown.length
+    ? ` — showing ${shown.length} of ${names.length}`
+    : ``;
+  return `  Colleges that have ADOPTED it (${names.length})${suffix}: ${shown.join(", ")}\n`
+       + `  ^ These colleges have ALREADY articulated this credential. Name them when asked `
+       + `where credit can be obtained, even if you do not know where the person is — let them `
+       + `decide what is near. They are NOT the owners of the standard; they are the colleges `
+       + `that have taken it up so far.\n`;
+}
+
 function buildCredentialContext(
   statewide: any[] | null,
   any_: any[] | null,
   recs?: Map<string, any>,
+  adopters?: Map<string, string[]>,
 ): string {
   if ((!statewide || statewide.length === 0) && (!any_ || any_.length === 0)) return "";
   let out = `\n\n--- CANONICAL CREDENTIAL RECORD (curated names, not the freehand titles colleges typed) ---\n`;
@@ -1388,7 +1461,7 @@ function buildCredentialContext(
             + `student arrives. Present this as an open opportunity — a standard any college can `
             + `adopt as-is — NEVER as the credential being unavailable, unsupported or a dead end.\n`;
       } else {
-        out += `  Colleges that have ADOPTED it: ${r.n_adopters}\n`;
+        out += renderAdopters(r.n_adopters, adopters?.get(r.unified_title));
       }
       if (r.matched_via && r.matched_via !== r.unified_title) {
         out += `  (matched on the college-entered variant "${r.matched_via}")\n`;
@@ -2426,9 +2499,15 @@ Deno.serve(async (req: Request) => {
         // one-round-trip guarantee this block was built around.
         ...(collegeCreds || []),
       ].map((r: any) => r?.unified_title).filter(Boolean);
-      const recs = await fetchCredentialRecs(titles, sb);
+      // Adopter NAMES ride the same batch (v47). Two round-trips, not one per
+      // credential, and both keyed on titles already matched — see
+      // fetchCredentialAdopters for why this is a lookup, not a second matcher.
+      const [recs, adopters] = await Promise.all([
+        fetchCredentialRecs(titles, sb),
+        fetchCredentialAdopters(titles, sb),
+      ]);
       recsMap = recs;
-      credentialContext = buildCredentialContext(stdRecs, anyCreds, recs);
+      credentialContext = buildCredentialContext(stdRecs, anyCreds, recs, adopters);
       volumeContext = buildVolumeContext(vol, adopt, singleProfile?.college || null, recs);
 
       // Route ALIGN. Runs on the STRONGEST-matched credential only: the answer
