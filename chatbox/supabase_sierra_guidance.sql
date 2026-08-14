@@ -27,7 +27,17 @@
 create table if not exists public.sierra_guidance (
   id uuid primary key default gen_random_uuid(),
   rule text not null
-    constraint sierra_guidance_rule_len check (char_length(rule) between 3 and 500),
+    -- 1500, NOT 500. THERE ARE THREE LENGTH LIMITS AND THEY MUST ALL AGREE:
+    -- this constraint, GUIDANCE_RULE_MAX in sierra_training.js, and
+    -- GUIDANCE_MAX_CHARS_PER_RULE in chatbox/supabase/functions/cpl-chat/index.ts.
+    -- On 2026-08-12 the tab and the edge function were raised 500 -> 1500 and
+    -- THIS WAS MISSED, which did not restore the feature — it converted a silent
+    -- truncation into a hard save failure. A 501–1500 char rule was accepted by
+    -- the textarea, counted by the live counter, and then rejected by Postgres.
+    -- Raised 2026-08-14 (session 154) after Sam's adopter-names instruction —
+    -- 676 chars — could not be saved. Raising any one of the three alone just
+    -- relocates the failure; change all three together.
+    constraint sierra_guidance_rule_len check (char_length(rule) between 3 and 1500),
   active boolean not null default true,
   note text                                   -- why the rule exists (optional)
     constraint sierra_guidance_note_len check (note is null or char_length(note) <= 300),

@@ -299,27 +299,50 @@ casings of the same string, 0 holding only one). **A workbench that asks
 curators to hand-merge `3 hours in supervision` into `3 hours in Supervision`
 would be asking humans to do a parser's job, 767 times.**
 
-## 10. Open questions for Sam
+## 10. Open questions for Sam — ALL FOUR ANSWERED 2026-08-14
 
-1. ⭐ **Are ACE unit variants one recommendation or several?** `AR-2201-0552`
-   recommends *Orienteering* at 1, 2 **and** 3 hours. The settled ruling
-   (`units-are-not-part-of-cr-identity`) came from colleges writing the *same
-   course* at different units — a different situation from ACE issuing
-   different amounts for different training. **22.2% of the ACE vocabulary
-   turns on this answer.** Recommended: still one CCRR, units displayed as a
-   spread — but this is his call, not an inference from the earlier ruling.
-2. **Does the 767-string typographic class get fixed upstream or absorbed
-   downstream?** Upstream (MAP's ingest) fixes it permanently and for everyone;
-   downstream (our fold) fixes only our view. Related: `cpl_memory` row `o3`
-   already proposes deduping repeated JST CRs at upload.
-3. **How far do we merge subject-area granularity?** `supervision` /
-   `principles of supervision` / `introduction to supervision` — one reference
-   or three? The answer sets the size of the whole lane.
-4. **Is the not-a-topic class (6,663 rows) auto-N/A?** §11 already calls the
-   `Credit Is Not Recommended` population *"a free auto-N/A win"*; this
-   measurement puts it at 32 strings / 3,892 rows in the ACE lane, plus 2,771
-   more rows of individualized-assessment text that is equally not a
-   recommendation.
+Sam ruled on all four at the top of session 154. Recorded here so this section
+is no longer read as open. `cpl_memory`: `ace-unit-variants-are-one-ccrr`,
+`ace-not-a-topic-gets-canonical-crs`, `ace-individualized-assessment-never-granted`.
+
+1. ✅ **ACE unit variants are ONE recommendation**, units displayed as a spread.
+   Unblocks rung 2 — 2,244 strings, 22.2% of the vocabulary.
+2. ✅ **The typographic class is absorbed downstream** by our fold; the upstream
+   MAP-ingest fix stays proposed as `cpl_memory` row `o3` rather than blocking.
+3. ✅ **Subject-area granularity is SUGGESTION-ONLY** — pairwise, gated, never
+   transitive. The curator's working of the worklist is the answer, family by
+   family.
+4. ⭐ **The not-a-topic class is CANONICALISED, NOT EXCLUDED** — and this
+   CORRECTS §8 rung 0 above, which said "excluding the not-a-topic class."
+   Sam: *"We still need a canonicalized CR for it to account for every CR in the
+   corpus."* Coverage is the goal.
+
+   Measured 2026-08-14: **43 strings / 6,626 rows**, decomposing into four
+   meanings that fold to **THREE canonical CRs**:
+
+   | Class | Strings | Rows | Colleges | Applied EVER |
+   |---|---:|---:|---:|---:|
+   | ① No credit, flat | 15 | 3,503 | 102 | **0** |
+   | ② No credit + a reason | 13 | 356 | 85 | **0** |
+   | ③ Individualized assessment | 10 | 2,730 | 95 | **0** |
+   | ④ Conditional / prerequisite | 5 | 36 | 24 | **0** |
+
+   → `Credit Is Not Recommended` (① + ②, the reason kept as an ATTRIBUTE) ·
+   `Credit May Be Granted by Individualized Assessment` (③) ·
+   `Credit Is Not Recommended Until Prerequisite Completed` (④).
+
+   ⚠️ **Class ③ IS NOT A "NO" AND MUST NEVER BE AUTO-N/A'd.** ACE is saying
+   credit *may* be granted after review — across 95 colleges — and it has
+   **never once been granted anywhere.** Marking it Not Applicable records a
+   decision nobody made and closes a door that is genuinely open. Same for ④,
+   where the credit exists as soon as the second course is finished. Canonicalise
+   all of it; keep ③ and ④ tagged as real pending work.
+
+   The parser fingerprints in this class are worth seeing: the string doubled
+   (`Credit Is Not Recommended Credit Is Not Recommended`), date stamps doubled
+   (`(6/02)(6/02)`), mojibake (`the service?s education`), a truncated word
+   (`skills, compet, and knowledge`), a sentence cut mid-clause (`because of
+   the`), and one contradictory `1 hour in Credit Is Not Recommended`.
 
 ---
 
