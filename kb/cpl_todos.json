@@ -1,44 +1,56 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-14 · Sky155 — Sierra now names the colleges AND links them, and her built-in rules are finally editable.",
-  "_session": "Session 155 (Sky155)",
-  "_status": "Five fixes shipped today, all from things you hit while testing. Sierra now answers a \"where can I get credit for this?\" question with the colleges that have ALREADY set it up, each with a link to its CPL page — the links were the missing half, and the reason they were missing is that nobody had ever handed them to her, even though we have had them for 123 of 123 colleges all along. That is the fourth time we have found good data sitting unread. The bigger change is underneath: the ten built-in rules that tell Sierra how to behave used to live only in code, which is why an instruction you wrote at 1:33pm could be quietly overruled by a rule you could not see or edit. Those rules are now in a table. Nothing about her answers changed on day one — we proved that letter-for-letter — but from here a rule can be reworded without a code release, and we can now show which rules were in play for any given answer. The safety-critical ones (never invent a college, never expose a small student count) are deliberately locked so no edit can remove them. Also: the Send note box now tells you when it actually sent, the side menu has lost its emoji, and testing an instruction will keep working even if you hide the CPL Assistant tab.",
+  "_as_of": "2026-08-14 · SkyGate — the side menu is yours to rearrange, and the long-red test is finally green.",
+  "_session": "Session 156 (SkyGate)",
+  "_status": "The Admin tab is live and the COBI side menu is now something you drag rather than something we edit in code. Order, grouping, names, which sites show what, and a new \"only show this to signed-in people\" setting — all from one place, all saved for everyone the moment you press Save. Beside every menu item the tab prints what ACTUALLY protects the data behind it, because hiding a menu item protects nothing. Sierra's ten built-in rules — the ones that outrank the instructions you write — are visible and editable for the first time, on the Sierra Training tab. And the test that had been red on every commit for two days is green: 19 of its 26 flagged items turned out to be real governance gaps, including the workplan itself, which had no named owner.",
   "items": [
     {
-      "id": "s155-admin-tab-gate",
+      "id": "s156-drag-in-a-browser",
       "for": "Sam",
-      "tab": "Team Phrases",
-      "text": "Two questions before the Admin tab gets built, and both change its shape. FIRST: what unlocks Admin itself? It would control which tabs everyone else can see, so my recommendation is a magic-link sign-in only, NOT a shared phrase — someone holding a phrase who can also change what other phrase-holders see is a bigger version of a problem we already have open. SECOND: should Admin absorb the Team Phrases tab? That tab deliberately does not open to a phrase holder, because someone who can rotate the phrase makes rotating it pointless. If Admin is sign-in-only anyway they may be the same door — worth merging on purpose rather than by accident."
+      "tab": "Admin",
+      "text": "Drag something, press Save, then reload the page. Everything here was tested against a simulated browser and nothing has been tried in a real one — we can't reach the site from here. If it goes wrong the worst case is the menu you already have, and the \"Reset to how it ships\" button puts everything back."
     },
     {
-      "id": "s155-admin-not-security",
+      "id": "s156-owners-dr13",
       "for": "Sam",
-      "tab": "Team Phrases",
-      "text": "Worth knowing before you use the Admin tab to hide things: hiding a menu item does NOT protect the data behind it. It only stops the item being shown. The real lock is on the database, and only two tabs actually lock their data that way — the rest just stop drawing. I will make that distinction visible in the tab itself rather than burying it in a tooltip, because it is the kind of thing that is easy to assume and expensive to be wrong about."
+      "tab": "Governance",
+      "text": "Six new decision rights need an owner (DR-13 to DR-18). Start with DR-13, the workplan itself — it is the most public thing we publish, four of its tables can be edited in-page by anyone with the team phrase, and until today nobody was named as its owner. DR-14 (who rotates the shared phrases, and when) is the second one worth naming."
     },
     {
-      "id": "s155-d11-missing-colleges",
+      "id": "s156-seven-cadences",
       "for": "Sam",
+      "tab": "Governance",
+      "text": "Seven scheduled jobs run every week or month that nobody has listed as a cadence — landing pages, credential catalog, CPL News, stories, reflections, and two reference syncs. Each needs either an owner or a note saying it is just plumbing. This is the whole remaining backlog on that page now."
+    },
+    {
+      "id": "s156-sierra-rules-read",
+      "for": "Sam",
+      "tab": "Sierra Training",
+      "text": "Scroll to \"Sierra's built-in rules\" and read them. These are the ten rules that OUTRANK the instructions you write above — one of them is why your 13:33 instruction on Wednesday didn't take effect. You can now edit any of them, and the four safety ones are marked so you can only add to them, never replace them."
+    },
+    {
+      "id": "s156-d11-nine",
+      "for": "Fable",
       "tab": "CPL Assistant",
-      "text": "Something to look at when you next test welding. Your AWS D1.1 question got a good answer, but we hold NINE different D1.1 credentials and the answer covered one of them. Riverside has set up three and Lemoore one, and neither college appeared anywhere in the reply — not even in the \"teaches welding\" list. I have not yet worked out whether she never found them or found them and only showed the strongest, and that difference decides the fix, so I would rather measure it than guess. Recorded so it does not get lost."
+      "text": "Sierra named 1 of 9 AWS D1.1 credentials, and Riverside and Lemoore never appeared at all. Still not diagnosed: whether the search never found them, or the answer only printed the strongest match. That distinction decides the fix — measure first."
     },
     {
-      "id": "s155-sierra-rules-no-ui",
+      "id": "s156-rules-fired",
       "for": "Fable",
       "tab": "Sierra Training",
-      "text": "The rules table is live and Sierra reads it on every question, but there is no screen to edit it yet — today it takes a database command. The editing screen belongs in the Admin tab, and it should ship together with the \"which rules were in play for this answer\" view, because seeing that a rule was fighting your instruction is worth more than being able to edit it."
+      "text": "Build the \"which rules were in play for this answer\" view. Sierra already records it on every turn; nothing shows it. Being able to SEE the rule that fought your instruction is worth more than being able to edit it."
     },
     {
-      "id": "s155-two-lane-memory",
+      "id": "s156-memory-tab",
       "for": "Fable",
       "tab": "Memory",
-      "text": "Next after Admin: put what we KNOW (the memory table) and what Sierra DOES (the rules table) on one screen, linked, then have a nightly check report anything decided in memory that no rule actually implements. That gap is what caused three separate problems already, including today's missing links."
+      "text": "The two-lane memory tab — what we know (cpl_memory) beside what Sierra actually does (sierra_rules), linked by memory_slug — plus the check that reports \"decided in memory, no Sierra rule implements it.\" Now unblocked, and it would have caught three separate misses this month."
     },
     {
-      "id": "s155-glyphs-inpage",
-      "for": "Sam",
-      "tab": "Team Phrases",
-      "text": "The emoji are gone from the side menu — all ten of them. I deliberately left two other kinds alone and want to check that is what you meant: the lock symbol in the header stays, because it changes to show whether you are signed in (that is information, not decoration), and a couple of tabs still show an emoji in their own on-page heading rather than in the menu. Say the word and those go too."
+      "id": "s156-map-users-cell",
+      "for": "Fable",
+      "tab": "MAP Users",
+      "text": "The MAP Users section of our project notes has grown into a 4,400-character log and the lint has flagged it for five sessions running. Whoever next works on MAP Users has to compact it as part of that work — nobody else can safely tell which lines are still load-bearing."
     }
   ]
 }

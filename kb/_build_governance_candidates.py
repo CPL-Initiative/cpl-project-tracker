@@ -201,7 +201,13 @@ def scan_stale(register):
     """
     out = []
     rows = (register.get("decision_rights") or []) + (register.get("cadences") or [])
-    path_re = re.compile(r"\b((?:[\w.\-]+/)+[\w.\-]+\.(?:py|js|json|yml|yaml|sql|md|html))\b")
+    # A leading `\b` CANNOT match before a dot, so a dot-directory path like
+    # `.github/workflows/x.yml` was captured as `github/workflows/x.yml` and
+    # reported missing — a FALSE stale flag on a perfectly good row, which is
+    # exactly the failure this function's docstring says is worse than a miss.
+    # A negative lookbehind plus an optional leading dot fixes it.
+    path_re = re.compile(
+        r"(?<![\w.\-/])(\.?(?:[\w.\-]+/)+[\w.\-]+\.(?:py|js|json|yml|yaml|sql|md|html))\b")
     for row in rows:
         blob = " ".join(str(row.get(k) or "") for k in
                         ("maintained_in", "drives", "when_empty", "note", "loop", "element"))
