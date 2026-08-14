@@ -278,8 +278,15 @@ check("the recs map is declared OUTSIDE the try, so the section can still use it
       "declared inside, the college section could never see it");
 
 // One round trip however many routes fired — the property the batch exists for.
+// Counts CALL SITES, excluding the declaration. It previously matched on the
+// literal `await fetchCredentialRecs(`, which went stale the moment the call
+// moved inside Promise.all (#1150, so the credential and volume route groups
+// run concurrently) — the `await` now sits on the wrapper, so the assertion
+// counted 0 and had been failing on main ever since while the property it
+// guards was never actually violated. A red check nobody can act on is how a
+// real one gets missed.
 check("there is still exactly ONE fetchCredentialRecs call",
-      (src.match(/await fetchCredentialRecs\(/g) || []).length === 1,
+      (src.match(/(?<!async function )fetchCredentialRecs\(/g) || []).length === 1,
       "a second lookup is a second matcher that can drift from the first");
 
 const backticks = (src.match(/(?<!\\)`/g) || []).length;

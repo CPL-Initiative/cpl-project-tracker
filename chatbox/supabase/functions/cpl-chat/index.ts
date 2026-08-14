@@ -1065,6 +1065,11 @@ async function fetchCredentialRecs(titles: string[], sb: any): Promise<Map<strin
 // handling in buildCredentialContext).
 const ADOPTER_CAP = 12;
 
+// One adopting college: the NAME (the answer) and its CPL landing page (the
+// route to acting on it). url is null when the college has no page on file —
+// never a guess, and never a reason to omit the college.
+type AdopterRef = { name: string; url: string | null };
+
 /**
  * The adopter NAMES — the half Sierra never had (v47).
  *
@@ -1088,8 +1093,8 @@ const ADOPTER_CAP = 12;
  * rather than another search RPC. Fails soft: no names is the status quo ante,
  * which is degraded but never wrong.
  */
-async function fetchCredentialAdopters(titles: string[], sb: any): Promise<Map<string, string[]>> {
-  const out = new Map<string, string[]>();
+async function fetchCredentialAdopters(titles: string[], sb: any): Promise<Map<string, AdopterRef[]>> {
+  const out = new Map<string, AdopterRef[]>();
   const uniq = [...new Set(titles.filter(Boolean))];
   if (uniq.length === 0) return out;
   try {
@@ -1098,10 +1103,40 @@ async function fetchCredentialAdopters(titles: string[], sb: any): Promise<Map<s
       .select("unified_title, adopter_colleges")
       .in("unified_title", uniq);
     if (error || !data) return out;
+
+    // NAMES FIRST, with url deliberately null. The landing pages below are
+    // enrichment ON TOP of a complete answer — populating the map here means a
+    // failure of the URL lookup degrades links, and can never DROP an adopter.
+    // Same discipline as the credit-rec lines in #1165: a credential with no
+    // line is still NAMED, because dropping it re-creates the false zero.
+    const names = new Set<string>();
     for (const r of data) {
       if (Array.isArray(r.adopter_colleges) && r.adopter_colleges.length > 0) {
-        out.set(r.unified_title, r.adopter_colleges);
+        out.set(r.unified_title, r.adopter_colleges.map((n: string) => ({ name: n, url: null })));
+        for (const n of r.adopter_colleges) names.add(n);
       }
+    }
+
+    // Landing pages, batched over the union of adopters — one round trip for the
+    // whole answer, not one per credential. Exact-key: measured 2026-08-14, all
+    // 86 distinct adopter names match chatbox_college_profiles.college exactly
+    // (both derive from the same MAP pipeline), and all 86 carry a URL. A name
+    // that ever drifts simply resolves to null, which renders as "no landing
+    // page on file" — the fail-safe the STATEWIDE_RULE already mandates
+    // ("name the college without a link rather than guessing one").
+    if (names.size > 0) {
+      try {
+        const { data: profs } = await sb
+          .from("chatbox_college_profiles")
+          .select("college, landing_page_url")
+          .in("college", [...names]);
+        const urls = new Map<string, string | null>(
+          (profs || []).map((p: any) => [p.college, p.landing_page_url || null]),
+        );
+        for (const refs of out.values()) {
+          for (const ref of refs) ref.url = urls.get(ref.name) || null;
+        }
+      } catch { /* names survive without their links — see above */ }
     }
   } catch { /* enrichment only — see doc comment */ }
   return out;
@@ -1410,29 +1445,46 @@ function buildVolumeContext(
  * is the answer. Capped at ADOPTER_CAP and the total always shipped alongside,
  * so a truncated list can never read as the whole set.
  */
-function renderAdopters(n: number, names?: string[]): string {
-  if (!names || names.length === 0) {
+function renderAdopters(n: number, refs?: AdopterRef[], indent = "  ", local = false): string {
+  if (!refs || refs.length === 0) {
     // No names available — say the count, and say plainly that the names are
     // missing rather than letting the model infer they do not exist.
-    return `  Colleges that have ADOPTED it: ${n}`
+    return `${indent}Colleges that have ADOPTED it: ${n}`
          + ` (names unavailable for this credential — do NOT guess which colleges they are)\n`;
   }
-  const shown = names.slice(0, ADOPTER_CAP);
-  const suffix = names.length > shown.length
-    ? ` — showing ${shown.length} of ${names.length}`
+  const shown = refs.slice(0, ADOPTER_CAP);
+  const suffix = refs.length > shown.length
+    ? ` — showing ${shown.length} of ${refs.length}`
     : ``;
-  return `  Colleges that have ADOPTED it (${names.length})${suffix}: ${shown.join(", ")}\n`
-       + `  ^ These colleges have ALREADY articulated this credential. Name them when asked `
+  // ONE PER LINE, name and URL paired. STATEWIDE_RULE asks for a
+  // "college | credit | CPL landing page" table; a comma-joined name list gives
+  // the model no URL to put in the third column, so it correctly left the cell
+  // empty rather than guessing. The pairing has to be unambiguous per row.
+  let out = `${indent}Colleges that have ADOPTED it (${refs.length})${suffix}:\n`;
+  for (const a of shown) {
+    out += `${indent}  - ${a.name}`
+        + (a.url
+            ? ` — CPL landing page: ${a.url}\n`
+            : ` — no CPL landing page on file; name this college WITHOUT a link\n`);
+  }
+  out += `${indent}^ These colleges have ALREADY articulated this credential. Name them when asked `
        + `where credit can be obtained, even if you do not know where the person is — let them `
-       + `decide what is near. They are NOT the owners of the standard; they are the colleges `
-       + `that have taken it up so far.\n`;
+       + `decide what is near, and link each college's CPL landing page where one is given above.\n`;
+  // The anti-ownership guard is a STATEWIDE claim and must not be pasted onto a
+  // local articulation, which genuinely does belong to the college that built it.
+  out += local
+    ? `${indent}  This is a LOCAL articulation: the credit exists at these colleges specifically. `
+      + `Do NOT describe it as a statewide standard other colleges can adopt as-is.\n`
+    : `${indent}  They are NOT the owners of the standard; they are the colleges `
+      + `that have taken it up so far.\n`;
+  return out;
 }
 
 function buildCredentialContext(
   statewide: any[] | null,
   any_: any[] | null,
   recs?: Map<string, any>,
-  adopters?: Map<string, string[]>,
+  adopters?: Map<string, AdopterRef[]>,
 ): string {
   if ((!statewide || statewide.length === 0) && (!any_ || any_.length === 0)) return "";
   let out = `\n\n--- CANONICAL CREDENTIAL RECORD (curated names, not the freehand titles colleges typed) ---\n`;
@@ -1480,6 +1532,14 @@ function buildCredentialContext(
       out += `\nIn the credential catalogue but NOT adopted statewide (local articulations only):\n`;
       for (const r of locals) {
         out += `- ${r.unified_title} — ${r.n_adopters} college(s) articulate it locally\n`;
+        // The LOCAL branch printed a bare count and no names at all — so a
+        // question like "where can my teen get credit for AWS D1.1?" silently
+        // dropped Lemoore and Riverside while naming the statewide four. For a
+        // local credential the adopters ARE where the credit exists, so the
+        // names matter at least as much here. Same batch, already fetched.
+        if (r.n_adopters > 0) {
+          out += renderAdopters(r.n_adopters, adopters?.get(r.unified_title), "    ", true);
+        }
         out += renderRecLines(recs?.get(r.unified_title), "    ");
       }
     }
