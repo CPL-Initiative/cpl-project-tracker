@@ -1458,25 +1458,7 @@
     else PROGRAMS_LOADING = false;
   }
   function prettyCollege(name) { return String(name || "").toLowerCase().replace(/\b([a-z])/g, function (m) { return m.toUpperCase(); }); }
-  // ── The noncredit container code (Jenni via Sam, 2026-08-14) ────────────────────────────────────
-  // EVERY noncredit program takes 32.0111 "Workforce Development and Training" regardless of its TOP
-  // — confirmed to include ESL, basic skills and GED, which today sit on the more specific 32.01xx
-  // codes (32.0109 Second Language Learning, 32.0202 HS Equivalent Exam Prep, …). The precision that
-  // move gives up is meant to come back via the COCI subcategory Jenni is supplying, which is why
-  // this is a container code and not a reclassification.
-  //
-  // Membership is the COCI AWARD field verbatim, the same fact the "Noncredit program" chip renders —
-  // NOT the TOP, and not a guess from the title. Colleges name noncredit programs every which way
-  // ("ELDV …", "… NC: …", or nothing at all), so the title cannot carry this.
-  var NONCREDIT_CIP = "32.0111";
-  function progIsNoncredit(r) { return !!(PROGRAMS && (PROGRAMS.awards[r[5]] || "") === "Noncredit program"); }
-
-  function progNeedsRevision(top, cip, isNc) {
-    // A noncredit program on the container code is correct BY THE RULE, not by the crosswalk. Without
-    // this, prepopulating would immediately flag 1,320 of the 3,187 noncredit programs statewide
-    // (biggest block: the 540 on ESL 4930.87) — the tool telling a college its required code is
-    // invalid. Only 275 of 419 TOPs list 32.0111 today; the rule does not wait for the other 144.
-    if (isNc && cip === NONCREDIT_CIP) return false;
+  function progNeedsRevision(top, cip) {
     var tc = TOPCIP[top];
     if (!tc || !tc.c || !tc.c.length || !cip) return false;   // no crosswalk for this TOP → can't judge
     for (var i = 0; i < tc.c.length; i++) if (tc.c[i][0] === cip) return false;
@@ -1486,21 +1468,7 @@
   function progStore() { var k = progKey(); if (!k) return {}; try { return JSON.parse(localStorage.getItem(k) || "{}") || {}; } catch (e) { return {}; } }
   function progEntry(ctrl) { return progStore()[ctrl] || {}; }
   function progSetField(ctrl, field, val) { var d = progStore(), e = d[ctrl] || {}; if (val) e[field] = val; else delete e[field]; if (Object.keys(e).length) d[ctrl] = e; else delete d[ctrl]; var k = progKey(); if (k) try { localStorage.setItem(k, JSON.stringify(d)); } catch (ex) {} }
-  // The effective CIP for a row: curator revision > the noncredit rule > what COCI holds.
-  //
-  // 32.0111 is COMPUTED here, never written to progStore(). Storing it would record 3,187 curator
-  // "revisions" nobody made, and every one of those rows would then render "changed from 32.0109" —
-  // a claim about a human decision, applied to a default. Computing it also means the day the rule
-  // changes, it changes; a stored default would have to be found and unwritten from every browser
-  // that had ever opened the tab. Only a real deviation is persisted.
-  function progCipOf(r) { return progEntry(r[1]).cip || (progIsNoncredit(r) ? NONCREDIT_CIP : "") || r[4] || ""; }
-  // Where the row's CIP came from — the row has to be able to say "proposed" without claiming COCI
-  // holds it, and "changed from" must stay reserved for an actual curator edit.
-  function progCipSource(r) {
-    if (progEntry(r[1]).cip) return "curator";
-    if (progIsNoncredit(r) && NONCREDIT_CIP !== (r[4] || "")) return "rule";
-    return "coci";
-  }
+  function progCip(ctrl, assigned) { return progEntry(ctrl).cip || assigned || ""; }   // a curator revision overrides the COCI-assigned CIP
   function progCollegeRows() { return (PROGRAMS && st.progCollege != null) ? PROGRAMS.rows.filter(function (r) { return r[0] === st.progCollege; }) : []; }
 
   // ── Every approved CIP for a TOP, on every program row (Jenni + Raul, 2026-08-11) ───────────────
@@ -1545,33 +1513,18 @@
   }
   // The crosswalk's candidate list for a TOP, ascending by code — the same order the Chancellor's
   // Office's TOP↔CIP table uses, so a curator can read the two side by side.
-  // `isNc` folds the noncredit container code in even when this TOP's crosswalk omits it — 144 of the
-  // 419 TOPs do. Without it a noncredit row would propose 32.0111 and then offer a picker that does
-  // not contain it, which reads as the tool contradicting itself.
-  function progOptions(top, isNc) {
+  function progOptions(top) {
     var tc = TOPCIP[top];
-    var out = ((tc && tc.c) || []).slice();
-    if (isNc && !out.some(function (ct) { return ct[0] === NONCREDIT_CIP; })) out.push([NONCREDIT_CIP, "nc"]);
-    return out.sort(function (a, b) { return a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0); });
+    return ((tc && tc.c) || []).slice().sort(function (a, b) { return a[0] < b[0] ? -1 : (a[0] > b[0] ? 1 : 0); });
   }
-  function progOptionList(ctrl, top, assigned, chosen, repaint, isNc) {
-    var opts = progOptions(top, isNc), use = progUsage(top), tc = TOPCIP[top];
+  function progOptionList(ctrl, top, assigned, chosen, repaint) {
+    var opts = progOptions(top), use = progUsage(top), tc = TOPCIP[top];
     var box = el("div", { class: "cipx-prog-opts" }, []);
     box.appendChild(el("div", { class: "cipx-prog-optshdr" }, [
       "Every CIP code the current crosswalk approves for ", el("b", {}, ["TOP " + top]), tc && tc.t ? " · " + tc.t : "",
       ". Pick the one your college will use — you can change it as often as you like. ",
       el("span", { class: "cipx-prog-optsrc-note" }, ["College counts are colleges with a program on that pairing in the COCI program export" + progExtractDate() + "."]),
     ]));
-    // The header above promises "what the crosswalk approves", so a noncredit row has to say where
-    // the extra code came from — otherwise 32.0111 looks like a crosswalk entry the reader cannot
-    // find in the CO's own table.
-    if (isNc) {
-      box.appendChild(el("div", { class: "cipx-prog-optshdr cipx-prog-optshdr-nc" }, [
-        "Plus ", el("span", { class: "cipx-code" }, [NONCREDIT_CIP]),
-        " — required for every noncredit program regardless of TOP, so it is offered here even where this TOP's crosswalk does not list it.",
-      ]));
-    }
-    var dflt = isNc ? NONCREDIT_CIP : (assigned || "");
     opts.forEach(function (ct) {
       var code = ct[0], rr = BYCODE[code], on = code === chosen, n = use[code] || 0;
       var b = el("button", {
@@ -1584,16 +1537,12 @@
       ]);
       if (rr && rr.cat) b.appendChild(el("span", { class: catClass(rr.cat), title: catTip(rr.cat) }, [catLabel(rr.cat)]));
       if (ct[1] === "f") b.appendChild(el("span", { class: "cipx-prog-optsrc", title: "This pairing was submitted by the field rather than published in the Chancellor's Office crosswalk" }, ["field-submitted"]));
-      if (ct[1] === "nc") b.appendChild(el("span", { class: "cipx-prog-optsrc cipx-prog-optsrc-nc", title: "Required for every noncredit program regardless of TOP — not from this TOP's crosswalk" }, ["noncredit rule"]));
       b.appendChild(el("span", { class: "cipx-prog-optuse" + (n ? "" : " cipx-prog-optuse-none") }, [n ? (n + (n === 1 ? " college" : " colleges")) : "no colleges yet"]));
       if (code === assigned) b.appendChild(el("span", { class: "cipx-prog-optasg", title: "The code your college has in COCI today" }, ["in COCI"]));
       b.onclick = function () {
-        // Selecting the row's DEFAULT clears the override rather than recording a no-op change — and
-        // the default is not always the COCI code: on a noncredit row it is 32.0111. Comparing to
-        // `assigned` here would mean a curator who deliberately picks their COCI code back (say
-        // 32.0109 on an ESL program) writes an empty override and watches the row snap to 32.0111,
-        // i.e. the one deviation the rule most needs to be able to record.
-        progSetField(ctrl, "cip", code === dflt ? "" : code);
+        // Storing the COCI-assigned code as a "revision" would be a lie in the export, so selecting it
+        // clears the override instead of recording a no-op change.
+        progSetField(ctrl, "cip", code === assigned ? "" : code);
         if (repaint) repaint();
       };
       box.appendChild(b);
@@ -1753,7 +1702,7 @@
     tools.appendChild(multiPicker({
       label: "CIP Sector", allLabel: "All CIP sectors",
       title: "Filter by the two-digit CIP sector of each program's assigned code",
-      options: uniqSorted(rows.map(function (r) { return (progCipOf(r) || "").slice(0, 2); }))
+      options: uniqSorted(rows.map(function (r) { return (progCip(r[1], r[4]) || "").slice(0, 2); }))
         .map(function (s) { return [s, s ? (s + " · " + (FAMS[s] || ("CIP sector " + s))) : "No CIP assigned yet"]; }),
       selected: st.progSectors, onChange: repaintProgList,
     }));
@@ -1773,48 +1722,38 @@
     var listHostP = el("div", { class: "cipx-prog-list" }, []);
     host.appendChild(listHostP);
     function repaintProgList() {
-      var flagged = rows.filter(function (r) { return progNeedsRevision(r[3], progCipOf(r), progIsNoncredit(r)); });
-      var noCip = rows.filter(function (r) { return !progCipOf(r); });
+      var flagged = rows.filter(function (r) { return progNeedsRevision(r[3], progCip(r[1], r[4])); });
+      var noCip = rows.filter(function (r) { return !progCip(r[1], r[4]); });
       clear(summary);
-      // Say how many rows the noncredit rule is proposing a change for. A college that opens the tab
-      // and sees a pile of "proposed · COCI has …" chips should be able to find the count without
-      // scrolling — and it is the number they will be entering in COCI by hand.
-      var ncProposed = rows.filter(function (r) { return progCipSource(r) === "rule"; });
       summary.appendChild(document.createTextNode(rows.length.toLocaleString() + " programs · "));
       summary.appendChild(el("b", { class: flagged.length ? "cipx-prog-flagword" : "" }, [flagged.length.toLocaleString() + " need revision"]));
       summary.appendChild(document.createTextNode(" · " + noCip.length.toLocaleString() + " with no CIP yet."));
-      if (ncProposed.length) {
-        summary.appendChild(el("span", { class: "cipx-prog-ncsum", title: "Every noncredit program takes " + NONCREDIT_CIP + " regardless of TOP. Nothing reaches COCI from this page — your college enters these there." }, [
-          " " + ncProposed.length.toLocaleString() + " noncredit program" + (ncProposed.length === 1 ? "" : "s") + " proposed for ",
-          el("span", { class: "cipx-code" }, [NONCREDIT_CIP]), ".",
-        ]));
-      }
       flagTogTxt.textContent = " Needs revision only (" + flagged.length + ")";
       clear(listHostP);
       var shown = rows.filter(function (r) {
-        if (st.progFlagOnly && !progNeedsRevision(r[3], progCipOf(r), progIsNoncredit(r))) return false;
+        if (st.progFlagOnly && !progNeedsRevision(r[3], progCip(r[1], r[4]))) return false;
         // Each picker is AND-ed with the others and OR-ed within itself — an empty picker is "no
         // opinion", never "match nothing", so opening one and closing it again cannot blank the list.
         if (st.progTitles.length && st.progTitles.indexOf(r[2]) < 0) return false;
         if (st.progAwards.length && st.progAwards.indexOf(PROGRAMS.awards[r[5]] || "") < 0) return false;
         // Sector keys off the CHOSEN cip (a curator revision moves the row between sectors, and the
         // headers it is filtering against are built from the same value).
-        if (st.progSectors.length && st.progSectors.indexOf((progCipOf(r) || "").slice(0, 2)) < 0) return false;
-        if (st.progQ) { var hay = (r[2] + " " + (progCipOf(r) || "") + " " + (r[4] || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
+        if (st.progSectors.length && st.progSectors.indexOf((progCip(r[1], r[4]) || "").slice(0, 2)) < 0) return false;
+        if (st.progQ) { var hay = (r[2] + " " + (progCip(r[1], r[4]) || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
         return true;
       });
       listHostP.appendChild(el("div", { class: "cipx-prog-showing" }, ["Showing " + shown.length.toLocaleString() + (shown.length === 1 ? " program" : " programs") + (st.progFlagOnly ? " needing revision" : "") + " — grouped by CIP sector, ascending by code."]));
       // Group by 2-digit CIP sector, ascending; sort within each sector ascending by the full CIP code;
       // programs with no CIP assigned fall in a final "No CIP assigned" group (Sam, 2026-07-28).
       var groups = {};
-      shown.forEach(function (r) { var c = progCipOf(r) || ""; var sec = c ? c.slice(0, 2) : ""; (groups[sec] = groups[sec] || []).push(r); });
+      shown.forEach(function (r) { var c = progCip(r[1], r[4]) || ""; var sec = c ? c.slice(0, 2) : ""; (groups[sec] = groups[sec] || []).push(r); });
       var secs = Object.keys(groups).filter(function (s) { return s !== ""; }).sort();
       if (groups[""]) secs.push("");   // no-CIP group last
       var shownCount = 0;
       secs.forEach(function (sec) {
         if (shownCount >= 400) return;   // budget spent — emit NO header for a section that would render 0 rows under it
         var g = groups[sec].slice().sort(function (a, b) {
-          var ca = progCipOf(a) || "", cb = progCipOf(b) || "";
+          var ca = progCip(a[1], a[4]) || "", cb = progCip(b[1], b[4]) || "";
           if (ca !== cb) return ca < cb ? -1 : 1;
           return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
         });
@@ -1839,8 +1778,8 @@
 
   function programRow(r, repaint) {
     var ctrl = r[1], title = r[2], top = r[3], assigned = r[4], award = PROGRAMS.awards[r[5]] || "", cte = r[9] === 1;
-    var chosen = progCipOf(r), cipSrc = progCipSource(r), isNc = progIsNoncredit(r);
-    var needsRev = progNeedsRevision(top, chosen, isNc);
+    var chosen = progCip(ctrl, assigned);
+    var needsRev = progNeedsRevision(top, chosen);
     var cipRow = BYCODE[chosen];
     var row = el("div", { class: "cipx-prog-item" + (needsRev ? " cipx-prog-item-flag" : "") }, []);
     var l1 = el("div", { class: "cipx-prog-l1" }, [el("span", { class: "cipx-prog-title" }, [title])]);
@@ -1862,33 +1801,11 @@
       (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [catLabel(cipRow.cat)]) : null,
     ]));
     row.appendChild(l2);
-    // What COCI actually holds, whenever the row is showing something else — and WHY it differs.
-    // "changed from" is reserved for a curator edit; the noncredit default is not a decision anyone
-    // made on this row, so labelling it that way would attribute a choice to a person who never made
-    // one. Either way the sentence says COCI still holds the old code, because it does: nothing on
-    // this page reaches COCI.
+    // A curator revision shows what changed — the COCI code is still the fact of record until the
+    // college enters the new one, so never let the row read as though COCI already holds the change.
     if (assigned && chosen !== assigned) {
-      l2.appendChild(cipSrc === "rule"
-        ? el("span", { class: "cipx-prog-changed cipx-prog-proposed", title: "Every noncredit program takes " + NONCREDIT_CIP + " regardless of its TOP code. COCI still has " + assigned + " until your college enters the change." }, [
-            "proposed · COCI has ", el("span", { class: "cipx-code" }, [assigned]),
-          ])
-        : el("span", { class: "cipx-prog-changed", title: "Your choice here. COCI still has " + assigned + " until your college enters the change." }, [
-            "changed from ", el("span", { class: "cipx-code" }, [assigned]),
-          ]));
-    }
-    // A noncredit program's CIP is settled by the rule, so the row says so rather than leaving the
-    // reader to wonder why a Second-Language-Learning program is filed under Workforce Development.
-    // Sam's funding note is why the CTE half is spelled out and not left blank: 32.0111 is a
-    // Noncredit-category CIP, so it answers neither CTE nor Non-CTE, and CTE noncredit qualifies for
-    // funding Non-CTE does not. Silence here would be read as Non-CTE.
-    if (isNc) {
-      row.appendChild(el("div", { class: "cipx-prog-ncnote" }, [
-        el("span", { class: "cipx-prog-ncflag" }, ["Noncredit"]),
-        el("span", {}, [
-          " — every noncredit program takes ", el("span", { class: "cipx-code" }, [NONCREDIT_CIP]),
-          " (" + ((BYCODE[NONCREDIT_CIP] || {}).t || "Workforce Development and Training") + ") whatever its TOP code. ",
-          "CTE or Non-CTE is not decided by this code; it comes from the COCI subcategory and the credit programs this one aligns to.",
-        ]),
+      l2.appendChild(el("span", { class: "cipx-prog-changed", title: "Your choice here. COCI still has " + assigned + " until your college enters the change." }, [
+        "changed from ", el("span", { class: "cipx-code" }, [assigned]),
       ]));
     }
     if (needsRev) {
@@ -1912,7 +1829,7 @@
     }
     // The option list is available on EVERY row — a valid CIP is not necessarily the RIGHT one, and
     // before this it was reachable only from a flagged row. A flagged row opens it by default.
-    var nOpts = progOptions(top, isNc).length;
+    var nOpts = progOptions(top).length;
     if (nOpts) {
       var openKey = String(st.progCollege) + "|" + ctrl;   // control numbers are unique per college, not globally
       if (st.progOpen[openKey] === undefined && needsRev) st.progOpen[openKey] = true;
@@ -1930,7 +1847,7 @@
       ]);
       tog.onclick = function () { st.progOpen[openKey] = !isOpen; if (repaint) repaint(); };
       optHost.appendChild(tog);
-      if (isOpen) optHost.appendChild(progOptionList(ctrl, top, assigned, chosen, repaint, isNc));
+      if (isOpen) optHost.appendChild(progOptionList(ctrl, top, assigned, chosen, repaint));
       row.appendChild(optHost);
     }
     if (cipRow && cipRow.cat === "Both") {
@@ -3183,14 +3100,6 @@
       // the code you are moving TO, matching the course lane's .cipx-rev-ciplbl.
       ".cipx-prog-top{color:var(--cipx-text-soft);font-weight:400;}.cipx-prog-arrow{color:var(--cipx-muted);}",
       ".cipx-prog-ciplbl{font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--cipx-muted);}",
-      // The noncredit container-code rule (Jenni via Sam, 2026-08-14). "proposed" is visually distinct
-      // from "changed from" because they are different claims — one is a rule, the other a person.
-      ".cipx-prog-proposed{background:var(--cipx-accent-soft);color:var(--cipx-accent);border-color:transparent;}",
-      ".cipx-prog-ncnote{margin-top:7px;font-size:.8rem;line-height:1.5;color:var(--cipx-text-soft);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:8px;padding:7px 10px;}",
-      ".cipx-prog-ncflag{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-nc-fg);background:var(--cipx-nc-bg);border-radius:6px;padding:2px 7px;margin-right:2px;}",
-      ".cipx-prog-ncsum{color:var(--cipx-accent);font-weight:600;}",
-      ".cipx-prog-optshdr-nc{margin-top:-2px;color:var(--cipx-accent);}",
-      ".cipx-prog-optsrc-nc{background:var(--cipx-nc-bg);color:var(--cipx-nc-fg);}",
       ".cipx-prog-cip{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0;}",
       ".cipx-prog-cipt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;}",
       ".cipx-prog-nocip{color:var(--cipx-bad-fg);font-weight:600;font-style:italic;}",
