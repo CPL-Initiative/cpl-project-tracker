@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T10:18:23.353682+00:00",
+  "scraped_at": "2026-08-14T13:49:33.063117+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
@@ -55,15 +55,15 @@
       "jst": 1301,
       "star": true
     },
-    "Norco College": {
-      "vets": 831,
-      "jst": 537,
-      "star": false
-    },
     "West Los Angeles College": {
       "vets": 122,
       "jst": 157,
       "star": true
+    },
+    "Norco College": {
+      "vets": 831,
+      "jst": 537,
+      "star": false
     },
     "Long Beach City College": {
       "vets": 307,
@@ -120,14 +120,14 @@
       "jst": 146,
       "star": true
     },
-    "Barstow Community College": {
-      "vets": 106,
-      "jst": 139,
-      "star": true
-    },
     "Santa Ana College": {
       "vets": 334,
       "jst": 370,
+      "star": true
+    },
+    "Barstow Community College": {
+      "vets": 106,
+      "jst": 139,
       "star": true
     },
     "Los Angeles Valley College": {
@@ -205,15 +205,15 @@
       "jst": 339,
       "star": true
     },
-    "Los Angeles Mission College": {
-      "vets": 112,
-      "jst": 152,
-      "star": true
-    },
     "Ventura College": {
       "vets": 254,
       "jst": 182,
       "star": false
+    },
+    "Los Angeles Mission College": {
+      "vets": 112,
+      "jst": 152,
+      "star": true
     },
     "Los Angeles Pierce College": {
       "vets": 296,
