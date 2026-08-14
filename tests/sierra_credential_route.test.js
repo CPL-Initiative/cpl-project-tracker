@@ -62,7 +62,7 @@ check("catalogue-wide lookup runs only when the statewide lens is empty",
 
 /* ── 6. Rule is wired, and conditionally ───────────────────────────────────── */
 check("CREDENTIAL_RULE is injected only when there is credential context",
-      /\$\{credentialContext \? CREDENTIAL_RULE : ""\}/.test(src));
+      /body: CREDENTIAL_RULE, appliesWhen: "credential"/.test(src));
 check("credentialContext reaches the prompt template",
       /\$\{offeringsContext\}\$\{credentialContext\}/.test(src));
 

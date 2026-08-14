@@ -246,7 +246,7 @@ check("the recs lookup receives the handler's client (`sb`)",
       /fetchCredentialRecs\(titles,\s*sb\)/.test(src));
 
 check("CREDIT_RECS_RULE ships whenever either credential section is present",
-      /\(credentialContext \|\| volumeContext\) \? CREDIT_RECS_RULE/.test(src));
+      /body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume"/.test(src));
 
 check("the rule forbids answering with a bare count",
       /NEVER answer with just a count/.test(src));

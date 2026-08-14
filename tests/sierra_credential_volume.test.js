@@ -62,7 +62,7 @@ check("buildSystemPrompt accepts volumeContext",
 check("volumeContext is emitted into the prompt body",
       /\$\{volumeContext\}/.test(src));
 check("VOLUME_RULE is attached when the section is present",
-      /\$\{volumeContext\s*\?\s*VOLUME_RULE\s*:\s*""\}/.test(src));
+      /body: VOLUME_RULE, appliesWhen: "volume"/.test(src));
 // Assert that volumeContext REACHES buildSystemPrompt, not that it is the last
 // argument. Pinning the position made this fail the moment alignmentContext was
 // appended (Session 148) — a passing test that breaks on an unrelated addition
