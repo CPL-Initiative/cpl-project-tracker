@@ -201,9 +201,29 @@
   // (never auto-sends) so a reviewer can replay a logged question against the
   // live function after a fix.
   var TEST_Q_KEY = "cplSierraTestQ.v1";
+
+  /* Where to send a hand-off. CPL Assistant when it is reachable; My College
+   * when it is not, because that tab mounts the SAME assistant via mountInto().
+   *
+   * Sam, 2026-08-14, planning to suppress CPL Assistant from an Admin tab on the
+   * grounds that it is now the same thing as Sierra. It is — but this hand-off
+   * named #chatbot specifically, so suppressing that tab would have left the
+   * trainer with no way to test an instruction, failing silently. cobi_orgs.js
+   * marks a hidden nav button with data-org-hidden="1", so that is the signal. */
+  function sierraHost() {
+    var pane = document.getElementById("tab-chatbot");
+    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
+    var suppressed = !pane || (btn && btn.getAttribute("data-org-hidden") === "1");
+    return suppressed ? "college-briefing" : "chatbot";
+  }
   function testInSierra(q) {
     try { sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000)); } catch (e) {}
-    location.hash = "#chatbot";
+    var host = sierraHost();
+    if (window.CPL_TABS && typeof window.CPL_TABS.navigate === "function") {
+      window.CPL_TABS.navigate(host);
+    } else {
+      location.hash = "#" + host;
+    }
   }
 
   // Testing an instruction MEANS leaving this tab — the assistant lives at

@@ -166,6 +166,51 @@ function activateChatbot(w) {
 }
 
 // ── Report ──────────────────────────────────────────────────────────────────
+
+// ── 4. CPL ASSISTANT SUPPRESSED — the hand-off must still land ──────────────
+// Sam, 2026-08-14: "CPL Assistant on COBI is the same as Sierra now, right? So
+// if I later set CPL Assistant to suppressed using the Admin tab, nothing will
+// be lost." It IS the same assistant — but this hand-off named #chatbot
+// specifically, so suppressing that tab would have broken the only way to test
+// an instruction, and it would have broken SILENTLY. cobi_orgs.js marks a hidden
+// nav button data-org-hidden="1", so that is the signal both sides read.
+{
+  const w = boot();
+  // The live page uses id="tab-college-briefing" for My College; give the
+  // fixture that id alongside a suppressed CPL Assistant nav button.
+  w.document.body.insertAdjacentHTML("beforeend",
+    '<div id="tab-college-briefing"><div class="cplchat-mount"></div></div>'
+    + '<nav><button class="cpl-tab" data-tab="chatbot" data-org-hidden="1"></button></nav>');
+  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"));
+
+  w.sessionStorage.setItem(KEY, Q);
+  w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab: "college-briefing" } }));
+
+  const mc = w.document.querySelector("#tab-college-briefing .cplchat-input, #tab-college-briefing #cplchat-input");
+  check("a suppressed CPL Assistant routes the hand-off into My College",
+        !!mc && mc.value === Q);
+  check("the key is consumed once delivered", w.sessionStorage.getItem(KEY) === null);
+  check("the suppressed chatbot pane did NOT receive it",
+        !(chatbotInput(w) && chatbotInput(w).value === Q));
+}
+
+// ── 5. …and an UNsuppressed page still prefers the CPL Assistant pane ───────
+// The fallback must not quietly become the default: with both panes present and
+// nothing suppressed, the dedicated tab still wins.
+{
+  const w = boot();
+  w.document.body.insertAdjacentHTML("beforeend",
+    '<div id="tab-college-briefing"><div class="cplchat-mount"></div></div>'
+    + '<nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
+  w.CPL_CHAT.mountInto(w.document.querySelector("#tab-college-briefing .cplchat-mount"));
+
+  w.sessionStorage.setItem(KEY, Q);
+  activateChatbot(w);
+  check("with nothing suppressed the CPL Assistant pane still wins",
+        chatbotInput(w) && chatbotInput(w).value === Q);
+}
+
+
 let failed = 0;
 for (const [name, ok] of results) {
   console.log(`  ${ok ? "ok  " : "FAIL"}   ${name}`);
