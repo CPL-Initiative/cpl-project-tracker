@@ -227,9 +227,137 @@ const TABS = ["dashboard", "admin", "sierra-training", "team-phrases", "governan
     ok && w2.CPL_NAV_OVERLAY.plan(GROUPS, TABS).groups.length > 0);
 })();
 
+
+// ── The audience filter (Sam: "add the display only on sign in function") ───
+// DISPLAY ONLY. Everything here changes who SEES a menu item; none of it
+// protects the data, and the tests say so where a future reader will look.
+function makeAudWin(rows, creds) {
+  const dom = new JSDOM("<!doctype html><html><body></body></html>",
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  if (creds && creds.phrase) w.localStorage.setItem(creds.phrase, "x");
+  if (creds && creds.magic) {
+    w.sessionStorage.setItem("cpl_sb", JSON.stringify({
+      access_token: "aaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "s@x" }));
+  }
+  w.fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(rows || []) });
+  const el = w.document.createElement("script"); el.textContent = SRC;
+  w.document.body.appendChild(el);
+  return w;
+}
+const AUD_ROWS = [
+  { kind: "tab", key: "governance", audience: "signed_in" },
+  { kind: "tab", key: "team-phrases", audience: "magic_link" },
+  { kind: "tab", key: "budget", audience: "everyone" },
+];
+
+(async function () {
+  // Anonymous
+  {
+    const w = makeAudWin(AUD_ROWS, {});
+    await new Promise((r) => setTimeout(r, 20));
+    const p = w.CPL_NAV_OVERLAY.plan(GROUPS, TABS);
+    check("anonymous: a signed_in item is filtered out of the menu",
+      p.audienceHidden.indexOf("governance") !== -1);
+    check("anonymous: a magic_link item is filtered out too",
+      p.audienceHidden.indexOf("team-phrases") !== -1);
+    check("anonymous: an everyone item is untouched",
+      p.audienceHidden.indexOf("budget") === -1);
+    // The distinction the editor depends on.
+    check("an audience-filtered item is NOT reported as `hidden`",
+      p.hidden.indexOf("governance") === -1);
+    check("the EDITOR still lists it, so its audience can be changed back",
+      p.all.groups.concat([{ tabs: p.all.top }]).reduce((a, g) => a.concat(g.tabs), [])
+        .some((e) => e.tab === "governance" && e.audience === "signed_in"));
+  }
+  // Team phrase — clears signed_in, not magic_link
+  {
+    const w = makeAudWin(AUD_ROWS, { phrase: "cpl_team_pass" });
+    await new Promise((r) => setTimeout(r, 20));
+    const p = w.CPL_NAV_OVERLAY.plan(GROUPS, TABS);
+    check("team phrase: a signed_in item appears", p.audienceHidden.indexOf("governance") === -1);
+    check("team phrase: a magic_link item stays hidden — it is a FLOOR, not a synonym",
+      p.audienceHidden.indexOf("team-phrases") !== -1);
+  }
+  // A SITE phrase counts as signed in too
+  {
+    const w = makeAudWin(AUD_ROWS, { phrase: "cpl_fin_pass" });
+    await new Promise((r) => setTimeout(r, 20));
+    check("a site phrase (Finance) also clears signed_in",
+      w.CPL_NAV_OVERLAY.plan(GROUPS, TABS).audienceHidden.indexOf("governance") === -1);
+  }
+  // Magic link clears both — the rank is ordered, not an exact match
+  {
+    const w = makeAudWin(AUD_ROWS, { magic: true });
+    await new Promise((r) => setTimeout(r, 20));
+    const p = w.CPL_NAV_OVERLAY.plan(GROUPS, TABS);
+    check("magic link clears magic_link", p.audienceHidden.indexOf("team-phrases") === -1);
+    check("magic link ALSO clears signed_in (a floor, not an exact match)",
+      p.audienceHidden.indexOf("governance") === -1);
+  }
+  // The failure side: a typo must never hide anything from everybody
+  {
+    const w = makeAudWin([{ kind: "tab", key: "governance", audience: "reviewers_only_typo" }], {});
+    await new Promise((r) => setTimeout(r, 20));
+    check("an unrecognised audience value degrades to everyone, never to hidden",
+      w.CPL_NAV_OVERLAY.rows()[0].audience === "everyone" &&
+      w.CPL_NAV_OVERLAY.plan(GROUPS, TABS).audienceHidden.length === 0);
+  }
+  // Lockout: Dashboard is audience-LOCKED; Admin is not, because signing in gets it back
+  {
+    const w = makeAudWin([
+      { kind: "tab", key: "dashboard", audience: "magic_link" },
+      { kind: "tab", key: "admin", audience: "magic_link" },
+    ], {});
+    await new Promise((r) => setTimeout(r, 20));
+    const ov = w.CPL_NAV_OVERLAY;
+    const p = ov.plan(GROUPS, TABS);
+    check("Dashboard ignores an audience rule — a public visitor must have a home",
+      p.audienceHidden.indexOf("dashboard") === -1);
+    check("Admin MAY carry one, because signing in brings it back",
+      p.audienceHidden.indexOf("admin") !== -1);
+    check("…and Admin is still never `hidden`, which nothing recovers from",
+      p.hidden.indexOf("admin") === -1 && ov.isHidden("admin") === false);
+  }
+  // isMenuHidden is the one question both consumers ask
+  {
+    const w = makeAudWin(AUD_ROWS, {});
+    await new Promise((r) => setTimeout(r, 20));
+    const ov = w.CPL_NAV_OVERLAY;
+    check("isMenuHidden folds BOTH rules so the two consumers cannot disagree",
+      ov.isMenuHidden("governance") === true && ov.isHidden("governance") === false);
+    check("isMenuHidden is false for an item the viewer may see",
+      ov.isMenuHidden("budget") === false);
+  }
+  // Storage that throws must not revoke a credential held elsewhere
+  {
+    const w = makeAudWin(AUD_ROWS, { magic: true });
+    await new Promise((r) => setTimeout(r, 20));
+    Object.defineProperty(w, "localStorage", {
+      get() { throw new Error("private mode"); }, configurable: true });
+    check("a throwing localStorage does not revoke a magic-link session in sessionStorage",
+      w.CPL_NAV_OVERLAY.audienceAllows("team-phrases") === true);
+  }
+  // Unlocking in place re-evaluates without a reload
+  {
+    const w = makeAudWin(AUD_ROWS, {});
+    await new Promise((r) => setTimeout(r, 20));
+    let fired = 0;
+    w.CPL_NAV_OVERLAY.onChange(function () { fired++; });
+    check("before unlocking, the signed_in item is hidden",
+      w.CPL_NAV_OVERLAY.audienceAllows("governance") === false);
+    w.localStorage.setItem("cpl_team_pass", "x");
+    w.dispatchEvent(new w.CustomEvent("cpl-team-pass-unlocked", { detail: {} }));
+    check("entering the phrase re-evaluates the menu without a reload", fired === 1);
+    check("…and the item is now allowed", w.CPL_NAV_OVERLAY.audienceAllows("governance") === true);
+    w.dispatchEvent(new w.CustomEvent("cpl-team-pass-unlocked", { detail: {} }));
+    check("an unlock that changes nothing does NOT rebuild (group open state survives)", fired === 1);
+  }
+})();
+
 setTimeout(function () {
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nnav_overlay.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 400);
+}, 900);

@@ -68,6 +68,26 @@ create table if not exists public.cobi_nav (
   -- Survives the per-site filter entirely (cobi_orgs.js ALWAYS).
   pinned      boolean not null default false,
 
+  -- DISPLAY-ONLY audience filter: who SEES this item in the menu.
+  --   everyone   — anyone, including anonymous visitors (the default)
+  --   signed_in  — anyone holding a team/site phrase OR a magic-link session
+  --   magic_link — only a magic-link session (the phrase does not reveal it)
+  --
+  -- ⚠ THIS IS NOT AN ACCESS CONTROL, and the wording is deliberate: it says who
+  -- SEES the menu item, not who can reach the tab. The pane still exists, its
+  -- deep link still routes, and the data behind it is exactly as protected as
+  -- its RLS policies make it — no more. Someone who "secures" a tab by setting
+  -- this has secured nothing. The Admin tab prints the real gate beside this
+  -- control for exactly that reason.
+  --
+  -- The viewer's state is read from local/session storage, which cannot fail
+  -- over a network, so there is no third "unknown" case to fall back from. A
+  -- storage read that throws is treated as "that credential absent" — per
+  -- credential, not globally, so a private-mode localStorage failure cannot
+  -- also revoke a magic-link session held in sessionStorage.
+  audience    text not null default 'everyone'
+                check (audience in ('everyone', 'signed_in', 'magic_link')),
+
   updated_by  text,
   updated_at  timestamptz not null default now(),
   created_at  timestamptz not null default now(),

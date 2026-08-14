@@ -1,7 +1,7 @@
 {
   "_about": "The CPL Initiative governance register — a STARTER draft (SkyMail, Session 120, 2026-08-05) written at Sam's request after a session where every problem hit turned out to be a governance gap wearing a data-quality costume. Rendered by governance.js as the team-gated Governance tab. This file is the REASONING + the allocations; anything that can be MEASURED is computed live at render time instead of stored here, so the tab cannot quietly disagree with reality (the pattern from methodology-register-is-the-spine-narrative-cites-it).",
   "_status": "DRAFT — for review by Sam, Ashley, Jessica, Malone. Every `owner` field is deliberately null: who is accountable on OUR side is the one thing a session cannot infer from data. Filling those in is the review.",
-  "_as_of": "2026-08-07",
+  "_as_of": "2026-08-14",
   "_principle": "Colleges are locally governed. We route to determinations they already made; we do not make determinations for them. Where the CO does hold authority, say so explicitly — ambiguity produces both over-reach and paralysis.",
   "decision_rights": [
     {
@@ -117,13 +117,23 @@
     {
       "id": "DR-11",
       "element": "What Sierra tells the public (answer rules + guardrails)",
-      "drives": "Sierra is embedded on colleges' own pages and answers students, prospective students, faculty, administrators and employers. Her rule text IS the product — it decides what a CPL seeker is told exists, and how a host college is characterised on its own site.",
+      "drives": "Sierra is deployed on COBI ONLY today (Sam, 2026-08-08 and again 2026-08-10) and is INTENDED for colleges' own pages; she answers students, prospective students, faculty, administrators and employers. Her rule text IS the product — it decides what a CPL seeker is told exists, and how a host college is characterised on its own site.",
       "decides": "CPL Initiative (CO) — in practice Sam personally, four consecutive times on 2026-08-06/07 (either/or → Yes/And → the portal's fuller portfolio → anti-poaching → the salesmanship/facts tie-break)",
       "maintained_in": "chatbox/supabase/functions/cpl-chat/index.ts (prompt constants) + live sierra_guidance rows (🧭 pane)",
       "owner": null,
       "when_empty": "Each rule change gets resolved ad hoc by whichever session is running. Two consequences already observed: (1) a rule written purely as a prohibition made Sierra WITHHOLD facts from seekers, and nothing caught it because the prohibition was the only half tested; (2) two rules in different constants conflicted with nothing saying which governed, so the later one silently won. Also unowned: prompt text only takes effect ON DEPLOY, so 'decided' and 'live' are distinct states and no one tracks the gap between them.",
       "load_bearing": true,
       "live": null
+    },
+    {
+      "id": "DR-12",
+      "element": "What the COBI side menu shows, and to whom",
+      "drives": "The menu is the entry point for every visitor including anonymous ones. Its order, grouping, labels, per-site mapping and audience filter are curator-editable data (public.cobi_nav) as of 2026-08-14, so one drag changes what everyone sees, immediately, with no PR, no CI and no deploy in between.",
+      "decides": "CPL Initiative (CO) — any magic-link reviewer, via the Admin tab. No second pair of eyes exists between an edit and the public.",
+      "maintained_in": "public.cobi_nav (reviewer-write, public-read) via the Admin tab; code defaults in nav_groups.js + cobi_orgs.js; every change logged to cobi_nav_log",
+      "owner": null,
+      "when_empty": "Nobody is accountable for menu changes that every visitor sees. Two specific risks, both already mitigated in code but not in process: (1) the audience filter is DISPLAY ONLY and someone may believe hiding a tab protects its data — RLS does, and only the Admin tab says so; (2) an arrangement can be changed by any reviewer with no review, so the audit trail in cobi_nav_log is the only record of who decided what.",
+      "notes": "Lockout is prevented in CODE, not by this row: `admin` and `dashboard` cannot be hidden and refuse to be dragged into a group, because the table is the thing being guarded. Seeded EMPTY, so today the menu is exactly what the code ships."
     }
   ],
   "acceptance_standards": [

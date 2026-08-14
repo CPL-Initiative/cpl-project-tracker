@@ -175,9 +175,12 @@
       var show = pinned ||
         (ovOrgs ? (ovOrgs.indexOf(org.id) !== -1)
                 : (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1)));
-      // A tab the curator hid from the menu stays hidden under every site.
-      // Checked last so it cannot be undone by a pin.
-      if (ov && ov.isHidden(t)) show = false;
+      // A tab the curator took off the menu — hidden outright, or filtered to an
+      // audience this viewer is not in — stays off under every site. Checked
+      // LAST so it cannot be undone by a pin, and asked as ONE question
+      // (isMenuHidden) because nav_groups.js asks the same one: two places
+      // re-combining the same pair of rules is how they drift apart.
+      if (ov && typeof ov.isMenuHidden === "function" && ov.isMenuHidden(t)) show = false;
       b.style.display = show ? "" : "none";
       b.setAttribute("data-org-hidden", show ? "0" : "1");
     });

@@ -179,9 +179,68 @@ const groupIds = (w) => Array.prototype.slice
   }
 })();
 
+
+// ── The audience filter, in the actual rail ─────────────────────────────────
+function makeAudRail(nav, creds) {
+  const dom = new JSDOM(`<!doctype html><html><body>${NAV}</body></html>`,
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  if (creds && creds.phrase) w.localStorage.setItem(creds.phrase, "x");
+  if (creds && creds.magic) {
+    w.sessionStorage.setItem("cpl_sb", JSON.stringify({
+      access_token: "aaaaaaaaaaaaaaaaaaaa.bbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc", email: "s@x" }));
+  }
+  w.fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(nav || []) });
+  [OVERLAY_SRC, NAVGROUPS_SRC, ORGS_SRC].forEach((src) => {
+    const el = w.document.createElement("script"); el.textContent = src;
+    w.document.body.appendChild(el);
+  });
+  return w;
+}
+const vis = (w, t) => {
+  const b = w.document.querySelector(`.cpl-tab[data-tab="${t}"]`);
+  return b && b.style.display !== "none";
+};
+
+(async function () {
+  const ROWS = [{ kind: "tab", key: "governance", audience: "signed_in" }];
+  {
+    const w = makeAudRail(ROWS, {});
+    await new Promise((r) => setTimeout(r, 40));
+    check("anonymous: an audience-filtered tab is off the rail", !vis(w, "governance"));
+    check("…but its button is STILL in the DOM, so the deep link routes",
+      !!w.document.querySelector('.cpl-tab[data-tab="governance"]'));
+    check("…and everything else is untouched", vis(w, "budget") && vis(w, "sierra-training"));
+  }
+  {
+    const w = makeAudRail(ROWS, { phrase: "cpl_team_pass" });
+    await new Promise((r) => setTimeout(r, 40));
+    check("with the team phrase, the tab is on the rail", vis(w, "governance"));
+  }
+  {
+    // The live path: unlock in place, no reload.
+    const w = makeAudRail(ROWS, {});
+    await new Promise((r) => setTimeout(r, 40));
+    check("before unlocking it is off the rail", !vis(w, "governance"));
+    w.localStorage.setItem("cpl_team_pass", "x");
+    w.dispatchEvent(new w.CustomEvent("cpl-team-pass-unlocked", { detail: {} }));
+    await new Promise((r) => setTimeout(r, 20));
+    check("entering the phrase puts it on the rail without a reload", vis(w, "governance"));
+    check("the rest of the rail survived that rebuild",
+      railOrder(w).length === 8 && groupIds(w).length > 0);
+  }
+  {
+    // The fail-safe, restated for audience: no overlay = nothing filtered.
+    const w = makeAudRail(null, {});
+    await new Promise((r) => setTimeout(r, 40));
+    check("with no overlay rows, the audience filter hides nothing",
+      vis(w, "governance") && vis(w, "sierra-training") && vis(w, "budget"));
+  }
+})();
+
 setTimeout(function () {
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nnav_groups_overlay.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 400);
+}, 900);

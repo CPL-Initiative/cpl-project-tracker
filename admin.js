@@ -113,6 +113,19 @@
     { id: "view",     rank: 0, label: "A view — no rules of its own", hint: "Views and materialised views cannot carry row-level security. Unless it was created security_invoker it runs with its owner's rights and BYPASSES the protection on the tables underneath. Worth checking who holds the grant." },
     { id: "unknown",  rank: -1, label: "Not mapped",       hint: "This tab's data surface has not been mapped, so its gate is UNKNOWN — not 'none'. Treat it as unverified rather than safe." },
   ];
+  /* Worded as "show in the menu to", never "who can access" — the control does
+   * not gate the tab, and a label implying it does is how someone comes to
+   * believe they have secured something. */
+  var AUDIENCE_LABEL = {
+    everyone: "Everyone",
+    signed_in: "Signed-in people (team phrase or magic link)",
+    magic_link: "Magic-link sign-in only",
+  };
+  var AUDIENCE_HELP = {
+    signed_in: "Only shown to people who have entered a team phrase or signed in with a magic link.",
+    magic_link: "Only shown to people signed in with a magic link. The team phrase does not reveal it.",
+  };
+
   function gateById(id) {
     for (var i = 0; i < GATES.length; i++) if (GATES[i].id === id) return GATES[i];
     return GATES[GATES.length - 1];
@@ -277,6 +290,7 @@
         label: r && r.label != null ? r.label : null,
         orgs: r && r.orgs && r.orgs.length ? r.orgs.slice() : null,
         pinned: !!(r && r.pinned),
+        audience: (r && r.audience) || "everyone",
       };
     }
 
@@ -367,6 +381,7 @@
           hidden: !!t.hidden,
           orgs: (t.orgs && t.orgs.length) ? t.orgs : null,
           pinned: !!t.pinned,
+          audience: t.audience || "everyone",
           updated_by: who, updated_at: now,
         });
       });
@@ -505,6 +520,9 @@
       ".adm-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
       ".adm-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
       ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
+      ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
+      ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
+      ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
     ].join("\n");
     document.head.appendChild(el);
@@ -529,6 +547,12 @@
     }
     if (t.pinned || (prot && t.tab === "admin")) {
       h += '<span class="adm-g" title="Shown on every site — it cannot be filtered out by one.">📌</span>';
+    }
+    if (t.audience && t.audience !== "everyone") {
+      h += '<span class="adm-g adm-g-aud" title="' + esc(AUDIENCE_HELP[t.audience] || "")
+        + ' This changes who SEES the menu item. The page itself still opens for anyone with the link, '
+        + 'and the data behind it is protected only by its database rules.">'
+        + esc(AUDIENCE_LABEL[t.audience] || t.audience) + "</span>";
     }
     // The gate travels WITH the item into the arrange view. Someone reaching for
     // "hide" is exactly the person who needs to be told hiding is not protecting.
@@ -565,9 +589,41 @@
     });
     h += "</div>"
       + '<label class="adm-check" title="Show on every site, ignoring the list above."><input type="checkbox" '
-      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> 📌 every site</label>"
-      + '<button class="adm-btn" data-editdone>Done</button>'
-      + "</div>";
+      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> 📌 every site</label>";
+
+    // Who SEES it. Deliberately worded as "show in the menu to", never "access":
+    // the control does not gate the tab, and a label implying it does is how
+    // someone ends up believing they have secured something.
+    var prot = window.CPL_NAV_OVERLAY.AUDIENCE_LOCKED[t.tab];
+    if (!prot) {
+      h += '<label class="adm-check" title="Who sees this in the menu. It does NOT lock the page — '
+        + 'anyone with the link still opens it, and the data is protected by its database rules only.">'
+        + "Show in menu to: "
+        + '<select class="adm-select sit-aud" data-aud="' + esc(t.tab) + '">'
+        + ["everyone", "signed_in", "magic_link"].map(function (a) {
+          return '<option value="' + a + '"' + ((t.audience || "everyone") === a ? " selected" : "") + ">"
+            + esc(AUDIENCE_LABEL[a]) + "</option>";
+        }).join("")
+        + "</select></label>";
+    }
+    h += '<button class="adm-btn" data-editdone>Done</button>';
+
+    // The warning is placed HERE, on the control, rather than only in the page
+    // header — someone narrowing the audience of a tab whose data anyone can
+    // read is about to believe they have protected it, and this is the moment
+    // that belief forms.
+    if (!prot && (t.audience || "everyone") !== "everyone") {
+      var g = tabGate(t.tab);
+      if (g.gate && (g.gate.id === "open" || g.gate.id === "public" || g.gate.id === "view")) {
+        h += '<div class="adm-audwarn">⚠ This hides the menu item, but the data behind it is still '
+          + "<b>readable by anyone</b> who opens the page directly. To actually restrict it, its database "
+          + "rules have to change — see the protection column below.</div>";
+      } else if (g.rpcOnly || !g.measured) {
+        h += '<div class="adm-audwarn">⚠ This hides the menu item only. What protects the data behind it '
+          + "has not been mapped, so treat it as unverified rather than restricted.</div>";
+      }
+    }
+    h += "</div>";
     return h;
   }
 
@@ -702,8 +758,16 @@
       + unmapped + '</div><div class="l">Not mapped</div></div>'
       + "</div>";
 
-    // ── Section 1: the menu ──
-    h += "<h3>Menu items</h3>";
+    // ── Section 1: arrange the menu ──
+    // FIRST on the page, deliberately. It was shipped last, below a 36-row table
+    // and the protections table, and Sam's immediate report was "can't see how to
+    // drag and drop" — correctly, because it was two screens down. The tab's
+    // PRIMARY action belongs above its reference material; the inventory is what
+    // you consult, this is what you came to do.
+    h += renderArrange();
+
+    // ── Section 2: the menu inventory ──
+    h += "<h3>Every menu item, and what protects it</h3>";
     var q = state.q.trim().toLowerCase();
     var rows = items.filter(function (it) {
       if (q && (it.label + " " + it.tab + " " + it.group).toLowerCase().indexOf(q) === -1) return false;
@@ -795,7 +859,7 @@
         + "not none — do not read a blank there as a clean bill of health.</p>";
     }
 
-    // ── Section 2: what the gates mean ──
+    // ── Section 3: what the gates mean ──
     h += "<h3>What the protections mean</h3>";
     h += '<div class="adm-tablewrap"><table class="adm-table">'
       + "<colgroup><col style=\"width:20%\"><col style=\"width:12%\"><col style=\"width:68%\"></colgroup>"
@@ -813,9 +877,6 @@
         + '<td class="sub">' + esc(gt.hint) + "</td></tr>";
     });
     h += "</tbody></table></div>";
-
-    // ── Section 3: arrange the menu ──
-    h += renderArrange();
 
     h += '<p class="adm-note">Admin is pinned to every site, because it manages them — it cannot be filtered '
       + "out by the site you are trying to fix. The team phrases themselves stay on their own <b>Team Phrases</b> "
@@ -953,6 +1014,14 @@
         if (cb.checked && at === -1) list.push(id);
         if (!cb.checked && at !== -1) list.splice(at, 1);
         f.item.orgs = list.length ? list : null;
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-aud]").forEach(function (sel) {
+      sel.addEventListener("change", function () {
+        var f = findTab(d, sel.getAttribute("data-aud"));
+        if (!f) return;
+        f.item.audience = sel.value;
         touch(); render(root);
       });
     });
