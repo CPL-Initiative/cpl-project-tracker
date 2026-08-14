@@ -175,6 +175,17 @@
     editId: null,      // id of the row being edited (null = none)
     editRule: "", editNote: "", editTestQ: "",
     editBusy: false,
+    // ── Built-in rules layer (sierra_rules, Session 156) ──
+    // Deliberately its OWN load state rather than reusing state.gated. The two
+    // panes have different gates — the guidance pane opens to a team-phrase
+    // holder, this one is reviewer-only — so one shared "gated" flag would
+    // either lock the team out of guidance or show them a closed pane as empty.
+    rules: null,          // overlay rows from sierra_rules; null = not loaded
+    rulesState: "idle",   // idle|loading|ok|notreviewer|error
+    rulesErr: null,
+    rulesOpen: {},        // key → expanded
+    ruleEditKey: null, ruleEditBody: "", ruleEditWhen: "", ruleEditOrder: "",
+    ruleBusy: {},         // key → write in flight
   };
 
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
@@ -359,6 +370,16 @@
       ".sit-guid-editrow { display:flex; gap:6px; flex-wrap:wrap; margin-top:2px; }",
       ".sit-guid-editnote { font-size:.72rem; color: var(--text-muted, #6b7280); }",
       ".sit-rule-off .sit-q { color: var(--text-muted); text-decoration: line-through; }",
+      // Built-in rules pane. The left edge is what separates a rule that GOVERNS
+      // Sierra from an instruction the team wrote — they sit on the same screen
+      // and are read top to bottom, so they must not look interchangeable.
+      ".sit-rule { border-left:3px solid var(--navy-secondary, #1c3d5a); }",
+      ".sit-chip-prot { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); font-weight:700; }",
+      ".sit-chip-edited { color: var(--navy-primary); background: var(--surface-muted); font-weight:700; }",
+      ".sit-row-body .txt.sit-dim { color: var(--text-muted); }",
+      ".sit-guid-editbox .sit-rule-body { resize:vertical; padding:8px 11px; border:1px solid var(--border-strong);"
+        + " border-radius:8px; font: .86rem inherit; font-family:inherit; background: var(--surface-opaque);"
+        + " color: var(--text-body); width:100%; box-sizing:border-box; }",
     ].join("\n");
     var el = document.createElement("style");
     el.id = CSS_ID; el.textContent = css;
@@ -698,6 +719,183 @@
       alert("Could not update the rule — renew your session on the Team & RACI tab and try again.");
     }).then(function () { delete state.guidBusy[id]; render(root); });
   }
+
+  /* ══ Sierra's built-in rules (sierra_rules) ═══════════════════════════════
+   *
+   * The ~10 rules that OUTRANK everything in the Instructions pane above. Sam
+   * wrote an instruction on 2026-08-14, re-tested an hour later and got the old
+   * behaviour: STATEWIDE_RULE was suppressing the answer he wanted and he could
+   * not see it, could not edit it, and the prompt's promise that "the team
+   * guidance wins" is a sentence, not a mechanism. #1186 made the rules data;
+   * this pane is the half that lets a human SEE them.
+   *
+   * TWO THINGS HERE ARE EASY TO GET WRONG, and both are load-bearing.
+   *
+   * 1. THE TABLE IS EMPTY ON PURPOSE. Zero rows means every rule is running its
+   *    code default. So the pane CANNOT be a list of table rows — it would show
+   *    a curator nothing at all. It renders the DEFAULTS (generated into
+   *    sierra_rule_defaults.js from index.ts) and paints the overlay on top.
+   *
+   * 2. AN EMPTY READ HERE MEANS THE OPPOSITE OF WHAT IT MEANS ON TEAM PHRASES.
+   *    There, team_access is known non-empty, so [] proves "not a reviewer".
+   *    Here [] is the NORMAL state, so the same inference would tell a reviewer
+   *    they are locked out — and, worse, tell a locked-out person that Sierra
+   *    has no rules. The two cases have to be separated by a probe that cannot
+   *    be confused: a reviewer-only read of a table that IS known non-empty.
+   * ════════════════════════════════════════════════════════════════════════ */
+
+  function ruleDefaults() {
+    var d = window.SIERRA_RULE_DEFAULTS;
+    return (d && Array.isArray(d.rules)) ? d : { rules: [], when_labels: {}, protected: [] };
+  }
+  function whenLabel(key) {
+    return ruleDefaults().when_labels[key] || key;
+  }
+
+  /* Am I a reviewer? Not answerable from the sierra_rules read itself, per (2)
+   * above. team_access is reviewer-only for SELECT and holds the site phrases —
+   * known non-empty (4 rows) — so rows back proves reviewer and [] proves not.
+   * select=id keeps the phrases themselves off the wire; we need the COUNT, not
+   * the secrets.
+   *
+   * A FAILED probe is neither answer. It resolves to null and the pane says it
+   * could not check, because "not a reviewer" is an accusation and a network
+   * blip must not make it. */
+  function probeReviewer() {
+    var s = getSession();
+    if (!s || !s.access_token) return Promise.resolve(false);  // team phrase alone never opens this
+    return fetch(REST + "/team_access?select=id&limit=1", { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) return null;
+        return r.json().then(function (rows) { return Array.isArray(rows) && rows.length > 0; });
+      })
+      .catch(function () { return null; });
+  }
+
+  function loadRules() {
+    return fetch(REST + "/sierra_rules?select=key,body,applies_when,sort_order,active,memory_slug,updated_by,updated_at",
+      { headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("rules " + r.status);
+        return r.json();
+      });
+  }
+
+  /* Merge the code defaults with the curator overlay for DISPLAY.
+   *
+   * This mirrors assembleRules() in cpl-chat/index.ts, and a mirror that drifts
+   * is worse than no pane at all: it would show a curator a rule that is not the
+   * one Sierra is running. tests/sierra_rule_defaults.test.js lifts the REAL
+   * assembleRules out of index.ts and asserts this function agrees with it over
+   * the same fixtures, so drift fails CI rather than misinforming a curator.
+   *
+   * Pure — takes the overlay rather than reading state — so the test can call it.
+   */
+  function mergeRules(defaults, overlayRows) {
+    var overlay = {};
+    (overlayRows || []).forEach(function (o) { if (o && o.key) overlay[String(o.key)] = o; });
+    var out = (defaults || []).map(function (d) {
+      var o = overlay[d.key];
+      var prot = !!d.protected;
+      if (!o) {
+        return {
+          key: d.key, title: d.title, body: d.body, defaultBody: d.body,
+          appliesWhen: d.applies_when, sortOrder: d.sort_order,
+          active: true, overridden: false, protectedKey: prot, row: null,
+        };
+      }
+      var oBody = typeof o.body === "string" ? o.body.trim() : "";
+      return {
+        key: d.key, title: d.title, defaultBody: d.body,
+        // A protected rule KEEPS its code body and gains the curator's text;
+        // an ordinary rule has its body replaced. Same rule as index.ts.
+        body: !oBody ? d.body : (prot ? d.body + "\n" + oBody : oBody),
+        curatorBody: oBody,
+        appliesWhen: (o.applies_when && ruleDefaults().when_labels[o.applies_when]) ? o.applies_when : d.applies_when,
+        sortOrder: typeof o.sort_order === "number" ? o.sort_order : d.sort_order,
+        // active=false is honoured for ordinary rules and IGNORED for protected
+        // ones — gutting a guard by switching it off is the thing the protected
+        // set exists to prevent.
+        active: prot ? true : o.active !== false,
+        overridden: !!oBody, protectedKey: prot, row: o,
+      };
+    });
+    out.sort(function (a, b) { return (a.sortOrder - b.sortOrder) || a.key.localeCompare(b.key); });
+    return out;
+  }
+
+  /* Write an overlay row. The key is the PK and the row usually does not exist
+   * yet, so this is an UPSERT — a plain PATCH would silently touch nothing on
+   * the first edit of any rule, which is every edit at the moment.
+   *
+   * `return=representation` is not decoration: PostgREST answers a policy-filtered
+   * write with 200 and an EMPTY body, so "ok" is not proof it wrote. No row back
+   * = FAILURE, with the curator's text kept in the box. */
+  function writeRule(key, patch, root, onDone) {
+    if (state.ruleBusy[key]) return Promise.resolve();
+    var merged = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+    if (!merged) return Promise.resolve();
+    state.ruleBusy[key] = true; render(root);
+
+    var existing = merged.row || {};
+    var body = {
+      key: key,
+      title: merged.title,
+      // Every column is sent, because an upsert that merges duplicates REPLACES
+      // the row — sending only the changed field would blank the others.
+      body: patch.body != null ? patch.body : (existing.body || merged.defaultBody),
+      applies_when: patch.applies_when != null ? patch.applies_when : (existing.applies_when || merged.appliesWhen),
+      sort_order: patch.sort_order != null ? patch.sort_order : (typeof existing.sort_order === "number" ? existing.sort_order : merged.sortOrder),
+      active: patch.active != null ? patch.active : (existing.active !== false),
+      updated_by: whoAmI(),
+      updated_at: new Date().toISOString(),
+    };
+    if (existing.memory_slug) body.memory_slug = existing.memory_slug;
+
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    return fetch(REST + "/sierra_rules", { method: "POST", headers: h, body: JSON.stringify(body) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("save " + r.status);
+        return r.json();
+      })
+      .then(function (rows) {
+        var saved = Array.isArray(rows) ? rows[0] : rows;
+        if (!saved) throw new Error("not saved — your sign-in isn’t a reviewer");
+        state.rules = (state.rules || []).filter(function (o) { return o.key !== key; });
+        state.rules.push(saved);
+        state.ruleBusy[key] = false;
+        if (typeof onDone === "function") onDone();
+        render(root);
+      })
+      .catch(function (e) {
+        state.ruleBusy[key] = false;
+        render(root);
+        alert("Could not save this rule — " + ((e && e.message) || "unknown error")
+          + ".\n\nYour text is still in the box. These rules need a magic-link reviewer sign-in "
+          + "(the team phrase does not open them); renew it on the Team & RACI tab and press Save again.");
+      });
+  }
+
+  function openRuleEdit(key, root) {
+    var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+    if (!m) return;
+    state.ruleEditKey = key;
+    // Seed with what a curator is actually editing. For a protected rule that is
+    // their ADDITION (the code body ships regardless), so seeding it with the
+    // built-in text would invite them to "edit" words that are not editable.
+    state.ruleEditBody = m.protectedKey ? (m.curatorBody || "") : (m.curatorBody || m.defaultBody);
+    state.ruleEditWhen = m.appliesWhen;
+    state.ruleEditOrder = String(m.sortOrder);
+    state.rulesOpen[key] = true;
+    render(root);
+  }
+  function cancelRuleEdit(root) {
+    state.ruleEditKey = null; state.ruleEditBody = ""; state.ruleEditWhen = ""; state.ruleEditOrder = "";
+    render(root);
+  }
+
   function setStatus(turnId, status, root) {
     if (state.busy[turnId]) return Promise.resolve();
     state.busy[turnId] = true; render(root);
@@ -1026,6 +1224,176 @@
     return h;
   }
 
+  // ── Built-in rule rows ──
+  function ruleRow(r) {
+    var open = !!state.rulesOpen[r.key];
+    var edited = r.overridden;
+    var off = !r.active;
+    var h = '<div class="sit-row sit-rule' + (off ? " sit-rule-off" : "") + '">';
+    h += '<div class="sit-row-head" data-ruleopen="' + esc(r.key) + '">'
+      + '<span class="sit-q">' + esc(r.title) + "</span>"
+      + '<span class="sit-chip" title="The order Sierra reads the rules in. A lower number is read '
+      + 'earlier, and an earlier rule beats a later one when they disagree — which is exactly how a '
+      + 'built-in rule can quietly override an instruction you wrote.">#' + r.sortOrder + "</span>"
+      + '<span class="sit-chip" title="When this rule is sent to Sierra. Rules that do not apply to a '
+      + 'question are left out of it entirely.">' + esc(whenLabel(r.appliesWhen)) + "</span>";
+    if (r.protectedKey) {
+      h += '<span class="sit-chip sit-chip-prot" title="A safety rule. Its built-in wording is ALWAYS '
+        + "sent, switching it off does nothing, and anything you write here is ADDED to it rather than "
+        + "replacing it. These carry the never-invent-a-college and student-privacy guarantees.\">"
+        + "🛡 Protected</span>";
+    }
+    h += edited
+      ? '<span class="sit-chip sit-chip-edited" title="Someone on the team has changed this rule. '
+        + 'The built-in wording is still shown below, so you can see what was changed from.">✏️ Edited</span>'
+      : '<span class="sit-chip" title="This rule is running exactly as it ships in the code — nobody '
+        + 'has changed it.">Built-in</span>';
+    if (off) {
+      h += '<span class="sit-chip sit-chip-new" title="Switched off, so Sierra is not sent this rule '
+        + 'at all.">Switched off</span>';
+    }
+    h += '<span class="sit-meta">' + (open ? "▾" : "▸") + "</span></div>";
+
+    if (open) {
+      h += '<div class="sit-row-body">';
+      if (edited && !r.protectedKey) {
+        h += '<div class="lbl">What Sierra is being told now (the team’s wording)</div>'
+          + '<div class="txt">' + esc(r.curatorBody) + "</div>"
+          + '<div class="lbl">The built-in wording this replaced</div>'
+          + '<div class="txt sit-dim">' + esc(r.defaultBody) + "</div>";
+      } else if (edited && r.protectedKey) {
+        h += '<div class="lbl">Built-in wording (always sent — this part cannot be replaced)</div>'
+          + '<div class="txt">' + esc(r.defaultBody) + "</div>"
+          + '<div class="lbl">What the team added to it</div>'
+          + '<div class="txt">' + esc(r.curatorBody) + "</div>";
+      } else {
+        h += '<div class="lbl">What Sierra is being told</div>'
+          + '<div class="txt">' + esc(r.body) + "</div>";
+      }
+      if (r.row && r.row.updated_by) {
+        h += '<div class="sit-guid-editnote">Last changed by <b>' + esc(r.row.updated_by) + "</b>"
+          + (r.row.updated_at ? " on " + esc(fmtWhen(r.row.updated_at)) : "") + ".</div>";
+      }
+      if (state.ruleEditKey === r.key) {
+        h += ruleEditor(r);
+      } else {
+        h += '<div class="sit-actions">'
+          + '<button class="sit-btn sit-btn-primary" data-ruleedit="' + esc(r.key) + '">'
+          + (r.protectedKey ? "✏️ Add to this rule" : "✏️ Change this rule") + "</button>";
+        // A protected rule ignores active=false, so offering the switch would be
+        // a control that does nothing — the `Clear owner` no-op, repeated.
+        if (!r.protectedKey) {
+          h += '<button class="sit-btn" data-ruletoggle="' + esc(r.key) + '"'
+            + (state.ruleBusy[r.key] ? " disabled" : "")
+            + ' title="Stops this rule being sent to Sierra at all. The built-in wording is kept, so '
+            + 'you can switch it back on.">'
+            + (state.ruleBusy[r.key] ? "Working…" : (r.active ? "Switch off" : "Switch on")) + "</button>";
+        }
+        if (edited) {
+          h += '<button class="sit-btn" data-rulerestore="' + esc(r.key) + '"'
+            + (state.ruleBusy[r.key] ? " disabled" : "")
+            + ' title="Puts the original built-in wording back. The row stays in the table, marked as '
+            + 'changed, so the history of what was tried is not lost.">↩ Restore the built-in wording</button>';
+        }
+        h += "</div>";
+      }
+      h += "</div>";
+    }
+    return h + "</div>";
+  }
+
+  function ruleEditor(r) {
+    var when = state.ruleEditWhen || r.appliesWhen;
+    var labels = ruleDefaults().when_labels;
+    var h = '<div class="sit-guid-editbox">';
+    h += '<div class="sit-guid-editlbl">'
+      + (r.protectedKey
+        ? "Text to ADD to this safety rule. The built-in wording above is always sent as well."
+        : "The wording Sierra follows. This replaces the built-in text above.")
+      + "</div>";
+    h += '<textarea class="sit-rule-body" rows="10" '
+      + 'placeholder="Write it as you would say it to a colleague.">' + esc(state.ruleEditBody) + "</textarea>";
+    h += '<div class="sit-guid-editrow">'
+      + '<label class="sit-check" title="When this rule is sent to Sierra. Leave it alone unless you '
+      + 'know the rule should fire on a different kind of question.">When: '
+      + '<select class="sit-select sit-rule-when">'
+      + Object.keys(labels).map(function (k) {
+        return '<option value="' + esc(k) + '"' + (k === when ? " selected" : "") + ">" + esc(labels[k]) + "</option>";
+      }).join("")
+      + "</select></label>"
+      + '<label class="sit-check" title="Lower numbers are read first, and an earlier rule wins when '
+      + 'two disagree. Change this only to settle a conflict between two rules.">Order: '
+      + '<input class="sit-select sit-rule-order" type="number" min="1" max="9999" style="width:80px" value="'
+      + esc(state.ruleEditOrder || String(r.sortOrder)) + '"></label>'
+      + "</div>";
+    h += '<div class="sit-guid-editrow">'
+      + '<button class="sit-btn sit-btn-primary" data-rulesave="' + esc(r.key) + '"'
+      + (state.ruleBusy[r.key] ? " disabled" : "") + ">"
+      + (state.ruleBusy[r.key] ? "Saving…" : "💾 Save") + "</button>"
+      + '<button class="sit-btn" data-rulecancel>Cancel</button>'
+      + "</div>";
+    h += '<div class="sit-guid-editnote">⚠ This changes <b>every</b> place Sierra appears, for everyone, '
+      + "on her next answer — there is nothing to deploy and no review in between.</div>";
+    return h + "</div>";
+  }
+
+  /* The pane, including its four DISTINCT states.
+   *
+   * Keeping them distinct is the whole job. "Signed in but not a reviewer",
+   * "the read failed" and "nobody has changed anything" all produce an empty
+   * list, and rendering them the same way would tell a locked-out person that
+   * Sierra has no rules — the exact inversion team_phrases.js exists to avoid,
+   * arrived at from the opposite direction. */
+  function renderRulesPane() {
+    var defs = ruleDefaults().rules;
+    var h = "<h3>🛡️ Sierra’s built-in rules <span class=\"sit-meta\">(the rules that come with her — "
+      + "these OUTRANK the instructions above)</span></h3>";
+    h += '<p class="sit-guid-warn">These ship inside Sierra herself. When one of them disagrees with an '
+      + "instruction you wrote above, <b>the built-in rule usually wins</b> — that is not a bug, it is the "
+      + "order she reads them in. This pane exists so you can see them; before it, a rule could quietly "
+      + "cancel your instruction with nothing on screen to explain why.</p>";
+
+    if (!defs.length) {
+      // The generated file did not load. Say which file — a curator can hand
+      // that to whoever is on call, and it is a deploy problem, not a permission one.
+      return h + '<div class="sit-empty">Could not load the built-in rules '
+        + "(<code>sierra_rule_defaults.js</code> did not load). This is a site problem, not a "
+        + "permission one — the rules are still governing Sierra normally.</div>";
+    }
+
+    if (state.rulesState === "loading") {
+      return h + '<div class="sit-empty">Loading the built-in rules…</div>';
+    }
+    if (state.rulesState === "notreviewer") {
+      return h + '<div class="sit-empty"><b>These need a personal sign-in.</b><br>'
+        + "The team phrase opens the instructions above, but not this pane — these are the rules that "
+        + "<i>govern</i> the instructions, so they are deliberately held to a narrower gate. Sign in with "
+        + "a magic link on the <b>Team &amp; RACI</b> tab using an address on the reviewer list, then "
+        + "re-open this tab. This is a closed door, not an empty list — Sierra’s rules are all present "
+        + "and working.</div>";
+    }
+    if (state.rulesState === "error") {
+      return h + '<div class="sit-empty">Could not check the built-in rules ('
+        + esc(state.rulesErr || "read failed") + "). This does <b>not</b> mean they are switched off — "
+        + "Sierra keeps running them. Re-open the tab to try again.</div>";
+    }
+    if (state.rulesState !== "ok") {
+      return h + '<div class="sit-empty">Sign in on the <b>Team &amp; RACI</b> tab to see Sierra’s '
+        + "built-in rules.</div>";
+    }
+
+    var merged = mergeRules(defs, state.rules);
+    var editedCount = merged.filter(function (r) { return r.overridden; }).length;
+    var offCount = merged.filter(function (r) { return !r.active; }).length;
+    h += '<p class="sit-cap">' + merged.length + " built-in rules · <b>" + editedCount
+      + "</b> changed by the team"
+      + (offCount ? " · <b>" + offCount + "</b> switched off" : "")
+      + ". Anything not marked <i>Edited</i> is running exactly as it ships. "
+      + "Rules are listed in the order Sierra reads them, first to last.</p>";
+    merged.forEach(function (r) { h += ruleRow(r); });
+    return h;
+  }
+
   // ── Render ──
   function render(root) {
     ensureCss();
@@ -1254,6 +1622,12 @@
       }
     }
 
+    // ── Pane 4: Sierra's built-in rules (sierra_rules) ──
+    // Deliberately BELOW the instructions pane and visually distinct: these are
+    // the rules that outrank what you write up there, and the reason the pane
+    // exists is that on 2026-08-14 one of them silently beat Sam's instruction.
+    html += renderRulesPane();
+
     html += '<p class="sit-gov">Instructions are wired through to Sierra and reach every surface she appears '
       + "on, including the Sierra AI section of <b>My College</b> — she is sent them with every question, so a "
       + "change here shows up on her next answer with nothing to deploy. Still to come: adding documents to "
@@ -1322,6 +1696,83 @@
     if (bulkSel) bulkSel.addEventListener("change", function () { state.bulkStatus = bulkSel.value; });
     var bulkBtn = root.querySelector("[data-bulk-apply]");
     if (bulkBtn) bulkBtn.addEventListener("click", function () { bulkTriage(root); });
+
+    // ── Built-in rules pane ──
+    root.querySelectorAll("[data-ruleopen]").forEach(function (el) {
+      el.addEventListener("click", function () {
+        // Same guard as the feedback rows: a click that ENDS a selection is
+        // someone copying a rule body, not asking to collapse it. These bodies
+        // are the most copy-worthy text on the tab.
+        if (hasTextSelection(el)) return;
+        var k = el.getAttribute("data-ruleopen");
+        state.rulesOpen[k] = !state.rulesOpen[k];
+        render(root);
+      });
+    });
+    root.querySelectorAll("[data-ruleedit]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        openRuleEdit(btn.getAttribute("data-ruleedit"), root);
+      });
+    });
+    var rCancel = root.querySelector("[data-rulecancel]");
+    if (rCancel) rCancel.addEventListener("click", function (e) { e.stopPropagation(); cancelRuleEdit(root); });
+    // Drafts live in state so a re-render cannot eat typing — the same reason the
+    // guidance composer does it.
+    var rBody = root.querySelector(".sit-rule-body");
+    if (rBody) rBody.addEventListener("input", function () { state.ruleEditBody = rBody.value; });
+    var rWhen = root.querySelector(".sit-rule-when");
+    if (rWhen) rWhen.addEventListener("change", function () { state.ruleEditWhen = rWhen.value; });
+    var rOrder = root.querySelector(".sit-rule-order");
+    if (rOrder) rOrder.addEventListener("input", function () { state.ruleEditOrder = rOrder.value; });
+    root.querySelectorAll("[data-rulesave]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-rulesave");
+        // Read the live DOM as the fallback, not just state: the guarantee that
+        // a curator's words survive must not depend on an input handler having
+        // fired (the saveGuidance lesson, #1146).
+        var ta = root.querySelector(".sit-rule-body");
+        var body = (ta ? ta.value : state.ruleEditBody) || "";
+        var sel = root.querySelector(".sit-rule-when");
+        var ord = root.querySelector(".sit-rule-order");
+        var n = parseInt((ord ? ord.value : state.ruleEditOrder), 10);
+        if (!body.trim() || body.trim().length < 3) {
+          alert("The wording needs at least a few characters. To stop this rule instead, use Switch off.");
+          return;
+        }
+        writeRule(key, {
+          body: body.trim(),
+          applies_when: sel ? sel.value : undefined,
+          sort_order: isNaN(n) ? undefined : n,
+        }, root, function () { cancelRuleEdit(root); });
+      });
+    });
+    root.querySelectorAll("[data-ruletoggle]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-ruletoggle");
+        var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+        if (!m) return;
+        writeRule(key, { active: !m.active }, root);
+      });
+    });
+    root.querySelectorAll("[data-rulerestore]").forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var key = btn.getAttribute("data-rulerestore");
+        var m = mergeRules(ruleDefaults().rules, state.rules).filter(function (r) { return r.key === key; })[0];
+        if (!m) return;
+        // There is no DELETE policy on sierra_rules, by design (the row and its
+        // audit trail stay). So "restore" WRITES THE BUILT-IN WORDING BACK — and
+        // the confirm says so, rather than implying the row disappears. A button
+        // that promises more than it does is the `Clear owner` no-op again.
+        if (!confirm("Put the built-in wording back for “" + m.title + "”?\n\n"
+          + "Sierra goes back to the original text on her next answer. The row stays in the table, "
+          + "marked as changed, so the record of what was tried is kept.")) return;
+        writeRule(key, { body: m.defaultBody, applies_when: m.appliesWhen, sort_order: m.sortOrder }, root);
+      });
+    });
     // guidance composer (drafts live in state so re-renders don't eat typing)
     var gi = root.querySelector(".sit-guid-input");
     if (gi) gi.addEventListener("input", function () {
@@ -1534,6 +1985,37 @@
     }).catch(function (e) {
       state.loading = false; state.error = (e && e.message) || "error"; render(root);
     });
+    // Loaded SEPARATELY from the Promise.all above, on purpose. This read is
+    // reviewer-only while the others open to a team phrase, so folding it in
+    // would let the stricter gate fail the whole tab for the team.
+    loadRulesPane(root);
+  }
+
+  /* Resolve the pane's state, keeping "not a reviewer" and "read failed" apart.
+   *
+   * Order matters: the probe is what disambiguates an empty read, and the empty
+   * read is the NORMAL case here (the table is seeded empty). So rows-back is a
+   * shortcut to "reviewer", and only the empty case has to wait on the probe. */
+  function loadRulesPane(root) {
+    if (!signedIn()) { state.rulesState = "signedout"; state.rules = null; render(root); return Promise.resolve(); }
+    state.rulesState = "loading"; state.rulesErr = null; render(root);
+    return Promise.all([
+      loadRules().then(function (rows) { return { rows: rows }; },
+                       function (e) { return { err: (e && e.message) || "read failed" }; }),
+      probeReviewer(),
+    ]).then(function (res) {
+      var read = res[0], isReviewer = res[1];
+      if (read.err) { state.rulesState = "error"; state.rulesErr = read.err; state.rules = null; return; }
+      var rows = Array.isArray(read.rows) ? read.rows : [];
+      if (rows.length > 0) { state.rules = rows; state.rulesState = "ok"; return; }
+      // Empty. Which empty?
+      if (isReviewer === true) { state.rules = []; state.rulesState = "ok"; return; }
+      if (isReviewer === false) { state.rules = null; state.rulesState = "notreviewer"; return; }
+      // The probe itself failed. Do NOT accuse them of not being a reviewer —
+      // say we could not check, which is the only true statement available.
+      state.rules = null; state.rulesState = "error";
+      state.rulesErr = "could not confirm your sign-in";
+    }).then(function () { render(root); });
   }
 
   function activate() {
@@ -1585,6 +2067,17 @@
     _STATUS_HELP: STATUS_HELP,
     _HELP: HELP,
     _startRuleFrom: startRuleFrom,
+    // built-in rules pane (sierra_rules)
+    _mergeRules: mergeRules,
+    _ruleRow: ruleRow,
+    _ruleEditor: ruleEditor,
+    _renderRulesPane: renderRulesPane,
+    _loadRulesPane: loadRulesPane,
+    _probeReviewer: probeReviewer,
+    _writeRule: writeRule,
+    _openRuleEdit: openRuleEdit,
+    _cancelRuleEdit: cancelRuleEdit,
+    _ruleDefaults: ruleDefaults,
   };
 
   // NOTE: tabs.js dispatches cpl-tab-activated on WINDOW (not document) — a
