@@ -153,6 +153,10 @@ jobs:
             # which reads as "nothing left to curate".
             "_site/kb/cr_reference_worklist.json"
             "_site/cr_reference.js"
+            # Sierra's built-in rules, GENERATED from cpl-chat/index.ts. Same
+            # reason as the worklist above: without it the built-in rules pane
+            # renders "could not load" instead of the ten rules governing Sierra.
+            "_site/sierra_rule_defaults.js"
             "_site/prototype/cer_triage_redesign_v1.html"
           )
           missing=0

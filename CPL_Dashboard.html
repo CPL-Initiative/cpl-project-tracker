@@ -15297,10 +15297,18 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
       function wire() {
         if (!window.CPL_TABS) return;
         window.CPL_TABS.onActivate('sierra-training', function () {
-          window.CPL_TABS.loadScript('sierra_training.js', 'CPL_SIERRA_TRAINING_TAB', function () {
-            if (window.CPL_SIERRA_TRAINING_TAB && typeof window.CPL_SIERRA_TRAINING_TAB.activate === 'function') {
-              window.CPL_SIERRA_TRAINING_TAB.activate();
-            }
+          // sierra_rule_defaults.js FIRST: it carries Sierra's ten built-in rules,
+          // GENERATED from cpl-chat/index.ts by kb/_build_sierra_rule_defaults.py.
+          // The sierra_rules table is seeded empty on purpose, so without this the
+          // built-in rules pane would render nothing at all. Loaded as a nested
+          // call rather than in parallel so the pane never paints an empty list
+          // for one frame and teaches the curator there is nothing there.
+          window.CPL_TABS.loadScript('sierra_rule_defaults.js', 'SIERRA_RULE_DEFAULTS', function () {
+            window.CPL_TABS.loadScript('sierra_training.js', 'CPL_SIERRA_TRAINING_TAB', function () {
+              if (window.CPL_SIERRA_TRAINING_TAB && typeof window.CPL_SIERRA_TRAINING_TAB.activate === 'function') {
+                window.CPL_SIERRA_TRAINING_TAB.activate();
+              }
+            });
           });
         });
       }
