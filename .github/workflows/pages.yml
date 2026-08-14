@@ -161,6 +161,9 @@ jobs:
             # "not mapped" — honest, but the tab has nothing left to say.
             "_site/cobi_admin_surface.js"
             "_site/admin.js"
+            # The menu overlay. Absent, every visitor silently loses the
+            # curator arrangement and gets the shipped menu instead.
+            "_site/nav_overlay.js"
             "_site/prototype/cer_triage_redesign_v1.html"
           )
           missing=0

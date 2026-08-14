@@ -53,6 +53,16 @@
     gates: null,         // table -> {select_gate, write_gates, rls_enabled}
     q: "",               // filter box
     showAll: false,      // include tabs with no data surface
+    // ── Arrange (drag and drop) ──
+    // `draft` is the working arrangement. It is built from the live nav + the
+    // overlay and mutated locally; nothing reaches the database until Save, so
+    // a mis-drag costs a click on Discard rather than everyone's menu.
+    draft: null,         // {containers:[{id,label,isTop,hidden,tabs:[…]}]}
+    dirty: false,
+    saving: false,
+    saveMsg: null,
+    editKey: null,       // "tab:<id>" | "group:<id>" open for rename / sites
+    dragKey: null,
   };
 
   // ── Auth ──
@@ -232,6 +242,193 @@
     return { gate: worst, tables: tables, rpcs: rpcs, measured: true };
   }
 
+  /* ── The arrangement editor's model ────────────────────────────────────────
+   *
+   * Built from the SAME plan() the menu itself renders through, so the editor
+   * cannot show an arrangement the rail would lay out differently. Hidden items
+   * are included in position and marked — without them there is no way to
+   * unhide anything, which is the obvious trap in a "hide" affordance.
+   *
+   * "Top level" is modelled as a container like any other so a drag into it
+   * needs no special case; it is pinned first because that is where it renders.
+   */
+  function buildDraft() {
+    var ov = window.CPL_NAV_OVERLAY;
+    var groups = (window.CPL_NAV_GROUPS && window.CPL_NAV_GROUPS.GROUPS) || [];
+    var present = navItems().map(function (it) { return it.tab; });
+    if (!ov || typeof ov.plan !== "function") return null;
+    var p = ov.plan(groups, present);
+
+    /* plan() carries only placement — {tab, hidden}. The draft has to carry the
+     * whole row, because saveDraft() writes EVERY field for EVERY tab: seeding
+     * from placement alone would silently blank every label, site list and pin
+     * the moment anyone dragged anything and pressed Save. Read them back off
+     * the overlay rows here so a save round-trips what it did not touch. */
+    var rows = ov.rows() || [];
+    function rowFor(tab) {
+      for (var i = 0; i < rows.length; i++) if (rows[i].kind === "tab" && rows[i].key === tab) return rows[i];
+      return null;
+    }
+    function hydrate(e) {
+      var r = rowFor(e.tab);
+      return {
+        tab: e.tab,
+        hidden: e.hidden,
+        label: r && r.label != null ? r.label : null,
+        orgs: r && r.orgs && r.orgs.length ? r.orgs.slice() : null,
+        pinned: !!(r && r.pinned),
+      };
+    }
+
+    var containers = [{
+      id: "__top__", label: "Top level", isTop: true, hidden: false,
+      tabs: p.all.top.map(hydrate),
+    }];
+    p.all.groups.forEach(function (g) {
+      containers.push({
+        id: g.id, label: g.label, isTop: false, hidden: g.hidden,
+        tabs: g.tabs.map(hydrate),
+      });
+    });
+    return { containers: containers };
+  }
+
+  function ensureDraft() {
+    if (!state.draft) state.draft = buildDraft();
+    return state.draft;
+  }
+
+  function findTab(draft, tab) {
+    for (var i = 0; i < draft.containers.length; i++) {
+      var c = draft.containers[i];
+      for (var j = 0; j < c.tabs.length; j++) if (c.tabs[j].tab === tab) return { ci: i, ti: j, c: c, item: c.tabs[j] };
+    }
+    return null;
+  }
+
+  /* Move `tab` to `containerId` at `index`. Pure over the draft so the tests can
+   * exercise reordering without synthesising HTML5 drag events, which jsdom does
+   * not implement — the DOM handlers are a thin shell over this. */
+  function moveTab(draft, tab, containerId, index) {
+    var found = findTab(draft, tab);
+    if (!found) return false;
+    var target = null;
+    for (var i = 0; i < draft.containers.length; i++) if (draft.containers[i].id === containerId) target = draft.containers[i];
+    if (!target) return false;
+    // A protected tab may be reordered and renamed but never buried in a group
+    // that can be hidden — the lockout guard, enforced at the point of the drag
+    // as well as at render, so the UI never accepts a move it would silently undo.
+    if (window.CPL_NAV_OVERLAY.PROTECTED[tab] && !target.isTop) return false;
+    found.c.tabs.splice(found.ti, 1);
+    if (found.c === target && found.ti < index) index--;
+    index = Math.max(0, Math.min(index, target.tabs.length));
+    target.tabs.splice(index, 0, found.item);
+    return true;
+  }
+
+  function moveContainer(draft, id, index) {
+    var from = -1;
+    for (var i = 0; i < draft.containers.length; i++) if (draft.containers[i].id === id) from = i;
+    // Top level never moves: it is the container everything else is positioned
+    // against, and it holds the protected tabs.
+    if (from <= 0 || index <= 0) return false;
+    var c = draft.containers.splice(from, 1)[0];
+    if (from < index) index--;
+    draft.containers.splice(Math.max(1, Math.min(index, draft.containers.length)), 0, c);
+    return true;
+  }
+
+  /* Turn the draft into cobi_nav rows.
+   *
+   * Writes a row for EVERY tab and group rather than only the changed ones. The
+   * alternative — diffing against code defaults and writing the difference — is
+   * where this would go wrong quietly: `sort_order` is only meaningful relative
+   * to its neighbours, so a partial write leaves a container half-explicit and
+   * half-implicit, and the resulting order depends on values nobody chose.
+   */
+  function draftRows(draft) {
+    var rows = [];
+    var who = (getSession() && getSession().email) || "(reviewer)";
+    var now = new Date().toISOString();
+    draft.containers.forEach(function (c, ci) {
+      if (!c.isTop) {
+        rows.push({
+          kind: "group", key: c.id, label: c.label || null, parent: null,
+          sort_order: ci, hidden: !!c.hidden, orgs: null, pinned: false,
+          updated_by: who, updated_at: now,
+        });
+      }
+      c.tabs.forEach(function (t, ti) {
+        rows.push({
+          kind: "tab", key: t.tab,
+          label: t.label != null ? t.label : null,
+          parent: c.isTop ? null : c.id,
+          sort_order: ti,
+          hidden: !!t.hidden,
+          orgs: (t.orgs && t.orgs.length) ? t.orgs : null,
+          pinned: !!t.pinned,
+          updated_by: who, updated_at: now,
+        });
+      });
+    });
+    return rows;
+  }
+
+  function saveDraft(root) {
+    if (state.saving || !state.draft) return Promise.resolve();
+    state.saving = true; state.saveMsg = null; render(root);
+    var rows = draftRows(state.draft);
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "resolution=merge-duplicates,return=representation";
+    return fetch(REST + "/cobi_nav", { method: "POST", headers: h, body: JSON.stringify(rows) })
+      .then(function (r) {
+        if (!r.ok) throw new Error("save " + r.status);
+        return r.json();
+      })
+      .then(function (saved) {
+        // A policy-filtered write answers 200 with an EMPTY body, so "ok" is not
+        // proof it wrote. No rows back = FAILURE, and the draft is kept.
+        if (!Array.isArray(saved) || !saved.length) throw new Error("not saved — your sign-in isn’t a reviewer");
+        window.CPL_NAV_OVERLAY._set(saved);   // repaints the live rail immediately
+        state.dirty = false; state.saving = false;
+        state.saveMsg = { ok: true, text: "✓ Saved. The menu updated for everyone." };
+        render(root);
+      })
+      .catch(function (e) {
+        state.saving = false;
+        state.saveMsg = { ok: false, text: "Could not save — " + ((e && e.message) || "unknown error")
+          + ". Your arrangement is still here; renew your reviewer sign-in and press Save again." };
+        render(root);
+      });
+  }
+
+  /* Reset EVERYTHING to how the menu ships. A delete rather than writing the
+   * defaults back: an empty table is what "exactly as shipped" means here, and
+   * cobi_nav has a delete policy precisely so this can be honest. (sierra_rules
+   * deliberately has none — there, the record of what was tried is worth more
+   * than a clean slate; here the code IS the record.) */
+  function resetAll(root) {
+    if (state.saving) return Promise.resolve();
+    if (!confirm("Put the whole menu back to how it ships?\n\n"
+      + "Every rename, reorder, grouping and site change is removed, for everyone. "
+      + "The change history is kept.")) return Promise.resolve();
+    state.saving = true; state.saveMsg = null; render(root);
+    return fetch(REST + "/cobi_nav?kind=in.(tab,group)", { method: "DELETE", headers: authHeaders() })
+      .then(function (r) {
+        if (!r.ok) throw new Error("reset " + r.status);
+        window.CPL_NAV_OVERLAY._set([]);
+        state.draft = null; state.dirty = false; state.saving = false;
+        state.saveMsg = { ok: true, text: "✓ The menu is back to how it ships." };
+        render(root);
+      })
+      .catch(function (e) {
+        state.saving = false;
+        state.saveMsg = { ok: false, text: "Could not reset — " + ((e && e.message) || "unknown error") + "." };
+        render(root);
+      });
+  }
+
   // ── CSS (var(--token) only) ──
   var CSS_ID = "cobi-admin-css";
   function ensureCss() {
@@ -275,8 +472,162 @@
       ".adm-note { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:14px 0 0; }",
       ".adm-soon { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); padding:12px 14px; margin:14px 0 0; font-size:.84rem; color: var(--text-body); }",
       ".adm-soon b { color: var(--navy-primary); }",
+      // ── Arrange (drag and drop) ──
+      ".adm-arrange { display:flex; flex-wrap:wrap; gap:12px; align-items:flex-start; }",
+      ".adm-col { flex:1 1 320px; min-width:280px; border:1px solid var(--border); border-radius:8px; background: var(--surface-opaque); }",
+      ".adm-col-head { display:flex; align-items:center; gap:8px; padding:7px 10px; border-bottom:1px solid var(--border); background: var(--surface-subtle); border-radius:8px 8px 0 0; }",
+      ".adm-col-head .t { font-size:.8rem; font-weight:700; color: var(--navy-primary); flex:1; }",
+      ".adm-col-body { padding:6px; min-height:44px; }",
+      // The drop target has to be obvious while a drag is in flight, or the
+      // whole interaction is guesswork.
+      ".adm-col.over { border-color: var(--seal-blue); box-shadow: 0 0 0 2px var(--brand-soft, rgba(29,78,216,.12)); }",
+      ".adm-item { display:flex; align-items:center; gap:8px; padding:5px 8px; margin:0 0 4px; border:1px solid var(--border); border-radius:6px; background: var(--surface-subtle); font-size:.8rem; cursor:grab; }",
+      ".adm-item:last-child { margin-bottom:0; }",
+      ".adm-item.dragging { opacity:.45; }",
+      ".adm-item .grip { color: var(--text-muted); font-size:.8rem; cursor:grab; user-select:none; }",
+      ".adm-item .nm { flex:1; color: var(--text-strong); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
+      ".adm-item .mini { border:none; background:none; cursor:pointer; color: var(--text-muted); font-size:.78rem; padding:1px 4px; border-radius:4px; }",
+      ".adm-item .mini:hover { background: var(--surface-muted); color: var(--text-strong); }",
+      ".adm-item.hid { opacity:.55; }",
+      ".adm-item.hid .nm { text-decoration: line-through; }",
+      ".adm-item.prot { border-left:3px solid var(--mustard, #d9a800); }",
+      ".adm-drop { height:6px; margin:-2px 0 2px; border-radius:3px; }",
+      ".adm-drop.on { background: var(--seal-blue); }",
+      ".adm-editrow { display:flex; flex-wrap:wrap; gap:6px; align-items:center; padding:6px 8px; margin:0 0 4px; border:1px solid var(--seal-blue); border-radius:6px; background: var(--surface-opaque); }",
+      ".adm-editrow input[type=text] { flex:1 1 150px; padding:4px 8px; border:1px solid var(--border-strong); border-radius:5px; font-size:.8rem; background: var(--surface-opaque); color: var(--text-body); }",
+      ".adm-sitepick { display:flex; flex-wrap:wrap; gap:4px; }",
+      ".adm-sitepick label { font-size:.72rem; display:inline-flex; align-items:center; gap:3px; border:1px solid var(--border); border-radius:10px; padding:1px 7px; cursor:pointer; }",
+      ".adm-sitepick label.on { background: var(--surface-muted); border-color: var(--seal-blue); color: var(--text-strong); }",
+      ".adm-btnrow { display:flex; gap:6px; flex-wrap:wrap; margin:10px 0 0; align-items:center; }",
+      ".adm-btn { background: var(--surface-subtle); border:1px solid var(--border-strong); border-radius:5px; padding:4px 11px; cursor:pointer; color: var(--text-body); font-size:.78rem; }",
+      ".adm-btn:hover { background: var(--surface-muted); }",
+      ".adm-btn[disabled] { opacity:.5; cursor:default; }",
+      ".adm-btn-primary { background: var(--seal-blue); color:#fff; border-color: var(--seal-blue); font-weight:600; }",
+      ".adm-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
+      ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
+      ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
     ].join("\n");
     document.head.appendChild(el);
+  }
+
+  // ── Arrange section ──
+  function itemHtml(t, cid) {
+    var ov = window.CPL_NAV_OVERLAY;
+    var prot = !!ov.PROTECTED[t.tab];
+    var nav = navItems().filter(function (n) { return n.tab === t.tab; })[0];
+    var name = t.label != null ? t.label : (nav ? nav.label : t.tab);
+    var g = tabGate(t.tab);
+    if (state.editKey === "tab:" + t.tab) return itemEditor(t, cid, name);
+
+    var h = '<div class="adm-item' + (t.hidden ? " hid" : "") + (prot ? " prot" : "") + '"'
+      + ' draggable="true" data-drag="tab:' + esc(t.tab) + '" data-cid="' + esc(cid) + '">'
+      + '<span class="grip" title="Drag to reorder, or into another group.">⠿</span>'
+      + '<span class="nm" title="' + esc(t.tab) + '">' + esc(name) + "</span>";
+    if (t.orgs && t.orgs.length) {
+      h += '<span class="adm-g" title="Shown only on: ' + esc(t.orgs.join(", ")) + '">'
+        + t.orgs.length + " site" + (t.orgs.length === 1 ? "" : "s") + "</span>";
+    }
+    if (t.pinned || (prot && t.tab === "admin")) {
+      h += '<span class="adm-g" title="Shown on every site — it cannot be filtered out by one.">📌</span>';
+    }
+    // The gate travels WITH the item into the arrange view. Someone reaching for
+    // "hide" is exactly the person who needs to be told hiding is not protecting.
+    if (g.gate && (g.gate.id === "open" || g.gate.id === "public" || g.gate.id === "view")) {
+      h += '<span class="adm-g adm-g-' + g.gate.id + '" title="' + esc(g.gate.hint)
+        + ' Hiding this menu item does NOT change that.">' + esc(g.gate.label) + "</span>";
+    }
+    h += '<button class="mini" data-edit="tab:' + esc(t.tab) + '" title="Rename, or choose which sites show it.">✏️</button>';
+    if (prot) {
+      h += '<span class="mini" title="This item cannot be hidden or moved into a group. Admin is the only '
+        + 'place to undo a change here, and Dashboard is where every deep link falls back to — hiding either '
+        + 'would be a one-way door.">🔒</span>';
+    } else {
+      h += '<button class="mini" data-hide="' + esc(t.tab) + '" title="'
+        + (t.hidden ? "Show this in the menu again." : "Remove this from the menu. The page itself still works "
+          + "if someone has the link, and the data behind it is unchanged.") + '">'
+        + (t.hidden ? "🙈" : "👁") + "</button>";
+    }
+    return h + "</div>";
+  }
+
+  function itemEditor(t, cid, name) {
+    var orgs = (window.CPL_ORGS && window.CPL_ORGS.ORGS) || [];
+    var chosen = t.orgs || [];
+    var h = '<div class="adm-editrow" data-cid="' + esc(cid) + '">'
+      + '<input type="text" data-label-for="' + esc(t.tab) + '" maxlength="60" value="' + esc(name) + '" '
+      + 'aria-label="Menu label">'
+      + '<div class="adm-sitepick" title="Which sites show this item. Choose none to leave it on the default '
+      + 'behaviour for its site.">';
+    orgs.forEach(function (o) {
+      var on = chosen.indexOf(o.id) !== -1;
+      h += '<label class="' + (on ? "on" : "") + '"><input type="checkbox" data-site="' + esc(o.id)
+        + '" data-site-tab="' + esc(t.tab) + '"' + (on ? " checked" : "") + "> " + esc(o.label) + "</label>";
+    });
+    h += "</div>"
+      + '<label class="adm-check" title="Show on every site, ignoring the list above."><input type="checkbox" '
+      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> 📌 every site</label>"
+      + '<button class="adm-btn" data-editdone>Done</button>'
+      + "</div>";
+    return h;
+  }
+
+  function renderArrange() {
+    var d = ensureDraft();
+    var h = "<h3>Arrange the menu</h3>";
+    if (!d) {
+      return h + '<div class="adm-empty">The menu could not be read for editing. The menu itself is '
+        + "unaffected — this is the editor, not the rail.</div>";
+    }
+    h += '<p class="adm-intro">Drag an item to reorder it, or into another group. Drag a group heading to '
+      + "move the whole group. Nothing changes for anyone until you press <b>Save</b>. "
+      + "<b>These are display settings</b> — hiding an item removes it from the menu, it does not protect "
+      + "what is behind it.</p>";
+
+    h += '<div class="adm-arrange">';
+    d.containers.forEach(function (c, ci) {
+      h += '<div class="adm-col" data-drop-container="' + esc(c.id) + '">'
+        + '<div class="adm-col-head"' + (c.isTop ? "" : ' draggable="true" data-drag="group:' + esc(c.id) + '"') + ">"
+        + (c.isTop ? "" : '<span class="grip" title="Drag to move the whole group.">⠿</span>')
+        + '<span class="t">' + esc(c.label) + "</span>";
+      if (c.isTop) {
+        h += '<span class="sub" title="Items here sit above the groups, with no heading. Admin and Dashboard '
+          + 'stay here so they can always be reached.">always first</span>';
+      } else {
+        h += '<button class="mini" data-edit="group:' + esc(c.id) + '" title="Rename this group.">✏️</button>'
+          + '<button class="mini" data-ghide="' + esc(c.id) + '" title="'
+          + (c.hidden ? "Show this group again." : "Hide this group and everything in it from the menu.") + '">'
+          + (c.hidden ? "🙈" : "👁") + "</button>";
+      }
+      h += "</div>";
+      if (state.editKey === "group:" + c.id) {
+        h += '<div class="adm-editrow"><input type="text" data-glabel-for="' + esc(c.id) + '" maxlength="60" '
+          + 'value="' + esc(c.label) + '" aria-label="Group name">'
+          + '<button class="adm-btn" data-editdone>Done</button></div>';
+      }
+      h += '<div class="adm-col-body' + (c.hidden ? " hid" : "") + '">';
+      if (!c.tabs.length) {
+        h += '<div class="sub" style="padding:6px 4px">Empty — drag something here.</div>';
+      }
+      c.tabs.forEach(function (t) { h += itemHtml(t, c.id); });
+      h += "</div></div>";
+    });
+    h += "</div>";
+
+    h += '<div class="adm-btnrow">'
+      + '<button class="adm-btn adm-btn-primary" data-save' + (state.saving || !state.dirty ? " disabled" : "") + ">"
+      + (state.saving ? "Saving…" : "💾 Save the menu") + "</button>"
+      + '<button class="adm-btn" data-discard' + (state.dirty ? "" : " disabled") + ">Discard changes</button>"
+      + '<button class="adm-btn" data-resetall' + (state.saving ? " disabled" : "") + ' title="Removes every '
+      + 'customisation and puts the menu back to how it ships.">↩ Reset to how it ships</button>';
+    if (state.dirty) h += '<span class="adm-dirty">Unsaved changes — nobody sees them yet.</span>';
+    if (state.saveMsg) {
+      h += '<span class="' + (state.saveMsg.ok ? "adm-saved" : "adm-dirty") + '">' + esc(state.saveMsg.text) + "</span>";
+    }
+    h += "</div>";
+    h += '<p class="adm-note">Saving changes the menu for <b>everyone</b>, immediately — there is nothing to '
+      + "deploy. If the menu ever fails to load its arrangement, it falls back to exactly how it ships, so a "
+      + "bad save can never leave anyone without a menu. Every change is logged.</p>";
+    return h;
   }
 
   // ── Render ──
@@ -463,13 +814,8 @@
     });
     h += "</tbody></table></div>";
 
-    // ── What is not built yet, said plainly ──
-    h += '<div class="adm-soon"><b>Not built yet: rearranging the menu.</b> Reordering, renaming and moving '
-      + "items between sites needs the menu itself to become data — today the order lives in "
-      + "<code>nav_groups.js</code>, the site mapping in <code>cobi_orgs.js</code>, and the labels in the page "
-      + "markup, so there is nothing here for a drag to write to. Making it editable changes what "
-      + "<i>every</i> visitor sees, so it is its own change rather than a quiet extension of this one. "
-      + "This page is the inventory it will be built on.</div>";
+    // ── Section 3: arrange the menu ──
+    h += renderArrange();
 
     h += '<p class="adm-note">Admin is pinned to every site, because it manages them — it cannot be filtered '
       + "out by the site you are trying to fix. The team phrases themselves stay on their own <b>Team Phrases</b> "
@@ -494,6 +840,141 @@
     });
     var all = root.querySelector("[data-showall]");
     if (all) all.addEventListener("change", function () { state.showAll = all.checked; render(root); });
+
+    wireArrange(root);
+  }
+
+  function wireArrange(root) {
+    var d = state.draft;
+    if (!d) return;
+    function touch() { state.dirty = true; state.saveMsg = null; }
+
+    // ── Drag and drop ──
+    // HTML5 DnD, with the payload also held in state: dataTransfer is
+    // unreadable during dragover in several browsers, and the drop target has to
+    // know whether it is accepting a tab or a group before the drop lands.
+    root.querySelectorAll("[data-drag]").forEach(function (el) {
+      el.addEventListener("dragstart", function (e) {
+        state.dragKey = el.getAttribute("data-drag");
+        el.classList.add("dragging");
+        try { e.dataTransfer.setData("text/plain", state.dragKey); e.dataTransfer.effectAllowed = "move"; } catch (x) {}
+      });
+      el.addEventListener("dragend", function () {
+        state.dragKey = null;
+        el.classList.remove("dragging");
+      });
+    });
+
+    root.querySelectorAll("[data-drop-container]").forEach(function (col) {
+      col.addEventListener("dragover", function (e) {
+        if (!state.dragKey) return;
+        e.preventDefault();
+        try { e.dataTransfer.dropEffect = "move"; } catch (x) {}
+        col.classList.add("over");
+      });
+      col.addEventListener("dragleave", function () { col.classList.remove("over"); });
+      col.addEventListener("drop", function (e) {
+        e.preventDefault();
+        col.classList.remove("over");
+        var key = state.dragKey || (function () { try { return e.dataTransfer.getData("text/plain"); } catch (x) { return null; } })();
+        if (!key) return;
+        var cid = col.getAttribute("data-drop-container");
+
+        if (key.indexOf("group:") === 0) {
+          // A group dropped onto a container moves it to that container's slot.
+          var gid = key.slice(6);
+          var idx = 0;
+          d.containers.forEach(function (c, i) { if (c.id === cid) idx = i; });
+          if (moveContainer(d, gid, idx)) touch();
+          render(root);
+          return;
+        }
+        var tab = key.slice(4);
+        // Drop position = the item it was dropped on, else the end.
+        var body = col.querySelector(".adm-col-body");
+        var index = body ? body.querySelectorAll("[data-drag^='tab:']").length : 0;
+        var over = e.target && e.target.closest ? e.target.closest("[data-drag^='tab:']") : null;
+        if (over) {
+          var siblings = body ? Array.prototype.slice.call(body.querySelectorAll("[data-drag^='tab:']")) : [];
+          index = Math.max(0, siblings.indexOf(over));
+        }
+        if (moveTab(d, tab, cid, index)) touch();
+        else if (window.CPL_NAV_OVERLAY.PROTECTED[tab]) {
+          alert("“" + tab + "” has to stay at the top level.\n\nAdmin is the only place to undo a menu change, "
+            + "and Dashboard is where every deep link falls back to — putting either inside a group that could "
+            + "be hidden would be a one-way door.");
+        }
+        render(root);
+      });
+    });
+
+    // ── Per-item controls ──
+    root.querySelectorAll("[data-hide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var f = findTab(d, b.getAttribute("data-hide"));
+        if (!f) return;
+        f.item.hidden = !f.item.hidden;
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-ghide]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-ghide");
+        d.containers.forEach(function (c) { if (c.id === id) c.hidden = !c.hidden; });
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-edit]").forEach(function (b) {
+      b.addEventListener("click", function () { state.editKey = b.getAttribute("data-edit"); render(root); });
+    });
+    var done = root.querySelector("[data-editdone]");
+    if (done) done.addEventListener("click", function () { state.editKey = null; render(root); });
+
+    var lbl = root.querySelector("[data-label-for]");
+    if (lbl) lbl.addEventListener("input", function () {
+      var f = findTab(d, lbl.getAttribute("data-label-for"));
+      if (!f) return;
+      f.item.label = lbl.value;
+      touch();
+    });
+    var glbl = root.querySelector("[data-glabel-for]");
+    if (glbl) glbl.addEventListener("input", function () {
+      var id = glbl.getAttribute("data-glabel-for");
+      d.containers.forEach(function (c) { if (c.id === id) c.label = glbl.value; });
+      touch();
+    });
+    root.querySelectorAll("[data-site]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var f = findTab(d, cb.getAttribute("data-site-tab"));
+        if (!f) return;
+        var list = (f.item.orgs || []).slice();
+        var id = cb.getAttribute("data-site");
+        var at = list.indexOf(id);
+        if (cb.checked && at === -1) list.push(id);
+        if (!cb.checked && at !== -1) list.splice(at, 1);
+        f.item.orgs = list.length ? list : null;
+        touch(); render(root);
+      });
+    });
+    root.querySelectorAll("[data-pin]").forEach(function (cb) {
+      cb.addEventListener("change", function () {
+        var f = findTab(d, cb.getAttribute("data-pin"));
+        if (!f) return;
+        f.item.pinned = cb.checked;
+        touch(); render(root);
+      });
+    });
+
+    // ── Save / discard / reset ──
+    var save = root.querySelector("[data-save]");
+    if (save) save.addEventListener("click", function () { saveDraft(root); });
+    var disc = root.querySelector("[data-discard]");
+    if (disc) disc.addEventListener("click", function () {
+      state.draft = null; state.dirty = false; state.saveMsg = null; state.editKey = null;
+      render(root);
+    });
+    var reset = root.querySelector("[data-resetall]");
+    if (reset) reset.addEventListener("click", function () { resetAll(root); });
   }
 
   function activate() {
@@ -516,6 +997,15 @@
     _loadGates: loadGates,
     _authHeaders: authHeaders,
     _GATES: GATES,
+    // arrange (drag and drop)
+    _buildDraft: buildDraft,
+    _ensureDraft: ensureDraft,
+    _moveTab: moveTab,
+    _moveContainer: moveContainer,
+    _findTab: findTab,
+    _draftRows: draftRows,
+    _saveDraft: saveDraft,
+    _resetAll: resetAll,
   };
 
   window.addEventListener("cpl-tab-activated", function (e) {

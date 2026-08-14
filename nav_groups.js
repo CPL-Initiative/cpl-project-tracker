@@ -69,18 +69,52 @@
     document.head.appendChild(st);
   }
 
-  function build() {
+  /* Undo a previous build: lift every button back to the top level and drop the
+   * group wrappers, so build() can run again against a changed overlay.
+   *
+   * Moves the EXISTING elements rather than recreating them — every other module
+   * (tabs.js, cobi_orgs.js, cpl_todos.js) holds references to these buttons and
+   * has listeners bound to them, so replacing them would silently break the nav
+   * in ways that only show up on click. */
+  function ungroup(nav) {
+    var groups = nav.querySelectorAll('.cpl-nav-group');
+    Array.prototype.forEach.call(groups, function (g) {
+      var members = g.querySelectorAll('.cpl-tab, .cpl-tab-external');
+      Array.prototype.forEach.call(members, function (m) { nav.appendChild(m); });
+      if (g.parentNode) g.parentNode.removeChild(g);
+    });
+    nav.removeAttribute('data-nav-grouped');
+  }
+
+  function build(opts) {
     var nav = document.querySelector('nav.cpl-tabs');
-    if (!nav || nav.getAttribute('data-nav-grouped') === '1') return;
+    if (!nav) return;
+    // `rebuild` is the overlay arriving after first paint. Without it the guard
+    // below makes build() a no-op and a curator's arrangement would only appear
+    // on the NEXT page load — which reads as "the drag didn't save".
+    if (nav.getAttribute('data-nav-grouped') === '1') {
+      if (!(opts && opts.rebuild)) return;
+      ungroup(nav);
+    }
 
     // Index the existing buttons/anchors by data-tab (or external flag).
     var byTab = {};
     var externals = [];
+    var domOrder = [];
     Array.prototype.slice.call(nav.children).forEach(function (el) {
       var tab = el.getAttribute && el.getAttribute('data-tab');
-      if (tab) byTab[tab] = el;
+      if (tab) { byTab[tab] = el; domOrder.push(tab); }
       else if (el.classList && el.classList.contains('cpl-tab-external')) externals.push(el);
     });
+
+    // The curator overlay, if it has loaded. Absent → pure code defaults, which
+    // is the whole fail-safe: the menu never depends on this read succeeding.
+    var ov = window.CPL_NAV_OVERLAY;
+    var arrangement = null;
+    if (ov && typeof ov.plan === 'function' && ov.rows()) {
+      try { arrangement = ov.plan(GROUPS, domOrder); }
+      catch (e) { arrangement = null; }   // a broken overlay must cost the arrangement, never the menu
+    }
 
     var state = loadState();
 
@@ -114,11 +148,36 @@
       return wrap;
     }
 
-    GROUPS.forEach(function (g) {
-      var members = g.tabs.map(function (t) { return byTab[t]; }).filter(Boolean);
-      var grp = makeGroup(g.id, g.label, members);
-      if (grp) nav.appendChild(grp);
-    });
+    // Apply the overlay's labels and hiding to the buttons themselves, then lay
+    // the containers out in the arranged order. With no overlay this is exactly
+    // the old behaviour, item for item.
+    if (arrangement) {
+      domOrder.forEach(function (t) {
+        var el = byTab[t];
+        if (!el) return;
+        var lbl = ov.labelFor(t);
+        if (lbl) el.textContent = lbl;
+        // `data-nav-hidden` rather than removing the button: tabs.js derives
+        // VALID_TABS from these elements, so a removed button would break the
+        // deep link to a tab that was merely hidden from the menu.
+        var isHidden = arrangement.hidden.indexOf(t) !== -1;
+        el.setAttribute('data-nav-hidden', isHidden ? '1' : '0');
+        if (isHidden) el.style.display = 'none';
+        else if (el.style.display === 'none' && el.getAttribute('data-org-hidden') !== '1') el.style.display = '';
+      });
+      arrangement.top.forEach(function (t) { if (byTab[t]) nav.appendChild(byTab[t]); });
+      arrangement.groups.forEach(function (g) {
+        var members = g.tabs.map(function (t) { return byTab[t]; }).filter(Boolean);
+        var grp = makeGroup(g.id, g.label, members);
+        if (grp) nav.appendChild(grp);
+      });
+    } else {
+      GROUPS.forEach(function (g) {
+        var members = g.tabs.map(function (t) { return byTab[t]; }).filter(Boolean);
+        var grp = makeGroup(g.id, g.label, members);
+        if (grp) nav.appendChild(grp);
+      });
+    }
     // External launchers → "Share" group (open by default; tiny).
     if (externals.length) {
       var shareState = ('share' in state) ? !!state.share : true;
@@ -155,13 +214,25 @@
 
   function init() {
     ensureCss();
+    // Build from CODE first, unconditionally. The overlay is applied by the
+    // listener below when it lands — so the menu is on screen and usable before
+    // any network call resolves, and stays that way if none ever does.
     build();
+    if (window.CPL_NAV_OVERLAY && typeof window.CPL_NAV_OVERLAY.onChange === 'function') {
+      window.CPL_NAV_OVERLAY.onChange(function () {
+        build({ rebuild: true });
+        // cobi_orgs.js filters by site on top of the arrangement; re-assert it,
+        // or a rebuilt rail shows tabs the active site had hidden.
+        if (window.CPL_ORGS && typeof window.CPL_ORGS._applyNav === 'function') window.CPL_ORGS._applyNav();
+        openGroupForTab(currentTab());
+      });
+    }
     window.addEventListener('cpl-tab-activated', function (e) {
       if (e && e.detail && e.detail.tab) openGroupForTab(e.detail.tab);
     });
   }
 
-  var api = { build: build, openGroupForTab: openGroupForTab, GROUPS: GROUPS };
+  var api = { build: build, ungroup: ungroup, openGroupForTab: openGroupForTab, GROUPS: GROUPS };
   if (typeof window !== 'undefined') window.CPL_NAV_GROUPS = api;
   if (typeof module !== 'undefined' && module.exports) module.exports = api;
 

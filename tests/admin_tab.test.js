@@ -43,6 +43,8 @@ function check(name, cond) { results.push([name, !!cond]); }
 const ADMIN_SRC = fs.readFileSync("admin.js", "utf8");
 const SURFACE_SRC = fs.readFileSync("cobi_admin_surface.js", "utf8");
 const ORGS_SRC = fs.readFileSync("cobi_orgs.js", "utf8");
+const OVERLAY_SRC = fs.readFileSync("nav_overlay.js", "utf8");
+const NAVGROUPS_SRC = fs.readFileSync("nav_groups.js", "utf8");
 const CPL = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const IDX = fs.readFileSync("index.html", "utf8");
 
@@ -137,9 +139,20 @@ function makeWin(opts) {
       if (opts.gatesFail) return Promise.resolve({ ok: false, status: 500, json: () => Promise.resolve(null) });
       return Promise.resolve({ ok: true, json: () => Promise.resolve(opts.gates || DEFAULT_GATES) });
     }
+    if (/cobi_nav/.test(String(url))) {
+      if (init && init.method === "POST") {
+        const rows = opts.saveEmpty ? [] : JSON.parse(init.body);
+        return Promise.resolve({ ok: true, json: () => Promise.resolve(rows) });
+      }
+      if (init && init.method === "DELETE") {
+        return Promise.resolve({ ok: !opts.deleteFails, status: opts.deleteFails ? 500 : 200,
+          json: () => Promise.resolve([]) });
+      }
+      return Promise.resolve({ ok: true, json: () => Promise.resolve(opts.nav || []) });
+    }
     return Promise.resolve({ ok: true, json: () => Promise.resolve([]) });
   };
-  [ORGS_SRC, SURFACE_SRC, ADMIN_SRC].forEach((src) => {
+  [OVERLAY_SRC, NAVGROUPS_SRC, ORGS_SRC, SURFACE_SRC, ADMIN_SRC].forEach((src) => {
     const el = w.document.createElement("script"); el.textContent = src;
     w.document.body.appendChild(el);
   });
@@ -230,8 +243,12 @@ const DEFAULT_GATES = [
     /Hiding a menu item is not a security setting/.test(root.innerHTML));
   check("the security column is labelled as the only real control",
     /Actually protected by/.test(root.innerHTML) && /Shown on \(display\)/.test(root.innerHTML));
-  check("what is NOT built is stated plainly rather than implied",
-    /Not built yet: rearranging the menu/.test(root.innerHTML));
+  check("the arrange section renders with drag targets",
+    root.querySelectorAll("[data-drop-container]").length > 1 &&
+    root.querySelectorAll("[data-drag^='tab:']").length > 0);
+  check("the arrange section says these are DISPLAY settings, not protection",
+    /These are display settings/.test(root.innerHTML));
+  check("nothing is written until Save", /Nothing changes for anyone until you press/.test(root.innerHTML));
   check("the menu inventory is read from the live nav, not a carried list",
     root.innerHTML.indexOf("Sierra Training") !== -1 && root.innerHTML.indexOf("sierra-training") !== -1);
   check("Admin reports itself as shown on every site", /Every site/.test(root.innerHTML));
@@ -284,9 +301,185 @@ const DEFAULT_GATES = [
   check("a nav label renders escaped", !root.querySelector("img"));
 })();
 
+
+// ── Arrange: the drag-and-drop model ────────────────────────────────────────
+// Exercised through the pure model rather than synthetic HTML5 drag events,
+// which jsdom does not implement. The DOM handlers are a thin shell over these.
+(async function () {
+  const w = makeWin({ nav: [] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  const d = api._ensureDraft();
+  check("the draft has a Top level container first", d && d.containers[0].isTop);
+  check("the draft contains every tab in the nav",
+    d.containers.reduce((a, c) => a + c.tabs.length, 0) === api._navItems().length);
+
+  // Reorder within a container. Dropping onto the item at index 2 places the
+  // dragged tab immediately BEFORE that item — the usual drop-on-item semantic,
+  // and the one the DOM handler computes an index for.
+  const top = d.containers[0];
+  const firstTab = top.tabs[0].tab;
+  const landedOn = top.tabs[2] ? top.tabs[2].tab : null;
+  api._moveTab(d, firstTab, "__top__", 2);
+  const order = top.tabs.map((t) => t.tab);
+  check("a tab dropped onto another lands immediately before it",
+    order[0] !== firstTab && (landedOn === null ||
+      order.indexOf(firstTab) === order.indexOf(landedOn) - 1));
+
+  // Move between containers.
+  const grp = d.containers.filter((c) => !c.isTop)[0];
+  api._moveTab(d, "sierra-training", grp.id, 0);
+  check("a tab can be moved into another group",
+    grp.tabs.length && grp.tabs[0].tab === "sierra-training");
+
+  // The lockout guard, enforced at the point of the drag.
+  const before = JSON.stringify(d.containers.map((c) => c.tabs.map((t) => t.tab)));
+  const moved = api._moveTab(d, "admin", grp.id, 0);
+  check("Admin REFUSES to be dragged into a group", moved === false);
+  check("a refused drag leaves the arrangement untouched",
+    JSON.stringify(d.containers.map((c) => c.tabs.map((t) => t.tab))) === before);
+  check("Dashboard refuses too", api._moveTab(d, "dashboard", grp.id, 0) === false);
+
+  // Groups reorder; Top level does not.
+  const gid = d.containers[2].id;
+  api._moveContainer(d, gid, 1);
+  check("a group can be moved", d.containers[1].id === gid);
+  check("Top level cannot be moved out of first place",
+    api._moveContainer(d, "__top__", 3) === false && d.containers[0].isTop);
+
+  // Rows: every item written, contiguously.
+  const rows = api._draftRows(d);
+  const tabRows = rows.filter((r) => r.kind === "tab");
+  check("every tab gets a row — a partial write would leave order half-defined",
+    tabRows.length === api._navItems().length);
+  check("every group gets a row", rows.filter((r) => r.kind === "group").length === d.containers.length - 1);
+  const topRows = tabRows.filter((r) => r.parent === null).map((r) => r.sort_order);
+  check("sort orders inside a container are 0..n-1 with no gaps",
+    topRows.every((v, i) => v === i));
+  check("a top-level tab writes parent null, a grouped tab writes its group",
+    tabRows.filter((r) => r.key === "sierra-training")[0].parent === grp.id);
+  check("the write records who arranged it", tabRows[0].updated_by === "sam@x");
+})();
+
+// ── Arrange: saving ─────────────────────────────────────────────────────────
+(async function () {
+  {
+    const w = makeWin({ nav: [] });
+    const api = w.CPL_ADMIN_TAB;
+    const root = w.document.getElementById("admin-root");
+    await api._loadGates();
+    await new Promise((r) => setTimeout(r, 20));
+    api.render(root);
+    api._ensureDraft();
+    await api._saveDraft(root);
+    const post = w.__fetches.filter((f) => /cobi_nav/.test(f.url) && f.init.method === "POST")[0];
+    check("saving UPSERTs the whole arrangement in one request",
+      post && post.init.headers["Prefer"] === "resolution=merge-duplicates,return=representation");
+    check("the save is confirmed only after the rows come back",
+      /Saved\. The menu updated for everyone/.test(root.innerHTML));
+    check("a successful save pushes straight into the live overlay",
+      (w.CPL_NAV_OVERLAY.rows() || []).length > 0);
+  }
+  {
+    // The recurring failure: a policy-filtered write answers 200 + EMPTY body.
+    const w = makeWin({ nav: [], saveEmpty: true });
+    const api = w.CPL_ADMIN_TAB;
+    const root = w.document.getElementById("admin-root");
+    await api._loadGates();
+    await new Promise((r) => setTimeout(r, 20));
+    api.render(root);
+    api._ensureDraft();
+    api._state.dirty = true;
+    await api._saveDraft(root);
+    check("a write that touched NO row is reported as a failure",
+      /Could not save/.test(root.innerHTML) && /isn.t a reviewer|not saved/.test(root.innerHTML));
+    check("a failed save KEEPS the arrangement rather than discarding it",
+      api._state.draft !== null && api._state.dirty === true);
+    check("a failed save leaves the live menu untouched",
+      (w.CPL_NAV_OVERLAY.rows() || []).length === 0);
+  }
+})();
+
+// ── Arrange: hidden items stay editable, and carry their gate ───────────────
+(async function () {
+  const w = makeWin({ nav: [{ kind: "tab", key: "sierra-training", hidden: true }] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  check("a hidden tab is still shown in the editor so it can be unhidden",
+    /data-hide="sierra-training"/.test(root.innerHTML));
+  check("Admin offers no hide control at all", !/data-hide="admin"/.test(root.innerHTML));
+  check("Admin explains why it is locked rather than just omitting the control",
+    /one-way door/.test(root.innerHTML));
+})();
+
+// The teaching moment: the person reaching for "hide" is exactly the one who
+// needs telling that hiding is not protecting. Needs a tab whose data really is
+// public, so the fixture makes cpl-pathways' table public-read.
+(async function () {
+  const w = makeWin({
+    nav: [],
+    gates: DEFAULT_GATES.map((g) => (g.tbl === "cpl_adoption_interest"
+      ? { tbl: g.tbl, kind: "table", rls_enabled: true, select_gate: "true", policy_count: 1 } : g)),
+  });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  check("an item whose data is readable by anyone says so IN the arrange view",
+    /Hiding this menu item does NOT change that/.test(root.innerHTML));
+})();
+
+
+// ── A save must ROUND-TRIP what it did not touch ────────────────────────────
+// The draft is rebuilt from plan(), which carries placement only. Seeding it
+// from placement alone would blank every label, site list and pin the moment
+// anyone dragged something else and pressed Save — a silent, total loss of the
+// arrangement, caused by an unrelated edit.
+(async function () {
+  const w = makeWin({
+    nav: [
+      { kind: "tab", key: "sierra-training", label: "Teach Sierra", orgs: ["cpl", "gr"], pinned: true },
+      { kind: "tab", key: "team-phrases", label: "Decisions" },
+    ],
+  });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  const d = api._ensureDraft();
+  const st = api._findTab(d, "sierra-training");
+  check("the draft picks up an existing custom label", st.item.label === "Teach Sierra");
+  check("the draft picks up an existing site list",
+    (st.item.orgs || []).join(",") === "cpl,gr");
+  check("the draft picks up an existing pin", st.item.pinned === true);
+
+  // Now drag something UNRELATED and save.
+  api._moveTab(d, "cpl-pathways", "__top__", 0);
+  const rows = api._draftRows(d);
+  const saved = rows.filter((r) => r.kind === "tab" && r.key === "sierra-training")[0];
+  check("an unrelated drag does NOT blank another tab's label", saved.label === "Teach Sierra");
+  check("an unrelated drag does NOT blank another tab's site list",
+    (saved.orgs || []).join(",") === "cpl,gr");
+  check("an unrelated drag does NOT blank another tab's pin", saved.pinned === true);
+  const gov = rows.filter((r) => r.kind === "tab" && r.key === "team-phrases")[0];
+  check("a second customised tab survives too", gov.label === "Decisions");
+  const untouched = rows.filter((r) => r.kind === "tab" && r.key === "cpl-pathways")[0];
+  check("a tab that was never customised still writes a null label", untouched.label === null);
+})();
+
 setTimeout(function () {
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nadmin_tab.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 300);
+}, 900);
