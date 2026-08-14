@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-14T07:54:23.084069+00:00",
+  "scraped_at": "2026-08-14T10:18:23.353682+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26908,
+    "jst": 26906,
     "star_colleges": 56
   },
   "computed_star_colleges": 56,
@@ -117,7 +117,7 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 147,
+      "jst": 146,
       "star": true
     },
     "Barstow Community College": {
@@ -187,7 +187,7 @@
     },
     "Solano Community College": {
       "vets": 278,
-      "jst": 161,
+      "jst": 160,
       "star": false
     },
     "Shasta College": {

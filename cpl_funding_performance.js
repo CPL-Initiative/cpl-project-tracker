@@ -8,12 +8,12 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42109,
+  "pe": 42108,
   "pa": 39370,
   "p2": 3517,
   "p3": 15489,
   "pp": 5,
-  "pe_u": 1346248.95,
+  "pe_u": 1346243.95,
   "pa_u": 216525.65,
   "p3_u": 76780.45,
   "pp_u": 25.0
@@ -690,8 +690,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Modesto": {
-   "pe": 346,
-   "pe_u": 8182.0,
+   "pe": 345,
+   "pe_u": 8177.0,
    "pa": 333,
    "pa_u": 2202.0,
    "p2": 73,
@@ -2036,7 +2036,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 138,
+    "pe": 137,
     "pa": 137,
     "p3": 5
    },
@@ -2870,7 +2870,7 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26343,
+   "pe": 26342,
    "pa": 24158,
    "p3": 2458
   },
@@ -2919,12 +2919,12 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1345772.45,
+   "pe_u": 1345767.45,
    "pa_u": 216525.65,
    "p3_u": 76780.45
   },
   "map": {
-   "pe_u": 1353132.95,
+   "pe_u": 1353127.95,
    "pa_u": 217201.15,
    "p3_u": 76805.45
   },

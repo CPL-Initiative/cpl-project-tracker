@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-14T07:54:22.531Z",
+  "scraped_at": "2026-08-14T10:18:22.913Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -198,13 +198,13 @@
         },
         {
           "college": "Modesto Junior College",
-          "students": 388,
+          "students": 387,
           "units": 2232,
-          "avgUnits": 5.752577319587629,
+          "avgUnits": 5.767441860465116,
           "transcriptionRate": 64,
-          "avgTranscribed": 3.679123711340206,
+          "avgTranscribed": 3.6886304909560725,
           "criteriaMetCount": 3,
-          "militaryStudents": 147,
+          "militaryStudents": 146,
           "nonMilitaryStudents": 245,
           "apprenticeStudents": 38,
           "savings": 2968832.5,
@@ -593,13 +593,13 @@
         },
         {
           "college": "Solano Community College",
-          "students": 161,
+          "students": 160,
           "units": 1101,
-          "avgUnits": 6.838509316770186,
+          "avgUnits": 6.88125,
           "transcriptionRate": 1.1,
-          "avgTranscribed": 0.07453416149068323,
+          "avgTranscribed": 0.075,
           "criteriaMetCount": 1,
-          "militaryStudents": 161,
+          "militaryStudents": 160,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
           "savings": 1883970,
@@ -1757,11 +1757,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,935",
+      "value": "49,933",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "26,908"
+          "value": "26,906"
         },
         {
           "label": "Workforce/Other",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49935,
+    "Students": 49933,
     "Units": 217201.15000000002,
     "TranscribedUnits": 76805.45,
     "Savings": 315091870.25,
     "YearImpact": 1246252038.9,
-    "MilitaryStudents": 26908,
+    "MilitaryStudents": 26906,
     "NonMilitaryStudents": 23110,
     "AprenticeStudents": 595,
-    "AverageUnits": 4.349677580855112,
-    "TranscribedAverage": 1.5381085411034343
+    "AverageUnits": 4.349851801413895,
+    "TranscribedAverage": 1.5381701479983176
   }
 }
