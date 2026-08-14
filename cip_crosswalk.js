@@ -69,7 +69,8 @@
   var D = null, ROWS = [], BYCODE = {}, FAMS = {}, SUB4 = {}, IDF = {}, IDF_N = 1, POSTINGS = {};
   var TOPCIP = {}, BOILER = {}, CIP_TOPS = {}, OLDTOPCIP = {};
   var GOFORWARD = { "CTE": 1, "Both": 1, "Non-CTE": 1, "Noncredit": 1 };
-  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false, progOpen: {} };
+  var st = { q: "", cat: "all", fam: "", fam4: "", fam6: "", xfer: false, showRetired: false, limit: PAGE, open: {}, college: null, mode: "review", scope: "courses", progCollege: null, progQ: "", progFlagOnly: false, progOpen: {},
+             progTitles: [], progAwards: [], progSectors: [] };
   var SCOPE_KEY = "cipx_scope";
   var PROGRAMS = null, PROGRAMS_LOADING = false;   // window.CPL_COCI_PROGRAMS (lazy — Programs scope only)
   var FIT_COLLEGES = null, FIT_CACHE = {}, FIT_LOADING = {};
@@ -115,6 +116,7 @@
     try { var _m = localStorage.getItem(MODE_KEY); st.mode = (_m === "browse" || _m === "recommend") ? _m : "review"; } catch (e) { st.mode = "review"; }
     try { var _s = localStorage.getItem(SCOPE_KEY); st.scope = (_s === "programs") ? "programs" : "courses"; } catch (e) { st.scope = "courses"; }
     if (st.scope === "programs" && st.mode === "recommend") st.mode = "review";   // no course-first easy button for programs
+    navNormalise();   // a stored mode whose nav entry is hidden would restore into an unreachable view
   }
 
   // ── theme ────────────────────────────────────────────────────────────────────
@@ -186,9 +188,16 @@
   function fillCipSelects() { fillCip2(); fillCip4(); fillCip6(); }
 
   function catTip(c) {
-    return ({ "CTE": "Career Technical Education", "Both": "Both CTE and non-CTE", "Non-CTE": "Not Career Technical Education",
+    return ({ "CTE": "Career Technical Education", "Both": "Either CTE or Non-CTE — your college selects which designation applies",
+      "Non-CTE": "Not Career Technical Education",
       "Noncredit": "Noncredit CIP", "Retired": "Moved or deleted in the 2020 CIP edition", "Reserved": "Reserved placeholder code" })[c] || c;
   }
+  // The BADGE text is not the raw category (Jenni + Sam, 2026-08-14). "Both" read as a property of
+  // the code — a fact about the CIP — when it is really a CHOICE the college still has to make. The
+  // full phrase "Either CTE or Non-CTE" is ~4x the width of "BOTH" and would push the row past the
+  // viewport (the no-horizontal-scroll rule), so the badge says EITHER and catTip() carries the
+  // sentence. The prompts, which have room, spell it out in full.
+  function catLabel(c) { return c === "Both" ? "Either" : c; }
   function catClass(c) { return "cipx-cat cipx-cat-" + String(c || "").replace(/[^A-Za-z]/g, ""); }
   function activeFilterLabels() {
     var out = [];
@@ -385,7 +394,7 @@
       var crow = el("div", { class: "cipx-sug-crow", role: "button", tabindex: "0" }, [
         caret, el("span", { class: "cipx-code" }, [r.code]),
         el("span", { class: "cipx-sug-ct" }, [r.t]),
-        r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
+        r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]) : null,
       ]);
       var card = el("div", { class: "cipx-sug-card" }, [crow]);
       if (h.matched.length) card.appendChild(el("div", { class: "cipx-sug-why" }, ["matched: " + h.matched.slice(0, 6).join(", ")]));
@@ -422,7 +431,7 @@
       var isOpen = !!st.open[r.code];
       var badges = el("div", { class: "cipx-tags" }, []);
       if (r.act === "New") badges.appendChild(el("span", { class: "cipx-new", title: "New in the 2020 CIP edition" }, ["NEW"]));
-      if (r.cat) badges.appendChild(el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]));
+      if (r.cat) badges.appendChild(el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]));
       var row = el("div", { class: "cipx-row", role: "button", tabindex: "0", "aria-expanded": isOpen ? "true" : "false" }, [
         el("span", { class: "cipx-caret" }, [isOpen ? "▾" : "▸"]),
         el("span", { class: "cipx-code" }, [r.code]),
@@ -846,7 +855,7 @@
       var caret = el("span", { class: "cipx-caret" }, ["▸"]);
       var crow = el("div", { class: "cipx-cand-row", role: "button", tabindex: "0" }, [
         caret, el("span", { class: "cipx-code" }, [cr.code]),
-        el("span", { class: "cipx-cand-ct" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, isFocus ? el("span", { class: "cipx-yourpick" }, ["this code"]) : null]),
+        el("span", { class: "cipx-cand-ct" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [catLabel(cr.cat)]) : null, isFocus ? el("span", { class: "cipx-yourpick" }, ["this code"]) : null]),
         el("span", { class: "cipx-cand-rel" }, [meter(h.rel, isFocus ? tier.key : "accent")]),
       ]);
       var card = el("div", { class: "cipx-cand-card" + (isFocus ? " cipx-cand-mine" : "") }, [crow]);
@@ -992,7 +1001,7 @@
     var caret = el("span", { class: "cipx-caret" }, ["▸"]);
     var main = el("span", { class: "cipx-rec-main" }, [
       el("span", { class: "cipx-rec-ttl" }, [r.t]),
-      r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [r.cat]) : null,
+      r.cat ? el("span", { class: catClass(r.cat), title: catTip(r.cat) }, [catLabel(r.cat)]) : null,
       isRec ? el("span", { class: "cipx-recbadge" }, ["✓ Recommended"]) : null,
       prov ? el("span", { class: "cipx-provlbl", title: provTip(rec.prov) }, [prov]) : null,
       (rec.altTops && rec.altTops.length) ? el("span", { class: "cipx-alttop", title: "In the official crosswalk under TOP " + rec.altTops[0].top + (rec.altTops[0].title ? " · " + rec.altTops[0].title : "") + (rec.altTops.length > 1 ? " (+" + (rec.altTops.length - 1) + " more)" : "") + " — your course's TOP may need updating." }, ["↔ TOP " + rec.altTops[0].top]) : null,
@@ -1526,7 +1535,7 @@
         el("span", { class: "cipx-code" }, [code]),
         el("span", { class: "cipx-prog-optt" }, [rr ? rr.t : "(not in the CIP catalog)"]),
       ]);
-      if (rr && rr.cat) b.appendChild(el("span", { class: catClass(rr.cat), title: catTip(rr.cat) }, [rr.cat]));
+      if (rr && rr.cat) b.appendChild(el("span", { class: catClass(rr.cat), title: catTip(rr.cat) }, [catLabel(rr.cat)]));
       if (ct[1] === "f") b.appendChild(el("span", { class: "cipx-prog-optsrc", title: "This pairing was submitted by the field rather than published in the Chancellor's Office crosswalk" }, ["field-submitted"]));
       b.appendChild(el("span", { class: "cipx-prog-optuse" + (n ? "" : " cipx-prog-optuse-none") }, [n ? (n + (n === 1 ? " college" : " colleges")) : "no colleges yet"]));
       if (code === assigned) b.appendChild(el("span", { class: "cipx-prog-optasg", title: "The code your college has in COCI today" }, ["in COCI"]));
@@ -1539,6 +1548,107 @@
       box.appendChild(b);
     });
     return box;
+  }
+
+  // ── Multi-select pickers for the Programs toolbar (Sam, 2026-08-14) ──────────────────────────
+  // A tiny self-contained control: a button showing the current selection, and a panel of checkable
+  // options with a find-box. No dependency on the browse-side filter machinery — that one is keyed to
+  // st.fam/st.cat and drives a different list.
+  //
+  // `selected` is mutated IN PLACE so the caller's st.progX array stays the single source of truth;
+  // rebuilding the toolbar (a college switch) therefore cannot resurrect a stale copy.
+  function uniqSorted(vals) {
+    var seen = {}, out = [];
+    (vals || []).forEach(function (v) { var k = String(v); if (!seen[k]) { seen[k] = 1; out.push(v); } });
+    // Blank sorts last — "(no award on file)" / "No CIP assigned yet" is a residual bucket, not a heading.
+    return out.sort(function (a, b) {
+      if (!a !== !b) return a ? -1 : 1;
+      return String(a).toLowerCase() < String(b).toLowerCase() ? -1 : 1;
+    });
+  }
+  function multiPicker(o) {
+    var wrap = el("div", { class: "cipx-mpick" }, []);
+    var btn = el("button", { class: "cipx-mpick-btn", type: "button", "aria-haspopup": "true", "aria-expanded": "false", title: o.title || "" }, []);
+    var panel = el("div", { class: "cipx-mpick-panel", hidden: "hidden" }, []);
+    var open = false;
+
+    function summaryText() {
+      var n = o.selected.length;
+      if (!n) return o.allLabel;
+      if (n === 1) {
+        var hit = o.options.filter(function (p) { return String(p[0]) === String(o.selected[0]); })[0];
+        var lbl = hit ? String(hit[1]) : String(o.selected[0]);
+        return lbl.length > 34 ? lbl.slice(0, 32).trim() + "…" : lbl;
+      }
+      return n + " selected";
+    }
+    function paintBtn() {
+      clear(btn);
+      btn.appendChild(el("span", { class: "cipx-mpick-lbl" }, [o.label]));
+      btn.appendChild(el("span", { class: "cipx-mpick-val" }, [summaryText()]));
+      btn.appendChild(el("span", { class: "cipx-mpick-caret", "aria-hidden": "true" }, [open ? "▾" : "▸"]));
+      wrap.classList.toggle("cipx-mpick-active", o.selected.length > 0);
+    }
+    function paintPanel(filterText) {
+      clear(panel);
+      var head = el("div", { class: "cipx-mpick-head" }, []);
+      var find = el("input", { class: "cipx-mpick-find", type: "search", "aria-label": "Find in " + o.label, placeholder: "Find…" });
+      find.value = filterText || "";
+      find.oninput = function () { paintPanel(find.value); var f = panel.querySelector(".cipx-mpick-find"); if (f) { f.focus(); f.setSelectionRange(f.value.length, f.value.length); } };
+      head.appendChild(find);
+      var clr = el("button", { class: "cipx-mpick-clear", type: "button" }, ["Clear"]);
+      clr.onclick = function () { o.selected.length = 0; paintBtn(); paintPanel(find.value); o.onChange(); };
+      head.appendChild(clr);
+      panel.appendChild(head);
+
+      var needle = String(filterText || "").toLowerCase().trim();
+      var list = el("div", { class: "cipx-mpick-list" }, []);
+      var shown = 0;
+      o.options.forEach(function (p) {
+        var val = String(p[0]), lbl = String(p[1]);
+        if (needle && lbl.toLowerCase().indexOf(needle) < 0) return;
+        shown++;
+        var on = o.selected.indexOf(val) >= 0;
+        var row = el("label", { class: "cipx-mpick-opt" + (on ? " cipx-mpick-opt-on" : "") }, []);
+        var cb = el("input", { type: "checkbox" }); cb.checked = on;
+        cb.onchange = function () {
+          var i = o.selected.indexOf(val);
+          if (cb.checked) { if (i < 0) o.selected.push(val); } else if (i >= 0) o.selected.splice(i, 1);
+          row.classList.toggle("cipx-mpick-opt-on", cb.checked);
+          paintBtn(); o.onChange();
+        };
+        row.appendChild(cb);
+        row.appendChild(el("span", { class: "cipx-mpick-optt", title: lbl }, [lbl]));
+        list.appendChild(row);
+      });
+      if (!shown) list.appendChild(el("div", { class: "cipx-mpick-none" }, ["Nothing matches “" + filterText + "”."]));
+      panel.appendChild(list);
+    }
+    // Click-away closes. The document listener is bound only WHILE a panel is open and removed on
+    // close, so it never outlives the picker: rebuildShell() re-renders this toolbar on every college
+    // switch, and a listener left bound for the lifetime of the page would accumulate one dead
+    // closure per picker per rebuild. Harmless to behaviour (a detached wrap stops matching), but it
+    // is still a leak, and "harmless today" is how leaks get to stay.
+    function onDocClick(e) { if (wrap.contains(e.target)) return; setOpen(false); }
+    function setOpen(v) {
+      if (v === open) return;
+      open = v;
+      panel.hidden = !v;
+      btn.setAttribute("aria-expanded", v ? "true" : "false");
+      paintBtn();
+      if (v) {
+        paintPanel("");
+        var f = panel.querySelector(".cipx-mpick-find"); if (f) f.focus();
+        document.addEventListener("click", onDocClick);
+      } else {
+        document.removeEventListener("click", onDocClick);
+      }
+    }
+    btn.onclick = function (e) { e.stopPropagation(); setOpen(!open); };
+    wrap.addEventListener("keydown", function (e) { if (e.key === "Escape" && open) { setOpen(false); btn.focus(); } });
+    paintBtn();
+    wrap.appendChild(btn); wrap.appendChild(panel);
+    return wrap;
   }
 
   function programsView() {
@@ -1554,7 +1664,14 @@
     var sel = el("select", { class: "cipx-college-sel", "aria-label": "Your college" }, [el("option", { value: "" }, ["Choose your college…"])]);
     PROGRAMS.colleges.forEach(function (name, i) { sel.appendChild(el("option", { value: String(i) }, [prettyCollege(name) + "  ·  " + (PROGRAMS._counts[i] || 0) + " programs"])); });
     if (st.progCollege != null) sel.value = String(st.progCollege);
-    sel.onchange = function () { st.progCollege = sel.value === "" ? null : parseInt(sel.value, 10); rebuildShell(); };
+    // Every picker's options are drawn from THIS college's rows, so a selection cannot survive a
+    // college switch — a title from the old college would filter the new one down to nothing and
+    // look like an empty catalog. Clear all three (in place — same arrays the pickers hold).
+    sel.onchange = function () {
+      st.progCollege = sel.value === "" ? null : parseInt(sel.value, 10);
+      st.progTitles.length = 0; st.progAwards.length = 0; st.progSectors.length = 0;
+      rebuildShell();
+    };
     bar.appendChild(sel);
     host.appendChild(bar);
     if (st.progCollege == null) { host.appendChild(el("div", { class: "cipx-prog-nudge" }, ["Pick your college to review its programs' CIP codes."])); return host; }
@@ -1562,7 +1679,35 @@
     var rows = progCollegeRows();
     var summary = el("div", { class: "cipx-prog-summary" }, []);
     var tools = el("div", { class: "cipx-prog-tools" }, []);
-    var q = el("input", { class: "cipx-search cipx-prog-search", type: "search", "aria-label": "Search programs", placeholder: "Search programs by title, CIP, or TOP…" });
+
+    // ── The three pickers come FIRST, keyword search last (Sam, 2026-08-14) ──────────────────────
+    // "We want users to use this first for simplicity." A college arrives not knowing what to type;
+    // the title list is the affordance that needs no vocabulary, and Sam's point is that 284 entries
+    // is a FEATURE — reading your own program titles refreshes your memory of what you own. So the
+    // title picker is deliberately unabridged (it has its own find-box for long lists) and sits
+    // left of the keyword box rather than replacing it.
+    tools.appendChild(multiPicker({
+      label: "Program", allLabel: "All programs",
+      title: "Pick one or more of your own program titles",
+      options: uniqSorted(rows.map(function (r) { return r[2]; })).map(function (t) { return [t, t]; }),
+      selected: st.progTitles, onChange: repaintProgList,
+    }));
+    tools.appendChild(multiPicker({
+      label: "Award type", allLabel: "All award types",
+      title: "Filter by the award COCI records for each program",
+      options: uniqSorted(rows.map(function (r) { return PROGRAMS.awards[r[5]] || ""; }))
+        .map(function (a) { return [a, a || "(no award on file)"]; }),
+      selected: st.progAwards, onChange: repaintProgList,
+    }));
+    tools.appendChild(multiPicker({
+      label: "CIP Sector", allLabel: "All CIP sectors",
+      title: "Filter by the two-digit CIP sector of each program's assigned code",
+      options: uniqSorted(rows.map(function (r) { return (progCip(r[1], r[4]) || "").slice(0, 2); }))
+        .map(function (s) { return [s, s ? (s + " · " + (FAMS[s] || ("CIP sector " + s))) : "No CIP assigned yet"]; }),
+      selected: st.progSectors, onChange: repaintProgList,
+    }));
+
+    var q = el("input", { class: "cipx-search cipx-prog-search", type: "search", "aria-label": "Search programs", placeholder: "…or search by title, CIP, or TOP" });
     q.value = st.progQ || "";
     var _t; q.oninput = function () { var v = q.value; clearTimeout(_t); _t = setTimeout(function () { st.progQ = v.toLowerCase().trim(); repaintProgList(); }, 130); };
     tools.appendChild(q);
@@ -1587,6 +1732,13 @@
       clear(listHostP);
       var shown = rows.filter(function (r) {
         if (st.progFlagOnly && !progNeedsRevision(r[3], progCip(r[1], r[4]))) return false;
+        // Each picker is AND-ed with the others and OR-ed within itself — an empty picker is "no
+        // opinion", never "match nothing", so opening one and closing it again cannot blank the list.
+        if (st.progTitles.length && st.progTitles.indexOf(r[2]) < 0) return false;
+        if (st.progAwards.length && st.progAwards.indexOf(PROGRAMS.awards[r[5]] || "") < 0) return false;
+        // Sector keys off the CHOSEN cip (a curator revision moves the row between sectors, and the
+        // headers it is filtering against are built from the same value).
+        if (st.progSectors.length && st.progSectors.indexOf((progCip(r[1], r[4]) || "").slice(0, 2)) < 0) return false;
         if (st.progQ) { var hay = (r[2] + " " + (progCip(r[1], r[4]) || "") + " " + r[3] + " " + (PROGRAMS.awards[r[5]] || "")).toLowerCase(); if (hay.indexOf(st.progQ) < 0) return false; }
         return true;
       });
@@ -1605,7 +1757,11 @@
           if (ca !== cb) return ca < cb ? -1 : 1;
           return (a[2] || "").toLowerCase() < (b[2] || "").toLowerCase() ? -1 : 1;
         });
+        // Name the grouping (Sam + Jenni, 2026-08-14). A bare "01" beside a long title read as part of
+        // the title; the header never said what the two-digit number WAS. "CIP Sector" is Sam's word
+        // (the 2-digit level) — keep it in step with anything that renames the grouping.
         listHostP.appendChild(el("div", { class: "cipx-prog-sector" + (sec ? "" : " cipx-prog-sector-nocip"), role: "heading", "aria-level": "3" }, [
+          sec ? el("span", { class: "cipx-prog-sector-lbl" }, ["CIP Sector"]) : null,
           el("span", { class: "cipx-prog-sector-code" }, [sec || "—"]),
           el("span", { class: "cipx-prog-sector-t" }, [sec ? (FAMS[sec] || ("CIP sector " + sec)) : "No CIP assigned yet"]),
           el("span", { class: "cipx-prog-sector-n" }, [g.length.toLocaleString() + (g.length === 1 ? " program" : " programs")]),
@@ -1630,14 +1786,19 @@
     if (award) l1.appendChild(el("span", { class: "cipx-prog-award", title: award }, [award.length > 40 ? award.slice(0, 38).trim() + "…" : award]));
     if (cte) l1.appendChild(el("span", { class: catClass("CTE"), title: "CTE program (GOAL: Career Technical Education)" }, ["CTE"]));
     row.appendChild(l1);
+    // TOP unbolded, CIP labelled (Sam, 2026-08-14). The row reads left-to-right as the transition
+    // itself — the TOP is what you HAD, the CIP is what you are moving to — so the emphasis belongs
+    // on the right-hand side. Bolding both made them look like peers; bolding the TOP made the
+    // outgoing code the loudest thing on the row.
     var l2 = el("div", { class: "cipx-prog-l2" }, [
-      el("span", { class: "cipx-prog-top" }, ["TOP ", el("b", {}, [top || "—"])]),
+      el("span", { class: "cipx-prog-top" }, ["TOP ", top || "—"]),
       el("span", { class: "cipx-prog-arrow", "aria-hidden": "true" }, ["→"]),
     ]);
     l2.appendChild(el("span", { class: "cipx-prog-cip" + (needsRev ? " cipx-prog-cip-flag" : "") }, [
+      chosen ? el("span", { class: "cipx-prog-ciplbl" }, ["CIP"]) : null,
       chosen ? el("span", { class: "cipx-code" }, [chosen]) : el("span", { class: "cipx-prog-nocip" }, ["— no CIP —"]),
       cipRow ? el("span", { class: "cipx-prog-cipt" }, [cipRow.t]) : null,
-      (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [cipRow.cat]) : null,
+      (cipRow && cipRow.cat) ? el("span", { class: catClass(cipRow.cat), title: catTip(cipRow.cat) }, [catLabel(cipRow.cat)]) : null,
     ]));
     row.appendChild(l2);
     // A curator revision shows what changed — the COCI code is still the fact of record until the
@@ -1909,6 +2070,11 @@
       title: opts.title || (opts.on ? "Confirmed — click ▾ to change" : (opts.onAccept ? "Click to use this code · ▾ to change to any code" : "Click ▾ to choose a code")),
     }, []);
     if (row) {
+      // Same "CIP <code>" treatment as the Programs row (Sam, 2026-08-14) — one vocabulary across both
+      // review lanes, so a curator moving between them reads the same shape. Inside the box rather than
+      // outside it: the box is the click target, and a label parked next to it would be the one part of
+      // the pairing that isn't clickable.
+      chip.appendChild(el("span", { class: "cipx-rev-ciplbl" }, ["CIP"]));
       chip.appendChild(el("span", { class: "cipx-code" }, [row.code]));
       chip.appendChild(el("span", { class: "cipx-rev-chipt" }, [row.t]));
       if (opts.more) chip.appendChild(el("span", { class: "cipx-rev-chipmore", title: opts.moreTip }, ["+" + opts.more]));
@@ -2424,7 +2590,7 @@
       var btn = el("span", { class: "cipx-rev-selbtn" + (picked ? " on" : ""), role: "button", tabindex: "-1", "aria-hidden": "true" }, [picked ? "✓ Selected" : "Select"]);
       var row = el("div", { class: "cipx-rev-cand" + (cls ? " " + cls : "") + (picked ? " on" : ""), role: "button", tabindex: "0", "aria-pressed": picked ? "true" : "false" }, [
         el("span", { class: "cipx-code" }, [cr.code]),
-        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [cr.cat]) : null, extraTag || null]),
+        el("span", { class: "cipx-rev-candt" }, [cr.t, cr.cat ? el("span", { class: catClass(cr.cat), title: catTip(cr.cat) }, [catLabel(cr.cat)]) : null, extraTag || null]),
         el("span", { class: "cipx-rev-candrel" }, [meter(rel || 0, tierOf(rel || 0).key)]),
         btn,
       ]);
@@ -2557,12 +2723,25 @@
   // st.scope / st.mode are UNCHANGED internally — every downstream reader (programsView, the
   // consensus/college loaders, the seams) keeps working. Only this bar collapses them into a single
   // choice, so `scope` is now set as a CONSEQUENCE of the destination rather than picked separately.
+  // "Browse CIP codes" and "Find a course's code" HIDDEN 2026-08-14 (Sam, after Jenni) — they muddy
+  // the waters while the field is being walked through the two review lanes. The modes themselves are
+  // untouched and fully working; only their nav entries are withheld, so restoring them is putting the
+  // two objects back in this array. Anything already reachable from inside a review row (the browse
+  // detail a code links to) still works — nothing downstream reads NAV.
   var NAV = [
     { scope: "programs", mode: "review", label: "Review my programs" },
     { scope: "courses", mode: "review", label: "Review my courses" },
-    { scope: null, mode: "browse", label: "Browse CIP codes" },            // scope-free — keeps whatever it was
-    { scope: "courses", mode: "recommend", label: "Find a course’s code" },
   ];
+  // A browser that last sat on a now-hidden tab would restore into a mode with no lit nav entry —
+  // the page looks broken and there is no way back. Normalise stored state to the nearest visible
+  // destination at ingest instead. (Keep in sync with NAV if an entry is restored.)
+  function navNormalise() {
+    var ok = NAV.some(function (n) { return n.mode === st.mode && (n.scope === null || n.scope === st.scope); });
+    if (ok) return;
+    st.mode = "review";
+    if (st.scope !== "programs" && st.scope !== "courses") st.scope = "courses";
+    try { localStorage.setItem(MODE_KEY, st.mode); localStorage.setItem(SCOPE_KEY, st.scope); } catch (e) {}
+  }
   function navSelected(n) {
     if (n.mode !== st.mode) return false;
     return n.scope === null || n.scope === st.scope;   // Browse matches on mode alone
@@ -2658,8 +2837,8 @@
     controls.appendChild(el("span", { class: "cipx-chipsep" }, []));
 
     var pills = el("div", { class: "cipx-pills" }, []); pillsRef = pills;
-    [["all", "All"], ["CTE", "CTE"], ["Non-CTE", "Non-CTE"], ["Both", "Both"], ["Noncredit", "Noncredit"]].forEach(function (p) {
-      var b = el("button", { class: "cipx-pill", type: "button", "aria-pressed": st.cat === p[0] ? "true" : "false" }, [p[1]]);
+    [["all", "All"], ["CTE", "CTE"], ["Non-CTE", "Non-CTE"], ["Both", "Either"], ["Noncredit", "Noncredit"]].forEach(function (p) {
+      var b = el("button", { class: "cipx-pill", type: "button", title: catTip(p[0]) === p[0] ? null : catTip(p[0]), "aria-pressed": st.cat === p[0] ? "true" : "false" }, [p[1]]);
       b.onclick = function () { st.cat = p[0]; st.limit = PAGE; Array.prototype.forEach.call(pills.querySelectorAll(".cipx-pill"), function (x) { x.setAttribute("aria-pressed", "false"); }); b.setAttribute("aria-pressed", "true"); render(); };
       pills.appendChild(b);
     });
@@ -2873,14 +3052,40 @@
       ".cipx-prog-intro{color:var(--cipx-text-soft);font-size:.95rem;line-height:1.5;background:var(--cipx-surface);border:1px solid var(--cipx-border);border-radius:12px;padding:13px 16px;margin:4px 0 12px;}",
       ".cipx-prog-flagword{color:var(--cipx-bad-fg);font-weight:700;}",
       ".cipx-prog-nudge{color:var(--cipx-muted);font-size:.95rem;padding:16px 4px;}",
-      ".cipx-prog-tools{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:10px 0 6px;}",
-      ".cipx-prog-search{max-width:420px;flex:1 1 260px;}",
+      ".cipx-prog-tools{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:10px 0 6px;}",
+      ".cipx-prog-search{max-width:340px;flex:1 1 220px;}",
+      // ── multi-select picker ──
+      // The panel is absolutely positioned inside a relative wrap. The wrap must NOT inherit an
+      // overflow:hidden ancestor or the panel opens into a clipped sliver — the exact defect that
+      // made the EACR filter bar look like it had no dropdowns at all (#1174). .cipx-prog-tools is
+      // a plain flex row with no overflow set, so the panel is free; keep it that way.
+      ".cipx-mpick{position:relative;display:inline-flex;flex:0 1 auto;min-width:0;}",
+      ".cipx-mpick-btn{display:inline-flex;gap:7px;align-items:center;max-width:280px;padding:7px 11px;border:1px solid var(--cipx-border);border-radius:9px;background:var(--cipx-surface);color:var(--cipx-text);font:inherit;font-size:.86rem;cursor:pointer;white-space:nowrap;}",
+      ".cipx-mpick-btn:hover{border-color:var(--cipx-border-strong);}",
+      ".cipx-mpick-active .cipx-mpick-btn{border-color:var(--cipx-accent);box-shadow:inset 0 0 0 1px var(--cipx-accent-soft);}",
+      ".cipx-mpick-lbl{font-weight:700;color:var(--cipx-muted);}",
+      ".cipx-mpick-val{color:var(--cipx-text);min-width:0;overflow:hidden;text-overflow:ellipsis;}",
+      ".cipx-mpick-active .cipx-mpick-val{font-weight:650;color:var(--cipx-accent);}",
+      ".cipx-mpick-caret{color:var(--cipx-muted);font-size:.7rem;}",
+      ".cipx-mpick-panel{position:absolute;top:calc(100% + 5px);left:0;z-index:40;width:330px;max-width:80vw;background:var(--cipx-surface);border:1px solid var(--cipx-border-strong);border-radius:11px;box-shadow:0 10px 26px rgba(0,0,0,.17);padding:9px;}",
+      ".cipx-mpick-head{display:flex;gap:7px;align-items:center;margin-bottom:7px;}",
+      ".cipx-mpick-find{flex:1 1 auto;min-width:0;padding:6px 9px;border:1px solid var(--cipx-border);border-radius:7px;background:var(--cipx-surface-sub);color:var(--cipx-text);font:inherit;font-size:.84rem;}",
+      ".cipx-mpick-clear{padding:6px 10px;border:1px solid var(--cipx-border);border-radius:7px;background:var(--cipx-surface-sub);color:var(--cipx-text-soft);font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;white-space:nowrap;}",
+      ".cipx-mpick-clear:hover{color:var(--cipx-text);border-color:var(--cipx-border-strong);}",
+      ".cipx-mpick-list{max-height:330px;overflow-y:auto;display:flex;flex-direction:column;gap:1px;}",
+      ".cipx-mpick-opt{display:flex;gap:8px;align-items:flex-start;padding:5px 7px;border-radius:6px;font-size:.84rem;color:var(--cipx-text);cursor:pointer;}",
+      ".cipx-mpick-opt:hover{background:var(--cipx-surface-sub);}",
+      ".cipx-mpick-opt-on{background:var(--cipx-ok-bg);font-weight:600;}",
+      ".cipx-mpick-opt input{margin-top:2px;flex:0 0 auto;}",
+      ".cipx-mpick-optt{min-width:0;overflow-wrap:anywhere;}",
+      ".cipx-mpick-none{padding:9px 7px;font-size:.82rem;color:var(--cipx-muted);}",
       ".cipx-prog-flagtog{display:inline-flex;gap:7px;align-items:center;font-size:.86rem;color:var(--cipx-text-soft);cursor:pointer;white-space:nowrap;}",
       ".cipx-prog-summary{font-size:.9rem;color:var(--cipx-text-soft);margin:2px 0 8px;}",
       ".cipx-prog-showing{font-size:.82rem;color:var(--cipx-muted);margin:4px 2px 8px;}",
       ".cipx-prog-list{display:flex;flex-direction:column;}",
       ".cipx-prog-sector{display:flex;gap:9px;align-items:baseline;margin:14px 0 7px;padding:5px 4px 6px;border-bottom:2px solid var(--cipx-accent-soft);}",
       ".cipx-prog-sector:first-child{margin-top:2px;}",
+      ".cipx-prog-sector-lbl{font-size:.66rem;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:var(--cipx-muted);}",
       ".cipx-prog-sector-code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-weight:800;font-size:.9rem;color:var(--cipx-accent);}",
       ".cipx-prog-sector-t{font-weight:700;font-size:.92rem;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 auto;}",
       ".cipx-prog-sector-n{font-size:.76rem;font-weight:600;color:var(--cipx-muted);white-space:nowrap;}",
@@ -2891,7 +3096,10 @@
       ".cipx-prog-title{font-weight:650;color:var(--cipx-text);min-width:0;overflow-wrap:anywhere;flex:1 1 60%;}",
       ".cipx-prog-award{font-size:.72rem;font-weight:700;color:var(--cipx-muted);background:var(--cipx-surface-sub);border:1px solid var(--cipx-border);border-radius:6px;padding:2px 8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:230px;flex:0 1 auto;min-width:0;}",
       ".cipx-prog-l2{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:6px;font-size:.9rem;}",
-      ".cipx-prog-top{color:var(--cipx-text-soft);}.cipx-prog-arrow{color:var(--cipx-muted);}",
+      // TOP reads as plain running text (it is the code you are LEAVING); "CIP" is the bold label on
+      // the code you are moving TO, matching the course lane's .cipx-rev-ciplbl.
+      ".cipx-prog-top{color:var(--cipx-text-soft);font-weight:400;}.cipx-prog-arrow{color:var(--cipx-muted);}",
+      ".cipx-prog-ciplbl{font-size:.72rem;font-weight:800;letter-spacing:.04em;color:var(--cipx-muted);}",
       ".cipx-prog-cip{display:inline-flex;gap:8px;align-items:center;flex-wrap:wrap;min-width:0;}",
       ".cipx-prog-cipt{color:var(--cipx-text-soft);min-width:0;overflow-wrap:anywhere;}",
       ".cipx-prog-nocip{color:var(--cipx-bad-fg);font-weight:600;font-style:italic;}",
@@ -3042,7 +3250,7 @@
       ".cipx-rev-recmark{font-weight:800;}",
       ".cipx-rev-rectag{font-weight:800;color:inherit;font-variant-numeric:tabular-nums;}",
       ".cipx-rev-fromtop{font-size:.72rem;color:var(--cipx-muted);white-space:nowrap;max-width:100%;font-variant-numeric:tabular-nums;display:inline-block;min-width:5.4rem;}",
-      ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);}",
+      ".cipx-rev-fromtop .cipx-code{color:var(--cipx-text-soft);font-weight:400;}",   // TOP unbolded (Sam, 2026-08-14) — same call as the Programs row
       ".cipx-rev-fromtt{display:inline-block;max-width:13ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;vertical-align:bottom;color:var(--cipx-muted);}",
       ".cipx-rev-fromtop-none{font-style:italic;}",
       ".cipx-rev-arrow{color:var(--cipx-muted);}",
@@ -3056,6 +3264,8 @@
       ".cipx-rev-gbox .cipx-rev-chipt{flex:1 1 auto;min-width:0;}",
       ".cipx-rev-chip:hover{border-color:var(--cipx-accent);}",
       ".cipx-rev-chip .cipx-code{font-size:1.05rem;font-weight:700;color:var(--cipx-text);}",
+      ".cipx-rev-ciplbl{font-size:.68rem;font-weight:800;letter-spacing:.04em;color:var(--cipx-muted);align-self:center;}",
+      ".cipx-rev-chip-was .cipx-rev-ciplbl{color:var(--cipx-muted);opacity:.75;}",
       ".cipx-rev-chip-on{border-style:solid;border-color:var(--cipx-ok-stripe);background:var(--cipx-ok-bg);}",
       ".cipx-rev-chip-sug{border-color:var(--cipx-accent);}",
       // "was" = what the current TOP maps to (muted, secondary); "rec" = the peer-suggested code (emphasized)
@@ -3241,6 +3451,12 @@
     _setScope: function (s) { st.scope = (s === "programs") ? "programs" : "courses"; },
     _setPrograms: function (p) { PROGRAMS = p; },
     _setProgCollege: function (i) { st.progCollege = i; },
+    // Render a mode that has no nav button. `browse` and `recommend` still WORK — only their nav
+    // entries are withheld (2026-08-14) — and navNormalise() deliberately coerces a *stored* browse
+    // mode away, so a returning user can never land somewhere with no lit tab and no way out. That
+    // coercion is the user-facing behaviour; this seam is how the still-supported modes stay
+    // exercisable without faking the storage state the app now corrects on purpose.
+    _setMode: function (m) { st.mode = m; rebuildShell(); },
     _progNeedsRevision: progNeedsRevision,
     _passes: passes, _filtered: filtered, _score: scoreAgainst, _courseScore: scoreTokensVs, _courseToks: courseToks,
     _recommend: computeRecommend, _bestMatches: bestMatchCourses,
