@@ -2172,6 +2172,175 @@ const AUDIENCE_RULES: Record<string, string> = {
   civic: `\n\nAUDIENCE: a CIVIC / COMMUNITY LEADER. Frame around community impact and access: what CPL means for their constituents (veterans, working adults, apprentices), statewide results (students served, savings), and how to connect people to a local college's CPL program. Plain language; statewide numbers are welcome; skip internal system mechanics.`,
 };
 
+/* ────────────────────────────────────────────────────────────────────────────
+ * THE RULE REGISTRY — the built-in rules as DATA, so a curator can see and edit
+ * the rules that outrank their own instructions.
+ *
+ * Sam wrote a guidance rule at 13:33 on 2026-08-14, re-tested at 14:49, and got
+ * the old behaviour. STATEWIDE_RULE was suppressing the answer he wanted, and he
+ * could not see it, could not edit it, and the prompt's promise that "the team
+ * guidance wins" is a SENTENCE, NOT A MECHANISM — a specific prohibition earlier
+ * in the prompt beat a general instruction appended later.
+ *
+ * The rules still LIVE in the consts above; this registry only orders them and
+ * names the context each one needs. sierra_rules (the table) overlays this;
+ * a failed read costs the EDITS, never the GOVERNANCE. See
+ * docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md and
+ * chatbox/supabase_sierra_rules.sql.
+ *
+ * sort_order preserves the exact order these were concatenated in before this
+ * refactor, so introducing the registry changes no prompt by itself.
+ * ──────────────────────────────────────────────────────────────────────────── */
+type RuleContext = {
+  credentialContext: string;
+  volumeContext: string;
+  alignmentContext: string;
+  creditContext: string;
+};
+
+type RuleDefault = { key: string; title: string; body: string; appliesWhen: string; sortOrder: number };
+
+type RuleOverlay = {
+  key: string; body?: string; applies_when?: string;
+  sort_order?: number; active?: boolean;
+};
+
+// ─── RULE ASSEMBLY BLOCK START (lifted by tests/sierra_rules_overlay.test.js) ──
+// Everything between this marker and RULE ASSEMBLY BLOCK END is evaluated as
+// plain JS by the tests, so annotations in here must be strippable by
+// tests/lib/lift_ts.js: `Array<X>` and `Record<X,Y>` rather than `X[]`, and no
+// object-literal return annotations. Same constraint that governs the disposition
+// lift; see the note on renderAdopters.
+
+// applies_when -> predicate. THE PREDICATES LIVE IN CODE ON PURPOSE: a curator
+// picks from this known set, they never write boolean logic into a table. That
+// is the mechanism/judgment split the ADR turns on. Flattening every rule to
+// always-on would bloat each prompt and fire rules out of context.
+// Annotated `Record<string, any>` rather than with the precise
+// `(c: RuleContext) => boolean` signature: the `>` in `=>` closes the generic
+// early for tests/lib/lift_ts.js, so the precise form cannot be stripped and
+// the whole block stops lifting. Each value is (ctx) => boolean regardless.
+const RULE_PREDICATES: Record<string, any> = {
+  always: () => true,
+  credential: (c) => !!c.credentialContext,
+  credential_or_volume: (c) => !!(c.credentialContext || c.volumeContext),
+  alignment: (c) => !!c.alignmentContext,
+  volume: (c) => !!c.volumeContext,
+  credit: (c) => !!c.creditContext,
+};
+
+
+/**
+ * THE PROTECTED SET (Sam, 2026-08-14: "yes, except a protected safety set").
+ *
+ * For these keys the CODE body always ships and `active = false` is IGNORED. A
+ * table body is APPENDED as an addition, never a replacement. The guarantee has
+ * to live here rather than in the table, because the table is the thing being
+ * guarded — and a single edit that silently removed one of these would reach
+ * students with no PR, no CI and no deploy in between.
+ *
+ * Why each one:
+ *  - portal / landing_page carry "do NOT invent or guess a link" and the
+ *    never-leave-them-at-a-dead-end duty. A fabricated route sends someone to a
+ *    counter where nobody is expecting them.
+ *  - volume / credit_status carry the suppression floors: every student count is
+ *    a FLOOR, the denominator ships as a column, and suppressed must never
+ *    render like zero. Those are disclosure-control guarantees, not tone.
+ */
+const PROTECTED_RULE_KEYS = new Set(["portal", "landing_page", "volume", "credit_status"]);
+
+const RULE_BODY_MAX = 8000;
+
+/**
+ * Merge code defaults with the curator overlay and assemble the prompt block.
+ *
+ * Returns the text AND the keys that fired, because "which rules were in play
+ * for this answer" is the half the ADR argues is worth more than editability:
+ * what would have saved Sam four hours was not the power to edit STATEWIDE_RULE,
+ * it was SEEING that it existed and was fighting his instruction.
+ *
+ * Pure and side-effect free so the tests can call it directly.
+ */
+function assembleRules(
+  defaults: Array<RuleDefault>,
+  overlay: Map<string, RuleOverlay> | null,
+  // Record<string, string> rather than RuleContext, and no return annotation:
+  // both so tests/lib/lift_ts.js can strip this signature. See the block-start
+  // marker above. The shape is identical; RuleContext is all strings.
+  ctx: Record<string, string>,
+) {
+  const merged = defaults.map((d) => {
+    const o = overlay?.get(d.key);
+    const protectedKey = PROTECTED_RULE_KEYS.has(d.key);
+    if (!o) return { ...d, active: true, overridden: false, protectedKey };
+    // A protected rule keeps its code body and gains the curator's text; an
+    // ordinary rule has its body replaced.
+    const oBody = typeof o.body === "string" ? o.body.trim().slice(0, RULE_BODY_MAX) : "";
+    const body = !oBody ? d.body : (protectedKey ? d.body + "\n" + oBody : oBody);
+    return {
+      ...d,
+      body,
+      appliesWhen: o.applies_when && RULE_PREDICATES[o.applies_when] ? o.applies_when : d.appliesWhen,
+      sortOrder: typeof o.sort_order === "number" ? o.sort_order : d.sortOrder,
+      // active=false is honoured for ordinary rules and IGNORED for protected ones.
+      active: protectedKey ? true : o.active !== false,
+      overridden: !!oBody,
+      protectedKey,
+    };
+  });
+
+  merged.sort((a, b) => a.sortOrder - b.sortOrder || a.key.localeCompare(b.key));
+
+  const fired: string[] = [];
+  const overridden: string[] = [];
+  let text = "";
+  for (const r of merged) {
+    if (!r.active) continue;
+    // An unknown applies_when would be a rule that silently never fires, so it
+    // falls back to always rather than disappearing. The SQL CHECK makes this
+    // unreachable from the table; it guards a future code-side typo.
+    const pred = RULE_PREDICATES[r.appliesWhen] || RULE_PREDICATES.always;
+    if (!pred(ctx)) continue;
+    fired.push(r.key);
+    if (r.overridden) overridden.push(r.key);
+    text += r.body;
+  }
+  return { text, fired, overridden };
+}
+
+// ─── RULE ASSEMBLY BLOCK END ──────────────────────────────────────────────────
+
+/**
+ * Read the curator overlay. Fails soft to null, which means "use the code
+ * defaults" — never "run with no rules".
+ */
+async function fetchSierraRules(sb: any): Promise<Map<string, RuleOverlay> | null> {
+  try {
+    const { data, error } = await sb
+      .from("sierra_rules")
+      .select("key, body, applies_when, sort_order, active");
+    if (error || !data) return null;
+    const m = new Map<string, RuleOverlay>();
+    for (const r of data) if (r && r.key) m.set(String(r.key), r as RuleOverlay);
+    return m;
+  } catch {
+    return null;
+  }
+}
+
+const RULE_DEFAULTS: Array<RuleDefault> = [
+  { key: "statewide", title: "Statewide collaborative credit recommendations", body: STATEWIDE_RULE, appliesWhen: "always", sortOrder: 10 },
+  { key: "credit_list", title: "List course titles and units, never a bare count", body: CREDIT_LIST_RULE, appliesWhen: "always", sortOrder: 20 },
+  { key: "offerings", title: "Course catalog — teaching is not articulating", body: OFFERINGS_RULE, appliesWhen: "always", sortOrder: 30 },
+  { key: "credential", title: "Canonical credential record", body: CREDENTIAL_RULE, appliesWhen: "credential", sortOrder: 40 },
+  { key: "credit_recs", title: "Credit recommendation lines — the full set", body: CREDIT_RECS_RULE, appliesWhen: "credential_or_volume", sortOrder: 50 },
+  { key: "alignment", title: "Articulation worklist for a college", body: ALIGNMENT_RULE, appliesWhen: "alignment", sortOrder: 60 },
+  { key: "volume", title: "Student volume by credential", body: VOLUME_RULE, appliesWhen: "volume", sortOrder: 70 },
+  { key: "credit_status", title: "CPL credit disposition", body: CREDIT_STATUS_RULE, appliesWhen: "credit", sortOrder: 80 },
+  { key: "portal", title: "Credit for Being You — the student portal", body: PORTAL_RULE, appliesWhen: "always", sortOrder: 90 },
+  { key: "landing_page", title: "Missing or unconfigured CPL landing pages", body: LANDING_PAGE_RULE, appliesWhen: "always", sortOrder: 100 },
+];
+
 function buildSystemPrompt(
   sections: any[],
   liveMetrics: any,
@@ -2185,7 +2354,12 @@ function buildSystemPrompt(
   creditContext: string = "",
   credentialContext: string = "",
   volumeContext: string = "",
-  alignmentContext: string = ""
+  alignmentContext: string = "",
+  // The curator overlay, or null to run entirely on code defaults.
+  rulesOverlay: Map<string, RuleOverlay> | null = null,
+  // Filled with the rule keys that actually fired, so the caller can record
+  // "which rules were in play for this answer" without re-deriving it.
+  report?: { fired: string[]; overridden: string[] }
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -2247,6 +2421,19 @@ function buildSystemPrompt(
       break;
   }
 
+  // Assemble the built-in rules from the registry, overlaid with any curator
+  // edits. Replaces a hand-concatenated chain of consts whose ORDER — and
+  // therefore whose precedence — was invisible and unchangeable without a PR
+  // and a deploy.
+  const assembled = assembleRules(RULE_DEFAULTS, rulesOverlay, {
+    credentialContext, volumeContext, alignmentContext, creditContext,
+  });
+  const ruleBlock = assembled.text;
+  if (report) {
+    report.fired = assembled.fired;
+    report.overridden = assembled.overridden;
+  }
+
   return `You are the CPL Chatbox, a helpful assistant on map.rccd.edu that answers questions about Credit for Prior Learning (CPL), the MAP platform, and related California Community College initiatives.
 
 Your knowledge comes from the sources below. Answer based on these sources. If the sources don't contain enough information to fully answer, say so honestly and suggest the visitor contact the MAP team at MAP@rccd.edu.
@@ -2255,7 +2442,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${STATEWIDE_RULE}${CREDIT_LIST_RULE}${OFFERINGS_RULE}${credentialContext ? CREDENTIAL_RULE : ""}${(credentialContext || volumeContext) ? CREDIT_RECS_RULE : ""}${alignmentContext ? ALIGNMENT_RULE : ""}${volumeContext ? VOLUME_RULE : ""}${creditContext ? CREDIT_STATUS_RULE : ""}${PORTAL_RULE}${LANDING_PAGE_RULE}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${ruleBlock}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -2632,10 +2819,17 @@ Deno.serve(async (req: Request) => {
         collegeCreds, singleProfile.college, recsMap);
     }
 
+    // The curator overlay for the built-in rules. Rides the same turn; null
+    // (a failed or empty read) means every rule comes from its code default,
+    // which is the governed state — never the ungoverned one.
+    const rulesOverlay = await fetchSierraRules(sb);
+    const ruleReport = { fired: [] as string[], overridden: [] as string[] };
+
     const systemPrompt = buildSystemPrompt(
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
-      teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext);
+      teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
+      rulesOverlay, ruleReport);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
@@ -2729,6 +2923,13 @@ Deno.serve(async (req: Request) => {
             response_tokens: responseTokens,
             topic_match: searchMode === "topic" || searchMode === "college_topic",
             audience: audienceKey,
+            // Which rules were actually in play for THIS answer, and which of
+            // them a curator had overridden. Recorded per turn because the
+            // question that matters is asked about a turn that misbehaved, and
+            // reasoning back from the current code cannot answer it — the code
+            // may have changed, and the overlay certainly may have.
+            rules_fired: ruleReport.fired,
+            rules_overridden: ruleReport.overridden,
           });
         } catch (logErr) {
           console.error("Failed to log interaction:", logErr);

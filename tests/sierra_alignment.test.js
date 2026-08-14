@@ -205,7 +205,7 @@ check("alignment only fires when BOTH a credential and a college are known",
       "\"which of my courses\" is meaningless without a subject");
 
 check("ALIGNMENT_RULE ships only when the section is present",
-      /alignmentContext \? ALIGNMENT_RULE : ""/.test(src));
+      /body: ALIGNMENT_RULE, appliesWhen: "alignment"/.test(src));
 
 check("the rule forbids equivalence language on a suggestion",
       /Never say a course "qualifies", "counts", "is equivalent" or "will be accepted"/.test(src));

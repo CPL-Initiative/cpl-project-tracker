@@ -201,7 +201,7 @@ check("8 creditContext is interpolated into the system prompt",
   "the context reaches the builder but is never emitted into the prompt");
 // The rule is dead weight (and confusing) when there is no data to talk about.
 check("8 CREDIT_STATUS_RULE only ships when credit context is present",
-  /\$\{creditContext \? CREDIT_STATUS_RULE : ""\}/.test(SRC));
+  /body: CREDIT_STATUS_RULE, appliesWhen: "credit"/.test(SRC));
 
 // ── 9. The framing rule ──────────────────────────────────────────────────────
 // Sam, 2026-08-09: transparency and truth, framed as opportunity rather than
