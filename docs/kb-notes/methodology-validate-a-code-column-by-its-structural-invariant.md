@@ -1,7 +1,7 @@
 ---
 title: Validate a supplied code column by its structural invariant, not by spot-checking values
 created: 2026-08-12
-updated: 2026-08-12
+updated: 2026-08-14
 tags: [methodology, data-quality, identity, reference-data]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -103,6 +103,38 @@ a spreadsheet where a sort or a paste can shift one column relative to its rows.
 It does not apply to identifiers you mint yourself with a constraint behind them
 — a database PK cannot shift. The risk is specific to **transport through a
 format with no referential integrity**, which is exactly what a spreadsheet is.
+
+## Second instance — a relayed code table, shifted by one (2026-08-14)
+
+The same failure, in a different medium: a **relayed summary** rather than a
+supplied file. A Teams message paraphrasing the Chancellor's Office noncredit CIP
+categories merged two codes (`32.0101` + `32.0104`) onto a single line, which
+moved **every pair after it by one**. *Developmental/Remedial Math* would have
+been built as `32.0105` — which is actually *Job-Seeking/Changing Skills*.
+
+Structurally identical to the MIS `LocationID` case: real codes, on the wrong
+rows, and every individual value plausible. **Spot-checking cannot detect a shift
+— by construction, the first row is usually still right.** It was caught only by
+checking **all seven pairs** against the CO's certified catalog; the published CO
+page agreed with the catalog, so the relay was the sole point of corruption.
+
+Two additions to the method this instance earned:
+
+- **A relay is a transformation.** A human retyping or summarising a code table
+  is as capable of shifting a column as a bad CSV parse, and carries none of the
+  signals a file does (no header row, no delimiter, no obvious truncation). Treat
+  a pasted or summarised table as untrusted **input**, not as authority — go back
+  to the published source.
+- **Check every pair, not a sample.** When the invariant is *pairwise alignment*
+  (code ↔ label), the only sound check is exhaustive over the set. Seven pairs is
+  seconds of work; the sample that "looked fine" is what a shift survives.
+
+The validator now runs **on every rebuild**, not once — the same posture as
+`verify_source()` re-deriving the Appendix A repairs, so an upstream fix quietly
+turns the guard into a no-op instead of leaving a stale patch behind.
+
+Instance: `docs/noncredit_cip_category_scope.md` · `docs/cip_crosswalk_lessons.md`
+(2026-08-14) · PRs #1198 / #1199.
 
 ## See also
 

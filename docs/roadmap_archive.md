@@ -3790,6 +3790,35 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### Sky155 — the rule that could not be obeyed, twice (2026-08-14, Session 155)
+
+Five PRs (**#1184**, **#1185**, **#1186**, **#1187**, **#1188**), all merged; `cpl-chat` at **v51**.
+Sam tested live throughout and every fix came from a real report.
+⭐ **`sierra_rules` IS LIVE — Priority 1 of the ADR.** The ten built-in prompt rules are now a
+registry with `sort_order` + `applies_when`, overlaid by a reviewer-only table that **never
+replaces** code defaults: a failed read costs the *edits*, never the *governance*. Proven
+**byte-identical** to the old hand-concatenated chain across all 16 context combinations.
+`applies_when` is a KEY into a code-side predicate map — curators pick a context, they never write
+logic into data. The **protected set** (`portal`, `landing_page`, `volume`, `credit_status`) always
+ships its code body and ignores `active=false`, because gutting a body removes a guard as
+effectively as disabling it. `chat_interactions` now records `rules_fired`/`rules_overridden`.
+⭐ **THE SAME BUG SHAPE, ONE LAYER ALONG.** `STATEWIDE_RULE` asks for a `college | credit | landing
+page` table; `renderAdopters()` emitted names and **no URLs**, and the rule says never guess a link
+— so **Sierra was obeying exactly** and her own fail-safe produced the empty column.
+`landing_page_url` had been populated for 123 of 130 colleges all along: the **fourth** instance of
+curated-data-nobody-reads. The LOCAL branch also printed a bare count, silently dropping Lemoore
+and Riverside.
+⭐ **AN AUTHOR `display` RULE DEFEATS `[hidden]`.** Send note *did* call `hidden = true`;
+`display:flex` made it inert. Worst of the four defects: the confirmation was **unconditional**, so
+a note that never saved was thanked for — which also made the obvious fix (allow a note with no
+rating) *wrong*, since the RPC raises on a null rating and the error was swallowed.
+⚠️ **Four red checks on `main` were stale test BOUNDS, not defects** — a character window that
+stopped covering a grown function, an `await` spelling after a `Promise.all` move, a cap pinned to
+500 after it became 1500, a missing extraction dependency. **A red check nobody can act on is how a
+real one gets missed.** Two suites also broke invisibly because the sandbox has no `node_modules`.
+Story: `docs/sierra_rules_lessons.md` · handoff `docs/session_156_handoff.md`.
+
+
 ### SkyBridge — Sam drove the design live, and eleven steers later My College works (2026-08-11, Session 140)
 
 Shipped **#1117** (funding box · 72-district picker · Ask Sierra), **#1118** (the transcribed correction) and **#1119**
