@@ -159,8 +159,11 @@
         if (lbl) el.textContent = lbl;
         // `data-nav-hidden` rather than removing the button: tabs.js derives
         // VALID_TABS from these elements, so a removed button would break the
-        // deep link to a tab that was merely hidden from the menu.
-        var isHidden = arrangement.hidden.indexOf(t) !== -1;
+        // deep link to a tab that was merely hidden from the menu. The same
+        // applies to an audience rule — "not shown to you" is a menu setting,
+        // never a takedown, so the pane stays reachable by its link.
+        var isHidden = arrangement.hidden.indexOf(t) !== -1 ||
+          (arrangement.audienceHidden || []).indexOf(t) !== -1;
         el.setAttribute('data-nav-hidden', isHidden ? '1' : '0');
         if (isHidden) el.style.display = 'none';
         else if (el.style.display === 'none' && el.getAttribute('data-org-hidden') !== '1') el.style.display = '';

@@ -1,31 +1,33 @@
 {
-  "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
-  "_as_of": "2026-08-07",
-  "mapped": {
-    "workflow:daily-dashboard.yml": "CA-01",
-    "workflow:map-users-sync.yml": "CA-02",
-    "table:map_college_nudges": "CA-03",
-    "table:sierra_feedback": "CA-06",
-    "table:kb_curation": "DR-04",
-    "table:map_college_contacts": "DR-01/DR-02",
-    "table:map_college_users": "DR-10",
-    "table:budget_funding": "DR-09",
-    "table:sierra_guidance": "DR-11"
-  },
-  "dismissed": {
-    "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",
-    "tab:governance": "The Governance tab IS this register. Its only write is governance_owners, dismissed above.",
-    "tab:map-users": "Covered by its tables (map_college_contacts, map_college_users, map_college_nudges).",
-    "tab:sierra-training": "Covered by DR-11 (what Sierra tells the public) + CA-06 (feedback triage).",
-    "tab:implementation-funding": "Covered by DR-09 and the cpl_funding_* tables proposed separately.",
-    "tab:cpl-news": "Covered by the cpl_news / cpl_news_requests tables proposed separately.",
-    "tab:raci": "Covered by the team_access table proposed separately.",
-    "tab:nc-learning-partners": "Covered by the nc_* tables proposed separately.",
-    "tab:tmc-builder": "Covered by the tmc_* tables proposed separately.",
-    "tab:gr-priorities": "Covered by the gr_content table proposed separately.",
-    "tab:cpl-pathways": "Covered by the cpl_adoption_interest table proposed separately.",
-    "tab:annual-report": "Covered by the item_updates table proposed separately.",
-    "tab:map-data-quality": "A read-and-flag view; its writes go to tables proposed separately.",
-    "tab:memory": "The cpl_memory layer has its own documented checkpoint procedure (playbook-cpl-memory-auto-write-at-checkpoint); propose a row only if that lapses."
-  }
+ "_about": "Persistent memory for the drift detector (kb/_build_governance_candidates.py). 'mapped' = this surface is ALREADY covered by an existing register row. 'dismissed' = it needs no row, and why. Anything in neither is proposed as a candidate. Dismissal lives here, not in a database, so the REASON is reviewable in a diff and cannot silently diverge from the register it annotates.",
+ "_as_of": "2026-08-14",
+ "mapped": {
+  "workflow:daily-dashboard.yml": "CA-01",
+  "workflow:map-users-sync.yml": "CA-02",
+  "table:map_college_nudges": "CA-03",
+  "table:sierra_feedback": "CA-06",
+  "table:kb_curation": "DR-04",
+  "table:map_college_contacts": "DR-01/DR-02",
+  "table:map_college_users": "DR-10",
+  "table:budget_funding": "DR-09",
+  "table:sierra_guidance": "DR-11",
+  "table:cobi_nav": "DR-12"
+ },
+ "dismissed": {
+  "table:governance_owners": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular.",
+  "tab:governance": "The Governance tab IS this register. Its only write is governance_owners, dismissed above.",
+  "tab:map-users": "Covered by its tables (map_college_contacts, map_college_users, map_college_nudges).",
+  "tab:sierra-training": "Covered by DR-11 (what Sierra tells the public) + CA-06 (feedback triage).",
+  "tab:implementation-funding": "Covered by DR-09 and the cpl_funding_* tables proposed separately.",
+  "tab:cpl-news": "Covered by the cpl_news / cpl_news_requests tables proposed separately.",
+  "tab:raci": "Covered by the team_access table proposed separately.",
+  "tab:nc-learning-partners": "Covered by the nc_* tables proposed separately.",
+  "tab:tmc-builder": "Covered by the tmc_* tables proposed separately.",
+  "tab:gr-priorities": "Covered by the gr_content table proposed separately.",
+  "tab:cpl-pathways": "Covered by the cpl_adoption_interest table proposed separately.",
+  "tab:annual-report": "Covered by the item_updates table proposed separately.",
+  "tab:map-data-quality": "A read-and-flag view; its writes go to tables proposed separately.",
+  "tab:memory": "The cpl_memory layer has its own documented checkpoint procedure (playbook-cpl-memory-auto-write-at-checkpoint); propose a row only if that lapses.",
+  "tab:admin": "The Admin tab IS the surface DR-12 governs. Its only write is cobi_nav, mapped above; the cobi_rls_gates() RPC it reads is read-only policy metadata."
+ }
 }

@@ -43,6 +43,60 @@
    * `dashboard` is the home pane every deep link falls back to. */
   var PROTECTED = { admin: true, dashboard: true };
 
+  /* Tabs the AUDIENCE filter may not touch — a shorter list than PROTECTED, and
+   * the difference is whether the viewer can get themselves back.
+   *
+   * `hidden` is irrecoverable from the browser: nothing the viewer does brings
+   * the item back, so both protected tabs ignore it. An audience rule IS
+   * recoverable — sign in and the item returns — so `admin` may carry one. Only
+   * `dashboard` is locked, because it is where every deep link falls back to and
+   * a public visitor arriving at a site with no home has nowhere to go. */
+  var AUDIENCE_LOCKED = { dashboard: true };
+
+  /* What the current viewer holds. Ordered, so a rule is a floor rather than an
+   * exact match: a magic-link holder satisfies `signed_in` too.
+   *
+   * Read defensively and INDEPENDENTLY. Storage access throws in some private
+   * modes, and catching per credential rather than around the whole function
+   * matters: a localStorage failure must not also revoke a magic-link session
+   * that lives in sessionStorage. There is no network here, so there is no
+   * "unknown" state to fall back from — absent is absent. */
+  var AUDIENCE_RANK = { everyone: 0, signed_in: 1, magic_link: 2 };
+  var PHRASE_KEYS = ["cpl_team_pass", "cpl_gr_pass", "cpl_fin_pass"];
+
+  function hasMagicLink() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem("cpl_sb") || "null");
+      var t = s && s.access_token;
+      return typeof t === "string" && t.split(".").length === 3 && t.length > 40;
+    } catch (e) { return false; }
+  }
+  function hasPhrase() {
+    for (var i = 0; i < PHRASE_KEYS.length; i++) {
+      try { if (localStorage.getItem(PHRASE_KEYS[i])) return true; }
+      catch (e) { /* this key is unreadable; the others may not be */ }
+    }
+    return false;
+  }
+  function viewerRank() {
+    if (hasMagicLink()) return AUDIENCE_RANK.magic_link;
+    if (hasPhrase()) return AUDIENCE_RANK.signed_in;
+    return AUDIENCE_RANK.everyone;
+  }
+
+  /* Does the viewer clear this tab's audience floor?
+   *
+   * ⚠ DISPLAY ONLY. A false here removes the item from the MENU. The pane still
+   * exists, the deep link still routes, and the data behind it is exactly as
+   * protected as its RLS policies make it. */
+  function audienceAllows(tab) {
+    if (AUDIENCE_LOCKED[tab]) return true;
+    var o = get("tab", tab);
+    var need = AUDIENCE_RANK[(o && o.audience) || "everyone"];
+    if (need == null) return true;   // an unknown value must never hide anything
+    return viewerRank() >= need;
+  }
+
   var rows = null;        // null = not loaded (or load failed) → pure code defaults
   var loaded = false;
   var listeners = [];
@@ -69,6 +123,9 @@
         hidden: r.hidden === true,
         orgs: isArr(r.orgs) ? r.orgs.filter(function (o) { return typeof o === "string" && o; }) : null,
         pinned: r.pinned === true,
+        // An unrecognised value degrades to 'everyone'. A typo must never hide a
+        // menu item from everybody — the failure has to land on the harmless side.
+        audience: (r.audience === "signed_in" || r.audience === "magic_link") ? r.audience : "everyone",
         updated_by: typeof r.updated_by === "string" ? r.updated_by : null,
         updated_at: typeof r.updated_at === "string" ? r.updated_at : null,
       });
@@ -139,7 +196,7 @@
     groups.forEach(function (g) { byId[g.id] = g; });
 
     // ── Tabs into their containers ──
-    var top = [], hidden = [];
+    var top = [], hidden = [], audienceHidden = [];
     presentTabs.forEach(function (t) {
       var o = get("tab", t);
       var prot = !!PROTECTED[t];
@@ -176,6 +233,12 @@
         tie: codeIndex[t] != null ? codeIndex[t] : present[t],
       };
       if (isHidden) hidden.push(t);
+      // Tracked SEPARATELY from `hidden`, not folded into it. They mean
+      // different things to the editor: a hidden item is crossed out and offers
+      // "show again", whereas an audience-filtered one is not hidden at all —
+      // it is simply not for this viewer, and rendering it as hidden would tell
+      // a curator their menu is disabled when it is working exactly as set.
+      if (!isHidden && !audienceAllows(t)) audienceHidden.push(t);
       if (grp) grp.tabs.push(entry);
       else top.push(entry);
     });
@@ -188,7 +251,14 @@
       return list.filter(function (e) { return !e.hidden; }).map(function (e) { return e.tab; });
     }
     function entries(list) {
-      return list.map(function (e) { return { tab: e.tab, hidden: e.hidden }; });
+      return list.map(function (e) {
+        var o = get("tab", e.tab);
+        return {
+          tab: e.tab, hidden: e.hidden,
+          audience: (o && o.audience) || "everyone",
+          audienceHidden: audienceHidden.indexOf(e.tab) !== -1,
+        };
+      });
     }
 
     return {
@@ -197,6 +267,7 @@
         .map(function (g) { return { id: g.id, label: g.label, tabs: names(g.tabs) }; }),
       top: names(top),
       hidden: hidden,
+      audienceHidden: audienceHidden,
       // What the Admin editor renders. Same placement, computed once — the
       // editor MUST show hidden items in position or there is no way to unhide
       // one, and re-deriving placement there would be a second implementation
@@ -235,6 +306,13 @@
     var o = get("tab", tab);
     return !!(o && o.hidden);
   }
+  /* The single question every consumer should ask: should this button be off the
+   * menu right now, for any reason? nav_groups.js and cobi_orgs.js both call
+   * this rather than combining the two rules themselves — they run at different
+   * moments and a duplicated `||` is exactly how they would drift apart. */
+  function isMenuHidden(tab) {
+    return isHidden(tab) || !audienceAllows(tab);
+  }
 
   function notify() {
     listeners.slice().forEach(function (fn) {
@@ -271,13 +349,46 @@
     });
   }
 
+  /* Re-evaluate when the viewer's credentials change.
+   *
+   * An audience rule is the only part of this module that depends on WHO is
+   * looking, so it is the only part that can go stale without the table
+   * changing. A magic-link sign-in always arrives with a full page load (the
+   * redirect comes back to this page), so the case that actually needs handling
+   * is the team phrase, which unlocks in place.
+   *
+   * `cpl-team-pass-unlocked` is team_phrase.js's own announcement. The `storage`
+   * event covers signing in or out in ANOTHER tab, which would otherwise leave
+   * this one showing a menu for credentials it no longer has. Both just re-run
+   * the listeners; nothing is re-fetched, because the arrangement has not changed
+   * — only who it is being evaluated for. */
+  var lastRank = null;
+  function recheckViewer() {
+    var r = viewerRank();
+    if (r === lastRank) return;   // nothing to do, and a needless rebuild loses group open/closed state
+    lastRank = r;
+    notify();
+  }
+  try {
+    lastRank = viewerRank();
+    window.addEventListener("cpl-team-pass-unlocked", recheckViewer);
+    window.addEventListener("storage", recheckViewer);
+    window.addEventListener("cpl-tab-activated", recheckViewer);
+  } catch (e) { /* a missing listener costs the live refresh, never the menu */ }
+
   window.CPL_NAV_OVERLAY = {
     load: load,
+    recheckViewer: recheckViewer,
     plan: plan,
     labelFor: labelFor,
     orgsFor: orgsFor,
     isPinned: isPinned,
     isHidden: isHidden,
+    isMenuHidden: isMenuHidden,
+    audienceAllows: audienceAllows,
+    viewerRank: viewerRank,
+    AUDIENCE_RANK: AUDIENCE_RANK,
+    AUDIENCE_LOCKED: AUDIENCE_LOCKED,
     PROTECTED: PROTECTED,
     rows: function () { return rows; },
     isLoaded: function () { return loaded; },

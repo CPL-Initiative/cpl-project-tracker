@@ -477,9 +477,71 @@ const DEFAULT_GATES = [
   check("a tab that was never customised still writes a null label", untouched.label === null);
 })();
 
+
+// ── The audience picker, and the warning that has to sit ON it ──────────────
+(async function () {
+  const w = makeWin({ nav: [] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  // Arrange leads the page — it was shipped last, two screens down, and Sam's
+  // first report was that he could not find it.
+  check("Arrange is the FIRST section on the tab",
+    root.innerHTML.indexOf("Arrange the menu") < root.innerHTML.indexOf("Every menu item"));
+
+  api._openRuleEditNoop = null;
+  api._state.editKey = "tab:sierra-training";
+  api.render(root);
+  check("the editor offers an audience picker", !!root.querySelector('[data-aud="sierra-training"]'));
+  check("the picker is worded as SHOW IN MENU, never as access",
+    /Show in menu to/.test(root.innerHTML) && !/who can access/i.test(root.innerHTML));
+  check("Dashboard gets NO picker — a public visitor must always have a home", (function () {
+    api._state.editKey = "tab:dashboard"; api.render(root);
+    return !root.querySelector('[data-aud="dashboard"]');
+  })());
+  check("Admin DOES get one — signing in brings it back, so it is recoverable", (function () {
+    api._state.editKey = "tab:admin"; api.render(root);
+    return !!root.querySelector('[data-aud="admin"]');
+  })());
+
+  // The teaching moment, on the control rather than only in the header.
+  const w2 = makeWin({
+    nav: [{ kind: "tab", key: "cpl-pathways", audience: "magic_link" }],
+    gates: DEFAULT_GATES.map((g) => (g.tbl === "cpl_adoption_interest"
+      ? { tbl: g.tbl, kind: "table", rls_enabled: true, select_gate: "true", policy_count: 1 } : g)),
+  });
+  const api2 = w2.CPL_ADMIN_TAB;
+  const root2 = w2.document.getElementById("admin-root");
+  await api2._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api2._state.editKey = "tab:cpl-pathways";
+  api2.render(root2);
+  check("narrowing the audience of a PUBLIC-data tab warns that nothing is protected",
+    /still <b>readable by anyone<\/b>/.test(root2.innerHTML));
+  // Close the editor first — an open editor REPLACES the row, so the chip is
+  // deliberately absent while you are editing that item.
+  api2._state.editKey = null; api2.render(root2);
+  check("the restricted item carries a chip in the list too",
+    /adm-g-aud/.test(root2.innerHTML) && /Magic-link sign-in only/.test(root2.innerHTML));
+
+  // Round-trip: the audience survives an unrelated drag + save.
+  const d = api2._ensureDraft();
+  check("the draft picks up the saved audience",
+    api2._findTab(d, "cpl-pathways").item.audience === "magic_link");
+  api2._moveTab(d, "sierra-training", "__top__", 0);
+  const rows = api2._draftRows(d);
+  check("an unrelated drag does not blank the audience",
+    rows.filter((r) => r.kind === "tab" && r.key === "cpl-pathways")[0].audience === "magic_link");
+  check("an untouched tab writes the default audience",
+    rows.filter((r) => r.kind === "tab" && r.key === "sierra-training")[0].audience === "everyone");
+})();
+
 setTimeout(function () {
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nadmin_tab.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 900);
+}, 1400);
