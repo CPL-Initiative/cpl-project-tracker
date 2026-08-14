@@ -30,6 +30,15 @@ const path = require("path");
 const SRC = path.join(__dirname, "..", "chatbox", "supabase", "functions", "cpl-chat", "index.ts");
 const src = fs.readFileSync(SRC, "utf8");
 
+// The body of fetchCredentialAdopters. Scoping the assertions below to the
+// function beats a fixed character window: a window silently stops covering the
+// function when the function grows (which is exactly what happened when the
+// landing-page lookup was added — the fail-soft check "broke" while the
+// try/catch it guards was untouched).
+const fetchBody = (src.match(
+  /async function fetchCredentialAdopters[\s\S]*?\n\}/,
+) || [""])[0];
+
 const results = [];
 function check(name, cond) {
   results.push({ name, ok: !!cond });
@@ -49,11 +58,11 @@ check(
 // the failure §11 records for the recs batch. This must stay an exact-key `in`.
 check(
   "it is an exact-key .in() lookup, never a search RPC",
-  /fetchCredentialAdopters[\s\S]{0,900}\.in\("unified_title",\s*uniq\)/.test(src),
+  /\.in\("unified_title",\s*uniq\)/.test(fetchBody),
 );
 check(
   "it does NOT call a search_* RPC",
-  !/fetchCredentialAdopters[\s\S]{0,900}rpc\("search_/.test(src),
+  fetchBody.length > 0 && !/rpc\("search_/.test(fetchBody),
 );
 
 // ── The names actually reach the prompt ─────────────────────────────────────
@@ -63,7 +72,7 @@ check(
 );
 check(
   "the adopter line prints NAMES, not just a count",
-  /Colleges that have ADOPTED it \(\$\{names\.length\}\)/.test(src),
+  /Colleges that have ADOPTED it \(\$\{refs\.length\}\)/.test(src),
 );
 check(
   "the bare-count line no longer stands alone in buildCredentialContext",
@@ -71,7 +80,7 @@ check(
 );
 check(
   "buildCredentialContext accepts an adopters map",
-  /function buildCredentialContext\([\s\S]{0,260}adopters\?:\s*Map<string,\s*string\[\]>/.test(src),
+  /function buildCredentialContext\([\s\S]{0,260}adopters\?:\s*Map<string,\s*AdopterRef\[\]>/.test(src),
 );
 check(
   "the call site passes adopters through",
@@ -87,7 +96,7 @@ check(
 // COLUMN so "showing 9 of 261" can never be mistaken for the whole set.
 check(
   "a truncated adopter list discloses the total",
-  /showing \$\{shown\.length\} of \$\{names\.length\}/.test(src),
+  /showing \$\{shown\.length\} of \$\{refs\.length\}/.test(src),
 );
 check(
   "there is a cap constant rather than an inline number",
@@ -132,7 +141,7 @@ check(
 // ── Enrichment must never cost the credential sections ──────────────────────
 check(
   "the adopter lookup fails soft (try/catch inside the fetcher)",
-  /fetchCredentialAdopters[\s\S]{0,900}catch\s*\{/.test(src),
+  /catch\s*\{/.test(fetchBody),
 );
 
 const failed = results.filter((r) => !r.ok).length;
