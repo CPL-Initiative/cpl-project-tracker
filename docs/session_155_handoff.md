@@ -231,3 +231,52 @@ either way: it may mean Mesa's contact genuinely changed in MAP.**
 
 **SkyProse** is still unclaimed (offered four times now). Or coin your own; if
 Sam names one, his wins.
+
+---
+
+## 🆕 NEW FROM SAM (2026-08-14, end of session 154) — the COBI nav manager
+
+Captured verbatim while it was fresh; **not scoped, not built.** `cpl_memory`
+rows `cobi-nav-manager-wishlist` and `cobi-no-cheesy-glyphs-design-rule`.
+
+> "I want to make the COBI side menu items rearrangeable by drag and drop from a
+> single place where I can manage the org where they appear, hierarchy, naming,
+> visibility, and access via either team phrase or magic link. It's getting busy
+> and needs to be organized better."
+
+> "Also want a design rule to not add glyphs to them (as some have now and should
+> be removed). I'm not a fan of cheesy glyphs. If we use them they should be
+> muted, simple, a bit ghosted based on CO blue and white."
+
+**Six dimensions per item:** org · hierarchy/nesting · name · sort order ·
+visibility · access (team phrase OR magic-link reviewer).
+
+⭐ **This is `adr-judgment-in-tables-mechanism-in-code` applied to navigation** —
+and it is the strongest case yet, because the nav currently lives in **both
+HTMLs**, so every nav change today is a **Rule 4 mirror edit**. A nav table
+removes that hazard outright rather than merely making edits nicer.
+
+⚠️ **THE TRAP, and it is the thing to get right:** a nav "access" setting is a
+**DISPLAY control, not a security control.** Hiding a menu item does not protect
+the data behind it — the real gate is RLS on the underlying tables. A manager UI
+with an access dropdown *invites* the belief that setting it secures something.
+The two must be visibly distinct, and the manager should state which tables are
+actually DB-gated for a given tab. Two tabs gate a READ; the rest gate only
+rendering.
+
+⚠️ Constrained by two existing findings: **a tab can carry a SITE phrase only if
+it is EXCLUSIVE to that site** (otherwise it locks out CPL users), and the
+**site-phrase superset decision is still open** and needs Sam before the Finance
+phrase spreads.
+
+**On glyphs:** separate DECORATIVE from FUNCTIONAL before removing anything. The
+masthead lock renders open vs locked — that is *state*, not decoration. Survivors
+go in as a `:root` token (muted / ghosted CO blue on white), never an inline
+emoji, per the standing "new CSS uses `var(--token)`, never a raw hex" rule.
+The rule belongs in `docs/kb-notes/reference-ui-design-system.md` so it is not
+re-litigated per tab.
+
+**Sequencing note:** this shares a spine with Priority 1 (`sierra_rules`) — both
+are "config that lives in code should live in a curatable table, overlaying code
+defaults." Worth checking whether one schema pattern serves both before building
+two.
