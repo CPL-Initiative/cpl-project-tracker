@@ -746,9 +746,38 @@
   // so coming back to #chatbot never re-points it. After one visit to My
   // College, `inputEl` is the hidden pane's input for the rest of the session —
   // so the handoff typed the question into an invisible box.
-  function chatbotInputEl() {
+  // Is the dedicated CPL Assistant tab actually reachable? cobi_orgs.js hides a
+  // nav button with style.display + data-org-hidden="1"; the Admin tab Sam is
+  // planning will suppress tabs the same way. data-org-hidden is used rather
+  // than offsetParent because jsdom has no layout, so a visibility test based on
+  // rendering cannot be tested at all.
+  function chatbotTabSuppressed() {
     var pane = document.getElementById('tab-chatbot');
-    return (pane && pane.querySelector('#cplchat-input, .cplchat-input')) || null;
+    if (!pane) return true;
+    var btn = document.querySelector('.cpl-tab[data-tab="chatbot"]');
+    return !!(btn && btn.getAttribute('data-org-hidden') === '1');
+  }
+
+  // The pane that should receive a Sierra Training hand-off.
+  //
+  // PREFERS the dedicated CPL Assistant pane, and falls back to My College —
+  // which mounts this SAME widget via mountInto() — when CPL Assistant is
+  // suppressed or absent. Sam, 2026-08-14, planning to suppress that tab from an
+  // Admin tab: the two surfaces are the same assistant, but the hand-off names
+  // #chatbot specifically, so suppressing it would have silently broken the only
+  // way to test an instruction. A button that does nothing looks like one that
+  // was never wired — the exact failure #1166 existed to fix.
+  //
+  // Still pane-scoped rather than using the module-level `inputEl`, because that
+  // reference goes stale after a second mount (see the note below).
+  function chatbotInputEl() {
+    if (!chatbotTabSuppressed()) {
+      var pane = document.getElementById('tab-chatbot');
+      var el = pane && pane.querySelector('#cplchat-input, .cplchat-input');
+      if (el) return el;
+    }
+    var mc = document.getElementById('tab-college-briefing');
+    return (mc && mc.querySelector('#cplchat-input, .cplchat-input')) || null;
   }
 
   function consumeTestQuestion() {
@@ -767,7 +796,12 @@
     try { el.focus(); } catch (e) { /* hidden pane */ }
   }
   window.addEventListener('cpl-tab-activated', function (e) {
-    if (e && e.detail && e.detail.tab === 'chatbot') consumeTestQuestion();
+    // Both hosts of this widget, so a hand-off still lands when CPL Assistant is
+    // suppressed and the reviewer is routed to My College instead. The key is
+    // not consumed until an input is actually found, so listening on the wrong
+    // one costs nothing.
+    var t = e && e.detail && e.detail.tab;
+    if (t === 'chatbot' || t === 'college-briefing') consumeTestQuestion();
   });
 
   function mount() {

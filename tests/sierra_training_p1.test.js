@@ -109,10 +109,36 @@ function makeWin(opts) {
   check("lookupQuestion resolves a gap handle (numeric id)", api._lookupQuestion("gap:7") === "gap question");
   check("lookupQuestion rejects a malformed handle", api._lookupQuestion("zzz") === null);
 
+  // The real page HAS a CPL Assistant pane; this fixture did not, so the
+  // hand-off's new suppression fallback correctly routed elsewhere and the
+  // assertion read as a regression. Give the fixture the pane it is meant to
+  // represent, then test the suppressed case on purpose below.
+  w.document.body.insertAdjacentHTML("beforeend",
+    '<div id="tab-chatbot"></div><nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
+
   api._testInSierra("What about CPR credit?");
   check("testInSierra stores the question under the shared key",
     w.sessionStorage.getItem("cplSierraTestQ.v1") === "What about CPR credit?");
   check("testInSierra navigates to #chatbot", w.location.hash === "#chatbot");
+
+  // Sam, 2026-08-14, planning to suppress CPL Assistant from an Admin tab
+  // because it is now the same assistant as Sierra. It is — but this hand-off
+  // named #chatbot, so suppressing that tab would have left the trainer with no
+  // way to test an instruction, and it would have failed SILENTLY.
+  w.document.querySelector('.cpl-tab[data-tab="chatbot"]').setAttribute("data-org-hidden", "1");
+  w.location.hash = "#none";
+  api._testInSierra("suppressed-case question");
+  check("a suppressed CPL Assistant reroutes the hand-off to My College",
+    w.location.hash === "#college-briefing");
+  check("the question still reaches the shared key when rerouted",
+    w.sessionStorage.getItem("cplSierraTestQ.v1") === "suppressed-case question");
+
+  // And with no pane at all (removed rather than hidden).
+  w.document.getElementById("tab-chatbot").remove();
+  w.location.hash = "#none";
+  api._testInSierra("no-pane question");
+  check("a missing CPL Assistant pane also reroutes rather than dead-ending",
+    w.location.hash === "#college-briefing");
 
   // consumer side: cpl_chat.js prefills (never auto-sends) on chatbot activation
   const dom2 = new JSDOM('<!doctype html><html><head></head><body><div class="cpl-tab-pane" id="tab-chatbot"><div class="main-container"></div></div></body></html>',

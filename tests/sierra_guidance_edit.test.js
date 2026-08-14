@@ -166,6 +166,14 @@ function seed(api) {
   check("the saved wording is what will be tested",
     api._state.guidance[0].rule === "Name the college's ironworker exhibits explicitly.");
 
+  // The live page has a CPL Assistant pane; this fixture did not, so the
+  // hand-off's suppression fallback (added 2026-08-14, so a suppressed CPL
+  // Assistant reroutes to My College instead of dead-ending) correctly sent it
+  // elsewhere. Represent the real page. The suppressed path is covered in
+  // tests/sierra_training_p1.test.js and tests/sierra_test_handoff.test.js.
+  w.document.body.insertAdjacentHTML("beforeend",
+    '<div id="tab-chatbot"></div><nav><button class="cpl-tab" data-tab="chatbot"></button></nav>');
+
   api._testInSierra(hopped);
   check("the question is handed to the assistant via sessionStorage",
     w.sessionStorage.getItem(api.TEST_Q_KEY) === "What CPL does Cerritos College offer for ironworkers?");
