@@ -20,6 +20,7 @@
 //
 // Run from repo root: `npm test` (or `node tests/sierra_guidance.test.js`).
 const fs = require("fs");
+const path = require("path");
 const { JSDOM } = require("jsdom");
 
 const results = [];
@@ -155,7 +156,22 @@ function finish() {
     /enable row level security/.test(sql) &&
     (sql.match(/is_allowed_reviewer\(\) or public\.team_pass_ok\(\)/g) || []).length >= 4);
   check("schema: NO delete policy (audit trail)", !/for delete/.test(sql));
-  check("schema: rule length capped 3–500", /between 3 and 500/.test(sql));
+  // THE THREE LENGTH LIMITS MUST ALL AGREE — the SQL file says so in a comment,
+  // and this asserts it instead of trusting it. #1182 raised the cap 500 -> 1500
+  // in the SQL, the edge function and the tab, but this check still asserted 500
+  // and had been RED on main ever since. Pinning one number in one file is what
+  // let them disagree in the first place: on 2026-08-12 the tab and the function
+  // moved while the SQL constraint did not, turning a silent truncation into a
+  // hard save failure for any rule over 500 chars. So compare the three sources
+  // to each other rather than to a literal.
+  const sqlCap = (sql.match(/char_length\(rule\) between 3 and (\d+)/) || [])[1];
+  const fnSrc = fs.readFileSync(
+    path.join(__dirname, "..", "chatbox", "supabase", "functions", "cpl-chat", "index.ts"), "utf8");
+  const fnCap = (fnSrc.match(/GUIDANCE_MAX_CHARS_PER_RULE\s*=\s*(\d+)/) || [])[1];
+  const tabSrc = fs.readFileSync(path.join(__dirname, "..", "sierra_training.js"), "utf8");
+  const tabCap = (tabSrc.match(/GUIDANCE_RULE_MAX\s*=\s*(\d+)/) || [])[1];
+  check("schema: rule length cap agrees across SQL, edge function and tab",
+        !!sqlCap && sqlCap === fnCap && sqlCap === tabCap);
 
   let pass = 0;
   for (const [name, ok] of results) { console.log((ok ? "  ok  " : "FAIL  ") + name); if (ok) pass++; }

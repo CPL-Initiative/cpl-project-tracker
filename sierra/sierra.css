@@ -149,7 +149,14 @@ body {
 }
 .s-fb-copy:hover { opacity: 1; border-color: var(--sierra-cobalt); }
 .s-fb-copy.on { opacity: 1; background: var(--sierra-subtle); border-color: var(--sierra-cobalt); }
+/* THE ROOT DEFECT (fixed 2026-08-14). An author `display` rule beats the UA
+   stylesheet's `[hidden] { display:none }`, so `noteWrap.hidden = true` was
+   INERT: the composer never closed on success, and it sat on screen from the
+   start instead of appearing after a rating — which let a click land on the
+   `!rating` guard and do nothing at all. Any element toggled with `hidden`
+   needs this companion rule alongside its `display`. */
 .s-fb-note { display: flex; flex: 1 1 100%; gap: 6px; margin-top: 4px; }
+.s-fb-note[hidden] { display: none; }
 .s-fb-note input {
   flex: 1; border: 1px solid var(--sierra-border-strong); border-radius: 8px;
   padding: 6px 10px; font: .82rem var(--sierra-font);
@@ -161,6 +168,8 @@ body {
 }
 .s-fb-note button:disabled { opacity: .6; cursor: default; }
 .s-fb-done { color: var(--sierra-muted); font-weight: 600; }
+.s-fb-sending { color: var(--sierra-faint); font-weight: 600; }
+.s-fb-fail { color: var(--sierra-crimson); font-weight: 600; }
 
 /* ── Suggestion chips ── */
 .s-suggest { display: flex; flex-wrap: wrap; gap: 8px; margin: 2px 0 4px; }
