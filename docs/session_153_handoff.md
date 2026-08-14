@@ -7,6 +7,8 @@ related:
   - "[[docs/common_cr_reference_lessons]]"
   - "[[docs/common_cr_reference_scope]]"
   - "[[docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 153

@@ -8,6 +8,8 @@ related:
   - "[[docs/sierra_credit_recs_lessons]]"
   - "[[docs/map_users_lessons]]"
   - "[[docs/session_148_handoff]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 149

@@ -7,6 +7,8 @@ related:
   - "[[docs/sierra_credit_recs_lessons]]"
   - "[[docs/map_users_lessons]]"
   - "[[docs/sierra_training_tab_scope]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 151
