@@ -7,6 +7,8 @@ related:
   - "[[docs/common_cr_reference_scope]]"
   - "[[docs/common_cr_reference_lessons]]"
   - "[[docs/ccr_merge_workspace_epic_scope]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 152

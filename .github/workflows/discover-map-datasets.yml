@@ -34,6 +34,14 @@ jobs:
       - name: Probe for the student-detail (disposition) view
         run: python kb/_probe_student_detail_view.py
 
+      # Sam, 2026-08-14: does the catalog carry usable "required evidence" text
+      # (his AWS D1.1 practical-test case), and is EvidenceDescription truncated?
+      # Runs BEFORE the 268k-row grain probe so a slow catalog pull can't starve
+      # it. Discovers the real column spelling rather than assuming one.
+      - name: Probe the Exhibit CRs Catalog for required-evidence fields
+        if: ${{ always() }}
+        run: python kb/_probe_exhibit_evidence_fields.py
+
       - name: Probe MAP Custom Reporting Module for the new dataset schemas
         if: ${{ always() }}
         run: python kb/_discover_map_datasets.py

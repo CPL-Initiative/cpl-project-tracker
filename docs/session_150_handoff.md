@@ -7,6 +7,8 @@ related:
   - "[[docs/local_course_alignment_lessons]]"
   - "[[docs/sierra_credit_recs_lessons]]"
   - "[[docs/session_149_handoff]]"
+superseded: true
+superseded_by: session_154_handoff.md
 ---
 
 # You are Session 150

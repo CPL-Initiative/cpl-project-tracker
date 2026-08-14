@@ -4099,3 +4099,25 @@ Durable: `methodology-bound-both-sides-of-a-union`,
 `methodology-search-the-awarding-body-not-just-the-name`.
 Story: `docs/local_course_alignment_lessons.md` · `docs/sierra_credit_recs_lessons.md` · handoff
 `docs/session_150_handoff.md`.
+
+### SkyRunner — the gate that failed the case it was built for (2026-08-13, Session 151)
+
+One PR (**#1174**). Both of Sam's queued items: the EACR filters fixed, the Common CR Reference scoped.
+⭐ **THE DROPDOWNS EXISTED AND WERE INVISIBLE.** *"Filters need drop downs and they don't all work"* is
+**one** defect: `.sw-interactive` sets `overflow:hidden` and the filter bar reuses the class, so eight
+`position:absolute` dropdowns opened into a **~70px-tall clipped sliver**. Converting to native
+`<select>` would have cost multi-select across 122 colleges to fix a CSS inheritance. Also
+`Calbright College Non-Credit` — **88 rows**, no lookup entry, **fail-closed and silent**.
+⭐ **I GUESSED A GATE, MEASURED ITS POPULATION, AND SHIPPED IT INTO THE SCOPE DOC BEFORE TESTING IT.**
+The cartesian gate (43 pairs — a real number) **does not fire on the case it was invented for**:
+`AJ 110` hits 8 of POST's 43 lines, reads non-cartesian, and *Physical Training* still merges into
+*Intro to Administration of Justice*. **Measuring a gate's population is not testing the gate.**
+⭐ **THE STRONGEST-LOOKING FACTOR IS THE SMALLEST RUNG.** CCR course identity produced every compelling
+example (`HIST 130` folds *"The United States to 1877"* with *"United States History, 1550-1877"*) and
+resolves **40 of 2,344 — 1.7%**. Compellingness of examples is not yield.
+⚠️ **And I nearly killed it on a correct measurement of the wrong grain** — "zero real evidence" is true
+*within* a credential while the good merges live *across* them.
+⭐ **Consequence: automation reaches ~10%, so the deliverable is a CURATION WORKBENCH, not a merge
+engine.** Worklist first, matcher last.
+Story: `docs/common_cr_reference_lessons.md` · scope `docs/common_cr_reference_scope.md` ·
+handoff `docs/session_152_handoff.md`.

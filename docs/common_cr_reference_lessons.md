@@ -224,3 +224,88 @@ right, and it costs him minutes rather than a review cycle. Then: extend the
 corpus from the articulated 2,344 to MAP's 11,426, where the shape of the work
 is different enough that it deserves its own scoping pass rather than an
 assumption that the same instrument fits.
+
+---
+
+## 2026-08-14 — Sky153: the military lane, scoped
+
+The previous section ended by saying the ACE lane *"deserves its own scoping
+pass rather than an assumption that the same instrument fits."* It did, and the
+assumption would have been wrong in both directions.
+
+### What's been learned
+
+**1. The prediction was right about the lane and wrong about the mechanism.**
+Sam said the military CRs would be the stickiest. Handoff 153 explained that as
+*"the whole lane falls to curator judgement"* because ACE recommendations are
+subject areas with no C-ID to name them. The first half is true; the conclusion
+does not follow. ACE is **already a controlled vocabulary** — 93.4% of
+(`exhibit_id`, units, topic) groups hold exactly one text — so the lane is
+*mechanically easier per string* than the freehand corpus, not harder.
+Automation reaches **33.5%** here against ~10% there.
+
+**2. "No cascade" ≠ "no authority."** The reasoning that trapped the handoff is
+worth naming: the CCN > C-ID > M-ID rungs genuinely fire on almost nothing
+(2.6% of ACE rows carry a `college_course`, against 94% of MAP-local rows). But
+Sam's cascade **already ends in *published line > modal wording***, and for an
+ACE recommendation ACE's own published text *is* the published line. The
+authority was there the whole time, one rung lower. Checking the ruling we
+already had saved inventing a new one.
+
+**3. The ranking rule is corpus-specific, and that generalises.** SkyCall's
+hard-won finding was that ranking by spread is backwards and collapse value
+(wordings × colleges) is right. In this lane collapse value is **also** wrong,
+for the mirror-image reason: every head topic already sits at 80–100 of 108
+colleges, because every college processing a JST receives the same ACE
+exhibits. Multiplying by a near-constant ranks nothing. The durable form is
+that **a ranking rule encodes an assumption about where variance lives**, and
+that assumption has to be re-derived per corpus rather than inherited.
+
+**4. The parser/people diagnostic.** The finding that changed the posture:
+casing variance is mixed *within* 58 of 108 colleges, and **zero** colleges are
+internally consistent in the lowercase direction. Nobody typed this. Typographic
+variants are 7.6% of the ACE vocabulary against 0.6% of the freehand one — the
+"authoritative" source is 13× dirtier than freehand human entry, which is
+diagnostic on its own. Promoted to
+[`methodology-tell-a-parser-defect-from-a-people-defect`](kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md).
+
+**5. A committed memory row paid off, unprompted.** `f8` (Marine Corps JSTs
+repeat lower levels' CRs at every skill level) was written for the *eligibility*
+question. It explained a text pattern nobody was looking for — `ssgt gysgt
+supervision`, 482 topics and 12,157 rows of rank tokens embedded in the
+recommendation itself. Reading the memory table first is what connected them.
+
+**6. I re-ran two measurements that were wrong, and both were wrong the same
+way.** A `\b` word boundary in Postgres is a *backspace* (`\y` is the boundary),
+so a normalisation step silently matched nothing and reported no change — which
+looks exactly like "that step doesn't help." And a containment join reported
+908,451 rows in a 200,840-row lane, because a topic in many pairs was counted
+once per pair. **Both were caught by a figure being impossible, not by
+inspection.** Sanity-check every count against the population it came from.
+
+### Current state
+
+Scoped, not built. `docs/military_cr_reference_scope.md` carries the full
+measurement with reproducible SQL. Nothing has been written to Supabase and no
+builder has been pointed at the ACE lane.
+
+### Strategic roadmap
+
+The build order the measurement implies — deliberately the inverse of the
+freehand lane, where the worklist came first and the matcher last:
+
+1. **The mechanical spine first**, because here it is worth 33.5% rather than
+   ~10%: typographic fold → units-as-attribute → rank strip → the not-a-topic
+   class (47 strings / 6,663 rows, ready now).
+2. **Then the worklist**, ranked by **rows**, sized for ~250 decisions to reach
+   half the lane rather than ~50.
+3. **Containment as a suggestion column only**, never a merge.
+
+### Next concrete step
+
+Sam answers the four questions in §10 of the scope doc. The one that actually
+forks the build is **whether ACE unit variants are one recommendation or
+several** — 22.2% of the vocabulary turns on it, and the existing
+units-are-not-identity ruling came from a genuinely different situation
+(colleges writing one course at different units, versus ACE issuing different
+amounts for different training). The other three can be answered alongside.
