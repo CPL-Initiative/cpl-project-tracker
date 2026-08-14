@@ -110,6 +110,83 @@ truth. Not-signed-in / not-a-reviewer / read-failed are three distinct renders.
 Same on write — a policy-filtered `PATCH` answers `200` with an empty body, so a
 save must prove it touched a row.
 
+## 2026-08-14 — Session 157 (Sky157): the magic link had no door, and eight tabs had no input
+
+Two PRs, both merged: **#1200** (reviewer sign-in moves to ℹ About) and **#1201**
+(the shared locked banner + a CI guard).
+
+### The reviewer sign-in was a pointer at a route that no longer existed
+
+Sam: *"I tried using the magic link login on RACI tab but it only has the team
+phrase input now, so I can't edit the new Admin tab."*
+
+`raci.js` still carried a **complete `signIn()` whose button had been removed** —
+the function had no caller anywhere. Meanwhile `admin.js` told anyone landing
+signed-out to *"sign in with a magic link on the Team & RACI tab, then re-open
+this tab."* Admin is **reviewer-only**, so the team phrase could never have
+opened it either: the single documented way in was an instruction that could not
+be carried out.
+
+⭐ **Dead code that an instruction still points at is worse than no code**, because
+it reads as a working path — to a session grepping for `signIn`, and to a person
+following the words on screen.
+
+This is the same bounce `team_phrase_header.js` was written to end (its docstring
+quotes the very sentence), **one credential along**: SkyFund fixed it for the
+phrase and the magic link kept the bug. The fix went to **ℹ About**, on Sam's
+call and for a structural reason — the 🔒 masthead control is **site-scoped**
+(Team ⇄ GR ⇄ Finance), while a reviewer sign-in is **personal identity** and not
+site-scoped at all; nesting it there would imply a scoping the database does not
+enforce. `mountInto()` lets Admin mount the *same* control inline, so nobody is
+bounced anywhere. RACI keeps its phrase box — Sam: *"RACI can use the team phrase
+rather than the magic link."*
+
+### Then the same question, generalised — and it had to be measured
+
+Sam: *"What do you recommend to insure that all tabs that require a Team Phrase
+have an input on them?"*
+
+**43 tables gate on a phrase, 26 on the READ.** Of 18 tabs touching one, **eight**
+had neither an input nor a mention of the header control, and **thirteen live
+strings across five files** still sent people to Team & RACI. Where the gate is on
+the *read*, such a tab does not look locked — it looks **broken**: empty, nothing
+to act on.
+
+The answer was **not** a box on each of eighteen tabs (eighteen implementations to
+drift, re-creating what the header solved). It was one
+`CPL_TEAM_PHRASE.lockedBanner()` carrying a **working input**, plus
+`tests/team_phrase_affordance.test.js` as the guard — because a rule that depends
+on the next tab's author remembering it fails on their first day.
+
+### ⚠️ My own detector was wrong twice, and both were caught by reading its output
+
+1. It flagged five tabs as bare. **Three were false** — `gr-priorities` validates
+   with `gr_pass_ok` (a site phrase is still a phrase), `unified-courses` gates on
+   a **magic link** not the phrase, and `cpl-pathways` only anon-INSERTs to a
+   public intake form. **Acting on that list would have added three wrong
+   banners**, one of them an input that could never succeed. They are now
+   `ALLOW_LIST` entries *with their reasons*, visible in a diff.
+2. It then reported **clean while five live instances sat in one file** — the copy
+   is written across concatenated string literals, so any regex over raw source
+   must cross `" + "` to see it. It also had to strip comments first: its first
+   run flagged the very comments explaining the fix.
+
+Durable: [`methodology-a-copy-detector-must-read-the-rendered-string`](kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md).
+
+### A fail-safe the tests caught
+
+With `team_phrase.js` not yet loaded, the three rewritten tabs rendered an
+**empty** locked state — strictly worse than the copy they replaced, which at
+least named a tab. Each now falls back to a plain notice naming the header. Five
+existing suites asserted the old copy; they were updated to assert the **better**
+contract (a locked tab hands you a way *in*) and their harnesses now load
+`team_phrase.js` so they exercise the path a browser takes.
+
+`kb/phrase_gated_tables.json` is a **tripwire, not an authority** — it can only
+under-report, and nothing reads it to claim something is protected. `admin.js`
+still reads the gates live.
+
+
 ## Current state
 
 | Phrase | Row | Gates | Client slot |
@@ -119,29 +196,40 @@ save must prove it touched a row.
 | Government Relations | `gr` | `gr_content` + all shared | `cpl_gr_pass` |
 | Finance | `fin` | **contracts** (`fin_pass_ok`, live 2026-08-12) + all shared | `cpl_fin_pass` |
 
+**Where a credential is entered (as of 2026-08-14):** the **team phrase** at the
+🔒 masthead control (any tab) or in a tab's own locked banner; the **personal
+reviewer sign-in** at **ℹ About** in the header, or inline on Admin's signed-out
+screen. Nothing sends anyone to another tab for a credential, and
+`tests/team_phrase_affordance.test.js` fails the build if that copy returns.
+
+**Coverage:** 18 tabs touch a phrase-gated table — 12 carry an input, 4 name the
+header, 3 are exempt with a recorded reason. **5 tabs have an unmapped data
+surface** (`activities-projects`, `military-partnerships`, `exhibit-adoption`,
+`letters`, `knowledge-base`) and cannot be checked at all; the guard prints them
+rather than counting them clean.
+
 ## Open — needs Sam
 
-1. ~~The Contracts policy swap~~ — ✅ **APPLIED 2026-08-12.** Sam rotated the
-   Finance phrase himself on the new tab (confirming it works end to end), then
-   authorised the cutover. 12 policies on `fin_pass_ok()`, DELETE still
-   reviewer-only, `team_pass_ok()` gone from the register. **The sequencing was
-   the whole point** — applying before the phrase was distributed would have
-   darkened a working register for everyone holding only the shared phrase.
-2. **Is a site phrase meant to be a superset?** Under "allow either" it opens its
+1. **Is a site phrase meant to be a superset?** Under "allow either" it opens its
    own tabs *plus* every shared one. Safe only while every holder is trusted with
    all shared CPL data. **Decide before the Finance phrase reaches anyone in
    Finance**: the split is a `scope` column, with `team_pass_check()` matching
    only `scope='shared'`.
-3. **The three deep curation tabs still cannot take a phrase** — `kb_curation`'s
+2. **The three deep curation tabs still cannot take a phrase** — `kb_curation`'s
    INSERT policy binds `reviewer_email` to the JWT, so CER / Unified Courses /
    Canonical SUBJ4 are attribution-bound by design. That is Phase 2 of
    `docs/team_phrase_expansion_plan.md`, still unexecuted, and it needs the
    `team:<name>` stamp decision first.
-4. **Projects Editor is a free win** — `projects` INSERT/UPDATE is already
+3. **Projects Editor is a free win** — `projects` INSERT/UPDATE is already
    `is_allowed_reviewer() OR team_pass_ok()`, yet the tab offers magic-link only.
+
+*(The Contracts policy swap, formerly item 1, is done — applied 2026-08-12; the
+narrative above keeps the sequencing lesson.)*
 
 ## Next concrete step
 
-Settle the superset question (open item 2) before the Finance phrase spreads
-beyond the core team, then take the Projects Editor win — `projects` already
-accepts `team_pass_ok()` and the tab offers magic-link only.
+**Nobody has exercised the reviewer sign-in in a real browser** — the sandbox
+cannot reach the site, so #1200 is jsdom-verified only. The round trip to run:
+**ℹ About → email me a link → follow it → land back on the tab you started from,
+signed in.** Then settle the superset question (open item 1) before the Finance
+phrase spreads, and take the Projects Editor win.
