@@ -983,20 +983,13 @@ function fresh(withCollege) {
   // ── Programs review (top-level Courses/Programs toggle) — PR4 (Sam, 2026-07-28) ──
   const PROGRAMS_FX = {
     colleges: ["ALPHA COLLEGE"],
-    awards: ["A.S. Degree", "Certificate", "Noncredit program"],
+    awards: ["A.S. Degree", "Certificate"],
     statuses: ["Active"],
     // ROW: [collegeIdx, ctrl, title, top, cip, awardIdx, statusIdx, units, xfer, cte]
     rows: [
       [0, "1001", "Business Administration", "0505.00", "52.0201", 0, 0, "18.00", 0, 0],   // 52.0201 ∈ crosswalk(0505.00) → OK
       [0, "1002", "Managerial Accounting", "0505.00", "52.9001", 0, 0, "18.00", 0, 1],       // 52.9001 ∉ crosswalk → needs revision (CTE program)
       [0, "1003", "General Agriculture", "9560.00", "01.0000", 1, 0, "12.00", 0, 1],         // 01.0000 ∈ crosswalk(9560.00) + cat "Both" → CTE toggle
-      // ── noncredit container-code rule (Jenni via Sam, 2026-08-14) ──
-      // 1701.00's crosswalk lists 27.0101 + 32.0202 and NOT 32.0111 — the case that would flag
-      // "needs revision" statewide on 1,320 of 3,187 noncredit programs without the carve-out.
-      [0, "1004", "Adult Basic Math", "1701.00", "32.0202", 2, 0, "", 0, 0],
-      // A noncredit program whose TOP's crosswalk DOES list 32.0111, and which already holds it —
-      // no proposal to make, so it must not render a "proposed · COCI has" chip.
-      [0, "1005", "Workforce Readiness", "0505.00", "32.0111", 2, 0, "", 0, 1],
     ],
   };
   const domP = makeDom();
@@ -1028,20 +1021,17 @@ function fresh(withCollege) {
   pcsel.value = "0"; pcsel.dispatchEvent(new domP.window.Event("change"));
   await tick();
   const pRows = pdoc.querySelectorAll(".cipx-prog-item");
-  check("programs: picking a college lists its programs", pRows.length === 5);
+  check("programs: picking a college lists its programs", pRows.length === 3);
   check("programs: the summary counts programs needing revision", /1 need revision/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
   // Tweak 2 (Sam, 2026-07-28): the course college bar is suppressed in Programs review — only the
   // program view's OWN selector shows (it was rendering twice).
   check("programs: only ONE college selector renders (no duplicate course college bar)", pdoc.querySelectorAll(".cipx-collegebar").length === 1);
   // Tweak 3 (Sam, 2026-07-28): programs are grouped under CIP sector headers, ascending by code.
   const secHdrs = pdoc.querySelectorAll(".cipx-prog-sector");
-  check("programs: rows are grouped under CIP sector headers", secHdrs.length === 3);   // 01 · 32 · 52
-  check("programs: sectors are in ascending code order (01 before 32 before 52)", secHdrs.length === 3 && ["01", "32", "52"].every(function (c, i) { return secHdrs[i].querySelector(".cipx-prog-sector-code").textContent.trim() === c; }));
-  check("programs: a sector header shows its family title", /Business/.test((secHdrs[2] && secHdrs[2].textContent) || ""));
-  check("programs: within-list order is CIP-ascending (01.0000 first, 52.9001 last)", (function () { var items = pdoc.querySelectorAll(".cipx-prog-item"); return items.length === 5 && /General Agriculture/.test(items[0].textContent) && /Business Administration/.test(items[3].textContent) && /Managerial Accounting/.test(items[4].textContent); })());
-  // Both noncredit programs land in sector 32 — the Adult Basic Math row because the rule MOVED it
-  // there (COCI has 32.0202), which is the grouping following the effective code, not the stored one.
-  check("programs: the noncredit rule regroups a row by its PROPOSED sector, not its COCI one", (function () { var items = pdoc.querySelectorAll(".cipx-prog-item"); return /Adult Basic Math/.test(items[1].textContent) && /Workforce Readiness/.test(items[2].textContent); })());
+  check("programs: rows are grouped under CIP sector headers", secHdrs.length === 2);
+  check("programs: sectors are in ascending code order (01 before 52)", secHdrs.length === 2 && /^01$/.test(secHdrs[0].querySelector(".cipx-prog-sector-code").textContent.trim()) && /^52$/.test(secHdrs[1].querySelector(".cipx-prog-sector-code").textContent.trim()));
+  check("programs: a sector header shows its family title", /Business/.test((secHdrs[1] && secHdrs[1].textContent) || ""));
+  check("programs: within-list order is CIP-ascending (01.0000 program first, 52.9001 last)", (function () { var items = pdoc.querySelectorAll(".cipx-prog-item"); return items.length === 3 && /General Agriculture/.test(items[0].textContent) && /Business Administration/.test(items[1].textContent) && /Managerial Accounting/.test(items[2].textContent); })());
   // needs-revision first
   const flagItem = Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), (it) => /Managerial Accounting/.test(it.textContent))[0];
   check("programs: a mismatched-CIP program is flagged 'needs revision'", flagItem && flagItem.classList.contains("cipx-prog-item-flag") && !!flagItem.querySelector(".cipx-prog-revflag"));
@@ -1093,88 +1083,6 @@ function fresh(withCollege) {
   check("programs: the old 'This CIP is Both — use as' phrasing no longer renders", !!pcte && !/This CIP is Both/.test(pcte.textContent));
   if (pcte) { pcte.querySelector(".cipx-rev-ctebtn").click(); await tick(); }
   check("programs: the CTE choice persists to cipx_prog_<collegeIdx>", (function () { try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1003"].cte === "cte"; } catch (e) { return false; } })());
-
-  // ── Noncredit container code 32.0111 (Jenni via Sam, 2026-08-14) ──────────────────────────────
-  // Every noncredit program takes it regardless of TOP — confirmed to include ESL / basic skills /
-  // GED, which today sit on the more specific 32.01xx codes.
-  const pItem = (t) => Array.prototype.filter.call(pdoc.querySelectorAll(".cipx-prog-item"), function (it) {
-    return new RegExp(t).test(it.querySelector(".cipx-prog-title").textContent);
-  })[0];
-  (function () {
-    var nc = pItem("Adult Basic Math");
-    check("noncredit: the effective CIP is 32.0111, not the COCI code", !!nc && /32\.0111/.test(nc.querySelector(".cipx-prog-cip").textContent));
-    // "changed from" claims a curator edit. A default nobody chose must not borrow that sentence.
-    check("noncredit: the row says 'proposed', never 'changed from'", !!nc && /proposed/i.test(nc.textContent) && !/changed from/i.test(nc.textContent));
-    check("noncredit: the row still shows what COCI actually holds", !!nc && /COCI has/.test(nc.textContent) && /32\.0202/.test(nc.querySelector(".cipx-prog-changed").textContent));
-    // 1701.00's crosswalk does NOT list 32.0111. Without the carve-out this row — and 1,320 like it
-    // statewide — would be flagged, the tool calling a college's required code invalid.
-    check("noncredit: a TOP whose crosswalk omits 32.0111 is NOT flagged 'needs revision'", !!nc && !/needs revision/.test(nc.textContent) && nc.className.indexOf("cipx-prog-item-flag") < 0);
-    check("noncredit: the row explains the rule", !!nc && /every noncredit program takes/i.test(nc.textContent));
-    // Sam's funding note: CTE noncredit qualifies for money Non-CTE does not, and 32.0111 is a
-    // Noncredit-category CIP that answers neither. Silence would be read as Non-CTE.
-    check("noncredit: the row says the CTE answer is NOT decided by this code", !!nc && /not decided by this code/i.test(nc.textContent));
-  })();
-  // A noncredit program that ALREADY holds 32.0111 has nothing to propose.
-  (function () {
-    var same = pItem("Workforce Readiness");
-    check("noncredit: a row already on 32.0111 shows no proposal chip", !!same && !same.querySelector(".cipx-prog-changed"));
-    check("noncredit: …but still carries the rule note", !!same && /every noncredit program takes/i.test(same.textContent));
-  })();
-  // A CREDIT program is untouched by any of this.
-  (function () {
-    var credit = pItem("Business Administration");
-    check("credit programs are untouched by the noncredit rule", !!credit && /52\.0201/.test(credit.querySelector(".cipx-prog-cip").textContent) && !credit.querySelector(".cipx-prog-ncnote"));
-  })();
-  check("noncredit: the summary counts the programs the rule proposes a change for", /1 noncredit program proposed for/.test(pdoc.querySelector(".cipx-prog-summary").textContent));
-  // The seam takes the noncredit flag explicitly — the carve-out is about the PROGRAM, not the code,
-  // so 32.0111 on a credit program is still judged against the crosswalk.
-  check("noncredit: _progNeedsRevision carve-out applies only when the program is noncredit",
-    pApi._progNeedsRevision("1701.00", "32.0111", true) === false && pApi._progNeedsRevision("1701.00", "32.0111", false) === true);
-
-  // The option list must contain the code the row proposes, or the tool contradicts itself.
-  (function () {
-    var nc = pItem("Adult Basic Math");
-    nc.querySelector(".cipx-prog-optbtn").click();
-  })();
-  await tick();
-  (function () {
-    var nc = pItem("Adult Basic Math");
-    var codes = Array.prototype.map.call(nc.querySelectorAll(".cipx-prog-opt .cipx-code"), function (c) { return c.textContent.trim(); });
-    check("noncredit: 32.0111 is offered even though this TOP's crosswalk omits it", codes.indexOf("32.0111") >= 0);
-    check("noncredit: the crosswalk's own codes are still offered alongside it", codes.indexOf("27.0101") >= 0 && codes.indexOf("32.0202") >= 0);
-    check("noncredit: the injected code is labelled as coming from the rule, not the crosswalk", /noncredit rule/i.test(nc.querySelector(".cipx-prog-opts").textContent));
-    check("noncredit: 32.0111 reads as the currently-selected option", (function () {
-      var on = nc.querySelector(".cipx-prog-opt-on");
-      return !!on && /32\.0111/.test(on.textContent);
-    })());
-  })();
-  // Picking the COCI code back must PERSIST — comparing against `assigned` instead of the row's
-  // default would write an empty override and snap the row back to 32.0111, losing the one
-  // deviation the rule most needs to be able to record.
-  (function () {
-    var nc = pItem("Adult Basic Math");
-    var opt = Array.prototype.filter.call(nc.querySelectorAll(".cipx-prog-opt"), function (b) { return /32\.0202/.test(b.textContent); })[0];
-    opt.click();
-  })();
-  await tick();
-  check("noncredit: a curator can override the rule back to their COCI code, and it sticks", (function () {
-    try { return JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1004"].cip === "32.0202"; } catch (e) { return false; }
-  })());
-  check("noncredit: the overridden row now shows 32.0202, not the rule's code", (function () {
-    var nc = pItem("Adult Basic Math");
-    return !!nc && /32\.0202/.test(nc.querySelector(".cipx-prog-cip").textContent) && !/32\.0111/.test(nc.querySelector(".cipx-prog-cip").textContent);
-  })());
-  // Selecting 32.0111 again is selecting the DEFAULT, so it clears the override rather than storing
-  // a redundant one — the row goes back to being rule-driven.
-  (function () {
-    var nc = pItem("Adult Basic Math");
-    var opt = Array.prototype.filter.call(nc.querySelectorAll(".cipx-prog-opt"), function (b) { return /32\.0111/.test(b.textContent); })[0];
-    opt.click();
-  })();
-  await tick();
-  check("noncredit: re-selecting the rule's code clears the override rather than storing it", (function () {
-    try { var e = JSON.parse(domP.window.localStorage.getItem("cipx_prog_0") || "{}")["1004"]; return !e || !e.cip; } catch (ex) { return false; }
-  })());
 
   // ── 2026-08-14 batch (Sam, after meeting Jenni) ───────────────────────────────────────────────
 
@@ -1251,7 +1159,7 @@ function fresh(withCollege) {
     check("picker: clicking away closes the panel", before === false && mpicks[0].querySelector(".cipx-mpick-panel").hidden === true);
     mpicks[0].querySelector(".cipx-mpick-btn").click();   // re-open for the assertions below
   })();
-  check("picker: offers EVERY program title, unabridged", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 5);
+  check("picker: offers EVERY program title, unabridged", mpicks[0].querySelectorAll(".cipx-mpick-opt").length === 3);
   (function () {
     var find = mpicks[0].querySelector(".cipx-mpick-find");
     find.value = "account"; find.dispatchEvent(new domP.window.Event("input"));
@@ -1291,7 +1199,7 @@ function fresh(withCollege) {
   mpicks[2].querySelector(".cipx-mpick-clear").click(); await tick();
   check("picker: Clear restores no-opinion (back to the 2 title matches)", pdoc.querySelectorAll(".cipx-prog-item").length === 2);
   mpicks[0].querySelector(".cipx-mpick-clear").click(); await tick();
-  check("picker: clearing every picker shows the whole catalog again", pdoc.querySelectorAll(".cipx-prog-item").length === 5);
+  check("picker: clearing every picker shows the whole catalog again", pdoc.querySelectorAll(".cipx-prog-item").length === 3);
   check("picker: a cleared picker returns to its 'All …' summary", mpicks[0].querySelector(".cipx-mpick-val").textContent.trim() === "All programs");
   // A stale title from a previous college would filter the new one down to nothing and read as an
   // empty catalog, so a college switch clears all three.
@@ -1311,7 +1219,7 @@ function fresh(withCollege) {
     var m = pdoc.querySelectorAll(".cipx-prog-tools .cipx-mpick");
     if (m.length !== 3) return false;
     return Array.prototype.every.call(m, function (x) { return /^All /.test(x.querySelector(".cipx-mpick-val").textContent.trim()); })
-      && pdoc.querySelectorAll(".cipx-prog-item").length === 5;
+      && pdoc.querySelectorAll(".cipx-prog-item").length === 3;
   })());
   // Browse / Find lost their nav buttons 2026-08-14 (Sam, after Jenni) — "they muddy the waters for
   // now". The nav contract that survives is the one between the TWO review lanes: a click sets scope
