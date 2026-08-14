@@ -668,6 +668,19 @@ async function fetchCollegeGeoMap(sb: any): Promise<Map<string, any>> {
 // published number is the sourceable one. `sierra_credit_disposition.test.js`
 // asserts no headline figure is ever pasted in here, so do not write one into
 // this comment either.
+// One adopting college: the NAME (the answer) and its CPL landing page (the
+// route to acting on it). url is null when the college has no page on file —
+// never a guess, and never a reason to omit the college.
+//
+// DECLARED HERE, ABOVE THE LIFTED REGION, deliberately. tests/lib/lift_ts.js
+// evaluates index.ts lines ~716-1589 as plain JS after stripping type
+// ANNOTATIONS; it does not strip type DECLARATIONS, so a `type X = ...` inside
+// that span is a SyntaxError that reads as "Unexpected identifier" rather than
+// as anything about the signature that changed. lift_ts's own guidance is to
+// fix the block boundaries rather than widen its regexes — and `interface
+// CreditStatus` below is the existing instance of that convention.
+type AdopterRef = { name: string; url: string | null };
+
 interface CreditStatus {
   asOf: string | null;
   collegesWithData: number;
@@ -1065,11 +1078,6 @@ async function fetchCredentialRecs(titles: string[], sb: any): Promise<Map<strin
 // handling in buildCredentialContext).
 const ADOPTER_CAP = 12;
 
-// One adopting college: the NAME (the answer) and its CPL landing page (the
-// route to acting on it). url is null when the college has no page on file —
-// never a guess, and never a reason to omit the college.
-type AdopterRef = { name: string; url: string | null };
-
 /**
  * The adopter NAMES — the half Sierra never had (v47).
  *
@@ -1445,7 +1453,13 @@ function buildVolumeContext(
  * is the answer. Capped at ADOPTER_CAP and the total always shipped alongside,
  * so a truncated list can never read as the whole set.
  */
-function renderAdopters(n: number, refs?: AdopterRef[], indent = "  ", local = false): string {
+// `Array<AdopterRef>` rather than `AdopterRef[]` ON PURPOSE — do not "tidy" it.
+// This function sits inside the region tests/lib/lift_ts.js evaluates as plain
+// JS, and its stripper removes `: Array<...>` (Array is in its generic list)
+// but NOT a bare `: SomeCustomType[]`. Widening that stripper to accept any
+// identifier is unsafe — it would also eat the `:` in ordinary object literals
+// like `{ college: name }` — which is exactly why it allowlists instead.
+function renderAdopters(n: number, refs?: Array<AdopterRef>, indent = "  ", local = false): string {
   if (!refs || refs.length === 0) {
     // No names available — say the count, and say plainly that the names are
     // missing rather than letting the model infer they do not exist.

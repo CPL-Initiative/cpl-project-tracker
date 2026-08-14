@@ -347,6 +347,13 @@
       p_note: o.note ? String(o.note).slice(0, 2000) : null,
     };
   }
+  // Resolves TRUE only when the row actually landed. A rejected promise and a
+  // non-2xx response are both failures, and fetch does not reject on HTTP
+  // errors — sierra_feedback_upsert RAISES on an invalid rating, so "it
+  // returned" never meant "it saved". Ratings stay fire-and-forget (the bar
+  // already shows its own state); the NOTE path awaits this, because telling
+  // someone their note was sent when it was not is worse than telling them
+  // nothing — they close the tab and the report is gone.
   function sendFeedback(payload) {
     try {
       return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
@@ -357,8 +364,9 @@
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
         body: JSON.stringify(payload),
-      }).catch(function () { /* feedback is best-effort */ });
-    } catch (e) { return Promise.resolve(); }
+      }).then(function (res) { return !!(res && res.ok); },
+              function () { return false; });
+    } catch (e) { return Promise.resolve(false); }
   }
   function addFeedbackBar(afterRow, question, answer) {
     var tid = newTurnId();
@@ -371,7 +379,13 @@
       'aria-label': 'Optional feedback note',
     });
     var noteBtn = el('button', { type: 'button' }, 'Send note');
-    var noteWrap = el('div', { className: 'cplchat-fb-note' }, [noteIn, noteBtn]);
+    // The confirmation lives INSIDE the composer, so it appears exactly where
+    // the button was. Sam: "it turns gray but nothing else — not sure if it
+    // registers." The greying was the only local signal; the words appeared far
+    // away in the rating row next to Copy.
+    var noteDone = el('span', { className: 'cplchat-fb-done' }, '');
+    noteDone.hidden = true;
+    var noteWrap = el('div', { className: 'cplchat-fb-note' }, [noteIn, noteBtn, noteDone]);
     noteWrap.hidden = true;
 
     function upsert(note) {
@@ -404,12 +418,33 @@
 
     noteBtn.addEventListener('click', function () {
       var n = noteIn.value.trim();
+      // `rating` is guaranteed here now that [hidden] actually hides the
+      // composer until one is given — the guard stays as a backstop, but it can
+      // no longer swallow a click the way it did when the box was always
+      // visible: you could type a note, press Send, and get NOTHING.
       if (!n || !rating) return;
       noteBtn.disabled = true;
-      upsert(n);
-      noteWrap.hidden = true;
-      hint.textContent = '✓ Note sent — thank you!';
-      hint.className = 'cplchat-fb-done';
+      noteDone.hidden = false;
+      noteDone.className = 'cplchat-fb-sending';
+      noteDone.textContent = 'Sending…';
+      upsert(n).then(function (ok) {
+        noteDone.hidden = false;
+        if (ok) {
+          // Consume the text so it is visibly taken, and close the composer.
+          noteIn.value = '';
+          noteIn.hidden = true;
+          noteBtn.hidden = true;
+          noteDone.className = 'cplchat-fb-done';
+          noteDone.textContent = '✓ Note sent — thank you!';
+        } else {
+          // KEEP THE TYPED TEXT. The same guarantee the guidance editor and the
+          // contact proposals carry: a write that did not land must report as a
+          // failure with the words still in the box, never as a cheerful tick.
+          noteBtn.disabled = false;
+          noteDone.className = 'cplchat-fb-fail';
+          noteDone.textContent = '⚠ Not sent — your note is still here, try again.';
+        }
+      });
     });
     noteIn.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
@@ -447,11 +482,20 @@
       '.cplchat-fb-copy { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; font-family:inherit; line-height:1.4; opacity:.75; color:inherit; white-space:nowrap; }',
       '.cplchat-fb-copy:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
       '.cplchat-fb-copy.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
+      // THE ROOT DEFECT. An author `display` rule beats the UA stylesheet's
+      // `[hidden] { display:none }`, so `noteWrap.hidden = true` was INERT:
+      // the composer never closed on success, and it was on screen from the
+      // start instead of appearing after a rating — which is how a click could
+      // hit the `!rating` guard and do nothing at all. Every `display` rule on
+      // an element that gets toggled with `hidden` needs this companion.
       '.cplchat-fb-note { display:flex; flex:1 1 100%; gap:6px; margin-top:4px; }',
+      '.cplchat-fb-note[hidden] { display:none; }',
       '.cplchat-fb-note input { flex:1; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; padding:6px 10px; font-size:.82rem; background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); }',
       '.cplchat-fb-note button { border:none; border-radius:8px; padding:6px 12px; cursor:pointer; background:var(--cobalt, #0047AB); color:#fff; font-size:.8rem; font-weight:600; }',
       '.cplchat-fb-note button:disabled { opacity:.6; cursor:default; }',
       '.cplchat-fb-done { color:var(--text-muted, #5a6478); font-weight:600; }',
+      '.cplchat-fb-sending { color:var(--text-faint, #8a94a6); font-weight:600; }',
+      '.cplchat-fb-fail { color:var(--crimson, #920000); font-weight:600; }',
       // Sierra-mark avatar (SVG roundel replaces the emoji glyph)
       '.cplchat-avatar { background: transparent; }',
       '.cplchat-avatar svg { width:100%; height:100%; display:block; }',

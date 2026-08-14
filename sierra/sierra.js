@@ -200,6 +200,10 @@
       p_note: o.note ? String(o.note).slice(0, 2000) : null,
     };
   }
+  // Resolves TRUE only when the row actually landed — see the twin in
+  // cpl_chat.js. fetch does not reject on HTTP errors and
+  // sierra_feedback_upsert RAISES on an invalid rating, so "it returned" never
+  // meant "it saved".
   function sendFeedback(payload) {
     try {
       return fetch(SUPABASE_URL + '/rest/v1/rpc/sierra_feedback_upsert', {
@@ -210,8 +214,9 @@
           'Authorization': 'Bearer ' + SUPABASE_ANON,
         },
         body: JSON.stringify(payload),
-      }).catch(function () { /* feedback is best-effort */ });
-    } catch (e) { return Promise.resolve(); }
+      }).then(function (res) { return !!(res && res.ok); },
+              function () { return false; });
+    } catch (e) { return Promise.resolve(false); }
   }
   function addFeedbackBar(afterRow, question, answer) {
     var tid = newTurnId();
@@ -264,6 +269,12 @@
     noteBtn.textContent = 'Send note';
     noteWrap.appendChild(noteIn);
     noteWrap.appendChild(noteBtn);
+    // Confirmation sits INSIDE the composer so it lands where the button was,
+    // not away in the rating row next to Copy.
+    var noteDone = document.createElement('span');
+    noteDone.className = 's-fb-done';
+    noteDone.hidden = true;
+    noteWrap.appendChild(noteDone);
 
     function upsert(note) {
       return sendFeedback(feedbackPayload({
@@ -296,10 +307,25 @@
       var n = noteIn.value.trim();
       if (!n || !rating) return;
       noteBtn.disabled = true;
-      upsert(n);
-      noteWrap.hidden = true;
-      hint.textContent = '✓ Note sent — thank you!';
-      hint.className = 's-fb-done';
+      noteDone.hidden = false;
+      noteDone.className = 's-fb-sending';
+      noteDone.textContent = 'Sending…';
+      upsert(n).then(function (ok) {
+        noteDone.hidden = false;
+        if (ok) {
+          noteIn.value = '';
+          noteIn.hidden = true;
+          noteBtn.hidden = true;
+          noteDone.className = 's-fb-done';
+          noteDone.textContent = '✓ Note sent — thank you!';
+        } else {
+          // Keep the typed text on failure — never a cheerful tick over a
+          // write that did not land.
+          noteBtn.disabled = false;
+          noteDone.className = 's-fb-fail';
+          noteDone.textContent = '⚠ Not sent — your note is still here, try again.';
+        }
+      });
     });
     noteIn.addEventListener('keydown', function (e) {
       if (e.key === 'Enter') { e.preventDefault(); noteBtn.click(); }
