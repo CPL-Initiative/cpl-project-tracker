@@ -23,6 +23,12 @@
       "text": "How finely should military subject areas be split? ACE lists Supervision, Principles of Supervision and Introduction to Supervision separately. One reference or three? Your answer sets the size of the whole military job. Warning from the data: do not extend this to Management — it looks similar but Project Management and Supply Chain Management are genuinely different subjects, not variations."
     },
     {
+      "id": "s153-governance-candidates-25",
+      "for": "Sam",
+      "tab": "Governance",
+      "text": "The governance drift detector has reached 25 suggested register entries, and its own readability check says the list should stay under 25 — so the automated test is now failing on the main branch to tell us the queue needs a look. That is the guard doing its job, not a bug. It needs a human to work through them and either add each one to the register or dismiss it with a reason; raising the limit would just switch the warning off."
+    },
+    {
       "id": "s153-ace-mechanical-spine",
       "for": "Fable",
       "tab": "Common CR Reference",

@@ -165,3 +165,31 @@ the lane.
 
 **SkyProse** is still unclaimed (offered three times now). Or coin your own; if
 Sam names one, his wins.
+
+## ⚠️ Known-red CI on `main` (found 2026-08-14, NOT introduced by #1177)
+
+`tests/governance.test.js` fails **on `origin/main`** — verified in a clean
+worktree of main, 89/90, single failure:
+
+```
+FAIL ⚠ the candidate list stays readable (< 25)
+```
+
+The daily cron's governance drift detector has emitted its **25th** candidate
+and the test asserts the list stays under 25. **The guard is working** — it is
+telling us the candidate queue needs triage. Do NOT raise the threshold; that
+switches off the only signal that the queue is growing. Someone has to work the
+candidates and either map each onto the register or dismiss it with a reason
+(the detector "proposes, never auto-adds" — §11).
+
+`js-tests` is a **non-required** check, so this does not gate merge-on-green.
+But it does mean **every PR from here will show a red `test` check until the
+queue is triaged**, and a genuinely new failure will be easy to miss inside it.
+Check the failing test NAME before assuming a red `test` check is yours:
+
+```bash
+for f in tests/*.test.js; do timeout 60 node "$f" >/dev/null 2>&1 || echo "$f"; done
+```
+
+That prints exactly two today: `cpl_funding.test.js` (rc=124, the pre-existing
+hang) and `governance.test.js` (rc=1, this one). Anything else is new.
