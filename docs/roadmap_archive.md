@@ -4141,3 +4141,27 @@ was to **EMIT** the profile, not re-derive it — delete the duplicate, don't sy
 ⚠️ **Measuring a group's population is still not testing the gate** — the probe that "passed"
 tested whether a key contained two words, not whether merging members disagreed.
 Story: `docs/common_cr_reference_lessons.md` · handoff `docs/session_153_handoff.md`.
+
+### Sky153 — the military lane is the opposite of what everyone assumed (2026-08-14, Session 153)
+
+One PR. Handoff 153's Priority 2: the **military (ACE) CR Reference is SCOPED**, measured not assumed.
+⭐ **SAM IS RIGHT THAT IT IS THE HARDEST LANE, AND RIGHT FOR A DIFFERENT REASON.** ACE is **already a
+controlled vocabulary** — **93.4%** of (exhibit, units, topic) groups hold exactly ONE text, and the
+6.6% residue is case and punctuation, not wording. So automation reaches **3× FURTHER** here than in
+the freehand lane: **33.5%** of the vocabulary resolves with no judgment, against ~10%.
+⭐ **THE STICKINESS IS VOLUME AND NAMING, NOT WORDING.** 6,725 topics vs 2,183, and a far flatter head —
+**250 decisions for half the lane against 50**. The cascade fires on **2.6%** of ACE rows vs **94%** of
+MAP-local: the mechanical proof behind "subject areas, not courses." The two lanes share only
+**134 topics (5.9% of ACE rows)**, so the built CCRR does not cover this one.
+⭐ **A RUNG THAT EXISTS ONLY HERE:** USMC skill-level tokens leaked into the topic text (**482 topics /
+12,157 rows**); stripping the rank lands **306** on an existing base topic — `cpl_memory` row `f8` at
+the text grain. Strip list still needs widening (`leadership ssgt and above`, spelled-out ranks).
+⚠️ **THE FREEHAND LANE'S RANKING RULE DOES NOT TRANSFER** — spread is near-constant (top 200 topics
+average **78 of 108** colleges), so collapse value ranks nothing. **Rank by rows.**
+⚠️ **Containment stays SUGGESTION-ONLY** — `management` contains 21 narrower topics including
+`project management`; none of them are `management`.
+⭐ **POSTURE CHANGE: a third of this lane is an INGEST defect, not a curation decision** — 58 colleges
+hold BOTH casings and **0** hold only one, so no human chose. A workbench would ask curators to do a
+parser's job 767 times. Durable:
+[`methodology-tell-a-parser-defect-from-a-people-defect`](docs/kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md).
+Scope: `docs/military_cr_reference_scope.md` · handoff `docs/session_154_handoff.md`.
