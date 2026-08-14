@@ -24,7 +24,7 @@ const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="governance"[^>]*>⚖️ Governance</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="governance"[^>]*>Governance</.test(p[1]));
   check("pane #governance-root in " + p[0], /id="governance-root"/.test(p[1]));
   check("lazy boot in " + p[0], /loadScript\('governance\.js', 'CPL_GOVERNANCE'/.test(p[1]));
 });
