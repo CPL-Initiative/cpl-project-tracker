@@ -360,33 +360,88 @@
    * to its neighbours, so a partial write leaves a container half-explicit and
    * half-implicit, and the resulting order depends on values nobody chose.
    */
+  /* ONE row shape for both kinds, and the uniformity is the whole point.
+   *
+   * `audience` is NOT NULL in cobi_nav. Group rows used to omit the key entirely
+   * while tab rows carried it — and a bulk POST is a single statement over the
+   * UNION of the array's keys, so the column was in the insert list and every
+   * group row supplied NULL for it. Postgres rejected the batch (23502), which
+   * PostgREST returns as 400, and since every save contains at least one group,
+   * EVERY save failed. The table stayed empty for two days while the tab looked
+   * finished, because the shape is only wrong on the wire: each row is valid on
+   * its own, and jsdom's fetch mock accepts anything.
+   *
+   * Building both kinds through one function means a column added for tabs
+   * tomorrow cannot quietly reintroduce it. */
+  function navRow(o) {
+    return {
+      kind: o.kind,
+      key: o.key,
+      label: o.label != null ? o.label : null,
+      parent: o.parent != null ? o.parent : null,
+      sort_order: o.sort_order,
+      hidden: !!o.hidden,
+      orgs: (o.orgs && o.orgs.length) ? o.orgs.slice() : null,
+      pinned: !!o.pinned,
+      // A group has no audience of its own — the overlay resolves audience per
+      // TAB — but the column is NOT NULL, so it is written as the default
+      // rather than left for PostgREST to fill with NULL.
+      audience: o.audience || "everyone",
+      updated_by: o.updated_by,
+      updated_at: o.updated_at,
+    };
+  }
+
   function draftRows(draft) {
     var rows = [];
     var who = (getSession() && getSession().email) || "(reviewer)";
     var now = new Date().toISOString();
     draft.containers.forEach(function (c, ci) {
       if (!c.isTop) {
-        rows.push({
+        rows.push(navRow({
           kind: "group", key: c.id, label: c.label || null, parent: null,
           sort_order: ci, hidden: !!c.hidden, orgs: null, pinned: false,
           updated_by: who, updated_at: now,
-        });
+        }));
       }
       c.tabs.forEach(function (t, ti) {
-        rows.push({
+        rows.push(navRow({
           kind: "tab", key: t.tab,
-          label: t.label != null ? t.label : null,
+          label: t.label,
           parent: c.isTop ? null : c.id,
           sort_order: ti,
-          hidden: !!t.hidden,
-          orgs: (t.orgs && t.orgs.length) ? t.orgs : null,
-          pinned: !!t.pinned,
-          audience: t.audience || "everyone",
+          hidden: t.hidden,
+          orgs: t.orgs,
+          pinned: t.pinned,
+          audience: t.audience,
           updated_by: who, updated_at: now,
-        });
+        }));
       });
     });
     return rows;
+  }
+
+  /* A status code is not a diagnosis. PostgREST puts the actual reason in the
+   * body — this bug's body said `null value in column "audience" ... violates
+   * not-null constraint`, which names it on sight — and discarding it is what
+   * left a curator staring at a bare "save 400" that reads like an expired
+   * sign-in. Always carry the body into the message, and keep `status` so the
+   * advice can tell an auth failure from a malformed write. */
+  function httpFail(r, what) {
+    function fail(detail) {
+      var e = new Error(what + " " + r.status + (detail ? " — " + detail : ""));
+      e.status = r.status;
+      throw e;
+    }
+    if (!r || typeof r.text !== "function") fail("");
+    return r.text().then(function (body) {
+      var detail = (body || "").slice(0, 300);
+      try {
+        var j = JSON.parse(body);
+        detail = j.message || j.details || j.hint || detail;
+      } catch (e) { /* not JSON — the raw text is still better than nothing */ }
+      fail(detail);
+    }, function () { fail(""); });
   }
 
   function saveDraft(root) {
@@ -398,13 +453,17 @@
     h["Prefer"] = "resolution=merge-duplicates,return=representation";
     return fetch(REST + "/cobi_nav", { method: "POST", headers: h, body: JSON.stringify(rows) })
       .then(function (r) {
-        if (!r.ok) throw new Error("save " + r.status);
+        if (!r.ok) return httpFail(r, "save");
         return r.json();
       })
       .then(function (saved) {
         // A policy-filtered write answers 200 with an EMPTY body, so "ok" is not
         // proof it wrote. No rows back = FAILURE, and the draft is kept.
-        if (!Array.isArray(saved) || !saved.length) throw new Error("not saved — your sign-in isn’t a reviewer");
+        if (!Array.isArray(saved) || !saved.length) {
+          var e = new Error("not saved — your sign-in isn’t a reviewer");
+          e.authish = true;
+          throw e;
+        }
         window.CPL_NAV_OVERLAY._set(saved);   // repaints the live rail immediately
         state.dirty = false; state.saving = false;
         state.saveMsg = { ok: true, text: "✓ Saved. The menu updated for everyone." };
@@ -412,8 +471,15 @@
       })
       .catch(function (e) {
         state.saving = false;
+        // Only 401/403 (and a policy-filtered empty write) are sign-in problems.
+        // Telling someone to sign in again when the REQUEST is malformed sends
+        // them round a loop that can never succeed however valid their session.
+        var authish = !!(e && (e.authish || e.status === 401 || e.status === 403));
         state.saveMsg = { ok: false, text: "Could not save — " + ((e && e.message) || "unknown error")
-          + ". Your arrangement is still here; renew your reviewer sign-in and press Save again." };
+          + ". Your arrangement is still here" + (authish
+            ? "; renew your reviewer sign-in and press Save again."
+            : ", and nothing changed for anyone. This one is a fault in the page, not your sign-in — "
+              + "send that message to a session and it can be fixed.") };
         render(root);
       });
   }
@@ -431,7 +497,7 @@
     state.saving = true; state.saveMsg = null; render(root);
     return fetch(REST + "/cobi_nav?kind=in.(tab,group)", { method: "DELETE", headers: authHeaders() })
       .then(function (r) {
-        if (!r.ok) throw new Error("reset " + r.status);
+        if (!r.ok) return httpFail(r, "reset");
         window.CPL_NAV_OVERLAY._set([]);
         state.draft = null; state.dirty = false; state.saving = false;
         state.saveMsg = { ok: true, text: "✓ The menu is back to how it ships." };
@@ -524,6 +590,7 @@
       ".adm-btn-primary:hover { background: var(--navy-secondary, #1c3d5a); }",
       ".adm-dirty { font-size:.78rem; color: var(--brick, #8c2f22); font-weight:600; }",
       ".adm-g-aud { color: var(--navy-primary); background: var(--surface-muted); font-weight:600; }",
+      ".adm-audnote { flex:1 1 100%; font-size:.75rem; color: var(--text-muted); margin-top:2px; }",
       ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
       ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
@@ -608,6 +675,21 @@
             + esc(AUDIENCE_LABEL[a]) + "</option>";
         }).join("")
         + "</select></label>";
+
+      /* What this control DOES, stated unconditionally and next to the control.
+       *
+       * It used to be stated only inside the ⚠ below, which renders only when
+       * the tab's data is public-read or unmapped — so on most items the word
+       * "hides" never appeared at all, and the option reading "Signed-in people
+       * (team phrase or magic link)" invites the opposite reading: a note that a
+       * phrase is needed. Sam hit exactly that (2026-08-14): "I wasn't trying to
+       * hide it… just noting that they need a team phrase to curate." The
+       * consequence is unconditional, so the sentence describing it has to be
+       * too, and the ⚠ goes back to being only about security. */
+      h += '<div class="adm-audnote">Anything other than <b>Everyone</b> <b>takes this item out of the '
+        + "menu</b> for people who do not have it — it is a filter, not a note. To simply tell people a "
+        + "team phrase is needed, leave this on <b>Everyone</b>: the tab already says so when they open "
+        + "it, and stays findable meanwhile.</div>";
     }
     h += '<button class="adm-btn" data-editdone>Done</button>';
 

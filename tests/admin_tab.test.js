@@ -141,6 +141,14 @@ function makeWin(opts) {
     }
     if (/cobi_nav/.test(String(url))) {
       if (init && init.method === "POST") {
+        // A real PostgREST rejection: non-2xx, and the reason lives in the BODY.
+        if (opts.saveHttp) {
+          return Promise.resolve({
+            ok: false, status: opts.saveHttp.status,
+            text: () => Promise.resolve(opts.saveHttp.body || ""),
+            json: () => Promise.reject(new Error("no json")),
+          });
+        }
         const rows = opts.saveEmpty ? [] : JSON.parse(init.body);
         return Promise.resolve({ ok: true, json: () => Promise.resolve(rows) });
       }
@@ -402,6 +410,107 @@ const DEFAULT_GATES = [
     check("a failed save leaves the live menu untouched",
       (w.CPL_NAV_OVERLAY.rows() || []).length === 0);
   }
+})();
+
+// ── The save PAYLOAD, which is where it actually broke (Sky158) ─────────────
+//
+// Every save 400'd for two days and the table stayed empty while the tab looked
+// finished. Nothing above catches it, because each row is individually valid and
+// the mock accepts any body: the defect only exists across the ARRAY. A bulk
+// POST is one statement over the UNION of the array's keys, so a key present on
+// tab rows and absent from group rows is still in the insert list — and every
+// group row supplies NULL for it. `audience` is NOT NULL, so Postgres rejected
+// the batch (23502) and PostgREST returned 400.
+//
+// Asserted as UNIFORMITY rather than "has audience": the next column added for
+// tabs would otherwise reintroduce exactly this, and pass.
+(async function () {
+  const w = makeWin({ nav: [] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  const d = api._ensureDraft();
+  const rows = api._draftRows(d);
+  const groups = rows.filter((r) => r.kind === "group");
+
+  check("the payload actually contains group rows (else this proves nothing)", groups.length > 0);
+
+  const shape = (r) => Object.keys(r).sort().join(",");
+  const shapes = [...new Set(rows.map(shape))];
+  check("EVERY row in a bulk save carries the identical key set",
+    shapes.length === 1);
+
+  check("no row omits `audience` — the NOT NULL column that rejected the batch",
+    rows.every((r) => Object.prototype.hasOwnProperty.call(r, "audience")));
+  check("no row sends a NULL audience", rows.every((r) => r.audience != null));
+  check("a group writes the default audience, since audience is resolved per tab",
+    groups.every((r) => r.audience === "everyone"));
+
+  // The other half: the failure has to be diagnosable from what it prints.
+  {
+    const w2 = makeWin({
+      nav: [],
+      saveHttp: { status: 400, body: JSON.stringify({ code: "23502",
+        message: 'null value in column "audience" violates not-null constraint' }) },
+    });
+    const api2 = w2.CPL_ADMIN_TAB;
+    const root2 = w2.document.getElementById("admin-root");
+    await api2._loadGates();
+    await new Promise((r) => setTimeout(r, 20));
+    api2.render(root2);
+    api2._ensureDraft();
+    api2._state.dirty = true;
+    await api2._saveDraft(root2);
+    check("a rejected save reports the SERVER's reason, not just the status",
+      /violates not-null constraint/.test(root2.innerHTML));
+    // Sam was told to renew a sign-in that was never the problem, which sends a
+    // curator round a loop no valid session can escape.
+    check("a 400 does NOT blame the reviewer sign-in",
+      !/renew your reviewer sign-in/.test(root2.innerHTML));
+    check("a 400 says the page is at fault so it gets reported instead of retried",
+      /fault in the page/.test(root2.innerHTML));
+    check("a rejected save still keeps the arrangement", api2._state.draft !== null);
+  }
+  {
+    const w3 = makeWin({ nav: [], saveHttp: { status: 401, body: "" } });
+    const api3 = w3.CPL_ADMIN_TAB;
+    const root3 = w3.document.getElementById("admin-root");
+    await api3._loadGates();
+    await new Promise((r) => setTimeout(r, 20));
+    api3.render(root3);
+    api3._ensureDraft();
+    api3._state.dirty = true;
+    await api3._saveDraft(root3);
+    check("a 401 DOES still point at the sign-in", /renew your reviewer sign-in/.test(root3.innerHTML));
+  }
+})();
+
+// ── The audience control says what it DOES, unconditionally (Sky158) ────────
+//
+// Sam: "some say it will hide the menu item and most others don't mention that.
+// I wasn't trying to hide it… just noting that they need a team phrase." The ⚠
+// renders only for public-read/unmapped tabs, so on most items the word "hides"
+// never appeared — while the hiding applies to every one of them.
+(async function () {
+  // Already narrowed, on a tab whose data is NOT public-read — so the ⚠ stays
+  // silent and this is exactly the majority case Sam described.
+  const w = makeWin({ nav: [{ kind: "tab", key: "sierra-training", audience: "signed_in" }] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  api._ensureDraft();
+  api._state.editKey = "tab:sierra-training";
+  api.render(root);
+  check("the editor is open on a tab whose data is NOT public (else no proof)",
+    /data-aud="sierra-training"/.test(root.innerHTML) && !/adm-audwarn/.test(root.innerHTML));
+  check("the picker states it REMOVES the item from the menu, with no ⚠ present",
+    /takes this item out of the/.test(root.innerHTML));
+  check("and names the alternative for 'they just need a phrase'",
+    /leave this on <b>Everyone<\/b>/.test(root.innerHTML));
 })();
 
 // ── Arrange: hidden items stay editable, and carry their gate ───────────────
