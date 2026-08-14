@@ -74,7 +74,7 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
     const b = fs.readFileSync("index.html", "utf8");
     [["CPL_Dashboard.html", a], ["index.html", b]].forEach(function (pair) {
       const [name, s] = pair;
-      check("Rule 4 — nav button in " + name, /data-tab="team-phrases"[^>]*>🔑 Team Phrases</.test(s));
+      check("Rule 4 — nav button in " + name, /data-tab="team-phrases"[^>]*>Team Phrases</.test(s));
       check("Rule 4 — pane in " + name, /id="tab-team-phrases"/.test(s));
       check("Rule 4 — mount point in " + name, /id="team-phrases-root"/.test(s));
       check("Rule 4 — lazy boot in " + name,

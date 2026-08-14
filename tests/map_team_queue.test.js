@@ -33,7 +33,7 @@ const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
 [["CPL_Dashboard.html", cpl], ["index.html", idx]].forEach(function (p) {
-  check("nav button in " + p[0], /data-tab="map-queue"[^>]*>📥 MAP Team Queue</.test(p[1]));
+  check("nav button in " + p[0], /data-tab="map-queue"[^>]*>MAP Team Queue</.test(p[1]));
   check("pane #map-queue-root in " + p[0], /id="map-queue-root"/.test(p[1]));
   check("lazy boot loadScript in " + p[0],
     /loadScript\('map_team_queue\.js', 'CPL_MAP_QUEUE'/.test(p[1]));
