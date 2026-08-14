@@ -1,86 +1,44 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-14 · Sky153 — the military side is scoped, and it is not what we expected.",
-  "_session": "Session 153 (Sky153)",
-  "_status": "The military side of the credit recommendations is now measured. It is 98% of everything in the dataset, and the surprise is that it is far TIDIER than the college-typed side, not messier — the American Council on Education publishes each recommendation and MAP stores it, so 93% of them already carry one single agreed wording. A third of that vocabulary can be cleaned up with no human judgement at all, against about a tenth on the college-typed side. The catch is size and naming: there are three times as many distinct topics, the work is much more spread out (about 250 decisions to cover half of it rather than 50), and almost none of them can be named from an official course number, because ACE recommends subject areas like 'Supervision' rather than courses. One real discovery: Marine Corps records have rank abbreviations baked into the recommendation text itself, which split 482 topics that are really the same thing. Separately, Sam asked whether Sierra knows about the required-evidence field in MAP — she does not, and we have never even asked MAP for it; a probe is running to find out whether that field is cut short at the source or just in the viewer.",
+  "_as_of": "2026-08-14 · Sky155 — Sierra now names the colleges AND links them, and her built-in rules are finally editable.",
+  "_session": "Session 155 (Sky155)",
+  "_status": "Five fixes shipped today, all from things you hit while testing. Sierra now answers a \"where can I get credit for this?\" question with the colleges that have ALREADY set it up, each with a link to its CPL page — the links were the missing half, and the reason they were missing is that nobody had ever handed them to her, even though we have had them for 123 of 123 colleges all along. That is the fourth time we have found good data sitting unread. The bigger change is underneath: the ten built-in rules that tell Sierra how to behave used to live only in code, which is why an instruction you wrote at 1:33pm could be quietly overruled by a rule you could not see or edit. Those rules are now in a table. Nothing about her answers changed on day one — we proved that letter-for-letter — but from here a rule can be reworded without a code release, and we can now show which rules were in play for any given answer. The safety-critical ones (never invent a college, never expose a small student count) are deliberately locked so no edit can remove them. Also: the Send note box now tells you when it actually sent, the side menu has lost its emoji, and testing an instruction will keep working even if you hide the CPL Assistant tab.",
   "items": [
     {
-      "id": "s153-evidence-decision",
-      "for": "Sam",
-      "tab": "CPL Assistant",
-      "text": "The required-evidence text is NOT cut short at the source — longest value is 349 characters and lengths vary freely, so what looked truncated in your JSON view is the viewer. It is now being fetched daily, along with the submission guidelines field, which is arguably the more useful of the two (\"must submit MJC CPL Petition Form\"). One thing to know before we show it to students: it is blank on military records by design — every welding and MOS row we sampled had it empty — so Sierra must never say \"no evidence required\" for a military exhibit. Decision needed: publish it to Sierra?"
-    },
-    {
-      "id": "s153-ace-units-question",
-      "for": "Sam",
-      "tab": "Common CR Reference",
-      "text": "One decision that changes a fifth of the military work. The same ACE exhibit sometimes recommends the same topic at 1, 2 and 3 hours — for example Orienteering. Are those one recommendation with a range of hours, or genuinely different ones? We already ruled that hours are not part of a recommendation's identity, but that ruling came from colleges writing the same course differently, which is not quite this situation."
-    },
-    {
-      "id": "s153-ace-granularity",
-      "for": "Sam",
-      "tab": "Common CR Reference",
-      "text": "How finely should military subject areas be split? ACE lists Supervision, Principles of Supervision and Introduction to Supervision separately. One reference or three? Your answer sets the size of the whole military job. Warning from the data: do not extend this to Management — it looks similar but Project Management and Supply Chain Management are genuinely different subjects, not variations."
-    },
-    {
-      "id": "s153-governance-candidates-25",
-      "for": "Sam",
-      "tab": "Governance",
-      "text": "The governance drift detector has reached 25 suggested register entries, and its own readability check says the list should stay under 25 — so the automated test is now failing on the main branch to tell us the queue needs a look. That is the guard doing its job, not a bug. It needs a human to work through them and either add each one to the register or dismiss it with a reason; raising the limit would just switch the warning off."
-    },
-    {
-      "id": "s153-ace-mechanical-spine",
-      "for": "Fable",
-      "tab": "Common CR Reference",
-      "text": "Build the mechanical clean-up for the military lane before any worklist — it is worth a third here, against a tenth on the college side. Four steps: the not-a-topic rows, pure capitalisation differences, hours as an attribute, and stripping the Marine Corps rank abbreviations. The rank step needs its list widened first — 176 topics still do not land cleanly."
-    },
-    {
-      "id": "s153-ace-rank-strip",
-      "for": "Fable",
-      "tab": "Course Credit",
-      "text": "482 military topics carry a rank abbreviation inside the recommendation text, splitting things that are really one topic across 12,157 rows. Stripping the rank reunites 306 of them with a topic that already exists. This is the same Marine Corps duplication already recorded in memory, showing up in the wording rather than in the counts."
-    },
-    {
-      "id": "s150-check-gap-list",
-      "for": "Sam",
-      "tab": "Sierra Training",
-      "text": "The 'questions Sierra struggled with' list should now read about 13 instead of 78 — the rest was the automated test suite that runs on every deploy. Each row can be marked Handled or Leave it, and there is a bulk control for all of them at once. Marking does not change how Sierra answers; it only clears the list."
-    },
-    {
-      "id": "s150-decide-blank-contacts",
-      "for": "Sam",
-      "tab": "MAP Users",
-      "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
-    },
-    {
-      "id": "s150-search-tier-contacts",
-      "for": "Fable",
-      "tab": "MAP Users",
-      "text": "Seven fallback contacts were found by web search and the code deliberately refuses to propose them, because no session could open the pages to apply Jessica's sourcing rules. They render as 'Candidate — confirm' and still need a human or a differently-connected pass."
-    },
-    {
-      "id": "s150-site-phrase-scope",
+      "id": "s155-admin-tab-gate",
       "for": "Sam",
       "tab": "Team Phrases",
-      "text": "Still open from an earlier session: a site phrase currently opens its own tabs plus every shared CPL tab. That is only safe while everyone holding one is trusted with all shared CPL data. Worth deciding before the Finance phrase reaches anyone in Finance."
+      "text": "Two questions before the Admin tab gets built, and both change its shape. FIRST: what unlocks Admin itself? It would control which tabs everyone else can see, so my recommendation is a magic-link sign-in only, NOT a shared phrase — someone holding a phrase who can also change what other phrase-holders see is a bigger version of a problem we already have open. SECOND: should Admin absorb the Team Phrases tab? That tab deliberately does not open to a phrase holder, because someone who can rotate the phrase makes rotating it pointless. If Admin is sign-in-only anyway they may be the same door — worth merging on purpose rather than by accident."
     },
     {
-      "id": "s152-work-the-head",
+      "id": "s155-admin-not-security",
       "for": "Sam",
-      "tab": "Common CR Reference",
-      "text": "The Common CR Reference tab is live — a new tab beside the Common Course/Subjects/Exhibit References. Please work the top of the list (it is ranked so the most valuable decision is always first) and confirm or reject the groupings. The top 50 wordings account for about half of every articulation in the system, so this is an afternoon, not an ocean."
+      "tab": "Team Phrases",
+      "text": "Worth knowing before you use the Admin tab to hide things: hiding a menu item does NOT protect the data behind it. It only stops the item being shown. The real lock is on the database, and only two tabs actually lock their data that way — the rest just stop drawing. I will make that distinction visible in the tab itself rather than burying it in a tooltip, because it is the kind of thing that is easy to assume and expensive to be wrong about."
     },
     {
-      "id": "s152-check-flagged",
+      "id": "s155-d11-missing-colleges",
       "for": "Sam",
-      "tab": "Common CR Reference",
-      "text": "Inside that tab, 38 groups are badged with an orange 'AJ 110? — check'. Those are cases where an official C-ID title says something completely different from what every college wrote. We deliberately did NOT apply the official name — one of them would have renamed 'Physical Training and Health Education' to 'Introduction to Criminal Justice'. Tell us if we are being too cautious."
+      "tab": "CPL Assistant",
+      "text": "Something to look at when you next test welding. Your AWS D1.1 question got a good answer, but we hold NINE different D1.1 credentials and the answer covered one of them. Riverside has set up three and Lemoore one, and neither college appeared anywhere in the reply — not even in the \"teaches welding\" list. I have not yet worked out whether she never found them or found them and only showed the strongest, and that difference decides the fix, so I would rather measure it than guess. Recorded so it does not get lost."
     },
     {
-      "id": "s152-free-na-win",
+      "id": "s155-sierra-rules-no-ui",
       "for": "Fable",
-      "tab": "Course Credit",
-      "text": "A free win: 3,242 rows say '0 hours in Credit Is Not Recommended' and 2,269 say 'Credit may be granted on the basis of an individualized assessment'. Neither is a credit recommendation at all. They belong in the 'not a topic' bucket and are the same population we already flagged as an automatic Not-Applicable win."
+      "tab": "Sierra Training",
+      "text": "The rules table is live and Sierra reads it on every question, but there is no screen to edit it yet — today it takes a database command. The editing screen belongs in the Admin tab, and it should ship together with the \"which rules were in play for this answer\" view, because seeing that a rule was fighting your instruction is worth more than being able to edit it."
+    },
+    {
+      "id": "s155-two-lane-memory",
+      "for": "Fable",
+      "tab": "Memory",
+      "text": "Next after Admin: put what we KNOW (the memory table) and what Sierra DOES (the rules table) on one screen, linked, then have a nightly check report anything decided in memory that no rule actually implements. That gap is what caused three separate problems already, including today's missing links."
+    },
+    {
+      "id": "s155-glyphs-inpage",
+      "for": "Sam",
+      "tab": "Team Phrases",
+      "text": "The emoji are gone from the side menu — all ten of them. I deliberately left two other kinds alone and want to check that is what you meant: the lock symbol in the header stays, because it changes to show whether you are signed in (that is information, not decoration), and a couple of tabs still show an emoji in their own on-page heading rather than in the menu. Say the word and those go too."
     }
   ]
 }

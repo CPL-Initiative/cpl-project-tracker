@@ -9,57 +9,56 @@
     "other": 150000
   },
   "summary": {
-    "files": 514,
-    "bytes": 5926964,
+    "files": 518,
+    "bytes": 5979792,
     "over_budget": 6,
-    "handoff_max": 154,
+    "handoff_max": 156,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 112479,
-    "superseded_files": 6,
-    "superseded_bytes": 43727,
+    "always_loaded_bytes": 115002,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 112479,
+        "bytes": 115002,
         "over": 1
       },
       "other": {
         "files": 64,
-        "bytes": 1471108,
+        "bytes": 1473872,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 210859,
+        "bytes": 211776,
         "over": 1
       },
       "lessons": {
-        "files": 56,
-        "bytes": 1645943,
+        "files": 57,
+        "bytes": 1653151,
         "over": 3
       },
       "kb_note": {
-        "files": 255,
-        "bytes": 1401350,
+        "files": 256,
+        "bytes": 1412104,
         "over": 0
       },
       "handoff": {
-        "files": 137,
-        "bytes": 1085225,
+        "files": 139,
+        "bytes": 1113887,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 6,
       "stacked_roadmap_cell": 1,
-      "kb_note_dialect": 57,
-      "superseded_handoff": 6,
+      "kb_note_dialect": 58,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 1925,
-      "bytes": 1114735564,
-      "heavy_bytes": 585483609,
+      "files": 1934,
+      "bytes": 1114865523,
+      "heavy_bytes": 585483718,
       "heavy_share": 0.525,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -114,13 +113,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 112479,
+        "bytes": 115002,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 52479,
-        "ratio": 1.87
+        "over_by": 55002,
+        "ratio": 1.92
       },
-      "message": "112,479 B is 1.9× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "115,002 B is 1.9× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -145,13 +144,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 210859,
+        "bytes": 211776,
         "limit": 40000,
         "lane": "index",
-        "over_by": 170859,
-        "ratio": 5.27
+        "over_by": 171776,
+        "ratio": 5.29
       },
-      "message": "210,859 B is 5.3× the index budget (40,000 B) — candidate for compaction",
+      "message": "211,776 B is 5.3× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -192,6 +191,18 @@
       },
       "message": "150,825 B is 1.3× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/exhibit_canonicalization_lessons.md"
+    },
+    {
+      "rule": "kb_note_dialect",
+      "fixable": false,
+      "detail": {
+        "drift": [
+          "type via `kb-type:` (canonical: a type tag in `tags:`)",
+          "`date:` (canonical: `created:`)"
+        ]
+      },
+      "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -846,80 +857,14 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 390773,
+        "bytes": 392357,
         "limit": 150000,
         "lane": "other",
-        "over_by": 240773,
-        "ratio": 2.61
+        "over_by": 242357,
+        "ratio": 2.62
       },
-      "message": "390,773 B is 2.6× the other budget (150,000 B) — candidate for compaction",
+      "message": "392,357 B is 2.6× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 148,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 148 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_148_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 149,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 149 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_149_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 150,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 150 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_150_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 151,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 151 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_151_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 152,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 152 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_152_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 153,
-        "authoritative": 154,
-        "has_frontmatter": true
-      },
-      "message": "handoff 153 is below the authoritative 154 but is not stamped `superseded: true`",
-      "path": "docs/session_153_handoff.md"
     },
     {
       "rule": "vault_heavy_path",
@@ -1086,10 +1031,10 @@
       "fixable": false,
       "path": "unified_courses_data.js",
       "detail": {
-        "bytes": 10223645,
+        "bytes": 10223754,
         "kind": "file"
       },
-      "message": "10,223,645 B single file inside the vault"
+      "message": "10,223,754 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

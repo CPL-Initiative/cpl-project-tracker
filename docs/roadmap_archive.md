@@ -4121,3 +4121,23 @@ resolves **40 of 2,344 — 1.7%**. Compellingness of examples is not yield.
 engine.** Worklist first, matcher last.
 Story: `docs/common_cr_reference_lessons.md` · scope `docs/common_cr_reference_scope.md` ·
 handoff `docs/session_152_handoff.md`.
+
+### SkyCall — the ranking premise was backwards (2026-08-13, Session 152)
+
+One PR (**#1176**). The Common CR Reference **worklist is live** — Sam's Priority 1, built
+to the shape the scope measured rather than to the word "reference".
+⭐ **SAM RULED SCOPE = GLOBAL + a split affordance.** 407 strings (17%) span >1 credential but
+carry **45% of all articulation rows**; `Introduction to FCAW` is one recommendation under all
+ten AWS/ASME credentials that carry it.
+⭐ **THE HANDOFF'S RANKING PREMISE WAS BACKWARDS.** It said the value is where strings span the
+most credentials. The 61-credential string is `3 hours in Elective Course Credits` — **one
+college**, a placeholder. Ranking by credentials-spanned puts the corpus's *least* useful string
+at #1; **collapse value (wordings × colleges)** sinks it to #174 with no special case.
+⭐ **TWO BUGS, ONE SHAPE — two places normalising the same text differently.** `screen_profile()`
+judged the RAW topic while the key used the FOLDED one, so `Intro`/`Introduction` read as
+different levels and the level screen **blocked the single highest-value merge in the corpus**.
+Then my own test re-implemented the folds, missed `adv`, and failed two correct groups. The fix
+was to **EMIT** the profile, not re-derive it — delete the duplicate, don't sync it.
+⚠️ **Measuring a group's population is still not testing the gate** — the probe that "passed"
+tested whether a key contained two words, not whether merging members disagreed.
+Story: `docs/common_cr_reference_lessons.md` · handoff `docs/session_153_handoff.md`.
