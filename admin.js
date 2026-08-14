@@ -458,6 +458,9 @@
       ".adm-chip { display:inline-block; margin-left:8px; background: var(--mustard-fill, #f2dca0); color: var(--text-strong, #4a3a00); font-size:.62rem; font-weight:700; letter-spacing:.08em; padding:2px 8px; border-radius:10px; text-transform:uppercase; vertical-align:middle; }",
       ".adm-warn { font-size:.85rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:8px; padding:10px 13px; max-width:900px; margin:0 0 14px; }",
       ".adm-empty { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); color: var(--text-muted); padding:26px; text-align:center; }",
+      // The shared reviewer sign-in mounts here. Left-aligned and narrowed so
+      // the form reads as a form inside the centred explanatory block.
+      ".adm-signin { max-width:340px; margin:14px auto 0; text-align:left; }",
       ".adm-stat { display:flex; flex-wrap:wrap; gap:10px; margin:0 0 14px; }",
       ".adm-stat .box { flex:1 1 130px; border:1px solid var(--border); border-radius:8px; background: var(--surface-subtle); padding:10px 12px; cursor:help; }",
       ".adm-stat .box .n { font-size:1.4rem; font-weight:700; color: var(--navy-primary); }",
@@ -703,11 +706,27 @@
 
     if (state.loadState === "loading") { h += '<div class="adm-empty">Loading…</div></div>'; root.innerHTML = h; return; }
     if (state.loadState === "signedout") {
-      h += '<div class="adm-empty"><b>Admin needs a personal sign-in.</b><br>Sign in with a magic link on the '
-        + "<b>Team &amp; RACI</b> tab using an address on the reviewer list, then re-open this tab. The shared "
+      // Sign in RIGHT HERE. This used to read "Sign in with a magic link on the
+      // Team & RACI tab … then re-open this tab" — and RACI's magic-link box had
+      // been removed, leaving its signIn() with no caller, so the instruction
+      // could not be followed at all (Sam, 2026-08-14). Sending someone to
+      // another tab for a credential is the same bounce team_phrase_header.js
+      // was built to end; the same control also sits in the About menu, so it is
+      // reachable from every tab, not only this one.
+      h += '<div class="adm-empty"><b>Admin needs a personal sign-in.</b><br>The shared '
         + "team phrase does not open Admin — someone who could re-scope what other phrase holders see would be "
-        + "a wider power than the phrase is meant to carry.</div></div>";
-      root.innerHTML = h; return;
+        + "a wider power than the phrase is meant to carry. Sign in below, or from "
+        + "<b>ℹ About</b> in the header.<div class=\"adm-signin\"></div></div></div>";
+      root.innerHTML = h;
+      // Mount the SHARED control (reviewer_signin.js) rather than re-implementing
+      // a second sign-in box that could drift from it.
+      try {
+        var host = root.querySelector(".adm-signin");
+        if (host && window.CPL_REVIEWER_SIGNIN) {
+          window.CPL_REVIEWER_SIGNIN.mountInto(host, { title: "Sign in", returnTab: "admin" });
+        }
+      } catch (e) { /* the message above still stands on its own */ }
+      return;
     }
     if (state.loadState === "notreviewer") {
       h += '<div class="adm-empty"><b>Signed in, but not as a reviewer.</b><br>Your address is not on the '

@@ -153,14 +153,15 @@
     }
     return Promise.resolve(s);
   }
-  function signIn(email) {
-    try { sessionStorage.setItem("cpl_sb_return_tab", "raci"); } catch (e) {}
-    var redirect = encodeURIComponent(location.origin + location.pathname);
-    return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
-      method: "POST", headers: { "apikey": SUPABASE_ANON, "Content-Type": "application/json" },
-      body: JSON.stringify({ email: email, create_user: true })
-    });
-  }
+  // NOTE — there is deliberately no signIn() here any more. This tab carried a
+  // full magic-link implementation whose BUTTON had been removed, so the
+  // function sat with no caller while admin.js told people to "sign in with a
+  // magic link on the Team & RACI tab" (Sam, 2026-08-14: "it only has the team
+  // phrase input now, so I can't edit the new Admin tab"). Dead code that an
+  // instruction elsewhere still points at is worse than no code: it reads like
+  // a working path. The reviewer sign-in now lives in ONE place — the ℹ About
+  // menu (reviewer_signin.js), reachable from every tab — and Admin mounts that
+  // same control inline. Sam, same day: "Since Admin supersedes RACI."
   function signOut() { try { sessionStorage.removeItem("cpl_sb"); localStorage.removeItem(TEAM_PASS_KEY); } catch (e) {} }
 
   // Shared "team phrase" edit gate — a lower-stakes alternative to per-person
@@ -1381,6 +1382,12 @@
       inp.addEventListener("keydown", function (e) { if (e.key === "Enter") tryUnlock(); });
       w.appendChild(el("span", { "class": "raci-auth-lbl" }, ["Team phrase to edit: "]));
       w.appendChild(inp); w.appendChild(btn); w.appendChild(st);
+      // The phrase is the right credential for THIS tab, but it does not open
+      // the reviewer-only ones (Admin, Team Phrases). Say where that sign-in is
+      // instead of leaving someone to conclude it no longer exists — which is
+      // exactly what happened when the magic-link box was removed from here.
+      w.appendChild(el("span", { "class": "raci-auth-hint" }, [
+        "Editing Admin or Team Phrases needs a personal sign-in instead — ℹ About, top right."]));
     }
     return w;
   }
@@ -1412,6 +1419,7 @@
       ".raci-auth{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;font-size:.85rem;color:#555;}" +
       ".raci-in{padding:.35rem .5rem;border:1px solid var(--border,#ccc);border-radius:5px;font-size:.85rem;font-family:inherit;}" +
       ".raci-auth-msg{font-size:.8rem;color:#2A7D4F;flex-basis:100%;}" +
+      ".raci-auth-hint{font-size:.75rem;color:var(--text-faint,#777);flex-basis:100%;}" +
       ".raci-btn{background:#fff;border:1px solid var(--border,#ccc);border-radius:5px;padding:.35rem .7rem;font-size:.82rem;font-weight:600;cursor:pointer;color:var(--navy-secondary,#1c3d5a);}" +
       ".raci-btn-go{background:var(--navy-primary,#0A2240);color:#fff;border-color:var(--navy-primary,#0A2240);}" +
       ".raci-table{width:100%;border-collapse:collapse;font-size:.84rem;background:#fff;border:1px solid var(--border,#e6e6e6);border-radius:8px;overflow:hidden;}" +
