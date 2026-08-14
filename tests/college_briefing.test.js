@@ -55,6 +55,11 @@ function load(signedIn) {
   const w = dom.window;
   if (signedIn) w.localStorage.setItem("cpl_team_pass", "phrase");
   w.fetch = function () { return new Promise(function () {}); }; // never resolves
+  // Shared phrase helper first — production ships both, and the locked state
+  // renders its banner (with a working input) rather than the bare fallback.
+  const tp = w.document.createElement("script");
+  tp.textContent = fs.readFileSync("team_phrase.js", "utf8");
+  w.document.body.appendChild(tp);
   const s = w.document.createElement("script");
   s.textContent = fs.readFileSync("college_briefing.js", "utf8");
   w.document.body.appendChild(s);
@@ -71,7 +76,11 @@ check("defaults to Sam's answer: Scenario 1 / Year 1", M._SCENARIO === "Scenario
 const out = load(false);
 const gRoot = out.document.getElementById("college-briefing-root");
 out.CPL_COLLEGE_BRIEFING.render(gRoot);
-check("team-gated: no figures logged out", /sign in/i.test(gRoot.textContent));
+// Was: /sign in/i against copy that never said WHERE. The banner states the
+// lock and carries the input, so assert the input.
+check("team-gated: no figures logged out", /not signed in/i.test(gRoot.textContent));
+check("team-gated: …and an unlock box is offered right there",
+  !!gRoot.querySelector('[data-tp-locked] input[type="password"]'));
 
 // ── Part C — the strategy library ──
 // Two programs: one shaped like the live cpl-implementation, one standing in

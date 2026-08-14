@@ -375,9 +375,28 @@
   function render(root) {
     ensureCss();
     if (!signedIn()) {
-      root.innerHTML = '<div class="gov"><h2>Governance</h2>'
-        + '<div class="gov-gate">This is internal working material — sign in on the '
-        + "<b>Team &amp; RACI</b> tab (reviewer sign-in or the shared team phrase) to view it.</div></div>";
+      // Was: "sign in on the Team & RACI tab … to view it" — the bounce
+      // team_phrase_header.js was written to end, still live here, and by
+      // 2026-08-14 also promising a reviewer link RACI no longer offered.
+      // This gate is on the READ, so without the phrase the tab is not merely
+      // read-only, it is EMPTY — unlock right here instead of sending anyone
+      // anywhere. (Sam: "insure that all tabs that require a Team Phrase have
+      // an input on them".)
+      root.innerHTML = '<div class="gov"><h2>Governance</h2></div>';
+      var gate = root.querySelector(".gov");
+      if (window.CPL_TEAM_PHRASE && gate) {
+        gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
+          what: "The governance register — decision rights, acceptance standards and cadences —"
+        }));
+      } else if (gate) {
+        // FAIL-SAFE. If the shared helper has not loaded, still say what is
+        // locked and where the control is — an empty locked state would be
+        // worse than the copy this replaced, which at least named a tab.
+        var p = document.createElement("p");
+        p.setAttribute("data-tp-locked", "");
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the \u{1F512} button in the header.";
+        gate.appendChild(p);
+      }
       return;
     }
     if (state.loading) { root.innerHTML = '<div class="gov"><p class="gov-gate">Loading the governance register…</p></div>'; return; }
@@ -396,7 +415,7 @@
     if (state.ownersStale) {
       h += '<div class="gov-gate"><b>Could not read the assigned owners.</b> The owner column below may be '
         + "out of date, and the “no owner” count cannot be trusted until this loads. Re-open the tab, or "
-        + "renew your session on the <b>Team &amp; RACI</b> tab.</div>";
+        + "renew your session from \u2139 About in the header.</div>";
     }
     h += '<p class="gov-intro">A starter register: <b>who decides what</b>, <b>how much we trust each input</b>, '
       + "and <b>which loops actually run</b>. Written after a session in which every problem turned out to be a "
@@ -565,8 +584,8 @@
       var saving = saveOwner(id, name, note);
       render(root);
       saving.catch(function () {
-        alert("Could not save that owner. Sign in on the Team & RACI tab "
-          + "(reviewer or team phrase) and try again.");
+        alert("Could not save that owner. Unlock with the team phrase "
+          + "(the \u{1F512} button in the header) and try again.");
         loadOwners().then(function () { render(root); });
       });
     }

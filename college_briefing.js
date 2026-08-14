@@ -1201,7 +1201,24 @@
   function render(root) {
     ensureCss();
     if (!signedIn()) {
-      root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Sign in with the team phrase to view the college briefing.</div>';
+      // Was: "Sign in with the team phrase to view the college briefing." —
+      // true, but it never said WHERE, and four of this tab's tables gate the
+      // READ, so the whole briefing was blank with nothing to act on.
+      root.innerHTML = '<div class="cb-gate" style="padding:16px 24px;"></div>';
+      var gate = root.querySelector(".cb-gate");
+      if (window.CPL_TEAM_PHRASE && gate) {
+        gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
+          what: "The college briefing — contacts, credit summaries and funding —"
+        }));
+      } else if (gate) {
+        // FAIL-SAFE. If the shared helper has not loaded, still say what is
+        // locked and where the control is — an empty locked state would be
+        // worse than the copy this replaced, which at least named a tab.
+        var p = document.createElement("p");
+        p.setAttribute("data-tp-locked", "");
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the \u{1F512} button in the header.";
+        gate.appendChild(p);
+      }
       return;
     }
     if (state.loading) { root.innerHTML = '<div style="padding:24px;text-align:center;color:var(--text-muted);">Measuring…</div>'; return; }

@@ -512,10 +512,25 @@
     ensureCss();
 
     if (!signedIn()) {
-      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2>'
-        + '<div class="mtq-gate"><b>Team sign-in required.</b> This page is internal working material — '
-        + "who owes what, and which colleges cannot route a student's CPL request. Sign in on the "
-        + "<b>Team &amp; RACI</b> tab (reviewer link or team phrase) and re-open this tab.</div></div>";
+      // Was: "Sign in on the Team & RACI tab (reviewer link or team phrase) and
+      // re-open this tab" — the bounce, still live, and pointing at a reviewer
+      // link RACI stopped offering. Four of this tab's tables gate the READ, so
+      // the cost of the bounce was the whole page.
+      root.innerHTML = '<div class="mtq"><h2>\u{1F4E5} MAP Team Queue</h2></div>';
+      var gate = root.querySelector(".mtq");
+      if (window.CPL_TEAM_PHRASE && gate) {
+        gate.appendChild(window.CPL_TEAM_PHRASE.lockedBanner({
+          what: "This page is internal working material — who owes what, and which colleges cannot route a student's CPL request. It"
+        }));
+      } else if (gate) {
+        // FAIL-SAFE. If the shared helper has not loaded, still say what is
+        // locked and where the control is — an empty locked state would be
+        // worse than the copy this replaced, which at least named a tab.
+        var p = document.createElement("p");
+        p.setAttribute("data-tp-locked", "");
+        p.textContent = "You are not signed in. Unlock with the team phrase \u2014 the \u{1F512} button in the header.";
+        gate.appendChild(p);
+      }
       return;
     }
     if (state.loading || !state.items) {

@@ -552,7 +552,7 @@
       });
     }
     return req.catch(function () {
-      alert("Could not save that — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not save that — unlock with the team phrase (\u{1F512} in the header) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
     });
@@ -597,7 +597,7 @@
       if (!Array.isArray(out) || out.length === 0) throw new Error("not saved");
       out.forEach(function (rv) { state.turnReviews[rv.turn_id] = rv; });
     }).catch(function () {
-      alert("Could not mark those — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not mark those — unlock with the team phrase (\u{1F512} in the header) and try again.");
     }).then(function () {
       state.gBulkBusy = false; render(root);
     });
@@ -634,7 +634,7 @@
       if (row) (state.guidance = state.guidance || []).unshift(row);
       state.draftRule = ""; state.draftNote = "";
     }).catch(function () {
-      alert("Could not add the rule — renew your session on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not add the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { state.addBusy = false; render(root); });
   }
   // Edit a saved instruction in place (2026-08-13). RLS already allowed this —
@@ -698,8 +698,8 @@
       state.editBusy = false;
       saveEditDraft();
       render(root);
-      alert("Could not save the change — your edit is still in the box. Renew your session on the "
-        + "Team & RACI tab (or enter the team phrase in the header) and press Save again.");
+      alert("Could not save the change — your edit is still in the box. Renew your reviewer sign-in "
+        + "from \u2139 About in the header (or enter the team phrase there) and press Save again.");
     });
   }
   function toggleGuidance(id, root) {
@@ -716,7 +716,7 @@
       if (!r.ok) throw new Error("toggle " + r.status);
       row.active = !row.active;
     }).catch(function () {
-      alert("Could not update the rule — renew your session on the Team & RACI tab and try again.");
+      alert("Could not update the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { delete state.guidBusy[id]; render(root); });
   }
 
@@ -874,7 +874,7 @@
         render(root);
         alert("Could not save this rule — " + ((e && e.message) || "unknown error")
           + ".\n\nYour text is still in the box. These rules need a magic-link reviewer sign-in "
-          + "(the team phrase does not open them); renew it on the Team & RACI tab and press Save again.");
+          + "(the team phrase does not open them); renew it from \u2139 About in the header and press Save again.");
       });
   }
 
@@ -908,7 +908,7 @@
       if (!r.ok) throw new Error("status " + r.status);
       (state.feedback || []).forEach(function (f) { if (f.turn_id === turnId) f.status = status; });
     }).catch(function () {
-      alert("Could not save the status — sign in on the Team & RACI tab (reviewer or team phrase) and try again.");
+      alert("Could not save the status — unlock with the team phrase (\u{1F512} in the header) and try again.");
     }).then(function () {
       delete state.busy[turnId]; render(root);
     });
@@ -946,7 +946,7 @@
     });
     return chain.then(function () {
       state.bulkBusy = false;
-      if (failed) alert(failed + " of " + rows.length + " rows failed to save — renew your session on the Team & RACI tab and retry.");
+      if (failed) alert(failed + " of " + rows.length + " rows failed to save — renew your reviewer sign-in from \u2139 About in the header and retry.");
       render(root);
     });
   }
@@ -1368,7 +1368,7 @@
       return h + '<div class="sit-empty"><b>These need a personal sign-in.</b><br>'
         + "The team phrase opens the instructions above, but not this pane — these are the rules that "
         + "<i>govern</i> the instructions, so they are deliberately held to a narrower gate. Sign in with "
-        + "a magic link on the <b>Team &amp; RACI</b> tab using an address on the reviewer list, then "
+        + "a magic link from <b>\u2139 About</b> in the header using an address on the reviewer list, then "
         + "re-open this tab. This is a closed door, not an empty list — Sierra’s rules are all present "
         + "and working.</div>";
     }
@@ -1378,7 +1378,7 @@
         + "Sierra keeps running them. Re-open the tab to try again.</div>";
     }
     if (state.rulesState !== "ok") {
-      return h + '<div class="sit-empty">Sign in on the <b>Team &amp; RACI</b> tab to see Sierra’s '
+      return h + '<div class="sit-empty">Sign in from ℹ About in the header to see Sierra’s '
         + "built-in rules.</div>";
     }
 
@@ -1409,7 +1409,7 @@
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
-        + 'Sign in on the <b>Team &amp; RACI</b> tab (magic-link reviewer or the shared team phrase), '
+        + 'Sign in from <b>\u2139 About</b> in the header (magic-link reviewer or the shared team phrase), '
         + "then come back — the queue loads automatically.</div></div>";
       root.innerHTML = html;
       return;
@@ -1417,13 +1417,13 @@
     if (state.error) {
       html += '<div class="sit-empty">Could not load the Sierra logs (' + esc(state.error)
         + "). If you just signed in, re-open this tab; otherwise your session may have expired — "
-        + 'renew it on the <b>Team &amp; RACI</b> tab.</div></div>';
+        + 'renew it from <b>\u2139 About</b> in the header.</div></div>';
       root.innerHTML = html;
       return;
     }
     if (state.gated) {
       html += '<div class="sit-empty">The server returned no rows — your sign-in doesn’t appear to '
-        + "unlock the gated logs. Renew your session on the <b>Team &amp; RACI</b> tab and try again.</div></div>";
+        + "unlock the gated logs. Renew your sign-in from <b>\u2139 About</b> in the header and try again.</div></div>";
       root.innerHTML = html;
       return;
     }
@@ -1585,8 +1585,8 @@
       + (budgetPct >= 80 ? " — getting full. Switch off an instruction you no longer need." : "")
       + "</p>";
     if (state.guidance === null) {
-      html += '<div class="sit-empty">Could not load the guidance rules — renew your session on the '
-        + "<b>Team &amp; RACI</b> tab and re-open this tab.</div>";
+      html += '<div class="sit-empty">Could not load the guidance rules — renew your sign-in from '
+        + "<b>\u2139 About</b> in the header and re-open this tab.</div>";
     } else {
       var used = String(state.draftRule || "").length;
       html += '<div class="sit-guid-composer">'
