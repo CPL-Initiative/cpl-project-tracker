@@ -190,7 +190,9 @@ window.COBI_ADMIN_SURFACE = {
         "admin.js"
       ],
       "reads": [],
-      "writes": [],
+      "writes": [
+        "cobi_nav"
+      ],
       "rpcs": [
         "cobi_rls_gates"
       ],

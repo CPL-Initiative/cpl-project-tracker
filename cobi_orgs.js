@@ -160,12 +160,24 @@
     var btns = nav.querySelectorAll(".cpl-tab[data-tab]");
     Array.prototype.forEach.call(btns, function (b) {
       var t = b.getAttribute("data-tab");
-      // Default view (allow=null): show everything EXCEPT EXCLUSIVE tabs.
+      // The curator overlay (nav_overlay.js / public.cobi_nav) can re-map a tab
+      // to an explicit set of sites, or pin it to all of them. Absent — not
+      // loaded, failed, or simply never edited — every lookup returns null and
+      // this is exactly the code behaviour it replaced.
+      var ov = window.CPL_NAV_OVERLAY;
+      var ovOrgs = ov ? ov.orgsFor(t) : null;
+      var pinned = (ALWAYS.indexOf(t) !== -1) || (ov ? ov.isPinned(t) : false);
+
+      // Default view (no overlay orgs, allow=null): show everything EXCEPT EXCLUSIVE tabs.
       // An org view: show only that org's tabs (which may include an EXCLUSIVE one).
-      // ALWAYS tabs ignore both rules — they manage the sites, so they cannot be
+      // Pinned tabs ignore both rules — they manage the sites, so they cannot be
       // filtered out BY a site.
-      var show = (ALWAYS.indexOf(t) !== -1) ||
-        (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1));
+      var show = pinned ||
+        (ovOrgs ? (ovOrgs.indexOf(org.id) !== -1)
+                : (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1)));
+      // A tab the curator hid from the menu stays hidden under every site.
+      // Checked last so it cannot be undone by a pin.
+      if (ov && ov.isHidden(t)) show = false;
       b.style.display = show ? "" : "none";
       b.setAttribute("data-org-hidden", show ? "0" : "1");
     });

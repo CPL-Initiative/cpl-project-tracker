@@ -14886,6 +14886,12 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
     <!-- DATA-END -->
     <!-- Tab router + rail auth badge + hamburger toggle (PR-Sidebar-A) -->
     <script src="tabs.js"></script>
+    <!-- nav_overlay.js BEFORE nav_groups.js: it exposes window.CPL_NAV_OVERLAY,
+         which nav_groups.js and cobi_orgs.js consult for the curator arrangement
+         (public.cobi_nav). It does NOT gate the menu — nav_groups builds from its
+         code defaults immediately and applies the overlay only when it arrives,
+         so an offline or failing read leaves exactly the shipped menu. -->
+    <script src="nav_overlay.js"></script>
     <script src="nav_groups.js"></script>
     <script src="kpi_reorder.js"></script>
     <script src="kpi_cards.js"></script>
