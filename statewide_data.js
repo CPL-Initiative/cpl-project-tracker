@@ -107086,6 +107086,111 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-AT5B-1-001",
+      "exhibit_ids": [
+        "MAPCXS-AT5B-1-001"
+      ],
+      "title": "Automotive Technology 50-Credit by Exam",
+      "unified_title": "Automotive Technology 50-Credit by Exam",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Technology 50-Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "City College of San Francisco"
+      ],
+      "potential": 69,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 70,
+      "credit_recs": [
+        {
+          "course": "AUTO 50",
+          "credit": "3 hours in Intro to Automotive Mechanics"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAS-C:GL-1-001|MAPSAS-CG(O-1-001|MAPSAS-CGI-1-001|MAPSAS-CGL2-1-001|MAPSAS-CGLI-1-001|MAPSAS-CGLI10-1-001|MAPSAS-CGLI11-1-001|MAPSAS-CGLI12-1-001|MAPSAS-CGLI13-1-001|MAPSAS-CGLI14-1-001|MAPSAS-CGLI15-1-001|MAPSAS-CGLI16-1-001|MAPSAS-CGLI17-1-001|MAPSAS-CGLI18-1-001|MAPSAS-CGLI19-1-001|MAPSAS-CGLI20-1-001|MAPSAS-CGLI21-1-001|MAPSAS-CGLI22-1-001|MAPSAS-CGLI23-1-001|MAPSAS-CGLI24-1-001|MAPSAS-CGLI25-1-001|MAPSAS-CGLI26-1-001|MAPSAS-CGLI28-1-001|MAPSAS-CGLI29-1-001|MAPSAS-CGLI3-1-001|MAPSAS-CGLI30-1-001|MAPSAS-CGLI31-1-001|MAPSAS-CGLI32-1-001|MAPSAS-CGLI33-1-001|MAPSAS-CGLI34-1-001|MAPSAS-CGLI36-1-001|MAPSAS-CGLI37-1-001|MAPSAS-CGLI38-1-001|MAPSAS-CGLI5-1-001|MAPSAS-CGLI7-1-001|MAPSAS-CGLI8-1-001|MAPSAS-CGLI9-1-001|MAPSAS-CGLL1-1-001|MAPSAS-CGLL3-1-001|MAPSAS-CGLL4-1-001|MAPSAS-CG–L-1-001",
       "exhibit_ids": [
         "MAPSAS-C:GL-1-001",
@@ -180784,6 +180889,76 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
+      "exhibit_id": "MAPCXS-CT1B-1-001",
+      "exhibit_ids": [
+        "MAPCXS-CT1B-1-001"
+      ],
+      "title": "Construction Trades",
+      "unified_title": "Construction Trades",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.7,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Construction Trades 107-Credit by Exam"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "City College of San Francisco"
+      ],
+      "potential": 34,
+      "potential_names": [
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "College of the Canyons",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Pasadena City College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 35,
+      "credit_recs": [
+        {
+          "course": "CNST 107",
+          "credit": "3 hours in Blueprint Reading"
+        }
+      ],
+      "authoritative_recs": []
+    },
+    {
       "exhibit_id": "MAPSAA-FOI-1-001",
       "exhibit_ids": [
         "MAPSAA-FOI-1-001"
@@ -226606,6 +226781,30 @@ window.CPL_STATEWIDE = {
           "credit": "1.5 hours in Bridge Construction"
         },
         {
+          "course": "ACA 033B",
+          "credit": "1.5 hours in Cabinet Installation"
+        },
+        {
+          "course": "ACA 033D",
+          "credit": "1.5 hours in Molding and Trims"
+        },
+        {
+          "course": "ACA 034A",
+          "credit": "1.5 hours in Plastic Laminates"
+        },
+        {
+          "course": "ACA 034D",
+          "credit": "1.5 hours in Doors and Door Hardware"
+        },
+        {
+          "course": "ACA 072A",
+          "credit": "1.5 hours in Basic Metal Framing"
+        },
+        {
+          "course": "ACA 074A",
+          "credit": "2 hours in Printreading"
+        },
+        {
           "course": "ACA 033A",
           "credit": "1.5 hours in Cabinet Millwork and Assembly"
         }
@@ -238733,41 +238932,6 @@ window.CPL_STATEWIDE = {
       "authoritative_recs": []
     },
     {
-      "exhibit_id": "MAPSAS-AELA14-1-001",
-      "exhibit_ids": [
-        "MAPSAS-AELA14-1-001"
-      ],
-      "title": "AP  English Literature and Composition (Score of 3, 4 or 5)",
-      "unified_title": "AP  English Literature and Composition (Score of 3, 4 or 5)",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "AP  English Literature and Composition (Score of 3, 4 or 5)"
-      ],
-      "cpl_type": "Standardized Assessment",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 1,
-      "credit_recs": [
-        {
-          "course": "AP Credit ELC",
-          "credit": "6 hours in AP English Literature and Composition (Score of 3, 4 or 5)"
-        }
-      ],
-      "authoritative_recs": []
-    },
-    {
       "exhibit_id": "MAPSAS-AM(O-1-001",
       "exhibit_ids": [
         "MAPSAS-AM(O-1-001"
@@ -244458,8 +244622,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPSAS-AP2A4-1-001"
       ],
-      "title": "AP Physics 2: Algebra-based (Score of 3)",
-      "unified_title": "AP Physics 2: Algebra-based (Score of 3)",
+      "title": "AP Physics 2: Algebra-based (Score of 3 or higher)",
+      "unified_title": "AP Physics 2: Algebra-based (Score of 3 or higher)",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -244467,7 +244631,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "AP Physics 2: Algebra-based (Score of 3)"
+        "AP Physics 2: Algebra-based (Score of 3 or higher)"
       ],
       "cpl_type": "Standardized Assessment",
       "discipline": "Not Mapped",
@@ -245642,34 +245806,6 @@ window.CPL_STATEWIDE = {
         "Portfolio Review - Pharmacology and Pharmacy Calculations"
       ],
       "cpl_type": "Portfolio Review",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": []
-    },
-    {
-      "exhibit_id": "MAPCXS-CT1B-1-001",
-      "exhibit_ids": [
-        "MAPCXS-CT1B-1-001"
-      ],
-      "title": "Construction Trades",
-      "unified_title": "Construction Trades",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.7,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Construction Trades 107-Credit by Exam"
-      ],
-      "cpl_type": "Credit By Exam",
       "discipline": "Not Mapped",
       "sector": "",
       "collaborative_type": "Local",
@@ -246973,17 +247109,17 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Santiago Canyon College",
-        "credit_recs": 449,
+        "credit_recs": 455,
         "exhibits": 21,
         "disciplines": 2,
         "ccc_collaborative": 0,
-        "industry_certs": 449,
+        "industry_certs": 455,
         "pct": 3.5
       },
       {
         "college": "Los Angeles Pierce College",
-        "credit_recs": 408,
-        "exhibits": 333,
+        "credit_recs": 407,
+        "exhibits": 332,
         "disciplines": 13,
         "ccc_collaborative": 0,
         "industry_certs": 77,
@@ -247099,8 +247235,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "City College of San Francisco",
-        "credit_recs": 188,
-        "exhibits": 138,
+        "credit_recs": 190,
+        "exhibits": 140,
         "disciplines": 12,
         "ccc_collaborative": 66,
         "industry_certs": 97,
@@ -247848,21 +247984,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 5666,
-        "exhibits": 1860,
-        "courses": 298,
+        "credit_recs": 5664,
+        "exhibits": 1858,
+        "courses": 297,
         "colleges": 83,
         "ccc_collaborative": 25,
         "pct": 43.9
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2129,
-        "exhibits": 932,
-        "courses": 1042,
+        "credit_recs": 2137,
+        "exhibits": 934,
+        "courses": 1047,
         "colleges": 52,
         "ccc_collaborative": 499,
-        "pct": 16.5
+        "pct": 16.6
       },
       {
         "discipline": "Public and Protective Services",
@@ -248057,22 +248193,22 @@ window.CPL_STATEWIDE = {
     "by_cpl_type": [
       {
         "cpl_type": "Standardized Assessment",
-        "credit_recs": 6807,
-        "exhibits": 2206,
+        "credit_recs": 6806,
+        "exhibits": 2205,
         "colleges": 83,
         "pct": 52.8
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 3588,
+        "credit_recs": 3594,
         "exhibits": 1099,
         "colleges": 79,
-        "pct": 27.8
+        "pct": 27.9
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 1888,
-        "exhibits": 1420,
+        "credit_recs": 1889,
+        "exhibits": 1421,
         "colleges": 58,
         "pct": 14.6
       },
@@ -248115,10 +248251,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1307,
+        "credit_recs": 1313,
         "exhibits": 396,
         "colleges": 40,
-        "pct": 10.1
+        "pct": 10.2
       },
       {
         "mode": "High school coursework (H)",
@@ -248173,7 +248309,7 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 11352,
+        "credit_recs": 11358,
         "exhibits": 4923,
         "colleges": 96,
         "disciplines": 23,
@@ -248599,6 +248735,6 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-08-13T13:53:24",
-  "total_credit_recs": 12894
+  "generated_at": "2026-08-14T07:53:43",
+  "total_credit_recs": 12900
 };

@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-13T13:54:03.145309+00:00",
+  "scraped_at": "2026-08-14T07:54:23.084069+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26817,
+    "jst": 26908,
     "star_colleges": 56
   },
   "computed_star_colleges": 56,
@@ -22,7 +22,7 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1560,
+      "jst": 1569,
       "star": true
     },
     "Santiago Canyon College": {
@@ -32,32 +32,32 @@
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1441,
+      "jst": 1448,
       "star": true
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 982,
+      "jst": 984,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1600,
+      "jst": 1606,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 555,
+      "jst": 558,
       "star": true
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1260,
+      "jst": 1301,
       "star": true
     },
     "Norco College": {
       "vets": 831,
-      "jst": 529,
+      "jst": 537,
       "star": false
     },
     "West Los Angeles College": {
@@ -67,7 +67,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 813,
+      "jst": 814,
       "star": true
     },
     "De Anza College": {
@@ -137,7 +137,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 440,
+      "jst": 441,
       "star": true
     },
     "Cabrillo College": {
@@ -202,7 +202,7 @@
     },
     "Victor Valley College": {
       "vets": 97,
-      "jst": 336,
+      "jst": 339,
       "star": true
     },
     "Los Angeles Mission College": {
@@ -210,14 +210,14 @@
       "jst": 152,
       "star": true
     },
+    "Ventura College": {
+      "vets": 254,
+      "jst": 182,
+      "star": false
+    },
     "Los Angeles Pierce College": {
       "vets": 296,
       "jst": 127,
-      "star": false
-    },
-    "Ventura College": {
-      "vets": 254,
-      "jst": 181,
       "star": false
     },
     "Mission College": {
@@ -232,7 +232,7 @@
     },
     "Citrus College": {
       "vets": 181,
-      "jst": 217,
+      "jst": 219,
       "star": true
     },
     "Cerro Coso Community College": {
@@ -262,7 +262,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 156,
+      "jst": 157,
       "star": true
     },
     "Golden West College": {
@@ -307,7 +307,7 @@
     },
     "Irvine Valley College": {
       "vets": 217,
-      "jst": 127,
+      "jst": 128,
       "star": false
     },
     "Saddleback College": {
@@ -417,7 +417,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 172,
+      "jst": 175,
       "star": true
     },
     "Los Medanos College": {
@@ -497,7 +497,7 @@
     },
     "Columbia College": {
       "vets": 33,
-      "jst": 21,
+      "jst": 22,
       "star": false
     },
     "Chabot College": {
@@ -505,15 +505,15 @@
       "jst": 15,
       "star": false
     },
+    "Taft College": {
+      "vets": 23,
+      "jst": 12,
+      "star": false
+    },
     "Feather River College": {
       "vets": 13,
       "jst": 11,
       "star": true
-    },
-    "Taft College": {
-      "vets": 23,
-      "jst": 11,
-      "star": false
     },
     "Butte College": {
       "vets": 290,
