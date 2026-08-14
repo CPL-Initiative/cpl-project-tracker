@@ -64,6 +64,21 @@
   // keeps even the tab's existence out of the public/default nav.
   var EXCLUSIVE = ["gr-priorities", "contracts"];
 
+  // Tabs that survive the per-site nav filter — visible under EVERY site, not
+  // just the default CPL view.
+  //
+  // Sam, 2026-08-14: "should the Admin tab be at the top level so I can manage
+  // all the orgs?" Yes, and being ungrouped is only the cosmetic half. The
+  // functional half is HERE: applyNav() hides any tab missing from the active
+  // site's `tabs` list, so without this, switching to GR to fix GR's menu would
+  // make the Admin tab vanish out from under you — the one moment you need it
+  // most.
+  //
+  // A list rather than adding "admin" to all six ORGS entries, because that
+  // fails silently in exactly the wrong direction: a site added later would
+  // quietly have no Admin tab, and nobody would notice until they switched to it.
+  var ALWAYS = ["admin"];
+
   function orgById(id) {
     for (var i = 0; i < ORGS.length; i++) if (ORGS[i].id === id) return ORGS[i];
     return null;
@@ -147,7 +162,10 @@
       var t = b.getAttribute("data-tab");
       // Default view (allow=null): show everything EXCEPT EXCLUSIVE tabs.
       // An org view: show only that org's tabs (which may include an EXCLUSIVE one).
-      var show = allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1);
+      // ALWAYS tabs ignore both rules — they manage the sites, so they cannot be
+      // filtered out BY a site.
+      var show = (ALWAYS.indexOf(t) !== -1) ||
+        (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1));
       b.style.display = show ? "" : "none";
       b.setAttribute("data-org-hidden", show ? "0" : "1");
     });
@@ -217,6 +235,7 @@
 
   window.CPL_ORGS = {
     init: init, setOrg: setOrg, ORGS: ORGS,
+    EXCLUSIVE: EXCLUSIVE, ALWAYS: ALWAYS,
     current: function () { return current; },
     _applyNav: function () { applyNav(current); }
   };
