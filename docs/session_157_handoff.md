@@ -2,11 +2,12 @@
 title: Session 157 handoff (SkyGate → next) — the menu is data; go fill the owners
 created: 2026-08-14
 updated: 2026-08-14
-tags: [handoff, admin, cobi, navigation, governance, sierra]
+tags: [handoff, admin, cobi, navigation, governance, sierra, cip, noncredit]
 related:
   - "[[docs/admin_tab_lessons]]"
   - "[[docs/kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults]]"
   - "[[docs/kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty]]"
+  - "[[docs/noncredit_cip_category_scope]]"
 ---
 
 # You are Session 157
@@ -148,6 +149,57 @@ dismissal with a reason** in `kb/governance_surface_map.json`. Do not bulk-dismi
   `slug`, and `action` ∈ create/update/verify/stale/supersede/delete.
 - **A public-bot deploy is outward-facing.** Say so before dispatching it.
 - The stop hook's "unpushed commits" nag after a squash-merge is a false positive.
+
+## ⚠️ Addendum — a second workstream landed after this handoff was written
+
+**SkyCode, same day, working with Sam and Jenni on the CIP tab.** This section was
+appended after SkyGate wrote the rest, so nothing above mentions it.
+
+**Merged:** #1191 (`EITHER` badge + tooltip · Browse/Find nav entries hidden ·
+Program/Award/CIP-Sector multi-select pickers · TOP unbolded, CIP labelled) ·
+#1192 **reverted by** #1194 · #1198 (the scope doc).
+
+⭐ **Read [`docs/noncredit_cip_category_scope.md`](noncredit_cip_category_scope.md)
+before touching noncredit CIP work.** Headline: **the TOP is not load-bearing.**
+Jenni's Short-Term Vocational rule is `32.0111` **plus a secondary credit CIP
+aligning with the subject**, and the **1,796** noncredit programs sitting on a
+"wrong" credit CIP are not errors — that code *is* the secondary. **1,789 of them
+(99.6%) already sit inside their own TOP's crosswalk**, so TOP and the college's
+own assignment corroborate each other and neither is trusted alone.
+
+⚠️ **#1192 is the cautionary tale, and it was live for 20 minutes.** Sam relayed
+"all noncredit programs get 32.0111"; it shipped; Jenni then clarified **only
+Short-Term Vocational** — ESL, Job Prep and some Basic Skills are CDCP-eligible on
+*other* codes, and other noncredit is leisure. The blanket rule was wrong for the
+majority of 3,187 programs. **The guards from it survive the revert and belong in
+whatever replaces it:** computed never stored (a rule-driven default must not be
+written as 3,187 curator revisions nobody made); a proposal says `proposed · COCI
+has X` and never borrows *"changed from"*, which claims a human decision; and a
+proposed code must appear in the row's own option list.
+
+⚠️ **A relayed code table had its labels shifted by one, and it was silent.**
+Jenni's Teams summary merged `32.0101 + 32.0104` onto one line, moving every pair
+after it — *Developmental/Remedial Math* would have been built as `32.0105`, which
+is *Job-Seeking/Changing Skills*. Caught only by checking **all seven pairs**
+against the CO's certified catalog; the published page agrees with the catalog.
+Same shape as the MIS `LocationID` column. **The scope encodes the published page,
+and the validator that caught it runs on every rebuild, not once.**
+
+⚠️ **CTE here is the funding line** (Sam: CTE noncredit qualifies for funding
+non-CTE does not). So **category is confirmed BEFORE CTE is concluded** — a CTE
+secondary CIP does not prove a program is Short-Term Vocational. And do **not**
+ship the "noncredit TOP must start with 49" error flag yet: it would flag 1,970
+programs, **1,601 of them `GOAL = CTE`**, and moving them off an asterisked TOP can
+strip the marker carrying that designation.
+
+**Blocked on Jenni** (§6 of the scope): confirm the Basic Skills pairing (this one
+alone unblocks build phases 1–3) · `32.0199` (60 programs) and `35.0101` (16) are
+in use but absent from her list · is our **2026-07-15** crosswalk cut the locked
+one · is the secondary CIP being published as a COCI field · **can non-CDCP
+categories be CTE at all** (~1,300 programs).
+**Blocked on Sam:** where a confirmed category persists — `localStorage` is wrong
+for a funding-relevant determination; recommend a gated Supabase table with
+who/when, as with `cr_reference_decisions`.
 
 ## Moniker
 
