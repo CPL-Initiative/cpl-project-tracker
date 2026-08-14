@@ -149,7 +149,9 @@ function makeWin(opts) {
   const api = w.CPL_SIERRA_TRAINING_TAB;
   api.activate();
   const html = w.document.getElementById("sierra-training-root").innerHTML;
-  check("gate: logged-out sees the sign-in gate", /Team &amp; RACI/.test(html));
+  // Was: /Team &amp; RACI/. This tab's gate needs a reviewer sign-in for the
+  // rules pane, which now lives in the About menu.
+  check("gate: logged-out sees the sign-in gate", /About|in the header/i.test(html));
   check("gate: logged-out fetches NO gated data", w.__fetches.length === 0);
 })();
 (function (done) {

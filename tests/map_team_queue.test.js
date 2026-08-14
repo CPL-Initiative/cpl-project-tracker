@@ -48,6 +48,11 @@ function makeWin(opts) {
   const w = dom.window;
   if (opts.teamPass) w.localStorage.setItem("cpl_team_pass", opts.teamPass);
   w.fetch = function () { return new Promise(function () {}); };
+  // Shared phrase helper first — production ships both, and the locked state
+  // renders its banner (with a working input) rather than the bare fallback.
+  const tp = w.document.createElement("script");
+  tp.textContent = fs.readFileSync("team_phrase.js", "utf8");
+  w.document.body.appendChild(tp);
   const el = w.document.createElement("script");
   el.textContent = SRC;
   w.document.body.appendChild(el);
@@ -224,7 +229,11 @@ function byId(items) {
   const w = makeWin();                       // logged out
   const r = w.document.getElementById("map-queue-root");
   w.CPL_MAP_QUEUE.render(r);
-  check("gate: logged out sees a sign-in prompt", /Team sign-in required/.test(r.innerHTML));
+  // Was: /Team sign-in required/ beside copy sending people to Team & RACI.
+  // Four of this tab's tables gate the READ, so the locked state must carry a
+  // working input rather than a instruction to go somewhere else.
+  check("gate: logged out gets an unlock box", /data-tp-locked/.test(r.innerHTML));
+  check("gate: …and it is a real input", !!r.querySelector('[data-tp-locked] input[type="password"]'));
   check("gate: logged out renders no queue items", !/mtq-item/.test(r.innerHTML));
   check("gate: logged out is not told the queue is clear", !/items waiting/.test(r.innerHTML));
 

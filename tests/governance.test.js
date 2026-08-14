@@ -68,6 +68,10 @@ function makeWin(opts) {
   const w = dom.window;
   if (opts.teamPass) w.localStorage.setItem("cpl_team_pass", opts.teamPass);
   w.fetch = function () { return new Promise(function () {}); };
+  // Load the shared phrase helper too — production ships both, and the locked
+  // state renders its banner. Without it the tab falls back to a plain notice,
+  // which is a real path but not the one a browser takes.
+  w.eval(fs.readFileSync("team_phrase.js", "utf8"));
   w.eval(SRC);
   return w;
 }
@@ -78,8 +82,13 @@ function makeWin(opts) {
   const r = out.document.getElementById("governance-root");
   out.CPL_GOVERNANCE._state.reg = REG;
   out.CPL_GOVERNANCE.render(r);
-  check("gate: logged out sees a sign-in prompt, not the register",
-    /Team &amp; RACI|Team & RACI/.test(r.innerHTML) && !/Who decides what/.test(r.innerHTML));
+  // Was: asserts the copy names "Team & RACI". That tab no longer offers a
+  // magic link and never needed to be visited for the phrase, so the guard now
+  // asserts the thing that actually matters — a locked tab hands you a way IN.
+  check("gate: logged out gets an unlock box, not the register",
+    /data-tp-locked/.test(r.innerHTML) && !/Who decides what/.test(r.innerHTML));
+  check("gate: …and the box is a real input, not a pointer elsewhere",
+    !!r.querySelector('[data-tp-locked] input[type="password"]'));
   check("gate: logged out leaks no decision-right content",
     !/Primary Contact email/.test(r.innerHTML));
 })();

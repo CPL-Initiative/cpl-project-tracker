@@ -614,7 +614,11 @@
       row.appendChild(att);
       wrap.appendChild(row);
     } else if (!list.length && !arts.length) {
-      wrap.appendChild(el("p", "nclp-locked", "Unlock with the team phrase (Team & RACI) to add insight here."));
+      // Was "(Team & RACI)" — the bounce again, and stale twice over: the
+      // listener above already accepts a phrase entered anywhere, so the copy
+      // was sending people to a tab they no longer needed to visit.
+      wrap.appendChild(el("p", "nclp-locked",
+        "Unlock with the team phrase (🔒 in the header) to add insight here."));
     }
     return wrap;
   }
