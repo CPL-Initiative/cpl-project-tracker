@@ -14905,6 +14905,10 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
     <!-- Shared Activity↔Project association editor popover (workplan chips + project cards) -->
     <script src="team_phrase.js"></script>
     <script src="team_phrase_header.js"></script>
+    <!-- Shared reviewer (magic-link) sign-in — injects into the ℹ About panel and
+         is mounted inline by admin.js. Restores the sign-in path that vanished
+         when RACI's magic-link box was removed (Sam, 2026-08-14). -->
+    <script src="reviewer_signin.js"></script>
     <!-- ^ shared team-phrase unlock (Phase 1 widening, Session 97 follow-up) —
          consumed by assoc_editor / workplan_goals / budget_editor / tmc_builder -->
     <script src="assoc_editor.js"></script>
