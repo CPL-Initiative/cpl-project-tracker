@@ -1,14 +1,38 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-13 (late) · SkyCall — the Common CR Reference worklist is live.",
-  "_session": "Session 152 (SkyCall)",
-  "_status": "The Common CR Reference is built. Colleges have typed 2,344 different wordings for what is often the same credit recommendation, and the new tab groups them and asks you to confirm. It is ranked by how much each decision is worth, so the top of the list is always the best use of your next five minutes — and only 156 groups carry a decision at all. Where an official C-ID or CCN title exists we now name the reference with it, exactly as the Common Course Reference does; M-IDs are wired in as the third step and switch on when you say they are ready. The one thing we held back: when an official title shares no words at all with what colleges wrote, we show it as a suggestion rather than applying it, because in a handful of cases that rename would have been flatly wrong. Next up is the military side, which is about five times larger and will need its own plan.",
+  "_as_of": "2026-08-14 · Sky153 — the military side is scoped, and it is not what we expected.",
+  "_session": "Session 153 (Sky153)",
+  "_status": "The military side of the credit recommendations is now measured. It is 98% of everything in the dataset, and the surprise is that it is far TIDIER than the college-typed side, not messier — the American Council on Education publishes each recommendation and MAP stores it, so 93% of them already carry one single agreed wording. A third of that vocabulary can be cleaned up with no human judgement at all, against about a tenth on the college-typed side. The catch is size and naming: there are three times as many distinct topics, the work is much more spread out (about 250 decisions to cover half of it rather than 50), and almost none of them can be named from an official course number, because ACE recommends subject areas like 'Supervision' rather than courses. One real discovery: Marine Corps records have rank abbreviations baked into the recommendation text itself, which split 482 topics that are really the same thing. Separately, Sam asked whether Sierra knows about the required-evidence field in MAP — she does not, and we have never even asked MAP for it; a probe is running to find out whether that field is cut short at the source or just in the viewer.",
   "items": [
     {
-      "id": "s151-ccr-head-check",
+      "id": "s153-evidence-decision",
+      "for": "Sam",
+      "tab": "CPL Assistant",
+      "text": "Once the probe finishes, you will get a straight answer on whether MAP's required-evidence text is cut short at the source or only in your JSON viewer — they need different fixes. If it comes back healthy and well filled in, say the word and Sierra can start telling students what evidence to bring, like the practical test behind an AWS D1.1 welding certificate."
+    },
+    {
+      "id": "s153-ace-units-question",
+      "for": "Sam",
+      "tab": "Common CR Reference",
+      "text": "One decision that changes a fifth of the military work. The same ACE exhibit sometimes recommends the same topic at 1, 2 and 3 hours — for example Orienteering. Are those one recommendation with a range of hours, or genuinely different ones? We already ruled that hours are not part of a recommendation's identity, but that ruling came from colleges writing the same course differently, which is not quite this situation."
+    },
+    {
+      "id": "s153-ace-granularity",
+      "for": "Sam",
+      "tab": "Common CR Reference",
+      "text": "How finely should military subject areas be split? ACE lists Supervision, Principles of Supervision and Introduction to Supervision separately. One reference or three? Your answer sets the size of the whole military job. Warning from the data: do not extend this to Management — it looks similar but Project Management and Supply Chain Management are genuinely different subjects, not variations."
+    },
+    {
+      "id": "s153-ace-mechanical-spine",
       "for": "Fable",
-      "tab": "Common Course Reference",
-      "text": "Before the CCR's next push, measure whether the CCR's own course distribution is as top-heavy as the credit recommendations turned out to be (top 50 = half of everything). If it is, the same work-the-head strategy makes the CCR tractable, and the 2,344-string CR Reference is the cheap place to prove it first."
+      "tab": "Common CR Reference",
+      "text": "Build the mechanical clean-up for the military lane before any worklist — it is worth a third here, against a tenth on the college side. Four steps: the not-a-topic rows, pure capitalisation differences, hours as an attribute, and stripping the Marine Corps rank abbreviations. The rank step needs its list widened first — 176 topics still do not land cleanly."
+    },
+    {
+      "id": "s153-ace-rank-strip",
+      "for": "Fable",
+      "tab": "Course Credit",
+      "text": "482 military topics carry a rank abbreviation inside the recommendation text, splitting things that are really one topic across 12,157 rows. Stripping the rank reunites 306 of them with a topic that already exists. This is the same Marine Corps duplication already recorded in memory, showing up in the wording rather than in the counts."
     },
     {
       "id": "s150-check-gap-list",
@@ -21,18 +45,6 @@
       "for": "Sam",
       "tab": "MAP Users",
       "text": "One decision only you can make. Eight colleges still show a contact from the old June snapshot even though MAP now holds nobody for them. They keep the old name so nobody is left with a dead end — but MAP is the system of record, and a blank there might mean that person left the role. Should those eight go blank instead?"
-    },
-    {
-      "id": "s150-missing-statewide-titles",
-      "for": "Fable",
-      "tab": "Credential Reference",
-      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's credential table entirely, so she cannot find them at all. Carried for several sessions now."
-    },
-    {
-      "id": "s150-corpus-coverage",
-      "for": "Fable",
-      "tab": "CPL Assistant",
-      "text": "Sierra's exhibit corpus still covers only 59 of 123 colleges, so a 'nothing found' answer at the other 64 is not evidence of anything. Worth deciding whether to close the gap or make the limit visible in her answers."
     },
     {
       "id": "s150-search-tier-contacts",
@@ -57,12 +69,6 @@
       "for": "Sam",
       "tab": "Common CR Reference",
       "text": "Inside that tab, 38 groups are badged with an orange 'AJ 110? — check'. Those are cases where an official C-ID title says something completely different from what every college wrote. We deliberately did NOT apply the official name — one of them would have renamed 'Physical Training and Health Education' to 'Introduction to Criminal Justice'. Tell us if we are being too cautious."
-    },
-    {
-      "id": "s152-military-lane",
-      "for": "Fable",
-      "tab": "Common CR Reference",
-      "text": "Scope the military lane before building anything for it. MAP holds 11,426 distinct credit-recommendation wordings — about 5x what the tab covers today — and 88% of them come from ACE (military). They are subject areas like 'Supervision' and 'Leadership', not courses, so the C-ID/CCN naming cascade has nothing to attach to. Different problem, needs its own scoping pass."
     },
     {
       "id": "s152-free-na-win",
