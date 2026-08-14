@@ -575,6 +575,7 @@ Authoritative external sources we've cached:
 
 - [`docs/military_cr_reference_scope.md`](military_cr_reference_scope.md) — Military (ACE) CR Reference — scope, measured before building
 - [`docs/kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md`](kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md) — Tell a parser defect from a people defect before you build a curation queue
+- [`docs/kb-notes/reference-exhibit-crs-catalog-field-census.md`](kb-notes/reference-exhibit-crs-catalog-field-census.md) — Exhibit CRs Catalog: all 27 fields, measured
 - [`docs/session_154_handoff.md`](session_154_handoff.md) — Session 154 handoff (Sky153 → next)
 
 ## Added 2026-08-13 (Session 152, SkyCall)

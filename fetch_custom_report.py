@@ -108,10 +108,39 @@ REQUEST_PAYLOAD = [
         # string id, so the rollup joins on exhibit Title (export_credential_reference
         # → _rollup_exhibit_cr_catalog). SkillLevel + ExhibitID are the precise
         # de-dupe key; the rest are the credit funnel.
+        # Required-evidence + identity columns added 2026-08-14 (Sam). The full
+        # 27-field census is in the "Discover MAP datasets (manual)" run log
+        # (kb/_probe_exhibit_evidence_fields.py); the measured basis for each:
+        #   EvidenceDescription   2.5% fill, 146 distinct, max 349 chars, NOT
+        #                         truncated — "Exam Scores", "Certificate",
+        #                         "Portfolio Review", "Performance, Demonstration,
+        #                         Audition". WHAT a student must produce.
+        #   EvidenceTypeID        same 2.5% fill, 11-value controlled vocabulary.
+        #   SubmissionGuidelines  2.1% fill, 1,187 distinct, max 1,230 chars — the
+        #                         actionable half ("must submit MJC CPL Petition
+        #                         Form"). ⚠️ 43 values sit at exactly 100 chars, so
+        #                         SOME source caps at 100; it is not a global cap.
+        #   AceID                 the ACE exhibit id (MOS-44B-002, AR-1703-0030) —
+        #                         the identity anchor the military CR Reference
+        #                         lacks (docs/military_cr_reference_scope.md §5).
+        #   CPLTypeCode           6-value vocabulary, 100% fill; M = 262,970 of
+        #                         271,783. The military/non-military discriminator
+        #                         at the catalog grain, for the bucketing doctrine.
+        # ⚠️ The evidence columns are ~97.5% empty, and empty by DESIGN on military
+        # rows (every welding/MOS row sampled had all three blank, ActiveEvidence
+        # =false). That is not a defect — colleges define evidence for the
+        # non-military exhibits. Do not "fix" the nulls.
+        # NOT added, deliberately: LearningModeID / ModeofLearningCode /
+        # CPLModeofLearningDescription are three encodings of ONE field, as are
+        # CPLTypeID / CPLTypeCode / CPLTypeDescription — take one each. CriteriaID
+        # is 270,765 distinct over 271,783 rows: a row surrogate, not data.
+        # _rollup_exhibit_cr_catalog indexes columns BY NAME, so additions are safe.
         "columnName": ["ExhibitID", "SkillLevel", "CreditRecommendation", "Title",
                        "TotalEligibleCreditsForCR", "TotalTranscribedCreditsForCR",
                        "TotalAppliedCreditsForCR", "TotalCreditsInReviewForCR",
-                       "TotalStudentsForCR"]
+                       "TotalStudentsForCR",
+                       "EvidenceDescription", "EvidenceTypeID",
+                       "SubmissionGuidelines", "AceID", "CPLTypeCode"]
     },
 ]
 

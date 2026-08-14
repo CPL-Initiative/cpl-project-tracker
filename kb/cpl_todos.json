@@ -8,7 +8,7 @@
       "id": "s153-evidence-decision",
       "for": "Sam",
       "tab": "CPL Assistant",
-      "text": "Once the probe finishes, you will get a straight answer on whether MAP's required-evidence text is cut short at the source or only in your JSON viewer — they need different fixes. If it comes back healthy and well filled in, say the word and Sierra can start telling students what evidence to bring, like the practical test behind an AWS D1.1 welding certificate."
+      "text": "The required-evidence text is NOT cut short at the source — longest value is 349 characters and lengths vary freely, so what looked truncated in your JSON view is the viewer. It is now being fetched daily, along with the submission guidelines field, which is arguably the more useful of the two (\"must submit MJC CPL Petition Form\"). One thing to know before we show it to students: it is blank on military records by design — every welding and MOS row we sampled had it empty — so Sierra must never say \"no evidence required\" for a military exhibit. Decision needed: publish it to Sierra?"
     },
     {
       "id": "s153-ace-units-question",
