@@ -285,3 +285,176 @@ one look at the fixture.**
    leave an hour → sign out and confirm **both** tabs stay out.
 2. Then: create a category, drag two tabs into it, save, reload — and delete it.
 3. **Fill owners on DR-13…DR-18** (OQ-01) — unchanged, and still nobody's.
+
+---
+
+## 2026-08-15 (later) — Sky160: the manager could not see two of its own items
+
+Three merges: **#1212** (plain words, no glyphs, Admin may live in a category),
+**#1213** (Share becomes a real, manageable group), **#1214** (per-site fallback
+tab; the shared phrase renamed `raci` → `team`).
+
+### The headline finding
+
+⭐ **`cobi_nav` holds 43 rows, stamped `slee@cccco.edu` at 13:59 UTC.** The
+"nobody has dragged-and-saved in a real browser" item — Priority 1 in three
+consecutive handoffs — is **closed by evidence, not by a test.** Sam's renames
+(`workplan` → *Metrics and Plans*, `sierra` → *MAP Team Tools*), his `settings`
+category, his hidden CPL Assistant and every audience rung he set are all
+readable in the table. Nobody had looked.
+
+**The lesson is about verification, not the tab: the answer had been sitting in
+the database for hours while three handoffs described it as unproven.** A
+verification step that only a human can perform still has to be *checked* by
+someone; asking is not the only way to find out.
+
+### Share: an omission with no symptom
+
+Sam: *"Why isn't the Shared Category on my Admin page? Seems it should be."*
+
+Not a failed read. Share was **synthesised** inside `nav_groups.build()` from
+anything carrying `.cpl-tab-external` — the Fact Sheet and Ask Sierra launchers,
+anchors with **no `data-tab`** because they open their own page. Every query on
+the Admin tab asks for `.cpl-tab[data-tab]`, so both were invisible to it, and
+Share had no id for the overlay to write a row against.
+
+⚠️ **The manager looked complete while omitting part of what it manages.** That
+is strictly worse than one that reports it cannot see something: there was
+nothing to notice. Sam found it by looking at his own sidebar and asking why the
+two did not match — which is the only way it *could* have been found.
+
+Three places would have lied once the launchers became visible, and each is the
+same shape — a rule written for tabs, silently applied to a thing that is not a
+tab:
+
+- `cobi_orgs.applyNav()` never saw them, so they showed under every site whatever
+  anyone set. Fixing that naively would have been **worse**: `allow` lists TAB
+  ids, so testing a link key against it hides both launchers the moment anyone
+  picks a site. A launcher with no curator rule shows everywhere, by design.
+- `sitesFor()` had the identical hazard on the *reporting* side. **A table that
+  describes the menu differently from how the menu behaves is worse than one that
+  omits it** — the omission is at least visible.
+- `rowGate()` would have called both *"not checked"*, so **"Not checked yet"
+  would have risen by two the day Share became visible.** A count going up
+  because we started *showing* something is a false finding. New `link` gate.
+
+### The guard was on the wrong axis
+
+Admin refused to be dragged into Sam's Settings category, because `PROTECTED`
+tabs were barred from every group on the theory that a group can be hidden.
+
+⭐ **It cannot actually take Admin with it.** `plan()` already *lifts* a protected
+tab out of a hidden group, asserted in `nav_overlay.test.js` since #1195. The
+drag ban was a second belt over a door already sealed one layer down — and it
+cost Sam the arrangement he wanted. Split into `GROUP_LOCKED`, holding
+`dashboard` alone, and for a different reason than hiding: it is where every
+unmatched link lands.
+
+**Three lists now, each on its own axis** — `PROTECTED` (never hidden),
+`AUDIENCE_LOCKED` (never narrowed), `GROUP_LOCKED` (never grouped). The axis is
+always *what would the viewer be unable to undo*.
+
+### A rule recorded is not a rule applied
+
+Sam, mid-run: *"I dislike the standard cheesy glyphs … prefer either simple text
+chips or muted monocolor glyphs."*
+
+⚠️ **He had already said this.** `cpl_memory` carries
+`cobi-no-cheesy-glyphs-design-rule` from **2026-08-14**, in his words, about the
+side menu. The Admin tab shipped that same week with 👁 👥 🔑 🙈 📌 ✏️ 🗑 💾 on
+every row. Recording a rule and applying it are two different events, and only
+the first happened — the same shape as *"a settled ruling does not enforce
+itself, the consumer has to change"* from the statewide-flag work.
+
+Every control is a word now. A word also survives being read aloud, which a
+pictogram does not.
+
+### The fallback tab was curator-editable and nobody meant it to be
+
+Sam asked for the ~10-line per-site fallback. Writing it turned up worse than
+described: the fallback was not `dashboard`, it was **`valid[0]` — the first
+button in DOM order**, with `dashboard` only behind it.
+
+⚠️ **DOM order became curator-editable the day the Admin tab shipped.** Dragging
+any tab above Dashboard silently changed where every broken link lands. A menu
+edit quietly rewriting routing, with nothing to notice. `homeTab()` asks the
+active site for its declared `home` and keeps DOM order as the last resort — the
+org layer is optional, and a router that depended on it would fail closed, with
+no page at all.
+
+### A live rename has to be order-proof
+
+`team_access.id` was `raci` — named after the Team & RACI tab, which Sam renamed
+to *Team*. He could not find it because **the id is internal and appears nowhere
+a phrase holder can see**; the card is simply labelled *Shared team phrase*.
+
+The secret was untouched (md5 identical before and after), so nobody was locked
+out. But **a live rename and a deploy cannot be simultaneous**, and the
+in-between state is not cosmetic: a card that cannot find its row renders
+**blank**, and typing into a blank card and saving would create a **second row**
+— which `team_pass_check()` accepts, because it matches *any* secret in the
+table. Two live shared phrases, one invisible to whoever rotated the other.
+
+`team_phrases.js` carries `legacy: "raci"` and resolves the id a row *actually
+has* before PATCHing. The existing test fixture deliberately keeps the old id, so
+the whole file is the pre-rename proof; a new block runs the same code against
+the renamed database. **Both orders pass, so the order stopped mattering.**
+
+### The harness lied again, one day later, in a second file
+
+Verifying the Share work against the pre-fix source, both runs printed **zero
+failures** — because an unguarded dereference *threw* and killed the file before
+any check registered. That is
+[`methodology-a-check-that-never-registers-can-never-fail`](kb-notes/methodology-a-check-that-never-registers-can-never-fail.md),
+found yesterday in `admin_tab.test.js`, reappearing in `nav_groups.test.js`
+**within 24 hours**.
+
+⚠️ **A fix applied to one harness is not a fix applied to the practice.** Both
+files carry `val()` now. Real numbers after: 15 of 17 new admin checks fail
+pre-fix, 3 of 6 nav_groups checks — and the three that pass both ways are
+**labelled regression guards rather than counted as proof.**
+
+One new assertion was also wrong on first writing (it asserted a rendered count
+was "not 2", which is a correct count in that fixture for unrelated reasons) —
+caught by *reading what it found* rather than trusting the pass. Third session
+running that this exact move has caught something.
+
+### Where the org / phrase structure actually stands
+
+Sam: *"Finance should not open the entire workplan… Seems like we should have an
+Admin view for each org."*
+
+Measured: the Finance phrase opens Contracts (8 policies / 4 tables) **plus ~30
+more tables and 83 policies**, because `team_pass_check()` matches any secret in
+`team_access`. Three lists describe "orgs" and none is authoritative —
+`cobi_orgs.js` ORGS (5 sites), `team_access` (4 rows), `team_phrases.js` PHRASES
+(4 descriptions) — and they already disagree: **CIP is a site with no phrase.**
+
+⚠️ **A naive "scope each phrase to its own site" locks Finance out of Budget and
+Implementation Funding**, which it genuinely needs — those are shared tables and
+Sam's own June ruling is *shared tabs accept either phrase*. The defect is only
+the third case: the Finance key opening tabs Finance has nothing to do with.
+
+On per-org Admin: **a site FILTER, yes; per-org authority, no.** Admin is
+reviewer-only precisely because a phrase holder who can re-scope what other
+phrase holders see is the superset problem one level up. Most tabs are shared, so
+two org Admins would fight over one menu. Delegation is a *roles* decision and
+belongs in the Governance register.
+
+### Current state
+
+- Menu manager complete for every item in the rail, launchers included.
+- Admin can sit in a category; Dashboard cannot, and says why.
+- `admin_tab` **151 → 170** · `nav_groups` **12 → 20** · `team_phrases` **46 → 49**.
+- `CLAUDE.md` still **2.05×** its budget; three finished §11 rows moved to
+  `docs/reference/finished_workstreams.md` this checkpoint.
+
+### Next concrete step
+
+1. **Sam drags Admin into Settings and saves.** Enabled, not done — his
+   arrangement to make.
+2. **The Finance phrase scope** — needs a written plan and his go before touching
+   live RLS on ~30 tables. Getting it wrong locks working people out mid-task.
+3. **Org roster as data** (`cobi_orgs.js` → a table), which is what makes "what
+   is in Finance" one list instead of two, and what a per-site Admin filter reads.
+4. Fill owners on DR-13…DR-18 (OQ-01) — unchanged, still nobody's.
