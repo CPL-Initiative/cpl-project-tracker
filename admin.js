@@ -98,20 +98,20 @@
    * only as protected as its most open table, and reporting the strongest gate
    * would flatter every mixed tab on the page. */
   var GATES = [
-    { id: "open",     rank: 0, label: "Anyone",            short: "Anyone",        hint: "Readable by anyone who loads the page. Correct for published reference data; wrong for anything about a person." },
-    { id: "public",   rank: 1, label: "Anyone",            short: "Anyone",        hint: "A policy exists but it allows everyone to read. Same practical exposure as no policy." },
-    { id: "team",     rank: 2, label: "Team phrase",       short: "Team phrase",   hint: "The shared team phrase, or a reviewer sign-in. Anyone the phrase has been passed to." },
-    { id: "gr",       rank: 3, label: "GR phrase",         short: "GR phrase",     hint: "The Government Relations phrase, or a reviewer sign-in." },
-    { id: "fin",      rank: 3, label: "Finance phrase",    short: "Finance phrase", hint: "The Finance phrase, or a reviewer sign-in." },
-    { id: "reviewer", rank: 4, label: "Reviewer only",     short: "Reviewer",      hint: "A magic-link sign-in from an address on the reviewer list. The team phrase does NOT open these." },
-    { id: "server",   rank: 5, label: "Server only",       short: "Server only",   hint: "RLS is on with no read policy at all, so nothing can read it through the public API — only a server holding the service key." },
+    { id: "open",     rank: 0, label: "Anyone",            short: "Anyone",        hint: "Anyone who opens the page can read this. Right for things we publish on purpose; wrong for anything about a person." },
+    { id: "public",   rank: 1, label: "Anyone",            short: "Anyone",        hint: "There is a rule, but it lets everyone read. Same result as having no rule at all." },
+    { id: "team",     rank: 2, label: "Team phrase",       short: "Team phrase",   hint: "The shared team phrase, or a personal sign-in. Anyone the phrase has been passed on to." },
+    { id: "gr",       rank: 3, label: "GR phrase",         short: "GR phrase",     hint: "The Government Relations phrase, or a personal sign-in." },
+    { id: "fin",      rank: 3, label: "Finance phrase",    short: "Finance phrase", hint: "The Finance phrase, or a personal sign-in." },
+    { id: "reviewer", rank: 4, label: "Personal sign-in",  short: "Sign-in",       hint: "A personal sign-in by magic link, from an address on the reviewer list. A team phrase does not open these." },
+    { id: "server",   rank: 5, label: "Our jobs only",     short: "Our jobs",      hint: "Nothing can read this through the website at all. Only our own scheduled jobs, which hold a separate key." },
     // A view has NO row-level security of its own. Unless it is security_invoker
     // it runs with its owner's rights and bypasses the RLS on its source tables
     // entirely, so it is ranked with the open cases rather than inheriting the
     // comfort of whatever it selects from. CLAUDE.md already carries this as a
     // standing warning about map_credential_student_rollup.
-    { id: "view",     rank: 0, label: "A view — no rules of its own", short: "View — no rules", hint: "Views and materialised views cannot carry row-level security. Unless it was created security_invoker it runs with its owner's rights and BYPASSES the protection on the tables underneath. Worth checking who holds the grant." },
-    { id: "unknown",  rank: -1, label: "Not mapped",       short: "Not mapped",    hint: "This tab's data surface has not been mapped, so its gate is UNKNOWN — not 'none'. Treat it as unverified rather than safe." },
+    { id: "view",     rank: 0, label: "A saved view — no rules of its own", short: "View — no rules", hint: "This is a saved view rather than a table, and views cannot carry access rules of their own. Unless it was set up to run as whoever is asking, it runs with its creator's rights and skips the protection on the tables underneath. Worth checking who can reach it." },
+    { id: "unknown",  rank: -1, label: "Not checked",      short: "Not checked",   hint: "We have not worked out which tables this page uses, so who can read them is unknown — which is not the same as nobody. Treat it as unchecked rather than safe." },
     /* Two states that are NOT findings about a tab, and must never be rendered
      * as one. `nodata` is a tab that reads nothing at all; `unread` is every tab
      * at once, because the gate measurement itself did not come back.
@@ -120,8 +120,8 @@
      * as unknown and the row chips would report "Not mapped" 35 times over —
      * indistinguishable from a genuine finding that nothing on the site is
      * mapped. The reason the answer is missing belongs in the chip. */
-    { id: "nodata",   rank: 9, label: "No data of its own", short: "No data",     hint: "This tab reads no Supabase table and calls no stored function — it renders content that ships with the page. There is nothing here for database rules to protect." },
-    { id: "unread",   rank: -1, label: "Protection unread", short: "Unread",      hint: "The live protection check has not returned, so this is not a finding about this tab — nothing was measured. See the note at the top of the protection section for why." },
+    { id: "nodata",   rank: 9, label: "No stored information", short: "No data",  hint: "This page does not use any stored information — it shows content that comes with the site. There is nothing here for access rules to protect." },
+    { id: "unread",   rank: -1, label: "Not checked yet",  short: "Unchecked",    hint: "The live check has not come back, so nothing was measured. This is not a finding about this page. See the note at the top for why." },
   ];
   /* ── Visibility: ONE ladder, not two controls ───────────────────────────────
    *
@@ -139,15 +139,15 @@
    * un-hiding restores the rung the item had rather than silently widening it to
    * everyone. */
   var RUNGS = [
-    { id: "everyone",   icon: "👁", short: "Everyone",   label: "Everyone",
-      note: "Anyone who loads the site sees it in the menu." },
-    { id: "signed_in",  icon: "👥", short: "Signed-in",  label: "Signed-in people (team phrase or magic link)",
-      note: "Taken out of the menu for anyone who has not entered a team phrase or signed in." },
-    { id: "magic_link", icon: "🔑", short: "Magic link", label: "Magic-link sign-in only",
-      note: "Taken out of the menu for everyone except magic-link sign-ins. The team phrase does not reveal it." },
-    { id: "nobody",     icon: "🙈", short: "Hidden",     label: "Nobody — take it out of the menu",
-      note: "Removed from the menu for everyone, including you. The page still opens for anyone holding the "
-        + "link, and the data behind it is unchanged." },
+    { id: "everyone",   short: "Everyone",   label: "Everyone",
+      note: "Anyone who opens the site sees it in the menu." },
+    { id: "signed_in",  short: "Signed in",  label: "Anyone signed in — team phrase or magic link",
+      note: "People who have not entered a team phrase or signed in do not see it in the menu." },
+    { id: "magic_link", short: "Magic link", label: "Magic-link sign-in only",
+      note: "Only people who sign in by magic link see it. A team phrase is not enough." },
+    { id: "nobody",     short: "Nobody",     label: "Nobody — take it off the menu",
+      note: "Nobody sees it in the menu, including you. The page still opens for anyone who has the "
+        + "link, and the data behind it does not change." },
   ];
   function rungById(id) {
     for (var i = 0; i < RUNGS.length; i++) if (RUNGS[i].id === id) return RUNGS[i];
@@ -457,10 +457,12 @@
     var target = null;
     for (var i = 0; i < draft.containers.length; i++) if (draft.containers[i].id === containerId) target = draft.containers[i];
     if (!target) return false;
-    // A protected tab may be reordered and renamed but never buried in a group
-    // that can be hidden — the lockout guard, enforced at the point of the drag
-    // as well as at render, so the UI never accepts a move it would silently undo.
-    if (window.CPL_NAV_OVERLAY.PROTECTED[tab] && !target.isTop) return false;
+    // GROUP_LOCKED, not PROTECTED. Admin used to be barred from every category
+    // on the theory that a category can be hidden — but plan() already lifts a
+    // protected tab OUT of a hidden group instead of hiding it with the group,
+    // so that door was sealed twice. Dashboard stays barred: it is the fallback
+    // every deep link lands on, and a fallback should not sit behind a heading.
+    if (window.CPL_NAV_OVERLAY.GROUP_LOCKED[tab] && !target.isTop) return false;
     found.c.tabs.splice(found.ti, 1);
     if (found.c === target && found.ti < index) index--;
     index = Math.max(0, Math.min(index, target.tabs.length));
@@ -642,16 +644,16 @@
    * than a clean slate; here the code IS the record.) */
   function resetAll(root) {
     if (state.saving) return Promise.resolve();
-    if (!confirm("Put the whole menu back to how it ships?\n\n"
-      + "Every rename, reorder, grouping and site change is removed, for everyone. "
-      + "The change history is kept.")) return Promise.resolve();
+    if (!confirm("Put the whole menu back to how the site came?\n\n"
+      + "Every rename, every move, every heading you made and every site setting goes, for everyone. "
+      + "The record of what was changed is kept.")) return Promise.resolve();
     state.saving = true; state.saveMsg = null; render(root);
     return fetch(REST + "/cobi_nav?kind=in.(tab,group)", { method: "DELETE", headers: authHeaders() })
       .then(function (r) {
         if (!r.ok) return httpFail(r, "reset");
         window.CPL_NAV_OVERLAY._set([]);
         state.draft = null; state.dirty = false; state.saving = false;
-        state.saveMsg = { ok: true, text: "✓ The menu is back to how it ships." };
+        state.saveMsg = { ok: true, text: "✓ The menu is back to how the site came." };
         render(root);
       })
       .catch(function (e) {
@@ -730,8 +732,18 @@
       ".adm-item.dragging { opacity:.45; }",
       ".adm-item .grip { color: var(--text-muted); font-size:.8rem; cursor:grab; user-select:none; }",
       ".adm-item .nm { flex:1; color: var(--text-strong); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }",
-      ".adm-item .mini { border:none; background:none; cursor:pointer; color: var(--text-muted); font-size:.78rem; padding:1px 4px; border-radius:4px; }",
-      ".adm-item .mini:hover { background: var(--surface-muted); color: var(--text-strong); }",
+      /* Text chips, not glyphs. Sam, 2026-08-14 + again 2026-08-15: "I dislike
+       * the standard cheesy glyphs … prefer either simple text chips or muted
+       * monocolor glyphs." A word also survives being read aloud, which a
+       * pictogram does not — every one of these controls used to be an emoji
+       * whose meaning a new curator had to guess or hover for. */
+      ".adm-col-head .mini, .adm-item .mini { border:1px solid transparent; background:none; cursor:pointer; color: var(--text-muted); font-size:.7rem; padding:1px 6px; border-radius:10px; white-space:nowrap; font-family:inherit; }",
+      ".adm-col-head .mini:hover, .adm-item .mini:hover { background: var(--surface-muted); color: var(--text-strong); border-color: var(--border); }",
+      // Not a button: the action exists but cannot be taken right now, so it must
+      // not look pressable. Same word, no hover, no pointer.
+      ".adm-item .mini.adm-locked, .adm-col-head .mini.adm-locked { cursor:help; opacity:.6; }",
+      ".adm-item .mini.adm-locked:hover, .adm-col-head .mini.adm-locked:hover { background:none; color: var(--text-muted); border-color:transparent; }",
+      ".adm-item .adm-vis { border-color: var(--border); color: var(--text-body); }",
       ".adm-item.hid { opacity:.55; }",
       ".adm-item.hid .nm { text-decoration: line-through; }",
       ".adm-item.prot { border-left:3px solid var(--mustard, #d9a800); }",
@@ -774,11 +786,12 @@
       + '<span class="grip" title="Drag to reorder, or into another group.">⠿</span>'
       + '<span class="nm" title="' + esc(t.tab) + '">' + esc(name) + "</span>";
     if (t.orgs && t.orgs.length) {
-      h += '<span class="adm-g" title="Shown only on: ' + esc(t.orgs.join(", ")) + '">'
+      h += '<span class="adm-g" title="Only these sites show it: ' + esc(t.orgs.join(", ")) + '">'
         + t.orgs.length + " site" + (t.orgs.length === 1 ? "" : "s") + "</span>";
     }
     if (t.pinned || (prot && t.tab === "admin")) {
-      h += '<span class="adm-g" title="Shown on every site — it cannot be filtered out by one.">📌</span>';
+      h += '<span class="adm-g" title="Shows on every site. Picking a site in the Site dropdown '
+        + 'cannot take it away.">All sites</span>';
     }
     /* Protection, on every row. Two different questions sit next to each other
      * here, so each chip says which one it answers: the visibility button is
@@ -786,24 +799,24 @@
      * reaching for "hide" is exactly the person who needs to be told the two
      * are not the same. */
     var rg = rowGate(t.tab);
-    h += '<span class="adm-g adm-g-' + rg.id + '" title="What protects the data behind this tab: '
-      + esc(rg.hint) + ' Changing who sees the menu item does NOT change this.">'
+    h += '<span class="adm-g adm-g-' + rg.id + '" title="Who can read the data behind this page: '
+      + esc(rg.hint) + ' Changing who sees the menu item does not change this.">'
       + esc(rg.short || rg.label) + "</span>";
-    h += '<button class="mini" data-edit="tab:' + esc(t.tab) + '" title="Rename, or choose which sites show it.">✏️</button>';
+    h += '<button class="mini" data-edit="tab:' + esc(t.tab)
+      + '" title="Change its name, or pick which sites show it.">Rename</button>';
 
     // ONE control for who sees it — see the RUNGS note. It states the current
-    // rung rather than an icon alone, because an icon-only toggle is what made
-    // "hide" look like an annotation.
+    // setting in words rather than as a symbol, because a symbol-only toggle is
+    // what made "hide" look like an annotation.
     var rung = rungOf(t);
     var choices = rungsFor(t.tab);
     if (!choices.length) {
-      h += '<span class="mini" title="This item cannot be hidden, moved into a group, or narrowed to an '
-        + 'audience. Admin is the only place to undo a change here, and Dashboard is where every deep link '
-        + 'falls back to — hiding either would be a one-way door.">🔒 Always shown</span>';
+      h += '<span class="mini adm-locked" title="This one always shows. It is where the site sends anyone '
+        + 'whose link does not match a page, so it has to stay findable.">Always shown</span>';
     } else {
       h += '<button class="mini adm-vis" data-vis="' + esc(t.tab) + '" title="Who sees this in the menu: '
-        + esc(rung.label) + ". " + esc(rung.note) + ' Click to change.">'
-        + esc(rung.icon) + " " + esc(rung.short) + "</button>";
+        + esc(rung.label) + ". " + esc(rung.note) + ' Click to change.">Seen by: '
+        + esc(rung.short) + "</button>";
     }
     return h + "</div>";
   }
@@ -819,15 +832,15 @@
       h += '<label class="adm-visopt' + (cur === r.id ? " on" : "") + '">'
         + '<input type="radio" name="vis-' + esc(t.tab) + '" data-visset="' + esc(t.tab)
         + '" value="' + esc(r.id) + '"' + (cur === r.id ? " checked" : "") + "> "
-        + '<span class="adm-visname">' + esc(r.icon) + " " + esc(r.label) + "</span>"
+        + '<span class="adm-visname">' + esc(r.label) + "</span>"
         + '<span class="adm-visnote">' + esc(r.note) + "</span></label>";
     });
     // The consequence, stated whatever is chosen — it used to appear only inside
-    // the ⚠, which fires on public-read tabs alone, so on most items the word
-    // "hides" never appeared while it applied to all of them.
-    h += '<div class="adm-audnote">This is a <b>filter on the menu</b>, not a note. To simply tell people a '
-      + "team phrase is needed to curate, leave this on <b>Everyone</b>: the tab already says so when they "
-      + "open it, and stays findable meanwhile.</div>";
+    // the warning, which fires on public-read tabs alone, so on most items the
+    // word "hides" never appeared while it applied to all of them.
+    h += "<div class=\"adm-audnote\">This <b>takes the item off the menu</b> for the people it excludes. "
+      + "If you only want to note that a team phrase is needed to make changes, leave this on "
+      + "<b>Everyone</b> — the page says so itself when they open it, and it stays findable meanwhile.</div>";
     h += '<button class="adm-btn" data-editdone>Done</button>';
 
     // Placed on the control, because narrowing the audience of a tab whose data
@@ -835,12 +848,12 @@
     if (cur !== "everyone") {
       var rg = rowGate(t.tab);
       if (rg.id === "open" || rg.id === "public" || rg.id === "view") {
-        h += '<div class="adm-audwarn">⚠ This takes the item out of the menu, but the data behind it is still '
-          + "<b>readable by anyone</b> who opens the page directly. To actually restrict it, its database "
-          + "rules have to change — see the protection column below.</div>";
+        h += '<div class="adm-audwarn"><b>Careful —</b> this takes the item off the menu, but the data behind '
+          + "it can still be <b>read by anyone</b> who opens the page directly. Locking it for real means "
+          + "changing its database rules. See the <b>Who can read it</b> column further down.</div>";
       } else if (rg.id === "unknown" || rg.id === "unread") {
-        h += '<div class="adm-audwarn">⚠ This changes the menu only. What protects the data behind it '
-          + "has not been measured, so treat it as unverified rather than restricted.</div>";
+        h += '<div class="adm-audwarn"><b>Careful —</b> this changes the menu only. We have not checked who '
+          + "can read the data behind this page, so treat it as unknown rather than locked.</div>";
       }
     }
     return h + "</div>";
@@ -852,16 +865,16 @@
     var h = '<div class="adm-editrow" data-cid="' + esc(cid) + '">'
       + '<input type="text" data-label-for="' + esc(t.tab) + '" maxlength="60" value="' + esc(name) + '" '
       + 'aria-label="Menu label">'
-      + '<div class="adm-sitepick" title="Which sites show this item. Choose none to leave it on the default '
-      + 'behaviour for its site.">';
+      + '<div class="adm-sitepick" title="Tick the sites that should show this item. Tick none to leave it '
+      + 'exactly as it behaves today.">';
     orgs.forEach(function (o) {
       var on = chosen.indexOf(o.id) !== -1;
       h += '<label class="' + (on ? "on" : "") + '"><input type="checkbox" data-site="' + esc(o.id)
         + '" data-site-tab="' + esc(t.tab) + '"' + (on ? " checked" : "") + "> " + esc(o.label) + "</label>";
     });
     h += "</div>"
-      + '<label class="adm-check" title="Show on every site, ignoring the list above."><input type="checkbox" '
-      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> 📌 every site</label>";
+      + '<label class="adm-check" title="Show it on every site, whatever is ticked above."><input type="checkbox" '
+      + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> Show on every site</label>";
 
     /* Who sees it is NOT here any more — it is the one visibility ladder on the
      * row (see RUNGS). Two controls for one question is what let an audience be
@@ -869,8 +882,8 @@
      * naming and placement alone. The pointer stays because the control moved. */
     var rung = rungOf(t);
     if (rungsFor(t.tab).length) {
-      h += '<div class="adm-audnote">Who sees this in the menu is set with the <b>' + esc(rung.icon) + " "
-        + esc(rung.short) + "</b> button on the row — currently <b>" + esc(rung.label) + "</b>.</div>";
+      h += '<div class="adm-audnote">Who sees this in the menu is set with the <b>Seen by: ' + esc(rung.short)
+        + "</b> button on the row — it is <b>" + esc(rung.label) + "</b> right now.</div>";
     }
     h += '<button class="adm-btn" data-editdone>Done</button>';
     h += "</div>";
@@ -884,10 +897,10 @@
       return h + '<div class="adm-empty">The menu could not be read for editing. The menu itself is '
         + "unaffected — this is the editor, not the rail.</div>";
     }
-    h += '<p class="adm-intro">Drag an item to reorder it, or into another group. Drag a group heading to '
-      + "move the whole group. Nothing changes for anyone until you press <b>Save</b>. "
-      + "<b>These are display settings</b> — hiding an item removes it from the menu, it does not protect "
-      + "what is behind it.</p>";
+    h += '<p class="adm-intro">Drag an item to move it up or down, or into another heading. Drag a heading '
+      + "to move it and everything under it. <b>Nothing changes for anyone until you press Save.</b> "
+      + "These settings decide what people <b>see in the menu</b> — taking an item off the menu does not "
+      + "lock the data behind it.</p>";
 
     h += '<div class="adm-arrange">';
     d.containers.forEach(function (c, ci) {
@@ -896,27 +909,31 @@
         + (c.isTop ? "" : '<span class="grip" title="Drag to move the whole group.">⠿</span>')
         + '<span class="t">' + esc(c.label) + "</span>";
       if (c.isTop) {
-        h += '<span class="sub" title="Items here sit above the groups, with no heading. Admin and Dashboard '
-          + 'stay here so they can always be reached.">always first</span>';
+        h += '<span class="sub" title="Items here sit at the top of the menu, above the headings. Dashboard '
+          + 'stays here so there is always somewhere to land.">top of the menu</span>';
       } else {
-        h += '<button class="mini" data-edit="group:' + esc(c.id) + '" title="Rename this group.">✏️</button>'
+        h += '<button class="mini" data-edit="group:' + esc(c.id) + '" title="Change this heading&#39;s name.">'
+          + "Rename</button>"
           + '<button class="mini" data-ghide="' + esc(c.id) + '" title="'
-          + (c.hidden ? "Show this group again." : "Hide this group and everything in it from the menu.") + '">'
-          + (c.hidden ? "🙈" : "👁") + "</button>";
+          + (c.hidden ? "Put this heading and its items back on the menu."
+                      : "Take this heading and everything under it off the menu.") + '">'
+          + (c.hidden ? "Show" : "Hide") + "</button>";
         /* Only a category the CURATOR made can be removed, and only while it is
          * empty. A shipped group has no row to delete — it would simply come
          * back — and emptying first is deliberate: deleting a full group would
          * scatter its tabs to the top level, which looks like items going
          * missing rather than a group being removed. */
         if (c.custom) {
-          h += '<span class="adm-g" title="A category you created. Shipped groups cannot be removed.">new</span>';
+          h += '<span class="adm-g" title="A heading you made. The ones that come with the site cannot be '
+            + 'removed.">yours</span>';
           if (!c.tabs.length) {
-            h += '<button class="mini" data-gdel="' + esc(c.id) + '" title="Remove this category. It is '
-              + 'empty, so nothing leaves the menu.">🗑</button>';
+            h += '<button class="mini" data-gdel="' + esc(c.id) + '" title="Remove this heading. It is '
+              + 'empty, so nothing disappears from the menu.">Remove</button>';
           } else {
-            h += '<span class="mini" title="Drag its ' + c.tabs.length + ' item'
-              + (c.tabs.length === 1 ? "" : "s") + " somewhere else first, then this can be removed. "
-              + 'Removing it with items inside would scatter them to the top level.">🗑</span>';
+            h += '<span class="mini adm-locked" title="Move its ' + c.tabs.length + " item"
+              + (c.tabs.length === 1 ? "" : "s") + " somewhere else first. Removing a heading with items "
+              + 'still in it would scatter them to the top of the menu, which looks like they went '
+              + 'missing.">Remove</span>';
           }
         }
       }
@@ -928,7 +945,7 @@
       }
       h += '<div class="adm-col-body' + (c.hidden ? " hid" : "") + '">';
       if (!c.tabs.length) {
-        h += '<div class="sub" style="padding:6px 4px">Empty — drag something here.</div>';
+        h += '<div class="sub" style="padding:6px 4px">Nothing here yet — drag something in.</div>';
       }
       c.tabs.forEach(function (t) { h += itemHtml(t, c.id); });
       h += "</div></div>";
@@ -938,24 +955,24 @@
     // Adding a category is placed with the arrangement, not in the button row —
     // it is an edit to the layout, not an action on the whole draft.
     h += '<div class="adm-addcat"><input type="text" data-newcat maxlength="60" '
-      + 'placeholder="New category name…" aria-label="New category name">'
-      + '<button class="adm-btn" data-addcat>+ Add category</button>'
-      + '<span class="sub">Appears at the end. Drag items into it, then Save.</span></div>';
+      + 'placeholder="Name a new heading…" aria-label="New heading name">'
+      + '<button class="adm-btn" data-addcat>Add heading</button>'
+      + '<span class="sub">It appears at the bottom. Drag items into it, then Save.</span></div>';
 
     h += '<div class="adm-btnrow">'
       + '<button class="adm-btn adm-btn-primary" data-save' + (state.saving || !state.dirty ? " disabled" : "") + ">"
-      + (state.saving ? "Saving…" : "💾 Save the menu") + "</button>"
-      + '<button class="adm-btn" data-discard' + (state.dirty ? "" : " disabled") + ">Discard changes</button>"
-      + '<button class="adm-btn" data-resetall' + (state.saving ? " disabled" : "") + ' title="Removes every '
-      + 'customisation and puts the menu back to how it ships.">↩ Reset to how it ships</button>';
-    if (state.dirty) h += '<span class="adm-dirty">Unsaved changes — nobody sees them yet.</span>';
+      + (state.saving ? "Saving…" : "Save the menu") + "</button>"
+      + '<button class="adm-btn" data-discard' + (state.dirty ? "" : " disabled") + ">Undo my changes</button>"
+      + '<button class="adm-btn" data-resetall' + (state.saving ? " disabled" : "") + ' title="Throws away every '
+      + 'change ever made here and puts the menu back to how it came.">Start over</button>';
+    if (state.dirty) h += '<span class="adm-dirty">Not saved yet — nobody else sees this.</span>';
     if (state.saveMsg) {
       h += '<span class="' + (state.saveMsg.ok ? "adm-saved" : "adm-dirty") + '">' + esc(state.saveMsg.text) + "</span>";
     }
     h += "</div>";
-    h += '<p class="adm-note">Saving changes the menu for <b>everyone</b>, immediately — there is nothing to '
-      + "deploy. If the menu ever fails to load its arrangement, it falls back to exactly how it ships, so a "
-      + "bad save can never leave anyone without a menu. Every change is logged.</p>";
+    h += '<p class="adm-note">Saving changes the menu for <b>everyone, straight away</b> — there is nothing to '
+      + "release. If the menu ever cannot load your arrangement it falls back to how the site came, so a bad "
+      + "save can never leave anyone without a menu. Every change records who made it and when.</p>";
     return h;
   }
 
@@ -964,15 +981,16 @@
     ensureCss();
     var h = '<div class="adm">';
     h += '<h2>Admin <span class="adm-chip">Reviewer only</span></h2>';
-    h += '<p class="adm-intro">One place to see every item in the COBI side menu — what it is called, '
-      + "where it sits, which sites show it — and, beside it, what actually protects the data behind it.</p>";
+    h += '<p class="adm-intro">One place to run the COBI side menu — what each item is called, where it sits, '
+      + "which sites show it, and who sees it. Beside all that, in the last column, is a separate question: "
+      + "who can actually read the information behind it.</p>";
 
     // Said once, plainly, at the top. This is the whole reason the two halves
     // share a table rather than living on separate screens.
-    h += '<div class="adm-warn">⚠ <b>Hiding a menu item is not a security setting.</b> The menu controls what '
-      + "people <i>see</i>. What stops someone reading the data is the database's own rules, and those are in "
-      + "the last column — read live, not described here. A tab can be hidden from every site and still have "
-      + "every row behind it readable by anyone.</div>";
+    h += '<div class="adm-warn"><b>Taking something off the menu does not lock it.</b> The menu decides what '
+      + "people <i>see</i>. What stops someone reading the information is the database's own rules, shown in "
+      + "the last column and checked live every time you open this tab. An item can be off the menu on every "
+      + "site and still be readable by anyone who has the link.</div>";
 
     if (state.loadState === "loading") { h += '<div class="adm-empty">Loading…</div></div>'; root.innerHTML = h; return; }
     if (state.loadState === "signedout") {
@@ -1033,18 +1051,24 @@
       });
     }
     h += '<div class="adm-stat">'
-      + '<div class="box" title="Every item in the side menu right now, read from the menu itself."><div class="n">'
+      + '<div class="box" title="How many items are in the side menu right now. Counted from the menu itself, '
+      + 'so it cannot go out of date."><div class="n">'
       + items.length + '</div><div class="l">Menu items</div></div>'
-      + '<div class="box" title="Sites in the Site dropdown. A menu item can appear in several."><div class="n">'
+      + '<div class="box" title="How many sites are in the Site dropdown at the top. One menu item can appear '
+      + 'on several of them."><div class="n">'
       + ((window.CPL_ORGS && window.CPL_ORGS.ORGS) ? window.CPL_ORGS.ORGS.length : "?") + '</div><div class="l">Sites</div></div>'
-      + '<div class="box" title="Tables in the database, with the rules that gate them read live."><div class="n">'
+      + '<div class="box" title="How many tables of information the site keeps, each with its access rules '
+      + 'checked live just now."><div class="n">'
       + tableCount + '</div><div class="l">Tables</div></div>'
-      + '<div class="box" title="Tables anyone loading the page can read. Correct for published reference data — worth a look for anything else."><div class="n">'
-      + openTables + '</div><div class="l">Readable by anyone</div></div>'
-      + '<div class="box" title="Tables with row-level security on and no read rule at all, so only a server holding the service key can read them."><div class="n">'
-      + serverTables + '</div><div class="l">Server only</div></div>'
-      + '<div class="box" title="Menu items whose data surface has not been mapped. Their protection is UNKNOWN, not none."><div class="n">'
-      + unmapped + '</div><div class="l">Not mapped</div></div>'
+      + '<div class="box" title="Tables anyone who opens the page can read. Right for things we publish on '
+      + 'purpose — worth a second look for anything else."><div class="n">'
+      + openTables + '</div><div class="l">Anyone can read</div></div>'
+      + '<div class="box" title="Tables nothing can read through the website at all — only our own scheduled '
+      + 'jobs, which hold a separate key."><div class="n">'
+      + serverTables + '</div><div class="l">Our jobs only</div></div>'
+      + '<div class="box" title="Menu items where we have not worked out which tables they use. Their access '
+      + 'rules are unknown — which is not the same as none."><div class="n">'
+      + unmapped + '</div><div class="l">Not checked yet</div></div>'
       + "</div>";
 
     // ── Section 1: arrange the menu ──
@@ -1071,10 +1095,10 @@
       return true;
     });
     h += '<div class="adm-toolbar">'
-      + '<input class="adm-input" data-q placeholder="Filter by name, group or id" value="' + esc(state.q) + '">'
-      + '<label class="adm-check" title="Also list menu items that touch no stored data at all — static pages and '
-      + 'built-in reports. They are hidden by default because there is nothing to protect.">'
-      + '<input type="checkbox" data-showall' + (state.showAll ? " checked" : "") + "> include items with no stored data</label>"
+      + '<input class="adm-input" data-q placeholder="Search by name or heading" value="' + esc(state.q) + '">'
+      + '<label class="adm-check" title="Also list the pages that do not use any stored information — plain '
+      + 'pages and built-in reports. They are left out by default because there is nothing to protect.">'
+      + '<input type="checkbox" data-showall' + (state.showAll ? " checked" : "") + "> show pages with no stored information</label>"
       + '<span class="adm-count">' + rows.length + " of " + items.length + "</span>"
       + "</div>";
 
@@ -1082,12 +1106,12 @@
       + "<colgroup><col style=\"width:24%\"><col style=\"width:17%\"><col style=\"width:22%\">"
       + "<col style=\"width:16%\"><col style=\"width:21%\"></colgroup>"
       + "<thead><tr>"
-      + '<th title="The label as it appears in the side menu, read from the menu itself.">Menu item</th>'
-      + '<th title="The heading it sits under in the side menu. Blank means it sits at the top level.">Group</th>'
-      + '<th title="Which sites in the Site dropdown show it. This is DISPLAY only.">Shown on (display)</th>'
-      + '<th title="How many database tables this item reads or writes.">Data</th>'
-      + '<th class="gatecol" title="What actually stops someone reading that data, read live from the database. '
-      + 'This is the only column on this table that is a security control.">Actually protected by</th>'
+      + '<th title="What it is called in the side menu right now.">Menu item</th>'
+      + '<th title="The heading it sits under. Blank means it sits at the top of the menu.">Heading</th>'
+      + '<th title="Which sites show it. This decides what people see, nothing more.">Shown on</th>'
+      + '<th title="How many tables of stored information this page uses.">Uses</th>'
+      + '<th class="gatecol" title="Who can read that information, checked live in the database just now. '
+      + 'This is the only column here that actually stops anyone.">Who can read it</th>'
       + "</tr></thead><tbody>";
 
     if (!rows.length) {
@@ -1101,27 +1125,27 @@
         : "unknown";
       var siteTitle = st
         ? (st.always
-            ? "Pinned to every site — it manages them, so it cannot be filtered out by one."
+            ? "Shows on every site. It manages the sites, so picking one cannot take it away."
             : (st.exclusive
-                ? "Kept out of the default view; appears only under its own site."
+                ? "Kept out of the normal menu — it appears only when its own site is picked."
                 : st.sites.length + " of " + st.total + " sites"))
         : "";
       var gate = g.gate;
       var gateTxt, gateCls, gateTitle;
       if (g.rpcOnly) {
-        gateTxt = "Via functions"; gateCls = "unknown";
-        gateTitle = "This item reaches data through stored database functions (" + g.rpcs.join(", ")
-          + ") rather than tables directly. Each function carries its own rules inside it, which this "
-          + "page does not read — so its protection is UNKNOWN here, not none.";
+        gateTxt = "Not checked"; gateCls = "unknown";
+        gateTitle = "This page gets its information through built-in database routines (" + g.rpcs.join(", ")
+          + ") rather than reading tables directly. Each routine carries its own rules inside it, which this "
+          + "page does not read — so who can read it is unknown here, not nobody.";
       } else if (!g.measured) {
-        gateTxt = "Not mapped"; gateCls = "unknown"; gateTitle = gateById("unknown").hint;
+        gateTxt = "Not checked"; gateCls = "unknown"; gateTitle = gateById("unknown").hint;
       } else if (!gate) {
-        gateTxt = "No stored data"; gateCls = "unknown";
-        gateTitle = "This item does not read or write any database table — it is a static page or a built-in report.";
+        gateTxt = "No stored information"; gateCls = "unknown";
+        gateTitle = "This page does not read or write any stored information — it is a plain page or a built-in report.";
       } else {
         gateTxt = gate.label; gateCls = gate.id;
         gateTitle = gate.hint + (g.tables.length > 1
-          ? "\n\nShown for the LEAST protected of its " + g.tables.length + " tables: " + g.tables.join(", ")
+          ? "\n\nThis shows the LEAST protected of the " + g.tables.length + " tables it uses: " + g.tables.join(", ")
           : "\n\nTable: " + g.tables.join(", "));
       }
       h += "<tr>"
@@ -1142,17 +1166,17 @@
     h += "</tbody></table></div>";
 
     if (unmapped) {
-      h += '<p class="adm-note"><b>' + unmapped + " menu item" + (unmapped === 1 ? " is" : "s are")
-        + " not mapped.</b> Those are rendered by the page itself, or by modules shared across several tabs, "
-        + "so the automatic scan cannot say which data belongs to which tab. Their protection is <b>unknown</b>, "
-        + "not none — do not read a blank there as a clean bill of health.</p>";
+      h += '<p class="adm-note"><b>We have not checked ' + unmapped + " menu item"
+        + (unmapped === 1 ? "" : "s") + ".</b> Those are built by the page itself, or by code shared across "
+        + "several pages, so the automatic check cannot tell which information belongs to which page. Who can "
+        + "read them is <b>unknown</b>, not nobody — a blank here is not a clean bill of health.</p>";
     }
 
     // ── Section 3: what the gates mean ──
-    h += "<h3>What the protections mean</h3>";
+    h += "<h3>What each of these means</h3>";
     h += '<div class="adm-tablewrap"><table class="adm-table">'
       + "<colgroup><col style=\"width:20%\"><col style=\"width:12%\"><col style=\"width:68%\"></colgroup>"
-      + "<thead><tr><th>Protection</th><th>Tables</th><th>What it means</th></tr></thead><tbody>";
+      + "<thead><tr><th>Who can read it</th><th>Tables</th><th>What that means</th></tr></thead><tbody>";
     var seen = {};
     GATES.forEach(function (gt) {
       if (gt.id === "unknown" || seen[gt.label + gt.id]) return;
@@ -1167,10 +1191,11 @@
     });
     h += "</tbody></table></div>";
 
-    h += '<p class="adm-note">Admin is pinned to every site, because it manages them — it cannot be filtered '
-      + "out by the site you are trying to fix. The team phrases themselves stay on their own <b>Team Phrases</b> "
-      + "tab: that one is visible to everyone with its contents held to a reviewer, so folding it in here would "
-      + "hide the existence of the phrases from the people who most need to know they exist.</p>";
+    h += '<p class="adm-note">Admin shows on every site, because it is what manages them — picking a site '
+      + "cannot hide the page you need in order to fix that site. The phrases themselves stay on their own "
+      + "<b>Team Phrases</b> page, which everyone can see even though only a signed-in reviewer can read what "
+      + "is on it. Folding it in here would hide the fact that the phrases exist from the people who most need "
+      + "to know they do.</p>";
 
     h += "</div>";
     root.innerHTML = h;
@@ -1249,10 +1274,9 @@
           index = Math.max(0, siblings.indexOf(over));
         }
         if (moveTab(d, tab, cid, index)) touch();
-        else if (window.CPL_NAV_OVERLAY.PROTECTED[tab]) {
-          alert("“" + tab + "” has to stay at the top level.\n\nAdmin is the only place to undo a menu change, "
-            + "and Dashboard is where every deep link falls back to — putting either inside a group that could "
-            + "be hidden would be a one-way door.");
+        else if (window.CPL_NAV_OVERLAY.GROUP_LOCKED[tab]) {
+          alert("Dashboard has to stay at the top of the menu.\n\nIt is where the site sends anyone whose link "
+            + "does not match a page. That has to be one click away, not inside a heading someone has closed.");
         }
         render(root);
       });

@@ -53,6 +53,25 @@
    * a public visitor arriving at a site with no home has nowhere to go. */
   var AUDIENCE_LOCKED = { dashboard: true };
 
+  /* Tabs that may not be put inside a category — the THIRD list, and the
+   * shortest, because it guards the narrowest thing.
+   *
+   * Being in a category was treated as equivalent to being hideable, so both
+   * protected tabs were barred from one. That is stricter than the guarantee
+   * needs: plan() below already LIFTS a protected tab out of a hidden group
+   * rather than letting it disappear with it, so Admin inside a category that
+   * someone hides reappears at the top level — visible, and undoable from the
+   * tab itself. The door is already sealed one layer down.
+   *
+   * `dashboard` stays barred, and for a different reason than hiding: it is
+   * where every deep link falls back to, and a fallback that can be one click
+   * inside a collapsed heading is a worse landing place than a pinned row.
+   *
+   * Sam, 2026-08-15: "I added a category called Settings… seems it would make
+   * sense to have Admin be over this and separate out Admin from where the
+   * Dashboard lives." */
+  var GROUP_LOCKED = { dashboard: true };
+
   /* What the current viewer holds. Ordered, so a rule is a floor rather than an
    * exact match: a magic-link holder satisfies `signed_in` too.
    *
@@ -421,6 +440,7 @@
     viewerRank: viewerRank,
     AUDIENCE_RANK: AUDIENCE_RANK,
     AUDIENCE_LOCKED: AUDIENCE_LOCKED,
+    GROUP_LOCKED: GROUP_LOCKED,
     PROTECTED: PROTECTED,
     rows: function () { return rows; },
     isLoaded: function () { return loaded; },
