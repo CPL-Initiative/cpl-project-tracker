@@ -4258,3 +4258,18 @@ regex cannot cross.
 reverted (#1194) after ~20 minutes; **the TOP turned out not to be load-bearing** and a whole
 TOP-correction project was unnecessary. See the §11 row and `docs/noncredit_cip_category_scope.md`.
 Story: `docs/team_phrase_lessons.md` · `docs/cip_crosswalk_lessons.md` · handoff `docs/session_158_handoff.md`.
+
+### SkyKey — one dead token wearing four costumes (2026-08-14/15, Session 158)
+
+Four merges (**#1203**, **#1205**, **#1206**, plus #1204 held by Sam), one open (**#1207**). Sam tested live all
+evening; every fix came from a real report and he diagnosed the last one himself.
+⭐ **THE ADMIN SAVE HAD NEVER WORKED ONCE** — `cobi_nav` held **zero rows**. A bulk POST is one INSERT over the
+**union** of the array's keys, so `audience` (NOT NULL, tab rows only) arrived NULL on every group row → 400. The
+defect exists only ACROSS the array, so row-level tests and the mock all passed — and an overlay **seeded empty on
+purpose** gives no signal that writes are failing.
+⭐ **THREE MORE REPORTS WERE ONE EXPIRED TOKEN**, fixed with a keeper rather than a fourteenth copy.
+⚠️ **SHIPPING THAT ALONE WOULD HAVE BEEN WORSE THAN THE BUG** — rotation + six cached refreshers = silent sign-out.
+**Audit what a new component makes FREQUENT, not just whether it is correct.**
+⚠️ **A PRIVACY GUARD HAD SILENTLY STOPPED GUARDING**, and **every detector written this run was wrong on first
+writing** — all three caught by printing what they found instead of trusting the count.
+Story: `docs/session_credentials_lessons.md` · handoff `docs/session_159_handoff.md`.

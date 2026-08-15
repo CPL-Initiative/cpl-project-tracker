@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_161_handoff.md
+---
+
 # Session 160 — handoff from Sky159 (Session 159, 2026-08-15)
 
 You are Session 160. Session 159 closed out **all three** Admin items Sam reported
