@@ -8,6 +8,8 @@ related:
   - "[[docs/kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults]]"
   - "[[docs/kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty]]"
   - "[[docs/noncredit_cip_category_scope]]"
+superseded: true
+superseded_by: session_159_handoff.md
 ---
 
 # You are Session 157

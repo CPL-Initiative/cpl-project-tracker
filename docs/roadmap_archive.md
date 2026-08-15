@@ -4194,3 +4194,37 @@ hold BOTH casings and **0** hold only one, so no human chose. A workbench would 
 parser's job 767 times. Durable:
 [`methodology-tell-a-parser-defect-from-a-people-defect`](docs/kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md).
 Scope: `docs/military_cr_reference_scope.md` · handoff `docs/session_154_handoff.md`.
+
+---
+
+### SkyGate — the menu became data, and a long-red guard was finally read (2026-08-14, Session 156)
+
+Five merges (**#1190**, **#1193**, **#1195**, **#1196** + the governance resolution). Sam tested
+live throughout; every correction came from a real report.
+⭐ **THE COBI SIDE MENU IS DATA** (`cobi_nav`) — order, grouping, labels, per-site mapping and a new
+DISPLAY-ONLY audience filter, all drag-and-drop from the Admin tab. It **overlays** the code
+defaults and never gates them: offline, HTTP error, malformed rows, a throwing `plan()`, a corrupt
+cache and *a read that never resolves* each land on exactly the shipped menu, each with a test. A
+nav that fails closed is a site with no navigation, so the fail-safe got more test surface than the
+feature. `admin`/`dashboard` cannot be hidden and refuse to be dragged into a group — enforced in
+CODE at three points, because the table is the thing being guarded. Seeded EMPTY.
+⭐ **AN EMPTY READ IS ONLY EVIDENCE IF THE SET CANNOT BE EMPTY.** `team_access` is known non-empty so
+`200 + []` proves "not a reviewer"; `sierra_rules` is seeded empty ON PURPOSE, so the same inference
+would have told a reviewer they were locked out AND told a locked-out person Sierra has no rules.
+[`methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty`](docs/kb-notes/methodology-an-empty-read-is-only-evidence-if-the-set-cannot-be-empty.md).
+⭐ **SIERRA'S TEN BUILT-IN RULES ARE VISIBLE AND EDITABLE** — on **Sierra Training**, not Admin (Sam's
+call). The pane renders GENERATED defaults with the overlay painted on top, and a test lifts the real
+`assembleRules` and proves the display merge equals it across 40 overlay×context combinations.
+⚠️ **FIVE WAYS A STATIC SCAN SAYS "NOTHING TO PROTECT"** — eager-loaded tabs, only the first
+`loadScript` per tab, a trailing slash on `REST`, RPC-only tabs, and excluded VIEWS. On a
+security-facing surface each is a claim, not a gap.
+⚠️ **READ A RED GUARD'S RATIONALE BEFORE FIXING *OR* DEFENDING IT.** `governance.test.js` had been red
+for two days; "pre-existing, not mine" and "it must stay red" were both defensible and both useless.
+The assertion's own comment said it is a **noise** guard. **19 of 26 candidates were genuinely
+resolvable** — 4 mapped, and 15 belonged to six previously-unrecorded decision rights (DR-13…DR-18),
+including **the workplan itself, which had no named owner**. DR-16 then flagged itself stale, which
+was a **detector bug** (`\b` cannot match before a dot, so `.github/...` read as missing). **90/90,
+and all 218 suites green.**
+Story: `docs/admin_tab_lessons.md` · ADR
+[`adr-the-side-menu-as-an-overlay-over-code-defaults`](docs/kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults.md)
+· handoff `docs/session_157_handoff.md`.

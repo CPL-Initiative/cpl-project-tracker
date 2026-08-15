@@ -6,6 +6,8 @@ tags: [handoff, sierra, governance, architecture, ace, ccrr, curation]
 related:
   - "[[docs/kb-notes/adr-judgment-in-tables-mechanism-in-code]]"
   - "[[docs/military_cr_reference_scope]]"
+superseded: true
+superseded_by: session_159_handoff.md
 ---
 
 # You are Session 155

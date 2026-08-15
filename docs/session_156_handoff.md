@@ -6,6 +6,8 @@ tags: [handoff, sierra, governance, architecture, admin, cobi, curation]
 related:
   - "[[docs/kb-notes/adr-judgment-in-tables-mechanism-in-code]]"
   - "[[docs/kb-notes/reference-ui-design-system]]"
+superseded: true
+superseded_by: session_159_handoff.md
 ---
 
 # You are Session 156

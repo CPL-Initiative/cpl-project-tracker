@@ -7,6 +7,8 @@ related:
   - "[[docs/military_cr_reference_scope]]"
   - "[[docs/kb-notes/reference-exhibit-crs-catalog-field-census]]"
   - "[[docs/kb-notes/methodology-tell-a-parser-defect-from-a-people-defect]]"
+superseded: true
+superseded_by: session_159_handoff.md
 ---
 
 # You are Session 154
