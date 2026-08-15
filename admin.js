@@ -384,6 +384,25 @@
     var groups = (window.CPL_NAV_GROUPS && window.CPL_NAV_GROUPS.GROUPS) || [];
     var present = navItems().map(function (it) { return it.tab; });
     if (!ov || typeof ov.plan !== "function") return null;
+    /* ⚠ NEVER build the editor from the CACHE.
+     *
+     * nav_overlay paints from localStorage first and fetches after, which is
+     * right for the MENU — a visitor sees their arrangement without waiting.
+     * It is wrong for an EDITOR, because saveDraft() writes every row back: a
+     * draft seeded from a stale cache silently reverts whatever changed since
+     * that cache was written, for every field, including ones nobody touched.
+     *
+     * That is not hypothetical. The cache written before 2026-08-15 carries no
+     * `audience` at all (the column was missing from load()'s select), so a save
+     * built on it resets every rung to "everyone" — which is exactly how Sam
+     * lost nine of them. Fixing the select stops the cache being wrong; this
+     * stops an unconfirmed read being SAVED, which is the general form.
+     *
+     * `isLoaded()` is true once the network read has resolved OR definitively
+     * failed, so this cannot hang the editor on a flaky connection — a failed
+     * read still opens the editor, against code defaults, which is the same
+     * fail-safe the menu itself uses. */
+    if (typeof ov.isLoaded === "function" && !ov.isLoaded()) return null;
     var p = ov.plan(groups, present);
 
     /* plan() carries only placement — {tab, hidden}. The draft has to carry the
@@ -625,6 +644,17 @@
 
   function saveDraft(root) {
     if (state.saving || !state.draft) return Promise.resolve();
+    /* Re-asked at the point of the WRITE, not just when the editor opened. The
+     * guard in buildDraft decides what to OFFER; this decides what actually
+     * goes out, and the two must not be able to disagree — the same split as
+     * the category-delete check. */
+    var ovS = window.CPL_NAV_OVERLAY;
+    if (ovS && typeof ovS.isLoaded === "function" && !ovS.isLoaded()) {
+      state.saveMsg = { ok: false, text: "Not saved — the live menu had not finished loading. "
+        + "Nothing was changed. Try again in a moment." };
+      render(root);
+      return Promise.resolve();
+    }
     state.saving = true; state.saveMsg = null; render(root);
     var rows = draftRows(state.draft);
     var gone = removedGroupKeys(state.draft);
@@ -942,8 +972,16 @@
     var d = ensureDraft();
     var h = "<h3>Arrange the menu</h3>";
     if (!d) {
-      return h + '<div class="adm-empty">The menu could not be read for editing. The menu itself is '
-        + "unaffected — this is the editor, not the rail.</div>";
+      var ov0 = window.CPL_NAV_OVERLAY;
+      var stillReading = ov0 && typeof ov0.isLoaded === "function" && !ov0.isLoaded();
+      // Two different states, and telling them apart matters: one resolves by
+      // itself in a moment, the other never will.
+      return h + '<div class="adm-empty">' + (stillReading
+        ? "Reading the current menu… <span class=\"sub\">The editor opens once we have the live "
+          + "arrangement. It will not edit from a cached copy, because saving writes every setting back "
+          + "and a stale copy would quietly undo whatever changed since.</span>"
+        : "The menu could not be read for editing. The menu itself is unaffected — this is the editor, "
+          + "not the rail.") + "</div>";
     }
     h += '<p class="adm-intro">Drag an item to move it up or down, or into another heading. Drag a heading '
       + "to move it and everything under it. <b>Nothing changes for anyone until you press Save.</b> "
@@ -1451,7 +1489,26 @@
     if (reset) reset.addEventListener("click", function () { resetAll(root); });
   }
 
+  /* Rebuild once the overlay's live read lands, so the editor self-heals rather
+   * than sitting on "Reading the current menu…". A DIRTY draft is left alone —
+   * discarding it would throw away typing to fix a staleness the save guard
+   * already blocks. */
+  var _wiredOverlay = false;
+  function wireOverlay() {
+    if (_wiredOverlay) return;
+    var ov = window.CPL_NAV_OVERLAY;
+    if (!ov || typeof ov.onChange !== "function") return;
+    _wiredOverlay = true;
+    ov.onChange(function () {
+      if (state.dirty) return;
+      state.draft = null;
+      var root = document.getElementById("admin-root");
+      if (root && root.querySelector(".adm")) render(root);
+    });
+  }
+
   function activate() {
+    wireOverlay();
     var root = document.getElementById("admin-root");
     if (!root) return;
     if (state.loadState === "ok") { render(root); return; }
