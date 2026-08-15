@@ -210,16 +210,41 @@ answer_must_match -i "first aid|cpr" "13 on-topic"
 # a default request keeps the CPL-contact line in the college context (COBI /
 # the production widget unchanged); ctx:"external" suppresses it, so the model
 # CANNOT name the coordinator (Sierra answers only from its sources). Anchor =
-# San Diego Mesa College, whose profile carries a populated cpl_coordinator
-# ("Monica Romero" + an sdccd.edu email); its landing URL is /SDMESA so the
-# negative grep can't false-fail on the URL. Both directions asserted.
+# San Diego Mesa College, which carries a populated cpl_coordinator; its landing
+# URL is /SDMESA so the negative grep can't false-fail on the URL.
+#
+# ⚠ DO NOT NAME THE PERSON HERE. This pair hardcoded "Monica Romero" and went
+# red on 2026-08-14 when Mesa's coordinator became Rachel Russell — the roster
+# syncs DAILY, so Sierra was right and the TEST was stale. A CI job must not go
+# red because a college hired someone.
+#
+# The worse half was silent: 14b asserted the answer did NOT contain "romero",
+# and once Romero left the data that assertion COULD NO LONGER FAIL. The privacy
+# guard would have passed while suppression was wide open. An assertion pinned to
+# a value that can leave the data stops being a guard the moment it does.
+#
+# So both directions now anchor on the SHAPE — an sdccd.edu mailbox — and 14b
+# reuses whatever 14a actually surfaced, which keeps the negative tied to the
+# live contact and able to fail again.
 run "14a contacts default (San Diego Mesa — contact included)" \
   '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci"}'
-answer_must_match -i "romero|mdromero" "14a default surfaces the CPL contact"
+answer_must_match -i "[a-z0-9._%+-]+@sdccd\.edu" "14a default surfaces the CPL contact"
+
+# Capture whoever that turned out to be. If 14a failed there is nothing to carry
+# forward, and an empty regex would match everything and turn 14b into a pass —
+# the exact vacuum this rewrite exists to close — so fall back to the domain.
+MESA_CONTACT="$(printf '%s' "$LAST_ANSWER" | grep -Eio '[a-z0-9._%+-]+@sdccd\.edu' | head -1)"
+if [ -z "$MESA_CONTACT" ]; then
+  echo "::warning::14a surfaced no sdccd.edu mailbox — 14b falls back to the domain"
+  MESA_CONTACT="@sdccd.edu"
+fi
 
 run "14b contacts gated (ctx external — contact suppressed)" \
   '{"query":"Who is the CPL contact at San Diego Mesa College?","session_id":"smoke-ci","ctx":"external"}'
-answer_must_not_match -i "romero|mdromero" "14b external ctx never names the contact"
+answer_must_not_match -i "$MESA_CONTACT" "14b external ctx never names the contact"
+# Belt and braces: no Mesa mailbox of ANY kind may appear under an external ctx,
+# so suppression cannot be judged clean merely because the coordinator changed.
+answer_must_not_match -i "[a-z0-9._%+-]+@sdccd\.edu" "14b external ctx names no sdccd.edu mailbox at all"
 
 # ── 15. Credit disposition (v36) — what colleges have ACTED on ───────────────
 # Sierra could always say what credit EXISTS; these modes cover what has been
