@@ -156,6 +156,32 @@ check("guard does NOT fire on a legitimate abbreviation",
   !mispaired("Career Exploration/Awareness", "32.0107") &&
   !mispaired("Developmental/Remedial Math", "32.0104"));
 
+// ── The schema's category list must match the generated one ─────────────────────
+// noncredit_category_decisions constrains category_id with a literal CHECK list.
+// If a category is added to the JSON and not to the constraint, every write for it
+// is rejected by Postgres — and an RLS/constraint-filtered write returns 200 with an
+// empty body, so the tab would report a save that never happened. Cheap to guard,
+// invisible to catch in production.
+(function () {
+  const sqlPath = path.join(ROOT, "chatbox/supabase_noncredit_category_decisions.sql");
+  const sql = fs.readFileSync(sqlPath, "utf8");
+  const m = sql.match(/category_id\s+text\s+not\s+null\s+check\s*\(category_id in \(([\s\S]*?)\)\)/);
+  const inSql = m ? (m[1].match(/'([a-z_]+)'/g) || []).map((s) => s.replace(/'/g, "")) : [];
+  const inJson = cats.categories.map((c) => c.id);
+  check("the schema's CHECK list was found (a rename must not silently skip this test)",
+    inSql.length > 0);
+  check("schema category_id list matches the generated categories exactly",
+    inSql.slice().sort().join(",") === inJson.slice().sort().join(","));
+  // The two guards the SQL header calls load-bearing, asserted so a later edit cannot
+  // quietly drop them: CTE is never stored, and there is no delete path.
+  check("schema stores no cte column — CTE is computed from category + secondary_cip",
+    !/^\s*cte\b/m.test(sql) && !/\bcte\s+boolean/i.test(sql));
+  check("schema has no DELETE policy — clearing writes nulls, keeping history",
+    !/for\s+delete/i.test(sql));
+  check("schema records who and when on every determination",
+    /decided_by\s+text\s+not\s+null/.test(sql) && /decided_at\s+timestamptz\s+not\s+null/.test(sql));
+})();
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
