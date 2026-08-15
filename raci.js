@@ -136,8 +136,16 @@
   // failed refresh, drops the dead session so the UI flips back to "Sign in"
   // rather than pretending to be authed.
   function ensureFresh() {
-    var s = state.sess;
+    // RE-READ before refreshing. A cached session holds whatever refresh token
+    // it saw last, and refresh tokens ROTATE — so a sibling module (or the
+    // cpl_session.js keeper) that renewed since leaves this copy holding a
+    // CONSUMED token. Re-spending one is not a no-op: Supabase treats reuse as
+    // a stolen-token signal, and the catch below then drops the session, so the
+    // curator is silently signed out mid-edit. credential_reference.js already
+    // carries this exact line for this exact reason.
+    var s = getSession() || state.sess;
     if (!s) return Promise.resolve(null);
+    state.sess = s;
     if (s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
         if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");

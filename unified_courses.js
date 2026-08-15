@@ -781,6 +781,11 @@
     // refresh token if the current one is near expiry — no magic-link email.
     // Resolves null if renewal isn't possible (caller then prompts re-sign-in).
     function ensureFresh() {
+      // Re-read first: refresh tokens rotate, so this module-level copy can
+      // hold a CONSUMED one after a sibling module (or the cpl_session.js
+      // keeper) renewed, and re-spending it reads to Supabase as token reuse.
+      // getSession() reads sessionStorage, which is where every renewal lands.
+      session = getSession() || session;
       if (tokenFresh(session)) return Promise.resolve(session);
       if (!session || !session.refresh_token) return Promise.resolve(null);
       return refreshToken(session.refresh_token).then(function (tok) {
