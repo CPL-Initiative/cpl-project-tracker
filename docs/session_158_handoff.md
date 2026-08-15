@@ -8,6 +8,8 @@ related:
   - "[[docs/cip_crosswalk_lessons]]"
   - "[[docs/noncredit_cip_category_scope]]"
   - "[[docs/kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency]]"
+superseded: true
+superseded_by: session_159_handoff.md
 ---
 
 # You are Session 158
