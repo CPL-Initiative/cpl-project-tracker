@@ -98,33 +98,84 @@
    * only as protected as its most open table, and reporting the strongest gate
    * would flatter every mixed tab on the page. */
   var GATES = [
-    { id: "open",     rank: 0, label: "Anyone",            hint: "Readable by anyone who loads the page. Correct for published reference data; wrong for anything about a person." },
-    { id: "public",   rank: 1, label: "Anyone",            hint: "A policy exists but it allows everyone to read. Same practical exposure as no policy." },
-    { id: "team",     rank: 2, label: "Team phrase",       hint: "The shared team phrase, or a reviewer sign-in. Anyone the phrase has been passed to." },
-    { id: "gr",       rank: 3, label: "GR phrase",         hint: "The Government Relations phrase, or a reviewer sign-in." },
-    { id: "fin",      rank: 3, label: "Finance phrase",    hint: "The Finance phrase, or a reviewer sign-in." },
-    { id: "reviewer", rank: 4, label: "Reviewer only",     hint: "A magic-link sign-in from an address on the reviewer list. The team phrase does NOT open these." },
-    { id: "server",   rank: 5, label: "Server only",       hint: "RLS is on with no read policy at all, so nothing can read it through the public API — only a server holding the service key." },
+    { id: "open",     rank: 0, label: "Anyone",            short: "Anyone",        hint: "Readable by anyone who loads the page. Correct for published reference data; wrong for anything about a person." },
+    { id: "public",   rank: 1, label: "Anyone",            short: "Anyone",        hint: "A policy exists but it allows everyone to read. Same practical exposure as no policy." },
+    { id: "team",     rank: 2, label: "Team phrase",       short: "Team phrase",   hint: "The shared team phrase, or a reviewer sign-in. Anyone the phrase has been passed to." },
+    { id: "gr",       rank: 3, label: "GR phrase",         short: "GR phrase",     hint: "The Government Relations phrase, or a reviewer sign-in." },
+    { id: "fin",      rank: 3, label: "Finance phrase",    short: "Finance phrase", hint: "The Finance phrase, or a reviewer sign-in." },
+    { id: "reviewer", rank: 4, label: "Reviewer only",     short: "Reviewer",      hint: "A magic-link sign-in from an address on the reviewer list. The team phrase does NOT open these." },
+    { id: "server",   rank: 5, label: "Server only",       short: "Server only",   hint: "RLS is on with no read policy at all, so nothing can read it through the public API — only a server holding the service key." },
     // A view has NO row-level security of its own. Unless it is security_invoker
     // it runs with its owner's rights and bypasses the RLS on its source tables
     // entirely, so it is ranked with the open cases rather than inheriting the
     // comfort of whatever it selects from. CLAUDE.md already carries this as a
     // standing warning about map_credential_student_rollup.
-    { id: "view",     rank: 0, label: "A view — no rules of its own", hint: "Views and materialised views cannot carry row-level security. Unless it was created security_invoker it runs with its owner's rights and BYPASSES the protection on the tables underneath. Worth checking who holds the grant." },
-    { id: "unknown",  rank: -1, label: "Not mapped",       hint: "This tab's data surface has not been mapped, so its gate is UNKNOWN — not 'none'. Treat it as unverified rather than safe." },
+    { id: "view",     rank: 0, label: "A view — no rules of its own", short: "View — no rules", hint: "Views and materialised views cannot carry row-level security. Unless it was created security_invoker it runs with its owner's rights and BYPASSES the protection on the tables underneath. Worth checking who holds the grant." },
+    { id: "unknown",  rank: -1, label: "Not mapped",       short: "Not mapped",    hint: "This tab's data surface has not been mapped, so its gate is UNKNOWN — not 'none'. Treat it as unverified rather than safe." },
+    /* Two states that are NOT findings about a tab, and must never be rendered
+     * as one. `nodata` is a tab that reads nothing at all; `unread` is every tab
+     * at once, because the gate measurement itself did not come back.
+     *
+     * Without `unread`, a failed or signed-out gate read classifies every table
+     * as unknown and the row chips would report "Not mapped" 35 times over —
+     * indistinguishable from a genuine finding that nothing on the site is
+     * mapped. The reason the answer is missing belongs in the chip. */
+    { id: "nodata",   rank: 9, label: "No data of its own", short: "No data",     hint: "This tab reads no Supabase table and calls no stored function — it renders content that ships with the page. There is nothing here for database rules to protect." },
+    { id: "unread",   rank: -1, label: "Protection unread", short: "Unread",      hint: "The live protection check has not returned, so this is not a finding about this tab — nothing was measured. See the note at the top of the protection section for why." },
   ];
-  /* Worded as "show in the menu to", never "who can access" — the control does
-   * not gate the tab, and a label implying it does is how someone comes to
-   * believe they have secured something. */
-  var AUDIENCE_LABEL = {
-    everyone: "Everyone",
-    signed_in: "Signed-in people (team phrase or magic link)",
-    magic_link: "Magic-link sign-in only",
-  };
-  var AUDIENCE_HELP = {
-    signed_in: "Only shown to people who have entered a team phrase or signed in with a magic link.",
-    magic_link: "Only shown to people signed in with a magic link. The team phrase does not reveal it.",
-  };
+  /* ── Visibility: ONE ladder, not two controls ───────────────────────────────
+   *
+   * `hidden` and `audience` were separate affordances — an 👁 toggle on the row
+   * and a select buried in the ✏️ editor — but they are rungs of a single
+   * question: who sees this in the menu? Everyone → signed-in → magic-link only
+   * → nobody. Sam, 2026-08-14, having pressed 👁: he expected it to ASK which,
+   * and the two-control split is also what let him narrow an audience while
+   * meaning only to annotate one.
+   *
+   * The storage stays two columns because they mean different things to plan()
+   * (an audience rule is per-viewer and recoverable; `hidden` is neither), so
+   * the merge is at the CONTROL, not in the table. rungOf/applyRung are the only
+   * places that translate, and `hidden` deliberately leaves `audience` intact so
+   * un-hiding restores the rung the item had rather than silently widening it to
+   * everyone. */
+  var RUNGS = [
+    { id: "everyone",   icon: "👁", short: "Everyone",   label: "Everyone",
+      note: "Anyone who loads the site sees it in the menu." },
+    { id: "signed_in",  icon: "👥", short: "Signed-in",  label: "Signed-in people (team phrase or magic link)",
+      note: "Taken out of the menu for anyone who has not entered a team phrase or signed in." },
+    { id: "magic_link", icon: "🔑", short: "Magic link", label: "Magic-link sign-in only",
+      note: "Taken out of the menu for everyone except magic-link sign-ins. The team phrase does not reveal it." },
+    { id: "nobody",     icon: "🙈", short: "Hidden",     label: "Nobody — take it out of the menu",
+      note: "Removed from the menu for everyone, including you. The page still opens for anyone holding the "
+        + "link, and the data behind it is unchanged." },
+  ];
+  function rungById(id) {
+    for (var i = 0; i < RUNGS.length; i++) if (RUNGS[i].id === id) return RUNGS[i];
+    return RUNGS[0];
+  }
+  function rungOf(item) {
+    if (!item) return RUNGS[0];
+    if (item.hidden) return rungById("nobody");
+    return rungById(item.audience || "everyone");
+  }
+  function applyRung(item, id) {
+    if (!item) return;
+    if (id === "nobody") { item.hidden = true; return; }
+    item.hidden = false;
+    item.audience = id;
+  }
+  /* Which rungs this tab may take. Protection is enforced HERE as well as in the
+   * overlay and the drag — an option that cannot be honoured must not be offered,
+   * or the control lies about what it will do. */
+  function rungsFor(tab) {
+    var ov = window.CPL_NAV_OVERLAY;
+    if (ov.AUDIENCE_LOCKED[tab] && ov.PROTECTED[tab]) return [];
+    return RUNGS.filter(function (r) {
+      if (r.id === "nobody") return !ov.PROTECTED[tab];
+      if (r.id !== "everyone") return !ov.AUDIENCE_LOCKED[tab];
+      return true;
+    });
+  }
 
   function gateById(id) {
     for (var i = 0; i < GATES.length; i++) if (GATES[i].id === id) return GATES[i];
@@ -253,6 +304,29 @@
       if (!worst || g.rank < worst.rank) worst = g;
     });
     return { gate: worst, tables: tables, rpcs: rpcs, measured: true };
+  }
+
+  /* The gate as a menu ROW should state it — every row, not only the alarming
+   * ones. Until now the chip rendered for `open`/`public`/`view` alone, so a
+   * properly protected tab showed nothing and read as unexamined: the same
+   * "only the bad case is labelled" asymmetry that made the audience note
+   * invisible on most items. Sam asked for the method to be noted on each item,
+   * and this is measured rather than hand-typed.
+   *
+   * `tabGate` keeps its null-means-no-data contract — the summary and the table
+   * below both depend on it — so the two states that are NOT findings about a
+   * tab are resolved here, at the point of display, and never counted as gates.
+   */
+  function rowGate(tab) {
+    var g = tabGate(tab);
+    // Structural unknowns first: both are known from the static surface scan,
+    // so they stand whether or not the live gate read came back.
+    if (!g.measured || g.rpcOnly) return gateById("unknown");
+    if (!g.gate) return gateById("nodata");
+    // Only now can a missing measurement be the reason. Reporting "Not mapped"
+    // here would turn one failed RPC into 35 findings.
+    if (!state.gates) return gateById("unread");
+    return g.gate;
   }
 
   /* ── The arrangement editor's model ────────────────────────────────────────
@@ -552,6 +626,15 @@
       ".adm-g-open, .adm-g-public { color: var(--brick, #8c2f22); background: rgba(140,47,34,.10); font-weight:700; }",
       ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
       ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
+      // Neither a pass nor a fail: two states that are not findings about a tab.
+      ".adm-g-nodata, .adm-g-unread, .adm-g-unknown { color: var(--text-muted); background: var(--surface-muted); }",
+      ".adm-vis { white-space:nowrap; }",
+      ".adm-visrow { flex-direction:column; align-items:stretch; gap:4px; }",
+      ".adm-vistitle { font-size:.82rem; color: var(--text-strong); margin-bottom:2px; }",
+      ".adm-visopt { display:block; padding:5px 8px; border:1px solid var(--border-soft, #d8d8d8); border-radius:6px; cursor:pointer; }",
+      ".adm-visopt.on { border-color: var(--navy-primary); background: var(--surface-muted); }",
+      ".adm-visname { font-size:.82rem; font-weight:600; color: var(--text-strong); }",
+      ".adm-visnote { display:block; font-size:.74rem; color: var(--text-muted); margin-left:1.35rem; }",
       ".adm-g-unknown { color: var(--text-muted); background: var(--surface-muted); font-style:italic; }",
       ".adm-note { font-size:.76rem; color: var(--text-muted); border-left:3px solid var(--border-strong); padding:4px 10px; margin:14px 0 0; }",
       ".adm-soon { border:1px dashed var(--border-strong); border-radius:8px; background: var(--surface-subtle); padding:12px 14px; margin:14px 0 0; font-size:.84rem; color: var(--text-body); }",
@@ -604,8 +687,8 @@
     var prot = !!ov.PROTECTED[t.tab];
     var nav = navItems().filter(function (n) { return n.tab === t.tab; })[0];
     var name = t.label != null ? t.label : (nav ? nav.label : t.tab);
-    var g = tabGate(t.tab);
     if (state.editKey === "tab:" + t.tab) return itemEditor(t, cid, name);
+    if (state.editKey === "vis:" + t.tab) return visEditor(t, cid, name);
 
     var h = '<div class="adm-item' + (t.hidden ? " hid" : "") + (prot ? " prot" : "") + '"'
       + ' draggable="true" data-drag="tab:' + esc(t.tab) + '" data-cid="' + esc(cid) + '">'
@@ -618,28 +701,68 @@
     if (t.pinned || (prot && t.tab === "admin")) {
       h += '<span class="adm-g" title="Shown on every site — it cannot be filtered out by one.">📌</span>';
     }
-    if (t.audience && t.audience !== "everyone") {
-      h += '<span class="adm-g adm-g-aud" title="' + esc(AUDIENCE_HELP[t.audience] || "")
-        + ' This changes who SEES the menu item. The page itself still opens for anyone with the link, '
-        + 'and the data behind it is protected only by its database rules.">'
-        + esc(AUDIENCE_LABEL[t.audience] || t.audience) + "</span>";
-    }
-    // The gate travels WITH the item into the arrange view. Someone reaching for
-    // "hide" is exactly the person who needs to be told hiding is not protecting.
-    if (g.gate && (g.gate.id === "open" || g.gate.id === "public" || g.gate.id === "view")) {
-      h += '<span class="adm-g adm-g-' + g.gate.id + '" title="' + esc(g.gate.hint)
-        + ' Hiding this menu item does NOT change that.">' + esc(g.gate.label) + "</span>";
-    }
+    /* Protection, on every row. Two different questions sit next to each other
+     * here, so each chip says which one it answers: the visibility button is
+     * who SEES the menu item, this chip is what protects the DATA. Someone
+     * reaching for "hide" is exactly the person who needs to be told the two
+     * are not the same. */
+    var rg = rowGate(t.tab);
+    h += '<span class="adm-g adm-g-' + rg.id + '" title="What protects the data behind this tab: '
+      + esc(rg.hint) + ' Changing who sees the menu item does NOT change this.">'
+      + esc(rg.short || rg.label) + "</span>";
     h += '<button class="mini" data-edit="tab:' + esc(t.tab) + '" title="Rename, or choose which sites show it.">✏️</button>';
-    if (prot) {
-      h += '<span class="mini" title="This item cannot be hidden or moved into a group. Admin is the only '
-        + 'place to undo a change here, and Dashboard is where every deep link falls back to — hiding either '
-        + 'would be a one-way door.">🔒</span>';
+
+    // ONE control for who sees it — see the RUNGS note. It states the current
+    // rung rather than an icon alone, because an icon-only toggle is what made
+    // "hide" look like an annotation.
+    var rung = rungOf(t);
+    var choices = rungsFor(t.tab);
+    if (!choices.length) {
+      h += '<span class="mini" title="This item cannot be hidden, moved into a group, or narrowed to an '
+        + 'audience. Admin is the only place to undo a change here, and Dashboard is where every deep link '
+        + 'falls back to — hiding either would be a one-way door.">🔒 Always shown</span>';
     } else {
-      h += '<button class="mini" data-hide="' + esc(t.tab) + '" title="'
-        + (t.hidden ? "Show this in the menu again." : "Remove this from the menu. The page itself still works "
-          + "if someone has the link, and the data behind it is unchanged.") + '">'
-        + (t.hidden ? "🙈" : "👁") + "</button>";
+      h += '<button class="mini adm-vis" data-vis="' + esc(t.tab) + '" title="Who sees this in the menu: '
+        + esc(rung.label) + ". " + esc(rung.note) + ' Click to change.">'
+        + esc(rung.icon) + " " + esc(rung.short) + "</button>";
+    }
+    return h + "</div>";
+  }
+
+  /* The visibility ladder, opened from the row rather than buried in ✏️ — the
+   * hide affordance now ASKS who, which is what pressing it implied all along. */
+  function visEditor(t, cid, name) {
+    var cur = rungOf(t).id;
+    var choices = rungsFor(t.tab);
+    var h = '<div class="adm-editrow adm-visrow" data-cid="' + esc(cid) + '">'
+      + '<div class="adm-vistitle">Who sees <b>' + esc(name) + "</b> in the menu?</div>";
+    choices.forEach(function (r) {
+      h += '<label class="adm-visopt' + (cur === r.id ? " on" : "") + '">'
+        + '<input type="radio" name="vis-' + esc(t.tab) + '" data-visset="' + esc(t.tab)
+        + '" value="' + esc(r.id) + '"' + (cur === r.id ? " checked" : "") + "> "
+        + '<span class="adm-visname">' + esc(r.icon) + " " + esc(r.label) + "</span>"
+        + '<span class="adm-visnote">' + esc(r.note) + "</span></label>";
+    });
+    // The consequence, stated whatever is chosen — it used to appear only inside
+    // the ⚠, which fires on public-read tabs alone, so on most items the word
+    // "hides" never appeared while it applied to all of them.
+    h += '<div class="adm-audnote">This is a <b>filter on the menu</b>, not a note. To simply tell people a '
+      + "team phrase is needed to curate, leave this on <b>Everyone</b>: the tab already says so when they "
+      + "open it, and stays findable meanwhile.</div>";
+    h += '<button class="adm-btn" data-editdone>Done</button>';
+
+    // Placed on the control, because narrowing the audience of a tab whose data
+    // anyone can read is the moment someone comes to believe they protected it.
+    if (cur !== "everyone") {
+      var rg = rowGate(t.tab);
+      if (rg.id === "open" || rg.id === "public" || rg.id === "view") {
+        h += '<div class="adm-audwarn">⚠ This takes the item out of the menu, but the data behind it is still '
+          + "<b>readable by anyone</b> who opens the page directly. To actually restrict it, its database "
+          + "rules have to change — see the protection column below.</div>";
+      } else if (rg.id === "unknown" || rg.id === "unread") {
+        h += '<div class="adm-audwarn">⚠ This changes the menu only. What protects the data behind it '
+          + "has not been measured, so treat it as unverified rather than restricted.</div>";
+      }
     }
     return h + "</div>";
   }
@@ -661,53 +784,16 @@
       + '<label class="adm-check" title="Show on every site, ignoring the list above."><input type="checkbox" '
       + 'data-pin="' + esc(t.tab) + '"' + (t.pinned ? " checked" : "") + "> 📌 every site</label>";
 
-    // Who SEES it. Deliberately worded as "show in the menu to", never "access":
-    // the control does not gate the tab, and a label implying it does is how
-    // someone ends up believing they have secured something.
-    var prot = window.CPL_NAV_OVERLAY.AUDIENCE_LOCKED[t.tab];
-    if (!prot) {
-      h += '<label class="adm-check" title="Who sees this in the menu. It does NOT lock the page — '
-        + 'anyone with the link still opens it, and the data is protected by its database rules only.">'
-        + "Show in menu to: "
-        + '<select class="adm-select sit-aud" data-aud="' + esc(t.tab) + '">'
-        + ["everyone", "signed_in", "magic_link"].map(function (a) {
-          return '<option value="' + a + '"' + ((t.audience || "everyone") === a ? " selected" : "") + ">"
-            + esc(AUDIENCE_LABEL[a]) + "</option>";
-        }).join("")
-        + "</select></label>";
-
-      /* What this control DOES, stated unconditionally and next to the control.
-       *
-       * It used to be stated only inside the ⚠ below, which renders only when
-       * the tab's data is public-read or unmapped — so on most items the word
-       * "hides" never appeared at all, and the option reading "Signed-in people
-       * (team phrase or magic link)" invites the opposite reading: a note that a
-       * phrase is needed. Sam hit exactly that (2026-08-14): "I wasn't trying to
-       * hide it… just noting that they need a team phrase to curate." The
-       * consequence is unconditional, so the sentence describing it has to be
-       * too, and the ⚠ goes back to being only about security. */
-      h += '<div class="adm-audnote">Anything other than <b>Everyone</b> <b>takes this item out of the '
-        + "menu</b> for people who do not have it — it is a filter, not a note. To simply tell people a "
-        + "team phrase is needed, leave this on <b>Everyone</b>: the tab already says so when they open "
-        + "it, and stays findable meanwhile.</div>";
+    /* Who sees it is NOT here any more — it is the one visibility ladder on the
+     * row (see RUNGS). Two controls for one question is what let an audience be
+     * narrowed by someone who meant only to annotate, so this editor is now
+     * naming and placement alone. The pointer stays because the control moved. */
+    var rung = rungOf(t);
+    if (rungsFor(t.tab).length) {
+      h += '<div class="adm-audnote">Who sees this in the menu is set with the <b>' + esc(rung.icon) + " "
+        + esc(rung.short) + "</b> button on the row — currently <b>" + esc(rung.label) + "</b>.</div>";
     }
     h += '<button class="adm-btn" data-editdone>Done</button>';
-
-    // The warning is placed HERE, on the control, rather than only in the page
-    // header — someone narrowing the audience of a tab whose data anyone can
-    // read is about to believe they have protected it, and this is the moment
-    // that belief forms.
-    if (!prot && (t.audience || "everyone") !== "everyone") {
-      var g = tabGate(t.tab);
-      if (g.gate && (g.gate.id === "open" || g.gate.id === "public" || g.gate.id === "view")) {
-        h += '<div class="adm-audwarn">⚠ This hides the menu item, but the data behind it is still '
-          + "<b>readable by anyone</b> who opens the page directly. To actually restrict it, its database "
-          + "rules have to change — see the protection column below.</div>";
-      } else if (g.rpcOnly || !g.measured) {
-        h += '<div class="adm-audwarn">⚠ This hides the menu item only. What protects the data behind it '
-          + "has not been mapped, so treat it as unverified rather than restricted.</div>";
-      }
-    }
     h += "</div>";
     return h;
   }
@@ -1071,11 +1157,25 @@
     });
 
     // ── Per-item controls ──
-    root.querySelectorAll("[data-hide]").forEach(function (b) {
+    // Opening the ladder is NOT a change: pressing the visibility button used to
+    // toggle `hidden` on the spot, which is the behaviour Sam read as an
+    // annotation. It now asks, and nothing is dirty until a rung is picked.
+    root.querySelectorAll("[data-vis]").forEach(function (b) {
       b.addEventListener("click", function () {
-        var f = findTab(d, b.getAttribute("data-hide"));
-        if (!f) return;
-        f.item.hidden = !f.item.hidden;
+        state.editKey = "vis:" + b.getAttribute("data-vis");
+        render(root);
+      });
+    });
+    root.querySelectorAll("[data-visset]").forEach(function (r) {
+      r.addEventListener("change", function () {
+        var f = findTab(d, r.getAttribute("data-visset"));
+        if (!f || !r.checked) return;
+        // Re-check the protection list at the point of the write. The editor
+        // only offers permitted rungs, but this is the half that runs — and the
+        // overlay guards the same rule again below it.
+        var allowed = rungsFor(f.item.tab).some(function (x) { return x.id === r.value; });
+        if (!allowed) return;
+        applyRung(f.item, r.value);
         touch(); render(root);
       });
     });
@@ -1118,14 +1218,6 @@
         touch(); render(root);
       });
     });
-    root.querySelectorAll("[data-aud]").forEach(function (sel) {
-      sel.addEventListener("change", function () {
-        var f = findTab(d, sel.getAttribute("data-aud"));
-        if (!f) return;
-        f.item.audience = sel.value;
-        touch(); render(root);
-      });
-    });
     root.querySelectorAll("[data-pin]").forEach(function (cb) {
       cb.addEventListener("change", function () {
         var f = findTab(d, cb.getAttribute("data-pin"));
@@ -1162,6 +1254,11 @@
     _classify: classify,
     _gateById: gateById,
     _tabGate: tabGate,
+    _rowGate: rowGate,
+    _rungOf: rungOf,
+    _applyRung: applyRung,
+    _rungsFor: rungsFor,
+    _RUNGS: RUNGS,
     _navItems: navItems,
     _sitesFor: sitesFor,
     _loadGates: loadGates,
