@@ -378,7 +378,27 @@
   function load() {
     var cached = readCache();
     if (cached && cached.length) { rows = cached; notify(); }
-    return fetch(REST + "/cobi_nav?select=kind,key,label,parent,sort_order,hidden,orgs,pinned,updated_by,updated_at", {
+    /* ⚠ EVERY COLUMN sanitize() READS MUST BE IN THIS LIST.
+     *
+     * `audience` was missing from 2026-08-14 (when the column shipped) to
+     * 2026-08-15. PostgREST returns only what is selected, so `r.audience` was
+     * always undefined, sanitize() defaulted it to "everyone", and the result
+     * was worse than a broken filter — it was a SILENT one, wrong in three
+     * places at once:
+     *   1. audienceAllows() always returned true, so the rule never hid anything
+     *      from anybody. A curator setting "magic link only" changed nothing.
+     *   2. The Admin editor hydrates its draft from these rows, so it displayed
+     *      "Everyone" for every tab — agreeing with itself, and with nothing.
+     *   3. A save writes the whole row back, so ANY edit erased every audience
+     *      in the table. Sam lost nine of them in one drag.
+     *
+     * An explicit select list is a SECOND schema that has to be maintained in
+     * step with the first, and nothing failed when it drifted. The test
+     * `nav_overlay.test.js` now derives the required columns from sanitize()
+     * itself and asserts they are all here, so the next column cannot repeat it.
+     * Do not "simplify" this to select=* either — the point is that the two
+     * lists are checked against each other, not that one of them is long. */
+    return fetch(REST + "/cobi_nav?select=kind,key,label,parent,sort_order,hidden,orgs,pinned,audience,updated_by,updated_at", {
       headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON },
     }).then(function (r) {
       if (!r.ok) throw new Error("nav overlay " + r.status);

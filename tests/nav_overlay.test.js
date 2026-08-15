@@ -361,3 +361,44 @@ setTimeout(function () {
   console.log(`\nnav_overlay.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
 }, 900);
+
+/* ── The select list is a SECOND schema, and it drifted ──────────────────────
+ *
+ * `audience` shipped as a column on 2026-08-14 and was left out of load()'s
+ * explicit `select=`. PostgREST returns only what is asked for, so r.audience
+ * was always undefined and sanitize() defaulted it to "everyone" — which made
+ * the failure SILENT and wrong in three places at once: the filter never hid
+ * anything, the Admin editor showed "Everyone" for every tab and agreed with
+ * itself, and every save wrote that back over the real values. Sam lost nine
+ * audience settings in a single drag on 2026-08-15.
+ *
+ * Asserting `audience` is present would only guard the instance. This derives
+ * the required set from sanitize() itself, so the NEXT column cannot repeat it. */
+(function () {
+  const src = fs.readFileSync("nav_overlay.js", "utf8");
+
+  const selectMatch = src.match(/cobi_nav\?select=([a-z_,]+)/);
+  check("load() still names its columns explicitly", !!selectMatch);
+  const selected = selectMatch ? selectMatch[1].split(",") : [];
+
+  // Every `r.<column>` sanitize() reads off a raw row is a column the request
+  // has to ask for. Scoped to sanitize's body so unrelated `r.` uses elsewhere
+  // (fetch responses, for one) cannot pad or pollute the set.
+  const body = src.slice(src.indexOf("function sanitize("));
+  const sanitizeBody = body.slice(0, body.indexOf("\n  }"));
+  const read = new Set();
+  let m;
+  const re = /\br\.([a-z_]+)/g;
+  while ((m = re.exec(sanitizeBody)) !== null) read.add(m[1]);
+
+  check("sanitize() reads a non-trivial set of columns (else this test proves nothing)",
+    read.size >= 8);
+
+  const missing = [...read].filter((c) => selected.indexOf(c) === -1);
+  check(`every column sanitize() reads is in the select list (${read.size} read, ${missing.length} missing${missing.length ? ": " + missing.join(", ") : ""})`,
+    missing.length === 0);
+
+  // The specific regression, named, so a reader knows what this block is about.
+  check("audience in particular is selected — the 2026-08-15 data loss",
+    selected.indexOf("audience") !== -1);
+})();
