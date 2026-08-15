@@ -1,0 +1,25 @@
+{
+  "_built_by": "kb/_classify_noncredit_programs.py",
+  "_date": "2026-08-14",
+  "_source": "tmc/source_data/coci_program_export_2026-06-17.csv",
+  "total": 3187,
+  "colleges": 108,
+  "rungs": {
+    "R1a": 997,
+    "R1b": 0,
+    "R2": 76,
+    "R3": 1796,
+    "R4": 247,
+    "R5": 71
+  },
+  "r3_top_corroborated": 1789,
+  "r3_secondary_cip_category": {
+    "Non-CTE": 292,
+    "CTE": 1327,
+    "Both": 177
+  },
+  "r2_codes": {
+    "32.0199": 60,
+    "35.0101": 16
+  }
+}
