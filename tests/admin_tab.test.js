@@ -769,6 +769,157 @@ BLOCKS.push((async function () {
     rows.filter((r) => r.kind === "tab" && r.key === "sierra-training")[0].audience === "everyone");
 })());
 
+// ── Curator-created categories ──────────────────────────────────────────────
+// Until now a group had to exist in nav_groups.js, and a tab parented to an
+// unknown group SILENTLY degraded to top level — which is exactly what a
+// curator-made group would have looked like, so the failure was invisible.
+BLOCKS.push((async function () {
+  const w = makeWin({ nav: [] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  check("the tab offers a way to add a category", !!root.querySelector("[data-addcat]"));
+
+  const d = api._ensureDraft();
+  const before = d.containers.length;
+  check("a category with no name is REFUSED", val(() => api._addCategory(d, "   ")) == null
+    && d.containers.length === before);
+
+  const made = val(() => api._addCategory(d, "Ashley's Tools"));
+  check("a named category is created", !!made && d.containers.length === before + 1);
+  check("its key is derived from the name, slugged", made && made.id === "ashley-s-tools");
+  check("it is marked as curator-made", made && made.custom === true);
+
+  // A key collision would merge two categories into one row on the next load,
+  // and a key matching a SHIPPED group would silently take that group over.
+  const twin = val(() => api._addCategory(d, "Ashley's Tools"));
+  check("a second category with the same name gets a DISTINCT key",
+    twin && twin.id !== made.id);
+  const codeIds = val(() => api._codeGroupIds()) || {};
+  const firstCode = Object.keys(codeIds)[0];
+  check("a category named after a SHIPPED group does not take it over", (function () {
+    if (!firstCode) return false;
+    const clash = api._addCategory(d, firstCode);
+    return clash && clash.id !== firstCode;
+  })());
+
+  // The overlay has to build a heading for it, or the tabs dragged in fall to
+  // the top level and it looks like they went missing.
+  const rows = api._draftRows(d);
+  const groupRow = rows.filter((r) => r.kind === "group" && r.key === made.id)[0];
+  check("the new category is written as a group row", !!groupRow);
+  check("and carries its name", groupRow && groupRow.label === "Ashley's Tools");
+  check("group rows still match tab rows key-for-key (the 400 that ate every save)",
+    (function () {
+      const keys = rows.map((r) => Object.keys(r).sort().join("|"));
+      return keys.length > 1 && keys.every((k) => k === keys[0]);
+    })());
+
+  // plan() must now BUILD the group, not degrade its members to top level.
+  const ov = w.CPL_NAV_OVERLAY;
+  // Replace, do not append: get() returns the FIRST matching row, so a second
+  // cpl-pathways row would be shadowed by the one draftRows already wrote and
+  // this would test nothing.
+  ov._set(rows.filter((r) => !(r.kind === "tab" && r.key === "cpl-pathways")).concat([{
+    kind: "tab", key: "cpl-pathways", parent: made.id, sort_order: 0,
+    hidden: false, audience: "everyone", label: null, orgs: null, pinned: false,
+  }]));
+  const plan = ov.plan(w.CPL_NAV_GROUPS.GROUPS, ["dashboard", "admin", "cpl-pathways", "sierra-training"]);
+  const built = plan.all.groups.filter((g) => g.id === made.id)[0];
+  check("plan() builds the curator's category", !!built && built.label === "Ashley's Tools");
+  check("a tab parented to it lands INSIDE it, not at top level",
+    !!built && built.tabs.some((t) => t.tab === "cpl-pathways")
+    && !plan.all.top.some((t) => t.tab === "cpl-pathways"));
+  check("and the rail renders it with its member",
+    plan.groups.filter((g) => g.id === made.id).some((g) => g.tabs.indexOf("cpl-pathways") !== -1));
+
+  // A group the overlay cannot name is dropped, so a blank one would take its
+  // tabs down with it. Guarded by falling the label back to the key.
+  const d2 = api._buildDraft();
+  const c2 = api._addCategory(d2, "Temp");
+  c2.label = "   ";
+  const r2 = api._draftRows(d2).filter((r) => r.kind === "group" && r.key === c2.id)[0];
+  check("a curator category renamed to BLANK still saves a label",
+    !!r2 && !!r2.label && r2.label === c2.id);
+  const shipped = api._draftRows(d2).filter((r) => r.kind === "group" && r.key === firstCode)[0];
+  check("a SHIPPED group may still write a null label — it falls back to the code",
+    !shipped || shipped.label === null || typeof shipped.label === "string");
+})());
+
+// ── Removing a category is a DELETE, not an omission ────────────────────────
+// The save is an upsert, so a row simply left out of the payload stays in the
+// table and the category returns on the next load, out of position.
+BLOCKS.push((async function () {
+  const w = makeWin({
+    nav: [
+      { kind: "group", key: "my-cat", label: "My Category", sort_order: 9 },
+      { kind: "tab", key: "cpl-pathways", parent: "my-cat", sort_order: 0 },
+    ],
+  });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  const d = api._ensureDraft();
+  const cat = d.containers.filter((c) => c.id === "my-cat")[0];
+  check("an existing overlay-only category is rebuilt as a container", !!cat);
+  check("and is recognised as curator-made", cat && cat.custom === true);
+  check("a SHIPPED group is NOT offered for removal",
+    !/data-gdel="funding"/.test(root.innerHTML));
+  check("a NON-EMPTY category is not offered for removal either",
+    !/data-gdel="my-cat"/.test(root.innerHTML));
+
+  api._moveTab(d, "cpl-pathways", "__top__", 0);
+  api.render(root);
+  check("once emptied, it CAN be removed", /data-gdel="my-cat"/.test(root.innerHTML));
+  check("nothing is queued for deletion while it is still in the draft",
+    (val(() => api._removedGroupKeys(d)) || []).indexOf("my-cat") === -1);
+
+  d.containers = d.containers.filter((c) => c.id !== "my-cat");
+  check("removing it from the draft queues an explicit DELETE",
+    (val(() => api._removedGroupKeys(d)) || []).indexOf("my-cat") !== -1);
+
+  await api._saveDraft(root);
+  const del = w.__fetches.filter((f) => (f.init.method === "DELETE") && /cobi_nav/.test(f.url));
+  check("the save issues that DELETE", del.length === 1 && /my-cat/.test(del[0].url));
+  check("scoped to groups, so a TAB of the same key is never deleted",
+    del.length === 1 && /kind=eq\.group/.test(del[0].url));
+  check("and the DELETE goes before the upsert", (function () {
+    const iDel = w.__fetches.findIndex((f) => f.init.method === "DELETE" && /cobi_nav/.test(f.url));
+    const iPost = w.__fetches.findIndex((f) => f.init.method === "POST" && /cobi_nav/.test(f.url));
+    return iDel !== -1 && iPost !== -1 && iDel < iPost;
+  })());
+})());
+
+// A failed delete must ABORT the save. Writing the arrangement anyway leaves
+// the category behind, and it reappears on the next load out of the position
+// the curator last saw — which reads as the save having partly worked.
+BLOCKS.push((async function () {
+  const w = makeWin({
+    nav: [{ kind: "group", key: "my-cat", label: "My Category", sort_order: 9 }],
+    deleteFails: true,
+  });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  const d = api._ensureDraft();
+  d.containers = d.containers.filter((c) => c.id !== "my-cat");
+  api._state.dirty = true;
+  await api._saveDraft(root);
+  check("a failed category delete does NOT go on to write the arrangement",
+    w.__fetches.filter((f) => f.init.method === "POST" && /cobi_nav/.test(f.url)).length === 0);
+  check("it reports a failure rather than success",
+    !!api._state.saveMsg && api._state.saveMsg.ok === false);
+  check("and keeps the draft so nothing typed is lost", !!api._state.draft);
+})());
+
 Promise.allSettled(BLOCKS).then(function (settled) {
   // A block that threw is reported as a failed check rather than simply
   // contributing nothing — a vanished block is indistinguishable from a block

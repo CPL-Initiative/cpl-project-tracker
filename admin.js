@@ -372,13 +372,67 @@
       id: "__top__", label: "Top level", isTop: true, hidden: false,
       tabs: p.all.top.map(hydrate),
     }];
+    var code = codeGroupIds();
     p.all.groups.forEach(function (g) {
       containers.push({
         id: g.id, label: g.label, isTop: false, hidden: g.hidden,
+        // A category the curator made exists ONLY as an overlay row, which is
+        // what makes it renamable-to-nothing and deletable — neither is true of
+        // a shipped group, whose label falls back to the code and whose row
+        // cannot be removed because the group would still be there.
+        custom: !code[g.id],
         tabs: g.tabs.map(hydrate),
       });
     });
     return { containers: containers };
+  }
+
+  function codeGroupIds() {
+    var out = {};
+    var g = window.CPL_NAV_GROUPS && window.CPL_NAV_GROUPS.GROUPS;
+    (g || []).forEach(function (x) { if (x && x.id) out[x.id] = true; });
+    return out;
+  }
+
+  /* A key for a new category. Derived from the name so a curator reading the
+   * table sees something recognisable, but it must never collide: a duplicate
+   * key would make the two categories one row and merge them on the next load,
+   * and a key matching a SHIPPED group would silently take that group over. */
+  function newGroupKey(label, draft) {
+    var base = String(label || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+    if (!base) base = "category";
+    var taken = codeGroupIds();
+    draft.containers.forEach(function (c) { taken[c.id] = true; });
+    var key = base, n = 2;
+    while (taken[key]) { key = base + "-" + n; n++; }
+    return key;
+  }
+
+  function addCategory(draft, label) {
+    label = String(label || "").trim();
+    // A group with no label is dropped by the overlay (sanitize nulls a blank
+    // one and plan() will not build a nameless heading), so a category created
+    // without a name would simply never appear — and its tabs would fall to the
+    // top level looking like a bug. Refuse it here instead.
+    if (!label) return null;
+    var c = { id: newGroupKey(label, draft), label: label, isTop: false, hidden: false, custom: true, tabs: [] };
+    draft.containers.push(c);
+    return c;
+  }
+
+  /* Removing a category is a DELETE, not an omission.
+   *
+   * The save is an upsert (`resolution=merge-duplicates`), so a row simply left
+   * out of the payload stays in the table and the category returns on the next
+   * load. Collected here and deleted before the upsert. */
+  function removedGroupKeys(draft) {
+    var present = {};
+    draft.containers.forEach(function (c) { if (!c.isTop) present[c.id] = true; });
+    var out = [];
+    (window.CPL_NAV_OVERLAY.rows() || []).forEach(function (r) {
+      if (r.kind === "group" && !present[r.key] && out.indexOf(r.key) === -1) out.push(r.key);
+    });
+    return out;
   }
 
   function ensureDraft() {
@@ -472,8 +526,17 @@
     var now = new Date().toISOString();
     draft.containers.forEach(function (c, ci) {
       if (!c.isTop) {
+        /* A blank label means different things to the two kinds of group, and
+         * only one of them is safe. A SHIPPED group falls back to its code
+         * label, so null is fine. A CURATOR category has no code behind it —
+         * the overlay drops a group with no label — so saving one blank would
+         * delete the heading and scatter its tabs to the top level, looking
+         * like items went missing. Fall back to the key, which is at least
+         * something findable and renamable. */
+        var glabel = (c.label != null && String(c.label).trim()) ? String(c.label).trim() : null;
+        if (!glabel && c.custom) glabel = c.id;
         rows.push(navRow({
-          kind: "group", key: c.id, label: c.label || null, parent: null,
+          kind: "group", key: c.id, label: glabel, parent: null,
           sort_order: ci, hidden: !!c.hidden, orgs: null, pinned: false,
           updated_by: who, updated_at: now,
         }));
@@ -522,10 +585,24 @@
     if (state.saving || !state.draft) return Promise.resolve();
     state.saving = true; state.saveMsg = null; render(root);
     var rows = draftRows(state.draft);
+    var gone = removedGroupKeys(state.draft);
     var h = authHeaders();
     h["Content-Type"] = "application/json";
     h["Prefer"] = "resolution=merge-duplicates,return=representation";
-    return fetch(REST + "/cobi_nav", { method: "POST", headers: h, body: JSON.stringify(rows) })
+    /* Deleted categories go FIRST, and a failed delete aborts the save.
+     *
+     * The upsert cannot remove a row, so letting the delete fail quietly would
+     * write the new arrangement and leave the category behind — it reappears on
+     * the next load, out of the position the curator last saw it in, which
+     * reads as the save having partly worked. */
+    var pre = gone.length
+      ? fetch(REST + "/cobi_nav?kind=eq.group&key=in.(" + gone.map(encodeURIComponent).join(",") + ")",
+        { method: "DELETE", headers: authHeaders() })
+        .then(function (r) { if (!r.ok) return httpFail(r, "remove category"); })
+      : Promise.resolve();
+    return pre.then(function () {
+      return fetch(REST + "/cobi_nav", { method: "POST", headers: h, body: JSON.stringify(rows) });
+    })
       .then(function (r) {
         if (!r.ok) return httpFail(r, "save");
         return r.json();
@@ -677,6 +754,8 @@
       ".adm-audwarn { flex:1 1 100%; font-size:.75rem; color: var(--text-body); background: var(--mustard-fill, #f2dca0); border-radius:6px; padding:5px 9px; margin-top:2px; }",
       ".adm-select { padding:3px 7px; border:1px solid var(--border-strong); border-radius:5px; font-size:.76rem; background: var(--surface-opaque); color: var(--text-body); }",
       ".adm-saved { font-size:.78rem; color: var(--hunter, #2c601a); font-weight:600; }",
+      ".adm-addcat { display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin:10px 0 4px; }",
+      ".adm-addcat input { padding:5px 9px; border:1px solid var(--border-strong); border-radius:6px; font-size:.82rem; background: var(--surface-opaque); color: var(--text-body); min-width:190px; }",
     ].join("\n");
     document.head.appendChild(el);
   }
@@ -824,6 +903,22 @@
           + '<button class="mini" data-ghide="' + esc(c.id) + '" title="'
           + (c.hidden ? "Show this group again." : "Hide this group and everything in it from the menu.") + '">'
           + (c.hidden ? "🙈" : "👁") + "</button>";
+        /* Only a category the CURATOR made can be removed, and only while it is
+         * empty. A shipped group has no row to delete — it would simply come
+         * back — and emptying first is deliberate: deleting a full group would
+         * scatter its tabs to the top level, which looks like items going
+         * missing rather than a group being removed. */
+        if (c.custom) {
+          h += '<span class="adm-g" title="A category you created. Shipped groups cannot be removed.">new</span>';
+          if (!c.tabs.length) {
+            h += '<button class="mini" data-gdel="' + esc(c.id) + '" title="Remove this category. It is '
+              + 'empty, so nothing leaves the menu.">🗑</button>';
+          } else {
+            h += '<span class="mini" title="Drag its ' + c.tabs.length + ' item'
+              + (c.tabs.length === 1 ? "" : "s") + " somewhere else first, then this can be removed. "
+              + 'Removing it with items inside would scatter them to the top level.">🗑</span>';
+          }
+        }
       }
       h += "</div>";
       if (state.editKey === "group:" + c.id) {
@@ -839,6 +934,13 @@
       h += "</div></div>";
     });
     h += "</div>";
+
+    // Adding a category is placed with the arrangement, not in the button row —
+    // it is an edit to the layout, not an action on the whole draft.
+    h += '<div class="adm-addcat"><input type="text" data-newcat maxlength="60" '
+      + 'placeholder="New category name…" aria-label="New category name">'
+      + '<button class="adm-btn" data-addcat>+ Add category</button>'
+      + '<span class="sub">Appears at the end. Drag items into it, then Save.</span></div>';
 
     h += '<div class="adm-btnrow">'
       + '<button class="adm-btn adm-btn-primary" data-save' + (state.saving || !state.dirty ? " disabled" : "") + ">"
@@ -1186,6 +1288,32 @@
         touch(); render(root);
       });
     });
+    root.querySelectorAll("[data-gdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-gdel");
+        for (var i = 0; i < d.containers.length; i++) {
+          var c = d.containers[i];
+          // Re-checked here, not just at render: only a custom category, only
+          // while empty. The render decides what to OFFER; this decides what
+          // actually happens, and the two must not be able to disagree.
+          if (c.id === id && c.custom && !c.tabs.length) { d.containers.splice(i, 1); break; }
+        }
+        touch(); render(root);
+      });
+    });
+    var addBtn = root.querySelector("[data-addcat]");
+    if (addBtn) addBtn.addEventListener("click", function () {
+      var box = root.querySelector("[data-newcat]");
+      var made = addCategory(d, box ? box.value : "");
+      if (!made) {
+        // Silently doing nothing is what makes a button look unwired — and a
+        // nameless category could not appear in the menu anyway.
+        state.saveMsg = { ok: false, text: "Give the category a name first." };
+        render(root); return;
+      }
+      state.saveMsg = null;
+      touch(); render(root);
+    });
     root.querySelectorAll("[data-edit]").forEach(function (b) {
       b.addEventListener("click", function () { state.editKey = b.getAttribute("data-edit"); render(root); });
     });
@@ -1271,6 +1399,10 @@
     _moveContainer: moveContainer,
     _findTab: findTab,
     _draftRows: draftRows,
+    _addCategory: addCategory,
+    _removedGroupKeys: removedGroupKeys,
+    _newGroupKey: newGroupKey,
+    _codeGroupIds: codeGroupIds,
     _saveDraft: saveDraft,
     _resetAll: resetAll,
   };
