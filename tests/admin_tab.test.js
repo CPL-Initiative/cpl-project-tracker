@@ -39,6 +39,19 @@ const { JSDOM } = require("jsdom");
 
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
+// Evaluate a probe that may throw (a helper this build does not export yet)
+// as a plain false. A thrown check must fail ITSELF, not silence the block
+// it sits in — that is how a pre-fix verification run reports nothing.
+function val(fn) { try { return fn(); } catch (e) { return undefined; } }
+
+/* Every async block registers here so the summary can WAIT for it.
+ *
+ * The summary used to fire on a fixed 1400ms timer while blocks were still
+ * running, so the total drifted between runs (116, 122 and 123 checks on the
+ * same source, observed 2026-08-15). A check that never registers can never
+ * fail — which is the same shape as the detectors this repo keeps catching:
+ * it reports clean because it never ran, and the count is what hides it. */
+const BLOCKS = [];
 
 const ADMIN_SRC = fs.readFileSync("admin.js", "utf8");
 const SURFACE_SRC = fs.readFileSync("cobi_admin_surface.js", "utf8");
@@ -263,7 +276,7 @@ const DEFAULT_GATES = [
 })();
 
 // ── (e) the three non-ok states ─────────────────────────────────────────────
-(async function () {
+BLOCKS.push((async function () {
   {
     const w = makeWin({ jwt: false });
     const api = w.CPL_ADMIN_TAB;
@@ -293,10 +306,10 @@ const DEFAULT_GATES = [
     check("a failed read never reads as 'nothing is protected'",
       /does <b>not<\/b> mean nothing is protected/.test(root.innerHTML));
   }
-})();
+})());
 
 // ── XSS ─────────────────────────────────────────────────────────────────────
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({
     gates: DEFAULT_GATES.concat([{ tbl: "<img src=x onerror=alert(1)>", rls_enabled: true, select_gate: "true", policy_count: 1 }]),
   });
@@ -307,13 +320,13 @@ const DEFAULT_GATES = [
   b.textContent = '<img src=y onerror=alert(2)>';
   await api._loadGates(); api.render(root);
   check("a nav label renders escaped", !root.querySelector("img"));
-})();
+})());
 
 
 // ── Arrange: the drag-and-drop model ────────────────────────────────────────
 // Exercised through the pure model rather than synthetic HTML5 drag events,
 // which jsdom does not implement. The DOM handlers are a thin shell over these.
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({ nav: [] });
   const api = w.CPL_ADMIN_TAB;
   const root = w.document.getElementById("admin-root");
@@ -371,10 +384,10 @@ const DEFAULT_GATES = [
   check("a top-level tab writes parent null, a grouped tab writes its group",
     tabRows.filter((r) => r.key === "sierra-training")[0].parent === grp.id);
   check("the write records who arranged it", tabRows[0].updated_by === "sam@x");
-})();
+})());
 
 // ── Arrange: saving ─────────────────────────────────────────────────────────
-(async function () {
+BLOCKS.push((async function () {
   {
     const w = makeWin({ nav: [] });
     const api = w.CPL_ADMIN_TAB;
@@ -410,7 +423,7 @@ const DEFAULT_GATES = [
     check("a failed save leaves the live menu untouched",
       (w.CPL_NAV_OVERLAY.rows() || []).length === 0);
   }
-})();
+})());
 
 // ── The save PAYLOAD, which is where it actually broke (Sky158) ─────────────
 //
@@ -424,7 +437,7 @@ const DEFAULT_GATES = [
 //
 // Asserted as UNIFORMITY rather than "has audience": the next column added for
 // tabs would otherwise reintroduce exactly this, and pass.
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({ nav: [] });
   const api = w.CPL_ADMIN_TAB;
   const root = w.document.getElementById("admin-root");
@@ -485,7 +498,7 @@ const DEFAULT_GATES = [
     await api3._saveDraft(root3);
     check("a 401 DOES still point at the sign-in", /renew your reviewer sign-in/.test(root3.innerHTML));
   }
-})();
+})());
 
 // ── The audience control says what it DOES, unconditionally (Sky158) ────────
 //
@@ -493,7 +506,7 @@ const DEFAULT_GATES = [
 // I wasn't trying to hide it… just noting that they need a team phrase." The ⚠
 // renders only for public-read/unmapped tabs, so on most items the word "hides"
 // never appeared — while the hiding applies to every one of them.
-(async function () {
+BLOCKS.push((async function () {
   // Already narrowed, on a tab whose data is NOT public-read — so the ⚠ stays
   // silent and this is exactly the majority case Sam described.
   const w = makeWin({ nav: [{ kind: "tab", key: "sierra-training", audience: "signed_in" }] });
@@ -505,16 +518,18 @@ const DEFAULT_GATES = [
   api._ensureDraft();
   api._state.editKey = "tab:sierra-training";
   api.render(root);
-  check("the editor is open on a tab whose data is NOT public (else no proof)",
-    /data-aud="sierra-training"/.test(root.innerHTML) && !/adm-audwarn/.test(root.innerHTML));
+  api._state.editKey = "vis:sierra-training";
+  api.render(root);
+  check("the ladder is open on a tab whose data is NOT public (else no proof)",
+    /data-visset="sierra-training"/.test(root.innerHTML) && !/adm-audwarn/.test(root.innerHTML));
   check("the picker states it REMOVES the item from the menu, with no ⚠ present",
-    /takes this item out of the/.test(root.innerHTML));
+    /Removed from the menu for everyone/.test(root.innerHTML));
   check("and names the alternative for 'they just need a phrase'",
     /leave this on <b>Everyone<\/b>/.test(root.innerHTML));
-})();
+})());
 
 // ── Arrange: hidden items stay editable, and carry their gate ───────────────
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({ nav: [{ kind: "tab", key: "sierra-training", hidden: true }] });
   const api = w.CPL_ADMIN_TAB;
   const root = w.document.getElementById("admin-root");
@@ -522,16 +537,56 @@ const DEFAULT_GATES = [
   await new Promise((r) => setTimeout(r, 20));
   api.render(root);
   check("a hidden tab is still shown in the editor so it can be unhidden",
-    /data-hide="sierra-training"/.test(root.innerHTML));
-  check("Admin offers no hide control at all", !/data-hide="admin"/.test(root.innerHTML));
+    /data-vis="sierra-training"/.test(root.innerHTML));
+  check("a hidden item's control READS as hidden rather than needing to be guessed",
+    /🙈 Hidden/.test(root.innerHTML));
+  // Admin keeps a visibility control — it may carry an audience rule, which is
+  // recoverable — but "nobody" must not be on the ladder at all. An option that
+  // cannot be honoured must not be offered.
+  check("Admin still has a visibility control", /data-vis="admin"/.test(root.innerHTML));
+  check("Admin's ladder does NOT offer 'nobody'",
+    val(() => api._rungsFor("admin").every((r) => r.id !== "nobody")));
+  check("Dashboard has no visibility control at all — it is the fallback home",
+    !/data-vis="dashboard"/.test(root.innerHTML) && val(() => api._rungsFor("dashboard").length) === 0);
   check("Admin explains why it is locked rather than just omitting the control",
     /one-way door/.test(root.innerHTML));
+})());
+
+// ── The ladder is ONE control over two columns ──────────────────────────────
+// `hidden` and `audience` stay separate in the table (plan() treats them
+// differently — an audience rule is per-viewer and recoverable, `hidden` is
+// neither), so the merge lives entirely in rungOf/applyRung. These guard the
+// translation, which is the only place the two can be got wrong.
+(function () {
+  const w = makeWin();
+  const api = w.CPL_ADMIN_TAB;
+  // Absent helpers are ONE failed check, not a thrown suite: a crash here would
+  // take every later block down with it and report nothing about them.
+  if (typeof api._rungOf !== "function" || typeof api._applyRung !== "function") {
+    check("the visibility ladder helpers are exported", false);
+    return;
+  }
+  const item = { tab: "sierra-training", hidden: false, audience: "everyone" };
+  check("a plain item reads as Everyone", api._rungOf(item).id === "everyone");
+  api._applyRung(item, "magic_link");
+  check("picking a rung sets the audience and leaves it visible",
+    item.audience === "magic_link" && item.hidden === false);
+  check("and reads back as that rung", api._rungOf(item).id === "magic_link");
+  api._applyRung(item, "nobody");
+  check("'nobody' sets hidden", item.hidden === true);
+  check("hidden OUTRANKS the audience when reading the rung", api._rungOf(item).id === "nobody");
+  // The reason `hidden` does not clear `audience`: un-hiding would otherwise
+  // silently widen a magic-link-only item to everyone, which is the one
+  // direction of drift nobody would notice.
+  check("'nobody' PRESERVES the audience underneath it", item.audience === "magic_link");
+  api._applyRung(item, "everyone");
+  check("moving off 'nobody' un-hides", item.hidden === false && item.audience === "everyone");
 })();
 
 // The teaching moment: the person reaching for "hide" is exactly the one who
 // needs telling that hiding is not protecting. Needs a tab whose data really is
 // public, so the fixture makes cpl-pathways' table public-read.
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({
     nav: [],
     gates: DEFAULT_GATES.map((g) => (g.tbl === "cpl_adoption_interest"
@@ -543,8 +598,55 @@ const DEFAULT_GATES = [
   await new Promise((r) => setTimeout(r, 20));
   api.render(root);
   check("an item whose data is readable by anyone says so IN the arrange view",
-    /Hiding this menu item does NOT change that/.test(root.innerHTML));
-})();
+    /Changing who sees the menu item does NOT change this/.test(root.innerHTML));
+
+  /* EVERY item carries its measured gate, not only the alarming ones.
+   *
+   * The chip used to render for open/public/view alone, so a properly protected
+   * tab showed nothing — indistinguishable from a tab nobody had looked at, and
+   * the same asymmetry that hid the audience note on most items. Sam asked for
+   * the method to be noted per item; measured beats hand-typed. */
+  const items = Array.from(root.querySelectorAll(".adm-item"));
+  const chipless = items.filter((el) => !el.querySelector("[class*='adm-g-']"));
+  check(`every menu item carries a protection chip (${items.length - chipless.length}/${items.length})`,
+    items.length > 3 && chipless.length === 0);
+  check("a reviewer-only tab is chipped as such, not left blank",
+    ["team", "reviewer"].indexOf(val(() => api._rowGate("sierra-training").id)) !== -1);
+  check("the chip names the DATA's protection, not the menu's",
+    /What protects the data behind this tab/.test(root.innerHTML));
+})());
+
+// ── A failed gate read is not 35 findings ───────────────────────────────────
+// The trap in chipping every row: with no measurement, classify() returns
+// unknown for every table, so the rail would report "Not mapped" on every item
+// at once — indistinguishable from a real finding that nothing on the site is
+// mapped. The reason the answer is missing has to be IN the chip.
+BLOCKS.push((async function () {
+  const w = makeWin({ gatesFail: true });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+  check("a failed gate read leaves the state as error, not ok", api._state.loadState === "error");
+  check("a mapped tab chips UNREAD, never 'Not mapped', when the read failed",
+    val(() => api._rowGate("sierra-training").id) === "unread");
+  check("the unread chip says the measurement is missing, not that the tab is",
+    /not a finding about this tab/.test(val(() => api._gateById("unread").hint) || ""));
+  /* Today this branch is DEFENSIVE, not reached: render() short-circuits the
+   * whole tab on a failed gate read, so no row is drawn to carry a chip. It is
+   * kept — and tested — because the alternative is that the day anyone lets the
+   * arrange view render without a gate measurement (a partial read, or an
+   * editor that works offline), 35 rows quietly claim "Not mapped". Asserting
+   * the short-circuit here too, so a change to it fails LOUDLY rather than
+   * silently activating the branch. */
+  check("a failed read still shows the reason instead of the menu editor",
+    !/adm-item/.test(root.innerHTML) && /Could not read the database rules/.test(root.innerHTML));
+  // A tab genuinely absent from the surface map is still reported as unmapped —
+  // the structural answer does not depend on the live read.
+  check("an unmapped tab still reads as Not mapped even so",
+    val(() => api._rowGate("no-such-tab").id) === "unknown");
+})());
 
 
 // ── A save must ROUND-TRIP what it did not touch ────────────────────────────
@@ -552,7 +654,7 @@ const DEFAULT_GATES = [
 // from placement alone would blank every label, site list and pin the moment
 // anyone dragged something else and pressed Save — a silent, total loss of the
 // arrangement, caused by an unrelated edit.
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({
     nav: [
       { kind: "tab", key: "sierra-training", label: "Teach Sierra", orgs: ["cpl", "gr"], pinned: true },
@@ -584,11 +686,11 @@ const DEFAULT_GATES = [
   check("a second customised tab survives too", gov.label === "Decisions");
   const untouched = rows.filter((r) => r.kind === "tab" && r.key === "cpl-pathways")[0];
   check("a tab that was never customised still writes a null label", untouched.label === null);
-})();
+})());
 
 
 // ── The audience picker, and the warning that has to sit ON it ──────────────
-(async function () {
+BLOCKS.push((async function () {
   const w = makeWin({ nav: [] });
   const api = w.CPL_ADMIN_TAB;
   const root = w.document.getElementById("admin-root");
@@ -602,18 +704,35 @@ const DEFAULT_GATES = [
     root.innerHTML.indexOf("Arrange the menu") < root.innerHTML.indexOf("Every menu item"));
 
   api._openRuleEditNoop = null;
+  /* The picker is reached from the ROW now, not from ✏️. Sam pressed the hide
+   * affordance expecting it to ask who — two controls for one question is what
+   * let an audience be narrowed by someone who meant only to annotate. */
   api._state.editKey = "tab:sierra-training";
   api.render(root);
-  check("the editor offers an audience picker", !!root.querySelector('[data-aud="sierra-training"]'));
+  check("the ✏️ editor no longer carries a second audience control",
+    !root.querySelector('[data-aud="sierra-training"]') && !root.querySelector("[data-visset]"));
+  check("but it points at where the control moved to",
+    /button on the row/.test(root.innerHTML));
+
+  api._state.editKey = "vis:sierra-training";
+  api.render(root);
+  check("the ladder offers every rung", (function () {
+    const vals = Array.from(root.querySelectorAll("[data-visset]")).map((e) => e.value);
+    return ["everyone", "signed_in", "magic_link", "nobody"].every((v) => vals.indexOf(v) !== -1);
+  })());
   check("the picker is worded as SHOW IN MENU, never as access",
-    /Show in menu to/.test(root.innerHTML) && !/who can access/i.test(root.innerHTML));
+    /Who sees .* in the menu\?/.test(root.innerHTML) && !/who can access/i.test(root.innerHTML));
   check("Dashboard gets NO picker — a public visitor must always have a home", (function () {
-    api._state.editKey = "tab:dashboard"; api.render(root);
-    return !root.querySelector('[data-aud="dashboard"]');
+    api._state.editKey = "vis:dashboard"; api.render(root);
+    return !root.querySelector('[data-visset="dashboard"]');
   })());
   check("Admin DOES get one — signing in brings it back, so it is recoverable", (function () {
-    api._state.editKey = "tab:admin"; api.render(root);
-    return !!root.querySelector('[data-aud="admin"]');
+    api._state.editKey = "vis:admin"; api.render(root);
+    return !!root.querySelector('[data-visset="admin"]');
+  })());
+  check("but Admin's ladder omits the one rung that is NOT recoverable", (function () {
+    const vals = Array.from(root.querySelectorAll('[data-visset="admin"]')).map((e) => e.value);
+    return vals.length === 3 && vals.indexOf("nobody") === -1;
   })());
 
   // The teaching moment, on the control rather than only in the header.
@@ -626,15 +745,17 @@ const DEFAULT_GATES = [
   const root2 = w2.document.getElementById("admin-root");
   await api2._loadGates();
   await new Promise((r) => setTimeout(r, 20));
-  api2._state.editKey = "tab:cpl-pathways";
+  api2._state.editKey = "vis:cpl-pathways";
   api2.render(root2);
   check("narrowing the audience of a PUBLIC-data tab warns that nothing is protected",
     /still <b>readable by anyone<\/b>/.test(root2.innerHTML));
   // Close the editor first — an open editor REPLACES the row, so the chip is
   // deliberately absent while you are editing that item.
   api2._state.editKey = null; api2.render(root2);
-  check("the restricted item carries a chip in the list too",
-    /adm-g-aud/.test(root2.innerHTML) && /Magic-link sign-in only/.test(root2.innerHTML));
+  check("the restricted item states its rung on the row itself",
+    /🔑 Magic link/.test(root2.innerHTML));
+  check("and the row still carries the DATA's protection alongside it",
+    /adm-g-open|adm-g-public/.test(root2.innerHTML));
 
   // Round-trip: the audience survives an unrelated drag + save.
   const d = api2._ensureDraft();
@@ -646,11 +767,19 @@ const DEFAULT_GATES = [
     rows.filter((r) => r.kind === "tab" && r.key === "cpl-pathways")[0].audience === "magic_link");
   check("an untouched tab writes the default audience",
     rows.filter((r) => r.kind === "tab" && r.key === "sierra-training")[0].audience === "everyone");
-})();
+})());
 
-setTimeout(function () {
+Promise.allSettled(BLOCKS).then(function (settled) {
+  // A block that threw is reported as a failed check rather than simply
+  // contributing nothing — a vanished block is indistinguishable from a block
+  // that had nothing to say.
+  settled.forEach(function (r, i) {
+    if (r.status === "rejected") {
+      check("async block " + i + " ran to completion — " + ((r.reason && r.reason.message) || r.reason), false);
+    }
+  });
   let pass = 0;
   results.forEach(([n, ok]) => { console.log((ok ? "  ok   " : "  FAIL ") + n); if (ok) pass++; });
   console.log(`\nadmin_tab.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
-}, 1400);
+});
