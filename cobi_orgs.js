@@ -157,9 +157,18 @@
     var nav = document.querySelector("nav.cpl-tabs");
     if (!nav) return;
     var allow = org.tabs; // null → show everything
-    var btns = nav.querySelectorAll(".cpl-tab[data-tab]");
+    /* Tab buttons AND keyed external launchers (data-nav-link). The launchers
+     * were never site-filtered before — they were not `.cpl-tab[data-tab]`, so
+     * this loop never saw them and the Fact Sheet and Ask Sierra links showed
+     * under every site whatever anyone set. Now they answer to the same rules,
+     * which is what makes them editable on the Admin tab rather than merely
+     * VISIBLE there. `allow` lists tab ids only, so a launcher with no curator
+     * `orgs` row shows everywhere exactly as it did — the fall-through below
+     * treats an unlisted key the same as it always treated an absent one. */
+    var btns = nav.querySelectorAll(".cpl-tab[data-tab], [data-nav-link]");
     Array.prototype.forEach.call(btns, function (b) {
-      var t = b.getAttribute("data-tab");
+      var t = b.getAttribute("data-tab") || b.getAttribute("data-nav-link");
+      var isLink = !b.getAttribute("data-tab");
       // The curator overlay (nav_overlay.js / public.cobi_nav) can re-map a tab
       // to an explicit set of sites, or pin it to all of them. Absent — not
       // loaded, failed, or simply never edited — every lookup returns null and
@@ -172,9 +181,15 @@
       // An org view: show only that org's tabs (which may include an EXCLUSIVE one).
       // Pinned tabs ignore both rules — they manage the sites, so they cannot be
       // filtered out BY a site.
+      // A LINK with no curator `orgs` row shows on every site. `allow` is a list
+      // of TAB ids, so testing a link key against it would find nothing and hide
+      // both launchers the moment anyone picked a site other than CPL — a
+      // regression dressed as a feature. Only an explicit curator choice
+      // (`ovOrgs`) narrows a link.
       var show = pinned ||
         (ovOrgs ? (ovOrgs.indexOf(org.id) !== -1)
-                : (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1)));
+                : (isLink ? true
+                          : (allow ? (allow.indexOf(t) !== -1) : (EXCLUSIVE.indexOf(t) === -1))));
       // A tab the curator took off the menu — hidden outright, or filtered to an
       // audience this viewer is not in — stays off under every site. Checked
       // LAST so it cannot be undone by a pin, and asked as ONE question
