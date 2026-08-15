@@ -187,8 +187,34 @@
         label: (o && o.label) || g.label,
         hidden: !!(o && o.hidden),
         order: (o && o.sort_order != null) ? o.sort_order : codeIndex["__group__" + g.id],
+        codeGroup: true,
         tabs: [],
       };
+    });
+
+    /* Categories the CURATOR created, which exist only in the overlay.
+     *
+     * Until now a group had to be in nav_groups.js, so "+ Add category" was
+     * impossible and — worse — a tab parented to an unknown group silently
+     * degraded to top level, which is exactly what a curator-made group would
+     * have looked like.
+     *
+     * They are appended AFTER the code groups before sorting, so a row with no
+     * sort_order lands at the end rather than jumping the shipped menu. A group
+     * needs a LABEL to exist: `sanitize` nulls a blank one, and a heading with
+     * no name is not something the curator can find again to fix or delete. */
+    var codeCount = groups.length;
+    (rows || []).forEach(function (r) {
+      if (r.kind !== "group" || groupIds[r.key] || !r.label) return;
+      groupIds[r.key] = true;
+      groups.push({
+        id: r.key,
+        label: r.label,
+        hidden: !!r.hidden,
+        order: r.sort_order != null ? r.sort_order : codeCount + groups.length,
+        codeGroup: false,
+        tabs: [],
+      });
     });
     stableSort(groups, function (a, b) { return a.order - b.order; });
 
@@ -262,7 +288,13 @@
     }
 
     return {
-      // What the rail renders: visible items only, as plain ids.
+      /* What the rail renders: visible items only, as plain ids.
+       *
+       * EMPTY groups are kept here on purpose — `makeGroup` in nav_groups.js
+       * already returns null for a group with no members, so the rail never
+       * draws a heading over empty space, and filtering here as well would
+       * only remove the editor's drop targets. A curator-created category is
+       * empty the moment it is made and still has to be draggable-into. */
       groups: groups.filter(function (g) { return !g.hidden; })
         .map(function (g) { return { id: g.id, label: g.label, tabs: names(g.tabs) }; }),
       top: names(top),
