@@ -4,17 +4,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-14",
+ "as_of": "2026-08-15",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42127,
-  "pa": 39464,
+  "pe": 42145,
+  "pa": 39481,
   "p2": 3517,
   "p3": 15491,
   "pp": 5,
-  "pe_u": 1346847.45,
-  "pa_u": 217129.15,
+  "pe_u": 1347708.45,
+  "pa_u": 217242.15,
   "p3_u": 76790.45,
   "pp_u": 25.0
  },
@@ -177,7 +177,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 1495,
    "pe_u": 32049.0,
    "pa": 1491,
-   "pa_u": 18453.5,
+   "pa_u": 18474.5,
    "p2": 15,
    "p3": 32,
    "p3_u": 240.0,
@@ -529,10 +529,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 332,
-   "pe_u": 5928.0,
-   "pa": 298,
-   "pa_u": 1221.0,
+   "pe": 333,
+   "pe_u": 5955.0,
+   "pa": 299,
+   "pa_u": 1227.0,
    "p2": 20,
    "p3": 223,
    "p3_u": 891.0,
@@ -729,10 +729,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2407,
-   "pe_u": 50903.0,
-   "pa": 2078,
-   "pa_u": 12182.5,
+   "pe": 2422,
+   "pe_u": 51668.0,
+   "pa": 2093,
+   "pa_u": 12264.5,
    "p2": 428,
    "p3": 1970,
    "p3_u": 11339.0,
@@ -806,10 +806,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Oxnard": {
-   "pe": 156,
-   "pe_u": 8465.0,
-   "pa": 155,
-   "pa_u": 620.0,
+   "pe": 157,
+   "pe_u": 8495.0,
+   "pa": 156,
+   "pa_u": 624.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -861,8 +861,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Reedley College": {
-   "pe": 128,
-   "pe_u": 4778.5,
+   "pe": 129,
+   "pe_u": 4817.5,
    "pa": 110,
    "pa_u": 532.5,
    "p2": 0,
@@ -2137,8 +2137,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 964,
-    "pa": 964,
+    "pe": 979,
+    "pa": 979,
     "p3": 875
    },
    "Standardized Assessment": {
@@ -2231,8 +2231,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "Military": {
-    "pe": 155,
-    "pa": 155,
+    "pe": 156,
+    "pa": 156,
     "p3": 0
    }
   },
@@ -2285,7 +2285,7 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 123,
+    "pe": 124,
     "pa": 106,
     "p3": 0
    },
@@ -2870,8 +2870,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26361,
-   "pa": 24252,
+   "pe": 26379,
+   "pa": 24269,
    "p3": 2460
   },
   "Military | Portfolio Review": {
@@ -2919,13 +2919,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1346370.95,
-   "pa_u": 217129.15,
+   "pe_u": 1347231.95,
+   "pa_u": 217242.15,
    "p3_u": 76790.45
   },
   "map": {
-   "pe_u": 1353731.45,
-   "pa_u": 217804.65,
+   "pe_u": 1354592.45,
+   "pa_u": 217917.65,
    "p3_u": 76815.45
   },
   "ratio": {
@@ -2974,9 +2974,9 @@ window.CPL_FUNDING_PERF = {
   "Shasta": false,
   "Fullerton": true,
   "Victor Valley": true,
+  "LA Pierce": false,
   "Ventura": false,
   "LA Mission": true,
-  "LA Pierce": false,
   "Mission": true,
   "Sequoias": false,
   "Citrus": true,
@@ -3051,7 +3051,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-14",
+ "vet_star_as_of": "2026-08-15",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };

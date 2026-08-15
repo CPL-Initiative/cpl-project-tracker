@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-14T14:20:37.468491+00:00",
+  "scraped_at": "2026-08-15T07:00:43.085239+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26906,
+    "jst": 26924,
     "star_colleges": 56
   },
   "computed_star_colleges": 56,
@@ -37,7 +37,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 984,
+      "jst": 999,
       "star": true
     },
     "San Diego Miramar College": {
@@ -205,6 +205,11 @@
       "jst": 339,
       "star": true
     },
+    "Los Angeles Pierce College": {
+      "vets": 296,
+      "jst": 128,
+      "star": false
+    },
     "Ventura College": {
       "vets": 254,
       "jst": 182,
@@ -214,11 +219,6 @@
       "vets": 112,
       "jst": 152,
       "star": true
-    },
-    "Los Angeles Pierce College": {
-      "vets": 296,
-      "jst": 127,
-      "star": false
     },
     "Mission College": {
       "vets": 158,
@@ -262,7 +262,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 157,
+      "jst": 158,
       "star": true
     },
     "Golden West College": {
@@ -292,7 +292,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 125,
+      "jst": 126,
       "star": true
     },
     "Lassen College": {
