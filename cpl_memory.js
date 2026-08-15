@@ -292,7 +292,34 @@
   }
 
   // ── auth / curate-mode bar ──
-  function refreshSession() { var TP = tp(); sess = (TP && TP.session) ? TP.session() : null; }
+  //
+  // TWO credentials open this table, and the page could only ever produce one.
+  // `cpl_memory`'s RLS is `is_allowed_reviewer() OR team_pass_ok()`, but this
+  // tab took its whole notion of "signed in" from team_phrase.js — whose
+  // session() returns a PHRASE pseudo-session and knows nothing about the
+  // magic link. So a reviewer signed in by magic link was authenticated as
+  // `anon`, matched neither arm, and was shown "No entries visible" over 330
+  // intact rows (Sam, 2026-08-14). The permission existed in the database and
+  // was unreachable from the page.
+  //
+  // The magic-link session is the same shared `cpl_sb` every other curator tab
+  // reads. It is checked FIRST because it is the stronger credential, and the
+  // stored phrase still rides along via decorateHeaders — harmless under an
+  // OR-predicate, and it is what un-shadows the phrase for a signed-in
+  // NON-reviewer, whose JWT alone fails is_allowed_reviewer().
+  var SESSION_KEY = "cpl_sb";
+  function isValidJwt(t) { return typeof t === "string" && t.split(".").length === 3 && t.length > 40; }
+  function magicLinkSession() {
+    try {
+      var s = JSON.parse(sessionStorage.getItem(SESSION_KEY) || "null");
+      if (s && isValidJwt(s.access_token)) return { access_token: s.access_token, email: s.email || "(reviewer)" };
+    } catch (e) {}
+    return null;
+  }
+  function refreshSession() {
+    var TP = tp();
+    sess = magicLinkSession() || ((TP && TP.session) ? TP.session() : null);
+  }
   function renderAuth() {
     if (!authBar) return;
     clear(authBar);
@@ -301,7 +328,16 @@
       authBar.appendChild(el("span", "mem-writeerr", "⚠ " + writeErrMsg));
     }
     if (sess) {
-      authBar.appendChild(el("span", "mem-authok", "🔓 Team curate mode — your edits write to cpl_memory"));
+      // Name the person AND the credential. "Signed in" alone is what let a
+      // reviewer and a phrase-holder look identical while only one of them
+      // could read the table, and it gives no clue when the magic link's own
+      // browser tab is not the one you are looking at (sessionStorage is
+      // per-tab: sign in, get a new tab, work in the old one, see nothing).
+      var how = sess.access_token ? "magic link" : "team phrase";
+      var who = sess.email && sess.email !== "(team)" && sess.email !== "(reviewer)" ? sess.email : null;
+      authBar.appendChild(el("span", "mem-authok",
+        "🔓 Curate mode — " + (who ? who + ", " : "") + "signed in by " + how
+        + " · your edits write to cpl_memory"));
       return;
     }
     // No session — offer the shared unlock UI. If we have zero rows this is also the
@@ -787,7 +823,13 @@
   // Data layer (read + writes)
   // ══════════════════════════════════════════════════════════════════════════
   function authHeaders(extra) {
-    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    // Bearer the reviewer's JWT when there is one — sending the anon key while
+    // holding a valid reviewer session is what made the table look empty.
+    var ml = magicLinkSession();
+    var h = {
+      apikey: SUPABASE_ANON,
+      Authorization: "Bearer " + ((ml && ml.access_token) || SUPABASE_ANON),
+    };
     if (extra) for (var k in extra) h[k] = extra[k];
     var TP = tp(); if (TP && TP.decorateHeaders) TP.decorateHeaders(h, sess);
     return h;
