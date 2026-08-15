@@ -16,8 +16,11 @@
  *    localStorage (cplNavGroups.v1).
  *  - The active tab's group force-opens on every activation (hash deep-links
  *    and Where To jumps always land visible).
- *  - External launchers (.cpl-tab-external, no data-tab) collect under
- *    "Share" at the bottom.
+ *  - External launchers (.cpl-tab-external anchors, which open their own page
+ *    rather than a pane here) sit in the "Share" group. Since 2026-08-15 that
+ *    is a REAL group with an id, and each launcher carries a data-nav-link key,
+ *    so both are curator-editable on the Admin tab like everything else. An
+ *    unkeyed launcher still falls back to a synthesised heading at the bottom.
  *
  * STATIC — NOT a daily-cron artifact. <script>-loaded in BOTH HTMLs (Rule 4).
  */
@@ -35,9 +38,26 @@
     { id: 'strategy', label: 'Strategy & Impact', tabs: ['vision-2030', 'military-partnerships', 'cpl-news'] },
     { id: 'reference', label: 'Reference & Curation', tabs: ['unified-courses', 'canonical-subj4', 'coci-lookup', 'cip-crosswalk', 'credential-reference', 'map-data-quality', 'exhibit-adoption', 'tmc-builder', 'pipeline', 'our-process'] },
     { id: 'sierra', label: 'Sierra & Team Tools', tabs: ['chatbot', 'sierra-training', 'map-users', 'governance', 'team-phrases', 'knowledge-base', 'letters'] },
+    /* Share — the external launchers, and a REAL group since 2026-08-15.
+     *
+     * It used to be synthesised down in build() from whatever carried
+     * .cpl-tab-external, which meant it was not a group at all: it had no id to
+     * write against, so the curator overlay could not order it, rename it or
+     * scope it to a site, and the Admin tab (which reads .cpl-tab[data-tab])
+     * could not see either link. Sam, 2026-08-15: "Why isn't the Shared Category
+     * on my Admin page? Seems it should be." It should, and now it is.
+     *
+     * Its members are ANCHORS, not tab buttons — they open their own page rather
+     * than a pane here. They are keyed by data-nav-link in the markup and stored
+     * as kind='tab' rows, because placement is the only thing the overlay keeps
+     * about either and placement works identically for both. What an item IS
+     * stays in the markup, where it always was. */
+    { id: 'share', label: 'Share', tabs: ['fact-sheet', 'sierra'] },
   ];
-  // Groups open by default on a first visit (the daily-driver lane).
-  var DEFAULT_OPEN = { workplan: true };
+  // Groups open by default on a first visit (the daily-driver lane). `share`
+  // is here because it opened by default when it was synthesised; promoting it
+  // to a real group must not quietly collapse it for everyone.
+  var DEFAULT_OPEN = { workplan: true, share: true };
 
   function loadState() {
     try { return JSON.parse(localStorage.getItem(STORE_KEY) || 'null') || {}; }
@@ -97,22 +117,53 @@
       ungroup(nav);
     }
 
-    // Index the existing buttons/anchors by data-tab (or external flag).
+    /* Index the buttons and the external anchors together.
+     *
+     * A KEYED external (data-nav-link) joins byTab/domOrder exactly like a tab,
+     * so every downstream step — plan(), the arrangement, the site filter, the
+     * Admin editor — treats it as one more item without a second code path.
+     *
+     * An UNKEYED external still works: it lands in `loose` and is appended to
+     * the Share group at the end, which is precisely what every external did
+     * before. A future launcher added without the attribute degrades to the old
+     * behaviour rather than vanishing. */
     var byTab = {};
-    var externals = [];
+    var loose = [];
     var domOrder = [];
     Array.prototype.slice.call(nav.children).forEach(function (el) {
-      var tab = el.getAttribute && el.getAttribute('data-tab');
+      if (!el.getAttribute) return;
+      var tab = el.getAttribute('data-tab') || el.getAttribute('data-nav-link');
       if (tab) { byTab[tab] = el; domOrder.push(tab); }
-      else if (el.classList && el.classList.contains('cpl-tab-external')) externals.push(el);
+      else if (el.classList && el.classList.contains('cpl-tab-external')) loose.push(el);
     });
+
+    /* The group list this build actually uses. Copied rather than mutated —
+     * GROUPS is module state read by the tests and by a later rebuild, and a
+     * push here would make Share grow by one on every overlay arrival. */
+    var groups = GROUPS.map(function (g) { return { id: g.id, label: g.label, tabs: g.tabs.slice() }; });
+
+    /* A keyed launcher nobody listed above belongs in Share, not at the top of
+     * the menu. Without this it would fall through codeParent as an unknown and
+     * degrade to top level — the same silent degradation that made a curator's
+     * own category look like a bug before #1210. */
+    var shareGroup = null;
+    groups.forEach(function (g) { if (g.id === 'share') shareGroup = g; });
+    if (shareGroup) {
+      var claimed = {};
+      groups.forEach(function (g) { g.tabs.forEach(function (t) { claimed[t] = true; }); });
+      Array.prototype.slice.call(nav.children).forEach(function (el) {
+        if (!el.getAttribute || !el.classList) return;
+        var k = el.getAttribute('data-nav-link');
+        if (k && !claimed[k]) { shareGroup.tabs.push(k); claimed[k] = true; }
+      });
+    }
 
     // The curator overlay, if it has loaded. Absent → pure code defaults, which
     // is the whole fail-safe: the menu never depends on this read succeeding.
     var ov = window.CPL_NAV_OVERLAY;
     var arrangement = null;
     if (ov && typeof ov.plan === 'function' && ov.rows()) {
-      try { arrangement = ov.plan(GROUPS, domOrder); }
+      try { arrangement = ov.plan(groups, domOrder); }
       catch (e) { arrangement = null; }   // a broken overlay must cost the arrangement, never the menu
     }
 
@@ -175,16 +226,29 @@
         if (grp) nav.appendChild(grp);
       });
     } else {
-      GROUPS.forEach(function (g) {
+      groups.forEach(function (g) {
         var members = g.tabs.map(function (t) { return byTab[t]; }).filter(Boolean);
         var grp = makeGroup(g.id, g.label, members);
         if (grp) nav.appendChild(grp);
       });
     }
-    // External launchers → "Share" group (open by default; tiny).
-    if (externals.length) {
-      var shareState = ('share' in state) ? !!state.share : true;
-      var share = makeGroup('share', 'Share', externals);
+    /* Launchers with no data-nav-link — the pre-2026-08-15 shape.
+     *
+     * Keyed ones are laid out above as ordinary members of the Share group, so
+     * this runs only for a launcher added to the markup without a key. It gets
+     * exactly the behaviour every launcher used to have: its own Share heading
+     * at the bottom, open by default.
+     *
+     * `share-extra` rather than `share`, because the real group may already be
+     * on screen and two headings sharing an id would give them one collapse
+     * state between them — clicking either would toggle both. */
+    if (loose.length) {
+      // Asked of the DOM, not of a key list: what matters is whether a Share
+      // heading actually got rendered this pass, which depends on the overlay,
+      // the site filter and what is in the markup — not on two hard-coded keys.
+      var extraId = nav.querySelector('[data-nav-group="share"]') ? 'share-extra' : 'share';
+      var shareState = (extraId in state) ? !!state[extraId] : true;
+      var share = makeGroup(extraId, 'Share', loose);
       if (share) {
         share.classList.toggle('collapsed', !shareState);
         nav.appendChild(share);

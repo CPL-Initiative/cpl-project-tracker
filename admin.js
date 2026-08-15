@@ -121,6 +121,12 @@
      * indistinguishable from a genuine finding that nothing on the site is
      * mapped. The reason the answer is missing belongs in the chip. */
     { id: "nodata",   rank: 9, label: "No stored information", short: "No data",  hint: "This page does not use any stored information — it shows content that comes with the site. There is nothing here for access rules to protect." },
+    /* An external launcher. NOT a finding either — it opens a page of its own,
+     * so its access rules are that page's, not this menu item's. Reporting one
+     * as "not checked" would be a finding where there is nothing here to find,
+     * and reporting it as "no stored information" would be worse: the Fact Sheet
+     * and Sierra both read plenty, just not through this page. */
+    { id: "link",     rank: 9, label: "Opens another page", short: "A link",      hint: "This is a link out to a page of its own, not a page inside COBI. Whatever protects it lives on that page — nothing here decides who can read it. Both of ours are public on purpose." },
     { id: "unread",   rank: -1, label: "Not checked yet",  short: "Unchecked",    hint: "The live check has not come back, so nothing was measured. This is not a finding about this page. See the note at the top for why." },
   ];
   /* ── Visibility: ONE ladder, not two controls ───────────────────────────────
@@ -214,35 +220,64 @@
     var out = [];
     var nav = document.querySelector("nav.cpl-tabs");
     if (!nav) return out;
-    var btns = nav.querySelectorAll(".cpl-tab[data-tab]");
+    /* Tab buttons AND keyed external launchers.
+     *
+     * Sam, 2026-08-15: "Why isn't the Shared Category on my Admin page? Seems it
+     * should be." It was not a failed read — Share is built from anchors with no
+     * data-tab, and every query on this tab asked for `.cpl-tab[data-tab]`, so
+     * two real menu items were simply invisible to the manager. A manager that
+     * silently omits part of what it manages is worse than one that says it
+     * cannot: the page looked complete. */
+    var btns = nav.querySelectorAll(".cpl-tab[data-tab], [data-nav-link]");
     Array.prototype.forEach.call(btns, function (b, i) {
       var group = b.closest ? b.closest(".cpl-nav-group") : null;
       var head = group ? group.querySelector(".cpl-nav-group-head") : null;
       var label = (b.textContent || "").trim();
+      var link = !b.getAttribute("data-tab");
       out.push({
-        tab: b.getAttribute("data-tab"),
+        tab: b.getAttribute("data-tab") || b.getAttribute("data-nav-link"),
         label: label,
         order: i,
         group: head ? (head.textContent || "").replace(/[▾▸]/g, "").trim() : "",
         hiddenNow: b.getAttribute("data-org-hidden") === "1",
+        // An anchor to a page of our own that is NOT a pane here. It has no
+        // Supabase surface of its own to measure, and saying "not checked"
+        // about one would be a finding where there is nothing to find.
+        link: link,
+        href: link ? (b.getAttribute("href") || "") : null,
       });
     });
     return out;
   }
 
+  /* Is this key an external launcher rather than a tab? Asked of the live nav
+   * for the same reason everything else on this tab is: a list kept here would
+   * describe a menu that has moved on. */
+  function isLink(tab) {
+    var items = navItems();
+    for (var i = 0; i < items.length; i++) if (items[i].tab === tab) return !!items[i].link;
+    return false;
+  }
+
   /* Which sites show a tab. Computed from CPL_ORGS rather than restated, so the
    * answer cannot drift from the filter that actually runs. */
-  function sitesFor(tab) {
+  function sitesFor(tab, link) {
     var O = window.CPL_ORGS;
     if (!O || !O.ORGS) return null;
     var always = (O.ALWAYS || []).indexOf(tab) !== -1;
     var exclusive = (O.EXCLUSIVE || []).indexOf(tab) !== -1;
     var out = [];
     O.ORGS.forEach(function (o) {
-      var shown = always || (o.tabs ? o.tabs.indexOf(tab) !== -1 : !exclusive);
+      /* A LAUNCHER with no curator rule shows everywhere — mirroring the
+       * `isLink` branch in cobi_orgs.applyNav(). Falling through to the tab
+       * logic would test a link key against a site's TAB list, find nothing, and
+       * report it as CPL-only while the rail showed it on all five. A manager
+       * that describes the menu differently from how the menu behaves is worse
+       * than one that omits it, because there is nothing to notice. */
+      var shown = always || (link ? true : (o.tabs ? o.tabs.indexOf(tab) !== -1 : !exclusive));
       if (shown) out.push(o.label);
     });
-    return { sites: out, always: always, exclusive: exclusive, total: O.ORGS.length };
+    return { sites: out, always: always, exclusive: exclusive, link: !!link, total: O.ORGS.length };
   }
 
   function loadGates() {
@@ -318,6 +353,11 @@
    * tab are resolved here, at the point of display, and never counted as gates.
    */
   function rowGate(tab) {
+    // A launcher is answered FIRST, before the surface scan gets a say. The scan
+    // has never heard of it — it maps tabs to tables — so every other branch
+    // below would call it "not checked", which is a finding about a thing that
+    // has nothing here to check.
+    if (isLink(tab)) return gateById("link");
     var g = tabGate(tab);
     // Structural unknowns first: both are known from the static surface scan,
     // so they stand whether or not the live gate read came back.
@@ -706,7 +746,7 @@
       ".adm-g-team, .adm-g-gr, .adm-g-fin { color: var(--text-strong, #4a3a00); background: var(--mustard-fill, #f2dca0); }",
       ".adm-g-reviewer, .adm-g-server { color: var(--hunter, #2c601a); background: rgba(44,96,26,.10); font-weight:700; }",
       // Neither a pass nor a fail: two states that are not findings about a tab.
-      ".adm-g-nodata, .adm-g-unread, .adm-g-unknown { color: var(--text-muted); background: var(--surface-muted); }",
+      ".adm-g-nodata, .adm-g-unread, .adm-g-unknown, .adm-g-link { color: var(--text-muted); background: var(--surface-muted); }",
       ".adm-vis { white-space:nowrap; }",
       ".adm-visrow { flex-direction:column; align-items:stretch; gap:4px; }",
       ".adm-vistitle { font-size:.82rem; color: var(--text-strong); margin-bottom:2px; }",
@@ -783,8 +823,16 @@
 
     var h = '<div class="adm-item' + (t.hidden ? " hid" : "") + (prot ? " prot" : "") + '"'
       + ' draggable="true" data-drag="tab:' + esc(t.tab) + '" data-cid="' + esc(cid) + '">'
-      + '<span class="grip" title="Drag to reorder, or into another group.">⠿</span>'
+      + '<span class="grip" title="Drag to move it up or down, or into another heading.">⠿</span>'
       + '<span class="nm" title="' + esc(t.tab) + '">' + esc(name) + "</span>";
+    // A launcher looks like every other row until you try to reason about it, so
+    // it says what it is. Its Rename box changes the MENU wording only — the
+    // page it opens is not ours to retitle from here.
+    if (nav && nav.link) {
+      h += '<span class="adm-g" title="Opens its own page in a new window rather than a page inside COBI'
+        + (nav.href ? " (" + esc(nav.href) + ")" : "") + ". Renaming it changes what the menu says, not "
+        + 'that page.">link</span>';
+    }
     if (t.orgs && t.orgs.length) {
       h += '<span class="adm-g" title="Only these sites show it: ' + esc(t.orgs.join(", ")) + '">'
         + t.orgs.length + " site" + (t.orgs.length === 1 ? "" : "s") + "</span>";
@@ -1036,6 +1084,12 @@
     var counts = {};
     var unmapped = 0;
     items.forEach(function (it) {
+      // A launcher is not an unchecked page — it is not a page here at all. The
+      // surface scan maps tabs to tables and has never heard of one, so counting
+      // it would have added two to "Not checked yet" the day Share became
+      // visible: a number going up because we started SHOWING something is the
+      // worst kind of false finding.
+      if (it.link) return;
       var g = tabGate(it.tab);
       if (!g.measured) { unmapped++; return; }
       if (!g.gate) return;                       // measured, touches no data
@@ -1119,20 +1173,26 @@
     }
     rows.forEach(function (it) {
       var g = tabGate(it.tab);
-      var st = sitesFor(it.tab);
+      var st = sitesFor(it.tab, it.link);
       var siteTxt = st
         ? (st.always ? "Every site" : (st.sites.length ? st.sites.join(", ") : "None"))
         : "unknown";
       var siteTitle = st
         ? (st.always
             ? "Shows on every site. It manages the sites, so picking one cannot take it away."
-            : (st.exclusive
-                ? "Kept out of the normal menu — it appears only when its own site is picked."
-                : st.sites.length + " of " + st.total + " sites"))
+            : (st.link
+                ? "A link out, so it shows on every site unless you pick sites for it here."
+                : st.exclusive
+                  ? "Kept out of the normal menu — it appears only when its own site is picked."
+                  : st.sites.length + " of " + st.total + " sites"))
         : "";
       var gate = g.gate;
       var gateTxt, gateCls, gateTitle;
-      if (g.rpcOnly) {
+      if (it.link) {
+        var lg = gateById("link");
+        gateTxt = lg.label; gateCls = lg.id;
+        gateTitle = lg.hint + (it.href ? "\n\nOpens: " + it.href : "");
+      } else if (g.rpcOnly) {
         gateTxt = "Not checked"; gateCls = "unknown";
         gateTitle = "This page gets its information through built-in database routines (" + g.rpcs.join(", ")
           + ") rather than reading tables directly. Each routine carries its own rules inside it, which this "
@@ -1154,7 +1214,7 @@
         + '<td><span class="adm-trunc sub" title="' + esc(it.group || "Top level") + '">'
         + esc(it.group || "— top level —") + "</span></td>"
         + '<td><span class="adm-trunc" title="' + esc(siteTitle) + '">' + esc(siteTxt) + "</span></td>"
-        + '<td><span class="sub">' + (g.measured
+        + '<td><span class="sub">' + (it.link ? "—" : g.measured
             ? (g.tables.length
                 ? g.tables.length + " table" + (g.tables.length === 1 ? "" : "s")
                 : (g.rpcs.length ? g.rpcs.length + " function" + (g.rpcs.length === 1 ? "" : "s") : "none"))

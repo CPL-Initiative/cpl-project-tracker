@@ -135,6 +135,8 @@ function makeWin(opts) {
         </div></div>
       <button class="cpl-tab" data-tab="activities-projects">Activities</button>
       <button class="cpl-tab" data-tab="cpl-pathways">Pathways</button>
+      <a class="cpl-tab cpl-tab-external" data-nav-link="fact-sheet" href="fact-sheet/">CPL Fact Sheet</a>
+      <a class="cpl-tab cpl-tab-external" data-nav-link="sierra" href="sierra/">Ask Sierra</a>
     </nav>
     <div id="admin-root"></div></body></html>`,
     { url: "https://example.org/", runScripts: "dangerously" });
@@ -949,3 +951,113 @@ Promise.allSettled(BLOCKS).then(function (settled) {
   console.log(`\nadmin_tab.test.js: ${pass}/${results.length} checks passed`);
   if (pass !== results.length) process.exit(1);
 });
+
+/* ── The Share group is manageable, not invisible ────────────────────────────
+ *
+ * Sam, 2026-08-15: "Why isn't the Shared Category on my Admin page? Seems it
+ * should be."
+ *
+ * It was not a failed read. Share was synthesised in nav_groups.build() from
+ * anchors carrying no data-tab, so it had no id to write a row against, and
+ * every query on the Admin tab asked for `.cpl-tab[data-tab]` — which meant two
+ * real menu items were invisible to the manager while the page looked complete.
+ * That is the failure mode worth guarding: an omission with no symptom. */
+BLOCKS.push((async function () {
+  const w = makeWin({});
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api.render(root);
+
+  const items = api._navItems();
+  const keys = items.map((i) => i.tab);
+  check("the launchers are menu items the manager can SEE",
+    keys.indexOf("fact-sheet") !== -1 && keys.indexOf("sierra") !== -1);
+  check("and they are marked as links, not as tabs",
+    items.filter((i) => i.link).length === 2 &&
+    val(() => items.filter((i) => i.tab === "dashboard")[0].link) === false);
+  check("a launcher carries the address it opens",
+    /fact-sheet/.test(val(() => items.filter((i) => i.tab === "fact-sheet")[0].href) || ""));
+
+  check("Share is a real group in the code defaults, with both launchers",
+    val(() => {
+      const g = w.CPL_NAV_GROUPS.GROUPS.filter((x) => x.id === "share")[0];
+      return g && g.tabs.indexOf("fact-sheet") !== -1 && g.tabs.indexOf("sierra") !== -1;
+    }));
+
+  const share = val(() => api._ensureDraft().containers.filter((c) => c.id === "share")[0]);
+  check("the arrange editor draws Share as a container", !!share);
+  check("with both launchers inside it",
+    share && share.tabs.length === 2 && share.tabs.map((t) => t.tab).sort().join() === "fact-sheet,sierra");
+  check("Share is a SHIPPED group, so it cannot be removed",
+    share && share.custom !== true);
+
+  /* A launcher is not an UNCHECKED page. The surface scan maps tabs to tables
+   * and has never heard of one, so every other branch of rowGate would classify
+   * it "not checked" — a finding about a thing with nothing here to find, and a
+   * count that would have gone UP by two the day Share became visible. */
+  check("a launcher reports as a link, never as 'not checked'",
+    val(() => api._rowGate("fact-sheet").id) === "link");
+  check("the link chip says the protection lives on the other page",
+    /lives on that page/.test(val(() => api._gateById("link").hint) || ""));
+  /* Stated as the comparison it actually is, after the first cut of this check
+   * asserted the rendered number was "not 2" — which is a real count in this
+   * fixture for unrelated reasons and would have failed against correct code.
+   * The claim is that a LAUNCHER contributes nothing, so measure exactly that:
+   * the surface scan does not know either launcher (so each WOULD have counted),
+   * yet the published figure counts only the non-launchers. */
+  check("the surface scan genuinely does not know a launcher",
+    val(() => api._tabGate("fact-sheet").measured) === false);
+  const wouldCount = items.filter((i) => i.link).length;
+  const nonLinkUnmapped = val(() =>
+    items.filter((i) => !i.link && !api._tabGate(i.tab).measured).length);
+  const shown = val(() => Number((root.innerHTML.match(
+    /<div class="n">(\d+)<\/div><div class="l">Not checked yet/) || [])[1]));
+  check(`'Not checked yet' counts pages, not launchers (${shown} shown, ${wouldCount} launchers skipped)`,
+    wouldCount === 2 && shown === nonLinkUnmapped);
+  check("the row says it opens another page", /Opens another page/.test(root.innerHTML));
+
+  /* The table and the rail must agree about where a launcher shows. Falling
+   * through to the tab logic would test a link key against a site's TAB list,
+   * find nothing, and report CPL-only while the rail showed it everywhere. */
+  const st = val(() => api._sitesFor("fact-sheet", true));
+  check("a launcher with no curator rule is reported as showing on every site",
+    !!st && st.sites.length === val(() => w.CPL_ORGS.ORGS.length));
+
+  // …and the rail actually does that, which is the half the table is claiming.
+  const link = w.document.querySelector('[data-nav-link="fact-sheet"]');
+  let seen = 0;
+  val(() => w.CPL_ORGS.ORGS.forEach((o) => {
+    w.CPL_ORGS.setOrg(o.id, {});
+    if (link.getAttribute("data-org-hidden") !== "1") seen++;
+  }));
+  check(`the rail agrees — the launcher survives every site (${seen}/${w.CPL_ORGS.ORGS.length})`,
+    seen === w.CPL_ORGS.ORGS.length);
+  w.CPL_ORGS.setOrg("cpl", {});
+
+  // A curator CAN narrow one — that is the whole point of it being manageable.
+  const w2 = makeWin({ nav: [{ kind: "tab", key: "fact-sheet", orgs: ["ci"] }] });
+  await w2.CPL_ADMIN_TAB._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  const link2 = w2.document.querySelector('[data-nav-link="fact-sheet"]');
+  const hiddenOnCpl = val(() => {
+    w2.CPL_ORGS.setOrg("cpl", {});
+    return link2.getAttribute("data-org-hidden") === "1";
+  });
+  check("a curator can scope a launcher to one site, and it takes effect",
+    hiddenOnCpl === true && val(() => {
+      w2.CPL_ORGS.setOrg("ci", {});
+      return link2.getAttribute("data-org-hidden");
+    }) !== "1");
+
+  // And a saved row round-trips as an ordinary tab row — no new kind, no
+  // migration, because placement is all the overlay ever keeps about either.
+  const fs2 = val(() => {
+    const d2 = w2.CPL_ADMIN_TAB._ensureDraft();
+    return w2.CPL_ADMIN_TAB._draftRows(d2).filter((r) => r.key === "fact-sheet")[0];
+  });
+  check("a launcher saves as kind='tab' with a constraint-legal key",
+    fs2 && fs2.kind === "tab" && /^[a-z0-9][a-z0-9-]{0,48}$/.test(fs2.key));
+  check("and its parent is the Share group", fs2 && fs2.parent === "share");
+})());

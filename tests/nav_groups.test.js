@@ -13,6 +13,12 @@ const { JSDOM } = require("jsdom");
 
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
+// A probe that may not exist yet evaluates to undefined rather than throwing.
+// A throw here takes out the whole FILE, so a verification run against the
+// pre-fix source reports nothing at all instead of reporting which checks
+// fail — the same "a check that never registers can never fail" shape the
+// admin_tab harness was fixed for on 2026-08-15.
+function val(fn) { try { return fn(); } catch (e) { return undefined; } }
 
 const src = fs.readFileSync("nav_groups.js", "utf8");
 
@@ -107,6 +113,76 @@ function makeWin() {
   w.CPL_NAV_GROUPS.build();
   check("second build() is a no-op",
     w.document.querySelectorAll(".cpl-nav-group").length === before);
+})();
+
+/* ── Share is a REAL group when its launchers are keyed ─────────────────────
+ *
+ * Sam, 2026-08-15: "Why isn't the Shared Category on my Admin page?" Because it
+ * was synthesised here from anchors with no key, so it had no id for the curator
+ * overlay to write a row against. Keyed launchers make it an ordinary group.
+ *
+ * The fixture above is deliberately left UNKEYED — that path is the fail-safe
+ * and is covered by every other block in this file. This one keys them. */
+(function () {
+  const KEYED = NAV
+    .replace('<a class="cpl-tab cpl-tab-external" href="fact-sheet/">',
+             '<a class="cpl-tab cpl-tab-external" data-nav-link="fact-sheet" href="fact-sheet/">')
+    .replace('<a class="cpl-tab cpl-tab-external" href="sierra/">',
+             '<a class="cpl-tab cpl-tab-external" data-nav-link="sierra" href="sierra/">');
+  const dom = new JSDOM(`<!doctype html><html><body>${KEYED}</body></html>`,
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  const el = w.document.createElement("script"); el.textContent = src;
+  w.document.body.appendChild(el);
+  // jsdom sits at readyState "loading", so init() is still waiting on this —
+  // exactly as makeWin() does. Without it build() never runs and every check
+  // below fails for a reason that has nothing to do with what it guards.
+  w.document.dispatchEvent(new w.Event("DOMContentLoaded", { bubbles: true }));
+
+  const share = w.document.querySelector('[data-nav-group="share"]');
+  // REGRESSION GUARD, not proof of the fix: a synthesised Share group carried
+  // this attribute too, so these three pass against the pre-fix source as well.
+  // What is NEW is the id being one the overlay can address — asserted below.
+  check("keyed launchers still build a Share group (unchanged for the reader)", !!share);
+  check("both launchers are still inside it",
+    !!share && share.querySelectorAll(".cpl-tab-external").length === 2);
+  check("Share is still open by default",
+    !!share && !share.classList.contains("collapsed"));
+  check("no second, synthesised Share heading is appended",
+    w.document.querySelectorAll('[data-nav-group^="share"]').length === 1);
+  const shareTabs = () => val(() =>
+    w.CPL_NAV_GROUPS.GROUPS.filter((g) => g.id === "share")[0].tabs.length);
+  check("Share carries an id the overlay can write a row against", shareTabs() !== undefined);
+  // GROUPS is module state read by every later build; a push during build()
+  // would make Share grow by one on each overlay arrival.
+  const before = shareTabs();
+  val(() => w.CPL_NAV_GROUPS.build({ rebuild: true }));
+  check("a rebuild does not grow the shipped Share list",
+    before !== undefined && shareTabs() === before);
+})();
+
+/* A launcher with NO key still gets a heading — the pre-2026-08-15 shape must
+ * keep working, or adding one to the markup without the attribute silently
+ * drops it out of the menu. Mixed here on purpose: one keyed, one not. */
+(function () {
+  const MIXED = NAV.replace('<a class="cpl-tab cpl-tab-external" href="fact-sheet/">',
+    '<a class="cpl-tab cpl-tab-external" data-nav-link="fact-sheet" href="fact-sheet/">');
+  const dom = new JSDOM(`<!doctype html><html><body>${MIXED}</body></html>`,
+    { url: "https://example.org/", runScripts: "dangerously" });
+  const w = dom.window;
+  const el = w.document.createElement("script"); el.textContent = src;
+  w.document.body.appendChild(el);
+  w.document.dispatchEvent(new w.Event("DOMContentLoaded", { bubbles: true }));
+
+  const all = w.document.querySelectorAll(".cpl-tab-external");
+  const placed = Array.prototype.filter.call(all, (a) => val(() => a.closest(".cpl-nav-group")));
+  check("every launcher still lands in a group, keyed or not", placed.length === all.length);
+  // Two headings, and they must NOT share an id — one collapse state between
+  // them would make clicking either toggle both.
+  const ids = Array.prototype.map.call(
+    w.document.querySelectorAll('[data-nav-group^="share"]'), (g) => g.getAttribute("data-nav-group"));
+  check("an unkeyed launcher gets its own heading, with a distinct id",
+    ids.length === 2 && ids[0] !== ids[1]);
 })();
 
 let failed = 0;
