@@ -69,8 +69,12 @@
     }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
   }
   function ensureFresh() {
-    var s = state.sess;
+    // Re-read: refresh tokens rotate, so a cached session can hold a CONSUMED
+    // one after a sibling module (or the cpl_session.js keeper) renewed. See
+    // credential_reference.js — same line, same reason.
+    var s = getSession() || state.sess;
     if (!s) return Promise.resolve(null);
+    state.sess = s;
     if (s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {
         if (!isValidJwt(tok.access_token)) throw new Error("bad refresh");

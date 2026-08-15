@@ -94,6 +94,11 @@
   // Refresh-before-write (Session 77 lesson: a format-valid-but-expired JWT
   // 401s silently).
   function ensureFresh(s) {
+    // Prefer the STORED session over the one handed in: refresh tokens rotate,
+    // and a caller's copy can hold a CONSUMED one after a sibling module (or
+    // the cpl_session.js keeper) renewed. Re-spending it reads to Supabase as
+    // token reuse. See credential_reference.js — same line, same reason.
+    s = getSession() || s;
     if (!s) return Promise.resolve(null);
     if (s.access_token && s.exp && s.exp <= Date.now() + 60000 && s.refresh_token) {
       return refreshToken(s.refresh_token).then(function (tok) {

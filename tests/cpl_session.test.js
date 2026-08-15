@@ -234,6 +234,53 @@ const readStore = (w) => {
       typeof w.CPL_SESSION.start === "function");
   }
 
+  // ── NOBODY MAY REFRESH FROM A CACHED SESSION ─────────────────────────────
+  //
+  // Refresh tokens ROTATE. A module that renews using a copy it cached earlier
+  // can be re-spending a token another module already consumed — and Supabase
+  // treats reuse as a stolen-token signal, so the refresh fails and several of
+  // these modules then DROP the session. The curator is silently signed out
+  // mid-edit: strictly worse than the expired-token bug this keeper fixes.
+  //
+  // credential_reference.js has carried the fix since the CCR/RACI rotation
+  // collision ("instead of re-spending a consumed refresh token"). Adding a
+  // keeper that renews on a timer makes every OTHER refresher a collision
+  // candidate, so the rule has to hold repo-wide — and be enforced, because a
+  // rule that depends on the next author remembering it fails on their first day.
+  {
+    const rootJs = fs.readdirSync(".").filter((f) => f.endsWith(".js"));
+    const offenders = [];
+    let scanned = 0;
+    for (const f of rootJs) {
+      const src = fs.readFileSync(f, "utf8");
+      if (!/grant_type=refresh_token/.test(src)) continue;   // not a refresher
+      const lines = src.split("\n");
+      for (let i = 0; i < lines.length; i++) {
+        if (!/function ensureFresh\s*\(/.test(lines[i])) continue;
+        scanned++;
+        // The session must be resolved from STORAGE within the opening lines,
+        // before any refresh can be attempted. Two spellings of the storage
+        // reader exist: getSession() in the tab modules, read() in
+        // cpl_session.js. Accepting only the first flagged this file's own
+        // keeper — a false positive caught by printing the offenders rather
+        // than trusting the count.
+        // Count CODE lines, not raw lines. The first cut took 8 raw lines and
+        // flagged raci.js, whose fix sits one line past a 7-line comment
+        // explaining the fix — a false positive manufactured by documenting it
+        // well. Every detector written tonight has been wrong once; printing
+        // the offenders rather than trusting the count is what caught each.
+        const head = lines.slice(i, i + 30)
+          .filter((l) => !/^\s*(\/\/|\*|\/\*)/.test(l))
+          .slice(0, 8).join("\n");
+        if (!/\b(getSession|read)\s*\(/.test(head)) offenders.push(`${f}:${i + 1}`);
+      }
+    }
+    check("the scan actually found the refreshers (else it proves nothing)", scanned >= 6);
+    if (offenders.length) console.log("    cached-session refreshers: " + offenders.join(", "));
+    check("no ensureFresh() refreshes from a cached session — all re-read storage",
+      offenders.length === 0);
+  }
+
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
   console.log(`\n${pass}/${results.length} assertions passed`);
