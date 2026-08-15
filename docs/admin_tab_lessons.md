@@ -159,3 +159,129 @@ Both of my first two answers were defensible and neither was useful.
 4. `sierra_rules` still has no **"which rules were in play"** view
    (`chat_interactions.rules_fired`) — the ADR argues that is worth more than
    editability, and it remains unbuilt.
+
+---
+
+## 2026-08-15 — Sky159: one ladder, a chip on every row, and a harness that was dropping checks
+
+Two PRs (**#1209**, **#1210**), both from Sam's own Admin reports of 2026-08-14
+that Session 158 recorded and left unbuilt. Plus **#1204** merged (the held
+Memory-tab fix).
+
+### Hide and audience were one question wearing two controls
+
+`hidden` was an 👁 toggle on the row; `audience` was a `<select>` buried in the
+✏️ editor. They are rungs of one ladder — Everyone → signed-in → magic-link only
+→ nobody — and the split cost twice. Sam pressed 👁 expecting it to **ask** who,
+and it toggled silently. Separately he narrowed an audience meaning only to
+annotate: *"I wasn't trying to hide it… just noting that they need a team phrase
+to curate."*
+
+**The merge is at the CONTROL, not in the table.** `plan()` treats the two
+columns differently — an audience rule is per-viewer and recoverable, `hidden` is
+neither, and the editor renders them differently for that reason. Collapsing them
+in storage would have destroyed a distinction the overlay depends on. `rungOf` /
+`applyRung` are the only places that translate.
+
+**`hidden` deliberately preserves the audience underneath it.** Clearing it would
+silently widen a magic-link-only item to everyone on un-hide — the one direction
+of drift nobody would notice, because the item simply reappears and looks right.
+
+**An option that cannot be honoured is not offered.** Admin gets no *nobody* rung;
+Dashboard gets no ladder at all. Re-checked at the point of the write, because
+the render decides what to *offer* and the handler decides what *happens*, and
+those two must not be able to disagree.
+
+### Only the alarming case was labelled
+
+The protection chip rendered for `open`/`public`/`view` **alone**. A properly
+protected tab showed nothing — indistinguishable from one nobody had examined.
+Measured: **1 of 7 items carried a chip before, 7 of 7 now.**
+
+This is the same asymmetry as the audience note (stated only inside the ⚠, which
+fires on public-read tabs, so on most items it never appeared while it applied to
+all of them). Worth naming as a pattern: **when only the bad case is labelled,
+silence means two different things and the reader cannot tell which.**
+
+⚠️ **Chipping every row had a trap that would have been worse than the gap.**
+With no gate measurement, `classify()` returns unknown for every table — so the
+rail would have reported **"Not mapped" 35 times**, turning one failed request
+into a site-wide finding. Two states are now resolved at the point of display and
+never counted as gates: `nodata` (the tab reads nothing) and `unread` (the RPC
+did not return). The `unread` branch is **defensive today** — `render()`
+short-circuits the whole tab on a failed read — and the test asserts the
+short-circuit too, so anyone who later lets the arrange view render without a
+measurement fails loudly instead of silently activating it.
+
+### The test harness was silently dropping checks
+
+Found while verifying, and probably worth more than either fix. The summary fired
+on a **fixed 1400 ms timer** while async blocks were still running:
+
+```
+admin_tab.test.js: 116/116   ← same source
+admin_tab.test.js: 122/122   ← same source
+admin_tab.test.js: 123/123   ← same source
+```
+
+Up to **7 checks silently never registered**, and **a check that never registers
+can never fail**. Same shape as the detectors this repo keeps catching: it
+reports clean because it never ran, and the count is what hides it. Now
+`Promise.allSettled` over every block, and a block that *throws* is reported as a
+named failed check rather than vanishing.
+
+It earned its keep within the hour: the item-3 verification run surfaced
+`async block 11 ran to completion — Cannot read properties of undefined`, a block
+that under the old harness would have contributed nothing and looked fine.
+
+### Curator-created categories, and the three quiet failures
+
+A group had to exist in `nav_groups.js`, and a tab parented to an unknown group
+**silently degraded to top level** — which is exactly what a curator-made group
+would have looked like. `plan()` now unions overlay-only group rows.
+
+⭐ **The repo had already answered one of my design questions.** I filtered empty
+groups out of `plan().groups`; a test comment said they are kept on purpose
+because `makeGroup` already returns `null` for an empty group and `plan()`'s list
+is also the editor's **drop targets**. The failing test was right and my change
+was redundant. Reverted — this is the "check whether this repo has already
+answered it" rule paying off in the narrowest possible way.
+
+⚠️ **Removing a category is a DELETE, not an omission.** The save is an upsert
+(`resolution=merge-duplicates`), so a row left out of the payload **stays** and
+the category returns on the next load, out of position. A failed delete now
+aborts the save — writing the arrangement anyway would read as the save having
+partly worked.
+
+Three more, each of which would have been quiet:
+
+| Risk | Guard |
+|---|---|
+| Duplicate key merges two categories into one row; a key matching a shipped group takes that group over | `newGroupKey()` slugs and suffixes until unique across the draft **and** the code groups |
+| A curator category renamed to **blank** is dropped by the overlay, scattering its tabs to top level | Label falls back to the key. A shipped group may still write null — it falls back to code |
+| Deleting a **non-empty** category scatters its tabs the same way | Removal offered only while empty, re-checked at the click |
+
+### A test that passed while proving nothing
+
+My first curator-category fixture *appended* a second `cpl-pathways` row rather
+than replacing it. `get()` returns the **first** match, so the appended row was
+shadowed by the one `draftRows` had already written — the check passed against
+the old placement. Caught because two sibling checks failed and the explanation
+had to cover all three. **A green check on a fixture you built yourself is worth
+one look at the fixture.**
+
+### Current state
+
+- `cobi_nav` still seeded **empty** — and after #1203, saving works. **Nobody has
+  dragged-and-saved in a real browser yet**; that is still the open verification.
+- Admin: one visibility ladder · a protection chip on every row · "+ Add category"
+  with delete-on-empty.
+- `admin_tab.test.js` **101 → 151 checks**, deterministic.
+
+### Next concrete step
+
+1. **The real-browser round trip** (Priority 1 of handoff 159, still unproven):
+   sign in from ℹ About → the *other* open tab signs in → drag + Save on Admin →
+   leave an hour → sign out and confirm **both** tabs stay out.
+2. Then: create a category, drag two tabs into it, save, reload — and delete it.
+3. **Fill owners on DR-13…DR-18** (OQ-01) — unchanged, and still nobody's.
