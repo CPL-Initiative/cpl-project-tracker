@@ -56,6 +56,48 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var KEY = "cpl_sb";
 
+  /* ── THE SESSION IS SHARED ACROSS BROWSER TABS ──────────────────────────────
+   *
+   * Sam, 2026-08-14: "when I logged in, it opened a new tab and I was trying to
+   * work on Sierra from the original tab… so it would have worked had I
+   * navigated to Sierra Training from the new tab."
+   *
+   * He diagnosed it exactly. A magic link is opened by the mail client, which
+   * lands in a NEW browser tab, and the session is kept in `sessionStorage` —
+   * which is scoped to one browser tab by definition. Every other tab already
+   * open, including the one the person was working in, stays signed out. There
+   * is nothing to route: `cpl_sb_return_tab` restores the right IN-APP tab, and
+   * the person is still in the wrong BROWSER tab.
+   *
+   * So the canonical copy moves to `localStorage`, which every tab of an origin
+   * shares — and this module MIRRORS it into each tab's `sessionStorage`, which
+   * is where all 26 existing readers look. No other file changes, and a browser
+   * without localStorage (private mode, storage disabled) simply behaves as it
+   * does today.
+   *
+   * ── SIGNING OUT HAS TO STAY SIGNED OUT ──────────────────────────────────────
+   * The hazard of a shared copy: the sign-out paths scattered through the tabs
+   * call `sessionStorage.removeItem("cpl_sb")`, so a naive mirror would help
+   * itself to the localStorage copy on the next tick and sign the person back
+   * in — a sign-out button that does nothing, which is far worse than a session
+   * that ends too early.
+   *
+   * A per-tab MARK distinguishes the two cases that otherwise look identical:
+   *   no session + no mark  → a fresh browser tab      → hydrate from the share
+   *   no session + a mark   → this tab HAD one, gone   → a sign-out, so clear
+   *                                                      the share as well
+   * The mark lives in sessionStorage, so it dies with the tab, which is exactly
+   * the lifetime the question needs.
+   */
+  var TAB_MARK = "cpl_sb_tab";
+
+  /* Closing the browser used to end the session; now it does not. This caps how
+   * long a shared session may be revived for, so a machine left signed in does
+   * not stay that way indefinitely. Deliberately ONE constant: a reviewer
+   * credential outliving the working day is the trade this change makes, and it
+   * should be adjustable without reading the rest of the file. */
+  var MAX_SHARED_AGE_MS = 12 * 60 * 60 * 1000;
+
   // Renew this far ahead of expiry. Comfortably longer than a slow round trip,
   // so a request is never sent on a token that dies mid-flight.
   var SKEW_MS = 5 * 60 * 1000;
@@ -79,13 +121,85 @@
     return null;
   }
 
+  /* Every write lands in BOTH stores. Writing only the per-tab copy would let a
+   * refresh rotate the token here while the shared copy kept the consumed one,
+   * so the next tab to open would hydrate a dead session. */
   function write(s) {
-    try { sessionStorage.setItem(KEY, JSON.stringify(s)); return true; }
-    catch (e) { return false; }
+    writeShared(s);              // stamps shared_since, so both copies carry it
+    var ok = false;
+    try { sessionStorage.setItem(KEY, JSON.stringify(s)); ok = true; } catch (e) { /* ignore */ }
+    try { sessionStorage.setItem(TAB_MARK, "1"); } catch (e) { /* ignore */ }
+    return ok;
   }
 
+  /* …and every drop clears both, so a sign-out cannot be undone by the share. */
   function drop() {
     try { sessionStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+    try { sessionStorage.removeItem(TAB_MARK); } catch (e) { /* ignore */ }
+    clearShared();
+  }
+
+  function readShared() {
+    try {
+      var s = JSON.parse(localStorage.getItem(KEY) || "null");
+      if (s && isValidJwt(s.access_token)) return s;
+    } catch (e) { /* no localStorage, or a garbled value */ }
+    return null;
+  }
+
+  function writeShared(s) {
+    try {
+      // Stamp the first time this browser sees the session, so MAX_SHARED_AGE_MS
+      // bounds the SESSION rather than the access token — `exp` moves forward on
+      // every refresh and so can never express an absolute age.
+      if (s && !s.shared_since) s.shared_since = Date.now();
+      localStorage.setItem(KEY, JSON.stringify(s));
+    } catch (e) { /* private mode — the per-tab copy still works */ }
+  }
+
+  function clearShared() {
+    try { localStorage.removeItem(KEY); } catch (e) { /* ignore */ }
+  }
+
+  function sharedTooOld(s) {
+    return !!(s && s.shared_since && (Date.now() - s.shared_since) > MAX_SHARED_AGE_MS);
+  }
+
+  /* Reconcile this tab with the shared copy. Runs on every tick, on focus, and
+   * whenever another tab writes the shared key. Returns true if anything moved,
+   * so callers can announce. */
+  function sync() {
+    var mine = read();
+    if (mine) {                    // this tab has the session: it is the truth
+      try { sessionStorage.setItem(TAB_MARK, "1"); } catch (e) { /* ignore */ }
+      var shared = readShared();
+      if (!shared || shared.access_token !== mine.access_token) {
+        // Carry the existing stamp forward rather than restarting the clock —
+        // otherwise every refresh would reset the cap and it would never bite.
+        if (shared && shared.shared_since) mine.shared_since = shared.shared_since;
+        writeShared(mine);
+      }
+      return false;
+    }
+
+    var hadOne = false;
+    try { hadOne = sessionStorage.getItem(TAB_MARK) === "1"; } catch (e) { /* ignore */ }
+    if (hadOne) {
+      // A session existed in this tab and is gone: somebody signed out (or a
+      // module dropped a dead one). Propagate it rather than resurrecting.
+      clearShared();
+      try { sessionStorage.removeItem(TAB_MARK); } catch (e) { /* ignore */ }
+      return false;
+    }
+
+    var s = readShared();
+    if (!s) return false;
+    if (sharedTooOld(s)) { clearShared(); return false; }
+    try {
+      sessionStorage.setItem(KEY, JSON.stringify(s));
+      sessionStorage.setItem(TAB_MARK, "1");
+    } catch (e) { return false; }
+    return true;                   // a signed-out-looking tab just became signed in
   }
 
   /* `exp` absent means an older session shape we cannot date. Treat it as fresh
@@ -126,6 +240,7 @@
    * was definitively rejected. NEVER rejects — callers treat null as
    * "signed out" and anything else as "go ahead". */
   function ensureFresh() {
+    sync();                       // a fresh browser tab hydrates before we judge it
     var s = read();
     if (!s) return Promise.resolve(null);
     if (isFresh(s, SKEW_MS)) return Promise.resolve(s);
@@ -140,11 +255,17 @@
 
     inFlight = exchange(s.refresh_token).then(function (tok) {
       if (!tok || !isValidJwt(tok.access_token)) throw new Error("bad refresh payload");
+      var prior = readShared();
       var ns = {
         access_token: tok.access_token,
         refresh_token: tok.refresh_token || s.refresh_token,
         email: s.email || null,
         exp: Date.now() + (parseInt(tok.expires_in || "3600", 10) * 1000),
+        // Carry the age stamp across the renewal. Minting a fresh one here
+        // would restart MAX_SHARED_AGE_MS on every refresh — and since the
+        // keeper refreshes roughly hourly, the cap would never once be reached.
+        // An expiry that renews itself is not a cap.
+        shared_since: s.shared_since || (prior && prior.shared_since) || Date.now(),
       };
       write(ns);
       inFlight = null;
@@ -186,12 +307,25 @@
   }
 
   var timer = null;
-  function tick() { ensureFresh(); }
+  function tick() {
+    if (sync()) announce(read());   // this tab just picked up another tab's sign-in
+    ensureFresh();
+  }
 
   function start() {
     if (timer) return;
     tick();
     timer = setInterval(tick, TICK_MS);
+    /* localStorage fires `storage` in the OTHER tabs of the origin, so a sign-in
+     * or sign-out anywhere reaches every open tab within milliseconds instead of
+     * waiting for the next tick. This event could never fire for the old
+     * sessionStorage copy, which is why tabs.js's rail badge — which has
+     * listened for it since it was written — never once updated from it. */
+    window.addEventListener("storage", function (e) {
+      if (e && e.key && e.key !== KEY) return;
+      if (sync()) announce(read());
+      else if (!read()) announce(null);
+    });
     // Timers in a backgrounded browser tab are throttled hard, so a laptop
     // reopened after lunch can hold an hours-dead token with a tick that has
     // barely run. Re-check on the moments a person actually returns.
@@ -209,17 +343,20 @@
     ensureFresh: ensureFresh,
     authHeaders: authHeaders,
     signOut: function () { drop(); announce(null); },
+    sync: sync,
     start: start,
     _skewMs: SKEW_MS,
     _tickMs: TICK_MS,
+    _maxSharedAgeMs: MAX_SHARED_AGE_MS,
     _isValidJwt: isValidJwt,
+    _readShared: readShared,
   };
 
-  if (typeof document !== "undefined") {
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", start);
-    } else {
-      start();
-    }
-  }
+  /* Start IMMEDIATELY, not on DOMContentLoaded. Hydrating a browser tab from the
+   * shared session is pure storage work — it needs no DOM — and every other
+   * module reads `cpl_sb` while its own script evaluates. Waiting for DOM ready
+   * would leave a tab reading "signed out" for the whole parse, which is the
+   * very state this file exists to prevent. Listener registration is legal
+   * during parsing too, so there is nothing here to defer. */
+  start();
 })();

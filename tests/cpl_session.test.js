@@ -50,7 +50,9 @@ function sess(msFromNow, extra) {
 }
 
 // `refresh` decides what the token endpoint does: "ok" | "offline" | a status.
-function boot({ stored, refresh } = {}) {
+// `shared` seeds localStorage (what OTHER browser tabs of this origin can see);
+// `marked` seeds the per-tab "this tab has had a session" flag.
+function boot({ stored, shared, marked, refresh } = {}) {
   const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });
   const { window } = dom;
@@ -58,6 +60,11 @@ function boot({ stored, refresh } = {}) {
     window.sessionStorage.setItem("cpl_sb",
       typeof stored === "string" ? stored : JSON.stringify(stored));
   }
+  if (shared !== undefined) {
+    window.localStorage.setItem("cpl_sb",
+      typeof shared === "string" ? shared : JSON.stringify(shared));
+  }
+  if (marked) window.sessionStorage.setItem("cpl_sb_tab", "1");
   window.__refreshCalls = 0;
   window.fetch = function (url, init) {
     window.__refreshCalls++;
@@ -279,6 +286,106 @@ const readStore = (w) => {
     if (offenders.length) console.log("    cached-session refreshers: " + offenders.join(", "));
     check("no ensureFresh() refreshes from a cached session — all re-read storage",
       offenders.length === 0);
+  }
+
+  // ── The session is shared across BROWSER tabs ────────────────────────────
+  //
+  // Sam, 2026-08-14: "when I logged in, it opened a new tab and I was trying to
+  // work on Sierra from the original tab." sessionStorage is per browser tab by
+  // definition, so the tab he was working in could never see the magic link's
+  // session. localStorage is now canonical and mirrored into each tab.
+  const readLocal = (w) => {
+    const raw = w.localStorage.getItem("cpl_sb");
+    try { return raw ? JSON.parse(raw) : null; } catch (e) { return raw; }
+  };
+
+  {
+    // A brand-new browser tab, with a session another tab established.
+    const w = boot({ shared: sess(50 * 60 * 1000) });
+    check("a fresh browser tab hydrates from the shared session",
+      w.CPL_SESSION.get() && w.CPL_SESSION.get().access_token === JWT);
+    check("…into sessionStorage, where all 26 existing readers look",
+      readStore(w) && readStore(w).access_token === JWT);
+  }
+  {
+    // A tab that HAS the session must publish it, so the next tab opened finds it.
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    w.CPL_SESSION.sync();
+    check("a tab holding the session publishes it for other browser tabs",
+      readLocal(w) && readLocal(w).access_token === JWT);
+    check("…stamped with when this browser first saw it", !!readLocal(w).shared_since);
+  }
+  {
+    // THE HAZARD. Sign-out clears sessionStorage in a dozen places; a naive
+    // mirror would helpfully sign the person back in on the next tick, which is
+    // a sign-out button that does nothing — far worse than a short session.
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    w.CPL_SESSION.sync();                       // publish, as a real tab would
+    check("precondition: the share is populated", !!readLocal(w));
+    w.sessionStorage.removeItem("cpl_sb");      // what every signOut() does
+    w.CPL_SESSION.sync();
+    check("signing out clears the SHARED copy too", readLocal(w) === null);
+    w.CPL_SESSION.sync();
+    check("…and a later sync does not resurrect it", w.CPL_SESSION.get() === null);
+  }
+  {
+    // The same shape via the module's own signOut().
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    w.CPL_SESSION.sync();
+    w.CPL_SESSION.signOut();
+    check("signOut() clears both stores", readStore(w) === null && readLocal(w) === null);
+    w.CPL_SESSION.sync();
+    check("…and stays cleared", w.CPL_SESSION.get() === null);
+  }
+  {
+    // A tab that never had a session must NOT be treated as a sign-out.
+    const w = boot({ shared: sess(50 * 60 * 1000), marked: false });
+    check("a never-signed-in tab hydrates rather than clearing the share",
+      !!w.CPL_SESSION.get() && !!readLocal(w));
+  }
+  {
+    // The cap: closing the browser no longer ends the session, so an absolute
+    // age bounds how long it can be revived.
+    const old = sess(50 * 60 * 1000);
+    old.shared_since = Date.now() - (13 * 60 * 60 * 1000);
+    const w = boot({ shared: old });
+    check("a shared session past the age cap is not hydrated", w.CPL_SESSION.get() === null);
+    check("…and is cleared rather than left to be retried forever", readLocal(w) === null);
+  }
+  {
+    const recent = sess(50 * 60 * 1000);
+    recent.shared_since = Date.now() - (2 * 60 * 60 * 1000);
+    const w = boot({ shared: recent });
+    check("a shared session within the cap still hydrates", !!w.CPL_SESSION.get());
+  }
+  {
+    // A refresh must not restart the clock, or the cap could never bite.
+    const w = boot({ stored: sess(60 * 1000), shared: (() => {
+      const s = sess(60 * 1000); s.shared_since = Date.now() - (11 * 60 * 60 * 1000); return s;
+    })() });
+    await w.CPL_SESSION.ensureFresh(); await tick();
+    const after = readLocal(w);
+    check("renewing carries the original stamp forward, it does not reset the cap",
+      after && (Date.now() - after.shared_since) > 10 * 60 * 60 * 1000);
+  }
+  {
+    // Fail-safe: no localStorage at all (private mode / storage disabled) must
+    // leave today's behaviour intact rather than throwing.
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    Object.defineProperty(w, "localStorage", {
+      get() { throw new Error("SecurityError: storage disabled"); },
+    });
+    let threw = false;
+    try { w.CPL_SESSION.sync(); } catch (e) { threw = true; }
+    check("a browser with no localStorage does not throw", !threw);
+    check("…and keeps working from the per-tab copy",
+      w.CPL_SESSION.get() && w.CPL_SESSION.get().access_token === JWT);
+  }
+  {
+    const w = boot({ shared: "{not json" });
+    let threw = false;
+    try { w.CPL_SESSION.sync(); } catch (e) { threw = true; }
+    check("a garbled shared value is ignored, not fatal", !threw && w.CPL_SESSION.get() === null);
   }
 
   let pass = 0;
