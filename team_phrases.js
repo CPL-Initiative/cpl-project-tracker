@@ -36,7 +36,16 @@
   // browser that holds it — kept in sync on save so the editor is not locked
   // out by their own rotation. `null` = no client slot (ci has no site gate).
   var PHRASES = [
-    { id: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
+    /* The shared phrase. Its row was stored under the id `raci` from the days
+     * it lived on the Team & RACI tab — a tab Sam renamed to "Team" on
+     * 2026-08-15, leaving the phrase named after something that no longer
+     * existed. `legacy` lets this find the row under EITHER id, so renaming the
+     * database row and deploying this file can happen in either order without a
+     * window where the card renders blank. A blank card is the dangerous state:
+     * typing into it and saving would create a SECOND row, and team_pass_check
+     * matches ANY secret in the table — two live shared phrases, one of them
+     * invisible to whoever rotated the other. */
+    { id: "team", legacy: "raci", label: "Shared team phrase", slot: "cpl_team_pass",
       opens: "Every shared team tab — the Workplan, Budget, Memory, MAP Users, Governance, Sierra Training and the rest.",
       who: "Everyone on the MAP team who curates anything." },
     { id: "ci", label: "C&I", slot: null,
@@ -50,8 +59,29 @@
       who: "Whoever works the contract register." }
   ];
   function defOf(id) {
-    for (var i = 0; i < PHRASES.length; i++) if (PHRASES[i].id === id) return PHRASES[i];
+    for (var i = 0; i < PHRASES.length; i++) {
+      if (PHRASES[i].id === id || PHRASES[i].legacy === id) return PHRASES[i];
+    }
     return null;
+  }
+
+  /* The id this phrase's row is ACTUALLY stored under right now.
+   *
+   * Read from the rows we just fetched rather than assumed, so a PATCH always
+   * targets a row that exists. Falls back to the canonical id when nothing has
+   * loaded — writing to the new id is the right guess when there is no evidence,
+   * and the read that follows will correct the display either way. */
+  function rowIdOf(def) {
+    if (!def) return null;
+    if (state.rows) {
+      if (state.rows[def.id]) return def.id;
+      if (def.legacy && state.rows[def.legacy]) return def.legacy;
+    }
+    return def.id;
+  }
+  function rowFor(def) {
+    if (!def || !state.rows) return null;
+    return state.rows[def.id] || (def.legacy ? state.rows[def.legacy] : null) || null;
   }
 
   var state = {
@@ -163,7 +193,7 @@
     state.busy[id] = true; state.msg[id] = { text: "Saving…", kind: "" }; render(root);
     ensureFresh().then(function (s) {
       if (!s) throw new Error("your sign-in expired — sign in again");
-      return fetch(REST + "/team_access?id=eq." + encodeURIComponent(id), {
+      return fetch(REST + "/team_access?id=eq." + encodeURIComponent(rowIdOf(def)), {
         method: "PATCH",
         headers: Object.assign(headersFor(s), {
           "Content-Type": "application/json", Prefer: "return=representation"
@@ -178,7 +208,8 @@
       // 403 — so an "ok" write must also prove it touched a row, or a rotation
       // that silently changed nothing reads as success.
       if (Array.isArray(rows) && rows.length === 0) throw new Error("not saved — your sign-in isn't a reviewer");
-      if (state.rows && state.rows[id]) state.rows[id].secret = v;
+      var live = rowFor(def);
+      if (live) live.secret = v;
       // Keep this browser's own stored copy in sync so the editor is not locked
       // out by their own rotation — only the slot THIS phrase lives in.
       try {
@@ -291,7 +322,7 @@
       + '<button class="tphx-btn" data-signout>Sign out</button></div>';
 
     PHRASES.forEach(function (def) {
-      var row = state.rows && state.rows[def.id];
+      var row = rowFor(def);
       var val = state.draft[def.id] != null ? state.draft[def.id] : (row ? row.secret : "");
       var shown = !!state.reveal[def.id];
       var m = state.msg[def.id];
