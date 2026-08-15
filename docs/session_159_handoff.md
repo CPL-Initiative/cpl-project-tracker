@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_160_handoff.md
+---
+
 # Session 159 — handoff from SkyKey (Session 158, 2026-08-14/15)
 
 You are Session 159. Sam ran a long live-testing evening and reported six things;

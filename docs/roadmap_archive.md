@@ -4228,3 +4228,33 @@ and all 218 suites green.**
 Story: `docs/admin_tab_lessons.md` · ADR
 [`adr-the-side-menu-as-an-overlay-over-code-defaults`](docs/kb-notes/adr-the-side-menu-as-an-overlay-over-code-defaults.md)
 · handoff `docs/session_157_handoff.md`.
+
+---
+
+### Sky157 — a door that was never there, and eight tabs with no input (2026-08-14, Session 157)
+
+Two merges (**#1200**, **#1201**). Sam tested live throughout; every fix came from a real report.
+⭐ **THE REVIEWER SIGN-IN WAS A POINTER AT A ROUTE THAT NO LONGER EXISTED.** Sam: *"I tried using the
+magic link login on RACI tab but it only has the team phrase input now, so I can't edit the new Admin
+tab."* `raci.js` still carried a **complete `signIn()` whose button had been removed** — no caller
+anywhere — while `admin.js` told anyone signed-out to *"sign in with a magic link on the Team & RACI
+tab."* Admin is reviewer-ONLY, so the phrase could never have opened it either: the single documented
+way in was an instruction that could not be carried out, and **nothing failed**. Moved to **ℹ About**
+on Sam's call (*"Since Admin supersedes RACI"*) — also structurally right, since the 🔒 masthead
+control is site-scoped while a reviewer sign-in is personal identity. Admin mounts the same control
+inline; RACI keeps the phrase.
+⭐ **THEN MEASURED, NOT GUESSED.** 43 tables gate on a phrase, **26 on the READ**; of 18 tabs touching
+one, **eight** had neither an input nor a mention of the header and **thirteen live strings across
+five files** still sent people to Team & RACI. Where the gate is on the read, the tab does not look
+locked — it looks **broken**. One shared `lockedBanner()` with a working input + a CI guard, because
+a rule that depends on the next author remembering it fails on their first day.
+⚠️ **MY OWN DETECTOR WAS WRONG TWICE, BOTH CAUGHT BY READING ITS OUTPUT** — 3 of 5 flagged tabs were
+false (acting on them would have shipped three wrong banners), then it reported **clean while five
+live instances sat in one file**, because the copy is split across concatenated string literals a
+regex cannot cross.
+⚠️ **A FAIL-SAFE THE TESTS CAUGHT:** without `team_phrase.js` loaded, the rewritten tabs rendered an
+**empty** locked state — worse than the copy replaced.
+**SkyCode, same day:** the noncredit CIP categories — a blanket `32.0111` rule shipped (#1192) and was
+reverted (#1194) after ~20 minutes; **the TOP turned out not to be load-bearing** and a whole
+TOP-correction project was unnecessary. See the §11 row and `docs/noncredit_cip_category_scope.md`.
+Story: `docs/team_phrase_lessons.md` · `docs/cip_crosswalk_lessons.md` · handoff `docs/session_158_handoff.md`.

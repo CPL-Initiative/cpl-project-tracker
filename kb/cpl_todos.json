@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-15 · SkyKey — the Admin Save works now (it never had), and one expired token explained three separate bugs.",
-  "_session": "Session 158 (SkyKey) — session credentials",
-  "_status": "You reported six things last night and four were real. Three of them turned out to be the SAME problem. Your sign-in quietly expires after about an hour, and half the pages never checked — so they kept saying \"signed in\" while every request was being refused. That is why Sierra Training said you weren't signed in, why the CR Reference couldn't read its decisions, and why signing in again appeared to fix everything. There is now one piece of code that renews your sign-in in the background before it expires, so every page benefits without being touched. The Admin Save was a different bug and a worse one: it had NEVER worked, not once — the menu table was still completely empty — because the save left one required field off some of its rows. Fixed and merged; your drags will stick now. Your Memory entries were never lost (all 330 are there); the tab just could not see them with a magic-link sign-in, which is built but held on your \"fine to leave\". And you worked out the last one yourself: the magic link opens a NEW browser tab, so the tab you were working in stayed signed out. That fix is open as a PR — after it, signing in anywhere signs you in everywhere, and signing out signs you out everywhere too.",
+  "_as_of": "2026-08-15 · Sky159 — all three Admin requests are built; nobody has tried them in a real browser yet.",
+  "_session": "Session 159 (Sky159) — the Admin menu manager",
+  "_status": "Everything you asked for on the Admin tab last night is now built. The hide button no longer toggles silently — it ASKS who should see the item, as one list from \"Everyone\" down to \"nobody\". Every menu item now shows what actually protects its data, not just the alarming ones (only 1 item in 7 was labelled before). And you can create your own menu categories and drag items into them. The Memory tab fix you said was fine to leave is also in — it was a real locked door, not just an inconvenience.\n\nNone of it has been tried in a real browser. The sandbox cannot reach the site, so the whole list below rests on one round trip that only you can do. That is the top item, and it has been the top item for two sessions.",
   "items": [
     {
       "id": "s157-basic-skills-pairing",
@@ -41,40 +41,28 @@
       "text": "Sierra named 1 of 9 D1.1 welding credentials and nobody has worked out why yet. Measure first: either the search never returned the other eight, or it found them and the answer only mentioned the best one. Those are different bugs with different fixes."
     },
     {
-      "id": "s158-round-trip",
+      "id": "s159-round-trip",
       "for": "Sam",
-      "tab": "About menu",
-      "text": "The one test that proves everything from last night. Sign in with the magic link — it will open a new browser tab. Then go BACK to your original tab: it should now be signed in too. Next, on Admin, drag a menu item and press Save; you should get \"Saved\", not an error. Finally sign out, and check that BOTH tabs stay signed out. None of this has been tried in a real browser yet."
+      "tab": "Admin",
+      "text": "The one test that proves the last three sessions of work. Sign in with the magic link from the ℹ About menu — it opens a NEW browser tab. Go back to your ORIGINAL tab: it should be signed in too. Then on Admin, drag a menu item and press Save — you should see \"✓ Saved.\", not an error. Leave it an hour, come back, open a team tab: it should not say you are signed out. Finally sign out, and check BOTH tabs stay signed out. If anything misbehaves, say which step."
     },
     {
-      "id": "s158-memory-pr",
+      "id": "s159-try-category",
       "for": "Sam",
-      "tab": "Memory",
-      "text": "Your call: there is a finished, tested change that lets the Memory tab open with your magic-link sign-in instead of only the team phrase (the database already allows it — the page just never sent your sign-in). You said it was fine to leave, so it is waiting on your yes or no rather than being merged quietly."
-    },
-    {
-      "id": "s158-audience-control",
-      "for": "Fable",
       "tab": "Admin",
-      "text": "Sam expected the hide button to ask \"hide it unless they have a team phrase or magic link?\" — and that is exactly what the separate audience picker does. They are one setting at different strengths; merge them into a single \"who sees this\" choice."
+      "text": "Try making a menu category. Type a name, press \"+ Add category\", drag two items into it, press Save, then reload the page. Then empty it out and press the 🗑 button, Save, and reload again — it should stay gone. If it comes back after you deleted it, that is a real failure and worth reporting."
     },
     {
-      "id": "s158-gate-chip",
-      "for": "Fable",
+      "id": "s159-visibility-ladder",
+      "for": "Sam",
       "tab": "Admin",
-      "text": "Show every menu item's real protection level, not just the risky ones. The tab already measures it but only labels the weak cases, so a properly protected tab shows nothing at all — which is why it was hard to tell which credential a tab actually needs."
+      "text": "Check the new visibility control reads the way you meant. Pressing it now ASKS who should see the item rather than just hiding it, and each choice says what it does. If you only ever wanted to NOTE that a team phrase is needed, the answer is to leave it on \"Everyone\" — the tab already tells people when they open it. Tell us if that still reads wrong."
     },
     {
-      "id": "s158-new-category",
+      "id": "s159-claude-md-size",
       "for": "Fable",
-      "tab": "Admin",
-      "text": "Sam asked whether he can create a new menu category and move items into it. Not today — categories only come from code, and an item moved into an unknown one quietly jumps back to the top level. Needs building properly."
-    },
-    {
-      "id": "s158-claude-md-size",
-      "for": "Fable",
-      "tab": "—",
-      "text": "The project's always-loaded instructions file is twice the size it is supposed to be, and the docs index is five times over. Every future session pays for that on its first read. Time for a real trim, not another tidy-up."
+      "tab": "Docs",
+      "text": "The project's always-loaded instructions file is still twice the size it should be. This session archived one old session write-up and rewrote a section instead of adding to it, but that is holding the line, not fixing it. The finished workstreams — the EACR filters, the team phrases, the sign-in work — are history now and belong in the reference folder. Every line costs every future session."
     }
   ]
 }
