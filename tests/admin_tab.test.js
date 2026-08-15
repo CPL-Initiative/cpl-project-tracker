@@ -255,21 +255,21 @@ const DEFAULT_GATES = [
 
   const un = api._tabGate("activities-projects");
   check("an unmapped tab is UNKNOWN, not 'no data'", !un.measured && un.gate.id === "unknown");
-  check("the table renders unmapped tabs as 'Not mapped'", /Not mapped/.test(root.innerHTML));
+  check("the table renders unchecked tabs as 'Not checked'", /Not checked/.test(root.innerHTML));
   check("the page states unmapped is not a clean bill of health",
-    /not none/.test(root.innerHTML));
+    /not nobody/.test(root.innerHTML));
 
   // The whole reason both halves share a table.
-  check("the page says hiding a menu item is not a security setting",
-    /Hiding a menu item is not a security setting/.test(root.innerHTML));
+  check("the page says taking an item off the menu does not lock it",
+    /Taking something off the menu does not lock it/.test(root.innerHTML));
   check("the security column is labelled as the only real control",
-    /Actually protected by/.test(root.innerHTML) && /Shown on \(display\)/.test(root.innerHTML));
+    /Who can read it/.test(root.innerHTML) && /<th title="Which sites show it/.test(root.innerHTML));
   check("the arrange section renders with drag targets",
     root.querySelectorAll("[data-drop-container]").length > 1 &&
     root.querySelectorAll("[data-drag^='tab:']").length > 0);
   check("the arrange section says these are DISPLAY settings, not protection",
-    /These are display settings/.test(root.innerHTML));
-  check("nothing is written until Save", /Nothing changes for anyone until you press/.test(root.innerHTML));
+    /see in the menu<\/b>/.test(root.innerHTML));
+  check("nothing is written until Save", /Nothing changes for anyone until you press Save/.test(root.innerHTML));
   check("the menu inventory is read from the live nav, not a carried list",
     root.innerHTML.indexOf("Sierra Training") !== -1 && root.innerHTML.indexOf("sierra-training") !== -1);
   check("Admin reports itself as shown on every site", /Every site/.test(root.innerHTML));
@@ -357,13 +357,28 @@ BLOCKS.push((async function () {
   check("a tab can be moved into another group",
     grp.tabs.length && grp.tabs[0].tab === "sierra-training");
 
-  // The lockout guard, enforced at the point of the drag.
-  const before = JSON.stringify(d.containers.map((c) => c.tabs.map((t) => t.tab)));
+  /* The lockout guard, enforced at the point of the drag — and it is now
+   * GROUP_LOCKED, which holds dashboard alone.
+   *
+   * Admin used to be barred from every category on the theory that a category
+   * can be hidden. It cannot actually take Admin with it: plan() lifts a
+   * protected tab OUT of a hidden group (asserted in nav_overlay.test.js,
+   * "Admin is LIFTED OUT of a hidden group rather than vanishing with it"), so
+   * the door was already sealed one layer down and the drag ban was a second
+   * belt that cost Sam the arrangement he wanted. */
   const moved = api._moveTab(d, "admin", grp.id, 0);
-  check("Admin REFUSES to be dragged into a group", moved === false);
-  check("a refused drag leaves the arrangement untouched",
+  check("Admin CAN be dragged into a category", moved === true);
+  check("and it actually lands there", grp.tabs.some((t) => t.tab === "admin"));
+  check("Admin keeps its pin to every site while in a category",
+    val(() => api._findTab(d, "admin").item.pinned) !== undefined);
+
+  const before = JSON.stringify(d.containers.map((c) => c.tabs.map((t) => t.tab)));
+  check("Dashboard still REFUSES — it is where every unmatched link lands",
+    api._moveTab(d, "dashboard", grp.id, 0) === false);
+  check("that refused drag leaves the arrangement untouched",
     JSON.stringify(d.containers.map((c) => c.tabs.map((t) => t.tab))) === before);
-  check("Dashboard refuses too", api._moveTab(d, "dashboard", grp.id, 0) === false);
+  // Move Admin back so the rest of the block sees the arrangement it expects.
+  api._moveTab(d, "admin", "__top__", 0);
 
   // Groups reorder; Top level does not.
   const gid = d.containers[2].id;
@@ -523,7 +538,7 @@ BLOCKS.push((async function () {
   check("the ladder is open on a tab whose data is NOT public (else no proof)",
     /data-visset="sierra-training"/.test(root.innerHTML) && !/adm-audwarn/.test(root.innerHTML));
   check("the picker states it REMOVES the item from the menu, with no ⚠ present",
-    /Removed from the menu for everyone/.test(root.innerHTML));
+    /Nobody sees it in the menu, including you/.test(root.innerHTML));
   check("and names the alternative for 'they just need a phrase'",
     /leave this on <b>Everyone<\/b>/.test(root.innerHTML));
 })());
@@ -539,7 +554,7 @@ BLOCKS.push((async function () {
   check("a hidden tab is still shown in the editor so it can be unhidden",
     /data-vis="sierra-training"/.test(root.innerHTML));
   check("a hidden item's control READS as hidden rather than needing to be guessed",
-    /🙈 Hidden/.test(root.innerHTML));
+    /Seen by: Nobody/.test(root.innerHTML));
   // Admin keeps a visibility control — it may carry an audience rule, which is
   // recoverable — but "nobody" must not be on the ladder at all. An option that
   // cannot be honoured must not be offered.
@@ -548,8 +563,8 @@ BLOCKS.push((async function () {
     val(() => api._rungsFor("admin").every((r) => r.id !== "nobody")));
   check("Dashboard has no visibility control at all — it is the fallback home",
     !/data-vis="dashboard"/.test(root.innerHTML) && val(() => api._rungsFor("dashboard").length) === 0);
-  check("Admin explains why it is locked rather than just omitting the control",
-    /one-way door/.test(root.innerHTML));
+  check("Dashboard explains why it is locked rather than just omitting the control",
+    /it has to stay findable/.test(root.innerHTML));
 })());
 
 // ── The ladder is ONE control over two columns ──────────────────────────────
@@ -598,7 +613,7 @@ BLOCKS.push((async function () {
   await new Promise((r) => setTimeout(r, 20));
   api.render(root);
   check("an item whose data is readable by anyone says so IN the arrange view",
-    /Changing who sees the menu item does NOT change this/.test(root.innerHTML));
+    /Changing who sees the menu item does not change this/.test(root.innerHTML));
 
   /* EVERY item carries its measured gate, not only the alarming ones.
    *
@@ -613,7 +628,7 @@ BLOCKS.push((async function () {
   check("a reviewer-only tab is chipped as such, not left blank",
     ["team", "reviewer"].indexOf(val(() => api._rowGate("sierra-training").id)) !== -1);
   check("the chip names the DATA's protection, not the menu's",
-    /What protects the data behind this tab/.test(root.innerHTML));
+    /Who can read the data behind this page/.test(root.innerHTML));
 })());
 
 // ── A failed gate read is not 35 findings ───────────────────────────────────
@@ -632,7 +647,7 @@ BLOCKS.push((async function () {
   check("a mapped tab chips UNREAD, never 'Not mapped', when the read failed",
     val(() => api._rowGate("sierra-training").id) === "unread");
   check("the unread chip says the measurement is missing, not that the tab is",
-    /not a finding about this tab/.test(val(() => api._gateById("unread").hint) || ""));
+    /not a finding about this page/.test(val(() => api._gateById("unread").hint) || ""));
   /* Today this branch is DEFENSIVE, not reached: render() short-circuits the
    * whole tab on a failed gate read, so no row is drawn to carry a chip. It is
    * kept — and tested — because the alternative is that the day anyone lets the
@@ -644,7 +659,7 @@ BLOCKS.push((async function () {
     !/adm-item/.test(root.innerHTML) && /Could not read the database rules/.test(root.innerHTML));
   // A tab genuinely absent from the surface map is still reported as unmapped —
   // the structural answer does not depend on the live read.
-  check("an unmapped tab still reads as Not mapped even so",
+  check("an unmapped tab still reads as Not checked even so",
     val(() => api._rowGate("no-such-tab").id) === "unknown");
 })());
 
@@ -748,12 +763,12 @@ BLOCKS.push((async function () {
   api2._state.editKey = "vis:cpl-pathways";
   api2.render(root2);
   check("narrowing the audience of a PUBLIC-data tab warns that nothing is protected",
-    /still <b>readable by anyone<\/b>/.test(root2.innerHTML));
+    /still be <b>read by anyone<\/b>/.test(root2.innerHTML));
   // Close the editor first — an open editor REPLACES the row, so the chip is
   // deliberately absent while you are editing that item.
   api2._state.editKey = null; api2.render(root2);
   check("the restricted item states its rung on the row itself",
-    /🔑 Magic link/.test(root2.innerHTML));
+    /Seen by: Magic link/.test(root2.innerHTML));
   check("and the row still carries the DATA's protection alongside it",
     /adm-g-open|adm-g-public/.test(root2.innerHTML));
 
