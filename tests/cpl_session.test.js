@@ -1,0 +1,241 @@
+// 🔑 cpl_session.js — the shared reviewer-session keeper.
+//
+// WHAT THIS GUARDS, AND WHY EACH CHECK EARNED ITS PLACE
+//
+// (a) THE BUG IT EXISTS FOR. A Supabase access token lives ~1h. 13 of the 26
+//     modules reading `cpl_sb` check only the token's SHAPE, so an hour after
+//     sign-in they report "signed in" while every request 401s. On 2026-08-14
+//     that surfaced as three unrelated-looking reports from Sam in one evening
+//     (Admin "save 400", Sierra "says I'm not signed in", CR Reference "could
+//     not read the decisions table") — and re-signing in "fixed" all three,
+//     which is precisely what hides the cause.
+//
+// (b) A TRANSIENT FAILURE MUST NOT SIGN ANYONE OUT. raci.js drops the session
+//     on ANY refresh rejection, so being briefly offline costs a curator their
+//     sign-in and whatever they were about to write. Only a definitive 400/401
+//     from the auth server ends a session here. This is the single most
+//     important assertion in the file: it is the one that fails silently in the
+//     direction of data loss.
+//
+// (c) READING MUST NOT DELETE. The existing getSession()s remove `cpl_sb` when
+//     it fails their test, so one unlucky parse ends the session. Deleting is a
+//     decision, not a side effect of looking.
+//
+// (d) AN UNDATEABLE SESSION IS FRESH, NOT EXPIRED. Guessing "expired" on a
+//     session with no `exp` would sign out someone whose token is fine — the
+//     exact failure this file exists to end.
+//
+// Run from repo root: `npm test` (or `node tests/cpl_session.test.js`).
+
+const fs = require("fs");
+const { JSDOM } = require("jsdom");
+
+const results = [];
+function check(name, cond) { results.push([name, !!cond]); }
+const tick = () => new Promise((r) => setTimeout(r, 0));
+
+const SRC = fs.readFileSync("cpl_session.js", "utf8");
+const IDX = fs.readFileSync("index.html", "utf8");
+const CPL = fs.readFileSync("CPL_Dashboard.html", "utf8");
+
+const JWT = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW0iLCJlbWFpbCI6InNhbUByY2NkLmVkdSJ9.sig";
+const JWT2 = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzYW0iLCJ2IjoicmVuZXdlZCJ9.sig2";
+
+// A session `n` ms from expiry. Negative = already dead.
+function sess(msFromNow, extra) {
+  return Object.assign({
+    access_token: JWT, refresh_token: "rt-1", email: "sam@rccd.edu",
+    exp: Date.now() + msFromNow,
+  }, extra || {});
+}
+
+// `refresh` decides what the token endpoint does: "ok" | "offline" | a status.
+function boot({ stored, refresh } = {}) {
+  const dom = new JSDOM("<!DOCTYPE html><html><body></body></html>",
+    { runScripts: "outside-only", url: "https://example.org/" });
+  const { window } = dom;
+  if (stored !== undefined) {
+    window.sessionStorage.setItem("cpl_sb",
+      typeof stored === "string" ? stored : JSON.stringify(stored));
+  }
+  window.__refreshCalls = 0;
+  window.fetch = function (url, init) {
+    window.__refreshCalls++;
+    window.__lastRefresh = { url: String(url), init: init || {} };
+    if (refresh === "offline") return Promise.reject(new TypeError("Failed to fetch"));
+    if (typeof refresh === "number") {
+      return Promise.resolve({ ok: false, status: refresh, json: () => Promise.resolve({}) });
+    }
+    return Promise.resolve({
+      ok: true, status: 200,
+      json: () => Promise.resolve({ access_token: JWT2, refresh_token: "rt-2", expires_in: 3600 }),
+    });
+  };
+  window.eval(SRC);   // auto-starts, so the stubs must already be in place
+  return window;
+}
+const readStore = (w) => {
+  const raw = w.sessionStorage.getItem("cpl_sb");
+  try { return raw ? JSON.parse(raw) : null; } catch (e) { return raw; }
+};
+
+(async () => {
+  // ── Wiring: both HTMLs, eagerly, before the tabs that read the session ────
+  for (const [name, html] of [["index.html", IDX], ["CPL_Dashboard.html", CPL]]) {
+    check(`${name} loads cpl_session.js`, /<script src="cpl_session\.js"><\/script>/.test(html));
+    check(`${name} loads it BEFORE tabs.js (which reads the session)`,
+      html.indexOf('src="cpl_session.js"') < html.indexOf('src="tabs.js"'));
+  }
+
+  // ── A fresh session is left alone ─────────────────────────────────────────
+  {
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a fresh session is not refreshed (no needless round trip)", w.__refreshCalls === 0);
+    check("and is returned unchanged", readStore(w).access_token === JWT);
+  }
+
+  // ── Near expiry → renewed and persisted ───────────────────────────────────
+  {
+    const w = boot({ stored: sess(60 * 1000) });          // inside the 5-min skew
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a session near expiry IS refreshed", w.__refreshCalls >= 1);
+    check("the refresh hits the token endpoint with grant_type=refresh_token",
+      /\/auth\/v1\/token\?grant_type=refresh_token$/.test(w.__lastRefresh.url));
+    check("it sends the refresh token", /"refresh_token":"rt-1"/.test(w.__lastRefresh.init.body));
+    check("the renewed token is returned", out && out.access_token === JWT2);
+    check("and PERSISTED, so the other 13 tabs read a live token",
+      readStore(w).access_token === JWT2);
+    check("the rotated refresh token is kept", readStore(w).refresh_token === "rt-2");
+    check("expiry moves forward", readStore(w).exp > Date.now() + 50 * 60 * 1000);
+    check("the email survives a refresh", readStore(w).email === "sam@rccd.edu");
+  }
+
+  // ── (b) THE ONE THAT MATTERS: offline must not sign anyone out ────────────
+  {
+    const w = boot({ stored: sess(60 * 1000), refresh: "offline" });
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a NETWORK failure leaves the session in place", !!readStore(w));
+    check("…with its token untouched", readStore(w).access_token === JWT);
+    check("…and hands the caller the still-valid session, not null", out && out.access_token === JWT);
+  }
+  {
+    const w = boot({ stored: sess(60 * 1000), refresh: 503 });
+    await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a 5xx is transient too — session kept", !!readStore(w));
+  }
+
+  // ── A definitive rejection DOES end the session ───────────────────────────
+  for (const status of [400, 401]) {
+    const w = boot({ stored: sess(60 * 1000), refresh: status });
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check(`a ${status} from the auth server clears the dead session`, readStore(w) === null);
+    check(`…and reports signed-out (${status})`, out === null);
+  }
+
+  // ── Expired with no way to renew → cleared, so the UI offers sign-in ──────
+  {
+    const w = boot({ stored: sess(-60 * 1000, { refresh_token: null }) });
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("an expired session with no refresh token is cleared", readStore(w) === null);
+    check("…and never attempts a pointless refresh", w.__refreshCalls === 0);
+    check("…and resolves null", out === null);
+  }
+
+  // ── (c) reading never deletes ─────────────────────────────────────────────
+  {
+    const w = boot({ stored: sess(-60 * 60 * 1000) });   // an hour dead
+    const got = w.CPL_SESSION.get();
+    check("get() returns the stale session rather than hiding it", got && got.access_token === JWT);
+    check("get() does NOT delete it — deleting is a decision, not a read",
+      w.sessionStorage.getItem("cpl_sb") !== null);
+    check("but it is correctly reported as not fresh", w.CPL_SESSION.isFresh() === false);
+  }
+
+  // ── (d) no `exp` → fresh, not expired ─────────────────────────────────────
+  {
+    const w = boot({ stored: { access_token: JWT, refresh_token: "rt-1", email: "x@y.z" } });
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a session with no exp is treated as fresh, never signed out", !!readStore(w));
+    check("…and is not refreshed on a guess", w.__refreshCalls === 0);
+    check("…and is handed back", out && out.access_token === JWT);
+  }
+
+  // ── Garbage and absence are survivable, not throwable ─────────────────────
+  {
+    const w = boot({ stored: "{not json" });
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a garbled value resolves null instead of throwing", out === null);
+  }
+  {
+    const w = boot({});
+    const out = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("no session at all resolves null", out === null);
+    check("…with no refresh attempted", w.__refreshCalls === 0);
+  }
+  {
+    // A token that isn't a JWT at all must not be dressed up as a session.
+    const w = boot({ stored: { access_token: "nope", refresh_token: "rt-1" } });
+    check("a non-JWT access_token is not a session", w.CPL_SESSION.get() === null);
+  }
+
+  // ── Concurrency: one refresh, shared ──────────────────────────────────────
+  {
+    const w = boot({ stored: sess(60 * 1000) });
+    const [a, b, c] = await Promise.all([
+      w.CPL_SESSION.ensureFresh(), w.CPL_SESSION.ensureFresh(), w.CPL_SESSION.ensureFresh(),
+    ]);
+    await tick();
+    check("three concurrent callers trigger ONE refresh, not three", w.__refreshCalls === 1);
+    check("…and all three get the renewed session",
+      a.access_token === JWT2 && b.access_token === JWT2 && c.access_token === JWT2);
+    // A second call after it settles may refresh again only if still near expiry;
+    // the renewed session is an hour out, so it must not.
+    await w.CPL_SESSION.ensureFresh();
+    check("a later call on the renewed session does not refresh again", w.__refreshCalls === 1);
+  }
+
+  // ── It announces, so a rendered tab can re-read its lock state ────────────
+  {
+    const w = boot({ stored: sess(60 * 1000) });
+    let seen = null;
+    w.addEventListener("cpl-session-changed", (e) => { seen = e.detail; });
+    await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a renewal announces cpl-session-changed", seen && seen.signedIn === true);
+    check("…naming who is signed in", seen && seen.email === "sam@rccd.edu");
+  }
+  {
+    const w = boot({ stored: sess(60 * 1000), refresh: 401 });
+    let seen = "none";
+    w.addEventListener("cpl-session-changed", (e) => { seen = e.detail; });
+    await w.CPL_SESSION.ensureFresh(); await tick();
+    check("a dead session announces signed-OUT so tabs stop claiming otherwise",
+      seen !== "none" && seen.signedIn === false);
+  }
+
+  // ── authHeaders is a convenience, never a requirement ─────────────────────
+  {
+    const w = boot({ stored: sess(50 * 60 * 1000) });
+    const h = w.CPL_SESSION.authHeaders({ "Content-Type": "application/json" });
+    check("authHeaders bears the session token", h.Authorization === "Bearer " + JWT);
+    check("…keeps the anon apikey", /^eyJ/.test(h.apikey));
+    check("…and merges extras", h["Content-Type"] === "application/json");
+    const w2 = boot({});
+    check("with no session it falls back to anon rather than sending 'Bearer null'",
+      /^Bearer eyJ/.test(w2.CPL_SESSION.authHeaders().Authorization));
+  }
+
+  // ── The keeper runs itself ────────────────────────────────────────────────
+  {
+    const w = boot({ stored: sess(60 * 1000) });
+    await tick(); await tick();
+    check("it refreshes on load without anyone calling it", w.__refreshCalls >= 1);
+    check("it re-checks when a tab is activated (throttled timers in background tabs)",
+      typeof w.CPL_SESSION.start === "function");
+  }
+
+  let pass = 0;
+  for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
+  console.log(`\n${pass}/${results.length} assertions passed`);
+  process.exit(pass === results.length ? 0 : 1);
+})();

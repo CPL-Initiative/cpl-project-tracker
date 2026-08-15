@@ -14884,6 +14884,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
 };
     </script>
     <!-- DATA-END -->
+    <!-- cpl_session.js FIRST of the auth-aware scripts: it keeps the shared
+         reviewer session (sessionStorage cpl_sb) renewed underneath every tab
+         that reads it. 13 of the 26 modules that read that key check only the
+         token's SHAPE, so an hour after sign-in they still say "signed in"
+         while every request 401s — which is how one dead token showed up as
+         three unrelated bugs on 2026-08-14. It is a keeper, not a gate: if this
+         file fails to load, every tab behaves exactly as it does today. -->
+    <script src="cpl_session.js"></script>
     <!-- Tab router + rail auth badge + hamburger toggle (PR-Sidebar-A) -->
     <script src="tabs.js"></script>
     <!-- nav_overlay.js BEFORE nav_groups.js: it exposes window.CPL_NAV_OVERLAY,
