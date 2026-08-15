@@ -1061,3 +1061,56 @@ BLOCKS.push((async function () {
     fs2 && fs2.kind === "tab" && /^[a-z0-9][a-z0-9-]{0,48}$/.test(fs2.key));
   check("and its parent is the Share group", fs2 && fs2.parent === "share");
 })());
+
+/* ── The editor refuses to work from a CACHED read ───────────────────────────
+ *
+ * nav_overlay paints from localStorage first and fetches after — right for the
+ * MENU, wrong for an EDITOR, because saveDraft() writes EVERY row back. A draft
+ * seeded from a stale cache silently reverts whatever changed since that cache
+ * was written, in fields nobody touched.
+ *
+ * Not hypothetical: the cache written before 2026-08-15 carries no `audience`
+ * (the column was missing from load()'s select list), so a save built on it
+ * reset every rung to "everyone". That is how Sam lost nine of them. */
+BLOCKS.push((async function () {
+  const w = makeWin({});
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+
+  // Force the "cache only, network not back" state the real page passes through.
+  const ov = w.CPL_NAV_OVERLAY;
+  const realIsLoaded = ov.isLoaded;
+  ov.isLoaded = function () { return false; };
+  api._state.draft = null;
+  api.render(root);
+
+  check("the editor does NOT open on an unconfirmed read",
+    val(() => api._buildDraft()) === null);
+  check("and says it is still reading, not that it failed",
+    /Reading the current menu/.test(root.innerHTML) &&
+    !/could not be read for editing/.test(root.innerHTML));
+  check("it explains WHY, rather than looking broken",
+    /writes every setting back/.test(root.innerHTML));
+
+  /* The save is guarded SEPARATELY, at the point of the write. A draft built
+   * while loaded, then saved after something invalidated the read, must not go
+   * out either — the render decides what to OFFER, this decides what happens. */
+  ov.isLoaded = realIsLoaded;
+  api._state.draft = null;
+  api.render(root);
+  const d = api._ensureDraft();
+  check("with the read confirmed, the editor opens normally", !!d);
+
+  const before = w.__fetches.filter((f) => f.init.method === "POST").length;
+  ov.isLoaded = function () { return false; };
+  await api._saveDraft(root);
+  const after = w.__fetches.filter((f) => f.init.method === "POST").length;
+  check("a save on an unconfirmed read writes NOTHING", after === before);
+  check("and says so plainly instead of failing silently",
+    /had not finished loading/.test(root.innerHTML) && /Nothing was changed/.test(root.innerHTML));
+  check("the arrangement is kept, so nothing typed is lost",
+    !!api._state.draft);
+  ov.isLoaded = realIsLoaded;
+})());
