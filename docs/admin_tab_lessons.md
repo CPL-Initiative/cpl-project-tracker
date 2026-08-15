@@ -458,3 +458,45 @@ belongs in the Governance register.
 3. **Org roster as data** (`cobi_orgs.js` → a table), which is what makes "what
    is in Finance" one list instead of two, and what a per-site Admin filter reads.
 4. Fill owners on DR-13…DR-18 (OQ-01) — unchanged, still nobody's.
+
+### Postscript, same day — the audience filter had never worked
+
+Sam dragged Admin into Settings, it worked, and the **same save reset nine
+audience rungs to `everyone`**. He was gracious — *"I don't mind resetting them
+since this was a structural change"* — but it was not a structural change, and
+the real finding is worse than data loss.
+
+`nav_overlay.load()` names its columns explicitly and **omitted `audience` from
+the day the column shipped**. PostgREST returns only what is asked for, so
+`r.audience` was always `undefined`.
+
+⭐ **The write path was correct. The READ path was one column short**, and that
+made the failure silent in three places at once:
+
+1. `audienceAllows()` always returned true — **the filter never hid a tab from
+   anybody.** Team Phrases was set to magic-link-only and stayed visible to every
+   visitor. Display only, RLS still gated the contents, but the control did not
+   do what it said.
+2. The Admin editor hydrates its draft from the same rows, so it showed
+   "Everyone" for every tab. **It agreed with itself, and with nothing else** —
+   which is why no amount of looking at the tab would have revealed it.
+3. `draftRows()` writes the whole row back, so **any** save erased every
+   audience in the table. That is the only reason it surfaced at all.
+
+⚠️ **A default that "lands on the harmless side" is right for a bad VALUE and
+wrong for an ABSENT column.** `sanitize()` maps an unrecognised audience to
+`everyone` so a typo can never hide a menu item — deliberate, and documented.
+But absent and invalid are different states, and collapsing them turned a
+missing value into a *confident wrong one*.
+
+⚠️ **An explicit select list is a SECOND schema** that has to be maintained in
+step with the first, and nothing complains when it drifts. The guard therefore
+derives the required set from `sanitize()`'s own body — every `r.<column>` it
+reads must appear in the select — and prints what is missing: *"11 read, 1
+missing: audience"*. Asserting "audience is present" would have guarded the
+instance and missed the class.
+
+**Correction to the record:** the checkpoint above cites Sam's audience rungs as
+evidence the Admin save works. That is still true — the save *wrote* them — but
+they never took effect, and the same mechanism erased them. Restored from a read
+taken before the 15:00 write. Fixed in #1217.

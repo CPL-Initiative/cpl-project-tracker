@@ -37,6 +37,26 @@ find out. When a handoff says "unverified", query before you repeat it.
 
 ---
 
+## ⚠️ Read this first — a same-day correction
+
+Sam dragged Admin into Settings (it worked), and **the same save reset nine
+audience rungs**. Root cause was NOT the drag: `nav_overlay.load()` never
+selected the `audience` column, so **the audience filter had never hidden
+anything from anybody**, the Admin editor displayed "Everyone" for every tab and
+agreed with itself, and every save wrote that back. Fixed + guarded in **#1217**;
+the nine values are restored from a pre-write read.
+
+⚠️ **Anywhere this handoff or §11 cites Sam's audience rungs as proof the tab
+works, read it as: the save wrote them, the filter ignored them.** The menu
+manager is sound; one column was missing from one read.
+
+**Carry the lesson, not just the fix:** an explicit PostgREST select list is a
+second schema, and a default that lands on the harmless side turns an *absent*
+column into a confident wrong answer. `nav_overlay.test.js` now derives the
+required columns from `sanitize()` itself.
+
+---
+
 ## 🎯 PRIORITY 1 — the Finance phrase scope. NEEDS SAM, THEN CAREFUL WORK.
 
 Sam, 2026-08-15: *"Finance should not open the entire workplan."* He is right,
