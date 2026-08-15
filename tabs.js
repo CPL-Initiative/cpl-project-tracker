@@ -21,6 +21,28 @@
   function validTabs() {
     return navButtons().map(function (b) { return b.getAttribute('data-tab'); });
   }
+  /* Where a link that matches no page lands.
+   *
+   * Was `valid[0] || 'dashboard'` — the FIRST button in DOM order — and that is
+   * wrong in two directions now.
+   *
+   * It is the CPL dashboard for every site, so a C&I visitor following a stale
+   * link lands on CPL KPIs that their own menu deliberately hides. And DOM order
+   * became curator-editable when the Admin tab shipped, so dragging any tab
+   * above Dashboard silently moves the fallback with it — a menu edit quietly
+   * changing routing.
+   *
+   * Every site already declares its own `home` (cobi_orgs.js). Ask for that.
+   * DOM order stays as the last resort, because the org layer is optional and a
+   * router that depends on it would fail closed — with no page at all. */
+  function homeTab(valid) {
+    try {
+      var org = window.CPL_ORGS && window.CPL_ORGS.current && window.CPL_ORGS.current();
+      var home = org && org.home;
+      if (home && valid.indexOf(home) !== -1) return home;
+    } catch (e) { /* never let the org layer cost the router */ }
+    return valid[0] || 'dashboard';
+  }
   function parseHash() {
     var h = (location.hash || '').replace(/^#/, '');
     var parts = h.split('/');
@@ -29,11 +51,11 @@
   function fromHash() {
     var p = parseHash();
     var valid = validTabs();
-    return (p.tab && valid.indexOf(p.tab) !== -1) ? p.tab : (valid[0] || 'dashboard');
+    return (p.tab && valid.indexOf(p.tab) !== -1) ? p.tab : homeTab(valid);
   }
   function activate(tabName, opts) {
     var valid = validTabs();
-    if (!tabName || valid.indexOf(tabName) === -1) tabName = valid[0] || 'dashboard';
+    if (!tabName || valid.indexOf(tabName) === -1) tabName = homeTab(valid);
     navButtons().forEach(function (b) {
       var on = b.getAttribute('data-tab') === tabName;
       b.classList.toggle('active', on);

@@ -151,14 +151,48 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
     check("each says what it OPENS, not just its name", /Opens:/.test(root.textContent));
     check("each says WHO needs it", /Who needs it:/.test(root.textContent));
     check("secrets are masked until revealed",
-      root.querySelector('[data-phrase="raci"]').type === "password");
-    root.querySelector('[data-reveal="raci"]').dispatchEvent(new w.Event("click"));
+      root.querySelector('[data-phrase="team"]').type === "password");
+    root.querySelector('[data-reveal="team"]').dispatchEvent(new w.Event("click"));
     await tick(5);
     check("reveal unmasks just that one",
-      root.querySelector('[data-phrase="raci"]').type === "text"
+      root.querySelector('[data-phrase="team"]').type === "text"
       && root.querySelector('[data-phrase="fin"]').type === "password");
     check("rotation is warned about before it bites, not after",
       /locked out until you tell them/.test(root.textContent));
+  }
+
+  /* The SAME file against the RENAMED database.
+   *
+   * `ROWS` above deliberately keeps the legacy `raci` id — that is the database
+   * as it stands before the rename, and every check above runs against it. This
+   * block is the other side: once team_access.id is 'team', the card must still
+   * find its row and PATCH the new id. Both orders have to work, because the
+   * database rename and this deploy cannot be simultaneous, and the failure in
+   * between is not cosmetic: a card that renders blank invites someone to type a
+   * phrase and save, creating a SECOND row — and team_pass_check matches ANY
+   * secret in the table. */
+  {
+    const w = makeWin({ rows: [
+      { id: "ci", secret: "ci-secret" },
+      { id: "fin", secret: "fin-secret" },
+      { id: "gr", secret: "gr-secret" },
+      { id: "team", secret: "team-secret" }
+    ], teamPass: "old-shared" });
+    const root = w.document.getElementById("team-phrases-root");
+    w.CPL_TEAM_PHRASES.activate();
+    await tick();
+    const inp = root.querySelector('[data-phrase="team"]');
+    check("after the rename the shared card still finds its phrase",
+      !!inp && inp.value === "team-secret");
+    inp.value = "rotated";
+    inp.dispatchEvent(new w.Event("input"));
+    root.querySelector('[data-save="team"]').dispatchEvent(new w.Event("click"));
+    await tick(40);
+    const patch = w.__fetches.filter((f) => f.init.method === "PATCH");
+    check("and saves against the NEW id, not the legacy one",
+      patch.length === 1 && /id=eq\.team/.test(patch[0].url) && !/raci/.test(patch[0].url));
+    check("the rename does not disturb the browser's stored copy key",
+      w.localStorage.getItem("cpl_team_pass") === "rotated");
   }
 
   // ── (d)+(e) saving ──
@@ -168,13 +202,14 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
     const root = w.document.getElementById("team-phrases-root");
     api.activate();
     await tick();
-    const inp = root.querySelector('[data-phrase="raci"]');
+    const inp = root.querySelector('[data-phrase="team"]');
     inp.value = "brand-new-shared";
     inp.dispatchEvent(new w.Event("input"));
-    root.querySelector('[data-save="raci"]').dispatchEvent(new w.Event("click"));
+    root.querySelector('[data-save="team"]').dispatchEvent(new w.Event("click"));
     await tick(40);
     const patch = w.__fetches.filter((f) => (f.init.method === "PATCH"));
-    check("save PATCHes only the row it edited", patch.length === 1 && /id=eq\.raci/.test(patch[0].url));
+    check("save PATCHes only the row it edited, under the id it ACTUALLY has",
+      patch.length === 1 && /id=eq\.raci/.test(patch[0].url));
     check("save asks for the representation, so an empty write is detectable",
       /return=representation/.test(JSON.stringify(patch[0].init.headers)));
     check("save reports success", /Saved/.test(root.textContent));
@@ -189,10 +224,10 @@ const tick = (ms) => new Promise((r) => setTimeout(r, ms || 30));
     const root = w.document.getElementById("team-phrases-root");
     api.activate();
     await tick();
-    const inp = root.querySelector('[data-phrase="raci"]');
+    const inp = root.querySelector('[data-phrase="team"]');
     inp.value = "attempted";
     inp.dispatchEvent(new w.Event("input"));
-    root.querySelector('[data-save="raci"]').dispatchEvent(new w.Event("click"));
+    root.querySelector('[data-save="team"]').dispatchEvent(new w.Event("click"));
     await tick(40);
     check("a 200-but-zero-rows write is reported as a FAILURE, not success",
       /not saved/i.test(root.textContent) && !/✓ Saved/.test(root.textContent));
