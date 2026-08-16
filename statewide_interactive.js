@@ -125,6 +125,11 @@
   // them; populated once start() runs.
   var cplTypes = [], disciplines = [], sectors = [], collabTypes = [], issuers = [];
   var allColleges = {}, collegeNames = [], districtSet = {}, swRegionSet = {}, districts = [], swRegions = [];
+  // unified_title → { college: [courses] } from the prescriptive (M-ID leverage)
+  // layer. This is the STRONG "could adopt" signal — the college already teaches
+  // a course that maps to the credential's identity, and we can name it. Built
+  // once in deriveFromData() so collegeNamesFor() is a lookup, not a scan.
+  var presByTitle = {};
   // Vision §6.2 — cards with modal confidence_title below this threshold get a "needs review" badge.
   var CONFIDENCE_THRESHOLD = 0.75;
   function deriveFromData() {
@@ -172,12 +177,94 @@
     }
     districts = Object.keys(districtSet).sort();
     swRegions = Object.keys(swRegionSet).sort();
+
+    // Index the prescriptive layer by unified_title → college → courses.
+    presByTitle = {};
+    var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};
+    Object.keys(presAll).forEach(function (t) {
+      var m = {};
+      (presAll[t].colleges || []).forEach(function (c) {
+        if (TEST_ORGS.indexOf(c.college) === -1) m[c.college] = c.courses || [];
+      });
+      presByTitle[t] = m;
+    });
+  }
+
+  // ── College scope (2026-08-16, Sam: "make sure it filters for colleges that
+  // have adopted the exhibit") ──
+  // The College / District / SW Region filters used to match on
+  // adopter_names ∪ potential_names, which made them 93.6% noise: filtering to
+  // Pasadena City College returned 1,790 cards of which it had adopted 44. The
+  // median card carries 1 adopter and 41 "potential" colleges.
+  //
+  // "Potential" is generated (excel_to_dashboard.py) as every college with a
+  // program of study under the same TOP code, ∪ every college teaching a course
+  // with a matching C-ID, minus adopters. TOP is a last-in-line corroborator
+  // (Rule 7) — it cannot carry a primary "this college could adopt" claim on its
+  // own, so it is no longer folded into the default and is labelled where shown.
+  //
+  // Three scopes, not a binary, because the middle one is a genuinely different
+  // and much stronger signal that was previously unreachable by any filter:
+  //   adopted — the college has articulated it (the default; 8,436 pairs)
+  //   likely  — the M-ID prescriptive layer: already teaches a course that maps
+  //             to this credential's identity, and we can NAME it (4,972 pairs)
+  //   any     — + the broad TOP/C-ID program overlap (122,836 pairs)
+  var SCOPES = {
+    adopted: {
+      label: "Adopted",
+      hint: "Colleges that have articulated this exhibit."
+    },
+    likely: {
+      label: "Adopted + likely",
+      hint: "Also colleges already teaching a course that maps to this credential — the local course is named on the card."
+    },
+    any: {
+      label: "Adopted + any could-adopt",
+      hint: "Also every college with a program under the same TOP code or a matching C-ID. Broad: TOP is a weak signal, so treat these as leads, not matches."
+    }
+  };
+
+  // The college names an exhibit is considered to "reach" under the active
+  // scope. Used by both the filter and the row rendering so the columns can
+  // never disagree with the rows they justify.
+  function collegeNamesFor(e, scope) {
+    var names = (e.adopter_names || []).slice();
+    if (scope === "adopted") return names;
+    var pres = presByTitle[e.unified_title || e.title || ""];
+    if (pres) names = names.concat(Object.keys(pres));
+    if (scope === "likely") return names;
+    return names.concat(e.potential_names || []);
+  }
+
+  // Colleges reached ONLY by the could-adopt half, for the column that shows them.
+  function couldAdoptNamesFor(e, scope) {
+    if (scope === "adopted") return [];
+    var adopted = {};
+    (e.adopter_names || []).forEach(function (c) { adopted[c] = 1; });
+    var seen = {}, out = [];
+    var pres = presByTitle[e.unified_title || e.title || ""];
+    if (pres) Object.keys(pres).forEach(function (c) {
+      if (!adopted[c] && !seen[c]) { seen[c] = 1; out.push({ college: c, likely: true }); }
+    });
+    if (scope === "any") {
+      (e.potential_names || []).forEach(function (c) {
+        if (!adopted[c] && !seen[c]) { seen[c] = 1; out.push({ college: c, likely: false }); }
+      });
+    }
+    return out;
   }
 
   // ── State ──
   var state = {
     search: "",
     filters: { collabType: [], cplType: [], sector: [], discipline: [], issuer: [], college: [], district: [], swRegion: [] },
+    // Which colleges a College/District/Region filter matches on. Defaults to
+    // real adoptions — see SCOPES above.
+    collegeScope: "adopted",
+    // Which view is showing. Two sub-tabs replaced three stacked collapsibles
+    // (2026-08-16): all three used to re-render on every keystroke, and the
+    // student framing is a MODE of the credential view, not a third place.
+    view: "credentials",
     selected: {},
     expanded: {},
     flags: {},   // eid → { flag: "stale" | "duplicate" | "", reviewed_by, reviewed_at }
@@ -209,8 +296,7 @@
     if (f.discipline.length && f.discipline.indexOf(e.discipline || "Unknown") === -1) return false;
     if (f.issuer.length && f.issuer.indexOf(e.issuing_agency || "") === -1) return false;
     if (f.college.length || f.district.length || f.swRegion.length) {
-      var names = (e.adopter_names || []).concat(e.potential_names || []);
-      if (!names.some(collegeMatchesFilters)) return false;
+      if (!collegeNamesFor(e, state.collegeScope).some(collegeMatchesFilters)) return false;
     }
     if (state.search) {
       var q = state.search.toLowerCase();
@@ -259,6 +345,33 @@
     + '.sw-filterbar{margin-bottom:0.6rem;overflow:visible;}'
     + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
     + '.sw-filterbar-hint{font-size:0.64rem;color:var(--text-muted);padding:0 0.8rem 0.6rem;font-style:italic;}'
+    // College scope control + sub-tabs. Plain words, no glyphs.
+    + '.sw-scopebar{display:flex;align-items:center;flex-wrap:wrap;gap:0.35rem;padding:0 0.8rem 0.5rem;}'
+    + '.sw-scope-label{font-size:0.7rem;font-weight:600;color:var(--text-body);margin-right:0.15rem;}'
+    + '.sw-scope-btn{background:var(--surface-subtle);color:var(--text-body);border:1px solid var(--border-strong);'
+      + 'border-radius:999px;padding:3px 11px;font-size:0.7rem;font-family:inherit;cursor:pointer;font-weight:600;}'
+    + '.sw-scope-btn.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    + '.sw-scope-hint{font-size:0.64rem;color:var(--text-muted);font-style:italic;flex-basis:100%;padding-top:0.2rem;}'
+    + '.sw-subtabs{display:inline-flex;gap:4px;margin:0 0 0.6rem;}'
+    + '.sw-subtabs button{background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);'
+      + 'border-bottom:none;border-radius:8px 8px 0 0;padding:7px 15px;font-size:0.85rem;font-family:inherit;'
+      + 'cursor:pointer;font-weight:600;}'
+    + '.sw-subtabs button.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    // Aligned MAP exhibits under a common title.
+    // A likely could-adopt chip (teaches the mapping course) reads stronger than
+    // a broad TOP/C-ID lead — same column, deliberately different weight.
+    + '.sw-potential-likely{outline:1px solid rgba(76,175,120,0.55);font-weight:600;}'
+    + '.cv-ex{margin-top:0.45rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
+    + '.cv-ex>summary{cursor:pointer;font-size:0.7rem;font-weight:600;color:var(--cobalt);list-style:none;}'
+    + '.cv-ex>summary::-webkit-details-marker{display:none;}'
+    + '.cv-ex>summary::before{content:"▸";display:inline-block;margin-right:0.35rem;transition:transform 0.15s ease;}'
+    + '.cv-ex[open]>summary::before{transform:rotate(90deg);}'
+    + '.cv-ex-body{padding:0.3rem 0 0.2rem 0.6rem;}'
+    + '.cv-ex-hint{font-size:0.6rem;color:var(--text-muted);font-style:italic;margin-bottom:0.3rem;}'
+    + '.cv-ex-row{font-size:0.68rem;color:var(--text-body);padding:0.15rem 0;line-height:1.35;}'
+    + '.cv-ex-id{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--cobalt);margin-right:0.4rem;}'
+    + '.cv-ex-meta{font-size:0.62rem;color:var(--text-muted);}'
+    + '.cv-ex-raw{font-size:0.62rem;color:var(--text-muted);padding-left:0.2rem;}'
     // Dark navy card so the v2 credential view's white/grey text is readable —
     // it renders on the light dashboard page, and (unlike the v1 table, which
     // sits inside .sw-interactive) cv-body was transparent → text was invisible.
@@ -291,28 +404,18 @@
     + '.cv-rx-note{font-size:0.62rem;color:var(--mustard-text);font-style:italic;margin-top:0.3rem;}'
     // Student view (v3) — seeker lens. Renders inside the same dark .cv-body.
     + '.sv-banner{font-size:0.72rem;color:var(--cobalt);background:rgba(125,161,212,0.12);border-left:3px solid var(--cobalt);padding:0.45rem 0.7rem;border-radius:4px;margin-bottom:0.6rem;}'
-    + '.sv-banner-tip{color:var(--text-body);border-left-color:#E3B341;background:rgba(227,179,65,0.1);}'
     + '.sv-banner b{color:var(--text-strong);}'
-    + '.sv-award{font-size:0.74rem;color:var(--mustard-text);font-weight:600;margin:0.1rem 0 0.4rem;}'
-    + '.sv-award b{color:var(--mustard-text);}'
     + '.sv-status{font-size:0.7rem;line-height:1.55;padding:0.15rem 0;color:var(--text-body);}'
     + '.sv-yes b{color:var(--hunter);}'
     + '.sv-maybe b{color:var(--mustard-text);}'
     + '.sv-prog b{color:var(--text-muted);}'
-    + '.sv-none{color:var(--text-muted);font-style:italic;}'
     + '.sv-cta{font-style:italic;color:var(--text-muted);font-size:0.64rem;}'
     + '.sv-teaches{font-size:0.64rem;color:var(--text-muted);}'
     + '.sv-chip{font-size:0.62rem;padding:1px 6px;border-radius:3px;margin:0 1px;white-space:nowrap;display:inline-block;}'
     + '.sv-chip-yes{background:rgba(76,175,120,0.25);color:var(--hunter);}'
     + '.sv-chip-maybe{background:rgba(227,179,65,0.22);color:var(--mustard-text);}'
     + '.sv-chip-prog{background:var(--surface-subtle);color:var(--text-body);}'
-    + '.sv-chip-sw{background:rgba(125,161,212,0.16);color:var(--cobalt);}'
-    + '.sv-sw{font-size:0.66rem;color:var(--text-body);margin-top:0.4rem;border-top:1px dashed var(--border);padding-top:0.35rem;}'
-    + '.sv-sw-label{font-weight:600;color:var(--text-body);}'
-    + '.sv-sw-none{font-style:italic;color:var(--text-muted);}'
-    + '.sv-pres-hint{font-size:0.64rem;color:var(--mustard-text);font-style:italic;margin-top:0.25rem;}'
     + '.sv-more{font-size:0.6rem;color:var(--text-muted);}'
-    + '.sv-unclass{opacity:0.6;}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -360,14 +463,83 @@
   // Shares the v1 search + filters via getFiltered(); reuses buildCreditRecsHtml.
   // Consumer-side, additive — the per-college prescriptive layer (PR-4) appends
   // a "colleges that could adopt → likely local course" block per card.
-  function buildCredentialView() {
-    var filtered = getFiltered();
+  // ── Grouping to the CER's common reference (2026-08-16) ──
+  // The card grain is (unified_title, issuer, CPL type); the CER's grain is the
+  // unified_title alone. Grouping on title+issuer therefore split 8 credentials
+  // into TWO cards each — a classified one carrying the issuer, and an
+  // unclassified twin with a BLANK issuer (Firefighter I, Firefighter II, CNA
+  // Certification, Computer Keyboarding…). The twin sorts to the bottom with the
+  // other unclassified cards, so a curator sees one and never learns of the
+  // other.
+  //
+  // A blank issuer means UNKNOWN, not DIFFERENT, so it folds into the title's
+  // named issuer. Two genuinely different NAMED issuers on one title stay
+  // separate — that is a real distinction and we must not invent a merge. (No
+  // such case exists in the data today; the rule is what keeps it honest if one
+  // appears.)
+  function credentialKey(e, namedByTitle) {
+    var t = e.unified_title || e.title || "";
+    var iss = e.issuing_agency || "";
+    if (!iss) {
+      var named = namedByTitle[t];
+      if (named && named.length === 1) iss = named[0];
+    }
+    return t + "||" + iss;
+  }
+  function groupToCredentials(cards) {
+    var namedByTitle = {};
+    cards.forEach(function (e) {
+      var t = e.unified_title || e.title || "";
+      var iss = e.issuing_agency || "";
+      if (!iss) return;
+      if (!namedByTitle[t]) namedByTitle[t] = [];
+      if (namedByTitle[t].indexOf(iss) === -1) namedByTitle[t].push(iss);
+    });
     var groups = {}, order = [];
-    filtered.forEach(function (e) {
-      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
+    cards.forEach(function (e) {
+      var k = credentialKey(e, namedByTitle);
       if (!groups[k]) { groups[k] = []; order.push(k); }
       groups[k].push(e);
     });
+    return { groups: groups, order: order };
+  }
+
+  // The MAP exhibits folded under one common reference — Sam: "list all the
+  // different aligned exhibits under the common title." `exhibit_ids` and
+  // `raw_titles` have always been in the payload and were rendered NOWHERE:
+  // 5,135 MAP exhibit IDs fold into 2,673 cards and none were visible.
+  function buildAlignedExhibitsHtml(cards) {
+    var seen = {}, rows = [];
+    cards.forEach(function (e) {
+      var ids = e.exhibit_ids || (e.exhibit_id ? [e.exhibit_id] : []);
+      var raws = e.raw_titles || [];
+      ids.forEach(function (id, i) {
+        if (seen[id]) return;
+        seen[id] = 1;
+        // raw_titles and exhibit_ids are independently sorted lists of the same
+        // fold, so they align only when the counts match. Pair them when they
+        // do; otherwise show the id alone rather than mislabel it.
+        var raw = (raws.length === ids.length) ? raws[i] : "";
+        rows.push({ id: id, raw: raw, cpl: e.cpl_type || "", collab: e.collaborative_type || "Local" });
+      });
+    });
+    if (!rows.length) return "";
+    var n = rows.length;
+    return '<details class="cv-ex"><summary>' + n + ' MAP exhibit' + (n === 1 ? '' : 's') +
+      ' under this common title</summary><div class="cv-ex-body">' +
+      '<div class="cv-ex-hint">These are the separate exhibit records colleges articulate against. ' +
+      'They are the same credential — the common title above is the CER reference that folds them.</div>' +
+      rows.map(function (r) {
+        return '<div class="cv-ex-row"><span class="cv-ex-id">' + esc(r.id) + '</span>' +
+          '<span class="cv-ex-meta">' + esc(r.cpl) + (r.collab === "CCC Collaborative" ? ' · CCC' : '') + '</span>' +
+          (r.raw ? '<div class="cv-ex-raw">' + esc(r.raw) + '</div>' : '') + '</div>';
+      }).join("") + '</div></details>';
+  }
+
+  function buildCredentialView() {
+    var filtered = getFiltered();
+    var grouped = groupToCredentials(filtered);
+    var groups = grouped.groups, order = grouped.order;
     function bestPot(cards) { return cards.reduce(function (m, e) { return Math.max(m, e.potential || 0); }, 0); }
     function allUnclassified(cards) { return cards.every(function (e) { return e.is_classified === false; }); }
     // Same ordering spirit as the table: unclassified last, best-opportunity first.
@@ -382,10 +554,20 @@
       out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(order.length) +
         ' credentials — use the search box / filters above to narrow.</div>');
     }
+    var nearMe = nearMeColleges();
+    if (nearMe) {
+      var scopeLbl = state.filters.college.length
+        ? state.filters.college.join(", ")
+        : state.filters.district.concat(state.filters.swRegion).join(", ");
+      out.push('<div class="sv-banner">Scoped to <b>' + esc(scopeLbl) + '</b> — ' +
+        esc(SCOPES[state.collegeScope].hint) + '</div>');
+    }
     order.slice(0, LIMIT).forEach(function (k) {
       var cards = groups[k];
       var title = cards[0].unified_title || cards[0].title || "";
-      var issuer = cards[0].issuing_agency || "";
+      // The issuer comes from the GROUP KEY, not cards[0] — a blank-issuer card
+      // folded into a named credential must render under that credential's name.
+      var issuer = k.slice(title.length + 2);
       // Anchor = the CCC version (most adopters) if any; else the top-adopter local card.
       var byAdopt = function (a, b) { return (b.adopters || 0) - (a.adopters || 0); };
       var ccc = cards.filter(function (e) { return e.collaborative_type === "CCC Collaborative"; }).sort(byAdopt);
@@ -413,174 +595,72 @@
               buildCreditRecsHtml(e.credit_recs) + '</div>';
           }).join("") + '</div>';
       }
-      out.push('<div class="cv-credential">' + head + std + othersHtml +
+      out.push('<div class="cv-credential">' + head +
+        (nearMe ? buildNearMeHtml(cards, title, nearMe) : "") +
+        std + othersHtml +
+        buildAlignedExhibitsHtml(cards) +
         buildPrescriptiveHtml(title) + '</div>');
     });
     return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
   }
 
-  // ── Student view (v3) ──
-  // The seeker lens: "I hold this credential — where NEAR ME can I get credit,
-  // how much, and which local course do I ask about?" Reuses the same filtered
-  // set + (unified_title, issuer) grouping as v2, but reframes each credential
-  // against the student's selected college(s):
-  //   ✅ available now   — their college already articulated it
-  //   🎯 likely qualify  — their college teaches the matching course (prescriptive
-  //                        layer names the exact local course) → ask about CPL
-  //   ○ aligned program  — their college has an aligned program area
-  // With no college picked it's a browse view nudging them to pick one.
+  // ── Near-me band (folded in from the standalone Student view, 2026-08-16) ──
+  // Same three states the v3 seeker lens used, rendered inside the credential
+  // card instead of a third place to look: the college either HAS it, LIKELY
+  // qualifies (and we name the local course), or has an aligned program only.
+  // Each state is sourced from a different signal and they are never merged —
+  // "already teaches the matching course" is a far stronger claim than "has a
+  // program under the same TOP code", and the copy says which is which.
+  function buildNearMeHtml(cards, title, nearMe) {
+    var adoptSet = {}, potSet = {};
+    cards.forEach(function (e) {
+      (e.adopter_names || []).forEach(function (c) { adoptSet[c] = 1; });
+      (e.potential_names || []).forEach(function (c) { potSet[c] = 1; });
+    });
+    var pres = presByTitle[title] || {};
+    var avail = [], qualify = [], aligned = [];
+    Object.keys(nearMe).forEach(function (c) {
+      if (adoptSet[c]) avail.push(c);
+      else if (pres[c]) qualify.push({ college: c, courses: pres[c] });
+      else if (potSet[c] && state.collegeScope === "any") aligned.push(c);
+    });
+    var bits = [];
+    if (avail.length) {
+      bits.push('<div class="sv-status sv-yes"><b>Adopted</b> at ' +
+        avail.sort().map(function (c) { return collegeChip(c, "sv-chip sv-chip-yes"); }).join(" ") + '</div>');
+    }
+    if (qualify.length) {
+      bits.push('<div class="sv-status sv-maybe"><b>Could adopt — already teaches a matching course</b> at ' +
+        qualify.map(function (q) {
+          var courses = (q.courses || []).map(function (c) {
+            var code = ((c.subject || "") + " " + (c.number || "")).trim();
+            var u = (c.units != null && c.units !== "") ? " (" + fmtUnits(c.units) + "u)" : "";
+            return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
+          }).join(", ");
+          return collegeChip(q.college, "sv-chip sv-chip-maybe") +
+            (courses ? ' <span class="sv-teaches">teaches ' + courses + '</span>' : '');
+        }).join(" · ") + '</div>');
+    }
+    if (aligned.length) {
+      bits.push('<div class="sv-status sv-prog"><b>Aligned program only</b> at ' +
+        aligned.sort().slice(0, 8).map(function (c) { return collegeChip(c, "sv-chip sv-chip-prog"); }).join(" ") +
+        (aligned.length > 8 ? ' <span class="sv-more">+' + (aligned.length - 8) + ' more</span>' : '') +
+        ' <span class="sv-cta">— same TOP code or C-ID; a lead, not a match</span></div>');
+    }
+    return bits.join("");
+  }
 
   // Set of college names matching the active college/district/region filters, or
-  // null when none is active (→ browse mode). This is the student's "near me".
+  // null when none is active. This is the "near me" set the credential view's
+  // near-me band classifies against (folded in from the standalone Student view,
+  // 2026-08-16 — the seeker framing is a MODE of the credential view, not a third
+  // place to look).
   function nearMeColleges() {
     var f = state.filters;
     if (!f.college.length && !f.district.length && !f.swRegion.length) return null;
     var set = {};
     collegeNames.forEach(function (c) { if (collegeMatchesFilters(c)) set[c] = 1; });
     return set;
-  }
-
-  function buildStudentView() {
-    var filtered = getFiltered();
-    var nearMe = nearMeColleges();                 // null = browse mode
-    var presAll = window.CPL_STATEWIDE_PRESCRIPTIVE || {};
-
-    // Group by (unified_title, issuer), same key as the credential view.
-    var groups = {}, order = [];
-    filtered.forEach(function (e) {
-      var k = (e.unified_title || e.title || "") + "||" + (e.issuing_agency || "");
-      if (!groups[k]) { groups[k] = []; order.push(k); }
-      groups[k].push(e);
-    });
-
-    // Summarize each credential: union adopters/potential across its cards,
-    // gather recs, and (when near-me) classify the student's colleges. Award is
-    // computed later for the rendered slice only (it parses the rec list).
-    function summarize(k) {
-      var cards = groups[k];
-      var adoptSet = {}, potSet = {}, recs = [];
-      cards.forEach(function (e) {
-        (e.adopter_names || []).forEach(function (c) { adoptSet[c] = 1; });
-        (e.potential_names || []).forEach(function (c) { potSet[c] = 1; });
-        recs = recs.concat(e.credit_recs || []);
-      });
-      var title = cards[0].unified_title || cards[0].title || "";
-      var pres = presAll[title] || null;
-      var presByCollege = {};
-      if (pres) (pres.colleges || []).forEach(function (c) { presByCollege[c.college] = c.courses || []; });
-
-      var avail = [], qualify = [], aligned = [];
-      if (nearMe) {
-        Object.keys(nearMe).forEach(function (c) {
-          if (adoptSet[c]) avail.push(c);                                  // already articulated
-          else if (presByCollege[c]) qualify.push({ college: c, courses: presByCollege[c] });  // teaches the match
-          else if (potSet[c]) aligned.push(c);                             // aligned program only
-        });
-      }
-      return {
-        title: title, issuer: cards[0].issuing_agency || "",
-        unclass: cards.every(function (e) { return e.is_classified === false; }),
-        adopters: Object.keys(adoptSet).sort(), adoptCount: Object.keys(adoptSet).length,
-        presN: (pres && pres.n_colleges) || 0, recs: recs,
-        avail: avail.sort(), qualify: qualify, aligned: aligned.sort()
-      };
-    }
-    var summaries = order.map(summarize);
-
-    // Sort: classified first; in near-me mode surface the student's actionable
-    // credentials (available > qualify > aligned > none); then widest reach.
-    function rank(s) {
-      if (!nearMe) return 0;
-      if (s.avail.length) return 0;
-      if (s.qualify.length) return 1;
-      if (s.aligned.length) return 2;
-      return 3;
-    }
-    summaries.sort(function (a, b) {
-      return ((a.unclass ? 1 : 0) - (b.unclass ? 1 : 0))
-        || (rank(a) - rank(b))
-        || (b.adoptCount - a.adoptCount)
-        || a.title.localeCompare(b.title);
-    });
-
-    var out = [];
-    if (nearMe) {
-      var label = state.filters.college.length
-        ? state.filters.college.join(", ")
-        : state.filters.district.concat(state.filters.swRegion).join(", ");
-      out.push('<div class="sv-banner">📍 Showing credit options near <b>' + esc(label) +
-        '</b> — what you could earn credit for, and the local course to ask your college about.</div>');
-    } else {
-      out.push('<div class="sv-banner sv-banner-tip">📍 Pick your <b>College</b> (or District / SW Region) in the filters above to see exactly where you can get credit near you — and which local course to ask about.</div>');
-    }
-
-    var LIMIT = 50;
-    if (summaries.length > LIMIT) {
-      out.push('<div class="cv-note">Showing top ' + LIMIT + ' of ' + fmt(summaries.length) +
-        ' credentials — search / filter above to narrow.</div>');
-    }
-
-    summaries.slice(0, LIMIT).forEach(function (s) {
-      var head = '<div class="cv-title">' + esc(s.title) +
-        (s.issuer ? ' <span class="cv-issuer">· ' + esc(s.issuer) + '</span>' : '') + '</div>';
-      var award = typicalAward(s.recs).award;
-      var awardHtml = award
-        ? '<div class="sv-award">💡 You’d typically earn <b>' + esc(award.text) + '</b> for this credential</div>'
-        : '';
-
-      var nearHtml = "";
-      if (nearMe) {
-        var bits = [];
-        if (s.avail.length) {
-          bits.push('<div class="sv-status sv-yes">✅ <b>Available now</b> at ' +
-            s.avail.map(function (c) { return collegeChip(c, "sv-chip sv-chip-yes"); }).join(" ") +
-            ' <span class="sv-cta">— request CPL credit</span></div>');
-        }
-        if (s.qualify.length) {
-          bits.push('<div class="sv-status sv-maybe">🎯 <b>You likely already qualify</b> at ' +
-            s.qualify.map(function (q) {
-              var courses = (q.courses || []).map(function (c) {
-                var code = ((c.subject || "") + " " + (c.number || "")).trim();
-                var u = (c.units != null && c.units !== "") ? " (" + fmtUnits(c.units) + "u)" : "";
-                return '<span class="cv-rx-course">' + esc(code) + u + '</span>';
-              }).join(", ");
-              return collegeChip(q.college, "sv-chip sv-chip-maybe") +
-                (courses ? ' <span class="sv-teaches">teaches ' + courses + '</span>' : '');
-            }).join(" · ") +
-            ' <span class="sv-cta">— ask about CPL credit for this course</span></div>');
-        }
-        if (s.aligned.length) {
-          bits.push('<div class="sv-status sv-prog">○ <b>Aligned program</b> at ' +
-            s.aligned.slice(0, 8).map(function (c) { return collegeChip(c, "sv-chip sv-chip-prog"); }).join(" ") +
-            (s.aligned.length > 8 ? ' <span class="sv-more">+' + (s.aligned.length - 8) + ' more</span>' : '') +
-            ' <span class="sv-cta">— worth asking</span></div>');
-        }
-        nearHtml = bits.length ? bits.join("")
-          : '<div class="sv-status sv-none">Not yet offered near you — available at <b>' + s.adoptCount +
-            '</b> college' + (s.adoptCount === 1 ? '' : 's') + ' statewide (see below).</div>';
-      }
-
-      var swHtml;
-      if (s.adoptCount) {
-        var shown = s.adopters.slice(0, 10).map(function (c) { return collegeChip(c, "sv-chip sv-chip-sw"); }).join(" ");
-        var more = s.adoptCount > 10 ? ' <span class="sv-more">+' + (s.adoptCount - 10) + ' more</span>' : '';
-        swHtml = '<div class="sv-sw"><span class="sv-sw-label">🎓 Get credit at ' + s.adoptCount +
-          ' college' + (s.adoptCount === 1 ? '' : 's') + ' statewide:</span> ' + shown + more + '</div>';
-      } else {
-        swHtml = '<div class="sv-sw sv-sw-none">No college has articulated this yet' +
-          (s.presN ? ' — but ' + s.presN + ' could.' : '.') + '</div>';
-      }
-      // In browse mode, tie the prescriptive opportunity back to the near-me CTA.
-      if (!nearMe && s.presN) {
-        swHtml += '<div class="sv-pres-hint">🎯 ' + s.presN + ' more college' + (s.presN === 1 ? '' : 's') +
-          ' already teach a matching course — pick your college above to check yours.</div>';
-      }
-
-      out.push('<div class="cv-credential' + (s.unclass ? ' sv-unclass' : '') + '">' +
-        head + awardHtml + nearHtml + swHtml + '</div>');
-    });
-
-    return out.join("") || '<div class="cv-note">No credentials match the current filters.</div>';
   }
 
   // ── Build DOM ──
@@ -641,7 +721,7 @@
       '<th style="width:30px;"></th>' +
       '<th>Exhibit &amp; Credit Recommendations</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
       '<th>Adopted</th><th>Potential</th>' +
-      '<th>Colleges Adopted</th><th>Colleges — Potential Adopters</th>' +
+      '<th>Colleges Adopted</th><th title="Colleges that have not adopted it, under the scope selected above.">Colleges — Could Adopt</th>' +
       '<th style="width:78px;" title="Curator flag — sign in via the Common Course Reference or Credential Reference tab to flag stale or duplicate cards.">Flag</th>' +
       '</tr></thead><tbody id="sw-tbody"></tbody></table>';
 
@@ -669,26 +749,60 @@
 
     html += '</div>';
 
-    // ── Gallery (Sam's playground): v1 = the adoption table above (preserved
-    // intact), v2 = a credential-centric master-detail view below. Both share the
-    // same search + filters; v1 is untouched. Iterate v2 freely; graduate the winner.
+    // ── Two sub-tabs, replacing three stacked collapsibles (2026-08-16) ──
+    // The three views were `<details>` sections that ALL re-rendered on every
+    // keystroke, and the third (Student) was the same credential grouping under
+    // a different framing — so it became a MODE of the credential view (the
+    // near-me band) rather than a third place to look. Only the active view
+    // renders now.
     container.innerHTML = CV_STYLE
       // Page-level filter bar (dark wrapper so the existing dark-bg toolbar styles
-      // read correctly) — shared by every view below.
+      // read correctly) — shared by both views below.
       + '<div class="sw-interactive sw-filterbar">' + toolbarHtml
-      + '<div class="sw-filterbar-hint">Search &amp; filters apply to all views below.</div></div>'
-      + '<details class="sw-gallery-sec" open><summary class="sw-gallery-sum">📋 Adoption table'
-      + ' <span class="sw-gallery-tag">v1</span></summary>'
-      + html
-      + '</details>'
-      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎓 Credential view'
-      + ' <span class="sw-gallery-tag">v2 · beta</span> — one card per credential, the standard on top</summary>'
-      + '<div id="sw-cv-body" class="cv-body"></div>'
-      + '</details>'
-      + '<details class="sw-gallery-sec"><summary class="sw-gallery-sum">🎒 Student view'
-      + ' <span class="sw-gallery-tag">v3 · beta</span> — “where can I get credit for my credential?”</summary>'
-      + '<div id="sw-sv-body" class="cv-body"></div>'
-      + '</details>';
+      + buildScopeBar()
+      + '<div class="sw-filterbar-hint">Search &amp; filters apply to whichever view is showing.</div></div>'
+      + '<div class="sw-subtabs" role="tablist">'
+      +   '<button class="sw-subtab" data-view="credentials" role="tab">Credentials</button>'
+      +   '<button class="sw-subtab" data-view="table" role="tab">Adoption table</button>'
+      + '</div>'
+      + '<div id="sw-view-credentials" class="sw-view"><div id="sw-cv-body" class="cv-body"></div></div>'
+      + '<div id="sw-view-table" class="sw-view">' + html + '</div>';
+    syncSubtabs();
+  }
+
+  // ── College scope control ──
+  // Plain words, no glyphs: each option states what it matches. The hint below
+  // restates it in a sentence, because "Adopted + any could-adopt" is a claim
+  // about DATA QUALITY and the reader deserves to know which signal they bought.
+  function buildScopeBar() {
+    var opts = ["adopted", "likely", "any"].map(function (k) {
+      return '<button class="sw-scope-btn" data-scope="' + k + '" title="' + escAttr(SCOPES[k].hint) + '">' +
+        esc(SCOPES[k].label) + '</button>';
+    }).join("");
+    return '<div class="sw-scopebar">' +
+      '<span class="sw-scope-label">College filter matches:</span>' + opts +
+      '<span class="sw-scope-hint" id="sw-scope-hint"></span></div>';
+  }
+
+  function syncScopeBar() {
+    if (!container) return;
+    container.querySelectorAll(".sw-scope-btn").forEach(function (b) {
+      b.classList.toggle("on", b.getAttribute("data-scope") === state.collegeScope);
+    });
+    var hint = document.getElementById("sw-scope-hint");
+    if (hint) hint.textContent = SCOPES[state.collegeScope].hint;
+  }
+
+  function syncSubtabs() {
+    if (!container) return;
+    container.querySelectorAll(".sw-subtab").forEach(function (b) {
+      b.classList.toggle("on", b.getAttribute("data-view") === state.view);
+    });
+    var cred = document.getElementById("sw-view-credentials");
+    var tbl = document.getElementById("sw-view-table");
+    if (cred) cred.style.display = state.view === "credentials" ? "" : "none";
+    if (tbl) tbl.style.display = state.view === "table" ? "" : "none";
+    syncScopeBar();
   }
 
   function buildFilterButton(key, label, options) {
@@ -825,19 +939,30 @@
       var isExpanded = state.expanded[eid];
 
       var adopters = hasCollegeFilter ? (e.adopter_names || []).filter(collegeMatchesFilters) : (e.adopter_names || []);
-      var potentials = hasCollegeFilter ? (e.potential_names || []).filter(collegeMatchesFilters) : (e.potential_names || []);
+      // The could-adopt column is sourced from the SAME scope the filter used,
+      // so a row can never be returned by one signal and justified by another.
+      var couldAll = couldAdoptNamesFor(e, state.collegeScope);
+      var potentials = hasCollegeFilter
+        ? couldAll.filter(function (c) { return collegeMatchesFilters(c.college); })
+        : couldAll;
 
       var adopterTags = adopters.length > 0
         ? adopters.map(function (c) { return collegeChip(c, "sw-college sw-adopted"); }).join(", ")
         : '<span style="opacity:0.4;font-style:italic;">none</span>';
 
+      // A likely match (already teaches the mapping course) and a broad TOP/C-ID
+      // lead are different claims — chip them differently rather than pooling.
+      function couldChip(c) {
+        return collegeChip(c.college, "sw-college " + (c.likely ? "sw-potential sw-potential-likely" : "sw-potential"));
+      }
       var potentialTags;
-      if (potentials.length > 10 && !isExpanded) {
-        potentialTags = potentials.slice(0, 10).map(function (c) {
-          return collegeChip(c, "sw-college sw-potential");
-        }).join(", ") + ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
+      if (state.collegeScope === "adopted") {
+        potentialTags = '<span style="opacity:0.4;font-style:italic;">— (showing adoptions only)</span>';
+      } else if (potentials.length > 10 && !isExpanded) {
+        potentialTags = potentials.slice(0, 10).map(couldChip).join(", ") +
+          ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
       } else if (potentials.length > 0) {
-        potentialTags = potentials.map(function (c) { return collegeChip(c, "sw-college sw-potential"); }).join(", ");
+        potentialTags = potentials.map(couldChip).join(", ");
       } else {
         potentialTags = '<span style="opacity:0.4;font-style:italic;">none identified</span>';
       }
@@ -914,12 +1039,11 @@
 
     tbody.innerHTML = rows.join("");
 
-    // v2 credential view shares the same filtered set — re-render it alongside.
+    // The credential view shares the same filtered set. Only render it when it
+    // is the visible sub-tab — all three views used to rebuild on every
+    // keystroke, over 2,673 cards.
     var cvBody = document.getElementById("sw-cv-body");
-    if (cvBody) cvBody.innerHTML = buildCredentialView();
-    // v3 student view — same filtered set, seeker framing.
-    var svBody = document.getElementById("sw-sv-body");
-    if (svBody) svBody.innerHTML = buildStudentView();
+    if (cvBody && state.view === "credentials") cvBody.innerHTML = buildCredentialView();
 
     // Pagination controls
     renderPagination(filtered.length, totalPages);
@@ -1011,6 +1135,27 @@
     });
 
     container.addEventListener("click", function (ev) {
+      // Sub-tab switch. The newly-shown view may be stale (renderRows only
+      // builds the visible one), so re-render after flipping.
+      var sub = ev.target.closest(".sw-subtab");
+      if (sub) {
+        state.view = sub.getAttribute("data-view");
+        syncSubtabs();
+        renderRows();
+        return;
+      }
+
+      // College scope. Changing which colleges a filter matches changes the
+      // RESULT SET, so the cache must go — page 0, same as any filter change.
+      var scopeBtn = ev.target.closest(".sw-scope-btn");
+      if (scopeBtn) {
+        state.collegeScope = scopeBtn.getAttribute("data-scope");
+        syncScopeBar();
+        invalidateCache();
+        renderRows();
+        return;
+      }
+
       // Gallery section disclosure (v1 table / v2 credential view). The native
       // <details> marker is hidden for styling, so drive the open state in JS
       // too — this is immune to any stacking/overflow quirk in the v1 table
