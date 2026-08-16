@@ -10,6 +10,32 @@ status: archive
 
 # Roadmap Archive — Completed Work & Session Narratives
 
+## INDEX update-history entries rotated out (2026-08-16)
+
+- **2026-08-13 (evening)** — SkyBridge: the **alignment layer is LIVE**, cpl-chat **v41** (#1153/#1154/#1155). Sierra now tells a college which of its OWN courses to articulate against each credit recommendation, with how other colleges did it alongside as evidence. Sam's acceptance case verified live: Cerritos `WELD 214L` tops both FCAW recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`, Santa Ana `WELD 240`/`244`. Three surfaces: `chatbox_peer_articulations` (9,413), `chatbox_college_courses` (141,696), and one RPC returning both. ⭐ **Two signals, neither sufficient** — Santa Ana mapped courses whose titles contain no "FCAW", so title similarity can never propose them. ⚠️ **The first scorer ranked `ART 100 Introduction To World Art` third for a WELDING rec** — a plausible false positive costs more than a miss on a trust-building surface; content-token gate added, and it *raised* the right answer to 0.761. 1 new KB note.
+- **2026-08-13 (later)** — SkyBridge: Sierra wired to the credit-rec set, **cpl-chat v40** (#1150), and the MAP Users contact audit (#1151). ⭐ **`ccc_rec` was a RETRIEVAL GATE, not just a lossy summary** — it is derived from *adoptions*, and the statewide route required it non-null, so **38 never-adopted statewide credentials (36 carrying 75 published rec lines)** were excluded from **every** credential route: the Carpenters ladder, NCCER, the CSLB licences, OSHA 10/30. Not ranked last — absent. ⭐ `college_adoption_opportunities` now returns **two labelled bands** with reserved slots, because "N peers already articulate it" said of a zero-adopter credential is a fabricated route. ⭐ **The shelf collapses to 32 distinct courses**, one of which unlocks 12. ⭐ **MAP Users wiring was SOUND** — the expected join bug was not there; the real findings were a personal Gmail first in Mission College's cascade and a trailing-space fragility caught before it fired. 🔬 **Local-course↔CR alignment PROVEN offline** (Cerritos `WELD 214L` tops both FCAW recs) — and it needs **two signals**, because Santa Ana mapped courses whose titles contain no "FCAW". 3 new KB notes.
+
+
+### Sky159 — one ladder, a chip on every row, a harness dropping checks (2026-08-15, Session 159)
+
+Three merges (**#1204** — SkyKey's held Memory fix — plus **#1209**, **#1210**), all three Admin items
+Session 158 recorded from Sam's reports and left unbuilt.
+⭐ **HIDE AND AUDIENCE WERE ONE QUESTION WEARING TWO CONTROLS.** He pressed 👁 expecting it to ASK who; it
+toggled silently. Now one ladder (Everyone → signed-in → magic-link → nobody) stated in words on the row.
+**The merge is at the CONTROL, not the table** — `plan()` treats the two columns differently — and `hidden`
+PRESERVES the audience underneath it, or un-hiding silently widens a magic-link item to everyone.
+⭐ **ONLY THE ALARMING CASE WAS LABELLED**: the protection chip rendered for public-read tabs alone, so a
+properly protected tab showed nothing — **1 of 7 rows chipped before, 7 of 7 now**. ⚠️ Chipping every row had
+a trap: with no measurement everything classifies unknown, so it would have reported **"Not mapped" ×35** —
+one failed request as a site-wide finding. Distinct `unread` state, and the tab's short-circuit is asserted too.
+⭐ **THE TEST HARNESS WAS SILENTLY DROPPING CHECKS** — a fixed 1400ms summary timer gave **116, 122 and 123
+checks on identical source**. **A check that never registers can never fail**; it caught a vanished block
+within the hour. `admin_tab.test.js` **101 → 151**.
+⚠️ **THE REPO HAD ALREADY ANSWERED ONE DESIGN QUESTION** — a test comment explained why `plan()` keeps empty
+groups (they are the editor's drop targets); my "fix" was redundant and reverted.
+Story: `docs/admin_tab_lessons.md` · durable [`methodology-a-check-that-never-registers-can-never-fail`](docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md) · handoff `docs/session_160_handoff.md`.
+
+
 This file is the **museum annex** to [`CLAUDE.md`](../CLAUDE.md). It holds the
 **completed** roadmap-table rows and the **per-session narrative subsections for
 Sessions 26-31**, relocated out of CLAUDE.md (Session 33, 2026-06-04) so the live

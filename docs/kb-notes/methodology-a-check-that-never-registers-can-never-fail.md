@@ -1,7 +1,7 @@
 ---
 title: A check that never registers can never fail
 created: 2026-08-15
-updated: 2026-08-15
+updated: 2026-08-16
 tags: [methodology, testing, verification, detectors]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -11,6 +11,8 @@ related:
   - "[[methodology-judge-a-detector-by-what-it-prints]]"
 artifacts:
   - tests/admin_tab.test.js
+  - tests/nav_groups.test.js
+  - tests/eacr_a11y.test.js
   - tests/run.js
 ---
 
@@ -82,3 +84,63 @@ contributed zero checks and the run would have looked clean.
 - Node exits when the event loop drains, so a genuinely hung block will hang the
   run rather than vanish. That is the correct trade: a visible hang beats an
   invisible absence.
+
+
+---
+
+## Update 2026-08-16 — `val()` guards the CHECK; the DRIVER is the other half
+
+Third harness in three days, and this one is the sharper form. Handoff 161
+predicted the recurrence and prescribed the fix — *"`val()` is in
+`admin_tab.test.js` and `nav_groups.test.js`; the next harness will need it too"*
+— so `tests/eacr_a11y.test.js` was written **with** `val()` from the first line.
+
+It printed **zero checks** on its first pre-fix run anyway.
+
+**`val()` wraps check expressions. The failure was in an imperative driver.** An
+a11y suite does not only read the DOM, it *operates* the UI — clicks a tab,
+presses a key, expands a list:
+
+```js
+key(more(), "Enter");          // more() is null on the pre-fix source
+                               // → dispatchEvent on null → the file dies
+```
+
+The throw happened between checks, not inside one, so no `val()` was in its path.
+Everything after it never registered, and a run that reports nothing is
+indistinguishable from a run that passes — the exact failure this note exists to
+prevent, reached by a route the note did not cover.
+
+### The rule, restated
+
+**Every element a test DRIVES must be null-safe, not just every value it reads.**
+A missing element must fail its own check and let the file continue; it must
+never take the run down.
+
+```js
+function key(el, k) { if (!el || !el.dispatchEvent) return false; /* … */ return true; }
+function click(el)  { if (!el || !el.dispatchEvent) return false; /* … */ return true; }
+function focus(el)  { if (el && el.focus) el.focus(); }
+```
+
+And wrap the entry point, so a throw anywhere becomes a *visible failed check*
+rather than silence:
+
+```js
+setTimeout(function () {
+  try { run(); }
+  catch (e) { check("the harness ran to completion (it threw: " + e.message + ")", false); report(); }
+}, 80);
+```
+
+Also add a check that the thing you are about to drive **exists** (`"there are
+tabs to navigate"`). It reads as redundant on a healthy build; it is the check
+that fires first on a broken one, and it tells you *which* driver died.
+
+### The meta-lesson
+
+**A fix to one harness is not a fix to the practice, and neither is a warning in
+a handoff.** The prescription was written down, read, and followed — and the trap
+still landed, because it had been recorded at the wrong altitude ("use `val()`")
+rather than as the principle ("nothing between checks may throw"). Prefer
+recording the principle; the mechanism is an example of it.

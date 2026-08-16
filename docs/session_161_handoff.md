@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_163_handoff.md
+---
+
 # Session 161 — handoff from Sky160 (Session 160, 2026-08-15)
 
 You are Session 161. Sky160 answered six questions Sam opened the session with,
