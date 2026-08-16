@@ -1289,26 +1289,59 @@
   }
 
   // ── Exports ──
+  // An export that disagrees with the screen is the same defect this tab just
+  // fixed, one layer down — and it is the layer that gets emailed to a college.
+  // Every export re-derives its could-adopt list from the ACTIVE scope and
+  // labels which scope produced it, so a broad TOP/C-ID lead list can never
+  // leave here dressed as an adoption worklist.
+  function scopeLabelForExport() {
+    return SCOPES[state.collegeScope].label + " — " + SCOPES[state.collegeScope].hint;
+  }
+  function couldAdoptForExport(e) {
+    return couldAdoptNamesFor(e, state.collegeScope).map(function (c) {
+      return c.likely ? c.college + " (teaches a matching course)" : c.college;
+    });
+  }
+
   function exportJSON() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
-    var blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+    // Ship the scope alongside the rows, and re-key could-adopt to it. The raw
+    // `potential_names` stays available under its own name so nothing is lost \u2014
+    // it just no longer masquerades as the answer to "who could adopt this".
+    var payload = {
+      _scope: state.collegeScope,
+      _scope_meaning: scopeLabelForExport(),
+      _exported_at: new Date().toISOString(),
+      exhibits: data.map(function (e) {
+        var row = {};
+        Object.keys(e).forEach(function (k) { row[k] = e[k]; });
+        row.could_adopt_names = couldAdoptForExport(e);
+        row.could_adopt = row.could_adopt_names.length;
+        return row;
+      })
+    };
+    var blob = new Blob([JSON.stringify(payload, null, 2)], { type: "application/json" });
     downloadBlob(blob, "exhibit_adoption_export.json");
   }
 
   function exportExcel() {
     var data = getSelectedExhibits();
     if (!data.length) { alert("Select at least one exhibit to export."); return; }
-    var headers = ["Exhibit Title", "Type", "CPL Type", "Discipline", "Adopters", "Potential",
-      "Credit Recs", "Colleges Adopted", "Potential Adopters", "Credit Recommendation Details"];
+    var headers = ["Exhibit Title", "Type", "CPL Type", "Discipline", "Adopters", "Could Adopt",
+      "Credit Recs", "Colleges Adopted", "Colleges Could Adopt", "Credit Recommendation Details"];
     var rows = data.map(function (e) {
       var recDetails = (e.credit_recs || []).map(function (r) { return r.course + ": " + r.credit; }).join(" | ");
+      var could = couldAdoptForExport(e);
       return [csvCell(e.title), csvCell(e.collaborative_type || "Local"), csvCell(e.cpl_type || ""),
-        csvCell(e.discipline || ""), e.adopters || 0, e.potential || 0, (e.credit_recs || []).length,
-        csvCell((e.adopter_names || []).join("; ")), csvCell((e.potential_names || []).join("; ")),
+        csvCell(e.discipline || ""), e.adopters || 0, could.length, (e.credit_recs || []).length,
+        csvCell((e.adopter_names || []).join("; ")), csvCell(could.join("; ")),
         csvCell(recDetails)].join(",");
     });
-    var csv = headers.join(",") + "\n" + rows.join("\n");
+    // A leading provenance line, because a spreadsheet outlives the screen that
+    // produced it and "Could Adopt" means three different things.
+    var scopeNote = csvCell("Could-adopt scope: " + scopeLabelForExport());
+    var csv = scopeNote + "\n" + headers.join(",") + "\n" + rows.join("\n");
     downloadBlob(new Blob(["\uFEFF" + csv], { type: "text/csv;charset=utf-8;" }), "exhibit_adoption_export.csv");
   }
 
@@ -1326,6 +1359,12 @@
     }));
     children.push(new docx.Paragraph({
       children: [new docx.TextRun({ text: "Generated: " + new Date().toLocaleDateString() + " | " + data.length + " exhibits", size: 20, color: "666666", font: "Calibri" })],
+      spacing: { after: 120 }, alignment: docx.AlignmentType.CENTER
+    }));
+    // The report can be forwarded to a college. Say what "could adopt" meant
+    // when it was generated, in the document itself.
+    children.push(new docx.Paragraph({
+      children: [new docx.TextRun({ text: "Could-adopt scope: " + scopeLabelForExport(), size: 18, color: "666666", italics: true, font: "Calibri" })],
       spacing: { after: 400 }, alignment: docx.AlignmentType.CENTER
     }));
 
@@ -1336,7 +1375,7 @@
         border: { bottom: { style: docx.BorderStyle.SINGLE, size: 1, color: "CCCCCC" } }
       }));
       children.push(new docx.Paragraph({
-        children: [new docx.TextRun({ text: "Type: " + (e.collaborative_type || "Local") + "  |  CPL: " + (e.cpl_type || "N/A") + "  |  Discipline: " + (e.discipline || "N/A") + "  |  Adopters: " + (e.adopters || 0) + "  |  Potential: " + (e.potential || 0), size: 18, color: "555555", font: "Calibri" })],
+        children: [new docx.TextRun({ text: "Type: " + (e.collaborative_type || "Local") + "  |  CPL: " + (e.cpl_type || "N/A") + "  |  Discipline: " + (e.discipline || "N/A") + "  |  Adopters: " + (e.adopters || 0) + "  |  Could adopt: " + couldAdoptForExport(e).length, size: 18, color: "555555", font: "Calibri" })],
         spacing: { after: 100 }
       }));
 
@@ -1353,8 +1392,9 @@
 
       children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Colleges Adopted (" + (e.adopters || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
       children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.adopter_names || []).join(", ") || "None", size: 18, font: "Calibri" })], spacing: { after: 100 } }));
-      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Potential Adopters (" + (e.potential || 0) + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
-      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: (e.potential_names || []).join(", ") || "None identified", size: 18, font: "Calibri" })], spacing: { after: 200 } }));
+      var couldNames = couldAdoptForExport(e);
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: "Colleges That Could Adopt (" + couldNames.length + "):", bold: true, size: 20, font: "Calibri" })], spacing: { before: 100 } }));
+      children.push(new docx.Paragraph({ children: [new docx.TextRun({ text: couldNames.join(", ") || "None identified", size: 18, font: "Calibri" })], spacing: { after: 200 } }));
     });
 
     var doc = new docx.Document({ sections: [{ properties: {}, children: children }] });

@@ -284,6 +284,54 @@ function runAssertions() {
   check("an unparseable credit string yields NO award headline (no crash, no invention)",
     !!mal && !/Typical CPL/.test(val(() => mal.innerHTML) || ""));
 
+  // ── 9. Exports carry the SCOPE, not the raw broad list ──────────────────
+  // An export that disagrees with the screen is the same defect one layer down,
+  // and it is the layer that reaches a college by email.
+  showView("table");
+  const blobs = [];
+  window.URL.createObjectURL = function (b) { blobs.push(b); return "blob:stub"; };
+  window.URL.revokeObjectURL = function () {};
+  function lastBlobText() {
+    const b = blobs[blobs.length - 1];
+    return b && b._parts ? b._parts.join("") : (b && b.__text) || "";
+  }
+  // jsdom Blob does not expose its parts; capture the text at construction.
+  const RealBlob = window.Blob;
+  window.Blob = function (parts, opts) {
+    const b = new RealBlob(parts, opts);
+    b.__text = (parts || []).join("");
+    return b;
+  };
+
+  setScope("any");
+  doc.getElementById("sw-export-excel").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  const csvAny = lastBlobText();
+  check("the CSV states which could-adopt scope produced it",
+    /Could-adopt scope:/i.test(csvAny));
+  check("...naming the broad scope when the broad scope is active",
+    /any could-adopt/i.test(csvAny));
+  check("the CSV header no longer says the ambiguous 'Potential Adopters'",
+    /Colleges Could Adopt/.test(csvAny) && !/Potential Adopters/.test(csvAny));
+  check("a likely match is marked as such in the export, not pooled with leads",
+    /teaches a matching course/.test(csvAny));
+
+  setScope("adopted");
+  doc.getElementById("sw-export-excel").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  const csvAdopted = lastBlobText();
+  check("scope=adopted exports a NARROWER could-adopt list than scope=any",
+    csvAdopted.length < csvAny.length);
+  check("...and says so in its provenance line", /Adopted —/.test(csvAdopted));
+
+  doc.getElementById("sw-export-json").dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  const json = val(() => JSON.parse(lastBlobText()));
+  check("the JSON export ships the scope as a field", val(() => json._scope) === "adopted");
+  check("...and explains what that scope means", /articulated/i.test(val(() => json._scope_meaning) || ""));
+  check("...and re-keys could_adopt_names to it",
+    Array.isArray(val(() => json.exhibits[0].could_adopt_names)));
+  check("...while preserving raw potential_names under its own name (nothing lost)",
+    val(() => json.exhibits.some((e) => "potential_names" in e)) === true);
+  window.Blob = RealBlob;
+
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "  ok   " : "  FAIL ") + r[0]));
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");
