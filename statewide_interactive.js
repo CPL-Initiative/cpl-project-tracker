@@ -346,17 +346,41 @@
     + '.sw-filterbar .sw-toolbar{border-bottom:none;}'
     + '.sw-filterbar-hint{font-size:0.64rem;color:var(--text-muted);padding:0 0.8rem 0.6rem;font-style:italic;}'
     // College scope control + sub-tabs. Plain words, no glyphs.
-    + '.sw-scopebar{display:flex;align-items:center;flex-wrap:wrap;gap:0.35rem;padding:0 0.8rem 0.5rem;}'
-    + '.sw-scope-label{font-size:0.7rem;font-weight:600;color:var(--text-body);margin-right:0.15rem;}'
-    + '.sw-scope-btn{background:var(--surface-subtle);color:var(--text-body);border:1px solid var(--border-strong);'
-      + 'border-radius:999px;padding:3px 11px;font-size:0.7rem;font-family:inherit;cursor:pointer;font-weight:600;}'
-    + '.sw-scope-btn.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    // The radios are visually hidden but NOT display:none — they must stay
+    // focusable and reachable by arrow keys; the <label> is the visible pill.
+    + '.sw-scopebar{display:flex;align-items:center;flex-wrap:wrap;gap:0.35rem;padding:0 0.8rem 0.5rem;'
+      + 'border:0;margin:0;min-width:0;}'
+    + '.sw-scope-label{font-size:0.7rem;font-weight:600;color:var(--text-body);margin-right:0.15rem;padding:0;float:none;}'
+    + '.sw-scope-opt{display:inline-flex;position:relative;}'
+    + '.sw-scope-radio{position:absolute;opacity:0;width:100%;height:100%;margin:0;cursor:pointer;}'
+    + '.sw-scope-btn{display:inline-flex;align-items:center;min-height:32px;background:var(--surface-subtle);'
+      + 'color:var(--text-body);border:1px solid var(--border-strong);border-radius:999px;padding:4px 13px;'
+      + 'font-size:0.72rem;font-family:inherit;cursor:pointer;font-weight:600;}'
+    // Selected state carries a WEIGHT + BORDER change as well as colour, so it
+    // survives forced-colours and colour-blindness.
+    + '.sw-scope-radio:checked + .sw-scope-btn{background:var(--seal-blue);color:var(--white);'
+      + 'border-color:var(--seal-blue);box-shadow:inset 0 0 0 1px var(--white);}'
+    + '.sw-scope-radio:focus-visible + .sw-scope-btn{outline:3px solid var(--accent-link);outline-offset:2px;}'
     + '.sw-scope-hint{font-size:0.64rem;color:var(--text-muted);font-style:italic;flex-basis:100%;padding-top:0.2rem;}'
-    + '.sw-subtabs{display:inline-flex;gap:4px;margin:0 0 0.6rem;}'
+    + '.sw-subtabs{display:flex;flex-wrap:wrap;gap:4px;margin:0 0 0.6rem;}'
     + '.sw-subtabs button{background:var(--surface-opaque);color:var(--text-body);border:1px solid var(--border-strong);'
-      + 'border-bottom:none;border-radius:8px 8px 0 0;padding:7px 15px;font-size:0.85rem;font-family:inherit;'
-      + 'cursor:pointer;font-weight:600;}'
+      + 'border-bottom:none;border-radius:8px 8px 0 0;padding:8px 16px;min-height:40px;font-size:0.85rem;'
+      + 'font-family:inherit;cursor:pointer;font-weight:600;}'
     + '.sw-subtabs button.on{background:var(--seal-blue);color:var(--white);border-color:var(--seal-blue);}'
+    + '.sw-subtabs button:focus-visible{outline:3px solid var(--accent-link);outline-offset:2px;}'
+    + '.sw-view:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
+    // Could-adopt column: the claim is carried by a TEXT LABEL, not a colour.
+    + '.sw-could-group{margin:0 0 0.25rem;}'
+    + '.sw-could-group:last-child{margin-bottom:0;}'
+    + '.sw-could-label{display:block;font-size:0.6rem;font-weight:700;color:var(--text-muted);'
+      + 'text-transform:uppercase;letter-spacing:0.02em;}'
+    + '.sw-col-empty{opacity:0.55;font-style:italic;}'
+    // Chips are <abbr>; suppress the UA dotted underline on the pill variants
+    // (the pill is already the affordance) and keep it on the plain table lists,
+    // where it is the only cue that a full name is available.
+    + '.sv-chip,.cv-rx-college{text-decoration:none;}'
+    + 'abbr.sw-college{text-decoration:underline dotted;text-underline-offset:2px;cursor:help;}'
+    + '.sw-show-more:focus-visible{outline:2px solid var(--accent-link);outline-offset:2px;}'
     // Aligned MAP exhibits under a common title.
     // A likely could-adopt chip (teaches the mapping course) reads stronger than
     // a broad TOP/C-ID lead — same column, deliberately different weight.
@@ -416,6 +440,48 @@
     + '.sv-chip-maybe{background:rgba(227,179,65,0.22);color:var(--mustard-text);}'
     + '.sv-chip-prog{background:var(--surface-subtle);color:var(--text-body);}'
     + '.sv-more{font-size:0.6rem;color:var(--text-muted);}'
+
+    // ── Motion / contrast preferences ──────────────────────────────────────
+    // The disclosure carets animate; honour a reduced-motion request.
+    + '@media (prefers-reduced-motion: reduce){'
+      + '.sw-gallery-sum::before,.cv-rx>summary::before,.cv-ex>summary::before{transition:none;}'
+    + '}'
+    // Forced-colours (Windows high contrast) drops background-colour, so the
+    // selected scope pill and active sub-tab would become indistinguishable.
+    // Restore the distinction with properties forced-colours keeps.
+    + '@media (forced-colors: active){'
+      + '.sw-scope-radio:checked + .sw-scope-btn,.sw-subtabs button.on{'
+        + 'border:2px solid Highlight;forced-color-adjust:none;background:Highlight;color:HighlightText;}'
+      + '.sw-potential-likely{outline:2px solid CanvasText;}'
+    + '}'
+
+    // ── Mobile ─────────────────────────────────────────────────────────────
+    // The EACR had NO responsive rules of its own. Two things actually break on
+    // a phone: the filter dropdowns (position:absolute, min-width:220px, anchored
+    // to a ~90px-wide button near the right edge → opens off-screen), and the
+    // touch targets.
+    + '@media (max-width: 640px){'
+      // Anchor dropdowns to the filter BAR, not the button, so they can never
+      // open past the viewport edge. .sw-filterbar already has overflow:visible.
+      + '.sw-filterbar{position:relative;}'
+      + '.sw-filter-group{position:static;}'
+      + '.sw-filter-dropdown{left:0.6rem;right:0.6rem;min-width:0;max-height:60vh;}'
+      // WCAG 2.5.8 target size — 24px minimum, 44px is the comfortable target.
+      + '.sw-filter-btn{min-height:40px;padding:0.5rem 0.8rem;font-size:0.8rem;}'
+      + '.sw-filter-dropdown label{min-height:40px;padding:0.5rem 0.7rem;font-size:0.8rem;}'
+      + '.sw-scope-btn{min-height:40px;padding:8px 14px;font-size:0.78rem;}'
+      + '.sw-scopebar{padding:0 0.6rem 0.5rem;}'
+      + '.sw-subtabs button{flex:1 1 auto;min-height:44px;padding:10px 12px;}'
+      + '.sw-action-btn,.sw-page-btn{min-height:40px;}'
+      // Cards: give the text room back that the desktop padding takes.
+      + '.cv-body{padding:0.6rem 0.55rem 0.8rem;}'
+      + '.cv-credential{padding:0.6rem 0.55rem;}'
+      // The 10-column table cannot fit a phone; the wrap scrolls it. Make that
+      // scroll discoverable + smooth rather than a silently clipped table.
+      + '.sw-table-wrap{max-height:none;-webkit-overflow-scrolling:touch;}'
+      + '.sw-table-hint{display:block;}'
+    + '}'
+    + '.sw-table-hint{display:none;font-size:0.64rem;color:var(--text-muted);padding:0 1rem 0.5rem;font-style:italic;}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -716,7 +782,12 @@
     html += '<span class="sw-count" id="sw-status"></span>';
     html += '</div>';
 
-    html += '<div class="sw-table-wrap" id="sw-table-wrap">';
+    // Shown on narrow screens only (CSS) — a 10-column table scrolls sideways
+    // there, and a silently clipped table reads as missing columns.
+    html += '<p class="sw-table-hint">This table scrolls sideways — swipe to see ' +
+      'the adoption and could-adopt columns. The Credentials view above reflows to fit.</p>';
+    html += '<div class="sw-table-wrap" id="sw-table-wrap" tabindex="0" role="region" ' +
+      'aria-label="Exhibit adoption table (scrollable)">';
     html += '<table class="exhibit-table" id="sw-table"><thead><tr>' +
       '<th style="width:30px;"></th>' +
       '<th>Exhibit &amp; Credit Recommendations</th><th>Type</th><th>CPL Type</th><th>Discipline</th>' +
@@ -761,12 +832,16 @@
       + '<div class="sw-interactive sw-filterbar">' + toolbarHtml
       + buildScopeBar()
       + '<div class="sw-filterbar-hint">Search &amp; filters apply to whichever view is showing.</div></div>'
-      + '<div class="sw-subtabs" role="tablist">'
-      +   '<button class="sw-subtab" data-view="credentials" role="tab">Credentials</button>'
-      +   '<button class="sw-subtab" data-view="table" role="tab">Adoption table</button>'
+      + '<div class="sw-subtabs" role="tablist" aria-label="Exhibit adoption views">'
+      +   '<button class="sw-subtab" data-view="credentials" role="tab" type="button"'
+      +     ' id="sw-tab-credentials" aria-controls="sw-view-credentials">Credentials</button>'
+      +   '<button class="sw-subtab" data-view="table" role="tab" type="button"'
+      +     ' id="sw-tab-table" aria-controls="sw-view-table">Adoption table</button>'
       + '</div>'
-      + '<div id="sw-view-credentials" class="sw-view"><div id="sw-cv-body" class="cv-body"></div></div>'
-      + '<div id="sw-view-table" class="sw-view">' + html + '</div>';
+      + '<div id="sw-view-credentials" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-credentials"><div id="sw-cv-body" class="cv-body"></div></div>'
+      + '<div id="sw-view-table" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-table">' + html + '</div>';
     syncSubtabs();
   }
 
@@ -774,34 +849,62 @@
   // Plain words, no glyphs: each option states what it matches. The hint below
   // restates it in a sentence, because "Adopted + any could-adopt" is a claim
   // about DATA QUALITY and the reader deserves to know which signal they bought.
+  //
+  // NATIVE RADIOS IN A FIELDSET, not styled buttons. The three scopes are
+  // mutually exclusive, so a radiogroup is the right semantics — and taking the
+  // native control means arrow-key navigation, "2 of 3, selected" announcements
+  // and the focus ring all work without custom keyboard code. A hand-rolled
+  // ARIA radiogroup is a thing to get subtly wrong; this one cannot be.
+  // The hint is `aria-live` so changing scope ANNOUNCES what changed, rather
+  // than silently re-filtering the page under a screen-reader user.
   function buildScopeBar() {
     var opts = ["adopted", "likely", "any"].map(function (k) {
-      return '<button class="sw-scope-btn" data-scope="' + k + '" title="' + escAttr(SCOPES[k].hint) + '">' +
-        esc(SCOPES[k].label) + '</button>';
+      var id = "sw-scope-" + k;
+      return '<span class="sw-scope-opt">' +
+        '<input type="radio" name="sw-college-scope" id="' + id + '" class="sw-scope-radio" value="' + k + '"' +
+        (k === state.collegeScope ? ' checked' : '') + ' />' +
+        '<label for="' + id + '" class="sw-scope-btn">' + esc(SCOPES[k].label) + '</label></span>';
     }).join("");
-    return '<div class="sw-scopebar">' +
-      '<span class="sw-scope-label">College filter matches:</span>' + opts +
-      '<span class="sw-scope-hint" id="sw-scope-hint"></span></div>';
+    return '<fieldset class="sw-scopebar">' +
+      '<legend class="sw-scope-label">College filter matches</legend>' + opts +
+      '<span class="sw-scope-hint" id="sw-scope-hint" role="status" aria-live="polite"></span></fieldset>';
   }
 
   function syncScopeBar() {
     if (!container) return;
-    container.querySelectorAll(".sw-scope-btn").forEach(function (b) {
-      b.classList.toggle("on", b.getAttribute("data-scope") === state.collegeScope);
+    container.querySelectorAll(".sw-scope-radio").forEach(function (r) {
+      r.checked = r.value === state.collegeScope;
     });
     var hint = document.getElementById("sw-scope-hint");
     if (hint) hint.textContent = SCOPES[state.collegeScope].hint;
   }
 
+  // Complete the ARIA tab pattern. A PARTIAL one is worse than none: it
+  // announces "tab, 1 of 2" and then arrow keys do nothing, so the user is told
+  // about an interaction that isn't there. Roving tabindex + arrow/Home/End are
+  // wired in bindEvents().
+  function selectView(v) {
+    if (!v || v === state.view) return;
+    state.view = v;
+    syncSubtabs();
+    renderRows();
+  }
+
   function syncSubtabs() {
     if (!container) return;
     container.querySelectorAll(".sw-subtab").forEach(function (b) {
-      b.classList.toggle("on", b.getAttribute("data-view") === state.view);
+      var on = b.getAttribute("data-view") === state.view;
+      b.classList.toggle("on", on);
+      b.setAttribute("aria-selected", on ? "true" : "false");
+      // Only the selected tab is in the tab order; arrows move between them.
+      b.setAttribute("tabindex", on ? "0" : "-1");
     });
     var cred = document.getElementById("sw-view-credentials");
     var tbl = document.getElementById("sw-view-table");
-    if (cred) cred.style.display = state.view === "credentials" ? "" : "none";
-    if (tbl) tbl.style.display = state.view === "table" ? "" : "none";
+    // `hidden` (not display:none) so the panel is removed from the a11y tree
+    // and from find-in-page, which display:none alone on a wrapper can miss.
+    if (cred) cred.hidden = state.view !== "credentials";
+    if (tbl) tbl.hidden = state.view !== "table";
     syncScopeBar();
   }
 
@@ -825,8 +928,14 @@
   // this file), falling back to the full name so a chip never renders blank.
   function SHORT(c) { var f = window.cplCollegeShort; return (f ? (f(c) || c) : c); }
   // A college chip: short label, full name on hover.
+  // <abbr>, not <span> — the short label IS an abbreviation of the full college
+  // name, and on a <span> the `title` is announced inconsistently (and on touch,
+  // not at all). <abbr title> is the element assistive tech actually expands, so
+  // the full name reaches a screen-reader user instead of living in a tooltip
+  // only a mouse can reach. Visual weight is unchanged; the UA underline is
+  // suppressed on the pill variants in CSS.
   function collegeChip(c, cls) {
-    return '<span class="' + cls + '" title="' + escAttr(c) + '">' + esc(SHORT(c)) + '</span>';
+    return '<abbr class="' + cls + '" title="' + escAttr(c) + '">' + esc(SHORT(c)) + '</abbr>';
   }
 
   // ── Consolidated credit recommendations (PR-1) ──
@@ -936,7 +1045,10 @@
       var eid = e.exhibit_id || e.title;
       var checked = state.selected[eid] ? ' checked' : '';
       if (state.selected[eid]) selectedCount++;
-      var isExpanded = state.expanded[eid];
+      // Keyed `<eid>_pot` — the "+N more" handler has always WRITTEN that key
+      // while this read used the bare eid, so expanding the college list has
+      // never actually worked. One key, both sides.
+      var isExpanded = state.expanded[eid + "_pot"];
 
       var adopters = hasCollegeFilter ? (e.adopter_names || []).filter(collegeMatchesFilters) : (e.adopter_names || []);
       // The could-adopt column is sourced from the SAME scope the filter used,
@@ -951,20 +1063,34 @@
         : '<span style="opacity:0.4;font-style:italic;">none</span>';
 
       // A likely match (already teaches the mapping course) and a broad TOP/C-ID
-      // lead are different claims — chip them differently rather than pooling.
+      // lead are different claims. They were separated by an OUTLINE COLOUR
+      // alone, which fails WCAG 1.4.1 (Use of Color) — a colour-blind or
+      // high-contrast user saw one undifferentiated list. Split them into two
+      // TEXT-LABELLED groups instead: the label carries the distinction, the
+      // styling only reinforces it.
       function couldChip(c) {
         return collegeChip(c.college, "sw-college " + (c.likely ? "sw-potential sw-potential-likely" : "sw-potential"));
       }
+      function couldGroup(label, list) {
+        if (!list.length) return "";
+        var shown = list, more = "";
+        if (list.length > 10 && !isExpanded) {
+          shown = list.slice(0, 10);
+          more = ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '" role="button" tabindex="0">+' +
+            (list.length - 10) + ' more</span>';
+        }
+        return '<div class="sw-could-group"><span class="sw-could-label">' + esc(label) + '</span> ' +
+          shown.map(couldChip).join(", ") + more + '</div>';
+      }
       var potentialTags;
       if (state.collegeScope === "adopted") {
-        potentialTags = '<span style="opacity:0.4;font-style:italic;">— (showing adoptions only)</span>';
-      } else if (potentials.length > 10 && !isExpanded) {
-        potentialTags = potentials.slice(0, 10).map(couldChip).join(", ") +
-          ' <span class="sw-show-more" data-eid="' + escAttr(eid) + '">+' + (potentials.length - 10) + ' more</span>';
+        potentialTags = '<span class="sw-col-empty">— (showing adoptions only)</span>';
       } else if (potentials.length > 0) {
-        potentialTags = potentials.map(couldChip).join(", ");
+        potentialTags =
+          couldGroup("Already teaches a matching course:", potentials.filter(function (c) { return c.likely; })) +
+          couldGroup("Same TOP code or C-ID (a lead):", potentials.filter(function (c) { return !c.likely; }));
       } else {
-        potentialTags = '<span style="opacity:0.4;font-style:italic;">none identified</span>';
+        potentialTags = '<span class="sw-col-empty">none identified</span>';
       }
 
       var typeBadge = e.collaborative_type === "CCC Collaborative"
@@ -1134,25 +1260,43 @@
         .catch(function () { sel.disabled = false; sel.value = prev.flag || ""; });
     });
 
+    // ── Sub-tab keyboard navigation (the other half of role="tablist") ──
+    // Left/Right move between tabs and ACTIVATE on arrival (the automatic
+    // activation pattern, correct when switching is cheap and lossless);
+    // Home/End jump to the ends. Without this the role is a promise we break.
+    container.addEventListener("keydown", function (ev) {
+      // "+N more" is a span carrying role="button", so it gets no native key
+      // activation — a mouse-only control is invisible to a keyboard user.
+      var more = ev.target.closest && ev.target.closest(".sw-show-more");
+      if (more && (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar")) {
+        ev.preventDefault();
+        state.expanded[more.getAttribute("data-eid") + "_pot"] = true;
+        renderRows();
+        return;
+      }
+
+      var tab = ev.target.closest && ev.target.closest(".sw-subtab");
+      if (!tab) return;
+      var keys = { ArrowLeft: -1, ArrowRight: 1, Home: "first", End: "last" };
+      if (!(ev.key in keys)) return;
+      if (ev.altKey || ev.ctrlKey || ev.metaKey) return;
+      var tabs = Array.prototype.slice.call(container.querySelectorAll(".sw-subtab"));
+      var i = tabs.indexOf(tab), move = keys[ev.key], next;
+      if (move === "first") next = tabs[0];
+      else if (move === "last") next = tabs[tabs.length - 1];
+      else next = tabs[(i + move + tabs.length) % tabs.length];
+      if (!next) return;
+      ev.preventDefault();
+      selectView(next.getAttribute("data-view"));
+      next.focus();
+    });
+
     container.addEventListener("click", function (ev) {
       // Sub-tab switch. The newly-shown view may be stale (renderRows only
       // builds the visible one), so re-render after flipping.
       var sub = ev.target.closest(".sw-subtab");
       if (sub) {
-        state.view = sub.getAttribute("data-view");
-        syncSubtabs();
-        renderRows();
-        return;
-      }
-
-      // College scope. Changing which colleges a filter matches changes the
-      // RESULT SET, so the cache must go — page 0, same as any filter change.
-      var scopeBtn = ev.target.closest(".sw-scope-btn");
-      if (scopeBtn) {
-        state.collegeScope = scopeBtn.getAttribute("data-scope");
-        syncScopeBar();
-        invalidateCache();
-        renderRows();
+        selectView(sub.getAttribute("data-view"));
         return;
       }
 
@@ -1222,7 +1366,9 @@
 
     container.addEventListener("change", function (ev) {
       var cb = ev.target;
-      if (cb.type !== "checkbox") return;
+      // Radios (the college-scope control) as well as checkboxes — the old
+      // checkbox-only guard would have silently swallowed every scope change.
+      if (cb.type !== "checkbox" && cb.type !== "radio") return;
 
       if (cb.classList.contains("sw-row-chk")) {
         var tr = cb.closest("tr");
@@ -1240,6 +1386,16 @@
         } else {
           filtered.forEach(function (e) { delete state.selected[e.exhibit_id || e.title]; });
         }
+        renderRows();
+        return;
+      }
+
+      // College scope (native radio). Changing which colleges a filter matches
+      // changes the RESULT SET, so the cache must go — page 0, like any filter.
+      if (cb.classList.contains("sw-scope-radio")) {
+        state.collegeScope = cb.value;
+        syncScopeBar();
+        invalidateCache();
         renderRows();
         return;
       }

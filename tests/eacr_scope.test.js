@@ -133,8 +133,9 @@ function rowTitles() {
   return Array.from(doc.querySelectorAll("#sw-tbody tr .exhibit-cell-name")).map((e) => txt(e));
 }
 function setScope(scope) {
-  const b = doc.querySelector('.sw-scope-btn[data-scope="' + scope + '"]');
-  if (b) b.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  // Drive the real control the way a user does: check the radio, fire change.
+  const r = doc.querySelector('.sw-scope-radio[value="' + scope + '"]');
+  if (r) { r.checked = true; r.dispatchEvent(new window.Event("change", { bubbles: true })); }
 }
 function showView(v) {
   const b = doc.querySelector('.sw-subtab[data-view="' + v + '"]');
@@ -153,9 +154,9 @@ function runAssertions() {
   // ── 1. The control exists and defaults to real adoptions ─────────────────
   check("a college-scope control renders", !!val(() => doc.querySelector(".sw-scopebar")));
   check("it offers exactly three scopes",
-    val(() => doc.querySelectorAll(".sw-scope-btn").length) === 3);
+    val(() => doc.querySelectorAll(".sw-scope-radio").length) === 3);
   check("it DEFAULTS to adopted (not the old adopted∪potential union)",
-    val(() => doc.querySelector(".sw-scope-btn.on").getAttribute("data-scope")) === "adopted");
+    val(() => doc.querySelector(".sw-scope-radio:checked").value) === "adopted");
   check("the default scope's hint says it means articulated",
     /articulated/i.test(val(() => txt(doc.getElementById("sw-scope-hint"))) || ""));
   check("the broad scope discloses that TOP is a weak signal",
@@ -258,7 +259,7 @@ function runAssertions() {
     !doc.getElementById("sw-sv-body") && !/buildStudentView/.test(src));
   showView("table");
   check("switching to the table hides the credential view",
-    val(() => doc.getElementById("sw-view-credentials").style.display) === "none");
+    val(() => doc.getElementById("sw-view-credentials").hidden) === true);
   check("...and the credential view does not rebuild while hidden",
     /state\.view === "credentials"/.test(src));
   showView("credentials");
@@ -267,7 +268,7 @@ function runAssertions() {
   // build where the pane was never created.
   check("switching back shows it again",
     !!val(() => doc.getElementById("sw-view-credentials")) &&
-    val(() => doc.getElementById("sw-view-credentials").style.display) !== "none");
+    val(() => doc.getElementById("sw-view-credentials").hidden) === false);
 
   // ── 8. The shared award math survives the Student-view fold ──────────────
   const grp2 = doc.querySelector('.sw-filter-group[data-filter="college"]');
