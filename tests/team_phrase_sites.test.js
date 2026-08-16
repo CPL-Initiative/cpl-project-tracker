@@ -290,8 +290,24 @@ function makeWin(opts) {
     // The editor is its own tab now (team_phrases.js) — these two properties
     // still matter, they just live there. Full coverage: tests/team_phrases.test.js
     const tpx = fs.readFileSync("team_phrases.js", "utf8");
+    // Scoped to the ARRAY, not a character window. This read
+    // `/PHRASES = \[[\s\S]{0,900}id: "fin"/` and went red on 2026-08-15 without
+    // the property ever being violated: the raci→team rename (#1214) added a
+    // ~600-char comment INSIDE the array, pushing `id: "fin"` to 1,458 chars
+    // from the anchor. A fixed window measures how much PROSE sits above a
+    // thing, which is not what this check is about.
+    var phrasesArr = (function () {
+      var i = tpx.indexOf("PHRASES = [");
+      if (i === -1) return "";
+      var end = tpx.indexOf("\n  ];", i);
+      return end === -1 ? "" : tpx.slice(i, end);
+    })();
+    check("phrase admin: the PHRASES array is found at all (the anchor still exists)",
+      phrasesArr.length > 0);
     check("phrase admin: every phrase is rotatable, including the site ones",
-      /PHRASES = \[[\s\S]{0,900}id: "fin"/.test(tpx));
+      ["team", "ci", "gr", "fin"].every(function (id) {
+        return new RegExp('id: "' + id + '"').test(phrasesArr);
+      }));
     check("phrase admin: syncs the slot the phrase actually lives in",
       /def\.slot && localStorage\.getItem\(def\.slot\)/.test(tpx));
 
