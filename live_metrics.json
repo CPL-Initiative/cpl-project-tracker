@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-15T13:04:13.108Z",
+  "scraped_at": "2026-08-16T07:02:33.690Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -698,14 +698,14 @@
         },
         {
           "college": "Saddleback College",
-          "students": 60,
+          "students": 61,
           "units": 354,
-          "avgUnits": 5.9,
+          "avgUnits": 5.80327868852459,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
           "militaryStudents": 59,
-          "nonMilitaryStudents": 1,
+          "nonMilitaryStudents": 2,
           "apprenticeStudents": 0,
           "savings": 591660,
           "yearImpact": 2074914,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,955",
+      "value": "49,956",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,114"
+          "value": "23,115"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49955,
+    "Students": 49956,
     "Units": 217917.65000000002,
     "TranscribedUnits": 76815.45,
     "Savings": 316340065.25,
     "YearImpact": 1250629379.4,
     "MilitaryStudents": 26924,
-    "NonMilitaryStudents": 23114,
+    "NonMilitaryStudents": 23115,
     "AprenticeStudents": 595,
-    "AverageUnits": 4.362279051146032,
-    "TranscribedAverage": 1.5376929236312682
+    "AverageUnits": 4.3621917287212755,
+    "TranscribedAverage": 1.5376621426855632
   }
 }
