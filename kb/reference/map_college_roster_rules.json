@@ -22,15 +22,18 @@
   "fold": {
     "_why": "One institution entered under two spellings in the raw MAP export. map_colleges holds exactly ONE row for each (ids 24, 121, 119), so the duplicate is an export artifact, not a roster fact. Verified 2026-08-17: all six spellings carry ZERO adoptions, so folding cannot lose units — but the merge is written as a SUM anyway, because that stops being true the moment one of them articulates something.",
     "_note": "Fold maps a variant spelling onto the canonical name. The canonical must itself be a name map_colleges carries.",
+    "_mojibake": "The fourth entry is not a duplicate ENTRY, it is a duplicate ENCODING: 'Ca\\u00c3\\u00b1ada College' is 'Ca\\u00f1ada College' read as latin-1 and re-encoded as UTF-8. Both spellings are emitted by excel_to_dashboard.py itself, on different paths — the correct one reaches potential_names (634 cards), the mangled one reaches statewide_prescriptive.js (26 college-pairs) — so a consumer building a college axis from the payload gets TWO Ca\\u00f1ada columns, one of them holding all 26 opportunities and the other empty. Found 2026-08-17 (session 165) while building the adoption matrix. It was invisible before because the only consumer resolving these names ran them through cplCollegeShort(), whose normalize() folds \\u00c3\\u00b1 -> n and so silently absorbed it: the label count read 118 while the underlying axis was 119. Escaped as \\u here so this file's own encoding cannot corrupt the very string it is describing. The encoding defect upstream in the prescriptive builder is worth fixing at source; this fold is the safety net that must stay regardless.",
     "map": {
       "Calbright College Credit": "Calbright College Non-Credit",
       "North Orange Continuing Education Credit": "North Orange Continuing Education",
-      "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+      "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education",
+      "CaÃ±ada College": "Cañada College"
     }
   },
 
   "_expected_axis": {
     "_why": "A regression tripwire. If these counts move, a college was added, renamed, or newly folded — which is worth noticing rather than silently rendering a different number of columns.",
+    "_measured_where": "payload_spellings counts the RAW MAP export, before any rule. The PUBLISHED statewide_data.js is already post-sandbox (the generator drops it at build time), so counting the artifact gives 121, not 122 — that is the rules working, not a regression. after_rules is the number to assert on a consumer: 121 artifact spellings - 3 fold variants actually present = 118. Only 3 of the 4 folds fire on today's data; 'Calbright College Credit' no longer appears at all.",
     "payload_spellings": 122,
     "after_rules": 118,
     "credit": 115,

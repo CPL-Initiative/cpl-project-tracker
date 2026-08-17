@@ -1,26 +1,14 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-17 · Sky163 — the Exhibit & CR Adoption data fix is live and verified. The matrix view itself is next.",
-  "_session": "Session 163 (Sky163) — the CER Adoption Matrix sub-tab",
-  "_status": "You asked for a grid: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown for what it could still get. That is being built, and your four calls (peer benchmark, open on colleges, rows with at least two adopters, brown only where it is credible) are all in.\n\nOne thing had to change, and it is worth knowing why. The obvious brown number is \"all the credit this credential carries, minus what you already claimed\". We checked before building it: 83% of colleges that adopt a credential only take part of it — typically 3 of the 9 recommendations available — and no college in California has ever taken the whole thing. AP Biology carries 36 units; the typical adopter gets 4 and the best gets 12. So a brown 36 would have told a college it could get roughly three times what the strongest college in the state has ever managed, in a number that goes out in spreadsheets. Brown is now what colleges like you actually got.\n\nThat also turned up something bigger than the question: among colleges that HAVE adopted, about two-thirds of the available credit is still unclaimed. The partial adopters are a easier win than the colleges that never started, and nothing has ever shown that.\n\nYour two roster calls are done and live, and one of them fixed a real error: the sandbox college was being counted as a genuine adopter on the California Real Estate Broker License card, which was publishing 7 adopting colleges when the truth is 6. That card now reads 6, the duplicate Calbright and continuing-education entries have been merged, and the college list is down to 118 — 115 credit colleges, which is exactly the number you gave us, plus 3 noncredit.",
+  "_as_of": "2026-08-17 · Sky165 — the grid is built and live. The spreadsheet version of it is next.",
+  "_session": "Session 165 (Sky165)",
+  "_status": "The grid you asked for is built: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown (in brackets) for what it could still get. It shows 434 credentials across 118 colleges, and about a sixth of the grid is filled in, with 59% of those credentials showing at least one college that could pick them up. Your four calls are all in it. Building it turned up one real problem: Cañada College was appearing twice, because two parts of our own pipeline spell its name differently — one of those columns had all of Cañada's opportunities and the other was empty, which looks exactly like a college with nothing available. That is fixed. Next is letting the grid leave as a spreadsheet, which is how it actually reaches a college.",
   "items": [
     {
       "id": "s163-noncredit-fourth",
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
       "text": "You said 115 credit colleges and 4 noncredit campuses. The 115 matches exactly. We can only find 3 noncredit — North Orange Continuing Education, San Diego College of Continuing Education, and Calbright. The fourth is Mt. SAC's noncredit side, and it does not exist as its own entry anywhere in MAP, so it cannot be a column until it does. Worth deciding whether MAP should carry it separately."
-    },
-    {
-      "id": "s163-real-estate-count",
-      "for": "Sam",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Heads up on a number that will change: the California Real Estate Broker License card has been showing 7 adopting colleges. One of those was our own sandbox account, so the real figure is 6. It is corrected now — flagging it in case anyone has quoted the 7."
-    },
-    {
-      "id": "s163-matrix-view",
-      "for": "Fable",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Build the matrix view itself. The data side shipped and the layout is agreed with Sam in a working mock — credential names down the side, colleges across the top with short names, green for units already articulated and brown for the peer benchmark not yet reached, expandable rows showing the underlying MAP exhibits."
     },
     {
       "id": "s162-unclassified-titles",
@@ -69,6 +57,30 @@
       "for": "Fable",
       "tab": "Docs",
       "text": "The project's always-loaded instructions file is still twice the size it should be. This session archived one old session write-up and rewrote a section instead of adding to it, but that is holding the line, not fixing it. The finished workstreams — the EACR filters, the team phrases, the sign-in work — are history now and belong in the reference folder. Every line costs every future session."
+    },
+    {
+      "id": "s165-matrix-export",
+      "for": "Fable",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Let the new grid leave as a spreadsheet. That is the whole point of the brown numbers being what other colleges actually earned rather than the most the exhibit allows — a spreadsheet gets emailed to a college and read months later, with nobody around to explain it. The export has to say exactly what the screen says, over the same 118 colleges."
+    },
+    {
+      "id": "s165-look-at-the-grid",
+      "for": "Sam",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Have a look at the grid on the live site and tell us whether it reads. It is 434 rows by 118 columns, so it scrolls sideways — that is unavoidable at this width, but whether the density is useful is your call. The mock looked right to you; this is the first time it exists with all the real data in it."
+    },
+    {
+      "id": "s165-mojibake-source",
+      "for": "Fable",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Fix the Cañada spelling where it starts, not just where it shows. One part of the dashboard generator writes the name with mangled accented characters and another writes it correctly, so the same college arrived under two names. We have folded them together, but the generator should stop producing two spellings — and nobody has checked whether other accented names are affected."
+    },
+    {
+      "id": "s165-partial-adopters",
+      "for": "Sam",
+      "tab": "Exhibit & CR Adoption",
+      "text": "A question about the grid worth your eye. About 350 times, a college has already taken a credential but claimed fewer units than most colleges claim for the same one — 172 credentials, roughly 1,100 units between them and their peers. These are probably the easiest wins on the whole tab, because the college, the faculty contact and the review already exist; the ask is to extend an agreement, not start one. We have NOT put it on the grid, because it means a second number inside the green squares and that changes how the whole thing looks. Do you want to see a version with it?"
     }
   ]
 }

@@ -253,8 +253,17 @@ function runAssertions() {
   check("near-me: ...and discloses it is a lead, not a match",
     /a lead, not a match/i.test(val(() => txt(alignedCard.querySelector(".sv-prog"))) || ""));
 
-  // ── 7. Two sub-tabs replaced three collapsibles; only one renders ────────
-  check("exactly two sub-tabs render", val(() => doc.querySelectorAll(".sw-subtab").length) === 2);
+  // ── 7. Sub-tabs replaced three collapsibles; only one renders ────────────
+  // Asserted by NAME, not by count. This check read "exactly two sub-tabs" and
+  // failed the moment a third view (the adoption matrix) was added — a bound
+  // that rots on legitimate change while never guarding the property it cares
+  // about, which is that the Student view FOLDED IN rather than becoming a tab.
+  check("the credential and table sub-tabs both render",
+    !!val(() => doc.querySelector('.sw-subtab[data-view="credentials"]')) &&
+    !!val(() => doc.querySelector('.sw-subtab[data-view="table"]')));
+  check("every sub-tab controls a panel that exists",
+    val(() => Array.from(doc.querySelectorAll(".sw-subtab")).every(
+      (b) => !!doc.getElementById(b.getAttribute("aria-controls")))) === true);
   check("the standalone Student view is gone (folded, not duplicated)",
     !doc.getElementById("sw-sv-body") && !/buildStudentView/.test(src));
   showView("table");
