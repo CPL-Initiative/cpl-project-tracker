@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_168_handoff.md
+---
+
 # Session 166 — handoff from Sky165 (Session 165, 2026-08-17)
 
 You are Session 166. Sky165 rebuilt and shipped the **CER Adoption Matrix** view

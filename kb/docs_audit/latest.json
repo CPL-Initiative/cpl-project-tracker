@@ -9,55 +9,56 @@
     "other": 150000
   },
   "summary": {
-    "files": 547,
-    "bytes": 6247100,
+    "files": 552,
+    "bytes": 6285414,
     "over_budget": 5,
-    "handoff_max": 166,
+    "handoff_max": 168,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 121514,
+    "always_loaded_bytes": 111410,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 121514,
+        "bytes": 111410,
         "over": 1
       },
       "other": {
         "files": 67,
-        "bytes": 1642241,
+        "bytes": 1653593,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 226198,
+        "bytes": 229979,
         "over": 1
       },
       "lessons": {
-        "files": 60,
-        "bytes": 1600353,
+        "files": 61,
+        "bytes": 1614237,
         "over": 2
       },
       "kb_note": {
-        "files": 271,
-        "bytes": 1484258,
+        "files": 274,
+        "bytes": 1496781,
         "over": 0
       },
       "handoff": {
-        "files": 147,
-        "bytes": 1172536,
+        "files": 148,
+        "bytes": 1179414,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
+      "stacked_roadmap_cell": 1,
       "kb_note_dialect": 58,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2001,
-      "bytes": 1139140246,
-      "heavy_bytes": 587342910,
+      "files": 2010,
+      "bytes": 1139310369,
+      "heavy_bytes": 587342923,
       "heavy_share": 0.516,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -112,26 +113,44 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 121514,
+        "bytes": 111410,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 61514,
-        "ratio": 2.03
+        "over_by": 51410,
+        "ratio": 1.86
       },
-      "message": "121,514 B is 2.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "111,410 B is 1.9× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "stacked_roadmap_cell",
+      "fixable": false,
+      "detail": {
+        "cells": [
+          {
+            "row": "EACR — Exhibit & CR Adoption",
+            "chars": 5492,
+            "priors": 0,
+            "corrections": 1
+          }
+        ],
+        "cell_max": 4000,
+        "prior_max": 1
+      },
+      "message": "1 roadmap cell(s) have become append-only logs — worst is \"EACR — Exhibit & CR Adoption\" at 5,492 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 226198,
+        "bytes": 229979,
         "limit": 40000,
         "lane": "index",
-        "over_by": 186198,
-        "ratio": 5.65
+        "over_by": 189979,
+        "ratio": 5.75
       },
-      "message": "226,198 B is 5.7× the index budget (40,000 B) — candidate for compaction",
+      "message": "229,979 B is 5.7× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -825,13 +844,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 412913,
+        "bytes": 414341,
         "limit": 150000,
         "lane": "other",
-        "over_by": 262913,
-        "ratio": 2.75
+        "over_by": 264341,
+        "ratio": 2.76
       },
-      "message": "412,913 B is 2.8× the other budget (150,000 B) — candidate for compaction",
+      "message": "414,341 B is 2.8× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -1029,10 +1048,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8691210,
+        "bytes": 8691224,
         "kind": "file"
       },
-      "message": "8,691,210 B single file inside the vault"
+      "message": "8,691,224 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1109,10 +1128,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6258820,
+        "bytes": 6258819,
         "kind": "file"
       },
-      "message": "6,258,820 B single file inside the vault"
+      "message": "6,258,819 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
