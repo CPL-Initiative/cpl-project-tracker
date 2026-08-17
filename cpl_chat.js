@@ -487,7 +487,14 @@
       '.cplchat-aud-chip.on { background:var(--seal-blue, #002F6D); border-color:var(--seal-blue, #002F6D); color:#fff; }',
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
       '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-faint, #8a94a6); }',
-      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.85rem; line-height:1.4; opacity:.75; }',
+      // The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs.
+      // A <button> inherits neither font-family nor color — which is why the
+      // Copy pill below spells both out — and a glyph did not care, but a word
+      // does: without these the two rating pills render in the UA's default
+      // button font and colour right beside a Copy pill that does not. nowrap
+      // keeps "Not helpful" on one line; the row still wraps (.cplchat-fb is
+      // flex-wrap).
+      '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; opacity:.75; color:inherit; font-family:inherit; white-space:nowrap; }',
       '.cplchat-fb-btn:hover { opacity:1; border-color:var(--cobalt, #0047AB); }',
       '.cplchat-fb-btn.on { opacity:1; background:var(--surface-subtle, #eef3fa); border-color:var(--cobalt, #0047AB); }',
       // Copy shares the pill shape but NOT the .cplchat-fb-btn class — that class

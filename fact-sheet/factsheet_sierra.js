@@ -310,7 +310,7 @@
       markEl('fs-sra-avatar'),
       el('div', { className: 'fs-sra-bubble' }, [
         el('p', null, 'Hi, I’m ' + NAME + ' — the California CPL assistant. Ask me about Credit for Prior Learning: what a college offers, where to find credit for a license or certification, or statewide CPL numbers.'),
-        el('p', { className: 'fs-sra-beta' }, '🧪 Beta. Please don’t enter personal information — questions are logged anonymously to improve answers.'),
+        el('p', { className: 'fs-sra-beta' }, 'Beta. Please don’t enter personal information — questions are logged anonymously to improve answers.'),
       ]),
     ]));
     var chips = el('div', { className: 'fs-sra-suggest', id: 'fs-sra-suggest' });
@@ -364,7 +364,7 @@
     if (!bar) return;
     launcher = el('button', { type: 'button', id: 'btn-sierra', className: 'btn fs-sierra-launch no-print',
       title: 'Ask ' + NAME + ', the CPL assistant', 'aria-haspopup': 'dialog', 'aria-expanded': 'false',
-      onclick: toggle }, '💬 Ask ' + NAME);
+      onclick: toggle }, 'Ask ' + NAME);
     var before = document.getElementById('btn-print');     // sit just left of the primary CTA
     if (before && before.parentNode === bar) bar.insertBefore(launcher, before);
     else bar.appendChild(launcher);
