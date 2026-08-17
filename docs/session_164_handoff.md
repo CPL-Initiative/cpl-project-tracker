@@ -48,10 +48,19 @@ New reference file: `kb/reference/map_college_roster_rules.json`.
 `tests/eacr_matrix_payload_test.py` — **40 checks, 31 fail pre-fix** (verified by
 stashing the diff; a harness that passes both ways proves nothing).
 
-⚠️ **Verify the dispatched run actually published the new fields before you
-build.** Run `31981966147` was still at "Checkout repo" when this was written.
-Check `statewide_data.js` for `adopter_units`, and confirm **California Real
-Estate Broker License now reads 6 adopters, not 7.**
+✅ **The payload is LIVE and verified — you do not need to re-check it.**
+The cron published on `4ac7e52` and the result was confirmed against the served
+`statewide_data.js`, not predicted:
+
+| | |
+|---|---|
+| cards carrying `adopter_units` | **2,607** of 2,673 |
+| California Real Estate Broker License | **6 adopters** (was 7 — sandbox gone) |
+| distinct college names | **118** — exactly 115 credit + 3 noncredit |
+| the three `" Credit"` twins | folded, all absent |
+
+`peer_units_median`, `peer_units_max` and `rec_units_total` are present per card.
+**Build straight against it.**
 
 ---
 
