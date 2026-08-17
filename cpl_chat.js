@@ -189,12 +189,18 @@
   // with the standalone sierra/ page (same origin, same localStorage key). Sent
   // as an optional `audience` body field — the production map.rccd.edu widget
   // omits it and is unaffected.
+  //
+  // TEXT LABELS, NO GLYPHS (Sam, 2026-08-14 and again 2026-08-17: "Delete emoji
+  // glyphs. Keep text labels."). The emoji were decoration on top of words that
+  // already said the same thing, and a screen reader announced each one — the
+  // chip for a college administrator read "classical building college
+  // administrator". Nothing is lost by removing them.
   var AUDIENCES = [
-    { k: 'student',       label: '🎓 Student / future student' },
-    { k: 'faculty',       label: '📚 Faculty' },
-    { k: 'administrator', label: '🏛️ College administrator' },
-    { k: 'employer',      label: '💼 Employer / industry' },
-    { k: 'civic',         label: '🤝 Civic leader' },
+    { k: 'student',       label: 'Student / future student' },
+    { k: 'faculty',       label: 'Faculty' },
+    { k: 'administrator', label: 'College administrator' },
+    { k: 'employer',      label: 'Employer / industry' },
+    { k: 'civic',         label: 'Civic leader' },
   ];
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;
@@ -230,7 +236,7 @@
     setTimeout(function () { audEl.classList.remove('need'); }, 1700);
   }
 
-  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
   // One row per assistant turn, keyed by a client uuid: a thumb click logs
   // immediately and an added note / switched rating updates the SAME row.
   // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
@@ -243,7 +249,7 @@
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
 
-  // ── Copy an answer (📋) ────────────────────────────────────────────────────
+  // ── Copy an answer ─────────────────────────────────────────────────────────
   // Mirrors sierra/sierra.js — the two chat surfaces have carried parallel
   // implementations since the feedback bar, and a shared module would mean a new
   // <script> in BOTH mirrored dashboard HTMLs (Rule 4) for ~40 lines. Keep the
@@ -309,7 +315,7 @@
       }
     );
   }
-  // Builds the 📋 Copy pill for one assistant turn. `answer` is the markdown;
+  // Builds the Copy pill for one assistant turn. `answer` is the markdown;
   // the bubble is looked up from the row so an error turn still copies what the
   // visitor can see.
   function makeCopyBtn(afterRow, answer) {
@@ -322,17 +328,20 @@
         var bub = afterRow && afterRow.querySelector ? afterRow.querySelector('.cplchat-bubble') : null;
         var plain = answer || (bub ? bub.textContent : '') || '';
         copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
-          btn.textContent = ok ? '✓ Copied' : '⚠ Press Ctrl+C';
+          // Words, not ticks — the state is already carried by the `on` class
+          // and its colour, so the glyph was decoration on a label that says
+          // the same thing (Sam, 2026-08-17).
+          btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
           btn.classList.toggle('on', ok);
           if (!ok && bub) selectNode(bub);
           if (timer) clearTimeout(timer);
           timer = setTimeout(function () {
-            btn.textContent = '📋 Copy';
+            btn.textContent = 'Copy';
             btn.classList.remove('on');
           }, 2200);
         });
       },
-    }, '📋 Copy');
+    }, 'Copy');
     return btn;
   }
   function feedbackPayload(o) {
@@ -399,7 +408,12 @@
     // Copy sits FIRST — it is what people reach for on a GOOD answer, and it
     // should not sit behind the rating flow.
     var bar = el('div', { className: 'cplchat-fb' }, [makeCopyBtn(afterRow, answer), hint]);
-    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+    // The thumbs are now WORDS. They were the one place a glyph carried meaning
+    // no text repeated, so removing them without a label would have destroyed
+    // the control — the visible label now says what the aria-label said, which
+    // is also the accessible improvement (a bare 👍 announces as "thumbs up",
+    // not as "this answer was helpful").
+    [['up', 'Helpful', 'This answer was helpful'], ['down', 'Not helpful', 'This answer was not helpful']]
       .forEach(function (spec) {
         var b = el('button', {
           type: 'button', className: 'cplchat-fb-btn', 'aria-label': spec[2],
@@ -407,7 +421,7 @@
             rating = spec[0];
             btns.up.classList.toggle('on', rating === 'up');
             btns.down.classList.toggle('on', rating === 'down');
-            hint.textContent = '✓ Thanks — logged.';
+            hint.textContent = 'Thanks — logged.';
             noteWrap.hidden = false;
             upsert(noteIn.value.trim() || null);
           },
@@ -435,14 +449,14 @@
           noteIn.hidden = true;
           noteBtn.hidden = true;
           noteDone.className = 'cplchat-fb-done';
-          noteDone.textContent = '✓ Note sent — thank you!';
+          noteDone.textContent = 'Note sent — thank you!';
         } else {
           // KEEP THE TYPED TEXT. The same guarantee the guidance editor and the
           // contact proposals carry: a write that did not land must report as a
           // failure with the words still in the box, never as a cheerful tick.
           noteBtn.disabled = false;
           noteDone.className = 'cplchat-fb-fail';
-          noteDone.textContent = '⚠ Not sent — your note is still here, try again.';
+          noteDone.textContent = 'Not sent — your note is still here, try again.';
         }
       });
     });
@@ -509,6 +523,25 @@
       '.cplchat-bubble th, .cplchat-bubble td { border:1px solid var(--border, #d8dde6); padding:4px 10px; text-align:left; vertical-align:top; }',
       '.cplchat-bubble th { background:var(--surface-subtle, #f2f6fb); color:var(--navy-primary, #0b3d61); font-weight:700; }',
       '.cplchat-bubble tbody tr:nth-child(even) { background:var(--surface-subtle, #f2f6fb); }',
+      // ── The Sierra AI heading + its Whitney mark (Sam, 2026-08-17) ─────────
+      // The mark is the same roundel the answer avatars carry, at heading size.
+      // `em` so it tracks the h2 rather than needing a second breakpoint.
+      '.cplchat-title { display:flex; align-items:center; gap:10px; }',
+      '.cplchat-title-mark { flex:0 0 auto; width:1.25em; height:1.25em; display:block; }',
+      '.cplchat-title-mark svg { width:100%; height:100%; display:block; }',
+      // ── Measure control, so widening the log does not widen the PROSE ─────
+      // Sam, 2026-08-17: "use as much of the screen as possible for usable
+      // space". The log and the bubble now take the container's width, which is
+      // what a table or a long list of courses needs — but a 1,200px paragraph
+      // is unreadable, so the cap is applied to the PROSE elements instead of
+      // to the bubble. Tables keep their own overflow-x and are unaffected.
+      '.cplchat-bubble > p, .cplchat-bubble > ul, .cplchat-bubble > ol { max-width:82ch; }',
+      // ── Growing log: the reader-facing half of "don't scroll so much" ─────
+      // See the .cplchat-log rule in the HTML for the growth range itself.
+      // scroll-padding keeps a smooth page-follow from parking the newest line
+      // hard against the bottom edge.
+      'html { scroll-padding-bottom:96px; }',
+      '@media (prefers-reduced-motion:reduce){ html { scroll-behavior:auto; } }',
     ].join('\n');
     var st = document.createElement('style');
     st.id = 'cplchat-aud-css';
@@ -516,8 +549,60 @@
     document.head.appendChild(st);
   }
 
+  // ── Keep the newest line in view ───────────────────────────────────────────
+  // The log used to be a FIXED 460px box, so "scroll to the bottom" meant one
+  // thing: scroll the box. It now GROWS with the answer (Sam, 2026-08-17:
+  // "allow Sierra's window to grow with her answers — so users don't have to
+  // scroll so much"), which introduces a second case the old one-liner could
+  // not reach: a growing box is not internally scrollable, so setting scrollTop
+  // is a no-op while the bottom of the answer — and the input under it — walks
+  // off the bottom of the PAGE. Growth without page-follow would have made the
+  // scrolling worse, not better.
+  //
+  // Both cases are handled, and the page half is deliberately conservative:
+  //   · only when the anchor is actually below the fold (never scroll up, and
+  //     never scroll at all when it already fits);
+  //   · only while `stick` — set at send time and cleared the moment the reader
+  //     scrolls away from the bottom themselves. Yanking someone who scrolled
+  //     up to re-read an earlier answer is the failure mode that makes chat UIs
+  //     unusable, and it is silent: they just fight the page and give up.
+  var stick = true;
+  var windowScrollWatched = false;
+  function nearBottom() {
+    var slack = 120;                                    // a comfortable "still at the end"
+    if (logEl && logEl.scrollHeight > logEl.clientHeight + 1) {
+      return logEl.scrollTop + logEl.clientHeight >= logEl.scrollHeight - slack;
+    }
+    var doc = document.documentElement;
+    if (!doc) return true;
+    var below = doc.scrollHeight - (window.pageYOffset || doc.scrollTop || 0) - doc.clientHeight;
+    return below <= slack;
+  }
+  function stickToBottom() { stick = true; }
+  function noteReaderScroll() { stick = nearBottom(); }
   function scrollDown() {
-    if (logEl) requestAnimationFrame(function () { logEl.scrollTop = logEl.scrollHeight; });
+    if (!logEl) return;
+    requestAnimationFrame(function () {
+      if (!logEl) return;
+      // Internal scroll first. Still correct for a long answer that has hit the
+      // max-height cap; a harmless no-op while the box is still growing.
+      logEl.scrollTop = logEl.scrollHeight;
+      if (!stick) return;
+      try {
+        var r = logEl.getBoundingClientRect();
+        var vh = window.innerHeight || (document.documentElement || {}).clientHeight || 0;
+        // Nothing to do unless the bottom edge is genuinely past the fold.
+        if (!vh || r.bottom <= vh - 8) return;
+        // Move by exactly the overshoot, plus room for the input row beneath.
+        // A JS `behavior:'smooth'` is NOT covered by the CSS reduced-motion
+        // rule, so the preference is read here as well.
+        var calm = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        window.scrollBy({
+          top: Math.ceil(r.bottom - vh + 96), left: 0,
+          behavior: calm ? 'auto' : 'smooth',
+        });
+      } catch (e) { /* no layout (jsdom) or no scrollBy — internal scroll stands */ }
+    });
   }
   function addUserMsg(text) {
     var row = el('div', { className: 'cplchat-msg cplchat-user' },
@@ -657,6 +742,9 @@
     if (!q) { inputEl.focus(); return; }
     if (!audience) { needAudience(); return; }
     busy = true;
+    // Asking is an explicit "show me the answer", so re-arm page-follow even if
+    // the reader had scrolled up to look at an earlier turn.
+    stickToBottom();
     sendBtn.disabled = true; inputEl.disabled = true;
     addUserMsg(q);
     inputEl.value = '';
@@ -680,15 +768,39 @@
     ensureChatCss();
     var wrap = el('div', { className: 'cplchat' });
 
+    // ── The one heading (Sam, 2026-08-17) ──────────────────────────────────
+    // "Change CPL Assistant title to Sierra AI with her mountain logo". She is
+    // named "Sierra AI" and not "Sierra" because Sierra alone reads as Sierra
+    // College (Sam, 2026-08-11). The mark is the SAME static SIERRA_MARK the
+    // chat avatars use, so the header and the answers beneath it carry one
+    // identity — and it needs no relative-path asset, which matters because
+    // this widget mounts in two panes and on two mirrored HTMLs.
+    //
+    // This is now the ONLY heading on My College's assistant box: that tab used
+    // to print its own "Sierra AI" h3 and purpose paragraph directly above this
+    // one, so the pane opened with two titles and two descriptions of the same
+    // thing. college_briefing.js no longer emits its copy.
+    var title = el('h2', { className: 'cplchat-title' });
+    var mark = el('span', { className: 'cplchat-title-mark', 'aria-hidden': 'true' });
+    mark.innerHTML = SIERRA_MARK;                 // static, trusted (see SIERRA_MARK)
+    title.appendChild(mark);
+    title.appendChild(el('span', null, 'Sierra AI'));
+
     wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
-      el('h2', null, 'CPL Assistant'),
+      title,
+      // One description, and it has to read correctly in BOTH hosts — this
+      // widget mounts on My College and on the CPL Assistant tab, so it cannot
+      // say "the sections below" (the wording My College's deleted paragraph
+      // used, which would be a promise about a page that isn't always there).
       el('p', null,
-        'Ask about Credit for Prior Learning — what a college offers, where to ' +
-        'find credit for a license or certification, or statewide CPL numbers. ' +
-        'Answers draw on the CPL knowledge base, live dashboard metrics, and ' +
-        '2,300+ statewide exhibits.'),
+        'Ask her anything about Credit for Prior Learning — what a college ' +
+        'offers, what credit is sitting unawarded, where to find credit for a ' +
+        'license or certification, who a student should contact, or statewide ' +
+        'CPL numbers. She reads the same CPL Initiative records and knowledge ' +
+        'base these pages are built from, so it is usually faster to ask than ' +
+        'to go looking.'),
       el('p', { className: 'cplchat-beta' },
-        '🧪 Beta — in development. Please don\'t enter personal information; ' +
+        'Beta — in development. Please don\'t enter personal information; ' +
         'questions are logged to improve answers.'),
     ]));
 
@@ -701,6 +813,18 @@
     wrap.appendChild(audEl);
 
     logEl = el('div', { className: 'cplchat-log', id: 'cplchat-log', 'aria-live': 'polite' });
+    // A reader who scrolls away from the bottom takes control; asking again
+    // hands it back (see scrollDown). Passive: this must never delay a scroll.
+    // The log's own listener dies with the element, but build() runs again on
+    // every mountInto() — so the WINDOW listener is attached exactly once, or
+    // switching between My College and CPL Assistant would stack one per visit.
+    try {
+      logEl.addEventListener('scroll', noteReaderScroll, { passive: true });
+      if (!windowScrollWatched) {
+        window.addEventListener('scroll', noteReaderScroll, { passive: true });
+        windowScrollWatched = true;
+      }
+    } catch (e) { /* no addEventListener options support — follow stays armed */ }
 
     // Starter suggestion chips
     var chips = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
