@@ -1,144 +1,127 @@
-// CER Adoption Matrix sub-tab — credentials down the side, colleges across the
-// top, credit-recommendation units in the cells (Sam scoped it 2026-08-17).
+// EACR adoption matrix — the third sub-tab (2026-08-17).
 //
-// Sam's four rulings, each of which is a check below:
-//   brown number   → the PEER BENCHMARK, not the line total
-//   column grain   → colleges
-//   default rows   → titles with ≥2 adopters
-//   brown coverage → credible cells only (the M-ID "likely" tier)
+// Sam's Excel pivot on live MAP data: common exhibit titles down the side,
+// colleges across the top, credit-recommendation units in the cells. Four of
+// his rulings are INPUTS to the build, and each one is a way this view could
+// go quietly wrong, so each gets a check that fails if it is undone:
 //
-// THE HEADLINE FAILURE MODE this guards. The natural reading of "units still
-// available" is (line total − already claimed). Measured over the live payload:
-// 83% of adoptions are PARTIAL (a median of 3.07 of 9.26 recommendation lines)
-// and NO college has ever claimed a credential's full total. AP Biology carries
-// 36 units where the median adopter gets 4 and the best in California gets 12.
-// So the natural number would promise roughly 3× what the strongest peer has
-// ever actually obtained — in a figure that leaves the screen as a CSV and
-// reaches a college by email. `brownIsNotTheLineTotal` is the check that would
-// catch a future refactor quietly restoring it.
+//  1. THE BROWN NUMBER IS THE PEER BENCHMARK, NEVER `rec_units_total`. This is
+//     the one that matters. 83% of adoptions are partial (a college claims a
+//     median 3.07 of 9.26 available recommendation lines) and NO college has
+//     ever reached the line total, so brown 36.0 on AP Biology would promise
+//     roughly triple what the strongest college in California has ever got —
+//     in a column that leaves this tab as a CSV and reaches a dean by email.
+//     The fixture below sets rec_units_total to a value that appears NOWHERE
+//     else, so if anyone ever wires brown back to it, a check says so by name.
+//  2. Columns open on COLLEGES; district/region drill-down is the existing
+//     filter bar narrowing the column set.
+//  3. Rows default to credentials with >= 2 adopting colleges.
+//  4. Brown lands on CREDIBLE cells only — a NON-adopter gets a number only
+//     where the M-ID *likely* layer already names a course it teaches that maps
+//     to the credential. Brown on every non-adopter would assert that every
+//     college in California should adopt every credential.
 //
-// THE COLUMN-IDENTITY FAILURE MODE. One institution must never be two columns.
-// Three ways that happens, all fixtured: a MAP sandbox org (must not be a column
-// at all — it published 7 adopters on a real statewide card where the truth is
-// 6), a " Credit"-suffixed duplicate spelling, and — found while building this —
-// a MOJIBAKE duplicate, "CaÃ±ada College" being "Cañada College" read as latin-1.
-// Both Cañada spellings are emitted by excel_to_dashboard.py on different paths,
-// so the axis carried two Cañada columns with all the opportunities on one and
-// the other empty. It was invisible because the only consumer resolving these
-// names ran them through cplCollegeShort(), whose normalize() folds Ã± → n: the
-// LABEL count read 118 while the axis under it was 119.
+// Plus the two structural facts the design is built on:
+//  - 118 numeric columns is ~3,500px, about twice a desktop, so the geometry
+//    (frozen title column, rotated short-caps headers, h-scroll) IS the design.
+//  - The payload and the prescriptive layer are generated separately and spell
+//    colleges differently. Both sides resolve through cplCollegeShort(), so a
+//    brown cell can never miss its column because two generators disagreed.
 //
-// Written against the failure modes. Verified against the pre-fix file.
+// And the standing a11y expectation on this tab (WCAG 1.4.1): the opportunity
+// figure is PARENTHESISED as well as brown, so it survives colour-blindness,
+// forced colours and a printout.
 //
 // Run from repo root: `npm test` (or `node tests/eacr_matrix.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
 
 const src = fs.readFileSync("statewide_interactive.js", "utf8");
+const shortNamesSrc = fs.readFileSync("college_short_names.js", "utf8");
 const rosterRules = JSON.parse(
   fs.readFileSync("kb/reference/map_college_roster_rules.json", "utf8"));
 
-const results = [];
-function check(name, cond) { results.push([name, !!cond]); }
-// A probe that throws must fail ITSELF, not silence the block it sits in.
-function val(fn) { try { return fn(); } catch (e) { return undefined; } }
-// ...and so must a DRIVER between checks. `val()` guards the assertions; a throw
-// in the code that sets up the next one (dispatching on an element that does not
-// exist pre-fix) skips every check after it and reports zero failures. Three
-// harnesses in three days died this way — wrap the drivers too.
-function drive(label, fn) { try { fn(); } catch (e) { check("driver ok: " + label, false); } }
-function txt(el) { return (el && el.textContent || "").trim(); }
-
 // The mojibake spelling, escaped rather than typed: writing it literally invites
 // this very file to be re-encoded and the fixture to stop reproducing the bug.
-const CANADA = "Cañada College";        // canonical — map_colleges id 25
-const CANADA_MOJI = "CaÃ±ada College"; // the same name, latin-1 → UTF-8
+const CANADA = "Ca\u00f1ada College";              // canonical — map_colleges id 25
+const CANADA_MOJI = "Ca\u00c3\u00b1ada College";   // the same name, latin-1 → UTF-8
 
-// ── Fixture ────────────────────────────────────────────────────────────────
-// "Widget Cert" is the pivot: TWO cards of ONE unified title (the CER grain), so
-// College A's units must SUM across them and the pair must render as ONE row.
-// Its rec_units_total (60) is deliberately far above what any adopter achieved
-// (max 12) — that gap is what the headline check measures.
+const results = [];
+function check(name, cond) { results.push([name, !!cond]); }
+// val() guards the CHECK; the drivers below are the other half. A driver that
+// throws on a missing element takes the whole run down, and a verification pass
+// that reports nothing is indistinguishable from one that passes.
+function val(fn) { try { return fn(); } catch (e) { return undefined; } }
+
+// ── Fixture ───────────────────────────────────────────────────────────────
+// Real college names, because the short-name resolver is part of what is under
+// test — the rotated headers only fit because they carry short caps.
+//
+// AP Biology: three adopters with DELIBERATELY uneven units, so the merged peer
+// median is a number that is not any single card's and the partial-adopter gap
+// is non-zero and checkable:
+//     Chaffey 1 · Riverside 4 · Norco 12  →  median 4, max 12
+//   → Chaffey is a partial adopter: 4 − 1 = a gap of 3.
+//   → Riverside sits exactly at the median: no gap, no brown.
+//   → Norco is above it: no brown (and never a negative number).
+// rec_units_total is 36 — the line total, which must appear NOWHERE.
 const exhibits = [
-  { exhibit_id: "w1", exhibit_ids: ["w1"], title: "Widget Cert", unified_title: "Widget Cert",
-    issuing_agency: "WidgetCo", is_classified: true, cpl_type: "Industry Certification",
-    collaborative_type: "CCC Collaborative",
-    adopters: 3, adopter_names: ["College A", "College B", "College D"],
-    adopter_units: { "College A": 4, "College B": 12, "College D": 2 },
-    adopter_lines: { "College A": 1, "College B": 3, "College D": 1 },
-    peer_units_median: 4, peer_units_max: 12, rec_units_total: 60,
-    potential: 1, potential_names: ["College E"], raw_titles: ["Widget"],
-    credit_recs: [{ course: "WID 1", credit: "4 hours in Widgetry" }] },
-  // Second card of the SAME unified title — College A appears again (+2 units).
-  { exhibit_id: "w2", exhibit_ids: ["w2"], title: "Widget Cert", unified_title: "Widget Cert",
-    issuing_agency: "", is_classified: false, cpl_type: "Credit By Exam",
-    collaborative_type: "Local",
-    adopters: 1, adopter_names: ["College A"],
-    adopter_units: { "College A": 2 }, adopter_lines: { "College A": 1 },
-    peer_units_median: 2, peer_units_max: 2, rec_units_total: 60,
-    potential: 0, potential_names: [], raw_titles: ["Widget local"], credit_recs: [] },
-  // Single-card title — its recomputed median MUST equal the payload's figure.
-  { exhibit_id: "g1", exhibit_ids: ["g1"], title: "Gadget Cert", unified_title: "Gadget Cert",
-    issuing_agency: "GadgetCo", is_classified: true, cpl_type: "Industry Certification",
-    collaborative_type: "CCC Collaborative",
-    adopters: 4, adopter_names: ["College A", "College B", "College D", CANADA],
-    // Even count → median is the average of the two middle values (3 and 5 → 4).
-    adopter_units: { "College A": 1, "College B": 3, "College D": 5, [CANADA]: 9 },
-    adopter_lines: { "College A": 1, "College B": 1, "College D": 2, [CANADA]: 3 },
-    peer_units_median: 4, peer_units_max: 9, rec_units_total: 30,
-    potential: 0, potential_names: [], raw_titles: ["Gadget"], credit_recs: [] },
-  // SINGLE adopter — excluded by default, included by the toggle.
-  { exhibit_id: "s1", exhibit_ids: ["s1"], title: "Solo Cert", unified_title: "Solo Cert",
-    issuing_agency: "SoloCo", is_classified: true, cpl_type: "Industry Certification",
-    collaborative_type: "Local", adopters: 1, adopter_names: ["College A"],
-    adopter_units: { "College A": 7 }, adopter_lines: { "College A": 2 },
-    peer_units_median: 7, peer_units_max: 7, rec_units_total: 20,
-    potential: 0, potential_names: [], raw_titles: ["Solo"], credit_recs: [] },
-  // The DUPLICATE-SPELLING card: one institution entered twice, plus the MAP
-  // sandbox org counted as a real adopter.
-  { exhibit_id: "f1", exhibit_ids: ["f1"], title: "Fold Cert", unified_title: "Fold Cert",
-    issuing_agency: "FoldCo", is_classified: true, cpl_type: "Industry Certification",
-    collaborative_type: "CCC Collaborative",
-    // Four raw spellings, THREE real colleges: the sandbox drops out and the two
-    // North Orange spellings are one institution. College A is here so the row
-    // still clears the ≥2 default after that collapse — which is the point of
-    // `foldedAdopterCountIsReal` below.
-    adopters: 4,
-    adopter_names: ["North Orange Continuing Education",
-                    "North Orange Continuing Education Credit",
-                    "CA MAP INITIATIVE COLLEGE", "College A"],
-    adopter_units: { "North Orange Continuing Education": 3,
-                     "North Orange Continuing Education Credit": 5,
-                     "CA MAP INITIATIVE COLLEGE": 99, "College A": 1 },
-    adopter_lines: { "North Orange Continuing Education": 1,
-                     "North Orange Continuing Education Credit": 2,
-                     "CA MAP INITIATIVE COLLEGE": 9, "College A": 1 },
-    peer_units_median: 5, peer_units_max: 99, rec_units_total: 40,
-    potential: 0, potential_names: [], raw_titles: ["Fold"], credit_recs: [] }
+  { exhibit_id: "apbio-1", exhibit_ids: ["MAPSAS-AB-1-001", "MAPCXO-BA-1-001"],
+    title: "AP Biology", unified_title: "AP Biology", issuing_agency: "College Board",
+    is_classified: true, cpl_type: "Credit by Exam", collaborative_type: "CCC Collaborative",
+    adopters: 3, adopter_names: ["Chaffey College", "Norco College", "Riverside City College"],
+    adopter_units: { "Chaffey College": 1, "Norco College": 12, "Riverside City College": 4 },
+    adopter_lines: { "Chaffey College": 1, "Norco College": 3, "Riverside City College": 1 },
+    peer_units_median: 4, peer_units_max: 12, rec_units_total: 36,
+    // Citrus is the control: a non-adopter the M-ID layer does NOT name, so it
+    // must stay blank. Palomar is a non-adopter on THIS card but an adopter on
+    // the second one, which is what makes the row-grain merge checkable.
+    potential: 6, potential_names: ["Moreno Valley College", "Palomar College",
+      "Citrus College", "North Orange Continuing Education", "Norco College",
+      "CA MAP INITIATIVE COLLEGE"],
+    raw_titles: ["AP Biology"], credit_recs: [{ course: "BIO 100", credit: "4 hours in Biology" }] },
+  // A second card folding under the SAME common title, with an adopter the first
+  // card does not carry — the row grain is the title, so the matrix must merge.
+  { exhibit_id: "apbio-2", exhibit_ids: ["MAPSAH-AB(1-1-001"],
+    title: "AP Biology (Local)", unified_title: "AP Biology", issuing_agency: "College Board",
+    is_classified: true, cpl_type: "Credit by Exam", collaborative_type: "Local",
+    adopters: 1, adopter_names: ["Palomar College"],
+    adopter_units: { "Palomar College": 4 }, adopter_lines: { "Palomar College": 1 },
+    peer_units_median: 4, peer_units_max: 4, rec_units_total: 4,
+    potential: 0, potential_names: [],
+    raw_titles: ["AP Bio local"], credit_recs: [{ course: "BIO 101", credit: "4 hours in Biology" }] },
+  // ONE adopter → below the default row threshold, reachable at "1 adopter".
+  { exhibit_id: "solo-1", exhibit_ids: ["MAPICI-SOLO-1-001"],
+    title: "CompTIA Linux+", unified_title: "CompTIA Linux+", issuing_agency: "CompTIA",
+    is_classified: true, cpl_type: "Industry Certification", collaborative_type: "CCC Collaborative",
+    adopters: 1, adopter_names: ["Chaffey College"],
+    adopter_units: { "Chaffey College": 3 }, adopter_lines: { "Chaffey College": 1 },
+    peer_units_median: 3, peer_units_max: 3, rec_units_total: 20.5,
+    potential: 1, potential_names: ["Palomar College"],
+    raw_titles: ["CompTIA Linux+"], credit_recs: [{ course: "CIS 50", credit: "3 hours in CIS" }] },
 ];
 
-// The prescriptive (M-ID "likely") layer — the ONLY source of brown cells.
-// College F has NOT adopted Widget Cert but already teaches a mapping course, so
-// it is the brown cell the headline check measures. The MOJIBAKE Cañada spelling
-// is an opportunity on Widget Cert too and must land on the SAME column the
-// canonical spelling uses in Gadget Cert. College A is listed here as well even
-// though it ADOPTED Widget Cert — green must win that cell.
+// The prescriptive (M-ID *likely*) layer — the brown-cell gate. Note the
+// spellings: this file is generated by a DIFFERENT pass than the exhibits
+// payload and still carries the unfolded " Credit" twin. It must land on the
+// same column as "North Orange Continuing Education", not create a second one.
 const prescriptive = {
-  "Widget Cert": { n_colleges: 3, withheld: 0, colleges: [
-    { college: "College F", courses: ["WID 5 Widget Basics"] },
-    { college: CANADA_MOJI, courses: ["WID 9 Widget Studies"] },
-    { college: "College A", courses: ["WID 1 Widgetry"] }
+  "AP Biology": { n_colleges: 3, withheld: 0, colleges: [
+    { college: "Moreno Valley College", courses: [{ subject: "BIO", number: "1", units: 4 }] },
+    { college: "North Orange Continuing Education Credit", courses: [{ subject: "BIO", number: "2", units: 4 }] },
+    // Already an adopter — must NOT be double-counted as an opportunity.
+    { college: "Norco College", courses: [{ subject: "BIO", number: "3", units: 4 }] },
   ] },
-  "Gadget Cert": { n_colleges: 1, withheld: 0, colleges: [
-    { college: "College E", courses: ["GAD 2 Gadgetry"] }
-  ] }
 };
 
 const lookup = {
-  "College A": { district: "D1", swRegion: "R1" },
-  "College B": { district: "D1", swRegion: "R1" },
-  "College D": { district: "D2", swRegion: "R2" },
-  "College E": { district: "D2", swRegion: "R2" }
+  "Chaffey College": { district: "Chaffey CCD", swRegion: "Inland Empire/Desert" },
+  "Norco College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
+  "Riverside City College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
+  "Moreno Valley College": { district: "Riverside CCD", swRegion: "Inland Empire/Desert" },
+  "Palomar College": { district: "Palomar CCD", swRegion: "San Diego/Imperial" },
+  "Citrus College": { district: "Citrus CCD", swRegion: "Los Angeles" },
+  "North Orange Continuing Education": { district: "North Orange CCD", swRegion: "Orange County" },
 };
 
 const html = `<!DOCTYPE html><html><head></head><body>
@@ -147,241 +130,329 @@ const html = `<!DOCTYPE html><html><head></head><body>
   window.CPL_STATEWIDE = ${JSON.stringify({ exhibits })};
   window.CPL_STATEWIDE_PRESCRIPTIVE = ${JSON.stringify(prescriptive)};
   window.CCC_COLLEGE_LOOKUP = ${JSON.stringify(lookup)};
-  // Stub of college_short_names.js. The matrix must ASK for the "caps" style
-  // (rotated headers pay for every character) and must fall back to the full
-  // name for anything the resolver does not know — a blank column header is
-  // indistinguishable from a college with no data.
-  window.cplCollegeShort = function (name, style) {
-    var map = { "College A": { short: "A Coll", caps: "A COLL" } };
-    var r = map[name];
-    if (!r) return name;
-    return style === "caps" ? r.caps : r.short;
-  };
 </script>
 </body></html>`;
 
 const dom = new JSDOM(html, { runScripts: "dangerously", url: "https://example.org/" });
 const { window } = dom;
 window.fetch = () => Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) });
-
-let threwOnInit = false;
-try { window.eval(src); } catch (e) { threwOnInit = true; console.error("init threw:", e); }
-check("init does not throw", !threwOnInit);
+const blobs = [];
+window.URL.createObjectURL = function (b) { blobs.push(b); return "blob:stub"; };
+window.URL.revokeObjectURL = function () {};
+window.alert = function () {};
+// The short-name resolver loads AFTER the tab in the real page; the tab looks it
+// up lazily at call time. Load it the same way round.
+try { window.eval(src); } catch (e) { console.error("init threw:", e); }
+try { window.eval(shortNamesSrc); } catch (e) { console.error("short names threw:", e); }
 
 const doc = window.document;
-function showView(v) {
-  const b = doc.querySelector('.sw-subtab[data-view="' + v + '"]');
-  if (b) b.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+
+// ── Null-safe drivers ─────────────────────────────────────────────────────
+function click(el) {
+  if (!el || !el.dispatchEvent) return false;
+  el.dispatchEvent(new window.MouseEvent("click", { bubbles: true }));
+  return true;
 }
-function headerLabels() {
-  return Array.from(doc.querySelectorAll(".mx-th")).map((e) => txt(e));
+function pick(sel) {
+  const r = doc.querySelector(sel);
+  if (!r) return false;
+  r.checked = true;
+  r.dispatchEvent(new window.Event("change", { bubbles: true }));
+  return true;
 }
-function headerTitles() {
-  return Array.from(doc.querySelectorAll(".mx-th")).map((e) => e.getAttribute("title") || "");
-}
+function showMatrix() { return click(doc.querySelector('.sw-subtab[data-view="matrix"]')); }
+const headers = () => Array.from(doc.querySelectorAll(".mx-table thead th.mx-col"));
+const headerCaps = () => headers().map((h) => (h.textContent || "").trim());
+const bodyRows = () => Array.from(doc.querySelectorAll(".mx-table tbody tr")).filter((tr) => tr.querySelector("th.mx-row"));
+const rowTitles = () => bodyRows().map((tr) => (tr.querySelector(".mx-rtitle").textContent || "").trim());
 function rowFor(title) {
-  return Array.from(doc.querySelectorAll(".mx-table tbody tr")).find(
-    (tr) => txt(tr.querySelector(".mx-title-text")) === title);
+  return bodyRows().find((tr) => ((tr.querySelector(".mx-rtitle") || {}).textContent || "").trim() === title);
 }
-function rowTitles() {
-  return Array.from(doc.querySelectorAll(".mx-table tbody .mx-title-text")).map((e) => txt(e));
-}
-// Cell for (row title, column full-name), located by the header's title attr so
-// the lookup does not depend on short-name spelling.
-function cellFor(title, collegeFull) {
+// A cell by (row title, college full name) — resolved through the HEADER, so
+// the check reads the grid the way a person does and cannot drift from it.
+function cell(title, collegeFull) {
   const tr = rowFor(title);
-  if (!tr) return null;
-  const idx = headerTitles().indexOf(collegeFull);
-  if (idx < 0) return null;
-  return tr.querySelectorAll(".mx-c")[idx];
+  if (!tr) return undefined;
+  const i = headers().findIndex((h) => {
+    const a = h.querySelector("abbr");
+    return a && a.getAttribute("title") === collegeFull;
+  });
+  if (i < 0) return undefined;
+  return tr.querySelectorAll("td.mx-cell")[i];
+}
+const cellText = (t, c) => ((cell(t, c) || {}).textContent || "").trim();
+
+setTimeout(function () {
+  try { run(); }
+  catch (e) {
+    check("the harness ran to completion (it threw: " + e.message + ")", false);
+    report();
+  }
+}, 80);
+
+function run() {
+  // ── 1. The sub-tab exists and is a complete tab, like its two siblings ───
+  check("a third sub-tab is declared", !!doc.querySelector('.sw-subtab[data-view="matrix"]'));
+  check("...it is type=button (it must not submit anything)",
+    val(() => doc.querySelector('.sw-subtab[data-view="matrix"]').getAttribute("type")) === "button");
+  check("...pointing at a real tabpanel via aria-controls",
+    val(() => doc.getElementById(doc.querySelector('.sw-subtab[data-view="matrix"]')
+      .getAttribute("aria-controls")).getAttribute("role")) === "tabpanel");
+  check("...which is labelled by the tab",
+    val(() => doc.getElementById("sw-view-matrix").getAttribute("aria-labelledby")) === "sw-tab-matrix");
+  check("the matrix panel is hidden while another view is active",
+    val(() => doc.getElementById("sw-view-matrix").hidden) === true);
+  check("...and the matrix does not build while hidden",
+    /state\.view === "matrix"/.test(src));
+
+  check("the matrix tab can be activated", showMatrix());
+  check("...which un-hides its panel",
+    val(() => doc.getElementById("sw-view-matrix").hidden) === false);
+  check("...and hides the other two",
+    val(() => doc.getElementById("sw-view-credentials").hidden) === true
+    && val(() => doc.getElementById("sw-view-table").hidden) === true);
+  check("the grid renders", !!doc.querySelector(".mx-table"));
+
+  // ── 2. Ruling 3 — the default row bound ──────────────────────────────────
+  check("rows default to credentials with >= 2 adopting colleges",
+    val(() => rowTitles().join("|")) === "AP Biology");
+  check("...so a single-adopter credential is out by default",
+    val(() => rowTitles().indexOf("CompTIA Linux+")) === -1);
+  check("the threshold control offers 1 adopter", !!doc.querySelector('.mx-min-radio[value="1"]'));
+  check("...and lowering it brings the single-adopter row in",
+    pick('.mx-min-radio[value="1"]') && val(() => rowTitles().indexOf("CompTIA Linux+")) >= 0);
+  check("...without disturbing the other views' pagination",
+    val(() => window.document.getElementById("sw-status")) === null
+    || !/NaN/.test(val(() => doc.getElementById("sw-status").textContent) || ""));
+  pick('.mx-min-radio[value="2"]');
+  check("restoring the threshold restores the default row set",
+    val(() => rowTitles().join("|")) === "AP Biology");
+
+  // ── 3. Ruling 2 — columns are colleges, and the axis is the payload's ────
+  // Seven names reach the payload; the MAP sandbox org is not one of the six
+  // that become columns... and the " Credit" twin folds onto its sibling, so
+  // the axis is Chaffey · Citrus · Moreno Valley · Norco · North Orange ·
+  // Palomar · Riverside City = 7.
+  check("every real college in the payload gets a column", headers().length === 7);
+  check("...the MAP sandbox org is NOT one of them",
+    !headerCaps().some((t) => /MAP INITIATIVE/i.test(t))
+    && !headers().some((h) => /MAP INITIATIVE/i.test(h.querySelector("abbr").getAttribute("title") || "")));
+  check("headers carry SHORT CAPS, which is what makes them fit",
+    headerCaps().indexOf("CHAFFEY") >= 0 && headerCaps().indexOf("RIVERSIDE") >= 0);
+  check("...and no header falls back to a long raw name",
+    headerCaps().every((t) => t.length > 0 && t.length <= 20));
+  check("headers are <abbr>, so AT gets the full college name",
+    headers().every((h) => {
+      const a = h.querySelector("abbr");
+      return a && a.tagName === "ABBR" && (a.getAttribute("title") || "").length > 0;
+    }));
+  check("column headers are scoped to their column",
+    headers().every((h) => h.getAttribute("scope") === "col"));
+  check("row headers are <th scope=row>, not a plain cell",
+    bodyRows().every((tr) => {
+      const th = tr.querySelector("th.mx-row");
+      return th && th.tagName === "TH" && th.getAttribute("scope") === "row";
+    }));
+
+  // ── 4. THE RULING THAT MATTERS — brown is the peer benchmark ─────────────
+  // Merged over both AP Biology cards the units are 1 · 4 · 4 · 12, so the peer
+  // median is 4 and the best adopter is 12. The credential's LINE TOTAL is 36.
+  check("green = the units a college has actually articulated",
+    cellText("AP Biology", "Norco College").indexOf("12") === 0);
+  check("a college at the peer median carries no opportunity figure",
+    cellText("AP Biology", "Riverside City College") === "4");
+  check("a PARTIAL adopter shows both: what it has, and the gap to its peers",
+    /^1\s*\(3\)$/.test(cellText("AP Biology", "Chaffey College")));
+  check("...and an ABOVE-median adopter is never shown a negative gap",
+    !/\(/.test(cellText("AP Biology", "Norco College")));
+  const allCells = () => Array.from(doc.querySelectorAll(".mx-table td.mx-cell"))
+    .map((td) => (td.textContent || "").trim()).join(" ");
+  check("⭐ the line total (36) appears in NO cell — brown is not rec_units_total",
+    val(() => allCells().indexOf("36") === -1));
+  check("...and the row meta publishes the peer median and the best adopter",
+    /peer median 4u/.test(val(() => rowFor("AP Biology").querySelector(".mx-rmeta").textContent) || "")
+    && /best 12u/.test(val(() => rowFor("AP Biology").querySelector(".mx-rmeta").textContent) || ""));
+  check("the peer median is recomputed at the ROW grain, not lifted from a card",
+    /matrixRows[\s\S]{0,1400}vals\[mid - 1\]/.test(src));
+
+  // ── 5. Ruling 4 — brown only where it is credible ────────────────────────
+  check("a non-adopter the M-ID layer names DOES get an opportunity figure",
+    cellText("AP Biology", "Moreno Valley College") === "(4)");
+  check("⭐ a non-adopter the M-ID layer does NOT name gets no number at all",
+    cellText("AP Biology", "Citrus College") !== "" &&
+    !/\d/.test(cellText("AP Biology", "Citrus College")));
+  check("...it reads as an explicit 'no signal' mark, not an empty cell",
+    cellText("AP Biology", "Citrus College") === "·");
+  // The row grain is the common TITLE: Palomar adopts only on the second card,
+  // and must still read as an adopter of AP Biology rather than an opportunity.
+  check("an adopter carried by a SECOND card under the same title still reads green",
+    cellText("AP Biology", "Palomar College") === "4");
+
+  // ── 6. Two generators, one column ────────────────────────────────────────
+  // The prescriptive layer says "North Orange Continuing Education Credit";
+  // the payload says "North Orange Continuing Education". One column, and the
+  // brown cell lands on it.
+  check("⭐ an unfolded ' Credit' twin does not create a second column",
+    headers().filter((h) => /NORTH ORANGE/i.test(h.querySelector("abbr").getAttribute("title") || "")
+      || /NORTH ORANGE/i.test(h.textContent || "")).length === 1);
+  check("...and its opportunity cell still lands, resolved through the short-name folder",
+    cellText("AP Biology", "North Orange Continuing Education") === "(4)");
+  check("a college that has already adopted is never ALSO an opportunity",
+    !/\(/.test(cellText("AP Biology", "Norco College")));
+
+  // ── 7. WCAG 1.4.1 — meaning never carried by colour alone ────────────────
+  check("⭐ the opportunity figure is PARENTHESISED, not just brown",
+    /\(4\)/.test(cellText("AP Biology", "Moreno Valley College")));
+  check("the legend states both meanings in words",
+    /adopted — credit-recommendation units/i.test(val(() => doc.querySelector(".mx-key").textContent) || "")
+    && /opportunity — units the median adopting peer obtained/i
+      .test(val(() => doc.querySelector(".mx-key").textContent) || ""));
+  check("each inked cell carries a per-cell explanation naming the college",
+    /Chaffey College/.test(val(() => cell("AP Biology", "Chaffey College").getAttribute("title")) || ""));
+  check("...which says what the parenthesised half means",
+    /peers here reach/.test(val(() => cell("AP Biology", "Chaffey College").getAttribute("title")) || ""));
+  check("the table has a caption describing the two colours",
+    /median adopting peer/i.test(val(() => doc.querySelector(".mx-table caption").textContent) || ""));
+  check("...visually hidden through a NAMESPACED class (.sr-only is not on this page)",
+    val(() => doc.querySelector(".mx-table caption").className) === "mx-sr-only"
+    && /\.mx-sr-only\{position:absolute/.test(src));
+
+  // ── 8. The geometry that makes 118 columns possible at all ───────────────
+  check("the grid is a scrollable, labelled, focusable region",
+    val(() => doc.querySelector(".mx-box").getAttribute("role")) === "region"
+    && !!val(() => doc.querySelector(".mx-box").getAttribute("aria-label"))
+    && val(() => doc.querySelector(".mx-box").getAttribute("tabindex")) === "0");
+  check("the title column is frozen (sticky left) in BOTH the corner and the rows",
+    /th\.mx-corner\{position:sticky;left:0/.test(src) && /th\.mx-row\{position:sticky;left:0/.test(src));
+  check("the header row is frozen (sticky top)", /th\.mx-col\{height:132px;vertical-align:bottom;position:sticky;top:0/.test(src));
+  check("...and the corner outranks both, so it cannot be scrolled under",
+    /th\.mx-corner\{position:sticky;left:0;top:0;z-index:5/.test(src));
+  check("column headers are rotated so a 34px column can carry a name",
+    /transform:rotate\(-60deg\)/.test(src));
+  check("rotation is presentation only — the text stays upright in the DOM",
+    val(() => headers()[0].querySelector("abbr").textContent.trim().length) > 0);
+  check("the matrix ships mobile rules for the frozen column",
+    /\.mx-table thead th\.mx-corner,\.mx-table tbody th\.mx-row\{min-width:180px/.test(src));
+  check("forced colours keeps the sticky panes opaque",
+    /\.mx-table thead th\.mx-col,\.mx-table thead th\.mx-corner,\.mx-table tbody th\.mx-row\{background:Canvas;\}/.test(src));
+  check("the matrix radios stay focusable (opacity, never display:none)",
+    /\.mx-seg input\{position:absolute;opacity:0/.test(src) && !/\.mx-seg input\{[^}]*display:none/.test(src));
+  check("the density is published, so the reader knows how sparse the grid is",
+    /% inked/.test(val(() => doc.querySelector(".mx-stats").textContent) || ""));
+
+  // ── 9. The cell-contents control ─────────────────────────────────────────
+  check("switching to 'Opportunity only' drops the adopted numbers",
+    pick('.mx-cells-radio[value="opp"]')
+    && cellText("AP Biology", "Norco College") === "·"
+    && cellText("AP Biology", "Moreno Valley College") === "(4)");
+  check("switching to 'Adopted only' drops the opportunity figures",
+    pick('.mx-cells-radio[value="got"]')
+    && cellText("AP Biology", "Chaffey College") === "1"
+    && cellText("AP Biology", "Moreno Valley College") === "·");
+  pick('.mx-cells-radio[value="both"]');
+  check("...and 'Both' restores them", /^1\s*\(3\)$/.test(cellText("AP Biology", "Chaffey College")));
+
+  // ── 10. The folded MAP exhibit IDs, per row ──────────────────────────────
+  const disc = () => val(() => rowFor("AP Biology").querySelector(".mx-disc"));
+  check("the row offers the folded MAP exhibit records", !!disc());
+  check("...counting all three across BOTH cards under the common title",
+    /3 exhibits/.test(val(() => disc().textContent) || ""));
+  check("...declaring its collapsed state to AT", val(() => disc().getAttribute("aria-expanded")) === "false");
+  check("clicking it reveals the exhibit IDs", click(disc())
+    && /MAPSAS-AB-1-001/.test(val(() => doc.querySelector(".mx-exp").textContent) || ""));
+  check("...and re-announces itself as expanded", val(() => disc().getAttribute("aria-expanded")) === "true");
+  check("the disclosure row spans the whole grid",
+    val(() => doc.querySelector(".mx-exp td").getAttribute("colspan")) === String(headers().length + 1));
+  check("clicking again collapses it", click(disc()) && !doc.querySelector(".mx-exp"));
+
+  // ── 11. Column drill-down reuses the college filter ──────────────────────
+  // "System, regional or district level" — the existing filter bar narrows the
+  // column axis. No second grain with its own roll-up arithmetic.
+  check("the district filter narrows the COLUMNS", (function () {
+    state_setFilter("district", ["Riverside CCD"]);
+    const caps = headerCaps();
+    return caps.length === 3 && caps.indexOf("CHAFFEY") === -1 && caps.indexOf("NORCO") >= 0;
+  })());
+  check("...and the rows survive the narrowing",
+    val(() => rowTitles().join("|")) === "AP Biology");
+  state_setFilter("district", []);
+  check("clearing the filter restores every column", headers().length === 7);
+
+  // ── 12. The export cannot disagree with the screen ───────────────────────
+  // This tab has already shipped that defect once, one layer down, and the
+  // export is the layer that reaches a college by email.
+  check("the matrix offers its own CSV", !!doc.getElementById("mx-export-csv"));
+  check("...which produces a blob", click(doc.getElementById("mx-export-csv")) && blobs.length > 0);
+  blobs[blobs.length - 1].text().then(function (csv) {
+    check("CSV leads with a provenance line saying what 'opportunity' means",
+      /median units colleges that adopted this credential actually obtained/i.test(csv));
+    check("⭐ ...and says explicitly that it is NOT the recommendation total",
+      /NOT the credential's full recommendation total/i.test(csv));
+    check("CSV names the college scope it was taken under", /College scope:/.test(csv));
+    check("CSV records the row threshold it was taken under",
+      /at least 2 adopting college/.test(csv));
+    check("CSV splits adopted and opportunity into separate labelled columns",
+      /Chaffey — adopted/.test(csv) && /Chaffey — opportunity/.test(csv));
+    const apRow = csv.split("\n").find((l) => l.indexOf("AP Biology") === 0);
+    check("CSV carries the row's peer median and best adopter", !!apRow && /^AP Biology,4,4,12,/.test(apRow));
+    check("⭐ the CSV agrees with the grid cell-for-cell (both call matrixCell)",
+      /exportMatrixCSV[\s\S]{0,2000}matrixCell\(r, c\.key, likely\)/.test(src));
+    check("⭐ the line total never reaches the spreadsheet either",
+      !/(^|,)36(,|$)/m.test(csv));
+    checkRosterLayer();
+    report();
+  }, function (e) {
+    check("the CSV blob could be read (" + e.message + ")", false);
+    checkRosterLayer();
+    report();
+  });
 }
 
-setTimeout(runAssertions, 80);
-
-function runAssertions() {
-  // ── 1. The sub-tab exists and completes the ARIA pattern ─────────────────
-  check("a third sub-tab renders", !!val(() => doc.querySelector('.sw-subtab[data-view="matrix"]')));
-  check("there are now three sub-tabs", val(() => doc.querySelectorAll(".sw-subtab").length) === 3);
-  check("the matrix tab controls a real panel",
-    val(() => !!doc.getElementById(doc.querySelector('.sw-subtab[data-view="matrix"]')
-      .getAttribute("aria-controls"))));
-  check("the matrix panel is a tabpanel",
-    val(() => doc.getElementById("sw-view-matrix").getAttribute("role")) === "tabpanel");
-  check("the matrix panel is HIDDEN before it is selected",
-    val(() => doc.getElementById("sw-view-matrix").hidden) === true);
-  // Perf: ~51,000 cells must not be built while another view is showing.
-  check("the matrix does NOT render until its tab is selected",
-    val(() => doc.getElementById("sw-mx-body").innerHTML.trim()) === "");
-
-  drive("select the matrix view", () => showView("matrix"));
-  check("selecting the tab renders the matrix",
-    !!val(() => doc.querySelector(".mx-table")));
-  check("the matrix panel is visible once selected",
-    val(() => doc.getElementById("sw-view-matrix").hidden) === false);
-  check("selecting the matrix hides the credential view",
-    val(() => doc.getElementById("sw-view-credentials").hidden) === true);
-  check("the matrix tab reports itself selected",
-    val(() => doc.querySelector('.sw-subtab[data-view="matrix"]').getAttribute("aria-selected")) === "true");
-
-  // ── 2. THE HEADLINE — brown is the peer benchmark, not the line total ─────
-  // College F has NOT adopted Widget Cert but already teaches WID 5, so its cell
-  // is brown. Adopters got 12, 2 and (A, summed across two cards) 6 → median 6.
-  // rec_units_total is 60. A cell showing anything near 60 is the defect.
-  const brownB = val(() => cellFor("Widget Cert", "College F"));
-  check("a likely non-adopter gets a brown cell", !!brownB && brownB.classList.contains("mx-brown"));
-  check("the brown number is the PEER MEDIAN (6), not the line total (60)",
-    txt(brownB) === "(6)");
-  check("the brown number is nowhere near rec_units_total",
-    !/60/.test(txt(brownB) || ""));
-  check("brownIsNotTheLineTotal — no brown cell in the grid shows the line total",
-    Array.from(doc.querySelectorAll(".mx-brown")).every((td) => !/\b60\b|\b30\b|\b40\b/.test(txt(td))));
-  // WCAG 1.4.1 — the green/brown distinction must survive greyscale.
-  check("brown is marked by PARENTHESES, not colour alone", /^\(\d/.test(txt(brownB) || ""));
-  check("green cells carry a bare number (no parentheses)",
-    Array.from(doc.querySelectorAll(".mx-green")).every((td) => !/[()]/.test(txt(td))));
-  check("the legend explains the parentheses, not just the colour",
-    /parenthes/i.test(val(() => txt(doc.querySelector(".mx-legend"))) || ""));
-  check("the note says the number is what peers achieved",
-    /peers actually got|median/i.test(val(() => txt(doc.querySelector(".mx-note"))) || ""));
-
-  // ── 3. Green wins a contested cell ───────────────────────────────────────
-  // College A both ADOPTED Widget Cert and appears in its prescriptive list.
-  const cellA = val(() => cellFor("Widget Cert", "College A"));
-  check("a college that adopted is GREEN even when the likely layer also lists it",
-    !!cellA && cellA.classList.contains("mx-green") && !cellA.classList.contains("mx-brown"));
-  check("a cell is never both adopted and an opportunity",
-    Array.from(doc.querySelectorAll(".mx-c")).every(
-      (td) => !(td.classList.contains("mx-green") && td.classList.contains("mx-brown"))));
-
-  // ── 4. Row grain is the unified TITLE — two cards, one row, units summed ──
-  check("the two Widget Cert cards render as ONE row",
-    rowTitles().filter((t) => t === "Widget Cert").length === 1);
-  check("a college's units SUM across the cards of one title (4 + 2 = 6)",
-    txt(cellA) === "6");
-  check("the row's adopter count is distinct COLLEGES, not cards",
-    /\b3 adopted\b/.test(val(() => txt(rowFor("Widget Cert").querySelector(".mx-title-meta"))) || ""));
-
-  // ── 5. Column identity — one institution is never two columns ────────────
-  const labels = headerLabels(), titles = headerTitles();
-  check("the MAP sandbox org is NOT a column",
-    titles.indexOf("CA MAP INITIATIVE COLLEGE") === -1);
-  check("the sandbox's units reach no cell",
-    Array.from(doc.querySelectorAll(".mx-c")).every((td) => txt(td) !== "99"));
-  check("the ' Credit' duplicate spelling is NOT its own column",
-    titles.indexOf("North Orange Continuing Education Credit") === -1);
-  check("the canonical spelling of the folded college IS a column",
-    titles.indexOf("North Orange Continuing Education") !== -1);
-  check("folding a duplicate spelling SUMS its units (3 + 5 = 8)",
-    txt(val(() => cellFor("Fold Cert", "North Orange Continuing Education"))) === "8");
-  // foldedAdopterCountIsReal — the count Sam sees must be INSTITUTIONS, not rows.
-  // Fold Cert lists four adopter spellings; one is the sandbox and two are the
-  // same college, so the honest count is 2. This is the same defect that
-  // published 7 adopters on California Real Estate Broker License where the
-  // truth was 6, and it is why the row's own meta line is asserted here rather
-  // than the payload's `adopters` field.
-  check("the adopter count reflects the fold and the sandbox drop (4 spellings → 2)",
-    /\b2 adopted\b/.test(val(() => txt(rowFor("Fold Cert").querySelector(".mx-title-meta"))) || ""));
-  // The mojibake pair — the defect found while building this view.
-  check("the mojibake spelling is NOT its own column", titles.indexOf(CANADA_MOJI) === -1);
-  check("the canonical Cañada spelling IS a column", titles.indexOf(CANADA) !== -1);
-  check("Cañada appears exactly ONCE in the axis",
-    titles.filter((t) => t === CANADA || t === CANADA_MOJI).length === 1);
-  check("the mojibake college's opportunity lands on the canonical column",
-    val(() => cellFor("Widget Cert", CANADA).classList.contains("mx-brown")) === true);
-  check("no two columns share a label",
-    new Set(labels).size === labels.length);
-
-  // ── 6. Sam's ruling: default rows are titles with ≥2 adopters ────────────
-  check("the single-adopter title is EXCLUDED by default",
-    rowTitles().indexOf("Solo Cert") === -1);
-  check("multi-adopter titles are included", rowTitles().indexOf("Widget Cert") !== -1);
-  check("a control offers the single-adopter tail", !!val(() => doc.getElementById("mx-show-all")));
-  drive("toggle single-adopter rows on", () => {
-    const box = doc.getElementById("mx-show-all");
-    box.checked = true;
-    box.dispatchEvent(new window.Event("change", { bubbles: true }));
-  });
-  check("the toggle brings in single-adopter titles", rowTitles().indexOf("Solo Cert") !== -1);
-  drive("toggle single-adopter rows back off", () => {
-    const box = doc.getElementById("mx-show-all");
-    box.checked = false;
-    box.dispatchEvent(new window.Event("change", { bubbles: true }));
-  });
-  check("un-toggling restores the default depth", rowTitles().indexOf("Solo Cert") === -1);
-
-  // ── 7. Brown is the CREDIBLE tier only ───────────────────────────────────
-  // College E is a bare TOP/C-ID "potential" on Widget Cert and must stay blank;
-  // it is prescriptive on Gadget Cert, where it must be brown.
-  const eWidget = val(() => cellFor("Widget Cert", "College E"));
-  check("a bare TOP/C-ID potential gets NO brown cell",
-    !!eWidget && !eWidget.classList.contains("mx-brown") && txt(eWidget) === "");
-  check("the same college IS brown where the M-ID layer names its course",
-    val(() => cellFor("Gadget Cert", "College E").classList.contains("mx-brown")) === true);
-  check("the brown tooltip NAMES the course the college already teaches",
-    /GAD 2 Gadgetry/.test(val(() => cellFor("Gadget Cert", "College E").getAttribute("title")) || ""));
-
-  // ── 8. The recomputed median agrees with the generator ───────────────────
-  // Gadget Cert is a single card, so the row-level median must equal the
-  // payload's peer_units_median (4) — the two are the same quantity there.
-  check("for a single-card title the recomputed median matches peer_units_median",
-    txt(val(() => cellFor("Gadget Cert", "College E"))) === "(4)");
-
-  // ── 10. Structure that keeps a scrolled grid readable ────────────────────
-  check("the credential column is frozen", /\.mx-title\{[^}]*position:sticky/.test(src));
-  check("the header row is frozen", /\.mx-th\{[^}]*position:sticky/.test(src));
-  check("the corner cell outranks both", /\.mx-corner\{[^}]*z-index:4/.test(src));
-  check("the grid scrolls inside its own wrapper", /\.mx-wrap\{[^}]*overflow:auto/.test(src));
-  check("row headers are th[scope=row]",
-    val(() => doc.querySelector(".mx-title").getAttribute("scope")) === "row");
-  check("column headers are th[scope=col]",
-    val(() => doc.querySelector(".mx-th").getAttribute("scope")) === "col");
-  check("the table carries a caption for screen readers",
-    !!val(() => doc.querySelector(".mx-table caption")));
-  check("headers ask the resolver for the CAPS short form", labels.indexOf("A COLL") !== -1);
-  check("a college the resolver does not know falls back to its full name, not a blank",
-    labels.indexOf("College D") !== -1 && labels.every((l) => l !== ""));
-  check("the full college name survives in the header tooltip",
-    titles.indexOf("College A") !== -1);
-  check("new CSS uses design tokens, not raw hex",
-    !/\.mx-[a-z-]+\{[^}]*#[0-9a-fA-F]{3,6}/.test(src));
-
-  // ── 11. The roster rules the view mirrors ────────────────────────────────
+// ── The identity layer BELOW the short-name resolver ──────────────────────
+// The resolver folds two spellings to one label, which is why a duplicate
+// Ca\u00f1ada column survived a whole day: every consumer counted these names
+// THROUGH it, so the LABEL count read 118 over a 119-row axis. Resolving there
+// is necessary but not sufficient — it makes identity a side effect of a
+// function whose job is shortening headers, and it leaves no reviewable record
+// of which colleges were folded and why.
+//
+// So the committed roster rules are the FIRST layer (explicit, listed, and read
+// by the Python generator too) and the resolver is the second. These checks
+// guard the first layer; `no two columns share a label` above guards that the
+// second still catches anything the list has not caught yet.
+function checkRosterLayer() {
   check("the roster-rules file carries the mojibake fold",
     !!rosterRules.fold.map[CANADA_MOJI]);
-  check("the mojibake folds onto the canonical MAP spelling",
+  check("...folding onto the canonical spelling map_colleges actually holds",
     rosterRules.fold.map[CANADA_MOJI] === CANADA);
-  check("every fold target is itself a name, not another variant",
+  check("every fold target is itself a name, never another variant",
     Object.values(rosterRules.fold.map).every((v) => !(v in rosterRules.fold.map)));
-  check("the view mirrors every sandbox name in the rules file",
+  check("the view drops sandbox orgs by the rules file's list, not a stale copy",
     rosterRules.sandbox.names.every((n) => src.indexOf(n) !== -1));
+  check("mxName() applies the roster fold BEFORE the short-name resolver",
+    /function mxName[\s\S]{0,200}rosterName\(c\)[\s\S]{0,200}cplCollegeShort/.test(src));
+  check("...and returns empty for a sandbox org so callers must drop it",
+    /function mxName[\s\S]{0,160}if \(!n\) return "";/.test(src));
+  check("the tripwire still expects 118 columns after the rules",
+    rosterRules._expected_axis.after_rules === 118);
+}
 
-  // ── 12. The axis is stable under filtering ───────────────────────────────
-  // A column vanishing as you filter reads as "this college has nothing", which
-  // is a different and false claim from "nothing matching your filter".
-  // The search box is debounced 300ms, so this stage waits rather than asserting
-  // into the gap — an assertion that fires before the handler runs passes for
-  // the wrong reason as easily as it fails.
-  const beforeCols = headerTitles().length;
-  const beforeRows = rowTitles().length;
-  drive("type a search that matches one title", () => {
-    const box = doc.getElementById("sw-search");
-    box.value = "Gadget";
-    box.dispatchEvent(new window.Event("input", { bubbles: true }));
+// Drive a multi-select filter the way the UI does, so the check exercises the
+// real change handler rather than poking state directly.
+function state_setFilter(key, values) {
+  const group = doc.querySelector('.sw-filter-group[data-filter="' + key + '"]');
+  if (!group) return false;
+  group.querySelectorAll('.sw-filter-options input[type=checkbox]').forEach(function (cb) {
+    cb.checked = values.indexOf(cb.value) >= 0;
   });
-  setTimeout(function () {
-    check("filtering narrows the ROWS", rowTitles().length < beforeRows);
-    check("the surviving row is the searched one", rowTitles().indexOf("Gadget Cert") !== -1);
-    check("filtering does NOT drop columns", headerTitles().length === beforeCols);
-    report();
-  }, 420);
+  const any = group.querySelector('.sw-filter-options input[type=checkbox]');
+  if (any) any.dispatchEvent(new window.Event("change", { bubbles: true }));
+  return true;
 }
 
 function report() {
-  let failed = 0;
-  results.forEach(([name, ok]) => {
-    if (!ok) failed++;
-    console.log((ok ? "PASS" : "FAIL") + " — " + name);
-  });
-  console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");
-  process.exit(failed ? 1 : 0);
+  const failed = results.filter((r) => !r[1]);
+  results.forEach((r) => console.log((r[1] ? "  ok   " : "  FAIL ") + r[0]));
+  console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");
+  if (failed.length) process.exit(1);
 }
