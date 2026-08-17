@@ -10,7 +10,7 @@
   },
   "summary": {
     "files": 545,
-    "bytes": 6215317,
+    "bytes": 6215619,
     "over_budget": 5,
     "handoff_max": 164,
     "always_loaded_files": 1,
@@ -45,7 +45,7 @@
       },
       "handoff": {
         "files": 146,
-        "bytes": 1164080,
+        "bytes": 1164382,
         "over": 0
       }
     },
@@ -55,10 +55,10 @@
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 1995,
-      "bytes": 1130618052,
-      "heavy_bytes": 586066762,
-      "heavy_share": 0.518,
+      "files": 1998,
+      "bytes": 1139049838,
+      "heavy_bytes": 587341285,
+      "heavy_share": 0.516,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -79,10 +79,10 @@
         "cpl-project-tracker/unified_courses_data.js",
         "cpl-project-tracker/kb/row_audit/latest.json",
         "cpl-project-tracker/kb/remint_dryrun/alias_map.json",
+        "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/kb/cid_articulation_joins.json",
         "cpl-project-tracker/coci_lookup_desc_A.js",
         "cpl-project-tracker/tmc_college_courses.js",
-        "cpl-project-tracker/statewide_data.js",
         "cpl-project-tracker/kb/coci_articulations.json",
         "cpl-project-tracker/coci_lookup_desc_C.js",
         "cpl-project-tracker/coci_lookup_desc_E.js",
@@ -869,10 +869,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 11741681,
+        "bytes": 12031079,
         "kind": "dir"
       },
-      "message": "directory totals 11,741,681 B inside the vault"
+      "message": "directory totals 12,031,079 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1027,6 +1027,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "statewide_data.js",
+      "detail": {
+        "bytes": 8691210,
+        "kind": "file"
+      },
+      "message": "8,691,210 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "kb/cid_articulation_joins.json",
       "detail": {
         "bytes": 8593677,
@@ -1053,16 +1063,6 @@
         "kind": "file"
       },
       "message": "8,035,276 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "statewide_data.js",
-      "detail": {
-        "bytes": 7706085,
-        "kind": "file"
-      },
-      "message": "7,706,085 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

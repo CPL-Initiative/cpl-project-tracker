@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-17 · Sky163 — the new Exhibit & CR Adoption matrix view is scoped and half-built. One number needed rethinking.",
+  "_as_of": "2026-08-17 · Sky163 — the Exhibit & CR Adoption data fix is live and verified. The matrix view itself is next.",
   "_session": "Session 163 (Sky163) — the CER Adoption Matrix sub-tab",
-  "_status": "You asked for a grid: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown for what it could still get. That is being built, and your four calls (peer benchmark, open on colleges, rows with at least two adopters, brown only where it is credible) are all in.\n\nOne thing had to change, and it is worth knowing why. The obvious brown number is \"all the credit this credential carries, minus what you already claimed\". We checked before building it: 83% of colleges that adopt a credential only take part of it — typically 3 of the 9 recommendations available — and no college in California has ever taken the whole thing. AP Biology carries 36 units; the typical adopter gets 4 and the best gets 12. So a brown 36 would have told a college it could get roughly three times what the strongest college in the state has ever managed, in a number that goes out in spreadsheets. Brown is now what colleges like you actually got.\n\nThat also turned up something bigger than the question: among colleges that HAVE adopted, about two-thirds of the available credit is still unclaimed. The partial adopters are a easier win than the colleges that never started, and nothing has ever shown that.\n\nYour two roster calls are done and one of them fixed a live error: the sandbox college was being counted as a real adopter on the California Real Estate Broker License card, which was publishing 7 adopters when the truth is 6.",
+  "_status": "You asked for a grid: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown for what it could still get. That is being built, and your four calls (peer benchmark, open on colleges, rows with at least two adopters, brown only where it is credible) are all in.\n\nOne thing had to change, and it is worth knowing why. The obvious brown number is \"all the credit this credential carries, minus what you already claimed\". We checked before building it: 83% of colleges that adopt a credential only take part of it — typically 3 of the 9 recommendations available — and no college in California has ever taken the whole thing. AP Biology carries 36 units; the typical adopter gets 4 and the best gets 12. So a brown 36 would have told a college it could get roughly three times what the strongest college in the state has ever managed, in a number that goes out in spreadsheets. Brown is now what colleges like you actually got.\n\nThat also turned up something bigger than the question: among colleges that HAVE adopted, about two-thirds of the available credit is still unclaimed. The partial adopters are a easier win than the colleges that never started, and nothing has ever shown that.\n\nYour two roster calls are done and live, and one of them fixed a real error: the sandbox college was being counted as a genuine adopter on the California Real Estate Broker License card, which was publishing 7 adopting colleges when the truth is 6. That card now reads 6, the duplicate Calbright and continuing-education entries have been merged, and the college list is down to 118 — 115 credit colleges, which is exactly the number you gave us, plus 3 noncredit.",
   "items": [
     {
       "id": "s163-noncredit-fourth",
@@ -21,12 +21,6 @@
       "for": "Fable",
       "tab": "Exhibit & CR Adoption",
       "text": "Build the matrix view itself. The data side shipped and the layout is agreed with Sam in a working mock — credential names down the side, colleges across the top with short names, green for units already articulated and brown for the peer benchmark not yet reached, expandable rows showing the underlying MAP exhibits."
-    },
-    {
-      "id": "s163-verify-payload",
-      "for": "Fable",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Confirm the rebuilt data file actually carries the new per-college unit figures, and that the Real Estate Broker card now reads 6 adopters rather than 7."
     },
     {
       "id": "s162-unclassified-titles",
