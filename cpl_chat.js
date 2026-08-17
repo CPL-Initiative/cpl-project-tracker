@@ -971,6 +971,13 @@
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
     consumeTestQuestion: consumeTestQuestion,
+    // The growing-log follow (tests/my_college_refinement.test.js). jsdom has no
+    // layout, so the only way to exercise the below-the-fold branch is to stub
+    // the geometry and drive scrollDown() directly; `_setStick` reproduces the
+    // reader-scrolled-away state that `nearBottom()` cannot reach with every
+    // rect at zero. Test seams, not API — underscored, and nothing calls them.
+    _scrollDown: scrollDown,
+    _setStick: function (v) { stick = !!v; },
     // Embed the one assistant elsewhere (My College). See mountInto above.
     mountInto: mountInto,
     // Prefill the box without sending — the visitor edits before asking.

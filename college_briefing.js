@@ -2105,6 +2105,17 @@
     _prioritiesAlign: prioritiesAlign,
     _rosterKey: rosterKey,
     _nextEssOutcome: nextEssOutcome,
+    // The ESS outcome marks are WORDS now, not glyphs — exposed so the test can
+    // assert each state stays distinct as well as glyph-free (a strip that
+    // collapsed two states into one label would read as glyph-free and be
+    // wrong). Pure.
+    _essMark: essMark,
+    // Resources render inside a collapsible section that only exists once the
+    // briefing DATA has landed, so a jsdom load with a never-resolving fetch
+    // never sees them. Exposed so the "(opens in a new tab)" cue — which
+    // replaced the ↗ and is the only leaves-the-page warning a screen reader
+    // gets — is guarded rather than quietly untested. Pure.
+    _resourcesHtml: resourcesHtml,
     // The tier count is the WORKER's (criteriaMetCount); the per-criterion
     // list is display only, and `mismatch` fires when the two disagree.
     _tierStanding: tierStanding,
