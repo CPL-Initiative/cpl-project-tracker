@@ -105,17 +105,83 @@
       return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
     });
   }
-  function getSession() {
-    try {
-      var raw = localStorage.getItem("cpl_team_session");
-      return raw ? JSON.parse(raw) : null;
-    } catch (e) { return null; }
+  /* ── Auth ──────────────────────────────────────────────────────────────────
+   * ⚠ THIS TAB SPENT ITS WHOLE LIFE READING A STORAGE KEY NOTHING WRITES.
+   * `getSession()` read `localStorage.cpl_team_session` — a string that appeared
+   * EXACTLY ONCE in the repo, here, as this read. No module, no sign-in flow and
+   * no test ever set it, so it returned null for every visitor, always.
+   *
+   * That alone is inert. What made it a defect is the pair of consequences:
+   *
+   *   1. The reviewer session was never seen. The canonical key is `cpl_sb`,
+   *      which cpl_session.js (the keeper, #1205) holds continuously fresh for
+   *      the other 25 modules. This tab did not read it, so the keeper could not
+   *      help it — a magic-link reviewer was, to this file, a logged-out guest.
+   *   2. The team phrase never reached the server. `signedIn()` checked
+   *      `cpl_team_pass` SEPARATELY, so a phrase holder rendered the tab, but
+   *      authHeaders() built its headers from the (always null) session and
+   *      attached no `x-team-pass`.
+   *
+   * Every gated read therefore went out bearing the bare anon key. The gates are
+   * `is_allowed_reviewer() OR team_pass_ok()` and BOTH were false, and an
+   * RLS-filtered SELECT is not an error — PostgREST answers 200 with `[]`. So
+   * map_college_credit_summary, map_college_cr_unit, map_college_goal2 and
+   * map_college_contacts all came back as empty arrays that are indistinguishable
+   * from "this college has nothing", on every college, for everyone. The public
+   * reads beside them (map_colleges, chatbox_credentials, cpl_funding_config)
+   * kept working, which is why the tab looked healthy while every MAP figure on
+   * it was blank. Sam: "I think all the colleges are coming up blank on this."
+   *
+   * Fixed by DELEGATING to the two shared modules rather than writing a
+   * fourteenth copy of the auth dance — same reasoning as the keeper itself.
+   * The inline fallbacks cover a standalone mount (tests, or a load order where
+   * this file evaluates first); they read the same canonical keys. */
+  var TEAM_PASS_KEY = "cpl_team_pass";
+  function isValidJwt(t) {
+    return typeof t === "string" && t.split(".").length === 3 && t.length > 40;
   }
-  function signedIn() { return !!(getSession() || localStorage.getItem("cpl_team_pass")); }
+  function getSession() {
+    // 1. Reviewer magic-link session, via the keeper — it owns `cpl_sb` and
+    //    renews it, so asking it is what makes this tab benefit from #1205/#1207.
+    try {
+      var k = window.CPL_SESSION && window.CPL_SESSION.get();
+      if (k && isValidJwt(k.access_token)) {
+        return { access_token: k.access_token, email: k.email || "(reviewer)" };
+      }
+    } catch (e) { /* keeper absent — fall through */ }
+    try {
+      var raw = localStorage.getItem("cpl_sb") || sessionStorage.getItem("cpl_sb");
+      var s = raw ? JSON.parse(raw) : null;
+      if (s && isValidJwt(s.access_token)) {
+        return { access_token: s.access_token, email: s.email || "(reviewer)" };
+      }
+    } catch (e) { /* ignore */ }
+    // 2. Shared team phrase. A pseudo-session: the bearer stays the anon key and
+    //    the phrase rides in the header (a "Bearer <phrase>" is the classic bug).
+    try {
+      var p = localStorage.getItem(TEAM_PASS_KEY);
+      if (p) return { teamPass: p, email: "(team)" };
+    } catch (e) { /* ignore */ }
+    return null;
+  }
+  function signedIn() { return !!getSession(); }
   function authHeaders() {
     var s = getSession();
+    // PostgREST 401s on an empty/garbled Bearer, so a phrase session keeps the
+    // anon key as its bearer and unlocks via the header instead.
     var token = (s && s.access_token) || SUPABASE_ANON;
-    return { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    var h = { apikey: SUPABASE_ANON, Authorization: "Bearer " + token };
+    // team_pass_ok() reads the x-team-pass REQUEST HEADER server-side. The stored
+    // phrase rides along even for a JWT session: the gates are OR-predicates, so
+    // it is harmless for a reviewer and it un-shadows the phrase for a signed-in
+    // NON-reviewer, whose JWT alone fails is_allowed_reviewer().
+    try {
+      if (window.CPL_TEAM_PHRASE) return window.CPL_TEAM_PHRASE.decorateHeaders(h, s);
+    } catch (e) { /* helper absent — fall through */ }
+    var p2 = (s && s.teamPass) || null;
+    if (!p2) { try { p2 = localStorage.getItem(TEAM_PASS_KEY); } catch (e) {} }
+    if (p2) h["x-team-pass"] = p2;
+    return h;
   }
   function num(v) { var n = Number(v); return isFinite(n) ? n : null; }
   function fmt(n) { return n == null ? "—" : Number(n).toLocaleString("en-US"); }
@@ -2103,6 +2169,14 @@
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
     _prioritiesAlign: prioritiesAlign,
+    // Auth seams. Every per-college FIGURE on this tab sits behind
+    // `is_allowed_reviewer() OR team_pass_ok()`, and an RLS-filtered SELECT
+    // answers 200 + [] rather than 401 — so a credential that never reaches the
+    // server is indistinguishable from a college with no data, on every college
+    // at once. That is silent by construction and cannot be seen from the
+    // rendered page, so it is asserted on the headers instead.
+    _getSession: getSession,
+    _authHeaders: authHeaders,
     _rosterKey: rosterKey,
     _nextEssOutcome: nextEssOutcome,
     // The ESS outcome marks are WORDS now, not glyphs — exposed so the test can
