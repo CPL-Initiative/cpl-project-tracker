@@ -215,3 +215,136 @@ Parked / open, in value order:
 Sam uses the tab with the new default and says whether **Adopted** is the right
 thing to open on — it is a visible behaviour change, and anyone used to the old
 counts will see far fewer rows. Everything else here is downstream of that.
+
+---
+
+## 2026-08-17 (Sky163) — the matrix, and the number that could not be published
+
+Sam, opening: *"I like how the EACR is arranged now and want to add a new subtab
+view"* — a screenshot of an Excel pivot (COCI course titles down the side,
+college names rotated across the top, counts in the cells). His goal: *"see at a
+system or regional or district level all the possibilities for adoption"*, with
+drill-down on the unit totals. Then, mid-run, three additions:
+
+> *"show the possible adopted CR units for each college that has not yet
+> adopted—maybe in a brown font and for those that have already adopted units in
+> green font."*
+> *"OK to use short names for colleges…"*
+> *"CAlbright, etc. should only be in once and CAMAP can be left out
+> altogether—it's our sandbox."*
+
+His opening line also **closes Sky162's one carried item** — he has used the tab
+and likes the arrangement, so the "confirm Adopted is the right default" question
+is answered.
+
+### (a) What was learned
+
+**The obvious brown number would have been a promise we cannot keep.** This is
+the finding of the run. Brown = *"units still available"* looks like a
+subtraction against the credential's own recommendation lines. Measured first:
+
+| | |
+|---|---:|
+| adoptions that are **partial** | **83%** |
+| lines a college typically claims | **3.07 of 9.26** |
+| colleges ever reaching the line total | **0** |
+
+AP Biology carries 12 lines / 36 units; the median adopter claims **4**, the best
+in the state **12**. A brown `36.0` would have told a college it could obtain
+~3× what the strongest college in California has ever obtained — **in a column
+that leaves the tab as a CSV**. Brown is now `peer_units_median`. Durable note:
+[`methodology-an-opportunity-figure-must-be-what-peers-achieved`](kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md).
+
+It also surfaced a bigger opportunity than the one asked for: **among colleges
+that HAVE adopted, ~2/3 of available lines are unclaimed.** The partial adopters
+are more tractable than the non-adopters and no view had shown it.
+
+**The natural units source was a lossy reconstruction.**
+`chatbox_peer_articulations` covers **2,653 of 8,155** (title, college) adoption
+pairs — **32.5%** — because it JOINS two half-sources, neither carrying both the
+college and the recommendation (`kb/_build_peer_articulations.py` says so in its
+own docstring). Shipping the matrix on it would have rendered **5,502 real
+adoptions as blank opportunity cells** — a college told to go get credit it
+already grants. The raw `View_ArticulatedMAPExhibits` row carries **Articulation
+College + Course + Credit Recommendation together**; the generator was collapsing
+that attribution. `adopter_units` is now a straight re-emission at 100% coverage,
+no Supabase dependency, no sign-in. Units parse from the rec text at **100%**.
+
+**Not `map_college_cr_unit`** — reviewer/team-gated, no k-anonymity of its own,
+and it measures student *disposition* rather than the articulation catalogue.
+
+**The sketch was arithmetically impossible, and saying so with a number was the
+deliverable.** A legible 2–3 digit cell needs ~26px; 122 of them plus a title
+column is ~3,500px, roughly 2× a desktop. Even a 12px dot overflows; only 9px
+fits, and 9px cannot render "3.0". Reported as measurement, not opinion.
+
+**Sam's sandbox ruling fixed a live public number.** `CA MAP INITIATIVE COLLEGE`
+(`entity_kind='test'`) was counted as a real adopter on the statewide card
+**California Real Estate Broker License** — **7 adopters published where the
+truth is 6**. Keyed on `entity_kind` rather than the name, because the field
+already tags **8** test orgs; measured that the other seven are not leaking.
+Third instance in this workstream of *the right classifier existed and the
+consumer never asked*.
+
+**The fold is a SUM even though nothing is at stake.** All six twin spellings
+(Calbright / North Orange CE / San Diego CE, each `X` and `X Credit`) carry
+**zero** adoptions. A fold that DROPS is silently wrong the first day one of them
+articulates something, and that day will not announce itself.
+
+**The short-name gap was already solved in the repo.** 19 of 122 payload
+spellings had no `college_short_names.js` entry — Mt. San Antonio, MiraCosta,
+City College of San Francisco, Southwestern, every "College of the …". SkyLink's
+committed crosswalk (`kb/college_identity/2026-08-12/crosswalk.json`) resolved
+**15**, taking fallbacks to **zero** (longest header 18 chars). Fourth session
+running where the best catch was a thing already committed and unwired.
+
+**A pre-existing JS defect, superseded rather than fixed.** `TEST_ORGS` in
+`statewide_interactive.js` lists truncated names (`"CabTest"` vs the real
+`"CabTest College"`) and matches with exact `indexOf`, so it only ever caught 3
+of 8. The build-time fix supersedes it; left in place as belt-and-braces.
+
+### (b) Current state
+
+**#1226 merged** — generator only, per the artifact policy; `daily-dashboard.yml`
+dispatched to republish `statewide_data.js`.
+
+New payload fields per card: `adopter_units` · `adopter_lines` ·
+`peer_units_median` · `peer_units_max` · `rec_units_total`.
+New reference: `kb/reference/map_college_roster_rules.json`.
+`tests/eacr_matrix_payload_test.py` — **40 checks, 31 fail against the pre-fix
+source** (verified by stashing the diff, not assumed).
+
+**Column axis = 118 = 115 credit + 3 noncredit.** 115 credit is Sam's number
+exactly. He expects **4** noncredit; **Mt. SAC Noncredit has no separate identity**
+in `map_colleges` or the exhibits export, so it cannot be a column until MAP
+carries it — Learning Partners item 1 surfacing as a blocker here.
+
+**Sam's four design rulings, all locked:**
+
+| | Ruling |
+|---|---|
+| brown number | **peer benchmark** (not the line total) |
+| column grain | **open on colleges** (overrode the region-first recommendation) |
+| default rows | **≥2 adopters** (434 rows) |
+| brown coverage | **credible cells only** — the M-ID *likely* tier, not every non-adopter |
+
+Default view measures **434 × 118 = 51,212 cells, 17.0% inked** (12.3% green /
+4.7% brown), **59% of rows carrying an opportunity** — legible, unlike the full
+2,345-row grid at 2.85%.
+
+Mock (real data, interactive):
+`https://claude.ai/code/artifact/8b1ca444-ec5b-48b1-a1be-4f993f275428`
+
+### (c) Strategic roadmap
+
+1. **Build `buildMatrixView()`** in `statewide_interactive.js` — the third
+   sub-tab, against the republished payload.
+2. The four curation items carried from Sky162 (4 unclassified-only titles; 2
+   statewide cards matching no college; `{0,N}` test-bound sweep; the 50-group cap).
+3. **Mt. SAC Noncredit** — a MAP data question, not a code one.
+
+### (d) Next concrete step
+
+Confirm the dispatched run published `adopter_units`, then write
+`buildMatrixView()` + `tests/eacr_matrix.test.js`. The rendering logic is already
+proven in the mock; the port is mechanical.

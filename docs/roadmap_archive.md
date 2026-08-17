@@ -3816,6 +3816,24 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### Sky160 — the manager could not see two of its own items (2026-08-15, Session 160)
+
+Three merges (**#1212**, **#1213**, **#1214**) against Sam's six questions; four were advisory.
+⭐ **`cobi_nav` HOLDS 43 ROWS, SAVED BY SAM AT 13:59 UTC** — the "unproven in a real browser" item three
+handoffs called Priority 1 was closed by *reading the table*. The answer had been sitting there for hours.
+⭐ **SHARE WAS TWO MENU ITEMS THE MANAGER COULD NOT SEE** — synthesised from anchors with no `data-tab`, so the
+page looked complete while omitting part of what it manages. Widening the set made three rules lie, each
+confidently: the site filter would have HIDDEN both, and "Not checked" would have RISEN by two the day they
+became visible. ⭐ **THE GUARD WAS ON THE WRONG AXIS** — `plan()` already lifts Admin out of a hidden group, so
+barring it from every category was a second belt over a sealed door; `GROUP_LOCKED` now holds dashboard alone.
+⚠️ **THE FALLBACK TAB WAS `valid[0]`, NOT `dashboard`** — DOM order became curator-editable when Admin shipped, so
+dragging anything to the top silently changed where every broken link lands.
+⚠️ **THE NO-GLYPHS RULE WAS IN `cpl_memory` FROM 2026-08-14** and the tab shipped covered in emoji that same week.
+⚠️ **The "check that never registers" trap reappeared in a SECOND harness within 24 hours** — both pre-fix runs
+printed ZERO failures because an unguarded deref threw. A fix to one harness is not a fix to the practice.
+Story: `docs/admin_tab_lessons.md` · durable [`methodology-a-manager-must-show-everything-it-manages`](docs/kb-notes/methodology-a-manager-must-show-everything-it-manages.md) · [`methodology-a-live-rename-must-be-order-proof`](docs/kb-notes/methodology-a-live-rename-must-be-order-proof.md) · handoff `docs/session_161_handoff.md`.
+
+
 ### Sky155 — the rule that could not be obeyed, twice (2026-08-14, Session 155)
 
 Five PRs (**#1184**, **#1185**, **#1186**, **#1187**, **#1188**), all merged; `cpl-chat` at **v51**.
