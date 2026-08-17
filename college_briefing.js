@@ -784,7 +784,7 @@
     // through, and a wall of buttons is not.
     var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
     var districts2 = dIdx ? Object.keys(dIdx).sort() : [];
-    var h = '<div class="cb-scope">' + back + '<h2 class="cb-scope-q">Choose your college</h2><div class="cb-bar">';
+    var h = '<div class="cb-scope">' + back + '<h2 class="cb-scope-q">Choose your college</h2><div class="cb-bar cb-bar-pick">';
     if (districts2.length) {
       h += '<div><label for="cb-district">Narrow by district (optional)</label><select id="cb-district">'
         + '<option value="">All districts (' + names.length + " colleges)</option>"
@@ -836,6 +836,13 @@
       + '<h2 class="cb-welcome-t">' + esc(title) + "</h2>"
       + '<div class="cb-welcome-acts">'
       + '<button type="button" class="cb-act" id="cb-report">Create a briefing</button>'
+      // Two ways back, because they are different journeys. Switching college is
+      // the common one and must not cost a trip through "who are you" — that
+      // question is answered once. "Change view" is the rarer, deliberate one.
+      + (scopeNeedsEntity(state.scope)
+          ? '<button type="button" class="cb-back" data-entity-clear="1">Choose another '
+            + (state.scope === "district" ? "district" : "college") + "</button>"
+          : "")
       + '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>'
       + "</div></div>"
       + '<p class="cb-welcome-p">Ask Sierra anything about CPL at ' + esc(what)
@@ -2154,7 +2161,17 @@
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
     // the main string, then relocated, so the bar markup stays in one place.
-    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar");
+    /* ⚠ `.cb-bar-pick`, NOT `.cb-bar`. This used to grab the first `.cb-bar` in
+     * document order, which worked only because the PICKER bar was authored
+     * first. The pickers moved to the scope flow's second step (Sam,
+     * 2026-08-17), so the first `.cb-bar` in the briefing view is now one of the
+     * waiting breakdown's progress bars — and this would have silently torn it
+     * out of its table and dropped it into the Sierra box. A positional
+     * selector is a bound on the order things happen to be written in.
+     * Nothing matches in either step today (step 2 has the bar but no host,
+     * step 3 has the host but no bar); the relocation is kept, correctly
+     * targeted, so a future layout that does put pickers in the box works. */
+    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar-pick");
     if (pickHost && bar) pickHost.appendChild(bar);
     var asks = root.querySelector("#cb-asks");
     if (asks && state.college) {
@@ -2280,6 +2297,16 @@
     });
     Array.prototype.forEach.call(root.querySelectorAll("[data-scope-clear]"), function (b) {
       b.onclick = function () { setScope(null, root); };
+    });
+    // Back to step 2, keeping the scope. Clears the entity AND its detail — a
+    // stale detail left behind would render the previous college's figures under
+    // the next one's name for as long as the fetch takes.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-entity-clear]"), function (b) {
+      b.onclick = function () {
+        state.college = null; state.district = state.scope === "district" ? "" : state.district;
+        state.detail = null; state.detailFor = null; state.detailError = null;
+        rememberScope(); recompute(); render(root);
+      };
     });
     Array.prototype.forEach.call(root.querySelectorAll("[data-district]"), function (b) {
       b.onclick = function () {
