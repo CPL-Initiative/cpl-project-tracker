@@ -1,9 +1,9 @@
 {
-  "generated": "2026-08-10",
-  "total_reflections": 16,
-  "active_days": 16,
+  "generated": "2026-08-17",
+  "total_reflections": 17,
+  "active_days": 17,
   "first_day": "2026-06-12",
-  "latest_day": "2026-07-30",
+  "latest_day": "2026-08-12",
   "top_paintings": [
     {
       "painting": "California Poppy Field",
@@ -43,6 +43,10 @@
   "themes": [
     {
       "term": "cpl",
+      "reflections": 3
+    },
+    {
+      "term": "creation",
       "reflections": 3
     },
     {
