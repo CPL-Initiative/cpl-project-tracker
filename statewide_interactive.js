@@ -254,6 +254,46 @@
     return out;
   }
 
+  // ── College roster rules (mirror of kb/reference/map_college_roster_rules.json) ──
+  // Sam, 2026-08-17: "CAlbright, etc. should only be in once and CAMAP can be
+  // left out altogether—it's our sandbox."
+  //
+  // The GENERATOR already applies these to `adopter_units` at build time, so the
+  // green half of the matrix arrives clean. The prescriptive layer — which is
+  // the brown half — is a SEPARATE artifact that does not, so the axis must fold
+  // here too or one institution renders as two columns.
+  //
+  // The mojibake entry is escaped rather than written literally: "CaÃ±ada" is
+  // "Cañada" read as latin-1 and re-encoded, and a file that spells it out
+  // invites the very corruption it is guarding against. Both spellings come out
+  // of excel_to_dashboard.py on different paths — the correct one into
+  // potential_names, the mangled one into statewide_prescriptive.js — so before
+  // this fold the axis carried a second Cañada column holding all 26 of its
+  // opportunities while the correctly-spelled one sat empty. It read as 118
+  // anyway because cplCollegeShort()'s normalize() folds Ã± → n, so the LABEL
+  // count was right while the axis under it was 119: the collision was hidden
+  // precisely by the thing that made the headers legible.
+  var ROSTER_SANDBOX = {};
+  ["CA MAP INITIATIVE COLLEGE", "CabTest College", "MorTest City College",
+   "NORCO College - Syllabus Manager", "Nortest City College", "RivTest City College",
+   "SantTest Ana College", "Testing College"].forEach(function (n) { ROSTER_SANDBOX[n] = 1; });
+  var ROSTER_FOLD = {
+    "Calbright College Credit": "Calbright College Non-Credit",
+    "North Orange Continuing Education Credit": "North Orange Continuing Education",
+    "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+  };
+  ROSTER_FOLD["CaÃ±ada College"] = "Cañada College";
+
+  // Canonical column name for a raw college spelling. Returns "" for a sandbox
+  // org — callers MUST drop those rather than render them, because a MAP test
+  // entity counted as an adopter publishes a number that is simply false (it
+  // published 7 adopters on California Real Estate Broker License where the
+  // truth is 6).
+  function rosterName(c) {
+    if (!c || ROSTER_SANDBOX[c]) return "";
+    return ROSTER_FOLD[c] || c;
+  }
+
   // ── State ──
   var state = {
     search: "",
@@ -265,6 +305,9 @@
     // (2026-08-16): all three used to re-render on every keystroke, and the
     // student framing is a MODE of the credential view, not a third place.
     view: "credentials",
+    // Matrix rows default to titles with ≥2 adopters (Sam's ruling) — a default,
+    // so the single-adopter tail is one checkbox away rather than unreachable.
+    matrixAll: false,
     selected: {},
     expanded: {},
     flags: {},   // eid → { flag: "stale" | "duplicate" | "", reviewed_by, reviewed_at }
@@ -482,6 +525,51 @@
       + '.sw-table-hint{display:block;}'
     + '}'
     + '.sw-table-hint{display:none;font-size:0.64rem;color:var(--text-muted);padding:0 1rem 0.5rem;font-style:italic;}'
+    // ── CER Adoption Matrix ──
+    // 118 numeric columns cannot fit a desktop: at a legible ~30px per column
+    // that is ~3,500px, roughly twice a 1080p viewport. The house rule is "no
+    // horizontal scroll whenever feasible" — here it is arithmetically NOT
+    // feasible, so the wrap scrolls in BOTH axes with the credential column and
+    // the header row frozen, which is what keeps a scrolled cell readable.
+    + '.mx-legend{display:flex;flex-wrap:wrap;gap:0.75rem;padding:0.6rem 0.7rem 0.35rem;font-size:0.7rem;color:var(--text-body);}'
+    + '.mx-key{display:inline-flex;align-items:center;gap:0.3rem;}'
+    + '.mx-swatch{width:0.85rem;height:0.85rem;border-radius:3px;display:inline-block;border:1px solid var(--border-strong);}'
+    + '.mx-swatch-green{background:rgba(35,110,70,0.22);}'
+    + '.mx-swatch-brown{background:rgba(150,90,25,0.20);}'
+    + '.mx-note{padding:0 0.7rem 0.5rem;font-size:0.66rem;color:var(--text-muted);line-height:1.45;max-width:70ch;}'
+    + '.mx-controls{display:flex;flex-wrap:wrap;align-items:center;gap:0.8rem;padding:0 0.7rem 0.5rem;font-size:0.7rem;}'
+    + '.mx-toggle{display:inline-flex;align-items:center;gap:0.35rem;cursor:pointer;color:var(--text-body);}'
+    + '.mx-count{color:var(--text-muted);}'
+    + '.mx-empty{padding:1rem 0.7rem;font-size:0.75rem;color:var(--text-muted);font-style:italic;}'
+    + '.mx-wrap{overflow:auto;max-height:72vh;border:1px solid var(--border-strong);border-radius:6px;margin:0 0.7rem 0.7rem;}'
+    + '.mx-table{border-collapse:separate;border-spacing:0;font-size:0.66rem;}'
+    // Rotated headers use writing-mode rather than a rotate() transform: the
+    // transform version needs hand-computed offsets to stay inside its cell and
+    // drifts as soon as the font or label length changes.
+    + '.mx-th{position:sticky;top:0;z-index:3;height:9.5rem;vertical-align:bottom;padding:0.25rem 0;'
+      + 'background:var(--surface-opaque);border-bottom:2px solid var(--border-strong);'
+      + 'border-left:1px solid rgba(10,34,64,0.08);font-weight:600;}'
+    + '.mx-th span{writing-mode:vertical-rl;transform:rotate(180deg);white-space:nowrap;display:inline-block;'
+      + 'font-size:0.6rem;letter-spacing:0.02em;color:var(--text-body);}'
+    + '.mx-corner{position:sticky;left:0;top:0;z-index:4;background:var(--surface-opaque);'
+      + 'border-bottom:2px solid var(--border-strong);border-right:2px solid var(--border-strong);'
+      + 'text-align:left;padding:0.4rem 0.5rem;vertical-align:bottom;font-size:0.7rem;min-width:15rem;max-width:15rem;}'
+    + '.mx-title{position:sticky;left:0;z-index:2;background:var(--surface-opaque);text-align:left;'
+      + 'padding:0.25rem 0.5rem;border-right:2px solid var(--border-strong);'
+      + 'border-bottom:1px solid rgba(10,34,64,0.08);min-width:15rem;max-width:15rem;font-weight:500;}'
+    + '.mx-title-text{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:var(--text-strong);}'
+    + '.mx-title-meta{display:block;font-size:0.58rem;color:var(--text-muted);font-weight:400;}'
+    + '.mx-c{width:2rem;min-width:2rem;text-align:center;padding:0.2rem 0.1rem;'
+      + 'border-left:1px solid rgba(10,34,64,0.06);border-bottom:1px solid rgba(10,34,64,0.06);'
+      + 'color:var(--text-muted);}'
+    // Colour is REINFORCEMENT, never the message: green cells carry a bare
+    // number and brown cells carry the same number in parentheses, so the two
+    // are distinguishable in greyscale, in high-contrast mode, and when read
+    // aloud (WCAG 1.4.1).
+    + '.mx-green{background:rgba(35,110,70,0.22);color:var(--text-strong);font-weight:600;}'
+    + '.mx-brown{background:rgba(150,90,25,0.20);color:var(--mustard-text);font-weight:500;}'
+    + '.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;'
+      + 'clip:rect(0,0,0,0);white-space:nowrap;border:0;}'
     + '</style>';
 
   // ── Prescriptive adoption layer (PR-4) ──
@@ -600,6 +688,188 @@
           '<span class="cv-ex-meta">' + esc(r.cpl) + (r.collab === "CCC Collaborative" ? ' · CCC' : '') + '</span>' +
           (r.raw ? '<div class="cv-ex-raw">' + esc(r.raw) + '</div>' : '') + '</div>';
       }).join("") + '</div></details>';
+  }
+
+  // ══════════════════════════════════════════════════════════════════════
+  // CER Adoption Matrix — credentials down the side, colleges across the top
+  // ══════════════════════════════════════════════════════════════════════
+  // Sam's four rulings (2026-08-17), all INPUTS:
+  //   brown number   → the PEER BENCHMARK, not the line total
+  //   column grain   → colleges (he overrode a region-first recommendation)
+  //   default rows   → titles with ≥2 adopters
+  //   brown coverage → credible cells only (the M-ID "likely" tier)
+  //
+  // WHY BROWN IS A BENCHMARK AND NOT "UNITS STILL AVAILABLE": 83% of adoptions
+  // are partial (median 3.07 of 9.26 lines) and NO college has ever claimed a
+  // credential's full line total. AP Biology carries 36 units where the median
+  // adopter gets 4 and the best in the state gets 12. "Units still available"
+  // would therefore promise roughly 3× what the strongest peer in California has
+  // ever actually obtained — in a number that leaves this screen as a CSV and
+  // reaches a college by email. See
+  // docs/kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md
+  //
+  // ROW GRAIN IS THE UNIFIED TITLE, deliberately NOT credentialKey(). The CER
+  // grain is the title; the EACR card grain is (title, issuer, CPL type). Sam
+  // asked for CER titles down the side, so two cards of one credential are ONE
+  // row and a college's units are summed across them.
+  var MATRIX_MIN_ADOPTERS = 2;
+  var _matrixAxis = null;
+
+  // The column axis is built from the WHOLE payload, not the filtered set, and
+  // cached. A filter must never silently drop a column: a college disappearing
+  // as you type reads as "this college has nothing", which is a different and
+  // false claim from "this college has nothing MATCHING YOUR FILTER".
+  function matrixAxis() {
+    if (_matrixAxis) return _matrixAxis;
+    var seen = {};
+    function add(c) { var n = rosterName(c); if (n) seen[n] = 1; }
+    exhibits.forEach(function (e) {
+      (e.adopter_names || []).forEach(add);
+      Object.keys(e.adopter_units || {}).forEach(add);
+      (e.potential_names || []).forEach(add);
+    });
+    Object.keys(presByTitle).forEach(function (t) {
+      Object.keys(presByTitle[t] || {}).forEach(add);
+    });
+    _matrixAxis = Object.keys(seen).map(function (name) {
+      return { name: name, label: SHORT_CAPS(name), full: name };
+    }).sort(function (a, b) { return a.label < b.label ? -1 : a.label > b.label ? 1 : 0; });
+    return _matrixAxis;
+  }
+
+  // Median of a numeric list — the average of the two middle values on an even
+  // count, matching the generator's peer_units_median so the two agree wherever
+  // a title is a single card.
+  function median(nums) {
+    if (!nums.length) return 0;
+    var s = nums.slice().sort(function (a, b) { return a - b; });
+    var mid = Math.floor(s.length / 2);
+    return s.length % 2 ? s[mid] : (s[mid - 1] + s[mid]) / 2;
+  }
+
+  // Rows for the matrix, derived from the ACTIVE filter set so search and the
+  // filter bar narrow this view like every other.
+  //
+  // The peer benchmark is recomputed from the row's own adopter values rather
+  // than read from peer_units_median, because a row may fold several cards and
+  // the payload's figure is per CARD. Recomputing keeps the brown number and the
+  // green numbers beside it the same quantity — for a single-card title the two
+  // agree exactly, which the test asserts.
+  function matrixModel() {
+    var byTitle = {}, order = [];
+    getFiltered().forEach(function (e) {
+      var t = e.unified_title || e.title || "";
+      if (!t) return;
+      var row = byTitle[t];
+      if (!row) { row = byTitle[t] = { title: t, green: {}, lines: {}, brown: {}, recTotal: 0, cards: 0 }; order.push(t); }
+      row.cards++;
+      var units = e.adopter_units || {}, lines = e.adopter_lines || {};
+      Object.keys(units).forEach(function (c) {
+        var n = rosterName(c);
+        if (!n) return;
+        row.green[n] = (row.green[n] || 0) + (units[c] || 0);
+        row.lines[n] = (row.lines[n] || 0) + (lines[c] || 0);
+      });
+      row.recTotal = Math.max(row.recTotal, e.rec_units_total || 0);
+    });
+
+    order.forEach(function (t) {
+      var row = byTitle[t];
+      var pres = presByTitle[t];
+      if (pres) {
+        Object.keys(pres).forEach(function (c) {
+          var n = rosterName(c);
+          // Adopted beats likely: a college that HAS it is never also an
+          // opportunity. Green wins the cell.
+          if (n && !(n in row.green)) row.brown[n] = pres[c] || [];
+        });
+      }
+      var vals = Object.keys(row.green).map(function (c) { return row.green[c]; });
+      row.adopters = vals.length;
+      row.peerMedian = median(vals);
+      row.peerMax = vals.length ? Math.max.apply(null, vals) : 0;
+      row.opportunities = Object.keys(row.brown).length;
+    });
+
+    var rows = order.map(function (t) { return byTitle[t]; })
+      .filter(function (r) { return r.adopters >= (state.matrixAll ? 1 : MATRIX_MIN_ADOPTERS); });
+    rows.sort(function (a, b) {
+      return (b.adopters - a.adopters) || (b.opportunities - a.opportunities) ||
+        (a.title < b.title ? -1 : a.title > b.title ? 1 : 0);
+    });
+    return rows;
+  }
+
+  // Trim a unit figure for a cell: units are sometimes fractional (66.5) and a
+  // matrix cell has no room for trailing zeros.
+  function mxNum(n) {
+    if (!n) return "0";
+    return (Math.round(n * 10) / 10).toString();
+  }
+
+  function buildMatrixView() {
+    var cols = matrixAxis();
+    var rows = matrixModel();
+
+    var head = '<div class="mx-legend">' +
+      '<span class="mx-key"><span class="mx-swatch mx-swatch-green"></span> Adopted — units this college has earned</span>' +
+      '<span class="mx-key"><span class="mx-swatch mx-swatch-brown"></span> <b>(in parentheses)</b> Still available — the median units colleges that DID adopt it earned</span>' +
+      '</div>' +
+      '<div class="mx-note">A brown number is what peers actually got, not the most the exhibit allows. ' +
+      'Most colleges claim only part of a credential (a median of about 3 of its 9 recommendation lines), ' +
+      'so the total on paper would overstate the opportunity roughly threefold. ' +
+      'Brown shows only colleges already teaching a course that maps to the credential — the course is named in the tooltip.</div>';
+
+    if (!rows.length) {
+      return head + '<div class="mx-empty">No credentials match the current search and filters' +
+        (state.matrixAll ? '' : ' with ' + MATRIX_MIN_ADOPTERS + ' or more adopting colleges') + '.</div>';
+    }
+
+    var toggle = '<div class="mx-controls">' +
+      '<label class="mx-toggle"><input type="checkbox" id="mx-show-all"' + (state.matrixAll ? ' checked' : '') + ' /> ' +
+      'Include credentials with a single adopting college</label>' +
+      '<span class="mx-count">' + fmt(rows.length) + ' credential' + (rows.length === 1 ? '' : 's') +
+      ' × ' + cols.length + ' colleges</span></div>';
+
+    var out = [];
+    out.push('<table class="mx-table"><caption class="sr-only">Credit recommendation adoption by credential and college. ' +
+      'A plain number is units already earned; a number in parentheses is the median units earned by colleges that adopted it.</caption>');
+    out.push('<thead><tr><th class="mx-corner" scope="col">Credential</th>');
+    cols.forEach(function (c) {
+      out.push('<th class="mx-th" scope="col" title="' + escAttr(c.full) + '"><span>' + esc(c.label) + '</span></th>');
+    });
+    out.push('</tr></thead><tbody>');
+
+    rows.forEach(function (r) {
+      out.push('<tr><th class="mx-title" scope="row" title="' + escAttr(r.title) + '">' +
+        '<span class="mx-title-text">' + esc(r.title) + '</span>' +
+        '<span class="mx-title-meta">' + r.adopters + ' adopted' +
+        (r.opportunities ? ' · ' + r.opportunities + ' could' : '') + '</span></th>');
+      for (var i = 0; i < cols.length; i++) {
+        var name = cols[i].name;
+        if (name in r.green) {
+          var u = r.green[name], ln = r.lines[name] || 0;
+          out.push('<td class="mx-c mx-green" title="' + escAttr(cols[i].full + " — " + r.title +
+            ": " + mxNum(u) + " units across " + ln + " credit recommendation line" + (ln === 1 ? "" : "s") +
+            ". Adopted.") + '">' + mxNum(u) + '</td>');
+        } else if (name in r.brown) {
+          var courses = r.brown[name] || [];
+          var courseTxt = courses.length
+            ? " Already teaches: " + courses.slice(0, 3).join("; ") + (courses.length > 3 ? " (+" + (courses.length - 3) + " more)" : "") + "."
+            : "";
+          out.push('<td class="mx-c mx-brown" title="' + escAttr(cols[i].full + " — " + r.title +
+            ": not adopted. Colleges that did earned a median of " + mxNum(r.peerMedian) +
+            " units (most so far: " + mxNum(r.peerMax) + ")." + courseTxt) +
+            '">(' + mxNum(r.peerMedian) + ')</td>');
+        } else {
+          out.push('<td class="mx-c"></td>');
+        }
+      }
+      out.push('</tr>');
+    });
+    out.push('</tbody></table>');
+
+    return head + toggle + '<div class="mx-wrap">' + out.join("") + '</div>';
   }
 
   function buildCredentialView() {
@@ -837,11 +1107,15 @@
       +     ' id="sw-tab-credentials" aria-controls="sw-view-credentials">Credentials</button>'
       +   '<button class="sw-subtab" data-view="table" role="tab" type="button"'
       +     ' id="sw-tab-table" aria-controls="sw-view-table">Adoption table</button>'
+      +   '<button class="sw-subtab" data-view="matrix" role="tab" type="button"'
+      +     ' id="sw-tab-matrix" aria-controls="sw-view-matrix">Adoption matrix</button>'
       + '</div>'
       + '<div id="sw-view-credentials" class="sw-view" role="tabpanel" tabindex="0"'
       +   ' aria-labelledby="sw-tab-credentials"><div id="sw-cv-body" class="cv-body"></div></div>'
       + '<div id="sw-view-table" class="sw-view" role="tabpanel" tabindex="0"'
-      +   ' aria-labelledby="sw-tab-table">' + html + '</div>';
+      +   ' aria-labelledby="sw-tab-table">' + html + '</div>'
+      + '<div id="sw-view-matrix" class="sw-view" role="tabpanel" tabindex="0"'
+      +   ' aria-labelledby="sw-tab-matrix"><div id="sw-mx-body"></div></div>';
     syncSubtabs();
   }
 
@@ -901,10 +1175,12 @@
     });
     var cred = document.getElementById("sw-view-credentials");
     var tbl = document.getElementById("sw-view-table");
+    var mx = document.getElementById("sw-view-matrix");
     // `hidden` (not display:none) so the panel is removed from the a11y tree
     // and from find-in-page, which display:none alone on a wrapper can miss.
     if (cred) cred.hidden = state.view !== "credentials";
     if (tbl) tbl.hidden = state.view !== "table";
+    if (mx) mx.hidden = state.view !== "matrix";
     syncScopeBar();
   }
 
@@ -927,6 +1203,12 @@
   // window.cplCollegeShort lazily at call time (college_short_names.js loads after
   // this file), falling back to the full name so a chip never renders blank.
   function SHORT(c) { var f = window.cplCollegeShort; return (f ? (f(c) || c) : c); }
+  // ALL-CAPS short form for the matrix column headers, which are rotated and so
+  // pay for every character in width. Sam approved short names for these
+  // ("OK to use short names for colleges…"). Same lazy lookup + safe fallback:
+  // an unmatched college renders its full name rather than a blank column, which
+  // would be indistinguishable from a college with no data.
+  function SHORT_CAPS(c) { var f = window.cplCollegeShort; return (f ? (f(c, "caps") || c) : c); }
   // A college chip: short label, full name on hover.
   // <abbr>, not <span> — the short label IS an abbreviation of the full college
   // name, and on a <span> the `title` is announced inconsistently (and on touch,
@@ -1171,6 +1453,11 @@
     var cvBody = document.getElementById("sw-cv-body");
     if (cvBody && state.view === "credentials") cvBody.innerHTML = buildCredentialView();
 
+    // Same rule for the matrix: 434 rows × 118 columns is ~51,000 cells, so it
+    // must never rebuild while the user is typing in a different view.
+    var mxBody = document.getElementById("sw-mx-body");
+    if (mxBody && state.view === "matrix") mxBody.innerHTML = buildMatrixView();
+
     // Pagination controls
     renderPagination(filtered.length, totalPages);
 
@@ -1386,6 +1673,15 @@
         } else {
           filtered.forEach(function (e) { delete state.selected[e.exhibit_id || e.title]; });
         }
+        renderRows();
+        return;
+      }
+
+      // Matrix row depth. This changes only which ROWS of the matrix render, not
+      // the filtered card set, so the filter cache stays valid — invalidating it
+      // here would rebuild all 2,673 cards to answer a question about display.
+      if (cb.id === "mx-show-all") {
+        state.matrixAll = !!cb.checked;
         renderRows();
         return;
       }
