@@ -5221,6 +5221,83 @@ def _load_statewide_categories():
     return cats
 
 
+# ── College-name rules for the adoption payload (sandbox + duplicate spellings) ──
+# Sam, 2026-08-17: "CAlbright, etc. should only be in once and CAMAP can be left
+# out altogether—it's our sandbox."
+#
+# BOTH rules are applied at BUILD time rather than in the tab, because the column
+# that reaches a college by email is an export, not a screen — the card counts,
+# the College filter, the Excel/JSON/Word exports and any future view all have to
+# inherit one answer. Keyed on map_colleges.entity_kind (the classifier that
+# already existed) rather than on a hardcoded name, via a committed snapshot so
+# the build needs no network. See kb/reference/map_college_roster_rules.json.
+_ROSTER_RULES_CACHE = None
+
+
+def _load_map_roster_rules():
+    """Return (sandbox_names:set, fold_map:dict). Empty on any failure — a
+    missing reference file must degrade to today's behaviour, never abort the
+    daily build."""
+    global _ROSTER_RULES_CACHE
+    if _ROSTER_RULES_CACHE is not None:
+        return _ROSTER_RULES_CACHE
+    path = os.path.join(SCRIPT_DIR, "kb", "reference", "map_college_roster_rules.json")
+    sandbox, fold = set(), {}
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                raw = json.load(f)
+            sandbox = {n.strip() for n in ((raw.get("sandbox") or {}).get("names") or []) if n.strip()}
+            fold = {k.strip(): v.strip()
+                    for k, v in ((raw.get("fold") or {}).get("map") or {}).items()
+                    if k.strip() and v.strip()}
+        except Exception as e:
+            print(f"  WARNING: could not load map_college_roster_rules.json: {e}")
+            sandbox, fold = set(), {}
+    _ROSTER_RULES_CACHE = (sandbox, fold)
+    return _ROSTER_RULES_CACHE
+
+
+def _canon_college(name, sandbox, fold):
+    """Canonical column identity for a college name, or "" if it must not appear.
+
+    "" means DROP — the caller must test for it, because a sandbox org counted as
+    an adopter inflates a public statewide card (CA MAP INITIATIVE COLLEGE was
+    publishing 7 adopters on California Real Estate Broker License where the true
+    count is 6)."""
+    n = (name or "").strip()
+    if not n or n in sandbox:
+        return ""
+    return fold.get(n, n)
+
+
+def _median(values):
+    """Median of a list of floats, 0.0 when empty. Median rather than mean
+    because a single college that articulated an unusually deep set would drag a
+    mean upward and the figure is shown to other colleges as "what peers get"."""
+    vals = sorted(v for v in values if v is not None)
+    if not vals:
+        return 0.0
+    mid = len(vals) // 2
+    if len(vals) % 2:
+        return round(vals[mid], 2)
+    return round((vals[mid - 1] + vals[mid]) / 2.0, 2)
+
+
+def _rec_units(credit_text):
+    """Leading unit count in a credit-recommendation string ("3 hours in Child
+    Growth" → 3.0), else 0.0. Every one of the 7,030 recommendation lines in the
+    live payload parses with this rule, so a 0.0 means genuinely unusual text and
+    not a missing case."""
+    m = re.search(r"(\d+(?:\.\d+)?)", credit_text or "")
+    if not m:
+        return 0.0
+    try:
+        return float(m.group(1))
+    except ValueError:
+        return 0.0
+
+
 def _statewide_category(title, cats):
     """Program-area category for a statewide exhibit title: exact
     (case-insensitive) match first, then the ordered pattern rules (future
@@ -5592,6 +5669,10 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     from collections import defaultdict
 
     top_lookup = _load_top_code_lookup()  # MAP code → discipline name
+    # Sandbox orgs and duplicate spellings are resolved at every point a college
+    # name ENTERS this payload — adopters, TOP potentials and C-ID potentials —
+    # so no downstream consumer has to remember the rule.
+    sandbox, fold = _load_map_roster_rules()
 
     # ── Build MAP TOP code → colleges from ProgramsofStudy ──
     # ProgramsofStudy uses MAP integer TOP codes (same as exhibits)
@@ -5605,7 +5686,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     if programs_ds:
         pcm = {c: i for i, c in enumerate(programs_ds.get("columnName", []))}
         for row in programs_ds["columnValue"]:
-            college = (row[pcm.get("College", 0)] or "").strip()
+            college = _canon_college(row[pcm.get("College", 0)], sandbox, fold)
             tc = (row[pcm.get("Top Code", 9)] or "").strip()
             if college and tc:
                 top_to_colleges[tc].add(college)
@@ -5618,7 +5699,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         if report.get("viewName") == "View_CollegeCourses_APIDataset":
             ccm = {c: i for i, c in enumerate(report.get("columnName", []))}
             for row in report["columnValue"]:
-                college = (row[ccm.get("College", 0)] or "").strip()
+                college = _canon_college(row[ccm.get("College", 0)], sandbox, fold)
                 cid = (row[ccm.get("CID Number", 1)] or "").strip()
                 if college and cid:
                     cid_to_colleges[cid].add(college)
@@ -5654,6 +5735,15 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     all_exhibits = defaultdict(lambda: {
         "eids": set(),
         "adopters": set(),
+        # college → units this college has actually articulated for this exhibit.
+        # The raw row already carries (Articulation College, Course, Credit
+        # Recommendation) TOGETHER, so this attribution is a straight read — the
+        # payload has simply been discarding it. Summed over DISTINCT
+        # (college, course, credit) triples, because a group merges several raw
+        # exhibit rows and the same recommendation recurs across them.
+        "adopter_units": defaultdict(float),
+        "adopter_rec_keys": set(),   # (college, course, credit) already counted
+        "adopter_lines": defaultdict(int),
         "cids": set(),
         "tops": set(),
         "raw_titles": set(),  # for the consumer's "also entered as…" disclosure
@@ -5709,7 +5799,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             if not e["confidence_issuer"]:
                 e["confidence_issuer"] = ident["confidence_issuer"]
 
-        artic = (row[i_artic] or "").strip()
+        artic = _canon_college(row[i_artic], sandbox, fold)
         if artic:
             e["adopters"].add(artic)
         cid = (row[i_cid] or "").strip()
@@ -5725,6 +5815,16 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             rec_key = (course, credit)
             if rec_key not in {(r["course"], r["credit"]) for r in e["credit_recs"]}:
                 e["credit_recs"].append({"course": course, "credit": credit})
+            # Per-college articulated units. Guarded on the triple rather than on
+            # the pair, so two colleges articulating the SAME recommendation both
+            # count while one college's row repeated across merged exhibit IDs
+            # counts once.
+            if artic:
+                trip = (artic, course, credit)
+                if trip not in e["adopter_rec_keys"]:
+                    e["adopter_rec_keys"].add(trip)
+                    e["adopter_units"][artic] += _rec_units(credit)
+                    e["adopter_lines"][artic] += 1
         # Authoritative statewide recs — only the CCC-tagged (MAP-published) rows,
         # deduped by recommendation text, C-ID backfilled.
         if credit and collab == "CCC":
@@ -5815,6 +5915,26 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             "total_addressable": len(adopters) + len(new_colleges),
             "credit_recs": e["credit_recs"],
             "authoritative_recs": e["authoritative_recs"],
+            # ── Matrix sub-tab payload ──
+            # adopter_units: what each college ACTUALLY articulated (the green
+            # number). peer_units_median: what adopting colleges typically get,
+            # which is the only defensible "you could have this" figure.
+            #
+            # It is NOT the sum of credit_recs. Measured 2026-08-17 over the live
+            # peer data: colleges articulate a median 3.07 of 9.26 available
+            # recommendation lines and NO college has ever reached the line
+            # total — AP Biology carries 12 lines / 36 units while the median
+            # adopter claims 4 and the best in the state claims 12. Publishing
+            # the line total as an opportunity would promise a college roughly
+            # triple what the strongest peer has ever obtained, in a column that
+            # leaves this tab as a CSV.
+            "adopter_units": {c: round(u, 2) for c, u in sorted(e["adopter_units"].items())},
+            "adopter_lines": dict(sorted(e["adopter_lines"].items())),
+            "peer_units_median": _median([e["adopter_units"][c] for c in adopters
+                                          if c in e["adopter_units"]]),
+            "peer_units_max": round(max([e["adopter_units"][c] for c in adopters
+                                         if c in e["adopter_units"]], default=0.0), 2),
+            "rec_units_total": round(sum(_rec_units(r["credit"]) for r in e["credit_recs"]), 2),
         })
 
     # Sort: exhibits with most potential first, then by adopters descending
