@@ -648,21 +648,13 @@
          this tab is page chrome and must not be in the document, and the
          controls must not print either — a PDF with a "Collapse all" button on
          it looks like a screenshot, not a briefing. */
-      /* ⚠ visibility, NOT display. #college-briefing-root is nested several
-         levels inside the page, so `body>*{display:none}` would hide one of its
-         ANCESTORS and take the tab down with everything else — display:none on a
-         parent cannot be undone by a child. visibility:hidden is per-element and
-         a descendant can turn itself back on, and the absolute position lifts
-         the tab to the top of the sheet rather than printing pages of blanks
-         where the hidden chrome used to be. */
+      /* Print stays sane if someone hits Ctrl-P — the Report button now builds a
+         .docx (Sam, 2026-08-17), so this is no longer the briefing route, just
+         basic hygiene: drop the controls and do not split a section across pages. */
       "@media print{",
-      "  body *{visibility:hidden;}",
-      "  #college-briefing-root,#college-briefing-root *{visibility:visible;}",
-      "  #college-briefing-root{position:absolute;left:0;top:0;width:100%;padding:0;}",
       "  .cb-welcome-acts,.cb-allctl,.cb-back,.cb-assist-pick,.cb-asks,.cb-asks-lab,"
         + ".cb-assist-mount{display:none !important;}",
       "  .cb-sec{break-inside:avoid;}",
-      "  .cb-sec>.cb-sum{list-style:none;}",
       "}",
       // ── Use the width, and survive a phone (Sam, 2026-08-17) ──────────────
       // The pickers stretch instead of sitting at a 220px minimum that wraps
@@ -2269,26 +2261,206 @@
     render(root);
   }
 
-  /* ── The briefing (Sam, 2026-08-17: "a Report button that creates a briefing")
-   * Built from the tab's OWN rendered sections rather than re-deriving the
-   * figures — the same reasoning as the EACR matrix's shared matrixCell(): a
-   * report that computes its numbers separately is a second implementation that
-   * can disagree with the screen, and the screen is what the reader just
-   * checked. So: expand everything, then print. Print-to-PDF is the same route
-   * the public Fact Sheet uses, and it needs no popup and no API.
+  /* ── The briefing (Sam, 2026-08-17: "a Report button that creates a briefing";
+   *    then, the same day: "Briefing should be docx") ───────────────────────
    *
-   * ⚠ EXPAND BEFORE PRINTING. A <details> that is closed does not print its
-   * contents, so printing the tab as-found would produce a briefing of section
-   * titles and nothing else — which looks like a finished document.
+   * ⭐ READ FROM THE RENDERED DOM, NEVER RE-DERIVE. Every figure in the document
+   * is lifted from the section the reader just looked at. A generator that
+   * recomputed them would be a SECOND implementation of the tab's arithmetic —
+   * the thing the EACR matrix's shared matrixCell() exists to prevent — and the
+   * two would eventually disagree, with the document being the copy that leaves
+   * the building. It also means the disclosure control comes along for free: a
+   * withheld college reads "withheld" on screen, so it reads "withheld" here,
+   * and the roll-up total is the same unsuppressed-only sum. Nothing in this
+   * function knows what k-anonymity is, and it cannot leak what the tab does not
+   * already show.
    *
-   * The render must land before print() is called, so this defers a frame;
-   * print() is synchronous and would otherwise capture the pre-expand DOM. */
+   * ⚠ A CLOSED SECTION IS STILL IN THE DOM. This reads `details` content
+   * regardless of open state, which is why — unlike the print route it replaced
+   * — it does NOT have to expand everything first and cannot produce a document
+   * of headings with no bodies.
+   *
+   * Skips the chrome (buttons, the Sierra chat) rather than filtering it out
+   * afterwards: a transcript of an empty chat box is not a briefing. */
+  var DOCX_SRC = "docx.min.js";
+  function ensureDocx(cb) {
+    if (window.docx) { cb(true); return; }
+    loadScript(DOCX_SRC, "docx", function () { cb(!!window.docx); });
+  }
+
+  // PURE. The rendered tab -> an ordered list of blocks the docx builder walks.
+  // Separated from the docx call so it is testable without the library present.
+  function briefingBlocks(root) {
+    var out = [];
+    if (!root) return out;
+    function textOf(el) {
+      var c = el.cloneNode(true);
+      // The visually-hidden new-tab cue is for screen readers, not for a
+      // printed page where "(opens in a new tab)" is meaningless.
+      Array.prototype.forEach.call(c.querySelectorAll(".cb-sr"), function (n) { n.remove(); });
+      return (c.textContent || "").replace(/\s+/g, " ").trim();
+    }
+    function emitTable(el) {
+      var rows = Array.prototype.map.call(el.querySelectorAll("tr"), function (tr) {
+        return Array.prototype.map.call(tr.querySelectorAll("th, td"), textOf);
+      }).filter(function (r) { return r.length; });
+      if (rows.length) out.push({ kind: "table", rows: rows });
+    }
+
+    /* ⚠ A DISTRICT OR STATEWIDE VIEW HAS NO `details.cb-sec` AT ALL — its whole
+     * content is the roll-up (a heading, three stat cards, the college table and
+     * the disclosure notes). Walking only the sections produced an EMPTY
+     * briefing for two of the three scopes, which the "nothing to put in a
+     * briefing yet" guard would have reported as if the college had no data.
+     * So this walks the content region in DOCUMENT ORDER over a whitelist,
+     * which covers all three scopes with one pass. */
+    var SEL = "details.cb-sec, h3.cb-h, .cb-roll-c, table.cb-dist, .cb-note, .cb-warn";
+    Array.prototype.forEach.call(root.querySelectorAll(SEL), function (el) {
+      // Chrome, and anything a section will emit itself.
+      if (el.closest && (el.closest(".cb-assist") || el.closest(".cb-scope"))) return;
+      var inSection = el.closest && el.closest("details.cb-sec");
+      if (inSection && inSection !== el) return;
+
+      if (el.tagName.toLowerCase() === "table") { emitTable(el); return; }
+      if (!inSection) {
+        var cls = el.className || "";
+        if (/cb-roll-c/.test(cls)) {
+          // A stat card is a figure plus its label — keep them together, since
+          // "1,051,870" on its own line is not a fact.
+          var n = el.querySelector(".cb-roll-n"), l = el.querySelector(".cb-roll-l");
+          if (n) out.push({ kind: "lead", text: textOf(n) + (l ? " — " + textOf(l) : "") });
+          return;
+        }
+        var s0 = textOf(el);
+        if (s0) out.push({ kind: /cb-h/.test(cls) ? "h2" : "p", text: s0 });
+        return;
+      }
+
+      // A collapsible section.
+      var d = el;
+      if (d.getAttribute("data-sec") === "sierra") return;     // an empty chat box is not content
+      var t = d.querySelector(".cb-sum-t"), v = d.querySelector(".cb-sum-v");
+      out.push({ kind: "h2", text: t ? textOf(t) : (d.getAttribute("data-sec") || "") });
+      // ⭐ The summary value is the figure a CLOSED section shows. It is the one
+      // line most likely to be the answer, so it leads the section here too.
+      if (v && textOf(v)) out.push({ kind: "lead", text: textOf(v) });
+      Array.prototype.forEach.call(d.querySelectorAll("h3, h4, p, li, table"), function (n2) {
+        var tag = n2.tagName.toLowerCase();
+        if (tag === "table") { emitTable(n2); return; }
+        if (n2.closest && n2.closest("table")) return;   // already emitted as part of it
+        var s = textOf(n2);
+        if (s) out.push({ kind: tag === "li" ? "li" : (tag === "p" ? "p" : "h3"), text: s });
+      });
+    });
+    return out;
+  }
+
   function buildBriefingReport(root) {
-    setAllSections(true, root);
-    var go = function () { try { window.print(); } catch (e) { /* no print in this host */ } };
-    if (typeof window.requestAnimationFrame === "function") {
-      window.requestAnimationFrame(function () { window.requestAnimationFrame(go); });
-    } else { setTimeout(go, 60); }
+    var btn = root && root.querySelector("#cb-report");
+    var was = btn ? btn.textContent : null;
+    if (btn) { btn.disabled = true; btn.textContent = "Building…"; }
+    var done = function (msg) {
+      if (!btn) return;
+      btn.disabled = false; btn.textContent = msg || was;
+      if (msg) setTimeout(function () { btn.textContent = was; }, 2600);
+    };
+    ensureDocx(function (ok) {
+      // ⚠ A failure has to SAY so. A button that silently does nothing is the
+      // #1166 shape — indistinguishable from one that was never wired.
+      if (!ok) { done("Could not load the document builder"); return; }
+      var D = window.docx, blocks = briefingBlocks(root);
+      if (!blocks.length) { done("Nothing to put in a briefing yet"); return; }
+
+      var name = scopeLabel() || "CPL";
+      var title = state.scope === "statewide" ? "Statewide CPL briefing" : name + " — CPL briefing";
+      var today = new Date().toISOString().slice(0, 10);
+      var kids = [];
+      // House style, matching college_report_generator.js: CO navy title, the
+      // gold rule, Calibri throughout. One look for anything that leaves here.
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({ text: title, bold: true, size: 36, color: "0A2240", font: "Calibri" })],
+        spacing: { after: 100 }
+      }));
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({
+          text: "Mapping Articulated Pathways (MAP) platform  |  Generated: " + today
+              + "  |  Figures as shown on the My College tab",
+          size: 20, color: "666666", font: "Calibri", italics: true
+        })],
+        spacing: { after: 200 }
+      }));
+      // ⭐ The suppression note travels WITH the document. On screen the reader
+      // has the surrounding page to explain a dash; in a file that reaches a
+      // college by email, this line is the only thing standing between "withheld"
+      // and someone reading it as zero.
+      kids.push(new D.Paragraph({
+        children: [new D.TextRun({
+          text: "“Withheld” means fewer than 10 CPL students — not zero activity. "
+              + "A dash means the college is not in the credit summary at all, which is an absent "
+              + "measurement rather than a measured zero. Group totals cover only the colleges "
+              + "listed with figures.",
+          size: 18, color: "666666", font: "Calibri", italics: true
+        })],
+        spacing: { after: 200 }
+      }));
+      kids.push(new D.Paragraph({
+        children: [],
+        border: { bottom: { style: D.BorderStyle.SINGLE, size: 6, color: "C9A84C" } },
+        spacing: { after: 200 }
+      }));
+
+      blocks.forEach(function (b) {
+        if (b.kind === "table") {
+          kids.push(new D.Table({
+            width: { size: 100, type: D.WidthType.PERCENTAGE },
+            rows: b.rows.map(function (r, i) {
+              return new D.TableRow({
+                children: r.map(function (cell) {
+                  return new D.TableCell({
+                    children: [new D.Paragraph({ children: [new D.TextRun({
+                      text: cell, bold: i === 0, size: 18, font: "Calibri"
+                    })] })]
+                  });
+                })
+              });
+            })
+          }));
+          kids.push(new D.Paragraph({ children: [], spacing: { after: 160 } }));
+          return;
+        }
+        var spec = {
+          h2: { size: 26, color: "0A2240", bold: true, before: 300, after: 100 },
+          h3: { size: 22, color: "163A5F", bold: true, before: 200, after: 80 },
+          lead: { size: 22, color: "0A2240", bold: true, before: 0, after: 120 },
+          li: { size: 22, color: null, bold: false, before: 0, after: 80 },
+          p: { size: 22, color: null, bold: false, before: 0, after: 120 }
+        }[b.kind] || { size: 22, after: 120 };
+        var run = { text: b.text, size: spec.size, font: "Calibri" };
+        if (spec.bold) run.bold = true;
+        if (spec.color) run.color = spec.color;
+        var para = { children: [new D.TextRun(run)], spacing: { before: spec.before || 0, after: spec.after } };
+        if (b.kind === "li") para.bullet = { level: 0 };
+        kids.push(new D.Paragraph(para));
+      });
+
+      var doc = new D.Document({
+        sections: [{ properties: { page: { margin: { top: 1000, right: 1000, bottom: 1000, left: 1000 } } },
+                     children: kids }]
+      });
+      D.Packer.toBlob(doc).then(function (blob) {
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        /* YYYYMMDD prefix per the vault's mandatory deliverable-naming rule
+         * (CPLBrain CLAUDE.md) so briefings sort chronologically wherever they
+         * land. NOTE: college_report_generator.js still puts its date at the
+         * END — flagged for Sam rather than changed here, since renaming an
+         * artifact people already file is his call, not a side effect of this. */
+        a.download = today.replace(/-/g, "") + "_"
+          + name.replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "") + "_CPL_Briefing.docx";
+        document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        done("Downloaded");
+      }).catch(function () { done("Could not build the document"); });
+    });
   }
 
   function wire(root) {
@@ -2618,6 +2790,9 @@
     _scopeLabel: scopeLabel,
     _scopeReady: scopeReady,
     _rollup: rollup,
+    // PURE. The docx builder reads the RENDERED tab through this, so a test can
+    // assert what reaches the document without the docx library present.
+    _briefingBlocks: briefingBlocks,
     _SCOPES: SCOPES,
     _SECTION_IDS: SECTION_IDS,
     _setAllSections: setAllSections,

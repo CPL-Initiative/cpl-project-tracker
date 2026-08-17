@@ -50,7 +50,14 @@ function load(opts) {
   });
   const M = w.CPL_COLLEGE_BRIEFING;
   const root = w.document.getElementById("college-briefing-root");
-  M._state.data = { colleges: COLLEGES, summaryByName: opts.summary || {}, raw: {} };
+  // render() returns early when there is no briefing object, so the roll-up and
+  // the sections never appear. A minimal one is enough for the structural
+  // assertions here; the funding engine has its own tests.
+  M._state.data = {
+    colleges: COLLEGES, summaryByName: opts.summary || {}, raw: {},
+    briefing: opts.noBriefing ? null
+      : { unread: [], leads: [], programs: [], strategyTotal: 3, scenario: "Scenario 1", year: "1" }
+  };
   if (opts.scope) M._state.scope = opts.scope;
   if (opts.college) M._state.college = opts.college;
   if (opts.district) M._state.district = opts.district;
@@ -210,6 +217,50 @@ block("rollup disclosure", function () {
   check("only 1 of 3 colleges is claimed to be in the totals", /1 of 3/.test(html));
   check("every college is still listed and reachable",
     COLLEGES.every(function (n) { return html.indexOf(n) !== -1; }));
+});
+
+// ── 7b. ⭐ The briefing is a DOCUMENT, and it reads the screen ────────────────
+// Sam, 2026-08-17: "Briefing should be docx". The property that matters is not
+// the file format but where the figures come from: every one is lifted from the
+// section the reader just looked at, so the document cannot disagree with the
+// tab — and the disclosure control comes along for free, because a withheld
+// college reads "withheld" on screen and therefore in the file.
+block("briefing blocks", function () {
+  const summary = {
+    "Allan Hancock College": { articulated_waiting: 100, students: 50, suppressed: false },
+    "Bakersfield College":   { articulated_waiting: 900, students: 400, suppressed: true }
+  };
+  // Statewide rather than district: districtIndex() reads the funding roster,
+  // which is a separate lazy script and is not loaded here, so a district would
+  // resolve to zero colleges and the table would be a header row alone.
+  // Statewide's group is the whole college list, so it has real rows.
+  const { M, root } = load({ scope: "statewide", summary: summary });
+  const blocks = M._briefingBlocks(root);
+  check("the extractor returns blocks from the rendered tab", blocks.length > 0);
+  check("⭐ the Sierra chat is NOT in the document",
+    !blocks.some(function (b) { return /Sierra AI/.test(b.text || ""); }),
+    "a transcript of an empty chat box is not a briefing");
+
+  // A closed section still contributes: unlike the print route this replaced,
+  // nothing has to be expanded first, so a briefing of empty headings is
+  // structurally impossible.
+  M._setAllSections(false, root);
+  const closed = M._briefingBlocks(root);
+  check("⭐ a CLOSED section still contributes its content",
+    closed.length === blocks.length && closed.length > 0,
+    "details content is in the DOM regardless of open state");
+
+  const kinds = closed.map(function (b) { return b.kind; });
+  check("section headings are carried", kinds.indexOf("h2") !== -1);
+  check("the closed-section summary figure leads its section", kinds.indexOf("lead") !== -1);
+  check("no block is empty",
+    closed.every(function (b) { return b.kind === "table" || (b.text || "").length > 0; }));
+  check("a table comes through as rows, not flattened prose",
+    closed.every(function (b) { return b.kind !== "table" || (b.rows && b.rows.length > 1); }));
+  check("…and its cells are not concatenated into one string",
+    closed.every(function (b) { return b.kind !== "table" || b.rows.every(function (r) { return r.length > 1; }); }));
+  check("the visually-hidden new-tab cue does not reach the document",
+    !closed.some(function (b) { return /opens in a new tab/.test(b.text || ""); }));
 });
 
 // ── 8. The remembered choice, and its escape hatch ────────────────────────────
