@@ -4335,3 +4335,22 @@ earlier. Where a native element carries the semantics, taking it deletes the who
 ⚠️ **The one red file on main was a stale `{0,900}` window**, not a defect — Sky160's own rename pushed the
 target to 1,458 chars, and `cpl_memory` had recorded that class on 08-14 with nobody re-sweeping.
 Story: `docs/eacr_scope_lessons.md` · durable [`methodology-a-filter-and-what-justifies-it-must-share-one-source`](docs/kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) · [`methodology-a-partial-aria-pattern-is-worse-than-none`](docs/kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) · handoff `docs/session_163_handoff.md`.
+
+
+### Sky163 — the opportunity number cannot be what the record allows (2026-08-17, Session 163)
+
+One merge (**#1226**) — the generator half of the CER Adoption Matrix sub-tab Sam scoped. **40 checks, 31 fail pre-fix.**
+⭐ **THE HEADLINE FINDING KILLED THE OBVIOUS DESIGN.** Sam asked for "possible CR units" in brown for non-adopters.
+**83% of adoptions are PARTIAL** (median **3.07 of 9.26** lines) and **no college has ever reached the line total** —
+AP Biology carries 36 units where the median adopter gets **4** and the best in the state gets 12. The natural number
+would have promised ~3× the strongest peer, **in a column that leaves as a CSV**. Brown is the **peer benchmark**.
+⭐ **THE NATURAL UNITS SOURCE WAS A LOSSY RECONSTRUCTION** — `chatbox_peer_articulations` covers **32.5%** of adoption
+pairs because it JOINS two half-sources; the raw MAP row carries college+course+rec **on one line** and the payload was
+discarding it. Shipping on the reconstruction would have rendered **5,502 real adoptions as opportunities**.
+⭐ **SAM'S SANDBOX RULING FIXED A LIVE PUBLIC NUMBER** — `CA MAP INITIATIVE COLLEGE` published **7 adopters on
+California Real Estate Broker License where the truth is 6**. Keyed on `entity_kind`, not the name.
+⚠️ **A 118-COLUMN NUMERIC GRID IS ARITHMETICALLY IMPOSSIBLE** (~3,500px, ~2× a desktop) — say so with the measurement
+rather than building it and discovering it.
+⚠️ **The short-name gap was already solved in the repo** — 19 of 122 spellings had none; SkyLink's committed crosswalk
+resolved **15**, taking fallbacks to zero. Fourth session running that the best catch was a thing already committed.
+Story: `docs/eacr_scope_lessons.md` · durable [`methodology-an-opportunity-figure-must-be-what-peers-achieved`](docs/kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) · handoff `docs/session_164_handoff.md`.

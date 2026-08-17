@@ -506,3 +506,52 @@ from a mock, and he has not seen this variant. Sky164 also supplied the argument
 that makes it defensible — **the two browns are justified differently**: a
 non-adopter's is gated on the M-ID *likely* tier (Sam's ruling 4), an adopter's
 needs no gate because that college is already in the peer cohort.
+
+### (f) Addendum 2 — Sam supplied Session 164's patch, and it was better
+
+After #1229 merged, Sam produced a patch file of Session 164's lost work. It was
+better than what had just shipped, and the harvest is **#1230**.
+
+**What it had that #1229 did not:** `exportMatrixCSV()`; a shared `matrixCell()`
+called by *both* the grid and the CSV; the partial-adopter gap on green cells;
+row thresholds 1/2/5/10; a Both/Adopted-only/Opportunity-only cell filter;
+column narrowing under a college-shaped filter; an exhibit-record drill-down;
+and a published density line.
+
+⭐ **The `matrixCell()` sharing is the part worth stealing as a habit.** Sky162's
+lesson — *a filter, the column that justifies it, and the exports must derive
+from one scope* — was carried in #1229 as a **discipline** and a note in the
+handoff. Session 164 made it **structural**: one function returns what a cell
+says, and the CSV cannot drift from the screen because there is nothing to drift
+from. A rule enforced by architecture outlives a rule enforced by remembering.
+
+⚠️ **A CORRECTION THAT RUNS AGAINST THIS SESSION.** Sky165 measured the
+partial-adopter population at **349** and recorded that Sky164's **337** "needed
+restating". Against the rule that actually shipped it is **337 exactly**. 349
+counted every green cell below its row median; the shipped rule ignores a gap
+under **0.5 units**, which is right — a 0.2-unit gap is not an opportunity.
+**Sky164 was right and the correction runs the other way.** The `cpl_memory` row
+has been rewritten and both rows promoted to `verified`.
+
+The lesson is narrow and worth keeping: *re-measuring a predecessor's number is
+right, but a disagreement is not automatically theirs.* The first question is
+whether the two measures are the same measure. Here they were not, and the
+predecessor's was the better-chosen one.
+
+**What did NOT come across, deliberately.** Session 164 keyed identity through
+`cplCollegeShort(name,'full')` alone. #1229's roster-rules fold stays and now
+runs FIRST, inside `mxName()`. Its approach absorbs a duplicate nobody has
+listed; the explicit list keeps an audit trail and is read by the Python
+generator. Neither is sufficient alone — the resolver is what hid the Cañada
+duplicate for a day — so both run, plus the collision check.
+
+**On adopting its test wholesale:** Session 164's 76-check harness passed
+**76/76 on first run** against the adaptation. That is the strongest evidence the
+port was faithful, and much stronger than a harness written by the same session
+that wrote the code. 7 roster-layer checks were added (it had none); 83 total,
+49 failing against `main`.
+
+⚠️ **Minor regression to note:** the Cañada column's display name now reads
+`Canada College` without the tilde, because that is the `canonical` field in the
+curator-provided `college_short_names.js`. One column, all cells land — but the
+tilde is worth restoring in that file.

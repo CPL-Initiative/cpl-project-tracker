@@ -44,67 +44,50 @@ Measured by rendering the **live payload** through jsdom, not predicted:
 (verified by stashing the diff).
 
 Sam's four rulings all hold and each is carried by a check: brown is the **peer
-benchmark**, columns are **colleges**, default rows are **≥2 adopters** (a
-checkbox reaches the tail), brown renders on the **M-ID *likely* tier only**.
+benchmark**, columns are **colleges**, default rows are **≥2 adopters**, brown
+renders on the **M-ID *likely* tier only** for a non-adopter. **#1230 then
+harvested Session 164's patch on top** — see below.
 
 ---
 
-## 🎯 PRIORITY 1 — the matrix CSV export
+## What Session 164's patch added (#1230)
 
-This is the half that reaches a college. The design *anticipates* it — brown is
-a peer benchmark rather than the line total precisely **because the number
-leaves as a spreadsheet**, and a CSV outlives the screen that produced it.
+After #1229 merged, Sam produced a **patch file of Session 164's lost work**. It
+was better than what had just shipped, and it has been harvested:
 
-- The standing rule from Sky162: **a filter, the column that justifies it, and
-  the exports must derive from ONE scope.** The export must carry the same
-  peer-benchmark semantics and the same 118-column axis, or it will say
-  something the screen does not.
-- Existing exports live in the same file and cover the *table* view. Do not let
-  a matrix export inherit their scope by accident.
-- A capped or filtered export must say so in a column, never silently.
+- **`exportMatrixCSV()`** — the half that reaches a college, led by a provenance
+  line saying what "opportunity" means and that it is NOT the recommendation total.
+- **A shared `matrixCell()`** called by both the grid and the CSV, so the
+  spreadsheet cannot drift from the screen. ⭐ This is Sky162's "one scope" rule
+  made **structural** instead of remembered — steal the habit.
+- **The partial-adopter gap** — Sam approved it; **337 cells**.
+- Row thresholds 1/2/5/10, a Both/Adopted-only/Opportunity-only cell filter,
+  column narrowing under college-shaped filters, an exhibit drill-down, and a
+  published density line.
 
-## ⭐ THE BIGGEST OPEN QUESTION — partial adopters (needs Sam)
+⚠️ **A correction against Session 165.** It measured the partial-adopter
+population at **349** and said Sky164's **337** needed restating. Against the
+shipped rule it is **337 exactly** — 349 counted every green cell below its row
+median, while the shipped rule ignores a gap under 0.5 units, which is right.
+**Sky164 was right.** *Re-measuring a predecessor's number is correct practice,
+but a disagreement is not automatically theirs — first ask whether the two are
+the same measure.*
 
-**Session 164 found something the grid does not yet show, and it may be worth
-more than anything else on this list.** Its `cpl_memory` row survived even though
-its code did not:
+## 🎯 PRIORITY 1 — Sam looks at the grid
 
-> Every previous EACR framing asks *"who has NOT adopted this"* — which hides
-> **partial adopters completely.** They are more tractable than non-adopters
-> because the articulation relationship, the faculty contact and the credential
-> review **already exist**. The ask is to extend an agreement, not to start one.
-
-Sky165 re-measured it rather than repeating the number, and it holds:
-
-| | |
-|---|---:|
-| green cells below their row's peer median | **349** (Sky164 said 337) |
-| credentials affected | **172** of 434 |
-| units between those colleges and their peers | **~1,106** |
-
-The 349-vs-337 gap is definitional (row-recomputed median vs the payload's
-per-card `peer_units_median`, and strict vs non-strict comparison) — not a
-contradiction. **Restate the measure whenever you quote it.**
-
-**It is deliberately NOT shipped.** It puts a second number on green cells,
-changing the density and the semantics of the view Sam approved from a mock, and
-he has never seen this variant. Sky164 also worked out the part that makes it
-defensible: **the two browns are justified differently** — a non-adopter's brown
-is gated on the M-ID *likely* tier (Sam's ruling 4), while an adopter's needs no
-gate, because that college is already in the peer cohort.
-
-**So: show Sam. Do not build it first.** `cpl_memory` slug
-`partial-adopter-brown-measured-at-349-and-not-yet-shipped`.
+It is live and nobody has seen it in a browser. 434 × 118 at 17.0% inked, with
+337 cells now carrying two figures. Density is the open question, and it is his
+call, not a measurable one.
 
 ## Then
 
-1. **Fix the mojibake at source** — `_build_statewide_prescriptive()` in
+1. **Restore the tilde on Cañada.** The column now reads `Canada College`
+   because that is the `canonical` field in the curator-provided
+   `college_short_names.js`. One column, all cells land — cosmetic, one line.
+2. **Fix the mojibake at source** — `_build_statewide_prescriptive()` in
    `excel_to_dashboard.py` emits `CaÃ±ada College` where the rest of the payload
-   has `Cañada College`. The roster fold is a safety net and stays regardless;
-   a generator emitting two encodings of one name is still a defect. Check
-   whether other names are affected — Sky165 only proved this one.
-2. **Sam looks at the grid** on the deployed site and says whether the density
-   reads. 17.0% inked was legible in the mock; it has never been seen live.
+   has `Cañada College`. The roster fold is a safety net and stays regardless.
+   Check whether other accented names are affected — only this one was proven.
 3. The four Sky162 curation items (4 unclassified-only titles; 2 statewide cards
    matching no college; the `{0,N}` test-bound sweep; the 50-group cap).
 4. **Mt. SAC Noncredit** — the axis is 115 credit + 3 noncredit where Sam expects

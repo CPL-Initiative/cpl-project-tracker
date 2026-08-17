@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-17 · Sky165 — the grid is built and live. The spreadsheet version of it is next.",
+  "_as_of": "2026-08-17 · Sky165 — the grid is live, it exports to a spreadsheet, and it now shows near-misses.",
   "_session": "Session 165 (Sky165)",
-  "_status": "The grid you asked for is built: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown (in brackets) for what it could still get. It shows 434 credentials across 118 colleges, and about a sixth of the grid is filled in, with 59% of those credentials showing at least one college that could pick them up. Your four calls are all in it. Building it turned up one real problem: Cañada College was appearing twice, because two parts of our own pipeline spell its name differently — one of those columns had all of Cañada's opportunities and the other was empty, which looks exactly like a college with nothing available. That is fixed. Next is letting the grid leave as a spreadsheet, which is how it actually reaches a college.",
+  "_status": "The grid is built and merged: credential names down the side, every college across the top. Green is what a college already has; a number in brackets is what it could still get — and that number is what other colleges ACTUALLY got, never the most the exhibit allows on paper, because no college has ever claimed all of it. It also downloads as a spreadsheet now, and the spreadsheet is generated from the same code as the screen so the two cannot disagree. New since you asked: a college that has already taken a credential but claimed LESS than its peers now shows the shortfall too — 337 of those, and they are the easiest wins we have because the relationship already exists. Session 164's lost work turned out to be better than ours on several points and we took it. The one thing left is you looking at it in a browser and saying whether it reads.",
   "items": [
     {
       "id": "s163-noncredit-fourth",
@@ -59,12 +59,6 @@
       "text": "The project's always-loaded instructions file is still twice the size it should be. This session archived one old session write-up and rewrote a section instead of adding to it, but that is holding the line, not fixing it. The finished workstreams — the EACR filters, the team phrases, the sign-in work — are history now and belong in the reference folder. Every line costs every future session."
     },
     {
-      "id": "s165-matrix-export",
-      "for": "Fable",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Let the new grid leave as a spreadsheet. That is the whole point of the brown numbers being what other colleges actually earned rather than the most the exhibit allows — a spreadsheet gets emailed to a college and read months later, with nobody around to explain it. The export has to say exactly what the screen says, over the same 118 colleges."
-    },
-    {
       "id": "s165-look-at-the-grid",
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
@@ -77,10 +71,10 @@
       "text": "Fix the Cañada spelling where it starts, not just where it shows. One part of the dashboard generator writes the name with mangled accented characters and another writes it correctly, so the same college arrived under two names. We have folded them together, but the generator should stop producing two spellings — and nobody has checked whether other accented names are affected."
     },
     {
-      "id": "s165-partial-adopters",
+      "id": "s165-look-at-the-grid-2",
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
-      "text": "A question about the grid worth your eye. About 350 times, a college has already taken a credential but claimed fewer units than most colleges claim for the same one — 172 credentials, roughly 1,100 units between them and their peers. These are probably the easiest wins on the whole tab, because the college, the faculty contact and the review already exist; the ask is to extend an agreement, not start one. We have NOT put it on the grid, because it means a second number inside the green squares and that changes how the whole thing looks. Do you want to see a version with it?"
+      "text": "Open the Adoption matrix sub-tab and tell us whether it reads. It is 434 credentials by 118 colleges, so it scrolls sideways — unavoidable at that width — with the credential column and the header row frozen. About a sixth of the squares carry a number. This is the only open question left on it, and it is a judgement call rather than something we can measure."
     }
   ]
 }
