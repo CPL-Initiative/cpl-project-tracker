@@ -1,0 +1,40 @@
+{
+  "_about": "College-name rules applied to the EACR adoption payload at build time: which MAP entities are sandbox (never counted or displayed), and which duplicate spellings are one institution entered twice. Consumed by excel_to_dashboard.py::_load_map_roster_rules().",
+  "_authority": "Supabase public.map_colleges — `entity_kind` is the classifier, and it already tagged every row below. This file is a committed SNAPSHOT so the daily build stays hermetic (the pipeline has no Supabase read for the roster, and a build must not fail because a network call did).",
+  "_refresh": "select college_id, college_name, entity_kind from map_colleges where entity_kind = 'test' order by college_name;  -- then reconcile `sandbox` below. Re-check `fold` whenever MAP adds a continuing-education or Calbright-style split entity.",
+  "_generated": "2026-08-17 (session 163)",
+  "_ruling": "Sam, 2026-08-17: \"CAlbright, etc. should only be in once and CAMAP can be left out altogether—it's our sandbox.\"",
+
+  "sandbox": {
+    "_why": "entity_kind = 'test' in map_colleges. These are MAP's own test orgs. They must not appear as columns, must not be counted as adopters, and must not reach an export. Measured 2026-08-17: only CA MAP INITIATIVE COLLEGE was actually present in the exhibits payload — it was counted as a real adopter on the statewide card 'California Real Estate Broker License', publishing 7 adopters where the true count is 6. The other seven are listed so the rule stays correct if they ever appear.",
+    "names": [
+      "CA MAP INITIATIVE COLLEGE",
+      "CabTest College",
+      "MorTest City College",
+      "NORCO College - Syllabus Manager",
+      "Nortest City College",
+      "RivTest City College",
+      "SantTest Ana College",
+      "Testing College"
+    ]
+  },
+
+  "fold": {
+    "_why": "One institution entered under two spellings in the raw MAP export. map_colleges holds exactly ONE row for each (ids 24, 121, 119), so the duplicate is an export artifact, not a roster fact. Verified 2026-08-17: all six spellings carry ZERO adoptions, so folding cannot lose units — but the merge is written as a SUM anyway, because that stops being true the moment one of them articulates something.",
+    "_note": "Fold maps a variant spelling onto the canonical name. The canonical must itself be a name map_colleges carries.",
+    "map": {
+      "Calbright College Credit": "Calbright College Non-Credit",
+      "North Orange Continuing Education Credit": "North Orange Continuing Education",
+      "San Diego College of Continuing Education Credit": "San Diego College of Continuing Education"
+    }
+  },
+
+  "_expected_axis": {
+    "_why": "A regression tripwire. If these counts move, a college was added, renamed, or newly folded — which is worth noticing rather than silently rendering a different number of columns.",
+    "payload_spellings": 122,
+    "after_rules": 118,
+    "credit": 115,
+    "noncredit": 3,
+    "_noncredit_gap": "Sam expects FOUR standalone noncredit institutions (NOCE, San Diego Cont. Ed, Mt. SAC NC, Calbright). Only three are renderable: Mt. SAC Noncredit has no separate identity in map_colleges or the exhibits export, so it cannot be a column until MAP carries it. See docs/noncredit_cpl_thinking.md and the Learning Partners roadmap row."
+  }
+}
