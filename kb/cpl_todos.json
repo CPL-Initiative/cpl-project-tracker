@@ -1,9 +1,33 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-17 · Sky165 — the grid is live, it exports to a spreadsheet, and it now shows near-misses.",
-  "_session": "Session 165 (Sky165)",
-  "_status": "The grid is built and merged: credential names down the side, every college across the top. Green is what a college already has; a number in brackets is what it could still get — and that number is what other colleges ACTUALLY got, never the most the exhibit allows on paper, because no college has ever claimed all of it. It also downloads as a spreadsheet now, and the spreadsheet is generated from the same code as the screen so the two cannot disagree. New since you asked: a college that has already taken a credential but claimed LESS than its peers now shows the shortfall too — 337 of those, and they are the easiest wins we have because the relationship already exists. Session 164's lost work turned out to be better than ours on several points and we took it. The one thing left is you looking at it in a browser and saying whether it reads.",
+  "_as_of": "2026-08-17 · Sky167 — the blank figures on My College are fixed, and the tab now starts by asking what you want to look at.",
+  "_session": "Session 167 (Sky167)",
+  "_status": "My College was showing nothing for every single college — not because the numbers were missing, but because the page was never actually proving who you were when it asked the database for them. The database answered 'here are your zero rows' rather than 'you are not allowed', which looks exactly the same on screen, so it read as though 109 colleges had no CPL data. They all had data the whole time. That is fixed. While in there we rebuilt the tab the way you asked: it opens by asking what you want to look at (your college, your district, or statewide), then welcomes you and shows the detail underneath, with Sierra sitting at the top already open. There is an expand-all / collapse-all, and a button that builds a Word briefing of whatever you are looking at — built from what is actually on your screen, so the document can never disagree with the page. Two of the five choices are switched off because we genuinely do not have the data for them, and they say so rather than pretending. Sierra also now says the same things in the same words on all three places she appears. What is left is you looking at it.",
   "items": [
+    {
+      "id": "s167-look-at-my-college",
+      "for": "Sam",
+      "tab": "college-briefing",
+      "text": "Open My College and tell us if it reads. It now starts by asking what you want to look at — your college, your district, or statewide — and only then welcomes you and shows the sections. Nobody has seen it in a browser yet, and how much detail should be on screen at once is your call, not something we can measure."
+    },
+    {
+      "id": "s167-region-lists",
+      "for": "Sam",
+      "tab": "college-briefing",
+      "text": "Two of the five choices on My College are switched off: Strong Workforce region and Academic Senate region. We could not find either grouping in anything we hold — you said they are on the MAP Dashboard. If you can get us a list of which college belongs to which, both switch on the same day. We deliberately did NOT guess from the region data we do have, because it is a different set of boundaries and would have quietly put colleges in the wrong group."
+    },
+    {
+      "id": "s167-briefing-filename",
+      "for": "Sam",
+      "tab": "college-briefing",
+      "text": "The new My College briefing downloads as a Word document named starting with the date (20260817_...). The older Custom Report puts its date at the end instead. Worth picking one so your folder sorts properly — say which and we will make them match."
+    },
+    {
+      "id": "s167-glyph-sweep",
+      "for": "Sam",
+      "tab": "fact-sheet",
+      "text": "Sierra now uses plain words instead of emoji everywhere she appears. But the Fact Sheet's own buttons still have them (the Word and Print buttons), so that row now has one plain button between two with icons. Same for the To-Do and signed-in labels on every tab. Say the word and we will finish the sweep — it is a few minutes."
+    },
     {
       "id": "s163-noncredit-fourth",
       "for": "Sam",
@@ -15,12 +39,6 @@
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
       "text": "Four credentials appear on the tab as \"unclassified\" even though the Credential Reference already knows them by name. They are not broken, just not linked up, so they sink to the bottom of the list where nobody finds them. Fixing it is a naming decision rather than code — we can walk you through the four whenever you want. Separately, two statewide exhibits match no college at all — nobody has adopted them, nobody is even a candidate, and they carry no credit recommendations. They look like empty records rather than real opportunities; worth a glance at the same time."
-    },
-    {
-      "id": "s162-test-bounds",
-      "for": "Fable",
-      "tab": "—",
-      "text": "Sweep the automated tests for checks that measure distance in characters rather than testing the actual thing. One of them had been failing for a day, and not because anything was broken: a previous session added an explanatory comment, which pushed the text it was looking for out of range. It went red on the commit that documented itself best. There are likely others."
     },
     {
       "id": "s160-finance-scope",
@@ -53,12 +71,6 @@
       "text": "Six new decision rights are on the register with nobody's name against them. Start with DR-13, the workplan itself — it is the most public thing the project publishes, four of its tables can be edited in the page by anyone holding the team phrase, and a wrong figure reaches the live dashboard on the next morning's run."
     },
     {
-      "id": "s159-claude-md-size",
-      "for": "Fable",
-      "tab": "Docs",
-      "text": "The project's always-loaded instructions file is still twice the size it should be. This session archived one old session write-up and rewrote a section instead of adding to it, but that is holding the line, not fixing it. The finished workstreams — the EACR filters, the team phrases, the sign-in work — are history now and belong in the reference folder. Every line costs every future session."
-    },
-    {
       "id": "s165-look-at-the-grid",
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
@@ -69,12 +81,6 @@
       "for": "Fable",
       "tab": "Exhibit & CR Adoption",
       "text": "Fix the Cañada spelling where it starts, not just where it shows. One part of the dashboard generator writes the name with mangled accented characters and another writes it correctly, so the same college arrived under two names. We have folded them together, but the generator should stop producing two spellings — and nobody has checked whether other accented names are affected."
-    },
-    {
-      "id": "s165-look-at-the-grid-2",
-      "for": "Sam",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Open the Adoption matrix sub-tab and tell us whether it reads. It is 434 credentials by 118 colleges, so it scrolls sideways — unavoidable at that width — with the credential column and the header row frozen. About a sixth of the squares carry a number. This is the only open question left on it, and it is a judgement call rather than something we can measure."
     }
   ]
 }

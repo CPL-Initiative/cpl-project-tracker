@@ -4354,3 +4354,18 @@ rather than building it and discovering it.
 ⚠️ **The short-name gap was already solved in the repo** — 19 of 122 spellings had none; SkyLink's committed crosswalk
 resolved **15**, taking fallbacks to zero. Fourth session running that the best catch was a thing already committed.
 Story: `docs/eacr_scope_lessons.md` · durable [`methodology-an-opportunity-figure-must-be-what-peers-achieved`](docs/kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md) · handoff `docs/session_164_handoff.md`.
+
+### Sky165 — the spec survived, the code did not (2026-08-17, Session 165)
+
+Session 164 built this view and **never pushed it** — no branch, no PR, no stash. What survived was the
+handoff, the `_expected_axis` tripwire, four `cpl_memory` rulings and the published payload; that was enough to
+rebuild to the same measured numbers in one sitting. **The handoff discipline is what made a lost session
+survivable**, and the parts that paid were the checkable ones: expected counts, rulings recorded as rulings,
+figures stated with their measurement.
+Two merges — **#1229** (the matrix view + the roster fold) and the test-bound rescope. **62 checks, 49 fail pre-fix.**
+⭐ **A FOLD AT THE LABEL LAYER IS NOT A FOLD** — the axis was 119 where the tripwire said 118, and the duplicate
+was hidden by the very resolver every consumer counted through. See the EACR row.
+⚠️ **Two neighbouring tests were BOUNDS, not guards** — "exactly two sub-tabs" and an ArrowRight wrap driven from
+`tabs()[1]`, which only wraps on a two-tab bar. The handler was correct throughout. Third instance of
+`a-test-bound-rots-when-the-code-legitimately-changes` in this workstream: **assume any count-shaped assertion is one.**
+Story: `docs/eacr_scope_lessons.md` · durable [`methodology-a-fold-at-the-label-layer-is-not-a-fold`](docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md) · handoff `docs/session_166_handoff.md`.

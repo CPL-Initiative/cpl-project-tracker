@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-11
+updated: 2026-08-17
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -9,6 +9,9 @@ artifacts:
   - kb/supabase_sierra_feedback_ci_status.sql
   - tests/map_team_queue.test.js
   - tests/sierra_feedback_ci_rows.test.js
+  - college_briefing.js
+  - tests/college_briefing_auth.test.js
+  - tests/my_college_scope.test.js
 related:
   - "[[docs/kb-notes/methodology-a-written-backlog-decays-silently]]"
   - "[[docs/kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow]]"
@@ -984,3 +987,152 @@ item elsewhere is **EACR's `statewide_prescriptive.js` → Supabase** (carryover
 five sessions). On this tab, two unanswered design questions: whether the closed-row
 summaries earn their place, and whether *Start here* should be the one section
 open by default.
+
+---
+
+## 2026-08-17 (Session 167, Sky167) — the key was a ghost, then the tab was rebuilt around the choice
+
+Three merges: **#1232** (the auth fix + Sierra alignment), **#1233** (the
+scope-first redesign), **#1234** (the docx briefing).
+
+### The defect Sam reported, and why it looked like missing data
+
+Sam, against *"What that waiting credit actually is"* showing `no figures held`:
+**"I think all the colleges are coming up blank on this."**
+
+`waitingBreakdown()` was correct throughout. The credential never reached the
+server.
+
+`getSession()` in `college_briefing.js` read `localStorage.cpl_team_session`.
+**That string occurred exactly once in the entire repo — as that read.** No
+module, no sign-in flow and no test has ever written it, so it returned `null`
+for every visitor since the tab was written. Two consequences:
+
+1. **The reviewer session was invisible.** The canonical key is `cpl_sb`, which
+   `cpl_session.js` (the keeper, #1205) holds continuously fresh for the other
+   25 modules. This tab never read it, so the keeper could not help it and a
+   magic-link reviewer was, to this file, a logged-out guest.
+2. **The team phrase never left the browser.** `signedIn()` checked
+   `cpl_team_pass` *separately* — so a phrase holder rendered the whole tab —
+   but `authHeaders()` built its headers from the always-null session and
+   attached no `x-team-pass`, which is the header `team_pass_ok()` reads.
+
+Both halves of `is_allowed_reviewer() OR team_pass_ok()` were therefore false on
+every gated read.
+
+**Why it presented as a data gap.** An RLS-filtered `SELECT` is not an error:
+PostgREST answers **200 with `[]`**. So `map_college_credit_summary`,
+`map_college_cr_unit`, `map_college_goal2` and `map_college_contacts` all
+returned empty arrays that are indistinguishable from *"this college has
+nothing"* — while `map_colleges`, `chatbox_credentials` and `cpl_funding_config`
+(all public-read) kept working and made the page look healthy. **109 of the 120
+non-test colleges have a credit-summary row.** Nothing was missing.
+
+**The fix delegates** to `window.CPL_SESSION` and
+`CPL_TEAM_PHRASE.decorateHeaders` rather than writing a fourteenth copy of the
+auth dance — the keeper's own reasoning. A phrase session keeps the **anon key**
+as its bearer (`Bearer <phrase>` is the classic version of this mistake), and
+the stored phrase rides along even for a JWT session, which un-shadows it for a
+signed-in **non-reviewer** whose JWT alone fails `is_allowed_reviewer()`.
+
+⚠️ **The test suite was complicit.** `college_briefing.test.js` signs in with
+`cpl_team_pass` — the broken path — and stubs `fetch`. It exercised the defect
+on every one of its 232 passing checks and asserted nothing about it. The new
+`college_briefing_auth.test.js` asserts **headers, not pixels**, because there
+is no rendered state that distinguishes this bug from the truth.
+
+### Then Sam's seven asks
+
+Open on the **choice**, not a title; curate the second list from the first
+answer; welcome the reader only once there is something to welcome; Sierra
+collapsible but expanded; expand/collapse all; a briefing button; no emoji.
+
+Design calls worth recording:
+
+- **Collapse all closes Sierra too** — Sam's ruling, the literal reading. A
+  control that silently exempts one section teaches people it is broken.
+- **The `<summary>` carries the single heading.** `hoistAssistantIntro()` now
+  splits the widget's intro: its `h2` into the summary (so a collapsed section
+  names itself), the description into the body. Putting the title in both is
+  how #1231's duplicate would return one level up.
+- **`askSierra()` opens the section first.** Prefilling a widget inside a closed
+  `<details>` types into a box nobody can see — the #1166 invisible-input bug,
+  which was fixed for the Sierra Training hand-off that drives *this* widget.
+  Making Sierra collapsible re-armed it.
+- **"Choose another college" returns to step 2, not step 1.** Switching college
+  is the common journey; re-answering "who are you" is a tax.
+- **The scope is remembered but always escapable**, and a remembered scope that
+  is not `ready` is ignored rather than stranding someone on a blank screen.
+
+### The pushback, and the trap underneath it
+
+Two of the five scopes Sam named have **no data anywhere in this repo**:
+`map_colleges` carries only `college_id / college_name / variants / is_test /
+entity_kind`, and the funding roster's only geography key is `district`.
+
+⚠️ **And the region data we DO hold is a third scheme.** `college_geo.region`
+(120 colleges, 10 regions) is hand-authored for Sierra's *"which colleges NEAR
+me"* ranking — `chatbox/_seed_college_geo.py` says exactly that in its
+docstring. The **Strong Workforce programme has eight** regional consortia with
+different boundaries (our *San Joaquin Valley* + *Greater Sacramento* split is
+not *Central Valley/Mother Lode*; *Central Coast* is not *South Central Coast*),
+and the **ASCCC has four** areas, A–D. Pointing either label at `college_geo`
+would silently mis-group a college's peers in a view people act on.
+
+So both render **disabled with their reason on hover**, and a test pins that
+they stay unwired — because the tempting fix for a disabled button is the
+nearest available column. Sam confirms the real groupings are on the MAP
+Dashboard, so this is *not located in an export yet*, not *does not exist*.
+
+### The disclosure rule the roll-ups needed
+
+District and statewide sum **only the unsuppressed rows**. `k=10` withholds 13
+colleges; a total that included them would mean `total − visible = the withheld
+figure`, and a two-college district hands it over in one subtraction. Summing
+only what is already on screen makes that arithmetic return zero by
+construction. The withheld are **counted** in the note so the total is never
+mistaken for the whole group, and an **absent** college stays distinct from a
+**withheld** one — folding the two turns *"never measured"* into *"does none"*.
+
+### The briefing
+
+Sam's first ask was "a Report button that creates a briefing"; four hours later,
+**"Briefing should be docx"**. Both versions read the **rendered DOM** rather
+than re-deriving the figures — the EACR `matrixCell()` reasoning, since a report
+that computes separately is a second implementation and the document is the copy
+that leaves the building. It also inherits the disclosure control for free: a
+withheld college reads "withheld" on screen, so it reads "withheld" in the file.
+The suppression note travels **inside** the document, because on screen a reader
+has the surrounding page to explain a dash and in an emailed file they do not.
+
+⚠️ Its first cut walked `details.cb-sec` only — and a **district or statewide
+view has no sections at all**, so the briefing was empty for two of the three
+scopes and the "nothing to put in a briefing yet" guard would have reported that
+as though the college had no data. Now a document-order pass over a whitelist.
+
+### Two bugs the tests found, both introduced by this work
+
+- **`finish()` hoisted the first `.cb-bar` in document order** into the Sierra
+  box. That was correct only because the picker bar happened to be authored
+  first; once the pickers moved to step 2, the first `.cb-bar` in the briefing
+  view is one of the waiting breakdown's **progress bars**, which would have
+  been torn out of its table and dropped into the assistant. *A positional
+  selector is a bound on the order things are written in.*
+- **The rendered checks passed over an EMPTY list.** jsdom defers
+  `DOMContentLoaded`, so the standalone Sierra page never booted and
+  `.some()`/`.every()` were vacuously true on nothing. Each such check now
+  requires the five chips in its own condition.
+
+### Current state
+
+The tab is live on `main` and **nobody has seen the redesign in a browser** —
+copy and density are Sam's call. The auth fix is the one that matters
+operationally: every MAP figure on the tab was blank for every user, and is not
+any more.
+
+### Next concrete step
+
+1. Sam opens the tab and reacts to the shape.
+2. The two region lists, when he locates them in a MAP export → flip `ready`.
+3. `college_report_generator.js` dates its filename at the END where the new
+   briefing uses the mandated `YYYYMMDD` prefix — one convention, Sam's call.
