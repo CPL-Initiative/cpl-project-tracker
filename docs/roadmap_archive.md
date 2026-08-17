@@ -4317,3 +4317,21 @@ purpose** gives no signal that writes are failing.
 ⚠️ **A PRIVACY GUARD HAD SILENTLY STOPPED GUARDING**, and **every detector written this run was wrong on first
 writing** — all three caught by printing what they found instead of trusting the count.
 Story: `docs/session_credentials_lessons.md` · handoff `docs/session_159_handoff.md`.
+
+
+### Sky162 — the filter was answering a different question (2026-08-16, Session 162)
+
+Four merges (**#1221**–**#1223**, plus sibling **#1224**) against Sam's four EACR questions. **224/224 green.**
+⭐ **THE COLLEGE FILTER WAS 93.6% NOISE** and **the strong signal already existed, driving nothing** — the
+prescriptive M-ID layer names the local course and no filter could reach it. Hence **three scopes, not Sam's
+two-position toggle**: a binary would pool it with the TOP guesses, which is the conflation being fixed.
+⭐ **THE EXPORTS WERE OUTSIDE THE LOOP I HAD JUST BUILT** — found by re-reading against Sam's *goal*, not my
+diff. **A spreadsheet outlives the screen that produced it.**
+⭐ **THE A11Y PASS FOUND MORE DEFECTS IN DAY-OLD WORK THAN IN INHERITED CODE** — four, all mine from hours
+earlier. Where a native element carries the semantics, taking it deletes the whole error class.
+⚠️ **`val()` GUARDS THE CHECK; THE DRIVER IS THE OTHER HALF.** Handoff 161 predicted this trap and prescribed
+`val()`; the harness used it and still printed **zero checks** pre-fix, because the throw was in a driver
+*between* checks. **The prescription was recorded at the wrong altitude** — mechanism, not principle.
+⚠️ **The one red file on main was a stale `{0,900}` window**, not a defect — Sky160's own rename pushed the
+target to 1,458 chars, and `cpl_memory` had recorded that class on 08-14 with nobody re-sweeping.
+Story: `docs/eacr_scope_lessons.md` · durable [`methodology-a-filter-and-what-justifies-it-must-share-one-source`](docs/kb-notes/methodology-a-filter-and-what-justifies-it-must-share-one-source.md) · [`methodology-a-partial-aria-pattern-is-worse-than-none`](docs/kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) · handoff `docs/session_163_handoff.md`.

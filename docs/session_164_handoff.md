@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_166_handoff.md
+---
+
 # Session 164 — handoff from Sky163 (Session 163, 2026-08-17)
 
 You are Session 164. Sky163 scoped the **CER Adoption Matrix** sub-tab with Sam,

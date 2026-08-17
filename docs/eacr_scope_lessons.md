@@ -348,3 +348,161 @@ Mock (real data, interactive):
 Confirm the dispatched run published `adopter_units`, then write
 `buildMatrixView()` + `tests/eacr_matrix.test.js`. The rendering logic is already
 proven in the mock; the port is mechanical.
+
+---
+
+## 2026-08-17 — Session 165 (Sky165): the view, and the column that was there twice
+
+### (a) What was learned
+
+**The session before this one lost its work, and the recovery cost was nearly
+zero — because the SPEC had been written down and the CODE had not.** Session
+164 built this view and never pushed it: no branch, no PR, no stash, nothing on
+disk. What survived was `docs/session_164_handoff.md`, the `_expected_axis`
+tripwire in `map_college_roster_rules.json`, four `cpl_memory` rows carrying
+Sam's rulings, and the published payload itself. That was enough to rebuild to
+the same measured numbers — 434 × 118, 17.0% inked — in one sitting.
+
+The lesson is not "push more often" (though: push more often). It is that **the
+handoff discipline is what made a lost session survivable**, and the parts of it
+that paid were the specific, checkable ones: a committed tripwire with expected
+counts, rulings recorded as rulings, and figures stated with their measurement.
+A handoff that had said "build the matrix view, the design is agreed" would have
+lost the design.
+
+**A fold at the label layer is not a fold.** The axis measured **119** where the
+tripwire said **118**. The extra column was Cañada College entered twice —
+`Cañada College` and `CaÃ±ada College`, the latter being the former read as
+latin-1 and re-encoded. Both come out of `excel_to_dashboard.py`, on different
+paths: the correct spelling into `potential_names` (634 cards), the mangled one
+into `statewide_prescriptive.js` (26 college-pairs).
+
+It had been invisible because **the only consumer resolving these names ran them
+through `cplCollegeShort()`, whose `normalize()` folds `Ã±` → `n`**. So the
+LABEL count read 118 over a 119-row axis: the number was right and the reason was
+wrong. Nothing was measuring the axis itself. Had it shipped, the grid would have
+carried two Cañada columns, one holding all 26 of its opportunities and the other
+empty — which is indistinguishable, by looking, from a college that has no data.
+
+Fixed in `kb/reference/map_college_roster_rules.json`, beside the sandbox rule
+and the `" Credit"` twins, as a SUM. Durable version:
+[`methodology-a-fold-at-the-label-layer-is-not-a-fold`](kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md).
+
+**The fold also moves a count Sam sees.** Four adopter spellings where one is the
+sandbox and two are one institution is **two** adopters. Same shape as the
+7-vs-6 on California Real Estate Broker License: an identity defect surfacing as
+a credibility defect in a number a college reads.
+
+**The row grain is the unified TITLE, and `credentialKey()` is the wrong tool.**
+Sky163 measured 434 rows; grouping by `credentialKey()` (title + issuer, with a
+blank issuer folded into a lone named one) gives **431**, because a title with
+two *named* issuers stays split. Sam asked for CER titles down the side, and the
+CER grain is the title — so two cards of one credential are one row and a
+college's units sum across them. Reusing the neighbouring view's grouping would
+have been the natural move and quietly wrong by three rows.
+
+**The peer benchmark is recomputed per ROW, not read from the payload.**
+`peer_units_median` is computed per CARD; a row may fold several. Recomputing
+from the row's own adopter values keeps the brown number and the green numbers
+beside it the same quantity. For a single-card title the two agree exactly, and
+the test asserts that rather than trusting it.
+
+**Two neighbouring tests were bounds, not guards.** `eacr_scope` asserted
+"exactly two sub-tabs render" and `eacr_a11y` drove ArrowRight from `tabs()[1]`
+expecting `tabs()[0]` — which is only *wrapping* when the bar has exactly two
+tabs. Adding a third broke both while the roving-tabindex handler was correct
+throughout (it wraps modulo the count). Rescoped to the property: sub-tabs by
+NAME, and wrap driven from the LAST tab. The a11y file gained a check on the way
+(ArrowLeft backwards-wrap, which nothing covered). This is the third instance in
+this workstream of the `a-test-bound-rots-when-the-code-legitimately-changes`
+class — it is worth assuming any count-shaped assertion is one.
+
+### (b) Current state
+
+**#1229** — `buildMatrixView()` in `statewide_interactive.js`, a third sub-tab
+beside Credentials and Adoption table, plus the roster-rules fold.
+
+Measured by rendering the **live payload** through jsdom, not predicted:
+
+| | |
+|---|---:|
+| credentials (rows, default) | **434** |
+| colleges (columns) | **118** |
+| cells | 51,212 |
+| green (adopted) | 6,301 · 12.3% |
+| brown (still available) | 2,411 · 4.7% |
+| inked | **17.0%** |
+| rows carrying an opportunity | 258 · **59%** |
+| render | 1.59s, only on tab selection |
+| distinct header labels | 118, zero blank, zero duplicate |
+
+`tests/eacr_matrix.test.js` — **62 checks, 49 failing against the pre-fix file**
+(verified by stashing the diff). Drivers wrapped as well as assertions, per the
+`val()`-guards-the-check lesson.
+
+Sam's four rulings all hold and are each carried by a check. Brown is the peer
+median; a check asserts no brown cell can display `rec_units_total`.
+
+### (c) Strategic roadmap
+
+1. **A matrix CSV export.** The design explicitly anticipates this number
+   leaving as a spreadsheet — that is *why* brown is a benchmark rather than the
+   line total. The standing rule is that a filter, its column and its exports
+   share one scope, so the export must carry the same peer-benchmark semantics
+   and the same 118-column axis.
+2. **Fix the mojibake at source** in `_build_statewide_prescriptive()`. The fold
+   is a safety net; a generator emitting two encodings of one name is a defect.
+3. The four Sky162 curation items, still open.
+4. **Mt. SAC Noncredit** — the axis is 115 credit + 3 noncredit where Sam expects
+   4. A MAP data question (Learning Partners item 1), not a code one.
+
+### (d) Next concrete step
+
+Sam looks at the grid on the deployed site and says whether the density reads.
+Then the CSV export, which is the half that reaches colleges.
+
+### (e) Addendum — Session 164 left three memory rows, and one is unshipped work
+
+Found *after* the build, by querying `cpl_memory` for the checkpoint rather than
+before it. **Session 164's code died but its `cpl_memory` writes survived**, and
+they were substantive. This is the Rule 8 lesson landing on the session that was
+already writing about it: the table was queried at the start of this run with
+tags `eacr`/`matrix`/`adoption`, and these three rows carry `event_date = null`,
+so they sorted last and were not read. **Filter on `author` and `created_at` too
+when picking up directly after another session.**
+
+| Sky164 row | What Sky165 did |
+|---|---|
+| `prescriptive-layer-never-got-the-roster-rules` | **Corroborated → `verified`.** It found the same three mismatched spellings, including the mojibake, one hour before this session rediscovered them independently. It did not have the reason nobody had noticed (the resolver hid it), which is what the new KB note adds. |
+| `re-measure-an-inherited-blocker-against-what-shipped` | **Corroborated → `verified`.** It caught that handoff 164's own "19 of 122 spellings need the identity crosswalk" was stale — `college_short_names.js` alone now resolves all of them. Sky165 measured 0 unresolved independently and did not wire the crosswalk in. |
+| `partial-adopters-are-the-larger-cpl-opportunity` | **Re-measured, NOT shipped, escalated to Sam.** |
+
+**On the two competing fixes.** Sky164 proposed canonicalising the join through
+`cplCollegeShort(name,'full')`; this session folded in the roster rules instead.
+Both work today. The explicit fold keeps each identity decision listed and
+reviewable rather than making it a side effect of a display function, and the
+Python generator inherits it — but it cannot catch a *new* duplicate without a
+new entry, which is exactly what Sky164's approach would have handled
+automatically. **The resolution is that the two are complementary:** the explicit
+fold plus the `no two columns share a label` collision check gives both the audit
+trail and the automatic detection. That check is in the shipped test.
+
+**The partial-adopter finding is the one to act on.** Every EACR framing to date
+asks *"who has not adopted this"*, which hides partial adopters completely — and
+they are the more tractable half, because the articulation relationship, the
+faculty contact and the credential review already exist. Re-measured here:
+
+| | |
+|---|---:|
+| green cells below their row's peer median | **349** (Sky164 said 337) |
+| credentials affected | **172** of 434 |
+| units between those colleges and their peers | **~1,106** |
+
+349 vs 337 is definitional (row-recomputed median vs the payload's per-card
+`peer_units_median`; strict vs non-strict), not a contradiction — **restate the
+measure when quoting it.** Deliberately not shipped: it puts a second number
+inside green cells, changing the density and semantics of the view Sam approved
+from a mock, and he has not seen this variant. Sky164 also supplied the argument
+that makes it defensible — **the two browns are justified differently**: a
+non-adopter's is gated on the M-ID *likely* tier (Sam's ruling 4), an adopter's
+needs no gate because that college is already in the peer cohort.
