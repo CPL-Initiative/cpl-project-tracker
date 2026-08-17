@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-16T13:07:44.562Z",
+  "scraped_at": "2026-08-17T00:28:12.094Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -473,14 +473,14 @@
         },
         {
           "college": "Cuesta College",
-          "students": 274,
+          "students": 275,
           "units": 66,
-          "avgUnits": 0.24087591240875914,
+          "avgUnits": 0.24,
           "transcriptionRate": 88.6,
-          "avgTranscribed": 0.21350364963503649,
+          "avgTranscribed": 0.21272727272727274,
           "criteriaMetCount": 1,
           "militaryStudents": 175,
-          "nonMilitaryStudents": 99,
+          "nonMilitaryStudents": 100,
           "apprenticeStudents": 1,
           "savings": 87027.5,
           "yearImpact": 388213,
@@ -1757,7 +1757,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "49,956",
+      "value": "49,957",
       "breakdowns": [
         {
           "label": "Military",
@@ -1765,7 +1765,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "23,115"
+          "value": "23,116"
         },
         {
           "label": "Apprentice",
@@ -1877,15 +1877,15 @@
     }
   ],
   "raw": {
-    "Students": 49956,
+    "Students": 49957,
     "Units": 217917.65000000002,
     "TranscribedUnits": 76815.45,
     "Savings": 316340065.25,
     "YearImpact": 1250629379.4,
     "MilitaryStudents": 26924,
-    "NonMilitaryStudents": 23115,
+    "NonMilitaryStudents": 23116,
     "AprenticeStudents": 595,
-    "AverageUnits": 4.3621917287212755,
-    "TranscribedAverage": 1.5376621426855632
+    "AverageUnits": 4.362104409792422,
+    "TranscribedAverage": 1.537631362972156
   }
 }
