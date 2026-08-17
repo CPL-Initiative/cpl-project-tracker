@@ -124,11 +124,19 @@ function run() {
   key(first, "ArrowRight");
   check("ArrowRight moves to (and activates) the next tab",
     val(() => tabs()[1].getAttribute("aria-selected")) === "true");
-  key(tabs()[1], "ArrowRight");
+  // Wrap is only observable from the LAST tab. This drove ArrowRight from
+  // tabs()[1] and expected tabs()[0], which is only "wrapping" when the bar has
+  // exactly two tabs — so adding a third turned a wrap test into a next test
+  // that then failed. Jump to the end first and the check stays true for any
+  // number of tabs.
+  key(tabs()[1], "End");
+  check("End jumps to the last tab",
+    val(() => tabs()[tabs().length - 1].getAttribute("aria-selected")) === "true");
+  key(tabs()[tabs().length - 1], "ArrowRight");
   check("ArrowRight wraps around to the first tab",
     val(() => tabs()[0].getAttribute("aria-selected")) === "true");
-  key(tabs()[0], "End");
-  check("End jumps to the last tab",
+  key(tabs()[0], "ArrowLeft");
+  check("ArrowLeft wraps backwards to the last tab",
     val(() => tabs()[tabs().length - 1].getAttribute("aria-selected")) === "true");
   key(tabs()[tabs().length - 1], "Home");
   check("Home jumps to the first tab",
