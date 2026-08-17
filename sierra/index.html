@@ -25,7 +25,13 @@
       <p class="s-role">Your CPL Sherpa</p>
     </div>
   </div>
-  <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu ↗</a>
+  <!-- The trailing ↗ is gone (Sam's no-glyphs rule), but the "this leaves the
+       page" cue is NOT: this link opens a new tab, and dropping the arrow
+       outright would remove the only warning a keyboard or screen-reader user
+       gets before focus moves somewhere they did not ask for. It becomes a
+       visually-hidden phrase — the accessible form the arrow was only
+       gesturing at. Same treatment as the My College resource links (#1231). -->
+  <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu<span class="s-sr">(opens in a new tab)</span></a>
 </header>
 
 <main class="s-main">
@@ -34,7 +40,7 @@
       where students can turn a license, certification, apprenticeship, or military training into
       <strong>college credit</strong>, which California community colleges teach or already award credit
       for a subject, and how the process works.</p>
-    <p class="s-beta">🧪 Beta — I'm still learning, so please double-check anything important with the
+    <p class="s-beta">Beta — I'm still learning, so please double-check anything important with the
       college's CPL coordinator (I point you to the right one). Don't enter personal information;
       questions are logged anonymously to help me improve.</p>
   </div>

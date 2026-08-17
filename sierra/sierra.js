@@ -62,12 +62,19 @@
   // SHARED with the COBI CPL Assistant tab (same origin, same key). Sent as an
   // optional `audience` field — callers that omit it (the map.rccd.edu widget)
   // are unaffected.
+  // Text labels, no glyphs — Sam's COBI design rule (cpl_memory
+  // cobi-no-cheesy-glyphs-design-rule), applied to cpl_chat.js in #1231 and
+  // carried here so the three surfaces that mount Sierra read identically.
+  // These strings must stay in step with cpl_chat.js AUDIENCES: the picked value
+  // is persisted under a SHARED same-origin key and travels to the same Edge
+  // Function, so a label that drifts here is the same assistant introducing
+  // itself two different ways to the same person.
   var AUDIENCES = [
-    { k: 'student',       label: '🎓 Student / future student' },
-    { k: 'faculty',       label: '📚 Faculty' },
-    { k: 'administrator', label: '🏛️ College administrator' },
-    { k: 'employer',      label: '💼 Employer / industry' },
-    { k: 'civic',         label: '🤝 Civic leader' },
+    { k: 'student',       label: 'Student / future student' },
+    { k: 'faculty',       label: 'Faculty' },
+    { k: 'administrator', label: 'College administrator' },
+    { k: 'employer',      label: 'Employer / industry' },
+    { k: 'civic',         label: 'Civic leader' },
   ];
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;     // in-memory copy (localStorage may be unavailable)
@@ -108,7 +115,7 @@
     setTimeout(function () { audEl.classList.remove('s-need'); }, 1700);
   }
 
-  // ── Per-answer feedback (👍/👎 + optional note → Supabase sierra_feedback) ──
+  // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
   // One row per assistant turn, keyed by a client uuid: a thumb click logs
   // immediately and an added note (or a switched rating) updates the SAME row.
   // Writes go through the SECURITY DEFINER RPC `sierra_feedback_upsert` — a
@@ -120,7 +127,7 @@
       : 'turn-' + Date.now() + '-' + Math.random().toString(16).slice(2);
   }
 
-  // ── Copy an answer (📋) ────────────────────────────────────────────────────
+  // ── Copy an answer ────────────────────────────────────────────────────
   // People take Sierra's answers into email, Word and Teams, so the copy has to
   // survive the trip. We write BOTH flavours when the browser allows it:
   // text/html (the rendered bubble) so a paste into Word or Outlook keeps the
@@ -230,7 +237,7 @@
     var copyBtn = document.createElement('button');
     copyBtn.type = 'button';
     copyBtn.className = 's-fb-copy';
-    copyBtn.textContent = '📋 Copy';
+    copyBtn.textContent = 'Copy';
     copyBtn.title = 'Copy this answer — formatting is kept when you paste into Word, Outlook or Teams';
     copyBtn.setAttribute('aria-label', 'Copy this answer to the clipboard');
     var copyTimer = null;
@@ -240,12 +247,12 @@
       // for turns that never streamed one (an error message, say).
       var plain = answer || (bub ? bub.textContent : '') || '';
       copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
-        copyBtn.textContent = ok ? '✓ Copied' : '⚠ Press Ctrl+C';
+        copyBtn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
         copyBtn.classList.toggle('on', ok);
         if (!ok && bub) selectNode(bub);
         if (copyTimer) clearTimeout(copyTimer);
         copyTimer = setTimeout(function () {
-          copyBtn.textContent = '📋 Copy';
+          copyBtn.textContent = 'Copy';
           copyBtn.classList.remove('on');
         }, 2200);
       });
@@ -284,7 +291,13 @@
     }
 
     var btns = {};
-    [['up', '👍', 'This answer was helpful'], ['down', '👎', 'This answer was not helpful']]
+    // The thumbs are WORDS here, as in cpl_chat.js (#1231). They were the one
+    // place in this bar where a glyph carried meaning no text repeated, so they
+    // could not simply be dropped — and spelling them out is also the accessible
+    // fix, because a bare 👍 announces as "thumbs up", which is a description of
+    // the picture rather than of what pressing it says. The aria-label stays: it
+    // is the full sentence, and the visible word is the short form of it.
+    [['up', 'Helpful', 'This answer was helpful'], ['down', 'Not helpful', 'This answer was not helpful']]
       .forEach(function (spec) {
         var b = document.createElement('button');
         b.type = 'button';
@@ -295,7 +308,7 @@
           rating = spec[0];
           btns.up.classList.toggle('on', rating === 'up');
           btns.down.classList.toggle('on', rating === 'down');
-          hint.textContent = '✓ Thanks — logged.';
+          hint.textContent = 'Thanks — logged.';
           noteWrap.hidden = false;
           upsert(noteIn.value.trim() || null);
         });
@@ -317,13 +330,13 @@
           noteIn.hidden = true;
           noteBtn.hidden = true;
           noteDone.className = 's-fb-done';
-          noteDone.textContent = '✓ Note sent — thank you!';
+          noteDone.textContent = 'Note sent — thank you!';
         } else {
           // Keep the typed text on failure — never a cheerful tick over a
           // write that did not land.
           noteBtn.disabled = false;
           noteDone.className = 's-fb-fail';
-          noteDone.textContent = '⚠ Not sent — your note is still here, try again.';
+          noteDone.textContent = 'Not sent — your note is still here, try again.';
         }
       });
     });
