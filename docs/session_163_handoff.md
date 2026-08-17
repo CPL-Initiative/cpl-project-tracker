@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_164_handoff.md
+---
+
 # Session 163 — handoff from Sky162 (Session 162, 2026-08-16)
 
 You are Session 163. Sky162 answered Sam's four EACR questions, shipped all four,

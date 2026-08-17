@@ -1,14 +1,32 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-16 · Sky162 — the Exhibit & CR Adoption tab now filters for colleges that actually adopted. One thing needs your eyes.",
-  "_session": "Session 162 (Sky162) — the Exhibit & CR Adoption tab",
-  "_status": "You were right about the College filter, and by more than you thought. Filtering to a college was showing you every college that might one day adopt an exhibit alongside the ones that actually had — and the ones that actually had were only about 6% of what came back. Pick Pasadena and you got 1,790 results, of which Pasadena had adopted 44.\n\nThe reason is that \"could adopt\" was being worked out from the TOP code — so a welding exhibit listed every college with a welding program, whether or not they teach anything like it. That is a lead, not a match, and it was sitting in a column headed \"Potential Adopters\" and going out in the spreadsheets.\n\nIt now opens on colleges that have adopted. Two more settings sit beside it: one adds colleges that already teach the matching course (and it names the course), the other adds the broad TOP-code leads and says plainly that they are leads. That middle option is genuinely useful and had never been connected to anything — it existed, it just did no work.\n\nAlso: the exhibits that fold under one credential name are now listed on the card, a few credentials that were appearing twice under the same name have been merged, the three stacked sections are two tabs, and the whole tab has been gone over for screen readers and phones. The one item below is yours.",
+  "_as_of": "2026-08-17 · Sky163 — the new Exhibit & CR Adoption matrix view is scoped and half-built. One number needed rethinking.",
+  "_session": "Session 163 (Sky163) — the CER Adoption Matrix sub-tab",
+  "_status": "You asked for a grid: credential names down the side, every college across the top, credit-recommendation units in the cells — green for what a college already has, brown for what it could still get. That is being built, and your four calls (peer benchmark, open on colleges, rows with at least two adopters, brown only where it is credible) are all in.\n\nOne thing had to change, and it is worth knowing why. The obvious brown number is \"all the credit this credential carries, minus what you already claimed\". We checked before building it: 83% of colleges that adopt a credential only take part of it — typically 3 of the 9 recommendations available — and no college in California has ever taken the whole thing. AP Biology carries 36 units; the typical adopter gets 4 and the best gets 12. So a brown 36 would have told a college it could get roughly three times what the strongest college in the state has ever managed, in a number that goes out in spreadsheets. Brown is now what colleges like you actually got.\n\nThat also turned up something bigger than the question: among colleges that HAVE adopted, about two-thirds of the available credit is still unclaimed. The partial adopters are a easier win than the colleges that never started, and nothing has ever shown that.\n\nYour two roster calls are done and one of them fixed a live error: the sandbox college was being counted as a real adopter on the California Real Estate Broker License card, which was publishing 7 adopters when the truth is 6.",
   "items": [
     {
-      "id": "s162-eacr-default",
+      "id": "s163-noncredit-fourth",
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
-      "text": "Open the tab and tell us whether it should start on \"Adopted\". That is what it does now — filter to a college and you see what that college has actually articulated, nothing else. The two wider settings are one click away. It is a visible change and the numbers will look much smaller than you are used to, so we would rather you say it is right than assume it."
+      "text": "You said 115 credit colleges and 4 noncredit campuses. The 115 matches exactly. We can only find 3 noncredit — North Orange Continuing Education, San Diego College of Continuing Education, and Calbright. The fourth is Mt. SAC's noncredit side, and it does not exist as its own entry anywhere in MAP, so it cannot be a column until it does. Worth deciding whether MAP should carry it separately."
+    },
+    {
+      "id": "s163-real-estate-count",
+      "for": "Sam",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Heads up on a number that will change: the California Real Estate Broker License card has been showing 7 adopting colleges. One of those was our own sandbox account, so the real figure is 6. It is corrected now — flagging it in case anyone has quoted the 7."
+    },
+    {
+      "id": "s163-matrix-view",
+      "for": "Fable",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Build the matrix view itself. The data side shipped and the layout is agreed with Sam in a working mock — credential names down the side, colleges across the top with short names, green for units already articulated and brown for the peer benchmark not yet reached, expandable rows showing the underlying MAP exhibits."
+    },
+    {
+      "id": "s163-verify-payload",
+      "for": "Fable",
+      "tab": "Exhibit & CR Adoption",
+      "text": "Confirm the rebuilt data file actually carries the new per-college unit figures, and that the Real Estate Broker card now reads 6 adopters rather than 7."
     },
     {
       "id": "s162-unclassified-titles",
@@ -57,30 +75,6 @@
       "for": "Fable",
       "tab": "Docs",
       "text": "The project's always-loaded instructions file is still twice the size it should be. This session archived one old session write-up and rewrote a section instead of adding to it, but that is holding the line, not fixing it. The finished workstreams — the EACR filters, the team phrases, the sign-in work — are history now and belong in the reference folder. Every line costs every future session."
-    },
-    {
-      "id": "s160-share-check",
-      "for": "Sam",
-      "tab": "Admin",
-      "text": "Have a look at the Share section now showing on the Admin page — the Fact Sheet and Ask Sierra links. You can rename it, move it, or choose which sites show it, same as any other heading. Worth a glance to confirm it reads the way you expected."
-    },
-    {
-      "id": "s157-header-mobile",
-      "for": "Fable",
-      "tab": "Header",
-      "text": "Make the COBI header accessible and mobile-friendly, and drop the superscript from the logo. The superscript C is genuinely impossible — Unicode has no superscript capital C, so \"CPL\" renders as \"cPL\" and no font fixes it. Sam's call: plain, unbolded org name instead. (Still open, and more relevant now: you asked on 16 Aug that everything be accessible and mobile friendly. The Exhibit & CR Adoption tab was done to that standard this session; the header has not been.)"
-    },
-    {
-      "id": "s157-project-description",
-      "for": "Fable",
-      "tab": "About menu",
-      "text": "Sam wants to edit the Project Description in the ℹ About menu — it has gone stale as the project grew. It can't be edited in the page: the daily job rewrites that block every morning. The editor has to change where the daily job READS the description from."
-    },
-    {
-      "id": "s157-d11-credentials",
-      "for": "Fable",
-      "tab": "Sierra Training",
-      "text": "Sierra named 1 of 9 D1.1 welding credentials and nobody has worked out why yet. Measure first: either the search never returned the other eight, or it found them and the answer only mentioned the best one. Those are different bugs with different fixes."
     }
   ]
 }
