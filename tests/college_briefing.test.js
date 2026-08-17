@@ -1150,7 +1150,21 @@ check("(P) each section has a title and a single summary row",
 check("(P) Sierra AI is NOT inside a collapsible section",
   !!jRoot.querySelector(".cb-assist") && !jRoot.querySelector("details .cb-assist"),
   "she is the tab, not a drawer");
-check("(P) Sierra AI states what she is for", !!jRoot.querySelector(".cb-assist .cb-purpose"));
+// RESCOPED 2026-08-17. This asserted the ELEMENT (`.cb-purpose`), which was
+// this file's own copy of a description cpl_chat.js already printed — the
+// duplicate Sam asked to remove. The PROPERTY it was guarding is unchanged and
+// still worth guarding: the box has to say what she is for. It is satisfied by
+// whichever description survives — the widget's hoisted intro when it mounted,
+// the fallback heading's box when it did not — so the check reads the box's
+// prose, not one class name.
+//
+// (Third-instance discipline from the EACR work applies here too: an assertion
+// pinned to a specific element is a BOUND on today's markup. Pin the property.)
+var assistBox = jRoot.querySelector(".cb-assist");
+check("(P) Sierra AI states what she is for",
+  !!assistBox && /credit for prior learning|cpl/i.test(assistBox.textContent || "")
+    && (assistBox.textContent || "").trim().length > 120,
+  "the assistant box must describe itself, in whichever element carries it");
 
 // Open state must survive a re-render — render() rewrites innerHTML, so a
 // <details open> living only in the DOM would slam shut when the role picker

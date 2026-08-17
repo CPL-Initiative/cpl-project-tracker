@@ -44,17 +44,23 @@
    * so a program the team adds later still appears with no code change. */
   var IMPL_PROJECT = "cpl-implementation";
 
-  var ROLES = [
-    { id: "any", label: "Anyone at the college" },
-    { id: "coordinator", label: "CPL Coordinator" },
-    { id: "counselor", label: "Counselor" },
-    { id: "admissions", label: "Admissions & Records" },
-    { id: "veterans", label: "Veterans Services" },
-    { id: "admin", label: "Dean / Administrator" }
-  ];
+  // ⚠ THERE WAS A "Your role" PICKER HERE AND IT DID NOTHING (removed
+  // 2026-08-17). Six options — Anyone at the college / CPL Coordinator /
+  // Counselor / Admissions & Records / Veterans Services / Dean-Administrator —
+  // wired to `state.role`, which was assigned on change and READ NOWHERE. Every
+  // pick re-rendered the tab and changed not one word of it.
+  //
+  // That made it worse than clutter: it is a control that PROMISES the page
+  // will speak to your job and then silently doesn't, sitting inches above the
+  // "I'm a…" chips, which ask the same question and genuinely change Sierra's
+  // answer. Two role pickers, one of them a decoy. The chips are the role
+  // picker now (cpl_chat.js AUDIENCES).
+  //
+  // If per-role briefing content is ever wanted, build it against the chips'
+  // audience value — do not restore a second, parallel notion of "role".
 
   var state = {
-    college: null, role: "any", data: null, loading: false, error: null, loadedSignedIn: null,
+    college: null, data: null, loading: false, error: null, loadedSignedIn: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
     detail: null, detailFor: null, detailLoading: false, detailError: null,
@@ -65,7 +71,7 @@
     // 2026-08-12: Sierra AI is the tab; everything under it opens on demand.
     // Held in state rather than read off the DOM because render() rewrites
     // innerHTML — a <details open> that lived only in the markup would snap
-    // shut every time the role picker changed.
+    // shut every time the district or college picker changed.
     open: {},
     // The funding model. Two stages on purpose: the ROSTER (cpl_funding_data.js,
     // ~49KB) powers the district picker as soon as the tab opens; the MODEL
@@ -416,11 +422,13 @@
       ".cb-ess-list li:first-child{border-top:0;padding-top:0;}",
       ".cb-ess-list .cb-num{font-size:.83rem;font-weight:600;color:var(--brand);margin-top:2px;}",
       ".cb-ess-list .cb-d{font-size:.77rem;color:var(--text-muted);margin-top:2px;line-height:1.45;}",
-      ".cb-ess{flex:0 0 auto;width:1.5em;text-align:center;font-weight:700;font-size:.9rem;}",
+      // Words, not glyphs (see essMark). Wider than the old 1.5em glyph slot and
+      // left-aligned so "Not yet" and "Partial" sit on one line at every size.
+      ".cb-ess{flex:0 0 auto;min-width:4.6em;text-align:left;font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.03em;margin-top:2px;}",
       ".cb-ess.met{color:var(--ok,#2f7a3d);}",
       ".cb-ess.partial{color:var(--mustard-text,#8B6800);}",
       ".cb-ess.not{color:var(--text-muted);}",
-      ".cb-ess.pending,.cb-ess.na{color:var(--text-muted);font-size:.7rem;font-weight:600;}",
+      ".cb-ess.pending,.cb-ess.na{color:var(--text-muted);font-weight:600;}",
       // Fixed layout + an explicit colgroup: auto layout parks columns past the
       // wrapper's right edge on some filtered row sets (Session 43 finding).
       ".cb-dist{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.85rem;}",
@@ -432,8 +440,9 @@
       ".cb-roster tr.lead td{font-weight:600;color:var(--text-strong);}",
       // Sierra AI box — first on the tab, holds the pickers and the embedded chat.
       ".cb-assist{border:1px solid var(--border-strong);border-radius:11px;background:var(--surface);padding:16px 18px;margin-bottom:20px;}",
-      ".cb-assist>header{display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:4px;}",
-      ".cb-assist h3{margin:0;font-size:1.05rem;color:var(--text-strong);}",
+      // (The .cb-assist>header / h3 rules went with the duplicate heading they
+      //  styled — the box's title is now the widget's own, hoisted into
+      //  .cb-assist-head. See hoistAssistantIntro().)
       ".cb-assist .cb-bar{margin-bottom:0;padding-bottom:12px;border-bottom:1px solid var(--border);}",
       ".cb-assist .cb-asks{margin-top:12px;}",
       ".cb-assist-mount{margin-top:12px;}",
@@ -446,9 +455,32 @@
       // Everything below is deliberately quieter so the contrast does the
       // work — no section under here competes with this box.
       ".cb-assist{border-width:2px;border-color:var(--border-strong);padding:20px 22px 18px;margin-bottom:26px;box-shadow:0 1px 3px rgba(28,28,26,.06);}",
-      ".cb-assist h3{font-size:1.3rem;letter-spacing:-.01em;}",
-      ".cb-assist .cb-purpose{font-size:.86rem;color:var(--text-body);line-height:1.55;margin:2px 0 12px;max-width:62ch;}",
       ".cb-asks-lab{font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);margin:14px 0 7px;}",
+      // ── The hoisted heading slot (2026-08-17) ─────────────────────────────
+      // finish() moves cpl_chat.js's OWN .cplchat-intro in here, so the box
+      // reads title → what she is → pickers → suggestions → chat. The widget's
+      // intro carries its own margins; this only has to stop the first heading
+      // pushing an extra 16px down from the top of the box.
+      ".cb-assist-head .cplchat-intro h2{margin-top:0;}",
+      ".cb-assist-head .cplchat-intro p:last-child{margin-bottom:12px;}",
+      // The fallback title, shown only if cpl_chat.js never mounted.
+      ".cb-assist-fallback{margin:0 0 12px;font-size:1.3rem;letter-spacing:-.01em;color:var(--text-strong);}",
+      // Visually hidden, still announced — the "(opens in a new tab)" cue that
+      // replaced the ↗ on every resource link. Not display:none, which would
+      // take it out of the accessibility tree along with the pixels.
+      ".cb-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}",
+      // ── Use the width, and survive a phone (Sam, 2026-08-17) ──────────────
+      // The pickers stretch instead of sitting at a 220px minimum that wraps
+      // into a ragged column, and the box gives its padding back to content.
+      "@media (max-width:640px){",
+      "  .cb-assist{padding:14px 13px 13px;border-radius:9px;margin-bottom:18px;}",
+      "  .cb-bar{gap:9px;}",
+      "  .cb-bar>div{flex:1 1 100%;min-width:0;}",
+      "  .cb-bar select{width:100%;min-width:0;}",
+      "  .cb-assist-fallback,.cb-assist-head .cplchat-intro h2{font-size:1.12rem;}",
+      "  .cb-sec-b{padding:2px 12px 15px;}",
+      "  .cb-sum{padding:12px 13px;gap:9px;}",
+      "}",
       // ── Collapsible detail sections ────────────────────────────────────
       // A closed section still has to say something, or "minimal" becomes
       // "blank": the summary line carries this college's own figure, so the
@@ -1107,15 +1139,28 @@
     return (bare ? "" : '<h3 class="cb-h">Resources</h3>')
       + '<div class="cb-note" style="margin-top:0">All public. The first four are the ones a coordinator uses; '
       + "the rest is the evidence and policy behind the work.</div>"
+      // The trailing ↗ is gone (Sam, 2026-08-17), but the "this leaves the page"
+      // cue is NOT — dropping it outright would remove the only warning a
+      // keyboard or screen-reader user gets before a new tab steals focus. It
+      // becomes a visually-hidden phrase, which is the accessible form the arrow
+      // was only gesturing at.
       + '<div class="cb-res">' + RESOURCES.map(function (r) {
           return '<div class="cb-resi"><a href="' + esc(r[0]) + '" target="_blank" rel="noopener">'
-            + esc(r[1]) + " ↗</a><div>" + esc(r[2]) + "</div></div>";
+            + esc(r[1]) + '<span class="cb-sr">(opens in a new tab)</span></a><div>'
+            + esc(r[2]) + "</div></div>";
         }).join("") + "</div>";
   }
 
+  /* The three ESS 25-82 outcomes, marked. WORDS, not glyphs (Sam, 2026-08-17)
+   * — and here the glyphs were carrying the whole meaning with no text beside
+   * them, so this is the one that mattered: a screen reader announced the
+   * partial state as "circle with left half black", and a reader had nothing to
+   * hover. The colour still does the fast scanning; the word says which state
+   * it is. "Not yet" rather than a dash, because an outcome nobody has started
+   * is a real state, not a missing value. */
+  var ESS_MARKS = { met: "Met", partial: "Partial", not: "Not yet", na: "n/a" };
   function essMark(o) {
-    var g = o.state === "met" ? "✓" : o.state === "partial" ? "◐" : o.state === "not" ? "—"
-          : o.state === "na" ? "n/a" : "⏳";
+    var g = ESS_MARKS[o.state] || "Pending";
     return '<span class="cb-ess ' + esc(o.state) + '">' + g + "</span>";
   }
 
@@ -1246,19 +1291,32 @@
     }
     h += '<div><label for="cb-college">College</label><select id="cb-college"><option value="">Choose a college…</option>' +
       shown.map(function (n) { return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") +
-      '</select></div><div><label for="cb-role">Your role</label><select id="cb-role">' +
-      ROLES.map(function (r) { return '<option value="' + r.id + '"' + (r.id === state.role ? " selected" : "") + ">" + esc(r.label) + "</option>"; }).join("") +
       "</select></div></div>";
 
     // ── Sierra AI, first on the tab, holding the pickers ──────────────────
-    // Sam, 2026-08-11: the assistant leads, the pickers live inside it, and
-    // it is named "Sierra AI" — "Sierra" alone reads as Sierra College.
-    h += '<section class="cb-assist"><header><h3>Sierra AI</h3>'
-      + '<span class="cb-tag">Answers come from the CPL Initiative records and knowledge base.</span></header>'
-      + '<p class="cb-purpose">Ask her anything about CPL at your college — what credit is sitting unawarded, '
-      + "what other colleges give credit for, who a student should contact, what your funding is earned against. "
-      + "She reads the same records the sections below are built from, so it is usually faster to ask than to "
-      + "go looking.</p>"
+    // Sam, 2026-08-11: the assistant leads and the pickers live inside it.
+    //
+    // ⚠ THE HEADING AND THE DESCRIPTION LIVE IN THE WIDGET, NOT HERE (Sam,
+    // 2026-08-17: "eliminate anything redundant"). This block used to print an
+    // <h3>Sierra AI</h3>, a "Answers come from the CPL Initiative records and
+    // knowledge base" tag and a four-line purpose paragraph — and then mounted
+    // cpl_chat.js directly underneath, which printed its OWN heading and its
+    // OWN description. The tab opened with two titles and two descriptions of
+    // one assistant. cpl_chat.js build() now carries the single "Sierra AI"
+    // heading (with the Whitney mark) and the single description; do not
+    // reintroduce one here, or the duplicate comes straight back.
+    // The heading slot is hoisted to the TOP of the box and the widget's own
+    // intro is moved into it by finish() — the same relocation this file
+    // already does with the picker bar, and for the same reason: the markup
+    // stays authored in one place while the reading order is the sensible one
+    // (title → what she is → pickers → suggestions → the chat itself).
+    //
+    // It ships with a FALLBACK heading rather than empty, because a failed
+    // cpl_chat.js load would otherwise leave the box with no title at all —
+    // trading a duplicate heading for a missing one. Exactly one survives:
+    // finish() replaces this when, and only when, the real intro arrives.
+    h += '<section class="cb-assist" aria-label="Sierra AI">'
+      + '<div class="cb-assist-head" id="cb-assist-head"><h2 class="cb-assist-fallback">Sierra AI</h2></div>'
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
       + (state.college ? '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks" id="cb-asks"></div>' : "")
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
@@ -1612,7 +1670,7 @@
     // ── By CPL type ───────────────────────────────────────────────────────
     var types = byCplType(state.detail);
     if (types) {
-      var typeBody = '<div class="cb-note cb-floor">⚠ <b>Read the student counts carefully.</b> A credential name can be '
+      var typeBody = '<div class="cb-note cb-floor"><b>Read the student counts carefully.</b> A credential name can be '
         + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
         + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
         + 'are complete.</div>';
@@ -1736,7 +1794,29 @@
         .join("");
     }
     mountAssistant(root);
+    hoistAssistantIntro(root);
     wire(root);
+  }
+
+  /* The widget's heading + description belong at the TOP of the box, but the
+   * widget mounts at the bottom of it (below the pickers and the suggested
+   * questions). Rather than fork the intro markup into this file — which is how
+   * the tab ended up with two headings and two descriptions in the first place
+   * — the real one is MOVED, and this file's fallback heading is dropped only
+   * once the move has succeeded.
+   *
+   * ⚠ Exactly one heading, in every path:
+   *   · widget mounted   → its intro is hoisted, the fallback is removed;
+   *   · widget missing   → the fallback stays and is the only title;
+   *   · re-render        → render() rewrote innerHTML, so this runs from a
+   *                        clean box every time and cannot stack copies. */
+  function hoistAssistantIntro(root) {
+    var head = root && root.querySelector("#cb-assist-head");
+    var intro = root && root.querySelector("#cb-assistant-mount .cplchat-intro");
+    if (!head || !intro) return false;
+    head.textContent = "";          // drops the fallback heading
+    head.appendChild(intro);
+    return true;
   }
 
   function selectCollege(name, root) {
@@ -1750,10 +1830,8 @@
   }
 
   function wire(root) {
-    var c = root.querySelector("#cb-college"), r = root.querySelector("#cb-role"),
-        d = root.querySelector("#cb-district");
+    var c = root.querySelector("#cb-college"), d = root.querySelector("#cb-district");
     if (c) c.onchange = function () { selectCollege(c.value, root); };
-    if (r) r.onchange = function () { state.role = r.value; render(root); };
     if (d) d.onchange = function () {
       state.district = d.value || "";
       // Clear a selection the new filter no longer contains, rather than
@@ -1827,7 +1905,7 @@
    * Budget ledger appropriations, which override the baked pool values. The
    * ledger/perf/ESS sidecars land asynchronously, so we subscribe to the
    * module's change notification and re-render when they do; without that the
-   * ESS outcomes would sit on "⏳ not loaded yet" forever. */
+   * ESS outcomes would sit on "Pending" forever. */
   function loadFunding(root) {
     if (state.funding !== "idle") return;
     state.funding = "loading";
@@ -2027,6 +2105,17 @@
     _prioritiesAlign: prioritiesAlign,
     _rosterKey: rosterKey,
     _nextEssOutcome: nextEssOutcome,
+    // The ESS outcome marks are WORDS now, not glyphs — exposed so the test can
+    // assert each state stays distinct as well as glyph-free (a strip that
+    // collapsed two states into one label would read as glyph-free and be
+    // wrong). Pure.
+    _essMark: essMark,
+    // Resources render inside a collapsible section that only exists once the
+    // briefing DATA has landed, so a jsdom load with a never-resolving fetch
+    // never sees them. Exposed so the "(opens in a new tab)" cue — which
+    // replaced the ↗ and is the only leaves-the-page warning a screen reader
+    // gets — is guarded rather than quietly untested. Pure.
+    _resourcesHtml: resourcesHtml,
     // The tier count is the WORKER's (criteriaMetCount); the per-criterion
     // list is display only, and `mismatch` fires when the two disagree.
     _tierStanding: tierStanding,
