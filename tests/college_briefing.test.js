@@ -209,10 +209,20 @@ check("XSS: no injected img element", xr.querySelectorAll("img").length === 0);
 // value without escaping "<" (legal inside an attribute), so a substring check
 // on innerHTML is a proxy that fails on correct output. What actually matters
 // is that the hostile string stayed TEXT and produced no elements.
+// RESCOPED 2026-08-17 (Sky167). The college <select> moved to the scope flow's
+// SECOND step, so it is legitimately absent from the briefing view. The property
+// — a hostile college name stays TEXT and produces no elements — is unchanged,
+// so the check now looks where the options actually are.
 check("XSS: option label is inert text, not markup", (function () {
+  wx.CPL_COLLEGE_BRIEFING._state.scope = "college";
+  wx.CPL_COLLEGE_BRIEFING._state.college = null;
+  wx.CPL_COLLEGE_BRIEFING.render(xr);
   const opt = Array.prototype.slice.call(xr.querySelectorAll("#cb-college option"))
     .filter(function (o) { return o.value.indexOf("Bad") !== -1; })[0];
-  return opt && opt.textContent === "<b>Bad</b> College" && opt.children.length === 0;
+  const ok = opt && opt.textContent === "<b>Bad</b> College" && opt.children.length === 0;
+  wx.CPL_COLLEGE_BRIEFING._state.college = "<b>Bad</b> College";
+  wx.CPL_COLLEGE_BRIEFING.render(xr);
+  return ok;
 })());
 check("XSS: strategy text produced no elements", (function () {
   const prog = xr.querySelector(".cb-prog");
@@ -554,12 +564,25 @@ check("render: an outstanding participation requirement is surfaced",
 check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
 check("render: Sierra AI suggested questions render as buttons",
   fr.querySelectorAll("button.cb-ask").length >= 3);
-check("render: the pickers sit INSIDE the Sierra AI box",
-  !!fr.querySelector(".cb-assist .cb-bar"),
-  "Sam: put the selectors in the assistant box");
+// SUPERSEDED 2026-08-17 (Sky167). Sam's 2026-08-11 instruction was "put the
+// selectors in the assistant box"; his 2026-08-17 redesign moves the choosing
+// OUT of the briefing view entirely, into a scope step that runs before the
+// assistant exists. The instruction did not fail — it was replaced. What is
+// still worth guarding is that the briefing view carries no stray picker bar,
+// which is the same thing the (N) block checks from the other direction.
+check("render: the briefing view carries no picker bar (choosing happens before it)",
+  !fr.querySelector(".cb-assist .cb-bar-pick"));
 check("render: a mount point exists for the shared assistant",
   !!fr.querySelector("#cb-assistant-mount"));
-check("render: the district picker is present", !!fr.querySelector("#cb-district"));
+// RESCOPED 2026-08-17: the district narrowing moved to the choose-a-college
+// step. Still asserted, at its new address.
+check("render: the district picker is present on the choose-a-college step", (function () {
+  const keep = B._state.college;
+  B._state.scope = "college"; B._state.college = null; B.render(fr);
+  const seen = !!fr.querySelector("#cb-district");
+  B._state.college = keep; B.render(fr);
+  return seen;
+})());
 check("render: no script/img injected anywhere in the new sections",
   fr.querySelectorAll("script").length === 0 && fr.querySelectorAll("img").length === 0);
 
@@ -819,9 +842,19 @@ check("(N) resources render as links", nr2.querySelectorAll(".cb-resi a").length
 // relocates the FIRST .cb-bar in document order into the Sierra AI box. The
 // picker bar is built first in the string, so it still wins — asserted here
 // WITH the new bars present, which is the only fixture that could break it.
-check("(N) the pickers still land inside Sierra AI with the new bars present",
-  !!nr2.querySelector(".cb-assist .cb-bar select#cb-college"),
-  "finish() takes the first .cb-bar in document order");
+// ⭐ REWRITTEN 2026-08-17, and it caught a real bug. finish() used to relocate
+// the FIRST `.cb-bar` in document order into the Sierra box, which was only
+// correct because the picker bar happened to be authored first. With the
+// pickers moved to step 2, the first `.cb-bar` in this view is one of the
+// waiting breakdown's PROGRESS bars — so the old code tore it out of its table
+// and dropped it into the assistant. The selector is now `.cb-bar-pick`.
+// This fixture is the one that could expose it: it has the breakdown bars.
+check("(N) ⭐ a breakdown progress bar is NOT hoovered into the Sierra AI box",
+  !nr2.querySelector(".cb-assist .cb-bar"),
+  "finish() must target the picker bar by name, not by document order");
+check("(N) …and the breakdown bars stay where they were rendered",
+  nr2.querySelectorAll(".cb-bar").length === 0
+    || !!nr2.querySelector(".cb-sec .cb-bar, table .cb-bar, .cb-wait .cb-bar"));
 check("(N) no script or img injected by any new section",
   nr2.querySelectorAll("script").length === 0 && nr2.querySelectorAll("img").length === 0);
 
@@ -1129,27 +1162,49 @@ check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
 check("(P) …and its real allocation renders", /\$522,239/.test(jTxt));
 
 // ── The collapsed shape ──
-const secs = jRoot.querySelectorAll("details.cb-sec");
+// RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam
+// asked for her to be collapsible, expanded by default — so "every section" no
+// longer means "every content section". These assertions are about the CONTENT
+// drawers; Sierra's own default is asserted separately just below, because
+// "expanded by default" and "the rest start closed" are two different promises
+// and folding them together would let either one break silently.
+const allSecs = jRoot.querySelectorAll("details.cb-sec");
+const secs = Array.prototype.filter.call(allSecs, function (d) {
+  return d.getAttribute("data-sec") !== "sierra";
+});
 check("(P) the content below Sierra AI is in collapsible sections", secs.length >= 4);
-check("(P) every section is CLOSED on arrival",
-  Array.prototype.every.call(secs, function (d) { return !d.open; }),
+check("(P) every CONTENT section is CLOSED on arrival",
+  secs.every(function (d) { return !d.open; }),
   "Sam: default collapsed");
+// ⭐ The counterpart, and the one that would rot quietly: a "collapse
+// everything" change would satisfy the line above and break Sam's actual ask.
+const sierraSec = jRoot.querySelector('details.cb-sec[data-sec="sierra"]');
+check("(P) ⭐ Sierra IS a collapsible section", !!sierraSec,
+  "Sam, 2026-08-17: collapsible but expanded by default");
+check("(P) ⭐ …and she is EXPANDED on arrival", !!sierraSec && sierraSec.open);
+check("(P) Sierra's summary carries the single heading",
+  !!sierraSec && sierraSec.querySelectorAll("summary h1, summary h2, summary h3").length === 1,
+  "the hoist moves the widget's own h2 into the summary — not a second copy");
 // ⭐ Collapsed is only "minimal" if what remains still informs. A drawer with
 // no summary is just hidden content, and the reader has to open all of them.
 check("(P) ⭐ every closed section still states something in its header",
-  Array.prototype.every.call(secs, function (d) {
+  secs.every(function (d) {
     const v = d.querySelector(".cb-sum-v");
     return v && v.textContent.trim().length > 0;
   }),
   "a blank summary on a closed section reads as broken");
 check("(P) each section has a title and a single summary row",
-  Array.prototype.every.call(secs, function (d) {
+  secs.every(function (d) {
     return d.querySelector("summary.cb-sum .cb-sum-t")
         && d.querySelectorAll("summary").length === 1;
   }));
-check("(P) Sierra AI is NOT inside a collapsible section",
-  !!jRoot.querySelector(".cb-assist") && !jRoot.querySelector("details .cb-assist"),
-  "she is the tab, not a drawer");
+// INVERTED 2026-08-17 by Sam's own instruction — she is a drawer now, one that
+// starts open. Kept (rather than deleted) as the record of the change, and
+// because "the assistant box still exists at all" is worth asserting.
+check("(P) Sierra AI is a collapsible section that starts open",
+  !!jRoot.querySelector(".cb-assist")
+    && !!jRoot.querySelector('.cb-assist details[data-sec="sierra"][open]'),
+  "Sam, 2026-08-17: collapsible, expanded by default");
 // RESCOPED 2026-08-17. This asserted the ELEMENT (`.cb-purpose`), which was
 // this file's own copy of a description cpl_chat.js already printed — the
 // duplicate Sam asked to remove. The PROPERTY it was guarding is unchanged and
@@ -1175,7 +1230,9 @@ const reopened = jRoot.querySelector('details.cb-sec[data-sec="funding"]');
 check("(P) an opened section stays open across a re-render", !!reopened && reopened.open);
 check("(P) …and its neighbours stay shut",
   Array.prototype.filter.call(jRoot.querySelectorAll("details.cb-sec"), function (d) {
-    return d.getAttribute("data-sec") !== "funding" && d.open; }).length === 0);
+    // Sierra is excluded: she is open by design, not a neighbour that leaked.
+    var id = d.getAttribute("data-sec");
+    return id !== "funding" && id !== "sierra" && d.open; }).length === 0);
 
 // ── Strategies live inside the priority they earn against ──
 // TWO's implementation program has 2 priorities; the real funding module has

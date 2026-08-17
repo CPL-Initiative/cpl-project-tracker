@@ -59,8 +59,56 @@
   // If per-role briefing content is ever wanted, build it against the chips'
   // audience value — do not restore a second, parallel notion of "role".
 
+  /* ── The scope a visitor is here for (Sam, 2026-08-17) ─────────────────────
+   * The tab used to open on a title and two dropdowns. It now opens on ONE
+   * question — who are you here as — and curates the second list from the
+   * answer.
+   *
+   * ⚠ TWO OF THE FIVE HAVE NO DATA, AND THAT IS NOT A UI PROBLEM. Sam asked for
+   * Strong Workforce region and Academic Senate region. Neither exists in this
+   * repo: `map_colleges` carries only id/name/variants/is_test/entity_kind, and
+   * the funding roster's only geography key is `district`.
+   *
+   * ⚠ AND THE REGION DATA WE *DO* HOLD IS A THIRD SCHEME — do not be tempted.
+   * `college_geo.region` (Supabase, 120 colleges) is a hand-authored ~10-way
+   * macro-region built for Sierra's "which colleges NEAR me" ranking
+   * (chatbox/_seed_college_geo.py says so in its docstring). The Strong
+   * Workforce programme has EIGHT regional consortia with different boundaries
+   * — our "San Joaquin Valley" + "Greater Sacramento" split does not match
+   * "Central Valley/Mother Lode", and "Central Coast" is not "South Central
+   * Coast" — and the ASCCC has FOUR areas, A–D. Wiring `college_geo` behind
+   * either label would silently mis-group a college's peers in a view people
+   * act on, which is worse than the button being off. Sam (2026-08-17): the
+   * real figures are on the MAP Dashboard, so the source exists — it just has
+   * not been located in an export yet. When it is, add the mapping and flip
+   * `ready`; nothing else here changes. */
+  var SCOPES = [
+    { k: "college",   label: "My college",                    ready: true },
+    { k: "district",  label: "My district",                   ready: true },
+    { k: "swp",       label: "My Strong Workforce region",    ready: false,
+      why: "Needs the college-to-consortium list — it is on the MAP Dashboard but not yet in an export we hold." },
+    { k: "senate",    label: "My Academic Senate region",     ready: false,
+      why: "Needs the college-to-ASCCC-area list — same source, not yet located." },
+    { k: "statewide", label: "Statewide",                     ready: true }
+  ];
+  // Scopes that need a second pick. Statewide is the whole set, so it does not.
+  function scopeNeedsEntity(k) { return k === "college" || k === "district"; }
+  var SCOPE_KEY = "cplMyCollegeScope.v1";
+
+  // Every collapsible section on the tab, so Expand all / Collapse all can act
+  // on the set rather than on whatever happens to be in the DOM. `sierra` is
+  // deliberately IN this list — Sam chose the literal reading: Collapse all
+  // closes everything, Sierra included. A control that silently exempts one
+  // section teaches people it is broken.
+  var SECTION_IDS = ["sierra", "start", "stand", "waiting", "types", "courseshare",
+                     "tier", "funding", "advice", "contacts", "resources"];
+
   var state = {
     college: null, data: null, loading: false, error: null, loadedSignedIn: null,
+    // Which of SCOPES the visitor picked, and — for the scopes that need one —
+    // the entity within it. `college` above stays the college-scope selection
+    // because everything downstream of it keys on the college NAME.
+    scope: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
     detail: null, detailFor: null, detailLoading: false, detailError: null,
@@ -72,7 +120,10 @@
     // Held in state rather than read off the DOM because render() rewrites
     // innerHTML — a <details open> that lived only in the markup would snap
     // shut every time the district or college picker changed.
-    open: {},
+    // Sierra starts OPEN (Sam, 2026-08-17: collapsible but expanded by default);
+    // everything else opens on demand. Seeded here rather than in the markup so
+    // "expanded by default" survives the first render() rewrite.
+    open: { sierra: true },
     // The funding model. Two stages on purpose: the ROSTER (cpl_funding_data.js,
     // ~49KB) powers the district picker as soon as the tab opens; the MODEL
     // (cpl_funding.js, ~370KB) is pulled only when a college is chosen and
@@ -535,6 +586,84 @@
       // replaced the ↗ on every resource link. Not display:none, which would
       // take it out of the accessibility tree along with the pixels.
       ".cb-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;}",
+
+      /* ── The scope picker (Sam, 2026-08-17) ─────────────────────────────
+         Words, not glyphs, per the standing rule — and no icons invented for
+         the sake of it. First Light's rule is "glass = chrome, opaque = data":
+         these are chrome, so they sit on the surface tokens with a cobalt
+         (interactive) accent, never a brand fill that would read as a status. */
+      ".cb-scope{max-width:760px;margin:8px auto 0;padding:8px 4px 24px;}",
+      ".cb-scope-q{margin:0 0 14px;font-size:1.35rem;letter-spacing:-.01em;color:var(--text-strong);font-weight:650;}",
+      ".cb-scope-opts{display:flex;flex-direction:column;gap:8px;}",
+      ".cb-scope-b{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;"
+        + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
+        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;cursor:pointer;}",
+      ".cb-scope-b:hover:not([disabled]){border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-scope-b:focus-visible{outline:2px solid var(--focus-ring,var(--brand));outline-offset:2px;}",
+      /* A disabled option stays READABLE. Greying it to the point of being hard
+         to read hides the one thing it is there to say — that it exists and why
+         it is off — so only the affordance is dimmed, not the sentence. */
+      ".cb-scope-b[disabled]{cursor:not-allowed;background:var(--surface-subtle,#f6f8fb);border-style:dashed;}",
+      ".cb-scope-b[disabled] .cb-scope-l{color:var(--text-muted);}",
+      ".cb-scope-l{font-size:1rem;font-weight:600;}",
+      ".cb-scope-soon{font-size:.76rem;color:var(--text-muted);white-space:nowrap;}",
+      ".cb-scope-note{margin:14px 0 0;font-size:.8rem;color:var(--text-muted);line-height:1.5;}",
+      ".cb-back{background:none;border:0;padding:0 0 10px;font:inherit;font-size:.82rem;"
+        + "color:var(--accent-link,var(--brand));cursor:pointer;}",
+      ".cb-back:hover{text-decoration:underline;}",
+      ".cb-ent{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;}",
+      ".cb-ent-b{display:flex;flex-direction:column;gap:2px;text-align:left;padding:11px 14px;"
+        + "border:1px solid var(--border,#d8dde6);border-radius:10px;background:var(--surface-opaque,#fff);"
+        + "color:inherit;font:inherit;cursor:pointer;}",
+      ".cb-ent-b:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-ent-n{font-size:.76rem;color:var(--text-muted);}",
+
+      /* ── The welcome header, which only exists after a choice ───────────── */
+      ".cb-welcome{margin:2px 0 14px;}",
+      ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
+      ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
+      ".cb-welcome-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
+      ".cb-welcome-p{margin:6px 0 0;color:var(--text-muted);font-size:.9rem;line-height:1.5;max-width:70ch;}",
+      ".cb-act{padding:6px 13px;border:1px solid var(--border,#d8dde6);border-radius:999px;"
+        + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
+        + "white-space:nowrap;}",
+      ".cb-act:hover{border-color:var(--cobalt,#0047AB);background:var(--surface-subtle,#eef3fa);}",
+      ".cb-act-q{font-size:.76rem;padding:4px 11px;}",
+      ".cb-allctl{display:flex;gap:8px;margin:12px 0 0;}",
+
+      /* Sierra is a section now, but she is the PRIMARY one — the summary reads
+         at heading scale rather than at the muted scale the others use. */
+      ".cb-assist-d>.cb-sum h2{margin:0;font-size:1.15rem;}",
+      ".cb-assist-body{padding-top:4px;}",
+
+      /* ── The roll-up (district / statewide) ─────────────────────────────── */
+      ".cb-roll{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 14px;}",
+      ".cb-roll-c{flex:1 1 170px;padding:11px 14px;border:1px solid var(--border,#d8dde6);"
+        + "border-radius:10px;background:var(--surface-opaque,#fff);}",
+      ".cb-roll-n{font-size:1.3rem;font-weight:650;color:var(--text-strong);letter-spacing:-.01em;}",
+      ".cb-roll-l{font-size:.76rem;color:var(--text-muted);margin-top:2px;line-height:1.35;}",
+
+      /* ── Print: the briefing ────────────────────────────────────────────
+         The Report button expands every section and prints. Everything outside
+         this tab is page chrome and must not be in the document, and the
+         controls must not print either — a PDF with a "Collapse all" button on
+         it looks like a screenshot, not a briefing. */
+      /* ⚠ visibility, NOT display. #college-briefing-root is nested several
+         levels inside the page, so `body>*{display:none}` would hide one of its
+         ANCESTORS and take the tab down with everything else — display:none on a
+         parent cannot be undone by a child. visibility:hidden is per-element and
+         a descendant can turn itself back on, and the absolute position lifts
+         the tab to the top of the sheet rather than printing pages of blanks
+         where the hidden chrome used to be. */
+      "@media print{",
+      "  body *{visibility:hidden;}",
+      "  #college-briefing-root,#college-briefing-root *{visibility:visible;}",
+      "  #college-briefing-root{position:absolute;left:0;top:0;width:100%;padding:0;}",
+      "  .cb-welcome-acts,.cb-allctl,.cb-back,.cb-assist-pick,.cb-asks,.cb-asks-lab,"
+        + ".cb-assist-mount{display:none !important;}",
+      "  .cb-sec{break-inside:avoid;}",
+      "  .cb-sec>.cb-sum{list-style:none;}",
+      "}",
       // ── Use the width, and survive a phone (Sam, 2026-08-17) ──────────────
       // The pickers stretch instead of sitting at a 220px minimum that wraps
       // into a ragged column, and the box gives its padding back to content.
@@ -595,6 +724,134 @@
    *
    * Returns "" for an empty body, so a section with nothing to show never
    * renders as a drawer that opens onto blankness. */
+  /* ── Step 1: who are you here as? ─────────────────────────────────────────
+   * PURE. No main title above it (Sam, 2026-08-17) — the question IS the page
+   * until it is answered, and a title over a single question is furniture.
+   * A scope with no data renders DISABLED WITH ITS REASON rather than being
+   * hidden: an option that silently is not there reads as "we never thought of
+   * that", where a disabled one with a sentence reads as "known, not yet wired"
+   * — which is the truth, and it is also how the next person knows to ask. */
+  function scopePicker() {
+    return '<div class="cb-scope" role="group" aria-label="Choose your view">'
+      + '<h2 class="cb-scope-q">What would you like to look at?</h2>'
+      + '<div class="cb-scope-opts">'
+      + SCOPES.map(function (s) {
+          if (!s.ready) {
+            return '<button type="button" class="cb-scope-b" disabled aria-disabled="true" title="'
+              + esc(s.why) + '"><span class="cb-scope-l">' + esc(s.label) + "</span>"
+              + '<span class="cb-scope-soon">Not yet available</span></button>';
+          }
+          return '<button type="button" class="cb-scope-b" data-scope="' + esc(s.k) + '">'
+            + '<span class="cb-scope-l">' + esc(s.label) + "</span></button>";
+        }).join("")
+      + "</div>"
+      + '<p class="cb-scope-note">Two regional views are not wired up yet — the groupings live on the MAP '
+      + "Dashboard but are not in an export we hold. Hover either one to see what it needs.</p>"
+      + "</div>";
+  }
+
+  /* ── Step 2: the list curated from that answer ────────────────────────────
+   * One list, not two dropdowns. Which list depends entirely on step 1, which
+   * is the point: a district office should never scroll 120 colleges to find
+   * its district, and a college should never meet a district picker it does not
+   * need. */
+  function entityPicker(names, dIdx) {
+    var scope = state.scope;
+    var back = '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>';
+    if (scope === "district") {
+      var districts = dIdx ? Object.keys(dIdx).sort() : [];
+      if (!districts.length) {
+        return '<div class="cb-scope">' + back
+          + '<h2 class="cb-scope-q">Choose your district</h2>'
+          + '<p class="cb-note">'
+          + (state.roster === "loading" ? "Loading the district list…"
+             : "The district list could not be read, so there is nothing to choose from. "
+               + "That is a failed read, not an empty system — try again, or pick a college instead.")
+          + "</p></div>";
+      }
+      return '<div class="cb-scope">' + back
+        + '<h2 class="cb-scope-q">Choose your district</h2>'
+        + '<div class="cb-ent">'
+        + districts.map(function (d) {
+            return '<button type="button" class="cb-ent-b" data-district="' + esc(d) + '">'
+              + esc(d.replace(/ Community College District$/, " CCD"))
+              + '<span class="cb-ent-n">' + dIdx[d].length + " colleges</span></button>";
+          }).join("")
+        + "</div></div>";
+    }
+    // College. 120 of them, so this is a SELECT with an optional district
+    // narrowing rather than 120 buttons — a curated list is one you can get
+    // through, and a wall of buttons is not.
+    var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
+    var districts2 = dIdx ? Object.keys(dIdx).sort() : [];
+    var h = '<div class="cb-scope">' + back + '<h2 class="cb-scope-q">Choose your college</h2><div class="cb-bar cb-bar-pick">';
+    if (districts2.length) {
+      h += '<div><label for="cb-district">Narrow by district (optional)</label><select id="cb-district">'
+        + '<option value="">All districts (' + names.length + " colleges)</option>"
+        + districts2.map(function (d) {
+            return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
+              + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
+          }).join("")
+        + "</select></div>";
+    }
+    h += '<div><label for="cb-college">College</label><select id="cb-college">'
+      + '<option value="">Choose a college…</option>'
+      + shown.map(function (n) {
+          return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>";
+        }).join("")
+      + "</select></div></div></div>";
+    return h;
+  }
+
+  /* PURE. What the tab is currently showing, as a name. Used for the welcome
+   * title, the report, and Sierra's context. Statewide has no entity — it is
+   * named rather than left blank, because "Welcome" with nothing after it is
+   * the shape of a bug. */
+  function scopeLabel() {
+    if (state.scope === "college") return state.college || null;
+    if (state.scope === "district") return state.district || null;
+    if (state.scope === "statewide") return "California Community Colleges";
+    return null;
+  }
+  function scopeReady() {
+    if (!state.scope) return false;
+    if (!scopeNeedsEntity(state.scope)) return true;
+    return !!(state.scope === "college" ? state.college : state.district);
+  }
+
+  /* ── Step 3: the header once a choice is made ─────────────────────────────
+   * Sam: the title arrives AFTER the choice, and carries the minimum a reader
+   * needs to take the next step — which is ask Sierra, or open a section.
+   * Deliberately two sentences: this sits above an assistant that introduces
+   * itself, so a paragraph here would be the duplicate-description problem
+   * #1231 removed, reintroduced one section higher. */
+  function welcomeHead() {
+    var name = scopeLabel();
+    if (!name) return "";
+    var title = state.scope === "statewide" ? "Statewide CPL view" : "Welcome, " + name;
+    var what = state.scope === "college" ? "this college"
+             : state.scope === "district" ? "this district" : "the system";
+    return '<div class="cb-welcome">'
+      + '<div class="cb-welcome-row">'
+      + '<h2 class="cb-welcome-t">' + esc(title) + "</h2>"
+      + '<div class="cb-welcome-acts">'
+      + '<button type="button" class="cb-act" id="cb-report">Create a briefing</button>'
+      // Two ways back, because they are different journeys. Switching college is
+      // the common one and must not cost a trip through "who are you" — that
+      // question is answered once. "Change view" is the rarer, deliberate one.
+      + (scopeNeedsEntity(state.scope)
+          ? '<button type="button" class="cb-back" data-entity-clear="1">Choose another '
+            + (state.scope === "district" ? "district" : "college") + "</button>"
+          : "")
+      + '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>'
+      + "</div></div>"
+      + '<p class="cb-welcome-p">Ask Sierra anything about CPL at ' + esc(what)
+      + ", or open a section below for the detail behind it.</p>"
+      + '<div class="cb-allctl"><button type="button" class="cb-act cb-act-q" data-all="open">Expand all</button>'
+      + '<button type="button" class="cb-act cb-act-q" data-all="close">Collapse all</button></div>'
+      + "</div>";
+  }
+
   function sec(id, title, summary, body) {
     if (!body) return "";
     return '<details class="cb-sec" data-sec="' + esc(id) + '"' + (state.open[id] ? " open" : "") + ">"
@@ -1309,6 +1566,70 @@
     return h + "</div>";
   }
 
+  /* ── A group view that cannot leak a withheld college ─────────────────────
+   * PURE-ish (reads state.data only). District and statewide both land here.
+   *
+   * ⚠ THE AGGREGATE IS SUMMED OVER THE UNSUPPRESSED ROWS ONLY, AND THAT IS A
+   * DISCLOSURE DECISION, NOT A CONVENIENCE. map_college_credit_summary applies
+   * k=10 and withholds 13 colleges. If a total included the withheld rows, then
+   * for any group the total MINUS the visible rows is exactly the withheld
+   * college's figure — and a two-college district would hand it over in one
+   * subtraction. Summing only what is already on screen makes that arithmetic
+   * return zero by construction. The withheld colleges are COUNTED in the note
+   * so the total is never mistaken for the whole group
+   * (adr-student-detail-aggregate-disclosure-control).
+   *
+   * ⚠ And an absent row is not a zero: a college missing from the summary
+   * entirely is a dash and is counted separately from a withheld one. Folding
+   * the two would turn "we never measured this" into "this college does none". */
+  function rollup(group, b) {
+    var byName = (state.data && state.data.summaryByName) || {};
+    var shownWaiting = 0, shownStudents = 0, withheld = 0, absent = 0, counted = 0;
+    var rows = group.slice().sort().map(function (n) {
+      var s = byName[n];
+      if (!s) { absent++; return { n: n, waiting: "—", stu: "—" }; }
+      if (s.suppressed) { withheld++; return { n: n, waiting: "withheld", stu: "&lt;10" }; }
+      counted++;
+      shownWaiting += num(s.articulated_waiting) || 0;
+      shownStudents += num(s.students) || 0;
+      return { n: n, waiting: fmt(num(s.articulated_waiting)), stu: fmt(num(s.students)) };
+    });
+
+    var title = state.scope === "district" ? state.district : "All colleges";
+    var h = '<h3 class="cb-h">' + esc(title) + " — " + group.length
+      + (group.length === 1 ? " college" : " colleges") + "</h3>";
+    h += '<div class="cb-roll">'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + fmt(shownWaiting) + "</div>"
+      + '<div class="cb-roll-l">units already articulated and waiting</div></div>'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + fmt(shownStudents) + "</div>"
+      + '<div class="cb-roll-l">CPL students</div></div>'
+      + '<div class="cb-roll-c"><div class="cb-roll-n">' + counted + " of " + group.length + "</div>"
+      + '<div class="cb-roll-l">colleges in these totals</div></div>'
+      + "</div>";
+    h += '<table class="cb-dist"><colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>'
+      + "<thead><tr><th>College</th><th>Articulated, waiting</th><th>CPL students</th></tr></thead><tbody>"
+      + rows.map(function (r) {
+          return '<tr><td><button type="button" class="cb-pick" data-college="' + esc(r.n) + '">'
+            + esc(r.n) + "</button></td>"
+            + '<td class="n">' + r.waiting + '</td><td class="n">' + r.stu + "</td></tr>";
+        }).join("")
+      + "</tbody></table>";
+    h += '<div class="cb-note"><b>The totals above cover the ' + counted + " college"
+      + (counted === 1 ? "" : "s") + " listed with figures — nothing else is folded in.</b> "
+      + (withheld ? withheld + " college" + (withheld === 1 ? " is" : "s are")
+          + " withheld (fewer than 10 CPL students, which is not zero activity) and " +
+          (withheld === 1 ? "its figures are" : "their figures are") + " deliberately left out of the "
+          + "total, so they cannot be worked out by subtraction. " : "")
+      + (absent ? absent + " college" + (absent === 1 ? " is" : "s are")
+          + " not in the credit summary at all — a dash is an absent measurement, not a measured zero. " : "")
+      + "Pick any college for its full briefing.</div>";
+    if (b) {
+      h += '<div class="cb-note">Choose a college to see where it stands against the ' + esc(b.strategyTotal)
+        + " strategies the team has written for " + esc(b.scenario) + ", Year " + esc(b.year) + ".</div>";
+    }
+    return h;
+  }
+
   function render(root) {
     ensureCss();
     if (!signedIn()) {
@@ -1336,28 +1657,21 @@
 
     var names = (state.data && state.data.colleges) || [];
     var dIdx = districtIndex(names);
-    var districts = dIdx ? Object.keys(dIdx).sort() : [];
-    // The district picker NARROWS the college list; it never changes a figure.
-    // A college with no district on the funding roster stays reachable under
-    // "All districts" — filtering it out of every option would make it
-    // unselectable, which is a worse failure than showing it unfiltered.
-    var shown = (state.district && dIdx && dIdx[state.district]) ? dIdx[state.district] : names;
 
-    var h = '<div class="cb-bar">';
-    if (districts.length) {
-      h += '<div><label for="cb-district">District</label><select id="cb-district">'
-        + '<option value="">All districts (' + names.length + " colleges)</option>"
-        + districts.map(function (d) {
-            return '<option value="' + esc(d) + '"' + (d === state.district ? " selected" : "") + ">"
-              + esc(d.replace(/ Community College District$/, " CCD")) + " (" + dIdx[d].length + ")</option>";
-          }).join("")
-        + "</select></div>";
-    } else if (state.roster === "loading") {
-      h += '<div><label>District</label><select disabled><option>Loading districts…</option></select></div>';
-    }
-    h += '<div><label for="cb-college">College</label><select id="cb-college"><option value="">Choose a college…</option>' +
-      shown.map(function (n) { return '<option value="' + esc(n) + '"' + (n === state.college ? " selected" : "") + ">" + esc(n) + "</option>"; }).join("") +
-      "</select></div></div>";
+    /* ── The two gates before the tab has anything to say ───────────────────
+     * Sam, 2026-08-17: the tab opens on the CHOICE, not on a title. Both gates
+     * return early with no main title, no Sierra box and no sections — there is
+     * nothing yet for any of them to be about. */
+    /* A college already chosen IS the college scope. Inferred rather than
+     * required, so a deep link, a restored selection or any caller that sets
+     * state.college directly lands on the briefing instead of being bounced back
+     * to a question it has already answered. */
+    if (!state.scope && state.college) state.scope = "college";
+    if (!state.scope) { root.innerHTML = scopePicker(); wire(root); return; }
+    if (!scopeReady()) { root.innerHTML = entityPicker(names, dIdx); wire(root); return; }
+
+    // Step 3 — the title arrives now that there is something to welcome.
+    var h = welcomeHead();
 
     // ── Sierra AI, first on the tab, holding the pickers ──────────────────
     // Sam, 2026-08-11: the assistant leads and the pickers live inside it.
@@ -1381,12 +1695,22 @@
     // cpl_chat.js load would otherwise leave the box with no title at all —
     // trading a duplicate heading for a missing one. Exactly one survives:
     // finish() replaces this when, and only when, the real intro arrives.
+    // ⚠ SIERRA IS A COLLAPSIBLE SECTION NOW (Sam, 2026-08-17) — expanded by
+    // default, and closed by Collapse all like every other. The <summary>
+    // carries the SINGLE heading: hoistAssistantIntro() moves the widget's own
+    // h2 into it and the description into the body below, so there is still
+    // exactly one title for one assistant. Putting the title in the summary and
+    // ALSO leaving it in the body is how #1231's duplicate would come back one
+    // level up.
     h += '<section class="cb-assist" aria-label="Sierra AI">'
-      + '<div class="cb-assist-head" id="cb-assist-head"><h2 class="cb-assist-fallback">Sierra AI</h2></div>'
+      + '<details class="cb-sec cb-assist-d" data-sec="sierra"' + (state.open.sierra ? " open" : "") + ">"
+      + '<summary class="cb-sum" id="cb-assist-sum"><h2 class="cb-assist-fallback">Sierra AI</h2></summary>'
+      + '<div class="cb-assist-body">'
+      + '<div class="cb-assist-head" id="cb-assist-head"></div>'
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
       + (state.college ? '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks" id="cb-asks"></div>' : "")
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
-      + "</section>";
+      + "</div></details></section>";
 
     if (state.error) h += '<div class="cb-warn">Could not load everything: ' + esc(state.error) + ". Figures below may be incomplete — treat a missing number as unknown, not zero.</div>";
 
@@ -1399,28 +1723,14 @@
         "</ul></div>";
     }
 
+    // ── The roll-up views: district and statewide ──────────────────────────
+    // scopeReady() has already passed, so reaching here with no college means
+    // the reader chose a GROUP. Ordered ALPHABETICALLY, never by the figure:
+    // this is a list of work to do, not a league table (and Sam's standing rule
+    // is that colleges are never publicly ranked).
     if (!state.college) {
-      h += '<div class="cb-note">Choose a college to see where it stands against the ' + esc(b.strategyTotal) +
-        " strategies the team has written for " + esc(b.scenario) + ", Year " + esc(b.year) + ".</div>";
-      // A district was picked but no college yet — show the district's colleges
-      // and the one figure that matters, so a district office has somewhere to
-      // start. Ordered ALPHABETICALLY, never by the figure: this is a list of
-      // work to do, not a league table.
-      if (state.district && dIdx && dIdx[state.district]) {
-        h += '<h3 class="cb-h">' + esc(state.district) + "</h3>";
-        h += '<table class="cb-dist"><colgroup><col style="width:52%"><col style="width:24%"><col style="width:24%"></colgroup>'
-          + "<thead><tr><th>College</th><th>Articulated, waiting</th><th>CPL students</th></tr></thead><tbody>";
-        dIdx[state.district].slice().sort().forEach(function (n) {
-          var s = state.data.summaryByName && state.data.summaryByName[n];
-          var waiting = s && !s.suppressed ? fmt(num(s.articulated_waiting)) : (s && s.suppressed ? "withheld" : "—");
-          var stu = s && !s.suppressed ? fmt(num(s.students)) : (s && s.suppressed ? "&lt;10" : "—");
-          h += '<tr><td><button type="button" class="cb-pick" data-college="' + esc(n) + '">' + esc(n) + "</button></td>"
-            + '<td class="n">' + waiting + '</td><td class="n">' + stu + "</td></tr>";
-        });
-        h += "</tbody></table>";
-        h += '<div class="cb-note">“Withheld” means fewer than 10 CPL students, not zero activity. '
-          + "A dash means this college is not in the credit summary at all — an absent figure, which is not the same as a measured zero.</div>";
-      }
+      var group = state.scope === "district" ? (dIdx && dIdx[state.district]) || [] : names;
+      h += rollup(group, b);
       finish(root, h, null); return;
     }
 
@@ -1851,7 +2161,17 @@
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
     // the main string, then relocated, so the bar markup stays in one place.
-    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar");
+    /* ⚠ `.cb-bar-pick`, NOT `.cb-bar`. This used to grab the first `.cb-bar` in
+     * document order, which worked only because the PICKER bar was authored
+     * first. The pickers moved to the scope flow's second step (Sam,
+     * 2026-08-17), so the first `.cb-bar` in the briefing view is now one of the
+     * waiting breakdown's progress bars — and this would have silently torn it
+     * out of its table and dropped it into the Sierra box. A positional
+     * selector is a bound on the order things happen to be written in.
+     * Nothing matches in either step today (step 2 has the bar but no host,
+     * step 3 has the host but no bar); the relocation is kept, correctly
+     * targeted, so a future layout that does put pickers in the box works. */
+    var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar-pick");
     if (pickHost && bar) pickHost.appendChild(bar);
     var asks = root.querySelector("#cb-asks");
     if (asks && state.college) {
@@ -1876,18 +2196,31 @@
    *   · widget missing   → the fallback stays and is the only title;
    *   · re-render        → render() rewrote innerHTML, so this runs from a
    *                        clean box every time and cannot stack copies. */
+  /* Sierra became a <details> (Sam, 2026-08-17), which SPLITS the hoist in two:
+   * the widget's heading goes into the <summary> — so the section still names
+   * itself when collapsed, which is the whole point of a summary — and the rest
+   * of its intro goes into the body. Still exactly one title in every path:
+   *   · widget mounted → its h2 replaces the fallback IN the summary;
+   *   · widget missing → the fallback stays in the summary and is the only one;
+   *   · re-render      → render() rewrote innerHTML, so this always starts clean.
+   * The description must NOT ride along into the summary: a summary is the
+   * collapsed state, and a paragraph there is text you cannot put away. */
   function hoistAssistantIntro(root) {
     var head = root && root.querySelector("#cb-assist-head");
+    var sum = root && root.querySelector("#cb-assist-sum");
     var intro = root && root.querySelector("#cb-assistant-mount .cplchat-intro");
     if (!head || !intro) return false;
-    head.textContent = "";          // drops the fallback heading
-    head.appendChild(intro);
+    var h = intro.querySelector("h1, h2, h3");
+    if (h && sum) { sum.textContent = ""; sum.appendChild(h); }   // drops the fallback
+    head.textContent = "";
+    head.appendChild(intro);        // now description-only, the heading having moved
     return true;
   }
 
   function selectCollege(name, root) {
     state.college = name || null;
     state.detail = null; state.detailFor = null; state.detailError = null;
+    rememberScope();
     recompute(); render(root);
     if (state.college) {
       loadCollege(state.college, root);
@@ -1895,7 +2228,98 @@
     }
   }
 
+  /* The scope survives a reload (Sam's flow is a daily one — re-answering "who
+   * are you" every morning is a tax), but it is always ESCAPABLE: every view
+   * carries a "Change view" control. A remembered choice with no way back is a
+   * trap, not a convenience. Wrapped because storage can be unavailable. */
+  function rememberScope() {
+    try {
+      localStorage.setItem(SCOPE_KEY, JSON.stringify({
+        scope: state.scope, college: state.college, district: state.district
+      }));
+    } catch (e) { /* in-memory only */ }
+  }
+  function restoreScope() {
+    try {
+      var r = JSON.parse(localStorage.getItem(SCOPE_KEY) || "null");
+      if (!r || !r.scope) return;
+      // Only restore a scope that is still READY. A remembered "swp" from a
+      // future build must not strand this one on a blank screen.
+      var known = SCOPES.filter(function (s) { return s.k === r.scope && s.ready; });
+      if (!known.length) return;
+      state.scope = r.scope;
+      if (r.scope === "college") state.college = r.college || null;
+      if (r.college) state.college = r.college;
+      state.district = r.district || "";
+    } catch (e) { /* ignore */ }
+  }
+
+  function setScope(k, root) {
+    state.scope = k || null;
+    // Clear the entity when the scope changes — a college left selected under
+    // the district scope would silently decide what the district view showed.
+    if (k !== "college") { state.college = null; state.detail = null; state.detailFor = null; }
+    if (k !== "district") state.district = "";
+    rememberScope();
+    recompute(); render(root);
+  }
+
+  function setAllSections(open, root) {
+    SECTION_IDS.forEach(function (id) { state.open[id] = !!open; });
+    render(root);
+  }
+
+  /* ── The briefing (Sam, 2026-08-17: "a Report button that creates a briefing")
+   * Built from the tab's OWN rendered sections rather than re-deriving the
+   * figures — the same reasoning as the EACR matrix's shared matrixCell(): a
+   * report that computes its numbers separately is a second implementation that
+   * can disagree with the screen, and the screen is what the reader just
+   * checked. So: expand everything, then print. Print-to-PDF is the same route
+   * the public Fact Sheet uses, and it needs no popup and no API.
+   *
+   * ⚠ EXPAND BEFORE PRINTING. A <details> that is closed does not print its
+   * contents, so printing the tab as-found would produce a briefing of section
+   * titles and nothing else — which looks like a finished document.
+   *
+   * The render must land before print() is called, so this defers a frame;
+   * print() is synchronous and would otherwise capture the pre-expand DOM. */
+  function buildBriefingReport(root) {
+    setAllSections(true, root);
+    var go = function () { try { window.print(); } catch (e) { /* no print in this host */ } };
+    if (typeof window.requestAnimationFrame === "function") {
+      window.requestAnimationFrame(function () { window.requestAnimationFrame(go); });
+    } else { setTimeout(go, 60); }
+  }
+
   function wire(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope]"), function (b) {
+      b.onclick = function () { setScope(b.getAttribute("data-scope"), root); };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope-clear]"), function (b) {
+      b.onclick = function () { setScope(null, root); };
+    });
+    // Back to step 2, keeping the scope. Clears the entity AND its detail — a
+    // stale detail left behind would render the previous college's figures under
+    // the next one's name for as long as the fetch takes.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-entity-clear]"), function (b) {
+      b.onclick = function () {
+        state.college = null; state.district = state.scope === "district" ? "" : state.district;
+        state.detail = null; state.detailFor = null; state.detailError = null;
+        rememberScope(); recompute(); render(root);
+      };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-district]"), function (b) {
+      b.onclick = function () {
+        state.district = b.getAttribute("data-district") || "";
+        rememberScope(); recompute(); render(root);
+      };
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-all]"), function (b) {
+      b.onclick = function () { setAllSections(b.getAttribute("data-all") === "open", root); };
+    });
+    var rep = root.querySelector("#cb-report");
+    if (rep) rep.onclick = function () { buildBriefingReport(root); };
+
     var c = root.querySelector("#cb-college"), d = root.querySelector("#cb-district");
     if (c) c.onchange = function () { selectCollege(c.value, root); };
     if (d) d.onchange = function () {
@@ -2016,6 +2440,18 @@
    * question through it and the reviewer edits first). If neither is
    * available the question is stashed and we navigate to the full tab. */
   function askSierra(question) {
+    /* ⚠ SIERRA MAY BE COLLAPSED. Since 2026-08-17 she is a <details>, and
+     * Collapse all closes her along with everything else. Prefilling a widget
+     * inside a closed section types into a box nobody can see — the exact
+     * silent failure #1166 fixed for the Sierra Training hand-off, which
+     * targets this very widget. Open the section before handing anything to it.
+     * State first, then the live DOM, because a re-render reads the state and
+     * anything already on screen does not wait for one. */
+    state.open.sierra = true;
+    try {
+      var d = document.querySelector('#college-briefing-root details[data-sec="sierra"]');
+      if (d && !d.open) d.open = true;
+    } catch (e) { /* not mounted — the state flag still lands */ }
     var C = chatModule();
     if (C && typeof C.ask === "function" && C.ask(question)) return;          // fills + sends
     if (C && typeof C.prefill === "function" && C.prefill(question)) return;  // stays on the tab
@@ -2140,6 +2576,7 @@
   function activate() {
     var root = document.getElementById("college-briefing-root");
     if (!root) return;
+    if (state.scope === null) restoreScope();
     if (state.data && state.loadedSignedIn === signedIn()) { loadRoster(root); loadLive(root); render(root); return; }
     if (!signedIn()) { state.data = null; render(root); return; }
     state.loading = true; render(root);
@@ -2175,6 +2612,15 @@
     // server is indistinguishable from a college with no data, on every college
     // at once. That is silent by construction and cannot be seen from the
     // rendered page, so it is asserted on the headers instead.
+    _scopePicker: scopePicker,
+    _entityPicker: entityPicker,
+    _welcomeHead: welcomeHead,
+    _scopeLabel: scopeLabel,
+    _scopeReady: scopeReady,
+    _rollup: rollup,
+    _SCOPES: SCOPES,
+    _SECTION_IDS: SECTION_IDS,
+    _setAllSections: setAllSections,
     _getSession: getSession,
     _authHeaders: authHeaders,
     _rosterKey: rosterKey,

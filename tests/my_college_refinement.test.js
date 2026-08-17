@@ -69,6 +69,20 @@ function loadTab(opts) {
   if (!opts.withoutChat) run(CHAT);
   run(BRIEFING);
   const root = w.document.getElementById("college-briefing-root");
+  /* The tab now opens on a SCOPE question (Sam, 2026-08-17) and shows no
+   * assistant, no title and no sections until it is answered — so every check
+   * in this file needs the flow advanced past it first. Set on the module's own
+   * state rather than by clicking, because these are structural assertions
+   * about the briefing view, not about how one arrives at it; the picker itself
+   * is guarded in my_college_scope.test.js. */
+  if (!opts.noScope) {
+    w.CPL_COLLEGE_BRIEFING._state.scope = opts.scope || "college";
+    // …and a college, because the college scope shows the ENTITY picker until
+    // one is chosen. scopeReady() is what the briefing view waits on.
+    if ((opts.scope || "college") === "college" && !opts.noCollege) {
+      w.CPL_COLLEGE_BRIEFING._state.college = opts.college || "Allan Hancock College";
+    }
+  }
   w.CPL_COLLEGE_BRIEFING.render(root);
   return { w: w, root: root };
 }
@@ -137,7 +151,16 @@ block("(1d)", function () {
   check("(1d) its options are gone from the source too",
     !/Anyone at the college/.test(BRIEFING) || /READ NOWHERE/.test(BRIEFING),
     "if the labels come back, they must come back wired to something");
-  check("(1d) the college picker survives (positive control)", !!root.querySelector("#cb-college"));
+  /* RESCOPED, not dropped (Sky167). The college picker moved to the scope
+   * flow's second step (Sam, 2026-08-17), so it is legitimately absent from the
+   * briefing view — but the positive control it provided is the whole reason
+   * this block means anything: without one, "no #cb-role" would pass on a page
+   * that rendered no selects at all. So the control now looks where the picker
+   * actually lives, which also asserts it still exists. */
+  const step2 = loadTab({ scope: "college", noCollege: true }).root;
+  check("(1d) the college picker survives, on the choose-a-college step (positive control)",
+    !!step2.querySelector("#cb-college"));
+  check("(1d) …and the dead role select is not there either", !step2.querySelector("#cb-role"));
   // The chips ARE the role picker now, and they are on the same screen.
   const chips = root.querySelectorAll("#cplchat-audience .cplchat-aud-chip");
   check("(1d) the audience chips are the one role picker, and they render",
