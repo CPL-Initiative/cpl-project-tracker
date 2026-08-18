@@ -51,11 +51,10 @@
       "font-family:'Source Sans 3',Arial,sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.10em;",
       "text-transform:uppercase;color:var(--seal-blue,#00356B);background:var(--mustard-fill,#E3B341);",
       "border-radius:3px;white-space:nowrap;}",
-      ".cobi-alpha-note{grid-column:1 / -1;order:8;margin:0;padding:.3rem .1rem 0;",
-      "border-top:1px solid var(--border,rgba(28,28,26,.14));",
-      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:600;line-height:1.35;",
-      "color:var(--mustard-text,#8B6800);}",
-      ".cobi-alpha-note b{font-weight:800;letter-spacing:.06em;}",
+      ".cobi-alpha-note{grid-column:1 / -1;order:8;margin:0;padding:.35rem .1rem .1rem;",
+      "border-top:1px solid var(--border,rgba(28,28,26,.14));text-align:center;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.88rem;font-style:italic;",
+      "font-weight:600;line-height:1.4;color:var(--mustard-text,#8B6800);}",
       ".cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.8rem;font-weight:600;",
       "letter-spacing:.02em;color:var(--text-muted,#5C5C55);margin:.1rem 0 0;white-space:nowrap;}",
       // ── center search slot (quickstart mounts here) ──
@@ -125,8 +124,9 @@
   // Alpha-testing notice. COBI is not a finished product and its figures are
   // not yet trustworthy enough to quote, so the masthead says so on every tab:
   // an ALPHA chip on the wordmark (survives the daily <h1> regen, same reason
-  // as the CPL superscript) plus one plain-language line under the brand.
-  var ALPHA_NOTE = "Features and figures may be incomplete or wrong \u2014 " +
+  // as the CPL superscript) plus one centered, italic line under the brand.
+  var ALPHA_NOTE = "COBI is an experimental data suite in Alpha development " +
+                   "phase. Features and figures may be incomplete or wrong \u2014 " +
                    "please don\u2019t cite or share them outside the team.";
 
   function addAlphaNotice() {
@@ -143,8 +143,7 @@
     var note = document.createElement("p");
     note.className = "cobi-alpha-note";
     note.setAttribute("role", "note");
-    note.innerHTML = "<b>Alpha testing.</b> ";
-    note.appendChild(document.createTextNode(ALPHA_NOTE));
+    note.textContent = ALPHA_NOTE;
     header.appendChild(note);
   }
 

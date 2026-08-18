@@ -165,7 +165,8 @@ check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\
   const note = doc.querySelector(".header .cobi-alpha-note");
   check("alpha notice row injected into the header", !!note);
   const txt = note ? note.textContent : "";
-  check("notice says it is alpha testing", /alpha testing/i.test(txt));
+  check("notice names COBI as experimental and in Alpha development",
+    /COBI is an experimental data suite in Alpha development phase/i.test(txt));
   check("notice warns the figures may be wrong", /incomplete or wrong/i.test(txt));
   check("notice says not to cite or share outside the team",
     /cite or share/i.test(txt) && /outside the team/i.test(txt));
@@ -183,6 +184,14 @@ check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\
   const headCss = Array.from(doc.querySelectorAll("head style")).map(s => s.textContent).join("");
   check("notice spans the whole header row (grid-column 1 / -1)",
     /\.cobi-alpha-note\{[^}]*grid-column:1 \/ -1/.test(headCss));
+  // Sam, 2026-08-18: centered, italic, a step larger than the tagline (.8rem).
+  check("notice is centered", /\.cobi-alpha-note\{[^}]*text-align:center/.test(headCss));
+  check("notice is italic", /\.cobi-alpha-note\{[^}]*font-style:italic/.test(headCss));
+  {
+    const m = /\.cobi-alpha-note\{[^}]*font-size:([\d.]+)rem/.exec(headCss);
+    check("notice font-size is larger than the tagline's .8rem",
+      !!m && parseFloat(m[1]) > 0.8);
+  }
   check("notice/chip use brand tokens, not raw hex",
     /\.cobi-alpha-note\{[^}]*var\(--mustard-text/.test(headCss) &&
     /\.cobi-alpha\{[^}]*var\(--mustard-fill/.test(headCss));

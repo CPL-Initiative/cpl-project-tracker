@@ -675,8 +675,10 @@ testing and only used for testing purposes."*
 **What shipped.** Two surfaces, one wording:
 
 - An **`Alpha` chip** on the wordmark and a one-line notice row under the
-  brand: *"**Alpha testing.** Features and figures may be incomplete or wrong —
-  please don't cite or share them outside the team."*
+  brand — **centered, italic, `.88rem`** (a step above the `.8rem` tagline):
+  *"COBI is an experimental data suite in Alpha development phase. Features and
+  figures may be incomplete or wrong — please don't cite or share them outside
+  the team."*
 - **`(Alpha)` in `<title>` + `og:title`** — `COBI ᶜᴾᴸ (Alpha) — …`.
 
 **Why the title too.** The on-page notice only reaches someone who already
@@ -696,10 +698,22 @@ already solved. `addAlphaNotice()` is idempotent and re-runnable, and
 disappearing**, including a check that re-running the injector after a
 simulated `<h1>` regen puts the chip back.
 
-**Wording.** Kept to one sentence with a concrete instruction rather than a
-mood. "Alpha" alone tells a reader the stage but not the behaviour it should
-change; *don't cite or share outside the team* is the actual ask, and it is the
-thing a colleague can comply with.
+**Wording.** Two sentences: what COBI *is* right now, then what to do about
+it. Sam supplied the first on review — *"COBI is an experimental data suite in
+Alpha development phase"* — and it is the half that was missing. The original
+opened with a bare **Alpha testing.**, which names the stage but not the thing:
+a reader who has never met COBI learns that *something* is in alpha without
+learning that the whole suite is experimental. The second sentence stays as it
+was, because "don't cite or share outside the team" is the actual ask and the
+only part a colleague can comply with.
+
+**Presentation is part of the message.** Sam also asked for centered, italic and
+a bit larger. Left-aligned at `.74rem` the line read as a caption on the
+wordmark — the visual grammar of a fine-print disclaimer, which is exactly the
+register a reader skips. Centered across the full header width, italic, and
+larger than the tagline it sits under, it reads as a *statement about the whole
+page*. The `<b>Alpha testing.</b>` lead was dropped in the same pass: with the
+line already set apart, the bold was competing emphasis rather than adding it.
 
 **Layout.** The notice is a grid child at `grid-column:1 / -1` with a late
 `order`, so it takes its own row under the brand in both the wide and the
