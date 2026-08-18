@@ -1,7 +1,7 @@
 ---
 title: COBI — the masthead rename and the Mamba brand layer
 created: 2026-06-19
-updated: 2026-07-02
+updated: 2026-08-18
 tags: [lessons, cobi, branding, masthead, ui, easter-egg, kpi-cards]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -664,3 +664,49 @@ re-grain, label per Sam: **"Common Exhibit Titles."**
   "Exhibits" columns + Top-50 stay raw-ID/raw-title grain; the college custom
   report prints those buckets — re-key in a follow-up if Sam wants the
   per-college numbers on the same grain.
+
+---
+
+## 2026-08-18 — the Alpha-testing notice (Sky168)
+
+Sam: *"add a notice to the COBI header that clarifies that it is in Alpha
+testing and only used for testing purposes."*
+
+**What shipped.** Two surfaces, one wording:
+
+- An **`Alpha` chip** on the wordmark and a one-line notice row under the
+  brand: *"**Alpha testing.** Features and figures may be incomplete or wrong —
+  please don't cite or share them outside the team."*
+- **`(Alpha)` in `<title>` + `og:title`** — `COBI ᶜᴾᴸ (Alpha) — …`.
+
+**Why the title too.** The on-page notice only reaches someone who already
+opened the page. A COBI link pasted into Teams or Slack unfurls as its
+`<title>`/`og:title`, and that is exactly the moment the "still in testing"
+signal has to travel — the person deciding whether to click, or worse, whether
+to forward the numbers. Same reason the change is in `COBI_TITLE` in
+`excel_to_dashboard.py` (Rule 1) rather than typed into the HTML.
+
+**Where the code lives, and why.** Both the chip and the notice row are
+injected at runtime by `cobi_brand.js`, not written into the masthead markup.
+The generator rewrites `<h1>` on every daily run (`re.sub(r'<h1>[^<]*</h1>',
+'<h1>COBI</h1>')`), so a chip typed into the HTML survives until 06:17 UTC
+tomorrow and then quietly vanishes — the same trap the gold `CPL` superscript
+already solved. `addAlphaNotice()` is idempotent and re-runnable, and
+`cobi_brand.test.js` guards the failure mode that matters: **the notice
+disappearing**, including a check that re-running the injector after a
+simulated `<h1>` regen puts the chip back.
+
+**Wording.** Kept to one sentence with a concrete instruction rather than a
+mood. "Alpha" alone tells a reader the stage but not the behaviour it should
+change; *don't cite or share outside the team* is the actual ask, and it is the
+thing a colleague can comply with.
+
+**Layout.** The notice is a grid child at `grid-column:1 / -1` with a late
+`order`, so it takes its own row under the brand in both the wide and the
+≤1180px header layouts without disturbing the columns above it. Colours come
+from `--mustard-fill` / `--mustard-text` (the caution grades) — no raw hex.
+
+**Not done — deliberately.** The standalone public pages (the CPL Fact Sheet,
+the Sierra assistant page) carry their own headers and were left alone; Sam's
+ask named the COBI header. If those should carry it too, that is a separate,
+larger call, since they are the pages actually pointed at colleges.
