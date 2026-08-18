@@ -9069,11 +9069,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
 
     <div class="cpl-tab-pane" id="tab-gr-priorities" data-tab="gr-priorities" role="tabpanel" aria-labelledby="tab-gr-priorities">
         <div class="main-container">
-            <!-- GR — Government Relations (CPL Title 5 §55050 reform priorities).
+            <!-- GR — Government Relations REGISTER: policy / regulation revisions
+                 under consideration, per Chancellor's Office PRIORITY AREA, with the
+                 source artifacts informing them (gr_areas → gr_revisions → gr_artifacts).
                  SENSITIVE / SERVER-GATED: gr_priorities.js (lazy) prompts for the
-                 MAP-team phrase and reads gr_content from Supabase (RLS gr_pass_ok()).
-                 No advocacy content lives in this file or the page source. The tab is
-                 EXCLUSIVE in cobi_orgs.js (surfaces only under ?org=gr). Mirror in
+                 MAP-team phrase and reads from Supabase under RLS gr_pass_ok(); WRITES
+                 are reviewer-only (a shared phrase is a READ credential). No content
+                 lives in this file or the page source. The tab is EXCLUSIVE in
+                 cobi_orgs.js (surfaces only under ?org=gr). Mirror in
                  CPL_Dashboard.html AND index.html per Rule 4. -->
             <div id="gr-priorities-root" style="border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center;">
                 Loading&hellip;

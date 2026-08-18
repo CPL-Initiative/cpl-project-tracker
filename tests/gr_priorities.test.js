@@ -71,55 +71,149 @@ check("renderer keeps https links", link && link.getAttribute("href") === "https
 check("https links open in a new tab safely", link && link.getAttribute("target") === "_blank" && /noopener/.test(link.getAttribute("rel") || ""));
 check("renderer keeps <b> and <i>", ok.querySelector("b") && ok.querySelector("i"));
 
-// ── Part C — render + filter + Word export from a sample doc ─────────────────
-var sampleDoc = {
-  title: "Sample", eyebrow: "GR", updated: "2026-07-16", sub: "sub", thesis: "A <b>regulation</b>.",
-  tiers: [{ k: "g", label: "Guidance", n: 2, blurb: "b" }, { k: "r", label: "Ed. Code", n: 1, blurb: "b" }],
-  groups: [
-    { grp: "A", sub: "Scope — flexibility", rows: [
-      { n: 1, t: "Item one", inst: "§55050", path: ["g", "y"], ed: "No", d: "<p>Approach one <a href=\"https://x.example.org/a\">§55050</a>.</p>", c: "consider" },
-      { n: 2, t: "Item two", inst: "§55023", path: ["y"], ed: "No", d: "<p>Approach two.</p>", c: "" }
-    ]},
-    { grp: "D", sub: "Funding", rows: [
-      { n: 7, t: "Apportionment", inst: "§58050", path: ["r"], ed: "Yes", d: "<p>Hard one.</p>", c: "risk" }
-    ]}
-  ],
-  priority: [
-    { r: 1, ids: "#7", t: "Apportionment", tier: ["r"], why: "matters", path: "<a href=\"https://x.example.org/p\" style=\"color:#3d4a60\">§58050</a>", prec: "Yes" },
-    { r: 2, ids: "#1", t: "Scope", tier: ["g", "y"], why: "value", path: "path", prec: "No" }
-  ],
-  ask: [{ k: "1", h: "now", p: "do <b>#12</b>" }],
-  corrections: ["<b>AB 1985</b> is not CPL."],
-  caveat: "Verify <b>before</b> external use."
-};
+// ── Part C — the REGISTER: citations as data, filters, collisions ───────────
+// The tab became a register (areas → revisions → artifacts) so it can scale
+// past CPL to every CO priority area. These guard the parts that would silently
+// mislead a lawyer if they broke.
+
+// C1 — citation parsing. The rule that matters: a section we cannot place under
+// a KNOWN code is REJECTED, never guessed. §11342.2 is GOVERNMENT Code (the APA
+// definition of "regulation"); a "5xxxx → Title 5, everything else → Ed. Code"
+// rule would file it under Ed. Code and hand a lawyer a wrong citation.
+var p = GR._parseCites("55050, EC §76004, T5 §58003.2, 11342.2, 66025.71");
+check("parses a bare CCC section to Title 5", p.ok.indexOf("T5 §55050") !== -1);
+check("keeps an explicit Ed. Code citation", p.ok.indexOf("EC §76004") !== -1);
+check("keeps a decimal Title 5 section", p.ok.indexOf("T5 §58003.2") !== -1);
+check("files 11342.2 under GOVERNMENT Code, not Ed. Code", p.ok.indexOf("GC §11342.2") !== -1);
+check("files 66025.71 under Ed. Code", p.ok.indexOf("EC §66025.71") !== -1);
+var bad = GR._parseCites("whatever, 42, §999999999");
+check("rejects text that is not a citation", bad.bad.indexOf("whatever") !== -1);
+check("rejects an out-of-range number rather than guessing a code", bad.ok.length === 0);
+check("Title 5 renders with a human label", GR._citeLabel("T5 §55050") === "Title 5 §55050");
+check("Gov. Code renders with a human label", GR._citeLabel("GC §11342.2") === "Gov. Code §11342.2");
+
+// C2 — the cross-area section index. This is the thing a register can do that a
+// folder of Word docs cannot: show that two priority areas propose to touch the
+// same section BEFORE rulemaking.
+var col = GR._collisions([
+  { area_id: "cpl", citations: ["T5 §55050", "EC §76004"] },
+  { area_id: "dual-enrollment", citations: ["EC §76004"] },
+  { area_id: "cpl", citations: ["T5 §55050"] }
+]);
+check("collision index finds the section two areas share", col.length === 1 && col[0].cite === "EC §76004");
+check("collision names both areas", col[0].areas.join(",") === "cpl,dual-enrollment");
+check("a section cited twice by ONE area is not a collision",
+  GR._collisions([{ area_id: "cpl", citations: ["T5 §55050"] },
+                  { area_id: "cpl", citations: ["T5 §55050"] }]).length === 0);
+
+// C3 — filtering
+var rev = { title: "Attendance accounting", summary: "apportionment", consideration: null,
+            instrument: null, grp: "Funding", pathway: ["g", "y"], citations: ["T5 §58003.2"],
+            status: "proposed" };
+var ALL = { q: "", path: "all", status: "all", cite: "all" };
+check("no filters → row matches", GR._matches(rev, ALL));
+check("pathway filter matches a pathway it has", GR._matches(rev, { q: "", path: "y", status: "all", cite: "all" }));
+check("pathway filter excludes one it lacks", !GR._matches(rev, { q: "", path: "r", status: "all", cite: "all" }));
+check("section filter matches the cited section", GR._matches(rev, { q: "", path: "all", status: "all", cite: "T5 §58003.2" }));
+check("section filter excludes an uncited section", !GR._matches(rev, { q: "", path: "all", status: "all", cite: "T5 §55050" }));
+check("status filter works", !GR._matches(rev, { q: "", path: "all", status: "adopted", cite: "all" }));
+check("keyword search reaches the summary", GR._matches(rev, { q: "apportionment", path: "all", status: "all", cite: "all" }));
+check("keyword search reaches the citations", GR._matches(rev, { q: "58003", path: "all", status: "all", cite: "all" }));
+check("keyword search excludes a non-match", !GR._matches(rev, { q: "zzzz", path: "all", status: "all", cite: "all" }));
+
+// C4 — render + the export reads the SCREEN
+var AREA = { id: "cpl", title: "Credit for Prior Learning", division: "ESS",
+             summary: "s", narrative: { thesis: "A <b>regulation</b> question." } };
+var REVS = [
+  { id: "1", area_id: "cpl", n: 1, title: "Item one", grp: "Scope", summary: "<p>One <a href=\"https://x.example.org/a\">§55050</a>.</p>",
+    consideration: "consider", instrument: null, pathway: ["g", "y"], citations: ["T5 §55050"],
+    citations_derived: true, ed_first: "No", status: "proposed", updated_by: "someone@x" },
+  { id: "2", area_id: "cpl", n: 2, title: "Item two", grp: "Scope", summary: "Two.", consideration: null,
+    instrument: null, pathway: ["y"], citations: ["T5 §55023"], citations_derived: false,
+    ed_first: "No", status: "adopted", updated_by: null },
+  { id: "3", area_id: "cpl", n: 7, title: "Apportionment", grp: "Funding", summary: "Hard one.", consideration: "risk",
+    instrument: null, pathway: ["r"], citations: ["T5 §58050"], citations_derived: false,
+    ed_first: "Yes", status: "proposed", updated_by: null }
+];
+GR._state.areas = [AREA, { id: "dual-enrollment", title: "Dual Enrollment" }];
+GR._state.areaId = "cpl";
+GR._state.revisions = REVS;
+GR._state.artifacts = [
+  { id: "a1", title: "A memo", url: "https://x.example.org/m", kind: "memo", source: "CCCCO",
+    division: "ESS", why: "Sets the baseline.", citations: ["T5 §55050"], added_by: "someone@x" },
+  { id: "a2", title: "Not a link", url: "javascript:alert(1)", kind: "other", source: null,
+    division: null, why: null, citations: [], added_by: null }
+];
 var root = dom.window.document.createElement("div");
-GR._renderBriefing(root, sampleDoc);
-check("renders one .gx-item per row (3)", root.querySelectorAll(".gx-item").length === 3);
-check("renders the tier summary cards (2)", root.querySelectorAll(".gx-tc").length === 2);
+GR._renderRegister(root, REVS.concat([{ area_id: "dual-enrollment", citations: ["T5 §55050"] }]));
+
+check("renders one row per revision (3)", root.querySelectorAll(".gx-item").length === 3);
 check("renders the group headers (2)", root.querySelectorAll(".gx-grp").length === 2);
-check("item carries its primary-tier data + link in description",
-  root.querySelector(".gx-item[data-tiers='g y']") && root.querySelector(".gx-desc a[href='https://x.example.org/a']"));
-// filter: click the Ed.Code chip → only the r-tier item stays undimmed
+check("renders the area picker with both areas", root.querySelectorAll("#gx-area option").length === 2);
+check("description keeps an https link from the summary", root.querySelector(".gx-desc a[href='https://x.example.org/a']") !== null);
+check("renders the artifact list", root.querySelectorAll(".gx-art").length >= 2);
+check("an artifact with a javascript: url is NOT rendered as a link",
+  root.querySelector(".gx-art a[href^='javascript']") === null);
+check("an https artifact IS a link", root.querySelector(".gx-art a[href='https://x.example.org/m']") !== null);
+
+// A DERIVED citation must be visibly distinguishable from a curated one —
+// an extracted citation shown to a lawyer as curated fact is the credibility risk.
+check("a derived citation is marked", root.querySelector(".gx-cite.derived") !== null);
+check("a curator-entered citation is NOT marked derived",
+  root.querySelectorAll(".gx-cite").length > root.querySelectorAll(".gx-cite.derived").length);
+
+// section dropdowns are built from what is CITED — never an empty option
+var opts = [];
+root.querySelectorAll("select[aria-label='Title 5 section'] option").forEach(function (o) { opts.push(o.value); });
+check("Title 5 dropdown offers only sections actually cited",
+  opts.length === 4 && opts.indexOf("T5 §55050") !== -1 && opts.indexOf("EC §76004") === -1);
+check("no Ed. Code dropdown when nothing cites Ed. Code",
+  root.querySelector("select[aria-label='Ed. Code section']") === null);
+
+// filter → the Word export follows the SCREEN (the Sky167 lesson: the briefing
+// this replaced kept a separate 13-item array beside a 16-row screen).
 var frChip = null;
 root.querySelectorAll(".gx-chip").forEach(function (c) { if (c.getAttribute("data-f") === "r") frChip = c; });
 frChip && frChip.click();
-var undimmed = Array.prototype.filter.call(root.querySelectorAll(".gx-item"), function (i) { return !i.classList.contains("dim"); });
-check("filter=Ed.Code leaves exactly the r-tier item visible", undimmed.length === 1 && undimmed[0].getAttribute("data-tiers") === "r");
+var visible = Array.prototype.filter.call(root.querySelectorAll(".gx-item"), function (i) { return !i.hidden; });
+check("pathway filter leaves exactly the Ed. Code row", visible.length === 1);
+check("filtered count is disclosed, never silent", /showing 1 of 3/.test(root.querySelector(".gx-count").textContent));
 
-var word = GR._draftDocBody(sampleDoc);
-check("Word export orders by blast radius (intro says so)", word.indexOf("Ordered by blast radius") !== -1);
-check("Word export pulls the intro from the doc thesis (not hardcoded)", word.indexOf("A <b>regulation</b>.") !== -1);
-check("Word export lists the priorities in order (#7 before #1)",
-  word.indexOf("1. Apportionment") !== -1 && word.indexOf("1. Apportionment") < word.indexOf("2. Scope"));
+var word = GR._draftDocBody(AREA, visible.map(function (d) { return d._rev; }));
+check("Word export contains the filtered row", word.indexOf("Apportionment") !== -1);
+check("Word export omits rows filtered OFF the screen", word.indexOf("Item one") === -1);
+check("Word export pulls the intro from the area narrative", word.indexOf("A regulation question.") !== -1);
+check("Word export escapes markup rather than emitting it",
+  GR._draftDocBody(AREA, [{ n: 1, title: "<script>x</script>", pathway: [], citations: [], status: "proposed" }])
+    .indexOf("<script>") === -1);
+
+// C5 — cross-area collisions render
+check("collision section names the other area",
+  root.textContent.indexOf("Dual Enrollment") !== -1);
+
+// C6 — writes are reviewer-gated, NOT phrase-gated. A shared phrase is a READ
+// credential: anyone holding it must not be able to rewrite another division's
+// entries.
+check("no add-forms are offered without a reviewer session",
+  root.querySelectorAll(".gx-form").length === 0 &&
+  root.textContent.indexOf("Sign in to add") !== -1);
+var src2 = fs.readFileSync("gr_priorities.js", "utf8");
+check("write path requires an access_token (canWrite), not the phrase",
+  /function canWrite\(\)\s*\{[^}]*access_token/.test(src2));
+check("an RLS-filtered write (200 + empty body) is reported as FAILURE",
+  /rows\.length === 0/.test(src2) && /not saved/.test(src2));
+check("a null read is distinguished from an empty read",
+  /areas === null/.test(src2));
 
 // ── Part D — lock screen when no phrase is stored ────────────────────────────
 try { dom.window.localStorage.removeItem("cpl_gr_pass"); } catch (e) {}
+try { dom.window.sessionStorage.removeItem("cpl_sb"); } catch (e) {}
 var lockRoot = dom.window.document.createElement("div");
 lockRoot.id = "gr-priorities-root";
 dom.window.document.body.appendChild(lockRoot);
-GR.activate();  // no stored phrase → lock card, no content fetch
+GR.activate();  // no phrase, no reviewer session → lock card, no content fetch
 check("with no phrase, shows the lock card (password input)", lockRoot.querySelector(".gx-lock input[type='password']") !== null);
-check("lock card renders no advocacy items", lockRoot.querySelectorAll(".gx-item").length === 0);
+check("lock card renders no register rows", lockRoot.querySelectorAll(".gx-item").length === 0);
 
 // ── report ───────────────────────────────────────────────────────────────────
 let fail = 0;
