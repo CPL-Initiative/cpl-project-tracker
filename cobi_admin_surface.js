@@ -303,7 +303,11 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "gr_content"
       ],
-      "writes": [],
+      "writes": [
+        "gr_areas",
+        "gr_artifacts",
+        "gr_revisions"
+      ],
       "rpcs": [
         "gr_pass_ok"
       ],
