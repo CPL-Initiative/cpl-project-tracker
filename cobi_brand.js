@@ -12,6 +12,8 @@
 //
 // Brand touches:
 //   * COBI wordmark in seal-navy with a gold "CPL" superscript.
+//   * ALPHA chip on the wordmark + a one-line alpha-testing notice row,
+//     both injected at runtime so the daily <h1> regen can't strand them.
 //   * ℹ About popover holding the generator-injected Project Description /
 //     Attachments / Cheat Sheet (anchored on the hidden #cobi-mamba) plus the
 //     static "Today's painting" link (→ window.CPL_FIRST_LIGHT.open()).
@@ -45,6 +47,15 @@
       "letter-spacing:.08em;color:var(--seal-blue,#00356B);margin:0;white-space:nowrap;}",
       ".header h1 .cobi-num{font-size:.40em;vertical-align:super;margin-left:.16em;font-weight:800;",
       "letter-spacing:.05em;color:var(--mustard-text,#8B6800);}",
+      ".cobi-alpha{display:inline-block;margin-left:.5rem;padding:.08rem .38rem;vertical-align:.18em;",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.58rem;font-weight:800;letter-spacing:.10em;",
+      "text-transform:uppercase;color:var(--seal-blue,#00356B);background:var(--mustard-fill,#E3B341);",
+      "border-radius:3px;white-space:nowrap;}",
+      ".cobi-alpha-note{grid-column:1 / -1;order:8;margin:0;padding:.3rem .1rem 0;",
+      "border-top:1px solid var(--border,rgba(28,28,26,.14));",
+      "font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:600;line-height:1.35;",
+      "color:var(--mustard-text,#8B6800);}",
+      ".cobi-alpha-note b{font-weight:800;letter-spacing:.06em;}",
       ".cobi-tagline{font-family:'Source Sans 3',Arial,sans-serif;font-size:.8rem;font-weight:600;",
       "letter-spacing:.02em;color:var(--text-muted,#5C5C55);margin:.1rem 0 0;white-space:nowrap;}",
       // ── center search slot (quickstart mounts here) ──
@@ -111,6 +122,32 @@
     h1.appendChild(sup);
   }
 
+  // Alpha-testing notice. COBI is not a finished product and its figures are
+  // not yet trustworthy enough to quote, so the masthead says so on every tab:
+  // an ALPHA chip on the wordmark (survives the daily <h1> regen, same reason
+  // as the CPL superscript) plus one plain-language line under the brand.
+  var ALPHA_NOTE = "Features and figures may be incomplete or wrong \u2014 " +
+                   "please don\u2019t cite or share them outside the team.";
+
+  function addAlphaNotice() {
+    var h1 = document.querySelector(".header h1");
+    if (h1 && !h1.querySelector(".cobi-alpha")) {
+      var chip = document.createElement("span");
+      chip.className = "cobi-alpha";
+      chip.textContent = "Alpha";
+      chip.title = ALPHA_NOTE;
+      h1.appendChild(chip);
+    }
+    var header = document.querySelector(".header");
+    if (!header || header.querySelector(".cobi-alpha-note")) return;
+    var note = document.createElement("p");
+    note.className = "cobi-alpha-note";
+    note.setAttribute("role", "note");
+    note.innerHTML = "<b>Alpha testing.</b> ";
+    note.appendChild(document.createTextNode(ALPHA_NOTE));
+    header.appendChild(note);
+  }
+
   // ℹ About popover open/close (click toggle, click-outside + ESC to close).
   function wireAbout() {
     var btn = document.getElementById("cobiAboutBtn");
@@ -147,11 +184,13 @@
     inited = true;
     ensureCss();
     addSuperscript();
+    addAlphaNotice();
     wireAbout();
     wirePainting();
   }
 
-  window.COBI_BRAND = { init: init, addSuperscript: addSuperscript };
+  window.COBI_BRAND = { init: init, addSuperscript: addSuperscript,
+                        addAlphaNotice: addAlphaNotice };
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

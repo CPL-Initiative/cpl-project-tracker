@@ -11882,7 +11882,10 @@ def main():
         # they survive plain-text link unfurls (Teams/Slack read <title>/og:title),
         # matching the gold superscript CPL in the on-page brand mark.
         import re
-        COBI_TITLE = "COBI ᶜᴾᴸ — Chancellor's Office Business Intelligence"
+        # "(Alpha)" rides in the <title>/og:title on purpose: a COBI link
+        # pasted into Teams/Slack unfurls as its title, so the "still in
+        # testing" signal has to travel WITH the link, not only on-page.
+        COBI_TITLE = "COBI ᶜᴾᴸ (Alpha) — Chancellor's Office Business Intelligence"
         html = re.sub(r'<title>[^<]*</title>', "<title>" + COBI_TITLE + "</title>", html)
         html = re.sub(r'<meta property="og:title" content="[^"]*"',
                       '<meta property="og:title" content="' + COBI_TITLE + '"', html)

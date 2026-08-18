@@ -4,7 +4,8 @@
 // markup (seal, COBI wordmark, "…Business Intelligence" tagline with NO
 // "for CPL", the ℹ About popover holding the generator-injected Project
 // Description / Attachments + the static Today's painting link, the center
-// search slot, and the "Manually Refresh COBI" button); (b) the gold CPL
+// search slot, the "Manually Refresh COBI" button, and the alpha-testing
+// notice); (b) the gold CPL
 // superscript injects at runtime; (c) the About popover toggles; (d) the
 // painting link calls First Light; (e) quickstart mounts "Where To?" into the
 // center slot.
@@ -144,6 +145,47 @@ check("cobi_brand.js source lifts .header (position:relative; z-index:150)",
     /\.header\{[^}]*z-index:150/.test(headCss));
   check("injected CSS keeps the About panel z-index high (300)",
     /\.cobi-about-panel\{[^}]*z-index:300/.test(headCss));
+}
+
+// (g) Alpha-testing notice — COBI is not finished, and the masthead must say
+// so on every tab. Guards the failure mode that matters: the notice quietly
+// disappearing (a regen resetting the <h1>, an init running twice and only the
+// second one landing, or the notice never reaching the header at all).
+check("generator stamps (Alpha) into <title>/og:title (travels with a pasted link)",
+  /COBI_TITLE = "COBI [^"]*\(Alpha\)/.test(gen));
+check("shipped HTML <title> carries (Alpha)", /<title>[^<]*\(Alpha\)[^<]*<\/title>/.test(cpl));
+check("shipped HTML og:title carries (Alpha)", /og:title" content="[^"]*\(Alpha\)/.test(cpl));
+{
+  const d = dom();
+  d.window.eval(BRAND_SRC);
+  d.window.COBI_BRAND.init();
+  const doc = d.window.document;
+  const chip = doc.querySelector(".header h1 .cobi-alpha");
+  check("ALPHA chip injected onto the wordmark", !!chip && /alpha/i.test(chip.textContent));
+  const note = doc.querySelector(".header .cobi-alpha-note");
+  check("alpha notice row injected into the header", !!note);
+  const txt = note ? note.textContent : "";
+  check("notice says it is alpha testing", /alpha testing/i.test(txt));
+  check("notice warns the figures may be wrong", /incomplete or wrong/i.test(txt));
+  check("notice says not to cite or share outside the team",
+    /cite or share/i.test(txt) && /outside the team/i.test(txt));
+  // idempotent — the daily regen + a second init must not stack two notices
+  d.window.COBI_BRAND.init();
+  d.window.COBI_BRAND.addAlphaNotice();
+  check("chip not duplicated on re-init", doc.querySelectorAll(".cobi-alpha").length === 1);
+  check("notice not duplicated on re-init", doc.querySelectorAll(".cobi-alpha-note").length === 1);
+  // the chip rides the <h1>, which the generator rewrites daily — re-running
+  // the injector after a regen must put it back (same contract as .cobi-num)
+  doc.querySelector(".header h1").innerHTML = "COBI";
+  d.window.COBI_BRAND.addAlphaNotice();
+  check("chip is restored after the daily <h1> regen",
+    !!doc.querySelector(".header h1 .cobi-alpha"));
+  const headCss = Array.from(doc.querySelectorAll("head style")).map(s => s.textContent).join("");
+  check("notice spans the whole header row (grid-column 1 / -1)",
+    /\.cobi-alpha-note\{[^}]*grid-column:1 \/ -1/.test(headCss));
+  check("notice/chip use brand tokens, not raw hex",
+    /\.cobi-alpha-note\{[^}]*var\(--mustard-text/.test(headCss) &&
+    /\.cobi-alpha\{[^}]*var\(--mustard-fill/.test(headCss));
 }
 
 let failed = 0;
