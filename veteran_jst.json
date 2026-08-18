@@ -1,15 +1,20 @@
 {
-  "scraped_at": "2026-08-17T13:11:44.383543+00:00",
+  "scraped_at": "2026-08-18T07:07:51.777673+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26924,
+    "jst": 26932,
     "star_colleges": 56
   },
   "computed_star_colleges": 56,
   "colleges": {
+    "Santiago Canyon College": {
+      "vets": 288,
+      "jst": 110,
+      "star": false
+    },
     "Merced College": {
       "vets": 142,
       "jst": 273,
@@ -17,18 +22,13 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 326,
+      "jst": 327,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
       "jst": 1569,
       "star": true
-    },
-    "Santiago Canyon College": {
-      "vets": 288,
-      "jst": 110,
-      "star": false
     },
     "San Diego City College": {
       "vets": 776,
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 558,
+      "jst": 559,
       "star": true
     },
     "City College of San Francisco": {
@@ -207,7 +207,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 128,
+      "jst": 129,
       "star": false
     },
     "Ventura College": {
@@ -237,7 +237,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 169,
+      "jst": 171,
       "star": true
     },
     "Lemoore College": {
@@ -477,7 +477,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 96,
+      "jst": 98,
       "star": false
     },
     "Cuyamaca College": {
@@ -497,7 +497,7 @@
     },
     "Columbia College": {
       "vets": 33,
-      "jst": 22,
+      "jst": 23,
       "star": false
     },
     "Chabot College": {

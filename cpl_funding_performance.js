@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-17",
+ "as_of": "2026-08-18",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42145,
-  "pa": 39481,
-  "p2": 3517,
-  "p3": 15491,
+  "pe": 42361,
+  "pa": 39693,
+  "p2": 3676,
+  "p3": 15699,
   "pp": 5,
-  "pe_u": 1347708.45,
-  "pa_u": 217242.15,
-  "p3_u": 76790.45,
+  "pe_u": 1357334.45,
+  "pa_u": 220408.15,
+  "p3_u": 79392.45,
   "pp_u": 25.0
  },
  "colleges": {
@@ -64,10 +64,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Bakersfield": {
-   "pe": 587,
-   "pe_u": 25778.5,
-   "pa": 580,
-   "pa_u": 8567.5,
+   "pe": 588,
+   "pe_u": 25799.5,
+   "pa": 581,
+   "pa_u": 8572.5,
    "p2": 49,
    "p3": 50,
    "p3_u": 962.5,
@@ -152,10 +152,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 167,
-   "pe_u": 8579.5,
-   "pa": 163,
-   "pa_u": 815.0,
+   "pe": 170,
+   "pe_u": 8678.5,
+   "pa": 166,
+   "pa_u": 830.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -174,10 +174,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Chaffey": {
-   "pe": 1495,
-   "pe_u": 32049.0,
-   "pa": 1491,
-   "pa_u": 18474.5,
+   "pe": 1496,
+   "pe_u": 32052.0,
+   "pa": 1492,
+   "pa_u": 18477.5,
    "p2": 15,
    "p3": 32,
    "p3_u": 240.0,
@@ -218,8 +218,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Columbia": {
-   "pe": 22,
-   "pe_u": 1211.0,
+   "pe": 23,
+   "pe_u": 1377.0,
    "pa": 0,
    "pa_u": 0.0,
    "p2": 0,
@@ -529,13 +529,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 333,
-   "pe_u": 5955.0,
-   "pa": 299,
-   "pa_u": 1227.0,
+   "pe": 334,
+   "pe_u": 5969.0,
+   "pa": 300,
+   "pa_u": 1230.0,
    "p2": 20,
-   "p3": 223,
-   "p3_u": 891.0,
+   "p3": 224,
+   "p3_u": 894.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -733,9 +733,9 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 51668.0,
    "pa": 2093,
    "pa_u": 12264.5,
-   "p2": 428,
-   "p3": 1970,
-   "p3_u": 11339.0,
+   "p2": 429,
+   "p3": 1971,
+   "p3_u": 11350.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -883,8 +883,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Sacramento City": {
-   "pe": 61,
-   "pe_u": 2355.0,
+   "pe": 63,
+   "pe_u": 2442.0,
    "pa": 0,
    "pa_u": 0.0,
    "p2": 0,
@@ -952,7 +952,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 1312,
    "pe_u": 60996.0,
    "pa": 1310,
-   "pa_u": 8382.0,
+   "pa_u": 8934.0,
    "p2": 8,
    "p3": 15,
    "p3_u": 118.0,
@@ -1041,13 +1041,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santiago Canyon": {
-   "pe": 428,
-   "pe_u": 17790.0,
-   "pa": 427,
-   "pa_u": 12754.5,
-   "p2": 5,
-   "p3": 5,
-   "p3_u": 72.0,
+   "pe": 635,
+   "pe_u": 27026.0,
+   "pa": 633,
+   "pa_u": 15342.5,
+   "p2": 163,
+   "p3": 211,
+   "p3_u": 2660.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -1302,8 +1302,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 545,
-    "pa": 542,
+    "pe": 546,
+    "pa": 543,
     "p3": 26
    }
   },
@@ -1399,8 +1399,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 167,
-    "pa": 163,
+    "pe": 170,
+    "pa": 166,
     "p3": 0
    }
   },
@@ -1426,8 +1426,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 323,
-    "pa": 321,
+    "pe": 324,
+    "pa": 322,
     "p3": 6
    },
    "Other": {
@@ -1467,7 +1467,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Columbia": {
    "Military": {
-    "pe": 22,
+    "pe": 23,
     "pa": 0,
     "p3": 0
    }
@@ -2139,7 +2139,7 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 979,
     "pa": 979,
-    "p3": 875
+    "p3": 876
    },
    "Standardized Assessment": {
     "pe": 209,
@@ -2322,7 +2322,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "Military": {
-    "pe": 61,
+    "pe": 63,
     "pa": 0,
     "p3": 0
    }
@@ -2587,11 +2587,9 @@ window.CPL_FUNDING_PERF = {
   },
   "Santiago Canyon": {
    "Industry Certification": {
-    "pe": null,
-    "pa": null,
-    "p3": 5,
-    "pe_suppressed": true,
-    "pa_suppressed": true
+    "pe": 217,
+    "pa": 216,
+    "p3": 211
    },
    "Industry Certification | Portfolio Review": {
     "pe": null,
@@ -2601,9 +2599,11 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 109,
-    "pa": 109,
-    "p3": 0
+    "pe": null,
+    "pa": null,
+    "p3": 0,
+    "pe_suppressed": true,
+    "pa_suppressed": true
    },
    "Portfolio Review": {
     "pe": 308,
@@ -2824,9 +2824,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 995,
-   "pa": 972,
-   "p3": 888
+   "pe": 1202,
+   "pa": 1178,
+   "p3": 1094
   },
   "Industry Certification | Military": {
    "pe": 46,
@@ -2870,9 +2870,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26379,
-   "pa": 24269,
-   "p3": 2460
+   "pe": 26388,
+   "pa": 24275,
+   "p3": 2462
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -2919,26 +2919,26 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1347231.95,
-   "pa_u": 217242.15,
-   "p3_u": 76790.45
+   "pe_u": 1356857.95,
+   "pa_u": 220408.15,
+   "p3_u": 79392.45
   },
   "map": {
-   "pe_u": 1354592.45,
-   "pa_u": 217917.65,
-   "p3_u": 76815.45
+   "pe_u": 1364218.45,
+   "pa_u": 221083.65,
+   "p3_u": 79417.45
   },
   "ratio": {
-   "pe_u": 1.0055,
+   "pe_u": 1.0054,
    "pa_u": 1.0031,
    "p3_u": 1.0003
   }
  },
  "vet_star": {
+  "Santiago Canyon": false,
   "Merced": true,
   "Chaffey": true,
   "San Diego Mesa": true,
-  "Santiago Canyon": false,
   "San Diego City": true,
   "Moreno Valley": true,
   "San Diego Miramar": true,
@@ -3051,7 +3051,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-17",
+ "vet_star_as_of": "2026-08-18",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };
