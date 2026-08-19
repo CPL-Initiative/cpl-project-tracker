@@ -14,7 +14,7 @@
       "id": "s168-gr-phrase-scope",
       "for": "Sam",
       "tab": "admin",
-      "text": "Decide the phrase scope before anyone outside MAP gets access. Today the GR phrase also opens the Workplan, Budget, Memory, MAP Users and Governance, because any team secret opens any shared tab. This is the same thing you flagged for Finance in August. Nothing else about the GR demo is blocked on it — only inviting people in."
+      "text": "One question unblocks the General Counsel invite: who holds the GR phrase, and do they each also hold the shared team phrase? We measured it — the GR phrase reaches 42 tables it has no use for, and closing that is a one-line change that leaves Finance and everyone else exactly as they are. The only cost is that a GR-only holder loses shared tabs they were never meant to have. If they all hold the team phrase too, nobody notices."
     },
     {
       "id": "s168-gr-retire-phrase",
