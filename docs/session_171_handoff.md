@@ -81,11 +81,15 @@ grain.
 - **Sam, 2026-08-19:** Pedro (CEO, ITPI) confirmed the MAP student ids are
   **salt-hashed**. Recorded in `cpl_memory` as `map-student-ids-are-salt-hashed`,
   `verified`, with Pedro in `verified_by`.
-- **Sam is asking Pedro** whether the salt **rotates**. Answer pending — record it
-  at the call site in `fetch_custom_report.py` when it lands.
-- **ITPI's daily-push offer: declined on the merits** (three config lines beat a
-  second writer, an issued credential, and invisible failures).
-  `adr-pull-from-the-source-rather-than-accept-a-push` stands.
+- **Pedro, via Sam, 2026-08-19: the salt does NOT rotate — it stays the same every
+  run.** So the hashed key is stable across pulls and a loader may RELY on it:
+  students dedupe correctly across refreshes and counts are comparable over time.
+  Recorded at the call site and in `cpl_memory`.
+- **Sam has told Pedro the tables are wired into our cron, so no push is needed.**
+  The ITPI push question is now closed and communicated, not merely recommended.
+- **ITPI's daily-push offer: declined, and Sam has told Pedro so** — the tables are
+  wired into our cron, so no push is needed. `adr-pull-from-the-source-rather-than-accept-a-push`
+  is now a decision that has been ACTED ON, not a recommendation awaiting one.
 
 ---
 
@@ -96,9 +100,11 @@ grain.
   corrections go straight into `kb/delta_offering_map.json`. And the statewide
   engine's **second occupation list is still outstanding** — four sessions now,
   the oldest unpaid debt in that workstream.
-- **Salt-rotation detector, at LOAD time** — compare the incoming key set against
-  the previous pull: stable salt ⇒ large overlap, rotated ⇒ ~zero. Build it even
-  if Pedro answers "stable": an assurance describes today.
+- **Salt-rotation detector, at LOAD time — now a REGRESSION check, not an open
+  question.** Pedro confirmed the salt is stable, so build it to catch a future
+  change rather than to answer one: compare the incoming key set against the
+  previous pull (stable ⇒ large overlap, rotated ⇒ ~zero). This failure is silent
+  by construction, so nothing else would surface it.
 - **`CLAUDE.md` is 2.0× its budget** (119,962 / 60,000, `always_loaded`). Move
   prose to `docs/reference/`; do not inflate §11.
 - Auth `role` column, repo split, GR sensitivity flips — all still on Sam.
