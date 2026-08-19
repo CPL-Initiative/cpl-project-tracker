@@ -4418,3 +4418,19 @@ program search** (`A CON 87A–90D` is a plumbing apprenticeship under no plumbi
 rows asserting "no CPL anywhere" against exhibits that exist; in a document going into a room with a
 college, one over-claim discredits the other 138. Story: `docs/delta_college_crosswalk_lessons.md` ·
 handoff `docs/session_170_handoff.md`.
+
+### SkyFetch — the reports were already there, and the probe lied about it (2026-08-19, Session 170)
+
+**Merged #1246, #1247, #1248.** Sam: *"I want to see the new MAP Custom Reports supabase data."*
+⭐ **All three are served by the API the cron already pulls** — `dataCount` matching the builder exactly — so
+wiring was config, and the ITPI daily-push offer is declinable on the merits. `REQUEST_PAYLOAD` is now 10 datasets.
+⭐ **Two of the three are OUR OWN SPEC coming back** (`map_dataset_sql_for_malone.md` Dataset A = the 13-column
+report = `map_college_cr_unit`), so the job was a reconciliation; all three deltas run one way and are our
+staleness resolving. ⚠️ **§11 had said catalog year was new — it was 100% filled all along** at student grain.
+⚠️ **THE PROBE REPORTED "NONE EXPOSED" AND WAS WRONG.** `columnName: []` had stopped enumerating and now 500s on
+known-good views, so the validity test could never fire for ANY view — only a positive control caught it, and
+without one Sam would have been sent to Pedro on a broken instrument. It still leaked the truth: valid names 500,
+invalid names 400, and the single 500 was the real student view — printed as a rejection and summarised away.
+⭐ **Pedro's salt-hash assurance was corroborated, not just accepted** — the spec's own warning ("the ID space is
+small enough to enumerate") run as an experiment; 5M decimals + 8 variants ≠ a sampled hash.
+Story: `docs/map_custom_reports_lessons.md` · handoff `docs/session_171_handoff.md`.

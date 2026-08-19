@@ -260,26 +260,45 @@ check("applied_credits" not in sync.STUDENT_ZERO_FILL
       and "transcribed_credits" not in sync.STUDENT_ZERO_FILL,
       "a nullable live column was added to STUDENT_ZERO_FILL")
 
-# ── 8. The truncate helper must refuse a live table ───────────────────────
-# The one destructive call in the loader. It is aimed at staging by name, and
-# the live tables are reviewer-gated student-grain data.
+# ── 8. Clearing staging names no table from Python ────────────────────────
+# The one destructive step in the loader. It used to take a table name and
+# defend itself with an assert on the "stg_" prefix, which left the
+# reviewer-gated student-grain table one bad string away. It is now an RPC with
+# NO ARGUMENT, so the tables live in SQL and there is nothing here to get wrong.
+#
+# It also stopped being a mass DELETE, which is what actually broke: 591,820
+# deleted rows timed out and returned a bare HTTP 500, at the step BEFORE the
+# gated one, where no gate could catch it.
 _calls: list = []
 _real_request = sync._request
-sync._request = lambda *a, **k: (_calls.append(a) or (200, b"[]"))
+sync._request = lambda *a, **k: (_calls.append(a) or (200, b'{"cr_unit_was":1,"student_was":2}'))
 try:
-    try:
-        sync.truncate("map_student_credit", "key")
-        failures.append("truncate() accepted a LIVE table name — it must refuse "
-                        "anything not prefixed stg_")
-    except AssertionError:
-        pass
-    check(not _calls,
-          "truncate() issued a request for a live table before refusing — the "
-          "guard must come first, or the test itself becomes the destructive act")
-    sync.truncate("stg_map_student_credit", "key")
-    check(bool(_calls), "truncate() no longer deletes from a staging table")
+    was = sync.clear_staging("key")
+    check(len(_calls) == 1,
+          f"clear_staging() made {len(_calls)} requests; it must be the ONE RPC")
+    method, path = _calls[0][0], _calls[0][1]
+    # Pinned to the LITERAL, not to sync.CLEAR_STAGING_RPC: comparing a module
+    # against its own constant would follow the constant wherever it was pointed.
+    check(method == "POST" and path == "rpc/map_clear_custom_report_staging",
+          f"clear_staging() called {method} {path}, not POST "
+          "rpc/map_clear_custom_report_staging — the name must match the "
+          "function in kb/supabase_map_custom_report_staging.sql")
+    check("map_student_credit" not in path and "map_college_cr_unit" not in path,
+          "clear_staging() put a table name in the request path — the tables "
+          "belong in the SQL function body, where there is no argument to get wrong")
+    check(was.get("student_was") == 2,
+          "clear_staging() must return what it cleared, so the log says so")
 finally:
     sync._request = _real_request
+
+# No DELETE anywhere in the loader may name anything but the sketch table, which
+# is deleted per pull_date and is a bounded sample, never student rows.
+_src = open(os.path.join(ROOT, "kb", "_sync_map_custom_reports.py"),
+            encoding="utf-8").read()
+for _line in _src.splitlines():
+    if '_request("DELETE"' in _line:
+        check("map_student_key_sketch" in _line,
+              f"a DELETE names something other than the sketch table: {_line.strip()}")
 
 # ── 9. The salt-rotation sketch stays a sketch ────────────────────────────
 # A hash per student would be a persistent pseudonymous record of every student;

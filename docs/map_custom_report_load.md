@@ -41,7 +41,8 @@ stops it, and what to do when it stops.**
 2. `tests/custom_report_payload_test.py` + `tests/map_custom_report_sync_test.py`
    run **before** the load, so a contract break is caught on the runner rather
    than discovered mid-insert.
-3. `kb/_sync_map_custom_reports.py` fills the two staging tables.
+3. `kb/_sync_map_custom_reports.py` clears staging with
+   **`map_clear_custom_report_staging()`** and fills the two staging tables.
 4. It calls **`map_promote_custom_reports()`**, which does everything below
    **in one transaction**, and either commits all of it or none of it.
 5. The raw pull is deleted in an `always` step. Public repo, student rows.
@@ -57,6 +58,24 @@ Each thing the approval step was providing is now provided by the function:
 | a truncated or broken pull | **G1–G6**, each measured against the live table it is about to replace. |
 | publishing a recoverable suppression | **G7/G8**, blocking. |
 | published and unsuppressed drifting apart | both aggregates rebuild **inside the same transaction**. |
+
+### Clearing staging is a TRUNCATE, and it is not a gate
+
+⚠️ **The clear runs BEFORE the gated promotion, so no gate protects it.** On
+2026-08-19 it was a PostgREST mass `DELETE` and it failed the first time it met a
+**full** `stg_map_student_credit` — 591,820 dead tuples, `canceling statement due
+to statement timeout`, surfacing to the runner as a bare `HTTP 500`. It would
+have failed every night from then on: staging is full after every successful run,
+and the manual runs that passed had met an empty one.
+
+It is now `map_clear_custom_report_staging()` — `truncate table
+stg_map_college_cr_unit, stg_map_student_credit`, **5.3 s** on the same 802,825
+rows. The function takes **no argument**: the tables are named in its body, so
+the pipeline's one destructive call has no table name to get wrong. Schema of
+record: `kb/supabase_map_custom_report_staging.sql` § D.
+
+If it ever fails, the message says so and says **nothing live has changed** —
+which is true by construction, because it runs before the promotion.
 
 ---
 

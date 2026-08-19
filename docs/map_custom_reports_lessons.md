@@ -475,3 +475,84 @@ seen from the other side.
 2. **Watch the first unattended 13:40 UTC run.** Proven by dispatch, not yet by
    the schedule firing on its own.
 3. A `G`-numbered failure is a gate working. **Fix the pull, never the gate.**
+
+---
+
+## 2026-08-19 (Session 172) — the cron would have failed tonight, before any gate
+
+**The queue said "watch the first unattended 13:40 UTC run."** Watching it meant
+looking at what had already run, and the most recent dispatch — run 4, 21:30
+UTC, on the merged code — had **failed**. Not the promotion. The step before it.
+
+### (a) What broke: a mass DELETE the promotion had already stopped using
+
+```
+File "kb/_sync_map_custom_reports.py", line 442, in truncate
+    _request("DELETE", f"{table}?college_id=not.is.null", key)
+urllib.error.HTTPError: HTTP Error 500: Internal Server Error
+```
+
+The Postgres log for that second says what the 500 does not:
+**`canceling statement due to statement timeout`**, 21:34:39.193, ~370 ms before
+the client saw the error. Emptying `stg_map_student_credit` by DELETE means
+writing **591,820 dead tuples**, and that does not fit the role's default
+timeout.
+
+⭐ **The fix already existed a few lines away, in the same workstream, written
+the same day.** `map_promote_custom_reports()` swaps live with TRUNCATE and says
+why in its own comments — *"TRUNCATE, not DELETE: … does not write ~800k dead
+tuples, which is what pushed the first attempt past a minute."* Session 171
+learned it for the **live** half under a client timeout, fixed it there, and the
+**staging** half kept the DELETE. A lesson recorded inside one function is not a
+lesson applied to the pipeline.
+
+⚠️ **It failed at the step BEFORE the gated one, so no gate could have caught
+it.** G1–G9 all measure staging against live; they cannot fire when the run dies
+on its way to filling staging. **A gate protects what is downstream of it, which
+is exactly why the undefended half is the half to look at.**
+
+⚠️ **And it would have failed EVERY night from now on.** Runs 1–3 passed because
+staging was still small or empty; run 4 was the first to meet a **full** staging
+table, and staging is full after every successful run. This is the shape of a
+defect that arrives on the day automation starts running unattended: the
+successful manual runs are not evidence, because they ran in a state the cron
+never sees again.
+
+### (b) The fix, and the safety property that came free
+
+`map_clear_custom_report_staging()` — `truncate table stg_map_college_cr_unit,
+stg_map_student_credit`, returning what it cleared so the log says so. Measured
+on the same 802,825 rows that timed out: **5.3 s**, most of it the two counts.
+
+⭐ **It takes NO ARGUMENT, and that is the point.** The Python `truncate(table,
+key)` it replaces took a table name and defended itself with `assert
+table.startswith("stg_")` — a good guard, but it means the pipeline's one
+destructive call was one bad string away from a reviewer-gated student-grain
+table. The two staging tables are written into the SQL body now, so **there is
+no argument to get wrong.** Same shape as `cpl_memory:
+the-safest-version-of-a-dangerous-step-is-one-that-does-not-exist`.
+
+⚠️ **The failure printed as a bare urllib traceback**, unlike `insert()` and
+`promote()`, which decorate theirs. That is why the log reads as a mystery 500
+instead of naming the step. `clear_staging()` now says what failed, and that
+**nothing live has changed** — true by construction, since it runs before the
+promotion.
+
+### (c) Verification
+
+- Test §8 rewritten: one request, `POST rpc/map_clear_custom_report_staging`
+  pinned to the **literal** (comparing a module against its own constant follows
+  the constant wherever it is pointed), no table name in the path, and a
+  source-level check that **no `DELETE` in the loader names anything but the
+  sketch table**.
+- **Three mutations, all caught**: a table name back in the path, a reintroduced
+  live-table DELETE, and the RPC renamed away from the SQL function.
+- The function was applied to Supabase and run against the full staging tables
+  before any of this was merged. Live was never touched.
+
+### (d) Next concrete step
+
+1. **The 13:40 UTC run tomorrow is still the proof.** It is the first firing on
+   its own schedule *and* the first exercise of the new clear step in the cron.
+2. Carryover unchanged: Ashley's Delta outcome, the statewide engine's second
+   occupation list, `CLAUDE.md` at 2× budget.

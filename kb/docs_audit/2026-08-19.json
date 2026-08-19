@@ -9,8 +9,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 575,
-    "bytes": 6499552,
+    "files": 576,
+    "bytes": 6508796,
     "over_budget": 5,
     "handoff_max": 172,
     "always_loaded_files": 1,
@@ -25,22 +25,22 @@
       },
       "other": {
         "files": 72,
-        "bytes": 1714064,
+        "bytes": 1715163,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 232344,
+        "bytes": 232732,
         "over": 1
       },
       "lessons": {
         "files": 65,
-        "bytes": 1672315,
+        "bytes": 1676542,
         "over": 2
       },
       "kb_note": {
-        "files": 284,
-        "bytes": 1538968,
+        "files": 285,
+        "bytes": 1542498,
         "over": 0
       },
       "handoff": {
@@ -55,8 +55,8 @@
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2053,
-      "bytes": 1155047127,
+      "files": 2054,
+      "bytes": 1155061766,
       "heavy_bytes": 587929845,
       "heavy_share": 0.509,
       "ignore_filters": [
@@ -125,13 +125,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 232344,
+        "bytes": 232732,
         "limit": 40000,
         "lane": "index",
-        "over_by": 192344,
-        "ratio": 5.81
+        "over_by": 192732,
+        "ratio": 5.82
       },
-      "message": "232,344 B is 5.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "232,732 B is 5.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
