@@ -32,6 +32,7 @@ jobs:
       # a real integration), and the two probes below pull ~268k rows and would
       # starve it. Read-bounded, PII-denylisted, commits nothing.
       - name: Probe for the three new Custom Reports (exhibit CRs / catalog year / student details)
+        if: ${{ false }}   # names CONFIRMED 2026-08-19; kept for the next unknown view
         run: python kb/_probe_new_custom_reports.py
 
       # Runs FIRST and never blocks on the catalog probe below, which pulls
@@ -39,12 +40,18 @@ jobs:
       # the API expose the student × credit-recommendation grain (and with it
       # CPLStatusPlan, the action a college took) that none of the nine fetched
       # views carries? Allowlisted columns only; no student identifier.
+      # Sam pasted the three real headers 2026-08-19, so the names are known.
+      # This asks whether the API SERVES them — a builder header proves only that
+      # the report exists in the builder, and the cron pulls the API.
+      - name: Serve-check the three confirmed Custom Reports
+        run: python kb/_probe_confirmed_custom_reports.py
+
       # Run 1 found all 51 candidates "not Valid" — but it had no positive
       # control, so that could equally mean the empty-columnName trick stopped
       # working. This asks a view the cron pulls daily the same question, and
       # chases the one candidate that answered 500 instead of 400.
       - name: Control the sweep and chase the 500
-        if: ${{ always() }}
+        if: ${{ false }}   # answered: the 500 WAS View_StudentDetailsCredits_APIDataset
         run: python kb/_probe_new_custom_reports_followup.py
 
       - name: Probe for the student-detail (disposition) view

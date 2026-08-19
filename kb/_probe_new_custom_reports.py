@@ -104,6 +104,12 @@ CATALOG_YEAR_VISIBLE = ["CollegeID", "Source Code", "ExhibitID",
 
 BASES = {
     "College Exhibit Credit Recommendations": [
+        # ✅ CONFIRMED 2026-08-19: View_CollegeExhibitCR_APIDataset. The display
+        # name expands "CR"; the viewName does not. Run 1 swept
+        # …CreditRecommendations / …CreditRecommendation / …CRs and missed the
+        # singular abbreviation by one character. Abbreviations in a UI label are
+        # EXPANSIONS of the identifier, so sweep the short form FIRST.
+        "CollegeExhibitCR",
         "CollegeExhibitCreditRecommendations",
         "CollegeExhibitCreditRecommendation",
         "CollegeExhibitCRs",
@@ -111,6 +117,8 @@ BASES = {
         "CollegeExhibitCreditRec",
     ],
     "College Exhibit Credit Recommendations By Catalog Year": [
+        # ✅ CONFIRMED 2026-08-19: View_CollegeExhibitCRByCatalogYear_APIDataset.
+        "CollegeExhibitCRByCatalogYear",
         "CollegeExhibitCreditRecommendationsByCatalogYear",
         "CollegeExhibitCreditRecommendationsbyCatalogYear",
         "CollegeExhibitCreditRecommendationByCatalogYear",
@@ -121,6 +129,10 @@ BASES = {
     "Student Details and Credits": [
         "StudentDetailsandCredits",      # the ProgramsofStudy convention
         "StudentDetailsAndCredits",
+        # ✅ CONFIRMED 2026-08-19: View_StudentDetailsCredits_APIDataset — and run
+        # 1 ALREADY TOUCHED IT. It was the single candidate that answered HTTP 500
+        # while the other fifty answered a clean 400 "is not Valid". The probe
+        # counted it with the rejections and reported "NONE exposed".
         "StudentDetailsCredits",
         "StudentDetailCredits",          # tried 2026-08-07 → 400; retry, it may be published now
         "StudentDetailAndCredits",
@@ -217,7 +229,7 @@ def sweep():
     print(f"    {PEEK_BYTES // 1024} KB (a valid view answers with the WHOLE dataset).")
     print("=" * 78)
 
-    found = {}
+    found, anomalies = {}, []
     for report, bases in BASES.items():
         print(f"\n### {report}")
         hit = None
@@ -250,12 +262,27 @@ def sweep():
                     break
                 flag = h.get("error") or f"[{code}] {msg[:50]}" or "no columns"
                 print(f"  ✗  {view:<62} {flag}")
+                # A rejection that differs in KIND from the others is a LEAD, not
+                # a tally entry. On 2026-08-19 exactly one candidate answered 500
+                # where fifty answered 400 — and that one was the real view,
+                # erroring on the empty column list. It was printed as ✗ and the
+                # verdict said "NONE exposed". Never let the odd one out be
+                # summarised away again.
+                if h.get("error", "").startswith("HTTP 5") or (code or "").startswith("5"):
+                    anomalies.append((view, h.get("error") or code))
             if hit:
                 break
         if hit:
             found[report] = hit
         else:
             print(f"  → NOT FOUND under {len(bases) * len(SUFFIXES)} candidate spellings.")
+    if anomalies:
+        print("\n  ⚠️  ODD ONES OUT — these did NOT answer like the other rejections.")
+        print("      A 5xx is the server TRYING AND FAILING, which is what a view that")
+        print("      EXISTS but chokes on the request looks like. Chase these before")
+        print("      reporting absence; on 2026-08-19 one of them was the real view.")
+        for v, why in anomalies:
+            print(f"        {v}  →  {why}")
     return found
 
 
