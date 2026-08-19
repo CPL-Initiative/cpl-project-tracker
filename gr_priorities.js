@@ -53,7 +53,6 @@
   var GR_KEY = "cpl_gr_pass";           // GR-specific — separate from the generic cpl_team_pass
   var ROOT_ID = "gr-priorities-root";
   var CSS_ID = "gr-priorities-css";
-  var DOC_ID = "cpl-t5-priorities";
 
   // ── tiny DOM helper ────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -127,14 +126,12 @@
       return r.json().then(function (v) { return v === true; });
     }).catch(function () { return null; });
   }
-  function fetchDoc(phrase) {
-    return fetch(SUPABASE_URL + "/rest/v1/gr_content?id=eq." + DOC_ID + "&select=doc", {
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "x-team-pass": phrase }
-    }).then(function (r) {
-      if (!r.ok) return null;
-      return r.json().then(function (rows) { return (rows && rows[0] && rows[0].doc) || null; });
-    }).catch(function () { return null; });
-  }
+  // The legacy single-document reader was REMOVED with the register. gr_content
+  // is retained in Supabase as the rollback copy of the original CPL briefing,
+  // but nothing in this tab reads it — and leaving a dead fetcher behind made
+  // kb/_build_cobi_admin_surface.py list gr_content as a read surface of this
+  // tab, i.e. a table in the Admin RLS view that no code actually touches. A
+  // phantom row in a security view is the same defect as a missing one.
 
   // ── REST helpers ────────────────────────────────────────────────────────────
   var REST = SUPABASE_URL + "/rest/v1";
@@ -206,6 +203,13 @@
   function addArtifact(rec) {
     return fetch(REST + "/gr_artifacts", { method: "POST", headers: headers(true), body: JSON.stringify([rec]) }).then(wrote);
   }
+  // Updates. PostgREST answers a filtered PATCH the same way it answers a
+  // filtered INSERT — 200 with an empty body — so the same guard applies.
+  function patchRevision(id, rec) {
+    return fetch(REST + "/gr_revisions?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: headers(true), body: JSON.stringify(rec)
+    }).then(wrote);
+  }
   var WRITERS = { gr_areas: addArea, gr_revisions: addRevision, gr_artifacts: addArtifact };
   function post(table, rec) { return WRITERS[table](rec); }
 
@@ -220,25 +224,49 @@
   // Parse whatever a human typed into canonical entries. Anything we cannot
   // place under a KNOWN code is returned as a reject rather than guessed — the
   // form shows rejects back instead of silently dropping or mis-filing them.
+  // ⚠️ THESE THREE TESTS MUST MATCH public.gr_citation_code() IN
+  // kb/supabase_gr_register.sql CHARACTER FOR CHARACTER. They did not: this side
+  // read /^5[358]/ while the SQL read ^5[58][0-9]{3}, so the SAME bare number
+  // produced a different citation depending on whether a human typed it or the
+  // migration extracted it. Two things followed from the 53xxx half of that
+  // divergence, and both are the kind of error a lawyer notices first:
+  //   * Government Code §53xxx is a real series (local agency provisions), so a
+  //     bare "53410" is genuinely ambiguous — Title 5 CCR §53410 is faculty
+  //     minimum qualifications, and nothing in four digits says which is meant.
+  //     Guessing Title 5 is a fabricated citation with a confident face on it.
+  //   * The bands are NOT anchored to a length here, so 4- and 6-digit numbers
+  //     got a code this side and were refused by the SQL side.
+  // Ambiguous or out-of-band input is REJECTED and handed back to the typist —
+  // never swept into the nearest plausible code.
+  var CITE_BANDS = [
+    [/^5[58][0-9]{3}(\.[0-9]+)?$/, "T5"],
+    [/^(66|70|76)[0-9]{3}(\.[0-9]+)?$/, "EC"],
+    [/^11[0-9]{3}(\.[0-9]+)?$/, "GC"]
+  ];
+  function inferCode(n) {
+    for (var i = 0; i < CITE_BANDS.length; i++) if (CITE_BANDS[i][0].test(n)) return CITE_BANDS[i][1];
+    return "";
+  }
+  // Returns { ok, bad, inferred } — `inferred` is true when ANY entry had its
+  // code guessed from the number rather than typed. The caller stores that as
+  // citations_derived, because a guessed code is exactly the machine inference
+  // this repo refuses to dress up as a curated fact.
   function parseCites(s) {
-    var out = [], bad = [];
+    var out = [], bad = [], inferred = false;
     String(s || "").split(/[,;\n]+/).forEach(function (raw) {
       var t = raw.trim();
       if (!t) return;
-      var m = /^(T5|EC|GC|title\s*5|ed\.?\s*code|gov\.?\s*code)?\s*§?\s*([0-9]{4,6}(?:\.[0-9]+)?[a-z]?)$/i.exec(t);
+      var m = /^(T5|EC|GC|title\s*5|ed\.?\s*code|gov\.?\s*code)?\s*§?\s*([0-9]{4,6}(?:\.[0-9]+)?)$/i.exec(t);
       if (!m) { bad.push(t); return; }
       var code = (m[1] || "").toLowerCase().replace(/[\s.]/g, "");
       code = code === "t5" || code === "title5" ? "T5"
            : code === "ec" || code === "edcode" ? "EC"
            : code === "gc" || code === "govcode" ? "GC" : "";
-      if (!code) {                      // infer ONLY from unambiguous ranges
-        var n = m[2];
-        code = /^5[358]/.test(n) ? "T5" : /^(66|70|76)/.test(n) ? "EC" : /^11/.test(n) ? "GC" : "";
-      }
+      if (!code) { code = inferCode(m[2]); if (code) inferred = true; }
       if (!code) { bad.push(t); return; }
       out.push(code + " §" + m[2]);
     });
-    return { ok: out, bad: bad };
+    return { ok: out, bad: bad, inferred: inferred };
   }
 
   // ── scoped styles (.grx) ────────────────────────────────────────────────────
@@ -259,6 +287,22 @@
       ".grx .gx-title{font-size:23px;margin:4px 0 2px;}",
       ".grx .gx-sub{color:var(--gx-muted);font-size:13px;margin:0 0 6px;}",
       ".grx .gx-thesis{font-size:13.2px;line-height:1.55;margin:8px 0 0;max-width:74ch;}",
+      ".grx .gx-stamp{font-size:11px;color:var(--gx-muted);margin-top:7px;}",
+      ".grx .gx-caveat{border:1px solid var(--gx-y);border-left:4px solid var(--gx-y);border-radius:6px;",
+      "background:var(--gx-card);padding:11px 14px;margin:0 0 16px;}",
+      ".grx .gx-caveat h3{font-size:13px;color:var(--gx-y);margin-bottom:5px;}",
+      ".grx .gx-caveat p{margin:0;font-size:12.4px;line-height:1.5;color:var(--gx-muted);}",
+      ".grx .gx-rank{font-size:9.6px;font-weight:800;letter-spacing:.05em;color:var(--gx-accent);",
+      "border:1px solid var(--gx-accent);border-radius:3px;padding:1px 4px;}",
+      ".grx .gx-why{font-size:12.6px;line-height:1.5;color:var(--gx-ink);margin:0 0 7px!important;}",
+      ".grx .gx-why b{color:var(--gx-muted);font-weight:700;}",
+      ".grx .gx-vprog{margin:7px 0 0!important;font-size:11.6px;font-weight:700;color:var(--gx-y);}",
+      ".grx .gx-rowctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px;",
+      "border-top:1px dotted var(--gx-border);padding-top:8px;}",
+      ".grx .gx-rowmsg{font-size:11px;color:var(--gx-muted);}",
+      ".grx .gx-rowmsg.err{color:var(--gx-r);}.grx .gx-rowmsg.ok{color:var(--gx-g);}",
+      ".grx .gx-corr{margin:0;padding-left:18px;}",
+      ".grx .gx-corr li{font-size:12.4px;line-height:1.45;color:var(--gx-muted);margin:5px 0;}",
       ".grx .gx-samp{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:3px;font-size:10.5px;",
       "font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:var(--mustard-fill,#E3B341);color:var(--gx-accent);}",
       // area bar
@@ -323,6 +367,8 @@
       ".grx .gx-err{color:var(--gx-r);font-size:11.6px;margin-top:7px;min-height:1em;}",
       ".grx .gx-ok{color:var(--gx-g);font-size:11.6px;margin-top:7px;}",
       ".grx .gx-note{font-size:11.4px;color:var(--gx-muted);margin:6px 0 0;}",
+      ".grx .gx-unread{color:var(--gx-y)!important;border-color:var(--gx-y)!important;}",
+      ".grx .gx-empty .row{display:flex;gap:8px;justify-content:center;margin-top:11px;}",
       ".grx .gx-empty{padding:22px;text-align:center;color:var(--gx-muted);font-size:13px;",
       "border:1px dashed var(--gx-bstrong);border-radius:7px;}",
       // lock card
@@ -375,7 +421,8 @@
   }
 
   // ── state ───────────────────────────────────────────────────────────────────
-  var state = { areas: [], areaId: null, revisions: [], artifacts: [], filters: null };
+  var state = { areas: [], areaId: null, revisions: [], artifacts: [], filters: null,
+               failed: { revisions: false, artifacts: false, cross: false } };
 
   function loadAreas() {
     return getJson(REST + "/gr_areas?select=*&status=eq.active&order=sort.asc,title.asc");
@@ -395,10 +442,14 @@
   // parts of Title 5, and today nobody sees the collision until OAL. This is
   // computed from what is stored — it invents nothing.
   function collisions(rows) {
-    var by = {};
+    // Object.create(null): citation strings and area ids are DATA, and a value
+    // of "__proto__" or "constructor" against a normal object literal either
+    // silently writes the prototype or throws and blanks the tab.
+    var by = Object.create(null);
     (rows || []).forEach(function (r) {
       (r.citations || []).forEach(function (c) {
-        (by[c] = by[c] || {})[r.area_id] = true;
+        if (!by[c]) by[c] = Object.create(null);
+        by[c][r.area_id] = true;
       });
     });
     return Object.keys(by).map(function (c) {
@@ -411,7 +462,10 @@
     var hits = collisions(all);
     var sec = el("div", { class: "gx-arts" });
     sec.appendChild(el("h3", { text: "Sections touched by more than one priority area" }));
-    if (!hits.length) {
+    if (state.failed.cross) {
+      sec.appendChild(el("p", { class: "gx-note gx-unread",
+        text: "Couldn't read across the other priority areas, so no overlap can be reported either way. This is a loading failure — it does NOT mean there are no shared sections." }));
+    } else if (!hits.length) {
       sec.appendChild(el("p", { class: "gx-note",
         text: "No section is currently cited by two areas. This list fills in as more areas are added — it is what surfaces a conflict before rulemaking rather than during it." }));
     } else {
@@ -457,7 +511,19 @@
       el("span", { class: "gx-ttl", text: r.title || "" }),
       sm
     ]));
+    if (r.blast_rank != null) {
+      sm.appendChild(el("span", { class: "gx-rank", title: "Rank by systemic blast radius (1 = widest)",
+        text: "BR " + r.blast_rank }));
+    }
     var desc = el("div", { class: "gx-desc" });
+    // "Why it matters" — the briefing's own argument for each item. It lived in
+    // the blast-radius layer, which the first migration left behind entirely.
+    if (r.blast_why) {
+      var wy = el("p", { class: "gx-why" });
+      wy.appendChild(el("b", { text: "Why it matters — " }));
+      appendRich(wy, r.blast_why);
+      desc.appendChild(wy);
+    }
     if (r.summary) appendRich(desc, r.summary);
     if (r.consideration) {
       var c = el("p");
@@ -472,7 +538,54 @@
     if (r.citations_derived && (r.citations || []).length) {
       bits.push("citations extracted from the text — not curator-confirmed");
     }
+    if (r.verified_at) {
+      bits.push("citations verified" + (r.verified_by ? " by " + r.verified_by : "") +
+                " · " + String(r.verified_at).slice(0, 10));
+    }
     if (bits.length) desc.appendChild(el("p", { class: "gx-meta", text: bits.join("  ·  ") }));
+
+    // Curator controls. Reviewer-only, and deliberately the two decisions that
+    // matter rather than a general edit form: has anyone CHECKED this citation
+    // against the primary source, and may this row be seen beyond the MAP team.
+    if (canWrite()) {
+      var ctl = el("div", { class: "gx-rowctl" });
+      var msg = el("span", { class: "gx-rowmsg", text: "" });
+
+      if (!r.verified_at) {
+        var vb = el("button", { class: "gx-chip", type: "button", text: "Mark citations verified" });
+        vb.title = "Records that you checked this row's citations against the primary source.";
+        vb.addEventListener("click", function () {
+          vb.disabled = true; msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+          // Verifying is the ONLY thing that may clear citations_derived: the
+          // flag means "a machine picked this code", and a human confirming it
+          // against the source is precisely the event that ends that.
+          patchRevision(r.id, {
+            verified_at: new Date().toISOString(), verified_by: whoami(),
+            citations_derived: false, updated_by: whoami(), updated_at: new Date().toISOString()
+          }).then(function () { load(document.getElementById(ROOT_ID)); })
+            .catch(function (e) { vb.disabled = false; msg.className = "gx-rowmsg err"; msg.textContent = e.message; });
+        });
+        ctl.appendChild(vb);
+      }
+
+      var sens = selectOf(["restricted", "open"],
+        ["Seen by: MAP team only", "Seen by: anyone in the CO"]);
+      sens.value = r.sensitivity === "open" ? "open" : "restricted";
+      sens.setAttribute("aria-label", "Who may see this row");
+      sens.addEventListener("change", function () {
+        var want = sens.value;
+        msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+        patchRevision(r.id, { sensitivity: want, updated_by: whoami(), updated_at: new Date().toISOString() })
+          .then(function () { r.sensitivity = want; msg.className = "gx-rowmsg ok"; msg.textContent = "saved"; })
+          .catch(function (e) {
+            sens.value = r.sensitivity === "open" ? "open" : "restricted";   // put the control back
+            msg.className = "gx-rowmsg err"; msg.textContent = e.message;
+          });
+      });
+      ctl.appendChild(sens);
+      ctl.appendChild(msg);
+      desc.appendChild(ctl);
+    }
     d.appendChild(desc);
     return d;
   }
@@ -566,7 +679,7 @@
       return {
         area_id: areaId, n: nextN, title: t, grp: grp.value.trim() || null,
         summary: summary.value.trim() || null, consideration: consid.value.trim() || null,
-        pathway: chosen, citations: parsed.ok, citations_derived: false,
+        pathway: chosen, citations: parsed.ok, citations_derived: parsed.inferred,
         ed_first: edf.value || null, status: status.value,
         created_by: whoami(), updated_by: whoami()
       };
@@ -605,7 +718,8 @@
       return {
         area_id: areaId, title: t, url: u || null, kind: kind.value,
         source: source.value.trim() || null, division: division.value.trim() || null,
-        citations: parsed.ok, why: why.value.trim() || null, added_by: whoami()
+        citations: parsed.ok, citations_derived: parsed.inferred,
+        why: why.value.trim() || null, added_by: whoami()
       };
     }, "gr_artifacts", function (row) {
       title.value = url.value = source.value = division.value = cites.value = ""; why.value = "";
@@ -632,7 +746,40 @@
     if (area && area.division) head.appendChild(el("p", { class: "gx-sub", text: area.division }));
     if (area && area.summary) head.appendChild(el("p", { class: "gx-sub", text: area.summary }));
     if (nar.thesis) head.appendChild(richP(nar.thesis, "gx-thesis"));
+    var stamp = [];
+    if (nar.updated) stamp.push("Draft · " + nar.updated);
+    stamp.push("Audience: Chancellor's Office");
+    head.appendChild(el("div", { class: "gx-stamp", text: stamp.join("  ·  ") }));
     wrap.appendChild(head);
+
+    // ⚠️ THE CAVEAT RENDERS FIRST, NOT LAST, AND IS NOT OPTIONAL.
+    // The CPL area's caveat records that its quoted statutory text was never
+    // checked against primary sources — the sandbox could not reach leginfo,
+    // Cornell or cccco.edu. The first cut of this register migrated that
+    // sentence into gr_areas.narrative.caveat and then never rendered it, so the
+    // tab showed sixteen priorities with confident-looking citations and no
+    // disclaimer at all, to an audience of lawyers. Dropping a warning is not a
+    // cosmetic regression: everything else on the page gets its credibility from
+    // it. It sits ABOVE the register because a caveat under 16 rows is a caveat
+    // most readers never reach.
+    if (nar.caveat) {
+      var cav = el("div", { class: "gx-caveat" });
+      cav.appendChild(el("h3", { text: "Before this goes external — verify" }));
+      cav.appendChild(richP(nar.caveat));
+      // A blanket disclaimer that never changes is indistinguishable from an
+      // unmaintained one. Reporting progress turns the caveat into a work queue
+      // — and lets it retire on evidence rather than on someone's say-so.
+      var vtot = state.revisions.length;
+      var vdone = state.revisions.filter(function (x) { return !!x.verified_at; }).length;
+      if (vtot) {
+        cav.appendChild(el("p", { class: "gx-vprog",
+          text: vdone === vtot
+            ? "All " + vtot + " entries have had their citations checked against the primary source."
+            : vdone + " of " + vtot + " entries have had their citations checked against the primary source." +
+              (canWrite() ? " Open a row to mark one verified." : "") }));
+      }
+      wrap.appendChild(cav);
+    }
 
     // area picker
     var bar = el("div", { class: "gx-areabar" });
@@ -698,6 +845,15 @@
       tools.appendChild(s);
       secSelects.push(s);
     });
+    // The original briefing had TWO orderings of the same rows and its argument
+    // lived in the second one. Restoring it as a control keeps both.
+    var hasBlast = state.revisions.some(function (r) { return r.blast_rank != null; });
+    var sortSel = null;
+    if (hasBlast) {
+      sortSel = selectOf(["n", "blast"], ["Order: matrix (1–16)", "Order: blast radius"]);
+      sortSel.setAttribute("aria-label", "Order");
+      tools.appendChild(sortSel);
+    }
     var stSel = selectOf(["all"].concat(STATUSES), ["Any status"].concat(STATUSES.map(stLabel)));
     stSel.setAttribute("aria-label", "Status");
     tools.appendChild(stSel);
@@ -714,7 +870,7 @@
     var listHost = el("div");
     wrap.appendChild(listHost);
     var rowEls = state.revisions.map(revisionRow);
-    var groups = {};
+    var groups = Object.create(null);   // a grp of "__proto__" must not blank the tab
     rowEls.forEach(function (d) {
       var g = d._rev.grp || "";
       if (!groups[g]) {
@@ -725,7 +881,10 @@
       }
       groups[g].appendChild(d);
     });
-    var empty = el("div", { class: "gx-empty", text: "No revision matches these filters." });
+    var empty = el("div", { class: "gx-empty", text: state.failed.revisions
+      ? "Couldn't read the revisions for this area — this is a loading failure, not an empty register. Try again in a moment."
+      : "No revision matches these filters." });
+    if (state.failed.revisions) empty.className = "gx-empty gx-unread";
     empty.hidden = true;
     listHost.appendChild(empty);
 
@@ -744,6 +903,20 @@
       count.textContent = shown === state.revisions.length
         ? shown + (shown === 1 ? " revision" : " revisions")
         : "showing " + shown + " of " + state.revisions.length;
+    }
+    if (sortSel) {
+      sortSel.addEventListener("change", function () {
+        var blast = sortSel.value === "blast";
+        rowEls.slice().sort(function (a, b) {
+          if (!blast) return (a._rev.n || 0) - (b._rev.n || 0);
+          var ar = a._rev.blast_rank, br = b._rev.blast_rank;
+          if (ar == null && br == null) return (a._rev.n || 0) - (b._rev.n || 0);
+          if (ar == null) return 1;
+          if (br == null) return -1;
+          return ar - br || (a._rev.n || 0) - (b._rev.n || 0);
+        }).forEach(function (d) { d.parentNode.appendChild(d); });
+        apply();
+      });
     }
     search.addEventListener("input", function () { f.q = search.value.trim().toLowerCase(); apply(); });
     chips.forEach(function (c) {
@@ -773,7 +946,16 @@
     if (canWrite()) {
       var revHost = el("div");
       var addRev = el("button", { class: "gx-btn ghost", type: "button", text: "Add a revision" });
+      // nextN comes from the SAME list a failed read collapses to []. Adding
+      // against that assigns n = 1 on top of an area that already has sixteen —
+      // the false zero stops being a display problem and starts writing bad
+      // rows. Adding is refused while the read is known to have failed.
+      if (state.failed.revisions) {
+        addRev.disabled = true;
+        addRev.title = "Can't add while the existing revisions failed to load — a new entry would be numbered as if the area were empty.";
+      }
       addRev.addEventListener("click", function () {
+        if (state.failed.revisions) return;
         if (revHost.firstChild) { clear(revHost); return; }
         var nextN = state.revisions.reduce(function (m, r) { return Math.max(m, r.n || 0); }, 0) + 1;
         revHost.appendChild(newRevisionForm(state.areaId, nextN, function () { load(root); }));
@@ -785,7 +967,10 @@
     // artifacts
     var arts = el("div", { class: "gx-arts" });
     arts.appendChild(el("h3", { text: "Knowledge base — artifacts informing this area" }));
-    if (!state.artifacts.length) {
+    if (state.failed.artifacts) {
+      arts.appendChild(el("p", { class: "gx-note gx-unread",
+        text: "Couldn't read the artifacts for this area — a loading failure, not an empty list." }));
+    } else if (!state.artifacts.length) {
       arts.appendChild(el("p", { class: "gx-note", text: "No artifacts recorded for this area yet." }));
     }
     state.artifacts.forEach(function (a) {
@@ -800,7 +985,7 @@
       d.appendChild(t);
       var m = [a.source, a.division, a.doc_date].filter(Boolean).join("  ·  ");
       if (m) d.appendChild(el("div", { class: "m", text: m }));
-      if ((a.citations || []).length) d.appendChild(citeChips(a.citations, false));
+      if ((a.citations || []).length) d.appendChild(citeChips(a.citations, !!a.citations_derived));
       if (a.why) d.appendChild(el("div", { class: "w", text: a.why }));
       if (a.added_by) d.appendChild(el("div", { class: "m", text: "added by " + a.added_by }));
       arts.appendChild(d);
@@ -817,6 +1002,34 @@
     }
     wrap.appendChild(arts);
 
+    // The sequenced ask — the briefing's actual recommendation, and the reason
+    // the old tab existed. Migrated, and likewise unrendered until now.
+    if (nar.ask && nar.ask.length) {
+      var ask = el("div", { class: "gx-arts" });
+      ask.appendChild(el("h3", { text: "The sequenced ask" }));
+      nar.ask.forEach(function (a) {
+        var st = el("div", { class: "gx-art" });
+        st.appendChild(el("div", { class: "t" }, [
+          el("span", { class: "gx-kind", text: a.k || "" }),
+          document.createTextNode(a.h || "")
+        ]));
+        if (a.p) st.appendChild(appendRich(el("div", { class: "w" }), a.p));
+        ask.appendChild(st);
+      });
+      wrap.appendChild(ask);
+    }
+
+    // Corrections — these are legal-accuracy fixes folded into the draft. On a
+    // page being read for legal accuracy they are content, not footnotes.
+    if (nar.corrections && nar.corrections.length) {
+      var corr = el("div", { class: "gx-arts" });
+      corr.appendChild(el("h3", { text: "Corrections folded into the working draft" }));
+      var ul = el("ul", { class: "gx-corr" });
+      nar.corrections.forEach(function (c) { ul.appendChild(appendRich(el("li"), c)); });
+      corr.appendChild(ul);
+      wrap.appendChild(corr);
+    }
+
     // cross-area collisions
     var titles = {};
     state.areas.forEach(function (a) { titles[a.id] = a.title; });
@@ -829,23 +1042,57 @@
 
   // ── Word export — built from the rows on screen ─────────────────────────────
   function docBody(area, rows) {
-    var tl = { g: ["#4c6b54", "Guidance"], y: ["#84692b", "Title 5"], r: ["#8b4a3d", "Ed. Code"] };
-    function tag(t) {
-      return (t || []).map(function (x) {
-        var v = tl[x] || ["#666", x];
-        return '<span style="color:' + v[0] + ';font-weight:bold;font-size:8.5pt">' + v[1].toUpperCase() + "</span>";
-      }).join(' <span style="color:#aaa">&#8594;</span> ');
-    }
     function esc(s) {
       return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+    // Object.create(null): pathway values are DATA read straight from the row, so
+    // a plain literal here makes tl['toString'] resolve to Function.prototype
+    // .toString — truthy, so the `||` fallback never fires, v[1] is undefined and
+    // the export prints "UNDEFINED" (and, before esc() was applied, threw and
+    // produced no file at all). Escaping alone did not fix this half.
+    var tl = Object.create(null);
+    tl.g = ["#4c6b54", "Guidance"]; tl.y = ["#84692b", "Title 5"]; tl.r = ["#8b4a3d", "Ed. Code"];
+    // ⚠️ tag() was the ONE value in this document not passed through esc(). An
+    // unrecognised pathway value falls through to `["#666", x]` and x is the
+    // stored string, so anything a writer put in gr_revisions.pathway landed in
+    // the exported HTML verbatim. esc() is defined below and used everywhere
+    // else; this was simply missed. Fixed by escaping at the point of use.
+    function tag(t) {
+      return (t || []).map(function (x) {
+        var v = tl[x] || ["#666", String(x)];
+        return '<span style="color:' + (tl[x] ? v[0] : "#666") + ';font-weight:bold;font-size:8.5pt">' +
+          esc(String(v[1]).toUpperCase()) + "</span>";
+      }).join(' <span style="color:#aaa">&#8594;</span> ');
+    }
+    // The migrated summaries carry the allowlisted inline markup the screen
+    // renders (<a>/<b>/<i>). esc()-ing them printed literal "<p>" and "<a
+    // href=...>" into the document and destroyed every primary-source link —
+    // the links being, on a legal brief, most of the value. Round-tripping
+    // through the SAME tokenizer the screen uses means the export can never
+    // emit an element the renderer would have refused.
+    function rich(html) {
+      var node = appendRich(document.createElement("div"), html);
+      var out = "";
+      Array.prototype.forEach.call(node.childNodes, function (n) {
+        if (n.nodeType === 3) { out += esc(n.nodeValue); return; }
+        var t = (n.tagName || "").toLowerCase();
+        if (t === "a" && /^https:\/\//.test(n.getAttribute("href") || "")) {
+          out += '<a href="' + esc(n.getAttribute("href")) + '">' + esc(n.textContent) + "</a>";
+        } else if (t === "b" || t === "i") {
+          out += "<" + t + ">" + esc(n.textContent) + "</" + t + ">";
+        } else { out += esc(n.textContent); }
+      });
+      return out;
     }
     var items = (rows || []).map(function (r) {
       var cites = (r.citations || []).map(citeLabel).join(", ");
       return '<div style="margin:0 0 12pt 0">' +
         '<p style="margin:0 0 2pt 0;font-family:Georgia,serif;font-size:13pt;color:#23252b"><b>' +
           (r.n == null ? "" : r.n + ". ") + esc(r.title) + "</b> &nbsp; " + tag(r.pathway) +
-          (cites ? ' &nbsp; <span style="color:#99a;font-size:8.5pt">' + esc(cites) + "</span>" : "") + "</p>" +
-        (r.summary ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b">' + esc(r.summary) + "</p>" : "") +
+          (cites ? ' &nbsp; <span style="color:#99a;font-size:8.5pt">' + esc(cites) +
+            (r.citations_derived ? " (extracted from the text — unconfirmed)" : "") + "</span>" : "") + "</p>" +
+        (r.blast_why ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b"><i>Why it matters &mdash; </i>' + rich(r.blast_why) + "</p>" : "") +
+        (r.summary ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b">' + rich(r.summary) + "</p>" : "") +
         '<p style="margin:0;font-size:9.5pt;color:#555"><b>Status:</b> ' + esc(stLabel(r.status)) +
           (r.ed_first ? " &nbsp;&#183;&nbsp; <b>Ed. Code change first?</b> " + esc(r.ed_first) : "") +
           (r.consideration ? " &nbsp;&#183;&nbsp; " + esc(r.consideration) : "") + "</p></div>";
@@ -858,18 +1105,27 @@
         " &#183; for the Chancellor&rsquo;s Office</p>" +
       '<hr style="border:none;border-top:2px solid #3d4a60;margin:8pt 0 12pt 0">' +
       (nar.thesis ? '<p style="font-size:11pt;line-height:1.4;color:#23252b;margin:0 0 10pt 0">' +
-        String(nar.thesis).replace(/<[^>]*>/g, "") + "</p>" : "") +
+        rich(nar.thesis) + "</p>" : "") +
+      // The caveat travels IN the file. A disclaimer that only exists on screen
+      // is not a disclaimer — this is the artifact that leaves by email.
+      (nar.caveat ? '<p style="font-size:10pt;color:#7a5c00;margin:0 0 12pt 0;padding:7pt 10pt;' +
+        'background:#fdf6e3;border-left:3px solid #b8901f"><b>Before this goes external — verify.</b> ' +
+        rich(nar.caveat) + "</p>" : "") +
       '<p style="font-size:9.5pt;color:#444;margin:0 0 14pt 0;padding:6pt 10pt;background:#eeeee9;border-left:3px solid #3d4a60">' +
         "<b>Guidance</b> = a Chancellor&rsquo;s Office memo &#183; <b>Title 5</b> = Board of Governors rulemaking &#183; " +
         "<b>Ed. Code</b> = statutory amendment.</p>" +
       items +
       '<p style="font-size:9pt;color:#777;margin:12pt 0 0"><i>Exported from the COBI GR register. ' +
-        "This file reflects the rows and filters shown on screen at export time.</i></p>";
+        "This file reflects the rows and filters shown on screen at export time. " +
+        "Working draft — verify quoted statutory and regulatory text against primary sources before external use.</i></p>";
   }
   function draftWord(area, rows) {
     var html = '<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>GR register</title></head><body style="font-family:Calibri,Arial,sans-serif;color:#23252b;margin:0.6in">' + docBody(area, rows) + "</body></html>";
     var slug = String((area && area.id) || "gr").replace(/[^a-z0-9]+/gi, "_");
-    var fn = "GR_Register_" + slug + ".doc";
+    var d = new Date();
+    var stamp = d.getFullYear() +
+      ("0" + (d.getMonth() + 1)).slice(-2) + ("0" + d.getDate()).slice(-2);
+    var fn = stamp + "_GR_Register_" + slug + ".doc";   // YYYYMMDD_ per the vault naming rule
     try {
       var blob = new Blob(["﻿" + html], { type: "application/msword" });
       var url = URL.createObjectURL(blob);
@@ -918,7 +1174,24 @@
       // An RLS-filtered read answers 200 with an EMPTY array, never 403 — so a
       // null (transport failure) and an empty list are DIFFERENT states and must
       // not render the same way.
-      if (areas === null) { clearPass(); renderLock(root, "Couldn't read the register — the phrase may have been rotated."); return; }
+      // getJson cannot tell a rotated phrase from a dropped connection, so this
+      // must not delete the phrase: doing so turns a moment offline into "sign
+      // in again", and it did it to signed-in reviewers too, who need no phrase
+      // at all. Only a definitive rejection may end a credential — the same rule
+      // cpl_session.js already applies to reviewer tokens.
+      if (areas === null) {
+        clear(root);
+        var ew = el("div", { class: "grx" });
+        var eb = el("div", { class: "gx-empty gx-unread" });
+        eb.appendChild(el("p", { text: "Couldn't read the register. Your phrase has NOT been cleared — this is usually a connection problem." }));
+        var again = el("button", { class: "gx-btn", type: "button", text: "Try again" });
+        again.addEventListener("click", function () { load(root); });
+        var reenter = el("button", { class: "gx-btn ghost", type: "button", text: "Re-enter the phrase" });
+        reenter.addEventListener("click", function () { clearPass(); renderLock(root); });
+        eb.appendChild(el("div", { class: "row" }, [again, reenter]));
+        ew.appendChild(eb); root.appendChild(ew);
+        return;
+      }
       state.areas = areas;
       if (!areas.length) {
         clear(root);
@@ -934,9 +1207,17 @@
         loadArea(state.areaId),
         getJson(REST + "/gr_revisions?select=area_id,citations")   // for the cross-area index
       ]).then(function (res) {
-        state.revisions = (res[0] && res[0][0]) || [];
-        state.artifacts = (res[0] && res[0][1]) || [];
-        renderRegister(root, res[1] || []);
+        // getJson answers null for a FAILED read and [] for a read that
+        // legitimately found nothing. Collapsing them with `|| []` renders a
+        // transport failure as "this area has no revisions", "no artifacts
+        // recorded" and — worst — "no section is currently cited by two areas",
+        // which is this register's headline claim asserted from no data at all.
+        // The states are kept apart and the failed ones say so.
+        var rev = res[0] && res[0][0], art = res[0] && res[0][1], cross = res[1];
+        state.failed = { revisions: rev === null, artifacts: art === null, cross: cross === null };
+        state.revisions = rev || [];
+        state.artifacts = art || [];
+        renderRegister(root, cross || []);
       });
     });
   }
@@ -957,6 +1238,7 @@
     _matches: matches,
     _renderRegister: renderRegister,
     _draftDocBody: docBody,
+    _patchRevision: patchRevision,
     _state: state
   };
   if (typeof window !== "undefined") window.CPL_GR = api;

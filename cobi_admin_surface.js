@@ -300,9 +300,7 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "gr_priorities.js"
       ],
-      "reads": [
-        "gr_content"
-      ],
+      "reads": [],
       "writes": [
         "gr_areas",
         "gr_artifacts",
