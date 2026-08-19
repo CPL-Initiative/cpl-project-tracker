@@ -1,20 +1,32 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkyLoad (Session 171) — both open questions are now settled by Sam, and the follow-up detail for the transcription defects is built and ready for the team. Ashley's Delta items are unchanged.",
-  "_session": "Session 171 (SkyLoad)",
-  "_status": "Sam explained what three confusingly-similar fields in the new student report actually mean, which is what made them safe to load. Two of them describe things nothing we held had ever recorded: how far an articulation has got through approval, and which steps of the CPL process a college has ticked off. Both reports are now live, and Sam asked for the whole thing to run on the nightly job without him approving it each day — so the checks that protect the live data are now automatic and refuse to publish if anything looks wrong, including refusing to publish figures that would let a small college's suppressed numbers be worked out by subtraction. The headline figure rose about 12.5% because the data is simply more current.",
+  "_as_of": "2026-08-19 · SkySwap (Session 172) — the nightly job was about to start failing every night, and the clean-up list was about to tell ~100 colleges something untrue. Both fixed. One new decision for Sam (item at the top).",
+  "_session": "Session 172 (SkySwap)",
+  "_status": "Two things were caught before anyone was affected. First, the nightly job that refreshes the MAP data would have failed every night from tonight: the step that empties the loading area was deleting rows one at a time and timed out the first time it met a full table. It now clears in five seconds instead. While fixing it we found that six powerful database functions — including the one that rewrites the two tables the dashboards read — were reachable by anyone on the internet, because the line of code meant to lock them down does nothing. They are now actually locked, and a test will fail the build if the ineffective version comes back. Second, the clean-up list's biggest item was one instruction to about 100 colleges saying \"ACE said no credit, close these\" — and for 5,311 of those records ACE actually says the opposite: credit MAY be granted once the college does its own assessment. Those are now separated out, and nobody will be told to close them.",
   "items": [
+    {
+      "id": "s172-p5-ruling",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "A ruling we need before anything about these records goes to a college. 5,311 credit recommendations at 101 colleges say, in ACE's own words, that credit MAY be granted once the college does its own individualized assessment or institutional evaluation — 3,970 of them are one single sentence about individualized assessment, and another 1,075 are additional swimming credit. Until now the clean-up list lumped them in with genuine no-credit records and told colleges to close them all as Not Applicable, which would have shut a door ACE deliberately left open. They are separated out now and nobody is being told to close them. The question is what a college SHOULD do with a record like that when it has not done the evaluation: mark it Not Applicable anyway, leave it as Needs Action, or does MAP need a state it does not currently have? One decision covers about 95% of the 5,311."
+    },
+    {
+      "id": "s172-p1-safe-to-send",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The biggest clean-up item is now safe to send. 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's own validity window has expired — one instruction, the same one everywhere. Worth saying out loud when the numbers move: clearing these raises every college's disposition rate without awarding a single unit of credit, because it shrinks the denominator. That is legitimate work, but it is not new credit for a student."
+    },
+    {
+      "id": "s172-watch-first-cron",
+      "for": "Fable",
+      "tab": "course-credit",
+      "text": "Check the first unattended nightly run at 13:40 UTC. It has now been proven by hand twice, including once end-to-end on the build runner, but never yet by the schedule firing on its own. If it fails with a G-numbered message, that is a safety check doing its job — fix the data being pulled, never the check."
+    },
     {
       "id": "s171-followup-pierce-merced",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "Follow-up detail is ready. For the students marked transcribed with nothing recorded, we can now hand a college the exact exhibits and catalog years to look at — 270 rows across 8 colleges, about 46,500 units of credit whose status is genuinely unknown. Start with Los Angeles Pierce (1,840 students, 46 exhibits, ~35,200 units, all AP) and Merced (1,785 students, ~8,900 units); together they are 87% of it. One thing to be clear about with them: we cannot say WHICH students, because the student ID is hashed and we deliberately never store it — the college finds them in MAP by filtering the exhibit and catalog year we give them."
-    },
-    {
-      "id": "s171-followup-question",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "The question to ask those colleges is narrow: did these students actually get the credit? The plan says transcribed and the units say nothing, which fits either 'it happened and the amount was never recorded' or 'it never happened and the tick is wrong'. Only they can say. For Pierce and Merced it looks like an AP batch upload that carried the completion but not the unit amounts, so it likely needs re-uploading rather than any curation work."
+      "text": "Follow-up detail is ready. For the students marked transcribed with nothing recorded, we can now hand a college the exact exhibits and catalog years to look at — 270 rows across 8 colleges, about 46,500 units of credit whose status is genuinely unknown. Start with Los Angeles Pierce (1,840 students, 46 exhibits, ~35,200 units, all AP) and Merced (1,785 students, ~8,900 units); together they are 87% of it. One thing to be clear about with them: we cannot say WHICH students, because the student ID is hashed and we deliberately never store it — the college finds them in MAP by filtering the exhibit and catalog year we give them. The question to ask those colleges is narrow: did these students actually get the credit? The plan says transcribed and the units say nothing, which fits either 'it happened and the amount was never recorded' or 'it never happened and the tick is wrong'. Only they can say. For Pierce and Merced it looks like an AP batch upload that carried the completion but not the unit amounts, so it likely needs re-uploading rather than any curation work."
     },
     {
       "id": "s171-cs-phrase",
@@ -27,12 +39,6 @@
       "for": "Sam",
       "tab": "course-credit",
       "text": "12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock, Saddleback, Hartnell, West Valley, Cuyamaca, Sacramento City, Gavilan, Crafton Hills, Feather River, Orange Coast and Launch. For Customer Success, finding the right person there is step one, before any clean-up. Hartnell and Gavilan are the known cases where the college has plenty of MAP users but nobody in a CPL role."
-    },
-    {
-      "id": "s171-watch-first-cron",
-      "for": "Fable",
-      "tab": "course-credit",
-      "text": "Check the first unattended nightly run (13:40 UTC). Proven by hand but not yet by the schedule firing on its own. A G-numbered failure is a safety check doing its job — fix the incoming data, never loosen the check."
     },
     {
       "id": "s169-delta-meeting-outcome",
