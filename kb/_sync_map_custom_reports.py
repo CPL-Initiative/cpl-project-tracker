@@ -435,12 +435,40 @@ def _request(method: str, path: str, key: str, body=None, timeout=180):
         return resp.status, resp.read()
 
 
-def truncate(table: str, key: str) -> None:
-    """Empty a STAGING table. Safe by construction: nothing reads staging, and
-    the live tables are never named here."""
-    assert table.startswith("stg_"), f"refusing to delete from non-staging table {table}"
-    _request("DELETE", f"{table}?college_id=not.is.null", key)
-    _request("DELETE", f"{table}?college_id=is.null", key)
+CLEAR_STAGING_RPC = "rpc/map_clear_custom_report_staging"
+
+
+def clear_staging(key: str) -> dict:
+    """Empty BOTH staging tables, server-side, with TRUNCATE.
+
+    This used to be a PostgREST mass DELETE per table. On 2026-08-19 that raised
+    a bare `HTTP Error 500` the first time it met a FULL stg_map_student_credit,
+    and the Postgres log for that second reads `canceling statement due to
+    statement timeout`: 591,820 deleted rows is 591,820 dead tuples, and it does
+    not fit the role's default timeout. It failed at the step BEFORE the gated
+    one, so no gate could have caught it, and it would have failed every night
+    from then on.
+
+    map_promote_custom_reports() already used TRUNCATE for the live swap for
+    exactly this reason. The lesson simply never travelled to the staging half.
+
+    The RPC takes NO ARGUMENT. That is the safety property: this function used
+    to take a table name and defend itself with an `assert` on the "stg_"
+    prefix, which left the reviewer-gated student-grain table one bad string
+    away from the pipeline's only destructive call. The two staging tables are
+    named inside the SQL function body now, so there is no argument to get
+    wrong. Schema of record: kb/supabase_map_custom_report_staging.sql.
+    """
+    try:
+        _, raw = _request("POST", CLEAR_STAGING_RPC, key, {}, timeout=300)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", errors="replace")[:400]
+        raise SystemExit(
+            f"FATAL: could not clear staging (HTTP {e.code}). NOTHING LIVE HAS "
+            f"CHANGED — this runs before the promotion.\n  {detail}\n"
+            "  If the function is missing, apply "
+            "kb/supabase_map_custom_report_staging.sql.")
+    return json.loads(raw or b"{}")
 
 
 def insert(table: str, rows: list, key: str) -> int:
@@ -577,10 +605,11 @@ def main() -> int:
 
     pull_date = _dt.date.today().isoformat()
     print(f"\nWriting staging tables (pull_date {pull_date})...")
-    truncate("stg_map_college_cr_unit", key)
+    was = clear_staging(key)
+    print(f"   staging cleared (was {was.get('cr_unit_was', 0):,} + "
+          f"{was.get('student_was', 0):,} rows)")
     n1 = insert("stg_map_college_cr_unit", cr_rows, key)
     print(f"   stg_map_college_cr_unit  {n1:,} rows")
-    truncate("stg_map_student_credit", key)
     n2 = insert("stg_map_student_credit", st_rows, key)
     print(f"   stg_map_student_credit   {n2:,} rows")
 

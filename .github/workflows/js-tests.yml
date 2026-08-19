@@ -26,3 +26,9 @@ jobs:
       # non-required check.
       - name: Contrast lint (live :root vs First Light spec)
         run: python3 prototype/check_contrast.py --live
+      # Supabase grant lint (Session 172) — `revoke ... from anon, authenticated`
+      # does NOT remove the PUBLIC grant, so it protects nothing. Six
+      # security-definer functions that truncate live tables were reachable with
+      # the published anon key. Pure-stdlib python; same non-required check.
+      - name: Supabase function-grant lint (revoke must name PUBLIC)
+        run: python3 tests/supabase_function_grants_test.py

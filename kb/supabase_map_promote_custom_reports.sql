@@ -316,6 +316,6 @@ begin
     'warnings', to_jsonb(warnings));
 end $$;
 
-revoke all on function public.map_promote_custom_reports()          from anon, authenticated;
-revoke all on function public.rebuild_map_college_goal2()           from anon, authenticated;
-revoke all on function public.rebuild_map_college_credit_summary()  from anon, authenticated;
+revoke all on function public.map_promote_custom_reports()          from public, anon, authenticated;
+revoke all on function public.rebuild_map_college_goal2()           from public, anon, authenticated;
+revoke all on function public.rebuild_map_college_credit_summary()  from public, anon, authenticated;

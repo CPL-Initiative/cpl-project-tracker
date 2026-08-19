@@ -98,3 +98,50 @@ create table if not exists public.map_student_key_sketch (
 revoke all on public.stg_map_college_cr_unit  from anon, authenticated;
 revoke all on public.stg_map_student_credit   from anon, authenticated;
 revoke all on public.map_student_key_sketch   from anon, authenticated;
+
+-- ── D · clearing staging, server-side ──────────────────────────────────────
+-- WHY THIS FUNCTION EXISTS (session 172, 2026-08-19)
+--
+-- The loader used to empty these two tables with a PostgREST mass DELETE
+-- (`?college_id=not.is.null`, then `?college_id=is.null`). On 2026-08-19 that
+-- step FAILED for the first time against a FULL stg_map_student_credit: run 4
+-- of the load workflow raised a bare `HTTP Error 500`, and the Postgres log for
+-- that second says `canceling statement due to statement timeout`. Deleting
+-- 591,820 rows writes 591,820 dead tuples and does not fit the role's default
+-- timeout.
+--
+-- It failed at the step BEFORE the gated one, so no gate could have caught it,
+-- and it would have failed EVERY night from the first full staging table on —
+-- the earlier runs passed only because staging was still small.
+--
+-- map_promote_custom_reports() had ALREADY learned this for the live swap and
+-- says so in its own comments: "TRUNCATE, not DELETE: ... does not write ~800k
+-- dead tuples, which is what pushed the first attempt past a minute." The fix
+-- never travelled the few lines up to the staging half.
+--
+-- TRUNCATE is O(1) here and takes an ACCESS EXCLUSIVE lock, which costs nothing:
+-- nothing reads staging, by design.
+--
+-- THE FUNCTION TAKES NO ARGUMENT, and that is the safety property. The loader
+-- used to pass a table name and defend itself with an `assert` on the "stg_"
+-- prefix — the live student-grain table was one bad string away from the one
+-- destructive call in the pipeline. The two staging tables are written into the
+-- body here, so there is no argument to get wrong. cpl_memory:
+-- the-safest-version-of-a-dangerous-step-is-one-that-does-not-exist.
+create or replace function public.map_clear_custom_report_staging()
+returns jsonb language plpgsql security definer
+  set search_path = public
+  -- Instant in practice; the timeout is here so a lock wait fails fast and
+  -- loudly rather than hanging the runner. Set on the FUNCTION because
+  -- PostgREST inherits the role setting, not the client's patience.
+  set statement_timeout = '120s'
+as $$
+declare was_cr bigint; was_st bigint;
+begin
+  select count(*) into was_cr from stg_map_college_cr_unit;
+  select count(*) into was_st from stg_map_student_credit;
+  truncate table stg_map_college_cr_unit, stg_map_student_credit;
+  return jsonb_build_object('cr_unit_was', was_cr, 'student_was', was_st);
+end $$;
+
+revoke all on function public.map_clear_custom_report_staging() from public, anon, authenticated;
