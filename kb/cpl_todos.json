@@ -1,32 +1,44 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkyLoad (Session 171) — the refreshed MAP data is now LIVE and reloads itself every night with no approval step, per Sam's instruction. One question is open for Sam. Ashley's Delta items are unchanged and still open.",
+  "_as_of": "2026-08-19 · SkyLoad (Session 171) — the refreshed MAP data is live and reloads itself nightly, and the analysis turned up a prioritised clean-up list the team can work from. Ashley's Delta items are unchanged and still open.",
   "_session": "Session 171 (SkyLoad)",
   "_status": "Sam explained what three confusingly-similar fields in the new student report actually mean, which is what made them safe to load. Two of them describe things nothing we held had ever recorded: how far an articulation has got through approval, and which steps of the CPL process a college has ticked off. Both reports are now live, and Sam asked for the whole thing to run on the nightly job without him approving it each day — so the checks that protect the live data are now automatic and refuse to publish if anything looks wrong, including refusing to publish figures that would let a small college's suppressed numbers be worked out by subtraction. The headline figure rose about 12.5% because the data is simply more current.",
   "items": [
     {
+      "id": "s171-cleanup-p1",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The clean-up list's biggest easy win: 17,594 records across about 100 colleges are recommendations where ACE has already said no credit can be given. A college cannot do anything with them except mark them Not Applicable, and meanwhile they sit in the backlog making everyone's numbers look worse. This is ONE instruction to all colleges, not 100 separate conversations. Worth knowing: clearing them lifts every college's completion rate without awarding a single unit, because it shrinks the denominator — so we should say that plainly when the rate jumps."
+    },
+    {
+      "id": "s171-cleanup-p2-two-calls",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The largest-looking problem is actually two phone calls. 4,196 students are marked as having had credit transcribed with no units recorded — and 94% of them are at just two colleges, Los Angeles Pierce (1,842 students, 73% of everyone they have) and Merced (1,787). It is not a curation problem: their AP batch upload recorded the credit but the unit amounts never came through, so it needs a re-upload with MAP/ITPI rather than anything a counsellor can fix."
+    },
+    {
+      "id": "s171-cleanup-initiator-nine",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "Something worth asking about: 1,026 articulations are sitting at the very first approval stage, and they are concentrated in only NINE colleges — mostly Moreno Valley and Riverside City. A stage that concentrated usually means a few institutions are stuck rather than a statewide problem. Might be worth asking those nine what is blocking them."
+    },
+    {
+      "id": "s171-applied-fork-conflict",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "A number you ruled on previously may no longer hold, and I have deliberately not changed it without you. You said to publish both versions of 'applied credit' and name the 55% gap between them. On the refreshed data that gap is 0.1%, not 55% — the old comparison was counting a column that, on unactioned records, simply mirrors a different one. Your ruling still stands as good practice; the question is whether the 55% figure should stay in the docs."
+    },
+    {
       "id": "s171-which-transcribed",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "The one open question. The new report records \"transcribed\" in two places and they disagree by more than three times: 82,235 rows where a college ticked the transcribing step as done, but only 25,621 where an actual number of units was recorded. Every row with units also has the tick, so neither is wrong — they answer different questions. Which should the dashboard mean by \"transcribed\"? (Same shape as the \"applied\" call, where you said publish both and name the gap.)"
-    },
-    {
-      "id": "s171-headline-moved",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Heads-up, no action needed: the headline rose because the data is more current. Units of credit sitting unacted-on went from about 1.05 million to about 1.18 million, and the ones already articulated and just waiting for a college to act went from 63,991 to 72,501. Students went 42,346 to 47,804. These will now shift a little every night, which is what running on the cron means."
-    },
-    {
-      "id": "s171-status-is-mostly-blank",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Worth knowing before anyone designs around it: the approval-stage field you described is blank on 91% of rows, and where it is filled the commonest value is \"Implementation\" rather than \"Initiator\". It can describe a slice, but it cannot break the whole backlog down by stage — a chart built on it would cover under 9% of rows while looking like it covered everything."
+      "text": "Still open, and now narrower: most of the transcribed check-vs-units mismatch turned out to be a display quirk (the tick describes the student's whole plan, not each recommendation). The genuine part is the 4,196 students above. So the remaining question is just whether the dashboard should say 'transcribed' from the tick or from the units."
     },
     {
       "id": "s171-watch-first-cron",
       "for": "Fable",
       "tab": "course-credit",
-      "text": "Check the first unattended nightly run (13:40 UTC). It has been proven by hand but not yet by the schedule firing on its own. If it fails with a G-numbered message, that is a safety check doing its job — fix the incoming data, never loosen the check."
+      "text": "Check the first unattended nightly run (13:40 UTC). Proven by hand but not yet by the schedule firing on its own. A G-numbered failure is a safety check doing its job — fix the incoming data, never loosen the check."
     },
     {
       "id": "s169-delta-meeting-outcome",
