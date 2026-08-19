@@ -200,17 +200,30 @@ def _to_num(v):
 
 
 def _clean(v):
-    """Trim, and map the empty string to None — but ONLY the empty string.
+    """Trim, and otherwise pass the value through — INCLUDING the empty string.
 
-    ExhibitID blankness is inconsistent AND MEANINGFUL (map_dataset_sql_for_malone
-    caveat 2: the -Course variant arrives as "Default Credit", the -Area variant
-    empty, at least one college sends a literal "-"). Those are preserved
-    verbatim; normalising them away destroys which path the credit took.
+    An earlier cut mapped "" to None and called that harmless. It is not, on two
+    counts, both caught by the staging gate rather than by review:
+
+    1. BLANKNESS IS DATA. map_dataset_sql_for_malone caveat 2 asks us not to
+       normalise it: the -Course variant arrives as "Default Credit", the -Area
+       variant EMPTY, at least one college sends a literal "-". Collapsing ""
+       into None is precisely the normalisation the caveat forbids — the
+       docstring claimed to honour it while breaking it for the empty case.
+
+    2. THE LIVE TABLE IS THE CONTRACT. map_college_cr_unit stores "" today:
+       414 catalog_year, 348 exhibit_id, 196,044 college_course, 619
+       source_code. Swapping in NULLs would silently change the representation
+       of blankness on ~200k rows — `count(distinct catalog_year)` alone goes
+       9 to 8 — in what is supposed to be a refresh. A load must reproduce its
+       source, not improve it; improving it is a separate, argued change.
+
+    Numeric columns still coerce "" to None, in _to_int/_to_num, because "" is
+    not a number. That is a type conversion, not a normalisation of meaning.
     """
     if v is None:
         return None
-    s = str(v).strip()
-    return s if s else None
+    return str(v).strip()
 
 
 def _coerce(col: str, value):

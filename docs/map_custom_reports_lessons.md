@@ -1,7 +1,7 @@
 ---
 title: MAP Custom Reports (3 new) — wiring, reconciliation & lessons
 date: 2026-08-19
-prs: [1246, 1247, 1248]
+prs: [1246, 1247, 1248, 1251]
 tags: [map-api, custom-report, catalog-year, student-detail, pii, reconciliation, probe, itpi, salt-hash]
 artifacts:
   - fetch_custom_report.py
@@ -9,8 +9,13 @@ artifacts:
   - kb/_probe_new_custom_reports_followup.py
   - kb/_probe_confirmed_custom_reports.py
   - tests/custom_report_payload_test.py
+  - kb/_sync_map_custom_reports.py
+  - kb/supabase_map_custom_report_staging.sql
+  - tests/map_custom_report_sync_test.py
+  - .github/workflows/map-custom-report-load.yml
   - .github/workflows/discover-map-datasets.yml
 related:
+  - "[[docs/map_custom_report_load]]"
   - "[[docs/map_dataset_sql_for_malone]]"
   - "[[docs/map_dataset_spec_for_malone]]"
   - "[[docs/student_detail_load_lessons]]"
@@ -183,3 +188,196 @@ where the alternative is already working.** The recommendation to decline was
 written before the serve-check confirmed the reports were reachable; had they
 *not* been, the same recommendation would have been a much weaker argument, and
 the honest move would have been to say so.
+
+
+---
+
+## 2026-08-19 (later still) — Session 171 (SkyLoad): the load, and what the data said
+
+Sam supplied the definitions the previous session had had to infer, and asked to
+continue the queue. Merged **#1251** — loader, staging tables, runbook,
+dispatch-only workflow. Full procedure: [`docs/map_custom_report_load.md`](map_custom_report_load.md).
+
+### (a) The views had never been fetched — and the timeline says why
+
+Handoff 171's first instruction was to check that they arrived. They had not.
+The payload change merged at **13:15–13:42 PDT**; the day's last cron ran at
+**13:12 UTC**, on a commit whose `fetch_custom_report.py` still carried eight
+datasets. Nothing was broken — the merge simply missed the window, and the next
+natural arrival was the following morning.
+
+Worth keeping as a habit rather than a fact: **"it is wired" and "it has run"
+are different claims,** and the gap between them is one cron window wide. The
+check cost two commands (`list_workflow_runs`, then `git show <sha>:file`).
+
+### (b) Sam's definitions, and the two dimensions we did not have
+
+| field | Sam, 2026-08-19 | stored as |
+|---|---|---|
+| `Status` | the **articulation approval stage** the row is at, e.g. `Initiator` | `status` |
+| `CPLStatusPlan` | the **action taken** on the CR — `Not Applicable`, `Needs Action` | `cpl_status_plan` |
+| `CPLPlanStatus` | **the lifecycle checks, which can be multiple** — `CPL Docs \|Transcribed` | `cpl_plan_status` |
+
+The previous session read `Status` as "the workflow stage", which was not wrong
+so much as unspecific; *approval* stage is what makes its values MAP
+approval-cascade roles rather than states of a record.
+
+**The substantive point is that two of the three are dimensions no table we hold
+carries.** `CPLStatusPlan` we have had since the Access import. `Status` and
+`CPLPlanStatus` arrive only with this view — so freshness is the *lesser* reason
+to load it, and the roadmap had been describing the smaller half of the value.
+
+### (c) What the first full pull actually says
+
+Both views parsed exactly to their `dataCount` — 211,005 and 591,820.
+
+**`Status` is 91.2% NULL** (539,894 of 591,820), and its top value is not the
+one in Sam's example:
+
+| Status | rows |
+|---|---:|
+| *(null)* | 539,894 |
+| Implementation | 45,302 |
+| Faculty | 3,294 |
+| Initiator | 2,918 |
+| Articulation Officer | 412 |
+
+Four non-null values across 591,820 rows. **It cannot be a segmentation of the
+backlog** — a chart faceted on approval stage would describe 8.8% of the data
+while looking like it described all of it. An absent stage is not a stage.
+
+**`CPLPlanStatus` holds six checks, not the two the example showed:** CPL Docs
+477,287 · Transcribed 82,235 · Ed Plan 45,529 · Analysis 36,489 · Counselor
+23,106 · **Student** 20,457, across 41 combinations. Its formatting is
+inconsistent — most values are pipe-*terminated* (`"CPL Docs |"`) but 29,902
+rows carry a bare `Transcribed` with no pipe at all, so a parser must split and
+strip rather than assume a trailing delimiter.
+
+⚠️ **The Transcribed fork.** `Transcribed` is both a lifecycle check and a
+numeric column, and they disagree by 3.2×:
+
+```
+rows with the CHECK    82,235
+rows with UNITS > 0    25,621
+rows with both         25,621     <- the units set is a STRICT SUBSET
+```
+
+So 56,614 rows are marked transcribed in the lifecycle with zero transcribed
+units. This is the same shape as `applied-measure-fork-55-percent`, where Sam's
+ruling was **publish both and name the gap**. The containment is cleaner here,
+which makes the two readings easy to state: the check says *a college marked the
+step done*; the units say *a quantity was recorded against this row*. Neither is
+wrong; "transcribed" unqualified is a 3.2× difference. **Needs Sam:** which one
+the Course Credit tab and the $50k disposition work should mean.
+
+### (d) The reconciliation is not uniformly staleness resolving
+
+The totals run the predicted direction — 211,005 vs 204,714 (+3.07%), 47,804
+distinct students vs 42,346 (+12.9%). But **Moreno Valley went DOWN**: 7,771
+incoming against 7,963 live, −192.
+
+MVC was chosen as the test *because* it spans eight catalog years where most
+colleges have five. It is the one that disagrees, and in the direction staleness
+cannot explain. The incoming pull also carries **112 colleges against 111 live**
+(one new college, none lost). §(d3) explains it — a catalog-year roll-forward.
+
+**The rule this earns: a one-directional total does not license a swap.** An
+aggregate matching the prediction can hide a subset contradicting it, and the
+subset is where a defect would live. `SQL 1` in the runbook makes the per-college
+pass a gate rather than a courtesy.
+
+### (d2) The staging gate earned its keep on the first run
+
+Reconciling staging against live surfaced a defect **in this session's own
+loader**, which no amount of re-reading would have found:
+
+```
+                     live      staging
+catalog_year ""       414            0      -> 414 NULL
+exhibit_id   ""       348            0      -> 355 NULL
+college_course ""  196,044           0      -> 202,196 NULL
+source_code  ""       619            0      -> 1,335 NULL
+```
+
+`_clean()` mapped the empty string to `None`. Its own docstring claimed to
+honour `map_dataset_sql_for_malone` caveat 2 — *blankness is inconsistent and
+that is data* — and it did preserve `"-"` and `"Default Credit"` while breaking
+exactly the case the caveat names: **the `-Area` variant arrives empty.**
+
+The second count is the one that would have hurt. **The live table stores `""`.**
+Swapping in NULLs changes the representation of blankness on ~200k rows during
+what is billed as a refresh, and `count(distinct catalog_year)` silently goes
+**9 to 8** — which is what first looked like a missing catalog year.
+
+**A load must reproduce its source, not improve it.** NULL is arguably the
+better representation of absent; that is a separate change, argued on its own,
+not a side effect of a refresh. `_clean()` now passes `""` through, the test
+pins all four columns, and the mutation back to the old behaviour fails on all
+four.
+
+### (d3) The decreases are a catalog-year ROLL-FORWARD, not deletions
+
+Only **two of 112 colleges** went down — and both are RCCD: college 2 (−493) and
+Moreno Valley (−192). Every other college is flat or up. By catalog year,
+statewide:
+
+| catalog year | live | staging | delta |
+|---|---:|---:|---:|
+| 2020-2021 | 223 | 208 | −15 |
+| 2021-2022 | 106 | 102 | −4 |
+| 2022-2023 | 7,067 | 6,951 | −116 |
+| 2023-2024 | 19,407 | 18,797 | −610 |
+| 2024-2025 | 65,010 | 65,630 | +620 |
+| 2025-2026 | 96,980 | 99,417 | +2,437 |
+| 2026-2027 | 15,494 | 19,472 | **+3,978** |
+
+Every older year shrinks and every newer year grows. Rows are being **re-keyed
+forward in catalog year**, not removed; colleges 2 and 3 net negative only
+because their forward growth did not offset their older-year losses (MVC:
+2023-24 −514, 2026-27 +427).
+
+⚠️ **Consequence worth stating: a per-catalog-year time series off this table is
+not stable.** Last year's figure changes when you re-pull, because rows move
+between years. Anyone charting adoption by catalog year needs to know that the
+x-axis is mutable.
+
+### (e) Two design decisions worth carrying
+
+**Staging, not a live write.** Both live tables are reviewer-gated, feed the
+Course Credit tab, the College Action page and the published aggregates, and one
+is 537,908 rows at student grain. Putting a replace on a runner means a
+half-finished insert blanks a live tab. The runner fills staging; the swap is a
+gated SQL step. The workflow deliberately has **no schedule** — a daily automatic
+reload of a student-grain table is Sam's call, not a default.
+
+**The student key could not be carried over, and did not need to be.** Live
+`student_key` is a dense surrogate 1..42,346 from the Access `tblStudentKey`
+sequence; the API sends a 64-hex salted hash. They cannot be joined in either
+direction. That looked like a blocker until the consumers were checked:
+`student_key` appears in exactly three SQL files, always inside
+`count(distinct …)`. A distinct-count is invariant under relabelling, so the
+loader assigns a fresh dense surrogate per pull and discards the hash.
+**Checking the consumers turned a blocking design question into a non-issue in
+one grep** — the same move as `methodology-verify-consumer-before-migrating`.
+
+### (f) New durable notes
+
+- [`methodology-minimisation-happens-twice`](kb-notes/methodology-minimisation-happens-twice.md)
+  — the request boundary and the storage boundary are different decisions.
+  Twelve fetched columns had no consumer; they are dropped and *listed*, because
+  an omission reads as an oversight to the next person.
+- [`methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action`](kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md)
+  — found by mutation-testing this session's own suite. With the truncate guard
+  removed the test reached `urlopen`; it passed locally **only because the
+  sandbox blocks egress**, and the workflow runs it on a runner that does not.
+  A sandbox restriction masked a defect and read as a green test.
+
+### (g) Next concrete step
+
+1. **Reconcile per-college from staging** (runbook SQL 1) and explain the
+   colleges moving the wrong way, MVC first. That is the gate.
+2. Then swap A and B, restore RLS **separately** — the two tables do not share a
+   policy, and restoring the articulation table's onto the student table hands
+   537,908 student-grain rows to every team-phrase holder.
+3. Ask Sam which "transcribed" the tabs should mean.
+4. Decide whether this ever gets a schedule.

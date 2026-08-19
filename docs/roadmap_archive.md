@@ -4399,3 +4399,22 @@ Moved out of `docs/INDEX.md` to keep that file's history list at ~8 bullets (it 
 ## Archived INDEX update history
 
 - **2026-08-14 (Session 157, Sky157 + SkyCode)** — **a door that was never there.** `raci.js` carried a complete `signIn()` **whose button had been removed** — no caller anywhere — while `admin.js` told anyone signed-out to *"sign in with a magic link on the Team & RACI tab"*; Admin is reviewer-ONLY, so the phrase could never have opened it either. The one documented way in **could not be carried out, and nothing failed**. Moved to **ℹ About** (Sam: *"Since Admin supersedes RACI"*). ⭐ Then measured rather than guessed: **43 tables gate on a phrase, 26 on the READ**; of 18 tabs touching one, **eight** had neither an input nor a mention of the header and **13 live strings across 5 files** still sent people to RACI — where the gate is on the read, such a tab does not look locked, it looks **broken**. One shared `lockedBanner()` + a CI guard. ⚠️ **The guard was wrong twice**: 3 of 5 flagged tabs were false positives, then it reported clean while **5 live instances sat in one file** (copy split across concatenated literals a regex cannot cross). **SkyCode, same day:** noncredit CIP categories — a blanket `32.0111` rule shipped (#1192) and was reverted (#1194); **the TOP is not load-bearing**, and 1,789 of 1,796 'wrong' codes were the *secondary* CIP all along. 3 new KB notes. Housekeeping: `cip_crosswalk_lessons.md` 155 KB → 30 KB (archive split); both flagged `stacked_roadmap_cell` §11 cells compacted (5,379 → 2,300 and 4,600 → 2,876).- **2026-08-13 (evening)** — SkyRef, part 2: **the gap list was 83% robot** (#1169–#1171, cron to daily). Sam asked to bulk-clear "questions Sierra struggled with"; measuring first changed the answer — **78 rows, 65 of them `session_id='smoke-ci'`, only 13 real**. ⭐ It also dissolved the duplicate-pair mystery: the smoke suite asks each question **twice** and one probe deliberately carries no college context, so **43% of punts have a SUCCESSFUL twin within 45s** — nothing was flapping. The theme strip was reporting the robot's vocabulary as a pattern in what people want. ⭐ **Advised AGAINST merging the two panes** (a human report and a heuristic suspicion are different objects) but aligned their behaviour; **group-by-question was chosen and deliberately not built** once the 83% landed. ⭐ **The suppress field Sam proposed for MAP's sandbox orgs already existed** — `map_colleges.entity_kind` tagged all eight `test` and `college_briefing.js` never read it. Third time in one day that the right value existed and the consumer did not ask. Roster sync **monthly → daily**, since Sierra reads contacts live now. 0 new KB notes.
+
+---
+
+### Sky169 — what the college already teaches, and nobody claimed (2026-08-19, Session 169)
+
+**Merged #1243.** Ashley, continuing her August SJCOE crosswalk, for a meeting with San Joaquin Delta.
+⭐ **A college-scoped ask is a different instrument, not a flag on the statewide engine** — which
+deliberately does not privilege the in-county college, and whose best answer (*"some college offers
+this"*, a fact) is not this one's (*"this college teaches it AND the exhibit exists AND nobody joined
+them up"*, a task). ⭐ **Keeping "teaches it" and "exhibit exists" in SEPARATE columns IS the
+deliverable**: crossed, they give **42 adopt-now** rows needing neither curriculum nor exhibit — against
+**0 of 139 articulated at Delta today**. ⭐ Delta holds curriculum for the utility/hydro cluster run 1
+found had **no CPL anywhere in California** (6 rows, first-in-state) — but **not lineworker**, which is
+line work, not the substation/plant electrical Delta teaches. ⚠️ **A capability can be invisible to a
+program search** (`A CON 87A–90D` is a plumbing apprenticeship under no plumbing-named program).
+⚠️ **Shared prose over-claims on the rows it was not written for** — `check_absence_claims()` caught 6
+rows asserting "no CPL anywhere" against exhibits that exist; in a document going into a room with a
+college, one over-claim discredits the other 138. Story: `docs/delta_college_crosswalk_lessons.md` ·
+handoff `docs/session_170_handoff.md`.

@@ -187,8 +187,29 @@ variants = sync.map_rows(cr_ds([
     cr_row(ExhibitID=""), cr_row(ExhibitID="  AR-2201-0552  "),
 ]), sync.CR_UNIT_COLUMNS, sync.CR_UNIT_VIEW)[0]
 got = [v["exhibit_id"] for v in variants]
-check(got == ["Default Credit", "-", None, "AR-2201-0552"],
+check(got == ["Default Credit", "-", "", "AR-2201-0552"],
       f"ExhibitID variants were normalised away: {got!r}")
+
+# "" must stay "" and must NOT become None. The live table stores empty strings
+# (414 catalog_year, 348 exhibit_id, 196,044 college_course, 619 source_code on
+# map_college_cr_unit), so a load that emits NULL changes the representation of
+# blankness on ~200k rows during what is meant to be a refresh — and
+# count(distinct catalog_year) silently goes 9 to 8. Caught by the staging gate
+# on the first real pull, not by reading the code.
+blanks = sync.map_rows(cr_ds([cr_row(**{"Catalog Year": "", "College Course": "",
+                                        "Source Code": ""})]),
+                       sync.CR_UNIT_COLUMNS, sync.CR_UNIT_VIEW)[0][0]
+for col in ("catalog_year", "college_course", "source_code"):
+    check(blanks[col] == "",
+          f"{col} blank became {blanks[col]!r}; the live table stores \"\" and a "
+          "load must reproduce its source, not improve it")
+
+# Numeric columns are the exception: "" is not a number, so coercing it to None
+# is a type conversion rather than a normalisation of meaning.
+nums = sync.map_rows(cr_ds([cr_row(**{"Potential Credits": "", "Student Count": ""})]),
+                     sync.CR_UNIT_COLUMNS, sync.CR_UNIT_VIEW)[0][0]
+check(nums["sum_potential_credits"] is None and nums["distinct_students"] is None,
+      "an empty numeric must coerce to None, not to an empty string")
 
 # ── 7. The by-catalog-year contract IS map_college_cr_unit, column for column ─
 CRU_LIVE = ["college_id", "source_code", "exhibit_id", "credit_rec",
