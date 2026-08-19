@@ -1,7 +1,7 @@
 ---
 title: MAP Custom Reports (3 new) — wiring, reconciliation & lessons
 date: 2026-08-19
-prs: [1246, 1247, 1248, 1251]
+prs: [1246, 1247, 1248, 1251, 1252, 1253, 1254]
 tags: [map-api, custom-report, catalog-year, student-detail, pii, reconciliation, probe, itpi, salt-hash]
 artifacts:
   - fetch_custom_report.py
@@ -231,8 +231,9 @@ to load it, and the roadmap had been describing the smaller half of the value.
 
 Both views parsed exactly to their `dataCount` — 211,005 and 591,820.
 
-**`Status` is 91.2% NULL** (539,894 of 591,820), and its top value is not the
-one in Sam's example:
+**`Status` is 91.2% BLANK** — 539,894 of 591,820, and they are empty strings
+rather than nulls (the first measurement said NULL; that was the loader before
+#1252 stopped it collapsing `""`). Its top value is not the one in Sam's example:
 
 | Status | rows |
 |---|---:|
@@ -381,3 +382,96 @@ one grep** — the same move as `methodology-verify-consumer-before-migrating`.
    537,908 student-grain rows to every team-phrase holder.
 3. Ask Sam which "transcribed" the tabs should mean.
 4. Decide whether this ever gets a schedule.
+
+
+---
+
+## 2026-08-19 (Session 171, part 2) — Sam took the human out of the loop
+
+> *"This will run in the daily cron so just making sure I don't have to do a
+> staging to live approval every day."*
+
+Merged **#1254**. The load is live and runs itself at **13:40 UTC** daily.
+
+### (a) Removing a human means replacing what they were doing, not deleting it
+
+The staging design was right; the *human* in it was the part that did not scale.
+So each thing the approval step was providing became a machine check, and every
+one fails closed:
+
+| the human was catching | what catches it now |
+|---|---|
+| a half-finished insert blanking a live tab | **one transaction** |
+| **the RLS-restore trap** | **gone as a step** — contents are replaced, never the table |
+| a truncated or broken pull | G1–G6, measured against the live table being replaced |
+| publishing a recoverable suppression | G7/G8, blocking |
+| published and unsuppressed drifting apart | both aggregates rebuild in the same transaction |
+
+The second row is the one worth dwelling on. The runbook written that morning
+had a step saying *restore these two policies separately, and if you restore the
+wrong one you hand 537,908 student-grain rows to every phrase holder and the tab
+looks completely normal afterwards.* Automating that step faithfully would have
+automated the hazard. **Replacing `DROP TABLE`/`CREATE TABLE` with a contents
+swap deleted the hazard instead of scheduling it.** The safest version of a
+dangerous step is the one that no longer exists.
+
+### (b) The gates were tested by breaking them
+
+Claiming "fails closed" without firing one would have been exactly the sin this
+session already caught itself in. `student_key = 999999999` inserted into
+staging:
+
+```
+ERROR: G5 surrogate key is not dense 1..N (min=1, max=999999999, distinct=47805, nulls=0)
+       - refusing to promote
+```
+
+Live was byte-identical afterwards — and the junk row rolled back with it,
+because the check and the insert were in the same transaction.
+
+A **client timeout** then proved the same property by accident: the MCP gave up
+at 60s mid-promotion, and live was unchanged with nothing logged. The fix was
+`TRUNCATE` over `DELETE` (fully transactional in Postgres, and it does not write
+~800k dead tuples) plus `statement_timeout` set **on the function** — the runner
+reaches it through PostgREST and inherits the role setting, not the client's
+patience.
+
+### (c) Two contract mismatches, both caught with live untouched
+
+**Blank vs NOT NULL, and it is per-table.** `map_college_cr_unit` is NOT NULL on
+every numeric; the API sends blanks. The blanks are not scattered —
+`sum_applied_credits` is blank on **exactly** the 26,953 `Not Applicable` rows
+and on no other disposition. That is caveat 4 of the spec: *"all four credit
+fields are 0 on unapproved rows. That is correct behaviour, not missing data."*
+
+But `map_student_credit` is *nullable* on `applied_credits`/`transcribed_credits`
+and **holds nulls** (31,467 / 19,533). So a house-style rule would have been
+wrong on one table whichever way it pointed. **Each table's contract is mirrored
+separately**, the test pins both directions, and staging now carries the live
+NOT NULL constraints so a mismatch fails at load rather than at promotion.
+
+### (d) The headline moved, and a number was reported wrong first
+
+| measure | was | now |
+|---|---:|---:|
+| dormant units, **published** | 1,051,870 | **1,183,569** (+12.5%) |
+| dormant units, unsuppressed | 1,052,531 | 1,184,787 |
+| already articulated + waiting, published | 63,991 | **72,501** |
+| distinct students | 42,346 | 47,804 |
+| suppressed colleges | 13 | 14 |
+
+⚠️ **A `+6.9%` was reported mid-session and was wrong for this purpose** — it was
+`sum(potential_credits)` over the **student grain**, while the published headline
+comes from `map_college_cr_unit` scoped `entity_kind='college'`. Both numbers are
+real; only one is the one Sam quotes. **When a project has a canonical pair,
+compute the pair, not a plausible neighbour** — and the number policy already
+said published and unsuppressed move together, which is the same instruction
+seen from the other side.
+
+### (e) Next concrete step
+
+1. **Sam rules on "transcribed"** — the check is 3.2× the units and strictly
+   contains them. Nothing should quote either until he picks.
+2. **Watch the first unattended 13:40 UTC run.** Proven by dispatch, not yet by
+   the schedule firing on its own.
+3. A `G`-numbered failure is a gate working. **Fix the pull, never the gate.**
