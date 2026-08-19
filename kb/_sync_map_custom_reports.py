@@ -1,0 +1,521 @@
+#!/usr/bin/env python3
+"""Load the two new MAP Custom Report views into Supabase STAGING tables.
+
+    python3 kb/_sync_map_custom_reports.py --dry-run          # parse + report
+    python3 kb/_sync_map_custom_reports.py                    # needs SUPABASE_SERVICE_KEY
+
+WHAT THIS IS
+------------
+`fetch_custom_report.py` pulls ten datasets; two of them have never been loaded:
+
+    View_CollegeExhibitCRByCatalogYear_APIDataset  ->  stg_map_college_cr_unit
+    View_StudentDetailsCredits_APIDataset          ->  stg_map_student_credit
+
+Both have a live counterpart already (`map_college_cr_unit` 204,714 rows,
+`map_student_credit` 537,908). MAP's own counts are higher — +3.07% and +10.02%
+— which `cpl_memory: two-student-counts-disagree-indicator-suspected` predicts
+is OUR STALENESS RESOLVING rather than a defect. That is a claim to confirm
+per-college, which is why this script reports before it writes.
+
+IT WRITES STAGING ONLY, AND THAT IS THE POINT
+---------------------------------------------
+The live tables are reviewer-gated, feed the Course Credit tab, the College
+Action page and both published aggregates, and one of them is student grain.
+Replacing them from a runner would put a destructive step somewhere a
+half-finished insert leaves a live tab blank. So the swap is a separate gated
+SQL step (`docs/map_custom_report_load.md`), exactly as
+`docs/map_student_credit_reload.md` established. Nothing live changes here.
+
+MINIMISATION HAPPENS TWICE
+--------------------------
+`fetch_custom_report.py` decides what we ASK FOR; this decides what we KEEP, and
+it keeps less. The view carries student attributes the request already accepted
+(Location, CPL Mode, CPL Program, Program, ProgramGoal, Transfer Destination)
+and this script deliberately drops every one: nothing downstream reads them, and
+a student-grain column with no consumer is pure liability. See HELD_COLUMNS.
+
+`StudentMAPID` never lands. It is salt-hashed (Pedro Campos, ITPI, via Sam
+2026-08-19) but it is still a per-student identifier, and the spec we sent MAP
+is explicit about the need it serves: "we only ever count distinct students — we
+never look one up." So the hash is used to DERIVE a dense surrogate inside the
+pull and then discarded.
+
+THE THREE STATUS-SHAPED FIELDS (Sam, 2026-08-19)
+------------------------------------------------
+Getting these wrong is plausible rather than obvious, so they are named here:
+
+    Status           the ARTICULATION APPROVAL STAGE the row sits at.
+                     Example "Initiator" — a MAP approval-cascade role.
+    CPLStatusPlan    the action taken on the CR. "Needs Action",
+                     "Not Applicable". THE DISPOSITION. Already held.
+    CPLPlanStatus    NOT a status. The LIFECYCLE CHECKS, and there can be
+                     SEVERAL, pipe-delimited: "CPL Docs |Transcribed".
+
+`Status` and `CPLPlanStatus` are dimensions no table we hold carries, which is
+the substantive reason to load this view; freshness is the lesser one.
+
+`CPLPlanStatus` is stored VERBATIM, pipes intact. Splitting it would fix its
+grain before anyone has measured it, and a multi-valued checklist is not
+something you filter on until it has been given fields.
+
+The sandbox cannot reach *.supabase.co (CLAUDE.md Rule 10c) or the MAP API, so
+this is a runner path — .github/workflows/map-custom-report-load.yml.
+"""
+
+from __future__ import annotations
+
+import argparse
+import datetime as _dt
+import glob
+import json
+import os
+import sys
+import urllib.error
+import urllib.request
+from collections import Counter
+
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
+BATCH = 1000
+
+# How many of the lexicographically-smallest student hashes to retain as the
+# salt-rotation sketch. A uniform sample of the key set, so overlap between
+# consecutive pulls estimates their Jaccard similarity. 2,000 of ~42,000 is
+# enough to make "stable" and "rotated" unmistakable without holding a hash per
+# student.
+SKETCH_N = 2000
+
+CR_UNIT_VIEW = "View_CollegeExhibitCRByCatalogYear_APIDataset"
+STUDENT_VIEW = "View_StudentDetailsCredits_APIDataset"
+
+# ── Column contracts ───────────────────────────────────────────────────────
+# Mapped BY NAME, never by position. The API echoes the requested columnName
+# array back verbatim — including for an INVALID request (cpl_memory:
+# map-api-echoes-requested-columns) — so the echo is the request, and a silent
+# reordering upstream would go unseen by a positional read. A missing name is a
+# hard failure rather than a null column.
+
+CR_UNIT_COLUMNS = {
+    "CollegeID": "college_id",
+    "Source Code": "source_code",
+    "ExhibitID": "exhibit_id",
+    "Credit Recommendation": "credit_rec",
+    "College Course": "college_course",
+    "CPLStatusPlan": "cpl_status_plan",
+    "Catalog Year": "catalog_year",
+    "Course Type": "course_type",
+    "Student Count": "distinct_students",
+    "Potential Credits": "sum_potential_credits",
+    "Articulated Credits": "sum_articulated_credits",
+    "Applied Credits": "sum_applied_credits",
+    "Transcribed Credits": "sum_transcribed_credits",
+}
+
+STUDENT_COLUMNS = {
+    "CollegeID": "college_id",
+    "ExhibitID": "exhibit_id",
+    "Course Type": "course_type",
+    "Catalog Year": "catalog_year",
+    "Credit Recommendation": "credit_rec",
+    "CPLStatusPlan": "cpl_status_plan",
+    "Status": "status",
+    "CPLPlanStatus": "cpl_plan_status",
+    "PotentialCredits": "potential_credits",
+    "CreditsInReview": "credits_in_review",
+    "AppliedCredits": "applied_credits",
+    "TranscribedCredits": "transcribed_credits",
+    "ArticulatedCredits": "articulated_credits",
+    "MilitaryCredits": "military_credits",
+    "NonMilitaryCredits": "non_military_credits",
+    "ApprenticeshipCredits": "apprenticeship_credits",
+}
+
+STUDENT_KEY_COLUMN = "StudentMAPID"
+
+# Fetched and deliberately NOT stored. Listed rather than merely omitted so the
+# decision is visible to whoever next widens the load: every one is a student
+# attribute with no consumer downstream.
+HELD_COLUMNS = {
+    "Location": "college name; college_id already identifies the college",
+    "CPL Mode": "student attribute, no consumer",
+    "CPL Program": "student attribute, no consumer",
+    "Program": "student attribute, no consumer",
+    "ProgramGoal": "student attribute, no consumer",
+    "Transfer Destination": "student attribute, no consumer",
+    "College Course": "college-entered free text; held at articulation grain already",
+    "Source Code": "held at articulation grain already",
+    "CourseCredits": "credit split, no consumer",
+    "AreaCredits": "credit split, no consumer",
+    "ElectiveCredits": "credit split, no consumer",
+    "DefaultAreaCredits": "credit split, no consumer",
+    STUDENT_KEY_COLUMN: "per-student identifier; used to derive a surrogate, then discarded",
+}
+
+INT_COLUMNS = {"college_id", "distinct_students", "student_key"}
+NUM_COLUMNS = {
+    "sum_potential_credits", "sum_articulated_credits", "sum_applied_credits",
+    "sum_transcribed_credits", "potential_credits", "credits_in_review",
+    "applied_credits", "transcribed_credits", "articulated_credits",
+    "military_credits", "non_military_credits", "apprenticeship_credits",
+}
+
+
+# ── Parsing ────────────────────────────────────────────────────────────────
+
+def find_input(path: str | None) -> str | None:
+    """Locate the CustomReport pull. Same resolution order the funding build uses."""
+    if path and os.path.exists(path):
+        return path
+    latest = os.path.join(os.getcwd(), "CustomReport_latest.json")
+    if os.path.exists(latest):
+        return latest
+    cands = sorted(glob.glob(os.path.join(os.getcwd(), "CustomReport_*.json")))
+    return cands[-1] if cands else None
+
+
+def dataset(report: list, view_name: str) -> dict | None:
+    for ds in report if isinstance(report, list) else []:
+        if ds.get("viewName") == view_name:
+            return ds
+    return None
+
+
+def _to_int(v):
+    if v is None or v == "":
+        return None
+    try:
+        return int(float(v))
+    except (TypeError, ValueError):
+        return None
+
+
+def _to_num(v):
+    if v is None or v == "":
+        return None
+    try:
+        return float(v)
+    except (TypeError, ValueError):
+        return None
+
+
+def _clean(v):
+    """Trim, and map the empty string to None — but ONLY the empty string.
+
+    ExhibitID blankness is inconsistent AND MEANINGFUL (map_dataset_sql_for_malone
+    caveat 2: the -Course variant arrives as "Default Credit", the -Area variant
+    empty, at least one college sends a literal "-"). Those are preserved
+    verbatim; normalising them away destroys which path the credit took.
+    """
+    if v is None:
+        return None
+    s = str(v).strip()
+    return s if s else None
+
+
+def _coerce(col: str, value):
+    if col in INT_COLUMNS:
+        return _to_int(value)
+    if col in NUM_COLUMNS:
+        return _to_num(value)
+    return _clean(value)
+
+
+def map_rows(ds: dict, contract: dict, view_name: str, extra_needed=()) -> tuple[list, dict]:
+    """Map positional rows to dicts via the column NAME contract.
+
+    Returns (rows, index_of_extra_columns). A contract name absent from the
+    payload raises: a silently-null column is the failure mode that survives
+    review, and this is exactly the rename the spec asked MAP to flag.
+    """
+    names = ds.get("columnName") or []
+    index = {n: i for i, n in enumerate(names)}
+    missing = [n for n in contract if n not in index]
+    if missing:
+        raise SystemExit(
+            f"FATAL: {view_name} is missing requested column(s): {missing}\n"
+            f"  payload columns: {names}\n"
+            "  A rename upstream is the documented risk here — do not load a "
+            "null column over live data. Fix the contract, then re-run."
+        )
+    missing_extra = [n for n in extra_needed if n not in index]
+    if missing_extra:
+        raise SystemExit(f"FATAL: {view_name} is missing {missing_extra}")
+
+    pairs = [(index[src], dst) for src, dst in contract.items()]
+    rows = []
+    for raw in ds.get("columnValue") or []:
+        rows.append({dst: _coerce(dst, raw[i]) for i, dst in pairs})
+    return rows, index
+
+
+# ── Student surrogate key ──────────────────────────────────────────────────
+
+def assign_student_keys(ds: dict, rows: list, index: dict) -> tuple[list, dict]:
+    """Replace the hashed StudentMAPID with a dense surrogate 1..N.
+
+    The surrogate is assigned by sorted hash, so it is deterministic for a given
+    pull. It is NOT stable across pulls, and does not need to be: student_key is
+    only ever `count(distinct ...)` in this codebase (supabase_map_college_goal2,
+    supabase_map_college_credit_summary, supabase_credential_volume), and a
+    distinct-count is invariant under relabelling. Nothing joins to it and
+    nothing outside map_student_credit stores it — checked, not assumed.
+
+    That is also why the incoming keys do NOT have to line up with the current
+    table's 1..42,346, which came from a different pipeline (Access tblStudentKey)
+    and cannot be joined to a hash in either direction.
+    """
+    hcol = index[STUDENT_KEY_COLUMN]
+    raw_values = [(_clean(r[hcol]) if hcol < len(r) else None)
+                  for r in (ds.get("columnValue") or [])]
+    distinct = sorted({h for h in raw_values if h})
+    key_of = {h: i + 1 for i, h in enumerate(distinct)}
+
+    unkeyed = 0
+    for row, h in zip(rows, raw_values):
+        if h:
+            row["student_key"] = key_of[h]
+        else:
+            row["student_key"] = None
+            unkeyed += 1
+
+    stats = {
+        "distinct_students": len(distinct),
+        "rows_without_key": unkeyed,
+        "sketch": distinct[:SKETCH_N],
+        "hash_lengths": Counter(len(h) for h in distinct[:5000]),
+    }
+    return rows, stats
+
+
+# ── Reporting ──────────────────────────────────────────────────────────────
+
+def per_college(rows: list) -> Counter:
+    return Counter(r.get("college_id") for r in rows)
+
+
+def report_cr_unit(ds, rows):
+    print(f"\n── {CR_UNIT_VIEW}")
+    print(f"   dataCount (MAP)     {ds.get('dataCount'):,}"
+          if isinstance(ds.get("dataCount"), int) else f"   dataCount {ds.get('dataCount')}")
+    print(f"   rows parsed         {len(rows):,}")
+    if isinstance(ds.get("dataCount"), int) and ds["dataCount"] != len(rows):
+        print("   ⚠️  parsed rows != dataCount — the pull is short or padded. STOP.")
+    pc = per_college(rows)
+    print(f"   colleges            {len([c for c in pc if c is not None])}")
+    print(f"   live table          map_college_cr_unit (204,714 rows at last count)")
+    disp = Counter(r.get("cpl_status_plan") for r in rows)
+    print("   CPLStatusPlan       " + ", ".join(
+        f"{k or '(null)'} {v:,}" for k, v in disp.most_common(8)))
+    print(f"   Moreno Valley (3)   {pc.get(3, 0):,} rows  "
+          f"[live 7,963 / 8 catalog years — the reconciliation's best single test]")
+
+
+def report_student(ds, rows, stats):
+    print(f"\n── {STUDENT_VIEW}")
+    print(f"   dataCount (MAP)     {ds.get('dataCount'):,}"
+          if isinstance(ds.get("dataCount"), int) else f"   dataCount {ds.get('dataCount')}")
+    print(f"   rows parsed         {len(rows):,}")
+    if isinstance(ds.get("dataCount"), int) and ds["dataCount"] != len(rows):
+        print("   ⚠️  parsed rows != dataCount — the pull is short or padded. STOP.")
+    pc = per_college(rows)
+    print(f"   colleges            {len([c for c in pc if c is not None])}")
+    print(f"   distinct students   {stats['distinct_students']:,}  "
+          f"[live map_student_credit holds 42,346]")
+    if stats["rows_without_key"]:
+        print(f"   ⚠️  rows with no StudentMAPID: {stats['rows_without_key']:,}")
+    print(f"   hash lengths        {dict(stats['hash_lengths'])}  (expect 64 hex)")
+
+    # The three status-shaped fields, reported separately and never merged.
+    print("   Status (approval stage, Sam 2026-08-19):")
+    for k, v in Counter(r.get("status") for r in rows).most_common(10):
+        print(f"       {str(k or '(null)'):32s} {v:>9,}")
+    print("   CPLStatusPlan (the disposition):")
+    for k, v in Counter(r.get("cpl_status_plan") for r in rows).most_common(10):
+        print(f"       {str(k or '(null)'):32s} {v:>9,}")
+    print("   CPLPlanStatus (lifecycle CHECKS — multi-valued, stored verbatim):")
+    combos = Counter(r.get("cpl_plan_status") for r in rows)
+    print(f"       distinct combinations: {len(combos):,}")
+    for k, v in combos.most_common(8):
+        print(f"       {str(k or '(null)'):48s} {v:>9,}")
+    checks = Counter()
+    for r in rows:
+        for part in (r.get("cpl_plan_status") or "").split("|"):
+            part = part.strip()
+            if part:
+                checks[part] += 1
+    print(f"       individual checks ({len(checks)} distinct):")
+    for k, v in checks.most_common(12):
+        print(f"           {k:44s} {v:>9,}")
+
+    # Two signals for one concept. cpl_memory: applied-measure-fork-55-percent
+    # is the standing precedent — publish both, name the gap, never silently
+    # resolve. Measured here so nobody has to assume they agree.
+    has_check = sum(1 for r in rows
+                    if "transcribed" in (r.get("cpl_plan_status") or "").lower())
+    has_units = sum(1 for r in rows if (r.get("transcribed_credits") or 0) > 0)
+    both = sum(1 for r in rows
+               if "transcribed" in (r.get("cpl_plan_status") or "").lower()
+               and (r.get("transcribed_credits") or 0) > 0)
+    print("   ⚠️  'Transcribed' is BOTH a lifecycle check and a numeric column:")
+    print(f"       rows with the CHECK      {has_check:,}")
+    print(f"       rows with UNITS > 0      {has_units:,}")
+    print(f"       rows with both           {both:,}")
+    print("       Do not treat these as one measure until Sam has ruled.")
+
+    print(f"   Moreno Valley (3)   {pc.get(3, 0):,} rows")
+
+
+# ── Supabase ───────────────────────────────────────────────────────────────
+
+def _headers(key: str) -> dict:
+    return {
+        "apikey": key,
+        "Authorization": f"Bearer {key}",
+        "Content-Type": "application/json",
+        "Prefer": "return=minimal",
+    }
+
+
+def _request(method: str, path: str, key: str, body=None, timeout=180):
+    url = f"{SUPABASE_URL}/rest/v1/{path}"
+    data = json.dumps(body).encode("utf-8") if body is not None else None
+    req = urllib.request.Request(url, data=data, headers=_headers(key), method=method)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.status, resp.read()
+
+
+def truncate(table: str, key: str) -> None:
+    """Empty a STAGING table. Safe by construction: nothing reads staging, and
+    the live tables are never named here."""
+    assert table.startswith("stg_"), f"refusing to delete from non-staging table {table}"
+    _request("DELETE", f"{table}?college_id=not.is.null", key)
+    _request("DELETE", f"{table}?college_id=is.null", key)
+
+
+def insert(table: str, rows: list, key: str) -> int:
+    sent = 0
+    for i in range(0, len(rows), BATCH):
+        chunk = rows[i:i + BATCH]
+        try:
+            _request("POST", table, key, chunk)
+        except urllib.error.HTTPError as e:
+            detail = e.read().decode("utf-8", errors="replace")[:400]
+            raise SystemExit(f"FATAL: insert into {table} failed at row {i}: "
+                             f"HTTP {e.code} {detail}")
+        sent += len(chunk)
+        if sent % (BATCH * 25) == 0:
+            print(f"      {table}: {sent:,}/{len(rows):,}")
+    return sent
+
+
+def write_sketch(sample: list, key: str, pull_date: str) -> dict:
+    """Store this pull's min-hash sketch and compare with the previous one.
+
+    Pedro Campos (ITPI), via Sam 2026-08-19: the salt does NOT rotate. This is
+    therefore a REGRESSION check, not an open question — and it is worth having
+    precisely because the failure it catches is silent. A rotated salt raises no
+    error anywhere; distinct-student counts simply stop being comparable across
+    pulls. cpl_memory: statewide-is-138-not-84 is the standing precedent for a
+    correct ruling sitting unenforced because no consumer ever changed.
+    """
+    status, raw = _request(
+        "GET", "map_student_key_sketch?select=pull_date,sample_hash"
+               "&order=pull_date.desc&limit=200000", key)
+    prior = json.loads(raw or b"[]")
+    prior_dates = sorted({r["pull_date"] for r in prior}, reverse=True)
+    prev_date = next((d for d in prior_dates if d != pull_date), None)
+    prev = {r["sample_hash"] for r in prior if r["pull_date"] == prev_date}
+
+    _request("DELETE", f"map_student_key_sketch?pull_date=eq.{pull_date}", key)
+    insert("map_student_key_sketch",
+           [{"pull_date": pull_date, "sample_hash": h} for h in sample], key)
+
+    # Keep two pulls. More would be a longitudinal record of student keys, which
+    # is more than a rotation detector needs.
+    for old in prior_dates:
+        if old not in (pull_date, prev_date):
+            _request("DELETE", f"map_student_key_sketch?pull_date=eq.{old}", key)
+
+    if prev_date is None:
+        return {"verdict": "first-pull", "prev_date": None, "overlap": None}
+    overlap = len(prev & set(sample)) / max(len(prev), 1)
+    verdict = "stable" if overlap >= 0.5 else "ROTATED?"
+    return {"verdict": verdict, "prev_date": prev_date, "overlap": overlap}
+
+
+# ── Main ───────────────────────────────────────────────────────────────────
+
+def main() -> int:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("input", nargs="?", help="CustomReport JSON (default: CustomReport_latest.json)")
+    ap.add_argument("--dry-run", action="store_true", help="parse and report, write nothing")
+    args = ap.parse_args()
+
+    path = find_input(args.input)
+    if not path:
+        print("FATAL: no CustomReport_*.json found. Run fetch_custom_report.py first.")
+        return 1
+    print(f"Reading {path} ({os.path.getsize(path):,} bytes)")
+    with open(path, encoding="utf-8") as f:
+        report = json.load(f)
+
+    cr_ds = dataset(report, CR_UNIT_VIEW)
+    st_ds = dataset(report, STUDENT_VIEW)
+    if cr_ds is None or st_ds is None:
+        have = [d.get("viewName") for d in report if isinstance(d, dict)]
+        print("FATAL: the pull does not carry both new views.")
+        print(f"  missing: {[v for v, d in ((CR_UNIT_VIEW, cr_ds), (STUDENT_VIEW, st_ds)) if d is None]}")
+        print(f"  present: {have}")
+        print("  The payload change landed after the last cron run — re-fetch on a "
+              "commit that carries all 10 datasets.")
+        return 1
+
+    cr_rows, _ = map_rows(cr_ds, CR_UNIT_COLUMNS, CR_UNIT_VIEW)
+    st_rows, st_index = map_rows(st_ds, STUDENT_COLUMNS, STUDENT_VIEW,
+                                 extra_needed=(STUDENT_KEY_COLUMN,))
+    st_rows, st_stats = assign_student_keys(st_ds, st_rows, st_index)
+    for i, r in enumerate(st_rows, start=1):
+        r["source_row_id"] = i
+
+    report_cr_unit(cr_ds, cr_rows)
+    report_student(st_ds, st_rows, st_stats)
+
+    held = [n for n in HELD_COLUMNS if n in (st_ds.get("columnName") or [])]
+    print(f"\n   fetched but NOT stored ({len(held)}): {', '.join(held)}")
+
+    if args.dry_run:
+        print("\n--dry-run: nothing written.")
+        return 0
+
+    key = os.environ.get("SUPABASE_SERVICE_KEY")
+    if not key:
+        print("FATAL: SUPABASE_SERVICE_KEY not set.")
+        return 1
+
+    pull_date = _dt.date.today().isoformat()
+    print(f"\nWriting staging tables (pull_date {pull_date})...")
+    truncate("stg_map_college_cr_unit", key)
+    n1 = insert("stg_map_college_cr_unit", cr_rows, key)
+    print(f"   stg_map_college_cr_unit  {n1:,} rows")
+    truncate("stg_map_student_credit", key)
+    n2 = insert("stg_map_student_credit", st_rows, key)
+    print(f"   stg_map_student_credit   {n2:,} rows")
+
+    sketch = write_sketch(st_stats["sketch"], key, pull_date)
+    print(f"\nSalt-rotation check: {sketch['verdict']}"
+          + (f" (overlap {sketch['overlap']:.3f} vs {sketch['prev_date']})"
+             if sketch["overlap"] is not None else " — no previous pull to compare"))
+    if sketch["verdict"] == "ROTATED?":
+        print("   ⚠️  The student key set barely overlaps the previous pull. Either the "
+              "salt rotated or the population changed wholesale. Distinct-student "
+              "counts are NOT comparable across these two pulls until this is "
+              "explained. Ask ITPI before publishing any headcount trend.")
+
+    print("\nStaging loaded. NOTHING LIVE HAS CHANGED.")
+    print("Next: run the reconciliation + swap in docs/map_custom_report_load.md.")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main())

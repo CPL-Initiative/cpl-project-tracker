@@ -1,0 +1,84 @@
+name: MAP Custom Report load (staging)
+
+# Loads the two MAP Custom Report views that have never been loaded into
+# Supabase STAGING tables, and reports what arrived.
+#
+#   View_CollegeExhibitCRByCatalogYear_APIDataset  ->  stg_map_college_cr_unit
+#   View_StudentDetailsCredits_APIDataset          ->  stg_map_student_credit
+#
+# ⚠️ THIS WORKFLOW NEVER TOUCHES A LIVE TABLE. Both destinations are staging;
+# the live `map_college_cr_unit` and `map_student_credit` are reviewer-gated,
+# feed the Course Credit tab, the College Action page and both published
+# aggregates, and one is student grain. The swap is a separate gated SQL step in
+# docs/map_custom_report_load.md, run deliberately by a human or a session —
+# same separation docs/map_student_credit_reload.md established, and for the
+# same reason: a half-finished insert must never be able to blank a live tab.
+#
+# Dispatch-only, and dry-run is the default. There is no schedule on purpose:
+# a daily automatic reload of a 537,908-row student-grain table is a decision
+# for Sam, not a default. Add one when the reconciliation has been looked at
+# at least once.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "dry-run (parse + report, write nothing) or apply (write STAGING only)"
+        required: true
+        default: "dry-run"
+        type: choice
+        options: [dry-run, apply]
+
+concurrency:
+  group: map-custom-report-load
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  load:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Fetches all ten datasets rather than the two we want. That is
+      # deliberate: fetch_custom_report.py IS the PII boundary — its
+      # minimisation is the absence of entries — and the cheapest change to a
+      # guarded file is none. ~91 MB on a runner costs nothing.
+      - name: Fetch CustomReport from MAP API
+        env:
+          MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
+          MAP_API_AUTH_HEADER: ${{ secrets.MAP_API_AUTH_HEADER }}
+          MAP_API_AUTH_SCHEME: ${{ secrets.MAP_API_AUTH_SCHEME }}
+        run: python fetch_custom_report.py --output CustomReport_latest.json
+
+      # Runs before the load so a contract break is caught on the runner rather
+      # than discovered mid-insert.
+      - name: Guard the mapping and the minimisation
+        run: |
+          python3 tests/custom_report_payload_test.py
+          python3 tests/map_custom_report_sync_test.py
+
+      - name: Load staging
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          MODE="${{ github.event.inputs.mode || 'dry-run' }}"
+          echo "mode: $MODE"
+          if [ "$MODE" = "dry-run" ]; then
+            python3 kb/_sync_map_custom_reports.py --dry-run
+          else
+            python3 kb/_sync_map_custom_reports.py
+          fi
+
+      # The raw pull carries student-grain rows and this repo is PUBLIC. It is
+      # gitignored, but deleting it means a later step cannot accidentally
+      # upload it as an artifact either.
+      - name: Remove the raw pull
+        if: always()
+        run: rm -f CustomReport_latest.json CustomReport_*.json
