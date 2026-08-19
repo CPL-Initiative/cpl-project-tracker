@@ -1,21 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · Sky169 — TWO sessions ran today: Ashley's Delta crosswalk (42 unclaimed occupations) and the repo/sign-in posture review. Both are carried below.",
-  "_session": "Session 169 (SkyDelta + SkyRegister, in parallel)",
-  "_status": "Ashley asked for the next step on the San Joaquin crosswalk she started in August: not \"where in California can a student get this credit\", but \"what can San Joaquin Delta College itself give credit for\". Those turn out to be different questions with different right answers, so it is a new tool rather than a filter on the old one. The result: Delta has NOT given CPL for a single one of the 139 occupations on the list — its only career credential is the police academy, everything else is AP and CLEP exams. But it already teaches the material for 52 of them, and for 42 the credit recommendation is already built in MAP with Delta named as a college that could adopt it. Those 42 need no new courses and no new paperwork in MAP — just someone to join them up. Separately, Delta runs a utility and hydroelectric apprenticeship that almost no other college has, covering 6 jobs that have no credit recommendation anywhere in California; an exhibit built there would be the first in the state. Ashley has a spreadsheet and a web page for her meeting with the college.\n\nSEPARATELY, a second session reviewed how we sign in and where the code lives. Two premises turned out to be wrong: two of the three repositories were ALREADY out of Sam's personal account, and making them private would NOT make COBI private — on the free plan it takes the whole site dark, and on any paid plan below Enterprise the published site stays public either way. What private DOES hide is the half worth protecting: 555 methodology documents, 149 generators, Sierra's retrieval design. The recommended shape is a SPLIT — Sierra, the Fact Sheet, the veteran map and the landing pages stay public where they are; COBI and the methodology move to a private repo. On sign-in: magic links already cover more of COBI than the shared phrases do, so the recommendation is magic link plus ONE role field, not groups. The reviewer list went from 5 people to 10. Next up: three new MAP Custom Reports, and a recommendation to keep fetching them ourselves rather than let the vendor push them in.",
+  "_as_of": "2026-08-19 · SkyFetch (Session 170) — the three new MAP Custom Reports are confirmed live on the API we already pull and two of them are now wired into the daily fetch. Ashley's Delta items from Session 169 are unchanged and still open.",
+  "_session": "Session 170 (SkyFetch)",
+  "_status": "Sam built three new reports in MAP's Custom Report Builder and asked whether we could fetch them and check them against what we already store. We can — all three are served by the same MAP address the nightly job has been pulling from for months, and the row counts the API returns match the builder screen exactly. So this was a settings change, not a new piece of plumbing, which also means we can politely decline ITPI's offer to push the data to us daily: we already fetch it ourselves, and doing the fetching is what lets us choose which columns we take.\n\nThe bigger surprise: two of the three reports are OUR OWN request coming back. The 13-field one is exactly the dataset we wrote out and sent to MAP's team on 9 August — same columns, same order — and we already hold a copy of it. So the real job was never 'get the data', it was 'check whether their numbers and ours agree'. They very nearly do: MAP's counts are 1.5%, 3% and 10% higher than ours, all in the same direction, which is what we expected — our copy is slightly stale because MAP has been correcting and reloading records. That is our data catching up, not an error to chase.\n\nOn privacy: the student report identifies people only by a scrambled code. Pedro confirmed those codes are properly scrambled with a secret, and we checked independently rather than just taking his word — we tried five million guesses against a sample code and none matched. One question is still with Pedro: whether that secret stays the same each night. It is not a privacy risk either way, but if it changes, student counts stop being comparable week to week without anything looking wrong.\n\nNothing is loaded into our database yet. That is the next session's job.",
   "items": [
-    {
-      "id": "s169-second-partner-list",
-      "for": "Fable",
-      "tab": "eacr",
-      "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
-    },
-    {
-      "id": "s169-record-corrections",
-      "for": "Fable",
-      "tab": "eacr",
-      "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
-    },
     {
       "id": "s169-delta-meeting-outcome",
       "for": "Sam",
@@ -41,40 +29,52 @@
       "text": "Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
     },
     {
-      "id": "",
+      "id": "s170-salt-rotation",
       "for": "Sam",
-      "tab": "",
-      "text": "Decide whether the public Knowledge Base stays CC BY 4.0 — its licence currently lets anyone remix our methodology commercially, which is the one thing working against protecting the approach."
+      "tab": "dashboard",
+      "text": "Pedro is checking whether the scrambling secret for student IDs stays the same each night or changes. Either answer is fine for privacy — but if it changes, our student counts quietly stop being comparable from one week to the next, with nothing showing an error. When he replies, tell the session so it gets recorded."
     },
     {
-      "id": "",
+      "id": "s169-repo-split-decisions",
       "for": "Sam",
-      "tab": "",
-      "text": "Check whether the CPL-Initiative GitHub organisation has a second OWNER. You added Pedro on Supabase, but GitHub is where the website, the 29 scheduled jobs and the 8 secrets live."
+      "tab": "dashboard",
+      "text": "Three decisions still open on splitting the public site from the internal one, all from Session 169 and none of them urgent: does the public Knowledge Base stay CC BY 4.0 (it currently lets anyone reuse the methodology commercially — the highest-leverage of the three); are we on GitHub Free or Team (Free cannot publish a site from a private repo, so it decides what is possible); and does the CPL-Initiative GitHub organisation have a second owner yet? Pedro was added on Supabase but GitHub was never confirmed."
     },
     {
-      "id": "",
-      "for": "Sam",
-      "tab": "",
-      "text": "Look at the GitHub billing page and say whether we are on Free or Team — the private-repo step cannot start on Free without taking the site down."
-    },
-    {
-      "id": "",
-      "for": "Sam",
-      "tab": "",
-      "text": "Ask Pedro for the three viewName values and column lists for the new Custom Reports. That is all we need, and it is far less work for him than the automation he offered."
-    },
-    {
-      "id": "",
+      "id": "s169-second-partner-list",
       "for": "Fable",
-      "tab": "",
-      "text": "Fetch the three new MAP Custom Reports and compare them against Supabase — first establishing whether they are on the API we already use, or only in the report builder."
+      "tab": "eacr",
+      "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
     },
     {
-      "id": "",
+      "id": "s169-record-corrections",
       "for": "Fable",
-      "tab": "",
-      "text": "Treat that comparison as a reconciliation, not a load: where the new extract disagrees with Supabase it is probably our stale copy resolving, which needs confirming rather than fixing."
+      "tab": "eacr",
+      "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
+    },
+    {
+      "id": "s170-cron-arrived",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "First job next session: confirm the two newly-wired MAP reports actually arrived on the nightly run (the fetch now pulls 10 datasets instead of 8). A silent miss would look exactly like nothing changing."
+    },
+    {
+      "id": "s170-load-reconcile",
+      "for": "Fable",
+      "tab": "course-credit",
+      "text": "Load the two new reports into Supabase and compare them against what we already hold, college by college. Start with Moreno Valley — it spans 8 catalog years where most colleges have 5, so it tests the part that actually matters. Expect their numbers to be slightly higher than ours; that is our copy catching up."
+    },
+    {
+      "id": "s170-salt-detector",
+      "for": "Fable",
+      "tab": "course-credit",
+      "text": "Build the check that spots a changed scrambling secret: compare this pull's set of student codes against last pull's. Mostly the same means it is stable; almost none in common means it changed. Build it even if Pedro says it is stable — his answer describes today, not next year."
+    },
+    {
+      "id": "s170-claude-md-size",
+      "for": "Fable",
+      "tab": "dashboard",
+      "text": "CLAUDE.md is twice the size it should be (120KB against a 60KB budget) and every session pays that cost on startup. Move a chunk of prose into docs/reference/ — do not add more to it."
     }
   ]
 }
