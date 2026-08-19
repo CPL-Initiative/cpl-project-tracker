@@ -17,7 +17,7 @@ from datetime import datetime
 
 API_URL = "https://mapwebapinew.azurewebsites.net/api/CustomReport/getReport"
 
-# ── The 8 datasets we fetch, with their full column lists ────────────
+# ── The datasets we fetch, with their full column lists ─────────────
 # Was 9 in the MAP Custom Reporting Module; this list has drifted from that
 # count twice and the comment said "9" until 2026-08-08. Today: the two contact
 # views are deliberately dropped (PII minimisation, Session 34) and
@@ -93,6 +93,57 @@ REQUEST_PAYLOAD = [
                        "Potential Student", "Test Student",
                        "Transcribed Credits", "Uploaded Date"]
     },
+    {
+        # ── College Exhibit CRs, BY CATALOG YEAR (NEW 2026-08-19) ─────────
+        # This IS Dataset A of docs/map_dataset_sql_for_malone.md, which we sent
+        # the MAP platform team on 2026-08-09 — same 13 columns, same order. The
+        # three new reports are that spec implemented, not new data to discover.
+        # Serve-checked on the runner 2026-08-19: HTTP 200, dataCount 211,005,
+        # matching the builder exactly. We hold 204,714 in map_college_cr_unit,
+        # so this is +3.07% — consistent with our extract being stale while MAP
+        # reloaded corrected Exhibit references (cpl_memory:
+        # two-student-counts-disagree-indicator-suspected). Confirm before
+        # treating a delta as a defect.
+        #
+        # ⚠️ Take THIS one, not View_CollegeExhibitCR_APIDataset (below, 11
+        # columns), which is the same funnel with Catalog Year and Course Type
+        # collapsed. Measured on our copy: dropping course_type costs 4 rows of
+        # 204,714; dropping catalog_year costs 32,990 (16.1%). Catalog year IS
+        # the grain. The 11-column report is kept out of the payload on purpose —
+        # it is derivable from this one, and fetching both would move ~175k rows
+        # to learn nothing.
+        "viewName": "View_CollegeExhibitCRByCatalogYear_APIDataset",
+        "columnName": ["CollegeID", "Source Code", "ExhibitID",
+                       "Credit Recommendation", "College Course", "CPLStatusPlan",
+                       "Catalog Year", "Course Type", "Student Count",
+                       "Potential Credits", "Articulated Credits",
+                       "Applied Credits", "Transcribed Credits"],
+    },
+    # ── NOT YET WIRED: View_StudentDetailsCredits_APIDataset ──────────────
+    # Served (HTTP 200, dataCount 591,820 vs our 537,908, +10.02%) and it carries
+    # the student grain with CPLStatusPlan. Deliberately NOT added until one
+    # question is answered by Pedro or Malone:
+    #
+    #   Is StudentMAPID a SALTED hash, and is the salt kept on MAP's side?
+    #
+    # It arrives as 64 hex characters, so the opaque-key ask was implemented. But
+    # docs/map_dataset_sql_for_malone.md warns in its own words that "a bare
+    # SHA2_256 of a student ID is not anonymous: the ID space is small enough to
+    # enumerate, so anyone with the hashes can recover every ID by hashing all
+    # candidates" — and a salted hash is indistinguishable from an unsalted one
+    # by inspection. Until that is confirmed, fetching it would put an identifier
+    # of unknown strength on the Action runner, which is the exact thing dropping
+    # the two contact views below was meant to prevent.
+    #
+    # Also hold `Notes` regardless of the answer: free text at student grain,
+    # written by staff, read by nothing downstream.
+    #
+    # ⚠️ And when it IS wired: this view carries THREE status-shaped fields —
+    # `Status`, `CPLStatusPlan` and `CPLPlanStatus`. The spec already warned that
+    # Status is the workflow stage while CPLStatusPlan is what the college
+    # decided. CPLPlanStatus is neither: it is a pipe-delimited checklist
+    # ("CPL Docs |Ed Plan |Analysis |Counselor |"). Picking by name gets this
+    # wrong in a way that looks entirely plausible.
     {
         # Exhibit CRs Catalog (NEW 2026-06-09) — per (ExhibitID, SkillLevel,
         # CreditRecommendation, …) credit funnel that carries the long-missing
