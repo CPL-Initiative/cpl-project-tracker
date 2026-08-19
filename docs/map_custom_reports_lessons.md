@@ -149,3 +149,37 @@ the grain. Then the key-set overlap check for salt stability, at load time.
 
 **Parked / open:** Pedro's answer on salt rotation; whether the 11-column report
 ever earns a place (currently: no, it is derivable).
+
+---
+
+## 2026-08-19 (later) — both open questions closed
+
+**Pedro Campos (ITPI), via Sam: the salt does NOT rotate — it stays the same
+every run.** That was the one property the enumeration test could not reach, and
+it is now answered rather than inferred. Consequences worth stating plainly:
+
+- The hashed `StudentMAPID` is **stable across pulls**, so a loader may *rely* on
+  it — distinct students dedupe correctly across refreshes and student counts are
+  comparable over time. That is exactly what
+  `docs/map_dataset_sql_for_malone.md` asked for ("use the same salt each run so
+  counts stay comparable over time").
+- The key-set overlap check is now a **regression check, not an open question.**
+  Build it anyway: an assurance describes today's behaviour, and this failure is
+  silent by construction — a rotated salt raises no error, the numbers just
+  quietly stop matching. `cpl_memory: statewide-is-138-not-84` is the standing
+  precedent for a correct ruling sitting unenforced because no consumer changed.
+
+**Sam has told Pedro the tables are wired into our cron, so no push is needed.**
+The ITPI question is now closed *and communicated* —
+`adr-pull-from-the-source-rather-than-accept-a-push` is a decision that has been
+acted on, not a recommendation awaiting one. It was also settled on the merits
+rather than on posture, which is what made it an easy conversation: the reports
+were already on the endpoint we pull, so accepting a push would have meant
+issuing a credential and creating a second writer to obtain data we were
+receiving anyway.
+
+Worth keeping as a pattern: **the strongest version of "no thank you" is one
+where the alternative is already working.** The recommendation to decline was
+written before the serve-check confirmed the reports were reachable; had they
+*not* been, the same recommendation would have been a much weaker argument, and
+the honest move would have been to say so.

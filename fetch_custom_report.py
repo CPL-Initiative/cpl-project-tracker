@@ -153,14 +153,19 @@ REQUEST_PAYLOAD = [
         # each run so counts stay comparable over time"). A rotating salt would
         # leak nothing — it would silently make distinct-student counts
         # incomparable across refreshes, so a headcount would wander with no
-        # error anywhere. Sam asked Pedro directly 2026-08-19 — answer pending;
-        # record it here when it lands, because a stable salt is a property the
-        # loader can then rely on rather than infer.
+        # error anywhere.
         #
-        # BUT BUILD THE DETECTOR EITHER WAY. An assurance describes today's
-        # behaviour; it does not prevent a change six months from now, and this
-        # failure is silent by construction. The same lesson is already in
-        # cpl_memory as statewide-is-138-not-84: a settled ruling does not
+        # ✅ ANSWERED — Pedro Campos (ITPI) via Sam, 2026-08-19: THE SALT DOES
+        # NOT ROTATE; it stays the same every run. So the key IS stable across
+        # pulls, and a loader may rely on that rather than infer it: distinct
+        # students dedupe correctly across refreshes, and student counts are
+        # comparable over time. That is the property the spec asked for.
+        #
+        # STILL BUILD THE DETECTOR — but as a REGRESSION CHECK now, not an open
+        # question. An assurance describes today's behaviour; it does not
+        # prevent a change six months from now, and this failure is silent by
+        # construction, so nothing would surface it. cpl_memory carries the
+        # precedent as statewide-is-138-not-84: a settled ruling does not
         # enforce itself — the consumer has to change. Whatever loads this view
         # should compare the incoming key set against the previous pull; a
         # stable salt gives a large overlap, a rotated one essentially zero.
