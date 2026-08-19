@@ -131,16 +131,40 @@ REQUEST_PAYLOAD = [
         # StudentMAPID is INCLUDED, and that is the design rather than a
         # relaxation: docs/map_dataset_spec_for_malone.md asked for a one-way
         # hashed key precisely so distinct students could be COUNTED without
-        # anyone holding an identifier. Sam confirmed 2026-08-19 that Pedro
-        # hashed them, and the specific attack that spec warned about —
-        # "the ID space is small enough to enumerate" — was tested rather than
-        # assumed: StudentMAPID is a small integer (42,346 distinct), and
-        # SHA-256 over 5,000,000 plain decimals plus eight formatting variants
-        # does not reproduce a sampled hash. It is not a bare hash of the id.
-        # ⚠️ That is evidence, not proof of a salt, and it rests on ONE sample.
-        # If MAP ever changes how the key is derived, distinct-student counts
-        # silently stop being comparable across runs — the salt must be the
-        # SAME every run, which is the one property this test cannot check.
+        # anyone holding an identifier.
+        #
+        # ✅ SALTED — Pedro Campos (CEO, ITPI), relayed by Sam 2026-08-19:
+        # the MAP student ids are salt-hashed. That is the authoritative answer
+        # and it settles the privacy question this column raised; the source is
+        # named here rather than laundered into a bare assertion, because a
+        # curator's knowledge is a first-class input (CLAUDE.md, Rule 8).
+        #
+        # It was independently corroborated before the confirmation arrived,
+        # which is why the column shipped at all. The spec's own warning —
+        # "the ID space is small enough to enumerate" — is cheap to test:
+        # StudentMAPID is a small integer over 42,346 distinct students, and
+        # SHA-256 across 5,000,000 plain decimals plus eight formatting
+        # variants does not reproduce a sampled hash. Not a bare hash of the id.
+        # Two independent signals now agree, so this is settled, not assumed.
+        #
+        # ⚠️ ONE PROPERTY REMAINS UNVERIFIED, and it is not a privacy one.
+        # "Salted" does not by itself mean "salted with the SAME salt every
+        # run", which is what the spec actually asked for ("use the same salt
+        # each run so counts stay comparable over time"). A rotating salt would
+        # leak nothing — it would silently make distinct-student counts
+        # incomparable across refreshes, so a headcount would wander with no
+        # error anywhere. Sam asked Pedro directly 2026-08-19 — answer pending;
+        # record it here when it lands, because a stable salt is a property the
+        # loader can then rely on rather than infer.
+        #
+        # BUT BUILD THE DETECTOR EITHER WAY. An assurance describes today's
+        # behaviour; it does not prevent a change six months from now, and this
+        # failure is silent by construction. The same lesson is already in
+        # cpl_memory as statewide-is-138-not-84: a settled ruling does not
+        # enforce itself — the consumer has to change. Whatever loads this view
+        # should compare the incoming key set against the previous pull; a
+        # stable salt gives a large overlap, a rotated one essentially zero.
+        # That check belongs at load time, not here — this file only fetches.
         #
         # `Notes` is deliberately NOT requested: free text at student grain,
         # written by staff, read by nothing downstream. The cheapest PII
