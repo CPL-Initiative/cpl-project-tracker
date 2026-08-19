@@ -174,6 +174,29 @@ queue at a handful of institutions, not a statewide condition.
 ⚠️ **Clearing P1 raises every disposition rate without awarding a unit**, because
 it shrinks the denominator. Legitimate, but say so when the rate moves.
 
+### Customer Success — addresses supplied, access NOT granted
+
+Sam gave the three addresses on 2026-08-19. All are **`@theinfotechpartners.com`
+— ITPI**, the same external domain as Pedro Campos, so Customer Success is an
+ITPI-staffed function rather than RCCD:
+
+```
+natalie.powell@theinfotechpartners.com   (lead)
+chelsea.marada@theinfotechpartners.com
+ally.barker@theinfotechpartners.com
+```
+
+⚠️ **They were deliberately NOT added to `allowed_reviewers`.** Supplying an
+address is not the same as authorising the grant, and adding an **external**
+domain to that set is what required Sam's explicit confirmation when Pedro was
+added. Reviewer would also hand them 591,820 student-grain rows and the ability
+to rotate every team phrase. **The worklist is team-phrase gated, so they need
+the phrase and nothing else — there is no per-person setup to do.**
+
+⚠️ Sam first wrote the name **"Chelsea Mirada"** and the address he then gave is
+**"chelsea.marada@"**. The address is authoritative for routing; confirm the name
+spelling once before anything is sent to her.
+
 **NEXT:** work P1 as one instruction to ~100 colleges; take P2 to Pierce and
 Merced directly; ask the nine Initiator colleges what is stalling.
 
@@ -205,6 +228,21 @@ Merced directly; ask the nine Initiator colleges what is stalling.
 - Auth `role` column, repo split, GR sensitivity flips — all still on Sam.
 
 ---
+
+## ⚠️ Standing design rule, added this run
+
+**Sam, 2026-08-19:** *"Make sure it is based on our First Light design and make it
+always accessible and mobile friendly."* — and he meant **artifacts and
+prototypes too**, not just dashboard CSS. This session built a decision artifact
+on an invented palette while the house spec sat in the repo. **Look for the
+design system before designing anything.**
+
+Spec: [`docs/kb-notes/reference-ui-design-system.md`](kb-notes/reference-ui-design-system.md)
++ `prototype/first_light_theme_v1.html` v1.6. Warm monochrome, five accents one
+job each, Playfair Display + Source Sans 3, `var(--token)` never a raw hex,
+tables never on glass. **Verify contrast, don't claim it** —
+`prototype/check_contrast.py` holds the maths — and **colour is never the only
+signal**. Full rule in `CLAUDE.md` → Engineering & UI practices.
 
 ## Patterns that worked
 
