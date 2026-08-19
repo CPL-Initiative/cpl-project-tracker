@@ -1,80 +1,80 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-19 · Sky169 — we checked San Joaquin Delta College's own courses against the SJCOE occupation list, and found 42 places where the college already teaches the material and the credit recommendation already exists in MAP. Nobody has connected the two.",
- "_session": 169,
- "_status": "Ashley asked for the next step on the San Joaquin crosswalk she started in August: not \"where in California can a student get this credit\", but \"what can San Joaquin Delta College itself give credit for\". Those turn out to be different questions with different right answers, so it is a new tool rather than a filter on the old one. The result: Delta has NOT given CPL for a single one of the 139 occupations on the list — its only career credential is the police academy, everything else is AP and CLEP exams. But it already teaches the material for 52 of them, and for 42 the credit recommendation is already built in MAP with Delta named as a college that could adopt it. Those 42 need no new courses and no new paperwork in MAP — just someone to join them up. Separately, Delta runs a utility and hydroelectric apprenticeship that almost no other college has, covering 6 jobs that have no credit recommendation anywhere in California; an exhibit built there would be the first in the state. Ashley has a spreadsheet and a web page for her meeting with the college.",
- "items": [
-  {
-   "id": "s169-delta-meeting-outcome",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong."
-  },
-  {
-   "id": "s169-delta-utility-sponsor",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Delta teaches a utility/hydroelectric apprenticeship — turbines, protective relaying, high-voltage switching, aqueduct systems — covering 6 jobs with NO credit recommendation anywhere in California. The question to ask the college is who sponsors that apprenticeship, because that sponsor is who any new MAP exhibit would be built around. This would be first in the state."
-  },
-  {
-   "id": "s169-delta-plumbing-invisible",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way."
-  },
-  {
-   "id": "s169-delta-no-fire",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
-  },
-  {
-   "id": "s169-delta-tab-question",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Open question for Ashley: should this become a tab rather than a spreadsheet? The numbers move as Delta adopts, and a spreadsheet is a snapshot. You authorised a partner-crosswalk tab in August but scoped it to the regional-capacity view rather than the occupation matching — that limit would still apply."
-  },
-  {
-   "id": "s169-second-partner-list",
-   "for": "Fable",
-   "tab": "eacr",
-   "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
-  },
-  {
-   "id": "s169-record-corrections",
-   "for": "Fable",
-   "tab": "eacr",
-   "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
-  },
-  {
-   "id": "s168-gr-phrase-holders",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "One thing to check: the GR phrase no longer opens the shared team tabs — it never needed to, and it was opening 42 tables it has no use for. If anyone holds ONLY the GR phrase, they will have lost the Workplan and the rest and should be given the shared team phrase. Undoing it is a one-line change if that is easier."
-  },
-  {
-   "id": "s168-gr-verify-queue",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "The CPL area says 0 of 16 entries have had their citations checked against the primary source. That is honest — the citations were pulled out of the prose by machine and nobody has confirmed them. Open a row and press 'Mark citations verified' as you check each one; the tab counts them off, and the warning banner can retire once they are all done."
-  },
-  {
-   "id": "s168-gr-demo-walkthrough",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "Open the GR tab (?org=gr) and walk it as if you were General Counsel. Pick the Dual Enrollment sample area — it is deliberately neutral prompts, not our positions — then switch to CPL. Save the cross-area section list for last; it is the thing they cannot get from a folder of Word documents."
-  },
-  {
-   "id": "s168-gr-retire-phrase",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "Worth considering: drop the shared phrase for GR entirely and use sign-in instead. A shared phrase cannot say who read or changed anything, cannot be revoked for one person, and can be guessed. Everyone who needs GR would need a sign-in account first — tell us who that is and we can check them before anything changes."
-  },
-  {
-   "id": "s168-gr-open-sections",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "A bigger idea to react to: which sections are under review is public law, but our position on them is not. We have built the switch to separate the two, defaulted to closed so nothing changed. Flipping it would let the whole Chancellor's Office see the section list while positions stay private — that is what would make this a CO tool rather than a MAP tool."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-08-19 · Sky169 — TWO sessions ran today: Ashley's Delta crosswalk (42 unclaimed occupations) and the repo/sign-in posture review. Both are carried below.",
+  "_session": "Session 169 (SkyDelta + SkyRegister, in parallel)",
+  "_status": "Ashley asked for the next step on the San Joaquin crosswalk she started in August: not \"where in California can a student get this credit\", but \"what can San Joaquin Delta College itself give credit for\". Those turn out to be different questions with different right answers, so it is a new tool rather than a filter on the old one. The result: Delta has NOT given CPL for a single one of the 139 occupations on the list — its only career credential is the police academy, everything else is AP and CLEP exams. But it already teaches the material for 52 of them, and for 42 the credit recommendation is already built in MAP with Delta named as a college that could adopt it. Those 42 need no new courses and no new paperwork in MAP — just someone to join them up. Separately, Delta runs a utility and hydroelectric apprenticeship that almost no other college has, covering 6 jobs that have no credit recommendation anywhere in California; an exhibit built there would be the first in the state. Ashley has a spreadsheet and a web page for her meeting with the college.\n\nSEPARATELY, a second session reviewed how we sign in and where the code lives. Two premises turned out to be wrong: two of the three repositories were ALREADY out of Sam's personal account, and making them private would NOT make COBI private — on the free plan it takes the whole site dark, and on any paid plan below Enterprise the published site stays public either way. What private DOES hide is the half worth protecting: 555 methodology documents, 149 generators, Sierra's retrieval design. The recommended shape is a SPLIT — Sierra, the Fact Sheet, the veteran map and the landing pages stay public where they are; COBI and the methodology move to a private repo. On sign-in: magic links already cover more of COBI than the shared phrases do, so the recommendation is magic link plus ONE role field, not groups. The reviewer list went from 5 people to 10. Next up: three new MAP Custom Reports, and a recommendation to keep fetching them ourselves rather than let the vendor push them in.",
+  "items": [
+    {
+      "id": "s169-second-partner-list",
+      "for": "Fable",
+      "tab": "eacr",
+      "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
+    },
+    {
+      "id": "s169-record-corrections",
+      "for": "Fable",
+      "tab": "eacr",
+      "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
+    },
+    {
+      "id": "s169-delta-meeting-outcome",
+      "for": "Sam",
+      "tab": "eacr",
+      "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong."
+    },
+    {
+      "id": "s169-delta-utility-sponsor",
+      "for": "Sam",
+      "tab": "eacr",
+      "text": "Delta teaches a utility/hydroelectric apprenticeship — turbines, protective relaying, high-voltage switching, aqueduct systems — covering 6 jobs with NO credit recommendation anywhere in California. The question to ask the college is who sponsors that apprenticeship, because that sponsor is who any new MAP exhibit would be built around. This would be first in the state."
+    },
+    {
+      "id": "s169-delta-plumbing-invisible",
+      "for": "Sam",
+      "tab": "eacr",
+      "text": "Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way."
+    },
+    {
+      "id": "s169-delta-no-fire",
+      "for": "Sam",
+      "tab": "eacr",
+      "text": "Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
+    },
+    {
+      "id": "",
+      "for": "Sam",
+      "tab": "",
+      "text": "Decide whether the public Knowledge Base stays CC BY 4.0 — its licence currently lets anyone remix our methodology commercially, which is the one thing working against protecting the approach."
+    },
+    {
+      "id": "",
+      "for": "Sam",
+      "tab": "",
+      "text": "Check whether the CPL-Initiative GitHub organisation has a second OWNER. You added Pedro on Supabase, but GitHub is where the website, the 29 scheduled jobs and the 8 secrets live."
+    },
+    {
+      "id": "",
+      "for": "Sam",
+      "tab": "",
+      "text": "Look at the GitHub billing page and say whether we are on Free or Team — the private-repo step cannot start on Free without taking the site down."
+    },
+    {
+      "id": "",
+      "for": "Sam",
+      "tab": "",
+      "text": "Ask Pedro for the three viewName values and column lists for the new Custom Reports. That is all we need, and it is far less work for him than the automation he offered."
+    },
+    {
+      "id": "",
+      "for": "Fable",
+      "tab": "",
+      "text": "Fetch the three new MAP Custom Reports and compare them against Supabase — first establishing whether they are on the API we already use, or only in the report builder."
+    },
+    {
+      "id": "",
+      "for": "Fable",
+      "tab": "",
+      "text": "Treat that comparison as a reconciliation, not a load: where the new extract disagrees with Supabase it is probably our stale copy resolving, which needs confirming rather than fixing."
+    }
+  ]
 }

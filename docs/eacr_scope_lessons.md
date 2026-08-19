@@ -555,3 +555,50 @@ that wrote the code. 7 roster-layer checks were added (it had none); 83 total,
 `Canada College` without the tilde, because that is the `canonical` field in the
 curator-provided `college_short_names.js`. One column, all cells land — but the
 tilde is worth restoring in that file.
+
+
+## 2026-08-19 — history retired from the §11 roadmap cell (Sky169 checkpoint)
+
+Moved verbatim out of `CLAUDE.md` §11 under Rule 8 step 0a: a roadmap cell states
+CURRENT truth, and the cell had reached 5,629 chars. Nothing here is superseded —
+it is settled history that no longer needs to load on every session.
+
+**CSV export + partial-adopter gap (#1230)** — harvested from **Session 164's lost
+patch, which Sam supplied after #1229 merged and which was BETTER than what had
+shipped**. A partial adopter now shows BOTH what it has and the gap to its peers
+(**337 cells**; Sam approved 2026-08-17): a non-adopter needs the M-ID gate, an
+adopter needs none because it is already in the peer cohort. Also shipped: row
+thresholds 1/2/5/10, a Both/Adopted-only/Opportunity-only filter, an exhibit
+drill-down, and published density.
+
+**⚠️ A correction against Sky165.** It measured 349 partial adopters and said
+Sky164's 337 needed restating; against the shipped rule (gaps under 0.5 units
+ignored) it is **337 exactly** — **Sky164 was right**. *Re-measuring a
+predecessor's number is right, but a disagreement is not automatically theirs —
+first ask whether the two are the same measure.*
+
+**⭐ One college was two columns — a fold at the LABEL layer is not a fold.**
+`CaÃ±ada College` is `Cañada College` read as latin-1, and `excel_to_dashboard.py`
+emits BOTH (correct → `potential_names`, mangled → `statewide_prescriptive.js`, 26
+pairs). The axis was **119** — invisible because every consumer counted these names
+*through* `cplCollegeShort()`, whose `normalize()` folds `Ã±`→`n`, so the label
+count was right for the wrong reason. It would have rendered two Cañada columns,
+one holding all 26 opportunities and the other **empty — indistinguishable by eye
+from a college with no data**. The fold also moves a count Sam sees: four adopter
+spellings, one sandbox and two one institution, is **two** adopters. Session 164's
+identity approach (key through `cplCollegeShort` alone) was NOT taken; the roster
+fold runs FIRST inside `mxName()`, both layers plus the collision check. The
+upstream encoding defect is **still unfixed at source**.
+
+**⚠️ `chatbox_peer_articulations` is the WRONG units source** (32.5% coverage — a
+join of two half-sources). The raw `View_ArticulatedMAPExhibits` row carries
+college + course + rec together, so `adopter_units` is a straight read at 100%.
+NOT `map_college_cr_unit` (reviewer-gated, no k-anonymity, measures student
+disposition).
+
+**⚠️ 118 numeric columns cannot fit** (~3,500px, ~2× a desktop) — the frozen title
+column + rotated short-caps headers + h-scroll are load-bearing, not a preference.
+
+**Row grain is the unified TITLE, not `credentialKey()`** (which gives 431 — it
+splits titles carrying two *named* issuers); the peer benchmark is recomputed per
+ROW, since `peer_units_median` is per CARD and a row may fold several.
