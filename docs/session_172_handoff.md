@@ -15,8 +15,10 @@ related:
 # Session 172 handoff
 
 You are **Session 172**. Session 171 was **SkyLoad**, single-lane: loading the two
-new MAP Custom Report views. The Delta/SJCOE lane is **still untouched** — it has
-now carried across three handoffs (§C).
+new MAP Custom Report views and reconciling them. **Staging is loaded and the
+reconciliation passed** — the open job is the swap, and it moves a public number,
+which is why it was left gated (§A). The Delta/SJCOE lane is **still untouched** —
+it has now carried across three handoffs (§C).
 
 ⚠️ **Sam frequently runs several sessions at once.** Check `git log origin/main`
 before assuming your branch is the only work in flight.
@@ -36,7 +38,7 @@ before assuming your branch is the only work in flight.
 
 ---
 
-## What shipped (#1251, merged)
+## What shipped (#1251 and #1252, both merged)
 
 A loader (`kb/_sync_map_custom_reports.py`), staging tables, a committed test,
 a dispatch-only workflow and the runbook. **Both views now load, and staging is
@@ -44,6 +46,15 @@ populated** — dispatch `MAP Custom Report load (staging)` again any time to
 refresh it.
 
 **Nothing live has changed.** The swap is deliberately a separate gated SQL step.
+
+**#1252 was the gate working.** Reconciling staging against live caught a defect
+in the loader itself: `_clean()` mapped `""` to `None`, while the live table
+*stores* `""` (414 `catalog_year`, 348 `exhibit_id`, 196,044 `college_course`,
+619 `source_code`). A swap would have changed the representation of blankness on
+~200k rows during a refresh, and `count(distinct catalog_year)` silently went
+9 → 8 — which first read as a missing catalog year. **A load must reproduce its
+source, not improve it.** When a loader replaces an existing table, diff the
+*representation*, not only the counts.
 
 Sam's field definitions, which are what made this loadable rather than guessable:
 
@@ -55,30 +66,50 @@ Sam's field definitions, which are what made this loadable rather than guessable
 
 ---
 
-## §A · Priority: reconcile, then swap
+## §A · The reconciliation is DONE and it PASSED. The job is the swap.
 
-**Run runbook SQL 1 through the Supabase MCP.** Staging is loaded; the live
-tables are untouched. The gate is the per-college pass, and it already has one
-known failure to explain:
+Staging is loaded from the fixed loader and **both views parse exactly to their
+`dataCount`** — 211,005 and 591,820. The per-college gate has been run and both
+anomalies are explained. Do not re-litigate it; read it and decide.
 
-⚠️ **Moreno Valley went DOWN — 7,963 live → 7,771 incoming (−192)** while the
-total went UP (204,714 → 211,005, +3.07%). MVC was picked as the test *because*
-it spans eight catalog years where most colleges have five. The pull also carries
-**112 colleges against 111 live**, so at least one is new.
+**Dataset B (student grain) is unambiguously clean.** *No* college decreased.
+591,820 rows · **47,804 distinct students** (live 42,346) · surrogate dense
+1..47,804 with **zero nulls**, so the privacy tripwire passes · Needs Action
+units **1,125,873** (live 1,053,333) · 112 colleges vs 111.
 
-**A one-directional total does not license a swap.** Find every college moving
-the wrong way, and explain them, before SQL 2. Candidates: rows genuinely removed
-when the MAP team corrected Exhibit references and reloaded (`cpl_memory:
-two-student-counts-disagree-indicator-suspected`), a catalog year rolling out of
-the view, or a key change moving rows between colleges. **Do not assume; the
-staging table and the live table are both in the same database, so this is one
-join.**
+**Dataset A had two colleges going down and the cause is a catalog-year
+roll-forward, not deletions.** Only 2 of 112 fell — both RCCD, college 2 (−493)
+and Moreno Valley (−192). Statewide, *every older year shrinks and every newer
+year grows*: 2022-23 −116 · 2023-24 −610 · 2024-25 +620 · 2025-26 +2,437 ·
+2026-27 **+3,978**. Rows are re-keyed forward; those two net negative only
+because forward growth didn't offset older-year losses.
 
-⚠️ **When you do swap: the two tables DO NOT share a policy.**
-`map_college_cr_unit` accepts the team phrase; `map_student_credit` is
-**reviewer-only**. Restoring the articulation table's policy onto the student
-table hands 537,908 student-grain rows to every phrase holder, and the tab looks
-completely normal afterwards. SQL 4 restores them separately for that reason.
+⚠️ **That has a consequence beyond this swap: the catalog-year axis is
+MUTABLE.** Last year's figure changes when you re-pull, so a year-over-year
+comparison built from two different pulls compares two different partitions of
+the same rows. Say so wherever catalog year is used as a time dimension.
+
+### Before you swap — the two things that are not counts
+
+⚠️ **The swap moves a PUBLIC HEADLINE.** Needs Action units go **1,053,333 →
+1,125,873 (+6.9%)** and students **42,346 → 47,804 (+12.9%)**. That million-unit
+figure is what the $50k work, the College Action page and Sam's own framing
+quote. `CLAUDE.md`'s number policy says published and unsuppressed move
+**together, never one half alone** — so the published aggregates
+(`kb/supabase_map_college_goal2.sql`,
+`kb/supabase_map_college_credit_summary.sql`) must be rebuilt in the same pass.
+**This is worth telling Sam before, not after.** It is why the swap was left
+gated rather than done.
+
+⚠️ **The two tables DO NOT share a policy.** `map_college_cr_unit` accepts the
+team phrase; `map_student_credit` is **reviewer-only**. Restoring the
+articulation table's policy onto the student table hands 537,908 student-grain
+rows to every phrase holder, and the tab looks completely normal afterwards.
+Runbook SQL 4 restores them separately for that reason.
+
+Then: [`docs/map_custom_report_load.md`](map_custom_report_load.md) SQL 2 → 3 →
+4 → rebuild aggregates → open the 🎓 Course Credit tab and the College Action
+page.
 
 ---
 
@@ -96,14 +127,20 @@ rows with both            25,621     <- units are a STRICT SUBSET of the check
 56,614 rows are marked transcribed with zero units. Same shape as
 `applied-measure-fork-55-percent`, where his ruling was **publish both and name
 the gap**. The readings: the check says *a college marked the step done*; the
-units say *a quantity was recorded on this row*. Neither is wrong. Ask before the
-Course Credit tab or the $50k disposition work quotes either.
+units say *a quantity was recorded on this row*. Neither is wrong. Ask before
+the Course Credit tab or the $50k disposition work quotes either.
 
-Also worth telling him, unprompted, because it changes what can be built:
-**`Status` is 91.2% null** (539,894 of 591,820) and its top value is
-**`Implementation` (45,302)**, not `Initiator` (2,918). Four non-null values
-exist. It cannot be a facet — a chart on approval stage would describe 8.8% of
-rows while looking like it described all of them.
+Two things worth telling him unprompted, because they change what can be built:
+
+- **`Status` is 91.2% null** (539,894 of 591,820) and its top value is
+  **`Implementation` (45,302)**, not `Initiator` (2,918). Four non-null values
+  exist. It cannot be a facet — a chart on approval stage would describe 8.8% of
+  rows while looking like it described all of them.
+- **`CPLPlanStatus` holds six checks, not two** — CPL Docs 477,287 · Transcribed
+  82,235 · Ed Plan 45,529 · Analysis 36,489 · Counselor 23,106 · **Student**
+  20,457, over 41 combinations. Its delimiting is inconsistent (29,902 rows are
+  a bare `Transcribed` with no pipe), so split-and-strip; never assume a
+  trailing delimiter.
 
 ---
 
@@ -139,6 +176,9 @@ rows while looking like it described all of them.
   under relabelling. The blocker dissolved.
 - **Mutation-test your own suite.** Five mutations; four failed cleanly, and the
   fifth exposed a defect in the test itself.
+- **Reconcile representation, not just counts.** The row counts were exactly
+  right and the data was still wrong — nulls where the live table holds empty
+  strings. Counts matching is not rows matching.
 
 ---
 
@@ -156,6 +196,9 @@ rows while looking like it described all of them.
   **listed** in `HELD_COLUMNS` so the decision is visible rather than an
   apparent oversight. `StudentMAPID` derives the surrogate and is discarded.
   [`methodology-minimisation-happens-twice`](kb-notes/methodology-minimisation-happens-twice.md)
+- ⚠️ **A load must reproduce its source, not improve it.** NULL may be the better
+  representation of absent; that is a separate change argued on its own merits,
+  never a side effect of a refresh.
 - ⚠️ **A negative result needs a positive control in the same run** (SkyFetch's
   broken probe), and **an odd one out is a lead, not a tally entry**.
 - ⚠️ **The payload IS the PII boundary.** `tests/custom_report_payload_test.py`
