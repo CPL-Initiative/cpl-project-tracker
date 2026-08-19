@@ -1,20 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · Sky168 — COBI now says it is in Alpha testing, and the GR tab became a register that can hold every Chancellor's Office priority area, not just CPL.",
+  "_as_of": "2026-08-19 · Sky168 — the GR register was audited hard, the things it had quietly dropped are back, and the GR phrase no longer opens the whole workplan.",
   "_session": 168,
   "_status": "Two things shipped. First, every COBI page now carries a plain notice that it is an experimental data suite in Alpha development, and '(Alpha)' rides in the page title so a link pasted into Teams or Slack says so before anyone clicks. Second, the GR Priorities tab was rebuilt for the General Counsel demo. It used to be one fixed document about one topic that nobody could add to. It is now a register: you pick a priority area, you see the revisions under consideration with the exact Title 5 or Ed. Code sections they touch, you can search and filter them, and you can add new areas, revisions and source documents yourself. The section filters only became possible because the legal citations were pulled out of the prose and made into real data — and that unlocked something nobody asked for: the tab can now show when two different priority areas are both proposing to change the same section, which is the kind of collision that otherwise only surfaces during rulemaking. One thing to know before the demo: the GR phrase currently also opens every shared team tab, so General Counsel cannot be given a phrase until that is scoped.",
   "items": [
+    {
+      "id": "s168-gr-phrase-holders",
+      "for": "Sam",
+      "tab": "gr-priorities",
+      "text": "One thing to check: the GR phrase no longer opens the shared team tabs — it never needed to, and it was opening 42 tables it has no use for. If anyone holds ONLY the GR phrase, they will have lost the Workplan and the rest and should be given the shared team phrase. Undoing it is a one-line change if that is easier."
+    },
+    {
+      "id": "s168-gr-verify-queue",
+      "for": "Sam",
+      "tab": "gr-priorities",
+      "text": "The CPL area says 0 of 16 entries have had their citations checked against the primary source. That is honest — the citations were pulled out of the prose by machine and nobody has confirmed them. Open a row and press 'Mark citations verified' as you check each one; the tab counts them off, and the warning banner can retire once they are all done."
+    },
     {
       "id": "s168-gr-demo-walkthrough",
       "for": "Sam",
       "tab": "gr-priorities",
       "text": "Open the GR tab (?org=gr) and walk it as if you were General Counsel. Pick the Dual Enrollment sample area — it is deliberately neutral prompts, not our positions — then switch to CPL. Save the cross-area section list for last; it is the thing they cannot get from a folder of Word documents."
-    },
-    {
-      "id": "s168-gr-phrase-scope",
-      "for": "Sam",
-      "tab": "admin",
-      "text": "One question unblocks the General Counsel invite: who holds the GR phrase, and do they each also hold the shared team phrase? We measured it — the GR phrase reaches 42 tables it has no use for, and closing that is a one-line change that leaves Finance and everyone else exactly as they are. The only cost is that a GR-only holder loses shared tabs they were never meant to have. If they all hold the team phrase too, nobody notices."
     },
     {
       "id": "s168-gr-retire-phrase",
@@ -69,12 +75,6 @@
       "for": "Sam",
       "tab": "Exhibit & CR Adoption",
       "text": "You said 115 credit colleges and 4 noncredit campuses. The 115 matches exactly. We can only find 3 noncredit — North Orange Continuing Education, San Diego College of Continuing Education, and Calbright. The fourth is Mt. SAC's noncredit side, and it does not exist as its own entry anywhere in MAP, so it cannot be a column until it does. Worth deciding whether MAP should carry it separately."
-    },
-    {
-      "id": "s162-unclassified-titles",
-      "for": "Sam",
-      "tab": "Exhibit & CR Adoption",
-      "text": "Four credentials appear on the tab as \"unclassified\" even though the Credential Reference already knows them by name. They are not broken, just not linked up, so they sink to the bottom of the list where nobody finds them. Fixing it is a naming decision rather than code — we can walk you through the four whenever you want. Separately, two statewide exhibits match no college at all — nobody has adopted them, nobody is even a candidate, and they carry no credit recommendations. They look like empty records rather than real opportunities; worth a glance at the same time."
     }
   ]
 }
