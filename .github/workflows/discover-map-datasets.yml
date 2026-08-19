@@ -39,6 +39,14 @@ jobs:
       # the API expose the student × credit-recommendation grain (and with it
       # CPLStatusPlan, the action a college took) that none of the nine fetched
       # views carries? Allowlisted columns only; no student identifier.
+      # Run 1 found all 51 candidates "not Valid" — but it had no positive
+      # control, so that could equally mean the empty-columnName trick stopped
+      # working. This asks a view the cron pulls daily the same question, and
+      # chases the one candidate that answered 500 instead of 400.
+      - name: Control the sweep and chase the 500
+        if: ${{ always() }}
+        run: python kb/_probe_new_custom_reports_followup.py
+
       - name: Probe for the student-detail (disposition) view
         if: ${{ false }}   # answered 2026-08-07 (400, unpublished); re-enable to re-ask
         run: python kb/_probe_student_detail_view.py

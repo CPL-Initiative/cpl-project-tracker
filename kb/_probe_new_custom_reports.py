@@ -360,18 +360,53 @@ def profile(report, view, cols):
         print(f"\n    {ccol}: {len(colleges)} distinct ({len(real)} after dropping known test orgs)")
 
 
+def control():
+    """Prove the instrument before trusting a negative.
+
+    Run 1 swept 51 names, got `400 … is not Valid` on every one, and reported
+    absence — resting entirely on the premise that `columnName: []` is a request
+    a REAL view answers with its schema. That premise came from a different
+    probe on a different day. If the API had stopped honouring empty column
+    lists, all 51 rejections would have been about the REQUEST, and the reported
+    finding would have sent Sam to Pedro on the strength of a broken instrument.
+
+    So the sweep now asks a view the daily cron pulls every morning the same
+    question first, in the same run. A negative is only as good as the control
+    behind it.
+    """
+    print("=" * 78)
+    print("[0] CONTROL — does `columnName: []` still enumerate a KNOWN-GOOD view?")
+    print("=" * 78)
+    for v in ("View_CollegeCourses_APIDataset", "View_ExhibitCRsCatalog_Dataset"):
+        h = try_view(v)
+        cols = h.get("columns") or []
+        if cols:
+            print(f"  ✅ {v} → {len(cols)} columns. The instrument works; a "
+                  f"'not Valid' below is about the VIEW.")
+            return True
+        print(f"  ✗  {v} → {h.get('error') or h.get('responseMessage')!r}")
+    print("  ❌ NO known-good view enumerated. Every 'not Valid' below may be the")
+    print("     REQUEST being rejected, not the view being absent. DO NOT report")
+    print("     absence from this run — re-probe with named columns instead.")
+    return False
+
+
 def main():
     print("=" * 78)
     print("Three new MAP Custom Reports — are they on the existing API?")
     print("Sam, 2026-08-19. Commits nothing; no student identifier requested.")
     print("=" * 78)
 
+    instrument_ok = control()
     listed = try_list_endpoints()
     found = sweep()
 
     print("\n" + "=" * 78)
     print("VERDICT")
     print("=" * 78)
+    if not instrument_ok:
+        print("  ⚠️  INSTRUMENT UNPROVEN — the control above failed, so the results")
+        print("      below are NOT evidence of absence. Read no further.")
     for report in BASES:
         if report in found:
             view, h = found[report]
