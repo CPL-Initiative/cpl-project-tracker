@@ -1,9 +1,39 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkyFetch (Session 170) — the three new MAP Custom Reports are live on the API we already pull, two are wired into the nightly job, and Pedro has confirmed both the student-ID scrambling and that its secret does not change. Ashley's Delta items are unchanged and still open.",
-  "_session": "Session 170 (SkyFetch)",
-  "_status": "Sam built three new reports in MAP's Custom Report Builder and asked whether we could fetch them and check them against what we already store. We can — all three are served by the same MAP address the nightly job has been pulling from for months, and the row counts the API returns match the builder screen exactly. So this was a settings change, not a new piece of plumbing, which also means we can politely decline ITPI's offer to push the data to us daily: we already fetch it ourselves, and doing the fetching is what lets us choose which columns we take.\n\nThe bigger surprise: two of the three reports are OUR OWN request coming back. The 13-field one is exactly the dataset we wrote out and sent to MAP's team on 9 August — same columns, same order — and we already hold a copy of it. So the real job was never 'get the data', it was 'check whether their numbers and ours agree'. They very nearly do: MAP's counts are 1.5%, 3% and 10% higher than ours, all in the same direction, which is what we expected — our copy is slightly stale because MAP has been correcting and reloading records. That is our data catching up, not an error to chase.\n\nOn privacy: the student report identifies people only by a scrambled code. Pedro confirmed those codes are properly scrambled with a secret, and we checked independently rather than just taking his word — we tried five million guesses against a sample code and none matched. Pedro has since confirmed that secret stays the same each night, so student counts ARE comparable week to week. Sam has also told him the tables are wired into our nightly job, so ITPI does not need to push anything to us — that question is closed.\n\nNothing is loaded into our database yet. That is the next session's job.",
+  "_as_of": "2026-08-19 · SkyLoad (Session 171) — both new MAP reports are now loaded into a staging area and checked row-by-row against what we already store. The check passed, and it caught one of our own mistakes before it reached anything live. Ashley's Delta items are unchanged and still open.",
+  "_session": "Session 171 (SkyLoad)",
+  "_status": "Sam explained what three confusingly-similar fields in the new student report actually mean, which is what made them safe to load. Two of them describe things nothing we hold has ever recorded: how far an articulation has got through approval, and which steps of the CPL process a college has ticked off. Both reports are now loaded into a holding area and compared against the live tables, college by college. Everything lines up, and the two colleges that looked like they had LOST records turned out to have had those records simply moved to a newer catalog year. Nothing live has been changed yet: switching the new data in would raise the headline \"units waiting to be acted on\" figure by about 7%, and that is Sam's call to make knowingly rather than find out afterwards.",
   "items": [
+    {
+      "id": "s171-swap-moves-the-headline",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The refreshed MAP data is loaded and checked, but not switched on yet. Turning it on raises the headline figure — units of credit sitting unacted-on — from about 1.05 million to about 1.13 million, and the number of students from 42,346 to 47,804. Nothing is wrong with either number; the new one is simply more current. Worth a nod from you before it changes on the dashboard, since that million-unit figure is the one we lead with everywhere."
+    },
+    {
+      "id": "s171-which-transcribed",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The new report records \"transcribed\" in two different places, and they disagree by more than three times: 82,235 rows where a college has ticked the transcribing step as done, but only 25,621 where an actual number of units was recorded. Every row with units also has the tick, so neither is wrong — they answer different questions. Which one should the dashboard mean when it says \"transcribed\"? (Same call you made before about \"applied\", where you said publish both and name the gap.)"
+    },
+    {
+      "id": "s171-status-is-mostly-empty",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "Worth knowing before anyone designs around it: the approval-stage field you described is empty on 91% of rows, and where it is filled the commonest value is \"Implementation\" rather than \"Initiator\". So it can tell us about a slice of the data, but it cannot be used to break the whole backlog down by stage — a chart built on it would describe under 9% of rows while looking like it described all of them."
+    },
+    {
+      "id": "s171-do-the-swap",
+      "for": "Fable",
+      "tab": "course-credit",
+      "text": "Once Sam has nodded: switch the refreshed data in following docs/map_custom_report_load.md, rebuild the two published summary tables in the same pass so the public and internal figures never disagree, and restore the two tables' access rules SEPARATELY — they are not the same, and getting them the wrong way round would quietly expose student-level rows to everyone with a team passphrase."
+    },
+    {
+      "id": "s171-schedule-decision",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "Should this refresh run automatically? It is deliberately manual right now — an automatic nightly rebuild of a table holding 500,000+ student-level rows felt like something to be chosen rather than assumed. Happy either way once you have seen a refresh land."
+    },
     {
       "id": "s169-delta-meeting-outcome",
       "for": "Sam",
@@ -45,30 +75,6 @@
       "for": "Fable",
       "tab": "eacr",
       "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
-    },
-    {
-      "id": "s170-cron-arrived",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "First job next session: confirm the two newly-wired MAP reports actually arrived on the nightly run (the fetch now pulls 10 datasets instead of 8). A silent miss would look exactly like nothing changing."
-    },
-    {
-      "id": "s170-load-reconcile",
-      "for": "Fable",
-      "tab": "course-credit",
-      "text": "Load the two new reports into Supabase and compare them against what we already hold, college by college. Start with Moreno Valley — it spans 8 catalog years where most colleges have 5, so it tests the part that actually matters. Expect their numbers to be slightly higher than ours; that is our copy catching up."
-    },
-    {
-      "id": "s170-salt-detector",
-      "for": "Fable",
-      "tab": "course-credit",
-      "text": "Pedro confirmed the scrambling secret for student IDs stays the same each night, so student counts ARE comparable over time. Still build the check that would spot it changing later — compare this pull's set of student codes against last pull's — because if it ever did change, nothing would show an error; the numbers would just quietly stop matching."
-    },
-    {
-      "id": "s170-claude-md-size",
-      "for": "Fable",
-      "tab": "dashboard",
-      "text": "CLAUDE.md is twice the size it should be (120KB against a 60KB budget) and every session pays that cost on startup. Move a chunk of prose into docs/reference/ — do not add more to it."
     }
   ]
 }

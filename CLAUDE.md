@@ -735,7 +735,7 @@ Trust-Card auditor work, or CID/CIDx pathway decisions. The live Roadmap table
 | **EACR — Exhibit & CR Adoption** | One place to see every exhibit, its credit recommendations, and the colleges that could adopt it. | ✅ **FILTER REWORK + MATRIX SUB-TAB + CSV EXPORT ALL LIVE** (Sky162 #1221–#1223 · Sky163 #1226 · Sky165 #1229 · #1230). Three college scopes — `adopted` (default) · `likely` (the prescriptive M-ID layer, which **names the local course**) · `any` (*a lead, not a match* — TOP-derived, so Rule 7 forbids it as a primary determination); **Sam has used it and confirmed the arrangement** (2026-08-17). Matrix = CER titles × colleges, **green adopted / brown still-available** (in parentheses so it survives greyscale), default **434 rows × 118 cols, 17.0% inked**, 1.6s on tab select. **Sam's four rulings, locked:** brown is the **peer benchmark** · open on **colleges** · default rows **≥2 adopters** · brown on **credible cells only**. ⚠️ **FILTER, COLUMN AND EXPORTS MUST SHARE ONE SCOPE** — made structural, not remembered: `matrixCell()` is ONE function called by both grid and CSV, so the spreadsheet cannot drift from the screen. ⭐ **ONE COLLEGE WAS TWO COLUMNS — a fold at the LABEL layer is not a fold.** `CaÃ±ada` is `Cañada` read as latin-1 and `excel_to_dashboard.py` emits BOTH (26 pairs); invisible because every consumer counted *through* `cplCollegeShort()`, whose `normalize()` folds `Ã±`→`n` — the label count was right for the wrong reason. Would have rendered an empty twin column, **indistinguishable by eye from a college with no data**. Folded in the roster rules as a **SUM**, never a pick. [`methodology-a-fold-at-the-label-layer-is-not-a-fold`](docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md). ⚠️ **Roster rules (`kb/reference/map_college_roster_rules.json`) are the ONE place identity folds belong.** Axis = **118 = 115 credit + 3 noncredit**; the 4th, **Mt. SAC Noncredit, has no identity in `map_colleges`** (Learning Partners item 1). ⚠️ **BROWN CANNOT BE THE LINE TOTAL** — 83% of adoptions are PARTIAL (median **3.07 of 9.26**) and no college has ever reached the total. ⚠️ **`chatbox_peer_articulations` IS THE WRONG UNITS SOURCE** (32.5% coverage); the raw `View_ArticulatedMAPExhibits` row carries college+course+rec together, so `adopter_units` reads at 100%. NOT `map_college_cr_unit` (reviewer-gated, no k-anonymity). ⚠️ **A content filter must never drop a column** — that reads as "this college has nothing"; narrow only under college-shaped filters. **NEXT: Sam looks at the grid in a browser** — density is his call; then the tilde (`Canada College` today), then fix the mojibake at source in `_build_statewide_prescriptive()`. **Curation carryover:** 4 unclassified-only titles the CER knows · 2 statewide cards matching no college · sweep `{0,N}` test bounds · the 50-group credential-view cap. Story: [`docs/eacr_scope_lessons.md`](docs/eacr_scope_lessons.md). |
 | **GR register / CO policy & regulation review** | Every CO priority area's regulatory / Ed. Code revisions under consideration, with the artifacts informing them — pointed at the whole CO, not just CPL. | ✅ **BUILT, AUDITED, PHRASE-SCOPED** (Sky168, #1237/#1240). `gr_areas → gr_revisions → gr_artifacts`; was ONE jsonb blob, one topic, `writes: []`. 2 areas · 20 revisions · `dual-enrollment` is a marked **SAMPLE** (neutral prompts, never positions). `gr_content` retained as rollback. Tests **125**. ⭐ **CITATIONS ARE DATA** — a section dropdown cannot exist while §55050 lives in a sentence; *filter/facet/group-by* all mean **make the attribute addressable**, a schema change. ⚠️ **The JS bands MUST mirror `gr_citation_code()` in the SQL character-for-character** — they diverged, and **Gov. Code §53xxx is real**, so a bare `53410` is ambiguous against T5 §53410; assign by explicit range, REFUSE the rest, and store an inferred code as `citations_derived`. ⚠️ **THE CAVEAT MUST RENDER AND MUST TRAVEL IN THE EXPORT** — CPL's quoted statutory text is unverified; `draftWord()` writes a file that escapes the gate, the RLS and the room. Verification pass reports **N of M** (CPL is 0 of 16). ⚠️ **null ≠ empty** — a failed read must never render as a zero, and must not let `nextN` number a new row `1`. 🔒 Writes reviewer-only; `sensitivity` defaults **restricted** (nothing open); `gr_open_sections` needs **`security_invoker = on`** or a view bypasses the RLS it exists to enforce; `gr_history` has **no write policy**. ✅ Phrase scope: `team_pass_check()` excludes `gr` — one bit changed, `team`/`ci`/`fin` untouched, rollback one statement. ⚠️ **Residual: a GR-ONLY phrase holder lost the shared tabs** and needs the `team` phrase. Finance's own over-reach (36 of 42) stays parked. **NEXT:** ① Sam demos (open on the sample, close on the cross-area section index); ② flip rows to `sensitivity='open'` — his call, nothing open today; ③ editing (add-only); ④ the CO priority-area list. Story: [`docs/gr_register_lessons.md`](docs/gr_register_lessons.md) · [`docs/phrase_scope_analysis.md`](docs/phrase_scope_analysis.md); durable [`migrate-the-display-not-just-the-data`](docs/kb-notes/methodology-migrate-the-display-not-just-the-data.md) · [`a-filter-needs-a-field`](docs/kb-notes/methodology-a-filter-needs-a-field.md). |
 | **Public/private repo split** | Partition the truly public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI + the methodology, so the approach is not trivially cloneable. | 🔨 **SCOPED, NOT BUILT** (SkyRegister). Read [`docs/public_private_repo_split_scope.md`](docs/public_private_repo_split_scope.md) — it is the authority. ⭐ **The concern is IP PROLIFERATION, not privacy** (Sam, 2026-08-19); he explicitly ruled the 67 published college-staff emails fine as public data, comms presentation aside. **The legal half is already done** — `LICENSE` is All Rights Reserved with an explicit no-copy clause, so public never meant permitted. ⭐ **MOVE COBI, NOT THE PUBLIC STUFF** — the URL path IS the repo name, so whatever moves gets a new address; moving COBI keeps Sierra + Fact Sheet on the links already sent to colleges and breaks only ~10 team bookmarks. ⭐ **Cloudflare needs ZERO changes** — `ALLOWED_ORIGINS` exact-matches the ORIGIN (`https://cpl-initiative.github.io`), never a path, so a second repo in the same org passes untouched. ⚠️ **`fact-sheet/` is NOT self-contained** — an earlier read called it portable off its nine `./` tags; `factsheet.js` fetches `../fact_sheet_metrics.json` + `../live_metrics.json` at RUNTIME. **A tag scan cannot see a `fetch()`.** ⚠️ **The cron commits INTO the public surfaces** (`fact-sheet/statewide_recs.js`, `college_activity_template.html`; `cpl-stories.yml` writes `cpl_stories.js`), so a split needs cross-repo publishing: **B (deploy-key push) now, C (public pages read Supabase live, as Sierra already does) as the destination.** ⚠️ **Phase 3 needs the Team plan** — GitHub Free publishes Pages only from public repos, so flipping on Free takes the site dark. **Phase 1 is zero-risk and unbundled:** `sierra/` + `veteran-sprint-map/` are fully static with no root deps. ⚠️ **Secrecy is the WEAKEST moat** — a vendor with a full copy still cannot write to MAP, lacks the 116 college relationships and has no ESS 25-82; this trade is cheap only because what private hides (engineering docs) is not what drives adoption. **BLOCKED ON SAM:** ① should `cpl-knowledge-base` stay **CC BY 4.0** (it permits commercial remix of the methodology — the highest-leverage question); ② Free or Team; ③ option B or C; ④ private-repo name; ⑤ does the Alpha notice stay on the public surfaces. |
-| **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports — exhibit credit recommendations, the same **by Catalog Year**, and student details — load them, and decide how they stay fresh. | ✅ **FETCHED, PARSED AND LOADED TO STAGING; THE SWAP IS GATED AND NOT DONE** (SkyFetch #1246–#1248; SkyLoad #1251). `REQUEST_PAYLOAD` is **10 datasets**; both new views parse EXACTLY to their `dataCount` (211,005 · 591,820). ⭐ **THESE ARE OUR OWN SPEC COMING BACK** — the 13-column report IS Dataset A of [`docs/map_dataset_sql_for_malone.md`](docs/map_dataset_sql_for_malone.md), already held as `map_college_cr_unit`; a RECONCILIATION, not a discovery. ⭐ **THE VALUE IS TWO NEW DIMENSIONS, NOT FRESHNESS.** Sam's definitions (2026-08-19): **`Status`** = the **articulation approval STAGE** (`Initiator` — a MAP approval-cascade role) · **`CPLStatusPlan`** = the **action taken** on the CR (the disposition, already held) · **`CPLPlanStatus`** = **NOT a status**, the **lifecycle CHECKS, which can be MULTIPLE**, pipe-delimited. `Status` and `CPLPlanStatus` are carried by **no table we hold**. They share the value `Needs Action`, so a wrong pick reads as correct — the test pins all three to different columns. ⚠️ **`Status` IS 91.2% NULL** (539,894 of 591,820) and its top value is **`Implementation` 45,302**, not Initiator (2,918; Faculty 3,294, AO 412 — four values total). **It cannot segment the backlog** — a facet on it describes 8.8% of rows while looking total. ⚠️ **`CPLPlanStatus` holds SIX checks over 41 combinations**, not the two the example showed (CPL Docs 477,287 · Transcribed 82,235 · Ed Plan 45,529 · Analysis 36,489 · Counselor 23,106 · **Student** 20,457), and its delimiting is **inconsistent** — 29,902 rows are a bare `Transcribed` with no pipe, so split-and-strip, never assume a trailing delimiter. Stored **verbatim**: splitting fixes its grain before anyone has measured it. ⚠️ **THE TRANSCRIBED FORK — the CHECK is 3.2× the UNITS and STRICTLY CONTAINS them**: check 82,235 · units>0 25,621 · both 25,621, so **56,614 rows are marked transcribed with zero units**. Same shape as `applied-measure-fork-55-percent`; **NEEDS SAM** — which one the Course Credit tab and the $50k work should mean. ⚠️ **THE RECONCILIATION IS NOT UNIFORMLY OUR STALENESS RESOLVING** — the totals run the predicted way (+3.07%, students 47,804 vs 42,346) but **Moreno Valley went DOWN 7,963 → 7,771**, and the pull carries **112 colleges vs 111 live**. **A one-directional TOTAL does not license a swap**; the per-college pass is a GATE ([`docs/map_custom_report_load.md`](docs/map_custom_report_load.md) SQL 1). ⭐ **STAGING ONLY, BY DESIGN** — the live tables are reviewer-gated, feed the Course Credit tab + College Action page + both published aggregates, and one is student grain; a runner that replaced them in place lets a half-finished insert blank a live tab. **No schedule on the workflow on purpose.** ⚠️ **THE TWO TABLES DO NOT SHARE A POLICY** — `map_college_cr_unit` accepts the team phrase, `map_student_credit` is **reviewer-only**; restoring the wrong one at swap hands 537,908 student-grain rows to every phrase holder and looks normal afterwards. ⭐ **MINIMISATION HAPPENS TWICE** — the payload decides what we ASK, the loader what we KEEP: 12 student attributes/credit splits with no consumer are dropped and **listed** in `HELD_COLUMNS`. `StudentMAPID` never lands; **`student_key` is only ever `count(distinct …)`** (three SQL files, checked), so a fresh dense surrogate per pull is sufficient and the live Access keys need no bridge. Salt-rotation detector is a **MIN-HASH SKETCH (2,000), not a student map**. ✅ **StudentMAPID is SALT-HASHED and the salt does NOT rotate** (Pedro Campos, ITPI, via Sam). ⭐ **ITPI push DECLINED on the merits and communicated.** **NEXT:** ① reconcile per-college from staging and explain MVC; ② swap + restore RLS separately; ③ Sam rules on "transcribed"; ④ decide whether this gets a schedule. Story: [`docs/map_custom_reports_lessons.md`](docs/map_custom_reports_lessons.md) · runbook [`docs/map_custom_report_load.md`](docs/map_custom_report_load.md). |
+| **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, and decide how they stay fresh. | ✅ **LOADED TO STAGING AND RECONCILED — IT PASSED. ONLY THE SWAP IS LEFT, AND IT IS GATED ON PURPOSE** (#1246–#1248, #1251, #1252). Both views parse EXACTLY to `dataCount` (211,005 · 591,820); `REQUEST_PAYLOAD` is 10 datasets. ⭐ **THE VALUE IS TWO NEW DIMENSIONS, NOT FRESHNESS.** Sam, 2026-08-19: **`Status`** = the **articulation approval STAGE** · **`CPLStatusPlan`** = the **action taken** on the CR (the disposition, already held) · **`CPLPlanStatus`** = **NOT a status**, the **lifecycle CHECKS, which can be MULTIPLE**. `Status` and `CPLPlanStatus` are carried by **no table we hold**; they share `Needs Action` with `CPLStatusPlan`, so a wrong pick reads as correct. ⚠️ **`Status` IS 91.2% NULL**, top value **`Implementation`** (45,302) not Initiator (2,918) — **it cannot facet the backlog** (8.8% of rows). ⚠️ **`CPLPlanStatus` holds SIX checks over 41 combinations**, delimiting **inconsistent** (29,902 bare `Transcribed`, no pipe) — split-and-strip; stored **verbatim**. ⚠️ **THE TRANSCRIBED FORK — the CHECK is 3.2× the UNITS and STRICTLY CONTAINS them** (82,235 · 25,621 · both 25,621). **NEEDS SAM**: which one the tabs mean. ⚠️ **THE SWAP MOVES A PUBLIC HEADLINE** — Needs Action units **1,053,333 → 1,125,873 (+6.9%)**, students 42,346 → **47,804**; published and unsuppressed move TOGETHER, so both aggregates rebuild in the same pass. **Tell Sam first.** ⚠️ **THE TWO TABLES DO NOT SHARE A POLICY** — `map_college_cr_unit` takes the team phrase, `map_student_credit` is **reviewer-only**; restoring the wrong one at swap hands 537,908 student-grain rows to every phrase holder and looks normal after. ⚠️ **CATALOG YEAR ROLLS FORWARD, SO THE AXIS IS MUTABLE** — last year's figure changes when you re-pull (that, not deletion, is why 2 of 112 colleges fell). ⚠️ **A LOAD MUST REPRODUCE ITS SOURCE, NOT IMPROVE IT** — the staging gate caught `_clean()` emitting NULL where live stores `""` on ~200k rows. **Diff the REPRESENTATION, not only the counts.** ⭐ **STAGING ONLY, NO SCHEDULE, BY DESIGN.** ⭐ **MINIMISATION HAPPENS TWICE** — 12 fetched columns with no consumer are dropped and **listed**; `StudentMAPID` derives a surrogate and is discarded (`student_key` is only ever `count(distinct …)`); rotation detector is a **min-hash sketch, not a student map**. ✅ Salt-hashed, does **not** rotate (Pedro/ITPI); ITPI push **declined and communicated**. **NEXT:** ① tell Sam the headline moves, then swap + rebuild both aggregates + restore RLS separately; ② Sam rules on "transcribed"; ③ decide on a schedule. Runbook [`docs/map_custom_report_load.md`](docs/map_custom_report_load.md) · story [`docs/map_custom_reports_lessons.md`](docs/map_custom_reports_lessons.md). |
 | 2 | Articulations by Unified Course — interactive view + curation | parked |
 | 4 | SLO ingestion + the rest of the MC slot fields | parked (unlocks MC-readiness scoring) |
 | 5 | CTE classifier (TOP code → COCI CTE field) | parked (unlocks CIDx lane) |
@@ -768,103 +768,24 @@ Story: `docs/map_custom_reports_lessons.md` · handoff `docs/session_171_handoff
 ⭐ **"It is wired" and "it has run" are one cron window apart** — the views had never been fetched: the payload merged 13:15 PDT, the day's last cron ran 13:12 UTC. Two commands to check.
 ⭐ **The value is two NEW DIMENSIONS, not freshness** — `Status` (approval stage) and `CPLPlanStatus` (lifecycle checks) are carried by no table we hold; only `CPLStatusPlan` was already here.
 ⚠️ **`Status` is 91.2% null and led by `Implementation`, not Initiator** — it cannot segment the backlog. ⚠️ **The Transcribed CHECK is 3.2× the transcribed UNITS and strictly contains them** (82,235 vs 25,621) — the applied-fork shape again; needs Sam's ruling.
-⚠️ **A one-directional TOTAL does not license a swap** — +3.07% overall, but **Moreno Valley went DOWN 192**, and it was chosen as the test precisely because it spans the most catalog years.
+⚠️ **A one-directional TOTAL does not license a swap** — +3.07% overall, but **Moreno Valley went DOWN 192**. Cause: a **catalog-year ROLL-FORWARD** (every older year shrinks, every newer grows), so the axis is **mutable** — last year's figure changes when you re-pull. Student grain fell nowhere.
+⚠️ **The staging gate caught a defect in the loader it exists to gate** — `_clean()` mapped `""` to NULL while the live table **stores** `""` on ~200k rows. **A load must reproduce its source, not improve it** (#1252).
 ⭐ **Checking the consumers dissolved the blocker**: live `student_key` (Access) cannot join the API's hash, but it is only ever `count(distinct …)` in three SQL files, so a fresh surrogate per pull is sufficient.
 ⚠️ **Mutation-testing found a defect in this session's OWN test** — with the truncate guard removed it reached `urlopen`; it passed locally only because the sandbox blocks egress, and the workflow runs it on a runner that does not.
 Story: `docs/map_custom_reports_lessons.md` · runbook `docs/map_custom_report_load.md` · handoff `docs/session_172_handoff.md`.
 
 ## Troubleshooting
 
-### Dashboard not updating
-1. Check the GitHub Actions run — Actions tab in GitHub
-2. Check `live_metrics.json` → `scraped_at` timestamp
-3. Check if commit was pushed (`git log origin/main -5`)
-4. If browser shows stale content, hard-refresh (Ctrl/Cmd+Shift+R)
+**Moved to [`docs/reference/troubleshooting.md`](docs/reference/troubleshooting.md)** (2026-08-19 pare-down — 5,302 bytes of symptom-triggered reference that every session paid for and only a broken run reads).
 
-### Pages deploy failed / site still stale after a merge
-1. The merge landed on `main` but Pages didn't publish → check the **"Deploy
-   Pages (lean)"** (`pages.yml`) run for that commit (Actions tab).
-2. A transient Pages **503** (`No server is currently available` / `is
-   githubstatus.com reporting a Pages outage`) fails ONLY the final deploy step —
-   the lean-site assembly + served-path assertion passed, so the build is fine.
-3. Fix = re-deploy by **dispatching a FRESH run**:
-   `mcp__github__actions_run_trigger run_workflow pages.yml ref main`. Do **NOT**
-   `rerun_failed_jobs` — re-running the job re-runs the upload step, leaving TWO
-   `github-pages` artifacts → `deploy-pages` fails with *"Multiple artifacts named
-   github-pages"*. Playbook: [`docs/kb-notes/playbook-github-pages-manual-redeploy.md`](docs/kb-notes/playbook-github-pages-manual-redeploy.md).
+Go there when: the **dashboard is not updating** · a **Pages deploy failed** or
+the site is stale after a merge (dispatch a FRESH `pages.yml` run — never
+`rerun_failed_jobs`) · the **scrape returns errors** · KPI values are stale but
+the date moved · **duplicate sections / HTML growing** on every run ·
+`kpi_history.json` shows a stale 1d delta · **docx library errors**.
 
-### Scrape returning errors
-1. Test: `https://cpl-proxy.slee-548.workers.dev/scrape?secret=CPL_SCRAPE_2026`
-2. `Invalid or missing secret` → check `SCRAPE_SECRET` in Cloudflare dashboard
-3. `CPL API returned 502` → CCCCO Dashboard may be down
-4. `ALL COLLEGES row not found` → API response structure may have changed
-
-### KPI values stale but date updated
-- Pipeline updates the "Updated" date but only refreshes KPIs if
-  `live_metrics.json` has newer data
-- Check `live_metrics.json` → `scraped_at`
-- If old, the scrape step failed — test the worker endpoint directly
-
-### "Duplicate sections" / HTML growing on every run
-- You've likely removed or broken the idempotency guard in
-  `excel_to_dashboard.py`. Verify the strip block anchored on the
-  `/* ═══ MAP Articulation Analysis Cards ═══ */` start/end markers (plus the
-  legacy "MAP Exhibit Analysis Cards" pattern) still runs before re-injection.
-  (There is no `EXHIBIT_CSS_MARKER` symbol in the code — don't grep for it.)
-
-### `kpi_history.json` 1d delta shows stale comparison
-- Check for date gaps in the JSON. If yesterday is missing, backfill with
-  `"_interpolated": true`.
-
-### Stop hook demands an amend on a `noreply@github.com` commit (REMOTE sessions)
-
-**Do NOT amend. That commit is GitHub's own squash-merge, it is on `main`, and
-amending it rewrites `main` — Rule 5.** The nag is a false positive.
-
-**Why it recurs in Claude-Code-on-the-web sessions (diagnosed 2026-07-30, three
-times in one session before the cause was found):** the repo ships an improved
-hook at [`scripts/stop-hook-git-check.sh`](scripts/stop-hook-git-check.sh) that
-excludes `noreply@github.com` (squash-merges) and
-`github-actions[bot]@users.noreply.github.com` (the daily cron, #939). CLAUDE.md's
-install step is `cp scripts/stop-hook-git-check.sh ~/.claude/` — **and that works
-on Sam's local machine, but NOT in the remote sandbox.** The harness *re-provisions
-its own copy* of `~/.claude/stop-hook-git-check.sh` (together with
-`session-start-git-identity.sh`, `stop-hook-reply-gate.py`,
-`user-prompt-submit-reply-reminder.py` and `launcher-settings.json` — all get the
-same fresh mtime), silently reverting the repo version mid-session.
-
-So in a remote session:
-- Copying the repo hook clears the nag **until the next re-provision**, then it
-  returns. Don't keep re-copying and don't treat it as newly broken.
-- Check with `grep -c 'noreply@github.com' ~/.claude/stop-hook-git-check.sh` —
-  `0` means the harness copy is active (the repo copy has 5).
-- The correct response is always: **verify the flagged commit's committer is
-  `noreply@github.com` (or the cron bot) and that it is an ancestor of
-  `origin/main`, then ignore it.** `git log -1 --format='%h %ce %s' <sha>`.
-
-**Variant — "There are N unpushed commit(s) on branch `claude/...`" (added
-Session 128, 2026-08-08, after it fired twice in one session).** Same root cause,
-different message, and **the answer is still: do not push.** After a squash-merge
-GitHub **auto-deletes the head branch** (Sam's toggle ②), so a session that then
-runs `git reset --hard origin/main` is left on a local branch whose remote is
-*gone* — and the hook reads "local has commits the remote doesn't" as unpushed
-work. The commit is the squash-merge itself, already on `main`. Pushing would
-recreate a merged branch for nothing.
-
-Confirm in one command, all local except the last:
-
-```bash
-git log -1 --format='%h %ce %s' HEAD                  # committer = noreply@github.com
-git log origin/main..HEAD --oneline | wc -l           # 0 = nothing unpushed
-git merge-base --is-ancestor HEAD origin/main && echo published
-git ls-remote --heads origin <branch> | wc -l         # 0 = auto-deleted at merge
-```
-
-`git branch --unset-upstream` clears the stale tracking ref and quiets it until
-the next merge. ⚠️ Wrap any networked git call in `timeout` — `git fetch --prune`
-hung for the full 2-minute limit in this sandbox at least once.
-
-### docx library errors
-- Local `docx.min.js` is v8.0.4 UMD, 334KB. CDN versions were unreliable — do
-  **not** switch back to CDN. To refresh the local copy:
-  `npm pack docx@8.0.4`, extract, copy `umd/docx.min.js`.
+⚠️ **Stop-hook nags in REMOTE sessions are FALSE POSITIVES — do not amend and do
+not push.** Both variants ("Unverified `noreply@github.com`" after a squash-merge,
+and "N unpushed commits on `claude/...`" after the branch auto-deletes) are
+covered there with the four confirming commands. Amending would rewrite `main`
+(Rule 5).
