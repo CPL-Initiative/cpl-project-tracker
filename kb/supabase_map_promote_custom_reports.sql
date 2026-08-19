@@ -157,7 +157,7 @@ declare
   l_cr    bigint; l_st   bigint; l_stud bigint;
   s_coll  bigint; l_coll bigint;
   sk_min  int;    sk_max int;    sk_null bigint;
-  bad     bigint; unknown_dest bigint;
+  bad     bigint; unknown_dest bigint; ungated int;
   warnings text[] := '{}';
 begin
   select count(*) into s_cr   from stg_map_college_cr_unit;
@@ -248,6 +248,10 @@ begin
   -- is derived from — a worklist that disagrees with the dashboard costs more
   -- trust than one that is a few hours old.
   perform rebuild_map_cleanup_worklist();
+  -- The follow-up detail behind clean-up priority 2, at the grain a college can
+  -- search on. Same transaction, same reason: a follow-up list that describes a
+  -- different day from the worklist above it is worse than no list.
+  perform rebuild_map_transcribed_gap();
 
   -- G7 · THE SUPPRESSION PROPERTY. Blocking, and the most important gate here:
   -- one hidden cell alongside a visible sibling is recoverable by subtraction,
@@ -270,15 +274,19 @@ begin
     raise exception 'G8 % suppressed cell(s) still carry students/rows_n — REFUSING to publish', bad;
   end if;
 
-  -- G9 · the clean-up list must never carry a gate wider than the team phrase.
-  -- It is rebuilt by DROP/CREATE, so its policy is re-declared every night and
-  -- a mistake there would be SILENT: the table would simply be readable, and
-  -- nothing about a readable table looks wrong.
-  if not exists (
-    select 1 from pg_policies
-     where schemaname = 'public' and tablename = 'map_cleanup_worklist'
-       and qual = '(is_allowed_reviewer() OR team_pass_ok())') then
-    raise exception 'G9 map_cleanup_worklist lost its team-phrase gate - REFUSING to publish';
+  -- G9 · every team-facing table rebuilt above is DROP/CREATEd, so its policy is
+  -- re-declared each night and a mistake would be SILENT: the table would simply
+  -- be readable, and nothing about a readable table looks wrong. Checked as a
+  -- LIST rather than one name, so adding a rebuild without gating it fails here
+  -- instead of shipping quietly.
+  select count(*) into ungated from (values
+      ('map_cleanup_worklist'),('map_transcribed_gap')) t(name)
+   where not exists (
+     select 1 from pg_policies p
+      where p.schemaname = 'public' and p.tablename = t.name
+        and p.qual = '(is_allowed_reviewer() OR team_pass_ok())');
+  if ungated > 0 then
+    raise exception 'G9 % rebuilt table(s) lost the team-phrase gate - REFUSING to publish', ungated;
   end if;
 
   -- WARN (never block) · a course_type MAP has newly invented. UNKNOWN exists
@@ -295,7 +303,7 @@ begin
 
   insert into map_data_loads (table_name, source_rows, loaded_rows, reconciled, note)
   values ('map_custom_report_promote', s_cr + s_st, s_cr + s_st, true,
-          format('promoted cr_unit %s and student %s (%s students) from staging; aggregates + cleanup worklist rebuilt',
+          format('promoted cr_unit %s and student %s (%s students) from staging; aggregates, cleanup worklist and transcribed gap rebuilt',
                  s_cr, s_st, s_stud));
 
   return jsonb_build_object(
@@ -304,6 +312,7 @@ begin
     'student',  jsonb_build_object('was', l_st,   'now', s_st),
     'students', jsonb_build_object('was', l_stud, 'now', s_stud),
     'cleanup_items', (select count(*) from map_cleanup_worklist),
+    'transcribed_gap_rows', (select count(*) from map_transcribed_gap),
     'warnings', to_jsonb(warnings));
 end $$;
 

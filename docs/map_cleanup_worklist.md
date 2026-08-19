@@ -111,6 +111,16 @@ progress that did not happen.
 
 ### Priority 2 · Plan says Transcribed, no units recorded — **14,348 rows, 4,196 students**
 
+> ✅ **Settled (Sam, 2026-08-19):** *"Transcribed refers to the whole student record
+> even though it is stamped on CR rows. Only when transcribed units are present we
+> count those as transcribed and the others are ignored."* So the tick alone counts
+> as nothing, and these 4,196 are unambiguously a defect rather than a definitional
+> question. **No code change was needed** — every published figure already sums units.
+>
+> ⚠️ **The grain will change.** Sam: transcribed check marks on CR rows are coming,
+> *"not ready yet."* When that ships, re-measure the constant-within-student test
+> before trusting the per-student measurement below.
+
 Two patterns, at **completely non-overlapping** colleges.
 
 **2a · batch upload, units never landed — `upstream`, 3,628 students, 4 colleges.**
@@ -190,6 +200,42 @@ first. Scoped that way the two applied measures agree to **0.1%** (30,055 vs
 30,091 students), not the 55% on record from the earlier table.
 
 ---
+
+## Following up on Priority 2 — `map_transcribed_gap`
+
+Sam, 2026-08-19: *"For the defects you found we want to follow up on those."*
+
+The worklist says a college **has** the problem. `map_transcribed_gap` says
+**where**, at the grain a college can search on in MAP: **exhibit × catalog
+year**. 270 rows, 8 colleges, **46,496 units at stake**. Team-phrase gated,
+rebuilt in the same nightly transaction.
+
+```sql
+select exhibit_id, catalog_year, students, records, units_at_stake,
+       still_needs_action, ask
+from map_transcribed_gap
+where college_name = 'Los Angeles Pierce College'
+order by units_at_stake desc;
+```
+
+⚠️ **We cannot name the students, and that is by design.** `StudentMAPID` is
+salt-hashed and never stored; `student_key` is our own counting surrogate,
+re-assigned nightly, identifying nobody. The college locates these records in MAP
+themselves by filtering the exhibit and catalog year. Anyone tempted to "fix"
+this by storing a durable student key should read
+[`docs/map_dataset_sql_for_malone.md`](map_dataset_sql_for_malone.md) first — we
+asked MAP for a one-way hash precisely so nobody here holds one.
+
+⚠️ **"Units at stake" is the question, not the answer.** The plan says transcribed
+and the units say nothing, which fits two different stories: the credit was
+transcribed and the amount never got recorded, **or** it was never transcribed and
+the tick is wrong. Only the college can say which — which is the entire point of
+following up.
+
+**Where to start.** Los Angeles Pierce is 1,840 students / 10,562 records / 46
+exhibits / **35,169 units**, all on `MAPSAS` AP and standardised-exam exhibits and
+all still sitting at Needs Action. Merced is 1,785 students / 8,947 units. Those
+two are 87% of the whole thing.
 
 ## 12 colleges have work and nobody to call
 

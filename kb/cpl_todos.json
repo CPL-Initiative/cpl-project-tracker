@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkyLoad (Session 171) — the refreshed MAP data is live and reloads nightly, the clean-up list is ready for the Customer Success team, and the two open questions now have a side-by-side comparison to decide from. Ashley's Delta items are unchanged.",
+  "_as_of": "2026-08-19 · SkyLoad (Session 171) — both open questions are now settled by Sam, and the follow-up detail for the transcription defects is built and ready for the team. Ashley's Delta items are unchanged.",
   "_session": "Session 171 (SkyLoad)",
   "_status": "Sam explained what three confusingly-similar fields in the new student report actually mean, which is what made them safe to load. Two of them describe things nothing we held had ever recorded: how far an articulation has got through approval, and which steps of the CPL process a college has ticked off. Both reports are now live, and Sam asked for the whole thing to run on the nightly job without him approving it each day — so the checks that protect the live data are now automatic and refuse to publish if anything looks wrong, including refusing to publish figures that would let a small college's suppressed numbers be worked out by subtraction. The headline figure rose about 12.5% because the data is simply more current.",
   "items": [
+    {
+      "id": "s171-followup-pierce-merced",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "Follow-up detail is ready. For the students marked transcribed with nothing recorded, we can now hand a college the exact exhibits and catalog years to look at — 270 rows across 8 colleges, about 46,500 units of credit whose status is genuinely unknown. Start with Los Angeles Pierce (1,840 students, 46 exhibits, ~35,200 units, all AP) and Merced (1,785 students, ~8,900 units); together they are 87% of it. One thing to be clear about with them: we cannot say WHICH students, because the student ID is hashed and we deliberately never store it — the college finds them in MAP by filtering the exhibit and catalog year we give them."
+    },
+    {
+      "id": "s171-followup-question",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The question to ask those colleges is narrow: did these students actually get the credit? The plan says transcribed and the units say nothing, which fits either 'it happened and the amount was never recorded' or 'it never happened and the tick is wrong'. Only they can say. For Pierce and Merced it looks like an AP batch upload that carried the completion but not the unit amounts, so it likely needs re-uploading rather than any curation work."
+    },
     {
       "id": "s171-cs-phrase",
       "for": "Sam",
@@ -15,36 +27,6 @@
       "for": "Sam",
       "tab": "course-credit",
       "text": "12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock, Saddleback, Hartnell, West Valley, Cuyamaca, Sacramento City, Gavilan, Crafton Hills, Feather River, Orange Coast and Launch. For Customer Success, finding the right person there is step one, before any clean-up. Hartnell and Gavilan are the known cases where the college has plenty of MAP users but nobody in a CPL role."
-    },
-    {
-      "id": "s171-cleanup-p1",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "The clean-up list's biggest easy win: 17,594 records across about 100 colleges are recommendations where ACE has already said no credit can be given. A college cannot do anything with them except mark them Not Applicable, and meanwhile they sit in the backlog making everyone's numbers look worse. This is ONE instruction to all colleges, not 100 separate conversations. Worth knowing: clearing them lifts every college's completion rate without awarding a single unit, because it shrinks the denominator — so we should say that plainly when the rate jumps."
-    },
-    {
-      "id": "s171-cleanup-p2-two-calls",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "The largest-looking problem is actually two phone calls. 4,196 students are marked as having had credit transcribed with no units recorded — and 94% of them are at just two colleges, Los Angeles Pierce (1,842 students, 73% of everyone they have) and Merced (1,787). It is not a curation problem: their AP batch upload recorded the credit but the unit amounts never came through, so it needs a re-upload with MAP/ITPI rather than anything a counsellor can fix."
-    },
-    {
-      "id": "s171-cleanup-initiator-nine",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Something worth asking about: 1,026 articulations are sitting at the very first approval stage, and they are concentrated in only NINE colleges — mostly Moreno Valley and Riverside City. A stage that concentrated usually means a few institutions are stuck rather than a statewide problem. Might be worth asking those nine what is blocking them."
-    },
-    {
-      "id": "s171-applied-fork-conflict",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "A number you ruled on previously may no longer hold, and I have deliberately not changed it without you. You said to publish both versions of 'applied credit' and name the 55% gap between them. On the refreshed data that gap is 0.1%, not 55% — the old comparison was counting a column that, on unactioned records, simply mirrors a different one. Your ruling still stands as good practice; the question is whether the 55% figure should stay in the docs."
-    },
-    {
-      "id": "s171-which-transcribed",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Still open, and now narrower: most of the transcribed check-vs-units mismatch turned out to be a display quirk (the tick describes the student's whole plan, not each recommendation). The genuine part is the 4,196 students above. So the remaining question is just whether the dashboard should say 'transcribed' from the tick or from the units."
     },
     {
       "id": "s171-watch-first-cron",
