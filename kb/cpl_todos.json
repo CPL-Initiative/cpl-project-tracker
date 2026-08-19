@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkyLoad (Session 171) — the refreshed MAP data is live and reloads itself nightly, and the analysis turned up a prioritised clean-up list the team can work from. Ashley's Delta items are unchanged and still open.",
+  "_as_of": "2026-08-19 · SkyLoad (Session 171) — the refreshed MAP data is live and reloads nightly, and the clean-up list is built and ready for the Customer Success team. Ashley's Delta items are unchanged and still open.",
   "_session": "Session 171 (SkyLoad)",
   "_status": "Sam explained what three confusingly-similar fields in the new student report actually mean, which is what made them safe to load. Two of them describe things nothing we held had ever recorded: how far an articulation has got through approval, and which steps of the CPL process a college has ticked off. Both reports are now live, and Sam asked for the whole thing to run on the nightly job without him approving it each day — so the checks that protect the live data are now automatic and refuse to publish if anything looks wrong, including refusing to publish figures that would let a small college's suppressed numbers be worked out by subtraction. The headline figure rose about 12.5% because the data is simply more current.",
   "items": [
+    {
+      "id": "s171-cs-team-access",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "The clean-up list is built and ready for Natalie, Chelsea and Ally. They need the TEAM passphrase, not reviewer sign-in — I deliberately did not add them as reviewers, because reviewer access is all-or-nothing and would also give them 591,820 student-level records plus the ability to read and change every team passphrase. The list itself contains only per-college totals, so the team passphrase is the right level. If you want them added as reviewers anyway that is your call, but it is worth knowing what it opens."
+    },
+    {
+      "id": "s171-cs-twelve-no-contact",
+      "for": "Sam",
+      "tab": "course-credit",
+      "text": "12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock, Saddleback, Hartnell, West Valley, Cuyamaca, Sacramento City, Gavilan, Crafton Hills, Feather River, Orange Coast and Launch. For Customer Success, finding the right person there is step one, before any clean-up. Hartnell and Gavilan are the known cases where the college has plenty of MAP users but nobody in a CPL role."
+    },
     {
       "id": "s171-cleanup-p1",
       "for": "Sam",

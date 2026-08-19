@@ -17,14 +17,51 @@ related:
 > Sam, 2026-08-19: *"Perhaps this will turn up a prioritized clean up list for
 > the team to follow up on."*
 
-Live view: **`map_cleanup_worklist`** (reviewer-gated, `security_invoker = on`,
-so it inherits the student-grain gate). It rebuilds itself — it reads
-`map_student_credit`, which now reloads nightly.
+**Built for the Customer Success Team** — Natalie Powell (lead), supported by
+Chelsea Mirada and Ally Barker (Sam, 2026-08-19).
+
+**`map_cleanup_worklist`** is a table, rebuilt nightly inside
+`map_promote_custom_reports()` so it can never describe a different day from the
+dashboard beside it. It carries the **college contact for that class of work**.
+
+### They need the TEAM PHRASE, not reviewer access
+
+None of the three is on the reviewer roster, and **they should not be added to it
+for this.** Reviewer is all-or-nothing: beyond this list it reaches
+`map_student_credit` (591,820 rows at student grain), `kb_curation`, the `gr_*`
+register, and **`team_access` itself — so a reviewer can read and rotate every
+team phrase.** Granting that to read a per-college summary is the opposite of
+least privilege.
+
+The list does not need it. Every row is a **per-college aggregate** — counts by
+class. No student grain survives the group-by, so the table is gated
+`is_allowed_reviewer() OR team_pass_ok()`, matching `map_college_cr_unit` and
+`map_college_contacts`.
+
+⚠️ **The gate dropped by MATERIALISING, not by weakening.** As a view over
+`map_student_credit` it was permanently reviewer-only; relaxing
+`security_invoker` would have silently bypassed the student-grain gate. Those two
+changes look similar in a diff and are opposite in effect.
+
+⚠️ **`G9` in the promotion refuses to finish if the table loses that gate.** It
+is rebuilt by `DROP`/`CREATE` nightly, so the policy is re-declared every run and
+a mistake would be **silent** — the table would simply be readable, and nothing
+about a readable table looks wrong.
+
+⚠️ **No k-anonymity.** Internal team tool. **Never a public surface** without the
+suppression `map_college_credit_summary` applies.
 
 ```sql
+-- the statewide shape
 select priority, class, subclass, effort_shape, owner,
        count(*) colleges, sum(rows) rows, sum(students) students
 from map_cleanup_worklist group by 1,2,3,4,5 order by 1, rows desc;
+
+-- a call list: one college, in priority order, with who to contact
+select priority, class, rows, students, owner, contact_name, contact_email, action
+from map_cleanup_worklist
+where college_name = 'Los Angeles Pierce College'
+order by priority;
 ```
 
 ---
@@ -153,6 +190,18 @@ first. Scoped that way the two applied measures agree to **0.1%** (30,055 vs
 30,091 students), not the 55% on record from the earlier table.
 
 ---
+
+## 12 colleges have work and nobody to call
+
+`contact_email` is null for at least one class at **Citrus (109 rows), Allan
+Hancock (99), Saddleback (63), Hartnell (53), West Valley (48), Cuyamaca (44),
+Sacramento City (40), Gavilan (33), Crafton Hills (11), Feather River (5),
+Orange Coast (1), Launch Apprenticeship (1)**.
+
+That is a Customer Success to-do in its own right, and it independently
+corroborates the MAP Users finding: **Hartnell and Gavilan have plenty of active
+MAP users and nobody in a CPL role.** Finding the right person there is the first
+step, not the clean-up.
 
 ## Next
 
