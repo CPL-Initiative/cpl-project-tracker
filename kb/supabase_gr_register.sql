@@ -23,11 +23,18 @@
 --         cannot say who changed a row. Anyone holding the read phrase must not
 --         be able to rewrite another division's entries.
 --
--- ⚠️ WIDENING READ ACCESS TO CO DIVISIONS IS BLOCKED on the phrase-scope fix
--- (CLAUDE.md §11 "Org & phrase scope"): team_pass_check() matches ANY secret in
--- team_access, so the GR phrase currently also opens every shared team tab.
--- Handing a CO division the GR phrase today hands them the Workplan, Budget,
--- Memory, MAP Users and Governance too.
+-- ✅ PHRASE SCOPE FIXED 2026-08-19 (migration team_pass_check_exclude_gr_cohort).
+-- team_pass_check() used to match ANY secret in team_access, so the GR phrase
+-- also opened every shared team tab — 83 policies across 42 tables — none of
+-- which the GR site's own tab needs (measured: docs/phrase_scope_analysis.md).
+-- It now excludes the 'gr' cohort:
+--     where id <> 'gr' and secret = p
+-- Verified before and after: exactly ONE bit changed — gr stopped opening the
+-- shared tables. 'team', 'ci' and 'fin' are bit-for-bit unchanged, which is what
+-- avoids the Finance lockout a naive per-site fix causes. Finance's own
+-- over-reach (36 of the 42) is NOT addressed and stays parked; it genuinely
+-- shares 6 tables and needs the harder split.
+-- Rollback is one statement — see the migration body.
 
 create table if not exists public.gr_areas (
   id text primary key, title text not null, division text, summary text,
@@ -108,3 +115,26 @@ create policy gr_revisions_write on public.gr_revisions for all
 drop policy if exists gr_artifacts_write on public.gr_artifacts;
 create policy gr_artifacts_write on public.gr_artifacts for all
   using (public.is_allowed_reviewer()) with check (public.is_allowed_reviewer());
+
+-- ── VERIFICATION PASS (2026-08-19) ─────────────────────────────────────────
+-- A caveat is a disclosure, not a fix. The CPL area's caveat records that its
+-- quoted statutory text was never checked against primary sources; a permanent
+-- blanket disclaimer is indistinguishable from an unmaintained one, so these
+-- turn it into a work queue the tab reports progress against ("N of M
+-- verified"), letting the caveat retire on evidence rather than on say-so.
+alter table public.gr_revisions add column if not exists verified_at   timestamptz;
+alter table public.gr_revisions add column if not exists verified_by   text;
+alter table public.gr_revisions add column if not exists verified_note text;
+-- Verifying is also the ONLY event that may clear citations_derived: that flag
+-- means "a machine picked this code", and a human confirming the citation
+-- against the source is exactly what stops making it true.
+
+-- ── HISTORY + SENSITIVITY (2026-08-19) ─────────────────────────────────────
+-- See migration gr_register_history_and_sensitivity. gr_history is written ONLY
+-- by an after-update/delete trigger and has NO write policy, so a reviewer
+-- cannot edit or erase the audit trail from the browser. `sensitivity` defaults
+-- to 'restricted' on revisions and artifacts, and gr_open_sections exposes only
+-- (area, division, citation, status) for rows explicitly marked 'open'.
+-- ⚠️ That view carries `security_invoker = on`. A Postgres view runs with the
+-- DEFINER's rights by default, which would bypass RLS on the underlying tables
+-- and hand out precisely what the column exists to protect.

@@ -336,6 +336,101 @@ check("Word filename is date-prefixed per the vault naming rule",
   check("a null read states the phrase was NOT cleared", /has NOT been cleared/.test(seg));
 }
 
+// ── Part C8 — the verification pass and the sensitivity control ─────────────
+// A caveat is a disclosure, not a fix, and a blanket disclaimer that never
+// changes is indistinguishable from an unmaintained one. These turn it into a
+// work queue.
+{
+  const src4 = fs.readFileSync("gr_priorities.js", "utf8");
+  check("verifying is what clears citations_derived (nothing else may)",
+    /citations_derived:\s*false/.test(src4) && /verified_at:\s*new Date/.test(src4));
+  check("a PATCH uses the same empty-body-is-failure guard as an INSERT",
+    /method:\s*"PATCH"[\s\S]{0,200}\.then\(wrote\)/.test(src4));
+  check("the row id is encoded into the PATCH filter", /id=eq\." \+ encodeURIComponent/.test(src4));
+
+  const A = { id: "cpl", title: "CPL", narrative: { caveat: "Quoted text is unverified." } };
+  const R = [
+    { id: "r1", area_id: "cpl", n: 1, title: "One", pathway: ["y"], citations: ["T5 §55050"],
+      citations_derived: true, status: "proposed", sensitivity: "restricted" },
+    { id: "r2", area_id: "cpl", n: 2, title: "Two", pathway: ["y"], citations: ["T5 §55023"],
+      citations_derived: false, status: "proposed", sensitivity: "restricted",
+      verified_at: "2026-08-19T00:00:00Z", verified_by: "sam@x" }
+  ];
+  GR._state.areas = [A]; GR._state.areaId = "cpl";
+  GR._state.revisions = R; GR._state.artifacts = [];
+  GR._state.failed = { revisions: false, artifacts: false, cross: false };
+  const r = dom.window.document.createElement("div");
+  GR._renderRegister(r, R);
+  check("the caveat reports verification progress rather than disclaiming forever",
+    /1 of 2 entries have had their citations checked/.test(r.textContent));
+  check("a verified row shows who verified it and when",
+    /citations verified by sam@x/.test(r.textContent) && /2026-08-19/.test(r.textContent));
+  // Signed out: no curator controls at all.
+  check("no verify button without a reviewer session",
+    r.textContent.indexOf("Mark citations verified") === -1);
+  check("no sensitivity control without a reviewer session",
+    r.querySelector("select[aria-label='Who may see this row']") === null);
+  check("the sensitivity default is never rendered as 'open' by accident",
+    r.textContent.indexOf("anyone in the CO") === -1);
+}
+
+// ── Part C9 — the blast-radius layer, recovered ─────────────────────────────
+// The original briefing carried TWO orderings of the same 16 rows, and its
+// actual argument lived in the second: 13 priorities ranked by systemic blast
+// radius, each with a "why it matters" paragraph. The first migration left that
+// layer in gr_content, unreachable from the UI.
+{
+  const A = { id: "cpl", title: "CPL", narrative: {} };
+  const R = [
+    { id: "b1", area_id: "cpl", n: 1, title: "Matrix one", pathway: ["y"], citations: [],
+      status: "proposed", blast_rank: 9, blast_why: "Because <b>scope</b>." },
+    { id: "b2", area_id: "cpl", n: 7, title: "Matrix seven", pathway: ["r"], citations: [],
+      status: "proposed", blast_rank: 1, blast_why: "Widest reach." }
+  ];
+  GR._state.areas = [A]; GR._state.areaId = "cpl";
+  GR._state.revisions = R; GR._state.artifacts = [];
+  GR._state.failed = { revisions: false, artifacts: false, cross: false };
+  const r = dom.window.document.createElement("div");
+  GR._renderRegister(r, R);
+  check("the recovered 'why it matters' renders", /Why it matters/.test(r.textContent) &&
+    /Widest reach/.test(r.textContent));
+  check("the blast-radius rank renders as a chip", !!r.querySelector(".gx-rank"));
+  check("an order control appears when a blast rank exists",
+    !!r.querySelector("select[aria-label='Order']"));
+  // default order is the matrix, and blast order puts rank 1 first
+  const before = Array.prototype.map.call(r.querySelectorAll(".gx-item"), d => d._rev.n);
+  check("default order is the matrix (1 before 7)", before[0] === 1 && before[1] === 7);
+  const sel = r.querySelector("select[aria-label='Order']");
+  sel.value = "blast";
+  sel.dispatchEvent(new dom.window.Event("change"));
+  const after = Array.prototype.map.call(r.querySelectorAll(".gx-item"), d => d._rev.n);
+  check("blast order puts rank 1 first (matrix row 7)", after[0] === 7 && after[1] === 1);
+  const w = GR._draftDocBody(A, R);
+  check("the Word export carries 'why it matters' too", /Why it matters/.test(w) && /Widest reach/.test(w));
+}
+
+// ── Part C10 — a failed read must not be allowed to WRITE a bad row ─────────
+{
+  GR._state.areas = [{ id: "cpl", title: "CPL", narrative: {} }];
+  GR._state.areaId = "cpl"; GR._state.revisions = []; GR._state.artifacts = [];
+  GR._state.failed = { revisions: true, artifacts: false, cross: false };
+  const src5 = fs.readFileSync("gr_priorities.js", "utf8");
+  check("adding a revision is refused while the revisions read failed",
+    src5.indexOf("addRev.disabled = true;") !== -1 &&
+    src5.indexOf("if (state.failed.revisions) return;") !== -1);
+  check("...and the reason names the numbering hazard, not just 'error'",
+    /numbered as if the area were empty/.test(src5));
+}
+
+// ── Part C11 — pathway values are DATA, including "toString" ────────────────
+{
+  const w = GR._draftDocBody({ id: "x", title: "X", narrative: {} },
+    [{ n: 1, title: "T", pathway: ["toString"], citations: [], status: "proposed" }]);
+  check("a pathway of 'toString' does not resolve through the prototype",
+    w.indexOf("UNDEFINED") === -1 && w.indexOf("TOSTRING") !== -1);
+  check("...and the export still produces a document", w.length > 200);
+}
+
 // ── Part D — lock screen when no phrase is stored ────────────────────────────
 try { dom.window.localStorage.removeItem("cpl_gr_pass"); } catch (e) {}
 try { dom.window.sessionStorage.removeItem("cpl_sb"); } catch (e) {}

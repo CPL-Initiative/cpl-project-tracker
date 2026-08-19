@@ -53,7 +53,6 @@
   var GR_KEY = "cpl_gr_pass";           // GR-specific — separate from the generic cpl_team_pass
   var ROOT_ID = "gr-priorities-root";
   var CSS_ID = "gr-priorities-css";
-  var DOC_ID = "cpl-t5-priorities";
 
   // ── tiny DOM helper ────────────────────────────────────────────────────────
   function el(tag, attrs, kids) {
@@ -127,14 +126,12 @@
       return r.json().then(function (v) { return v === true; });
     }).catch(function () { return null; });
   }
-  function fetchDoc(phrase) {
-    return fetch(SUPABASE_URL + "/rest/v1/gr_content?id=eq." + DOC_ID + "&select=doc", {
-      headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "x-team-pass": phrase }
-    }).then(function (r) {
-      if (!r.ok) return null;
-      return r.json().then(function (rows) { return (rows && rows[0] && rows[0].doc) || null; });
-    }).catch(function () { return null; });
-  }
+  // The legacy single-document reader was REMOVED with the register. gr_content
+  // is retained in Supabase as the rollback copy of the original CPL briefing,
+  // but nothing in this tab reads it — and leaving a dead fetcher behind made
+  // kb/_build_cobi_admin_surface.py list gr_content as a read surface of this
+  // tab, i.e. a table in the Admin RLS view that no code actually touches. A
+  // phantom row in a security view is the same defect as a missing one.
 
   // ── REST helpers ────────────────────────────────────────────────────────────
   var REST = SUPABASE_URL + "/rest/v1";
@@ -205,6 +202,13 @@
   }
   function addArtifact(rec) {
     return fetch(REST + "/gr_artifacts", { method: "POST", headers: headers(true), body: JSON.stringify([rec]) }).then(wrote);
+  }
+  // Updates. PostgREST answers a filtered PATCH the same way it answers a
+  // filtered INSERT — 200 with an empty body — so the same guard applies.
+  function patchRevision(id, rec) {
+    return fetch(REST + "/gr_revisions?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: headers(true), body: JSON.stringify(rec)
+    }).then(wrote);
   }
   var WRITERS = { gr_areas: addArea, gr_revisions: addRevision, gr_artifacts: addArtifact };
   function post(table, rec) { return WRITERS[table](rec); }
@@ -288,6 +292,15 @@
       "background:var(--gx-card);padding:11px 14px;margin:0 0 16px;}",
       ".grx .gx-caveat h3{font-size:13px;color:var(--gx-y);margin-bottom:5px;}",
       ".grx .gx-caveat p{margin:0;font-size:12.4px;line-height:1.5;color:var(--gx-muted);}",
+      ".grx .gx-rank{font-size:9.6px;font-weight:800;letter-spacing:.05em;color:var(--gx-accent);",
+      "border:1px solid var(--gx-accent);border-radius:3px;padding:1px 4px;}",
+      ".grx .gx-why{font-size:12.6px;line-height:1.5;color:var(--gx-ink);margin:0 0 7px!important;}",
+      ".grx .gx-why b{color:var(--gx-muted);font-weight:700;}",
+      ".grx .gx-vprog{margin:7px 0 0!important;font-size:11.6px;font-weight:700;color:var(--gx-y);}",
+      ".grx .gx-rowctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:9px;",
+      "border-top:1px dotted var(--gx-border);padding-top:8px;}",
+      ".grx .gx-rowmsg{font-size:11px;color:var(--gx-muted);}",
+      ".grx .gx-rowmsg.err{color:var(--gx-r);}.grx .gx-rowmsg.ok{color:var(--gx-g);}",
       ".grx .gx-corr{margin:0;padding-left:18px;}",
       ".grx .gx-corr li{font-size:12.4px;line-height:1.45;color:var(--gx-muted);margin:5px 0;}",
       ".grx .gx-samp{display:inline-block;margin-left:8px;padding:1px 7px;border-radius:3px;font-size:10.5px;",
@@ -498,7 +511,19 @@
       el("span", { class: "gx-ttl", text: r.title || "" }),
       sm
     ]));
+    if (r.blast_rank != null) {
+      sm.appendChild(el("span", { class: "gx-rank", title: "Rank by systemic blast radius (1 = widest)",
+        text: "BR " + r.blast_rank }));
+    }
     var desc = el("div", { class: "gx-desc" });
+    // "Why it matters" — the briefing's own argument for each item. It lived in
+    // the blast-radius layer, which the first migration left behind entirely.
+    if (r.blast_why) {
+      var wy = el("p", { class: "gx-why" });
+      wy.appendChild(el("b", { text: "Why it matters — " }));
+      appendRich(wy, r.blast_why);
+      desc.appendChild(wy);
+    }
     if (r.summary) appendRich(desc, r.summary);
     if (r.consideration) {
       var c = el("p");
@@ -513,7 +538,54 @@
     if (r.citations_derived && (r.citations || []).length) {
       bits.push("citations extracted from the text — not curator-confirmed");
     }
+    if (r.verified_at) {
+      bits.push("citations verified" + (r.verified_by ? " by " + r.verified_by : "") +
+                " · " + String(r.verified_at).slice(0, 10));
+    }
     if (bits.length) desc.appendChild(el("p", { class: "gx-meta", text: bits.join("  ·  ") }));
+
+    // Curator controls. Reviewer-only, and deliberately the two decisions that
+    // matter rather than a general edit form: has anyone CHECKED this citation
+    // against the primary source, and may this row be seen beyond the MAP team.
+    if (canWrite()) {
+      var ctl = el("div", { class: "gx-rowctl" });
+      var msg = el("span", { class: "gx-rowmsg", text: "" });
+
+      if (!r.verified_at) {
+        var vb = el("button", { class: "gx-chip", type: "button", text: "Mark citations verified" });
+        vb.title = "Records that you checked this row's citations against the primary source.";
+        vb.addEventListener("click", function () {
+          vb.disabled = true; msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+          // Verifying is the ONLY thing that may clear citations_derived: the
+          // flag means "a machine picked this code", and a human confirming it
+          // against the source is precisely the event that ends that.
+          patchRevision(r.id, {
+            verified_at: new Date().toISOString(), verified_by: whoami(),
+            citations_derived: false, updated_by: whoami(), updated_at: new Date().toISOString()
+          }).then(function () { load(document.getElementById(ROOT_ID)); })
+            .catch(function (e) { vb.disabled = false; msg.className = "gx-rowmsg err"; msg.textContent = e.message; });
+        });
+        ctl.appendChild(vb);
+      }
+
+      var sens = selectOf(["restricted", "open"],
+        ["Seen by: MAP team only", "Seen by: anyone in the CO"]);
+      sens.value = r.sensitivity === "open" ? "open" : "restricted";
+      sens.setAttribute("aria-label", "Who may see this row");
+      sens.addEventListener("change", function () {
+        var want = sens.value;
+        msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+        patchRevision(r.id, { sensitivity: want, updated_by: whoami(), updated_at: new Date().toISOString() })
+          .then(function () { r.sensitivity = want; msg.className = "gx-rowmsg ok"; msg.textContent = "saved"; })
+          .catch(function (e) {
+            sens.value = r.sensitivity === "open" ? "open" : "restricted";   // put the control back
+            msg.className = "gx-rowmsg err"; msg.textContent = e.message;
+          });
+      });
+      ctl.appendChild(sens);
+      ctl.appendChild(msg);
+      desc.appendChild(ctl);
+    }
     d.appendChild(desc);
     return d;
   }
@@ -694,6 +766,18 @@
       var cav = el("div", { class: "gx-caveat" });
       cav.appendChild(el("h3", { text: "Before this goes external — verify" }));
       cav.appendChild(richP(nar.caveat));
+      // A blanket disclaimer that never changes is indistinguishable from an
+      // unmaintained one. Reporting progress turns the caveat into a work queue
+      // — and lets it retire on evidence rather than on someone's say-so.
+      var vtot = state.revisions.length;
+      var vdone = state.revisions.filter(function (x) { return !!x.verified_at; }).length;
+      if (vtot) {
+        cav.appendChild(el("p", { class: "gx-vprog",
+          text: vdone === vtot
+            ? "All " + vtot + " entries have had their citations checked against the primary source."
+            : vdone + " of " + vtot + " entries have had their citations checked against the primary source." +
+              (canWrite() ? " Open a row to mark one verified." : "") }));
+      }
       wrap.appendChild(cav);
     }
 
@@ -761,6 +845,15 @@
       tools.appendChild(s);
       secSelects.push(s);
     });
+    // The original briefing had TWO orderings of the same rows and its argument
+    // lived in the second one. Restoring it as a control keeps both.
+    var hasBlast = state.revisions.some(function (r) { return r.blast_rank != null; });
+    var sortSel = null;
+    if (hasBlast) {
+      sortSel = selectOf(["n", "blast"], ["Order: matrix (1–16)", "Order: blast radius"]);
+      sortSel.setAttribute("aria-label", "Order");
+      tools.appendChild(sortSel);
+    }
     var stSel = selectOf(["all"].concat(STATUSES), ["Any status"].concat(STATUSES.map(stLabel)));
     stSel.setAttribute("aria-label", "Status");
     tools.appendChild(stSel);
@@ -811,6 +904,20 @@
         ? shown + (shown === 1 ? " revision" : " revisions")
         : "showing " + shown + " of " + state.revisions.length;
     }
+    if (sortSel) {
+      sortSel.addEventListener("change", function () {
+        var blast = sortSel.value === "blast";
+        rowEls.slice().sort(function (a, b) {
+          if (!blast) return (a._rev.n || 0) - (b._rev.n || 0);
+          var ar = a._rev.blast_rank, br = b._rev.blast_rank;
+          if (ar == null && br == null) return (a._rev.n || 0) - (b._rev.n || 0);
+          if (ar == null) return 1;
+          if (br == null) return -1;
+          return ar - br || (a._rev.n || 0) - (b._rev.n || 0);
+        }).forEach(function (d) { d.parentNode.appendChild(d); });
+        apply();
+      });
+    }
     search.addEventListener("input", function () { f.q = search.value.trim().toLowerCase(); apply(); });
     chips.forEach(function (c) {
       c.addEventListener("click", function () {
@@ -839,7 +946,16 @@
     if (canWrite()) {
       var revHost = el("div");
       var addRev = el("button", { class: "gx-btn ghost", type: "button", text: "Add a revision" });
+      // nextN comes from the SAME list a failed read collapses to []. Adding
+      // against that assigns n = 1 on top of an area that already has sixteen —
+      // the false zero stops being a display problem and starts writing bad
+      // rows. Adding is refused while the read is known to have failed.
+      if (state.failed.revisions) {
+        addRev.disabled = true;
+        addRev.title = "Can't add while the existing revisions failed to load — a new entry would be numbered as if the area were empty.";
+      }
       addRev.addEventListener("click", function () {
+        if (state.failed.revisions) return;
         if (revHost.firstChild) { clear(revHost); return; }
         var nextN = state.revisions.reduce(function (m, r) { return Math.max(m, r.n || 0); }, 0) + 1;
         revHost.appendChild(newRevisionForm(state.areaId, nextN, function () { load(root); }));
@@ -929,7 +1045,13 @@
     function esc(s) {
       return String(s == null ? "" : s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     }
-    var tl = { g: ["#4c6b54", "Guidance"], y: ["#84692b", "Title 5"], r: ["#8b4a3d", "Ed. Code"] };
+    // Object.create(null): pathway values are DATA read straight from the row, so
+    // a plain literal here makes tl['toString'] resolve to Function.prototype
+    // .toString — truthy, so the `||` fallback never fires, v[1] is undefined and
+    // the export prints "UNDEFINED" (and, before esc() was applied, threw and
+    // produced no file at all). Escaping alone did not fix this half.
+    var tl = Object.create(null);
+    tl.g = ["#4c6b54", "Guidance"]; tl.y = ["#84692b", "Title 5"]; tl.r = ["#8b4a3d", "Ed. Code"];
     // ⚠️ tag() was the ONE value in this document not passed through esc(). An
     // unrecognised pathway value falls through to `["#666", x]` and x is the
     // stored string, so anything a writer put in gr_revisions.pathway landed in
@@ -969,6 +1091,7 @@
           (r.n == null ? "" : r.n + ". ") + esc(r.title) + "</b> &nbsp; " + tag(r.pathway) +
           (cites ? ' &nbsp; <span style="color:#99a;font-size:8.5pt">' + esc(cites) +
             (r.citations_derived ? " (extracted from the text — unconfirmed)" : "") + "</span>" : "") + "</p>" +
+        (r.blast_why ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b"><i>Why it matters &mdash; </i>' + rich(r.blast_why) + "</p>" : "") +
         (r.summary ? '<p style="margin:0 0 2pt 0;font-size:10.5pt;line-height:1.35;color:#23252b">' + rich(r.summary) + "</p>" : "") +
         '<p style="margin:0;font-size:9.5pt;color:#555"><b>Status:</b> ' + esc(stLabel(r.status)) +
           (r.ed_first ? " &nbsp;&#183;&nbsp; <b>Ed. Code change first?</b> " + esc(r.ed_first) : "") +
@@ -1115,6 +1238,7 @@
     _matches: matches,
     _renderRegister: renderRegister,
     _draftDocBody: docBody,
+    _patchRevision: patchRevision,
     _state: state
   };
   if (typeof window !== "undefined") window.CPL_GR = api;
