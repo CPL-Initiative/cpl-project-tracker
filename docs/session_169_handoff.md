@@ -4,6 +4,8 @@ date: 2026-08-19
 tags: [handoff, session-169, gr, government-relations, alpha, register]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_170_handoff.md
 ---
 
 # You are Session 169
