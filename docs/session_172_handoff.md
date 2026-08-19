@@ -14,11 +14,10 @@ related:
 
 # Session 172 handoff
 
-You are **Session 172**. Session 171 was **SkyLoad**, single-lane: loading the two
-new MAP Custom Report views and reconciling them. **Staging is loaded and the
-reconciliation passed** — the open job is the swap, and it moves a public number,
-which is why it was left gated (§A). The Delta/SJCOE lane is **still untouched** —
-it has now carried across three handoffs (§C).
+You are **Session 172**. Session 171 was **SkyLoad**: the two new MAP Custom
+Report views are **loaded, reconciled, live, and on the nightly cron with no
+human in the loop** (§A). One question is open for Sam (§B). The Delta/SJCOE lane
+is **still untouched** — it has now carried across three handoffs (§C).
 
 ⚠️ **Sam frequently runs several sessions at once.** Check `git log origin/main`
 before assuming your branch is the only work in flight.
@@ -38,7 +37,7 @@ before assuming your branch is the only work in flight.
 
 ---
 
-## What shipped (#1251 and #1252, both merged)
+## What shipped (#1251–#1254, all merged)
 
 A loader (`kb/_sync_map_custom_reports.py`), staging tables, a committed test,
 a dispatch-only workflow and the runbook. **Both views now load, and staging is
@@ -66,11 +65,17 @@ Sam's field definitions, which are what made this loadable rather than guessable
 
 ---
 
-## §A · The reconciliation is DONE and it PASSED. The job is the swap.
+## §A · Done. It is live, and it runs itself nightly.
 
-Staging is loaded from the fixed loader and **both views parse exactly to their
-`dataCount`** — 211,005 and 591,820. The per-college gate has been run and both
-anomalies are explained. Do not re-litigate it; read it and decide.
+**The load is live and on the cron** — daily 13:40 UTC, fetch → staging →
+`map_promote_custom_reports()` → live, one transaction, no human. Sam,
+2026-08-19: *"This will run in the daily cron so just making sure I don't have to
+do a staging to live approval every day."* An unattended end-to-end run has
+completed: `map_college_cr_unit` 211,005, `map_student_credit` 591,820, 47,804
+students, both aggregates rebuilt in the same transaction.
+
+The per-college reconciliation was run first and both anomalies are explained.
+Do not re-litigate it; read it.
 
 **Dataset B (student grain) is unambiguously clean.** *No* college decreased.
 591,820 rows · **47,804 distinct students** (live 42,346) · surrogate dense
@@ -91,25 +96,23 @@ the same rows. Say so wherever catalog year is used as a time dimension.
 
 ### Before you swap — the two things that are not counts
 
-⚠️ **The swap moves a PUBLIC HEADLINE.** Needs Action units go **1,053,333 →
-1,125,873 (+6.9%)** and students **42,346 → 47,804 (+12.9%)**. That million-unit
-figure is what the $50k work, the College Action page and Sam's own framing
-quote. `CLAUDE.md`'s number policy says published and unsuppressed move
-**together, never one half alone** — so the published aggregates
-(`kb/supabase_map_college_goal2.sql`,
-`kb/supabase_map_college_credit_summary.sql`) must be rebuilt in the same pass.
-**This is worth telling Sam before, not after.** It is why the swap was left
-gated rather than done.
+### The headline moved, and now moves nightly
 
-⚠️ **The two tables DO NOT share a policy.** `map_college_cr_unit` accepts the
-team phrase; `map_student_credit` is **reviewer-only**. Restoring the
-articulation table's policy onto the student table hands 537,908 student-grain
-rows to every phrase holder, and the tab looks completely normal afterwards.
-Runbook SQL 4 restores them separately for that reason.
+| measure | was | now |
+|---|---:|---:|
+| dormant units, **published** | 1,051,870 | **1,183,569** (+12.5%) |
+| dormant units, unsuppressed | 1,052,531 | 1,184,787 |
+| already articulated + waiting, **published** | 63,991 | **72,501** (+13.3%) |
+| already articulated + waiting, unsuppressed | 64,074 | 72,584 |
+| distinct students | 42,346 | 47,804 (+12.9%) |
+| suppressed colleges | 13 | 14 |
 
-Then: [`docs/map_custom_report_load.md`](map_custom_report_load.md) SQL 2 → 3 →
-4 → rebuild aggregates → open the 🎓 Course Credit tab and the College Action
-page.
+⚠️ **A correction worth carrying:** a `+6.9%` figure was reported mid-session and
+was measured on the **student grain**, not the published one. The canonical pair
+is `map_college_cr_unit` scoped `entity_kind='college'`, and the number policy
+says **quote the pair, never one half alone**.
+
+These now change on every nightly run. That is Sam's decision, not a drift.
 
 ---
 
@@ -132,7 +135,7 @@ the Course Credit tab or the $50k disposition work quotes either.
 
 Two things worth telling him unprompted, because they change what can be built:
 
-- **`Status` is 91.2% null** (539,894 of 591,820) and its top value is
+- **`Status` is 91.2% blank** (539,894 of 591,820 — empty string, not null) and its top value is
   **`Implementation` (45,302)**, not `Initiator` (2,918). Four non-null values
   exist. It cannot be a facet — a chart on approval stage would describe 8.8% of
   rows while looking like it described all of them.
@@ -151,9 +154,9 @@ Two things worth telling him unprompted, because they change what can be built:
   go into `kb/delta_offering_map.json`. The statewide engine's **second
   occupation list is still outstanding** — five sessions now, the oldest unpaid
   debt in the project.
-- **Does this load get a schedule?** Deliberately unscheduled: a daily automatic
-  reload of a student-grain table is Sam's decision. Ask once the reconciliation
-  has been looked at.
+- **Watch the first unattended 13:40 UTC run.** It has been proven by dispatch,
+  not yet by the schedule firing on its own. A `G`-numbered failure is a gate
+  doing its job — **fix the pull, never the gate.**
 - **`CLAUDE.md` is still 2.0× budget** (119,852 / 60,000, `always_loaded`). This
   run held it flat — archived the Sky169 narrative to pay for the new one — but
   did not reduce it. The `Troubleshooting` section is the obvious candidate for
