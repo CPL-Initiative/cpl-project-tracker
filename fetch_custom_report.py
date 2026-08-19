@@ -153,11 +153,18 @@ REQUEST_PAYLOAD = [
         # each run so counts stay comparable over time"). A rotating salt would
         # leak nothing — it would silently make distinct-student counts
         # incomparable across refreshes, so a headcount would wander with no
-        # error anywhere. Do not re-ask Pedro: it is DETECTABLE. Whatever loads
-        # this view should compare the incoming key set against the previous
-        # pull; a stable salt gives a large overlap, a rotated one gives
-        # essentially zero. That check belongs at load time, not here — this
-        # file only fetches.
+        # error anywhere. Sam asked Pedro directly 2026-08-19 — answer pending;
+        # record it here when it lands, because a stable salt is a property the
+        # loader can then rely on rather than infer.
+        #
+        # BUT BUILD THE DETECTOR EITHER WAY. An assurance describes today's
+        # behaviour; it does not prevent a change six months from now, and this
+        # failure is silent by construction. The same lesson is already in
+        # cpl_memory as statewide-is-138-not-84: a settled ruling does not
+        # enforce itself — the consumer has to change. Whatever loads this view
+        # should compare the incoming key set against the previous pull; a
+        # stable salt gives a large overlap, a rotated one essentially zero.
+        # That check belongs at load time, not here — this file only fetches.
         #
         # `Notes` is deliberately NOT requested: free text at student grain,
         # written by staff, read by nothing downstream. The cheapest PII
