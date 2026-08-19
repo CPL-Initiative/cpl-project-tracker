@@ -119,31 +119,55 @@ REQUEST_PAYLOAD = [
                        "Potential Credits", "Articulated Credits",
                        "Applied Credits", "Transcribed Credits"],
     },
-    # ── NOT YET WIRED: View_StudentDetailsCredits_APIDataset ──────────────
-    # Served (HTTP 200, dataCount 591,820 vs our 537,908, +10.02%) and it carries
-    # the student grain with CPLStatusPlan. Deliberately NOT added until one
-    # question is answered by Pedro or Malone:
-    #
-    #   Is StudentMAPID a SALTED hash, and is the salt kept on MAP's side?
-    #
-    # It arrives as 64 hex characters, so the opaque-key ask was implemented. But
-    # docs/map_dataset_sql_for_malone.md warns in its own words that "a bare
-    # SHA2_256 of a student ID is not anonymous: the ID space is small enough to
-    # enumerate, so anyone with the hashes can recover every ID by hashing all
-    # candidates" — and a salted hash is indistinguishable from an unsalted one
-    # by inspection. Until that is confirmed, fetching it would put an identifier
-    # of unknown strength on the Action runner, which is the exact thing dropping
-    # the two contact views below was meant to prevent.
-    #
-    # Also hold `Notes` regardless of the answer: free text at student grain,
-    # written by staff, read by nothing downstream.
-    #
-    # ⚠️ And when it IS wired: this view carries THREE status-shaped fields —
-    # `Status`, `CPLStatusPlan` and `CPLPlanStatus`. The spec already warned that
-    # Status is the workflow stage while CPLStatusPlan is what the college
-    # decided. CPLPlanStatus is neither: it is a pipe-delimited checklist
-    # ("CPL Docs |Ed Plan |Analysis |Counselor |"). Picking by name gets this
-    # wrong in a way that looks entirely plausible.
+    {
+        # ── Student Details and Credits (NEW 2026-08-19) ──────────────────
+        # The student × credit-recommendation grain, carrying CPLStatusPlan —
+        # the disposition, i.e. what a college actually DID, which none of the
+        # previously-fetched views held (cpl_memory:
+        # cplstatusplan-absent-from-fetched-map-views). Serve-checked on the
+        # runner 2026-08-19: HTTP 200, dataCount 591,820 against our 537,908
+        # in map_student_credit (+10.02%, our staleness resolving).
+        #
+        # StudentMAPID is INCLUDED, and that is the design rather than a
+        # relaxation: docs/map_dataset_spec_for_malone.md asked for a one-way
+        # hashed key precisely so distinct students could be COUNTED without
+        # anyone holding an identifier. Sam confirmed 2026-08-19 that Pedro
+        # hashed them, and the specific attack that spec warned about —
+        # "the ID space is small enough to enumerate" — was tested rather than
+        # assumed: StudentMAPID is a small integer (42,346 distinct), and
+        # SHA-256 over 5,000,000 plain decimals plus eight formatting variants
+        # does not reproduce a sampled hash. It is not a bare hash of the id.
+        # ⚠️ That is evidence, not proof of a salt, and it rests on ONE sample.
+        # If MAP ever changes how the key is derived, distinct-student counts
+        # silently stop being comparable across runs — the salt must be the
+        # SAME every run, which is the one property this test cannot check.
+        #
+        # `Notes` is deliberately NOT requested: free text at student grain,
+        # written by staff, read by nothing downstream. The cheapest PII
+        # surface to decline is the one nobody asked for.
+        #
+        # ⚠️ THREE status-shaped fields ship in this view and they are NOT
+        # interchangeable. `Status` is the workflow stage; `CPLStatusPlan` is
+        # what the college decided (this is the one that matters, and the
+        # reason the view was wanted); `CPLPlanStatus` is not a status at all
+        # but a pipe-delimited checklist — "CPL Docs |Ed Plan |Analysis
+        # |Counselor |". Picking by name gets this wrong plausibly.
+        #
+        # ⚠️ The raw pull is gitignored (CustomReport_*.json) and must stay so:
+        # this repo is PUBLIC and these are student-grain rows. Only aggregated,
+        # suppressed artifacts may be committed.
+        "viewName": "View_StudentDetailsCredits_APIDataset",
+        "columnName": ["CollegeID", "Location", "StudentMAPID", "CPL Mode",
+                       "CPL Program", "Program", "ProgramGoal",
+                       "Transfer Destination", "Catalog Year", "Course Type",
+                       "Status", "Credit Recommendation", "College Course",
+                       "ExhibitID", "Source Code", "PotentialCredits",
+                       "CreditsInReview", "AppliedCredits", "MilitaryCredits",
+                       "NonMilitaryCredits", "ApprenticeshipCredits",
+                       "ArticulatedCredits", "CourseCredits", "AreaCredits",
+                       "ElectiveCredits", "DefaultAreaCredits",
+                       "TranscribedCredits", "CPLStatusPlan", "CPLPlanStatus"],
+    },
     {
         # Exhibit CRs Catalog (NEW 2026-06-09) — per (ExhibitID, SkillLevel,
         # CreditRecommendation, …) credit funnel that carries the long-missing
