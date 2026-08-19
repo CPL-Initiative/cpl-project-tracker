@@ -73,7 +73,10 @@ before: the Common CR Reference was nearly ranked by how widely a string spread,
 and the widest-spreading string turned out to be a placeholder at one college.
 
 **A class of 11,926 rows that all resolve under one rule is a smaller job than
-413 rows needing 413 judgements.** Sorting by row count puts them in the wrong
+413 rows needing 413 judgements.** (⚠️ The corollary, learned the hard way in
+session 172: **check that they really do all resolve under the same rule.** The
+class that looked like 17,594 one-rule rows contained 5,311 that needed the
+opposite treatment — see Priority 1 below.) Sorting by row count puts them in the wrong
 order, so the list carries an `effort_shape`:
 
 | shape | meaning |
@@ -86,22 +89,42 @@ order, so the list carries an `effort_shape`:
 
 ## The list
 
-### Priority 1 · Recommendations that cannot yield credit — **17,594 rows, ~100 colleges**
+### Priority 1 · Recommendations that cannot yield credit — **12,283 rows, ~100 colleges**
 
-ACE already said no credit is recommended, or that it needs an individual
-assessment, or recommended zero hours. **A college cannot act on these except to
-rule them Not Applicable.** They carry **zero units of opportunity** and yet sit
-in the Needs Action pile, depressing every disposition rate.
+> ⚠️ **CORRECTED 2026-08-19 (session 172), before the instruction went out.**
+> This class held **17,594** rows under one action: *"Rule these Not Applicable.
+> ACE has already said no credit is recommended."* **That was false for 5,311 of
+> them**, whose text says the opposite — *"Credit may be granted on the basis of
+> an individualized assessment of the student"*, *"…on the Basis of Institutional
+> Evaluation"*. ACE is **deferring to the college**, not refusing.
+>
+> Sending one instruction to ~100 colleges would have told them to close 5,311
+> recommendations on a stated ground that contradicts the recommendation itself
+> — a **false zero at scale**, and the college that acted on it would never learn
+> the door was open. Those rows are now **Priority 5** below, with their own
+> action and no prescription. Total is unchanged (12,283 + 5,311 = 17,594);
+> what changed is what colleges are told to do with them.
+>
+> Two matcher misses surfaced the same way and are now covered: the corpus
+> contains the misspelling **"Credit Is Not Recommeded"** (26 rows), and
+> **"individual assessment"** without the *-ized* (20 rows) fell into the
+> residue bucket.
+
+ACE recommends no credit, or the recommendation's own validity window has
+closed. **A college cannot act on these except to rule them Not Applicable.**
+They carry **zero units of opportunity** and yet sit in the Needs Action pile,
+depressing every disposition rate.
 
 | | rows | colleges | students |
 |---|---:|---:|---:|
 | ACE: credit is not recommended | 11,926 | 100 | 7,744 |
-| ACE: individualized assessment | 3,955 | 95 | 2,803 |
-| zero-hour recommendation | 1,713 | 92 | 1,466 |
+| recommendation's validity window has closed | 137 | 48 | 113 |
+| other zero-hour text (**read before ruling**) | 220 | 63 | 207 |
 
-**One rule clears the lot**, and it is the same rule at every college. Heaviest:
-San Diego Miramar 1,640 · San Diego Mesa 932 · CCSF 899 · San Diego City 745 ·
-El Camino 732 · Coastline 665 · Long Beach City 649 · Mt. SAC 584.
+**One rule clears the lot**, and it is the same rule at every college. Heaviest
+(recounted after the P1/P5 split): San Diego Miramar 1,452 · San Diego Mesa 742 ·
+CCSF 615 · San Diego City 522 · El Camino 513 · Long Beach City 445 ·
+Mt. San Jacinto 409 · Mt. SAC 372.
 
 ⚠️ Clearing these **raises every disposition rate without awarding a single
 unit**, because it shrinks the denominator. That is legitimate — ruling a
@@ -167,20 +190,26 @@ articulation, so rows overstate a queue.
 
 ## Where the work actually is
 
-| college | total | P1 one rule | P2 transcribed | P3 applied | P4 approval |
-|---|---:|---:|---:|---:|---:|
-| Los Angeles Pierce | 10,680 | 80 | **10,600** | — | — |
-| Merced | 2,975 | 18 | **2,956** | — | 1 |
-| San Diego Miramar | 1,643 | **1,640** | — | — | 3 |
-| Moreno Valley | 1,055 | 124 | 530 | — | **401** |
-| City College of San Francisco | 946 | **899** | — | 2 | 45 |
-| San Diego Mesa | 934 | **932** | — | — | 2 |
-| Long Beach City | 899 | 649 | — | **217** | 33 |
-| Riverside City | 536 | 14 | 190 | — | **332** |
+| college | total | P1 one rule | P2 transcribed | P3 applied | P4 approval | P5 needs a ruling |
+|---|---:|---:|---:|---:|---:|---:|
+| Los Angeles Pierce | 10,680 | 65 | **10,600** | — | — | 15 |
+| Merced | 2,975 | 12 | **2,956** | — | 1 | 6 |
+| San Diego Miramar | 1,643 | **1,452** | — | — | 3 | 188 |
+| Moreno Valley | 1,055 | 79 | 530 | — | **401** | 45 |
+| City College of San Francisco | 946 | **615** | — | 2 | 45 | 284 |
+| San Diego Mesa | 934 | **742** | — | — | 2 | 190 |
+| Long Beach City | 899 | 445 | — | **217** | 33 | 204 |
+| San Diego City | 753 | **522** | — | 1 | 7 | 223 |
 
 **The mix matters more than the total.** Miramar's 1,643 is one decision;
 Pierce's 10,680 is one phone call; Moreno Valley's 1,055 is three different jobs
 with three different owners.
+
+⚠️ **The P5 column is why the split mattered.** CCSF's 946 was going to be
+described as 899 rows resolving under one rule; **284 of them are rows where ACE
+says credit may be granted after the college evaluates.** Long Beach 204, San
+Diego City 223, Mesa 190, Miramar 188 — every large P1 college carried a
+substantial share.
 
 ---
 
@@ -249,9 +278,43 @@ corroborates the MAP Users finding: **Hartnell and Gavilan have plenty of active
 MAP users and nobody in a CPL role.** Finding the right person there is the first
 step, not the clean-up.
 
+### Priority 5 · Credit MAY be available if the college evaluates — **5,311 rows, 101 colleges, 3,898 students**
+
+**Not a defect, and the only class here that could still become credit for a
+student.** What the 5,311 rows actually say:
+
+| ACE's own words | rows | colleges |
+|---|---:|---:|
+| `Credit may be granted on the basis of an individualized assessment of the student` | 3,970 | 95 |
+| `Additional swimming … on the Basis of Institutional Evaluation` | 1,075 | 86 |
+| `Credit in surveying on the basis of institutional evaluation` | 171 | 57 |
+| other `… on the basis of institutional evaluation` (first aid, fire science) | 95 | 41 |
+
+⚠️ **Do NOT bulk-rule these Not Applicable.** The recommendation says the award
+is the college's call after its own assessment. Closing them records a refusal
+ACE never made.
+
+⚠️ **Its rank is READINESS, not value.** It is last because **nobody has ruled on
+the right disposition** when no evaluation has been done — is it Not Applicable,
+does it stay Needs Action, or is it a distinct "college evaluation required"
+state MAP does not currently have? That is a question for Sam and the MAP team,
+and the worklist says so rather than guessing. Until then it is deliberately
+**not** an instruction to send.
+
+⭐ **A small number of ACE exhibits repeating widely**, so one ruling covers most
+of the class — 75% of it is a single sentence about individualized assessment,
+and another 20% is swimming.
+
+⚠️ **A row saying "institutional evaluation" is only here if it also carries ZERO
+hours.** 807 rows mention institutional evaluation *and* carry units — those are
+real recommendations with a note attached, not this class, and they are correctly
+absent.
+
 ## Next
 
-- Work P1 as one instruction to ~100 colleges, not 100 conversations.
+- Work P1 as one instruction to ~100 colleges, not 100 conversations — **it is
+  now safe to send**, which it was not before the P1/P5 split above.
+- **Get Sam's ruling on P5** before anything goes to a college about those rows.
 - Take P2 to **Pierce and Merced directly** — two calls, 94% of the class.
 - Ask the **nine Initiator colleges** what is stalling.
 - The list is live; it will move nightly with the load.

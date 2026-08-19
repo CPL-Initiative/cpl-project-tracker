@@ -57,21 +57,52 @@ returns void language plpgsql security definer set search_path = public as $$
 begin
   drop table if exists public.map_cleanup_worklist;
   create table public.map_cleanup_worklist as
-  with no_credit as (
+  -- ── Zero-unit recommendations, classified by WHAT THE TEXT SAYS ───────────
+  -- ⚠️ CORRECTED 2026-08-19 (session 172), BEFORE the P1 instruction went out.
+  -- The first cut put every zero-unit recommendation in one class, "cannot
+  -- yield credit", under one action: "Rule these Not Applicable. ACE has
+  -- already said no credit is recommended." That is FALSE for 5,311 rows
+  -- across 101 colleges, whose text is the opposite:
+  --
+  --   "0 hours in Credit may be granted on the basis of an individualized
+  --    assessment of the student"                                     3,933
+  --   "0 hours in Additional swimming on the Basis of Institutional
+  --    Evaluation"                                                    1,057
+  --   "0 hours in Credit in surveying on the basis of institutional
+  --    evaluation"                                                      ...
+  --
+  -- ACE is saying the college MAY award credit once it does its own
+  -- evaluation. Telling ~100 colleges to close those as Not Applicable, on the
+  -- stated grounds that ACE refused the credit, would manufacture a false zero
+  -- at scale — and a college that acts on it never learns the door was open.
+  -- So the reality classes are separated here and EACH CARRIES ITS OWN ACTION.
+  --
+  -- Two matcher misses found the same way, both now covered: the corpus
+  -- contains the misspelling "Credit Is Not Recommeded" (26 rows), and
+  -- "individual assessment" without the "-ized" (20 rows) fell through to the
+  -- residue bucket.
+  with zero_unit as (
     select college_id, student_key,
       case
-        when credit_rec ilike '%credit is not recommended%'   then 'ace-no-credit'
-        when credit_rec ilike '%individualized%'
-          or credit_rec ilike '%individualised%'              then 'ace-individualized'
-        else                                                       'zero-hour-rec'
+        -- 'recommen' covers recommended / recommend / the "recommeded" typo.
+        when credit_rec ~* 'credit is not recommen'            then 'ace-no-credit'
+        -- ACE defers to the college. NOT a refusal.
+        when credit_rec ~* 'individuali[sz]ed assessment'
+          or credit_rec ~* 'individual assessment'
+          or credit_rec ~* 'institutional evaluation'          then 'college-evaluation'
+        -- The recommendation's own validity window has closed.
+        when credit_rec ~* 'valid for the dates'               then 'expired-window'
+        else                                                        'zero-hour-other'
       end as sub
     from public.map_student_credit
     where cpl_status_plan = 'Needs Action'
-      and (credit_rec ilike '%credit is not recommended%'
+      and (credit_rec ~* 'credit is not recommen'
         or credit_rec ilike '%individualized%'
         or credit_rec ilike '%individualised%'
         or credit_rec ~* '^\s*0\s+(hours?|semester)')
   ),
+  no_credit  as (select * from zero_unit where sub <> 'college-evaluation'),
+  may_evaluate as (select * from zero_unit where sub =  'college-evaluation'),
   plan_per_student as (
     select college_id, student_key,
            max(cpl_plan_status) as plan,
@@ -103,9 +134,26 @@ begin
     select college_id, 'recommendations that cannot yield credit' as class,
            sub as subclass, 1 as priority, 'one rule' as effort_shape,
            'college CPL staff' as owner,
-           'Rule these Not Applicable. ACE has already said no credit is recommended, so there is nothing to award and they only depress the disposition rate.' as action,
+           case sub
+             when 'ace-no-credit' then
+               'Rule these Not Applicable. ACE recommends no credit for this training, so there is nothing to award and they only depress the disposition rate.'
+             when 'expired-window' then
+               'Rule these Not Applicable. The recommendation carries its own validity window and that window has closed, so it cannot be articulated as written.'
+             else
+               'Zero-unit recommendation with no award to make. Read the recommendation text before ruling: this is the residue class, so check it does not say credit may be granted after your own evaluation.'
+           end as action,
            count(*) as rows, count(distinct student_key) as students, 0::numeric as units
     from no_credit group by 1,2,3
+    union all
+    -- NOT a defect and NOT priority 1: ACE is deferring to the college, so
+    -- credit MAY still be awarded. Priority 5 reflects READINESS, not value —
+    -- it is last because nobody has ruled on the disposition yet, and it is the
+    -- only class here that could still turn into credit for a student.
+    select college_id, 'credit MAY be available if the college evaluates', sub, 5,
+           'needs a ruling', 'Sam / MAP team',
+           'ACE says credit MAY be granted on the basis of the college''s own individualized assessment or institutional evaluation. This is NOT a refusal, so do NOT bulk-rule it Not Applicable: a college that closes these never learns the door was open. Needs a ruling on the right disposition when no evaluation has been done.',
+           count(*), count(distinct student_key), 0::numeric
+    from may_evaluate group by 1,2,3
     union all
     select college_id, 'plan says Transcribed but no units recorded', sub, 2,
            case when sub = 'transcribed-no-units-batch' then 'upstream' else 'per row' end,
@@ -160,6 +208,9 @@ end $$;
 comment on table public.map_cleanup_worklist is
   'Prioritised per-college CPL clean-up list, rebuilt nightly by map_promote_custom_reports(). '
   'Ranked by DECISIONS not rows: priority 1 resolves under one rule per college. '
+  'Priority 5 is NOT a defect class - ACE says credit MAY be granted after the college''s '
+  'own evaluation, so it must never be bulk-ruled Not Applicable; its rank reflects '
+  'READINESS (nobody has ruled on the disposition), not value. '
   'Team-phrase gated because every row is a per-college AGGREGATE - no student grain '
   'survives the group-by, so Customer Success does not need reviewer access. '
   'NO k-anonymity: internal team tool, never a public surface.';
