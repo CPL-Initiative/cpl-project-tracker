@@ -960,6 +960,72 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   `docs/cpl_funding_lessons.md` (Session 2).
 - Separate from live metrics scraping; handles project-level data storage.
 
+
+#### 8a. The MAP Custom Report load — `map_*` tables (Session 171, 2026-08-19)
+
+**The whole `map_*` family is loaded by ONE nightly transaction.**
+`.github/workflows/map-custom-report-load.yml` fires at **13:40 UTC** (after the
+last dashboard window 12:17 and after `credential-catalog-sync` 13:20, so the
+three do not contend): fetch → staging → `map_promote_custom_reports()` → live.
+Runbook: [`docs/map_custom_report_load.md`](../map_custom_report_load.md).
+
+| table | rows | gate | written by |
+|---|---:|---|---|
+| `map_student_credit` | 591,820 | **`is_allowed_reviewer()` — REVIEWER ONLY** | the promotion |
+| `map_college_cr_unit` | 211,005 | `is_allowed_reviewer() OR team_pass_ok()` | the promotion |
+| `map_college_goal2` | 171 | reviewer OR team phrase | `rebuild_map_college_goal2()` |
+| `map_college_credit_summary` | 112 | reviewer OR team phrase | `rebuild_map_college_credit_summary()` |
+| `map_cleanup_worklist` | 383 | reviewer OR team phrase | `rebuild_map_cleanup_worklist()` |
+| `map_transcribed_gap` | 270 | reviewer OR team phrase | `rebuild_map_transcribed_gap()` |
+| `stg_map_college_cr_unit` · `stg_map_student_credit` | — | **no policies, revoked from anon/authenticated** | the loader |
+| `map_student_key_sketch` | 2,000 | server-only | the loader |
+
+⚠️ **`map_student_credit` and `map_college_cr_unit` DO NOT SHARE A POLICY.** The
+articulation table accepts the team phrase; the student-grain table is
+**reviewer-only**. Restoring the wrong one hands 591,820 student-grain rows to
+every phrase holder, and the tab looks completely normal afterwards.
+
+⭐ **That trap no longer exists as a step**, and that is deliberate: the promotion
+replaces table **CONTENTS** (`truncate` + `insert`, both transactional in
+Postgres), never the table, so policies, grants and indexes are never dropped.
+Only the four rebuilt aggregate/worklist tables are `DROP`/`CREATE`d, and they
+re-declare their own policies inside their own functions.
+
+**Gates, all FAIL CLOSED** — a raised exception rolls the whole transaction back
+and live is untouched (proven: a client timeout mid-promotion left live
+byte-identical):
+
+- **G1–G6** empty staging · >10% shrink in rows or students · **G5 the privacy
+  tripwire, the surrogate must be dense 1..N with no nulls** · colleges vanishing
+- **G7/G8** refuse to *publish* a recoverable suppression in `map_college_goal2`
+  (one hidden cell beside a visible sibling is recoverable by subtraction). Tests
+  the **property**, not the flag.
+- **G9** refuses if any rebuilt team-facing table lost its team-phrase gate —
+  checked as a **list**, so adding a rebuild without gating it fails here rather
+  than shipping quietly.
+- **WARN only** (never blocks): a new `course_type` landing in goal2
+  `dest='UNKNOWN'`; any shrink in `cr_unit` (expected cause is the catalog-year
+  roll-forward).
+
+**Identity + privacy.** `StudentMAPID` is salt-hashed (Pedro Campos, ITPI, via
+Sam) and **never stored** — the loader derives a dense surrogate inside the pull
+and discards it. `student_key` is therefore a **counting surrogate, not stable
+across pulls**; Sam confirmed 2026-08-19 it is not stored elsewhere and never
+joined, and it appears only inside `count(distinct …)` in
+`supabase_map_college_goal2.sql`, `supabase_map_college_credit_summary.sql` and
+`supabase_credential_volume.sql`. **Do not build anything that follows a student
+across pulls off it.** `map_student_key_sketch` is a 2,000-hash **min-hash
+sketch** for salt-rotation regression — a sample, never a student map.
+
+**Blank handling is PER TABLE** — the two live tables genuinely disagree, so each
+contract is mirrored separately: `map_college_cr_unit` is NOT NULL on every
+numeric (zero-fill); `map_student_credit` is nullable on
+`applied_credits`/`transcribed_credits` and holds nulls; **text columns store
+`''` on both — never map an empty string to NULL.**
+
+⚠️ **`applied_credits` only means "applied" where the disposition says so** — it
+is identical to `articulated_credits` on all 462,355 `Needs Action` rows.
+
 ### 9. EACR Exhibit Identity — current state and future direction
 
 **Current grouping (shipped 2026-05-18):** the Exhibit Adoption & Credit
