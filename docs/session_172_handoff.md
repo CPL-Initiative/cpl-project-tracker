@@ -147,6 +147,38 @@ Two things worth telling him unprompted, because they change what can be built:
 
 ---
 
+## §B2 · The clean-up worklist is LIVE — `map_cleanup_worklist`
+
+Sam asked whether the analysis would "turn up a prioritized clean up list for the
+team to follow up on." It did, and it is a live reviewer-gated view that rebuilds
+itself off the nightly load. Read
+[`docs/map_cleanup_worklist.md`](map_cleanup_worklist.md) — it is the authority.
+
+**Ranked by DECISIONS, not rows**, with an `effort_shape` per class:
+
+| P | class | size | shape |
+|---|---|---|---|
+| 1 | recommendations that cannot yield credit | 17,594 rows, ~100 colleges, **0 units** | **one rule** |
+| 2 | plan says Transcribed, no units recorded | 14,348 rows / 4,196 students | 2a **upstream**, 2b per row |
+| 3 | marked Applied with zero applied units | 413 rows, 10 colleges | per row |
+| 4 | articulations waiting on approval | **2,225 articulations**, ~45 colleges | per row, named owner |
+
+⚠️ **P2 is the biggest by rows and the smallest by effort — 94% is Los Angeles
+Pierce (1,842 students, 73% of its own) and Merced (1,787).** Two conversations,
+and it is an ingest gap, not curation: the credit was recorded, the unit amounts
+never landed.
+
+⚠️ **Initiator is 1,026 articulations across only NINE colleges** — a stalled
+queue at a handful of institutions, not a statewide condition.
+
+⚠️ **Clearing P1 raises every disposition rate without awarding a unit**, because
+it shrinks the denominator. Legitimate, but say so when the rate moves.
+
+**NEXT:** work P1 as one instruction to ~100 colleges; take P2 to Pierce and
+Merced directly; ask the nine Initiator colleges what is stalling.
+
+---
+
 ## §C · Carryover
 
 - **Ashley's Delta crosswalk — untouched for three handoffs.** Record which of
@@ -161,6 +193,15 @@ Two things worth telling him unprompted, because they change what can be built:
   run held it flat — archived the Sky169 narrative to pay for the new one — but
   did not reduce it. The `Troubleshooting` section is the obvious candidate for
   `docs/reference/`.
+- **⚠️ A CONFLICT NEEDS SAM, do not resolve it alone.** `cpl_memory:
+  applied-measure-fork-55-percent` is **verified** and carries his ruling
+  *"publish both and name the gap"*. On the new data the fork does not
+  reproduce: scoped to rows actually marked Applied, the two measures agree to
+  **0.1%** (30,055 vs 30,091 students). The cause is that `applied_credits` is
+  **identical to `articulated_credits` on all 462,355 Needs Action rows**, so an
+  unscoped `applied_credits > 0` measures the wrong thing in both directions.
+  Filed as `applied-credits-mirrors-articulated-on-needs-action-rows`, flagged
+  rather than superseded, per Rule 8. §11 keeps the old figure until he rules.
 - Auth `role` column, repo split, GR sensitivity flips — all still on Sam.
 
 ---
