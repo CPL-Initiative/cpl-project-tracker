@@ -9,57 +9,57 @@
     "other": 150000
   },
   "summary": {
-    "files": 557,
-    "bytes": 6322982,
+    "files": 562,
+    "bytes": 6356485,
     "over_budget": 5,
-    "handoff_max": 169,
+    "handoff_max": 170,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 114945,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 115917,
+    "superseded_files": 1,
+    "superseded_bytes": 6291,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 114945,
+        "bytes": 115917,
         "over": 1
       },
       "other": {
-        "files": 68,
-        "bytes": 1658468,
+        "files": 69,
+        "bytes": 1668715,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 231559,
+        "bytes": 227608,
         "over": 1
       },
       "lessons": {
-        "files": 62,
-        "bytes": 1626793,
+        "files": 63,
+        "bytes": 1637498,
         "over": 2
       },
       "kb_note": {
-        "files": 276,
-        "bytes": 1505068,
+        "files": 278,
+        "bytes": 1513663,
         "over": 0
       },
       "handoff": {
-        "files": 149,
-        "bytes": 1186149,
+        "files": 150,
+        "bytes": 1193084,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
-      "stacked_roadmap_cell": 1,
       "kb_note_dialect": 60,
+      "superseded_handoff": 1,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2019,
-      "bytes": 1146872500,
-      "heavy_bytes": 587636675,
-      "heavy_share": 0.512,
+      "files": 2026,
+      "bytes": 1154335600,
+      "heavy_bytes": 587929845,
+      "heavy_share": 0.509,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -113,44 +113,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 114945,
+        "bytes": 115917,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 54945,
-        "ratio": 1.92
+        "over_by": 55917,
+        "ratio": 1.93
       },
-      "message": "114,945 B is 1.9× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
-      "rule": "stacked_roadmap_cell",
-      "fixable": false,
-      "detail": {
-        "cells": [
-          {
-            "row": "EACR — Exhibit & CR Adoption",
-            "chars": 5492,
-            "priors": 0,
-            "corrections": 1
-          }
-        ],
-        "cell_max": 4000,
-        "prior_max": 1
-      },
-      "message": "1 roadmap cell(s) have become append-only logs — worst is \"EACR — Exhibit & CR Adoption\" at 5,492 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
+      "message": "115,917 B is 1.9× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 231559,
+        "bytes": 227608,
         "limit": 40000,
         "lane": "index",
-        "over_by": 191559,
-        "ratio": 5.79
+        "over_by": 187608,
+        "ratio": 5.69
       },
-      "message": "231,559 B is 5.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "227,608 B is 5.7× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -876,6 +858,17 @@
       "path": "docs/roadmap_archive.md"
     },
     {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 169,
+        "authoritative": 170,
+        "has_frontmatter": true
+      },
+      "message": "handoff 169 is below the authoritative 170 but is not stamped `superseded: true`",
+      "path": "docs/session_169_handoff.md"
+    },
+    {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/reference",
@@ -910,10 +903,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 12320477,
+        "bytes": 12609875,
         "kind": "dir"
       },
-      "message": "directory totals 12,320,477 B inside the vault"
+      "message": "directory totals 12,609,875 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1070,10 +1063,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8695600,
+        "bytes": 8699370,
         "kind": "file"
       },
-      "message": "8,695,600 B single file inside the vault"
+      "message": "8,699,370 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1150,10 +1143,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6258819,
+        "bytes": 6258820,
         "kind": "file"
       },
-      "message": "6,258,819 B single file inside the vault"
+      "message": "6,258,820 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -1230,10 +1223,10 @@
       "fixable": false,
       "path": "credential_reference_data.js",
       "detail": {
-        "bytes": 3007259,
+        "bytes": 3007260,
         "kind": "file"
       },
-      "message": "3,007,259 B single file inside the vault"
+      "message": "3,007,260 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

@@ -1,80 +1,68 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · Sky168 — the GR register was audited hard, the things it had quietly dropped are back, and the GR phrase no longer opens the whole workplan.",
-  "_session": 168,
-  "_status": "Two things shipped. First, every COBI page now carries a plain notice that it is an experimental data suite in Alpha development, and '(Alpha)' rides in the page title so a link pasted into Teams or Slack says so before anyone clicks. Second, the GR Priorities tab was rebuilt for the General Counsel demo. It used to be one fixed document about one topic that nobody could add to. It is now a register: you pick a priority area, you see the revisions under consideration with the exact Title 5 or Ed. Code sections they touch, you can search and filter them, and you can add new areas, revisions and source documents yourself. The section filters only became possible because the legal citations were pulled out of the prose and made into real data — and that unlocked something nobody asked for: the tab can now show when two different priority areas are both proposing to change the same section, which is the kind of collision that otherwise only surfaces during rulemaking. One thing to know before the demo: the GR phrase currently also opens every shared team tab, so General Counsel cannot be given a phrase until that is scoped.",
+  "_as_of": "2026-08-19 · Sky169 — repo posture and the auth model got measured and recommended; next up is the three new MAP Custom Reports.",
+  "_session": "Session 169 (SkyRegister)",
+  "_status": "Two questions got answered this run, and both premises turned out to be partly wrong, which is where the value was. On the repos: two of the three are ALREADY out of Sam's personal account (they belong to the CPL-Initiative organisation) and CPLBrain was already private — so the real gap was that the organisation had only ONE owner. Sam has since made Pedro Campos an owner on the Supabase side. On going private: it would NOT make COBI private — on the free plan it takes the whole site dark, and on any paid plan below Enterprise the published site stays public either way. What private DOES hide is the half worth protecting: 555 methodology documents, 149 generators, Sierra's whole retrieval design. Sam's concern is proliferation, not privacy, and the licence already says All Rights Reserved. The recommended shape is a SPLIT — Sierra, the Fact Sheet, the veteran map and the landing pages stay public where they are; COBI and the methodology move to a private repo. Scope doc merged (#1242). On sign-in: magic links already cover more of COBI than the shared phrases do, so the recommendation is magic link plus ONE role field — not groups. The reviewer list went from 5 people to 10. Next session pivots to the three new MAP Custom Reports Sam has been waiting on.",
   "items": [
     {
-      "id": "s168-gr-phrase-holders",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "One thing to check: the GR phrase no longer opens the shared team tabs — it never needed to, and it was opening 42 tables it has no use for. If anyone holds ONLY the GR phrase, they will have lost the Workplan and the rest and should be given the shared team phrase. Undoing it is a one-line change if that is easier."
+      "for": "sam",
+      "text": "Decide whether the public Knowledge Base stays CC BY 4.0 — its licence currently lets anyone remix our methodology commercially, which is the one thing working against what you asked for.",
+      "tag": "decision"
     },
     {
-      "id": "s168-gr-verify-queue",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "The CPL area says 0 of 16 entries have had their citations checked against the primary source. That is honest — the citations were pulled out of the prose by machine and nobody has confirmed them. Open a row and press 'Mark citations verified' as you check each one; the tab counts them off, and the warning banner can retire once they are all done."
+      "for": "sam",
+      "text": "Check whether the CPL-Initiative GitHub organisation has a second OWNER. You added Pedro on Supabase, but GitHub is where the website, the 29 scheduled jobs and the 8 secrets live.",
+      "tag": "access"
     },
     {
-      "id": "s168-gr-demo-walkthrough",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Open the GR tab (?org=gr) and walk it as if you were General Counsel. Pick the Dual Enrollment sample area — it is deliberately neutral prompts, not our positions — then switch to CPL. Save the cross-area section list for last; it is the thing they cannot get from a folder of Word documents."
+      "for": "sam",
+      "text": "Look at the billing page and tell us if GitHub is on Free or Team — the private-repo step cannot start on Free without taking the site down.",
+      "tag": "decision"
     },
     {
-      "id": "s168-gr-retire-phrase",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Worth considering: drop the shared phrase for GR entirely and use sign-in instead. A shared phrase cannot say who read or changed anything, cannot be revoked for one person, and can be guessed. Everyone who needs GR would need a sign-in account first — tell us who that is and we can check them before anything changes."
+      "for": "sam",
+      "text": "Say go (or not) on the sign-in change: magic link plus one role per person, no groups. Nothing goes dark during the switch.",
+      "tag": "decision"
     },
     {
-      "id": "s168-gr-open-sections",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "A bigger idea to react to: which sections are under review is public law, but our position on them is not. We have built the switch to separate the two, defaulted to closed so nothing changed. Flipping it would let the whole Chancellor's Office see the section list while positions stay private — that is what would make this a CO tool rather than a MAP tool."
+      "for": "sam",
+      "text": "Ask Pedro for the three viewName values and column lists for the new Custom Reports — that is all we need, and it is much less work for him than the automation he offered.",
+      "tag": "map"
     },
     {
-      "id": "s168-gr-priority-list",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Send the authoritative list of Chancellor's Office priority areas when you have it (CPL, dual enrollment, baccalaureates, SCFF, climate, professional development, financial aid…). Until then anyone signed in can type an area title straight into the tab."
+      "for": "sam",
+      "text": "Confirm nobody is stranded by the GR phrase change — anyone who holds ONLY the GR phrase now needs the shared team phrase too.",
+      "tag": "access"
     },
     {
-      "id": "s168-gr-editing",
-      "for": "Fable",
-      "tab": "gr-priorities",
-      "text": "Add editing. Right now you can add an area, a revision or an artifact but you cannot change or delete one, and a review workflow is mostly revising. The history table and triggers that record who changed what are already live and waiting for it."
+      "for": "sam",
+      "text": "Tell the four new people they can now sign in with a magic link from the About menu instead of typing a shared phrase.",
+      "tag": "access"
     },
     {
-      "id": "s168-sierra-kb-stale",
-      "for": "Sam",
-      "tab": "chatbot",
-      "text": "Sierra's document knowledge base was last indexed on 19 July and is fed from your private vault by a tool outside this project. If General Counsel starts contributing documents, that pipeline needs an owner — right now it does not appear to have one."
+      "for": "fable",
+      "text": "Fetch the three new MAP Custom Reports and compare them against Supabase. First establish whether they are on the API we already use, or only in the report builder.",
+      "tag": "map"
     },
     {
-      "id": "s167-region-lists",
-      "for": "Sam",
-      "tab": "college-briefing",
-      "text": "Two of the five choices on My College are switched off: Strong Workforce region and Academic Senate region. We could not find either grouping in anything we hold — you said they are on the MAP Dashboard. If you can get us a list of which college belongs to which, both switch on the same day. We deliberately did NOT guess from the region data we do have, because it is a different set of boundaries and would have quietly put colleges in the wrong group."
+      "for": "fable",
+      "text": "Treat the comparison as a reconciliation, not a load — where the new extract disagrees with Supabase, it is probably our stale copy resolving, and that needs confirming rather than fixing.",
+      "tag": "map"
     },
     {
-      "id": "s167-briefing-filename",
-      "for": "Sam",
-      "tab": "college-briefing",
-      "text": "The new My College briefing downloads as a Word document named starting with the date (20260817_...). The older Custom Report puts its date at the end instead. Worth picking one so your folder sorts properly — say which and we will make them match."
+      "for": "fable",
+      "text": "Work out what Catalog Year unlocks — it is the one genuinely new field, and it lets an articulation be pinned to the catalog it was approved under.",
+      "tag": "map"
     },
     {
-      "id": "s167-glyph-sweep",
-      "for": "Sam",
-      "tab": "fact-sheet",
-      "text": "Sierra now uses plain words instead of emoji everywhere she appears. But the Fact Sheet's own buttons still have them (the Word and Print buttons), so that row now has one plain button between two with icons. Same for the To-Do and signed-in labels on every tab. Say the word and we will finish the sweep — it is a few minutes."
+      "for": "fable",
+      "text": "When Sam gives the go: add the role column to the reviewer list, leaving all 132 existing permission rules untouched.",
+      "tag": "auth"
     },
     {
-      "id": "s163-noncredit-fourth",
-      "for": "Sam",
-      "tab": "Exhibit & CR Adoption",
-      "text": "You said 115 credit colleges and 4 noncredit campuses. The 115 matches exactly. We can only find 3 noncredit — North Orange Continuing Education, San Diego College of Continuing Education, and Calbright. The fourth is Mt. SAC's noncredit side, and it does not exist as its own entry anywhere in MAP, so it cannot be a column until it does. Worth deciding whether MAP should carry it separately."
+      "for": "fable",
+      "text": "Move Sierra and the veteran map to their own public repo — zero risk, no decisions attached, and it proves the split works before the harder half.",
+      "tag": "repo"
     }
   ]
 }
