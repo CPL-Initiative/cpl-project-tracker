@@ -76,4 +76,4 @@ comment on table public.map_transcribed_gap is
   'question, not the answer: the credit may have been transcribed and not '
   'recorded, or never transcribed at all. Team-phrase gated; rebuilt nightly.';
 
-revoke all on function public.rebuild_map_transcribed_gap() from anon, authenticated;
+revoke all on function public.rebuild_map_transcribed_gap() from public, anon, authenticated;

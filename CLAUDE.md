@@ -311,7 +311,14 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
    INSERT-only `ON CONFLICT DO NOTHING` under a cohort `reviewer_email`
    (`<lane>-s<N>@bot`) with a committed receipt; guarded UPDATEs only where a
    reviewed plan explicitly says so. (b) `kb_curation` reads via PostgREST
-   MUST be Range-paginated (#718). (c) The sandbox cannot reach
+   MUST be Range-paginated (#718). (b2) **`revoke ... on function f() from anon,
+   authenticated` DOES NOT WORK** — Postgres grants EXECUTE to **PUBLIC** at
+   creation and anon inherits through it, so the statement protects nothing.
+   **Name `public`**, and check `has_function_privilege('service_role', …)`
+   holds an EXPLICIT grant before you revoke PUBLIC, or the same statement
+   breaks the cron. Six definer functions that truncate live tables were
+   internet-reachable this way (2026-08-19); `tests/supabase_function_grants_test.py`
+   lints it now. (c) The sandbox cannot reach
    `*.supabase.co` — all Supabase access goes through the MCP tools.
    (Promoted 2026-07-10 from the rotating handoff "Safety patterns" blocks —
    these are standing production-safety orders, not session lore. Worked
@@ -787,7 +794,8 @@ Story: `docs/map_custom_reports_lessons.md` · runbook `docs/map_custom_report_l
 ⭐ **The fix already existed a few lines away, written the same day** — `map_promote_custom_reports()` swaps live with TRUNCATE and says why in its own comments. The staging half kept the DELETE. *A lesson recorded inside one function is not a lesson applied to the pipeline.*
 ⚠️ **It would have failed EVERY night**: runs 1–3 met a small staging table, run 4 met a full one, and staging is full after every success. **A manual run tests a state the schedule never sees again.**
 Fixed with `map_clear_custom_report_staging()` — **5.3 s** on the same 802,825 rows — which takes **NO ARGUMENT**, so the pipeline's one destructive call has no table name to get wrong (the `assert table.startswith("stg_")` it replaces left the student-grain table one bad string away). Three mutations caught; applied and run against full staging before merge, live untouched.
-Durable: [`methodology-a-gate-cannot-protect-the-step-that-fills-it`](docs/kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) · story `docs/map_custom_reports_lessons.md` · handoff `docs/session_173_handoff.md`.
+🔒 **AND THE ACL, WHICH OUTRANKS THE OUTAGE.** Writing the new function meant writing the same `revoke ... from anon, authenticated` line the workstream already used; **checking it instead of trusting it** showed `proacl {=X/postgres,...}` — the empty grantee is **PUBLIC**, anon inherits through it, and the revoke protects **nothing**. **SIX security-definer functions were callable with the PUBLISHED anon key**, including the promotion that truncates both live tables. ⭐ The correct idiom was **already in this repo twice** (`cpl_funding_optin_review`, `gr_pass_check` name `public`) — two spellings of one intent, one silently inert, so it is a **lint**: `tests/supabase_function_grants_test.py`, wired to js-tests. ⚠️ **`service_role`'s EXPLICIT grant was verified on all six BEFORE revoking PUBLIC** — had its privilege come only from PUBLIC, the same statement would have broken the cron. Now anon `false` / service_role `true` on all six.
+Durable: [`methodology-a-gate-cannot-protect-the-step-that-fills-it`](docs/kb-notes/methodology-a-gate-cannot-protect-the-step-that-fills-it.md) · [`methodology-revoking-from-anon-does-not-remove-the-public-grant`](docs/kb-notes/methodology-revoking-from-anon-does-not-remove-the-public-grant.md) · story `docs/map_custom_reports_lessons.md` · handoff `docs/session_173_handoff.md`.
 
 ## Troubleshooting
 

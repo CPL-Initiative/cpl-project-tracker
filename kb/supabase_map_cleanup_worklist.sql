@@ -164,4 +164,4 @@ comment on table public.map_cleanup_worklist is
   'survives the group-by, so Customer Success does not need reviewer access. '
   'NO k-anonymity: internal team tool, never a public surface.';
 
-revoke all on function public.rebuild_map_cleanup_worklist() from anon, authenticated;
+revoke all on function public.rebuild_map_cleanup_worklist() from public, anon, authenticated;

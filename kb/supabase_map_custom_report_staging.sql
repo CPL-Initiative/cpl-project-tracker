@@ -144,4 +144,4 @@ begin
   return jsonb_build_object('cr_unit_was', was_cr, 'student_was', was_st);
 end $$;
 
-revoke all on function public.map_clear_custom_report_staging() from anon, authenticated;
+revoke all on function public.map_clear_custom_report_staging() from public, anon, authenticated;

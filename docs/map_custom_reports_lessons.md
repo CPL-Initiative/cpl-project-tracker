@@ -550,6 +550,45 @@ promotion.
 - The function was applied to Supabase and run against the full staging tables
   before any of this was merged. Live was never touched.
 
+### (c2) And then the ACL, which is the finding that outranks the outage
+
+Adding the new function meant writing the same `revoke ... from anon,
+authenticated` line the workstream already used. Checking whether it worked —
+rather than trusting it — turned up this:
+
+```
+proacl: {=X/postgres,postgres=X/postgres,service_role=X/postgres}
+         ^^ empty grantee = PUBLIC holds EXECUTE
+select has_function_privilege('anon','public.map_promote_custom_reports()','execute')  ->  true
+```
+
+⚠️ **`revoke ... from anon, authenticated` does not remove a PUBLIC grant.**
+Postgres grants EXECUTE to PUBLIC at creation, anon and authenticated are
+members of PUBLIC, and privileges are additive. The statement succeeds, reports
+nothing, and protects nothing.
+
+**Six security-definer functions were callable with the published anon key** —
+`map_promote_custom_reports` (truncates both live tables and rebuilds the
+published aggregates), `rebuild_map_college_goal2`,
+`rebuild_map_college_credit_summary`, `rebuild_map_cleanup_worklist`,
+`rebuild_map_transcribed_gap`, and the new staging clear. The anon key ships in
+the dashboard JS in a public repo.
+
+⭐ **The correct idiom was already in this repo, twice** —
+`cpl_funding_optin_review` and `gr_pass_check` both name `public`. Two spellings
+of one intent, one of which silently does nothing, is a lint rather than a style
+preference: `tests/supabase_function_grants_test.py` now fails the build on the
+wrong one, and runs in the js-tests check.
+
+⚠️ **Verified `service_role` held an EXPLICIT grant on all six BEFORE revoking
+PUBLIC.** If its privilege had come only from PUBLIC, the fix would have broken
+the nightly load — the revoke is the same statement either way, and only the
+check tells them apart. Post-revoke: anon `false`, service_role `true` on all six.
+
+⚠️ This is **not** an RLS question. RLS gates the rows a query sees; a
+`security definer` function bypasses it by design. **The EXECUTE grant is the
+only thing between a destructive definer function and the internet.**
+
 ### (d) Next concrete step
 
 1. **The 13:40 UTC run tomorrow is still the proof.** It is the first firing on
