@@ -114,3 +114,62 @@ the same defect as a missing one.
    not just who created it. Today rows are append-only from the UI.
 4. Load the authoritative CO priority-area list when Sam has it (the area picker
    accepts typed titles until then).
+
+---
+
+## 2026-08-19 — the adversarial audit, and what a faithful migration still lost
+
+Six lenses over the register (authorization, injection, citation correctness,
+migration fidelity, failure modes, test quality), every candidate facing two
+independent skeptics prompted to refute. **~38 candidates → 8 confirmed, 28
+refuted.** Most refutations read *"already fixed at HEAD"* — the fixes landed
+while it verified.
+
+### The finding that mattered
+
+**The "before this goes external — verify" caveat was migrated and never
+rendered.** It records that the CPL area's quoted statutory text was never
+checked against primary sources (the sandbox could not reach leginfo, Cornell or
+cccco.edu). Sixteen priorities, confident citations, no disclaimer, for lawyers.
+
+A verifier sharpened the reasoning past mine: the mitigation one reaches for —
+*"it's behind a phrase and a sign-in"* — is exactly the argument that fails,
+because `draftWord()` writes a file that leaves the gate, the RLS and the room as
+an attachment. The caveat now renders above the register **and travels inside the
+export**.
+
+Three more were migrated-and-unrendered (the sequenced ask, four legal-accuracy
+corrections, the `Draft · date` stamp), and one was never migrated at all: the
+**13-priority blast-radius layer** with its "why it matters" prose, cross-keyed
+to the matrix by strings like `#6 / #13 / #16`. Recovered by parsing those:
+**16 of 16 rows, 13 distinct ranks, all with prose.** Durable write-up:
+[`methodology-migrate-the-display-not-just-the-data`](kb-notes/methodology-migrate-the-display-not-just-the-data.md).
+
+### Where the audit beat the author
+
+- I fixed `tag()`'s escaping and stopped. A verifier reproduced the other half:
+  the lookup table was a plain object, so a pathway of `"toString"` resolved
+  through `Function.prototype` and the export printed `UNDEFINED`.
+- On the false-zero fix I was told I had **understated** it — `nextN` derives
+  from the same collapsed list, so adding a revision to an area whose 16 rows had
+  not loaded would number the new one `1`. The display bug was also a write bug.
+
+Both are the same shape: **a partial fix reads as a complete one**, because the
+symptom you checked is gone.
+
+### Also landed
+
+Phrase scope applied (`team_pass_check()` excludes `gr`; verified before/after —
+exactly one bit changed, no Finance lockout). Attribution bound to the JWT by a
+BEFORE trigger. Dead `fetchDoc()` removed, which also cleared a phantom
+`gr_content` read from the Admin RLS inventory. Version history, per-field
+`sensitivity` (default `restricted`, nothing flipped), and a verification pass so
+the caveat reports "N of M verified" instead of disclaiming forever.
+
+Tests **71 → 125**.
+
+### Process note
+
+The workflow was sized at six lenses and fanned out to ~80 agents, because every
+finding drew two skeptics. That is well past this repo's under-15 guideline. It
+paid for itself, but the cap belongs on candidates-per-lens, not on lenses.

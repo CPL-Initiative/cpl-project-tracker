@@ -43,27 +43,39 @@ three tables; the trigger is the only writer, no write policy) and a `sensitivit
 column defaulting to `restricted` plus a `gr_open_sections` view
 (`security_invoker = on`). Both additive; **nothing was widened**.
 
+## The audit ran, and it is done
+
+Six lenses, ~38 candidates, **8 confirmed / 28 refuted**, all confirmed ones fixed
+(#1240). The headline: **a faithful migration still lost the point** — the
+"verify before external use" caveat was migrated and never rendered, and an
+entire 13-priority blast-radius layer was never migrated at all. Both recovered.
+Read [`methodology-migrate-the-display-not-just-the-data`](kb-notes/methodology-migrate-the-display-not-just-the-data.md)
+before you rewrite any surface in this repo.
+
 ## Do this next
 
-1. **Editing.** You can add but not change or delete. A review workflow is mostly
-   revising, so this is the biggest functional gap. The history triggers are already
-   live and waiting for it.
-2. **Whatever the adversarial audit surfaced** — Sky168 ran a 6-lens workflow over
-   the register (authz, injection, citation correctness, migration fidelity, failure
-   modes, test quality). Check the §11 row and the lessons doc for confirmed findings.
-3. **Load the real CO priority-area list** when Sam sends it; typed titles until then.
+1. **Editing.** You can add and you can set two per-row fields (verified,
+   sensitivity), but you cannot change a title or delete a row. A review workflow
+   is mostly revising. The history triggers are live and waiting for it.
+2. **Load the real CO priority-area list** when Sam sends it; typed titles until then.
+3. **Work the verification queue.** The tab reports "N of M verified" for the CPL
+   area and it is currently 0 of 16 — every citation there is machine-extracted
+   from prose. Verifying is the only event allowed to clear `citations_derived`.
 
 ## Blocked on Sam — do not act unilaterally
 
-- **Phrase scope.** The GR phrase opens *every* shared team tab (`team_pass_check()`
-  matches ANY secret). GC cannot be invited until this is scoped. It is a live RLS
-  change across ~30 tables; getting it wrong locks working people out mid-task.
-- **Retiring the GR phrase entirely** (Sky168's recommendation). A shared phrase has
-  no identity, no per-person revocation, and is guessable via an anon-callable RPC.
-  Reviewer-only reads already work. But flipping it locks out any current phrase
-  holder who is not a reviewer — **get the list of who needs access first.**
+- ✅ **Phrase scope — DONE** (`team_pass_check()` excludes `gr`). Verified before and
+  after: exactly one bit changed; `team`/`ci`/`fin` untouched, so no Finance
+  lockout. ⚠️ **Residual:** anyone holding ONLY the GR phrase has lost the shared
+  tabs. Intended, but they need the `team` phrase — confirm with Sam that nobody
+  is stranded. Rollback is one statement, in the migration body.
+- **Retiring the GR phrase entirely** (still recommended). Reviewer-only reads
+  already work. Flipping it locks out any phrase holder who is not a reviewer —
+  **get the list of who needs access first.**
 - **Flipping any row to `sensitivity = 'open'`.** That is the CO-wide disclosure
-  decision, not a code change.
+  decision, not a code change. Nothing is open today.
+- **Finance's phrase scope** stays parked — it genuinely shares 6 of the 42 tables,
+  so it needs the harder split. Not on the GC critical path.
 
 ## Patterns that worked
 
