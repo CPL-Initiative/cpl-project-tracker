@@ -547,6 +547,28 @@ honor them in normal work:
   `table-layout:fixed` + explicit colgroup — auto layout had silently parked
   columns past the wrap's right edge, per filtered row set; see
   [`docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md`](docs/kb-notes/methodology-fixed-table-layout-off-pane-columns.md).)
+- **ARTIFACTS AND PROTOTYPES USE FIRST LIGHT TOO — accessible and mobile-friendly
+  (Sam, 2026-08-19).** *"Make sure it is based on our First Light design and make it
+  always accessible and mobile friendly."* This is not only a dashboard-CSS rule: a
+  session built a decision artifact on an invented palette while the house spec sat in
+  the repo. **Do not invent a palette.** Spec:
+  [`docs/kb-notes/reference-ui-design-system.md`](docs/kb-notes/reference-ui-design-system.md)
+  + `prototype/first_light_theme_v1.html` v1.6 — warm monochrome base, five accents one
+  job each, Playfair Display + Source Sans 3, `var(--token)` never a raw hex (**derived
+  tints get their own tokens**), and **tables never on glass**.
+  **Accessible means verified, not claimed:** compute every fg-on-bg pair actually used
+  (including zebra rows and glass composites) against AA 4.5:1 / 3:1 —
+  `prototype/check_contrast.py` holds the maths; **colour is never the only signal**, so
+  pair every accent with a word or an approved mark (▲▼ ✓ ⚠) — that is what "always
+  glyph-paired" is for, and it does **not** conflict with the no-cheesy-glyphs rule
+  (decorative out, state-bearing stay, muted and simple); `th scope` on every header
+  cell; a focusable `aria-label`led region around any scrolling table; skip link;
+  `:focus-visible`; `prefers-reduced-motion`. **Mobile:** single column below ~560px,
+  `clamp()` type, no fixed widths, wide tables scroll inside their own container so the
+  body never scrolls sideways. ⚠️ `--border-strong` on white is 1.92:1 — a KNOWN spec
+  exemption (decorative; header identity comes from `th scope` + typography), do not
+  "fix" it by deviating. ⚠️ First Light is a **light** identity with no dark PAGE palette
+  (only on-dark ACCENT grades) — commit single-theme and paint every colour explicitly.
 - **Prototype UI in a fast-feedback canvas, then port.** For a new tab or visual
   rework, iterate the look in a Claude artifact / claude.ai (live preview), lock
   it with Sam, then implement into the monolith. In-repo analog: the EACR
