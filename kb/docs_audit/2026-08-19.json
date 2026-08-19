@@ -10,7 +10,7 @@
   },
   "summary": {
     "files": 575,
-    "bytes": 6495487,
+    "bytes": 6499552,
     "over_budget": 5,
     "handoff_max": 172,
     "always_loaded_files": 1,
@@ -25,7 +25,7 @@
       },
       "other": {
         "files": 72,
-        "bytes": 1709999,
+        "bytes": 1714064,
         "over": 1
       },
       "index": {
@@ -56,7 +56,7 @@
     },
     "vault": {
       "files": 2053,
-      "bytes": 1155041905,
+      "bytes": 1155047127,
       "heavy_bytes": 587929845,
       "heavy_share": 0.509,
       "ignore_filters": [
