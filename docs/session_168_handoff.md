@@ -1,3 +1,8 @@
+---
+superseded: true
+superseded_by: session_169_handoff.md
+---
+
 # Session 168 — handoff from Sky167 (Session 167, 2026-08-17)
 
 You are Session 168.
