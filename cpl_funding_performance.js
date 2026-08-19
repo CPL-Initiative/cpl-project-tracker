@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-18",
+ "as_of": "2026-08-19",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42361,
-  "pa": 39693,
-  "p2": 3676,
-  "p3": 15699,
+  "pe": 42425,
+  "pa": 39757,
+  "p2": 3728,
+  "p3": 15765,
   "pp": 5,
-  "pe_u": 1357334.45,
-  "pa_u": 220408.15,
-  "p3_u": 79392.45,
+  "pe_u": 1359590.45,
+  "pa_u": 221274.15,
+  "p3_u": 80255.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -67,7 +67,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 588,
    "pe_u": 25799.5,
    "pa": 581,
-   "pa_u": 8572.5,
+   "pa_u": 8580.5,
    "p2": 49,
    "p3": 50,
    "p3_u": 962.5,
@@ -174,10 +174,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Chaffey": {
-   "pe": 1496,
-   "pe_u": 32052.0,
-   "pa": 1492,
-   "pa_u": 18477.5,
+   "pe": 1497,
+   "pe_u": 32067.0,
+   "pa": 1493,
+   "pa_u": 18492.5,
    "p2": 15,
    "p3": 32,
    "p3_u": 240.0,
@@ -729,13 +729,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2422,
-   "pe_u": 51668.0,
-   "pa": 2093,
-   "pa_u": 12264.5,
-   "p2": 429,
-   "p3": 1971,
-   "p3_u": 11350.0,
+   "pe": 2431,
+   "pe_u": 51768.0,
+   "pa": 2102,
+   "pa_u": 12384.5,
+   "p2": 436,
+   "p3": 1986,
+   "p3_u": 11495.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -773,10 +773,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Norco College": {
-   "pe": 751,
-   "pe_u": 25688.5,
-   "pa": 750,
-   "pa_u": 6354.5,
+   "pe": 754,
+   "pe_u": 25767.5,
+   "pa": 753,
+   "pa_u": 6369.5,
    "p2": 153,
    "p3": 438,
    "p3_u": 3997.0,
@@ -861,10 +861,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Reedley College": {
-   "pe": 129,
-   "pe_u": 4817.5,
-   "pa": 110,
-   "pa_u": 532.5,
+   "pe": 130,
+   "pe_u": 4819.5,
+   "pa": 111,
+   "pa_u": 534.5,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -905,10 +905,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Bernardino": {
-   "pe": 306,
-   "pe_u": 9499.0,
-   "pa": 301,
-   "pa_u": 2614.0,
+   "pe": 307,
+   "pe_u": 9502.0,
+   "pa": 302,
+   "pa_u": 2617.0,
    "p2": 59,
    "p3": 87,
    "p3_u": 748.0,
@@ -949,10 +949,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Francisco": {
-   "pe": 1312,
-   "pe_u": 60996.0,
-   "pa": 1310,
-   "pa_u": 8934.0,
+   "pe": 1313,
+   "pe_u": 61004.5,
+   "pa": 1311,
+   "pa_u": 9005.5,
    "p2": 8,
    "p3": 15,
    "p3_u": 118.0,
@@ -1041,13 +1041,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santiago Canyon": {
-   "pe": 635,
-   "pe_u": 27026.0,
-   "pa": 633,
-   "pa_u": 15342.5,
-   "p2": 163,
-   "p3": 211,
-   "p3_u": 2660.0,
+   "pe": 682,
+   "pe_u": 29064.5,
+   "pa": 680,
+   "pa_u": 15964.0,
+   "p2": 208,
+   "p3": 262,
+   "p3_u": 3378.5,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -1177,10 +1177,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "West LA": {
-   "pe": 739,
-   "pe_u": 14622.0,
-   "pa": 739,
-   "pa_u": 8545.0,
+   "pe": 740,
+   "pe_u": 14632.0,
+   "pa": 740,
+   "pa_u": 8555.0,
    "p2": 497,
    "p3": 563,
    "p3_u": 7446.5,
@@ -1413,8 +1413,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Chaffey": {
    "Industry Certification": {
-    "pe": 20,
-    "pa": 18,
+    "pe": 21,
+    "pa": 19,
     "p3": 17
    },
    "Industry Certification | Military": {
@@ -2137,14 +2137,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 979,
-    "pa": 979,
-    "p3": 876
+    "pe": 978,
+    "pa": 978,
+    "p3": 881
    },
    "Standardized Assessment": {
-    "pe": 209,
-    "pa": 209,
-    "p3": 208
+    "pe": 219,
+    "pa": 219,
+    "p3": 218
    }
   },
   "Mt San Antonio": {
@@ -2212,8 +2212,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 518,
-    "pa": 518,
+    "pe": 521,
+    "pa": 521,
     "p3": 249
    },
    "Portfolio Review": {
@@ -2285,8 +2285,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 124,
-    "pa": 106,
+    "pe": 125,
+    "pa": 107,
     "p3": 0
    },
    "Portfolio Review": {
@@ -2349,8 +2349,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 22,
-    "pa": 20,
+    "pe": 23,
+    "pa": 21,
     "p3": 13
    },
    "Industry Certification | Military": {
@@ -2477,8 +2477,8 @@ window.CPL_FUNDING_PERF = {
   },
   "San Francisco": {
    "Industry Certification": {
-    "pe": 7,
-    "pa": 7,
+    "pe": 8,
+    "pa": 8,
     "p3": null,
     "p3_suppressed": true
    },
@@ -2587,16 +2587,18 @@ window.CPL_FUNDING_PERF = {
   },
   "Santiago Canyon": {
    "Industry Certification": {
-    "pe": 217,
-    "pa": 216,
-    "p3": 211
+    "pe": 264,
+    "pa": 263,
+    "p3": null,
+    "p3_suppressed": true
    },
    "Industry Certification | Portfolio Review": {
     "pe": null,
     "pe_suppressed": true,
     "pa": null,
     "pa_suppressed": true,
-    "p3": 0
+    "p3": null,
+    "p3_suppressed": true
    },
    "Military": {
     "pe": null,
@@ -2606,8 +2608,8 @@ window.CPL_FUNDING_PERF = {
     "pa_suppressed": true
    },
    "Portfolio Review": {
-    "pe": 308,
-    "pa": 307,
+    "pe": 307,
+    "pa": 306,
     "p3": 0
    }
   },
@@ -2723,8 +2725,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 14
    },
    "Industry Certification": {
-    "pe": 554,
-    "pa": 554,
+    "pe": 555,
+    "pa": 555,
     "p3": 537
    },
    "Industry Certification | Military": {
@@ -2824,9 +2826,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1202,
-   "pa": 1178,
-   "p3": 1094
+   "pe": 1253,
+   "pa": 1229,
+   "p3": 1143
   },
   "Industry Certification | Military": {
    "pe": 46,
@@ -2857,9 +2859,9 @@ window.CPL_FUNDING_PERF = {
    "p3": 0
   },
   "Industry Certification | Portfolio Review": {
-   "pe": 24,
-   "pa": 22,
-   "p3": 15
+   "pe": 25,
+   "pa": 23,
+   "p3": 17
   },
   "Industry Certification | Standardized Assessment": {
    "pe": null,
@@ -2870,9 +2872,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26388,
-   "pa": 24275,
-   "p3": 2462
+   "pe": 26391,
+   "pa": 24278,
+   "p3": 2467
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -2896,8 +2898,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Portfolio Review": {
-   "pe": 582,
-   "pa": 576,
+   "pe": 581,
+   "pa": 575,
    "p3": 115
   },
   "Portfolio Review | Standardized Assessment": {
@@ -2909,9 +2911,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4373,
-   "pa": 4371,
-   "p3": 3227
+   "pe": 4383,
+   "pa": 4381,
+   "p3": 3237
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -2919,14 +2921,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1356857.95,
-   "pa_u": 220408.15,
-   "p3_u": 79392.45
+   "pe_u": 1359113.95,
+   "pa_u": 221274.15,
+   "p3_u": 80255.95
   },
   "map": {
-   "pe_u": 1364218.45,
-   "pa_u": 221083.65,
-   "p3_u": 79417.45
+   "pe_u": 1366474.45,
+   "pa_u": 221949.65,
+   "p3_u": 80280.95
   },
   "ratio": {
    "pe_u": 1.0054,
@@ -3051,7 +3053,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-18",
+ "vet_star_as_of": "2026-08-19",
  "vet_star_threshold": 0.75,
  "vet_star_n": 56
 };
