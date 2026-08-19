@@ -16,8 +16,9 @@ related:
 
 You are **Session 172**. Session 171 was **SkyLoad**: the two new MAP Custom
 Report views are **loaded, reconciled, live, and on the nightly cron with no
-human in the loop** (§A). One question is open for Sam (§B). The Delta/SJCOE lane
-is **still untouched** — it has now carried across three handoffs (§C).
+human in the loop** (§A). **Both of Sam's open questions are settled** (§B), and
+the transcription defects have a follow-up list (§B3). The Delta/SJCOE lane is
+**still untouched** — it has now carried across three handoffs (§C).
 
 ⚠️ **Sam frequently runs several sessions at once.** Check `git log origin/main`
 before assuming your branch is the only work in flight.
@@ -116,34 +117,42 @@ These now change on every nightly run. That is Sam's decision, not a drift.
 
 ---
 
-## §B · Needs Sam — one question, and it is cheap for him
+## §B · Both questions are SETTLED — do not re-open them
 
-⚠️ **Which "transcribed" should the tabs mean?** It is both a lifecycle check and
-a numeric column, and they disagree by 3.2×:
+Sam ruled on both, 2026-08-19. They are recorded in `cpl_memory` as **verified**
+with him named. Read them; do not re-derive them.
 
-```
-rows carrying the CHECK   82,235
-rows with UNITS > 0       25,621
-rows with both            25,621     <- units are a STRICT SUBSET of the check
-```
+**Transcribed = UNITS, never the tick.** *"Transcribed refers to the whole
+student record even though it is stamped on CR rows. Only when transcribed units
+are present we count those as transcribed and the others are ignored."*
+It needed **no code change** — every published figure already sums units, and the
+only reader of `cpl_plan_status` is the clean-up worklist, which uses it to
+*find* the defect. `transcribed-means-units-not-the-tick`.
 
-56,614 rows are marked transcribed with zero units. Same shape as
-`applied-measure-fork-55-percent`, where his ruling was **publish both and name
-the gap**. The readings: the check says *a college marked the step done*; the
-units say *a quantity was recorded on this row*. Neither is wrong. Ask before
-the Course Credit tab or the $50k disposition work quotes either.
+⚠️ **The grain is planned to change.** Sam, same message: transcribed check marks
+on CR rows are coming, *"not ready yet."* So constant-within-student — 47,804 of
+47,804 today — is a **current** fact, not a permanent one.
+**Re-measure that test before trusting the student-grain assumption again**, and
+revisit `map_cleanup_worklist` + `map_transcribed_gap`, which both depend on it.
 
-Two things worth telling him unprompted, because they change what can be built:
+**The 55% applied fork is RETIRED; the ruling stands.** *Publish both and name
+the gap* remains; the figure does not. `applied_credits` is identical to
+`articulated_credits` on **all 462,355 Needs Action rows**, so unscoped it
+measures whether credit *exists*. Scoped to rows marked Applied the two agree to
+**0.1%** (30,055 vs 30,091 students). The old row is superseded **on Sam's
+explicit instruction**, which is what Rule 8 requires for a human-sourced row.
 
-- **`Status` is 91.2% blank** (539,894 of 591,820 — empty string, not null) and its top value is
-  **`Implementation` (45,302)**, not `Initiator` (2,918). Four non-null values
-  exist. It cannot be a facet — a chart on approval stage would describe 8.8% of
-  rows while looking like it described all of them.
+### Two facts worth carrying, neither of them a question
+
+- **`Status` is 91.2% blank** (539,894 of 591,820 — empty string, not null), top
+  value **`Implementation` (45,302)**, not `Initiator` (2,918). Four non-null
+  values exist. **It cannot be a facet** — a chart on approval stage would
+  describe 8.8% of rows while looking like it described all of them.
 - **`CPLPlanStatus` holds six checks, not two** — CPL Docs 477,287 · Transcribed
   82,235 · Ed Plan 45,529 · Analysis 36,489 · Counselor 23,106 · **Student**
-  20,457, over 41 combinations. Its delimiting is inconsistent (29,902 rows are
-  a bare `Transcribed` with no pipe), so split-and-strip; never assume a
-  trailing delimiter.
+  20,457, over 41 combinations, with inconsistent delimiting (29,902 rows are a
+  bare `Transcribed`, no pipe). Split-and-strip; never assume a trailing
+  delimiter.
 
 ---
 
@@ -202,6 +211,32 @@ Merced directly; ask the nine Initiator colleges what is stalling.
 
 ---
 
+## §B3 · Following up the defects — `map_transcribed_gap`
+
+Sam, 2026-08-19: *"For the defects you found we want to follow up on those."*
+
+**270 rows · 8 colleges · 46,496 units at stake.** Team-phrase gated, rebuilt in
+the same nightly transaction as the worklist. The worklist says a college *has*
+the problem; this says **where**, at the grain a college can search on in MAP —
+exhibit × catalog year — with the question to ask already written into the `ask`
+column.
+
+**Two calls cover 87%.** Los Angeles Pierce: 1,840 students, 46 exhibits,
+~35,200 units, all `MAPSAS` AP exhibits and **all still at Needs Action**.
+Merced: 1,785 students, ~8,900 units.
+
+⚠️ **We cannot name the students, by design.** `StudentMAPID` is salt-hashed and
+never stored; `student_key` is our counting surrogate, re-assigned nightly. The
+college finds the records itself from the exhibit and catalog year. **Do not
+"fix" this by storing a durable student key** — a one-way hash is precisely what
+we asked MAP for.
+
+⚠️ **"Units at stake" is the question, not a loss figure.** The credit may have
+been transcribed and never recorded, or never transcribed at all. Only the
+college can say. Never report 46,496 as credit lost.
+
+---
+
 ## §C · Carryover
 
 - **Ashley's Delta crosswalk — untouched for three handoffs.** Record which of
@@ -216,15 +251,9 @@ Merced directly; ask the nine Initiator colleges what is stalling.
   run held it flat — archived the Sky169 narrative to pay for the new one — but
   did not reduce it. The `Troubleshooting` section is the obvious candidate for
   `docs/reference/`.
-- **⚠️ A CONFLICT NEEDS SAM, do not resolve it alone.** `cpl_memory:
-  applied-measure-fork-55-percent` is **verified** and carries his ruling
-  *"publish both and name the gap"*. On the new data the fork does not
-  reproduce: scoped to rows actually marked Applied, the two measures agree to
-  **0.1%** (30,055 vs 30,091 students). The cause is that `applied_credits` is
-  **identical to `articulated_credits` on all 462,355 Needs Action rows**, so an
-  unscoped `applied_credits > 0` measures the wrong thing in both directions.
-  Filed as `applied-credits-mirrors-articulated-on-needs-action-rows`, flagged
-  rather than superseded, per Rule 8. §11 keeps the old figure until he rules.
+- **The Customer Success team needs the TEAM PHRASE**, not reviewer access.
+  Addresses are in §B2. Nothing to set up per person — say the word to them and
+  they are in.
 - Auth `role` column, repo split, GR sensitivity flips — all still on Sam.
 
 ---
