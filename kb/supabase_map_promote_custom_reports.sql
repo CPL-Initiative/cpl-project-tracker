@@ -30,6 +30,9 @@
 --   the published headline moving without the unsuppressed half
 --     -> both aggregates rebuild in the SAME transaction as the swap, so
 --        published and unsuppressed can never disagree (the number policy).
+--        map_cleanup_worklist rebuilds in the same transaction for the same
+--        reason: the team must never be working a list that describes a
+--        different day from the dashboard beside it.
 --
 -- WHAT BLOCKS AND WHAT ONLY WARNS
 -- -------------------------------
@@ -240,6 +243,11 @@ begin
   -- ── Rebuild the published aggregates in the SAME transaction ─────────────
   perform rebuild_map_college_goal2();
   perform rebuild_map_college_credit_summary();
+  -- The Customer Success clean-up list. Rebuilt here rather than on its own
+  -- schedule so it can never describe a different day's data from the tables it
+  -- is derived from — a worklist that disagrees with the dashboard costs more
+  -- trust than one that is a few hours old.
+  perform rebuild_map_cleanup_worklist();
 
   -- G7 · THE SUPPRESSION PROPERTY. Blocking, and the most important gate here:
   -- one hidden cell alongside a visible sibling is recoverable by subtraction,
@@ -262,6 +270,17 @@ begin
     raise exception 'G8 % suppressed cell(s) still carry students/rows_n — REFUSING to publish', bad;
   end if;
 
+  -- G9 · the clean-up list must never carry a gate wider than the team phrase.
+  -- It is rebuilt by DROP/CREATE, so its policy is re-declared every night and
+  -- a mistake there would be SILENT: the table would simply be readable, and
+  -- nothing about a readable table looks wrong.
+  if not exists (
+    select 1 from pg_policies
+     where schemaname = 'public' and tablename = 'map_cleanup_worklist'
+       and qual = '(is_allowed_reviewer() OR team_pass_ok())') then
+    raise exception 'G9 map_cleanup_worklist lost its team-phrase gate - REFUSING to publish';
+  end if;
+
   -- WARN (never block) · a course_type MAP has newly invented. UNKNOWN exists
   -- so it stays countable; freezing every figure in the system over one
   -- mis-bucketed cell is the worse failure.
@@ -276,7 +295,7 @@ begin
 
   insert into map_data_loads (table_name, source_rows, loaded_rows, reconciled, note)
   values ('map_custom_report_promote', s_cr + s_st, s_cr + s_st, true,
-          format('promoted cr_unit %s and student %s (%s students) from staging; aggregates rebuilt',
+          format('promoted cr_unit %s and student %s (%s students) from staging; aggregates + cleanup worklist rebuilt',
                  s_cr, s_st, s_stud));
 
   return jsonb_build_object(
@@ -284,6 +303,7 @@ begin
     'cr_unit',  jsonb_build_object('was', l_cr,   'now', s_cr),
     'student',  jsonb_build_object('was', l_st,   'now', s_st),
     'students', jsonb_build_object('was', l_stud, 'now', s_stud),
+    'cleanup_items', (select count(*) from map_cleanup_worklist),
     'warnings', to_jsonb(warnings));
 end $$;
 
