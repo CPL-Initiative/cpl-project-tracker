@@ -589,9 +589,56 @@ check tells them apart. Post-revoke: anon `false`, service_role `true` on all si
 `security definer` function bypasses it by design. **The EXECUTE grant is the
 only thing between a destructive definer function and the internet.**
 
+### (c3) Then the next queue item turned out to be about to say something false
+
+The queue's next step was *"work P1 as one instruction to ~100 colleges."*
+Reading the rows before drafting the instruction, rather than after:
+
+| what the class said | what the rows say |
+|---|---|
+| *"Rule these Not Applicable. ACE has already said no credit is recommended."* — 17,594 rows, `one rule`, ~100 colleges | `0 hours in Credit may be granted on the basis of an individualized assessment of the student` — **3,970 rows / 95 colleges** |
+| | `0 hours in Additional swimming on the Basis of Institutional Evaluation` — **1,075 / 86** |
+| | `0 hours in Credit in surveying on the basis of institutional evaluation` — **171 / 57** |
+
+⭐ **ACE is deferring to the college, not refusing.** The class was assembled from
+a *predicate* — zero-unit recommendation — and then named after the commonest
+reason a recommendation carries zero units. **Zero units is the mechanism of a
+deferral, not evidence of a denial.** One instruction to ~100 colleges would have
+closed **5,311 rows at 101 colleges** on a stated ground that contradicts the
+recommendation itself.
+
+⚠️ **A false zero nobody can report.** Unlike a search that returns nothing, a
+college told the door was closed never files feedback about it — the same failure
+mode as the Cerritos ironworker zero, one step further upstream, because here we
+would have been the ones saying it.
+
+Now split: **P1 12,283** (ACE no-credit 11,926 · expired window 137 · residue
+220) keeps `one rule` and is safe to send; **P5 `credit MAY be available if the
+college evaluates`** — 5,311 / 3,898 students / 101 colleges, `effort_shape:
+needs a ruling`, owner Sam — states the facts and **prescribes nothing**. Its
+rank is READINESS, not value: it is the only class in the worklist that could
+still become credit for a student. Conservation: 12,283 + 5,311 = 17,594.
+
+⚠️ **Two matcher misses only text inspection finds**, both now covered: the
+corpus contains `Credit Is Not Recommeded` (26 rows, missed by
+`ilike '%recommended%'`) and `individual assessment` without the *-ized* (20).
+
+⚠️ **Every large P1 college carried a substantial share** — CCSF 284 of 899,
+San Diego City 223, Long Beach 204, Mesa 190, Miramar 188. It was not a tail.
+
+⚠️ **The docs lint caught my own first fix.** Writing the correction *as a
+correction* into `CLAUDE.md` §11 pushed the cell to 4,374 chars and tripped
+`stacked_roadmap_cell` — the rule that says a cell states current truth, not a
+log. The history belongs in this doc and in
+[`docs/map_cleanup_worklist.md`](map_cleanup_worklist.md); the cell now states
+what is true today, and is 1,100 chars shorter than before the session.
+
 ### (d) Next concrete step
 
 1. **The 13:40 UTC run tomorrow is still the proof.** It is the first firing on
    its own schedule *and* the first exercise of the new clear step in the cron.
-2. Carryover unchanged: Ashley's Delta outcome, the statewide engine's second
+2. **Sam rules on P5** — is Not Applicable right when no evaluation has been
+   done, does it stay Needs Action, or does MAP need a state it does not have?
+   Nothing about those rows should reach a college first.
+3. Carryover unchanged: Ashley's Delta outcome, the statewide engine's second
    occupation list, `CLAUDE.md` at 2× budget.
