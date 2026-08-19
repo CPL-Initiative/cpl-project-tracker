@@ -6,28 +6,39 @@ name: MAP Custom Report load (staging)
 #   View_CollegeExhibitCRByCatalogYear_APIDataset  ->  stg_map_college_cr_unit
 #   View_StudentDetailsCredits_APIDataset          ->  stg_map_student_credit
 #
-# ⚠️ THIS WORKFLOW NEVER TOUCHES A LIVE TABLE. Both destinations are staging;
-# the live `map_college_cr_unit` and `map_student_credit` are reviewer-gated,
-# feed the Course Credit tab, the College Action page and both published
-# aggregates, and one is student grain. The swap is a separate gated SQL step in
-# docs/map_custom_report_load.md, run deliberately by a human or a session —
-# same separation docs/map_student_credit_reload.md established, and for the
-# same reason: a half-finished insert must never be able to blank a live tab.
+# It loads staging, then asks Postgres to PROMOTE staging to live through
+# map_promote_custom_reports() — gated, in ONE transaction.
 #
-# Dispatch-only, and dry-run is the default. There is no schedule on purpose:
-# a daily automatic reload of a 537,908-row student-grain table is a decision
-# for Sam, not a default. Add one when the reconciliation has been looked at
-# at least once.
+# Sam, 2026-08-19: "This will run in the daily cron so just making sure I don't
+# have to do a staging to live approval every day."
+#
+# So there is no human between staging and live. What the human was providing
+# is provided by the function instead, and every check fails closed:
+#
+#   * ONE TRANSACTION — live is fully old or fully new, never partial. Proven:
+#     a client timeout mid-promotion left live byte-identical.
+#   * CONTENTS are replaced, never the table, so the reviewer-only policy on
+#     map_student_credit is never dropped and cannot be restored wrongly.
+#   * G1..G6 refuse a truncated pull or a broken surrogate key; G7/G8 refuse to
+#     publish a recoverable suppression. A raised gate rolls everything back.
+#   * Both published aggregates rebuild in the same transaction, so the
+#     published and unsuppressed halves of a figure can never disagree.
+#
+# Runs at 13:40 UTC — after the last dashboard cron window (12:17) and after
+# credential-catalog-sync (13:20), so the three do not contend.
 
 on:
+  schedule:
+    - cron: "40 13 * * *"
+
   workflow_dispatch:
     inputs:
       mode:
-        description: "dry-run (parse + report, write nothing) or apply (write STAGING only)"
+        description: "apply (load + promote to live) · staging-only (load, do not promote) · dry-run (report only)"
         required: true
-        default: "dry-run"
+        default: "apply"
         type: choice
-        options: [dry-run, apply]
+        options: [apply, staging-only, dry-run]
 
 concurrency:
   group: map-custom-report-load
@@ -64,17 +75,17 @@ jobs:
           python3 tests/custom_report_payload_test.py
           python3 tests/map_custom_report_sync_test.py
 
-      - name: Load staging
+      - name: Load staging and promote
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
-          MODE="${{ github.event.inputs.mode || 'dry-run' }}"
+          MODE="${{ github.event.inputs.mode || 'apply' }}"
           echo "mode: $MODE"
-          if [ "$MODE" = "dry-run" ]; then
-            python3 kb/_sync_map_custom_reports.py --dry-run
-          else
-            python3 kb/_sync_map_custom_reports.py
-          fi
+          case "$MODE" in
+            dry-run)      python3 kb/_sync_map_custom_reports.py --dry-run ;;
+            staging-only) python3 kb/_sync_map_custom_reports.py --no-promote ;;
+            *)            python3 kb/_sync_map_custom_reports.py ;;
+          esac
 
       # The raw pull carries student-grain rows and this repo is PUBLIC. It is
       # gitignored, but deleting it means a later step cannot accidentally

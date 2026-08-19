@@ -77,7 +77,7 @@ from collections import Counter
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
-BATCH = 1000
+BATCH = 5000
 
 # How many of the lexicographically-smallest student hashes to retain as the
 # salt-rotation sketch. A uniform sample of the key set, so overlap between
@@ -153,6 +153,34 @@ HELD_COLUMNS = {
 }
 
 INT_COLUMNS = {"college_id", "distinct_students", "student_key"}
+
+# ── Blank numerics: zero-fill ONLY where the LIVE table says NOT NULL ───────
+# The two live tables genuinely disagree, so the rule is per-table and each one
+# mirrors its own contract rather than a house style:
+#
+#   map_college_cr_unit   every numeric is NOT NULL, and live holds 0
+#                         (200,106 rows at sum_applied_credits = 0)
+#   map_student_credit    applied_credits and transcribed_credits are NULLABLE
+#                         and live HOLDS nulls (31,467 / 19,533), so a
+#                         zero-fill there would be the same representation
+#                         change #1252 removed, in the other direction
+#
+# Zero is the source's own meaning here, not an invention. The blanks are not
+# scattered: on the by-catalog-year view `sum_applied_credits` is blank on
+# EXACTLY the 26,953 `Not Applicable` rows and on no other disposition — the API
+# omits the value precisely where the recommendation was ruled out. That is what
+# map_dataset_sql_for_malone caveat 4 describes: "All four credit fields are 0 on
+# unapproved rows. That is correct behaviour, not missing data."
+#
+# The columns left OUT of these sets are nullable live and stay nullable.
+CR_UNIT_ZERO_FILL = {
+    "distinct_students", "sum_potential_credits", "sum_articulated_credits",
+    "sum_applied_credits", "sum_transcribed_credits",
+}
+STUDENT_ZERO_FILL = {
+    "potential_credits", "credits_in_review", "articulated_credits",
+    "military_credits", "non_military_credits", "apprenticeship_credits",
+}
 NUM_COLUMNS = {
     "sum_potential_credits", "sum_articulated_credits", "sum_applied_credits",
     "sum_transcribed_credits", "potential_credits", "credits_in_review",
@@ -226,15 +254,18 @@ def _clean(v):
     return str(v).strip()
 
 
-def _coerce(col: str, value):
+def _coerce(col: str, value, zero_fill=frozenset()):
     if col in INT_COLUMNS:
-        return _to_int(value)
+        v = _to_int(value)
+        return 0 if v is None and col in zero_fill else v
     if col in NUM_COLUMNS:
-        return _to_num(value)
+        v = _to_num(value)
+        return 0.0 if v is None and col in zero_fill else v
     return _clean(value)
 
 
-def map_rows(ds: dict, contract: dict, view_name: str, extra_needed=()) -> tuple[list, dict]:
+def map_rows(ds: dict, contract: dict, view_name: str, extra_needed=(),
+             zero_fill=frozenset()) -> tuple[list, dict]:
     """Map positional rows to dicts via the column NAME contract.
 
     Returns (rows, index_of_extra_columns). A contract name absent from the
@@ -258,7 +289,7 @@ def map_rows(ds: dict, contract: dict, view_name: str, extra_needed=()) -> tuple
     pairs = [(index[src], dst) for src, dst in contract.items()]
     rows = []
     for raw in ds.get("columnValue") or []:
-        rows.append({dst: _coerce(dst, raw[i]) for i, dst in pairs})
+        rows.append({dst: _coerce(dst, raw[i], zero_fill) for i, dst in pairs})
     return rows, index
 
 
@@ -391,9 +422,15 @@ def _headers(key: str) -> dict:
 
 
 def _request(method: str, path: str, key: str, body=None, timeout=180):
+    """PostgREST call. `Prefer: return=minimal` is set in _headers for the bulk
+    inserts; the RPC needs its JSON report back, so it overrides."""
     url = f"{SUPABASE_URL}/rest/v1/{path}"
     data = json.dumps(body).encode("utf-8") if body is not None else None
-    req = urllib.request.Request(url, data=data, headers=_headers(key), method=method)
+    headers = _headers(key)
+    if path.startswith("rpc/"):
+        headers["Prefer"] = "return=representation"
+        headers["Accept"] = "application/json"
+    req = urllib.request.Request(url, data=data, headers=headers, method=method)
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.status, resp.read()
 
@@ -457,12 +494,42 @@ def write_sketch(sample: list, key: str, pull_date: str) -> dict:
     return {"verdict": verdict, "prev_date": prev_date, "overlap": overlap}
 
 
+def promote(key: str) -> dict:
+    """Ask Postgres to promote staging to live, gated, in ONE transaction.
+
+    Every check lives in map_promote_custom_reports() rather than here, and that
+    is the point: a gate enforced by the caller is a gate that a second caller
+    skips. The function raises on any blocking failure, which rolls the whole
+    transaction back — live is fully old or fully new, never partial, and the
+    two aggregates rebuild inside the same transaction so the published and
+    unsuppressed halves of every figure can never disagree.
+
+    Sam, 2026-08-19: "This will run in the daily cron so just making sure I
+    don't have to do a staging to live approval every day." So the human gate is
+    gone and the machine gates fail closed.
+    """
+    try:
+        _, raw = _request("POST", "rpc/map_promote_custom_reports", key, {},
+                          timeout=900)
+    except urllib.error.HTTPError as e:
+        detail = e.read().decode("utf-8", errors="replace")[:800]
+        raise SystemExit(
+            f"PROMOTION REFUSED (HTTP {e.code}). Live is UNCHANGED — the whole "
+            f"transaction rolled back.\n  {detail}\n"
+            "  A G-numbered message is a gate doing its job: fix the pull, do not "
+            "loosen the gate.")
+    return json.loads(raw or b"{}")
+
+
 # ── Main ───────────────────────────────────────────────────────────────────
 
 def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("input", nargs="?", help="CustomReport JSON (default: CustomReport_latest.json)")
     ap.add_argument("--dry-run", action="store_true", help="parse and report, write nothing")
+    ap.add_argument("--no-promote", action="store_true",
+                    help="load staging but do NOT promote to live (staging is inert; "
+                         "use this to inspect a pull before it lands)")
     args = ap.parse_args()
 
     path = find_input(args.input)
@@ -484,9 +551,11 @@ def main() -> int:
               "commit that carries all 10 datasets.")
         return 1
 
-    cr_rows, _ = map_rows(cr_ds, CR_UNIT_COLUMNS, CR_UNIT_VIEW)
+    cr_rows, _ = map_rows(cr_ds, CR_UNIT_COLUMNS, CR_UNIT_VIEW,
+                          zero_fill=CR_UNIT_ZERO_FILL)
     st_rows, st_index = map_rows(st_ds, STUDENT_COLUMNS, STUDENT_VIEW,
-                                 extra_needed=(STUDENT_KEY_COLUMN,))
+                                 extra_needed=(STUDENT_KEY_COLUMN,),
+                                 zero_fill=STUDENT_ZERO_FILL)
     st_rows, st_stats = assign_student_keys(st_ds, st_rows, st_index)
     for i, r in enumerate(st_rows, start=1):
         r["source_row_id"] = i
@@ -525,8 +594,21 @@ def main() -> int:
               "counts are NOT comparable across these two pulls until this is "
               "explained. Ask ITPI before publishing any headcount trend.")
 
-    print("\nStaging loaded. NOTHING LIVE HAS CHANGED.")
-    print("Next: run the reconciliation + swap in docs/map_custom_report_load.md.")
+    if args.no_promote:
+        print("\nStaging loaded. --no-promote: NOTHING LIVE HAS CHANGED.")
+        print("Promote with docs/map_custom_report_load.md, or re-run without the flag.")
+        return 0
+
+    print("\nPromoting staging -> live (gated, one transaction)...")
+    rep = promote(key)
+    cr, st, stu = rep.get("cr_unit", {}), rep.get("student", {}), rep.get("students", {})
+    print(f"   map_college_cr_unit   {cr.get('was'):,} -> {cr.get('now'):,}")
+    print(f"   map_student_credit    {st.get('was'):,} -> {st.get('now'):,}")
+    print(f"   distinct students     {stu.get('was'):,} -> {stu.get('now'):,}")
+    print("   published aggregates rebuilt in the same transaction")
+    for w in rep.get("warnings") or []:
+        print(f"   ⚠️  {w}")
+    print("\nLive is current.")
     return 0
 
 

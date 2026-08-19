@@ -229,6 +229,37 @@ check(crr["sum_potential_credits"] == 3.0,
 check(crr["distinct_students"] == 12,
       "Student Count must land in distinct_students as an int")
 
+# ── 7b. Blank numerics zero-fill ONLY where the live table says NOT NULL ──
+# The two live tables genuinely disagree and each contract is mirrored
+# separately. map_college_cr_unit is NOT NULL on every numeric and holds 0;
+# map_student_credit is NULLABLE on applied_credits / transcribed_credits and
+# actually HOLDS nulls (31,467 / 19,533), so zero-filling there would be the
+# same representation change #1252 removed, pointing the other way.
+zf = sync.map_rows(cr_ds([cr_row(**{"Applied Credits": "", "Transcribed Credits": "",
+                                    "Student Count": ""})]),
+                   sync.CR_UNIT_COLUMNS, sync.CR_UNIT_VIEW,
+                   zero_fill=sync.CR_UNIT_ZERO_FILL)[0][0]
+check(zf["sum_applied_credits"] == 0 and zf["sum_transcribed_credits"] == 0
+      and zf["distinct_students"] == 0,
+      f"cr_unit blank numerics must zero-fill (live is NOT NULL): {zf['sum_applied_credits']!r}")
+
+st_zf = sync.map_rows(st_ds([st_row(**{"AppliedCredits": "", "TranscribedCredits": "",
+                                       "PotentialCredits": ""})]),
+                      sync.STUDENT_COLUMNS, sync.STUDENT_VIEW,
+                      extra_needed=(sync.STUDENT_KEY_COLUMN,),
+                      zero_fill=sync.STUDENT_ZERO_FILL)[0][0]
+check(st_zf["applied_credits"] is None and st_zf["transcribed_credits"] is None,
+      "map_student_credit.applied_credits/transcribed_credits are NULLABLE live and "
+      "hold nulls — zero-filling them is a representation change, not a fix")
+check(st_zf["potential_credits"] == 0,
+      "map_student_credit.potential_credits is NOT NULL live — it must zero-fill")
+
+# The two sets must stay disjoint from the nullable columns, or the contract
+# drifts silently the next time someone adds a column.
+check("applied_credits" not in sync.STUDENT_ZERO_FILL
+      and "transcribed_credits" not in sync.STUDENT_ZERO_FILL,
+      "a nullable live column was added to STUDENT_ZERO_FILL")
+
 # ── 8. The truncate helper must refuse a live table ───────────────────────
 # The one destructive call in the loader. It is aimed at staging by name, and
 # the live tables are reviewer-gated student-grain data.
