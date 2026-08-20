@@ -68,21 +68,51 @@ before assuming your branch is the only work in flight.
 
 ---
 
-## 🔴 THE FIRST THING TO DO: the list is LIVE AND INVISIBLE
+## ✅ CLOSED AFTER THE CHECKPOINT — both decisions were made (#1266)
 
-`map_cx_exhibit_guidance` is team-phrase gated, rebuilt nightly, and **has no
-surface** — nobody can see it without writing SQL. Two decisions are Sam's and
-both were put to him at the end of session 172:
+The section that stood here said the guidance list was live and invisible and
+that two decisions were Sam's. **Both landed the same day.** Left as a heading
+rather than deleted because the next session should not go looking for an open
+question that is answered.
 
-1. **Where it goes.** Recommendation: a **lookup panel behind the P5 row on the
-   MAP Data Quality tab**, *not* another queue — 225 exhibits is **reference**,
-   not 225 to-dos. Data Quality already fits: same team-phrase gate, same
-   "what's wrong and who fixes it" framing.
-2. **Does tier 2 earn its place?** That decides whether the panel shows one tier
-   or three.
+**Where it goes:** the **MAP Data Quality tab**, as two read-only sections above
+the existing defect register — the CSM clean-up worklist and the 225-exhibit Cx
+guidance list.
 
-**Do not build the tab before he answers** — the first tiering I would have
-shipped was 11-of-14 the same course.
+**Does tier 2 earn its place — Sam, 2026-08-20:** *"Seems like tier 2s earn their
+place as long as there is guidance for the CSM team on correcting or noting in
+MAP any changes recommended."* All three tiers ship, and every tier carries a
+`map_action` saying what to correct or note **in MAP**. The actions differ in
+KIND, not confidence: tier 1 a candidate course, tier 2 a **conversation** (the
+peer course is context, never a proposal), tier 3 the title only.
+
+⭐ **The concrete correction, and it is the useful part:** all 4,001 rows carry an
+**empty `course_type`**, which is exactly why they read as closed. Typing them
+**Credit by Exam** *is* the "noting in MAP" — a value MAP already has.
+
+⚠️ **The actions name FIELDS, never SCREENS.** No session has seen MAP's UI and
+MAP is read-only to us. If the CSM team needs click-level steps, they come from
+someone who uses MAP — **do not invent them.**
+
+### ⚠️ Sam's standing constraint on this whole surface (2026-08-20)
+
+*"My goal is to guide CSM team to make changes in MAP rather than house and
+maintain data layers in COBI."*
+
+Both sections are **read-only, derived, rebuilt nightly**, with deliberately
+**nowhere in COBI to record progress**. `cobi_admin_surface.js` records both
+tables under `reads` with `writes: []`, so the posture is **auditable in the
+Admin gate view**, not merely asserted in a test. **Honour this before adding
+anything to this tab** — the pull toward a status column here will be constant.
+
+⚠️ **A module whose tables the surface generator cannot see renders as "touches
+no data", which on the Admin tab reads as "nothing to protect".** It derives them
+from `REST + "<table>"` literals, so write endpoints as named constants in that
+shape. CI caught this; a comment would have fooled it.
+
+**Still open, and only these:** send the **1,310 `cx-course-named`** rows as the
+Cx offer; give Natalie, Chelsea and Ally the **team phrase**; and look at the two
+new sections in a browser (density and wording).
 
 ---
 
