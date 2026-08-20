@@ -240,7 +240,7 @@ def ace_titles(report: list) -> list[dict]:
             "column contract rather than shipping a titleless list.")
 
     best: dict[str, str] = {}
-    for row in ds.get("data") or []:
+    for row in rows_of(ds):
         if not isinstance(row, list) or len(row) <= max(i_ace, i_title):
             continue
         ace, title = _clean(row[i_ace]), _clean(row[i_title])
@@ -252,6 +252,26 @@ def ace_titles(report: list) -> list[dict]:
         if len(title) > len(best.get(ace, "")):
             best[ace] = title
     return [{"exhibit_id": k, "title": v} for k, v in sorted(best.items())]
+
+
+def rows_of(ds: dict) -> list:
+    """The MAP API returns rows under `columnValue`, NOT `data`.
+
+    This exists because it was got wrong once, two hundred lines from code that
+    had it right. `ace_titles()` shipped reading `ds.get("data")`, found an empty
+    list on every dataset, and returned no titles — while the run passed, the
+    gate correctly declined to blank live titles, and the log said "no titles
+    parsed" as designed. Everything behaved; the answer was still empty.
+
+    The test could not catch it either: its fixture was built from the same wrong
+    assumption, so it asserted the mistake. A fixture invented alongside the code
+    it tests cannot falsify the code's premise — build fixtures from the real
+    contract, which is what the rest of this file's fixtures do.
+
+    So the key now lives in exactly one function, and every reader goes through
+    it.
+    """
+    return ds.get("columnValue") or []
 
 
 def dataset(report: list, view_name: str) -> dict | None:
@@ -340,7 +360,7 @@ def map_rows(ds: dict, contract: dict, view_name: str, extra_needed=(),
 
     pairs = [(index[src], dst) for src, dst in contract.items()]
     rows = []
-    for raw in ds.get("columnValue") or []:
+    for raw in rows_of(ds):
         rows.append({dst: _coerce(dst, raw[i], zero_fill) for i, dst in pairs})
     return rows, index
 
@@ -363,7 +383,7 @@ def assign_student_keys(ds: dict, rows: list, index: dict) -> tuple[list, dict]:
     """
     hcol = index[STUDENT_KEY_COLUMN]
     raw_values = [(_clean(r[hcol]) if hcol < len(r) else None)
-                  for r in (ds.get("columnValue") or [])]
+                  for r in rows_of(ds)]
     distinct = sorted({h for h in raw_values if h})
     key_of = {h: i + 1 for i, h in enumerate(distinct)}
 

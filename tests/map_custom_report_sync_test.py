@@ -305,7 +305,12 @@ for _line in _src.splitlines():
 # remaining content is the exhibit — and "MOS-42A-001" means nothing to a
 # counsellor. These guard the ways the extraction goes wrong QUIETLY.
 def _cat(cols, rows):
-    return [{"viewName": sync.CATALOG_VIEW, "columnName": cols, "data": rows}]
+    # `columnValue` is what the MAP API actually returns. The first cut of this
+    # fixture said "data", matching the first cut of ace_titles(), so the test
+    # asserted the bug instead of catching it — the run then found zero titles
+    # in a payload that had 34,569. A fixture invented alongside the code it
+    # tests cannot falsify that code's premise.
+    return [{"viewName": sync.CATALOG_VIEW, "columnName": cols, "columnValue": rows}]
 
 _COLS = ["ExhibitID", "SkillLevel", "AceID", "Title"]
 got = sync.ace_titles(_cat(_COLS, [
@@ -345,6 +350,17 @@ except SystemExit:
 # A view we do not fetch is not an error; it is simply absent.
 check(sync.ace_titles([{"viewName": "something_else", "columnName": [], "data": []}]) == [],
       "a missing catalogue view must return [] rather than raising")
+
+# The row key must be the one the REST of the loader uses, not a second
+# spelling. Both readers go through rows_of() for this reason.
+check(sync.rows_of({"columnValue": [1, 2], "data": [9, 9, 9]}) == [1, 2],
+      "rows_of() must read columnValue — `data` is not a key the MAP API returns, "
+      "and preferring it silently empties every dataset")
+check(sync.ace_titles([{"viewName": sync.CATALOG_VIEW,
+                        "columnName": ["AceID", "Title"],
+                        "data": [["MOS-11B-006", "Infantryman"]]}]) == [],
+      "a payload keyed on `data` must yield nothing rather than being quietly "
+      "accepted — two accepted spellings is how the wrong one survives")
 
 # ── 9. The salt-rotation sketch stays a sketch ────────────────────────────
 # A hash per student would be a persistent pseudonymous record of every student;
