@@ -21,8 +21,10 @@
 // scenarios have front-load ON, so this was real money reading wrong today.
 //
 // Lives in its own file deliberately: each test file gets a fresh process, and
-// piling more JSDOM instances into cpl_funding.test.js OOMs under the cgroup
-// limit.
+// ending the process is the ONLY thing that reclaims a booted jsdom window —
+// which is why the 2,955-line cpl_funding.test.js was itself split into nine
+// suites on 2026-08-20. Budget + measurements:
+// tests/lib/cpl_funding_harness.js.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_frontload.test.js`).
 const fs = require("fs");

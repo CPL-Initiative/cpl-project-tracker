@@ -1,0 +1,196 @@
+---
+title: Session 177 handoff — the funding tests fit again, and the To-Do feed had been broken on main for hours
+created: 2026-08-20
+updated: 2026-08-20
+tags: [handoff, session-177, test-infra, jsdom, memory, todo-feed, implementation-funding]
+kb-status: internal
+obsidian-folder: cpl-project-tracker
+related:
+  - "[[CLAUDE]]"
+  - "[[docs/cpl_funding_lessons]]"
+  - "[[docs/kb-notes/methodology-a-test-file-is-a-memory-budget]]"
+  - "[[docs/session_176_handoff]]"
+---
+
+# Session 177 handoff
+
+You are **Session 177**. Session 176 was **SkyGlass** — the moniker Sam used in
+his greeting. Everything below is on the branch
+`claude/cpl-funding-test-refactor-dhrm1z`; check whether its PR merged before you
+build on it.
+
+⚠️ **Sam frequently runs several sessions at once.** Check `git log origin/main`
+before assuming your branch is the only work in flight. Two Session-173 sessions
+running in parallel are what broke the To-Do feed described below.
+
+---
+
+## Read in this order
+
+1. **`cpl_memory` FIRST** (Rule 8 — sessions *query*, not only write). Tags
+   `test-infra` / `jsdom` / `memory` / `todo-feed`. Three rows written this run.
+2. [`docs/kb-notes/methodology-a-test-file-is-a-memory-budget`](kb-notes/methodology-a-test-file-is-a-memory-budget.md)
+   — the durable finding, and the only thing you need if you are about to add a
+   jsdom suite.
+3. [`docs/cpl_funding_lessons.md`](cpl_funding_lessons.md), the 2026-08-20
+   SkyGlass section — the measurements.
+4. `tests/lib/cpl_funding_harness.js` — the budget, written where someone adding
+   a window will hit it.
+
+---
+
+## What Sam asked for
+
+SkySort's handoff left one item explicitly to a successor's judgement rather than
+an assumption: *"the cap raise buys headroom, it doesn't fix the file.
+cpl_funding.test.js is 2,900 lines and ~60 jsdom windows in one process, and
+those windows are never reclaimed — window.close() doesn't release them, which is
+its own finding. Splitting it is the real repair."* Sam passed it on as this
+session's work.
+
+Mid-run he also reported that **the Curate button was still visible on the public
+Fact Sheet**, and asked whether the test file could be the cause.
+
+---
+
+## What shipped
+
+**① `tests/cpl_funding.test.js` is nine suites.** `shell` (static invariants, no
+jsdom, ~1 s) · `render` · `rollup` · `equity` · `scenarios` · `earning` · `rate` ·
+`rural` · `pool`, over a shared `tests/lib/cpl_funding_harness.js`. Assertion
+bodies were moved **verbatim by line range**, not retyped.
+
+| | before | after |
+|---|---|---|
+| assertions | 575 | **575** (49+123+39+103+72+41+37+56+55) |
+| peak RSS | 8,642 MB | **2,393 MB** (the `render` suite) |
+| wall clock | 462 s | 333 s sequential — and they now parallelise |
+
+⭐ **The handoff's finding was half right, and the wrong half was load-bearing.**
+It is *not* that jsdom windows are unreclaimable — fifteen windows that are
+constructed but never booted cost **57 MB in total**, and are collected. Fifteen
+**booted** cost 705 MB, ~44 MB each, permanently. `window.close()` is a no-op
+here; so is nulling, block-scoping, an IIFE, and awaiting a microtask or a full
+event-loop turn. Heap snapshots name the retainers: **`(Stack roots)`** — the
+suite's own still-running top-level frame — and, once that root is removed,
+**`(Micro tasks)`**, a promise reaction holding `boot()`'s `onDOMContentLoad`
+closure on a queue a long synchronous file never drains. **The only event that
+reclaims a window is the process ending**, which is why splitting is the only
+cure and every in-file tidy-up was a placebo.
+
+⚠️ **Budget when you add to these suites: ~44 MB per booted window over a ~40 MB
+floor. Past ~15 windows in one file, start a new suite** rather than trimming
+inside one. The 12,288 MB cap in `tests/run.js` stays as headroom for everything
+else — it is not this file's life support, and its comment now says so.
+
+⚠️ **A loop-shaped probe cannot reproduce a block-shaped file.** Booting in a
+`for` loop and measuring afterwards shows the memory coming back, because the
+frame returned. The real file is sixty *sibling blocks* in one still-running
+frame. Reproduce the shape, not the operation.
+
+**② The dashboard's 📋 To-Do feed was broken on `main`, and this run found it by
+accident.** `kb/cpl_todos.json` carried raw `<<<<<<<` / `=======` / `>>>>>>>`
+markers, committed by PR #1268 where **two parallel Session-173 sessions had each
+rewritten the feed**. The file is invalid JSON, so the button had nothing to read
+on any tab — and it **fails soft by design**, so it simply did not appear and
+nothing reported an error. Both sides are merged back together, finished items
+dropped.
+
+**③ A second, older To-Do defect underneath it.** The feed writes
+`for: "Sam" | "Fable"` (the field `CLAUDE.md` Rule 9 documents); `cpl_todos.js`
+grouped on `it.who`. Nothing threw — `byWho[undefined]` is a perfectly good
+object key — so the panel rendered **one section headed "For Undefined"** holding
+every item, and the split the feature exists for was invisible. The suite passed
+throughout, because **its fixture used the spelling the code read**. Fixed with a
+`whoKey()` that accepts either and never builds a heading out of a missing value.
+
+**④ Guards for both, verified to fail first.** `tests/cpl_todos.test.js` now
+checks that the *shipped* feed parses and matches the renderer's contract, that a
+real-shape feed renders both sections and can never render "For Undefined", and
+that **no tracked text file carries an unresolved merge conflict** (column-0
+anchored, ~0.8 s over 1,818 files). Each was run against the pre-fix state and
+does go red.
+
+---
+
+## Sam's Curate report — answered, no code change
+
+**It is not the test file** — nothing under `tests/` is served, and no page loads
+it. The Fact Sheet fix (#1269) is on `main` and Pages deployed it successfully at
+20:40 UTC; `.btn[hidden]{display:none !important}` and the `btn.hidden =
+!isRevealed()` call are both present and correct.
+
+What is far more likely, in order:
+
+1. **His own browser remembers the reveal.** `?curate=1` writes
+   `localStorage.cpl_fs_curate = "1"` deliberately, so the bookmark keeps
+   working. Any browser that has opened that link once will show the button
+   forever. **`fact-sheet/?curate=0` forgets it.**
+2. **He is signed in.** A live COBI reviewer session reveals the button by
+   design, and since #1207 that session is shared across browser tabs.
+3. A cached `factsheet_edit.js` / `factsheet.css` — the tags carry no version
+   query, so a hard refresh is the check.
+
+**The only honest test of "does the public see it" is a private window on the
+plain URL with no param and no session.** No session can run that check — the
+sandbox is egress-blocked from `cpl-initiative.github.io`. That is now the ask in
+the To-Do feed, folded into the phone check.
+
+---
+
+## Carryover
+
+| # | Item | Status |
+|---|---|---|
+| 1 | **Sam opens the three public pages on a phone** (Fact Sheet · Sierra · Veteran map) | Still the one thing no session can do. Carried since handoff 174. |
+| 2 | **Sam confirms Curate is hidden in a private window** | New. If it still shows there, that IS a defect and the three suspects above are all eliminated. |
+| 3 | Drag Priority 3 into the Priority 1 slot and set the new shares + funding factors | SkySort's item, unchanged; #1268 is merged and live. |
+| 4 | Everything in handoffs 173–176 | Untouched by this run. |
+
+---
+
+## Patterns that worked
+
+- **Reproduce the shape, not the operation.** Three probes said "no leak" before
+  one shaped like the real file said 925 MB. The generated-file trick (emit N
+  sibling blocks, measure in-frame) is worth reusing.
+- **Use the instrument that can see the retainer.** Two sessions guessed at the
+  cause from the code; one heap snapshot named it in a single line
+  (`<-- (Stack roots)`). `v8.writeHeapSnapshot()` plus a ~40-line reverse-BFS
+  over the JSON is all it takes.
+- **Move code by line range, not by hand.** The split was generated from the
+  original's own line numbers, and the 575-assertion total is the proof nothing
+  was dropped or duplicated.
+- **Check a new guard fails before keeping it** — the repo's own
+  `verify-with-the-instrument-that-can-see-the-defect` rule, applied to four new
+  checks.
+
+## Safety patterns to honour
+
+- **Never force-push `main`** (Rule 5). Feature branches may `--force-with-lease`.
+- **Rule 4** — `CPL_Dashboard.html` and `index.html` stay identical. Not touched
+  this run.
+- ⚠️ **Do not add `playwright` to `package.json`** (handoff 174) — CI has jsdom
+  only.
+- ⚠️ **`CLAUDE.md` is 2.22× its docs-audit budget and this run deliberately added
+  nothing to it.** The §11 narrative slots already hold two sessions, and this
+  work is test infrastructure, not a roadmap workstream — the lessons doc and the
+  KB note carry it. If you need a slot, move SkySort's narrative to
+  `docs/roadmap_archive.md` first.
+
+## Running the checks
+
+```bash
+npm test                                   # 262 files
+node tests/cpl_funding_render.test.js      # the heaviest funding suite, ~86s
+node tests/cpl_todos.test.js               # feed contract + the conflict scan
+```
+
+## Your moniker
+
+SkyGlass suggests **SkyLedger** — this run was about what a process is holding
+and who is allowed to say it is finished. Take it or coin your own; Sam sometimes
+names the session in his greeting, and that always wins.
+
+**Sign off with your moniker AND the next handoff number** (Sam, 2026-08-13) —
+e.g. *"SkyLedger signing off. Next is Session 178 — `docs/session_178_handoff.md`."*

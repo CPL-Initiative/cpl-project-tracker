@@ -237,6 +237,7 @@ Lane established 2026-05-27, Session 11 (Bruh El). See
 | [Methodology — Commit the test harness; don't let verification evaporate](kb-notes/methodology-commit-the-test-harness.md) | methodology | published | 2026-06-04 | 2026-06-04 |
 | [Methodology — Hiding a control also hides the way to get access](kb-notes/methodology-hiding-a-control-also-hides-the-way-in.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Methodology — Verify with the instrument that can see the defect](kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [Methodology — A test file is a memory budget, and the process boundary is the only allocator](kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [ADR — Student-impact counts in the public CER (aggregate + small-cell suppression)](kb-notes/adr-cer-student-impact-counts-privacy.md) | adr | published | 2026-06-04 | 2026-06-04 (Session 34 — per-college <2 + minimization + guard) |
 | [Methodology — Turn a one-time PII audit into a standing guard (committed test over the public artifacts)](kb-notes/methodology-standing-pii-guard.md) | methodology | published | 2026-06-04 | 2026-06-04 |
@@ -644,3 +645,4 @@ Authoritative external sources we've cached:
 | [`public_pages_a11y_lessons.md`](public_pages_a11y_lessons.md) | Lessons | Sierra + Veteran map accessibility/mobile audit (Session 175). |
 | [`kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md`](kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md) | KB note | Chromium auto-focuses overflowing scrollers, so a behavioural check can be unfailable. |
 | [`session_176_handoff.md`](session_176_handoff.md) | Handoff | Session 176 prompt. |
+| [`session_177_handoff.md`](session_177_handoff.md) | Handoff | Session 177 prompt. |

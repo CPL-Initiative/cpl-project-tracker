@@ -9,7 +9,8 @@ artifacts:
   - funding/_build_funding_data.py (one-shot extractor)
   - cpl_funding_data.js (static data artifact, window.CPL_FUNDING)
   - cpl_funding.js (renderer, window.CPL_FUNDING_TAB)
-  - tests/cpl_funding.test.js
+  - tests/cpl_funding_*.test.js (nine suites; split 2026-08-20)
+  - tests/lib/cpl_funding_harness.js
   - tests/cpl_funding_reorder.test.js
   - college_briefing.js (My College funding box — the identity join)
 related:
@@ -809,3 +810,69 @@ checkpoint acted on it**: 2026-06-11 → 2026-07-31 moved verbatim to
 52 KB live. The rule that produced the flag is the one worth keeping — a
 checkpoint that only ever appends eventually makes the doc unreadable to the
 session that needs it.
+
+---
+
+## 2026-08-20 — SkyGlass (Session 176): splitting `cpl_funding.test.js`, and the leak that was never the test's to fix
+
+**(a) What happened.** SkySort's handoff left one item explicitly for a
+successor's judgement: the per-child heap cap had been raised 8,192 → 12,288 MB
+to get PR #1268 green, and the note said plainly that the cap buys headroom and
+does not fix the file — 2,955 lines, 61 jsdom windows, one process. It also
+recorded a suspicion: *the windows are never reclaimed; `window.close()` does not
+release them, which is its own finding.*
+
+**The suspicion was half right, and the wrong half is the one that matters.**
+Measured this run:
+
+| | |
+|---|---|
+| 15 windows **constructed, not booted** | 57 MB **total** — collected normally |
+| 15 windows **booted** | 705 MB — ~44 MB each, never released |
+| the same 20 windows with `window.close()` | identical curve to one decimal place |
+
+So jsdom is not the leak and the windows are not "unreclaimable" — *rendering* is
+what leaves 44 MB behind, and nothing the test does can free it. Heap snapshots
+name the retainers: while the file's top-level frame is running every window is
+rooted from **`(Stack roots)`**, the frame's own live registers; wrap each block
+in an IIFE and that root disappears while the DOM stays rooted from
+**`(Micro tasks)`** — a promise reaction holding `boot()`'s `onDOMContentLoad`
+closure, on a queue a long synchronous script never drains. Remove one, the other
+holds.
+
+⭐ **The process boundary is the only allocator.** The one event that reclaims a
+booted window is the process exiting, which `tests/run.js` already gives every
+file. Peak memory is therefore a property of the **largest file**, and the only
+lever is how many windows that file builds. That is the whole argument for the
+split — and the reason no amount of in-file tidying was ever going to work,
+including the close-stale-windows attempt #1268 correctly reverted.
+
+⚠️ **A loop-shaped probe cannot reproduce a block-shaped file.** Booting in a
+`for` loop and measuring afterwards shows the memory coming back, because the
+frame returned. The real file is sixty *sibling blocks* in one still-running
+frame. Reproduce the shape, not the operation, or you will conclude there is no
+leak.
+
+**(b) State.** `tests/cpl_funding.test.js` is gone, replaced by nine suites —
+`shell` (static invariants, no jsdom, ~1 s), `render`, `rollup`, `equity`,
+`scenarios`, `earning`, `rate`, `rural`, `pool` — over a shared
+`tests/lib/cpl_funding_harness.js` (the same `freshDom`/`boot`/`click`/`commit`/
+`scenSlot`/`footText`/`greenSlices`/`pieSlices`, plus `check`/`finish`). The
+assertion bodies were moved verbatim by line range, not retyped.
+
+| | before | after |
+|---|---|---|
+| assertions | 575 | **575** (49+123+39+103+72+41+37+56+55) |
+| peak RSS | 8,642 MB | **2,393 MB** (the `render` suite) |
+| wall clock | 462 s | 333 s sequential — and they now parallelise |
+
+**(c) Roadmap.** The budget is written where the next person will hit it (the
+harness header, `tests/run.js`, and the KB note): **~44 MB per booted window over
+a ~40 MB floor; past ~15 windows in one file, start a new suite.** The cap stays
+at 12,288 MB as headroom for everything else, not as this file's life support.
+
+**(d) Next.** Nothing pending on this thread. If a funding suite starts creeping
+past ~15 windows, split it rather than trimming inside it.
+
+Durable:
+[`methodology-a-test-file-is-a-memory-budget`](kb-notes/methodology-a-test-file-is-a-memory-budget.md).
