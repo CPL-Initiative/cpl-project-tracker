@@ -29,10 +29,12 @@ const WORK = [
 const GUIDE = [
   { exhibit_id: "MOS-31B-002", exhibit_title: "Military Police", rows_n: 156, colleges_n: 64, tier: 1,
     tier_note: "corroborated and specific", strong_courses: 1, blanket_courses: 1,
+    map_action: "IN MAP: take the corroborated course to the college as a candidate. If it fits, attach it as the local course and set the CPL type to Credit by Exam.",
     peer_courses: [{ course: "ADJ-1 Intro", colleges: 3, spans_exhibits: 1, blanket: false },
                    { course: "MAG-51 Elements of Supervision", colleges: 3, spans_exhibits: 33, blanket: true }] },
   { exhibit_id: "MOS-99Z-999", exhibit_title: null, rows_n: 4, colleges_n: 4, tier: 3,
-    tier_note: "no college has named a course", strong_courses: 0, blanket_courses: 0, peer_courses: [] },
+    tier_note: "no college has named a course", strong_courses: 0, blanket_courses: 0, peer_courses: [],
+    map_action: "IN MAP: no course is suggested here on purpose. Take the exhibit title to the college. Do NOT bulk-rule Not Applicable." },
 ];
 
 function makeDom() {
@@ -112,6 +114,26 @@ async function run() {
   // ── 8. The guidance section is REFERENCE, not another queue.
   check("guidance is labelled reference, not a queue", /reference, not a queue/.test(text));
 
+  // ── 8b. Sam's condition on tier 2, 2026-08-20: "tier 2s earn their place as
+  // long as there is guidance for the CSM team on correcting or noting in MAP
+  // any changes recommended." A tier label says how much to TRUST a row; it
+  // never says what to DO with it, and this list exists to send someone to MAP.
+  const actRows = root.querySelectorAll("tr.mcw-actrow");
+  check("every guidance row carries a Do-in-MAP action", actRows.length === GUIDE.length);
+  check("the action names what to record in MAP",
+    /attach it as the local course/.test(text) && /Credit by Exam/.test(text));
+  check("the action forbids bulk-closing — ACE deferred, it did not refuse",
+    /Do NOT bulk-rule Not Applicable/.test(text));
+
+  // The copy output must carry the action too — the person acting on it is at
+  // the college, not looking at this screen.
+  const gtext = w.CPL_CLEANUP_VIEWS._guideText(GUIDE);
+  check("copy carries the exhibit title and id", /Military Police\s+\[MOS-31B-002\]/.test(gtext));
+  check("copy carries the MAP action", /attach it as the local course/.test(gtext));
+  check("copy spells out WHY a blanket mapping is weak",
+    /BLANKET MAPPING — this course is used against 33 different exhibits/.test(gtext));
+  check("copy points at MAP as the place to change it", /Make the change in MAP/.test(gtext));
+
   // ── 9. LOCKED must not render as EMPTY. An RLS-filtered read returns
   // 200 + [], so "no rows" and "no access" are the same response.
   const dom2 = makeDom(); const w2 = dom2.window;
@@ -137,6 +159,6 @@ async function run() {
     bad.forEach(([n]) => console.log("  ✗ " + n));
     process.exit(1);
   }
-  console.log(`OK — ${results.length} checks: read-only posture, MAP-facing actions, blanket labelling, locked-vs-empty.`);
+  console.log(`OK — ${results.length} checks: read-only posture, MAP-facing actions per tier, blanket labelling, locked-vs-empty.`);
 }
 run().catch((e) => { console.log("FAIL — threw: " + e.stack); process.exit(1); });

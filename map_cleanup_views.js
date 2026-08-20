@@ -59,6 +59,13 @@
   function tp() { return (typeof window !== "undefined" && window.CPL_TEAM_PHRASE) || null; }
   function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
   function clear(n) { while (n && n.firstChild) n.removeChild(n.firstChild); }
+  function parseCourses(pc) {
+    // PostgREST may hand jsonb back parsed or as a string. ONE parser, shared by
+    // the table and the copy text — two would let the spreadsheet drift from the
+    // screen, which is the failure the EACR matrix made structural.
+    if (typeof pc === "string") { try { pc = JSON.parse(pc); } catch (e) { return []; } }
+    return (pc && pc.length) ? pc : [];
+  }
   function num(n) { return (n == null) ? "—" : Number(n).toLocaleString("en-US"); }
 
   function session() {
@@ -73,8 +80,17 @@
     return h;
   }
 
-  function get(path) {
-    return fetch(REST + path, { headers: headers() }).then(function (r) {
+  // The two endpoints, written as REST + "<table>…" literals ON PURPOSE.
+  // kb/_build_cobi_admin_surface.py derives each tab's data surface by matching
+  // exactly that shape, and a module it cannot read renders as "touches no
+  // data" — which on the Admin tab reads as "nothing to protect". Hiding the
+  // table name behind a variable would make this tab under-report two gated
+  // tables in the gate audit, so the call sites name them.
+  var URL_WORKLIST = REST + "map_cleanup_worklist?select=college_id,college_name,priority,class,subclass,effort_shape,owner,rows,students,units,action,contact_name,contact_email&order=priority.asc,rows.desc&limit=2000";
+  var URL_GUIDE = REST + "map_cx_exhibit_guidance?select=exhibit_id,exhibit_title,rows_n,colleges_n,tier,tier_note,map_action,peer_courses,strong_courses,blanket_courses&order=tier.asc,rows_n.desc&limit=1000";
+
+  function get(url) {
+    return fetch(url, { headers: headers() }).then(function (r) {
       if (!r.ok) throw new Error("HTTP " + r.status);
       return r.json();
     });
@@ -83,10 +99,7 @@
   // ── data ──────────────────────────────────────────────────────────────────
   function load() {
     state.err = null;
-    return Promise.all([
-      get("map_cleanup_worklist?select=college_id,college_name,priority,class,subclass,effort_shape,owner,rows,students,units,action,contact_name,contact_email&order=priority.asc,rows.desc&limit=2000"),
-      get("map_cx_exhibit_guidance?select=exhibit_id,exhibit_title,rows_n,colleges_n,tier,tier_note,peer_courses,strong_courses,blanket_courses&order=tier.asc,rows_n.desc&limit=1000"),
-    ]).then(function (r) {
+    return Promise.all([get(URL_WORKLIST), get(URL_GUIDE)]).then(function (r) {
       state.work = r[0] || []; state.guide = r[1] || []; state.loaded = true;
     }).catch(function (e) {
       state.err = e && e.message ? e.message : String(e);
@@ -136,6 +149,28 @@
     });
     out.push(contact ? "College contact: " + contact : "College contact: none on file — find one before sending.");
     out.push("");
+    out.push("Source: COBI MAP Data Quality, derived from MAP and rebuilt nightly. Make the change in MAP.");
+    return out.join("\n");
+  }
+
+  function guideText(rows) {
+    var out = ["MAP — Credit by Exam exhibits with no course named", ""];
+    rows.forEach(function (d) {
+      out.push("• " + (d.exhibit_title || "(title not loaded)") + "  [" + d.exhibit_id + "]");
+      out.push("  " + num(d.rows_n) + " record(s) across " + num(d.colleges_n) + " college(s) · tier " + d.tier);
+      var pc = parseCourses(d.peer_courses);
+      if (pc.length) {
+        out.push("  What colleges did with it:");
+        pc.slice(0, 4).forEach(function (p) {
+          out.push("    - " + p.course + (p.blanket
+            ? "  (BLANKET MAPPING — this course is used against " + p.spans_exhibits
+              + " different exhibits, so it says little about this one)"
+            : "  (" + p.colleges + " college" + (p.colleges === 1 ? "" : "s") + ")"));
+        });
+      }
+      if (d.map_action) out.push("  " + d.map_action);
+      out.push("");
+    });
     out.push("Source: COBI MAP Data Quality, derived from MAP and rebuilt nightly. Make the change in MAP.");
     return out.join("\n");
   }
@@ -349,6 +384,11 @@
 
     var rows = state.guide.filter(function (d) { return !state.guideTier || String(d.tier) === state.guideTier; });
 
+    var gmeta = el("div", "mcw-meta");
+    gmeta.appendChild(el("div", "mcw-metatext", rows.length + " exhibit(s) shown"));
+    gmeta.appendChild(copyBtn("⧉ Copy these exhibits", function () { return guideText(rows); }));
+    det.appendChild(gmeta);
+
     var scroller = el("div", "mcw-scroll");
     scroller.setAttribute("tabindex", "0");
     scroller.setAttribute("role", "region");
@@ -378,9 +418,8 @@
       badge.title = d.tier_note || ""; c3.appendChild(badge); tr.appendChild(c3);
 
       var c4 = document.createElement("td");
-      var pc = d.peer_courses;
-      if (typeof pc === "string") { try { pc = JSON.parse(pc); } catch (e) { pc = []; } }
-      if (!pc || !pc.length) {
+      var pc = parseCourses(d.peer_courses);
+      if (!pc.length) {
         c4.appendChild(el("span", "mcw-none", "no college has named a course — the title is the guidance"));
       } else {
         pc.slice(0, 6).forEach(function (p) {
@@ -396,6 +435,20 @@
       }
       tr.appendChild(c4);
       tb.appendChild(tr);
+
+      // The action gets its own full-width row: a tier label says how much to
+      // trust a row, never what to DO with it, and this list exists to send
+      // someone to MAP.
+      if (d.map_action) {
+        var atr = document.createElement("tr");
+        atr.className = "mcw-actrow";
+        var atd = document.createElement("td");
+        atd.colSpan = 4;
+        atd.appendChild(el("span", "mcw-actlabel", "Do in MAP"));
+        atd.appendChild(document.createTextNode(" " + d.map_action));
+        atr.appendChild(atd);
+        tb.appendChild(atr);
+      }
     });
     tbl.appendChild(tb);
     scroller.appendChild(tbl);
@@ -487,6 +540,9 @@
       ".cpl-mcw .mcw-course.mcw-blanket{color:var(--text-muted);}",
       ".cpl-mcw .mcw-ctag{font-size:.7rem;font-weight:700;margin-left:7px;color:var(--text-muted);}",
       ".cpl-mcw .mcw-blanket .mcw-ctag{color:var(--warn);}",
+      ".cpl-mcw tr.mcw-actrow td{background:var(--surface-subtle);border-bottom:2px solid var(--border-strong);font-size:.8rem;padding-top:4px;}",
+      ".cpl-mcw tbody tr.mcw-actrow:nth-child(even) td{background:var(--surface-subtle);}",
+      ".cpl-mcw .mcw-actlabel{font-size:.68rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:var(--accent-link);margin-right:6px;}",
       ".cpl-mcw .mcw-none{font-size:.78rem;color:var(--text-muted);font-style:italic;}",
       "@media (max-width:560px){.cpl-mcw .mcw-count{margin-left:0;}.cpl-mcw .mcw-sel{min-width:0;width:100%;}.cpl-mcw .mcw-fl{width:100%;}}",
       "@media (prefers-reduced-motion:reduce){.cpl-mcw *{animation:none!important;transition:none!important;}}",
@@ -507,6 +563,7 @@
     mount: mount,
     _state: state,
     _collegeText: collegeText,
+    _guideText: guideText,
     _byCollege: byCollege,
     _priorityLabel: PRIORITY_LABEL,
   };
