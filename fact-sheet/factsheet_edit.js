@@ -42,6 +42,13 @@
    ONLY allowed reviewers can write it (RLS via is_allowed_reviewer()) — the same
    reviewer-trust boundary as item_updates / curator notes. The anon key can read,
    never write. All reviewer HTML is allowlist-sanitized before display.
+
+   Button visibility
+   -----------------
+   The ✎ Curate button is shipped HIDDEN and revealed only for a signed-in
+   reviewer (or via ?curate=1). That is a PRESENTATION choice, not a security
+   one — the RLS above is the gate, and always was. See the "Who sees the Curate
+   button" block below for the two entry paths and why both are needed.
    =========================================================================== */
 (function () {
   'use strict';
@@ -191,6 +198,76 @@
     return null;
   }
   function isReviewer() { return !!getSession(); }
+
+  /* ─── Who sees the Curate button ────────────────────────────────────────────
+   *
+   * Sam, 2026-08-20: "hide the Curate button so the public doesn't see it… but
+   * I would like it to be available somehow for the MAP team to curate."
+   *
+   * THIS IS PRESENTATION, NOT SECURITY, and the distinction is worth writing
+   * down where the next person will read it. The button was never the gate:
+   * every write to factsheet_overrides is RLS'd to is_allowed_reviewer(), the
+   * anon key can read and never write, and THIS FILE IS SERVED PUBLICLY — so
+   * anyone who opens it learns the reveal switch below. What hiding buys is that
+   * a visitor stops being offered a control they cannot use, and stops being
+   * asked for a "reviewer email" they do not have. Nothing here should ever be
+   * mistaken for a second line of defence, and no future change should start
+   * relying on it as one.
+   *
+   * Two ways in, checked in this order:
+   *
+   *   1. A LIVE REVIEWER SESSION — the normal path, and the one to prefer.
+   *      cpl_session.js (loaded ahead of this file) shares the COBI session
+   *      across every browser tab of this origin — localStorage canonical,
+   *      mirrored into each tab's sessionStorage, which is where getSession()
+   *      already looks. So a curator who signed in on COBI (About → reviewer
+   *      sign-in) and opened the Fact Sheet from the Share menu simply finds the
+   *      button here, with nothing new to learn.
+   *
+   *   2. ?curate=1 — the escape hatch, and the reason the session path alone is
+   *      not enough. Hiding the button ALSO hides the only way to START signing
+   *      in, which strands a curator on a new laptop or one past the keeper's
+   *      12h cap. The param is stripped from the address bar the moment it is
+   *      read (the same treatment captureHash() gives an access token, for the
+   *      same reason: the URL a curator copies out of their own bar should be
+   *      the public one) and remembered per browser. ?curate=0 forgets it.
+   *
+   * The in-memory flag is deliberate: a browser with localStorage unavailable
+   * (private mode) still honours ?curate=1 for that pageview.
+   */
+  var REVEAL_KEY = 'cpl_fs_curate';
+  var _revealed = false;
+
+  function stripCurate(search) {
+    try {
+      var qs = new URLSearchParams(search || '');
+      qs.delete('curate');
+      var out = qs.toString();
+      return out ? '?' + out : '';
+    } catch (e) { return search || ''; }
+  }
+
+  function captureReveal() {
+    var v = null;
+    try { v = new URLSearchParams(location.search || '').get('curate'); } catch (e) {}
+    if (v === null) {                       // no switch in the URL — use what this browser remembers
+      try { _revealed = localStorage.getItem(REVEAL_KEY) === '1'; } catch (e) {}
+      return;
+    }
+    _revealed = (v === '1');
+    try {
+      if (_revealed) localStorage.setItem(REVEAL_KEY, '1');
+      else localStorage.removeItem(REVEAL_KEY);
+    } catch (e) {}
+    try {
+      if (history.replaceState) {
+        history.replaceState(null, '', location.pathname + stripCurate(location.search) + (location.hash || ''));
+      }
+    } catch (e) {}
+  }
+
+  // A signed-in reviewer always sees it; everyone else needs the switch.
+  function isRevealed() { return _revealed || isReviewer(); }
 
   // Mint the session if we landed from a magic link (standalone — no COBI app to
   // process the callback for us). Idempotent with the other curator tabs.
@@ -1158,6 +1235,10 @@
   function updateButton() {
     var btn = document.getElementById('btn-curate');
     if (!btn) return;
+    // The public sees no button at all. Re-evaluated on every call, so the
+    // keeper picking up a sign-in in another tab reveals it without a reload —
+    // and a sign-out hides it again.
+    btn.hidden = !isRevealed();
     if (API._curating) { btn.textContent = '✓ Done'; btn.title = 'Finish editing'; btn.classList.add('on'); btn.setAttribute('aria-pressed', 'true'); }
     else { btn.textContent = '✎ Curate'; btn.classList.remove('on'); btn.setAttribute('aria-pressed', 'false');
            btn.title = isReviewer() ? 'Edit boxes on this page' : 'Sign in to edit this fact sheet'; }
@@ -1287,6 +1368,10 @@
   function boot() {
     injectCss();
     captureHash();
+    captureReveal();
+    // The keeper announces a session arriving (another tab signed in) or ending.
+    // Cheap, and it means the button appears where the curator is already looking.
+    try { window.addEventListener('cpl-session-changed', updateButton); } catch (e) {}
     API._blocks = collectBlocks();      // sync: baked boxes (callers may read blocks() now)
     indexBlocks();
     document.addEventListener('click', onDocClick, true);
@@ -1352,6 +1437,13 @@
     deleteBox: deleteBox,
     toggleHidden: toggleHidden,
     setCurating: setCurating,
+    // curate-button visibility:
+    isRevealed: isRevealed,
+    isReviewer: isReviewer,
+    captureReveal: captureReveal,
+    stripCurate: stripCurate,
+    updateButton: updateButton,
+    REVEAL_KEY: REVEAL_KEY,
     blockByEl: blockByEl,
     sampleInner: sampleInner,
     isAddedKey: isAddedKey,
