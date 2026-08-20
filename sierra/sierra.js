@@ -620,6 +620,58 @@
     }
   }
 
+  /* ─── Scroll regions the keyboard can reach ────────────────────────────────
+   *
+   * A container that scrolls can be dragged with a mouse and swiped with a
+   * finger, but is UNREACHABLE by keyboard unless it is focusable (WCAG 2.1.1).
+   * Two here, and the conversation log is the one that matters:
+   *
+   *   · #s-log holds every answer Sierra has given. It became reachable only by
+   *     accident — the starter chips inside it are focusable — and `submit()`
+   *     REMOVES those chips after the first question. So the log was reachable
+   *     while it was empty and had nothing to scroll, and stopped being
+   *     reachable the moment it filled up. A keyboard user could not read past
+   *     the fold of a long answer, which on a phone is most of one.
+   *
+   *   · a markdown table inside an answer (.s-bubble table is display:block +
+   *     overflow-x:auto, so a wide one scrolls sideways rather than pushing the
+   *     page). Same problem, same fix.
+   *
+   * Focusable ONLY while it actually overflows, exactly as the Fact Sheet's
+   * .tbl-wrap does — otherwise a short conversation leaves a tab stop that does
+   * nothing, which is its own small failure. Re-synced after every render and on
+   * resize, because which state it is in depends on the content AND the
+   * viewport. Names are taken from what is already on the element, never
+   * invented: #s-log carries aria-label="Conversation with Sierra" in the
+   * markup. */
+  function syncScrollRegions() {
+    if (logEl) {
+      if (logEl.scrollHeight > logEl.clientHeight + 1) {
+        logEl.setAttribute('tabindex', '0');
+      } else {
+        logEl.removeAttribute('tabindex');
+      }
+    }
+    var tables = document.querySelectorAll('.s-bubble table');
+    for (var i = 0; i < tables.length; i++) {
+      var t = tables[i];
+      if (t.scrollWidth > t.clientWidth + 1) {
+        t.setAttribute('tabindex', '0');
+        t.setAttribute('role', 'region');
+        if (!t.getAttribute('aria-label')) {
+          var head = t.querySelector('th');
+          var lead = head ? (head.textContent || '').replace(/\s+/g, ' ').trim() : '';
+          t.setAttribute('aria-label', (lead ? lead + ' table' : 'Table') + ' (scrollable)');
+        }
+        t.classList.add('s-scrollx');
+      } else {
+        t.removeAttribute('tabindex');
+        t.removeAttribute('role');
+        t.classList.remove('s-scrollx');
+      }
+    }
+  }
+
   function wire() {
     if (wired) return; // idempotent (guards a double DOMContentLoaded)
     wired = true;
@@ -645,6 +697,18 @@
       });
     }
     formEl.addEventListener('submit', function (e) { e.preventDefault(); submit(); });
+
+    /* Content arrives from streaming tokens, not from a single render call, so
+       a one-shot sync would be wrong for every answer after the first. Watching
+       the log covers every path that adds to it — a new bubble, a streamed
+       token, a rendered table — without each of them having to remember. */
+    if (window.MutationObserver && logEl) {
+      var mo = new MutationObserver(function () { syncScrollRegions(); });
+      mo.observe(logEl, { childList: true, subtree: true, characterData: true });
+    }
+    window.addEventListener('resize', syncScrollRegions);
+    syncScrollRegions();
+
     inputEl.focus();
   }
 
@@ -660,5 +724,6 @@
     parseSse: parseSse, CHAT_URL: CHAT_URL, SUGGESTED: SUGGESTED,
     AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
     SIERRA_MARK: SIERRA_MARK, ctxVariant: ctxVariant, buildPayload: buildPayload,
+    syncScrollRegions: syncScrollRegions,
   };
 })();

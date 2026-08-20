@@ -5,7 +5,17 @@
   --sierra-cobalt: #0047ab;
   --sierra-ink: #1c2733;
   --sierra-muted: #5b6b7a;
-  --sierra-faint: #8394a3;
+  /* Was #8394a3 until 2026-08-20. It painted the beta disclaimer at 2.80:1 and
+     the footer at 3.12:1 — both below the AA 4.5:1 floor, and the beta box is
+     the sentence telling a student to confirm anything important with their
+     coordinator, i.e. the most consequential text on the page and the least
+     legible. At 12–13px there is no "large text" exemption (that needs 24px, or
+     18.66px bold), so a genuinely faint third grey cannot exist here: this value
+     is close to --sierra-muted on purpose. Every use of this token is TEXT
+     (.s-beta, .s-foot, .s-fb, .s-fb-sending), so nothing decorative regressed.
+     Verified 4.69:1 on --sierra-subtle and 5.23:1 on white by
+     scripts/check_public_page_layout.js, which computes the painted pair. */
+  --sierra-faint: #5f6e7d;
   --sierra-surface: #ffffff;
   --sierra-subtle: #eef3f8;
   --sierra-bg: #f5f7fa;
@@ -41,7 +51,15 @@ body {
   padding-left: 16px; border-left: 1px solid rgba(255, 255, 255, .35); min-width: 0;
 }
 /* Mt Whitney ridgeline ghosted behind the "Sierra" wordmark */
-.s-name-peak { position: relative; display: inline-block; }
+/* `clip` (not `hidden`) contains the decorative ridgeline: it stops the ghost
+   from pushing the document sideways on a narrow phone WITHOUT creating a
+   scroll container, which `overflow:hidden` would — and a scroll container here
+   would silently swallow the focus ring of anything that ever lands inside it.
+   Padding leaves the ghost room to overhang the wordmark, which is the effect. */
+.s-name-peak {
+  position: relative; display: inline-block;
+  padding: 0 .35em; margin: 0 -.35em; overflow: clip;
+}
 .s-name-peak > h1 { position: relative; z-index: 1; }
 .s-whitney-ghost {
   position: absolute; z-index: 0; pointer-events: none;
@@ -203,7 +221,13 @@ body {
 .s-status.s-error { color: var(--sierra-crimson); }
 .s-form { display: flex; gap: 9px; padding: 8px 0 14px; }
 .s-input {
-  flex: 1; border: 1px solid var(--sierra-border-strong); border-radius: 999px;
+  /* min-width:0 is load-bearing, not tidiness. A flex ITEM defaults to
+     min-width:auto, so this input refused to shrink below its intrinsic size
+     (roughly 215px: the UA's default 20-character width plus padding), which
+     pushed Send past the right edge and made the whole page scroll sideways by
+     19px at 320px — the narrowest phone still in wide use. */
+  flex: 1; min-width: 0;
+  border: 1px solid var(--sierra-border-strong); border-radius: 999px;
   padding: 12px 18px; font-size: .96rem; font-family: var(--sierra-font);
   background: var(--sierra-surface); color: var(--sierra-ink);
 }
@@ -222,6 +246,58 @@ body {
   border-top: 1px solid var(--sierra-border); background: var(--sierra-surface);
 }
 .s-foot a { color: var(--sierra-cobalt); }
+
+/* Sierra declared two animations and honoured no motion preference: the typing
+   indicator pulses INFINITELY while an answer streams, and the audience selector
+   flashes its outline when someone sends without picking. Both are exactly what
+   WCAG 2.3.3 / vestibular-disorder guidance asks you to stand down.
+   Neither cue is deleted — the typing dots still say "thinking" by being there,
+   and the selector still calls attention to itself with a solid outline. Only
+   the movement stops. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .s-typing { animation: none; opacity: .8; }
+  .s-audience.s-need { animation: none; outline: 3px solid var(--sierra-crimson); }
+}
+
+/* One consistent focus ring, rather than four different UA defaults on top of
+   four different backgrounds — the Send button is cobalt, so the browser's own
+   ring sits on it at poor contrast. :focus-visible so a mouse click on a chip
+   does not leave a ring behind. */
+.s-back:focus-visible, .s-aud-chip:focus-visible, .s-chip:focus-visible,
+.s-send:focus-visible, .s-fb-btn:focus-visible, .s-fb-copy:focus-visible,
+.s-fb-note button:focus-visible, .s-foot a:focus-visible,
+.s-bubble a:focus-visible, .s-log:focus-visible, .s-scrollx:focus-visible {
+  outline: 3px solid var(--sierra-cobalt);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+/* On the navy header the cobalt ring has almost no contrast against its own
+   background, so the header's own control gets a white one. */
+.s-back:focus-visible { outline-color: #fff; }
+
+/* A scroll container is reachable by keyboard ONLY if it is focusable (WCAG
+   2.1.1). Both of these are made focusable by sierra.js exactly while they
+   overflow — never a dead tab stop. The dotted rule is the only visual sign a
+   region continues past its edge. */
+.s-log[tabindex] { outline-offset: -2px; }
+.s-scrollx { overflow-x: auto; }
+.s-scrollx[tabindex] { border-left: 2px dotted var(--sierra-border-strong); }
+
+/* Skip link — off-screen until focused. */
+.s-skip {
+  position: absolute; left: 8px; top: -60px; z-index: 20;
+  background: var(--sierra-surface); color: var(--sierra-cobalt);
+  border: 2px solid var(--sierra-cobalt); border-radius: 8px;
+  padding: 9px 14px; font: 600 .9rem var(--sierra-font); text-decoration: none;
+  transition: top .12s ease-in;
+}
+.s-skip:focus { top: 8px; }
 
 @media (max-width: 560px) {
   .s-head { flex-wrap: wrap; gap: 10px 12px; }

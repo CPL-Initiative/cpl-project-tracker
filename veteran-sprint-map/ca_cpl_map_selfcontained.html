@@ -12,7 +12,11 @@
   }
   *{box-sizing:border-box}
   html,body{margin:0;height:100%;font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg)}
-  #app{display:flex;flex-direction:column;height:100vh;width:100%}
+  /* 100dvh, not 100vh: on iOS/Android `vh` is sized to the viewport WITHOUT the
+     browser chrome, so a 100vh app column is taller than the screen and the
+     footer sits under the address bar. The vh line stays first as the fallback
+     for anything that does not know dvh. */
+  #app{display:flex;flex-direction:column;height:100vh;height:100dvh;width:100%}
   header{padding:10px 16px;background:linear-gradient(90deg,var(--navy),var(--dk-blue));color:#fff;flex:0 0 auto}
   header h1{margin:0;font-size:18px;font-weight:800;letter-spacing:.2px}
   header .sub{font-size:12.5px;color:#cde0f5;margin-top:2px}
@@ -64,6 +68,10 @@
   #side .tab.on{color:var(--navy);background:#fff;border-bottom-color:var(--co-blue)}
   #side .body{flex:1 1 auto;overflow:auto;padding:12px 14px}
   .search{width:100%;padding:7px 9px;border:1px solid var(--line);border-radius:8px;font-size:13px;margin-bottom:8px}
+  /* The three layer toggles measured 75x19 — the checkbox itself is 13x13 and
+     the label is what you actually press, so 19px tall was the real target and
+     it is under the WCAG 2.2 AA 24x24 floor. Padding, not a bigger checkbox. */
+  label.toggle{display:flex;align-items:center;gap:7px;min-height:24px;padding:2px 0;cursor:pointer}
   .detail h2{margin:0 0 2px;font-size:16px;color:var(--navy)}
   .detail .kicker{font-size:11px;font-weight:800;letter-spacing:.6px;text-transform:uppercase;color:var(--co-blue)}
   .detail .blurb{font-size:12.5px;color:var(--muted);margin:8px 0}
@@ -90,6 +98,21 @@
   .hint{font-size:12px;color:var(--muted);margin:0 0 10px}
   .empty{color:var(--muted);font-size:13px;padding:14px 4px}
   footer{flex:0 0 auto;font-size:11px;color:var(--muted);padding:5px 14px;background:#fff;border-top:1px solid var(--line)}
+  /* One visible focus ring everywhere. :focus-visible so a mouse click on a
+     marker or a list row does not leave a ring behind after the pointer moves
+     on. SVG takes `outline` in every current browser. */
+  .btn:focus-visible, .tab:focus-visible, .search:focus-visible, a:focus-visible,
+  label.toggle:focus-within, .dirlist li:focus-visible, .mk:focus-visible{
+    outline:3px solid var(--co-blue);outline-offset:2px;border-radius:6px}
+  .mk:focus-visible{outline-offset:0}
+  /* Skip link — off-screen until focused. */
+  .skip{position:absolute;left:8px;top:-60px;z-index:60;background:#fff;color:var(--dk-blue);
+        border:2px solid var(--co-blue);border-radius:8px;padding:9px 14px;
+        font-size:13px;font-weight:700;text-decoration:none;transition:top .12s ease-in}
+  .skip:focus{top:8px}
+  /* A directory row is operated by script, so it has to advertise itself as a
+     control: focusable, named, and driven by Enter/Space as well as a click. */
+  .dirlist li:focus-visible{background:#f1f6fc}
   /* floating tooltip */
   #tip{position:fixed;z-index:50;pointer-events:none;background:#fff;border:1px solid var(--line);
        border-radius:8px;box-shadow:0 4px 14px rgba(15,30,60,.2);padding:7px 9px;max-width:240px;
@@ -97,13 +120,32 @@
   #tip .t{font-weight:800;color:var(--navy)}
   #tip .c{color:var(--co-blue);font-weight:700;font-size:11px}
   #tip .b{color:var(--muted);margin-top:3px}
+  /* ⚠️ This breakpoint used to read `#side{flex-basis:0;display:none}` — on any
+     phone the ENTIRE side panel was removed: the Details pane a marker click
+     writes into, both directories, both searches, and every CPL landing-page
+     link. Tapping a college still selected it and still rendered its detail,
+     into a panel that was not on the page. The map remained, so nothing looked
+     broken; the page had simply stopped being able to answer the question it
+     exists to answer.
+
+     Below 760px the two panes STACK instead. The map keeps the top 52% (enough
+     to stay legible and pannable) and the panel takes the rest with its own
+     scroll, border-top replacing border-left. selectCollege/selectBase scroll
+     the panel into view, so a tap on a marker still shows its result. */
   @media (max-width:760px){
-    #side{flex-basis:0;display:none}
+    #main{flex-direction:column}
+    #stage{flex:1 1 52%;min-height:210px}
+    #side{flex:1 1 48%;max-width:none;min-height:150px;
+          border-left:none;border-top:1px solid var(--line)}
     .regions{max-width:80vw}
+    .ctl.bl{bottom:8px}
+    header h1{font-size:16px}
+    header .sub{font-size:11.5px}
   }
 </style>
 </head>
 <body>
+<a class="skip" href="#side">Skip to the details panel</a>
 <div id="app">
   <header>
     <h1>California Community Colleges &amp; Military Installations</h1>
@@ -137,19 +179,25 @@
       </div>
 
       <div class="ctl tr zoombtns">
-        <button class="btn" id="zin" title="Zoom in">+</button>
-        <button class="btn" id="zout" title="Zoom out">&minus;</button>
-        <button class="btn" id="zreset" title="Reset view" style="font-size:12px;font-weight:700">Reset</button>
+        <button class="btn" id="zin" type="button" title="Zoom in" aria-label="Zoom in"><span aria-hidden="true">+</span></button>
+        <button class="btn" id="zout" type="button" title="Zoom out" aria-label="Zoom out"><span aria-hidden="true">&minus;</span></button>
+        <button class="btn" id="zreset" type="button" title="Reset view" style="font-size:12px;font-weight:700">Reset</button>
       </div>
 
       <div class="ctl bl card regions" id="regions"></div>
     </div>
 
-    <aside id="side">
-      <div class="tabs">
-        <button class="tab on" data-tab="detail">Details</button>
-        <button class="tab" data-tab="colleges">Colleges</button>
-        <button class="tab" data-tab="bases">Bases</button>
+    <aside id="side" tabindex="-1" aria-label="Details, colleges and installations">
+      <!-- aria-pressed + aria-controls, NOT role="tab". A real tablist promises
+           arrow-key roving focus, which these do not implement; describing them
+           as toggle buttons that control a panel is what they actually are. -->
+      <div class="tabs" role="group" aria-label="Choose what the panel shows">
+        <button class="tab on" data-tab="detail" type="button"
+                aria-pressed="true" aria-controls="panel-detail">Details</button>
+        <button class="tab" data-tab="colleges" type="button"
+                aria-pressed="false" aria-controls="panel-colleges">Colleges</button>
+        <button class="tab" data-tab="bases" type="button"
+                aria-pressed="false" aria-controls="panel-bases">Bases</button>
       </div>
       <div class="body" id="panel-detail">
         <p class="hint">Click any <b>installation ★</b> to see the community colleges best positioned to partner
@@ -339,6 +387,22 @@ REGIONS.forEach((rg,idx)=>{
 // ---------- tooltip ----------
 const tip=document.getElementById("tip");
 function showTip(ev, htmlStr){ tip.innerHTML=htmlStr; tip.style.display="block"; moveTip(ev); }
+/* The hover tooltip is built from a MouseEvent, so a keyboard user got nothing.
+   Same content, positioned from the marker's own box. */
+function tipHtml(kind, obj){
+  if(kind==="col"){
+    const vet = obj.m==null? "" : `<div class="b" style="color:var(--navy)">&#127894; <b>${num(obj.m)}</b> veterans &amp; service members served via CPL</div>`;
+    return `<div class="t">${escapeHtml(obj.n)}</div><div class="c">Credit for Prior Learning</div>${vet}`;
+  }
+  const demo = pairOf[obj.n]? ` &middot; demo with ${escapeHtml(pairOf[obj.n].join(', '))}`:'';
+  return `<div class="t" style="color:var(--crimson)">${escapeHtml(obj.n)}</div><div class="b">Military installation${demo}</div>`;
+}
+function showTipAt(x, y, kind, obj){
+  tip.innerHTML = tipHtml(kind, obj);
+  tip.style.display="block";
+  tip.style.left = Math.max(6, Math.min(x+12, window.innerWidth - tip.offsetWidth - 6)) + "px";
+  tip.style.top  = Math.max(6, y - tip.offsetHeight - 10) + "px";
+}
 function moveTip(ev){
   const pad=14, w=tip.offsetWidth, h=tip.offsetHeight;
   let x=ev.clientX+pad, y=ev.clientY+pad;
@@ -447,9 +511,39 @@ function renderCollegeDetail(c, ranked){
 }
 
 // ---------- marker events ----------
+/* Every marker was mouse-only: a <g> is not focusable and the only handler was
+   "click". So the map's entire content — which colleges partner with which
+   installation, and every CPL landing-page link — could not be reached with a
+   keyboard at all (WCAG 2.1.1). tabindex makes each marker a stop, role+label
+   say what it is, and Enter/Space do what a click does. The panel scrolls into
+   view on selection, which is also what makes the stacked phone layout work. */
+function activate(kind, obj){
+  hideTip();
+  if(kind==="col") selectCollege(obj.n); else selectBase(obj.n);
+  const side = document.getElementById("side");
+  if(side && window.matchMedia && window.matchMedia("(max-width:760px)").matches){
+    side.scrollIntoView({block:"nearest"});
+  }
+}
 function bindEvents(g, kind){
   const i=+g.dataset.i;
   const obj = kind==="col"? DATA.colleges[i] : DATA.bases[i];
+  g.setAttribute("tabindex","0");
+  g.setAttribute("role","button");
+  g.setAttribute("aria-label", kind==="col"
+    ? obj.n + " — community college. Show details and CPL page."
+    : obj.n + " — military installation. Show partner colleges.");
+  g.addEventListener("keydown", ev=>{
+    if(ev.key==="Enter" || ev.key===" " || ev.key==="Spacebar"){
+      ev.preventDefault(); ev.stopPropagation(); activate(kind, obj);
+    }
+  });
+  // Focus is the keyboard's equivalent of hover, so it gets the same tooltip.
+  g.addEventListener("focus", ()=>{
+    const b=g.getBoundingClientRect();
+    showTipAt(b.left+b.width/2, b.top, kind, obj);
+  });
+  g.addEventListener("blur", hideTip);
   g.addEventListener("mouseenter", ev=>{
     if(kind==="col"){
       const vet = obj.m==null? "" : `<div class="b" style="color:var(--navy)">&#127894; <b>${num(obj.m)}</b> veterans &amp; service members served via CPL</div>`;
@@ -465,8 +559,7 @@ function bindEvents(g, kind){
   g.addEventListener("mouseleave", hideTip);
   g.addEventListener("click", ev=>{
     ev.stopPropagation();
-    hideTip();
-    if(kind==="col") selectCollege(obj.n); else selectBase(obj.n);
+    activate(kind, obj);
   });
 }
 Object.values(colEls).forEach(g=>bindEvents(g,"col"));
@@ -479,7 +572,11 @@ document.getElementById("t-pair").onchange=e=>{ gPair.style.display=e.target.che
 
 // ---------- side tabs + directories ----------
 function switchTab(name){
-  document.querySelectorAll("#side .tab").forEach(t=>t.classList.toggle("on", t.dataset.tab===name));
+  document.querySelectorAll("#side .tab").forEach(t=>{
+    const on = t.dataset.tab===name;
+    t.classList.toggle("on", on);
+    t.setAttribute("aria-pressed", on ? "true" : "false");   // the class alone tells assistive tech nothing
+  });
   document.getElementById("panel-detail").style.display = name==="detail"?"":"none";
   document.getElementById("panel-colleges").style.display = name==="colleges"?"":"none";
   document.getElementById("panel-bases").style.display = name==="bases"?"":"none";
@@ -495,7 +592,12 @@ function buildColList(filter){
       <span class="nm">${escapeHtml(c.n)}${c.k?' <span class="pill">&#9733;</span>':''}${c.m!=null?` <span style="color:var(--muted);font-weight:400">&middot; &#127894; ${num(c.m)}</span>`:''}</span>
       <a class="lnk" href="${escapeHtml(c.u)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">CPL &#8599;</a>
     </li>`).join('') : '<div class="empty">No colleges match.</div>';
-  listCol.querySelectorAll("li").forEach(li=>li.onclick=()=>selectCollege(li.dataset.n));
+  listCol.querySelectorAll("li").forEach(li=>{
+    li.onclick=()=>selectCollege(li.dataset.n);
+    li.tabIndex=0; li.setAttribute("role","button");
+    li.setAttribute("aria-label", li.dataset.n + " — show details");
+    li.onkeydown=ev=>{ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); selectCollege(li.dataset.n); } };
+  });
 }
 function buildBaseList(filter){
   const f=(filter||"").toLowerCase();
@@ -503,7 +605,12 @@ function buildBaseList(filter){
   listBase.innerHTML = rows.length? rows.map(b=>`<li data-n="${escapeHtml(b.n)}">
       <span class="nm"><span class="star-swatch">&#9733;</span> ${escapeHtml(b.n)}</span>
       <span class="lnk">partners &#8594;</span></li>`).join('') : '<div class="empty">No installations match.</div>';
-  listBase.querySelectorAll("li").forEach(li=>li.onclick=()=>selectBase(li.dataset.n));
+  listBase.querySelectorAll("li").forEach(li=>{
+    li.onclick=()=>selectBase(li.dataset.n);
+    li.tabIndex=0; li.setAttribute("role","button");
+    li.setAttribute("aria-label", li.dataset.n + " — show partner colleges");
+    li.onkeydown=ev=>{ if(ev.key==="Enter"||ev.key===" "){ ev.preventDefault(); selectBase(li.dataset.n); } };
+  });
 }
 document.getElementById("search-col").addEventListener("input",e=>buildColList(e.target.value));
 document.getElementById("search-base").addEventListener("input",e=>buildBaseList(e.target.value));
