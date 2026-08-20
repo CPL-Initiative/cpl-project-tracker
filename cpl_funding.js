@@ -1152,10 +1152,29 @@
   // A malformed or stale order (hand-edited config, or a priority list that
   // changed length) falls back to the natural order rather than throwing or
   // dropping a priority off the page.
+  //
+  // MEMOISED, and that is not a micro-optimisation. srcIdx() sits under
+  // prioField(), which the table calls for every field of every priority of
+  // every college row — so an order array allocated per lookup is thousands of
+  // allocations per render. cpl_funding.test.js builds ~50 jsdom windows whose
+  // vm contexts are not reclaimable mid-run (see tests/run.js), so the file
+  // already peaks near its heap ceiling; the extra churn tipped it into
+  // "Ineffective mark-compacts near heap limit" and took CI down with it.
+  //
+  // The cache key is the stored value's REFERENCE, not its contents: the config
+  // layers hand back the same array between edits (setPriorityOrder assigns a
+  // new one), and `undefined === undefined` when no order is set, so the common
+  // path allocates nothing at all. The returned array is shared, so every caller
+  // treats it as READ-ONLY — reorderList() slices before mutating.
+  var ORDER_CACHE = { src: 0, slot: null, n: -1, val: null };
   function priorityOrder(slot) {
-    var n = prioSrcList(prioSlot(slot)).length;
+    var s = prioSlot(slot);
+    var n = prioSrcList(s).length;
     var v = firstDefined(SCENARIO.priorityOrder, SHARED.priorityOrder, base().priority_order);
-    return isPermutation(v, n) ? v.map(Number) : identityOrder(n);
+    if (ORDER_CACHE.src === v && ORDER_CACHE.slot === s && ORDER_CACHE.n === n) return ORDER_CACHE.val;
+    var out = isPermutation(v, n) ? v.map(Number) : identityOrder(n);
+    ORDER_CACHE.src = v; ORDER_CACHE.slot = s; ORDER_CACHE.n = n; ORDER_CACHE.val = out;
+    return out;
   }
   function orderIsCustom(slot) {
     return priorityOrder(slot).some(function (v, i) { return v !== i; });
