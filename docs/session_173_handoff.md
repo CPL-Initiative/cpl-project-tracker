@@ -10,6 +10,8 @@ related:
   - "[[docs/map_cleanup_worklist]]"
   - "[[docs/map_custom_report_load]]"
   - "[[docs/session_172_handoff]]"
+superseded: true
+superseded_by: session_174_handoff.md
 ---
 
 # Session 173 handoff

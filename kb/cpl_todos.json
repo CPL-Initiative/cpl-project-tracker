@@ -1,9 +1,27 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job proved itself on its own schedule; your Credit by Exam ruling is live and scoped; the exhibit-title list is built and needs a home.",
-  "_session": "Session 172 (SkySwap)",
-  "_status": "Three things were caught before anyone was affected. The nightly job that refreshes MAP data would have failed every night from Tuesday — the step that empties the loading area was deleting rows one at a time and timed out; it now clears in five seconds. While fixing it we found six powerful database functions were reachable by anyone on the internet, because the line meant to lock them down does nothing; they are locked now and a test will fail the build if the ineffective version returns. And the clean-up list was about to tell around a hundred colleges that ACE had refused credit it had not refused. Sam ruled those records are Credit by Exam offers for students, then caught that three quarters of them name no course at all — so only 1,310 are sendable. For the rest we now load the name of the military training each one came from (25,794 titles; 219 of 225 resolve), which turns 'MOS-31B-002' into 'Military Police'. That list exists but has no screen yet, and where it should live is the main open question.",
+  "_as_of": "2026-08-20 · SkyCurate (Session 173) — the Curate button is hidden from the public and still reachable for the team; the accessibility check found four real problems on phones and they are fixed.",
+  "_session": "Session 173 (SkyCurate)",
+  "_status": "You asked for two things and the second one mattered more. The ✒ Curate button no longer shows to the public — it appears automatically once you are signed in on COBI (the sign-in now carries across browser tabs), and there is a bookmark, fact-sheet/?curate=1, for a laptop where you are not signed in yet. Worth knowing: the button was never what protected the page. Editing was always locked at the database, so hiding it just stops the public being shown a control they cannot use and asked for a reviewer email they do not have.\n\nThen the accessibility check. It found more than the button change did, and none of it was catchable by the nine automated test files the page already had — those tests read the page's structure, but they cannot see where things land on a screen. On a phone the Statewide exhibits table was genuinely broken: the program name printed on top of its own number, the page slid sideways, and the whole \"Could adopt\" column was cut off with no way to scroll to it. That last one is the one to remember — a page that quietly drops a column still looks finished, so nobody reports it. The table now stacks on small screens with every figure labelled. Also fixed: a \"skip to content\" link (a keyboard user had to tab past about 25 controls to reach anything), the funding table which could be scrolled with a mouse but not a keyboard, and heading levels that skipped. Colour contrast was already fine — all 31 combinations pass.\n\nOne thing I could not do: look at the live page. This environment is blocked from reaching the public site, so the phone view is verified in a test browser, not on glass. That is the first item below.",
   "items": [
+    {
+      "id": "s173-phone-check",
+      "for": "Sam",
+      "tab": "fact-sheet",
+      "text": "Please open the Fact Sheet on your phone and scroll to Statewide CPL credit recommendations. This is the one thing no session can check — I am blocked from reaching the live site, so the mobile fix is verified in a test browser only. What you should see: each program area on its own line, then four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt). Before this, on a phone, the program name printed on top of the first number and the Could adopt column was cut off entirely. If it looks cramped or the labels read oddly, tell me and I will tune it."
+    },
+    {
+      "id": "s173-curate-signin",
+      "for": "Sam",
+      "tab": "fact-sheet",
+      "text": "Worth one minute to confirm: sign in on COBI (About menu → reviewer sign-in), then open the Fact Sheet from the Share menu. The ✒ Curate button should just be there, with nothing else to do — the sign-in now carries across browser tabs. If you are on a machine where you are not signed in, use fact-sheet/?curate=1 instead; that is the bookmark to keep and to pass to anyone on the team who curates. Please do not share that link publicly, though it is not a security boundary — the real lock is on the database."
+    },
+    {
+      "id": "s173-other-public-pages",
+      "for": "Fable",
+      "tab": "fact-sheet",
+      "text": "Run the same accessibility and phone check against the other two public pages, Sierra and the Veteran Sprint map. Neither has ever had one, and both are shared with colleges. The Fact Sheet had four real problems that its existing tests could not see, so the base rate here is not zero. The tool is committed: node fact-sheet/check_mobile_layout.js."
+    },
     {
       "id": "s172-guidance-surface",
       "for": "Sam",
@@ -17,12 +35,6 @@
       "text": "The 'where might this align' tag is weaker than it first looked, and you should know why before deciding what to show. Only 3 of 225 exhibits have a course that two or more colleges chose AND that isn't a catch-all: Military Police to Introduction to the Administration of Justice, and Human Resources Specialist to HR Management and Intro to Computer Information Systems. The third is a placeholder. My first attempt looked far better — 14 exhibits — until I noticed 11 of them pointed at the same course, Elements of Supervision, which three colleges apply to any military service at all: it appears against 33 different exhibits. So the titles are the real deliverable and the peer-course tag is mostly noise. Question for you: is the middle tier (47 exhibits where somebody named something, but nothing solid) useful to a counsellor, or just clutter?"
     },
     {
-      "id": "s172-mag51-ccrr",
-      "for": "Sam",
-      "tab": "ccr-reference",
-      "text": "A finding for your Common CR Reference work, separate from everything else: three colleges have mapped a single course — MAG-51 Elements of Supervision — against 33 distinct military exhibits, covering jobs as different as infantryman, combat medic, cook and truck driver. That is worth a look as a data-quality question in its own right."
-    },
-    {
       "id": "s172-p1-safe-to-send",
       "for": "Sam",
       "tab": "course-credit",
@@ -33,12 +45,6 @@
       "for": "Sam",
       "tab": "course-credit",
       "text": "The 1,310 records that DO name a subject are ready to go to colleges as the Credit by Exam offer you described — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — across 89 colleges."
-    },
-    {
-      "id": "s171-followup-pierce-merced",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Follow-up detail is ready. For the students marked transcribed with nothing recorded, we can now hand a college the exact exhibits and catalog years to look at — 270 rows across 8 colleges, about 46,500 units of credit whose status is genuinely unknown. Start with Los Angeles Pierce (1,840 students, 46 exhibits, ~35,200 units, all AP) and Merced (1,785 students, ~8,900 units); together they are 87% of it. One thing to be clear about with them: we cannot say WHICH students, because the student ID is hashed and we deliberately never store it — the college finds them in MAP by filtering the exhibit and catalog year we give them. The question to ask those colleges is narrow: did these students actually get the credit? The plan says transcribed and the units say nothing, which fits either 'it happened and the amount was never recorded' or 'it never happened and the tick is wrong'. Only they can say. For Pierce and Merced it looks like an AP batch upload that carried the completion but not the unit amounts, so it likely needs re-uploading rather than any curation work."
     },
     {
       "id": "s171-cs-phrase",
@@ -59,12 +65,6 @@
       "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong. Two things to have in hand for that conversation: Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
     },
     {
-      "id": "s169-delta-utility-sponsor",
-      "for": "Sam",
-      "tab": "eacr",
-      "text": "Delta teaches a utility/hydroelectric apprenticeship — turbines, protective relaying, high-voltage switching, aqueduct systems — covering 6 jobs with NO credit recommendation anywhere in California. The question to ask the college is who sponsors that apprenticeship, because that sponsor is who any new MAP exhibit would be built around. This would be first in the state."
-    },
-    {
       "id": "s169-repo-split-decisions",
       "for": "Sam",
       "tab": "dashboard",
@@ -75,12 +75,6 @@
       "for": "Fable",
       "tab": "eacr",
       "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
-    },
-    {
-      "id": "s169-record-corrections",
-      "for": "Fable",
-      "tab": "eacr",
-      "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
     }
   ]
 }
