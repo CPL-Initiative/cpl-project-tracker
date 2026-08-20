@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-08-19T13:15:07.586795+00:00",
+  "scraped_at": "2026-08-20T07:09:45.052981+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 26935,
-    "star_colleges": 56
+    "jst": 27310,
+    "star_colleges": 57
   },
-  "computed_star_colleges": 56,
+  "computed_star_colleges": 57,
   "colleges": {
     "Santiago Canyon College": {
       "vets": 288,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 327,
+      "jst": 328,
       "star": true
     },
     "San Diego Mesa College": {
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 559,
+      "jst": 560,
       "star": true
     },
     "City College of San Francisco": {
@@ -107,7 +107,7 @@
     },
     "College of the Desert": {
       "vets": 235,
-      "jst": 381,
+      "jst": 384,
       "star": true
     },
     "Cypress College": {
@@ -117,7 +117,7 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 146,
+      "jst": 148,
       "star": true
     },
     "Santa Ana College": {
@@ -162,12 +162,17 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 507,
+      "jst": 509,
       "star": true
     },
     "San Joaquin Delta College": {
       "vets": 248,
       "jst": 494,
+      "star": true
+    },
+    "Los Angeles Trade Technical College": {
+      "vets": 318,
+      "jst": 421,
       "star": true
     },
     "Glendale Community College": {
@@ -207,7 +212,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 129,
+      "jst": 130,
       "star": false
     },
     "Ventura College": {
@@ -307,7 +312,7 @@
     },
     "Irvine Valley College": {
       "vets": 217,
-      "jst": 128,
+      "jst": 130,
       "star": false
     },
     "Saddleback College": {
@@ -345,11 +350,6 @@
       "jst": 132,
       "star": false
     },
-    "Los Angeles Trade Technical College": {
-      "vets": 318,
-      "jst": 59,
-      "star": false
-    },
     "Hartnell College": {
       "vets": 106,
       "jst": 60,
@@ -372,7 +372,7 @@
     },
     "Porterville College": {
       "vets": 52,
-      "jst": 26,
+      "jst": 27,
       "star": false
     },
     "Las Positas College": {

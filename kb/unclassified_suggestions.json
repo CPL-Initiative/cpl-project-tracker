@@ -1,7 +1,7 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied.",
- "_generated_at": "2026-08-13T07:58:41Z",
- "count": 132,
+ "_generated_at": "2026-08-20T07:11:53Z",
+ "count": 133,
  "suggestions": {
   "ACTG-51 APPLIED ACCOUNTING": [
    {
@@ -519,6 +519,15 @@
     "id": "1271-D",
     "title": "Cisco Certified Network Professional",
     "org": "Cisco Systems, Inc."
+   }
+  ],
+  "Credit by Exam - ESL 083 F (High Intermediate Reading and Writing)": [
+   {
+    "kind": "course",
+    "title": "Adv ESL:  Writing/Grammar",
+    "code": "ESL 83",
+    "share": 0.5,
+    "colleges": 2
    }
   ],
   "ECON 25: Introduction to Economics": [
