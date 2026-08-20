@@ -761,3 +761,87 @@ as an open number rather than an assumed one.
 before being believed** — 785 of 6,330 exhibit ids DO join, so the join works and
 that corpus simply has no ACE military exhibits. A zero from a join is a claim
 about two tables, not one.
+
+---
+
+## 2026-08-20 (Session 172, SkySwap) — the Cx ruling, and two corrections to my own build
+
+### (a) Sam's rulings this run
+
+1. **The deferrals are Credit by Exam offers.** *"These should be presented to
+   students as Credit by Exam options for them — not ruled out by college staff
+   (unless they don't permit Cx for that particular course). Later, as I curate
+   the CCRR table I will normalize these ACE CRs as Cx for specific courses on
+   the CCR."*
+2. **Then he challenged his own ruling and was right.** *"Is the CR for many of
+   these just a vague 'College may grant credit based on its own assessment' — no
+   reference to a discipline or course? … if there is no course or discipline,
+   it's meaningless and a copout on ACE's part."* → **4,001 of 5,311 name no
+   course.** Split into `cx-course-named` (1,310, sendable) and
+   `cx-no-course-named` (4,001, not sendable).
+3. **He asked for the list plus an alignment indicator** — *"a short list of the
+   no course CRs + the title of their ACE exhibit (e.g., Corpsman, Hospitalman,
+   Rifleman, MP)… tag the generic Cx opportunity with an indicator of where their
+   training might align with a course."*
+
+### (b) The titles: 97.3%, after I read the wrong key
+
+`fetch_custom_report.py` had asked the catalogue for `AceID` **and** `Title`
+since 2026-08-14 and stored neither. **25,794 titles now load; 219 of 225
+exhibits resolve.**
+
+⚠️ **The first run returned zero, and everything behaved correctly while doing
+so.** `ace_titles()` read `ds.get("data")`; the API returns rows under
+`columnValue` — as this same file does 200 lines further down. The run passed,
+the gate declined to blank live titles, the log said *"no titles parsed"*.
+
+⭐ **The test could not have caught it: its fixture carried the same wrong
+assumption.** A fixture invented alongside the code it tests cannot falsify that
+code's premise — which is why this file's header says fixtures are built from the
+real column contracts. Fixed structurally: `rows_of(ds)` is the one place the key
+lives, and a `data`-keyed payload must yield **nothing** rather than being
+tolerated.
+
+### (c) The alignment tier was mostly one blanket mapping
+
+First cut: tier 1 = a course named by ≥2 colleges. That shipped a tier 1 where
+**11 of 14 exhibits pointed at `MAG-51 Elements of Supervision`** — Infantryman,
+Combat Medic, Cook, Truck Driver and HR Specialist alike.
+
+⭐ **Counting colleges cannot tell corroboration from a blanket mapping.** Three
+colleges blanket-mapping any military service to a supervision course is
+indistinguishable, *by college count*, from three colleges independently
+agreeing. I designed that floor as the safety mechanism and it was the wrong
+axis.
+
+The discriminator is **specificity** — how many distinct exhibits a course spans:
+
+| course | spans |
+|---|---:|
+| `MAG-51 Elements of Supervision` | **33** |
+| `MAG-200 Management Work Experience` | 10 |
+| `AUTOCOR-114 BASIC WELDING THEORY` | 8 |
+| `ADJ-1 Intro to Administration of Justice` | **1** (Military Police) |
+
+Re-tiered on ≥2 colleges **and** <4 spans: **3 / 47 / 175 exhibits** (689 / 2,282
+/ 1,030 rows). All of tier 1 is Military Police → ADJ-1, HR Specialist → MAG-56 +
+CIS-001, and Marine Combat Training → `CPL-3 Elective Course Credits` — a
+**placeholder**.
+
+⭐ **Honest read: the titles are the deliverable; peer precedent is mostly
+noise.** Two exhibits carry a pointer worth acting on. Reported as two rather
+than fourteen.
+
+⚠️ **A CCRR finding in its own right:** three colleges have mapped `MAG-51`
+against **33 distinct military exhibits**.
+
+### (d) Next concrete step
+
+1. **Sam decides the surface** — the guidance list is live and invisible. The MAP
+   Data Quality tab fits (already team-phrase gated, already the "what's wrong
+   and who fixes it" surface), but as a **lookup panel behind the P5 row**, not
+   another queue: 225 exhibits is reference, not 225 to-dos.
+2. **Does tier 2 earn its place?** That decides whether the panel shows one tier
+   or three.
+3. Send the **1,310 `cx-course-named`** rows as the Cx offer.
+4. Unchanged carryover: Ashley's Delta outcome, the second occupation list.

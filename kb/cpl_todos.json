@@ -1,32 +1,38 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job ran itself and worked; Sam ruled the deferred recommendations are Credit by Exam offers, then caught that three quarters of them name no course.",
+  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job proved itself on its own schedule; your Credit by Exam ruling is live and scoped; the exhibit-title list is built and needs a home.",
   "_session": "Session 172 (SkySwap)",
-  "_status": "The nightly MAP refresh fired on its own schedule for the first time and worked, including the step that broke yesterday — it cleared a full loading area in five seconds instead of timing out. Live data moved and every safety check passed. Separately, Sam settled the biggest open question on the clean-up list. 5,311 military credit recommendations say a college MAY grant credit after doing its own assessment; we had been about to tell colleges to close them. His ruling is that they belong in front of the STUDENT as credit-by-exam options instead — the student can challenge the course by exam — and the only reason to close one is a college not allowing credit by exam for that course. That turned out to need nothing built: credit by exam is already the most-used CPL type we hold.",
+  "_status": "Three things were caught before anyone was affected. The nightly job that refreshes MAP data would have failed every night from Tuesday — the step that empties the loading area was deleting rows one at a time and timed out; it now clears in five seconds. While fixing it we found six powerful database functions were reachable by anyone on the internet, because the line meant to lock them down does nothing; they are locked now and a test will fail the build if the ineffective version returns. And the clean-up list was about to tell around a hundred colleges that ACE had refused credit it had not refused. Sam ruled those records are Credit by Exam offers for students, then caught that three quarters of them name no course at all — so only 1,310 are sendable. For the rest we now load the name of the military training each one came from (25,794 titles; 219 of 225 resolve), which turns 'MOS-31B-002' into 'Military Police'. That list exists but has no screen yet, and where it should live is the main open question.",
   "items": [
     {
-      "id": "s172-p5-to-colleges",
+      "id": "s172-guidance-surface",
       "for": "Sam",
-      "tab": "course-credit",
-      "text": "Your Credit by Exam ruling is live — and your follow-up question scoped it. Three quarters of those records (4,001 of 5,311) name no course or discipline at all, so there is nothing to offer a challenge exam in and the student could already have asked. They are now marked NOT SENDABLE and owned by us, not colleges. The 1,310 that DO name a subject — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — are sendable now, at 89 colleges. The unblock for the rest is small: each record still names the military training it came from, and we already download that title every night and throw it away. Attaching it is a change to our loader, not an ask to ITPI. I have not measured how many of the 225 would resolve, because the file is never written down — that gets counted on the next run rather than guessed at now."
+      "tab": "map-data-quality",
+      "text": "The list you asked for is built and nobody can see it. For each of the 225 military exhibits behind the 'no course named' records, we now hold what the training actually was — MOS-31B-002 is Military Police, MOS-68W-001 is Health Care Specialist, MOS-42A-001 is Human Resources Specialist — plus, where colleges have already articulated that exhibit, which course they used. Two decisions are yours. First, where it goes: I'd suggest a lookup panel behind the Credit by Exam row on the MAP Data Quality tab rather than another queue, because 225 exhibits is reference material, not 225 things to do. Second, whether the middle tier is worth showing at all — see the next item."
     },
     {
-      "id": "s172-visuals-folder",
+      "id": "s172-tier2-question",
       "for": "Sam",
-      "tab": "dashboard",
-      "text": "You asked where the visuals live — they didn't, and now they do. Every visual worth returning to is committed to docs/visuals/ with a dated filename and an index saying what decision it supported and how it was settled. That folder is inside the docs lane your vault syncs, so they appear in Obsidian on their own with nothing for you to file. The credit-by-exam one is there as the first entry, updated to record your ruling rather than still asking the question."
+      "tab": "map-data-quality",
+      "text": "The 'where might this align' tag is weaker than it first looked, and you should know why before deciding what to show. Only 3 of 225 exhibits have a course that two or more colleges chose AND that isn't a catch-all: Military Police to Introduction to the Administration of Justice, and Human Resources Specialist to HR Management and Intro to Computer Information Systems. The third is a placeholder. My first attempt looked far better — 14 exhibits — until I noticed 11 of them pointed at the same course, Elements of Supervision, which three colleges apply to any military service at all: it appears against 33 different exhibits. So the titles are the real deliverable and the peer-course tag is mostly noise. Question for you: is the middle tier (47 exhibits where somebody named something, but nothing solid) useful to a counsellor, or just clutter?"
+    },
+    {
+      "id": "s172-mag51-ccrr",
+      "for": "Sam",
+      "tab": "ccr-reference",
+      "text": "A finding for your Common CR Reference work, separate from everything else: three colleges have mapped a single course — MAG-51 Elements of Supervision — against 33 distinct military exhibits, covering jobs as different as infantryman, combat medic, cook and truck driver. That is worth a look as a data-quality question in its own right."
     },
     {
       "id": "s172-p1-safe-to-send",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "The biggest clean-up item is now safe to send. 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's own validity window has expired — one instruction, the same one everywhere. Worth saying out loud when the numbers move: clearing these raises every college's disposition rate without awarding a single unit of credit, because it shrinks the denominator. That is legitimate work, but it is not new credit for a student."
+      "text": "The biggest clean-up item is safe to send now: 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's validity window has expired. One instruction, the same one everywhere. Worth saying out loud when the numbers move — clearing these raises every college's disposition rate without awarding a single unit, because it shrinks the denominator."
     },
     {
-      "id": "s172-cron-ran-clean",
+      "id": "s172-cx-1310",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "Done, and it worked. The nightly refresh fired on its own at 13:40 UTC (GitHub ran it 14:18 — its scheduler drifts, which is normal here) and succeeded end to end. It cleared 802,825 rows of staging in seconds, refreshed live data, and rebuilt every published figure in one transaction. One thing worth an eye: the student-level dataset came back byte-identical to the day before while the catalog-year one grew by 2,442 rows. That may just be MAP refreshing the two on different schedules. If it repeats a third day, it is worth asking ITPI."
+      "text": "The 1,310 records that DO name a subject are ready to go to colleges as the Credit by Exam offer you described — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — across 89 colleges."
     },
     {
       "id": "s171-followup-pierce-merced",
@@ -50,19 +56,13 @@
       "id": "s169-delta-meeting-outcome",
       "for": "Sam",
       "tab": "eacr",
-      "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong."
+      "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong. Two things to have in hand for that conversation: Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
     },
     {
       "id": "s169-delta-utility-sponsor",
       "for": "Sam",
       "tab": "eacr",
       "text": "Delta teaches a utility/hydroelectric apprenticeship — turbines, protective relaying, high-voltage switching, aqueduct systems — covering 6 jobs with NO credit recommendation anywhere in California. The question to ask the college is who sponsors that apprenticeship, because that sponsor is who any new MAP exhibit would be built around. This would be first in the state."
-    },
-    {
-      "id": "s169-delta-plumbing-invisible",
-      "for": "Sam",
-      "tab": "eacr",
-      "text": "Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
     },
     {
       "id": "s169-repo-split-decisions",
