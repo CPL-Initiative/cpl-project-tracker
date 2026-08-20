@@ -215,8 +215,15 @@ The whole ecosystem, end-to-end:
    dashboard nav) so it can be shared publicly without exposing the internal
    tabs; a "📄 CPL Fact Sheet" link in the left nav rail opens it. It carries a
    rotating "My CPL Stories" section and is **reviewer-Curate-editable** in place
-   (sign in to edit/add/reorder boxes + manage images; edits show for every
-   visitor, the baked page is the fallback). Built Session 74 — see
+   (edit/add/reorder boxes + manage images; edits show for every visitor, the
+   baked page is the fallback). The ✎ Curate button is **hidden from the public**
+   — it appears for a signed-in reviewer (the COBI session is shared across
+   browser tabs), or via the bookmarkable `?curate=1`. That is presentation, not
+   security: writes were always gated by row-level security, never by the button.
+   The page is verified for WCAG AA contrast, keyboard access and phone widths —
+   `tests/factsheet_a11y.test.js` in CI, plus
+   [`fact-sheet/check_mobile_layout.js`](fact-sheet/check_mobile_layout.js)
+   (headless Chromium, run on demand). Built Session 74 — see
    [`docs/fact_sheet_lessons.md`](docs/fact_sheet_lessons.md).
 
 ---

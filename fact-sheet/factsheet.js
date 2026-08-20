@@ -241,10 +241,49 @@
     }
   }
 
+  /* A horizontally scrolling container can be dragged with a mouse but is
+     UNREACHABLE by keyboard unless it is focusable (WCAG 2.1.1 Keyboard). The
+     funding table is 674px wide and lives in `.tbl-wrap{overflow-x:auto}`,
+     which is why it does not push the page sideways — and also why a keyboard
+     user could not see its right-hand columns at all.
+
+     Focusable ONLY while it actually overflows: on a wide screen the same
+     element would otherwise be a tab stop that does nothing, which is its own
+     small failure. Re-checked on resize, because which state it is in depends
+     on the viewport. The accessible name comes from the table's own <caption>
+     so it is never invented here, and the "(scrollable)" suffix tells a screen
+     reader user what the region is FOR — a region with a name but no purpose is
+     just another thing to tab past. Applied to every .tbl-wrap, so a
+     reviewer-added table inherits it. */
+  function setupScrollRegions() {
+    var wraps = document.querySelectorAll('.tbl-wrap');
+    if (!wraps.length) return;
+    function sync() {
+      for (var i = 0; i < wraps.length; i++) {
+        var w = wraps[i];
+        if (w.scrollWidth > w.clientWidth + 1) {
+          if (!w.getAttribute('aria-label')) {
+            var cap = w.querySelector('caption');
+            var name = cap ? (cap.textContent || '').replace(/\s+/g, ' ').trim() : '';
+            w.setAttribute('aria-label', (name || 'Data table') + ' (scrollable)');
+          }
+          w.setAttribute('role', 'region');
+          w.setAttribute('tabindex', '0');
+        } else {
+          w.removeAttribute('tabindex');
+          w.removeAttribute('role');
+        }
+      }
+    }
+    sync();
+    window.addEventListener('resize', sync);
+  }
+
   function load() {
     wirePrint();
     setupPrintExpand();
     setupCollapse();
+    setupScrollRegions();
     labelSectors();   // baked-value labels first; loadSnapshot() refreshes them live
     loadSnapshot();
 
