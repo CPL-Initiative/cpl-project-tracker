@@ -1,4 +1,102 @@
 {
+<<<<<<< HEAD
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-20 · SkySort (Session 173) — the funding priorities can be dragged into a new order, and moving one no longer means retyping both years.",
+ "_session": "Session 173 (SkySort) — running alongside the Session 172 queue work, so items from both are listed here",
+ "_status": "On the Implementation Funding tab you can now drag a priority into a different position — Priority 3 into the Priority 1 slot, say — and everything comes with it: its wording, its metric, its share, its factor and its list of recommended strategies. Nothing about the saved figures changes; the order is kept separately, so the money each priority carries is identical before and after, and there is a Reset button. \"Price factor\" is now \"Funding factor\", and the numbers still recalculate as you type. On the request to copy Year 1 into Year 2 whenever Front-load is picked: that would have overwritten Year 2 with no way back, as a side effect of a switch about payment timing — so instead there is a \"Year 2 mirrors Year 1\" tick box that keeps them in step without destroying anything, plus a separate Copy button that asks first. Both are off until you turn them on. One knock-on was worth catching: the My College page pairs each priority's money with its advice by POSITION, so reordering would have attached the wrong steps to the wrong pot — that now pairs by identity. Everything from the Session 172 queue below is still open and unchanged.",
+ "items": [
+  {
+   "id": "s173-funding-reorder-try",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Have a go at the reorder in a browser. Each priority card has a Drag handle and a Position box — drag Priority 3 onto the first slot, or just set its Position to 1. Everything travels with the card and the dollar figures do not move; a Reset order button appears once the order differs from what is saved. Then set the new shares and funding factors — they recalculate as you go, and the balance box will warn you if the three shares stop adding to 100%. Two things to decide while you are in there: whether the order is right, and whether to tick \"Year 2 mirrors Year 1\". Your Scenario 1 already holds identical years, so ticking it costs nothing and makes them impossible to drift apart — but it ships off, so it is your call."
+  },
+  {
+   "id": "s173-ci-one-file",
+   "for": "Fable",
+   "tab": "implementation-funding",
+   "text": "Finish PR #1268. The security check passed; the test check reported one file failing out of 231. Everything that touches the changed code was re-run and is green, which leaves tests/cpl_funding.test.js as the only unchecked file — it takes about two minutes on the build server and over twenty-five in our sandbox, so it is slow rather than stuck. main was green earlier today, so this is ours. Reproduce it, fix it, push and merge."
+  },
+  {
+   "id": "s172-guidance-surface",
+   "for": "Sam",
+   "tab": "map-data-quality",
+   "text": "The list you asked for is built and nobody can see it. For each of the 225 military exhibits behind the 'no course named' records, we now hold what the training actually was — MOS-31B-002 is Military Police, MOS-68W-001 is Health Care Specialist, MOS-42A-001 is Human Resources Specialist — plus, where colleges have already articulated that exhibit, which course they used. Two decisions are yours. First, where it goes: I'd suggest a lookup panel behind the Credit by Exam row on the MAP Data Quality tab rather than another queue, because 225 exhibits is reference material, not 225 things to do. Second, whether the middle tier is worth showing at all — see the next item."
+  },
+  {
+   "id": "s172-tier2-question",
+   "for": "Sam",
+   "tab": "map-data-quality",
+   "text": "The 'where might this align' tag is weaker than it first looked, and you should know why before deciding what to show. Only 3 of 225 exhibits have a course that two or more colleges chose AND that isn't a catch-all: Military Police to Introduction to the Administration of Justice, and Human Resources Specialist to HR Management and Intro to Computer Information Systems. The third is a placeholder. My first attempt looked far better — 14 exhibits — until I noticed 11 of them pointed at the same course, Elements of Supervision, which three colleges apply to any military service at all: it appears against 33 different exhibits. So the titles are the real deliverable and the peer-course tag is mostly noise. Question for you: is the middle tier (47 exhibits where somebody named something, but nothing solid) useful to a counsellor, or just clutter?"
+  },
+  {
+   "id": "s172-mag51-ccrr",
+   "for": "Sam",
+   "tab": "ccr-reference",
+   "text": "A finding for your Common CR Reference work, separate from everything else: three colleges have mapped a single course — MAG-51 Elements of Supervision — against 33 distinct military exhibits, covering jobs as different as infantryman, combat medic, cook and truck driver. That is worth a look as a data-quality question in its own right."
+  },
+  {
+   "id": "s172-p1-safe-to-send",
+   "for": "Sam",
+   "tab": "course-credit",
+   "text": "The biggest clean-up item is safe to send now: 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's validity window has expired. One instruction, the same one everywhere. Worth saying out loud when the numbers move — clearing these raises every college's disposition rate without awarding a single unit, because it shrinks the denominator."
+  },
+  {
+   "id": "s172-cx-1310",
+   "for": "Sam",
+   "tab": "course-credit",
+   "text": "The 1,310 records that DO name a subject are ready to go to colleges as the Credit by Exam offer you described — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — across 89 colleges."
+  },
+  {
+   "id": "s171-followup-pierce-merced",
+   "for": "Sam",
+   "tab": "course-credit",
+   "text": "Follow-up detail is ready. For the students marked transcribed with nothing recorded, we can now hand a college the exact exhibits and catalog years to look at — 270 rows across 8 colleges, about 46,500 units of credit whose status is genuinely unknown. Start with Los Angeles Pierce (1,840 students, 46 exhibits, ~35,200 units, all AP) and Merced (1,785 students, ~8,900 units); together they are 87% of it. One thing to be clear about with them: we cannot say WHICH students, because the student ID is hashed and we deliberately never store it — the college finds them in MAP by filtering the exhibit and catalog year we give them. The question to ask those colleges is narrow: did these students actually get the credit? The plan says transcribed and the units say nothing, which fits either 'it happened and the amount was never recorded' or 'it never happened and the tick is wrong'. Only they can say. For Pierce and Merced it looks like an AP batch upload that carried the completion but not the unit amounts, so it likely needs re-uploading rather than any curation work."
+  },
+  {
+   "id": "s171-cs-phrase",
+   "for": "Sam",
+   "tab": "course-credit",
+   "text": "Natalie, Chelsea and Ally just need the team passphrase to open the clean-up list — I did not add them as reviewers. Supplying their addresses is not the same as authorising that grant, and reviewer access would also give them 591,820 student-level records and the ability to change every team passphrase. Their addresses are recorded. One small thing: you wrote 'Chelsea Mirada' but the address is 'chelsea.marada@' — worth confirming the spelling before anyone emails her."
+  },
+  {
+   "id": "s171-cs-twelve-no-contact",
+   "for": "Sam",
+   "tab": "course-credit",
+   "text": "12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock, Saddleback, Hartnell, West Valley, Cuyamaca, Sacramento City, Gavilan, Crafton Hills, Feather River, Orange Coast and Launch. For Customer Success, finding the right person there is step one, before any clean-up. Hartnell and Gavilan are the known cases where the college has plenty of MAP users but nobody in a CPL role."
+  },
+  {
+   "id": "s169-delta-meeting-outcome",
+   "for": "Sam",
+   "tab": "eacr",
+   "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong. Two things to have in hand for that conversation: Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
+  },
+  {
+   "id": "s169-delta-utility-sponsor",
+   "for": "Sam",
+   "tab": "eacr",
+   "text": "Delta teaches a utility/hydroelectric apprenticeship — turbines, protective relaying, high-voltage switching, aqueduct systems — covering 6 jobs with NO credit recommendation anywhere in California. The question to ask the college is who sponsors that apprenticeship, because that sponsor is who any new MAP exhibit would be built around. This would be first in the state."
+  },
+  {
+   "id": "s169-repo-split-decisions",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "Three decisions still open on splitting the public site from the internal one, all from Session 169 and none of them urgent: does the public Knowledge Base stay CC BY 4.0 (it currently lets anyone reuse the methodology commercially — the highest-leverage of the three); are we on GitHub Free or Team (Free cannot publish a site from a private repo, so it decides what is possible); and does the CPL-Initiative GitHub organisation have a second owner yet? Pedro was added on Supabase but GitHub was never confirmed."
+  },
+  {
+   "id": "s169-second-partner-list",
+   "for": "Fable",
+   "tab": "eacr",
+   "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
+  },
+  {
+   "id": "s169-record-corrections",
+   "for": "Fable",
+   "tab": "eacr",
+   "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
+  }
+ ]
+=======
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-20 · SkyCurate (Session 173) — the Curate button is hidden from the public and still reachable for the team; the accessibility check found four real problems on phones and they are fixed.",
   "_session": "Session 173 (SkyCurate)",
@@ -77,4 +175,5 @@
       "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
     }
   ]
+>>>>>>> origin/main
 }

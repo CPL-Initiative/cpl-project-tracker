@@ -106,7 +106,10 @@ The whole ecosystem, end-to-end:
    Tabled) + a print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
    **year-specific funding priorities** (Year 1 / Year 2 filter; every metric
-   and description editable), a **noncredit-feeder carve-out** (NOCE / SD
+   and description editable, **draggable into a different order** — the order is
+   stored as a permutation beside the config, so a priority's wording, share,
+   funding factor and strategies all travel with it and no stored figure moves —
+   and an optional **Year 2 mirrors Year 1** switch), a **noncredit-feeder carve-out** (NOCE / SD
    Continuing Ed / Mt. SAC Noncredit / Calbright, split by headcount),
    per-college potential allocations with district rollups and drill-ins,
    and **layered editing** — anonymous edits are a private per-browser

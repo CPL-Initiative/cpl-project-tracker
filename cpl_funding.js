@@ -169,6 +169,17 @@
     // Editable priority TITLE inline in the h4 (Sam, 2026-07-23) — heading-weight,
     // dashed underline, sized to content (overrides the ed-t width:100%).
     ".cplfund-prio .p h4 .cplfund-prio-num { color: var(--navy-primary); }",
+    // Reorder affordance (Sam, 2026-08-20). The drop target has to be obvious
+    // while a drag is in flight or the curator is aiming at nothing.
+    ".cplfund-prio-move { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; font-size: .75rem; color: var(--text-muted); }",
+    ".cplfund-grip { cursor: grab; border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-opaque); user-select: none; }",
+    ".cplfund-grip:active { cursor: grabbing; }",
+    ".cplfund-posl { display: inline-flex; align-items: center; gap: 4px; }",
+    ".cplfund-pos { font-size: .75rem; padding: 1px 4px; border: 1px solid var(--border-strong); border-radius: 4px; background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-prio .p.cplfund-dragging { opacity: .45; }",
+    ".cplfund-prio .p.cplfund-dropover { box-shadow: inset 0 0 0 2px var(--navy-secondary); }",
+    ".cplfund-yearsync { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 0 0 10px; font-size: .8rem; }",
+    ".cplfund-yearsync label { display: inline-flex; align-items: center; gap: 5px; }",
     ".cplfund-prio-title-input { display: inline-block; width: auto; min-width: 100px; max-width: 210px; font-weight: 700; color: var(--navy-primary); border: none; border-bottom: 1px dashed var(--border-strong); background: transparent; font-size: 1rem; padding: 0 2px; }",
     ".cplfund-prio-title-input:focus { outline: none; border-bottom-color: var(--gold-accent); background: var(--surface-subtle); }",
     // Recommended-strategies list per priority box.
@@ -902,9 +913,10 @@
   }
 
   function prioField(slot, idx, field) {
+    slot = prioSlot(slot); idx = srcIdx(slot, idx);
     var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][idx];
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
-    var bp = (base().year_priorities[slot] || base().year_priorities["2"])[idx];
+    var bp = prioSrcList(slot)[idx] || {};
     return firstDefined(sc && sc[field], sh && sh[field], bp[field]);
   }
   // Where did this metric come from — a curator edit, or the hand-maintained
@@ -915,6 +927,7 @@
   // the Year-2 metrics. This makes the divergence self-announcing instead of
   // relying on someone remembering.
   function prioMetricSource(slot, idx) {
+    slot = prioSlot(slot); idx = srcIdx(slot, idx);
     var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][idx];
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][idx];
     if (sc && sc.metric != null) return "scenario";
@@ -1001,13 +1014,16 @@
   function ftesRate() {
     return Number(firstDefined(SCENARIO.ftesRate, SHARED.ftesRate, poolField("ftes_rate_2026_27"))) || 0;
   }
-  // ── per-priority PRICE factor (Sam & Malone, 2026-08-04) ──────────────────
+  // ── per-priority FUNDING factor (Sam & Malone, 2026-08-04) ────────────────
+  // Named "price factor" until 2026-08-20; Sam renamed the LABEL to "funding
+  // factor" (the field, the edit key and prioPrice() keep their names — this is
+  // one dial, and renaming the storage would strand every stored `factor`).
   // The single global "target multiplier" is RETIRED; each priority now carries
   // its own `factor`. A priority's PRICE per CPL FTES = factor × the base rate,
   // and its target = pot ÷ price — so a HIGHER factor pays MORE per FTES and the
   // pot is earned with FEWER FTES (a premium on the harder / more-valued
   // behavior). This decouples the two dials Sam wanted separated: the tranche
-  // split (share) sets the dollars, the price factor sets the FTES difficulty.
+  // split (share) sets the dollars, the funding factor sets the FTES difficulty.
   // factor 1.0 = the plain SCFF rate = today's uniform model, exactly (the ×nYears
   // in prioTarget carries the cumulative-window conversion the old ×2 used to).
   function prioFactor(p) { var v = p && p.factor; return v == null ? 1 : Number(v); }
@@ -1037,9 +1053,10 @@
   // wins; but a layer that sets the metric WITHOUT a unit stops the walk and
   // falls back to sniffing that layer's own metric text.
   function prioUnit(slot, i, metric) {
+    slot = prioSlot(slot); i = srcIdx(slot, i);
     var sc = SCENARIO.yearPriorities && SCENARIO.yearPriorities[slot] && SCENARIO.yearPriorities[slot][i];
     var sh = SHARED.yearPriorities && SHARED.yearPriorities[slot] && SHARED.yearPriorities[slot][i];
-    var bp = (base().year_priorities[slot] || base().year_priorities["2"])[i];
+    var bp = prioSrcList(slot)[i] || {};
     var layers = [sc, sh, bp];
     for (var k = 0; k < layers.length; k++) {
       var L = layers[k];
@@ -1085,14 +1102,196 @@
     }
     return prioField(slot, idx, "target_rate");   // legacy: rate is the source
   }
+  // ── the priority ORDER seam (Sam, 2026-08-20) ─────────────────────────
+  // Sam: "moving Priority 3 to the Priority 1 position … rather than copying and
+  // pasting everything for both years … drag and drop them into position."
+  //
+  // A priority is an IDENTITY, not a slot, so the reorder has to carry
+  // everything with the card — title, description, metric, share, funding
+  // factor, per-student rate, strategies — and it must not rewrite a single
+  // stored value. A permutation that rewrote the config would have to enumerate
+  // every field, and a field it forgot would silently change a funding number.
+  // That is not hypothetical: the live overrides are PARTIAL (Scenario 2 sets
+  // `metric` and `share` on two priorities but neither `factor` nor `title`),
+  // so a rewrite that dropped either would re-point those priorities at a
+  // DIFFERENT identity's baked default and the money would move.
+  //
+  // So the order is a PERMUTATION stored BESIDE the config, never a rewrite of
+  // it: priorityOrder[i] is the SOURCE priority shown at display position i.
+  // Display position drives the ordinal label and the table's P1/P2/P3 columns;
+  // identity drives everything else — including `key`, so a college row's
+  // per-priority cap stays attached to its priority rather than to a column
+  // number.
+  //
+  // WINDOW-LEVEL, not per-year. Year 1 and Year 2 hold the same three
+  // priorities (Sam, 2026-08-09: "a 2-year project with unchanging priorities,
+  // metrics, strategies … Year 1 is the authoritative set"), a per-year order
+  // would make P1/P2/P3 mean different things in different years, and it would
+  // cost Sam the second drag this exists to save him.
+  //
+  // The display→source translation lives in the FOUR functions that index a
+  // priority list (prioField, prioMetricSource, prioUnit, setPrio) plus
+  // priorities() itself. Everything above them speaks DISPLAY index, everything
+  // below speaks SOURCE index — one seam, because the failure mode that matters
+  // is an edit landing silently on the wrong priority, and a per-emitter
+  // translation is a call site somebody eventually misses.
+  function prioSrcList(slot) {
+    return base().year_priorities[slot] || base().year_priorities["2"] || [];
+  }
+  function isPermutation(a, n) {
+    if (!Array.isArray(a) || a.length !== n || !n) return false;
+    var seen = {};
+    for (var i = 0; i < n; i++) {
+      var v = Number(a[i]);
+      if (!(v >= 0 && v < n) || v !== Math.floor(v) || seen[v]) return false;
+      seen[v] = 1;
+    }
+    return true;
+  }
+  function identityOrder(n) { var o = [], i; for (i = 0; i < n; i++) o.push(i); return o; }
+  // A malformed or stale order (hand-edited config, or a priority list that
+  // changed length) falls back to the natural order rather than throwing or
+  // dropping a priority off the page.
+  //
+  // MEMOISED, and that is not a micro-optimisation. srcIdx() sits under
+  // prioField(), which the table calls for every field of every priority of
+  // every college row — so an order array allocated per lookup is thousands of
+  // allocations per render. cpl_funding.test.js builds ~50 jsdom windows whose
+  // vm contexts are not reclaimable mid-run (see tests/run.js), so the file
+  // already peaks near its heap ceiling; the extra churn tipped it into
+  // "Ineffective mark-compacts near heap limit" and took CI down with it.
+  //
+  // The cache key is the stored value's REFERENCE, not its contents: the config
+  // layers hand back the same array between edits (setPriorityOrder assigns a
+  // new one), and `undefined === undefined` when no order is set, so the common
+  // path allocates nothing at all. The returned array is shared, so every caller
+  // treats it as READ-ONLY — reorderList() slices before mutating.
+  var ORDER_CACHE = { src: 0, slot: null, n: -1, val: null };
+  function priorityOrder(slot) {
+    var s = prioSlot(slot);
+    var n = prioSrcList(s).length;
+    var v = firstDefined(SCENARIO.priorityOrder, SHARED.priorityOrder, base().priority_order);
+    if (ORDER_CACHE.src === v && ORDER_CACHE.slot === s && ORDER_CACHE.n === n) return ORDER_CACHE.val;
+    var out = isPermutation(v, n) ? v.map(Number) : identityOrder(n);
+    ORDER_CACHE.src = v; ORDER_CACHE.slot = s; ORDER_CACHE.n = n; ORDER_CACHE.val = out;
+    return out;
+  }
+  function orderIsCustom(slot) {
+    return priorityOrder(slot).some(function (v, i) { return v !== i; });
+  }
+  function srcIdx(slot, i) {
+    var o = priorityOrder(slot), n = Number(i);
+    return (n >= 0 && n < o.length) ? o[n] : n;
+  }
+  function setPriorityOrder(list) {
+    activeOverride().priorityOrder = (list || []).map(Number);
+    persistActive();
+  }
+  // Reset means "show them in the order the config stores them". Deleting the
+  // active layer's key is not enough on its own — the layer below may hold a
+  // custom order that would surface instead — so pin the identity when it does.
+  function resetPriorityOrder(slot) {
+    var ov = activeOverride();
+    delete ov.priorityOrder;
+    if (orderIsCustom(slot)) ov.priorityOrder = identityOrder(prioSrcList(prioSlot(slot)).length);
+    persistActive();
+  }
+  // Move display position `from` to display position `to`. Pure over the order
+  // array so the tests can exercise every reordering without synthesising HTML5
+  // drag events, which jsdom does not implement (the admin.js moveTab pattern).
+  function reorderList(order, from, to) {
+    var o = (order || []).slice();
+    if (!(from >= 0 && from < o.length) || !(to >= 0 && to < o.length) || from === to) return o;
+    o.splice(to, 0, o.splice(from, 1)[0]);
+    return o;
+  }
+  function movePriority(slot, from, to) {
+    setPriorityOrder(reorderList(priorityOrder(slot), Number(from), Number(to)));
+  }
+
+  // ── Year-2 MIRRORING (Sam, 2026-08-20) ────────────────────────────────
+  // Sam asked for each priority's detail to be auto-copied from Year 1 into
+  // Year 2 whenever front-load is selected. Two problems with keying it to that
+  // toggle: the copy OVERWRITES whatever Year 2 holds, with no undo, as a side
+  // effect of a control about cash timing; and the two live scenarios disagree
+  // about whether the years already match (Scenario 1's are byte-identical,
+  // Scenario 2's are not), so the same click is a no-op for one and a silent
+  // policy edit for the other.
+  //
+  // Non-destructive version of the same intent: MIRROR. While it is on, Year 2
+  // RESOLVES from the Year-1 config — nothing is written, nothing is lost,
+  // editing either year edits the one shared set, and turning it off restores
+  // Year 2's own stored values untouched. An explicit "Copy Year 1 → Year 2"
+  // stays available for a one-time flatten.
+  //
+  // Front-load is deliberately NOT the trigger. It already makes Year 2 pure
+  // carryover (slotEntitlement returns 0, so the Year-2 metrics are never
+  // consulted) — the years drifting apart matters MOST under even tranches,
+  // which is exactly where an auto-copy keyed to front-load would never fire.
+  // Default OFF, so shipping this changes nothing until a curator asks for it.
+  function mirrorYears() {
+    return !!firstDefined(SCENARIO.mirrorYears, SHARED.mirrorYears, base().mirror_years);
+  }
+  function setMirrorYears(v) { activeOverride().mirrorYears = !!v; persistActive(); }
+  // THE slot seam: every priority read and write resolves its slot through here.
+  function prioSlot(slot) { return mirrorYears() ? "1" : String(slot); }
+  // Is the viewed year showing Year 1's set rather than its own?
+  function slotIsMirrored(slot) { return mirrorYears() && String(slot) !== "1"; }
+  // Do the years already agree? Compares what each year RESOLVES to, over the
+  // fields a curator edits — the honest question is "does the model differ",
+  // not "does the override blob differ".
+  function prioSignature(slot) {
+    return JSON.stringify(priorities(slot).map(function (p) {
+      return [p.title, p.description, p.metric, p.unit, p.share, p.factor,
+        p.target_rate, p.per_student, p.strategies];
+    }));
+  }
+  function yearsMatch() {
+    var n = nYears();
+    if (n < 2) return true;
+    var one = prioSignature("1"), i;
+    for (i = 2; i <= n; i++) if (prioSignature(String(i)) !== one) return false;
+    return true;
+  }
+  // One-time flatten: write Year 1's RESOLVED values into every later year's
+  // override, at the same SOURCE index (so a custom display order cannot
+  // scramble the copy). Only the stored source-of-truth rate is carried —
+  // per_student where the curator typed one, target_rate where the row is
+  // legacy — because priorities() derives the other from it and copying both
+  // would pin a derived figure as if a human had chosen it.
+  function copyYear1ToLaterYears() {
+    var ov = activeOverride(), n = nYears(), i;
+    ov.yearPriorities = ov.yearPriorities || {};
+    var src = priorities("1").map(function (p, i2) {
+      var row = {
+        title: p.title, description: p.description, metric: p.metric, unit: p.unit,
+        share: p.share, factor: p.factor, strategies: (p.strategies || []).slice()
+      };
+      var ps = prioField("1", i2, "per_student");
+      var tr = prioField("1", i2, "target_rate");
+      if (ps != null) row.per_student = ps; else if (tr != null) row.target_rate = tr;
+      return { src: srcIdx("1", i2), row: row };
+    });
+    for (i = 2; i <= n; i++) {
+      var slot = String(i);
+      ov.yearPriorities[slot] = ov.yearPriorities[slot] || {};
+      src.forEach(function (e) { ov.yearPriorities[slot][e.src] = clone(e.row); });
+    }
+    persistActive();
+  }
+
   function priorities(slot) {
-    if (!base().year_priorities[slot]) slot = "2";   // defensive: >2-year windows reuse Year-2 config
-    return base().year_priorities[slot].map(function (p, i) {
+    // `label` is POSITIONAL ("Priority 1" is whatever sits first) while `key` is
+    // the IDENTITY the config and every per-college cap are stored against —
+    // reordering moves the first and never the second.
+    var src = prioSrcList(prioSlot(slot));
+    return priorityOrder(slot).map(function (sIdx, i) {
+      var p = src[sIdx] || {};
       var share = prioField(slot, i, "share");
       var target_rate = prioTargetRate(slot, i, share);
       var metric = prioField(slot, i, "metric");
       return {
-        key: p.key, label: p.label,
+        key: p.key || ("p" + (sIdx + 1)), label: "Priority " + (i + 1), pos: i, src: sIdx,
         title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
         metric: metric,
@@ -1297,6 +1496,7 @@
     } catch (e) { return true; }
   }
   function setPrio(slot, idx, field, value) {
+    slot = prioSlot(slot); idx = srcIdx(slot, idx);
     var ov = activeOverride();
     ov.yearPriorities = ov.yearPriorities || {};
     ov.yearPriorities[slot] = ov.yearPriorities[slot] || {};
@@ -1341,7 +1541,10 @@
   var DEFAULT_PRIORITY_TITLES = ["Access", "Success", "Capacity"];
   function prioTitle(slot, i) {
     var v = prioField(slot, i, "title");
-    return v == null ? (DEFAULT_PRIORITY_TITLES[i] || "") : v;
+    // The baked fallback belongs to the PRIORITY, not to the position it is
+    // currently shown in — an untitled priority must not adopt the default
+    // title of whatever slot it was dragged into.
+    return v == null ? (DEFAULT_PRIORITY_TITLES[srcIdx(prioSlot(slot), i)] || "") : v;
   }
   function prioStrategies(slot, i) {
     var v = prioField(slot, i, "strategies");
@@ -1391,11 +1594,13 @@
   var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave",
     "data-reqdel", "data-reqhide", "data-reqshow",
     "data-stratadd", "data-stratdel", "data-timingdel",
+    "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset", "cplFundLock",
     "cplFundUnlockSlot", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
-    "cplFundScenSel", "cplFundScenNew", "cplFundScenDel"];
+    "cplFundScenSel", "cplFundScenNew", "cplFundScenDel",
+    "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1"];
   function stripCurateAffordances(root) {
     if (!root) return;
     CURATE_ATTRS.forEach(function (a) {
@@ -2343,7 +2548,8 @@
     });
     return '<div class="cplfund-toolbar" style="margin-bottom:6px;">' +
       '<span class="dk" style="font-size:.85rem;">Show priorities for:</span>' +
-      segHtml("cplFundYear", items, state.viewSlot) + "</div>";
+      segHtml("cplFundYear", items, state.viewSlot) +
+      prioOrderToolbarHtml() + "</div>" + yearSyncHtml();
   }
 
   // The Potential⇄Earned basis TOGGLE was retired 2026-07-30 (Sam). Both numbers
@@ -2697,7 +2903,7 @@
         note: "&asymp; " + fmtInt(cplFtesBought * upf) + " semester units (" + fmtNum1(upf) +
           " units = 1 FTES) at " + fmtRate(ftesRate() / upf) + "/unit &middot; " +
           esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate") +
-          (facList ? " &middot; each priority prices its target at " + facList + " of this base (see below)" : "") }));
+          (facList ? " &middot; each priority funds its target at " + facList + " of this base (see below)" : "") }));
     } else {
       out.push(card({ v: fmtRate(perStudent()),
         l: "Per-student rate &mdash; " + fmtMoney(per) + " &divide; " + fmtInt(totalHeads()) +
@@ -2777,6 +2983,13 @@
       }).join("") + "</div>";
   }
 
+  // A year showing Year 1's set has to SAY it is — otherwise the Year-2 view
+  // looks like a Year-2 decision that happens to match, and an edit made here
+  // silently lands on both years.
+  function mirroredNote(slot) {
+    return slotIsMirrored(slot) ? " \u2014 mirrored from Year 1" : "";
+  }
+
   // Recommended strategies — an editable bulleted list per priority, per year
   // (Sam, 2026-07-23). Reuses the eligibility-requirement bullet/✕/＋ pattern;
   // add/delete are keyed by "slot:priorityIdx[:strategyIdx]".
@@ -2788,7 +3001,7 @@
         '<button type="button" class="cplfund-reqdel" data-stratdel="' + esc(slot + ":" + i + ":" + j) +
         '" title="Remove this strategy" aria-label="Remove strategy ' + (j + 1) + '">✕</button></div>';
     }).join("");
-    return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + ")</div>" +
+    return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (Year ' + esc(slot) + mirroredNote(slot) + ")</div>" +
       rows +
       '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-stratadd="' + esc(slot + ":" + i) +
       '" title="Add a recommended strategy">＋ Add strategy</button></div>';
@@ -2851,13 +3064,70 @@
       row("Reimbursement rate (base)", "$" + edNum("ftesrate", fmtNum2(ftesRate()),
             { small: true, label: "Reimbursement rate per CPL FTES" }) + "/FTES",
           esc(base().pool.ftes_rate_label || "2026-27 credit FTES rate") +
-          " &mdash; each priority prices its target at its own factor × this base") +
+          " &mdash; each priority funds its target at its own factor × this base") +
       "</div>" +
       '<p class="dk" style="font-size:.8rem;margin:6px 0 0;">A quarter unit is worth ' +
       fmtPctTrim(qtr / sem) + " of a semester unit, so " + fmtNum1(ch / qtr) +
       " quarter units make one FTES against " + fmtNum1(ch / sem) +
       " semester ones. There is no separate conversion &mdash; the same formula with the college&#39;s own " +
       "term-length multiplier produces both.</p>");
+  }
+
+  // Reorder affordance on each priority card (curator only). TWO controls on
+  // purpose. The drag handle is for the mouse; the POSITION picker is what makes
+  // the reorder reachable by keyboard and screen reader, and it is also the only
+  // one that stays truthful when three cards wrap onto two rows — "move left" is
+  // a lie at that width. It is Sam's own framing too ("moving Priority 3 to the
+  // Priority 1 position"). Plain words, no glyph-only control (Admin-tab ruling,
+  // #1212).
+  function prioMoveHtml(ps, i, p) {
+    if (publicMode()) return "";
+    var opts = ps.map(function (_, j) {
+      return '<option value="' + j + '"' + (j === i ? " selected" : "") + ">" + (j + 1) + "</option>";
+    }).join("");
+    return '<div class="cplfund-prio-move">' +
+      '<span class="cplfund-grip" draggable="true" data-priodrag="' + i +
+      '" title="Drag this priority onto the position you want it in">Drag</span>' +
+      '<label class="cplfund-posl">Position ' +
+      '<select class="cplfund-pos" data-priopos="' + i + '" aria-label="Position of ' +
+      esc(p.label) + (p.title ? " \u2014 " + esc(p.title) : "") + '">' + opts +
+      "</select></label></div>";
+  }
+
+  // The order is window-level, so say so where the reorder happens rather than
+  // leaving the curator to discover it by switching years.
+  function prioOrderToolbarHtml() {
+    if (publicMode()) return "";
+    return '<span class="dk" style="font-size:.78rem;flex:1 1 240px;">Drag a priority card, or use its ' +
+      "Position picker, to reorder. The order applies to every year.</span>" +
+      (orderIsCustom(state.viewSlot)
+        ? '<button type="button" class="cplfund-optbtn" id="cplFundOrderReset" ' +
+          'title="Show the priorities in the order the configuration stores them">Reset order</button>'
+        : "");
+  }
+
+  // Year-2 sync (Sam, 2026-08-20) — see mirrorYears() for why this is a mirror
+  // and not a copy fired by the front-load toggle.
+  function yearSyncHtml() {
+    if (publicMode() || nYears() < 2) return "";
+    var on = mirrorYears(), match = yearsMatch();
+    var note = on
+      ? "Every later year shows and edits the Year-1 set. Nothing is written over &mdash; clearing this " +
+        "restores each year\u2019s own values."
+      : match
+        ? '<span class="cf-ok">\u2714 The years currently hold the same priorities.</span>'
+        : '<span class="cplfund-warn-text">\u26a0 Year 2 differs from Year 1.</span>' +
+          (frontloaded()
+            ? " Under front-loaded disbursement Year 2 carries no money, so its metrics are never scored " +
+              "\u2014 but the difference becomes real the moment timing moves back to even tranches."
+            : "");
+    return '<div class="cplfund-yearsync">' +
+      '<label><input type="checkbox" id="cplFundMirror"' + (on ? " checked" : "") +
+      "> Year 2 mirrors Year 1</label>" +
+      (!on && !match
+        ? '<button type="button" class="cplfund-optbtn" id="cplFundCopyYear1">Copy Year 1 \u2192 Year 2</button>'
+        : "") +
+      '<span class="dk" style="flex:1 1 300px;">' + note + "</span></div>";
   }
 
   // ── priority cards (for the active view year) ─────────────────────────
@@ -2897,7 +3167,8 @@
             (isFtesPrio ? "" : " (" + fmtRate(p.per_student) + " &times; " + nYears() + ")") +
             ". Hitting the Year-1 target draws the whole window; unspent funds roll forward.</span></p>")
         : "";
-      return '<div class="p">' +
+      return '<div class="p" data-priocard="' + i + '">' +
+        prioMoveHtml(ps, i, p) +
         '<h4><span class="cplfund-prio-num">' + esc(p.label) + ":</span> " +
         edText("prio-title", p.title, { slot: slot, idx: i, cls: "cplfund-prio-title-input", label: p.label + " title", placeholder: "Title (e.g. Access)" }) +
         "</h4>" +
@@ -2905,7 +3176,7 @@
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, label: p.label + " allocation share percent" }) +
         "% of each tranche &mdash; statewide " + fmtMoney(sysDollars) + "</p>" +
         (isFtesPrio
-          ? '<p class="nums">Price factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, label: p.label + " price factor" }) +
+          ? '<p class="nums">Funding factor ' + edNum("priofactor", fmtNum2(prioFactor(p)), { small: true, slot: slot, idx: i, label: p.label + " funding factor" }) +
             "&times; the base rate &mdash; <strong>" + fmtMoney2(prioPrice(p)) + " per CPL FTES</strong> " +
             '<span class="dk">(' + (prioFactor(p) === 1 ? "par &mdash; the plain state rate"
               : prioFactor(p) > 1 ? "a premium: pays more per FTES, so fewer FTES earn the pot"
@@ -2923,7 +3194,7 @@
         frontLine +
         actualLineHtml(p, i, sysHeads) +
         earnedLineHtml(i) +
-        '<div class="metric">METRIC (Year ' + slot + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
+        '<div class="metric">METRIC (Year ' + slot + mirroredNote(slot) + "): " + edArea("metric", p.metric, { slot: slot, idx: i, rows: 2, label: p.label + " metric" }) + "</div>" +
         strategiesHtml(slot, i) + "</div>";
     }).join("") + "</div>";
   }
@@ -5768,6 +6039,83 @@
     document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optinremove]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; removeOptIn(b.getAttribute("data-optinremove")); });
     });
+    // ── priority reorder: the drag handle and the position picker ──
+    // Both land on movePriority(), which is pure over the order array — the DOM
+    // handlers are a thin shell, so the tests exercise every reordering without
+    // synthesising HTML5 drag events (jsdom does not implement them).
+    var prioGrid = document.querySelector("#cplFundingMount .cplfund-prio");
+    if (prioGrid && !publicMode()) {
+      var dragFrom = null;
+      var clearDragCls = function () {
+        prioGrid.querySelectorAll(".p").forEach(function (c) {
+          c.classList.remove("cplfund-dragging", "cplfund-dropover");
+        });
+      };
+      prioGrid.querySelectorAll("[data-priodrag]").forEach(function (g) {
+        g.addEventListener("dragstart", function (e) {
+          dragFrom = Number(g.getAttribute("data-priodrag"));
+          var card = g.closest(".p");
+          if (card) card.classList.add("cplfund-dragging");
+          // The payload also rides in `dragFrom`: dataTransfer is unreadable
+          // during dragover in several browsers (the admin.js note).
+          try {
+            e.dataTransfer.setData("text/plain", String(dragFrom));
+            e.dataTransfer.effectAllowed = "move";
+          } catch (x) {}
+        });
+        g.addEventListener("dragend", function () { dragFrom = null; clearDragCls(); });
+      });
+      prioGrid.querySelectorAll("[data-priocard]").forEach(function (card) {
+        card.addEventListener("dragover", function (e) {
+          if (dragFrom == null) return;
+          e.preventDefault();
+          try { e.dataTransfer.dropEffect = "move"; } catch (x) {}
+          card.classList.add("cplfund-dropover");
+        });
+        card.addEventListener("dragleave", function () { card.classList.remove("cplfund-dropover"); });
+        card.addEventListener("drop", function (e) {
+          e.preventDefault();
+          clearDragCls();
+          var from = dragFrom;
+          if (from == null) {
+            try { from = Number(e.dataTransfer.getData("text/plain")); } catch (x) { from = null; }
+          }
+          var to = Number(card.getAttribute("data-priocard"));
+          if (from == null || isNaN(from) || isNaN(to) || from === to) return;
+          savingState = "";
+          movePriority(state.viewSlot, from, to);
+        });
+      });
+      prioGrid.querySelectorAll("[data-priopos]").forEach(function (sel) {
+        sel.addEventListener("change", function () {
+          savingState = "";
+          movePriority(state.viewSlot, Number(sel.getAttribute("data-priopos")), Number(sel.value));
+        });
+      });
+    }
+    var orderReset = document.getElementById("cplFundOrderReset");
+    if (orderReset) orderReset.addEventListener("click", function () {
+      savingState = "";
+      resetPriorityOrder(state.viewSlot);
+    });
+    // Year-2 sync: the mirror switch, and the one-time flatten.
+    var mirrorBox = document.getElementById("cplFundMirror");
+    if (mirrorBox) mirrorBox.addEventListener("change", function () {
+      savingState = "";
+      setMirrorYears(mirrorBox.checked);
+    });
+    var copyYear = document.getElementById("cplFundCopyYear1");
+    if (copyYear) copyYear.addEventListener("click", function () {
+      // Destructive and shared, so it asks — unlike the mirror, which writes
+      // nothing and can be undone by clearing the box.
+      if (typeof confirm === "function" &&
+        !confirm("Copy Year 1\u2019s priorities over every later year?\n\n" +
+          "Title, description, metric, allocation share, funding factor and recommended " +
+          "strategies are all overwritten with Year 1\u2019s. Whatever those years hold now " +
+          "is replaced, and this cannot be undone.")) return;
+      savingState = "";
+      copyYear1ToLaterYears();
+    });
     // Recommended strategies (per priority, per year): add a blank / remove one.
     document.querySelectorAll("#cplFundingMount [data-stratadd]").forEach(function (b) {
       b.addEventListener("click", function () {
@@ -6034,7 +6382,12 @@
       var W = collegeAlloc(c).w;   // effective entitlement, rural folded in
       return priorities(slot).map(function (p) {
         return {
-          key: p.key, label: p.label, title: p.title || null,
+          // `src` is the priority's index in the stored config — its IDENTITY,
+          // unchanged by a drag reorder — so a consumer can join back to the
+          // same config by something other than position (My College nests each
+          // priority's strategies inside its money, and pairing those by
+          // position would be silently wrong the moment the cards are reordered).
+          key: p.key, src: p.src, label: p.label, title: p.title || null,
           description: p.description || null, metric: p.metric || null,
           share: p.share,
           unit: prioUnitLabel(p),
