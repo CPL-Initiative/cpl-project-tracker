@@ -48,7 +48,7 @@ a number in passing is not a deliverable.
 
 | Date | Visual | What it was for | Status |
 |---|---|---|---|
-| 2026-08-20 | [`2026-08-20-ace-deferrals-credit-by-exam.html`](2026-08-20-ace-deferrals-credit-by-exam.html) | The 5,311 ACE recommendations that defer to the college rather than refusing — three things a college could record, and what each one costs. Built to put one ruling in front of Sam. | ✅ **Ruled 2026-08-20** — present as Credit by Exam options; never bulk-close. |
+| 2026-08-20 | [`2026-08-20-ace-deferrals-credit-by-exam.html`](2026-08-20-ace-deferrals-credit-by-exam.html) | The 5,311 ACE recommendations that defer to the college rather than refusing — three things a college could record, and what each one costs. Built to put one ruling in front of Sam. | ✅ **Ruled 2026-08-20** — present as Credit by Exam options; never bulk-close. **Scoped the same day** after Sam challenged it: only 1,310 name a course, so only those are sendable. |
 
 ## Not this folder
 

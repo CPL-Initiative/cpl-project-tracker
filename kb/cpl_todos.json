@@ -1,6 +1,6 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job ran itself for the first time and succeeded, and Sam ruled on the 5,311 deferred recommendations: they go to students as Credit by Exam options.",
+  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job ran itself and worked; Sam ruled the deferred recommendations are Credit by Exam offers, then caught that three quarters of them name no course.",
   "_session": "Session 172 (SkySwap)",
   "_status": "The nightly MAP refresh fired on its own schedule for the first time and worked, including the step that broke yesterday — it cleared a full loading area in five seconds instead of timing out. Live data moved and every safety check passed. Separately, Sam settled the biggest open question on the clean-up list. 5,311 military credit recommendations say a college MAY grant credit after doing its own assessment; we had been about to tell colleges to close them. His ruling is that they belong in front of the STUDENT as credit-by-exam options instead — the student can challenge the course by exam — and the only reason to close one is a college not allowing credit by exam for that course. That turned out to need nothing built: credit by exam is already the most-used CPL type we hold.",
   "items": [
@@ -8,7 +8,7 @@
       "id": "s172-p5-to-colleges",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "Your Credit by Exam ruling is live in the clean-up list. The 5,311 recommendations at 101 colleges now read as an opportunity, not a defect: 'Present these to the student as Credit by Exam options. Do NOT rule them Not Applicable... the only reason to close one is that your college does not permit Credit by Exam for that particular course.' Two follow-ons when you want them: this class still sits at priority 5, which was about readiness rather than value and now understates it — say the word and it moves up; and the CCRR normalisation you mentioned (these ACE recommendations mapped to Cx for specific courses) is the piece that would make it concrete per course rather than per student conversation."
+      "text": "Your Credit by Exam ruling is live — and your follow-up question scoped it. Three quarters of those records (4,001 of 5,311) name no course or discipline at all, so there is nothing to offer a challenge exam in and the student could already have asked. They are now marked NOT SENDABLE and owned by us, not colleges. The 1,310 that DO name a subject — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — are sendable now, at 89 colleges. The unblock for the rest is small: each record still names the military training it came from, and we already download that title every night and throw it away. Attaching it is a change to our loader, not an ask to ITPI. I have not measured how many of the 225 would resolve, because the file is never written down — that gets counted on the next run rather than guessed at now."
     },
     {
       "id": "s172-visuals-folder",

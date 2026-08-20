@@ -717,3 +717,47 @@ materialises, so they reach Obsidian with nothing to file.
 ⚠️ **The first rule of that folder applies to its first file:** a visual that
 asked a question keeps its answer. This one was updated the same day to record
 the ruling instead of still posing the choice.
+
+### (d) Then Sam read the visual and asked what it had not asked
+
+*"Is the CR for many of these just a vague 'College may grant credit based on its
+own assessment' — no reference to a discipline or course? The swimming example is
+a good Cx opportunity, but if there is no course or discipline, it's meaningless
+and a copout on ACE's part. Students can request Cx at any time provided the
+catalog allows for it for the particular course."*
+
+**Right about three quarters of it.**
+
+| shape | rows | exhibits | colleges |
+|---|---:|---:|---:|
+| names a subject — swimming, surveying, First Aid and Fire Science, Anatomy and Physiology, Gas Turbine Technology | **1,310** | 26 | 89 |
+| names no course at all | **4,001** | 225 | 95 |
+
+⭐ **The failure mode is one level below the P1 split, and I walked straight into
+it.** The P1 fix checked whether a class shared a *reason*. This asks whether the
+rows share **usable content** — and the answer was no. I had even quoted the
+uniformity of *"Credit may be granted on the basis of an individualized assessment
+of the student"* (75% of the class, one sentence) as evidence the ruling would be
+cheap, without noticing the sentence says nothing. **A string being identical
+everywhere is not the same as it being informative anywhere.**
+
+⭐ **A Cx offer has to name a course to challenge.** Without one it collapses into
+*"you may request Cx"*, which every student can already do — so the row adds
+nothing it did not already have. Sam's framing is exact: a copout in the source
+data.
+
+⭐ **The row is not empty; the RECOMMENDATION is.** Each still carries the exhibit
+— the training ACE reviewed. And `fetch_custom_report.py` **already asks the
+exhibit catalogue for `AceID` and `Title`** and stores neither, while
+`map_student_credit.exhibit_id` is in the ACE namespace. *Minimisation happens
+twice*, and this is the cost side of it: a column dropped for having no consumer
+is invisible until something needs it.
+
+⚠️ **The join rate is deliberately unmeasured.** The catalogue is fetched on the
+runner and never written down, so it can only be counted on the next run. Stated
+as an open number rather than an assumed one.
+
+⚠️ **The 0-of-225 in `chatbox_exhibits` was checked against a positive control
+before being believed** — 785 of 6,330 exhibit ids DO join, so the join works and
+that corpus simply has no ACE military exhibits. A zero from a join is a claim
+about two tables, not one.

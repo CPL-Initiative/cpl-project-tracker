@@ -157,6 +157,15 @@ strong{color:var(--text-strong);}
       college staff (unless they don&rsquo;t permit Cx for that particular course).&rdquo;</em></p>
       <p>So the row is not a disposition problem at all. It is an <strong>offer nobody was making</strong>.</p>
     </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">Then Sam read this page and asked the question it had not
+      asked:</span> <em>&ldquo;Is the CR for many of these just a vague &lsquo;College may grant credit based on its own
+      assessment&rsquo; &mdash; no reference to a discipline or course? &hellip; if there is no course or discipline,
+      it&rsquo;s meaningless and a copout on ACE&rsquo;s part. Students can request Cx at any time provided the catalog
+      allows for it for the particular course.&rdquo;</em></p>
+      <p><strong>He is right about three quarters of the class.</strong> Measured the same day &mdash; and it changes
+      the reach of the ruling, not the ruling.</p>
+    </div>
     <div class="stake" role="group" aria-label="Size of the class">
       <div><div class="n">5,311</div><div class="l">recommendations</div></div>
       <div><div class="n">3,898</div><div class="l">students behind them</div></div>
@@ -231,24 +240,45 @@ strong{color:var(--text-strong);}
       <p><span class="h">Why C wins on its own terms.</span> A is the only one of the three that puts something
       false on the record, and the only one that can&rsquo;t be walked back — an N/A row is never revisited.
       B is honest but inert. C is the only one that produces a student outcome.</p>
-      <p><span class="mark yes">✓</span> <strong>And it turned out to cost nothing to build</strong>, because the
-      mechanism already existed. The rows were never dead ends — measured 2026-08-20, <strong>all 5,311 carry an
-      empty CPL type</strong>. They were untyped, not refused, and an untyped row reads exactly like a closed one.</p>
+      <p><span class="mark yes">✓</span> <strong>And it costs nothing to build</strong>, because the mechanism already
+      existed. The rows were never dead ends — measured 2026-08-20, <strong>all 5,311 carry an empty CPL type</strong>.
+      They were untyped, not refused, and an untyped row reads exactly like a closed one.</p>
+      <p><span class="mark warn">⚠</span> <strong>Its reach is a quarter of the class, not all of it</strong> — see
+      below. The ruling is right; what it can be applied to today is smaller than this page first implied.</p>
     </div>
   </section>
 
   <section class="stack">
-    <h2>The question that dissolved</h2>
-    <p>Before the ruling this looked like it needed <em>two</em> answers. The individualized-assessment sentence is
-    <strong>75%</strong> of the class; swimming takes it to <strong>95%</strong> — but only if swimming rules the same
-    way, and <span class="quote">&ldquo;additional swimming credit on institutional evaluation&rdquo;</span> is a legacy
-    military-PE recommendation at 86 colleges. Whether a college would grant that today is a different question from
-    whether to assess someone&rsquo;s occupational training.</p>
+    <h2>Only a quarter of it is an offer</h2>
+    <p class="lede">Split by whether the recommendation names a subject at all.</p>
+    <div class="scroller" tabindex="0" role="region" aria-label="The class split by whether a subject is named, scrollable table">
+      <table>
+        <thead>
+          <tr><th scope="col">Shape</th><th scope="col" class="num">Rows</th><th scope="col" class="num">Exhibits</th><th scope="col" class="num">Colleges</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Names a subject</strong> — swimming, surveying, First Aid and Fire Science, Anatomy and Physiology, Air-Conditioning and Refrigeration, Gas Turbine Technology. <span class="mark yes">✓ a real Cx target</span></td><td class="num">1,310</td><td class="num">26</td><td class="num">89</td></tr>
+          <tr><td><strong>Names no course at all</strong> — <span class="quote">&ldquo;Credit may be granted on the basis of an individualized assessment of the student&rdquo;</span>, and nothing more. <span class="mark no">⚠ nothing to offer</span></td><td class="num">4,001</td><td class="num">225</td><td class="num">95</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">5,311</td><td class="num">251</td><td class="num">101</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="note warn">
+      <p><span class="h">Why the empty three quarters can&rsquo;t just be offered anyway.</span> A Credit by Exam offer
+      has to name a course to challenge. These name none — so the &ldquo;offer&rsquo;&rdquo; collapses into
+      <em>you may request Cx</em>, which every student can already do for any course the catalog allows. It adds nothing
+      the student didn&rsquo;t have.</p>
+    </div>
     <div class="note">
-      <p><span class="h">One rule with an exception covers both.</span> Offering the row as Credit by Exam doesn&rsquo;t
-      require anyone to decide in advance whether swimming deserves credit — <strong>the college&rsquo;s own Cx policy
-      for that course decides it</strong>, which is where that judgement belonged all along. The 95% question never
-      needed answering.</p>
+      <p><span class="h">But the row is not empty — the recommendation is.</span> Each one still carries its
+      <strong>exhibit</strong>: the military training ACE actually reviewed. Attach that title and the offer becomes
+      concrete — <em>your Gas Turbine training may be worth credit; ask about a challenge exam</em>.</p>
+      <p><span class="mark yes">✓</span> <strong>And we already fetch it.</strong> The daily pull asks the exhibit
+      catalogue for <code>AceID</code> and <code>Title</code>, and these rows are keyed on the ACE id. Nobody stores the
+      pair, so nothing joins them. That is a loader change, not a request to anyone.</p>
+      <p class="foot" style="margin-top:.55rem">Not yet measured: what share of the 225 exhibits the join actually
+      resolves. The catalogue is fetched on the runner and never written down, so it can only be counted on the next
+      run — stated here as the open number rather than an assumed one.</p>
     </div>
   </section>
 
@@ -257,23 +287,21 @@ strong{color:var(--text-strong);}
     <div class="note">
       <p><span class="mark yes">✓</span> <span class="h">Priority 1 is cleared to send</span> — 12,283 rows at ~100 colleges
       where ACE genuinely recommends no credit, or the recommendation&rsquo;s own validity window has closed. One instruction,
-      the same one everywhere. It was <em>not</em> safe to send before these 5,311 were separated out.</p>
+      the same one everywhere.</p>
     </div>
     <div class="note">
-      <p><span class="mark yes">✓</span> <span class="h">Priority 5 is live and student-facing</span> — the class now
-      reads <em>&ldquo;Credit by Exam opportunities — present, do not close&rdquo;</em>, one rule, owned by college CPL
-      staff. It stopped being a clean-up item and became the only class in the worklist that can still turn into credit
-      for someone.</p>
+      <p><span class="mark yes">✓</span> <span class="h">1,310 rows at 89 colleges are the Cx offer, and they are
+      sendable now</span> — the recommendation names the subject, so there is a course to point at.</p>
     </div>
     <div class="note warn">
-      <p><span class="mark warn">⚠</span> <span class="h">Its rank still says 5, and that is now understated.</span>
-      Priority 5 meant <em>readiness</em> — nobody had ruled. That reason is gone, and this is the highest-value class
-      in the list. The number is left alone only because renumbering would move every other class Sam&rsquo;s team
-      already refers to by number.</p>
+      <p><span class="mark no">⚠</span> <span class="h">4,001 rows at 95 colleges are marked NOT SENDABLE.</span>
+      They stay visible so nobody rediscovers them as a mystery, owned by the MAP team rather than a college, and the
+      instruction says plainly that the copout is in the source data and not a task for anyone at a college.</p>
     </div>
-    <p class="foot">Next, in Sam&rsquo;s own lane: normalising these ACE recommendations as Credit by Exam against
-    specific courses in the Common CR Reference. &middot; Live in <strong>map_cleanup_worklist</strong>, rebuilt nightly
-    &middot; figures re-read after the 2026-08-20 cron run &middot; detail in <code>docs/map_cleanup_worklist.md</code></p>
+    <p class="foot">Next: attach the exhibit title, then re-measure. Behind that, in Sam&rsquo;s own lane, normalising
+    these ACE recommendations as Credit by Exam against specific courses in the Common CR Reference. &middot; Live in
+    <strong>map_cleanup_worklist</strong>, rebuilt nightly &middot; figures re-read after the 2026-08-20 cron run
+    &middot; detail in <code>docs/map_cleanup_worklist.md</code></p>
   </section>
 
 </div>

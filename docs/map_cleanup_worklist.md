@@ -305,6 +305,39 @@ step, not the clean-up.
 > college's own Cx policy for that course decides it**, which is where that
 > judgement belonged.
 >
+> ⚠️ **AND ITS REACH IS A QUARTER OF THE CLASS — Sam's own challenge to his own
+> ruling, same day.** *"Is the CR for many of these just a vague 'College may grant
+> credit based on its own assessment' — no reference to a discipline or course?
+> The swimming example is a good Cx opportunity, but if there is no course or
+> discipline, it's meaningless and a copout on ACE's part. Students can request Cx
+> at any time provided the catalog allows for it for the particular course."*
+>
+> He is right about **three quarters** of it:
+>
+> | shape | rows | exhibits | colleges | |
+> |---|---:|---:|---:|---|
+> | **names a subject** — swimming, surveying, First Aid and Fire Science, Anatomy and Physiology, Air-Conditioning and Refrigeration, Gas Turbine Technology | **1,310** | 26 | 89 | ✅ sendable |
+> | **names no course at all** — *"Credit may be granted on the basis of an individualized assessment of the student"*, and nothing more | **4,001** | 225 | 95 | ⚠️ **not sendable** |
+>
+> ⭐ **A Cx offer has to name a course to challenge.** Where none is named the
+> offer collapses into *"you may request Cx"* — which every student can already do
+> for any course the catalog allows. **It adds nothing the student did not have**,
+> so those 4,001 are marked NOT SENDABLE and owned by the MAP team, not a college.
+>
+> ⭐ **The row is not empty — the RECOMMENDATION is.** Each still carries its
+> **exhibit**: the military training ACE reviewed. Attach that title and the offer
+> becomes concrete. ⚠️ **We already fetch it and never store it** —
+> `fetch_custom_report.py` asks `View_ExhibitCRsCatalog_Dataset` for `AceID` **and**
+> `Title`, and these rows are keyed on the ACE id (`AF-0101-0002`). That is a loader
+> change, not a request to ITPI. ⚠️ **The join rate is NOT yet measured** — the
+> catalogue is fetched on the runner and never written down, so it can only be
+> counted on the next run. Do not quote a coverage figure until it is.
+>
+> ⚠️ `chatbox_exhibits` does **not** rescue them: 0 of the 225 have a title there.
+> That zero was checked against a positive control first — 785 of 6,330
+> `map_student_credit` exhibit ids DO join to it, so the join works and the corpus
+> simply does not carry ACE military exhibits.
+
 > ⚠️ **The rank now understates it.** Priority 5 meant READINESS — nobody had
 > ruled. That reason is gone and this is the highest-**value** class in the list.
 > The number is left alone only because renumbering moves every other class the
@@ -324,12 +357,19 @@ student.** What the 5,311 rows actually say:
 is the college's call after its own assessment. Closing them records a refusal
 ACE never made.
 
-**The instruction now in the table:** *"Present these to the student as CREDIT BY
-EXAM options. Do NOT rule them Not Applicable: ACE is deferring the award to your
-own assessment, not refusing it, and Credit by Exam is the mechanism for that. The
-only reason to close one is that your college does not permit Credit by Exam for
-that particular course."* Owner: **college CPL staff (student-facing)**,
-`effort_shape: one rule`.
+**Two subclasses, two instructions** — one class with one action across both
+halves would repeat exactly the mistake the P1 split fixed a day earlier:
+
+- `cx-course-named` (1,310 / 89 colleges, `one rule`, **college CPL staff —
+  student-facing**): *"Present these to the student as CREDIT BY EXAM options…
+  The only reason to close one is that your college does not permit Credit by Exam
+  for that particular course."*
+- `cx-no-course-named` (4,001 / 95 colleges, `upstream`, **MAP team — attach the
+  exhibit title**): *"NOT SENDABLE YET — do not pass this to a college… there is no
+  course to offer a challenge exam in, and a student can already request Credit by
+  Exam for any course the catalog allows… Attaching the exhibit title turns it into
+  an offer; until then it is a copout in the source data, not a task for a
+  college."*
 
 ⭐ **A small number of ACE exhibits repeating widely**, so one ruling covers most
 of the class — 75% of it is a single sentence about individualized assessment,
@@ -344,8 +384,12 @@ absent.
 
 - Work P1 as one instruction to ~100 colleges, not 100 conversations — **it is
   now safe to send**, which it was not before the P1/P5 split above.
-- **P5 is ruled and student-facing** — present as Credit by Exam, never bulk-close.
-  Follow-on in Sam's own lane: normalising these ACE recommendations as Cx against
+- **P5 `cx-course-named` (1,310) is ruled and sendable** — present as Credit by
+  Exam, never bulk-close.
+- **Attach the exhibit title** so the other 4,001 can be offered too. The columns
+  are already in the daily pull (`AceID` + `Title`); nothing stores them. Measure
+  the join rate on the next run before quoting any coverage figure.
+- Follow-on in Sam's own lane: normalising these ACE recommendations as Cx against
   specific courses in the Common CR Reference.
 - Decide whether P5's **rank** should move to match its value now that readiness
   is no longer the constraint (see the note under Priority 5).
