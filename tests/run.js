@@ -43,8 +43,12 @@ for (const f of files) {
   const r = spawnSync("node", ["--max-old-space-size=8192", path.join(dir, f)], { stdio: "inherit" });
   if (r.status !== 0) {
     failed++;
+    // A V8 heap-limit abort surfaces EITHER as exit 134 or as SIGABRT
+    // depending on how the child died — say "out of memory" for both, because
+    // that hint is the whole point of printing the status.
+    const oom = r.status === 134 || r.signal === "SIGABRT";
     failures.push(f + (r.signal ? " — killed by " + r.signal : " — exit " + r.status) +
-      (r.status === 134 ? " (out of memory)" : ""));
+      (oom ? " (out of memory — raise the cap or make the file hold less)" : ""));
     console.log("──────── ✗ FAILED: " + f + " ────────");
   }
 }
