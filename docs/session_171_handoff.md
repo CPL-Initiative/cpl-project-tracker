@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/map_custom_reports_lessons]]"
   - "[[docs/session_170_handoff]]"
+superseded: true
+superseded_by: session_174_handoff.md
 ---
 
 # Session 171 handoff
