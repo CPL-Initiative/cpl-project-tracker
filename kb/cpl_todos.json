@@ -1,21 +1,20 @@
 {
-<<<<<<< HEAD
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-20 · SkySort (Session 173) — the funding priorities can be dragged into a new order, and moving one no longer means retyping both years.",
- "_session": "Session 173 (SkySort) — running alongside the Session 172 queue work, so items from both are listed here",
- "_status": "On the Implementation Funding tab you can now drag a priority into a different position — Priority 3 into the Priority 1 slot, say — and everything comes with it: its wording, its metric, its share, its factor and its list of recommended strategies. Nothing about the saved figures changes; the order is kept separately, so the money each priority carries is identical before and after, and there is a Reset button. \"Price factor\" is now \"Funding factor\", and the numbers still recalculate as you type. On the request to copy Year 1 into Year 2 whenever Front-load is picked: that would have overwritten Year 2 with no way back, as a side effect of a switch about payment timing — so instead there is a \"Year 2 mirrors Year 1\" tick box that keeps them in step without destroying anything, plus a separate Copy button that asks first. Both are off until you turn them on. One knock-on was worth catching: the My College page pairs each priority's money with its advice by POSITION, so reordering would have attached the wrong steps to the wrong pot — that now pairs by identity. Everything from the Session 172 queue below is still open and unchanged.",
+ "_as_of": "2026-08-20 · SkyGlass (Session 176) — the funding tests are split into nine, and this To-Do list is readable again after two sessions wrote it at once.",
+ "_session": "Session 176 (SkyGlass) — carrying open items from Sessions 169–175; two Session-173 sessions ran in parallel and both wrote this file, so their lists are merged here",
+ "_status": "Housekeeping first: this list itself was broken. Two sessions ran at the same time on 20 August, both rewrote the To-Do file, and the conflict was committed without being resolved — so the 📋 button had nothing valid to read. Both lists are merged back together below and the finished items are gone. The engineering this session: the Implementation Funding test file had grown to 2,955 lines and was running out of memory on the build server, which is what made the reorder work look like it had broken something when it had not. It is now nine smaller files that check exactly the same 575 things, using a third of the memory and finishing faster. Worth knowing why, because the first two attempts to fix it were aimed at the wrong thing: each simulated browser page the tests open holds on to about 44 MB and never gives it back, no matter what the test does — the only thing that releases it is the file finishing. So the size of the biggest file is what sets the ceiling, and splitting it was the only real cure. That is now written down where the next person will hit it. Everything else below is unchanged and still open.",
  "items": [
+  {
+   "id": "s173-phone-check",
+   "for": "Sam",
+   "tab": "fact-sheet",
+   "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the one thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
+  },
   {
    "id": "s173-funding-reorder-try",
    "for": "Sam",
    "tab": "implementation-funding",
    "text": "Have a go at the reorder in a browser. Each priority card has a Drag handle and a Position box — drag Priority 3 onto the first slot, or just set its Position to 1. Everything travels with the card and the dollar figures do not move; a Reset order button appears once the order differs from what is saved. Then set the new shares and funding factors — they recalculate as you go, and the balance box will warn you if the three shares stop adding to 100%. Two things to decide while you are in there: whether the order is right, and whether to tick \"Year 2 mirrors Year 1\". Your Scenario 1 already holds identical years, so ticking it costs nothing and makes them impossible to drift apart — but it ships off, so it is your call."
-  },
-  {
-   "id": "s173-ci-one-file",
-   "for": "Fable",
-   "tab": "implementation-funding",
-   "text": "Finish PR #1268. The security check passed; the test check reported one file failing out of 231. Everything that touches the changed code was re-run and is green, which leaves tests/cpl_funding.test.js as the only unchecked file — it takes about two minutes on the build server and over twenty-five in our sandbox, so it is slow rather than stuck. main was green earlier today, so this is ours. Reproduce it, fix it, push and merge."
   },
   {
    "id": "s172-guidance-surface",
@@ -96,84 +95,4 @@
    "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
   }
  ]
-=======
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-20 · SkyCurate (Session 173) — the Curate button is hidden from the public and still reachable for the team; the accessibility check found four real problems on phones and they are fixed.",
-  "_session": "Session 173 (SkyCurate)",
-  "_status": "You asked for two things and the second one mattered more. The ✒ Curate button no longer shows to the public — it appears automatically once you are signed in on COBI (the sign-in now carries across browser tabs), and there is a bookmark, fact-sheet/?curate=1, for a laptop where you are not signed in yet. Worth knowing: the button was never what protected the page. Editing was always locked at the database, so hiding it just stops the public being shown a control they cannot use and asked for a reviewer email they do not have.\n\nThen the accessibility check. It found more than the button change did, and none of it was catchable by the nine automated test files the page already had — those tests read the page's structure, but they cannot see where things land on a screen. On a phone the Statewide exhibits table was genuinely broken: the program name printed on top of its own number, the page slid sideways, and the whole \"Could adopt\" column was cut off with no way to scroll to it. That last one is the one to remember — a page that quietly drops a column still looks finished, so nobody reports it. The table now stacks on small screens with every figure labelled. Also fixed: a \"skip to content\" link (a keyboard user had to tab past about 25 controls to reach anything), the funding table which could be scrolled with a mouse but not a keyboard, and heading levels that skipped. Colour contrast was already fine — all 31 combinations pass.\n\nOne thing I could not do: look at the live page. This environment is blocked from reaching the public site, so the phone view is verified in a test browser, not on glass. That is the first item below.",
-  "items": [
-    {
-      "id": "s173-phone-check",
-      "for": "Sam",
-      "tab": "fact-sheet",
-      "text": "Please open the Fact Sheet on your phone and scroll to Statewide CPL credit recommendations. This is the one thing no session can check — I am blocked from reaching the live site, so the mobile fix is verified in a test browser only. What you should see: each program area on its own line, then four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt). Before this, on a phone, the program name printed on top of the first number and the Could adopt column was cut off entirely. If it looks cramped or the labels read oddly, tell me and I will tune it."
-    },
-    {
-      "id": "s173-curate-signin",
-      "for": "Sam",
-      "tab": "fact-sheet",
-      "text": "Worth one minute to confirm: sign in on COBI (About menu → reviewer sign-in), then open the Fact Sheet from the Share menu. The ✒ Curate button should just be there, with nothing else to do — the sign-in now carries across browser tabs. If you are on a machine where you are not signed in, use fact-sheet/?curate=1 instead; that is the bookmark to keep and to pass to anyone on the team who curates. Please do not share that link publicly, though it is not a security boundary — the real lock is on the database."
-    },
-    {
-      "id": "s173-other-public-pages",
-      "for": "Fable",
-      "tab": "fact-sheet",
-      "text": "Run the same accessibility and phone check against the other two public pages, Sierra and the Veteran Sprint map. Neither has ever had one, and both are shared with colleges. The Fact Sheet had four real problems that its existing tests could not see, so the base rate here is not zero. The tool is committed: node fact-sheet/check_mobile_layout.js."
-    },
-    {
-      "id": "s172-guidance-surface",
-      "for": "Sam",
-      "tab": "map-data-quality",
-      "text": "The list you asked for is built and nobody can see it. For each of the 225 military exhibits behind the 'no course named' records, we now hold what the training actually was — MOS-31B-002 is Military Police, MOS-68W-001 is Health Care Specialist, MOS-42A-001 is Human Resources Specialist — plus, where colleges have already articulated that exhibit, which course they used. Two decisions are yours. First, where it goes: I'd suggest a lookup panel behind the Credit by Exam row on the MAP Data Quality tab rather than another queue, because 225 exhibits is reference material, not 225 things to do. Second, whether the middle tier is worth showing at all — see the next item."
-    },
-    {
-      "id": "s172-tier2-question",
-      "for": "Sam",
-      "tab": "map-data-quality",
-      "text": "The 'where might this align' tag is weaker than it first looked, and you should know why before deciding what to show. Only 3 of 225 exhibits have a course that two or more colleges chose AND that isn't a catch-all: Military Police to Introduction to the Administration of Justice, and Human Resources Specialist to HR Management and Intro to Computer Information Systems. The third is a placeholder. My first attempt looked far better — 14 exhibits — until I noticed 11 of them pointed at the same course, Elements of Supervision, which three colleges apply to any military service at all: it appears against 33 different exhibits. So the titles are the real deliverable and the peer-course tag is mostly noise. Question for you: is the middle tier (47 exhibits where somebody named something, but nothing solid) useful to a counsellor, or just clutter?"
-    },
-    {
-      "id": "s172-p1-safe-to-send",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "The biggest clean-up item is safe to send now: 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's validity window has expired. One instruction, the same one everywhere. Worth saying out loud when the numbers move — clearing these raises every college's disposition rate without awarding a single unit, because it shrinks the denominator."
-    },
-    {
-      "id": "s172-cx-1310",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "The 1,310 records that DO name a subject are ready to go to colleges as the Credit by Exam offer you described — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — across 89 colleges."
-    },
-    {
-      "id": "s171-cs-phrase",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "Natalie, Chelsea and Ally just need the team passphrase to open the clean-up list — I did not add them as reviewers. Supplying their addresses is not the same as authorising that grant, and reviewer access would also give them 591,820 student-level records and the ability to change every team passphrase. Their addresses are recorded. One small thing: you wrote 'Chelsea Mirada' but the address is 'chelsea.marada@' — worth confirming the spelling before anyone emails her."
-    },
-    {
-      "id": "s171-cs-twelve-no-contact",
-      "for": "Sam",
-      "tab": "course-credit",
-      "text": "12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock, Saddleback, Hartnell, West Valley, Cuyamaca, Sacramento City, Gavilan, Crafton Hills, Feather River, Orange Coast and Launch. For Customer Success, finding the right person there is step one, before any clean-up. Hartnell and Gavilan are the known cases where the college has plenty of MAP users but nobody in a CPL role."
-    },
-    {
-      "id": "s169-delta-meeting-outcome",
-      "for": "Sam",
-      "tab": "eacr",
-      "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong. Two things to have in hand for that conversation: Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
-    },
-    {
-      "id": "s169-repo-split-decisions",
-      "for": "Sam",
-      "tab": "dashboard",
-      "text": "Three decisions still open on splitting the public site from the internal one, all from Session 169 and none of them urgent: does the public Knowledge Base stay CC BY 4.0 (it currently lets anyone reuse the methodology commercially — the highest-leverage of the three); are we on GitHub Free or Team (Free cannot publish a site from a private repo, so it decides what is possible); and does the CPL-Initiative GitHub organisation have a second owner yet? Pedro was added on Supabase but GitHub was never confirmed."
-    },
-    {
-      "id": "s169-second-partner-list",
-      "for": "Fable",
-      "tab": "eacr",
-      "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
-    }
-  ]
->>>>>>> origin/main
 }

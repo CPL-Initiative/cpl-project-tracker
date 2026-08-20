@@ -20,8 +20,10 @@
 //     priority's strategies inside its cap, and both lists hold three entries —
 //     so a count gate cannot see a reorder. The join is by identity now.
 //
-// Lives in its own file: each test file gets a fresh process, and piling more
-// JSDOM instances into cpl_funding.test.js OOMs under the cgroup limit.
+// Lives in its own file: each test file gets a fresh process, and ending the
+// process is the ONLY thing that reclaims a booted jsdom window — which is why
+// the 2,955-line cpl_funding.test.js was itself split into nine suites on
+// 2026-08-20. Budget + measurements: tests/lib/cpl_funding_harness.js.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_reorder.test.js`).
 const fs = require("fs");

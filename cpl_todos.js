@@ -28,7 +28,18 @@
   var WHO_LABELS = {
     sam: "For Sam — curation",
     fable: "For Fable — engineering (next session)",
+    other: "Other",
   };
+  // The feed writes `for: "Sam" | "Fable"` (that is the field CLAUDE.md Rule 9
+  // documents and every checkpoint has written since the feed shipped); this
+  // module was reading `it.who`, the name an early fixture used. Nothing threw:
+  // `byWho[undefined]` is a perfectly good key, so the live panel rendered ONE
+  // section headed "For Undefined" holding every item, and the split this
+  // feature exists for was invisible. Accept both spellings, fold to a
+  // lowercase key, and never let the label be built from a missing value.
+  function whoKey(item) {
+    return String((item && (item.who || item.for)) || "").toLowerCase() || "other";
+  }
 
   var feed = null;     // parsed kb/cpl_todos.json
   var open = false;
@@ -154,7 +165,8 @@
 
     var byWho = {};
     (feed.items || []).forEach(function (it) {
-      (byWho[it.who] = byWho[it.who] || []).push(it);
+      var k = whoKey(it);
+      (byWho[k] = byWho[k] || []).push(it);
     });
     Object.keys(byWho).forEach(function (who) {
       panel.appendChild(el("div", { class: "cpl-todo-sec" },

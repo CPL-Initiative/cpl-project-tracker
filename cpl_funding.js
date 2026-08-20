@@ -1156,10 +1156,11 @@
   // MEMOISED, and that is not a micro-optimisation. srcIdx() sits under
   // prioField(), which the table calls for every field of every priority of
   // every college row — so an order array allocated per lookup is thousands of
-  // allocations per render. cpl_funding.test.js builds ~50 jsdom windows whose
-  // vm contexts are not reclaimable mid-run (see tests/run.js), so the file
-  // already peaks near its heap ceiling; the extra churn tipped it into
-  // "Ineffective mark-compacts near heap limit" and took CI down with it.
+  // allocations per render. The funding suites build ~60 jsdom windows between
+  // them, and a booted window is never reclaimed while its process lives (see
+  // tests/lib/cpl_funding_harness.js), so the churn showed up as
+  // "Ineffective mark-compacts near heap limit" and took CI down with it. The
+  // suites are split now, but the memoisation is right on its own merits.
   //
   // The cache key is the stored value's REFERENCE, not its contents: the config
   // layers hand back the same array between edits (setPriorityOrder assigns a
