@@ -259,6 +259,26 @@
     return idx;
   }
 
+  /* PURE. Re-sequence one program's priorities into the curator's display
+   * order. `order[i]` is the SOURCE index shown at display position i. Anything
+   * malformed — wrong length, out of range, a repeat — returns the natural
+   * order rather than dropping or duplicating a priority. */
+  function applyPriorityOrder(list, order) {
+    if (!Array.isArray(order) || order.length !== list.length) return list;
+    var out = [], seen = {}, i, v;
+    for (i = 0; i < order.length; i++) {
+      v = Number(order[i]);
+      if (!(v >= 0 && v < list.length) || v !== Math.floor(v) || seen[v]) return list;
+      seen[v] = 1;
+      out.push(list[v]);
+    }
+    return out.map(function (pr, j) {
+      var copy = {}; for (var k in pr) if (Object.prototype.hasOwnProperty.call(pr, k)) copy[k] = pr[k];
+      copy.index = j;
+      return copy;
+    });
+  }
+
   /* ── The strategy library ────────────────────────────────────────────────
    * PURE. config → { programs, unread }. Walks every project so a program the
    * team adds later is picked up without a code change.
@@ -302,6 +322,13 @@
           blankCount: raw.length - kept.length
         };
       });
+      // DISPLAY ORDER (Sam, 2026-08-20). The curator can drag the priority
+      // cards on the Implementation Funding tab into a new order, stored beside
+      // the config as a permutation of the source indices. `key` stays the
+      // SOURCE index — that is what joins a priority back to the funding module
+      // — while `index` becomes the position the curator actually sees, so
+      // "priority 2" names the same priority on both tabs.
+      priorities = applyPriorityOrder(priorities, scen.priorityOrder);
       var total = priorities.reduce(function (n, pr) { return n + pr.strategies.length; }, 0);
       if (!total) {
         unread.push({ id: pid, label: label, why: "Year " + year + " of “" + scenario + "” has no strategies written yet." });
@@ -413,6 +440,11 @@
           };
         });
         return {
+          // `key` is the priority's index in the stored config — its IDENTITY.
+          // It has to survive this remap: the funding box joins each priority's
+          // money to these strategies by identity, so that the join still holds
+          // when the cards are shown in a curator's own order (Sam, 2026-08-20).
+          key: pr.key,
           index: pr.index, share: pr.share, title: pr.title, description: pr.description,
           metric: pr.metric, blankCount: pr.blankCount, items: items,
           measuredCount: items.filter(function (i) { return i.measure; }).length
@@ -868,11 +900,14 @@
    * attaching priority 1's steps to priority 3's cap would be silent and
    * wrong in a way a reader would act on — so the join is worth stating.
    *
-   * POSITION IS THE JOIN, and it holds by construction: cpl_funding.js's
-   * priorities(slot) walks year_priorities[slot] as an ordered list and
-   * overlays the Supabase config BY THE SAME INDEX (prioField(slot, i, …)),
-   * while collectPrograms() here sorts that config's own numeric keys. Both
-   * are `i` over one ordered set. So the gate is COUNT EQUALITY.
+   * IDENTITY IS THE JOIN (2026-08-20). It used to be POSITION, which held by
+   * construction while both sides walked one ordered set — but the curator can
+   * now drag the priority cards into their own order, and a reordered pair
+   * still holds three entries on each side, so a count gate cannot see it.
+   * Each funding priority carries `src`, its index in the stored config, and
+   * each program priority carries `key`, the same index; they join exactly, in
+   * any display order. Count equality stays as the outer gate, and the
+   * fallback to position keeps a funding module that predates `src` working.
    *
    * ⚠ It is deliberately NOT metric equality, which looks stricter and is
    * worse: the funding module loads its Supabase overlay asynchronously, so
@@ -885,7 +920,31 @@
    * which is where a structural change should fail. */
   function prioritiesAlign(prios, program) {
     if (!prios || !program || !program.priorities) return false;
-    return !!prios.length && prios.length === program.priorities.length;
+    if (!prios.length || prios.length !== program.priorities.length) return false;
+    // A reorder makes POSITION the wrong join (both lists still hold three
+    // entries, so the count gate cannot see it). Where the funding module
+    // reports a source index, every priority must resolve through it.
+    var withSrc = prios.filter(function (p) { return p && p.src != null; });
+    if (!withSrc.length) return true;
+    return withSrc.length === prios.length && withSrc.every(function (p) {
+      return !!programPriorityFor(program, p, -1);
+    });
+  }
+
+  /* PURE. The program priority that belongs to THIS funding priority.
+   * IDENTITY FIRST: `p.src` is the funding module's source index and `key` is
+   * the same index as the config stores it, so they join exactly whatever
+   * order the cards are shown in. Position is the fallback for a funding
+   * module that predates `src`. */
+  function programPriorityFor(program, p, i) {
+    if (!program || !program.priorities) return null;
+    if (p && p.src != null) {
+      for (var j = 0; j < program.priorities.length; j++) {
+        if (String(program.priorities[j].key) === String(p.src)) return program.priorities[j];
+      }
+      return null;
+    }
+    return program.priorities[i] || null;
   }
 
   function stratHtml(items, label) {
@@ -1836,7 +1895,8 @@
             // earn (Sam, 2026-08-12). As one flat list of 22 they read as an
             // intimidating audit; six to ten attached to a priority read as
             // advice about that priority.
-            if (stratsInline) fundBody += stratHtml(implProg.priorities[i].items, null);
+            var progPrio = stratsInline ? programPriorityFor(implProg, p, i) : null;
+            if (progPrio) fundBody += stratHtml(progPrio.items, null);
             fundBody += "</div>";
           });
           fundBody += "</div>";
@@ -2778,6 +2838,11 @@
     // would hand back what suppression removed.
     _waitingBreakdown: waitingBreakdown,
     _prioritiesAlign: prioritiesAlign,
+    // The reorder join (Sam, 2026-08-20). Both pure: applyPriorityOrder puts a
+    // program's priorities into the curator's display order, programPriorityFor
+    // joins one funding priority back to its own strategies by IDENTITY.
+    _applyPriorityOrder: applyPriorityOrder,
+    _programPriorityFor: programPriorityFor,
     // Auth seams. Every per-college FIGURE on this tab sits behind
     // `is_allowed_reviewer() OR team_pass_ok()`, and an RLS-filtered SELECT
     // answers 200 + [] rather than 401 — so a credential that never reaches the
