@@ -326,9 +326,12 @@ window.COBI_ADMIN_SURFACE = {
     },
     "map-data-quality": {
       "modules": [
-        "map_data_quality.js"
+        "map_data_quality.js",
+        "map_cleanup_views.js"
       ],
       "reads": [
+        "map_cleanup_worklist",
+        "map_cx_exhibit_guidance",
         "map_data_quality"
       ],
       "writes": [],

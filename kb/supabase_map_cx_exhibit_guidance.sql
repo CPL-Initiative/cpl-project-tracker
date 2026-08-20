@@ -139,6 +139,35 @@ begin
         then 'Colleges have named a course here, but none that is both corroborated and specific - either only one college did it, or the course is a blanket mapping applied across many unrelated exhibits. Read peer_courses with the spans_exhibits count before using any of it.'
       else 'No college has named a course for this exhibit. The exhibit title is the only guidance, and no course is suggested here on purpose.'
     end as tier_note,
+    -- ⚠️ WHAT TO DO IN MAP — Sam's condition on keeping tier 2, 2026-08-20:
+    -- "tier 2s earn their place as long as there is guidance for the CSM team on
+    -- correcting or noting in MAP any changes recommended."
+    --
+    -- A tier label tells a reader how much to trust a row. It does not tell them
+    -- what to DO, and this list exists to send someone to MAP. So each tier
+    -- carries its own action, and the actions differ in KIND, not in confidence:
+    -- tier 1 carries a candidate course to test, tier 2 carries a CONVERSATION
+    -- (the peer course is context, never a proposal), tier 3 carries only the
+    -- title.
+    --
+    -- The concrete correction is stronger than it first looks: ALL 4,001 of
+    -- these rows carry an EMPTY course_type (measured, 2026-08-20), which is
+    -- exactly why they read as closed. Typing them Credit by Exam IS the
+    -- "noting in MAP" Sam asked for, and it uses a value MAP already has —
+    -- Credit By Exam is the largest CPL type in the curated corpus.
+    --
+    -- ⚠️ These name FIELDS, never SCREENS. No session has seen MAP's UI and MAP
+    -- is read-only to us, so inventing a click path would be fabricating the one
+    -- part we cannot check. `college_course`, `course_type` and
+    -- `cpl_status_plan` are columns we load, so they are safe to name.
+    case
+      when coalesce(a.strong_courses,0) > 0
+        then 'IN MAP: take the corroborated course to the college as a candidate. If it fits, attach it as the local course on this recommendation and set the CPL type to Credit by Exam - every one of these rows carries an EMPTY CPL type today, which is why they read as closed. If it does not fit, record that it was reviewed and why. Do NOT rule it Not Applicable just because the peer course did not fit.'
+      when coalesce(a.total_courses,0) > 0
+        then 'IN MAP: lead with the exhibit title, not the course below it. Ask the college whether they teach an equivalent - the peer course here is CONTEXT for that conversation, never a proposal, because either only one college chose it or it is a blanket mapping applied across many unrelated exhibits. If the college identifies a course, attach it as the local course and set the CPL type to Credit by Exam. If nothing fits, note that the training was reviewed and no local equivalent was found, so the next person does not start over. Do NOT bulk-rule Not Applicable.'
+      else
+        'IN MAP: no course is suggested here on purpose. Take the exhibit title to the college and ask whether the training maps to anything they teach. If it does, attach that course and set the CPL type to Credit by Exam; if it does not, note that it was reviewed. Do NOT bulk-rule Not Applicable - ACE deferred this award to the college, it did not refuse it.'
+    end as map_action,
     coalesce(a.peer_courses, '[]'::jsonb) as peer_courses,
     coalesce(a.strong_courses, 0)  as strong_courses,
     coalesce(a.blanket_courses, 0) as blanket_courses,
@@ -163,6 +192,7 @@ comment on table public.map_cx_exhibit_guidance is
   'counting colleges alone cannot tell genuine corroboration from three colleges blanket-mapping '
   'any military service to MAG-51 Elements of Supervision, which spans 33 exhibits. Blanket '
   'courses are LABELLED, never hidden. No matcher: where no college has named a course, none is '
-  'suggested. Team-phrase gated.';
+  'suggested. EVERY tier carries a map_action saying what to correct or note IN MAP - Sam''s '
+  'condition, 2026-08-20, on tier 2 earning its place. Team-phrase gated.';
 
 revoke all on function public.rebuild_map_cx_exhibit_guidance() from public, anon, authenticated;
