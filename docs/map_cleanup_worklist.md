@@ -278,9 +278,120 @@ corroborates the MAP Users finding: **Hartnell and Gavilan have plenty of active
 MAP users and nobody in a CPL role.** Finding the right person there is the first
 step, not the clean-up.
 
-### Priority 5 · Credit MAY be available if the college evaluates — **5,311 rows, 101 colleges, 3,898 students**
+### Priority 5 · Credit by Exam opportunities — **5,311 rows, 101 colleges, 3,898 students**
 
-**Not a defect, and the only class here that could still become credit for a
+> ✅ **RULED (Sam, 2026-08-20):** *"These should be presented to students as Credit
+> by Exam options for them — not ruled out by college staff (unless they don't
+> permit Cx for that particular course). Later, as I curate the CCRR table I will
+> normalize these ACE CRs as Cx for specific courses on the CCR."*
+>
+> ⭐ **This is better than the three options it was asked to choose between.** The
+> question was framed as *what disposition does a college record* — and the answer
+> is that it is not a disposition problem. It is an **offer nobody was making**.
+> ACE defers the award to the college's own assessment; **Credit by Exam is the
+> mechanism California community colleges already use for exactly that**, and it is
+> the largest CPL type in the curated corpus — **798 credentials**, ahead of
+> Industry Certification's 671.
+>
+> ⭐ **So it costs nothing to build.** The option on the table was "MAP needs a
+> state it doesn't have." It doesn't. Measured 2026-08-20: **all 5,311 rows carry an
+> empty `course_type`** — they are *untyped*, not refused, and an untyped row reads
+> exactly like a closed one.
+>
+> ⭐ **One rule with one exception covers the whole class.** This looked like it
+> needed two rulings (individualized assessment is 75%; swimming takes it to 95%,
+> but only if swimming rules the same way). It doesn't: offering the row as Cx
+> never requires deciding in advance whether swimming deserves credit — **the
+> college's own Cx policy for that course decides it**, which is where that
+> judgement belonged.
+>
+> ⚠️ **AND ITS REACH IS A QUARTER OF THE CLASS — Sam's own challenge to his own
+> ruling, same day.** *"Is the CR for many of these just a vague 'College may grant
+> credit based on its own assessment' — no reference to a discipline or course?
+> The swimming example is a good Cx opportunity, but if there is no course or
+> discipline, it's meaningless and a copout on ACE's part. Students can request Cx
+> at any time provided the catalog allows for it for the particular course."*
+>
+> He is right about **three quarters** of it:
+>
+> | shape | rows | exhibits | colleges | |
+> |---|---:|---:|---:|---|
+> | **names a subject** — swimming, surveying, First Aid and Fire Science, Anatomy and Physiology, Air-Conditioning and Refrigeration, Gas Turbine Technology | **1,310** | 26 | 89 | ✅ sendable |
+> | **names no course at all** — *"Credit may be granted on the basis of an individualized assessment of the student"*, and nothing more | **4,001** | 225 | 95 | ⚠️ **not sendable** |
+>
+> ⭐ **A Cx offer has to name a course to challenge.** Where none is named the
+> offer collapses into *"you may request Cx"* — which every student can already do
+> for any course the catalog allows. **It adds nothing the student did not have**,
+> so those 4,001 are marked NOT SENDABLE and owned by the MAP team, not a college.
+>
+> ⭐ **The row is not empty — the RECOMMENDATION is.** Each still carries its
+> **exhibit**: the military training ACE reviewed. Attach that title and the offer
+> becomes concrete. ⚠️ **We already fetch it and never store it** —
+> `fetch_custom_report.py` asks `View_ExhibitCRsCatalog_Dataset` for `AceID` **and**
+> `Title`, and these rows are keyed on the ACE id (`AF-0101-0002`). That is a loader
+> change, not a request to ITPI. ⚠️ **The join rate is NOT yet measured** — the
+> catalogue is fetched on the runner and never written down, so it can only be
+> counted on the next run. Do not quote a coverage figure until it is.
+>
+> ⚠️ `chatbox_exhibits` does **not** rescue them: 0 of the 225 have a title there.
+> That zero was checked against a positive control first — 785 of 6,330
+> `map_student_credit` exhibit ids DO join to it, so the join works and the corpus
+> simply does not carry ACE military exhibits.
+
+> ### The guidance list — `map_cx_exhibit_guidance` (built 2026-08-20)
+>
+> Sam: *"a short list of the no course CRs + the title of their ACE exhibit (e.g.,
+> Corpsman, Hospitalman, Rifleman, MP, etc.)… tag the generic Cx opportunity with
+> an indicator of where their training might align with a course."*
+>
+> ✅ **The titles work: 219 of 225 exhibits resolve (97.3%), 3,963 of 4,001 rows.**
+> Exactly the vocabulary he named — `MOS-11B-006` is **Infantryman**,
+> `MOS-31B-002` **Military Police**, `MOS-68W-001` **Health Care Specialist**,
+> `MOS-42A-001` **Human Resources Specialist**, `MC-2204-0105` **Marine Combat
+> Training**. That is the deliverable, and it is real.
+>
+> ⚠️ **The alignment indicator is much weaker than it first looked, and the first
+> build of it was wrong.** Tier 1 originally required a course named by ≥2
+> colleges. That shipped a tier 1 where **11 of 14 exhibits pointed at
+> `MAG-51 Elements of Supervision`** — for Infantryman, Combat Medic, Cook, Truck
+> Driver and HR Specialist alike.
+>
+> ⭐ **Counting colleges cannot tell corroboration from a blanket mapping.** Three
+> colleges blanket-map any military service to a supervision course, and three
+> colleges agreeing looks identical to three colleges independently deciding. The
+> discriminator is **specificity**: how many different exhibits does this course
+> appear against? `MAG-51` spans **33**. `MAG-200` spans 10. `AUTOCOR-114 BASIC
+> WELDING` spans 8. `ADJ-1 Introduction to the Administration of Justice` spans
+> **1** — Military Police — and is worth reading.
+>
+> | tier | meaning | exhibits | rows |
+> |---|---|---:|---:|
+> | 1 | a course named by ≥2 colleges **and** spanning <4 exhibits | **3** | 689 |
+> | 2 | colleges named something, but nothing corroborated *and* specific | 47 | 2,282 |
+> | 3 | nobody has named a course; the title is the only guidance | 175 | 1,030 |
+>
+> The whole of tier 1: **Military Police → ADJ-1 Introduction to the
+> Administration of Justice** (3 colleges), **Human Resources Specialist →
+> MAG-56 HRM + CIS-001 Intro to CIS** (2 each), and **Marine Combat Training →
+> CPL-3 Elective Course Credits** (3) — which is a *placeholder*, the same
+> "Elective Course Credits" string the Common CR Reference already flags.
+>
+> ⭐ **So the honest read: the titles are the deliverable; peer precedent is
+> mostly noise.** Two exhibits have a pointer worth acting on. Every
+> `peer_courses` entry carries **both** `colleges` and `spans_exhibits`, and
+> blanket courses are **labelled rather than hidden** — a curator who cannot see
+> why an exhibit has no strong course cannot judge the list.
+>
+> ⭐ **A finding for the CCRR lane in its own right:** three colleges have mapped
+> `MAG-51 Elements of Supervision` against **33 distinct military exhibits**.
+> That is worth looking at as a data-quality question, separately from this list.
+
+> ⚠️ **The rank now understates it.** Priority 5 meant READINESS — nobody had
+> ruled. That reason is gone and this is the highest-**value** class in the list.
+> The number is left alone only because renumbering moves every other class the
+> team already refers to by number. Say the word and it moves.
+
+**Not a defect, and the only class here that can still become credit for a
 student.** What the 5,311 rows actually say:
 
 | ACE's own words | rows | colleges |
@@ -294,12 +405,19 @@ student.** What the 5,311 rows actually say:
 is the college's call after its own assessment. Closing them records a refusal
 ACE never made.
 
-⚠️ **Its rank is READINESS, not value.** It is last because **nobody has ruled on
-the right disposition** when no evaluation has been done — is it Not Applicable,
-does it stay Needs Action, or is it a distinct "college evaluation required"
-state MAP does not currently have? That is a question for Sam and the MAP team,
-and the worklist says so rather than guessing. Until then it is deliberately
-**not** an instruction to send.
+**Two subclasses, two instructions** — one class with one action across both
+halves would repeat exactly the mistake the P1 split fixed a day earlier:
+
+- `cx-course-named` (1,310 / 89 colleges, `one rule`, **college CPL staff —
+  student-facing**): *"Present these to the student as CREDIT BY EXAM options…
+  The only reason to close one is that your college does not permit Credit by Exam
+  for that particular course."*
+- `cx-no-course-named` (4,001 / 95 colleges, `upstream`, **MAP team — attach the
+  exhibit title**): *"NOT SENDABLE YET — do not pass this to a college… there is no
+  course to offer a challenge exam in, and a student can already request Credit by
+  Exam for any course the catalog allows… Attaching the exhibit title turns it into
+  an offer; until then it is a copout in the source data, not a task for a
+  college."*
 
 ⭐ **A small number of ACE exhibits repeating widely**, so one ruling covers most
 of the class — 75% of it is a single sentence about individualized assessment,
@@ -314,7 +432,15 @@ absent.
 
 - Work P1 as one instruction to ~100 colleges, not 100 conversations — **it is
   now safe to send**, which it was not before the P1/P5 split above.
-- **Get Sam's ruling on P5** before anything goes to a college about those rows.
+- **P5 `cx-course-named` (1,310) is ruled and sendable** — present as Credit by
+  Exam, never bulk-close.
+- **Attach the exhibit title** so the other 4,001 can be offered too. The columns
+  are already in the daily pull (`AceID` + `Title`); nothing stores them. Measure
+  the join rate on the next run before quoting any coverage figure.
+- Follow-on in Sam's own lane: normalising these ACE recommendations as Cx against
+  specific courses in the Common CR Reference.
+- Decide whether P5's **rank** should move to match its value now that readiness
+  is no longer the constraint (see the note under Priority 5).
 - Take P2 to **Pierce and Merced directly** — two calls, 94% of the class.
 - Ask the **nine Initiator colleges** what is stalling.
 - The list is live; it will move nightly with the load.

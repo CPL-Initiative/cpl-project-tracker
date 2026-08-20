@@ -1,0 +1,307 @@
+<title>The 5,311 Deferrals</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  /* First Light v1.6 — docs/kb-notes/reference-ui-design-system.md. Not invented. */
+  --paper:#F4F2ED;
+  --text-strong:#1C1C1A;
+  --text-body:#3A3A36;
+  --text-muted:#5C5C55;
+  --surface-opaque:#FFFFFF;
+  --surface-subtle:#F7F5F1;
+  --surface-muted:#ECE9E2;
+  --border:rgba(28,28,26,.14);
+  --border-strong:rgba(28,28,26,.30);
+  --crimson:#920000;
+  --cobalt:#0047AB;
+  --hunter:#2C601A;
+  --mustard-text:#8B6800;
+  --focus-ring:var(--cobalt);
+  /* derived tints get their own tokens (spec rule) */
+  --crimson-wash:#F6EAEA;
+  --hunter-wash:#EAF0E7;
+  --cobalt-wash:#E8EDF6;
+  --radius:14px;
+  --measure:68ch;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--text-body);
+  font-family:'Source Sans 3',Arial,sans-serif;
+  font-size:clamp(1rem,.97rem + .18vw,1.075rem);
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);text-wrap:balance;margin:0;}
+a{color:var(--cobalt);}
+:focus-visible{outline:3px solid var(--focus-ring);outline-offset:3px;border-radius:4px;}
+.skip{position:absolute;left:-9999px;}
+.skip:focus{left:1rem;top:1rem;position:fixed;z-index:9;background:var(--surface-opaque);
+  color:var(--cobalt);padding:.6rem 1rem;border:2px solid var(--cobalt);border-radius:8px;}
+
+.wrap{max-width:min(74ch,100% - 2.5rem);margin:0 auto;padding:clamp(2rem,6vw,4.5rem) 0 5rem;}
+.stack{display:flex;flex-direction:column;gap:1.15rem;}
+.sections{display:flex;flex-direction:column;gap:clamp(2.6rem,6vw,4rem);}
+
+/* ── masthead ─────────────────────────────────────────────── */
+.eyebrow{
+  font-size:.72rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--text-muted);margin:0;
+}
+h1{font-size:clamp(1.85rem,1.35rem + 2.3vw,2.9rem);line-height:1.14;font-weight:700;}
+.standfirst{font-size:clamp(1.05rem,1rem + .35vw,1.22rem);color:var(--text-body);max-width:var(--measure);margin:0;}
+.rule{height:1px;background:var(--border-strong);border:0;margin:0;}
+
+/* ── the stake ────────────────────────────────────────────── */
+.stake{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;
+  background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;
+}
+.stake div{background:var(--surface-opaque);padding:1.05rem 1.15rem;}
+.stake .n{
+  font-family:'Playfair Display',Georgia,serif;font-size:clamp(1.5rem,1.2rem + 1.1vw,2rem);
+  font-weight:700;color:var(--text-strong);font-variant-numeric:tabular-nums;line-height:1.1;
+}
+.stake .l{font-size:.82rem;color:var(--text-muted);margin-top:.15rem;}
+
+h2{font-size:clamp(1.3rem,1.15rem + .7vw,1.7rem);line-height:1.22;font-weight:700;}
+.lede{color:var(--text-muted);font-size:.95rem;margin:0;}
+
+/* ── evidence table ───────────────────────────────────────── */
+.scroller{overflow-x:auto;border:1px solid var(--border);border-radius:var(--radius);background:var(--surface-opaque);}
+table{border-collapse:collapse;width:100%;min-width:34rem;background:var(--surface-opaque);}
+caption{text-align:left;padding:.9rem 1.1rem 0;color:var(--text-muted);font-size:.85rem;}
+th,td{padding:.68rem 1.1rem;text-align:left;border-bottom:1px solid var(--border);vertical-align:top;}
+thead th{
+  font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--text-muted);
+  font-weight:700;border-bottom:1px solid var(--border-strong);
+}
+tbody tr:nth-child(even) td{background:var(--surface-subtle);}
+tbody tr:last-child td{border-bottom:0;}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap;}
+.quote{color:var(--text-strong);font-style:italic;}
+tfoot td{font-weight:700;color:var(--text-strong);border-top:1px solid var(--border-strong);background:var(--surface-subtle);}
+
+/* ── options ──────────────────────────────────────────────── */
+.options{display:flex;flex-direction:column;gap:1.15rem;}
+.opt{
+  background:var(--surface-opaque);border:1px solid var(--border);
+  border-left:5px solid var(--border-strong);border-radius:var(--radius);
+  padding:1.3rem 1.4rem;
+}
+.opt.ruled-out{border-left-color:var(--crimson);}
+.opt.interim{border-left-color:var(--mustard-text);}
+.opt.recommended{border-left-color:var(--hunter);background:var(--hunter-wash);}
+.opt h3{font-size:1.16rem;font-weight:700;display:flex;flex-wrap:wrap;gap:.5rem;align-items:baseline;}
+.handle{
+  font-family:'Source Sans 3',Arial,sans-serif;font-size:.74rem;font-weight:700;
+  letter-spacing:.1em;color:var(--text-muted);border:1px solid var(--border-strong);
+  border-radius:6px;padding:.05rem .4rem;
+}
+.verdict{font-size:.74rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+  border-radius:10px;padding:.12rem .55rem;white-space:nowrap;}
+.v-no{color:var(--crimson);background:var(--crimson-wash);}
+.v-interim{color:var(--mustard-text);background:var(--surface-opaque);border:1px solid var(--mustard-text);}
+/* on --surface-muted this pair measures 4.25:1 — under AA. White ground + a
+   mustard hairline matches the v-yes construction and clears it. */
+.v-yes{color:var(--hunter);background:var(--surface-opaque);border:1px solid var(--hunter);}
+.opt dl{display:grid;grid-template-columns:auto 1fr;gap:.4rem 1rem;margin:.9rem 0 0;}
+.opt dt{font-size:.74rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  color:var(--text-muted);padding-top:.22rem;white-space:nowrap;}
+.opt dd{margin:0;}
+
+/* ── callouts ─────────────────────────────────────────────── */
+.note{
+  border-left:4px solid var(--cobalt);background:var(--cobalt-wash);
+  border-radius:0 var(--radius) var(--radius) 0;padding:1.05rem 1.25rem;
+}
+.note.warn{border-left-color:var(--crimson);background:var(--crimson-wash);}
+.note p{margin:0;}
+.note p + p{margin-top:.6rem;}
+.note .h{font-weight:700;color:var(--text-strong);}
+.mark{font-weight:700;}
+.mark.no{color:var(--crimson);}
+.mark.yes{color:var(--hunter);}
+.mark.warn{color:var(--mustard-text);}
+strong{color:var(--text-strong);}
+
+.foot{color:var(--text-muted);font-size:.86rem;}
+.foot a{color:var(--cobalt);}
+
+@media (max-width:560px){
+  .stake{grid-template-columns:1fr;}
+  .opt dl{grid-template-columns:1fr;gap:.15rem;}
+  .opt dt{padding-top:.55rem;}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;}}
+</style>
+
+<a class="skip" href="#options">Skip to the three options</a>
+
+<div class="wrap sections">
+
+  <header class="stack">
+    <p class="eyebrow">CPL clean-up worklist · Priority 5 · ruled 2026-08-20</p>
+    <h1>Credit ACE did not refuse</h1>
+    <p class="standfirst">5,311 credit recommendations say a college <em>may</em> grant credit once it does its own
+    assessment. Three answers were possible for what a college records instead &mdash; and the ruling went
+    somewhere better than any of them.</p>
+    <div class="note">
+      <p><span class="mark yes">✓</span> <span class="h">Ruled by Sam, 2026-08-20.</span>
+      <em>&ldquo;These should be presented to students as Credit by Exam options for them &mdash; not ruled out by
+      college staff (unless they don&rsquo;t permit Cx for that particular course).&rdquo;</em></p>
+      <p>So the row is not a disposition problem at all. It is an <strong>offer nobody was making</strong>.</p>
+    </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">Then Sam read this page and asked the question it had not
+      asked:</span> <em>&ldquo;Is the CR for many of these just a vague &lsquo;College may grant credit based on its own
+      assessment&rsquo; &mdash; no reference to a discipline or course? &hellip; if there is no course or discipline,
+      it&rsquo;s meaningless and a copout on ACE&rsquo;s part. Students can request Cx at any time provided the catalog
+      allows for it for the particular course.&rdquo;</em></p>
+      <p><strong>He is right about three quarters of the class.</strong> Measured the same day &mdash; and it changes
+      the reach of the ruling, not the ruling.</p>
+    </div>
+    <div class="stake" role="group" aria-label="Size of the class">
+      <div><div class="n">5,311</div><div class="l">recommendations</div></div>
+      <div><div class="n">3,898</div><div class="l">students behind them</div></div>
+      <div><div class="n">101</div><div class="l">colleges holding some</div></div>
+    </div>
+  </header>
+
+  <hr class="rule">
+
+  <section class="stack">
+    <h2>What these rows actually say</h2>
+    <p class="lede">Verbatim from the credit recommendation text, grouped by wording.</p>
+    <div class="scroller" tabindex="0" role="region" aria-label="Recommendation wordings, scrollable table">
+      <table>
+        <caption>Every row carries <strong>zero units</strong> — which is the mechanism of a deferral, not evidence of a denial.</caption>
+        <thead>
+          <tr><th scope="col">ACE&rsquo;s own words</th><th scope="col" class="num">Rows</th><th scope="col" class="num">Colleges</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="quote">&ldquo;Credit may be granted on the basis of an individualized assessment of the student&rdquo;</span></td><td class="num">3,970</td><td class="num">95</td></tr>
+          <tr><td><span class="quote">&ldquo;Additional swimming &hellip; on the Basis of Institutional Evaluation&rdquo;</span></td><td class="num">1,075</td><td class="num">86</td></tr>
+          <tr><td><span class="quote">&ldquo;Credit in surveying on the basis of institutional evaluation&rdquo;</span></td><td class="num">171</td><td class="num">57</td></tr>
+          <tr><td><span class="quote">&ldquo;&hellip; on the basis of institutional evaluation&rdquo;</span> — first aid, fire science</td><td class="num">95</td><td class="num">41</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">5,311</td><td class="num">101</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">Until yesterday these sat in one class with genuine no-credit rows,
+      under one instruction:</span> <em>&ldquo;Rule these Not Applicable. ACE has already said no credit is recommended.&rdquo;</em>
+      That sentence is the opposite of what the rows say. They are now separated out and nobody is being told to close them.</p>
+    </div>
+  </section>
+
+  <section class="stack" id="options">
+    <h2>The three answers</h2>
+    <p class="lede">A college has finished nothing here. The question is only what it records in the meantime.</p>
+
+    <div class="options">
+
+      <article class="opt ruled-out">
+        <h3><span class="handle">A</span> Mark it Not Applicable anyway <span class="verdict v-no">Rule this out</span></h3>
+        <dl>
+          <dt>Records</dt><dd>&ldquo;We looked; no credit applies.&rdquo;</dd>
+          <dt>Cost</dt><dd>States a refusal ACE never made. An N/A row leaves the queue and <strong>nobody revisits it</strong> — the one irreversible choice of the three. It also lifts every college&rsquo;s disposition rate without awarding a single unit.</dd>
+          <dt>Student</dt><dd>The door closes silently, and no one ever files a complaint about a door they were told wasn&rsquo;t there.</dd>
+        </dl>
+      </article>
+
+      <article class="opt interim">
+        <h3><span class="handle">B</span> Leave it at Needs Action <span class="verdict v-interim">Right for now</span></h3>
+        <dl>
+          <dt>Records</dt><dd>&ldquo;Not decided yet&rdquo; — which is true today.</dd>
+          <dt>Cost</dt><dd>5,311 rows sit in the backlog indefinitely, indistinguishable from work nobody has opened. A college that has genuinely decided it won&rsquo;t assess these has no way to say so.</dd>
+          <dt>Student</dt><dd>Nothing happens, but nothing false is on the record.</dd>
+        </dl>
+      </article>
+
+      <article class="opt recommended">
+        <h3><span class="handle">C</span> Offer it as Credit by Exam <span class="verdict v-yes">✓ The ruling</span></h3>
+        <dl>
+          <dt>Records</dt><dd>What is actually true: <em>this is a course you can challenge by exam.</em> Distinct from both &ldquo;we refused&rdquo; and &ldquo;we haven&rsquo;t looked.&rdquo;</dd>
+          <dt>Cost</dt><dd><strong>None to build.</strong> This was framed as needing a new state in MAP; it doesn&rsquo;t. Credit by Exam is an existing CPL mechanism and the <strong>most-used one in the whole curated corpus</strong> — 798 credentials carry it, ahead of Industry Certification&rsquo;s 671. The work is presenting it, not building it.</dd>
+          <dt>Exception</dt><dd>One, and it is per-college policy rather than per-row judgement: a college that does not permit Credit by Exam for that particular course closes it on that basis.</dd>
+          <dt>Student</dt><dd>The door is not just left open — someone points at it. <em>You can sit an exam for this.</em></dd>
+        </dl>
+      </article>
+
+    </div>
+
+    <div class="note">
+      <p><span class="h">Why C wins on its own terms.</span> A is the only one of the three that puts something
+      false on the record, and the only one that can&rsquo;t be walked back — an N/A row is never revisited.
+      B is honest but inert. C is the only one that produces a student outcome.</p>
+      <p><span class="mark yes">✓</span> <strong>And it costs nothing to build</strong>, because the mechanism already
+      existed. The rows were never dead ends — measured 2026-08-20, <strong>all 5,311 carry an empty CPL type</strong>.
+      They were untyped, not refused, and an untyped row reads exactly like a closed one.</p>
+      <p><span class="mark warn">⚠</span> <strong>Its reach is a quarter of the class, not all of it</strong> — see
+      below. The ruling is right; what it can be applied to today is smaller than this page first implied.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>Only a quarter of it is an offer</h2>
+    <p class="lede">Split by whether the recommendation names a subject at all.</p>
+    <div class="scroller" tabindex="0" role="region" aria-label="The class split by whether a subject is named, scrollable table">
+      <table>
+        <thead>
+          <tr><th scope="col">Shape</th><th scope="col" class="num">Rows</th><th scope="col" class="num">Exhibits</th><th scope="col" class="num">Colleges</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Names a subject</strong> — swimming, surveying, First Aid and Fire Science, Anatomy and Physiology, Air-Conditioning and Refrigeration, Gas Turbine Technology. <span class="mark yes">✓ a real Cx target</span></td><td class="num">1,310</td><td class="num">26</td><td class="num">89</td></tr>
+          <tr><td><strong>Names no course at all</strong> — <span class="quote">&ldquo;Credit may be granted on the basis of an individualized assessment of the student&rdquo;</span>, and nothing more. <span class="mark no">⚠ nothing to offer</span></td><td class="num">4,001</td><td class="num">225</td><td class="num">95</td></tr>
+        </tbody>
+        <tfoot><tr><td>Total</td><td class="num">5,311</td><td class="num">251</td><td class="num">101</td></tr></tfoot>
+      </table>
+    </div>
+    <div class="note warn">
+      <p><span class="h">Why the empty three quarters can&rsquo;t just be offered anyway.</span> A Credit by Exam offer
+      has to name a course to challenge. These name none — so the &ldquo;offer&rsquo;&rdquo; collapses into
+      <em>you may request Cx</em>, which every student can already do for any course the catalog allows. It adds nothing
+      the student didn&rsquo;t have.</p>
+    </div>
+    <div class="note">
+      <p><span class="h">But the row is not empty — the recommendation is.</span> Each one still carries its
+      <strong>exhibit</strong>: the military training ACE actually reviewed. Attach that title and the offer becomes
+      concrete — <em>your Gas Turbine training may be worth credit; ask about a challenge exam</em>.</p>
+      <p><span class="mark yes">✓</span> <strong>And we already fetch it.</strong> The daily pull asks the exhibit
+      catalogue for <code>AceID</code> and <code>Title</code>, and these rows are keyed on the ACE id. Nobody stores the
+      pair, so nothing joins them. That is a loader change, not a request to anyone.</p>
+      <p class="foot" style="margin-top:.55rem">Not yet measured: what share of the 225 exhibits the join actually
+      resolves. The catalogue is fetched on the runner and never written down, so it can only be counted on the next
+      run — stated here as the open number rather than an assumed one.</p>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>What is already moving, and what is held</h2>
+    <div class="note">
+      <p><span class="mark yes">✓</span> <span class="h">Priority 1 is cleared to send</span> — 12,283 rows at ~100 colleges
+      where ACE genuinely recommends no credit, or the recommendation&rsquo;s own validity window has closed. One instruction,
+      the same one everywhere.</p>
+    </div>
+    <div class="note">
+      <p><span class="mark yes">✓</span> <span class="h">1,310 rows at 89 colleges are the Cx offer, and they are
+      sendable now</span> — the recommendation names the subject, so there is a course to point at.</p>
+    </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">4,001 rows at 95 colleges are marked NOT SENDABLE.</span>
+      They stay visible so nobody rediscovers them as a mystery, owned by the MAP team rather than a college, and the
+      instruction says plainly that the copout is in the source data and not a task for anyone at a college.</p>
+    </div>
+    <p class="foot">Next: attach the exhibit title, then re-measure. Behind that, in Sam&rsquo;s own lane, normalising
+    these ACE recommendations as Credit by Exam against specific courses in the Common CR Reference. &middot; Live in
+    <strong>map_cleanup_worklist</strong>, rebuilt nightly &middot; figures re-read after the 2026-08-20 cron run
+    &middot; detail in <code>docs/map_cleanup_worklist.md</code></p>
+  </section>
+
+</div>

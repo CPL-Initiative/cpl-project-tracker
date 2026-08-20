@@ -86,10 +86,16 @@ begin
       case
         -- 'recommen' covers recommended / recommend / the "recommeded" typo.
         when credit_rec ~* 'credit is not recommen'            then 'ace-no-credit'
-        -- ACE defers to the college. NOT a refusal.
+        -- ACE defers to the college. NOT a refusal. Split by whether the
+        -- recommendation NAMES A SUBJECT, because that decides whether there is
+        -- anything to offer (Sam, 2026-08-20 — see the P5 action text).
         when credit_rec ~* 'individuali[sz]ed assessment'
           or credit_rec ~* 'individual assessment'
-          or credit_rec ~* 'institutional evaluation'          then 'college-evaluation'
+          or credit_rec ~* 'institutional evaluation'          then
+          case when credit_rec ~* '^ *0 +(hours?|semesters?) +in +credit +(may be|is) '
+               then 'cx-no-course-named'   -- "Credit may be granted on the basis of..." and nothing else
+               else 'cx-course-named'      -- "Additional swimming...", "Credit in surveying..."
+          end
         -- The recommendation's own validity window has closed.
         when credit_rec ~* 'valid for the dates'               then 'expired-window'
         else                                                        'zero-hour-other'
@@ -101,8 +107,8 @@ begin
         or credit_rec ilike '%individualised%'
         or credit_rec ~* '^\s*0\s+(hours?|semester)')
   ),
-  no_credit  as (select * from zero_unit where sub <> 'college-evaluation'),
-  may_evaluate as (select * from zero_unit where sub =  'college-evaluation'),
+  no_credit  as (select * from zero_unit where sub not like 'cx-%'),
+  may_evaluate as (select * from zero_unit where sub like 'cx-%'),
   plan_per_student as (
     select college_id, student_key,
            max(cpl_plan_status) as plan,
@@ -149,9 +155,44 @@ begin
     -- credit MAY still be awarded. Priority 5 reflects READINESS, not value —
     -- it is last because nobody has ruled on the disposition yet, and it is the
     -- only class here that could still turn into credit for a student.
-    select college_id, 'credit MAY be available if the college evaluates', sub, 5,
-           'needs a ruling', 'Sam / MAP team',
-           'ACE says credit MAY be granted on the basis of the college''s own individualized assessment or institutional evaluation. This is NOT a refusal, so do NOT bulk-rule it Not Applicable: a college that closes these never learns the door was open. Needs a ruling on the right disposition when no evaluation has been done.',
+    -- RULED 2026-08-20 by Sam: these are Credit by Exam OPPORTUNITIES and belong
+    -- in front of the student, not in a staff member's close-out queue. ACE
+    -- defers the award to the college's own assessment; Credit by Exam is the
+    -- mechanism California community colleges already use for exactly that, and
+    -- it is the LARGEST CPL type in the curated corpus (798 credentials, ahead
+    -- of Industry Certification's 671). So the row is not a dead end and never
+    -- was — it is an untyped opportunity. All 5,311 carry an EMPTY course_type,
+    -- which is why they read as one.
+    -- ⚠️ SPLIT 2026-08-20, same day the ruling landed, on Sam's own challenge to
+    -- it: "is the CR for many of these just a vague 'College may grant credit
+    -- based on its own assessment' - no reference to a discipline or course?
+    -- ...if there is no course or discipline, it's meaningless and a copout on
+    -- ACE's part. Students can request Cx at any time provided the catalog
+    -- allows for it for the particular course."
+    --
+    -- Measured: he is right about THREE QUARTERS of the class.
+    --   cx-course-named     1,310 rows /  26 exhibits / 89 colleges - swimming,
+    --                       surveying, First Aid and Fire Science, Anatomy and
+    --                       Physiology, Air-Conditioning and Refrigeration, Gas
+    --                       Turbine Technology. A real Cx target.
+    --   cx-no-course-named  4,001 rows / 225 exhibits / 95 colleges - the text
+    --                       is "Credit may be granted on the basis of an
+    --                       individualized assessment of the student" and
+    --                       nothing more. No subject anywhere in it.
+    --
+    -- So the ruling is SOUND but its REACH is a quarter of what the class
+    -- implied, and one action across both halves would repeat exactly the
+    -- mistake the P1 split fixed a day earlier.
+    select college_id, 'Credit by Exam opportunities', sub, 5,
+           case when sub = 'cx-course-named' then 'one rule' else 'upstream' end,
+           case when sub = 'cx-course-named' then 'college CPL staff (student-facing)'
+                else 'MAP team — attach the exhibit title' end,
+           case sub
+             when 'cx-course-named' then
+               'Present these to the student as CREDIT BY EXAM options. Do NOT rule them Not Applicable: ACE is deferring the award to your own assessment, not refusing it, and Credit by Exam is the mechanism for that. The only reason to close one is that your college does not permit Credit by Exam for that particular course. (Sam, 2026-08-20.) The recommendation names the subject, so there is a specific course to point the student at.'
+             else
+               'NOT SENDABLE YET — do not pass this to a college. ACE names no course or discipline here: the recommendation reads "Credit may be granted on the basis of an individualized assessment of the student" and nothing more, so there is no course to offer a challenge exam in, and a student can already request Credit by Exam for any course the catalog allows. What the row still carries is the EXHIBIT - the military training ACE reviewed. Attaching that title turns it into an offer; until then it is a copout in the source data, not a task for a college. (Sam, 2026-08-20.)'
+           end,
            count(*), count(distinct student_key), 0::numeric
     from may_evaluate group by 1,2,3
     union all
@@ -208,9 +249,11 @@ end $$;
 comment on table public.map_cleanup_worklist is
   'Prioritised per-college CPL clean-up list, rebuilt nightly by map_promote_custom_reports(). '
   'Ranked by DECISIONS not rows: priority 1 resolves under one rule per college. '
-  'Priority 5 is NOT a defect class - ACE says credit MAY be granted after the college''s '
-  'own evaluation, so it must never be bulk-ruled Not Applicable; its rank reflects '
-  'READINESS (nobody has ruled on the disposition), not value. '
+  'Priority 5 is NOT a defect class - it is the Credit by Exam lane. Sam ruled 2026-08-20 '
+  'that these go to the STUDENT as Cx options and are never bulk-ruled Not Applicable. '
+  'It carries TWO subclasses because only one is sendable: cx-course-named (the '
+  'recommendation names a subject) vs cx-no-course-named (it names none, so there is no '
+  'course to offer and the row waits on the exhibit title). '
   'Team-phrase gated because every row is a per-college AGGREGATE - no student grain '
   'survives the group-by, so Customer Success does not need reviewer access. '
   'NO k-anonymity: internal team tool, never a public surface.';

@@ -122,6 +122,10 @@ revoke all on public.map_student_key_sketch   from anon, authenticated;
 -- TRUNCATE is O(1) here and takes an ACCESS EXCLUSIVE lock, which costs nothing:
 -- nothing reads staging, by design.
 --
+-- Every staging table the loader fills must be named here. A staging table that
+-- is filled but never cleared accumulates across runs, and because the promotion
+-- reads staging wholesale that shows up as duplicates in LIVE, not in staging.
+--
 -- THE FUNCTION TAKES NO ARGUMENT, and that is the safety property. The loader
 -- used to pass a table name and defend itself with an `assert` on the "stg_"
 -- prefix — the live student-grain table was one bad string away from the one
@@ -140,7 +144,8 @@ declare was_cr bigint; was_st bigint;
 begin
   select count(*) into was_cr from stg_map_college_cr_unit;
   select count(*) into was_st from stg_map_student_credit;
-  truncate table stg_map_college_cr_unit, stg_map_student_credit;
+  truncate table stg_map_college_cr_unit, stg_map_student_credit,
+                 stg_map_ace_exhibit_titles;
   return jsonb_build_object('cr_unit_was', was_cr, 'student_was', was_st);
 end $$;
 
