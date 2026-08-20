@@ -13,6 +13,11 @@
 </head>
 <body>
 
+<!-- First tab stop. Sierra has few controls above the conversation, but a
+     keyboard user still lands on the header link and the audience chips before
+     reaching the thing they came for. Off-screen until focused (.s-skip). -->
+<a class="s-skip" href="#s-main">Skip to the conversation</a>
+
 <header class="s-head">
   <div class="s-brand">
     <img class="s-brand-logo" src="./cpl-initiative-logo.png" alt="CPL Initiative"
@@ -34,7 +39,7 @@
   <a class="s-back" href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu<span class="s-sr">(opens in a new tab)</span></a>
 </header>
 
-<main class="s-main">
+<main class="s-main" id="s-main" tabindex="-1">
   <div class="s-intro">
     <p>Hi, I'm <strong>Sierra</strong>. Ask me about <strong>Credit for Prior Learning</strong> —
       where students can turn a license, certification, apprenticeship, or military training into
@@ -45,7 +50,13 @@
       questions are logged anonymously to help me improve.</p>
   </div>
 
-  <div id="s-audience" class="s-audience" role="radiogroup"
+  <!-- role="group", NOT "radiogroup". sierra.js builds these as <button
+       aria-pressed>, and a radiogroup promises children with role="radio",
+       single-selection semantics and arrow-key roving focus — none of which are
+       here. A screen reader announced "radio group" and then found toggle
+       buttons, and the arrow keys a radiogroup teaches its user to press did
+       nothing. "group" is what this actually is. -->
+  <div id="s-audience" class="s-audience" role="group"
        aria-label="Tell Sierra who you are so answers fit your needs"></div>
 
   <div id="s-log" class="s-log" aria-live="polite" aria-label="Conversation with Sierra">
@@ -64,7 +75,7 @@
 <footer class="s-foot">
   Sierra offers guidance, not a guarantee of credit — your college's CPL coordinator makes the final call.
   Questions? <a href="mailto:MAP@rccd.edu">MAP@rccd.edu</a> ·
-  <a href="https://map.rccd.edu" target="_blank" rel="noopener">MAP CPL platform</a>
+  <a href="https://map.rccd.edu" target="_blank" rel="noopener">MAP CPL platform<span class="s-sr">(opens in a new tab)</span></a>
 </footer>
 
 <script src="./sierra.js"></script>
