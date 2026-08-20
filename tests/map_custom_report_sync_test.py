@@ -300,6 +300,52 @@ for _line in _src.splitlines():
         check("map_student_key_sketch" in _line,
               f"a DELETE names something other than the sketch table: {_line.strip()}")
 
+# ── 8b. ACE exhibit titles: the pair that was arriving daily and dropped ──
+# 4,001 Needs Action rows carry a recommendation naming no course, so the only
+# remaining content is the exhibit — and "MOS-42A-001" means nothing to a
+# counsellor. These guard the ways the extraction goes wrong QUIETLY.
+def _cat(cols, rows):
+    return [{"viewName": sync.CATALOG_VIEW, "columnName": cols, "data": rows}]
+
+_COLS = ["ExhibitID", "SkillLevel", "AceID", "Title"]
+got = sync.ace_titles(_cat(_COLS, [
+    ["1", "", "MOS-42A-001", "Human Resources Specialist"],
+    ["2", "", "MOS-42A-001", "HR Spec"],                     # abbreviated variant
+    ["3", "", "MOS-31B-002", "Military Police"],
+    ["4", "", "", "orphan title"],                            # no id
+    ["5", "", "MOS-11B-006", ""],                             # no title
+    ["6", "", "MOS-68W-001"],                                 # short row
+]))
+by = {r["exhibit_id"]: r["title"] for r in got}
+check(by.get("MOS-42A-001") == "Human Resources Specialist",
+      "the LONGEST title must win — otherwise an abbreviated variant that happens "
+      "to arrive later silently replaces the readable one")
+check("MOS-11B-006" not in by and "" not in by,
+      "a blank id or blank title must be dropped, not stored as an empty string")
+check(len(got) == 2, f"expected 2 usable titles, got {len(got)}")
+check(all(sorted(r) == ["exhibit_id", "title"] for r in got),
+      "the row shape must match stg_map_ace_exhibit_titles exactly")
+
+# Column ORDER must not be assumed — the loader indexes by name everywhere else,
+# and this pair is read positionally out of a 14-column view.
+shuffled = sync.ace_titles(_cat(["Title", "AceID"], [["Combat Medic", "MOS-68W-001"]]))
+check(shuffled == [{"exhibit_id": "MOS-68W-001", "title": "Combat Medic"}],
+      "ace_titles() read the columns positionally — it must locate AceID and "
+      "Title BY NAME, or a reordered view silently swaps ids and titles")
+
+# A renamed upstream column must be LOUD. Returning [] would read as "no titles
+# today" and quietly ship a guidance list with every title blank.
+try:
+    sync.ace_titles(_cat(["ExhibitID", "ExhibitTitle"], [["1", "x"]]))
+    failures.append("ace_titles() accepted a view with no AceID/Title — a renamed "
+                    "column must fail loudly, not return an empty list")
+except SystemExit:
+    pass
+
+# A view we do not fetch is not an error; it is simply absent.
+check(sync.ace_titles([{"viewName": "something_else", "columnName": [], "data": []}]) == [],
+      "a missing catalogue view must return [] rather than raising")
+
 # ── 9. The salt-rotation sketch stays a sketch ────────────────────────────
 # A hash per student would be a persistent pseudonymous record of every student;
 # a bounded sample is enough to tell a stable salt from a rotated one.

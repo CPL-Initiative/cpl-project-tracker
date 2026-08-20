@@ -157,6 +157,7 @@ declare
   l_cr    bigint; l_st   bigint; l_stud bigint;
   s_coll  bigint; l_coll bigint;
   sk_min  int;    sk_max int;    sk_null bigint;
+  s_title bigint;
   bad     bigint; unknown_dest bigint; ungated int;
   warnings text[] := '{}';
 begin
@@ -240,6 +241,20 @@ begin
     military_credits, non_military_credits, apprenticeship_credits
   from stg_map_student_credit;
 
+  -- ── ACE exhibit titles: enrichment, so a SKIP not a BLOCK ────────────────
+  -- What MOS-42A-001 actually is. Swapped only when staging has rows: an empty
+  -- title pull is a bad parse or a renamed upstream column, and replacing live
+  -- titles with nothing would turn that into a silent data loss. Losing today's
+  -- titles is recoverable; a titleless guidance list that looks complete is not.
+  select count(*) into s_title from stg_map_ace_exhibit_titles;
+  if s_title > 0 then
+    truncate map_ace_exhibit_titles;
+    insert into map_ace_exhibit_titles (exhibit_id, title)
+    select exhibit_id, title from stg_map_ace_exhibit_titles;
+  else
+    warnings := warnings || 'no ACE exhibit titles in staging - live titles left untouched; the Cx guidance list will show blanks where a title is missing'::text;
+  end if;
+
   -- ── Rebuild the published aggregates in the SAME transaction ─────────────
   perform rebuild_map_college_goal2();
   perform rebuild_map_college_credit_summary();
@@ -252,6 +267,10 @@ begin
   -- search on. Same transaction, same reason: a follow-up list that describes a
   -- different day from the worklist above it is worse than no list.
   perform rebuild_map_transcribed_gap();
+  -- The Credit-by-Exam guidance list. Depends on BOTH the swap above (for the
+  -- exhibit titles) and map_college_cr_unit (for what peers named), so it must
+  -- rebuild after both and inside the same transaction.
+  perform rebuild_map_cx_exhibit_guidance();
 
   -- G7 · THE SUPPRESSION PROPERTY. Blocking, and the most important gate here:
   -- one hidden cell alongside a visible sibling is recoverable by subtraction,

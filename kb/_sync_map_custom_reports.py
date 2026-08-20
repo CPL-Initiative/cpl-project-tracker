@@ -88,6 +88,10 @@ SKETCH_N = 2000
 
 CR_UNIT_VIEW = "View_CollegeExhibitCRByCatalogYear_APIDataset"
 STUDENT_VIEW = "View_StudentDetailsCredits_APIDataset"
+# The exhibit catalogue. We do not load its rows — `export_credential_reference`
+# already rolls those up — we take exactly two columns from it, because they are
+# the ones nothing else carries: the ACE id and what that id IS.
+CATALOG_VIEW = "View_ExhibitCRsCatalog_Dataset"
 
 # ── Column contracts ───────────────────────────────────────────────────────
 # Mapped BY NAME, never by position. The API echoes the requested columnName
@@ -200,6 +204,54 @@ def find_input(path: str | None) -> str | None:
         return latest
     cands = sorted(glob.glob(os.path.join(os.getcwd(), "CustomReport_*.json")))
     return cands[-1] if cands else None
+
+
+def ace_titles(report: list) -> list[dict]:
+    """AceID -> Title, from the exhibit catalogue the daily pull already fetches.
+
+    WHY THIS IS HERE AT ALL. `map_student_credit` keys on the ACE exhibit id
+    (`MOS-42A-001`), and 4,001 of its Needs Action rows carry a recommendation
+    that names no course — "Credit may be granted on the basis of an
+    individualized assessment of the student", and nothing more. Sam,
+    2026-08-20: *"if there is no course or discipline, it's meaningless and a
+    copout on ACE's part."* He is right; the row's remaining content is the
+    EXHIBIT, i.e. the training ACE reviewed. `MOS-42A-001` means nothing to a
+    counsellor. "Human Resources Specialist" does.
+
+    `fetch_custom_report.py` has asked this view for `AceID` AND `Title` since
+    2026-08-14 and stored neither, so the pair has been arriving daily and being
+    dropped. That is the cost side of "minimisation happens twice": a column
+    kept out for having no consumer is invisible until something needs it.
+
+    Deliberately NOT loading the catalogue's other 12 columns — the rollup owns
+    those, and a second copy of a big table is how two numbers start disagreeing.
+    """
+    ds = dataset(report, CATALOG_VIEW)
+    if ds is None:
+        return []
+    cols = [c.strip() for c in (ds.get("columnName") or [])]
+    try:
+        i_ace, i_title = cols.index("AceID"), cols.index("Title")
+    except ValueError:
+        # A rename upstream must not pass silently as "no titles today".
+        raise SystemExit(
+            f"FATAL: {CATALOG_VIEW} no longer exposes AceID and/or Title "
+            f"(saw {cols}). The Cx guidance list depends on that pair; fix the "
+            "column contract rather than shipping a titleless list.")
+
+    best: dict[str, str] = {}
+    for row in ds.get("data") or []:
+        if not isinstance(row, list) or len(row) <= max(i_ace, i_title):
+            continue
+        ace, title = _clean(row[i_ace]), _clean(row[i_title])
+        if not ace or not title:
+            continue
+        # One id, many catalogue rows (a row per credit recommendation). Titles
+        # agree in practice; keep the LONGEST rather than the last so an
+        # abbreviated variant cannot win by arriving later.
+        if len(title) > len(best.get(ace, "")):
+            best[ace] = title
+    return [{"exhibit_id": k, "title": v} for k, v in sorted(best.items())]
 
 
 def dataset(report: list, view_name: str) -> dict | None:
@@ -570,6 +622,7 @@ def main() -> int:
 
     cr_ds = dataset(report, CR_UNIT_VIEW)
     st_ds = dataset(report, STUDENT_VIEW)
+    titles = ace_titles(report)
     if cr_ds is None or st_ds is None:
         have = [d.get("viewName") for d in report if isinstance(d, dict)]
         print("FATAL: the pull does not carry both new views.")
@@ -612,6 +665,13 @@ def main() -> int:
     print(f"   stg_map_college_cr_unit  {n1:,} rows")
     n2 = insert("stg_map_student_credit", st_rows, key)
     print(f"   stg_map_student_credit   {n2:,} rows")
+
+    # Enrichment, not payload: a titleless run still promotes. The promotion
+    # skips the title swap when staging is empty rather than replacing live
+    # titles with nothing.
+    n3 = insert("stg_map_ace_exhibit_titles", titles, key) if titles else 0
+    print(f"   stg_map_ace_exhibit_titles {n3:,} rows"
+          + ("" if n3 else "  ⚠️  no titles parsed — live titles will be LEFT ALONE"))
 
     sketch = write_sketch(st_stats["sketch"], key, pull_date)
     print(f"\nSalt-rotation check: {sketch['verdict']}"
