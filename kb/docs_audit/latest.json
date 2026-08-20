@@ -9,18 +9,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 580,
-    "bytes": 6555340,
+    "files": 581,
+    "bytes": 6564069,
     "over_budget": 5,
     "handoff_max": 173,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 123843,
+    "always_loaded_bytes": 122607,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 123843,
+        "bytes": 122607,
         "over": 1
       },
       "other": {
@@ -30,22 +30,22 @@
       },
       "index": {
         "files": 1,
-        "bytes": 233923,
+        "bytes": 236518,
         "over": 1
       },
       "lessons": {
         "files": 65,
-        "bytes": 1687770,
+        "bytes": 1691949,
         "over": 2
       },
       "kb_note": {
-        "files": 287,
-        "bytes": 1549180,
+        "files": 288,
+        "bytes": 1552704,
         "over": 0
       },
       "handoff": {
         "files": 153,
-        "bytes": 1229077,
+        "bytes": 1228744,
         "over": 0
       }
     },
@@ -55,8 +55,8 @@
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2064,
-      "bytes": 1162616184,
+      "files": 2065,
+      "bytes": 1162625340,
       "heavy_bytes": 588227643,
       "heavy_share": 0.506,
       "ignore_filters": [
@@ -112,26 +112,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 123843,
+        "bytes": 122607,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 63843,
-        "ratio": 2.06
+        "over_by": 62607,
+        "ratio": 2.04
       },
-      "message": "123,843 B is 2.1× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "122,607 B is 2.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 233923,
+        "bytes": 236518,
         "limit": 40000,
         "lane": "index",
-        "over_by": 193923,
-        "ratio": 5.85
+        "over_by": 196518,
+        "ratio": 5.91
       },
-      "message": "233,923 B is 5.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "236,518 B is 5.9× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
