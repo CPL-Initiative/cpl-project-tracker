@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/delta_college_crosswalk_lessons]]"
   - "[[docs/auth_and_repo_posture_lessons]]"
+superseded: true
+superseded_by: session_174_handoff.md
 ---
 
 # Session 170 handoff
