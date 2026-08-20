@@ -149,9 +149,17 @@ begin
     -- credit MAY still be awarded. Priority 5 reflects READINESS, not value —
     -- it is last because nobody has ruled on the disposition yet, and it is the
     -- only class here that could still turn into credit for a student.
-    select college_id, 'credit MAY be available if the college evaluates', sub, 5,
-           'needs a ruling', 'Sam / MAP team',
-           'ACE says credit MAY be granted on the basis of the college''s own individualized assessment or institutional evaluation. This is NOT a refusal, so do NOT bulk-rule it Not Applicable: a college that closes these never learns the door was open. Needs a ruling on the right disposition when no evaluation has been done.',
+    -- RULED 2026-08-20 by Sam: these are Credit by Exam OPPORTUNITIES and belong
+    -- in front of the student, not in a staff member's close-out queue. ACE
+    -- defers the award to the college's own assessment; Credit by Exam is the
+    -- mechanism California community colleges already use for exactly that, and
+    -- it is the LARGEST CPL type in the curated corpus (798 credentials, ahead
+    -- of Industry Certification's 671). So the row is not a dead end and never
+    -- was — it is an untyped opportunity. All 5,311 carry an EMPTY course_type,
+    -- which is why they read as one.
+    select college_id, 'Credit by Exam opportunities — present, do not close', sub, 5,
+           'one rule', 'college CPL staff (student-facing)',
+           'Present these to the student as CREDIT BY EXAM options. Do NOT rule them Not Applicable: ACE is deferring the award to your own assessment, not refusing it, and Credit by Exam is the mechanism for that. The only reason to close one is that your college does not permit Credit by Exam for that particular course. (Sam, 2026-08-20.)',
            count(*), count(distinct student_key), 0::numeric
     from may_evaluate group by 1,2,3
     union all
@@ -208,9 +216,9 @@ end $$;
 comment on table public.map_cleanup_worklist is
   'Prioritised per-college CPL clean-up list, rebuilt nightly by map_promote_custom_reports(). '
   'Ranked by DECISIONS not rows: priority 1 resolves under one rule per college. '
-  'Priority 5 is NOT a defect class - ACE says credit MAY be granted after the college''s '
-  'own evaluation, so it must never be bulk-ruled Not Applicable; its rank reflects '
-  'READINESS (nobody has ruled on the disposition), not value. '
+  'Priority 5 is NOT a defect class - it is the Credit by Exam opportunity lane. Sam ruled '
+  '2026-08-20 that these go to the STUDENT as Cx options and are never bulk-ruled Not '
+  'Applicable; the only close reason is a college not permitting Cx for that course. '
   'Team-phrase gated because every row is a per-college AGGREGATE - no student grain '
   'survives the group-by, so Customer Success does not need reviewer access. '
   'NO k-anonymity: internal team tool, never a public surface.';

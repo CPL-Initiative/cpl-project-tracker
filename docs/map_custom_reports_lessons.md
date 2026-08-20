@@ -642,3 +642,78 @@ what is true today, and is 1,100 chars shorter than before the session.
    Nothing about those rows should reach a college first.
 3. Carryover unchanged: Ashley's Delta outcome, the statewide engine's second
    occupation list, `CLAUDE.md` at 2× budget.
+
+---
+
+## 2026-08-20 (Session 172, later) — the cron ran itself, and the ruling beat the options
+
+### (a) The first unattended run
+
+Fired on its own schedule and succeeded. The line that matters, from the runner:
+
+```
+staging cleared (was 211,005 + 591,820 rows)
+```
+
+That is the new step meeting a **full** staging table with nobody watching — the
+exact condition that broke the night before — and clearing it in seconds.
+`map_college_cr_unit` 211,005 → **213,447**, aggregates + worklist + transcribed
+gap rebuilt in the same transaction, salt-rotation overlap **1.000**, no gate
+fired.
+
+⚠️ **It fired at 14:18 UTC, not 13:40.** GitHub's scheduler drift, already
+documented for this repo. Do not "fix" the cron expression for it.
+
+⚠️ **One odd one out, carried as a lead rather than a tally entry.**
+`map_student_credit` came back **byte-identical** — 591,820 rows, 47,804
+students, and the same distribution on every measure in the log — while the
+catalog-year view grew by 2,442. Two candidate explanations: MAP refreshes the
+two views on different cadences, or the change is confined to the catalog-year
+dimension, which only the other table carries. **Two data points cannot separate
+them.** If a third run repeats it, ask ITPI.
+
+### (b) Sam's ruling went past the options it was given
+
+The brief offered three dispositions. He picked none of them and named a
+mechanism instead: *"presented to students as Credit by Exam options for them —
+not ruled out by college staff (unless they don't permit Cx for that particular
+course)."*
+
+⭐ **It was never a disposition problem.** Asking "what does a college record"
+already assumes the row is something to be closed. It is an **offer nobody was
+making**.
+
+⭐ **The expensive-looking option was free.** Option C had been framed as *MAP
+needs a state it doesn't have* — ITPI dev work on someone else's timeline. It
+doesn't: Credit by Exam is an existing CPL type and the **largest in the curated
+corpus, 798 credentials**, ahead of Industry Certification's 671. Checking that
+before writing the ruling down is what turned a platform request into a
+presentation change.
+
+⭐ **The grounding is a one-line measurement:** all 5,311 rows carry an **empty
+`course_type`**. They are *untyped*, not refused — and an untyped row reads
+exactly like a closed one, which is the whole reason this class looked dead.
+
+⭐ **A well-chosen rule dissolves the question it was asked.** The brief argued
+this needed *two* rulings, because swimming (95% cumulative) might not rule with
+individualized assessment (75%). Under Cx it never comes up: **the college's own
+Cx policy for that course decides swimming**, which is where that judgement
+belonged. When an answer makes a sub-question disappear rather than answering it,
+that is evidence the frame was wrong, not that the answer was lucky.
+
+⚠️ **The rank is now stale in the other direction.** P5 meant *readiness*, and
+readiness is resolved; it is the highest-**value** class in the worklist. The
+number is left alone deliberately — the team refers to these classes by number —
+and flagged for Sam rather than changed unilaterally.
+
+### (c) Visuals now survive the session
+
+Sam: *"Many are so useful I find myself wanting to go back to them."* They were
+published as artifacts — a URL outside the repo, outside the vault, outside every
+search either of us runs. `docs/visuals/` now holds the HTML with a dated
+filename and an index. It sits in the `docs/` lane the sparse vault clone
+materialises, so they reach Obsidian with nothing to file.
+
+⚠️ **The first rule of that folder applies to its first file:** a visual that
+asked a question keeps its answer. This one was updated the same day to record
+the ruling instead of still posing the choice.

@@ -278,9 +278,39 @@ corroborates the MAP Users finding: **Hartnell and Gavilan have plenty of active
 MAP users and nobody in a CPL role.** Finding the right person there is the first
 step, not the clean-up.
 
-### Priority 5 · Credit MAY be available if the college evaluates — **5,311 rows, 101 colleges, 3,898 students**
+### Priority 5 · Credit by Exam opportunities — **5,311 rows, 101 colleges, 3,898 students**
 
-**Not a defect, and the only class here that could still become credit for a
+> ✅ **RULED (Sam, 2026-08-20):** *"These should be presented to students as Credit
+> by Exam options for them — not ruled out by college staff (unless they don't
+> permit Cx for that particular course). Later, as I curate the CCRR table I will
+> normalize these ACE CRs as Cx for specific courses on the CCR."*
+>
+> ⭐ **This is better than the three options it was asked to choose between.** The
+> question was framed as *what disposition does a college record* — and the answer
+> is that it is not a disposition problem. It is an **offer nobody was making**.
+> ACE defers the award to the college's own assessment; **Credit by Exam is the
+> mechanism California community colleges already use for exactly that**, and it is
+> the largest CPL type in the curated corpus — **798 credentials**, ahead of
+> Industry Certification's 671.
+>
+> ⭐ **So it costs nothing to build.** The option on the table was "MAP needs a
+> state it doesn't have." It doesn't. Measured 2026-08-20: **all 5,311 rows carry an
+> empty `course_type`** — they are *untyped*, not refused, and an untyped row reads
+> exactly like a closed one.
+>
+> ⭐ **One rule with one exception covers the whole class.** This looked like it
+> needed two rulings (individualized assessment is 75%; swimming takes it to 95%,
+> but only if swimming rules the same way). It doesn't: offering the row as Cx
+> never requires deciding in advance whether swimming deserves credit — **the
+> college's own Cx policy for that course decides it**, which is where that
+> judgement belonged.
+>
+> ⚠️ **The rank now understates it.** Priority 5 meant READINESS — nobody had
+> ruled. That reason is gone and this is the highest-**value** class in the list.
+> The number is left alone only because renumbering moves every other class the
+> team already refers to by number. Say the word and it moves.
+
+**Not a defect, and the only class here that can still become credit for a
 student.** What the 5,311 rows actually say:
 
 | ACE's own words | rows | colleges |
@@ -294,12 +324,12 @@ student.** What the 5,311 rows actually say:
 is the college's call after its own assessment. Closing them records a refusal
 ACE never made.
 
-⚠️ **Its rank is READINESS, not value.** It is last because **nobody has ruled on
-the right disposition** when no evaluation has been done — is it Not Applicable,
-does it stay Needs Action, or is it a distinct "college evaluation required"
-state MAP does not currently have? That is a question for Sam and the MAP team,
-and the worklist says so rather than guessing. Until then it is deliberately
-**not** an instruction to send.
+**The instruction now in the table:** *"Present these to the student as CREDIT BY
+EXAM options. Do NOT rule them Not Applicable: ACE is deferring the award to your
+own assessment, not refusing it, and Credit by Exam is the mechanism for that. The
+only reason to close one is that your college does not permit Credit by Exam for
+that particular course."* Owner: **college CPL staff (student-facing)**,
+`effort_shape: one rule`.
 
 ⭐ **A small number of ACE exhibits repeating widely**, so one ruling covers most
 of the class — 75% of it is a single sentence about individualized assessment,
@@ -314,7 +344,11 @@ absent.
 
 - Work P1 as one instruction to ~100 colleges, not 100 conversations — **it is
   now safe to send**, which it was not before the P1/P5 split above.
-- **Get Sam's ruling on P5** before anything goes to a college about those rows.
+- **P5 is ruled and student-facing** — present as Credit by Exam, never bulk-close.
+  Follow-on in Sam's own lane: normalising these ACE recommendations as Cx against
+  specific courses in the Common CR Reference.
+- Decide whether P5's **rank** should move to match its value now that readiness
+  is no longer the constraint (see the note under Priority 5).
 - Take P2 to **Pierce and Merced directly** — two calls, 94% of the class.
 - Ask the **nine Initiator colleges** what is stalling.
 - The list is live; it will move nightly with the load.

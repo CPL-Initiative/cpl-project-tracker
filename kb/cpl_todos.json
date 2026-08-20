@@ -1,14 +1,20 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-19 · SkySwap (Session 172) — the nightly job was about to start failing every night, and the clean-up list was about to tell ~100 colleges something untrue. Both fixed. One new decision for Sam (item at the top).",
+  "_as_of": "2026-08-20 · SkySwap (Session 172) — the nightly job ran itself for the first time and succeeded, and Sam ruled on the 5,311 deferred recommendations: they go to students as Credit by Exam options.",
   "_session": "Session 172 (SkySwap)",
-  "_status": "Two things were caught before anyone was affected. First, the nightly job that refreshes the MAP data would have failed every night from tonight: the step that empties the loading area was deleting rows one at a time and timed out the first time it met a full table. It now clears in five seconds instead. While fixing it we found that six powerful database functions — including the one that rewrites the two tables the dashboards read — were reachable by anyone on the internet, because the line of code meant to lock them down does nothing. They are now actually locked, and a test will fail the build if the ineffective version comes back. Second, the clean-up list's biggest item was one instruction to about 100 colleges saying \"ACE said no credit, close these\" — and for 5,311 of those records ACE actually says the opposite: credit MAY be granted once the college does its own assessment. Those are now separated out, and nobody will be told to close them.",
+  "_status": "The nightly MAP refresh fired on its own schedule for the first time and worked, including the step that broke yesterday — it cleared a full loading area in five seconds instead of timing out. Live data moved and every safety check passed. Separately, Sam settled the biggest open question on the clean-up list. 5,311 military credit recommendations say a college MAY grant credit after doing its own assessment; we had been about to tell colleges to close them. His ruling is that they belong in front of the STUDENT as credit-by-exam options instead — the student can challenge the course by exam — and the only reason to close one is a college not allowing credit by exam for that course. That turned out to need nothing built: credit by exam is already the most-used CPL type we hold.",
   "items": [
     {
-      "id": "s172-p5-ruling",
+      "id": "s172-p5-to-colleges",
       "for": "Sam",
       "tab": "course-credit",
-      "text": "A ruling we need before anything about these records goes to a college. 5,311 credit recommendations at 101 colleges say, in ACE's own words, that credit MAY be granted once the college does its own individualized assessment or institutional evaluation — 3,970 of them are one single sentence about individualized assessment, and another 1,075 are additional swimming credit. Until now the clean-up list lumped them in with genuine no-credit records and told colleges to close them all as Not Applicable, which would have shut a door ACE deliberately left open. They are separated out now and nobody is being told to close them. The question is what a college SHOULD do with a record like that when it has not done the evaluation: mark it Not Applicable anyway, leave it as Needs Action, or does MAP need a state it does not currently have? One decision covers about 95% of the 5,311."
+      "text": "Your Credit by Exam ruling is live in the clean-up list. The 5,311 recommendations at 101 colleges now read as an opportunity, not a defect: 'Present these to the student as Credit by Exam options. Do NOT rule them Not Applicable... the only reason to close one is that your college does not permit Credit by Exam for that particular course.' Two follow-ons when you want them: this class still sits at priority 5, which was about readiness rather than value and now understates it — say the word and it moves up; and the CCRR normalisation you mentioned (these ACE recommendations mapped to Cx for specific courses) is the piece that would make it concrete per course rather than per student conversation."
+    },
+    {
+      "id": "s172-visuals-folder",
+      "for": "Sam",
+      "tab": "dashboard",
+      "text": "You asked where the visuals live — they didn't, and now they do. Every visual worth returning to is committed to docs/visuals/ with a dated filename and an index saying what decision it supported and how it was settled. That folder is inside the docs lane your vault syncs, so they appear in Obsidian on their own with nothing for you to file. The credit-by-exam one is there as the first entry, updated to record your ruling rather than still asking the question."
     },
     {
       "id": "s172-p1-safe-to-send",
@@ -17,10 +23,10 @@
       "text": "The biggest clean-up item is now safe to send. 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's own validity window has expired — one instruction, the same one everywhere. Worth saying out loud when the numbers move: clearing these raises every college's disposition rate without awarding a single unit of credit, because it shrinks the denominator. That is legitimate work, but it is not new credit for a student."
     },
     {
-      "id": "s172-watch-first-cron",
-      "for": "Fable",
+      "id": "s172-cron-ran-clean",
+      "for": "Sam",
       "tab": "course-credit",
-      "text": "Check the first unattended nightly run at 13:40 UTC. It has now been proven by hand twice, including once end-to-end on the build runner, but never yet by the schedule firing on its own. If it fails with a G-numbered message, that is a safety check doing its job — fix the data being pulled, never the check."
+      "text": "Done, and it worked. The nightly refresh fired on its own at 13:40 UTC (GitHub ran it 14:18 — its scheduler drifts, which is normal here) and succeeded end to end. It cleared 802,825 rows of staging in seconds, refreshed live data, and rebuilt every published figure in one transaction. One thing worth an eye: the student-level dataset came back byte-identical to the day before while the catalog-year one grew by 2,442 rows. That may just be MAP refreshing the two on different schedules. If it repeats a third day, it is worth asking ITPI."
     },
     {
       "id": "s171-followup-pierce-merced",
@@ -56,13 +62,7 @@
       "id": "s169-delta-plumbing-invisible",
       "for": "Sam",
       "tab": "eacr",
-      "text": "Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way."
-    },
-    {
-      "id": "s169-delta-no-fire",
-      "for": "Sam",
-      "tab": "eacr",
-      "text": "Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
+      "text": "Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
     },
     {
       "id": "s169-repo-split-decisions",
