@@ -9124,6 +9124,13 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
                  (lazy) prompts for the MAP-team phrase and reads/writes public.map_data_quality
                  (RLS team_pass_ok() OR is_allowed_reviewer()). Mirror in CPL_Dashboard.html AND
                  index.html per Rule 4. -->
+            <!-- 🧹 CSM clean-up views — READ-ONLY, derived from MAP, rebuilt nightly by
+                 map_promote_custom_reports(). Sam, 2026-08-20: "my goal is to guide CSM
+                 team to make changes in MAP rather than house and maintain data layers in
+                 COBI" — so map_cleanup_views.js has NO write path, and both tables it
+                 reads carry SELECT-only RLS policies. Renders ABOVE the curated register. -->
+            <div id="mcw-root"></div>
+
             <div id="mdq-root" style="border: 1px dashed var(--border-strong); border-radius: 8px; background: var(--surface-subtle); color: var(--text-muted); padding: 28px; text-align: center;">
                 Loading&hellip;
             </div>
@@ -15427,6 +15434,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
           window.CPL_TABS.loadScript('map_data_quality.js', 'CPL_MAP_DQ', function () {
             if (window.CPL_MAP_DQ && typeof window.CPL_MAP_DQ.activate === 'function') {
               window.CPL_MAP_DQ.activate();
+            }
+          });
+          // The read-only CSM views. Loaded independently of the register above:
+          // they share window.CPL_TEAM_PHRASE, so one unlock covers both, and a
+          // failure in either must not blank the other.
+          window.CPL_TABS.loadScript('map_cleanup_views.js', 'CPL_CLEANUP_VIEWS', function () {
+            if (window.CPL_CLEANUP_VIEWS && typeof window.CPL_CLEANUP_VIEWS.mount === 'function') {
+              window.CPL_CLEANUP_VIEWS.mount();
             }
           });
         });
