@@ -82,6 +82,9 @@
       'h2{color:#002F6D;font-size:15pt;border-bottom:1.5pt solid #002F6D;padding-bottom:2pt;margin:16pt 0 6pt;}' +
       'h3{color:#1C1C1A;font-size:12.5pt;margin:12pt 0 4pt;}' +
       'h4{color:#002F6D;font-size:11pt;margin:8pt 0 3pt;}' +
+      // Card titles are h3.h-sub on the page (level follows the outline, look stays
+      // card-sized) — the export must not suddenly promote them to full h3.
+      'h3.h-sub{color:#002F6D;font-size:11pt;margin:8pt 0 3pt;}' +
       'a{color:#002F6D;}' +
       '.eyebrow{font-family:Calibri,sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:9pt;color:#7A5B00;font-weight:bold;}' +
       '.sub{color:#5C5C55;font-size:9.5pt;margin-bottom:6pt;}' +

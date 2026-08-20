@@ -13,6 +13,11 @@
 </head>
 <body>
 
+<!-- Skip link (WCAG 2.4.1). First focusable thing on the page — the action bar
+     and the 20-entry Contents list otherwise sit between a keyboard user and any
+     content. Off-screen until focused (factsheet.css .skip-link). -->
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ── Sticky action bar (screen only — hidden in print) ─────────────────── -->
 <div class="actionbar no-print">
   <div class="wrap">
@@ -43,12 +48,12 @@
   </div>
 </header>
 
-<main class="wrap">
+<main class="wrap" id="main-content" tabindex="-1">
 
   <!-- ── Contents ──────────────────────────────────────────────────────── -->
   <section id="contents" class="no-print" aria-label="Contents">
     <div class="card">
-      <h3 style="margin-top:0">Contents</h3>
+      <h2 class="h-card" style="margin-top:0">Contents</h2>
       <nav class="toc">
         <a href="#exec-summary">Executive summary</a>
         <a href="#what-is-cpl">What is CPL &amp; why it matters</a>
@@ -109,7 +114,7 @@
 
     <div class="cols-2">
       <div class="card">
-        <h4 style="margin-top:0">CPL Types <span style="font-weight:400;color:var(--muted)">— recognized under California <a href="https://www.law.cornell.edu/regulations/california/5-CCR-55050" target="_blank" rel="noopener">Title&nbsp;5 §55050</a></span></h4>
+        <h3 class="h-sub" style="margin-top:0">CPL Types <span style="font-weight:400;color:var(--muted)">— recognized under California <a href="https://www.law.cornell.edu/regulations/california/5-CCR-55050" target="_blank" rel="noopener">Title&nbsp;5 §55050</a></span></h3>
         <ul class="tightlist">
           <li>Credit by examination (including high school articulation)</li>
           <li><a href="https://jst.doded.mil/" target="_blank" rel="noopener">Joint Services Transcripts</a> (military training and service)</li>
@@ -119,7 +124,7 @@
         </ul>
       </div>
       <div class="card">
-        <h4 style="margin-top:0">CPL Modes of Learning</h4>
+        <h3 class="h-sub" style="margin-top:0">CPL Modes of Learning</h3>
         <p style="margin-top:0;font-size:.92rem;color:var(--muted)">Learning eligible for CPL can be acquired in many settings, including but not limited to:</p>
         <ul class="tightlist">
           <li>Self-study; workplace, industry, apprenticeship, internship &amp; work-experience training</li>
@@ -650,17 +655,17 @@
   <section id="partnerships">
     <h2>Partnerships</h2>
     <div class="cols-2">
-      <div class="card"><h4 style="margin-top:0">ASCCC Pathways to Credit <span style="font-weight:400;color:var(--muted)">($1.063M · Jun 2025–Jun 2028)</span></h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0">ASCCC Pathways to Credit <span style="font-weight:400;color:var(--muted)">($1.063M · Jun 2025–Jun 2028)</span></h3>
         <p style="margin:0;font-size:.92rem">Convene discipline-faculty statewide workgroups to create 1,000 statewide credit recommendations across 25 disciplines (planned to extend to 40); assign college CPL liaisons; create/adopt/adapt statewide recommendations; and revise &amp; validate AI-assist common-course crosswalks for 1,000 courses.</p></div>
-      <div class="card"><h4 style="margin-top:0"><a href="https://www.wested.org/" target="_blank" rel="noopener">WestEd</a> — Skills Inventory <span style="font-weight:400;color:var(--muted)">(Projects 1 &amp; 2, 2025–2027)</span></h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0"><a href="https://www.wested.org/" target="_blank" rel="noopener">WestEd</a> — Skills Inventory <span style="font-weight:400;color:var(--muted)">(Projects 1 &amp; 2, 2025–2027)</span></h3>
         <p style="margin:0;font-size:.92rem">Credential Prioritization Dashboard, Credential Registry planning, student CPL lifecycle mapping, and the NFN Essential Skills pilot.</p></div>
-      <div class="card"><h4 style="margin-top:0"><a href="https://credentialengine.org/" target="_blank" rel="noopener">Credential Engine</a> — CTDL &amp; interoperability</h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0"><a href="https://credentialengine.org/" target="_blank" rel="noopener">Credential Engine</a> — CTDL &amp; interoperability</h3>
         <p style="margin:0;font-size:.92rem">Project 1 (Jul–Dec 2025): credential transparency across systems; pilot CTDL publishing of CPL data for 5 colleges; foundation for a skills taxonomy aligned to Advance CTE. Project 2 (Mar 2026–Feb 2027): bi-directional integration with CA MAP and onboarding authoritative publishers into the Credential Registry.</p></div>
-      <div class="card"><h4 style="margin-top:0">CCC Foundation — AI Skills Matching <span style="font-weight:400;color:var(--muted)">(Jan 2025–Oct 2026)</span></h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0">CCC Foundation — AI Skills Matching <span style="font-weight:400;color:var(--muted)">(Jan 2025–Oct 2026)</span></h3>
         <p style="margin:0;font-size:.92rem">Identify high-value certs and CCC programs leading to in-demand careers; create an AI-enabled match of 107 industry certs to CCC courses for faculty review and adoption across the system.</p></div>
-      <div class="card"><h4 style="margin-top:0">Behavioral Health CPL <span style="font-weight:400;color:var(--muted)">(Mar 2026–Jun 2028)</span></h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0">Behavioral Health CPL <span style="font-weight:400;color:var(--muted)">(Mar 2026–Jun 2028)</span></h3>
         <p style="margin:0;font-size:.92rem">Demonstrate how third-party training providers integrate with CCC pathways through CPL to help adult learners advance healthcare careers (with <a href="https://futurohealth.org/" target="_blank" rel="noopener">Futuro Health</a>) — CPL for behavioral-health programs, recruitment, landing pages, and reporting.</p></div>
-      <div class="card"><h4 style="margin-top:0">N2N Lightleap AI &amp; EMS Corps</h4>
+      <div class="card"><h3 class="h-sub" style="margin-top:0">N2N Lightleap AI &amp; EMS Corps</h3>
         <p style="margin:0;font-size:.92rem"><strong>N2N Lightleap AI</strong> uses AI to match construction &amp; electrician apprenticeship learning to courses at Santiago Canyon and Norco for CPL. <strong>EMS Corps</strong> — a 5-month EMT licensing program for youth (18–24) facing barriers, with an 85% success rate, expanding to 13 sites — develops CPL for credit and noncredit EMT cohorts and opens opportunities for 500+ noncredit graduates.</p></div>
     </div>
     <p style="margin-top:14px;font-size:.92rem;color:var(--muted)"><strong>Other formal &amp; informal partnerships:</strong> LAUNCH (apprenticeship CPL), IEPI/PRT, LWDA (employment data, WDB, DAS, CWDB, ETP, CalHR, EDD), Regional Strong Workforce Consortia, the CO Digital Center (Credential Registry, Career Passport, AI Fellows), CA Dept. of Education (Advance CTE), Cradle to Career (C2C), Futuro Health, CAEL, and the <a href="https://militaryguide.acenet.edu/" target="_blank" rel="noopener">American Council on Education (ACE Military Guide)</a>.</p>
@@ -767,14 +772,14 @@
     <h2>For more information</h2>
     <div class="cols-2">
       <div class="card">
-        <h4 style="margin-top:0">MAP Initiative contact</h4>
+        <h3 class="h-sub" style="margin-top:0">MAP Initiative contact</h3>
         <p style="margin:0"><strong>Samuel Lee, Ed.D.</strong><br>
           Senior Advisor to the Chancellor for CPL<br>
           Chief Ambassador, California MAP Initiative<br>
           Riverside Community College District</p>
       </div>
       <div class="card">
-        <h4 style="margin-top:0">Key online resources</h4>
+        <h3 class="h-sub" style="margin-top:0">Key online resources</h3>
         <p style="margin:0">MAP Website: <a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a><br>
           CPL Dashboard: <a href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener aria-label="Open the MAP CPL Dashboard — live data">Live data →</a><br>
           MAP Support: <a href="mailto:map@rccd.edu">map@rccd.edu</a></p>
