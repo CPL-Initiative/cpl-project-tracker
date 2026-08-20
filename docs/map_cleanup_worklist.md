@@ -338,6 +338,54 @@ step, not the clean-up.
 > `map_student_credit` exhibit ids DO join to it, so the join works and the corpus
 > simply does not carry ACE military exhibits.
 
+> ### The guidance list — `map_cx_exhibit_guidance` (built 2026-08-20)
+>
+> Sam: *"a short list of the no course CRs + the title of their ACE exhibit (e.g.,
+> Corpsman, Hospitalman, Rifleman, MP, etc.)… tag the generic Cx opportunity with
+> an indicator of where their training might align with a course."*
+>
+> ✅ **The titles work: 219 of 225 exhibits resolve (97.3%), 3,963 of 4,001 rows.**
+> Exactly the vocabulary he named — `MOS-11B-006` is **Infantryman**,
+> `MOS-31B-002` **Military Police**, `MOS-68W-001` **Health Care Specialist**,
+> `MOS-42A-001` **Human Resources Specialist**, `MC-2204-0105` **Marine Combat
+> Training**. That is the deliverable, and it is real.
+>
+> ⚠️ **The alignment indicator is much weaker than it first looked, and the first
+> build of it was wrong.** Tier 1 originally required a course named by ≥2
+> colleges. That shipped a tier 1 where **11 of 14 exhibits pointed at
+> `MAG-51 Elements of Supervision`** — for Infantryman, Combat Medic, Cook, Truck
+> Driver and HR Specialist alike.
+>
+> ⭐ **Counting colleges cannot tell corroboration from a blanket mapping.** Three
+> colleges blanket-map any military service to a supervision course, and three
+> colleges agreeing looks identical to three colleges independently deciding. The
+> discriminator is **specificity**: how many different exhibits does this course
+> appear against? `MAG-51` spans **33**. `MAG-200` spans 10. `AUTOCOR-114 BASIC
+> WELDING` spans 8. `ADJ-1 Introduction to the Administration of Justice` spans
+> **1** — Military Police — and is worth reading.
+>
+> | tier | meaning | exhibits | rows |
+> |---|---|---:|---:|
+> | 1 | a course named by ≥2 colleges **and** spanning <4 exhibits | **3** | 689 |
+> | 2 | colleges named something, but nothing corroborated *and* specific | 47 | 2,282 |
+> | 3 | nobody has named a course; the title is the only guidance | 175 | 1,030 |
+>
+> The whole of tier 1: **Military Police → ADJ-1 Introduction to the
+> Administration of Justice** (3 colleges), **Human Resources Specialist →
+> MAG-56 HRM + CIS-001 Intro to CIS** (2 each), and **Marine Combat Training →
+> CPL-3 Elective Course Credits** (3) — which is a *placeholder*, the same
+> "Elective Course Credits" string the Common CR Reference already flags.
+>
+> ⭐ **So the honest read: the titles are the deliverable; peer precedent is
+> mostly noise.** Two exhibits have a pointer worth acting on. Every
+> `peer_courses` entry carries **both** `colleges` and `spans_exhibits`, and
+> blanket courses are **labelled rather than hidden** — a curator who cannot see
+> why an exhibit has no strong course cannot judge the list.
+>
+> ⭐ **A finding for the CCRR lane in its own right:** three colleges have mapped
+> `MAG-51 Elements of Supervision` against **33 distinct military exhibits**.
+> That is worth looking at as a data-quality question, separately from this list.
+
 > ⚠️ **The rank now understates it.** Priority 5 meant READINESS — nobody had
 > ruled. That reason is gone and this is the highest-**value** class in the list.
 > The number is left alone only because renumbering moves every other class the

@@ -73,12 +73,7 @@ begin
   create table public.map_cx_exhibit_guidance as
   with blank as (
     -- The SAME predicate as map_cleanup_worklist's cx-no-course-named subclass.
-    -- Kept literal rather than shared because a view here would have to be
-    -- security_invoker over student-grain data; if the two ever diverge the
-    -- guidance list would describe a different population from the worklist it
-    -- explains, which is the failure this comment exists to make visible.
-    select exhibit_id,
-           count(*) as rows_n,
+    select exhibit_id, count(*) as rows_n,
            count(distinct college_id) as colleges_n,
            count(distinct student_key) as students_n
     from public.map_student_credit
@@ -87,51 +82,70 @@ begin
       and credit_rec ~* 'individuali[sz]ed assessment|individual assessment|institutional evaluation'
     group by 1
   ),
-  -- What peers actually did with this exhibit. A FACT, per (exhibit, course),
-  -- carrying the number of DISTINCT COLLEGES that did it.
   pairs as (
-    select b.exhibit_id, u.college_course,
-           count(distinct u.college_id) as colleges
+    select b.exhibit_id, u.college_course, count(distinct u.college_id) as colleges
     from blank b
     join public.map_college_cr_unit u on u.exhibit_id = b.exhibit_id
     where coalesce(u.college_course, '') <> ''
     group by 1, 2
   ),
+  -- ⚠️ SPECIFICITY — the second dimension, added after the first build shipped
+  -- a tier 1 that was 11/14 "Elements of Supervision".
+  --
+  -- A course articulated against many UNRELATED exhibits carries no information
+  -- about any one of them. Measured: `MAG-51 Elements of Supervision` spans 33
+  -- exhibits (Infantryman, Combat Medic, Cook, Truck Driver, HR Specialist...),
+  -- `MAG-200 Management Work Experience` 10, `AUTOCOR-114 BASIC WELDING` 8.
+  -- Three colleges blanket-map any military service to a supervision course.
+  --
+  -- THE TWO-COLLEGE FLOOR CANNOT CATCH THAT. A systematic behaviour shared by a
+  -- few colleges is indistinguishable from genuine corroboration when you only
+  -- count colleges — which is exactly why the floor felt sufficient and was not.
+  -- `ADJ-1 Introduction to the Administration of Justice` spans 1 (Military
+  -- Police) and is worth reading. Span is what tells them apart.
+  spans as (select college_course, count(distinct exhibit_id) as spans_exhibits
+            from pairs group by 1),
+  scored as (
+    select p.exhibit_id, p.college_course, p.colleges, s.spans_exhibits,
+           (p.colleges >= 2 and s.spans_exhibits < 4) as specific_and_corroborated,
+           (s.spans_exhibits >= 4) as blanket
+    from pairs p join spans s using (college_course)
+  ),
   agg as (
     select exhibit_id,
-           max(colleges) as top_course_colleges,
-           count(*) filter (where colleges >= 2) as corroborated_courses,
-           count(*) filter (where colleges  = 1) as single_college_courses,
-           -- Ordered strongest-first, and every entry carries its own count so a
-           -- 1 is visibly a 1. NEVER a bare course list.
-           jsonb_agg(jsonb_build_object('course', college_course, 'colleges', colleges)
-                     order by colleges desc, college_course) as peer_courses
-    from pairs group by 1
+           count(*) filter (where specific_and_corroborated) as strong_courses,
+           count(*) filter (where blanket) as blanket_courses,
+           count(*) as total_courses,
+           -- Every entry carries BOTH numbers. A blanket course is never removed
+           -- — it is labelled, because hiding it would leave a curator unable to
+           -- see why an exhibit has no strong course.
+           jsonb_agg(jsonb_build_object(
+             'course', college_course, 'colleges', colleges,
+             'spans_exhibits', spans_exhibits, 'blanket', blanket)
+             order by specific_and_corroborated desc, blanket, colleges desc, college_course
+           ) as peer_courses
+    from scored group by 1
   )
   select
-    b.exhibit_id,
-    t.title as exhibit_title,
+    b.exhibit_id, t.title as exhibit_title,
     b.rows_n, b.colleges_n, b.students_n,
+    case when coalesce(a.strong_courses,0) > 0 then 1
+         when coalesce(a.total_courses,0)  > 0 then 2
+         else 3 end as tier,
     case
-      when coalesce(a.corroborated_courses, 0) > 0 then 1
-      when coalesce(a.single_college_courses, 0) > 0 then 2
-      else 3
-    end as tier,
-    case
-      when coalesce(a.corroborated_courses, 0) > 0
-        then 'At least two colleges independently articulated this exhibit against the same course. The strongest signal here, and still a peer precedent rather than a recommendation.'
-      when coalesce(a.single_college_courses, 0) > 0
-        then 'ONE college named a course for this exhibit. Treat as a lead, not a pattern — most single-college mappings in this list are idiosyncratic, and some are a blanket mapping of any military service to a management course.'
-      else 'No college has named a course for this exhibit. The exhibit title is the only guidance available, and no course is suggested here on purpose.'
+      when coalesce(a.strong_courses,0) > 0
+        then 'At least two colleges named the same course AND that course is not a blanket mapping (it appears against fewer than four different exhibits). The only tier worth reading as a pointer, and still peer precedent rather than a recommendation.'
+      when coalesce(a.total_courses,0) > 0
+        then 'Colleges have named a course here, but none that is both corroborated and specific - either only one college did it, or the course is a blanket mapping applied across many unrelated exhibits. Read peer_courses with the spans_exhibits count before using any of it.'
+      else 'No college has named a course for this exhibit. The exhibit title is the only guidance, and no course is suggested here on purpose.'
     end as tier_note,
     coalesce(a.peer_courses, '[]'::jsonb) as peer_courses,
-    coalesce(a.corroborated_courses, 0) as corroborated_courses,
-    coalesce(a.single_college_courses, 0) as single_college_courses
+    coalesce(a.strong_courses, 0)  as strong_courses,
+    coalesce(a.blanket_courses, 0) as blanket_courses,
+    coalesce(a.total_courses, 0)   as total_courses
   from blank b
   left join agg a using (exhibit_id)
-  -- LEFT join: a missing title must leave the row present and the title NULL.
-  -- Dropping it would hide the exhibit entirely, and an absent measurement must
-  -- never be indistinguishable from an absent problem.
+  -- LEFT join: a missing title leaves the row present with a NULL title.
   left join public.map_ace_exhibit_titles t on t.exhibit_id = b.exhibit_id;
 
   alter table public.map_cx_exhibit_guidance enable row level security;
@@ -142,10 +156,13 @@ end $fn$;
 
 comment on table public.map_cx_exhibit_guidance is
   'Per-ACE-exhibit guidance for the Credit by Exam rows whose recommendation names no course. '
-  'Rebuilt nightly inside map_promote_custom_reports(). tier 1 = two or more colleges named the '
-  'same course (peer precedent), tier 2 = exactly one college did (a lead, not a pattern), '
-  'tier 3 = nobody has, so only the exhibit title is offered. peer_courses ALWAYS carries the '
-  'college count per course so a single-college mapping can never render like a corroborated one. '
-  'No matcher: where no college has named a course, none is suggested. Team-phrase gated.';
+  'Rebuilt nightly inside map_promote_custom_reports(). tier 1 = a course named by 2+ colleges '
+  'that is ALSO specific (spans fewer than 4 exhibits) - 3 exhibits today; tier 2 = colleges named '
+  'something but nothing corroborated AND specific - 47; tier 3 = nobody has, so only the exhibit '
+  'title is offered - 175. peer_courses ALWAYS carries colleges AND spans_exhibits per course: '
+  'counting colleges alone cannot tell genuine corroboration from three colleges blanket-mapping '
+  'any military service to MAG-51 Elements of Supervision, which spans 33 exhibits. Blanket '
+  'courses are LABELLED, never hidden. No matcher: where no college has named a course, none is '
+  'suggested. Team-phrase gated.';
 
 revoke all on function public.rebuild_map_cx_exhibit_guidance() from public, anon, authenticated;
