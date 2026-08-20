@@ -106,6 +106,11 @@ a:hover { text-decoration: underline; }
   display: inline-flex; align-items: center; gap: 8px; transition: background .12s, border-color .12s;
 }
 .btn:hover { background: var(--surface-subtle); }
+/* `.btn` sets display:inline-flex, which outranks the UA sheet's
+   [hidden]{display:none} — so a button shipped hidden (#btn-curate) would
+   paint anyway. Declared here rather than in the JS-injected block so the
+   public never sees a flash of it before factsheet_edit.js boots. */
+.btn[hidden] { display: none !important; }
 .btn-primary { background: var(--seal-blue); border-color: var(--seal-blue); color: #fff; }
 .btn-primary:hover { background: #013a86; }
 /* Visible keyboard focus on all interactive controls (WCAG 2.4.7 AA). The

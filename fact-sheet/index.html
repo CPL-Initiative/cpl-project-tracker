@@ -21,7 +21,11 @@
       <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
     </span>
     <button class="btn no-print" id="btn-collapse-all" type="button" title="Collapse or expand all sections">⊟ Collapse all</button>
-    <button class="btn no-print" id="btn-curate" type="button" aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
+    <!-- Curate: shipped HIDDEN and revealed by factsheet_edit.js only for a signed-in
+         reviewer (or ?curate=1). Hidden in the MARKUP, not just by script, so the public
+         never sees a flash of it. This is presentation, not security — the real gate is
+         RLS is_allowed_reviewer() on factsheet_overrides. -->
+    <button class="btn no-print" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
     <button class="btn no-print" id="btn-word" type="button" title="Download this fact sheet as a Word document">⬇ Word</button>
     <button class="btn btn-primary" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">🖨 Print / Save PDF</button>
   </div>
@@ -791,6 +795,11 @@
   </div>
 </footer>
 
+<!-- The shared reviewer-session keeper (repo root). Hydrates this page from the COBI
+     session shared across every tab of this origin, so a curator who signed in on COBI
+     finds the Curate button here with nothing more to do. Inert with no session — for
+     the public it reads empty storage and stops. Must precede factsheet_edit.js. -->
+<script src="../cpl_session.js"></script>
 <script src="./factsheet.js"></script>
 <script src="./cpl_stories.js"></script>
 <script src="./cpl_stories_render.js"></script>
