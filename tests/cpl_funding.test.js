@@ -174,6 +174,23 @@ check("PII: no person-level keys in the data artifact", !PERSON_KEYS.test(dataSr
 // Part C — renderer behaviour (jsdom). NO_REMOTE keeps the shared-config fetch
 // out of the tests (the sandbox is egress-blocked anyway).
 // ─────────────────────────────────────────────────────────────────────────────
+// CLOSE THE OLD WINDOWS (2026-08-20). tests/run.js already documents why this
+// file is the one that OOMs: jsdom's per-window vm context is not reclaimable
+// while the window is open, and this file opens 62 of them. It never closed
+// one, so every window it had ever built was still resident at the end — the
+// run died on "Ineffective mark-compacts near heap limit" at 8,051 MB against
+// the 8,192 MB cap the runner gives each child, with mark-compact taking ~7s a
+// pass. Nothing was wrong with the assertions; the process ran out of room to
+// hold them.
+//
+// Keep a small rolling window of recent doms and close anything older. THREE,
+// not one: two blocks below build a second dom while still using the first
+// (the `dom2` cases), so closing eagerly on the next call would pull a live
+// window out from under them. A closed jsdom window THROWS when touched, so if
+// this assumption is ever wrong the test fails loudly on the spot rather than
+// going quietly strange.
+const LIVE_DOMS = [];
+const KEEP_DOMS = 3;
 function freshDom() {
   const dom = new JSDOM(
     '<!DOCTYPE html><html><head></head><body>' +
@@ -184,6 +201,10 @@ function freshDom() {
     { runScripts: "outside-only", url: "https://example.org/" });
   dom.window.scrollTo = function () {};
   dom.window.CPL_FUNDING_NO_REMOTE = true;   // no Supabase fetch in tests
+  LIVE_DOMS.push(dom);
+  while (LIVE_DOMS.length > KEEP_DOMS) {
+    try { LIVE_DOMS.shift().window.close(); } catch (e) { /* already gone */ }
+  }
   return dom;
 }
 function boot(window) {
