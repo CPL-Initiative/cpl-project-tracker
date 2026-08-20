@@ -271,14 +271,72 @@ strong{color:var(--text-strong);}
     </div>
     <div class="note">
       <p><span class="h">But the row is not empty — the recommendation is.</span> Each one still carries its
-      <strong>exhibit</strong>: the military training ACE actually reviewed. Attach that title and the offer becomes
-      concrete — <em>your Gas Turbine training may be worth credit; ask about a challenge exam</em>.</p>
-      <p><span class="mark yes">✓</span> <strong>And we already fetch it.</strong> The daily pull asks the exhibit
-      catalogue for <code>AceID</code> and <code>Title</code>, and these rows are keyed on the ACE id. Nobody stores the
-      pair, so nothing joins them. That is a loader change, not a request to anyone.</p>
-      <p class="foot" style="margin-top:.55rem">Not yet measured: what share of the 225 exhibits the join actually
-      resolves. The catalogue is fetched on the runner and never written down, so it can only be counted on the next
-      run — stated here as the open number rather than an assumed one.</p>
+      <strong>exhibit</strong>: the military training ACE actually reviewed. <span class="mark yes">✓</span> Those titles
+      now load — <strong>25,794 of them, resolving 219 of the 225 exhibits (97.3%)</strong>. They had been requested from
+      the catalogue every night since 14 August and stored never.</p>
+    </div>
+    <div class="scroller" tabindex="0" role="region" aria-label="Exhibit codes and their titles, scrollable table">
+      <table>
+        <caption>What the codes turn into</caption>
+        <thead><tr><th scope="col">Exhibit</th><th scope="col">Is actually</th><th scope="col" class="num">Rows</th></tr></thead>
+        <tbody>
+          <tr><td><code>MOS-11B-006</code></td><td><strong>Infantryman</strong></td><td class="num">460</td></tr>
+          <tr><td><code>MC-2204-0105</code></td><td><strong>Marine Combat Training</strong></td><td class="num">383</td></tr>
+          <tr><td><code>MOS-68W-001</code></td><td><strong>Health Care Specialist</strong></td><td class="num">219</td></tr>
+          <tr><td><code>MOS-31B-002</code></td><td><strong>Military Police</strong></td><td class="num">156</td></tr>
+          <tr><td><code>MOS-42A-001</code></td><td><strong>Human Resources Specialist</strong></td><td class="num">150</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="stack">
+    <h2>The alignment tag, and why it is smaller than it looked</h2>
+    <p class="lede">Sam asked for an indicator of where the training might align with a course. Peer precedent makes
+    that a fact rather than a guess — but the first version of it was wrong.</p>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">A two-college floor is not enough.</span> Requiring that
+      <em>two or more colleges named the same course</em> produced a top tier where <strong>11 of 14 exhibits pointed at
+      <code>MAG-51 Elements of Supervision</code></strong> — offered for Infantryman, Combat Medic, Cook, Truck Driver
+      and HR Specialist alike.</p>
+      <p><strong>Counting agreeing colleges cannot tell corroboration from a blanket mapping.</strong> Three colleges
+      that map any military service to a supervision course produce the same count as three colleges independently
+      reaching the same conclusion.</p>
+    </div>
+    <div class="scroller" tabindex="0" role="region" aria-label="Course specificity, scrollable table">
+      <table>
+        <caption>The second axis: how many different exhibits does this answer get given for?</caption>
+        <thead><tr><th scope="col">Course a college named</th><th scope="col" class="num">Exhibits it spans</th><th scope="col">Reading</th></tr></thead>
+        <tbody>
+          <tr><td><code>MAG-51 Elements of Supervision</code></td><td class="num">33</td><td><span class="mark no">⚠ blanket</span></td></tr>
+          <tr><td><code>MAG-200 Management Work Experience</code></td><td class="num">10</td><td><span class="mark no">⚠ blanket</span></td></tr>
+          <tr><td><code>AUTOCOR-114 Basic Welding Theory</code></td><td class="num">8</td><td><span class="mark no">⚠ blanket</span></td></tr>
+          <tr><td><code>ADJ-1 Intro to Administration of Justice</code></td><td class="num">1</td><td><span class="mark yes">✓ informative</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <p><span class="h">Re-tiered on both axes</span> — a course named by ≥2 colleges <em>and</em> spanning fewer than
+      four exhibits:</p>
+    </div>
+    <div class="stake">
+      <div><div class="n">3</div><div class="l">exhibits with a pointer worth reading · 689 rows</div></div>
+      <div><div class="n">47</div><div class="l">something named, nothing solid · 2,282 rows</div></div>
+      <div><div class="n">175</div><div class="l">nothing named; the title is the guidance · 1,030 rows</div></div>
+    </div>
+    <div class="note">
+      <p><span class="h">All of tier 1, in full:</span> Military Police → <code>ADJ-1</code> (3 colleges) · Human
+      Resources Specialist → <code>MAG-56 HRM</code> and <code>CIS-001</code> (2 each) · Marine Combat Training →
+      <code>CPL-3 Elective Course Credits</code> — <strong>a placeholder</strong>, the same string the Common CR
+      Reference already flags.</p>
+      <p><strong>So the titles are the deliverable; peer precedent is mostly noise.</strong> Two exhibits carry a
+      pointer worth acting on — reported as two rather than fourteen. Blanket courses are <strong>labelled, never
+      hidden</strong>: a curator who cannot see why an exhibit has no strong course cannot judge the list.</p>
+    </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">Worth its own look, separately:</span> three colleges have
+      mapped <code>MAG-51</code> against <strong>33 distinct military exhibits</strong>. That is a data-quality
+      question for the Common CR Reference lane, not merely noise to filter here.</p>
     </div>
   </section>
 
@@ -294,9 +352,16 @@ strong{color:var(--text-strong);}
       sendable now</span> — the recommendation names the subject, so there is a course to point at.</p>
     </div>
     <div class="note warn">
-      <p><span class="mark no">⚠</span> <span class="h">4,001 rows at 95 colleges are marked NOT SENDABLE.</span>
-      They stay visible so nobody rediscovers them as a mystery, owned by the MAP team rather than a college, and the
-      instruction says plainly that the copout is in the source data and not a task for anyone at a college.</p>
+      <p><span class="mark no">⚠</span> <span class="h">4,001 rows at 95 colleges stay NOT SENDABLE — and now they at
+      least say what the training was.</span> Owned by the MAP team rather than a college, and visible so nobody
+      rediscovers them as a mystery.</p>
+    </div>
+    <div class="note warn">
+      <p><span class="mark no">⚠</span> <span class="h">The guidance list is live and has no screen.</span> It sits in
+      <code>map_cx_exhibit_guidance</code>, team-phrase gated, rebuilt nightly — reachable only by writing SQL.
+      <strong>Two decisions are Sam's:</strong> where it goes (a lookup panel behind the Credit by Exam row on MAP Data
+      Quality, rather than another queue — 225 exhibits is reference, not 225 to-dos), and whether the middle tier of 47
+      earns its place at all.</p>
     </div>
     <p class="foot">Next: attach the exhibit title, then re-measure. Behind that, in Sam&rsquo;s own lane, normalising
     these ACE recommendations as Credit by Exam against specific courses in the Common CR Reference. &middot; Live in
