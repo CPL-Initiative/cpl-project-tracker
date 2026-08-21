@@ -143,8 +143,13 @@
   function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
   // Depends on GUIDANCE_SENT_CAP, which is declared below — read it at call time,
   // not at definition time, or it bakes in `undefined`.
-  function ruleNotSentHelp() {
-    return "Sierra only receives the newest " + GUIDANCE_SENT_CAP + " active instructions. Newer ones "
+  // Takes the row so the message names THAT row's own cap. The two kinds have
+  // separate budgets, so telling a display-rule author about the instruction cap
+  // would send them to switch off the wrong thing.
+  function ruleNotSentHelp(r) {
+    var kind = guidKind(r);
+    var what = kind === "display" ? "display rules" : "active instructions";
+    return "Sierra only receives the newest " + capFor(kind) + " " + what + ". Newer ones "
       + "have pushed this one out, so it is NOT reaching her. Turn off an older one to make room.";
   }
 
@@ -166,7 +171,7 @@
     guidance: null,    // rows newest-first; null = load failed
     guidBusy: {},      // id → toggle write in flight
     addBusy: false,
-    draftRule: "", draftNote: "",   // composer drafts survive re-renders
+    draftRule: "", draftNote: "", draftKind: "directive",   // composer drafts survive re-renders
     // Edit-in-place (2026-08-13). A saved instruction had no way back in: the
     // only controls were Switch off / Switch on, so fixing a typo meant
     // switching the old one off and retyping the whole rule as a new row —
@@ -190,7 +195,40 @@
 
   // cpl-chat v25 sends the newest N active rules — mirror the function's cap
   // so the tab can honestly mark which rules are actually reaching Sierra.
-  var GUIDANCE_SENT_CAP = 10;
+  //
+  // RAISED 10 → 20 (2026-08-21). Ten was a FOSSIL: on 2026-08-12 the per-rule
+  // cap went 500 → 1500 and the total 2500 → 9000, and this one was not touched.
+  // At the old sizes 10 × 500 exactly matched the old 2500-char budget, so the
+  // row cap cost nothing; at today's average rule length (~525 chars) the 9000
+  // budget would carry about 17, so a cap of 10 was binding about seven rules
+  // early for no cost reason.
+  //
+  // ⭐ 20 IS CHOSEN TO BE UNREACHABLE, ON PURPOSE. The row cap is INVISIBLE —
+  // exceeding it silently evicts the OLDEST active rule, which in a guidance
+  // layer is the standing one (naming, tone, safety), not the reactive one
+  // written this afternoon. The character budget is VISIBLE: the tab headlines
+  // it as a meter. Setting the row cap above what the char budget can carry
+  // (20 > ~17) makes the visible limit the one that actually binds, so a curator
+  // who runs out of room is TOLD rather than silently losing their oldest rule.
+  // See docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md.
+  //
+  // MUST stay == GUIDANCE_MAX_RULES in chatbox/supabase/functions/cpl-chat/index.ts.
+  // tests/sierra_guidance.test.js compares the two files to EACH OTHER rather
+  // than to a literal — pinning one number in one file is exactly what let the
+  // rule-length caps disagree across three files on 2026-08-12.
+  var GUIDANCE_SENT_CAP = 20;
+
+  // Display rules carry their OWN row budget — mirrors GUIDANCE_MAX_DISPLAY in
+  // chatbox/supabase/functions/cpl-chat/index.ts. A display rule is a structured
+  // output shape (table columns, labels, ordering), not prose policy, so it must
+  // not occupy a slot that would otherwise carry a directive.
+  var GUIDANCE_DISPLAY_CAP = 6;
+
+  // A row written before the kind column existed has no `kind`; it is a
+  // directive. Read it through here rather than touching r.kind directly, so a
+  // null can never be rendered as a third kind or drop a row out of both caps.
+  function guidKind(r) { return String((r && r.kind) || "directive"); }
+  function capFor(kind) { return kind === "display" ? GUIDANCE_DISPLAY_CAP : GUIDANCE_SENT_CAP; }
 
   // Per-instruction character budget. RAISED 500 → 1500 (Sam, 2026-08-12).
   // The textarea carried maxlength="500", which stops accepting keystrokes with
@@ -606,7 +644,7 @@
   // Guidance rows (Phase 2). Soft-fails to null so a guidance hiccup never
   // takes down the queue/miner panes.
   function loadGuidance() {
-    var url = REST + "/sierra_guidance?select=id,rule,active,note,created_by,created_at,updated_by,updated_at"
+    var url = REST + "/sierra_guidance?select=id,rule,kind,active,note,created_by,created_at,updated_by,updated_at"
       + "&order=created_at.desc&limit=100";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("guidance " + r.status);
@@ -617,7 +655,7 @@
     var s = getSession();
     return (s && s.email) || null;
   }
-  function addGuidance(rule, note, root) {
+  function addGuidance(rule, note, root, kind) {
     if (state.addBusy || !rule) return Promise.resolve();
     state.addBusy = true; render(root);
     var h = authHeaders();
@@ -625,14 +663,21 @@
     h["Prefer"] = "return=representation";
     return fetch(REST + "/sierra_guidance", {
       method: "POST", headers: h,
-      body: JSON.stringify({ rule: rule, note: note || null, created_by: whoAmI(), updated_by: whoAmI() }),
+      body: JSON.stringify({
+        rule: rule,
+        // Sent explicitly rather than relying on the column default, so the
+        // request says what it means and a future default change cannot
+        // silently re-file every new instruction as the other kind.
+        kind: kind === "display" ? "display" : "directive",
+        note: note || null, created_by: whoAmI(), updated_by: whoAmI(),
+      }),
     }).then(function (r) {
       if (!r.ok) throw new Error("add " + r.status);
       return r.json();
     }).then(function (rows) {
       var row = Array.isArray(rows) ? rows[0] : rows;
       if (row) (state.guidance = state.guidance || []).unshift(row);
-      state.draftRule = ""; state.draftNote = "";
+      state.draftRule = ""; state.draftNote = ""; state.draftKind = "directive";
     }).catch(function () {
       alert("Could not add the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { state.addBusy = false; render(root); });
@@ -1155,12 +1200,18 @@
     var chip = r.active
       ? (sent
         ? '<span class="sit-chip sit-chip-addressed" title="' + esc(HELP.ruleSent) + '">✓ Sierra is using this</span>'
-        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp()) + '">⚠ On, but not reaching Sierra</span>')
+        : '<span class="sit-chip sit-chip-triaged" title="' + esc(ruleNotSentHelp(r)) + '">⚠ On, but not reaching Sierra</span>')
       : '<span class="sit-chip" title="' + esc(HELP.ruleOff) + '">Switched off</span>';
     var h = '<div class="sit-row' + (r.active ? "" : " sit-rule-off") + '">'
       + '<div class="sit-row-head" style="cursor:default">'
       + chip
       + '<span class="sit-q">' + esc(r.rule) + "</span>"
+      // Plain words, no glyph — the Admin tab's rule (#1212). A "display" label
+      // has to appear on the ROW: the two kinds have separate budgets, so a
+      // curator reading "3 of 20 sent" needs to know which 20 this row is in.
+      + (guidKind(r) === "display"
+        ? '<span class="sit-chip" title="A display rule: it shapes structured output (table columns, labels, ordering) rather than telling Sierra what to say. Display rules have their own budget and never take a slot from an instruction.">Display rule</span>'
+        : "")
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
       + '<button class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
       + ' title="' + esc(HELP.ruleEdit) + '">✏️ Edit</button>'
@@ -1566,15 +1617,22 @@
       + "they reach her within a minute, with nothing to deploy)</span></h3>";
     html += '<p class="sit-guid-warn">⚠ These change <b>every</b> place Sierra appears, including My College '
       + "and the public assistant. She is sent the newest <b>" + GUIDANCE_SENT_CAP + "</b> switched-on "
-      + "instructions with every question. Switch one off rather than deleting it — the list is its own record "
-      + "of what has been tried.</p>";
+      + "instructions with every question, plus up to <b>" + GUIDANCE_DISPLAY_CAP + "</b> display rules, which "
+      + "are counted separately and never take a slot from an instruction. Switch one off rather than deleting "
+      + "it — the list is its own record of what has been tried.</p>";
     // The total budget is a SILENT failure: past it, the function stops adding
     // rules and the oldest simply never reach Sierra. Show it before it bites.
-    var sentChars = 0, sentRank = 0;
+    // ⚠ RANK WITHIN EACH KIND, NOT ACROSS BOTH. The edge function issues one
+    // bounded read per kind, so a display rule cannot push a directive out of
+    // the directive window. Counting them in one sequence here would report a
+    // rule as "not reaching Sierra" that is in fact being sent — the meter would
+    // be describing a mechanism that no longer exists.
+    var sentChars = 0, sentRankBy = {};
     (state.guidance || []).forEach(function (r) {
       if (!r.active) return;
-      sentRank++;
-      if (sentRank <= GUIDANCE_SENT_CAP) sentChars += Math.min(String(r.rule || "").length, GUIDANCE_RULE_MAX) + 3;
+      var k = guidKind(r);
+      sentRankBy[k] = (sentRankBy[k] || 0) + 1;
+      if (sentRankBy[k] <= capFor(k)) sentChars += Math.min(String(r.rule || "").length, GUIDANCE_RULE_MAX) + 3;
     });
     var budgetPct = Math.round((sentChars / GUIDANCE_TOTAL_MAX) * 100);
     html += '<p class="sit-guid-budget' + (budgetPct >= 80 ? " warn" : "") + '" '
@@ -1606,6 +1664,15 @@
         + '<input class="sit-guid-note" maxlength="' + GUIDANCE_NOTE_MAX + '" value="' + esc(state.draftNote) + '" '
         + 'title="Just for the team — why you added this. Sierra never sees the note." '
         + 'placeholder="Optional note for the team — why this exists (e.g. which feedback it answers)">'
+        // Plain-word control, no glyph. Defaults to Instruction: that is what
+        // almost every row is, and defaulting the other way would re-file
+        // ordinary prose into a budget the curator never looks at.
+        + '<label class="sit-meta" title="An INSTRUCTION tells Sierra what to say. A DISPLAY RULE shapes structured output — which columns a table has, what they are labelled, what order the rows go in. They are kept apart because they have separate size budgets, so a display rule never crowds out an instruction.">'
+        + "This is a: "
+        + '<select data-guid-kind>'
+        + '<option value="directive"' + (state.draftKind === "display" ? "" : " selected") + ">Instruction</option>"
+        + '<option value="display"' + (state.draftKind === "display" ? " selected" : "") + ">Display rule</option>"
+        + "</select></label>"
         + '<button class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
         + (state.addBusy ? "Adding…" : "➕ Add instruction") + "</button>"
         + "</div></div>";
@@ -1613,11 +1680,12 @@
         html += '<div class="sit-empty">No instructions yet — add the first one above. '
           + "It reaches Sierra on her next answer.</div>";
       } else {
-        var activeRank = 0;
+        var rankBy = {};
         state.guidance.forEach(function (r) {
-          if (r.active) activeRank++;
+          var k = guidKind(r);
+          if (r.active) rankBy[k] = (rankBy[k] || 0) + 1;
           if (String(state.editId) === String(r.id)) html += guidanceEditor(r);
-          else html += guidanceRow(r, r.active && activeRank <= GUIDANCE_SENT_CAP);
+          else html += guidanceRow(r, r.active && rankBy[k] <= capFor(k));
         });
       }
     }
@@ -1788,11 +1856,15 @@
     });
     var gn = root.querySelector(".sit-guid-note");
     if (gn) gn.addEventListener("input", function () { state.draftNote = gn.value; });
+    var gk = root.querySelector("[data-guid-kind]");
+    // No re-render on change: re-rendering here would rebuild the composer and
+    // throw away the untyped-but-unsaved textarea state the drafts exist to keep.
+    if (gk) gk.addEventListener("change", function () { state.draftKind = gk.value; });
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
       if (rule.length < 3) { alert("Type the instruction first (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
-      addGuidance(rule, (state.draftNote || "").trim(), root);
+      addGuidance(rule, (state.draftNote || "").trim(), root, state.draftKind);
     });
     root.querySelectorAll("[data-guid-toggle]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {
@@ -2061,6 +2133,9 @@
     EDIT_KEY: EDIT_KEY,
     _loadGuidance: loadGuidance,
     GUIDANCE_SENT_CAP: GUIDANCE_SENT_CAP,
+    GUIDANCE_DISPLAY_CAP: GUIDANCE_DISPLAY_CAP,
+    _guidKind: guidKind,
+    _capFor: capFor,
     GUIDANCE_RULE_MAX: GUIDANCE_RULE_MAX,
     GUIDANCE_TOTAL_MAX: GUIDANCE_TOTAL_MAX,
     _statusLabel: statusLabel,

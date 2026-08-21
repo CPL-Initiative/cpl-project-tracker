@@ -2,7 +2,7 @@
   "_about": "The one college/district identity crosswalk: MAP college_id <-> CCCCO MIS district/college codes <-> every spelling any of our systems uses. Keyed on MAP college_id, which is authoritative for everything CPL measures.",
   "_generated": "2026-08-21",
   "_sources": {
-    "map_colleges": "map_colleges_2026-08-21.json",
+    "map_colleges": "map_colleges.json",
     "mis_appendix_a": "kb/reference/mis_district_college_codes.json",
     "repo_crosswalk": "kb/college_short_names.json"
   },
@@ -28,7 +28,270 @@
     "mis_rows_unused": 5,
     "districts": 73,
     "placeholder_codes": 2,
-    "roster_bridged": 116
+    "roster_bridged": 116,
+    "campus_short_accepted": 6,
+    "campus_short_refused": 46
+  },
+  "campus_short_names": {
+    "_about": "The college's OWN short name, derived by stripping its district's name from the front. See campus_short_variants().",
+    "accepted": {
+      "Los Angeles Harbor College": [
+        "Harbor College",
+        "Harbor"
+      ],
+      "Los Angeles Pierce College": [
+        "Pierce College",
+        "Pierce"
+      ],
+      "Los Angeles Southwest College": [
+        "Southwest College",
+        "Southwest"
+      ],
+      "Los Angeles Trade Technical College": [
+        "Trade Technical College",
+        "Trade Technical"
+      ],
+      "San Diego Mesa College": [
+        "Mesa College",
+        "Mesa"
+      ],
+      "San Diego Miramar College": [
+        "Miramar College",
+        "Miramar"
+      ]
+    },
+    "refused": [
+      {
+        "college": "Allan Hancock College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Antelope Valley College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Barstow Community College",
+        "candidate": "Community College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Cabrillo College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Cerritos College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Chaffey College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Citrus College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Compton College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Contra Costa College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Copper Mountain College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "El Camino College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Feather River College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Gavilan College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Glendale Community College",
+        "candidate": "Community College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Hartnell College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Imperial Valley College",
+        "candidate": "Valley College",
+        "reason": "ambiguous - 'valley' names 11 colleges"
+      },
+      {
+        "college": "Lake Tahoe Community College",
+        "candidate": "Community College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Lassen College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Long Beach City College",
+        "candidate": "City College",
+        "reason": "ambiguous - 'city' names 11 colleges"
+      },
+      {
+        "college": "Los Angeles City College",
+        "candidate": "City College",
+        "reason": "ambiguous - 'city' names 11 colleges"
+      },
+      {
+        "college": "Los Angeles Mission College",
+        "candidate": "Mission College",
+        "reason": "ambiguous - 'mission' names 2 colleges"
+      },
+      {
+        "college": "Los Angeles Valley College",
+        "candidate": "Valley College",
+        "reason": "ambiguous - 'valley' names 11 colleges"
+      },
+      {
+        "college": "Merced College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "MiraCosta College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Monterey Peninsula College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Mt. San Antonio College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Mt. San Jacinto College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Napa Valley College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "North Orange Continuing Education",
+        "candidate": "Continuing Education",
+        "reason": "ambiguous - 'continuing' names 2 colleges"
+      },
+      {
+        "college": "Ohlone College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Palo Verde College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Palomar College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Rio Hondo College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Riverside City College",
+        "candidate": "City College",
+        "reason": "ambiguous - 'city' names 11 colleges"
+      },
+      {
+        "college": "San Bernardino Valley College",
+        "candidate": "Valley College",
+        "reason": "ambiguous - 'valley' names 11 colleges"
+      },
+      {
+        "college": "San Diego City College",
+        "candidate": "City College",
+        "reason": "ambiguous - 'city' names 11 colleges"
+      },
+      {
+        "college": "San Diego College of Continuing Education",
+        "candidate": "College of Continuing Education",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "San Joaquin Delta College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Santa Barbara City College",
+        "candidate": "City College",
+        "reason": "ambiguous - 'city' names 11 colleges"
+      },
+      {
+        "college": "Santa Monica College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Sierra College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Solano Community College",
+        "candidate": "Community College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Southwestern College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Ventura College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Victor Valley College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      },
+      {
+        "college": "Yuba College",
+        "candidate": "College",
+        "reason": "degenerate - the name is entirely its district"
+      }
+    ]
   },
   "_source_defects_found": {
     "district_name_split_across_codes": {
@@ -1114,7 +1377,7 @@
       "mis_match": null,
       "mis_code_is_placeholder": false,
       "entity_kind": "partner",
-      "mis_absent_why": "A partner organisation we host a CPL landing page for, not a California Community College. No MIS code exists, and none should be invented.",
+      "mis_absent_why": "A partner organization we host a CPL landing page for, not a California Community College. No MIS code exists, and none should be invented.",
       "district_type": null,
       "district_college_count": null
     },
@@ -1341,7 +1604,7 @@
       "mis_match": null,
       "mis_code_is_placeholder": false,
       "entity_kind": "partner",
-      "mis_absent_why": "A partner organisation we host a CPL landing page for, not a California Community College. No MIS code exists, and none should be invented.",
+      "mis_absent_why": "A partner organization we host a CPL landing page for, not a California Community College. No MIS code exists, and none should be invented.",
       "district_type": null,
       "district_college_count": null
     },
@@ -1408,6 +1671,8 @@
       "college_id": 70,
       "college_name": "Los Angeles Harbor College",
       "variants": [
+        "Harbor",
+        "Harbor College",
         "LA HARBOR",
         "LA Harbor"
       ],
@@ -1447,7 +1712,9 @@
       "college_name": "Los Angeles Pierce College",
       "variants": [
         "LA PIERCE",
-        "LA Pierce"
+        "LA Pierce",
+        "Pierce",
+        "Pierce College"
       ],
       "short": "LA Pierce",
       "mis_college_code": "744",
@@ -1466,7 +1733,9 @@
       "college_name": "Los Angeles Southwest College",
       "variants": [
         "LA SWEST",
-        "LA Southwest"
+        "LA Southwest",
+        "Southwest",
+        "Southwest College"
       ],
       "short": "LA Southwest",
       "mis_college_code": "745",
@@ -1486,7 +1755,9 @@
       "variants": [
         "LA TRADE",
         "LA Trade",
-        "Los Angeles Trade-Tech College"
+        "Los Angeles Trade-Tech College",
+        "Trade Technical",
+        "Trade Technical College"
       ],
       "short": "LA Trade",
       "mis_college_code": "746",
@@ -2130,6 +2401,8 @@
       "college_id": 97,
       "college_name": "San Diego Mesa College",
       "variants": [
+        "Mesa",
+        "Mesa College",
         "SAN DIEGO MESA",
         "San Diego Mesa"
       ],
@@ -2149,6 +2422,8 @@
       "college_id": 98,
       "college_name": "San Diego Miramar College",
       "variants": [
+        "Miramar",
+        "Miramar College",
         "SAN DIEGO MIRAMAR",
         "San Diego Miramar"
       ],

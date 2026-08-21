@@ -6,9 +6,17 @@
 -- docs/kb-notes/methodology-live-db-functions-need-committed-schema.md).
 --
 -- Short, team-authored response directives that the shared `cpl-chat` Edge
--- Function (v25+) appends to EVERY system prompt: the newest 10 ACTIVE rows,
--- under a ~2,500-char hard cap — the "same-minute tuning knob without a
--- redeploy". The committed rules inside index.ts (STATEWIDE / CREDIT /
+-- Function (v25+) appends to EVERY system prompt: the newest ACTIVE rows, under
+-- a hard character cap — the "same-minute tuning knob without a redeploy".
+-- ⚠ The caps here are stated in the CODE, not in this comment: GUIDANCE_MAX_RULES
+-- / GUIDANCE_MAX_CHARS / GUIDANCE_MAX_CHARS_PER_RULE in the edge function, and
+-- their mirrors in sierra_training.js. This header used to say "the newest 10
+-- ACTIVE rows, under a ~2,500-char hard cap" and BOTH numbers were stale — the
+-- char cap moved to 9,000 on 2026-08-12 and the row cap to 20 on 2026-08-21.
+-- A number restated in prose is a number that goes wrong quietly.
+-- Rows are split by `kind` (see the column below): directives and display rules
+-- get separate caps and separate prompt blocks.
+-- The committed rules inside index.ts (STATEWIDE / CREDIT /
 -- OFFERINGS / LANDING-PAGE / AUDIENCE) remain the stable spine; guidance rows
 -- layer on top, and the block header the function builds tells the model the
 -- team guidance wins on conflict.
@@ -39,6 +47,28 @@ create table if not exists public.sierra_guidance (
     -- relocates the failure; change all three together.
     constraint sierra_guidance_rule_len check (char_length(rule) between 3 and 1500),
   active boolean not null default true,
+  -- KIND — 'directive' (prose the team writes) vs 'display' (structured output
+  -- shape: table columns, labels, row order). Added 2026-08-21.
+  --
+  -- WHY A COLUMN AND NOT A SECOND TABLE: Sam's judgment-in-tables ADR
+  -- (docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md) says move
+  -- instructional VARIABLES into curatable tables. A display rule is the same
+  -- kind of object as a directive — team-authored text appended to the system
+  -- prompt, gated the same way, audited the same way — so a second table would
+  -- duplicate the schema, the RLS and the read for no gain. One table, one read,
+  -- split on a column.
+  --
+  -- WHY IT MATTERS: the two kinds compete for a ROW budget they should not share.
+  -- The edge function sends the newest N active DIRECTIVES; a display rule is
+  -- long, structured and standing, so letting it occupy a directive slot evicts
+  -- the oldest prose rule (silently, and oldest-first means the naming rule).
+  -- The function gives each kind its own cap and its own block.
+  --
+  -- DEFAULT 'directive' IS LOAD-BEARING: every one of the 13 existing rows is
+  -- prose, and a migration must not change what Sierra is told. Backfilling any
+  -- row to 'display' is a curator decision, made in the Training tab.
+  kind text not null default 'directive'
+    constraint sierra_guidance_kind_ck check (kind in ('directive', 'display')),
   note text                                   -- why the rule exists (optional)
     constraint sierra_guidance_note_len check (note is null or char_length(note) <= 300),
   created_by text
