@@ -132,6 +132,17 @@ function audienceLabels(src, what) {
 block("audience alignment", function () {
   const a = audienceLabels(CHAT, "cpl_chat.js");
   const b = audienceLabels(PAGE, "sierra/sierra.js");
+  /* ⭐ THE CONTAINER ROLE, which drifted for a week. sierra/index.html carries
+   * role="group"; cpl_chat.js carried role="radiogroup" over `aria-pressed`
+   * toggle buttons — a radiogroup promises role="radio" + aria-checked
+   * children, so a screen reader announced a radio group containing something
+   * that is not a radio. Sky175 fixed the public page; COBI kept the old markup
+   * because nothing compared the two. That is this file's whole job. */
+  check("⭐ neither audience row claims role=radiogroup over aria-pressed buttons",
+    !/role: 'radiogroup'/.test(CHAT) && !/role="radiogroup"/.test(PAGE_HTML));
+  check("…and both still group + label the row for assistive tech",
+    /role: 'group'/.test(CHAT) && /role="group"/.test(PAGE_HTML) &&
+    /'aria-label': 'Tell the assistant who you are/.test(CHAT));
   check("cpl_chat.js declares 5 audiences", a.length === 5);
   check("sierra/sierra.js declares 5 audiences", b.length === 5);
   check("⭐ the two audience lists are identical, keys and labels, in order",

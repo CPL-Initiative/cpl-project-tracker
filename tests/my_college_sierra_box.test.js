@@ -62,6 +62,9 @@ function loadTab(opts) {
   const w = dom.window;
   w.localStorage.setItem("cpl_team_pass", "phrase");            // team-gated tab
   w.localStorage.setItem("cplSierraAudience.v1", "student");
+  // Confirmed for this browser-tab session unless a fixture asks otherwise —
+  // see (6). localStorage alone now means "remembered from an earlier visit".
+  if (!opts.remembered) w.sessionStorage.setItem("cplSierraAudienceOk.v1", "student");
   w.fetch = function () { return new Promise(function () {}); }; // never resolves
   w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
   [TEAM, CHAT, BRIEFING].forEach(function (src) {
@@ -116,12 +119,79 @@ block("(2)", function () {
     !/Riverside City College/.test(txt),
     "the generic starter is right on the CPL Assistant tab and nonsense here");
 
-  // A group scope has no college, so the generic starters are correct again —
-  // and leaving the last college's questions up would be worse than either.
-  const grp = loadTab({ scope: "statewide" });
-  const gtxt = (grp.root.querySelector(".cplchat-suggest") || {}).textContent || "";
-  check("(2) a statewide view goes back to the generic starters",
-    /Riverside City College/.test(gtxt) && !/Cabrillo College/.test(gtxt), JSON.stringify(gtxt));
+  /* ⭐ A GROUP SCOPE GETS GROUP QUESTIONS — NOT THE PUBLIC STARTERS.
+   * #1274 passed null here, which returns the widget to its generic list, one
+   * of which names Riverside City College. Sam, 2026-08-21, on a screenshot of
+   * the LACCD page: "The pre-seeded questions are not adjusted to the selected
+   * org… I know this may be due to our joint use of Sierra public use and
+   * Sierra My College use." Right about the cause; the fix is that a host which
+   * knows whose page this is owns the questions in EVERY scope. */
+  const st = loadTab({ scope: "statewide" });
+  const stxt = (st.root.querySelector(".cplchat-suggest") || {}).textContent || "";
+  check("(2) ⭐ a statewide view never falls through to the public starters",
+    !/Riverside City College/.test(stxt), JSON.stringify(stxt));
+  check("(2) …nor keeps the last college's questions",
+    !/Cabrillo College/.test(stxt), JSON.stringify(stxt));
+  check("(2) …and asks something statewide-shaped instead",
+    /statewide/i.test(stxt) && stxt.length > 40, JSON.stringify(stxt));
+
+  const D = "Los Angeles Community College District";
+  const dis = loadTab({ scope: "district", district: D });
+  const dtxt = (dis.root.querySelector(".cplchat-suggest") || {}).textContent || "";
+  check("(2) ⭐ a district view names THAT district", dtxt.indexOf(D) >= 0, JSON.stringify(dtxt));
+  check("(2) ⚠ …and still names no college at all",
+    !/Riverside City College/.test(dtxt) && !/Cabrillo College/.test(dtxt), JSON.stringify(dtxt));
+
+  /* ⚠ SIERRA HAS NO DISTRICT DIMENSION — verified 2026-08-21: zero columns in
+   * the public schema are named district, and districtIndex() builds the
+   * grouping client-side from the funding roster. So the district may be named
+   * only in an ADVISORY question, where a name cannot become a false figure.
+   * A "which of my colleges has the most units waiting?" chip would ask her
+   * something this page can answer and she cannot. */
+  const M2 = dis.M;
+  const dq = M2._groupQuestions("district", D);
+  check("(2) ⚠ no district question asks for a FIGURE she cannot retrieve",
+    dq.every(function (q) {
+      return q.indexOf(D) < 0 || !/(how many|how much|most|units|students|waiting|rank)/i.test(q);
+    }), JSON.stringify(dq));
+  check("(2) ⚠ …and no member college is singled out (rollup sorts alphabetically for the same reason)",
+    dq.every(function (q) { return !/College\b/.test(q.replace(D, "")); }), JSON.stringify(dq));
+
+  // Positive control: a group list that came back empty would pass every
+  // "does not contain" check above.
+  check("(2) the group list is not simply empty",
+    dq.length >= 3 && dis.root.querySelectorAll(".cplchat-suggest button").length >= 3);
+});
+
+/* ── (6) The remembered role is confirmed HERE, on the tab Sam was looking at ─
+ * The unit-level guards live in tests/cpl_chat_audience.test.js (block e). This
+ * one is the integration: the gate has to be live where the pre-seeded
+ * questions are, because clicking one of those is what Sam did. */
+block("(6)", function () {
+  const { root } = loadTab({ remembered: true });
+  const row = root.querySelector(".cplchat-audience");
+  check("(6) ⭐ a role carried in from another Sierra surface renders PROVISIONAL",
+    !!row && !!row.querySelector(".cplchat-aud-chip.remembered") &&
+    !row.querySelector(".cplchat-aud-chip.on"));
+  check("(6) …and says so in words, not just an outline",
+    /previous visit/i.test((row.querySelector(".cplchat-aud-note") || {}).textContent || ""));
+
+  // Clicking a PRE-SEEDED QUESTION is the exact path Sam described.
+  const q = root.querySelector(".cplchat-suggest button");
+  check("(6) precondition: there is a pre-seeded question to click", !!q);
+  q.click();
+  const status = root.querySelector(".cplchat-status");
+  check("(6) ⭐ clicking it prompts for the role instead of answering",
+    /Student \/ future student/.test(status.textContent) &&
+    /cplchat-confirm/.test(status.className), JSON.stringify(status.textContent));
+  check("(6) ⚠ the question is held in the box, not lost",
+    /Cabrillo College/.test(root.querySelector(".cplchat-input").value || ""));
+
+  // And a CONFIRMED role is not interrogated — the gate must not nag.
+  const ok = loadTab();
+  const okRow = ok.root.querySelector(".cplchat-audience");
+  check("(6) a confirmed role renders as confirmed, with no note",
+    !!okRow.querySelector(".cplchat-aud-chip.on") && !okRow.querySelector(".cplchat-aud-note"));
 });
 
 // ── (3) The pane's inline centring is shed ─────────────────────────────────

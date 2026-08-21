@@ -2817,11 +2817,15 @@
    * mounted, so the two can never appear together. */
   function fallbackAsks(root) {
     var mount = root && root.querySelector("#cb-assistant-mount");
-    if (!mount || !mount.parentNode || !state.college) return false;
+    if (!mount || !mount.parentNode) return false;
     // Never beside the widget's own row. Structural, so "the two can never
     // appear together" is enforced rather than reasoned about.
     if (root.querySelector(".cplchat-suggest") || root.querySelector(".cb-asks")) return false;
-    var qs = sierraQuestions(state.college, state.detail, standingFor(state.college));
+    /* ⚠ THE SAME scopeQuestions() THE WIDGET GETS — this used to require
+     * state.college and re-derive the college list itself, so a district reader
+     * whose chat module failed to load saw NO questions at all while a college
+     * reader saw four. Two callers deriving one list is how they drift. */
+    var qs = scopeQuestions();
     if (!qs.length) return false;
     var box = document.createElement("div");
     box.innerHTML = '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks">'
@@ -2833,14 +2837,17 @@
     return true;
   }
 
-  /* Hand this college's own questions to the assistant, so there is ONE cluster
+  /* Hand THIS scope's own questions to the assistant, so there is ONE cluster
    * of them and it sits below the role chips (Sam, 2026-08-21). Derived, not a
    * fixed list, so they stay right as a college's position changes.
    *
-   * ⚠ A GROUP SCOPE CLEARS THEM RATHER THAN LEAVING THE LAST COLLEGE'S. Passing
-   * null returns the widget to its generic starters, which are correct for a
-   * district or statewide view; leaving the previous list would offer questions
-   * about a college the reader has just navigated away from.
+   * ⚠ A GROUP SCOPE GETS GROUP QUESTIONS — IT MUST NOT PASS null. That is what
+   * #1274 did, and null returns the widget to its generic starters, one of
+   * which names Riverside City College: correct on the public page and on the
+   * CPL Assistant tab, wrong under "Welcome, Los Angeles Community College
+   * District" (Sam, 2026-08-21). The list still CHANGES on every scope change,
+   * which is the part that mattered — leaving the previous college's questions
+   * up would offer advice about a college the reader has navigated away from.
    *
    * Fails soft in both directions: an unmounted or older chat module simply
    * shows its own starters, which is a working assistant with less-tailored
@@ -2848,8 +2855,7 @@
   function setAssistantQuestions() {
     var C = chatModule();
     if (!C || typeof C.setSuggestions !== "function") return false;
-    var qs = state.college ? sierraQuestions(state.college, state.detail, standingFor(state.college)) : null;
-    try { return C.setSuggestions(qs); } catch (e) { return false; }
+    try { return C.setSuggestions(scopeQuestions()); } catch (e) { return false; }
   }
   /* One click, not two. The suggested questions sit above an assistant that is
    * already mounted on this tab, so clicking one fills the box AND sends —
@@ -2915,6 +2921,68 @@
     }
     qs.push("Who does a student at " + college + " contact to ask for a credit review?");
     return qs;
+  }
+
+  /* PURE. The questions for a scope that is NOT one college — a district, or
+   * statewide.
+   *
+   * ⭐ WHY THIS EXISTS AT ALL (Sam, 2026-08-21, on a screenshot of the LACCD
+   * page): "The pre-seeded questions are not adjusted to the selected org. I
+   * know this may be due to our joint use of Sierra public use and Sierra My
+   * College use." He was exactly right about the cause. #1274 gave a group
+   * scope `null`, which returns the widget to its GENERIC starters — and those
+   * are the PUBLIC surface's list, one of which names Riverside City College.
+   * Fine on the CPL Assistant tab; nonsense under a heading that reads "Welcome,
+   * Los Angeles Community College District".
+   *
+   * The fix is structural, not a better fallback: a host that knows whose page
+   * this is ALWAYS owns the questions, in every scope. setAssistantQuestions()
+   * no longer passes null, so the generic list is unreachable from this tab and
+   * can go on being concrete for the audience it was written for.
+   *
+   * ⚠ SIERRA HAS NO DISTRICT DIMENSION, so no question here may DEPEND on one.
+   * Verified two ways, 2026-08-21: zero columns in the whole public schema are
+   * named district (`information_schema.columns … ilike '%district%'` → 0 rows),
+   * and districtIndex() above builds the grouping client-side from
+   * window.CPL_FUNDING.colleges — the funding roster. The district exists in
+   * this browser and nowhere she can read. So "which of my colleges has the
+   * most units waiting?" is a question this page can answer and she cannot, and
+   * offering it would manufacture the confident-wrong answer this project keeps
+   * finding. The district is therefore named only in an ADVISORY question,
+   * where a name cannot become a false figure.
+   *
+   * ⚠ AND NO MEMBER COLLEGE IS SINGLED OUT. The obvious "lead with the college
+   * with the most units waiting" orders a reader's own peers by a figure —
+   * rollup() right above deliberately sorts alphabetically for that reason, and
+   * Sam's standing rule is that colleges are never ranked. The roll-up table
+   * already lists every member with its figures and says "Pick any college for
+   * its full briefing"; that is the route to a college-shaped question, not a
+   * chip that picks one for them.
+   *
+   * What is left is genuinely answerable: one advisory question naming the org,
+   * and the credential + statewide routes, which are live (CRED·VOLUME,
+   * CRED·STD) and have no college or district in them. */
+  function groupQuestions(scope, label) {
+    var qs = [];
+    if (scope === "district" && label) {
+      qs.push("What should " + label + " do to help its colleges award more CPL?");
+    } else if (scope === "statewide") {
+      qs.push("How many students has CPL served statewide?");
+    }
+    qs.push("Which credentials do the most colleges give credit for?");
+    qs.push("Which colleges give credit for a real estate license?");
+    qs.push("What is Credit for Prior Learning?");
+    return qs;
+  }
+
+  /* The questions for whatever scope is in force — the ONE place that decides,
+   * so the widget cluster and the no-widget fallback can never offer different
+   * lists. Returns [] only when no scope is settled, which is a screen with no
+   * assistant on it. */
+  function scopeQuestions() {
+    if (state.college) return sierraQuestions(state.college, state.detail, standingFor(state.college));
+    if (!scopeReady()) return [];
+    return groupQuestions(state.scope, scopeLabel());
   }
 
   /* ── Load ────────────────────────────────────────────────────────────── */
@@ -3083,6 +3151,8 @@
     _districtIndex: districtIndex,
     _shortName: shortName,
     _sierraQuestions: sierraQuestions,
+    _groupQuestions: groupQuestions,
+    _scopeQuestions: scopeQuestions,
     _dedupeValue: dedupeValue,
     _contactRoster: contactRoster,
     _askSierra: askSierra,
