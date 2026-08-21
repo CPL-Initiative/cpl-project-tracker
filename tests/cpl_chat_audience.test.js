@@ -8,6 +8,11 @@
 //      REQUIRED before the first send (no request without it);
 //  (c) the pick persists to the localStorage key SHARED with sierra/ and rides
 //      in the POST body as `audience`;
+//  (e) ⭐ a REMEMBERED role is a shortcut, not an answer (Sam, 2026-08-21):
+//      localStorage remembers the pick across visits, but it is only CONFIRMED
+//      in the browser-tab session someone tapped it in. An unconfirmed role
+//      blocks the send, names itself in the prompt, and RESUMES the held
+//      question on the tap — the question is never dropped;
 //  (d) a completed answer gets a feedback bar; 👍 calls the
 //      sierra_feedback_upsert RPC with page:'cobi-tab' + the Q/A snapshot (a
 //      direct table upsert would trip RLS — anon has no SELECT); the note
@@ -49,8 +54,20 @@ function loadDom(opts) {
   const requests = [];
   w.TextEncoder = TextEncoder; w.TextDecoder = TextDecoder;
   w.requestAnimationFrame = function (cb) { return setTimeout(cb, 0); };
+  /* Three fixture states, because the module now has three:
+   *   default            — remembered AND confirmed this session (sends);
+   *   {remembered:true}  — remembered from an earlier visit, NOT confirmed
+   *                        (the new gate; localStorage only, no session mark);
+   *   {noAudience:true}  — never picked anywhere (the original gate).
+   * ⚠ The confirmation mark is per browser-tab session, so it goes in
+   * sessionStorage. Seeding only localStorage — which every fixture here did
+   * before 2026-08-21 — now means "remembered", which is why (c) and (d) set
+   * both or they would be testing the gate instead of the thing they name. */
   if (!opts.noAudience) {
     try { w.localStorage.setItem("cplSierraAudience.v1", "student"); } catch (e) { /* ignore */ }
+    if (!opts.remembered) {
+      try { w.sessionStorage.setItem("cplSierraAudienceOk.v1", "student"); } catch (e) { /* ignore */ }
+    }
   }
   w.fetch = function (url, init) {
     const body = init && init.body ? JSON.parse(init.body) : null;
@@ -102,9 +119,11 @@ function submit(w, text) {
   {
     const { w, requests, API } = loadDom(); // pre-seeded 'student'
     check("audience key is the one sierra/ shares", API.AUD_KEY === "cplSierraAudience.v1");
+    check("the confirmation key is SEPARATE from the shared pick key",
+      API.AUD_OK_KEY === "cplSierraAudienceOk.v1" && API.AUD_OK_KEY !== API.AUD_KEY);
     submit(w, "Which colleges teach welding?");
     await drain(14);
-    check("pre-seeded pick is honored and sent",
+    check("a CONFIRMED pick is honored and sent without a second tap",
       requests.length === 1 && requests[0].body.audience === "student" &&
       Array.isArray(requests[0].body.history));
     const onChip = w.document.querySelector("#cplchat-audience .cplchat-aud-chip.on");
@@ -136,6 +155,157 @@ function submit(w, text) {
     check("Send note re-upserts the SAME turn row with the note",
       fbReqs.length === 2 && fbReqs[1].body.p_note === "Answer missed the statewide standard" &&
       fbReqs[1].body.p_turn_id === fbReqs[0].body.p_turn_id);
+  }
+
+  /* ── (e) ⭐ the remembered-role gate ────────────────────────────────────
+   * Sam's screenshot: a chip he had never touched on this page was lit and
+   * steering the answer, because the pick persists under a key SHARED with the
+   * public standalone page and the Fact Sheet drawer. Same defect #1274 fixed
+   * for the remembered COLLEGE, one level down. */
+  {
+    const { w, requests } = loadDom({ remembered: true });
+    const row = w.document.getElementById("cplchat-audience");
+    const chips = row.querySelectorAll(".cplchat-aud-chip");
+    const remembered = row.querySelector(".cplchat-aud-chip.remembered");
+    check("(e) a remembered pick renders PROVISIONAL, not confirmed",
+      !!remembered && /Student/i.test(remembered.textContent) &&
+      !row.querySelector(".cplchat-aud-chip.on"));
+    check("(e) …and it is still the current selection for a screen reader",
+      !!remembered && remembered.getAttribute("aria-pressed") === "true");
+    // ⚠ Colour is never the only signal (First Light) — the provisional state
+    // must be readable as WORDS, or a dashed border is the whole message.
+    check("(e) the provisional state is stated in words, not just an outline",
+      /previous visit/i.test((row.querySelector(".cplchat-aud-note") || {}).textContent || ""));
+
+    submit(w, "Which colleges teach welding?");
+    await drain(8);
+    check("(e) ⭐ the send is HELD — a remembered role does not answer for you",
+      requests.length === 0);
+    const status = w.document.getElementById("cplchat-status");
+    check("(e) the prompt NAMES the role it is asking about",
+      /Student \/ future student/.test(status.textContent));
+    check("(e) …and is not dressed as an error (nothing is wrong)",
+      /cplchat-confirm/.test(status.className) && !/cplchat-error/.test(status.className));
+    check("(e) the row is outlined while it waits", row.classList.contains("confirm"));
+    check("(e) ⚠ the question is still in the box, not swallowed",
+      w.document.getElementById("cplchat-input").value === "Which colleges teach welding?");
+
+    /* The tap confirms AND resumes — the reader does not re-find the chip.
+     * ⚠ Fall back to the first chip when there is no `.remembered` one: against
+     * a pre-fix cpl_chat.js there is none, and a throw here would abort every
+     * remaining check in the file and report one crash instead of a list. */
+    (remembered || chips[0]).click();
+    await drain(14);
+    check("(e) ⭐ tapping the same chip RESUMES the held question",
+      requests.length === 1 && requests[0].body.audience === "student" &&
+      /welding/.test(requests[0].body.question || requests[0].body.q || JSON.stringify(requests[0].body)));
+    check("(e) …and the chip is confirmed afterwards",
+      !!row.querySelector(".cplchat-aud-chip.on") &&
+      !row.querySelector(".cplchat-aud-chip.remembered") &&
+      !row.querySelector(".cplchat-aud-note"));
+    check("(e) …the outline and the prompt are both cleared",
+      !row.classList.contains("confirm") &&
+      !/still Student/i.test(w.document.getElementById("cplchat-status").textContent));
+    check("(e) the confirmation is written per browser-tab SESSION, not per visit",
+      w.sessionStorage.getItem("cplSierraAudienceOk.v1") === "student" &&
+      w.localStorage.getItem("cplSierraAudience.v1") === "student");
+  }
+
+  /* (e2) Picking a DIFFERENT role from a remembered one is one tap too — the
+   * gate must not force "confirm the wrong answer, then change it". */
+  {
+    const { w, requests } = loadDom({ remembered: true });
+    const row = w.document.getElementById("cplchat-audience");
+    submit(w, "How do we start?");
+    await drain(6);
+    check("(e2) held, as above", requests.length === 0);
+    row.querySelectorAll(".cplchat-aud-chip")[1].click(); // Faculty
+    await drain(14);
+    check("(e2) ⭐ switching role also resumes, and sends the NEW role",
+      requests.length === 1 && requests[0].body.audience === "faculty");
+  }
+
+  /* (e3) A role confirmed for THIS session survives a re-mount (the reader
+   * switches COBI tabs and comes back). One tap per session, not per question:
+   * a gate that re-asks on every mount is a gate people learn to click past. */
+  {
+    const { w, requests } = loadDom();  // confirmed fixture
+    submit(w, "one");
+    await drain(14);
+    const API = w.CPL_CHAT;
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    API.mountInto(host);
+    /* ⚠ API.ask(), NOT the submit() helper — that one reaches the input by
+     * getElementById, and with two panes mounted the id resolves to the FIRST
+     * one while the module's `inputEl` points at the pane built LAST. The
+     * documented two-pane trap, hit by the test rather than the code. */
+    API.ask("two");
+    await drain(14);
+    const asks = requests.filter((r) => !/sierra_feedback_upsert/.test(r.url));
+    check("(e3) a confirmed role is not re-asked after a re-mount",
+      asks.length === 2 && asks[1].body.audience === "student");
+  }
+
+  /* (e5) ⚠ A STALE CONFIRMATION. The pick lives in localStorage under a key
+   * SHARED with the public standalone page and the Fact Sheet drawer; the
+   * confirmation lives in sessionStorage. So the pick can change underneath a
+   * standing confirmation — confirm "Student" here, switch to "Faculty" over
+   * there, come back. loadAudience() must ASSIGN the flag on every mount, not
+   * only ever raise it, or the new role inherits the old one's confirmation and
+   * the gate silently stops existing. */
+  {
+    const { w, requests } = loadDom();  // confirmed as 'student'
+    submit(w, "one");
+    await drain(14);
+    check("(e5) precondition: the confirmed role sends", requests.length === 1);
+    // The public page switches the shared pick without touching the session mark.
+    w.localStorage.setItem("cplSierraAudience.v1", "faculty");
+    const API = w.CPL_CHAT;
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    API.mountInto(host);
+    const row = host.querySelector(".cplchat-audience");
+    check("(e5) ⭐ the changed role does NOT inherit the old confirmation",
+      !!row.querySelector(".cplchat-aud-chip.remembered") &&
+      !row.querySelector(".cplchat-aud-chip.on"));
+    API.ask("two");
+    await drain(8);
+    check("(e5) …so it is held, not answered",
+      requests.filter((r) => !/sierra_feedback_upsert/.test(r.url)).length === 1);
+  }
+
+  /* (e6) ⚠ THE HELD QUESTION IS PINNED TO ITS PANE. Two panes can be mounted at
+   * once and `inputEl` points at whichever built LAST. A boolean "something is
+   * pending" would let a confirm armed on My College fire submit() against the
+   * CPL Assistant's box — sending a half-typed sentence nobody pressed Send on.
+   * The same by-reference-not-by-id trap this file already documents twice. */
+  {
+    const { w, requests } = loadDom({ remembered: true });
+    submit(w, "held on pane one");
+    await drain(6);
+    check("(e6) precondition: pane one armed the gate", requests.length === 0);
+    const API = w.CPL_CHAT;
+    const host = w.document.createElement("div");
+    w.document.body.appendChild(host);
+    API.mountInto(host);                       // inputEl now points at pane two
+    API.prefill("half-typed on pane two");     // prefill does NOT send
+    host.querySelectorAll(".cplchat-aud-chip")[1].click();  // confirm on pane two
+    await drain(10);
+    check("(e6) ⭐ confirming on the OTHER pane sends nothing",
+      requests.length === 0, JSON.stringify(requests.map((r) => r.body)));
+    check("(e6) …and pane two's half-typed text is still just sitting there",
+      host.querySelector(".cplchat-input").value === "half-typed on pane two");
+  }
+
+  /* (e4) The role vocabulary is unchanged — this run added a STATE, not a
+   * word. sierra_surfaces_aligned compares the arrays across all three files;
+   * this pins that nothing here quietly edited one. */
+  {
+    const { API } = loadDom();
+    check("(e4) still exactly the 5 shared audiences, keys unchanged",
+      API.AUDIENCES.map((a) => a.k).join(",") ===
+      "student,faculty,administrator,employer,civic");
   }
 
   // ── report ──

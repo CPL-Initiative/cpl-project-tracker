@@ -233,29 +233,114 @@
   var AUD_KEY = 'cplSierraAudience.v1';
   var audience = null;
 
+  /* ⭐ A REMEMBERED ROLE IS A SHORTCUT, NOT AN ANSWER ──────────────────
+   * Sam, 2026-08-21: "we need to prompt users to confirm select their role
+   * before or if they click a pre-seeded question."
+   *
+   * This is his OWN #1274 ruling one level down. My College stopped restoring a
+   * remembered college into state that same week, because a restored choice
+   * silently answered a question the reader had never been asked — the second
+   * person to open the tab got whoever was here last. The ROLE had exactly the
+   * same defect and nobody had looked: `audience` is persisted in localStorage
+   * under a key SHARED with the public standalone page and the Fact Sheet
+   * drawer, so a role picked once, anywhere, on any earlier visit was applied
+   * silently to every answer here forever. In the screenshot Sam sent, a chip
+   * he had not touched on this page was lit and steering the reply.
+   *
+   * So: localStorage still REMEMBERS the role (the chip comes back pre-marked
+   * and one tap keeps it — that is the shortcut), but a role is only
+   * CONFIRMED for the browser-tab session in which someone tapped it. The
+   * confirmation mark lives in sessionStorage beside `cpl_chat_session`, so it
+   * costs one tap per session, not one per question.
+   *
+   * ⚠ THE HELD QUESTION IS RESUMED, NEVER DROPPED. A confirm prompt that makes
+   * the reader hunt for the chip they just clicked is worse than the silent
+   * default it replaces — submit() leaves the text in the box and setAudience()
+   * sends it the moment a role is tapped.
+   *
+   * ⚠ SCOPE: this changes the two COBI surfaces (My College + CPL Assistant),
+   * which is what Sam asked about. sierra/sierra.js and
+   * fact-sheet/factsheet_sierra.js deliberately keep the silent restore — a
+   * one-visit member of the public should not be interrogated about a role they
+   * picked ninety seconds ago on the same page. Same divergence shape as
+   * #1274's intro wording; tests/sierra_surfaces_aligned.test.js pins that the
+   * AUDIENCES vocabulary still matches across all three, which is the part that
+   * must never drift. */
+  var AUD_OK_KEY = 'cplSierraAudienceOk.v1';
+  var audienceConfirmed = false;
+  /* ⚠ THE HELD QUESTION IS PINNED TO THE PANE THAT HELD IT — this is the
+   * element, not a boolean. Two panes can be mounted at once (My College and
+   * the CPL Assistant tab) and `inputEl` points at whichever built LAST, so a
+   * boolean would let a confirm armed on one pane fire submit() against the
+   * other's box: at best a no-op, at worst it sends a half-typed sentence the
+   * reader never pressed Send on. Same discipline the file already documents
+   * for `chipsEl` — by reference, never by id. */
+  var pendingAsk = null;
+
+  function audienceLabel(k) {
+    var out = '';
+    AUDIENCES.forEach(function (a) { if (a.k === k) out = a.label; });
+    return out;
+  }
+
   function loadAudience() {
     try {
       var v = localStorage.getItem(AUD_KEY);
       if (AUDIENCES.some(function (a) { return a.k === v; })) audience = v;
     } catch (e) { /* keep in-memory only */ }
+    /* Confirmed only if THIS role was confirmed in THIS browser-tab session.
+     * Comparing the VALUE, not just its presence: a role switched on the public
+     * page mid-session shares the localStorage key, so a presence check would
+     * hand the new role the old one's confirmation.
+     *
+     * ⚠ ASSIGNED, NOT RAISED. build() calls this on every mount, so a version
+     * that only ever set it TRUE would carry a stale confirmation: confirm
+     * "Faculty" here, switch to "Student" on the public standalone page (same
+     * localStorage key), come back — the pick has changed underneath and the
+     * old confirmation would still be standing. */
+    var confirmed = false;
+    try {
+      confirmed = !!audience && sessionStorage.getItem(AUD_OK_KEY) === audience;
+    } catch (e) { /* no sessionStorage — the gate simply asks once per mount */ }
+    audienceConfirmed = confirmed;
   }
   function setAudience(k) {
+    // A tap IS the confirmation. No separate confirm button: a second control
+    // to press would be a second thing to explain.
+    var resume = pendingAsk && pendingAsk === inputEl;
+    pendingAsk = null;
     audience = k;
+    audienceConfirmed = true;
     try { localStorage.setItem(AUD_KEY, k); } catch (e) { /* in-memory only */ }
+    try { sessionStorage.setItem(AUD_OK_KEY, k); } catch (e) { /* in-memory only */ }
+    if (audEl) audEl.classList.remove('confirm');
     renderAudience();
+    setStatus('');
+    if (resume) submit();
   }
   function renderAudience() {
     if (!audEl) return;
     audEl.textContent = '';
     audEl.appendChild(el('span', { className: 'cplchat-aud-label' }, "I'm a…"));
     AUDIENCES.forEach(function (a) {
+      var picked = audience === a.k;
       audEl.appendChild(el('button', {
         type: 'button',
-        className: 'cplchat-aud-chip' + (audience === a.k ? ' on' : ''),
-        'aria-pressed': audience === a.k ? 'true' : 'false',
-        onclick: function () { setAudience(a.k); setStatus(''); },
+        // Three states, not two: unpicked / remembered-but-unconfirmed /
+        // confirmed. `on` stays the confirmed one, so nothing that already
+        // reads that class changes meaning.
+        className: 'cplchat-aud-chip' + (picked ? (audienceConfirmed ? ' on' : ' remembered') : ''),
+        // Still the current selection, so it is still pressed. The provisional
+        // half is carried by the WORDS below, never by the outline alone
+        // (First Light: colour is never the only signal).
+        'aria-pressed': picked ? 'true' : 'false',
+        onclick: function () { setAudience(a.k); },
       }, a.label));
     });
+    if (audience && !audienceConfirmed) {
+      audEl.appendChild(el('span', { className: 'cplchat-aud-note' },
+        'Carried over from a previous visit — tap to confirm, or pick another.'));
+    }
   }
   /* Paints whichever list is in force into the row build() created. Never
    * queries the document: two panes can hold a chip row at once (My College and
@@ -281,6 +366,25 @@
     if (!audEl) return;
     audEl.classList.add('need');
     setTimeout(function () { audEl.classList.remove('need'); }, 1700);
+  }
+
+  /* The remembered-role gate. Distinct from needAudience() in every way that
+   * matters to the reader: nothing is missing, so this is not an error and is
+   * not styled as one; the chip they want is already on screen and named in the
+   * prompt; and the question they asked is HELD rather than lost.
+   *
+   * ⚠ The outline persists until a tap, unlike needAudience()'s 1.7s flash. A
+   * flash is right for "you forgot something" and wrong for "I am waiting for
+   * you" — the reader may look away, and coming back to a cleared prompt with
+   * an unanswered question in the box is the confusing state this replaces. */
+  function confirmAudience() {
+    pendingAsk = inputEl;
+    // "to send" carries two facts in two words: the tap is what sends, and the
+    // question is still here. The alternative said so in a third sentence.
+    setStatus('One tap first — still ' + audienceLabel(audience)
+      + '? Tap it above to send, or pick another.', 'confirm');
+    if (!audEl) return;
+    audEl.classList.add('confirm');
   }
 
   // ── Per-answer feedback (Helpful / Not helpful + note → sierra_feedback) ──
@@ -532,7 +636,19 @@
       '.cplchat-aud-chip { border:1px solid var(--border-strong, #cdd6e3); background:var(--surface-opaque, #fff); color:var(--text-body, #1c2433); border-radius:999px; padding:6px 12px; font-size:.82rem; font-weight:600; cursor:pointer; }',
       '.cplchat-aud-chip:hover { border-color:var(--cobalt, #0047AB); }',
       '.cplchat-aud-chip.on { background:var(--seal-blue, #002F6D); border-color:var(--seal-blue, #002F6D); color:#fff; }',
+      // The remembered-but-unconfirmed chip: marked as the current pick, drawn
+      // as provisional. Dashed + unfilled so it cannot be mistaken for `.on` at
+      // a glance, and never the only signal — .cplchat-aud-note carries it in
+      // words for anyone who does not see the difference.
+      '.cplchat-aud-chip.remembered { background:var(--surface-opaque, #fff); border:1px dashed var(--seal-blue, #002F6D); color:var(--seal-blue, #002F6D); }',
+      '.cplchat-aud-note { flex-basis:100%; font-size:.78rem; color:var(--text-muted, #5a6478); }',
       '.cplchat-audience.need { outline:2px solid var(--crimson, #920000); }',
+      // Waiting on a tap is not an error, so it is cobalt, not crimson.
+      '.cplchat-audience.confirm { outline:2px solid var(--cobalt, #0047AB); }',
+      // .cplchat-status.cplchat-error lives in both HTML <style> blocks; this
+      // sibling is injected instead, so the confirm prompt needs no Rule-4
+      // mirror. Cobalt on the subtle surface, not the crimson of an error.
+      '.cplchat-status.cplchat-confirm { color:var(--cobalt, #0047AB); font-weight:600; }',
       '.cplchat-fb { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin:2px 0 8px 38px; font-size:.78rem; color:var(--text-faint, #8a94a6); }',
       // The rating buttons carry WORDS now (Helpful / Not helpful), not thumbs.
       // A <button> inherits neither font-family nor color — which is why the
@@ -810,6 +926,12 @@
     var q = (inputEl.value || '').trim();
     if (!q) { inputEl.focus(); return; }
     if (!audience) { needAudience(); return; }
+    /* ⚠ ORDER MATTERS: no role at all is a different failure from a role
+     * nobody has confirmed, and they get different prompts. Both return BEFORE
+     * `busy`, before addUserMsg() and before inputEl is cleared — which is what
+     * leaves the question in the box for setAudience() to resume. */
+    if (!audienceConfirmed) { confirmAudience(); return; }
+    pendingAsk = null;
     busy = true;
     // Asking is an explicit "show me the answer", so re-arm page-follow even if
     // the reader had scrolled up to look at an earlier turn.
@@ -886,8 +1008,15 @@
         'personal information; questions are logged to improve responses.'),
     ]));
 
+    /* ⚠ role="group", NOT "radiogroup" — the children are `aria-pressed`
+     * toggle buttons, and a radiogroup promises `role="radio"` + `aria-checked`
+     * children. A screen reader announced a radio group containing toggle
+     * buttons, which is neither. Sky175 fixed exactly this on the public page
+     * (sierra/index.html carries role="group"); COBI kept the old markup for a
+     * week because nothing compared the two. tests/sierra_surfaces_aligned now
+     * asserts it, so the next divergence is caught rather than noticed. */
     audEl = el('div', {
-      className: 'cplchat-audience', id: 'cplchat-audience', role: 'radiogroup',
+      className: 'cplchat-audience', id: 'cplchat-audience', role: 'group',
       'aria-label': 'Tell the assistant who you are so answers fit your needs',
     });
     loadAudience();
@@ -1054,7 +1183,8 @@
   // Pure helpers exposed for the jsdom tests (tests/cpl_chat_audience.test.js,
   // tests/sierra_markdown.test.js).
   window.CPL_CHAT = {
-    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, feedbackPayload: feedbackPayload,
+    AUDIENCES: AUDIENCES, AUD_KEY: AUD_KEY, AUD_OK_KEY: AUD_OK_KEY,
+    feedbackPayload: feedbackPayload,
     escapeHtml: escapeHtml, inlineMd: inlineMd, renderMarkdown: renderMarkdown,
     SIERRA_MARK: SIERRA_MARK, TEST_Q_KEY: TEST_Q_KEY,
     consumeTestQuestion: consumeTestQuestion,
