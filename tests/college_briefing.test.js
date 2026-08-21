@@ -468,28 +468,60 @@ check("askSierra() prefers ask() over prefill()",
   briefingSrc.indexOf("C.ask(question)") < briefingSrc.indexOf("C.prefill(question)"),
   "prefill is the fallback for an older chat module");
 
-// Behavioural: a click on a suggested question reaches ask(), not prefill().
-const wq2 = load(true);
-wq2.cplCollegeShort = S;
+/* ── The suggested questions belong to the ASSISTANT now (Sam, 2026-08-21) ────
+ * "My College users select a pre-seeded question and are not prompted for their
+ * role — confusing." There were TWO clusters with the role picker between them:
+ * the tab's own above the widget, and the widget's generic starters below its
+ * "I'm a…" chips. Clicking one of the upper set with no role chosen produced
+ * "tap who you are above" — pointing at chips that were BELOW it.
+ *
+ * The tab now hands its questions to the widget, which renders ONE cluster
+ * under the role chips. So the seam to guard is the hand-off, not the markup. */
+function briefingWith(chat) {
+  const w = load(true);
+  w.cplCollegeShort = S;
+  w.CPL_CHAT = chat;
+  const M2 = w.CPL_COLLEGE_BRIEFING;
+  M2._state.college = "Example College";
+  M2._state.data = { colleges: ["Example College"], summaryByName: {},
+    briefing: M2._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
+  const r = w.document.getElementById("college-briefing-root");
+  M2.render(r);
+  return { w: w, M: M2, root: r };
+}
+
+let handed = "unset";
+const modern = briefingWith({
+  mountInto: function () {}, prefill: function () { return true; },
+  ask: function () { return true; },
+  setSuggestions: function (list) { handed = list; return true; },
+});
+check("⭐ the tab hands its questions to the assistant rather than printing them",
+  Array.isArray(handed) && handed.length >= 2);
+check("…they are THIS college's questions, computed not fixed",
+  Array.isArray(handed) && handed.every(function (q) { return /Example College/.test(q); }),
+  JSON.stringify(handed));
+check("⭐ …and the tab prints no second cluster of its own",
+  !modern.root.querySelector("button.cb-ask"),
+  "two lists straddling the role picker is the confusion being fixed");
+
+/* ⚠ A CHAT MODULE THAT MOUNTS BUT CANNOT TAKE THE QUESTIONS MUST NOT COST THEM.
+ * Gating the fallback on the MOUNT rather than on the questions actually
+ * landing would take the mounted branch here and show nothing — the silent loss
+ * the fallback exists to prevent, reintroduced by the gate. */
 let asked = null, prefilled = null;
-wq2.CPL_CHAT = {
+const legacy = briefingWith({
   mountInto: function () {}, prefill: function (q) { prefilled = q; return true; },
   ask: function (q) { asked = q; return true; },
-};
-const Q2 = wq2.CPL_COLLEGE_BRIEFING;
-Q2._state.college = "Example College";
-Q2._state.data = { colleges: ["Example College"], summaryByName: {},
-  briefing: Q2._buildBriefing({ config: TWO, college: COLLEGE }, { scenario: "Scenario 1", year: "1" }) };
-const q2Root = wq2.document.getElementById("college-briefing-root");
-Q2.render(q2Root);
-const chip = q2Root.querySelector("button.cb-ask");
-check("a suggested question renders as a clickable chip", !!chip);
+});
+const chip = legacy.root.querySelector("button.cb-ask");
+check("⚠ an older chat module still gets the questions, via the fallback cluster", !!chip);
 if (chip) chip.click();
 check("clicking it SENDS rather than only filling the box",
   asked !== null && prefilled === null,
   "two steps is where a visitor gets lost");
 check("…and it sends the question that was on the chip",
-  asked === chip.getAttribute("data-q"));
+  !!chip && asked === chip.getAttribute("data-q"));
 
 check("Sierra AI: falls back to the deep link when the chat module is absent",
   M._SIERRA_Q_KEY === "cplSierraTestQ.v1"
