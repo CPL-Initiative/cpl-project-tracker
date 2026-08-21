@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-08-20
+updated: 2026-08-21
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -876,3 +876,86 @@ past ~15 windows, split it rather than trimming inside it.
 
 Durable:
 [`methodology-a-test-file-is-a-memory-budget`](kb-notes/methodology-a-test-file-is-a-memory-budget.md).
+
+---
+
+## 2026-08-21 — SkyGlass cont.: the sanity check becomes an explainer
+
+**(a) What Sam asked.** *"Have a look at the CPL implementation funding tab
+Calculation sanity check and make sure it reflects the latest changes I made…
+revise the language to be non-techie and as simple as possible… I'm getting ready
+to shop this to my CO colleagues and I want the sanity check to guide folks
+through the basics of the model. Change the Calculation sanity check label to
+'How this funding model works'."*
+
+⭐ **The rename was the whole brief in miniature.** "Calculation sanity check" is
+an *engineering* artifact — it existed to prove the tab's arithmetic, and it was
+written in the model's own vocabulary (`netCollege`, `sizePct`, `prioTarget`,
+price factors, a live-config calculator with policy dials). A CO colleague opening
+it does not want to verify the engine; they want to understand the policy. Same
+arithmetic, different reader, so it is a different document — not a copy-edit of
+the old one.
+
+**(b) The config had moved, and reading it was the first step.** The live shared
+scenario had changed since the artifact was last published on 2026-08-04, and
+none of it was guessable:
+
+| | 2026-08-04 artifact | live on 2026-08-21 |
+|---|---|---|
+| shares | .50 / .30 / .20 | **.34 / .33 / .33** |
+| funding factors | ½ / 1 / 2 | **1.0 / 1.0 / 1.0** |
+| priority order | source order | **`[2,0,1]` — Sam dragged Access to first** |
+| metrics | headcount-era wording | **all three in CPL FTES** |
+| deadline | 2026-09-01 | **2026-11-01** |
+| Year-2 mirror | did not exist | **on** |
+
+⭐ **Sam had used the reorder** (SkySort's #1268) — `priorityOrder: [2,0,1]` is
+sitting in the saved config. That is the second time this week a question was
+answered by *reading the table* rather than asking (the Admin tab's `cobi_nav`
+was the first).
+
+**(c) Every number is generated, never retyped.** The page's figures come from
+`cpl_funding.js`'s own engine, driven through `tests/lib/cpl_funding_harness.js`
+with the live config injected via `_setConfig` — pool waterfall, all 115 offers,
+the floor count, the worked example. `prototype/build_funding_model_explainer.js`
+regenerates the embedded block, so refreshing after a dial moves is one command
+rather than a re-derivation. ⚠️ **It is a SNAPSHOT and that is deliberate** — a
+colleague opening a link from an email should not see a page mid-edit — so the
+generator's docstring is where the refresh procedure lives.
+
+**(d) One honest number the old page did not surface.** The $150,000 minimum is
+funded from inside the same pot, so a college above the minimum is effectively
+funded at **~$5,060 per FTES rather than the full $5,649.63**, while a small
+college lifted to the minimum reaches its target on far less (Lassen: ~$23,900
+per FTES). That is the floor working as designed, but "everyone is paid the state
+rate" would have been false, so the page says it plainly.
+
+**(e) Verified, not claimed.** All **26 painted contrast pairs pass AA** (computed
+with `prototype/check_contrast.py`'s own math); `prototype/check_funding_explainer.js`
+runs a real Chromium over **nine widths** plus structure and keyboard checks —
+**36 checks, all green**. ⚠️ **Two of those checks were wrong before the page
+was**: the reduced-motion probe `return`ed on the first *cross-origin* stylesheet
+(Google Fonts) and so never looked at the page's own sheet, and the skip-link tab
+test ran with the search box still focused from an earlier step. Both are the
+Sky175 lesson repeating — suspect a new check when it goes red.
+
+**(f) Sam's copy note.** *"Use American English (e.g., check rather than
+cheque)."* Swept the page and this run's new files; `cheque`, `colour` and two
+`towards` were the whole list. Left the two pre-existing `modelling`s in
+`cpl_funding.js` alone rather than churn code this run did not touch.
+
+**(g) Sam's second copy note — and the trap in it.** *"Revise 'the middle
+college's offer for the two years' to 'average funding for two years' and add a
+detail on the min and max funding."* ⚠️ **The tile was showing the MEDIAN
+($167,171); the average is $210,785.** Relabelling it without changing the number
+would have stated a false figure on the page he is about to send to colleagues.
+Shipped as: the tile now carries the true **average**, and a three-up strip below
+it gives **lowest $150,000** (the guaranteed minimum, where 50 of 115 land),
+**typical $167,171** (the median, kept because it is the more honest answer to
+"what would my college get?") and **highest $522,239** (Mt San Antonio). A line
+underneath says why they differ — a handful of very large colleges pull the
+average above what most colleges see. Both figures are emitted by the generator,
+so neither can drift.
+
+**(h) Next.** Sam reads it end to end before sending it out; re-run the generator
+and re-publish whenever the shares, factors or order change.

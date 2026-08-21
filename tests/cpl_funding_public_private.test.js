@@ -75,14 +75,18 @@ function boot(window) {
   check("W2: the public page shows FEWER pool boxes than the curator view",
     pubCards < privCards && pubCards > 0);
 
-  // The calculation sanity-check link is a curator working tool (an
-  // access-controlled Claude artifact) — private only, never on the college page.
+  // The model explainer ("How this funding model works", renamed from
+  // "Calculation sanity check" 2026-08-21) is a team working tool — an
+  // access-controlled Claude artifact, private only, never on the college page.
   const privHtml = privDoc.getElementById("cplFundingMount").innerHTML;
   const pubHtml = pubDoc.getElementById("cplFundingMount").innerHTML;
-  check("W2b: the private view links the calculation sanity-check artifact",
-    /claude\.ai\/code\/artifact/.test(privHtml) && /Calculation sanity check/.test(privHtml));
-  check("W2b: the public college page does NOT expose the sanity-check link",
-    !/claude\.ai\/code\/artifact/.test(pubHtml) && !/Calculation sanity check/.test(pubHtml));
+  check("W2b: the private view links the funding-model explainer",
+    /claude\.ai\/code\/artifact/.test(privHtml) && /How this funding model works/.test(privHtml));
+  check("W2b: the public college page does NOT expose the explainer link",
+    !/claude\.ai\/code\/artifact/.test(pubHtml) && !/How this funding model works/.test(pubHtml));
+  // The label is a link, not a decorated one — Sam's no-decorative-glyphs rule.
+  check("W2b: the explainer link carries no decorative glyph",
+    privHtml.indexOf("🧮") === -1);
 
   // The structural hide is still available and still DOES move money — the two
   // mechanisms must stay distinguishable, or the whole point is lost.
