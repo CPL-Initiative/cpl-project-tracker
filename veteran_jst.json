@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-20T13:17:06.732306+00:00",
+  "scraped_at": "2026-08-21T07:10:31.977499+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27310,
+    "jst": 27324,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -27,12 +27,12 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1569,
+      "jst": 1575,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1448,
+      "jst": 1452,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,7 +42,7 @@
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1606,
+      "jst": 1610,
       "star": true
     },
     "Bakersfield College": {
@@ -157,7 +157,7 @@
     },
     "Mt. San Jacinto College": {
       "vets": 168,
-      "jst": 538,
+      "jst": 537,
       "star": true
     },
     "College of the Canyons": {
@@ -177,7 +177,7 @@
     },
     "Glendale Community College": {
       "vets": 196,
-      "jst": 222,
+      "jst": 223,
       "star": true
     },
     "Clovis Community College": {
