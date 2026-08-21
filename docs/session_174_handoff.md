@@ -11,6 +11,8 @@ related:
   - "[[docs/cpl_funding_lessons]]"
   - "[[docs/kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect]]"
   - "[[docs/session_173_handoff]]"
+superseded: true
+superseded_by: session_178_handoff.md
 ---
 
 # Session 174 handoff

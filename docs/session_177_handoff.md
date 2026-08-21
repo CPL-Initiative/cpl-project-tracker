@@ -10,6 +10,8 @@ related:
   - "[[docs/cpl_funding_lessons]]"
   - "[[docs/kb-notes/methodology-a-test-file-is-a-memory-budget]]"
   - "[[docs/session_176_handoff]]"
+superseded: true
+superseded_by: session_178_handoff.md
 ---
 
 # Session 177 handoff
