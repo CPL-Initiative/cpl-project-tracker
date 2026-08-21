@@ -54,7 +54,7 @@ import os
 import re
 import sys
 import unicodedata
-from collections import defaultdict
+from collections import defaultdict, Counter
 from datetime import date
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -145,6 +145,20 @@ MIS_TO_MAP = {
 # Both post-date the supplied edition (Madera became a college in 2020, formerly
 # the Willow International Center; Calbright launched 2018). Recorded so a future
 # reader sees a MEASURED ABSENCE rather than assuming the join failed.
+# Why a NON-COLLEGE entity carries no MIS code. Stated per kind rather than per
+# row, because the reason is a property of the kind: Appendix A is the CCCCO's
+# list of CCC CREDIT COLLEGES, so nothing else can be in it. Recording the reason
+# is what stops a future reader treating four permanent blanks as a backlog.
+NON_COLLEGE_WHY = {
+    "continuing_education":
+        "A standalone continuing-education institution. It has its own CEO and "
+        "its own MAP landing page, but MIS Appendix A lists CCC credit colleges "
+        "only, so no district/college code exists for it.",
+    "partner":
+        "A partner organisation we host a CPL landing page for, not a California "
+        "Community College. No MIS code exists, and none should be invented.",
+}
+
 KNOWN_ABSENT_FROM_MIS = {
     "Madera College": "not in the supplied Appendix A (searched MADERA, WILLOW); "
                       "State Center CCD holds only Clovis/Fresno City/Reedley there",
@@ -244,12 +258,81 @@ def load_mis():
     return raw, rows, findings, applied
 
 
+def lint_observed(observed, rows):
+    """Names seen in a LIVE table that resolve to no identity here.
+
+    ⭐ THIS IS THE POINT OF THE WHOLE ARTIFACT, not a bonus. A crosswalk that
+    only maps what it was handed cannot tell you what it MISSED, and the misses
+    are where the damage is: every one of these is a string some consumer keys
+    on, joining to nothing.
+
+    Three classes, because they need three different fixes:
+
+      whitespace  — the name matches an identity once stripped. This is not a
+                    naming disagreement, it is a defect in one row's data, and
+                    it silently breaks EXACT-MATCH joins. `college_briefing.js`
+                    builds contactByName keyed on the contacts table's spelling
+                    and looks it up by map_colleges' spelling; a trailing space
+                    means that college shows no contact and nothing errors.
+      credit_twin — "X Credit" / "X Non-Credit" beside a known "X". These may be
+                    two genuine MAP orgs (a credit arm and a noncredit arm) or
+                    one entity spelled two ways. NEVER folded automatically:
+                    a curator decides, because merging two real orgs and
+                    splitting one org are both wrong in ways nothing downstream
+                    can detect.
+      unknown     — everything else. Test rows, private institutions, anything
+                    nobody has claimed.
+    """
+    known = {}
+    for r in rows:
+        known[norm(r["college_name"])] = r["college_name"]
+        for v in r["variants"]:
+            known.setdefault(norm(v), r["college_name"])
+
+    SUFFIXES = (" Credit", " Non-Credit", " Noncredit")
+    findings = []
+    for o in observed:
+        nm = o["name"]
+        if norm(nm) in known and nm == known[norm(nm)]:
+            continue
+        if norm(nm) in known:
+            # Same after normalisation but not byte-identical.
+            kind = "whitespace" if nm.strip() != nm else "spelling"
+            findings.append({"name": nm, "class": kind, "resolves_to": known[norm(nm)],
+                             "sources": o.get("sources"),
+                             "why": "Normalises to a known identity but is not the "
+                                    "same string, so any exact-match join misses it."})
+            continue
+        twin = None
+        for suf in SUFFIXES:
+            if nm.endswith(suf) and norm(nm[: -len(suf)]) in known:
+                twin = known[norm(nm[: -len(suf)])]
+                break
+        if twin:
+            findings.append({"name": nm, "class": "credit_twin", "resolves_to": None,
+                             "sibling": twin, "sources": o.get("sources"),
+                             "has_landing_page": o.get("has_landing_page"),
+                             "why": "A credit/noncredit sibling of a known identity. "
+                                    "NEEDS A CURATOR: two MAP orgs, or one spelled twice?"})
+        else:
+            findings.append({"name": nm, "class": "unknown", "resolves_to": None,
+                             "sources": o.get("sources"),
+                             "has_landing_page": o.get("has_landing_page"),
+                             "why": "In a live table and claimed by no identity."})
+    return findings
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--map-json", default=None,
-                    help="JSON array of {college_id, college_name} exported from "
-                         "Supabase map_colleges (entity_kind='college'). The "
-                         "sandbox cannot reach *.supabase.co, so this is passed in.")
+                    help="JSON array of {college_id, college_name, entity_kind} "
+                         "exported from Supabase map_colleges, EXCLUDING ONLY "
+                         "entity_kind='test'. The sandbox cannot reach "
+                         "*.supabase.co, so this is passed in.")
+    ap.add_argument("--observed-json", default=None,
+                    help="Optional. Every college-name STRING observed in a live "
+                         "table. Used ONLY to lint: a name that resolves to no "
+                         "identity is reported, never invented into one.")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -298,6 +381,7 @@ def main():
     used_mis = set()
     for c in mapc:
         cid, cname = c["college_id"], c["college_name"]
+        kind = c.get("entity_kind") or "college"
         k = norm(cname)
 
         rost = roster_by_map.get(k) or roster_by_short.get(k)
@@ -372,8 +456,27 @@ def main():
             row["mis_match"] = "placeholder"
         if not m and cname in KNOWN_ABSENT_FROM_MIS:
             row["mis_absent_why"] = KNOWN_ABSENT_FROM_MIS[cname]
+
+        # The entity's KIND travels with the identity. Everything downstream
+        # that says "college" has to be able to tell a CCC credit college from a
+        # continuing-education institution from a partner agency, and the only
+        # place that distinction is authoritative is map_colleges itself.
+        row["entity_kind"] = kind
+        if not m and kind != "college":
+            row["mis_absent_why"] = NON_COLLEGE_WHY.get(
+                kind, "Not a CCC credit college, so it is not in MIS Appendix A.")
         out.append(row)
-        if not m and cname not in KNOWN_ABSENT_FROM_MIS and cname not in PLACEHOLDER_CODES:
+        # ⚠ A MISSING MIS CODE IS A FINDING ONLY FOR A COLLEGE.
+        # Sam, 2026-08-21: "I want to include noncredit campuses and any agencies
+        # we host a college landing page for." A partner (Futuro Health) and a
+        # standalone continuing-education institution are not in Appendix A
+        # BY DEFINITION — Appendix A lists CCC credit colleges. Filing them as
+        # "unresolved" would put four permanent entries in a queue that exists
+        # for things a curator can actually fix, and would push `unresolved`
+        # off zero for ever, which is how a real regression gets lost.
+        if (not m and kind == "college"
+                and cname not in KNOWN_ABSENT_FROM_MIS
+                and cname not in PLACEHOLDER_CODES):
             unresolved.append(row)
 
     # Multi vs single college district, DERIVED from the college count rather
@@ -398,6 +501,14 @@ def main():
     orphans = [m for m in mis
                if (m["district_code"], m["college_code"]) not in used_mis]
 
+    # ⚠ LINTED AFTER `variants` IS BUILT, never before — a name that a row already
+    # claims as a variant is resolved, not missing, and linting first would
+    # report every alias in the repo crosswalk as an orphan.
+    lint = []
+    if args.observed_json:
+        obs = json.load(open(args.observed_json, encoding="utf-8"))
+        lint = lint_observed(obs["names"] if isinstance(obs, dict) else obs, out)
+
     stamp = date.today().isoformat()
     outdir = args.out or os.path.join(OUT_DIR, stamp)
     os.makedirs(outdir, exist_ok=True)
@@ -414,7 +525,13 @@ def main():
             "repo_crosswalk": "kb/college_short_names.json",
         },
         "_counts": {
-            "colleges": len(out),
+            "entities": len(out),
+            "by_entity_kind": dict(sorted(Counter(
+                r.get("entity_kind") or "college" for r in out).items())),
+            "names_with_no_identity": len(lint),
+            "lint_by_class": dict(sorted(Counter(f["class"] for f in lint).items())),
+            "colleges": sum(1 for r in out
+                            if (r.get("entity_kind") or "college") == "college"),
             "with_mis_code": sum(1 for r in out if r["mis_college_code"]),
             "curated_bridges": sum(1 for r in out if r["mis_match"] == "curated"),
             "unresolved": len(unresolved),
@@ -433,6 +550,7 @@ def main():
             for k, v in findings.items()
         },
         "_patches_applied": patched,
+        "names_with_no_identity": lint,
         "ceo_colleges_map_does_not_carry": ceo_not_in_map,
         "colleges": out,
         "mis_rows_not_matched_to_a_map_college": orphans,

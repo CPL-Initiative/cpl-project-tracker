@@ -3034,19 +3034,70 @@
       // Deliberately neq.test rather than eq.college: partners (Futuro Health,
       // Launch Apprenticeship) and the two standalone continuing-ed institutions
       // are real entities and stay.
-      jget(REST + "/map_colleges?select=college_id,college_name&entity_kind=neq.test&order=college_name"),
+      // `variants` joined 2026-08-21 — see the contact indexing below. It is
+      // EMPTY on the two partner rows by design, so a consumer must treat an
+      // empty array as "no aliases", never as a failed read.
+      jget(REST + "/map_colleges?select=college_id,college_name,variants&entity_kind=neq.test&order=college_name"),
       jget(REST + "/map_college_credit_summary?select=*"),
       jget(REST + "/map_college_contacts?select=college,primary_contact,primary_contact_email,cpl_coordinator,cpl_coordinator_email,cpl_counselor,cpl_counselor_email,articulation_officer,articulation_officer_email,faculty_lead,faculty_lead_email,certifying_official,certifying_official_email,vpaa,vpaa_email,vpss,vpss_email,landing_page_url,last_updated_on")
     ]).then(function (res) {
       var cfgRow = res[0] && res[0][0], colleges = res[1] || [], summary = res[2] || [], contacts = res[3] || [];
       var nameToId = {}, names = [];
-      colleges.forEach(function (r) { nameToId[r.college_name] = r.college_id; names.push(r.college_name); });
+      /* variant spelling -> the canonical map_colleges name. Built from the
+       * `variants` column landed 2026-08-21 (kb/college_identity/<date>/). The
+       * canonical name NEVER maps through this — a variant must not be able to
+       * shadow a real college's own row. */
+      var variantToCanon = {};
+      colleges.forEach(function (r) {
+        nameToId[r.college_name] = r.college_id;
+        names.push(r.college_name);
+      });
+      /* ⚠ A VARIANT MUST NEVER SHADOW ANOTHER COLLEGE'S CANONICAL NAME.
+       * Built in a SECOND pass, after every canonical name is known — a single
+       * pass cannot know whether a variant it is about to register belongs to a
+       * college it has not read yet.
+       *
+       * The hazard is concrete: "Mission College" is a real college (id 82) and
+       * is also a perfectly plausible variant of "Los Angeles Mission College".
+       * Let the variant win and Mission College's own CPL coordinator is
+       * silently attached to LA Mission — one college's contact answering for
+       * another, which is worse than the blank this whole change exists to fix.
+       * Caught by tests/college_identity_variants.test.js block (3), which was
+       * written before this guard and failed. */
+      colleges.forEach(function (r) {
+        (r.variants || []).forEach(function (v) {
+          if (!v || v === r.college_name) return;
+          if (v in nameToId) return;                 // some college owns this name
+          if (!(v in variantToCanon)) variantToCanon[v] = r.college_name;
+        });
+      });
       var summaryById = {};
       summary.forEach(function (r) { summaryById[r.college_id] = r; });
       var contactByName = {}, contactRowByName = {};
       contacts.forEach(function (r) {
         contactByName[r.college] = r.primary_contact_email || null;
         contactRowByName[r.college] = r;
+        /* ⭐ AND UNDER EVERY VARIANT OF THAT NAME.
+         *
+         * Measured 2026-08-21: TWO contact rows are keyed on a name with a
+         * TRAILING SPACE — "Cypress College " and "San Jose City College ".
+         * Both carry a real primary_contact_email and a named CPL coordinator,
+         * and neither exact-matches map_colleges. So this index was built under
+         * a key nothing ever looked up, and both colleges rendered as having no
+         * contact — silently, because a missing key is indistinguishable from a
+         * college that genuinely has none.
+         *
+         * ⚠ Do NOT "fix" this by trimming the contacts table: it is rebuilt
+         * from MAP on the daily cron, so the space returns tomorrow, and a load
+         * must reproduce its source rather than improve it. The join is what
+         * has to tolerate the variance — which is exactly what map_colleges
+         * .variants is for now that it is populated (118 of 128 rows; the two
+         * trailing-space spellings are IN it, verified). */
+        var canon = variantToCanon[r.college];
+        if (canon && canon !== r.college) {
+          if (!(canon in contactByName)) contactByName[canon] = r.primary_contact_email || null;
+          if (!(canon in contactRowByName)) contactRowByName[canon] = r;
+        }
       });
       var summaryByName = {};
       names.forEach(function (n) { summaryByName[n] = summaryById[nameToId[n]] || null; });

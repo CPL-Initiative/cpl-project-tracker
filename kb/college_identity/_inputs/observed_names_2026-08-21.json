@@ -1,0 +1,1059 @@
+{
+ "_measured": "2026-08-21",
+ "_about": "Every college-name STRING observed in a live Supabase table (chatbox_college_profiles, map_college_contacts). The crosswalk lints against this: a name here that resolves to no identity is a finding, not a curiosity.",
+ "names": [
+  {
+   "name": "Allan Hancock College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "American River College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Antelope Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Bakersfield College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Barstow Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Berkeley City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Butte College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "CA MAP INITIATIVE COLLEGE",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "CabTest College",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Cabrillo College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Calbright College Credit",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Calbright College Non-Credit",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cañada College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cerritos College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cerro Coso Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Chabot College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Chaffey College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Citrus College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "City College of San Francisco",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Clovis Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Coalinga College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Coastline Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of Alameda",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of Marin",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of San Mateo",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of the Canyons",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of the Desert",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of the Redwoods",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of the Sequoias",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "College of the Siskiyous",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Columbia College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Compton College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Contra Costa College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Copper Mountain College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cosumnes River College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Crafton Hills College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cuesta College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cuyamaca College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cypress College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Cypress College ",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "De Anza College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Diablo Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "East Los Angeles College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "El Camino College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Evergreen Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Feather River College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Folsom Lake College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Foothill College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Fresno City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Fullerton College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Futuro Health",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Gavilan College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Glendale Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Golden West College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Grossmont College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Hartnell College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Imperial Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Irvine Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Lake Tahoe Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Laney College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Las PosTest College",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Las Positas College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Lassen College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Launch Apprenticeship",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Launch Apprenticeship Non-Credit",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Lemoore College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Long Beach City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Harbor College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Mission College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Pierce College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Southwest College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Trade Technical College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Angeles Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Los Medanos College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Madera College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Mendocino College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Merced College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Merritt College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "MiraCosta College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Mission College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Modesto Junior College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Monterey Peninsula College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Moorpark College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Moreno Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Mt. San Antonio College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Mt. San Jacinto College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Napa Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Norco College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "North Orange Continuing Education",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "North Orange Continuing Education Credit",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Ohlone College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Orange Coast College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Oxnard College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Palo Verde College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Palomar College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Pasadena City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Pima Medical Institute",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Porterville College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Reedley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Rio Hondo College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Riverside City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Sacramento City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Saddleback College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Sage College",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "San Bernardino Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego College of Continuing Education",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego College of Continuing Education Credit",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego Continuing Education",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego Mesa College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Diego Miramar College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Joaquin Delta College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Jose City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "San Jose City College ",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "SantTest Ana College",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false
+  },
+  {
+   "name": "Santa Ana College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Santa Barbara City College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Santa Monica College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Santa Rosa Junior College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Santiago Canyon College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Shasta College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Sierra College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Skyline College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Solano Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Southwestern College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Taft College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Ventura College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Victor Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "West Los Angeles College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "West Valley College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Woodland Community College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  },
+  {
+   "name": "Yuba College",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true
+  }
+ ]
+}
