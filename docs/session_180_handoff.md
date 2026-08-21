@@ -21,6 +21,35 @@ before assuming your branch is the only work in flight.
 
 ---
 
+## 🚨 CHECK THIS FIRST — Sierra may still be down
+
+At **21:33 UTC on 2026-08-21** the `cpl-chat` smoke run failed **every**
+model-backed mode with:
+
+> `Your credit balance is too low to access the Anthropic API.`
+
+**This is a billing balance, not a code fault.** The function had just deployed
+cleanly from `main`, and every non-AI assertion passed — the RLS gates on
+`map_college_credit_summary`, `map_college_goal2`, `map_college_cr_unit` and
+`map_student_credit`, and the anon `sierra_feedback` RPC. A credit balance cannot
+be caused by a deploy.
+
+Blast radius is **every** surface Sierra is mounted on: the public `sierra/`
+page, the COBI tab, the Fact Sheet drawer, `map.rccd.edu`, the college landing
+pages and the vendor iframe. Only Sam can clear it (Anthropic console → Plans &
+Billing).
+
+**Before assuming it is fixed, dispatch `cpl-chat-smoke.yml` and read the log.**
+
+⚠️ **The durable finding is the monitoring gap.** Nothing alerts on this. The
+smoke workflow runs only on dispatch or push, so the outage was found by a
+session doing a post-deploy check rather than by a monitor — and a student
+hitting the widget gets a failure that reaches nobody. A scheduled smoke run, or
+an alert on a sustained 400 rate, would close it. `cpl_memory`:
+`sierra-down-anthropic-credit-balance`.
+
+---
+
 ## ⭐ RUN THIS BEFORE YOU WRITE ANY CODE
 
 ```bash
