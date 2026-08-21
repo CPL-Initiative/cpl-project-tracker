@@ -404,6 +404,47 @@ else
 fi
 echo
 
+# ── 16. DISTRICT ROSTER (added Session 179, after PR #1280) ──────────────────
+# Sam, 2026-08-21, asking what LACCD should do: Sierra opened with a caveat that
+# she could not enumerate the district — while listing all nine of its colleges.
+# The caveat was obsolete: PR #1278 had landed `district` and `mis_district_code`
+# on map_colleges hours after the comment claiming no district dimension existed.
+#
+# ⭐ THE CASE THAT MATTERS IS PERALTA, NOT LACCD. All nine LACCD colleges are
+# named "Los Angeles", so the old NAME MATCH found them by accident. Measured
+# across the roster, four districts have ZERO colleges named after them:
+#
+#     Los Rios · Peralta · State Center · Kern
+#
+# For those the name matcher returned NOTHING and the caveat was the only honest
+# answer available. So 16b is the real regression guard: Laney and Merritt cannot
+# reach an answer by any route except the district roster.
+#
+# ⚠ THESE ARE PROSE GREPS, and this file already knows what that costs — mode 7
+# is documented as reding intermittently on correct answers for exactly this
+# reason. So the assertions are chosen to be as stable as prose allows: college
+# NAMES that the context supplies verbatim, and one banned LABEL. Deliberately
+# NOT asserted: any particular count, ordering, or phrasing of the caveat, all of
+# which the model may legitimately word many ways.
+run "16a LACCD district question answers from the roster" \
+  '{"query":"What should Los Angeles Community College District do to help its colleges award more CPL?","session_id":"smoke-ci"}'
+answer_must_match -i "pierce" "16a names LA Pierce (one of the nine)"
+answer_must_match -i "valley" "16a names LA Valley (one of the nine)"
+answer_must_match -i "harbor|southwest|trade" "16a names a third member college"
+# The caveat is now WRONG for a district we can enumerate, and Sam reported it as
+# the first thing he noticed. Hedging over a complete answer teaches the reader
+# to discount every hedge — including the ones that are load-bearing.
+answer_must_not_match -i "can.?t enumerate|cannot enumerate|not the (complete|full) (set|roster|list) of colleges in" \
+  "16a ⭐ no 'cannot enumerate a district' caveat"
+# The label fix: the figure counts students with a CPL record, not awards.
+answer_must_not_match -i "students awarded" \
+  "16a ⭐ does not use the 'Students Awarded' label"
+
+run "16b a district whose colleges are NOT named after it (Peralta)" \
+  '{"query":"How are the colleges in the Peralta Community College District doing on CPL?","session_id":"smoke-ci"}'
+answer_must_match -i "laney" "16b ⭐ names Laney — unreachable by name match"
+answer_must_match -i "merritt|alameda|berkeley city" "16b ⭐ names a second Peralta college"
+
 if [ "$fail" -ne 0 ]; then
   echo "SMOKE TEST FAILED"
   exit 1
