@@ -8,9 +8,10 @@
 //      returned row, and clears the composer drafts;
 //  (c) TOGGLE — PATCHes active=!active on id=eq.<id> (deactivate, never
 //      delete — the audit trail);
-//  (d) SENT-CAP honesty — only the newest 10 ACTIVE rules are marked "sent"
-//      (mirroring cpl-chat v25's GUIDANCE_MAX_RULES); older active rules are
-//      marked "not sent"; inactive rows don't consume cap slots;
+//  (d) SENT-CAP honesty — only the newest CAP ACTIVE rules are marked "sent"
+//      (mirroring cpl-chat's GUIDANCE_MAX_RULES); older active rules are
+//      marked "not sent"; inactive rows don't consume cap slots; and the two
+//      KINDS are ranked SEPARATELY, so a display rule never evicts a directive;
 //  (e) XSS — rule + note text render escaped (team-authored, but the write
 //      gate is shared — never trust it as markup);
 //  (f) the committed cpl-chat source (v25) actually fetches sierra_guidance
@@ -113,17 +114,81 @@ function step2() {
       patch && JSON.parse(patch.init.body).active === false && api._state.guidance[0].active === false);
     check("no DELETE is ever issued", w.__fetches.every((f) => (f.init.method || "GET") !== "DELETE"));
 
-    // sent-cap: 12 active + 1 inactive interleaved (newest first)
+    /* sent-cap: (cap + OVER) active rules + 1 inactive interleaved, newest first.
+     * SIZED FROM api.GUIDANCE_SENT_CAP, NOT FROM A LITERAL. These two checks used
+     * to build exactly 12 rows and assert "10 sent / 2 not-sent", which pinned the
+     * cap in a THIRD place — so raising it 10 -> 20 on 2026-08-21 turned them red
+     * for the entirely correct reason that all 12 fixture rows now fit. A fixture
+     * that hardcodes the limit it is testing has to be edited every time the limit
+     * moves, and the edit looks identical whether the new number is right or wrong.
+     * Deriving the fixture from the cap keeps the check about the BEHAVIOUR (rules
+     * past the cap are marked not-sent) at any cap value. */
+    const CAP = api.GUIDANCE_SENT_CAP;
+    const OVER = 2;
     const rows = [];
-    for (let i = 0; i < 12; i++) rows.push({ id: "a" + i, rule: "active rule " + i, active: true, created_at: iso(i) });
+    for (let i = 0; i < CAP + OVER; i++) rows.push({ id: "a" + i, rule: "active rule " + i, active: true, created_at: iso(i) });
     rows.splice(3, 0, { id: "off", rule: "inactive rule", active: false, created_at: iso(2.5) });
     api._state.guidance = rows;
     api.render(root);
     const html = root.innerHTML;
-    check("newest 10 active rules marked sent", (html.match(/Sierra is using this/g) || []).length === 10);
-    check("active rules beyond the cap marked not-sent", (html.match(/not reaching Sierra/g) || []).length === 2);
+    check("the newest CAP active rules are marked sent",
+      (html.match(/Sierra is using this/g) || []).length === CAP);
+    check("active rules beyond the cap marked not-sent",
+      (html.match(/not reaching Sierra/g) || []).length === OVER);
+
     check("inactive rule doesn't consume a cap slot and renders struck",
       /inactive rule/.test(html) && root.querySelectorAll(".sit-rule-off").length === 1);
+
+    /* ── kind: the two budgets are SEPARATE ──────────────────────────────
+     * The failure this guards is specific and silent. Before the kind column,
+     * every active row was ranked in ONE sequence, so adding a display rule
+     * pushed the oldest DIRECTIVE past the cap — and eviction is oldest-first,
+     * which in this table means the standing naming rule, not the reactive one.
+     * Ranking per kind is what makes the edge function's two bounded reads and
+     * the tab's meter describe the same mechanism. */
+    const mixed = [];
+    for (let i = 0; i < CAP; i++) mixed.push({ id: "d" + i, rule: "directive " + i, kind: "directive", active: true, created_at: iso(i + 10) });
+    // Display rules are the NEWEST rows — under one shared ranking they would
+    // take the first slots and evict CAP-many directives.
+    for (let i = 0; i < 3; i++) mixed.push({ id: "p" + i, rule: "display " + i, kind: "display", active: true, created_at: iso(i) });
+    mixed.sort((a, b) => String(b.created_at).localeCompare(String(a.created_at)));
+    api._state.guidance = mixed;
+    api.render(root);
+    const mixedHtml = root.innerHTML;
+    check("display rules do not evict directives — every row still sent",
+      (mixedHtml.match(/Sierra is using this/g) || []).length === CAP + 3
+      && (mixedHtml.match(/not reaching Sierra/g) || []).length === 0);
+    /* ⚠ COUNT THE ROW CHIP, NOT THE STRING. The first cut of this check matched
+     * /Display rule</ and read 4 for 3 display rows: the composer's own
+     * <option>Display rule</option> matches too. A check that also matches a
+     * control that is ALWAYS present cannot go to zero, so it would have passed
+     * against a build that labelled no row at all. Anchor on the chip's closing
+     * </span>, and assert the zero case on a directives-only render — that is
+     * what proves the count is reading rows and not the picker. */
+    const chipCount = (h) => (h.match(/Display rule<\/span>/g) || []).length;
+    check("a display row is labelled as one, in plain words",
+      chipCount(mixedHtml) === 3);
+    api._state.guidance = [{ id: "d0", rule: "directive only", kind: "directive", active: true, created_at: iso(1) }];
+    api.render(root);
+    check("no display chip renders when no row is a display rule",
+      chipCount(root.innerHTML) === 0);
+
+    /* A display rule past ITS OWN cap must still be marked not-sent — the cap is
+     * separate, not absent. Without this, "separate budgets" could be satisfied
+     * by simply not counting display rules at all, which would report a rule as
+     * reaching Sierra when the edge function had already dropped it. */
+    const manyDisplay = [];
+    const DCAP = api.GUIDANCE_DISPLAY_CAP;
+    for (let i = 0; i < DCAP + 2; i++) manyDisplay.push({ id: "p" + i, rule: "display " + i, kind: "display", active: true, created_at: iso(i) });
+    api._state.guidance = manyDisplay;
+    api.render(root);
+    check("display rules past their OWN cap are marked not-sent",
+      (root.innerHTML.match(/not reaching Sierra/g) || []).length === 2);
+
+    // A row written before the column existed has no kind and is a directive.
+    check("a kind-less legacy row reads as a directive",
+      api._guidKind({ id: "x" }) === "directive" && api._guidKind({ kind: null }) === "directive"
+      && api._capFor("directive") === CAP && api._capFor("display") === DCAP);
 
     // XSS
     const evil = api._guidanceRow({ id: "x", rule: "<script>alert(1)</script>", active: true, note: "<img src=x onerror=1>", created_at: iso(0) }, true);
@@ -137,8 +202,8 @@ function step2() {
 // ── (f)+(g) committed sources keep the wire + the security shape ──
 function finish() {
   const fn = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf8");
-  check("cpl-chat defines fetchTeamGuidance with the row + char caps",
-    /fetchTeamGuidance/.test(fn) && /GUIDANCE_MAX_RULES = 10/.test(fn)
+  check("cpl-chat defines fetchTeamGuidance with a row cap and both char caps",
+    /fetchTeamGuidance/.test(fn) && /GUIDANCE_MAX_RULES = \d+/.test(fn)
     && /GUIDANCE_MAX_CHARS = 9000/.test(fn) && /GUIDANCE_MAX_CHARS_PER_RULE = 1500/.test(fn));
   // Asserts guidance is IN the parallel batch, not that it is the LAST member —
   // pinning the tail of the destructuring made this go red when v30 added
@@ -172,6 +237,73 @@ function finish() {
   const tabCap = (tabSrc.match(/GUIDANCE_RULE_MAX\s*=\s*(\d+)/) || [])[1];
   check("schema: rule length cap agrees across SQL, edge function and tab",
         !!sqlCap && sqlCap === fnCap && sqlCap === tabCap);
+
+  /* THE ROW CAP IS A PAIR TOO, AND UNTIL 2026-08-21 ONLY ONE SIDE WAS CHECKED.
+   * The check above pins the rule-LENGTH cap by comparing three files to each
+   * other. The row cap had no such check: this file asserted the literal
+   * `GUIDANCE_MAX_RULES = 10` in the edge function and said nothing at all
+   * about GUIDANCE_SENT_CAP in sierra_training.js. So the two could drift, and
+   * the drift would be INVISIBLE in both directions:
+   *   - function higher than tab  -> the tab under-reports what Sierra receives,
+   *     marking rules "not sent" that are in fact steering production.
+   *   - tab higher than function  -> the tab promises a rule is being sent when
+   *     the function has already evicted it. Worse, because eviction is silent
+   *     and drops the OLDEST rule (the standing naming rule).
+   * Compare the two sources to EACH OTHER, never to a literal — the same
+   * reasoning the length-cap check above is built on. */
+  const fnRows = (fnSrc.match(/GUIDANCE_MAX_RULES\s*=\s*(\d+)/) || [])[1];
+  const tabRows = (tabSrc.match(/GUIDANCE_SENT_CAP\s*=\s*(\d+)/) || [])[1];
+  check("row cap agrees between the edge function and the Training tab",
+        !!fnRows && !!tabRows && fnRows === tabRows);
+
+  /* ⭐ AND THE ROW CAP MUST STAY ABOVE WHAT THE CHARACTER BUDGET CAN CARRY.
+   * Two caps bound the guidance block. One is VISIBLE (the tab headlines the
+   * character budget as a meter); one is INVISIBLE (the row cap silently evicts
+   * the oldest active rule). Whichever is LOWER is the one that actually binds,
+   * so the invisible one must never be the binding one — that is the whole
+   * finding of methodology-a-capped-instruction-list-is-a-zero-sum-budget.md.
+   * At the observed average rule length (~525 chars) the 9,000-char budget
+   * carries ~17 rules, so the row cap has to clear that. Asserted as a floor
+   * against the char budget rather than as a magic number, so raising the char
+   * budget later cannot quietly re-make the row cap the binding one. */
+  const totalChars = Number((fnSrc.match(/GUIDANCE_MAX_CHARS\s*=\s*(\d+)/) || [])[1]);
+  const AVG_RULE_CHARS = 525;   // measured over the 9 active rows, 2026-08-21
+  check("row cap clears what the char budget can carry, so the VISIBLE cap binds",
+        !!totalChars && Number(fnRows) >= Math.ceil(totalChars / AVG_RULE_CHARS));
+
+  /* ── kind: directive vs display ───────────────────────────────────────────
+   * The schema of record must declare the column AND constrain it. Without the
+   * check constraint a typo ("displays") is accepted by Postgres and then
+   * silently belongs to NEITHER budget — the row would be stored, shown in the
+   * tab, and never sent, with nothing anywhere reporting it. */
+  check("schema declares kind with a constraint and a directive default",
+    /kind text not null default 'directive'/.test(sql)
+    && /check \(kind in \('directive', 'display'\)\)/.test(sql));
+
+  /* Each kind is read under ITS OWN limit. One query over both kinds under a
+   * combined limit is docs/kb-notes/methodology-bound-both-sides-of-a-union.md:
+   * whichever kind is newest eats the window. Assert the shape that makes that
+   * impossible — a per-kind filter carrying a per-kind limit. */
+  check("cpl-chat reads each guidance kind under its own bounded limit",
+    /fetchGuidanceKind\(sb, "directive", GUIDANCE_MAX_RULES\)/.test(fnSrc)
+    && /fetchGuidanceKind\(sb, "display", GUIDANCE_MAX_DISPLAY\)/.test(fnSrc)
+    && /\.eq\("kind", kind\)/.test(fnSrc));
+
+  /* ⚠ THE DEPLOY-ORDER FALLBACK IS THE HIGHEST-STAKES LINE IN THIS FILE.
+   * fetchTeamGuidance fails soft, so if the function is deployed against a
+   * database without the kind column, EVERY team instruction stops reaching
+   * Sierra and nothing reports it — the naming rule included. The kind-less
+   * retry is what makes (migration, deploy) order-independent. */
+  check("cpl-chat falls back to a kind-less read so deploy order cannot mute guidance",
+    /directiveRows === null/.test(fnSrc)
+    && /fetchTeamGuidance/.test(fnSrc)
+    && fnSrc.indexOf("directiveRows = data") !== -1);
+
+  /* The display cap is a PAIR as well — same reasoning as the row cap above. */
+  const fnDisplay = (fnSrc.match(/GUIDANCE_MAX_DISPLAY\s*=\s*(\d+)/) || [])[1];
+  const tabDisplay = (tabSrc.match(/GUIDANCE_DISPLAY_CAP\s*=\s*(\d+)/) || [])[1];
+  check("display cap agrees between the edge function and the Training tab",
+        !!fnDisplay && !!tabDisplay && fnDisplay === tabDisplay);
 
   let pass = 0;
   for (const [name, ok] of results) { console.log((ok ? "  ok  " : "FAIL  ") + name); if (ok) pass++; }

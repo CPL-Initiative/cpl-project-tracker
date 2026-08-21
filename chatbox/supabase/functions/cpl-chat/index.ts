@@ -2811,27 +2811,111 @@ async function fetchLiveMetrics(): Promise<any> {
 // 2026-08-12 were silently truncated, one mid-table. These MUST stay equal to
 // GUIDANCE_RULE_MAX / GUIDANCE_TOTAL_MAX in sierra_training.js; raising one
 // side alone just moves the silent truncation to the other side.
-const GUIDANCE_MAX_RULES = 10;
+// RAISED 10 → 20 (2026-08-21). Ten was the un-raised half of the 2026-08-12
+// pair: per-rule went 500 → 1500 and the total 2500 → 9000, and this stayed.
+// At the OLD sizes 10 × 500 matched the old 2500 budget exactly, so the row cap
+// cost nothing; at today's average rule length (~525 chars) 9000 carries ~17.
+// ⭐ 20 is deliberately ABOVE what the char budget can carry, so the VISIBLE
+// cap (the tab's character meter) binds before this INVISIBLE one does —
+// exceeding this cap silently evicts the OLDEST active rule, which is the
+// standing naming/tone/safety rule, not the reactive one.
+// MUST stay == GUIDANCE_SENT_CAP in sierra_training.js.
+const GUIDANCE_MAX_RULES = 20;
 const GUIDANCE_MAX_CHARS = 9000;
 const GUIDANCE_MAX_CHARS_PER_RULE = 1500;
+// Display rules get their OWN row budget. They are structured output shapes
+// (table columns, labels, row order), not prose policy: standing, longer, and
+// changed rarely. Sharing the directive budget meant one display rule evicted
+// the oldest prose rule — see the kind column in
+// chatbox/supabase_sierra_guidance.sql for why they are one table.
+const GUIDANCE_MAX_DISPLAY = 6;
+
+/* Read ONE kind, bounded on its own.
+ *
+ * ⚠ EACH KIND IS FETCHED WITH ITS OWN `.limit()` ON PURPOSE. The obvious
+ * implementation — one query for both kinds under a combined limit, split in
+ * code — is the bug described in
+ * docs/kb-notes/methodology-bound-both-sides-of-a-union.md: a single limit over
+ * a mixed set lets whichever kind happens to be newest consume the whole window,
+ * so six display rules added this afternoon would silently starve every prose
+ * directive. Two bounded reads issued together cost one round trip of latency
+ * and make that structurally impossible.
+ *
+ * Returns null (not []) when the read FAILS, so the caller can tell "this kind
+ * has no rows" from "the read did not work" — an empty array from a failed read
+ * is the false-zero this repo keeps paying for.
+ */
+async function fetchGuidanceKind(sb: any, kind: string, limit: number): Promise<any[] | null> {
+  const { data, error } = await sb
+    .from("sierra_guidance")
+    .select("rule")
+    .eq("active", true)
+    .eq("kind", kind)
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error) return null;
+  return data || [];
+}
+
+// Join rows into a bulleted block under a shared character budget.
+function guidanceBlock(rows: any[], budget: number): string {
+  let out = "";
+  for (const r of rows) {
+    const rule = String(r.rule || "").trim().slice(0, GUIDANCE_MAX_CHARS_PER_RULE);
+    if (!rule) continue;
+    if (out.length + rule.length > budget) break;
+    out += `\n- ${rule}`;
+  }
+  return out;
+}
+
 async function fetchTeamGuidance(sb: any): Promise<string> {
   try {
-    const { data, error } = await sb
-      .from("sierra_guidance")
-      .select("rule")
-      .eq("active", true)
-      .order("created_at", { ascending: false })
-      .limit(GUIDANCE_MAX_RULES);
-    if (error || !data || data.length === 0) return "";
-    let out = "";
-    for (const r of data) {
-      const rule = String(r.rule || "").trim().slice(0, GUIDANCE_MAX_CHARS_PER_RULE);
-      if (!rule) continue;
-      if (out.length + rule.length > GUIDANCE_MAX_CHARS) break;
-      out += `\n- ${rule}`;
+    const [directives, display] = await Promise.all([
+      fetchGuidanceKind(sb, "directive", GUIDANCE_MAX_RULES),
+      fetchGuidanceKind(sb, "display", GUIDANCE_MAX_DISPLAY),
+    ]);
+
+    /* ⚠ FALLBACK FOR THE DEPLOY WINDOW — and it is not theoretical.
+     * fetchTeamGuidance fails SOFT (returns "" on any error), which is right for
+     * a tuning layer but means a schema mismatch takes ALL team guidance offline
+     * with no error anywhere: the naming rule, the tone rules, every thumbs-down
+     * fix. If this function is deployed before the `kind` migration lands — or
+     * the migration is rolled back under a deployed function — both reads above
+     * error on the unknown column and every guidance row silently stops
+     * reaching Sierra.
+     * So when the DIRECTIVE read fails, retry without the kind filter and treat
+     * everything as a directive: exactly the pre-kind behaviour. This makes the
+     * order of (migration, deploy) not matter, which is the only way a two-system
+     * change is safe to ship. */
+    let directiveRows = directives;
+    if (directiveRows === null) {
+      const { data, error } = await sb
+        .from("sierra_guidance")
+        .select("rule")
+        .eq("active", true)
+        .order("created_at", { ascending: false })
+        .limit(GUIDANCE_MAX_RULES);
+      if (error || !data) return "";
+      directiveRows = data;
     }
-    if (!out) return "";
-    return `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins):${out}`;
+
+    const directiveText = guidanceBlock(directiveRows, GUIDANCE_MAX_CHARS);
+    // Display rules are billed against the REMAINING budget, so the two blocks
+    // together can never exceed GUIDANCE_MAX_CHARS. Directives are resolved
+    // first because a display rule shapes a table the answer may not even build.
+    const displayText = display && display.length
+      ? guidanceBlock(display, Math.max(0, GUIDANCE_MAX_CHARS - directiveText.length))
+      : "";
+
+    let out = "";
+    if (directiveText) {
+      out += `\n\nTEAM GUIDANCE (directives added by the CPL/MAP team — follow them; if one conflicts with the general instructions above, the team guidance wins):${directiveText}`;
+    }
+    if (displayText) {
+      out += `\n\nTEAM DISPLAY RULES (how the CPL/MAP team wants structured output shaped — tables, columns, labels, ordering. Apply them whenever you build the output they describe; they do not override a factual instruction above):${displayText}`;
+    }
+    return out;
   } catch {
     return "";
   }
