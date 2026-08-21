@@ -3842,6 +3842,16 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### SkyGlass — the windows were never the test's to free (2026-08-20, Session 176)
+
+**Merged #1272.** Sam handed on SkySort's open call: the 8,192 → 12,288 MB cap raise bought headroom, it did not fix a **2,955-line file holding 61 jsdom windows in one process**.
+⭐ **A BOOTED jsdom window retains ~44 MB and is never released for the life of its process; an UNBOOTED one costs nothing** (15 = 57 MB total, collected). `window.close()`, nulling, block-scoping, an IIFE and awaiting a turn are ALL no-ops. Heap snapshots name the retainers: `(Stack roots)` — the suite's own still-running top-level frame — and, once an IIFE removes that root, `(Micro tasks)`, a promise reaction holding `boot()`'s `onDOMContentLoad` closure on a queue a long synchronous file never drains. **The only event that reclaims a window is the PROCESS ENDING**, which `tests/run.js` already gives every file — so peak memory is set by the window count of the LARGEST FILE and splitting was the only cure. Nine suites: **575 → 575 assertions, peak RSS 8,642 → 2,393 MB**, 462 s → 333 s. Bodies moved verbatim by line range, verified line-for-line. **Budget: ~44 MB per booted window over a ~40 MB floor; past ~15 windows, start a new suite.**
+⚠️ **A loop-shaped probe cannot reproduce a block-shaped file** — booting in a `for` loop and measuring afterwards shows the memory coming back, because the frame returned. Three probes said "no leak" before one shaped like the real file said 925 MB.
+⚠️ **`kb/cpl_todos.json` had been sitting on `main` with raw merge-conflict markers**, committed by #1268 where two parallel Session-173 sessions each rewrote the feed. Invalid JSON → the 📋 button had nothing to read on any tab, and it **fails soft by design**, so it simply did not appear. Underneath it, an older one: the feed writes `for:` and `cpl_todos.js` grouped on `it.who` — `byWho[undefined]` is a valid key, so the panel rendered ONE **"For Undefined"** section and **the suite passed because its fixture used the spelling the code read**. Both guarded now, each guard verified to fail first, plus a repo-wide conflict-marker scan.
+✅ **Sam confirmed in a private window that Curate is hidden from the public** (2026-08-21) — the #1269 mechanism is proven end to end. A reveal that persists in the curator's own browser is BY DESIGN (`?curate=0` forgets it), and is the first thing to rule out when someone reports the button "still showing".
+Durable: [`methodology-a-test-file-is-a-memory-budget`](docs/kb-notes/methodology-a-test-file-is-a-memory-budget.md) · story `docs/cpl_funding_lessons.md` · handoff `docs/session_177_handoff.md`.
+
+
 ### Sky167 — the tab was fine, the key was a ghost (2026-08-17, Session 167)
 
 **Three merges — #1232, #1233, #1234.** Sam: *"all the colleges are coming up blank on this."*

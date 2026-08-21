@@ -142,7 +142,7 @@
 
   /* ⚠ THE PANE SHIPS AN INLINE text-align:center FOR ITS LOADING PLACEHOLDER,
    * and inline out-ranks the CSS this module injects — every capped paragraph
-   * would render centred inside a left-anchored box. Cleared at render.
+   * would render centerd inside a left-anchored box. Cleared at render.
    * (#1274; docs/kb-notes/methodology-an-inline-placeholder-style-outranks-
    * the-css-you-inject.md.) */
   function shedPlaceholder(root) {

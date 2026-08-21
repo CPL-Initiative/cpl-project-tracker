@@ -9,56 +9,56 @@
     "other": 150000
   },
   "summary": {
-    "files": 596,
-    "bytes": 6740547,
+    "files": 601,
+    "bytes": 6779423,
     "over_budget": 4,
-    "handoff_max": 178,
+    "handoff_max": 179,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 133537,
-    "superseded_files": 3,
-    "superseded_bytes": 34789,
+    "always_loaded_bytes": 131711,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 133537,
+        "bytes": 131711,
         "over": 1
       },
       "other": {
         "files": 74,
-        "bytes": 1887409,
+        "bytes": 1890071,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 240750,
+        "bytes": 245248,
         "over": 1
       },
       "lessons": {
         "files": 66,
-        "bytes": 1606741,
+        "bytes": 1617629,
         "over": 1
       },
       "kb_note": {
-        "files": 297,
-        "bytes": 1596984,
+        "files": 301,
+        "bytes": 1612261,
         "over": 0
       },
       "handoff": {
-        "files": 157,
-        "bytes": 1275126,
+        "files": 158,
+        "bytes": 1282503,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 4,
+      "american_spelling": 219,
       "kb_note_dialect": 60,
-      "superseded_handoff": 3,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2105,
-      "bytes": 1170592417,
-      "heavy_bytes": 588517912,
+      "files": 2120,
+      "bytes": 1170857200,
+      "heavy_bytes": 588520418,
       "heavy_share": 0.503,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -113,27 +113,602 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 133537,
+        "bytes": 131711,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 73537,
-        "ratio": 2.23
+        "over_by": 71711,
+        "ratio": 2.2
       },
-      "message": "133,537 B is 2.2× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "131,711 B is 2.2× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 12,
+        "forms": {
+          "minimis": {
+            "n": 1,
+            "prefer": "minimiz"
+          },
+          "analys": {
+            "n": 7,
+            "prefer": "analyz"
+          },
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          },
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          },
+          "whilst": {
+            "n": 1,
+            "prefer": "while"
+          },
+          "amongst": {
+            "n": 1,
+            "prefer": "among"
+          }
+        }
+      },
+      "message": "12 British forms — analys→analyz, minimis→minimiz, programme→program, catalogue→catalog, whilst→while, amongst→among",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "README.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 240750,
+        "bytes": 245248,
         "limit": 40000,
         "lane": "index",
-        "over_by": 200750,
-        "ratio": 6.02
+        "over_by": 205248,
+        "ratio": 6.13
       },
-      "message": "240,750 B is 6.0× the index budget (40,000 B) — candidate for compaction",
+      "message": "245,248 B is 6.1× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 43,
+        "forms": {
+          "behaviour": {
+            "n": 11,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 10,
+            "prefer": "normaliz"
+          },
+          "recognis": {
+            "n": 3,
+            "prefer": "recogniz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "prioritis": {
+            "n": 1,
+            "prefer": "prioritiz"
+          },
+          "minimis": {
+            "n": 4,
+            "prefer": "minimiz"
+          },
+          "summaris": {
+            "n": 3,
+            "prefer": "summariz"
+          },
+          "analys": {
+            "n": 5,
+            "prefer": "analyz"
+          },
+          "centred": {
+            "n": 2,
+            "prefer": "centered"
+          },
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          },
+          "labelled": {
+            "n": 2,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "43 British forms — behaviour→behavior, normalis→normaliz, analys→analyz, minimis→minimiz, recognis→recogniz, summaris→summariz",
+      "path": "docs/INDEX.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 6,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 4,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "6 British forms — labelled→labeled, recognis→recogniz, generalis→generaliz",
+      "path": "docs/admin_tab_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "organis": {
+            "n": 2,
+            "prefer": "organiz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — organis→organiz, analys→analyz",
+      "path": "docs/auth_and_repo_posture_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/ccr_cluster_cleanup_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/cip_crosswalk_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 2,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz, judgement→judgment",
+      "path": "docs/cip_crosswalk_lessons_archive.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/co_platform_strategy.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz, colour→color",
+      "path": "docs/cobi_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/cobi_raci_nudge_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 13,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 3,
+            "prefer": "normaliz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "programme": {
+            "n": 3,
+            "prefer": "program"
+          },
+          "centred": {
+            "n": 3,
+            "prefer": "centered"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "13 British forms — normalis→normaliz, programme→program, centred→centered, behaviour→behavior, judgement→judgment, labelled→labeled",
+      "path": "docs/college_action_page_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "1 British form — programme→program",
+      "path": "docs/college_identity_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 12,
+        "forms": {
+          "normalis": {
+            "n": 6,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "judgement": {
+            "n": 3,
+            "prefer": "judgment"
+          },
+          "labelled": {
+            "n": 2,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "12 British forms — normalis→normaliz, judgement→judgment, labelled→labeled, generalis→generaliz",
+      "path": "docs/common_cr_reference_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 10,
+        "forms": {
+          "normalis": {
+            "n": 8,
+            "prefer": "normaliz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "10 British forms — normalis→normaliz, judgement→judgment, labelled→labeled",
+      "path": "docs/common_cr_reference_scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "forms": {
+          "analys": {
+            "n": 7,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "7 British forms — analys→analyz",
+      "path": "docs/common_subject_code_tab_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 11,
+        "forms": {
+          "behaviour": {
+            "n": 3,
+            "prefer": "behavior"
+          },
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "analys": {
+            "n": 5,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "11 British forms — analys→analyz, behaviour→behavior, favour→favor, normalis→normaliz, generalis→generaliz",
+      "path": "docs/cpl_assistant_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — modelling→modeling, labelled→labeled",
+      "path": "docs/cpl_funding_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 12,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "behaviour": {
+            "n": 4,
+            "prefer": "behavior"
+          },
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          },
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "12 British forms — behaviour→behavior, colour→color, favour→favor, normalis→normaliz, generalis→generaliz, judgement→judgment",
+      "path": "docs/cpl_funding_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          },
+          "enrol": {
+            "n": 1,
+            "prefer": "enroll"
+          }
+        }
+      },
+      "message": "5 British forms — analys→analyz, normalis→normaliz, labelled→labeled, enrol→enroll",
+      "path": "docs/cpl_funding_lessons_archive.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "1 British form — catalogue→catalog",
+      "path": "docs/cpl_pathways_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/cpl_presentations_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "organis": {
+            "n": 1,
+            "prefer": "organiz"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "2 British forms — organis→organiz, summaris→summariz",
+      "path": "docs/delta_college_crosswalk_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "colour": {
+            "n": 2,
+            "prefer": "color"
+          },
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "5 British forms — colour→color, behaviour→behavior, catalogue→catalog, labelled→labeled",
+      "path": "docs/eacr_scope_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/excel_to_supabase_lessons.md"
     },
     {
       "rule": "oversized_doc",
@@ -149,6 +724,124 @@
       "path": "docs/exhibit_canonicalization_lessons.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 2,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "5 British forms — analys→analyz, judgement→judgment, behaviour→behavior",
+      "path": "docs/exhibit_canonicalization_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          },
+          "defence": {
+            "n": 1,
+            "prefer": "defense"
+          }
+        }
+      },
+      "message": "4 British forms — behaviour→behavior, analys→analyz, labelled→labeled, defence→defense",
+      "path": "docs/fact_sheet_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "colour": {
+            "n": 4,
+            "prefer": "color"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "5 British forms — colour→color, analys→analyz",
+      "path": "docs/first_light_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz, labelled→labeled",
+      "path": "docs/futuro_hth_crosswalk_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz",
+      "path": "docs/governance_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/gr_register_lessons.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -159,6 +852,74 @@
       },
       "message": "type via `kb-type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, judgement→judgment",
+      "path": "docs/kb-notes/adr-judgment-in-tables-mechanism-in-code.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/kb-notes/adr-notes-alongside-the-curated-register.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "minimis": {
+            "n": 2,
+            "prefer": "minimiz"
+          }
+        }
+      },
+      "message": "3 British forms — minimis→minimiz, generalis→generaliz",
+      "path": "docs/kb-notes/adr-pull-from-the-source-rather-than-accept-a-push.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -185,6 +946,21 @@
       "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "analys": {
+            "n": 4,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz",
+      "path": "docs/kb-notes/cpl-assistant-ccr-cer-recommendation-scope.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -193,6 +969,21 @@
         ]
       },
       "message": "`date:` (canonical: `created:`)",
+      "path": "docs/kb-notes/cpl-chatbox-integration-scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "analys": {
+            "n": 4,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz",
       "path": "docs/kb-notes/cpl-chatbox-integration-scope.md"
     },
     {
@@ -218,6 +1009,74 @@
       "path": "docs/kb-notes/excel-retirement-final-scope.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          },
+          "defence": {
+            "n": 1,
+            "prefer": "defense"
+          }
+        }
+      },
+      "message": "2 British forms — summaris→summariz, defence→defense",
+      "path": "docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-collapsed-section-must-still-inform.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "3 British forms — normalis→normaliz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-concatenated-haystack-penalises-your-best-record.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -227,6 +1086,138 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-conditional-key-breaks-a-bulk-upsert.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-copy-detector-must-read-the-rendered-string.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "normalis": {
+            "n": 5,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "5 British forms — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-a-copy-with-no-refresh-path-is-a-fossil.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-count-gate-cannot-see-a-reorder.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-a-crosswalks-value-is-the-lint-not-the-mapping.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-failed-read-is-not-an-empty-result.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -240,6 +1231,48 @@
       "path": "docs/kb-notes/methodology-a-filter-needs-a-field.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-filter-needs-a-field.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "normalis": {
+            "n": 3,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "5 British forms — normalis→normaliz, generalis→generaliz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -249,6 +1282,320 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz, catalogue→catalog",
+      "path": "docs/kb-notes/methodology-a-governance-artifact-must-measure-itself.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-a-grouping-key-must-come-from-the-authoritative-set.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "behaviour": {
+            "n": 3,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "3 British forms — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-a-guard-that-fails-on-truth-gets-muted.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "forms": {
+          "behaviour": {
+            "n": 4,
+            "prefer": "behavior"
+          },
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          },
+          "prioritis": {
+            "n": 1,
+            "prefer": "prioritiz"
+          }
+        }
+      },
+      "message": "7 British forms — behaviour→behavior, generalis→generaliz, prioritis→prioritiz",
+      "path": "docs/kb-notes/methodology-a-guardrail-that-only-forbids-disables-the-feature.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "behaviour": {
+            "n": 4,
+            "prefer": "behavior"
+          },
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          }
+        }
+      },
+      "message": "5 British forms — behaviour→behavior, modelling→modeling",
+      "path": "docs/kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — favour→favor, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-live-rename-must-be-order-proof.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-manager-must-show-everything-it-manages.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, summaris→summariz",
+      "path": "docs/kb-notes/methodology-a-negative-result-needs-a-positive-control.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 11,
+        "forms": {
+          "normalis": {
+            "n": 10,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "11 British forms — normalis→normaliz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "prioritis": {
+            "n": 1,
+            "prefer": "prioritiz"
+          }
+        }
+      },
+      "message": "1 British form — prioritis→prioritiz",
+      "path": "docs/kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 6,
+        "forms": {
+          "colour": {
+            "n": 3,
+            "prefer": "color"
+          },
+          "labelled": {
+            "n": 3,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "6 British forms — colour→color, labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "1 British form — summaris→summariz",
+      "path": "docs/kb-notes/methodology-a-percentage-must-not-round-up-into-a-claim.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "1 British form — judgement→judgment",
+      "path": "docs/kb-notes/methodology-a-report-must-read-the-screen-not-recompute-it.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-a-retrieval-miss-and-a-data-gap-look-identical.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 5,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "7 British forms — normalis→normaliz, behaviour→behavior, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-safe-fallback-is-caller-specific.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -262,6 +1609,104 @@
       "path": "docs/kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "organis": {
+            "n": 1,
+            "prefer": "organiz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — organis→organiz, analys→analyz",
+      "path": "docs/kb-notes/methodology-a-settled-ruling-does-not-enforce-itself.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — recognis→recogniz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-a-source-file-that-abbreviates-titles-fakes-an-absence.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "acknowledgement": {
+            "n": 1,
+            "prefer": "acknowledgment"
+          }
+        }
+      },
+      "message": "1 British form — acknowledgement→acknowledgment",
+      "path": "docs/kb-notes/methodology-a-successful-import-is-not-a-correct-one.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          }
+        }
+      },
+      "message": "1 British form — modelling→modeling",
+      "path": "docs/kb-notes/methodology-a-summary-field-can-be-a-retrieval-gate.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -271,6 +1716,97 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-summary-field-is-not-the-record.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          },
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          }
+        }
+      },
+      "message": "2 British forms — summaris→summariz, modelling→modeling",
+      "path": "docs/kb-notes/methodology-a-summary-field-is-not-the-record.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "summaris": {
+            "n": 2,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "2 British forms — summaris→summariz",
+      "path": "docs/kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-test-that-writes-to-the-queue-it-monitors.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "defence": {
+            "n": 1,
+            "prefer": "defense"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz, defence→defense",
+      "path": "docs/kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -284,6 +1820,25 @@
       "path": "docs/kb-notes/methodology-achievement-based-funding-cap-and-earn.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          },
+          "prioritis": {
+            "n": 1,
+            "prefer": "prioritiz"
+          }
+        }
+      },
+      "message": "3 British forms — behaviour→behavior, prioritis→prioritiz",
+      "path": "docs/kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -295,6 +1850,108 @@
       "path": "docs/kb-notes/methodology-alias-map-resolution-semantics.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-an-incentive-teaches-where-the-finish-line-is.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 9,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "centred": {
+            "n": 8,
+            "prefer": "centered"
+          }
+        }
+      },
+      "message": "9 British forms — centred→centered, colour→color",
+      "path": "docs/kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-an-instruction-naming-another-surface-is-an-unenforced-dependency.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-an-opportunity-figure-must-be-what-peers-achieved.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — catalogue→catalog, labelled→labeled",
+      "path": "docs/kb-notes/methodology-an-unadopted-item-is-a-shelf-not-an-absence.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — recognis→recogniz, generalis→generaliz",
+      "path": "docs/kb-notes/methodology-an-unordered-limit-is-a-correctness-bug.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -304,6 +1961,70 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-apply-equals-spec-via-shared-allocator.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, analys→analyz",
+      "path": "docs/kb-notes/methodology-assert-the-contract-not-the-argument-order.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-assert-what-the-reader-sees.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "1 British form — summaris→summariz",
+      "path": "docs/kb-notes/methodology-bound-both-sides-of-a-union.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-bucket-military-and-non-military-credit-recommendations.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -373,6 +2094,59 @@
       "path": "docs/kb-notes/methodology-dark-to-light-recolor-mapping.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/methodology-dark-to-light-recolor-mapping.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "1 British form — judgement→judgment",
+      "path": "docs/kb-notes/methodology-emit-the-threshold-with-the-label-it-prints.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "3 British forms — behaviour→behavior, recognis→recogniz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-falsify-a-claim-when-falsification-is-cheap.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -428,6 +2202,44 @@
       "path": "docs/kb-notes/methodology-invert-an-input-derive-at-the-single-seam.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/methodology-judge-a-detector-by-what-it-prints.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "organis": {
+            "n": 1,
+            "prefer": "organiz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "3 British forms — organis→organiz, judgement→judgment, labelled→labeled",
+      "path": "docs/kb-notes/methodology-lead-with-the-steps-not-the-rationale.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -474,6 +2286,82 @@
       "path": "docs/kb-notes/methodology-migrate-the-display-not-just-the-data.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "minimis": {
+            "n": 5,
+            "prefer": "minimiz"
+          }
+        }
+      },
+      "message": "5 British forms — minimis→minimiz",
+      "path": "docs/kb-notes/methodology-minimisation-happens-twice.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz, generalis→generaliz, judgement→judgment",
+      "path": "docs/kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 10,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 8,
+            "prefer": "normaliz"
+          },
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "10 British forms — normalis→normaliz, behaviour→behavior, programme→program",
+      "path": "docs/kb-notes/methodology-normalise-both-sides-of-a-join.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-omit-dont-zero-an-absent-measure.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -508,6 +2396,21 @@
       "path": "docs/kb-notes/methodology-parent-child-ledger-totals.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "modelling": {
+            "n": 1,
+            "prefer": "modeling"
+          }
+        }
+      },
+      "message": "1 British form — modelling→modeling",
+      "path": "docs/kb-notes/methodology-parent-child-ledger-totals.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -518,6 +2421,21 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-positional-pdf-column-grids.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/kb-notes/methodology-promoted-record-ghosts-in-worklists.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -531,6 +2449,36 @@
       "path": "docs/kb-notes/methodology-provenance-is-a-field.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "1 British form — programme→program",
+      "path": "docs/kb-notes/methodology-publish-the-denominator-with-the-number.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-rebuild-a-flattened-diagram-as-a-built-slide.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -540,6 +2488,36 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-recompute-a-sources-own-summary-statistics.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "1 British form — cancelled→canceled",
+      "path": "docs/kb-notes/methodology-recover-music-bed-by-voice-stem-subtraction.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/kb-notes/methodology-register-is-the-spine-narrative-cites-it.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -554,6 +2532,33 @@
       "path": "docs/kb-notes/methodology-rekey-derived-identity-maps.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "4 British forms — behaviour→behavior, recognis→recogniz, analys→analyz, labelled→labeled",
+      "path": "docs/kb-notes/methodology-retire-a-mode-toggle-by-coexistence.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -563,6 +2568,25 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-route-to-a-determination-they-already-made.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "3 British forms — catalogue→catalog, normalis→normaliz",
+      "path": "docs/kb-notes/methodology-search-the-awarding-body-not-just-the-name.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -611,6 +2635,55 @@
       "path": "docs/kb-notes/methodology-synonym-map-vs-similarity-threshold.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz",
+      "path": "docs/kb-notes/methodology-tell-a-parser-defect-from-a-people-defect.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "organis": {
+            "n": 1,
+            "prefer": "organiz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, organis→organiz",
+      "path": "docs/kb-notes/methodology-the-feedback-queue-already-knew.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "forms": {
+          "behaviour": {
+            "n": 7,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "7 British forms — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-the-measuring-browser-can-hide-the-defect.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -623,6 +2696,66 @@
       "path": "docs/kb-notes/methodology-title-similarity-merge-guards.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/methodology-two-signals-for-a-judgment-proposal.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "judgement": {
+            "n": 2,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "2 British forms — judgement→judgment",
+      "path": "docs/kb-notes/methodology-use-the-identity-key-before-you-score-strings.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "summaris": {
+            "n": 2,
+            "prefer": "summariz"
+          }
+        }
+      },
+      "message": "2 British forms — summaris→summariz",
+      "path": "docs/kb-notes/methodology-validate-a-code-column-by-its-structural-invariant.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-verify-with-the-instrument-that-can-see-the-defect.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -632,6 +2765,21 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/methodology-visual-pdf-read-for-layout-encoded-facts.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          }
+        }
+      },
+      "message": "1 British form — colour→color",
+      "path": "docs/kb-notes/methodology-warm-a-tinny-voiceover-measured-eq.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -656,6 +2804,21 @@
       "path": "docs/kb-notes/over-merge-remint-scope.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "minimis": {
+            "n": 1,
+            "prefer": "minimiz"
+          }
+        }
+      },
+      "message": "1 British form — minimis→minimiz",
+      "path": "docs/kb-notes/over-merge-remint-scope.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -665,6 +2828,78 @@
       },
       "message": "`date:` (canonical: `created:`)",
       "path": "docs/kb-notes/phase-2-projects-migration-scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/phase-2-projects-migration-scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
+          "acknowledgement": {
+            "n": 1,
+            "prefer": "acknowledgment"
+          }
+        }
+      },
+      "message": "4 British forms — favour→favor, normalis→normaliz, recognis→recogniz, acknowledgement→acknowledgment",
+      "path": "docs/kb-notes/playbook-access-export-to-supabase.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/playbook-deploy-an-edge-function-from-the-runner.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "cancelled": {
+            "n": 2,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "2 British forms — cancelled→canceled",
+      "path": "docs/kb-notes/playbook-diagnose-a-starved-actions-runner.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -690,6 +2925,21 @@
       "path": "docs/kb-notes/playbook-gated-bulk-autocuration.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/kb-notes/playbook-keep-build-artifacts-out-of-the-vault.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -698,6 +2948,21 @@
         ]
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
+      "path": "docs/kb-notes/playbook-nc-integration-run.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
       "path": "docs/kb-notes/playbook-nc-integration-run.md"
     },
     {
@@ -725,6 +2990,21 @@
       "path": "docs/kb-notes/playbook-trail-crew-method-magic-audit.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "analys": {
+            "n": 4,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz",
+      "path": "docs/kb-notes/playbook-write-only-table-private-vault-digest.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -735,6 +3015,36 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/reference-adt-acceptance-rules.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/reference-ap-credit-ge-area-canonicalization.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "1 British form — programme→program",
+      "path": "docs/kb-notes/reference-batch-uploaded-transcribed-credit.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -761,6 +3071,21 @@
       "path": "docs/kb-notes/reference-cdcp-and-the-cip-count-rule.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/kb-notes/reference-codebase-audit-2026-06-01.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -773,6 +3098,40 @@
       "path": "docs/kb-notes/reference-course-level-convention.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "recognis": {
+            "n": 2,
+            "prefer": "recogniz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "3 British forms — recognis→recogniz, labelled→labeled",
+      "path": "docs/kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/reference-daily-dashboard-data-pipeline.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -783,6 +3142,55 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`); `date:` (canonical: `created:`)",
       "path": "docs/kb-notes/reference-issuing-agency-authority-sources.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz, recognis→recogniz",
+      "path": "docs/kb-notes/reference-postgres-fts-pitfalls-for-credential-titles.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/kb-notes/reference-public-domain-art-sourcing.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -832,60 +3240,1548 @@
       "path": "docs/kb-notes/tmc-co-review-scope.md"
     },
     {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 9,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          },
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "9 British forms — normalis→normaliz, generalis→generaliz, catalogue→catalog, behaviour→behavior, summaris→summariz, labelled→labeled",
+      "path": "docs/local_course_alignment_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 6,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "prioritis": {
+            "n": 1,
+            "prefer": "prioritiz"
+          },
+          "judgement": {
+            "n": 2,
+            "prefer": "judgment"
+          },
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "6 British forms — judgement→judgment, normalis→normaliz, prioritis→prioritiz, catalogue→catalog, labelled→labeled",
+      "path": "docs/map_cleanup_worklist.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "minimis": {
+            "n": 3,
+            "prefer": "minimiz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "5 British forms — minimis→minimiz, behaviour→behavior, analys→analyz",
+      "path": "docs/map_custom_report_load.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 15,
+        "forms": {
+          "behaviour": {
+            "n": 4,
+            "prefer": "behavior"
+          },
+          "minimis": {
+            "n": 4,
+            "prefer": "minimiz"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "catalogue": {
+            "n": 3,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "15 British forms — behaviour→behavior, minimis→minimiz, catalogue→catalog, analys→analyz, summaris→summariz, judgement→judgment",
+      "path": "docs/map_custom_reports_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "organis": {
+            "n": 1,
+            "prefer": "organiz"
+          }
+        }
+      },
+      "message": "1 British form — organis→organiz",
+      "path": "docs/map_dataset_spec_for_malone.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, normalis→normaliz",
+      "path": "docs/map_dataset_sql_for_malone.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, normalis→normaliz",
+      "path": "docs/map_nightly_feed_spec.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          },
+          "defence": {
+            "n": 1,
+            "prefer": "defense"
+          }
+        }
+      },
+      "message": "3 British forms — catalogue→catalog, defence→defense",
+      "path": "docs/map_student_credit_reload.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 6,
+        "forms": {
+          "normalis": {
+            "n": 3,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "6 British forms — normalis→normaliz, generalis→generaliz, labelled→labeled",
+      "path": "docs/map_users_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/military_cr_reference_scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/noncredit_cpl_thinking.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          }
+        }
+      },
+      "message": "1 British form — favour→favor",
+      "path": "docs/partner_crosswalk_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/project_lifecycle_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "4 British forms — behaviour→behavior, judgement→judgment, labelled→labeled",
+      "path": "docs/public_pages_a11y_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "minimis": {
+            "n": 1,
+            "prefer": "minimiz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — favour→favor, minimis→minimiz, analys→analyz",
+      "path": "docs/public_private_repo_split_scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/reference/kb_build_status.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 9,
+        "forms": {
+          "analys": {
+            "n": 9,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "9 British forms — analys→analyz",
+      "path": "docs/reference/pipeline_reference.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/reference/troubleshooting.md"
+    },
+    {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 452101,
+        "bytes": 454763,
         "limit": 150000,
         "lane": "other",
-        "over_by": 302101,
-        "ratio": 3.01
+        "over_by": 304763,
+        "ratio": 3.03
       },
-      "message": "452,101 B is 3.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "454,763 B is 3.0× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
+      "rule": "american_spelling",
+      "fixable": false,
       "detail": {
-        "session": 174,
-        "authoritative": 178,
-        "has_frontmatter": true
+        "total": 39,
+        "forms": {
+          "colour": {
+            "n": 3,
+            "prefer": "color"
+          },
+          "behaviour": {
+            "n": 6,
+            "prefer": "behavior"
+          },
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          },
+          "normalis": {
+            "n": 3,
+            "prefer": "normaliz"
+          },
+          "summaris": {
+            "n": 2,
+            "prefer": "summariz"
+          },
+          "analys": {
+            "n": 11,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "catalogue": {
+            "n": 4,
+            "prefer": "catalog"
+          },
+          "labelled": {
+            "n": 7,
+            "prefer": "labeled"
+          },
+          "enrol": {
+            "n": 1,
+            "prefer": "enroll"
+          }
+        }
       },
-      "message": "handoff 174 is below the authoritative 178 but is not stamped `superseded: true`",
+      "message": "39 British forms — analys→analyz, labelled→labeled, behaviour→behavior, catalogue→catalog, colour→color, normalis→normaliz",
+      "path": "docs/roadmap_archive.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_10_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/session_121_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior",
+      "path": "docs/session_123_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "favour": {
+            "n": 1,
+            "prefer": "favor"
+          }
+        }
+      },
+      "message": "1 British form — favour→favor",
+      "path": "docs/session_124_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/session_125_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "1 British form — catalogue→catalog",
+      "path": "docs/session_126_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "1 British form — catalogue→catalog",
+      "path": "docs/session_127_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz, analys→analyz",
+      "path": "docs/session_128_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/session_130_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/session_133_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz, analys→analyz",
+      "path": "docs/session_134_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "2 British forms — catalogue→catalog",
+      "path": "docs/session_135_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "1 British form — catalogue→catalog",
+      "path": "docs/session_139_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 2,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior",
+      "path": "docs/session_142_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "normalis": {
+            "n": 3,
+            "prefer": "normaliz"
+          },
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "4 British forms — normalis→normaliz, programme→program",
+      "path": "docs/session_144_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_145_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          }
+        }
+      },
+      "message": "1 British form — programme→program",
+      "path": "docs/session_146_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "catalogue": {
+            "n": 1,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "3 British forms — behaviour→behavior, normalis→normaliz, catalogue→catalog",
+      "path": "docs/session_150_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/session_151_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — judgement→judgment, labelled→labeled",
+      "path": "docs/session_152_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          },
+          "judgement": {
+            "n": 2,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "4 British forms — normalis→normaliz, judgement→judgment",
+      "path": "docs/session_153_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "1 British form — normalis→normaliz",
+      "path": "docs/session_154_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          }
+        }
+      },
+      "message": "2 British forms — normalis→normaliz",
+      "path": "docs/session_156_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/session_157_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — behaviour→behavior, labelled→labeled",
+      "path": "docs/session_159_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/session_161_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "1 British form — behaviour→behavior",
+      "path": "docs/session_163_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          }
+        }
+      },
+      "message": "1 British form — colour→color",
+      "path": "docs/session_164_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "minimis": {
+            "n": 1,
+            "prefer": "minimiz"
+          }
+        }
+      },
+      "message": "1 British form — minimis→minimiz",
+      "path": "docs/session_170_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "minimis": {
+            "n": 1,
+            "prefer": "minimiz"
+          }
+        }
+      },
+      "message": "1 British form — minimis→minimiz",
+      "path": "docs/session_171_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 6,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "minimis": {
+            "n": 3,
+            "prefer": "minimiz"
+          },
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "6 British forms — minimis→minimiz, analys→analyz, colour→color",
+      "path": "docs/session_172_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
       "path": "docs/session_174_handoff.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
+      "rule": "american_spelling",
+      "fixable": false,
       "detail": {
-        "session": 176,
-        "authoritative": 178,
-        "has_frontmatter": true
+        "total": 1,
+        "forms": {
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
       },
-      "message": "handoff 176 is below the authoritative 178 but is not stamped `superseded: true`",
+      "message": "1 British form — judgement→judgment",
       "path": "docs/session_176_handoff.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
+      "rule": "american_spelling",
+      "fixable": false,
       "detail": {
-        "session": 177,
-        "authoritative": 178,
-        "has_frontmatter": true
+        "total": 2,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
       },
-      "message": "handoff 177 is below the authoritative 178 but is not stamped `superseded: true`",
+      "message": "2 British forms — colour→color, judgement→judgment",
       "path": "docs/session_177_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          },
+          "centred": {
+            "n": 2,
+            "prefer": "centered"
+          }
+        }
+      },
+      "message": "3 British forms — centred→centered, colour→color",
+      "path": "docs/session_178_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_17_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_18_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_26_audit_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/session_27_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_41_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_45_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_49_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "2 British forms — analys→analyz",
+      "path": "docs/session_53_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_65_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "1 British form — judgement→judgment",
+      "path": "docs/session_68_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_6_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_70_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_87_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_96_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/session_97_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "normalis": {
+            "n": 1,
+            "prefer": "normaliz"
+          },
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "4 British forms — catalogue→catalog, behaviour→behavior, normalis→normaliz",
+      "path": "docs/sierra_credential_naming_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 7,
+        "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          },
+          "summaris": {
+            "n": 1,
+            "prefer": "summariz"
+          },
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          },
+          "catalogue": {
+            "n": 2,
+            "prefer": "catalog"
+          }
+        }
+      },
+      "message": "7 British forms — generalis→generaliz, catalogue→catalog, behaviour→behavior, summaris→summariz, analys→analyz",
+      "path": "docs/sierra_credit_recs_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/sierra_integration_analysis.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 5,
+        "forms": {
+          "analys": {
+            "n": 5,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "5 British forms — analys→analyz",
+      "path": "docs/sierra_integration_guide.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/sierra_maturity_roadmap.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "normalis": {
+            "n": 2,
+            "prefer": "normaliz"
+          },
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "4 British forms — normalis→normaliz, generalis→generaliz",
+      "path": "docs/sierra_rules_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "colour": {
+            "n": 1,
+            "prefer": "color"
+          }
+        }
+      },
+      "message": "1 British form — colour→color",
+      "path": "docs/sierra_surface_alignment_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 4,
+        "forms": {
+          "analys": {
+            "n": 4,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "4 British forms — analys→analyz",
+      "path": "docs/sierra_technical_reference.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "generalis": {
+            "n": 1,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "1 British form — generalis→generaliz",
+      "path": "docs/sierra_training_tab_scope.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 3,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz",
+      "path": "docs/sierra_vendor_lane_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/statewide_kpi_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/student_detail_load_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "cancelled": {
+            "n": 2,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "2 British forms — cancelled→canceled",
+      "path": "docs/subj4_canonicalization_remint_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "generalis": {
+            "n": 2,
+            "prefer": "generaliz"
+          }
+        }
+      },
+      "message": "2 British forms — generalis→generaliz",
+      "path": "docs/team_phrase_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "analys": {
+            "n": 2,
+            "prefer": "analyz"
+          },
+          "judgement": {
+            "n": 1,
+            "prefer": "judgment"
+          }
+        }
+      },
+      "message": "3 British forms — analys→analyz, judgement→judgment",
+      "path": "docs/tmc_builder_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/top_dethroning_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "analys": {
+            "n": 1,
+            "prefer": "analyz"
+          }
+        }
+      },
+      "message": "1 British form — analys→analyz",
+      "path": "docs/top_dethroning_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          }
+        }
+      },
+      "message": "1 British form — recognis→recogniz",
+      "path": "docs/working_with_claude_code.md"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 79768585,
+        "bytes": 79771091,
         "kind": "dir"
       },
-      "message": "directory totals 79,768,585 B inside the vault"
+      "message": "directory totals 79,771,091 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
