@@ -215,10 +215,30 @@
     h += '<p class="cid-note">'
       + (state.contacts
           ? "Contact names checked <b>live</b>. "
-          : "<b>Contact names not read</b> — map_college_contacts needs a reviewer sign-in or the team phrase, so that half is from the snapshot. ")
+          : "<b>Contact names not read</b> — map_college_contacts is gated on a reviewer sign-in or the team phrase, "
+            + "so the live half of this lint is missing. ")
       + (s ? "Names seen only in Sierra's corpus come from the snapshot generated <b>" + esc(s.generated)
              + "</b>: chatbox_college_profiles is service-role only, so no browser can read it." : "")
       + "</p>";
+    /* ⭐ AND OFFER THE WAY IN, don't just name the obstacle.
+     *
+     * tests/team_phrase_affordance.test.js failed this tab on exactly this:
+     * "every phrase-gated tab offers an input or names the header — MISSING:
+     * college-identity". The rule is the repo's own `hiding-a-control-also-
+     * hides-the-way-in` — a page that reads a gated table and reports the gate
+     * in prose has told the visitor what is wrong and not how to fix it. The
+     * READ-gated case is the severe one: without the phrase this half is not
+     * read-only, it is EMPTY.
+     *
+     * The SHARED unlockRow, never a hand-rolled input: its default onUnlocked
+     * re-dispatches cpl-tab-activated for the live tab, which this module
+     * already listens for, so unlocking re-renders in place. A banner that
+     * unlocks and leaves the page looking locked reads as a rejected phrase.
+     *
+     * ⚠ Inline, NOT lockedBanner(). This tab is not locked — map_colleges is
+     * public-read and the roster below renders for anyone. Only the contact
+     * lint is missing, so the unlock belongs beside the gap it fills. */
+    if (!state.contacts) h += '<p id="cid-unlock" class="cid-note"></p>';
     if (!findings.length) {
       h += '<p class="cid-note">Nothing outstanding.</p>';
     }
@@ -267,6 +287,23 @@
     }
 
     root.innerHTML = h;
+
+    var slot = root.querySelector("#cid-unlock");
+    if (slot && window.CPL_TEAM_PHRASE && typeof window.CPL_TEAM_PHRASE.unlockRow === "function") {
+      try {
+        slot.appendChild(window.CPL_TEAM_PHRASE.unlockRow({
+          blurb: "Team phrase to check contact names live:",
+          label: "Unlock",
+        }));
+      } catch (e) {
+        // ⚠ Fall back to POINTING at the control rather than losing it. A
+        // throw here would leave the visitor with the obstacle and no route.
+        slot.textContent = "The lock button in the header does the same thing, from any tab.";
+      }
+    } else if (slot) {
+      slot.textContent = "The lock button in the header does the same thing, from any tab.";
+    }
+
     var qEl = root.querySelector("#cid-q");
     if (qEl) {
       qEl.addEventListener("input", function () {

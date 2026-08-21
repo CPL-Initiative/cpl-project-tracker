@@ -115,6 +115,16 @@ block("(3)", function () {
   check("(3) the gated contacts read is NAMED when it did not happen",
     /Contact names not read/.test(txt),
     "a lint that quietly skips half its input is worse than one that refuses to run");
+  /* ⭐ AND THE WAY IN IS OFFERED, not just the obstacle named.
+   * tests/team_phrase_affordance.test.js failed this tab on exactly this, and
+   * the READ-gated case is the severe one: without the phrase that half is not
+   * read-only, it is EMPTY. With team_phrase.js absent (as here) the module
+   * must still POINT at the header control rather than render nothing. */
+  const slot = root.querySelector("#cid-unlock");
+  check("(3) ⭐ a missing gated read offers an unlock slot", !!slot);
+  check("(3) …and with no team_phrase.js present it still points at the header",
+    slot && /lock button in the header/i.test(slot.textContent),
+    "losing the shared helper must not lose the route");
 
   // Now a successful read.
   M._state.live = COLLEGES; M._state.contacts = ["Cypress College "]; M._state.error = null;
@@ -127,6 +137,9 @@ block("(3)", function () {
   check("(3) contact names read live are labelled live", /checked live/i.test(t2));
   check("(3) a partner's missing MIS code shows its REASON, not a blank",
     /not a California Community College/.test(t2));
+  check("(3) ⚠ …and the unlock slot is gone once the read succeeded",
+    !root.querySelector("#cid-unlock"),
+    "an affordance for a problem you no longer have is noise");
 });
 
 // ── (4) ⭐ The tab checks its own snapshot ──────────────────────────────────
