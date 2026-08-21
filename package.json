@@ -3,7 +3,8 @@
   "private": true,
   "description": "Consumer (jsdom) regression tests for the CPL dashboard's static front-end JS (credential_reference.js, etc.). Run: npm install && npm test.",
   "scripts": {
-    "test": "node tests/run.js"
+    "test": "node tests/run.js",
+    "test:floor": "node tests/run.js --update-floor"
   },
   "devDependencies": {
     "jsdom": "^29.1.1"

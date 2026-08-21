@@ -454,11 +454,25 @@ def rule_kb_note_dialect(entry):
 # token name is not a spelling, so this scans documents, never source. The list
 # is the forms actually observed drifting here — widening it invites false
 # positives on quoted external titles, which this corpus is full of.
+# An entry is a regex, not a literal, when it carries regex syntax.
+_IS_PATTERN = re.compile(r"[()\[\]|?*+\\]")
+
 BRITISH_FORMS = [
     ("colour", "color"), ("behaviour", "behavior"), ("favour", "favor"),
     ("normalis", "normaliz"), ("organis", "organiz"), ("recognis", "recogniz"),
     ("generalis", "generaliz"), ("prioritis", "prioritiz"), ("minimis", "minimiz"),
-    ("summaris", "summariz"), ("categoris", "categoriz"), ("analys", "analyz"),
+    ("summaris", "summariz"), ("categoris", "categoriz"),
+    # ⚠ NOT the bare stem "analys", and not a plain substring either.
+    # `analysis`, `analyses`, `analyst` and `analytical` are all correct
+    # AMERICAN spellings, so the stem flagged **430 correct words out of 433
+    # matches** across this corpus — measured 2026-08-21, the day after the rule
+    # shipped. A guard that fires on truth 99% of the time gets muted within a
+    # week (methodology-a-guard-that-fails-on-truth-gets-muted).
+    #
+    # Only the VERB inflects British: analyse / analysed / analysing. The
+    # lookahead pins those three and nothing else — in particular `analyses`,
+    # which is the plural of `analysis` far more often than it is a verb here.
+    (r"analys(?=e\b|ed\b|ing\b)", "analyz"),
     ("judgement", "judgment"), ("acknowledgement", "acknowledgment"),
     ("programme", "program"), ("catalogue", "catalog"), ("centred", "centered"),
     ("modelling", "modeling"), ("cancelled", "canceled"), ("labelled", "labeled"),
@@ -480,9 +494,18 @@ def rule_american_spelling(entry):
     low = text.lower()
     hits = {}
     for brit, amer in BRITISH_FORMS:
-        n = low.count(brit)
+        # Plain stems stay a substring count (cheap, and "normalis" is meant to
+        # catch normalise/normalising/normalisation alike). An entry carrying
+        # regex syntax is compiled instead, so a form can exclude a lookalike
+        # that is correct American — see the analys() entry above.
+        if _IS_PATTERN.search(brit):
+            n = len(re.findall(brit, low))
+            label = re.sub(r"\(\?[=!][^)]*\)", "", brit)
+        else:
+            n = low.count(brit)
+            label = brit
         if n:
-            hits[brit.strip()] = {"n": n, "prefer": amer.strip()}
+            hits[label.strip()] = {"n": n, "prefer": amer.strip()}
     if not hits:
         return None
     total = sum(h["n"] for h in hits.values())

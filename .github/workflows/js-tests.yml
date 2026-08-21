@@ -32,3 +32,11 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
+      # repo already decided about the files I am about to touch?", replacing
+      # recall across 299 KB notes. It shipped with two silent-omission bugs
+      # (the last artifact of every note dropped — 235 entries; and --changed
+      # missing untracked files), so it carries its own guard. Pure-stdlib
+      # python; same non-required check.
+      - name: Doctrine lookup lint (kb/doctrine.py)
+        run: python3 tests/doctrine_lookup_test.py

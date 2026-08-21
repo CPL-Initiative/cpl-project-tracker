@@ -243,3 +243,103 @@ identifier in the table every other system treats as authoritative. Reported as
 1. **MAP supplies the two ids** — then the crosswalk folds them with no code change.
 2. Sam looks at the tab in a browser (no session can — egress-blocked).
 3. Open: district as columns (done) vs its own `districts` table.
+
+---
+
+## 2026-08-21 — SkyApply: what the crosswalk is for, and a chip for the sandbox
+
+### Sam's question: are we using location IDs rather than text strings?
+
+Measured, and he is right that we mostly are not:
+
+| | Tables | Which |
+|---|---:|---|
+| Carry `college_id` | **13** | Everything MAP hands us — `map_student_credit`, `map_college_cr_unit`, the published aggregates, `map_colleges`, `map_college_users`, the worklist, staging |
+| Text-keyed only | **18** | Everything **we** build — all four `chatbox_*`, `coci_*`, `college_geo`, `cpl_funding_*`, `map_college_contacts`, `map_contact_*`, `tmc_*` |
+
+⭐ **The split follows provenance exactly.** MAP gives us an authoritative id and
+every table we build downstream drops it and re-keys on the display string. That
+is the whole mechanism behind the Cypress defect: `map_college_contacts` has no
+`college_id`, so a trailing space was all that stood between a real coordinator
+and being invisible.
+
+Current exposure — distinct college strings that fail an exact join:
+
+| Table | Names | Exact | **Only via `variants`** | Unresolved |
+|---|---:|---:|---:|---:|
+| `map_college_contacts` | 123 | 118 | **4** | 1 |
+| `chatbox_college_profiles` | 130 | 123 | 2 | 5 |
+| `chatbox_college_courses` | 120 | 117 | 2 | 1 |
+| `college_geo` | 120 | 117 | 2 | 1 |
+
+**Four colleges' CPL contacts are reachable today only because `variants` was
+populated last week.** Sam saw two of them.
+
+⚠️ **But `college_id` cannot be the universal key, and the reason matters.** The
+entities with no id are the ones he ruled into scope: `Calbright College Credit`
+and `Launch Apprenticeship Non-Credit`, both `awaiting_map_id`. An id-only join
+drops them silently and permanently; name+variants at least *reports* them. Two
+more (`Pima Medical Institute`, `Sage College`) are not CCC institutions and
+never will have one.
+
+**The improvement is not switching keys — it is resolving ONCE at load, where a
+miss is visible, instead of at every read, where it is silent.**
+
+### The temp-code question: measured "no"
+
+Sam asked whether the cron should mint a temporary location code for an org
+arriving without one. Measured: **116 of 116 colleges have an MIS code and every
+row has a MAP `college_id`**; the only blanks are 2 partners (permanent, reason
+recorded) and 8 test orgs. Nothing arrives code-less.
+
+⚠️ **The failure he was imagining is real but shaped differently: it shows up as
+NO ROW AT ALL.** `Calbright College Credit`, `Launch Apprenticeship Non-Credit`
+and `Las PosTest College` are present in Sierra's corpus, the courses table and
+`college_geo`, and absent from `map_colleges` — so they do not fail a join
+loudly, they fall out of it.
+
+⭐ **Record the entity, never invent the identifier.** A synthetic id that later
+gets replaced is a re-key project this repo has paid for twice: `UC-CUR-AUTO*`
+needed a whole Z-scheme re-mint with a purpose-built Supabase re-key workflow,
+and four earlier re-mints severed **53%** of the official-ID fold evidence by
+missing one step. And for a partner a "temporary" code is never replaced,
+because none is coming — it just starts looking authoritative.
+
+### The suppressed chip
+
+Sam: *"The college/district tab should probably have a chip on rows that are
+suppressed (e.g., CA MAP Initiative) — which is our sandbox and had slipped into
+the daily report from MAP."*
+
+⚠️ **The name is not the tell**, which is the whole reason a chip earns its place.
+Four of the eight sandbox rows announce themselves (`Testing College`,
+`CabTest College`), but **`NORCO College - Syllabus Manager`** and
+**`CA MAP INITIATIVE COLLEGE`** read like real entities. A reader scanning the
+roster had no way to know which rows every consumer throws away.
+
+- The chip says **why**, not what: *"a MAP sandbox organization… no figure on any
+  other tab counts it"*, not `entity_kind = test`.
+- It reuses the existing `.cid-tag` component and `--mustard-text`, the palette's
+  documented caution-text grade — **5.15:1 on white, 4.73:1 on the zebra row**,
+  both AA. ⚠️ The first draft reached for `--amber`, which does not exist;
+  inventing a palette entry is what the design spec forbids.
+- Both `entity_kind` and `is_test` are consulted. They agree on all 8 rows today,
+  so the OR changes nothing now — it exists so a future **disagreement surfaces
+  as a flagged row** instead of a row half the pipeline hides.
+- The count reaches the heading (`… · 8 suppressed`), because this tab exists to
+  make absence a figure.
+
+⚠️ **`Las PosTest College` is in `chatbox_college_profiles` and NOT in
+`map_colleges`**, so it escapes the `entity_kind='test'` suppression entirely —
+there is no row to mark. It is an empty shell, so the worst case is Sierra naming
+a college that does not exist, but it should not be reachable.
+
+### Next concrete step
+
+1. Add `college_id` to the tables we build, resolved at load through
+   `map_colleges` + `variants`: `chatbox_college_profiles` → `map_college_contacts`
+   → `college_geo`.
+2. Give the two `awaiting_map_id` entities rows in `map_colleges` (null id, stated
+   reason) so they join instead of vanishing.
+3. Record `mis_absent_why` on the 8 test rows — they currently read identically to
+   an unexplained blank.

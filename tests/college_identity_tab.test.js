@@ -191,6 +191,64 @@ block("(5)", function () {
     "Sam, 2026-08-14 and again 08-17: plain words, no emoji");
 });
 
+// ── (6) Suppressed rows are chipped ───────────────────────────────────────
+// Sam, 2026-08-21: "The college/district tab should probably have a chip on rows
+// that are suppressed (e.g., CA MAP Initiative) — which is our sandbox and had
+// slipped into the daily report from MAP."
+//
+// ⚠ THE NAME IS NOT THE TELL, which is the whole reason a chip is needed. Four
+// of MAP's eight sandbox rows announce themselves ("Testing College"), but
+// "NORCO College - Syllabus Manager" and "CA MAP INITIATIVE COLLEGE" read as
+// real entities. The fixture uses the two that DON'T look like tests — a
+// fixture of obvious names would pass while proving nothing.
+block("(6)", function () {
+  const { M, root } = loadModule();
+  const withTest = COLLEGES.concat([
+    { college_id: 900, college_name: "CA MAP INITIATIVE COLLEGE", entity_kind: "test",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+    { college_id: 901, college_name: "NORCO College - Syllabus Manager", entity_kind: "test",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+  ]);
+  M._state.live = withTest; M._state.contacts = []; M._state.error = null; M._state.loading = false;
+  M._render(root);
+  const html = root.innerHTML;
+  const txt = root.textContent;
+
+  const chips = root.querySelectorAll(".cid-tag.suppressed");
+  check("(6) ⭐ every suppressed row carries a chip", chips.length === 2, String(chips.length));
+  check("(6) …and the chip is a WORD, not a colour alone",
+    chips.length > 0 && /suppressed/i.test(chips[0].textContent),
+    "color is never the only signal — reference-ui-design-system");
+  check("(6) ⚠ …and it says WHY, not just what the column holds",
+    /not a real institution/.test(txt) && /excluded from Custom Reports/.test(txt),
+    "methodology-a-provenance-label-must-say-why-not-what: 'test' is the value, " +
+    "'no figure anywhere counts it' is the meaning");
+  check("(6) real colleges are NOT chipped",
+    root.querySelectorAll("tr.cid-supp").length === 2,
+    "a chip on a real college would be worse than no chip at all");
+  check("(6) the suppressed count reaches the heading",
+    /2 suppressed/.test(txt), "the tab exists to make absence a figure");
+  check("(6) ⚠ the chip uses a REAL palette token, not an invented one",
+    /--mustard-text/.test(M._css ? M._css() : html) ||
+      /--mustard-text/.test(String(document_style())),
+    "the first draft used --amber, which does not exist in :root");
+
+  function document_style() {
+    const el = root.ownerDocument.getElementById("cid-css");
+    return el ? el.textContent : "";
+  }
+
+  // A disagreement between the two suppression fields is itself a finding.
+  M._state.live = COLLEGES.concat([
+    { college_id: 902, college_name: "Half Suppressed College", entity_kind: "college",
+      is_test: true, variants: [], district: null, mis_district_code: null, mis_college_code: null },
+  ]);
+  M._render(root);
+  check("(6) ⚠ a row where entity_kind and is_test DISAGREE is flagged",
+    /DISAGREE on this row/.test(root.textContent),
+    "consumers filter on entity_kind; a row flagged only by is_test would slip through");
+});
+
 let pass = 0;
 for (const [name, ok, why] of results) {
   console.log((ok ? "  ok  " : "FAIL  ") + name + (!ok && why ? "\n        > " + why : ""));
