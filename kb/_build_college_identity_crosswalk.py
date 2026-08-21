@@ -258,7 +258,38 @@ def load_mis():
     return raw, rows, findings, applied
 
 
-def lint_observed(observed, rows):
+RULINGS_PATH = os.path.join(HERE, "reference", "college_identity_rulings.json")
+
+
+def load_rulings():
+    """Curator rulings, as DATA.
+
+    ⭐ A judgement a human made must survive a rebuild. Sam ruled on the four
+    credit/noncredit twins on 2026-08-21 — "Calbright and LAUNCH get 2
+    entities--one credit, one noncredit. San Diego and North Orange are one
+    entity" — and a ruling held only in a session, or hard-coded in this file,
+    is one refactor away from being silently reversed. Same reason
+    cr_reference_decisions is a table.
+
+    Returns (same_entity_by_name, separate_by_name). `separate_entity` rows with
+    a null map_college_id are NOT resolvable here: college_id is MAP's to
+    assign, and inventing one would put a fabricated identity in the table every
+    other system trusts as authoritative.
+    """
+    if not os.path.exists(RULINGS_PATH):
+        return {}, {}
+    doc = json.load(open(RULINGS_PATH, encoding="utf-8"))
+    same, sep = {}, {}
+    for r in doc.get("rulings") or []:
+        who = {"decided_by": r.get("decided_by"), "decided_on": r.get("decided_on")}
+        for e in r.get("same_entity") or []:
+            same[e["name"]] = dict(e, **who)
+        for e in r.get("separate_entity") or []:
+            sep[e["name"]] = dict(e, **who)
+    return same, sep
+
+
+def lint_observed(observed, rows, same_entity=None, separate=None):
     """Names seen in a LIVE table that resolve to no identity here.
 
     ⭐ THIS IS THE POINT OF THE WHOLE ARTIFACT, not a bonus. A crosswalk that
@@ -302,6 +333,20 @@ def lint_observed(observed, rows):
                              "sources": o.get("sources"),
                              "why": "Normalises to a known identity but is not the "
                                     "same string, so any exact-match join misses it."})
+            continue
+        # A RULING OUTRANKS THE HEURISTIC. `same_entity` names are already
+        # folded into variants above, so they never reach here; a
+        # `separate_entity` name is a real org and is reported as awaiting MAP's
+        # id, NOT as an unresolved twin a curator still has to think about.
+        if separate and nm in separate:
+            r = separate[nm]
+            findings.append({"name": nm, "class": "awaiting_map_id", "resolves_to": None,
+                             "sibling": r.get("sibling"),
+                             "decided_by": r.get("decided_by"), "decided_on": r.get("decided_on"),
+                             "sources": o.get("sources"),
+                             "has_landing_page": o.get("has_landing_page"),
+                             "why": r.get("needs") or "A separate MAP org; its college_id is not in "
+                                                     "anything we hold and must come from MAP."})
             continue
         twin = None
         for suf in SUFFIXES:
@@ -504,10 +549,23 @@ def main():
     # ⚠ LINTED AFTER `variants` IS BUILT, never before — a name that a row already
     # claims as a variant is resolved, not missing, and linting first would
     # report every alias in the repo crosswalk as an orphan.
+    # Fold curator-ruled same-entity spellings in BEFORE linting, so a name a
+    # human has already resolved is never reported as a finding.
+    same_entity, separate = load_rulings()
+    if same_entity:
+        by_id = {r["college_id"]: r for r in out}
+        for nm, e in same_entity.items():
+            tgt = by_id.get(e.get("map_college_id"))
+            if tgt and nm not in tgt["variants"] and nm != tgt["college_name"]:
+                tgt["variants"] = sorted(tgt["variants"] + [nm])
+                tgt.setdefault("variant_sources", {})[nm] = \
+                    "curator: %s, %s" % (e.get("decided_by"), e.get("decided_on"))
+
     lint = []
     if args.observed_json:
         obs = json.load(open(args.observed_json, encoding="utf-8"))
-        lint = lint_observed(obs["names"] if isinstance(obs, dict) else obs, out)
+        lint = lint_observed(obs["names"] if isinstance(obs, dict) else obs, out,
+                             same_entity, separate)
 
     stamp = date.today().isoformat()
     outdir = args.out or os.path.join(OUT_DIR, stamp)

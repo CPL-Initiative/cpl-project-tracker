@@ -15,8 +15,8 @@
     },
     "names_with_no_identity": 13,
     "lint_by_class": {
-      "credit_twin": 4,
-      "spelling": 1,
+      "awaiting_map_id": 2,
+      "spelling": 3,
       "unknown": 6,
       "whitespace": 2
     },
@@ -95,15 +95,17 @@
     },
     {
       "name": "Calbright College Credit",
-      "class": "credit_twin",
+      "class": "awaiting_map_id",
       "resolves_to": null,
       "sibling": "Calbright College Non-Credit",
+      "decided_by": "Sam Lee",
+      "decided_on": "2026-08-21",
       "sources": [
         "chatbox_college_profiles",
         "map_college_contacts"
       ],
       "has_landing_page": true,
-      "why": "A credit/noncredit sibling of a known identity. NEEDS A CURATOR: two MAP orgs, or one spelled twice?"
+      "why": "MAP's college_id for the CREDIT arm. Measured 2026-08-21: it appears in chatbox_college_profiles and map_college_contacts and carries its own landing page, but no row in map_colleges and no id in map_college_users. Only MAP can supply it."
     },
     {
       "name": "Cypress College ",
@@ -126,25 +128,25 @@
     },
     {
       "name": "Launch Apprenticeship Non-Credit",
-      "class": "credit_twin",
+      "class": "awaiting_map_id",
       "resolves_to": null,
       "sibling": "Launch Apprenticeship",
+      "decided_by": "Sam Lee",
+      "decided_on": "2026-08-21",
       "sources": [
         "chatbox_college_profiles"
       ],
       "has_landing_page": false,
-      "why": "A credit/noncredit sibling of a known identity. NEEDS A CURATOR: two MAP orgs, or one spelled twice?"
+      "why": "MAP's college_id for the NON-CREDIT arm. Same measurement: present in chatbox_college_profiles, absent from map_colleges and map_college_users."
     },
     {
       "name": "North Orange Continuing Education Credit",
-      "class": "credit_twin",
-      "resolves_to": null,
-      "sibling": "North Orange Continuing Education",
+      "class": "spelling",
+      "resolves_to": "North Orange Continuing Education",
       "sources": [
         "map_college_contacts"
       ],
-      "has_landing_page": false,
-      "why": "A credit/noncredit sibling of a known identity. NEEDS A CURATOR: two MAP orgs, or one spelled twice?"
+      "why": "Normalises to a known identity but is not the same string, so any exact-match join misses it."
     },
     {
       "name": "Pima Medical Institute",
@@ -168,15 +170,13 @@
     },
     {
       "name": "San Diego College of Continuing Education Credit",
-      "class": "credit_twin",
-      "resolves_to": null,
-      "sibling": "San Diego College of Continuing Education",
+      "class": "spelling",
+      "resolves_to": "San Diego College of Continuing Education",
       "sources": [
         "chatbox_college_profiles",
         "map_college_contacts"
       ],
-      "has_landing_page": true,
-      "why": "A credit/noncredit sibling of a known identity. NEEDS A CURATOR: two MAP orgs, or one spelled twice?"
+      "why": "Normalises to a known identity but is not the same string, so any exact-match join misses it."
     },
     {
       "name": "San Diego Continuing Education",
@@ -1816,7 +1816,8 @@
       "college_name": "North Orange Continuing Education",
       "variants": [
         "NORTH ORANGE ADULT",
-        "North Orange Adult"
+        "North Orange Adult",
+        "North Orange Continuing Education Credit"
       ],
       "short": "North Orange Adult",
       "mis_college_code": "863",
@@ -1828,7 +1829,10 @@
       "mis_code_is_placeholder": false,
       "entity_kind": "continuing_education",
       "district_type": "M",
-      "district_college_count": 3
+      "district_college_count": 3,
+      "variant_sources": {
+        "North Orange Continuing Education Credit": "curator: Sam Lee, 2026-08-21"
+      }
     },
     {
       "college_id": 88,
@@ -2102,7 +2106,9 @@
       "college_name": "San Diego College of Continuing Education",
       "variants": [
         "SAN DIEGO ADULT",
-        "San Diego Adult"
+        "San Diego Adult",
+        "San Diego College of Continuing Education Credit",
+        "San Diego Continuing Education"
       ],
       "short": "San Diego Adult",
       "mis_college_code": "076",
@@ -2114,7 +2120,11 @@
       "mis_code_is_placeholder": false,
       "entity_kind": "continuing_education",
       "district_type": "M",
-      "district_college_count": 4
+      "district_college_count": 4,
+      "variant_sources": {
+        "San Diego College of Continuing Education Credit": "curator: Sam Lee, 2026-08-21",
+        "San Diego Continuing Education": "curator: Sam Lee, 2026-08-21"
+      }
     },
     {
       "college_id": 97,
