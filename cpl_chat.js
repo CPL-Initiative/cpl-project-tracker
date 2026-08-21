@@ -332,7 +332,7 @@
         className: 'cplchat-aud-chip' + (picked ? (audienceConfirmed ? ' on' : ' remembered') : ''),
         // Still the current selection, so it is still pressed. The provisional
         // half is carried by the WORDS below, never by the outline alone
-        // (First Light: colour is never the only signal).
+        // (First Light: color is never the only signal).
         'aria-pressed': picked ? 'true' : 'false',
         onclick: function () { setAudience(a.k); },
       }, a.label));
@@ -480,7 +480,7 @@
         var plain = answer || (bub ? bub.textContent : '') || '';
         copyAnswer(bub ? bub.innerHTML : '', plain, function (ok) {
           // Words, not ticks — the state is already carried by the `on` class
-          // and its colour, so the glyph was decoration on a label that says
+          // and its color, so the glyph was decoration on a label that says
           // the same thing (Sam, 2026-08-17).
           btn.textContent = ok ? 'Copied' : 'Press Ctrl+C';
           btn.classList.toggle('on', ok);
@@ -654,7 +654,7 @@
       // A <button> inherits neither font-family nor color — which is why the
       // Copy pill below spells both out — and a glyph did not care, but a word
       // does: without these the two rating pills render in the UA's default
-      // button font and colour right beside a Copy pill that does not. nowrap
+      // button font and color right beside a Copy pill that does not. nowrap
       // keeps "Not helpful" on one line; the row still wraps (.cplchat-fb is
       // flex-wrap).
       '.cplchat-fb-btn { border:1px solid var(--border, #d8dde6); background:var(--surface-opaque, #fff); border-radius:999px; padding:2px 9px; cursor:pointer; font-size:.78rem; line-height:1.4; opacity:.75; color:inherit; font-family:inherit; white-space:nowrap; }',
@@ -700,7 +700,7 @@
       // Distinct by a quiet RULE, never by fading. Sky175's finding on the
       // public page was that the least legible text on it was the sentence
       // telling a student to check with their coordinator — a caution rendered
-      // in a third, fainter grey. So this inherits the description's colour
+      // in a third, fainter gray. So this inherits the description's color
       // exactly (no new contrast pair to verify) and earns its separation from
       // a neutral border and spacing instead. It must out-specify the host
       // pane's `.cplchat-intro p` rule, hence the two-class selector.
@@ -992,7 +992,7 @@
     // ⚠ IT IS TWO PARAGRAPHS, NOT ONE BLOCK. The Note is a caution and has to
     // survive being skimmed — a box earned that for free and plain prose does
     // not. `.cplchat-note` is the quieter weight; it is deliberately NOT a
-    // coloured panel, which is the thing that was removed.
+    // colored panel, which is the thing that was removed.
     //
     // It has to read correctly in BOTH hosts — this widget mounts on My College
     // and on the CPL Assistant tab, so it cannot say "the sections below" (the
@@ -1207,7 +1207,7 @@
       try { inputEl.focus(); } catch (e) { /* hidden pane */ }
       return true;
     },
-    // Fill AND send — the behaviour of this assistant's own starter chips,
+    // Fill AND send — the behavior of this assistant's own starter chips,
     // exposed so an embedding tab's suggested questions cost one click rather
     // than two (Sam, 2026-08-11: "so they don't have to take 2 steps and get
     // lost"). Returns false if the assistant is not mounted, so the caller can

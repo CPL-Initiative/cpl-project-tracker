@@ -134,7 +134,7 @@ roster.
 
 I withheld the CEO name/email/website columns on a "public repo, compiled
 directory" argument. Sam had already ruled that **contacts and staff are not
-PII — directory information for a public programme** — and the Session-144
+PII — directory information for a public program** — and the Session-144
 handoff adds *"don't invent caution he hasn't asked for."* The columns are now
 included. Withholding data a curator supplied for use, on a concern they have
 already settled, is a real cost with no benefit.
@@ -169,3 +169,77 @@ Apprenticeship is 132). The crosswalk filters to `entity_kind='college'`, so
 partners are deliberately absent. Anything resolving a partner name through
 `cplCollegeShort()` gets its input back unchanged — the safe-fallback trap — so
 **key partners on `college_id`, never on the name**.
+
+---
+
+## 2026-08-21 — SkyVouch: the write landed, and the lint was the point
+
+**PR #1278.** SkyLink built the crosswalk on 2026-08-12 and its own NEXT step said
+it had never been written. Sam re-opened it after Sierra reported three of nine
+LACCD colleges, adding one requirement: *"I want to include noncredit campuses
+and any agencies we host a college landing page for."*
+
+### What shipped
+
+`map_colleges` gained `district`, `mis_district_code`, `mis_college_code`,
+`district_type`, `mis_absent_why`, and **`variants` is populated for the first
+time — 0 → 118 of 128 rows**, 118 with a district, 73 districts, 0 test rows
+touched. A College Identity tab renders it as a lint surface.
+
+### What we learned
+
+**⭐ The exclusion was never in the script.** The builder covered 116 of 128 rows
+because the `--map-json` *export* was filtered to `entity_kind='college'`. A
+filter in an input looks exactly like a limitation of the tool. Worth checking
+before concluding a generator "doesn't handle" something.
+
+**⭐ Two continuing-education institutions had real MIS identities nobody had
+joined.** North Orange Continuing Education is `NORTH ORANGE ADULT` (college 863
+under district 860); SDCCE is `SAN DIEGO ADULT` (076 under 070). Both pass the
+district-prefix invariant SkyLink established, so these are not lucky name
+matches. They were never identity-less — the filter was hiding them. The prior
+assumption, recorded in several places, that they "have no `map_colleges` row"
+was true only of the *credit* arms.
+
+**⭐ The lint found a production defect the mapping never would.** Feeding the
+builder every college-name string observed in a live table produced 13 unresolved
+names, two of which were `"Cypress College "` and `"San Jose City College "` —
+with a trailing space, a real `primary_contact_email`, and a named coordinator.
+Neither exact-matches `map_colleges`, so both rendered as having no CPL contact,
+silently. **A missing key is indistinguishable from a college that has none.**
+
+**⚠️ Fix the join, not the data.** `map_college_contacts` rebuilds from MAP
+nightly, so trimming puts the space back tomorrow — and a load must reproduce its
+source rather than improve it.
+
+**⚠️ A variant must never shadow a canonical name.** "Mission College" is a real
+college (id 82) *and* a plausible variant of "Los Angeles Mission College".
+Letting the variant win attaches one college's coordinator to another — worse
+than the blank being fixed. Built as a second pass after every canonical name is
+known; measured 0 collisions today, so the guard is preventive. The check failed
+against the first cut, which is how the hazard was found at all.
+
+**⭐ A missing value is a finding only for the class it applies to.** Partners
+carry no MIS code by definition. Filing them as "unresolved" would push that
+counter off zero permanently, which is how a real regression gets lost.
+
+### Sam's ruling, recorded as data
+
+> *"Calbright and LAUNCH get 2 entities—one credit, one noncredit. San Diego and
+> North Orange are one entity."*
+
+Stored in `kb/reference/college_identity_rulings.json` with `decided_by` and
+`decided_on` — **not** hard-coded in the builder, where a refactor reverses it
+silently, and not in the regenerated output, where a rebuild loses it.
+
+**⚠️ Do not mint an identity to close a gap.** The two credit arms need a
+`college_id` that exists in neither `map_colleges` nor `map_college_users`.
+`college_id` is MAP's to assign; minting one locally would put a fabricated
+identifier in the table every other system treats as authoritative. Reported as
+`awaiting_map_id` — a to-do with an owner, not a blank.
+
+### Next
+
+1. **MAP supplies the two ids** — then the crosswalk folds them with no code change.
+2. Sam looks at the tab in a browser (no session can — egress-blocked).
+3. Open: district as columns (done) vs its own `districts` table.

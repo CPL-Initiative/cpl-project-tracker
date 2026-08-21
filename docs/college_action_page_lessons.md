@@ -500,7 +500,7 @@ taught colleges that uploading is the finish line.
 ### Current state
 
 Live on `#college-briefing` behind the team gate: the $50K seed grant (with
-`declined` as a real state, not $0), the implementation allocation labelled a
+`declined` as a real state, not $0), the implementation allocation labeled a
 **cap, not a cheque**, with floor / rural-allowance / participation-gate all
 named; a 72-district picker that narrows the college list and lists a
 district's colleges **alphabetically, never ranked**; and four Ask-Sierra
@@ -658,7 +658,7 @@ and under front-loaded disbursement every slot after Year 1 has a zero cap. A
 briefing that inherited a Year-2 view would have rendered **$0 against all three
 priorities** — plausible, unqueryable, and read as a finding about the college.
 The new `_prios(name, slot)` takes the year explicitly and defaults to Year 1,
-and the test asserts the *behaviour* (the function body never mentions
+and the test asserts the *behavior* (the function body never mentions
 `state.viewSlot`) rather than the comment that says so.
 
 **5. ⭐ A percentage must never round UP into a claim it cannot support.** With
@@ -755,7 +755,7 @@ assistant's own starter chips); `askSierra()` prefers it and keeps `prefill()`
 as the fallback. Both halves are now asserted, because the failure mode of
 getting this wrong is silent in the other tab.
 
-**When two callers need different behaviour from one helper, add the sibling —
+**When two callers need different behavior from one helper, add the sibling —
 do not retune the shared one.** The existing caller's requirement was invisible
 from the call site that wanted the change.
 
@@ -880,7 +880,7 @@ change.
 
 ### 16. ⭐ Five colleges were being told they have no implementation funding
 
-Found by rendering every branch and reading it. `fundingFor()` normalised MAP's
+Found by rendering every branch and reading it. `fundingFor()` normalized MAP's
 college name through `cplCollegeShort()` and handed the result to
 `cpl_funding.js`, whose `baseCollege()` compares it against the roster's **raw**
 string. Only one side of the join went through the resolver.
@@ -889,7 +889,7 @@ It worked for ~110 colleges whose two spellings already agreed and failed for th
 five where they do not — **Mt. San Antonio** (roster: `Mt San Antonio`, no
 period), **Norco**, **Reedley**, **MiraCosta**, **Los Angeles Southwest**. Each
 rendered *"is not on the 115-college funding roster."* Mt. SAC is the largest CPL
-programme in the system; its real allocation is **$522,239**, and the roster row
+program in the system; its real allocation is **$522,239**, and the roster row
 was there the whole time.
 
 **The existing join test asserted `S(roster)` against `S(roster)`** — distinctness
@@ -898,7 +898,7 @@ orphaned in production. A join test has to exercise *the direction the code join
 in*. The new one asserts against the real shipped roster and the real funding
 module, and checks the bug directly in both directions. Verified against a figure
 derived outside this repo: `$522,239` matches the Sep-BOG reconciliation. Note:
-[`methodology-normalise-both-sides-of-a-join`](kb-notes/methodology-normalise-both-sides-of-a-join.md).
+[`methodology-normalize-both-sides-of-a-join`](kb-notes/methodology-normalize-both-sides-of-a-join.md).
 
 ### 17. ⭐ A college with no data was being congratulated
 
@@ -963,7 +963,7 @@ in `cpl_memory` so reconciliation has something to be checked against.
 
 - **Contacts and staff are not PII.** I had used synthetic placeholders in a
   scratch fixture; over-cautious, corrected. MAP college staff contacts are
-  directory information for a public programme.
+  directory information for a public program.
 - **Hold** MAP deep links, the RLS decision, and MIS.
 - **`My CPL Funding`**, moved up directly under *Start here* — money is the second
   thing a coordinator wants, and it was sitting seventh behind four measurement
@@ -1075,7 +1075,7 @@ entity_kind`, and the funding roster's only geography key is `district`.
 ⚠️ **And the region data we DO hold is a third scheme.** `college_geo.region`
 (120 colleges, 10 regions) is hand-authored for Sierra's *"which colleges NEAR
 me"* ranking — `chatbox/_seed_college_geo.py` says exactly that in its
-docstring. The **Strong Workforce programme has eight** regional consortia with
+docstring. The **Strong Workforce program has eight** regional consortia with
 different boundaries (our *San Joaquin Valley* + *Greater Sacramento* split is
 not *Central Valley/Mother Lode*; *Central Coast* is not *South Central Coast*),
 and the **ASCCC has four** areas, A–D. Pointing either label at `college_geo`
@@ -1167,10 +1167,10 @@ shortcut.
 caps.** Both mirrored HTMLs ship `#college-briefing-root` with an **inline**
 `text-align:center` for its "Loading College Briefing…" placeholder. Inline
 out-ranks the `#college-briefing-root{text-align:left}` the module injects, so
-every capped paragraph rendered its text *centred inside a left-anchored box* —
+every capped paragraph rendered its text *centerd inside a left-anchored box* —
 which reads as a ragged narrow column floating in a wide tab, and points the
 reader straight at the cap. Removing the cap would have produced full-width
-centred prose (worse), and the next session would have put the cap back. Full
+centerd prose (worse), and the next session would have put the cap back. Full
 note: [`methodology-an-inline-placeholder-style-outranks-the-css-you-inject`](kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md).
 
 **⭐ There were TWO clusters of suggested questions with the role picker between
@@ -1241,14 +1241,14 @@ incoherent, and the model resolves that silently.
 ### (c) Strategic roadmap
 
 The tab is now shaped the way Sam asked for and the remaining moves are his
-judgement, not engineering:
+judgment, not engineering:
 
 1. Does the three-row snapshot read as the pulse he wanted, or does active
    exhibits earn a fourth row? (It is a capability measure, not a pulse — which is
    why it was cut.)
 2. Do the two **public** Sierra surfaces (`sierra/`, `fact-sheet/factsheet_sierra.js`)
    take the new intro wording? Different audience; deliberately not changed.
-3. Is the centred 760px scope card right for a landing screen, or did "use the
+3. Is the centerd 760px scope card right for a landing screen, or did "use the
    full width" include it?
 
 ### (d) Next concrete step
@@ -1260,3 +1260,76 @@ judgement, not engineering:
    district and statewide roll-ups, which still lead with totals.
 3. The two region lists (SWP, ASCCC) remain the one blocked item, unchanged since
    Sky167 — they exist on the MAP Dashboard and in no export we hold.
+
+---
+
+## 2026-08-21 (2) — SkyVouch: a remembered role, and questions that knew whose page this was
+
+**PR #1276.** Sam, on a screenshot of the LACCD view: *"we need to prompt users
+to confirm select their role before or if they click a pre-seeded question"* and
+*"the pre-seeded questions are not adjusted to the selected org."*
+
+### The role was #1274's ruling one level down
+
+SkyAsk stopped restoring a remembered **college** into state that same week,
+because a restored choice silently answers a question the reader was never asked.
+The **role** had the identical defect and nobody had looked: `audience` persists
+in localStorage under a key **shared with the public Sierra page and the Fact
+Sheet drawer**, so a role picked once, anywhere, on any earlier visit steered
+every answer here for ever. In Sam's screenshot a chip he had never touched on
+that page was lit.
+
+localStorage still *remembers* — the chip comes back marked and one tap keeps it.
+But a role is only *confirmed* in the browser-tab session someone tapped it in.
+One tap per session, not per question.
+
+Three things that made it correct rather than merely gated:
+
+- **⚠️ The held question is resumed, never dropped.** `submit()` returns before
+  `busy`, before `addUserMsg()` and before the input clears, so the text stays in
+  the box and the tap sends it. A confirm prompt that makes you hunt for the chip
+  you just clicked is worse than the silent default it replaces.
+- **⚠️ The hold is pinned to its PANE, not a boolean.** Two panes can be mounted
+  and `inputEl` points at whichever built last — a boolean would fire `submit()`
+  against the other pane's box.
+- **⚠️ `loadAudience()` assigns the flag, never only raises it.** The pick can
+  change underneath a standing confirmation, because the key is shared.
+
+Scope is deliberate: the two COBI surfaces. The public standalone page and the
+Fact Sheet drawer keep the silent restore — a one-visit member of the public
+should not be interrogated about a role they picked ninety seconds ago.
+
+### The questions: a fallback belonging to the wrong surface
+
+#1274 passed `null` for a group scope, which returns the widget to its **public**
+starters — one of which names Riverside City College. Correct on the CPL
+Assistant tab, nonsense under "Welcome, Los Angeles Community College District".
+
+The fix is structural: **a host that knows whose page this is owns the questions
+in every scope**, so the generic list is unreachable from this tab and can stay
+concrete for the audience it was written for. One `scopeQuestions()` feeds both
+the widget cluster and the no-widget fallback — the fallback previously required
+a college, so a district reader whose chat module failed to load saw *no*
+questions while a college reader saw four.
+
+**⭐ Sierra has no district dimension at all.** Verified two ways: zero columns
+named district in the entire public schema, and `districtIndex()` builds the
+grouping client-side from the funding roster. The district exists in the browser
+and nowhere she can read. So a district is named only in an **advisory** question,
+where a name cannot become a false figure — and **no member college is singled
+out**, because ordering a reader's own peers by a figure is exactly what
+`rollup()` sorts alphabetically to avoid.
+
+### Also fixed
+
+`role="radiogroup"` → `role="group"` on the audience row. Its children are
+`aria-pressed` toggle buttons, and a radiogroup promises `role="radio"` children.
+Sky175 fixed this on the public page a week earlier; COBI kept the old markup
+because nothing compared the two — which is that test file's whole job. It
+asserts it now.
+
+### Next
+
+Sam re-asks the LACCD question and reads the actual prose. If she starts
+asserting district facts we don't hold, that is a `sierra_guidance` matter — and
+that list is at 9 of 10, so it would cost the last slot.

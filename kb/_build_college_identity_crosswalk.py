@@ -27,7 +27,7 @@ Measured 2026-08-12: 24 of 116 colleges are spelled differently between (1) and
 (2) -- including `Mt. San Antonio College` vs `Mt San Antonio College`, which is
 the mismatch Sam kept hitting. And MIS names are abbreviated so hard
 (`LA SWEST`, `DESERT`, `SAN FRANCISCO`) that only 80 of 116 join to MAP on a
-normalised name -- which is why source (4) matters: it supplies the bridge and
+normalized name -- which is why source (4) matters: it supplies the bridge and
 takes the hand-curated table below to zero.
 
 `mis_district_college_codes.json` says it plainly in its own `_warning`:
@@ -156,7 +156,7 @@ NON_COLLEGE_WHY = {
         "its own MAP landing page, but MIS Appendix A lists CCC credit colleges "
         "only, so no district/college code exists for it.",
     "partner":
-        "A partner organisation we host a CPL landing page for, not a California "
+        "A partner organization we host a CPL landing page for, not a California "
         "Community College. No MIS code exists, and none should be invented.",
 }
 
@@ -265,7 +265,7 @@ RULINGS_PATH = os.path.join(HERE, "reference", "college_identity_rulings.json")
 def load_rulings():
     """Curator rulings, as DATA.
 
-    ⭐ A judgement a human made must survive a rebuild. Sam ruled on the four
+    ⭐ A judgment a human made must survive a rebuild. Sam ruled on the four
     credit/noncredit twins on 2026-08-21 — "Calbright and LAUNCH get 2
     entities--one credit, one noncredit. San Diego and North Orange are one
     entity" — and a ruling held only in a session, or hard-coded in this file,
@@ -328,7 +328,7 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
         if norm(nm) in known and nm == known[norm(nm)]:
             continue
         if norm(nm) in known:
-            # Same after normalisation but not byte-identical.
+            # Same after normalization but not byte-identical.
             kind = "whitespace" if nm.strip() != nm else "spelling"
             findings.append({"name": nm, "class": kind, "resolves_to": known[norm(nm)],
                              "sources": o.get("sources"),
@@ -450,7 +450,7 @@ def main():
         if m is None and cname in curated and curated[cname] in mis_by_key:
             m, how = mis_by_key[curated[cname]], "curated"
         elif m is None and len(mis_by_norm.get(k, [])) == 1:
-            m, how = mis_by_norm[k][0], "normalised-name"
+            m, how = mis_by_norm[k][0], "normalized-name"
         elif m is None and len(mis_by_norm.get(k, [])) > 1:
             how = "ambiguous"
 
@@ -484,7 +484,7 @@ def main():
             "mis_district_code": (m or {}).get("district_code"),
             # Prefer the roster's FULL district name over Appendix A's ALL-CAPS
             # abbreviation ("Los Angeles Community College District", not
-            # "LOS ANGELES CCD") — it is what a college would recognise.
+            # "LOS ANGELES CCD") — it is what a college would recognize.
             "district": (rost or {}).get("district") or (m or {}).get("district"),
             "district_caps": (m or {}).get("district"),
             "mis_name": (m or {}).get("college"),

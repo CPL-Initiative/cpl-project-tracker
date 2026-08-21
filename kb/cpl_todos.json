@@ -1,80 +1,62 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-21 · SkyAsk (Session 177) — the My College tab now asks which college you want before it shows you one, Sierra's box reads in one clean order, and her college snapshot has a new instruction that cuts it to three numbers that matter.",
- "_session": "Session 177 (SkyAsk) — carrying open items from Sessions 169–176",
- "_status": "Merged and live (#1274). Five things changed on the My College tab, all from your list. First, it was opening straight onto Cabrillo College — whatever college was looked at last was being reopened automatically, which meant the next person to use the tab silently got someone else's college. It now always asks, with a shortcut button that names the last one so the daily habit still costs one click. Second, the odd mix of narrow centred paragraphs and full-width content: the cause was not the paragraph widths at all — the 'Loading…' placeholder every tab starts with sets its text to centre, and that setting outranks the tab's own styling and kept applying to everything drawn afterwards. It is cleared now. Third, the redundant line above Sierra is gone. Fourth, her description is your wording and the yellow Beta box is deleted, with its two warnings folded into the sentence so nothing was lost. Fifth, the confusing double set of suggested questions: there were two lists with the 'I'm a…' role buttons sitting between them, so clicking a question told you to 'tap who you are above' while the buttons were below — and one of the built-in questions asked about Riverside City College on every college's page. There is one list now, directly under the role buttons. Separately, the new Sierra instruction is live: her college snapshot drops the statewide column (a statewide total is not a benchmark, and the only comparison she could work out would be wrong for most colleges) and leads with the units already approved and waiting. Worth knowing: her instruction list only holds ten, and an eleventh silently switches off the oldest — you retired two that the code now handles by itself, so there is one slot spare.",
+ "_as_of": "2026-08-21 · SkyVouch (Session 178) — Sierra was reporting three of LACCD's nine colleges; all nine were in the data and a cut-off in the code was hiding six. Fixed and live. The college/district crosswalk that had been built and never saved is now saved, including noncredit campuses and partner agencies, and there is a new College Identity tab that shows what is missing rather than just what matches — it already found two colleges whose CPL contact was invisible because of a stray space in their name.",
+ "_session": "Session 178 (SkyVouch)",
+ "_status": "Three changes went live today. (1) Sierra no longer describes a partial list as if it were complete, and says outright when she cannot confirm a district's membership. (2) My College asks you to confirm your role when it was carried over from a previous visit, and its suggested questions now match whichever college or district you picked. (3) Every college, noncredit campus and partner agency now has its district, its state MIS code and all its known name spellings stored in one place, visible on the new College Identity tab. Waiting on MAP for two college IDs, and on Sam for a look at the new tab.",
  "items": [
+  {
+   "id": "s178-map-ids",
+   "for": "Sam",
+   "tab": "college-identity",
+   "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
+  },
+  {
+   "id": "s178-identity-tab",
+   "for": "Sam",
+   "tab": "college-identity",
+   "text": "Take a look at the new College Identity tab. It lists every college and agency we track, its MAP ID, its district, its state MIS code, and every different spelling of its name we have ever seen. Its real job is showing what is MISSING — right now it flags 13 names that appear in a live table and match nothing. Two of those turned out to be a genuine problem: Cypress College and San Jose City College had a stray space at the end of their name in the contacts table, so both looked like they had no CPL contact when they each have a real one. Already fixed."
+  },
+  {
+   "id": "s178-laccd-retest",
+   "for": "Sam",
+   "tab": "my-college",
+   "text": "Re-ask Sierra the district question. You asked what LACCD should do and she answered about three colleges when there are nine — all nine were in the data the whole time, it was a cut-off in the code. That is fixed and live. She should now list all nine AND say plainly that she cannot confirm a district's full membership, because we do not store district membership anywhere she can read. If she starts stating district facts we have not given her, tell us — that needs an instruction, and the instruction list is full at 9 of 10."
+  },
+  {
+   "id": "s178-role-confirm",
+   "for": "Sam",
+   "tab": "my-college",
+   "text": "Check the role prompt feels right. When your role is carried over from an earlier visit, the chip now shows dashed with a note, and clicking a suggested question asks you to confirm before answering — your question is kept and sends on the tap. It only asks once per browser session, not per question. If that is too often or not often enough, say so."
+  },
+  {
+   "id": "s178-spelling",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "American spelling is now a project rule and a automatic check. You flagged that we drift into British spellings. Everything written this session is corrected, one piece of text you would actually have seen on screen included (\"the programme is inactive\" / \"the curated catalogue\"). There are 219 older documents still carrying British forms — we will clean each as we touch it rather than doing one giant rewrite, which would bury real changes."
+  },
+  {
+   "id": "s178-mode7",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Fix smoke test mode 7 so it stops failing on correct answers. It checks Sierra's reply by searching the sentences for a nearby college name, so a correct answer worded differently reads as a failure. It went red twice today on answers that were fine. Our own note already calls this \"the last place still grepping an answer\" — assert on what retrieval returned instead."
+  },
+  {
+   "id": "s178-rules-as-tests",
+   "for": "Fable",
+   "tab": "dashboard",
+   "text": "Turn more written rules into checks. Every problem fixed today was already covered by a rule we had written down — one of them by a comment 34 lines above the bug. The two rules that existed as automated tests were caught before release; the two that existed only as prose reached the live site. Go through the notes lane and ask which ones could be a test or a lint rule instead of a paragraph."
+  },
+  {
+   "id": "s178-statewide-12",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
+  },
   {
    "id": "s173-phone-check",
    "for": "Sam",
    "tab": "fact-sheet",
    "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
-  },
-  {
-   "id": "s176-explainer-read",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Read the rewritten explainer before you send it to anyone — the link on the Implementation Funding tab, now called 'How this funding model works'. It walks through the whole model in five steps with no jargon: what comes off the top of the $35 million, how each college's share is worked out, the three things a college has to do to qualify, how the money is earned against your three priorities, and when it arrives. It also says out loud something the old page did not: because the $150,000 minimum is paid for out of the same pot, a larger college is effectively funded at about $5,060 per FTES rather than the full $5,650, while a small college lifted to the minimum reaches its target on much less. Tell me if you would rather that were said differently. One thing to know: the page is a snapshot, so if you change the shares, the funding factors or the order, say so and I will refresh it."
-  },
-  {
-   "id": "s172-guidance-surface",
-   "for": "Sam",
-   "tab": "map-data-quality",
-   "text": "The list you asked for is built and nobody can see it. For each of the 225 military exhibits behind the 'no course named' records, we now hold what the training actually was — MOS-31B-002 is Military Police, MOS-68W-001 is Health Care Specialist, MOS-42A-001 is Human Resources Specialist — plus, where colleges have already articulated that exhibit, which course they used. Two decisions are yours. First, where it goes: I'd suggest a lookup panel behind the Credit by Exam row on the MAP Data Quality tab rather than another queue, because 225 exhibits is reference material, not 225 things to do. Second, whether the middle tier is worth showing at all — see the next item. Two questions come with it: which surface it should live on (I'd suggest a lookup panel behind the Credit-by-Exam row on MAP Data Quality rather than another queue), and whether the weakest tier of the guidance — 'where might this align', based on where other colleges put the same exhibit — earns its place at all, since counting agreeing colleges cannot tell real corroboration from one college mapping 33 exhibits to the same course."
-  },
-  {
-   "id": "s172-p1-safe-to-send",
-   "for": "Sam",
-   "tab": "course-credit",
-   "text": "The biggest clean-up item is safe to send now: 12,283 records across about 100 colleges where ACE genuinely recommends no credit, or the recommendation's validity window has expired. One instruction, the same one everywhere. Worth saying out loud when the numbers move — clearing these raises every college's disposition rate without awarding a single unit, because it shrinks the denominator."
-  },
-  {
-   "id": "s172-cx-1310",
-   "for": "Sam",
-   "tab": "course-credit",
-   "text": "The 1,310 records that DO name a subject are ready to go to colleges as the Credit by Exam offer you described — swimming, surveying, first aid and fire science, anatomy and physiology, gas turbine technology, air conditioning — across 89 colleges."
-  },
-  {
-   "id": "s171-cs-phrase",
-   "for": "Sam",
-   "tab": "course-credit",
-   "text": "Natalie, Chelsea and Ally just need the team passphrase to open the clean-up list — I did not add them as reviewers. Supplying their addresses is not the same as authorising that grant, and reviewer access would also give them 591,820 student-level records and the ability to change every team passphrase. Their addresses are recorded. One small thing: you wrote 'Chelsea Mirada' but the address is 'chelsea.marada@' — worth confirming the spelling before anyone emails her. Also worth knowing when they start: 12 colleges appear on the clean-up list with no CPL contact to call — Citrus, Allan Hancock and ten others — so that work needs a name before it can be sent anywhere."
-  },
-  {
-   "id": "s169-delta-meeting-outcome",
-   "for": "Sam",
-   "tab": "eacr",
-   "text": "Ashley is meeting San Joaquin Delta College with a list of 42 occupations where the college already teaches the content and the MAP credit recommendation already exists. Worth knowing how it lands — and if Delta corrects any of our matches, those corrections are the most useful thing to come back with, because they tell us where our course-matching was wrong. Two things to have in hand for that conversation: Delta runs a full 10-course plumbing apprenticeship, but it is filed under no plumbing-named program, so it does not show up in a program search and MAP does not know Delta has it — the statewide plumbing contractor exhibit lists Delta on neither side. Worth asking the college directly whether other pathways are hidden the same way. Delta has no fire technology instruction at all, and fire is the biggest block on the SJCOE list (17 occupations) and the best-covered in the state. So those students either get referred elsewhere — Modesto has the largest career portfolio in California — or Delta decides to build a fire program. That is a decision for the meeting, not something we can fix."
-  },
-  {
-   "id": "s177-mycollege-look",
-   "for": "Sam",
-   "tab": "college-briefing",
-   "text": "Open the My College tab and tell me if the new shape works. It now starts with the question 'What would you like to look at?' instead of jumping straight into a college, with a button that names whichever one you looked at last so you can still get back in one click. Under Sierra you should see: her name, one short line about what she does, the Note about her being in development, then the 'I'm a…' buttons, then the suggested questions, then the chat — one list of questions, not two, and all of them about the college you picked. The paragraphs should now read left-aligned across the page rather than as a narrow centred column."
-  },
-  {
-   "id": "s177-sierra-snapshot",
-   "for": "Sam",
-   "tab": "college-briefing",
-   "text": "Ask Sierra 'How is Cabrillo College doing on CPL, and what quick steps do you recommend?' and see whether her table is the pulse you wanted. Her new instruction is live, so it should now be three rows — units already approved and waiting first, then units applied, then students served — with no statewide column. I dropped that column deliberately: a statewide total is not a benchmark, and the only comparison she can actually work out is an average, which runs two to three times the typical college on every measure and would have told Cabrillo it was behind when it is in fact above the middle on waiting units. If three rows is one too few, the one to add back is probably active exhibits — say the word."
-  },
-  {
-   "id": "s177-public-sierra-text",
-   "for": "Sam",
-   "tab": "sierra",
-   "text": "A decision for you: the new wording for Sierra's description and the deletion of the yellow Beta box went to the two internal places she appears (the My College tab and the CPL Assistant tab). The two public ones — the standalone Sierra page you share with colleges, and the pop-out on the public Fact Sheet — still carry the old text. They are a different audience, so I did not change them without asking. Note the new wording asks people for a thumbs up or down, which arguably matters more on the public pages than the internal ones. Say the word and I'll bring them in line."
-  },
-  {
-   "id": "s169-second-partner-list",
-   "for": "Fable",
-   "tab": "eacr",
-   "text": "Still outstanding after three sessions: run a SECOND partner's occupation list through the statewide crosswalk engine and work whatever it cannot match. Until that happens, the claim that coverage builds up across partners is a design intention rather than something we have shown."
-  },
-  {
-   "id": "s169-record-corrections",
-   "for": "Fable",
-   "tab": "eacr",
-   "text": "After Ashley's Delta meeting, record which of the 42 the college accepted, rejected or corrected into kb/delta_offering_map.json. The corrections are the highest-value input — they are the only signal that tells us where our judgment about a course was wrong."
   }
  ]
 }

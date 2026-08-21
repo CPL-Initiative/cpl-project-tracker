@@ -73,7 +73,7 @@
    * `college_geo.region` (Supabase, 120 colleges) is a hand-authored ~10-way
    * macro-region built for Sierra's "which colleges NEAR me" ranking
    * (chatbox/_seed_college_geo.py says so in its docstring). The Strong
-   * Workforce programme has EIGHT regional consortia with different boundaries
+   * Workforce program has EIGHT regional consortia with different boundaries
    * — our "San Joaquin Valley" + "Greater Sacramento" split does not match
    * "Central Valley/Mother Lode", and "Central Coast" is not "South Central
    * Coast" — and the ASCCC has FOUR areas, A–D. Wiring `college_geo` behind
@@ -1084,7 +1084,7 @@
   /* PURE. Roll the per-college reads up per CPL type. Counts are FLOORS: only
    * ~4% of student rows carry a nameable credential, so `students` here is what
    * we can SEE, never a total. That is why `articulated` (from the curated
-   * catalogue, which is complete) and `students` (from the grain, which is not)
+   * catalog, which is complete) and `students` (from the grain, which is not)
    * are reported side by side rather than as one number. */
   function byCplType(detail) {
     if (!detail) return null;
@@ -1209,7 +1209,7 @@
       var u = Number(r.sum_articulated_credits) || 0;
       if (u <= 0) return;
       total += u;
-      var ct = cleanText(r.course_type) || "Not categorised";
+      var ct = cleanText(r.course_type) || "Not categorized";
       if (ct.indexOf(MIL_PREFIX) === 0) mil += u;
       if (!by[ct]) by[ct] = { type: ct, label: COURSE_TYPE_LABEL[ct] || ct, units: 0, rows: 0, recs: {} };
       by[ct].units += u; by[ct].rows++;
@@ -1370,10 +1370,10 @@
    * the canonical short name, and that difference silently unfunded five
    * colleges (found 2026-08-12).
    *
-   * The join was only half-normalised. `fundingFor()` sent MAP's full name
+   * The join was only half-normalized. `fundingFor()` sent MAP's full name
    * through cplCollegeShort() and handed the result to cpl_funding.js, whose
    * baseCollege()/_grant() compare it with `c.college` EXACTLY — the raw
-   * roster string, never normalised. So it worked for the ~110 colleges whose
+   * roster string, never normalized. So it worked for the ~110 colleges whose
    * roster string already equals their canonical short name, and failed for
    * the five where it does not:
    *
@@ -1385,12 +1385,12 @@
    *     Los Angeles Southwest College   LA Southwest      "LA Swest"
    *
    * Each of those five rendered "is not on the 115-college funding roster" —
-   * telling Mt. SAC, the largest CPL programme in the system, that it has no
+   * telling Mt. SAC, the largest CPL program in the system, that it has no
    * implementation funding. The roster row was there the whole time.
    *
    * CLAUDE.md's rule is right and was applied to one side only: join through
    * cplCollegeShort() on BOTH. We resolve the canonical key back to the
-   * roster's own spelling here, in the consumer, rather than normalising
+   * roster's own spelling here, in the consumer, rather than normalizing
    * inside cpl_funding.js — the Implementation Funding tab passes roster-raw
    * names internally and works today, so this stays a local fix.
    *
@@ -1522,14 +1522,14 @@
    * second. All public, all already linked from the fact sheet.
    *
    * ⚠ The fact sheet's first entry is titled "MAP Initiative Website", which
-   * the 2026-07-03 naming convention retired — the programme is the CPL
+   * the 2026-07-03 naming convention retired — the program is the CPL
    * Initiative and the platform is the MAP platform, and "MAP Initiative" is
    * never used in new writing. Fixed here rather than copied forward; the
    * fact sheet still carries the old title.
    */
   var RESOURCES = [
     ["https://map.rccd.edu/cpl_implementation_guide/", "CPL Implementation & Sustainability Guide",
-     "Step-by-step guide for establishing or expanding a college CPL programme."],
+     "Step-by-step guide for establishing or expanding a college CPL program."],
     ["https://map.rccd.edu/statewidecpl/", "Statewide CPL Credit Recommendations",
      "The faculty-approved opportunities shared across the system — what your college can adopt."],
     ["https://map.rccd.edu/cpllandingpages/", "Find CPL at Your College",
@@ -1583,7 +1583,7 @@
    * — and here the glyphs were carrying the whole meaning with no text beside
    * them, so this is the one that mattered: a screen reader announced the
    * partial state as "circle with left half black", and a reader had nothing to
-   * hover. The colour still does the fast scanning; the word says which state
+   * hover. The color still does the fast scanning; the word says which state
    * it is. "Not yet" rather than a dash, because an outcome nobody has started
    * is a real state, not a missing value. */
   var ESS_MARKS = { met: "Met", partial: "Partial", not: "Not yet", na: "n/a" };
@@ -1923,7 +1923,7 @@
 
       // (b) this college's share of the implementation pool. Sam, 2026-08-11:
       // use the funding tab's own names — "$35M" is his shorthand with the
-      // session, not a label a college would recognise.
+      // session, not a label a college would recognize.
       fundBody += '<div class="cb-fbox"><header><h4>2026&ndash;2028 College Implementation Funding</h4><span class="cb-tag">allocation cap</span></header>';
       if (!f.alloc) {
         fundBody += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
@@ -2159,7 +2159,7 @@
       waitSum = "nothing waiting";
       waitBody += '<div class="cb-note" style="margin-top:0"><b>Nothing is waiting.</b> Every credit recommendation with an '
         + "articulated exhibit behind it has been acted on. That is a finished queue, not a missing measurement — "
-        + "33 of the 106 colleges are in this position, including some of the largest CPL programmes in the state.</div>";
+        + "33 of the 106 colleges are in this position, including some of the largest CPL programs in the state.</div>";
     }
 
     h += sec("waiting", "What that waiting credit actually is", waitSum, waitBody);
@@ -2169,7 +2169,7 @@
     if (types) {
       var typeBody = '<div class="cb-note cb-floor"><b>Read the student counts carefully.</b> A credential name can be '
         + 'attached to only about 4% of student records statewide, so a low count here means <b>we cannot see it</b>, '
-        + 'not that the programme is inactive. The credential counts beside them come from the curated catalogue and '
+        + 'not that the program is inactive. The credential counts beside them come from the curated catalog and '
         + 'are complete.</div>';
       typeBody += '<div class="cb-types">';
       types.forEach(function (t) { typeBody += typeBox(t); });
@@ -2373,7 +2373,7 @@
    * before they can leave it. Opening on the question costs one click and can
    * never show the wrong college.
    *
-   * The convenience the old behaviour bought is kept explicitly: the scope
+   * The convenience the old behavior bought is kept explicitly: the scope
    * question carries a "Last time you looked at X — open it again" button, so
    * the daily flow is still one click, but it is a click the reader MAKES
    * rather than one the tab makes for them.

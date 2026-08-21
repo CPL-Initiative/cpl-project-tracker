@@ -35,7 +35,7 @@ checkpoint.
 rows can be given a credential name** (13,488 of 220,588): the student grain is
 keyed by **ACE military codes** (`AR-`/`MC-`/`NV-`/`NER-`/`MOS-`, `source_code =
 'ACE'`) plus 32,360 rows carrying a `Default Area`/`Default Credit` sentinel,
-while Sierra's catalogue is locally-created `MAPICI-*` exhibits. Overlap: **624 of
+while Sierra's catalog is locally-created `MAPICI-*` exhibits. Overlap: **624 of
 6,280 ids**.
 
 The control that proved it: CPR/AED, measured at **17,904 students** in the local
@@ -79,7 +79,7 @@ dependency, and it is the only hard blocker on route CRED·VOLUME.
 ### Route CRED·STD took three passes, each failure informative
 
 1. **Trigram over the whole haystack** → `peace officer` returned *Correctional
-   Officer*, not POST. Cause: length normalisation means **the best-curated
+   Officer*, not POST. Cause: length normalization means **the best-curated
    records rank worst**. Distilled to
    `methodology-a-concatenated-haystack-penalises-your-best-record`.
 2. **Best single variant** → fixed `emt`; `peace officer` still wrong, because
@@ -99,7 +99,7 @@ incidental hit is visible rather than silent.
 
 **Zero rows is a result, not a failure.** `search_credentials_any()` is the honest
 second half: *"No statewide recommendation for CPR; 'First Aid, CPR & AED' is in
-the catalogue with local articulations only."*
+the catalog with local articulations only."*
 
 ### A near-miss worth keeping
 
@@ -193,7 +193,7 @@ Distilled: `methodology-a-retrieval-miss-and-a-data-gap-look-identical`.
 ### The invented list was correct, which is worse
 
 "A+, Network+, Security+, Cloud+, CySA+" is right. A reviewer sees a plausible,
-accurate answer and files no bug — so the behaviour survives to a question where
+accurate answer and files no bug — so the behavior survives to a question where
 the guess is wrong. **Accidental correctness is not evidence of grounding.** The
 prohibition is now explicit in `VOLUME_RULE`, because a fluent invented list is
 indistinguishable from a retrieved one at read time.
@@ -285,3 +285,74 @@ both assertions now live in the committed SQL.
 2. **Build the College tab** once he has reacted to the mock-up.
 3. **COLLEGE·CRED**, carrying his Mt. SAC Request-Review language.
 4. Re-point the Course Credit tab's headline off the saturating course share.
+
+---
+
+## 2026-08-21 — SkyVouch: a candidate list read as a census
+
+**PR #1277, cpl-chat v52.** Sam asked what LACCD should do for its colleges.
+Sierra opened with **"Three LACCD colleges appear in the MAP platform data"**,
+tabulated three, and closed the *same answer* with "across all nine LACCD
+colleges" — a number the retrieval never gave her.
+
+### Nothing was missing
+
+| Check | Result |
+|---|---|
+| LACCD colleges in `map_colleges` | 9 of 9 (ids 49, 69–75, 115) |
+| In `chatbox_college_profiles` | 9 of 9 |
+| In `map_college_credit_summary` | 8 of 9 (LA Southwest, k=10) |
+
+The three were `.slice(0, 3)` on the tie list in `detectAndFetchCollegeProfile`.
+The query reduces to `["angeles", "district"]` — `"los"` is under four characters
+and `community`/`college` are stopwords — so all nine score 1, all nine tie, and
+three survived the slice.
+
+### ⚠️ The lesson was already learned 34 lines above
+
+The per-word query in the same function carries this comment:
+
+```js
+.limit(12);   // "angeles" alone matches 9; a limit of 3 truncated the answer
+```
+
+The identical bug, on these identical nine colleges, fixed *there* and left
+standing *here*. That is why LA Harbor came back and the other six did not.
+Fixing one instance did not prompt anyone to ask where its twin was.
+
+### ⭐ Raising the cap would have been worse
+
+3 → 12 returns all nine and yields *"Nine colleges appear in the MAP platform
+data"* — still a name match presented as MAP's contents, still false, and
+**harder to spot**, because nine is right for LACCD and wrong for every district
+whose colleges are not all named after it. A plausible wrong answer survives
+review that an implausible one fails.
+
+So the cap became one shared `CANDIDATE_MAX` (the two bounds can no longer
+drift), and the load-bearing change is the **disclosure**: rows are stamped
+`_match`, and `buildCollegeContext` declares the set a candidate list, ships
+shown-of-total, forbids the exact sentence with the count interpolated, states
+that a district cannot be enumerated, and forbids filling the gap from general
+knowledge.
+
+**⚠️ Stamp the ROW, not the array** — `withLiveContacts` does `profile.map(attach)`
+and `buildCollegeContext` does `profiles.map(...)`, so a property on the array is
+dropped by the first of those.
+
+### Verification worth copying
+
+`tests/sierra_candidate_census.test.js` lifts the **real** functions via
+`tests/lib/lift_ts.js` rather than re-implementing them, and runs Sam's actual
+sentence through the actual matcher: pre-fix it returns exactly the three
+colleges from his screenshot. 30 checks, 23 red pre-fix.
+
+Three of my own checks were wrong before the code was — a regex that could not
+span `(s) => s.college`, a lift naming a constant that did not exist pre-fix (so
+the demonstration was skipped rather than failing), and a null guard whose `|| []`
+precedence let the throw run anyway.
+
+### Open
+
+Smoke **mode 7** still greps model prose for a nearby college name, so it reds
+intermittently on correct answers — `methodology-assert-what-retrieval-returns`
+already calls it "the last place still grepping an answer".

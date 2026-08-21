@@ -440,6 +440,63 @@ def rule_kb_note_dialect(entry):
     }
 
 
+# ── American spelling ──────────────────────────────────────────────────────
+# Sam, 2026-08-21: "As a Yank, I prefer American, of course." Claude drifts to
+# British forms in prose, and Claude's own spell-check flags them as errors, so
+# this is real friction rather than a style quibble.
+#
+# ⭐ THIS RULE EXISTS BECAUSE A CONVENTION NOBODY EXECUTES IS NOT A CONVENTION
+# (methodology-a-rule-you-wrote-is-not-a-rule-you-applied). Recording the
+# preference in CLAUDE.md would have been the same half-measure this repo keeps
+# rediscovering: written down, never consulted at the moment it is violated.
+#
+# ⚠ PROSE ONLY, AND DELIBERATELY NARROW. `grey` is a valid CSS keyword and a
+# token name is not a spelling, so this scans documents, never source. The list
+# is the forms actually observed drifting here — widening it invites false
+# positives on quoted external titles, which this corpus is full of.
+BRITISH_FORMS = [
+    ("colour", "color"), ("behaviour", "behavior"), ("favour", "favor"),
+    ("normalis", "normaliz"), ("organis", "organiz"), ("recognis", "recogniz"),
+    ("generalis", "generaliz"), ("prioritis", "prioritiz"), ("minimis", "minimiz"),
+    ("summaris", "summariz"), ("categoris", "categoriz"), ("analys", "analyz"),
+    ("judgement", "judgment"), ("acknowledgement", "acknowledgment"),
+    ("programme", "program"), ("catalogue", "catalog"), ("centred", "centered"),
+    ("modelling", "modeling"), ("cancelled", "canceled"), ("labelled", "labeled"),
+    ("whilst", "while"), ("amongst", "among"), ("sceptic", "skeptic"),
+    ("defence", "defense"), ("enrol ", "enroll "), ("fulfil ", "fulfill "),
+]
+
+
+def rule_american_spelling(entry):
+    """Informational: British spellings in a doc Sam reads.
+
+    Never a defect — it reports so a pass can be made deliberately, in the same
+    spirit as kb_note_dialect. Case-insensitive on the stem; reports the forms
+    found and their count, not every offset.
+    """
+    text = entry.get("text") or ""
+    if not text:
+        return None
+    low = text.lower()
+    hits = {}
+    for brit, amer in BRITISH_FORMS:
+        n = low.count(brit)
+        if n:
+            hits[brit.strip()] = {"n": n, "prefer": amer.strip()}
+    if not hits:
+        return None
+    total = sum(h["n"] for h in hits.values())
+    top = sorted(hits.items(), key=lambda kv: -kv[1]["n"])[:6]
+    return {
+        "rule": "american_spelling",
+        "fixable": False,
+        "detail": {"total": total, "forms": hits},
+        "message": "%d British form%s — %s" % (
+            total, "" if total == 1 else "s",
+            ", ".join("%s→%s" % (k, v["prefer"]) for k, v in top)),
+    }
+
+
 def rule_frontmatter_log_chain(entry):
     if not entry["has_fm"]:
         return None
@@ -741,7 +798,14 @@ def main():
         fm, _order = parse_frontmatter(fm_lines) if has_fm else ({}, [])
         r = rel(path)
         entries.append({"path": path, "rel": r, "lane": lane_of(r), "fm": fm,
-                        "has_fm": has_fm, "bytes": len(text.encode("utf-8"))})
+                        "has_fm": has_fm, "bytes": len(text.encode("utf-8")),
+                        # ⚠ The full text, needed by rule_american_spelling.
+                        # Added 2026-08-21: that rule shipped reading entry["text"]
+                        # when no such key existed, so it returned None for every
+                        # file and reported a clean corpus. An unfailable check —
+                        # the fifth this session — caught only by noticing the
+                        # rule was ABSENT from the summary rather than at zero.
+                        "text": text})
 
     auth_created = None
     for e in entries:
@@ -756,6 +820,7 @@ def main():
                   rule_oversized_doc(e),
                   rule_kb_note_frontmatter(e),
                   rule_kb_note_dialect(e),
+                  rule_american_spelling(e),
                   rule_frontmatter_log_chain(e),
                   rule_unindexed_kb_note(e, index_text),
                   rule_stacked_roadmap_cell(e)):
