@@ -171,6 +171,19 @@ const COLLEGE_ALIASES: Record<string, string> = {
   "smc": "Santa Monica College",
 };
 
+/* How many name-match candidates may travel together.
+ *
+ * 12, because the largest real multi-college district in California is LACCD's
+ * NINE and this must not truncate it. Used in BOTH places a candidate list is
+ * bounded — the per-word query and the tie list — so the two can no longer
+ * disagree. They did: the query was raised 3 -> 12 and the tie list kept 3,
+ * which is the whole of the 2026-08-21 "Three LACCD colleges" defect.
+ *
+ * ⚠ Raising this is NOT what makes the answer honest — the `_match` stamp is.
+ * A bigger cap on an undisclosed list just moves the false claim from three to
+ * nine. See the tie block below. */
+const CANDIDATE_MAX = 12;
+
 async function detectAndFetchCollegeProfile(
   query: string,
   sb: any
@@ -229,7 +242,7 @@ async function detectAndFetchCollegeProfile(
       .select("college")   // names only — the full row is fetched once, for the winner
       .ilike("college", `%${word}%`)
       .order("college")    // determinism: an arbitrary LIMIT window is what hid LA Harbor
-      .limit(12);          // "angeles" alone matches 9; a limit of 3 truncated the answer
+      .limit(CANDIDATE_MAX); // "angeles" alone matches 9; a limit of 3 truncated the answer
     return (data || []).map((r: any) => r.college);
   }));
 
@@ -262,11 +275,48 @@ async function detectAndFetchCollegeProfile(
     }
   }
 
-  // Still ambiguous — hand the caller the tied candidates (an ARRAY), as before.
-  const tied = scored.filter((s) => s.n === scored[0].n).map((s) => s.college).slice(0, 3);
+  /* Still ambiguous — hand the caller the tied candidates (an ARRAY), as before.
+   *
+   * ⭐ THIS IS A CANDIDATE LIST, NOT A ROSTER, AND IT USED TO BE READ AS ONE.
+   * Sam, 2026-08-21, asked "What should Los Angeles Community College District
+   * do to help its colleges award more CPL?" and Sierra opened with **"Three
+   * LACCD colleges appear in the MAP platform data"** — naming three and
+   * closing, in the same answer, with "across all nine LACCD colleges". All
+   * NINE are in map_colleges AND all nine are in chatbox_college_profiles;
+   * nothing was missing. The three were this line's `.slice(0, 3)`.
+   *
+   * ⚠ AND THE LESSON WAS ALREADY LEARNED 34 LINES ABOVE. The per-word query
+   * carries the comment `"angeles" alone matches 9; a limit of 3 truncated the
+   * answer` — someone hit this exact bug, on these exact nine colleges, raised
+   * that limit to 12, and left the identical 3-cap here. Fixing one truncation
+   * and leaving its twin is why LA Harbor came back and the other six did not.
+   *
+   * TWO changes, and the second matters more than the first:
+   *   · the cap rises to CANDIDATE_MAX (12, matching the query limit above), so
+   *     the largest real multi-college district fits; and
+   *   · every returned row is STAMPED `_match`, so buildCollegeContext can say
+   *     what this list IS. Raising the cap alone would only have moved the
+   *     false claim from three to nine — still a name match presented as MAP's
+   *     contents, and still wrong, because Sierra has no district dimension at
+   *     ALL (verified 2026-08-21: zero columns named district in the whole
+   *     public schema, zero occurrences of "district" in this file).
+   *
+   * The repo already had the rule and it was not applied here — from the
+   * alignment work: "peer_total ships as a COLUMN ('showing 9 of 261') — a
+   * capped list must never read as a census."
+   *
+   * ⚠ The stamp goes on EACH ROW, not on the array. withLiveContacts() does
+   * `profile.map(attach)` and buildCollegeContext() does `profiles.map(...)`,
+   * and a property hung on the array itself is dropped by the first of those.
+   * `attach` spreads the row, so a per-row field survives both. */
+  const tiedAll = scored.filter((s) => s.n === scored[0].n).map((s) => s.college);
+  const tied = tiedAll.slice(0, CANDIDATE_MAX);
   const rows = await fetchProfiles(tied);
   if (rows.length === 1) return rows[0];
-  if (rows.length > 1) return rows;
+  if (rows.length > 1) {
+    const stamp = { shown: rows.length, total: tiedAll.length, words: words.slice(0, 8) };
+    return rows.map((r: any) => ({ ...r, _match: stamp }));
+  }
 
   return null;
 }
@@ -1928,7 +1978,49 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
   if (!profile) return "";
   const profiles = Array.isArray(profile) ? profile : [profile];
 
-  return "\n\n" + profiles.map((p: any) => {
+  /* ⭐ A CANDIDATE LIST MUST SAY THAT IT IS ONE.
+   *
+   * Sam, 2026-08-21: asked what LACCD should do, Sierra answered "Three LACCD
+   * colleges appear in the MAP platform data" and listed three — while closing
+   * the same answer with "across all nine LACCD colleges". Nothing was missing
+   * from the data: all nine are in map_colleges and all nine are in
+   * chatbox_college_profiles. The three were a `.slice(0, 3)` on the tie list,
+   * and this function then rendered them as three equal "--- College Profile"
+   * blocks with no statement of what the set WAS. Three profile blocks and a
+   * roster of three are indistinguishable once they reach the model.
+   *
+   * ⚠ THIS PARAGRAPH, NOT THE RAISED CAP, IS THE FIX. A larger cap without it
+   * would have produced "Nine colleges appear in the MAP platform data" — still
+   * a name match presented as MAP's contents, still false, and harder to spot
+   * because nine happens to be right for LACCD and would be wrong for every
+   * district whose colleges are not all named after it.
+   *
+   * The rule is the repo's own, from the alignment work, unapplied here until
+   * now: a capped list must never read as a census, and the total ships
+   * alongside the shown count. */
+  let head = "";
+  if (profiles.length > 1) {
+    const m = (profiles[0] && profiles[0]._match) || null;
+    const n = profiles.length;
+    head = `\n\n⚠ THE ${n} COLLEGE PROFILES BELOW ARE NAME-MATCH CANDIDATES, NOT A ROSTER.\n`
+         + `They are colleges whose NAME contains a word from the question`
+         + (m && m.words && m.words.length ? ` (matched on: ${m.words.join(", ")})` : "")
+         + `, drawn from the 100+ colleges in MAP.`
+         + (m && m.total > m.shown ? ` ${m.shown} of ${m.total} matches are shown.` : "")
+         + `\n`
+         + `This is NOT the set of colleges in any district, system, region or group, `
+         + `and NOT the set of colleges "in MAP" or "in the MAP data".\n`
+         + `Do NOT write "${n} colleges appear in the MAP platform data", and do not write `
+         + `any sentence presenting this set as complete or as a district's membership.\n`
+         + `⚠ THIS ASSISTANT CANNOT ENUMERATE A DISTRICT. District membership is not stored `
+         + `in anything it can read. If the question named a district, system or group, say so `
+         + `plainly and briefly, then use these profiles as EXAMPLES — describing them as `
+         + `colleges whose names matched, never as "the colleges in" that group. Do not guess `
+         + `the group's membership from general knowledge and do not imply the counts below `
+         + `cover it.\n`;
+  }
+
+  return head + "\n\n" + profiles.map((p: any) => {
     let ctx = `--- College Profile: ${p.college} ---\n`;
     ctx += `Exhibits: ${p.total_exhibits} | Credit recommendations: ${p.total_credit_recs} | Disciplines: ${p.discipline_count}\n`;
 
