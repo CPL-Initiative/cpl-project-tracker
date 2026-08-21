@@ -1,0 +1,602 @@
+[
+ {
+  "college_id": 17,
+  "college_name": "Allan Hancock College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 18,
+  "college_name": "American River College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 19,
+  "college_name": "Antelope Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 20,
+  "college_name": "Bakersfield College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 10,
+  "college_name": "Barstow Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 21,
+  "college_name": "Berkeley City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 22,
+  "college_name": "Butte College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 23,
+  "college_name": "Cabrillo College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 24,
+  "college_name": "Calbright College Non-Credit",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 25,
+  "college_name": "Cañada College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 26,
+  "college_name": "Cerritos College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 27,
+  "college_name": "Cerro Coso Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 28,
+  "college_name": "Chabot College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 9,
+  "college_name": "Chaffey College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 29,
+  "college_name": "Citrus College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 30,
+  "college_name": "City College of San Francisco",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 31,
+  "college_name": "Clovis Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 113,
+  "college_name": "Coalinga College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 32,
+  "college_name": "Coastline Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 33,
+  "college_name": "College of Alameda",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 34,
+  "college_name": "College of Marin",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 35,
+  "college_name": "College of San Mateo",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 36,
+  "college_name": "College of the Canyons",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 11,
+  "college_name": "College of the Desert",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 37,
+  "college_name": "College of the Redwoods",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 38,
+  "college_name": "College of the Sequoias",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 39,
+  "college_name": "College of the Siskiyous",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 40,
+  "college_name": "Columbia College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 41,
+  "college_name": "Compton College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 42,
+  "college_name": "Contra Costa College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 12,
+  "college_name": "Copper Mountain College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 43,
+  "college_name": "Cosumnes River College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 7,
+  "college_name": "Crafton Hills College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 44,
+  "college_name": "Cuesta College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 45,
+  "college_name": "Cuyamaca College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 46,
+  "college_name": "Cypress College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 47,
+  "college_name": "De Anza College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 48,
+  "college_name": "Diablo Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 49,
+  "college_name": "East Los Angeles College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 50,
+  "college_name": "El Camino College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 51,
+  "college_name": "Evergreen Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 52,
+  "college_name": "Feather River College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 53,
+  "college_name": "Folsom Lake College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 54,
+  "college_name": "Foothill College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 55,
+  "college_name": "Fresno City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 56,
+  "college_name": "Fullerton College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 133,
+  "college_name": "Futuro Health",
+  "entity_kind": "partner"
+ },
+ {
+  "college_id": 57,
+  "college_name": "Gavilan College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 58,
+  "college_name": "Glendale Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 59,
+  "college_name": "Golden West College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 60,
+  "college_name": "Grossmont College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 61,
+  "college_name": "Hartnell College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 62,
+  "college_name": "Imperial Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 63,
+  "college_name": "Irvine Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 64,
+  "college_name": "Lake Tahoe Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 65,
+  "college_name": "Laney College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 66,
+  "college_name": "Las Positas College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 67,
+  "college_name": "Lassen College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 132,
+  "college_name": "Launch Apprenticeship",
+  "entity_kind": "partner"
+ },
+ {
+  "college_id": 114,
+  "college_name": "Lemoore College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 68,
+  "college_name": "Long Beach City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 69,
+  "college_name": "Los Angeles City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 70,
+  "college_name": "Los Angeles Harbor College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 71,
+  "college_name": "Los Angeles Mission College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 72,
+  "college_name": "Los Angeles Pierce College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 73,
+  "college_name": "Los Angeles Southwest College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 74,
+  "college_name": "Los Angeles Trade Technical College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 75,
+  "college_name": "Los Angeles Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 76,
+  "college_name": "Los Medanos College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 77,
+  "college_name": "Madera College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 78,
+  "college_name": "Mendocino College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 79,
+  "college_name": "Merced College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 80,
+  "college_name": "Merritt College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 81,
+  "college_name": "MiraCosta College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 82,
+  "college_name": "Mission College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 83,
+  "college_name": "Modesto Junior College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 84,
+  "college_name": "Monterey Peninsula College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 85,
+  "college_name": "Moorpark College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 3,
+  "college_name": "Moreno Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 86,
+  "college_name": "Mt. San Antonio College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 6,
+  "college_name": "Mt. San Jacinto College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 87,
+  "college_name": "Napa Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 1,
+  "college_name": "Norco College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 121,
+  "college_name": "North Orange Continuing Education",
+  "entity_kind": "continuing_education"
+ },
+ {
+  "college_id": 88,
+  "college_name": "Ohlone College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 89,
+  "college_name": "Orange Coast College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 90,
+  "college_name": "Oxnard College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 13,
+  "college_name": "Palo Verde College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 15,
+  "college_name": "Palomar College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 91,
+  "college_name": "Pasadena City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 92,
+  "college_name": "Porterville College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 93,
+  "college_name": "Reedley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 94,
+  "college_name": "Rio Hondo College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 2,
+  "college_name": "Riverside City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 95,
+  "college_name": "Sacramento City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 16,
+  "college_name": "Saddleback College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 8,
+  "college_name": "San Bernardino Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 96,
+  "college_name": "San Diego City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 119,
+  "college_name": "San Diego College of Continuing Education",
+  "entity_kind": "continuing_education"
+ },
+ {
+  "college_id": 97,
+  "college_name": "San Diego Mesa College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 98,
+  "college_name": "San Diego Miramar College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 99,
+  "college_name": "San Joaquin Delta College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 100,
+  "college_name": "San Jose City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 101,
+  "college_name": "Santa Ana College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 102,
+  "college_name": "Santa Barbara City College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 103,
+  "college_name": "Santa Monica College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 104,
+  "college_name": "Santa Rosa Junior College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 105,
+  "college_name": "Santiago Canyon College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 106,
+  "college_name": "Shasta College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 107,
+  "college_name": "Sierra College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 108,
+  "college_name": "Skyline College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 109,
+  "college_name": "Solano Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 110,
+  "college_name": "Southwestern College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 111,
+  "college_name": "Taft College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 112,
+  "college_name": "Ventura College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 14,
+  "college_name": "Victor Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 115,
+  "college_name": "West Los Angeles College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 116,
+  "college_name": "West Valley College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 117,
+  "college_name": "Woodland Community College",
+  "entity_kind": "college"
+ },
+ {
+  "college_id": 118,
+  "college_name": "Yuba College",
+  "entity_kind": "college"
+ }
+]
