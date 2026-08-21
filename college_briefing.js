@@ -109,6 +109,10 @@
     // the entity within it. `college` above stays the college-scope selection
     // because everything downstream of it keys on the college NAME.
     scope: null,
+    // The PREVIOUS visit's choice, offered as a shortcut on the scope question
+    // and read by nothing else. Never seeds `scope`/`college` — the tab always
+    // asks first (Sam, 2026-08-21). See restoreScope().
+    remembered: null,
     // Per-college detail, fetched on selection rather than up front — 123
     // colleges' worth of credential rows is not worth loading to show one.
     detail: null, detailFor: null, detailLoading: false, detailError: null,
@@ -626,6 +630,13 @@
          (interactive) accent, never a brand fill that would read as a status. */
       ".cb-scope{max-width:760px;margin:8px auto 0;padding:8px 4px 24px;}",
       ".cb-scope-q{margin:0 0 14px;font-size:1.35rem;letter-spacing:-.01em;color:var(--text-strong);font-weight:650;}",
+      // The "open what you looked at last time" shortcut. Above the options and
+      // visibly a shortcut, not a sixth option — it is a different KIND of
+      // answer to the question, and a row of five look-alike buttons with a
+      // sixth that behaves differently is how a picker becomes a guess.
+      ".cb-scope-again{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;margin:0 0 16px;"
+        + "padding-bottom:14px;border-bottom:1px solid var(--border,#d8dde6);}",
+      ".cb-scope-again-l{font-size:.78rem;color:var(--text-muted);}",
       ".cb-scope-opts{display:flex;flex-direction:column;gap:8px;}",
       ".cb-scope-b{display:flex;align-items:baseline;justify-content:space-between;gap:12px;width:100%;"
         + "text-align:left;padding:13px 16px;border:1px solid var(--border,#d8dde6);border-radius:10px;"
@@ -655,7 +666,6 @@
       ".cb-welcome-row{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;flex-wrap:wrap;}",
       ".cb-welcome-t{margin:0;font-size:1.45rem;letter-spacing:-.015em;color:var(--text-strong);font-weight:650;}",
       ".cb-welcome-acts{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
-      ".cb-welcome-p{margin:6px 0 0;color:var(--text-muted);font-size:.9rem;line-height:1.5;max-width:70ch;}",
       ".cb-act{padding:6px 13px;border:1px solid var(--border,#d8dde6);border-radius:999px;"
         + "background:var(--surface-opaque,#fff);color:inherit;font:inherit;font-size:.8rem;cursor:pointer;"
         + "white-space:nowrap;}",
@@ -736,6 +746,33 @@
 
   /* ── Render ──────────────────────────────────────────────────────────── */
 
+  /* ⚠ THE PANE'S LOADING PLACEHOLDER IS AN INLINE STYLE, AND INLINE BEATS US.
+   * Both mirrored HTMLs ship `#college-briefing-root` with a dashed border, a
+   * tinted background, 28px of padding and `text-align:center` — correct for
+   * "Loading College Briefing…", and still applied to everything rendered on
+   * top of it. Inline styles out-rank any selector, so `#college-briefing-root
+   * {text-align:left}` in ensureCss() never won.
+   *
+   * ⭐ THAT IS WHY THE PROSE LOOKED CENTRED INSIDE A LEFT-ALIGNED PAGE (Sam,
+   * 2026-08-21: "narrow paragraphs together with full width content… looks
+   * awkward"). Every paragraph with a measure cap — the welcome line, Sierra's
+   * own description — rendered its text CENTRED inside a left-anchored box, so
+   * it read as a ragged column floating in the middle of a wide tab. The cap
+   * was never the problem; the inheritance was.
+   *
+   * Cleared here rather than in the HTML because the placeholder still has a
+   * job before this module loads, and because clearing it in JS is one edit
+   * instead of two mirrored ones (Rule 4). Idempotent, and only ever removes
+   * the four properties the placeholder sets. */
+  function shedPlaceholder(root) {
+    if (!root || !root.style || root.getAttribute("data-cb-shed") === "1") return;
+    ["border", "background", "color", "padding", "textAlign"].forEach(function (k) {
+      try { root.style[k] = ""; } catch (e) { /* jsdom-safe */ }
+    });
+    root.setAttribute("data-cb-shed", "1");
+  }
+
+
   /* One collapsible detail section. Sam, 2026-08-12: Sierra AI is the tab and
    * everything under her opens on demand — "a minimal initial view with nested
    * expandable details for the inquisitive".
@@ -756,8 +793,17 @@
    * that", where a disabled one with a sentence reads as "known, not yet wired"
    * — which is the truth, and it is also how the next person knows to ask. */
   function scopePicker() {
+    // The shortcut the old auto-restore used to take on the reader's behalf.
+    // Named, so nobody lands on a college without having read its name.
+    var last = rememberedLabel();
+    var resume = last
+      ? '<div class="cb-scope-again"><button type="button" class="cb-act" data-scope-resume="1">'
+        + "Open " + esc(last) + " again</button>"
+        + '<span class="cb-scope-again-l">what you looked at last time</span></div>'
+      : "";
     return '<div class="cb-scope" role="group" aria-label="Choose your view">'
       + '<h2 class="cb-scope-q">What would you like to look at?</h2>'
+      + resume
       + '<div class="cb-scope-opts">'
       + SCOPES.map(function (s) {
           if (!s.ready) {
@@ -844,17 +890,14 @@
   }
 
   /* ── Step 3: the header once a choice is made ─────────────────────────────
-   * Sam: the title arrives AFTER the choice, and carries the minimum a reader
-   * needs to take the next step — which is ask Sierra, or open a section.
-   * Deliberately two sentences: this sits above an assistant that introduces
-   * itself, so a paragraph here would be the duplicate-description problem
-   * #1231 removed, reintroduced one section higher. */
+   * Sam: the title arrives AFTER the choice. It is a NAME AND ITS CONTROLS and
+   * nothing else — no prose. The one sentence it used to carry was struck on
+   * 2026-08-21 for describing the assistant that describes itself directly
+   * below; see the note where it used to be. */
   function welcomeHead() {
     var name = scopeLabel();
     if (!name) return "";
     var title = state.scope === "statewide" ? "Statewide CPL view" : "Welcome, " + name;
-    var what = state.scope === "college" ? "this college"
-             : state.scope === "district" ? "this district" : "the system";
     return '<div class="cb-welcome">'
       + '<div class="cb-welcome-row">'
       + '<h2 class="cb-welcome-t">' + esc(title) + "</h2>"
@@ -869,8 +912,19 @@
           : "")
       + '<button type="button" class="cb-back" data-scope-clear="1">Change view</button>'
       + "</div></div>"
-      + '<p class="cb-welcome-p">Ask Sierra anything about CPL at ' + esc(what)
-      + ", or open a section below for the detail behind it.</p>"
+      /* ⚠ THERE WAS A SENTENCE HERE AND IT SAID WHAT SIERRA ALREADY SAYS
+       * (struck 2026-08-21, Sam: "Strike 'Ask Sierra anything about…' It's
+       * redundant with the text under the Sierra AI logo"). It read "Ask Sierra
+       * anything about CPL at this college, or open a section below for the
+       * detail behind it." — three lines above a box whose own first line is
+       * "Ask her anything about credit for prior learning."
+       *
+       * This is #1231's duplicate-description problem for the third time: the
+       * tab printed a heading + description, the widget printed its own, #1231
+       * removed the tab's copy, and this paragraph grew back one level up. Do
+       * not reintroduce a description of Sierra here. If the header needs to
+       * point somewhere, point at something Sierra is NOT — and prefer a
+       * control to a sentence about one. */
       + '<div class="cb-allctl"><button type="button" class="cb-act cb-act-q" data-all="open">Expand all</button>'
       + '<button type="button" class="cb-act cb-act-q" data-all="close">Collapse all</button></div>'
       + "</div>";
@@ -1683,6 +1737,7 @@
 
   function render(root) {
     ensureCss();
+    shedPlaceholder(root);
     if (!signedIn()) {
       // Was: "Sign in with the team phrase to view the college briefing." —
       // true, but it never said WHERE, and four of this tab's tables gate the
@@ -1759,14 +1814,28 @@
       + '<div class="cb-assist-body">'
       + '<div class="cb-assist-head" id="cb-assist-head"></div>'
       + '<div class="cb-assist-pick" id="cb-assist-pick"></div>'
-      + (state.college ? '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks" id="cb-asks"></div>' : "")
+      /* ⚠ THE SUGGESTED QUESTIONS ARE NO LONGER PRINTED HERE (Sam, 2026-08-21:
+       * "My College users select a pre-seeded question and are not prompted for
+       * their role — confusing").
+       *
+       * There were TWO question clusters and the role picker sat between them:
+       * this one above the widget, and the widget's own generic starters below
+       * its "I'm a…" chips. Clicking one of these with no role chosen called the
+       * widget's needAudience(), whose message reads "tap who you are above" —
+       * and the chips were BELOW. The sentence was wrong and the reader had two
+       * lists to reconcile.
+       *
+       * They now go to the widget via CPL_CHAT.setSuggestions() (see finish()),
+       * which renders ONE cluster in its own slot UNDER the role chips. That
+       * also replaces the generic starters, one of which names Riverside City
+       * College — fine on the CPL Assistant tab, nonsense on Cabrillo's page. */
       + '<div class="cb-assist-mount" id="cb-assistant-mount"></div>'
       + "</div></details></section>";
 
     if (state.error) h += '<div class="cb-warn">Could not load everything: ' + esc(state.error) + ". Figures below may be incomplete — treat a missing number as unknown, not zero.</div>";
 
     var b = state.data && state.data.briefing;
-    if (!b) { finish(root, h, null); return; }
+    if (!b) { finish(root, h); return; }
 
     if (b.unread && b.unread.length) {
       h += '<div class="cb-warn"><b>' + b.unread.length + " funding program" + (b.unread.length === 1 ? "" : "s") + " not read.</b><ul style=\"margin:6px 0 0 18px;\">" +
@@ -1782,7 +1851,7 @@
     if (!state.college) {
       var group = state.scope === "district" ? (dIdx && dIdx[state.district]) || [] : names;
       h += rollup(group, b);
-      finish(root, h, null); return;
+      finish(root, h); return;
     }
 
     if (b.leads.length) {
@@ -2202,13 +2271,18 @@
       + esc(b.scenario) + ", Year " + esc(b.year) + "); edit them there and they change here. "
       + "Student figures are withheld below 10 CPL students, to protect student privacy.</div>";
 
-    finish(root, h, st);
+    finish(root, h);
   }
 
   /* Every exit path from render() goes through here, so the Sierra AI box is
    * assembled once: pickers relocated into it, suggested questions built from
    * this college's own figures, and the shared assistant mounted. */
-  function finish(root, h, st) {
+  /* ⚠ `st` (this college's standing figures) USED to be threaded in here for the
+   * suggested questions and is deliberately gone: three of the four call sites
+   * passed null for it, so the "units already waiting" question only ever
+   * appeared on one path. setAssistantQuestions() derives it from the same two
+   * inputs render() uses, via standingFor(). */
+  function finish(root, h) {
     root.innerHTML = h;
     // The pickers move INSIDE the Sierra AI box (Sam: "put all the college
     // selectors in the CPL Assistant box for simplicity"). They are built in
@@ -2225,13 +2299,20 @@
      * targeted, so a future layout that does put pickers in the box works. */
     var pickHost = root.querySelector("#cb-assist-pick"), bar = root.querySelector(".cb-bar-pick");
     if (pickHost && bar) pickHost.appendChild(bar);
-    var asks = root.querySelector("#cb-asks");
-    if (asks && state.college) {
-      asks.innerHTML = sierraQuestions(state.college, state.detail, st || null)
-        .map(function (q) { return '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>"; })
-        .join("");
-    }
-    mountAssistant(root);
+    /* ⚠ setAssistantQuestions AFTER mountAssistant, NEVER BEFORE: setSuggestions
+     * paints into the row build() creates, so handing the list over first would
+     * store it and show nothing until the next render. Ordering, not taste.
+     *
+     * ⚠ AND A WIDGET THAT DID NOT MOUNT MUST NOT SILENTLY COST THE QUESTIONS.
+     * Moving them into the assistant means the assistant is now the only thing
+     * that can show them — so the no-widget path renders the old cluster, wired
+     * to askSierra(), which stashes the question and navigates to the full tab.
+     * This file's rule 2: a thing we could not read is NAMED, not skipped. */
+    /* ⚠ THE FALLBACK IS GATED ON THE QUESTIONS LANDING, NOT ON THE MOUNT. A
+     * chat module that mounts but predates setSuggestions() would otherwise
+     * take the mounted branch and show no questions at all — the silent loss
+     * this fallback exists to prevent, reintroduced by the gate itself. */
+    if (!mountAssistant(root) || !setAssistantQuestions()) fallbackAsks(root);
     hoistAssistantIntro(root);
     wire(root);
   }
@@ -2280,10 +2361,26 @@
     }
   }
 
-  /* The scope survives a reload (Sam's flow is a daily one — re-answering "who
-   * are you" every morning is a tax), but it is always ESCAPABLE: every view
-   * carries a "Change view" control. A remembered choice with no way back is a
-   * trap, not a convenience. Wrapped because storage can be unavailable. */
+  /* ── The tab ALWAYS asks first (Sam, 2026-08-21) ───────────────────────────
+   * "It opens on Cabrillo College now and should rather prompt for a location
+   * before populating."
+   *
+   * ⭐ THE REMEMBERED CHOICE IS NOW A SHORTCUT, NOT A DESTINATION. It used to
+   * be restored straight into `state`, so the tab opened already populated for
+   * whichever college was last looked at — which is wrong twice over: a shared
+   * screen or a second person's turn silently shows someone else's college, and
+   * a reader who wants a different one has to notice they are on the wrong page
+   * before they can leave it. Opening on the question costs one click and can
+   * never show the wrong college.
+   *
+   * The convenience the old behaviour bought is kept explicitly: the scope
+   * question carries a "Last time you looked at X — open it again" button, so
+   * the daily flow is still one click, but it is a click the reader MAKES
+   * rather than one the tab makes for them.
+   *
+   * `state.remembered` is deliberately a separate field. Nothing downstream
+   * reads it; only the picker does, and only to offer the shortcut. Wrapped
+   * because storage can be unavailable. */
   function rememberScope() {
     try {
       localStorage.setItem(SCOPE_KEY, JSON.stringify({
@@ -2295,15 +2392,48 @@
     try {
       var r = JSON.parse(localStorage.getItem(SCOPE_KEY) || "null");
       if (!r || !r.scope) return;
-      // Only restore a scope that is still READY. A remembered "swp" from a
-      // future build must not strand this one on a blank screen.
+      // Only offer a scope that is still READY. A remembered "swp" from a
+      // future build must not become a shortcut that lands on a blank screen.
       var known = SCOPES.filter(function (s) { return s.k === r.scope && s.ready; });
       if (!known.length) return;
-      state.scope = r.scope;
-      if (r.scope === "college") state.college = r.college || null;
-      if (r.college) state.college = r.college;
-      state.district = r.district || "";
+      // A scope that needs an entity is only a usable shortcut once it HAS one;
+      // "open it again" that lands on a second question is not a shortcut.
+      if (scopeNeedsEntity(r.scope)
+          && !(r.scope === "college" ? r.college : r.district)) return;
+      state.remembered = {
+        scope: r.scope,
+        college: r.scope === "college" ? (r.college || null) : null,
+        district: r.scope === "district" ? (r.district || "") : ""
+      };
     } catch (e) { /* ignore */ }
+  }
+
+  /* PURE. What the remembered choice is called, for the shortcut's label.
+   * Returns "" when there is nothing worth offering, so the caller renders
+   * nothing rather than a button with a blank name. */
+  function rememberedLabel() {
+    var r = state.remembered;
+    if (!r) return "";
+    if (r.scope === "college") return r.college || "";
+    if (r.scope === "district") return (r.district || "").replace(/ Community College District$/, " CCD");
+    if (r.scope === "statewide") return "the statewide view";
+    return "";
+  }
+
+  /* Take the shortcut: restore the remembered choice into live state and load.
+   * Everything the normal path does, in the order the normal path does it. */
+  function resumeRemembered(root) {
+    var r = state.remembered;
+    if (!r) return;
+    state.scope = r.scope;
+    state.college = r.college || null;
+    state.district = r.district || "";
+    state.detail = null; state.detailFor = null; state.detailError = null;
+    rememberScope();
+    recompute(); render(root);
+    // Same loads the normal path does, and no others: setScope() pulls nothing
+    // for a group scope, so neither does the shortcut into one.
+    if (state.college) { loadCollege(state.college, root); loadFunding(root); }
   }
 
   function setScope(k, root) {
@@ -2530,6 +2660,10 @@
     Array.prototype.forEach.call(root.querySelectorAll("[data-scope-clear]"), function (b) {
       b.onclick = function () { setScope(null, root); };
     });
+    // The shortcut past the question, for whoever was here yesterday.
+    Array.prototype.forEach.call(root.querySelectorAll("[data-scope-resume]"), function (b) {
+      b.onclick = function () { resumeRemembered(root); };
+    });
     // Back to step 2, keeping the scope. Clears the entity AND its detail — a
     // stale detail left behind would render the previous college's figures under
     // the next one's name for as long as the fetch takes.
@@ -2577,6 +2711,10 @@
     Array.prototype.forEach.call(root.querySelectorAll(".cb-pick"), function (b) {
       b.onclick = function () { selectCollege(b.getAttribute("data-college"), root); };
     });
+    // The suggested questions are the assistant's own chips now, so this wires
+    // only the FALLBACK cluster fallbackAsks() renders when cpl_chat.js did not
+    // mount. Nothing matches on the normal path — kept because the fallback is
+    // the one path where the questions still belong to this file.
     Array.prototype.forEach.call(root.querySelectorAll(".cb-ask"), function (b) {
       b.onclick = function () { askSierra(b.getAttribute("data-q")); };
     });
@@ -2661,6 +2799,57 @@
     var C = chatModule(), host = root && root.querySelector("#cb-assistant-mount");
     if (!C || !host) return false;
     try { C.mountInto(host); return true; } catch (e) { return false; }
+  }
+
+  /* PURE-ish. This college's five headline figures, from the same two inputs
+   * render() uses. Derived here rather than threaded through finish() as a
+   * parameter: three of finish()'s four exit paths pass null for it, so a
+   * threaded value would silently drop the "units already waiting" question on
+   * every path but one. */
+  function standingFor(college) {
+    var summary = state.data && state.data.summaryByName && state.data.summaryByName[college];
+    return standing(summary, state.detail);
+  }
+
+  /* The pre-2026-08-21 question cluster, rendered ONLY when cpl_chat.js is not
+   * there to hold it. Same markup, same wiring, same askSierra() route — it is
+   * the fallback, not a second cluster: nothing calls this while the widget is
+   * mounted, so the two can never appear together. */
+  function fallbackAsks(root) {
+    var mount = root && root.querySelector("#cb-assistant-mount");
+    if (!mount || !mount.parentNode || !state.college) return false;
+    // Never beside the widget's own row. Structural, so "the two can never
+    // appear together" is enforced rather than reasoned about.
+    if (root.querySelector(".cplchat-suggest") || root.querySelector(".cb-asks")) return false;
+    var qs = sierraQuestions(state.college, state.detail, standingFor(state.college));
+    if (!qs.length) return false;
+    var box = document.createElement("div");
+    box.innerHTML = '<div class="cb-asks-lab">Try one of these</div><div class="cb-asks">'
+      + qs.map(function (q) {
+          return '<button type="button" class="cb-ask" data-q="' + esc(q) + '">' + esc(q) + "</button>";
+        }).join("")
+      + "</div>";
+    while (box.firstChild) mount.parentNode.insertBefore(box.firstChild, mount);
+    return true;
+  }
+
+  /* Hand this college's own questions to the assistant, so there is ONE cluster
+   * of them and it sits below the role chips (Sam, 2026-08-21). Derived, not a
+   * fixed list, so they stay right as a college's position changes.
+   *
+   * ⚠ A GROUP SCOPE CLEARS THEM RATHER THAN LEAVING THE LAST COLLEGE'S. Passing
+   * null returns the widget to its generic starters, which are correct for a
+   * district or statewide view; leaving the previous list would offer questions
+   * about a college the reader has just navigated away from.
+   *
+   * Fails soft in both directions: an unmounted or older chat module simply
+   * shows its own starters, which is a working assistant with less-tailored
+   * suggestions — never a blank box. */
+  function setAssistantQuestions() {
+    var C = chatModule();
+    if (!C || typeof C.setSuggestions !== "function") return false;
+    var qs = state.college ? sierraQuestions(state.college, state.detail, standingFor(state.college)) : null;
+    try { return C.setSuggestions(qs); } catch (e) { return false; }
   }
   /* One click, not two. The suggested questions sit above an assistant that is
    * already mounted on this tab, so clicking one fills the box AND sends —

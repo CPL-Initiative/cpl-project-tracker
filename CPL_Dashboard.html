@@ -9159,7 +9159,11 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
               .cplchat { max-width: none; margin: 0; }
               .cplchat-intro h2 { margin: 16px 0 6px; color: var(--navy-primary); }
               .cplchat-intro p { margin: 0 0 8px; color: #5a6478; max-width: 82ch; }
-              .cplchat-intro .cplchat-beta { font-size: .85rem; color: #8a6d1a; background: #fff8e6; border: 1px solid #f2dca0; border-radius: 6px; padding: 6px 10px; display: inline-block; }
+              /* The yellow Beta box was deleted 2026-08-21 (Sam) — its two duties, saying
+                 Sierra is unfinished and saying not to type personal information, are
+                 carried by the Note sentence in cpl_chat.js's intro. That sentence styles
+                 itself from the widget's own CSS (.cplchat-note), so it needs no rule in
+                 either mirrored HTML. Nothing emits .cplchat-beta any more. */
               /* GROWS WITH THE ANSWER (Sam, 2026-08-17: "so users don't have to scroll so
                  much"). Was a fixed height:460px, which crammed a long answer into a small
                  box inside a mostly-empty page — scrolling twice to read once. Now it sizes

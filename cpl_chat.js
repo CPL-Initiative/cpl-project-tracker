@@ -36,6 +36,34 @@
     'How many students has CPL served statewide?',
   ];
 
+  /* ── ONE cluster of suggested questions, and the host may own it ───────────
+   * Sam, 2026-08-21: "As it is now, My College users select a pre-seeded
+   * question and are not prompted for their role — confusing."
+   *
+   * ⭐ THE CONFUSION WAS TWO CLUSTERS STRADDLING THE ROLE PICKER. My College
+   * printed its own college-specific questions ABOVE this widget and the widget
+   * printed these generic ones BELOW the "I'm a…" chips. Clicking one of the
+   * upper set with no role chosen called needAudience(), whose message says
+   * "tap who you are above" — and the chips were BELOW it. The sentence was
+   * literally wrong, and the reader had two question lists to reconcile.
+   *
+   * ⚠ AND THE GENERIC LIST NAMES ANOTHER COLLEGE. "Does Riverside City College
+   * offer firefighter CPL?" is a fine starter on the CPL Assistant tab and is
+   * nonsense on Cabrillo's own page. A host that knows whose page this is
+   * REPLACES the list rather than adding a second one.
+   *
+   * So the host hands its questions to the widget and the widget renders them
+   * in its own slot — below the role chips, which makes the role the first
+   * thing read and needAudience()'s "above" true again.
+   *
+   * `hostSuggestions` is module-level, mirroring the existing inputEl/logEl
+   * convention: build() re-points these at whichever pane built last, and
+   * renderSuggestions() only ever touches THAT pane's row. mount() (the
+   * dedicated CPL Assistant pane) clears it, so a college's questions can never
+   * leak onto the generic tab. */
+  var hostSuggestions = null;
+  var chipsEl = null;
+
   // ── Session id (one per browser tab session, reused across tab switches) ──
   function sessionId() {
     try {
@@ -229,6 +257,25 @@
       }, a.label));
     });
   }
+  /* Paints whichever list is in force into the row build() created. Never
+   * queries the document: two panes can hold a chip row at once (My College and
+   * the CPL Assistant tab), and getElementById would find whichever was written
+   * first — the same trap documented on `inputEl` below. */
+  function renderSuggestions() {
+    if (!chipsEl) return;
+    chipsEl.textContent = '';
+    var list = (hostSuggestions && hostSuggestions.length) ? hostSuggestions : SUGGESTED;
+    // A heading, because a bare row of pills reads as chrome. My College's own
+    // label said this; it moves with the questions rather than being lost.
+    chipsEl.appendChild(el('div', { className: 'cplchat-suggest-lab' }, 'Try one of these'));
+    list.forEach(function (q) {
+      chipsEl.appendChild(el('button', {
+        type: 'button', className: 'cplchat-chip',
+        onclick: function () { inputEl.value = q; submit(); },
+      }, q));
+    });
+  }
+
   function needAudience() {
     setStatus('First, tap who you are above — it helps the assistant tailor the answer.', 'error');
     if (!audEl) return;
@@ -533,6 +580,21 @@
       // ── The Sierra AI heading + its Whitney mark (Sam, 2026-08-17) ─────────
       // The mark is the same roundel the answer avatars carry, at heading size.
       // `em` so it tracks the h2 rather than needing a second breakpoint.
+      // ── The Note sentence, where the yellow Beta box used to be ──────────
+      // Distinct by a quiet RULE, never by fading. Sky175's finding on the
+      // public page was that the least legible text on it was the sentence
+      // telling a student to check with their coordinator — a caution rendered
+      // in a third, fainter grey. So this inherits the description's colour
+      // exactly (no new contrast pair to verify) and earns its separation from
+      // a neutral border and spacing instead. It must out-specify the host
+      // pane's `.cplchat-intro p` rule, hence the two-class selector.
+      '.cplchat-intro .cplchat-note { border-left:3px solid var(--border-strong, #c9cfd8);'
+        + ' padding-left:11px; margin-top:10px; font-size:.95em; }',
+      // The suggestion row's heading. `.cplchat-suggest` is a wrapping flex row,
+      // so the label claims a full line of its own rather than sitting in the
+      // chip flow.
+      '.cplchat-suggest-lab { flex:1 0 100%; font-size:.72rem; text-transform:uppercase;'
+        + ' letter-spacing:.04em; color:var(--text-muted, #5a6478); margin:2px 0 2px; }',
       '.cplchat-title { display:flex; align-items:center; gap:10px; }',
       '.cplchat-title-mark { flex:0 0 auto; width:1.25em; height:1.25em; display:block; }',
       '.cplchat-title-mark svg { width:100%; height:100%; display:block; }',
@@ -756,8 +818,14 @@
     addUserMsg(q);
     inputEl.value = '';
     setStatus('Thinking…', 'pending');
-    var firstChips = document.getElementById('cplchat-suggest');
-    if (firstChips) firstChips.remove(); // hide starter chips after first question
+    // Hide the starter chips after the first question — THIS pane's chips.
+    // ⚠ This was getElementById('cplchat-suggest'), and two panes can hold a row
+    // at once (My College mounts the same widget). The id lookup returns
+    // whichever is earlier in the document — My College — so asking on the CPL
+    // Assistant tab cleared the OTHER tab's chips and left its own on screen.
+    // Same trap as `inputEl`, documented below; `chipsEl` is re-pointed by
+    // build() alongside inputEl, so the two always refer to one pane.
+    if (chipsEl) { chipsEl.remove(); chipsEl = null; }
     try {
       await ask(q);
       setStatus('');
@@ -793,22 +861,29 @@
     title.appendChild(mark);
     title.appendChild(el('span', null, 'Sierra AI'));
 
+    // ── One description, and the caution reads as a sentence (Sam, 2026-08-21) ──
+    // His wording, verbatim. It replaces BOTH the old four-line description and
+    // the yellow "Beta — in development" box he asked to delete: the box's two
+    // duties (say she is unfinished, say not to type personal information) are
+    // carried by the Note sentence, so nothing was dropped, only unboxed.
+    //
+    // ⚠ IT IS TWO PARAGRAPHS, NOT ONE BLOCK. The Note is a caution and has to
+    // survive being skimmed — a box earned that for free and plain prose does
+    // not. `.cplchat-note` is the quieter weight; it is deliberately NOT a
+    // coloured panel, which is the thing that was removed.
+    //
+    // It has to read correctly in BOTH hosts — this widget mounts on My College
+    // and on the CPL Assistant tab, so it cannot say "the sections below" (the
+    // wording My College's deleted paragraph used, which would be a promise
+    // about a page that isn't always there).
     wrap.appendChild(el('div', { className: 'cplchat-intro' }, [
       title,
-      // One description, and it has to read correctly in BOTH hosts — this
-      // widget mounts on My College and on the CPL Assistant tab, so it cannot
-      // say "the sections below" (the wording My College's deleted paragraph
-      // used, which would be a promise about a page that isn't always there).
-      el('p', null,
-        'Ask her anything about Credit for Prior Learning — what a college ' +
-        'offers, what credit is sitting unawarded, where to find credit for a ' +
-        'license or certification, who a student should contact, or statewide ' +
-        'CPL numbers. She reads the same CPL Initiative records and knowledge ' +
-        'base these pages are built from, so it is usually faster to ask than ' +
-        'to go looking.'),
-      el('p', { className: 'cplchat-beta' },
-        'Beta — in development. Please don\'t enter personal information; ' +
-        'questions are logged to improve answers.'),
+      el('p', null, 'Ask her anything about credit for prior learning.'),
+      el('p', { className: 'cplchat-note' },
+        'Note: Sierra is in the development phase and may present incomplete or ' +
+        'inaccurate information. Please give a thumbs up or down and include a ' +
+        'note if you notice an improvement to be made. Please don\'t enter ' +
+        'personal information; questions are logged to improve responses.'),
     ]));
 
     audEl = el('div', {
@@ -833,15 +908,16 @@
       }
     } catch (e) { /* no addEventListener options support — follow stays armed */ }
 
-    // Starter suggestion chips
-    var chips = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
-    SUGGESTED.forEach(function (s) {
-      chips.appendChild(el('button', {
-        type: 'button', className: 'cplchat-chip',
-        onclick: function () { inputEl.value = s; submit(); },
-      }, s));
-    });
-    logEl.appendChild(chips);
+    // Starter suggestion chips — the ONE question cluster (see hostSuggestions).
+    //
+    // ⚠ THEY STAY INSIDE THE LOG. Sky175 found that this log is keyboard
+    // reachable only BECAUSE these chips are focusable and live in it; moving
+    // them out would take the transcript out of the tab order to fix a layout
+    // nit. Inside the log also puts them below the role chips for free, which
+    // is the whole point of the consolidation.
+    chipsEl = el('div', { className: 'cplchat-suggest', id: 'cplchat-suggest' });
+    renderSuggestions();
+    logEl.appendChild(chipsEl);
     wrap.appendChild(logEl);
 
     statusEl = el('div', { className: 'cplchat-status', id: 'cplchat-status', 'aria-live': 'polite' });
@@ -941,6 +1017,10 @@
     var host = pane.querySelector('.cplchat-mount') || pane.querySelector('.main-container') || pane;
     if (host.getAttribute('data-cplchat-mounted') === '1') return; // idempotent
     host.setAttribute('data-cplchat-mounted', '1');
+    // The dedicated tab is nobody's college page, so it always gets the generic
+    // starters — a stale host list from My College must not follow the reader
+    // here and ask about a college this pane never mentioned.
+    hostSuggestions = null;
     build(host);
     consumeTestQuestion();
   }
@@ -1006,6 +1086,19 @@
       if (!inputEl) return false;
       inputEl.value = String(q == null ? '' : q).slice(0, 1000);
       submit();
+      return true;
+    },
+    /* Hand the embedding tab's own questions to the widget, so there is ONE
+     * cluster and it sits below the role chips. Pass a falsy value or an empty
+     * array to go back to the generic starters. Call it AFTER mountInto() —
+     * build() creates the row this paints into. Returns false if nothing is
+     * mounted, so a caller can tell "not shown" from "shown empty". */
+    setSuggestions: function (list) {
+      hostSuggestions = (list && list.length) ? list.slice(0, 8).map(function (q) {
+        return String(q == null ? '' : q).slice(0, 300);
+      }) : null;
+      if (!chipsEl) return false;
+      renderSuggestions();
       return true;
     },
   };

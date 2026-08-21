@@ -132,11 +132,17 @@ block("step 3 header", function () {
   const { root, M } = load({ scope: "college", college: "Allan Hancock College" });
   check("⭐ the welcome title names the choice",
     /Welcome, Allan Hancock College/.test(root.textContent));
-  check("the intro points at the two next steps",
-    /Ask Sierra/.test(root.textContent) && /open a section/.test(root.textContent));
-  check("the intro is SHORT — one sentence, not a second description of Sierra",
-    (root.querySelector(".cb-welcome-p").textContent || "").length < 160,
-    "she introduces herself immediately below; a paragraph here is the #1231 duplicate again");
+  /* ⭐ THE HEADER CARRIES NO PROSE AT ALL (Sam, 2026-08-21: "Strike 'Ask Sierra
+   * anything about…' It's redundant with the text under the Sierra AI logo").
+   * It used to print "Ask Sierra anything about CPL at this college, or open a
+   * section below…" three lines above a box whose own first line is "Ask her
+   * anything about credit for prior learning." That is #1231's duplicate
+   * description for the third time, one level up. A name and its controls. */
+  check("⭐ the header no longer describes the assistant that describes itself",
+    !/Ask Sierra anything/.test(root.textContent) && !root.querySelector(".cb-welcome-p"));
+  // Paired with a positive control, so deleting the whole header would not pass.
+  check("…and the header still carries the name and its controls",
+    /Welcome, Allan Hancock College/.test(root.textContent) && !!root.querySelector("#cb-report"));
   check("a report button is offered", !!root.querySelector("#cb-report"));
   check("expand all / collapse all are offered", root.querySelectorAll("[data-all]").length === 2);
   check("switching entity does not cost a trip through the scope question",
@@ -265,10 +271,36 @@ block("briefing blocks", function () {
 
 // ── 8. The remembered choice, and its escape hatch ────────────────────────────
 block("persistence", function () {
+  /* ⭐ A REMEMBERED CHOICE IS A SHORTCUT, NOT A DESTINATION (Sam, 2026-08-21:
+   * "It opens on Cabrillo College now and should rather prompt for a location
+   * before populating"). It used to be restored straight into state, so the tab
+   * opened already populated for whoever was here last — which shows a second
+   * reader someone else's college, and makes a reader who wants a different one
+   * notice they are on the wrong page before they can leave it. */
   const r = load({ remember: { scope: "college", college: "Cabrillo College", district: "" } });
   r.M.activate();
-  check("a remembered scope is restored", r.M._state.scope === "college");
-  check("…and the remembered college with it", r.M._state.college === "Cabrillo College");
+  check("⭐ a remembered college does NOT populate the tab", r.M._state.scope !== "college"
+    && r.M._state.college !== "Cabrillo College");
+  r.M._state.loading = false;
+  r.M.render(r.root);
+  check("…the reader is asked first", /What would you like to look at\?/.test(r.root.textContent));
+  // The convenience the old behaviour bought is kept, but as a click the reader
+  // makes. Named, so nobody arrives at a college without having read its name.
+  const again = r.root.querySelector("[data-scope-resume]");
+  check("⭐ …and the last choice is offered BY NAME as a shortcut",
+    !!again && /Cabrillo College/.test(again.textContent || ""));
+  again.click();
+  check("…which does populate the tab",
+    r.M._state.scope === "college" && r.M._state.college === "Cabrillo College");
+
+  // ⚠ A shortcut that lands on a SECOND question is not a shortcut. A scope
+  // that needs an entity is only offered once it has one.
+  const half = load({ remember: { scope: "college", college: "", district: "" } });
+  half.M.activate();
+  half.M._state.loading = false;
+  half.M.render(half.root);
+  check("⚠ a remembered scope with no entity is not offered as a shortcut",
+    !half.root.querySelector("[data-scope-resume]"));
 
   // ⚠ A remembered scope that is not READY must not strand anyone on a blank
   // screen — e.g. a "swp" saved by a future build, read by this one.

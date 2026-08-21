@@ -185,7 +185,14 @@ block("(2)", function () {
   // Buttons whose meaning was carried ONLY by a glyph had to become words, or
   // removing the glyph would have destroyed the control.
   const html = root.innerHTML;
-  check("(2) the Beta notice reads as words", /Beta — in development/.test(text) && !/🧪/.test(html));
+  /* The yellow Beta box was deleted 2026-08-21 (Sam) and its two duties moved
+   * into the Note sentence: say she is unfinished, say not to type personal
+   * information. Guarded as CONTENT, not as a box — deleting the box was the
+   * ask; deleting the caution with it would not have been. */
+  check("(2) ⭐ the caution survived the box being deleted",
+    /development phase/.test(text) && /don.t enter personal information/i.test(text)
+      && !/Beta — in development/.test(text) && !/🧪/.test(html),
+    JSON.stringify(text.slice(0, 200)));
 
   // Resources live in a section that only renders once the briefing DATA has
   // landed, and this fetch never resolves — so read the pure builder rather
