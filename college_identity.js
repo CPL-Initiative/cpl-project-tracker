@@ -124,6 +124,16 @@
       ".cid-tag { display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; border:1px solid var(--border-strong, #cdd6e3); border-radius:999px; padding:1px 8px; margin-right:6px; color:var(--text-muted, #5a6478); }",
       ".cid-tag.whitespace, .cid-tag.unknown { border-color:var(--crimson, #920000); color:var(--crimson, #920000); }",
       ".cid-tag.awaiting_map_id { border-color:var(--cobalt, #0047AB); color:var(--cobalt, #0047AB); }",
+      /* Suppressed rows. --mustard-text is the palette's documented "caution
+       * TEXT grade on light surfaces" — an EXISTING token, not an invented one
+       * (the first draft reached for `--amber`, which does not exist; inventing
+       * a palette entry is what reference-ui-design-system forbids). Measured
+       * 5.15:1 on white and 4.73:1 on the zebra row, both AA for text.
+       * The chip ALWAYS carries the word "suppressed": color is never the only
+       * signal, and the no-cheesy-glyphs rule means a word, not an icon. */
+      ".cid-tag.suppressed { border-color:var(--mustard-text, #8B6800); color:var(--mustard-text, #8B6800); }",
+      ".cid-t tr.cid-supp td { background:var(--surface-subtle, #F7F5F1); color:var(--text-muted, #5C5C55); }",
+      ".cid-t tr.cid-supp td:first-child { box-shadow:inset 3px 0 0 var(--mustard-text, #8B6800); }",
       ".cid-why { font-size:.8rem; color:var(--text-muted, #5a6478); margin-top:4px; max-width:80ch; }",
       ".cid-wrap { overflow-x:auto; }",
       ".cid-t { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.82rem; }",
@@ -263,7 +273,14 @@
         if (String(c.district || "").toLowerCase().indexOf(q) >= 0) return true;
         return (c.variants || []).some(function (v) { return String(v).toLowerCase().indexOf(q) >= 0; });
       });
-      h += '<div class="cid-sec"><h4 class="cid-h">Every entity (' + rows.length + " of " + live.length + ")</h4>"
+      // The count belongs in the heading for the same reason the chip belongs on
+      // the row: 8 of these 128 entities are thrown away by every consumer, and
+      // until now nothing on any surface said so.
+      var suppCount = live.filter(function (c) {
+        return String(c.entity_kind || "") === "test" || c.is_test === true;
+      }).length;
+      h += '<div class="cid-sec"><h4 class="cid-h">Every entity (' + rows.length + " of " + live.length
+        + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h4>"
         + '<label class="cid-note" for="cid-q">Filter by name, district or variant</label><br>'
         + '<input id="cid-q" class="cid-search" type="search" value="' + esc(state.q) + '" placeholder="e.g. Mt. San Antonio, or 740">'
         + '<div class="cid-wrap" tabindex="0" role="region" aria-label="College and district identity table">'
@@ -273,12 +290,51 @@
       rows.forEach(function (c) {
         var vs = c.variants || [];
         var mis = (c.mis_district_code || "—") + " / " + (c.mis_college_code || "—");
-        h += "<tr><td>" + esc(c.college_name) + "</td>"
+        /* ⭐ CHIP THE SUPPRESSED ROWS. Sam, 2026-08-21: "The college/district tab
+         * should probably have a chip on rows that are suppressed (e.g., CA MAP
+         * Initiative) — which is our sandbox and had slipped into the daily
+         * report from MAP."
+         *
+         * ⚠ THE NAME IS NOT THE TELL. Four of the eight sandbox rows announce
+         * themselves ("Testing College", "CabTest College"), but
+         * "NORCO College - Syllabus Manager" and "CA MAP INITIATIVE COLLEGE"
+         * read like real entities — so a reader scanning this roster has no way
+         * to know which rows every consumer throws away. That is the same
+         * absence-is-invisible argument the whole tab exists for.
+         *
+         * ⚠ AND THE CHIP SAYS WHY, NOT WHAT (methodology-a-provenance-label-
+         * must-say-why-not-what). "test" is what the column holds; what the
+         * reader needs is that no report, briefing or Sierra answer will ever
+         * include it.
+         *
+         * Both fields are consulted rather than one: consumers filter on
+         * `entity_kind=neq.test` while the table also carries `is_test`. They
+         * agree on all 8 rows today (measured 2026-08-21), so the OR changes
+         * nothing now — it exists so that a future disagreement surfaces as a
+         * flagged row instead of a row that half the pipeline hides. */
+        var suppressed = String(c.entity_kind || "") === "test" || c.is_test === true;
+        var split = (String(c.entity_kind || "") === "test") !== (c.is_test === true);
+        h += "<tr" + (suppressed ? ' class="cid-supp"' : "") + "><td>" + esc(c.college_name)
+          + (suppressed
+              ? ' <span class="cid-tag suppressed">suppressed</span>'
+              : "")
+          + "</td>"
           + '<td class="n">' + esc(c.college_id) + "</td>"
           + "<td>" + esc(String(c.entity_kind || "college").replace(/_/g, " ")) + "</td>"
           + "<td>" + esc(c.district || "—") + "</td>"
           + '<td class="n">' + esc(mis) + "</td>"
           + '<td class="cid-var">' + (vs.length ? esc(vs.join(" · ")) : "none") + "</td></tr>";
+        if (suppressed) {
+          h += '<tr><td colspan="6" class="cid-why">'
+            + "Suppressed everywhere — a MAP sandbox organization, not a real institution. "
+            + "It is excluded from Custom Reports, college briefings and Sierra, so no figure "
+            + "on any other tab counts it."
+            + (split
+                ? " <b>⚠ entity_kind and is_test DISAGREE on this row</b>, so a consumer "
+                  + "filtering on one of them will include it."
+                : "")
+            + "</td></tr>";
+        }
         if (c.mis_absent_why) {
           h += '<tr><td colspan="6" class="cid-why">No MIS code — ' + esc(c.mis_absent_why) + "</td></tr>";
         }
@@ -321,7 +377,7 @@
     // ⚠ The two reads are INDEPENDENT: contacts is gated and may legitimately
     // fail. Losing it must cost the live contact lint and NOTHING else, so it
     // is caught separately rather than sharing a Promise.all rejection.
-    var a = jget(REST + "/map_colleges?select=college_id,college_name,entity_kind,variants,district,mis_district_code,mis_college_code,mis_absent_why&order=college_name")
+    var a = jget(REST + "/map_colleges?select=college_id,college_name,entity_kind,is_test,variants,district,mis_district_code,mis_college_code,mis_absent_why&order=college_name")
       .then(function (d) { state.live = d || []; })
       .catch(function (e) { state.error = String(e && e.message || e); state.live = null; });
     var b = jget(REST + "/map_college_contacts?select=college")

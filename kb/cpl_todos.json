@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-21 · SkyVouch (Session 178) — Sierra was reporting three of LACCD's nine colleges; all nine were in the data and a cut-off in the code was hiding six. Fixed and live. The college/district crosswalk that had been built and never saved is now saved, including noncredit campuses and partner agencies, and there is a new College Identity tab that shows what is missing rather than just what matches — it already found two colleges whose CPL contact was invisible because of a stray space in their name.",
- "_session": "Session 178 (SkyVouch)",
- "_status": "Three changes went live today. (1) Sierra no longer describes a partial list as if it were complete, and says outright when she cannot confirm a district's membership. (2) My College asks you to confirm your role when it was carried over from a previous visit, and its suggested questions now match whichever college or district you picked. (3) Every college, noncredit campus and partner agency now has its district, its state MIS code and all its known name spellings stored in one place, visible on the new College Identity tab. Waiting on MAP for two college IDs, and on Sam for a look at the new tab.",
+ "_as_of": "2026-08-21 · SkyApply (Session 179) — Sam asked us to \"cure our need to internalize\": every bug the previous session fixed was already covered by a rule we had written down and nobody looked up. So we measured it — 299 written rules, 8 of them checked by anything automatic — and built two things that do the remembering. Separately: Sierra can now name a district's real member colleges instead of guessing from names, and a column that said \"Students Awarded\" was saying something untrue.",
+ "_session": "SkyApply (Session 179)",
+ "_status": "Four changes today. (1) Sierra answers a district question from the real membership list — asked about LACCD she now names all nine colleges, alphabetically, without the apology; more importantly, four districts whose colleges are not named after them (Los Rios, Peralta, State Center, Kern) could not be answered at all before. (2) The column labelled \"Students Awarded\" now reads \"Students in MAP\", because it was wrong: LA City College shows 147 students there with zero units actually applied, so it counts students with a record, not students given credit — Sierra had told a district otherwise. (3) A Transcribed Units column now always appears, and colleges are listed alphabetically rather than biggest-first. (4) The College Identity tab marks MAP's eight sandbox rows with a \"suppressed\" chip, so nobody mistakes \"CA MAP INITIATIVE COLLEGE\" for a real campus. Underneath all that, our own test suite can no longer quietly shrink — if a test file stops running some of its checks, the build now goes red instead of reporting success.",
  "items": [
   {
    "id": "s178-map-ids",
@@ -17,22 +17,10 @@
    "text": "Take a look at the new College Identity tab. It lists every college and agency we track, its MAP ID, its district, its state MIS code, and every different spelling of its name we have ever seen. Its real job is showing what is MISSING — right now it flags 13 names that appear in a live table and match nothing. Two of those turned out to be a genuine problem: Cypress College and San Jose City College had a stray space at the end of their name in the contacts table, so both looked like they had no CPL contact when they each have a real one. Already fixed."
   },
   {
-   "id": "s178-laccd-retest",
-   "for": "Sam",
-   "tab": "my-college",
-   "text": "Re-ask Sierra the district question. You asked what LACCD should do and she answered about three colleges when there are nine — all nine were in the data the whole time, it was a cut-off in the code. That is fixed and live. She should now list all nine AND say plainly that she cannot confirm a district's full membership, because we do not store district membership anywhere she can read. If she starts stating district facts we have not given her, tell us — that needs an instruction, and the instruction list is full at 9 of 10."
-  },
-  {
-   "id": "s178-role-confirm",
-   "for": "Sam",
-   "tab": "my-college",
-   "text": "Check the role prompt feels right. When your role is carried over from an earlier visit, the chip now shows dashed with a note, and clicking a suggested question asks you to confirm before answering — your question is kept and sends on the tap. It only asks once per browser session, not per question. If that is too often or not often enough, say so."
-  },
-  {
-   "id": "s178-spelling",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "American spelling is now a project rule and a automatic check. You flagged that we drift into British spellings. Everything written this session is corrected, one piece of text you would actually have seen on screen included (\"the programme is inactive\" / \"the curated catalogue\"). There are 219 older documents still carrying British forms — we will clean each as we touch it rather than doing one giant rewrite, which would bury real changes."
+   "id": "s178-statewide-12",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
   },
   {
    "id": "s178-mode7",
@@ -41,22 +29,52 @@
    "text": "Fix smoke test mode 7 so it stops failing on correct answers. It checks Sierra's reply by searching the sentences for a nearby college name, so a correct answer worded differently reads as a failure. It went red twice today on answers that were fine. Our own note already calls this \"the last place still grepping an answer\" — assert on what retrieval returned instead."
   },
   {
-   "id": "s178-rules-as-tests",
-   "for": "Fable",
-   "tab": "dashboard",
-   "text": "Turn more written rules into checks. Every problem fixed today was already covered by a rule we had written down — one of them by a comment 34 lines above the bug. The two rules that existed as automated tests were caught before release; the two that existed only as prose reached the live site. Go through the notes lane and ask which ones could be a test or a lint rule instead of a paragraph."
-  },
-  {
-   "id": "s178-statewide-12",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
-  },
-  {
    "id": "s173-phone-check",
    "for": "Sam",
    "tab": "fact-sheet",
    "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
+  },
+  {
+   "id": "s178-laccd-retest",
+   "for": "Sam",
+   "tab": "my-college",
+   "text": "Re-ask Sierra the LACCD question once more. You did, and reported three things — the needless apology, the wrong student column, and the size-ordered table. All three are fixed and deployed, so this is the confirmation pass. Worth also trying a district whose colleges are NOT named after it — Peralta or Los Rios — because those could not be answered at all before today."
+  },
+  {
+   "id": "s179-guidance-kind",
+   "for": "Sam",
+   "tab": "sierra-training",
+   "text": "Your call on tablizing Sierra's instructions. You said you prefer things in tables rather than buried in code — that is your own recorded design rule, and the column labels I fixed today are exactly the kind of thing you change (you changed them twice in one message), so they belong in a table. The cheap way is one new field on the instructions table separating your written directives from structured display settings. That also frees up slots. It touches your live curation screen, so I have not done it without your go."
+  },
+  {
+   "id": "s179-guidance-cap",
+   "for": "Sam",
+   "tab": "sierra-training",
+   "text": "Sierra's 10-instruction limit is left over and can safely go up. You were right that switching notes off frees their slot — you are at 9 of 10 and 4,720 of 9,000 characters. But the limit of 10 was set when each note could only be 500 characters; you raised that to 1,500 in August and the 10 was never raised with it, so the character budget would comfortably carry about 17. Worth knowing: when the limit does bite, the OLDEST note is dropped silently — which today would be the naming rule, not whatever you wrote that afternoon."
+  },
+  {
+   "id": "s179-guidance-consolidate",
+   "for": "Fable",
+   "tab": "sierra-training",
+   "text": "Consolidate the nine active Sierra instructions down to seven. Three of them say the same thing — answer the question directly before adding extras — just with different examples, and two of them repeat the same caveat about military credit. Same meaning, about a third fewer words. Drafted in docs/sierra_credential_naming_lessons.md; Sam should review before anything is switched off."
+  },
+  {
+   "id": "s179-college-ids",
+   "for": "Fable",
+   "tab": "college-identity",
+   "text": "Give Calbright Credit and Launch Non-Credit a placeholder row so they stop disappearing. They are missing from the identity table entirely, which means they silently fall out of four other tables rather than showing up as a known gap. A row with no ID and a stated reason is safe; inventing an ID is not."
+  },
+  {
+   "id": "s179-test-org",
+   "for": "Fable",
+   "tab": "college-identity",
+   "text": "One of MAP's test colleges is sitting in Sierra's data. \"Las PosTest College\" is in the catalog Sierra reads, and the filter that hides sandbox rows elsewhere cannot reach that table. It is empty, so the worst case is Sierra mentioning a college that does not exist — but it should not be reachable at all."
+  },
+  {
+   "id": "s179-college-id-joins",
+   "for": "Fable",
+   "tab": "college-identity",
+   "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
   }
  ]
 }

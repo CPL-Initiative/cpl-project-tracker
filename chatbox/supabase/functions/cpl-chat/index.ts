@@ -42,6 +42,27 @@ function corsHeaders(origin: string) {
   };
 }
 
+// ⚠ DECLARED HERE, ABOVE the college-detection block, ON PURPOSE. Node tests
+// lift that block out of this Deno file with tests/lib/lift_ts.js, whose
+// stripper removes type ANNOTATIONS but not a `type X = {...}` DECLARATION —
+// so a type alias inside the lifted range is a SyntaxError that takes the whole
+// lift down (measured: sierra_candidate_census.test.js fell to 9/13, four
+// checks lost to a thrown driver rather than to any failure). lift_ts.js says
+// the fix is to move the block boundary, never to widen the regex. So keep new
+// type aliases ABOVE the college-detection block, as this one is.
+//
+// ⚠ AND DO NOT QUOTE THE LIFT MARKERS IN A COMMENT. The first draft of this
+// note quoted both marker strings verbatim; liftBlock() resolves them with
+// indexOf(), so the start marker matched INSIDE this comment and the lift began
+// mid-sentence — "Missing initializer in const declaration", which names nothing
+// that is actually wrong. A marker is load-bearing text, not prose.
+type DistrictHit = {
+  district: string;
+  code: string | null;
+  members: string[];
+  missing: string[];
+};
+
 // ── College name detection ─────────────────────────────────────
 const COLLEGE_ALIASES: Record<string, string> = {
   "ccsf": "City College of San Francisco",
@@ -184,11 +205,171 @@ const COLLEGE_ALIASES: Record<string, string> = {
  * nine. See the tie block below. */
 const CANDIDATE_MAX = 12;
 
+/* ── District membership — authoritative, not inferred from names ──────────
+ *
+ * ⭐ THE COMMENT BELOW USED TO SAY Sierra "has no district dimension at ALL
+ * (verified 2026-08-21: zero columns named district in the whole public
+ * schema)". That was true when it was written and FALSE THE SAME DAY: PR #1278
+ * landed `district`, `mis_district_code`, `mis_college_code` and `district_type`
+ * on `map_colleges` a few hours later — 118 of 128 rows, 73 districts. The
+ * capability arrived and the consumer never changed, which is the same shape as
+ * every other defect this file has carried.
+ *
+ * WHY IT MATTERS MORE THAN THE CAVEAT IT RETIRES. Name-matching finds LACCD's
+ * nine only because all nine are called "Los Angeles". Measured across the
+ * roster, four multi-college districts have **zero** colleges named after them:
+ *
+ *     Los Rios      → American River · Cosumnes River · Folsom Lake · Sacramento City
+ *     Peralta       → Berkeley City · College of Alameda · Laney · Merritt
+ *     State Center  → Clovis · Fresno City · Madera · Reedley
+ *     Kern          → Bakersfield · Cerro Coso · Porterville
+ *
+ * For those, a name match returns NOTHING and the honest caveat was the only
+ * possible answer. This makes them answerable.
+ *
+ * ⚠ THE ROSTER IS ONLY SAFE TO CALL COMPLETE BECAUSE THE JOIN WAS MEASURED:
+ * all 116 district colleges in `map_colleges` have an exact-name row in
+ * `chatbox_college_profiles` (0 missing, 2026-08-21). A PARTIAL roster
+ * presented as complete would be worse than the caveat — it is the census
+ * defect again with better provenance. `rosterComplete` carries that fact to
+ * the context builder rather than assuming it. */
+
+// "Los Angeles Community College District" → ["los angeles", "laccd"].
+// Deriving the acronym beats maintaining a list of 73 of them by hand.
+function districtKeys(name: string): string[] {
+  const words = name.split(/\s+/).filter(Boolean);
+  const acronym = words.map((w) => w[0]).join("").toLowerCase();
+  const stem = name.toLowerCase()
+    .replace(/\s*community college district\s*$/, "")
+    .replace(/\s*county\s*$/, "")
+    .replace(/\s*district\s*$/, "")
+    .trim();
+  // ⚠ ALWAYS two slots, in this order, empty string for "not usable". The first
+  // draft filtered short keys out of the array, so a district with a 2-letter
+  // stem would have shifted the acronym into the stem slot at the call site —
+  // silently applying the stem's stricter gate to an acronym. Callers test each
+  // slot for truthiness instead.
+  return [stem.length >= 3 ? stem : "", acronym.length >= 3 ? acronym : ""];
+}
+
+async function resolveDistrict(query: string, sb: any): Promise<DistrictHit | null> {
+  const q = " " + query.toLowerCase().replace(/[^a-z0-9]+/g, " ").trim() + " ";
+
+  /* ⚠ CHEAP GATE BEFORE THE ROUND TRIP. This function is reached from the
+   * college-detection path, which runs on ORDINARY one-college questions too,
+   * and Sierra's whole-turn budget is 1.7-5.0s. Reading all of map_colleges to
+   * discover that the question was never about a district would tax every
+   * college question to serve a rare one.
+   *
+   * The gate is deliberately loose — it only has to be cheaper than the read and
+   * never miss a real district question; `resolveDistrict` still does the real
+   * matching below. The acronym shape is the non-obvious half: nearly every
+   * California district acronym ends in CCD (LACCD, RCCD, SDCCD, PCCD, KCCD,
+   * LRCCD), so that suffix catches the bare-acronym question that carries no
+   * other district word. */
+  if (!/\bdistricts?\b/.test(q) &&
+      !/\b(colleges|campuses)\b/.test(q) &&
+      !/\b[a-z]{1,6}ccd\b/.test(q)) return null;
+
+  try {
+    const { data, error } = await sb
+      .from("map_colleges")
+      .select("college_name,district,mis_district_code,entity_kind")
+      .not("district", "is", null);
+    if (error || !data || !data.length) return null;
+
+    const byDistrict = new Map<string, { code: string | null; names: string[] }>();
+    for (const r of data) {
+      // Test orgs are MAP's own sandbox rows and must never reach an answer.
+      if ((r.entity_kind || "college") !== "college") continue;
+      const d = String(r.district || "").trim();
+      if (!d) continue;
+      // No `!` non-null assertions anywhere in this block: tests/lib/lift_ts.js
+      // strips type annotations, not TS operators, and a stray `!` is a
+      // SyntaxError that kills the whole lift.
+      let bucket = byDistrict.get(d);
+      if (!bucket) { bucket = { code: r.mis_district_code || null, names: [] }; byDistrict.set(d, bucket); }
+      bucket.names.push(String(r.college_name));
+    }
+
+    /* ⚠ INTENT IS REQUIRED, or this route eats ordinary college questions.
+     * The stem of "Los Angeles Community College District" is "los angeles",
+     * which is also a substring of a question about Los Angeles City College —
+     * so a bare stem match would answer a one-college question with a
+     * nine-college roster. An acronym is unambiguous on its own; a stem needs
+     * the word "district" or a plural cue standing with it. */
+    const hasDistrictWord = /\bdistricts?\b/.test(q);
+    const hasPlural = /\b(colleges|campuses|member colleges|its colleges)\b/.test(q);
+    // Longest key wins, so "West Valley-Mission" cannot be beaten by "Mission".
+    // Untyped on purpose: lift_ts.js strips PRIMITIVE annotations, so an
+    // object-literal annotation is left half-eaten (`{ name; keyLen }`) and the
+    // lift dies on it. Shape is { name, keyLen }.
+    let best = null;
+    for (const [name] of byDistrict) {
+      const [stem, acronym] = districtKeys(name);
+      const hits: string[] = [];
+      if (acronym && q.includes(" " + acronym + " ")) hits.push(acronym);
+      if (stem && q.includes(" " + stem + " ") && (hasDistrictWord || hasPlural)) hits.push(stem);
+      for (const k of hits) {
+        if (!best || k.length > best.keyLen) best = { name, keyLen: k.length };
+      }
+    }
+    if (!best) return null;
+
+    const entry = byDistrict.get(best.name);
+    if (!entry) return null;
+    // A single-college district is not a district question — let the normal
+    // college route answer it, which gives a far richer profile.
+    if (entry.names.length < 2) return null;
+
+    const { data: profs } = await sb
+      .from("chatbox_college_profiles")
+      .select("college")
+      .in("college", entry.names);
+    const have = new Set((profs || []).map((p: any) => String(p.college)));
+    return {
+      district: best.name,
+      code: entry.code,
+      members: entry.names.slice().sort((a, b) => a.localeCompare(b)),
+      missing: entry.names.filter((n) => !have.has(n)).sort(),
+    };
+  } catch {
+    return null;
+  }
+}
+
 async function detectAndFetchCollegeProfile(
   query: string,
   sb: any
 ): Promise<any | null> {
   const q = query.toLowerCase();
+
+  /* 0. A district question is answered from the district roster, never from a
+   * name match. This runs FIRST because the name matcher would otherwise
+   * resolve "…Los Angeles Community College District…" to a single college on
+   * a strict multi-word win, and answer a nine-college question with one. */
+  const dist = await resolveDistrict(query, sb);
+  if (dist && dist.members.length > 1) {
+    const { data } = await sb
+      .from("chatbox_college_profiles")
+      .select("*")
+      .in("college", dist.members);
+    if (data && data.length > 1) {
+      // ⚠ Alphabetical, not by size. Sam, 2026-08-21: ranking a district's own
+      // colleges by units invites the inter-college rivalry the answer is
+      // trying to defuse, and the order carries into the model's table.
+      const rows = data.slice().sort((a: any, b: any) =>
+        String(a.college).localeCompare(String(b.college)));
+      const stamp = {
+        district: dist.district,
+        code: dist.code,
+        shown: rows.length,
+        total: dist.members.length,
+        missing: dist.missing,
+      };
+      return rows.map((r: any) => ({ ...r, _district: stamp }));
+    }
+  }
 
   // 1. Check alias map first
   for (const [alias, fullName] of Object.entries(COLLEGE_ALIASES)) {
@@ -1974,7 +2155,36 @@ async function withLiveContacts(profile: any, sb: any, includeContacts: boolean)
 // includeContacts (v27): false suppresses the CPL-contact name/email line —
 // the external/vendor embeds (ctx:"external"). Default true = every existing
 // caller unchanged (fail-open).
+
 function buildCollegeContext(profile: any, includeContacts: boolean = true): string {
+  // Declared INSIDE this function on purpose: the Node tests lift the block that
+  // starts at this signature, so a module-level const it references falls outside
+  // the lifted range and the lift dies with "TABLE_COLUMN_RULE is not defined".
+  /* Column rules for any per-college table the model builds.
+   *
+   * ⚠ "STUDENTS AWARDED" IS A WRONG LABEL, NOT A STYLE PREFERENCE, and it was
+   * reaching readers as a claim about awards. MAP's source column is titled
+   * "Students Awarded" and `excel_to_dashboard.py` carries that name through, but
+   * the figure does not survive its own data: Los Angeles City College reads
+   * **0 applied units, 0 transcribed units, and 147 "students awarded"**. You
+   * cannot award credit to 147 students while applying zero units. The number
+   * counts students with a CPL record in MAP. Sam — who runs MAP — named it
+   * "Students in MAP" (2026-08-21), and the arithmetic agrees with him.
+   *
+   * Sierra's 2026-08-21 LACCD answer stated it as fact: "LA City has 5,623
+   * eligible units and 147 students already awarded". That sentence went to a
+   * district as a finding.
+   *
+   * ⚠ Transcribed units were ALREADY in this context and the model dropped them
+   * from the table. Shipping a figure is not the same as asking for it. */
+  const TABLE_COLUMN_RULE =
+    `\nIF YOU BUILD A PER-COLLEGE TABLE, use these columns and these labels: `
+    + `College | Eligible Units | Applied Units | Transcribed Units | Students in MAP | CPL Contact.\n`
+    + `⚠ The student count is "Students in MAP" — students with a CPL record in the MAP platform. `
+    + `It is NOT students awarded credit and must never be labelled or described as awarded, `
+    + `granted or earned: a college can show students in MAP with zero applied units.\n`
+    + `Always include the Transcribed Units column — it is given for every college below.\n`;
+
   if (!profile) return "";
   const profiles = Array.isArray(profile) ? profile : [profile];
 
@@ -1999,7 +2209,39 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
    * now: a capped list must never read as a census, and the total ships
    * alongside the shown count. */
   let head = "";
-  if (profiles.length > 1) {
+  const dstamp = (profiles.length > 1 && profiles[0] && profiles[0]._district) || null;
+  if (dstamp) {
+    /* ⭐ A ROSTER IS NOT A CANDIDATE LIST, AND MUST NOT WEAR ITS CAVEAT.
+     * Sam, 2026-08-21, on the improved LACCD answer: "Why is it starting with a
+     * caveat that it can't enumerate the full district when it has them all
+     * listed?" — a fair complaint. Hedging over an authoritative, complete
+     * answer is its own credibility failure: it teaches the reader to discount
+     * the hedge, which is the one thing that must stay believed for the cases
+     * where the set really is a name match.
+     *
+     * The two paths are now genuinely different and say so:
+     *   `_district` — every member of the district, from map_colleges. Complete.
+     *   `_match`    — colleges whose NAME matched. Never complete (below).
+     *
+     * ⚠ `missing` is stated rather than hidden. If a member has no profile row
+     * the set shown is NOT the district, and the answer has to say which ones
+     * are absent — otherwise this becomes the census defect with a better
+     * source. Measured 0 today across all 116 district colleges. */
+    const n = profiles.length;
+    const complete = !dstamp.missing || dstamp.missing.length === 0;
+    head = `\n\nTHE ${n} COLLEGES BELOW ARE THE MEMBERS OF ${dstamp.district.toUpperCase()}`
+         + (dstamp.code ? ` (CCCCO MIS district code ${dstamp.code})` : "")
+         + `.\n`
+         + `This is the district's ACTUAL membership, from the MAP college roster — not a name match.\n`
+         + (complete
+             ? `All ${dstamp.total} member colleges are included, so you may describe this as the full district.\n`
+             : `⚠ ${n} of ${dstamp.total} members have data; NOT included: ${dstamp.missing.join(", ")}. `
+               + `Say so — do not present this as the whole district.\n`)
+         + `Do NOT add a caveat that you cannot enumerate the district; for this district you can.\n`
+         + `The colleges are listed ALPHABETICALLY. If you build a table, KEEP that order — `
+         + `do not re-sort by units or by any measure of size.\n`
+         + TABLE_COLUMN_RULE;
+  } else if (profiles.length > 1) {
     const m = (profiles[0] && profiles[0]._match) || null;
     const n = profiles.length;
     head = `\n\n⚠ THE ${n} COLLEGE PROFILES BELOW ARE NAME-MATCH CANDIDATES, NOT A ROSTER.\n`
@@ -2017,7 +2259,11 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
          + `plainly and briefly, then use these profiles as EXAMPLES — describing them as `
          + `colleges whose names matched, never as "the colleges in" that group. Do not guess `
          + `the group's membership from general knowledge and do not imply the counts below `
-         + `cover it.\n`;
+         + `cover it.\n`
+         // The column labels are wrong in the same way on both paths, so the
+         // rule belongs on both. A fix applied to one branch and left off its
+         // twin is the exact defect that produced the "three of nine" answer.
+         + TABLE_COLUMN_RULE;
   }
 
   return head + "\n\n" + profiles.map((p: any) => {
@@ -2082,7 +2328,10 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
 
     const cr = p.credit_distribution || {};
     if (cr.eligible_credits) {
-      ctx += `Credit distribution: ${cr.eligible_credits} eligible, ${cr.applied_credits || 0} applied, ${cr.transcribed_credits || 0} transcribed, ${cr.students_awarded || 0} students awarded\n`;
+      // ⚠ "students in MAP", never "students awarded" — see TABLE_COLUMN_RULE.
+      // The wording here is what the model echoes into a column header, so the
+      // label has to be right at the point the number is stated.
+      ctx += `Credit distribution: ${cr.eligible_credits} eligible units, ${cr.applied_credits || 0} applied units, ${cr.transcribed_credits || 0} transcribed units, ${cr.students_awarded || 0} students in MAP (students with a CPL record, NOT students awarded credit)\n`;
     }
 
     // Landing page link

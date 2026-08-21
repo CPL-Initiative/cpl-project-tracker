@@ -1,7 +1,7 @@
 ---
 title: A check that never registers can never fail
 created: 2026-08-15
-updated: 2026-08-16
+updated: 2026-08-21
 tags: [methodology, testing, verification, detectors]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -10,6 +10,8 @@ related:
   - "[[methodology-commit-the-test-harness]]"
   - "[[methodology-judge-a-detector-by-what-it-prints]]"
 artifacts:
+  - tests/lib/check_ledger.js
+  - tests/check_floor.json
   - tests/admin_tab.test.js
   - tests/nav_groups.test.js
   - tests/eacr_a11y.test.js
@@ -144,3 +146,51 @@ a handoff.** The prescription was written down, read, and followed — and the t
 still landed, because it had been recorded at the wrong altitude ("use `val()`")
 rather than as the principle ("nothing between checks may throw"). Prefer
 recording the principle; the mechanism is an example of it.
+
+
+---
+
+## Update 2026-08-21 — the rule finally has a consumer
+
+This note has said *"watch the total, not just the ratio"* since 2026-08-15.
+**Nothing watched it**, and the trap recurred in two more harnesses (08-15
+`nav_groups`, 08-16 `eacr_a11y`) before anyone noticed the instruction had no
+reader. Which is the note's own meta-lesson arriving one level up: recording the
+principle was not enough either.
+
+`tests/run.js` judged a file by **exit status alone** — a complete answer to
+*"did anything fail?"* and no answer at all to *"did everything run?"*.
+
+Measured on real repo code rather than argued: skipping one block of
+`college_identity_variants.test.js` (12 checks, green) produces
+
+```
+college_identity_variants.test.js: 10/10 checks passed      exit 0
+```
+
+Two checks gone, count self-consistent, whole run reported green.
+
+**The fix is a floor, not a fixed expectation.** `tests/check_floor.json` records
+the count each file reports about itself; `tests/run.js` fails a file that
+reports **fewer**. Deliberately *not* failed: a file with more checks (adding
+tests stays free), a file absent from the ledger, or one printing no parseable
+count — those are reported and counted, because a guard that fires on correct
+behaviour gets muted
+([`a-guard-that-fails-on-truth-gets-muted`](methodology-a-guard-that-fails-on-truth-gets-muted.md)).
+
+At the first baseline: **241 of 247 files floored, ~7,500 checks under guard.**
+
+Two things this note did not previously say, both learned building it:
+
+- ⚠️ **Never baseline against a moving tree.** Two ledgers were generated while
+  the working tree was still being edited, and both recorded broken states as
+  floors — `sierra_geo_ranking.test.js` was floored at **1** when its true count
+  is 50. A floor set too low is safe but useless, which makes it the quiet
+  failure mode.
+- ⚠️ **The `.then()` blocks must be COLLECTED, not timed.** A block whose checks
+  register inside a promise lands after the summary unless something awaits it.
+  Awaiting an explicit list of block promises is the fix; a `setTimeout` is the
+  bug this note opened with.
+
+Full reasoning and the two sibling tiers (test → shared helper → lookup):
+[`methodology-index-the-doctrine-to-the-file`](methodology-index-the-doctrine-to-the-file.md).

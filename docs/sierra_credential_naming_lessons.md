@@ -356,3 +356,71 @@ precedence let the throw run anyway.
 Smoke **mode 7** still greps model prose for a nearby college name, so it reds
 intermittently on correct answers — `methodology-assert-what-retrieval-returns`
 already calls it "the last place still grepping an answer".
+
+---
+
+## 2026-08-21 — SkyApply: the district dimension landed and nobody wired it
+
+Sam re-asked the LACCD question after #1277 and reported three things. All three
+were code, none needed a `sierra_guidance` slot.
+
+### 1. The caveat was obsolete the day it was written
+
+`index.ts` carried, in a comment: *"Sierra has no district dimension at ALL
+(verified 2026-08-21: zero columns named district in the whole public schema)."*
+True when written. **PR #1278 landed `district`, `mis_district_code`,
+`district_type` on `map_colleges` a few hours later** — 118 of 128 rows, 73
+districts. The capability arrived; the consumer never changed.
+
+⭐ **The caveat was the small half.** LACCD is the easy case — all nine colleges
+are named "Los Angeles", so name-matching finds them. Measured across the
+roster, **four multi-college districts have ZERO colleges named after them**:
+
+| District | Name-matched | Actual members |
+|---|---:|---|
+| Los Rios | 0 | American River · Cosumnes River · Folsom Lake · Sacramento City |
+| Peralta | 0 | Berkeley City · College of Alameda · Laney · Merritt |
+| State Center | 0 | Clovis · Fresno City · Madera · Reedley |
+| Kern | 0 | Bakersfield · Cerro Coso · Porterville |
+
+For those, the honest caveat was the only answer available. `resolveDistrict()`
+makes them answerable.
+
+⚠️ **A roster may only call itself complete because the join was measured** — all
+116 district colleges have an exact-name row in `chatbox_college_profiles`, 0
+missing. A partial roster presented as complete is the census defect with better
+provenance, so `missing` is carried and stated.
+
+⚠️ **Intent is required or the route eats ordinary questions.** The stem of "Los
+Angeles Community College District" is inside a question about Los Angeles City
+College. An acronym resolves alone; a stem needs "district" or a plural cue.
+
+### 2. "Students Awarded" was WRONG, not just badly labelled
+
+Sam asked for the column to read "Students in MAP". It is a correctness fix:
+**Los Angeles City College reads 0 applied units, 0 transcribed units, and 147
+"students awarded"**. You cannot award credit to 147 students while applying zero
+units — the figure counts students with a CPL record. MAP's own source column is
+titled "Students Awarded" and `excel_to_dashboard.py` carries the name through.
+
+Sierra had stated it to a district as a finding: *"LA City has 5,623 eligible
+units and 147 students already awarded."*
+
+⚠️ **Transcribed units were already in the context** and the model simply did not
+tabulate them. Shipping a figure is not the same as asking for it.
+
+### 3. Alpha sort, for a reason worth recording
+
+Sam: ranking a district's own colleges by units invites inter-college rivalry.
+Sorted before the rows reach the model, with the order stated in the header so
+it is not re-sorted.
+
+### The guidance budget, measured while there
+
+`fetchTeamGuidance()` applies `.eq("active", true)` **before** `.limit(10)`, so
+deactivating a row does free its slot (9 active / 4 inactive / 4,720 of 9,000
+chars). ⚠️ **The row cap is a fossil**: on 2026-08-12 per-rule went 500 → 1,500
+and the total 2,500 → 9,000, and `GUIDANCE_MAX_RULES` stayed at 10 — so the
+char budget would carry ~17 at today's average length. ⚠️ **And eviction is
+oldest-first and silent**, so the rule most at risk is the standing **naming
+rule** (2026-07-03), not the reactive one written this afternoon.
