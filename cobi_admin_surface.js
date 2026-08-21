@@ -231,6 +231,19 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [],
       "measured": true
     },
+    "college-identity": {
+      "modules": [
+        "college_identity_data.js",
+        "college_identity.js"
+      ],
+      "reads": [
+        "map_college_contacts",
+        "map_colleges"
+      ],
+      "writes": [],
+      "rpcs": [],
+      "measured": true
+    },
     "annual-report": {
       "modules": [
         "annual_report.js"
