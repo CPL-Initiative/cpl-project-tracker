@@ -410,9 +410,24 @@ echo
 # The caveat was obsolete: PR #1278 had landed `district` and `mis_district_code`
 # on map_colleges hours after the comment claiming no district dimension existed.
 #
-# ⭐ THE CASE THAT MATTERS IS PERALTA, NOT LACCD. All nine LACCD colleges are
-# named "Los Angeles", so the old NAME MATCH found them by accident. Measured
-# across the roster, four districts have ZERO colleges named after them:
+# ⭐ THE CASE THAT MATTERS IS PERALTA, NOT LACCD — but not for the reason the
+# first draft of this comment gave. It claimed "all nine LACCD colleges are named
+# Los Angeles". That is true of the STRINGS MAP STORES, not of the colleges:
+# Sam pointed out (2026-08-21) that Pierce College is in LACCD and does not carry
+# "Los Angeles" in its name. MAP happens to store it as "Los Angeles Pierce
+# College", which is the only reason the old name match reached it.
+#
+# So the name-match path was never resting on a property of the district. It was
+# resting on an UPSTREAM STRING CONVENTION we do not control and MAP could change
+# in any nightly load — which is a better argument for the roster than the one
+# this comment first made, not a weaker one.
+#
+# ⚠ And the short forms are NOT in `variants`: Pierce carries ["LA PIERCE",
+# "LA Pierce"] and no "Pierce College". Every internal table spells it the long
+# way today (verified across 6 tables), so nothing is broken — but a table that
+# ever arrives using the college's own name would join to nothing, silently.
+#
+# Measured across the roster, four districts have ZERO colleges named after them:
 #
 #     Los Rios · Peralta · State Center · Kern
 #
