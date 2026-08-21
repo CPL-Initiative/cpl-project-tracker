@@ -1,7 +1,7 @@
 ---
 title: CPL Fact Sheet — lessons
 created: 2026-06-25
-updated: 2026-08-20
+updated: 2026-08-21
 tags: [lessons, fact-sheet, public-page, live-data, print-to-pdf, accessibility, mobile, sky-blaster, sky-veil, sky-curate]
 obsidian-folder: cpl-project-tracker
 artifacts:
@@ -681,3 +681,46 @@ reasoned rather than clicked); ③ the same measurement harness pointed at
 **`sierra/`** and the **veteran-sprint-map**, which are the other public standalone
 pages and have never had a layout audit; ④ if the mobile stack reads well, consider
 the same treatment for the other fixed-track grids in COBI.
+
+---
+
+## 2026-08-21 — SkyGlass (Session 176): confirmed on glass, and the reveal that looks like a regression
+
+**(a) What happened.** Sam reported mid-session that **the Curate button was still
+visible on the public Fact Sheet**, and asked whether the `cpl_funding.test.js`
+memory problem could be the cause. It could not — nothing under `tests/` is
+served, and no page loads it. The code was verified correct on `main` (both
+halves: `btn.hidden = !isRevealed()` **and** `.btn[hidden]{display:none
+!important}`, which is load-bearing because `.btn` sets `display:inline-flex`),
+and Pages had deployed #1269 successfully at 20:40 UTC.
+
+Three candidate explanations were put to him in order, and the first was right:
+
+1. **his own browser remembered the reveal** — `?curate=1` deliberately writes
+   `localStorage.cpl_fs_curate = "1"` so the bookmark keeps working, which means
+   any browser that has opened that link once shows the button **forever**
+   (`fact-sheet/?curate=0` forgets it);
+2. a live COBI reviewer session, which reveals it by design and, since #1207, does
+   so across browser tabs;
+3. a cached `factsheet_edit.js` / `factsheet.css` — the tags carry no version
+   query, so a hard refresh is the check.
+
+✅ **Sam then opened a private window and confirmed the button is gone.** The
+mechanism is now proven **on the deployed page**, not only in Chromium — which
+closes the last verification item SkyCurate opened and Sky175 could only exercise
+locally.
+
+**(b) The durable bit.** ⭐ **A deliberately sticky reveal will be reported as a
+regression by the person it was built for.** The curator is precisely the user
+whose browser holds the flag, so the feature's success case and its bug report
+look identical from the outside. The only question that distinguishes them is
+**"private window, plain URL, no session?"** — and that question now leads the
+carryover list rather than sitting in a session's head. Worth remembering the
+next time a per-browser convenience gets added to a public page: decide up front
+how someone will *disprove* it, and write that down beside the switch.
+
+**(c) State.** No code change. `CLAUDE.md`'s Fact Sheet row records the
+confirmation and the rule-out order; the phone pass is the one item still open.
+
+**(d) Next.** ① **Sam opens the three public pages on a phone** (Fact Sheet ·
+Sierra · Veteran map) — still the only thing no session can do.
