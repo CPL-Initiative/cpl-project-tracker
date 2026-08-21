@@ -15,9 +15,8 @@ related:
 # Session 177 handoff
 
 You are **Session 177**. Session 176 was **SkyGlass** — the moniker Sam used in
-his greeting. Everything below is on the branch
-`claude/cpl-funding-test-refactor-dhrm1z`; check whether its PR merged before you
-build on it.
+his greeting. **PR #1272 is MERGED** (`f5cccba`) and Pages deployed it green, so
+everything below is on `main`. A second, docs-only PR carries the checkpoint.
 
 ⚠️ **Sam frequently runs several sessions at once.** Check `git log origin/main`
 before assuming your branch is the only work in flight. Two Session-173 sessions
@@ -113,14 +112,22 @@ does go red.
 
 ---
 
-## Sam's Curate report — answered, no code change
+## Sam's Curate report — answered and CLOSED, no code change
 
-**It is not the test file** — nothing under `tests/` is served, and no page loads
-it. The Fact Sheet fix (#1269) is on `main` and Pages deployed it successfully at
+Mid-session Sam reported the Curate button still visible on the public Fact
+Sheet. **It was not the test file** — nothing under `tests/` is served, and no
+page loads it. The code was correct on `main` and Pages had deployed #1269 at
 20:40 UTC; `.btn[hidden]{display:none !important}` and the `btn.hidden =
-!isRevealed()` call are both present and correct.
+!isRevealed()` call are both present.
 
-What is far more likely, in order:
+✅ **He then opened a private window and confirmed the button is gone**
+(2026-08-21). The #1269 mechanism is proven on the deployed page, not just in
+headless Chromium — which closes the item Sky175 could only exercise locally.
+
+⭐ **The durable bit: a deliberately sticky reveal will be reported as a
+regression by the person it was built for.** The curator is exactly the user
+whose browser holds the flag, so the feature working and the feature broken look
+identical from outside. The three things to rule out, in order:
 
 1. **His own browser remembers the reveal.** `?curate=1` writes
    `localStorage.cpl_fs_curate = "1"` deliberately, so the bookmark keeps
@@ -131,10 +138,9 @@ What is far more likely, in order:
 3. A cached `factsheet_edit.js` / `factsheet.css` — the tags carry no version
    query, so a hard refresh is the check.
 
-**The only honest test of "does the public see it" is a private window on the
-plain URL with no param and no session.** No session can run that check — the
-sandbox is egress-blocked from `cpl-initiative.github.io`. That is now the ask in
-the To-Do feed, folded into the phone check.
+**The only question that distinguishes them is "private window, plain URL, no
+session?"** — ask it first, before touching code. No session can run that check
+itself; the sandbox is egress-blocked from `cpl-initiative.github.io`.
 
 ---
 
@@ -143,7 +149,7 @@ the To-Do feed, folded into the phone check.
 | # | Item | Status |
 |---|---|---|
 | 1 | **Sam opens the three public pages on a phone** (Fact Sheet · Sierra · Veteran map) | Still the one thing no session can do. Carried since handoff 174. |
-| 2 | **Sam confirms Curate is hidden in a private window** | New. If it still shows there, that IS a defect and the three suspects above are all eliminated. |
+| 2 | ~~Sam confirms Curate is hidden in a private window~~ | ✅ **CLOSED 2026-08-21** — he did, and it is. |
 | 3 | Drag Priority 3 into the Priority 1 slot and set the new shares + funding factors | SkySort's item, unchanged; #1268 is merged and live. |
 | 4 | Everything in handoffs 173–176 | Untouched by this run. |
 
