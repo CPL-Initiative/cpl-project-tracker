@@ -1,7 +1,7 @@
 ---
 title: College action page & MAP-team queue — lessons
 created: 2026-08-09
-updated: 2026-08-17
+updated: 2026-08-21
 tags: [lessons, college-action-page, map-team-queue, governance, contacts, measurement]
 artifacts:
   - map_team_queue.js
@@ -12,6 +12,8 @@ artifacts:
   - college_briefing.js
   - tests/college_briefing_auth.test.js
   - tests/my_college_scope.test.js
+  - tests/my_college_sierra_box.test.js
+  - cpl_chat.js
 related:
   - "[[docs/kb-notes/methodology-a-written-backlog-decays-silently]]"
   - "[[docs/kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow]]"
@@ -1136,3 +1138,125 @@ any more.
 2. The two region lists, when he locates them in a MAP export → flip `ready`.
 3. `college_report_generator.js` dates its filename at the END where the new
    briefing uses the mandated `YYYYMMDD` prefix — one convention, Sam's call.
+
+---
+
+## 2026-08-21 — SkyAsk (Session 177): a page that answered before it asked, and two lists that should have been one
+
+**Merged #1274.** Sam's six-point pass on the tab, plus the Sierra Training Fact
+he asked for. All of it shipped in one PR except the guidance row, which lives in
+Supabase.
+
+### (a) What was learned
+
+**⭐ The tab opened on Cabrillo College because the remembered choice was restored
+into `state`, not offered.** `restoreScope()` seeded `state.scope` and
+`state.college` directly, so `render()` skipped both picker steps. The original
+comment defended it well — "Sam's flow is a daily one; re-answering *who are you*
+every morning is a tax" — and that reasoning is sound for one person on one
+laptop. It stops being sound the moment a second person opens the tab, or the
+first person opens it wanting a different college: you cannot leave a page you
+have not noticed you are on.
+
+The fix keeps the convenience and moves the agency: the scope question carries
+**"Open Cabrillo College again"**, named. A remembered scope with **no entity** is
+not offered at all, because a shortcut that lands on a second question is not a
+shortcut.
+
+**⭐ The "narrow paragraphs beside full-width content" was never the measure
+caps.** Both mirrored HTMLs ship `#college-briefing-root` with an **inline**
+`text-align:center` for its "Loading College Briefing…" placeholder. Inline
+out-ranks the `#college-briefing-root{text-align:left}` the module injects, so
+every capped paragraph rendered its text *centred inside a left-anchored box* —
+which reads as a ragged narrow column floating in a wide tab, and points the
+reader straight at the cap. Removing the cap would have produced full-width
+centred prose (worse), and the next session would have put the cap back. Full
+note: [`methodology-an-inline-placeholder-style-outranks-the-css-you-inject`](kb-notes/methodology-an-inline-placeholder-style-outranks-the-css-you-inject.md).
+
+**⭐ There were TWO clusters of suggested questions with the role picker between
+them.** The tab printed its college-specific list *above* the mounted widget; the
+widget printed its generic starters *below* its "I'm a…" chips. Clicking one of
+the upper set with no role chosen called the widget's `needAudience()`, whose
+message reads *"First, tap who you are above"* — and the chips were **below** it.
+The sentence was literally wrong, and the reader had two question lists to
+reconcile. That is exactly what Sam reported as "select a pre-seeded question and
+are not prompted for their role — confusing".
+
+⚠️ **And the generic list names another college.** *"Does Riverside City College
+offer firefighter CPL?"* is a fine starter on the CPL Assistant tab and is
+nonsense on Cabrillo's own page. Consolidating had to *replace* that list, not
+merge with it.
+
+⚠️ **Two pre-existing two-pane traps, both the `inputEl` trap wearing a new hat.**
+`submit()` cleared the starter chips with `document.getElementById('cplchat-suggest')`,
+which returns whichever pane is **earlier in the document** — My College — so
+asking a question on the CPL Assistant tab cleared *the other tab's* chips and left
+its own. And a host-supplied list had to be cleared in `mount()`, or a college's
+questions would follow the reader onto a pane that never named that college. The
+file already documents this trap for `inputEl`; **a documented trap is not a fixed
+trap, and the next variable is not covered by the last one's comment.**
+
+**⭐ Sierra's statewide column cannot be repaired, only removed.** Her snapshot
+table put a raw statewide total beside each college figure (`5,683 units` vs
+`1.19M statewide`), which is not a benchmark. She holds only totals and a college
+count, so the only comparator she could compute is an **average** — and the
+average runs **2–3x the median** on every measure:
+
+| measure | avg/college | median | ratio |
+|---|---:|---:|---:|
+| articulated, waiting | 751 | 305 | 2.5x |
+| applied | 2,402 | 694 | 3.5x |
+| recommended, not acted on | 12,224 | 6,166 | 2.0x |
+
+Cabrillo is the case in point: **above** the median on waiting units, **below**
+the average. A comparator she cannot compute correctly is worse than none.
+
+⚠️ **And she must not compute a disposition rate either**, tempting as it is. The
+team's own measure counts Not Applicable as work done and reaches 34% for
+Cabrillo; from what Sierra holds, `applied / (dormant + waiting + applied)` gives
+18%. **Sierra publishing a different number from the team's own is the same
+credibility failure as her disagreeing with the Fact Sheet** (SkyPeak, #1146).
+
+⚠️ **`sierra_guidance` is a zero-sum budget at 10 rows, and the visible meter
+measures the wrong dimension.** Full note:
+[`methodology-a-capped-instruction-list-is-a-zero-sum-budget`](kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget.md).
+Two things worth repeating here: the draft was written **`active = false`** so
+production was untouched until Sam chose; and its first wording said *"never rank
+colleges"*, which would have contradicted **Sam's own 2026-08-18 instruction** that
+naming high performers is fine. Reading the nine neighbours before writing the
+tenth is not optional — two instructions can each be reasonable and jointly
+incoherent, and the model resolves that silently.
+
+### (b) Current state
+
+- **#1274 merged, Pages deployed green** (`8349bd1`). CI ran the new suite
+  independently: JS tests run 2080, success.
+- **`tests/my_college_sierra_box.test.js`** — 19 checks, **11 red against the
+  pre-fix source** (verified by stashing the two modules and re-running).
+- `sierra_guidance` is at **9 active rows** with one slot of headroom. The new
+  snapshot rule is rank 1; the naming rule is rank 9, safely inside.
+- The two retired rules (`23a5cd2a`, `346612d9`) are **deactivated, not deleted**
+  — one click back if retrieval turns out not to cover them.
+
+### (c) Strategic roadmap
+
+The tab is now shaped the way Sam asked for and the remaining moves are his
+judgement, not engineering:
+
+1. Does the three-row snapshot read as the pulse he wanted, or does active
+   exhibits earn a fourth row? (It is a capability measure, not a pulse — which is
+   why it was cut.)
+2. Do the two **public** Sierra surfaces (`sierra/`, `fact-sheet/factsheet_sierra.js`)
+   take the new intro wording? Different audience; deliberately not changed.
+3. Is the centred 760px scope card right for a landing screen, or did "use the
+   full width" include it?
+
+### (d) Next concrete step
+
+1. **Sam opens the tab in a browser** and asks Sierra *"How is Cabrillo College
+   doing on CPL, and what quick steps do you recommend?"* — the guidance row is
+   live, so the next answer is the test of it.
+2. If the snapshot lands, the same three-row discipline is worth applying to the
+   district and statewide roll-ups, which still lead with totals.
+3. The two region lists (SWP, ASCCC) remain the one blocked item, unchanged since
+   Sky167 — they exist on the MAP Dashboard and in no export we hold.

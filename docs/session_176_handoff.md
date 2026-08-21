@@ -10,6 +10,8 @@ related:
   - "[[docs/public_pages_a11y_lessons]]"
   - "[[docs/kb-notes/methodology-the-measuring-browser-can-hide-the-defect]]"
   - "[[docs/session_175_handoff]]"
+superseded: true
+superseded_by: session_178_handoff.md
 ---
 
 # Session 176 handoff
