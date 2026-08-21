@@ -3064,10 +3064,39 @@
        * another, which is worse than the blank this whole change exists to fix.
        * Caught by tests/college_identity_variants.test.js block (3), which was
        * written before this guard and failed. */
+      /* ⚠ AND A VARIANT TWO COLLEGES BOTH CLAIM MUST RESOLVE TO NEITHER.
+       * The shadow guard above only catches a variant equal to a CANONICAL
+       * name. It cannot see the other collision: two colleges offering the SAME
+       * variant. This used to be "first writer wins" — silently, and ordered by
+       * college_name, so the alphabetically-earlier college took it.
+       *
+       * That was harmless only while variants were district-qualified
+       * ("LA PIERCE"), which are unique by construction. The moment campus short
+       * names exist it is live: FIVE colleges' names reduce to "City College"
+       * (Los Angeles, San Diego, Long Beach, Riverside, Santa Barbara), so
+       * first-wins would attach San Diego City College's CPL coordinator to
+       * Los Angeles City College and report it as a resolved contact.
+       * A CONFIDENTLY WRONG CONTACT IS WORSE THAN THE BLANK THIS FIXES.
+       *
+       * The builder (kb/_build_college_identity_crosswalk.py) already refuses to
+       * MINT an ambiguous short name, so today nothing reaches here. This guard
+       * exists because a builder guarantee is not a consumer guarantee: this
+       * column is also written by hand and by curator rulings, and a consumer
+       * that trusts its input is one bad row from a wrong answer.
+       * Counted in a pass of its own — a single pass cannot know a later college
+       * is about to claim the same variant. */
+      var variantClaims = {};
+      colleges.forEach(function (r) {
+        (r.variants || []).forEach(function (v) {
+          if (!v || v === r.college_name || (v in nameToId)) return;
+          variantClaims[v] = (variantClaims[v] || 0) + 1;
+        });
+      });
       colleges.forEach(function (r) {
         (r.variants || []).forEach(function (v) {
           if (!v || v === r.college_name) return;
           if (v in nameToId) return;                 // some college owns this name
+          if (variantClaims[v] > 1) return;          // ambiguous — resolves to neither
           if (!(v in variantToCanon)) variantToCanon[v] = r.college_name;
         });
       });

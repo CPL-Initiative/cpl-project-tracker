@@ -368,6 +368,137 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
     return findings
 
 
+def resolve_roster(k, roster_by_map, roster_by_short):
+    """The 2025 CCC roster row for a normalized MAP name, or None.
+
+    Extracted so the campus-short pre-pass and the main loop resolve a college's
+    district THE SAME WAY. Two copies of this would be free to disagree, and the
+    disagreement would be invisible: a college whose district resolved in one
+    pass and not the other would simply produce no short-name candidate, which
+    is indistinguishable from a college the rule correctly declined."""
+    rost = roster_by_map.get(k) or roster_by_short.get(k)
+    if rost is None:
+        # last resort: MAP's name starts with the roster's, or vice versa —
+        # covers MAP suffixes the CCCCO roster does not carry.
+        for cand in roster_by_map.values():
+            ck = norm(cand["map_college"])
+            if ck and (k.startswith(ck) or ck.startswith(k)):
+                return cand
+    return rost
+
+
+# Words that carry no campus identity. A tail starting with one of these is the
+# leftover of a name that was ENTIRELY its district ("Santa Monica College" minus
+# "Santa Monica" is "College"), not a name anyone uses.
+_EMPTY_TAIL_LEAD = {"college", "community"}
+
+_DISTRICT_SUFFIX = re.compile(
+    r"\s+(joint\s+)?(county\s+)?(community\s+)?(college\s+)?district$", re.I)
+
+
+def district_stem(district):
+    """'Los Angeles Community College District' -> 'Los Angeles'."""
+    if not district:
+        return ""
+    s = _DISTRICT_SUFFIX.sub("", district.strip())
+    return re.sub(r"\s+county$", "", s, flags=re.I).strip()
+
+
+def campus_short_variants(pairs):
+    """The college's OWN short name — the Pierce gap.
+
+    A student, a curator and a college's own website all say "Pierce College".
+    MAP calls it "Los Angeles Pierce College" and `variants` carried only
+    "LA Pierce"/"LA PIERCE", so the name the college actually uses resolved to
+    nothing. Same for Mesa, Miramar, Harbor.
+
+    THE RULE: when a college's name begins with its own DISTRICT's name, the
+    remainder is the campus. That uses the authoritative `district` field landed
+    in #1278 rather than a guessed prefix list, and it is why "Santa Ana College"
+    produces nothing (its district is Rancho Santiago, so no prefix matches)
+    while a naive "strip a leading city name" rule would have proposed the
+    nonsense "Ana College".
+
+    ⚠ TWO SCREENS, AND THE SECOND ONE IS THE POINT.
+
+      1. DEGENERATE — the tail is just "College"/"Community College". Santa
+         Monica, Palomar, Ventura and ~40 others are their own district, so the
+         rule fires and leaves nothing behind.
+
+      2. AMBIGUOUS — the tail's leading word names more than one college. This
+         is what refuses "City College" (Los Angeles City AND San Diego City,
+         plus 9 more names containing "City") and "Valley College" (11).
+         ⚠ WITHOUT THIS SCREEN THE RULE IS ACTIVELY HARMFUL: "City College"
+         would be minted for two different colleges, and the consumer's variant
+         index is first-writer-wins, so San Diego City College's CPL coordinator
+         would silently start answering for Los Angeles City College. A wrong
+         contact is worse than the blank this exists to fix.
+
+    Then a candidate is refused if it SHADOWS a canonical name — "Mission
+    College" is a real college (West Valley-Mission) and a plausible short for
+    "Los Angeles Mission College". On today's roster the ambiguity screen catches
+    Mission first, so the shadow check has no live case; it is kept because the
+    two screens answer different questions and a future roster can present one
+    without the other.
+
+    Returns (accepted, refused) where accepted maps college_name -> [variants]
+    and refused is a list of {college, candidate, reason} for the receipt. The
+    refusals are the deliverable as much as the accepts: a rule that silently
+    drops candidates cannot be reviewed.
+    """
+    names = [n for n, _ in pairs]
+    # How many college names use each word. Counted over the WHOLE roster, not
+    # just the candidates, because "Valley" is ambiguous whether or not the
+    # other Valley colleges happen to produce candidates of their own.
+    tok_count = Counter()
+    for n in names:
+        for w in re.sub(r"[^A-Za-z ]", " ", n).split():
+            tok_count[w.lower()] += 1
+    canon = {norm(n): n for n in names}
+
+    claims = defaultdict(list)   # norm(tail) -> [(college, tail)]
+    refused = []
+    for name, district in pairs:
+        stem = district_stem(district)
+        if not stem or not name.lower().startswith(stem.lower() + " "):
+            continue
+        tail = name[len(stem):].strip()
+        lead = (tail.split() or [""])[0].lower()
+        if not tail or lead in _EMPTY_TAIL_LEAD:
+            refused.append({"college": name, "candidate": tail,
+                            "reason": "degenerate - the name is entirely its district"})
+            continue
+        if tok_count[lead] > 1:
+            refused.append({"college": name, "candidate": tail,
+                            "reason": "ambiguous - '%s' names %d colleges" % (lead, tok_count[lead])})
+            continue
+        claims[norm(tail)].append((name, tail))
+
+    accepted = {}
+    for key, claimants in claims.items():
+        if key in canon:
+            for name, tail in claimants:
+                refused.append({"college": name, "candidate": tail,
+                                "reason": "shadows the canonical name '%s'" % canon[key]})
+            continue
+        if len(claimants) > 1:
+            for name, tail in claimants:
+                refused.append({"college": name, "candidate": tail,
+                                "reason": "claimed by %d colleges" % len(claimants)})
+            continue
+        name, tail = claimants[0]
+        # Both forms: the college's own name, and it without the trailing
+        # "College" - matching how every other row in this file already carries
+        # a bare short ("Bakersfield" beside "Bakersfield College").
+        forms = [tail]
+        bare = re.sub(r"\s+College$", "", tail).strip()
+        if bare and bare != tail:
+            forms.append(bare)
+        accepted[name] = forms
+    refused.sort(key=lambda r: (r["college"], r["candidate"]))
+    return accepted, refused
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--map-json", default=None,
@@ -423,6 +554,21 @@ def main():
         ceo_extra.setdefault(k.replace("tradetech", "tradetechnical"), c)
     ceo_by = {**ceo_extra, **ceo_by}
 
+    # ── campus short names (the Pierce gap) ─────────────────────────────────
+    # Computed in a PRE-PASS because the ambiguity screen is a property of the
+    # whole roster, not of one row: whether "City College" may be minted for
+    # Los Angeles City College depends on San Diego City College, which the loop
+    # below has not read yet. A single pass literally cannot answer it — the
+    # same reason the consumer's shadow guard in college_briefing.js is a second
+    # pass. Districts resolve through resolve_roster() so this pass and the loop
+    # cannot disagree about which district a college is in.
+    campus_pairs = []
+    for c in mapc:
+        rk = norm(c["college_name"])
+        rr = resolve_roster(rk, roster_by_map, roster_by_short)
+        campus_pairs.append((c["college_name"], (rr or {}).get("district")))
+    campus_short, campus_refused = campus_short_variants(campus_pairs)
+
     out, unresolved = [], []
     used_mis = set()
     for c in mapc:
@@ -430,15 +576,7 @@ def main():
         kind = c.get("entity_kind") or "college"
         k = norm(cname)
 
-        rost = roster_by_map.get(k) or roster_by_short.get(k)
-        if rost is None:
-            # last resort: MAP's name starts with the roster's, or vice versa —
-            # covers MAP suffixes the CCCCO roster does not carry.
-            for cand in roster_by_map.values():
-                ck = norm(cand["map_college"])
-                if ck and (k.startswith(ck) or ck.startswith(k)):
-                    rost = cand
-                    break
+        rost = resolve_roster(k, roster_by_map, roster_by_short)
         m, how = None, None
         # PREFERENCE ORDER. The 2025 roster's map_college column is a
         # CCCCO-supplied bridge, so it outranks anything curated here: it
@@ -474,6 +612,9 @@ def main():
         ceo = ceo_by.get(k)
         if ceo:
             variants.add(ceo["college_name"])
+        # the college's own short name, where the roster permits one
+        for v in campus_short.get(cname, []):
+            variants.add(v)
 
         row = {
             "college_id": cid,
@@ -632,6 +773,18 @@ def main():
                               if r["mis_district_code"]}),
             "placeholder_codes": sum(1 for r in out if r.get("mis_code_is_placeholder")),
             "roster_bridged": sum(1 for r in out if r["mis_match"] == "roster-bridge"),
+            "campus_short_accepted": len(campus_short),
+            "campus_short_refused": len(campus_refused),
+        },
+        # ⚠ THE REFUSALS SHIP. A screen that silently drops candidates cannot be
+        # reviewed, and these two screens refuse far more than they accept — a
+        # reader who sees only the accepts has no way to tell a well-calibrated
+        # rule from one that is throwing away good names.
+        "campus_short_names": {
+            "_about": "The college's OWN short name, derived by stripping its "
+                      "district's name from the front. See campus_short_variants().",
+            "accepted": campus_short,
+            "refused": campus_refused,
         },
         "_source_defects_found": {
             k: (v if k == "district_name_split_across_codes"

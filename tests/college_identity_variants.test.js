@@ -146,6 +146,56 @@ const settle = () => new Promise((r) => setTimeout(r, 0));
       Object.keys(raw.contactByName || {}).length >= 1);
   });
 
+  // ── (3b) ⚠ A variant TWO colleges claim must resolve to NEITHER ─────────
+  // The (3) guard only catches a variant equal to some college's CANONICAL name.
+  // It is blind to the other collision — two colleges offering the SAME variant —
+  // which used to be resolved "first writer wins", silently, in college_name
+  // order. Harmless while every variant was district-qualified ("LA PIERCE");
+  // live the moment campus short names exist, because FIVE colleges' names
+  // reduce to "City College".
+  await block("(3b)", async function () {
+    const colleges = [
+      { college_id: 69, college_name: "Los Angeles City College",
+        variants: ["LA CITY", "City College"] },        // ⚠ both claim it
+      { college_id: 96, college_name: "San Diego City College",
+        variants: ["SAN DIEGO CITY", "City College"] }, // ⚠ on purpose
+    ];
+    const contacts = [
+      { college: "City College", primary_contact_email: "ambiguous@x.edu" },
+      { college: "SAN DIEGO CITY", primary_contact_email: "sd@x.edu" },
+    ];
+    const { M } = load({ colleges, contacts });
+    await settle(); await settle(); await settle();
+    const byName = ((M._state.data || {}).raw || {}).contactByName || {};
+    check("(3b) ⚠ an ambiguous variant attaches to NEITHER college",
+      byName["Los Angeles City College"] === undefined
+      && byName["San Diego City College"] !== "ambiguous@x.edu",
+      "first-writer-wins would have given LA City the row that names neither of "
+      + "them; a confidently wrong CPL contact is worse than the blank. Got: "
+      + JSON.stringify(byName));
+    check("(3b) an UNAMBIGUOUS variant on the same rows still resolves",
+      byName["San Diego City College"] === "sd@x.edu",
+      "the guard must refuse only the contested name, not disable variant "
+      + "resolution for the whole row");
+  });
+
+  // ── (3c) the builder refuses to MINT an ambiguous short name ────────────
+  // The consumer guard above is the backstop. The builder is where the name is
+  // decided, and its two screens are what keep "City College" out of the column
+  // in the first place. Asserted against the committed source so the rule cannot
+  // be quietly relaxed to "strip the district prefix and hope".
+  {
+    const py = fs.readFileSync("kb/_build_college_identity_crosswalk.py", "utf8");
+    check("(3c) the builder screens ambiguous and degenerate campus shorts",
+      /def campus_short_variants/.test(py)
+      && /tok_count\[lead\] > 1/.test(py)
+      && /_EMPTY_TAIL_LEAD/.test(py)
+      && /shadows the canonical name/.test(py));
+    check("(3c) the builder ships its REFUSALS, not just its accepts",
+      /"refused": campus_refused/.test(py) && /campus_short_refused/.test(py),
+      "a screen that silently drops candidates cannot be reviewed");
+  }
+
   // ── (5) The data is not silently 'repaired' ─────────────────────────────
   check("(5) ⚠ the fix does not trim the contacts table",
     !/\.trim\(\)\s*\]\s*=/.test(SRC) && !/contactByName\[[^\]]*trim\(\)/.test(SRC),

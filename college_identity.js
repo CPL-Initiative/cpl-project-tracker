@@ -77,10 +77,23 @@
     if (!colleges || !contactNames) return null;
     var canon = {}, byVariant = {};
     colleges.forEach(function (c) { canon[c.college_name] = true; });
+    /* A variant must never claim a name some college already owns — AND a
+     * variant two colleges both claim must resolve to neither. The second half
+     * was "first writer wins" until 2026-08-21; harmless while every variant was
+     * district-qualified and unique, live the moment campus short names exist
+     * (five colleges reduce to "City College"). Reporting such a name as
+     * "resolves to X" would be a confident wrong answer on a LINT surface, whose
+     * whole job is to be trusted about what resolves. Counted first: one pass
+     * cannot know a later college is about to claim the same variant. */
+    var claims = {};
     colleges.forEach(function (c) {
       (c.variants || []).forEach(function (v) {
-        // A variant must never claim a name some college already owns.
-        if (v && !canon[v] && !(v in byVariant)) byVariant[v] = c.college_name;
+        if (v && !canon[v]) claims[v] = (claims[v] || 0) + 1;
+      });
+    });
+    colleges.forEach(function (c) {
+      (c.variants || []).forEach(function (v) {
+        if (v && !canon[v] && claims[v] === 1 && !(v in byVariant)) byVariant[v] = c.college_name;
       });
     });
     var out = [];
