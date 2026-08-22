@@ -1,7 +1,7 @@
 ---
 title: Playbook — redeploying a shared, live Supabase Edge Function safely
 created: 2026-06-01
-updated: 2026-06-01
+updated: 2026-08-22
 tags: [playbook, supabase-edge-function, deploy, rollback, cors, verify-jwt, sse]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -32,6 +32,40 @@ change (a CORS origin) + a redeploy. That redeploy is the dangerous step,
 because it ships to the live widget too. This note distills the safe procedure
 so the next session (or a peer college doing the same) doesn't learn it the hard
 way. Workstream: `[[docs/cpl_assistant_lessons]]`.
+
+## ⚠️ SUPERSEDED IN PART, 2026-08-22 — deploy from the RUNNER, not inline
+
+**Do not deploy `cpl-chat` with the MCP `deploy_edge_function` tool.** Dispatch
+**`.github/workflows/cpl-chat-deploy.yml`** (`confirm: DEPLOY`, ref `main`). The
+workflow checks the file out of git and deploys those bytes.
+
+The workflow's own header gives the two failure modes of the inline path, both
+already observed in this project:
+
+1. **Size.** A 55 KB payload dropped mid-flight once ("permission stream closed",
+   Session 94). `index.ts` is now ~200 KB.
+2. **Transcription.** Inline means the exact bytes are re-emitted by hand, and the
+   file contains non-ASCII (Cañada, box-drawing rules, arrows), tabs inside string
+   literals, and ~9 KB of prompt text **where a single dropped line changes ANSWER
+   BEHAVIOUR without breaking syntax** — caught only by the post-deploy byte-verify,
+   after it is already live on six surfaces.
+
+`--no-verify-jwt` is pinned **inside the workflow** precisely so it cannot be
+forgotten: the MCP tool defaults `verify_jwt` to TRUE, and v25 shipped `true` for
+~40 minutes once, which 401s the production widget.
+
+Everything below still applies — **read the live state first, capture the running
+version, byte-verify after, smoke every mode**. Only the mechanism changed. Worked
+example, 2026-08-22 (v54 → v55): dispatch → `list_edge_functions` confirms v55
+ACTIVE with `verify_jwt:false` → `get_edge_function` and diff against the repo
+(198,665 chars both sides, local file a literal substring of the deployed blob) →
+dispatch `cpl-chat-smoke.yml`.
+
+⚠️ **This section exists because the playbook itself nearly caused the failure it
+warns about.** A session read it, prepared the inline deploy, and only found the
+workflow while checking whether CI already deployed on push. **A playbook that
+names a mechanism outlives the mechanism.** Check for a workflow before following
+a procedure that predates one.
 
 ## The claim
 

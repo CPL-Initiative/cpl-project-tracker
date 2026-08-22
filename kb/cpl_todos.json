@@ -1,104 +1,98 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-22 · TWO runs landed today. SkyBound (Session 184) added a maximum allocation to the funding model beside the $150,000 minimum, set to $400,000 and editable — and measured what it actually does, which is less than it sounds: it caps six colleges, moves about 1% of the pool, and gives none of it to the 45 colleges at the minimum. Raising the minimum is the stronger lever and the note below says by how much. 2026-08-22 · SkyScope (Session 183) — you had LACCD selected on My College and Sierra answered about RCCD. The district machinery turned out to be fine; two other things were wrong. First, the conversation carried over: switching from one district to another wipes what you can SEE but not what gets SENT, so your next question still arrived with eight earlier turns about Riverside attached — and Sierra searches that text, so she rebuilt the whole answer on the wrong college. Second, nothing had ever told her which institution you had selected, while an instruction you switched on in August tells her to confine her answer to it. An instruction that names something the request never sends is an instruction to guess.",
- "_session": "Session 184 (SkyBound) · concurrent with Session 183 (SkyScope)",
- "_status": "The fix is merged but NOT live yet — it needs the Sierra service redeployed, and that is a change to every place Sierra appears at once, so it is waiting on your go. Until then nothing you saw is actually fixed on the site. After the deploy, re-asking the LACCD question is the confirmation pass, and no session can do it — the sandbox cannot reach Sierra.\n\nThe audit you approved came back clean apart from the one rule that caused this: one of seven references a fact the request never carries. The bigger finding is that all seven rules go to all six places Sierra appears, so a My College-only rule is being read on the public page too. The recommendation is a small change — tell Sierra which surface she is on — not a second Sierra.",
- "items": [
-  {
-   "id": "s184-pick-the-ceiling",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Pick the maximum-allocation number. It is live at $400,000 and editable in the Funding pools box, right beside the $150,000 minimum. But measure first: at $400,000 it caps six colleges and moves $262,241 — about 1% of the pool — and every dollar goes to the next tier of large colleges. The 45 colleges sitting at the minimum gain nothing at all, because a college already pinned to the floor cannot be lifted by a ceiling. If the goal is a more even spread, raising the MINIMUM does far more: $200,000 takes the gap between the largest and smallest award from 3.5x down to 1.9x on its own, and at that point the $400,000 ceiling never binds. That is one dial instead of two. The most anyone can put in the minimum is about $210,000 — above that every college just gets the average."
-  },
-  {
-   "id": "s184-read-the-explainer",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Open 'How this funding model works' end to end in a browser before you send it to anyone. It is the audience-facing walk-through for CO and possibly Finance staff, the link now sits at the top right of the Implementation Funding title row, and it has been rebuilt with the new maximum in it — a third adjustment in the list, a mark on the six capped colleges, and a worked example that moved to Santa Monica because the largest college is now pinned to a round number its own share does not explain. No session can look at it; the sandbox cannot reach the site."
-  },
-  {
-   "id": "s183-deploy-cpl-chat",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Say the word and we will redeploy Sierra so today's fix goes live — then re-ask her the LACCD question. Right now the fix is merged but does nothing: the page sends her the selected college, and the live Sierra does not read it yet. The redeploy is one service shared by every place she appears — the public page, My College, the Fact Sheet, map.rccd.edu, the college landing pages and the vendor embed — so it changes all of them at once, which is why it is your call. It is reversible: we save the running version first, and a broken deploy leaves the old one running. Afterwards, check that she names Los Angeles colleges and that switching districts does not carry the previous one's answer over. Worth trying Peralta or Los Rios too — districts whose colleges are not named after them. No session can do this check; the sandbox cannot reach Sierra."
-  },
-  {
-   "id": "s183-sierra-surface",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Decide whether Sierra should know which page she is on. You asked whether My College should have its own Sierra setup. Our recommendation is no separate Sierra — that would mean every future fix has to be made in several places and one will get missed — but yes to telling her which surface she is on, so a My College instruction stops being read on the public page. About a day's work. One caveat: it cannot make her behave in a way that contradicts her built-in rules; that would be a bigger change."
-  },
-  {
-   "id": "s178-map-ids",
-   "for": "Sam",
-   "tab": "college-identity",
-   "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
-  },
-  {
-   "id": "s178-identity-tab",
-   "for": "Sam",
-   "tab": "college-identity",
-   "text": "Take a look at the new College Identity tab. It lists every college and agency we track, its MAP ID, its district, its state MIS code, and every different spelling of its name we have ever seen. Its real job is showing what is MISSING — right now it flags 13 names that appear in a live table and match nothing. Two of those turned out to be a genuine problem: Cypress College and San Jose City College had a stray space at the end of their name in the contacts table, so both looked like they had no CPL contact when they each have a real one. Already fixed."
-  },
-  {
-   "id": "s178-statewide-12",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
-  },
-  {
-   "id": "s178-mode7",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Fix smoke test mode 7 so it stops failing on correct answers. It reads Sierra's reply and searches the sentences for particular college names, so she can give a good answer and still fail. It went red again today on a change that could not possibly have affected it. Do NOT fix it by deleting the check — the test's own comment says that part matters most to someone looking for somewhere local to go. Check instead that a nearby college reached her at all, and leave the wording to mode 8, which already tests the same thing properly."
-  },
-  {
-   "id": "s173-phone-check",
-   "for": "Sam",
-   "tab": "fact-sheet",
-   "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
-  },
-  {
-   "id": "s179-college-ids",
-   "for": "Fable",
-   "tab": "college-identity",
-   "text": "Give Calbright Credit and Launch Non-Credit a placeholder row so they stop disappearing. They are missing from the identity table entirely, which means they silently fall out of four other tables rather than showing up as a known gap. A row with no ID and a stated reason is safe; inventing an ID is not."
-  },
-  {
-   "id": "s179-test-org",
-   "for": "Fable",
-   "tab": "college-identity",
-   "text": "One of MAP's test colleges is sitting in Sierra's data. \"Las PosTest College\" is in the catalog Sierra reads, and the filter that hides sandbox rows elsewhere cannot reach that table. It is empty, so the worst case is Sierra mentioning a college that does not exist — but it should not be reachable at all."
-  },
-  {
-   "id": "s179-college-id-joins",
-   "for": "Fable",
-   "tab": "college-identity",
-   "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
-  },
-  {
-   "id": "s182-explainer-read",
-   "for": "Sam",
-   "tab": "cpl-implementation-funding",
-   "text": "Read \"How this funding model works\" end to end, in a browser, before you send it to anyone. It was rewritten five times today off your notes and it now opens on the $35 million and three destinations — $25,240,308 to the 115 colleges and the four noncredit campuses, $8,959,692 statewide projects and technology, $800,000 for two Chancellor's Office posts. No session can open the published page, so you are the only one who has seen how it actually looks."
-  },
-  {
-   "id": "s182-full-width",
-   "for": "Sam",
-   "tab": "dashboard",
-   "text": "Have a look at the tabs now that text runs the full width. You said the short text columns look awkward against the full-width tables, so every paragraph across 17 files now runs to the same right edge as the tables beside it. Nobody has seen it rendered. If it reads too wide, two columns is the alternative and it is a single switch, not a rebuild."
-  },
-  {
-   "id": "s182-artifact-copy",
-   "for": "Sam",
-   "tab": "cpl-implementation-funding",
-   "text": "The copy of the funding explainer you were leaving comments on is now five versions behind — every fix went to the original, the one the tab links to. Say the word and we will refresh your copy, or you can comment straight on the original and skip the drift. Either way, comments only reach us when you ask us to check them; nothing pings us automatically."
-  },
-  {
-   "id": "s182-sierra-monitor",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Decide how we find out if Sierra goes down again. When her credit ran out nobody was told — a session happened to notice. The cheap option is an alert when the assistant starts returning errors; the expensive one is running her test suite every hour, which costs real money every run and is what drained the balance in the first place. We have not built either, on purpose, because it is your call."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-08-22 · TWO runs landed today. SkyBound (Session 184) added a maximum allocation to the funding model beside the $150,000 minimum, set to $400,000 and editable — and measured what it actually does, which is less than it sounds: it caps six colleges, moves about 1% of the pool, and gives none of it to the 45 colleges at the minimum. Raising the minimum is the stronger lever and the note below says by how much. 2026-08-22 · SkyScope (Session 183) — you had LACCD selected on My College and Sierra answered about RCCD. The district machinery turned out to be fine; two other things were wrong. First, the conversation carried over: switching from one district to another wipes what you can SEE but not what gets SENT, so your next question still arrived with eight earlier turns about Riverside attached — and Sierra searches that text, so she rebuilt the whole answer on the wrong college. Second, nothing had ever told her which institution you had selected, while an instruction you switched on in August tells her to confine her answer to it. An instruction that names something the request never sends is an instruction to guess.",
+  "_session": "Session 184 (SkyBound) · concurrent with Session 183 (SkyScope)",
+  "_status": "Sierra's My College fix is LIVE and confirmed — Sam tested the LACCD district selection plus three follow-ups after the redeploy and all were correct. The follow-ups were the part that mattered: those are the questions that used to drag the previous district's conversation back in.\n\nThe audit you approved came back clean apart from the one rule that caused this: one of seven references a fact the request never carries. The bigger finding is that all seven rules go to all six places Sierra appears, so a My College-only rule is being read on the public page too. The recommendation is a small change — tell Sierra which surface she is on — not a second Sierra.",
+  "items": [
+    {
+      "id": "s184-pick-the-ceiling",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Pick the maximum-allocation number. It is live at $400,000 and editable in the Funding pools box, right beside the $150,000 minimum. But measure first: at $400,000 it caps six colleges and moves $262,241 — about 1% of the pool — and every dollar goes to the next tier of large colleges. The 45 colleges sitting at the minimum gain nothing at all, because a college already pinned to the floor cannot be lifted by a ceiling. If the goal is a more even spread, raising the MINIMUM does far more: $200,000 takes the gap between the largest and smallest award from 3.5x down to 1.9x on its own, and at that point the $400,000 ceiling never binds. That is one dial instead of two. The most anyone can put in the minimum is about $210,000 — above that every college just gets the average."
+    },
+    {
+      "id": "s184-read-the-explainer",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Open 'How this funding model works' end to end in a browser before you send it to anyone. It is the audience-facing walk-through for CO and possibly Finance staff, the link now sits at the top right of the Implementation Funding title row, and it has been rebuilt with the new maximum in it — a third adjustment in the list, a mark on the six capped colleges, and a worked example that moved to Santa Monica because the largest college is now pinned to a round number its own share does not explain. No session can look at it; the sandbox cannot reach the site."
+    },
+    {
+      "id": "s183-sierra-surface",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Decide whether Sierra should know which page she is on. You asked whether My College should have its own Sierra setup. Our recommendation is no separate Sierra — that would mean every future fix has to be made in several places and one will get missed — but yes to telling her which surface she is on, so a My College instruction stops being read on the public page. About a day's work. One caveat: it cannot make her behave in a way that contradicts her built-in rules; that would be a bigger change."
+    },
+    {
+      "id": "s178-map-ids",
+      "for": "Sam",
+      "tab": "college-identity",
+      "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
+    },
+    {
+      "id": "s178-identity-tab",
+      "for": "Sam",
+      "tab": "college-identity",
+      "text": "Take a look at the new College Identity tab. It lists every college and agency we track, its MAP ID, its district, its state MIS code, and every different spelling of its name we have ever seen. Its real job is showing what is MISSING — right now it flags 13 names that appear in a live table and match nothing. Two of those turned out to be a genuine problem: Cypress College and San Jose City College had a stray space at the end of their name in the contacts table, so both looked like they had no CPL contact when they each have a real one. Already fixed."
+    },
+    {
+      "id": "s178-statewide-12",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
+    },
+    {
+      "id": "s178-mode7",
+      "for": "Fable",
+      "tab": "cpl-assistant",
+      "text": "Fix smoke test mode 7 so it stops failing on correct answers. It reads Sierra's reply and searches the sentences for particular college names, so she can give a good answer and still fail. It went red again today on a change that could not possibly have affected it. Do NOT fix it by deleting the check — the test's own comment says that part matters most to someone looking for somewhere local to go. Check instead that a nearby college reached her at all, and leave the wording to mode 8, which already tests the same thing properly."
+    },
+    {
+      "id": "s173-phone-check",
+      "for": "Sam",
+      "tab": "fact-sheet",
+      "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
+    },
+    {
+      "id": "s179-college-ids",
+      "for": "Fable",
+      "tab": "college-identity",
+      "text": "Give Calbright Credit and Launch Non-Credit a placeholder row so they stop disappearing. They are missing from the identity table entirely, which means they silently fall out of four other tables rather than showing up as a known gap. A row with no ID and a stated reason is safe; inventing an ID is not."
+    },
+    {
+      "id": "s179-test-org",
+      "for": "Fable",
+      "tab": "college-identity",
+      "text": "One of MAP's test colleges is sitting in Sierra's data. \"Las PosTest College\" is in the catalog Sierra reads, and the filter that hides sandbox rows elsewhere cannot reach that table. It is empty, so the worst case is Sierra mentioning a college that does not exist — but it should not be reachable at all."
+    },
+    {
+      "id": "s179-college-id-joins",
+      "for": "Fable",
+      "tab": "college-identity",
+      "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
+    },
+    {
+      "id": "s182-explainer-read",
+      "for": "Sam",
+      "tab": "cpl-implementation-funding",
+      "text": "Read \"How this funding model works\" end to end, in a browser, before you send it to anyone. It was rewritten five times today off your notes and it now opens on the $35 million and three destinations — $25,240,308 to the 115 colleges and the four noncredit campuses, $8,959,692 statewide projects and technology, $800,000 for two Chancellor's Office posts. No session can open the published page, so you are the only one who has seen how it actually looks."
+    },
+    {
+      "id": "s182-full-width",
+      "for": "Sam",
+      "tab": "dashboard",
+      "text": "Have a look at the tabs now that text runs the full width. You said the short text columns look awkward against the full-width tables, so every paragraph across 17 files now runs to the same right edge as the tables beside it. Nobody has seen it rendered. If it reads too wide, two columns is the alternative and it is a single switch, not a rebuild."
+    },
+    {
+      "id": "s182-artifact-copy",
+      "for": "Sam",
+      "tab": "cpl-implementation-funding",
+      "text": "The copy of the funding explainer you were leaving comments on is now five versions behind — every fix went to the original, the one the tab links to. Say the word and we will refresh your copy, or you can comment straight on the original and skip the drift. Either way, comments only reach us when you ask us to check them; nothing pings us automatically."
+    },
+    {
+      "id": "s182-sierra-monitor",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Decide how we find out if Sierra goes down again. When her credit ran out nobody was told — a session happened to notice. The cheap option is an alert when the assistant starts returning errors; the expensive one is running her test suite every hour, which costs real money every run and is what drained the balance in the first place. We have not built either, on purpose, because it is your call."
+    }
+  ]
 }
