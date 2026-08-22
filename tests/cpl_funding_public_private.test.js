@@ -108,7 +108,7 @@ function boot(window) {
   const pubFloor = pubDoc.querySelector(".cplfund-card.floor");
   const privFloor = privDoc.querySelector(".cplfund-card.floor");
   check("W2c: the public page shows the minimum AND the maximum as plain figures",
-    !!pubFloor && /150,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
+    !!pubFloor && /175,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
     /Minimum viable allocation/.test(pubFloor.textContent) && /Maximum allocation/.test(pubFloor.textContent));
   check("W2c: …with no editable control on either dial",
     !!pubFloor && pubFloor.querySelectorAll("[data-edit]").length === 0 &&

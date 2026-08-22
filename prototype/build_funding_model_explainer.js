@@ -41,13 +41,14 @@ const D = window.CPL_FUNDING;
 const pool = (k) => Number(T._pool(k));
 const model = T._model();
 
-// One row per college: name, district, credit FTES, two-year offer, and the
-// three flags the page marks — lifted to the minimum, held to the maximum, and
-// carrying the rural guarantee.
+// One row per college: name, district, credit FTES, two-year offer, and the two
+// flags the page marks — lifted to the minimum and held to the maximum. (Index 5
+// is a retired rural flag, kept as 0 so the row shape and the page's r[6] index
+// stay stable; drop both together if the rows are ever renumbered.)
 const rows = D.colleges.map(function (c) {
   const a = T._alloc(c.college);
   return [c.college, c.district || "", Math.round(c.credit_ftes || 0), Math.round(a.total),
-          a.floored ? 1 : 0, a.rural_w > 0 ? 1 : 0, a.capped ? 1 : 0];
+          a.floored ? 1 : 0, 0, a.capped ? 1 : 0];
 }).sort(function (x, y) {
   // Six colleges now TIE at the ceiling, so the offer alone no longer orders
   // the table — fall back to size, which is what a reader expects to see and
@@ -94,10 +95,9 @@ const avg = Math.round(totals.reduce(function (s, v) { return s + v; }, 0) / tot
 const payload = {
   pool: { one_time: pool("one_time_2026_27"), admin: pool("admin_cost"),
           scaling: pool("scaling_projects_tech"), feeder: pool("feeder_carveout"),
-          rural: pool("rural_carveout"), floor: pool("floor_window"),
+          floor: pool("floor_window"),
           cap: pool("cap_window"), rate: pool("ftes_rate_2026_27") },
   net_main: Math.round(T._netCollege()),
-  rural_per: Math.round(pool("rural_carveout") / D.colleges.filter(function (c) { return c.rural; }).length),
   model: { floor: model.floor, floorCount: model.floorCount, floorCost: Math.round(model.floorCost),
            cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },
   median: totals[Math.floor(totals.length / 2)],
@@ -108,6 +108,23 @@ const payload = {
   atMin: rows.filter(function (r) { return r[4]; }).length,
   atMax: rows.filter(function (r) { return r[6]; }).length,
   exampleName: example,
+  // The two illustration cards. They used to be hand-typed HTML and TWO of their
+  // four figures were already stale by 2026-08-22 (the largest college's share,
+  // and the smallest college's, both computed against a retired pool). Every
+  // number a reader can check must come from the engine, so they are emitted.
+  cards: (function () {
+    const bySize = D.colleges.slice().sort(function (a, b) { return (b.credit_ftes || 0) - (a.credit_ftes || 0); });
+    const totFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
+    const net = T._netCollege();
+    return [bySize[0], bySize[bySize.length - 1]].map(function (c, i) {
+      const a = T._alloc(c.college);
+      return { name: c.college, role: i === 0 ? "The largest college" : "The smallest college",
+               ftes: Math.round(c.credit_ftes || 0),
+               pct: +((c.credit_ftes || 0) / totFtes * 100).toFixed(1),
+               share: Math.round((c.credit_ftes || 0) / totFtes * net),
+               offered: Math.round(a.total), floored: !!a.floored, capped: !!a.capped };
+    });
+  })(),
   effRate: Math.round(effRate),
   prios: prios,
   rows: rows,

@@ -2355,7 +2355,7 @@ window.CPL_DATA = {
         "id": 9,
         "name": "College Implementation Awards — 115 colleges \u0026 4 noncredit",
         "source_code": "$35M P98",
-        "description": "The three-priority college pool. Includes the $1M noncredit feeder carve-out and the $1M guaranteed rural allowance, both carved from inside this total.",
+        "description": "The three-priority college pool. Includes the $1M noncredit feeder carve-out, carved from inside this total.",
         "window_label": "",
         "section": "use_35m",
         "parent_id": null,

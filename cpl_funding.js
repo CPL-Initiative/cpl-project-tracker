@@ -30,17 +30,13 @@
 //     pool by an iterative waterfall (floored colleges get exactly the floor;
 //     the remainder splits proportionally over the other colleges' headcount)
 //     so the balance stays $0 by construction.
-//   • RURAL ALLOWANCE (pool.rural_carveout, default $1M): a GUARANTEED earmark
-//     — each rural-flagged college (DRAFT roster; per-college `rural` flags +
-//     in-tab override) gets an equal share (~$76.9k on the 13-college roster).
-//     PR4 (Sam, 2026-07-28 — "combine the floor with the rural bump", Option B
-//     = guarantee the whole amount, no performance gate): each college's slice
-//     FUNDS ITS OWN MINIMUM-VIABLE FLOOR FIRST — allocModel gives rural colleges
-//     a reduced main-pool floor of (floor − ruralPer), so the rural money, not
-//     the main pool, lifts small rural colleges the last stretch to $150k — then
-//     any remainder rides on top as a bonus. The main-pool dollars this frees
-//     re-split to the (mostly non-rural) unfloored colleges. Guaranteed in both
-//     Potential and Earned bases (only the main allocation flexes on MAP CPL).
+//   • RURAL ALLOWANCE — RETIRED 2026-08-22 (Sam). It was a $1M guaranteed
+//     earmark split 13 ways. Measured against the floor + ceiling, it was
+//     redundant for TEN of the 13 (already at the minimum) and a bonus for
+//     three; dropping it alone would have moved $88,594 from three rural
+//     colleges to the LARGEST non-rural ones, so it was retired TOGETHER with
+//     the floor raise to $175K — under which the 13 receive $236,406 MORE than
+//     the carve-out delivered. Nothing in the college pool is unconditional now.
 //   • BASELINE ELIGIBILITY badges (informational — dollars unchanged):
 //     ① a CPL Coordinator listed in MAP (live, PII-free boolean via the anon
 //     map_coordinator_summary() RPC) + ② a participation request by the
@@ -103,7 +99,6 @@
     ".cplfund-card.hero .v { color: var(--gold-accent); }",
     ".cplfund-card.hero .l { color: var(--light-blue); }",
     ".cplfund-card.feeder { border-left: 4px solid var(--green-progress); }",
-    ".cplfund-card.rural { border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.floor { border-left: 4px solid var(--navy-secondary); }",
     ".cplfund-card.floor .v { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 8px; }",
     ".cplfund-range-sep { font-size: .78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }",
@@ -311,9 +306,7 @@
     ".cplfund .dk { color: var(--text-muted); font-weight: 400; }",
     ".cplfund-est { font-size: .72rem; color: var(--mustard-fill); font-weight: 600; }",
     ".cplfund-chip { display: inline-block; font-size: .72rem; margin-left: 4px; font-weight: 400; cursor: help; }",
-    // Rural tree glyph (Sam, 2026-07-28): larger but muted (desaturated + dimmed)
     // so it reads as a quiet marker, not a bright emoji.
-    ".cplfund-chip.cplfund-tree { font-size: 1.05rem; opacity: .5; filter: grayscale(.55); vertical-align: -1px; }",
     ".cplfund-carry { color: var(--text-faint); font-size: .75rem; font-weight: 400; }",
     ".cplfund-elig { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 12px 16px; font-size: .88rem; line-height: 1.55; text-align: left; }",
     ".cplfund-elig-intro { margin-bottom: 8px; }",
@@ -773,7 +766,10 @@
     return out;
   }
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
-  function ruralCarve() { return Math.max(0, Number(poolField("rural_carveout")) || 0); }
+  // RURAL CARVE-OUT RETIRED 2026-08-22 (Sam). ruralCarve/ruralPerCollege/
+  // ruralPoolDistributed/ruralAlloc/ruralWindow and the Rural section are gone;
+  // isRural() survives because the table still MARKS rural colleges. It no
+  // longer moves a dollar. Rationale + the measurement: docs/cpl_funding_lessons.md.
   function floorWindow() { return Math.max(0, Number(poolField("floor_window")) || 0); }
   // The mirror image of the floor (Sam, 2026-08-22): no college's WINDOW total
   // rises above this. 0 = no ceiling, which is the identity — allocModel below
@@ -843,14 +839,7 @@
     return s;
   }
   function netBeforeFeeder() { return grossRevenue() - grossDeduction(); }
-  // The rural carve-out ACTUALLY distributed to rural colleges = ruralPer × roster
-  // size — equals ruralCarve() when the roster is non-empty, and 0 when it's empty.
-  // Deduct this (not the raw carve-out) from the main pool so an empty roster
-  // returns the earmark to the main proportional pool instead of stranding it
-  // (PR4, Sam 2026-07-28). Used by BOTH netCollege and netCollegeWithRural so they
-  // stay consistent. (ruralPerCollege/ruralColleges are hoisted declarations.)
-  function ruralPoolDistributed() { return ruralPerCollege() * ruralColleges().length; }
-  function netCollege() { return netBeforeFeeder() - feederCarveout() - ruralPoolDistributed(); }
+  function netCollege() { return netBeforeFeeder() - feederCarveout(); }
   function perYear() { return netCollege() / nYears(); }
   function totalHeads() { return base().system.headcount; }
   function perStudent() { return totalHeads() ? perYear() / totalHeads() : 0; }
@@ -1464,14 +1453,6 @@
   // Is the viewed year pure carryover — front-loaded, with no new money on the
   // table? Drives the "↻ carryover" states so a $0 cap never reads as a defect.
   function slotIsCarryover(slot) { return frontloaded() && String(slot) !== "1"; }
-  // rural flag = config override ?? the baked per-college flag (DRAFT roster).
-  function isRural(c) {
-    var o = firstDefined(
-      SCENARIO.ruralOverrides && SCENARIO.ruralOverrides[c.college],
-      SHARED.ruralOverrides && SHARED.ruralOverrides[c.college]);
-    return o != null ? !!o : !!c.rural;
-  }
-  function ruralColleges() { return base().colleges.filter(isRural); }
   function participationDeadline() {
     return firstDefined(SCENARIO.participationDeadline, SHARED.participationDeadline,
       base().participation_deadline) || "2026-09-01";
@@ -1566,12 +1547,6 @@
   function setPartLabel(v) { activeOverride().partLabel = v; persistActive(); }
   function setCoordHidden(v) { activeOverride().coordHidden = !!v; persistActive(); }
   function setPartHidden(v) { activeOverride().partHidden = !!v; persistActive(); }
-  function setRuralOverride(college, flag) {
-    var ov = activeOverride();
-    ov.ruralOverrides = ov.ruralOverrides || {};
-    ov.ruralOverrides[college] = !!flag;
-    persistActive();
-  }
 
   function resetActive() {
     if (unlocked()) {
@@ -2289,20 +2264,19 @@
     // Earned rides beside the cap in every export (the basis toggle was retired
     // 2026-07-30), split so an ADVANCE never reads as achievement.
     var earnHead = ["Earned " + windowLabel(), "% of cap", "Earned: measured", "Earned: advance",
-      "Earned: guaranteed rural", "Withheld (baseline not met)"];
+      "Withheld (baseline not met)"];
     function earnCells(row) {
       var pct = row.total > 0 ? Math.round((row.earned_total || 0) / row.total * 1000) / 10 + "%" : "";
       return [Math.round(row.earned_total || 0), pct, Math.round(row.earned_measured || 0),
-        Math.round(row.earned_advance || 0), Math.round(row.earned_guaranteed || 0),
-        Math.round(row.earned_withheld || 0)];
+        Math.round(row.earned_advance || 0), Math.round(row.earned_withheld || 0)];
     }
     var lines = [];
     lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
-      ["Eligibility (proposed)", "Rural", "Floor / maximum applied"], yHead,
+      ["Eligibility (proposed)", "Floor / maximum applied"], yHead,
       ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
     function collegeLine(c) {
       return [c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
-        [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : (c.capped ? "maximum" : "")],
+        [csvEligText(c.college), c.floored ? "floor" : (c.capped ? "maximum" : "")],
         yearKeys().map(function (yk) { return Math.round(c[yk]); }),
         [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]);
     }
@@ -2802,7 +2776,7 @@
       var b0 = revShown[0];
       out.push(card({ cls: " total", v: valueEd(b0.field, false),
         l: labelEd(b0.field, b0.def) +
-           ' <span class="dk">&mdash; total available funding; the deductions + feeder carve-out below net down to the college pool (rural allowance is part of that pool)</span>',
+           ' <span class="dk">&mdash; total available funding; the deductions + feeder carve-out below net down to the college pool</span>',
         x: pubEye(b0.field, poolLabel(b0.field, b0.def)) + hideX(b0.field, poolLabel(b0.field, b0.def)) }));
     } else {
       revShown.forEach(function (b) {
@@ -2810,7 +2784,7 @@
           x: pubEye(b.field, poolLabel(b.field, b.def)) + hideX(b.field, poolLabel(b.field, b.def)) }));
       });
       out.push(card({ cls: " total", v: fmtMoney(grossRevenue()),
-        l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool (the rural allowance is part of that pool)" }));
+        l: "Total available funds &mdash; sum of all funding sources; the deductions + the feeder carve-out below net down to the college pool" }));
     }
 
     // Deductions (skip hidden).
@@ -2839,30 +2813,18 @@
     // Carve-outs — editable value + label, NOT deletable (they drive their own sections below).
     out.push(card({ cls: " feeder", neg: true, v: valueEd("feeder_carveout", true),
       l: labelEd("feeder_carveout", "Noncredit feeder support — carve-out") + ' <span class="dk">&mdash; deducted</span>' }));
-    // Rural allowance — a GUARANTEED earmark (Sam, 2026-07-28, PR4): it's held
-    // within the college pool and folded into rural colleges' rows above, funding
-    // their floor first, so the hero below reads the full pool (main + rural).
-    out.push(card({ cls: " rural", v: valueEd("rural_carveout", false),
-      l: labelEd("rural_carveout", "Rural college allowance — guaranteed") +
-         ' <span class="dk">&mdash; earmarked within the pool, folded into rural colleges&#39; rows</span>',
-      note: "funds rural colleges&#39; floor first, remainder on top" }));
-
     // Available college funding (computed hero) — the WHOLE college pool incl. the
     // folded rural allowance (Sam, 2026-07-28); ties out to the SYSTEM total row.
-    // The note breaks out the $32.8M main proportional pool + the $1M rural.
-    // Sam, 2026-08-04: the hero is the INSTITUTION total — the college pool (incl.
-    // the folded rural allowance) PLUS the $1M noncredit feeder carve-out = the
-    // amendment's $25,240,308 "to institutions". The note breaks out all three
-    // (college main pool + rural + NC feeder) the way the rural line already did.
-    var perTotal = netCollegeWithRural() / nYears();
-    var ruralIn = netCollegeWithRural() - netCollege();
-    var instTotal = netCollegeWithRural() + feederCarveout();
+    // Sam, 2026-08-04: the hero is the INSTITUTION total — the college pool PLUS
+    // the $1M noncredit feeder carve-out = the amendment's $25,240,308 "to
+    // institutions". Two parts since the rural carve-out was retired (2026-08-22).
+    var perTotal = netCollege() / nYears();
+    var instTotal = netCollege() + feederCarveout();
     out.push(card({ cls: " hero", v: fmtMoney(instTotal),
       l: (frontloaded()
         ? "Available funding to institutions " + windowLabel() + " &mdash; disbursed up front in " + esc(y[0]) + " (front-loaded; unspent rolls forward); colleges receive " + fmtMoney(perTotal) + "/yr"
         : "Available funding to institutions " + windowLabel() + " &mdash; " + nYears() + " annual tranches; colleges receive " + fmtMoney(perTotal) + "/yr (" + esc(y[0]) + " &rarr; " + esc(y[y.length - 1]) + ")"),
-      note: fmtMoney(netCollege()) + " main proportional pool + " + fmtMoney(ruralIn) +
-            " Rural College allowance (folded into rural colleges&#39; rows) + " + fmtMoney(feederCarveout()) +
+      note: fmtMoney(netCollege()) + " main proportional pool (115 colleges) + " + fmtMoney(feederCarveout()) +
             " noncredit feeder support (to the " + feeders().length + " NC campuses below)" }));
 
     // Allocation balance (Sam, 2026-07-23): available annual tranche − the
@@ -3493,29 +3455,6 @@
     return _earnCache;
   }
 
-  // ── rural allowance: GUARANTEED, floor-fill first (PR4, Sam 2026-07-28) ─────
-  // Per-college rural allowance = the carve-out split evenly across the rural roster.
-  function ruralPerCollege() {
-    var n = ruralColleges().length;
-    return n ? ruralCarve() / n : 0;
-  }
-  // The guaranteed allowance split for one rural college (Sam, 2026-07-28,
-  // "combine the floor with the rural bump"; Option B = guarantee the whole
-  // amount, no performance gate). The per-college slice FUNDS THE COLLEGE'S
-  // FLOOR GAP FIRST — the shortfall between its reduced main-pool entitlement
-  // and the $150k floor — then any remainder rides on top as a bonus. Because
-  // allocModel gives rural colleges a reduced floor of (floor − ruralPer), the
-  // gap never exceeds the slice, so the slice always covers it (no main-pool
-  // leftover top-up). Both parts are guaranteed.
-  function ruralAlloc(c) {
-    var per = ruralPerCollege();
-    var mainW = allocModel().W[c.college] || 0;
-    var gap = Math.max(0, floorWindow() - mainW);   // still-needed top-up to reach the floor
-    var floorFill = Math.min(per, gap);              // rural money spent reaching the floor
-    var bonus = per - floorFill;                     // remainder on top
-    return { per: per, mainW: mainW, gap: gap, floorFill: floorFill, bonus: bonus, total: mainW + per };
-  }
-
   // `target` is whatever prioTarget() returned for this priority — CPL FTES for
   // a unit metric, students for a headcount metric.
   //
@@ -3670,7 +3609,7 @@
   function totalColDef() {
     return { key: "total", label: "Total " + windowLabel(), cls: "",
       title: "Window allocation cap, with earned so far beneath (Σ priorities: cap × actual ÷ target, capped at 100%; " +
-        "priorities MAP cannot measure yet pay an advance at full cap; the guaranteed rural allowance is never gated)" };
+        "priorities MAP cannot measure yet pay an advance at full cap)" };
   }
   // Per-priority columns (Sam, 2026-07-24): one P1/P2/P3 column per priority of
   // the VIEWED year; the header hover is the priority goal + metric, the cell
@@ -3699,7 +3638,7 @@
     var isFtes = prioIsFtes(p);
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
     var target = prioTarget(isSystem ? null : c, p);
-    var cap = isSystem ? prioCap(netCollegeWithRural(), state.viewSlot, p) : (c[p.key] || 0);
+    var cap = isSystem ? prioCap(netCollege(), state.viewSlot, p) : (c[p.key] || 0);
     var fr = earnFraction(isSystem ? null : c, p);
     // A front-loaded later year has no new money on the table — say so rather
     // than rendering a wall of $0 that reads as a defect.
@@ -3710,16 +3649,11 @@
           "targets. Unspent Year-1 funds roll forward to be drawn here.") +
         '">↻ carryover</td>';
     }
-    // The GUARANTEED rural allowance's slice for this priority (PR4, Sam
-    // 2026-07-28): folded into cap, and — because it is guaranteed, not earned —
-    // added in full to `earned` while only the MAIN cap flexes on achievement.
-    var ruralBump = isSystem ? prioCap(ruralCarve(), state.viewSlot, p)
-      : (c && c.rural_w ? prioCap(c.rural_w, state.viewSlot, p) : 0);
-    var mainCap = cap - ruralBump;             // the achievement-flexing part
-    var earned = mainCap * fr.f + ruralBump;   // rural guaranteed in full
+    // Every dollar flexes on achievement now that the guaranteed rural allowance
+    // is retired (2026-08-22) — nothing in the college pool is unconditional.
+    var earned = cap * fr.f;
     // The row's OWN effective rate (cap ÷ target) — equals the statewide base for
-    // most colleges; higher for the small colleges topped up to the floor and/or
-    // carrying the rural allowance (both are folded into cap above).
+    // most colleges; higher for the small colleges topped up to the floor.
     var effRate = target > 0 ? cap / target : 0;
     var baseRate = p.per_student || effRate;   // statewide/average rate
     var floored = !isSystem && c && c.floored;
@@ -3750,20 +3684,9 @@
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
       : "nothing posted in MAP yet";
     // Hover — the full story incl. the effective per-student rate + WHY it differs
-    // (the $150k floor top-up and/or the folded rural allowance).
+    // (the floor top-up or the ceiling hold; the SYSTEM row has neither).
     var reasons = [];
-    // The floor/rural reasons are per-COLLEGE (the SYSTEM row has no per-college
-    // floor or rural — `ruralBump` above is system-aware for the earned math, so
-    // use a college-scoped bump here and guard against the null system `c`).
-    var colRuralBump = (!isSystem && c && c.rural_w) ? prioCap(c.rural_w, state.viewSlot, p) : 0;
-    var colMainW = (!isSystem && c) ? (c.main_w || 0) : 0;
-    // For a floored RURAL college the guaranteed rural allowance IS what funds part
-    // of that floor, so state it as one combined reason (avoid reading as two
-    // additive boosts — PR4, Sam 2026-07-28).
-    if (floored && colRuralBump > 0) {
-      reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor — funded partly by " +
-        "this college's guaranteed rural allowance and partly by the main pool (small colleges are topped up to stand up the program)");
-    } else if (floored) {
+    if (floored) {
       reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up to stand up the program)");
     } else if (!isSystem && c && c.capped) {
       // The ceiling's mirror of the floor reason. Say it the same way round —
@@ -3771,16 +3694,6 @@
       // went — so a capped college can see the money was redistributed, not lost.
       reasons.push("held to the " + fmtMoney(capWindow()) + " maximum allocation (the largest colleges are capped so the " +
         "difference re-splits across the rest of the system)");
-    } else if (colRuralBump > 0) {
-      // Not floored, but a rural college can still have a floor gap its allowance
-      // fills (floorFill > 0) OR already sit above the floor (all bonus). Only claim
-      // floor-funding when it actually happens — else it contradicts the drill-in.
-      var ruralFloorFill = Math.min(c.rural_w || 0, Math.max(0, floorWindow() - colMainW));
-      reasons.push("boosted by a " + fmtMoney(colRuralBump) +
-        (frontloaded() ? " guaranteed rural allowance (full window, front-loaded) " : "/yr guaranteed rural allowance ") +
-        (ruralFloorFill > 0.5
-          ? "(funds this college's floor first, any remainder on top — see the Rural section)"
-          : "(this college's main-pool share already meets the floor, so the whole allowance rides on top — see the Rural section)"));
     }
     // Under front-load the WHOLE window sits behind an unchanged per-year target,
     // so the statewide base to compare against is the window rate, not the annual
@@ -3991,18 +3904,16 @@
     var cols = base().colleges;
     var net = netCollege();
     var floor = floorWindow();
-    var ruralPer = ruralPerCollege();
-    // A rural college self-funds ruralPer of its floor from the guaranteed
-    // rural allowance; non-rural colleges carry the full floor.
-    function floorFor(c) { return isRural(c) ? Math.max(0, floor - ruralPer) : floor; }
-    // …and the same slice comes off its ceiling, so the ceiling binds mainW +
-    // ruralPer. Never below the row's own floor: a ceiling under the floor is a
-    // curator typo, and honoring it literally would pay a college less than the
-    // minimum the model promises. The floor wins; capBelowFloor reports it.
-    function capFor(c) {
-      if (!(cap > 0)) return Infinity;
-      return Math.max(floorFor(c), isRural(c) ? Math.max(0, cap - ruralPer) : cap);
-    }
+    // Every college now carries the SAME bounds — the per-college floor/cap
+    // adjustment went with the rural carve-out (2026-08-22). Kept as FUNCTIONS
+    // rather than inlined: they are the one seam a second pool would swap (a
+    // noncredit pool on noncredit FTES with its own floor and ceiling), and
+    // everything below this point is already generic over roster + bounds.
+    function floorFor() { return floor; }
+    // Never below the floor: a ceiling under the floor is a curator typo, and
+    // honoring it literally would pay a college less than the minimum the model
+    // promises. The floor wins; capBelowFloor reports it.
+    function capFor() { return cap > 0 ? Math.max(floor, cap) : Infinity; }
     var F = {}, C = {}, W = {};
     // `totSize` is the statewide total on the ACTIVE basis (credit FTES by
     // default, headcount if selected) — every proportional split below reads it.
@@ -4120,40 +4031,33 @@
     return _allocCache;
   }
 
-  // Per-year dollars (y1, y2, … from the college's floor-aware window
-  // entitlement W × that year's share sum ÷ years), a window TOTAL, the
-  // floor/rural flags, plus the active-year per-priority breakdown for the
-  // drill-in. FRONT-LOAD mode re-times the same total into Year 1 (later
-  // years = carryover of unspent funds) — allocation itself is unchanged.
-  // The per-college rural allowance is a GUARANTEED earmark (Sam, 2026-07-28,
-  // PR4 Option B): folded into the row's total, and — because it is guaranteed,
-  // not performance-earned — added IN FULL to the earned figure too (only the
-  // MAIN allocation flexes on MAP achievement). The floor-fill vs on-top-bonus
-  // split of the allowance is detailed in the Rural section + drill-in.
-  function ruralWindow(c) { return (c && isRural(c)) ? ruralPerCollege() : 0; }
-  // The whole college pool once the rural carve-out is distributed into rural
-  // rows — Σ college rows == this, so the SYSTEM total stays consistent.
-  function netCollegeWithRural() { return netCollege() + ruralPoolDistributed(); }
+  // Per-year dollars (y1, y2, … from the college's bounded window entitlement W
+  // × that year's share sum ÷ years), a window TOTAL, the floor/ceiling flags,
+  // plus the active-year per-priority breakdown for the drill-in. FRONT-LOAD
+  // mode re-times the same total into Year 1 (later years = carryover of unspent
+  // funds) — allocation itself is unchanged.
+  //
+  // Since the rural carve-out was retired (2026-08-22) a college's entitlement
+  // IS its main-pool entitlement — there is no second, guaranteed component, and
+  // NOTHING in the college pool is unconditional any more. Every dollar flexes
+  // on MAP achievement.
   function collegeAlloc(c) {
     var mainW = allocModel().W[c.college] || 0;
-    var ruralW = ruralWindow(c);         // 0 unless rural; GUARANTEED (PR4)
-    var W = mainW + ruralW;              // effective entitlement folds the guaranteed rural in
+    var W = mainW;
     var ny = nYears();
     var fl = frontloaded();
-    var out = { total: 0, w: W, main_w: mainW, rural_w: ruralW,
+    var out = { total: 0, w: W, main_w: mainW,
       floored: !!allocModel().floored[c.college], capped: !!allocModel().capped[c.college] };
     var ys = [], eys = [], earnTotal = 0;
-    // Earned splits three ways so the figure can be read honestly (Sam,
+    // Earned splits two ways so the figure can be read honestly (Sam,
     // 2026-07-30): MEASURED (a MAP feed scored this college's actual against
-    // its target), ADVANCE (the metric isn't measurable yet — full cap paid
-    // provisionally, flips automatically when the feed lands) and GUARANTEED
-    // (the rural allowance, never performance-gated — PR4). Without the split,
-    // advances silently dominate the earned number.
-    var earnMeasured = 0, earnAdvance = 0, earnGuaranteed = 0, earnWithheld = 0;
+    // its target) and ADVANCE (the metric isn't measurable yet — full cap paid
+    // provisionally, flips automatically when the feed lands). Without the
+    // split, advances silently dominate the earned number.
+    var earnMeasured = 0, earnAdvance = 0, earnWithheld = 0;
     // The baseline participation gate (Sam, 2026-07-30). Blocked → the college
-    // earns NOTHING on the performance-based main allocation; the guaranteed
-    // rural allowance still flows, and the cap is untouched. What it could have
-    // earned is tracked as WITHHELD and held in reserve (never redistributed).
+    // earns NOTHING; the cap is untouched. What it could have earned is tracked
+    // as WITHHELD and held in reserve (never redistributed).
     var gate = baselineGate(c.college);
     out.gate_blocked = !!gate.blocked;
     out.gate_pending = !!gate.pending;
@@ -4163,15 +4067,12 @@
       var v = W * shareSum(slot) / ny;
       ys.push(v);
       out.total += v;
-      // Earned this year: the MAIN allocation flexes on MAP achievement (Σ
+      // Earned this year: the allocation flexes on MAP achievement (Σ
       // priorities: cap × fraction; data-gap/absent priorities pay full cap).
-      // The rural allowance is GUARANTEED (PR4) — added in full, never gated.
-      // Both go through slotEntitlement/prioCap, so under front-load ALL of it
-      // is earnable in Year 1 against the Year-1 targets and later years carry
-      // nothing (their metrics never touch the money).
-      var ruralYr = slotEntitlement(ruralW, slot);
-      var ey = ruralYr;
-      earnGuaranteed += ruralYr;
+      // Goes through prioCap, so under front-load ALL of it is earnable in
+      // Year 1 against the Year-1 targets and later years carry nothing (their
+      // metrics never touch the money).
+      var ey = 0;
       priorities(slot).forEach(function (p) {
         var fr = earnFraction(c, p);
         var paid = prioCap(mainW, slot, p) * fr.f;
@@ -4189,7 +4090,6 @@
     out.earned_total = earnTotal;
     out.earned_measured = earnMeasured;
     out.earned_advance = earnAdvance;
-    out.earned_guaranteed = earnGuaranteed;
     priorities(state.viewSlot).forEach(function (p) {
       // The per-priority CAP for the viewed year — the money actually on the
       // table there. Under front-load that is the whole window in Year 1
@@ -4201,7 +4101,7 @@
     return out;
   }
   function systemAlloc() {
-    var net = netCollegeWithRural();   // includes the folded rural carve-out (Sam, 2026-07-28)
+    var net = netCollege();
     var ny = nYears();
     var fl = frontloaded();
     var out = { total: 0, headcount: totalHeads() };
@@ -4214,13 +4114,12 @@
     ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
     // Earned totals = Σ colleges (the real disbursement, each on its own actuals).
     var eys = selectedYears().map(function () { return 0; }), earnTotal = 0;
-    var eMeas = 0, eAdv = 0, eGuar = 0, eHeld = 0;
+    var eMeas = 0, eAdv = 0, eHeld = 0;
     base().colleges.forEach(function (col) {
       var a = collegeAlloc(col);
       earnTotal += a.earned_total;
       eMeas += a.earned_measured || 0;
       eAdv += a.earned_advance || 0;
-      eGuar += a.earned_guaranteed || 0;
       eHeld += a.earned_withheld || 0;
       eys.forEach(function (_, i) { eys[i] += a["ey" + (i + 1)] || 0; });
     });
@@ -4228,7 +4127,6 @@
     out.earned_total = earnTotal;
     out.earned_measured = eMeas;
     out.earned_advance = eAdv;
-    out.earned_guaranteed = eGuar;
     out.earned_withheld = eHeld;
     return out;
   }
@@ -4248,7 +4146,7 @@
         headcount: c.headcount, headcount_pct: c.headcount_pct, hc_vintage: c.hc_vintage,
         credit_ftes: c.credit_ftes, noncredit_ftes: c.noncredit_ftes, size_pct: sizePct(c),
         working_adults: c.working_adults, county_pop_pct: c.county_pop_pct,
-        rural: isRural(c)
+        rural: !!c.rural
       };
       Object.keys(a).forEach(function (k) { r[k] = a[k]; });
       return r;
@@ -4310,11 +4208,10 @@
       : "";
     return '<span class="sub">earned ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + advTag + "</span>";
   }
-  function earnedCellTitle(capLabel, cap, earned, meas, adv, guar, held) {
+  function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
     var bits = [capLabel + ": " + fmtMoney(cap), "earned so far: " + fmtMoney(earned)];
     if (meas > 0.5) bits.push(fmtMoney(meas) + " measured on actual CPL in MAP");
     if (adv > 0.5) bits.push(fmtMoney(adv) + " advance (metric not measurable yet)");
-    if (guar > 0.5) bits.push(fmtMoney(guar) + " guaranteed rural allowance");
     if (held > 0.5) bits.push(fmtMoney(held) + " WITHHELD — baseline participation not met; held in reserve, rolls forward");
     return bits.join(" · ");
   }
@@ -4331,7 +4228,7 @@
     // unusable here; the cap share is always well defined.
     var capFrac = row.total > 0 ? ((row[yearKeys()[i]] || 0) / row.total) : 0;
     return { earned: earned, meas: (row.earned_measured || 0) * f,
-      adv: (row.earned_advance || 0) * f, guar: (row.earned_guaranteed || 0) * f,
+      adv: (row.earned_advance || 0) * f,
       held: (row.earned_withheld || 0) * capFrac };
   }
   function yearCellsHtml(row) {
@@ -4347,7 +4244,7 @@
       var capLabel = fl
         ? "Full window (" + esc(windowLabel()) + "), disbursed up front (front-loaded)"
         : "Year " + (i + 1) + " (" + esc(ys[i]) + ") allocation cap";
-      return '<td title="' + esc(earnedCellTitle(capLabel, cap, pt.earned, pt.meas, pt.adv, pt.guar, pt.held)) + '">' +
+      return '<td title="' + esc(earnedCellTitle(capLabel, cap, pt.earned, pt.meas, pt.adv, pt.held)) + '">' +
         fmtMoney(cap) + earnedSubHtml(cap, pt.earned, pt.adv, pt.held) + "</td>";
     }).join("");
   }
@@ -4355,13 +4252,12 @@
   function totalCellHtml(row) {
     return '<td class="tot" title="' + esc(earnedCellTitle("Window cap (" + windowLabel() + ")",
         row.total, row.earned_total || 0, row.earned_measured || 0,
-        row.earned_advance || 0, row.earned_guaranteed || 0, row.earned_withheld || 0)) + '">' +
+        row.earned_advance || 0, row.earned_withheld || 0)) + '">' +
       fmtMoney(row.total) +
       earnedSubHtml(row.total, row.earned_total || 0, row.earned_advance || 0, row.earned_withheld || 0) + "</td>";
   }
   function rowChips(c) {
     var chips = "";
-    if (c.rural) chips += '<span class="cplfund-chip cplfund-tree" title="Rural college (federally categorized) — eligible for the rural allowance folded into its row + the section below">🌲</span>';
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
@@ -4426,27 +4322,23 @@
       } else if (meas.gap) {
         actual = ' &middot; actual: <span class="dk">' + esc(meas.gap_short || "data gap") + "</span>";
       }
-      // With the floor active OR a folded rural allowance, the pure "headcount
-      // share × pool" identity no longer holds row-exactly (the split is
-      // renormalized / rural is added) — show the college's own tranche instead.
+      // With a bound active the pure "size share × pool" identity no longer
+      // holds row-exactly (the split is renormalized) — show the college's own
+      // tranche instead.
       var flPrio = frontloaded();
       var trancheLbl = flPrio ? " full " + esc(windowLabel()) + " entitlement (front-loaded)" : " annual tranche";
-      var math = (floorActive || c.rural_w > 0)
+      var math = (floorActive || c.capped)
         ? fmtPctTrim(p.share) + " share &times; the college&#39;s " +
-          fmtMoney(flPrio ? (c.w || 0) : ((c.w || 0) / nYears())) + trancheLbl +
-          (c.rural_w > 0 ? " (incl. rural allowance)" : "")
+          fmtMoney(flPrio ? (c.w || 0) : ((c.w || 0) / nYears())) + trancheLbl
         : fmtPctTrim(c.size_pct) + " " + basisLabel() + " share &times; " + fmtPctTrim(p.share) + " share &times; " +
           fmtMoney(flPrio ? per * nYears() : per) + (flPrio ? " (full window, front-loaded)" : "");
       var earnSeg = "";
       (function () {
         var fr = earnFraction(c, p);
         var capYr = c[p.key];
-        // The guaranteed rural slice is added in FULL (only the MAIN cap flexes on
-        // achievement) — mirror collegeAlloc/prioCellHtml so the drill-in agrees
-        // with the cell + row + pool totals (PR4, Sam 2026-07-28).
-        var ruralBumpYr = c.rural_w ? prioCap(c.rural_w, state.viewSlot, p) : 0;
-        var mainCapYr = capYr - ruralBumpYr;
-        var earnedYr = mainCapYr * fr.f + ruralBumpYr;
+        // Mirror collegeAlloc/prioCellHtml so the drill-in agrees with the cell +
+        // row + pool totals. Every dollar flexes on achievement (2026-08-22).
+        var earnedYr = capYr * fr.f;
         var earnedPctYr = capYr > 0 ? earnedYr / capYr : 0;
         var tail = fr.status === "earned"
           ? " &mdash; " + fmtInt(fr.actual) + " actual &divide; " + fmtInt(fr.target) + " target"
@@ -4460,7 +4352,7 @@
                   fmtInt(fr.target) + '-student target)</span>';
         earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(earnedYr) + "</strong> of " +
           fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(earnedPctYr) + ")</strong>" + tail +
-          (ruralBumpYr > 0 ? " <span class='dk'>&mdash; incl. " + fmtMoney(ruralBumpYr) + " guaranteed rural</span>" : "");
+          "";
       })();
       // Under front-load the TARGET is deliberately unchanged (per-year), so the
       // effective $/student is the whole window over the same target — Sam's
@@ -4490,19 +4382,12 @@
       ? '<div><span class="dk">County context:</span> not estimated (county &lt; 65K population)</div>'
       : '<div><span class="dk">County context (' + esc(c.county) + "):</span> " + fmtInt(c.working_adults) +
         " working adults with some college, no degree (" + fmtPct(c.county_pop_pct, 1) + " of county population)</div>";
-    var ra = c.rural ? ruralAlloc(baseCollege(c.college) || c) : null;
     var floorLine = "";
     if (c.floored) {
-      var propShare = fmtMoney((c.size_pct || 0) * m.net);
-      floorLine = (c.rural && ra)
-        ? '<div><span class="dk">⬆ Floor applied:</span> a pure proportional main-pool share would be ' +
-          propShare + " for the window. The main pool tops it up to <strong>" + fmtMoney(ra.mainW) +
-          "</strong>, and this college&#39;s guaranteed rural allowance funds the remaining " + fmtMoney(ra.floorFill) +
-          " to reach the " + fmtMoney(m.floor) + " minimum-viable floor &mdash; rural money, not the main pool, lifts it the last stretch. " +
-          "Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " + basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>"
-        : '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
-          propShare + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
-          " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " + basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
+      floorLine = '<div><span class="dk">⬆ Floor applied:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
+        " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " +
+        basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
     }
     // The ceiling's mirror of the floor line. Both name the pure proportional
     // share first, so the two read as one pair rather than two unrelated notes.
@@ -4510,20 +4395,9 @@
     if (c.capped) {
       capLine = '<div><span class="dk">⬇ Maximum applied:</span> a pure proportional share would be ' +
         fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held to the " + fmtMoney(m.cap) +
-        " maximum allocation" + (c.rural && ra ? " (inclusive of this college&#39;s guaranteed rural allowance)" : "") +
-        ". The difference re-splits across the colleges below the maximum. Targets above stay scaled to this " +
+        " maximum allocation. The difference re-splits across the colleges below the maximum. Targets above stay scaled to this " +
         "college&#39;s own PRE-CAP share of statewide " + basisLabel() +
         " &mdash; the maximum lowers the funding, not the bar.</div>";
-    }
-    var ruralLine = "";
-    if (c.rural && ra) {
-      var raSplit = ra.floorFill > 0.5
-        ? fmtMoney(ra.floorFill) + " funds this college&#39;s floor" +
-          (ra.bonus > 0.5 ? " and " + fmtMoney(ra.bonus) + " rides on top" : " (fully consumed reaching the floor)")
-        : "all " + fmtMoney(ra.bonus) + " rides on top (its main-pool share already meets the floor)";
-      ruralLine = '<div><span class="dk">🌲 Rural allowance:</span> a guaranteed <strong>' + fmtMoney(ra.per) +
-        "</strong> this window &mdash; " + raSplit +
-        ". Guaranteed regardless of performance (it does not flex on MAP achievement).</div>";
     }
     var eligBtns = "";
     if (unlocked()) {
@@ -4535,8 +4409,6 @@
         eligBtns += '<button type="button" class="cplfund-optbtn" data-optin="' + esc(c.college) +
           '" data-on="1">Mark opted-in</button>';
       }
-      eligBtns += '<button type="button" class="cplfund-optbtn" data-ruralflag="' + esc(c.college) + '" data-on="' +
-        (c.rural ? "0" : "1") + '">' + (c.rural ? "Remove rural flag" : "Mark rural") + "</button>";
     }
     var eligBits = [];
     if (coordShown()) eligBits.push("CPL Coordinator in MAP &mdash; " +
@@ -4584,7 +4456,7 @@
       fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
       fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() +
       (usesFtes() ? ' <span class="dk">&mdash; ' + fmtInt(c.headcount) + " headcount, context only</span>" : "") + "</div>" +
-      floorLine + capLine + ruralLine + eligLine + noteLine +
+      floorLine + capLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";
@@ -4620,7 +4492,7 @@
     rows.forEach(function (r) {
       var k = r.district || "(no district)";
       if (!by[k]) { by[k] = { district: k, n: 0, headcount: 0, total: 0, earned_total: 0,
-        earned_measured: 0, earned_advance: 0, earned_guaranteed: 0, earned_withheld: 0, rows: [] };
+        earned_measured: 0, earned_advance: 0, earned_withheld: 0, rows: [] };
         yearKeys().forEach(function (yk) { by[k][yk] = 0; });
         selectedYears().forEach(function (_, i) { by[k]["ey" + (i + 1)] = 0; });
         order.push(k); }
@@ -4631,7 +4503,6 @@
       g.earned_total += r.earned_total || 0;
       g.earned_measured += r.earned_measured || 0;
       g.earned_advance += r.earned_advance || 0;
-      g.earned_guaranteed += r.earned_guaranteed || 0;
       g.earned_withheld += r.earned_withheld || 0;
       yearKeys().forEach(function (yk) { g[yk] += r[yk] || 0; });
       selectedYears().forEach(function (_, i) { g["ey" + (i + 1)] += r["ey" + (i + 1)] || 0; });
@@ -4715,57 +4586,6 @@
   }
 
   // ── rural college allowance section (guaranteed; floor-fill first) ────────
-  function ruralSectionHtml() {
-    var list = ruralColleges().slice().sort(function (a, b) { return a.college.localeCompare(b.college); });
-    var carve = ruralCarve();
-    if (!carve && !list.length) return "";
-    var perR = list.length ? carve / list.length : 0;
-    var fillPool = 0, bonusPool = 0, nFloorFill = 0;
-    var rows = list.map(function (c) {
-      var ra = ruralAlloc(c);
-      fillPool += ra.floorFill;
-      bonusPool += ra.bonus;
-      if (ra.floorFill > 0.5) nFloorFill++;
-      var fillCell = ra.floorFill > 0.5
-        ? fmtMoney(ra.floorFill)
-        : '<span class="dk">&mdash;</span>';
-      var bonusCell = ra.bonus > 0.5
-        ? fmtMoney(ra.bonus)
-        : '<span class="dk">&mdash;</span>';
-      return "<tr>" +
-        '<td class="t"><strong>' + esc(dispName(c.college)) + "</strong> 🌲</td>" +
-        "<td>" + fmtInt(c.headcount) + "</td>" +
-        "<td>" + fmtMoney(ra.per) + "</td>" +
-        '<td title="rural money that fills this college&#39;s gap up to the ' + fmtMoney(floorWindow()) +
-          ' minimum-viable floor (its main-pool share falls short by ' + fmtMoney(ra.gap) + ')">' + fillCell + "</td>" +
-        '<td title="rural allowance remaining on top once the floor is met">' + bonusCell + "</td>" +
-        '<td class="t" title="guaranteed window total = main-pool share ' + fmtMoney(ra.mainW) +
-          ' + rural allowance ' + fmtMoney(ra.per) + '"><strong>' + fmtMoney(ra.total) + "</strong></td></tr>";
-    }).join("");
-    return '<h3>Rural college allowance ' +
-      '<span class="dk" style="font-size:.8rem;font-weight:400;">(guaranteed &mdash; funds the floor first, remainder on top)</span></h3>' +
-      '<div class="cplfund-formula" style="margin-bottom:10px;">' +
-      "Rural colleges carry the same first-year lift &mdash; faculty articulation work, local business processes &mdash; " +
-      "on far smaller allocations. A <strong>" + fmtMoney(carve) + "</strong> top-of-pool earmark gives each of the " +
-      list.length + " rural-flagged colleges a <strong>guaranteed " + fmtMoney(perR) + "</strong> this window. " +
-      "That allowance <strong>funds the college&#39;s own minimum-viable floor first</strong> &mdash; the gap between its " +
-      "proportional main-pool share and the <strong>" + fmtMoney(floorWindow()) + "</strong> floor &mdash; so rural money, not the " +
-      "main pool, lifts small rural colleges to the minimum; <strong>any remainder rides on top as a bonus</strong>. " +
-      "The main-pool dollars this frees re-split proportionally to the other (mostly non-rural) colleges. " +
-      "<span class='dk'>The allowance is <strong>folded into each rural college&#39;s allocation in the table above</strong>; " +
-      "it is guaranteed regardless of performance (unlike the main allocation, which is paid on actual CPL in Earned mode).</span> " +
-      "<span class='dk'>Roster is a DRAFT &mdash; " + esc(base().rural_source || "edit the per-college rural flags") +
-      ".</span></div>" +
-      '<div class="cplfund-tablewrap"><table class="cplfund-table">' +
-      "<thead><tr><th class='t'>Rural college</th><th>Headcount</th><th>Guaranteed allowance</th>" +
-      "<th title='rural money filling the gap up to the minimum-viable floor'>&rarr; Floor-fill</th>" +
-      "<th title='rural allowance on top once the floor is met'>&rarr; On-top bonus</th>" +
-      "<th class='t'>Window total</th></tr></thead>" +
-      "<tbody>" + (rows || '<tr><td colspan="6" class="t">No colleges are rural-flagged.</td></tr>') + "</tbody>" +
-      '<tfoot><tr><td class="t">RURAL POOL</td><td></td><td>' + fmtMoney(carve) + "</td><td>" + fmtMoney(fillPool) + "</td>" +
-      "<td>" + fmtMoney(bonusPool) + '</td><td class="t">' + nFloorFill + " of " + list.length +
-      " funding their floor</td></tr></tfoot></table></div>";
-  }
 
   // ── baseline eligibility section (badges only) ────────────────────────
   function eligibilityHtml() {
@@ -4895,8 +4715,8 @@
     });
     lines.push("");
     lines.push("Funding window: " + windowLabel() + " (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
-      ") · up to " + fmtMoney(netCollegeWithRural()) + " in college implementation funding (incl. the " +
-      fmtMoney(netCollegeWithRural() - netCollege()) + " Rural College allowance).");
+      ") · up to " + fmtMoney(netCollege()) + " in college implementation funding (incl. the " +
+      fmtMoney(netCollege() - netCollege()) + " Rural College allowance).");
     lines.push("CPL Initiative · Mapping Articulated Pathways (MAP) platform");
     return lines.join("\n");
   }
@@ -4937,8 +4757,8 @@
       "<h1>Credit for Prior Learning &mdash; Implementation Funding</h1>" +
       "<div class='sub'>Proposed baseline eligibility &middot; DRAFT for field review</div>" +
       "<p>The <strong>CPL Initiative</strong> of the California Community Colleges Chancellor&#39;s Office is proposing to " +
-      "distribute up to <strong>" + esc(fmtMoney(netCollegeWithRural())) + "</strong> (incl. the " +
-      esc(fmtMoney(netCollegeWithRural() - netCollege())) + " Rural College allowance) in one-time implementation funding to colleges " +
+      "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> (incl. the " +
+      esc(fmtMoney(netCollege() - netCollege())) + " Rural College allowance) in one-time implementation funding to colleges " +
       "across the <strong>" + esc(windowLabel()) + "</strong> window (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
       ") to scale Credit for Prior Learning through the Mapping Articulated Pathways (MAP) platform. To qualify, colleges " +
       "would meet a short set of baseline requirements.</p>" +
@@ -5217,9 +5037,9 @@
       area: areaMeta(proj.area), projectLabel: proj.label, window: windowLabel(), years: y,
       totalAvailable: grossRevenue(),
       remaining: Number(poolField("remaining_2025_26")) || 0, oneTime: Number(poolField("one_time_2026_27")) || 0,
-      collegePool: netCollegeWithRural(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
+      collegePool: netCollege(), collegePoolMain: netCollege(), nColleges: base().colleges.length,
       feederCarve: carve, nFeeders: flist.length, feederRows: feederRows,
-      institutionTotal: netCollegeWithRural() + carve,
+      institutionTotal: netCollege() + carve,
       avg: s.avg, min: s.min, max: s.max, minCount: s.minCount,
       deadline: participationDeadline(), expendBy: expendYear ? "June 30, " + expendYear : "the end of the window",
       priorities: priorities("1")
@@ -5816,7 +5636,6 @@
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
       collapseH3("feeder", feederSectionHtml()) +
-      collapseH3("rural", ruralSectionHtml()) +
       '<div class="cplfund-foot">' +
       "<div>Dollar cells round to whole dollars; click a row to expand its detail (the per-priority math for the " +
       "year selected above). " +
@@ -5829,7 +5648,7 @@
           "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
       "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, 2 = participation, 3 = Veteran Star ≥75% JSTs); " +
       "each sector turns green when the college satisfies it — a fully green glyph = all met (informational in this draft). " +
-      "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied; ⬇ = held to the maximum allocation. " +
+      "⬆ = minimum-viable floor applied; ⬇ = held to the maximum allocation. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
       actualsFootHtml() +
@@ -5985,13 +5804,6 @@
         if (err) { if (errEl) errEl.textContent = err; return; }
         if (errEl) errEl.textContent = "";
         submitOptIn(college, { name: name, title: title, email: email });
-      });
-    });
-    holder.querySelectorAll("[data-ruralflag]").forEach(function (b) {
-      b.addEventListener("click", function (e) {
-        e.stopPropagation();
-        savingState = "";
-        setRuralOverride(b.getAttribute("data-ruralflag"), b.getAttribute("data-on") === "1");
       });
     });
     holder.querySelectorAll("[data-notesave]").forEach(function (b) {
@@ -6630,7 +6442,7 @@
       var c = baseCollege(name);
       if (!c) return null;
       slot = String(slot || "1");
-      var W = collegeAlloc(c).w;   // effective entitlement, rural folded in
+      var W = collegeAlloc(c).w;   // the college's window entitlement
       return priorities(slot).map(function (p) {
         return {
           // `src` is the priority's index in the stored config — its IDENTITY,
@@ -6661,7 +6473,9 @@
         display: feeder ? (feeder.name || feeder.short) : dispName(name)
       };
     },
-    _isRural: function (name) { var c = baseCollege(name); return c ? isRural(c) : null; },
+    // Kept for My College, which still labels a rural college as CONTEXT. The
+    // carve-out it used to fund is retired (2026-08-22) — this moves no money.
+    _isRural: function (name) { var c = baseCollege(name); return c ? !!c.rural : null; },
     _district: function (name) { var c = baseCollege(name); return c ? (c.district || null) : null; },
     _netCollege: netCollege,
     _pool: poolField,

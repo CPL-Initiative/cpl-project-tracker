@@ -21,8 +21,6 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_cap.test.js`).
 const { check, freshDom, boot, commit, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
 
-const RURAL_PER = D.pool.rural_carveout / D.colleges.filter(function (c) { return c.rural; }).length;
-
 // Re-run the model under a given scenario and hand back the rows + the model.
 // _model() is what clears the allocation cache — _alloc() alone reads a stale
 // one, which is a trap worth naming: the first draft of this file "proved" the
@@ -63,7 +61,8 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const floor = D.pool.floor_window;
   const byName = {};
   D.colleges.forEach(function (c) { byName[c.college] = c; });
-  function floorFor(c) { return c.rural ? Math.max(0, floor - RURAL_PER) : floor; }
+  // One floor for everyone since the rural carve-out was retired (2026-08-22).
+  function floorFor() { return floor; }
   const F = {}, W = {};
   let changed = true, guard = 0;
   while (changed && guard++ < 30) {
@@ -82,12 +81,11 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   }
   Object.keys(F).forEach(function (k) { W[k] = floorFor(byName[k]); });
   const worst = open.rows.reduce(function (mx, r) {
-    const expect = (W[r.college] || 0) + (byName[r.college].rural ? RURAL_PER : 0);
-    return Math.max(mx, Math.abs(r.total - expect));
+    return Math.max(mx, Math.abs(r.total - (W[r.college] || 0)));
   }, 0);
   check("C2: ⭐ ceiling OFF reproduces the pre-ceiling pin loop EXACTLY (max diff = 0)", worst === 0);
-  check("C2: ceiling off leaves the floored set unchanged (50 colleges on this roster)",
-    open.m.floorCount === Object.keys(F).length);
+  check("C2: ceiling off leaves the floored set unchanged",
+    open.m.floorCount === Object.keys(F).length && open.m.floorCount > 0);
   check("C2: ceiling off reports no capped colleges and no unspent pool",
     open.m.cappedCount === 0 && open.m.unspent === 0 && open.m.capReleased === 0);
 }
@@ -105,18 +103,16 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
 
   check("C3: no college's WINDOW total exceeds the maximum",
     capped.rows.every(function (r) { return r.total <= cap + 0.01; }));
-  // ⚠ At $400K this assertion is VACUOUS — every rural college is small, none
-  // comes within $200K of the ceiling, so "no rural row exceeds it" is true
-  // whether or not the ceiling accounts for the rural slice at all. Verified by
-  // breaking capFor() to ignore ruralPer: the $400K form still passed. So the
-  // rural half of the ceiling is tested where it actually BINDS.
-  const ruralBind = under(T, { cap_window: 160000 });
-  const ruralRows = ruralBind.rows.filter(function (r) { return r.rural > 0; });
-  check("C3: the ceiling binds the WINDOW TOTAL, guaranteed rural allowance included",
-    ruralRows.length > 0 &&
-    ruralRows.every(function (r) { return Math.abs(r.main + r.rural - 160000) < 0.01; }));
-  check("C3: …and the rural guarantee is still paid in full underneath it",
-    ruralRows.every(function (r) { return Math.abs(r.rural - RURAL_PER) < 0.01; }));
+  // Every college carries the SAME ceiling now that the rural carve-out is gone
+  // (2026-08-22) — there is no second component that could slip past it. Tested
+  // where the ceiling actually BINDS for everyone, not at $400K where only the
+  // largest six reach it.
+  const tightAll = under(T, { cap_window: 210000 });
+  check("C3: at a ceiling everyone reaches, EVERY college sits exactly on it",
+    tightAll.rows.length === D.colleges.length &&
+    tightAll.rows.every(function (r) { return Math.abs(r.total - 210000) < 0.01; }));
+  check("C3: …and no college carries a second, unbounded component",
+    tightAll.rows.every(function (r) { return r.rural === undefined && Math.abs(r.total - r.main) < 0.01; }));
   check("C3: the floor still holds underneath the ceiling",
     capped.rows.every(function (r) { return r.total >= capped.m.floor - 0.01; }));
   check("C3: the pool is still fully apportioned (Σ totals == the hero pool)",
@@ -130,21 +126,34 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
     capped.rows.filter(function (r) { return r.capped; }).length ===
     open.rows.filter(function (r) { return r.total > cap + 0.01; }).length);
 
-  // ⭐ The reason the pin loop had to go. A monotone floor-then-cap loop would
-  // strand these five at $150K: they were floored BEFORE the ceiling released
-  // its money, and a pin-as-you-go algorithm never revisits a pin.
-  const cameOff = open.rows.filter(function (r) { return r.floored; })
+  // ⭐ The reason the pin loop had to go: releasing the ceiling's money lifts
+  // colleges back OFF the floor, and a pin-as-you-go algorithm never revisits a
+  // pin, so it would strand them at the minimum.
+  //
+  // ⚠ Tested at a $300K ceiling, NOT the shipped $400K. Since the floor rose to
+  // $175,000 (2026-08-22) the $400K ceiling binds only TWO colleges and releases
+  // too little to lift anyone — so at the shipped settings this assertion is
+  // VACUOUS and would pass against the broken monotone loop. The structural
+  // property is what matters and it has to be tested where it is observable.
+  // (Second time this file has needed that correction; see the rural note below.)
+  const tight = under(T, { cap_window: 300000 });
+  const openAgain = under(T, { cap_window: 0 });
+  const cameOff = openAgain.rows.filter(function (r) { return r.floored; })
     .filter(function (r) {
-      const now = capped.rows.find(function (x) { return x.college === r.college; });
+      const now = tight.rows.find(function (x) { return x.college === r.college; });
       return now && !now.floored;
     });
   check("C3: ⭐ releasing the ceiling's money lifts colleges back OFF the floor (solved together)",
-    cameOff.length > 0 && capped.m.floorCount < open.m.floorCount);
+    cameOff.length > 0 && tight.m.floorCount < openAgain.m.floorCount);
   check("C3: those colleges are genuinely above the floor now, not merely unflagged",
     cameOff.every(function (r) {
-      const now = capped.rows.find(function (x) { return x.college === r.college; });
-      return now.total > capped.m.floor + 0.01;
+      const now = tight.rows.find(function (x) { return x.college === r.college; });
+      return now.total > tight.m.floor + 0.01;
     }));
+  // And say out loud what the shipped settings actually do, so nobody reads the
+  // assertion above as a claim about them.
+  check("C3: at the SHIPPED settings the ceiling binds only a couple of colleges",
+    capped.m.cappedCount > 0 && capped.m.cappedCount <= 4);
 
   // What the ceiling released is the money that ACTUALLY moved — measured
   // against this same model with the ceiling off, not against a pure
@@ -261,7 +270,7 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
     Array.from(eds).map(function (e) { return e.getAttribute("aria-label"); })
       .filter(function (v, i, a) { return v && a.indexOf(v) === i; }).length === 2);
   check("C6: both amounts show the shipped defaults",
-    Array.from(eds).map(function (e) { return e.getAttribute("value"); }).join("|") === "150,000|400,000");
+    Array.from(eds).map(function (e) { return e.getAttribute("value"); }).join("|") === "175,000|400,000");
   check("C6: the box carries two editable amounts", eds.length === 2);
   check("C6: one of them is the maximum",
     Array.from(eds).some(function (e) { return e.getAttribute("data-field") === "cap_window"; }));
