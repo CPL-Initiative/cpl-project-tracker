@@ -207,6 +207,47 @@
   var convo = [];
   var CONVO_MAX = 8;
 
+  /* ⚠ A THREAD MUST NOT OUTLIVE THE SUBJECT IT WAS FORMED UNDER ──────────────
+   * Sam, 2026-08-22, on a My College screenshot: he had LACCD selected as the
+   * district and "she configured her response based on RCCD" — naming Riverside
+   * City College, Moreno Valley and Norco, with Norco's exhibits and MVC's
+   * figures, under a heading that read Los Angeles Community College District.
+   *
+   * ⭐ THE HISTORY SURVIVED THE SCOPE CHANGE AND THE TRANSCRIPT DID NOT. Two
+   * facts that are individually reasonable and together are the bug:
+   *   · `convo` is module-level ON PURPOSE, so the thread follows the reader
+   *     between the CPL Assistant tab and the My College box (see mountInto);
+   *   · college_briefing.js's finish() does `root.innerHTML = h` on every scope
+   *     change, which destroys the old mount node, so mountInto() rebuilds and
+   *     the visible log starts EMPTY.
+   * So after switching RCCD -> LACCD the reader sees a clean conversation and
+   * the next question still ships eight turns about RCCD.
+   *
+   * ⭐ AND THE STALE TURNS DO NOT JUST SIT IN THE MODEL'S MESSAGES. cpl-chat
+   * folds prior user turns into the RETRIEVAL text when the new question has
+   * fewer than two topic words of its own (`isRefinement`), and that folded
+   * string is what `detectAndFetchCollegeProfile` and `searchExhibitsByTopic`
+   * are given. A short follow-up therefore RE-DETECTS the previous college from
+   * history — "riverside" is in the alias map — and the whole answer is built on
+   * data for an institution the reader has navigated away from.
+   *
+   * The invariant: WHAT WE SEND IS NEVER MORE THAN WHAT IS ON SCREEN. `convo`
+   * still follows the reader between the two panes, because there the subject is
+   * unchanged; it is dropped the moment the subject itself changes.
+   *
+   * This is the same argument mount() already makes one line down for
+   * `hostSuggestions` ("a stale host list from My College must not follow the
+   * reader here") — nobody had made it for the thread. */
+  var hostScope = null;
+  /* The last NAMED subject the thread was formed under — deliberately NOT just
+   * "the previous hostScope". The dedicated CPL Assistant pane is nobody's
+   * college page and clears the ANCHOR (see mount()), so tracking the raw
+   * previous value would read a My College -> Assistant -> My College round trip
+   * as two changes of subject and delete a conversation the reader can still see
+   * above the box. Clearing the anchor and dropping the thread are two different
+   * events; only a move to a DIFFERENT named subject is the second one. */
+  var threadSubject = null;
+
   // ── Chat transcript helpers ──
   var logEl, inputEl, sendBtn, statusEl, audEl;
 
@@ -818,6 +859,23 @@
     scrollDown();
     return { row: row, bubble: bubble };
   }
+  /* Remove the CONVERSATION from the log and nothing else.
+   *
+   * ⚠ NOT `logEl.innerHTML = ''`. The suggested-questions row lives INSIDE the
+   * log (build() appends `chipsEl` to it), so wiping the log deletes the widget's
+   * own chrome and leaves `chipsEl` pointing at a detached node — setSuggestions()
+   * then paints into nothing and the reader gets an assistant with no starters at
+   * all. The first draft did exactly that and my_college_sierra_box.test.js
+   * caught it: EXACTLY ONE cluster -> found 0. Clear what the turns created —
+   * message rows and their feedback bars — and leave the furniture alone. */
+  function clearTranscript() {
+    if (!logEl) return;
+    var kill = logEl.querySelectorAll('.cplchat-msg, .cplchat-fb');
+    for (var i = 0; i < kill.length; i++) {
+      if (kill[i].parentNode) kill[i].parentNode.removeChild(kill[i]);
+    }
+  }
+
   function setStatus(text, kind) {
     if (!statusEl) return;
     statusEl.textContent = text || '';
@@ -842,9 +900,16 @@
         },
         // Send the PRIOR turns; the function appends this query as the final
         // user turn. The empty [] on turn 1 still opts us into multi-turn mode.
+        // `scope` names the institution whose page this is, so the function
+        // does not have to infer it from the question text. Without it the
+        // active `sierra_guidance` directive "confine your answers to the
+        // selected institution" is unfollowable — the model is told to answer
+        // for a selection it is never shown, which is an instruction to guess.
+        // An older deployed function ignores the extra field, so this is safe
+        // to ship ahead of the function change.
         body: JSON.stringify({
           query: query, session_id: sessionId(), history: convo.slice(),
-          audience: audience,
+          audience: audience, scope: hostScope,
         }),
       });
     } catch (e) {
@@ -1150,6 +1215,12 @@
     // starters — a stale host list from My College must not follow the reader
     // here and ask about a college this pane never mentioned.
     hostSuggestions = null;
+    // Same argument, same line of reasoning, for the ANCHOR: this pane has no
+    // selected institution, so it must not keep asking the function to answer
+    // for My College's. The THREAD is not cleared here on purpose — mount() is
+    // idempotent and does not rebuild, so the transcript is still on screen, and
+    // "what we send is never more than what is shown" still holds.
+    hostScope = null;
     build(host);
     consumeTestQuestion();
   }
@@ -1231,5 +1302,61 @@
       renderSuggestions();
       return true;
     },
+    /* Tell the assistant whose page it is now sitting on. See `hostScope` above
+     * for why this exists — the short version is that the thread must not
+     * outlive the subject it was formed under.
+     *
+     * `kind` is "college" | "district" | "statewide"; `label` is the full name
+     * as the host displays it ("Los Angeles Community College District", never
+     * "LACCD" — the function resolves the district from this string through the
+     * SAME roster path a typed question uses, and an abbreviation is a second
+     * matcher that can drift). Pass null when no scope is settled.
+     *
+     * ⚠ IDENTITY IS THE KEY, NOT THE CALL. The host re-renders for reasons that
+     * are NOT a change of subject — picking a role, opening a drawer — and each
+     * one lands here. Dropping the thread on every call would delete a
+     * conversation mid-read; dropping it on none is the bug. So the comparison
+     * is on the key, and an unchanged scope is a no-op.
+     *
+     * Returns true only when the subject actually CHANGED (and the thread was
+     * therefore dropped), so a caller can tell the two apart. */
+    setScope: function (kind, label) {
+      var next = null;
+      // Statewide has no entity to resolve, so the label is only ever displayed
+      // back — carry the host's own wording rather than inventing a second name
+      // for the thing the heading already calls something.
+      if (kind === 'statewide') {
+        next = { kind: 'statewide',
+                 label: String(label == null ? '' : label).trim().slice(0, 200)
+                        || 'All California Community Colleges' };
+      }
+      else if ((kind === 'college' || kind === 'district') && label) {
+        /* ⚠ TRIM BEFORE THE KEY, not just server-side. This string becomes the
+         * subject identity, and `map_college_contacts` genuinely holds
+         * "Cypress College " with a trailing space (#1278) — an untrimmed label
+         * would make two subjects of one college and drop the reader's thread
+         * on a re-render that changed nothing. Same order as the function's
+         * normalizeHostScope, so the two agree on what one subject is. */
+        var name = String(label).trim().slice(0, 200);
+        if (name) next = { kind: kind, label: name };
+      }
+      hostScope = next;
+      // No subject (the generic pane, or a scope not yet chosen): the anchor is
+      // cleared — a stale one must never steer an answer — but the thread is a
+      // conversation the reader can still read, so it stands.
+      if (!next) return false;
+      var nextKey = next.kind + ':' + next.label;
+      if (nextKey === threadSubject) return false;   // same subject; thread stands
+      // A DIFFERENT subject. Drop the thread, and clear the transcript, so the
+      // two can never disagree about what this conversation contains.
+      threadSubject = nextKey;
+      convo = [];
+      clearTranscript();
+      return true;
+    },
+    // Test seam for the above — asserting on what would be SENT is the only way
+    // to catch a thread that is invisible on screen and still in the payload.
+    _thread: function () { return convo.slice(); },
+    _scope: function () { return hostScope; },
   };
 })();

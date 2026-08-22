@@ -1333,3 +1333,161 @@ asserts it now.
 Sam re-asks the LACCD question and reads the actual prose. If she starts
 asserting district facts we don't hold, that is a `sierra_guidance` matter — and
 that list is at 9 of 10, so it would cost the last slot.
+
+---
+
+## 2026-08-22 — the district was right and the answer was about somewhere else
+
+Sam, with **Los Angeles Community College District** selected: *"she configured
+her response based on RCCD."* Three Riverside colleges named, Norco's exhibits
+quoted, Moreno Valley's figures cited, under a heading reading *Welcome, Los
+Angeles Community College District*.
+
+The previous section's "Next" was *Sam re-asks the LACCD question and reads the
+actual prose*, and guessed the risk was Sierra asserting district facts we don't
+hold. It was not that. **The district machinery was entirely sound** and the
+answer was about a different district anyway.
+
+### What was ruled OUT first, and how
+
+Worth recording because three of the four were the obvious suspects:
+
+| Suspect | Verdict | How |
+|---|---|---|
+| `resolveDistrict()` not deployed | **deployed** | read the LIVE function source through the Supabase MCP — the repo is not the deployment |
+| LACCD colleges missing profiles | **9 of 9 present** | one join, measured |
+| the district chip's question mis-resolving | **resolves correctly** | its topic search returns 3 rows (all Santa Ana), so no LACCD college has a topic hit, the narrowing block does not fire, the roster survives |
+| the roster collapsing downstream | **latent, not the cause** | fixed anyway — see below |
+
+### The two causes, and neither is in the district code
+
+**① The thread outlived its subject.** `convo` is module-level in `cpl_chat.js`
+deliberately, so a conversation follows the reader between the CPL Assistant tab
+and the My College box. `finish()` does `root.innerHTML = h` on every scope
+change, so the mount node dies, `mountInto()` rebuilds and **the visible log
+starts empty**. Together: the reader sees a clean conversation and the next
+question still ships eight turns about the previous district. ⚠️ And the stale
+turns do not merely tint the answer — `cpl-chat` folds prior user turns into the
+**retrieval text** when the new question has <2 topic words of its own, and that
+folded string is what `detectAndFetchCollegeProfile()` gets. `riverside` is in
+`COLLEGE_ALIASES`. **A stale thread SOURCES the answer.**
+
+**② Nothing ever told Sierra which institution was selected.** `window.CPL_CHAT`
+exposed `mountInto`/`prefill`/`ask`/`setSuggestions` and no way to say whose page
+this is; the request carried `query`, `session_id`, `history`, `audience`, `ctx`.
+Meanwhile the ACTIVE `sierra_guidance` row `15ec666b` says *"confine your answers
+to the selected institution"* — **a rule whose subject the request does not
+carry, which is an instruction to guess.** The guess landed on the only other
+institution in evidence: the stale thread's.
+
+Both had to be fixed. Clearing the thread alone leaves an assistant that still
+cannot know whose page it is on.
+
+### The fix
+
+- **`setScope(kind, label)`** on `window.CPL_CHAT`; `college_briefing.js` hands it
+  over from `finish()` on every render, **unconditionally** — not chained onto
+  `mountAssistant() || …`, because a failed mount would then silently keep the
+  previous subject's thread alive.
+- **The invariant is a comparison, not a clearing rule:** *what is SENT is never
+  more than what is SHOWN.* It decides the two cases a naive rule gets wrong — a
+  pane with no subject clears the **anchor** and keeps the **thread** (the
+  transcript is still visible there), and returning to the same subject keeps it
+  too. That is why the code tracks *the last named subject the thread was formed
+  under*, not the previous anchor: the latter reads a tab round-trip as two
+  changes of subject and deletes a live conversation.
+- **`scope` on the request** + `normalizeHostScope()`/`hostScopeBlock()` in the
+  function. **A strong default, never a filter** — the guidance row's own worked
+  example is a Cabrillo question asked from another college's page, so the scope
+  fills the subject only when the question named none, resolved through the SAME
+  `detectAndFetchCollegeProfile()` path a typed question uses.
+- **The roster is now excluded from the ambiguity narrowing.** That block was
+  written for the West-LA case (one token ilike-matches five colleges); a
+  district's profiles are also an array, and collapsing them would answer a
+  nine-college question with one college and drop the roster header — #1277
+  returning through a different door. Discriminated by the `_district` stamp,
+  never by length.
+
+### What the work cost, and what caught it
+
+⚠️ **My first clear was `logEl.innerHTML = ''` and it deleted the widget.** The
+suggested-questions row lives INSIDE the log, so that detached `chipsEl` and the
+assistant lost every starter question. `my_college_sierra_box.test.js` caught it
+(*EXACTLY ONE cluster → found 0*) — the new test did not. **Committed tests from
+three sessions ago are the ones that catch you.**
+
+⚠️ **Three of my own checks could not fail, and a fail-first probe found each.**
+The fixture's fake stream reader had no `releaseLock()`, so the loop threw AFTER
+rendering and BEFORE `convo.push` — every thread assertion was vacuous. The
+first-turn question said *"this district"* rather than naming Riverside, so
+"Riverside reaches the function nowhere in the payload" **passed against the
+broken build**. And (3b) asked a question before checking the chips survived —
+but `submit()` REMOVES the starter chips once a conversation begins, so it
+measured an empty row either way. Same shape as Sky175's finding that Sierra's
+log was reachable only *because* of the chips it deletes.
+
+⚠️ **`await C.ask(...)` awaits a boolean.** `ask()` returns `true` and `submit()`
+runs its SSE loop on its own; the fixture has to poll the seam, not guess a tick
+count.
+
+### Next
+
+1. **Deploy `cpl-chat`** (playbook: `playbook-deploy-shared-supabase-edge-function`).
+   The client half is inert without it — it sends a field nothing reads yet, which
+   is safe but does nothing.
+2. **Sam re-asks the LACCD question in a browser.** No session can — the sandbox
+   is egress-blocked from `*.supabase.co`. The specific thing to check is that
+   the answer names Los Angeles colleges and does not silently substitute
+   another district.
+3. Then the harder question this exposed: `sierra_guidance` should be **audited
+   for rules whose subject the request does not carry**. This one was live for
+   weeks. It is unlikely to be the only one.
+
+### Addendum — what CI caught after the fix was written (same day)
+
+The scope fix was green on 20 targeted suites and still broke one of 251.
+
+⚠️ **`sierra_rules_overlay.test.js` failed by naming the wrong thing.** Its check
+matched the literal call-site text `rulesOverlay, ruleReport\)` — anchored on the
+CLOSING PAREN — so appending `hostScope` turned it red with the message *"the
+overlay is read per turn and passed into the prompt builder"*, while the overlay
+was fine. **A red that names the wrong thing costs more than no test**, because
+the cost lands on whoever is least equipped to discount it.
+
+⚠️ **And the new test written in the same PR had the identical defect** — it
+pinned `rulesOverlay, ruleReport, hostScope\)`. Reading a failure is not the same
+as generalizing it; the generalization has to be applied to your own diff in the
+same sitting or you ship a fresh instance of the bug you just fixed.
+`sierra_credential_volume.test.js` already had the right shape **with the lesson
+in a comment** — one more rule that existed in one file and reached no sibling.
+Durable: [`assert-that-an-argument-arrives-not-that-it-is-last`](kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md).
+
+⚠️ **The smoke red was NOT this PR's**, and the reasoning is worth keeping: smoke
+hits the **live deployed** function, which the PR did not change, and the diff
+touches neither `chatbox/smoke_test.sh` nor its workflow. One assertion failed —
+mode 7's third, a **prose grep** for LA-basin college names — with mode 8, which
+tests the same capability structurally, passing. `cpl_memory`
+`smoke-mode-7-red-is-emphasis-not-capability` recorded the same single failure on
+run 113 earlier the same day. ⭐ **But the assertion is not junk**: the smoke
+script's own comment says part 3 *"is the one that regressed and the one that
+matters most to a seeker… Do NOT green this by deleting an assertion."* The fix
+is to stop grepping PROSE — assert on the retrieved CONTEXT (did a nearby
+teaching college reach the model?) and leave the naming to mode 8. Not done;
+separate concern.
+
+### The guidance audit (Sam's go, same day)
+
+7 active rules, **1** referencing a fact the request does not carry — `15ec666b`,
+the one that caused this bug. Budget is **not** binding: 4,095 of 9,000 chars,
+7 of 20 rows, 0 active `display` rules. ⭐ **The sharper finding is that all 7
+rules ship to all 6 surfaces**, so `15ec666b`'s opening condition (*"when using
+Sierra from the My College COBI tab"*) is **unevaluable everywhere** — including
+the public page, where the same "confine to the selected institution" pressure
+applies with no selection to confine to. Recommendation recorded in §11: a
+`surface` field, explicitly **not** a forked Sierra and **not** a `mode` enum.
+
+### Next
+
+1. **Deploy `cpl-chat`.** The fix is inert until then.
+2. Sam re-asks the LACCD question in a browser.
+3. Sam's go on the `surface` field.
