@@ -2708,6 +2708,32 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
  */
 type HostScope = { kind: "college" | "district" | "statewide"; label: string };
 
+/* ── Which CALLER this request came from (v56, 2026-08-22) ────────────────────
+ *
+ * ⭐ A THIRD AXIS, NOT A MODE. `audience` says who is READING, `ctx` says whether
+ * staff contacts may be shown, `scope` says whose PAGE it is, and `surface` says
+ * which product surface is asking. Bundling them into one `mode` enum would need
+ * exceptions immediately and would make "what does the public page actually get?"
+ * unanswerable without reading code.
+ *
+ * Its first consumer is the guidance filter: a rule may now name a fact only one
+ * surface carries. Row 15ec666b ("when using Sierra from the My College COBI
+ * tab…") shipped to all six surfaces, where its opening condition is unevaluable.
+ *
+ * ⚠ VALIDATED AGAINST A FIXED LIST, and an unknown value becomes null (= every
+ * rule, today's behavior) rather than an unmatchable string. A typo must not
+ * silently scope a request to nothing. The list mirrors the CHECK constraint on
+ * sierra_guidance.surface — if they drift, a curator can scope a rule to a
+ * surface no caller ever sends, which is a rule that reaches nobody.
+ * tests/sierra_surface.test.js pins them equal. */
+const KNOWN_SURFACES = new Set([
+  "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
+]);
+
+function normalizeSurface(raw: any): string | null {
+  return typeof raw === "string" && KNOWN_SURFACES.has(raw) ? raw : null;
+}
+
 /* ⚠ UNTYPED SIGNATURES ON PURPOSE, on both functions below. tests/lib/lift_ts.js
  * strips PRIMITIVE and generic annotations; a custom type name like
  * `HostScope | null` is neither, so it survives the strip and lands in the
@@ -2920,14 +2946,37 @@ const GUIDANCE_MAX_DISPLAY = 6;
  * has no rows" from "the read did not work" — an empty array from a failed read
  * is the false-zero this repo keeps paying for.
  */
-async function fetchGuidanceKind(sb: any, kind: string, limit: number): Promise<any[] | null> {
-  const { data, error } = await sb
+async function fetchGuidanceKind(
+  sb: any, kind: string, limit: number, surface: string | null = null,
+): Promise<any[] | null> {
+  /* ⚠ THE SURFACE FILTER RETRIES WITHOUT ITSELF. `surface` was added to
+   * sierra_guidance on 2026-08-22; a function deployed before that migration —
+   * or running after a rollback of it — errors on the unknown column, and this
+   * function fails SOFT, which for the DISPLAY kind means every display rule
+   * silently stops reaching Sierra with nothing logged anywhere. The existing
+   * `kind` fallback in fetchTeamGuidance only covers directives.
+   *
+   * So the filter degrades on its own rather than relying on a caller: try
+   * scoped, and on ANY error try again unscoped, which is exactly the
+   * pre-migration behavior. That makes the order of (migrate, deploy)
+   * irrelevant — the only way a two-system change is safe to ship. */
+  const base = () => sb
     .from("sierra_guidance")
     .select("rule")
     .eq("active", true)
     .eq("kind", kind)
     .order("created_at", { ascending: false })
     .limit(limit);
+
+  if (surface) {
+    // NULL means "every surface", so a scoped read is `null OR this one`.
+    // Never `.eq("surface", surface)` — that would drop all 13 unscoped rules,
+    // i.e. every rule the team has ever written.
+    const scoped = await base().or(`surface.is.null,surface.eq.${surface}`);
+    if (!scoped.error) return scoped.data || [];
+  }
+
+  const { data, error } = await base();
   if (error) return null;
   return data || [];
 }
@@ -2944,11 +2993,11 @@ function guidanceBlock(rows: any[], budget: number): string {
   return out;
 }
 
-async function fetchTeamGuidance(sb: any): Promise<string> {
+async function fetchTeamGuidance(sb: any, surface: string | null = null): Promise<string> {
   try {
     const [directives, display] = await Promise.all([
-      fetchGuidanceKind(sb, "directive", GUIDANCE_MAX_RULES),
-      fetchGuidanceKind(sb, "display", GUIDANCE_MAX_DISPLAY),
+      fetchGuidanceKind(sb, "directive", GUIDANCE_MAX_RULES, surface),
+      fetchGuidanceKind(sb, "display", GUIDANCE_MAX_DISPLAY, surface),
     ]);
 
     /* ⚠ FALLBACK FOR THE DEPLOY WINDOW — and it is not theoretical.
@@ -3021,7 +3070,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id, history, audience, ctx, scope } = await req.json();
+    const { query, session_id, history, audience, ctx, scope, surface } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -3053,6 +3102,10 @@ Deno.serve(async (req: Request) => {
     // the Fact Sheet drawer, the production map.rccd.edu widget, the vendor
     // embed): normalizeHostScope returns null and nothing below changes.
     const hostScope = normalizeHostScope(scope);
+
+    // Optional caller surface (v56). Absent or unknown on every pre-existing
+    // caller -> null -> every guidance rule, exactly as before.
+    const hostSurface = normalizeSurface(surface);
 
     // Optional conversation history (multi-turn). Backward-compatible: callers
     // that omit it (e.g. the production widget) stay single-turn. Sanitize to
@@ -3113,7 +3166,7 @@ Deno.serve(async (req: Request) => {
       fetchLiveMetrics(),
       searchExhibitsByTopic(searchText, sb), // earned-exhibit set (no college filter)
       searchCollegeOfferings(searchText, sb), // course catalog: who TEACHES this
-      fetchTeamGuidance(sb),                  // sierra_guidance active rows (v25)
+      fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCollegeGeoMap(sb),                 // region/county for every college (v30)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
     ]);

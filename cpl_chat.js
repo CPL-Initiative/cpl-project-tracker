@@ -247,6 +247,16 @@
    * above the box. Clearing the anchor and dropping the thread are two different
    * events; only a move to a DIFFERENT named subject is the second one. */
   var threadSubject = null;
+  /* WHICH CALLER this is — a third axis alongside `audience` (who is reading),
+   * `ctx` (may staff contacts show) and `scope` (whose page). It exists so a
+   * guidance rule naming a fact only one surface carries stops being read on the
+   * other five.
+   *
+   * ⚠ ONE FILE, TWO SURFACES. This module mounts on the dedicated CPL Assistant
+   * pane AND embeds into My College, and those are different callers with
+   * different rules — so the surface is set at each MOUNT rather than once at the
+   * top, where a single value would necessarily be wrong for one of them. */
+  var hostSurface = null;
 
   // ── Chat transcript helpers ──
   var logEl, inputEl, sendBtn, statusEl, audEl;
@@ -909,7 +919,7 @@
         // to ship ahead of the function change.
         body: JSON.stringify({
           query: query, session_id: sessionId(), history: convo.slice(),
-          audience: audience, scope: hostScope,
+          audience: audience, scope: hostScope, surface: hostSurface,
         }),
       });
     } catch (e) {
@@ -1215,6 +1225,7 @@
     // starters — a stale host list from My College must not follow the reader
     // here and ask about a college this pane never mentioned.
     hostSuggestions = null;
+    hostSurface = 'cobi-assistant';
     // Same argument, same line of reasoning, for the ANCHOR: this pane has no
     // selected institution, so it must not keep asking the function to answer
     // for My College's. The THREAD is not cleared here on purpose — mount() is
@@ -1237,9 +1248,13 @@
   // the module's element refs, so re-mounting on tab switch is correct rather
   // than duplicative. `_host` tracks which one currently owns the widget.
   var _host = null;
-  function mountInto(host) {
+  function mountInto(host, surface) {
     if (!host || host === _host) return;
     _host = host;
+    /* The embedding tab declares which surface it is. Absent -> null -> every
+     * guidance rule, i.e. exactly today's behavior, so an older host that has
+     * not been updated is unaffected rather than mis-scoped. */
+    hostSurface = surface || null;
     host.innerHTML = '';
     host.setAttribute('data-cplchat-mounted', '1');
     build(host);

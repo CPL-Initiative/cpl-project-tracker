@@ -693,7 +693,13 @@
   function autogenerate(desc) {
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
     var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
-    var body = JSON.stringify({ query: autogenQuery(desc), session_id: "cobi-memory-autogen", history: [], audience: "administrator" });
+    // ⚠ THIS IS NOT A CONVERSATION SURFACE. It borrows the model to DRAFT a memory
+    // row, so a rule written for a reader asking Sierra questions ("confine your
+    // answers to the selected institution") is nonsense here — while the naming
+    // rule still applies to the text it drafts. Naming the surface is what lets
+    // the first be scoped away without touching the second.
+    var body = JSON.stringify({ query: autogenQuery(desc), session_id: "cobi-memory-autogen",
+                                history: [], audience: "administrator", surface: "memory-autogen" });
     return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
       if (!resp || !resp.ok) throw new Error("autogen HTTP " + (resp && resp.status));
       if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader());

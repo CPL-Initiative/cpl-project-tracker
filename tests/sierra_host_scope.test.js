@@ -146,8 +146,13 @@ block("(5)", function () {
 
 // ── (6) The wiring ────────────────────────────────────────────────────────
 block("(6)", function () {
+  /* ⚠ THIRD INSTANCE THIS SESSION of the defect in
+   * methodology-assert-that-an-argument-arrives-not-that-it-is-last: this pinned
+   * the WHOLE destructuring list, so adding `surface` in v56 reported that the
+   * handler had stopped reading `scope`. Assert the field is destructured from
+   * the body; do not enumerate its siblings. */
   check("(6) the handler reads the field",
-    /const \{ query, session_id, history, audience, ctx, scope \} = await req\.json\(\)/.test(SRC));
+    /const \{[^}]*\bscope\b[^}]*\} = await req\.json\(\)/.test(SRC));
   check("(6) …normalizes it before use",
     /const hostScope = normalizeHostScope\(scope\)/.test(SRC));
   /* ⚠ REACHES the builder, not "is the last argument". My first draft anchored

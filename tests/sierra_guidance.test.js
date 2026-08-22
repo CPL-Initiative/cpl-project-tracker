@@ -210,7 +210,9 @@ function finish() {
   // fetchCollegeGeoMap to the same batch, which is exactly the change it should
   // have been indifferent to.
   check("cpl-chat fetches guidance in the parallel lookup",
-    /\[[^\]]*\bteamGuidance\b[^\]]*\] = await Promise\.all/.test(fn) && /fetchTeamGuidance\(sb\)/.test(fn));
+    /\[[^\]]*\bteamGuidance\b[^\]]*\] = await Promise\.all/.test(fn)
+    // REACHES the call, not "is the only argument" — v56 appended a surface.
+    && /fetchTeamGuidance\([^;)]*\bsb\b/.test(fn));
   check("cpl-chat appends teamGuidance to the system prompt",
     /\$\{audienceRule\}\$\{teamGuidance\}/.test(fn));
   check("guidance reads only ACTIVE rows newest-first",
@@ -285,8 +287,11 @@ function finish() {
    * whichever kind is newest eats the window. Assert the shape that makes that
    * impossible — a per-kind filter carrying a per-kind limit. */
   check("cpl-chat reads each guidance kind under its own bounded limit",
-    /fetchGuidanceKind\(sb, "directive", GUIDANCE_MAX_RULES\)/.test(fnSrc)
-    && /fetchGuidanceKind\(sb, "display", GUIDANCE_MAX_DISPLAY\)/.test(fnSrc)
+    // Each kind keeps its OWN limit — that is the invariant. Pinning the closing
+    // paren instead broke on v56's appended `surface` and reported the limits
+    // gone when they were untouched.
+    /fetchGuidanceKind\([^;)]*\bGUIDANCE_MAX_RULES\b/.test(fnSrc)
+    && /fetchGuidanceKind\([^;)]*\bGUIDANCE_MAX_DISPLAY\b/.test(fnSrc)
     && /\.eq\("kind", kind\)/.test(fnSrc));
 
   /* ⚠ THE DEPLOY-ORDER FALLBACK IS THE HIGHEST-STAKES LINE IN THIS FILE.
