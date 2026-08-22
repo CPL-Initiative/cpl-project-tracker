@@ -153,23 +153,44 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
   const T = bootWithUnits(window, 900);
   const m = T._model();
 
-  // An unfloored, non-rural college's target must be its PRE-FLOOR proportional
-  // entitlement ÷ the rate. Recompute from the baked data, independently.
+  // An UNBOUND (neither floored nor capped), non-rural college's target must be
+  // its PRE-FLOOR proportional entitlement ÷ the rate. Recompute from the baked
+  // data, independently.
+  //
+  // Sam's $400K MAXIMUM (2026-08-22) added the second way to be bound, and a
+  // capped college's target is deliberately scaled DOWN with its money — the
+  // ceiling lowers the bar as well as the funding, or the largest colleges would
+  // be asked for ~40% more CPL per dollar than anyone else. So capped rows leave
+  // this assertion and get their own below, rather than being silently dropped.
   const totFtes = D.colleges.reduce(function (s, c) { return s + c.credit_ftes; }, 0);
   const net = T._netCollege();
   const ny = D.default_years.length || 2;
   const share = D.year_priorities["1"][0].share;
+  const propTarget = function (c) { return (c.credit_ftes / totFtes) * net * share / 5649.63; };
+  const targetOf = function (c) {
+    const row = T._alloc(c.college);
+    return row[Object.keys(row).find(function (k) { return /_heads$/.test(k); })];
+  };
   const plain = D.colleges.filter(function (c) {
-    return !m.floored[c.college] && !c.rural;
+    return !m.floored[c.college] && !m.capped[c.college] && !c.rural;
   }).slice(0, 12);
   const worst = plain.reduce(function (mx, c) {
-    const row = T._alloc(c.college);
-    const key = Object.keys(row).find(function (k) { return /_heads$/.test(k); });
     // factor 1.0 ⇒ CUMULATIVE window target — the ×nYears is structural now, so
     // no ÷ ny here (dividing would give the retired per-year target).
-    const expect = (c.credit_ftes / totFtes) * net * share / 5649.63;
-    return Math.max(mx, Math.abs(row[key] - expect));
+    return Math.max(mx, Math.abs(targetOf(c) - propTarget(c)));
   }, 0);
+  const cappedRows = D.colleges.filter(function (c) { return m.capped[c.college] && !c.rural; });
+  check("the ceiling actually binds here, so the exclusion above is not vacuous",
+    cappedRows.length > 0 && plain.length === 12);
+  check("a CAPPED college's target is scaled BELOW its pre-cap proportional target",
+    cappedRows.every(function (c) { return targetOf(c) < propTarget(c) - 0.01; }));
+  // …and scaled by exactly ceiling ÷ plainRatio ÷ proportional share, which is
+  // what keeps cap ÷ target one rate for every college above the minimum.
+  const capWorst = cappedRows.reduce(function (mx, c) {
+    const scale = Math.min(1, m.cap / m.plainRatio / ((c.credit_ftes / totFtes) * net));
+    return Math.max(mx, Math.abs(targetOf(c) - propTarget(c) * scale));
+  }, 0);
+  check("…by exactly ceiling ÷ plainRatio (max err < 0.01 FTES)", capWorst < 0.01);
   check("target == pre-floor proportional CUMULATIVE entitlement ÷ rate (max err < 0.01 FTES)",
     plain.length > 5 && worst < 0.01);
 

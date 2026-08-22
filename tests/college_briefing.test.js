@@ -551,8 +551,16 @@ check("questions: none without a college", M._sierraQuestions(null, null, null).
 // A failed model read must read as a failed read.
 check("funding: a failed model load renders 'failed read', not an empty result",
   /failed read, not a finding/.test(briefingSrc));
-check("funding: the allocation is labelled a cap, not a payment",
-  /cap, not a cheque/.test(briefingSrc));
+// Sam retired "a cap, not a cheque" on 2026-08-22 (state positively what drives
+// the money), and the model gained a literal $400K cap the same day — so the
+// old phrase was both against the ruling and newly ambiguous. Guard the
+// REPLACEMENT and guard that the retired phrasing does not creep back.
+check("funding: the allocation is stated positively — driven by the college's own CPL results",
+  /driven by <b>its own CPL results, as they happen<\/b>/.test(briefingSrc));
+check("funding: the retired 'not a cheque' framing is gone",
+  !/not a cheque/.test(briefingSrc) && !/ceiling, not a check/.test(briefingSrc));
+check("funding: a college held to the maximum is told where the difference went",
+  /maximum allocation<\/b>/.test(briefingSrc) && /re-splits across the other colleges/.test(briefingSrc));
 
 // ⭐ The floor waterfall must not be re-implemented here. The handoff's
 // worked example — Bakersfield at 1.83% of a $23.24M pool — is a FLAT
@@ -1168,9 +1176,21 @@ JOIN_CASES.forEach(function (c) {
 
 // Mt. SAC is CLAUDE.md's own cross-check against the Sep-BOG reconciliation,
 // so the fix is verified against a figure derived independently of this repo.
+// Sam's $400K MAXIMUM (2026-08-22) now binds it, so the cross-check is taken
+// with the ceiling OFF — the independently-derived figure is a property of the
+// floor waterfall, and it must keep holding underneath the ceiling. Checking
+// only the capped figure would let the waterfall rot behind a constant.
+FUND._setScenario({ pool: { cap_window: 0 } });
+FUND._model();
+const mtsacOpen = FUND._alloc("Mt San Antonio");
+check("(P) Mt. SAC's uncapped allocation matches the Sep-BOG cross-check ($522,239)",
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 522239,
+  "the floor waterfall is unchanged underneath the ceiling");
+FUND._setScenario({});
+FUND._model();
 const mtsac = FUND._alloc("Mt San Antonio");
-check("(P) Mt. SAC's allocation matches the Sep-BOG cross-check ($522,239)",
-  !!mtsac && Math.round(mtsac.total) === 522239,
+check("(P) Mt. SAC is held to the $400,000 maximum once the ceiling is on",
+  !!mtsac && mtsac.capped === true && Math.round(mtsac.total) === 400000,
   "got " + (mtsac ? Math.round(mtsac.total) : "null"));
 
 // And the consumer resolves it. rosterKey() is exercised through the real
@@ -1191,7 +1211,9 @@ const jTxt = jRoot.textContent.replace(/\s+/g, " ");
 check("(P) ⭐ Mt. San Antonio is NOT told it is off the funding roster",
   !/is not on the 115-college funding roster/.test(jTxt),
   "the roster row was always there — the join dropped it");
-check("(P) …and its real allocation renders", /\$522,239/.test(jTxt));
+check("(P) …and its real allocation renders", /\$400,000/.test(jTxt));
+check("(P) …and it is told it is held to the maximum, and where the difference went",
+  /maximum allocation/.test(jTxt) && /re-splits across the other colleges/.test(jTxt));
 
 // ── The collapsed shape ──
 // RESCOPED 2026-08-17 (Sky167). Sierra is a `details.cb-sec` now too — Sam

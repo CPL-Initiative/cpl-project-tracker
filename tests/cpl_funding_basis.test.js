@@ -138,14 +138,28 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   T._setScenario({ allocationBasis: "headcount" });
   T.render();
   const m = T._model();
-  const unfloored = D.colleges.filter(function (c) { return !m.floored[c.college]; });
-  const baseHc = unfloored.reduce(function (s, c) { return s + c.headcount; }, 0);
-  const remaining = unfloored.reduce(function (s, c) { return s + (m.W[c.college] || 0); }, 0);
-  const worst = unfloored.reduce(function (mx, c) {
+  // UNBOUND = neither topped up to the floor nor held to the ceiling. Sam's
+  // $400K maximum (2026-08-22) added the second way to be bound; a capped
+  // college's share is its ceiling, not its headcount share, exactly as a
+  // floored college's is its floor. Excluding a set from a test is only honest
+  // if that set gets its own assertion, so the capped rows are checked below
+  // rather than dropped.
+  const unbound = D.colleges.filter(function (c) { return !m.floored[c.college] && !m.capped[c.college]; });
+  const baseHc = unbound.reduce(function (s, c) { return s + c.headcount; }, 0);
+  const remaining = unbound.reduce(function (s, c) { return s + (m.W[c.college] || 0); }, 0);
+  const worst = unbound.reduce(function (mx, c) {
     const expect = c.headcount / baseHc * remaining;
     return Math.max(mx, Math.abs((m.W[c.college] || 0) - expect));
   }, 0);
   check("headcount basis reproduces the historical proportional split (max err < $1)", worst < 1);
+  check("headcount basis: every bound college sits exactly on its bound (floor or ceiling)",
+    D.colleges.filter(function (c) { return m.floored[c.college] || m.capped[c.college]; })
+      .every(function (c) {
+        const total = T._alloc(c.college).total;
+        return m.floored[c.college]
+          ? Math.abs(total - m.floor) < 0.5
+          : Math.abs(total - m.cap) < 0.5;
+      }));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

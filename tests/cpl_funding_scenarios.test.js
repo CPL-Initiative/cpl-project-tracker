@@ -287,7 +287,13 @@ const {
     lines.length === 2 + D.colleges.length + 1 && lines[0].indexOf("DRAFT model") !== -1);
   check("CSV: header carries County + per-priority target/actual + eligibility + rural/floor",
     lines[1].indexOf("County") !== -1 && lines[1].indexOf("P1 target") !== -1 && lines[1].indexOf("P1 actual") !== -1 &&
-    lines[1].indexOf("Rural") !== -1 && lines[1].indexOf("Floor applied") !== -1);
+    lines[1].indexOf("Rural") !== -1 && lines[1].indexOf("Floor / maximum applied") !== -1);
+  // Counted against the model rather than a named college: the ceiling's bite
+  // depends on the pool and the roster, so a literal name here would break for
+  // a reason that has nothing to do with the CSV.
+  check("CSV: every college held to the ceiling carries the 'maximum' flag",
+    T._model().cappedCount > 0 &&
+    lines.filter(function (l) { return /,maximum,/.test(l); }).length === T._model().cappedCount);
   check("CSV: a rural floored college carries its flags",
     lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("rural") !== -1 && l.indexOf("floor") !== -1; }));
   check("CSV: SYSTEM row includes the noncredit-inclusive headcount",

@@ -1430,6 +1430,7 @@
     return {
       key: key, onRoster: true, grant: grant,
       floor: model ? model.floor : null,
+      cap: model ? model.cap : null,
       // A noncredit feeder receives the seed grant but is not in the $35M
       // college pool — it is funded through the $1M noncredit carve-out, a
       // different mechanism. _alloc returns null and we say so.
@@ -1929,12 +1930,28 @@
         fundBody += '<div class="cb-lab">No allocation modelled for this college yet.</div>';
       } else {
         fundBody += '<div class="cb-fbig">' + money(f.alloc.total) + "</div>";
-        fundBody += '<div class="cb-lab">This is a <b>cap, not a cheque</b> — the college earns against it on what MAP records it '
-          + "doing. It is modelled, and the model is under active revision.</div>";
+        // Sam's 2026-08-22 ruling retired the old negative framing here: state
+        // positively what drives the money. It also collided with the model's
+        // new $400K MAXIMUM, which is now literally a cap — two different
+        // meanings of one word, in adjacent sentences. (The retired phrase is
+        // deliberately not quoted anywhere in this file: the test greps the
+        // SOURCE, so a comment quoting it would fail the guard it explains.)
+        fundBody += '<div class="cb-lab">What this college receives is driven by <b>its own CPL results, as they happen</b> — '
+          + "it earns against this figure on what MAP records it doing. It is modelled, and the model is under "
+          + "active revision.</div>";
         var bits = [];
         if (f.alloc.floored) {
           bits.push("At the <b>" + money(f.floor) + " minimum-viable floor</b> — this college's proportional share came "
             + "out below the floor, so it is topped up to it. Its allocation is <b>not</b> its share of the pool.");
+        }
+        // The floor's mirror image. Say where the difference WENT, not just
+        // that the college lost it — the same reason the funding explainer
+        // names the beneficiary of every amount it shows.
+        if (f.alloc.capped && f.cap) {
+          bits.push("At the <b>" + money(f.cap) + " maximum allocation</b> — this college's proportional share came "
+            + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
+            + "Its performance targets scale down with it, so it earns at the same rate as every other college "
+            + "above the minimum.");
         }
         if (f.alloc.rural_w) {
           bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");

@@ -183,10 +183,25 @@ const {
   // First SORTABLE college row — the pinned SYSTEM total row is tbody's first
   // child now, so skip it via .cplfund-row.
   const firstRow = doc.querySelector("#cplFundTable tbody tr.cplfund-row");
-  // largest headcount college = largest total (default balanced shares).
-  const maxHc = Math.max.apply(null, D.colleges.map(function (c) { return c.headcount; }));
-  const maxCollege = D.colleges.filter(function (c) { return c.headcount === maxHc; })[0].college;
-  check("sort by Total desc puts the largest college first", firstRow.textContent.indexOf(maxCollege) !== -1);
+  // The largest college no longer has a UNIQUE largest total: Sam's $400K
+  // maximum (2026-08-22) holds the six largest colleges at the same figure, so
+  // "the largest college sorts first" is a coin-toss between six tied rows.
+  // Assert what the sort actually promises — the first row carries the maximum
+  // total — and, separately, that the largest college on the allocation basis
+  // is one of the rows holding it.
+  const T = window.CPL_FUNDING_TAB;
+  const totals = D.colleges.map(function (c) { return T._alloc(c.college).total; });
+  const maxTotal = Math.max.apply(null, totals);
+  const atMax = D.colleges.filter(function (c) {
+    return Math.abs(T._alloc(c.college).total - maxTotal) < 0.5;
+  }).map(function (c) { return c.college; });
+  check("sort by Total desc puts a maximum-total college first",
+    atMax.some(function (n) { return firstRow.textContent.indexOf(n) !== -1; }));
+  const biggest = D.colleges.reduce(function (a, b) {
+    return (a.credit_ftes || 0) >= (b.credit_ftes || 0) ? a : b;
+  }).college;
+  check("the largest college on the allocation basis holds the maximum total",
+    atMax.indexOf(biggest) !== -1);
 
   // Provenance surfaces.
   check("footnote cites the DataMart headcount source",

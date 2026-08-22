@@ -105,6 +105,9 @@
     ".cplfund-card.feeder { border-left: 4px solid var(--green-progress); }",
     ".cplfund-card.rural { border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.floor { border-left: 4px solid var(--navy-secondary); }",
+    ".cplfund-card.floor .v { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: center; gap: 4px 8px; }",
+    ".cplfund-range-sep { font-size: .78rem; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: .04em; }",
+    ".cplfund-capwarn { color: var(--red-alert); }",
     ".cplfund-card.total { background: var(--surface-muted); border-left: 4px solid var(--gold-accent); }",
     ".cplfund-card.total .v { color: var(--navy-primary); }",
     ".cplfund-card.award { border-left: 4px solid var(--navy-secondary); }",
@@ -249,8 +252,8 @@
     ".cplfund-authbar button.rst, .cplfund-authbar button.lock { background: var(--seal-blue); color: var(--white); border: none; border-radius: 6px; padding: 4px 10px; cursor: pointer; font-size: .8rem; font-family: inherit; }",
     ".cplfund-authbar button.rst.warn { background: var(--red-alert); }",
     // ── calculation sanity-check link (private tab only) ──
-    ".cplfund-sanity { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 8px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--seal-blue); border-radius: 8px; padding: 9px 14px; font-size: .83rem; margin: 0 0 14px; }",
-    ".cplfund-sanity a { font-weight: 600; }",
+    ".cplfund-sanity { display: inline-block; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--seal-blue); border-radius: 8px; padding: 6px 12px; font-size: .83rem; font-weight: 600; white-space: nowrap; }",
+    "#cplFundTitleLink:empty { display: none; }",
     // ── top control strip: project + area + scenario (Sam, 2026-07-23) ──
     ".cplfund-strip { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin: 0 0 10px; padding: 10px 14px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; }",
     ".cplfund-ctl { display: inline-flex; align-items: center; gap: 7px; }",
@@ -772,6 +775,10 @@
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
   function ruralCarve() { return Math.max(0, Number(poolField("rural_carveout")) || 0); }
   function floorWindow() { return Math.max(0, Number(poolField("floor_window")) || 0); }
+  // The mirror image of the floor (Sam, 2026-08-22): no college's WINDOW total
+  // rises above this. 0 = no ceiling, which is the identity — allocModel below
+  // reproduces the pure floor waterfall bit-for-bit when the ceiling is off.
+  function capWindow() { return Math.max(0, Number(poolField("cap_window")) || 0); }
   // ── generalized pool line-items (Sam, 2026-07-23): editable labels, add/delete
   //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
   //    carve-outs; with NO custom boxes and nothing hidden this equals the old
@@ -979,7 +986,7 @@
       // invariant; see prioEntitlement + cpl_funding_cumulative_target.test.js).
       return (r > 0 && fac > 0) ? (prioEntitlement(c, p) / r) * (nYears() / fac) : 0;   // target in CPL FTES
     }
-    return (c ? sizeOf(c) : totalSize()) * p.target_rate;   // target in students
+    return (c ? sizeOf(c) * capScale(c) : totalSize()) * p.target_rate;   // target in students
   }
   // What a target is counted in — drives every label and the actual's conversion.
   function prioUnitLabel(p) { return prioIsFtes(p) ? "FTES" : "students"; }
@@ -1076,8 +1083,53 @@
   // raises a college's funding, not its targets, the guaranteed rural allowance
   // is not performance-earned, and prioCap() would double under front-load —
   // which would cancel the front-load incentive exactly.
+  //
+  // THE CEILING IS THE ONE THING THAT LOWERS IT (Sam, 2026-08-22). The floor is
+  // a deliberate one-way asymmetry — more money, same bar — and running that
+  // exception in the other direction would ask a CAPPED college to produce MORE
+  // CPL per dollar than anybody else: held to $400K against a pre-cap target,
+  // Mt San Antonio would earn its money at ~71% of the statewide rate, and
+  // statewide the model would ask for more CPL than it funds. That is exactly
+  // the "reads as the CO withholding" failure Sam ruled out earlier the same
+  // week, and it breaks the model's central identity, target = allocation
+  // divided by price. Taking the MIN gets both bounds right in one step: a
+  // floored college keeps its smaller PRE-FLOOR target, a capped college takes
+  // its smaller CAPPED entitlement, everyone else is untouched.
+  // ONE clamp, applied to BOTH target paths. A priority scored in CPL FTES
+  // derives its target from prioEntitlement; a priority scored in students
+  // derives it from size x target_rate and never touches prioEntitlement at
+  // all — so a clamp written in only one of them would lower the bar for
+  // Sam's live all-FTES config and leave it raised for a headcount-unit one.
+  // Same college, same ceiling, two different answers depending on a metric
+  // label: exactly the "a metric label that selects an algorithm is a policy
+  // switch" trap already recorded against this tab.
+  //
+  // Returns the factor a CAPPED college's targets shrink by — its ceiling over
+  // the proportional share it would otherwise have had. 1 for everyone else,
+  // so this is the identity when no ceiling is set.
+  function capScale(c) {
+    if (!c) return 1;
+    var m = allocModel();
+    if (!(m.cap > 0) || !m.capped[c.college]) return 1;
+    // A capped college's whole window entitlement IS the ceiling (the rural
+    // slice is inside it — capFor() reduces the main-pool ceiling by exactly
+    // that slice), so the ceiling is the entitlement; no rural arithmetic here.
+    //
+    // Dividing by plainRatio is what keeps ONE rate for every college above the
+    // minimum. Scaling the target to the ceiling alone would set a capped
+    // college's targets at exactly what its money buys at the statewide base —
+    // which sounds neutral and is not: every UNCAPPED college above the floor
+    // is already paying a ~9% rate discount to fund the floor top-ups, so a bare
+    // ceiling scale would hand the six largest colleges the only unsubsidised
+    // rate in the state. The ceiling should move a college's MONEY, not its
+    // price. This is the relationship tests/cpl_funding_basis.test.js Part H
+    // guards, and it now covers capped colleges too rather than excusing them.
+    var prop = sizePct(c) * netCollege();
+    var ratio = m.plainRatio > 0 ? m.plainRatio : 1;
+    return prop > 0 ? Math.min(1, m.cap / ratio / prop) : 1;
+  }
   function prioEntitlement(c, p) {
-    return (c ? sizePct(c) : 1) * netCollege() * p.share / nYears();
+    return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
   }
 
   // The target's reach as a share of actual STUDENTS. `target_rate` denominates
@@ -2246,11 +2298,11 @@
     }
     var lines = [];
     lines.push(["#", "College", "District", "County", "Headcount"].concat(prioCsvHead(),
-      ["Eligibility (proposed)", "Rural", "Floor applied"], yHead,
+      ["Eligibility (proposed)", "Rural", "Floor / maximum applied"], yHead,
       ["Total " + windowLabel()], earnHead, ["Working adults (county)"]));
     function collegeLine(c) {
       return [c.order, dispName(c.college), c.district, c.county, c.headcount].concat(prioCsvCells(c, false),
-        [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : ""],
+        [csvEligText(c.college), c.rural ? "rural" : "", c.floored ? "floor" : (c.capped ? "maximum" : "")],
         yearKeys().map(function (yk) { return Math.round(c[yk]); }),
         [Math.round(c.total)], earnCells(c), [c.working_adults == null ? "" : c.working_adults]);
     }
@@ -2442,15 +2494,29 @@
   // access-controlled, so an anonymous reader would hit a permission wall.
   // Republish the same artifact file path to keep this URL stable.
   var SANITY_URL = "https://claude.ai/code/artifact/e3a3ccf1-581c-42cf-b622-56fd7caf7221";
+  // MOVED TO THE TAB TITLE ROW (Sam, 2026-08-22). It was a full-width strip
+  // above the first section, and it describes the WHOLE model — so it belongs
+  // beside the tab's own name, not stacked in front of the content it explains.
+  // The walk-through sentence it used to print inline becomes the link's title,
+  // which is what a one-line affordance can carry without a second row.
+  //
+  // No glyph: the link's own name says what it is (Sam's 2026-08-14 rule —
+  // decorative glyphs go, state-bearing ones stay).
+  var SANITY_BLURB = "A plain-language walk-through of the whole model: what comes off the top, " +
+    "how each college's share is set, what a college has to do to qualify, and how the money is " +
+    "earned. Team-access Claude artifact — opens in a new tab.";
   function sanityLinkHtml() {
     if (publicMode()) return "";
-    // No glyph: the link's own name says what it is (Sam's 2026-08-14 rule —
-    // decorative glyphs go, state-bearing ones stay).
-    return '<div class="cplfund-sanity"><a href="' + SANITY_URL + '" target="_blank" rel="noopener">' +
-      "How this funding model works</a> <span>&mdash; a plain-language walk-through of the whole model: " +
-      "what comes off the top, how each college's share is set, what a college has to do to qualify, " +
-      "and how the money is earned.</span> " +
-      '<span class="dk">Team-access Claude artifact.</span></div>';
+    return '<a class="cplfund-sanity" href="' + SANITY_URL + '" target="_blank" rel="noopener" title="' +
+      esc(SANITY_BLURB) + '">How this funding model works</a>';
+  }
+  // The title row lives in the tab SHELL, outside this module's mount, so the
+  // link is painted into a slot the shell provides in both mirrored HTMLs
+  // (Rule 4). A missing slot is a no-op: the public page has its own header and
+  // publicMode() blanks the link anyway.
+  function paintTitleLink() {
+    var slot = document.getElementById("cplFundTitleLink");
+    if (slot) slot.innerHTML = sanityLinkHtml();
   }
 
   // deleting projects + scenarios is a curator (unlocked) action.
@@ -2695,8 +2761,13 @@
         '<div class="v' + (o.neg ? " neg" : "") + '">' + o.v + "</div>" +
         '<div class="l">' + o.l + (o.note ? '<div class="cplfund-card-note">' + o.note + "</div>" : "") + "</div></div>";
     }
-    function valueEd(field, neg) {
-      return edNum("pool", fmtInt(poolField(field)), { field: field, neg: neg, label: (neg ? "Deduction" : "Funding") + " amount" });
+    // `aria` overrides the accessible name. It exists because the floor box now
+    // holds TWO amount inputs (Sam's minimum + maximum, 2026-08-22) and the
+    // default name is the same string for both — two controls, one name, and a
+    // screen-reader user cannot tell which one sets the minimum.
+    function valueEd(field, neg, aria) {
+      return edNum("pool", fmtInt(poolField(field)),
+        { field: field, neg: neg, label: aria || ((neg ? "Deduction" : "Funding") + " amount") });
     }
     function labelEd(field, def) {
       var v = poolLabel(field, def);
@@ -2847,13 +2918,40 @@
       }
     })();
 
-    // Minimum-viable floor — editable value + label, not deletable; live top-up note.
-    out.push(card({ cls: " floor", v: valueEd("floor_window", false),
-      l: labelEd("floor_window", "Minimum viable allocation (floor)"),
-      note: "no college below this for the " + windowLabel() + " window; " +
-        (allocModel().floorCount
-          ? "<strong>" + allocModel().floorCount + " colleges topped up</strong> (&asymp;" + fmtMoney(allocModel().floorCost) + ", funded within the pool)"
-          : "no top-ups needed at current settings") }));
+    // Minimum and maximum per-college allocation — one box, two editable dials
+    // (Sam, 2026-08-22: "add a Max Funding factor to the Min Funding box").
+    // They are a PAIR: allocModel solves both together, so the note reports what
+    // each one did in the same breath — the floor's cost and the ceiling's
+    // release are the two halves of one redistribution.
+    (function () {
+      var m = allocModel();
+      var floorNote = m.floorCount
+        ? "<strong>" + m.floorCount + " topped up to the minimum</strong> (&asymp;" + fmtMoney(m.floorCost) + ", funded within the pool)"
+        : "no top-ups needed at current settings";
+      var capNote = !(m.cap > 0)
+        ? "no maximum set &mdash; enter one to cap the largest allocations"
+        : (m.cappedCount
+            ? "<strong>" + m.cappedCount + " held to the maximum</strong> (&asymp;" + fmtMoney(m.capReleased) +
+              " released back into the pool)"
+            : "no college reaches the maximum at current settings");
+      var warn = "";
+      if (m.capBelowFloor) {
+        warn = ' <strong class="cplfund-capwarn">&#9888; the maximum is below the minimum &mdash; the minimum wins; ' +
+          "no college is paid under " + fmtMoney(m.floor) + ".</strong>";
+      } else if (m.unspent > 0.5) {
+        warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
+          " cannot be spent &mdash; every college is at the maximum and the pool no longer balances. " +
+          "Raise the maximum or move the remainder to another line.</strong>";
+      }
+      out.push(card({ cls: " floor",
+        v: valueEd("floor_window", false, "Minimum allocation per college for the window") +
+          ' <span class="cplfund-range-sep">to</span> ' +
+          valueEd("cap_window", false, "Maximum allocation per college for the window"),
+        l: labelEd("floor_window", "Minimum viable allocation (floor)") +
+           ' <span class="dk">&mdash;</span> ' + labelEd("cap_window", "Maximum allocation (ceiling)"),
+        note: "per college for the " + windowLabel() + " window &middot; " + floorNote +
+          " &middot; " + capNote + warn }));
+    })();
 
     // ── Computed context cards ────────────────────────────────────────────
     // Both of these hardcoded HEADCOUNT until 2026-08-01, which left the first
@@ -3480,6 +3578,21 @@
         "PRE-FLOOR share of statewide " + basisLabel() + ", so a floored college is NOT asked to exceed its " +
         "size-appropriate numbers to receive the floor."
       : "";
+    // The ceiling's own sentence. It says the thing the floor sentence cannot:
+    // floor and ceiling are solved TOGETHER, so the release can lift a college
+    // back OFF the floor — which is why the floor count moves when the ceiling
+    // moves, and why that is correct rather than a bug.
+    var capSentence = (m.cap > 0 && m.cappedCount)
+      ? " <strong>Maximum allocation:</strong> no college&#39;s window allocation rises above " + fmtMoney(m.cap) +
+        " &mdash; " + m.cappedCount + " colleges are held there, releasing " + fmtMoney(m.capReleased) +
+        " (" + fmtPctTrim(m.net > 0 ? m.capReleased / m.net : 0) + " of the pool) back into the proportional " +
+        "split. The minimum and the maximum are solved together, so a college can come back OFF the floor once " +
+        "the ceiling releases money. <em>The maximum lowers a college&#39;s funding, not its targets:</em> " +
+        "performance targets stay proportional to its PRE-CAP share of statewide " + basisLabel() + "."
+      : (m.cap > 0
+          ? " <strong>Maximum allocation:</strong> set at " + fmtMoney(m.cap) +
+            " per college for the window; no college reaches it at current settings."
+          : "");
     // Disbursement cadence — RESPONSIVE to the Even ⇄ Front-load toggle (Sam,
     // 2026-07-27: the box read as an even-tranche explainer even when front-load
     // was ON). Each branch tells the whole timing story for its mode.
@@ -3523,6 +3636,7 @@
       trim(basisSentence)
     ];
     if (floorSentence) items.push(trim(floorSentence));
+    if (capSentence) items.push(trim(capSentence));
     return '<div class="cplfund-formula">' +
       '<p class="lead">How each college&#39;s allocation is built:</p>' +
       '<ul class="cplfund-formula-list">' +
@@ -3651,6 +3765,12 @@
         "this college's guaranteed rural allowance and partly by the main pool (small colleges are topped up to stand up the program)");
     } else if (floored) {
       reasons.push("raised to the " + fmtMoney(floorWindow()) + " minimum-viable floor (small colleges are topped up to stand up the program)");
+    } else if (!isSystem && c && c.capped) {
+      // The ceiling's mirror of the floor reason. Say it the same way round —
+      // what the college's own size would have earned, and where the difference
+      // went — so a capped college can see the money was redistributed, not lost.
+      reasons.push("held to the " + fmtMoney(capWindow()) + " maximum allocation (the largest colleges are capped so the " +
+        "difference re-splits across the rest of the system)");
     } else if (colRuralBump > 0) {
       // Not floored, but a rural college can still have a floor gap its allowance
       // fills (floorFill > 0) OR already sit above the floor (all bonus). Only claim
@@ -3839,23 +3959,60 @@
   // ruralPer ≥ floor always (no main-pool leftover top-up needed). The main
   // pool freed by the reduced rural floors re-splits to the (mostly non-rural)
   // unfloored colleges. Non-rural floors are unchanged.
+  //
+  // CEILING (Sam, 2026-08-22). `pool.cap_window` is the floor's mirror image —
+  // no college's WINDOW total rises above it — and, like the floor, a rural
+  // row's MAIN-pool ceiling is reduced by its guaranteed slice so the ceiling
+  // binds the row's total, never the guarantee.
+  //
+  // ⚠ THE CEILING IS WHY THE ITERATIVE PIN LOOP HAD TO GO. A floor-only
+  // waterfall is monotone — pinning a college at the floor takes MORE than its
+  // proportional share, which pushes everyone else DOWN, so a college that is
+  // once below the floor can never rise back above it, and pinning as you go is
+  // safe. A ceiling runs the other way: pinning a college at the cap RELEASES
+  // money, which pushes everyone else UP, and that can legitimately lift a
+  // college back off the floor. Pin-and-never-release would strand it at the
+  // floor. Measured on the live roster at floor $150K / cap $400K: 5 of the 50
+  // floored colleges come off the floor, so this is not a theoretical edge.
+  //
+  // So the bound sets are found by BISECTING the one scalar that defines the
+  // whole solution: W(c) = clamp(lambda x size(c), floorFor(c), capFor(c)), and
+  // Sum W is monotone increasing in lambda, so exactly one lambda spends the
+  // pool. Floor and ceiling are honored simultaneously, in any combination.
+  // Once the sets are known the FREE rows are then computed with the waterfall's
+  // own arithmetic (size / freeSize x remaining), so with the ceiling off this
+  // returns bit-for-bit what the pin loop returned — a behavior-neutral
+  // migration, asserted in tests/cpl_funding_cap.test.js.
   var _allocCache = null;
-  function allocModel() {
-    if (_allocCache) return _allocCache;
+  // The solver, parameterized on the ceiling so allocModel can run it twice:
+  // once for real, once with the ceiling OFF, which is what makes the "released"
+  // figure the money the ceiling actually moved rather than a proxy for it.
+  function solveAlloc(cap) {
     var cols = base().colleges;
     var net = netCollege();
     var floor = floorWindow();
     var ruralPer = ruralPerCollege();
-    var byName = {};
-    cols.forEach(function (c) { byName[c.college] = c; });
     // A rural college self-funds ruralPer of its floor from the guaranteed
     // rural allowance; non-rural colleges carry the full floor.
     function floorFor(c) { return isRural(c) ? Math.max(0, floor - ruralPer) : floor; }
-    var F = {}, W = {};
+    // …and the same slice comes off its ceiling, so the ceiling binds mainW +
+    // ruralPer. Never below the row's own floor: a ceiling under the floor is a
+    // curator typo, and honoring it literally would pay a college less than the
+    // minimum the model promises. The floor wins; capBelowFloor reports it.
+    function capFor(c) {
+      if (!(cap > 0)) return Infinity;
+      return Math.max(floorFor(c), isRural(c) ? Math.max(0, cap - ruralPer) : cap);
+    }
+    var F = {}, C = {}, W = {};
     // `totSize` is the statewide total on the ACTIVE basis (credit FTES by
     // default, headcount if selected) — every proportional split below reads it.
-    var totSize = 0, totFloor = 0;
-    cols.forEach(function (c) { totSize += sizeOf(c); totFloor += floorFor(c); });
+    var totSize = 0, totFloor = 0, totCap = 0;
+    cols.forEach(function (c) {
+      totSize += sizeOf(c);
+      totFloor += floorFor(c);
+      totCap += Math.min(capFor(c), Number.MAX_VALUE);
+    });
+    var unspent = 0, lam = 0;
     if (floor > 0 && totFloor >= net) {
       // Floors set higher than the pool can honor — degrade to a floor-proportional
       // split (reduces to an equal split when every floor is equal).
@@ -3863,33 +4020,103 @@
         F[c.college] = true;
         W[c.college] = totFloor > 0 ? floorFor(c) / totFloor * net : (net > 0 ? net / cols.length : 0);
       });
+    } else if (cap > 0 && totCap < net) {
+      // Ceilings set so low the pool cannot be spent. Every college is at its
+      // ceiling and the remainder is UNSPENDABLE — surfaced, never swallowed: a
+      // balance that silently stops being $0 is the failure mode here.
+      cols.forEach(function (c) { C[c.college] = true; W[c.college] = capFor(c); });
+      unspent = net - totCap;
     } else {
-      var changed = true, guard = 0;
-      while (changed && guard++ < 30) {
-        changed = false;
-        var usedFloor = 0;
-        Object.keys(F).forEach(function (k) { usedFloor += floorFor(byName[k]); });
-        var remaining = net - usedFloor;
-        var baseSize = 0;
-        cols.forEach(function (c) { if (!F[c.college]) baseSize += sizeOf(c); });
+      // Bisect lambda. clampAt is the whole model in one line.
+      var clampAt = function (c, lam) { return Math.min(Math.max(lam * sizeOf(c), floorFor(c)), capFor(c)); };
+      var totalAt = function (lam) {
+        var t = 0;
+        cols.forEach(function (c) { t += clampAt(c, lam); });
+        return t;
+      };
+      var lo = 0, hi = totSize > 0 ? net / totSize : 1, g = 0;
+      if (!(hi > 0)) hi = 1;
+      while (totalAt(hi) < net && g++ < 200) hi *= 2;
+      for (var i = 0; i < 120; i++) {
+        var mid = (lo + hi) / 2;
+        if (totalAt(mid) < net) lo = mid; else hi = mid;
+      }
+      lam = (lo + hi) / 2;
+      // The bisection's job is done: it identified WHICH colleges are bound.
+      // Recompute the free rows exactly, then repair any ulp-level straggler
+      // (the sets only grow, so this terminates; in practice it never fires).
+      cols.forEach(function (c) {
+        var raw = lam * sizeOf(c);
+        if (raw < floorFor(c)) F[c.college] = true;
+        else if (raw > capFor(c)) C[c.college] = true;
+      });
+      var settled = false, guard = 0;
+      while (!settled && guard++ < cols.length + 5) {
+        settled = true;
+        var bound = 0, freeSize = 0;
         cols.forEach(function (c) {
-          if (F[c.college]) return;
-          var fl = floorFor(c);
-          var w = baseSize > 0 ? sizeOf(c) / baseSize * remaining : 0;
-          if (fl > 0 && w < fl) { F[c.college] = true; changed = true; }
+          if (F[c.college]) bound += floorFor(c);
+          else if (C[c.college]) bound += capFor(c);
+          else freeSize += sizeOf(c);
+        });
+        var remaining = net - bound;
+        cols.forEach(function (c) {
+          if (F[c.college] || C[c.college]) return;
+          var w = freeSize > 0 ? sizeOf(c) / freeSize * remaining : 0;
+          if (floorFor(c) > 0 && w < floorFor(c)) { F[c.college] = true; settled = false; }
+          else if (w > capFor(c)) { C[c.college] = true; settled = false; }
           else W[c.college] = w;
         });
       }
-      Object.keys(F).forEach(function (k) { W[k] = floorFor(byName[k]); });
+      cols.forEach(function (c) {
+        if (F[c.college]) W[c.college] = floorFor(c);
+        else if (C[c.college]) W[c.college] = capFor(c);
+      });
     }
-    // Display stat: total MAIN-POOL top-up vs a pure proportional split (rural
-    // colleges' top-up is measured against their reduced floor — the rest of
-    // their floor is funded by the rural carve-out, not the main pool).
+    // What an UNBOUND college actually receives as a fraction of its pure
+    // proportional share. Below 1 because the floor top-ups are funded by
+    // renormalizing over exactly these colleges — the model's long-standing,
+    // documented rate discount. capScale() needs it so a capped college bears
+    // the same discount instead of quietly escaping it.
+    var plainRatio = (net > 0 && totSize > 0 && lam > 0) ? lam * totSize / net : 1;
+    return { W: W, floored: F, capped: C, unspent: unspent, plainRatio: plainRatio,
+      floor: floor, cap: cap, net: net, totSize: totSize, floorFor: floorFor };
+  }
+  function allocModel() {
+    if (_allocCache) return _allocCache;
+    var cap = capWindow();
+    var r = solveAlloc(cap);
+    var cols = base().colleges;
+    // What the FLOOR costs the pool: the top-up vs a pure proportional split
+    // (a rural row's top-up is measured against its REDUCED floor — the rest is
+    // funded by the rural carve-out, not the main pool).
     var cost = 0;
     cols.forEach(function (c) {
-      if (F[c.college] && totSize > 0) cost += Math.max(0, floorFor(c) - sizeOf(c) / totSize * net);
+      if (r.floored[c.college] && r.totSize > 0) {
+        cost += Math.max(0, r.floorFor(c) - sizeOf(c) / r.totSize * r.net);
+      }
     });
-    _allocCache = { W: W, floored: F, floor: floor, floorCount: Object.keys(F).length, floorCost: cost, net: net };
+    // What the CEILING releases: measured against THIS SAME MODEL with the
+    // ceiling off, not against a pure proportional split. That difference is
+    // not pedantry — the two answers are $262,241 and $570,121 on the live
+    // roster, and only the first one is money that actually changed hands.
+    var released = 0;
+    if (cap > 0 && Object.keys(r.capped).length) {
+      var openW = solveAlloc(0).W;
+      cols.forEach(function (c) {
+        if (r.capped[c.college]) released += Math.max(0, (openW[c.college] || 0) - (r.W[c.college] || 0));
+      });
+    }
+    _allocCache = {
+      W: r.W, floored: r.floored, capped: r.capped,
+      floor: r.floor, cap: cap, net: r.net, unspent: r.unspent, plainRatio: r.plainRatio,
+      floorCount: Object.keys(r.floored).length, floorCost: cost,
+      cappedCount: Object.keys(r.capped).length, capReleased: released,
+      // A ceiling set below the floor is a curator typo, not a policy: capFor()
+      // clamps it away so nobody is paid under the minimum, and this flag says
+      // so on screen rather than leaving the two boxes silently contradicting.
+      capBelowFloor: cap > 0 && r.floor > 0 && cap < r.floor
+    };
     return _allocCache;
   }
 
@@ -3913,7 +4140,8 @@
     var W = mainW + ruralW;              // effective entitlement folds the guaranteed rural in
     var ny = nYears();
     var fl = frontloaded();
-    var out = { total: 0, w: W, main_w: mainW, rural_w: ruralW, floored: !!allocModel().floored[c.college] };
+    var out = { total: 0, w: W, main_w: mainW, rural_w: ruralW,
+      floored: !!allocModel().floored[c.college], capped: !!allocModel().capped[c.college] };
     var ys = [], eys = [], earnTotal = 0;
     // Earned splits three ways so the figure can be read honestly (Sam,
     // 2026-07-30): MEASURED (a MAP feed scored this college's actual against
@@ -4137,6 +4365,7 @@
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
+    if (c.capped) chips += '<span class="cplfund-chip" title="Maximum allocation applied — held to ' + fmtMoney(allocModel().cap) + ' for the window; the difference re-splits across the other colleges">⬇</span>';
     // One-click opt-in entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused, so a college admin doesn't have to expand-then-hunt.
     // Public + private; hidden once opted in. Not a CURATE_ATTR, so it survives the
@@ -4275,6 +4504,17 @@
           propShare + " for the window &mdash; topped up to the " + fmtMoney(m.floor) +
           " minimum-viable floor. Targets above stay scaled to this college&#39;s own PRE-FLOOR share of statewide " + basisLabel() + " &mdash; the floor raises the funding, not the bar.</div>";
     }
+    // The ceiling's mirror of the floor line. Both name the pure proportional
+    // share first, so the two read as one pair rather than two unrelated notes.
+    var capLine = "";
+    if (c.capped) {
+      capLine = '<div><span class="dk">⬇ Maximum applied:</span> a pure proportional share would be ' +
+        fmtMoney((c.size_pct || 0) * m.net) + " for the window &mdash; held to the " + fmtMoney(m.cap) +
+        " maximum allocation" + (c.rural && ra ? " (inclusive of this college&#39;s guaranteed rural allowance)" : "") +
+        ". The difference re-splits across the colleges below the maximum. Targets above stay scaled to this " +
+        "college&#39;s own PRE-CAP share of statewide " + basisLabel() +
+        " &mdash; the maximum lowers the funding, not the bar.</div>";
+    }
     var ruralLine = "";
     if (c.rural && ra) {
       var raSplit = ra.floorFill > 0.5
@@ -4344,7 +4584,7 @@
       fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
       fmtPct(c.size_pct, 3) + " of the statewide " + fmtInt(totalSize()) + " " + basisLabel() +
       (usesFtes() ? ' <span class="dk">&mdash; ' + fmtInt(c.headcount) + " headcount, context only</span>" : "") + "</div>" +
-      floorLine + ruralLine + eligLine + noteLine +
+      floorLine + capLine + ruralLine + eligLine + noteLine +
       prio + county +
       '<div><span class="dk">District:</span> ' + esc(c.district || "—") + "</div>" +
       "</div></td></tr>";
@@ -5520,6 +5760,7 @@
     if (!mount) return;
     ensureCss();
     ensureDraftChip();
+    paintTitleLink();
     _allocCache = null;
     _earnCache = null;
     var d = base();
@@ -5536,7 +5777,7 @@
     // future entry point) — the tab being hidden is not on its own a guarantee.
     if (state.subview === "report" && publicMode()) state.subview = "model";
     if (state.subview === "report") {
-      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + sanityLinkHtml() + reportViewHtml() + "</div>";
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + reportViewHtml() + "</div>";
       wire();
       return;
     }
@@ -5544,7 +5785,7 @@
     // receipt + progress on the three priority outcomes. Separate appropriation from
     // the $35M model, so it gets its own body (control strip + sub-tabs stay).
     if (state.subview === "grants") {
-      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + sanityLinkHtml() + grantsViewHtml() + "</div>";
+      mount.innerHTML = '<div class="cplfund">' + controlStripHtml() + subviewTabsHtml() + grantsViewHtml() + "</div>";
       wire();
       return;
     }
@@ -5564,7 +5805,6 @@
     mount.innerHTML = '<div class="cplfund">' +
       controlStripHtml() +
       subviewTabsHtml() +
-      sanityLinkHtml() +
       '<div class="cplfund-src">Model version ' + esc(d.model_version) + " &middot; " + esc(d.source) + "</div>" +
       authbarHtml() +
       section("window", "Funding window", yearControlsHtml() + basisNoteHtml()) +
@@ -5589,7 +5829,7 @@
           "while both years&#39; priority shares sum to 100%; Total is the full " + esc(windowLabel()) + " window. ") +
       "Elig = a numbered pie, one sector per tracked baseline requirement above (1 = coordinator, 2 = participation, 3 = Veteran Star ≥75% JSTs); " +
       "each sector turns green when the college satisfies it — a fully green glyph = all met (informational in this draft). " +
-      "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied. " +
+      "🌲 = rural-flagged (allowance below); ⬆ = minimum-viable floor applied; ⬇ = held to the maximum allocation. " +
       "&ldquo;Working adults&rdquo; = 2022 estimated working adults with some college, no degree, in the college&#39;s county.</div>" +
       headcountSourceHtml() +
       actualsFootHtml() +
