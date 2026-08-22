@@ -51,7 +51,11 @@ a:hover{text-decoration-thickness:2px}
 /* ── masthead ─────────────────────────────────────────────────────────── */
 header{border-bottom:1px solid var(--border); background:var(--surface-opaque)}
 .head{padding:clamp(30px,6vw,56px) 0 clamp(24px,4vw,36px)}
-.lede{font-size:clamp(1.05rem,1rem + .45vw,1.28rem); color:var(--text-body); max-width:58ch; margin-top:.7em}
+.head-top{display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between;
+  gap:10px 20px; margin-bottom:.55em}
+.head-top .eyebrow{margin:0}
+.head-top .meta{margin-top:0; justify-content:flex-end}
+@media (max-width:560px){.head-top{justify-content:flex-start} .head-top .meta{justify-content:flex-start}}
 .meta{display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; max-width:none}
 .tag{display:inline-flex; align-items:center; gap:7px; border:1px solid var(--border-strong);
   border-radius:999px; padding:4px 13px; font-size:.8rem; color:var(--text-muted); background:var(--surface-subtle)}
@@ -183,17 +187,16 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <header>
   <div class="wrap head">
-    <p class="eyebrow">CPL Implementation Funding · Chancellor&rsquo;s Office</p>
-    <h1>How this funding model works</h1>
-    <p class="lede">A plain walk-through of how the one-time $35&nbsp;million becomes a dollar figure for
-      each of the 115 colleges &mdash; what is set aside first, how each college&rsquo;s share is worked out,
-      what a college has to do to qualify, and what it has to show to keep the money.</p>
-    <div class="meta">
-      <span class="tag draft">⚠ Draft model &mdash; not adopted policy</span>
-      <span class="tag">Scenario <b>1</b></span>
-      <span class="tag">Window <b>2026-27 &amp; 2027-28</b></span>
-      <span class="tag">Figures as of <b>21 Aug 2026</b></span>
+    <div class="head-top">
+      <p class="eyebrow">CPL Implementation Funding · Chancellor&rsquo;s Office</p>
+      <div class="meta">
+        <span class="tag draft">⚠ Draft model &mdash; not adopted policy</span>
+        <span class="tag">Scenario <b>1</b></span>
+        <span class="tag">Window <b>2026-27 &amp; 2027-28</b></span>
+        <span class="tag">Figures as of <b>21 Aug 2026</b></span>
+      </div>
     </div>
+    <h1>How this funding model works</h1>
   </div>
 </header>
 
@@ -201,10 +204,6 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <section>
   <div class="wrap">
-    <div class="sec-head">
-      <hr class="rule">
-      <h2>The short version</h2>
-    </div>
     <p>The Chancellor&rsquo;s Office holds back what it needs for staff and for statewide projects, sets a
       little aside for noncredit campuses and for rural colleges, and shares the rest among the
       115&nbsp;colleges <strong>in proportion to how much teaching each one does</strong>. No college is
