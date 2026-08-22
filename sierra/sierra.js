@@ -516,7 +516,11 @@
   // Request body — ctx rides ONLY when the ?ctx=external variant is active, so
   // a normal visit's payload is byte-identical to pre-v27 (fail-open).
   function buildPayload(query) {
-    var p = { query: query, session_id: sessionId(), history: convo.slice(), audience: audience };
+    // `surface` is the CALLER; `ctx` is the contacts gate. The vendor iframe is
+    // this same public page with ctx=external, so it keeps surface 'public' —
+    // two axes, deliberately not collapsed into one.
+    var p = { query: query, session_id: sessionId(), history: convo.slice(),
+              audience: audience, surface: 'public' };
     if (ctxVariant) p.ctx = ctxVariant;
     return p;
   }

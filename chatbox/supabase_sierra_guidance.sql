@@ -69,6 +69,37 @@ create table if not exists public.sierra_guidance (
   -- row to 'display' is a curator decision, made in the Training tab.
   kind text not null default 'directive'
     constraint sierra_guidance_kind_ck check (kind in ('directive', 'display')),
+  -- WHICH CALLER this rule applies to. NULL = every surface, which is what all 13
+  -- existing rows are, so adding this column changed no behavior by itself.
+  --
+  -- WHY IT EXISTS: a rule can name a fact only one surface carries. Row 15ec666b
+  -- says "when using Sierra from the My College COBI tab, confine your answers to
+  -- the selected institution" and shipped to ALL SIX callers, where its opening
+  -- condition is unevaluable — the public page, the Fact Sheet drawer,
+  -- map.rccd.edu, the college landing pages, the vendor iframe, and cpl_memory.js,
+  -- which is not a conversation at all: it borrows the model to DRAFT a row.
+  --
+  -- ⚠ NULL IS THE DEFAULT AND MUST STAY SO. The function reads
+  -- `surface is null or surface = <this one>`; an `= <this one>` would drop every
+  -- unscoped rule — i.e. everything the team has ever written — silently.
+  --
+  -- ⚠ CONSTRAINED ON PURPOSE: a typo'd surface scopes a rule to NOTHING, and a
+  -- rule that reaches no surface is invisible and unfalsifiable. This list must
+  -- stay equal to KNOWN_SURFACES in the edge function; tests/sierra_surface.test.js
+  -- pins them, because drift lets a curator scope a rule to a surface no caller
+  -- ever sends.
+  --
+  -- Vocabulary is the CALLER — not the audience (`audience`) and not the contacts
+  -- gate (`ctx`). Three separate axes, which is why this is a column and not a
+  -- `mode` enum that would bundle them and then need exceptions.
+  surface text
+    constraint sierra_guidance_surface_ck check (surface is null or surface in (
+      'my-college',      -- the My College tab's embedded assistant
+      'cobi-assistant',  -- the dedicated CPL Assistant tab in COBI
+      'public',          -- the standalone sierra/ page (incl. the ctx=external embed)
+      'fact-sheet',      -- the Fact Sheet drawer
+      'memory-autogen'   -- cpl_memory.js drafting a memory row: not a conversation
+    )),
   note text                                   -- why the rule exists (optional)
     constraint sierra_guidance_note_len check (note is null or char_length(note) <= 300),
   created_by text

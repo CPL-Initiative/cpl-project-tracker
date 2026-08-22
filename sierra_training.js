@@ -644,7 +644,7 @@
   // Guidance rows (Phase 2). Soft-fails to null so a guidance hiccup never
   // takes down the queue/miner panes.
   function loadGuidance() {
-    var url = REST + "/sierra_guidance?select=id,rule,kind,active,note,created_by,created_at,updated_by,updated_at"
+    var url = REST + "/sierra_guidance?select=id,rule,kind,surface,active,note,created_by,created_at,updated_by,updated_at"
       + "&order=created_at.desc&limit=100";
     return fetch(url, { headers: authHeaders() }).then(function (r) {
       if (!r.ok) throw new Error("guidance " + r.status);
@@ -655,7 +655,79 @@
     var s = getSession();
     return (s && s.email) || null;
   }
-  function addGuidance(rule, note, root, kind) {
+  /* WHERE a rule applies. "" (stored NULL) = everywhere, which is what every rule
+   * written before 2026-08-22 is, and the right default: a rule is usually about
+   * what Sierra SAYS, not about who is asking.
+   *
+   * ⚠ THE LABELS ARE THE PLACES A READER RECOGNIZES, not the internal keys. A
+   * curator scoping a rule is thinking "this only makes sense on the My College
+   * tab", not "my-college".
+   *
+   * ⚠ MUST STAY EQUAL to KNOWN_SURFACES in the edge function and to the CHECK
+   * constraint on sierra_guidance.surface. A value in none of the three scopes a
+   * rule to nobody — invisible and unfalsifiable. tests/sierra_surface.test.js
+   * pins the other two; this list is pinned in tests/sierra_training_surface.test.js. */
+  var SURFACES = [
+    { k: "", label: "Everywhere (default)" },
+    { k: "my-college", label: "Only the My College tab" },
+    { k: "cobi-assistant", label: "Only the CPL Assistant tab" },
+    { k: "public", label: "Only the public Sierra page" },
+    { k: "fact-sheet", label: "Only the Fact Sheet drawer" },
+    { k: "memory-autogen", label: "Only when drafting a memory row" },
+  ];
+  function surfaceLabel(v) {
+    for (var i = 0; i < SURFACES.length; i++) if (SURFACES[i].k === (v || "")) return SURFACES[i].label;
+    // A value the UI does not know is a real finding, not a blank: say so rather
+    // than rendering it as "Everywhere", which is the one reading that is wrong.
+    return "Unknown surface: " + v;
+  }
+  function surfaceSelect(attr, cur) {
+    var h = "<select " + attr + ">";
+    for (var i = 0; i < SURFACES.length; i++) {
+      h += '<option value="' + esc(SURFACES[i].k) + '"'
+        + ((SURFACES[i].k === (cur || "")) ? " selected" : "") + ">"
+        + esc(SURFACES[i].label) + "</option>";
+    }
+    return h + "</select>";
+  }
+
+  /* Re-scope an EXISTING rule. This is the control that actually fixes the
+   * reported problem: row 15ec666b was written for the My College tab and has
+   * been reaching all six surfaces since it was created, and nothing in the UI
+   * could express that until now.
+   *
+   * ⚠ OPTIMISTIC LOCAL UPDATE ONLY AFTER THE WRITE LANDS. Painting first and
+   * reconciling later would show a rule as scoped while Sierra still reads it
+   * everywhere — the same "displayed state disagrees with sent state" shape as
+   * the bug this whole change came from.
+   *
+   * ⚠ An RLS-filtered write returns 200 with an EMPTY body, so "no row came
+   * back" is reported as a FAILURE rather than silently treated as success. */
+  function setGuidanceSurface(id, surface, root) {
+    var h = authHeaders();
+    h["Content-Type"] = "application/json";
+    h["Prefer"] = "return=representation";
+    return fetch(REST + "/sierra_guidance?id=eq." + encodeURIComponent(id), {
+      method: "PATCH", headers: h,
+      body: JSON.stringify({ surface: surface || null, updated_by: whoAmI(), updated_at: new Date().toISOString() }),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("scope " + r.status);
+      return r.json();
+    }).then(function (rows) {
+      var row = Array.isArray(rows) ? rows[0] : rows;
+      if (!row) throw new Error("no row updated — you may not have permission");
+      (state.guidance || []).forEach(function (g) {
+        if (String(g.id) === String(id)) g.surface = row.surface;
+      });
+      render(root);
+    }).catch(function (e) {
+      alert("Could not change where this instruction applies: " + (e && e.message)
+        + "\nIt is unchanged, and Sierra still sends it exactly as before.");
+      render(root);
+    });
+  }
+
+  function addGuidance(rule, note, root, kind, surface) {
     if (state.addBusy || !rule) return Promise.resolve();
     state.addBusy = true; render(root);
     var h = authHeaders();
@@ -669,6 +741,9 @@
         // request says what it means and a future default change cannot
         // silently re-file every new instruction as the other kind.
         kind: kind === "display" ? "display" : "directive",
+        // "" means everywhere -> NULL, never the empty string: the function reads
+        // `surface is null or surface = <this>`, and "" would match no surface.
+        surface: surface || null,
         note: note || null, created_by: whoAmI(), updated_by: whoAmI(),
       }),
     }).then(function (r) {
@@ -677,7 +752,7 @@
     }).then(function (rows) {
       var row = Array.isArray(rows) ? rows[0] : rows;
       if (row) (state.guidance = state.guidance || []).unshift(row);
-      state.draftRule = ""; state.draftNote = ""; state.draftKind = "directive";
+      state.draftRule = ""; state.draftNote = ""; state.draftKind = "directive"; state.draftSurface = "";
     }).catch(function () {
       alert("Could not add the rule — renew your reviewer sign-in from \u2139 About in the header and try again.");
     }).then(function () { state.addBusy = false; render(root); });
@@ -1212,7 +1287,18 @@
       + (guidKind(r) === "display"
         ? '<span class="sit-chip" title="A display rule: it shapes structured output (table columns, labels, ordering) rather than telling Sierra what to say. Display rules have their own budget and never take a slot from an instruction.">Display rule</span>'
         : "")
+      /* ⚠ A SCOPED RULE MUST SAY SO ON THE ROW. An instruction that reaches only
+       * one place looks identical to one that reaches all six, and the whole
+       * failure this column exists to fix was a rule quietly applying where its
+       * own opening condition could not be evaluated. Unscoped rows print
+       * nothing — six chips saying "Everywhere" is noise, not information. */
+      + (r.surface
+        ? '<span class="sit-chip" title="This instruction is only sent from one place. Everywhere else, Sierra never sees it.">'
+          + esc(surfaceLabel(r.surface)) + "</span>"
+        : "")
       + '<span class="sit-meta">' + esc(r.created_by || "—") + " · " + fmtWhen(r.created_at) + "</span>"
+      + '<label class="sit-meta" title="Where this instruction is sent. Narrow it only when the instruction names something one place has and the others do not.">'
+      + "Applies: " + surfaceSelect('data-guid-surface-row="' + esc(r.id) + '"', r.surface) + "</label>"
       + '<button class="sit-btn" data-guid-edit="' + esc(r.id) + '"'
       + ' title="' + esc(HELP.ruleEdit) + '">✏️ Edit</button>'
       + '<button class="sit-btn" data-guid-toggle="' + esc(r.id) + '"' + (state.guidBusy[r.id] ? " disabled" : "")
@@ -1673,6 +1759,10 @@
         + '<option value="directive"' + (state.draftKind === "display" ? "" : " selected") + ">Instruction</option>"
         + '<option value="display"' + (state.draftKind === "display" ? " selected" : "") + ">Display rule</option>"
         + "</select></label>"
+        + '<label class="sit-meta" title="Sierra is one assistant used in several places — the My College tab, the CPL Assistant tab, the public page, the Fact Sheet drawer, and when drafting a memory row. Most instructions belong everywhere. Narrow this only when the instruction names something one place has and the others do not — an instruction about \'the selected institution\' means nothing on a page where nothing is selected.">'
+        + "Applies: "
+        + surfaceSelect("data-guid-surface", state.draftSurface)
+        + "</label>"
         + '<button class="sit-btn sit-btn-primary" data-guid-add' + (state.addBusy ? " disabled" : "") + ">"
         + (state.addBusy ? "Adding…" : "➕ Add instruction") + "</button>"
         + "</div></div>";
@@ -1860,11 +1950,22 @@
     // No re-render on change: re-rendering here would rebuild the composer and
     // throw away the untyped-but-unsaved textarea state the drafts exist to keep.
     if (gk) gk.addEventListener("change", function () { state.draftKind = gk.value; });
+    var gs = root.querySelector("[data-guid-surface]");
+    // Same reasoning as the kind select: no re-render, or the unsaved draft dies.
+    if (gs) gs.addEventListener("change", function () { state.draftSurface = gs.value; });
     var ga = root.querySelector("[data-guid-add]");
     if (ga) ga.addEventListener("click", function () {
       var rule = (state.draftRule || "").trim();
       if (rule.length < 3) { alert("Type the instruction first (3–" + GUIDANCE_RULE_MAX + " characters)."); return; }
-      addGuidance(rule, (state.draftNote || "").trim(), root, state.draftKind);
+      addGuidance(rule, (state.draftNote || "").trim(), root, state.draftKind, state.draftSurface);
+    });
+    root.querySelectorAll("[data-guid-surface-row]").forEach(function (sel) {
+      sel.addEventListener("change", function (e) {
+        e.stopPropagation();
+        setGuidanceSurface(sel.getAttribute("data-guid-surface-row"), sel.value, root);
+      });
+      // The row head is clickable elsewhere; a select must not trigger it.
+      sel.addEventListener("click", function (e) { e.stopPropagation(); });
     });
     root.querySelectorAll("[data-guid-toggle]").forEach(function (btn) {
       btn.addEventListener("click", function (e) {

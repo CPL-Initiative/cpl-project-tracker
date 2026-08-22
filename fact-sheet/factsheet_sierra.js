@@ -223,7 +223,8 @@
         headers: { 'Content-Type': 'application/json', 'apikey': SUPABASE_ANON, 'Authorization': 'Bearer ' + SUPABASE_ANON },
         // Send the PRIOR turns; the function appends this query. The [] on turn 1
         // still opts us into the function's multi-turn mode (focusing follow-ups).
-        body: JSON.stringify({ query: query, session_id: sessionId(), history: API._convo.slice() }),
+        body: JSON.stringify({ query: query, session_id: sessionId(),
+                               history: API._convo.slice(), surface: 'fact-sheet' }),
       });
     } catch (e) {
       bubble.innerHTML = renderMarkdown('Sorry — I couldn’t reach the assistant. Please check your connection and try again.');

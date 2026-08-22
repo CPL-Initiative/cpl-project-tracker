@@ -2823,7 +2823,10 @@
   function mountAssistant(root) {
     var C = chatModule(), host = root && root.querySelector("#cb-assistant-mount");
     if (!C || !host) return false;
-    try { C.mountInto(host); return true; } catch (e) { return false; }
+    // "my-college" is this tab's SURFACE — see cpl_chat.js hostSurface. It is not
+    // the scope (that is setAssistantScope, and it changes as the reader picks a
+    // college); the surface is constant for this pane.
+    try { C.mountInto(host, "my-college"); return true; } catch (e) { return false; }
   }
 
   /* PURE-ish. This college's five headline figures, from the same two inputs
