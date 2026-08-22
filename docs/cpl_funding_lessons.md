@@ -1087,3 +1087,117 @@ the tabs — no session can, the sandbox is egress-blocked from the Pages host. 
 re-run `prototype/build_funding_model_explainer.js` and re-publish whenever the shares,
 factors or order change; and decide whether the Year-2 mirror should be on for
 Scenario 2.
+
+---
+
+## 2026-08-22 (later) — SkyBound: a maximum allocation, and what it actually buys
+
+Sam, four items: move the explainer link to the title row; add a **Max Funding**
+factor beside the $150K minimum, editable, set to **$400,000**; recalculate; and
+*"push back and simpler recommendations welcome."* (A fifth item — Title 5
+apportionment for CPL units — was explicitly thinking-only.)
+
+### The measurement came first, and it changed what there was to say
+
+Before touching the solver, the whole design space got measured over the live
+roster. That took one probe script and it is the most useful thing in this
+section:
+
+| Setting | Max | Min | Ratio | At min | At max |
+|---|---|---|---|---|---|
+| floor $150K, no ceiling (before) | $522,239 | $150,000 | 3.48x | 50 | — |
+| **floor $150K, ceiling $400K (shipped)** | **$400,000** | **$150,000** | **2.67x** | **45** | **6** |
+| floor $150K, ceiling $300K | $300,000 | $150,000 | 2.00x | 42 | 26 |
+| floor $150K, ceiling $250K | $250,000 | $150,000 | 1.67x | 30 | 56 |
+| **floor $200K, no ceiling** | **$375,285** | **$200,000** | **1.88x** | **93** | — |
+| floor $200K, ceiling $400K | $375,285 | $200,000 | 1.88x | 93 | 0 |
+| floor $250K | — | — | — | *unaffordable* | — |
+
+⭐ **A $400,000 ceiling is close to a no-op for equity.** It holds six colleges
+and moves **$262,241 — 1.1% of the pool**. Every dollar of it lands on the
+colleges ranked ~7–70; **the 45 colleges at the minimum gain nothing**, because
+a college pinned to the floor cannot be lifted by a ceiling. Biggest gainer:
+Santa Monica, **+$7,079** — the seventh-largest college in the state. Median
+gain among the 64 that gain: **$4,116**.
+
+⭐ **The floor is the equity lever, not the ceiling.** Raising the minimum to
+$200,000 reaches 1.88x on its own, and at that floor a $400,000 ceiling never
+binds — one dial instead of two. The floor's own limit is **~$210,785** (the
+average award); above that every college is at the average and the model has
+stopped being proportional at all. Recommendation put to Sam in the PR body;
+the ceiling shipped as asked either way, because it is a live-editable dial and
+the number is his to move.
+
+### The solver had to change shape (the durable half)
+
+Full write-up:
+[`methodology-a-second-bound-breaks-a-pin-as-you-go-solver`](kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md).
+In brief: a floor is **monotone** (pinning pushes everyone else DOWN, so a pin
+is safe forever); a ceiling runs the **other way** (pinning RELEASES money and
+pushes everyone else UP), and that can lift a college back off the floor.
+Measured: **5 of the 50 floored colleges come off it** at $400K. A second `if`
+in the old pin loop would have stranded them at $150,000 with the pool still
+balancing and every row still inside both bounds — invisible.
+
+`allocModel()` now bisects `lambda` in `W(c) = clamp(lambda*size, floor, cap)`,
+then computes the free rows with the waterfall's own arithmetic — so with the
+ceiling **off** it reproduces the old loop **bit-for-bit** (`0.000e+0`), which
+is what `C2` asserts against a transcription of the pre-change algorithm.
+
+### ⚠️ A bound on the money is a bound on the bar
+
+Capping the allocation without capping the target asks the capped college for
+~40% more CPL per dollar than anybody else, and has the state asking for more
+prior learning than it funds — the *"reads as withholding"* failure Sam ruled
+out three days earlier on this very page. `capScale()` scales a capped college's
+targets down with its money.
+
+⚠️ **Scale to the ceiling ÷ `plainRatio`, not to the ceiling.** Every unbound
+college already pays a **~9% rate discount** to fund the floor top-ups
+(`plainRatio` 0.913 on the FTES basis). Scaling to the bare ceiling would hand
+the six largest colleges the only unsubsidized rate in the state. The invariant
+the repo already had a test for is the right one: **cap ÷ target is ONE rate for
+every college above the minimum** — now `1.000000000000` on both bases, capped
+colleges included rather than excused.
+
+⚠️ **The clamp must reach BOTH target paths.** A CPL-FTES priority derives its
+target from `prioEntitlement`; a student-unit priority derives it from
+`size x target_rate` and never touches that function. A clamp in one place
+gives the same college two different answers depending on a **metric label** —
+the exact trap `metric-label-was-a-policy-switch` already records against this
+tab.
+
+### Smaller things worth keeping
+
+- ⚠️ **One new check could not fail.** "No rural row exceeds the ceiling" is
+  vacuous at $400K — no rural college comes within $200K of it — and it passed
+  against a deliberately broken `capFor()`. It now runs at a ceiling that binds
+  ($160K). Three of the other four breakages fired first time; this is the
+  fourth consecutive session to find a check that cannot fail.
+- ⚠️ **Two amount inputs in one box need distinct accessible names.** Both
+  inherited `aria-label="Funding amount"`, so a screen-reader user could not
+  tell the minimum from the maximum. `valueEd()` takes an `aria` override now.
+- ⚠️ **The explainer's worked example had to move.** It was "the largest
+  college, because its offer is the one not bent by the floor" — true while the
+  floor was the only bound. The largest college is now pinned to a round number
+  its own share cannot explain, so the walk-through would have shown a
+  subtraction the reader could not reproduce. It picks the largest **unbound**
+  college now (Santa Monica).
+- The explainer's typed `$5,060` effective rate is now **computed** from the
+  model. With the ceiling on it rises to **$5,159**, because the released money
+  goes back to exactly the colleges paying the floor discount — the clearest
+  one-line statement of what the ceiling does for everyone else.
+- Six colleges tie at the ceiling, so "sort by offer" no longer orders the
+  table; the explainer falls back to size, and the COBI sort test now asserts
+  the first row carries the **maximum total** rather than naming a college.
+- My College dropped *"a cap, not a cheque"* — Sam retired that framing on
+  2026-08-22, and "cap" is now literally a cap in this model. ⚠️ The replacement
+  comment quoted the retired phrase and broke the test that greps the source:
+  **a marker is load-bearing text, not prose.**
+
+### Where this leaves it
+
+The ceiling is built, tested (51 checks), editable, and reversible with one
+dial. **Next: Sam picks the number** — $400,000 as shipped, or the floor raise
+that does more with one lever. Either way the explainer artifact must be
+re-run and re-published to the same URL; it is a snapshot.

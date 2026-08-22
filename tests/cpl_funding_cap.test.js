@@ -12,11 +12,11 @@
 // pin-as-you-go is safe. A ceiling runs the other way: pinning at the ceiling
 // RELEASES money and pushes everyone else up, which can legitimately lift a
 // college back off the floor. So allocModel now bisects the single scalar that
-// defines the whole solution and honours both bounds at once.
+// defines the whole solution and honors both bounds at once.
 //
 // The load-bearing assertion in this file is C2: with the ceiling OFF, the new
 // solver reproduces the OLD pin loop bit-for-bit. Everything else is the
-// ceiling's own behaviour.
+// ceiling's own behavior.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_cap.test.js`).
 const { check, freshDom, boot, commit, D, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
@@ -48,11 +48,11 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   D.pool.cap_window > D.pool.floor_window);
 
 // ─────────────────────────────────────────────────────────────────────────────
-// C2 — BEHAVIOUR-NEUTRAL MIGRATION: ceiling off == the old pin loop, exactly
+// C2 — BEHAVIOR-NEUTRAL MIGRATION: ceiling off == the old pin loop, exactly
 // ─────────────────────────────────────────────────────────────────────────────
 // The pre-2026-08-22 algorithm, transcribed verbatim from git history. If the
 // bisection ever disagrees with it by a cent while the ceiling is off, the
-// migration was not behaviour-neutral and every college's number moved for a
+// migration was not behavior-neutral and every college's number moved for a
 // reason nobody chose.
 {
   const { window } = freshDom();

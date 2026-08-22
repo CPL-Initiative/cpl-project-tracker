@@ -3978,10 +3978,10 @@
   // So the bound sets are found by BISECTING the one scalar that defines the
   // whole solution: W(c) = clamp(lambda x size(c), floorFor(c), capFor(c)), and
   // Sum W is monotone increasing in lambda, so exactly one lambda spends the
-  // pool. Floor and ceiling are honoured simultaneously, in any combination.
+  // pool. Floor and ceiling are honored simultaneously, in any combination.
   // Once the sets are known the FREE rows are then computed with the waterfall's
   // own arithmetic (size / freeSize x remaining), so with the ceiling off this
-  // returns bit-for-bit what the pin loop returned — a behaviour-neutral
+  // returns bit-for-bit what the pin loop returned — a behavior-neutral
   // migration, asserted in tests/cpl_funding_cap.test.js.
   var _allocCache = null;
   // The solver, parameterized on the ceiling so allocModel can run it twice:
@@ -3997,7 +3997,7 @@
     function floorFor(c) { return isRural(c) ? Math.max(0, floor - ruralPer) : floor; }
     // …and the same slice comes off its ceiling, so the ceiling binds mainW +
     // ruralPer. Never below the row's own floor: a ceiling under the floor is a
-    // curator typo, and honouring it literally would pay a college less than the
+    // curator typo, and honoring it literally would pay a college less than the
     // minimum the model promises. The floor wins; capBelowFloor reports it.
     function capFor(c) {
       if (!(cap > 0)) return Infinity;
