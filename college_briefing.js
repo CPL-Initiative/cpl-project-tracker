@@ -1342,12 +1342,12 @@
    *     CAP earned against MAP performance, never a cheque in the post
    *
    * Both come from cpl_funding.js, which owns the model. NOTHING here
-   * re-derives a dollar figure. The allocation is a floor waterfall — every
-   * college below the $150K minimum-viable floor is pinned to it and the
-   * remainder re-splits across the rest, iteratively — with a guaranteed rural
-   * allowance layered on top. "headcount share x pool" reads perfectly
-   * plausible and is wrong for every college the waterfall touches, which is
-   * most of the small ones. So we call the model and render what it returns.
+   * re-derives a dollar figure. The allocation is TWO-SIDED and solved as one
+   * scalar: colleges below the minimum are pinned up to it, colleges above the
+   * maximum are held down to it, and the remainder re-splits over the rest.
+   * "size share x pool" reads perfectly plausible and is wrong for every
+   * college either bound touches — which is most of the small ones and the six
+   * largest. So we call the model and render what it returns.
    */
   function fundingModule() {
     var M = window.CPL_FUNDING_TAB;
@@ -1952,9 +1952,6 @@
             + "out above the maximum, so it is held there and the difference re-splits across the other colleges. "
             + "Its performance targets scale down with it, so it earns at the same rate as every other college "
             + "above the minimum.");
-        }
-        if (f.alloc.rural_w) {
-          bits.push("Includes <b>" + money(f.alloc.rural_w) + "</b> of guaranteed rural allowance, which is not performance-gated.");
         }
         if (f.alloc.gate_blocked) {
           bits.push("<b>Participation requirements are outstanding</b>" +

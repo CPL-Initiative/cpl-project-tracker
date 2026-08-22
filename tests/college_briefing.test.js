@@ -567,7 +567,7 @@ check("funding: a college held to the maximum is told where the difference went"
 // PROPORTIONAL number, and it is wrong for every college the waterfall pins to
 // the floor. Guard the absence of a second implementation.
 check("funding: no re-derived allocation arithmetic in the briefing",
-  !/headcount_pct|floor_window|ruralPerCollege|23240308|0\.0183/.test(briefingCode),
+  !/headcount_pct|floor_window|ruralPerCollege|ruralAlloc|23240308|24240308|0\.0183/.test(briefingCode),
   "the allocation comes from cpl_funding.js via _alloc(); a second implementation drifts");
 
 // ── Part H — the funding section renders end-to-end ──
@@ -579,9 +579,11 @@ wf.cplCollegeShort = S;
 wf.CPL_FUNDING = jw.window.CPL_FUNDING;
 wf.CPL_FUNDING_ESS = { n_statewide_credentials: 84 };
 wf.CPL_FUNDING_TAB = {
-  _alloc: function () { return { total: 150000, floored: true, rural_w: 76923, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
+  // Shape matches the post-2026-08-22 model: no rural_w component, floor $175K.
+  _alloc: function () { return { total: 175000, floored: true, gate_blocked: true, gate_missing: ["a CPL Coordinator"] }; },
   _grant: FAKE._grant, _ess: FAKE._ess, _isRural: function () { return true; },
-  _district: function () { return "Kern CCD"; }, _model: function () { return { floor: 150000 }; }
+  _district: function () { return "Kern CCD"; },
+  _model: function () { return { floor: 175000, cap: 400000 }; }
 };
 const B = wf.CPL_COLLEGE_BRIEFING;
 B._state.funding = "ready";
@@ -595,10 +597,13 @@ const fr = wf.document.getElementById("college-briefing-root");
 B.render(fr);
 const ftxt = fr.textContent;
 check("render: the seed grant appears as money", /\$50,000/.test(ftxt));
-check("render: the allocation appears as money", /\$150,000/.test(ftxt));
+check("render: the allocation appears as money", /\$175,000/.test(ftxt));
 check("render: a floored college is TOLD it is at the floor, not left to infer",
   /minimum-viable floor/.test(ftxt) && /not.{0,3} its share of the pool/i.test(ftxt));
-check("render: the guaranteed rural allowance is named", /rural allowance/.test(ftxt) && /\$76,923/.test(ftxt));
+// The rural allowance is retired (Sam, 2026-08-22) — a briefing that still
+// named it would promise a college money that no longer exists.
+check("render: no retired rural allowance is still promised",
+  !/rural allowance/.test(ftxt) && !/\$76,923/.test(ftxt));
 check("render: an outstanding participation requirement is surfaced",
   /Participation requirements are outstanding/.test(ftxt) && /CPL Coordinator/.test(ftxt));
 check("render: the ESS outcomes are listed", fr.querySelectorAll(".cb-ess-list li").length === 3);
@@ -1183,9 +1188,16 @@ JOIN_CASES.forEach(function (c) {
 FUND._setScenario({ pool: { cap_window: 0 } });
 FUND._model();
 const mtsacOpen = FUND._alloc("Mt San Antonio");
-check("(P) Mt. SAC's uncapped allocation matches the Sep-BOG cross-check ($522,239)",
-  !!mtsacOpen && Math.round(mtsacOpen.total) === 522239,
-  "the floor waterfall is unchanged underneath the ceiling");
+// ⚠ The Sep-BOG cross-check figure MOVED, and legitimately: it was derived when
+// the college pool was $23,240,308 behind a $150K floor. Retiring the rural
+// carve-out folded $1M back in and the floor rose to $175K (2026-08-22), so the
+// largest college's uncapped share is now $471,834. Re-derived here from the
+// pool rather than re-typed, so the NEXT pool change fails loudly instead of
+// quietly agreeing with a stale literal.
+check("(P) Mt. SAC's uncapped allocation is its share of the CURRENT pool",
+  !!mtsacOpen && Math.round(mtsacOpen.total) === 471834 &&
+  Math.round(mtsacOpen.total) > 400000,
+  "the waterfall still runs underneath the ceiling; only the pool and floor moved");
 FUND._setScenario({});
 FUND._model();
 const mtsac = FUND._alloc("Mt San Antonio");

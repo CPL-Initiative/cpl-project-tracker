@@ -29,89 +29,20 @@ const {
 // first" for the 3 rural colleges already above the floor. O3 = an empty rural
 // roster stranded the $1M carve-out.
 // ─────────────────────────────────────────────────────────────────────────────
+// O1/O2/O3 — RETIRED with the rural carve-out (Sam, 2026-08-22). These covered
+// the guaranteed allowance in the drill-in, the floor-fill hover, and returning
+// the $1M to the main pool when the roster was cleared. The mechanism is gone
+// and its absence is guarded in tests/cpl_funding_rural.test.js. The one check
+// worth keeping is O2b, which was never about rural at all: the SYSTEM row's
+// per-priority cell must render without a per-college `c`.
 {
-  // O1 — drill-in per-priority earned includes the guaranteed rural in FULL.
-  const { window } = freshDom();
-  window.CPL_FUNDING_PERF = { as_of: "2026-07-28", suppress_below: 5,
-    statewide: { p3: 999999 }, colleges: {}, unmatched: {} };   // rural colleges post nothing
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  T._setShared({ yearPriorities: { "1": { "2": { metric: "Headcount with CPL Matched in MAP and MIS" } } } });
-  T.render();
-  const sh = window.CPL_FUNDING.colleges.find(function (c) { return c.college === "Shasta"; });
-  window.eval('CPL_FUNDING_TAB._state.open["c:' + sh.order + '"] = true;');
-  T.render();
-  const detail = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-detail")).find(function (tr) { return /Shasta/.test(tr.textContent) || tr.textContent.indexOf("Rural allowance") !== -1; });
-  check("O1: a rural college's drill-in earned lines disclose the guaranteed rural",
-    !!detail && detail.textContent.indexOf("guaranteed rural") !== -1);
-  // Sum the drill-in per-priority earned dollars for the viewed year; it must equal
-  // the row's Year-1 earned (ey1) — the rural is added in full, not dropped to $0.
-  const earnedNums = (detail.textContent.match(/earned:\s*\$([\d,]+)/g) || [])
-    .map(function (s) { return Number(s.replace(/[^\d]/g, "")); });
-  const a = T._alloc("Shasta");
-  const sumDrill = earnedNums.reduce(function (s, n) { return s + n; }, 0);
-  check("O1: Σ drill-in earned (viewed year) = the row's Year-1 earned (guaranteed rural not dropped)",
-    earnedNums.length === 3 && Math.abs(sumDrill - a.ey1) < 3);
-  // P1 (any-transcribed) is measurable + Shasta posted nothing → status none → the
-  // MAIN part earns $0, so the drill-in earned must equal exactly its guaranteed
-  // rural slice (a.p1 × rural_w / w). Before the fix this line showed $0.
-  check("O1: a none-status priority's drill-in earned = its guaranteed rural slice, not $0 (the bug)",
-    earnedNums[0] > 1000 && Math.abs(earnedNums[0] - (a.p1 * a.rural_w / a.w)) < 50);
-  delete window.CPL_FUNDING_PERF;
-}
-{
-  // O2 — the cell hover only claims floor-funding when floorFill actually happens.
   const { window } = freshDom();
   const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const copperTitle = (rows.find(function (tr) { return /Copper Mountain/.test(tr.textContent); })
-    .querySelector("td.cf-prio").getAttribute("title") || "");           // floored → combined reason
-  // Whether an above-floor rural college EXISTS depends on the pool size (none do
-  // at the Sept-2026 amendment pool), so assert the defect O2 actually fixed: the
-  // hover's floor-funding claim matches each rural college's REAL floor-fill state.
-  const mdlO2 = T._model();
-  const mismatched = D.colleges.filter(function (c) { return c.rural; }).filter(function (c) {
-    const tr = rows.find(function (r) { return r.textContent.indexOf(c.display || c.college) !== -1; });
-    const title = tr ? (tr.querySelector("td.cf-prio").getAttribute("title") || "") : "";
-    const fills = Math.max(0, mdlO2.floor - (mdlO2.W[c.college] || 0)) > 0.5;
-    const claimsFloor = /funds this college.{0,3}s floor first/.test(title) || /funded partly by/.test(title);
-    const claimsOnTop = /already meets the floor/.test(title);
-    return fills ? (!claimsFloor || claimsOnTop) : (!claimsOnTop || claimsFloor);
-  }).map(function (c) { return c.college; });
-  check("O2: every rural college's hover matches its ACTUAL floor-fill state (no false 'funds the floor first')",
-    D.colleges.filter(function (c) { return c.rural; }).length === 13 && mismatched.length === 0);
-  check("O2: a floored rural college's hover states the floor is funded partly by its rural allowance",
-    /funded partly by/.test(copperTitle) && /rural allowance/.test(copperTitle));
-  // O2b — the SYSTEM row hover must not crash / must not carry per-college reasons.
   const sysCell = doc.querySelector("#cplFundTable tr.cplfund-systemrow td.cf-prio");
   check("O2b: the SYSTEM row per-priority cell renders (no null-c crash) at the base rate",
     !!sysCell && /statewide base rate|statewide base/.test(sysCell.getAttribute("title") || ""));
 }
-{
-  // O3 — clearing the whole rural roster returns the $1M to the main pool (no stranding).
-  const { window } = freshDom();
-  const doc = boot(window);
-  const T = window.CPL_FUNDING_TAB;
-  const D = window.CPL_FUNDING;
-  const wholePool = (D.pool.one_time_2026_27 -
-    D.pool.admin_cost - D.pool.scaling_projects_tech) - D.pool.feeder_carveout;   // 26.24M
-  const clear = {}; D.colleges.filter(function (c) { return c.rural; }).forEach(function (c) { clear[c.college] = false; });
-  T._setScenario({ ruralOverrides: clear });
-  T.render();
-  check("O3: with an empty rural roster, netCollege reclaims the carve-out (= the whole college pool)",
-    Math.abs(T._netCollege() - wholePool) < 1);
-  const sumTotals = D.colleges.reduce(function (s, c) { return s + T._alloc(c.college).total; }, 0);
-  check("O3: Σ college totals = the whole pool — the $1M carve-out is not stranded",
-    Math.abs(sumTotals - wholePool) < 5);
-  // And the normal roster still distributes exactly the carve-out (no change).
-  T._setScenario({});
-  T.render();
-  check("O3: default roster unchanged — netCollege still = main pool (carve-out distributed)",
-    Math.abs(T._netCollege() - (wholePool - D.pool.rural_carveout)) < 1);
-}
 
-// ─────────────────────────────────────────────────────────────────────────────
 // Part P — display rename (SkyHighness, 2026-07-29): show the current college
 // names ("Coalinga College", "Imperial Valley College") while keeping the MIS
 // short name as the JOIN KEY (perf actuals / short-name / rural / note lookups).
@@ -140,11 +71,14 @@ const {
   check("P: searching the display name ('Imperial Valley') matches exactly that row",
     shown.length >= 1 && shown.every(function (r) { return /Imperial Valley College/.test(r.textContent); }));
   T._state.q = ""; T.render();
-  // Both renamed colleges are rural → the rural section shows the display names too.
-  const ruralSec = doc.querySelector('details.cplfund-sec[data-sec="rural"]');
-  check("P: the rural section shows the display names",
-    ruralSec.textContent.indexOf("Coalinga College") !== -1 &&
-    ruralSec.textContent.indexOf("Imperial Valley College") !== -1);
+  // The rural section that used to re-show these display names is retired
+  // (2026-08-22). The display-name rename still has to hold everywhere it
+  // renders, so assert it against a surface that survived: the CSV export.
+  const csvP = T._csv();
+  check("P: the display names carry into the CSV export",
+    csvP.indexOf("Coalinga College") !== -1 && csvP.indexOf("Imperial Valley College") !== -1);
+  check("P: …and the retired rural section is genuinely gone",
+    !doc.querySelector('details.cplfund-sec[data-sec="rural"]'));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -295,8 +229,8 @@ const {
     p.scaling_projects_tech === AMEND_PROJECTS);
   check("R3: college_funding_before_feeder mirrors the institution total",
     p.college_funding_before_feeder === AMEND_INSTITUTIONS);
-  check("R4: both $1M earmarks are carved from INSIDE the institution total",
-    p.feeder_carveout === 1000000 && p.rural_carveout === 1000000);
+  check("R4: the one surviving $1M earmark is carved from INSIDE the institution total",
+    p.feeder_carveout === 1000000 && p.rural_carveout === undefined);
   check("R4: the data file records the amendment as the authority",
     /20260729_CPL_Amendment_Sep_BOG/.test(dataSrc) && /BOG budget amendment/i.test(dataSrc));
 
@@ -316,10 +250,12 @@ const {
   const T = window.CPL_FUNDING_TAB;
   const p = window.CPL_FUNDING.pool;
   const institutions = p.one_time_2026_27 - p.admin_cost - p.scaling_projects_tech;
-  const heroPool = institutions - p.feeder_carveout;          // colleges, incl. rural
-  const mainPool = heroPool - p.rural_carveout;               // proportional split
+  // One earmark now — the rural carve-out was retired 2026-08-22 and its $1M
+  // folded back in, which is what funded the floor's rise to $175,000.
+  const heroPool = institutions - p.feeder_carveout;
+  const mainPool = heroPool;
 
-  check("R6: netCollege() is the institution total less BOTH earmarks",
+  check("R6: netCollege() is the institution total less the ONE remaining earmark",
     Math.abs(T._netCollege() - mainPool) < 0.5);
 
   let sum = 0;
@@ -327,9 +263,8 @@ const {
   check("R7: Σ college window totals == the hero pool (conservation across the carve-outs)",
     Math.abs(sum - heroPool) < 1);
 
-  // Under this pool the amendment-era award range is avg 210,785 / min 150,000 /
-  // max 623,871 — asserted by DERIVATION (never hardcoded), so a future pool
-  // change re-proves the relationships instead of failing on a stale literal.
+  // Asserted by DERIVATION (never hardcoded), so a floor/ceiling change re-proves
+  // the relationships instead of failing on a stale literal.
   const totals = window.CPL_FUNDING.colleges.map(function (c) { return T._alloc(c.college).total; });
   const min = Math.min.apply(null, totals), max = Math.max.apply(null, totals);
   check("R8: the average award is the hero pool over the 115 colleges",

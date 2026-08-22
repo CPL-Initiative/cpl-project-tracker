@@ -95,13 +95,15 @@ const {
   const totTxt = earnRow.querySelector("td.tot").textContent;
   check("E: the Total cell carries BOTH the cap and the earned figure",
     (totTxt.match(/\$/g) || []).length >= 2 && /earned/i.test(totTxt));
-  check("E: the Total cell hover breaks earned into measured / advance / guaranteed",
-    /measured|advance|guaranteed/.test(earnRow.querySelector("td.tot").getAttribute("title") || ""));
+  check("E: the Total cell hover breaks earned into measured / advance",
+    /measured|advance/.test(earnRow.querySelector("td.tot").getAttribute("title") || ""));
 
-  // Earned splits three ways and the parts must reconstitute the whole — this is
-  // what keeps an ADVANCE from silently reading as achievement.
-  check("E: earned splits into measured + advance + guaranteed, summing to earned_total",
-    Math.abs((la.earned_measured + la.earned_advance + la.earned_guaranteed) - la.earned_total) < 1);
+  // Earned splits TWO ways since the guaranteed rural slice was retired
+  // (2026-08-22), and the parts must reconstitute the whole — this is what keeps
+  // an ADVANCE from silently reading as achievement.
+  check("E: earned splits into measured + advance, summing to earned_total",
+    la.earned_guaranteed === undefined &&
+    Math.abs((la.earned_measured + la.earned_advance) - la.earned_total) < 1);
   check("E: the data-gap priorities land in the ADVANCE bucket, not measured",
     la.earned_advance > 0);
 

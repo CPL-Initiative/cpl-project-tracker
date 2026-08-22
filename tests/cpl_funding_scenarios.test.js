@@ -285,17 +285,20 @@ const {
   const lines = csv.split("\r\n");
   check("CSV: meta line + header + one line per college + SYSTEM",
     lines.length === 2 + D.colleges.length + 1 && lines[0].indexOf("DRAFT model") !== -1);
-  check("CSV: header carries County + per-priority target/actual + eligibility + rural/floor",
+  check("CSV: header carries County + per-priority target/actual + eligibility + floor/maximum",
     lines[1].indexOf("County") !== -1 && lines[1].indexOf("P1 target") !== -1 && lines[1].indexOf("P1 actual") !== -1 &&
-    lines[1].indexOf("Rural") !== -1 && lines[1].indexOf("Floor / maximum applied") !== -1);
+    lines[1].indexOf("Floor / maximum applied") !== -1);
+  // The Rural column went with the carve-out (2026-08-22) — guard its absence so
+  // it cannot come back as an empty column nobody notices.
+  check("CSV: no Rural column survives", lines[1].split(",").indexOf("Rural") === -1);
   // Counted against the model rather than a named college: the ceiling's bite
   // depends on the pool and the roster, so a literal name here would break for
   // a reason that has nothing to do with the CSV.
   check("CSV: every college held to the ceiling carries the 'maximum' flag",
     T._model().cappedCount > 0 &&
     lines.filter(function (l) { return /,maximum,/.test(l); }).length === T._model().cappedCount);
-  check("CSV: a rural floored college carries its flags",
-    lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("rural") !== -1 && l.indexOf("floor") !== -1; }));
+  check("CSV: a floored college carries its flag",
+    lines.some(function (l) { return l.indexOf("Feather River") !== -1 && l.indexOf("floor") !== -1; }));
   check("CSV: SYSTEM row includes the noncredit-inclusive headcount",
     lines[lines.length - 1].indexOf(String(D.system.headcount + D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0))) !== -1);
   check("CSV: no HTML entities leak", csv.indexOf("&lt;") === -1 && csv.indexOf("<span") === -1);

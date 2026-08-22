@@ -1,7 +1,7 @@
 ---
 title: Reuse the model, not its formula — a derivation can be wrong for cases its special case never touches
 created: 2026-08-11
-updated: 2026-08-11
+updated: 2026-08-22
 tags: [methodology, funding, data-integrity, measurement, reuse]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -34,11 +34,15 @@ That warning was right, and understated.
 
 ## The claim
 
-The allocation is not `share × pool`. It is an **iterative floor waterfall**:
-every college whose proportional share falls below the $150K minimum-viable
-floor is pinned to the floor, the remainder re-splits across the rest, and the
-pass repeats until it settles — with a guaranteed rural allowance layered on
-top. Measured against the live model:
+The allocation is not `share × pool`. It is a **two-sided bounded split**,
+solved for a single scalar: a college whose proportional share falls below the
+minimum is pinned up to it, a college above the maximum is held down to it, and
+the remainder re-splits across the rest. (Through 2026-08-22 this was an
+iterative floor waterfall with a guaranteed rural allowance layered on top; the
+allowance is retired and the second bound is why an iterative pin no longer
+works — see
+[[docs/kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver]].)
+The point below is unchanged, and the figures are from the model of the day:
 
 | College | Flat proportional | Model | |
 |---|---:|---:|---|

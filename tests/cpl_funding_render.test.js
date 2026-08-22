@@ -90,7 +90,9 @@ const {
   check("feeder carve-out card is a deduction", !!doc.querySelector(".cplfund-card.feeder"));
   check("renders 3 priority cards", doc.querySelectorAll(".cplfund-prio .p").length === 3);
   const tables = doc.querySelectorAll(".cplfund-table");
-  check("three tables: college + feeder + rural allowance", tables.length === 3);
+  // Two tables since the Rural section was retired (2026-08-22): colleges + the
+  // noncredit feeder campuses.
+  check("two tables: college + noncredit feeder", tables.length === 2);
   check("renders one row per college", tables[0].querySelectorAll("tbody tr.cplfund-row").length === D.colleges.length);
   // Sam, 2026-08-04: advisory noncredit-FTES companion line in the size cell + the DeAnza display override.
   {
@@ -292,10 +294,11 @@ const {
   const P = D.pool;
 
   // Conservation: with NO custom boxes and nothing hidden, netCollege equals the
-  // baked one_time − admin − scaling − feeder − rural formula (the 2025-26 remaining
-  // is NOT a revenue source of the $35M model — Sam, 2026-07-29).
+  // baked one_time − admin − scaling − feeder formula (the 2025-26 remaining is
+  // NOT a revenue source of the $35M model — Sam, 2026-07-29; the rural term
+  // came out when the carve-out was retired, 2026-08-22).
   const bakedNet = P.one_time_2026_27 - P.admin_cost -
-    P.scaling_projects_tech - P.feeder_carveout - P.rural_carveout;
+    P.scaling_projects_tech - P.feeder_carveout;
   check("net college funding matches the baked formula (conservation)", Math.round(T._netCollege()) === Math.round(bakedNet));
   const gross = P.one_time_2026_27;
   check("Total Available Funding card carries the single revenue source ($35M one-time)",
@@ -357,19 +360,21 @@ const {
   const doc = boot(window);
   check("two year dropdowns (2-year window)", doc.querySelectorAll('select[data-edit="year"]').length === 2);
   // Sam, 2026-08-04: the hero is now the INSTITUTION total — the college pool (incl.
-  // the folded rural allowance) PLUS the $1M noncredit feeder carve-out = the
-  // amendment's $25,240,308. The note still breaks out the main pool + rural + NC.
-  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // college pool (main+rural)
+  // PLUS the $1M noncredit feeder carve-out = the amendment's $25,240,308. The
+  // note breaks out the college pool + NC (the rural line went with the
+  // carve-out, 2026-08-22).
+  const net = D.pool.college_funding_before_feeder - D.pool.feeder_carveout;       // the college pool
   const inst = D.pool.college_funding_before_feeder;                               // + feeder = institution total
-  const mainNet = net - D.pool.rural_carveout;                                     // main proportional pool
+  const mainNet = net;
   const perYear = net / 2;                                                         // college per-year tranche
   check("hero = the institution total incl. the noncredit feeder carve-out ($" + inst.toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst.toLocaleString("en-US")) !== -1);
   check("hero label states 2 annual tranches of the per-year amount ($" + Math.round(perYear).toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
-  check("hero note breaks out the main proportional pool + the rural allowance",
+  check("hero note breaks out the college pool + the noncredit feeder support",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + mainNet.toLocaleString("en-US")) !== -1 &&
-    /Rural College allowance/.test(doc.querySelector(".cplfund-card.hero .l").textContent));
+    /noncredit feeder support/.test(doc.querySelector(".cplfund-card.hero .l").textContent) &&
+    !/Rural College allowance/.test(doc.querySelector(".cplfund-card.hero .l").textContent));
 
   // Change Year 2 to 2028-29 → the window widens in the labels; still 2 years.
   const y2 = doc.querySelectorAll('select[data-edit="year"]')[1];
@@ -508,7 +513,7 @@ const {
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst2.toLocaleString("en-US")) !== -1);
   check("raising the feeder carve-out moves that money out of the college pool",
     Math.round(window.CPL_FUNDING_TAB._netCollege()) ===
-      Math.round(D.pool.college_funding_before_feeder - 2000000 - D.pool.rural_carveout));
+      Math.round(D.pool.college_funding_before_feeder - 2000000));
   check("the hero note carries the $2,000,000 noncredit feeder line",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$2,000,000") !== -1);
 }

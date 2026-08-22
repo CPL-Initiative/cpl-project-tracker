@@ -33,13 +33,6 @@ const { JSDOM } = require("jsdom");
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function near(a, b, eps) { return Math.abs(a - b) <= (eps == null ? 0.5 : eps); }
-// The rural carve-out is distributed INTO rural rows (PR4), so Σ rows == the net
-// college pool PLUS it. Recomputed here from the baked data, independently.
-function ruralDistributed() {
-  const n = D.colleges.filter(function (c) { return c.rural; }).length;
-  return n > 0 ? Math.round((D.pool.rural_carveout / n) * 100) / 100 * n : 0;
-}
-
 const dataSrc = fs.readFileSync("cpl_funding_data.js", "utf8");
 const consumerSrc = fs.readFileSync("cpl_funding.js", "utf8");
 const D = (function () {
@@ -112,9 +105,19 @@ check("slotIsCarryover names the front-loaded later years",
     /\* p\.share \/ nYears\(\)/.test(entBody));
   check("prioEntitlement is front-load BLIND (a target must not double with the cap)",
     entBody.length > 0 && !/frontload|slotEntitlement|prioCap/.test(entBody));
-  check("prioEntitlement is floor-free and rural-free (reads sizePct/netCollege, never allocModel W)",
+  // Still FLOOR-free: the target rides the college's PRE-FLOOR proportional
+  // share, which is the whole point of the exemption. It is deliberately NOT
+  // ceiling-free — capScale() is the single seam through which the maximum
+  // lowers a capped college's target with its money (2026-08-22). Naming that
+  // seam here means a future edit cannot quietly widen the exemption: anything
+  // OTHER than capScale reaching into this function is the regression.
+  check("prioEntitlement rides the PRE-FLOOR share (sizePct x netCollege, never allocModel W)",
     /sizePct\(c\)/.test(entBody) && /netCollege\(\)/.test(entBody) &&
     !/allocModel|\bW\b|rural/.test(entBody));
+  check("prioEntitlement's ONLY bound-awareness is capScale()",
+    /capScale\(c\)/.test(entBody) &&
+    /function capScale/.test(consumerSrc) &&
+    /m\.capped\[c\.college\]/.test((consumerSrc.match(/function capScale\(c\)[\s\S]*?\n  \}/) || [""])[0]));
 
   const strays = (consumerSrc.replace(entBody, "").match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
     (consumerSrc.match(/\*\s*p\.share\s*\/\s*ny\b/g) || []).length;
@@ -301,7 +304,8 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
     near((r.y1 || 0) + (r.y2 || 0), r.total, 0.01));
   check("even: each year carries an equal tranche", near(r.y1, r.total / ny, 1));
   check("even: Σ college rows still equals the whole distributed college pool",
-    near(rows.reduce(function (s, x) { return s + x.total; }, 0), T._netCollege() + ruralDistributed(), 5));
+    // No rural component to add back since 2026-08-22 — the pool IS netCollege().
+    near(rows.reduce(function (s, x) { return s + x.total; }, 0), T._netCollege(), 5));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -340,13 +344,12 @@ check("targets are NOT scaled by disbursement (per-student rate doubles, student
   check("front-load: the hover does NOT claim the doubled cap sits at the annual base rate",
     !/at the \$[\d,.]+\/student statewide base rate\.$/.test(title));
 
-  // A rural college's allowance is a window figure under front-load — "/yr" on it
-  // would be a unit error in the one place a reader checks units.
-  const ruralCell = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .map(function (r) { return r.querySelector("td.cf-prio"); })
-    .find(function (td) { return td && /guaranteed rural allowance/.test(td.getAttribute("title") || ""); });
-  check("front-load: a rural allowance in the hover is labelled window-scoped, not '/yr'",
-    !ruralCell || !/\/yr guaranteed rural allowance/.test(ruralCell.getAttribute("title") || ""));
+  // The rural allowance is retired (2026-08-22), so no hover may still offer one
+  // — a stale promise of money is worse than no explanation at all.
+  const hovers = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row td.cf-prio"))
+    .map(function (td) { return td.getAttribute("title") || ""; }).join(" ");
+  check("front-load: no hover still promises a guaranteed rural allowance",
+    hovers.length > 0 && !/rural allowance/.test(hovers));
 }
 
 let pass = 0;

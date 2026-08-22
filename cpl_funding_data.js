@@ -18,10 +18,9 @@
 // mirror-image per-college window CEILING — Sam, 2026-08-22, default $400K;
 // 0 disables it. Floor and ceiling are solved TOGETHER, so releasing a capped
 // college's excess can legitimately lift a college back off the floor),
-// pool.rural_carveout + the
-// per-college `rural` flags (DRAFT roster = the 13 federally-rural CCCs) — a
-// GUARANTEED earmark that funds rural colleges' floor first (PR4, 2026-07-28) —
-// and participation_deadline (baseline-eligibility opt-in date).
+// and participation_deadline (baseline-eligibility opt-in date). The per-college
+// `rural` flags (DRAFT roster = the 13 federally-rural CCCs) are CONTEXT ONLY
+// since 2026-08-22 — the carve-out they used to fund is retired (see below).
 //
 // 2026-07-30 — THE SEPT-2026 BOG BUDGET AMENDMENT IS NOW THE AUTHORITY for the
 // $35M pool lines (Sam's ruling; source `20260729_CPL_Amendment_Sep_BOG.xlsx`,
@@ -37,11 +36,22 @@
 //   − $8,959,692  CPL Projects & Innovation           ← amendment
 //   = $25,240,308  TO INSTITUTIONS                    ← amendment, ties to the penny
 //   − $1,000,000  noncredit feeder carve-out          ← carved from inside
-//   − $1,000,000  rural college allowance (guaranteed)← carved from inside
-//   = $23,240,308  main proportional pool, 115 colleges, $150K floor
+//   = $24,240,308  main proportional pool, 115 colleges, $175K floor
 //
-// So the hero (college pool incl. rural) is $24,240,308 and the 4 noncredit
-// campuses keep their own $1M rather than joining the proportional split.
+// So the college pool is $24,240,308 and the 4 noncredit campuses keep their own
+// $1M rather than joining the proportional split.
+//
+// 2026-08-22 — THE RURAL CARVE-OUT IS RETIRED (Sam). It was a $1,000,000
+// guaranteed earmark split 13 ways ($76,923 each) that funded a rural college's
+// own minimum first and rode on top above it. Measured against the floor +
+// ceiling now in the model, it was redundant for TEN of the 13 (they sit at the
+// minimum, which funds them either way) and a bonus for three. Dropping it at
+// the old $150K floor would have moved $88,594 from three rural colleges to the
+// LARGEST non-rural ones, so it was retired together with a floor raise to
+// $175,000 — under which the 13 rural colleges receive $2,275,000 between them,
+// $236,406 MORE than the carve-out ever delivered. The per-college `rural` flags
+// and `rural_source` stay as CONTEXT (the table still marks them); they no
+// longer move a dollar.
 // `remaining_2025_26` is likewise the amendment's $9,040,308 (the $15M view's
 // N2N residual then computes to the amendment's exact $59,692).
 //
@@ -77,9 +87,7 @@ window.CPL_FUNDING = {
   "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before feeder carve-out)",
   "feeder_carveout": 1000000.0,
   "feeder_carveout_label": "NONCREDIT FEEDER SUPPORT (carve-out)",
-  "rural_carveout": 1000000.0,
-  "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (guaranteed — floor-fill + bonus)",
-  "floor_window": 150000.0,
+  "floor_window": 175000.0,
   "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
   "cap_window": 400000.0,
   "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",

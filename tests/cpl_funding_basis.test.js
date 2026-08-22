@@ -117,7 +117,10 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     const rows = allRows(T);
     const sum = rows.reduce(function (s, r) { return s + r.total; }, 0);
     check(basis + ": Σ college allocations == the distributed college pool",
-      near(sum, T._netCollege() + D.pool.rural_carveout, 5));
+      // The rural carve-out was retired 2026-08-22 and folded back in, so the
+      // college pool IS netCollege() — there is no longer a second component to
+      // add back. If a carve-out ever returns, this is the assertion that moves.
+      near(sum, T._netCollege(), 5));
     check(basis + ": every college gets a positive allocation",
       rows.length === D.colleges.length && rows.every(function (r) { return r.total > 0; }));
     check(basis + ": no allocation falls below the floor",
@@ -207,7 +210,7 @@ check("sizePct is COMPUTED, never read from a baked percentage",
     a && a.total > 0);
   check("...and the pool still balances with the fallback in play",
     near(D.colleges.reduce(function (s, c) { return s + (T._alloc(c.college) || {}).total; }, 0),
-      T._netCollege() + D.pool.rural_carveout, 5));
+      T._netCollege(), 5));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
