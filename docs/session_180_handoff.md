@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/kb-notes/methodology-index-the-doctrine-to-the-file]]"
   - "[[docs/doctrine_enforcement_lessons]]"
+superseded: true
+superseded_by: session_183_handoff.md
 ---
 
 # Session 180 handoff

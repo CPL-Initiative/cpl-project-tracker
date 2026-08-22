@@ -10,6 +10,8 @@ related:
   - "[[docs/college_action_page_lessons]]"
   - "[[docs/kb-notes/methodology-a-capped-instruction-list-is-a-zero-sum-budget]]"
   - "[[docs/session_177_handoff]]"
+superseded: true
+superseded_by: session_183_handoff.md
 ---
 
 # Session 178 handoff

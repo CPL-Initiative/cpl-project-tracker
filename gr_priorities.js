@@ -286,7 +286,7 @@
       ".grx .gx-eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gx-muted);font-weight:700;}",
       ".grx .gx-title{font-size:23px;margin:4px 0 2px;}",
       ".grx .gx-sub{color:var(--gx-muted);font-size:13px;margin:0 0 6px;}",
-      ".grx .gx-thesis{font-size:13.2px;line-height:1.55;margin:8px 0 0;max-width:74ch;}",
+      ".grx .gx-thesis{font-size:13.2px;line-height:1.55;margin:8px 0 0;max-width:var(--cpl-measure,none);}",
       ".grx .gx-stamp{font-size:11px;color:var(--gx-muted);margin-top:7px;}",
       ".grx .gx-caveat{border:1px solid var(--gx-y);border-left:4px solid var(--gx-y);border-radius:6px;",
       "background:var(--gx-card);padding:11px 14px;margin:0 0 16px;}",
