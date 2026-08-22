@@ -1,9 +1,21 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-22 · SkyPlain (Session 182) — one page, five rounds. Sam read the funding explainer the way a college president would and found it arguing the opposite of its own case: every number was right, and it still read as the Chancellor's Office keeping money back. Fixed by saying what each amount BUYS, and by getting rid of the red-and-minus diagram entirely — that shape of chart exists to reconcile an account, so it tells you that spending is a loss. Also, a formatting rule Sam asked for everywhere: text now runs the full width of whatever sits beside it.",
-  "_session": "SkyPlain (Session 182)",
-  "_status": "The funding explainer is ready to send, but nobody has opened it in a browser — the sandbox cannot reach the published site, so that last look is yours and it is the one thing worth doing first.\n\nWhat changed today. The page now opens on the $35 million and three places it goes: $25,240,308 allocated to the 115 colleges and the four noncredit campuses to earn against CPL outcomes, $8,959,692 for the statewide projects and technology every college draws on, and $800,000 for two Chancellor's Office posts. Those three add up to the appropriation exactly, and they add up by construction, so they cannot drift apart the next time the model is regenerated. The old step-by-step waterfall is gone; everything it said now sits in the opening. And instead of telling a college its money is \"a ceiling, not a check\", the page says what a college receives is driven by its own CPL results, as they happen.\n\nSeparately, text across the whole dashboard now runs the full width of the tables and cards beside it, rather than stopping short. That is 39 places in 17 files, on a single switch, with a test that protects the narrow columns that are meant to stay narrow — a truncated table cell is not a paragraph and should not have been widened with them.\n\nStill waiting on you elsewhere: the two college IDs MAP owes us, the phone check on the three public pages, and how we should find out if Sierra ever goes quiet again.",
+  "_as_of": "2026-08-22 · SkyScope (Session 183) — you had LACCD selected on My College and Sierra answered about RCCD. The district machinery turned out to be fine; two other things were wrong. First, the conversation carried over: switching from one district to another wipes what you can SEE but not what gets SENT, so your next question still arrived with eight earlier turns about Riverside attached — and Sierra searches that text, so she rebuilt the whole answer on the wrong college. Second, nothing had ever told her which institution you had selected, while an instruction you switched on in August tells her to confine her answer to it. An instruction that names something the request never sends is an instruction to guess.",
+  "_session": "SkyScope (Session 183)",
+  "_status": "The fix is merged but NOT live yet — it needs the Sierra service redeployed, and that is a change to every place Sierra appears at once, so it is waiting on your go. Until then nothing you saw is actually fixed on the site. After the deploy, re-asking the LACCD question is the confirmation pass, and no session can do it — the sandbox cannot reach Sierra.\n\nThe audit you approved came back clean apart from the one rule that caused this: one of seven references a fact the request never carries. The bigger finding is that all seven rules go to all six places Sierra appears, so a My College-only rule is being read on the public page too. The recommendation is a small change — tell Sierra which surface she is on — not a second Sierra.",
   "items": [
+    {
+      "id": "s183-deploy-cpl-chat",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Say the word and we will redeploy Sierra so today's fix goes live — then re-ask her the LACCD question. Right now the fix is merged but does nothing: the page sends her the selected college, and the live Sierra does not read it yet. The redeploy is one service shared by every place she appears — the public page, My College, the Fact Sheet, map.rccd.edu, the college landing pages and the vendor embed — so it changes all of them at once, which is why it is your call. It is reversible: we save the running version first, and a broken deploy leaves the old one running. Afterwards, check that she names Los Angeles colleges and that switching districts does not carry the previous one's answer over. Worth trying Peralta or Los Rios too — districts whose colleges are not named after them. No session can do this check; the sandbox cannot reach Sierra."
+    },
+    {
+      "id": "s183-sierra-surface",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Decide whether Sierra should know which page she is on. You asked whether My College should have its own Sierra setup. Our recommendation is no separate Sierra — that would mean every future fix has to be made in several places and one will get missed — but yes to telling her which surface she is on, so a My College instruction stops being read on the public page. About a day's work. One caveat: it cannot make her behave in a way that contradicts her built-in rules; that would be a bigger change."
+    },
     {
       "id": "s178-map-ids",
       "for": "Sam",
@@ -26,19 +38,13 @@
       "id": "s178-mode7",
       "for": "Fable",
       "tab": "cpl-assistant",
-      "text": "Fix smoke test mode 7 so it stops failing on correct answers. It checks Sierra's reply by searching the sentences for a nearby college name, so a correct answer worded differently reads as a failure. It went red twice today on answers that were fine. Our own note already calls this \"the last place still grepping an answer\" — assert on what retrieval returned instead."
+      "text": "Fix smoke test mode 7 so it stops failing on correct answers. It reads Sierra's reply and searches the sentences for particular college names, so she can give a good answer and still fail. It went red again today on a change that could not possibly have affected it. Do NOT fix it by deleting the check — the test's own comment says that part matters most to someone looking for somewhere local to go. Check instead that a nearby college reached her at all, and leave the wording to mode 8, which already tests the same thing properly."
     },
     {
       "id": "s173-phone-check",
       "for": "Sam",
       "tab": "fact-sheet",
       "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
-    },
-    {
-      "id": "s178-laccd-retest",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Re-ask Sierra the LACCD question once more. You did, and reported three things — the needless apology, the wrong student column, and the size-ordered table. All three are fixed and deployed, so this is the confirmation pass. Worth also trying a district whose colleges are NOT named after it — Peralta or Los Rios — because those could not be answered at all before today."
     },
     {
       "id": "s179-college-ids",

@@ -1442,3 +1442,52 @@ count.
 3. Then the harder question this exposed: `sierra_guidance` should be **audited
    for rules whose subject the request does not carry**. This one was live for
    weeks. It is unlikely to be the only one.
+
+### Addendum — what CI caught after the fix was written (same day)
+
+The scope fix was green on 20 targeted suites and still broke one of 251.
+
+⚠️ **`sierra_rules_overlay.test.js` failed by naming the wrong thing.** Its check
+matched the literal call-site text `rulesOverlay, ruleReport\)` — anchored on the
+CLOSING PAREN — so appending `hostScope` turned it red with the message *"the
+overlay is read per turn and passed into the prompt builder"*, while the overlay
+was fine. **A red that names the wrong thing costs more than no test**, because
+the cost lands on whoever is least equipped to discount it.
+
+⚠️ **And the new test written in the same PR had the identical defect** — it
+pinned `rulesOverlay, ruleReport, hostScope\)`. Reading a failure is not the same
+as generalizing it; the generalization has to be applied to your own diff in the
+same sitting or you ship a fresh instance of the bug you just fixed.
+`sierra_credential_volume.test.js` already had the right shape **with the lesson
+in a comment** — one more rule that existed in one file and reached no sibling.
+Durable: [`assert-that-an-argument-arrives-not-that-it-is-last`](kb-notes/methodology-assert-that-an-argument-arrives-not-that-it-is-last.md).
+
+⚠️ **The smoke red was NOT this PR's**, and the reasoning is worth keeping: smoke
+hits the **live deployed** function, which the PR did not change, and the diff
+touches neither `chatbox/smoke_test.sh` nor its workflow. One assertion failed —
+mode 7's third, a **prose grep** for LA-basin college names — with mode 8, which
+tests the same capability structurally, passing. `cpl_memory`
+`smoke-mode-7-red-is-emphasis-not-capability` recorded the same single failure on
+run 113 earlier the same day. ⭐ **But the assertion is not junk**: the smoke
+script's own comment says part 3 *"is the one that regressed and the one that
+matters most to a seeker… Do NOT green this by deleting an assertion."* The fix
+is to stop grepping PROSE — assert on the retrieved CONTEXT (did a nearby
+teaching college reach the model?) and leave the naming to mode 8. Not done;
+separate concern.
+
+### The guidance audit (Sam's go, same day)
+
+7 active rules, **1** referencing a fact the request does not carry — `15ec666b`,
+the one that caused this bug. Budget is **not** binding: 4,095 of 9,000 chars,
+7 of 20 rows, 0 active `display` rules. ⭐ **The sharper finding is that all 7
+rules ship to all 6 surfaces**, so `15ec666b`'s opening condition (*"when using
+Sierra from the My College COBI tab"*) is **unevaluable everywhere** — including
+the public page, where the same "confine to the selected institution" pressure
+applies with no selection to confine to. Recommendation recorded in §11: a
+`surface` field, explicitly **not** a forked Sierra and **not** a `mode` enum.
+
+### Next
+
+1. **Deploy `cpl-chat`.** The fix is inert until then.
+2. Sam re-asks the LACCD question in a browser.
+3. Sam's go on the `surface` field.
