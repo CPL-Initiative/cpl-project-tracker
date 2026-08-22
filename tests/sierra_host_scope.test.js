@@ -150,8 +150,14 @@ block("(6)", function () {
     /const \{ query, session_id, history, audience, ctx, scope \} = await req\.json\(\)/.test(SRC));
   check("(6) …normalizes it before use",
     /const hostScope = normalizeHostScope\(scope\)/.test(SRC));
+  /* ⚠ REACHES the builder, not "is the last argument". My first draft anchored
+   * on the closing paren — the exact defect this change had just tripped in
+   * sierra_rules_overlay.test.js, which reported "the overlay is not passed into
+   * the prompt builder" when only the argument count had moved. Writing it the
+   * same way here would have handed the identical trap to whoever adds the next
+   * parameter. sierra_credential_volume.test.js has the pattern. */
   check("(6) …and hands it to the prompt",
-    /rulesOverlay, ruleReport, hostScope\)/.test(SRC));
+    /buildSystemPrompt\([^;]*\bhostScope\b[^;]*\)/.test(SRC));
   check("(6) the prompt actually interpolates the block",
     /\$\{hostScopeBlock\(hostScope\)\}/.test(SRC));
   check("(6) ⭐ and the CLIENT sends what the function reads — one field name",

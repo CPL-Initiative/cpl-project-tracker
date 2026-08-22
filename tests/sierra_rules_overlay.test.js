@@ -179,8 +179,18 @@ check("the protected set covers the fabrication and disclosure guards",
 check("the turn log records which rules fired",
       /rules_fired: ruleReport\.fired/.test(src) &&
       /rules_overridden: ruleReport\.overridden/.test(src));
+/* ⚠ ASSERT THAT THEY REACH THE BUILDER, NOT THAT THEY ARE LAST. This used to
+ * match `rulesOverlay, ruleReport\)` — anchored on the CLOSING PAREN — so it
+ * failed the moment a later parameter was appended (v53's hostScope), reporting
+ * "the overlay is not passed into the prompt builder" when the overlay was fine
+ * and only the argument count had changed. A red that names the wrong thing
+ * costs more than no test.
+ * sierra_credential_volume.test.js already had this right and says so in a
+ * comment: "Assert that volumeContext REACHES buildSystemPrompt, not that it is
+ * the last". Same shape here. */
 check("the overlay is read per turn and passed into the prompt builder",
-      /await fetchSierraRules\(sb\)/.test(src) && /rulesOverlay, ruleReport\)/.test(src));
+      /await fetchSierraRules\(sb\)/.test(src) &&
+      /buildSystemPrompt\([^;]*\brulesOverlay\b[^;]*\bruleReport\b[^;]*\)/.test(src));
 check("fetchSierraRules fails soft to null (code defaults), never to empty rules",
       /async function fetchSierraRules[\s\S]*?catch \{\s*return null;/.test(src));
 
