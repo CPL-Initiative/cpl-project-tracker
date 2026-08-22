@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-21",
+ "as_of": "2026-08-22",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42811,
-  "pa": 40142,
-  "p2": 3731,
-  "p3": 15770,
+  "pe": 42844,
+  "pa": 40170,
+  "p2": 3732,
+  "p3": 15771,
   "pp": 5,
-  "pe_u": 1374490.45,
-  "pa_u": 222588.15,
-  "p3_u": 80299.95,
+  "pe_u": 1375979.95,
+  "pa_u": 222708.65,
+  "p3_u": 80309.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -174,10 +174,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Chaffey": {
-   "pe": 1498,
-   "pe_u": 32070.0,
-   "pa": 1494,
-   "pa_u": 18504.5,
+   "pe": 1519,
+   "pe_u": 32960.5,
+   "pa": 1515,
+   "pa_u": 18591.0,
    "p2": 17,
    "p3": 35,
    "p3_u": 271.0,
@@ -496,8 +496,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA City": {
-   "pe": 150,
-   "pe_u": 5925.0,
+   "pe": 154,
+   "pe_u": 6192.0,
    "pa": 0,
    "pa_u": 0.0,
    "p2": 0,
@@ -529,8 +529,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 335,
-   "pe_u": 5972.0,
+   "pe": 336,
+   "pe_u": 5999.0,
    "pa": 300,
    "pa_u": 1230.0,
    "p2": 20,
@@ -729,13 +729,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2433,
-   "pe_u": 51781.0,
-   "pa": 2104,
-   "pa_u": 12397.5,
-   "p2": 437,
-   "p3": 1988,
-   "p3_u": 11508.0,
+   "pe": 2434,
+   "pe_u": 51791.0,
+   "pa": 2105,
+   "pa_u": 12407.5,
+   "p2": 438,
+   "p3": 1989,
+   "p3_u": 11518.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -916,10 +916,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego City": {
-   "pe": 4284,
-   "pe_u": 94729.5,
-   "pa": 4283,
-   "pa_u": 14657.0,
+   "pe": 4285,
+   "pe_u": 94791.5,
+   "pa": 4284,
+   "pa_u": 14661.0,
    "p2": 121,
    "p3": 2837,
    "p3_u": 8844.0,
@@ -927,10 +927,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego Mesa": {
-   "pe": 4665,
-   "pe_u": 103600.5,
-   "pa": 4665,
-   "pa_u": 15527.5,
+   "pe": 4669,
+   "pe_u": 103817.5,
+   "pa": 4669,
+   "pa_u": 15543.5,
    "p2": 117,
    "p3": 3095,
    "p3_u": 9249.5,
@@ -938,10 +938,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Diego Miramar": {
-   "pe": 3117,
-   "pe_u": 93844.2,
-   "pa": 3117,
-   "pa_u": 11876.7,
+   "pe": 3118,
+   "pe_u": 93860.2,
+   "pa": 3118,
+   "pa_u": 11880.7,
    "p2": 85,
    "p3": 1502,
    "p3_u": 5390.7,
@@ -1426,8 +1426,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 325,
-    "pa": 323,
+    "pe": 346,
+    "pa": 344,
     "p3": 8
    },
    "Other": {
@@ -2142,9 +2142,9 @@ window.CPL_FUNDING_PERF = {
     "p3": 881
    },
    "Standardized Assessment": {
-    "pe": 221,
-    "pa": 221,
-    "p3": 220
+    "pe": 222,
+    "pa": 222,
+    "p3": 221
    }
   },
   "Mt San Antonio": {
@@ -2412,8 +2412,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1437,
-    "pa": 1437,
+    "pe": 1438,
+    "pa": 1438,
     "p3": 0
    },
    "Standardized Assessment": {
@@ -2436,8 +2436,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1564,
-    "pa": 1564,
+    "pe": 1568,
+    "pa": 1568,
     "p3": null,
     "p3_suppressed": true
    }
@@ -2470,8 +2470,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 29
    },
    "Military": {
-    "pe": 1600,
-    "pa": 1600,
+    "pe": 1601,
+    "pa": 1601,
     "p3": 0
    }
   },
@@ -2872,8 +2872,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26774,
-   "pa": 24660,
+   "pe": 26806,
+   "pa": 24687,
    "p3": 2469
   },
   "Military | Portfolio Review": {
@@ -2911,9 +2911,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Standardized Assessment": {
-   "pe": 4385,
-   "pa": 4383,
-   "p3": 3239
+   "pe": 4386,
+   "pa": 4384,
+   "p3": 3240
   }
  },
  "cpl_types_note": "Distinct-student counts per college per `CPL Type Description`, for the funnel rungs pe/pa/p3. COUNTS ONLY — no unit sums, because each source row carries the student's TOTAL credits rather than that type's portion, so a per-type unit sum would attribute the whole total to every type a student carries. A student holding two types counts once under each, so the types do NOT sum to the college's undifferentiated count. Batch Cx/AP/IB uploads arrive already-transcribed by construction (students already in the college SIS, surfaced in MAP), so read p3 by type before treating a transcribed figure as lifecycle work.",
@@ -2921,18 +2921,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1374013.95,
-   "pa_u": 222588.15,
-   "p3_u": 80299.95
+   "pe_u": 1375503.45,
+   "pa_u": 222708.65,
+   "p3_u": 80309.95
   },
   "map": {
-   "pe_u": 1381293.45,
-   "pa_u": 223260.65,
-   "p3_u": 80324.95
+   "pe_u": 1382818.95,
+   "pa_u": 223388.15,
+   "p3_u": 80334.95
   },
   "ratio": {
    "pe_u": 1.0053,
-   "pa_u": 1.003,
+   "pa_u": 1.0031,
    "p3_u": 1.0003
   }
  },
@@ -3053,7 +3053,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-21",
+ "vet_star_as_of": "2026-08-22",
  "vet_star_threshold": 0.75,
  "vet_star_n": 57
 };

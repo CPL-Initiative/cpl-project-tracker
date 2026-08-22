@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-21T13:17:10.764392+00:00",
+  "scraped_at": "2026-08-22T07:03:14.249826+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27324,
+    "jst": 27358,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -22,17 +22,17 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 328,
+      "jst": 349,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1575,
+      "jst": 1579,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1452,
+      "jst": 1453,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,7 +42,7 @@
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1610,
+      "jst": 1611,
       "star": true
     },
     "Bakersfield College": {
@@ -57,7 +57,7 @@
     },
     "West Los Angeles College": {
       "vets": 122,
-      "jst": 157,
+      "jst": 158,
       "star": true
     },
     "Norco College": {
@@ -212,7 +212,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 130,
+      "jst": 131,
       "star": false
     },
     "Ventura College": {
@@ -417,7 +417,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 175,
+      "jst": 176,
       "star": true
     },
     "Los Medanos College": {
@@ -467,7 +467,7 @@
     },
     "Los Angeles City College": {
       "vets": 301,
-      "jst": 150,
+      "jst": 154,
       "star": false
     },
     "Ohlone College": {
