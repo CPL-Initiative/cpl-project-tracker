@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-08-21
+updated: 2026-08-22
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -12,6 +12,9 @@ artifacts:
   - tests/cpl_funding_*.test.js (nine suites; split 2026-08-20)
   - tests/lib/cpl_funding_harness.js
   - tests/cpl_funding_reorder.test.js
+  - prototype/funding_model_explainer.html (the audience-facing explainer)
+  - prototype/build_funding_model_explainer.js (regenerates its data)
+  - tests/cobi_prose_measure.test.js (the full-width prose rule, COBI-wide)
   - college_briefing.js (My College funding box — the identity join)
 related:
   - "[[CLAUDE]]"
@@ -81,7 +84,7 @@ thing on the live page. Both now follow the basis seam, and the feeder side
 follows with them: credit FTES on the college side pairs with **noncredit FTES**
 on the feeder side, never with feeder headcount.
 
-The `$4.62` card is retired under FTES metrics in favour of the operative price —
+The `$4.62` card is retired under FTES metrics in favor of the operative price —
 **$5,649.63 per CPL FTES → 2,056.8 CPL FTES the tranche buys** (61,704 units,
 $188.32/unit). Pool depth per credit FTES (**$10.87** — the literal swap Sam
 asked for) rides as a *note*, because it is a scale statistic, not the rate the
@@ -99,7 +102,7 @@ them:
 
 And the bit that cuts against intuition, now test-locked: **raising the rate
 LOWERS the target** (target = allocation ÷ rate). Sam thought the rate might be
-~$8k; there is no $8k figure in the dataset (the only rate is $5,649.63, labelled
+~$8k; there is no $8k figure in the dataset (the only rate is $5,649.63, labeled
 SCFF base), and moving to an all-in ~$8,071 would have taken the statewide target
 from 2,057 → 1,440 CPL FTES — the wrong direction for his own complaint. **The
 rate is not the lever on targets.** He settled on $5,649.63.
@@ -185,8 +188,8 @@ before concluding a regression is yours — or isn't.**
 
 - **Quarter colleges keep the 11.67 TLM** (→ 45 units/FTES). Sam's ruling closed
   `map_data_quality` `7eb0c25a`, which had been open since the morning; it confirms
-  the shipped behaviour, so no code change. The row carries the caveat that the
-  reading flips to a flat 30 if MAP turns out to pre-normalise quarter units.
+  the shipped behavior, so no code change. The row carries the caveat that the
+  reading flips to a flat 30 if MAP turns out to pre-normalize quarter units.
 - **New DQ item `ae3e16d6`** (Sam's idea, parked): normalize the unit basis in MAP
   — emit semester-equivalent units *alongside* native, never overwriting, because a
   quarter college's registrar and SIS think in quarter units. That would retire the
@@ -350,7 +353,7 @@ about colleges that posted nothing.
 It also **corrects Friday's outreach list**: Monterey and Moorpark were on it as
 "eligible but applied none," and they have in fact applied — it's just hidden.
 
-Not decided; surfaced to Sam. The generalisable form is in
+Not decided; surfaced to Sam. The generalizable form is in
 [`methodology-omit-dont-zero-an-absent-measure`](kb-notes/methodology-omit-dont-zero-an-absent-measure.md):
 **when a suppression layer sits between a measurement and a consequence, work out
 what the suppressed state costs the subject — if suppression can only ever hurt,
@@ -710,15 +713,15 @@ being conflated.
 
 **Re-baking `year_priorities` onto the FTES regime.** The baked defaults are the
 fail-soft fallback and are still the retired headcount model. I started it, saw
-it rewrite ~15 behavioural assertions at once, and backed it out — that is how a
+it rewrite ~15 behavioral assertions at once, and backed it out — that is how a
 subtle regression ships. Baked rows now declare their *current* unit explicitly
-(behaviour-neutral, test asserts field == sniff); the re-bake is its own change.
+(behavior-neutral, test asserts field == sniff); the re-bake is its own change.
 
 ### The day's other lesson: two hours lost to CI
 
 Every workflow began failing at ~15 minutes and Pages wedged. I went through
 three wrong hypotheses (protection rule → billing → org policy) before reading
-the job record: **`runner_id: 0`** — no runner ever assigned, cancelled at the
+the job record: **`runner_id: 0`** — no runner ever assigned, canceled at the
 allocation timeout. Public repo, $0 billable, no budgets. Playbook →
 `playbook-diagnose-a-starved-actions-runner`. Repo-side lever taken: the
 `pages` concurrency group renamed to `pages-deploy` (#1013) to route around an
@@ -816,7 +819,7 @@ session that needs it.
 ## 2026-08-20 — SkyGlass (Session 176): splitting `cpl_funding.test.js`, and the leak that was never the test's to fix
 
 **(a) What happened.** SkySort's handoff left one item explicitly for a
-successor's judgement: the per-child heap cap had been raised 8,192 → 12,288 MB
+successor's judgment: the per-child heap cap had been raised 8,192 → 12,288 MB
 to get PR #1268 green, and the note said plainly that the cap buys headroom and
 does not fix the file — 2,955 lines, 61 jsdom windows, one process. It also
 recorded a suspicion: *the windows are never reclaimed; `window.close()` does not
@@ -947,7 +950,7 @@ cheque)."* Swept the page and this run's new files; `cheque`, `colour` and two
 **(g) Sam's second copy note — and the trap in it.** *"Revise 'the middle
 college's offer for the two years' to 'average funding for two years' and add a
 detail on the min and max funding."* ⚠️ **The tile was showing the MEDIAN
-($167,171); the average is $210,785.** Relabelling it without changing the number
+($167,171); the average is $210,785.** Relabeling it without changing the number
 would have stated a false figure on the page he is about to send to colleagues.
 Shipped as: the tile now carries the true **average**, and a three-up strip below
 it gives **lowest $150,000** (the guaranteed minimum, where 50 of 115 land),
@@ -959,3 +962,128 @@ so neither can drift.
 
 **(h) Next.** Sam reads it end to end before sending it out; re-run the generator
 and re-publish whenever the shares, factors or order change.
+
+
+---
+
+## 2026-08-22 — SkyPlain (Session 182): the explainer stopped arguing against itself
+
+Five rounds on `prototype/funding_model_explainer.html` with Sam reading it as its
+audience would — CO colleagues and possibly CA Finance staff. **PRs #1285 · #1286 ·
+#1287 · #1288 · #1289**, each republished to the same artifact URL
+(`SANITY_URL` in `cpl_funding.js`), plus a COBI-wide layout rule at the end.
+
+### (a) The comment loop works, and it is not a live channel
+
+Sam copied the artifact and left comments on the copy
+(`b1588987-…`), then asked whether they had arrived. They had — `Artifact`
+`action:"comments"` returns them with thread ids, and `reply`/`resolve` post back as
+*"Claude · via the user"*. ⚠️ **But there is no live subscription from a remote
+session**: `--watch-artifact` does not wake this session, so comments arrive only when
+someone asks for them. Say so rather than implying a channel. ⚠️ **The copy and the
+canonical artifact drift immediately** — every fix went to the original (the one the
+tab links to), so the copy Sam was commenting on fell five versions behind within the
+hour. Offer to refresh it or move the review to the canonical URL.
+
+### (b) The tone was arguing the opposite of the case
+
+Sam: *"the tone of this is written such that a CEO at a college might question why so
+much funding is being withheld by the CO"*, naming **"What is set aside before
+anything reaches a college"** and **"Left for institutions"**. Both were mine. The
+frame ran the whole page — *holds back*, *set aside*, *held back or set aside*, and a
+crimson ▼ on every non-college line.
+
+⭐ **The fix was not softer words, it was naming the BENEFICIARY of each amount.**
+"Held by the Chancellor's Office" → "statewide CPL projects and technology, and two
+Chancellor's Office posts — the work all 115 colleges draw on". Same dollars, same
+arithmetic, opposite reading. The heading became **"Where the appropriation goes"**.
+
+⭐ **Sam's second instruction was the more useful half:** *"Rather than refer to this
+funding not being a 'check' make a positive statement that the funding is based on
+real-time CPL outcomes."* *"That figure is a ceiling, not a check… Show none of it,
+earn none of it"* became *"What a college receives is driven by its own CPL results,
+as they happen."* **Nothing was hidden by saying it warmly** — the information that
+sentence carried still lands in the qualifying step ("earns nothing against it") and
+the earning step ("half its target … half that pot"). A negative framing is rarely
+load-bearing; check where the fact ALSO appears before assuming it is.
+
+⚠️ **One buried reassurance was worth more than the warning it sat behind.** The
+qualifying caveat read *"it earns nothing against it, and what it would have earned is
+held in reserve"*. Reversed, that is: **a college's allocation is not redistributed
+while it works toward the baseline** — a genuinely reassuring, already-true fact that
+a CEO would want, hidden behind the penalty clause.
+
+### (c) A waterfall argues that spending is a loss
+
+Recoloring was not enough. Sam: *"The crimson values still scream negative when they
+are actually doing very positive things. All this funding is meant to be expended
+(which is a negative), but is to produce positive outcomes."*
+
+⭐ **The instrument was wrong, not the palette.** A waterfall's job is reconciling an
+account, so every non-terminal line is a deduction and reads as a loss. This page's job
+is saying where $35M goes. Retiring **Step one** entirely removed the last crimson from
+the page — `.flow-row.out .amt` and `.bar i.out` were its only consumers. The section's
+content became boxes in the intro plus one line of prose; nothing was lost.
+
+⚠️ **Deleting the section nearly deleted a figure.** The `$800,000` CO staff line
+existed ONLY in the waterfall, because an earlier round had combined staff + projects
+into one box at Sam's request. Splitting it back out was not in the ask and was
+necessary. **When you retire a surface, diff what it was the sole display of.**
+
+### (d) Grouping is an argument too
+
+Sam: *"use the $24,240,308 box to show $25,240,308 and note that $1M is dedicated to
+noncredit. This will show that we are allocating funding for outcomes for the whole
+effort."* ⭐ **Showing the noncredit $1M as its own box read as money being taken out;
+folded into one institutions figure it reads as the whole effort being funded.** Same
+two numbers.
+
+⚠️ **But "also refer to the 4 noncredit campuses" cannot be applied blanket.** They are
+NOT in the credit-FTES split — they have no credit enrollment to be measured on. Four
+of the page's `115` references (the FTES sum, the table count, its live status text,
+the footer roster) are genuinely credit-only and stay. What the instruction correctly
+demanded was the **allocation** framing, plus a line in the "Every college" table
+saying where the noncredit campuses are rather than leaving four institutions silently
+absent from a list called *Every college*.
+
+### (e) Arithmetic must close, or a Finance reader stops reading
+
+Every box round, the boxes had to SUM. `$35,000,000 − $9,759,692 ≠ $24,240,308` because
+the noncredit $1M also comes out — so the first box round added a third box Sam had not
+asked for. Made structural rather than remembered: **the college/institution figure is
+DEFINED as the appropriation minus everything else** (`hero = one_time − admin −
+scaling − feeder`), so no two boxes can drift apart on a rebuild.
+
+### (f) The measure rule, and it is a habit not a one-off
+
+Sam: *"this is a consistent formatting pattern you use — where you make text widths
+short for readability but it looks awkward when set against the full width items. I
+prefer if you either extend text widths the full extent OR use two columns."* Then:
+*"I would like the full width format rule on throughout COBI."*
+
+⭐ **Shipped as a TOKEN, not 39 hardcoded values** — `--cpl-measure: none` on `:root` in
+both mirrored HTMLs, every site `max-width:var(--cpl-measure,none)`. One lever restores
+a measure everywhere, or moves to columns later.
+⚠️ **The `,none` fallback is load-bearing**: most of these rules ship from a tab's own
+JS onto surfaces that never declare the token (`cpl_funding_public.html` is exactly
+that), and without the fallback the declaration is invalid — right by accident today,
+wrong the day the token becomes a `ch` value again.
+⚠️ **THE THRESHOLD IS THE WHOLE POINT.** 60 of the 60 `ch` caps in COBI split cleanly:
+34 at 60–82ch are reading measures; 26 at 9–46ch are LAYOUT — cell truncation, a
+raw-value column, a monospace strip, a badge, a deliberately short hero lede. A blanket
+sweep would have widened all 60 and broken layouts this change is not about.
+⚠️ **A px cap is the same defect in different units** — four tab intro paragraphs at
+880px/760px (`raci`, `tmc_builder`, `team_phrases`, four inline `<p>` in the HTMLs) were
+invisible to a `ch` grep.
+⭐ **Two columns was offered and declined with a reason:** at full width most blocks on
+these pages run one to three lines, so columns would produce one- and two-line stacks
+and force the eye down and back for nothing. Columns pay off over long continuous runs
+of text, which COBI does not have.
+
+### (g) Next
+
+Sam reads the explainer end to end in a browser and looks at the full-width rule across
+the tabs — no session can, the sandbox is egress-blocked from the Pages host. Then:
+re-run `prototype/build_funding_model_explainer.js` and re-publish whenever the shares,
+factors or order change; and decide whether the Year-2 mirror should be on for
+Scenario 2.

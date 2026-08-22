@@ -3066,7 +3066,7 @@
       "#tab-credential-reference .cr-wl-back{font-size:.82rem;color:#2563eb;text-decoration:none;}" +
       "#tab-credential-reference .cr-wl-back:hover{text-decoration:underline;}" +
       "#tab-credential-reference .cr-wl-title{color:var(--text-strong);margin:8px 0 4px;}" +
-      "#tab-credential-reference .cr-wl-intro{color:#4b5563;font-size:.85rem;margin:0 0 8px;max-width:74ch;}" +
+      "#tab-credential-reference .cr-wl-intro{color:#4b5563;font-size:.85rem;margin:0 0 8px;max-width:var(--cpl-measure,none);}" +
       "#tab-credential-reference .cr-wl-progress{font-size:.85rem;color:#374151;margin-bottom:10px;}" +
       "#tab-credential-reference .cr-wl-note{color:#6b7280;font-style:italic;}" +
       "#tab-credential-reference .cr-wl-table{border-collapse:collapse;width:100%;font-size:.85rem;}" +
@@ -3151,7 +3151,7 @@
       "#tab-credential-reference .cr-art-merged{display:inline-block;margin-left:6px;padding:0 6px;border-radius:8px;font-size:.62rem;font-weight:600;background:rgba(255,255,255,.5);color:var(--text-muted);border:1px solid var(--border-strong);white-space:nowrap;cursor:help;}" +
       "#tab-credential-reference .cr-bucket-details{margin:8px 0 4px;}" +
       "#tab-credential-reference .cr-bucket-summary{cursor:pointer;font-size:.78rem;font-weight:600;color:#92400e;background:#FEF3C7;border:1px solid #F59E0B;border-radius:6px;padding:4px 10px;display:inline-block;}" +
-      "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:74ch;}" +
+      "#tab-credential-reference .cr-bucket-note{font-size:.74rem;color:#6b7280;font-style:italic;margin:6px 0 4px;max-width:var(--cpl-measure,none);}" +
       "#tab-credential-reference .cr-bucket-table{opacity:.72;margin-top:2px;}" +
       "#tab-credential-reference .cr-bucket-row .cr-id-code{color:#6b7280;}" +
       // System-level GE-Area AP-credit callout (2026-06-04) — navy/brand accent
@@ -3161,7 +3161,7 @@
       "#tab-credential-reference .cr-geap-body{font-size:.92rem;color:#1f2937;}" +
       "#tab-credential-reference .cr-geap-area{color:var(--text-strong);}" +
       "#tab-credential-reference .cr-geap-na{color:#7a5c00;font-weight:600;}" +
-      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:80ch;}" +
+      "#tab-credential-reference .cr-geap-note{font-size:.72rem;color:#6b7280;font-style:italic;margin-top:4px;max-width:var(--cpl-measure,none);}" +
       // Students-served column (path 1) — the count stands out for triage; the
       // masked "<N" is muted (small-cell suppression).
       "#tab-credential-reference .cr-served-n{font-weight:600;color:var(--text-strong);}" +

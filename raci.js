@@ -1419,7 +1419,7 @@
     var css = "" +
       "#raci-root{padding:0 0 2rem;max-width:1100px;margin:0 auto;font-family:'Source Sans 3',Arial,sans-serif;}" +
       ".raci-intro h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}" +
-      ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:760px;}" +
+      ".raci-intro p{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);}" +
       ".raci-bar{display:flex;flex-wrap:wrap;gap:.75rem 1rem;align-items:center;justify-content:space-between;margin-bottom:.9rem;}" +
       ".raci-toggle{display:inline-flex;border:1px solid var(--border,#ddd);border-radius:7px;overflow:hidden;}" +
       ".raci-tg{background:#fff;border:0;padding:.4rem .9rem;font-size:.85rem;font-weight:600;color:var(--navy-secondary,#1c3d5a);cursor:pointer;}" +

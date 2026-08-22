@@ -720,7 +720,7 @@
       // what a table or a long list of courses needs — but a 1,200px paragraph
       // is unreadable, so the cap is applied to the PROSE elements instead of
       // to the bubble. Tables keep their own overflow-x and are unaffected.
-      '.cplchat-bubble > p, .cplchat-bubble > ul, .cplchat-bubble > ol { max-width:82ch; }',
+      '.cplchat-bubble > p, .cplchat-bubble > ul, .cplchat-bubble > ol { max-width:var(--cpl-measure,none); }',
       // ── Growing log: the reader-facing half of "don't scroll so much" ─────
       // See the .cplchat-log rule in the HTML for the growth range itself.
       // scroll-padding keeps a smooth page-follow from parking the newest line

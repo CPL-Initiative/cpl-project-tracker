@@ -234,7 +234,7 @@
     st.textContent = [
       "#team-phrases-root{padding:0 0 2rem;max-width:900px;margin:0 auto;}",
       ".tphx h2{color:var(--navy-primary,#0A2240);margin:0 0 .25rem;}",
-      ".tphx-intro{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:760px;line-height:1.5;}",
+      ".tphx-intro{color:var(--text-faint,#555);font-size:.9rem;margin:0 0 1rem;max-width:var(--cpl-measure,none);line-height:1.5;}",
       ".tphx-gatechip{display:inline-block;font-size:.62rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;",
       "background:var(--gold-accent,#B8860B);color:var(--navy-primary,#0A2240);border-radius:4px;padding:.1rem .4rem;vertical-align:middle;margin-left:.4rem;}",
       ".tphx-card{background:var(--surface-0,#fff);border:1px solid var(--border,#e0e0e0);border-radius:10px;padding:14px 16px;margin-bottom:12px;}",

@@ -44,7 +44,7 @@
   .op-inner { position:relative; z-index:2; max-width:1000px; margin:0 auto; padding:0 clamp(18px,4vw,54px); }
 
   .opv h1, .opv h2, .opv h3 { font-family:var(--op-serif); font-weight:600; text-wrap:balance; line-height:1.14; margin:0; color:var(--op-ink); }
-  .opv p { margin:0 0 1em; max-width:66ch; color:var(--op-ink-soft); }
+  .opv p { margin:0 0 1em; max-width:var(--cpl-measure,none); color:var(--op-ink-soft); }
   .opv strong { color:var(--op-ink); font-weight:600; }
   .opv a { color:var(--op-teal); }
 
@@ -74,7 +74,7 @@
 
   .op-sechead { margin-bottom:40px; }
   .op-sechead h2 { font-size:clamp(24px,3.4vw,38px); margin:0 0 14px; letter-spacing:-0.01em; }
-  .op-sechead .op-lead { max-width:60ch; }
+  .op-sechead .op-lead { max-width:var(--cpl-measure,none); }
 
   /* four systems */
   .op-weave { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }

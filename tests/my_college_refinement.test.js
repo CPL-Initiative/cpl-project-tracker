@@ -316,9 +316,16 @@ block("(5)", function () {
 block("(5b)", function () {
   const { w, root } = loadTab();
   const css = w.document.getElementById("cplchat-aud-css");
-  check("(5b) ⭐ the measure cap moved onto PROSE, not the bubble",
-    !!css && /\.cplchat-bubble > p[^{]*\{[^}]*max-width: ?82ch/.test(css.textContent),
-    "so a table or course list can use the width a paragraph must not");
+  // SUPERSEDED VALUE, LIVE STRUCTURE. On 2026-08-17 this asserted a hardcoded 82ch,
+  // because the fix then was moving the cap OFF the bubble and ONTO the prose so a
+  // table or course list could use the width a paragraph could not. Sam went further
+  // on 2026-08-22 — "I would like the full width format rule on throughout COBI" — so
+  // the VALUE is now the shared --cpl-measure token (none today). The SELECTOR is
+  // still the point and is still checked: keeping the cap on the prose children is
+  // what lets the token become a ch value again without re-capping the tables.
+  check("(5b) ⭐ the measure cap is on PROSE, not the bubble, and reads the shared token",
+    !!css && /\.cplchat-bubble > p[^{]*\{[^}]*max-width:var\(--cpl-measure,none\)/.test(css.textContent),
+    "so a table or course list can use the width, and one token still governs the prose");
   const bcss = w.document.getElementById("cpl-briefing-css");
   check("(5b) the tab ships a mobile breakpoint", !!bcss && /@media \(max-width:640px\)/.test(bcss.textContent));
   check("(5b) …and it makes the pickers full-width rather than 220px-ragged",

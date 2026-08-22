@@ -1347,7 +1347,7 @@
       ".cpl-mem .mr-titleblock{margin:0 0 18px;}",
       ".cpl-mem .mr-title{font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.7rem;font-weight:700;margin:0 0 4px;line-height:1.12;}",
       ".cpl-mem .mr-sub{font-size:.82rem;color:var(--text-muted);margin:0;}",
-      ".cpl-mem .mr-body{max-width:65ch;}",
+      ".cpl-mem .mr-body{max-width:var(--cpl-measure,none);}",
       ".cpl-mem .mr-section{margin:0 0 22px;}",
       ".cpl-mem .mr-h{--sc:var(--k-fact);font-family:'Playfair Display',Georgia,serif;color:var(--text-strong);font-size:1.12rem;font-weight:700;margin:0 0 7px;padding:2px 0 5px 11px;border-left:4px solid var(--sc);border-bottom:1px solid var(--border);}",
       ".cpl-mem .mr-lead{font-style:italic;color:var(--text-muted);font-size:.85rem;line-height:1.45;margin:0 0 11px;}",

@@ -105,7 +105,7 @@
       "#cr-reference-root{color:var(--text-body);font-size:14px}",
       ".crr-head{margin-bottom:18px}",
       ".crr-head h2{margin:0 0 6px;color:var(--text-strong);font-size:22px}",
-      ".crr-sub{color:var(--text-muted);max-width:74ch;line-height:1.55}",
+      ".crr-sub{color:var(--text-muted);max-width:var(--cpl-measure,none);line-height:1.55}",
       ".crr-stats{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0}",
       ".crr-stat{border:1px solid var(--border);border-radius:8px;padding:9px 13px;background:var(--surface-subtle);min-width:112px}",
       ".crr-stat b{display:block;color:var(--text-strong);font-size:19px;line-height:1.2}",

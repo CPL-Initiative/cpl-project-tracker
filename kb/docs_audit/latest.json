@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 605,
-    "bytes": 6827265,
+    "files": 608,
+    "bytes": 6857265,
     "over_budget": 4,
-    "handoff_max": 181,
+    "handoff_max": 183,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 133747,
-    "superseded_files": 3,
-    "superseded_bytes": 26579,
+    "always_loaded_bytes": 134653,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 133747,
+        "bytes": 134653,
         "over": 1
       },
       "other": {
         "files": 74,
-        "bytes": 1892108,
+        "bytes": 1894573,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 246212,
+        "bytes": 249455,
         "over": 1
       },
       "lessons": {
         "files": 67,
-        "bytes": 1632830,
+        "bytes": 1640703,
         "over": 1
       },
       "kb_note": {
-        "files": 302,
-        "bytes": 1622062,
+        "files": 304,
+        "bytes": 1631265,
         "over": 0
       },
       "handoff": {
-        "files": 160,
-        "bytes": 1300306,
+        "files": 161,
+        "bytes": 1306616,
         "over": 0
       }
     },
@@ -53,15 +53,13 @@
       "oversized_doc": 4,
       "american_spelling": 171,
       "kb_note_dialect": 60,
-      "unindexed_kb_note": 5,
-      "superseded_handoff": 3,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2130,
-      "bytes": 1171035806,
-      "heavy_bytes": 588520418,
-      "heavy_share": 0.503,
+      "files": 2137,
+      "bytes": 1178497532,
+      "heavy_bytes": 588787120,
+      "heavy_share": 0.5,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -115,13 +113,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 133747,
+        "bytes": 134653,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 73747,
-        "ratio": 2.23
+        "over_by": 74653,
+        "ratio": 2.24
       },
-      "message": "133,747 B is 2.2× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "134,653 B is 2.2× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -143,36 +141,40 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 246212,
+        "bytes": 249455,
         "limit": 40000,
         "lane": "index",
-        "over_by": 206212,
-        "ratio": 6.16
+        "over_by": 209455,
+        "ratio": 6.24
       },
-      "message": "246,212 B is 6.2× the index budget (40,000 B) — candidate for compaction",
+      "message": "249,455 B is 6.2× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 12,
         "forms": {
           "behaviour": {
-            "n": 1,
+            "n": 5,
             "prefer": "behavior"
           },
           "normalis": {
-            "n": 1,
+            "n": 4,
             "prefer": "normaliz"
           },
           "recognis": {
             "n": 1,
             "prefer": "recogniz"
+          },
+          "minimis": {
+            "n": 2,
+            "prefer": "minimiz"
           }
         }
       },
-      "message": "3 British forms — behaviour→behavior, normalis→normaliz, recognis→recogniz",
+      "message": "12 British forms — behaviour→behavior, normalis→normaliz, minimis→minimiz, recognis→recogniz",
       "path": "docs/INDEX.md"
     },
     {
@@ -358,47 +360,23 @@
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 12,
+        "total": 3,
         "forms": {
           "colour": {
             "n": 1,
             "prefer": "color"
           },
           "behaviour": {
-            "n": 4,
+            "n": 1,
             "prefer": "behavior"
-          },
-          "favour": {
-            "n": 1,
-            "prefer": "favor"
-          },
-          "normalis": {
-            "n": 1,
-            "prefer": "normaliz"
-          },
-          "generalis": {
-            "n": 1,
-            "prefer": "generaliz"
-          },
-          "judgement": {
-            "n": 1,
-            "prefer": "judgment"
           },
           "modelling": {
             "n": 1,
             "prefer": "modeling"
-          },
-          "cancelled": {
-            "n": 1,
-            "prefer": "canceled"
-          },
-          "labelled": {
-            "n": 1,
-            "prefer": "labeled"
           }
         }
       },
-      "message": "12 British forms — behaviour→behavior, colour→color, favour→favor, normalis→normaliz, generalis→generaliz, judgement→judgment",
+      "message": "3 British forms — colour→color, behaviour→behavior, modelling→modeling",
       "path": "docs/cpl_funding_lessons.md"
     },
     {
@@ -1153,15 +1131,6 @@
       "path": "docs/kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-label-that-decides-behaviour-is-a-policy-switch"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -1235,15 +1204,6 @@
         }
       },
       "message": "11 British forms — normalis→normaliz, generalis→generaliz",
-      "path": "docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-normalisation-and-its-screens-must-see-the-same-text"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md"
     },
     {
@@ -1598,15 +1558,6 @@
         }
       },
       "message": "3 British forms — behaviour→behavior, prioritis→prioritiz",
-      "path": "docs/kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md"
     },
     {
@@ -2038,15 +1989,6 @@
       "path": "docs/kb-notes/methodology-minimisation-happens-twice.md"
     },
     {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-minimisation-happens-twice"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-minimisation-happens-twice.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -2086,15 +2028,6 @@
         }
       },
       "message": "10 British forms — normalis→normaliz, behaviour→behavior, programme→program",
-      "path": "docs/kb-notes/methodology-normalise-both-sides-of-a-join.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-normalise-both-sides-of-a-join"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
       "path": "docs/kb-notes/methodology-normalise-both-sides-of-a-join.md"
     },
     {
@@ -3168,13 +3101,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 456800,
+        "bytes": 459265,
         "limit": 150000,
         "lane": "other",
-        "over_by": 306800,
-        "ratio": 3.05
+        "over_by": 309265,
+        "ratio": 3.06
       },
-      "message": "456,800 B is 3.0× the other budget (150,000 B) — candidate for compaction",
+      "message": "459,265 B is 3.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -3741,17 +3674,6 @@
       "path": "docs/session_177_handoff.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 178,
-        "authoritative": 181,
-        "has_frontmatter": true
-      },
-      "message": "handoff 178 is below the authoritative 181 but is not stamped `superseded: true`",
-      "path": "docs/session_178_handoff.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -3769,28 +3691,6 @@
       },
       "message": "3 British forms — centred→centered, colour→color",
       "path": "docs/session_178_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 179,
-        "authoritative": 181,
-        "has_frontmatter": true
-      },
-      "message": "handoff 179 is below the authoritative 181 but is not stamped `superseded: true`",
-      "path": "docs/session_179_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 180,
-        "authoritative": 181,
-        "has_frontmatter": true
-      },
-      "message": "handoff 180 is below the authoritative 181 but is not stamped `superseded: true`",
-      "path": "docs/session_180_handoff.md"
     },
     {
       "rule": "american_spelling",
@@ -4008,10 +3908,10 @@
       "fixable": false,
       "path": "kb/unclassified_fold",
       "detail": {
-        "bytes": 13188671,
+        "bytes": 13478069,
         "kind": "dir"
       },
-      "message": "directory totals 13,188,671 B inside the vault"
+      "message": "directory totals 13,478,069 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4168,10 +4068,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8708677,
+        "bytes": 8685816,
         "kind": "file"
       },
-      "message": "8,708,677 B single file inside the vault"
+      "message": "8,685,816 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4248,10 +4148,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6258821,
+        "bytes": 6258819,
         "kind": "file"
       },
-      "message": "6,258,821 B single file inside the vault"
+      "message": "6,258,819 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4388,10 +4288,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354060,
+        "bytes": 2354227,
         "kind": "file"
       },
-      "message": "2,354,060 B single file inside the vault"
+      "message": "2,354,227 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

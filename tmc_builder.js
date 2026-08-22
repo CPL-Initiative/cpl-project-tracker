@@ -238,7 +238,7 @@
       "#tab-tmc-builder h2{margin:0 0 12px;}" +
       "#tab-tmc-builder .tmc-sub{font-weight:400;color:var(--text-muted);font-size:1rem;}" +
       "#tab-tmc-builder .tmc-draftnote{color:#92400e;font-weight:600;}" +
-      "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:880px;}" +
+      "#tab-tmc-builder .tmc-intro{color:#4b5563;margin:0 0 16px;max-width:var(--cpl-measure,none);}" +
       // consolidated filter block (College · Show · Find · Curator) — replaces the old topbar + pickers
       "#tab-tmc-builder .tmc-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;background:var(--surface-subtle,#f8fafc);border:1px solid var(--border-strong,#cbd5e1);border-radius:10px;padding:12px 16px;margin-bottom:16px;}" +
       "#tab-tmc-builder .tmc-filters .tmc-auth{margin-left:auto;align-self:center;}" +

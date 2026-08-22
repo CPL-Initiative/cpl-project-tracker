@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/kb-notes/methodology-a-rule-you-wrote-is-not-a-rule-you-applied]]"
   - "[[docs/college_identity_lessons]]"
+superseded: true
+superseded_by: session_183_handoff.md
 ---
 
 # Session 179 handoff
