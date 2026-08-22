@@ -51,10 +51,17 @@ check("data: rural roster provenance cites the federal rural categorization",
 check("data: participation deadline default Sept 1, 2026", D.participation_deadline === "2026-09-01");
 
 // D1 — minimum-viable floor: waterfall math (model-level, via test hooks).
+// The CEILING is switched OFF for this whole block (Sam's $400K maximum ships
+// on by default from 2026-08-22). These assertions are about the floor in
+// isolation — with a ceiling live the six largest colleges TIE at it, so
+// "the largest takes the max entitlement" stops being a floor property at all.
+// The ceiling, and the two solved together, have their own suite:
+// tests/cpl_funding_cap.test.js.
 {
   const { window } = freshDom();
   boot(window);
   const T = window.CPL_FUNDING_TAB;
+  T._setScenario({ pool: { cap_window: 0 } });
   const m = T._model();
   const net = T._netCollege();
   check("floor model: MAIN pool conserved (Σ main entitlements = net main pool)",
@@ -115,7 +122,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
   check("floored drill-in explains the top-up vs the proportional share", !!detail);
 
   // Setting the floor to 0 disables it (pure proportional, no floored rows).
-  T._setScenario({ pool: { floor_window: 0 } });
+  T._setScenario({ pool: { floor_window: 0, cap_window: 0 } });
   const m0 = T._model();
   check("floor 0 disables the waterfall (no floored colleges)", m0.floorCount === 0);
   check("floor 0 → pure proportional (Copper Mountain ≈ credit-FTES share × net)",

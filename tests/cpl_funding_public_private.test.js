@@ -27,6 +27,10 @@ function freshDom() {
   const dom = new JSDOM(
     '<!DOCTYPE html><html><head></head><body>' +
     '<div class="cpl-tab-pane" id="tab-implementation-funding"><div class="main-container">' +
+    // The title-row slot is present in BOTH the private and the public DOM on
+    // purpose: the public page must be missing the explainer link because
+    // publicMode() blanks it, not because its markup happens to lack a slot.
+    '<div><h2>CPL Implementation Funding</h2><span id="cplFundTitleLink"></span></div>' +
     '<div id="cplFundingMount">placeholder</div>' +
     "</div></div></body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });
@@ -78,15 +82,37 @@ function boot(window) {
   // The model explainer ("How this funding model works", renamed from
   // "Calculation sanity check" 2026-08-21) is a team working tool — an
   // access-controlled Claude artifact, private only, never on the college page.
-  const privHtml = privDoc.getElementById("cplFundingMount").innerHTML;
-  const pubHtml = pubDoc.getElementById("cplFundingMount").innerHTML;
+  // The link MOVED to the tab's title row (Sam, 2026-08-22) — it describes the
+  // whole model, so it sits beside the tab's name rather than as a full-width
+  // strip above the content. Scan the whole pane, not just the mount, or this
+  // guard silently stops seeing the thing it guards.
+  const privHtml = privDoc.querySelector(".main-container").innerHTML;
+  const pubHtml = pubDoc.querySelector(".main-container").innerHTML;
   check("W2b: the private view links the funding-model explainer",
     /claude\.ai\/code\/artifact/.test(privHtml) && /How this funding model works/.test(privHtml));
+  check("W2b: the explainer link is in the TITLE ROW, not inside the mount",
+    /claude\.ai\/code\/artifact/.test(privDoc.getElementById("cplFundTitleLink").innerHTML) &&
+    !/claude\.ai\/code\/artifact/.test(privDoc.getElementById("cplFundingMount").innerHTML));
   check("W2b: the public college page does NOT expose the explainer link",
     !/claude\.ai\/code\/artifact/.test(pubHtml) && !/How this funding model works/.test(pubHtml));
+  check("W2b: the public page is blank because publicMode() blanks it, not for want of a slot",
+    !!pubDoc.getElementById("cplFundTitleLink") &&
+    pubDoc.getElementById("cplFundTitleLink").innerHTML === "");
   // The label is a link, not a decorated one — Sam's no-decorative-glyphs rule.
   check("W2b: the explainer link carries no decorative glyph",
     privHtml.indexOf("🧮") === -1);
+
+  // Sam's minimum/maximum box holds TWO editable dials (2026-08-22). On the
+  // college page both must degrade to plain figures — the curate sweep takes
+  // data-edit inputs out, and an empty box would read as "no minimum is set".
+  const pubFloor = pubDoc.querySelector(".cplfund-card.floor");
+  const privFloor = privDoc.querySelector(".cplfund-card.floor");
+  check("W2c: the public page shows the minimum AND the maximum as plain figures",
+    !!pubFloor && /150,000/.test(pubFloor.textContent) && /400,000/.test(pubFloor.textContent) &&
+    /Minimum viable allocation/.test(pubFloor.textContent) && /Maximum allocation/.test(pubFloor.textContent));
+  check("W2c: …with no editable control on either dial",
+    !!pubFloor && pubFloor.querySelectorAll("[data-edit]").length === 0 &&
+    !!privFloor && privFloor.querySelectorAll("[data-edit]").length === 4);
 
   // The structural hide is still available and still DOES move money — the two
   // mechanisms must stay distinguishable, or the whole point is lost.

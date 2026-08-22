@@ -14,7 +14,11 @@
 // 2026-07-06 policy defaults (all Chancellor-editable in-tab): `disbursement`
 // (even|frontload — front-load pulls the full window into Year 1 with
 // roll-forward), pool.floor_window (minimum viable per-college window
-// allocation, waterfall-funded within the pool), pool.rural_carveout + the
+// allocation, waterfall-funded within the pool), pool.cap_window (the
+// mirror-image per-college window CEILING — Sam, 2026-08-22, default $400K;
+// 0 disables it. Floor and ceiling are solved TOGETHER, so releasing a capped
+// college's excess can legitimately lift a college back off the floor),
+// pool.rural_carveout + the
 // per-college `rural` flags (DRAFT roster = the 13 federally-rural CCCs) — a
 // GUARANTEED earmark that funds rural colleges' floor first (PR4, 2026-07-28) —
 // and participation_deadline (baseline-eligibility opt-in date).
@@ -77,6 +81,8 @@ window.CPL_FUNDING = {
   "rural_carveout_label": "RURAL COLLEGE ALLOWANCE (guaranteed — floor-fill + bonus)",
   "floor_window": 150000.0,
   "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
+  "cap_window": 400000.0,
+  "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",
   "ccc_headcount": 2258784,
   "ftes_rate_2026_27": 5649.63,
   "ftes_rate_label": "2026-27 credit FTES reimbursement rate (SCFF base)"

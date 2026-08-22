@@ -75,7 +75,11 @@ function freshDom() {
   const dom = new JSDOM(
     '<!DOCTYPE html><html><head></head><body>' +
     '<div class="cpl-tab-pane" id="tab-implementation-funding"><div class="main-container">' +
-    '<div><h2>CPL Implementation Funding</h2></div>' +
+    // Mirrors the real tab shell's title row, including the slot cpl_funding.js
+    // paints the "How this funding model works" link into (paintTitleLink) —
+    // the link lives OUTSIDE the mount since 2026-08-22, so a test DOM without
+    // this span cannot see it at all.
+    '<div><h2>CPL Implementation Funding</h2><span id="cplFundTitleLink"></span></div>' +
     '<div id="cplFundingMount">placeholder</div>' +
     "</div></div></body></html>",
     { runScripts: "outside-only", url: "https://example.org/" });

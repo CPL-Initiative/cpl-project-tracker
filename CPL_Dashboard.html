@@ -9330,7 +9330,11 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
     <div class="cpl-tab-pane" id="tab-implementation-funding" data-tab="implementation-funding" role="tabpanel" aria-labelledby="tab-implementation-funding">
         <div class="main-container">
             <div style="margin: 16px 0 12px 0;">
-                <h2 style="margin: 0 0 6px 0; color: var(--navy-primary);">CPL Implementation Funding</h2>
+                <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 16px;">
+                    <h2 style="margin: 0 0 6px 0; color: var(--navy-primary);">CPL Implementation Funding</h2>
+                    <!-- cpl_funding.js paints the "How this funding model works" link here (paintTitleLink). -->
+                    <span id="cplFundTitleLink"></span>
+                </div>
                 <p style="margin: 0 0 14px 0; color: var(--text-muted); max-width: var(--cpl-measure,none);">
                     Statewide CPL implementation funding model &mdash; the 2026&ndash;30 one-time funding
                     pools, the three funding priorities, and each college's potential allocation.

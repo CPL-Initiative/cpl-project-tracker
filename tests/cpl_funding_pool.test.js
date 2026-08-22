@@ -336,11 +336,18 @@ const {
     Math.abs(sum / totals.length - heroPool / window.CPL_FUNDING.colleges.length) < 0.01);
   check("R8: the minimum award is the floor (the floor binds at this pool size)",
     Math.abs(min - p.floor_window) < 0.5);
-  check("R8: the maximum award goes to the largest college and clears the floor",
-    max > p.floor_window * 3 &&
-    T._alloc(window.CPL_FUNDING.colleges.reduce(function (a, b) {
-      return (a.headcount || 0) >= (b.headcount || 0) ? a : b;
-    }).college).total === max);
+  // The maximum award is now the CEILING, not the largest college's share
+  // (Sam's $400K maximum, 2026-08-22). Note the largest college is picked on the
+  // ALLOCATION BASIS (credit FTES) — the largest by HEADCOUNT is East LA, which
+  // sits below the ceiling, so a headcount-picked college would fail this for a
+  // reason that has nothing to do with the ceiling.
+  const biggest = window.CPL_FUNDING.colleges.reduce(function (a, b) {
+    return (a.credit_ftes || 0) >= (b.credit_ftes || 0) ? a : b;
+  }).college;
+  check("R8: the maximum award is the ceiling (the ceiling binds at this pool size)",
+    p.cap_window > 0 && Math.abs(max - p.cap_window) < 0.5 && max > p.floor_window);
+  check("R8: the largest college on the allocation basis is the one held to the ceiling",
+    T._alloc(biggest).capped === true && Math.abs(T._alloc(biggest).total - p.cap_window) < 0.5);
 }
 
 finish();
