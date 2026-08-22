@@ -56,7 +56,7 @@
     "cpl_funding_applied.test.js": 23,
     "cpl_funding_basis.test.js": 37,
     "cpl_funding_cap.test.js": 51,
-    "cpl_funding_cpl_ftes.test.js": 54,
+    "cpl_funding_cpl_ftes.test.js": 57,
     "cpl_funding_cumulative_target.test.js": 11,
     "cpl_funding_earning.test.js": 41,
     "cpl_funding_equity.test.js": 103,
