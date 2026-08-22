@@ -302,6 +302,20 @@
   // missing-data guard can render a graceful empty state). Used to pull the
   // heavy per-tab data files (statewide_data.js, unified_courses_data.js, …) on
   // demand rather than eagerly at page load.
+  /* name -> "name?v=<hash>" when the deploy stamped a manifest for it.
+   * Exposed on CPL_TABS so any other runtime loader can opt in without growing a
+   * second copy of this logic — the repo already pays for one assistant living in
+   * three files. `unified_courses.js` deliberately does NOT use it: its _eraSrc()
+   * pins to the DATASET era, which is a join-correctness guard a content hash
+   * cannot express. */
+  function assetUrl(src) {
+    try {
+      var m = window.CPL_ASSET_V;
+      if (m && typeof src === 'string' && m[src]) return src + '?v=' + m[src];
+    } catch (e) { /* fail open — see loadScript */ }
+    return src;
+  }
+
   function loadScript(src, globalName, cb) {
     if (globalName && window[globalName]) { cb(); return; }
     var existing = document.querySelector('script[data-lazy-src="' + src + '"]');
@@ -320,7 +334,20 @@
       }
     }
     var s = document.createElement('script');
-    s.src = src;
+    /* Cache-bust from the deploy-time manifest (scripts/stamp_asset_versions.py).
+     * COBI lazy-loads 34 tab modules through here, so this ONE line is what keeps
+     * a reader from sitting on a stale tab after a deploy — the <script> tags in
+     * the HTML are the shell, these are the substance.
+     *
+     * ⚠ THE DEDUPE KEY STAYS THE UNVERSIONED NAME. `data-lazy-src` is how the
+     * idempotency check above finds an existing tag; keying it on the stamped URL
+     * would make a second loadScript('college_briefing.js') miss the tag it just
+     * injected and load the module twice.
+     *
+     * ⚠ AND IT FAILS OPEN. No manifest (a local file:// open, an older deploy, a
+     * page that never got one) means the plain name, i.e. exactly today's
+     * behavior — never a broken src. */
+    s.src = assetUrl(src);
     s.setAttribute('data-lazy-src', src);
     s.onload = function () { s.setAttribute('data-lazy-loaded', '1'); cb(); };
     s.onerror = function () { s.setAttribute('data-lazy-loaded', 'error'); cb(); };
@@ -334,6 +361,7 @@
     current: function () { return _currentTab; },
     onActivate: onActivate,
     loadScript: loadScript,
+    assetUrl: assetUrl,
     openRail: openRail,
     closeRail: closeRail,
     renderRailAuth: renderRailAuth
