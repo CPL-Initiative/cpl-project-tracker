@@ -104,6 +104,23 @@ jobs:
           touch _site/.nojekyll
           echo "Assembled _site: $(du -sh _site | cut -f1) ($(find _site -type f | wc -l) files)"
 
+      # Cache-bust the published assets. Sam, 2026-08-22: "I fear users may be
+      # looking at stale screens." index.html shipped 38 <script> tags with no
+      # version query, and COBI lazy-loads 34 more tab modules by name — so a
+      # browser could hold a stale college_briefing.js indefinitely.
+      #
+      # ⚠️ IT RUNS HERE, NOT IN excel_to_dashboard.py. Stamping during the daily
+      # data run would hash the files as they were THAT MORNING, so a JS change
+      # merged at noon would publish under the morning's stamp — a version query
+      # that looks precise and is wrong. This step hashes the exact bytes being
+      # uploaded, on every deploy path (push, the cron's workflow_run, dispatch).
+      #
+      # It exits non-zero if it stamps NOTHING, so a refactor that changes how
+      # assets are referenced fails the deploy instead of silently shipping
+      # unversioned pages — same posture as the served-path assertion below.
+      - name: Stamp asset versions (cache-busting)
+        run: python3 scripts/stamp_asset_versions.py _site
+
       - name: Assert every browser-served path is present
         run: |
           set -euo pipefail

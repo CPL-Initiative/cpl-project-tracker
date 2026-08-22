@@ -6,6 +6,7 @@
     "activities_sprint_filter.test.js": 9,
     "admin_tab.test.js": 177,
     "annual_report.test.js": 36,
+    "asset_versions.test.js": 20,
     "assoc_editor.test.js": 28,
     "attach_explainer.test.js": 14,
     "budget_ledger.test.js": 40,
