@@ -77,10 +77,6 @@ section:last-of-type{border-bottom:0}
 .fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
 /* The appropriation itself — the one figure a CO or Finance reader looks for first. */
 .fig.top{background:var(--tint-cobalt); border-color:var(--cobalt)}
-/* Money that never reaches a college. The ▼ matches the flow legend below, so
-   the distinction is carried by a mark and by the words, never by color alone. */
-.fig.held{border-left:3px solid var(--crimson)}
-.fig .dn{color:var(--crimson); font-weight:700}
 
 .range{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; max-width:none}
 .rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:4px; padding:13px 16px}
@@ -210,18 +206,22 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <section>
   <div class="wrap">
-    <p>The Chancellor&rsquo;s Office holds back what it needs for staff and for statewide projects, sets a
-      little aside for noncredit campuses and for rural colleges, and shares the rest among the
-      115&nbsp;colleges <strong>in proportion to how much teaching each one does</strong>. No college is
-      offered less than $150,000 over the two years.</p>
-    <p>That figure is a <strong>ceiling, not a check</strong>. A college qualifies by doing three
-      straightforward things, and then earns its money by showing real prior-learning credit in MAP
-      against three priorities. Show none of it, earn none of it.</p>
+    <p>The one-time appropriation does three things: it funds the statewide CPL projects and technology
+      every college draws on, it funds two Chancellor&rsquo;s Office posts supporting that work, and it
+      allocates the rest &mdash; much the largest part &mdash; directly to the 115&nbsp;colleges
+      <strong>in proportion to how much teaching each one does</strong>. Dedicated amounts go to the
+      noncredit campuses and to the rural colleges. No college is offered less than $150,000 over the
+      two years.</p>
+    <p><strong>What a college receives is driven by its own CPL results, as they happen.</strong> The
+      figure allocated to a college is what is available to it across the two years; what it draws down
+      tracks the prior-learning credit it actually puts on students&rsquo; records, measured from that
+      college&rsquo;s own MAP data against three priorities. A college qualifies by doing three
+      straightforward things, and from there the funding follows the outcomes.</p>
     <div class="figs">
-      <div class="fig top"><div class="v num" id="f-total">$35,000,000</div><p class="k">one-time 2026-27 appropriation &mdash; everything below comes out of this</p></div>
-      <div class="fig held"><div class="v num" id="f-co">$9,759,692</div><p class="k"><span class="dn" aria-hidden="true">&#9660;</span> held by the Chancellor&rsquo;s Office &mdash; staff and statewide CPL projects</p></div>
-      <div class="fig held"><div class="v num" id="f-nc">$1,000,000</div><p class="k"><span class="dn" aria-hidden="true">&#9660;</span> set aside for the four noncredit campuses, which have no credit enrollment to be measured on</p></div>
-      <div class="fig"><div class="v num" id="f-pool">$24,240,308</div><p class="k">goes to the 115 colleges</p></div>
+      <div class="fig top"><div class="v num" id="f-total">$35,000,000</div><p class="k">one-time 2026-27 appropriation for CPL implementation</p></div>
+      <div class="fig"><div class="v num" id="f-co">$9,759,692</div><p class="k">statewide CPL projects and technology, and two Chancellor&rsquo;s Office posts &mdash; the work all 115 colleges draw on</p></div>
+      <div class="fig"><div class="v num" id="f-nc">$1,000,000</div><p class="k">dedicated to the four noncredit campuses, which have no credit enrollment to be measured on</p></div>
+      <div class="fig"><div class="v num" id="f-pool">$24,240,308</div><p class="k">allocated directly to the 115 colleges</p></div>
       <div class="fig"><div class="v num" id="f-avg">$210,785</div><p class="k">average funding for the two years</p></div>
       <div class="fig"><div class="v num" id="f-floor">50</div><p class="k">colleges land on the $150,000 minimum</p></div>
     </div>
@@ -252,17 +252,17 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   <div class="wrap">
     <div class="sec-head">
       <p class="step-no">Step one</p>
-      <h2>What is set aside before anything reaches a college</h2>
+      <h2>Where the appropriation goes</h2>
     </div>
     <p>Everything below comes out of the one-time 2026-27 appropriation. The $9.04&nbsp;million left from
       2025-26 is a separate distribution and is deliberately not in this pot.</p>
     <div class="flow" id="flow"></div>
     <div class="legend">
-      <span><i class="swatch dial" aria-hidden="true"></i> money moving on to colleges</span>
-      <span><span style="color:var(--crimson);font-weight:700" aria-hidden="true">▼</span> held back or set aside</span>
+      <span><i class="swatch dial" aria-hidden="true"></i> flows into the colleges&rsquo; allocations</span>
+      <span><span style="color:var(--crimson);font-weight:700" aria-hidden="true">▼</span> funds a statewide or dedicated purpose</span>
     </div>
     <div class="note plain">
-      <p><strong>The two set-asides do different jobs.</strong> The noncredit amount funds four campuses
+      <p><strong>The two dedicated amounts do different jobs.</strong> The noncredit amount funds four campuses
         that have no credit enrollment to be measured on, so they cannot take part in the split at all.
         The rural amount stays with the 13 rural colleges &mdash; it is guaranteed, so it is theirs whatever
         they go on to show.</p>
@@ -324,9 +324,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <li>At least <strong>75% of enrolled veterans&rsquo; Joint Services Transcripts uploaded to MAP</strong>.</li>
     </ol>
     <div class="note">
-      <p><strong>⚠ Qualifying does not change the size of the offer.</strong> A college that has not met
-        the baseline still has the same ceiling &mdash; but it earns nothing against it, and what it would
-        have earned is held in reserve rather than shared out to everyone else.</p>
+      <p><strong>⚠ Qualifying does not change the size of the offer.</strong> A college that has not yet met the
+        baseline has the same amount allocated to it, and <strong>that allocation is not redistributed
+        while it gets there</strong> &mdash; what a college has not yet earned stays in reserve for it
+        rather than being shared out to the colleges that moved first.</p>
     </div>
   </div>
 </section>
@@ -495,9 +496,9 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   var P = D.pool, inst = P.one_time - P.admin - P.scaling, hero = inst - P.feeder;
   var steps = [
     { lab:"One-time appropriation, 2026-27", sub:"The whole amount this model starts from", amt:P.one_time, kind:"start" },
-    { lab:"Chancellor's Office staff", sub:"2 full-time posts across the two years", amt:-P.admin, kind:"out" },
+    { lab:"Chancellor's Office staff", sub:"Two full-time posts supporting colleges across the two years", amt:-P.admin, kind:"out" },
     { lab:"Statewide projects and technology", sub:"Work that serves every college rather than one", amt:-P.scaling, kind:"out" },
-    { lab:"Left for institutions", amt:inst, kind:"total" },
+    { lab:"Available to institutions", amt:inst, kind:"total" },
     { lab:"Noncredit campuses", sub:"Four campuses with no credit enrollment to be measured on", amt:-P.feeder, kind:"out" },
     { lab:"To the 115 colleges", amt:hero, kind:"final" },
     { lab:"…of which, guaranteed to rural colleges", sub:"13 colleges, " + money(D.rural_per) + " each", amt:P.rural, kind:"sub" },
