@@ -75,8 +75,17 @@ section:last-of-type{border-bottom:0}
 .fig .v{font-family:"Playfair Display",Georgia,serif; font-size:clamp(1.5rem,1.2rem + 1.2vw,2.1rem);
   color:var(--text-strong); font-variant-numeric:tabular-nums; line-height:1.1}
 .fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
-/* The appropriation itself — the one figure a CO or Finance reader looks for first. */
-.fig.top{background:var(--tint-cobalt); border-color:var(--cobalt)}
+/* The appropriation itself — the one figure a CO or Finance reader looks for
+   first, so it leads full width and the four destinations sit under it. */
+.topline{background:var(--tint-cobalt); border:1px solid var(--cobalt); border-radius:4px;
+  padding:18px 22px; margin:0 0 14px; max-width:none}
+.topline .v{font-family:"Playfair Display",Georgia,serif; color:var(--text-strong);
+  font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem); font-variant-numeric:tabular-nums; line-height:1.1}
+.topline .k{font-size:.9rem; color:var(--text-muted); margin:.35em 0 0; max-width:none}
+.figs.four{grid-template-columns:repeat(4,1fr)}
+.figs.two{grid-template-columns:repeat(2,1fr); margin-top:14px}
+.figs-note{margin:1em 0 0; font-size:.92rem; color:var(--text-muted)}
+.figs-note b{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
 
 .range{display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:14px; max-width:none}
 .rng{background:var(--surface-subtle); border:1px solid var(--border); border-radius:4px; padding:13px 16px}
@@ -86,24 +95,6 @@ section:last-of-type{border-bottom:0}
   margin:0; max-width:none}
 .rs{font-size:.82rem; color:var(--text-muted); margin:.25em 0 0; max-width:none}
 .rng-note{margin-top:1em; font-size:.92rem; color:var(--text-muted)}
-
-/* ── the money flow ───────────────────────────────────────────────────── */
-.flow{background:var(--surface-opaque); border:1px solid var(--border); border-radius:4px; overflow:hidden; max-width:none}
-.flow-row{display:grid; grid-template-columns:1fr auto; gap:8px 18px; align-items:baseline;
-  padding:13px 18px; border-bottom:1px solid var(--border)}
-.flow-row:last-child{border-bottom:0}
-.flow-row .lab{font-size:.95rem; color:var(--text-body); max-width:none}
-.flow-row .lab small{display:block; font-size:.8rem; color:var(--text-muted)}
-.flow-row .amt{font-variant-numeric:tabular-nums; font-weight:600; white-space:nowrap; color:var(--text-strong)}
-.flow-row.out .amt{color:var(--crimson)}
-.flow-row.total{background:var(--surface-subtle)}
-.flow-row.total .lab{font-weight:700; color:var(--text-strong)}
-.flow-row.final{background:var(--tint-cobalt)}
-.flow-row.final .lab{font-weight:700; color:var(--text-strong)}
-.flow-row.final .amt{color:var(--cobalt); font-size:1.1rem}
-.bar{grid-column:1/-1; height:6px; border-radius:3px; background:var(--surface-muted); overflow:hidden; margin-top:2px}
-.bar i{display:block; height:100%; background:var(--cobalt)}
-.bar i.out{background:var(--crimson)}
 
 /* ── callouts ─────────────────────────────────────────────────────────── */
 .note{border-left:3px solid var(--mustard-text); background:var(--tint-mustard);
@@ -156,8 +147,6 @@ input[type=search]{font:inherit; padding:9px 13px; border:1px solid var(--border
 /* ── dials vs facts ───────────────────────────────────────────────────── */
 .legend{display:flex; flex-wrap:wrap; gap:16px; margin-top:1em; font-size:.88rem; color:var(--text-muted); max-width:none}
 .legend span{display:inline-flex; align-items:center; gap:6px}
-.swatch{width:12px; height:12px; border-radius:3px; display:inline-block}
-.swatch.dial{background:var(--cobalt)} .swatch.fact{background:var(--surface-muted); border:1px solid var(--border-strong)}
 
 footer{padding:34px 0 56px; color:var(--text-muted); font-size:.88rem}
 footer p{max-width:74ch}
@@ -165,14 +154,13 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 @media (max-width:820px){
   .figs{grid-template-columns:1fr 1fr}
+  .figs.four{grid-template-columns:1fr 1fr}
   .range{grid-template-columns:1fr}
   .duo{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  .figs{grid-template-columns:1fr}
+  .figs, .figs.four, .figs.two{grid-template-columns:1fr}
   .range{grid-template-columns:1fr}
-  .flow-row{grid-template-columns:1fr; gap:2px}
-  .flow-row .amt{text-align:left}
   body{line-height:1.58}
 }
 @media (prefers-reduced-motion:reduce){
@@ -206,22 +194,32 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <section>
   <div class="wrap">
-    <p>The one-time appropriation does three things: it funds the statewide CPL projects and technology
-      every college draws on, it funds two Chancellor&rsquo;s Office posts supporting that work, and it
-      allocates the rest &mdash; much the largest part &mdash; directly to the 115&nbsp;colleges
-      <strong>in proportion to how much teaching each one does</strong>. Dedicated amounts go to the
-      noncredit campuses and to the rural colleges. No college is offered less than $150,000 over the
-      two years.</p>
+    <p>Most of the one-time appropriation is allocated <strong>directly to the 115&nbsp;colleges</strong>,
+      in proportion to how much teaching each one does. The rest funds a dedicated amount for the four
+      noncredit campuses, the statewide CPL projects and technology every college draws on, and two
+      Chancellor&rsquo;s Office posts supporting that work. No college is offered less than $150,000
+      over the two years.</p>
     <p><strong>What a college receives is driven by its own CPL results, as they happen.</strong> The
       figure allocated to a college is what is available to it across the two years; what it draws down
       tracks the prior-learning credit it actually puts on students&rsquo; records, measured from that
       college&rsquo;s own MAP data against three priorities. A college qualifies by doing three
       straightforward things, and from there the funding follows the outcomes.</p>
-    <div class="figs">
-      <div class="fig top"><div class="v num" id="f-total">$35,000,000</div><p class="k">one-time 2026-27 appropriation for CPL implementation</p></div>
-      <div class="fig"><div class="v num" id="f-co">$9,759,692</div><p class="k">statewide CPL projects and technology, and two Chancellor&rsquo;s Office posts &mdash; the work all 115 colleges draw on</p></div>
-      <div class="fig"><div class="v num" id="f-nc">$1,000,000</div><p class="k">dedicated to the four noncredit campuses, which have no credit enrollment to be measured on</p></div>
+    <div class="topline">
+      <div class="v num" id="f-total">$35,000,000</div>
+      <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
+    </div>
+    <div class="figs four">
       <div class="fig"><div class="v num" id="f-pool">$24,240,308</div><p class="k">allocated directly to the 115 colleges</p></div>
+      <div class="fig"><div class="v num" id="f-nc">$1,000,000</div><p class="k">dedicated to the four noncredit campuses, which have no credit enrollment to be measured on</p></div>
+      <div class="fig"><div class="v num" id="f-proj">$8,959,692</div><p class="k">statewide CPL projects and technology &mdash; work that serves every college rather than one</p></div>
+      <div class="fig"><div class="v num" id="f-staff">$800,000</div><p class="k">two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
+    </div>
+    <p class="figs-note">Those four are the whole appropriation. Of the amount allocated to colleges,
+      <b id="f-rural">$1,000,000</b> is guaranteed to the 13 rural colleges
+      (<b id="f-ruralper">$76,923</b> each, theirs whatever they go on to show) and
+      <b id="f-main">$23,240,308</b> is shared out by size. The $9.04&nbsp;million remaining from 2025-26
+      is a separate distribution and is deliberately not in this pot.</p>
+    <div class="figs two">
       <div class="fig"><div class="v num" id="f-avg">$210,785</div><p class="k">average funding for the two years</p></div>
       <div class="fig"><div class="v num" id="f-floor">50</div><p class="k">colleges land on the $150,000 minimum</p></div>
     </div>
@@ -252,28 +250,6 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   <div class="wrap">
     <div class="sec-head">
       <p class="step-no">Step one</p>
-      <h2>Where the appropriation goes</h2>
-    </div>
-    <p>Everything below comes out of the one-time 2026-27 appropriation. The $9.04&nbsp;million left from
-      2025-26 is a separate distribution and is deliberately not in this pot.</p>
-    <div class="flow" id="flow"></div>
-    <div class="legend">
-      <span><i class="swatch dial" aria-hidden="true"></i> flows into the colleges&rsquo; allocations</span>
-      <span><span style="color:var(--crimson);font-weight:700" aria-hidden="true">▼</span> funds a statewide or dedicated purpose</span>
-    </div>
-    <div class="note plain">
-      <p><strong>The two dedicated amounts do different jobs.</strong> The noncredit amount funds four campuses
-        that have no credit enrollment to be measured on, so they cannot take part in the split at all.
-        The rural amount stays with the 13 rural colleges &mdash; it is guaranteed, so it is theirs whatever
-        they go on to show.</p>
-    </div>
-  </div>
-</section>
-
-<section>
-  <div class="wrap">
-    <div class="sec-head">
-      <p class="step-no">Step two</p>
       <h2>How much each college is offered</h2>
     </div>
     <p>A college&rsquo;s size is measured in <strong>credit FTES</strong> &mdash; the Chancellor&rsquo;s
@@ -312,7 +288,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="step-no">Step three</p>
+      <p class="step-no">Step two</p>
       <h2>What a college has to do to qualify</h2>
     </div>
     <p>Three things, none of them onerous, and all of them checkable from MAP:</p>
@@ -335,7 +311,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="step-no">Step four</p>
+      <p class="step-no">Step three</p>
       <h2>How the money is earned</h2>
     </div>
     <p>The offer is split across three priorities. Each one has a share of the money and a single thing it
@@ -385,7 +361,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 <section>
   <div class="wrap">
     <div class="sec-head">
-      <p class="step-no">Step five</p>
+      <p class="step-no">Step four</p>
       <h2>When the money arrives</h2>
     </div>
     <p>Two timing choices are switched on in the current model, and neither changes how much a college
@@ -492,38 +468,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   var money = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
   var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
 
-  // ── money flow ────────────────────────────────────────────────────────
-  var P = D.pool, inst = P.one_time - P.admin - P.scaling, hero = inst - P.feeder;
-  var steps = [
-    { lab:"One-time appropriation, 2026-27", sub:"The whole amount this model starts from", amt:P.one_time, kind:"start" },
-    { lab:"Chancellor's Office staff", sub:"Two full-time posts supporting colleges across the two years", amt:-P.admin, kind:"out" },
-    { lab:"Statewide projects and technology", sub:"Work that serves every college rather than one", amt:-P.scaling, kind:"out" },
-    { lab:"Available to institutions", amt:inst, kind:"total" },
-    { lab:"Noncredit campuses", sub:"Four campuses with no credit enrollment to be measured on", amt:-P.feeder, kind:"out" },
-    { lab:"To the 115 colleges", amt:hero, kind:"final" },
-    { lab:"…of which, guaranteed to rural colleges", sub:"13 colleges, " + money(D.rural_per) + " each", amt:P.rural, kind:"sub" },
-    { lab:"…and shared out by size", sub:"The proportional pot", amt:D.net_main, kind:"sub" }
-  ];
-  var flow = document.getElementById("flow");
-  steps.forEach(function(s){
-    var row = document.createElement("div");
-    row.className = "flow-row" + (s.kind === "out" ? " out" : s.kind === "total" ? " total" : s.kind === "final" ? " final" : "");
-    var lab = document.createElement("div");
-    lab.className = "lab";
-    lab.appendChild(document.createTextNode(s.lab));
-    if (s.sub) { var sm = document.createElement("small"); sm.textContent = s.sub; lab.appendChild(sm); }
-    var amt = document.createElement("div");
-    amt.className = "amt num";
-    amt.textContent = (s.amt < 0 ? "▼ −" : "") + money(Math.abs(s.amt));
-    row.appendChild(lab); row.appendChild(amt);
-    var bar = document.createElement("div");
-    bar.className = "bar";
-    var i = document.createElement("i");
-    i.style.width = Math.max(1, Math.abs(s.amt) / P.one_time * 100) + "%";
-    if (s.kind === "out") i.className = "out";
-    bar.appendChild(i); row.appendChild(bar);
-    flow.appendChild(row);
-  });
+  // ── the appropriation and where it goes ───────────────────────────────
+  // hero is the appropriation minus every other destination, so the four boxes
+  // sum to the top line by construction and cannot drift apart on a rebuild.
+  var P = D.pool, hero = P.one_time - P.admin - P.scaling - P.feeder;
 
   // ── priorities ────────────────────────────────────────────────────────
   var plain = {
@@ -589,13 +537,14 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   document.getElementById("q").addEventListener("input", function(e){ draw(e.target.value); });
 
   // Headline figures, so the prose can never drift from the model.
-  // The three held-back/set-aside figures plus the college pool sum to the
-  // appropriation BY CONSTRUCTION — hero is one_time minus all of them — so the
-  // boxes a Finance reader will add up cannot drift apart.
   document.getElementById("f-total").textContent = money(P.one_time);
-  document.getElementById("f-co").textContent = money(P.admin + P.scaling);
-  document.getElementById("f-nc").textContent = money(P.feeder);
   document.getElementById("f-pool").textContent = money(hero);
+  document.getElementById("f-nc").textContent = money(P.feeder);
+  document.getElementById("f-proj").textContent = money(P.scaling);
+  document.getElementById("f-staff").textContent = money(P.admin);
+  document.getElementById("f-rural").textContent = money(P.rural);
+  document.getElementById("f-ruralper").textContent = money(D.rural_per);
+  document.getElementById("f-main").textContent = money(D.net_main);
   document.getElementById("f-avg").textContent = money(D.avg);
   document.getElementById("f-floor").textContent = D.model.floorCount;
   document.getElementById("r-min").textContent = money(D.min);
