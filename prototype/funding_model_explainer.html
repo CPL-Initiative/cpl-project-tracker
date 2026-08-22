@@ -20,14 +20,16 @@
   --focus-ring:var(--cobalt);
   /* Derived tints get their own tokens rather than inline rgba (house rule). */
   --tint-cobalt:#E8EEF8; --tint-hunter:#EAF0E6; --tint-crimson:#F6EAEA; --tint-mustard:#F7F0DE;
-  --measure:64ch;
+  /* Prose runs the full column width so its right edge lines up with the
+     boxes and tables rather than stopping ragged short of them. */
+  --measure:none;
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--paper); color:var(--text-body);
   font-family:"Source Sans 3",system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size:clamp(16px,.95rem + .25vw,17.5px); line-height:1.62;
+  font-size:clamp(16px,.95rem + .25vw,17.5px); line-height:1.7;
   -webkit-font-smoothing:antialiased;
 }
 .num{font-variant-numeric:tabular-nums}
@@ -76,13 +78,12 @@ section:last-of-type{border-bottom:0}
   color:var(--text-strong); font-variant-numeric:tabular-nums; line-height:1.1}
 .fig .k{font-size:.82rem; color:var(--text-muted); margin-top:.4em; max-width:none}
 /* The appropriation itself — the one figure a CO or Finance reader looks for
-   first, so it leads full width and the four destinations sit under it. */
+   first, so it leads full width and the three destinations sit under it. */
 .topline{background:var(--tint-cobalt); border:1px solid var(--cobalt); border-radius:4px;
   padding:18px 22px; margin:0 0 14px; max-width:none}
 .topline .v{font-family:"Playfair Display",Georgia,serif; color:var(--text-strong);
   font-size:clamp(1.9rem,1.4rem + 1.6vw,2.6rem); font-variant-numeric:tabular-nums; line-height:1.1}
 .topline .k{font-size:.9rem; color:var(--text-muted); margin:.35em 0 0; max-width:none}
-.figs.four{grid-template-columns:repeat(4,1fr)}
 .figs.two{grid-template-columns:repeat(2,1fr); margin-top:14px}
 .figs-note{margin:1em 0 0; font-size:.92rem; color:var(--text-muted)}
 .figs-note b{color:var(--text-strong); font-variant-numeric:tabular-nums; font-weight:600}
@@ -149,19 +150,18 @@ input[type=search]{font:inherit; padding:9px 13px; border:1px solid var(--border
 .legend span{display:inline-flex; align-items:center; gap:6px}
 
 footer{padding:34px 0 56px; color:var(--text-muted); font-size:.88rem}
-footer p{max-width:74ch}
+footer p{max-width:none}
 hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0 0 1.6em}
 
 @media (max-width:820px){
   .figs{grid-template-columns:1fr 1fr}
-  .figs.four{grid-template-columns:1fr 1fr}
   .range{grid-template-columns:1fr}
   .duo{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  .figs, .figs.four, .figs.two{grid-template-columns:1fr}
+  .figs, .figs.two{grid-template-columns:1fr}
   .range{grid-template-columns:1fr}
-  body{line-height:1.58}
+  body{line-height:1.62}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none !important; transition:none !important; scroll-behavior:auto !important}
@@ -194,11 +194,11 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
 <section>
   <div class="wrap">
-    <p>Most of the one-time appropriation is allocated <strong>directly to the 115&nbsp;colleges</strong>,
-      in proportion to how much teaching each one does. The rest funds a dedicated amount for the four
-      noncredit campuses, the statewide CPL projects and technology every college draws on, and two
-      Chancellor&rsquo;s Office posts supporting that work. No college is offered less than $150,000
-      over the two years.</p>
+    <p>Most of the one-time appropriation is allocated <strong>directly to institutions</strong> &mdash;
+      to the 115&nbsp;colleges in proportion to how much teaching each one does, plus a dedicated amount
+      for the four noncredit campuses, which have no credit enrollment to be measured on. The rest funds
+      the statewide CPL projects and technology every college draws on, and two Chancellor&rsquo;s Office
+      posts supporting that work. No college is offered less than $150,000 over the two years.</p>
     <p><strong>What a college receives is driven by its own CPL results, as they happen.</strong> The
       figure allocated to a college is what is available to it across the two years; what it draws down
       tracks the prior-learning credit it actually puts on students&rsquo; records, measured from that
@@ -208,17 +208,18 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <div class="v num" id="f-total">$35,000,000</div>
       <p class="k">one-time 2026-27 appropriation for CPL implementation</p>
     </div>
-    <div class="figs four">
-      <div class="fig"><div class="v num" id="f-pool">$24,240,308</div><p class="k">allocated directly to the 115 colleges</p></div>
-      <div class="fig"><div class="v num" id="f-nc">$1,000,000</div><p class="k">dedicated to the four noncredit campuses, which have no credit enrollment to be measured on</p></div>
+    <div class="figs">
+      <div class="fig"><div class="v num" id="f-inst">$25,240,308</div><p class="k">allocated to the 115 colleges and the four noncredit campuses, to earn against CPL outcomes</p></div>
       <div class="fig"><div class="v num" id="f-proj">$8,959,692</div><p class="k">statewide CPL projects and technology &mdash; work that serves every college rather than one</p></div>
       <div class="fig"><div class="v num" id="f-staff">$800,000</div><p class="k">two Chancellor&rsquo;s Office posts supporting colleges across the two years</p></div>
     </div>
-    <p class="figs-note">Those four are the whole appropriation. Of the amount allocated to colleges,
-      <b id="f-rural">$1,000,000</b> is guaranteed to the 13 rural colleges
-      (<b id="f-ruralper">$76,923</b> each, theirs whatever they go on to show) and
-      <b id="f-main">$23,240,308</b> is shared out by size. The $9.04&nbsp;million remaining from 2025-26
-      is a separate distribution and is deliberately not in this pot.</p>
+    <p class="figs-note">Those three are the whole appropriation. Within the amount allocated to
+      institutions, <b id="f-nc">$1,000,000</b> is dedicated to the four noncredit campuses, which have no
+      credit enrollment to be measured on; <b id="f-rural">$1,000,000</b> is guaranteed to the 13 rural
+      colleges (<b id="f-ruralper">$76,923</b> each, theirs whatever they go on to show); and
+      <b id="f-main">$23,240,308</b> is shared among the 115 colleges in proportion to size. The
+      $9.04&nbsp;million remaining from 2025-26 is a separate distribution and is deliberately not in
+      this pot.</p>
     <div class="figs two">
       <div class="fig"><div class="v num" id="f-avg">$210,785</div><p class="k">average funding for the two years</p></div>
       <div class="fig"><div class="v num" id="f-floor">50</div><p class="k">colleges land on the $150,000 minimum</p></div>
@@ -420,7 +421,9 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       <h2>Every college</h2>
     </div>
     <p>What each college would be offered across the two years under the current settings. Sorted largest
-      first.</p>
+      first. The four noncredit campuses are not listed here: they are funded from the dedicated
+      <b class="num">$1,000,000</b> rather than from the size-based split, because they have no credit
+      enrollment to be measured on.</p>
     <div class="searchrow">
       <label class="srch" for="q">Find a college</label>
       <input type="search" id="q" placeholder="Type a college or district name" autocomplete="off">
@@ -455,8 +458,8 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
       115 colleges and the policy settings saved in the model on 21 August 2026. Change a setting on the
       tab and these figures move with it.</p>
     <p>This is a working model for discussion, not adopted policy, and the rural roster is still a draft.
-      Dollar figures are what a college is <em>offered</em>; what it is paid depends on what it qualifies
-      for and shows.</p>
+      Dollar figures are what an institution is <em>offered</em>; what it is paid depends on what it
+      qualifies for and shows.</p>
   </div>
 </footer>
 
@@ -472,6 +475,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   // hero is the appropriation minus every other destination, so the four boxes
   // sum to the top line by construction and cannot drift apart on a rebuild.
   var P = D.pool, hero = P.one_time - P.admin - P.scaling - P.feeder;
+  var inst = hero + P.feeder;   // everything that reaches an institution
 
   // ── priorities ────────────────────────────────────────────────────────
   var plain = {
@@ -538,7 +542,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 
   // Headline figures, so the prose can never drift from the model.
   document.getElementById("f-total").textContent = money(P.one_time);
-  document.getElementById("f-pool").textContent = money(hero);
+  document.getElementById("f-inst").textContent = money(inst);
   document.getElementById("f-nc").textContent = money(P.feeder);
   document.getElementById("f-proj").textContent = money(P.scaling);
   document.getElementById("f-staff").textContent = money(P.admin);
