@@ -2682,6 +2682,78 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
   { key: "landing_page", title: "Missing or unconfigured CPL landing pages", body: LANDING_PAGE_RULE, appliesWhen: "always", sortOrder: 100 },
 ];
 
+/* ── The host's selected institution (v53, 2026-08-22) ─────────────────────────
+ *
+ * ⭐ WHY THIS EXISTS. Sam, on a My College screenshot with LACCD chosen as the
+ * district: "she configured her response based on RCCD" — three Riverside
+ * colleges, Norco's exhibits and Moreno Valley's figures, under a heading that
+ * read Los Angeles Community College District.
+ *
+ * The live `sierra_guidance` directive says "When using Sierra from the My
+ * College COBI tab, confine your answers to the selected institution." Nothing
+ * in this function had ever been TOLD what the selected institution is, or even
+ * that the caller was that tab: the request carried query, session_id, history
+ * and audience, and the only way an institution reached the answer was by being
+ * named in the question text. So the directive was an instruction to GUESS, and
+ * the model guessed from whatever institution was most present in its context —
+ * which, when a stale thread from the previous scope was still being sent, was
+ * the previous scope's.
+ *
+ * ⚠ A STRONG DEFAULT, NEVER A FILTER. That same directive's own worked example
+ * is a reader asking "I took a noncredit computer class at Cabrillo and got a
+ * CompTIA certificate, what credit can I get?" — from some other college's page.
+ * A question that names an institution is asking about that one. So this block
+ * sets the subject when the question does not, and yields when it does; it must
+ * never suppress a college the reader explicitly asked about.
+ */
+type HostScope = { kind: "college" | "district" | "statewide"; label: string };
+
+/* ⚠ UNTYPED SIGNATURES ON PURPOSE, on both functions below. tests/lib/lift_ts.js
+ * strips PRIMITIVE and generic annotations; a custom type name like
+ * `HostScope | null` is neither, so it survives the strip and lands in the
+ * evaluated source as a ReferenceError that kills the whole lift — and a dead
+ * lift reports as a thrown driver, not as a failing assertion. The alias above
+ * still types buildSystemPrompt's parameter, which is outside the lifted range.
+ * Shape is { kind, label }. */
+function normalizeHostScope(raw: any) {
+  if (!raw || typeof raw !== "object") return null;
+  const kind = raw.kind;
+  if (kind !== "college" && kind !== "district" && kind !== "statewide") return null;
+  const label = typeof raw.label === "string" ? raw.label.trim().slice(0, 200) : "";
+  if (!label) return null;
+  return { kind, label };
+}
+
+function hostScopeBlock(scope: any) {
+  if (!scope) return "";
+  let out = `\n\nTHE PAGE THIS READER IS ON — READ THIS BEFORE ANSWERING:\n`;
+  if (scope.kind === "statewide") {
+    out += `They are on the "My College" tab with ALL CALIFORNIA COMMUNITY COLLEGES selected — `
+         + `a statewide view, not one institution. Answer statewide. Do NOT pick a college or `
+         + `district to answer for.\n`;
+    return out;
+  }
+  const what = scope.kind === "district" ? "district" : "college";
+  out += `They are on the "My College" tab with ${scope.label} selected. That ${what} is the `
+       + `SUBJECT of the page they are reading, and of your answer.\n`
+       + `- Answer for ${scope.label}.\n`
+       + `- Do NOT answer for, or lead with, a different ${what} — naming one the reader did not `
+       + `ask about is the failure this instruction exists to prevent.\n`;
+  if (scope.kind === "district") {
+    /* ⚠ NAME THE MEMBERSHIP RULE HERE TOO. The district roster header further
+     * down carries the authoritative member list, but it is only emitted when
+     * profiles were actually fetched. If that lookup came back short, the model
+     * must still not invent a membership — the districts it can recite from
+     * training are exactly the big ones a reader is most likely to be sitting on. */
+    out += `- ${scope.label} is a DISTRICT. Use only the member colleges given in the college `
+         + `context below; if none is given, say you could not read its roster rather than `
+         + `naming colleges from memory.\n`;
+  }
+  out += `- The ONE exception: if the question itself names a different institution, it is asking `
+       + `about that one — answer it, and you may note how it relates back to ${scope.label}.\n`;
+  return out;
+}
+
 function buildSystemPrompt(
   sections: any[],
   liveMetrics: any,
@@ -2700,7 +2772,9 @@ function buildSystemPrompt(
   rulesOverlay: Map<string, RuleOverlay> | null = null,
   // Filled with the rule keys that actually fired, so the caller can record
   // "which rules were in play for this answer" without re-deriving it.
-  report?: { fired: string[]; overridden: string[] }
+  report?: { fired: string[]; overridden: string[] },
+  // The institution the CALLER'S PAGE is about (My College). See hostScopeBlock.
+  hostScope: HostScope | null = null
 ): string {
   let context = sections
     .map((s: any, i: number) => {
@@ -2783,6 +2857,7 @@ Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
 
+${hostScopeBlock(hostScope)}
 ${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${ruleBlock}${specialInstruction}${audienceRule}${teamGuidance}`;
 }
 
@@ -2946,7 +3021,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id, history, audience, ctx } = await req.json();
+    const { query, session_id, history, audience, ctx, scope } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -2972,6 +3047,12 @@ Deno.serve(async (req: Request) => {
     // platform — the embed shouldn't broadcast them). Smoke mode 14 guards
     // BOTH directions.
     const externalCtx = ctx === "external";
+
+    // Optional host scope (v53) — the institution the CALLER'S page is about.
+    // Absent or malformed on every existing caller (the standalone sierra/ page,
+    // the Fact Sheet drawer, the production map.rccd.edu widget, the vendor
+    // embed): normalizeHostScope returns null and nothing below changes.
+    const hostScope = normalizeHostScope(scope);
 
     // Optional conversation history (multi-turn). Backward-compatible: callers
     // that omit it (e.g. the production widget) stay single-turn. Sanitize to
@@ -3057,9 +3138,40 @@ Deno.serve(async (req: Request) => {
     // into college-only mode and silently DISCARD the topic results — the West-LA
     // real-estate bug (5 "west" colleges → array → topic dropped → "no real
     // estate" even though West LA has the exhibit).
-    let resolvedProfile: any = collegeProfile;
-    if (Array.isArray(collegeProfile) && collegeProfile.length > 1 && topicResults && topicResults.length > 0) {
-      const ranked = collegeProfile
+    /* The host's selection is a FALLBACK, not an override: it fills in the
+     * subject only when the question named no institution of its own. A question
+     * that names one has always won and still does — see hostScopeBlock, and the
+     * "I took a class at Cabrillo" example in the team guidance it serves.
+     *
+     * Resolution goes back through detectAndFetchCollegeProfile with the label
+     * as the query, so a district resolves by the SAME roster path a typed
+     * district question uses. A second matcher here would be a second thing to
+     * keep in step with map_colleges, and this repo has been bitten by exactly
+     * that shape before. Costs one extra round trip, and only on the questions
+     * that found nothing to anchor to. */
+    const detectedNothing = !collegeProfile
+      || (Array.isArray(collegeProfile) && collegeProfile.length === 0);
+    let scopedProfile: any = collegeProfile;
+    if (detectedNothing && hostScope && hostScope.kind !== "statewide") {
+      scopedProfile = await detectAndFetchCollegeProfile(hostScope.label, sb);
+    }
+
+    let resolvedProfile: any = scopedProfile;
+    /* ⚠ NARROW AN AMBIGUOUS NAME MATCH, NEVER A DISTRICT ROSTER. This block was
+     * written for the West-LA case — a token like "west" ilike-matches five
+     * colleges, and one of them is the one with the topic hits. A district's
+     * profiles are ALSO an array, and they are not a guess to be narrowed: they
+     * are the authoritative membership, stamped `_district` by resolveDistrict
+     * and carrying the roster header the answer depends on. Collapsing them to
+     * whichever member happened to match a topic word would answer a
+     * nine-college question with one college AND silently drop the header —
+     * which is the #1277 "Three LACCD colleges appear" defect coming back in
+     * through a different door. The stamp is the discriminator. */
+    const isDistrictRoster = Array.isArray(scopedProfile)
+      && scopedProfile.length > 1 && !!scopedProfile[0]?._district;
+    if (!isDistrictRoster && Array.isArray(scopedProfile) && scopedProfile.length > 1
+        && topicResults && topicResults.length > 0) {
+      const ranked = scopedProfile
         .map((p: any) => ({ p, n: topicResults.filter((r: any) => r.college === p.college).length }))
         .filter((x: any) => x.n > 0)
         .sort((a: any, b: any) => b.n - a.n);
@@ -3254,7 +3366,7 @@ Deno.serve(async (req: Request) => {
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      rulesOverlay, ruleReport);
+      rulesOverlay, ruleReport, hostScope);
 
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {

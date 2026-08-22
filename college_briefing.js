@@ -2312,7 +2312,15 @@
      * chat module that mounts but predates setSuggestions() would otherwise
      * take the mounted branch and show no questions at all — the silent loss
      * this fallback exists to prevent, reintroduced by the gate itself. */
-    if (!mountAssistant(root) || !setAssistantQuestions()) fallbackAsks(root);
+    /* ⚠ SCOPE BEFORE QUESTIONS, AND UNCONDITIONALLY. The `||` below
+     * short-circuits, so anything chained onto it is skipped whenever the mount
+     * fails — and the scope is the one hand-off that must land on every path,
+     * because it is also what DROPS a thread left over from the previous
+     * subject. Chaining it would mean a failed mount silently kept RCCD's
+     * conversation alive under LACCD's heading, which is the defect itself. */
+    var mounted = mountAssistant(root);
+    setAssistantScope();
+    if (!mounted || !setAssistantQuestions()) fallbackAsks(root);
     hoistAssistantIntro(root);
     wire(root);
   }
@@ -2856,6 +2864,36 @@
     var C = chatModule();
     if (!C || typeof C.setSuggestions !== "function") return false;
     try { return C.setSuggestions(scopeQuestions()); } catch (e) { return false; }
+  }
+
+  /* Tell the assistant WHOSE PAGE THIS IS. The questions above say what is worth
+   * asking; this says who is being asked about, and they are not the same thing
+   * — a reader types their own question far more often than they click a chip,
+   * and a typed question carries no scope at all.
+   *
+   * ⚠ THIS IS WHAT MAKES THE ANSWER MATCH THE HEADING. Sam, 2026-08-22, with
+   * LACCD selected: "she configured her response based on RCCD." Nothing had
+   * ever told the assistant which institution was selected — not the payload,
+   * not the prompt — so the live `sierra_guidance` directive "confine your
+   * answers to the selected institution" was an instruction to guess, and the
+   * stale thread from a previous scope was the only institution in evidence.
+   * cpl_chat.js's setScope() drops that thread on a real change of subject; the
+   * label it takes is what the function anchors the answer to.
+   *
+   * ⚠ THE FULL NAME, NOT THE DISPLAY ABBREVIATION. The picker renders "Los
+   * Angeles CCD" and the roster's key is "Los Angeles Community College
+   * District"; the function resolves a district by that stem through the same
+   * path a typed question uses, so handing over the short form would put a
+   * second, weaker matcher in the loop. state.district is already the full name.
+   *
+   * Fails soft: an older chat module without setScope simply behaves as it does
+   * today. Never gates the mount — a scope that cannot be handed over is a
+   * less-tailored assistant, not a missing one. */
+  function setAssistantScope() {
+    var C = chatModule();
+    if (!C || typeof C.setScope !== "function") return false;
+    try { return C.setScope(scopeReady() ? state.scope : null, scopeLabel()); }
+    catch (e) { return false; }
   }
   /* One click, not two. The suggested questions sit above an assistant that is
    * already mounted on this tab, so clicking one fills the box AND sends —
