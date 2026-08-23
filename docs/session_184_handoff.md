@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/session_183_handoff]]"
   - "[[docs/college_action_page_lessons]]"
+superseded: true
+superseded_by: session_186_handoff.md
 ---
 
 # Session 184 handoff

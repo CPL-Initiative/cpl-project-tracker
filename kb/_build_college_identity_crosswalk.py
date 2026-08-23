@@ -332,7 +332,7 @@ def lint_observed(observed, rows, same_entity=None, separate=None):
             kind = "whitespace" if nm.strip() != nm else "spelling"
             findings.append({"name": nm, "class": kind, "resolves_to": known[norm(nm)],
                              "sources": o.get("sources"),
-                             "why": "Normalises to a known identity but is not the "
+                             "why": "Normalizes to a known identity but is not the "
                                     "same string, so any exact-match join misses it."})
             continue
         # A RULING OUTRANKS THE HEURISTIC. `same_entity` names are already
@@ -511,6 +511,10 @@ def main():
                          "table. Used ONLY to lint: a name that resolves to no "
                          "identity is reported, never invented into one.")
     ap.add_argument("--out", default=None)
+    ap.add_argument("--no-lint", action="store_true",
+                    help="Deliberately regenerate WITHOUT the observed-names lint. "
+                         "Required to overwrite an artifact that currently carries "
+                         "findings — see the guard below.")
     args = ap.parse_args()
 
     if not args.map_json:
@@ -704,10 +708,45 @@ def main():
                     "curator: %s, %s" % (e.get("decided_by"), e.get("decided_on"))
 
     lint = []
+    observed_n = 0
     if args.observed_json:
         obs = json.load(open(args.observed_json, encoding="utf-8"))
-        lint = lint_observed(obs["names"] if isinstance(obs, dict) else obs, out,
-                             same_entity, separate)
+        names = obs["names"] if isinstance(obs, dict) else obs
+        observed_n = len(names)
+        lint = lint_observed(names, out, same_entity, separate)
+
+    # ── THE EMPTYING GUARD (2026-08-23) ──────────────────────────────────────
+    #
+    # ⚠️ `--observed-json` is OPTIONAL, and that optionality has already cost us
+    # the finding list once. On 2026-08-21 (#1283) this script was re-run without
+    # it: `findings` went 13 -> 0 in a -135-line diff, the College Identity tab
+    # started printing "Nothing outstanding", and it stayed that way through four
+    # merges. Nobody did anything wrong at review time — an empty findings list
+    # looks EXACTLY like a clean bill of health, which is the one thing this
+    # artifact exists to distinguish from silence.
+    #
+    # So the artifact now RECORDS whether it was linted (`linted`,
+    # `observed_names`), and regenerating without the input over an artifact that
+    # currently has findings is refused unless you say --no-lint and mean it.
+    # Same shape as scripts/stamp_asset_versions.py exiting non-zero when it
+    # stamps nothing: a tool that can silently do less than intended should fail
+    # instead.
+    js_path = os.path.join(HERE, "..", "college_identity_data.js")
+    if not args.observed_json and not args.no_lint:
+        prior = 0
+        try:
+            with io.open(js_path, encoding="utf-8") as fh:
+                prior = len(re.findall(r'"class":', fh.read()))
+        except IOError:
+            prior = 0
+        if prior:
+            sys.exit(
+                "REFUSING to regenerate without --observed-json: the current "
+                "college_identity_data.js carries %d findings and this run would "
+                "publish ZERO, which reads as 'nothing outstanding' rather than "
+                "'not checked'. Pass --observed-json <file> (see "
+                "kb/college_identity/_inputs/), or --no-lint if you genuinely "
+                "mean to drop the lint." % prior)
 
     stamp = date.today().isoformat()
     outdir = args.out or os.path.join(OUT_DIR, stamp)
@@ -738,9 +777,14 @@ def main():
               },
               "by_entity_kind": dict(sorted(Counter(
                   r.get("entity_kind") or "college" for r in out).items())),
+              # ⚠️ `linted` is what lets the tab tell "no findings" apart from
+              # "not checked". Without it an unlinted rebuild renders as a clean
+              # bill of health — see the emptying guard above.
+              "linted": bool(args.observed_json),
+              "observed_names": observed_n,
               "findings": lint,
           }, indent=1, ensure_ascii=False) + ";\n")
-    with io.open(os.path.join(HERE, "..", "college_identity_data.js"), "w",
+    with io.open(js_path, "w",
                  encoding="utf-8") as fh:
         fh.write(js)
 

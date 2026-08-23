@@ -8,6 +8,8 @@ obsidian-folder: cpl-project-tracker
 related:
   - "[[CLAUDE]]"
   - "[[docs/session_180_handoff]]"
+superseded: true
+superseded_by: session_186_handoff.md
 ---
 
 # Session 181 handoff

@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 615,
-    "bytes": 6941309,
+    "files": 617,
+    "bytes": 6969485,
     "over_budget": 4,
-    "handoff_max": 185,
+    "handoff_max": 186,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 136777,
+    "always_loaded_bytes": 138365,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 136777,
+        "bytes": 138365,
         "over": 1
       },
       "other": {
         "files": 74,
-        "bytes": 1900172,
+        "bytes": 1903074,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 256755,
+        "bytes": 257620,
         "over": 1
       },
       "lessons": {
         "files": 67,
-        "bytes": 1665761,
+        "bytes": 1676925,
         "over": 1
       },
       "kb_note": {
-        "files": 309,
-        "bytes": 1658231,
+        "files": 310,
+        "bytes": 1663441,
         "over": 0
       },
       "handoff": {
-        "files": 163,
-        "bytes": 1323613,
+        "files": 164,
+        "bytes": 1330060,
         "over": 0
       }
     },
@@ -56,10 +56,10 @@
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2152,
-      "bytes": 1178702677,
+      "files": 2164,
+      "bytes": 1178905468,
       "heavy_bytes": 588787120,
-      "heavy_share": 0.5,
+      "heavy_share": 0.499,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -113,13 +113,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 136777,
+        "bytes": 138365,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 76777,
-        "ratio": 2.28
+        "over_by": 78365,
+        "ratio": 2.31
       },
-      "message": "136,777 B is 2.3× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "138,365 B is 2.3× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -141,13 +141,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 256755,
+        "bytes": 257620,
         "limit": 40000,
         "lane": "index",
-        "over_by": 216755,
-        "ratio": 6.42
+        "over_by": 217620,
+        "ratio": 6.44
       },
-      "message": "256,755 B is 6.4× the index budget (40,000 B) — candidate for compaction",
+      "message": "257,620 B is 6.4× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -3116,13 +3116,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 464906,
+        "bytes": 467808,
         "limit": 150000,
         "lane": "other",
-        "over_by": 314906,
-        "ratio": 3.1
+        "over_by": 317808,
+        "ratio": 3.12
       },
-      "message": "464,906 B is 3.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "467,808 B is 3.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {

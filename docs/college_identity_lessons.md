@@ -343,3 +343,80 @@ a college that does not exist, but it should not be reachable.
    reason) so they join instead of vanishing.
 3. Record `mis_absent_why` on the 8 test rows — they currently read identically to
    an unexplained blank.
+
+---
+
+## 2026-08-23 — the lint had emptied itself, and an empty finding list reads as good news (Session 185, SkyScope)
+
+**Found while working a queue item about one sandbox college.** The To-Do feed
+said *"Las PosTest College is in the catalog Sierra reads"*. Chasing it led
+somewhere larger: the College Identity tab was reporting **"Nothing
+outstanding"** while ten real findings existed.
+
+### What happened
+
+`--observed-json` — every college-name string seen in a live table — is an
+**optional** argument to `kb/_build_college_identity_crosswalk.py`. #1278 shipped
+the artifact with **13 findings**. #1283 regenerated it without the input:
+`findings` went to **zero** in a −135-line diff, and it stayed that way through
+four merges.
+
+**Nobody misread the diff.** An empty findings list is indistinguishable from a
+clean bill of health, which is the one distinction this artifact exists to make.
+`cpl_memory` recorded the hazard the *same day*
+(`regenerating-an-artifact-without-its-input-empties-the-finding`) and the
+artifact still shipped empty — **recording a rule and enforcing it are two
+different events**, which is this repo's own
+`a-rule-you-wrote-is-not-a-rule-you-applied` for the third time.
+
+### What now stops it
+
+- The builder **exits 1** rather than publish an unlinted artifact over one that
+  currently carries findings. `--no-lint` is the deliberate escape hatch, so the
+  capability is not removed — only the silent version of it.
+- The artifact stamps **`linted`** and **`observed_names`**, and the tab renders
+  **"the snapshot was generated without its lint input, so Sierra's corpus was
+  NOT checked"** instead of "Nothing outstanding". A tab whose job is making
+  absence visible must not present its own absence as health.
+- `tests/college_identity_lint_guard.test.js` **runs** the builder three ways
+  (with input, without, `--no-lint`) rather than reading it, and asserts the
+  refusal leaves the artifact byte-identical — refusing while writing anyway
+  would be the same defect wearing a warning.
+- It also asserts the committed artifact is **byte-reproducible from the
+  committed inputs**, so the lint cannot quietly stop being derivable.
+
+### Refreshing the inputs without moving 130 rows through a session
+
+The sandbox cannot reach `*.supabase.co`, so the observed-name set has to travel
+through the session's context — 130 rows of it. Instead: **compare checksums.**
+`md5(string_agg(name, E'\n' ORDER BY name COLLATE "C"))` over the live union of
+`chatbox_college_profiles` and `map_college_contacts` came back
+`471161be5c875a6d55da685280cb686e`, exactly matching the committed 2026-08-21
+file minus the three rows deleted that morning. The same trick verified
+`map_colleges` unchanged (`02770277…`, 120 rows). **A checksum proves the whole
+set matches; a sample does not**, and it costs one query.
+
+### The sandbox colleges
+
+Three MAP sandbox rows — `CabTest College`, `Las PosTest College`, `SantTest Ana
+College` — deleted from `chatbox_college_profiles`; receipt and exact JSON in
+[`kb/college_identity/2026-08-23_test_org_removal.md`](../kb/college_identity/2026-08-23_test_org_removal.md).
+
+⚠️ **`map_colleges.entity_kind` could never have caught the one the queue named.**
+The suppress field works by joining to `map_colleges`, and `Las PosTest College`
+**has no row there at all**. A filter keyed on a table the offending row is
+absent from is not a filter.
+
+⚠️ **The To-Do feed said the rows were "empty", and the STATS were** — 0 exhibits,
+0 credit recommendations, 0 disciplines. **The `contacts` block was not.** Each
+carried a real named coordinator and a real work mailbox from the college the
+sandbox row was cloned from, one with a phone number. Sierra could have routed a
+student to a real person under a college that does not exist. The published-email
+question is settled (Sam, 2026-08-19), so this was never a leak — it was a
+routing error, and the distinction is worth keeping straight.
+
+**Still open — the durable half.** Nothing in `cpl-chat` stops an equivalent row
+arriving tomorrow. The structural guard is for the Edge Function to refuse to
+surface a college absent from (or flagged `test` in) the authoritative roster.
+Not built here: it needs a deploy and a smoke verification, and Sierra was down
+for most of this run.

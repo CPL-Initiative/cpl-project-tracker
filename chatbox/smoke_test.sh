@@ -158,12 +158,92 @@ answer_must_not_match -i "focused on dental|don.?t see a real estate|no real est
 # Part 3 is the one that regressed and the one that matters most to a seeker: it is
 # the only part that gives them somewhere local to go this month. Do NOT green this
 # by deleting an assertion — the three parts ARE the product decision.
+#
+# ⚠ PART 3 MOVED, IT WAS NOT DROPPED (2026-08-23). Its prose grep had been red
+# since Session 125 — four handoffs record it failing while Sierra answered well
+# — so it is now asserted at RETRIEVAL in mode 7r below, and the wording is left
+# to mode 8. The product decision is unchanged; only the instrument is.
 run "7 offerings adoption (LA Harbor NCCER carpentry)" \
   '{"query":"Does Los Angeles Harbor College give credit for NCCER carpentry or construction certifications?","session_id":"smoke-ci"}'
 answer_must_match -i "Harbor" "7 home college detected (LA Harbor named)"
 answer_must_match -i "Norco|Barstow" "7 adoption precedent (college that articulated it)"
-answer_must_match -i "El Camino|Long Beach|Trade.?Tech|Rio Hondo|Compton|Cerritos" "7 nearby construction college"
 answer_must_match -i "construction|carpentry|trades|OSHA" "7 on-topic"
+
+# ── 7r. PART 3, ASSERTED IN DATA RATHER THAN IN PROSE (2026-08-23) ────────────
+# What used to sit here was
+#
+#     answer_must_match -i "El Camino|Long Beach|Trade.?Tech|Rio Hondo|Compton|Cerritos"
+#
+# and it is the assertion this file's own header warns about: it went red on
+# 2026-08-22 (run 113) while Sierra was working correctly. She answered with
+# Norco / Bakersfield / Barstow / Santa Ana — colleges that have ARTICULATED
+# NCCER — instead of leading with LA-basin colleges that merely TEACH the trades.
+# That is a choice of EMPHASIS between two true things, not a capability loss,
+# and a CI job that goes red on emphasis gets muted.
+#
+# Deleting it was not an option either: part 3 is Sam's 2026-08-07 product
+# decision and the only part that gives a seeker somewhere local to go. So the
+# property is now asserted where it is deterministic — at RETRIEVAL. The question
+# this answers is the honest one: did the nearby teaching colleges reach Sierra
+# at all? What she then chooses to foreground is left to mode 8, which asks "who
+# teaches construction" directly and greps the prose for it.
+#
+# ⚠ THE TSQUERY BELOW IS A TRANSCRIPTION, and transcriptions drift. It is what
+# extractTopicKeywords() + expandWithSynonyms() actually produce for mode 7's
+# query — the raw tokens [los, angeles, harbor, nccer, carpentry, construction]
+# plus the nccer/carpentry/construction synonym families. Measured 2026-08-23:
+# 150 rows / 78 colleges, of which FIVE of the six LA-basin colleges come back
+# (Cerritos, Compton, El Camino, Long Beach City, Rio Hondo; Trade-Tech does not).
+# tests/sierra_offerings_retrieval.test.js re-derives the term set from
+# index.ts and fails if this literal stops matching it.
+#
+# ⚠ AND NOTE THE 150: that is the function's own result_limit and the query fills
+# it exactly, so truncation is live here. The ORDERING underneath is guarded by
+# tests/sierra_geo_ranking.test.js, not by this.
+OFFERINGS_TSQ='los:* | angeles:* | harbor:* | nccer:* | carpentry:* | construction:* | welding:* | electrician:* | plumbing:* | carpenter:* | woodworking:*'
+offerings_call() { # tsquery
+  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_offerings" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150}' \
+          "$(printf '%s' "$1" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')")"
+}
+echo "===================================================================="
+echo "MODE: 7r offerings retrieval reaches the LA-basin construction teachers"
+# NEGATIVE CONTROL FIRST. Everything below is "did these names come back?", which
+# a broken call answers with an empty body just as convincingly as a real miss.
+# A term that matches nothing must come back empty — if THIS returns colleges,
+# the RPC is matching indiscriminately and the positive assertion proves nothing.
+neg="$(offerings_call 'zzqqxxwwvv:*')"
+case "$neg" in
+  "[]") echo "  [assert ok] negative control: a nonsense term returns no colleges" ;;
+  *) echo "::error::7r negative control FAILED — a nonsense term returned $(printf '%s' "$neg" | head -c 160). The assertions below cannot be trusted."; fail=1 ;;
+esac
+rows="$(offerings_call "$OFFERINGS_TSQ")"
+case "$rows" in
+  "[{"*) echo "  [assert ok] positive control: the offerings RPC returned rows" ;;
+  *) echo "::error::7r positive control FAILED — search_college_offerings returned $(printf '%s' "$rows" | head -c 200)"; fail=1 ;;
+esac
+# Count DISTINCT LA-basin teaching colleges in the result. Deliberately a
+# THRESHOLD, not a named college: mode 14 learned the hard way that an assertion
+# pinned to a value which can leave the data stops being a guard the moment it
+# does, and a college can leave the course catalog on any refresh. Three of six
+# still fails loudly if detection or truncation regresses (five come back today).
+la_hits=$(printf '%s' "$rows" | python3 -c '
+import json, sys
+BASIN = ["El Camino College", "Long Beach City College", "Los Angeles Trade-Technical College",
+         "Rio Hondo College", "Compton College", "Cerritos College"]
+try:
+    rows = json.loads(sys.stdin.read())
+    names = {r.get("college") for r in rows} if isinstance(rows, list) else set()
+except Exception:
+    names = set()
+print(len([c for c in BASIN if c in names]))
+')
+if [ "${la_hits:-0}" -ge 3 ]; then
+  echo "  [assert ok] 7r ⭐ $la_hits of 6 LA-basin construction teachers reached Sierra's offerings context"
+else
+  echo "::error::7r ⭐ only ${la_hits:-0} of 6 LA-basin construction teachers reached the offerings context — part 3 has no data to stand on (check detection + the 150-row limit)"; fail=1
+fi
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
@@ -436,8 +516,9 @@ echo
 # reach an answer by any route except the district roster.
 #
 # ⚠ THESE ARE PROSE GREPS, and this file already knows what that costs — mode 7
-# is documented as reding intermittently on correct answers for exactly this
-# reason. So the assertions are chosen to be as stable as prose allows: college
+# is documented as going red intermittently on correct answers for exactly this
+# reason (and mode 7's worst offender has since been moved to a retrieval
+# assertion, 7r). So the assertions are chosen to be as stable as prose allows: college
 # NAMES that the context supplies verbatim, and one banned LABEL. Deliberately
 # NOT asserted: any particular count, ordering, or phrasing of the caveat, all of
 # which the model may legitimately word many ways.

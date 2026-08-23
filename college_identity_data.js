@@ -2,7 +2,7 @@
 // Snapshot of the identity lint. The tab re-derives everything it CAN
 // read live and flags disagreement; see college_identity.js.
 window.CPL_COLLEGE_IDENTITY = {
- "generated": "2026-08-21",
+ "generated": "2026-08-23",
  "counts": {
   "entities": 120,
   "with_variants": 118,
@@ -15,5 +15,111 @@ window.CPL_COLLEGE_IDENTITY = {
   "continuing_education": 2,
   "partner": 2
  },
- "findings": []
+ "linted": true,
+ "observed_names": 130,
+ "findings": [
+  {
+   "name": "CA MAP INITIATIVE COLLEGE",
+   "class": "unknown",
+   "resolves_to": null,
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false,
+   "why": "In a live table and claimed by no identity."
+  },
+  {
+   "name": "Calbright College Credit",
+   "class": "awaiting_map_id",
+   "resolves_to": null,
+   "sibling": "Calbright College Non-Credit",
+   "decided_by": "Sam Lee",
+   "decided_on": "2026-08-21",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "has_landing_page": true,
+   "why": "MAP's college_id for the CREDIT arm. Measured 2026-08-21: it appears in chatbox_college_profiles and map_college_contacts and carries its own landing page, but no row in map_colleges and no id in map_college_users. Only MAP can supply it."
+  },
+  {
+   "name": "Cypress College ",
+   "class": "whitespace",
+   "resolves_to": "Cypress College",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+  },
+  {
+   "name": "Launch Apprenticeship Non-Credit",
+   "class": "awaiting_map_id",
+   "resolves_to": null,
+   "sibling": "Launch Apprenticeship",
+   "decided_by": "Sam Lee",
+   "decided_on": "2026-08-21",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false,
+   "why": "MAP's college_id for the NON-CREDIT arm. Same measurement: present in chatbox_college_profiles, absent from map_colleges and map_college_users."
+  },
+  {
+   "name": "North Orange Continuing Education Credit",
+   "class": "spelling",
+   "resolves_to": "North Orange Continuing Education",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+  },
+  {
+   "name": "Pima Medical Institute",
+   "class": "unknown",
+   "resolves_to": null,
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false,
+   "why": "In a live table and claimed by no identity."
+  },
+  {
+   "name": "Sage College",
+   "class": "unknown",
+   "resolves_to": null,
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "has_landing_page": false,
+   "why": "In a live table and claimed by no identity."
+  },
+  {
+   "name": "San Diego College of Continuing Education Credit",
+   "class": "spelling",
+   "resolves_to": "San Diego College of Continuing Education",
+   "sources": [
+    "chatbox_college_profiles",
+    "map_college_contacts"
+   ],
+   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+  },
+  {
+   "name": "San Diego Continuing Education",
+   "class": "spelling",
+   "resolves_to": "San Diego College of Continuing Education",
+   "sources": [
+    "chatbox_college_profiles"
+   ],
+   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+  },
+  {
+   "name": "San Jose City College ",
+   "class": "whitespace",
+   "resolves_to": "San Jose City College",
+   "sources": [
+    "map_college_contacts"
+   ],
+   "why": "Normalizes to a known identity but is not the same string, so any exact-match join misses it."
+  }
+ ]
 };
