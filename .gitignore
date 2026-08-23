@@ -92,3 +92,6 @@ kb/college_courses_payload.json
 # kb/<slug>_offering_map.json and ARE committed; crosswalk.json is the small run receipt.
 kb/college_crosswalk_out/**/*.xlsx
 kb/college_crosswalk_out/**/*.html
+
+# CCR Atlas prototype — regenerate with prototype/build_ccr_atlas.py (never commit; it goes stale silently)
+prototype/ccr_atlas_v1.built.html
