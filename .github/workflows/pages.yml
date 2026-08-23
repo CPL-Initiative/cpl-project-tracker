@@ -182,6 +182,14 @@ jobs:
             # curator arrangement and gets the shipped menu instead.
             "_site/nav_overlay.js"
             "_site/prototype/cer_triage_redesign_v1.html"
+            # The LIVE funding explainer (2026-08-23). It replaced a published
+            # snapshot precisely so the figures could never go stale, and the
+            # tab links to it by a RELATIVE href — so a prune that drops it
+            # produces a dead link from inside the dashboard, and one handed to
+            # the Chancellor's Office. It computes from cpl_funding.js and the
+            # shared payload builder, so all three must survive together.
+            "_site/funding-model/index.html"
+            "_site/funding_model_payload.js"
           )
           missing=0
           for p in "${must[@]}"; do
