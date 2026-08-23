@@ -1,5 +1,5 @@
 {
-  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
+  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run \u2014 that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
   "_note": "Re-baselined by `npm run test:floor`.",
   "files": {
     "actions_bar_slim.test.js": 15,
@@ -50,6 +50,7 @@
     "college_activity_jst.test.js": 18,
     "college_briefing.test.js": 243,
     "college_briefing_auth.test.js": 26,
+    "college_identity_lint_guard.test.js": 16,
     "college_identity_tab.test.js": 43,
     "college_identity_variants.test.js": 16,
     "contracts.test.js": 69,
@@ -169,9 +170,12 @@
     "sierra_geo_ranking.test.js": 50,
     "sierra_guidance.test.js": 34,
     "sierra_guidance_edit.test.js": 26,
+    "sierra_health_probe.test.js": 21,
     "sierra_host_scope.test.js": 26,
     "sierra_markdown.test.js": 36,
+    "sierra_offerings_retrieval.test.js": 19,
     "sierra_page.test.js": 32,
+    "sierra_prompt_cache.test.js": 31,
     "sierra_rule_defaults.test.js": 35,
     "sierra_rules_overlay.test.js": 31,
     "sierra_send_note.test.js": 23,
