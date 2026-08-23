@@ -1,5 +1,5 @@
 {
-  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run \u2014 that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
+  "_readme": "Minimum number of checks each test file must report. Written by `npm run test:floor`; read by tests/run.js. A file reporting FEWER checks than its floor fails the run — that is a check which used to be enforced and silently is not. More is always fine. null = deliberately unfloored (prints no parseable count, or the count is not deterministic). See tests/lib/check_ledger.js.",
   "_note": "Re-baselined by `npm run test:floor`.",
   "files": {
     "actions_bar_slim.test.js": 15,
@@ -70,7 +70,7 @@
     "cpl_funding_pool.test.js": 49,
     "cpl_funding_public_private.test.js": 16,
     "cpl_funding_rate.test.js": 38,
-    "cpl_funding_render.test.js": 142,
+    "cpl_funding_render.test.js": 147,
     "cpl_funding_reorder.test.js": 69,
     "cpl_funding_rollup.test.js": 39,
     "cpl_funding_rural.test.js": 35,

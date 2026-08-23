@@ -843,6 +843,7 @@
       floorCount: Object.keys(r.floored).length,
       cappedCount: Object.keys(r.capped).length,
       capBelowFloor: cap > 0 && floor > 0 && cap < floor,
+      floorInfeasible: r.floorInfeasible, floorDemanded: r.floorDemanded,
       // Where growth starts paying: below this an institution is on the floor and
       // another noncredit FTES earns it nothing. Reported because a lane that is
       // mostly floor is mostly NOT an incentive, and that should be visible on
@@ -2975,6 +2976,20 @@
       }
     })();
 
+    // An unhonorable floor is the model's worst state: every row is marked
+    // floored, so the count reads "N at the minimum" while nobody RECEIVES the
+    // minimum. Both boxes call this, and both REPLACE their floor note with it —
+    // the count is not merely incomplete there, it is false.
+    function floorInfeasibleWarn(m, noun) {
+      var pot = (m.net != null ? m.net : m.pool) || 0;
+      var each = m.floorDemanded > 0 ? m.floor / m.floorDemanded * pot : 0;
+      return ' <strong class="cplfund-capwarn">&#9888; the minimum cannot be honored &mdash; ' +
+        fmtMoney(m.floor) + " &times; " + m.floorCount + " " + noun + "s = " + fmtMoney(m.floorDemanded) +
+        ", more than the " + fmtMoney(pot) + " available. Every " + noun + " receives an equal " +
+        fmtMoney(each) + " instead, BELOW the stated minimum. Lower the minimum, narrow the lane, " +
+        "or raise the pool.</strong>";
+    }
+
     // Minimum and maximum per-college allocation — one box, two editable dials
     // (Sam, 2026-08-22: "add a Max Funding factor to the Min Funding box").
     // They are a PAIR: allocModel solves both together, so the note reports what
@@ -2992,7 +3007,10 @@
               " released back into the pool)"
             : "no college reaches the maximum at current settings");
       var warn = "";
-      if (m.capBelowFloor) {
+      if (m.floorInfeasible) {
+        floorNote = "<strong>the minimum is not being paid</strong>";
+        warn = floorInfeasibleWarn(m, "college");
+      } else if (m.capBelowFloor) {
         warn = ' <strong class="cplfund-capwarn">&#9888; the maximum is below the minimum &mdash; the minimum wins; ' +
           "no college is paid under " + fmtMoney(m.floor) + ".</strong>";
       } else if (m.unspent > 0.5) {
@@ -3038,7 +3056,14 @@
         : (m.cappedCount ? " &middot; <strong>" + m.cappedCount + " held to the maximum</strong>"
                          : " &middot; no institution reaches the maximum");
       var warn = "";
-      if (m.capBelowFloor) {
+      if (m.floorInfeasible) {
+        // Both the count AND the break-even are false in this state: nobody is on
+        // a proportional rate at all, so "growth starts paying above X" describes
+        // a mechanism that is not running. Drop both rather than qualify them.
+        floorNote = "<strong>the minimum is not being paid</strong>";
+        growth = "";
+        warn = floorInfeasibleWarn(m, "institution");
+      } else if (m.capBelowFloor) {
         warn = ' <strong class="cplfund-capwarn">&#9888; the maximum is below the minimum &mdash; the minimum wins.</strong>';
       } else if (m.unspent > 0.5) {
         warn = ' <strong class="cplfund-capwarn">&#9888; ' + fmtMoney(m.unspent) +
@@ -4067,10 +4092,20 @@
       totFloor += floorFor(c);
       totCap += Math.min(capFor(c), Number.MAX_VALUE);
     });
-    var unspent = 0, lam = 0;
+    var unspent = 0, lam = 0, floorInfeasible = false;
     if (floor > 0 && totFloor >= net) {
       // Floors set higher than the pool can honor — degrade to a floor-proportional
       // split (reduces to an equal split when every floor is equal).
+      //
+      // ⚠ THIS STATE MUST BE REPORTED, and until 2026-08-23 it was not. Every row
+      // is marked floored, so `floorCount` reads as "N at the minimum" — but none
+      // of them RECEIVES the minimum: they receive a pro-rata share BELOW it. At a
+      // $50,000 noncredit floor the 33 institutions demand $1,650,000 against a
+      // $1,000,000 pool and each was shown as "at the minimum" while actually
+      // getting $30,303, 61% of it. Silently paying less than the number on the
+      // box is the worst failure this model has, so the flag rides out with the
+      // result and both boxes warn on it.
+      floorInfeasible = true;
       cols.forEach(function (c) {
         F[keyOf(c)] = true;
         W[keyOf(c)] = totFloor > 0 ? floorFor(c) / totFloor * net : (net > 0 ? net / cols.length : 0);
@@ -4135,7 +4170,8 @@
     // the same discount instead of quietly escaping it.
     var plainRatio = (net > 0 && totSize > 0 && lam > 0) ? lam * totSize / net : 1;
     return { W: W, floored: F, capped: C, unspent: unspent, plainRatio: plainRatio,
-      floor: floor, cap: cap, net: net, totSize: totSize, floorFor: floorFor };
+      floor: floor, cap: cap, net: net, totSize: totSize, floorFor: floorFor,
+      floorInfeasible: floorInfeasible, floorDemanded: totFloor };
   }
 
   // ── the CREDIT lane's caller ─────────────────────────────────────────────
@@ -4182,6 +4218,7 @@
       floor: r.floor, cap: cap, net: r.net, unspent: r.unspent, plainRatio: r.plainRatio,
       floorCount: Object.keys(r.floored).length, floorCost: cost,
       cappedCount: Object.keys(r.capped).length, capReleased: released,
+      floorInfeasible: r.floorInfeasible, floorDemanded: r.floorDemanded,
       // A ceiling set below the floor is a curator typo, not a policy: capFor()
       // clamps it away so nobody is paid under the minimum, and this flag says
       // so on screen rather than leaving the two boxes silently contradicting.
