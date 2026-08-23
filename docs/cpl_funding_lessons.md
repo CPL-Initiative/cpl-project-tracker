@@ -1465,3 +1465,113 @@ them into the credit totals, the district rollup and the eligibility counts.
 
 **Next: Sam moves the dials.** The threshold, floor and ceiling are all live, and
 the box reports what each one did.
+
+## 2026-08-23 — Sam moved the dials, and every remaining defect fell out of it
+
+He set the credit floor to **$150,000** and the noncredit floor to **$50,000**
+"just to see how it would play out", and reported that *"the changes didn't
+propagate and recalculate"*. The tab had recalculated — the figures in his
+screenshot (49 topped up, 6 held, $275,852 released) are exactly what the engine
+computes at $150K. But the report was right anyway, because **three surfaces
+were lying, each in a different way**, and the dial change is what exposed them.
+
+### ⚠️ A floor the pool cannot honor reported itself as honored
+
+33 institutions × $50,000 is **$1,650,000** against a **$1,000,000** pool. The
+solver's degenerate branch splits the pool pro rata and marks every row
+`floored` — so `floorCount` counted all 33 and the box read **"33 at the
+minimum"** while every institution actually received **$30,303, 61% of the
+stated minimum**.
+
+⭐ **Silently paying less than the number printed on the dial is the worst state
+this model has**, and it was the only state with no warning: the ceiling's
+mirror case (a pool too small to spend) has had one since the ceiling shipped.
+`solveBounded()` now returns `floorInfeasible` + `floorDemanded`, and both boxes
+**replace** their floor note rather than appending to it — the count is not
+merely incomplete there, it is false. The noncredit box also drops "growth
+starts paying above N FTES", which describes a proportional mechanism that is
+not running when every row is pinned. Latent in the credit lane too: 115 × any
+floor above ~$210,785 trips it.
+
+### ⚠️ The explainer had not moved at all, and could not
+
+It was a Claude artifact, rebuilt by a Node script and republished by hand, on a
+host that blocks the outbound call it would need to read the config. Sam: *"Yes,
+move explainer to Pages"*. It is now `funding-model/index.html` served from the
+same Pages site, loading `cpl_funding.js`, calling `ensureLoaded()`, subscribing
+to `onModelChange()` and painting from the engine — the pattern My College
+already used.
+
+⭐ **Computing a figure correctly once is not the same as the figure being
+correct.** Both were true of the snapshot; only the second matters to a reader.
+Durable: [`a-snapshot-of-a-live-model-is-a-claim-that-decays`](kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md).
+
+⚠️ **One payload builder, two callers.** `funding_model_payload.js` is shared
+with the Node snapshot script (kept only for a frozen emailable copy). Two
+builders would drift invisibly — this is the same file that shipped a hand-typed
+`$5,060` and "four noncredit campuses". The extraction was verified
+byte-identical.
+
+⚠️ **A painter written for a page that runs once will accumulate.** Sam caught
+the worked-example cards rendering **three times**: the live page repaints on
+every model change and three containers appended another copy each time. Every
+container the painter appends into is now emptied first — and the test that
+should have caught it had asserted on `#tbody`, **the one container whose own
+`draw()` clears it**. Asserting on the part that cannot fail is not a guard.
+
+### ⚠️ "held $X" on all 115 rows, months before anyone was late
+
+Sam: *"a little worried about the message we're sending with the Held label — not
+sure we need it."* The label existed for a good reason (it replaced a bare `$0
+earned`, which falsely said the college had posted no CPL — his own 2026-07-30
+ruling). What changed is that **every** college is gated until the participation
+deadline, so 115 rows of "held $132,000" read as the state withholding from the
+whole system when the requirement is not yet due.
+
+Now phase-dependent: before the deadline the row says **"opt in to start
+earning"** and names no figure; after it, the figure returns, because then it is
+true. A failed clock read defaults to the softer wording — a clock error must
+never accuse 115 colleges.
+
+### ⭐ The parity figure he asked for exposed a third defect
+
+Sam kept the carve-out at $1M — *"I can adjust it up for parity later, so glad to
+have that 7.1% number at the ready"* — and asked for it on the tab. Building it
+surfaced that the **"CCC total" card counted only the standalone roster**
+(24,995 FTES) as the whole of noncredit, missing **56,993 FTES** carried on 108
+college rows. That is the exact card a reader would use to judge whether $1M is
+a fair noncredit share.
+
+| | |
+|---|---|
+| noncredit share of teaching | **7.1%** (81,988 FTES against 1,069,182 credit) |
+| noncredit share of money | **4.0%** ($1,000,000 of $25,240,308) |
+| parity would be | **$1,797,660** — $797,660 above the carve-out |
+
+Also settled: the $1M carve-out is **not** redundant with the three NC dials.
+They share the money; it decides how much there is, and it is the boundary that
+keeps "$24,240,308 to colleges" a fixed number that ties to the amendment.
+
+### ⚠️ Two verification failures, and they cost a red main
+
+Recorded because they were expensive and repeated, not because they were novel.
+
+1. **Merged twice on the required check** while the non-required suite covering
+   the exact changed files was still running. The repo rule permits merging on
+   `unstable`; it assumes the pending check is not the one carrying your risk.
+2. **Verified locally with a subset I chose.** Both files that broke were outside
+   it — and one held a **duplicate** of an assertion I had already fixed in a
+   file I did run.
+3. **Reported a "full suite pass" that was SIGTERM.** `REAL_EXIT=143`, killed by
+   my own `pkill`; the "exit code 0" belonged to the wrapper. Same class as the
+   `; echo "EXIT=$?"` trap written into the handoff that morning.
+
+Durable: [`a-green-check-you-did-not-scope-is-not-evidence`](kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md).
+
+### Where this leaves it
+
+Four PRs merged (#1302–#1305) plus the repaint/noncredit-section fix. The
+explainer is live at `/funding-model/` and explains the noncredit lane from the
+payload. **Open, both Sam's:** the noncredit floor (27 of 33 sit on $25,000;
+$20,000 halves the break-even to 1,762 FTES) and whether $1M moves toward the
+$1,797,660 parity figure.

@@ -281,6 +281,15 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
     <!-- Built from the payload (D.cards) — see build_funding_model_explainer.js.
          Hand-typing these is how two of the four figures went stale. -->
     <div class="duo" id="cards"></div>
+
+    <!-- The NONCREDIT lane. Added 2026-08-23 after Sam noticed the page did not
+         reflect it: the payload carried D.nc from the day the lane shipped, but
+         nothing on the page said a second lane existed, so a reader was told the
+         $1,000,000 was "dedicated to noncredit" and never told who gets it or on
+         what terms. Every figure here is written from D.nc by the painter. -->
+    <h3 class="nc-h">Noncredit is funded on the same rules, from its own pot</h3>
+    <p id="nc-body">Noncredit teaching is not measured by credit FTES, so it is funded separately.</p>
+    <ul id="nc-list"></ul>
   </div>
 </section>
 
@@ -468,6 +477,20 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
 <script>
 window.CPL_PAINT_EXPLAINER = function (D) {
   "use strict";
+  // ⚠ EVERY container this function APPENDS into must be emptied first.
+  // This painter was written for a snapshot page that ran exactly once. The live
+  // page repaints on every model change — once from the baked defaults, again
+  // when the shared config lands — so three containers accumulated a second and
+  // third copy of themselves on screen (Sam caught it: the two worked-example
+  // cards rendered three times over).
+  //
+  // #tbody is NOT in this list because draw() already clears it — which is
+  // exactly why the first test missed this: it asserted on the one container
+  // that could not fail.
+  ["prios", "workedbody", "cards", "nc-list"].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = "";
+  });
   var money = function(n){ return "$" + Math.round(n).toLocaleString("en-US"); };
   var num = function(n){ return Math.round(n).toLocaleString("en-US"); };
 
@@ -583,6 +606,37 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   setText("g-floor", money(D.pool.floor));
   setText("g-cap", money(D.pool.cap));
   setText("f-rate", money(D.pool.rate));
+
+  // ── the noncredit lane ────────────────────────────────────────────────
+  // Written from D.nc rather than described, for the same reason as every other
+  // figure on this page: a hand-typed count is the thing that goes stale.
+  (function () {
+    var n = D.nc, body = document.getElementById("nc-body"), list = document.getElementById("nc-list");
+    if (!n || !body || !list) return;
+    body.textContent = "A college's noncredit teaching earns nothing under the measures above — they are " +
+      "denominated in credit FTES. So " + money(n.pool) + " of the money to institutions is set aside for " +
+      "noncredit and shared on the same shape of rule: a minimum, a maximum, and a proportional split " +
+      "between them. It is kept separate on every screen and in every export, so a college can see what its " +
+      "noncredit program is owed without it disappearing into the credit figure.";
+    [
+      ["Who is in it", n.count + " institutions — " + n.colleges + " colleges that run their own noncredit " +
+        "programs, plus " + n.standalone + " standalone noncredit institutions with no credit side at all."],
+      ["How you get in", "At least " + num(n.threshold) + " annual noncredit FTES. Noncredit is taught almost " +
+        "everywhere, so without a threshold the pot would be spread far too thin to matter anywhere."],
+      ["The bounds", "A minimum of " + money(n.floor) + " and a maximum of " + (n.cap ? money(n.cap) : "none") +
+        " over the two years" + (n.floorCount ? ", with " + n.floorCount + " of the " + n.count +
+        " currently at the minimum" : "") + "."],
+      ["Where growth starts paying", n.breakEven
+        ? "Above " + num(n.breakEven) + " noncredit FTES. Below that an institution is on the minimum, so the " +
+          "incentive is to cross the threshold rather than to grow within it."
+        : "Every institution above the threshold earns in proportion to its size."]
+    ].forEach(function (r) {
+      var li = document.createElement("li");
+      var b = document.createElement("strong"); b.textContent = r[0] + " — ";
+      li.appendChild(b); li.appendChild(document.createTextNode(r[1]));
+      list.appendChild(li);
+    });
+  })();
 
   // The two illustration cards, built from the payload so they cannot drift.
   (function () {
