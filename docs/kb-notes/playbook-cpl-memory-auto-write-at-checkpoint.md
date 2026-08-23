@@ -55,17 +55,34 @@ principles" (`d-mem-*`/`r-mem-*` in the table itself).
    Revise pattern: PATCH the old row `status='superseded', superseded_by=<new
    slug>` and write the corrected row. Never hard-delete (history matters +
    "which rule led to this action").
-5. **Write `title` + `plain` for the 📄 Report (2026-07-25).** The Report
-   ("Everything We Know") is a shareable, non-techie briefing. It renders an optional
-   short **`title`** (a 3-6 word label, bold above each item) and the optional
-   **`plain`** prose (falling back to `summary`(+`detail`) when null). So on each new
-   row give it a short `title`, and — when the `summary` is jargon-heavy (a filename,
-   a flag like `has_ccc`, an id scheme) — a `plain` sentence a layperson can follow,
-   **with a concrete example where the summary is obtuse**. Skip `plain` when the
-   summary already reads plainly. (Both are reader aids; they never change the
-   curator/AI meaning in `summary`/`detail`.) In the dashboard, the **✨ Autogenerate**
-   button on the Add/Edit form drafts all of these from a typed topic via the cpl-chat
-   RAG function — a curator convenience, still session-reviewed before save.
+5. **Write `title` + `plain` on EVERY row — `plain` is not optional (hardened
+   2026-08-23).** The Report ("Everything We Know") is a shareable, non-techie
+   briefing. It renders a short **`title`** (a 3-6 word label, bold above each item)
+   and the **`plain`** prose (falling back to `summary`(+`detail`) when null). Give
+   every new row both.
+
+   ⚠️ **The "skip `plain` when the summary already reads plainly" escape hatch is
+   RETIRED, because it is the thing that emptied the field.** Measured 2026-08-23:
+   **281 rows carried no `plain`, and 279 of them were written in August** — this was
+   not a legacy backlog, it was a habit that decayed the moment volume rose. Every one
+   of those sessions had this rule available and judged its own summary plain enough.
+   **The author is the worst possible judge of that**: a summary reads plainly to the
+   person who just did the work and holds all the context that makes it legible.
+
+   Sam, 2026-08-23, on rows he could not audit: *"maybe some of the other memory is
+   needed — not sure because it's written in language you understand but I don't
+   altogether."* That is the cost. His ✓ is the corroboration mechanism that promotes
+   a row to `verified`, and **a row he cannot read is a row he cannot govern** — he
+   set two rows to `stale` that day and only one of them should have been. So the
+   field is load-bearing, not a courtesy.
+
+   **What `plain` must be:** what you would tell a colleague who does not work on
+   this — no filenames, no column names, no flags, no identifiers, and a concrete
+   example wherever the summary is abstract. Name the consequence, not the mechanism.
+   (Both fields are reader aids; they never change the curator/AI meaning in
+   `summary`/`detail`.) In the dashboard, the **✨ Autogenerate** button on the
+   Add/Edit form drafts all of these from a typed topic via the cpl-chat RAG
+   function — a curator convenience, still session-reviewed before save.
 6. **Log every write** to `cpl_memory_log` (actor = your session moniker).
 7. **Keep it lean (`d-mem-retrieval-first`).** If the table grows past
    browsability, that's the signal to supersede/archive aggressively — not to pile
@@ -80,7 +97,7 @@ insert into public.cpl_memory (slug, kind, org, title, summary, detail, plain, t
 select x.slug, x.kind, coalesce(x.org,'cpl'), x.title, x.summary, x.detail, x.plain,
        x.tags, x.source, coalesce(x.related,'{}'::text[]), x.status, '<MonikerSNN>'
 from jsonb_to_recordset($json$[ {"slug":"…","kind":"…","title":"… (3-6 word label)","summary":"…","detail":"…",
-       "plain":"… (a non-techie sentence; omit/null if the summary is already plain)",
+       "plain":"… (REQUIRED — what you would tell a colleague who does not work on this: no filenames, no column names, no identifiers, and a concrete example where the summary is abstract. Never omit: see rule 5.)",
        "tags":["…"],"source":"…","status":"proposed"} ]$json$::jsonb)
   as x(slug text, kind text, org text, title text, summary text, detail text, plain text,
        tags text[], source text, related text[], status text);
