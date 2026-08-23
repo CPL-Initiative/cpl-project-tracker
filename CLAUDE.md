@@ -883,6 +883,7 @@ exist.
 ⚠️ **The lint fired on MY OWN edit twice** (`stacked_roadmap_cell`, `unindexed_kb_note`)
 and **my own grep tripped on my own comment** quoting the retired assertion. Both fixed
 pre-commit; the cell is now SMALLER than before this run.
+✅ **DEPLOYED AND MEASURED THE SAME RUN — v57 ACTIVE.** 34 turns post-deploy: **1 write, 33 hits, 0 inert**, and **`read=3027` IDENTICAL on every request** while `uncached_input` ranged **10,843 → 22,762** — production proof the always/conditional split was load-bearing, since caching the whole rule block would have jittered that figure and billed a 1.25x write on most turns. ⚠️ **The log source is `function_logs`, NOT `function_edge_logs`** (the latter returns zero rows and looks like a dead feature). ⚠️ **A merge push fires its own smoke run that can RACE the deploy** — here it started 01:17:40 against a deploy that finished 01:18:17, so it tested the OLD function with the NEW script; dispatch your own after confirming the version bumped. ⭐ **The telemetry closed the Haiku capacity question for free**: peak ~23K against Haiku 4.5's 200K is a 9x margin, so only rule-adherence remains to be scored.
 Durable: [`a-cache-breakpoint-must-lead-and-must-not-move`](docs/kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) · story `docs/cpl_assistant_lessons.md` · `docs/college_identity_lessons.md` · handoff `docs/session_186_handoff.md`.
 
 ## Troubleshooting

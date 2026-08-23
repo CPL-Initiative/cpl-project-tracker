@@ -1,5 +1,5 @@
 ---
-title: Session 186 handoff — the cache is merged and inert until you deploy it
+title: Session 186 handoff — the cache is live and measured; Sierra's billing is the open risk
 created: 2026-08-23
 updated: 2026-08-23
 tags: [handoff, session-186, sierra, cpl-chat, prompt-caching, monitoring, college-identity]
@@ -49,22 +49,42 @@ cost arithmetic is in the workflow header so that is a decision, not a shrug.
 
 ---
 
-## 🔴 THE ONE THING THAT MUST HAPPEN NEXT
+## ✅ ALREADY DONE — the deploy landed in Session 185
 
-**Deploy `cpl-chat` and verify the cache actually caches.** The code is merged and
-**inert** until then.
+`cpl-chat` is at **v57 ACTIVE**, `verify_jwt: false`, deployed from
+`cpl-chat-deploy.yml` (never the inline MCP call). **Caching is live and
+verified in production**, not merely merged:
 
-1. Dispatch `.github/workflows/cpl-chat-deploy.yml` (`confirm: DEPLOY`, ref
-   `main`) — **never** the inline MCP `deploy_edge_function` (playbook
-   `playbook-deploy-shared-supabase-edge-function`, superseded section).
-2. Dispatch `cpl-chat-smoke.yml`. **This is the real gate, not the unit tests** —
-   the change reorders the prompt (always-rules now precede the retrieved
-   sources, because caching only works on the front of a prompt).
-3. Read the function log for `cpl-chat cache: read=… write=…`. **If both stay at
-   zero the change is costing MORE than before**, because a cache write is ~1.25×
-   and a read is ~0.1×. Something would be invalidating the block every turn.
-4. If the smoke degrades on a *capability* assertion (not a prose one), revert the
-   deploy first and diagnose second.
+| | |
+|---|---|
+| Cache writes | **1** (the first request after deploy) |
+| Cache hits | **33** |
+| `⚠ NEITHER` (breakpoint inert) | **0** |
+
+⭐ **`read=3027` was IDENTICAL on every request** while `uncached_input` ranged
+**10,843 → 22,762**. That constancy is the proof the always/conditional split was
+load-bearing rather than fussy: the swings are different question modes, and had
+the whole rule block been cached (the one-line version) that figure would jitter
+and most rows would read `write=`, costing ~25% MORE on that slice, invisibly.
+
+Read it yourself with:
+
+```sql
+select timestamp, event_message from logs
+where source = 'function_logs' and event_message like 'cpl-chat cache:%'
+order by timestamp desc limit 20
+```
+
+⚠️ **`source` is `function_logs`, NOT `function_edge_logs`** — the latter returns
+zero rows for `console.log` output and looks exactly like a dead feature.
+
+⚠️ **A MERGE PUSH FIRES ITS OWN SMOKE RUN, AND IT CAN RACE THE DEPLOY.** Merging
+a PR touching `cpl-chat/index.ts` or `smoke_test.sh` triggers `cpl-chat-smoke.yml`
+on the push to `main`. On this run that automatic run started at **01:17:40** and
+the deploy finished at **01:18:17** — so it tested the OLD function with the NEW
+script, and a green result there would have meant nothing while looking exactly
+like validation. **Always dispatch your own smoke AFTER confirming the version
+bumped**, and read that run, not the automatic one.
 
 ---
 

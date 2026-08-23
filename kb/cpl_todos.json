@@ -12,15 +12,15 @@
     },
     {
       "id": "s185-cache-deploy",
-      "for": "Fable",
+      "for": "Sam",
       "tab": "cpl-assistant",
-      "text": "Deploy the prompt-caching change and confirm it is actually caching. The code is merged but inert until cpl-chat is redeployed from the workflow. After deploying, run the smoke suite and read the function log for the new 'cpl-chat cache: read=… write=…' line — if both numbers stay at zero, something is invalidating the cached block every turn and the change is costing MORE than before, not less. Note this deploy also reorders the prompt (the always-on rules now come before the retrieved sources, because caching only works on the front of a prompt), so the smoke suite is the real gate, not the unit tests."
+      "text": "Prompt caching is LIVE — this is a note, not a job. Sierra now pays full price for her fixed instructions once and about a tenth of that on every question afterwards. Measured on the real thing right after it went out: one initial charge, then 33 questions in a row all served from cache, none missed. That is roughly 12-20% off her input bill, and it gets better the more she is used, not worse. Nothing needed from you. The one caveat worth knowing: the discount lapses after about five minutes of silence, so the first question after a quiet spell pays full price again — which is normal and cheap."
     },
     {
       "id": "s185-haiku-trial",
       "for": "Fable",
       "tab": "cpl-assistant",
-      "text": "Trial Haiku 4.5 against the smoke suite once caching is live. It is a third of Sonnet's price both directions. Two things to check rather than assume: her context window drops from 1M to 200K, and the caveats are the product — a smaller model drops a hedge before it drops a fact, and several of the 21 smoke assertions test exactly those hedges. Run it, diff the failures, and report rather than switching quietly."
+      "text": "Trial Haiku 4.5 against the smoke suite. It is a third of Sonnet's price both directions and stacks with the caching we just shipped rather than competing with it. ONE of the two concerns is now closed: her biggest measured question used about 23,000 tokens against Haiku's 200,000 limit, a 9x margin, so capacity is not the obstacle — that came free from the deploy telemetry. What is left is only whether a smaller model keeps the careful bits: the 'not every recommendation should be applied' caveat, 'showing 9 of 261' rather than implying that is all of them, not calling an absent college zero. Several smoke assertions test exactly those. Run it, diff the failures, report — do not switch quietly."
     },
     {
       "id": "s185-identity-lint",
