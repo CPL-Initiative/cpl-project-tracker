@@ -422,11 +422,22 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
   }, 0);
   const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
-  const combined = Math.round(collegeFtes + feederFtes).toLocaleString("en-US");
+  // ALL noncredit, not just the standalone roster (2026-08-23). 108 college rows
+  // carry noncredit FTES of their own, so the old feeder-only figure understated
+  // system noncredit by ~57,000 FTES. This assertion is a DUPLICATE of the one in
+  // cpl_funding_render.test.js and was missed when that one was corrected — which
+  // is how it reached main red.
+  const allNoncredit = D.colleges.reduce(function (s, c) { return s + (c.noncredit_ftes || 0); }, 0) +
+    D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; })
+      .reduce(function (s, f) {
+        const ph = Number(f.noncredit_ftes_placeholder);
+        return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
+      }, 0);
+  const combined = Math.round(collegeFtes + allNoncredit).toLocaleString("en-US");
   const sysText = function () {
     return doc.querySelector("#cplFundTable .cplfund-systemrow").textContent;
   };
-  check("college-view SYSTEM row includes the noncredit feeders in the CCC total",
+  check("college-view SYSTEM row includes ALL noncredit in the CCC total",
     sysText().indexOf(combined) !== -1 && sysText().indexOf("noncredit") !== -1);
   // The regression that shipped: the row total must be in the SAME unit as the
   // column header above it, so assert the headcount total is NOT what's there.
@@ -434,7 +445,7 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     sysText().indexOf(Math.round(collegeFtes).toLocaleString("en-US")) !== -1 &&
     sysText().indexOf(D.system.headcount.toLocaleString("en-US")) === -1);
   click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
-  check("the SYSTEM row still carries the noncredit feeders when grouped by district",
+  check("the SYSTEM row still carries all noncredit when grouped by district",
     sysText().indexOf(combined) !== -1);
 }
 

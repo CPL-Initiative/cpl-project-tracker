@@ -88,13 +88,20 @@ function boot(window) {
   // guard silently stops seeing the thing it guards.
   const privHtml = privDoc.querySelector(".main-container").innerHTML;
   const pubHtml = pubDoc.querySelector(".main-container").innerHTML;
+  // The explainer moved from a published Claude artifact to a LIVE page in this
+  // repo (2026-08-23), so the href is the relative "funding-model/". Matching on
+  // the href rather than the old host is the point: an artifact URL reappearing
+  // here would mean the tab is pointing at a snapshot again.
+  const HREF = /href="funding-model\/"/;
   check("W2b: the private view links the funding-model explainer",
-    /claude\.ai\/code\/artifact/.test(privHtml) && /How this funding model works/.test(privHtml));
+    HREF.test(privHtml) && /How this funding model works/.test(privHtml));
+  check("W2b: ...and it is the LIVE page, not a republished snapshot",
+    !/claude\.ai\/code\/artifact/.test(privHtml));
   check("W2b: the explainer link is in the TITLE ROW, not inside the mount",
-    /claude\.ai\/code\/artifact/.test(privDoc.getElementById("cplFundTitleLink").innerHTML) &&
-    !/claude\.ai\/code\/artifact/.test(privDoc.getElementById("cplFundingMount").innerHTML));
+    HREF.test(privDoc.getElementById("cplFundTitleLink").innerHTML) &&
+    !HREF.test(privDoc.getElementById("cplFundingMount").innerHTML));
   check("W2b: the public college page does NOT expose the explainer link",
-    !/claude\.ai\/code\/artifact/.test(pubHtml) && !/How this funding model works/.test(pubHtml));
+    !HREF.test(pubHtml) && !/How this funding model works/.test(pubHtml));
   check("W2b: the public page is blank because publicMode() blanks it, not for want of a slot",
     !!pubDoc.getElementById("cplFundTitleLink") &&
     pubDoc.getElementById("cplFundTitleLink").innerHTML === "");
