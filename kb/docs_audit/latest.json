@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 616,
-    "bytes": 6950930,
+    "files": 617,
+    "bytes": 6969485,
     "over_budget": 4,
     "handoff_max": 186,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 137982,
-    "superseded_files": 4,
-    "superseded_bytes": 27502,
+    "always_loaded_bytes": 138365,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 137982,
+        "bytes": 138365,
         "over": 1
       },
       "other": {
         "files": 74,
-        "bytes": 1903116,
+        "bytes": 1903074,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 256836,
+        "bytes": 257620,
         "over": 1
       },
       "lessons": {
         "files": 67,
-        "bytes": 1667881,
+        "bytes": 1676925,
         "over": 1
       },
       "kb_note": {
-        "files": 309,
-        "bytes": 1658965,
+        "files": 310,
+        "bytes": 1663441,
         "over": 0
       },
       "handoff": {
         "files": 164,
-        "bytes": 1326150,
+        "bytes": 1330060,
         "over": 0
       }
     },
@@ -53,12 +53,11 @@
       "oversized_doc": 4,
       "american_spelling": 172,
       "kb_note_dialect": 60,
-      "superseded_handoff": 4,
       "vault_heavy_path": 44
     },
     "vault": {
-      "files": 2162,
-      "bytes": 1178877778,
+      "files": 2164,
+      "bytes": 1178905468,
       "heavy_bytes": 588787120,
       "heavy_share": 0.499,
       "ignore_filters": [
@@ -114,13 +113,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 137982,
+        "bytes": 138365,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 77982,
-        "ratio": 2.3
+        "over_by": 78365,
+        "ratio": 2.31
       },
-      "message": "137,982 B is 2.3× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "138,365 B is 2.3× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -142,13 +141,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 256836,
+        "bytes": 257620,
         "limit": 40000,
         "lane": "index",
-        "over_by": 216836,
-        "ratio": 6.42
+        "over_by": 217620,
+        "ratio": 6.44
       },
-      "message": "256,836 B is 6.4× the index budget (40,000 B) — candidate for compaction",
+      "message": "257,620 B is 6.4× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -3709,17 +3708,6 @@
       "path": "docs/session_178_handoff.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 181,
-        "authoritative": 186,
-        "has_frontmatter": true
-      },
-      "message": "handoff 181 is below the authoritative 186 but is not stamped `superseded: true`",
-      "path": "docs/session_181_handoff.md"
-    },
-    {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
@@ -3733,39 +3721,6 @@
       },
       "message": "1 British form — generalis→generaliz",
       "path": "docs/session_181_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 183,
-        "authoritative": 186,
-        "has_frontmatter": true
-      },
-      "message": "handoff 183 is below the authoritative 186 but is not stamped `superseded: true`",
-      "path": "docs/session_183_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 184,
-        "authoritative": 186,
-        "has_frontmatter": true
-      },
-      "message": "handoff 184 is below the authoritative 186 but is not stamped `superseded: true`",
-      "path": "docs/session_184_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 185,
-        "authoritative": 186,
-        "has_frontmatter": true
-      },
-      "message": "handoff 185 is below the authoritative 186 but is not stamped `superseded: true`",
-      "path": "docs/session_185_handoff.md"
     },
     {
       "rule": "american_spelling",
