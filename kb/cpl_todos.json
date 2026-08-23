@@ -1,20 +1,26 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-22 · TWO runs landed today. SkyBound (Session 184) added a maximum allocation to the funding model beside the $150,000 minimum, set to $400,000 and editable — and measured what it actually does, which is less than it sounds: it caps six colleges, moves about 1% of the pool, and gives none of it to the 45 colleges at the minimum. Raising the minimum is the stronger lever and the note below says by how much. 2026-08-22 · SkyScope (Session 183) — you had LACCD selected on My College and Sierra answered about RCCD. The district machinery turned out to be fine; two other things were wrong. First, the conversation carried over: switching from one district to another wipes what you can SEE but not what gets SENT, so your next question still arrived with eight earlier turns about Riverside attached — and Sierra searches that text, so she rebuilt the whole answer on the wrong college. Second, nothing had ever told her which institution you had selected, while an instruction you switched on in August tells her to confine her answer to it. An instruction that names something the request never sends is an instruction to guess.",
+  "_as_of": "2026-08-23 · SkyBound (Session 184) finished the funding model with two changes. A maximum allocation now sits beside the minimum, editable, at $400,000 — but measuring it first changed the story: it holds two colleges and moves about a third of a percent, because a college already pinned to the minimum cannot be lifted by a maximum. Then the rural allowance came out and the minimum went up to $175,000 in its place, which pays those 13 colleges $236,406 more than the allowance ever did. Ten of the 13 would not have moved a dollar without the raise, and three would have gone backwards. Separately: Sierra is down on a billing balance, and your noncredit question now has numbers under it — noncredit turns out to be 111 institutions, not four.",
   "_session": "Session 184 (SkyBound) · concurrent with Session 183 (SkyScope)",
-  "_status": "Sierra's My College fix is LIVE and confirmed — Sam tested the LACCD district selection plus three follow-ups after the redeploy and all were correct. The follow-ups were the part that mattered: those are the questions that used to drag the previous district's conversation back in.\n\nThe audit you approved came back clean apart from the one rule that caused this: one of seven references a fact the request never carries. The bigger finding is that all seven rules go to all six places Sierra appears, so a My College-only rule is being read on the public page too. The recommendation is a small change — tell Sierra which surface she is on — not a second Sierra.",
+  "_status": "The funding model is where you left it plus one dial fewer. Two bounds, both editable in one box: a $175,000 minimum and a $400,000 maximum. The rural allowance is gone from every screen, the CSV and the college rows; the rural flag itself stays in the data because it is a true fact about those colleges, it just no longer moves money. Three things want you rather than a session. The pair of numbers is your call and the alternative you floated — hold the minimum at $150,000 and send the freed million to noncredit — is costed and ready either way. The noncredit question has an answer now, and it is bigger than expected: 111 institutions carry noncredit, so the floor you named only fits if the roster is scoped, and a 500-FTES cut-off fits inside the existing million. And Sierra is returning errors on an empty Anthropic balance, which nothing alerts on. Nothing else is blocked; the model is correct at any setting of the dials.",
   "items": [
     {
       "id": "s184-pick-the-ceiling",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Pick the maximum-allocation number. It is live at $400,000 and editable in the Funding pools box, right beside the $150,000 minimum. But measure first: at $400,000 it caps six colleges and moves $262,241 — about 1% of the pool — and every dollar goes to the next tier of large colleges. The 45 colleges sitting at the minimum gain nothing at all, because a college already pinned to the floor cannot be lifted by a ceiling. If the goal is a more even spread, raising the MINIMUM does far more: $200,000 takes the gap between the largest and smallest award from 3.5x down to 1.9x on its own, and at that point the $400,000 ceiling never binds. That is one dial instead of two. The most anyone can put in the minimum is about $210,000 — above that every college just gets the average."
+      "text": "Pick the floor and ceiling pair. Live right now: a $175,000 minimum and a $400,000 maximum, both editable side by side in the Funding pools box. What that pair actually does: 69 of the 115 colleges land on the minimum — the middle college in the state is now funded by the minimum rather than by its size — and the maximum holds only two colleges and moves $82,815, about a third of one percent. So the minimum is doing nearly all the work and the maximum is close to decoration at this level. The cost is real and worth seeing before you settle: a floor is paid for by the colleges above it, so a mid-sized college now earns $4,419 per CPL FTES against the $5,650 statewide rate — 78 cents on the dollar. The alternative you floated is still open and still costed: hold the minimum at $150,000 and send the freed $1,000,000 to noncredit instead. Both are the same change with two different dial settings."
+    },
+    {
+      "id": "s184-noncredit-roster",
+      "for": "Sam",
+      "tab": "implementation-funding",
+      "text": "Decide how wide the noncredit lane should be. You asked what a $25,000 floor and $100,000 ceiling would look like for our other noncredit institutions, and the first number reframes the question: noncredit is not four institutions, it is 111. One hundred and eight of the 115 credit colleges already carry noncredit FTES, alongside the three standalone continuing-education institutions. At that width the numbers you named do not fit — 111 floors of $25,000 is $2,775,000, nearly three times the $1,000,000 carve-out, and still short even if the retired rural million is added on top. At exactly that figure everyone sits on the floor and the FTES basis does nothing at all. The lever is the roster, not the bounds: institutions with 500 or more noncredit FTES are 33 of them and carry 87 percent of the lane, and they fit inside the existing $1,000,000 — 27 at the $25,000 floor, the largest at $89,586, the ceiling never binding. Two cautions. Mt. SAC's noncredit FTES is currently counted twice in our data, which is harmless today and wrong the day noncredit money follows that number. And 'only what came from the noncredit landing pages' is a rule the data feed cannot tell apart yet — sizing the pool is the easy half."
     },
     {
       "id": "s184-read-the-explainer",
       "for": "Sam",
       "tab": "implementation-funding",
-      "text": "Open 'How this funding model works' end to end in a browser before you send it to anyone. It is the audience-facing walk-through for CO and possibly Finance staff, the link now sits at the top right of the Implementation Funding title row, and it has been rebuilt with the new maximum in it — a third adjustment in the list, a mark on the six capped colleges, and a worked example that moved to Santa Monica because the largest college is now pinned to a round number its own share does not explain. No session can look at it; the sandbox cannot reach the site."
+      "text": "Read 'How this funding model works' end to end in a browser before you send it to anyone. It is the audience-facing walk-through for the Chancellor's Office and possibly Finance, and the link now sits at the top right of the Implementation Funding title row. It has been rebuilt twice since you last saw it: the maximum is in it, the rural allowance is out of it, and the minimum is $175,000 — so the opening figures, the count of colleges at the minimum (69 now, was 45) and the worked example have all changed. The worked example is Long Beach, because the two largest colleges are now pinned to a round number their own share does not explain. No session can look at it; the sandbox cannot reach the site. One footnote: if you are still commenting on an older copy of this page, those comments do not reach the version the tab links to — comment on the linked one, and tell us when you have, because nothing pings us automatically."
     },
     {
       "id": "s183-sierra-surface",
@@ -71,28 +77,16 @@
       "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
     },
     {
-      "id": "s182-explainer-read",
-      "for": "Sam",
-      "tab": "cpl-implementation-funding",
-      "text": "Read \"How this funding model works\" end to end, in a browser, before you send it to anyone. It was rewritten five times today off your notes and it now opens on the $35 million and three destinations — $25,240,308 to the 115 colleges and the four noncredit campuses, $8,959,692 statewide projects and technology, $800,000 for two Chancellor's Office posts. No session can open the published page, so you are the only one who has seen how it actually looks."
-    },
-    {
       "id": "s182-full-width",
       "for": "Sam",
       "tab": "dashboard",
       "text": "Have a look at the tabs now that text runs the full width. You said the short text columns look awkward against the full-width tables, so every paragraph across 17 files now runs to the same right edge as the tables beside it. Nobody has seen it rendered. If it reads too wide, two columns is the alternative and it is a single switch, not a rebuild."
     },
     {
-      "id": "s182-artifact-copy",
-      "for": "Sam",
-      "tab": "cpl-implementation-funding",
-      "text": "The copy of the funding explainer you were leaving comments on is now five versions behind — every fix went to the original, the one the tab links to. Say the word and we will refresh your copy, or you can comment straight on the original and skip the drift. Either way, comments only reach us when you ask us to check them; nothing pings us automatically."
-    },
-    {
       "id": "s182-sierra-monitor",
       "for": "Sam",
       "tab": "cpl-assistant",
-      "text": "Decide how we find out if Sierra goes down again. When her credit ran out nobody was told — a session happened to notice. The cheap option is an alert when the assistant starts returning errors; the expensive one is running her test suite every hour, which costs real money every run and is what drained the balance in the first place. We have not built either, on purpose, because it is your call."
+      "text": "Sierra is down right now, and it is billing, not code. Every question that needs the model comes back with 'your credit balance is too low' — a student asking her something today gets an error. Everything that does not need the model still answers, so the service itself is healthy. Two things to do: top up the Anthropic balance, and decide how we find out next time. Nobody was told this time; a session happened to notice. The cheap option is an alert when she starts returning errors; the expensive one is running her test suite every hour, which costs money every run and is what drained the balance in the first place. We have not built either, on purpose, because it is your call."
     }
   ]
 }

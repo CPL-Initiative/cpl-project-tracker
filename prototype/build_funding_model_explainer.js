@@ -139,6 +139,40 @@ if (!marker.test(html)) {
 fs.writeFileSync(PAGE, html.replace(marker, "$1" + JSON.stringify(payload) + "$2"));
 
 const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US"); };
+
+// ── stale-default lint ───────────────────────────────────────────────────────
+// The page ships STATIC text inside the elements its own script fills at render
+// time, so a superseded figure is invisible in the browser and wrong the moment
+// JS does not run (view-source, a saved copy, a reader with scripts off). This
+// run found six `$150,000` defaults still in the source after the floor moved to
+// $175,000. Every figure in this page comes from the engine — the defaults have
+// to as well. Extend the map when you add a dial.
+(function lintStaticDefaults() {
+  const written = fs.readFileSync(PAGE, "utf8");
+  const expect = {
+    "f-floorv":  money(payload.pool.floor),
+    "f-floor":   String(payload.model.floorCount),
+    "f-floor-k": "colleges land on the " + money(payload.pool.floor) + " minimum",
+    "r-min":     money(payload.min),
+    "l-floor":   money(payload.pool.floor),
+    "t-floor":   money(payload.pool.floor),
+    "g-floor":   money(payload.pool.floor),
+  };
+  const stale = [];
+  Object.keys(expect).forEach(function (id) {
+    const m = written.match(new RegExp('id="' + id + '"[^>]*>([^<]*)<'));
+    if (!m) { stale.push("  " + id + " — no such element (page restructured?)"); return; }
+    const got = m[1].replace(/&mdash;/g, "\u2014").trim();
+    if (got !== expect[id]) stale.push("  " + id + '  static "' + got + '"  renders "' + expect[id] + '"');
+  });
+  if (stale.length) {
+    console.warn("\nSTALE STATIC DEFAULTS in " + path.relative(ROOT, PAGE) + " — the rendered page is");
+    console.warn("correct, but the source disagrees with it. Update the markup:");
+    stale.forEach(function (s) { console.warn(s); });
+    console.warn("");
+  }
+})();
+
 console.log("wrote " + path.relative(ROOT, PAGE));
 console.log("  colleges           " + rows.length);
 console.log("  to the colleges    " + money(pool("one_time_2026_27") - pool("admin_cost") -
