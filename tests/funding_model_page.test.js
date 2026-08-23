@@ -58,6 +58,55 @@ check("the noncredit lane count comes from the model, not a typed word",
 check("the status line is empty on a successful paint",
   (doc.getElementById("live-status").textContent || "").trim() === "");
 
+// ── repainting must REPLACE, never accumulate ─────────────────────────────
+// The painter was written for a snapshot page that ran exactly once. The live
+// page repaints on every model change — once from the baked defaults, again when
+// the shared config lands — and three containers appended a second and third
+// copy of themselves. Sam saw the two worked-example cards rendered three times.
+//
+// ⚠ The FIRST version of this suite already asserted a row count — on #tbody,
+// the one container whose own draw() clears it. Asserting on the container that
+// cannot fail is not a guard. This paints twice MORE and checks every container
+// the painter appends into.
+{
+  const before = {
+    cards: doc.querySelectorAll("#cards > *").length,
+    prios: doc.querySelectorAll("#prios > *").length,
+    worked: doc.querySelectorAll("#workedbody tr").length,
+    nc: doc.querySelectorAll("#nc-list li").length,
+    rows: doc.querySelectorAll("#tbody tr").length,
+  };
+  check("the first paint fills every container from the payload",
+    before.cards === D.cards.length && before.prios === D.prios.length &&
+    before.worked === D.prios.length && before.nc === 4 && before.rows === D.rows.length);
+  win.CPL_PAINT_EXPLAINER(D);
+  win.CPL_PAINT_EXPLAINER(D);
+  check("repainting twice more changes NOTHING — no container accumulates",
+    doc.querySelectorAll("#cards > *").length === before.cards &&
+    doc.querySelectorAll("#prios > *").length === before.prios &&
+    doc.querySelectorAll("#workedbody tr").length === before.worked &&
+    doc.querySelectorAll("#nc-list li").length === before.nc &&
+    doc.querySelectorAll("#tbody tr").length === before.rows);
+}
+
+// ── the noncredit lane must be EXPLAINED, not just carried in the payload ──
+// D.nc shipped with the lane, but nothing on the page said a second lane
+// existed — a reader was told $1,000,000 was "dedicated to noncredit" and never
+// told who receives it or on what terms. Sam noticed. Every figure is written
+// from the payload, so a dial change moves the prose.
+{
+  const ncText = doc.getElementById("nc-body").textContent + " " +
+    Array.from(doc.querySelectorAll("#nc-list li")).map((li) => li.textContent).join(" ");
+  check("the page explains the noncredit lane's size, entry rule and bounds",
+    ncText.indexOf(String(D.nc.count) + " institutions") !== -1 &&
+    ncText.indexOf(D.nc.threshold.toLocaleString("en-US")) !== -1 &&
+    ncText.indexOf(money(D.nc.floor)) !== -1 && ncText.indexOf(money(D.nc.cap)) !== -1);
+  check("...and states where growth starts paying, from the model not a typed number",
+    ncText.indexOf(D.nc.breakEven.toLocaleString("en-US")) !== -1);
+  check("...and says the noncredit money is kept separate from the credit figure",
+    /kept separate/i.test(ncText) || /without it disappearing/i.test(ncText));
+}
+
 // ── a failed computation must SAY so, never leave stale figures standing ──
 {
   const dom2 = new JSDOM(html, { runScripts: "outside-only", url: "https://example.org/funding-model/" });

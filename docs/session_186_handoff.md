@@ -29,7 +29,13 @@ NOT this file's predecessor — read it as a sibling) and `docs/cpl_funding_less
 
 ---
 
-## Also shipped, from the other session: the noncredit lane (#1301)
+## Also shipped, from the other session: the funding model (#1301–#1306)
+
+Session 184 (SkyBound) ran concurrently and kept going after this brief was
+written. Six PRs, and the last four all came out of one thing Sam did: he moved
+two dials to see what would happen.
+
+### The noncredit lane (#1301)
 
 The noncredit carve-out was a flat FTES split of $1,000,000 among four feeder
 campuses. It is now **the same bounded allocation the credit pool uses**, over
@@ -54,6 +60,41 @@ the size basis only, and renders the reason.
 ⚠️ **The funding CSV's totals rows had been one cell too wide for months** (three
 empties against two headers on SYSTEM and every district subtotal). Fixed and guarded
 by a field-count check in both shapes.
+
+### What the dial change exposed (#1302–#1306)
+
+Sam set the credit floor to $150K and the NC floor to $50K and said the changes
+"didn't propagate". The tab had recalculated correctly — but he was right anyway,
+because three surfaces were lying:
+
+- ⚠️ **$50K × 33 = $1,650,000 against a $1,000,000 pool.** The degenerate branch
+  paid each institution **$30,303** while the box said *"33 at the minimum"*.
+  `floorInfeasible` now REPLACES the note in both lanes. Latent in the credit
+  lane too (115 × any floor above ~$210,785).
+- ⚠️ **The explainer was a hand-rebuilt snapshot** on a host that blocks the call
+  it needed. It is now a live page at **`/funding-model/`** off the same engine,
+  with ONE shared payload builder so a snapshot can differ from it only by
+  *when*, never by *how*. ⚠️ Its painter accumulated copies on repaint until
+  #1306 — Sam saw the cards render three times.
+- ⚠️ **"held $X" showed on all 115 rows** months before the deadline, reading as
+  system-wide withholding. Phase-dependent now: *"opt in to start earning"*
+  before, the figure after.
+- ⭐ **The parity figure exposed a third defect** — the "CCC total" counted only
+  the standalone roster, missing **56,993 FTES** of college noncredit.
+
+### ⚠️ Read this before you merge anything
+
+**I put `main` red for ~30 minutes and it was entirely avoidable.** Three greens,
+none of them evidence: (1) merged twice on the required check — a secret scanner
+— while the suite covering my changed files was still running; (2) verified
+locally with a subset I chose, and both broken files were outside it, one of them
+a *duplicate* of an assertion I had already fixed elsewhere; (3) reported a "full
+suite pass" that was actually **SIGTERM 143** — the "exit 0" belonged to the
+wrapper, not the runner.
+
+**On this tab: run the full suite, and name what a green check actually covered
+before you rely on it.** Durable:
+[`a-green-check-you-did-not-scope-is-not-evidence`](kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md).
 
 ⚠️ **Open for Sam:** the noncredit floor. 27 of 33 sit at $25,000 (68% of the pool) and
 growth does not start paying until 3,022 NC FTES — the incentive he wanted is at ENTRY
