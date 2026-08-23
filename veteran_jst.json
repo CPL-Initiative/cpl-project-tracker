@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-22T13:06:05.742067+00:00",
+  "scraped_at": "2026-08-23T07:04:54.690997+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27358,
+    "jst": 27352,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -62,7 +62,7 @@
     },
     "Norco College": {
       "vets": 831,
-      "jst": 540,
+      "jst": 542,
       "star": false
     },
     "Long Beach City College": {
@@ -145,14 +145,14 @@
       "jst": 182,
       "star": true
     },
-    "Sierra College": {
-      "vets": 326,
-      "jst": 339,
-      "star": true
-    },
     "Fresno City College": {
       "vets": 724,
       "jst": 581,
+      "star": true
+    },
+    "Sierra College": {
+      "vets": 326,
+      "jst": 331,
       "star": true
     },
     "Mt. San Jacinto College": {

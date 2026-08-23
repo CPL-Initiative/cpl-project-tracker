@@ -4,17 +4,17 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-22",
+ "as_of": "2026-08-23",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42844,
-  "pa": 40170,
+  "pe": 42839,
+  "pa": 40165,
   "p2": 3732,
   "p3": 15771,
   "pp": 5,
-  "pe_u": 1375979.95,
-  "pa_u": 222708.65,
+  "pe_u": 1375889.95,
+  "pa_u": 222689.65,
   "p3_u": 80309.95,
   "pp_u": 25.0
  },
@@ -773,10 +773,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Norco College": {
-   "pe": 754,
-   "pe_u": 25767.5,
-   "pa": 753,
-   "pa_u": 6369.5,
+   "pe": 756,
+   "pe_u": 25855.5,
+   "pa": 755,
+   "pa_u": 6385.5,
    "p2": 153,
    "p3": 438,
    "p3_u": 3997.0,
@@ -1074,10 +1074,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Sierra": {
-   "pe": 338,
-   "pe_u": 11639.0,
-   "pa": 338,
-   "pa_u": 1690.0,
+   "pe": 331,
+   "pe_u": 11461.0,
+   "pa": 331,
+   "pa_u": 1655.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -2212,8 +2212,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 521,
-    "pa": 521,
+    "pe": 523,
+    "pa": 523,
     "p3": 249
    },
    "Portfolio Review": {
@@ -2629,8 +2629,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sierra": {
    "Military": {
-    "pe": 338,
-    "pa": 338,
+    "pe": 331,
+    "pa": 331,
     "p3": 0
    }
   },
@@ -2872,8 +2872,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26806,
-   "pa": 24687,
+   "pe": 26801,
+   "pa": 24682,
    "p3": 2469
   },
   "Military | Portfolio Review": {
@@ -2921,18 +2921,18 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1375503.45,
-   "pa_u": 222708.65,
+   "pe_u": 1375413.45,
+   "pa_u": 222689.65,
    "p3_u": 80309.95
   },
   "map": {
-   "pe_u": 1382818.95,
-   "pa_u": 223388.15,
+   "pe_u": 1382656.95,
+   "pa_u": 223364.15,
    "p3_u": 80334.95
   },
   "ratio": {
    "pe_u": 1.0053,
-   "pa_u": 1.0031,
+   "pa_u": 1.003,
    "p3_u": 1.0003
   }
  },
@@ -2964,8 +2964,8 @@ window.CPL_FUNDING_PERF = {
   "LA Valley": true,
   "Santa Rosa": true,
   "Cabrillo": true,
-  "Sierra": true,
   "Fresno City": true,
+  "Sierra": true,
   "Mt. San Jacinto": true,
   "Canyons": true,
   "San Joaquin Delta": true,
@@ -3053,7 +3053,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-22",
+ "vet_star_as_of": "2026-08-23",
  "vet_star_threshold": 0.75,
  "vet_star_n": 57
 };
