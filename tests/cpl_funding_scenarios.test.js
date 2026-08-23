@@ -41,9 +41,22 @@ const {
     doc.querySelector('th[data-sort="prio0"]').textContent.indexOf("P1") !== -1);
   check("a P1 column header hover carries the priority goal + metric",
     (doc.querySelector('th[data-sort="prio0"]').getAttribute("title") || "").indexOf("METRIC:") !== -1);
-  check("count note includes the noncredit campuses",
-    doc.getElementById("cplFundCount").textContent.indexOf("noncredit campuses") !== -1 &&
-    doc.getElementById("cplFundCount").textContent.indexOf("carve-out") !== -1);
+  // The count line names the noncredit lane beside the college count. It used
+  // to be asserted on the literal words "noncredit campuses", which is what the
+  // line said while it was WRONG: it counted the 4-record standalone roster for
+  // a 33-institution lane and printed a 74,968 student headcount — a basis the
+  // lane does not allocate on, including the deduped campus the carve-out pays
+  // $0 (2026-08-23). Assert the lane size and the funding source instead.
+  {
+    const line = doc.getElementById("cplFundCount").textContent;
+    const laneN = window.CPL_FUNDING_TAB._ncModel().rows.length;
+    check("count note names the noncredit lane and what funds it",
+      /noncredit/i.test(line) && line.indexOf("carve-out") !== -1);
+    check("...sized by the lane (" + laneN + " institutions), not the standalone roster",
+      line.indexOf(laneN + " institutions") !== -1);
+    check("...and reports noncredit FTES, the basis the lane allocates on",
+      /noncredit FTES/.test(line));
+  }
   check("floor note: funding raised, targets not (formula)",
     doc.querySelector(".cplfund-formula").textContent.indexOf("not its targets") !== -1);
   // Drill-in county context survives the hidden column.

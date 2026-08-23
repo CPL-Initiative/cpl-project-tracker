@@ -391,10 +391,26 @@ const {
     doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst.toLocaleString("en-US")) !== -1);
   check("hero label states 2 annual tranches of the per-year amount ($" + Math.round(perYear).toLocaleString() + ")",
     doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + Math.round(perYear).toLocaleString("en-US")) !== -1);
-  check("hero note breaks out the college pool + the noncredit feeder support",
-    doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$" + mainNet.toLocaleString("en-US")) !== -1 &&
-    /noncredit feeder support/.test(doc.querySelector(".cplfund-card.hero .l").textContent) &&
-    !/Rural College allowance/.test(doc.querySelector(".cplfund-card.hero .l").textContent));
+  // The note breaks the institution total into its two lanes. Asserted on the
+  // FIGURES and on the lane it names, not on a fixed phrase: this check used to
+  // require the words "noncredit feeder support", which survived the sentence
+  // being wrong. It said the carve-out went "to the 4 NC campuses below" long
+  // after the lane became 33 institutions — a card a reader uses to judge
+  // whether the carve-out is proportionate (2026-08-23).
+  {
+    const noteEl = doc.querySelector(".cplfund-card.hero .l");
+    const note = noteEl ? noteEl.textContent : "";
+    const laneN = window.CPL_FUNDING_TAB._ncModel().rows.length;
+    check("hero note breaks out the college pool + the noncredit carve-out",
+      note.indexOf("$" + mainNet.toLocaleString("en-US")) !== -1 &&
+      note.indexOf("$" + D.pool.feeder_carveout.toLocaleString("en-US")) !== -1 &&
+      /noncredit/i.test(note) &&
+      !/Rural College allowance/.test(note));
+    check("...and sizes the noncredit lane correctly (" + laneN + " institutions), " +
+          "not by the standalone roster (" + D.feeders.length + ")",
+      note.indexOf(laneN + " institutions") !== -1 &&
+      !new RegExp("\\b" + D.feeders.length + " NC campuses\\b").test(note));
+  }
 
   // Change Year 2 to 2028-29 → the window widens in the labels; still 2 years.
   const y2 = doc.querySelectorAll('select[data-edit="year"]')[1];

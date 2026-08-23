@@ -415,7 +415,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
     </div>
     <p>What each college would be offered across the two years under the current settings. Sorted largest
       first. This is the CREDIT allocation only. Noncredit teaching is funded separately from the
-      dedicated <b class="num">$1,000,000</b>, on its own minimum and maximum &mdash; so a college with a
+      dedicated <b class="num" id="f-nc2">$1,000,000</b>, on its own minimum and maximum &mdash; so a college with a
       large noncredit program receives an amount that does not appear in this table.</p>
     <div class="searchrow">
       <label class="srch" for="q">Find a college</label>
@@ -560,6 +560,10 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
   if (D.nc) {
     setText("l-nc-count", String(D.nc.count));
     setText("t-nc", money(D.pool.feeder));
+    // The every-college lead-in names the carve-out too. It had no id, so
+    // nothing painted it and the builder's default-lint could not see it —
+    // it alone kept saying $1,000,000 after the figure moved.
+    setText("f-nc2", money(D.pool.feeder));
   }
   setText("f-floorv", money(D.pool.floor));
   setText("f-capv", money(D.pool.cap));

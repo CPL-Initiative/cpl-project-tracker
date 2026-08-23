@@ -246,6 +246,16 @@
     return "$" + Math.round(Number(n)).toLocaleString("en-US");
   }
 
+  /* The noncredit carve-out, as a label, read from the funding module rather
+   * than typed. Falls back to the generic phrase if the module has not loaded —
+   * a failed read must never render as a confident wrong figure, which is the
+   * standing rule on this tab (an absent measurement is not an achievement). */
+  function fundCarveLabel() {
+    var M = fundingModule();
+    var v = (M && typeof M._pool === "function") ? Number(M._pool("feeder_carveout")) : NaN;
+    return isFinite(v) && v > 0 ? money(v) : "separate";
+  }
+
   /* PURE. district -> [MAP college names]. Both sides resolve through
    * cplCollegeShort(), the same crosswalk the money join uses, so a college
    * can never land in one district here and another there. */
@@ -1895,7 +1905,12 @@
         + "it does not mean this college has no allocation.</div>";
     } else if (f && !f.onRoster) {
       fundBody += '<div class="cb-note">' + esc(state.college) + ' is not on the 115-college funding roster. '
-        + "The noncredit institutions are funded through the $1M noncredit carve-out, a separate mechanism from the "
+        // The carve-out figure is read from the model, never typed. It said "$1M"
+        // from the day the lane was built until 2026-08-23, when it moved to
+        // $1.8M and this sentence — shown to an institution being told why it is
+        // not on the roster — kept quoting the old number.
+        + "The noncredit institutions are funded through the " + fundCarveLabel()
+        + " noncredit carve-out, a separate mechanism from the "
         + "college pool below — so this is <b>a different route to money, not an absence of it</b>.</div>";
     } else if (f) {
       // (a) the $50,000 ESS 25-82 seed grant — already distributed
