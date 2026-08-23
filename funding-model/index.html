@@ -432,7 +432,7 @@ hr.rule{border:0; border-top:2px solid var(--mustard-fill); width:52px; margin:0
     </div>
     <p>What each college would be offered across the two years under the current settings. Sorted largest
       first. This is the CREDIT allocation only. Noncredit teaching is funded separately from the
-      dedicated <b class="num">$1,000,000</b>, on its own minimum and maximum &mdash; so a college with a
+      dedicated <b class="num" id="f-nc2">$1,000,000</b>, on its own minimum and maximum &mdash; so a college with a
       large noncredit program receives an amount that does not appear in this table.</p>
     <div class="searchrow">
       <label class="srch" for="q">Find a college</label>
@@ -590,6 +590,12 @@ window.CPL_PAINT_EXPLAINER = function (D) {
   if (D.nc) {
     setText("l-nc-count", String(D.nc.count));
     setText("t-nc", money(D.pool.feeder));
+    // The every-college table's lead-in named the carve-out too and was the one
+    // mention with no id, so it alone kept saying $1,000,000 after the figure
+    // moved to $1.8M. A figure this page fills in three places and hard-codes in
+    // a fourth is worse than one it hard-codes everywhere: three agree and the
+    // fourth reads as the considered exception.
+    setText("f-nc2", money(D.pool.feeder));
   }
   setText("f-floorv", money(D.pool.floor));
   setText("f-capv", money(D.pool.cap));
@@ -623,13 +629,25 @@ window.CPL_PAINT_EXPLAINER = function (D) {
         "programs, plus " + n.standalone + " standalone noncredit institutions with no credit side at all."],
       ["How you get in", "At least " + num(n.threshold) + " annual noncredit FTES. Noncredit is taught almost " +
         "everywhere, so without a threshold the pot would be spread far too thin to matter anywhere."],
-      ["The bounds", "A minimum of " + money(n.floor) + " and a maximum of " + (n.cap ? money(n.cap) : "none") +
-        " over the two years" + (n.floorCount ? ", with " + n.floorCount + " of the " + n.count +
-        " currently at the minimum" : "") + "."],
-      ["Where growth starts paying", n.breakEven
-        ? "Above " + num(n.breakEven) + " noncredit FTES. Below that an institution is on the minimum, so the " +
-          "incentive is to cross the threshold rather than to grow within it."
-        : "Every institution above the threshold earns in proportion to its size."]
+      // Both rows below are REPLACED, not annotated, when the minimum cannot be
+      // honored: at that point the stated minimum is not what anybody receives
+      // and the proportional mechanism is not running at all, so describing
+      // either one would be false rather than merely incomplete.
+      ["The bounds", n.floorInfeasible
+        ? "A minimum of " + money(n.floor) + " is set, but it cannot be honored: " + money(n.floor) +
+          " × " + n.count + " institutions is " + money(n.floorDemanded) + ", more than the " +
+          money(n.pool) + " set aside. Every institution receives an equal " + money(n.perInstitution) +
+          " instead — less than the stated minimum."
+        : "A minimum of " + money(n.floor) + " and a maximum of " + (n.cap ? money(n.cap) : "none") +
+          " over the two years" + (n.floorCount ? ", with " + n.floorCount + " of the " + n.count +
+          " currently at the minimum" : "") + "."],
+      ["Where growth starts paying", n.floorInfeasible
+        ? "Nowhere at these settings — every institution is pinned to an equal share, so size does not " +
+          "change what any of them receives. Lowering the minimum or raising the set-aside restores it."
+        : (n.breakEven
+          ? "Above " + num(n.breakEven) + " noncredit FTES. Below that an institution is on the minimum, so the " +
+            "incentive is to cross the threshold rather than to grow within it."
+          : "Every institution above the threshold earns in proportion to its size.")]
     ].forEach(function (r) {
       var li = document.createElement("li");
       var b = document.createElement("strong"); b.textContent = r[0] + " — ";

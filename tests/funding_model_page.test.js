@@ -22,6 +22,20 @@ const html = fs.readFileSync(path.join(ROOT, "funding-model", "index.html"), "ut
 
 // ── it must not ship a payload ────────────────────────────────────────────
 check("the page carries NO baked payload block", html.indexOf('id="DATA"') === -1);
+
+// A literal currency figure in the prose must carry an id, so the painter can
+// fill it and the defaults lint can reach it. The every-college lead-in named
+// the carve-out in a bare <b class="num">, so it alone still said $1,000,000
+// after the figure moved to $1.8M while the page's three other mentions were
+// repainted — and three agreeing with one dissenting reads as a deliberate
+// exception rather than an oversight. This is a LIVE page: an unpainted figure
+// here is wrong from the first model change, not merely at build time.
+{
+  const bare = (html.match(/<b[^>]*class="num"[^>]*>\$[0-9,]+<\/b>/g) || [])
+    .filter(function (t) { return !/\bid=/.test(t); });
+  check("every hard-coded money figure in the prose carries an id" +
+        (bare.length ? " — bare: " + bare.join(", ") : ""), bare.length === 0);
+}
 check("the page loads the engine and the shared payload builder",
   /src="\.\.\/cpl_funding\.js"/.test(html) &&
   /src="\.\.\/cpl_funding_data\.js"/.test(html) &&

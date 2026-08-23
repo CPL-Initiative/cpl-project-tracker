@@ -1238,6 +1238,26 @@ which the feed does not distinguish today. Sizing the pool is the easy half.
 lumped into the whole"*). That is a display requirement on the credit tab, not a
 property of the allocation.
 
+### ⚠️ Two existing assertions were pinned to the wrong wording
+
+Changing the two cards turned `cpl_funding_render.test.js` and
+`cpl_funding_scenarios.test.js` red. Neither was a regression: one required the
+literal phrase *"noncredit feeder support"* and the other *"noncredit campuses"* —
+**both of which the sentences kept saying while they were wrong**. The phrase
+survived the claim being false, which is the definition of an assertion that has
+stopped guarding anything.
+
+They now assert the **substance**: the two lane figures appear, the lane is sized
+by `ncModel().rows.length` rather than the standalone roster, and the count line
+reports noncredit FTES rather than a headcount. Same failure shape this repo has
+recorded before — *an assertion pinned to a value that can leave the data stops
+being a guard the moment it does*.
+
+⚠️ **This is also why the full suite is not optional.** Both files sit outside any
+subset a session would choose while working on the memo, and the run that caught
+them exited **1** — the previous three runs in this session were all contaminated
+by edits landing underneath them, and every one of them read as green.
+
 ### Where this leaves it
 
 The ceiling is built, tested (51 checks), editable, and reversible with one
@@ -1575,3 +1595,122 @@ explainer is live at `/funding-model/` and explains the noncredit lane from the
 payload. **Open, both Sam's:** the noncredit floor (27 of 33 sit on $25,000;
 $20,000 halves the break-even to 1,762 FTES) and whether $1M moves toward the
 $1,797,660 parity figure.
+
+## 2026-08-23 (Session 186, SkySew) — the tab was migrated, the document it exports was not
+
+Sam: *"let's get the funding tab sewn up!"* Two items were listed as open, and
+**`cpl_memory`'s read step closed one of them before any code was read**: he had
+already ruled *keep the carve-out at $1M, raise toward parity later*
+(`sam-keep-nc-carveout-at-1m-parity-later`, verified). Reading the live config
+then closed it a second way — he had since set it to **$1,800,000**, essentially
+the $1,797,660 parity figure, and moved the credit floor to **$150,000**. So the
+tab was sitting in a configuration nobody had looked at.
+
+### ⭐ The retired mechanism survived in the export
+
+The noncredit lane stopped being a flat FTES split among the standalone campuses
+on 2026-08-23 and became the bounded allocation over 33 institutions. The tab was
+migrated. **`memoModel()` was not** — it still computed
+`feederBasis(f) / Σ feederBasis * carve`. At Sam's live dials the exported memo
+said:
+
+| institution | the memo | the model |
+|---|---|---|
+| Mt. SAC Noncredit | **$779,862** | **$0** |
+| SD Cont. Ed | $672,453 | $100,000 |
+| North Orange | $275,671 | $50,000 |
+| Calbright | $72,014 | $50,000 |
+| the 30 colleges | *absent* | the remaining $1.6M |
+
+Two independent defects. It paid the **entire** carve-out to four institutions,
+so 30 colleges' noncredit money was missing from the one document that tells a
+district what it is getting. And it paid **$779,862 to the deduped record** —
+Mt. SAC Noncredit's FTES is already counted on the Mt. San Antonio credit row,
+which is why `ncInstitutions()` zeroes it — re-introducing by re-derivation the
+exact double payment [`a-deduplication-has-a-scope`](kb-notes/methodology-a-deduplication-has-a-scope.md)
+was written to prevent.
+
+⭐ **The tie-out is what let it survive.** Four campuses absorbing the whole
+carve-out produced a table that added up, so the missing 30 colleges were
+invisible: a total that balances reads as a total that is right.
+
+⚠️ **The standing rule this repo already states for the credit lane — *never
+re-derive an allocation, call the model* — had never been written down for the
+noncredit lane**, and the surface where re-derivation is hardest to notice is the
+one nobody reads beside the screen. Fixed by sourcing `ncModel()`, and the
+district table gains **its own noncredit column** so it ties to the institution
+total without folding noncredit into credit (Sam's "neglected step child" rule).
+
+⚠️ **A district with no credit member printed `$0`.** Calbright's subtotal read
+"$0" beside its real $50,000 of noncredit support. Not zero — not applicable.
+
+### ⚠️ Two on-screen cards described a 33-institution lane by a 4-record roster
+
+The pool card said the carve-out went *"to the 4 NC campuses below"* and the
+table count line said *"plus 4 noncredit campuses (74,968 students)"*. Both used
+`feeders().length`. The pool card is the one a reader uses to judge whether the
+carve-out is proportionate — **the exact question Sam raised it to $1.8M to
+answer**. The 74,968 was also the wrong *quantity*: a headcount the lane does not
+allocate on, including the deduped campus's 35,363, so nearly half of it was an
+institution paid $0.
+
+### ⚠️ The opt-in prompt was bound to the size of the withheld figure
+
+Sam: *"Why don't Cosumnes and Grossmont and others have the opt in to begin
+earning note?"* The branch keyed on `held > 0.5`, so a college that is **gated
+but has earned nothing** rendered no prompt at all — and `yearEarnParts()` two
+functions below already named the case in a comment ("a gated college can also
+have earned_total == 0"). That is the one cohort the prompt exists for: a college
+showing nothing is exactly the one that has not started. Same silent-omission
+class as the bare "$0 earned" this wording replaced. Now driven by the **gate**;
+the dollar figure still appears only when there is one to hold, so nothing ever
+reads "held $0".
+
+⚠️ **This could not be reproduced offline** — the harness has no
+coordinator/participation feed, so the gate reads PENDING and no row is blocked.
+The assertion is on the function's contract instead. Worth naming: *the
+instrument that renders the page cannot always reach the state being reported.*
+
+### ⭐ A hand-maintained lint is the thing that goes stale
+
+Three of the explainer's four mentions of the carve-out repainted to $1.8M. The
+fourth — the every-college lead-in — was a bare `<b class="num">$1,000,000</b>`
+with **no id**, so nothing painted it and the existing defaults lint, a
+hand-maintained `BOUND` map, could not see it. **Three agreeing and one not is
+worse than four wrong**: the odd one reads as a considered exception. Fixed in
+both the live page and the frozen snapshot, and both now carry a *structural*
+check — a literal currency figure in the prose must carry an id — which needs no
+one to remember to extend a list.
+
+### Also shipped
+
+- **The priority columns carry their names** (`P1 Access`, centered) — Sam asked;
+  the ordinal alone made a reader hover to learn what the column was. ⚠️ The title
+  is optional by construction: `yearPriorities` is a **sparse overlay** and one
+  slot carries no title. A first test "proving" the fallback **failed, and the
+  code was right** — `prioTitle()` falls back to `DEFAULT_PRIORITY_TITLES`, so an
+  empty title is not reachable through config today. The test now asserts what is
+  actually true rather than staging a path it cannot reach.
+- **The noncredit calculation is in "How an allocation is computed"** — the
+  section a reader opens to check the arithmetic described only the credit pool.
+  Every figure from `ncModel()`; and when the minimum is infeasible it says so
+  **there too**, replacing (not annotating) the bounds and break-even sentences,
+  because at that point neither is true.
+
+### Where this leaves it
+
+⚠️ **At Sam's live dials the noncredit lane is *more* floor-bound than the
+settings it replaced**: **30 of 33** sit at the minimum (was 27) and growth does
+not start paying until **3,909 FTES** (was 3,022). Raising the floor to $50,000
+and the pool to $1.8M together moved the incentive further toward entry, which is
+the opposite of his stated reason for the lane. **That is the decision still
+open**, and it is his.
+
+⚠️ **`CLAUDE.md` §11 says "factors 1.0"; the live config carries `factor: 0.5` on
+all three priorities.** Corrected at this checkpoint.
+
+⚠️ **A `cpl_memory` row is stale**: `p3-portal-routing-is-standard-practice`
+(2026-08-11, Sam) says Priority 3 pays on portal/landing-page arrivals. The live
+config now measures P1 = *applied units by origin*, P2 = *eligible units*,
+P3 = *transcribed units*. Same author, later statement — flagged rather than
+silently superseded, per Rule 8.

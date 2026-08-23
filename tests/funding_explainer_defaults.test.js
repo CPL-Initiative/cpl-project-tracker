@@ -42,7 +42,22 @@ if (m) {
     "f-nc":      money(D.pool.feeder),
     "l-nc-count": D.nc ? String(D.nc.count) : null,
     "t-nc":      money(D.pool.feeder),
+    "f-nc2":     money(D.pool.feeder),
   };
+
+  // BOUND is hand-maintained, and a hand-maintained list is precisely what let
+  // one money figure go stale: the every-college lead-in said $1,000,000 in a
+  // <b class="num"> with NO id, so nothing painted it and nothing linted it,
+  // while the page's three other mentions moved to $1.8M. Three agreeing and one
+  // not is worse than four wrong — the odd one reads as a considered exception.
+  //
+  // So the structural rule, independent of BOUND: a literal currency figure in
+  // this page's prose must carry an id, which is what makes it paintable and
+  // what puts it in reach of the check below.
+  const bare = (html.match(/<b[^>]*class="num"[^>]*>\$[0-9,]+<\/b>/g) || [])
+    .filter(function (t) { return !/\bid=/.test(t); });
+  check("every hard-coded money figure in the prose carries an id" +
+        (bare.length ? " — bare: " + bare.join(", ") : ""), bare.length === 0);
 
   Object.keys(BOUND).filter(function (k) { return BOUND[k] != null; }).forEach(function (id) {
     const el = html.match(new RegExp('id="' + id + '"[^>]*>([^<]*)<'));

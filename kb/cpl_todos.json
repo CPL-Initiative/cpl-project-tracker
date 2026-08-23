@@ -1,86 +1,98 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-23 · SkyBound (Session 184) finished the funding model. Two dials you changed to test it turned out to expose three things that were quietly wrong. A $50,000 noncredit minimum is more than the million-dollar pot can pay, and the tab was reporting it as paid; it now says so. The explainer had not updated because it was never a live page — it is one now, on our own site, and it explains the noncredit lane for the first time. And the 'held' figure was showing on all 115 college rows months before anyone is late, which read as the state withholding from everybody; it now says 'opt in to start earning' until the deadline actually passes. The parity number you asked for is on the tab: noncredit is 7.1 percent of the teaching and 4.0 percent of the money.",
-  "_session": "Session 185 (SkyScope) · concurrent with Session 184 (SkyBound)",
-  "_status": "The funding model has two lanes on the same rules, and both now say honest things when a setting cannot be honored. Credit: a $175,000 minimum and a $400,000 maximum over 115 colleges. Noncredit: a $25,000 minimum and a $100,000 maximum over the 33 institutions with at least 500 noncredit FTES, from the million already set aside, shown separately everywhere so it never disappears into the credit figure. 'How this funding model works' is a live page on our own site and updates itself. Two numbers wait on you: the noncredit minimum, where 27 of 33 sit on the floor and growth does not pay until 3,022 FTES, and whether the million moves toward the $1,797,660 that would match noncredit's share of the teaching. One thing worth knowing about how this went: the site's test suite went red for about half an hour because I merged before the tests covering my own changes had finished. Fixed, and the lesson is written down.",
-  "items": [
-    {
-      "id": "s185-sierra-billing",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Move Sierra's Anthropic billing to the corporate account when you can. She went dark twice in two days on the personal balance — 2026-08-21 and again overnight — and each outage takes down every place she appears at once: the public page, the COBI tab, the Fact Sheet drawer, map.rccd.edu, the college landing pages and the vendor iframe. A student who arrives in that window gets nothing and files no complaint, so the outage cannot report itself. There is now an automatic check every three hours that will open a GitHub issue and close it on recovery, so you will hear about the next one — but it tells you after the fact, it does not prevent it."
-    },
-    {
-      "id": "s185-cache-deploy",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Prompt caching is LIVE — this is a note, not a job. Sierra now pays full price for her fixed instructions once and about a tenth of that on every question afterwards. Measured on the real thing right after it went out: one initial charge, then 33 questions in a row all served from cache, none missed. That is roughly 12-20% off her input bill, and it gets better the more she is used, not worse. Nothing needed from you. The one caveat worth knowing: the discount lapses after about five minutes of silence, so the first question after a quiet spell pays full price again — which is normal and cheap."
-    },
-    {
-      "id": "s185-haiku-trial",
-      "for": "Fable",
-      "tab": "cpl-assistant",
-      "text": "Trial Haiku 4.5 against the smoke suite. It is a third of Sonnet's price both directions and stacks with the caching we just shipped rather than competing with it. ONE of the two concerns is now closed: her biggest measured question used about 23,000 tokens against Haiku's 200,000 limit, a 9x margin, so capacity is not the obstacle — that came free from the deploy telemetry. What is left is only whether a smaller model keeps the careful bits: the 'not every recommendation should be applied' caveat, 'showing 9 of 261' rather than implying that is all of them, not calling an absent college zero. Several smoke assertions test exactly those. Run it, diff the failures, report — do not switch quietly."
-    },
-    {
-      "id": "s185-identity-lint",
-      "for": "Sam",
-      "tab": "college-identity",
-      "text": "The College Identity tab was reporting 'Nothing outstanding' while ten real findings existed. Its finding list is built from an optional input, and a rebuild on 2026-08-21 ran without it: the list went from 13 to zero in a diff that looked like tidying, and stayed empty through four merges. It is restored, and the builder now refuses to publish an unchecked list over a checked one. Worth a look — two of the ten are the trailing-space college names that were making real CPL contacts invisible."
-    },
-    {
-      "id": "s184-pick-the-ceiling",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Two funding numbers are yours whenever you want them. First, the credit pair: a $175,000 minimum and a $400,000 maximum. At that pair 69 of the 115 colleges land on the minimum — the middle college in the state is funded by the minimum rather than by its size — and the maximum holds only two colleges. A floor is paid for by the colleges above it, so a mid-sized college earns $4,419 per CPL FTES against the $5,650 statewide rate. Second, the noncredit share: noncredit is 7.1 percent of the teaching the system does and gets 4.0 percent of the money. Matching those would mean $1,797,660 rather than $1,000,000. Both figures are now on the tab so you can see them while you decide."
-    },
-    {
-      "id": "s184-noncredit-roster",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Move the noncredit dials, and settle the floor. The lane is live: 33 institutions — 30 colleges that run their own noncredit programs plus the 3 standalone ones — sharing the million, with three settings you can change in their own box: who is in it (at least 500 noncredit FTES), the minimum ($25,000) and the maximum ($100,000). The one number worth a second look is the minimum: 27 of the 33 land on it, which is 68 percent of the money, and growing earns an institution nothing more until it passes about 3,022 noncredit FTES — only six are above that. So the incentive you wanted is real at the door and flat in the middle. Lowering it to $20,000 halves that figure and leaves over half the money responsive to size. When you tried $50,000 the model could not pay it at all — 33 times $50,000 is more than the million — and the box now says so plainly instead of claiming everyone got the minimum."
-    },
-    {
-      "id": "s184-explainer-live",
-      "for": "Sam",
-      "tab": "implementation-funding",
-      "text": "Have a look at 'How this funding model works' — it is a live page now, not a snapshot. It moved off the Claude link onto our own site at cpl-initiative.github.io/cpl-project-tracker/funding-model/, and it reads the model every time it loads. Change a dial, refresh, and the page changes with it. That was the thing that made you say the changes had not propagated: the tab was right and the explainer could not update itself, because nobody had re-published it. Nothing to re-publish now. It also explains the noncredit lane, which it never did before — who is in it, how you get in, the minimum and maximum, and where growth starts paying. The old link still works but is frozen at yesterday's figures, so use the new one when you send it out."
-    },
-    {
-      "id": "s178-map-ids",
-      "for": "Sam",
-      "tab": "college-identity",
-      "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
-    },
-    {
-      "id": "s178-statewide-12",
-      "for": "Fable",
-      "tab": "cpl-assistant",
-      "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
-    },
-    {
-      "id": "s173-phone-check",
-      "for": "Sam",
-      "tab": "fact-sheet",
-      "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
-    },
-    {
-      "id": "s179-college-ids",
-      "for": "Fable",
-      "tab": "college-identity",
-      "text": "Give Calbright Credit and Launch Non-Credit a placeholder row so they stop disappearing. They are missing from the identity table entirely, which means they silently fall out of four other tables rather than showing up as a known gap. A row with no ID and a stated reason is safe; inventing an ID is not."
-    },
-    {
-      "id": "s179-college-id-joins",
-      "for": "Fable",
-      "tab": "college-identity",
-      "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
-    },
-    {
-      "id": "s182-full-width",
-      "for": "Sam",
-      "tab": "dashboard",
-      "text": "Have a look at the tabs now that text runs the full width. You said the short text columns look awkward against the full-width tables, so every paragraph across 17 files now runs to the same right edge as the tables beside it. Nobody has seen it rendered. If it reads too wide, two columns is the alternative and it is a single switch, not a rebuild."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-23 · SkySew (Session 186) sewed up the funding tab. The thing that was broken was not on the tab: the Word memo the tab exports still used the OLD noncredit formula, so it paid the whole $1.8M noncredit set-aside to four campuses — $779,862 of it to Mt. SAC Noncredit, which the model actually pays nothing because its FTES is already counted on the Mt. San Antonio row — and showed nothing at all for the 30 colleges that do receive it. Nobody spotted it because the memo's grand total was still exactly right. It is fixed, and the memo now has its own noncredit column. Also fixed: two places that still called the 33-institution noncredit lane 'the 4 NC campuses'; the 'opt in to start earning' note, which was missing on exactly the colleges that had earned nothing; the priority columns now say P1 Access rather than just P1; and the noncredit calculation is now explained in 'How an allocation is computed' and on the explainer page.",
+ "_session": "Session 186 (SkySew)",
+ "_status": "The funding model is finished apart from one dial that is yours. You set the noncredit minimum to $50,000 and the set-aside to $1,800,000. Together those pushed 30 of the 33 noncredit institutions onto the minimum, and growth now only starts paying above 3,909 noncredit FTES — further toward 'just get in the door' and flatter in the middle than the $25,000 setting was. Nothing is wrong; the tab and the explainer both say so plainly. It is a judgment call about what you want the money to reward. Everything else on the tab is settled: both lanes use one solver, an unaffordable minimum says so instead of pretending, noncredit money never disappears into the credit total, and the explainer updates itself.",
+ "items": [
+  {
+   "id": "s186-nc-floor",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Settle the noncredit minimum — it is the last open number on the funding tab. At the $50,000 you set, 30 of the 33 noncredit institutions land exactly on it and an institution has to reach 3,909 noncredit FTES before growing earns it anything extra. At $25,000 it was 27 of 33 and 3,022 FTES. So the current setting rewards getting into the lane and pays very little for growing inside it. If that is what you want, nothing needs to change. If you wanted growth to pay, lowering the minimum is the lever — raising the set-aside on its own makes it more floor-bound, not less. The box on the tab and the explainer page both show the break-even figure live, so you can move the dial and watch it."
+  },
+  {
+   "id": "s186-p1-origins",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Your question about splitting P1 into three metrics (landing page, student portal, batch upload). Short answer: get the breakdown first, split later if the data says to. Splitting it into three priorities would split the MONEY three ways — each would get its own target and its own cap, so a college doing everything through its landing page could no longer make up the difference elsewhere. That is a real change: it would require colleges to work all three routes rather than reach one total. Also, batch upload is not really the same thing as the other two — those are students arriving, that is an administrative import — so it is the one worth treating differently whatever you decide. Recommendation: when the data lands next week we show the three origins as a breakdown on the existing P1, in the drill-in and the export. You then have the evidence, and splitting later is a settings change, not a rebuild."
+  },
+  {
+   "id": "s186-memo-check",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Worth one look: open the Word memo from the funding tab and check the allocation table. It now has two money columns — the credit allocation and noncredit support — and the noncredit figures finally match what the tab shows. Before today that table was giving four noncredit campuses the entire set-aside and listing no noncredit money for the 30 colleges that get it. If you have sent that memo to anyone, the noncredit figures in it were wrong."
+  },
+  {
+   "id": "s185-sierra-billing",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Move Sierra's Anthropic billing to the corporate account when you can. She went dark twice in two days on the personal balance — 2026-08-21 and again overnight — and each outage takes down every place she appears at once: the public page, the COBI tab, the Fact Sheet drawer, map.rccd.edu, the college landing pages and the vendor iframe. A student who arrives in that window gets nothing and files no complaint, so the outage cannot report itself. There is now an automatic check every three hours that will open a GitHub issue and close it on recovery, so you will hear about the next one — but it tells you after the fact, it does not prevent it."
+  },
+  {
+   "id": "s185-cache-deploy",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Prompt caching is LIVE — this is a note, not a job. Sierra now pays full price for her fixed instructions once and about a tenth of that on every question afterwards. Measured on the real thing right after it went out: one initial charge, then 33 questions in a row all served from cache, none missed. That is roughly 12-20% off her input bill, and it gets better the more she is used, not worse. Nothing needed from you. The one caveat worth knowing: the discount lapses after about five minutes of silence, so the first question after a quiet spell pays full price again — which is normal and cheap."
+  },
+  {
+   "id": "s185-haiku-trial",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Trial Haiku 4.5 against the smoke suite. It is a third of Sonnet's price both directions and stacks with the caching we just shipped rather than competing with it. ONE of the two concerns is now closed: her biggest measured question used about 23,000 tokens against Haiku's 200,000 limit, a 9x margin, so capacity is not the obstacle — that came free from the deploy telemetry. What is left is only whether a smaller model keeps the careful bits: the 'not every recommendation should be applied' caveat, 'showing 9 of 261' rather than implying that is all of them, not calling an absent college zero. Several smoke assertions test exactly those. Run it, diff the failures, report — do not switch quietly."
+  },
+  {
+   "id": "s185-identity-lint",
+   "for": "Sam",
+   "tab": "college-identity",
+   "text": "The College Identity tab was reporting 'Nothing outstanding' while ten real findings existed. Its finding list is built from an optional input, and a rebuild on 2026-08-21 ran without it: the list went from 13 to zero in a diff that looked like tidying, and stayed empty through four merges. It is restored, and the builder now refuses to publish an unchecked list over a checked one. Worth a look — two of the ten are the trailing-space college names that were making real CPL contacts invisible."
+  },
+  {
+   "id": "s184-pick-the-ceiling",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Two funding numbers are yours whenever you want them. First, the credit pair: a $175,000 minimum and a $400,000 maximum. At that pair 69 of the 115 colleges land on the minimum — the middle college in the state is funded by the minimum rather than by its size — and the maximum holds only two colleges. A floor is paid for by the colleges above it, so a mid-sized college earns $4,419 per CPL FTES against the $5,650 statewide rate. Second, the noncredit share: noncredit is 7.1 percent of the teaching the system does and gets 4.0 percent of the money. Matching those would mean $1,797,660 rather than $1,000,000. Both figures are now on the tab so you can see them while you decide."
+  },
+  {
+   "id": "s184-noncredit-roster",
+   "for": "Sam",
+   "tab": "implementation-funding",
+   "text": "Move the noncredit dials, and settle the floor. The lane is live: 33 institutions — 30 colleges that run their own noncredit programs plus the 3 standalone ones — sharing the million, with three settings you can change in their own box: who is in it (at least 500 noncredit FTES), the minimum ($25,000) and the maximum ($100,000). The one number worth a second look is the minimum: 27 of the 33 land on it, which is 68 percent of the money, and growing earns an institution nothing more until it passes about 3,022 noncredit FTES — only six are above that. So the incentive you wanted is real at the door and flat in the middle. Lowering it to $20,000 halves that figure and leaves over half the money responsive to size. When you tried $50,000 the model could not pay it at all — 33 times $50,000 is more than the million — and the box now says so plainly instead of claiming everyone got the minimum."
+  },
+  {
+   "id": "s178-map-ids",
+   "for": "Sam",
+   "tab": "college-identity",
+   "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
+  },
+  {
+   "id": "s178-statewide-12",
+   "for": "Fable",
+   "tab": "cpl-assistant",
+   "text": "Twelve credentials are marked statewide in the adoption file but are missing from Sierra's catalog entirely, so she cannot find them at all. Carried from an earlier session and still open."
+  },
+  {
+   "id": "s173-phone-check",
+   "for": "Sam",
+   "tab": "fact-sheet",
+   "text": "Please open the three public pages on your phone — the Fact Sheet, Sierra, and the Veteran Sprint map. This is the last thing no session can check: we are blocked from reaching the live site, so all of it is verified in a test browser only. On the Fact Sheet, scroll to Statewide CPL credit recommendations — each program area should sit on its own line with four labelled figures beneath it (Exhibits, Credit recs, Adoptions, Could adopt); before the fix the name printed on top of the first number and Could adopt was cut off entirely. On the Veteran map, the side panel with the college details and the two directories was being hidden completely on any phone — it should now sit below the map. On Sierra, the faint grey notes under the answer box should be readable. If anything looks cramped or odd, tell me and I will tune it."
+  },
+  {
+   "id": "s179-college-ids",
+   "for": "Fable",
+   "tab": "college-identity",
+   "text": "Give Calbright Credit and Launch Non-Credit a placeholder row so they stop disappearing. They are missing from the identity table entirely, which means they silently fall out of four other tables rather than showing up as a known gap. A row with no ID and a stated reason is safe; inventing an ID is not."
+  },
+  {
+   "id": "s179-college-id-joins",
+   "for": "Fable",
+   "tab": "college-identity",
+   "text": "Join our tables on MAP's college ID instead of the college name. Sam asked whether we are making the best use of location IDs rather than text — measured, and he is right: 13 tables carry MAP's ID, 18 do not, and the ones that do not are all the tables we build ourselves. That is why a stray space in a college name could hide a real CPL coordinator. Four colleges' contacts are currently found only through the variant list we added last week."
+  },
+  {
+   "id": "s182-full-width",
+   "for": "Sam",
+   "tab": "dashboard",
+   "text": "Have a look at the tabs now that text runs the full width. You said the short text columns look awkward against the full-width tables, so every paragraph across 17 files now runs to the same right edge as the tables beside it. Nobody has seen it rendered. If it reads too wide, two columns is the alternative and it is a single switch, not a rebuild."
+  }
+ ]
 }

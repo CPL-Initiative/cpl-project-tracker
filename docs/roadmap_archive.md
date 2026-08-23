@@ -4596,3 +4596,81 @@ Durable: [`a-conversation-is-scoped-state`](docs/kb-notes/methodology-a-conversa
 
 
 - **2026-08-19 (Session 170, SkyFetch)** — **the reports were already there, and the probe lied about it** (#1246/#1247/#1248). Sam built three MAP Custom Reports and asked whether a session could fetch them. ⭐ **All three are served by the API the daily cron already pulls**, `dataCount` matching the builder exactly — so wiring was config (`REQUEST_PAYLOAD` 8 → 10 datasets) and ITPI's daily-push offer is declinable on the merits. ⭐ **Two of the three are OUR OWN SPEC coming back**: the 13-column report IS Dataset A of `map_dataset_sql_for_malone.md`, already held as `map_college_cr_unit`, so the job was a **reconciliation** — found by re-reading a committed doc, not by generating anything. All three deltas run one way (+1.46% · +3.07% · +10.02%) = our staleness resolving, exactly as `cpl_memory` predicted. ⚠️ **A standing §11 claim was wrong** — "catalog year: nothing we hold carries it" — `map_student_credit.catalog_year` is **100% filled**, 9 values. ⚠️ **THE PROBE REPORTED "NONE EXPOSED" AND WAS WRONG**: `columnName: []` had silently stopped enumerating and now 500s on known-good views, so its success condition could not fire for **any** view — only a positive control caught it. It still leaked the truth (valid names 500, invalid 400; the single 500 was the real student view, printed as ✗ and summarized away). ⭐ **Pedro's salt-hash assurance was corroborated, not merely accepted** — the spec's own warning run as an experiment: 5M decimals + 8 variants ≠ a sampled hash. ⚠️ **The payload IS the PII boundary** (minimization is the *absence* of entries), now pinned by a test verified to FAIL, not just pass. 2 new KB notes; Sky167's narrative archived out of `CLAUDE.md`.
+
+### SkyBound — two bounds, one dial fewer, then a whole new lane (2026-08-22/23, Session 184)
+
+**Sam: add a Max Funding factor beside the minimum, set $400,000, recalculate — then,
+once both bounds existed: *"we don't need the rural carve out since all are benefitting
+from the floor… fold the funds into the total available."*** Merged **#1293** + **#1297**.
+⭐ **MEASURED BEFORE BUILDING, TWICE, AND BOTH TIMES IT CHANGED THE RECOMMENDATION.** The
+$400K ceiling holds 6 colleges and moves **1.1% of the pool**, none of it to the 45 at the
+minimum — **a ceiling cannot lift a floored college**. And the rural removal was
+*two-thirds* right: ten of 13 rural colleges moved **$0**, but three sat above the floor
+and the released money re-splits to the **largest** colleges — regressive in direction
+while "near zero" in aggregate. Shipped **paired with the floor raise to $175,000**, which
+pays that cohort **$236,406 more** than the carve-out ever did.
+⭐ **THE FLOOR IS THE LEVER, AND IT IS NOT FREE** — at $175K, **69 of 115** colleges sit at
+the minimum, **the median college IS the minimum**, and the unbound earn rate falls to
+**78.2% of base**. A floor is a transfer priced in the earn rate of the middle.
+⭐ **THE SOLVER HAD TO CHANGE SHAPE**: a floor is monotone, a ceiling is not — pinning at a
+ceiling RELEASES money and lifts colleges back **off** the floor, which the old
+pin-as-you-go loop strands **with the pool still balancing and every row inside both
+bounds** — invisible. `allocModel()` bisects `lambda` in `clamp(lambda*size, floor, cap)`
+and reproduces the old loop **bit-for-bit** with the ceiling off (`0.000e+0`), asserted
+against a transcription of it.
+⚠️ **A BOUND ON THE MONEY IS A BOUND ON THE BAR** — scale to **cap ÷ `plainRatio`**, not the
+bare cap, or the largest colleges get the state's only unsubsidized rate; and the clamp
+must reach **both** target paths.
+⭐ **A REDUNDANT-LOOKING MECHANISM CARRIED A SECOND JOB NO COLUMN SHOWS** — the rural
+allowance was the pool's only **unconditional** money, so the 13 went **$76,923 guaranteed
+→ $0** while ten of their allocation figures did not move at all.
+⚠️ **FOUR VACUOUS CHECKS IN TWO SESSIONS ON THIS ONE TAB** — every one a threshold that
+moved out from under an assertion naming a specific number. ⚠️ **The explainer's
+worked-example cards were hand-typed and two of four figures were stale**; generated from
+the payload now, in a file whose docstring says every figure comes from the engine.
+⚠️ **Sierra is DOWN** — every model-backed smoke mode returns *"credit balance is too low"*;
+nothing alerts on it (the workflow runs only on dispatch or a cpl-chat push).
+Durable: [`a-second-bound-breaks-a-pin-as-you-go-solver`](docs/kb-notes/methodology-a-second-bound-breaks-a-pin-as-you-go-solver.md) · [`a-mechanism-that-looks-redundant-may-be-carrying-a-second-job`](docs/kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md) · story `docs/cpl_funding_lessons.md` · handoff `docs/session_185_handoff.md`.
+⭐ **THEN THE NONCREDIT LANE** (2026-08-23). Sam: *"Let's go with the NC>=500 with a $25k
+floor… we could retire the NC section provided we could integrate the values on the college
+rows"*, then *"add a funding box to make the NC>=500 a variable."* It was a flat FTES split of
+$1M among four campuses; it is now the **same clamp** over **33 institutions — 30 credit
+colleges plus 3 standalone** — with three editable dials. ⭐ **Noncredit is 111 institutions,
+not 4** (108 college rows carry NC FTES), so the THRESHOLD is what makes it affordable.
+⭐ **A COMMENT PREDICTED THE SEAM** — `solveAlloc`'s bounds functions were documented as *"the
+one seam a second pool would swap"*, so the new lane calls `solveBounded()` and the credit lane
+became a five-line caller; the transcription test still proves no dollar moved.
+⚠️ **A DEDUP HAS A SCOPE.** Removing Mt. SAC NC's duplicated FTES by deleting its roster row
+**erased its real $50,000 ESS seed grant** — caught by a test on an unrelated surface that
+asserted a count *with its reason attached*. The FTES was the duplicate; the institution was not.
+⚠️ **THE CSV'S TOTAL ROW HAD BEEN ONE CELL TOO WIDE FOR MONTHS** — three empties against two
+headers on the SYSTEM row and every district subtotal, so every figure from that point right sat
+under the wrong heading in the one row a reader checks first. Invisible in the browser.
+⚠️ **27 of 33 sit at the NC floor and growth only starts paying at 3,022 FTES** — Sam's stated
+reason for the lane was the incentive, so the model now reports `breakEven` and the box prints it.
+Durable: [`a-deduplication-has-a-scope`](docs/kb-notes/methodology-a-deduplication-has-a-scope.md) · story `docs/cpl_funding_lessons.md`.
+⭐ **THEN SAM MOVED THE DIALS AND EVERY REMAINING DEFECT FELL OUT OF IT** (2026-08-23, #1302–#1306).
+He set the credit floor to $150K and the NC floor to $50K "just to see", and reported the changes
+had not propagated. They had — the tab's own numbers were his — but the report was still right:
+**three surfaces were lying, each in a different way.**
+⚠️ **$50K × 33 = $1,650,000 against a $1,000,000 pool**, so the solver's degenerate branch paid
+each institution **$30,303** while the box said *"33 at the minimum"*. A model that silently pays
+less than the number on its own dial is the worst state this has; `floorInfeasible` now REPLACES
+the note in both lanes (the ceiling's mirror case has had a warning since it shipped).
+⚠️ **The explainer had not moved at all** — it was a Claude artifact rebuilt by hand, on a host
+that blocks the call it would need. Sam: *"move explainer to Pages"*. It is now a live page at
+`/funding-model/` off the same engine; the payload builder is SHARED so a snapshot and the live
+page can differ only by WHEN, never by HOW.
+⚠️ **The "held $X" label** (Sam: *"worried about the message we're sending"*) appeared on all 115
+rows months before the deadline, reading as system-wide withholding. Phase-dependent now.
+⭐ **THE PARITY NUMBER HE ASKED FOR EXPOSED A THIRD DEFECT** — building "noncredit is 7.1% of the
+teaching and 4.0% of the money" surfaced a **CCC total counting only the standalone roster**,
+missing **56,993 FTES** on the exact card a reader uses to judge that share.
+⚠️ **TWO VERIFICATION FAILURES, AND THEY COST A RED MAIN.** I merged #1303 and #1304 on the green
+REQUIRED check while the non-required suite covering my own change was still running — and had
+verified locally with a subset I chose myself, which happened to exclude both files that broke.
+Then I told Sam the local full run passed on exit 0; it was **SIGTERM 143**, killed by my own
+pkill, and the "exit 0" belonged to the wrapper. Same class as the `; echo "EXIT=$?"` trap already
+in this file. ⚠️ And my page test asserted on `#tbody` — **the one container that clears itself** —
+so it passed while three others accumulated copies until Sam saw the cards render three times.
+Durable: [`a-green-check-you-did-not-scope-is-not-evidence`](docs/kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) · [`a-snapshot-of-a-live-model-is-a-claim-that-decays`](docs/kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) · handoff `docs/session_186_handoff.md`.

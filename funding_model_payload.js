@@ -88,7 +88,16 @@
                count: n.rows.length,
                colleges: n.rows.filter(function (r) { return r.kind === "college"; }).length,
                standalone: n.rows.filter(function (r) { return r.kind === "standalone"; }).length,
-               floorCount: n.floorCount, breakEven: Math.round(n.breakEven) };
+               floorCount: n.floorCount, breakEven: Math.round(n.breakEven),
+               // A minimum the carve-out cannot honor must travel INTO the
+               // document. Without it the explainer states the dial's figure as
+               // the amount each institution receives, which is the exact claim
+               // #1302 stopped the tab from making — and it is worse here,
+               // because this page is the thing a reader is sent to when they
+               // want to check the arithmetic.
+               floorInfeasible: !!n.floorInfeasible,
+               floorDemanded: Math.round(n.floorDemanded || 0),
+               perInstitution: n.rows.length ? Math.round(n.pool / n.rows.length) : 0 };
     })(),
     model: { floor: model.floor, floorCount: model.floorCount, floorCost: Math.round(model.floorCost),
              cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },
