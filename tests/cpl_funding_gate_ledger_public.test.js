@@ -104,13 +104,41 @@ function footText(doc) {
   const gatedRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find(function (r) { return /Berkeley City/.test(r.textContent); });
   const gatedSub = gatedRow.querySelector("td.tot .sub");
-  check("S5: the gated row reads 'held', not a bare $0",
-    !!gatedSub && /held/i.test(gatedSub.textContent) && !/^\s*\$0\s*$/.test(gatedSub.textContent));
+  // Sam, 2026-08-23: "a little worried about the message we're sending with the
+  // Held label". Before the deadline EVERY college is gated — nobody has opted
+  // in yet — so a dollar figure labelled "held" on all 115 rows says the state
+  // is withholding from the whole system, when the requirement is not yet due.
+  // The rule is now phase-dependent, and the never-a-bare-$0 ruling still holds
+  // in both phases.
+  check("S5: before the deadline the row says what to DO, and names no held figure",
+    !!gatedSub && /opt in/i.test(gatedSub.textContent) &&
+    !/held/i.test(gatedSub.textContent) && !/\$/.test(gatedSub.textContent) &&
+    !/^\s*\$0\s*$/.test(gatedSub.textContent));
+  check("S5: ...and its hover says plainly that nothing is withheld yet",
+    /nothing is withheld yet/i.test(gatedSub.getAttribute("title") || ""));
   check("S5: the gated row carries a visible ⛔ chip so it needs no hover",
     !!gatedRow.querySelector(".cf-gatechip"));
   check("S5: the gated cell's hover explains the dollars roll forward",
     /roll forward|held in reserve/i.test(gatedRow.querySelector("td.tot").getAttribute("title") || "") ||
     /roll forward|reserve/i.test(gatedRow.querySelector("td.tot .sub").getAttribute("title") || ""));
+
+  // AFTER the deadline the money genuinely is being held back, so the figure
+  // returns. Driven by moving the deadline into the past rather than by mocking
+  // a clock — the deadline is a real editable dial, so this is the same path a
+  // curator takes.
+  (function () {
+    const prev = T._shared ? null : null;
+    T._setScenario({ participationDeadline: "2020-01-01" });
+    T.render();
+    const lateRow = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+      .find(function (r) { return /Berkeley City/.test(r.textContent); });
+    const lateSub = lateRow.querySelector("td.tot .sub");
+    check("S5: after the deadline the row DOES name the held figure",
+      !!lateSub && /^held \$/.test(lateSub.textContent.trim()) &&
+      /was due/i.test(lateSub.getAttribute("title") || ""));
+    T._setScenario({ participationDeadline: "2026-11-01" });
+    T.render();
+  })();
 
   // The reserve pool card exists and equals the sum of what was withheld.
   const heldCard = doc.querySelector(".cplfund-card.withheld");
@@ -312,7 +340,12 @@ function shareSumAll(T) {
   const T = window.CPL_FUNDING_TAB;
   // Gate a college so there IS withheld money, and turn front-load ON.
   T._setElig({ coordOk: true, coord: { "Laney": true }, optin: { "Laney": true } });
-  T._setScenario({ disbursement: "frontload" });
+  // The deadline is in the PAST here on purpose. This block tests arithmetic —
+  // that a front-loaded Yr-1 cell reports the WHOLE window's withheld amount and
+  // not half of it — and that figure only renders once the deadline has passed
+  // (before it, the row says "opt in to start earning" and names no money, per
+  // Sam's 2026-08-23 wording call). Wrong phase, nothing to measure.
+  T._setScenario({ disbursement: "frontload", participationDeadline: "2020-01-01" });
   T.render();
 
   const gated = T._alloc("Berkeley City");   // no coordinator ⇒ gated
@@ -333,6 +366,12 @@ function shareSumAll(T) {
     return /held/i.test(subText(td)) && !td.classList.contains("tot");
   });
   const heldDigits = String(Math.round(gated.earned_withheld));
+  // `y1` missing is a FAILURE, not a crash. `subText(undefined)` threw a
+  // TypeError before finish() ever ran, so a regression here printed NOTHING —
+  // no passes, no failures, no summary — and looked like a broken harness
+  // rather than a broken guard. A test that dies takes every other result with
+  // it.
+  check("V1: a front-loaded window cell reporting a held figure exists at all", !!y1);
   check("V1: the front-loaded window cell reports the FULL held amount",
     !!y1 && subText(y1).replace(/[^0-9]/g, "") === heldDigits);
   // And it must agree with the window Total cell, which carries the same window.
@@ -340,7 +379,7 @@ function shareSumAll(T) {
   check("V1: the front-loaded window cell agrees with the window Total cell",
     subText(tot).replace(/[^0-9]/g, "") === heldDigits);
   check("V1: the cell says 'held', not the redundant 'withheld · held'",
-    !/withheld/i.test(subText(y1)));
+    !!y1 && !/withheld/i.test(subText(y1)));
   T._setScenario({});
 }
 {

@@ -50,26 +50,46 @@ const {
   // side (the feeders are noncredit campuses; pairing credit FTES with feeder
   // HEADCOUNT would add two different quantities and call the sum a total).
   {
-    const feederFtes = D.feeders.reduce(function (s, f) {
     // Placeholder-aware, matching feederBasis(): a campus whose reported figure
-    // is not yet trustworthy contributes its PLACEHOLDER to the basis. Summing
-    // the raw reported values here would silently re-admit the number the
-    // placeholder exists to keep out of the model.
-    const ph = Number(f.noncredit_ftes_placeholder);
-    return s + ((isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0));
-  }, 0);
+    // is not yet trustworthy contributes its PLACEHOLDER. Summing the raw
+    // reported values would silently re-admit the number the placeholder exists
+    // to keep out of the model.
+    const basisOf = function (f) {
+      const ph = Number(f.noncredit_ftes_placeholder);
+      return (isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0);
+    };
+    // The STANDALONE roster only — what this card used to print as the whole of
+    // noncredit. It is now the wrong number: 108 college rows carry noncredit
+    // FTES of their own, so the old figure understated system noncredit by
+    // ~57,000 FTES on a card whose entire job is to state the CCC total.
+    const standaloneOnly = D.feeders.reduce(function (s, f) { return s + basisOf(f); }, 0);
+    const allNoncredit = D.colleges.reduce(function (s, c) { return s + (c.noncredit_ftes || 0); }, 0) +
+      D.feeders.filter(function (f) { return !f.nc_ftes_on_credit_row; }).reduce(function (s, f) { return s + basisOf(f); }, 0);
     const collegeFtes = D.colleges.reduce(function (s, c) { return s + (c.credit_ftes || 0); }, 0);
-    const combined = Math.round(collegeFtes + feederFtes);
+    const combined = Math.round(collegeFtes + allNoncredit);
     const card = Array.from(doc.querySelectorAll(".cplfund-card .l"))
       .find(function (l) { return l.textContent.indexOf("CCC total") !== -1; });
     check("basis card names the ACTIVE basis, not a hardcoded 'headcount'",
       card && /credit FTES \(allocation basis\)/.test(card.textContent));
-    check("basis card shows colleges + feeders + combined CCC total, all in FTES",
-      card && card.textContent.indexOf(Math.round(feederFtes).toLocaleString("en-US")) !== -1 &&
+    check("basis card counts ALL noncredit FTES, not just the standalone roster",
+      card && card.textContent.indexOf(Math.round(allNoncredit).toLocaleString("en-US")) !== -1 &&
       card.textContent.indexOf(combined.toLocaleString("en-US")) !== -1);
+    check("basis card no longer prints the standalone-only figure as the noncredit total",
+      card && Math.round(standaloneOnly) !== Math.round(allNoncredit) &&
+      card.textContent.indexOf(Math.round(standaloneOnly).toLocaleString("en-US")) === -1);
     check("basis card does NOT pair credit FTES with feeder HEADCOUNT",
       card && card.textContent.indexOf(
         D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0).toLocaleString("en-US")) === -1);
+
+    // The parity card Sam asked for: noncredit's share of the teaching against
+    // its share of the money. Both sides must be FTES — a share computed with
+    // headcount on one side is not a share of anything.
+    const parity = Array.from(doc.querySelectorAll(".cplfund-card"))
+      .find(function (c) { return /share of the/i.test(c.textContent) && /teaching/i.test(c.textContent); });
+    check("a noncredit parity card states teaching share vs money share",
+      !!parity && /7\.1%/.test(parity.textContent) && /4\.0% of the money/.test(parity.textContent));
+    check("...and names what parity would cost, as a choice rather than a formula",
+      !!parity && /\$1,797,660/.test(parity.textContent) && /policy choice, not a formula/.test(parity.textContent));
   }
   // The rate card FOLLOWS THE METRICS. This fixture boots the committed baked
   // defaults, whose Year-1 metrics are headcount-denominated ("Headcount of

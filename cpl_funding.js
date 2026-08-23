@@ -816,6 +816,27 @@
     });
     return out;
   }
+  // Every noncredit FTES in the system, counted ONCE. feederNoncreditFtes()
+  // sums the standalone roster only, which was the whole noncredit story until
+  // 2026-08-23 — it now misses the 108 college rows that carry their own, and
+  // understated the system total by ~57,000 FTES on the two surfaces that print
+  // a "CCC total". Reads ncInstitutions(), so the Mt. SAC dedup applies here for
+  // free rather than being re-derived.
+  function allNoncreditFtes() {
+    return ncInstitutions().reduce(function (s, r) { return s + (r.ftes || 0); }, 0);
+  }
+  // What share of the money noncredit receives, against what share of the
+  // teaching it does. Sam, 2026-08-23, on keeping the carve-out at $1M: "I can
+  // adjust it up for parity later". This is the figure that says by how much.
+  function ncParity() {
+    var nc = allNoncreditFtes();
+    var credit = base().colleges.reduce(function (s, c) { return s + (Number(c.credit_ftes) || 0); }, 0);
+    var inst = netBeforeFeeder();
+    var pool = feederCarveout();
+    var teaching = (credit + nc) > 0 ? nc / (credit + nc) : 0;
+    return { ncFtes: nc, creditFtes: credit, teachingShare: teaching,
+             moneyShare: inst > 0 ? pool / inst : 0, parityPool: teaching * inst, pool: pool };
+  }
   function ncRoster() {
     var thr = ncThresholdFtes();
     return ncInstitutions().filter(function (r) { return r.ftes >= thr && r.ftes > 0; });
@@ -3089,16 +3110,53 @@
     // denominator. These now follow the basis SEAM, so flipping the toggle
     // relabels them instead of leaving one of the two lying.
     var basisTotal = totalSize();
-    var feederSide = usesFtes() ? feederNoncreditFtes() : feederHeads();
+    // ALL noncredit, not just the standalone roster. Under the FTES basis this
+    // is every institution's noncredit teaching (deduped); headcount has no
+    // college-side noncredit figure, so it keeps the feeder heads it always had.
+    var feederSide = usesFtes() ? allNoncreditFtes() : feederHeads();
     out.push(card({ v: fmtInt(basisTotal),
       l: "College " + basisLabel() + " (allocation basis) &mdash; &Sigma; of the " + base().colleges.length +
-        " college rows &middot; plus " + fmtInt(feederSide) + " noncredit-feeder " +
+        " college rows &middot; plus " + fmtInt(feederSide) + " noncredit " +
         (usesFtes() ? "FTES" : "students") + " = <strong>" +
         fmtInt(basisTotal + feederSide) + " CCC total</strong>",
       note: basisTotal > 0
         ? fmtRate(per / basisTotal) + " of the " + fmtMoney(per) + " annual tranche per " +
           basisLabel() + " &mdash; pool depth, informational"
         : "" }));
+
+    // ── the noncredit PARITY card (Sam, 2026-08-23) ───────────────────────
+    // He kept the carve-out at $1,000,000 and said "I can adjust it up for
+    // parity later — would be good to have that 7.1% number at the ready". So
+    // the tab computes it rather than leaving it in a chat message: what share
+    // of the system's teaching is noncredit, against what share of the money it
+    // receives, and what the pool would be if those matched. The carve-out is a
+    // policy choice; this is the figure that says what it is choosing.
+    //
+    // FTES on both sides, always — a teaching share computed against headcount
+    // on one side and FTES on the other is not a share of anything. Under the
+    // headcount basis the card says so instead of printing a number.
+    (function () {
+      if (!usesFtes()) {
+        out.push(card({ v: "&mdash;",
+          l: "Noncredit share of the funding &mdash; needs the credit-FTES basis",
+          note: "the comparison is FTES on both sides; switch the allocation basis to see it" }));
+        return;
+      }
+      var q = ncParity();
+      var gap = q.parityPool - q.pool;
+      out.push(card({ v: fmtPct(q.teachingShare, 1),
+        l: "Noncredit share of the <strong>teaching</strong> &mdash; " + fmtInt(q.ncFtes) +
+          " noncredit FTES against " + fmtInt(q.creditFtes) + " credit &middot; it receives <strong>" +
+          fmtPct(q.moneyShare, 1) + " of the money</strong> (" + fmtMoney(q.pool) + " of " +
+          fmtMoney(netBeforeFeeder()) + " to institutions)",
+        note: Math.abs(gap) < 1000
+          ? "the carve-out is at parity with noncredit teaching"
+          : (gap > 0 ? "parity would be " + fmtMoney(q.parityPool) + " &mdash; " + fmtMoney(gap) +
+                       " above the current carve-out"
+                     : "the carve-out is " + fmtMoney(-gap) + " above parity (" +
+                       fmtMoney(q.parityPool) + ")") +
+            " &middot; a policy choice, not a formula" }));
+    })();
 
     // The RATE card. Under FTES-denominated priorities the operative price is
     // the reimbursement rate per CPL FTES — what a college must actually
@@ -4384,18 +4442,43 @@
   // P-cells already use: the cap on top, what's actually been earned below.
   // `adv` is the slice of `earned` that is a provisional ADVANCE on a metric MAP
   // can't measure yet — called out so advances never masquerade as achievement.
+  // Has the participation deadline actually passed? Before it, no college is
+  // late and nothing has been withheld from anyone — the requirement is simply
+  // not due. A read that fails is treated as NOT passed: the softer framing is
+  // the safe default, and a clock error must never accuse 115 colleges.
+  function partDeadlinePassed() {
+    try {
+      var d = Date.parse(participationDeadline() + "T23:59:59Z");
+      return isFinite(d) && Date.now() > d;
+    } catch (e) { return false; }
+  }
   function earnedSubHtml(cap, earned, adv, held) {
     cap = cap || 0; earned = earned || 0; adv = adv || 0; held = held || 0;
     if (cap <= 0) return "";
-    // A gated college reads "withheld", never a bare $0 — a plain zero would say
+    // A gated college reads as gated, never a bare $0 — a plain zero would say
     // "posted no CPL", which is a different and possibly unfair claim (Sam,
     // 2026-07-30). The dollars are held in reserve, not lost.
+    //
+    // WORDING (Sam, 2026-08-23: "a little worried about the message we're
+    // sending with the Held label"). Until the deadline passes, EVERY college is
+    // gated — nobody has opted in yet — so a dollar figure labelled "held" on
+    // all 115 rows reads as the state withholding money from the whole system,
+    // when in fact the requirement is not yet due. Before the deadline the row
+    // says what to DO and names no figure (the cap is already on the line above,
+    // and the row carries an ✎ Opt in button). After the deadline the money
+    // genuinely is being held back, and the figure returns because then it is
+    // true. Same fact either way; only the claim about the college changes.
     if (held > 0.5) {
-      return '<span class="sub cf-withheld" title="' +
-        esc(fmtMoney(held) + " held in reserve — baseline participation not met yet. " +
-          "The allocation cap is unchanged and the dollars roll forward, so qualifying later still lets " +
-          "this college draw.") +
-        '">held ' + fmtMoney(held) + "</span>";
+      var due = partDeadlinePassed();
+      var tip = due
+        ? fmtMoney(held) + " held in reserve — baseline participation was due " + participationDeadline() +
+          " and is not met. The allocation cap is unchanged and the dollars roll forward, so qualifying " +
+          "now still lets this college draw."
+        : "Nothing is withheld yet — baseline participation is not due until " + participationDeadline() +
+          ". Once this college opts in and has a CPL Coordinator on file in MAP, it starts earning against " +
+          "its cap. The dollars roll forward either way.";
+      return '<span class="sub cf-withheld" title="' + esc(tip) + '">' +
+        (due ? "held " + fmtMoney(held) : "opt in to start earning") + "</span>";
     }
     var pct = earned / cap;
     var advTag = adv > 0.5
@@ -4782,11 +4865,11 @@
     // college row above it correctly read credit FTES. A total that is not in
     // the units of the column it tops is worse than no total: it invites the
     // reader to check the sum, and it will not add up.
-    var fh = usesFtes() ? feederNoncreditFtes() : feederHeads();
+    var fh = usesFtes() ? allNoncreditFtes() : feederHeads();
     var sysSize = totalSize();
     var sysHeadCell = '<td title="Allocation basis (' + basisLabel() + ') = Σ of the ' + base().colleges.length +
       ' college rows. The ' + fmtInt(fh) + " noncredit-feeder " + (usesFtes() ? "FTES are" : "students are") +
-      ' counted in the CCC total; their support is the feeder carve-out, not the college split.">' +
+      ' counted in the CCC total; noncredit is funded by its own carve-out, not the credit split.">' +
       fmtInt(sysSize) +
       '<span class="sub">+ ' + fmtInt(fh) + " noncredit = " + fmtInt(sysSize + fh) + " CCC total</span></td>";
     var foot;
