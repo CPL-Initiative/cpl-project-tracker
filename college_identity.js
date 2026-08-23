@@ -263,7 +263,26 @@
      * lint is missing, so the unlock belongs beside the gap it fills. */
     if (!state.contacts) h += '<p id="cid-unlock" class="cid-note"></p>';
     if (!findings.length) {
-      h += '<p class="cid-note">Nothing outstanding.</p>';
+      /* ⚠️ "No findings" and "not checked" are DIFFERENT ANSWERS, and only one of
+       * them is good news. The snapshot's lint input (--observed-json) is
+       * optional in the builder, and on 2026-08-21 a rebuild ran without it:
+       * findings went 13 -> 0 and this line printed "Nothing outstanding" for
+       * four merges while two live join defects sat in the contacts table. The
+       * builder now refuses to publish an unlinted artifact over a linted one
+       * AND stamps `linted`; this reads it, because a tab whose whole job is
+       * making absence visible must not present its own absence as health. */
+      if (s && s.linted === false) {
+        h += '<div class="cid-flag"><b>The snapshot was generated without its lint '
+          + 'input, so Sierra\u2019s corpus was NOT checked.</b> This is not '
+          + '\u201cnothing outstanding\u201d \u2014 it is \u201cnot looked at\u201d. '
+          + 'Re-run the builder with <code>--observed-json</code>.</div>';
+      } else {
+        h += '<p class="cid-note">Nothing outstanding'
+          + (s && s.observed_names
+              ? ' \u2014 ' + s.observed_names + ' names checked against the roster.'
+              : ".")
+          + "</p>";
+      }
     }
     findings.forEach(function (f) {
       h += '<div class="cid-find"><span class="cid-tag ' + esc(f.cls) + '">' + esc(String(f.cls).replace(/_/g, " ")) + "</span>"

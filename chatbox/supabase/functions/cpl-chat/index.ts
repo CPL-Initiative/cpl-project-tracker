@@ -2635,6 +2635,25 @@ function assembleRules(
   const fired: string[] = [];
   const overridden: string[] = [];
   let text = "";
+  // PROMPT CACHING (2026-08-23) — the same rules, partitioned by whether their
+  // text can change from one request to the next.
+  //
+  // `alwaysText` holds the rules whose predicate is literally `always`. Their
+  // bodies are module constants interpolating nothing but PORTAL_STUDENT_URL,
+  // so this string is BYTE-IDENTICAL on every request regardless of what the
+  // visitor asked — which is exactly what an Anthropic cache breakpoint needs,
+  // since caching is a PREFIX match and any byte change invalidates everything
+  // after it. `conditionalText` holds the rest, which varies with the question.
+  //
+  // ⚠ THE PARTITION REORDERS THE RULES RELATIVE TO EACH OTHER. sortOrder
+  // interleaves them (statewide 10, credit_list 20, offerings 30, credential 40
+  // … portal 90, landing_page 100), so emitting always-first yields
+  // 10,20,30,90,100 then 40..80. Order WITHIN each half is preserved. This is a
+  // presentation change, not a semantic one — each rule is a self-contained
+  // directive — but it is a change, and it is why the smoke suite is the gate on
+  // this deploy rather than the unit tests.
+  let alwaysText = "";
+  let conditionalText = "";
   for (const r of merged) {
     if (!r.active) continue;
     // An unknown applies_when would be a rule that silently never fires, so it
@@ -2645,8 +2664,13 @@ function assembleRules(
     fired.push(r.key);
     if (r.overridden) overridden.push(r.key);
     text += r.body;
+    // A curator CAN move a rule between the halves by editing applies_when.
+    // That costs exactly one cache miss, which is the correct price for a rule
+    // change taking effect.
+    if (r.appliesWhen === "always") alwaysText += r.body;
+    else conditionalText += r.body;
   }
-  return { text, fired, overridden };
+  return { text, alwaysText, conditionalText, fired, overridden };
 }
 
 // ─── RULE ASSEMBLY BLOCK END ──────────────────────────────────────────────────
@@ -2869,22 +2893,53 @@ function buildSystemPrompt(
   const assembled = assembleRules(RULE_DEFAULTS, rulesOverlay, {
     credentialContext, volumeContext, alignmentContext, creditContext,
   });
-  const ruleBlock = assembled.text;
   if (report) {
     report.fired = assembled.fired;
     report.overridden = assembled.overridden;
   }
 
-  return `You are the CPL Chatbox, a helpful assistant on map.rccd.edu that answers questions about Credit for Prior Learning (CPL), the MAP platform, and related California Community College initiatives.
+  /* ── TWO BLOCKS, SO THE FIRST ONE CAN BE CACHED (2026-08-23) ───────────────
+   *
+   * ⭐ WHY. Sierra used NO prompt caching, and ~3,200 tokens of byte-identical
+   * instruction rode on every single turn at full price. Sam is funding the
+   * Anthropic account personally until the corporate one exists (the balance ran
+   * dry twice in two days), so input cost is not an abstraction.
+   *
+   * ⚠ CACHING IS A PREFIX MATCH, WHICH DICTATED THE SHAPE. The stable material
+   * has to come FIRST or it cannot be cached at all. The old prompt put the
+   * static preamble first (only 968 chars / ~242 tokens — below Anthropic's
+   * ~1024-token minimum cacheable prefix, so caching it alone would silently do
+   * nothing) and the rule block LAST, after every volatile context. So there was
+   * no zero-reorder option: the always-rules had to move ahead of the retrieved
+   * sources. Measured: preamble 968 + always-rules 11,970 = 12,938 chars
+   * (~3,234 tokens), comfortably over the minimum.
+   *
+   * ⚠ WHAT IS IN `stable` MUST BE INVARIANT ACROSS QUESTIONS, not merely
+   * "mostly stable". Putting the WHOLE rule block here would look right and hit
+   * the cache only when two consecutive questions happened to be the same mode
+   * — and since a cache WRITE costs ~1.25x, a low hit rate makes caching cost
+   * MORE than not caching. Hence the always/conditional split in
+   * assembleRules(): every request produces the same `stable` bytes.
+   *
+   * ⚠ VERIFY IT ACTUALLY CACHES. `usage.cache_read_input_tokens` staying at 0
+   * across repeated requests means a silent invalidator crept in (a timestamp, a
+   * reordered map, a curator edit landing every turn) — see the handler, which
+   * logs it. A cache that never hits is strictly worse than none.
+   */
+  const stable = `You are the CPL Chatbox, a helpful assistant on map.rccd.edu that answers questions about Credit for Prior Learning (CPL), the MAP platform, and related California Community College initiatives.
 
 Your knowledge comes from the sources below. Answer based on these sources. If the sources don't contain enough information to fully answer, say so honestly and suggest the visitor contact the MAP team at MAP@rccd.edu.
 
 Be concise, friendly, and professional. Use plain language.
 
 IMPORTANT: When citing any numbers or metrics (student counts, units, savings, college counts, etc.), ALWAYS use the "LIVE CPL Dashboard Metrics" section below. These live numbers are scraped directly from the CCCCO Dashboard and are the most current. If a vault source below mentions a different number for the same metric, the live dashboard number is correct and the vault source is outdated. This applies especially to military/veteran student counts, savings figures, and unit totals.
+${assembled.alwaysText}`;
 
+  const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${ruleBlock}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${collegeContext}${topicContext}${offeringsContext}${credentialContext}${volumeContext}${alignmentContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+
+  return { stable, volatile: volatilePart };
 }
 
 async function fetchLiveMetrics(): Promise<any> {
@@ -3433,7 +3488,18 @@ Deno.serve(async (req: Request) => {
         model: "claude-sonnet-4-6",
         max_tokens: MAX_TOKENS,
         stream: true,
-        system: systemPrompt,
+        // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
+        // The first is byte-identical on every request (~3,234 tokens of
+        // preamble + always-rules) and is the only thing cached; the second
+        // carries the retrieval, which is different every time and must not be.
+        system: [
+          {
+            type: "text",
+            text: systemPrompt.stable,
+            cache_control: { type: "ephemeral" },
+          },
+          { type: "text", text: systemPrompt.volatile },
+        ],
         messages: [...convo, { role: "user", content: trimmedQuery }],
       }),
     });
@@ -3451,6 +3517,8 @@ Deno.serve(async (req: Request) => {
     const encoder = new TextEncoder();
     let fullResponse = "";
     let responseTokens = 0;
+    let cacheRead = 0;
+    let cacheWrite = 0;
 
     const stream = new ReadableStream({
       async start(controller) {
@@ -3491,6 +3559,27 @@ Deno.serve(async (req: Request) => {
                   }
                   if (event.type === "message_delta" && event.usage) {
                     responseTokens = event.usage.output_tokens || 0;
+                  }
+                  /* PROMPT-CACHE TELEMETRY (2026-08-23).
+                   *
+                   * ⚠ A CACHE THAT NEVER HITS IS WORSE THAN NO CACHE — a write
+                   * costs ~1.25x, so a silent invalidator turns a saving into a
+                   * surcharge, and nothing about the answer looks different. The
+                   * numbers arrive on `message_start`, not `message_delta`, and
+                   * they are the only way to tell the two apart. Logged to the
+                   * function log rather than a table: this is an operational
+                   * signal, and chat_interactions is per-answer product data. */
+                  if (event.type === "message_start" && event.message?.usage) {
+                    const u = event.message.usage;
+                    cacheRead = u.cache_read_input_tokens || 0;
+                    cacheWrite = u.cache_creation_input_tokens || 0;
+                    console.log(
+                      `cpl-chat cache: read=${cacheRead} write=${cacheWrite} ` +
+                      `uncached_input=${u.input_tokens || 0}` +
+                      (cacheRead === 0 && cacheWrite === 0
+                        ? " ⚠ NEITHER — the breakpoint is not taking effect"
+                        : "")
+                    );
                   }
                 } catch { /* skip */ }
               }
