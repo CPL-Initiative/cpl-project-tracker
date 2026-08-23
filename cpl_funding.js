@@ -2584,7 +2584,19 @@
   // Still NOT shown on the public college page (publicMode) — the artifact is
   // access-controlled, so an anonymous reader would hit a permission wall.
   // Republish the same artifact file path to keep this URL stable.
-  var SANITY_URL = "https://claude.ai/code/artifact/e3a3ccf1-581c-42cf-b622-56fd7caf7221";
+  // LIVE since 2026-08-23 (Sam: "move explainer to Pages"). This was a Claude
+  // artifact — a snapshot rebuilt and re-published by hand whenever a dial
+  // moved, which meant it silently disagreed with the model it explains the
+  // moment anyone edited one. It is now a page in this repo, served from the
+  // same Pages site as the dashboard, computing every figure from THIS engine
+  // and the same live Supabase config. Nothing to recalculate, nothing to
+  // republish, nothing to go stale.
+  //
+  // Relative on purpose: the tab and the page are same-origin on Pages, and a
+  // relative href also works from a local checkout and from index.html.
+  // The retired artifact (e3a3ccf1-581c-42cf-b622-56fd7caf7221) is frozen at the
+  // 2026-08-23 figures — anyone still holding that link is reading a snapshot.
+  var SANITY_URL = "funding-model/";
   // MOVED TO THE TAB TITLE ROW (Sam, 2026-08-22). It was a full-width strip
   // above the first section, and it describes the WHOLE model — so it belongs
   // beside the tab's own name, not stacked in front of the content it explains.
