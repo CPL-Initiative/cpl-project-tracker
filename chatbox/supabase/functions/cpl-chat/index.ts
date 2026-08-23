@@ -2825,7 +2825,9 @@ function buildSystemPrompt(
   report?: { fired: string[]; overridden: string[] },
   // The institution the CALLER'S PAGE is about (My College). See hostScopeBlock.
   hostScope: HostScope | null = null
-): string {
+  // TWO BLOCKS, not one string — `stable` is the cache breakpoint. See the
+  // comment above the return for why the order had to change to allow it.
+): { stable: string; volatile: string } {
   let context = sections
     .map((s: any, i: number) => {
       const heading = s.heading ? `## ${s.heading}` : "";

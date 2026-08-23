@@ -111,6 +111,27 @@ block("2. the stable block is byte-identical across every question mode", () => 
     approxTokens >= 2000, "~" + approxTokens + " tokens");
 });
 
+// ── 2b. The DECLARED type matches what is returned ──────────────────────────
+// ⚠️ THIS CHECK EXISTS BECAUSE THE REST OF THIS SUITE CANNOT CATCH IT. Every
+// test here lifts code out of index.ts through stripTypes(), which deletes type
+// annotations by design — so a stale `): string {` on a function that now
+// returns an object is invisible to all of them, and to `npm test` as a whole.
+// Deno typechecks on deploy, so the failure surfaces at the worst moment: the
+// deploy of a live public assistant. This one shipped in the working tree and
+// was caught by eye, not by CI.
+block("2b. declared return type", () => {
+  const sig = SRC.slice(SRC.indexOf("function buildSystemPrompt("),
+                        SRC.indexOf("let context = sections"));
+  check("(2b) ⚠️ buildSystemPrompt is NOT still declared as returning a string",
+    !/\)\s*:\s*string\s*\{/.test(sig),
+    "it returns { stable, volatile } now — Deno would reject this at deploy time, "
+    + "and no type-stripping test in this repo can see it");
+  check("(2b) ⭐ …it declares the two-block shape",
+    /\)\s*:\s*\{\s*stable:\s*string;\s*volatile:\s*string\s*\}\s*\{/.test(sig));
+  check("(2b) the call site reads both halves",
+    /systemPrompt\.stable/.test(SRC) && /systemPrompt\.volatile/.test(SRC));
+});
+
 // ── 3. Nothing was dropped from the prompt in the reorder ───────────────────
 block("3. the reorder moved content, it did not delete it", () => {
   const fn = SRC.slice(SRC.indexOf("function buildSystemPrompt("),
