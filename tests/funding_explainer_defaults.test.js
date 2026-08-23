@@ -39,9 +39,12 @@ if (m) {
     "l-floor":   money(D.pool.floor),
     "t-floor":   money(D.pool.floor),
     "g-floor":   money(D.pool.floor),
+    "f-nc":      money(D.pool.feeder),
+    "l-nc-count": D.nc ? String(D.nc.count) : null,
+    "t-nc":      money(D.pool.feeder),
   };
 
-  Object.keys(BOUND).forEach(function (id) {
+  Object.keys(BOUND).filter(function (k) { return BOUND[k] != null; }).forEach(function (id) {
     const el = html.match(new RegExp('id="' + id + '"[^>]*>([^<]*)<'));
     if (!el) { check("#" + id + " exists in the page", false); return; }
     const got = el[1].replace(/&mdash;/g, "—").trim();
@@ -66,6 +69,14 @@ if (m) {
   // to the Chancellor's Office.
   check("the explainer no longer describes a rural allowance",
     !/rural/i.test(html.replace(m[0], "")));
+  // Same rule, the noncredit lane's version: it was "the four noncredit
+  // campuses" in five places, and stayed that way after the lane became 33
+  // institutions — 30 of them credit colleges. A hand-typed count in an
+  // audience-facing document is a claim nothing checks.
+  check("the explainer no longer says the noncredit money goes to four campuses",
+    !/four noncredit/i.test(html.replace(m[0], "")));
+  check("the noncredit lane's size is stated from the payload",
+    !!D.nc && D.nc.count > 4 && D.nc.colleges + D.nc.standalone === D.nc.count);
 }
 
 let pass = 0;

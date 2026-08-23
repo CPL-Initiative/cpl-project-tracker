@@ -1359,3 +1359,109 @@ dial change.
 Two dials, both live and editable: **minimum $175,000**, **maximum $400,000**.
 **Next: Sam picks the pair** — as shipped, or $150K + $1M to noncredit. The
 noncredit expansion is scoped but unbuilt; see the handoff.
+
+## 2026-08-23 — the noncredit lane becomes a real allocation
+
+Sam, after reading the measurement: *"Let's go with the NC>=500 with a $25k
+floor. We can pull out the Mt SAC NC dup… This would mean we could retire the NC
+section provided we could integrate the values on the college rows."* Then, on
+being offered a floor number: *"Maybe we should add a funding box to make the
+NC>=500 a variable."*
+
+### What shipped
+
+The noncredit lane was a flat FTES split of the $1,000,000 carve-out among four
+feeder campuses. It is now **the same bounded allocation the credit pool uses**,
+over every institution clearing an editable entry threshold — 33 of them at the
+shipped dials, **30 credit colleges running their own noncredit programs plus 3
+standalone institutions**.
+
+Three dials, all editable in the box beside the credit pair: `nc_threshold_ftes`
+(500), `nc_floor_window` ($25,000), `nc_cap_window` ($100,000). The awards are
+window totals, like the credit floor and ceiling; the two-batch-per-funding-year
+cadence survives because it is disbursement policy, not part of the retired
+mechanism.
+
+### ⭐ The seam a comment predicted, and why it was worth honoring
+
+`solveAlloc()` carried a comment from the ceiling work saying its bounds
+functions were *"the one seam a second pool would swap (a noncredit pool on
+noncredit FTES with its own floor and ceiling)"*. That turned out to be exactly
+right, so the noncredit lane calls the SAME solver — `solveBounded({rows, keyOf,
+sizeOf, net, floor, cap})` — rather than growing a second one that would drift.
+The credit lane is now a five-line caller. `cpl_funding_cap.test.js` still
+asserts the ceiling-off output matches a transcription of the original pin loop,
+which is what proves the generalization moved no dollar.
+
+### ⚠️ The dedup was right about the FTES and wrong about the institution
+
+Sam's *"pull out the Mt SAC NC dup"* is correct: Mt. SAC Noncredit's 10,829.3
+noncredit FTES is **also** on the Mt. San Antonio credit row, so an
+FTES-proportional lane would pay the same program twice. I deleted the row from
+the `feeders` roster — and a test went red on a completely different surface:
+
+> `FAIL  Q2: 118 recipients + 1 declined row`
+
+**ESS 25-82 paid Mt. SAC Noncredit its own $50,000 seed grant.** It is a real
+institution in a record of distributed awards, and deleting the row erased one.
+The duplicate was the *FTES*, never the *institution*. The fix moved the dedup
+from the data roster into the size basis: the row carries
+`nc_ftes_on_credit_row: "Mt San Antonio"`, its noncredit size is zeroed, and the
+table renders it with the reason — *"counted on the Mt San Antonio row"* — because
+a silently missing institution and a deliberately-zero one look identical.
+
+⭐ **A deduplication has a scope, and the scope is one measure — not the record.**
+The same row can be a duplicate in one lane and the only copy in another.
+
+### ⚠️ The CSV's total row had been one cell too wide for months
+
+Adding the noncredit columns to the export produced a field-count mismatch, and
+checking against `main` showed **the mismatch predated the change**: the SYSTEM
+row emitted three empties where the header has two, and so did every DISTRICT
+SUBTOTAL line. Every figure from that point right — the year columns, the window
+total, all five earned columns — sat under the wrong heading **in the one row a
+reader checks first**. Invisible in the browser; you have to open the file.
+
+The guard is a field-count check over every line against the header, in both the
+flat and district-grouped shapes, plus one that reads the SYSTEM total by
+**column name** and compares it to the pool. Both verified against the
+reintroduced defect. ⭐ It generalizes: any future column added to one line and
+not another fails here.
+
+### ⚠️ Where the growth incentive actually is
+
+Sam liked this lane because it *"gives the smaller NC programs an incentive to
+grow"*. Measured, that is true at the entry and absent in the middle: **27 of 33
+sit at the $25,000 floor — 68% of the pool — and growth does not start paying
+until 3,022 noncredit FTES**, which only six institutions clear. A college at 600
+FTES and one at 2,900 receive exactly the same $25,000.
+
+| floor | at the floor | growth starts paying at | floor share of pool |
+|---|---|---|---|
+| **$25,000** (shipped) | 27 of 33 | 3,022 FTES | 68% |
+| $20,000 | 23 of 33 | 1,762 FTES | 46% |
+| $15,000 | 17 of 33 | 1,017 FTES | 26% |
+
+The model now reports `breakEven` and the box prints it, because a lane that is
+mostly floor is mostly not an incentive and that should be visible on the dial
+rather than discovered later.
+
+### ⚠️ A dial can strand real money, so the box has to say so
+
+Narrowing the threshold to 3,000 FTES leaves 7 institutions, and 7 × $100,000
+cannot absorb $1,000,000: **$300,000 becomes unspendable**. The solver's existing
+degenerate branch surfaces it and the box warns on screen. This is the one way a
+curator moving a dial can silently strand money, so it is pinned by a test.
+
+### Where this leaves it
+
+Noncredit money now rides **beside** the credit total everywhere it appears — its
+own column on the tab, its own columns in the CSV, its own line on My College —
+never summed into it, which is Sam's *"neglected step child"* constraint made
+structural. The retired feeder section is a three-row block for the institutions
+with no credit row; they are listed rather than forced into the college table as
+three rows of dashes across every credit column, which would also have dragged
+them into the credit totals, the district rollup and the eligibility counts.
+
+**Next: Sam moves the dials.** The threshold, floor and ceiling are all live, and
+the box reports what each one did.

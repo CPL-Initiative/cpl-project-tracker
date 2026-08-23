@@ -159,10 +159,16 @@ check("data: participation deadline default Sept 1, 2026", D.participation_deadl
     doc.querySelector(".cplfund-years").textContent.indexOf("close out by 2028-29") !== -1);
   check("front-load: footer explains the Yr-1 column + carryover",
     footText(doc).indexOf("Front-loaded disbursement") !== -1);
-  const feederTable = doc.querySelectorAll(".cplfund-table")[1];
-  check("front-load: feeder pool disburses up front (full carve-out in Yr 1)",
-    feederTable.textContent.indexOf("$" + D.pool.feeder_carveout.toLocaleString("en-US")) !== -1 &&
-    feederTable.querySelector("thead").textContent.indexOf("front-loaded") !== -1);
+  // The noncredit lane became WINDOW-denominated on 2026-08-23 (its floor and
+  // ceiling are window figures, like the credit pair), so front-load can no
+  // longer change its totals — only WHEN they land. That is the whole point of
+  // a timing toggle, and the standalone table has to say which it is showing.
+  const standTable = doc.querySelectorAll(".cplfund-table")[1];
+  check("front-load: the standalone noncredit rows say the money lands in Yr 1",
+    /all in Yr 1/.test(standTable.textContent) && !/\/yr/.test(standTable.textContent));
+  check("front-load: it moves the TIMING, never the noncredit totals",
+    Math.abs(Object.values(window.CPL_FUNDING_TAB._ncModel().W).reduce((s, v) => s + v, 0) -
+      D.pool.feeder_carveout) < 0.5);
 
   // Three-layer resolution: SHARED frontload, SCENARIO even → even wins.
   T._setScenario({ disbursement: "even" });

@@ -98,6 +98,20 @@ const payload = {
           floor: pool("floor_window"),
           cap: pool("cap_window"), rate: pool("ftes_rate_2026_27") },
   net_main: Math.round(T._netCollege()),
+  // The noncredit lane (2026-08-23). Emitted so the page can STATE it rather
+  // than have a writer describe it: the "four noncredit campuses" sentence in
+  // this document was true until the lane became 33 institutions, 30 of them
+  // credit colleges running their own noncredit programs, and a hand-typed
+  // count is exactly the thing that goes stale without anyone noticing.
+  nc: (function () {
+    const n = T._ncModel();
+    return { pool: Math.round(n.pool), threshold: Math.round(n.threshold),
+             floor: Math.round(n.floor), cap: Math.round(n.cap),
+             count: n.rows.length,
+             colleges: n.rows.filter(function (r) { return r.kind === "college"; }).length,
+             standalone: n.rows.filter(function (r) { return r.kind === "standalone"; }).length,
+             floorCount: n.floorCount, breakEven: Math.round(n.breakEven) };
+  })(),
   model: { floor: model.floor, floorCount: model.floorCount, floorCost: Math.round(model.floorCost),
            cap: model.cap, cappedCount: model.cappedCount, capReleased: Math.round(model.capReleased) },
   median: totals[Math.floor(totals.length / 2)],
@@ -157,6 +171,9 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
     "l-floor":   money(payload.pool.floor),
     "t-floor":   money(payload.pool.floor),
     "g-floor":   money(payload.pool.floor),
+    "f-nc":      money(payload.pool.feeder),
+    "l-nc-count": String(payload.nc.count),
+    "t-nc":      money(payload.pool.feeder),
   };
   const stale = [];
   Object.keys(expect).forEach(function (id) {
@@ -185,6 +202,10 @@ console.log("  at the minimum     " + payload.model.floorCount + " colleges");
 console.log("  at the maximum     " + payload.atMax + " colleges" +
   (payload.pool.cap ? " (ceiling " + money(payload.pool.cap) + ", releasing " +
     money(payload.model.capReleased) + ")" : " (no ceiling set)"));
+console.log("  noncredit lane     " + payload.nc.count + " institutions (" + payload.nc.colleges +
+  " colleges + " + payload.nc.standalone + " standalone) sharing " + money(payload.nc.pool) +
+  " · " + payload.nc.floorCount + " at the " + money(payload.nc.floor) + " minimum" +
+  " · threshold " + payload.nc.threshold + " NC FTES");
 console.log("  effective rate     " + money(effRate) + " per CPL FTES for an unbound college" +
   " (statewide base " + money(pool("ftes_rate_2026_27")) + ")");
 console.log("  worked example     " + example + (example === rows[0][0] ? "" : "  (largest UNBOUND college)"));

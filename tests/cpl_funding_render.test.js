@@ -433,89 +433,133 @@ const {
     /cplfund-ed-area \{[^}]*display: block/.test(css) && /cplfund-ed-area \{[^}]*line-height/.test(css));
 }
 
-// C4 — noncredit feeder carve-out: pool split + editable headcounts + carve-out
-// flows through to the college tranche.
+// C4 — the NONCREDIT lane (Sam, 2026-08-23). Was a flat FTES split of the $1M
+// among 4 feeder campuses; is now the same bounded allocation the credit pool
+// uses, over every institution clearing an editable FTES threshold. The three
+// dials, the dedup, the placeholder guards and the carve-out's effect on the
+// college pool.
 {
   const { window } = freshDom();
   const doc = boot(window);
-  const feederTable = doc.querySelectorAll(".cplfund-table")[1];
-  // 2026-08-06: the $1M split moved off HEADCOUNT onto NONCREDIT FTES via the
-  // feederBasis() seam — the like-for-like counterpart of the colleges'
-  // credit-FTES basis, and the only remaining place headcount converted to
-  // dollars. Headcount also mixed vintages here (NOCE/SD 2025-26 vs Mt. SAC NC
-  // and Calbright 2022-23) while every noncredit_ftes is 2025-26.
-  const fBasis = function (f) {
-    const ph = Number(f.noncredit_ftes_placeholder);
-    return (isFinite(ph) && ph > 0) ? ph : (Number(f.noncredit_ftes) || 0);
-  };
-  const totalBasis = D.feeders.reduce(function (s, f) { return s + fBasis(f); }, 0);
-  const perYearPool = D.pool.feeder_carveout / 2;
-  check("feeder pool per year = carve-out ÷ years ($" + Math.round(perYearPool).toLocaleString() + ")",
-    feederTable.querySelector("tfoot").textContent.indexOf("$" + Math.round(perYearPool).toLocaleString("en-US")) !== -1);
-  const noce = D.feeders.filter(function (f) { return f.short === "NOCE"; })[0];
-  const noceAlloc = Math.round((fBasis(noce) / totalBasis) * perYearPool);
-  const noceRow = Array.from(feederTable.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("North Orange") !== -1;
-  });
-  check("NOCE gets its noncredit-FTES share of the feeder pool",
-    noceRow.textContent.indexOf("$" + noceAlloc.toLocaleString("en-US")) !== -1);
-  // Guard the TRANSITION, not just the new arithmetic: assert the old headcount
-  // split is gone, since the two bases would otherwise agree by coincidence.
-  const totalHc = D.feeders.reduce(function (s, f) { return s + f.headcount; }, 0);
-  const noceHcAlloc = Math.round((noce.headcount / totalHc) * perYearPool);
-  check("the feeder split is no longer headcount-denominated",
-    noceHcAlloc !== noceAlloc &&
-    noceRow.textContent.indexOf("$" + noceHcAlloc.toLocaleString("en-US")) === -1);
+  const T = window.CPL_FUNDING_TAB;
+  const m = T._ncModel();
+  const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
 
-  // Calbright carries a PLACEHOLDER noncredit FTES. Its reported 21,438.17 over
-  // 2,484 headcount is 8.63 FTES/student — impossible (a full-time year is ~1.0),
-  // and on the raw figure it would take 47% of the $1M as the SMALLEST campus.
-  // The placeholder must drive the split, the reported figure must survive in the
-  // data, and the row must be chipped so a stand-in is never read as reported.
-  const cal = D.feeders.filter(function (f) { return f.short === "Calbright"; })[0];
+  // ── the lane itself ────────────────────────────────────────────────────
+  check("the lane spans colleges AND standalone institutions, not just feeders",
+    m.rows.length === 33 &&
+    m.rows.filter((r) => r.kind === "college").length === 30 &&
+    m.rows.filter((r) => r.kind === "standalone").length === 3);
+  check("the lane spends the carve-out exactly",
+    Math.abs(Object.values(m.W).reduce((s, v) => s + v, 0) - D.pool.feeder_carveout) < 0.5);
+  check("every award sits between the noncredit floor and ceiling",
+    Object.values(m.W).every((w) => w >= m.floor - 0.5 && w <= m.cap + 0.5));
+  check("the floor binds and the ceiling does not, at the shipped dials",
+    m.floorCount === 27 && m.cappedCount === 0);
+  // The reason Sam gave for the lane is that it "gives the smaller NC programs
+  // an incentive to grow", so the model has to be able to say where growth
+  // actually starts paying — a lane that is mostly floor is mostly not one.
+  check("the model reports where growth starts paying", Math.round(m.breakEven) === 3022);
+
+  // ── the three dials are real, editable pool fields ─────────────────────
+  ["nc_threshold_ftes", "nc_floor_window", "nc_cap_window"].forEach(function (f) {
+    check("dial " + f + " is an editable pool input",
+      !!doc.querySelector('input[data-edit="pool"][data-field="' + f + '"]'));
+  });
+  const thrInput = doc.querySelector('input[data-edit="pool"][data-field="nc_threshold_ftes"]');
+  commit(window, thrInput, "3000");
+  const m2 = T._ncModel();
+  check("raising the threshold narrows the lane (the dial actually moves money)",
+    m2.threshold === 3000 && m2.rows.length === 7 && m2.rows.length < m.rows.length);
+  check("a narrowed lane pays its remaining members MORE",
+    (m2.W["Mt San Antonio"] || 0) > (m.W["Mt San Antonio"] || 0));
+  // Narrowing far enough makes the pool UNSPENDABLE — 7 institutions cannot
+  // absorb $1,000,000 under a $100,000 ceiling. The model must surface the
+  // remainder rather than quietly stop balancing, and the box must say so: this
+  // is the one way a curator can move a dial and strand real money.
+  check("a lane too narrow to spend the pool reports the remainder, never swallows it",
+    m2.cappedCount === 7 &&
+    Math.round(Object.values(m2.W).reduce((s, v) => s + v, 0)) === 700000 &&
+    Math.round(m2.unspent) === 300000);
+  check("...and the box warns about it on screen",
+    /cannot be spent/.test(doc.querySelector(".cplfund").textContent));
+  commit(window, thrInput, "500");
+  check("restoring the threshold restores the full lane and spends the pool again",
+    T._ncModel().rows.length === 33 &&
+    Math.abs(Object.values(T._ncModel().W).reduce((s, v) => s + v, 0) - D.pool.feeder_carveout) < 0.5);
+}
+
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const m = T._ncModel();
+  const money = (n) => "$" + Math.round(n).toLocaleString("en-US");
+
+  // ── integrated on the college row, and never inside the credit total ───
+  const headers = Array.from(doc.querySelectorAll("#cplFundTable thead th")).map((h) => h.textContent.trim());
+  check("the college table carries its own NC $ column", headers.some((h) => /^NC \$/.test(h)));
+  const mtsac = Array.from(doc.querySelectorAll("tr.cplfund-row"))
+    .find((tr) => tr.textContent.indexOf("Mt San Antonio") !== -1);
+  check("a college's noncredit award renders on its own row",
+    mtsac.textContent.indexOf(money(m.W["Mt San Antonio"])) !== -1);
+  // Sam: "I want it on the surface the amount admin should give to NC so it
+  // doesn't get lumped into the whole". The credit total must not move.
+  check("the noncredit award is NOT added into the credit total",
+    Math.round(T._alloc("Mt San Antonio").total) === Math.round(T._model().W["Mt San Antonio"]));
+  const belowThreshold = Array.from(doc.querySelectorAll("tr.cplfund-row"))
+    .find((tr) => tr.textContent.indexOf("Palomar") !== -1);
+  check("an institution below the threshold says WHY it is empty, not just —",
+    /below the .*threshold/.test(belowThreshold.innerHTML));
+
+  // ── the standalone block replaced the feeder section ───────────────────
+  const stand = doc.querySelectorAll(".cplfund-table")[1];
+  check("the standalone table lists the institutions with no credit row",
+    /North Orange/.test(stand.textContent) && /San Diego College of Continuing Education/.test(stand.textContent));
+  check("the retired per-year feeder pool is gone (window totals, no FEEDER POOL tfoot)",
+    stand.querySelector("tfoot") === null && !/FEEDER POOL/.test(stand.textContent));
+  check("the SYSTEM row's NC total names the standalone remainder rather than claiming the whole pool",
+    /standalone =/.test(doc.querySelector(".cplfund-systemrow").textContent));
+
+  // ── the Mt. SAC dedup: excluded from the SIZE BASIS, not deleted ───────
+  // Removing the row outright erased a real $50,000 ESS 25-82 grant. The FTES is
+  // the duplicate, not the institution.
+  check("Mt. SAC Noncredit is still an institution on the roster",
+    D.feeders.some((f) => f.short === "Mt. SAC NC"));
+  check("...but earns nothing in this lane, because its FTES is on the college row",
+    (m.W["NC:Mt. SAC NC"] || 0) === 0 &&
+    D.feeders.filter((f) => f.short === "Mt. SAC NC")[0].nc_ftes_on_credit_row === "Mt San Antonio");
+  check("...and the table SAYS so rather than showing a bare zero",
+    /counted on the Mt San Antonio row/.test(stand.textContent));
+  check("...and it still receives its $50,000 seed grant in the distributions view",
+    T._grantRecipients().filter((r) => r.name === "Mt. SAC NC").length === 1);
+
+  // ── the placeholder guards, unchanged in substance ─────────────────────
+  const cal = D.feeders.filter((f) => f.short === "Calbright")[0];
   check("Calbright keeps its REPORTED noncredit FTES alongside the placeholder",
     cal.noncredit_ftes === 21438.17 && cal.noncredit_ftes_placeholder === 1000);
-  check("the placeholder, not the reported figure, drives the split", fBasis(cal) === 1000);
+  check("the placeholder, not the reported figure, drives the size basis",
+    m.rows.filter((r) => r.short === "Calbright")[0].ftes === 1000);
   check("the placeholder records WHY it exists (a bare number would become fact)",
     typeof cal.noncredit_ftes_placeholder_basis === "string" &&
     cal.noncredit_ftes_placeholder_basis.length > 40);
-  const calRow = Array.from(feederTable.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("Calbright") !== -1;
-  });
+  const calRow = Array.from(stand.querySelectorAll("tbody tr")).find((tr) => /Calbright/.test(tr.textContent));
   check("Calbright's row carries a placeholder chip that explains itself",
     !!calRow.querySelector(".cplfund-ph") &&
     /PLACEHOLDER/.test(calRow.querySelector(".cplfund-ph").getAttribute("title") || ""));
-  check("a placeholder in play is disclosed in the section footer, not only the chip",
-    /placeholder/i.test(doc.querySelector(".cplfund").textContent));
-  check("the raw reported figure never reaches the split",
-    calRow.textContent.indexOf("21,438") === -1);
+  check("the raw reported figure never reaches the split", calRow.textContent.indexOf("21,438") === -1);
 
-  // Editing a feeder's FTES re-splits the pool, drops "est.", and RETIRES the
-  // placeholder — otherwise the stand-in keeps beating the curator's own number.
-  const ftesInput = noceRow.querySelector('input[data-edit="feeder-ftes"]');
-  commit(window, ftesInput, "4000");
-  const feederTable2 = doc.querySelectorAll(".cplfund-table")[1];
-  const noceRow2 = Array.from(feederTable2.querySelectorAll("tbody tr")).find(function (tr) {
-    return tr.textContent.indexOf("North Orange") !== -1;
-  });
-  check("editing NOCE noncredit FTES clears its est. flag", noceRow2.querySelector(".cplfund-est") === null);
-  check("feeder FTES edit persisted to the scenario",
-    scenSlot(window).feeders[0].noncredit_ftes === 4000);
-
-  // Sam, 2026-08-04: the hero is now the INSTITUTION total (colleges + NC feeders),
-  // so raising the feeder carve-out does NOT change it — the money just moves from the
-  // college pool into the NC feeder line, both inside the total. The institution total
-  // holds; the college pool shrinks by the increase.
+  // ── the carve-out still moves money out of the college pool ────────────
   const carveInput = doc.querySelector('input[data-edit="pool"][data-field="feeder_carveout"]');
   commit(window, carveInput, "2,000,000");
-  const inst2 = D.pool.college_funding_before_feeder;   // colleges + NC = invariant to the feeder split
-  check("raising the feeder carve-out leaves the institution-total hero unchanged",
-    doc.querySelector(".cplfund-card.hero .v").textContent.indexOf("$" + inst2.toLocaleString("en-US")) !== -1);
-  check("raising the feeder carve-out moves that money out of the college pool",
+  check("raising the noncredit carve-out leaves the institution-total hero unchanged",
+    doc.querySelector(".cplfund-card.hero .v").textContent
+      .indexOf(money(D.pool.college_funding_before_feeder)) !== -1);
+  check("raising the noncredit carve-out moves that money out of the college pool",
     Math.round(window.CPL_FUNDING_TAB._netCollege()) ===
       Math.round(D.pool.college_funding_before_feeder - 2000000));
-  check("the hero note carries the $2,000,000 noncredit feeder line",
-    doc.querySelector(".cplfund-card.hero .l").textContent.indexOf("$2,000,000") !== -1);
+  check("...and the noncredit lane grows to spend it",
+    Math.abs(Object.values(T._ncModel().W).reduce((s, v) => s + v, 0) - 2000000) < 0.5);
 }
 
 // C5 — editable priority text + shares (scenario mode) + reset.
