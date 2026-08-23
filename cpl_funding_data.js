@@ -3,11 +3,19 @@
 // need that excel book anymore"). This file is now hand-maintained: it carries
 // the MIS college-headcount roster (2025-26 update applied 2026-07-03 for the
 // 74 colleges Sam reported; the rest carry 2022-23 — per-row `hc_vintage`) +
-// census context + the baked model DEFAULTS. The 4 noncredit feeder
-// institutions (NOCE / SD Cont. Ed / Mt. SAC NC / Calbright) live in the
-// `feeders` roster, NOT the college table (they cannot earn the CPL priority
-// metrics; the feeder carve-out supports them instead). The Chancellor-editable POLICY layer (years / priority metrics +
-// factors / feeder carve-out) lives in Supabase `cpl_funding_config`; the
+// census context + the baked model DEFAULTS. The 3 STANDALONE noncredit
+// institutions (NOCE / SD Cont. Ed / Calbright) live in the `feeders` roster
+// because they have no credit row — but since 2026-08-23 they are NOT the whole
+// noncredit lane: every college row carries `noncredit_ftes` too, and the lane
+// is now every institution at or above `pool.nc_threshold_ftes` (see below).
+// Mt. SAC Noncredit carries `nc_ftes_on_credit_row` since 2026-08-23 (Sam: "we
+// can pull out the Mt SAC NC dup"): its 10,829.3 noncredit FTES is ALSO on the
+// Mt. San Antonio credit row, so counting both would pay the same program twice
+// once the lane became FTES-proportional. It is excluded from the NONCREDIT SIZE
+// BASIS only — the row itself STAYS, because ESS 25-82 paid Mt. SAC Noncredit
+// its own $50,000 seed grant and it is a real institution in that record.
+// Deleting the row erased a distributed award; the tests caught it. The Chancellor-editable POLICY layer (years / priority metrics +
+// factors / noncredit carve-out) lives in Supabase `cpl_funding_config`; the
 // renderer overlays that + a per-browser what-if scenario and computes every
 // dollar live. NOT part of the daily cron.
 //
@@ -18,7 +26,19 @@
 // mirror-image per-college window CEILING — Sam, 2026-08-22, default $400K;
 // 0 disables it. Floor and ceiling are solved TOGETHER, so releasing a capped
 // college's excess can legitimately lift a college back off the floor),
-// and participation_deadline (baseline-eligibility opt-in date). The per-college
+// and participation_deadline (baseline-eligibility opt-in date).
+//
+// 2026-08-23 — THE NONCREDIT LANE BECAME A BOUNDED ALLOCATION (Sam). It was a
+// flat FTES split of the $1,000,000 carve-out among 4 feeder campuses; it is now
+// the same clamp the credit pool uses, over every institution with enough
+// noncredit FTES to clear an entry threshold. Three dials, all editable in-tab
+// exactly like the credit pair: `pool.nc_threshold_ftes` (500 — who is in the
+// lane at all), `pool.nc_floor_window` ($25,000) and `pool.nc_cap_window`
+// ($100,000; 0 disables). At the defaults that is 33 institutions — 30 credit
+// colleges with noncredit programs plus the 3 standalone ones — because
+// noncredit is 111 institutions system-wide, not 4: 108 of the 115 college rows
+// carry noncredit FTES. The EARNING side still counts only what originates from
+// a noncredit landing page; FTES is the SIZE basis, not the metric. The per-college
 // `rural` flags (DRAFT roster = the 13 federally-rural CCCs) are CONTEXT ONLY
 // since 2026-08-22 — the carve-out they used to fund is retired (see below).
 //
@@ -84,13 +104,19 @@ window.CPL_FUNDING = {
   "admin_cost_label": "CO STAFF — 2.0 FTE × 2 YRS",
   "scaling_projects_tech": 8959692.0,
   "college_funding_before_feeder": 25240308.0,
-  "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before feeder carve-out)",
+  "college_funding_before_feeder_label": "AVAILABLE COLLEGE FUNDING (before noncredit carve-out)",
   "feeder_carveout": 1000000.0,
-  "feeder_carveout_label": "NONCREDIT FEEDER SUPPORT (carve-out)",
+  "feeder_carveout_label": "NONCREDIT SUPPORT (carve-out)",
   "floor_window": 175000.0,
   "floor_window_label": "MINIMUM VIABLE ALLOCATION (per college, window floor)",
   "cap_window": 400000.0,
   "cap_window_label": "MAXIMUM ALLOCATION (per college, window ceiling)",
+  "nc_threshold_ftes": 500.0,
+  "nc_threshold_ftes_label": "NONCREDIT ENTRY THRESHOLD (annual noncredit FTES)",
+  "nc_floor_window": 25000.0,
+  "nc_floor_window_label": "NONCREDIT MINIMUM (per institution, window floor)",
+  "nc_cap_window": 100000.0,
+  "nc_cap_window_label": "NONCREDIT MAXIMUM (per institution, window ceiling)",
   "ccc_headcount": 2258784,
   "ftes_rate_2026_27": 5649.63,
   "ftes_rate_label": "2026-27 credit FTES reimbursement rate (SCFF base)"
@@ -194,7 +220,8 @@ window.CPL_FUNDING = {
    "headcount": 35363,
    "vintage": "2022-23",
    "noncredit_ftes": 10829.3,
-   "ftes_vintage": "2025-26"
+   "ftes_vintage": "2025-26",
+   "nc_ftes_on_credit_row": "Mt San Antonio"
   },
   {
    "name": "Calbright College",

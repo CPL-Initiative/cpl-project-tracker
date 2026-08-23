@@ -1,5 +1,5 @@
 ---
-title: Session 185 handoff — two bounds, one dial fewer, and Sierra is down
+title: Session 185 handoff — two bounds, one dial fewer, a whole new noncredit lane, and Sierra is down
 created: 2026-08-22
 updated: 2026-08-23
 tags: [handoff, session-185, funding, implementation-funding, allocation, noncredit, cobi]
@@ -73,10 +73,12 @@ guaranteed → $0** while ten of their allocation figures did not move at all.
 
 ## 🔴 Open decisions — Sam's, not yours
 
-1. **The pair.** $175K + $400K as shipped, or hold the floor at $150K and send the
-   freed $1M to noncredit. Same structural change, two dials (`floor_window` /
-   `feeder_carveout`). Nothing is blocked; the model is correct either way.
-2. **The noncredit expansion** — *think-only when he asked, now measured.* See below.
+1. **Move the noncredit dials.** All three are live in the box. The open one is the
+   floor: $25,000 as shipped leaves 27 of 33 at the minimum; $20,000 halves the
+   break-even. His call, and cheap to change.
+2. **The credit pair** — $175K + $400K as shipped. The alternative (hold at $150K, send
+   the freed $1M to noncredit) is no longer *needed* to fund the NC lane, since the
+   ≥500 roster fits inside the existing $1,000,000 — but it is still his call.
 3. **Nobody has opened any of this in a browser.** The sandbox is egress-blocked
    from the Pages host and from `*.supabase.co`, so the title-row link, the two-dial
    box and the rewritten explainer are verified by test and by reading only.
@@ -95,50 +97,66 @@ student asking Sierra a question today gets an error. `cpl_memory` row
 
 ---
 
-## The noncredit question, measured
+## The noncredit lane — asked as a question, now BUILT
 
-Sam asked to see *"each NC a floor of $25K and a ceiling of $100k based on their
-ftes"*, counting only what originates from NC landing pages.
+Sam read the measurement and decided: *"Let's go with the NC>=500 with a $25k floor.
+We can pull out the Mt SAC NC dup… This would mean we could retire the NC section
+provided we could integrate the values on the college rows."* Then, offered a floor
+number: *"Maybe we should add a funding box to make the NC>=500 a variable."*
 
-⭐ **Noncredit is 111 institutions, not 4.** 108 of the 115 credit colleges already
-carry noncredit FTES (67,822.6) alongside the 3 standalone NC institutions
-(14,165.8, Mt. SAC NC deduped). ⚠️ **111 × $25,000 = $2,775,000 — 2.8× the $1M
-carve-out**, and short even with the retired rural $1M added. At exactly that number
-everyone is on the floor and the FTES basis does nothing.
+**What it is now.** The noncredit lane was a flat FTES split of the $1,000,000
+carve-out among four feeder campuses. It is the **same bounded allocation the credit
+pool uses**, over every institution clearing an editable entry threshold — **33 at the
+shipped dials: 30 credit colleges running their own noncredit programs, plus 3
+standalone institutions.**
 
-⭐ **The lever is the ROSTER.** An **NC FTES ≥ 500 roster — 33 institutions carrying
-87% of the lane — fits the existing $1,000,000**: 27 at the $25K floor, top
-allocation $89,586, ceiling never binding. Full table in the lessons doc.
+| dial | default | what it does |
+|---|---|---|
+| `nc_threshold_ftes` | 500 | who is in the lane at all |
+| `nc_floor_window` | $25,000 | per institution, window |
+| `nc_cap_window` | $100,000 | per institution, window; 0 disables |
 
-⚠️ **Mt. SAC's noncredit FTES is double-counted today** (feeder roster + credit row
-both carry 10,829.3) — harmless now, a real defect the day NC money follows it.
-⚠️ Sizing the pool is the easy half; *"originated from the NC landing pages"* is a
-metric-scoping rule the feed does not distinguish yet.
-⚠️ **The college row must keep CR and NC money visibly separate** — Sam: *"I want it
-on the surface the amount admin should give to NC so it doesn't get lumped into the
-whole — NC is often considered the neglected step child."*
+⭐ **Noncredit is 111 institutions, not 4** — 108 of the 115 college rows carry
+noncredit FTES. That is why the lane needs a threshold the credit pool has no
+equivalent for: 111 floors of $25,000 is $2,775,000 against a $1,000,000 carve-out.
 
----
+⭐ **A comment predicted the seam.** `solveAlloc`'s bounds functions were documented in
+the ceiling work as *"the one seam a second pool would swap"* — so the new lane calls
+`solveBounded({rows, keyOf, sizeOf, net, floor, cap})` and the credit lane became a
+five-line caller. `cpl_funding_cap.test.js` still asserts the ceiling-off output matches
+a transcription of the original pin loop, which is what proves it moved no dollar.
 
-## ⚠️ Two defects the removal left behind — both fixed, both now guarded
+**Where the money shows.** Its own `NC $` column on the college table, its own two
+columns in the CSV, its own line on My College, and a three-row block for the
+standalone institutions where the feeder section used to be. **Never summed into the
+credit total** — Sam's *"neglected step child"* constraint made structural.
 
-Worth knowing because the shape recurs:
+### ⚠️ Three things this run learned the hard way
 
-- **A removal leaves a husk, and a husk can render.** Deleting
-  `netCollegeWithRural()` left `fmtMoney(netCollege() - netCollege())` in **two
-  audience-facing briefs**, so both told colleges the pool included *"the **$0**
-  Rural College allowance."* Valid arithmetic, invisible to every test. A
-  self-subtraction is the signature; that is the check now.
-- **A page that fills its figures with JS still ships hand-typed defaults.** The
-  explainer's static text said $150,000 in six places and 45 colleges in one. A
-  browser never shows them — view-source, a saved copy or scripts-off does.
-  Second instance in one session on that file. Guarded twice now:
-  `lintStaticDefaults()` in the builder and `tests/funding_explainer_defaults.test.js`.
+- **A dedup has a SCOPE.** Removing Mt. SAC NC's duplicated FTES by deleting its roster
+  row **erased its real $50,000 ESS 25-82 seed grant** — caught by a test on a
+  completely different surface. The FTES was the duplicate; the institution was not. It
+  now carries `nc_ftes_on_credit_row` and renders *"counted on the Mt San Antonio row"*,
+  because a zeroed row and a missing row look identical.
+- **The CSV's total row had been one cell too wide for months** — three empties against
+  two headers on the SYSTEM row and every district subtotal, so every figure from that
+  point right sat under the wrong heading in the one row a reader checks first.
+  Invisible in the browser; you have to open the file. Guarded now by a field-count
+  check in both shapes.
+- **27 of 33 sit at the floor (68% of the pool) and growth only starts paying at 3,022
+  NC FTES.** Sam's stated reason for the lane was the incentive for small programs to
+  grow, so the model reports `breakEven` and the box prints it. The incentive is at
+  ENTRY (crossing 500 earns $25,000); in the middle it is flat. **If he wants growth to
+  pay across the range, the floor is the dial** — $20,000 halves the break-even to 1,762
+  FTES and leaves 54% of the pool responsive to size.
 
-⭐ **When the same figure has two sources — one generated, one typed — the typed
-one is a source of truth nothing exercises.** Generate it or lint it.
+⚠️ Still true: *"only what came from the NC landing pages"* is a rule the feed cannot
+distinguish yet — Sam expects the origination data from MAP Custom Reports next week.
+FTES is the SIZE basis, not the metric.
 
----
+⚠️ Narrowing the threshold far enough makes the pool unspendable (7 institutions × a
+$100K ceiling cannot absorb $1M — $300,000 stranded). The solver surfaces it and the box
+warns; pinned by a test. It is the one way moving a dial silently strands money.
 
 ## Read in this order
 

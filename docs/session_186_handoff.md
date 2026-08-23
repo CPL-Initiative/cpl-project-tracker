@@ -21,6 +21,45 @@ To-Do queue and one thing that was not in it.
 assuming your branch is the only work in flight — four PRs (#1294–#1297) landed
 between handoff 185 being written and 185 starting.
 
+⚠️ **This brief was written without knowing about a second session.** Session 184
+(**SkyBound**) ran concurrently on the CPL funding model and landed **#1298** and
+**#1301** — the second of which rebuilt the noncredit lane. That work is summarized
+below; the full account is `docs/session_185_handoff.md` (written by 184, so it is
+NOT this file's predecessor — read it as a sibling) and `docs/cpl_funding_lessons.md`.
+
+---
+
+## Also shipped, from the other session: the noncredit lane (#1301)
+
+The noncredit carve-out was a flat FTES split of $1,000,000 among four feeder
+campuses. It is now **the same bounded allocation the credit pool uses**, over
+**33 institutions — 30 credit colleges running their own noncredit programs plus 3
+standalone** — with three dials editable in their own box: `nc_threshold_ftes` (500),
+`nc_floor_window` ($25,000), `nc_cap_window` ($100,000).
+
+⭐ **Noncredit is 111 institutions system-wide, not 4** — 108 of the 115 college rows
+carry noncredit FTES, which is why this lane needs an entry threshold the credit pool
+has no equivalent for.
+
+⭐ **`solveBounded()` now serves BOTH lanes.** The credit lane is a five-line caller;
+`cpl_funding_cap.test.js` still asserts the ceiling-off output matches a transcription
+of the original pin loop, which is what proves the generalization moved no dollar.
+**If you touch the allocation solver, that test is the guard.**
+
+⚠️ **A dedup has a scope.** Deleting Mt. SAC Noncredit's roster row to remove its
+duplicated FTES **erased its real $50,000 ESS 25-82 seed grant** — the feeder roster
+is also the grant recipient list. It now carries `nc_ftes_on_credit_row`, is zeroed in
+the size basis only, and renders the reason.
+
+⚠️ **The funding CSV's totals rows had been one cell too wide for months** (three
+empties against two headers on SYSTEM and every district subtotal). Fixed and guarded
+by a field-count check in both shapes.
+
+⚠️ **Open for Sam:** the noncredit floor. 27 of 33 sit at $25,000 (68% of the pool) and
+growth does not start paying until 3,022 NC FTES — the incentive he wanted is at ENTRY
+and flat in the middle. $20,000 halves the break-even. Also still his: the credit pair
+($175K + $400K as shipped).
+
 ---
 
 ## Read this first: Sierra went down twice in two days

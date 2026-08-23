@@ -1443,6 +1443,13 @@
       // (Sam, 2026-08-09: Year 1 and Year 2 are deliberately identical).
       prios: (grant.kind === "credit" && typeof M._prios === "function") ? M._prios(key, "1") : null,
       ess: M._ess(key),
+      // The noncredit carve-out, kept as its OWN fact rather than folded into
+      // `alloc` (Sam: "I want it on the surface the amount admin should give to
+      // NC so it doesn't get lumped into the whole"). Null when the module
+      // predates the noncredit lane, so an older cached build renders no line
+      // rather than a zero that reads like a denial.
+      nc: (typeof M._ncAward === "function") ? M._ncAward(key) : null,
+      ncModel: (typeof M._ncModel === "function") ? M._ncModel() : null,
       rural: M._isRural(key),
       district: M._district(key)
     };
@@ -1961,6 +1968,27 @@
           bits.push("Participation is recorded but not yet confirmed.");
         }
         if (bits.length) fundBody += '<ul class="cb-flags"><li>' + bits.join("</li><li>") + "</li></ul>";
+
+        // ── Noncredit money, stated separately and never added in ───────────
+        // This college's own noncredit program earns from a different pot. It
+        // is shown as its own line, with its own heading, because the whole
+        // reason it has its own column on the funding tab is that noncredit
+        // money folded into a credit total stops being visible as noncredit
+        // money — and it is the noncredit dean who needs to see it.
+        if (f.nc != null && f.ncModel) {
+          if (f.nc > 0) {
+            var ncNote = f.ncModel.floored[f.key] ? " (at the noncredit minimum)"
+              : f.ncModel.capped[f.key] ? " (at the noncredit maximum)" : "";
+            fundBody += '<div class="cb-note cb-floor"><b>Noncredit: ' + money(f.nc) + esc(ncNote) + "</b> over the "
+              + "same window, from a separate " + money(f.ncModel.pool) + " noncredit carve-out — <b>not</b> part of "
+              + "the figure above and not to be spent against it. It is earned on this college's own noncredit "
+              + "program, and the share is set by its noncredit FTES.</div>";
+          } else if (f.ncModel.threshold > 0) {
+            fundBody += '<div class="cb-lab">No noncredit allocation: this college is below the '
+              + esc(Math.round(f.ncModel.threshold).toLocaleString("en-US")) + "-FTES entry threshold for the separate "
+              + "noncredit carve-out.</div>";
+          }
+        }
 
         // ── What the cap is FOR — the three priorities, each with this
         // college's own target. Caps and targets both come from the funding

@@ -216,22 +216,34 @@ const {
     /\.cf-prio \.cf-pct \{ color: var\(--green-progress\); font-weight: 400; \}/.test(consumerSrc));
 }
 {
-  // J4 — feeder rows reflect the 2-batch-per-year disbursement (like the colleges,
-  // Timing section). Even mode: pool per-year = $500,000 → $250,000 per batch.
+  // J4 — the noncredit rows keep the 2-batch-per-funding-year disbursement (the
+  // credit colleges' cadence, Timing section). The lane's ARITHMETIC changed on
+  // 2026-08-23 — bounded allocation instead of a flat split, window totals
+  // instead of a per-year pool — but the cadence is disbursement policy and did
+  // not, so it must survive the rewrite. Per-row now, since there is no longer a
+  // single pool figure to halve.
   const { window } = freshDom();
   const doc = boot(window);
-  const feederSec = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
-  check("J4: feeder section explains the two-batch-per-year cadence",
-    feederSec.textContent.indexOf("two batches per funding year") !== -1);
-  const feederTable = doc.querySelectorAll(".cplfund-table")[1];
-  check("J4: feeder rows surface a per-batch amount (2 batches · $X ea)",
-    feederTable.textContent.indexOf("2 batches") !== -1 && feederTable.textContent.indexOf(" ea") !== -1);
-  check("J4: even mode — FEEDER POOL per-batch = half the per-year pool ($250,000 ea)",
-    feederTable.querySelector("tfoot").textContent.indexOf("$250,000 ea") !== -1);
-  // J5 — front-load: whole carve-out lands in Year 1, still 2 batches ($500,000 ea).
+  const T = window.CPL_FUNDING_TAB;
+  const sec = doc.querySelector('details.cplfund-sec[data-sec="feeder"]');
+  check("J4: the noncredit section explains the two-batch-per-year cadence",
+    sec.textContent.indexOf("two batches per funding year") !== -1);
+  const standTable = doc.querySelectorAll(".cplfund-table")[1];
+  check("J4: noncredit rows surface a per-batch amount (2 batches · $X ea)",
+    standTable.textContent.indexOf("2 batches") !== -1 && standTable.textContent.indexOf(" ea") !== -1);
+  const noce = T._ncModel().W["NC:NOCE"];
+  const evenBatch = "$" + Math.round(noce / 2 / 2).toLocaleString("en-US") + " ea";
+  check("J4: even mode — a row's batch is a quarter of its window award (" + evenBatch + ")",
+    standTable.textContent.indexOf(evenBatch) !== -1);
+  // J5 — front-load: the whole window award lands in Year 1, still 2 batches, so
+  // each batch DOUBLES. The award itself must not move: front-load is timing.
   click(window, doc.querySelector('#cplFundDisb button[data-val="frontload"]'));
-  check("J5: front-load — FEEDER POOL per-batch = half the full carve-out ($500,000 ea)",
-    doc.querySelectorAll(".cplfund-table")[1].querySelector("tfoot").textContent.indexOf("$500,000 ea") !== -1);
+  const flTable = doc.querySelectorAll(".cplfund-table")[1];
+  const flBatch = "$" + Math.round(noce / 2).toLocaleString("en-US") + " ea";
+  check("J5: front-load — the batch doubles because the whole award lands in Yr 1",
+    flTable.textContent.indexOf(flBatch) !== -1 && /all in Yr 1/.test(flTable.textContent));
+  check("J5: ...and the award itself is unchanged (front-load is timing, not money)",
+    Math.round(T._ncModel().W["NC:NOCE"]) === Math.round(noce));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -337,4 +337,53 @@ const {
     !detail.querySelector("textarea"));
 }
 
+// ── the export's shape ─────────────────────────────────────────────────────
+// EVERY line must have exactly as many fields as the header. This is here
+// because the SYSTEM row had THREE empties where the header has two, from
+// whenever that block was written until 2026-08-23 — so the one row a reader
+// checks first put its window total under "Earned", its earned under "Withheld",
+// and so on. Nothing in the browser shows it; you have to open the file. A
+// field-count check is the cheapest thing that can see it, and it generalizes:
+// any future column added to one line and not another fails here.
+{
+  const { window } = freshDom();
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  function fields(line) {
+    const out = []; let cur = "", q = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (q) { if (ch === '"') { if (line[i + 1] === '"') { cur += '"'; i++; } else q = false; } else cur += ch; }
+      else if (ch === '"') q = true;
+      else if (ch === ",") { out.push(cur); cur = ""; }
+      else cur += ch;
+    }
+    out.push(cur); return out;
+  }
+  function shapeOf(csv) {
+    const lines = csv.split("\r\n").slice(1);        // [0] is the one-cell meta banner
+    const head = fields(lines[0]).length;
+    return { head: head, bad: lines.filter((l) => fields(l).length !== head).length, n: lines.length };
+  }
+  const flat = shapeOf(T._csv());
+  check("CSV: every college line matches the header's field count",
+    flat.bad === 0 && flat.n > 110);
+  const cols = fields(T._csv().split("\r\n")[1]);
+  check("CSV: the SYSTEM total lands under the Total column, not one to its right",
+    (function () {
+      const lines = T._csv().split("\r\n");
+      const sys = fields(lines[lines.length - 1]);
+      return sys[1] === "SYSTEM (statewide)" &&
+        Number(sys[cols.indexOf("Total 2026–2028")]) === Math.round(T._netCollege());
+    })());
+  check("CSV: noncredit support is its own column, never folded into the credit total",
+    cols.indexOf("Noncredit support 2026–2028") !== -1 && cols.indexOf("Noncredit FTES") !== -1);
+  // The district-grouped export interleaves subtotal lines — a second shape that
+  // has to agree with the same header.
+  click(window, doc.querySelector('#cplFundGroup button[data-val="district"]'));
+  const grouped = shapeOf(T._csv());
+  check("CSV: the district-grouped export keeps the same shape",
+    grouped.bad === 0 && grouped.head === flat.head && grouped.n > flat.n);
+}
+
 finish();
