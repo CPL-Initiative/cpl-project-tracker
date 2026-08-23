@@ -1593,3 +1593,118 @@ never inside "Primary contact email", which means *what MAP holds*.
    CPL requests outrank every stat**: colleges will start receiving them daily for the first time, and the 15
    unroutable colleges become urgent. This also makes the nightly feed a **prerequisite**.
 3. `docs/map_custom_report_request_for_malone.md` is forwardable; blocked only on the view name.
+
+---
+
+## 2026-08-23 — nobody was watching, and she was paying full price for the same 3,200 tokens (Session 185, SkyScope)
+
+### The outage nobody was told about — twice
+
+Picking up the queue, the first thing worth doing was checking `cpl_memory`, and
+it held a `verified` row from that evening: **Sierra was down.** A fresh smoke
+dispatch confirmed it — every model-backed mode returning HTTP 400, *"Your credit
+balance is too low to access the Anthropic API."* Last healthy run **19:48 UTC**,
+first failure **21:30**, still failing at **00:01**.
+
+**Second outage in two days, same cause, and both were found by accident.**
+`cpl-chat-smoke.yml` and `sierra-preflight.yml` fire only on dispatch or push;
+no other workflow probes the function. So the outage duration was set by when a
+session happened to look.
+
+⚠️ **This class of outage cannot report itself.** It takes down every Sierra
+surface at once — the public page, the COBI tab, the Fact Sheet drawer,
+map.rccd.edu, the college landing pages, the vendor iframe. A student who arrives
+in that window reaches nobody and files nothing, so the feedback table stays
+empty *because* the thing is broken.
+
+**Built: `chatbox/health_check.sh` + `.github/workflows/cpl-chat-health.yml`.**
+One question every three hours; raises a GitHub issue on failure, reuses the open
+one rather than filing 8 a day, closes it on recovery.
+
+⭐ **A liveness check is only worth having if it can say no**, so the test does
+not read the script — it **runs** it against a mock `cpl-chat` in five shapes
+(billing error, generic error, healthy SSE, SSE with no text frame, nothing
+listening) and asserts exactly one reports up. Everything not positively
+recognized as an answer is DOWN, transport failure included: from a browser, an
+unreachable function and a broken one are the same event.
+
+⚠️ **The cadence carries its price in the file.** Sam is funding the Anthropic
+account personally until the corporate one exists. A probe is ~6–10K input tokens
+(general mode — the cheapest, fewest context builders fire) plus a short answer:
+**hourly ≈ $22/month, 3-hourly ≈ $7**. Shipped at 3-hourly with the arithmetic in
+the header, so raising it is a decision rather than a shrug.
+
+### The real cost lever was not the model
+
+Sam then asked whether Haiku would be cheaper "with comparable results". Two
+things the measurement changed:
+
+1. **There is no Haiku 4.6.** The current one is **Haiku 4.5** (`claude-haiku-4-5`),
+   $1/$5 per MTok against Sonnet 4.6's $3/$15 — a real 3× cut, and a context
+   window drop from 1M to **200K** that has to be measured, not assumed.
+2. **`cache_control` appeared ZERO times in a 200 KB Edge Function.** The ten
+   always-assembled rule bodies are **23,433 characters ≈ 5,860 tokens** of
+   byte-identical text, and with the preamble and audience rules roughly **7,000
+   stable tokens were billed at full price on every turn**. `MAX_TOKENS` is 2048,
+   so the bill is input-dominated — exactly what caching attacks.
+
+⚠️ **I told Sam caching carried "no quality risk" and that was wrong.** Caching
+is a *prefix* match: the stable material must come FIRST. Sierra's prompt opened
+with a 968-char preamble (**242 tokens — below the ~1024-token minimum, so a
+breakpoint there caches nothing and says nothing**) and closed with the rule
+block, after every volatile context. There was **no zero-reorder option**.
+
+⚠️ **And "mostly stable" is worse than not caching.** A write costs ~1.25×, a
+read ~0.1×, so a breakpoint on material that changes per request is a surcharge
+— invisibly, since the answers still look right. Caching the whole rule block was
+the one-line version and would have done exactly that: `appliesWhen` gates it, so
+it differs by question mode. The shipped split caches only the rules whose
+predicate is literally `always` — **2,992 tokens that are byte-identical on every
+request** (they interpolate nothing but a module constant).
+
+`tests/sierra_prompt_cache.test.js` **runs the assembler over all 16 context
+combinations** and asserts the stable half has exactly one distinct value, that
+the conditional half genuinely varies, and that the two halves recombine to the
+original length so no rule lands in neither. Cache hits and writes are logged
+with an explicit *"⚠ NEITHER — the breakpoint is not taking effect"*, because the
+counters arrive on **`message_start`, not `message_delta`** — reading usage from
+the delta reports zero cache activity for ever and looks exactly like a broken
+cache. Durable note:
+[`methodology-a-cache-breakpoint-must-lead-and-must-not-move`](kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md).
+
+### Smoke mode 7 — red since Session 125 on correct answers
+
+The queue asked for this and named the fix precisely: *don't delete the check;
+check instead that a nearby college reached her at all.*
+
+Mode 7 asserts Sam's three-part answer (2026-08-07). Part 3 — name LA-basin
+colleges that **teach** construction — was a prose grep for six college names,
+and four handoffs record it failing while Sierra answered well: she leads with
+the colleges that have **articulated** NCCER (Norco, Barstow), which is the other
+true thing. **A CI job that goes red on emphasis gets muted.**
+
+⭐ **Measured at the retrieval layer instead.** Lifting `extractTopicKeywords` +
+`expandWithSynonyms` out of `index.ts` gives the exact tsquery the function
+builds for that question; run against `search_college_offerings` at its own
+`result_limit: 150` it returns **150 rows / 78 colleges, five of the six LA-basin
+colleges present**. So the data reaches her and the assertion was testing
+wording. New mode **7r** calls that RPC with a **negative control first** (a
+nonsense term must return nothing, or "did these names come back?" is answered by
+a broken call as convincingly as by a real miss), a positive control, and a
+**threshold of 3 of 6 rather than a named college** — mode 14's lesson, that an
+assertion pinned to a value which can leave the data stops being a guard the
+moment it does.
+
+⚠️ **The pinned tsquery is a transcription, and transcriptions drift.**
+`tests/sierra_offerings_retrieval.test.js` re-derives the term set from
+`index.ts` on every run and fails if `TOPIC_SYNONYMS` moves — verified by adding
+a synonym and watching it go red.
+
+⚠️ **The query fills its 150-row limit exactly**, so truncation is live for this
+discipline. Ordering underneath stays `sierra_geo_ranking`'s job, and 7r says so.
+
+⚠️ **My own check tripped on my own comment.** 7r's preamble quotes the retired
+assertion so the next reader knows what was removed; the "is it gone?" grep read
+the quote as live code. Comments are not code — strip them before judging what a
+script *does*. The repo warned about this one handoff ago ("a marker is
+load-bearing text").
