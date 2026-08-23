@@ -484,6 +484,34 @@ const {
   check("...and the box warns about it on screen",
     /cannot be spent/.test(doc.querySelector(".cplfund").textContent));
   commit(window, thrInput, "500");
+
+  // ── a floor the pool cannot honor must SAY SO ──────────────────────────
+  // Sam set the noncredit floor to $50,000 to see how it played out. 33 × $50,000
+  // is $1,650,000 against a $1,000,000 pool, so the solver degrades to a pro-rata
+  // split and every institution receives $30,303 — 61% of the stated minimum —
+  // while the box said "33 at the minimum". A model that silently pays less than
+  // the number printed on its own dial is the worst state this thing has.
+  const floorInput = doc.querySelector('input[data-edit="pool"][data-field="nc_floor_window"]');
+  commit(window, floorInput, "50000");
+  const inf = T._ncModel();
+  check("an unhonorable floor is FLAGGED, not silently absorbed",
+    inf.floorInfeasible === true && Math.round(inf.floorDemanded) === 1650000);
+  check("...and nobody actually receives the stated minimum",
+    Object.values(inf.W).every((w) => w < inf.floor - 1) &&
+    Math.round(Math.max.apply(null, Object.values(inf.W))) === 30303);
+  const boxTxt = Array.from(doc.querySelectorAll(".cplfund-card.floor"))
+    .map((e) => e.textContent).join(" ");
+  check("...the box says the minimum is not being paid, and names the real figure",
+    /the minimum is not being paid/.test(boxTxt) &&
+    /minimum cannot be honored/.test(boxTxt) && /\$30,303/.test(boxTxt));
+  check("...and drops the count and break-even, which are false in that state",
+    !/33 at the minimum/.test(boxTxt) && !/growth starts paying/.test(boxTxt));
+  commit(window, floorInput, "25000");
+  check("lowering it back clears the warning",
+    T._ncModel().floorInfeasible === false &&
+    !/minimum cannot be honored/.test(Array.from(doc.querySelectorAll(".cplfund-card.floor"))
+      .map((e) => e.textContent).join(" ")));
+
   check("restoring the threshold restores the full lane and spends the pool again",
     T._ncModel().rows.length === 33 &&
     Math.abs(Object.values(T._ncModel().W).reduce((s, v) => s + v, 0) - D.pool.feeder_carveout) < 0.5);
