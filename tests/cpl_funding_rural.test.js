@@ -120,4 +120,16 @@ const briefing = fs.readFileSync("college_briefing.js", "utf8");
 check("source: My College no longer claims a guaranteed rural allowance",
   !/guaranteed rural allowance/.test(briefing) && briefing.indexOf("alloc.rural_w") === -1);
 
+// ── the husk a removal leaves behind ─────────────────────────────────────
+// Removing netCollegeWithRural() left `fmtMoney(netCollege() - netCollege())`
+// in TWO audience-facing briefs — the copyable text and the print HTML — so
+// both told colleges the pool included "the $0 Rural College allowance". It
+// rendered, it was arithmetically valid, and no test could see it because the
+// function it had referenced was already gone. A self-subtraction is the
+// signature of exactly that mistake.
+check("source: no self-subtracting money expression is left behind",
+  !/fmtMoney\(\s*(\w+)\(\)\s*-\s*\1\(\)\s*\)/.test(consumerSrc));
+check("source: neither brief still names a Rural College allowance",
+  consumerSrc.indexOf("Rural College allowance") === -1);
+
 finish();

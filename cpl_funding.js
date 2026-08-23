@@ -767,9 +767,11 @@
   }
   function feederCarveout() { return Math.max(0, Number(poolField("feeder_carveout")) || 0); }
   // RURAL CARVE-OUT RETIRED 2026-08-22 (Sam). ruralCarve/ruralPerCollege/
-  // ruralPoolDistributed/ruralAlloc/ruralWindow and the Rural section are gone;
-  // isRural() survives because the table still MARKS rural colleges. It no
-  // longer moves a dollar. Rationale + the measurement: docs/cpl_funding_lessons.md.
+  // ruralPoolDistributed/ruralAlloc/ruralWindow, the Rural section, the 🌲 chip
+  // and the curator override are all gone. What survives is the per-college
+  // `rural` FLAG in the data (federal categorization — a true fact, and My
+  // College still labels it as CONTEXT via _isRural). It moves no dollars.
+  // Rationale + the measurement: docs/cpl_funding_lessons.md.
   function floorWindow() { return Math.max(0, Number(poolField("floor_window")) || 0); }
   // The mirror image of the floor (Sam, 2026-08-22): no college's WINDOW total
   // rises above this. 0 = no ceiling, which is the identity — allocModel below
@@ -961,7 +963,7 @@
   //
   // The target must ride the SAME basis as the cap. With prioTargetRate also
   // denominated on totalSize(), cap ÷ target reduces to per_student exactly for
-  // every unfloored, non-rural college — which is the equal-yardstick property
+  // every college inside the bounds — which is the equal-yardstick property
   // the per-priority cells were built around.
   //
   // c = a base-college or shaped row; pass null for the statewide total.
@@ -1067,11 +1069,12 @@
     if (p && (p.unit === "ftes" || p.unit === "headcount")) return p.unit === "ftes";
     return measurability(p.metric).unit === "units";   // legacy rows: sniff the label
   }
-  // The PRE-FLOOR, PRE-RURAL proportional per-year entitlement behind one
-  // priority. The target must ride THIS, never the topped-up cap: the floor
-  // raises a college's funding, not its targets, the guaranteed rural allowance
-  // is not performance-earned, and prioCap() would double under front-load —
-  // which would cancel the front-load incentive exactly.
+  // The PRE-BOUNDS proportional per-year entitlement behind one priority. The
+  // target must ride THIS, never the topped-up cap: the floor raises a college's
+  // funding, not its targets, and prioCap() would double under front-load —
+  // which would cancel the front-load incentive exactly. (A CAPPED college is
+  // the one exception, and it is handled by capScale(), not here: a bound on the
+  // money has to be a bound on the bar.)
   //
   // THE CEILING IS THE ONE THING THAT LOWERS IT (Sam, 2026-08-22). The floor is
   // a deliberate one-way asymmetry — more money, same bar — and running that
@@ -1100,9 +1103,8 @@
     if (!c) return 1;
     var m = allocModel();
     if (!(m.cap > 0) || !m.capped[c.college]) return 1;
-    // A capped college's whole window entitlement IS the ceiling (the rural
-    // slice is inside it — capFor() reduces the main-pool ceiling by exactly
-    // that slice), so the ceiling is the entitlement; no rural arithmetic here.
+    // A capped college's whole window entitlement IS the ceiling — every
+    // college carries the same bounds, so there is no second slice to net off.
     //
     // Dividing by plainRatio is what keeps ONE rate for every college above the
     // minimum. Scaling the target to the ceiling alone would set a capped
@@ -1842,10 +1844,10 @@
   //       through earnFraction); they are not on/off switches.
   //   (2) Once a college clears the gate it has cleared it FOR THE WINDOW —
   //       no clawback if a coordinator record lapses in month 9.
-  //   (3) The gate withholds only the PERFORMANCE-EARNED main allocation. The
-  //       guaranteed rural allowance passes through untouched (PR4 made it a
-  //       guarantee; gating it would make "guaranteed" a misnomer). The cap —
-  //       including the $150K floor — is always shown in full.
+  //   (3) The gate withholds only the PERFORMANCE-EARNED allocation. Since the
+  //       rural allowance retired (2026-08-22) nothing in the college pool is
+  //       unconditional, so there is no guaranteed slice to pass through. The
+  //       cap — including the floor — is always shown in full.
   //   (4) Withheld dollars are HELD IN RESERVE and roll forward, never
   //       redistributed: a college that qualifies mid-window can still draw.
   // Returns pending:true while the coordinator feed hasn't loaded — fail-open,
@@ -2813,8 +2815,8 @@
     // Carve-outs — editable value + label, NOT deletable (they drive their own sections below).
     out.push(card({ cls: " feeder", neg: true, v: valueEd("feeder_carveout", true),
       l: labelEd("feeder_carveout", "Noncredit feeder support — carve-out") + ' <span class="dk">&mdash; deducted</span>' }));
-    // Available college funding (computed hero) — the WHOLE college pool incl. the
-    // folded rural allowance (Sam, 2026-07-28); ties out to the SYSTEM total row.
+    // Available college funding (computed hero) — the WHOLE college pool; ties
+    // out to the SYSTEM total row.
     // Sam, 2026-08-04: the hero is the INSTITUTION total — the college pool PLUS
     // the $1M noncredit feeder carve-out = the amendment's $25,240,308 "to
     // institutions". Two parts since the rural carve-out was retired (2026-08-22).
@@ -3434,8 +3436,8 @@
       // perPrio drives the priority CARDS, which are main-pool POLICY (their
       // "statewide $ ÷ per-student rate = target" identity requires the main
       // allocation) — so keep the per-priority caps on the main entitlement.
-      // winCap/winEarned below fold rural in (via collegeAlloc) to match the
-      // distribution surfaces (Sam, 2026-07-28).
+      // winCap/winEarned below read collegeAlloc to match the distribution
+      // surfaces (Sam, 2026-07-28; the rural fold retired 2026-08-22).
       var W = allocModel().W[col.college] || 0;
       ps.forEach(function (p, i) {
         var cap_i = prioCap(W, state.viewSlot, p);
@@ -3809,8 +3811,8 @@
   }
   // Inline section: explicit title + body.
   function section(id, title, body) { return sectionShell(id, title, body); }
-  // A block whose FIRST element is its own <h3>…</h3> (the rural / feeder
-  // sub-generators): lift that h3 into the summary. Empty input → nothing.
+  // A block whose FIRST element is its own <h3>…</h3> (the feeder
+  // sub-generator): lift that h3 into the summary. Empty input → nothing.
   function collapseH3(id, html) {
     if (!html) return "";
     var m = /^\s*<h3\b[^>]*>([\s\S]*?)<\/h3>/.exec(html);
@@ -3854,29 +3856,18 @@
       '<div class="cplfund-colmenu-panel"><div class="cplfund-colmenu-h">Show columns</div>' + items + "</div></details>";
   }
 
-  // ── allocation model: proportional split + minimum-viable floor ────────
-  // W (the college's MAIN-pool window entitlement at balanced shares) starts as
-  // headcount share × net pool; the FLOOR waterfall then guarantees no
-  // college's TOTAL window (main + its guaranteed rural allowance) falls below
-  // pool.floor_window: floored colleges get exactly their per-college floor,
-  // and the remainder re-splits proportionally over the OTHER colleges'
-  // headcount. Iterates (a re-split can push the next-smallest college under
-  // the floor) — converges in a few passes; Σ W = net pool by construction, so
-  // the balance stays $0. Cached per render.
+  // ── allocation model: proportional split between a floor and a ceiling ──
+  // W (a college's window entitlement at balanced shares) starts as headcount
+  // share × net pool, then is clamped between pool.floor_window (the
+  // minimum-viable floor) and pool.cap_window (the ceiling; 0 = none). Both
+  // bounds are funded from inside the SAME pool, so honoring either re-splits
+  // the remainder over the rows they do not bind; Σ W = net pool by
+  // construction, so the balance stays $0. Cached per render.
   //
-  // PR4 (Sam, 2026-07-28 — "combine the floor with the rural bump"): a rural
-  // college's GUARANTEED rural allowance (ruralPerCollege) self-funds the top
-  // of its floor, so its MAIN-pool floor is reduced to max(0, floor − ruralPer)
-  // — the rural money, not the main pool, covers the last stretch to $150k.
-  // Because the reduced floor guarantees mainW ≥ floor − ruralPer, mainW +
-  // ruralPer ≥ floor always (no main-pool leftover top-up needed). The main
-  // pool freed by the reduced rural floors re-splits to the (mostly non-rural)
-  // unfloored colleges. Non-rural floors are unchanged.
-  //
-  // CEILING (Sam, 2026-08-22). `pool.cap_window` is the floor's mirror image —
-  // no college's WINDOW total rises above it — and, like the floor, a rural
-  // row's MAIN-pool ceiling is reduced by its guaranteed slice so the ceiling
-  // binds the row's total, never the guarantee.
+  // Every college carries the SAME bounds. The rural carve-out that used to
+  // reduce a rural row's floor by its guaranteed slice was RETIRED 2026-08-22
+  // (#1297): its $1M went into this pool and the floor rose to $175K in its
+  // place, which pays those 13 colleges $236,406 more than the carve-out did.
   //
   // ⚠ THE CEILING IS WHY THE ITERATIVE PIN LOOP HAD TO GO. A floor-only
   // waterfall is monotone — pinning a college at the floor takes MORE than its
@@ -3998,9 +3989,9 @@
     var cap = capWindow();
     var r = solveAlloc(cap);
     var cols = base().colleges;
-    // What the FLOOR costs the pool: the top-up vs a pure proportional split
-    // (a rural row's top-up is measured against its REDUCED floor — the rest is
-    // funded by the rural carve-out, not the main pool).
+    // What the FLOOR costs the pool: the top-up vs a pure proportional split.
+    // Every row is measured against the same floor now — the reduced-floor case
+    // went with the rural carve-out (2026-08-22).
     var cost = 0;
     cols.forEach(function (c) {
       if (r.floored[c.college] && r.totSize > 0) {
@@ -4585,8 +4576,6 @@
       "</table></div>";
   }
 
-  // ── rural college allowance section (guaranteed; floor-fill first) ────────
-
   // ── baseline eligibility section (badges only) ────────────────────────
   function eligibilityHtml() {
     var total = base().colleges.length;
@@ -4715,8 +4704,7 @@
     });
     lines.push("");
     lines.push("Funding window: " + windowLabel() + " (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
-      ") · up to " + fmtMoney(netCollege()) + " in college implementation funding (incl. the " +
-      fmtMoney(netCollege() - netCollege()) + " Rural College allowance).");
+      ") · up to " + fmtMoney(netCollege()) + " in college implementation funding.");
     lines.push("CPL Initiative · Mapping Articulated Pathways (MAP) platform");
     return lines.join("\n");
   }
@@ -4757,8 +4745,7 @@
       "<h1>Credit for Prior Learning &mdash; Implementation Funding</h1>" +
       "<div class='sub'>Proposed baseline eligibility &middot; DRAFT for field review</div>" +
       "<p>The <strong>CPL Initiative</strong> of the California Community Colleges Chancellor&#39;s Office is proposing to " +
-      "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> (incl. the " +
-      esc(fmtMoney(netCollege() - netCollege())) + " Rural College allowance) in one-time implementation funding to colleges " +
+      "distribute up to <strong>" + esc(fmtMoney(netCollege())) + "</strong> in one-time implementation funding to colleges " +
       "across the <strong>" + esc(windowLabel()) + "</strong> window (" + nYears() + " year" + (nYears() > 1 ? "s" : "") +
       ") to scale Credit for Prior Learning through the Mapping Articulated Pathways (MAP) platform. To qualify, colleges " +
       "would meet a short set of baseline requirements.</p>" +
@@ -5759,7 +5746,7 @@
         refreshTable();
       });
     });
-    // Drill-in team actions (opt-in + rural flag) — stop propagation so the
+    // Drill-in team actions (opt-in) — stop propagation so the
     // click doesn't also toggle the row.
     holder.querySelectorAll("[data-optin]").forEach(function (b) {
       b.addEventListener("click", function (e) {
@@ -6406,9 +6393,9 @@
 
     // ── read-only API for the My College tab (#college-briefing) ────────────
     // The briefing shows one college its own money. It MUST NOT re-derive any
-    // of this: the allocation is a floor waterfall (iterative — colleges below
-    // the $150K minimum are pinned and the remainder re-splits over the rest),
-    // with a guaranteed rural allowance layered on top. A flat
+    // of this: the allocation is clamped between a floor and a ceiling and
+    // solved for one scalar (colleges at either bound are pinned and the
+    // remainder re-splits over the rest). A flat
     // "headcount share x pool" reads plausible and is wrong for every college
     // the waterfall touches. So the briefing calls _alloc()/_ess() here and
     // renders what this module returns.

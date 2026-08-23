@@ -1195,9 +1195,167 @@ tab.
   comment quoted the retired phrase and broke the test that greps the source:
   **a marker is load-bearing text, not prose.**
 
+### ⭐ The noncredit question, measured: noncredit is 111 institutions, not 4
+
+Sam's think-only follow-up: *"what about our other NCs… Can you see how it would
+look if we gave each a floor of $25K and a ceiling of $100k based on their ftes?"*
+
+The first number reframes the question. **108 of the 115 credit colleges already
+carry noncredit FTES** (67,822.6 between them) alongside the 3 standalone NC
+institutions (14,165.8 — Mt. SAC NC deduped, Calbright on its $1,000 placeholder).
+So *"our other NCs"* is **111 institutions carrying 81,988 noncredit FTES**, not a
+handful. Noncredit is nearly the whole system wearing a different hat.
+
+⚠️ **At that roster the proposed bounds are arithmetically infeasible inside the
+carve-out.** 111 × $25,000 = **$2,775,000 — 2.8× the $1,000,000 feeder carve-out**,
+and still short even if the retired rural $1M is added on top. At exactly
+$2,775,000 every institution sits on the floor and the ceiling never binds, so the
+FTES basis does nothing at all. The lane only starts to differentiate near $3.5M.
+
+⭐ **So the lever is the ROSTER, not the bounds** — and the distribution is kind:
+
+| NC FTES ≥ | institutions | share of the lane | $25K floors cost | inside the $1M carve-out? |
+|---|---|---|---|---|
+| 250 | 47 | 92% | $1,175,000 | no, just over |
+| **500** | **33** | **87%** | **$825,000** | **yes** |
+| 1,000 | 17 | 72% | $425,000 | yes, but 17 × $100K can't spend $2M |
+
+**A ≥500 NC FTES roster is the one that fits what Sam asked for with no new money**:
+33 institutions, 27 of them at the $25K floor, top allocation **$89,586** (Mt. SAC),
+the $100K ceiling never binding — inside the existing $1,000,000.
+
+⚠️ **The Mt. SAC double-count is load-bearing the moment this ships.** Its credit
+row and the feeder roster both carry 10,829.3 noncredit FTES; undeduped it earns in
+the NC lane twice. Harmless while the carve-out is a flat 4-way split — a real
+defect on the day NC money follows the number.
+
+⚠️ **And this is only the SIZE basis.** Sam's other half — *"count them only if they
+originated from the NC landing pages"* — is a metric-scoping rule on what is EARNED,
+which the feed does not distinguish today. Sizing the pool is the easy half.
+
+⚠️ **Whatever the shape, the college row keeps CR and NC money visibly separate**
+(Sam: *"I want it on the surface the amount admin should give to NC so it doesn't get
+lumped into the whole"*). That is a display requirement on the credit tab, not a
+property of the allocation.
+
 ### Where this leaves it
 
 The ceiling is built, tested (51 checks), editable, and reversible with one
 dial. **Next: Sam picks the number** — $400,000 as shipped, or the floor raise
 that does more with one lever. Either way the explainer artifact must be
 re-run and re-published to the same URL; it is a snapshot.
+
+---
+
+## 2026-08-22 (later still) — the rural carve-out retires, and the floor takes its place
+
+Sam, immediately after the ceiling shipped: *"since we have now both a floor and
+ceiling to the funding, it seems we don't need the rural carve out since all are
+benefitting from the floor… fold the funds into the total available. Seems like
+it would be near zero impact and would eliminate a complicating factor."*
+
+### The claim was two-thirds true, and the third that wasn't is the whole lesson
+
+| | today | without the carve-out | delta |
+|---|---|---|---|
+| 10 rural colleges at the minimum | $150,000 | $150,000 | **$0** |
+| Shasta | $220,656 | $150,000 | **−$70,656** |
+| Redwoods | $162,193 | $150,000 | −$12,193 |
+| Imperial | $155,655 | $150,000 | −$5,655 |
+
+⭐ **Ten of the 13 moved exactly $0** — the floor genuinely was doing that work,
+exactly as Sam said. **Three sat ABOVE the floor**, where the $76,923 was riding
+on top as a bonus rather than filling a gap.
+
+⚠️ **And the released $88,594 travels the wrong way.** It re-splits
+proportionally, so the biggest gainers were **Santa Monica +$2,375, East LA
++$2,328, Riverside +$2,277** — a transfer from three rural colleges to the
+largest non-rural ones. "Near zero impact" was true in aggregate and regressive
+in direction. That is why it shipped **paired with the floor raise to $175,000**,
+under which the 13 receive **$2,275,000 — $236,406 more** than the carve-out
+ever paid.
+
+### ⭐ The redundant-looking mechanism was carrying a SECOND job
+
+The allocation table could not show this and it is the real policy consequence:
+the rural allowance was **the only unconditional money in the college pool**.
+The floor caps what a college can *earn*; it does not guarantee what it
+*receives*. A floored college that posts nothing in MAP still earns ~$0. So all
+13 went from **$76,923 guaranteed → $0 guaranteed**, and nothing in the pool is
+unconditional now.
+
+It matters *increasingly*, not today: unmeasurable priorities currently pay
+provisional advances, so everyone looks funded. Once the feed measures
+everything, the guarantee would have been the only thing left that wasn't earned.
+Durable: [`a-mechanism-that-looks-redundant-may-be-carrying-a-second-job`](kb-notes/methodology-a-mechanism-that-looks-redundant-may-be-carrying-a-second-job.md).
+
+### ⚠️ What the $175K floor costs, measured and on the record
+
+| | floor $150K | **$175K (shipped)** | $200K |
+|---|---|---|---|
+| colleges at the minimum | 49 | **69 of 115** | 93 |
+| the median college gets | $165,770 | **$175,000 — the minimum itself** | $200,000 |
+| unbound college's earn rate | 88.1% of base | **78.2%** | 61.8% |
+| the $400K ceiling binds | 6, $262,241 | **2, $82,815 (0.34%)** | 0 |
+
+Two things nobody asked for and both matter. **The median college is now exactly
+on the floor** — half the system is funded by the minimum rather than by its
+size. And **the floor is paid for by the colleges above it**, so their effective
+rate falls to **$4,419 per CPL FTES against a $5,649.63 base**. A floor raise is
+not free; it is a transfer priced in the earn rate of the middle.
+
+That is the strongest argument for the alternative Sam floated afterwards — keep
+the floor at $150K and send the freed $1M to noncredit instead. **Both are the
+same structural change with two different dial values** (`floor_window` and
+`feeder_carveout`), which is why the code shipped either way.
+
+### Smaller things worth keeping
+
+- ⚠️ **Two more assertions could not fail.** The ceiling's rural bound was
+  vacuous at $400K (no rural college comes near it) — it passed against a
+  deliberately broken `capFor()`. And "colleges come off the floor" stopped
+  being observable once the floor rose, because the ceiling now binds only two
+  colleges. Both now run where they bind. **That is four vacuous checks found in
+  two sessions on this one tab**; the pattern is always a threshold moving out
+  from under an assertion that named a specific number.
+- ⚠️ **The explainer's worked-example cards were hand-typed** and two of their
+  four figures were already stale. They are generated from the payload now — in
+  a file whose own docstring says every figure comes from the engine.
+- The rural FLAG survives as context in the data (federal categorization, a true
+  fact Sam's team maintains); the glyph, the section, the card, the CSV column
+  and the curator control are gone.
+
+### ⚠️ Two defects the removal itself left behind, found at the checkpoint
+
+**A removal leaves a HUSK, and a husk can render.** Deleting
+`netCollegeWithRural()` left `fmtMoney(netCollege() - netCollege())` standing in
+**two audience-facing briefs** — the copyable text and the print HTML — so both
+told colleges the pool included *"the **$0** Rural College allowance."* It was
+syntactically fine, arithmetically valid, and invisible to every test, because
+the function it had referenced was already gone and nothing asserted on the
+sentence. **A self-subtraction is the signature of exactly this mistake**, so
+that is now the check (`cpl_funding_rural.test.js`, 33 → 35, both new checks
+verified to fail against the reintroduced defect).
+
+**A page that fills its figures with JS still ships hand-typed defaults.** The
+explainer writes seven figures from its payload at render time, and the static
+text inside those elements still said **$150,000** in six places and **45
+colleges** in one. A browser never shows them; view-source, a saved copy or a
+reader with scripts off does. This is the *second* instance in one session on
+the same file (the worked-example cards were the first), in a file whose own
+docstring says every figure comes from the engine. Fixed, and guarded twice:
+`lintStaticDefaults()` in the builder warns at build time, and
+`tests/funding_explainer_defaults.test.js` (11 checks) fails in CI if the page
+disagrees with its payload **or** if the payload disagrees with the repo's bounds
+— because a default checked against a stale snapshot agrees for the wrong reason.
+
+⭐ The generalization worth keeping: **when the same figure has two sources —
+one generated, one typed — the typed one is a source of truth that nothing
+exercises.** Generate it or lint it; there is no third option that survives a
+dial change.
+
+### Where this leaves it
+
+Two dials, both live and editable: **minimum $175,000**, **maximum $400,000**.
+**Next: Sam picks the pair** — as shipped, or $150K + $1M to noncredit. The
+noncredit expansion is scoped but unbuilt; see the handoff.
