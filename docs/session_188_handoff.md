@@ -159,7 +159,10 @@ not a worklist. Building one is the prerequisite — see the missing verbs below
     a branch `claude/pensive-albattani`. If it ever fired it would run a procedure
     that no longer matches reality.
   - Config dumped before the delete attempt (scratchpad, **not** committed — the
-    prompt carries the `CPL_SCRAPE_2026` secret).
+    prompt embeds the scrape shared secret's VALUE, so the dump must stay out of
+    the repo). ⚠️ That secret's value is nonetheless already committed in **10
+    places**, including the *public* `index.html` refresh button — see the WAF
+    carryover below. Don't restate it in new prose.
 
 - 🟡 **Verify the Cloudflare WAF rate-limit rule actually exists.**
   `cloudflare-worker-proxy.js:318` (`SEC-3`) is candid that the shared secret is
