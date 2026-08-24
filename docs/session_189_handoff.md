@@ -10,6 +10,8 @@ related:
   - "[[docs/ccr_atlas_lessons]]"
   - "[[docs/session_188_handoff]]"
   - "[[docs/kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue]]"
+superseded: true
+superseded_by: session_191_handoff.md
 ---
 
 # Session 189 handoff

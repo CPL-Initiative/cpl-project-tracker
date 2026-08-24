@@ -1,7 +1,7 @@
 ---
 title: Verify with the instrument that can see the defect
 created: 2026-08-20
-updated: 2026-08-20
+updated: 2026-08-24
 tags: [methodology, testing, accessibility, mobile, verification, sky-curate]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -94,7 +94,7 @@ fires, it is as likely to be wrong as the thing it is testing.
 ## How we got here
 
 `cpl-project-tracker` #1269 (2026-08-20). `fact-sheet/check_mobile_layout.js`
-measures nine viewport widths plus keyboard and reduced-motion behaviour and exits
+measures nine viewport widths plus keyboard and reduced-motion behavior and exits
 non-zero on a defect; `tests/factsheet_a11y.test.js` carries 69 structural and
 contrast checks in CI. The browser harness found two of the four defects and the
 screenshot diff found the regression introduced while fixing a third.
@@ -106,9 +106,45 @@ overlap", "is reachable", "looks the same"). Also a useful prompt in reverse:
 before writing a test, ask what the defect would *look* like, and whether the
 instrument you are about to use could observe it at all.
 
+## 2026-08-24 — the corollary: an EXEMPTION is a claim, so it needs an instrument too
+
+The Memory tab's briefing cites each claim with a superscript number. Those are
+deliberately smaller than the WCAG 2.2 AA 24x24 target minimum, which is allowed:
+SC 2.5.8 exempts a target whose position is determined by the flow of the
+sentence it sits in. The justification written down was that the numbered source
+list underneath repeats every citation at full size.
+
+**The source-list links measured 15px.** So both were undersized and the
+exemption rested on a fact that was not true — and no unit test could have said
+so, because jsdom returns zeroes from `getBoundingClientRect()`.
+
+The fix is not only the padding. `scripts/check_memory_briefing_layout.js` now
+asserts **the exemption itself**: the inline targets are allowed to be small only
+while the list underneath carries them at full size. Delete that list and the
+check goes red, instead of the justification quietly evaporating while the
+exemption stays in the code comments.
+
+This is the same shape as the veteran map's 7x7 pins, which are exempt only while
+the directory rows provide an equivalent route, and the harness verifies those
+rows exist. Generalized:
+
+> **When you exempt something from a rule, the thing that earns the exemption is
+> a claim about the world. Assert it. An exemption whose justification is only
+> written in a comment decays into an unconditional exemption the first time
+> someone edits what it depended on.**
+
+The same run produced the mirror-image failure in a unit test: three budget
+assertions derived their fixture from a value the code under test may not
+declare, so against exactly the code they existed to catch the fixture was empty
+and `indexOf("")` returned 0 — green. An assertion has to fail when the thing it
+guards is absent, which is why the perturbation run (stash the fix, watch it go
+red) is not optional.
+
 ## See also
 
 - [[docs/kb-notes/methodology-commit-the-test-harness]] — a test worth running
   once is worth committing.
 - `docs/fact_sheet_lessons.md` — the 2026-08-20 SkyCurate section, with the
   measurements.
+- `docs/cobi_memory_tab_lessons.md` — the 2026-08-24 SkyRead section (the unearned
+  exemption, and the vacuous budget assertions).

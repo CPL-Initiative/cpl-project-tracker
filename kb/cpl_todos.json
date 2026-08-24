@@ -1,92 +1,68 @@
 {
- "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-24 · Session 189 made the SkyView map actually usable for the job it was built for. Until today the map showed course identities but carried none of the college courses underneath them, so there was nothing to pick up and move — 101,063 of those courses now ship with it. Then we found the drag had never worked either: pressing \"Drag…\" and clicking the destination selected the destination and moved nothing, because the code threw away the course you were carrying the instant you pressed the mouse down. That is the other half of why nobody has ever used this feature since it was built in May. Both are fixed and proven end to end in a real browser: pick a course, carry it across to a completely different subject area, and the system writes exactly one instruction to move it. Nothing is written to the live database yet — a move still only shows you the row it would write.",
- "_session": "189 (SkyCal)",
- "_status": "The map can now do the one thing it exists for. What is left is your reaction to it, and then the safety net: when a course moves into a subject area where it does not fit the naming scheme, that should go on a review queue rather than quietly renumbering anything. Two ESL decisions from last session are still waiting on you, and the nine over-claimed ESL courses are still the highest-value thing on your list.",
- "items": [
-  {
-   "id": "s188-esl-overclaims",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Nine ESL courses are filed one level HIGHER than the college's own catalog describes them — the only ones running against the cautious direction, so they are worth your eye before the other 213. They all share a cause: our rule says 'level 5 or above = Advanced', but several colleges run a six-rung ladder where 5 and 6 are still 'high-intermediate'. Six of the nine are the same Los Angeles district series (College ESL V) repeated across eight colleges. Two ways to fix it: correct the nine by hand, or move the cut from '5 and above' to '6 and above', which fixes six of them by rule. Second question while you are here: that number rule is wrong about half the time overall — is it worth keeping at all? Full list and the quoted catalog text: kb/esl_fold_spotcheck/2026-08-24/report.md."
-  },
-  {
-   "id": "s187-universe-react",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Try the whole-reference map now that it works. Search for a subject, drag that subject next to another one, then pick a course out of the list and carry it across — press \"Drag…\" beside any course, then click the course it really belongs under, even in a completely different subject. It will show you the single instruction it would write; nothing is saved yet. What we most need from you: is dragging a whole subject around actually how you would want to work, and is the course list under each identity readable at the sizes you care about (the biggest one has 850 courses, so we show 200 at a time with a filter box)."
-  },
-  {
-   "id": "s187-overmerge-orange-coast",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "One row to look at: five different Orange Coast College courses — Reading and Vocabulary, Sentence Structure, Spelling, Pronunciation and Grammar — are filed as one course under the name of just one of them. About 3,320 rows share that shape."
-  },
-  {
-   "id": "s187-overmerge-rule",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Add the over-merge detector to the auditor: flag any course row where every college listed is the same college but the course numbers differ. 3,320 rows qualify. Flag only, never un-merge automatically — some are legitimate. A second over-merge signal came out of this run and belongs in the same detector: 1,122 college courses are currently claimed by MORE THAN ONE identity at once. Each one is two rows asserting they own the same course, which is exactly the shape the drag exists to repair."
-  },
-  {
-   "id": "s187-no-discipline-pile",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Half the reference queue — 3,001 decisions covering 8,065 courses — has no subject assigned at all, so it cannot be merged until someone says what subject each belongs to. Different job, needs its own screen."
-  },
-  {
-   "id": "s187-next-discipline",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "ESL proved packaging works. Pick the next discipline and repeat it — Kinesiology is the biggest at 1,204 course records, then Music and Computer Information Systems. Before ranking that discipline's queue, run the same catalog-description check ESL got and measure which of the sorting rules actually hold up — on ESL that reordered the work and found 94 rows that were about to be skipped (kb/_build_esl_fold_spotcheck.py is the pattern)."
-  },
-  {
-   "id": "s186-nc-floor",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Settle the noncredit minimum — it is the last open number on the funding tab. At the $50,000 you set, 30 of the 33 noncredit institutions land exactly on it and an institution has to reach 3,909 noncredit FTES before growing earns it anything extra. At $25,000 it was 27 of 33 and 3,022 FTES. So the current setting rewards getting into the lane and pays very little for growing inside it. If that is what you want, nothing needs to change. If you wanted growth to pay, lowering the minimum is the lever — raising the set-aside on its own makes it more floor-bound, not less. The box on the tab and the explainer page both show the break-even figure live, so you can move the dial and watch it."
-  },
-  {
-   "id": "s186-p1-origins",
-   "for": "Sam",
-   "tab": "implementation-funding",
-   "text": "Your question about splitting P1 into three metrics (landing page, student portal, batch upload). Short answer: get the breakdown first, split later if the data says to. Splitting it into three priorities would split the MONEY three ways — each would get its own target and its own cap, so a college doing everything through its landing page could no longer make up the difference elsewhere. That is a real change: it would require colleges to work all three routes rather than reach one total. Also, batch upload is not really the same thing as the other two — those are students arriving, that is an administrative import — so it is the one worth treating differently whatever you decide. Recommendation: when the data lands next week we show the three origins as a breakdown on the existing P1, in the drill-in and the export. You then have the evidence, and splitting later is a settings change, not a rebuild."
-  },
-  {
-   "id": "s185-sierra-billing",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Move Sierra's Anthropic billing to the corporate account when you can. She went dark twice in two days on the personal balance — 2026-08-21 and again overnight — and each outage takes down every place she appears at once: the public page, the COBI tab, the Fact Sheet drawer, map.rccd.edu, the college landing pages and the vendor iframe. A student who arrives in that window gets nothing and files no complaint, so the outage cannot report itself. There is now an automatic check every three hours that will open a GitHub issue and close it on recovery, so you will hear about the next one — but it tells you after the fact, it does not prevent it."
-  },
-  {
-   "id": "s185-haiku-trial",
-   "for": "Fable",
-   "tab": "cpl-assistant",
-   "text": "Trial Haiku 4.5 against the smoke suite. It is a third of Sonnet's price both directions and stacks with the caching we just shipped rather than competing with it. ONE of the two concerns is now closed: her biggest measured question used about 23,000 tokens against Haiku's 200,000 limit, a 9x margin, so capacity is not the obstacle — that came free from the deploy telemetry. What is left is only whether a smaller model keeps the careful bits: the 'not every recommendation should be applied' caveat, 'showing 9 of 261' rather than implying that is all of them, not calling an absent college zero. Several smoke assertions test exactly those. Run it, diff the failures, report — do not switch quietly."
-  },
-  {
-   "id": "s178-map-ids",
-   "for": "Sam",
-   "tab": "college-identity",
-   "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
-  },
-  {
-   "id": "s187-island-label-verb",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "The map can move a local course, but it cannot undo a wrong merge between two courses, and it cannot correct a subject label. Both are real: a film course is stuck inside the new Enrichment ESL course and there is no way to pull it out, and 73 merges between Ethnic Studies and Kinesiology are correct merges filed under the wrong subject. Neither is fixable from any screen we have. Still blocked for the film-course example: a merged-away course does not appear on the map at all, so there is nothing to drag."
-  },
-  {
-   "id": "s188-esl-zscheme",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Finish ESL: 67 ESL records were never in the fold's candidate list at all, because they live in a different store (the Z-scheme rows from the 2026-06 renumbering) rather than the two files the packaging tool reads. They are the concrete remaining ESL job — not a vague 'second pass'. Same survivors, same method."
-  },
-  {
-   "id": "s189-subj4-queue",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Build the safety net for the drag — step 2 of the plan Sam approved. Moving a course between identities is only a membership change and never renumbers anything, which is why it ships unblocked. But a move can leave the destination internally inconsistent: its subject prefix no longer matches the discipline it claims. When that happens the system should put a renumbering CANDIDATE on a queue with who moved what and when, and a human decides — it must never renumber on its own, and the queue must never be bulk-cleared. Renumbering itself stays batched under the existing playbook. Authority: docs/skyview_drag_rehome_scope.md."
-  }
- ]
+  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+  "_as_of": "2026-08-24 · Session 190 fixed why the Memory tab's Autogenerate button kept drafting the wrong thing. When you typed a note into it, only the first sixteen characters ever reached the AI — the rest was cut off by a size limit nobody had noticed, because the button's own instructions were already using up almost all of the space. Handed almost nothing to work with, the AI wrote about the only other thing in front of it: its own rules for answering student questions. That is why you got an entry about answer structure instead of one about which kind of credit to award. It is fixed, and the size limit is now checked automatically so it cannot creep back. We also built the button you asked for: a Briefing at the top of the Memory tab's Report view that reads the entries back in plain language, with a small numbered link beside every claim — hover to see that memory, click to open it for editing. Neither is switched on yet: both need one deploy of the assistant service, which is your call to make.",
+  "_session": "190 (SkyRead)",
+  "_status": "Both changes are merged and waiting on a single deploy. Until that runs, Autogenerate still cuts your note short and the Briefing button politely says it could not build one — nothing is broken that was not already, but nothing is fixed either. The first briefing we ran over twelve real entries already found two things worth your eye, listed below.",
+  "items": [
+    {
+      "id": "s190-deploy-go",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "Give the go on deploying the assistant service. It is the one thing standing between you and both of today's fixes — the Memory tab's Autogenerate button and the new Briefing. It updates the assistant everywhere at once (the public page, the college widget, the Fact Sheet panel), which is why we do not do it without you saying so. Takes a few minutes, and we run the usual health check straight after."
+    },
+    {
+      "id": "s190-stale-memory",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "One memory entry looks out of date. It says a failing test was about wording rather than a real problem — but that test has since been fixed a different way. It is still marked verified, so it reads as current truth to anyone (or anything) reading the table. Worth a minute to re-check or retire."
+    },
+    {
+      "id": "s190-contacts-pair",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "Two entries about contacts are each correct but confusing on their own. One says the assistant must never use a contact a curator suggested. The other says she reads contacts live. Both are true — live from MAP's own records, never from the suggestions — but only reading both together makes that clear. Worth writing the boundary into whichever one gets read first."
+    },
+    {
+      "id": "s190-verified-by",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "26 of the 177 entries marked verified do not record WHO verified them. Verified entries are the ones shown by default, so those 26 are being trusted with nobody's name attached. Not urgent, but it is the one field the whole trust system leans on."
+    },
+    {
+      "id": "s190-british-spellings",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Eight British spellings sit in the assistant's own instructions — catalogue, judgement, labelled, summarise — including inside a rule she uses constantly. They shape her wording, so they reach the public page. Free to fix on the deploy above if you want them gone."
+    },
+    {
+      "id": "s190-live-briefing",
+      "for": "Fable",
+      "tab": "memory",
+      "text": "After the deploy, get the first real Briefing run and read the knowledge-base paragraph. No session has ever seen that part — we cannot reach the service from here, so Sam has to press the button once and paste back what it says."
+    },
+    {
+      "id": "s190-memory-cleanup",
+      "for": "Fable",
+      "tab": "memory",
+      "text": "If Sam wants it, run the memory clean-up pass: fill in the missing verifier names, sort out the three sessions that wrote under two different names each, and work through the backlog of entries still waiting to be confirmed (358 proposed against 177 verified)."
+    },
+    {
+      "id": "s188-esl-overclaims",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Nine ESL courses are filed one level HIGHER than the college's own catalog describes them — the only ones running against the cautious direction, so they are worth your eye before the other 213. They all share a cause: our rule says 'level 5 or above = Advanced', but several colleges run a six-rung ladder where 5 and 6 are still 'high-intermediate'. Six of the nine are the same Los Angeles district series (College ESL V) repeated across eight colleges. Two ways to fix it: correct the nine by hand, or move the cut from '5 and above' to '6 and above', which fixes six of them by rule. Second question while you are here: that number rule is wrong about half the time overall — is it worth keeping at all? Full list and the quoted catalog text: kb/esl_fold_spotcheck/2026-08-24/report.md."
+    },
+    {
+      "id": "s188-esl-zscheme",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Finish ESL: 67 ESL records were never in the fold's candidate list at all, because they live in a different store (the Z-scheme rows from the 2026-06 renumbering) rather than the two files the packaging tool reads. They are the concrete remaining ESL job — not a vague 'second pass'. Same survivors, same method."
+    },
+    {
+      "id": "s189-subj4-queue",
+      "for": "Fable",
+      "tab": "unified-courses",
+      "text": "Build the safety net for the drag — step 2 of the plan Sam approved. Moving a course between identities is only a membership change and never renumbers anything, which is why it ships unblocked. But a move can leave the destination internally inconsistent: its subject prefix no longer matches the discipline it claims. When that happens the system should put a renumbering CANDIDATE on a queue with who moved what and when, and a human decides — it must never renumber on its own, and the queue must never be bulk-cleared. Renumbering itself stays batched under the existing playbook. Authority: docs/skyview_drag_rehome_scope.md."
+    }
+  ]
 }
