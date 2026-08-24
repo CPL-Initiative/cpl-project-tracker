@@ -96,8 +96,19 @@ titles and member counts present. **ESL went 2,300 identities → 27**, far past
 dry-run projected. Sam confirmed the Civic ESL rename over his own title the same day, so the
 Rule 8 supersede is settled.
 
-**Still open: the 794 default-Beginning rows** — folded on an assumption (no
-level word in the title), not on evidence. Now correctable by dragging.
+**Still open: the Beginning ESL spot-check — and the number is 517, not 794.**
+Of the 1,079 folds that landed in Beginning, **765 are medium confidence**, and
+those split into **517 `default-beginning`** (no level signal at all — the truly
+evidence-free pile) and **248 `numeric`** (a number in the title implying a
+level, which is weak evidence but *is* evidence). Work the 517 first; they are a
+third smaller than the figure this handoff used to quote and much better aimed.
+
+⚠️ **Do NOT tell Sam to "drag them" — he cannot.** These are merged-away
+identities, so they do not render on the map at all (that is #1312 working
+correctly). This is the same wrong instruction caught once already for
+`FIMS M1018`; it survived into this line. **There is no surface today on which
+this spot-check can be performed.** The Atlas ESL card shows a **90-row sample**,
+not a worklist. Building one is the prerequisite — see the missing verbs below.
 
 ## Carryover
 
