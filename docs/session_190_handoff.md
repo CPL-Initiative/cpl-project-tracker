@@ -105,12 +105,25 @@ it and severed 53% of the Phase A/B fold evidence.
 
 ## Carryover
 
-- 🔴 **Sam's two ESL calls, still open** (from Sky188): the **9 over-claims** by hand, or move the
-  cut to `6+` (fixes 6 by rule); and whether the numeric pinning survives at all.
+- ✅ **SAM RULED ALL FOUR ESL CALLS, 2026-08-24 (Session 189).** All recorded in `cpl_memory`
+  with him named, all `verified`:
+  1. **The over-claims: LEAVE THEM — the statewide standard wins** over local catalog wording.
+     ⚠️ Reconciliation: the *"9 over-claims"* are the **numeric lane's** (85 under + 9 over = that
+     lane's 94 disagreements). Across ALL lanes it is **14–16**. His per-ladder sets resolve
+     **none** of them and push 7 further up.
+  2. **Do NOT roll back the 32.** The rollback offer open since Session 188 is CLOSED.
+  3. **Apply the per-ladder re-levels only where ≥2 members agree** — the single-voter rows stay
+     a worklist, never applied silently.
+  4. **L=2 is `L1=Intermediate, L2=Advanced`** — no Beginning band. ⚠️ **This is NOT an extension
+     of the L≥3 pattern and must not be "regularised" to `1=Beginning`.** He ruled it after being
+     shown the 21 two-rung colleges are large providers (De Anza, Santa Ana, Saddleback, NOCE),
+     so a 2-rung read is a PARTIAL VIEW of a longer ladder — a "1" there is not the bottom of
+     anything. A domain judgment about specific institutions.
 - ✅ **His per-ladder sets are now IMPLEMENTED** — `kb/_esl_ladder_relevel_dryrun.py`, receipt
   `kb/esl_ladder_relevel_out/2026-08-24/`. **Dry-run only; nothing written.**
   ⚠️ **AND THE ROLLBACK RECOMMENDATION IS NOW THE OPPOSITE OF WHAT THIS HANDOFF FIRST SAID.**
-  The sets propose 130 re-levels, **30** of which revert 30 of the applied 32 (not 29 — measured).
+  With L=2 and member-grain word-first in, the sets propose **169** re-levels — **166 of them
+  UPWARD, only 3 down**. 30 revert 30 of the applied 32.
   But **every one of the 22 reverts whose catalog speaks DISAGREES with the revert**: the
   colleges' own catalogs say the band those rows sit at *today*. Sam's principle that a canonical
   standard scored against local records is blast radius still holds — but it argues for holding a
@@ -120,8 +133,13 @@ it and severed 53% of the Phase A/B fold evidence.
   ⚠️ **90 of the 130 rest on a SINGLE member course**, and the weakest reader tier is a bare
   trailing integer (`Academic Writing 3` may be a sequence number, not a rung). Work the
   multi-member ones first.
-  ⚠️ **21 colleges read as 2-rung ladders and Sam's table has no L=2 row** — they abstain rather
-  than being banded by an invented row. Extending the table is his call.
+  ✅ **L=2 is now ruled and implemented** — it unlocked 39 previously-undecided rows
+  (561 → 522) and grew the actionable set from 29 to 46.
+  ⚠️ **MEASURE THE OUTPUT, NOT THE COMPONENT.** Reading a member's level WORD ahead of its number
+  changes **775 member-vote answers** in isolation and exactly **ONE** final band end to end,
+  because `decide()` consults member votes only when the identity title has no level word and
+  **894 of 1,990 are decided there first**. The component figure was reported to Sam as an impact
+  number and was wrong. Keep the fix (the guard should hold at both grains); never headline it.
   ⚠️ **Derive ladder lengths from the WHOLE ESL corpus, never the folded worklist** — the folded
   subset sees only part of a college's ladder, undercounts its length, and a short ladder pushes
   rungs into HIGHER bands. The corpus derivation reproduces Session 188's distribution in six of

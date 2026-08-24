@@ -56,11 +56,14 @@ Guards, each of which changes the answer on live data:
 
   * REQUIRE >= 2 DISTINCT RUNGS. One course called "ESL 5" does not establish a 5-rung
     ladder; it is far more likely a college whose ladder we can only partly see.
-  * A 2-RUNG LADDER ABSTAINS — Sam's table has no L=2 row. 21 colleges read as 2-rung and
-    there is no ruling for them, so they are COUNTED AND REPORTED, never banded by an
-    invented row. Extending the table is Sam's call, not a gap to paper over: the same
-    discipline that forbids "simplifying" his L=4 cell back to an even split forbids
-    inventing an L=2 one.
+  * A 2-RUNG LADDER IS NOW RULED, AND NOT THE WAY THE PATTERN WOULD SUGGEST. Sam ruled
+    L=2 as L1=Intermediate, L2=Advanced on 2026-08-24 — no Beginning band at all — after
+    being shown that the 21 colleges reading as 2-rung are large ESL providers (De Anza,
+    Santa Ana, Saddleback, North Orange Continuing Education), so a 2-rung read is more
+    likely a PARTIAL VIEW of a longer ladder than a 2-level program. A "1" at those
+    colleges is therefore not the bottom of anything. Extending the L>=3 pattern would
+    have put rung 1 at Beginning and been wrong; this is a domain judgment about specific
+    institutions. Do not regularise it.
   * CAP AT 9. Sam's table stops at 9. A higher read is a number that is not a rung, and
     a fabricated 12-rung ladder would band everything Beginning.
   * REUSE THE GUARDED READER. read_level() already strips grade ranges (K-12) and stops
@@ -96,22 +99,58 @@ from _esl_relevel_dryrun import (            # the SAME reader — never a secon
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETS = "kb/reference/esl_level_sets.json"
+MEMBERSHIPS = "kb/coci_minted_memberships.json"
+SINGLETONS = "kb/coci_minted_singletons.json"
 PRIOR_PLAN = "kb/esl_relevel_out/2026-08-24/plan.json"    # the 32 already applied
 ORDER = ["Beginning", "Intermediate", "Advanced"]
 MAX_LADDER = 9                                            # Sam's table stops here
 MIN_RUNGS = 2                                             # one rung is not a ladder
-MIN_LENGTH = 3                                            # Sam's table starts at L=3
+MIN_LENGTH = 2                                            # Sam ruled L=2 on 2026-08-24
 ESL_DISCIPLINE = "English as a Second Language"
 
 
+def credit_status_by_cn():
+    """control_number -> credit_status, over the whole COCI staging surface.
+
+    Sam, 2026-08-24: "You should have data for each course as credit or noncredit." He was
+    right — this join covers 118,195 control numbers and 100% of the ESL corpus. The first
+    cut of the noncredit rule used the spot-check worklist's `credit_type` instead, which is
+    blank on 24% of members and, awkwardly, on the exact NOCE courses he had just ruled on.
+    """
+    out = {}
+    mm = json.load(open(os.path.join(ROOT, MEMBERSHIPS), encoding="utf-8"))
+    for plist in (mm.get("memberships") or mm).values():
+        for m in plist:
+            cn = str(m.get("control_number") or "").strip().upper()
+            if cn and m.get("credit_status"):
+                out[cn] = m["credit_status"]
+    sg = json.load(open(os.path.join(ROOT, SINGLETONS), encoding="utf-8"))["courses"]
+    for v in sg.values():
+        cn = str(v.get("control_number") or "").strip().upper()
+        if cn and v.get("credit_status"):
+            out.setdefault(cn, v["credit_status"])
+    return out
+
+
 def load_sets():
+    """(document, rung table, per-college override table).
+
+    The override table is keyed by college and rung and wins over the ladder-length table
+    for that college ONLY. It never touches the word path — a course that states its level
+    keeps it, which is what stops NOCE's "Intermediate ESL Grammar 1" from being dragged
+    down with its wordless siblings.
+    """
     d = json.load(open(os.path.join(ROOT, SETS), encoding="utf-8"))
     table = {}
     for length, bands in d["by_ladder_length"].items():
         for band in ORDER:
-            for rung in bands[band]:
+            for rung in bands.get(band) or []:
                 table[(int(length), rung)] = band
-    return d, table
+    ns = d.get("noncredit_shift") or {}
+    over = {"nc_values": set(ns.get("credit_status_values_treated_as_noncredit") or ()),
+            "credit_status": credit_status_by_cn(),
+            "shift": ns.get("shift") or {}}
+    return d, table, over
 
 
 def load_js(fname):
@@ -146,34 +185,72 @@ def college_ladders():
     return ladders, too_short
 
 
-def member_votes(row, ladders, table):  # noqa: D401
-    """Per-member band votes for one identity, plus why each member abstained."""
+def member_votes(row, ladders, table, over=None):
+    """Per-member band votes for one identity, plus why each member abstained.
+
+    ⚠️ GUARD 1 APPLIES AT THE MEMBER GRAIN TOO, AND ORIGINALLY DID NOT. A level WORD in
+    the LOCAL title beats its number, exactly as it does on the identity title. Missing
+    this read half the available evidence and mis-banded the rest: at the 21 colleges whose
+    numbers only ever reach 2, the trailing 1/2 is a PART MARKER INSIDE A NAMED LEVEL —
+    "BEGINNING MULTISKILLS I"/"II", "Intermediate Integrated ESL Skills: Part 1"/"Part 2",
+    "INTERMEDIATE WRITING I"/"II" — so the number is a sequence, not a rung, and the level
+    is sitting in the title as a word. Measured on live data: 72 of the 142 rung-1/2 courses
+    at those colleges carry a level word, and the word disagreed with the ladder band 51
+    times.
+
+    ⚠️ MEASURE THE OUTPUT, NOT THE COMPONENT. In isolation this fix changes 775 member-vote
+    answers and takes vote-decidable identities from 708 to 1,372 — and that number is
+    MEANINGLESS as an impact claim, which is how it first got reported. decide() consults
+    member votes only when the IDENTITY title carries no level word, and 894 of the 1,990
+    identities are decided there first. End to end the fix changes exactly ONE final band
+    (ESOL M10AC, no-signal -> Beginning). It is a latent-correctness fix, not a material one:
+    worth keeping because the guard should hold at both grains, worth nobody's time as a
+    headline. Sam's L=2 ruling, by contrast, made 39 more rows decidable.
+
+    The word is read through classify(), never a second copy of the patterns, so the member
+    grain and the identity grain cannot drift.
+    """
     votes, abstain = [], collections.Counter()
     for m in row.get("members") or []:
         col = (m.get("college") or "").strip()
-        n, _ = read_level(GRADE_RANGE.sub(" ", m.get("local_title") or ""))
+        title = m.get("local_title") or ""
+        band, signal = classify(title)
+        if signal in ("word", "combo") and band:
+            votes.append((band, col, None, None))     # no ladder involved
+            continue
+        n, _ = read_level(GRADE_RANGE.sub(" ", title))
         if n is None:
-            abstain["no rung in the local title"] += 1
+            abstain["no level word and no rung in the local title"] += 1
             continue
         if col not in ladders:
             abstain["college has no readable ladder"] += 1
             continue
         length = ladders[col][0]
-        band = table.get((length, n))
-        if band is None:
+        b = table.get((length, n))
+        # A NONCREDIT course sits one band below the same rung on a credit ladder — Sam's
+        # ruling, scoped to NC at his explicit instruction. Ladder path only; a stated level
+        # word never reaches here.
+        # Noncredit shifts one band down (Sam). Read from the AUTHORITATIVE per-course
+        # credit_status joined on control_number — 100% coverage — not the worklist's
+        # `credit_type`, which is blank on a quarter of members and on the case he named.
+        o = over or {}
+        cn = str(m.get("control_number") or "").strip().upper()
+        if b and o.get("credit_status", {}).get(cn) in o.get("nc_values", ()):
+            b = o["shift"].get(b) or b
+        if b is None:
             abstain[f"rung {n} is above that college's {length}-rung ladder"] += 1
             continue
-        votes.append((band, col, length, n))
+        votes.append((b, col, length, n))
     return votes, abstain
 
 
-def decide(row, ladders, table):
+def decide(row, ladders, table, over=None):
     """(band, how, detail). Precedence: identity level WORD, then the member ladder vote."""
     title = row.get("identity_title") or ""
     want, signal = classify(title)
     if signal in ("word", "combo") and want:
         return want, signal, {"from": "identity title level word"}
-    votes, abstain = member_votes(row, ladders, table)
+    votes, abstain = member_votes(row, ladders, table, over)
     if not votes:
         return None, "no-ladder-signal", {"abstentions": dict(abstain)}
     tally = collections.Counter(v[0] for v in votes)
@@ -184,12 +261,15 @@ def decide(row, ladders, table):
         "tally": dict(tally),
         "voters": len(votes),
         "abstentions": dict(abstain),
-        "example": [{"college": c, "ladder": L, "rung": n} for _, c, L, n in votes[:3]],
+        "by_word": sum(1 for _, _, L, _ in votes if L is None),
+        "by_ladder": sum(1 for _, _, L, _ in votes if L is not None),
+        "example": [{"college": c, "ladder": L, "rung": n, "via": "word" if L is None else "ladder"}
+                    for _, c, L, n in votes[:3]],
     }
 
 
 def build(date):
-    sets_doc, table = load_sets()
+    sets_doc, table, over = load_sets()
     plan = json.load(open(os.path.join(ROOT, APPLY_PLAN), encoding="utf-8"))
     spot = json.load(open(os.path.join(ROOT, SPOTCHECK), encoding="utf-8"))
     rows = spot["rows"]
@@ -211,7 +291,7 @@ def build(date):
         # An identity already re-levelled by the applied 32 sits at its NEW band today.
         if f["id"] in prior:
             now = prior[f["id"]]["to"]
-        want, how, detail = decide(row, ladders, table)
+        want, how, detail = decide(row, ladders, table, over)
         if want is None:
             undecided.append({"id": f["id"], "why": how, "detail": detail})
             continue
@@ -263,6 +343,7 @@ def build(date):
                     "the same day, which superseded the P-4 pinning."),
         "_ruling_by": sets_doc.get("_ruled_by"),
         "_sets": sets_doc["by_ladder_length"],
+        "_noncredit_shift": sets_doc.get("noncredit_shift"),
         "_resolution": ("A level WORD on the identity title wins; otherwise each member "
                         "votes its own college's ladder reading and the identity takes the "
                         "MODE. A tie is reported, never resolved by picking the safer band."),

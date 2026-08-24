@@ -241,6 +241,62 @@ function serve() {
     return !!b && /moved here/i.test(b.closest("li").textContent);
   }, cn));
 
+  console.log("\n══ course descriptions load on demand");
+  // Served over http here, which is the whole point: under file:// these fetches are
+  // blocked and the page must SAY so rather than render an empty pane, because "no
+  // description loaded" and "this course has none" look identical to a curator.
+  const withDesc = await page.evaluate(async () => {
+    const U = window.CPL_CCR_UNIVERSE, M = window.CPL_CCR_UNIVERSE_MEMBERS;
+    for (const isl of U.islands) {
+      if (!isl.sh) continue;
+      const r = await fetch("ccr_desc/" + encodeURIComponent(isl.sh) + ".json").catch(() => null);
+      if (!r || !r.ok) continue;
+      const j = await r.json();
+      const id = Object.keys(j).find((k) => (j[k] || []).some(Boolean) && (M.m[k] || []).length);
+      if (id) {
+        const nd = isl.p.find((p) => p.i === id);
+        if (nd) return { shard: isl.sh, id, x: nd.x, y: nd.y, n: Object.keys(j).length };
+      }
+    }
+    return null;
+  });
+  ok("every island names a description shard",
+    await page.evaluate(() => window.CPL_CCR_UNIVERSE.islands.every((i) => !!i.sh)));
+  ok("a shard fetches and holds descriptions" +
+     (withDesc ? ` (${withDesc.shard}, ${withDesc.n} identities)` : ""), !!withDesc);
+  if (withDesc) {
+    await flyClick(withDesc, withDesc.id);
+    await page.waitForTimeout(700);
+    const shown = await page.locator("#u-detail .mdesc").count();
+    const real = await page.locator("#u-detail .mdesc:not(.none)").count();
+    ok(`descriptions render under the courses (${real} with text, ${shown} slots)`, real > 0);
+    // A course with no description must say so, not render blank — the honest half.
+    ok("a course with none says so rather than showing nothing",
+      await page.evaluate(() => {
+        const n = document.querySelector("#u-detail .mdesc.none");
+        return !n || /no catalog description/i.test(n.textContent);
+      }));
+  }
+
+  console.log("\n══ stand-alones are reachable and marked");
+  const sa = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE;
+    const isl = U.islands.find((i) => i.a && i.p.length);
+    if (!isl) return null;
+    return { d: isl.d, n: isl.n, id: isl.p[0].i, x: isl.p[0].x, y: isl.p[0].y,
+             flagged: isl.p.every((p) => p.a === 1),
+             islands: U.islands.filter((i) => i.a).length,
+             total: U.islands.reduce((s, i) => s + (i.a ? i.n : 0), 0) };
+  });
+  ok("stand-alones are present as their own islands" +
+     (sa ? ` (${sa.islands} islands, ${sa.total} courses)` : ""), !!sa && sa.total > 1000);
+  if (sa) {
+    ok("every point in a stand-alone island is flagged as one", sa.flagged);
+    await flyClick(sa, sa.id);
+    ok("and the pane says what a stand-alone is",
+      /stand-alone/i.test(await page.locator("#u-detail").textContent()));
+  }
+
   console.log("\n══ a long member list is capped, and says so");
   const capped = await page.evaluate(() => {
     const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
