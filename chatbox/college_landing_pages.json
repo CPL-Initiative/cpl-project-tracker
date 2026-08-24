@@ -1,6 +1,6 @@
 {
   "_source": "https://map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net/api/mapcollegelanding/GetData",
-  "_scraped_at": "2026-08-17T14:57:46+00:00",
+  "_scraped_at": "2026-08-24T15:19:58+00:00",
   "_note": "Landing links from the MAP College Landing Page API, base rewritten to cpldashboardcccco/<code>. INTERIM — superseded by the MAP Custom Report when it carries landing URLs.",
   "_count": 120,
   "_flagged_page_errors": [
@@ -490,21 +490,15 @@
     }
   ],
   "reconciliation": {
-    "profile_rows": 130,
-    "would_update": 1,
+    "profile_rows": 127,
+    "would_update": 0,
     "would_insert": 0
   },
-  "updates": [
-    {
-      "college": "Los Angeles Southwest College",
-      "url": "https://cpldashboardcccco.azurewebsites.net/LASC",
-      "old_url": "https://cpldashboardcccco.azurewebsites.net/SLAC"
-    }
-  ],
+  "updates": [],
   "inserts": [],
   "_applied": {
-    "updated": 1,
+    "updated": 0,
     "inserted": 0,
-    "at": "2026-08-17T14:57:46+00:00"
+    "at": "2026-08-24T15:19:59+00:00"
   }
 }
