@@ -145,6 +145,41 @@ not a worklist. Building one is the prerequisite — see the missing verbs below
 
 ## Carryover
 
+- 🔴 **Kill the orphan Routine `trig_01LfReJSyhYmXtbMcnDiE5pd`** — "CPL Initiative
+  Dashboard Daily Update", cron `0 11 * * *`, still `enabled: true`. **An agent
+  can neither disable nor delete it**: both are blocked because it was
+  `created_via: "http_api"`, and agents may only modify Routines they created.
+  Sam must do it in the UI, or whatever API created it must remove it.
+  - **Why it matters:** Rule 6 exists because two schedulers racing to push
+    `main` caused the 2026-04-19 commit chain. It looks dormant (`next_run_at`
+    four months stale, **no `last_run` ever recorded**) — but `enabled: true`
+    with a stale next-run is latent, not safe.
+  - **Second reason, found 2026-08-24:** its prompt describes the **pre-Supabase**
+    pipeline — hand-committing `CPL_Data.js` / `statewide_data.js`, bare `python`,
+    a branch `claude/pensive-albattani`. If it ever fired it would run a procedure
+    that no longer matches reality.
+  - Config dumped before the delete attempt (scratchpad, **not** committed — the
+    prompt carries the `CPL_SCRAPE_2026` secret).
+
+- 🟡 **Verify the Cloudflare WAF rate-limit rule actually exists.**
+  `cloudflare-worker-proxy.js:318` (`SEC-3`) is candid that the shared secret is
+  shipped to every public visitor in the refresh button and "gates nothing on its
+  own", naming a **Cloudflare rate-limit rule on `/trigger` as the REAL backstop**.
+  That rule lives in the Cloudflare dashboard (Security → WAF → Rate limiting),
+  **not in the repo, so nothing here can tell you whether it was ever configured.**
+  ⚠️ Same shape as the Obsidian exclusions: `CLAUDE.md` claimed paths were excluded
+  and the live `app.json` excluded none. **A documented mitigation is not an
+  applied one.** Impact is bounded — the pipeline is idempotent, so worst case is
+  forced rebuilds and noise on `main`, not data exposure.
+
+- 🟢 **Excel is retired as the system of record but still READ every run.** Sam
+  asked about this 2026-08-24 and his read is right. The master `.xlsx` is no
+  longer *written*, but `load_workbook(EXCEL_FILE)` at `excel_to_dashboard.py`
+  :11506 still feeds `read_projects`, `read_budget_plan` and `read_update_log`,
+  and `archive_updates_to_log()` is the one remaining writer. This is exactly what
+  the **Excel→Supabase Phase 2-4** roadmap row says P5 is blocked on — do not
+  re-derive it, read that row.
+
 - ✅ **The universe view is BUILT** (#1311) — all **16,484** identities on canvas
   (17,321 before #1312 removed the 340 chained rows),
   precomputed stable layout, keyword fly-to, draggable islands, cross-area
