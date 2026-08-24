@@ -52,3 +52,13 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/merge_chain_flatten_test.py
+      # Beginning-ESL spot-check worklist (Session 188) — the description-level
+      # detector proposes re-levels against live curation rows, so its failure
+      # modes are confident-wrong writes: reading a PREREQUISITE clause as the
+      # course's own level (inverts the finding), reading the "Basic Skills
+      # Level:" COCI field value as a level claim, and re-pointing a PURPOSE
+      # carve-out (Enrichment/Civic/Vocational ESL) at a level survivor, which
+      # silently strips the carve-out. Pure-stdlib python; same non-required
+      # check.
+      - name: ESL fold spot-check lint (kb/_build_esl_fold_spotcheck.py)
+        run: python3 tests/esl_fold_spotcheck_test.py
