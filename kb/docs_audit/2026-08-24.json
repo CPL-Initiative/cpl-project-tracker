@@ -9,18 +9,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 627,
-    "bytes": 7062933,
+    "files": 628,
+    "bytes": 7074003,
     "over_budget": 4,
     "handoff_max": 188,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 139769,
+    "always_loaded_bytes": 141754,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 139769,
+        "bytes": 141754,
         "over": 1
       },
       "other": {
@@ -30,22 +30,22 @@
       },
       "index": {
         "files": 1,
-        "bytes": 257402,
+        "bytes": 259020,
         "over": 1
       },
       "lessons": {
         "files": 68,
-        "bytes": 1706199,
+        "bytes": 1710095,
         "over": 1
       },
       "kb_note": {
-        "files": 317,
-        "bytes": 1690604,
+        "files": 318,
+        "bytes": 1693483,
         "over": 0
       },
       "handoff": {
         "files": 166,
-        "bytes": 1351093,
+        "bytes": 1351785,
         "over": 0
       }
     },
@@ -53,13 +53,13 @@
       "oversized_doc": 4,
       "american_spelling": 171,
       "kb_note_dialect": 60,
-      "vault_heavy_path": 44
+      "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2195,
-      "bytes": 1189802518,
-      "heavy_bytes": 589076499,
-      "heavy_share": 0.495,
+      "files": 2201,
+      "bytes": 1193788180,
+      "heavy_bytes": 592492753,
+      "heavy_share": 0.496,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
@@ -96,6 +96,7 @@
         "cpl-project-tracker/tools/first_light_candidates.json",
         "cpl-project-tracker/unified_courses_index.js",
         "cpl-project-tracker/unified_courses_suggestions.js",
+        "cpl-project-tracker/prototype/ccr_atlas_v1.built.html",
         "cpl-project-tracker/credential_reference_data.js",
         "cpl-project-tracker/coci_lookup_desc_B.js",
         "cpl-project-tracker/coci_lookup_desc_H.js",
@@ -113,26 +114,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 139769,
+        "bytes": 141754,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 79769,
-        "ratio": 2.33
+        "over_by": 81754,
+        "ratio": 2.36
       },
-      "message": "139,769 B is 2.3× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "141,754 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 257402,
+        "bytes": 259020,
         "limit": 40000,
         "lane": "index",
-        "over_by": 217402,
-        "ratio": 6.44
+        "over_by": 219020,
+        "ratio": 6.48
       },
-      "message": "257,402 B is 6.4× the index budget (40,000 B) — candidate for compaction",
+      "message": "259,020 B is 6.5× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -4218,6 +4219,16 @@
         "kind": "file"
       },
       "message": "3,666,729 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype/ccr_atlas_v1.built.html",
+      "detail": {
+        "bytes": 3416254,
+        "kind": "file"
+      },
+      "message": "3,416,254 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

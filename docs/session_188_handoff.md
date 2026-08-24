@@ -56,29 +56,45 @@ Three views: **158 discipline cells** → **one discipline's decisions** → **o
 decision as a 2–12 node graph**, with local courses movable onto any identity by
 drag *or* a keyboard-reachable Move button. Plus the **ESL packaging proposal**.
 
-## ⚠️ Two decisions are Sam's, and nothing moves without them
+## ✅ The ESL fold is APPLIED — seven comprehensives, 1,997 rows
 
-1. **Name the three ESL comprehensives.** Every row's `target` in the plan is
-   `null` — the three comprehensive identities **do not exist**, so 1,846
-   pointers have nowhere to point. Minting them is NOT a Rule 7 re-mint (no
-   existing M-ID changes, no alias map, no re-keying) but it is a naming call.
-2. **Work the Beginning spot-check.** 53% of the write is medium confidence and
-   it is concentrated: **794 of the 1,110 Beginning rows (72%) got there by
-   DEFAULT** — no level word in the title. Beginning is the biggest bucket and
-   the least certain. The Atlas lists them, medium first, with the signal in
-   plain words.
+Landed 2026-08-24, cohort `package-esl-s187@bot`, receipt
+`kb/esl_package_out/2026-08-24/esl_apply_plan.json` (restamped DRY-RUN → APPLIED).
 
-When both land: apply under Rule 10 — fresh live read at write-time, INSERT-only
-`ON CONFLICT DO NOTHING`, cohort `package-esl-s<N>@bot`, committed receipt, one
-cron window. `kb/_esl_package_actionable.py` regenerates the actionable set.
+| | id | folds in |
+|---|---|---:|
+| Beginning ESL | `ESOL M9168` | 1,079 |
+| Intermediate ESL | `ESOL M9256` | 463 |
+| Advanced ESL | `ESOL M1141` | 267 |
+| Vocational ESL | `ESOL M9023` | 114 |
+| Civic ESL | `ESOL M9177` | 35 |
+| Enrichment ESL | `ESOL M1152` | 34 |
+| Vocational ESL — Healthcare | `ESOL M91IL` | 5 |
+
+⭐ **Survivors, not new ids.** The code decides this: `merge_into_orphan`
+self-trusts only `UC-CUR-*`, and Session 56 re-minted all 4,053 of those away
+(live count 0), so a Z-scheme id would flag as an orphan forever.
+
+⚠️ **`ON CONFLICT DO NOTHING` blocked three of the seven RENAMES.** The merges
+landed; the names did not. **1,994 landed where 1,997 was planned, and that
+three-row gap was the entire story** — a write reporting only "no error" would
+have left three comprehensives wearing their old titles while a thousand courses
+folded into them. **Check the count against the plan, always.** One blocker was
+Sam's own row (`ESOL M9177`), superseded explicitly per Rule 8; prior values are
+in the receipt and restorable with one statement.
+
+**Still open: the 794 default-Beginning rows** — folded on an assumption (no
+level word in the title), not on evidence. Now correctable by dragging.
 
 ## Carryover
 
-- 🟡 **The whole-universe view.** Sam asked for it. Feasible as a **precomputed
-  layout + level-of-detail map**, ~250KB of coordinates, canvas not SVG — **not**
-  a live force graph (17,321 nodes is a hairball, and his own Obsidian shot is
-  illegible at ~500). Hold it until the decision unit is confirmed, or it
-  inherits a wrong unit at 17,000× scale.
+- ✅ **The universe view is BUILT** (#1312) — all 17,321 identities on canvas,
+  precomputed stable layout, keyword fly-to, draggable islands, cross-area
+  course moves. Sam reversed the earlier design call and his reason was right:
+  a per-decision view **structurally cannot show a cross-area move**.
+- 🟡 **The Atlas does not yet show the fold.** Rebuild after the cron:
+  `python3 kb/_build_ccr_atlas_extract.py && python3 prototype/build_ccr_atlas.py`
+  (then republish the artifact). Sam is running the cron himself.
 - 🟡 **The one-college-many-numbers audit rule** — 3,320 candidates measured,
   proposed for `kb/_row_audit.py` beside `unit_anomaly`. A flag, never an
   auto-unmerge.
@@ -117,7 +133,7 @@ cron window. `kb/_esl_package_actionable.py` regenerates the actionable set.
 
 ## Moniker
 
-**SkyAtlas** is going if you want it. Take it, take your own, or use whatever Sam
+**SkyFold** is going if you want it — this run ended by landing one. Take it, take your own, or use whatever Sam
 names in his greeting.
 
 **Next is Session 189 — `docs/session_189_handoff.md`.**

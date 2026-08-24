@@ -1,62 +1,56 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-24 · SkyView (Session 187) went to the Common Course Reference. Sam asked for an interactive graph view because opening the CCR is overwhelming, and named the real goal: get 142,000 local college courses down to about 2,500 common ones. The most important thing we found is arithmetic, not design. If we worked the entire merge queue and got every single decision right, we would still end up with about 36,000 courses — fourteen times too many. Merging can only compare courses that already exist. The only thing that reaches the goal is packaging: deciding what the catalog should contain and mapping courses into it, which is exactly what the ESL plan does. The second thing: the CCR is not 17,000 rows of work, it is 6,056 decisions, and 97% of them involve twelve courses or fewer. Automotive Technology is 57 decisions. Welding is 35. A sitting each. There is now a prototype you can click that shows it that way, and the ability to drag a course to where it belongs turned out to have been built a year ago and never once used.",
+ "_as_of": "2026-08-24 · SkyView (Session 187) took the Common Course Reference and did two things. First, the finding that should steer the whole effort: if we worked every merge decision in the reference and got them all right, we would still have about 36,000 courses — fourteen times more than the 2,500 we want. Merging only compares courses that already exist. The only way to reach the goal is to decide what the catalog should contain and map courses into it. Second, we did exactly that for ESL: 1,997 changes collapsed roughly two thousand ESL course records into SEVEN courses — Beginning, Intermediate, Advanced, Vocational, Vocational for Healthcare, Civic and Enrichment. There is also now a map of the whole reference you can pan around, search, and drag courses on, including dragging a course from one subject to another when it was filed in the wrong place.",
  "_session": "187 (SkyView)",
- "_status": "The CCR now has an interface to react to and a number that should steer it. Nothing has been written to the curation data — everything this run was read-only or a drawing. Two decisions are yours before the first fold can happen: what to call the three ESL courses everything folds into, and a spot-check of the 794 courses that were put in 'Beginning' simply because their title did not say a level. Both are visible in the prototype. Separately, we found a real over-merge: five different Orange Coast College courses sitting under one row, and the same shape appears on 3,320 rows across the whole reference.",
+ "_status": "The ESL fold is done and will appear on the dashboard after the next daily rebuild. One thing to look at when it does: 794 of the courses that landed in 'Beginning' got there only because their title did not mention a level, so we assumed the lowest one. That is the safe guess but often the wrong one, and you can now fix any of them by dragging on the map. Also worth knowing: three of the seven new names did not save on the first attempt because those records already had a name — one of them was a name you set yourself in June. All three were corrected, and the old names are kept in the receipt if you want any of them back.",
  "items": [
-  {
-   "id": "s187-esl-name-three",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Name the three ESL courses that everything folds into. Right now 1,846 ESL courses are sorted into Beginning, Intermediate and Advanced — but those three destination courses do not actually exist yet, so nothing can move until they have names. This does not renumber anything or touch any college's records. Open the prototype and press 'See the proposal'."
-  },
   {
    "id": "s187-esl-beginning-check",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Spot-check the Beginning pile. 794 of the 1,110 courses landing in Beginning got there only because their title did not mention a level, so we assumed the lowest one — which is the safe guess but often the wrong one. The prototype lists them with the uncertain ones first and says in plain words why each was put where it was."
+   "text": "Spot-check the Beginning ESL pile once the dashboard rebuilds. 794 courses landed there only because their title did not mention a level, so we assumed the lowest one. You can now drag any that look wrong to the right course."
   },
   {
-   "id": "s187-atlas-react",
+   "id": "s187-civic-name",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Have a look at the CCR prototype and tell us what is wrong with it. The main thing to judge: is one decision at a time the right size to work in, or do you want to see a whole subject at once? That answer decides what we build next."
+   "text": "One name to confirm: the Civic ESL course had a name you set yourself in June — 'ESL for Citizenship'. We changed it to 'Civic ESL' as you asked. If you would rather keep your original, say so and it takes one change to put back."
+  },
+  {
+   "id": "s187-universe-react",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. Tell us what is wrong with it — especially whether dragging a subject around is actually how you would want to work."
   },
   {
    "id": "s187-overmerge-orange-coast",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "One row to look at: five different Orange Coast College courses — Reading and Vocabulary, Sentence Structure, Spelling, Pronunciation and Grammar — are all filed as one course, under the name of just one of them. A college does not teach the same course under five different numbers, so this is wrong. 3,320 rows across the reference have that same shape."
+   "text": "One row to look at: five different Orange Coast College courses — Reading and Vocabulary, Sentence Structure, Spelling, Pronunciation and Grammar — are filed as one course under the name of just one of them. About 3,320 rows share that shape."
   },
   {
-   "id": "s187-transfer-esl",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Fourteen of the 22 transfer-level ESL courses were already merged away by automation before anyone reviewed them. These are the ones that award real transferable credit, so they were supposed to be confirmed one at a time. Eight are still standing. Worth deciding whether the others should be put back — it is one row each to undo."
-  },
-  {
-   "id": "s187-universe-view",
+   "id": "s187-atlas-rebuild",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Build the whole-universe view Sam asked for: every course on one canvas, with keyword search zooming to a cluster. It has to be a precomputed layout drawn on canvas with labels appearing as you zoom in — a map, not a live force graph, which would be an unreadable hairball at 17,000 nodes. Wait until Sam has judged the single-decision view first."
+   "text": "After the daily rebuild runs, refresh the map's data so the new ESL courses show up, and republish it. Two commands: rebuild the extract, then rebuild the page."
   },
   {
    "id": "s187-overmerge-rule",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Add the over-merge detector to the auditor: flag any course row where every college listed is the same college but the course numbers differ. 3,320 rows qualify. It must only flag, never un-merge on its own — some are legitimate, like independent-study courses."
+   "text": "Add the over-merge detector to the auditor: flag any course row where every college listed is the same college but the course numbers differ. 3,320 rows qualify. Flag only, never un-merge automatically — some are legitimate."
   },
   {
    "id": "s187-no-discipline-pile",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Half the CCR queue — 3,001 decisions covering 8,065 courses — has no subject assigned at all, so it cannot be merged until someone says what subject each belongs to. That is a different job from merging and needs its own screen."
+   "text": "Half the reference queue — 3,001 decisions covering 8,065 courses — has no subject assigned at all, so it cannot be merged until someone says what subject each belongs to. Different job, needs its own screen."
   },
   {
-   "id": "s187-index-compaction",
+   "id": "s187-next-discipline",
    "for": "Fable",
-   "tab": "dashboard",
-   "text": "The docs index has grown to six and a half times its size budget, mostly one very long line per knowledge-base note. Worth a compaction pass so the file stays usable."
+   "tab": "unified-courses",
+   "text": "ESL proved packaging works. Pick the next discipline and repeat it — Kinesiology is the biggest at 1,204 course records, then Music and Computer Information Systems."
   },
   {
    "id": "s186-nc-floor",
