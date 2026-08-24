@@ -139,7 +139,8 @@ re-mint (no existing M-ID changes) but it is a real step with a naming decision
 in it, and it blocks the apply entirely.
 
 ⚠️ **53% of what would write is medium confidence** — and it is concentrated:
-**794 of the 1,110 Beginning rows (72%)** got there by *default* (no level word
+**765 of the 1,079 landed Beginning rows (71%) are medium confidence**, and only
+**517 of those got there by pure default** (no level word
 in the title). Beginning is simultaneously the biggest bucket and the least
 certain.
 
@@ -293,7 +294,10 @@ look broken.
 
 ### Next
 
-- **Sam:** the 794 default-Beginning rows spot-check is still open.
+- **Sam:** the Beginning spot-check is still open — and it is **517 rows, not 794**.
+  765 medium = 517 `default-beginning` (no signal) + 248 `numeric` (weak signal).
+  ⚠️ It has **no surface**: merged-away identities do not render, so they cannot be
+  dragged, and the Atlas card shows a 90-row sample. A worklist is the prerequisite.
 - Re-home `FIMS M1018` out of Enrichment ESL — the first real use of the drag.
 - A survivor-member audit before the next packaging pass (the dilution problem).
 - Candidate audit rule: an island whose members' disciplines outvote its own label.

@@ -34,23 +34,63 @@ should *contain*, then mapping into it — is the only mechanism with the right
 shape. The ESL dry-run already proved it at 10.7:1 inside one discipline.
 
 Design target that falls out: **2,500 ÷ 144 disciplines ≈ 17 common courses
-each.** ESL's own plan lands at ~221, still 13× over its share — so even
-packaging needs a second pass. Do not let anyone (including yourself) restart
-"work the queue" without re-reading
+each.**
+
+⭐ **Packaging cleared that bar on its first try. ESL went 2,300 minted
+identities → 27 surviving — 85:1**, far past the 10.7:1 the dry-run projected.
+(An earlier draft of this handoff said "~221, still 13× over its share." That
+was the pre-apply projection and it is wrong; the applied result is 27.)
+
+⚠️ **But ESL is not finished, and the reason is a store the fold never touched.**
+The live view shows **77 ESL rows: 10 M-ID + 67 Z-scheme `ESOL Z####`** — unified
+courses from the Session-56 UC-CUR re-mint, which live outside
+`coci_minted_courses`/`singletons` and so were never in the fold's candidate set.
+**That is the concrete next ESL job: 67 rows, not a vague "second pass."**
+
+Do not let anyone (including yourself) restart "work the queue" without
+re-reading
 [`measure-your-mechanism-ceiling`](kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md).
+
+---
+
+## Your first job, before Sam asks
+
+He asked at the end of 187 whether 188 would guide him through the Beginning ESL
+spot-check. **It cannot yet, and telling him to start would waste his time.**
+
+1. **Build the Beginning worklist.** 517 rows folded with no level signal at all
+   (see below). They are merged-away identities, so they render nowhere — there
+   is literally nothing for him to click. Until that list exists, the spot-check
+   is not a task, it is a wish. Suggested shape: the fold plan already carries
+   `sig` per row, so the list is a filter over
+   `kb/esl_package_out/2026-08-24/esl_apply_plan.json`, joined to member titles,
+   with accept / re-home / not-ESL per row writing `CN:` or a `merge_into`.
+2. **Then** hand it to him, medium-confidence first, with the denominator shown.
+
+⭐ **The general rule this is an instance of: check that the repair you recommend
+is actually available before you recommend it.** That mistake has now been made
+twice in one session — `FIMS M1018` ("drag it back" — it does not render) and
+this one ("correctable by dragging" — same reason).
 
 ## What shipped
 
 | PR | |
 |---|---|
-| #1309 | CCR Atlas prototype + the decision-component measurement |
-| #1310 | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
-| #1311 | The ESL fold rendered as a proposal, then APPLIED; the universe view |
-| #1312 | `flatten_merge_chains()` — 340 folded identities were still rendering |
+| #1309 ✅ | CCR Atlas prototype + the decision-component measurement |
+| #1310 ✅ | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
+| #1311 ✅ `0819927` | The ESL fold rendered as a proposal, then APPLIED; the universe view |
+| #1312 ✅ `552d4d4` | `flatten_merge_chains()` — 340 folded identities were still rendering |
+
+**All four are merged.** The dashboard was dispatched on `552d4d4` at 16:12 UTC so the
+340 chained rows stop rendering the same day rather than at the 06:17 cron.
 
 **The Atlas** — `prototype/ccr_atlas_v1.html`, built with
 `python3 prototype/build_ccr_atlas.py`, verified by
-`node prototype/check_ccr_atlas.js` (37 checks, deliberately NOT in `npm test`).
+`node prototype/check_ccr_atlas.js` (**46 checks**, deliberately NOT in `npm test`).
+That 46 is fully accounted for: 44 static `ok()` call sites, one inside a 3-iteration
+viewport loop, so 43 + 3 = 46 — every site fires. (An earlier note of mine said "48,
+two call sites moved"; `git diff` on that file against #1311 is **empty**, so nothing
+moved and the 48 matched no committed revision.)
 Also published as an artifact Sam can click.
 
 Three views: **158 discipline cells** → **one discipline's decisions** → **one
@@ -89,12 +129,24 @@ titles and member counts present. **ESL went 2,300 identities → 27**, far past
 dry-run projected. Sam confirmed the Civic ESL rename over his own title the same day, so the
 Rule 8 supersede is settled.
 
-**Still open: the 794 default-Beginning rows** — folded on an assumption (no
-level word in the title), not on evidence. Now correctable by dragging.
+**Still open: the Beginning ESL spot-check — and the number is 517, not 794.**
+Of the 1,079 folds that landed in Beginning, **765 are medium confidence**, and
+those split into **517 `default-beginning`** (no level signal at all — the truly
+evidence-free pile) and **248 `numeric`** (a number in the title implying a
+level, which is weak evidence but *is* evidence). Work the 517 first; they are a
+third smaller than the figure this handoff used to quote and much better aimed.
+
+⚠️ **Do NOT tell Sam to "drag them" — he cannot.** These are merged-away
+identities, so they do not render on the map at all (that is #1312 working
+correctly). This is the same wrong instruction caught once already for
+`FIMS M1018`; it survived into this line. **There is no surface today on which
+this spot-check can be performed.** The Atlas ESL card shows a **90-row sample**,
+not a worklist. Building one is the prerequisite — see the missing verbs below.
 
 ## Carryover
 
-- ✅ **The universe view is BUILT** (#1312) — all 17,321 identities on canvas,
+- ✅ **The universe view is BUILT** (#1311) — all **16,484** identities on canvas
+  (17,321 before #1312 removed the 340 chained rows),
   precomputed stable layout, keyword fly-to, draggable islands, cross-area
   course moves. Sam reversed the earlier design call and his reason was right:
   a per-decision view **structurally cannot show a cross-area move**.
