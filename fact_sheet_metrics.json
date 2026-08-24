@@ -1,6 +1,6 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-08-24T10:06:16.162Z",
+ "_as_of": "2026-08-24T13:19:10.417Z",
  "credit_recommendations": {
   "total": "12,947",
   "ccc": "1,330",
@@ -130,6 +130,6 @@
  },
  "veteran_sprint": {
   "star_colleges": "57",
-  "basic_training_colleges": "57 Colleges"
+  "basic_training_colleges": "89 Colleges"
  }
 }
