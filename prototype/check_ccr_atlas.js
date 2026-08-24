@@ -101,6 +101,44 @@ function serve() {
   await page.locator(".crumbs button").first().click();
   await page.waitForTimeout(400);
 
+  console.log("\n══ the ESL packaging proposal");
+  ok("the banner offers it", (await page.locator("#go-esl").count()) === 1);
+  await page.locator("#go-esl").click();
+  await page.waitForTimeout(500);
+  ok("proposal heading", /What packaging ESL would actually do/
+      .test(await page.locator("h1").first().textContent()));
+  ok(`three comprehensives drawn (${await page.locator("#esl-gfx circle").count()})`,
+    (await page.locator("#esl-gfx circle").count()) === 3);
+  // The medium-confidence wedge is the honest half of this picture; a preview
+  // that showed only the collapse would read as an argument for applying it.
+  ok("the medium-confidence wedge is drawn",
+    (await page.locator("#esl-gfx path").count()) >= 3);
+  ok("it says plainly that nothing is written",
+    /Nothing is written/i.test(await page.locator(".lede").textContent()));
+  ok("both blockers are named", (await page.locator(".note li").count()) === 2);
+  ok(`comprehensive + carve-out cards (${await page.locator(".deck").count()})`,
+    (await page.locator(".deck").count()) === 6);
+  // The transfer-level carve-out is the finding; it must not read as intact.
+  const carve = await page.locator("#esl-carve").textContent();
+  ok("the transfer-level carve-out reports what it LOST, not 22 of 22",
+    /8 of 22/.test(carve) && /already gone/.test(carve));
+
+  await page.locator("#esl-decks .deck").first().click();
+  await page.waitForTimeout(400);
+  ok(`spot-check table rows (${await page.locator("table.uc-like tbody tr").count()})`,
+    (await page.locator("table.uc-like tbody tr").count()) > 10);
+  ok("every header cell carries scope",
+    (await page.locator("table.uc-like th[scope=col]").count()) ===
+    (await page.locator("table.uc-like th").count()));
+  ok("the scrolling table is a focusable labelled region",
+    (await page.locator(".tblwrap[tabindex='0'][role=region]").count()) >= 1);
+  ok("medium-confidence rows are listed FIRST",
+    /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));
+  ok("the list says it is a sample, with its denominator",
+    /Showing .* of /.test(await page.locator(".empty").last().textContent()));
+  await page.locator(".crumbs button").first().click();
+  await page.waitForTimeout(400);
+
   console.log("\n══ search + filter");
   await page.fill("#q", "weld");
   await page.waitForTimeout(200);
