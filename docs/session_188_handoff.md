@@ -45,7 +45,8 @@ packaging needs a second pass. Do not let anyone (including yourself) restart
 |---|---|
 | #1309 | CCR Atlas prototype + the decision-component measurement |
 | #1310 | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
-| #1311 | The ESL fold rendered as a proposal (nothing written) |
+| #1311 | The ESL fold rendered as a proposal, then APPLIED; the universe view |
+| #1312 | `flatten_merge_chains()` — 340 folded identities were still rendering |
 
 **The Atlas** — `prototype/ccr_atlas_v1.html`, built with
 `python3 prototype/build_ccr_atlas.py`, verified by
@@ -83,6 +84,11 @@ folded into them. **Check the count against the plan, always.** One blocker was
 Sam's own row (`ESOL M9177`), superseded explicitly per Rule 8; prior values are
 in the receipt and restorable with one statement.
 
+✅ **Published by the cron at 15:16 UTC 2026-08-24 and verified in the artifact** — all seven
+titles and member counts present. **ESL went 2,300 identities → 27**, far past the 10.7:1 the
+dry-run projected. Sam confirmed the Civic ESL rename over his own title the same day, so the
+Rule 8 supersede is settled.
+
 **Still open: the 794 default-Beginning rows** — folded on an assumption (no
 level word in the title), not on evidence. Now correctable by dragging.
 
@@ -92,9 +98,32 @@ level word in the title), not on evidence. Now correctable by dragging.
   precomputed stable layout, keyword fly-to, draggable islands, cross-area
   course moves. Sam reversed the earlier design call and his reason was right:
   a per-decision view **structurally cannot show a cross-area move**.
-- 🟡 **The Atlas does not yet show the fold.** Rebuild after the cron:
-  `python3 kb/_build_ccr_atlas_extract.py && python3 prototype/build_ccr_atlas.py`
-  (then republish the artifact). Sam is running the cron himself.
+- 🔴 **THREE VERBS ARE MISSING, and `FIMS M1018` proves it.** I nearly told Sam
+  to drag it back and checked first: **it is not on the map at all.** A merged
+  identity does not render (correctly — that is #1312), so only its survivor
+  `ESOL M1152` appears. The map moves a **local course** between identities
+  (`CN:`) and nothing else. Missing: **(a) un-merge an applied identity merge**
+  — `merge_dismissed` declines a *suggested* merge, there is no verb for undoing
+  an applied one, from any screen; **(b) relabel an island's discipline**;
+  **(c) re-home a course that is inside a merged-away identity.**
+- 🔴 **The stray itself.** *"Film and American
+  Culture"* (film studies, TOP 0612.00) was bot-merged into `ESOL M1152` *"American
+  Culture and Film"* (credit ESL, TOP 4930.87) — same words reordered, two different
+  courses. ⭐ **Packaging HID it**: it was 1 of 2 members and conspicuous, and is now
+  **1 of 35** inside Enrichment ESL and unremarkable. **Audit a survivor's existing
+  members BEFORE the next packaging pass** — afterwards the evidence is diluted by
+  design.
+- 🔴 **An island cannot be relabeled, only its courses moved.** 2,731 of 10,170
+  judgeable merges cross a discipline, but the top pairs are siblings (CIS↔CS 107,
+  Law↔Legal Assisting 67, Art↔Photography 53) — a **vocabulary** signal, not an
+  over-merge one. The one non-sibling pair, Ethnic Studies↔Kinesiology (73), turned
+  out to be **right merges under a wrong label** (`ETHS M1227` is "Intercollegiate
+  Women's Flag Football"). ⚠️ **A cross-discipline merge is ambiguous between a wrong
+  MERGE and a wrong DISCIPLINE, and the repairs are opposite.** Moving those courses
+  would be exactly wrong.
+- 🟢 **The Atlas shows the fold** — extract, universe and preview all rebuilt from
+  post-fix data (decisions 6,056 → 5,697; universe 16,484 in 158 islands) and the
+  artifact republished to the same URL.
 - 🟡 **The one-college-many-numbers audit rule** — 3,320 candidates measured,
   proposed for `kb/_row_audit.py` beside `unit_anomaly`. A flag, never an
   auto-unmerge.
@@ -102,9 +131,33 @@ level word in the title), not on evidence. Now correctable by dragging.
   and a *different* job. Needs its own tool.
 - 🟡 **The transfer-level 8** that survive, plus whether the 9 already folded
   should be unwound (one row each to reverse).
+- 🔴 **18 of the 20 `tests/*_test.py` run NOWHERE, and two of them are RED on
+  `main` right now.** `npm test` discovers only `*.test.js`; `js-tests.yml`
+  names just `supabase_function_grants_test.py` and `doctrine_lookup_test.py`.
+  So a Python guard is written, passes once, and is never executed again — this
+  repo has a KB note literally called *a check that never registers can never
+  fail*. `merge_chain_flatten_test.py` is now wired in (#1312) because a guard
+  nothing runs is not a guard. **The other two failures were confirmed
+  pre-existing by running them against `main`'s generator, not assumed:**
+  `statewide_kpi_test.py` — the statewide-exhibits card breakdown grew an
+  `Issuer/type variants: 4` key the assertion does not expect;
+  `eacr_matrix_payload_test.py` — *"3 fold pairs, got 4"*, a fourth roster fold
+  pair appeared. **Neither is merge-related.** Deliberately NOT wired into CI
+  while red — a permanently red non-required check trains people to ignore it.
+  Fix them, then wire the rest in one pass.
 - 🟢 `docs/INDEX.md` is **6.48× its size budget** (254KB) — the KB-notes section
   alone is 136KB of long rows. Worth a compaction pass of its own.
 - 🟢 Docs lint long tail: `american_spelling` 171, `kb_note_dialect` 60.
+
+## ⚠️ The trap that has now cost this workstream four times
+
+*Ask whether the list you read can contain the thing you are counting.* Four
+instances in two days: the carve-out card reporting "22 of 22 standing" when 8
+stood; a survivor check reading two pools as empty; the identity lint publishing
+zero findings; and — the one that mattered — checking for merge chains by asking
+whether the seven **survivors** were sources. Empty result, so I recorded "no
+chains." The question was the mirror image: whether my 1,990 **sources** were
+targets. **96 were.**
 
 ## Patterns that worked
 
