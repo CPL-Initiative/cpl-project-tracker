@@ -1,4 +1,5 @@
-/* CCR Atlas — the ESL packaging PROPOSAL view.
+/* SkyView page — the ESL packaging PROPOSAL view. (NOT "SkyView" itself: Sam
+   reserves that name for the graph view.)
  *
  * Nothing here writes. It draws what an apply of the 2026-07-15 ESL packaging
  * plan would do to the shape of the discipline, joined to today's curation so

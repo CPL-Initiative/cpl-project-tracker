@@ -613,6 +613,43 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
   same schema the future batch pass 2 plans in), `calibration_review.md`
   (the human review doc Sam reacts to).
 
+## ESL packaging + fold spot-check (2026-08-24, Sessions 187–188)
+
+The first **packaging** pass — deciding what the catalog should *contain*, then mapping into
+it, rather than merging what already exists. ESL went **2,300 identities → 27**.
+
+| File | What |
+|---|---|
+| `kb/_esl_package_dryrun.py` | Classifies the ESL identity space by level/carve-out from the TITLE. Emits `kb/esl_package_out/2026-07-15/esl_package_plan.json`. |
+| `kb/_esl_package_actionable.py` | Subtracts rows curation already spoke for; what an apply would really write. |
+| `kb/_esl_package_apply.py` | The gated apply. Receipt: `kb/esl_package_out/2026-08-24/esl_apply_plan.json` (restamped DRY-RUN → APPLIED), cohort `package-esl-s187@bot`. |
+| `kb/_build_esl_fold_spotcheck.py` | **READ-ONLY.** Re-checks every landed fold against the member courses' `CatalogDescription`, and CALIBRATES each fold signal by how often it disagrees. Writes `kb/esl_fold_spotcheck/<date>/{worklist.json,report.md}`. `--scope all\|default-beginning`. |
+| `tests/esl_fold_spotcheck_test.py` | 40 checks, wired into `js-tests.yml` (non-required). |
+
+**Seven survivors** — Beginning `ESOL M9168` · Intermediate `ESOL M9256` · Advanced
+`ESOL M1141` · Vocational `ESOL M9023` · Civic `ESOL M9177` · Enrichment `ESOL M1152` ·
+Vocational—Healthcare `ESOL M91IL`. **Survivors, not new ids**: `merge_into_orphan` self-trusts
+only `UC-CUR-*` and Session 56 re-minted all of those away, so a Z-scheme target would flag as
+an orphan forever.
+
+⭐ **The spot-check's finding governs the next discipline too.** The classifier read only the
+modal TITLE; the COCI export describes 96% of member courses in prose. Wrong rates over rows a
+description can CHECK: `default-beginning/medium` **76.7%** · `numeric/medium` **49.2%** ·
+`combo/high` 12.5% · `word/high` **6.2%**. **Calibrate before ranking a queue** —
+[`calibrate-a-signal-before-you-rank-the-queue`](../docs/kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue.md).
+
+⚠️ **The denominator is rows the source can DECIDE.** 1,217 folds assert nothing either way and
+are excluded, never counted as agreement.
+⚠️ **A local course NUMBER is not a level ordinal** — a calibrated ladder was built and
+rejected; colleges run parallel numbering schemes (credit 300s / noncredit 700s), so
+nearest-anchor would have proposed 325 re-levels on an ordinal that does not exist.
+⚠️ **A purpose bucket is not a level bucket** — Enrichment/Civic/Vocational are carve-outs by
+purpose; re-pointing one at a level survivor strips the carve-out.
+
+**Open:** 222 re-level proposals staged, **nothing written to Supabase**; the 9 over-claims and
+the fate of the numeric pinning are Sam's calls. 67 Z-scheme `ESOL Z####` rows were never in
+the fold's candidate set.
+
 ## Noncredit & Learning Partners register (2026-08-05, SkyPartner)
 
 Two files here back the **🤝 Noncredit & Learning Partners** tab:

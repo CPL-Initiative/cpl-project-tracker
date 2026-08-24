@@ -1,14 +1,14 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-24 · SkyView (Session 187) took the Common Course Reference and did three things. First, the finding that should steer the whole effort: if we worked every merge decision in the reference and got them all right, we would still have about 36,000 courses — fourteen times more than the 2,500 we want. Merging only compares courses that already exist. The only way to reach the goal is to decide what the catalog should contain and map courses into it. Second, we did exactly that for ESL: 1,997 changes collapsed roughly two thousand ESL records into SEVEN courses — Beginning, Intermediate, Advanced, Vocational, Vocational for Healthcare, Civic and Enrichment. ESL went from 2,300 course records to 27. Third, checking that the fold had actually worked turned up a bug worth more than the fold: 340 courses that had already been merged away were still being shown as if they were separate courses. Only 96 of those were ours — most were years-old and spread across Kinesiology, Fire Technology, English and Art. That is fixed. There is also now a map of the whole reference you can pan around, search, and drag courses on, including between subjects.",
- "_session": "187 (SkyView)",
- "_status": "The ESL fold is live on the dashboard. Two things to look at. One: 517 of the courses that landed in 'Beginning' had no level in their title at all, so we assumed the lowest one — the safe guess but often wrong. We cannot yet show you those 517: a folded course stops appearing on the map, so there is nothing to click. Building that list is the next job. Two: packaging makes an old mistake harder to spot, not easier. A film course had been wrongly merged into an ESL course years ago; it used to stand out as one of two, and now it is one of 35 and looks normal. Before we package the next subject we should check what is already inside the course we are folding into. The three names that did not save on the first attempt were all corrected, and you have confirmed the one that had been yours — Civic ESL — so that is settled.",
+ "_as_of": "2026-08-24 · Session 188 went back over the ESL fold and checked it against something nobody had read: the colleges' own catalog descriptions. The tool that sorted ESL into Beginning/Intermediate/Advanced only ever looked at course TITLES — but the course catalog we already hold describes 96% of these courses in plain English, and those descriptions often say the level outright. The very first course in the pile we had called 'impossible to check' says 'at the advanced ESL level' in both of its college descriptions, and we had filed it as Beginning. Checking all 1,990 folds this way also told us which of our own rules to trust. The rule that reads a number in the title ('ESL 2', 'Level 5') and infers a level is wrong about half the time — because colleges run ladders of different lengths, so '2' is the bottom rung at one college and the middle rung at another. We had ranked that rule as the SAFER of the two piles and told the next session to look at it last. Separately, Sam deleted an old scheduled task that could have fought the daily dashboard update, and we confirmed the seven ESL courses have no other bad entries hiding inside them.",
+ "_session": "188 (Sky188)",
+ "_status": "The ESL fold has now been double-checked and two decisions are waiting on Sam. We found 222 courses where the college's own catalog disagrees with the level we filed them under. Nearly all of them we filed too LOW, which is the cautious direction and can be fixed slowly. But NINE we filed too HIGH — claiming more credit than the college describes — and those are the ones worth Sam's time first. All nine have the same cause: our rule treats 'level 5 and above' as Advanced, but several colleges run a six-rung ladder where 5 and 6 are still called high-intermediate. Six of the nine are the same Los Angeles district course series repeated across eight colleges. Nothing has been changed in the live data — these are proposals waiting for a decision.",
  "items": [
   {
-   "id": "s187-esl-beginning-check",
+   "id": "s188-esl-overclaims",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "The Beginning ESL pile needs your eye, but we owe you a tool first. 517 courses landed in Beginning with no level signal at all — their titles never said beginning, intermediate or advanced, so we assumed the lowest. (Another 248 had a number in the title, which is weak evidence but is evidence — those are lower priority.) We cannot show you these yet: once a course is folded it stops appearing on the map, so there is nothing to click. Next session should build the list before you spend time on it."
+   "text": "Nine ESL courses are filed one level HIGHER than the college's own catalog describes them — the only ones running against the cautious direction, so they are worth your eye before the other 213. They all share a cause: our rule says 'level 5 or above = Advanced', but several colleges run a six-rung ladder where 5 and 6 are still 'high-intermediate'. Six of the nine are the same Los Angeles district series (College ESL V) repeated across eight colleges. Two ways to fix it: correct the nine by hand, or move the cut from '5 and above' to '6 and above', which fixes six of them by rule. Second question while you are here: that number rule is wrong about half the time overall — is it worth keeping at all? Full list and the quoted catalog text: kb/esl_fold_spotcheck/2026-08-24/report.md."
   },
   {
    "id": "s187-universe-react",
@@ -38,7 +38,7 @@
    "id": "s187-next-discipline",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "ESL proved packaging works. Pick the next discipline and repeat it — Kinesiology is the biggest at 1,204 course records, then Music and Computer Information Systems."
+   "text": "ESL proved packaging works. Pick the next discipline and repeat it — Kinesiology is the biggest at 1,204 course records, then Music and Computer Information Systems. Before ranking that discipline's queue, run the same catalog-description check ESL got and measure which of the sorting rules actually hold up — on ESL that reordered the work and found 94 rows that were about to be skipped (kb/_build_esl_fold_spotcheck.py is the pattern)."
   },
   {
    "id": "s186-nc-floor",
@@ -74,7 +74,13 @@
    "id": "s187-island-label-verb",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "The map can move a local course, but it cannot undo a wrong merge between two courses, and it cannot correct a subject label. Both are real: a film course is stuck inside the new Enrichment ESL course and there is no way to pull it out, and 73 merges between Ethnic Studies and Kinesiology are correct merges filed under the wrong subject. Neither is fixable from any screen we have."
+   "text": "The map can move a local course, but it cannot undo a wrong merge between two courses, and it cannot correct a subject label. Both are real: a film course is stuck inside the new Enrichment ESL course and there is no way to pull it out, and 73 merges between Ethnic Studies and Kinesiology are correct merges filed under the wrong subject. Neither is fixable from any screen we have. Still blocked for the film-course example: a merged-away course does not appear on the map at all, so there is nothing to drag."
+  },
+  {
+   "id": "s188-esl-zscheme",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Finish ESL: 67 ESL records were never in the fold's candidate list at all, because they live in a different store (the Z-scheme rows from the 2026-06 renumbering) rather than the two files the packaging tool reads. They are the concrete remaining ESL job — not a vague 'second pass'. Same survivors, same method."
   }
  ]
 }

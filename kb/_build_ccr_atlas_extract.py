@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the CCR Atlas prototype payload.
+"""Build the SkyView prototype payload.
 
 READ-ONLY. Reads the published CCR artifacts and emits a compact JSON payload
 for prototype/ccr_atlas_v1.html:
@@ -166,7 +166,7 @@ def main():
         detail[d] = packs
 
     out = {
-        "_about": "CCR Atlas prototype payload — READ-ONLY extract of the published CCR artifacts.",
+        "_about": "SkyView prototype payload — READ-ONLY extract of the published CCR artifacts.",
         "_generated_from": data.get("generated_at"),
         "totals": {
             "identities_inbrowser": data.get("count_inbrowser"),

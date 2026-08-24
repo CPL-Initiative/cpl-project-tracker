@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Assemble the self-contained CCR Atlas prototype.
+"""Assemble the self-contained SkyView prototype (renamed from "CCR Atlas",
+Sam 2026-08-24 — and "SkyView" names the GRAPH VIEW, not the informational panes).
 
 Inlines prototype/ccr_atlas_data.json and prototype/ccr_atlas_graph.js into the
 template so the result opens from file://, ships as an Artifact, and cannot
