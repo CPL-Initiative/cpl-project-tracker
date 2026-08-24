@@ -41,7 +41,7 @@ All three parts of that were wrong, and this script is why:
     ranked that lane BELOW `default-beginning` on the grounds that a number in a
     title "is weak evidence, but IS evidence"; measured, it is 94 more rows of
     work of the same kind. `word` at 6.2% is the only signal that behaves like a
-    high-confidence one, which is what it was labelled. `combo/medium` is 2 of 2
+    high-confidence one, which is what it was labeled. `combo/medium` is 2 of 2
     wrong, which is too few rows to conclude from but is at least consistent with
     the doctrine's own hedge — the Beginning-Advanced span was pinned to the
     midpoint and explicitly marked "review".
@@ -51,7 +51,7 @@ All three parts of that were wrong, and this script is why:
 ⚠️ WHAT THIS DELIBERATELY DOES NOT DO — the local course NUMBER is not a level.
     A calibrated ladder was built and REJECTED: anchor each college+subject's
     numbers against the siblings whose titles DO carry a level word, then place
-    the unlabelled member. It fails, and not marginally. A college runs SEVERAL
+    the unlabeled member. It fails, and not marginally. A college runs SEVERAL
     parallel numbering schemes at once — Santa Rosa's EMLS anchors land at 30
     (Advanced), 371/372 (Intermediate) and 701/702 (Beginning), because the 700s
     are the noncredit mirror of the 300s, not a higher rung. And courses that sit
