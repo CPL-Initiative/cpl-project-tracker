@@ -4761,3 +4761,40 @@ which described only the credit pool, stating an infeasible minimum **there too*
 `p3-portal-routing-is-standard-practice` is STALE** (P1 now measures applied units by origin;
 P3 measures transcribed) — flagged, not silently superseded, per Rule 8.
 Story `docs/cpl_funding_lessons.md` · handoff `docs/session_187_handoff.md`.
+
+### SkyView S187 — the queue cannot reach the goal, and a fold exposed a modeling defect (2026-08-24)
+
+**Sam: *"a left turn over to the CCR … an interactive interface something like my graph view
+in obsidian"*, then the frame: *"cluster 142k local courses down to 2k-2.5k."***
+⭐ **The governing finding is arithmetic: grinding all 6,056 decisions perfectly lands at
+35,937 — 14.4× short.** Merging compares what exists; only **packaging** reaches the target.
+⭐ **The corpus is 6,056 decisions, not 17,321 rows** — 97.1% ≤12 identities, modal 2.
+⭐ **Member re-home (`CN:`) was built in Session 54, tested, reversible, never re-mints — and
+had ZERO uses**: the picture was the missing half of a shipped feature.
+⭐ **SAM REVERSED THE DESIGN CALL AND HIS REASON WAS RIGHT** — *"courses are mismatched in the
+wrong subject area … pull an area over closer to the clusters in another area."* A
+per-decision view **structurally cannot show a cross-area move**, so the universe view (all
+identities on canvas, precomputed stable layout, draggable islands) is the only place that
+repair happens. ⚠️ Labels had to be **collected then collision-rejected** — drawing each
+inline reproduced the unreadable pile of his own Obsidian screenshot.
+⭐ **THE ESL FOLD IS APPLIED AND PUBLISHED: 2,300 identities → 27**, seven comprehensives,
+1,997 rows. Mechanism is **survivors, not new ids**. ⚠️ **`ON CONFLICT` blocked three of seven
+RENAMES — 1,994 landed where 1,997 was planned, and that gap was the whole story**; one
+blocker was Sam's own row, superseded explicitly per Rule 8 and **confirmed by him the same
+day**. ⚠️ **Automotive VESL does not exist** — his own example had zero rows.
+⭐ **VERIFYING THE FOLD FOUND A DEFECT WORTH MORE THAN THE FOLD.** ESL rendered 169 rows
+against 27 survivors: the overlay stores **one hop per row**, so an identity merged into and
+then merged onward is a source AND a target, and **340 folded identities were rendering as
+their own rows** with members stranded mid-chain. **Only 96 are mine — 248 are not even ESL.**
+⚠️ It looks like it breaks *"grouping is by KEY, NEVER transitive"* and does not: that rule
+governs **similarity** edges, which are measurements; a `merge_into` is a **decision**, and
+sameness composes. ⚠️ My first fix wrote a **self-merge** on a cycle — worse than the stale
+edge because it is invisible; the test caught it.
+⭐ **Packaging HIDES pre-existing over-merges**: a film-studies course bot-merged into an ESL
+row went from 1-of-2 and conspicuous to **1-of-35** and unremarkable.
+⚠️ **The fold-scoped-list trap fired FOUR times** — the fourth was checking whether the
+*survivors* were sources when the question was whether my *sources* were targets: *ask whether
+the list you read can contain what you are counting.*
+⚠️ **`college_identity_lint_guard` went red at 00:00 UTC for everyone** (byte-for-byte vs a
+date-stamped artifact); fixed and proven to still fail on real drift.
+Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_188_handoff.md`.

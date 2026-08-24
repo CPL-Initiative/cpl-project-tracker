@@ -574,6 +574,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 | [`session_178_handoff.md`](session_178_handoff.md) | Handoff | Session 178 prompt — My College asks before it answers; `sierra_guidance` is a zero-sum budget at 10 rows. |
 
 ---
+| 188 → 189 | SkyCal | [`session_190_handoff.md`](session_190_handoff.md) | Session 190 prompt — SkyView's drag is reachable AND fixed (it had never worked: `pointerdown` clobbered the carried course); 101,063 member courses now ship with the graph; step 2 is the SUBJ4 re-mint QUEUE, and two ESL calls are still Sam's. |
 | 187 → 188 | SkyView | [`session_189_handoff.md`](session_189_handoff.md) | Session 189 prompt — the ESL fold re-checked against college catalogs; two calls are Sam's (the 9 over-claims, and whether the numeric pinning survives) | 2026-08-24 |
 | [`session_188_handoff.md`](session_188_handoff.md) — the CCR has an interface and an **arithmetic**: grinding the whole merge queue lands 14.4× short of 2,500, so **packaging** is the only mechanism that reaches it. Two decisions are Sam's (name the three ESL comprehensives; spot-check the 794 default-Beginning rows). |
 

@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-24 · Session 188 went back over the ESL fold and checked it against something nobody had read: the colleges' own catalog descriptions. The tool that sorted ESL into Beginning/Intermediate/Advanced only ever looked at course TITLES — but the course catalog we already hold describes 96% of these courses in plain English, and those descriptions often say the level outright. The very first course in the pile we had called 'impossible to check' says 'at the advanced ESL level' in both of its college descriptions, and we had filed it as Beginning. Checking all 1,990 folds this way also told us which of our own rules to trust. The rule that reads a number in the title ('ESL 2', 'Level 5') and infers a level is wrong about half the time — because colleges run ladders of different lengths, so '2' is the bottom rung at one college and the middle rung at another. We had ranked that rule as the SAFER of the two piles and told the next session to look at it last. Separately, Sam deleted an old scheduled task that could have fought the daily dashboard update, and we confirmed the seven ESL courses have no other bad entries hiding inside them.",
- "_session": "188 (Sky188)",
- "_status": "The ESL fold has now been double-checked and two decisions are waiting on Sam. We found 222 courses where the college's own catalog disagrees with the level we filed them under. Nearly all of them we filed too LOW, which is the cautious direction and can be fixed slowly. But NINE we filed too HIGH — claiming more credit than the college describes — and those are the ones worth Sam's time first. All nine have the same cause: our rule treats 'level 5 and above' as Advanced, but several colleges run a six-rung ladder where 5 and 6 are still called high-intermediate. Six of the nine are the same Los Angeles district course series repeated across eight colleges. Nothing has been changed in the live data — these are proposals waiting for a decision.",
+ "_as_of": "2026-08-24 · Session 189 made the SkyView map actually usable for the job it was built for. Until today the map showed course identities but carried none of the college courses underneath them, so there was nothing to pick up and move — 101,063 of those courses now ship with it. Then we found the drag had never worked either: pressing \"Drag…\" and clicking the destination selected the destination and moved nothing, because the code threw away the course you were carrying the instant you pressed the mouse down. That is the other half of why nobody has ever used this feature since it was built in May. Both are fixed and proven end to end in a real browser: pick a course, carry it across to a completely different subject area, and the system writes exactly one instruction to move it. Nothing is written to the live database yet — a move still only shows you the row it would write.",
+ "_session": "189 (SkyCal)",
+ "_status": "The map can now do the one thing it exists for. What is left is your reaction to it, and then the safety net: when a course moves into a subject area where it does not fit the naming scheme, that should go on a review queue rather than quietly renumbering anything. Two ESL decisions from last session are still waiting on you, and the nine over-claimed ESL courses are still the highest-value thing on your list.",
  "items": [
   {
    "id": "s188-esl-overclaims",
@@ -14,7 +14,7 @@
    "id": "s187-universe-react",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. Tell us what is wrong with it — especially whether dragging a subject around is actually how you would want to work."
+   "text": "Try the whole-reference map now that it works. Search for a subject, drag that subject next to another one, then pick a course out of the list and carry it across — press \"Drag…\" beside any course, then click the course it really belongs under, even in a completely different subject. It will show you the single instruction it would write; nothing is saved yet. What we most need from you: is dragging a whole subject around actually how you would want to work, and is the course list under each identity readable at the sizes you care about (the biggest one has 850 courses, so we show 200 at a time with a filter box)."
   },
   {
    "id": "s187-overmerge-orange-coast",
@@ -26,7 +26,7 @@
    "id": "s187-overmerge-rule",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Add the over-merge detector to the auditor: flag any course row where every college listed is the same college but the course numbers differ. 3,320 rows qualify. Flag only, never un-merge automatically — some are legitimate."
+   "text": "Add the over-merge detector to the auditor: flag any course row where every college listed is the same college but the course numbers differ. 3,320 rows qualify. Flag only, never un-merge automatically — some are legitimate. A second over-merge signal came out of this run and belongs in the same detector: 1,122 college courses are currently claimed by MORE THAN ONE identity at once. Each one is two rows asserting they own the same course, which is exactly the shape the drag exists to repair."
   },
   {
    "id": "s187-no-discipline-pile",
@@ -81,6 +81,12 @@
    "for": "Fable",
    "tab": "unified-courses",
    "text": "Finish ESL: 67 ESL records were never in the fold's candidate list at all, because they live in a different store (the Z-scheme rows from the 2026-06 renumbering) rather than the two files the packaging tool reads. They are the concrete remaining ESL job — not a vague 'second pass'. Same survivors, same method."
+  },
+  {
+   "id": "s189-subj4-queue",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Build the safety net for the drag — step 2 of the plan Sam approved. Moving a course between identities is only a membership change and never renumbers anything, which is why it ships unblocked. But a move can leave the destination internally inconsistent: its subject prefix no longer matches the discipline it claims. When that happens the system should put a renumbering CANDIDATE on a queue with who moved what and when, and a human decides — it must never renumber on its own, and the queue must never be bulk-cleared. Renumbering itself stays batched under the existing playbook. Authority: docs/skyview_drag_rehome_scope.md."
   }
  ]
 }
