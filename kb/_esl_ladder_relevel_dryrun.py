@@ -108,13 +108,24 @@ ESL_DISCIPLINE = "English as a Second Language"
 
 
 def load_sets():
+    """(document, rung table, per-college override table).
+
+    The override table is keyed by college and rung and wins over the ladder-length table
+    for that college ONLY. It never touches the word path — a course that states its level
+    keeps it, which is what stops NOCE's "Intermediate ESL Grammar 1" from being dragged
+    down with its wordless siblings.
+    """
     d = json.load(open(os.path.join(ROOT, SETS), encoding="utf-8"))
     table = {}
     for length, bands in d["by_ladder_length"].items():
         for band in ORDER:
             for rung in bands.get(band) or []:
                 table[(int(length), rung)] = band
-    return d, table
+    ns = d.get("noncredit_shift") or {}
+    over = {"nc_values": set(ns.get("credit_type_values_treated_as_noncredit") or ()),
+            "nc_colleges": set((ns.get("noncredit_institutions") or {}).get("names") or ()),
+            "shift": ns.get("shift") or {}}
+    return d, table, over
 
 
 def load_js(fname):
@@ -149,7 +160,7 @@ def college_ladders():
     return ladders, too_short
 
 
-def member_votes(row, ladders, table):
+def member_votes(row, ladders, table, over=None):
     """Per-member band votes for one identity, plus why each member abstained.
 
     ⚠️ GUARD 1 APPLIES AT THE MEMBER GRAIN TOO, AND ORIGINALLY DID NOT. A level WORD in
@@ -191,6 +202,17 @@ def member_votes(row, ladders, table):
             continue
         length = ladders[col][0]
         b = table.get((length, n))
+        # A NONCREDIT course sits one band below the same rung on a credit ladder — Sam's
+        # ruling, scoped to NC at his explicit instruction. Ladder path only; a stated level
+        # word never reaches here.
+        # TWO signals, because credit_type is blank on 24% of members — including NOCE's
+        # "ESL for Academic Success", the case Sam named. A wholly-noncredit institution is
+        # NC whatever the field says.
+        o = over or {}
+        is_nc = (str(m.get("credit_type")) in o.get("nc_values", ())
+                 or col in o.get("nc_colleges", ()))
+        if b and is_nc:
+            b = o["shift"].get(b) or b
         if b is None:
             abstain[f"rung {n} is above that college's {length}-rung ladder"] += 1
             continue
@@ -198,13 +220,13 @@ def member_votes(row, ladders, table):
     return votes, abstain
 
 
-def decide(row, ladders, table):
+def decide(row, ladders, table, over=None):
     """(band, how, detail). Precedence: identity level WORD, then the member ladder vote."""
     title = row.get("identity_title") or ""
     want, signal = classify(title)
     if signal in ("word", "combo") and want:
         return want, signal, {"from": "identity title level word"}
-    votes, abstain = member_votes(row, ladders, table)
+    votes, abstain = member_votes(row, ladders, table, over)
     if not votes:
         return None, "no-ladder-signal", {"abstentions": dict(abstain)}
     tally = collections.Counter(v[0] for v in votes)
@@ -223,7 +245,7 @@ def decide(row, ladders, table):
 
 
 def build(date):
-    sets_doc, table = load_sets()
+    sets_doc, table, over = load_sets()
     plan = json.load(open(os.path.join(ROOT, APPLY_PLAN), encoding="utf-8"))
     spot = json.load(open(os.path.join(ROOT, SPOTCHECK), encoding="utf-8"))
     rows = spot["rows"]
@@ -245,7 +267,7 @@ def build(date):
         # An identity already re-levelled by the applied 32 sits at its NEW band today.
         if f["id"] in prior:
             now = prior[f["id"]]["to"]
-        want, how, detail = decide(row, ladders, table)
+        want, how, detail = decide(row, ladders, table, over)
         if want is None:
             undecided.append({"id": f["id"], "why": how, "detail": detail})
             continue
@@ -297,6 +319,7 @@ def build(date):
                     "the same day, which superseded the P-4 pinning."),
         "_ruling_by": sets_doc.get("_ruled_by"),
         "_sets": sets_doc["by_ladder_length"],
+        "_noncredit_shift": sets_doc.get("noncredit_shift"),
         "_resolution": ("A level WORD on the identity title wins; otherwise each member "
                         "votes its own college's ladder reading and the identity takes the "
                         "MODE. A tie is reported, never resolved by picking the safer band."),
