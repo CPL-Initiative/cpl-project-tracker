@@ -189,7 +189,29 @@ a{color:var(--cobalt)}
         paint-order:stroke fill;stroke:var(--surface-opaque);stroke-width:3.5px;
         stroke-linejoin:round}
 .node-g{font-size:13px;font-family:var(--sans);pointer-events:none}
-.tblwrap{overflow-x:auto}
+.u-wrap{position:relative;border:1px solid var(--border);border-radius:10px;
+        overflow:hidden;background:var(--surface-opaque)}
+.u-wrap canvas{display:block;width:100%;touch-action:none;cursor:default}
+.u-wrap canvas:focus-visible{outline:3px solid var(--focus-ring);outline-offset:-3px}
+.u-hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;
+        border-top:1px solid var(--border);background:var(--surface-subtle)}
+.u-bar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 12px}
+.u-bar input[type=search]{flex:1 1 260px;min-width:0;font:inherit;font-size:.88rem;
+  padding:8px 11px;border:1px solid var(--border-strong);border-radius:7px;
+  background:var(--surface-opaque);color:var(--text-body)}
+.u-z{font-size:.8rem;color:var(--text-muted)}
+.u-z b{color:var(--text-strong);font-variant-numeric:tabular-nums}
+.tblwrap{overflow-x:auto;border:1px solid var(--border);border-radius:9px;background:var(--surface-opaque)}
+table.uc-like{border-collapse:collapse;width:100%;font-size:.82rem;background:var(--surface-opaque)}
+table.uc-like th{position:sticky;top:0;background:var(--text-strong);color:var(--mustard-fill);
+  text-align:left;padding:7px 9px;font-weight:600;white-space:nowrap}
+table.uc-like td{padding:6px 9px;border-top:1px solid var(--border);vertical-align:top}
+table.uc-like tbody tr:nth-child(even){background:var(--surface-subtle)}
+table.uc-like .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;white-space:nowrap}
+.banner{display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between;
+  background:var(--surface-opaque);border:1px solid var(--border);border-left:4px solid var(--violet);
+  border-radius:9px;padding:12px 14px;margin:0 0 18px}
+.banner p{margin:0;font-size:.9rem}
 .hidden{display:none !important}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
@@ -283,6 +305,13 @@ function forest(){
     '<p>Sorted by discipline, <strong>'+small.length+' of '+withWork.length+
     ' disciplines carry 40 decisions or fewer</strong> — a sitting each, with a finish line you can see.</p></div>');
 
+  h.push('<div class="banner"><p><strong>ESL packaging proposal</strong> \u2014 '+
+    '1,846 identities folding into three courses, drawn against today\u2019s data. Nothing written.</p>'+
+    '<button class="btn primary" type="button" id="go-esl">See the proposal</button></div>');
+  h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>The whole universe</strong> \u2014 '+
+    'every course identity on one map, with keyword zoom. Drag a subject next to another to move a '+
+    'course that was filed under the wrong one.</p>'+
+    '<button class="btn primary" type="button" id="go-universe">Open the universe</button></div>');
   h.push('<div class="hero">'+
     '<div class="frame" id="hero-gfx"></div>'+
     '<div>'+
@@ -363,6 +392,18 @@ function forest(){
       " local courses sit underneath these. Open it and you can move any one of them "+
       "onto the identity it belongs to.";
     document.getElementById("hero-open").onclick = function(){ window.__ccrDecision(f.d, f.i); };
+  }
+  var goU=document.getElementById("go-universe");
+  if(goU){
+    if(window.CPL_CCR_UNIVERSE && typeof window.__ccrUniverse==="function")
+      goU.addEventListener("click", function(){ window.__ccrUniverse(); });
+    else goU.closest(".banner").remove();
+  }
+  var goEsl=document.getElementById("go-esl");
+  if(goEsl){
+    if(window.CPL_ATLAS_ESL && typeof window.__ccrEsl==="function")
+      goEsl.addEventListener("click", function(){ window.__ccrEsl(); });
+    else goEsl.closest(".banner").remove();   // never offer a door that opens on nothing
   }
   document.getElementById("hero-next").addEventListener("click", function(){
     fi++; paintHero();
@@ -517,6 +558,12 @@ if (document.readyState === "loading")
 else forest();
 })();
 </script>
+<script id="atlas-esl" type="application/json">__ESLDATA__</script>
+<script>try{window.CPL_ATLAS_ESL=JSON.parse(document.getElementById("atlas-esl").textContent);}catch(e){}</script>
 <script>__GRAPHJS__</script>
+<script>__ESLJS__</script>
+<script id="atlas-universe" type="application/json">__UNIVDATA__</script>
+<script>try{window.CPL_CCR_UNIVERSE=JSON.parse(document.getElementById("atlas-universe").textContent);window.CPL_ATLAS_DATA=JSON.parse(document.getElementById("atlas-data").textContent);}catch(e){}</script>
+<script>__UNIVJS__</script>
 </body>
 </html>

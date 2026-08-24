@@ -4674,3 +4674,50 @@ pkill, and the "exit 0" belonged to the wrapper. Same class as the `; echo "EXIT
 in this file. ⚠️ And my page test asserted on `#tbody` — **the one container that clears itself** —
 so it passed while three others accumulated copies until Sam saw the cards render three times.
 Durable: [`a-green-check-you-did-not-scope-is-not-evidence`](docs/kb-notes/methodology-a-green-check-you-did-not-scope-is-not-evidence.md) · [`a-snapshot-of-a-live-model-is-a-claim-that-decays`](docs/kb-notes/methodology-a-snapshot-of-a-live-model-is-a-claim-that-decays.md) · handoff `docs/session_186_handoff.md`.
+
+### SkyScope S185 — nobody was watching, and she was paying full price twice over (2026-08-23, Session 185)
+
+**Sam: *"let's pick up the queue"*.** (Moniker collision: Session 183 also ran as
+SkyScope; Sam's greeting named this one, so both exist — disambiguate by number.)
+⭐ **THE FIRST QUEUE ITEM WAS NOT IN THE QUEUE.** Rule 8's read step surfaced a
+`verified` `cpl_memory` row from that evening: **Sierra was down** — Anthropic credit
+exhausted, **second outage in two days**, and both found by a session happening to look.
+A fresh smoke dispatch confirmed it live at 00:01 UTC. Sam topped up mid-run.
+⭐ **NOTHING WATCHED HER**: `cpl-chat-smoke.yml` and `sierra-preflight.yml` fire only on
+dispatch or push, so outage duration was set by luck. New `cpl-chat-health.yml` — one
+question every 3 hours, raises/reuses/closes a GitHub issue. ⚠️ **A liveness check is
+only worth having if it can say no**, so the test RUNS the probe against a mock in five
+shapes and asserts exactly one reports up. ⚠️ **The cadence carries its price in the
+file** (hourly ≈ $22/mo vs 3-hourly ≈ $7) — Sam funds this personally today.
+⭐ **THE COST LEVER WAS NOT THE MODEL.** Asked whether Haiku would be cheaper: there is
+**no Haiku 4.6** (it is 4.5, $1/$5 vs $3/$15, and 200K context not 1M) — but
+**`cache_control` appeared ZERO times** in a 200 KB function carrying ~7,000 stable
+tokens per turn. ⚠️ **I told Sam caching was risk-free and it is not**: caching is a
+PREFIX match, the preamble is 242 tokens (below the ~1024 minimum, so a breakpoint there
+caches nothing **and says nothing**), so the always-rules had to move ahead of the
+sources. ⚠️ **"Mostly stable" is WORSE than no caching** — a write costs 1.25x, so
+caching the whole rule block (the one-line version) would have been a surcharge, since
+`appliesWhen` varies it by mode. Shipped: the `always` half only, **2,992 tokens
+byte-identical every request**, proven by RUNNING the assembler over all 16 context
+combinations.
+⭐ **SMOKE MODE 7 HAD BEEN RED SINCE SESSION 125 ON CORRECT ANSWERS.** Its part-3 prose
+grep wanted LA-basin colleges that TEACH construction; Sierra leads with the ones that
+ARTICULATED NCCER — the other true thing. Measured at retrieval instead: the function's
+own tsquery returns **150 rows / 78 colleges, 5 of the 6 present**. Mode **7r** asserts
+that via the RPC with a **negative control first** and a **threshold, not a named
+college**; a committed test re-derives the tsquery from `index.ts` so the transcription
+cannot drift.
+⚠️ **THE IDENTITY LINT HAD EMPTIED ITSELF AND SHIPPED THAT WAY FOR FOUR MERGES** —
+`--observed-json` is optional, #1283 ran without it, `findings` 13 → 0, and the tab said
+**"Nothing outstanding"** while two live join defects sat unfixed. `cpl_memory` recorded
+the hazard the same day and it still shipped: **recording a rule and enforcing it are two
+events.** Builder now exits 1; artifact stamps `linted`; tab says "not checked".
+⚠️ **MAP's three sandbox colleges are out of Sierra's corpus** — and `entity_kind` could
+never have caught `Las PosTest College`, which has **no `map_colleges` row to join to**;
+its stats were empty but its CONTACTS were a real coordinator at a college that does not
+exist.
+⚠️ **The lint fired on MY OWN edit twice** (`stacked_roadmap_cell`, `unindexed_kb_note`)
+and **my own grep tripped on my own comment** quoting the retired assertion. Both fixed
+pre-commit; the cell is now SMALLER than before this run.
+✅ **DEPLOYED AND MEASURED THE SAME RUN — v57 ACTIVE.** 34 turns post-deploy: **1 write, 33 hits, 0 inert**, and **`read=3027` IDENTICAL on every request** while `uncached_input` ranged **10,843 → 22,762** — production proof the always/conditional split was load-bearing, since caching the whole rule block would have jittered that figure and billed a 1.25x write on most turns. ⚠️ **The log source is `function_logs`, NOT `function_edge_logs`** (the latter returns zero rows and looks like a dead feature). ⚠️ **A merge push fires its own smoke run that can RACE the deploy** — here it started 01:17:40 against a deploy that finished 01:18:17, so it tested the OLD function with the NEW script; dispatch your own after confirming the version bumped. ⭐ **The telemetry closed the Haiku capacity question for free**: peak ~23K against Haiku 4.5's 200K is a 9x margin, so only rule-adherence remains to be scored.
+Durable: [`a-cache-breakpoint-must-lead-and-must-not-move`](docs/kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) · story `docs/cpl_assistant_lessons.md` · `docs/college_identity_lessons.md` · handoff `docs/session_186_handoff.md`.

@@ -101,6 +101,116 @@ function serve() {
   await page.locator(".crumbs button").first().click();
   await page.waitForTimeout(400);
 
+  console.log("\n══ the universe view");
+  ok("the banner offers it", (await page.locator("#go-universe").count()) === 1);
+  await page.locator("#go-universe").click();
+  await page.waitForTimeout(600);
+  ok("canvas is present and sized", await page.evaluate(() => {
+    const c = document.getElementById("u-cvs");
+    return !!c && c.width > 200 && c.height > 200;
+  }));
+  // A canvas draws nothing the DOM can see, so assert PIXELS changed — an empty
+  // canvas and a broken renderer look identical to any selector-based check.
+  ok("it actually painted something", await page.evaluate(() => {
+    const c = document.getElementById("u-cvs");
+    const d = c.getContext("2d").getImageData(0, 0, c.width, c.height).data;
+    const seen = new Set();
+    for (let i = 0; i < d.length; i += 4 * 997) seen.add(d[i] + "," + d[i+1] + "," + d[i+2]);
+    return seen.size > 3;                      // more than one flat color
+  }));
+  ok("the canvas is keyboard-reachable and labelled",
+    (await page.locator("#u-cvs[tabindex='0']").count()) === 1 &&
+    !!(await page.locator("#u-cvs").getAttribute("aria-label")));
+
+  console.log("\n══ keyword zoom");
+  const z0 = await page.evaluate(() => window.__ccrUniverseState().view.k);
+  await page.fill("#u-q", "welding");
+  await page.locator("#u-find").click();
+  await page.waitForTimeout(400);
+  const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
+  ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
+  ok("and reports where the matches are",
+    /match/i.test(await page.locator("#u-hint").textContent()));
+  await page.fill("#u-q", "zzzznotathing");
+  await page.locator("#u-find").click();
+  await page.waitForTimeout(300);
+  ok("a miss says so rather than flying somewhere arbitrary",
+    /Nothing matches/i.test(await page.locator("#u-hint").textContent()));
+
+  console.log("\n══ ⚠ the cross-area move (the reason this view exists)");
+  const moved = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE, A = window.CPL_ATLAS_DATA;
+    // find a member course, and a target identity in a DIFFERENT subject area
+    let src = null;
+    for (const dn of Object.keys(A.detail)) {
+      for (const pack of A.detail[dn]) {
+        for (const nd of pack.nodes) {
+          if (nd.m && nd.m.length) { src = { id: nd.id, cn: nd.m[0].cn, disc: dn }; break; }
+        }
+        if (src) break;
+      }
+      if (src) break;
+    }
+    if (!src) return { ok: false, why: "no member course in the sample" };
+    const home = U.islands.find(i => i.p.some(p => p.i === src.id));
+    const other = U.islands.find(i => i !== home && i.p.length);
+    if (!other) return { ok: false, why: "no second island" };
+    return { ok: true, from: home.d, to: other.d, cross: home.d !== other.d };
+  });
+  ok("a course and a target in ANOTHER subject both exist" +
+     (moved.ok ? ` (${moved.from} → ${moved.to})` : ` — ${moved.why}`),
+    moved.ok && moved.cross);
+
+  console.log("\n══ subjects can be pulled next to each other");
+  const dragged = await page.evaluate(() => {
+    const U = window.CPL_CCR_UNIVERSE;
+    const isl = U.islands[0];
+    const before = isl.dx || 0;
+    isl.dx = before + 500;                     // what a drag does
+    return isl.dx !== before;
+  });
+  ok("an island carries a movable offset", dragged);
+
+  console.log("\n══ the ESL packaging proposal");
+  await page.locator(".crumbs button").first().click();
+  await page.waitForTimeout(400);
+  ok("the banner offers it", (await page.locator("#go-esl").count()) === 1);
+  await page.locator("#go-esl").click();
+  await page.waitForTimeout(500);
+  ok("proposal heading", /What packaging ESL would actually do/
+      .test(await page.locator("h1").first().textContent()));
+  ok(`three comprehensives drawn (${await page.locator("#esl-gfx circle").count()})`,
+    (await page.locator("#esl-gfx circle").count()) === 3);
+  // The medium-confidence wedge is the honest half of this picture; a preview
+  // that showed only the collapse would read as an argument for applying it.
+  ok("the medium-confidence wedge is drawn",
+    (await page.locator("#esl-gfx path").count()) >= 3);
+  ok("it says plainly that nothing is written",
+    /Nothing is written/i.test(await page.locator(".lede").textContent()));
+  ok("both blockers are named", (await page.locator(".note li").count()) === 2);
+  ok(`comprehensive + carve-out cards (${await page.locator(".deck").count()})`,
+    (await page.locator(".deck").count()) === 6);
+  // The transfer-level carve-out is the finding; it must not read as intact.
+  const carve = await page.locator("#esl-carve").textContent();
+  ok("the transfer-level carve-out reports what it LOST, not 22 of 22",
+    /8 of 22/.test(carve) && /already gone/.test(carve));
+
+  await page.locator("#esl-decks .deck").first().click();
+  await page.waitForTimeout(400);
+  ok(`spot-check table rows (${await page.locator("table.uc-like tbody tr").count()})`,
+    (await page.locator("table.uc-like tbody tr").count()) > 10);
+  ok("every header cell carries scope",
+    (await page.locator("table.uc-like th[scope=col]").count()) ===
+    (await page.locator("table.uc-like th").count()));
+  ok("the scrolling table is a focusable labelled region",
+    (await page.locator(".tblwrap[tabindex='0'][role=region]").count()) >= 1);
+  ok("medium-confidence rows are listed FIRST",
+    /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));
+  ok("the list says it is a sample, with its denominator",
+    /Showing .* of /.test(await page.locator(".empty").last().textContent()));
+  await page.locator(".crumbs button").first().click();
+  await page.waitForTimeout(400);
+
   console.log("\n══ search + filter");
   await page.fill("#q", "weld");
   await page.waitForTimeout(200);
