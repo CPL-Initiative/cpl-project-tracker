@@ -8348,6 +8348,23 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
         <style>
             #tab-unified-courses .uc-beta-banner { background:#FFF6E0; border:1px solid var(--gold-accent); color:#7a5c00; padding:10px 14px; border-radius:8px; font-size:.9rem; margin-bottom:14px; }
             #tab-unified-courses h2 { margin-bottom:4px; }
+            /* SkyView launcher — Sam, 2026-08-24: "a button on the CCR Tab top right and
+               prominent". It opens prototype/skyview.html, which is the SERVED entry point:
+               the self-contained build is 9.9 MB and gitignored, so a button could not have
+               linked to it. New tab, because SkyView is a workspace you keep open beside
+               this table, not a page you bounce through. */
+            #tab-unified-courses .uc-head { display:flex; flex-wrap:wrap; align-items:flex-start;
+                gap:12px; justify-content:space-between; }
+            #tab-unified-courses .uc-head h2 { flex:1 1 auto; min-width:0; }
+            #tab-unified-courses .uc-skyview { flex:0 0 auto; display:inline-flex; align-items:center;
+                gap:.5em; background:var(--seal-blue); color:var(--gold-accent);
+                padding:9px 15px; border-radius:8px; font-weight:700; font-size:.92rem;
+                text-decoration:none; border:1px solid var(--seal-blue); white-space:nowrap; }
+            #tab-unified-courses .uc-skyview:hover,
+            #tab-unified-courses .uc-skyview:focus-visible { background:#0b2a52; color:#fff; }
+            #tab-unified-courses .uc-skyview .uc-sv-sub { display:block; font-weight:400;
+                font-size:.74rem; opacity:.85; }
+            @media (max-width:640px){ #tab-unified-courses .uc-skyview { width:100%; justify-content:center; } }
             #tab-unified-courses .uc-sub { font-weight:400; color:#6b7280; font-size:1rem; }
             #tab-unified-courses .uc-intro { color:#4b5563; margin:0 0 14px; }
             #tab-unified-courses .uc-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-bottom:10px; }
@@ -8427,7 +8444,14 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
             #tab-unified-courses .uc-disc-edit:hover { background:#eef6ff; }
         </style>
         <div class="uc-beta-banner">⚠️ <strong>Beta / draft</strong> — AI-assisted course unification, pending human review. Per-row quality flags (over-merge, mixed-attribute, unreviewed) are shown so you can vet the data.</div>
+        <div class="uc-head">
         <h2>Common Course Reference <span class="uc-sub">— a cross-college course identity reference for faculty review</span></h2>
+        <a class="uc-skyview" href="prototype/skyview.html" target="_blank" rel="noopener"
+           title="Open SkyView — the whole reference as one map: 49,907 course identities in 302 subject areas, including every stand-alone course, with the college courses underneath. Opens in a new tab.">
+          <span aria-hidden="true">✦</span>
+          <span>Open SkyView<span class="uc-sv-sub">the whole reference as a map</span></span>
+        </a>
+        </div>
         <p class="uc-intro">Consolidated course identities (M-IDs) and variant clusters with discipline, credit status, units, TOP code, and cross-college articulation adoption. <strong>Adopted</strong> = colleges that earned a CPL articulation on the course; <strong>Adoptable</strong> = colleges teaching a like course that haven't yet (hover a number for college names). Stand-Alone (single-college) courses aren't listed as rows here — they're in the Excel export, and searchable in the ⚇ Unify dialog to consolidate.</p>
         <div id="uc-toolbar" class="uc-toolbar"></div>
         <div id="uc-summary" class="uc-summary"></div>
