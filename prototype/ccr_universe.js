@@ -146,7 +146,14 @@ function draw(){
         var rad=Math.max(1.4, (2.2+Math.sqrt(Math.max(1,nd.n))*1.05)*k);
         var s=SYS[nd.s]||SYS[3];
         ctx.beginPath(); ctx.arc(p[0],p[1],rad,0,6.2832);
-        ctx.fillStyle=s[0]; ctx.fill();
+        if(nd.a){
+          // Stand-alone: one college, no equivalence asserted yet. Drawn HOLLOW so it
+          // reads as "nothing claimed here", never as a weaker version of a claim.
+          ctx.fillStyle="#fff"; ctx.fill();
+          ctx.lineWidth=Math.max(1,rad*0.34); ctx.strokeStyle=s[1]; ctx.stroke();
+        } else {
+          ctx.fillStyle=s[0]; ctx.fill();
+        }
         if(rad>2){ ctx.lineWidth=Math.min(2,rad*0.42); ctx.strokeStyle=s[1]; ctx.stroke(); }
         if(hitSet[nd.i]){                                  // search match ring
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+4.5,0,6.2832);
@@ -424,7 +431,9 @@ function showIsland(isl){
   var el=document.getElementById("u-detail");
   var top=isl.p.slice().sort(function(a,b){return b.n-a.n;}).slice(0,14);
   el.innerHTML="<h3>"+esc(isl.d)+"</h3>"+
-    "<p>"+num(isl.n)+" course identities. Biggest first:</p>"+
+    "<p>"+num(isl.n)+(isl.a?" stand-alone courses — one college each, clustered with nothing "+
+      "yet. Drag one onto the identity it belongs with.":" course identities.")+
+      " Biggest first:</p>"+
     '<ul class="idlist">'+top.map(function(nd){
       var s=SYS[nd.s]||SYS[3];
       return '<li><span class="ttl">'+esc(nd.t||nd.i)+"</span> "+
@@ -453,6 +462,9 @@ function renderNode(){
     '<p><span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span> "+
     '<span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+num(total)+
     " college course"+(total===1?"":"s")+" carried"+
+    (nd.a?' · <span class="chip mut" title="A single college\'s course that has not been '+
+      'clustered with anything yet. It asserts no equivalence, so it cannot be over-merged '+
+      '— it can only be dragged onto the identity it belongs with.">stand-alone</span>':"")+
     (nd.n && nd.n!==total ? ' · <span class="sub" title="The count this row reports '+
       'elsewhere in COBI, from the field that minted it. The carried list is the forward '+
       'join onto the raw COCI course list, which cannot always place every seeded member.">'+

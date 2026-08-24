@@ -114,8 +114,11 @@ def write_members(mem_payload, placed_ids, out_rel):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="prototype/ccr_universe.json")
-    ap.add_argument("--include-standalone", action="store_true",
-                    help="also place the 34,840 single-college rows (heavier payload)")
+    ap.add_argument("--include-standalone", action="store_true", default=True,
+                    help="place the single-college stand-alone rows too (default on — Sam, "
+                         "2026-08-24: they must be reachable so he can drag them somewhere)")
+    ap.add_argument("--no-standalone", dest="include_standalone", action="store_false",
+                    help="omit them (the older, lighter payload)")
     ap.add_argument("--members-out", default="prototype/ccr_universe_members.json",
                     help="second payload: the draggable member courses per identity")
     args = ap.parse_args()
@@ -124,8 +127,24 @@ def main():
     mem_payload = load_js("unified_courses_members.js")
     mem = mem_payload["members"]
     rows = list(data["rows"])
+    # ── stand-alones ────────────────────────────────────────────────────────
+    # Single-college courses nobody has clustered yet. Sam, 2026-08-24: "make sure
+    # the stand alones are in a cluster in SkyView so I can drop them in the right
+    # place." They are kept in their OWN island per discipline rather than mixed
+    # into the clustered one, for two reasons: a stand-alone is a DIFFERENT KIND of
+    # thing (it asserts no equivalence yet, so it cannot be over-merged or flagged),
+    # and mixing 33k unclustered points into the clustered islands would bury the
+    # 16k identities the merge queue is actually about. Naming the island keeps the
+    # existing keyword fly-to working — searching a discipline finds both.
+    n_sa = 0
     if args.include_standalone:
-        rows += load_js("unified_courses_standalone.js")["rows"]
+        sa = load_js("unified_courses_standalone.js")["rows"]
+        for r in sa:
+            r = dict(r)
+            r["disc"] = f"{r.get('disc') or BLANK} · stand-alone"
+            r["_sa"] = 1
+            rows.append(r)
+        n_sa = len(sa)
 
     # ── group into islands ──────────────────────────────────────────────────
     by_disc = defaultdict(list)
@@ -155,7 +174,8 @@ def main():
                 break
         placed.append((cx, cy, r_isl))
         islands.append({"d": disc, "x": round(cx, 1), "y": round(cy, 1),
-                        "r": round(r_isl, 1), "n": n})
+                        "r": round(r_isl, 1), "n": n,
+                        **({"a": 1} if disc.endswith(" · stand-alone") else {})})
 
         # ── identities inside the island, sunflower-packed ──────────────────
         pts = []
@@ -173,6 +193,7 @@ def main():
                 "f": 1 if any(v is True or (isinstance(v, str) and v)
                               for kk, v in fl.items() if kk != "reviewed") else 0,
                 "r": 1 if fl.get("reviewed") else 0,
+                **({"a": 1} if row.get("_sa") else {}),
             })
         islands[-1]["p"] = pts
 
@@ -191,6 +212,7 @@ def main():
         "_generated_from": data.get("generated_at"),
         "counts": {"identities": sum(i["n"] for i in islands),
                    "disciplines": len(islands),
+                   "stand_alone": n_sa,
                    # members CARRIED for the identities placed here — not the
                    # corpus figure, which counts stand-alone rows this payload
                    # does not place. The two differed by 33k and the smaller one

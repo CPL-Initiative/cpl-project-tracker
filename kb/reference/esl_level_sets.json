@@ -144,31 +144,20 @@
   "_still_unsolved": "⚠️ Sam, 2026-08-24: 'Still won't help with the colleges that don't use level numbers.' Correct. The ladder sets only reach titles carrying a rung, and the word rule only reaches titles carrying a level word. What is left is the pile with NEITHER — 543 folds classified `default-beginning`, of which 400 carry no level assertion in their catalog description either. That pile needs a different mechanism entirely.",
   "_note_L2": "⚠️ L=2 is Sam's ruling of 2026-08-24, taken AFTER being shown that the 21 colleges reading as 2-rung are large ESL providers (De Anza, Santa Ana, Saddleback, North Orange Continuing Education) — so a 2-rung read is more likely a PARTIAL VIEW of the ladder than a 2-level program. He ruled L1=Intermediate, L2=Advanced: there is NO Beginning band at L=2, because a '1' at these colleges is not the bottom of their ladder. This is a domain judgment about specific institutions, not an extension of the L>=3 pattern — do not 'regularise' it to 1=Beginning.",
   "noncredit_shift": {
-    "_about": "A NONCREDIT course sits one band BELOW where its college's ladder rung would put a credit course, because noncredit ESL is generally preparation FOR college ESL. Applied ONLY on the ladder path: a course that states its level in words keeps that level, here as everywhere.",
+    "_about": "A NONCREDIT course sits one band BELOW where its college's ladder rung would put a credit course, because noncredit ESL is generally preparation FOR college ESL. Applied ONLY on the ladder path — a course stating its level in words keeps it.",
     "_ruled_by": "Sam Lee (map@rccd.edu)",
     "_ruled_at": "2026-08-24",
-    "_why": "Sam, 2026-08-24, first on NOCE — \"NOCE's ESL for Academic Success I/II 1=B and 2=I (because it is NC, it is generally a prep course for college ESL)\" — then, when it was implemented narrowly as a single-institution override: \"Scope it to NC not just NOCE.\" The narrow scoping was mine and he overruled it.",
-    "_reach": "1,354 of the 3,123 member courses in the spot-check sample are noncredit, across 94 colleges and 1,108 identities. 754 carry no credit_type at all and are NOT shifted — absence of evidence is not evidence of noncredit.",
-    "credit_type_values_treated_as_noncredit": [
-      "Other Noncredit Enhanced Funding",
-      "Non-Enhanced Funding",
-      "Workforce Preparation Enhanced Funding"
+    "_why": "Sam, first on NOCE — \"1=B and 2=I (because it is NC, it is generally a prep course for college ESL)\" — then \"Scope it to NC not just NOCE\" when it was implemented as a single-institution override.",
+    "_source": "credit_status, per COURSE, from kb/coci_minted_memberships.json UNION kb/coci_minted_singletons.json['courses'], joined on control_number. 118,195 control numbers carry it; coverage over the ESL corpus is 100%.",
+    "_a_correction_worth_keeping": "⚠️ An earlier cut of this rule keyed on the spot-check worklist's `credit_type`, which is blank on 24% of members INCLUDING the NOCE courses Sam named — so it failed on his own example, and was propped up with a hand-listed set of wholly-noncredit institutions. Sam: \"You should have data for each course as credit or noncredit.\" He was right; the authoritative per-course field existed in the COCI staging files all along. The institution list is GONE — do not reintroduce it. If this rule ever looks under-covered again, check the join before adding a hand-maintained list.",
+    "credit_status_values_treated_as_noncredit": [
+      "Noncredit",
+      "Noncredit Enhanced"
     ],
     "shift": {
       "Advanced": "Intermediate",
       "Intermediate": "Beginning",
       "Beginning": "Beginning"
-    },
-    "_field_gap": "⚠️ credit_type IS BLANK ON 24% OF MEMBERS AND ON THE VERY CASE SAM NAMED. NOCE's 'ESL for Academic Success' rows carry credit_type=None, so a rule keyed on that field alone silently fails exactly where he pointed. Hence the second signal below.",
-    "noncredit_institutions": {
-      "_about": "Institutions that are WHOLLY noncredit, so every course they offer is NC regardless of a blank credit_type. NOT invented here: CLAUDE.md records both as ADULT institutions with their MIS codes (NOCE = NORTH ORANGE ADULT 863/860, SDCCE = SAN DIEGO ADULT 076/070).",
-      "_needs_sam": "⚠️ CONFIRM: are these the only two, and do their credit-suffixed export spellings ('… Credit', '… Cr') belong here too? They read as blank-typed in the ESL data and Sam ruled North Orange is ONE entity, so they are INCLUDED on that basis — but that is an inference about an export artifact, not his ruling, and it is the one part of this rule he has not seen.",
-      "names": [
-        "North Orange Continuing Education",
-        "North Orange Continuing Education Credit",
-        "San Diego College of Continuing Education",
-        "San Diego College of Continuing Education Cr"
-      ]
     }
   }
 }

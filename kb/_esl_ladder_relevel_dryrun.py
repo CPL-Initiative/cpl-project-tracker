@@ -99,12 +99,37 @@ from _esl_relevel_dryrun import (            # the SAME reader — never a secon
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SETS = "kb/reference/esl_level_sets.json"
+MEMBERSHIPS = "kb/coci_minted_memberships.json"
+SINGLETONS = "kb/coci_minted_singletons.json"
 PRIOR_PLAN = "kb/esl_relevel_out/2026-08-24/plan.json"    # the 32 already applied
 ORDER = ["Beginning", "Intermediate", "Advanced"]
 MAX_LADDER = 9                                            # Sam's table stops here
 MIN_RUNGS = 2                                             # one rung is not a ladder
 MIN_LENGTH = 2                                            # Sam ruled L=2 on 2026-08-24
 ESL_DISCIPLINE = "English as a Second Language"
+
+
+def credit_status_by_cn():
+    """control_number -> credit_status, over the whole COCI staging surface.
+
+    Sam, 2026-08-24: "You should have data for each course as credit or noncredit." He was
+    right — this join covers 118,195 control numbers and 100% of the ESL corpus. The first
+    cut of the noncredit rule used the spot-check worklist's `credit_type` instead, which is
+    blank on 24% of members and, awkwardly, on the exact NOCE courses he had just ruled on.
+    """
+    out = {}
+    mm = json.load(open(os.path.join(ROOT, MEMBERSHIPS), encoding="utf-8"))
+    for plist in (mm.get("memberships") or mm).values():
+        for m in plist:
+            cn = str(m.get("control_number") or "").strip().upper()
+            if cn and m.get("credit_status"):
+                out[cn] = m["credit_status"]
+    sg = json.load(open(os.path.join(ROOT, SINGLETONS), encoding="utf-8"))["courses"]
+    for v in sg.values():
+        cn = str(v.get("control_number") or "").strip().upper()
+        if cn and v.get("credit_status"):
+            out.setdefault(cn, v["credit_status"])
+    return out
 
 
 def load_sets():
@@ -122,8 +147,8 @@ def load_sets():
             for rung in bands.get(band) or []:
                 table[(int(length), rung)] = band
     ns = d.get("noncredit_shift") or {}
-    over = {"nc_values": set(ns.get("credit_type_values_treated_as_noncredit") or ()),
-            "nc_colleges": set((ns.get("noncredit_institutions") or {}).get("names") or ()),
+    over = {"nc_values": set(ns.get("credit_status_values_treated_as_noncredit") or ()),
+            "credit_status": credit_status_by_cn(),
             "shift": ns.get("shift") or {}}
     return d, table, over
 
@@ -205,13 +230,12 @@ def member_votes(row, ladders, table, over=None):
         # A NONCREDIT course sits one band below the same rung on a credit ladder — Sam's
         # ruling, scoped to NC at his explicit instruction. Ladder path only; a stated level
         # word never reaches here.
-        # TWO signals, because credit_type is blank on 24% of members — including NOCE's
-        # "ESL for Academic Success", the case Sam named. A wholly-noncredit institution is
-        # NC whatever the field says.
+        # Noncredit shifts one band down (Sam). Read from the AUTHORITATIVE per-course
+        # credit_status joined on control_number — 100% coverage — not the worklist's
+        # `credit_type`, which is blank on a quarter of members and on the case he named.
         o = over or {}
-        is_nc = (str(m.get("credit_type")) in o.get("nc_values", ())
-                 or col in o.get("nc_colleges", ()))
-        if b and is_nc:
+        cn = str(m.get("control_number") or "").strip().upper()
+        if b and o.get("credit_status", {}).get(cn) in o.get("nc_values", ()):
             b = o["shift"].get(b) or b
         if b is None:
             abstain[f"rung {n} is above that college's {length}-rung ladder"] += 1
