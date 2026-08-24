@@ -1,0 +1,562 @@
+{
+ "_status": "DRY-RUN — read-only. No curation write performed.",
+ "_date": "2026-08-24",
+ "_ruling": "Sam, 2026-08-24: 'For ESL with Levels indicated: 0-2 = Beginning; 3-5 = Intermediate; 6-10 = Advanced' (and 'Level 6 ESL can go in Advanced'). Supersedes the P-4 pinning 1-2 / 3-4 / 5+.",
+ "_ruling_by": "Sam Lee (map@rccd.edu)",
+ "_bands": [
+  {
+   "from": 0,
+   "to": 2,
+   "band": "Beginning"
+  },
+  {
+   "from": 3,
+   "to": 5,
+   "band": "Intermediate"
+  },
+  {
+   "from": 6,
+   "to": 10,
+   "band": "Advanced"
+  }
+ ],
+ "_guards": [
+  "a level WORD outranks a number (ESOL M90WL 'Beginning Skills 9')",
+  "a grade range is not a level (ESOL M90DB 'K-12')",
+  "roman numerals stop at VII (ESOL M90WH 'Beginning Skills 2 X')"
+ ],
+ "_fold_cohort": "package-esl-s187@bot",
+ "counts": {
+  "folds_considered": 1990,
+  "purpose_carve_outs_skipped": 181,
+  "unchanged": 1777,
+  "re_levels": 32,
+  "catalog_agrees": 7,
+  "catalog_disagrees": 16,
+  "catalog_silent": 9
+ },
+ "by_move": {
+  "Beginning -> Advanced": 1,
+  "Advanced -> Intermediate": 31
+ },
+ "skipped_purpose_buckets": [
+  {
+   "id": "ESOL M1159",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1288",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1144",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1196",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1008",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1023",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1032",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1024",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M1033",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9013",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9034",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9170",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9090",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9262",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9002",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9111",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9154",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9237",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9238",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  },
+  {
+   "id": "ESOL M9242",
+   "bucket": "Vocational ESL",
+   "why": "purpose carve-out"
+  }
+ ],
+ "changes": [
+  {
+   "id": "ESLN M9017",
+   "title": "English as a Second Language 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M1046",
+   "title": "Adv Listening/Speaking 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M1047",
+   "title": "Integrated ESL Skills, Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M10EN",
+   "title": "Adv Writing and Grammar 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10EO",
+   "title": "Adv Reading/Vocabulary 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10EP",
+   "title": "ESL Core Course Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M10EQ",
+   "title": "ESL Listening/Speaking, Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10ER",
+   "title": "ESL Reading/Writing, Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10ES",
+   "title": "Grammar Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10ET",
+   "title": "Grammar, Writing and Reading Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10EU",
+   "title": "Reading Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10EV",
+   "title": "Writing Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10NS",
+   "title": "College English as a Second Language 5: Writing and Grammar",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10NX",
+   "title": "College English as a Second Language 5: Reading and Vocabulary",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10PQ",
+   "title": "Reading & Composition 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10VB",
+   "title": "Grammar 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10XJ",
+   "title": "Listening & Speaking 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M1211",
+   "title": "College ESL 5: Writing and Grammar",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M1217",
+   "title": "College ESL 5: Listening and Speaking",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M1220",
+   "title": "College ESL 5: Reading and Vocabulary",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true,
+   "was_over_claim": true
+  },
+  {
+   "id": "ESOL M9061",
+   "title": "English as a Second Language Level 5 Condensed",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M9063",
+   "title": "English as a Second Language Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M9064",
+   "title": "ESL Grammar 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M9065",
+   "title": "ESL Int High 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M9066",
+   "title": "ESL - Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M9067",
+   "title": "Reading Skills for ESL Students 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M90IS",
+   "title": "ESL Level 5 Bridge for College and Job Success",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M90IT",
+   "title": "English as a Second Language College Readiness Level 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "level-word-number",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M90IV",
+   "title": "ESL Vocabulary and Pronunciation 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M90IW",
+   "title": "ESL Reading and Writing 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": false,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M91CA",
+   "title": "ESL - Comprehensive 5",
+   "from": "Advanced",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "signal": "numeric",
+   "level": 5,
+   "read_by": "trailing-integer",
+   "catalog_says": null,
+   "catalog_agrees": null,
+   "was_over_claim": false
+  },
+  {
+   "id": "ESOL M10FD",
+   "title": "Verb Review 8",
+   "from": "Beginning",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "signal": "numeric",
+   "level": 8,
+   "read_by": "trailing-integer",
+   "catalog_says": "Advanced",
+   "catalog_agrees": true,
+   "was_over_claim": false
+  }
+ ]
+}

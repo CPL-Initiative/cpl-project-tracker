@@ -62,3 +62,12 @@ jobs:
       # check.
       - name: ESL fold spot-check lint (kb/_build_esl_fold_spotcheck.py)
         run: python3 tests/esl_fold_spotcheck_test.py
+      # ESL level bands (Session 188) — Sam ratified 0-2 Beginning / 3-5 Intermediate /
+      # 6-10 Advanced, which supersedes the P-4 pinning and required extending the reader
+      # from single-digit 1-7 to 0-10. That extension misfires without three guards, each
+      # found in live data: a level WORD must beat a number ("Beginning Skills 9"), a grade
+      # range is not a level ("K-12"), and roman numerals stop at VII ("Beginning Skills 2
+      # X" reads the trailing X as 10). All three are proven to fail the test when broken.
+      # Pure-stdlib python; same non-required check.
+      - name: ESL level-band lint (kb/_esl_relevel_dryrun.py)
+        run: python3 tests/esl_relevel_bands_test.py

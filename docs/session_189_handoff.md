@@ -47,20 +47,37 @@ way and are excluded, never counted as agreement. Fold them in and `default-begi
 
 ---
 
-## Your first job: nothing, until Sam answers
+## ✅ SAM RULED THE BANDS — this supersedes the P-4 pinning
 
-**Two calls are his and both block the ESL lane.** Do not re-level anything without them:
+**Sam, 2026-08-24, in session:** *"Level 6 ESL can go in Advanced"*, then
+*"For ESL with Levels indicated: **0-2 = Beginning; 3-5 = Intermediate; 6-10 = Advanced**"*.
 
-1. **The 9 numeric over-claims** — by hand, or **move the `5+` cut to `6+`**, which resolves 6
-   of the 8 Advanced ones by rule. All 9 are *"high-intermediate"/"high-beginning"* rounded
-   up: the cut sits one rung too low for 6-rung ladders. `ESOL M1211` (8 colleges) and
-   `ESOL M1217` (7) are the LACCD *College ESL V* series — a **district convention**.
-   ⚠️ `ESOL M1217` is not unanimous (six say high-intermediate, LA Mission says low-advanced).
-2. **Whether the numeric pinning survives at all.** At 49.2% it isn't earning its place, and a
-   better constant won't fix it — a title number can't be read without that college's ladder length.
+That replaces the ratified P-4 pinning (1-2 / 3-4 / 5+). Implemented and dry-run:
+`kb/_esl_relevel_dryrun.py` → `kb/esl_relevel_out/2026-08-24/report.md`, guarded by
+`tests/esl_relevel_bands_test.py` (wired into CI).
 
-**222 proposals are staged and nothing is written to Supabase.** Read
-`kb/esl_fold_spotcheck/2026-08-24/report.md` before doing anything here.
+**32 re-levels: 31 Advanced→Intermediate, 1 Beginning→Advanced.** Six of the nine
+over-claims resolve and all six agree with the college's own catalog. `ESOL M1050`
+(Level 6) stays **Advanced** — his explicit call, now pinned by a test.
+
+⚠️ **The measured "wrong rate" goes UP under his bands (49.2% → 54.5%) and that is not an
+objection.** 16 Level-5 courses are called *advanced* in their own catalogs. But the catalogs
+are ~116 colleges disagreeing with EACH OTHER (rung 1 splits 47% Beginning / 44%
+Intermediate), and a statewide mapping exists to override local variance. Treat the number as
+**blast radius**, never a verdict.
+
+⚠️ **The reader needed extending to 0-10 and that is where the danger is.** Three guards, each
+from live data: a level WORD beats a number (`Beginning Skills 9`); a grade range is not a
+level (`K-12`); roman numerals stop at VII (`Beginning Skills 2 X` reads the trailing X as
+10). All three proven to fail the test when broken.
+
+**STILL OPEN — the apply.** The 32 are a DRY-RUN; **nothing is written to Supabase**. Sam had
+not given the go when Session 188 ended. Also still open: `ESLN M9015` (rung 4) and
+`ESOL M1040` (rung 3), whose catalogs say *high-beginning* while his bands put them at
+Intermediate — a separate call.
+
+Read `kb/esl_fold_spotcheck/2026-08-24/report.md` and
+`kb/esl_relevel_out/2026-08-24/report.md` before doing anything here.
 
 ## What shipped
 
