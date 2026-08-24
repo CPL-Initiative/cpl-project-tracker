@@ -1732,7 +1732,14 @@
       ".cpl-mem .mb-sources-h{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}",
       ".cpl-mem .mb-srclist{margin:0;padding-left:1.5em;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
       ".cpl-mem .mb-srclist li{margin:0 0 3px;}",
-      ".cpl-mem .mb-srclink{color:var(--accent-link);text-decoration:none;font-weight:600;}",
+      // ⚠ A REAL TARGET, and it is load-bearing for more than itself. The inline
+      // superscript citations are exempt from the 24px minimum only because SC
+      // 2.5.8 exempts a target positioned by the flow of its sentence AND
+      // because these rows repeat every one of them at full size. At 15px they
+      // did not, so the exemption was unearned and BOTH were undersized —
+      // caught by scripts/check_memory_briefing_layout.js, which asserts the
+      // exemption rather than trusting the argument for it.
+      ".cpl-mem .mb-srclink{display:inline-block;padding:5px 0;color:var(--accent-link);text-decoration:none;font-weight:600;}",
       ".cpl-mem .mb-srclink:hover,.cpl-mem .mb-srclink:focus-visible{text-decoration:underline;}",
       ".cpl-mem .mb-srcslug{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--text-faint);}",
       ".cpl-mem .mb-srcflag{display:inline-block;margin-top:2px;font-size:.7rem;font-weight:700;color:var(--st-warn);border:1px solid var(--st-warn);border-radius:6px;padding:0 5px;}",
