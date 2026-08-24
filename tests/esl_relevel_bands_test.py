@@ -92,7 +92,17 @@ art = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
 if os.path.exists(art):
     import json
     p = json.load(open(art, encoding="utf-8"))
-    check("read-only status", p["_status"].startswith("DRY-RUN"), True)
+    # ⚠️ The receipt legitimately transitions DRY-RUN -> APPLIED: Rule 7 requires an apply
+    #    that consumes a dry-run plan to RESTAMP its _status. So assert the status is one of
+    #    the two known states, and that an APPLIED receipt names the cohort that wrote it —
+    #    an APPLIED receipt with no cohort is unrollbackable.
+    st = p["_status"]
+    check("status is a known state",
+          st.startswith("DRY-RUN") or st.startswith("APPLIED"), True)
+    if st.startswith("APPLIED"):
+        check("an applied receipt names its cohort", bool(p.get("_cohort")), True)
+        check("an applied receipt records what landed vs planned",
+              p.get("_landed", {}).get("rows_returned") == p["counts"]["re_levels"], True)
     ch = {c["id"]: c for c in p["changes"]}
     # Sam's explicit call: Level 6 stays Advanced, so it must NOT be re-leveled
     check("ESOL M1050 (Level 6) is NOT re-leveled", "ESOL M1050" in ch, False)

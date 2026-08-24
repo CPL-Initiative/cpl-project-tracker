@@ -1,6 +1,6 @@
 # ESL re-level — dry-run against Sam's bands
 
-_Generated 2026-08-24 · **read-only, nothing written** · ruling by Sam Lee (map@rccd.edu)_
+_Generated 2026-08-24 · ✅ **APPLIED** under cohort `relevel-esl-s188@bot` (Sam: "Yes on 32") · ruling by Sam Lee (map@rccd.edu)_
 
 > Sam, 2026-08-24: 'For ESL with Levels indicated: 0-2 = Beginning; 3-5 = Intermediate; 6-10 = Advanced' (and 'Level 6 ESL can go in Advanced'). Supersedes the P-4 pinning 1-2 / 3-4 / 5+.
 

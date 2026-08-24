@@ -95,6 +95,61 @@ Intermediate — a separate call.
 Read `kb/esl_fold_spotcheck/2026-08-24/report.md` and
 `kb/esl_relevel_out/2026-08-24/report.md` before doing anything here.
 
+## ✅ SAM AUTHORED THE ESL LEVEL SETS — implement these FIRST
+
+He revised his own bands after seeing the ladder-length data. **The authored sets are
+`kb/reference/esl_level_sets.json`** — attributed DATA, not code. Implement from that file.
+
+| Ladder | Colleges | B | I | A |
+|---|---:|---|---|---|
+| 3 | 20 | 1 | 2 | 3 |
+| **4** | **22** | **1** | **2,3** | **4** |
+| 5 | 7 | 1,2 | 3,4 | 5 |
+| 6 | 16 | 1,2 | 3,4 | 5,6 |
+| 7 | 3 | 1,2,3 | 4,5 | 6,7 |
+| 8 | 1 | 1,2,3 | 4,5,6 | 7,8 |
+| 9 | 1 | 1,2,3 | 4,5,6 | 7,9 |
+
+⚠️ **L=4 is the one cell where Sam diverges from an even split** — an even split puts the
+extra rung LOW (1,2|3|4); he put it in the MIDDLE (1|2,3|4). **L=4 is the largest group at 22
+colleges**, so this is the highest-impact cell. Do not "simplify" it back.
+
+⚠️ **Also his:** `low-b → high-b = B`, `low int → high int = I`, `low adv → high adv = A`.
+The current classifier already folds `high-`/`low-` to the base band; add the test.
+
+### ⚠️ WHAT THIS DOES TO THE 32 ALREADY APPLIED
+
+**The 32 re-levels ARE LIVE** — cohort `relevel-esl-s188@bot`, applied 2026-08-24 on Sam's
+"Yes on 32", verified by arithmetic (M1141 267→237, M9168 1079→1078, M9256 463→494).
+
+**But 29 of the 32 flip back under the per-ladder sets** — 17× rung 5 of a 6-ladder and 12×
+rung 5 of a 5-ladder, all Intermediate → **Advanced** again. The catalog evidence agrees with
+the per-ladder reading (of the 32, **16 disagreed with the college's own catalog, 7 agreed**).
+
+**Sam has NOT answered the rollback offer.** Options put to him: roll the 31 downward moves
+back and keep the 1 upward (`ESOL M10FD`, rung 8, Advanced under both schemes), or leave them
+until SkyView shows the effect. **Rollback is one statement against the cohort — do not
+re-derive it.** Ask him before either applying the new sets or rolling back.
+
+### ⚠️ THE PART NONE OF THIS SOLVES
+
+Sam: *"Still won't help with the colleges that don't use level numbers."* Right. Ladder sets
+reach titles with a rung; the word rule reaches titles with a level word. **543 folds have
+NEITHER** (`default-beginning`), and **400 of those carry no level assertion in their catalog
+description either.** That pile needs a different mechanism, not a better rule.
+
+## 🔭 SAM'S LONG-RANGE ASK — propose-rules-per-cluster in SkyView
+
+*"it may be helpful for an intermediate step in SkyView where I can ask you on the tab to
+analyze a subject cluster and propose rules I could respond to, based on a similar analysis
+you did for ESL, which happens to be the messiest regular set of courses. Would really come in
+handy for all the loaner courses out there (primarily NC)."*
+
+That is this session's whole method turned into a feature: measure a cluster, calibrate its
+signals, propose bands/rules, let the curator rule, then apply. **ESL is the worked example** —
+`kb/_build_esl_fold_spotcheck.py` (calibration) → `kb/_esl_relevel_dryrun.py` (rules as data +
+guards) → gated apply. Not scoped yet; capture it before it is lost.
+
 ## ✅ SAM APPROVED A BUILD — this is your priority workstream
 
 He asked for mint-on-drag in SkyView, invited pushback, then took the counter-proposal:

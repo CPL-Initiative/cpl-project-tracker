@@ -1,0 +1,25 @@
+{
+  "_about": "ESL level bands per LADDER LENGTH — authored by Sam, 2026-08-24, in session. Attributed DATA, never hard-coded: a curator ruling lives in a file so it can be corrected without a code change (the pattern set by kb/reference/college_identity_rulings.json).",
+  "_ruled_by": "Sam Lee (map@rccd.edu)",
+  "_ruled_at": "2026-08-24",
+  "_supersedes": "The absolute bands 0-2 / 3-5 / 6-10 that Sam ruled earlier the same day, which in turn superseded the P-4 pinning 1-2 / 3-4 / 5+. Sam revised after seeing the measured ladder-length distribution.",
+  "_status": "AUTHORED — not yet implemented. Session 189 to apply.",
+  "_why": "Colleges run ESL ladders of different lengths, so an absolute rung number means different things at different colleges. Measured over 70 colleges with a readable ladder: L=3 20 colleges, L=4 22, L=5 7, L=6 16, L=7 3, L=8 1, L=9 1.",
+  "by_ladder_length": {
+    "3": {"Beginning": [1], "Intermediate": [2], "Advanced": [3], "colleges": 20},
+    "4": {"Beginning": [1], "Intermediate": [2, 3], "Advanced": [4], "colleges": 22},
+    "5": {"Beginning": [1, 2], "Intermediate": [3, 4], "Advanced": [5], "colleges": 7},
+    "6": {"Beginning": [1, 2], "Intermediate": [3, 4], "Advanced": [5, 6], "colleges": 16},
+    "7": {"Beginning": [1, 2, 3], "Intermediate": [4, 5], "Advanced": [6, 7], "colleges": 3},
+    "8": {"Beginning": [1, 2, 3], "Intermediate": [4, 5, 6], "Advanced": [7, 8], "colleges": 1},
+    "9": {"Beginning": [1, 2, 3], "Intermediate": [4, 5, 6], "Advanced": [7, 8, 9], "colleges": 1}
+  },
+  "by_level_word": {
+    "_about": "Sam, same session: the high-/low- modifiers collapse to their base band.",
+    "Beginning": ["low beginning", "beginning", "high beginning"],
+    "Intermediate": ["low intermediate", "intermediate", "high intermediate"],
+    "Advanced": ["low advanced", "advanced", "high advanced"]
+  },
+  "_note_L4": "⚠️ L=4 is where Sam's ruling DIVERGES from an even split. An even three-way split of 4 rungs puts the extra rung in the LOWER band (1,2 | 3 | 4); Sam put it in the MIDDLE (1 | 2,3 | 4). L=4 is the LARGEST group at 22 colleges, so this is the single highest-impact cell in the table. Do not 'simplify' it back to an even split.",
+  "_still_unsolved": "⚠️ Sam, 2026-08-24: 'Still won't help with the colleges that don't use level numbers.' Correct. The ladder sets only reach titles carrying a rung, and the word rule only reaches titles carrying a level word. What is left is the pile with NEITHER — 543 folds classified `default-beginning`, of which 400 carry no level assertion in their catalog description either. That pile needs a different mechanism entirely."
+}

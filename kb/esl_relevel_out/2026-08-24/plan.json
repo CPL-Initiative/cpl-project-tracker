@@ -1,5 +1,5 @@
 {
- "_status": "DRY-RUN — read-only. No curation write performed.",
+ "_status": "APPLIED — live write completed 2026-08-24 via Supabase MCP under Rule 10. Sam approved: \"Yes on 32\".",
  "_date": "2026-08-24",
  "_ruling": "Sam, 2026-08-24: 'For ESL with Levels indicated: 0-2 = Beginning; 3-5 = Intermediate; 6-10 = Advanced' (and 'Level 6 ESL can go in Advanced'). Supersedes the P-4 pinning 1-2 / 3-4 / 5+.",
  "_ruling_by": "Sam Lee (map@rccd.edu)",
@@ -558,5 +558,28 @@
    "catalog_agrees": true,
    "was_over_claim": false
   }
- ]
+ ],
+ "_applied_at": "2026-08-24T18:30:23.986345+00:00",
+ "_applied_by": "Sky188 (Session 188)",
+ "_rule10": {
+  "fresh_live_read": "32 planned / 32 live merge rows, ALL owned by package-esl-s187@bot, 0 owned by anyone else, 0 pending unified_title_merge_confirm on these",
+  "write_mode": "guarded UPDATE (NOT insert-on-conflict — the rows already exist, so ON CONFLICT DO NOTHING would have silently no-opped, which is how the ESL fold lost 3 of 7 renames)",
+  "guards": [
+   "field = merge_into",
+   "reviewer_email = package-esl-s187@bot (never a curator row)",
+   "current value = the expected old target (a concurrent change drops that row)"
+  ],
+  "curator_rows_untouched": true
+ },
+ "_landed": {
+  "rows_returned": 32,
+  "rows_planned": 32,
+  "verified_independently": {
+   "ESOL M1141 Advanced": "267 -> 236 (old cohort) + 1 (new) = 237  [-31, +1]",
+   "ESOL M9168 Beginning": "1079 -> 1078  [-1]",
+   "ESOL M9256 Intermediate": "463 (old) + 31 (new) = 494  [+31]"
+  },
+  "note": "counts re-read from live after the write; every survivor moved by exactly the planned amount. Rollback = flip the 32 relevel-esl-s188@bot rows back."
+ },
+ "_cohort": "relevel-esl-s188@bot"
 }
