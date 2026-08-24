@@ -2801,6 +2801,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
+  "memory-briefing",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -2828,14 +2829,29 @@ function normalizeSurface(raw: any): string | null {
  * the call site: tests/cpl_memory_autogen.test.js reads QUERY_CAP_DRAFTING out
  * of this file and asserts the client's envelope still fits under it, which is
  * the check that was missing when the envelope grew to 984. */
-const DRAFTING_SURFACES = new Set(["memory-autogen"]);
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
 const QUERY_CAP_CHAT = 1000;
 const QUERY_CAP_DRAFTING = 6000;
+/* ⚠ THE BRIEFING SENDS A CORPUS, NOT A QUESTION. cpl_memory.js's Briefing hands
+ * over a digest of the memory rows on screen and asks for a read-back of them,
+ * so its `query` is legitimately tens of times a chat question. The client
+ * builds to this budget and REPORTS what it had to leave out — a briefing that
+ * silently read 48 of 536 rows would read as a census of the table. */
+const QUERY_CAP_BRIEFING = 20000;
+/* Every drafting surface gets its own budget. Kept as a table rather than a
+ * ternary so adding a surface is one line and cannot silently inherit the wrong
+ * one; tests/sierra_surface.test.js pins this keyset equal to
+ * DRAFTING_SURFACES, so a surface declared in one and forgotten in the other is
+ * a failing test rather than a caller quietly capped at 1,000. */
+const SURFACE_QUERY_CAPS: Record<string, number> = {
+  "memory-autogen": QUERY_CAP_DRAFTING,
+  "memory-briefing": QUERY_CAP_BRIEFING,
+};
 function queryCapFor(surface: string | null): number {
-  return isDraftingSurface(surface) ? QUERY_CAP_DRAFTING : QUERY_CAP_CHAT;
+  return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
 }
 
 /* ⚠ UNTYPED SIGNATURES ON PURPOSE, on both functions below. tests/lib/lift_ts.js
