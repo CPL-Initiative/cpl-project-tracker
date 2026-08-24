@@ -1,4 +1,5 @@
-/* CCR Atlas — decision view: the scoped force graph + the move affordance.
+/* SkyView — THE graph view (Sam, 2026-08-24: "SkyView" means the graph view,
+   not the surrounding informational elements). Scoped force graph + move affordance.
  *
  * Scope is deliberate. The corpus is ~17k identities over ~135k local courses;
  * a graph of that is the hairball Obsidian becomes at a few hundred notes.

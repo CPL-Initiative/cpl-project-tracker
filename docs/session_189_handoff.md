@@ -71,6 +71,22 @@ from live data: a level WORD beats a number (`Beginning Skills 9`); a grade rang
 level (`K-12`); roman numerals stop at VII (`Beginning Skills 2 X` reads the trailing X as
 10). All three proven to fail the test when broken.
 
+⚠️ **THE BANDS ARE INTERIM — Sam, 2026-08-24:** *"The level rulings for ESL will be a bit
+messy until SME discussions happen. Colleges have differing total numbers of levels, some
+1-4, 1-6, 1-7."* Measured over **70 colleges** with a readable ESL ladder — top rung 3: 20
+colleges · 4: 22 · 5: 7 · 6: 16 · 7: 3 · 8-9: 2. **42 of 70 top out at rung 3 or 4**, so for
+them rung 3-4 IS Advanced, which is why n=3 and n=4 keep disagreeing.
+
+⭐ **Banding by position in the college's OWN ladder is wrong on 33.3%**, against 49.2% (old
+pinning) and 54.5% (Sam's bands). Ladder length is **derivable from titles**, so the SME
+conversation is **~70 ladder confirmations, not 434 row reviews**. That is the shape to build.
+
+⚠️ **Sam wants to make these adjustments in the SkyView graph view, and it CANNOT do that
+today** — verified: **0 of the 9** over-claims appear in `prototype/ccr_universe.json`, because
+merged-away identities do not render (#1312 working correctly), and the only write verb moves
+a LOCAL COURSE between identities (`CN:`). What his plan actually needs is a **per-college
+ladder view** — 70 items, each a short ordered list — not row-by-row re-leveling.
+
 **STILL OPEN — the apply.** The 32 are a DRY-RUN; **nothing is written to Supabase**. Sam had
 not given the go when Session 188 ended. Also still open: `ESLN M9015` (rung 4) and
 `ESOL M1040` (rung 3), whose catalogs say *high-beginning* while his bands put them at

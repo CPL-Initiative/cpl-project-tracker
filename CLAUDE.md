@@ -347,6 +347,12 @@ into `docs/reference/` (pipeline_reference · kb_build_status · mid_lifecycle �
   `american_spelling` in `kb/_docs_audit.py` — it is a lint finding, not a
   memory. ⚠️ It scans PROSE only: `grey` is a valid CSS keyword and a token name
   is not a spelling, so never blind-replace inside code.
+- **SkyView, not "Atlas" (Sam, 2026-08-24).** The CCR curation prototype is **SkyView**.
+  ⚠️ **When Sam says "SkyView" he means the GRAPH VIEW specifically** — the canvas of
+  identities you pan, search and drag on — **not** the surrounding informational elements
+  (discipline cells, the ESL packaging card, the decision list). Those are panes *on* the
+  SkyView page; only the graph is SkyView. Files still carry `ccr_atlas_*` paths; the
+  user-facing name is what changed.
 - **"Activities" = activities AND their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
   projects under them. The sidebar label is **Activities** (renamed from

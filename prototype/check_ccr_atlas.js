@@ -1,4 +1,4 @@
-/* Layout + behaviour check for the CCR Atlas prototype.
+/* Layout + behavior check for the SkyView prototype.
  *
  * Deliberately NOT part of `npm test` — jsdom has no layout engine, so the
  * defects this catches (a graph that renders zero nodes, a page that scrolls
