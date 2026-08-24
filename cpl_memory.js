@@ -578,6 +578,11 @@
       var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
       var toolHost = el("div", "rp-toolhost");
       edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
+      // Sam, 2026-08-24: a briefing citation should land on the row READY TO
+      // EDIT, not merely selected. The intent is a flag rather than a call from
+      // the click handler because the form lives inside this render — the click
+      // happens one render earlier, when these elements do not exist yet.
+      if (pendingEdit === d.id) { pendingEdit = null; edit.onclick(); }
       revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
       tools.appendChild(edit); tools.appendChild(revise);
       box.appendChild(tools); box.appendChild(toolHost);
@@ -604,6 +609,17 @@
       ul.appendChild(li);
     });
     box.appendChild(ul);
+  }
+  // Set to a slug when the reader arrived by clicking something that should open
+  // that entry for editing (a briefing citation). Cleared the moment it fires.
+  var pendingEdit = null;
+  // Arriving from a citation is a deliberate navigation, so bring the pane to
+  // the reader on EVERY width — selectEntry's own scroll is mobile-only, which
+  // is right for a click inside the list and wrong for a jump across views.
+  function scrollRippleIntoView() {
+    if (!appEl) return;
+    var r = appEl.querySelector(".mem-ripple");
+    if (r && r.scrollIntoView) { try { r.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { } }
   }
   function selectEntry(id) { view = { mode: "entry", id: id }; render(); if (window.matchMedia && window.matchMedia("(max-width:760px)").matches && appEl) { var r = appEl.querySelector(".mem-ripple"); if (r) r.scrollIntoView({ behavior: "smooth", block: "start" }); } }
   function selectTarget(t) { view = { mode: "target", target: t }; render(); }
@@ -868,9 +884,15 @@
       "———",
       "The entries above are an internal team's working memory. Brief me on them: tell me what",
       "YOU understand from them, as the agent who would read them at the start of a piece of work.",
-      "Write it as flowing prose in the first person, opening with \"Here's what I understand from",
-      "these entries\". 4-7 short paragraphs, plain language, no bullet lists and no headings except",
-      "the two named below.",
+      "Write it in the first person, opening with \"Here's what I understand from these entries\".",
+      "4-7 short paragraphs, no bullet lists, and no headings except the two named below.",
+      "",
+      "PLAIN LANGUAGE. This is the requirement, not a style note. Short sentences. Everyday words.",
+      "Say the thing directly instead of building up to it. Write for a smart colleague who does not",
+      "know this codebase: if a term is unavoidable, explain it in the same sentence the first time",
+      "it appears. No aphorisms, no rhetorical flourishes, no long stacked clauses. If it could be",
+      "said in half the words, say it in half the words. Someone busy should get through this in two",
+      "minutes and know what these entries mean.",
       "- Cite the entry behind every substantive claim by its slug in square brackets, e.g. [f8].",
       "  Cite ONLY slugs that appear above. Never invent one.",
       "- Intersperse brief concrete examples from the entries themselves — a number, a name, a case —",
@@ -907,13 +929,23 @@
       return { text: String(full), meta: meta };
     });
   }
-  // Turn [slug] citations into links, walking TEXT NODES rather than the HTML
-  // string — a regex over rendered HTML can match inside an attribute. A slug
-  // that is not in this view is FLAGGED, not dropped: a citation to something
-  // the model was never shown is a finding, and silently plain text hides it.
+  // Turn [slug] citations into NUMBERED links, walking TEXT NODES rather than the
+  // HTML string — a regex over rendered HTML can match inside an attribute.
+  //
+  // ⭐ NUMBERED, NOT INLINE SLUGS, and that came from looking at it rendered.
+  // This table's slugs are whole sentences — `sierra-credit-outages-recurred-
+  // twice-and-are-now-monitored` — so printing them inline put more citation on
+  // the page than prose and broke the plain reading the briefing exists to give.
+  // A superscript number keeps the claim readable; the numbered source list
+  // underneath keeps it followable, which is the half that must not be traded.
+  //
+  // ⚠ A slug that is not in this view is still FLAGGED IN PLACE, with its text
+  // visible — a citation to something the model was never shown is a finding,
+  // and folding it into the tidy numbering would hide exactly that.
   function linkBriefSlugs(root, shown) {
-    if (!root || !root.ownerDocument) return { cited: 0, unknown: 0 };
-    var doc = root.ownerDocument, stat = { cited: 0, unknown: 0 };
+    if (!root || !root.ownerDocument) return { cited: 0, unknown: 0, sources: [] };
+    var doc = root.ownerDocument, stat = { cited: 0, unknown: 0, sources: [] };
+    var num = {};   // slug -> citation number, by order of first appearance
     var nodes = [], walk = function (n) {
       for (var i = 0; i < n.childNodes.length; i++) {
         var c = n.childNodes[i];
@@ -929,10 +961,21 @@
         if (!m) { frag.appendChild(doc.createTextNode(piece)); return; }
         var slug = m[1];
         if (byId[slug]) {
+          if (!num[slug]) {
+            num[slug] = stat.sources.length + 1;
+            stat.sources.push({ n: num[slug], slug: slug, entry: byId[slug],
+                                outside: !!(shown && !shown[slug]) });
+          }
           var a = doc.createElement("a");
           a.href = "#"; a.className = "rp-inl mb-cite"; a.setAttribute("data-ref", slug);
-          a.textContent = slug;
-          if (shown && !shown[slug]) a.title = "This entry exists but is outside the briefed set";
+          a.textContent = String(num[slug]);
+          // ⚠ NO NATIVE `title` — it would double up with the hover card below,
+          // and a native tooltip cannot show the kind, the status or a wrapped
+          // summary. The accessible name carries the same fact for a screen
+          // reader, which never sees either tooltip.
+          a.setAttribute("aria-label", "Entry " + num[slug] + ": "
+            + (byId[slug].title || byId[slug].summary || slug));
+          if (shown && !shown[slug]) a.setAttribute("data-outside", "1");
           frag.appendChild(a); stat.cited += 1;
         } else {
           var b = doc.createElement("span");
@@ -945,6 +988,64 @@
     });
     return stat;
   }
+  // ── The citation hover card (Sam: "superscript numbers with hover over to see
+  // the memory") ────────────────────────────────────────────────────────────
+  //
+  // A native `title` cannot do this job: it shows one unstyled line, appears
+  // after a delay the reader has to wait out, and cannot show the kind, the
+  // status and a wrapped summary together. So this is a real card.
+  //
+  // ⚠ FOCUS OPENS IT TOO, not just hover. A citation is a link, so it is on the
+  // keyboard path whether or not anyone planned for that; if only the mouse can
+  // read the memory behind a number, the number is unreadable to everyone else.
+  // Escape closes it, and it closes on blur and on leaving the citation.
+  var _mbTip = null;
+  function hideCiteCard() {
+    if (_mbTip && _mbTip.parentNode) _mbTip.parentNode.removeChild(_mbTip);
+    _mbTip = null;
+  }
+  function showCiteCard(a, d, panel) {
+    hideCiteCard();
+    if (!d || !panel) return;
+    var km = KMAP[d.kind] || KMAP.fact;
+    var tip = el("div", "mb-tip");
+    tip.setAttribute("role", "tooltip");
+    var head = el("div", "mb-tip-head");
+    var pill = el("span", "mb-tip-kind", km.label);
+    pill.style.setProperty("--kc", "var(" + km.tok + ")");
+    head.appendChild(pill);
+    head.appendChild(el("span", "mb-tip-status", d.status || "proposed"));
+    if (a.getAttribute("data-outside")) head.appendChild(el("span", "mb-srcflag", "outside this view"));
+    tip.appendChild(head);
+    if (d.title) tip.appendChild(el("div", "mb-tip-title", d.title));
+    tip.appendChild(el("div", "mb-tip-sum", String(d.summary || "")));
+    tip.appendChild(el("div", "mb-tip-slug", d.id));
+    panel.appendChild(tip);
+    // Position inside the panel, clamped to it — a card that runs off the right
+    // edge is the same as no card. jsdom has no layout and returns zeros here,
+    // which is harmless: the card still exists and still carries its text.
+    try {
+      var pr = panel.getBoundingClientRect(), ar = a.getBoundingClientRect();
+      var w = tip.offsetWidth || 320;
+      var left = Math.max(8, Math.min((ar.left - pr.left) - w / 2 + ar.width / 2, pr.width - w - 8));
+      tip.style.left = left + "px";
+      tip.style.top = ((ar.bottom - pr.top) + 7) + "px";
+    } catch (e) { }
+    _mbTip = tip;
+  }
+  function wireCiteCards(host) {
+    var panel = host.closest ? host.closest(".mem-brief") : null;
+    if (!panel) panel = host;
+    Array.prototype.forEach.call(host.querySelectorAll("a.mb-cite"), function (a) {
+      var d = byId[a.getAttribute("data-ref")];
+      a.onmouseenter = function () { showCiteCard(a, d, panel); };
+      a.onfocus = function () { showCiteCard(a, d, panel); };
+      a.onmouseleave = hideCiteCard;
+      a.onblur = hideCiteCard;
+      a.onkeydown = function (e) { if (e.key === "Escape") hideCiteCard(); };
+    });
+  }
+
   // Render the briefing text into a host: markdown via the one renderer this
   // dashboard already has (cpl_chat.js), plain paragraphs if it is not loaded —
   // a local markdown re-implementation would be a second renderer to keep in
@@ -959,22 +1060,52 @@
       });
     }
     var stat = linkBriefSlugs(host, shown);
+    // The source list is what makes a numbered citation followable without a
+    // hover, so it is not optional decoration — drop it and the numbers become
+    // unfalsifiable marks. Titles come from the entry, not from the model.
+    if (stat.sources.length) {
+      var src = el("div", "mb-sources");
+      src.appendChild(el("div", "mb-sources-h", "Entries cited"));
+      var ol = document.createElement("ol"); ol.className = "mb-srclist";
+      stat.sources.forEach(function (s0) {
+        var li = document.createElement("li");
+        var a2 = el("a", "mb-srclink", s0.entry.title || s0.entry.summary || s0.slug);
+        a2.href = "#"; a2.setAttribute("data-ref", s0.slug);
+        li.appendChild(a2);
+        li.appendChild(el("span", "mb-srcslug", s0.slug));
+        if (s0.outside) li.appendChild(el("span", "mb-srcflag", "outside this view"));
+        ol.appendChild(li);
+      });
+      src.appendChild(ol);
+      host.appendChild(src);
+    }
     Array.prototype.forEach.call(host.querySelectorAll("[data-ref]"), function (a) {
       a.onclick = function (e) {
         e.preventDefault();
+        hideCiteCard();
+        var slug = a.getAttribute("data-ref"), d = byId[slug];
+        // Ask for the edit form only where one can actually open: a superseded
+        // row has no editor, and without a team session neither does any row.
+        // In those cases this still navigates to the entry, which is the honest
+        // half of the promise rather than a button that does nothing.
+        if (sess && d && d.status !== "superseded") pendingEdit = slug;
         viewMode = "curate";                       // the entry lives in the curate view
-        selectEntry(a.getAttribute("data-ref"));
+        selectEntry(slug);
+        scrollRippleIntoView();
       };
     });
+    wireCiteCards(host);
     return stat;
   }
   // The panel itself, at the top of the Report view. Nothing is saved, ever.
   function renderBriefingPanel(rows, scopeLabel) {
     var box = el("section", "mem-brief");
+    box.style.position = "relative";     // the hover card positions against this
     box.appendChild(el("h2", "mb-h", "How I read these entries"));
     box.appendChild(el("p", "mb-lead",
       "A read-back of the entries below, in my words, with the knowledge base checked against them. "
-      + "Every claim cites the entry behind it — click a slug to open it. This is how an agent reads "
+      + "Every claim carries a numbered citation: hover it to read that entry, click it to "
+      + (sess ? "open that entry for editing" : "jump to that entry") + ". This is how an agent reads "
       + "this table at the start of a piece of work; it is not what the CPL Assistant tells the public, "
       + "which never reads these entries. Nothing here is saved."));
     var row = el("div", "mb-row");
@@ -1583,6 +1714,28 @@
       // A citation to a slug that is not an entry is FLAGGED, not hidden — a
       // claim nobody can follow back is the thing this panel exists to expose.
       // Marked with a word-shaped border + a title, never by color alone.
+      // A citation is a superscript number, not a sentence-long slug — see
+      // linkBriefSlugs. Big enough to click (the whole line-height box), small
+      // enough to stay out of the prose's way.
+      ".cpl-mem .mb-cite{font-family:ui-monospace,Menlo,monospace;font-size:.68em;vertical-align:super;line-height:0;padding:0 .12em;text-decoration:none;border-bottom:0;}",
+      ".cpl-mem .mb-cite:hover,.cpl-mem .mb-cite:focus-visible{text-decoration:underline;}",
+      // The hover/focus card. Opaque surface, not glass: it sits over prose and
+      // has to stay readable (tables and popovers never on glass, house rule).
+      ".cpl-mem .mb-tip{position:absolute;z-index:40;width:min(340px,88vw);padding:10px 12px;border:1px solid var(--border-strong);border-radius:9px;background:var(--surface-opaque);box-shadow:0 6px 22px rgba(0,0,0,.16);pointer-events:none;}",
+      ".cpl-mem .mb-tip-head{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:5px;}",
+      ".cpl-mem .mb-tip-kind{font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--kc);border:1px solid var(--kc);border-radius:6px;padding:0 6px;}",
+      ".cpl-mem .mb-tip-status{font-size:.7rem;font-weight:600;color:var(--text-muted);}",
+      ".cpl-mem .mb-tip-title{font-weight:700;font-size:.86rem;line-height:1.35;color:var(--text-strong);margin-bottom:3px;}",
+      ".cpl-mem .mb-tip-sum{font-size:.82rem;line-height:1.45;color:var(--text-body);}",
+      ".cpl-mem .mb-tip-slug{margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;color:var(--text-faint);word-break:break-all;}",
+      ".cpl-mem .mb-sources{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);}",
+      ".cpl-mem .mb-sources-h{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}",
+      ".cpl-mem .mb-srclist{margin:0;padding-left:1.5em;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
+      ".cpl-mem .mb-srclist li{margin:0 0 3px;}",
+      ".cpl-mem .mb-srclink{color:var(--accent-link);text-decoration:none;font-weight:600;}",
+      ".cpl-mem .mb-srclink:hover,.cpl-mem .mb-srclink:focus-visible{text-decoration:underline;}",
+      ".cpl-mem .mb-srcslug{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--text-faint);}",
+      ".cpl-mem .mb-srcflag{display:inline-block;margin-top:2px;font-size:.7rem;font-weight:700;color:var(--st-warn);border:1px solid var(--st-warn);border-radius:6px;padding:0 5px;}",
       ".cpl-mem .mb-badref{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--st-warn);border-bottom:1px dashed var(--st-warn);cursor:help;}",
       "@media (max-width:560px){.cpl-mem .mem-brief{padding:12px;} .cpl-mem .mb-row{align-items:flex-start;flex-direction:column;}}",
       ".cpl-mem .mem-autogen{margin:0 0 14px;padding:11px 12px;border:1px dashed color-mix(in srgb,var(--accent-link) 45%,var(--border-strong));border-radius:10px;background:color-mix(in srgb,var(--accent-link) 6%,var(--surface-subtle));}",
@@ -1733,6 +1886,8 @@
     _briefCorpusMax: briefCorpusMax,
     _briefFetch: briefFetch,
     _renderBriefText: renderBriefText,
+    _hideCiteCard: hideCiteCard,
+    _pendingEdit: function () { return pendingEdit; },
     _renderBriefingPanel: renderBriefingPanel,
     _autogenerate: autogenerate,
     _applyDraftToForm: applyDraftToForm,

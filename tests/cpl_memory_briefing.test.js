@@ -139,6 +139,11 @@ function rows(n, detailChars) {
   check("(3) the instructions ask for tension to be evidenced by slugs",
     /point at it with two slugs/i.test(q3));
   check("(3) the header states the read count", /3 of 3/.test(q3));
+  // Sam, 2026-08-24: "Use plain language:)" — asked for as a requirement, so it
+  // is asserted rather than trusted to survive the next edit of the block.
+  check("(3) ⭐ plain language is stated as a requirement, not a style note",
+    /PLAIN LANGUAGE\. This is the requirement/.test(q3)
+    && /Short sentences/.test(q3) && /two\s*\n?\s*minutes/.test(q3));
 
   // ── (4) retrieval_query is the SUBJECT, never the corpus ──────────────────
   const rq = api._briefRetrieval(rows(40, 600), "verified only · area: cpl");
@@ -207,6 +212,74 @@ function rows(n, detailChars) {
   const h2 = win.document.createElement("div");
   api._renderBriefText(h2, "See [s1] here.", { s1: 1 });
   check("(7) a slug inside prose links", !!h2.querySelector('a[data-ref="s1"]'));
+  // ⭐ NUMBERED, not the slug itself. This table's slugs are whole sentences, so
+  // printing them inline put more citation than prose on the page.
+  check("(7) ⭐ the inline citation renders as a number, not the slug",
+    h2.querySelector(".mb-cite") && h2.querySelector(".mb-cite").textContent === "1");
+  check("(7) the number is still identifiable without hovering (accessible name)",
+    /s1|Entry 1/.test(h2.querySelector(".mb-cite").getAttribute("aria-label") || ""));
+  // ⚠ The number is only followable because the list under it says what it is.
+  check("(7) ⭐ a numbered citation gets a source list entry naming the entry",
+    !!h2.querySelector(".mb-sources") && !!h2.querySelector('.mb-srclist a[data-ref="s1"]'));
+  check("(7) the source list carries the slug too", /s1/.test(h2.querySelector(".mb-srcslug").textContent));
+  // The same entry cited twice is ONE source, numbered once.
+  const h4 = win.document.createElement("div");
+  api._renderBriefText(h4, "One [s1] and again [s1] and another [s2].", { s1: 1, s2: 1 });
+  check("(7) a repeated citation reuses its number", h4.querySelectorAll(".mb-cite").length === 3
+    && h4.querySelectorAll(".mb-srclist li").length === 2);
+  // ── the hover/focus card (Sam: "superscript numbers with hover over to see
+  // the memory") ─────────────────────────────────────────────────────────────
+  // ⚠ The card reads byId[slug] — the entry as the TABLE holds it, not whatever
+  // object the caller happened to pass. That is the right source (the card must
+  // show the memory, not the briefing's copy of it), so the fixture goes into
+  // the table first.
+  const HOVER_ROW = { id: "s1", kind: "pitfall", status: "verified",
+    title: "A title worth reading", summary: "The summary the reader hovers to see.",
+    detail: "d", tags: [], affects: [], related: [] };
+  api._setData([HOVER_ROW]);
+  const hoverHost = win.document.createElement("div");
+  const hoverPanel = api._renderBriefingPanel([HOVER_ROW], "scope");
+  win.document.body.appendChild(hoverHost); hoverHost.appendChild(hoverPanel);
+  api._renderBriefText(hoverPanel.querySelector(".mb-out"), "A claim [s1].", { s1: 1 });
+  const cite = hoverPanel.querySelector("a.mb-cite");
+  check("(7h) the citation is a superscript number", cite && cite.textContent === "1");
+  // ⚠ No native title: it would double up with the card and cannot carry the
+  // kind, the status and a wrapped summary together.
+  check("(7h) no native title competing with the card", !cite.getAttribute("title"));
+  check("(7h) the accessible name carries the entry for a screen reader",
+    /A title worth reading/.test(cite.getAttribute("aria-label") || ""));
+  cite.onmouseenter();
+  const tip = hoverPanel.querySelector(".mb-tip");
+  check("(7h) ⭐ hovering shows a card with the memory in it", !!tip
+    && /The summary the reader hovers to see/.test(tip.textContent)
+    && /A title worth reading/.test(tip.textContent));
+  check("(7h) the card names the kind and the status",
+    /Pitfall/i.test(tip.textContent) && /verified/.test(tip.textContent));
+  cite.onmouseleave();
+  check("(7h) leaving the citation closes it", !hoverPanel.querySelector(".mb-tip"));
+  // ⚠ A citation is a link, so it is on the keyboard path whether or not anyone
+  // planned for it. If only the mouse can read the memory behind a number, the
+  // number is unreadable to everyone else.
+  cite.onfocus();
+  check("(7h) ⭐ FOCUS opens it too, not only hover", !!hoverPanel.querySelector(".mb-tip"));
+  cite.onkeydown({ key: "Escape" });
+  check("(7h) Escape closes it", !hoverPanel.querySelector(".mb-tip"));
+  cite.onfocus(); cite.onblur();
+  check("(7h) blur closes it", !hoverPanel.querySelector(".mb-tip"));
+  cite.onfocus();
+  check("(7h) only one card is ever open", (function () {
+    cite.onfocus(); return hoverPanel.querySelectorAll(".mb-tip").length === 1;
+  })());
+  api._hideCiteCard();
+
+  // An entry that exists but was NOT sent is marked, not folded in silently.
+  // Re-seed: the hover fixture above narrowed the table to one row, and "exists
+  // but was not briefed" needs s2 to exist.
+  api._setData(three);
+  const h5 = win.document.createElement("div");
+  api._renderBriefText(h5, "Outside the set [s2].", { s1: 1 });
+  check("(7) ⚠ a cited entry outside the briefed set is marked in the source list",
+    !!h5.querySelector(".mb-srcflag"));
   const h3 = win.document.createElement("div");
   h3.innerHTML = '<a href="#" data-ref="s2">already a link [s1]</a><p>loose [s1]</p>';
   const stat = api._renderBriefText
@@ -215,9 +288,54 @@ function rows(n, detailChars) {
   if (stat) {
     // Re-run the linker over content that already contains an anchor.
     api._renderBriefText(stat, "loose [s1] and more", { s1: 1 });
+    // Not "one anchor" — the source list is anchors too. What must never happen
+    // is a link INSIDE a link, which is what a second pass over rendered output
+    // would produce.
     check("(7) re-rendering replaces content rather than nesting links",
-      stat.querySelectorAll("a[data-ref]").length === 1);
+      stat.querySelectorAll("a[data-ref] a").length === 0
+      && stat.querySelectorAll(".mb-cite").length === 1);
   }
+
+  // ── (7c) clicking a citation opens THAT ROW, ready to edit ────────────────
+  // Sam, 2026-08-24: "Would be nice if it took me to the memory table to edit if
+  // clicked… directly to the memory row."
+  api._setSession({ kind: "phrase" });
+  api._setData(three);
+  api.activate(win.document.getElementById("memory-root"));
+  const clickHost = win.document.createElement("div");
+  win.document.body.appendChild(clickHost);
+  const clickPanel = api._renderBriefingPanel(three, "scope");
+  clickHost.appendChild(clickPanel);
+  api._renderBriefText(clickPanel.querySelector(".mb-out"), "A claim [s2].", { s2: 1 });
+  check("(7c) the lead promises editing when a session can edit",
+    /open that entry for editing/.test(clickPanel.textContent));
+  clickPanel.querySelector("a.mb-cite").click();
+  // The edit form is built during the render the click triggers, so the proof is
+  // the form itself — a flag left set would mean the render never honored it.
+  check("(7c) ⭐ the click opens the edit form for that row",
+    !!win.document.querySelector(".mem-form") &&
+    /s2/.test(win.document.querySelector(".mem-form").textContent));
+  check("(7c) …and the intent is consumed, not left armed", api._pendingEdit() === null);
+  check("(7c) hovering after a click does not leave a card behind", !win.document.querySelector(".mb-tip"));
+
+  // ⚠ Without a session there is no editor, so the promise changes rather than
+  // the button doing nothing.
+  // ⚠ Drop the stored phrase too: _setSession(null) re-renders, and renderAuth
+  // re-derives a session from the phrase in localStorage — so clearing only the
+  // variable leaves the module signed in and the check goes green on the wrong
+  // state.
+  try { win.localStorage.removeItem("cpl_team_pass"); } catch (e) {}
+  api._setSession(null);
+  const roHost = win.document.createElement("div");
+  const roPanel = api._renderBriefingPanel(three, "scope");
+  roHost.appendChild(roPanel);
+  check("(7c) ⚠ with no session the lead promises a jump, not an edit",
+    /jump to that entry/.test(roPanel.textContent) && !/open that entry for editing/.test(roPanel.textContent));
+  api._renderBriefText(roPanel.querySelector(".mb-out"), "A claim [s2].", { s2: 1 });
+  roPanel.querySelector("a.mb-cite").click();
+  check("(7c) …and no edit is requested", api._pendingEdit() === null);
+  try { win.localStorage.setItem("cpl_team_pass", "team-secret"); } catch (e) {}
+  api._setSession({ kind: "phrase" });
 
   // ── (8) the error path leaves the report alone ────────────────────────────
   win.fetch = function () { return Promise.resolve({ ok: false, status: 500 }); };
