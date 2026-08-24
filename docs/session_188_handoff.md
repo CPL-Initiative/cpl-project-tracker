@@ -34,10 +34,43 @@ should *contain*, then mapping into it — is the only mechanism with the right
 shape. The ESL dry-run already proved it at 10.7:1 inside one discipline.
 
 Design target that falls out: **2,500 ÷ 144 disciplines ≈ 17 common courses
-each.** ESL's own plan lands at ~221, still 13× over its share — so even
-packaging needs a second pass. Do not let anyone (including yourself) restart
-"work the queue" without re-reading
+each.**
+
+⭐ **Packaging cleared that bar on its first try. ESL went 2,300 minted
+identities → 27 surviving — 85:1**, far past the 10.7:1 the dry-run projected.
+(An earlier draft of this handoff said "~221, still 13× over its share." That
+was the pre-apply projection and it is wrong; the applied result is 27.)
+
+⚠️ **But ESL is not finished, and the reason is a store the fold never touched.**
+The live view shows **77 ESL rows: 10 M-ID + 67 Z-scheme `ESOL Z####`** — unified
+courses from the Session-56 UC-CUR re-mint, which live outside
+`coci_minted_courses`/`singletons` and so were never in the fold's candidate set.
+**That is the concrete next ESL job: 67 rows, not a vague "second pass."**
+
+Do not let anyone (including yourself) restart "work the queue" without
+re-reading
 [`measure-your-mechanism-ceiling`](kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md).
+
+---
+
+## Your first job, before Sam asks
+
+He asked at the end of 187 whether 188 would guide him through the Beginning ESL
+spot-check. **It cannot yet, and telling him to start would waste his time.**
+
+1. **Build the Beginning worklist.** 517 rows folded with no level signal at all
+   (see below). They are merged-away identities, so they render nowhere — there
+   is literally nothing for him to click. Until that list exists, the spot-check
+   is not a task, it is a wish. Suggested shape: the fold plan already carries
+   `sig` per row, so the list is a filter over
+   `kb/esl_package_out/2026-08-24/esl_apply_plan.json`, joined to member titles,
+   with accept / re-home / not-ESL per row writing `CN:` or a `merge_into`.
+2. **Then** hand it to him, medium-confidence first, with the denominator shown.
+
+⭐ **The general rule this is an instance of: check that the repair you recommend
+is actually available before you recommend it.** That mistake has now been made
+twice in one session — `FIMS M1018` ("drag it back" — it does not render) and
+this one ("correctable by dragging" — same reason).
 
 ## What shipped
 
