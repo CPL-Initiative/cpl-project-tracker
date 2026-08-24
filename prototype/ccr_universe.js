@@ -27,7 +27,8 @@ var U=null, A=null;          // universe payload, atlas detail payload
 var cvs, ctx, DPR=1;
 var view={x:0,y:0,k:0.12};   // world→screen: screen = (world+pan)*k
 var hoverIsl=null, hoverNode=null, selIsl=null, selNode=null;
-var moves=[], home={}, memberIndex=null;
+var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, memberSource="";
+var MEMBER_PAGE=200, memFilter="";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
 
@@ -44,38 +45,74 @@ function w2s(x,y){return [(x+view.x)*view.k + cvs.clientWidth/2,
 function s2w(px,py){return [(px-cvs.clientWidth/2)/view.k - view.x,
                             (py-cvs.clientHeight/2)/view.k - view.y];}
 
-/* ── member lookup, built once from whatever detail the page carries ─────── */
+/* ── member lookup ────────────────────────────────────────────────────────
+ * roster[identity] = [{cn, n:course code, c:college name}] — every college
+ * course the identity carries, which is what a curator drags.
+ *
+ * The full universe payload (ccr_universe_members.json) covers all 16,240
+ * identities that carry members. The older per-discipline sample inside
+ * ccr_atlas_data.json is kept as a FALLBACK so the page still does something
+ * useful if the big payload is absent — and memberSource records which one is
+ * live, because "no courses here" and "no courses shipped" look identical on
+ * screen and mean opposite things.
+ *
+ * A control number can appear under MORE THAN ONE identity (1,122 do — the
+ * forward join surfaces an over-merged course on every card that claims it).
+ * The write is one `CN:` row per control number, so a move is a single global
+ * statement: movedTo[cn] is therefore the ONLY home that counts once a curator
+ * has moved a course, and the course leaves every other card it was showing on.
+ */
 function buildMemberIndex(){
-  memberIndex={};
+  roster={}; byCn={}; cnHome={}; memberSource="";
+  var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
+  if(MEM && MEM.m){
+    var cols=MEM.colleges||[];
+    Object.keys(MEM.m).forEach(function(id){
+      roster[id]=MEM.m[id].map(function(r){
+        var cn="CCC"+String(r[0]).padStart(9,"0");
+        var rec={cn:cn, n:r[1]||"", c:cols[r[2]]||"—"};
+        if(!(cn in byCn)){ byCn[cn]=rec; cnHome[cn]=id; }
+        return rec;
+      });
+    });
+    memberSource="universe";
+    return;
+  }
   if(!A||!A.detail) return;
   Object.keys(A.detail).forEach(function(dn){
     A.detail[dn].forEach(function(pack){
       pack.nodes.forEach(function(nd){
         if(!nd.m||!nd.m.length) return;
-        memberIndex[nd.id]=nd.m;
-        nd.m.forEach(function(m){ if(!(m.cn in home)) home[m.cn]=nd.id; });
+        roster[nd.id]=nd.m;
+        nd.m.forEach(function(m){ if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; } });
       });
     });
   });
+  memberSource="sample";
 }
+/* The identity a course started on. A course claimed by several identities has
+ * several honest answers; the FIRST is recorded only so the move receipt can say
+ * where it came from — the move itself is global and leaves all of them. */
+function originOf(cn){ return (cnHome&&cnHome[cn])||null; }
 function membersOf(id){
-  var out=[];
-  Object.keys(home).forEach(function(cn){
-    if(home[cn]!==id) return;
-    var found=null;
-    Object.keys(memberIndex).forEach(function(oid){
-      memberIndex[oid].forEach(function(m){ if(m.cn===cn) found=m; });
-    });
-    if(found) out.push(found);
+  var out=(roster&&roster[id]||[]).filter(function(m){
+    return !(m.cn in movedTo) || movedTo[m.cn]===id;
+  });
+  Object.keys(movedTo).forEach(function(cn){
+    if(movedTo[cn]!==id) return;
+    for(var i=0;i<out.length;i++) if(out[i].cn===cn) return;
+    if(byCn[cn]) out.push(byCn[cn]);
   });
   return out;
 }
 function nodeById(id){
-  for(var i=0;i<U.islands.length;i++){
-    var isl=U.islands[i];
-    for(var j=0;j<isl.p.length;j++) if(isl.p[j].i===id) return {isl:isl,nd:isl.p[j]};
+  if(!nodeIdx){
+    nodeIdx={};
+    U.islands.forEach(function(isl){
+      isl.p.forEach(function(nd){ nodeIdx[nd.i]={isl:isl,nd:nd}; });
+    });
   }
-  return null;
+  return nodeIdx[id]||null;
 }
 
 /* ── draw ───────────────────────────────────────────────────────────────── */
@@ -260,7 +297,13 @@ function flyTo(x,y,k){
   view.k=Math.max(0.03,Math.min(9,k)); view.x=-x; view.y=-y; draw();
 }
 window.__ccrUniverseFly = flyTo;
-window.__ccrUniverseState = function(){ return {view:view, moves:moves}; };
+window.__ccrUniverseState = function(){
+  // `sel` is here so a test that clicks the canvas can assert which identity it
+  // actually landed on — a click check with no such assertion passes happily
+  // against the previous selection.
+  return {view:view, moves:moves, sel:selNode?selNode.i:null,
+          members:roster?Object.keys(roster).length:0, memberSource:memberSource};
+};
 
 function wire(){
   window.addEventListener("resize", function(){ sizeCanvas(); draw(); });
@@ -279,8 +322,14 @@ function wire(){
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
-    var hit=pick(px,py);
     cvs.setPointerCapture(e.pointerId);
+    // A course already picked up survives the press. Without this the pointerdown
+    // replaced `drag` with a fresh node/island/pan grab before pointerup could
+    // read it, so pressing "Drag…" and then clicking the destination — the only
+    // route the hint text describes — selected the destination and moved nothing.
+    // The verb this whole view exists for could not be completed with a mouse.
+    if(drag && drag.kind==="course"){ drag.px=px; drag.py=py; return; }
+    var hit=pick(px,py);
     if(hit && hit.nd)      drag={kind:"node", isl:hit.isl, nd:hit.nd, x0:px, y0:py, moved:false};
     else if(hit && e.shiftKey===false && hit.isl) drag={kind:"island", isl:hit.isl, x0:px, y0:py,
                                                         ox:hit.isl.dx||0, oy:hit.isl.dy||0, moved:false};
@@ -380,32 +429,60 @@ function showIsland(isl){
       var s=SYS[nd.s]||SYS[3];
       return '<li><span class="ttl">'+esc(nd.t||nd.i)+"</span> "+
         '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span>"+
-        '<div class="sub">'+esc(nd.i)+" · "+nd.n+" college"+(nd.n===1?"":"s")+"</div></li>";
+        '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+"</div></li>";
     }).join("")+"</ul>"+
     '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
     'beside another, then drag a course across.</p>';
 }
 function showNode(nd, isl){
+  selNode=nd; selIsl=isl; memFilter="";
+  renderNode();
+}
+/* The identity's own `n` is NOT a college count — it comes from whichever field
+ * minted the row (corroboration members, a cluster's member_count, a C-ID
+ * anchor's source college count), and it disagrees with the members actually
+ * carried on 3,399 of 16,242 identities. Both are shown and neither is
+ * silently preferred: `n` is what the rest of COBI reports for this row, and
+ * the carried list is what a curator can actually pick up and move. */
+function renderNode(){
+  var nd=selNode, isl=selIsl;
   var el=document.getElementById("u-detail");
   var s=SYS[nd.s]||SYS[3];
-  var mine=membersOf(nd.i);
+  var mine=membersOf(nd.i), total=mine.length;
   var h="<h3>"+esc(nd.t||nd.i)+"</h3>"+
     '<p><span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span> "+
-    '<span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+nd.n+
-    " college"+(nd.n===1?"":"s")+"</p>";
-  if(!memberIndex || !Object.keys(memberIndex).length){
-    h+='<p class="empty">College courses load on demand — this prototype carries them '+
-       'for a sample of subjects.</p>';
-  } else if(!mine.length){
-    h+='<p class="empty">No college courses carried for this identity in the prototype sample. '+
-       'Try Welding, Automotive Technology, Nursing, Business or English.</p>';
+    '<span class="sub">'+esc(nd.i)+"</span> · "+esc(isl.d)+" · "+num(total)+
+    " college course"+(total===1?"":"s")+" carried"+
+    (nd.n && nd.n!==total ? ' · <span class="sub" title="The count this row reports '+
+      'elsewhere in COBI, from the field that minted it. The carried list is the forward '+
+      'join onto the raw COCI course list, which cannot always place every seeded member.">'+
+      "row count "+num(nd.n)+"</span>" : "")+"</p>";
+  if(!roster || !Object.keys(roster).length){
+    h+='<p class="empty">No member payload loaded — ccr_universe_members.json is missing, '+
+       'so no course can be dragged. This is not the same as an identity having no courses.</p>';
+  } else if(!total){
+    h+='<p class="empty">No college courses are carried for this identity'+
+       (memberSource==="sample"?' in the prototype sample. Try Welding, Automotive Technology, '+
+        'Nursing, Business or English.':'.')+'</p>';
   } else {
-    h+='<ul class="mlist">'+mine.map(function(m){
-      var moved=moves.some(function(x){return x.cn===m.cn;});
+    var q=memFilter.trim().toLowerCase();
+    var shown=q ? mine.filter(function(m){
+      return (m.n+" "+m.c).toLowerCase().indexOf(q)>=0; }) : mine;
+    var capped=shown.slice(0, MEMBER_PAGE);
+    h+='<p><input type="search" id="u-mfilter" placeholder="Filter these courses — code or college"'+
+       ' value="'+esc(memFilter)+'" style="width:100%;max-width:22em"></p>';
+    // A capped list must never read as a census — say what is off the end.
+    if(capped.length<shown.length || shown.length<total){
+      h+='<p class="sub">Showing '+num(capped.length)+' of '+num(shown.length)+
+         (shown.length<total?' matching ('+num(total)+' carried)':'')+
+         '. Filter to reach the rest.</p>';
+    }
+    h+='<ul class="mlist">'+capped.map(function(m){
+      var moved=movedTo[m.cn]===nd.i;
       return '<li'+(moved?' class="moved"':"")+'>'+
         '<span class="cd">'+esc(m.n)+"</span>"+
         '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
-        (moved?' <span class="chip ok">✓ moved</span>':"")+
+        (moved?' <span class="chip ok">✓ moved here</span>':"")+
         '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-code="'+esc(m.n)+
         '" data-col="'+esc(m.c)+'">Drag\u2026</button></li>';
     }).join("")+"</ul>"+
@@ -413,6 +490,12 @@ function showNode(nd, isl){
     'course anywhere on the map — including in another subject.</p>';
   }
   el.innerHTML=h;
+  var f=document.getElementById("u-mfilter");
+  if(f) f.addEventListener("input", function(){
+    memFilter=f.value; renderNode();
+    var g=document.getElementById("u-mfilter");
+    if(g){ g.focus(); g.setSelectionRange(g.value.length, g.value.length); }
+  });
   Array.prototype.forEach.call(el.querySelectorAll(".mv"), function(b){
     b.addEventListener("click", function(){
       drag={kind:"course", cn:b.dataset.cn, code:b.dataset.code, college:b.dataset.col,
@@ -424,16 +507,16 @@ function showNode(nd, isl){
   });
 }
 function applyMove(cn, code, college, toId){
-  var from=home[cn];
+  var from=movedTo[cn]||originOf(cn);
   if(from===toId){ setHint("That course is already there."); return; }
-  home[cn]=toId;
+  movedTo[cn]=toId;
   moves=moves.filter(function(m){return m.cn!==cn;});
   moves.push({cn:cn, code:code, college:college, to:toId, from:from});
   var t=nodeById(toId);
   setHint("Moved <strong>"+esc(code)+"</strong> ("+esc(college)+") to <strong>"+
           esc(t?(t.nd.t||toId):toId)+"</strong>"+(t?" in "+esc(t.isl.d):"")+". ✓");
   drawWrites();
-  if(selNode) showNode(selNode, selIsl);
+  if(selNode) renderNode();
 }
 function drawWrites(){
   var el=document.getElementById("u-writes");

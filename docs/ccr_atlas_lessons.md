@@ -459,3 +459,91 @@ is named in the merge commit**. If TruffleHog stalls again, treat it as repo-lev
 2. The **67 Z-scheme `ESOL Z####`** rows the fold never touched — the concrete remaining ESL job.
 3. `FIMS M1018` still cannot be re-homed: it does not render, so it needs the **un-merge verb**.
 4. Run the same calibration on the **next discipline's** packaging pass *before* ranking its queue.
+
+---
+
+## 2026-08-24 — SkyCal (Session 189): the drag is reachable, and it never worked
+
+Step 1 of [`docs/skyview_drag_rehome_scope.md`](skyview_drag_rehome_scope.md), the shape Sam
+approved. The scope predicted *"expect to find something"*. It was right three times over, and
+the durable version is
+[`a-blocked-path-hides-the-defects-behind-it`](kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md).
+
+### The members reached the payload — as a SECOND file
+
+`prototype/ccr_universe_members.json`, **101,063 member courses over 16,240 identities, 2.5 MB**.
+Separate from `ccr_universe.json` (1.7 MB) on purpose: every other reader of the layout keeps the
+file it already had, and *"the members cost 2.5 MB"* stays a legible fact rather than a silent
+doubling of a file nobody re-measures. Built by `kb/_build_ccr_universe.py --members-out`,
+inlined by `build_ccr_atlas.py` (a `fetch()` is blocked under `file://`, and the built page has
+to open there).
+
+⭐ **The record is `[control_number, course code, college index]` and carries NO title.** The
+drag list renders code + college, so a title adds **3.1 MB to show nothing** — measured, not
+assumed: full dicts 9.9 MB · with title 5.5 MB · without 2.5 MB.
+
+⭐ **Merge-chain resolution was already done upstream.** `unified_courses_members.js` is built
+after `flatten_merge_chains()` and honors `CN:`, so a merged-away identity's members already sit
+on the survivor. The scope listed this as work; it was a join, not a build.
+
+### ⚠️ THE VERB COULD NOT BE COMPLETED WITH A MOUSE
+
+`pointerdown` replaced the carried course with a fresh node/island/pan grab **before**
+`pointerup` could read it. Pressing **Drag…** and then clicking the destination — the only route
+the hint text describes — **selected the destination and moved nothing**. The keyboard path in
+the *other* view was tested and green the whole time, which is why nothing ever said so.
+
+This is what zero `CN:` rows actually meant. It was invisible because the missing data made it
+unreachable: no course on screen, no drop to attempt.
+
+### ⚠️ THREE OF THE HARNESS'S FIRST FOUR FAILURES WERE THE HARNESS
+
+- It cached the canvas centre once, and **`cvs.focus()` scrolls the canvas**, so every later
+  click landed on empty space — which the page correctly reported as *"nothing moved"*, and
+  which read as a broken drag for three checks running. Re-measure per interaction.
+- It asserted a **drop** changes the selection. It does not and should not — the pane keeps
+  showing the card you came from. What proves a drop landed is **the write line naming the
+  destination**.
+- It clicked the canvas and never asserted **which** node it hit. Nodes overlap; a click can
+  land on a neighbour and the check would measure the previous card and pass. `__ccrUniverseState()`
+  now exposes `sel` for exactly this, and the assertion caught a wrong landing on its first run.
+
+Both page fixes were **perturbed and proven red** (restore the clobbering `pointerdown` → 3 fail;
+blank the payload → 4 fail), and so was the payload test (coerce a bad control number to 0 → red).
+
+### ⚠️ The count on a node is not a college count
+
+`nd.n` comes from whichever field minted the row — `corroboration_members`, a cluster's
+`member_count`, a C-ID anchor's `source_college_count` — and the pane rendered all of them as
+*"N colleges"*. `ESOL M9168` read **"1,152 colleges"**, in a system with 123. It also **disagrees
+with the members actually carried on 3,399 of 16,242 identities**. Both are now shown and neither
+is preferred: the carried count leads (it is what a curator can pick up), the row count follows
+with the reason it differs.
+
+### ⚠️ Two payload facts the consumer must handle, not just report
+
+- **2 members carry no control number** (`"NULL"`). The write key *is* the control number, so
+  they are **dropped and counted** — coercing to zero ships a course that writes against
+  `CCC000000000`.
+- **1,122 control numbers sit under MORE THAN ONE identity** (the forward join surfaces an
+  over-merged course on every card claiming it). The write is one row per control number, so a
+  move is **global**: `movedTo[cn]` is the only home that counts once set, and the course leaves
+  **every** card it was showing on. `home[cn]`-as-first-claimant, the old model, would have
+  hidden such a course from the second card before anyone touched it.
+
+### Also
+
+850 members rendered unbounded; now capped at 200 with a filter and *"Showing 200 of 850"* — a
+capped list must never read as a census. `membersOf()` was **O(|courses| × |identities|)** (a
+full scan of 101k records per row rendered); rosters are keyed now. `nodeById()` scanned all 158
+islands per call; indexed.
+
+### Next
+
+1. **Sam drives it in a browser** — no session can (egress-blocked); density and the drop
+   affordance are his calls.
+2. **Step 2, the queue**: a drag that leaves the destination's SUBJ4 inconsistent with its
+   corroborated discipline should QUEUE a re-mint candidate. Proposes, never auto-adds.
+3. The **1,122 duplicate-claim courses** are a worklist in their own right — each is an identity
+   claiming a course another identity also claims.
+4. Still open from Sky188: the 9 ESL over-claims, the 67 `ESOL Z####` rows, `FIMS M1018`.

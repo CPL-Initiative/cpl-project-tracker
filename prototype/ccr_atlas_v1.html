@@ -563,7 +563,9 @@ else forest();
 <script>__GRAPHJS__</script>
 <script>__ESLJS__</script>
 <script id="atlas-universe" type="application/json">__UNIVDATA__</script>
-<script>try{window.CPL_CCR_UNIVERSE=JSON.parse(document.getElementById("atlas-universe").textContent);window.CPL_ATLAS_DATA=JSON.parse(document.getElementById("atlas-data").textContent);}catch(e){}</script>
+<script id="atlas-univmem" type="application/json">__UNIVMEM__</script>
+<script>try{window.CPL_CCR_UNIVERSE=JSON.parse(document.getElementById("atlas-universe").textContent);window.CPL_ATLAS_DATA=JSON.parse(document.getElementById("atlas-data").textContent);}catch(e){}
+try{window.CPL_CCR_UNIVERSE_MEMBERS=JSON.parse(document.getElementById("atlas-univmem").textContent);}catch(e){window.CPL_CCR_UNIVERSE_MEMBERS=null;}</script>
 <script>__UNIVJS__</script>
 </body>
 </html>

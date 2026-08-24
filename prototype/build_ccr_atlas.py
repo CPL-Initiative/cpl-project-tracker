@@ -26,15 +26,23 @@ ujs   = open(os.path.join(HERE, "ccr_universe.js"), encoding="utf-8").read()
 udata = open(os.path.join(HERE, "ccr_universe.json"), encoding="utf-8").read()
 json.loads(udata)
 udata = udata.replace("</", "<\\/")
+# The draggable member courses (2.5 MB). Inlined rather than fetched because the
+# built page must open from file:// — a fetch() is blocked there, and a page that
+# silently loses its members looks like a corpus with no courses in it.
+umem = open(os.path.join(HERE, "ccr_universe_members.json"), encoding="utf-8").read()
+json.loads(umem)
+umem = umem.replace("</", "<\\/")
 
 json.loads(data)                     # fail loudly on a malformed payload
 # </script> inside a JSON string would close the host tag
 data = data.replace("</", "<\\/")
-if any(k not in src for k in ("__DATA__", "__GRAPHJS__", "__ESLJS__", "__ESLDATA__", "__UNIVJS__", "__UNIVDATA__")):
+if any(k not in src for k in ("__DATA__", "__GRAPHJS__", "__ESLJS__", "__ESLDATA__",
+                              "__UNIVJS__", "__UNIVDATA__", "__UNIVMEM__")):
     sys.exit("template has lost a placeholder — refusing to write a broken page")
 
 html = (src.replace("__DATA__", data).replace("__GRAPHJS__", gjs)
         .replace("__ESLDATA__", edata).replace("__ESLJS__", ejs)
-        .replace("__UNIVDATA__", udata).replace("__UNIVJS__", ujs))
+        .replace("__UNIVDATA__", udata).replace("__UNIVMEM__", umem)
+        .replace("__UNIVJS__", ujs))
 open(out, "w", encoding="utf-8").write(html)
 print(f"wrote {os.path.relpath(out, os.path.dirname(HERE))}  ({len(html)/1024:.0f} KB)")
