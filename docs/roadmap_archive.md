@@ -4798,3 +4798,31 @@ the list you read can contain what you are counting.*
 ⚠️ **`college_identity_lint_guard` went red at 00:00 UTC for everyone** (byte-for-byte vs a
 date-stamped artifact); fixed and proven to still fail on real drift.
 Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_188_handoff.md`.
+
+---
+
+### Sky188 — a confidence label is a claim, and the queue was ranked backwards (2026-08-24)
+
+**Sam: locate the *"CPL Initiative Dashboard Daily Update"* Routine to toggle off, then
+*"continue the queue"*.** The Routine was confirmed independent of the daily cron on four
+checks (the real cron is `.github/workflows/daily-dashboard.yml`, a 3-cron ladder in the repo;
+the Routine had **never run**, was already Paused, and the dashboard updated anyway) — **Sam
+deleted it**, closing the Rule 6 second-scheduler risk and the `CPL_SCRAPE_2026` secret in its
+prompt. An agent could neither disable nor delete it (`created_via: http_api`).
+⭐ **THE HANDOFF'S FIRST JOB RESTED ON FOUR WRONG CLAIMS.** The 543 `default-beginning` folds
+were called *"the truly evidence-free pile"* with *"no surface"*, ranked above the 248
+`numeric` rows. The fold classifier only ever read the **modal title**, while the COCI export
+carries a `CatalogDescription` for **96%** of member courses stating the level outright.
+⭐ **CALIBRATION BEAT INTUITION: `numeric` is 49.2% wrong** — a coin flip, ranked *below* the
+lane to work first; 94 rows were about to be skipped. `word/high` at 6.2% is the only signal
+behaving like its label.
+⭐ **DIRECTIONAL ERROR BEATS AGGREGATE ERROR** — 85 under-claim vs **9** over-claim, and the
+small half is the one to work; all 9 are the `5+` cut sitting one rung too low for 6-rung
+ladders. ⚠️ **The course-NUMBER ladder was built and THROWN AWAY** (325 false proposals).
+⚠️ **My own first boilerplate guard PASSED while perturbed** — untestable against live data —
+and rewriting it exposed a real gap (the strip took the field NAME, left its VALUE).
+⚠️ **Four `check_suite.completed` events, four useless**: three named superseded heads, the
+fourth named the current head but reported a suite I had **canceled** as "completed". Treat
+that event as a prompt to go look, never as the green light. #1315 merged on `unstable` with
+the secret scan stalled twice at zero log output — diff scanned locally instead, named in the
+merge commit. Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_189_handoff.md`.

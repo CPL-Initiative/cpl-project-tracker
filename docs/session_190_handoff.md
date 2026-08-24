@@ -10,6 +10,8 @@ related:
   - "[[docs/skyview_drag_rehome_scope]]"
   - "[[docs/ccr_atlas_lessons]]"
   - "[[docs/kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it]]"
+superseded: true
+superseded_by: session_191_handoff.md
 ---
 
 # Session 190 handoff
