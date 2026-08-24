@@ -7388,6 +7388,40 @@ def _fix_text_encoding(s):
     return s, s != orig
 
 
+def flatten_merge_chains(merge_into):
+    """Resolve each merge source to the END of its chain, in place.
+
+    A curator can merge X into Y today and merge Y into a comprehensive Z next
+    month; the overlay then holds BOTH hops and Y is simultaneously a source and
+    a target. The row loops skip a source, but the merge-target loop does not
+    skip a target that is itself a source — so Y rendered as its own row while
+    ALSO being folded into Z, and X's members stayed attributed to Y instead of
+    reaching Z. Following each source to the end of its chain is what the two
+    decisions together mean: X belongs wherever Y ended up.
+
+    Measured on the 2026-08-24 overlay: 22,538 merges are direct, 490 are two
+    hops, 18 are three, and 340 identities were rendering only because they were
+    a target while also a source (91 of them ESL, after the Session-187 fold
+    folded identities other curators had already merged into).
+
+    There are no cycles today. The `seen` guard is for the day one appears: a
+    cycle keeps the hop it already had rather than hanging the build, because a
+    generator that spins is a worse failure than one that renders a stale edge.
+    """
+    for src in list(merge_into):
+        first = merge_into[src]
+        tgt, seen = first, {src}
+        while tgt in merge_into and tgt not in seen:
+            seen.add(tgt)
+            tgt = merge_into[tgt]
+        # Walking back onto the source means a cycle. Keep the hop the overlay
+        # actually recorded: writing merge_into[src] = src would make the row a
+        # member of itself, which is a worse artifact than a stale edge and is
+        # invisible in a way the stale edge is not.
+        merge_into[src] = first if tgt == src else tgt
+    return merge_into
+
+
 def export_unified_courses():
     """Build the Unified Courses tab data (window.CPL_UNIFIED_COURSES in
     unified_courses_data.js) + the full xlsx export, from the kb/coci_*.json
@@ -7507,7 +7541,13 @@ def export_unified_courses():
         _t = _c.get("merge_into")
         if _t:
             merge_into[_cid] = _t
-            merge_members.setdefault(_t, []).append(_cid)
+    # Chains are flattened BEFORE the member lists are built — see
+    # flatten_merge_chains(). Building merge_members from the raw one-hop map is
+    # what let a mid-chain identity render as its own row while also being
+    # folded away.
+    flatten_merge_chains(merge_into)
+    for _cid, _t in merge_into.items():
+        merge_members.setdefault(_t, []).append(_cid)
 
     # CR/NC mirror classification (Doctrine v0.3 Q-CREDITNC) — id -> {class,...}.
     # Lets flags_of() mark an intentional CR/NC mirror pair (a CPL Credit-by-Exam
