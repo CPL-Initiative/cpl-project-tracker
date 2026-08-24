@@ -14,6 +14,7 @@ import json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 tpl  = os.path.join(HERE, "ccr_atlas_v1.html")
 out  = os.path.join(HERE, "ccr_atlas_v1.built.html")
+out_served = os.path.join(HERE, "skyview.html")
 
 src = open(tpl, encoding="utf-8").read()
 data = open(os.path.join(HERE, "ccr_atlas_data.json"), encoding="utf-8").read()
@@ -46,3 +47,50 @@ html = (src.replace("__DATA__", data).replace("__GRAPHJS__", gjs)
         .replace("__UNIVJS__", ujs))
 open(out, "w", encoding="utf-8").write(html)
 print(f"wrote {os.path.relpath(out, os.path.dirname(HERE))}  ({len(html)/1024:.0f} KB)")
+
+# ── the SERVED entry point ───────────────────────────────────────────────────
+# Same template, same CSS, same JS — payloads FETCHED instead of inlined, so the
+# page is small enough to commit and therefore reachable on the deployed site.
+# The built page above is 9.9 MB and gitignored; a button in COBI cannot link to
+# something that is not deployed, which is the whole reason this second output
+# exists. It opens straight on the graph, because that is what "SkyView" names.
+loader = """
+<script>
+(function(){
+  var V=document.getElementById("view");
+  function say(h){ if(V) V.innerHTML=h; }
+  say('<p style="padding:2em 0;color:var(--text-muted)">Loading the reference \u2014 '+
+      'about 9 MB of course identities and their member courses\u2026</p>');
+  function get(u){ return fetch(u).then(function(r){
+    if(!r.ok) throw new Error(u+" \u2192 HTTP "+r.status); return r.json(); }); }
+  Promise.all([get("ccr_universe.json"), get("ccr_universe_members.json")])
+    .then(function(a){
+      window.CPL_CCR_UNIVERSE=a[0];
+      window.CPL_CCR_UNIVERSE_MEMBERS=a[1];
+      window.__ccrUniverse();
+    })
+    .catch(function(e){
+      // Never a blank canvas: a graph that fails to load and a corpus with nothing
+      // in it look identical, and only one of them is a bug worth reporting.
+      say('<h2>SkyView could not load its data</h2><p>'+String(e.message||e)+'</p>'+
+          '<p style="color:var(--text-muted)">The payloads live beside this page '+
+          '(<code>ccr_universe.json</code>, <code>ccr_universe_members.json</code>). '+
+          'If you are opening this from a file rather than a served URL, fetch is '+
+          'blocked \u2014 run <code>python3 -m http.server 8000</code> from the repo '+
+          'root instead.</p>');
+    });
+})();
+</script>
+"""
+# ⚠️ __DATA__ stays INLINE. Nulling it broke the template's own boot script, which
+# then never defined window.__crumbs, and the universe view calls it on entry — so
+# the page died before drawing anything. It is only 0.5 MB; the 8.9 MB that actually
+# needed to leave the page are the universe and its members.
+served = (src.replace("__DATA__", data).replace("__GRAPHJS__", gjs)
+          .replace("__ESLDATA__", edata).replace("__ESLJS__", ejs)
+          .replace("__UNIVDATA__", "null").replace("__UNIVMEM__", "null")
+          .replace("__UNIVJS__", ujs)
+          .replace("</body>", loader + "</body>"))
+open(out_served, "w", encoding="utf-8").write(served)
+print(f"wrote {os.path.relpath(out_served, os.path.dirname(HERE))}  "
+      f"({len(served)/1024:.0f} KB \u2014 payloads fetched, so this one is committable)")
