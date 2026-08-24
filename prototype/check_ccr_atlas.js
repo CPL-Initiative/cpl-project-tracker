@@ -118,7 +118,7 @@ function serve() {
     for (let i = 0; i < d.length; i += 4 * 997) seen.add(d[i] + "," + d[i+1] + "," + d[i+2]);
     return seen.size > 3;                      // more than one flat color
   }));
-  ok("the canvas is keyboard-reachable and labelled",
+  ok("the canvas is keyboard-reachable and labeled",
     (await page.locator("#u-cvs[tabindex='0']").count()) === 1 &&
     !!(await page.locator("#u-cvs").getAttribute("aria-label")));
 
@@ -203,7 +203,7 @@ function serve() {
   const flyClick = async (pt, want) => {
     await page.evaluate(([x, y]) => window.__ccrUniverseFly(x, y, 3.4), [pt.x, pt.y]);
     // Re-measure every time. Pressing "Drag…" calls cvs.focus(), which scrolls the
-    // canvas — a centre cached once goes stale and the click lands on empty space,
+    // canvas — a center cached once goes stale and the click lands on empty space,
     // which the page correctly reports as "nothing moved". That read as a broken
     // drag for three checks running.
     const b = await page.locator("#u-cvs").boundingBox();
@@ -308,7 +308,7 @@ function serve() {
   ok("every header cell carries scope",
     (await page.locator("table.uc-like th[scope=col]").count()) ===
     (await page.locator("table.uc-like th").count()));
-  ok("the scrolling table is a focusable labelled region",
+  ok("the scrolling table is a focusable labeled region",
     (await page.locator(".tblwrap[tabindex='0'][role=region]").count()) >= 1);
   ok("medium-confidence rows are listed FIRST",
     /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));

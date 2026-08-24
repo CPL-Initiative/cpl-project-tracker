@@ -66,7 +66,7 @@ def write_members(mem_payload, placed_ids, out_rel):
       dropped_no_key            a member that cannot be dragged at all.
       cn_on_multiple_identities a control number surfacing under MORE THAN ONE
                                 identity. That is the known forward-join
-                                behaviour for an over-merged identity, and it
+                                behavior for an over-merged identity, and it
                                 matters here because the WRITE is one row per
                                 control number: re-homing such a course is a
                                 single global statement, so it must leave every
@@ -134,7 +134,7 @@ def main():
 
     order = sorted(by_disc.items(), key=lambda kv: -len(kv[1]))
 
-    # spiral packing, biggest first — a Vogel/sunflower spiral keeps the centre
+    # spiral packing, biggest first — a Vogel/sunflower spiral keeps the center
     # dense and the tail readable without any overlap test
     GAP = 34.0
     islands, placed = [], []

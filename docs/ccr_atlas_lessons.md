@@ -498,7 +498,7 @@ unreachable: no course on screen, no drop to attempt.
 
 ### ⚠️ THREE OF THE HARNESS'S FIRST FOUR FAILURES WERE THE HARNESS
 
-- It cached the canvas centre once, and **`cvs.focus()` scrolls the canvas**, so every later
+- It cached the canvas center once, and **`cvs.focus()` scrolls the canvas**, so every later
   click landed on empty space — which the page correctly reported as *"nothing moved"*, and
   which read as a broken drag for three checks running. Re-measure per interaction.
 - It asserted a **drop** changes the selection. It does not and should not — the pane keeps

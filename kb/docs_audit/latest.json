@@ -9,8 +9,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 632,
-    "bytes": 7131613,
+    "files": 633,
+    "bytes": 7145303,
     "over_budget": 4,
     "handoff_max": 189,
     "always_loaded_files": 1,
@@ -30,22 +30,22 @@
       },
       "index": {
         "files": 1,
-        "bytes": 260753,
+        "bytes": 261322,
         "over": 1
       },
       "lessons": {
         "files": 68,
-        "bytes": 1721736,
+        "bytes": 1727018,
         "over": 1
       },
       "kb_note": {
-        "files": 320,
-        "bytes": 1705492,
+        "files": 321,
+        "bytes": 1710308,
         "over": 0
       },
       "handoff": {
         "files": 167,
-        "bytes": 1372040,
+        "bytes": 1375063,
         "over": 0
       }
     },
@@ -53,18 +53,19 @@
       "oversized_doc": 4,
       "american_spelling": 171,
       "kb_note_dialect": 60,
-      "vault_heavy_path": 44
+      "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2215,
-      "bytes": 1196387277,
-      "heavy_bytes": 586857699,
-      "heavy_share": 0.491,
+      "files": 2221,
+      "bytes": 1203943615,
+      "heavy_bytes": 596937793,
+      "heavy_share": 0.496,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -126,13 +127,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 260753,
+        "bytes": 261322,
         "limit": 40000,
         "lane": "index",
-        "over_by": 220753,
-        "ratio": 6.52
+        "over_by": 221322,
+        "ratio": 6.53
       },
-      "message": "260,753 B is 6.5× the index budget (40,000 B) — candidate for compaction",
+      "message": "261,322 B is 6.5× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -3874,10 +3875,10 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 79771091,
+        "bytes": 79773751,
         "kind": "dir"
       },
-      "message": "directory totals 79,771,091 B inside the vault"
+      "message": "directory totals 79,773,751 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -3908,6 +3909,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,056,865 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 10077434,
+        "kind": "dir"
+      },
+      "message": "directory totals 10,077,434 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

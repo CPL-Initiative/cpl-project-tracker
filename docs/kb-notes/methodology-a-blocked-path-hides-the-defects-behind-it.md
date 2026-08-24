@@ -56,7 +56,7 @@ path.** A test written against a path nobody has exercised is itself unexercised
 and its first failures are as likely to be its own. Three of the four failures in
 the first run of the browser harness were the harness:
 
-- It cached the canvas centre once. Pressing "Drag…" calls `cvs.focus()`, which
+- It cached the canvas center once. Pressing "Drag…" calls `cvs.focus()`, which
   **scrolls the canvas**, so every later click landed on empty space — which the
   page correctly reported as *"nothing moved"*, and which read as a broken drag.
 - It asserted that a **drop** changes the selection. It does not, and should not:
