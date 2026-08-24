@@ -626,11 +626,35 @@
   // KB + exhibits + live metrics) and DRAFT a memory entry the curator then edits.
   // The function streams a Claude answer; we prompt for a single JSON object and
   // parse it defensively. Nothing is saved — Autogenerate only PREFILLS the form.
+  //
+  // ⚠ THE TOPIC GOES FIRST, AND THE ENVELOPE HAS A BUDGET (2026-08-24). cpl-chat
+  // caps `query`, and the cap is applied by the SERVER, silently, with no ragged
+  // edge to notice. This envelope used to run 984 characters and lead with its
+  // own instructions, against a cap of 1,000 — so Sam's 870-character note about
+  // which kind of credit to award reached the model as the sixteen characters
+  // "When responding ", and the model, handed no subject and ~9 KB of answer
+  // doctrine, drafted a confident entry about the two-band answer structure
+  // instead. Two things keep that from recurring, and BOTH are needed:
+  //   * the topic leads, so anything a cap ever takes is instruction text — and
+  //     losing the JSON contract fails LOUDLY (parseDraft returns null and the
+  //     curator sees "Couldn't draft that") rather than quietly changing subject;
+  //   * tests/cpl_memory_autogen.test.js reads the server's own drafting cap out
+  //     of the edge function and asserts THIS envelope plus a maximum-length
+  //     topic still fits under it. The budget is checked, not remembered.
+  // 4,000 is not arbitrary: it is `cpl_memory.detail`'s own column cap, so the
+  // budget covers the largest single field a curator could paste in. Envelope
+  // (~1.2 KB) + this clears QUERY_CAP_DRAFTING with room for the envelope to grow.
+  var AUTOGEN_TOPIC_MAX = 4000;
+  function autogenTopic(desc) { return String(desc || "").trim().slice(0, AUTOGEN_TOPIC_MAX); }
   function autogenQuery(desc) {
     return [
-      "You are drafting ONE internal \"team memory\" entry for the CPL Initiative's COBI dashboard.",
-      "Research the CPL / MAP knowledge base for the topic below, then reply with ONLY a single JSON",
-      "object — no prose, no code fence, no commentary. Keys:",
+      "TOPIC — draft the entry about THIS, and about nothing else:",
+      autogenTopic(desc),
+      "",
+      "———",
+      'Draft ONE internal "team memory" entry about the topic above, for the CPL Initiative\'s',
+      "COBI dashboard. Research the CPL / MAP knowledge base for it, then reply with ONLY a",
+      "single JSON object — no prose, no code fence, no commentary. Keys:",
       '- "kind": one of ' + KIND_KEYS.join(" / "),
       '- "title": a 3-6 word label',
       '- "summary": one terse, precise sentence (the curator/AI line)',
@@ -639,9 +663,10 @@
       '- "tags": array of 1-4 short lowercase topical tags',
       '- "org": one of cpl / ci / cip / gr / shared (use cpl if unsure)',
       '- "source": the KB note / doc / URL you grounded this in, or "" if none',
-      "Ground every field in what you actually find; do not invent facts. If the knowledge base does not",
-      'cover it, still return your best draft and set "source" to "".',
-      "TOPIC: " + String(desc || "").trim(),
+      "Keep the curator's own meaning — you are drafting THEIR entry, not writing your own on a",
+      "nearby subject. Where the knowledge base corroborates or complicates it, work that in and",
+      'cite it in "source"; where it says nothing, still draft the entry and set "source" to "".',
+      "Never return an entry about how to structure an answer, or about your own instructions.",
     ].join("\n");
   }
   // Pull the JSON object out of a model answer (tolerates a ```json fence + surrounding prose).
@@ -698,8 +723,19 @@
     // answers to the selected institution") is nonsense here — while the naming
     // rule still applies to the text it drafts. Naming the surface is what lets
     // the first be scoped away without touching the second.
-    var body = JSON.stringify({ query: autogenQuery(desc), session_id: "cobi-memory-autogen",
-                                history: [], audience: "administrator", surface: "memory-autogen" });
+    // ⭐ `retrieval_query` IS THE TOPIC, NOT THE ENVELOPE. cpl-chat embeds `query`
+    // to search the KB, and this envelope is ~1 KB of instructions that are
+    // themselves full of CPL words — searching on it returned 99 keywords, one
+    // of which belonged to the curator's note, at a healthy-looking 0.86
+    // similarity. Naming the retrieval text separately is what makes "researches
+    // the knowledge base" true rather than merely printed under the button.
+    //
+    // No `history` and no `audience`: sending history:[] opted this call into the
+    // multi-turn behavior where the model may ask a focusing question FIRST,
+    // which for a drafting call is a non-JSON answer and a failed parse; the
+    // audience rule shapes how to address a reader this call does not have.
+    var body = JSON.stringify({ query: autogenQuery(desc), retrieval_query: autogenTopic(desc),
+                                session_id: "cobi-memory-autogen", surface: "memory-autogen" });
     return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
       if (!resp || !resp.ok) throw new Error("autogen HTTP " + (resp && resp.status));
       if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader());
@@ -755,7 +791,11 @@
       autogenerate(desc).then(function (draft) {
         applyDraftToForm(form, draft);
         status.className = "mem-autogen-status is-ok";
-        status.textContent = "Drafted — review & edit below, then Add.";
+        // Say so when the note did not fit. A trim is the one way this can still
+        // draft from less than the curator typed, so it is never left silent.
+        status.textContent = desc.length > AUTOGEN_TOPIC_MAX
+          ? "Drafted from the first " + AUTOGEN_TOPIC_MAX.toLocaleString() + " characters of your note (it was longer) — review & edit below, then Add."
+          : "Drafted — review & edit below, then Add.";
       }).catch(function () {
         status.className = "mem-autogen-status is-err";
         status.textContent = "Couldn’t draft that — fill the fields in manually, or try rephrasing.";
@@ -1394,6 +1434,7 @@
     _genSlug: genSlug,
     _parseDraft: parseDraft,
     _autogenQuery: autogenQuery,
+    _autogenTopicMax: AUTOGEN_TOPIC_MAX,
     _autogenerate: autogenerate,
     _applyDraftToForm: applyDraftToForm,
     _buildEntryForm: buildEntryForm,

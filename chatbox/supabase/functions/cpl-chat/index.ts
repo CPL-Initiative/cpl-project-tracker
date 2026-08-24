@@ -2706,6 +2706,55 @@ const RULE_DEFAULTS: Array<RuleDefault> = [
   { key: "landing_page", title: "Missing or unconfigured CPL landing pages", body: LANDING_PAGE_RULE, appliesWhen: "always", sortOrder: 100 },
 ];
 
+/* ── The drafting block (v58, 2026-08-24) ─────────────────────────────────────
+ *
+ * Everything above this line tells the model how to ANSWER A PERSON: lead with a
+ * table, name colleges in two bands, never merge them, close with the coordinator.
+ * None of it is wrong. None of it applies to a caller that is not holding a
+ * conversation at all — the Memory tab's ✨ Autogenerate borrows the model to
+ * DRAFT a row, and gets the whole doctrine anyway.
+ *
+ * ⭐ THAT IS NOT A THEORETICAL COST. Handed a topic the cap had eaten down to
+ * sixteen characters, the model did the only sensible thing available to it: it
+ * wrote about the loudest instruction in its context. The draft came back
+ * describing the two-band answer structure — "sending students to counters where
+ * nobody is expecting them" is STATEWIDE_RULE's own phrase, verbatim — as a
+ * memory entry about which kind of credit a college should award. The topic was
+ * the real defect; the doctrine is what filled the vacuum.
+ *
+ * ⚠ THIS REPLACES, IT DOES NOT ARGUE. Appended LAST and stated as a scope
+ * change, not as an exception list: an instruction that says "ignore rule 3" has
+ * to be re-read every time rule 3 changes, and it will not be.
+ *
+ * ⚠ AND IT GOES IN `volatile`, NEVER `stable`. `stable` is the prompt-cache
+ * breakpoint and is byte-identical on every request; appending a per-surface
+ * block to it would fork the cache for every caller in order to serve one. */
+const DRAFTING_BLOCK = `
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+THIS REQUEST IS NOT A CONVERSATION. READ THIS LAST AND LET IT GOVERN.
+
+You are not answering a student, a counselor or an administrator. An internal
+tool is borrowing you to DRAFT TEXT, and the caller's message states the exact
+output it needs. That message wins.
+
+- The answer-shaping rules above — the two-band college structure, the tables,
+  the landing-page links, the "talk to your CPL coordinator" close, the audience
+  framing — describe how to answer a person's question. They do NOT apply here.
+  Do not apply them, and do not write ABOUT them.
+- Write about the SUBJECT the caller names, and nothing else. If the caller's
+  subject is thin, brief or unfamiliar, say so inside the requested format —
+  never substitute a subject you find in the material above.
+- Follow the caller's output format EXACTLY: if it asks for one JSON object,
+  return one JSON object and nothing else — no preamble, no code fence, no
+  commentary, no follow-up question.
+- The retrieved material above is EVIDENCE you may draw on. It is not the topic.
+  Ground what you write in it where it is relevant, and leave it alone where it
+  is not.
+- The naming rules still apply to every word you draft: the program is the CPL
+  Initiative, the platform is the MAP platform, and American spelling throughout.
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+
 /* ── The host's selected institution (v53, 2026-08-22) ─────────────────────────
  *
  * ⭐ WHY THIS EXISTS. Sam, on a My College screenshot with LACCD chosen as the
@@ -2756,6 +2805,37 @@ const KNOWN_SURFACES = new Set([
 
 function normalizeSurface(raw: any): string | null {
   return typeof raw === "string" && KNOWN_SURFACES.has(raw) ? raw : null;
+}
+
+/* ── A DRAFTING SURFACE IS NOT A CONVERSATION (v58, 2026-08-24) ───────────────
+ *
+ * ⭐ THE CAP IS PER CALLER, because `query` means two different things. A chat
+ * question is a sentence, so a 1,000-character cap was never felt by anyone. A
+ * DRAFTING caller sends an instruction envelope plus a curator's own text, and
+ * cpl_memory.js's envelope alone measured 984 of those 1,000 characters — so an
+ * 870-character note reached the model as "When responding ". Sixteen
+ * characters. Nothing errored, nothing logged, and the draft came back
+ * confident and about something else entirely.
+ *
+ * ⚠ A CAP THAT IS GENEROUS FOR ONE KIND OF CALLER IS A SILENT CONTENT SWAP FOR
+ * ANOTHER — and this one is silent in the worst way, because the surviving
+ * prefix is still grammatical. There is no ragged edge to notice.
+ *
+ * ⚠ THE LIST IS THE GATE AND IT IS SERVER-SIDE. A caller opts into the larger
+ * cap by NAMING ITSELF, and only the names below are honored — an unknown
+ * surface normalizes to null and gets the conversational cap, so this is not a
+ * lever anyone can pull from outside. Keep the two numbers here rather than at
+ * the call site: tests/cpl_memory_autogen.test.js reads QUERY_CAP_DRAFTING out
+ * of this file and asserts the client's envelope still fits under it, which is
+ * the check that was missing when the envelope grew to 984. */
+const DRAFTING_SURFACES = new Set(["memory-autogen"]);
+function isDraftingSurface(surface: string | null): boolean {
+  return !!surface && DRAFTING_SURFACES.has(surface);
+}
+const QUERY_CAP_CHAT = 1000;
+const QUERY_CAP_DRAFTING = 6000;
+function queryCapFor(surface: string | null): number {
+  return isDraftingSurface(surface) ? QUERY_CAP_DRAFTING : QUERY_CAP_CHAT;
 }
 
 /* ⚠ UNTYPED SIGNATURES ON PURPOSE, on both functions below. tests/lib/lift_ts.js
@@ -3127,7 +3207,7 @@ Deno.serve(async (req: Request) => {
   }
 
   try {
-    const { query, session_id, history, audience, ctx, scope, surface } = await req.json();
+    const { query, session_id, history, audience, ctx, scope, surface, retrieval_query } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
       return new Response(JSON.stringify({ error: "Query is required" }), {
         status: 400,
@@ -3135,7 +3215,14 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    const trimmedQuery = query.trim().slice(0, 1000);
+    /* Optional caller surface (v56) — read HERE, above the cap, because as of
+     * v58 the cap depends on it. Absent or unknown on every pre-existing
+     * caller -> null -> every guidance rule and the conversational cap,
+     * exactly as before. */
+    const hostSurface = normalizeSurface(surface);
+    const drafting = isDraftingSurface(hostSurface);
+
+    const trimmedQuery = query.trim().slice(0, queryCapFor(hostSurface));
 
     // Optional audience (primary population) — validated against the known
     // keys; anything else (or absent, e.g. the production widget) → null.
@@ -3159,10 +3246,6 @@ Deno.serve(async (req: Request) => {
     // the Fact Sheet drawer, the production map.rccd.edu widget, the vendor
     // embed): normalizeHostScope returns null and nothing below changes.
     const hostScope = normalizeHostScope(scope);
-
-    // Optional caller surface (v56). Absent or unknown on every pre-existing
-    // caller -> null -> every guidance rule, exactly as before.
-    const hostSurface = normalizeSurface(surface);
 
     // Optional conversation history (multi-turn). Backward-compatible: callers
     // that omit it (e.g. the production widget) stay single-turn. Sanitize to
@@ -3199,7 +3282,20 @@ Deno.serve(async (req: Request) => {
     const ownTopic = extractTopicKeywords(trimmedQuery).filter((w) => !REFINE_NOISE.has(w));
     const isRefinement = priorUserText.length > 0 && ownTopic.length < 2;
     // Current query FIRST so it's never lost to the 1000-char cap.
-    const searchText = (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery).slice(0, 1000);
+    /* ⭐ WHAT WE SEARCH ON IS NOT ALWAYS WHAT WE SEND THE MODEL (v58). Optional
+     * and absent on every conversational caller, where the question IS the
+     * subject and this line is unchanged. A drafting caller's `query` is mostly
+     * ENVELOPE — "reply with ONLY a single JSON object", the key list, the
+     * kind vocabulary — and embedding that blob searched the knowledge base for
+     * the instructions rather than for the topic: 99 keywords, of which one
+     * belonged to the curator's actual note. The similarity score came back
+     * 0.86, because the envelope is itself full of CPL words, so the retrieval
+     * looked healthy while pointing nowhere near the subject. Let a caller that
+     * knows the difference say so. */
+    const retrievalText = typeof retrieval_query === "string"
+      ? retrieval_query.trim().slice(0, 1000) : "";
+    const searchText = (retrievalText
+      || (isRefinement ? `${trimmedQuery}  ${priorUserText}` : trimmedQuery)).slice(0, 1000);
 
     const sb = createClient(SUPABASE_URL, SUPABASE_SERVICE_KEY);
 
@@ -3478,6 +3574,12 @@ Deno.serve(async (req: Request) => {
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
       rulesOverlay, ruleReport, hostScope);
 
+    /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
+     * Appended to `volatile` on purpose: `stable` is the prompt-cache
+     * breakpoint and must stay byte-identical for every caller, so forking it
+     * to serve one surface would cost every other surface its cache. */
+    if (drafting) systemPrompt.volatile += DRAFTING_BLOCK;
+
     // 4. Call Claude Sonnet
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
@@ -3595,7 +3697,15 @@ Deno.serve(async (req: Request) => {
         controller.close();
 
         try {
-          await sb.from("chat_interactions").insert({
+          /* ⚠ A DRAFTING CALL IS NOT A TURN, so it is not filed as one.
+           * chat_interactions is read by the Sierra Training tab's Gap Miner —
+           * the newest N rows, unfiltered — as "questions people asked Sierra
+           * that she may have answered badly". An Autogenerate click filed
+           * there shows up as a question reading "You are drafting ONE internal
+           * team memory entry…", carrying a 0.86 similarity earned by its own
+           * boilerplate, and pushes a real question off the list. Three such
+           * rows exist today; the briefing surface would have added more. */
+          if (!drafting) await sb.from("chat_interactions").insert({
             session_id: session_id || null,
             question: trimmedQuery,
             response: fullResponse,
