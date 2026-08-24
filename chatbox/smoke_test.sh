@@ -13,10 +13,23 @@
 # while we hone the response logic.
 set -uo pipefail
 
+# ⚠ CPL_CHAT_URL MAY POINT AT A NON-PRODUCTION SLUG. The A/B harness
+# (.github/workflows/cpl-chat-preview-ab.yml) runs this whole file twice, once
+# against cpl-chat and once against cpl-chat-preview, so the answers can be
+# compared before a production deploy.
 URL="${CPL_CHAT_URL:-https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat}"
 ANON="${CPL_CHAT_ANON:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM}"
 # PostgREST base for the direct-table assertions (modes 12 and 15d).
-REST_BASE="${URL%/functions/v1/cpl-chat}/rest/v1"
+#
+# ⚠ THE SUFFIX STRIP IS EXACT, SO A PREVIEW SLUG SILENTLY BREAKS IT. `${URL%…}`
+# removes `/functions/v1/cpl-chat` only when the URL ENDS with it. Point this at
+# `…/functions/v1/cpl-chat-preview` and nothing is stripped, so REST_BASE becomes
+# `…/functions/v1/cpl-chat-preview/rest/v1` — every direct-table assertion then
+# fails against a URL that was never a PostgREST endpoint. In an A/B run that
+# reads as "the preview regressed modes 12 and 15d", which is a manufactured
+# difference: those two modes do not touch the edge function at all.
+# So derive it from the PROJECT, and let a caller override it outright.
+REST_BASE="${CPL_REST_BASE:-${URL%%/functions/*}/rest/v1}"
 
 fail=0
 

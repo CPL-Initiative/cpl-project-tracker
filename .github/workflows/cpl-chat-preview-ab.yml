@@ -1,0 +1,257 @@
+name: cpl-chat preview A/B
+
+# Deploy the repo's cpl-chat to a SEPARATE, unadvertised slug and compare its
+# answers against production — so a change can be judged on real Sierra output
+# BEFORE it reaches the six production surfaces.
+#
+# WHY THIS EXISTS
+# ---------------
+# Sam, 2026-08-24, holding the v58 deploy: "I want to do some testing of how it
+# will change results in the various surfaces, particularly Sierra… Just don't
+# want wonky things from memory to show up in Sierra and Fact Sheet."
+#
+# cpl-chat-deploy.yml reaches production with no staging tier, by design — the
+# typed DEPLOY gate is correct. What was missing is any way to SEE the change
+# first. This is that: same bytes, same project, same tables, different slug.
+# Nothing points at `cpl-chat-preview`, so deploying it changes no user-facing
+# behavior.
+#
+# WHAT IT PROVES AND WHAT IT CANNOT
+# ---------------------------------
+#   ✓ Whether any smoke mode that PASSES on production FAILS on the candidate.
+#     That is the signal worth acting on, and it is robust to wording.
+#   ✓ Both full answer sets, uploaded as artifacts, for reading side by side.
+#   ✗ NOT a prose diff. These assertions run against model output and carry
+#     inherent flake (see the notes in chatbox/smoke_test.sh), so two runs of
+#     the SAME function differ in wording. Compare the PASS/FAIL grid; read the
+#     prose with your eyes.
+#
+# ⚠ COST: this runs the full smoke suite TWICE, so it makes roughly double a
+# normal smoke run's model calls. It is a pre-deploy instrument, not a cron job.
+#
+# ⚠ THE PREVIEW FUNCTION PERSISTS after the run so it can be poked at directly.
+# Set cleanup=true to delete it, and delete it once a candidate has shipped —
+# a stale preview slug is a copy of the function that nobody is updating.
+
+on:
+  workflow_dispatch:
+    inputs:
+      cleanup:
+        description: 'Delete the preview function after the run'
+        type: boolean
+        default: false
+
+concurrency:
+  group: cpl-chat-preview-ab
+  cancel-in-progress: false
+
+env:
+  PROJECT_REF: hvuwhnbuahrtptokpqfh
+  PREVIEW_SLUG: cpl-chat-preview
+
+jobs:
+  ab:
+    runs-on: ubuntu-latest
+    steps:
+      # Checks out the ref this workflow was dispatched on, so you can A/B a
+      # branch before merging it as well as main after.
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.x'
+
+      - name: What we are about to compare
+        run: |
+          F=chatbox/supabase/functions/cpl-chat/index.ts
+          echo "Candidate: $F — $(wc -c < "$F") bytes, $(wc -l < "$F") lines"
+          sha256sum "$F"
+          echo "Dispatched on: ${{ github.ref }} @ ${{ github.sha }}"
+
+      - name: Set up Supabase CLI
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      # Same check as cpl-chat-deploy.yml: a 403 from the management API is
+      # indistinguishable between "wrong credential TYPE" and "insufficient org
+      # role", so rule out the type first. Matching a prefix reveals nothing.
+      - name: Check the credential is the right KIND
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          if [ -z "$SUPABASE_ACCESS_TOKEN" ]; then
+            echo "::error::SUPABASE_ACCESS_TOKEN is not set."; exit 1
+          fi
+          case "$SUPABASE_ACCESS_TOKEN" in
+            sbp_*) echo "✓ Personal Access Token (sbp_) — the correct type." ;;
+            eyJ*)  echo "::error::That is a JWT (anon/service_role) — data-plane only, cannot deploy."; exit 1 ;;
+            sb_secret_*|sb_publishable_*)
+                   echo "::error::That is a project API key — data-plane only. Need an account-level PAT."; exit 1 ;;
+            *)     echo "::warning::Token does not start with sbp_; continuing so the API error is visible." ;;
+          esac
+
+      - name: Deploy the candidate to the PREVIEW slug
+        # MUST run from chatbox/ — the CLI resolves functions at
+        # <cwd>/supabase/functions/<slug>/index.ts and this repo's supabase/
+        # tree lives under chatbox/. And the slug IS the directory name, so the
+        # candidate is copied to a directory named for the preview slug. The
+        # copy is ephemeral on the runner; nothing is committed.
+        working-directory: chatbox
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          set -euo pipefail
+          test -f supabase/functions/cpl-chat/index.ts \
+            || { echo "::error::entrypoint missing from $(pwd)"; exit 1; }
+          rm -rf "supabase/functions/${PREVIEW_SLUG}"
+          cp -r supabase/functions/cpl-chat "supabase/functions/${PREVIEW_SLUG}"
+          # Byte-identical to the candidate, or the comparison is meaningless.
+          diff -q supabase/functions/cpl-chat/index.ts \
+                  "supabase/functions/${PREVIEW_SLUG}/index.ts"
+          # --no-verify-jwt matches production: the callers send the anon key,
+          # not a user JWT. Without it the preview 401s and every mode "fails",
+          # which would read as a catastrophic regression in the candidate.
+          supabase functions deploy "${PREVIEW_SLUG}" \
+            --project-ref "${PROJECT_REF}" \
+            --no-verify-jwt
+
+      - name: Smoke — PRODUCTION (cpl-chat, the deployed version)
+        env:
+          CPL_CHAT_URL: https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat
+        run: |
+          # `|| true`: a failing mode is DATA here, not a broken job. The
+          # annotation prefix is stripped so a production failure does not
+          # decorate this run with red annotations that belong to the other run.
+          bash chatbox/smoke_test.sh 2>&1 | sed 's/::error:://g; s/::warning:://g' \
+            | tee prod.log || true
+          echo "--- production run captured: $(wc -l < prod.log) lines ---"
+
+      - name: Smoke — PREVIEW (the candidate)
+        env:
+          CPL_CHAT_URL: https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat-preview
+          # ⚠ REQUIRED. smoke_test.sh derives the PostgREST base from the
+          # function URL. It handles a preview slug correctly, but pin it here
+          # too so modes 12 and 15d can never be blamed on the candidate.
+          CPL_REST_BASE: https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1
+        run: |
+          bash chatbox/smoke_test.sh 2>&1 | sed 's/::error:://g; s/::warning:://g' \
+            | tee preview.log || true
+          echo "--- preview run captured: $(wc -l < preview.log) lines ---"
+
+      - name: Compare the PASS/FAIL grids
+        id: compare
+        run: |
+          python3 - <<'PY' | tee compare.txt
+          import re, sys
+
+          def failures(path):
+              # smoke_test.sh reports a failed assertion as
+              #   "<label>: expected answer to match /re/"  (prefix already stripped)
+              # or "empty answer for <label>" / "curl failed for <label>".
+              out = set()
+              for ln in open(path, encoding="utf-8", errors="replace"):
+                  ln = ln.strip()
+                  m = (re.match(r"^(.*?): expected answer to match", ln)
+                       or re.match(r"^(.*?): answer should NOT match", ln)
+                       or re.match(r"^empty answer for (.*)$", ln)
+                       or re.match(r"^curl failed for (.*)$", ln))
+                  if m:
+                      out.add(m.group(1).strip())
+                  elif ln.startswith("7r ") and "FAILED" in ln:
+                      out.add("7r control")
+              return out
+
+          prod, prev = failures("prod.log"), failures("preview.log")
+          ok = lambda p: "ALL MODES OK" in open(p, encoding="utf-8", errors="replace").read()
+
+          print("=" * 70)
+          print("PRODUCTION  (cpl-chat)        :",
+                "ALL MODES OK" if ok("prod.log") else f"{len(prod)} failing assertion(s)")
+          print("PREVIEW     (cpl-chat-preview):",
+                "ALL MODES OK" if ok("preview.log") else f"{len(prev)} failing assertion(s)")
+          print("=" * 70)
+
+          regressions = sorted(prev - prod)
+          fixes       = sorted(prod - prev)
+          shared      = sorted(prod & prev)
+
+          if regressions:
+              print("\n⚠ REGRESSIONS — pass on production, FAIL on the candidate:")
+              for r in regressions: print("   ✗", r)
+          else:
+              print("\n✓ No regressions: every assertion production passes, the candidate passes.")
+
+          if fixes:
+              print("\n⭐ FIXED by the candidate — fail on production, pass here:")
+              for f in fixes: print("   ✓", f)
+
+          if shared:
+              print("\n· Failing on BOTH (pre-existing, not caused by this change):")
+              for s in shared: print("   -", s)
+
+          print("\nRead the prose side by side in the uploaded artifacts.")
+          print("⚠ These assertions run against model output and carry flake — two runs of")
+          print("  the SAME function differ in wording. Judge the grid, read the prose.")
+
+          # Only a regression fails the job. A shared failure is production's
+          # problem and predates the candidate; failing on it would make this
+          # instrument useless exactly when production is already red.
+          sys.exit(1 if regressions else 0)
+          PY
+
+      - name: Does the candidate accept the memory-briefing surface?
+        # The one behavior this A/B exists to demonstrate. On the DEPLOYED v57
+        # `memory-briefing` is unknown, normalizes to null and takes the 1,000-
+        # char conversational cap; on v58 it takes QUERY_CAP_BRIEFING. Sending a
+        # long, self-identifying corpus shows which side is which.
+        if: always()
+        run: |
+          ANON="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM"
+          # >1,000 characters of padding, then the real instruction LAST, so it
+          # survives only if the larger cap is in force.
+          PAD=$(python3 -c "print('Ignore this padding sentence. ' * 45)")
+          Q="${PAD} FINAL INSTRUCTION: reply with exactly the word BRIEFINGCAPOK and nothing else."
+          for slug in cpl-chat cpl-chat-preview; do
+            echo "---- $slug ----"
+            # jq -n --arg, not an inline python heredoc: a multiline python -c
+            # inside a YAML block scalar has to keep the block's indentation,
+            # and its continuation lines had drifted to column 0, which ENDS
+            # the scalar and makes the whole file unparseable.
+            body=$(jq -n --arg q "$Q" \
+              '{query:$q, session_id:"ab-cap-probe", surface:"memory-briefing"}')
+            curl -sS -N --max-time 90 -X POST \
+              "https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/$slug" \
+              -H "Content-Type: application/json" -H "apikey: $ANON" \
+              -H "Authorization: Bearer $ANON" -d "$body" \
+              | grep -o '"text":"[^"]*"' | head -c 600 || true
+            echo; echo
+          done
+          echo "Expect: production does NOT say BRIEFINGCAPOK (its cap ate the instruction);"
+          echo "        the preview DOES. That difference IS the fix."
+
+      - name: Upload both answer sets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cpl-chat-ab-${{ github.run_id }}
+          path: |
+            prod.log
+            preview.log
+            compare.txt
+          retention-days: 14
+
+      - name: Clean up the preview function
+        if: ${{ always() && inputs.cleanup }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+        run: |
+          supabase functions delete "${PREVIEW_SLUG}" \
+            --project-ref "${PROJECT_REF}" || \
+            echo "::warning::could not delete ${PREVIEW_SLUG}; delete it by hand"
+
+      - name: Where to look
+        if: always()
+        run: |
+          echo "::notice::Preview function: https://hvuwhnbuahrtptokpqfh.supabase.co/functions/v1/cpl-chat-preview"
+          echo "::notice::Download the artifact to read production and candidate answers side by side."
+          echo "::notice::No production surface changed. To ship the candidate, dispatch cpl-chat-deploy.yml with DEPLOY."
