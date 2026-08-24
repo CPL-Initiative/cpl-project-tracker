@@ -60,5 +60,5 @@ jobs:
       # carve-out (Enrichment/Civic/Vocational ESL) at a level survivor, which
       # silently strips the carve-out. Pure-stdlib python; same non-required
       # check.
-      - name: Beginning-ESL worklist lint (kb/_build_esl_beginning_worklist.py)
-        run: python3 tests/esl_beginning_worklist_test.py
+      - name: ESL fold spot-check lint (kb/_build_esl_fold_spotcheck.py)
+        run: python3 tests/esl_fold_spotcheck_test.py

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Guards for kb/_build_esl_beginning_worklist.py — the Beginning-ESL spot-check.
+"""Guards for kb/_build_esl_fold_spotcheck.py — the ESL fold spot-check.
 
 Each case here is a failure mode that would have produced a CONFIDENT WRONG
 proposal against live curation data, not a hypothetical:
@@ -17,7 +17,7 @@ proposal against live curation data, not a hypothetical:
      "advanced writing", which can describe the topic rather than the cohort).
   5. A tie between two bands is a CONFLICT for a human, never a coin flip.
 
-Run:  python3 tests/esl_beginning_worklist_test.py
+Run:  python3 tests/esl_fold_spotcheck_test.py
 """
 import os
 import sys
@@ -27,7 +27,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(
 
 import importlib
 
-W = importlib.import_module("_build_esl_beginning_worklist")
+W = importlib.import_module("_build_esl_fold_spotcheck")
 
 FAILURES = []
 
@@ -103,6 +103,19 @@ for purpose in ("Enrichment ESL", "Civic ESL", "Vocational ESL",
                 "Vocational ESL — Healthcare"):
     check(f"{purpose} is NOT a level bucket", purpose in W.LEVEL_BUCKETS, False)
 
+print("6b. a fold is checked against ITS OWN band, not always Beginning")
+check("Advanced evidence CONFIRMS a row already folded to Advanced",
+      W.categorize([("Advanced", "advanced ESL")], [], [],
+                   current_band="Advanced"), ("confirms", None))
+check("Beginning evidence CONTRADICTS a row folded to Advanced",
+      W.categorize([("Beginning", "beginning ESL")], [], [],
+                   current_band="Advanced"), ("contradicts", "Beginning"))
+check("Intermediate evidence CONTRADICTS a row folded to Advanced",
+      W.categorize([("Intermediate", "intermediate ESL")], [], [],
+                   current_band="Advanced"), ("contradicts", "Intermediate"))
+check("bucket->band map covers exactly the level buckets",
+      sorted(W.BUCKET_BAND), sorted(W.LEVEL_BUCKETS))
+
 print("7. survivor targets are the three level comprehensives")
 check("survivor ids", sorted(W.SURVIVOR.values()),
       ["ESOL M1141", "ESOL M9168", "ESOL M9256"])
@@ -116,7 +129,7 @@ check("empty description is safe",
 
 print("9. the built artifact, if present, obeys the purpose-bucket rule")
 art = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                   "kb", "esl_beginning_worklist", "2026-08-24", "worklist.json")
+                   "kb", "esl_fold_spotcheck", "2026-08-24", "worklist.json")
 if os.path.exists(art):
     import json
     w = json.load(open(art, encoding="utf-8"))
@@ -131,6 +144,25 @@ if os.path.exists(art):
     #    the thing being counted is not a clean bill of health.
     check("the artifact actually contains purpose-bucket rows to test",
           any(r["bucket"] not in W.LEVEL_BUCKETS for r in w["rows"]), True)
+    # a proposal must never restate the band the row already has
+    noop = [r["id"] for r in w["rows"]
+            if r["proposed_band"] and r["proposed_band"] == r["current_band"]]
+    check("no proposal restates the row's current band", noop, [])
+    # ⚠️ calibration is keyed on signal AND confidence — `combo` carries both,
+    #    so a signal-only key would mislabel the lane.
+    check("calibration keys carry a confidence",
+          all("/" in k for k in w["signal_calibration"]), True)
+    check("calibration covers more than one confidence for combo",
+          len([k for k in w["signal_calibration"] if k.startswith("combo/")]), 2)
+    # the directional split must account for EVERY numeric proposal — a
+    # direction tally that silently drops rows would understate the diagnosis
+    d = w["numeric_ladder_direction"]
+    check("direction keys are the two known directions", sorted(d),
+          ["doctrine_over_claimed", "doctrine_under_claimed"])
+    check("direction tally covers every numeric proposal",
+          sum(d.values()),
+          len([r for r in w["rows"]
+               if r["fold_signal"] == "numeric" and r["proposed_band"]]))
 else:
     print("  skip  worklist artifact not built")
 

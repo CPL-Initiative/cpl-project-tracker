@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Beginning-ESL spot-check worklist — the 543 folds that carried NO level signal.
+"""ESL fold spot-check — every 2026-08-24 fold re-checked against course DESCRIPTIONS.
 
 READ-ONLY. Writes only a receipt under kb/esl_beginning_worklist/<date>/.
 
@@ -11,8 +11,9 @@ the title had no level word, no numeric ladder and no carve-out, so the doctrine
 CPL-safe under-claim sent them to Beginning ESL (517 landed in Beginning, 26 were
 later carved into Enrichment).
 
-Session 188's handoff called this "the truly evidence-free pile" and said the
-spot-check had no surface. Both halves were wrong, and this script is why:
+Session 188's handoff scoped the spot-check to the 543 `default-beginning` folds
+and called them "the truly evidence-free pile" with no surface to review on.
+All three parts of that were wrong, and this script is why:
 
   * There IS more evidence. The classifier only ever read the identity's modal
     TITLE. The COCI export carries a CatalogDescription for 670 of the 731 member
@@ -22,8 +23,30 @@ spot-check had no surface. Both halves were wrong, and this script is why:
     concrete re-level proposal.
   * There IS a repair, available today. Every one of these folds is a
     `merge_into` row owned by the fold cohort, so re-leveling is an UPDATE of
-    that row's target (Beginning survivor -> Intermediate or Advanced survivor).
-    It needs none of the three missing verbs the handoff lists.
+    that row's target (one level survivor -> another). It needs none of the
+    three missing verbs the handoff lists.
+  * The `default-beginning` lane is NOT where most of the risk lives. Running the
+    same check across ALL 1,990 folds CALIBRATES each fold signal by how often it
+    disagrees with the college's own catalog description:
+
+        signal / confidence        disagrees  agrees  unchecked  wrong rate
+        combo/medium                       2       0          3      100.0%
+        default-beginning/medium         102      31        384       76.7%
+        numeric/medium                    94      97        241       49.2%
+        combo/high                         1       7         24       12.5%
+        word/high                         23     345        455        6.2%
+
+    The ratified NUMERIC pinning (1-2 Beginning / 3-4 Intermediate / 5+ Advanced)
+    is close to a COIN FLIP wherever a description can check it. The handoff
+    ranked that lane BELOW `default-beginning` on the grounds that a number in a
+    title "is weak evidence, but IS evidence"; measured, it is 94 more rows of
+    work of the same kind. `word` at 6.2% is the only signal that behaves like a
+    high-confidence one, which is what it was labelled. `combo/medium` is 2 of 2
+    wrong, which is too few rows to conclude from but is at least consistent with
+    the doctrine's own hedge — the Beginning-Advanced span was pinned to the
+    midpoint and explicitly marked "review".
+    ⚠️ The wrong rate is over rows a description can CHECK, not over the lane —
+    241 of 434 numeric folds carry no description assertion either way.
 
 ⚠️ WHAT THIS DELIBERATELY DOES NOT DO — the local course NUMBER is not a level.
     A calibrated ladder was built and REJECTED: anchor each college+subject's
@@ -61,10 +84,11 @@ SIGNAL TIERS (a level assertion about THIS course, not its prerequisite)
    value would pass with the strip removed and guard nothing.
 
 Run from repo root:
-    python3 kb/_build_esl_beginning_worklist.py [--date YYYY-MM-DD]
+    python3 kb/_build_esl_fold_spotcheck.py [--date YYYY-MM-DD]
+                                            [--scope all|default-beginning]
 
-Writes: kb/esl_beginning_worklist/<date>/worklist.json
-        kb/esl_beginning_worklist/<date>/report.md
+Writes: kb/esl_fold_spotcheck/<date>/worklist.json
+        kb/esl_fold_spotcheck/<date>/report.md
 """
 from __future__ import annotations
 
@@ -97,6 +121,11 @@ SURVIVOR = {
 #    Advanced ESL would silently strip the carve-out that put it there, so those
 #    rows are REPORTED and never proposed.
 LEVEL_BUCKETS = {"Beginning ESL", "Intermediate ESL", "Advanced ESL"}
+
+# a level bucket -> the band it asserts, so a fold in ANY lane can be checked
+BUCKET_BAND = {"Beginning ESL": "Beginning",
+               "Intermediate ESL": "Intermediate",
+               "Advanced ESL": "Advanced"}
 
 # ── description hygiene ──────────────────────────────────────────────────────
 _WS = re.compile(r"\s+")
@@ -174,21 +203,22 @@ def majority(found) -> str | None:
     return "CONFLICT"
 
 
-def categorize(ev_a, ev_b, ev_p):
-    """(category, proposed_band_or_None) — tier A wins outright over tier B."""
+def categorize(ev_a, ev_b, ev_p, current_band="Beginning"):
+    """(category, proposed_band_or_None), relative to the band the fold ASSIGNED.
+
+    `current_band` defaults to Beginning because that is the `default-beginning`
+    lane this started as; pass the fold's own band to check any other lane.
+    """
     band_a, band_b = majority(ev_a), majority(ev_b)
     if band_a == "CONFLICT":
         return "conflict", None
-    if band_a and band_a != "Beginning":
-        return "contradicts", band_a
-    if band_a == "Beginning":
-        return "confirms", None
+    if band_a:
+        return ("contradicts", band_a) if band_a != current_band else ("confirms", None)
     if band_b == "CONFLICT":
         return "conflict", None
-    if band_b and band_b != "Beginning":
-        return "weak-contradicts", band_b
-    if band_b == "Beginning":
-        return "confirms", None
+    if band_b:
+        return (("weak-contradicts", band_b) if band_b != current_band
+                else ("confirms", None))
     if ev_p:
         return "prereq-only", None
     return "no-signal", None
@@ -232,7 +262,7 @@ def read_coci(wanted):
     return out
 
 
-def build(date):
+def build(date, scope="all"):
     plan = json.load(open(os.path.join(ROOT, APPLY_PLAN), encoding="utf-8"))
     classified = {r["id"]: r for r in json.load(
         open(os.path.join(ROOT, CLASS_PLAN), encoding="utf-8"))["identities"]}
@@ -240,7 +270,9 @@ def build(date):
                                encoding="utf-8"))["curations"]
     memberships, singletons = load_members()
 
-    folds = [f for f in plan["folds"] if f.get("sig") == "default-beginning"]
+    folds = plan["folds"]
+    if scope == "default-beginning":
+        folds = [f for f in folds if f.get("sig") == "default-beginning"]
 
     def members_of(ident):
         if ident in memberships:
@@ -283,14 +315,19 @@ def build(date):
                 "level_quotes": [q for _, q in a["a"]] + [q for _, q in a["b"]],
             })
 
-        category, proposed = categorize(ev_a, ev_b, ev_p)
+        current = BUCKET_BAND.get(f["bucket"])
+        category, proposed = categorize(ev_a, ev_b, ev_p,
+                                        current_band=current or "Beginning")
         # a level assertion inside a PURPOSE carve-out is not a re-level proposal
-        if proposed and f["bucket"] not in LEVEL_BUCKETS:
+        if proposed and current is None:
             category, proposed = "level-in-purpose-bucket", None
         meta = classified.get(ident, {})
         rows.append({
             "id": ident,
             "identity_title": meta.get("title", ""),
+            "fold_signal": f.get("sig"),
+            "fold_confidence": f.get("conf"),
+            "current_band": current,
             "src": meta.get("src"),
             "credit_status": meta.get("credit_status"),
             "units": meta.get("units"),
@@ -310,6 +347,47 @@ def build(date):
     by_band = collections.Counter(
         r["proposed_band"] for r in rows if r["proposed_band"])
 
+    # ⭐ calibration: how often does each FOLD SIGNAL disagree with the college's
+    #    own description, over the rows a description can actually check?
+    calib = {}
+    for r in rows:
+        if r["current_band"] is None:
+            continue
+        # ⚠️ key on signal AND confidence — `combo` carries BOTH high and medium
+        #    rows, so a signal-only key would label the lane with whichever
+        #    confidence happened to be read first.
+        sig = f"{r['fold_signal'] or '(none)'}/{r['fold_confidence'] or '?'}"
+        c = calib.setdefault(sig, {"signal": r["fold_signal"],
+                                   "confidence": r["fold_confidence"],
+                                   "disagrees": 0, "agrees": 0, "unchecked": 0})
+        if r["category"] in ("contradicts", "weak-contradicts"):
+            c["disagrees"] += 1
+        elif r["category"] == "confirms":
+            c["agrees"] += 1
+        else:
+            c["unchecked"] += 1
+    # ⭐ the numeric lane's mis-fires are DIRECTIONAL, which is the diagnosis:
+    #    at the bottom of the ladder the doctrine under-claims, at the top it
+    #    over-claims. That is what happens when colleges run ladders of
+    #    different LENGTHS — a college with a 1-3 ladder has "2" as its MIDDLE
+    #    rung while the pinning assumes 1-2 is still Beginning.
+    ORDER = {"Beginning": 0, "Intermediate": 1, "Advanced": 2}
+    direction = collections.Counter()
+    for r in rows:
+        if r["fold_signal"] != "numeric" or not r["proposed_band"]:
+            continue
+        if r["current_band"] is None:
+            continue
+        delta = ORDER[r["proposed_band"]] - ORDER[r["current_band"]]
+        direction["doctrine_under_claimed" if delta > 0
+                  else "doctrine_over_claimed"] += 1
+
+    for c in calib.values():
+        checked = c["disagrees"] + c["agrees"]
+        # ⚠️ over rows a description can CHECK, never over the whole lane
+        c["checked"] = checked
+        c["wrong_rate"] = round(c["disagrees"] / checked, 3) if checked else None
+
     return {
         "_status": "WORKLIST — read-only measurement. No curation write performed.",
         "_date": date,
@@ -322,7 +400,10 @@ def build(date):
             "schemes (credit vs noncredit mirrors) and off-ladder labs carry "
             "numbers too, so nearest-anchor placement is not an ordinal. "
             "325 rows would have been proposed on it."),
+        "_scope": scope,
         "counts": dict(counts),
+        "signal_calibration": calib,
+        "numeric_ladder_direction": dict(direction),
         "proposed_by_band": dict(by_band),
         "description_coverage": {
             "members_total": sum(len(r["members"]) for r in rows),
@@ -336,46 +417,108 @@ def build(date):
 
 def report_md(w):
     c = w["counts"]
-    head = c.get("contradicts", 0) + c.get("conflict", 0) + c.get("weak-contradicts", 0)
+    head = (c.get("contradicts", 0) + c.get("conflict", 0)
+            + c.get("weak-contradicts", 0))
+    n = len(w["rows"])
+    scoped = w["_scope"] == "default-beginning"
+    lede = (
+        f"**{n} folds** carried signal `default-beginning` — no level word, no "
+        "numeric ladder, no carve-out — so the doctrine's CPL-safe under-claim "
+        "sent them to Beginning ESL."
+        if scoped else
+        f"**All {n} folds** from the 2026-08-24 ESL packaging pass, each "
+        "re-checked against the catalog DESCRIPTIONS of its member courses — "
+        "evidence the fold classifier never read, because it only ever looked "
+        "at the identity's modal title.")
     lines = [
-        "# Beginning-ESL spot-check worklist",
+        "# ESL fold spot-check",
         "",
-        f"_Generated {w['_date']} · read-only · source `{w['_source_plan']}`_",
+        f"_Generated {w['_date']} · read-only · scope `{w['_scope']}` · "
+        f"source `{w['_source_plan']}`_",
         "",
-        f"**{len(w['rows'])} folds** carried signal `default-beginning` — no level "
-        "word, no numeric ladder, no carve-out — so the doctrine's CPL-safe "
-        "under-claim sent them to Beginning ESL.",
+        lede,
         "",
-        f"**{head} of them carry description evidence that contradicts Beginning.** "
-        f"The remaining {c.get('no-signal', 0)} are evidence-free at the "
-        "description layer too, and there is nothing to review on them.",
+        f"**{head} of them carry description evidence that disagrees with the "
+        f"band the fold assigned.** {c.get('no-signal', 0)} carry no level "
+        "assertion either way, and there is nothing to review on those.",
         "",
         "| Category | Rows | What it means |",
         "|---|---:|---|",
-        f"| `contradicts` | {c.get('contradicts', 0)} | An explicit band phrase in the "
-        "member description says a different level. **Work these first.** |",
-        f"| `conflict` | {c.get('conflict', 0)} | Members assert different bands — needs a human. |",
-        f"| `weak-contradicts` | {c.get('weak-contradicts', 0)} | Only a strand adjective "
-        "(\"advanced writing\") — may describe the topic, not the cohort. |",
-        f"| `level-in-purpose-bucket` | {c.get('level-in-purpose-bucket', 0)} | The "
-        "description names a level, but the row sits in a PURPOSE carve-out "
-        "(Enrichment/Civic/Vocational). Re-pointing it would strip the carve-out, "
-        "so it is reported, never proposed. |",
+        f"| `contradicts` | {c.get('contradicts', 0)} | An explicit band phrase "
+        "in the member description says a different level. **Work these first.** |",
+        f"| `conflict` | {c.get('conflict', 0)} | Members assert different bands "
+        "— needs a human. |",
+        f"| `weak-contradicts` | {c.get('weak-contradicts', 0)} | Only a strand "
+        "adjective (\"advanced writing\") — may describe the topic, not the "
+        "cohort. |",
+        f"| `level-in-purpose-bucket` | {c.get('level-in-purpose-bucket', 0)} | "
+        "The description names a level, but the row sits in a PURPOSE carve-out "
+        "(Enrichment/Civic/Vocational). Re-pointing it would strip the "
+        "carve-out, so it is reported, never proposed. |",
         f"| `prereq-only` | {c.get('prereq-only', 0)} | A level appears only in a "
-        "prerequisite clause — evidence the course sits ABOVE it, never a proposal. |",
-        f"| `confirms` | {c.get('confirms', 0)} | Description confirms Beginning. Accept. |",
-        f"| `no-signal` | {c.get('no-signal', 0)} | No level assertion anywhere. Beginning stands by doctrine. |",
+        "prerequisite clause — evidence the course sits ABOVE it, never a "
+        "proposal. |",
+        f"| `confirms` | {c.get('confirms', 0)} | Description agrees with the "
+        "assigned band. Accept. |",
+        f"| `no-signal` | {c.get('no-signal', 0)} | No level assertion anywhere. "
+        "The fold's own signal stands by doctrine. |",
         "",
-        "Proposed re-levels: " + ", ".join(
-            f"**{v} → {k}**" for k, v in sorted(w["proposed_by_band"].items())) or "none",
+        "Proposed re-levels: " + (", ".join(
+            f"**{v} → {k}**" for k, v in sorted(w["proposed_by_band"].items()))
+            or "none"),
         "",
+    ]
+
+    if w.get("signal_calibration"):
+        lines += [
+            "## ⭐ Which fold signal actually held up",
+            "",
+            "How often each signal disagrees with the college's own catalog "
+            "description. ⚠️ The rate is over rows a description can **check** — "
+            "`unchecked` rows assert nothing either way and are excluded, not "
+            "counted as agreement.",
+            "",
+            "| Signal / confidence | Disagrees | Agrees | Unchecked | Wrong rate |",
+            "|---|---:|---:|---:|---:|",
+        ]
+        for sig, cal in sorted(w["signal_calibration"].items(),
+                               key=lambda kv: -(kv[1]["wrong_rate"] or 0)):
+            rate = ("n/a" if cal["wrong_rate"] is None
+                    else f"{cal['wrong_rate']:.1%}")
+            lines.append(f"| `{sig}` | {cal['disagrees']} | {cal['agrees']} | "
+                         f"{cal['unchecked']} | **{rate}** |")
+        lines.append("")
+
+    d = w.get("numeric_ladder_direction") or {}
+    if d:
+        up, down = d.get("doctrine_under_claimed", 0), d.get("doctrine_over_claimed", 0)
+        lines += [
+            "### Why the numeric lane fails: ladders are different LENGTHS",
+            "",
+            f"The mis-fires are **directional, not random** — {up} under-claim, "
+            f"{down} over-claim. The ratified pinning (1-2 Beginning / 3-4 "
+            "Intermediate / 5+ Advanced) assumes every college runs a ladder of "
+            "the same length. A college with a **1-3** ladder has `2` as its "
+            "MIDDLE rung, so \"Listening and Speaking 2\" is *intermediate* in "
+            "its own catalog while the pinning reads it as Beginning.",
+            "",
+            f"⚠️ **The {down} over-claims are the ones to look at first**, even "
+            f"though the {up} under-claims are far more numerous. Under-claiming "
+            "is the direction the doctrine deliberately chose (award at the entry "
+            "band rather than over-claim); over-claiming is the direction it "
+            "exists to prevent.",
+            "",
+        ]
+
+    lines += [
         "## The repair is available today",
         "",
-        "Every row here is a `merge_into` owned by `" + w["_fold_cohort"] + "`, so a "
-        "re-level is an UPDATE of that row's target — "
-        f"`{w['_survivors']['Beginning']}` → `{w['_survivors']['Intermediate']}` or "
-        f"`{w['_survivors']['Advanced']}`. It needs none of the three missing verbs "
-        "(un-merge, relabel-island, re-home-inside-a-merged-identity).",
+        "Every row here is a `merge_into` owned by `" + w["_fold_cohort"] +
+        "`, so a re-level is an UPDATE of that row's target — one level "
+        "survivor for another (" +
+        " · ".join(f"{k} `{v}`" for k, v in sorted(w["_survivors"].items())) +
+        "). It needs none of the three missing verbs (un-merge, "
+        "relabel-island, re-home-inside-a-merged-identity).",
         "",
         "## What was rejected",
         "",
@@ -387,13 +530,20 @@ def report_md(w):
     for r in w["rows"]:
         if r["category"] not in ("contradicts", "conflict"):
             continue
-        arrow = f" → **{r['proposed_band']}** (`{r['proposed_target']}`)" if r["proposed_band"] else " → **needs a human**"
+        arrow = (f" — folded **{r['current_band']}**, description says "
+                 f"**{r['proposed_band']}** (`{r['proposed_target']}`)"
+                 if r["proposed_band"] else
+                 f" — folded **{r['current_band']}**, members disagree; "
+                 "**needs a human**")
         lines.append(f"### `{r['id']}` — {r['identity_title']}{arrow}")
+        lines.append(f"_fold signal: `{r['fold_signal']}` "
+                     f"({r['fold_confidence']} confidence)_")
         for m in r["members"]:
-            q = "; ".join(f"_“{x}”_" for x in m["level_quotes"][:2]) or "—"
-            lines.append(
-                f"- {m['college']} · {m['subject']} {m['number']} — "
-                f"{m['local_title']}  \n  {q}")
+            q = "; ".join(f"_\u201c{x}\u201d_" for x in m["level_quotes"][:2])
+            if not q:
+                continue
+            lines.append(f"- {m['college']} · {m['subject']} {m['number']} — "
+                         f"{m['local_title']}  \n  {q}")
         lines.append("")
     return "\n".join(lines)
 
@@ -401,20 +551,29 @@ def report_md(w):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--date", default=datetime.date.today().isoformat())
+    ap.add_argument("--scope", default="all",
+                    choices=["all", "default-beginning"])
     args = ap.parse_args()
 
-    w = build(args.date)
-    outdir = os.path.join(ROOT, "kb", "esl_beginning_worklist", args.date)
+    w = build(args.date, args.scope)
+    outdir = os.path.join(ROOT, "kb", "esl_fold_spotcheck", args.date)
     os.makedirs(outdir, exist_ok=True)
     with open(os.path.join(outdir, "worklist.json"), "w", encoding="utf-8") as fh:
         json.dump(w, fh, indent=1, ensure_ascii=False)
     with open(os.path.join(outdir, "report.md"), "w", encoding="utf-8") as fh:
         fh.write(report_md(w))
 
-    print(f"rows: {len(w['rows'])}")
+    print(f"scope: {w['_scope']}   rows: {len(w['rows'])}")
     for k, v in sorted(w["counts"].items(), key=lambda kv: -kv[1]):
         print(f"  {v:5d}  {k}")
     print(f"proposed re-levels: {w['proposed_by_band']}")
+    print("signal calibration (over rows a description can CHECK):")
+    for sig, c in sorted(w["signal_calibration"].items(),
+                         key=lambda kv: -(kv[1]["wrong_rate"] or 0)):
+        rate = "n/a" if c["wrong_rate"] is None else f"{c['wrong_rate']:.1%}"
+        print(f"  {sig:<26s} "
+              f"disagrees {c['disagrees']:4d}  agrees {c['agrees']:4d}  "
+              f"unchecked {c['unchecked']:4d}  wrong {rate}")
     cov = w["description_coverage"]
     print(f"description coverage: {cov['members_with_description']} of {cov['members_total']} members")
     if w["skipped_curator_owned"]:
