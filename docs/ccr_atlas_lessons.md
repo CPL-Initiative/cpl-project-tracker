@@ -1,7 +1,7 @@
 ---
 title: CCR Atlas — lessons & state
 date: 2026-08-24
-session: 187 (SkyView)
+session: 188 (Sky188)
 tags: [ccr, atlas, graph, visualization, curation, esl, packaging, prototype]
 artifacts:
   - kb/_build_ccr_atlas_extract.py
@@ -12,10 +12,14 @@ artifacts:
   - prototype/ccr_atlas_esl.js
   - prototype/check_ccr_atlas.js
   - kb/esl_package_out/2026-08-24/revalidation.md
+  - kb/_build_esl_fold_spotcheck.py
+  - kb/esl_fold_spotcheck/2026-08-24/report.md
+  - tests/esl_fold_spotcheck_test.py
 related:
   - "[[CLAUDE]]"
   - "[[docs/ccr_convergence_strategy]]"
   - "[[docs/kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue]]"
+  - "[[docs/kb-notes/methodology-calibrate-a-signal-before-you-rank-the-queue]]"
   - "[[docs/kb-notes/methodology-the-unit-of-curation-work-is-the-component-not-the-suggestion]]"
   - "[[docs/kb-notes/methodology-one-college-many-course-numbers-is-an-over-merge-signal]]"
 ---
@@ -302,3 +306,156 @@ look broken.
 - A survivor-member audit before the next packaging pass (the dilution problem).
 - Candidate audit rule: an island whose members' disciplines outvote its own label.
 - The whole-universe level-of-detail view, and the one-college-many-numbers rule.
+
+
+---
+
+## 2026-08-24 (later still) — Session 188: the spot-check, and the queue ranked backwards
+
+Sam's ask was two things: find the *"CPL Initiative Dashboard Daily Update"* Routine so he
+could toggle it off, then **"continue the queue."**
+
+### The Routine — confirmed independent, then deleted
+
+An agent can neither disable nor delete it (`created_via: "http_api"`; I tried, and the API
+refused in as many words). Sam asked the right question before deleting: *is this our daily
+cron?* Four independent checks say no, and the fourth is the one that settles it:
+
+1. The real cron is **in the repo** — `.github/workflows/daily-dashboard.yml`, on GitHub's
+   scheduler. A claude.ai Routine cannot touch it.
+2. Times don't match: Routine `0 11 * * *` vs the 3-cron ladder `17 6` / `17 9` / `17 12` UTC.
+3. The Routine had **no `last_run` ever recorded** and a `next_run_at` frozen at 2026-04-18.
+4. **It was already Paused and the dashboard updated anyway** — three `Daily dashboard update`
+   commits per day on `main` through the week, which is the ladder firing.
+
+⭐ **Proof by observation beat proof by reading.** Points 1–3 are inference from config; point
+4 is the system demonstrably working without it. When someone is nervous about deleting
+something, find the observation, not another argument.
+
+### The four wrong claims in the handoff
+
+Session 188's handoff scoped the spot-check to the 543 `default-beginning` folds, called them
+*"the truly evidence-free pile"*, said they had **no surface** to review on, and ranked them
+**above** the 248 `numeric` rows. All four were wrong, and the reason is one sentence:
+
+> **The fold classifier only ever read the identity's modal TITLE.**
+
+`kb/reference/coci_course_list.xlsx` carries a `CatalogDescription` for **3,002 of 3,123
+member courses (96%)**, and those descriptions state the level outright. The very first row in
+the "evidence-free" pile — `ESOL M9082` *"Academic Reading and Writing for ESL"*, folded to
+Beginning — has **both** members saying *"at the advanced ESL level."*
+
+### The finding that outgrew the task: calibrate the signal
+
+Running the same check across **all 1,990 folds** measures each fold signal against an
+independent adjudicator, over the rows that adjudicator can actually **decide**:
+
+| Signal / confidence | Disagrees | Agrees | Unchecked | Wrong rate |
+|---|---:|---:|---:|---:|
+| `combo/medium` | 2 | 0 | 3 | 100.0% |
+| `default-beginning/medium` | 102 | 31 | 384 | **76.7%** |
+| `numeric/medium` | **94** | 97 | 241 | **49.2%** |
+| `combo/high` | 1 | 7 | 24 | 12.5% |
+| `word/high` | 23 | 345 | 455 | **6.2%** |
+
+⭐ **`numeric` is a coin flip, and it was ranked BELOW the lane to work first** — on the
+reasoning that a number in a title *"is weak evidence, but IS evidence."* That is a
+sensible-sounding argument that nothing could check without a second source. 94 rows were
+about to be skipped. `word/high` at 6.2% is the only signal behaving like the confidence label
+it carries — the stamps encoded how convincing each rule *felt*, which is a different quantity
+from how often it is right.
+
+⚠️ **The denominator is the rows the source can DECIDE.** 1,217 folds assert nothing either
+way; they are excluded, never counted as agreement. Fold them in and `default-beginning` reads
+20% instead of 77% and the finding evaporates. This is the local instance of the standing
+trap — *ask whether the list you read can contain what you are counting.*
+
+⚠️ **Key on every axis the label varies over.** My first cut keyed calibration on the signal
+name alone, so `combo` got whichever confidence was read first. Split properly the halves are
+**12.5%** and **100%** — one name over two different things.
+
+### Directional error beats aggregate error
+
+The numeric mis-fires are **not random: 85 under-claim, 9 over-claim.** The pinning assumes
+every college runs a ladder of the same **length**; a college with a 1–3 ladder has `2` as its
+*middle* rung, so Contra Costa's `ESL 126 Listening and Speaking 2` is intermediate in its own
+catalog while the rule reads Beginning.
+
+⭐ **The small half matters more.** Under-claiming is the direction the doctrine deliberately
+chose (award at the entry band); over-claiming is the one it exists to prevent. So **9** rows
+outrank **85**. An aggregate rate says *"unreliable"*; the split says *"systematically
+conservative, with nine exceptions that break its own safety property."*
+
+All 9 share one cause — **"high-intermediate" / "high-beginning" rounded up**, i.e. the
+`5+ → Advanced` cut sitting one rung too low for 6-rung ladders. `ESOL M1211` (8 colleges) and
+`ESOL M1217` (7) are the LACCD *College ESL V* series: a **district convention**, not a
+one-off, which is the cleanest confirmation of the ladder-length diagnosis available.
+⚠️ `ESOL M1217` is **not unanimous** — six members say high-intermediate, LA Mission says
+*"low-advanced"*. Majority resolved it; it is the row to eyeball first.
+
+### What was rejected, and why it matters that it was
+
+A **calibrated course-number ladder** was built and thrown away: anchor a college's numbers
+against its own level-worded siblings, then place the unlabeled member. It fails structurally
+— Santa Rosa `EMLS` anchors land at **30 (Advanced), 371/372 (Intermediate), 701/702
+(Beginning)** because the 700s are the *noncredit mirror* of the 300s, and off-ladder courses
+(Hartnell `ENGM 190A` *"English in the Lab A"*) still carry numbers. Nearest-anchor would have
+proposed **325** re-levels on an ordinal that does not exist.
+
+⭐ Note this is the **same root cause** as the numeric lane's failure, seen from the other
+side: local numbering is not comparable across colleges *or* across one college's own schemes.
+An independent source has to be independent **and** meaningful — Rule 7's standard for TOP.
+
+### The repair was available all along
+
+Every one of the 1,990 folds is a `merge_into` row owned by `package-esl-s187@bot`, so a
+re-level is an **UPDATE of that row's target**. It needs none of the three missing verbs. The
+handoff's own rule — *check that the repair you recommend is actually available before you
+recommend it* — applied in the opposite direction: it **was** available, and the handoff said
+it wasn't.
+
+⚠️ **A purpose bucket is not a level bucket.** 45 rows name a level inside Enrichment / Civic /
+Vocational ESL. Those are carve-outs by *purpose*; a level assertion there says the level is
+different, not that the carve-out is wrong. Re-pointing would silently strip it.
+
+### Survivor-member audit — closed, clean
+
+The carryover said to audit a survivor's existing members *before* the next packaging pass,
+because folding dilutes the evidence by design. Done, and **verified against live
+`kb_curation`**, not just the committed file: **7** pre-existing members across all 7
+survivors, **1** non-ESL (`FIMS M1018`, already known). The four big level survivors had
+**zero** — so the dilution risk was concentrated entirely in the three small carve-out
+survivors. One pre-existing merge is `map@rccd.edu`'s own and was left alone.
+
+### My own guards were wrong before the code was
+
+⚠️ The first boilerplate check **passed while perturbed** — it could not fail. Only 2 live
+descriptions carry `Basic Skills Level:` and both read *"Open Curriculum"*, matching nothing.
+Rewriting it against a **band-valued** field then exposed a real defect: the strip took the
+field **NAME** and left its **VALUE**, so `Basic Skills Level: Beginning ESL` still matched —
+the same mistake as stripping *"Prerequisite"* and leaving the course it names.
+
+⚠️ My CI step also nearly inherited an invisible dependency: it runs two steps after another
+step does `pip install openpyxl`. Blocking `openpyxl` outright proved the test stands alone
+(the builder's import is function-local) — and proved the blocker itself bites.
+
+### Four CI wakes, four useless
+
+⚠️ **`check_suite.completed` is a prompt to go look, never a green light.** Three of four named
+**superseded heads**; the fourth named the current head but reported a suite I had just
+**canceled** as *"completed"*. Session 187 hit this twice and wrote it into its check-in
+prompts; four-for-four here made it worth putting in `CLAUDE.md` beside the polling rule.
+
+#1315 merged on `unstable` with the secret scan **stalled twice at zero log output** (22 min,
+then a fresh re-run) while the JS suite completed in 11 min on the same commit and runner pool
+— action-side, not the diff. The diff was scanned locally instead (0 credential-shaped
+strings across code, docs and the 1.66 MB artifact) and **what the green did and did not cover
+is named in the merge commit**. If TruffleHog stalls again, treat it as repo-level.
+
+### Next
+
+1. **Sam's two calls:** the 9 over-claims by hand, or move the cut to `6+` (resolves 6 of the
+   8 Advanced ones by rule); and whether the numeric pinning survives at all.
+2. The **67 Z-scheme `ESOL Z####`** rows the fold never touched — the concrete remaining ESL job.
+3. `FIMS M1018` still cannot be re-homed: it does not render, so it needs the **un-merge verb**.
+4. Run the same calibration on the **next discipline's** packaging pass *before* ranking its queue.
