@@ -578,6 +578,11 @@
       var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
       var toolHost = el("div", "rp-toolhost");
       edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
+      // Sam, 2026-08-24: a briefing citation should land on the row READY TO
+      // EDIT, not merely selected. The intent is a flag rather than a call from
+      // the click handler because the form lives inside this render — the click
+      // happens one render earlier, when these elements do not exist yet.
+      if (pendingEdit === d.id) { pendingEdit = null; edit.onclick(); }
       revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
       tools.appendChild(edit); tools.appendChild(revise);
       box.appendChild(tools); box.appendChild(toolHost);
@@ -604,6 +609,17 @@
       ul.appendChild(li);
     });
     box.appendChild(ul);
+  }
+  // Set to a slug when the reader arrived by clicking something that should open
+  // that entry for editing (a briefing citation). Cleared the moment it fires.
+  var pendingEdit = null;
+  // Arriving from a citation is a deliberate navigation, so bring the pane to
+  // the reader on EVERY width — selectEntry's own scroll is mobile-only, which
+  // is right for a click inside the list and wrong for a jump across views.
+  function scrollRippleIntoView() {
+    if (!appEl) return;
+    var r = appEl.querySelector(".mem-ripple");
+    if (r && r.scrollIntoView) { try { r.scrollIntoView({ behavior: "smooth", block: "start" }); } catch (e) { } }
   }
   function selectEntry(id) { view = { mode: "entry", id: id }; render(); if (window.matchMedia && window.matchMedia("(max-width:760px)").matches && appEl) { var r = appEl.querySelector(".mem-ripple"); if (r) r.scrollIntoView({ behavior: "smooth", block: "start" }); } }
   function selectTarget(t) { view = { mode: "target", target: t }; render(); }
@@ -694,7 +710,10 @@
     };
   }
   // Accumulate the SSE `event: text` deltas (same contract as cpl_chat.js).
-  function drainSse(reader) {
+  // `onDelta` is optional and absent on the Autogenerate path, whose output is a
+  // JSON object nobody wants to watch being typed. The Briefing passes one — a
+  // blank panel for twenty seconds reads as broken.
+  function drainSse(reader, onDelta) {
     var decoder = new TextDecoder(), buffer = "", full = "";
     function pump() {
       return reader.read().then(function (chunk) {
@@ -707,7 +726,7 @@
             if (line.indexOf("event:") === 0) ev = line.slice(6).trim();
             else if (line.indexOf("data:") === 0) data += line.slice(5).trim();
           });
-          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") full += d.text; } catch (e) { } }
+          if (ev === "text" && data) { try { var d = JSON.parse(data); if (d && typeof d.text === "string") { full += d.text; if (onDelta) { try { onDelta(full); } catch (e2) { } } } } catch (e) { } }
         });
         return pump();
       });
@@ -763,6 +782,376 @@
     set("tags", (draft.tags || []).join(", "));
     if (fld(form, "org")) set("org", draft.org || "cpl");
     set("source", draft.source || "");
+  }
+
+  // ══════════════════════════════════════════════════════════════════════════
+  // Briefing — "here's what I understand from these entries"
+  //
+  // Sam's ask (2026-08-24): a narrative read-back of the memories, with brief
+  // examples interspersed, so an obvious misunderstanding is visible before it
+  // costs anything.
+  //
+  // ⭐ IT IS A READ-BACK BY AN AGENT, NOT A SIERRA ANSWER, and the label says so.
+  // The original framing was "as if you used them to construct a Sierra
+  // response" — but cpl-chat contains no reference to cpl_memory anywhere.
+  // Sierra reads sierra_guidance, the vector KB and the credential tables; she
+  // has never read this table. A briefing dressed as a Sierra answer would look
+  // clean while proving nothing about her. The pathway that IS real is the one
+  // Rule 8 describes: a session reads these rows at the start of a workstream.
+  // That is the reading worth testing, and it is what this brief exercises.
+  //
+  // ⚠ EVERY CLAIM CARRIES ITS SLUG, and this is the load-bearing half. A
+  // narrative that reads well and cannot be traced back to the row that produced
+  // it is worse than no briefing: the wrong sentence is the point, and it has to
+  // be followable to the entry that caused it. Citations render as links into
+  // the entry; a citation to a slug that is not in this view renders FLAGGED
+  // rather than quietly dropped, because a fabricated citation is a finding.
+  //
+  // ⚠ AND IT BRIEFS WHAT IS ON SCREEN. The corpus is exactly reportFiltered() —
+  // the rows the Report view is showing — and the panel states what it read
+  // ("48 of 63 entries"). A capped read that reports nothing reads as a census
+  // of the table.
+  // ══════════════════════════════════════════════════════════════════════════
+
+  // Budget. The edge function caps `query` per surface; memory-briefing gets
+  // QUERY_CAP_BRIEFING, and tests/cpl_memory_briefing.test.js reads that number
+  // out of index.ts and measures a real full-corpus digest against this one.
+  // Never restate the server's number here — a copy passes while the real one
+  // moves (the defect that made Autogenerate draft the wrong subject entirely).
+  var BRIEF_QUERY_MAX = 20000;       // must not exceed QUERY_CAP_BRIEFING
+  var BRIEF_DETAIL_CHARS = 240;      // per-entry slice of `detail`
+  var BRIEF_RETRIEVAL_MAX = 1000;    // the KB search text (cpl-chat caps at 1000)
+
+  function briefRow(d, withDetail) {
+    var head = "[" + d.id + "] " + (d.kind || "fact") + "/" + (d.status || "proposed")
+      + (d.title ? " · " + d.title : "");
+    var out = head + "\n  " + String(d.summary || "").trim();
+    if (withDetail && d.detail) out += "\n  why: " + String(d.detail).trim().slice(0, BRIEF_DETAIL_CHARS);
+    if ((d.tags || []).length) out += "\n  tags: " + d.tags.join(", ");
+    return out;
+  }
+  // Build the corpus to fit the budget, and SAY what did not fit. Detail is the
+  // first thing dropped (it is the enrichment); entries are dropped only after
+  // that, from the end, and the count is returned so the panel can print it.
+  // ⚠ THE CORPUS BUDGET IS THE QUERY BUDGET MINUS THE ENVELOPE, and the envelope
+  // is MEASURED rather than estimated. Budgeting the corpus alone is how the
+  // first cut of this panel overshot the cap by 1,392 characters — the same
+  // shape as the Autogenerate defect it was written after, arriving one level
+  // down. The instruction block is edited by hand, so any constant here would go
+  // stale the first time someone added a line to it.
+  function briefCorpusMax() {
+    var probe = briefQuery("", { used: 999999, total: 999999, scope: "x".repeat(120) });
+    return Math.max(1000, BRIEF_QUERY_MAX - probe.length);
+  }
+  function briefDigest(rows, budget) {
+    budget = budget || briefCorpusMax();
+    var withDetail = true;
+    var body = rows.map(function (d) { return briefRow(d, true); }).join("\n\n");
+    if (body.length > budget) {
+      withDetail = false;
+      body = rows.map(function (d) { return briefRow(d, false); }).join("\n\n");
+    }
+    var used = rows.length;
+    while (body.length > budget && used > 1) {
+      used -= 1;
+      body = rows.slice(0, used).map(function (d) { return briefRow(d, withDetail); }).join("\n\n");
+    }
+    return { text: body, used: used, total: rows.length, detail: withDetail };
+  }
+  // What to SEARCH the knowledge base on. Not the corpus — that is 20 KB of
+  // memory rows and embedding it would search the KB for the shape of a memory
+  // table. The subject of this view is its scope plus its commonest tags and a
+  // few titles, which is what a person would have typed to find these rows.
+  function briefRetrieval(rows, scopeLabel) {
+    var counts = {};
+    rows.forEach(function (d) { (d.tags || []).forEach(function (t) { counts[t] = (counts[t] || 0) + 1; }); });
+    var tags = Object.keys(counts).sort(function (a, b) { return counts[b] - counts[a]; }).slice(0, 12);
+    var titles = rows.map(function (d) { return d.title || d.summary || ""; }).filter(Boolean).slice(0, 12);
+    return [scopeLabel || "", tags.join(", "), titles.join(". ")]
+      .filter(Boolean).join(" — ").slice(0, BRIEF_RETRIEVAL_MAX);
+  }
+  // ⚠ CORPUS FIRST, INSTRUCTIONS LAST — the same ordering rule Autogenerate
+  // learned, decided on which loss is detectable. Lose the instructions and the
+  // briefing comes back without citations, visibly wrong. Lose the corpus tail
+  // and it silently briefs fewer memories than it claims, which is invisible.
+  function briefQuery(digestText, meta) {
+    return [
+      "MEMORY ENTRIES — " + meta.used + " of " + meta.total + " currently on screen"
+        + (meta.scope ? " (" + meta.scope + ")" : "") + ":",
+      "",
+      digestText,
+      "",
+      "———",
+      "The entries above are an internal team's working memory. Brief me on them: tell me what",
+      "YOU understand from them, as the agent who would read them at the start of a piece of work.",
+      "Write it in the first person, opening with \"Here's what I understand from these entries\".",
+      "4-7 short paragraphs, no bullet lists, and no headings except the two named below.",
+      "",
+      "PLAIN LANGUAGE. This is the requirement, not a style note. Short sentences. Everyday words.",
+      "Say the thing directly instead of building up to it. Write for a smart colleague who does not",
+      "know this codebase: if a term is unavoidable, explain it in the same sentence the first time",
+      "it appears. No aphorisms, no rhetorical flourishes, no long stacked clauses. If it could be",
+      "said in half the words, say it in half the words. Someone busy should get through this in two",
+      "minutes and know what these entries mean.",
+      "- Cite the entry behind every substantive claim by its slug in square brackets, e.g. [f8].",
+      "  Cite ONLY slugs that appear above. Never invent one.",
+      "- Intersperse brief concrete examples from the entries themselves — a number, a name, a case —",
+      "  rather than summarizing at one remove. An example is how I check that you read it right.",
+      "- Then a short paragraph headed **Where the knowledge base agrees or differs** — say plainly",
+      "  where what you retrieved corroborates these entries, where it says nothing, and where it",
+      "  says something narrower or different. \"The knowledge base does not cover this\" is a useful",
+      "  answer; do not manufacture agreement.",
+      "- Then a short paragraph headed **What looks unclear or in tension** — name a tension ONLY if",
+      "  you can point at it with two slugs, or at one slug whose wording is genuinely ambiguous.",
+      "  If nothing looks wrong, say so in one sentence. Do not pad this to look thorough.",
+      "Do not restate the entries one by one — that list is already on the page. Synthesize.",
+    ].join("\n");
+  }
+  // Fetch + stream. Resolves with the full text; onDelta paints it as it lands,
+  // because a blank panel for twenty seconds reads as broken.
+  function briefFetch(rows, scopeLabel, onDelta) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var meta = briefDigest(rows);
+    meta.scope = scopeLabel || "";
+    var headers = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var body = JSON.stringify({
+      query: briefQuery(meta.text, meta),
+      retrieval_query: briefRetrieval(rows.slice(0, meta.used), scopeLabel),
+      session_id: "cobi-memory-briefing", surface: "memory-briefing",
+    });
+    return fetch(CHAT_URL, { method: "POST", headers: headers, body: body }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("briefing HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader(), onDelta);
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      if (!full || !String(full).trim()) throw new Error("empty briefing");
+      return { text: String(full), meta: meta };
+    });
+  }
+  // Turn [slug] citations into NUMBERED links, walking TEXT NODES rather than the
+  // HTML string — a regex over rendered HTML can match inside an attribute.
+  //
+  // ⭐ NUMBERED, NOT INLINE SLUGS, and that came from looking at it rendered.
+  // This table's slugs are whole sentences — `sierra-credit-outages-recurred-
+  // twice-and-are-now-monitored` — so printing them inline put more citation on
+  // the page than prose and broke the plain reading the briefing exists to give.
+  // A superscript number keeps the claim readable; the numbered source list
+  // underneath keeps it followable, which is the half that must not be traded.
+  //
+  // ⚠ A slug that is not in this view is still FLAGGED IN PLACE, with its text
+  // visible — a citation to something the model was never shown is a finding,
+  // and folding it into the tidy numbering would hide exactly that.
+  function linkBriefSlugs(root, shown) {
+    if (!root || !root.ownerDocument) return { cited: 0, unknown: 0, sources: [] };
+    var doc = root.ownerDocument, stat = { cited: 0, unknown: 0, sources: [] };
+    var num = {};   // slug -> citation number, by order of first appearance
+    var nodes = [], walk = function (n) {
+      for (var i = 0; i < n.childNodes.length; i++) {
+        var c = n.childNodes[i];
+        if (c.nodeType === 3) { if (/\[[A-Za-z0-9_-]+\]/.test(c.nodeValue)) nodes.push(c); }
+        else if (c.nodeType === 1 && c.tagName !== "A") walk(c);
+      }
+    };
+    walk(root);
+    nodes.forEach(function (t) {
+      var parts = String(t.nodeValue).split(/(\[[A-Za-z0-9_-]+\])/), frag = doc.createDocumentFragment();
+      parts.forEach(function (piece) {
+        var m = piece.match(/^\[([A-Za-z0-9_-]+)\]$/);
+        if (!m) { frag.appendChild(doc.createTextNode(piece)); return; }
+        var slug = m[1];
+        if (byId[slug]) {
+          if (!num[slug]) {
+            num[slug] = stat.sources.length + 1;
+            stat.sources.push({ n: num[slug], slug: slug, entry: byId[slug],
+                                outside: !!(shown && !shown[slug]) });
+          }
+          var a = doc.createElement("a");
+          a.href = "#"; a.className = "rp-inl mb-cite"; a.setAttribute("data-ref", slug);
+          a.textContent = String(num[slug]);
+          // ⚠ NO NATIVE `title` — it would double up with the hover card below,
+          // and a native tooltip cannot show the kind, the status or a wrapped
+          // summary. The accessible name carries the same fact for a screen
+          // reader, which never sees either tooltip.
+          a.setAttribute("aria-label", "Entry " + num[slug] + ": "
+            + (byId[slug].title || byId[slug].summary || slug));
+          if (shown && !shown[slug]) a.setAttribute("data-outside", "1");
+          frag.appendChild(a); stat.cited += 1;
+        } else {
+          var b = doc.createElement("span");
+          b.className = "mb-badref"; b.textContent = piece;
+          b.title = "No entry with this id — a citation that cannot be followed";
+          frag.appendChild(b); stat.unknown += 1;
+        }
+      });
+      if (t.parentNode) t.parentNode.replaceChild(frag, t);
+    });
+    return stat;
+  }
+  // ── The citation hover card (Sam: "superscript numbers with hover over to see
+  // the memory") ────────────────────────────────────────────────────────────
+  //
+  // A native `title` cannot do this job: it shows one unstyled line, appears
+  // after a delay the reader has to wait out, and cannot show the kind, the
+  // status and a wrapped summary together. So this is a real card.
+  //
+  // ⚠ FOCUS OPENS IT TOO, not just hover. A citation is a link, so it is on the
+  // keyboard path whether or not anyone planned for that; if only the mouse can
+  // read the memory behind a number, the number is unreadable to everyone else.
+  // Escape closes it, and it closes on blur and on leaving the citation.
+  var _mbTip = null;
+  function hideCiteCard() {
+    if (_mbTip && _mbTip.parentNode) _mbTip.parentNode.removeChild(_mbTip);
+    _mbTip = null;
+  }
+  function showCiteCard(a, d, panel) {
+    hideCiteCard();
+    if (!d || !panel) return;
+    var km = KMAP[d.kind] || KMAP.fact;
+    var tip = el("div", "mb-tip");
+    tip.setAttribute("role", "tooltip");
+    var head = el("div", "mb-tip-head");
+    var pill = el("span", "mb-tip-kind", km.label);
+    pill.style.setProperty("--kc", "var(" + km.tok + ")");
+    head.appendChild(pill);
+    head.appendChild(el("span", "mb-tip-status", d.status || "proposed"));
+    if (a.getAttribute("data-outside")) head.appendChild(el("span", "mb-srcflag", "outside this view"));
+    tip.appendChild(head);
+    if (d.title) tip.appendChild(el("div", "mb-tip-title", d.title));
+    tip.appendChild(el("div", "mb-tip-sum", String(d.summary || "")));
+    tip.appendChild(el("div", "mb-tip-slug", d.id));
+    panel.appendChild(tip);
+    // Position inside the panel, clamped to it — a card that runs off the right
+    // edge is the same as no card. jsdom has no layout and returns zeros here,
+    // which is harmless: the card still exists and still carries its text.
+    try {
+      var pr = panel.getBoundingClientRect(), ar = a.getBoundingClientRect();
+      var w = tip.offsetWidth || 320;
+      var left = Math.max(8, Math.min((ar.left - pr.left) - w / 2 + ar.width / 2, pr.width - w - 8));
+      tip.style.left = left + "px";
+      tip.style.top = ((ar.bottom - pr.top) + 7) + "px";
+    } catch (e) { }
+    _mbTip = tip;
+  }
+  function wireCiteCards(host) {
+    var panel = host.closest ? host.closest(".mem-brief") : null;
+    if (!panel) panel = host;
+    Array.prototype.forEach.call(host.querySelectorAll("a.mb-cite"), function (a) {
+      var d = byId[a.getAttribute("data-ref")];
+      a.onmouseenter = function () { showCiteCard(a, d, panel); };
+      a.onfocus = function () { showCiteCard(a, d, panel); };
+      a.onmouseleave = hideCiteCard;
+      a.onblur = hideCiteCard;
+      a.onkeydown = function (e) { if (e.key === "Escape") hideCiteCard(); };
+    });
+  }
+
+  // Render the briefing text into a host: markdown via the one renderer this
+  // dashboard already has (cpl_chat.js), plain paragraphs if it is not loaded —
+  // a local markdown re-implementation would be a second renderer to keep in
+  // step, and this repo has been bitten by exactly that shape before.
+  function renderBriefText(host, text, shown) {
+    clear(host);
+    var md = window.CPL_CHAT && window.CPL_CHAT.renderMarkdown;
+    if (md) { host.innerHTML = md(String(text)); }
+    else {
+      String(text).split(/\n{2,}/).forEach(function (para) {
+        if (para.trim()) host.appendChild(el("p", "mb-p", para.trim()));
+      });
+    }
+    var stat = linkBriefSlugs(host, shown);
+    // The source list is what makes a numbered citation followable without a
+    // hover, so it is not optional decoration — drop it and the numbers become
+    // unfalsifiable marks. Titles come from the entry, not from the model.
+    if (stat.sources.length) {
+      var src = el("div", "mb-sources");
+      src.appendChild(el("div", "mb-sources-h", "Entries cited"));
+      var ol = document.createElement("ol"); ol.className = "mb-srclist";
+      stat.sources.forEach(function (s0) {
+        var li = document.createElement("li");
+        var a2 = el("a", "mb-srclink", s0.entry.title || s0.entry.summary || s0.slug);
+        a2.href = "#"; a2.setAttribute("data-ref", s0.slug);
+        li.appendChild(a2);
+        li.appendChild(el("span", "mb-srcslug", s0.slug));
+        if (s0.outside) li.appendChild(el("span", "mb-srcflag", "outside this view"));
+        ol.appendChild(li);
+      });
+      src.appendChild(ol);
+      host.appendChild(src);
+    }
+    Array.prototype.forEach.call(host.querySelectorAll("[data-ref]"), function (a) {
+      a.onclick = function (e) {
+        e.preventDefault();
+        hideCiteCard();
+        var slug = a.getAttribute("data-ref"), d = byId[slug];
+        // Ask for the edit form only where one can actually open: a superseded
+        // row has no editor, and without a team session neither does any row.
+        // In those cases this still navigates to the entry, which is the honest
+        // half of the promise rather than a button that does nothing.
+        if (sess && d && d.status !== "superseded") pendingEdit = slug;
+        viewMode = "curate";                       // the entry lives in the curate view
+        selectEntry(slug);
+        scrollRippleIntoView();
+      };
+    });
+    wireCiteCards(host);
+    return stat;
+  }
+  // The panel itself, at the top of the Report view. Nothing is saved, ever.
+  function renderBriefingPanel(rows, scopeLabel) {
+    var box = el("section", "mem-brief");
+    box.style.position = "relative";     // the hover card positions against this
+    box.appendChild(el("h2", "mb-h", "How I read these entries"));
+    box.appendChild(el("p", "mb-lead",
+      "A read-back of the entries below, in my words, with the knowledge base checked against them. "
+      + "Every claim carries a numbered citation: hover it to read that entry, click it to "
+      + (sess ? "open that entry for editing" : "jump to that entry") + ". This is how an agent reads "
+      + "this table at the start of a piece of work; it is not what the CPL Assistant tells the public, "
+      + "which never reads these entries. Nothing here is saved."));
+    var row = el("div", "mb-row");
+    var btn = el("button", "mem-btn mem-btn-primary mb-btn", "Brief me on these"); btn.type = "button";
+    var status = el("span", "mb-status", "");
+    row.appendChild(btn); row.appendChild(status);
+    box.appendChild(row);
+    var out = el("div", "mb-out");
+    box.appendChild(out);
+
+    btn.onclick = function () {
+      if (!rows.length) { status.textContent = "No entries in this view to brief."; return; }
+      // Same call as briefFetch's, with no budget argument — the set the panel
+      // says it read must be the set it sent, and two budgets could disagree.
+      var shown = {}, meta = briefDigest(rows);
+      rows.slice(0, meta.used).forEach(function (d) { shown[d.id] = 1; });
+      btn.disabled = true;
+      status.className = "mb-status is-pending";
+      status.textContent = "Reading " + meta.used + (meta.used === rows.length ? "" : " of " + rows.length)
+        + " " + (rows.length === 1 ? "entry" : "entries") + "…";
+      clear(out);
+      var live = el("div", "mb-live"); out.appendChild(live);
+      briefFetch(rows, scopeLabel, function (sofar) {
+        // Stream as plain text; the markdown pass runs once at the end so a
+        // half-written link never renders as one.
+        live.textContent = sofar;
+      }).then(function (res) {
+        var stat = renderBriefText(out, res.text, shown);
+        status.className = "mb-status is-ok";
+        // ⚠ SAY WHAT WAS READ, ALWAYS — a briefing over part of a view must never
+        // read like a briefing over the whole of it.
+        var said = "Read " + res.meta.used + " of " + res.meta.total + " "
+          + (res.meta.total === 1 ? "entry" : "entries")
+          + (res.meta.detail ? "" : " (summaries only — the full set did not fit)")
+          + " · " + stat.cited + " citation" + (stat.cited === 1 ? "" : "s");
+        if (stat.unknown) said += " · ⚠ " + stat.unknown + " citation"
+          + (stat.unknown === 1 ? "" : "s") + " to no entry — treat that claim as unsourced";
+        status.textContent = said;
+      }).catch(function (e) {
+        clear(out);
+        status.className = "mb-status is-err";
+        status.textContent = "Couldn't build the briefing" + (e && e.message ? " (" + e.message + ")" : "")
+          + ". The entries below are unaffected.";
+      }).then(function () { btn.disabled = false; });
+    };
+    return box;
   }
 
   // The ✨ Autogenerate affordance at the top of the Add form: a topic box + a
@@ -1032,6 +1421,13 @@
   }
   // report filter: verified (+ proposed when the box is checked); never superseded;
   // org matches the scope (or scope is "all").
+  // The report's own scope, in words, for the briefing header + the KB search.
+  function reportScopeLabel(rows) {
+    var bits = [reportIncludeProposed ? "verified + proposed" : "verified only"];
+    if (reportOrg !== "all") bits.push("area: " + reportOrg);
+    bits.push((rows || []).length + " entries");
+    return bits.join(" · ");
+  }
   function reportFiltered() {
     return DATA.filter(function (d) {
       if (d.status === "superseded") return false;
@@ -1087,6 +1483,10 @@
     reportEl.appendChild(reportControls());
 
     var rows = reportFiltered();
+    // ⚠ THE SAME ROWS THE REPORT IS ABOUT TO RENDER. Passing reportFiltered()
+    // here rather than re-deriving a set is what makes "what is briefed is what
+    // is shown" structural instead of remembered.
+    reportEl.appendChild(renderBriefingPanel(rows, reportScopeLabel(rows)));
     var titleBlock = el("div", "mr-titleblock");
     titleBlock.appendChild(el("h1", "mr-title", "Everything We Know"));
     var sub = rows.length + " " + (rows.length === 1 ? "entry" : "entries") + " — "
@@ -1294,6 +1694,57 @@
       ".cpl-mem .mem-field-check input{width:auto;}",
       ".cpl-mem .mem-form textarea{resize:vertical;line-height:1.45;}",
       ".cpl-mem .mem-form-actions{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap;}",
+      // ── Briefing panel (Report view) ──────────────────────────────────────
+      // Tokens only, never a raw hex (the house rule); the panel reads as a
+      // note ON the report rather than a card in it. No fixed widths and no
+      // measure cap: prose runs the full width of what sits beside it.
+      ".cpl-mem .mem-brief{margin:0 0 22px;padding:14px 16px;border:1px solid var(--border-strong);border-left:4px solid var(--accent-link);border-radius:10px;background:var(--surface-subtle);}",
+      ".cpl-mem .mb-h{font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;font-weight:700;margin:0 0 6px;color:var(--text-strong);}",
+      ".cpl-mem .mb-lead{margin:0 0 10px;font-size:.86rem;line-height:1.5;color:var(--text-muted);max-width:var(--cpl-measure,none);}",
+      ".cpl-mem .mb-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;}",
+      ".cpl-mem .mb-status{font-size:.78rem;color:var(--text-muted);}",
+      ".cpl-mem .mb-status.is-pending{color:var(--accent-link);}",
+      ".cpl-mem .mb-status.is-ok{color:var(--st-ok);font-weight:600;}",
+      ".cpl-mem .mb-status.is-err{color:var(--st-warn);font-weight:600;}",
+      ".cpl-mem .mb-out{margin-top:12px;font-size:.93rem;line-height:1.62;max-width:var(--cpl-measure,none);}",
+      ".cpl-mem .mb-out:empty{margin-top:0;}",
+      ".cpl-mem .mb-out p{margin:0 0 .8em;}",
+      ".cpl-mem .mb-out strong{color:var(--text-strong);}",
+      ".cpl-mem .mb-live{white-space:pre-wrap;color:var(--text-muted);}",
+      // A citation to a slug that is not an entry is FLAGGED, not hidden — a
+      // claim nobody can follow back is the thing this panel exists to expose.
+      // Marked with a word-shaped border + a title, never by color alone.
+      // A citation is a superscript number, not a sentence-long slug — see
+      // linkBriefSlugs. Big enough to click (the whole line-height box), small
+      // enough to stay out of the prose's way.
+      ".cpl-mem .mb-cite{font-family:ui-monospace,Menlo,monospace;font-size:.68em;vertical-align:super;line-height:0;padding:0 .12em;text-decoration:none;border-bottom:0;}",
+      ".cpl-mem .mb-cite:hover,.cpl-mem .mb-cite:focus-visible{text-decoration:underline;}",
+      // The hover/focus card. Opaque surface, not glass: it sits over prose and
+      // has to stay readable (tables and popovers never on glass, house rule).
+      ".cpl-mem .mb-tip{position:absolute;z-index:40;width:min(340px,88vw);padding:10px 12px;border:1px solid var(--border-strong);border-radius:9px;background:var(--surface-opaque);box-shadow:0 6px 22px rgba(0,0,0,.16);pointer-events:none;}",
+      ".cpl-mem .mb-tip-head{display:flex;align-items:center;gap:7px;flex-wrap:wrap;margin-bottom:5px;}",
+      ".cpl-mem .mb-tip-kind{font-size:.68rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--kc);border:1px solid var(--kc);border-radius:6px;padding:0 6px;}",
+      ".cpl-mem .mb-tip-status{font-size:.7rem;font-weight:600;color:var(--text-muted);}",
+      ".cpl-mem .mb-tip-title{font-weight:700;font-size:.86rem;line-height:1.35;color:var(--text-strong);margin-bottom:3px;}",
+      ".cpl-mem .mb-tip-sum{font-size:.82rem;line-height:1.45;color:var(--text-body);}",
+      ".cpl-mem .mb-tip-slug{margin-top:5px;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;color:var(--text-faint);word-break:break-all;}",
+      ".cpl-mem .mb-sources{margin-top:16px;padding-top:12px;border-top:1px solid var(--border);}",
+      ".cpl-mem .mb-sources-h{font-size:.74rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);margin-bottom:6px;}",
+      ".cpl-mem .mb-srclist{margin:0;padding-left:1.5em;font-size:.82rem;line-height:1.5;color:var(--text-body);}",
+      ".cpl-mem .mb-srclist li{margin:0 0 3px;}",
+      // ⚠ A REAL TARGET, and it is load-bearing for more than itself. The inline
+      // superscript citations are exempt from the 24px minimum only because SC
+      // 2.5.8 exempts a target positioned by the flow of its sentence AND
+      // because these rows repeat every one of them at full size. At 15px they
+      // did not, so the exemption was unearned and BOTH were undersized —
+      // caught by scripts/check_memory_briefing_layout.js, which asserts the
+      // exemption rather than trusting the argument for it.
+      ".cpl-mem .mb-srclink{display:inline-block;padding:5px 0;color:var(--accent-link);text-decoration:none;font-weight:600;}",
+      ".cpl-mem .mb-srclink:hover,.cpl-mem .mb-srclink:focus-visible{text-decoration:underline;}",
+      ".cpl-mem .mb-srcslug{display:block;font-family:ui-monospace,Menlo,monospace;font-size:.72rem;color:var(--text-faint);}",
+      ".cpl-mem .mb-srcflag{display:inline-block;margin-top:2px;font-size:.7rem;font-weight:700;color:var(--st-warn);border:1px solid var(--st-warn);border-radius:6px;padding:0 5px;}",
+      ".cpl-mem .mb-badref{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--st-warn);border-bottom:1px dashed var(--st-warn);cursor:help;}",
+      "@media (max-width:560px){.cpl-mem .mem-brief{padding:12px;} .cpl-mem .mb-row{align-items:flex-start;flex-direction:column;}}",
       ".cpl-mem .mem-autogen{margin:0 0 14px;padding:11px 12px;border:1px dashed color-mix(in srgb,var(--accent-link) 45%,var(--border-strong));border-radius:10px;background:color-mix(in srgb,var(--accent-link) 6%,var(--surface-subtle));}",
       ".cpl-mem .mem-autogen-h{font-family:'Playfair Display',Georgia,serif;font-size:.92rem;font-weight:700;color:var(--accent-link);margin-bottom:7px;}",
       ".cpl-mem .mem-autogen-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:7px;}",
@@ -1435,6 +1886,16 @@
     _parseDraft: parseDraft,
     _autogenQuery: autogenQuery,
     _autogenTopicMax: AUTOGEN_TOPIC_MAX,
+    _briefDigest: briefDigest,
+    _briefQuery: briefQuery,
+    _briefRetrieval: briefRetrieval,
+    _briefQueryMax: BRIEF_QUERY_MAX,
+    _briefCorpusMax: briefCorpusMax,
+    _briefFetch: briefFetch,
+    _renderBriefText: renderBriefText,
+    _hideCiteCard: hideCiteCard,
+    _pendingEdit: function () { return pendingEdit; },
+    _renderBriefingPanel: renderBriefingPanel,
     _autogenerate: autogenerate,
     _applyDraftToForm: applyDraftToForm,
     _buildEntryForm: buildEntryForm,
