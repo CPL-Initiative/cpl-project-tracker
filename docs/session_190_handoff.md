@@ -119,31 +119,59 @@ it and severed 53% of the Phase A/B fold evidence.
      shown the 21 two-rung colleges are large providers (De Anza, Santa Ana, Saddleback, NOCE),
      so a 2-rung read is a PARTIAL VIEW of a longer ladder — a "1" there is not the bottom of
      anything. A domain judgment about specific institutions.
-- ✅ **His per-ladder sets are now IMPLEMENTED** — `kb/_esl_ladder_relevel_dryrun.py`, receipt
-  `kb/esl_ladder_relevel_out/2026-08-24/`. **Dry-run only; nothing written.**
-  ⚠️ **AND THE ROLLBACK RECOMMENDATION IS NOW THE OPPOSITE OF WHAT THIS HANDOFF FIRST SAID.**
-  With L=2 and member-grain word-first in, the sets propose **169** re-levels — **166 of them
-  UPWARD, only 3 down**. 30 revert 30 of the applied 32.
-  But **every one of the 22 reverts whose catalog speaks DISAGREES with the revert**: the
-  colleges' own catalogs say the band those rows sit at *today*. Sam's principle that a canonical
-  standard scored against local records is blast radius still holds — but it argues for holding a
-  ruling against *noisy* local variance, and here the local records are **unanimous and point the
-  other way**. **Recommend: do NOT roll back.** The other 100 proposals run 31 agree / 17 disagree
-  and are the better candidates.
-  ⚠️ **90 of the 130 rest on a SINGLE member course**, and the weakest reader tier is a bare
-  trailing integer (`Academic Writing 3` may be a sequence number, not a rung). Work the
-  multi-member ones first.
-  ✅ **L=2 is now ruled and implemented** — it unlocked 39 previously-undecided rows
-  (561 → 522) and grew the actionable set from 29 to 46.
-  ⚠️ **MEASURE THE OUTPUT, NOT THE COMPONENT.** Reading a member's level WORD ahead of its number
-  changes **775 member-vote answers** in isolation and exactly **ONE** final band end to end,
-  because `decide()` consults member votes only when the identity title has no level word and
-  **894 of 1,990 are decided there first**. The component figure was reported to Sam as an impact
-  number and was wrong. Keep the fix (the guard should hold at both grains); never headline it.
-  ⚠️ **Derive ladder lengths from the WHOLE ESL corpus, never the folded worklist** — the folded
-  subset sees only part of a college's ladder, undercounts its length, and a short ladder pushes
-  rungs into HIGHER bands. The corpus derivation reproduces Session 188's distribution in six of
-  seven buckets; the folded one matched in none. The script validates this on every run.
+- ✅ **His per-ladder sets are IMPLEMENTED and all his rulings are in** —
+  `kb/_esl_ladder_relevel_dryrun.py`, receipt `kb/esl_ladder_relevel_out/2026-08-24/`.
+  **DRY-RUN ONLY; nothing is written to Supabase, and no apply script exists for this lane.**
+  ✅ **STAGED AND AWAITING HIS GO: 122 re-levels** (multi-member, reverts excluded).
+  📊 Visual briefing: <https://claude.ai/code/artifact/083f1d41-d1fa-487e-a2d3-9280c4c2220f>
+  (⚠️ its figures are the pre-NC-ruling cut — **the receipt is authoritative**, not the artifact).
+
+  **His seven calls, all in `cpl_memory` with him named:** ① over-claims STAY (statewide standard
+  wins) · ② do NOT roll back the 32 · ③ apply only where **≥2 members agree** · ④ **L=2 =
+  `L1 Intermediate, L2 Advanced`** · ⑤ Chabot *Advanced ESL Reading and Composition 1/2* = both
+  Advanced · ⑥ NOCE *ESL for Academic Success I/II* = Beginning/Intermediate · ⑦ **"Scope it to
+  NC not just NOCE."**
+
+  ⚠️ **L=2 IS NOT AN EXTENSION OF THE PATTERN ABOVE IT** — no Beginning band, ruled after he was
+  shown the 21 two-rung colleges are large providers (De Anza, Saddleback, NOCE), so a "1" there
+  is not the bottom of anything. **Never regularise it to `1=Beginning`.**
+
+  ⭐ **THE CORRECTION THAT MATTERED MOST — Sam: "You should have data for each course as credit
+  or noncredit."** He was right. The first NC rule keyed on the spot-check worklist's derived
+  `credit_type`, **blank on 24% of members including the exact NOCE courses he had just ruled
+  on** — so it failed his own example, and it was propped up with a hand-listed set of noncredit
+  institutions. The authoritative per-course field was in the COCI staging files all along:
+  **`credit_status` across `coci_minted_memberships.json` ∪ `coci_minted_singletons.json['courses']`,
+  joined on `control_number` — 118,195 control numbers, 100% ESL coverage, NOCE clean at 94
+  Noncredit.** The workaround list is DELETED. **A rule that needs a hand-maintained list to
+  cover its own subject is usually reading the wrong field.**
+
+  ⚠️ **MEASURE THE OUTPUT, NOT THE COMPONENT.** Member-grain word-first changes **775
+  member-vote answers** in isolation and **exactly ONE** final band end to end, because
+  `decide()` consults member votes only when the identity title has no level word and **894 of
+  1,990** are decided there first. The component figure was reported to Sam as an impact number
+  and was wrong — the third overstated figure of the session, all the same shape.
+  ⚠️ **Derive ladder lengths from the WHOLE ESL corpus, never the folded worklist** — the subset
+  undercounts a ladder and a short ladder pushes rungs HIGHER, the over-claiming direction.
+  Corpus reproduces Session 188 in 6 of 7 buckets; the folded subset in none.
+
+- ✅ **SKYVIEW GREW TWO THINGS SAM ASKED FOR** (#1319). **Stand-alones are in the graph** —
+  33,423 single-college rows as **144 per-discipline islands** (`Music · stand-alone`), drawn
+  **HOLLOW** because a stand-alone asserts no equivalence yet and must not read as a weaker
+  claim. **Course descriptions drill down** — 302 per-subject shards, **127,523 descriptions**,
+  fetched on demand.
+  ⚠️ **THE PAGE MUST BE SERVED, NOT OPENED** — descriptions are 34.8 MB stored and 11.6 MB even
+  at 120 chars, so inlining was never possible and `file://` blocks `fetch`. Sam took that trade
+  knowingly:
+  ```
+  python3 kb/_build_ccr_universe.py && python3 prototype/build_ccr_atlas.py
+  python3 -m http.server 8000   # http://localhost:8000/prototype/ccr_atlas_v1.built.html
+  ```
+  ⚠️ **When a shard cannot load the pane SAYS SO and names the command** — an empty description
+  is indistinguishable from a course that has none, and plenty genuinely have none.
+  ⚠️ **`prototype/ccr_desc/` (45.7 MB) is GITIGNORED** — derived output, and this repo is cloned
+  into Sam's Obsidian vault. Regenerate it before serving.
+
 - 🔴 **The 67 Z-scheme `ESOL Z####` rows** the fold never touched. The concrete remaining ESL job.
 - 🔴 **`FIMS M1018` still cannot be re-homed** — it does not render, so it needs the **un-merge
   verb**. Three verbs still missing: un-merge an applied merge, relabel an island's discipline,

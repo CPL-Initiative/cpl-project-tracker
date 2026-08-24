@@ -9,18 +9,18 @@
     "other": 150000
   },
   "summary": {
-    "files": 634,
-    "bytes": 7160522,
+    "files": 635,
+    "bytes": 7170103,
     "over_budget": 4,
     "handoff_max": 190,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 143521,
+    "always_loaded_bytes": 144363,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 143521,
+        "bytes": 144363,
         "over": 1
       },
       "other": {
@@ -39,13 +39,13 @@
         "over": 1
       },
       "kb_note": {
-        "files": 321,
-        "bytes": 1710308,
+        "files": 322,
+        "bytes": 1717276,
         "over": 0
       },
       "handoff": {
         "files": 168,
-        "bytes": 1387150,
+        "bytes": 1388921,
         "over": 0
       }
     },
@@ -53,19 +53,20 @@
       "oversized_doc": 4,
       "american_spelling": 171,
       "kb_note_dialect": 60,
+      "unindexed_kb_note": 1,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2226,
-      "bytes": 1204146647,
-      "heavy_bytes": 596939357,
-      "heavy_share": 0.496,
+      "files": 2529,
+      "bytes": 1262054439,
+      "heavy_bytes": 654847565,
+      "heavy_share": 0.519,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -114,13 +115,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 143521,
+        "bytes": 144363,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 83521,
-        "ratio": 2.39
+        "over_by": 84363,
+        "ratio": 2.41
       },
-      "message": "143,521 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "144,363 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -1349,6 +1350,15 @@
       },
       "message": "2 British forms — recognis→recogniz, generalis→generaliz",
       "path": "docs/kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-silent-input-cap-is-a-content-swap"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-silent-input-cap-is-a-content-swap.md"
     },
     {
       "rule": "american_spelling",
@@ -3875,10 +3885,20 @@
       "fixable": false,
       "path": "kb/reference",
       "detail": {
-        "bytes": 79775315,
+        "bytes": 79776976,
         "kind": "dir"
       },
-      "message": "directory totals 79,775,315 B inside the vault"
+      "message": "directory totals 79,776,976 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 67983981,
+        "kind": "dir"
+      },
+      "message": "directory totals 67,983,981 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -3909,16 +3929,6 @@
         "kind": "dir"
       },
       "message": "directory totals 14,056,865 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 10077434,
-        "kind": "dir"
-      },
-      "message": "directory totals 10,077,434 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
