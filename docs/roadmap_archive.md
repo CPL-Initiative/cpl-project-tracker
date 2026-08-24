@@ -4721,3 +4721,43 @@ and **my own grep tripped on my own comment** quoting the retired assertion. Bot
 pre-commit; the cell is now SMALLER than before this run.
 ✅ **DEPLOYED AND MEASURED THE SAME RUN — v57 ACTIVE.** 34 turns post-deploy: **1 write, 33 hits, 0 inert**, and **`read=3027` IDENTICAL on every request** while `uncached_input` ranged **10,843 → 22,762** — production proof the always/conditional split was load-bearing, since caching the whole rule block would have jittered that figure and billed a 1.25x write on most turns. ⚠️ **The log source is `function_logs`, NOT `function_edge_logs`** (the latter returns zero rows and looks like a dead feature). ⚠️ **A merge push fires its own smoke run that can RACE the deploy** — here it started 01:17:40 against a deploy that finished 01:18:17, so it tested the OLD function with the NEW script; dispatch your own after confirming the version bumped. ⭐ **The telemetry closed the Haiku capacity question for free**: peak ~23K against Haiku 4.5's 200K is a 9x margin, so only rule-adherence remains to be scored.
 Durable: [`a-cache-breakpoint-must-lead-and-must-not-move`](docs/kb-notes/methodology-a-cache-breakpoint-must-lead-and-must-not-move.md) · story `docs/cpl_assistant_lessons.md` · `docs/college_identity_lessons.md` · handoff `docs/session_186_handoff.md`.
+
+### SkySew S186 — the tab was migrated, the document it exports was not (2026-08-23)
+
+**Sam: *"let's get the funding tab sewn up!"*** ⭐ **RULE 8's READ STEP CLOSED ONE OF THE
+TWO OPEN ITEMS BEFORE ANY CODE WAS READ** — the parity question was already ruled
+(`sam-keep-nc-carveout-at-1m-parity-later`, verified), and the LIVE config showed he had
+since set the carve-out to **$1,800,000** and the credit floor to **$150,000**. The tab was
+in a configuration nobody had looked at.
+⭐ **THE RETIRED MECHANISM SURVIVED IN THE EXPORT.** `memoModel()` still computed the flat
+FTES split, so the memo paid the **entire** carve-out to four standalone campuses —
+**$779,862 to Mt. SAC Noncredit, which the model pays $0** because its FTES is counted on
+the Mt. San Antonio credit row — and showed **nothing for the 30 colleges** that receive the
+other $1.6M. ⭐ **THE TIE-OUT IS WHAT LET IT SURVIVE**: the statewide total was correct to
+the cent, because the four campuses had absorbed exactly the whole carve-out. A migrated
+model leaves no dangling reference behind — the old formula is open-coded arithmetic, so
+**grep for its SHAPE, not its name**. Durable:
+[`a-total-that-balances-is-not-a-total-that-is-right`](docs/kb-notes/methodology-a-total-that-balances-is-not-a-total-that-is-right.md).
+⚠️ **TWO CARDS DESCRIBED A 33-INSTITUTION LANE AS "4 NC CAMPUSES"** off `feeders().length` —
+including the pool card a reader uses to judge whether the carve-out is proportionate, the
+exact question the $1.8M answers — and one printed a **74,968 headcount**, the wrong basis,
+counting the deduped campus's 35,363.
+⚠️ **THE OPT-IN PROMPT KEYED ON `held > 0.5`** (Sam: *"why don't Cosumnes and Grossmont…"*),
+so a GATED college that had earned nothing rendered **no prompt at all** — the one cohort it
+exists for. `yearEarnParts()` already named the case in a comment. Driven by the gate now;
+the figure still appears only when there is one, so nothing reads "held $0". ⚠️ **Not
+reproducible offline** — the harness has no coordinator feed, so the gate reads PENDING.
+⚠️ **A HAND-MAINTAINED LINT IS THE THING THAT GOES STALE** — three of the explainer's four
+carve-out mentions repainted to $1.8M; the fourth was a bare `<b class="num">` with **no
+id**, invisible to both the painter and the `BOUND` map. **Three agreeing and one not is
+worse than four wrong.** Both the live page and the frozen snapshot now carry a *structural*
+check needing nobody to extend a list.
+⭐ **Also:** the priority columns carry their names (**P1 Access**, centered) — ⚠️ a first
+test "proving" the missing-title fallback **failed and the CODE was right** (`prioTitle()`
+falls back to `DEFAULT_PRIORITY_TITLES`), so it now asserts what is true rather than staging
+an unreachable path; and **the noncredit calculation is in "How an allocation is computed"**,
+which described only the credit pool, stating an infeasible minimum **there too**.
+⚠️ **§11 said "factors 1.0"; live is 0.5** — corrected above. ⚠️ **`cpl_memory`
+`p3-portal-routing-is-standard-practice` is STALE** (P1 now measures applied units by origin;
+P3 measures transcribed) — flagged, not silently superseded, per Rule 8.
+Story `docs/cpl_funding_lessons.md` · handoff `docs/session_187_handoff.md`.

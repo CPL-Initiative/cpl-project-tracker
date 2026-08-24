@@ -183,97 +183,97 @@ on real content drift.
 - **Nothing written** to `kb_curation` this run.
 - PRs #1309, #1310 merged.
 
-### Next concrete step
+## 2026-08-24 (later) — the fold published, and it exposed a modeling defect
 
-1. **Sam names the three ESL comprehensives** — 1,846 pointers have nowhere to
-   point until he does.
-2. **Sam works the Beginning spot-check** — 794 default-assigned rows.
-3. Then apply under Rule 10 (fresh read, INSERT-only, cohort receipt).
-4. Engineering: the **whole-universe view** (precomputed layout + level-of-detail
-   — a map, not a live force graph), and the **one-college-many-numbers audit
-   rule** in `kb/_row_audit.py`.
+The cron ran at 15:16 UTC. The fold is live: seven comprehensives carrying their
+titles, member counts matching the plan exactly.
 
----
+### ⭐ ESL collapsed 2,300 identities → 27
 
-## 2026-08-24 (same session) — the ESL fold APPLIED, and what `ON CONFLICT` caught
+Far past the 10.7:1 the dry-run projected. 2,273 of 2,300 ESL identities now
+carry a `merge_into` (1,990 written this session, 283 already there). Against a
+design target of ~17 comprehensives per discipline, **ESL is essentially done.**
 
-Sam confirmed the names, then extended the set twice mid-run: first adding
-**Vocational · Civic · Enrichment**, then asking that Vocational *carry its
-subject*. Both changes arrived after the write was staged and before it ran,
-which is the only reason it landed once instead of three times.
+### ⭐ But the tab showed 169 rows, not 27 — and that was a real defect
 
-### Seven comprehensives, applied under Rule 10
+The gap is what made this run worth having. **91 of the 169 rendered rows carried
+a `merge_into` and were rendering anyway.**
 
-| | id | folds in |
-|---|---|---:|
-| Beginning ESL | `ESOL M9168` | 1,079 |
-| Intermediate ESL | `ESOL M9256` | 463 |
-| Advanced ESL | `ESOL M1141` | 267 |
-| Vocational ESL | `ESOL M9023` | 114 |
-| Civic ESL | `ESOL M9177` | 35 |
-| Enrichment ESL | `ESOL M1152` | 34 |
-| Vocational ESL — Healthcare | `ESOL M91IL` | 5 |
+The overlay stores merges as **one hop per row**. A curator merges X into Y; a
+later pass merges Y into a comprehensive. Y is then simultaneously a source and a
+target. `export_unified_courses` skips a source, but its merge-**target** loop
+never skipped a target that was itself a source — so Y rendered as its own row
+while also being folded away, and X's members stayed attributed to Y instead of
+reaching the comprehensive.
 
-**1,997 rows** — 1,990 `merge_into` + 7 `unified_title`, cohort
-`package-esl-s187@bot`. Receipt: `kb/esl_package_out/2026-08-24/esl_apply_plan.json`.
+**340 identities were in this state; only 96 are mine.** 180 come from the title
+lane and 60 from Sam's own curation, and **248 of the 340 are not ESL at all** —
+Kinesiology 42, Fire Technology 14, English 14, Art 12, Foreign Languages 11.
+The fold did not cause this. It made it visible at a scale worth chasing.
 
-### ⭐ The survivor mechanism — no new id scheme
+Fixed in `flatten_merge_chains()`: ESL **169 → 77**, all rows **16,824 → 16,484**
+(exactly the 340), **0 rows appeared**, comprehensives absorbed their stranded
+members (Beginning 1,080 → 1,152).
 
-Sam's ruling: the comprehensives are **existing identities chosen as survivors
-and renamed**, not newly minted ids. That was the right call for a reason the
-code decides rather than taste: `merge_into_orphan` self-trusts exactly one
-prefix, `UC-CUR-*`, and **Session 56 re-minted all 4,053 of those away** (live
-count today: 0). A Z-scheme id would have flagged as an orphan on every audit
-run. Choosing survivors keeps the whole write inside verbs already in
-production.
+### ⚠️ This looks like it contradicts a standing rule, and does not
 
-⭐ **Survivor choice is a stated rule, not taste.** For a LEVEL: dominant SUBJ4,
-then a title opening with the plain level word, then most colleges. For the
-three NEW comprehensives there is no level to encode and the title is replaced
-anyway, so **adoption decides** — the first cut picked a 2-college anchor for
-Vocational because it opened with "Vocational"; ranking by colleges gives a
-12-college one.
+The Common CR Reference rule is *"grouping is by KEY, NEVER transitive."* That is
+about **similarity** edges, which are measurements and do not compose. A
+`merge_into` is a **decision**: a person asserted sameness, and sameness composes.
+Refusing to close there does not preserve curator intent, it discards half of it.
+Written up as
+[`methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity`](kb-notes/methodology-transitive-closure-is-right-for-decisions-and-wrong-for-similarity.md).
 
-### ⚠️ `ON CONFLICT DO NOTHING` blocked three of the seven renames
+### ⚠️ My first fix wrote a self-merge, and the test caught it
 
-The merges all landed. Three `unified_title` rows did not, because the survivor
-already carried one — so **three comprehensives briefly held their old titles
-while courses folded into them**. Two were bot-generated. **The third,
-`ESOL M9177` "ESL for Citizenship", was Sam's own row from 2026-06-12.**
+On a cycle the walk terminated by writing `merge_into[src] = src` — the row
+becomes a member of itself, **worse** than the stale edge because a stale edge is
+visible in the data and a self-membership is not. The docstring already promised
+to keep the recorded hop; the code did not. Measured first: 22,538 direct, 490
+two-hop, 18 three-hop, **0 cycles**.
 
-That is the conflict clause doing exactly its job, and it is why the count is
-worth checking: **1,994 landed where 1,997 was planned**, and the three-row gap
-was the entire story. A write that reports only "no error" would have hidden it.
+### ⚠️ The fold-scoped list trap, a FOURTH time
 
-Resolved with a guarded UPDATE scoped to those three ids and that one field.
-Sam's row was superseded **explicitly, not silently** (Rule 8) and reported in
-the same turn — and he **confirmed it the same day**: *"Yes to Civic ESL
-rename."* That is the whole Rule 8 path working end to end: supersede a
-human-sourced row only by saying so, then go and get the confirmation. The
-prior value stays in the receipt, so it remains restorable even now that it is
-settled.
+Before applying, I checked for chains by asking whether any of the seven
+**survivors** was a merge source. Empty result, so I recorded "no chains." The
+question that mattered was the mirror image — whether any of my 1,990 **sources**
+was a merge target — and the answer was 96. *Asking whether a list can contain
+what you are counting* has now cost this workstream four times in two days.
 
-### ⚠️ Automotive VESL does not exist
+### ⭐ Packaging both hides and reveals — and the hiding is the dangerous half
 
-Sam's example for the subject split — "Vocational ESL AUTO" — has **zero rows in
-the corpus**. Measured: **78% of the Vocational lane (90 of 116) is generic
-workplace English**, and the subject-specific residue is 26 across eight
-subjects, the largest being Healthcare at 6. He chose Healthcare-only on that
-evidence. **The example that motivates a change is worth measuring before
-building it.**
+`FIMS M1018` *"Film and American Culture"* (film studies, TOP 0612.00) was merged
+by `automerge-v1@bot` into `ESOL M1152` *"American Culture and Film"* (credit ESL,
+TOP 4930.87) — the same words reordered, two genuinely different courses.
 
-### ⚠️ The fold-scoped list trap, a third time
+Before the fold that stray was 1 of 2 members and conspicuous. **After the fold it
+is 1 of 35 inside "Enrichment ESL"**, and nothing about it looks anomalous any
+more. A packaging pass should audit a survivor's EXISTING members before folding,
+because afterwards the evidence is diluted by design.
 
-Checking survivor strength, I read candidate pools from the actionable receipt —
-which is scoped to the three FOLD buckets — so Vocational and Civic read as
-**empty**. Same shape as the carve-out preview reporting "22 of 22 standing"
-and the identity lint publishing zero findings. **Before trusting a count, ask
-whether the list you read can even contain the thing you are counting.**
+It is also the exact repair Sam wanted the universe view for, sitting inside the
+fold he just approved.
+
+### Cross-discipline merges: 2,731, and mostly not defects
+
+Of 10,170 merges where both ends carry a discipline, 2,731 (26.9%) cross one. But
+the top pairs are overwhelmingly sibling disciplines — CIS↔Computer Science 107,
+Law↔Legal Assisting 67, Business↔Office Technologies 55, Art↔Photography 53,
+Carpentry↔Construction Technology 38. **That is a discipline-vocabulary signal,
+not an over-merge signal.**
+
+The one pair with no parent/child relation was Ethnic Studies↔Kinesiology (73) —
+and inspecting it, the *merges are right and the label is wrong*: `ETHS M1227` is
+titled "Intercollegiate Women's Flag Football". ⚠️ **A cross-discipline merge is
+ambiguous between a wrong merge and a wrong discipline on one end, and the two
+have opposite repairs.** Dragging the course elsewhere would be exactly wrong
+here; the island needs relabeling. The universe view has a verb for the first and
+none for the second.
 
 ### Next
 
-- The cron regenerates at 06:17 UTC; the Atlas needs its extract rebuilt after
-  that (`kb/_build_ccr_atlas_extract.py` → `prototype/build_ccr_atlas.py`).
-- The 794 default-Beginning rows are still the outstanding spot-check.
-- Strays are now correctable by dragging in the universe view — that was Sam's
-  stated reason for wanting the fold applied first.
+- **Sam:** the 794 default-Beginning rows spot-check is still open.
+- Re-home `FIMS M1018` out of Enrichment ESL — the first real use of the drag.
+- A survivor-member audit before the next packaging pass (the dilution problem).
+- Candidate audit rule: an island whose members' disciplines outvote its own label.
+- The whole-universe level-of-detail view, and the one-college-many-numbers rule.

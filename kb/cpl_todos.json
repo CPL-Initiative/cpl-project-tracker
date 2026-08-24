@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-24 · SkyView (Session 187) took the Common Course Reference and did two things. First, the finding that should steer the whole effort: if we worked every merge decision in the reference and got them all right, we would still have about 36,000 courses — fourteen times more than the 2,500 we want. Merging only compares courses that already exist. The only way to reach the goal is to decide what the catalog should contain and map courses into it. Second, we did exactly that for ESL: 1,997 changes collapsed roughly two thousand ESL course records into SEVEN courses — Beginning, Intermediate, Advanced, Vocational, Vocational for Healthcare, Civic and Enrichment. There is also now a map of the whole reference you can pan around, search, and drag courses on, including dragging a course from one subject to another when it was filed in the wrong place.",
+ "_as_of": "2026-08-24 · SkyView (Session 187) took the Common Course Reference and did three things. First, the finding that should steer the whole effort: if we worked every merge decision in the reference and got them all right, we would still have about 36,000 courses — fourteen times more than the 2,500 we want. Merging only compares courses that already exist. The only way to reach the goal is to decide what the catalog should contain and map courses into it. Second, we did exactly that for ESL: 1,997 changes collapsed roughly two thousand ESL records into SEVEN courses — Beginning, Intermediate, Advanced, Vocational, Vocational for Healthcare, Civic and Enrichment. ESL went from 2,300 course records to 27. Third, checking that the fold had actually worked turned up a bug worth more than the fold: 340 courses that had already been merged away were still being shown as if they were separate courses. Only 96 of those were ours — most were years-old and spread across Kinesiology, Fire Technology, English and Art. That is fixed. There is also now a map of the whole reference you can pan around, search, and drag courses on, including between subjects.",
  "_session": "187 (SkyView)",
- "_status": "The ESL fold is done and will appear on the dashboard after the next daily rebuild. One thing to look at when it does: 794 of the courses that landed in 'Beginning' got there only because their title did not mention a level, so we assumed the lowest one. That is the safe guess but often the wrong one, and you can now fix any of them by dragging on the map. Three of the seven new names did not save on the first attempt because those records already had a name; all three were corrected, and Sam has confirmed the one that had been his own — Civic ESL — so that is settled. The old names are kept in the receipt either way.",
+ "_status": "The ESL fold is live on the dashboard. Two things to look at. One: 794 of the courses that landed in 'Beginning' got there only because their title did not mention a level, so we assumed the lowest one — the safe guess but often wrong, and you can fix any of them by dragging on the map. Two: packaging makes an old mistake harder to spot, not easier. A film course had been wrongly merged into an ESL course years ago; it used to stand out as one of two, and now it is one of 35 and looks normal. Before we package the next subject we should check what is already inside the course we are folding into. The three names that did not save on the first attempt were all corrected, and you have confirmed the one that had been yours — Civic ESL — so that is settled.",
  "items": [
   {
    "id": "s187-esl-beginning-check",
@@ -14,19 +14,13 @@
    "id": "s187-universe-react",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. Tell us what is wrong with it — especially whether dragging a subject around is actually how you would want to work."
+   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. A real one to fix while you are there — a film course called \"Film and American Culture\" is sitting inside the new Enrichment ESL course, because a robot matched it to an ESL course called \"American Culture and Film\". Same words, different order, different courses. Drag it back to Film and Media Studies."
   },
   {
    "id": "s187-overmerge-orange-coast",
    "for": "Sam",
    "tab": "unified-courses",
    "text": "One row to look at: five different Orange Coast College courses — Reading and Vocabulary, Sentence Structure, Spelling, Pronunciation and Grammar — are filed as one course under the name of just one of them. About 3,320 rows share that shape."
-  },
-  {
-   "id": "s187-atlas-rebuild",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "After the daily rebuild runs, refresh the map's data so the new ESL courses show up, and republish it. Two commands: rebuild the extract, then rebuild the page."
   },
   {
    "id": "s187-overmerge-rule",
@@ -75,6 +69,12 @@
    "for": "Sam",
    "tab": "college-identity",
    "text": "MAP needs to give us two college IDs. You ruled that Calbright and LAUNCH each have two entities — one credit, one noncredit. The noncredit halves already have IDs; the credit halves (\"Calbright College Credit\" and \"Launch Apprenticeship Non-Credit\") have none anywhere we can see, and MAP is the only system allowed to assign one. We deliberately did NOT make one up, because a fake ID would look exactly like a real one to every other system. They show as \"awaiting MAP ID\" on the College Identity tab. Once MAP supplies them, they fold in with no code change."
+  },
+  {
+   "id": "s187-island-label-verb",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "The map lets you move a COURSE but not relabel a SUBJECT. We found 73 merges between Ethnic Studies and Kinesiology where the merges are right and the subject label is wrong — one is titled \"Intercollegiate Women's Flag Football\" and filed under Ethnic Studies. Moving the courses would be exactly the wrong fix. Add a way to correct the label itself."
   }
  ]
 }
