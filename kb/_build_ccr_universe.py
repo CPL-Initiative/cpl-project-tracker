@@ -18,8 +18,25 @@ in the wrong subject entirely" visible at a glance — and what lets a curator
 drag one island next to another to move a course across areas.
 
 Positions are in an abstract world space; the client maps to screen.
+
+MEMBERS SHIP SEPARATELY
+-----------------------
+The layout payload carries identities. The DRAG carries courses, so SkyView also
+needs the member college courses — and there are 101,065 of them against 16,484
+identities. They go to a SECOND file (--members-out) rather than into the island
+points, for two reasons: ccr_universe.json stays the size it already is for every
+other reader, and "the members cost 2.4 MB" stays a legible fact instead of a
+silent doubling of a file nobody re-measures.
+
+The member record is the minimum a drag needs: [control_number, course code,
+college index]. Titles are NOT carried — the drag list renders code + college, so
+a title would add 3.1 MB to show nothing. The control number is stored as an
+INTEGER with the invariant "CCC" prefix stripped; a member whose control number
+is absent or malformed is DROPPED and counted, never coerced to zero, because the
+control number IS the write key (`CN:<control_number>`) and a course with no key
+cannot be re-homed.
 """
-import argparse, json, math, os
+import argparse, json, math, os, re
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -33,15 +50,79 @@ def load_js(fname):
     return json.loads(src[i:].strip().rstrip(";"))
 
 
+CN_RE = re.compile(r"^CCC(\d{9})$")
+
+
+def write_members(mem_payload, placed_ids, out_rel):
+    """Emit the draggable member courses for the identities the universe places.
+
+    Record: [control_number:int, course code, college index]. See the module
+    docstring for why the title is left out and why a member with no usable
+    control number is dropped rather than carried with a placeholder key.
+
+    Two counts are reported because they mean different things and a reader who
+    sees only one will misread the file:
+
+      dropped_no_key            a member that cannot be dragged at all.
+      cn_on_multiple_identities a control number surfacing under MORE THAN ONE
+                                identity. That is the known forward-join
+                                behavior for an over-merged identity, and it
+                                matters here because the WRITE is one row per
+                                control number: re-homing such a course is a
+                                single global statement, so it must leave every
+                                card it was showing on, not just the one the
+                                curator was looking at. The consumer needs the
+                                number to know that case is live (it is: 1,122).
+    """
+    mem = mem_payload["members"]
+    out, dropped, owners = {}, 0, defaultdict(set)
+    for ident in placed_ids:
+        recs = []
+        for m in mem.get(ident, ()):
+            hit = CN_RE.match(str(m.get("cn") or "").strip().upper())
+            if not hit:
+                dropped += 1
+                continue
+            recs.append([int(hit.group(1)), m.get("n") or "", m.get("c")])
+            owners[hit.group(1)].add(ident)
+        if recs:
+            out[ident] = recs
+
+    payload = {
+        "_about": "SkyView draggable members — identity id -> [[control_number, "
+                  "course code, college index]]. Control numbers are the CCC prefix "
+                  "stripped; re-add it to write CN:CCC<9 digits>. READ-ONLY extract.",
+        "_generated_from": mem_payload.get("generated_at"),
+        "colleges": mem_payload.get("colleges") or [],
+        "counts": {
+            "identities": len(out),
+            "members": sum(len(v) for v in out.values()),
+            "dropped_no_key": dropped,
+            "cn_on_multiple_identities": sum(1 for v in owners.values() if len(v) > 1),
+        },
+        "m": out,
+    }
+    path = os.path.join(ROOT, out_rel)
+    json.dump(payload, open(path, "w", encoding="utf-8"), separators=(",", ":"))
+    c = payload["counts"]
+    print(f"wrote {out_rel}  ({os.path.getsize(path)/1024:.0f} KB)")
+    print(f"  {c['members']:,} members over {c['identities']:,} identities; "
+          f"{c['dropped_no_key']} dropped for no control number; "
+          f"{c['cn_on_multiple_identities']:,} control numbers on >1 identity")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="prototype/ccr_universe.json")
     ap.add_argument("--include-standalone", action="store_true",
                     help="also place the 34,840 single-college rows (heavier payload)")
+    ap.add_argument("--members-out", default="prototype/ccr_universe_members.json",
+                    help="second payload: the draggable member courses per identity")
     args = ap.parse_args()
 
     data = load_js("unified_courses_data.js")
-    mem = load_js("unified_courses_members.js")["members"]
+    mem_payload = load_js("unified_courses_members.js")
+    mem = mem_payload["members"]
     rows = list(data["rows"])
     if args.include_standalone:
         rows += load_js("unified_courses_standalone.js")["rows"]
@@ -53,7 +134,7 @@ def main():
 
     order = sorted(by_disc.items(), key=lambda kv: -len(kv[1]))
 
-    # spiral packing, biggest first — a Vogel/sunflower spiral keeps the centre
+    # spiral packing, biggest first — a Vogel/sunflower spiral keeps the center
     # dense and the tail readable without any overlap test
     GAP = 34.0
     islands, placed = [], []
@@ -102,19 +183,29 @@ def main():
               "y0": round(min(y - r for y, r in zip(ys, rs)), 1),
               "y1": round(max(y + r for y, r in zip(ys, rs)), 1)}
 
+    placed_ids = [p["i"] for isl in islands for p in isl["p"]]
+
     out = {
         "_about": "CCR Universe — precomputed island layout. READ-ONLY extract; "
                   "the browser draws these coordinates, it does not solve a layout.",
         "_generated_from": data.get("generated_at"),
         "counts": {"identities": sum(i["n"] for i in islands),
                    "disciplines": len(islands),
-                   "member_rows": sum(len(v) for v in mem.values())},
+                   # members CARRIED for the identities placed here — not the
+                   # corpus figure, which counts stand-alone rows this payload
+                   # does not place. The two differed by 33k and the smaller one
+                   # is what a reader of this file can actually reach.
+                   "member_rows": sum(len(mem.get(i, ())) for i in placed_ids),
+                   "member_rows_all_identities": sum(len(v) for v in mem.values())},
         "bounds": bounds,
         "islands": islands,
     }
     path = os.path.join(ROOT, args.out)
     json.dump(out, open(path, "w", encoding="utf-8"), separators=(",", ":"))
     print(f"wrote {args.out}  ({os.path.getsize(path)/1024:.0f} KB)")
+
+    write_members(mem_payload, placed_ids, args.members_out)
+
     print(f"  {out['counts']['identities']:,} identities in {len(islands)} islands")
     print(f"  bounds {bounds}")
     print("  largest:", ", ".join(f"{i['d'][:22]} ({i['n']})" for i in islands[:5]))

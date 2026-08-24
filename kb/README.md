@@ -613,6 +613,37 @@ The doctrine-driven campaign to converge the suggested-merge worklist into a
   same schema the future batch pass 2 plans in), `calibration_review.md`
   (the human review doc Sam reacts to).
 
+## SkyView universe payloads (2026-08-24, Session 189)
+
+The prototype graph view (`prototype/ccr_atlas_v1.html`) is fed by two generated payloads. They
+are separate on purpose: the layout is what every reader needs, the members are what only the
+drag needs, and keeping the 2.5 MB visible stops it becoming a silent doubling of a file nobody
+re-measures.
+
+| File | What |
+|---|---|
+| `kb/_build_ccr_universe.py` | READ-ONLY. Emits **both** payloads from `unified_courses_data.js` + `unified_courses_members.js`. |
+| `prototype/ccr_universe.json` | Precomputed island layout — 16,484 identities in 158 discipline islands, ~1.7 MB. Coordinates only; the browser draws, it does not solve a layout. |
+| `prototype/ccr_universe_members.json` | The **draggable** member college courses — 101,063 over 16,240 identities, ~2.5 MB. Record is `[control_number, course code, college index]`. |
+| `tests/ccr_universe_members_test.py` | Payload invariants; wired into `js-tests.yml`. |
+| `prototype/check_ccr_atlas.js` | Chromium behavior harness (on demand, **not** `npm test`) — a drag needs a layout engine. |
+
+⚠️ **No title is carried on a member record.** Measured: 9.9 MB as full dicts · 5.5 MB with the
+title · **2.5 MB without**, and the drag list renders code + college. Adding one back buys
+3.1 MB to show nothing.
+
+⚠️ **A member with no usable control number is DROPPED and counted** (2 today). The write key is
+`CN:<control_number>`; coercing a blank to zero would ship a course that writes against
+`CCC000000000`.
+
+⚠️ **1,122 control numbers sit under more than one identity** — the forward join surfaces an
+over-merged course on every card claiming it. The write is one row per control number, so a
+re-home is a **global** statement and the course must leave every card it was showing on.
+
+Merge chains need no handling here: `unified_courses_members.js` is built after
+`flatten_merge_chains()` and honors `CN:`, so a merged-away identity's members already sit on
+its survivor.
+
 ## ESL packaging + fold spot-check (2026-08-24, Sessions 187–188)
 
 The first **packaging** pass — deciding what the catalog should *contain*, then mapping into

@@ -118,7 +118,7 @@ function serve() {
     for (let i = 0; i < d.length; i += 4 * 997) seen.add(d[i] + "," + d[i+1] + "," + d[i+2]);
     return seen.size > 3;                      // more than one flat color
   }));
-  ok("the canvas is keyboard-reachable and labelled",
+  ok("the canvas is keyboard-reachable and labeled",
     (await page.locator("#u-cvs[tabindex='0']").count()) === 1 &&
     !!(await page.locator("#u-cvs").getAttribute("aria-label")));
 
@@ -137,29 +137,135 @@ function serve() {
   ok("a miss says so rather than flying somewhere arbitrary",
     /Nothing matches/i.test(await page.locator("#u-hint").textContent()));
 
+  console.log("\n══ ⚠ the member payload (nothing is draggable without it)");
+  const mp = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    if (!M || !M.m) return { ok: false, why: "window.CPL_CCR_UNIVERSE_MEMBERS is absent" };
+    const placed = new Set();
+    U.islands.forEach((i) => i.p.forEach((p) => placed.add(p.i)));
+    const ids = Object.keys(M.m);
+    const discs = new Set();
+    U.islands.forEach((i) => { if (i.p.some((p) => M.m[p.i])) discs.add(i.d); });
+    return { ok: true, identities: ids.length, members: M.counts.members,
+             stray: ids.filter((id) => !placed.has(id)).length,
+             discs: discs.size, islands: U.islands.length,
+             dup: M.counts.cn_on_multiple_identities,
+             dropped: M.counts.dropped_no_key };
+  });
+  ok("the member payload loaded" + (mp.ok ? "" : ` — ${mp.why}`), mp.ok);
+  // Thresholds, not pinned values: the corpus moves every time the cron runs, and
+  // an assertion pinned to today's count stops being a guard the day it changes.
+  ok(`it covers the corpus, not a sample (${mp.identities} identities, ${mp.members} members)`,
+    mp.identities > 10000 && mp.members > 50000);
+  ok(`every identity in it is one the map actually places (${mp.stray} stray)`, mp.stray === 0);
+  ok(`members reach most subject areas (${mp.discs} of ${mp.islands})`, mp.discs > mp.islands * 0.7);
+  // Not a defect — the state the duplicate-handling below exists for. Printed so
+  // a future reader knows the case is live rather than theoretical.
+  console.log(`  note  ${mp.dup} control numbers sit under more than one identity; ` +
+              `${mp.dropped} members carry no control number and cannot be dragged`);
+
   console.log("\n══ ⚠ the cross-area move (the reason this view exists)");
-  const moved = await page.evaluate(() => {
-    const U = window.CPL_CCR_UNIVERSE, A = window.CPL_ATLAS_DATA;
-    // find a member course, and a target identity in a DIFFERENT subject area
+  // Pick a real source (a course on an identity in one island) and a real target
+  // in a DIFFERENT island, then drive the actual UI: select, press Drag…, click
+  // the destination. A move that only ever runs through a test hook proves the
+  // hook works, not the page.
+  const plan = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
     let src = null;
-    for (const dn of Object.keys(A.detail)) {
-      for (const pack of A.detail[dn]) {
-        for (const nd of pack.nodes) {
-          if (nd.m && nd.m.length) { src = { id: nd.id, cn: nd.m[0].cn, disc: dn }; break; }
+    for (const isl of U.islands) {
+      for (const nd of isl.p) {
+        const list = M.m[nd.i];
+        if (list && list.length >= 2 && list.length <= 40) {
+          src = { id: nd.i, disc: isl.d, x: nd.x, y: nd.y, n: list.length };
+          break;
         }
-        if (src) break;
       }
       if (src) break;
     }
-    if (!src) return { ok: false, why: "no member course in the sample" };
-    const home = U.islands.find(i => i.p.some(p => p.i === src.id));
-    const other = U.islands.find(i => i !== home && i.p.length);
-    if (!other) return { ok: false, why: "no second island" };
-    return { ok: true, from: home.d, to: other.d, cross: home.d !== other.d };
+    if (!src) return { ok: false, why: "no modest-sized identity with members" };
+    let tgt = null;
+    for (const isl of U.islands) {
+      if (isl.d === src.disc) continue;
+      const nd = isl.p.find((p) => M.m[p.i]);
+      if (nd) { tgt = { id: nd.i, disc: isl.d, x: nd.x, y: nd.y }; break; }
+    }
+    if (!tgt) return { ok: false, why: "no identity in a second subject area" };
+    U.islands.forEach((i) => { i.dx = 0; i.dy = 0; });   // no stray offsets under us
+    return { ok: true, src, tgt };
   });
   ok("a course and a target in ANOTHER subject both exist" +
-     (moved.ok ? ` (${moved.from} → ${moved.to})` : ` — ${moved.why}`),
-    moved.ok && moved.cross);
+     (plan.ok ? ` (${plan.src.disc} → ${plan.tgt.disc})` : ` — ${plan.why}`), plan.ok);
+
+  // Fly the identity to the middle of the canvas and click it. `want` is not
+  // decoration: overlapping nodes mean a click can land on a NEIGHBOUR, and a
+  // check that never asserts what it selected will happily measure the previous
+  // card and pass. Returns the identity actually selected.
+  const flyClick = async (pt, want) => {
+    await page.evaluate(([x, y]) => window.__ccrUniverseFly(x, y, 3.4), [pt.x, pt.y]);
+    // Re-measure every time. Pressing "Drag…" calls cvs.focus(), which scrolls the
+    // canvas — a center cached once goes stale and the click lands on empty space,
+    // which the page correctly reports as "nothing moved". That read as a broken
+    // drag for three checks running.
+    const b = await page.locator("#u-cvs").boundingBox();
+    await page.mouse.click(b.x + b.width / 2, b.y + b.height / 2);
+    await page.waitForTimeout(220);
+    const got = await page.evaluate(() => window.__ccrUniverseState().sel);
+    if (want && got !== want) ok(`click landed on ${want} (got ${got})`, false);
+    return got;
+  };
+
+  await flyClick(plan.src, plan.src.id);
+  const listed = await page.locator("#u-detail .mv").count();
+  ok(`selecting an identity lists its college courses (${listed})`, listed > 0);
+  ok("and does NOT call them colleges — that number is member courses",
+    !/college(s)?<\/p>|· \d[\d,]* colleges/i.test(await page.locator("#u-detail").innerHTML()));
+
+  const cn = await page.locator("#u-detail .mv").first().getAttribute("data-cn");
+  await page.locator("#u-detail .mv").first().click();
+  // No `want` here: a DROP is not a selection. The pane deliberately keeps showing
+  // the card you came from, so what proves the drop landed on the right identity is
+  // the write line below naming it — not the selection.
+  await flyClick(plan.tgt);
+
+  const writeLine = await page.locator("#u-writes").textContent();
+  ok(`the move writes one CN: row (${(writeLine || "").trim().slice(0, 46)}…)`,
+    new RegExp("CN:" + cn + "\\s+merge_into\\s+" + plan.tgt.id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"))
+      .test(writeLine || ""));
+
+  await flyClick(plan.src, plan.src.id);
+  ok("the course has LEFT the card it came from", await page.evaluate((c) =>
+    !document.querySelector(`#u-detail .mv[data-cn="${c}"]`), cn));
+  await flyClick(plan.tgt, plan.tgt.id);
+  ok("and ARRIVED on the destination card, marked as moved", await page.evaluate((c) => {
+    const b = document.querySelector(`#u-detail .mv[data-cn="${c}"]`);
+    return !!b && /moved here/i.test(b.closest("li").textContent);
+  }, cn));
+
+  console.log("\n══ a long member list is capped, and says so");
+  const capped = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    for (const isl of U.islands) {
+      for (const nd of isl.p) {
+        if ((M.m[nd.i] || []).length > 400)
+          return { id: nd.i, x: nd.x, y: nd.y, n: M.m[nd.i].length };
+      }
+    }
+    return null;
+  });
+  if (!capped) {
+    ok("no identity carries enough members to exercise the cap — skipped", true);
+  } else {
+    await flyClick(capped, capped.id);
+    const shown = await page.locator("#u-detail .mv").count();
+    const txt = await page.locator("#u-detail").textContent();
+    ok(`${capped.n} members render as a bounded list (${shown})`, shown > 0 && shown <= 200);
+    // A capped list that reads as a census is the defect, not the cap.
+    ok("and the pane says how many are off the end", /Showing [\d,]+ of [\d,]+/.test(txt));
+    await page.fill("#u-mfilter", "zzzznotacourse");
+    await page.waitForTimeout(200);
+    ok("filtering to nothing shows nothing rather than the first 200",
+      (await page.locator("#u-detail .mv").count()) === 0);
+  }
 
   console.log("\n══ subjects can be pulled next to each other");
   const dragged = await page.evaluate(() => {
@@ -202,7 +308,7 @@ function serve() {
   ok("every header cell carries scope",
     (await page.locator("table.uc-like th[scope=col]").count()) ===
     (await page.locator("table.uc-like th").count()));
-  ok("the scrolling table is a focusable labelled region",
+  ok("the scrolling table is a focusable labeled region",
     (await page.locator(".tblwrap[tabindex='0'][role=region]").count()) >= 1);
   ok("medium-confidence rows are listed FIRST",
     /medium|review/i.test(await page.locator("table.uc-like tbody tr").first().textContent()));

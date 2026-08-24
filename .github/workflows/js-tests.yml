@@ -71,3 +71,15 @@ jobs:
       # Pure-stdlib python; same non-required check.
       - name: ESL level-band lint (kb/_esl_relevel_dryrun.py)
         run: python3 tests/esl_relevel_bands_test.py
+      # SkyView member payload (Session 189) — the graph carried identities and NO
+      # member courses, so there was nothing at course grain to drag and the one
+      # verb the view exists for was unreachable. The payload's failure modes are
+      # both invisible on screen: a member with no control number cannot be
+      # written as `CN:<control_number>` and must be DROPPED and counted rather
+      # than coerced to zero, and 1,122 control numbers sit under more than one
+      # identity, so a move is a global statement that has to leave every card.
+      # Both are proven to fail the test when broken. Browser behavior (does a
+      # drag actually complete?) is prototype/check_ccr_atlas.js, deliberately not
+      # in npm test. Pure-stdlib python; same non-required check.
+      - name: SkyView member payload lint (kb/_build_ccr_universe.py)
+        run: python3 tests/ccr_universe_members_test.py
