@@ -56,11 +56,14 @@ Guards, each of which changes the answer on live data:
 
   * REQUIRE >= 2 DISTINCT RUNGS. One course called "ESL 5" does not establish a 5-rung
     ladder; it is far more likely a college whose ladder we can only partly see.
-  * A 2-RUNG LADDER ABSTAINS — Sam's table has no L=2 row. 21 colleges read as 2-rung and
-    there is no ruling for them, so they are COUNTED AND REPORTED, never banded by an
-    invented row. Extending the table is Sam's call, not a gap to paper over: the same
-    discipline that forbids "simplifying" his L=4 cell back to an even split forbids
-    inventing an L=2 one.
+  * A 2-RUNG LADDER IS NOW RULED, AND NOT THE WAY THE PATTERN WOULD SUGGEST. Sam ruled
+    L=2 as L1=Intermediate, L2=Advanced on 2026-08-24 — no Beginning band at all — after
+    being shown that the 21 colleges reading as 2-rung are large ESL providers (De Anza,
+    Santa Ana, Saddleback, North Orange Continuing Education), so a 2-rung read is more
+    likely a PARTIAL VIEW of a longer ladder than a 2-level program. A "1" at those
+    colleges is therefore not the bottom of anything. Extending the L>=3 pattern would
+    have put rung 1 at Beginning and been wrong; this is a domain judgment about specific
+    institutions. Do not regularise it.
   * CAP AT 9. Sam's table stops at 9. A higher read is a number that is not a rung, and
     a fabricated 12-rung ladder would band everything Beginning.
   * REUSE THE GUARDED READER. read_level() already strips grade ranges (K-12) and stops
@@ -100,7 +103,7 @@ PRIOR_PLAN = "kb/esl_relevel_out/2026-08-24/plan.json"    # the 32 already appli
 ORDER = ["Beginning", "Intermediate", "Advanced"]
 MAX_LADDER = 9                                            # Sam's table stops here
 MIN_RUNGS = 2                                             # one rung is not a ladder
-MIN_LENGTH = 3                                            # Sam's table starts at L=3
+MIN_LENGTH = 2                                            # Sam ruled L=2 on 2026-08-24
 ESL_DISCIPLINE = "English as a Second Language"
 
 
@@ -109,7 +112,7 @@ def load_sets():
     table = {}
     for length, bands in d["by_ladder_length"].items():
         for band in ORDER:
-            for rung in bands[band]:
+            for rung in bands.get(band) or []:
                 table[(int(length), rung)] = band
     return d, table
 
@@ -146,24 +149,52 @@ def college_ladders():
     return ladders, too_short
 
 
-def member_votes(row, ladders, table):  # noqa: D401
-    """Per-member band votes for one identity, plus why each member abstained."""
+def member_votes(row, ladders, table):
+    """Per-member band votes for one identity, plus why each member abstained.
+
+    ⚠️ GUARD 1 APPLIES AT THE MEMBER GRAIN TOO, AND ORIGINALLY DID NOT. A level WORD in
+    the LOCAL title beats its number, exactly as it does on the identity title. Missing
+    this read half the available evidence and mis-banded the rest: at the 21 colleges whose
+    numbers only ever reach 2, the trailing 1/2 is a PART MARKER INSIDE A NAMED LEVEL —
+    "BEGINNING MULTISKILLS I"/"II", "Intermediate Integrated ESL Skills: Part 1"/"Part 2",
+    "INTERMEDIATE WRITING I"/"II" — so the number is a sequence, not a rung, and the level
+    is sitting in the title as a word. Measured on live data: 72 of the 142 rung-1/2 courses
+    at those colleges carry a level word, and the word disagreed with the ladder band 51
+    times.
+
+    ⚠️ MEASURE THE OUTPUT, NOT THE COMPONENT. In isolation this fix changes 775 member-vote
+    answers and takes vote-decidable identities from 708 to 1,372 — and that number is
+    MEANINGLESS as an impact claim, which is how it first got reported. decide() consults
+    member votes only when the IDENTITY title carries no level word, and 894 of the 1,990
+    identities are decided there first. End to end the fix changes exactly ONE final band
+    (ESOL M10AC, no-signal -> Beginning). It is a latent-correctness fix, not a material one:
+    worth keeping because the guard should hold at both grains, worth nobody's time as a
+    headline. Sam's L=2 ruling, by contrast, made 39 more rows decidable.
+
+    The word is read through classify(), never a second copy of the patterns, so the member
+    grain and the identity grain cannot drift.
+    """
     votes, abstain = [], collections.Counter()
     for m in row.get("members") or []:
         col = (m.get("college") or "").strip()
-        n, _ = read_level(GRADE_RANGE.sub(" ", m.get("local_title") or ""))
+        title = m.get("local_title") or ""
+        band, signal = classify(title)
+        if signal in ("word", "combo") and band:
+            votes.append((band, col, None, None))     # no ladder involved
+            continue
+        n, _ = read_level(GRADE_RANGE.sub(" ", title))
         if n is None:
-            abstain["no rung in the local title"] += 1
+            abstain["no level word and no rung in the local title"] += 1
             continue
         if col not in ladders:
             abstain["college has no readable ladder"] += 1
             continue
         length = ladders[col][0]
-        band = table.get((length, n))
-        if band is None:
+        b = table.get((length, n))
+        if b is None:
             abstain[f"rung {n} is above that college's {length}-rung ladder"] += 1
             continue
-        votes.append((band, col, length, n))
+        votes.append((b, col, length, n))
     return votes, abstain
 
 
@@ -184,7 +215,10 @@ def decide(row, ladders, table):
         "tally": dict(tally),
         "voters": len(votes),
         "abstentions": dict(abstain),
-        "example": [{"college": c, "ladder": L, "rung": n} for _, c, L, n in votes[:3]],
+        "by_word": sum(1 for _, _, L, _ in votes if L is None),
+        "by_ladder": sum(1 for _, _, L, _ in votes if L is not None),
+        "example": [{"college": c, "ladder": L, "rung": n, "via": "word" if L is None else "ladder"}
+                    for _, c, L, n in votes[:3]],
     }
 
 

@@ -9,9 +9,9 @@ Resolution: A level WORD on the identity title wins; otherwise each member votes
 ## Does the ladder derivation reproduce Session 188's measurement?
 
 **NO — buckets disagree; see below.**
-Rule: max rung observed over the whole ESL corpus, >= 2 distinct rungs, length 3-9; a 2-rung read abstains because Sam's table has no L=2 row.
+Rule: max rung observed over the whole ESL corpus, >= 2 distinct rungs, length 2-9; a 2-rung read abstains because Sam's table has no L=2 row.
 
-Colleges with a readable ladder: **71**. ⚠️ A further **21** read as 2-rung ladders, which Sam's table does not cover — they abstain, and whether to extend the table to L=2 is his call.
+Colleges with a readable ladder: **92**. ⚠️ A further **0** read as 2-rung ladders, which Sam's table does not cover — they abstain, and whether to extend the table to L=2 is his call.
 
 | Ladder | This run | Session 188 | Agrees |
 |---|---:|---:|:--:|
@@ -25,25 +25,25 @@ Colleges with a readable ladder: **71**. ⚠️ A further **21** read as 2-rung 
 
 ## Effect
 
-- re-levels proposed: **130**
+- re-levels proposed: **169**
 - of which REVERT one of the 32 already applied: **30**
-- unchanged: 1118 · undecided: 561 · purpose carve-outs skipped: 181
-- against the colleges' own catalogs: agrees 31, disagrees 39, silent 60
+- unchanged: 1119 · undecided: 521 · purpose carve-outs skipped: 181
+- against the colleges' own catalogs: agrees 39, disagrees 44, silent 86
 
 ### Moves
 
 | From → to | n |
 |---|---:|
-| Beginning -> Intermediate | 64 |
+| Beginning -> Intermediate | 84 |
 | Intermediate -> Advanced | 62 |
+| Beginning -> Advanced | 20 |
 | Intermediate -> Beginning | 3 |
-| Beginning -> Advanced | 1 |
 
 ### Why an identity went undecided
 
 | Reason | n |
 |---|---:|
-| no-ladder-signal | 551 |
+| no-ladder-signal | 511 |
 | tie | 10 |
 
 ### What this does to the 32 already applied
@@ -88,10 +88,10 @@ A ladder vote can rest on a SINGLE member course, and the weakest tier of the le
 | Group | n | decided by ONE member | catalog agrees | disagrees | silent |
 |---|---:|---:|---:|---:|---:|
 | Reverts one of the applied 32 | 30 | 19 | 0 | 22 | 8 |
-| Other proposals | 100 | 71 | 31 | 17 | 52 |
+| Other proposals | 139 | 93 | 39 | 22 | 78 |
 
 ⚠️ **The reverts move AWAY from the colleges' own catalogs, one-directionally.** Every one of the 22 reverts whose catalog speaks disagrees with the revert — the catalogs say the band these rows sit at TODAY. By Sam's own principle a canonical standard scored against local records is blast radius, not a verdict; but that principle argues for holding a ruling against noisy local variance, and here the local records are unanimous and point the other way.
 
-**Recommendation: do NOT roll back the applied 32 on this evidence.** The other 100 proposals run 31 agree to 17 disagree and are the better candidates — but work the multi-member ones first.
+**Recommendation: do NOT roll back the applied 32 on this evidence.** The other 139 proposals run 39 agree to 22 disagree and are the better candidates — but work the multi-member ones first.
 
 ⚠️ **Nothing here is applied.** The apply needs Sam's go.
