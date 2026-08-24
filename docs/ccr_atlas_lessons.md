@@ -247,7 +247,11 @@ was the entire story. A write that reports only "no error" would have hidden it.
 
 Resolved with a guarded UPDATE scoped to those three ids and that one field.
 Sam's row was superseded **explicitly, not silently** (Rule 8) and reported in
-the same turn.
+the same turn — and he **confirmed it the same day**: *"Yes to Civic ESL
+rename."* That is the whole Rule 8 path working end to end: supersede a
+human-sourced row only by saying so, then go and get the confirmation. The
+prior value stays in the receipt, so it remains restorable even now that it is
+settled.
 
 ### ⚠️ Automotive VESL does not exist
 

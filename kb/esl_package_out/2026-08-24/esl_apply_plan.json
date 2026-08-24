@@ -14039,7 +14039,8 @@
    "was": "ESL for Citizenship",
    "by": "map@rccd.edu (SAM'S OWN ROW, 2026-06-12)",
    "now": "Civic ESL",
-   "_rule8": "Superseded EXPLICITLY, not silently — Sam named 'Civic ESL' on 2026-08-24 and this identity IS that comprehensive. Reported to him in the same turn. Restore with one UPDATE if he prefers the original."
+   "_rule8": "Superseded EXPLICITLY, not silently — Sam named 'Civic ESL' on 2026-08-24 and this identity IS that comprehensive. Reported to him in the same turn. Restore with one UPDATE if he prefers the original.",
+   "_confirmed": "CONFIRMED by Sam 2026-08-24: \"Yes to Civic ESL rename.\" The supersede of his own 2026-06-12 title stands. Prior value stays recorded above and is still restorable, but the rename is now curator-confirmed rather than a session inference."
   }
  }
 }
