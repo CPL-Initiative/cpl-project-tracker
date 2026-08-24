@@ -192,3 +192,84 @@ on real content drift.
 4. Engineering: the **whole-universe view** (precomputed layout + level-of-detail
    — a map, not a live force graph), and the **one-college-many-numbers audit
    rule** in `kb/_row_audit.py`.
+
+---
+
+## 2026-08-24 (same session) — the ESL fold APPLIED, and what `ON CONFLICT` caught
+
+Sam confirmed the names, then extended the set twice mid-run: first adding
+**Vocational · Civic · Enrichment**, then asking that Vocational *carry its
+subject*. Both changes arrived after the write was staged and before it ran,
+which is the only reason it landed once instead of three times.
+
+### Seven comprehensives, applied under Rule 10
+
+| | id | folds in |
+|---|---|---:|
+| Beginning ESL | `ESOL M9168` | 1,079 |
+| Intermediate ESL | `ESOL M9256` | 463 |
+| Advanced ESL | `ESOL M1141` | 267 |
+| Vocational ESL | `ESOL M9023` | 114 |
+| Civic ESL | `ESOL M9177` | 35 |
+| Enrichment ESL | `ESOL M1152` | 34 |
+| Vocational ESL — Healthcare | `ESOL M91IL` | 5 |
+
+**1,997 rows** — 1,990 `merge_into` + 7 `unified_title`, cohort
+`package-esl-s187@bot`. Receipt: `kb/esl_package_out/2026-08-24/esl_apply_plan.json`.
+
+### ⭐ The survivor mechanism — no new id scheme
+
+Sam's ruling: the comprehensives are **existing identities chosen as survivors
+and renamed**, not newly minted ids. That was the right call for a reason the
+code decides rather than taste: `merge_into_orphan` self-trusts exactly one
+prefix, `UC-CUR-*`, and **Session 56 re-minted all 4,053 of those away** (live
+count today: 0). A Z-scheme id would have flagged as an orphan on every audit
+run. Choosing survivors keeps the whole write inside verbs already in
+production.
+
+⭐ **Survivor choice is a stated rule, not taste.** For a LEVEL: dominant SUBJ4,
+then a title opening with the plain level word, then most colleges. For the
+three NEW comprehensives there is no level to encode and the title is replaced
+anyway, so **adoption decides** — the first cut picked a 2-college anchor for
+Vocational because it opened with "Vocational"; ranking by colleges gives a
+12-college one.
+
+### ⚠️ `ON CONFLICT DO NOTHING` blocked three of the seven renames
+
+The merges all landed. Three `unified_title` rows did not, because the survivor
+already carried one — so **three comprehensives briefly held their old titles
+while courses folded into them**. Two were bot-generated. **The third,
+`ESOL M9177` "ESL for Citizenship", was Sam's own row from 2026-06-12.**
+
+That is the conflict clause doing exactly its job, and it is why the count is
+worth checking: **1,994 landed where 1,997 was planned**, and the three-row gap
+was the entire story. A write that reports only "no error" would have hidden it.
+
+Resolved with a guarded UPDATE scoped to those three ids and that one field.
+Sam's row was superseded **explicitly, not silently** (Rule 8) and reported in
+the same turn.
+
+### ⚠️ Automotive VESL does not exist
+
+Sam's example for the subject split — "Vocational ESL AUTO" — has **zero rows in
+the corpus**. Measured: **78% of the Vocational lane (90 of 116) is generic
+workplace English**, and the subject-specific residue is 26 across eight
+subjects, the largest being Healthcare at 6. He chose Healthcare-only on that
+evidence. **The example that motivates a change is worth measuring before
+building it.**
+
+### ⚠️ The fold-scoped list trap, a third time
+
+Checking survivor strength, I read candidate pools from the actionable receipt —
+which is scoped to the three FOLD buckets — so Vocational and Civic read as
+**empty**. Same shape as the carve-out preview reporting "22 of 22 standing"
+and the identity lint publishing zero findings. **Before trusting a count, ask
+whether the list you read can even contain the thing you are counting.**
+
+### Next
+
+- The cron regenerates at 06:17 UTC; the Atlas needs its extract rebuilt after
+  that (`kb/_build_ccr_atlas_extract.py` → `prototype/build_ccr_atlas.py`).
+- The 794 default-Beginning rows are still the outstanding spot-check.
+- Strays are now correctable by dragging in the universe view — that was Sam's
+  stated reason for wanting the fold applied first.
