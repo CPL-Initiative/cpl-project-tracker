@@ -113,3 +113,127 @@ checkpoint auto-write + Report view, all live). Shipped, in order:
   SELECT/INSERT/UPDATE; reviewer-only DELETE).
 - `querySelector('[name=…]')` for form controls, never `form.<name>` (the `title`
   collision).
+
+---
+
+## 2026-08-24 — Session 190 (Sky190): the memory work shipped and never went live
+
+Sam, picking this thread up alongside SkyView: *"two sessions ran in parallel, SkyRead on
+memory and SkyCal on the new SkyView graph view… Let's pick up the memory thread to close
+out anything needed."* Then, on the deploy question: *"Just don't want wonky things from
+memory to show up in Sierra and Fact Sheet. If the results look appropriate and balanced
+against training, that would be great."*
+
+### ⭐ THE HEADLINE — HALF OF A TWO-HALF FEATURE DEPLOYS ITSELF, AND THE HALF THAT DOES IS THE CLIENT
+
+SkyRead's #1320 and #1321 both changed **two** things: `cpl_memory.js` (a static file at the
+repo root) and `chatbox/supabase/functions/cpl-chat/index.ts` (a Supabase Edge Function).
+Merging to `main` published the first automatically via Pages. The second requires a manual
+`workflow_dispatch` of `cpl-chat-deploy.yml` with a typed `DEPLOY`. Nobody dispatched it.
+
+Measured, not inferred: `list_edge_functions` reports `cpl-chat` **version 57, updated
+2026-08-23 01:18 UTC**. `git log` on `index.ts` shows the only commits after that timestamp
+are **#1320 (14:48) and #1321 (15:16) on 2026-08-24** — 134 insertions, 8 deletions.
+
+⚠️ **THE FEATURE IS NOT MERELY INERT — IT IS LIVE AND WRONG.** The deployed v57 does not
+have `memory-briefing` in `KNOWN_SURFACES`, so it normalizes to `null` and takes the
+conversational path: a hard `slice(0, 1000)`. The client builds a corpus of up to ~19,000
+characters and its instruction envelope alone is ~984 of the 1,000 the server keeps. **The
+model receives roughly sixteen characters of corpus.** And because the panel reports the
+*client's* budget — "read N of N entries" — it states a census it did not perform.
+
+That is `a-silent-input-cap-is-a-content-swap` arriving one level up from where SkyRead
+found it. The note was written about Autogenerate; the same defect shipped in the Briefing,
+on the same day, because the fix lives on the undeployed side.
+
+⚠️ **A DEPLOY GATE IS NOT A RELEASE PLAN.** `cpl-chat-deploy.yml` requires a typed
+confirmation *because* it reaches production with no staging tier — the gate is correct. What
+is missing is anything that notices a merged `index.ts` change sitting undeployed. The
+smoke workflow runs on push, but it tests the **deployed** function, so on this diff it
+was exercising v57 and passing.
+
+### ⭐ THE RIGHT ANSWER TO "WILL THIS CHANGE SIERRA" IS A GUARD, NOT A READING
+
+Sam's worry is contamination: one shared Edge Function serves the public Sierra page, the
+Fact Sheet drawer, the COBI tab, My College, the map.rccd.edu widget — and the Memory tab.
+Four channels could carry memory text into a Sierra answer, and all four were checked:
+
+| Channel | Verdict |
+|---|---|
+| **Input cap** | `queryCapFor()` returns 1,000 for every conversational surface, named/absent/unknown. Unchanged. |
+| **Guidance rules** | Filter is `surface IS NULL OR surface = <this one>`, so a memory-scoped rule cannot reach Sierra. |
+| **System prompt** | `DRAFTING_BLOCK` appends to `volatile` (rebuilt per request), never to `stable` (the shared cached prefix). |
+| **Interactions log** | v58 *stops* filing drafting calls into `chat_interactions`. |
+
+⭐ **THE DEPLOY REDUCES CONTAMINATION ON THE ONE CHANNEL WHERE IT IS ALREADY HAPPENING.**
+`chat_interactions` holds **3 rows** from `cobi-memory-autogen`, first 2026-08-15, **last
+2026-08-24** — written by the deployed v57. The Sierra Training Gap Miner reads that table
+unfiltered and presents rows as questions people asked Sierra, so today it shows an entry
+beginning *"You are drafting ONE internal team memory entry…"*, carrying a similarity score
+earned by its own boilerplate, pushing a real question off the list. v58 is what stops it.
+
+### ⚠️ THE ASSERTION THAT WAS SUPPOSED TO CATCH THIS COULD NOT FAIL
+
+`tests/sierra_surface.test.js` (6) reads *"the surface reaches ONLY the guidance layer so
+far"* and tests it with `/fetchTeamGuidance\(sb, hostSurface\)/` — a **presence** check
+wearing an **exclusivity** label. v58 gave the surface three more consumers and the
+assertion still passed, because **an assertion pinned to one member of a set cannot notice
+the set growing.** Its `why` string even described the widening as "a later decision" — a
+decision that had since been made, in the diff it was failing to notice.
+
+Replaced by `tests/sierra_memory_isolation.test.js` (25 checks), which pins the **set**:
+four consumers, counted, so a fifth fails the run. Every assertion was perturbation-proved
+— fork the cache to `stable`, drop either guard, add a fifth consumer, give `public` a
+drafting cap, make `sierra.js` send `retrieval_query`: each fails, and the baseline is
+clean.
+
+⚠️ **AND THE COUNT HAD TO SEE CODE, NOT PROSE.** The first cut counted 10 where the code
+says 7, because three *comments* in the handler use the word "drafting". A guard that cries
+wolf on a sentence teaches its reader to bump the number until it goes green — the opposite
+of what it is for. ⚠️ Its self-check was then anchored on one of the guards it protects, so
+a perturbation that legitimately moved that line reported a broken stripper **as well as**
+the real defect: a second failure saying nothing. Anchor a sanity check on something the
+thing under test does not touch.
+
+### ⚠️ A CONSTRAINT IN THE SCHEMA FILE IS NOT A CONSTRAINT IN THE DATABASE
+
+`chatbox/supabase_sierra_guidance.sql` lists `memory-briefing` in
+`sierra_guidance_surface_ck`. The **live** constraint does not:
+
+```
+CHECK ((surface IS NULL) OR (surface = ANY (ARRAY['my-college','cobi-assistant',
+       'public','fact-sheet','memory-autogen'])))
+```
+
+`sierra_surface.test.js` (4) asserts "every surface the function accepts is allowed by the
+constraint" — and passes, because it reads the **file**. The live database is a system no
+jsdom test can see.
+
+⭐ **THIS IS THE ONE REMAINING PATH BY WHICH A MEMORY-INTENDED RULE COULD REACH SIERRA AND
+THE FACT SHEET.** The Sierra Training picker offers *"Only when briefing on the memory
+entries"* (shipped live in #1321). A curator choosing it gets a constraint violation, and
+the way out of a failed save is to leave the scope blank — and blank means **every surface**.
+The contamination path is not the code; it is the curator being unable to express the
+scope the UI offers them. One additive `ALTER` closes it.
+
+⚠️ Note the memory row `the-sierra-surface-vocabulary-lives-in-three-places` already says
+the constraint lives in "the SQL file **AND the live DB**". The row is right and the second
+half was not done — recording a rule and applying it are two events, again.
+
+### The `plain` regression
+
+#1308 made plain language mandatory on every row, after Sam mis-governed two entries he
+could not read. On 2026-08-24 both sessions wrote rows and **neither wrote `plain`**: 19 of
+the 26 rows missing it were written that day. Backfilled here. The remaining 7 are all
+`superseded` — out of the default view, historical — and are deliberately left, because
+rewriting retired rows is churn, not hygiene. **Live rows are at zero.**
+
+### Where this leaves the thread
+
+- **`cpl-chat` v58 is not deployed, and that is now Sam's call to make deliberately** —
+  he asked to test the surfaces first, particularly Sierra. The isolation guard is the
+  mechanical half of that answer; the smoke suite against the deployed function is the
+  other half and can only run *after* a deploy.
+- **The live CHECK constraint needs one additive `ALTER`** — independent of the deploy, and
+  safe in either order (`fetchGuidanceKind` retries unscoped on any error, by design).
+- **The 3 polluted `chat_interactions` rows** are still in the Gap Miner's feed.

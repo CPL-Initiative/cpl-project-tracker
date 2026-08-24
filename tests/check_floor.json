@@ -177,6 +177,7 @@
     "sierra_health_probe.test.js": 21,
     "sierra_host_scope.test.js": 26,
     "sierra_markdown.test.js": 36,
+    "sierra_memory_isolation.test.js": 25,
     "sierra_offerings_retrieval.test.js": 19,
     "sierra_page.test.js": 32,
     "sierra_prompt_cache.test.js": 31,
