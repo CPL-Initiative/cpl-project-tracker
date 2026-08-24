@@ -97,9 +97,10 @@ way and are excluded, never counted as agreement. Fold them in and `default-begi
   Fix, then wire the rest in one pass.
 - 🟢 `docs/INDEX.md` is **6.5×** its budget (260 KB); `CLAUDE.md` is **2.4×** (145 KB). Both
   want a compaction pass of their own.
-- 🟡 **TruffleHog stalled twice** on #1315 (22 min, then a fresh re-run), zero log output both
-  times, while the JS suite completed in 11 min on the same commit. If it stalls again, treat
-  it as **repo-level**, not a per-PR flake.
+- 🟢 **TruffleHog stalled twice on #1315** (22 min, then a fresh re-run), zero log output both
+  times — but **recovered on its own for #1316** (14 min, success). So it is a slow, sometimes
+  hanging check, **not** a repo-level break. Budget ~15 min for it and do not assume a stall
+  means your diff; the JS suite finishing first tells you nothing either way.
 
 ## Patterns that worked
 
