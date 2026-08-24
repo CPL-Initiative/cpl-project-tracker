@@ -1,0 +1,4606 @@
+{
+ "_status": "DRY-RUN — read-only. No curation write performed.",
+ "_date": "2026-08-24",
+ "_ruling": "Sam's PER-LADDER level sets, authored 2026-08-24 and stored as data at kb/reference/esl_level_sets.json. Supersedes his own absolute bands 0-2/3-5/6-10 from earlier the same day, which superseded the P-4 pinning.",
+ "_ruling_by": "Sam Lee (map@rccd.edu)",
+ "_sets": {
+  "3": {
+   "Beginning": [
+    1
+   ],
+   "Intermediate": [
+    2
+   ],
+   "Advanced": [
+    3
+   ],
+   "colleges": 20
+  },
+  "4": {
+   "Beginning": [
+    1
+   ],
+   "Intermediate": [
+    2,
+    3
+   ],
+   "Advanced": [
+    4
+   ],
+   "colleges": 22
+  },
+  "5": {
+   "Beginning": [
+    1,
+    2
+   ],
+   "Intermediate": [
+    3,
+    4
+   ],
+   "Advanced": [
+    5
+   ],
+   "colleges": 7
+  },
+  "6": {
+   "Beginning": [
+    1,
+    2
+   ],
+   "Intermediate": [
+    3,
+    4
+   ],
+   "Advanced": [
+    5,
+    6
+   ],
+   "colleges": 16
+  },
+  "7": {
+   "Beginning": [
+    1,
+    2,
+    3
+   ],
+   "Intermediate": [
+    4,
+    5
+   ],
+   "Advanced": [
+    6,
+    7
+   ],
+   "colleges": 3
+  },
+  "8": {
+   "Beginning": [
+    1,
+    2,
+    3
+   ],
+   "Intermediate": [
+    4,
+    5,
+    6
+   ],
+   "Advanced": [
+    7,
+    8
+   ],
+   "colleges": 1
+  },
+  "9": {
+   "Beginning": [
+    1,
+    2,
+    3
+   ],
+   "Intermediate": [
+    4,
+    5,
+    6
+   ],
+   "Advanced": [
+    7,
+    8,
+    9
+   ],
+   "colleges": 1
+  }
+ },
+ "_resolution": "A level WORD on the identity title wins; otherwise each member votes its own college's ladder reading and the identity takes the MODE. A tie is reported, never resolved by picking the safer band.",
+ "_fold_cohort": "package-esl-s187@bot",
+ "ladder_derivation": {
+  "source": "the whole published ESL corpus (unified_courses_data.js + unified_courses_members.js), NOT the folded worklist",
+  "colleges_with_readable_ladder": 71,
+  "colleges_reading_as_2_rungs_no_ruling": 21,
+  "distribution": {
+   "3": 21,
+   "4": 22,
+   "5": 7,
+   "6": 16,
+   "7": 3,
+   "8": 1,
+   "9": 1
+  },
+  "session_188_published": {
+   "3": 20,
+   "4": 22,
+   "5": 7,
+   "6": 16,
+   "7": 3,
+   "8": 1,
+   "9": 1
+  },
+  "agrees_with_published": {
+   "3": false,
+   "4": true,
+   "5": true,
+   "6": true,
+   "7": true,
+   "8": true,
+   "9": true
+  },
+  "rule": "max rung observed over the whole ESL corpus, >= 2 distinct rungs, length 3-9; a 2-rung read abstains because Sam's table has no L=2 row"
+ },
+ "counts": {
+  "folds_considered": 1990,
+  "purpose_carve_outs_skipped": 181,
+  "unchanged": 1118,
+  "undecided": 561,
+  "re_levels": 130,
+  "of_which_revert_the_applied_32": 30,
+  "catalog_agrees": 31,
+  "catalog_disagrees": 39,
+  "catalog_silent": 60
+ },
+ "evidence_strength": {
+  "_read_this_first": "A ladder vote can rest on a SINGLE member course, and the weakest tier of the level reader is a bare trailing integer ('Academic Writing 3'), which may be a sequence number rather than a rung. Both are reported per group because they decide whether a proposal is actionable, not merely correct.",
+  "reverts_of_the_applied_32": {
+   "n": 30,
+   "decided_by_one_member": 19,
+   "catalog_agrees": 0,
+   "catalog_disagrees": 22,
+   "catalog_silent": 8
+  },
+  "other_proposals": {
+   "n": 100,
+   "decided_by_one_member": 71,
+   "catalog_agrees": 31,
+   "catalog_disagrees": 17,
+   "catalog_silent": 52
+  }
+ },
+ "by_move": {
+  "Beginning -> Intermediate": 64,
+  "Beginning -> Advanced": 1,
+  "Intermediate -> Advanced": 62,
+  "Intermediate -> Beginning": 3
+ },
+ "undecided_reasons": {
+  "no-ladder-signal": 551,
+  "tie": 10
+ },
+ "applied_32_effect": [
+  {
+   "id": "ESOL M1046",
+   "title": "Adv Listening/Speaking 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M1217",
+   "title": "College ESL 5: Listening and Speaking",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M1220",
+   "title": "College ESL 5: Reading and Vocabulary",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M1211",
+   "title": "College ESL 5: Writing and Grammar",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M1047",
+   "title": "Integrated ESL Skills, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M9063",
+   "title": "English as a Second Language Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M9064",
+   "title": "ESL Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M9066",
+   "title": "ESL - Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M9067",
+   "title": "Reading Skills for ESL Students 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M9061",
+   "title": "English as a Second Language Level 5 Condensed",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESLN M9017",
+   "title": "English as a Second Language 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EO",
+   "title": "Adv Reading/Vocabulary 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EN",
+   "title": "Adv Writing and Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M10NX",
+   "title": "College English as a Second Language 5: Reading and Vocabulary",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10NS",
+   "title": "College English as a Second Language 5: Writing and Grammar",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EP",
+   "title": "ESL Core Course Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EQ",
+   "title": "ESL Listening/Speaking, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M10ER",
+   "title": "ESL Reading/Writing, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M10ES",
+   "title": "Grammar Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10VB",
+   "title": "Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10ET",
+   "title": "Grammar, Writing and Reading Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10XJ",
+   "title": "Listening & Speaking 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M10PQ",
+   "title": "Reading & Composition 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EU",
+   "title": "Reading Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M10EV",
+   "title": "Writing Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  },
+  {
+   "id": "ESOL M90IT",
+   "title": "English as a Second Language College Readiness Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M90IS",
+   "title": "ESL Level 5 Bridge for College and Job Success",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M90IW",
+   "title": "ESL Reading and Writing 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M90IV",
+   "title": "ESL Vocabulary and Pronunciation 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": "Intermediate"
+  },
+  {
+   "id": "ESOL M91CA",
+   "title": "ESL - Comprehensive 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "reverts": true,
+   "catalog_says": null
+  }
+ ],
+ "changes": [
+  {
+   "id": "ESOL M10FQ",
+   "title": "Academic Writing 3 Learning Center",
+   "from": "Beginning",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Irvine Valley College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESLN M90AJ",
+   "title": "ESL NC 3 Part 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Los Angeles Southwest College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESLN M90AK",
+   "title": "ESL NC 4 Part 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Los Angeles Southwest College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESLN M90AL",
+   "title": "ESL Communication 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Napa Valley College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESLN M90BJ",
+   "title": "ESL Reading and Vocabulary 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Los Angeles Southwest College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1016",
+   "title": "Academic English Language Support 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Modesto Junior College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Modesto Junior College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1017",
+   "title": "Academic Reading and Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Beginning": 1,
+     "Intermediate": 3
+    },
+    "voters": 4,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "City College of San Francisco",
+      "ladder": 9,
+      "rung": 2
+     },
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 4,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1019",
+   "title": "Conversation 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 3,
+     "Beginning": 1
+    },
+    "voters": 4,
+    "abstentions": {
+     "college has no readable ladder": 1
+    },
+    "example": [
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Imperial Valley College",
+      "ladder": 8,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 4,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1021",
+   "title": "English Pronunciation 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 3
+    },
+    "voters": 3,
+    "abstentions": {
+     "college has no readable ladder": 2
+    },
+    "example": [
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1022",
+   "title": "ESL Reading, Writing and Grammar 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Napa Valley College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Napa Valley College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1026",
+   "title": "Grammar 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 8,
+     "Beginning": 2
+    },
+    "voters": 10,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 10,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1027",
+   "title": "Listening and Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 9,
+     "Beginning": 2
+    },
+    "voters": 11,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 11,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1028",
+   "title": "Reading and Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 10
+    },
+    "voters": 10,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 10,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1052",
+   "title": "Accelerated Academic English for Nonnative Speakers 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1062",
+   "title": "Academic Writing 2 Learning Center",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Irvine Valley College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Irvine Valley College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1085",
+   "title": "Academic Listening and Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 4
+    },
+    "voters": 4,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "San Diego City College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "San Diego Mesa College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "San Diego Miramar College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 4,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1086",
+   "title": "Academic Reading and Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 3
+    },
+    "voters": 3,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Moorpark College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Moorpark College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Ventura College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10BU",
+   "title": "Academic Listening and Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Santiago Canyon College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10CM",
+   "title": "Grammar, Reading, and Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Orange Coast College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10GF",
+   "title": "Academic ESL Speaking, Listening, and Grammar 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10GG",
+   "title": "Academic ESL Reading, Writing, and Grammar 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10GO",
+   "title": "Academic Writing 2 for Multilingual Writers",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Irvine Valley College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10LF",
+   "title": "Grammar & Writing 3 B",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10OZ",
+   "title": "ESL Oral Communication 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10PA",
+   "title": "ESL Written Communication 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10RD",
+   "title": "ENGL Spkers Other Languages 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Skyline College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10RN",
+   "title": "English Language Skills 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Citrus College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Beginning",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10SK",
+   "title": "High Inter ESL: Words 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Marin",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10UA",
+   "title": "Grammar Verbs II--Perfect and Future",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10VS",
+   "title": "Integrated Listening/Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10VT",
+   "title": "Integrated Reading/Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10VV",
+   "title": "Reading and Listening-Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "CaÃ±ada College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10VW",
+   "title": "Reading for Multilingual Students 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10VX",
+   "title": "Writing for Multilingual Students 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Beginning",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1265",
+   "title": "English Language Lab 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1280",
+   "title": "ESL Grammar Skills 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1302",
+   "title": "Integrated Reading, Writing and Grammar 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 3
+    },
+    "voters": 3,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "San Diego City College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "San Diego Mesa College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "San Diego Miramar College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1333",
+   "title": "Pronunciation 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {
+     "college has no readable ladder": 2
+    },
+    "example": [
+     {
+      "college": "College of Marin",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M9041",
+   "title": "Grammar for Writers 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {
+     "college has no readable ladder": 1
+    },
+    "example": [
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90AF",
+   "title": "Non-Credit ESL Multi-Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Mt. San Jacinto College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90EQ",
+   "title": "School Matters 2: Language Skills for Your Child's School Community",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Las Positas College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90FB",
+   "title": "Integrated English Language Skills 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Beginning",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90FC",
+   "title": "English for Job Search Skills 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Laney College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90FO",
+   "title": "NC ESL Lifeskills 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90FV",
+   "title": "Listening and Speaking Skills - Noncredit Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Oxnard College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90FW",
+   "title": "Reading and Writing Skills - Noncredit Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Oxnard College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M90KT",
+   "title": "Academic Listening and Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Ventura College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90KU",
+   "title": "Academic Reading and Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Ventura College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M90PM",
+   "title": "ESL: American English Pronunciation 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Citrus College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90PR",
+   "title": "ESL for Anatomy and Physiology 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90YX",
+   "title": "ESL for Child Development & Parenting 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Foothill College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9199",
+   "title": "Conversation/Grammar Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91DN",
+   "title": "Conversation 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91DV",
+   "title": "Grammar and Writing 3 Mirrored Course",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M91DW",
+   "title": "Grammar and Writing 4 Mirrored Course",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M91GV",
+   "title": "Pronunciation for Non-Native English Speakers 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Marin",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91IF",
+   "title": "Esl Entry Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Palo Verde College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Beginning",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M91JY",
+   "title": "ESL for Math 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91MY",
+   "title": "NC Integrated Listening/Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M91MZ",
+   "title": "NC Integrated Reading/Writing 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M91NC",
+   "title": "Listening and Speaking 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91ND",
+   "title": "Reading for Multilingual Students 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91NE",
+   "title": "Writing for Multilingual Students 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9228",
+   "title": "Integrated ESL Skills Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Palo Verde College",
+      "ladder": 3,
+      "rung": 2
+     },
+     {
+      "college": "Palo Verde College",
+      "ladder": 3,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M9253",
+   "title": "Reading/Writing Level 2",
+   "from": "Beginning",
+   "to": "Intermediate",
+   "target": "ESOL M9256",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Intermediate": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     },
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 2
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESLN M9017",
+   "title": "English as a Second Language 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 5
+    },
+    "voters": 5,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Chaffey College",
+      "ladder": 5,
+      "rung": 5
+     },
+     {
+      "college": "Los Angeles Pierce College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Los Angeles Valley College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 5,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1029",
+   "title": "Academic English Language Support 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Modesto Junior College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "Modesto Junior College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1030",
+   "title": "English Pronunciation 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {
+     "college has no readable ladder": 1
+    },
+    "example": [
+     {
+      "college": "Evergreen Valley College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1042",
+   "title": "ESL Reading, Writing, and Grammar 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Napa Valley College",
+      "ladder": 4,
+      "rung": 4
+     },
+     {
+      "college": "Napa Valley College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1043",
+   "title": "Grammar 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 9
+    },
+    "voters": 9,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 4
+     },
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 4
+     },
+     {
+      "college": "Berkeley City College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 9,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1046",
+   "title": "Adv Listening/Speaking 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of the Sequoias",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "College of the Sequoias",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1047",
+   "title": "Integrated ESL Skills, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Yuba College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Yuba College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1087",
+   "title": "Academic Reading and Writing 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2,
+     "Intermediate": 1
+    },
+    "voters": 3,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Moorpark College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "Moorpark College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "Ventura College",
+      "ladder": 4,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10DZ",
+   "title": "Vocab/Word Analysis 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10EH",
+   "title": "Listening and Speaking Skills 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Coastline Community College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10EI",
+   "title": "Pronunciation 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10EJ",
+   "title": "Writing Skills 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Allan Hancock College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10EN",
+   "title": "Adv Writing and Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of the Sequoias",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10EO",
+   "title": "Adv Reading/Vocabulary 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of the Sequoias",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10EP",
+   "title": "ESL Core Course Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Golden West College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10EQ",
+   "title": "ESL Listening/Speaking, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Golden West College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10ER",
+   "title": "ESL Reading/Writing, Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Golden West College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10ES",
+   "title": "Grammar Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Santa Barbara City College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10ET",
+   "title": "Grammar, Writing and Reading Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Victor Valley College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10EU",
+   "title": "Reading Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Santa Barbara City College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10EV",
+   "title": "Writing Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Santa Barbara City College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10HN",
+   "title": "Low Adv ESL: Words 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Marin",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10NS",
+   "title": "College English as a Second Language 5: Writing and Grammar",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Los Angeles Mission College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10NX",
+   "title": "College English as a Second Language 5: Reading and Vocabulary",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Los Angeles Mission College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10PQ",
+   "title": "Reading & Composition 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10RF",
+   "title": "ENGL Spkrs Other Languages 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Skyline College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10TY",
+   "title": "Grammar Fundamentals 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Citrus College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10UB",
+   "title": "Grammar Verbs IV--Gerunds, Infinitives and Passive Voice",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Southwestern College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10VB",
+   "title": "Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Contra Costa College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10VY",
+   "title": "Integrated Listening/Speaking 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10VZ",
+   "title": "Integrated Reading, Writing 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M10WX",
+   "title": "Reading and Listening - Speaking 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "CaÃ±ada College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10WY",
+   "title": "Reading for Multilingual Students 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10WZ",
+   "title": "Writing for Multilingual Students 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of San Mateo",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M10XJ",
+   "title": "Listening & Speaking 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1211",
+   "title": "College ESL 5: Writing and Grammar",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 9
+    },
+    "voters": 9,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Los Angeles City College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 9,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1217",
+   "title": "College ESL 5: Listening and Speaking",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 7
+    },
+    "voters": 7,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Los Angeles City College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 7,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1220",
+   "title": "College ESL 5: Reading and Vocabulary",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 5
+    },
+    "voters": 5,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "East Los Angeles College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Los Angeles City College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 5,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M1281",
+   "title": "ESL Grammar Skills 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "Palomar College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M1303",
+   "title": "Integrated Reading, Writing, and Grammar 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 3
+    },
+    "voters": 3,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "San Diego City College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "San Diego Mesa College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "San Diego Miramar College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M1308",
+   "title": "Grammar and Writing 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "CaÃ±ada College",
+      "ladder": 4,
+      "rung": 4
+     },
+     {
+      "college": "Los Angeles Southwest College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9061",
+   "title": "English as a Second Language Level 5 Condensed",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Pasadena City College",
+      "ladder": 5,
+      "rung": 5
+     },
+     {
+      "college": "Pasadena City College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M9063",
+   "title": "English as a Second Language Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2,
+     "Intermediate": 1
+    },
+    "voters": 3,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 5
+     },
+     {
+      "college": "MiraCosta College",
+      "ladder": 7,
+      "rung": 5
+     },
+     {
+      "college": "Santa Monica College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 3,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M9064",
+   "title": "ESL Grammar 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Antelope Valley College",
+      "ladder": 5,
+      "rung": 5
+     },
+     {
+      "college": "Antelope Valley College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M9066",
+   "title": "ESL - Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Compton College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Mt. San Antonio College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9067",
+   "title": "Reading Skills for ESL Students 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Long Beach City College",
+      "ladder": 6,
+      "rung": 5
+     },
+     {
+      "college": "Long Beach City College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90GP",
+   "title": "Achievement in Community College for ESL Students 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Las Positas College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M90IB",
+   "title": "Integrated English Language Skills 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Woodland Community College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90IJ",
+   "title": "Reading and Writing Skills - Noncredit Level 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Oxnard College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M90IS",
+   "title": "ESL Level 5 Bridge for College and Job Success",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Victor Valley College",
+      "ladder": 6,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90IT",
+   "title": "English as a Second Language College Readiness Level 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Glendale Community College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90IV",
+   "title": "ESL Vocabulary and Pronunciation 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Antelope Valley College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90IW",
+   "title": "ESL Reading and Writing 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Antelope Valley College",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M90YY",
+   "title": "ESL for Child Development & Parenting 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Foothill College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M91CA",
+   "title": "ESL - Comprehensive 5",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of the Desert",
+      "ladder": 5,
+      "rung": 5
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": true,
+   "reverts_applied_32": true,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91HC",
+   "title": "Pronunciation for Non-Native English Speakers 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Marin",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91NG",
+   "title": "NC Integrated Listening/Speaking 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M91NH",
+   "title": "NC Integrated Reading/Writing 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Gavilan College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Intermediate",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M91OG",
+   "title": "Reading and Writing Level 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": true
+  },
+  {
+   "id": "ESOL M91OH",
+   "title": "Pronunciation 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "College of Alameda",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9201",
+   "title": "Conversation and Grammar Level 4",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 4
+     },
+     {
+      "college": "El Camino College",
+      "ladder": 4,
+      "rung": 4
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M9229",
+   "title": "Integrated ESL Skills Level 3",
+   "from": "Intermediate",
+   "to": "Advanced",
+   "target": "ESOL M1141",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Advanced": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Palo Verde College",
+      "ladder": 3,
+      "rung": 3
+     },
+     {
+      "college": "Palo Verde College",
+      "ladder": 3,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M10DF",
+   "title": "ESL Reading 3",
+   "from": "Intermediate",
+   "to": "Beginning",
+   "target": "ESOL M9168",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Beginning": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "Imperial Valley College",
+      "ladder": 8,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": "Advanced",
+   "catalog_agrees": false
+  },
+  {
+   "id": "ESOL M9043",
+   "title": "ESL Beg High 3",
+   "from": "Intermediate",
+   "to": "Beginning",
+   "target": "ESOL M9168",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Beginning": 2
+    },
+    "voters": 2,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "San Diego College of Continuing Education",
+      "ladder": 7,
+      "rung": 3
+     },
+     {
+      "college": "San Diego College of Continuing Education Credit",
+      "ladder": 7,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 2,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  },
+  {
+   "id": "ESOL M91BG",
+   "title": "Healthcare Communication 3",
+   "from": "Intermediate",
+   "to": "Beginning",
+   "target": "ESOL M9168",
+   "how": "ladder-vote",
+   "detail": {
+    "tally": {
+     "Beginning": 1
+    },
+    "voters": 1,
+    "abstentions": {},
+    "example": [
+     {
+      "college": "City College of San Francisco",
+      "ladder": 9,
+      "rung": 3
+     }
+    ]
+   },
+   "voters": 1,
+   "in_applied_32": false,
+   "reverts_applied_32": false,
+   "catalog_says": null,
+   "catalog_agrees": null
+  }
+ ],
+ "undecided": [
+  {
+   "id": "ESOL M9082",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M9187",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M9169",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1273",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 5
+    }
+   }
+  },
+  {
+   "id": "ESOL M9022",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1224",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2,
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1225",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1158",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1240",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1188",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1189",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1101",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1228",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1270",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1160",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1195",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1247",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1264",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1266",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1358",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1067",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1094",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 4
+    }
+   }
+  },
+  {
+   "id": "ESOL M1096",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1098",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1147",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1004",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1018",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1157",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 3
+    }
+   }
+  },
+  {
+   "id": "ESOL M1061",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1191",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1254",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 3
+    }
+   }
+  },
+  {
+   "id": "ESOL M1251",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1237",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 5
+    }
+   }
+  },
+  {
+   "id": "ESOL M1231",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1271",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1256",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1069",
+   "why": "tie",
+   "detail": {
+    "tally": {
+     "Intermediate": 2,
+     "Beginning": 2
+    },
+    "abstentions": {}
+   }
+  },
+  {
+   "id": "ESOL M1065",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "no rung in the local title": 4
+    }
+   }
+  },
+  {
+   "id": "ESOL M1201",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  },
+  {
+   "id": "ESOL M1202",
+   "why": "no-ladder-signal",
+   "detail": {
+    "abstentions": {
+     "college has no readable ladder": 2
+    }
+   }
+  }
+ ]
+}
