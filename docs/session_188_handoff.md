@@ -1,0 +1,123 @@
+---
+title: Session 188 handoff — the CCR has an interface and an arithmetic; two decisions are Sam's
+created: 2026-08-24
+updated: 2026-08-24
+tags: [handoff, session-188, ccr, atlas, esl, packaging, curation]
+kb-status: internal
+obsidian-folder: cpl-project-tracker
+related:
+  - "[[CLAUDE]]"
+  - "[[docs/ccr_atlas_lessons]]"
+  - "[[docs/session_187_handoff]]"
+---
+
+# Session 188 handoff
+
+You are **Session 188**. Session 187 ran as **SkyView** — Sam took a left turn to
+the CCR and asked for an Obsidian-style graph view, then named the real target:
+*"cluster 142k local courses down to 2k-2.5k common courses … a sea change for
+higher education credit mobility."*
+
+⚠️ Sam frequently runs several sessions at once. `git log origin/main` before
+assuming your branch is the only work in flight.
+
+---
+
+## Read this first: the finding that should govern the lane
+
+**Grinding the entire 6,056-decision merge queue to perfection lands at 35,937
+identities — 14.4× short of 2,500.**
+
+Merging can only compare what already exists, and the lanes propose only 6,056
+collapses. That is the whole supply. **Packaging** — deciding what the catalog
+should *contain*, then mapping into it — is the only mechanism with the right
+shape. The ESL dry-run already proved it at 10.7:1 inside one discipline.
+
+Design target that falls out: **2,500 ÷ 144 disciplines ≈ 17 common courses
+each.** ESL's own plan lands at ~221, still 13× over its share — so even
+packaging needs a second pass. Do not let anyone (including yourself) restart
+"work the queue" without re-reading
+[`measure-your-mechanism-ceiling`](kb-notes/methodology-measure-your-mechanism-ceiling-before-working-the-queue.md).
+
+## What shipped
+
+| PR | |
+|---|---|
+| #1309 | CCR Atlas prototype + the decision-component measurement |
+| #1310 | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
+| #1311 | The ESL fold rendered as a proposal (nothing written) |
+
+**The Atlas** — `prototype/ccr_atlas_v1.html`, built with
+`python3 prototype/build_ccr_atlas.py`, verified by
+`node prototype/check_ccr_atlas.js` (37 checks, deliberately NOT in `npm test`).
+Also published as an artifact Sam can click.
+
+Three views: **158 discipline cells** → **one discipline's decisions** → **one
+decision as a 2–12 node graph**, with local courses movable onto any identity by
+drag *or* a keyboard-reachable Move button. Plus the **ESL packaging proposal**.
+
+## ⚠️ Two decisions are Sam's, and nothing moves without them
+
+1. **Name the three ESL comprehensives.** Every row's `target` in the plan is
+   `null` — the three comprehensive identities **do not exist**, so 1,846
+   pointers have nowhere to point. Minting them is NOT a Rule 7 re-mint (no
+   existing M-ID changes, no alias map, no re-keying) but it is a naming call.
+2. **Work the Beginning spot-check.** 53% of the write is medium confidence and
+   it is concentrated: **794 of the 1,110 Beginning rows (72%) got there by
+   DEFAULT** — no level word in the title. Beginning is the biggest bucket and
+   the least certain. The Atlas lists them, medium first, with the signal in
+   plain words.
+
+When both land: apply under Rule 10 — fresh live read at write-time, INSERT-only
+`ON CONFLICT DO NOTHING`, cohort `package-esl-s<N>@bot`, committed receipt, one
+cron window. `kb/_esl_package_actionable.py` regenerates the actionable set.
+
+## Carryover
+
+- 🟡 **The whole-universe view.** Sam asked for it. Feasible as a **precomputed
+  layout + level-of-detail map**, ~250KB of coordinates, canvas not SVG — **not**
+  a live force graph (17,321 nodes is a hairball, and his own Obsidian shot is
+  illegible at ~500). Hold it until the decision unit is confirmed, or it
+  inherits a wrong unit at 17,000× scale.
+- 🟡 **The one-college-many-numbers audit rule** — 3,320 candidates measured,
+  proposed for `kb/_row_audit.py` beside `unit_anomaly`. A flag, never an
+  auto-unmerge.
+- 🟡 **The 3,001 no-discipline decisions** (8,065 identities) — half the queue,
+  and a *different* job. Needs its own tool.
+- 🟡 **The transfer-level 8** that survive, plus whether the 9 already folded
+  should be unwound (one row each to reverse).
+- 🟢 `docs/INDEX.md` is **6.48× its size budget** (254KB) — the KB-notes section
+  alone is 136KB of long rows. Worth a compaction pass of its own.
+- 🟢 Docs lint long tail: `american_spelling` 171, `kb_note_dialect` 60.
+
+## Patterns that worked
+
+- **Compute the ceiling before committing to the mechanism.** One afternoon of
+  arithmetic reframed a workstream that had stalled and been re-attempted for
+  months.
+- **Check whether the repo already built it.** The drag-and-drop verb Sam wanted
+  shipped in Session 54, was tested and reversible, and had **zero uses**. The
+  best catch of the run came from reading a committed test, not writing one.
+- **Show, don't describe.** Every correction Sam made came from clicking the
+  prototype, not from reading a plan.
+- **Break your own check.** The date fix was proven both ways — perturb content
+  → fails, perturb only the date → passes.
+
+## Safety patterns to honor
+
+- **Rule 5**: never force-push `main`.
+- **Rule 10**: fresh live read before any bulk `kb_curation` write; Sam's rows
+  always win (39 of his are in the ESL skip list).
+- ⚠️ **A happy-path selector cannot see a dead end.** The Atlas check passed on a
+  broken landing page because it clicked `.cell.demo`.
+- ⚠️ **A clean bill of health from a question the data cannot answer.** Twice
+  this run: the carve-out card read fold-scoped skip lists and reported "22 of 22
+  standing" (true: 8). Ask whether your source can even express the answer.
+- ⚠️ **Merge on `unstable`, but name what the green covered.**
+
+## Moniker
+
+**SkyAtlas** is going if you want it. Take it, take your own, or use whatever Sam
+names in his greeting.
+
+**Next is Session 189 — `docs/session_189_handoff.md`.**
