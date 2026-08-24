@@ -76,6 +76,31 @@ function serve() {
       return false;
     }));
 
+  console.log("\n══ the graph is on the FIRST screen");
+  // The defect this guards: the graph used to be two clicks down, and the grid
+  // was sorted by decision count, so the top cells had no sample data. A reader
+  // landed, clicked the first thing, hit a dead end and never saw a graph.
+  ok(`hero graph renders with no clicks (${await page.locator("#hero-gfx circle").count()} nodes)`,
+    (await page.locator("#hero-gfx circle").count()) >= 6);
+  ok("hero names the discipline and the course count",
+    /local courses sit underneath/.test(await page.locator("#hero-p").textContent()));
+  const firstHero = await page.locator("#hero-h").textContent();
+  await page.locator("#hero-next").click();
+  await page.waitForTimeout(400);
+  ok("\u2018Show me another\u2019 draws a different decision",
+    (await page.locator("#hero-gfx circle").count()) >= 6);
+  ok("hero graph is decorative-safe (role=img with a label)",
+    (await page.locator("#hero-gfx svg").getAttribute("role")) === "img" &&
+    !!(await page.locator("#hero-gfx svg").getAttribute("aria-label")));
+
+  console.log("\n══ \u26a0 the FIRST cell must open something (the dead-end guard)");
+  await page.locator(".cell").first().click();
+  await page.waitForTimeout(400);
+  ok("first discipline cell reaches real decisions, not a 'no sample data' note",
+    (await page.locator(".deck").count()) > 0);
+  await page.locator(".crumbs button").first().click();
+  await page.waitForTimeout(400);
+
   console.log("\n══ search + filter");
   await page.fill("#q", "weld");
   await page.waitForTimeout(200);
@@ -84,7 +109,7 @@ function serve() {
   await page.waitForTimeout(200);
 
   console.log("\n══ discipline → decision");
-  await page.locator(".cell.demo").first().click();
+  await page.locator(".cell").first().click();
   await page.waitForTimeout(300);
   const decks = await page.locator(".deck").count();
   ok(`decision cards (${decks})`, decks > 0);
