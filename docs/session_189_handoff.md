@@ -95,6 +95,30 @@ Intermediate — a separate call.
 Read `kb/esl_fold_spotcheck/2026-08-24/report.md` and
 `kb/esl_relevel_out/2026-08-24/report.md` before doing anything here.
 
+## ✅ SAM APPROVED A BUILD — this is your priority workstream
+
+He asked for mint-on-drag in SkyView, invited pushback, then took the counter-proposal:
+***"Great recommendations, let's roll with them."***
+
+| Step | What | Re-mints? |
+|---|---|---|
+| **1** | Drag any local course — **including from a merged-away identity** — onto another M-ID. Writes `CN:`. | **No** |
+| **2** | If the drag leaves the destination's SUBJ4 inconsistent with its discipline, **queue** a candidate. | **No** |
+| **3** | Work the queue in **batches** under the Rule 7 playbook. | Yes, deliberately |
+
+Authority: [`docs/skyview_drag_rehome_scope.md`](skyview_drag_rehome_scope.md) — **read it
+before starting**; the reasoning and the open questions live there.
+
+⚠️ **Step 1 is a DATA task before it is a UI task.** `prototype/ccr_universe.json` carries 158
+islands of identity points with a member **count** and **no member courses at all** — there is
+nothing at course grain to drag. Members must reach the payload first
+(`kb/_build_ccr_universe.py`), resolved through merge chains so merged-away identities
+contribute to their survivor. ⚠️ **Do not ship all members inline** — 16,484 identities carry
+**134,485** member rows and the payload is already 1.7 MB.
+
+⚠️ **Zero `CN:` rows exist**, so the first real drag is also the first exercise of a verb built
+in Session 54 and never once used. Expect to find something.
+
 ## What shipped
 
 | PR | |
