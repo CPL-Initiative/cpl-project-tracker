@@ -14,7 +14,7 @@
    "id": "s187-universe-react",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. A real one to fix while you are there — a film course called \"Film and American Culture\" is sitting inside the new Enrichment ESL course, because a robot matched it to an ESL course called \"American Culture and Film\". Same words, different order, different courses. Drag it back to Film and Media Studies."
+   "text": "Try the whole-reference map: search for a subject, drag one subject next to another, and move a course between them. Tell us what is wrong with it — especially whether dragging a subject around is actually how you would want to work."
   },
   {
    "id": "s187-overmerge-orange-coast",
@@ -74,7 +74,7 @@
    "id": "s187-island-label-verb",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "The map lets you move a COURSE but not relabel a SUBJECT. We found 73 merges between Ethnic Studies and Kinesiology where the merges are right and the subject label is wrong — one is titled \"Intercollegiate Women's Flag Football\" and filed under Ethnic Studies. Moving the courses would be exactly the wrong fix. Add a way to correct the label itself."
+   "text": "The map can move a local course, but it cannot undo a wrong merge between two courses, and it cannot correct a subject label. Both are real: a film course is stuck inside the new Enrichment ESL course and there is no way to pull it out, and 73 merges between Ethnic Studies and Kinesiology are correct merges filed under the wrong subject. Neither is fixable from any screen we have."
   }
  ]
 }

@@ -98,7 +98,15 @@ level word in the title), not on evidence. Now correctable by dragging.
   precomputed stable layout, keyword fly-to, draggable islands, cross-area
   course moves. Sam reversed the earlier design call and his reason was right:
   a per-decision view **structurally cannot show a cross-area move**.
-- 🔴 **Re-home `FIMS M1018` — the first real use of the drag.** *"Film and American
+- 🔴 **THREE VERBS ARE MISSING, and `FIMS M1018` proves it.** I nearly told Sam
+  to drag it back and checked first: **it is not on the map at all.** A merged
+  identity does not render (correctly — that is #1312), so only its survivor
+  `ESOL M1152` appears. The map moves a **local course** between identities
+  (`CN:`) and nothing else. Missing: **(a) un-merge an applied identity merge**
+  — `merge_dismissed` declines a *suggested* merge, there is no verb for undoing
+  an applied one, from any screen; **(b) relabel an island's discipline**;
+  **(c) re-home a course that is inside a merged-away identity.**
+- 🔴 **The stray itself.** *"Film and American
   Culture"* (film studies, TOP 0612.00) was bot-merged into `ESOL M1152` *"American
   Culture and Film"* (credit ESL, TOP 4930.87) — same words reordered, two different
   courses. ⭐ **Packaging HID it**: it was 1 of 2 members and conspicuous, and is now

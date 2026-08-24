@@ -270,6 +270,27 @@ have opposite repairs.** Dragging the course elsewhere would be exactly wrong
 here; the island needs relabeling. The universe view has a verb for the first and
 none for the second.
 
+### ⚠️ The map has ONE verb, and the stray needs a different one
+
+I was about to tell Sam to drag `FIMS M1018` back to Film and Media Studies, and
+checked whether he could first. **He cannot: it is not on the map.** A
+merged-away identity does not render — correctly, that is the #1312 fix — so
+only its survivor `ESOL M1152` "Enrichment ESL" appears as a node.
+
+The universe view moves a **local course** between identities (`CN:<control
+number>`). That is the whole vocabulary. Three verbs are missing:
+
+1. **Un-merge an applied identity merge.** `merge_dismissed` declines a
+   *suggested* merge; there is no verb anywhere for undoing an applied one.
+2. **Relabel an island's discipline** — the Ethnic Studies / Kinesiology case,
+   where the merges are right and the label is wrong.
+3. **Re-home a local course that sits inside a merged-away identity** — reachable
+   only through the survivor.
+
+**Check that the repair you are about to recommend is actually available.** The
+finding was right; the instruction attached to it would have made a working tool
+look broken.
+
 ### Next
 
 - **Sam:** the 794 default-Beginning rows spot-check is still open.
