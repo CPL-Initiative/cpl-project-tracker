@@ -83,3 +83,9 @@ jobs:
       # in npm test. Pure-stdlib python; same non-required check.
       - name: SkyView member payload lint (kb/_build_ccr_universe.py)
         run: python3 tests/ccr_universe_members_test.py
+      # SkyView launcher (Session 189) — Sam asked for "a button on the CCR Tab top
+      # right and prominent". The failure this guards is not a missing button, it is
+      # a button pointing at something that is not deployed: the self-contained
+      # SkyView build is 9.9 MB and GITIGNORED, so a link to it 404s on the live site
+      # while working perfectly on the machine that built it. Proven to fail when the
+      # href is repointed at that build. Runs under `npm test` via tests/run.js.
