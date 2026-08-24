@@ -85,6 +85,31 @@ on its survivor. The scope listed this as work; it was a join.
 members actually carried on 3,399 of 16,242 identities**. Both are displayed now, carried count
 leading. The divergence is structural — a seed count against a join — not a defect to reconcile.
 
+## ⭐ ALSO YOURS — put the description shards in Supabase
+
+**Sam, 2026-08-24: *"I expect we'll put the shards on supabase but will leave that to 190."***
+A **lean**, not a settled design — he named the destination and deferred the rest.
+
+**Why it matters:** SkyView's graph and drag now work on the **deployed** site, via the committed
+`prototype/skyview.html` (599 KB, payloads fetched at runtime) reached from a button top-right on
+the CCR tab. **Only descriptions still need the served-locally route** — 302 per-discipline
+shards, **127,523 descriptions, 45.7 MB** — which cannot be committed (this repo is cloned into
+his Obsidian vault) and cannot be inlined (the built page is already 9.9 MB).
+
+**What he did NOT rule on — decide these before building:**
+1. **Table or Storage bucket?** A table gives RLS and PostgREST; a bucket gives plain files and no
+   row overhead for what is really 302 blobs.
+2. **Public-read?** It is college catalog text, so probably — but that is an RLS decision under
+   **Rule 10**, and the table belongs in the `docs/reference/pipeline_reference.md` §8 inventory.
+3. **Stand-alones too?** 33,423 of the 49,907 identities are stand-alone, and their descriptions
+   are arguably the *most* valuable — a curator dragging an unclustered course is exactly who
+   needs to know what it is.
+4. ⚠️ **The client barely changes.** `loadDesc()` in `prototype/ccr_universe.js` already fetches
+   per shard, caches, and **degrades honestly** across three distinct states (loading ·
+   blocked-by-`file://` · missing). **Only the URL moves — do not rewrite the loader**, and keep
+   the honest empty state: an empty description is indistinguishable from a course that genuinely
+   has none, and plenty genuinely have none.
+
 ## 🔭 Your priority: step 2 — the queue
 
 Authority is [`docs/skyview_drag_rehome_scope.md`](skyview_drag_rehome_scope.md); **read it
