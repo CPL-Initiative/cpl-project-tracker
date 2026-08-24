@@ -43,14 +43,21 @@ packaging needs a second pass. Do not let anyone (including yourself) restart
 
 | PR | |
 |---|---|
-| #1309 | CCR Atlas prototype + the decision-component measurement |
-| #1310 | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
-| #1311 | The ESL fold rendered as a proposal, then APPLIED; the universe view |
-| #1312 | `flatten_merge_chains()` — 340 folded identities were still rendering |
+| #1309 ✅ | CCR Atlas prototype + the decision-component measurement |
+| #1310 ✅ | Hero graph, identity-system coloring, ESL re-validation, midnight CI fix |
+| #1311 ✅ `0819927` | The ESL fold rendered as a proposal, then APPLIED; the universe view |
+| #1312 ✅ `552d4d4` | `flatten_merge_chains()` — 340 folded identities were still rendering |
+
+**All four are merged.** The dashboard was dispatched on `552d4d4` at 16:12 UTC so the
+340 chained rows stop rendering the same day rather than at the 06:17 cron.
 
 **The Atlas** — `prototype/ccr_atlas_v1.html`, built with
 `python3 prototype/build_ccr_atlas.py`, verified by
-`node prototype/check_ccr_atlas.js` (37 checks, deliberately NOT in `npm test`).
+`node prototype/check_ccr_atlas.js` (**46 checks**, deliberately NOT in `npm test`).
+That 46 is fully accounted for: 44 static `ok()` call sites, one inside a 3-iteration
+viewport loop, so 43 + 3 = 46 — every site fires. (An earlier note of mine said "48,
+two call sites moved"; `git diff` on that file against #1311 is **empty**, so nothing
+moved and the 48 matched no committed revision.)
 Also published as an artifact Sam can click.
 
 Three views: **158 discipline cells** → **one discipline's decisions** → **one
@@ -94,7 +101,8 @@ level word in the title), not on evidence. Now correctable by dragging.
 
 ## Carryover
 
-- ✅ **The universe view is BUILT** (#1312) — all 17,321 identities on canvas,
+- ✅ **The universe view is BUILT** (#1311) — all **16,484** identities on canvas
+  (17,321 before #1312 removed the 340 chained rows),
   precomputed stable layout, keyword fly-to, draggable islands, cross-area
   course moves. Sam reversed the earlier design call and his reason was right:
   a per-decision view **structurally cannot show a cross-area move**.
