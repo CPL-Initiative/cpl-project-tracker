@@ -123,6 +123,20 @@ level word in the title), not on evidence. Now correctable by dragging.
   and a *different* job. Needs its own tool.
 - 🟡 **The transfer-level 8** that survive, plus whether the 9 already folded
   should be unwound (one row each to reverse).
+- 🔴 **18 of the 20 `tests/*_test.py` run NOWHERE, and two of them are RED on
+  `main` right now.** `npm test` discovers only `*.test.js`; `js-tests.yml`
+  names just `supabase_function_grants_test.py` and `doctrine_lookup_test.py`.
+  So a Python guard is written, passes once, and is never executed again — this
+  repo has a KB note literally called *a check that never registers can never
+  fail*. `merge_chain_flatten_test.py` is now wired in (#1312) because a guard
+  nothing runs is not a guard. **The other two failures were confirmed
+  pre-existing by running them against `main`'s generator, not assumed:**
+  `statewide_kpi_test.py` — the statewide-exhibits card breakdown grew an
+  `Issuer/type variants: 4` key the assertion does not expect;
+  `eacr_matrix_payload_test.py` — *"3 fold pairs, got 4"*, a fourth roster fold
+  pair appeared. **Neither is merge-related.** Deliberately NOT wired into CI
+  while red — a permanently red non-required check trains people to ignore it.
+  Fix them, then wire the rest in one pass.
 - 🟢 `docs/INDEX.md` is **6.48× its size budget** (254KB) — the KB-notes section
   alone is 136KB of long rows. Worth a compaction pass of its own.
 - 🟢 Docs lint long tail: `american_spelling` 171, `kb_note_dialect` 60.

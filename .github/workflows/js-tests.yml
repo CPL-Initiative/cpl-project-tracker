@@ -40,3 +40,15 @@ jobs:
       # python; same non-required check.
       - name: Doctrine lookup lint (kb/doctrine.py)
         run: python3 tests/doctrine_lookup_test.py
+      # Merge-chain flattening (Session 187) — the curation overlay stores one
+      # hop per row, so an identity merged into and then merged onward is both a
+      # source and a target; the merge-target loop never skipped those, and 340
+      # folded identities rendered as their own rows with members stranded
+      # mid-chain. Wired here because 18 of the 20 tests/*_test.py run NOWHERE —
+      # npm test discovers only *.test.js — and a guard nothing executes is not
+      # a guard. Needs openpyxl (it imports the generator), which the job above
+      # does not install, so it installs it itself. Same non-required check.
+      - name: Merge-chain flattening lint (excel_to_dashboard.py)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/merge_chain_flatten_test.py
