@@ -674,6 +674,7 @@
     { k: "public", label: "Only the public Sierra page" },
     { k: "fact-sheet", label: "Only the Fact Sheet drawer" },
     { k: "memory-autogen", label: "Only when drafting a memory row" },
+    { k: "memory-briefing", label: "Only when briefing on the memory entries" },
   ];
   function surfaceLabel(v) {
     for (var i = 0; i < SURFACES.length; i++) if (SURFACES[i].k === (v || "")) return SURFACES[i].label;
