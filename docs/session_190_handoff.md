@@ -106,10 +106,26 @@ it and severed 53% of the Phase A/B fold evidence.
 ## Carryover
 
 - 🔴 **Sam's two ESL calls, still open** (from Sky188): the **9 over-claims** by hand, or move the
-  cut to `6+` (fixes 6 by rule); and whether the numeric pinning survives at all. His per-ladder
-  level sets are authored data at `kb/reference/esl_level_sets.json` — **29 of the 32 applied
-  re-levels flip back under them**, and the rollback offer has had no answer. Ask before applying
-  the sets or rolling back; rollback is one statement against cohort `relevel-esl-s188@bot`.
+  cut to `6+` (fixes 6 by rule); and whether the numeric pinning survives at all.
+- ✅ **His per-ladder sets are now IMPLEMENTED** — `kb/_esl_ladder_relevel_dryrun.py`, receipt
+  `kb/esl_ladder_relevel_out/2026-08-24/`. **Dry-run only; nothing written.**
+  ⚠️ **AND THE ROLLBACK RECOMMENDATION IS NOW THE OPPOSITE OF WHAT THIS HANDOFF FIRST SAID.**
+  The sets propose 130 re-levels, **30** of which revert 30 of the applied 32 (not 29 — measured).
+  But **every one of the 22 reverts whose catalog speaks DISAGREES with the revert**: the
+  colleges' own catalogs say the band those rows sit at *today*. Sam's principle that a canonical
+  standard scored against local records is blast radius still holds — but it argues for holding a
+  ruling against *noisy* local variance, and here the local records are **unanimous and point the
+  other way**. **Recommend: do NOT roll back.** The other 100 proposals run 31 agree / 17 disagree
+  and are the better candidates.
+  ⚠️ **90 of the 130 rest on a SINGLE member course**, and the weakest reader tier is a bare
+  trailing integer (`Academic Writing 3` may be a sequence number, not a rung). Work the
+  multi-member ones first.
+  ⚠️ **21 colleges read as 2-rung ladders and Sam's table has no L=2 row** — they abstain rather
+  than being banded by an invented row. Extending the table is his call.
+  ⚠️ **Derive ladder lengths from the WHOLE ESL corpus, never the folded worklist** — the folded
+  subset sees only part of a college's ladder, undercounts its length, and a short ladder pushes
+  rungs into HIGHER bands. The corpus derivation reproduces Session 188's distribution in six of
+  seven buckets; the folded one matched in none. The script validates this on every run.
 - 🔴 **The 67 Z-scheme `ESOL Z####` rows** the fold never touched. The concrete remaining ESL job.
 - 🔴 **`FIMS M1018` still cannot be re-homed** — it does not render, so it needs the **un-merge
   verb**. Three verbs still missing: un-merge an applied merge, relabel an island's discipline,
