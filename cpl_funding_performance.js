@@ -8,13 +8,13 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42839,
-  "pa": 40165,
+  "pe": 42840,
+  "pa": 40166,
   "p2": 3732,
   "p3": 15771,
   "pp": 5,
-  "pe_u": 1375889.95,
-  "pa_u": 222689.65,
+  "pe_u": 1375984.95,
+  "pa_u": 222694.65,
   "p3_u": 80309.95,
   "pp_u": 25.0
  },
@@ -152,10 +152,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Cerro Coso": {
-   "pe": 170,
-   "pe_u": 8678.5,
-   "pa": 166,
-   "pa_u": 830.0,
+   "pe": 171,
+   "pe_u": 8773.5,
+   "pa": 167,
+   "pa_u": 835.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1399,8 +1399,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cerro Coso": {
    "Military": {
-    "pe": 170,
-    "pa": 166,
+    "pe": 171,
+    "pa": 167,
     "p3": 0
    }
   },
@@ -2872,8 +2872,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26801,
-   "pa": 24682,
+   "pe": 26802,
+   "pa": 24683,
    "p3": 2469
   },
   "Military | Portfolio Review": {
@@ -2921,13 +2921,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1375413.45,
-   "pa_u": 222689.65,
+   "pe_u": 1375508.45,
+   "pa_u": 222694.65,
    "p3_u": 80309.95
   },
   "map": {
-   "pe_u": 1382656.95,
-   "pa_u": 223364.15,
+   "pe_u": 1382751.95,
+   "pa_u": 223369.15,
    "p3_u": 80334.95
   },
   "ratio": {
