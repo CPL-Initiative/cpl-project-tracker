@@ -67,6 +67,15 @@ block("1. the artifact", () => {
 });
 
 // ── 2. THE GUARD, exercised — not merely read ───────────────────────────────
+// Receipt directories that are tracked in git. The cleanup below must never
+// remove one of these — only the spill from this test's own rebuilds.
+const COMMITTED_RECEIPTS = new Set(
+  (() => { try {
+    return require("child_process")
+      .execSync("git ls-files kb/college_identity/", { encoding: "utf8" })
+      .split("\n").map((f) => (f.split("/")[2] || "")).filter(Boolean);
+  } catch (e) { return []; } })());
+
 block("2. the builder refuses to empty itself", () => {
   const MAP = "kb/college_identity/_inputs/map_colleges_2026-08-21.json";
   const OBS = "kb/college_identity/_inputs/observed_names_2026-08-23.json";
@@ -107,12 +116,31 @@ block("2. the builder refuses to empty itself", () => {
     const good = run(["--observed-json", OBS]);
     check("(2) with the input it rebuilds cleanly", good.status === 0,
       "exit=" + good.status + " stderr=" + String(good.stderr || "").slice(0, 120));
-    check("(2) …reproducing the committed artifact byte for byte",
-      fs.readFileSync("college_identity_data.js").equals(before),
+    // Compare everything EXCEPT the embedded generation date. The artifact
+    // stamps the day it was built, so a literal byte-for-byte assertion goes
+    // red at 00:00 UTC on the day after every rebuild — for every session, on
+    // every branch, with nothing actually wrong. (It did, on 2026-08-24.)
+    // The claim this check exists to make is "the committed artifact is what
+    // the committed INPUTS produce"; the calendar is not one of the inputs.
+    const undate = (b) => String(b).replace(/"generated":\s*"\d{4}-\d{2}-\d{2}"/,
+                                           '"generated":"<date>"');
+    check("(2) …reproducing the committed artifact exactly (bar its build date)",
+      undate(fs.readFileSync("college_identity_data.js")) === undate(before),
       "if this fails the committed artifact is not what the committed inputs "
       + "produce, which makes the whole lint unreproducible");
+    check("(2) \u26a0 …and the only tolerated difference IS the date",
+      /"generated":\s*"\d{4}-\d{2}-\d{2}"/.test(String(before)),
+      "the exemption above is only safe while the field it forgives exists; if "
+      + "the stamp is ever renamed this check fails instead of silently widening");
   } finally {
     restore();
+    // The builder also writes kb/college_identity/<today>/ as a side effect.
+    // Left behind, it shows up as untracked work nobody did — and on a new
+    // date it is a fresh directory, which is what trips a git-clean hook.
+    const today = new Date().toISOString().slice(0, 10);
+    const spill = "kb/college_identity/" + today;
+    if (!COMMITTED_RECEIPTS.has(today) && fs.existsSync(spill))
+      fs.rmSync(spill, { recursive: true, force: true });
   }
 });
 

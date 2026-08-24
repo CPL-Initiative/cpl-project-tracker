@@ -63,14 +63,73 @@ function radius(n){
   var v = Math.sqrt(Math.max(1,n.n));
   return Math.max(R_MIN, Math.min(R_MAX, 9 + v*3.4));
 }
-/* colour is never the only signal — every state also carries a glyph + a word */
+/* ── two facts, two channels ──────────────────────────────────────────────
+ * COLOR = which identity system owns the row. That is the structural fact and
+ * the one that decides what you may do to it: a C-ID or CCN is an official
+ * statewide identity nobody here may re-key, an M-ID is our own working label,
+ * a Z-row is a synthetic unified course. Colour is never the only signal, so
+ * each carries its own mark (First Light: every accent is glyph-paired).
+ *
+ * STATE — flagged / curator-reviewed — is a SEPARATE channel: a small dot on
+ * the rim. Folding it into the fill would mean a flagged C-ID stopped looking
+ * official, which is the one thing about it that must never be ambiguous.
+ */
+var SYSTEMS = {
+  "C-ID":    {fill:"#E7EEF9", stroke:"#0047AB", glyph:"\u2605", word:"C-ID \u2014 official statewide"},
+  "CCN-ID":  {fill:"#FBF1D8", stroke:"#8B6800", glyph:"\u25C6", word:"CCN \u2014 official statewide"},
+  "M-ID":    {fill:"#F1EAFC", stroke:"#6D28D9", glyph:"\u273D", word:"M-ID \u2014 our working label"},
+  "Unified": {fill:"#EFEFEC", stroke:"#5C5C55", glyph:"\u25CB", word:"unified \u2014 synthetic course"}
+};
 function paintOf(nd){
-  if(nd.rev)            return {fill:"#EAF1E6", stroke:"#2C601A", glyph:"✓", word:"reviewed"};
-  if(nd.flags.length)   return {fill:"#FCEDED", stroke:"#920000", glyph:"⚠", word:"flagged"};
-  if(nd.sys==="C-ID"||nd.sys==="CCN-ID")
-                        return {fill:"#E7EEF9", stroke:"#0047AB", glyph:"★", word:"official identity"};
-  return {fill:"#F1EAFC", stroke:"#6D28D9", glyph:"✨", word:"generated"};
+  return SYSTEMS[nd.sys] || SYSTEMS[nd.k] || SYSTEMS["Unified"];
 }
+function stateOf(nd){
+  if (nd.rev)          return {fill:"#2C601A", glyph:"\u2713", word:"curator-reviewed"};
+  if (nd.flags.length) return {fill:"#920000", glyph:"\u26A0", word:"flagged"};
+  return null;
+}
+
+window.__ccrPreview = function(el, pack){
+  var reduced = window.matchMedia &&
+                window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var pos = layout(pack.nodes, pack.edges, reduced);
+  var byId = {}; pack.nodes.forEach(function(nd,k){ byId[nd.id]={nd:nd,p:pos[k]}; });
+  var s=[];
+  s.push('<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="'+
+         pack.nodes.length+' course identities that may be the same course. '+
+         'Lines mean an evidence lane suggested they match.">');
+  pack.edges.forEach(function(e){
+    var a=byId[e.a], b=byId[e.b]; if(!a||!b) return;
+    var strong = e.lanes.indexOf("subject")<0;
+    s.push('<line x1="'+a.p.x.toFixed(1)+'" y1="'+a.p.y.toFixed(1)+
+           '" x2="'+b.p.x.toFixed(1)+'" y2="'+b.p.y.toFixed(1)+
+           '" stroke="'+(strong?"rgba(109,40,217,.45)":"rgba(28,28,26,.15)")+
+           '" stroke-width="'+(strong?2:1)+'"'+(strong?"":' stroke-dasharray="3 3"')+"></line>");
+  });
+  pack.nodes.forEach(function(nd){
+    var p=byId[nd.id].p, r=radius(nd), pt=paintOf(nd);
+    s.push('<circle cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+r.toFixed(1)+
+           '" fill="'+pt.fill+'" stroke="'+pt.stroke+'" stroke-width="2"></circle>');
+    s.push('<text x="'+p.x.toFixed(1)+'" y="'+(p.y+4).toFixed(1)+
+           '" text-anchor="middle" font-size="'+(r>20?13:11)+
+           '" fill="'+pt.stroke+'" class="node-g">'+pt.glyph+"</text>");
+    var st = stateOf(nd);
+    if (st) {
+      var ang = -Math.PI/4;
+      s.push('<circle cx="'+(p.x + Math.cos(ang)*r).toFixed(1)+'" cy="'+
+             (p.y + Math.sin(ang)*r).toFixed(1)+'" r="4.5" fill="'+st.fill+
+             '" stroke="var(--surface-opaque)" stroke-width="1.5"></circle>');
+    }
+    var lab=(nd.t||nd.id); if(lab.length>22) lab=lab.slice(0,21)+"\u2026";
+    s.push('<text x="'+p.x.toFixed(1)+'" y="'+(p.y+r+13).toFixed(1)+
+           '" text-anchor="middle" class="node-l" fill="var(--text-body)">'+esc(lab)+"</text>");
+    s.push('<text x="'+p.x.toFixed(1)+'" y="'+(p.y+r+25).toFixed(1)+
+           '" text-anchor="middle" class="node-l" fill="var(--text-muted)">'+
+           esc(nd.id)+" \u00b7 "+nd.n+"</text>");
+  });
+  s.push("</svg>");
+  el.innerHTML = s.join("");
+};
 
 window.__ccrDecision = function(discName, i){
   var DATA = JSON.parse(document.getElementById("atlas-data").textContent);
@@ -98,8 +157,16 @@ window.__ccrDecision = function(discName, i){
          "by dragging it onto a circle, or with the <strong>Move</strong> button if you'd rather not drag.</p>");
   h.push('<div class="stage">');
   h.push('<div><div class="canvas"><div id="gfx"></div>'+
-         '<p class="hint" id="hint">Drag a course from the list onto a circle. '+
-         'Circle size = how many colleges teach it.</p></div></div>');
+         '<div class="hint"><div id="hint">Drag a course from the list onto a circle. '+
+         'Circle size = how many colleges teach it.</div>'+
+         '<div class="glegend">'+
+           '<span><b style="color:#0047AB">\u2605</b> C-ID \u2014 official</span>'+
+           '<span><b style="color:#8B6800">\u25C6</b> CCN \u2014 official</span>'+
+           '<span><b style="color:#6D28D9">\u273D</b> M-ID \u2014 ours</span>'+
+           '<span><b style="color:#5C5C55">\u25CB</b> unified</span>'+
+           '<span><i class="sdot" style="background:#920000"></i> \u26A0 flagged</span>'+
+           '<span><i class="sdot" style="background:#2C601A"></i> \u2713 reviewed</span>'+
+         '</div></div></div></div>');
   h.push('<div class="side">');
   h.push('<div class="panel"><h3>Courses underneath</h3><ul class="idlist" id="ids"></ul></div>');
   h.push('<div class="panel"><h3>What this would write</h3><div id="wr"></div>'+
@@ -130,12 +197,20 @@ window.__ccrDecision = function(discName, i){
       var mine = Object.keys(home).filter(function(cn){return home[cn]===nd.id;}).length;
       s.push('<g class="nodeg" data-id="'+esc(nd.id)+'" tabindex="0" role="button" '+
              'aria-label="'+esc(nd.t||nd.id)+", "+esc(nd.id)+", "+mine+
-             ' courses, '+pt.word+'. Press Enter to send the selected course here.">');
+             ' courses, '+pt.word+(stateOf(nd)?', '+stateOf(nd).word:'')+
+             '. Press Enter to send the selected course here.">');
       s.push('<circle cx="'+p.x.toFixed(1)+'" cy="'+p.y.toFixed(1)+'" r="'+r.toFixed(1)+
              '" fill="'+pt.fill+'" stroke="'+pt.stroke+'" stroke-width="2"></circle>');
       s.push('<text x="'+p.x.toFixed(1)+'" y="'+(p.y+4).toFixed(1)+
              '" text-anchor="middle" font-size="'+(r>20?13:11)+
              '" fill="'+pt.stroke+'" class="node-g">'+pt.glyph+"</text>");
+      var st = stateOf(nd);
+      if (st) {
+        var a = -Math.PI/4;
+        s.push('<circle cx="'+(p.x + Math.cos(a)*r).toFixed(1)+'" cy="'+
+               (p.y + Math.sin(a)*r).toFixed(1)+'" r="4.5" fill="'+st.fill+
+               '" stroke="var(--surface-opaque)" stroke-width="1.5"></circle>');
+      }
       var lab=(nd.t||nd.id); if(lab.length>22) lab=lab.slice(0,21)+"…";
       s.push('<text x="'+p.x.toFixed(1)+'" y="'+(p.y+r+13).toFixed(1)+
              '" text-anchor="middle" class="node-l" fill="var(--text-body)">'+esc(lab)+"</text>");
@@ -204,9 +279,12 @@ window.__ccrDecision = function(discName, i){
       });
       var pt=paintOf(nd);
       out.push("<li>");
+      var st = stateOf(nd);
       out.push('<span class="ttl">'+esc(nd.t||nd.id)+"</span> "+
-               '<span class="chip '+(nd.rev?"ok":nd.flags.length?"flag":"gen")+'">'+
-               pt.glyph+" "+esc(pt.word)+"</span>");
+               '<span class="chip '+(nd.sys==="C-ID"||nd.sys==="CCN-ID"?"cid":
+                 nd.sys==="M-ID"?"gen":"mut")+'">'+pt.glyph+" "+esc(pt.word)+"</span>"+
+               (st?' <span class="chip '+(nd.rev?"ok":"flag")+'">'+st.glyph+" "+
+                   esc(st.word)+"</span>":""));
       out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" college"+(nd.n===1?"":"s")+
                (nd.u!=null?" · "+nd.u+" units":"")+"</div>");
       if(!mine.length){
