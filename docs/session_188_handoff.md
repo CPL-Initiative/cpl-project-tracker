@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/ccr_atlas_lessons]]"
   - "[[docs/session_187_handoff]]"
+superseded: true
+superseded_by: session_191_handoff.md
 ---
 
 # Session 188 handoff
