@@ -36,7 +36,7 @@ is absent or malformed is DROPPED and counted, never coerced to zero, because th
 control number IS the write key (`CN:<control_number>`) and a course with no key
 cannot be re-homed.
 """
-import argparse, json, math, os, re
+import argparse, json, math, os, re, unicodedata
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +51,64 @@ def load_js(fname):
 
 
 CN_RE = re.compile(r"^CCC(\d{9})$")
+
+
+def slug(name):
+    """Discipline -> a filename. Stable, lowercase, ASCII-safe, collision-checked by
+    the caller — a shard whose name collides would silently serve another subject's
+    descriptions, which is worse than having none."""
+    out = []
+    for ch in unicodedata.normalize("NFKD", name):
+        if ch.isalnum() and ord(ch) < 128:
+            out.append(ch.lower())
+        elif out and out[-1] != "-":
+            out.append("-")
+    return ("".join(out).strip("-") or "x")[:60]
+
+
+def write_desc_shards(islands, out_rel):
+    """Course descriptions, ONE FILE PER DISCIPLINE, fetched when a curator opens an
+    identity.
+
+    WHY NOT INLINE. Measured 2026-08-24: descriptions are 34.8 MB at their stored
+    500-char truncation and still 11.6 MB cut to 120 chars, against a built page already
+    at 9.7 MB. There is no truncation that makes them inlinable and still worth reading,
+    so they load on demand — Sam's call, taken knowing it means serving the page over
+    http rather than opening the file directly:
+
+        python3 -m http.server -d . 8000
+        open http://localhost:8000/prototype/ccr_atlas_v1.built.html
+
+    ⚠️ Under file:// fetch() is blocked by CORS and every shard will fail. That is not a
+    bug to work around silently — the client says so and names the command, because a
+    drill-down that shows nothing is indistinguishable from a course with no description.
+    """
+    src = load_js("unified_courses_member_desc.js").get("desc") or {}
+    path = os.path.join(ROOT, out_rel)
+    os.makedirs(path, exist_ok=True)
+    for stale in os.listdir(path):          # a renamed discipline must not leave a ghost
+        if stale.endswith(".json"):
+            os.remove(os.path.join(path, stale))
+
+    seen, total, n_desc = {}, 0, 0
+    for isl in islands:
+        name = isl["sh"]
+        if name in seen and seen[name] != isl["d"]:
+            raise SystemExit(f"shard name collision: {isl['d']!r} and {seen[name]!r} "
+                             f"both slug to {name!r} — rename before shipping")
+        seen[name] = isl["d"]
+        shard = {}
+        for pt in isl["p"]:
+            ds = [d for d in (src.get(pt["i"]) or [])]
+            if any(ds):
+                shard[pt["i"]] = ds
+                n_desc += sum(1 for d in ds if d)
+        blob = json.dumps(shard, separators=(",", ":"), ensure_ascii=False)
+        with open(os.path.join(path, name + ".json"), "w", encoding="utf-8") as fh:
+            fh.write(blob)
+        total += len(blob.encode("utf-8"))
+    print(f"wrote {out_rel}/  ({len(islands)} shards, {total/1048576:.1f} MB, "
+          f"{n_desc:,} course descriptions)")
 
 
 def write_members(mem_payload, placed_ids, out_rel):
@@ -121,6 +179,8 @@ def main():
                     help="omit them (the older, lighter payload)")
     ap.add_argument("--members-out", default="prototype/ccr_universe_members.json",
                     help="second payload: the draggable member courses per identity")
+    ap.add_argument("--desc-dir", default="prototype/ccr_desc",
+                    help="per-discipline description shards, fetched on demand")
     args = ap.parse_args()
 
     data = load_js("unified_courses_data.js")
@@ -173,7 +233,8 @@ def main():
             if step > 300:                              # give up rather than hang
                 break
         placed.append((cx, cy, r_isl))
-        islands.append({"d": disc, "x": round(cx, 1), "y": round(cy, 1),
+        islands.append({"d": disc, "sh": slug(disc),
+                        "x": round(cx, 1), "y": round(cy, 1),
                         "r": round(r_isl, 1), "n": n,
                         **({"a": 1} if disc.endswith(" · stand-alone") else {})})
 
@@ -227,6 +288,7 @@ def main():
     print(f"wrote {args.out}  ({os.path.getsize(path)/1024:.0f} KB)")
 
     write_members(mem_payload, placed_ids, args.members_out)
+    write_desc_shards(islands, args.desc_dir)
 
     print(f"  {out['counts']['identities']:,} identities in {len(islands)} islands")
     print(f"  bounds {bounds}")

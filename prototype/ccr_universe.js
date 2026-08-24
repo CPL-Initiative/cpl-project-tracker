@@ -29,6 +29,8 @@ var view={x:0,y:0,k:0.12};   // world→screen: screen = (world+pan)*k
 var hoverIsl=null, hoverNode=null, selIsl=null, selNode=null;
 var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, memberSource="";
 var MEMBER_PAGE=200, memFilter="";
+var descCache={}, descState={};      // island shard -> {cn/index: text} · shard -> "loading"|"ok"|"blocked"|"missing"
+var DESC_DIR="ccr_desc";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
 
@@ -37,6 +39,14 @@ var SYS=[["#F1EAFC","#6D28D9","✽","M-ID"],
          ["#FBF1D8","#8B6800","◆","CCN"],
          ["#EFEFEC","#5C5C55","○","unified"]];
 
+function ensureDescCss(){
+  if(document.getElementById("u-desc-css")) return;
+  var st=document.createElement("style"); st.id="u-desc-css";
+  st.textContent=".mlist .mdesc{display:block;margin:.35em 0 .1em;font-size:.84rem;"+
+    "line-height:1.45;color:var(--text-body,#3A3A36);max-width:var(--cpl-measure,none)}"+
+    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}";
+  document.head.appendChild(st);
+}
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
 function num(n){return (n==null?0:n).toLocaleString("en-US");}
@@ -94,6 +104,39 @@ function buildMemberIndex(){
  * several honest answers; the FIRST is recorded only so the move receipt can say
  * where it came from — the move itself is global and leaves all of them. */
 function originOf(cn){ return (cnHome&&cnHome[cn])||null; }
+/* ── course descriptions, fetched per discipline on demand ────────────────
+ * Measured 2026-08-24: descriptions are 34.8 MB stored, 11.6 MB even cut to 120
+ * characters, against a page already at 9.7 MB. There is no truncation that is
+ * both inlinable and worth reading, so Sam chose on-demand loading knowing it
+ * means serving the page rather than opening the file.
+ *
+ * ⚠️ Under file:// every fetch fails on CORS. That is REPORTED, never swallowed:
+ * a drill-down that silently shows nothing is indistinguishable from a course
+ * that genuinely has no description, and the second is a real and common state
+ * (127,523 of the corpus have one, so plenty do not).
+ */
+function loadDesc(isl, then){
+  var sh=isl&&isl.sh; if(!sh) return then&&then();
+  if(descState[sh]==="ok"||descState[sh]==="blocked"||descState[sh]==="missing") return then&&then();
+  if(descState[sh]==="loading") return;
+  descState[sh]="loading";
+  var url=DESC_DIR+"/"+encodeURIComponent(sh)+".json";
+  fetch(url).then(function(r){
+    if(!r.ok) throw new Error("http "+r.status);
+    return r.json();
+  }).then(function(j){
+    descCache[sh]=j; descState[sh]="ok"; then&&then();
+  }).catch(function(e){
+    // file:// gives a TypeError with no status; a served page gives an http code.
+    descState[sh]=(location.protocol==="file:")?"blocked":"missing";
+    then&&then();
+  });
+}
+function descFor(isl, id, idx){
+  var sh=isl&&isl.sh; if(!sh) return null;
+  var d=descCache[sh]&&descCache[sh][id];
+  return (d&&d[idx])||null;
+}
 function membersOf(id){
   var out=(roster&&roster[id]||[]).filter(function(m){
     return !(m.cn in movedTo) || movedTo[m.cn]===id;
@@ -276,6 +319,7 @@ window.__ccrUniverse = function(){
       'One row per move, in <code>kb_curation</code>. Reversible: delete the row.</p></div>'+
     '</div>';
 
+  ensureDescCss();
   cvs=document.getElementById("u-cvs"); ctx=cvs.getContext("2d");
   buildMemberIndex();
   sizeCanvas(); resetView(); wire(); draw();
@@ -446,6 +490,7 @@ function showIsland(isl){
 function showNode(nd, isl){
   selNode=nd; selIsl=isl; memFilter="";
   renderNode();
+  loadDesc(isl, function(){ if(selNode===nd) renderNode(); });
 }
 /* The identity's own `n` is NOT a college count — it comes from whichever field
  * minted the row (corroboration members, a cluster's member_count, a C-ID
@@ -489,15 +534,27 @@ function renderNode(){
          (shown.length<total?' matching ('+num(total)+' carried)':'')+
          '. Filter to reach the rest.</p>';
     }
+    var st=descState[isl&&isl.sh];
     h+='<ul class="mlist">'+capped.map(function(m){
       var moved=movedTo[m.cn]===nd.i;
+      var d=descFor(isl, nd.i, mine.indexOf(m));
       return '<li'+(moved?' class="moved"':"")+'>'+
         '<span class="cd">'+esc(m.n)+"</span>"+
         '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
         (moved?' <span class="chip ok">✓ moved here</span>':"")+
         '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-code="'+esc(m.n)+
-        '" data-col="'+esc(m.c)+'">Drag\u2026</button></li>';
+        '" data-col="'+esc(m.c)+'">Drag\u2026</button>'+
+        (d?'<div class="mdesc">'+esc(d)+"</div>"
+          :st==="ok"?'<div class="mdesc none">No catalog description for this course.</div>':"")+
+        "</li>";
     }).join("")+"</ul>"+
+    (st==="loading"?'<p class="empty">Loading catalog descriptions…</p>':"")+
+    (st==="blocked"?'<p class="empty">Catalog descriptions need the page SERVED, not opened '+
+      'from a file — they are 45.7 MB and load per subject on demand. Run '+
+      '<code>python3 -m http.server 8000</code> in the repo root and open '+
+      '<code>http://localhost:8000/prototype/ccr_atlas_v1.built.html</code>.</p>':"")+
+    (st==="missing"?'<p class="empty">Catalog descriptions for this subject did not load. '+
+      'Re-run <code>python3 kb/_build_ccr_universe.py</code> to regenerate them.</p>':"")+
     '<p class="empty" style="margin-top:.5em">Press <strong>Drag…</strong>, then click any '+
     'course anywhere on the map — including in another subject.</p>';
   }
