@@ -3842,6 +3842,28 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### SkyCal S189 — the drag was reachable at last, and it had never worked (2026-08-24)
+
+**Sam: *"let get this moonshot on the way"*** — step 1 of the approved drag re-home (#1317).
+⭐ **101,063 member courses reached the graph** in a SECOND 2.5 MB payload; the record is
+`[control_number, code, college index]` and carries **no title** (9.9 MB dicts · 5.5 MB with
+title · **2.5 MB without**, and the list renders code + college). Merge-chain resolution was
+already done upstream — a join, not a build.
+⚠️ **THE VERB COULD NOT BE COMPLETED WITH A MOUSE.** `pointerdown` clobbered the carried
+course before `pointerup` could read it, so **Drag… → click the destination** selected the
+destination and moved nothing. Unobservable until the data landed: no course on screen, no
+drop to attempt. **That is the other half of what zero `CN:` rows meant.**
+⚠️ **Three of the harness's first four failures were the HARNESS** — a canvas center cached
+before `cvs.focus()` scrolls it, an assertion that a DROP changes the selection (it does not;
+the write line naming the destination is the proof), and a click that never asserted which
+node it hit. **A check written against an unwalked path is itself unwalked**
+([`a-blocked-path-hides-the-defects-behind-it`](docs/kb-notes/methodology-a-blocked-path-hides-the-defects-behind-it.md)).
+⚠️ **`nd.n` is not a college count** — `ESOL M9168` read *"1,152 colleges"* in a system with
+123, and it disagrees with the carried members on **3,399 of 16,242** rows; both shown now.
+⚠️ **1,122 control numbers sit under >1 identity**, so a move is GLOBAL and leaves every card.
+Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_190_handoff.md`.
+
+
 ### SkyGlass — the windows were never the test's to free (2026-08-20, Session 176)
 
 **Merged #1272.** Sam handed on SkySort's open call: the 8,192 → 12,288 MB cap raise bought headroom, it did not fix a **2,955-line file holding 61 jsdom windows in one process**.

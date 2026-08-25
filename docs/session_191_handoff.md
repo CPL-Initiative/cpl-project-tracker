@@ -5,6 +5,8 @@ tags: [handoff, session-191, memory, cpl-chat, deploy]
 related:
   - "[[CLAUDE]]"
   - "[[docs/cobi_memory_tab_lessons]]"
+superseded: true
+superseded_by: session_192_handoff.md
 ---
 
 # You are Session 191
