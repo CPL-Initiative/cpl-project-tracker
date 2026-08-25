@@ -76,7 +76,42 @@ Every check below the crash went unreported while the exit code said only
 layer in. **Conclusions come from the exit code, never from `grep -c FAIL`**, and
 a test must report a missing thing rather than dereference it.
 
-## 🔭 Your priority
+## 🔭 Your priority — Sam named it, and it is scoped and ready
+
+**The GR Priorities on-demand re-analysis.** Read
+[`docs/gr_reanalysis_scope.md`](gr_reanalysis_scope.md) FIRST — it is the
+authority and it is buildable as written.
+
+Sam, at the end of Session 193: *"a routine I can run on demand that looks at the
+edit I made and reanalyzes everything for related Title 5 and Ed Code citations
+and an analysis of whether it can be accomplished by a clarifying memo,
+regulation revision, Ed Code revision, or some combination of the 3"* — and then
+the decisive line: ***"It's the same routine used to create the tab in the first
+place."***
+
+⭐ **That is the whole finding.** The 16 CPL revisions were analyzed by a SESSION
+during the Sky168 rebuild and written into the table; nothing computed them. So
+this is not "invent an analyzer", it is "make a session's work product repeatable
+and put a button on it" — and `gr_revisions` IS the output template.
+
+⭐ **The doctrine is measured, not invented** — grouping the 16 rows by their own
+Approach text against the pathway actually assigned: regulation-must-change → Title
+5 only (**3 of 3**), statute-blocks → Ed Code + `ed_first=Yes` (**2 of 2**),
+already-permitted → includes a memo. One test: *does the change contradict a
+statute, a regulation, or merely a practice?* Carry it in the prompt explicitly or
+the tab becomes a patchwork of two analysts.
+
+⭐ **Rows #12, #9, #7 and #5 are a labeled test set the register already contains**
+— blank their stored pathway, re-run, and assert memo-only / Title 5 / Ed Code.
+Cheapest real evaluation available.
+
+⚠️ **It needs an Edge Function deploy**, which is separate from Pages and shared
+with the public Sierra. Merge the client → dispatch `cpl-chat-deploy.yml` →
+confirm with `cpl-chat-smoke.yml`. Four open questions for Sam are in §Open
+questions of the scope; **question 1 (one row vs the whole area) genuinely changes
+the design** — the tied ranks (3,3 and 5,5,5) can only be fixed by an area pass.
+
+## 🔭 Then
 
 **Decision packs per discipline, fetched on demand** — unchanged from Session
 193, and now more urgent because the map leads. The grouped work surface exists
@@ -91,6 +126,9 @@ into the map lands on nothing most of the time. `kb/_build_ccr_universe.py
 
 | Item | Status |
 |---|---|
+| GR re-analysis | **SCOPED, not built** — `docs/gr_reanalysis_scope.md`, Sam's stated priority |
+| The 5 GR `blast_why` drafts | in `docs/gr_why_it_matters_drafts.md`, PR #1332 — **nothing written to Supabase** (Sam was editing live) |
+| The false verification stamp | ✅ **CLEARED** 2026-08-25 on Sam's go; 0 remaining; the 12 attributed rows untouched |
 | PR #1331 merged? | **verify** — four superseded-head events this session |
 | The one false verification stamp | **awaiting Sam** — `stale` + `verified_by='curator'`; the 11 rows with `'Sam Lee'`/`'Jenni'` are real attribution |
 | GR: 0 of 20 revisions verified | **Sam's**, and it is what a CO draft needs |
