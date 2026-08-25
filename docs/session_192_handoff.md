@@ -1,5 +1,5 @@
 ---
-title: Session 192 handoff — the deploy landed; verify it in a browser, then the queue question
+title: Session 192 handoff — the deploy landed and Sam verified it; the queue question is yours
 created: 2026-08-25
 updated: 2026-08-25
 tags: [handoff, session-192, sierra, memory, my-college, skyview]
@@ -14,8 +14,9 @@ related:
 
 # Session 192 handoff
 
-You are **Session 192**. Session 190 ran as **Sky190**, picking up the memory thread
-while Sam drove SkyView in a browser. It ended with a **production deploy**.
+You are **Session 192**. Session 190 ran as **SkyAlign** (Sam's name for it), picking up the memory
+thread while he drove SkyView in a browser. It ended with a **production deploy**, since
+verified by him.
 
 ⚠️ Sam runs several sessions at once. `git log origin/main` before assuming your
 branch is the only work in flight.
@@ -30,17 +31,21 @@ and deploy"*, byte-verified against the repo (`02c130977e69e8f9`, 221,310 chars,
 the memory per-surface caps (#1320), the Briefing surface (#1321), and the Sierra
 district-figures fix (#1325).
 
-⭐ **THE ONE THING TO DO BEFORE ANYTHING ELSE: ask Sam whether he has looked.** No
-session can — the sandbox is egress-blocked from `*.supabase.co`. Two specific
-checks, both of which were the point of the deploy:
+✅ **SAM HAS VERIFIED THE SIERRA HALF.** 2026-08-25, the morning after: *"Sierra looks great
+this morning."* That closes the district false-zero — Moreno Valley rendering 0 students against
+a live 2,887 — and it is the one check no session can make, because the sandbox is egress-blocked
+from `*.supabase.co`. **Do not re-ask him about Sierra.**
 
-1. **The RCCD question on My College.** *"What should Riverside Community College
-   District do to help its colleges award more CPL?"* Moreno Valley should now read
-   **~2,887 students / 14,029 applied / 12,861 transcribed**. Before the fix it read
-   **26 / 0 / 0 / 0** — the largest college in the district, rendered as empty.
-2. **The Briefing button** at the top of the Memory tab's Report view. It should
-   produce plain-language prose with numbered citations, and the status line should
-   report a citation count **greater than 0**.
+⚠️ **HE DID NOT SAY ANYTHING ABOUT THE BRIEFING**, and it is a different surface — the Memory
+tab's Report view, not Sierra. It shipped in the same dispatch and has still never been seen by a
+human. Treat it as **open**: ask about it specifically, not as part of "did the deploy work".
+Reading *"Sierra looks great"* as covering it is the same over-read this run kept catching
+elsewhere.
+
+⭐ **KEEP THE DISTINCTION THAT CLOSED IT.** Byte-identity proves the right code is running; it
+cannot prove the answer reads correctly to the person who asked. Both were needed, and only the
+second one ends a Sierra change. Say so in your own handoff rather than implying the deploy was
+the finish line.
 
 ## What shipped
 
@@ -89,6 +94,8 @@ number looks exactly like a fresh one. Durable note:
 
 ## 🔭 Your priority — and it is a question, not a build
 
+(The verification above is CLOSED. This is where you actually start.)
+
 **SkyView step 2 (the re-mint queue) is scoped and approved, and I recommend holding
 it.** Measured this run:
 
@@ -114,7 +121,8 @@ duplicate-claim control numbers**, which is a worklist that exists today.
 
 | Item | Status |
 |---|---|
-| Sam verifies the RCCD answer + the Briefing in a browser | **the only thing gating "done"** |
+| Sam verifies the RCCD answer in a browser | ✅ **DONE 2026-08-25** — *"Sierra looks great this morning."* Do not re-ask |
+| Sam looks at the **Briefing** (Memory tab → Report) | **open** — same dispatch, never seen by a human; not covered by the Sierra confirmation |
 | `cpl-chat-preview-ab.yml` | built, never run — use it on the NEXT cpl-chat change |
 | SkyView step 2 | recommend hold; needs Sam's call |
 | 34 closing-paren assertions | 4 fixed; `_prios`/`srcIdx`/`earnedSubHtml`×2 left |
@@ -141,4 +149,5 @@ duplicate-claim control numbers**, which is a worklist that exists today.
 - ⚠️ **Never `git checkout --` a file holding uncommitted work.** I destroyed this
   run's Sierra fix that way and had to rebuild it. Commit first, then perturb.
 
-**Moniker:** Sky190 signing off. Take **Sky192** or coin your own.
+**Moniker:** SkyAlign signing off — Sam named it on the strength of the district figures
+lining up again. Take **Sky192** or coin your own.

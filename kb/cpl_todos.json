@@ -1,21 +1,9 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-25 · Sierra was telling people that Moreno Valley College has no students and awards no credit. It actually has nearly 2,900 — the most of Riverside's three colleges. She was reading a copy of the numbers taken in June that nobody has updated since, while the real figures refresh every night. It only went wrong when someone asked about a whole district; asking about one college had been reading the live numbers all along, which is why it looked fine until it didn't. Rather than refresh the old copy we deleted it, because two copies of the same fact always drift apart again and a stale number looks exactly like a fresh one. That fix is now live, along with the two Memory tab features that had been waiting on the same deploy — the Autogenerate repair and the new Briefing button. All three went out together and have been checked byte-for-byte against what we wrote. The one thing left is a human looking at them in a browser: no session can, because we cannot reach the live site from here.",
+  "_as_of": "2026-08-25 · Sam checked Sierra in a browser and confirmed she is right again: \"Sierra looks great this morning.\" That closes the problem he reported the night before, where she said Moreno Valley College had no students when it actually has nearly 2,900 — the most of Riverside's three colleges. She had been reading a copy of the numbers taken in June that nobody has updated since, while the real figures refresh every night. Rather than refresh the old copy we deleted it, because two copies of the same fact always drift apart again and a stale number looks exactly like a fresh one. That fix went live together with the two Memory tab features that had been waiting on the same deploy. We had already checked character-by-character that the right code was running and that the automated tests passed — but none of that can tell you whether an answer reads correctly to a person. Only someone looking can, and now someone has.",
   "_session": 192,
-  "_status": "Both changes are merged and waiting on a single deploy. Until that runs, Autogenerate still cuts your note short and the Briefing button politely says it could not build one — nothing is broken that was not already, but nothing is fixed either. The first briefing we ran over twelve real entries already found two things worth your eye, listed below.",
+  "_status": "Deployed, and the Sierra half is confirmed. The Sierra fix and both Memory tab features (Autogenerate reading your whole note, and the Briefing that reads the entries back to you) went live together on 25 August, and Sam checked Sierra in a browser the next morning. The Briefing itself has still never been looked at by a person — it shipped in the same deploy but it is a different screen, so \"Sierra looks great\" does not cover it. That is on the list below.",
   "items": [
-    {
-      "id": "s190-verify-rccd",
-      "for": "Sam",
-      "tab": "my-college",
-      "text": "Open My College, pick Riverside CCD and ask what it should do. Moreno Valley should now show about 2,887 students — not zero. This is the check that closes the bug you spotted."
-    },
-    {
-      "id": "s190-verify-briefing",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "Open the Memory tab's Report view and press Briefing. You should get plain-language prose with small numbered links beside each claim, and a citation count above zero."
-    },
     {
       "id": "s190-skyview-queue-call",
       "for": "Sam",
@@ -27,6 +15,12 @@
       "for": "Sam",
       "tab": "unified-courses",
       "text": "Optional: try a drag in SkyView. It would be the first one ever — no course has been re-homed yet, and the first one tells us whether the detection behind it actually fires."
+    },
+    {
+      "id": "s190-briefing-look",
+      "for": "Sam",
+      "tab": "memory",
+      "text": "Press the Briefing button at the top of the Memory tab's Report view. It should write plain-language prose with small numbered links back to the entries it used. Nobody has seen it yet — it went live with the Sierra fix, but it is a different screen."
     },
     {
       "id": "s190-browser-checks",
