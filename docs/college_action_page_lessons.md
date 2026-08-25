@@ -1491,3 +1491,100 @@ applies with no selection to confine to. Recommendation recorded in §11: a
 1. **Deploy `cpl-chat`.** The fix is inert until then.
 2. Sam re-asks the LACCD question in a browser.
 3. Sam's go on the `surface` field.
+
+---
+
+## 2026-08-25 — Sky190: a stale copy said a busy college was empty
+
+Sam, with a screenshot from the My College tab: *"The data are wrong, particularly
+for Moreno Valley College, which has many students and is very active in MAP and
+has many transcribed units. What might be the problem? It was working well
+yesterday."* Then, on the blast radius: *"Sierra is called from the public page,
+the My College tab and the CPL Fact sheet."*
+
+### The answer, and the three wrong answers on the way to it
+
+| Suspect | Verdict | How |
+|---|---|---|
+| the memory changes (Sam's first guess, and mine to rule out) | **not it** | `cpl-chat` was v57, unchanged since 2026-08-23 01:18; #1320/#1321 never deployed |
+| Sierra fabricated the table | **no** | all twelve figures matched `chatbox_college_profiles.credit_distribution` **verbatim** |
+| the nightly promotion broke | **no** | `map_college_credit_summary` had MVC correct: 2,887 / 14,029 / 12,861 |
+| a stale source nobody refreshes | **YES** | that column's `updated_at` is **2026-06-25 21:59:58** |
+
+⭐ **THE COLUMN HAS NO WRITER.** Four things write `chatbox_college_profiles` — the
+landing-page sync, the identity crosswalk, the scraper, the MAP users sync — and
+**not one touches `credit_distribution`**. It was seeded once from
+`View_CreditDistributionByCollege_APIDataset` and left. Meanwhile
+`map_college_credit_summary` rebuilds nightly in the 13:40 promotion. Two months
+of drift, measured across the 103 colleges that join: transcribed understated
+**61%** (31,775 vs 80,568), students **40%** (28,451 vs 47,234), a false zero for
+transcribed at **17** colleges and for students at **6**.
+
+### ⭐ Why it only bites a DISTRICT question — and why "it was working yesterday" is true
+
+`singleProfile` is null whenever the profile lookup returns an **array**, which is
+exactly what a district question returns. So `shapeCreditStatus` was called with
+`collegeName = null`, produced no per-college figures at all, and the stale profile
+line became the only per-college source in the entire context. **A single-college
+question sets `singleProfile` and had been getting live figures the whole time.**
+
+So nothing regressed. I looked hard for a change and there is none: the profiles
+table has not been written since June, the migration list shows no DB change on the
+23rd or 24th, and `resolveDistrict`, `TABLE_COLUMN_RULE` and the stale line were all
+in the deployed v57 from 2026-08-23. The fault is **question-shape-specific**, which
+is exactly what "fine until I asked about a district" looks like from the outside.
+
+⚠️ **AND THE PROMPT ASKED FOR THE TABLE.** `TABLE_COLUMN_RULE` named six columns and
+asserted *"Always include the Transcribed Units column — it is given for every college
+below."* For a district that was **false**. Naming columns while the values are stale
+is what put `Moreno Valley College | 26 | 0 | 0 | 0` on screen. **A prompt must not
+promise a number it cannot show.**
+
+### The fix is one source, not a refresh
+
+Refreshing the June column would work until the next time one of two writers stops,
+and the failure is silent **because a stale number looks exactly like a fresh one**.
+So the profile block now emits no credit figures at all, and `buildCreditContext`
+serves both the single-college and the multi-college shape from the same live table.
+
+⚠️ **Neither "absent" nor "suppressed" may render as `0`.** A college with no row is
+named as absent; a suppressed row keeps NULL measures and says why. Both asserted,
+and the table rule forbids `0` for either — **a false zero reads as an inactive
+college**, and it is the one answer nobody files feedback about.
+
+### ⚠️ Three method failures, all mine, all caught by something already in the repo
+
+**① The repo is not the deployment.** I established what v57 does by reading
+`git show 208a4d1:index.ts` — the repo at the commit I *assumed* was live. The
+section above this one rules out a suspect by reading the **live source through the
+Supabase MCP**, and Sam had to point me at it. It matched (`4796b51376780b07`), but
+a match reached by assumption is luck, not method.
+
+**② I shipped the bug I had just read about — four times.** The addendum above says
+a check anchored on a call's closing paren goes red naming something that is not
+wrong, and that *the new test written in the same PR had the identical defect*. Mine
+had it in `shapeCreditStatus(…, rosterNames)`, `fetchTeamGuidance(sb, hostSurface)`,
+`queryCapFor(hostSurface)` — and `sierra_credit_disposition.test.js` **actually went
+red**, naming *"the per-college pick uses the resolved single profile"* while the
+per-college pick was fine. ⭐ **The fix was already in that file, six lines below the
+failing line**, applied to two sibling assertions and never back-ported to this one.
+All four now assert the value ARRIVES, with **both** probes the note requires —
+remove it (must fail) and append an argument (must stay green), the second being the
+one it says people skip. **34 assertions of that shape survive repo-wide**; the ones
+on our own functions are `_prios`, `srcIdx` and `earnedSubHtml` ×2, left for their
+own workstreams.
+
+**③ `exit=0` was my trailing `grep`, not `npm test`.** A red suite nearly passed for
+green because I read the shell's exit code instead of the log. The CI event then
+named a **superseded** head, which would have sent me diagnosing an already-fixed
+failure. Both times the honest answer came from reading the actual output.
+
+### Where this leaves the tab
+
+`cpl-chat` **v58 deployed and byte-verified** 2026-08-25 (`02c130977e69e8f9`,
+221,310 chars, `verify_jwt:false`), carrying this fix, the memory per-surface caps
+and the drafting block together.
+
+**Next:** Sam re-asks the RCCD question in a browser and confirms Moreno Valley now
+reads ~2,887 students. No session can — the sandbox is egress-blocked from
+`*.supabase.co`.

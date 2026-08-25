@@ -1,68 +1,48 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-24 · Session 190 fixed why the Memory tab's Autogenerate button kept drafting the wrong thing. When you typed a note into it, only the first sixteen characters ever reached the AI — the rest was cut off by a size limit nobody had noticed, because the button's own instructions were already using up almost all of the space. Handed almost nothing to work with, the AI wrote about the only other thing in front of it: its own rules for answering student questions. That is why you got an entry about answer structure instead of one about which kind of credit to award. It is fixed, and the size limit is now checked automatically so it cannot creep back. We also built the button you asked for: a Briefing at the top of the Memory tab's Report view that reads the entries back in plain language, with a small numbered link beside every claim — hover to see that memory, click to open it for editing. Neither is switched on yet: both need one deploy of the assistant service, which is your call to make.",
-  "_session": "190 (SkyRead)",
+  "_as_of": "2026-08-25 · Sierra was telling people that Moreno Valley College has no students and awards no credit. It actually has nearly 2,900 — the most of Riverside's three colleges. She was reading a copy of the numbers taken in June that nobody has updated since, while the real figures refresh every night. It only went wrong when someone asked about a whole district; asking about one college had been reading the live numbers all along, which is why it looked fine until it didn't. Rather than refresh the old copy we deleted it, because two copies of the same fact always drift apart again and a stale number looks exactly like a fresh one. That fix is now live, along with the two Memory tab features that had been waiting on the same deploy — the Autogenerate repair and the new Briefing button. All three went out together and have been checked byte-for-byte against what we wrote. The one thing left is a human looking at them in a browser: no session can, because we cannot reach the live site from here.",
+  "_session": 192,
   "_status": "Both changes are merged and waiting on a single deploy. Until that runs, Autogenerate still cuts your note short and the Briefing button politely says it could not build one — nothing is broken that was not already, but nothing is fixed either. The first briefing we ran over twelve real entries already found two things worth your eye, listed below.",
   "items": [
     {
-      "id": "s190-deploy-go",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "Give the go on deploying the assistant service. It is the one thing standing between you and both of today's fixes — the Memory tab's Autogenerate button and the new Briefing. It updates the assistant everywhere at once (the public page, the college widget, the Fact Sheet panel), which is why we do not do it without you saying so. Takes a few minutes, and we run the usual health check straight after."
+      "for": "sam",
+      "text": "Open My College, pick Riverside CCD and ask what it should do. Moreno Valley should now show about 2,887 students — not zero. This is the check that closes the bug you spotted."
     },
     {
-      "id": "s190-stale-memory",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "One memory entry looks out of date. It says a failing test was about wording rather than a real problem — but that test has since been fixed a different way. It is still marked verified, so it reads as current truth to anyone (or anything) reading the table. Worth a minute to re-check or retire."
+      "for": "sam",
+      "text": "Open the Memory tab's Report view and press Briefing. You should get plain-language prose with small numbered links beside each claim, and a citation count above zero."
     },
     {
-      "id": "s190-contacts-pair",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "Two entries about contacts are each correct but confusing on their own. One says the assistant must never use a contact a curator suggested. The other says she reads contacts live. Both are true — live from MAP's own records, never from the suggestions — but only reading both together makes that clear. Worth writing the boundary into whichever one gets read first."
+      "for": "sam",
+      "text": "Decide whether SkyView's re-mint queue gets built now. Our recommendation is not yet: nobody has dragged a course yet, so the queue would open empty. Doing a drag or two first would give it something real."
     },
     {
-      "id": "s190-verified-by",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "26 of the 177 entries marked verified do not record WHO verified them. Verified entries are the ones shown by default, so those 26 are being trusted with nobody's name attached. Not urgent, but it is the one field the whole trust system leans on."
+      "for": "sam",
+      "text": "Optional: try a drag in SkyView. It is the first one ever — no course has been re-homed yet, and the first one tells us whether the detection behind it actually fires."
     },
     {
-      "id": "s190-british-spellings",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Eight British spellings sit in the assistant's own instructions — catalogue, judgement, labelled, summarise — including inside a rule she uses constantly. They shape her wording, so they reach the public page. Free to fix on the deploy above if you want them gone."
+      "for": "sam",
+      "text": "Two of Sierra's answers still need your eyes rather than ours: the district roster question for Los Angeles, and a phone check of the Fact Sheet and veteran map."
     },
     {
-      "id": "s190-live-briefing",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "After the deploy, get the first real Briefing run and read the knowledge-base paragraph. No session has ever seen that part — we cannot reach the service from here, so Sam has to press the button once and paste back what it says."
+      "for": "fable",
+      "text": "Next time cpl-chat changes, run the new A/B workflow first. It deploys a candidate to a private copy and compares both against real questions before anything reaches the live site."
     },
     {
-      "id": "s190-memory-cleanup",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "If Sam wants it, run the memory clean-up pass: fill in the missing verifier names, sort out the three sessions that wrote under two different names each, and work through the backlog of entries still waiting to be confirmed (358 proposed against 177 verified)."
+      "for": "fable",
+      "text": "34 tests still check that a value is a function's LAST argument rather than that it arrives at all. Four were fixed; the rest go red for the wrong reason when anyone adds a parameter."
     },
     {
-      "id": "s188-esl-overclaims",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Nine ESL courses are filed one level HIGHER than the college's own catalog describes them — the only ones running against the cautious direction, so they are worth your eye before the other 213. They all share a cause: our rule says 'level 5 or above = Advanced', but several colleges run a six-rung ladder where 5 and 6 are still 'high-intermediate'. Six of the nine are the same Los Angeles district series (College ESL V) repeated across eight colleges. Two ways to fix it: correct the nine by hand, or move the cut from '5 and above' to '6 and above', which fixes six of them by rule. Second question while you are here: that number rule is wrong about half the time overall — is it worth keeping at all? Full list and the quoted catalog text: kb/esl_fold_spotcheck/2026-08-24/report.md."
+      "for": "fable",
+      "text": "The project's own memory file is two and a half times the size it should be, and every session pays for that on startup. It needs prose moved out, not more added."
     },
     {
-      "id": "s188-esl-zscheme",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Finish ESL: 67 ESL records were never in the fold's candidate list at all, because they live in a different store (the Z-scheme rows from the 2026-06 renumbering) rather than the two files the packaging tool reads. They are the concrete remaining ESL job — not a vague 'second pass'. Same survivors, same method."
+      "for": "fable",
+      "text": "SkyView's course descriptions still have to be served from a local folder. Sam expects them in the shared database; table-versus-file and who can read them are still open."
     },
     {
-      "id": "s189-subj4-queue",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "Build the safety net for the drag — step 2 of the plan Sam approved. Moving a course between identities is only a membership change and never renumbers anything, which is why it ships unblocked. But a move can leave the destination internally inconsistent: its subject prefix no longer matches the discipline it claims. When that happens the system should put a renumbering CANDIDATE on a queue with who moved what and when, and a human decides — it must never renumber on its own, and the queue must never be bulk-cleared. Renumbering itself stays batched under the existing playbook. Authority: docs/skyview_drag_rehome_scope.md."
+      "for": "fable",
+      "text": "A leftover scheduled job from an older session is still queued to merge a pull request that merged long ago. Harmless, but worth clearing."
     }
   ]
 }
