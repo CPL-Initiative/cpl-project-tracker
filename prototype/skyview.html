@@ -1118,6 +1118,7 @@ var cvs, ctx, DPR=1;
 var view={x:0,y:0,k:0.12};   // world→screen: screen = (world+pan)*k
 var hoverIsl=null, hoverNode=null, selIsl=null, selNode=null;
 var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, memberSource="";
+var cnCourses=null;           // cn -> [{n:code, c:college}] — EVERY course the key names
 var MEMBER_PAGE=200, memFilter="";
 var descCache={}, descState={};      // island shard -> {cn/index: text} · shard -> "loading"|"ok"|"blocked"|"missing"
 var DESC_DIR="ccr_desc";
@@ -1134,7 +1135,12 @@ function ensureDescCss(){
   var st=document.createElement("style"); st.id="u-desc-css";
   st.textContent=".mlist .mdesc{display:block;margin:.35em 0 .1em;font-size:.84rem;"+
     "line-height:1.45;color:var(--text-body,#3A3A36);max-width:var(--cpl-measure,none)}"+
-    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}";
+    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}"+
+    // Glyph-free on purpose: the chip's own words carry the state, so the colour
+    // is reinforcement and greyscale loses nothing.
+    ".mlist .chip.warn{background:var(--accent-warn-tint,#FBF1D8);"+
+    "color:var(--accent-warn-ink,#6B4E00);border:1px solid var(--accent-warn,#8B6800)}"+
+    ".mlist li.shared .cd{text-decoration:underline dotted}";
   document.head.appendChild(st);
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -1156,14 +1162,39 @@ function s2w(px,py){return [(px-cvs.clientWidth/2)/view.k - view.x,
  * live, because "no courses here" and "no courses shipped" look identical on
  * screen and mean opposite things.
  *
- * A control number can appear under MORE THAN ONE identity (1,122 do — the
- * forward join surfaces an over-merged course on every card that claims it).
- * The write is one `CN:` row per control number, so a move is a single global
- * statement: movedTo[cn] is therefore the ONLY home that counts once a curator
- * has moved a course, and the course leaves every other card it was showing on.
+ * TWO different things make a control number non-unique here, and only the
+ * first was ever handled:
+ *
+ *  1. A control number can appear under MORE THAN ONE IDENTITY (1,165 do — the
+ *     forward join surfaces an over-merged course on every card that claims it).
+ *     The write is one `CN:` row per control number, so a move is a single
+ *     global statement: movedTo[cn] is the ONLY home that counts once a curator
+ *     has moved a course, and the course leaves every other card it showed on.
+ *
+ *  2. A control number can name MORE THAN ONE COURSE. 1,761 in this payload do
+ *     — 3,634 draggable rows. Measured by kb/_audit_control_number_claims.py:
+ *     most are one course written two ways (a CCN alongside its local code, an
+ *     institution entered under two roster names), but 73 are genuinely two
+ *     different courses filed under one number, and the key cannot tell any of
+ *     them apart.
+ *
+ * (2) is why cnCourses exists. byCn keeps the first record seen, which is fine
+ * for reporting where a course came from and WRONG as the thing to render on a
+ * destination: a curator who drags the second of two collided courses would
+ * watch the first one arrive. A move whose key names several courses cannot be
+ * expressed by `CN:<cn>` at all, so it is REFUSED rather than written wrong —
+ * see canMove().
  */
+function noteCourse(cn, rec){
+  // Distinct (code, college) only: the same course legitimately appears on
+  // several identities, and counting those would flag every over-merge as an
+  // ambiguous KEY, which is a different fault with a different repair.
+  var l=cnCourses[cn]||(cnCourses[cn]=[]);
+  for(var i=0;i<l.length;i++) if(l[i].n===rec.n && l[i].c===rec.c) return;
+  l.push({n:rec.n, c:rec.c});
+}
 function buildMemberIndex(){
-  roster={}; byCn={}; cnHome={}; memberSource="";
+  roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource="";
   var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
   if(MEM && MEM.m){
     var cols=MEM.colleges||[];
@@ -1171,6 +1202,7 @@ function buildMemberIndex(){
       roster[id]=MEM.m[id].map(function(r){
         var cn="CCC"+String(r[0]).padStart(9,"0");
         var rec={cn:cn, n:r[1]||"", c:cols[r[2]]||"—"};
+        noteCourse(cn, rec);
         if(!(cn in byCn)){ byCn[cn]=rec; cnHome[cn]=id; }
         return rec;
       });
@@ -1184,7 +1216,10 @@ function buildMemberIndex(){
       pack.nodes.forEach(function(nd){
         if(!nd.m||!nd.m.length) return;
         roster[nd.id]=nd.m;
-        nd.m.forEach(function(m){ if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; } });
+        nd.m.forEach(function(m){
+          noteCourse(m.cn, m);
+          if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; }
+        });
       });
     });
   });
@@ -1194,6 +1229,32 @@ function buildMemberIndex(){
  * several honest answers; the FIRST is recorded only so the move receipt can say
  * where it came from — the move itself is global and leaves all of them. */
 function originOf(cn){ return (cnHome&&cnHome[cn])||null; }
+/* Every course the write key names. More than one means the key is ambiguous. */
+function coursesOn(cn){ return (cnCourses&&cnCourses[cn])||[]; }
+/* Can this course be re-homed at all?  `CN:<control number>` carries no way to
+ * say WHICH course, and the receiving end picks the first one it finds — the
+ * live generator through cn_rows[cn][0], this page through byCn[cn]. So for an
+ * ambiguous key a move is not merely risky, it is INEXPRESSIBLE: whatever the
+ * curator dragged, the number moves whichever course happens to be indexed
+ * first, and takes the others out of their own cards on the way past.
+ * Refusing is the honest answer. Widening the key is a schema decision. */
+/* One sentence, used by the chip and by the refusal, so the warning a curator
+ * reads before clicking and the message they get after cannot disagree. */
+function sharedKeyReason(cn, code, others){
+  var them=(others||coursesOn(cn)).filter(function(o){return o.n!==code;});
+  var list=them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", ");
+  return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
+    " names "+((others||coursesOn(cn)).length)+" courses — also "+esc(list)+
+    (them.length>3?" and "+(them.length-3)+" more":"")+
+    ". The write is <code>CN:"+esc(cn)+"</code>, which cannot say which one, so "+
+    "the move would land whichever course is indexed first. Fix the duplicate "+
+    "control number upstream in COCI, or widen the write key.";
+}
+function canMove(cn){
+  var l=coursesOn(cn);
+  if(l.length<2) return {ok:true};
+  return {ok:false, others:l};
+}
 /* ── course descriptions, fetched per discipline on demand ────────────────
  * Measured 2026-08-24: descriptions are 34.8 MB stored, 11.6 MB even cut to 120
  * characters, against a page already at 9.7 MB. There is no truncation that is
@@ -1227,6 +1288,17 @@ function descFor(isl, id, idx){
   var d=descCache[sh]&&descCache[sh][id];
   return (d&&d[idx])||null;
 }
+/* The record a curator actually picked up, for a course that has been moved.
+ * byCn[cn] is the FIRST record indexed for that key, which is a different
+ * course whenever the key names several — so a destination built from byCn
+ * shows the wrong one. Moves are refused for ambiguous keys (canMove), so the
+ * two agree today; reading the move is what keeps them agreeing if that ever
+ * changes. */
+function movedRecord(cn){
+  for(var i=0;i<moves.length;i++)
+    if(moves[i].cn===cn) return {cn:cn, n:moves[i].code, c:moves[i].college};
+  return byCn&&byCn[cn]||null;
+}
 function membersOf(id){
   var out=(roster&&roster[id]||[]).filter(function(m){
     return !(m.cn in movedTo) || movedTo[m.cn]===id;
@@ -1234,7 +1306,8 @@ function membersOf(id){
   Object.keys(movedTo).forEach(function(cn){
     if(movedTo[cn]!==id) return;
     for(var i=0;i<out.length;i++) if(out[i].cn===cn) return;
-    if(byCn[cn]) out.push(byCn[cn]);
+    var rec=movedRecord(cn);
+    if(rec) out.push(rec);
   });
   return out;
 }
@@ -1442,8 +1515,14 @@ window.__ccrUniverseState = function(){
   // `sel` is here so a test that clicks the canvas can assert which identity it
   // actually landed on — a click check with no such assertion passes happily
   // against the previous selection.
+  // sharedKeys is here so a test can assert the guard is live on real data
+  // rather than on a fixture: a payload that stops carrying collided control
+  // numbers would silently turn the check into a no-op.
+  var shared=0;
+  if(cnCourses) for(var k in cnCourses) if(cnCourses[k].length>1) shared++;
   return {view:view, moves:moves, sel:selNode?selNode.i:null,
-          members:roster?Object.keys(roster).length:0, memberSource:memberSource};
+          members:roster?Object.keys(roster).length:0, memberSource:memberSource,
+          sharedKeys:shared, canMove:canMove};
 };
 
 function wire(){
@@ -1628,12 +1707,20 @@ function renderNode(){
     h+='<ul class="mlist">'+capped.map(function(m){
       var moved=movedTo[m.cn]===nd.i;
       var d=descFor(isl, nd.i, mine.indexOf(m));
-      return '<li'+(moved?' class="moved"':"")+'>'+
+      // Say it BEFORE the click, not only after. A curator who picks a course
+      // up, hunts for the destination and is refused on arrival has done the
+      // hard part of the work for nothing.
+      var shared=coursesOn(m.cn).length>1;
+      var cls=(moved?"moved ":"")+(shared?"shared":"");
+      return '<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+'>'+
         '<span class="cd">'+esc(m.n)+"</span>"+
         '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
         (moved?' <span class="chip ok">✓ moved here</span>':"")+
+        (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
+          ' names '+coursesOn(m.cn).length+' different courses, so the '+
+          'CN: write key cannot say which one to move.">shared key</span>':"")+
         '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-code="'+esc(m.n)+
-        '" data-col="'+esc(m.c)+'">Drag\u2026</button>'+
+        '" data-col="'+esc(m.c)+'"'+(shared?' data-shared="1"':"")+'>Drag\u2026</button>'+
         (d?'<div class="mdesc">'+esc(d)+"</div>"
           :st==="ok"?'<div class="mdesc none">No catalog description for this course.</div>':"")+
         "</li>";
@@ -1657,6 +1744,10 @@ function renderNode(){
   });
   Array.prototype.forEach.call(el.querySelectorAll(".mv"), function(b){
     b.addEventListener("click", function(){
+      if(b.dataset.shared){
+        setHint(sharedKeyReason(b.dataset.cn, b.dataset.code, coursesOn(b.dataset.cn)));
+        return;
+      }
       drag={kind:"course", cn:b.dataset.cn, code:b.dataset.code, college:b.dataset.col,
             px:cvs.clientWidth/2, py:cvs.clientHeight/2};
       setHint("Carrying <strong>"+esc(b.dataset.code)+"</strong> — click the course it belongs to. "+
@@ -1666,6 +1757,8 @@ function renderNode(){
   });
 }
 function applyMove(cn, code, college, toId){
+  var gate=canMove(cn);
+  if(!gate.ok){ setHint(sharedKeyReason(cn, code, gate.others)); return; }
   var from=movedTo[cn]||originOf(cn);
   if(from===toId){ setHint("That course is already there."); return; }
   movedTo[cn]=toId;

@@ -171,11 +171,18 @@ function serve() {
   // hook works, not the page.
   const plan = await page.evaluate(() => {
     const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    // Every course the payload puts on each control number. A key naming more
+    // than one is REFUSED by the page (canMove), so a source picked blindly can
+    // land on one and turn this check into an accidental test of the refusal.
+    const seen = {};
+    for (const id of Object.keys(M.m))
+      for (const [c, n, ci] of M.m[id]) (seen[c] = seen[c] || new Set()).add(n + "\u241f" + ci);
+    const uniq = (c) => (seen[c] || new Set()).size < 2;
     let src = null;
     for (const isl of U.islands) {
       for (const nd of isl.p) {
         const list = M.m[nd.i];
-        if (list && list.length >= 2 && list.length <= 40) {
+        if (list && list.length >= 2 && list.length <= 40 && list.every((r) => uniq(r[0]))) {
           src = { id: nd.i, disc: isl.d, x: nd.x, y: nd.y, n: list.length };
           break;
         }
@@ -240,6 +247,60 @@ function serve() {
     const b = document.querySelector(`#u-detail .mv[data-cn="${c}"]`);
     return !!b && /moved here/i.test(b.closest("li").textContent);
   }, cn));
+
+  console.log("\n══ ⚠ a move the write key cannot express is refused");
+  // `CN:<control number>` carries no way to say WHICH course, and both receiving
+  // ends pick the first one they find (the generator through cn_rows[cn][0], this
+  // page through byCn[cn]). 1,761 control numbers in this payload name more than
+  // one course — 3,634 draggable rows. So the page must refuse, not guess.
+  const amb = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    const seen = {};
+    for (const id of Object.keys(M.m))
+      for (const [c, n, ci] of M.m[id]) (seen[c] = seen[c] || new Set()).add(n + "\u241f" + ci);
+    let shared = 0;
+    for (const c of Object.keys(seen)) if (seen[c].size > 1) shared++;
+    // A card that actually SHOWS one, so the refusal can be driven through the UI.
+    for (const isl of U.islands) {
+      for (const nd of isl.p) {
+        const list = M.m[nd.i] || [];
+        if (list.length > 40) continue;
+        const hit = list.find((r) => seen[r[0]].size > 1);
+        if (hit) return { shared, id: nd.i, disc: isl.d, x: nd.x, y: nd.y,
+                          cn: "CCC" + String(hit[0]).padStart(9, "0"),
+                          names: seen[hit[0]].size };
+      }
+    }
+    return { shared };
+  });
+  // Assert the condition is LIVE in the data. If the payload ever stops carrying
+  // collided control numbers, this check must go red rather than pass vacuously
+  // against a page whose guard is never reached.
+  ok(`the payload still carries collided control numbers (${amb.shared})`, amb.shared > 0);
+  ok("and a card shows one, so the guard is reachable through the UI", !!amb.id);
+
+  if (amb.id) {
+    await flyClick({ x: amb.x, y: amb.y }, amb.id);
+    const row = `#u-detail .mv[data-cn="${amb.cn}"]`;
+    ok(`the row is flagged BEFORE the click (${amb.cn} names ${amb.names} courses)`,
+      await page.evaluate((sel) => {
+        const b = document.querySelector(sel);
+        return !!b && /shared key/i.test(b.closest("li").textContent);
+      }, row));
+    const before = await page.evaluate(() => window.__ccrUniverseState().moves.length);
+    await page.locator(row).click();
+    await page.waitForTimeout(200);
+    const hint = await page.locator("#u-hint").textContent();
+    ok("pressing Drag… explains the refusal instead of picking the course up",
+      /cannot re-home/i.test(hint) && hint.includes(amb.cn));
+    ok("the reason names the OTHER course, not just the count",
+      /also\s+\S/i.test(hint) && /which one/i.test(hint));
+    // The load-bearing half: nothing was carried, so clicking a destination
+    // cannot complete a move the key cannot express.
+    await flyClick(plan.tgt);
+    ok("and no write row is produced by clicking a destination afterwards",
+      (await page.evaluate(() => window.__ccrUniverseState().moves.length)) === before);
+  }
 
   console.log("\n══ course descriptions load on demand");
   // Served over http here, which is the whole point: under file:// these fetches are

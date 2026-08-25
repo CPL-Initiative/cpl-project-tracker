@@ -10,11 +10,15 @@ stay clear of, both of which look fine on screen:
      `CN:<control_number>`, so a member carrying "NULL" (2 do) has no key. It is
      DROPPED and counted — coercing it to zero would ship a course that silently
      writes against control number CCC000000000.
-  2. A CONTROL NUMBER CAN SIT UNDER SEVERAL IDENTITIES (1,122 do — the forward
+  2. A CONTROL NUMBER CAN SIT UNDER SEVERAL IDENTITIES (1,165 do — the forward
      join surfaces an over-merged course on every card claiming it). The write is
      one row per control number, so a move is global: the consumer needs the count
      to know the case is live, and must drop the course from EVERY card, not just
      the one on screen.
+  3. A CONTROL NUMBER CAN NAME SEVERAL DIFFERENT COURSES — a separate fault from
+     (2), and not bounded by it. The write key cannot say which, so SkyView
+     refuses the move rather than landing an arbitrary one. Sized by
+     kb/_audit_control_number_claims.py.
 
 Behavior in the browser (does a drag actually complete?) is checked by
 prototype/check_ccr_atlas.js, which has a layout engine. This file checks the
@@ -112,6 +116,34 @@ else:
           not bad_shape, f"{len(bad_shape)} bad")
     check("the duplicate-control-number case is live, so the consumer must handle it",
           M["counts"]["cn_on_multiple_identities"] > 0)
+
+    # ── the OTHER non-uniqueness, which the counter above does not see ───────
+    # `cn_on_multiple_identities` asks "is one course claimed by several
+    # identities". A different and unrelated thing is true of the same key: one
+    # control number can name several DIFFERENT courses. Measured by
+    # kb/_audit_control_number_claims.py against the COCI source — 462 name more
+    # than one course in the data, and 1,352 more reach the artifact as two rows
+    # because the member roster does not apply the institution fold declared in
+    # kb/reference/map_college_roster_rules.json.
+    #
+    # It matters here because the write is `CN:<control number>` and nothing
+    # else: both receiving ends pick the first match (the generator through
+    # cn_rows[cn][0], SkyView through byCn[cn]), so a move on such a key lands
+    # an arbitrary course. prototype/ccr_universe.js refuses it — this asserts
+    # the condition it refuses is really present, because a guard that is never
+    # reached passes for free.
+    courses = {}
+    for i in ids:
+        for cn, code, ci in M["m"][i]:
+            courses.setdefault(cn, set()).add((code, ci))
+    ambiguous = {cn for cn, v in courses.items() if len(v) > 1}
+    rows_hit = sum(1 for i in ids for cn, _, _ in M["m"][i] if cn in ambiguous)
+    check(f"control numbers naming more than one course are present "
+          f"({len(ambiguous):,} keys, {rows_hit:,} draggable rows)",
+          len(ambiguous) > 0)
+    check("and they are a different set from the counter above, not a subset "
+          "relabelled",
+          len(ambiguous) != M["counts"]["cn_on_multiple_identities"])
     # The payload is inlined into a self-contained page. Titles were left out for
     # this reason; a ceiling is what stops them quietly coming back.
     mb = os.path.getsize(mem_path) / 1048576
