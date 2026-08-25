@@ -191,11 +191,20 @@
   }
 
   // -- Rail auth badge --------------------------------------------------
-  // Read-only "signed in as X" / "not signed in" indicator in the sidebar
-  // footer. Reads sessionStorage.cpl_sb (the session shape persisted by all
-  // three curator tabs — see unified_courses.js persistToken). Same-tab
-  // sign-in/out won't fire a storage event, so we also re-render on focus
-  // and on every tab activation; that covers all the natural moments.
+  // The sidebar-footer indicator. It now speaks through COBI_IDENTITY — the
+  // same reader and the same sentence the masthead chip uses — so the two
+  // surfaces cannot disagree about whether you are signed in.
+  //
+  // THIS BADGE WAS HALF-BLIND FROM THE DAY IT WAS WRITTEN. It read only
+  // sessionStorage.cpl_sb, the magic-link session, so a team-phrase holder
+  // curating happily was told "not signed in" on every tab. Reading one of two
+  // credentials and reporting the answer as the whole truth is the same shape
+  // as a capped list rendering as a census.
+  //
+  // And "use a curator tab to sign in" was an instruction with no door: it
+  // named no tab, and the tab it meant is reviewer-ONLY, so the phrase could
+  // never have opened it either. The masthead chip carries the controls; this
+  // points at it rather than at a tab that cannot help.
   function readSession() {
     try {
       var s = JSON.parse(sessionStorage.getItem('cpl_sb') || 'null');
@@ -206,30 +215,26 @@
   function renderRailAuth() {
     var el = document.getElementById('cpl-rail-auth');
     if (!el) return;
-    var s = readSession();
-    if (s) {
-      el.innerHTML = '';
-      var row = document.createElement('div');
-      row.className = 'cpl-rail-auth-on';
-      row.textContent = '✓ signed in';
-      el.appendChild(row);
-      if (s.email) {
-        var em = document.createElement('span');
-        em.className = 'cpl-rail-auth-email';
-        em.textContent = s.email;
-        el.appendChild(em);
-      }
+    var ID = window.COBI_IDENTITY;
+    el.innerHTML = '';
+    // The magic-link-only reading survives ONLY as the fallback for when the
+    // shared module is absent. Half an answer beats a blank footer; it is never
+    // the preferred one.
+    var g = (ID && ID.greeting) ? ID.greeting() : null;
+    var on = g ? g.tone !== 'none' : !!readSession();
+    var row = document.createElement('div');
+    row.className = on ? 'cpl-rail-auth-on' : 'cpl-rail-auth-off';
+    row.textContent = on ? '\u2713 ' + (g ? g.short : 'signed in') : '\u2014 not unlocked';
+    el.appendChild(row);
+    var sub = document.createElement('span');
+    sub.className = 'cpl-rail-auth-email';
+    if (g) {
+      sub.textContent = on ? g.text : 'Sign in or unlock at the top right.';
     } else {
-      el.innerHTML = '';
-      var off = document.createElement('div');
-      off.className = 'cpl-rail-auth-off';
-      off.textContent = '— not signed in';
-      el.appendChild(off);
-      var hint = document.createElement('span');
-      hint.className = 'cpl-rail-auth-email';
-      hint.textContent = 'use a curator tab to sign in';
-      el.appendChild(hint);
+      var s = readSession();
+      sub.textContent = (s && s.email) ? s.email : 'Sign in or unlock at the top right.';
     }
+    el.appendChild(sub);
   }
 
   // -- Hamburger / slide-over -------------------------------------------
@@ -277,6 +282,11 @@
     });
     window.addEventListener('focus', renderRailAuth);
     window.addEventListener('cpl-auth-change', renderRailAuth);
+    // cpl_session.js dispatches THIS name, not cpl-auth-change. Listening for
+    // only one of the two is why the keeper's announcements — a renewal, a
+    // sign-out, another browser tab signing in — never reached the rail.
+    window.addEventListener('cpl-session-changed', renderRailAuth);
+    window.addEventListener('cpl-team-pass-unlocked', renderRailAuth);
     wireHamburger();
     var p0 = parseHash();
     activate(fromHash(), { section: p0.section });

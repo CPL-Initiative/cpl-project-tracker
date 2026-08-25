@@ -256,8 +256,15 @@
     if (typeof requestAnimationFrame === "function") requestAnimationFrame(render);
   }
 
+  // Opening the pane from OUTSIDE this module — cobi_identity.js's chip does
+  // it, so the reader lands in front of the genuine, site-scoped box rather
+  // than a second copy of it that would have to re-derive which phrase this
+  // site takes. A test seam (_setOpen) is not an API; this is.
+  function open() { openPane = true; render(); }
+
   window.CPL_TEAM_PHRASE_HEADER = {
     init: init,
+    open: open,
     render: render,
     _scope: scope,
     _scopeLabel: scopeLabel,
