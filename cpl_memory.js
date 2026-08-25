@@ -510,12 +510,21 @@
       var right = el("span", "mi-right");
       if (d.affects && d.affects.length) { var rb = el("span", "mi-ripple", "⟿ " + d.affects.length); rb.title = d.affects.length + " downstream targets"; right.appendChild(rb); }
       if (sess) {
+        // A MENU, NOT A CYCLE (Sam, 2026-08-25: it "just sets to verified
+        // without any other options"). The cycle was worse than unhelpful: it
+        // ran verified → stale → proposed, so reaching `stale` from `proposed`
+        // meant passing THROUGH `verified` — and every step was a real PATCH
+        // and a real audit row. His two clicks are in cpl_memory_log 15 seconds
+        // apart, and left a row at `stale` carrying a verification stamp.
+        // One click, one choice, one write.
         var cur = el("button", "mi-curate", "✎ " + d.status); cur.type = "button";
-        var nextSt = ({ verified: "stale", stale: "proposed", proposed: "verified" })[d.status] || "verified";
-        cur.title = "Set to " + nextSt + " — currently " + d.status + ". Cycles verified → stale → proposed, writes to cpl_memory and logs the change.";
-        cur.setAttribute("aria-label", "Cycle review status for " + d.id + " (currently " + d.status + ")");
-        cur.onclick = function (e) { e.stopPropagation(); cycleStatus(d); };
-        right.appendChild(cur);
+        cur.title = "Set the review status for " + d.id + " — currently " + d.status + ".";
+        cur.setAttribute("aria-haspopup", "true");
+        cur.setAttribute("aria-expanded", "false");
+        cur.setAttribute("aria-label", "Set review status for " + d.id + " (currently " + d.status + ")");
+        var menuHost = el("span", "mi-curate-host");
+        cur.onclick = function (e) { e.stopPropagation(); toggleStatusMenu(cur, menuHost, d); };
+        right.appendChild(cur); right.appendChild(menuHost);
       }
       top.appendChild(right);
       li.appendChild(top);
@@ -528,6 +537,58 @@
       listEl.appendChild(li);
     });
     updateFoot(list);
+  }
+  // Only one status menu is open at a time — a second one left standing behind
+  // the first is a control the reader cannot see but can still tab into.
+  var openMenuClose = null;
+  function closeStatusMenu() { if (openMenuClose) { var f = openMenuClose; openMenuClose = null; f(); } }
+  function toggleStatusMenu(btn, host, d) {
+    if (openMenuClose && host.firstChild) { closeStatusMenu(); return; }
+    closeStatusMenu();
+    var box = el("div", "mi-menu");
+    box.setAttribute("role", "menu");
+    box.setAttribute("aria-label", "Review status for " + d.id);
+    STATUS_CHOICES.forEach(function (c) {
+      var isNow = c.s === d.status;
+      var b = el("button", "mi-menu-item" + (isNow ? " is-now" : ""));
+      b.type = "button"; b.setAttribute("role", "menuitem");
+      b.appendChild(el("span", "mi-menu-lab", c.label + (isNow ? " — current" : "")));
+      b.appendChild(el("span", "mi-menu-why", c.why));
+      if (isNow) { b.disabled = true; }
+      else b.onclick = function (e) { e.stopPropagation(); closeStatusMenu(); setStatus(d, c.s); };
+      box.appendChild(b);
+    });
+    // ⚠️ DELETE IS REACHABLE FROM HERE, AND DOES NOT DELETE FROM HERE. Sam asked
+    // for it in the list beside the statuses, and it belongs within reach — but
+    // it is not a status and it is the only one of these that cannot be undone.
+    // One mis-click away from "Stale", in a list you click through quickly, is
+    // the wrong place for an irreversible act. So this OPENS the entry and its
+    // confirm, which is where the count of entries pointing at the row and the
+    // reviewer-only warning can actually be shown.
+    box.appendChild(el("div", "mi-menu-rule"));
+    var del = el("button", "mi-menu-item mi-menu-del");
+    del.type = "button"; del.setAttribute("role", "menuitem");
+    del.appendChild(el("span", "mi-menu-lab", "Delete\u2026"));
+    del.appendChild(el("span", "mi-menu-why", "Permanent. Opens the entry to confirm."));
+    del.onclick = function (e) {
+      e.stopPropagation(); closeStatusMenu();
+      pendingDelete = d.id; selectEntry(d.id);
+    };
+    box.appendChild(del);
+    host.appendChild(box);
+    btn.setAttribute("aria-expanded", "true");
+    var onDoc = function () { closeStatusMenu(); };
+    var onKey = function (e) { if (e.key === "Escape") { closeStatusMenu(); btn.focus(); } };
+    setTimeout(function () { document.addEventListener("click", onDoc); }, 0);
+    document.addEventListener("keydown", onKey);
+    openMenuClose = function () {
+      document.removeEventListener("click", onDoc);
+      document.removeEventListener("keydown", onKey);
+      clear(host);
+      btn.setAttribute("aria-expanded", "false");
+    };
+    var first = box.querySelector("button:not([disabled])");
+    if (first) first.focus();
   }
   function updateFoot(list) {
     if (!listFootEl) return;
@@ -661,6 +722,8 @@
       del.title = "Removes the row permanently. Reviewer sign-in only.";
       del.onclick = function () { clear(toolHost); confirmDelete(toolHost, d); };
       tools.appendChild(del);
+      // Arrived from the list's Delete… — open the confirm, not the deletion.
+      if (pendingDelete === d.id) { pendingDelete = null; del.onclick(); }
       box.appendChild(tools); box.appendChild(toolHost);
     }
   }
@@ -725,6 +788,9 @@
   // Set to a slug when the reader arrived by clicking something that should open
   // that entry for editing (a briefing citation). Cleared the moment it fires.
   var pendingEdit = null;
+  // Same shape as pendingEdit, and for the same reason: the delete confirm is
+  // built inside renderEntry, so a click one render earlier cannot call it.
+  var pendingDelete = null;
   // Arriving from a citation is a deliberate navigation, so bring the pane to
   // the reader on EVERY width — selectEntry's own scroll is mobile-only, which
   // is right for a click inside the list and wrong for a jump across views.
@@ -1471,25 +1537,44 @@
     return { slug: d.id, kind: d.kind, title: d.title, summary: d.summary, detail: d.detail, plain: d.plain, tags: d.tags, org: d.org, status: d.status, source: d.source };
   }
 
-  function cycleStatus(d) {
-    var order = ["verified", "stale", "proposed"];
-    var idx = order.indexOf(d.status);
-    var next = order[(idx + 1) % order.length];
-    return setStatus(d, next);
-  }
-  // The one place a status write is composed. cycleStatus (the ✎ chip), Mark
-  // inactive and Restore all land here so they cannot drift apart.
+  // The one place a status write is composed. The chip's menu, Mark inactive and
+  // Restore all land here so they cannot drift apart.
+  //
+  // ⚠️ THE STAMP IS CLEARED WHEN THE STATUS LEAVES `verified`. It was not, and a
+  // row could sit at `stale` carrying `verified_at` and `verified_by` — a
+  // verification stamp for a row nobody verified. That is not cosmetic on a
+  // table whose entire purpose is corroboration: `verified_by` is the evidence
+  // that a second party stood behind the claim.
   function setStatus(d, next) {
     var key = writeKey(d);
     if (!key) return refuseKeyless(d);
     var action = next === "verified" ? "verify" : next === "stale" ? "stale"
       : next === "superseded" ? "supersede" : "update";
     var body = { status: next };
-    if (next === "verified") { body.verified_at = nowIso(); body.verified_by = "curator"; }
+    if (next === "verified") {
+      body.verified_at = nowIso();
+      // NAME THE PERSON when the credential carries one. "curator" is what a
+      // shared phrase can honestly say; a signed-in reviewer can do better, and
+      // an audit trail that cannot say who verified something is most of the way
+      // to no audit trail.
+      body.verified_by = (sess && sess.access_token && sess.email) ? sess.email : "curator";
+    } else {
+      body.verified_at = null;
+      body.verified_by = null;
+    }
     return doWrite(writeReq("PATCH", "cpl_memory?" + key, body), function () {
       logEvent(d._uuid, action, { status: d.status }, body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
   }
+  // The statuses a curator can set, with what each one MEANS. A cycle button
+  // could not say any of this: it showed the current state on a control that
+  // changed it, and the only way to learn what a click would do was to do it.
+  var STATUS_CHOICES = [
+    { s: "verified", label: "Verified", why: "Corroborated — shown by default." },
+    { s: "proposed", label: "Proposed", why: "Written but not yet corroborated." },
+    { s: "stale", label: "Stale", why: "Was true; may not be any more." },
+    { s: "superseded", label: "Inactive", why: "Out of every list. Restorable from the entry." },
+  ];
   // Delete is REVIEWER-ONLY in the database ("reviewer deletes cpl_memory" —
   // is_allowed_reviewer(), no team_pass arm), so a phrase-holder's delete comes
   // back as a zero-row write. The button says so up front rather than letting
@@ -2028,6 +2113,23 @@
       ".cpl-mem .rp-toolbtn-danger{color:var(--st-danger);border-color:color-mix(in srgb,var(--st-danger) 45%,transparent);}",
       ".cpl-mem .rp-toolbtn-danger:hover{background:color-mix(in srgb,var(--st-danger) 12%,transparent);color:var(--st-danger);border-color:var(--st-danger);}",
       ".cpl-mem .rp-toolnote{font-size:.74rem;color:var(--text-muted);align-self:center;}",
+      // status menu on the ✎ chip
+      ".cpl-mem .mi-curate-host{position:relative;display:inline-block;}",
+      ".cpl-mem .mi-menu{position:absolute;right:0;top:calc(100% + 5px);z-index:40;width:224px;",
+      "background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:9px;",
+      "box-shadow:0 10px 26px rgba(20,20,30,.18);padding:4px;text-align:left;}",
+      ".cpl-mem .mi-menu-item{display:block;width:100%;font:inherit;text-align:left;cursor:pointer;",
+      "background:none;border:0;border-radius:7px;padding:6px 9px;color:var(--text-strong);}",
+      ".cpl-mem .mi-menu-item:hover:not([disabled]){background:var(--surface-muted);}",
+      ".cpl-mem .mi-menu-item:focus-visible{outline:2px solid var(--accent-link);outline-offset:-2px;}",
+      ".cpl-mem .mi-menu-item[disabled]{cursor:default;opacity:.75;}",
+      ".cpl-mem .mi-menu-item.is-now .mi-menu-lab{color:var(--text-muted);}",
+      ".cpl-mem .mi-menu-lab{display:block;font-size:.78rem;font-weight:700;}",
+      ".cpl-mem .mi-menu-why{display:block;font-size:.71rem;color:var(--text-muted);line-height:1.35;margin-top:1px;}",
+      ".cpl-mem .mi-menu-rule{height:1px;background:var(--border);margin:4px 6px;}",
+      // Tinted AND worded AND ellipsised — the ellipsis is the promise that it
+      // asks before it acts, which is the only reason it is safe to sit here.
+      ".cpl-mem .mi-menu-del .mi-menu-lab{color:var(--st-danger);}",
       ".cpl-mem .rp-toolhost .mem-form{max-width:100%;}",
       // view-mode segmented control (masthead) — reuses .mem-seg-btn styling
       ".cpl-mem .mem-viewseg{display:inline-flex;border:1px solid var(--border-strong);border-radius:9px;overflow:hidden;flex:0 0 auto;}",

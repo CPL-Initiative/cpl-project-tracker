@@ -141,3 +141,38 @@ and Save, then sign out and confirm both tabs go signed-out and stay that way.
 - **Auditing what a new component makes *frequent*,** not just whether it is
   correct. The keeper is correct; the collision it would have promoted from rare
   to routine is what nearly shipped a sign-out bug.
+
+---
+
+## 2026-08-25 — SkyFixer S193: the return tab was per-browser-tab too
+
+Sam: *"when log in to curate is done and magic link is clicked from email, it
+takes me to the CCR screen and should take me to the screen I was on."*
+
+⭐ **The same root cause as this whole file, one key over.** Nine modules stashed
+the destination in `sessionStorage.cpl_sb_return_tab`. `sessionStorage` is scoped
+to one **browser tab**; the magic link opens a **new** one. So the note written
+where you clicked "sign in" was invisible where it is read, `consumeAuthHash`
+fell back to its default, and **every sign-in from anywhere landed on the Common
+Course Reference**.
+
+⚠️ **`cpl_session.js`'s own header cited `cpl_sb_return_tab` as the thing that
+"restores the right IN-APP tab"** — while it could not, for precisely the reason
+that file exists. A file can document a mechanism it has already disproved.
+
+The keeper owns it now: `localStorage` canonical, `sessionStorage` kept for the
+same-tab flow, and two properties the session itself does not have —
+
+- **it expires** (30 min). A session should outlive a trip to an inbox; a
+  "come back to Memory" note should not still be lying around tomorrow, quietly
+  steering an unrelated sign-in.
+- **it is taken, not read.** One sign-in, one redirect.
+
+⚠️ **All nine callers route through it.** Fixing one and leaving eight is the
+failure this repo already paid for once (`raci.js` carried the rotating-token
+lesson in a comment for months while thirteen modules kept the bug).
+
+⚠️ **A single-window test fixture cannot see this defect at all.** The guard runs
+**two** JSDOM windows sharing one `localStorage` and holding separate
+`sessionStorage`s — which is what "the link opened a new browser tab" means.
+Verify with the instrument that can see the defect.

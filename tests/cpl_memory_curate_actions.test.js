@@ -110,6 +110,21 @@ function open(win, slugOrUuid) {
   win.CPL_MEMORY._selectEntry(slugOrUuid);
   return win.document.querySelector("#memory-root .rp-tools");
 }
+// The ✎ chip opens a MENU now (Sam, 2026-08-25 — the cycle "just sets to
+// verified without any other options", and reaching `stale` from `proposed` ran
+// THROUGH `verified`, writing a verification nobody made). Two steps, so the
+// harness walks both: a test that clicked once and asserted a write would pass
+// against a menu that silently wrote on open.
+function pickStatus(win, label) {
+  const chip = win.document.querySelector("#memory-root .mi-curate");
+  if (!chip) { check("(!) the ✎ chip exists to open", false, "not rendered"); return false; }
+  chip.click();
+  const item = [...win.document.querySelectorAll("#memory-root .mi-menu-item")]
+    .find((b) => new RegExp("^" + label).test(b.textContent));
+  if (!item) { check("(!) the menu offers " + label, false,
+    [...win.document.querySelectorAll("#memory-root .mi-menu-item")].map((b) => b.textContent).join(" | ") || "no menu"); return false; }
+  item.click(); return true;
+}
 function delButton(win) {
   return [...win.document.querySelectorAll("#memory-root .rp-tools button")]
     .find((b) => /Delete/.test(b.textContent)) || null;
@@ -159,7 +174,10 @@ function toolLabels(win) {
     const win = boot("magic");
     const calls = [];
     win.fetch = function (url, init) {
-      calls.push({ url: String(url), method: (init && init.method) || "GET" });
+      // The BODY is recorded, not just the URL. A status write is only correct
+      // if what it SENDS is correct — the stamp-clearing defect lived entirely
+      // in the body and a URL-only mock could never have seen it.
+      calls.push({ url: String(url), method: (init && init.method) || "GET", body: init && init.body });
       return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([{ id: UUID_B }]) });
     };
     win.CPL_MEMORY.activate();
@@ -171,10 +189,38 @@ function toolLabels(win) {
     check("(C) the slugless row is listed", !!target);
     const chip = target && target.querySelector(".mi-curate");
     check("(C) it carries a ✎ status chip in curate mode", !!chip);
-    check("(C) the chip's tooltip names what the click DOES, not what the row IS",
-      !!chip && /Set to verified/.test(chip.title) && /currently proposed/.test(chip.title));
-    calls.length = 0;
+    check("(C) the chip's tooltip says it SETS the status, and what it is now",
+      !!chip && /Set the review status/.test(chip.title) && /currently proposed/.test(chip.title), chip ? chip.title : "");
+    // ⭐ The menu offers every status with what it MEANS. A cycle button showed
+    // the current state on a control that changed it, and the only way to learn
+    // what a click would do was to do it.
     if (chip) chip.click();
+    const menu = [...win.document.querySelectorAll("#memory-root .mi-menu-item")].map((b) => b.textContent);
+    check("(C) ⭐ the chip opens a menu of every status, not a cycle",
+      menu.length === 5 && menu.some((t) => /^Verified/.test(t)) && menu.some((t) => /^Stale/.test(t))
+      && menu.some((t) => /^Proposed/.test(t)) && menu.some((t) => /^Inactive/.test(t))
+      && menu.some((t) => /^Delete…/.test(t)), menu.join(" | "));
+    check("(C) ⭐ the current status is marked and not offered as a change",
+      menu.some((t) => /^Proposed — current/.test(t)) &&
+      [...win.document.querySelectorAll("#memory-root .mi-menu-item")].filter((b) => b.disabled).length === 1,
+      menu.join(" | "));
+    check("(C) ⭐ opening the menu writes nothing", calls.filter((c) => c.method === "PATCH").length === 0);
+    check("(C) each option says what it means", menu.every((t) => t.length > 12), menu.join(" | "));
+    calls.length = 0;
+    clickOrFail([...win.document.querySelectorAll("#memory-root .mi-menu-item")]
+      .find((b) => /^Stale/.test(b.textContent)), "Stale in the status menu");
+    await tick(); await tick();
+    const staleBody = calls.filter((c) => c.method === "PATCH").map((c) => JSON.parse(c.body || "{}"));
+    check("(C) ⭐ picking Stale from Proposed is ONE write, straight to stale",
+      staleBody.length === 1 && staleBody[0].status === "stale", JSON.stringify(staleBody));
+    check("(C) ⭐ …and it CLEARS the verification stamp rather than leaving one behind",
+      staleBody.length === 1 && staleBody[0].verified_at === null && staleBody[0].verified_by === null,
+      JSON.stringify(staleBody[0] || {}));
+    check("(C) …and logs it as `stale`, never as `verify`",
+      calls.some((c) => c.method === "POST" && /cpl_memory_log/.test(c.url)));
+
+    calls.length = 0;
+    pickStatus(win, "Verified");
     await tick(); await tick();
     const patch = calls.find((c) => c.method === "PATCH");
     check("(C) ⭐ the chip PATCHes the slugless row by its uuid",
@@ -182,6 +228,51 @@ function toolLabels(win) {
       patch ? patch.url : "no PATCH was issued");
     check("(C) ⭐ …and never sends the uuid as a slug",
       !patch || patch.url.indexOf("slug=eq.") === -1, patch ? patch.url : "");
+    const vb = patch ? JSON.parse(patch.body || "{}") : {};
+    check("(C) ⭐ a Verified write NAMES the signed-in person, not a generic 'curator'",
+      vb.status === "verified" && vb.verified_by === "slee@cccco.edu", JSON.stringify(vb));
+  }
+
+  // ── (C2) Delete from the list ────────────────────────────────────────────
+  {
+    const win = boot("magic");
+    const calls = [];
+    // ⚠ The GET returns the FIXTURE, not []. activate() kicks off an async
+    // load(), and a mock that answers the read with an empty array wipes the
+    // seeded rows the moment the first `await` yields — which reads exactly
+    // like the feature failing to render.
+    win.fetch = function (url, init) {
+      const m = (init && init.method) || "GET";
+      calls.push({ url: String(url), method: m, body: init && init.body });
+      return Promise.resolve({ ok: true, status: 200,
+        json: () => Promise.resolve(m === "GET" ? fixture() : [{ id: UUID_B }]) });
+    };
+    win.CPL_MEMORY.activate();
+    win.CPL_MEMORY._state.status = "all";
+    win.CPL_MEMORY._setData(fixture());
+    // ⚠️ DELETE IS REACHABLE FROM THE LIST AND DOES NOT DELETE FROM THE LIST.
+    // Sam asked for it beside the statuses; it is the only one of these that
+    // cannot be undone, and one mis-click from "Stale" in a list you click
+    // through quickly is the wrong home for an irreversible act.
+    const chip2 = win.document.querySelector("#memory-root .mi-curate");
+    if (chip2) chip2.click();
+    const menu2 = [...win.document.querySelectorAll("#memory-root .mi-menu-item")].map((b) => b.textContent);
+    const delItem = [...win.document.querySelectorAll("#memory-root .mi-menu-item")]
+      .find((b) => /^Delete/.test(b.textContent));
+    check("(C) ⭐ Delete is offered in the menu", !!delItem, menu2.join(" | "));
+    check("(C) ⭐ …and says it asks first (the ellipsis is the promise)",
+      !!delItem && /Delete…/.test(delItem.textContent) && /Opens the entry to confirm/.test(delItem.textContent),
+      delItem ? delItem.textContent : "");
+    calls.length = 0;
+    clickOrFail(delItem, "Delete… in the status menu");
+    check("(C) ⭐ choosing it DELETES NOTHING — it opens the confirm",
+      calls.filter((c) => c.method === "DELETE").length === 0, JSON.stringify(calls.map((c) => c.method)));
+    check("(C) ⭐ …and the confirm is open on that entry, naming it",
+      /Delete .* permanently/.test((win.document.querySelector("#memory-root .rp-toolhost .mem-form") || {}).textContent || ""),
+      (win.document.querySelector("#memory-root .rp-toolhost .mem-form") || {}).textContent || "no confirm");
+
+    // ⭐ STALE IS REACHABLE IN ONE STEP. Under the cycle it took two, and the
+    // first of them wrote `verified` + a verify audit row on the way past.
   }
 
   // ── (D) the failure message — refusal vs miss, and which credential ──────
@@ -301,7 +392,7 @@ function toolLabels(win) {
     // A refusal with rows:null — the auth-shaped arm.
     win.fetch = () => Promise.resolve({ ok: false, status: 401 });
     open(win, "f1");
-    clickOrFail(win.document.querySelector("#memory-root .mi-curate"), "the ✎ status chip");
+    pickStatus(win, "Verified");
     await tick(); await tick(); await tick();
     const box = win.document.querySelector("#memory-root .mem-writeerr");
     check("(H) a refused write raises a banner", !!box, "no banner");
@@ -319,7 +410,7 @@ function toolLabels(win) {
     const win = boot("phrase");
     win.fetch = () => Promise.resolve({ ok: false, status: 403 });
     open(win, "f1");
-    clickOrFail(win.document.querySelector("#memory-root .mi-curate"), "the ✎ status chip (phrase)");
+    pickStatus(win, "Verified");
     await tick(); await tick(); await tick();
     const bar = win.document.querySelector("#memory-root .mem-authbar");
     check("(H) ⭐ a phrase-holder whose write was refused is given the unlock row",

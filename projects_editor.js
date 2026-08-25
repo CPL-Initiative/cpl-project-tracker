@@ -62,9 +62,10 @@
     return null;
   }
   function signIn(email) {
-    try {
-      sessionStorage.setItem("cpl_sb_return_tab", "dashboard");
-    } catch (e) {}
+    // Cross-browser-tab: the magic link opens a new one, where sessionStorage
+    // is empty. The keeper writes the shared copy too.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("dashboard");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "dashboard"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",

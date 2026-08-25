@@ -61,7 +61,7 @@ an **external** indexer from Sam's private Obsidian vault, last indexed
 2026-07-19, all CPL content, and the GR tab reads none of it. There is no path
 from a browser into that corpus. So "add an artifact to the KB" was scoped to
 what it can honestly be today: a register row with a link, a division, and a
-human `why`. Nothing is analysed automatically, and the form says so.
+human `why`. Nothing is analyzed automatically, and the form says so.
 
 ### The feature nobody asked for that justifies the whole thing
 
@@ -173,3 +173,79 @@ Tests **71 → 125**.
 The workflow was sized at six lenses and fanned out to ~80 agents, because every
 finding drew two skeptics. That is well past this repo's under-15 guideline. It
 paid for itself, but the cap belongs on candidates-per-lens, not on lenses.
+
+---
+
+## 2026-08-25 — SkyFixer S193: editing a priority, and what "reanalysis" turned out to mean
+
+Sam, mid-session: *"I want to make some fixes on the GR Priorities tab to be able
+to edit the drop down info on each regulation priority and run a reanalysis on
+the items edited on demand after edits are in… I need to get the CO a draft of
+the reg changes I am proposing this week."*
+
+### ⭐ The word "reanalysis" had no referent
+
+Before building anything I looked for the analyzer. **`blast_rank` appears in no
+Python, no SQL and no workflow in this repo.** All 16 CPL revisions carry a rank;
+all 4 dual-enrollment ones carry none. The ranks were *authored* during the
+Sky168 rebuild. So "re-run the analysis" would have meant building an analyzer
+and calling it a re-run.
+
+That reframed the whole task. The honest question is not *how do we re-run it*
+but *what should it compute*, and the answer follows from the audience: these
+rows become a **Chancellor's Office submission**.
+
+⭐ **So the analysis is deterministic, and that is the design, not a shortcut.**
+Four checks, all derivable from the row itself:
+
+1. sections the **text cites** that are missing from the citation list
+2. **listed** sections the text no longer cites
+3. numbers **no code band claims** (a bare `53410` is ambiguous between Gov. Code
+   §53xxx and Title 5 §53410 — the divergence this file already records)
+4. sections **another priority area also claims** — the conflict this register
+   exists to surface before rulemaking rather than during it
+
+Plus a verification stamp standing over citations that have since changed.
+
+**An answer you can re-derive is one you can defend. A model's opinion about
+blast radius is not.** An LLM lane for `blast_why`/`blast_rank` remains
+scoped-not-built; it needs a new `cpl-chat` drafting surface and an Edge
+Function deploy, which ships separately from Pages.
+
+### ⚠️ Bare numbers in prose are not harvested
+
+A `§` is required. Without it, *"In 2026 the board reviewed course 55050 and item
+66025"* becomes two citations — and a fabricated citation with a confident face
+on it is the one error this register cannot ship to the CO.
+
+### ⚠️ A verification cannot outlive the list it describes
+
+"Mark citations verified" means *I checked THESE against the source*. Editing the
+citations makes that untrue, so the edit clears `verified_at`/`verified_by`. This
+is the same defect as `cpl_memory`'s status cycle leaving a stamp on a stale row,
+one table over, found the same afternoon — which is the tell that it is a shape
+rather than an incident.
+
+### ✅ Editing needed no new audit plumbing — measured, not assumed
+
+`CLAUDE.md` warned that `gr_history` has **no write policy**, which reads like a
+blocker for an editor. It is not: `gr_capture_history()` fires on UPDATE and
+DELETE for all three tables and `gr_stamp_actor()` stamps the actor, both as
+**triggers**. The browser never writes history, which is why it needs no policy.
+
+### ⚠️ Two roadmap corrections
+
+- The GR row said `sensitivity` defaults restricted **"(nothing open)"** and that
+  flipping rows open was Sam's call *"nothing open today"*. **Measured false:**
+  `cpl` revisions already carry `sensitivity='open'`. That matters before any
+  export, because the unverified-text caveat travels in `draftWord()`.
+- **0 of 20 revisions are `verified`.** For a CO draft this week that is the
+  number to move, and it is curator work, not analysis.
+
+### Method note
+
+⚠️ **Two of six perturbations did not apply on the first attempt** — one anchor
+matched twice (the add-form has the same citation guard as the editor) and one
+produced a syntax error. Both suites passed unchanged, which looks exactly like a
+guard holding. **A perturbation that fails to perturb proves nothing**; both were
+redone against the editor's own line and confirmed red.

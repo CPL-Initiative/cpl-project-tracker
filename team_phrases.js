@@ -140,7 +140,10 @@
     return { apikey: SUPABASE_ANON, Authorization: "Bearer " + ((s && s.access_token) || SUPABASE_ANON) };
   }
   function signIn(email) {
-    try { sessionStorage.setItem("cpl_sb_return_tab", "team-phrases"); } catch (e) {}
+    // sessionStorage is PER BROWSER TAB and the magic link opens a NEW one, so a
+    // stash written here was invisible where it is read. The keeper writes both.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("team-phrases");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "team-phrases"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST", headers: { apikey: SUPABASE_ANON, "Content-Type": "application/json" },

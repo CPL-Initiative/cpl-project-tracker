@@ -44,6 +44,23 @@ a{color:var(--cobalt)}
 .mast .brand{font-family:var(--serif);font-weight:700;font-size:1.15rem;color:var(--text-strong)}
 .mast .tag{color:var(--text-muted);font-size:.82rem}
 .msearch{display:flex;gap:7px;align-items:center;flex:1 1 260px;max-width:560px;min-width:0}
+/* Suggestions. The wrapper is the positioning context so the list hangs under
+   the input rather than under the whole form (which includes the button). */
+.sugwrap{position:relative;flex:1 1 auto;min-width:0;display:flex}
+.sug{position:absolute;left:0;right:0;top:calc(100% + 4px);z-index:60;margin:0;padding:4px 0;
+  list-style:none;background:var(--surface-opaque,#fff);border-radius:9px;
+  border:1px solid var(--border-strong,rgba(28,28,26,.30));box-shadow:0 12px 30px rgba(20,20,30,.17);
+  max-height:min(58vh,420px);overflow-y:auto}
+.sug li{display:flex;gap:.55em;align-items:baseline;padding:.42em .7em;cursor:pointer}
+.sug li.on{background:var(--surface-subtle,#F7F5F1)}
+/* The kind is a WORD. Two different destinations must not be told apart by a
+   color or an icon alone. */
+.sg-k{flex:none;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--text-muted,#5C5C55);min-width:4.4em}
+.sg-l{flex:1 1 auto;min-width:0;font-size:.88rem;font-weight:600;
+  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sg-r{flex:none;font-size:.76rem;color:var(--text-muted,#5C5C55);white-space:nowrap}
+@media (max-width:560px){.sg-r{display:none}}
 .msearch input{flex:1 1 auto;min-width:0;font:inherit;font-size:.88rem;padding:8px 11px;
   border:1px solid var(--border-strong);border-radius:7px;background:var(--surface-opaque);color:var(--text-body)}
 .hits{list-style:none;margin:0 0 22px;padding:0;display:flex;flex-direction:column;gap:8px}
@@ -244,7 +261,12 @@ footer{border-top:1px solid var(--border);margin-top:32px;padding-top:16px;
   <span class="brand">SkyView <span class="tag">— prototype v1</span></span>
   <form class="msearch" id="msearch" role="search">
     <label for="gq" class="sr">Search courses, colleges and disciplines</label>
-    <input type="search" id="gq" placeholder="Search a course, code or discipline — e.g. welding, MATH 110, phlebotomy">
+    <div class="sugwrap">
+      <input type="search" id="gq" autocomplete="off" role="combobox" aria-expanded="false"
+             aria-autocomplete="list" aria-controls="sug" aria-haspopup="listbox"
+             placeholder="Search a course, code or discipline — e.g. welding, MATH 110, phlebotomy">
+      <ul class="sug" id="sug" role="listbox" aria-label="Search suggestions" hidden></ul>
+    </div>
     <button class="btn primary" type="submit">Search</button>
   </form>
 </div>
@@ -277,6 +299,10 @@ document.getElementById("prov").textContent =
   DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
+  // A highlighted suggestion IS the answer: pressing Enter on it must go where
+  // the reader is looking, not re-run a ranking rule that may pick differently.
+  if (takeHighlighted()) return;
+  closeSug();
   var term = document.getElementById("gq").value;
   // One search box, two behaviors, chosen by what is on screen: with the map
   // open it flies and rings; anywhere else it lists results. The canvas being
@@ -290,6 +316,88 @@ document.getElementById("msearch").addEventListener("submit", function(ev){
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
   return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+
+/* ══ search suggestions ══════════════════════════════════════════════════
+ * Sam, 2026-08-25: "The keyword search should start to show likely matches
+ * based on key entries — like a Google search does."
+ *
+ * The corpus lives in ccr_universe.js, which owns __ccrSuggest and knows how to
+ * fly; this owns the dropdown, because the box is in the MASTHEAD and every
+ * view below replaces #view wholesale. Splitting it the other way would put a
+ * DOM the views can destroy inside the module that must keep it.
+ *
+ * WHY THIS MATTERS BEYOND CONVENIENCE: a term can name several subjects
+ * ("art" → Art, Culinary Arts, Theater Arts), and on Enter something has to
+ * choose. Choosing for the curator is a guess however it is ranked. Here they
+ * choose first, and the guess never happens.
+ */
+var sugEl = document.getElementById("sug");
+var gqEl = document.getElementById("gq");
+var sugItems = [], sugAt = -1;
+
+function closeSug(){
+  sugItems = []; sugAt = -1;
+  if (!sugEl) return;
+  sugEl.hidden = true; sugEl.innerHTML = "";
+  if (gqEl){ gqEl.setAttribute("aria-expanded","false"); gqEl.removeAttribute("aria-activedescendant"); }
+}
+function markSug(){
+  if (!sugEl) return;
+  Array.prototype.forEach.call(sugEl.children, function(li,i){
+    var on = i === sugAt;
+    li.setAttribute("aria-selected", on ? "true" : "false");
+    li.className = on ? "on" : "";
+  });
+  if (gqEl){
+    if (sugAt >= 0) gqEl.setAttribute("aria-activedescendant","sug-"+sugAt);
+    else gqEl.removeAttribute("aria-activedescendant");
+  }
+}
+function takeHighlighted(){
+  if (sugAt < 0 || !sugItems[sugAt]) return false;
+  var it = sugItems[sugAt];
+  closeSug();
+  if (typeof window.__ccrGoSuggestion === "function") return !!window.__ccrGoSuggestion(it);
+  return false;
+}
+function openSug(term){
+  if (!sugEl || typeof window.__ccrSuggest !== "function") return;
+  sugItems = window.__ccrSuggest(term, 8) || [];
+  sugAt = -1;
+  if (!sugItems.length){ closeSug(); return; }
+  sugEl.innerHTML = sugItems.map(function(it,i){
+    // The KIND is a word, not a color or an icon: "subject" and "course" are
+    // different destinations and the reader has to be able to tell which one
+    // they are about to be sent to.
+    var right = it.kind === "subject"
+      ? num(it.n) + " identit" + (it.n === 1 ? "y" : "ies")
+      : esc(it.sub || "");
+    return '<li id="sug-'+i+'" role="option" aria-selected="false" data-i="'+i+'">'+
+      '<span class="sg-k">'+(it.kind === "subject" ? "subject" : "course")+'</span>'+
+      '<span class="sg-l">'+esc(it.label)+'</span>'+
+      '<span class="sg-r">'+right+'</span></li>';
+  }).join("");
+  sugEl.hidden = false;
+  if (gqEl) gqEl.setAttribute("aria-expanded","true");
+  Array.prototype.forEach.call(sugEl.children, function(li){
+    // mousedown, not click: the input's blur fires first on a click and would
+    // close the list out from under the pointer.
+    li.addEventListener("mousedown", function(ev){
+      ev.preventDefault(); sugAt = +li.dataset.i; takeHighlighted();
+    });
+    li.addEventListener("mouseenter", function(){ sugAt = +li.dataset.i; markSug(); });
+  });
+}
+if (gqEl){
+  gqEl.addEventListener("input", function(){ openSug(gqEl.value); });
+  gqEl.addEventListener("keydown", function(ev){
+    if (ev.key === "Escape"){ closeSug(); return; }
+    if (!sugItems.length) return;
+    if (ev.key === "ArrowDown"){ ev.preventDefault(); sugAt = (sugAt+1) % sugItems.length; markSug(); }
+    else if (ev.key === "ArrowUp"){ ev.preventDefault(); sugAt = (sugAt<=0?sugItems.length:sugAt)-1; markSug(); }
+  });
+  gqEl.addEventListener("blur", function(){ setTimeout(closeSug, 120); });
+}
 function num(n){return (n==null?0:n).toLocaleString("en-US");}
 
 /* ══ breadcrumbs ══ */

@@ -1,50 +1,74 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-25 · A working session with Sam driving SkyView in a browser while we fixed what he found. He confirmed the Memory Briefing works — and then reading it turned up a real problem: it named Sierra College as the college with bad data when the college was actually Moreno Valley. Sierra is our assistant's name AND a genuine California community college, so that is a false statement about a real institution rather than a slip of wording. We recorded the rule; fixing it in the assistant itself needs Sam's go, because it would change what she says on the public page too. On SkyView: the search was announcing highlighted results while showing none (it zoomed out past the point where the dots are drawn at all), two search boxes became one, course names stopped printing on top of each other, and the map is now what you see first with the subject list as a button on it — which we could only do after making the map usable from a keyboard, which it never was. Underneath all of it we found that the ID used to move a course between groups does not always point at just one course; about 1,800 of them point at more than one. Nobody has ever made a bad move, because nobody has made a move at all yet. Those moves are now refused with the reason rather than guessing.",
- "_session": "Session 192 (SkyCruise)",
- "_status": "SkyView is genuinely workable now, and one thing is holding back everything built on top of it: the grouped work surface — the screen that shows a cluster of identities that might be the same course — exists for only 5 of the 159 subjects on the map, about 1% of the corpus. Leading with the map means clicking into somewhere with nothing to open most of the time; the page says so rather than appearing broken. Building it for every subject is the next job, and the way to do it already exists in the code for something else. Everything from today is in PR #1329, open as a draft.",
+ "_as_of": "2026-08-25 · A long working session with Sam driving COBI in a browser and reporting things as he hit them. Almost everything found was a real defect rather than a preference. The Memory tab's status chip appeared to do nothing: the instruction that saves a change was addressed by a name that six entries simply do not have, so those saves quietly matched nothing and the page blamed an expired team phrase instead. Once that was fixed the chip turned out to step through the statuses in a fixed loop — and every step it passed through was really saved, so getting an entry to 'stale' recorded a verification along the way that nobody had made. One entry still carries that false mark. Signing in by email link always returned you to the Common Course Reference no matter where you started, for everyone, because the note saying where you were is kept in a place a newly-opened browser tab cannot see. On SkyView, searching for a subject spelled three slightly different ways sent you to an unrelated subject entirely; the search now offers suggestions as you type. And the GR Priorities tab can now be edited row by row, with an on-demand re-check of each item's legal citations before anything goes to the Chancellor's Office.",
+ "_session": "Session 193 (SkyFixer)",
+ "_status": "Two releases went out today. The first is live: the sign-in state now shows at the top of every COBI screen, and Memory entries can be marked inactive, restored or deleted. The second is waiting on its tests and carries the SkyView search fixes, the Memory status menu, the email-link return fix, and the new GR Priorities editing. The one genuinely unfinished thing is on GR: none of the twenty regulation revisions has had its legal citations checked against the primary source yet, and that is curator work rather than something the software can do. For a draft going to the Chancellor's Office this week, that is the number worth moving.",
  "items": [
   {
-   "id": "s192-sam-drives-flipped-skyview",
+   "id": "s193-sam-gr-edit-and-reanalyze",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "Open a regulation priority, edit it, and press Re-analyze. The check is deliberately not an opinion — it tells you which sections your text cites that are missing from the citation list, which listed ones the text no longer mentions, any section number that is ambiguous between two codes, and any section another priority area is also proposing to change. It checks the row against itself, not against the law."
+  },
+  {
+   "id": "s193-sam-gr-verify-citations",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "None of the 20 regulation revisions has had its citations confirmed against the primary source — 0 of 20. For a draft going to the Chancellor's Office this week that is the number to move, and only a person can do it. Each row has a 'Mark citations verified' button."
+  },
+  {
+   "id": "s193-sam-false-verification-stamp",
+   "for": "Sam",
+   "tab": "memory",
+   "text": "Say whether to clear one entry that is marked stale but still carries a verification stamp — it was recorded by the old status chip while stepping past 'verified', not by anyone actually checking it. Eleven other entries carry a person's name as verifier while still proposed; those are real and must not be touched."
+  },
+  {
+   "id": "s193-sam-gr-open-rows",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "Some CPL regulation rows are already set to 'anyone in the CO' rather than MAP team only. Our notes said nothing was open yet, which turned out to be wrong. Worth a look before anything is exported, because the 'not yet verified against the source' caveat travels with the Word file."
+  },
+  {
+   "id": "s193-sam-gr-llm-lane",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "Decide whether you want drafting help for the 'Why it matters' text and the priority ranking. It is not built. It would need a change to the assistant's server, which is deployed separately from the site and is shared with the public assistant, so it is a deliberate step rather than a small one."
+  },
+  {
+   "id": "s193-sam-skyview-density",
    "for": "Sam",
    "tab": "unified-courses",
-   "text": "Open SkyView and drive the flipped view. It now opens on the map instead of the subject list, the search lands where the results actually are, and course names no longer print on top of each other. Density and how the drop target should look are your calls."
+   "text": "Open the Common Course Reference. It now shows the map first, with the list a button away. Try typing a subject name — suggestions should appear as you type — and try 'Browse subjects as a list', which now gives you an actual filterable list of all 302 subjects instead of the work-packaging screen it used to open."
   },
   {
-   "id": "s192-sierra-guidance-go",
-   "for": "Sam",
-   "tab": "cpl-assistant",
-   "text": "Say whether we should add an assistant rule that Sierra (our assistant) and Sierra College (a real college in Rocklin) are never to be confused. We have recorded it as a memory, but a rule would also change what the assistant says on the public page, so it needs your go."
-  },
-  {
-   "id": "s192-decision-packs-everywhere",
+   "id": "s193-fable-decision-packs-everywhere",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Build the grouped work surface for every subject, not just 5 of 159. It is too big to ship in one file, but the code already loads course descriptions one subject at a time on demand, so the same approach applies."
+   "text": "Build the grouped work surface for every subject, not just 5 of 159 — about 1% of the corpus. It is the bottleneck behind every other improvement to that tab. It is too big for one file, but the code already fetches course descriptions one subject at a time, so the pattern exists."
   },
   {
-   "id": "s192-two-real-courses-worklist",
+   "id": "s193-fable-two-real-courses-worklist",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Work the 73 control numbers that point at two genuinely different courses. They sit at 12 colleges and 93 of the rows are at San Jose City College alone, so it is one conversation more than it is a project."
+   "text": "Work the 73 course-control numbers that genuinely point at two different courses. They sit at 12 colleges and 93 of the rows are at San Jose City College alone, so it is one conversation more than it is a project."
   },
   {
-   "id": "s192-roster-fold-member-list",
+   "id": "s193-fable-unattributed-verified",
    "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Apply the college-name fold to the member list. We already wrote down which spellings are duplicates, but only one part of the system reads that list — so a curator currently sees 'CaÃ±ada College' with the accent mangled, and two colleges where there is one."
+   "tab": "memory",
+   "text": "Twenty-six memory entries are marked verified but name nobody as the verifier. New verifications now record the signed-in person, so this is a backlog rather than an ongoing leak."
   },
   {
-   "id": "s192-esl-stray-discipline",
+   "id": "s193-fable-member-roster-fold",
    "for": "Fable",
    "tab": "unified-courses",
-   "text": "Clean up the one ESL subject name that is not in the official list. Nine identities sit under 'English as a Second Language (ESL)', which colleges created by typing the whole subject name into the course-subject field. The other three ESL names are all legitimate."
+   "text": "Cañada College still renders with a mangled name in SkyView's member list. The name-folding rules exist but the member list never consults them, and the source export carries only the broken spelling — 678 times — so it needs repair at source."
   },
   {
-   "id": "s192-merge-1329",
+   "id": "s193-fable-my-college-cell",
    "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Merge PR #1329 once its checks pass — it carries everything from this session."
+   "tab": "my-college",
+   "text": "The My College entry in the project notes has grown past its size budget and now states several generations of findings at once. It should be cut back to what is currently true, with the history moved to that workstream's lessons file."
   }
  ]
 }

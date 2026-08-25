@@ -4867,3 +4867,19 @@ justification, so deleting the list turns it red.
 contacts entries that are each right and misleading apart.
 **Both merged, neither live at the time** — deployed the next day by SkyAlign (below).
 Story `docs/cobi_memory_tab_lessons.md` · handoff `docs/session_191_handoff.md`.
+
+---
+
+### SkyAlign S190 — a stale copy said a busy college was empty (2026-08-25)
+
+**Sam: *"The data are wrong, particularly for Moreno Valley College."*** (#1325/#1326)
+⭐ Sierra read a **June snapshot** on district questions only: MVC **0 students** against a live **2,887**.
+Fixed by DELETING the second source, not refreshing it — two copies of one fact drift again, and a stale
+number looks exactly like a fresh one.
+⚠️ **Half a two-half feature deploys itself** — the memory client is a static file (Pages, on merge), the
+Edge Function needs a dispatch, and `cpl-chat-smoke` tests the DEPLOYED function so nothing notices.
+⚠️ **The repo is not the deployment** — I inferred v57 from `git show` until Sam pointed at the doc that
+says read the LIVE source. It matched (`4796b51376780b07`); that was luck, not method.
+⚠️ **I shipped the bug I had just read about, 4×** (assertions pinned to a closing paren); 34 of that shape
+survive repo-wide. ⭐ And **`exit=0` was my trailing `grep`** — a red suite nearly passed for green.
+Story `docs/college_action_page_lessons.md` · handoff `docs/session_192_handoff.md`.

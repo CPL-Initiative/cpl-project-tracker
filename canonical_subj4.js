@@ -58,7 +58,10 @@
     // unified_courses.js (consumeAuthHash) can restore us here after the
     // magic-link round-trip — otherwise the user gets bounced to the
     // Common Course Reference tab.
-    try { sessionStorage.setItem("cpl_sb_return_tab", "canonical-subj4"); } catch (e) {}
+    // sessionStorage is PER BROWSER TAB and the magic link opens a NEW one, so a
+    // stash written here was invisible where it is read. The keeper writes both.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("canonical-subj4");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "canonical-subj4"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",

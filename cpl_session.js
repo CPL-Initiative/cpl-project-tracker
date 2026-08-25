@@ -306,6 +306,57 @@
     return h;
   }
 
+  /* ── where to come back to ────────────────────────────────────────────────
+   * Sam, 2026-08-25: "when log in to curate is done and magic link is clicked
+   * from email, it takes me to the CCR screen and should take me to the screen
+   * I was on."
+   *
+   * ⭐ SAME ROOT CAUSE AS THIS WHOLE FILE, ONE KEY OVER. Nine modules stash the
+   * tab in `sessionStorage.cpl_sb_return_tab` — and sessionStorage is PER
+   * BROWSER TAB. The magic link opens a NEW tab, so the stash written in the
+   * old one is invisible there, the reader falls back to its default, and every
+   * sign-in from anywhere landed on the Common Course Reference. This file's own
+   * header comment cites cpl_sb_return_tab as the thing that "restores the right
+   * IN-APP tab" while it could not, for exactly the reason the file exists.
+   *
+   * So the canonical copy moves to localStorage, which every tab of an origin
+   * shares. Two differences from the session itself:
+   *   · IT EXPIRES. A session should outlive the trip to an inbox; a "come back
+   *     to Memory" note should not still be lying around tomorrow, quietly
+   *     hijacking an unrelated sign-in. 30 minutes is longer than any inbox
+   *     round trip and shorter than any working session.
+   *   · IT IS TAKEN, NOT READ. One sign-in, one redirect: leaving it behind
+   *     would send the NEXT arrival to the same place.
+   */
+  var RETURN_KEY = "cpl_sb_return_tab";
+  var RETURN_TTL_MS = 30 * 60 * 1000;
+  function stashReturnTab(tab) {
+    if (!tab) return;
+    // Both stores: localStorage is what the new browser tab can see, and
+    // sessionStorage keeps the same-tab flow working with no behavior change
+    // where it already worked.
+    try { localStorage.setItem(RETURN_KEY, JSON.stringify({ tab: tab, at: Date.now() })); } catch (e) { /* ignore */ }
+    try { sessionStorage.setItem(RETURN_KEY, tab); } catch (e) { /* ignore */ }
+  }
+  function takeReturnTab() {
+    var out = null;
+    try {
+      var raw = localStorage.getItem(RETURN_KEY);
+      if (raw) {
+        var v = JSON.parse(raw);
+        // An older plain-string value (or one with no stamp) is honored once
+        // rather than discarded — a stash written before this shipped is still
+        // a real answer to "where was I".
+        if (typeof v === "string") out = v;
+        else if (v && v.tab && (!v.at || Date.now() - v.at < RETURN_TTL_MS)) out = v.tab;
+      }
+    } catch (e) { /* ignore */ }
+    if (!out) { try { out = sessionStorage.getItem(RETURN_KEY) || null; } catch (e) { /* ignore */ } }
+    try { localStorage.removeItem(RETURN_KEY); } catch (e) { /* ignore */ }
+    try { sessionStorage.removeItem(RETURN_KEY); } catch (e) { /* ignore */ }
+    return out;
+  }
+
   var timer = null;
   function tick() {
     if (sync()) announce(read());   // this tab just picked up another tab's sign-in
@@ -343,6 +394,9 @@
     ensureFresh: ensureFresh,
     authHeaders: authHeaders,
     signOut: function () { drop(); announce(null); },
+    stashReturnTab: stashReturnTab,
+    takeReturnTab: takeReturnTab,
+    _returnTtlMs: RETURN_TTL_MS,
     sync: sync,
     start: start,
     _skewMs: SKEW_MS,
