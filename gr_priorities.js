@@ -311,6 +311,20 @@
       ".grx select,.grx input[type=text],.grx input[type=date],.grx textarea{padding:6px 9px;border:1px solid var(--gx-bstrong);",
       "border-radius:5px;font:13px inherit;background:var(--gx-surface);color:var(--gx-ink);}",
       ".grx textarea{width:100%;min-height:64px;resize:vertical;}",
+      // edit + re-analysis
+      ".grx .gx-rowwork{margin-top:10px;}",
+      ".grx .gx-edit{margin:0;}",
+      ".grx .gx-pathset{display:inline-flex;gap:12px;flex-wrap:wrap;align-items:center;}",
+      ".grx .gx-pathopt{display:inline-flex;align-items:center;gap:4px;font-size:.84rem;cursor:pointer;}",
+      ".grx .gx-analysis{border:1px solid var(--gx-b);border-radius:8px;padding:10px 12px;background:var(--gx-soft,#f7f6f2);}",
+      ".grx .gx-analysis h5{margin:0 0 7px;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase;color:var(--gx-mut);}",
+      ".grx .gx-fnd{display:flex;gap:8px;align-items:baseline;padding:5px 0;border-top:1px solid var(--gx-b);font-size:.86rem;line-height:1.45;}",
+      ".grx .gx-fnd:first-of-type{border-top:none;}",
+      // The kind is a WORD; the tint only reinforces it.
+      ".grx .gx-fnd-k{flex:none;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:var(--gx-mut);min-width:3.4em;}",
+      ".grx .gx-fnd.warn .gx-fnd-k{color:#8a1f11;}",
+      ".grx .gx-fnd-t{flex:1 1 auto;min-width:0;}",
+      ".grx .gx-chip.primary{background:var(--gx-ink,#0b3d61);color:#fff;border-color:var(--gx-ink,#0b3d61);}",
       // toolbar
       ".grx .gx-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:10px 12px;border:1px solid var(--gx-border);",
       "border-radius:7px;background:var(--gx-card);margin-bottom:14px;}",
@@ -583,11 +597,287 @@
           });
       });
       ctl.appendChild(sens);
+
+      // Edit + Re-analyze. Both act on THIS row and both render into one host
+      // below the controls, so only one of them is ever on screen — an editor
+      // and its own analysis side by side invites saving what the analysis was
+      // computed from rather than what is now in the fields.
+      var work = el("div", { class: "gx-rowwork" });
+      var eb = el("button", { class: "gx-chip", type: "button", text: "Edit" });
+      eb.title = "Change this item's wording, citations, pathway and status.";
+      var ab = el("button", { class: "gx-chip", type: "button", text: "Re-analyze" });
+      ab.title = "Re-check this row against itself: citations in the text vs the list, "
+        + "ambiguous codes, sections another priority area also claims, and a verification "
+        + "stamp standing over citations that have since changed.";
+      function runAnalysis() {
+        renderAnalysis(work, r, analyzeRevision(r, state.revisions, areaTitleMap()), function (c) {
+          // PROPOSES, NEVER APPLIES — until this is pressed.
+          var next = (r.citations || []).concat([c]);
+          msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+          var rec = { citations: next, updated_by: whoami(), updated_at: new Date().toISOString() };
+          if (r.verified_at) { rec.verified_at = null; rec.verified_by = null; rec.verified_note = null; }
+          patchRevision(r.id, rec).then(function () {
+            r.citations = next;
+            if (rec.verified_at === null) { r.verified_at = null; r.verified_by = null; }
+            msg.className = "gx-rowmsg ok"; msg.textContent = "added";
+            runAnalysis();
+          }).catch(function (e) { msg.className = "gx-rowmsg err"; msg.textContent = e.message; });
+        });
+      }
+      eb.addEventListener("click", function () {
+        editRevisionForm(r, work, function (saved, citesChanged) {
+          work.innerHTML = "";
+          if (!saved) return;
+          msg.className = "gx-rowmsg ok";
+          msg.textContent = citesChanged && !r.verified_at
+            ? "saved \u2014 citations changed, so the verification was cleared"
+            : "saved";
+          // Re-analysis is the point of editing, so it runs itself once the edit
+          // lands rather than waiting to be asked a second time.
+          runAnalysis();
+        });
+      });
+      ab.addEventListener("click", runAnalysis);
+      ctl.appendChild(eb);
+      ctl.appendChild(ab);
       ctl.appendChild(msg);
       desc.appendChild(ctl);
+      desc.appendChild(work);
     }
     d.appendChild(desc);
     return d;
+  }
+  // Area id → title, for naming the OTHER area in a cross-area citation clash.
+  function areaTitleMap() {
+    var m = {};
+    (state.areas || []).forEach(function (a) { m[a.id] = a.title || a.id; });
+    return m;
+  }
+
+  /* ══ EDIT A REVISION, AND RE-ANALYZE IT ═══════════════════════════════════
+   * Sam, 2026-08-25: "be able to edit the drop down info on each regulation
+   * priority and run a reanalysis on the items edited on demand after edits are
+   * in." He needs a draft of proposed reg changes for the Chancellor's Office
+   * this week, so both halves serve one thing: getting a row right before it
+   * leaves the building.
+   *
+   * ⭐ THE RE-ANALYSIS IS DETERMINISTIC, NOT A MODEL. Nothing in this repo has
+   * ever computed anything on these rows — `blast_rank` was authored during the
+   * Sky168 rebuild, and the word "reanalysis" had no referent yet. What a
+   * register like this actually needs before it goes to the CO is not new prose
+   * but the four checks a lawyer makes first: does the citation list still match
+   * what the text cites, is anything ambiguous, does another priority area cite
+   * the same section, and is a verification stamp still standing over citations
+   * that have since changed. All four are answerable from the row itself, and an
+   * answer you can re-derive is one you can defend. A model's opinion about
+   * blast radius is neither.
+   *
+   * ⚠️ IT PROPOSES AND NEVER APPLIES. Every finding is a sentence plus, where
+   * there is one, a button the curator presses.
+   */
+  /* The editor. Field-for-field with what the row RENDERS, because a form whose
+   * labels differ from the display is a form people fill in wrongly.
+   *
+   * ⚠️ THREE THINGS IT MUST NOT DO, each one a rule this repo has already paid
+   * for somewhere else:
+   *   · Guess a citation. Everything typed goes through parseCites, and anything
+   *     no band claims comes BACK to the typist rather than being filed under
+   *     the nearest plausible code.
+   *   · Keep a verification stamp over citations that have changed. A
+   *     verification says "I checked THESE against the source"; change the list
+   *     and it stops saying that. Same defect as cpl_memory's status cycle
+   *     leaving verified_at on a stale row, one table over.
+   *   · Offer `sensitivity`. It already has its own control three inches away,
+   *     and two controls for one field drift.
+   */
+  function editRevisionForm(r, host, onSaved) {
+    var f = el("div", { class: "gx-form gx-edit" });
+    f.appendChild(el("h4", { text: "Edit \u2014 " + (r.title || "revision") }));
+
+    var title = textInput(""); title.value = r.title || "";
+    var grp = textInput("Section heading this sits under"); grp.value = r.grp || "";
+    var why = el("textarea", { placeholder: "Why it matters \u2014 the argument for this item" });
+    why.value = r.blast_why || "";
+    var appr = el("textarea", { placeholder: "Approach \u2014 what the change actually does" });
+    appr.value = r.summary || "";
+    var cons = el("textarea", { placeholder: "Consideration \u2014 tailwinds, obstacles, prior art" });
+    cons.value = r.consideration || "";
+    var instr = textInput("e.g. GUIDANCE"); instr.value = r.instrument || "";
+    var cites = textInput("T5 \u00a755050, EC \u00a766025.71 \u2014 comma separated");
+    cites.value = (r.citations || []).join(", ");
+    var edf = selectOf(["", "Yes", "No"], ["Ed. Code change first? \u2014 unset", "Ed. Code change first? Yes", "Ed. Code change first? No"]);
+    edf.value = r.ed_first || "";
+    var st = selectOf(STATUSES, STATUSES.map(stLabel)); st.value = r.status || "proposed";
+    var rank = el("input", { type: "text", placeholder: "Blast rank (1 = widest), blank to clear" });
+    rank.value = r.blast_rank == null ? "" : String(r.blast_rank);
+
+    // Pathway is a SET, so it gets checkboxes. A single select would quietly
+    // drop the second path on any row that carries two.
+    var pathWrap = el("span", { class: "gx-pathset" });
+    var pathBoxes = {};
+    ["g", "y", "r"].forEach(function (k) {
+      var lab = el("label", { class: "gx-pathopt" });
+      var cb = el("input", { type: "checkbox" });
+      cb.checked = (r.pathway || []).indexOf(k) >= 0;
+      pathBoxes[k] = cb;
+      lab.appendChild(cb);
+      lab.appendChild(el("span", { text: " " + (TLBL[k] || k) }));
+      lab.title = TTITLE[k] || "";
+      pathWrap.appendChild(lab);
+    });
+
+    f.appendChild(field("Title", title));
+    f.appendChild(el("div", { class: "gx-frow" }, [field("Section heading", grp), field("Instrument", instr)]));
+    f.appendChild(field("Why it matters", why));
+    f.appendChild(field("Approach", appr));
+    f.appendChild(field("Consideration", cons));
+    f.appendChild(field("Citations", cites));
+    f.appendChild(field("Legal pathway", pathWrap));
+    f.appendChild(el("div", { class: "gx-frow" }, [field("Ed. Code first", edf), field("Status", st), field("Blast rank", rank)]));
+
+    var err = el("p", { class: "gx-err", text: "" });
+    f.appendChild(err);
+    var save = el("button", { class: "gx-chip primary", type: "button", text: "Save changes" });
+    var cancel = el("button", { class: "gx-chip", type: "button", text: "Cancel" });
+    cancel.addEventListener("click", function () { onSaved(false); });
+    save.addEventListener("click", function () {
+      var parsed = parseCites(cites.value);
+      if (parsed.bad.length) {
+        err.className = "gx-err";
+        err.textContent = "No code band claims " + parsed.bad.join(", ") +
+          ". Write the code out (T5 / EC / GC) or remove it \u2014 a bare number in the 53xxx range is genuinely ambiguous.";
+        return;
+      }
+      var paths = ["g", "y", "r"].filter(function (k) { return pathBoxes[k].checked; });
+      if (!paths.length) { err.className = "gx-err"; err.textContent = "Pick at least one legal pathway."; return; }
+      var rankVal = rank.value.trim();
+      if (rankVal && !/^[0-9]{1,3}$/.test(rankVal)) { err.className = "gx-err"; err.textContent = "Blast rank must be a whole number, or blank."; return; }
+
+      var before = (r.citations || []).join("|");
+      var after = parsed.ok.join("|");
+      var citesChanged = before !== after;
+      var rec = {
+        title: title.value.trim(), grp: grp.value.trim() || null,
+        blast_why: why.value.trim() || null, summary: appr.value.trim() || null,
+        consideration: cons.value.trim() || null, instrument: instr.value.trim() || null,
+        citations: parsed.ok, citations_derived: parsed.inferred,
+        pathway: paths, ed_first: edf.value || null, status: st.value,
+        blast_rank: rankVal === "" ? null : parseInt(rankVal, 10),
+        updated_by: whoami(), updated_at: new Date().toISOString(),
+      };
+      // The stamp cannot outlive the list it describes.
+      if (citesChanged && r.verified_at) { rec.verified_at = null; rec.verified_by = null; rec.verified_note = null; }
+      if (!rec.title) { err.className = "gx-err"; err.textContent = "A title is required."; return; }
+      save.disabled = true; err.className = "gx-err"; err.textContent = "";
+      patchRevision(r.id, rec).then(function () {
+        // Keep the in-memory row in step so the analysis below reads what was
+        // just saved rather than what was on screen before it.
+        for (var k in rec) r[k] = rec[k];
+        r._citesChangedSinceVerify = false;
+        save.disabled = false;
+        onSaved(true, citesChanged);
+      }).catch(function (e) {
+        save.disabled = false; err.className = "gx-err"; err.textContent = e.message;
+      });
+    });
+    f.appendChild(el("div", { class: "gx-rowctl" }, [save, cancel]));
+    host.innerHTML = "";
+    host.appendChild(f);
+    title.focus();
+  }
+
+  function analyzeRevision(r, allRevisions, areaTitles) {
+    var listed = (r.citations || []).slice();
+    // The row's own prose — the same fields the editor exposes, so a curator can
+    // see the analysis change as they type.
+    var prose = [r.title, r.blast_why, r.summary, r.consideration].filter(Boolean).join("\n");
+    // Section numbers as they appear in prose: "§55050", "Title 5 §55050",
+    // "Ed. Code §66025.71". Bare four-digit numbers in a sentence are NOT
+    // harvested — a year or a course number would be swept in, and a fabricated
+    // citation with a confident face on it is the one error this file already
+    // exists to prevent.
+    var found = [], seen = {};
+    String(prose).replace(/(Title\s*5|Ed\.?\s*Code|Gov\.?\s*Code|T5|EC|GC)?\s*§\s*([0-9]{4,6}(?:\.[0-9]+)?)/gi,
+      function (m, code, n) {
+        var parsed = parseCites((code ? code + " §" : "§") + n);
+        parsed.ok.forEach(function (c) { if (!seen[c]) { seen[c] = 1; found.push(c); } });
+        parsed.bad.forEach(function (b) { if (!seen["!" + b]) { seen["!" + b] = 1; found.push({ bad: b }); } });
+        return m;
+      });
+    var okFound = found.filter(function (f) { return typeof f === "string"; });
+    var ambiguous = found.filter(function (f) { return typeof f !== "string"; }).map(function (f) { return f.bad; });
+    var missing = okFound.filter(function (c) { return listed.indexOf(c) === -1; });
+    var unsupported = listed.filter(function (c) { return okFound.indexOf(c) === -1; });
+    // Cross-area: the same section claimed by another priority area. That is the
+    // conflict this register exists to surface BEFORE rulemaking rather than
+    // during it, and an edit can create one.
+    var shared = [];
+    listed.forEach(function (c) {
+      var others = {};
+      (allRevisions || []).forEach(function (o) {
+        if (o.area_id === r.area_id) return;
+        if ((o.citations || []).indexOf(c) >= 0) others[o.area_id] = 1;
+      });
+      var names = Object.keys(others);
+      if (names.length) shared.push({ cite: c, areas: names.map(function (a) { return (areaTitles || {})[a] || a; }) });
+    });
+    return {
+      missing: missing, unsupported: unsupported, ambiguous: ambiguous, shared: shared,
+      // A verification says "I checked THESE citations against the source". If
+      // the list has changed since, it no longer says that about this row.
+      staleVerification: !!(r.verified_at && r._citesChangedSinceVerify),
+      derived: !!(r.citations_derived && listed.length),
+      clean: !missing.length && !unsupported.length && !ambiguous.length && !shared.length,
+    };
+  }
+
+  function renderAnalysis(host, r, a, onAdd) {
+    host.innerHTML = "";
+    var box = el("div", { class: "gx-analysis" });
+    box.appendChild(el("h5", { text: "Re-analysis \u2014 " + (r.title || "this item") }));
+    var any = false;
+    function line(kind, text, action, label) {
+      any = true;
+      var d = el("div", { class: "gx-fnd " + kind });
+      d.appendChild(el("span", { class: "gx-fnd-k", text: kind === "warn" ? "CHECK" : "NOTE" }));
+      d.appendChild(el("span", { class: "gx-fnd-t", text: text }));
+      if (action) {
+        var b = el("button", { class: "gx-chip", type: "button", text: label });
+        b.addEventListener("click", action);
+        d.appendChild(b);
+      }
+      box.appendChild(d);
+    }
+    a.ambiguous.forEach(function (b) {
+      line("warn", "\u201c" + b + "\u201d appears in the text but no code band claims it. "
+        + "Gov. Code \u00a753xxx and Title 5 \u00a753xxx are both real \u2014 write the code out, or leave it out.");
+    });
+    a.missing.forEach(function (c) {
+      line("warn", citeLabel(c) + " is cited in the text but is not in this row's citation list.",
+        function () { onAdd(c); }, "Add it");
+    });
+    a.unsupported.forEach(function (c) {
+      line("warn", citeLabel(c) + " is listed but the text no longer cites it.");
+    });
+    a.shared.forEach(function (h) {
+      line("warn", citeLabel(h.cite) + " is also cited by " + h.areas.join(" \u00b7 ")
+        + " \u2014 two areas proposing changes to one section is a conflict to settle before rulemaking, not during.");
+    });
+    if (a.staleVerification) {
+      line("warn", "The citations changed after this row was marked verified, so the stamp no longer describes this list. "
+        + "Re-check it against the primary source.");
+    }
+    if (a.derived) {
+      line("note", "The codes on this row were extracted from the text, not confirmed by a curator. "
+        + "\u201cMark citations verified\u201d is what ends that.");
+    }
+    if (!any) {
+      box.appendChild(el("p", { class: "gx-note",
+        text: "Nothing outstanding: every section the text cites is listed, everything listed is cited, "
+            + "no code is ambiguous, and no other priority area claims these sections. "
+            + "This is a check of THIS row against ITSELF \u2014 it is not a reading of the primary source." }));
+    }
+    host.appendChild(box);
   }
 
   // ── add-forms (reviewer only) ───────────────────────────────────────────────
@@ -1239,6 +1529,9 @@
     _renderRegister: renderRegister,
     _draftDocBody: docBody,
     _patchRevision: patchRevision,
+    _analyzeRevision: analyzeRevision,
+    _renderAnalysis: renderAnalysis,
+    _editRevisionForm: editRevisionForm,
     _state: state
   };
   if (typeof window !== "undefined") window.CPL_GR = api;
