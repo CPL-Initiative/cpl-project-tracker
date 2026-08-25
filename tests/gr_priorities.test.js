@@ -270,9 +270,37 @@ check("a null read is distinguished from an empty read",
 {
   const sql = fs.readFileSync("kb/supabase_gr_register.sql", "utf8");
   const jsSrc2 = fs.readFileSync("gr_priorities.js", "utf8");
-  ["5[58][0-9]{3}", "(66|70|76)[0-9]{3}", "11[0-9]{3}"].forEach(function (band) {
-    check("band " + band + " is in the SQL", sql.indexOf(band) !== -1);
-    check("band " + band + " is mirrored in the JS", jsSrc2.indexOf(band) !== -1);
+  /* ⭐ DERIVE THE BANDS FROM THE SQL, DO NOT RESTATE THEM. This used to pin the
+   * three patterns as literals — ["5[58][0-9]{3}", "(66|70|76)[0-9]{3}", …] —
+   * which made the check fail for a CORRECT change (widening EC to 78/79 in
+   * both places for SB 135's §78093–78093.2) and pass only once someone edited
+   * the literal to match. A guard whose repair is "update the expected value"
+   * teaches its reader to bump it until green, which is the opposite of what it
+   * is for. Reading the SQL as the source of truth tests the actual invariant:
+   * whatever the SQL says, the JS says the same. Widening one and not the other
+   * is still red. */
+  var sqlBands = [];
+  // ⚠️ `T5` is a letter and a DIGIT, so [A-Z]{2} matches EC and GC and silently
+  // skips Title 5 — which is why the count below is asserted rather than the
+  // loop simply iterating whatever happened to match. A missing check is an
+  // absence, not a failure: it subtracts from both sides and reads as green.
+  sql.replace(/when sec ~ '\^([^']+)\$' then '([A-Z][A-Z0-9])'/g, function (m, pat, code) {
+    sqlBands.push([pat, code]); return m;
+  });
+  check("the SQL still declares its citation bands (3 today)", sqlBands.length === 3,
+    "found " + sqlBands.length);
+  sqlBands.forEach(function (pair) {
+    check("band " + pair[1] + " " + pair[0] + " is mirrored in the JS",
+      jsSrc2.indexOf(pair[0]) !== -1);
+  });
+  // ⚠️ And each SQL band must map to the SAME code on the JS side — mirroring
+  // the PATTERN while filing it under a different code would pass the check
+  // above and still produce a different citation for the same number.
+  sqlBands.forEach(function (pair) {
+    var i = jsSrc2.indexOf(pair[0]);
+    var tail = i < 0 ? "" : jsSrc2.slice(i, i + 60);
+    check("…and lands under " + pair[1] + " on the JS side too",
+      tail.indexOf('"' + pair[1] + '"') !== -1);
   });
   const amb = GR._parseCites("53410");
   check("a bare 53xxx is REFUSED, not guessed as Title 5 (Gov. Code §53xxx is real)",

@@ -388,6 +388,84 @@ const readStore = (w) => {
     check("a garbled shared value is ignored, not fatal", !threw && w.CPL_SESSION.get() === null);
   }
 
+  /* ── ROTATION ACROSS TABS: the freshest token wins, and a stale tab must not
+   * take the live session down with it ──────────────────────────────────────
+   *
+   * ⭐ WHY. Sam, 2026-08-25, editing GR row #3 with several sessions open: his
+   * console showed `token?grant_type=refresh_token 400` and then NO SESSION,
+   * and the save he had just pressed reported that his sign-in did not allow
+   * writing to the register. Nothing had gone wrong with his account.
+   *
+   * Refresh tokens ROTATE — the first use invalidates the old one — so a tab
+   * holding a per-tab copy from before a sibling's renewal is not holding
+   * another opinion about the session, it is holding a CONSUMED token. sync()
+   * said "this tab has the session: it is the truth", which published that
+   * consumed token over the sibling's live one; the exchange then 400'd and
+   * drop() cleared BOTH stores.
+   *
+   * ⚠️ A SINGLE-WINDOW FIXTURE CANNOT SEE THIS. Both windows below share one
+   * localStorage (what every tab of an origin sees) while keeping their own
+   * sessionStorage, which is what makes the two copies able to disagree. */
+  {
+    const fresh = sess(50 * 60 * 1000, { access_token: JWT2, refresh_token: "rt-2" });
+    const stale = sess(50 * 60 * 1000, { access_token: JWT,  refresh_token: "rt-1" });
+    // The sibling renewed: the shared copy is NEWER than this tab's.
+    fresh.exp = Date.now() + 55 * 60 * 1000;
+    const w = boot({ stored: stale, shared: fresh, marked: true });
+    // ⚠️ The keeper auto-starts on eval and syncs immediately, so the adoption
+    // has already happened by now — asserting on a SECOND sync()'s return value
+    // would read `false` and say the fix was missing. Assert the STORES.
+    check("⭐ a tab holding a pre-rotation copy ADOPTS the sibling's newer token",
+      readStore(w) && readStore(w).refresh_token === "rt-2");
+    check("⚠ …and does NOT publish its consumed token over the live one",
+      JSON.parse(w.localStorage.getItem("cpl_sb")).refresh_token === "rt-2");
+    // A rotation that arrives AFTER boot must also be adopted, and must report
+    // that it moved so a tab can re-render its lock state.
+    const newer = sess(58 * 60 * 1000, { access_token: JWT2 + "x", refresh_token: "rt-3" });
+    w.localStorage.setItem("cpl_sb", JSON.stringify(newer));
+    const moved = w.CPL_SESSION.sync();
+    check("…and a rotation arriving mid-session is adopted and announced",
+      moved === true && readStore(w).refresh_token === "rt-3");
+  }
+  {
+    // The older copy must still win when it is genuinely the newer of the two —
+    // otherwise this rule would just be "shared always wins", which resurrects
+    // a signed-out session (the hazard the TAB_MARK exists for).
+    const mine   = sess(50 * 60 * 1000, { access_token: JWT2, refresh_token: "rt-2" });
+    const older  = sess(10 * 60 * 1000, { access_token: JWT,  refresh_token: "rt-1" });
+    const w = boot({ stored: mine, shared: older, marked: true });
+    w.CPL_SESSION.sync();
+    check("⚠ …but an OLDER shared copy is not adopted — this is newest-wins, not shared-wins",
+      readStore(w).refresh_token === "rt-2"
+        && JSON.parse(w.localStorage.getItem("cpl_sb")).refresh_token === "rt-2");
+  }
+  {
+    /* And the safety net: if a renewal lands between our read and our exchange,
+     * the 400 is about a token a sibling already replaced. Believing it would
+     * delete a live session out from under every other tab. */
+    // Near expiry so ensureFresh() actually exchanges, and the shared copy is a
+    // DIFFERENT, live token — i.e. a sibling rotated between our read and our
+    // exchange. Seeded after boot so sync()'s newest-wins does not pre-empt the
+    // exchange this net exists to guard.
+    const stale = sess(60 * 1000, { access_token: JWT, refresh_token: "rt-1" });
+    const live  = sess(50 * 60 * 1000, { access_token: JWT2, refresh_token: "rt-2" });
+    const w = boot({ stored: stale, shared: stale, marked: true, refresh: 400 });
+    w.localStorage.setItem("cpl_sb", JSON.stringify(live));
+    const got = await w.CPL_SESSION.ensureFresh(); await tick();
+    check("⭐ a 400 on a token a sibling already rotated does NOT end the session",
+      !!got && got.refresh_token === "rt-2");
+    check("⚠ …and the shared copy survives it",
+      w.localStorage.getItem("cpl_sb") !== null);
+
+    // ⚠️ AND THE RULE STILL ENDS A SESSION THAT IS GENUINELY OVER. If this went
+    // green regardless, the fix would be "never sign anyone out", which is a
+    // worse bug than the one it replaces.
+    const w2 = boot({ stored: stale, shared: stale, marked: true, refresh: 400 });
+    const got2 = await w2.CPL_SESSION.ensureFresh(); await tick();
+    check("a 400 with no better shared copy DOES still end the session",
+      got2 === null && w2.localStorage.getItem("cpl_sb") === null);
+  }
+
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
   console.log(`\n${pass}/${results.length} assertions passed`);

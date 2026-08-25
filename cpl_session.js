@@ -170,9 +170,37 @@
    * so callers can announce. */
   function sync() {
     var mine = read();
-    if (mine) {                    // this tab has the session: it is the truth
+    if (mine) {
       try { sessionStorage.setItem(TAB_MARK, "1"); } catch (e) { /* ignore */ }
       var shared = readShared();
+      /* ⭐ THE FRESHEST TOKEN WINS — NOT "MINE". This read "this tab has the
+       * session: it is the truth", which is the one rule a ROTATING credential
+       * in a SHARED store cannot obey. Refresh tokens rotate: the first use
+       * invalidates the old one. So when a sibling tab renews, this tab's
+       * per-tab copy is not another opinion about the session, it is simply
+       * OLD — and "mine is the truth" made it overwrite the sibling's live
+       * token with a consumed one, then exchange that consumed token, get a
+       * definitive 400, and drop() BOTH stores. Every tab signed out, mid-edit,
+       * with nothing having gone wrong.
+       *
+       * (Sam, 2026-08-25, editing GR row #3 with several sessions open: his
+       * console showed `token?grant_type=refresh_token 400` and then NO
+       * SESSION, while the save he had just pressed reported that his sign-in
+       * did not allow writing to the register.)
+       *
+       * ⚠️ COMPARE ON `exp`, NOT ON PRESENCE. Both copies are well-formed and
+       * both look valid; the only thing that distinguishes them is which one
+       * was minted later. */
+      if (shared && shared.access_token !== mine.access_token
+          && (shared.exp || 0) > (mine.exp || 0)) {
+        // A sibling renewed while this tab held an older copy. Adopt it rather
+        // than publishing ours over it — ours is the consumed one.
+        try {
+          sessionStorage.setItem(KEY, JSON.stringify(shared));
+          sessionStorage.setItem(TAB_MARK, "1");
+        } catch (e) { /* ignore */ }
+        return true;               // this tab's credential changed underneath it
+      }
       if (!shared || shared.access_token !== mine.access_token) {
         // Carry the existing stamp forward rather than restarting the clock —
         // otherwise every refresh would reset the cap and it would never bite.
@@ -273,7 +301,29 @@
       return ns;
     }).catch(function (e) {
       inFlight = null;
-      if (e && e.rejected) { drop(); announce(null); return null; }
+      if (e && e.rejected) {
+        /* ⚠️ A REJECTED REFRESH TOKEN IS NOT PROOF THE SESSION ENDED — it can be
+         * proof a SIBLING TAB ALREADY RENEWED IT. The rotation above is meant to
+         * stop this tab ever reaching here with a consumed token, but a renewal
+         * that lands between our read and our exchange still can. drop() clears
+         * BOTH stores, so believing this rejection would delete a live session
+         * out from under every other tab.
+         *
+         * So consult the SHARED copy before concluding anything: if it carries a
+         * DIFFERENT token that is still usable, a sibling renewed and this tab
+         * merely exchanged a stale one. Only an absent shared copy — or the very
+         * token just rejected — means the session is actually over. */
+        var live = readShared();
+        if (live && live.access_token !== s.access_token && isFresh(live, 0)) {
+          try {
+            sessionStorage.setItem(KEY, JSON.stringify(live));
+            sessionStorage.setItem(TAB_MARK, "1");
+          } catch (e2) { /* ignore */ }
+          announce(live);
+          return live;
+        }
+        drop(); announce(null); return null;
+      }
       // Transient. Keep the session and hand back what we have — if it is still
       // inside its skew window the caller's request will succeed anyway, and if
       // it is not, one 401 is a far better outcome than a wrongful sign-out.

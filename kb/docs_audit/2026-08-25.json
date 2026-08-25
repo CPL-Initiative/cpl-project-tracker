@@ -58,15 +58,15 @@
     },
     "vault": {
       "files": 2258,
-      "bytes": 1222859074,
-      "heavy_bytes": 608031960,
-      "heavy_share": 0.497,
+      "bytes": 1212932452,
+      "heavy_bytes": 598055298,
+      "heavy_share": 0.493,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -3882,16 +3882,6 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 20874291,
-        "kind": "dir"
-      },
-      "message": "directory totals 20,874,291 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
       "path": "tmc",
       "detail": {
         "bytes": 14867812,
@@ -3908,6 +3898,16 @@
         "kind": "dir"
       },
       "message": "directory totals 14,346,263 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 10897629,
+        "kind": "dir"
+      },
+      "message": "directory totals 10,897,629 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

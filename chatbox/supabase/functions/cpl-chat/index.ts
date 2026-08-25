@@ -2903,7 +2903,7 @@ type HostScope = { kind: "college" | "district" | "statewide"; label: string };
  * tests/sierra_surface.test.js pins them equal. */
 const KNOWN_SURFACES = new Set([
   "my-college", "cobi-assistant", "public", "fact-sheet", "memory-autogen",
-  "memory-briefing",
+  "memory-briefing", "gr-analysis",
 ]);
 
 function normalizeSurface(raw: any): string | null {
@@ -2931,7 +2931,7 @@ function normalizeSurface(raw: any): string | null {
  * the call site: tests/cpl_memory_autogen.test.js reads QUERY_CAP_DRAFTING out
  * of this file and asserts the client's envelope still fits under it, which is
  * the check that was missing when the envelope grew to 984. */
-const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing"]);
+const DRAFTING_SURFACES = new Set(["memory-autogen", "memory-briefing", "gr-analysis"]);
 function isDraftingSurface(surface: string | null): boolean {
   return !!surface && DRAFTING_SURFACES.has(surface);
 }
@@ -2943,6 +2943,19 @@ const QUERY_CAP_DRAFTING = 6000;
  * builds to this budget and REPORTS what it had to leave out — a briefing that
  * silently read 48 of 536 rows would read as a census of the table. */
 const QUERY_CAP_BRIEFING = 20000;
+/* ⚠ THE GR ANALYSIS ENVELOPE IS A ROW PLUS ITS WHOLE AREA. gr_priorities.js's
+ * deep re-analysis sends the row under analysis, the deterministic pass's
+ * findings, the other 15 rows in the area as ranking context, the measured
+ * instrument doctrine with its four worked examples, and a JSON contract.
+ * Measured against the live register at build time the longest row (#7,
+ * apportionment) came to 5,564 characters — which fits QUERY_CAP_DRAFTING with
+ * 436 to spare, and that is exactly the margin this repo has already been
+ * bitten by. ⭐ THE REGISTER IS EDITED LIVE: Sam rewrites an Approach and the
+ * envelope grows, silently, into a cap that truncates without erroring. The
+ * budget is set for a row several times its current length, and
+ * tests/gr_deep_analysis.test.js reads this number out of this file and asserts
+ * the client's built envelope still fits under it. */
+const QUERY_CAP_GR_ANALYSIS = 14000;
 /* Every drafting surface gets its own budget. Kept as a table rather than a
  * ternary so adding a surface is one line and cannot silently inherit the wrong
  * one; tests/sierra_surface.test.js pins this keyset equal to
@@ -2951,6 +2964,7 @@ const QUERY_CAP_BRIEFING = 20000;
 const SURFACE_QUERY_CAPS: Record<string, number> = {
   "memory-autogen": QUERY_CAP_DRAFTING,
   "memory-briefing": QUERY_CAP_BRIEFING,
+  "gr-analysis": QUERY_CAP_GR_ANALYSIS,
 };
 function queryCapFor(surface: string | null): number {
   return (surface && SURFACE_QUERY_CAPS[surface]) || QUERY_CAP_CHAT;
