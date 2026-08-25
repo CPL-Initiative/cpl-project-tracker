@@ -187,6 +187,68 @@ block("(4)", () => {
     GR._doctrineAreas.cpl === 1 && GR._doctrineAreas["dual-enrollment"] === undefined);
 });
 
+// ── (4b) the area's artifacts are evidence, and only THIS area's ────────────
+// ⭐ Sam, 2026-08-25: "Hoping you can ensure that attachments would be
+// considered when the re-analyze routine runs." The case that proves it is the
+// one he attached: SB 135 added Ed. Code §78093–78093.2 on 2026-07-13, AFTER
+// every row here was written, and its (b)(2) already requires campuses to
+// accept transcribed CPL from other campuses — row #2's ask. An analyzer blind
+// to artifacts would keep proposing a trailer bill for settled law.
+block("(4b)", () => {
+  const arts = [
+    { area_id: "cpl", revision_id: null, title: "CA Ed Code 78093.2 — CPL Initiative",
+      kind: "statute", source: "Stats. 2026, Ch. 79, Sec. 16 (SB 135)",
+      why: "Defines the CPL Initiative as building on MAP.", citations: ["EC §78093.2"] },
+    { area_id: "cpl", revision_id: "SOMEONE-ELSE", title: "Pinned to another row", kind: "note" },
+    { area_id: "dual-enrollment", title: "Another area's artifact", kind: "statute" },
+  ];
+  const q = GR._analysisQuery(ROW7, ALL, LANE, "cpl", arts);
+  check("(4b) ⭐ the area's artifacts reach the prompt", /CA Ed Code 78093\.2/.test(q));
+  check("(4b) …with the curator's own reason for filing it",
+    /Defines the CPL Initiative as building on MAP/.test(q));
+  check("(4b) ⚠ another priority area's artifact does NOT",
+    !/Another area's artifact/.test(q));
+  check("(4b) ⚠ …nor one pinned to a DIFFERENT row", !/Pinned to another row/.test(q));
+  // ⚠️ WE HOLD THE RECORD, NOT THE DOCUMENT. The URL is a link nothing here can
+  // open and the sandbox is egress-blocked from leginfo, so the model must be
+  // told it has not read these. Letting it believe otherwise is how a plausible
+  // paraphrase of an unchecked statute reaches a Chancellor's Office draft.
+  check("(4b) ⭐ the model is told it has NOT read the documents",
+    /you have NOT read these documents/.test(q) && /pointers/i.test(q));
+  check("(4b) an area with no artifacts adds no empty heading",
+    !/ARTIFACTS ATTACHED/.test(GR._analysisQuery(ROW7, ALL, LANE, "cpl", [])));
+});
+
+// ── (4c) the citation bands can name the register's own governing statute ────
+// ⚠️ SB 135 put the CPL Initiative at Ed. Code §78093–78093.2, and the EC band
+// was (66|70|76) — so a bare 78093.2 was REFUSED, and so was §78212, which the
+// new article itself cross-references. Sam's artifact for it saved with an
+// EMPTY citation list for exactly this reason.
+block("(4c)", () => {
+  const ok = (t) => GR._parseCites(t).ok[0] || null;
+  check("(4c) ⭐ the register can cite its own governing statute",
+    ok("78093.2") === "EC §78093.2" && ok("78093") === "EC §78093");
+  check("(4c) …and §78212, which that article cross-references",
+    ok("78212") === "EC §78212");
+  // ⚠️ WIDENING MUST NOT BECOME "EVERYTHING ABOVE 66000". Gov. Code Title 9 (the
+  // Political Reform Act) occupies 81000–91014, so a bare 8xxxx stays refused —
+  // including the CPL TBL at §88790, which has to be written out.
+  check("(4c) ⚠ 8xxxx stays REFUSED — Gov. Code Title 9 makes it ambiguous",
+    ok("88790") === null && ok("87100") === null);
+  check("(4c) ⚠ …and 53410 still refuses, which is the rule this follows",
+    ok("53410") === null);
+  check("(4c) the other codes are unmoved",
+    ok("11342.2") === "GC §11342.2" && ok("55050") === "T5 §55050");
+  // ⚠️ THE JS AND THE SQL MUST MATCH CHARACTER FOR CHARACTER — they diverged
+  // once before, and the same bare number then produced a different citation
+  // depending on whether a human typed it or the migration extracted it.
+  const sql = fs.readFileSync(path.join(ROOT, "kb/supabase_gr_register.sql"), "utf8");
+  const js = fs.readFileSync(path.join(ROOT, "gr_priorities.js"), "utf8");
+  const band = "(66|70|76|78|79)[0-9]{3}(\\.[0-9]+)?$";
+  check("(4c) ⭐ the SQL band and the JS band are the same string",
+    sql.indexOf(band) >= 0 && js.indexOf(band) >= 0);
+});
+
 // ── (5) the three server lists agree ────────────────────────────────────────
 block("(5)", () => {
   const known = /const KNOWN_SURFACES = new Set\(\[([\s\S]*?)\]\)/.exec(TS);

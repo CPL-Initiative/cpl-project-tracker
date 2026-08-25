@@ -181,15 +181,47 @@
     }).catch(function () { return null; });
   }
 
-  // An RLS-filtered write answers 200 with an EMPTY body, never 403. An "ok"
-  // that touched no row is a FAILURE — reporting it as success tells someone
-  // their entry was recorded when nothing was. Same guarantee cr_reference.js
-  // and map_users.js both needed.
+  /* An RLS-filtered write answers 200 with an EMPTY body, never 403. An "ok"
+   * that touched no row is a FAILURE — reporting it as success tells someone
+   * their entry was recorded when nothing was. Same guarantee cr_reference.js
+   * and map_users.js both needed.
+   *
+   * ⭐ BUT "TOUCHED NO ROW" HAS THREE CAUSES AND THEY NEED DIFFERENT ACTIONS,
+   * AND THIS SAID THE SAME SENTENCE FOR ALL THREE (Sam, 2026-08-25, mid-edit on
+   * GR row #3): he had been editing successfully for twenty minutes — rows #2
+   * and #9 saved at 21:50–21:53, the sensitivity control on #3 saved at
+   * 22:04:52 — and then a save came back "your sign-in does not allow writing
+   * to the register". `gr_history` carries an audit row for every write that
+   * landed and carries NONE for that attempt, so the UPDATE matched nothing.
+   * His account is on `allowed_reviewers`; the credential had simply gone.
+   *
+   *   · no session at all        → sign in again. The text on screen is intact.
+   *   · a session, but no row    → either the account is not a reviewer, or the
+   *                                key named nothing (the #1330 defect).
+   *
+   * ⚠️ "YOUR SIGN-IN DOES NOT ALLOW WRITING" IS A CLAIM ABOUT PERMISSIONS, and
+   * it is the one thing that was NOT wrong: it points a curator at their
+   * account when the fix is a sign-in. Session 193 fixed exactly this sentence
+   * on the Memory tab and left this copy standing — a lesson in one file is not
+   * a lesson in the repo.
+   *
+   * ⚠️ AND IT MUST SAY THE WORK IS SAFE. This fires on a full edit form holding
+   * prose someone just wrote. Signing in opens a NEW browser tab, so THIS tab
+   * keeps every field; `headers()` reads the session fresh on each request, so
+   * pressing Save again after signing in sends the same text on a live token.
+   * A curator who does not know that will retype it, or lose it. */
   function wrote(r) {
     if (!r.ok) throw new Error("save " + r.status);
     return r.json().then(function (rows) {
       if (!Array.isArray(rows) || rows.length === 0) {
-        throw new Error("not saved — your sign-in does not allow writing to the register");
+        if (!session()) {
+          throw new Error("not saved — you have been signed out. Your text is still on "
+            + "this screen: sign in again (it opens a new tab, so nothing here is lost), "
+            + "come back to this tab and press Save again.");
+        }
+        throw new Error("not saved — signed in as " + whoami() + ", but the register "
+          + "accepted no row. Either this account is not on the reviewer list, or this "
+          + "row no longer exists. Your text is still on this screen.");
       }
       return rows[0];
     });
@@ -238,9 +270,23 @@
   //     got a code this side and were refused by the SQL side.
   // Ambiguous or out-of-band input is REJECTED and handed back to the typist —
   // never swept into the nearest plausible code.
+  //
+  // 2026-08-25: EC widened from (66|70|76) to add 78/79 — Ed. Code Part 48
+  // "Community Colleges, Education Programs" runs §78015–79520, and SB 135
+  // (Stats. 2026, Ch. 79, Sec. 16) added ARTICLE 9, Credit for Prior Learning
+  // Initiative, at §78093–78093.2. The register could not name its own governing
+  // statute: a bare 78093.2 was REFUSED, and so was §78212, which the new
+  // article itself cross-references. Sam's artifact for it saved with an EMPTY
+  // citation list for exactly this reason.
+  //
+  // ⚠️ 8xxxx IS DELIBERATELY STILL REFUSED, including the CPL TBL at §88790.
+  // Government Code Title 9 (the Political Reform Act) occupies 81000–91014, so
+  // a bare 88790 is genuinely ambiguous in the way 53410 is — write it out as
+  // "EC §88790". Widening to "everything above 66000" would file a Gov. Code
+  // section under Ed. Code, which is the failure this list exists to prevent.
   var CITE_BANDS = [
     [/^5[58][0-9]{3}(\.[0-9]+)?$/, "T5"],
-    [/^(66|70|76)[0-9]{3}(\.[0-9]+)?$/, "EC"],
+    [/^(66|70|76|78|79)[0-9]{3}(\.[0-9]+)?$/, "EC"],
     [/^11[0-9]{3}(\.[0-9]+)?$/, "GC"]
   ];
   function inferCode(n) {
@@ -663,7 +709,7 @@
         var wait = el("p", { class: "gx-note", text: "Reading the row against the register\u2026" });
         work.appendChild(wait);
         var lane = laneASummary(analyzeRevision(r, state.revisions, areaTitleMap()));
-        deepFetch(r, state.revisions, lane).then(function (res) {
+        deepFetch(r, state.revisions, lane, null, state.artifacts).then(function (res) {
           msg.textContent = "";
           renderDeepAnalysis(work, r, res, function (patch) {
             msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
@@ -1132,14 +1178,59 @@
 
   /* Build the envelope. ⚠️ ORDER IS LOAD-BEARING: row first (see above), then the
    * doctrine, then the contract. */
-  function analysisQuery(r, all, lane, areaId) {
+  /* ⭐ THE ARTIFACTS ARE EVIDENCE, AND WITHOUT THEM THE ANALYSIS IS OUT OF DATE
+   * BY CONSTRUCTION (Sam, 2026-08-25: "I just added an attachment … that really
+   * bolsters these priorities … Hoping you can ensure that attachments would be
+   * considered when the re-analyze routine runs").
+   *
+   * He is right, and the case that proves it is the one he attached. SB 135
+   * added Ed. Code §78093–78093.2 on 2026-07-13 — AFTER every row in this
+   * register was written. Its (b)(2) requires campuses to "accept transcribed
+   * credit for prior learning from other campuses", which is row #2's
+   * reciprocity ask, already law. An analyzer that cannot see the area's
+   * artifacts would keep proposing a trailer bill for something the Legislature
+   * has already passed, confidently, and a CO reader would catch it immediately.
+   *
+   * ⚠️ WHAT REACHES THE MODEL IS THE ARTIFACT RECORD, NOT THE DOCUMENT. We hold
+   * a title, a kind, a source, the curator's own "why", and its citations — the
+   * URL is a link nothing here can open, and the sandbox is egress-blocked from
+   * leginfo besides. So the block says so in as many words, and the model is
+   * told to treat an artifact as a POINTER whose full text it has not read.
+   * Letting it believe otherwise is how a plausible paraphrase of a statute
+   * nobody checked ends up in a Chancellor's Office draft. */
+  function artifactBlock(all) {
+    var arts = (all || []).filter(Boolean);
+    if (!arts.length) return "";
+    var L = ["ARTIFACTS ATTACHED TO THIS PRIORITY AREA — these are what the curators",
+             "have gathered as the evidence base. You are given each artifact's RECORD,",
+             "not its text: you have NOT read these documents. Treat them as pointers.",
+             "If one bears on this row, say so and say what would need checking in it."];
+    arts.forEach(function (a) {
+      var bits = ["  - " + (a.title || "(untitled)")];
+      if (a.kind) bits.push("[" + a.kind + "]");
+      if (a.source) bits.push("· " + a.source);
+      L.push(bits.join(" "));
+      if (a.why) L.push("      why it is here: " + plainText(a.why));
+      if (a.citations && a.citations.length) L.push("      cites: " + a.citations.join(", "));
+    });
+    return L.join("\n");
+  }
+
+  function analysisQuery(r, all, lane, areaId, artifacts) {
     var doctrine = DOCTRINE_AREAS[areaId || r.area_id] ? doctrineBlock() : NEUTRAL_BLOCK;
+    var area = areaId || r.area_id;
     return [
       "Re-analyze one entry in the Chancellor's Office regulatory priorities register.",
       "",
       analysisRowBlock(r, lane),
       "",
       siblingBlock(r, all),
+      "",
+      artifactBlock((artifacts || []).filter(function (a) {
+        // Area-scoped, plus anything pinned to THIS row. An artifact filed under
+        // another priority area is not evidence about this one.
+        return a && (a.area_id === area) && (!a.revision_id || a.revision_id === r.id);
+      })),
       "",
       doctrine,
       "",
@@ -1263,9 +1354,9 @@
    * the edge function, so the two cannot drift apart silently. */
   var GR_QUERY_BUDGET = 14000;
 
-  function deepFetch(r, all, lane, onDelta) {
+  function deepFetch(r, all, lane, onDelta, artifacts) {
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
-    var q = analysisQuery(r, all, lane, r.area_id);
+    var q = analysisQuery(r, all, lane, r.area_id, artifacts);
     if (q.length > GR_QUERY_BUDGET) {
       return Promise.reject(new Error(
         "This row is too long to analyze in one call (" + q.length + " characters against a "
@@ -2073,6 +2164,7 @@
     _plainText: plainText,
     _laneASummary: laneASummary,
     _analysisQuery: analysisQuery,
+    _artifactBlock: artifactBlock,
     _analysisRetrieval: analysisRetrieval,
     _parseAnalysis: parseAnalysis,
     _deepFetch: deepFetch,

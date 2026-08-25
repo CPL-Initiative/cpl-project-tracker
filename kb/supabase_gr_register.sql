@@ -87,7 +87,13 @@ create or replace function public.gr_citation_code(sec text) returns text
   language sql immutable as $$
   select case
     when sec ~ '^5[58][0-9]{3}(\.[0-9]+)?$' then 'T5'
-    when sec ~ '^(66|70|76)[0-9]{3}(\.[0-9]+)?$' then 'EC'
+    -- 78/79 added 2026-08-25: Ed. Code Part 48 (Community Colleges, Education
+    -- Programs) runs 78015-79520, and SB 135 added ARTICLE 9, Credit for Prior
+    -- Learning Initiative, at 78093-78093.2. MUST MATCH CITE_BANDS in
+    -- gr_priorities.js character for character. 8xxxx stays refused: Gov. Code
+    -- Title 9 occupies 81000-91014, so a bare 88790 (the CPL TBL) is ambiguous
+    -- and has to be written out.
+    when sec ~ '^(66|70|76|78|79)[0-9]{3}(\.[0-9]+)?$' then 'EC'
     when sec ~ '^11[0-9]{3}(\.[0-9]+)?$' then 'GC'
     else null end;
 $$;

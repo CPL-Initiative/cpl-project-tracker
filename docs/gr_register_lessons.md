@@ -249,3 +249,131 @@ matched twice (the add-form has the same citation guard as the editor) and one
 produced a syntax error. Both suites passed unchanged, which looks exactly like a
 guard holding. **A perturbation that fails to perturb proves nothing**; both were
 redone against the editor's own line and confirmed red.
+
+---
+
+## 2026-08-25 — Sky195: Lane B, and a vocabulary that lives in five places
+
+Session 195 (**Sky195**) built the on-demand deep re-analysis Session 194's
+handoff named as the priority — Lane B of the two-lane design. Lane A (#1331)
+checks a row against **itself**, deterministically. Lane B asks a model the two
+questions Lane A structurally cannot answer, because they need knowledge of law
+this repo does not hold: **related Title 5 / Ed. Code sections nobody has cited
+yet**, and the **instrument determination**. PR #1333.
+
+### What was learned
+
+**⭐ The doctrine was already in the data, and it holds.** Before writing a line
+of prompt, the scope's claimed doctrine was re-derived against the live table:
+regulation-must-change → Title 5 only, **3 of 3** (#3, #9, #10);
+statute-blocks → Ed. Code + `ed_first=Yes`, **2 of 2** (#5, #7);
+already-permitted → includes a memo (#12 memo-only, #1, #14, #15). The tied
+ranks the scope predicted are real too (3,3 on #9/#10 and 5,5,5 on #6/#13/#16).
+The one test — *does the change contradict a statute, a regulation, or merely a
+practice?* — ships in the prompt verbatim, because without it a re-analyzed row
+rejoins the register in a different voice and a CO reader feels the seam.
+
+**⭐ A measured doctrine belongs to the area it was measured from.** The scope
+left this as an open question ("same routine for dual-enrollment?"). It answers
+itself from that area's own summary: *"SAMPLE AREA — entries below are neutral
+review prompts, not Chancellor's Office or MAP positions."* Running an advocacy
+doctrine there would write a position into the rows that exist to demonstrate
+their absence. `DOCTRINE_AREAS` is an explicit map keyed on `area_id`, not a
+string sniff on the summary, and every other area gets a neutral variant that
+returns `pathway`/`ed_first`/`blast_rank` as null. Add an area when its doctrine
+has been measured the same way — not before.
+
+**⭐ THE SURFACE VOCABULARY LIVES IN FIVE PLACES, AND NEITHER SOURCE KNEW ALL
+FIVE.** `docs/gr_reanalysis_scope.md` named `KNOWN_SURFACES`,
+`DRAFTING_SURFACES`, `SURFACE_QUERY_CAPS`. The `cpl_memory` row
+`the-sierra-surface-vocabulary-lives-in-three-places` named `KNOWN_SURFACES`,
+the SQL `CHECK` constraint, and `SURFACES` in `sierra_training.js`. Both said
+"three"; the union is **five**, and the live CHECK constraint needed widening
+too or no curator could ever scope a guidance rule to the surface. **Rule 8's
+read step is what caught this** — the scope doc alone would have shipped a
+surface with two silent gaps.
+
+**⚠️ The envelope needed its own cap, and the margin was the tell.** Measured
+against the longest real row (#7, apportionment): **5,564 characters**, which
+fits `QUERY_CAP_DRAFTING` (6,000) with **436 to spare**. Reusing the existing cap
+was the scope's suggestion and it was wrong for a register Sam edits live — one
+rewritten Approach crosses the line. `QUERY_CAP_GR_ANALYSIS` is 14,000, the
+client refuses rather than sending what it knows will be cut, and the test reads
+the server's constant instead of restating it. Stripping the stored HTML first
+is not cosmetic: #7's approach field is ~26% href by character.
+
+**⭐ AND THE CLIENT'S BUDGET CHECK CANNOT SEE THE ONE FAILURE MOST LIKELY TO
+HAPPEN.** It compares against the cap *this repo* declares. On merge day the
+deployed function still applies **1,000**, because Pages ships the client and
+only a dispatch ships the function — the roadmap's own "half a two-half feature
+deploys itself". The output contract sits at the END of the envelope, so what
+gets eaten is the instructions, and the model answers in helpful prose. The fix
+is not another guard: it is that a non-JSON reply now **names the deploy**
+rather than the model. Durable note:
+[`methodology-a-client-cannot-see-the-cap-the-server-enforces`](kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md).
+
+**⚠️ Two of my own guards were not guards, and perturbation is what said so.**
+A bare `indexOf("gr-analysis")` matches inside `"gr-analysis-typo"` — so the
+`SURFACE_QUERY_CAPS` check **could not fail for the single most likely real
+mistake**, a mistyped key. It stayed GREEN under perturbation while eleven
+others went red. The SQL and picker checks survived only because they happen to
+quote both sides. All three list checks are quote-delimited now.
+
+**⚠️ And the reporter was skippable — the Session 193 finding, in my own file.**
+The async block calling `report()` at its end would have swallowed every result
+line if anything above it threw. `report()` runs in a `finally`; a deliberately
+injected crash now prints `32/33` with a named FAIL and exit 1 instead of
+vanishing. Proven, not assumed.
+
+**Two test assertions were wrong before the code was.** One asserted
+`#12 [rank 12]` — confusing a row's **ordinal** with its **rank** (#12 carries
+rank 6; #5 carries rank 12). Asserting on a row where the two coincide would
+pass just as happily if the block printed `n` twice, so the fixed check uses a
+pair where they differ. The other claimed entity decoding happened after tag
+stripping so an escaped `&lt;b&gt;` "cannot reconstitute a tag" — the order is
+right but the reason was backwards: decoding *first* would turn escaped markup
+into a real tag and then **eat** it, deleting the author's literal text.
+
+**`sierra_memory_isolation` went red, and was right to.** Its claim *"the memory
+tab is the only caller naming a drafting surface"* was a true statement about a
+set of size two wearing an exclusivity label — the same shape as
+`an-assertion-pinned-to-one-member-cannot-see-the-set-grow`, except this one
+DID see the set grow. Rescoped to *"every drafting surface is claimed by exactly
+one vetted client"*, plus a count so the owner list cannot fall behind
+`DRAFTING_SURFACES`.
+
+### Current state
+
+- **Client + server code merged; the Edge Function is NOT deployed.** The button
+  cannot work until `cpl-chat-deploy.yml` is dispatched, and it says so.
+- Deployed `cpl-chat` v58 is **byte-identical to HEAD** (sha256
+  `02c130977e69e8f9`, 221,310 chars) — so a deploy ships **only** this additive
+  change. That was measured, not assumed, and it is the fact that makes the
+  deploy proposal cheap to accept.
+- Live `sierra_guidance_surface_ck` widened to admit `gr-analysis` (additive;
+  the new set is a strict superset, no existing row changes, no RLS moves).
+- `tests/gr_deep_analysis.test.js`: **37 checks**, 15 perturbations each red by
+  exit code.
+- Open questions 1 and 2 from the scope are answered together: **per row**
+  (Sam's *"the edit I made"*), with the other 15 rows as read-only ranking
+  context — ranking is comparative, so hand it the comparison. Q3
+  (`citations_related`): **displayed, never persisted**, no schema change. Q4:
+  the sample-area answer above.
+
+### Next concrete step
+
+1. **Sam's go on dispatching `cpl-chat-deploy.yml`** — the function is shared
+   with the public Sierra, which is why this is his call and not a session's.
+2. **Then the doctrine regression**, which can only run against a deployed
+   function: blank the stored `pathway` on rows **#12, #9, #7 and #5**, re-run,
+   and assert memo-only / Title 5 / Ed. Code + `ed_first=Yes`. ⭐ Those four rows
+   are a labeled test set the register already contains — the cheapest real
+   evaluation available, and the thing that tells you a prompt edit made the
+   analysis worse.
+3. Then the register's own open number: **0 of 20 revisions are `verified`**,
+   which for a CO draft is the figure to move, and it is curator work.
+
+⚠️ Row #9's title currently reads *"Remove the requirement to requirement to
+note CPL on the transcript"* — a live-edit typo, deliberately **left alone**.
+It is Sam's row in Sam's draft; a session silently editing his prose is how a
+register stops being his.
