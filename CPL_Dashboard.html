@@ -15115,6 +15115,13 @@ Link to bills: https://legiscan.com/CA/text/AB135/id/3044016</div>
          is mounted inline by admin.js. Restores the sign-in path that vanished
          when RACI's magic-link box was removed (Sam, 2026-08-14). -->
     <script src="reviewer_signin.js"></script>
+    <!-- Masthead identity chip — the one place that reports BOTH credentials
+         (magic-link sign-in AND team phrase) and carries each one's control.
+         Loads AFTER cpl_session.js / team_phrase.js / team_phrase_header.js /
+         reviewer_signin.js: it delegates to all four rather than re-implementing
+         any of them. Also the source of tabs.js's rail-badge sentence, so the
+         footer and the masthead cannot disagree (Sam, 2026-08-25). -->
+    <script src="cobi_identity.js"></script>
     <!-- ^ shared team-phrase unlock (Phase 1 widening, Session 97 follow-up) —
          consumed by assoc_editor / workplan_goals / budget_editor / tmc_builder -->
     <script src="assoc_editor.js"></script>
