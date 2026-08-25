@@ -4883,3 +4883,22 @@ says read the LIVE source. It matched (`4796b51376780b07`); that was luck, not m
 ⚠️ **I shipped the bug I had just read about, 4×** (assertions pinned to a closing paren); 34 of that shape
 survive repo-wide. ⭐ And **`exit=0` was my trailing `grep`** — a red suite nearly passed for green.
 Story `docs/college_action_page_lessons.md` · handoff `docs/session_192_handoff.md`.
+
+### SkyCruise S192 — the key that named two courses, and a search that reported what it could not draw (2026-08-25)
+
+**A live session: Sam drove SkyView in a browser and reported defects as he found them** (#1329).
+⭐ **A CourseControlNumber is not a unique course key.** The re-home writes `CN:<control number>` and
+nothing else; **1,814 of 139,834** name more than one course as the artifacts build them (**462** in the
+source after the declared fold), and every layer below picked the first match. **3,634 draggable rows.**
+Nothing had gone wrong — zero `CN:` rows exist — which is the window you get. Refused now, with the reason.
+⚠️ **My first perturbation did not go red**: two guards, only one reachable through the UI, so the deeper
+one was untested. Each has its own assertion now.
+⭐ **Split by required repair, never one headline** — the real worklist is **73** rows, 93 of them at one
+college. ⚠️ **A declared fold reaches only the roster that consults it**: `CaÃ±ada College` renders that
+way in the member list today, and the raw export carries **only** the broken spelling, 678×.
+⭐ **A view must not fly where it cannot draw** — the search reported *"Ringed in red"* at zoom 12% while
+`draw()` needs 0.20; removing the floor reproduces Sam's screenshot at exactly `0.120`. Also 344 course
+titles queued and **54** fit.
+⭐ **SkyView is the landing view** (Sam's call) — shipped with keyboard operation of the canvas, which
+**did not exist**. ⚠️ **The work surface behind it is 1.2% built** — 5 of 159 subjects.
+Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_193_handoff.md`.

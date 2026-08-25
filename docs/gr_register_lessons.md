@@ -377,3 +377,103 @@ one vetted client"*, plus a count so the owner list cannot fall behind
 note CPL on the transcript"* — a live-edit typo, deliberately **left alone**.
 It is Sam's row in Sam's draft; a session silently editing his prose is how a
 register stops being his.
+
+---
+
+## 2026-08-25 (evening) — Sky195: the sweep, the statute, and a token with no owner
+
+A second session the same day, and a live one. Sam edited the register in a
+browser, hit a failure that signed him out of every tab, then supplied three
+authenticated PDFs of law that had not existed when the register was written.
+PRs #1333 and #1334.
+
+### ⭐ SB 135 changed the ground under the register
+
+**Ed. Code Article 9, §78093–78093.2**, added by Stats. 2026, Ch. 79, Sec. 16,
+effective **13 July 2026**. Full pass:
+[`docs/gr_sb135_row_sweep.md`](gr_sb135_row_sweep.md). The headline is that
+**row #2 asks the Legislature for something it has already passed** —
+§78093.2(b)(2) requires every campus to accept transcribed CPL from other
+campuses — and row #2 is ranked 2 of 16, so it is near the top of what a
+Chancellor's Office reader reads.
+
+⭐ **Sam's PDFs are AUTHENTICATED**, which nothing else in this register is. The
+area caveat about reconstructed statutory text does not apply to Article 9, and
+the register is **0 of 20 verified** — this is the first material that can move
+that number.
+
+⚠️ **The register could not cite its own governing statute.** `CITE_BANDS` read
+`(66|70|76)`, and Article 9 sits in Part 48 (§78015–79520), so a bare `78093.2`
+was REFUSED — and so was §78212, which the article cross-references. **Sam's own
+artifact saved with an empty citation list for exactly this reason**, which is
+what made it visible. Widened to add 78/79 in the JS, the SQL file and the live
+function. ⚠️ **8xxxx stays refused**: Gov. Code Title 9 occupies 81000–91014, so
+a bare `88790` (the CPL TBL) is ambiguous the way `53410` is and must be written
+out. Widening to "everything above 66000" would file a Gov. Code section under
+Ed. Code, which is what this list exists to prevent.
+
+### ⭐ The sweep is the routine, and it is not the per-row call widened
+
+Sam, after reading the hand pass: *"Your sweep is the routine I want to be able
+to run on demand after edits."* Then: *"Can you add to the routine the ability to
+add new priorities as proposed?"*
+
+Three of that pass's findings are **structurally invisible** to a per-row
+analyzer, and they are the three that mattered:
+
+1. The headline is invisible from inside row #2 — it only appears reading the row
+   against a document filed at the **area** level.
+2. *"Weakened"* is **comparative**: #5 lost value BECAUSE #2 became law. Which is
+   also the only way the tied ranks (3,3 and 5,5,5) can ever be resolved.
+3. A duty no row covers is not a finding about any row. A per-row routine has
+   nowhere to put it.
+
+⚠️ **A proposed priority is a DRAFT row, not a row.** Accepting one takes the same
+insert path a curator typing it by hand would take, and what lands is stamped
+`proposed` with `citations_derived` true. The model's citations go through
+`parseCites` like a typist's and **rejects are SHOWN** — that is the signal it
+invented a section number. Capped at three; numbering **refuses** on a failed read
+rather than numbering a new priority `#1`.
+
+### ⚠️ Two budgets, and the one you raise is not the binding one
+
+Measured live: 16 rows are **9,291 characters of prose** after the tags come off,
+plus 1,839 of artifacts, so the input cap went 14,000 → 40,000. But
+**`MAX_TOKENS = 2048`** caps the REPLY, which must carry a verdict for every row.
+Raising the input does nothing for that. The contract budgets its own output — one
+line per row — and a truncated reply is diagnosed as a **reply-budget** problem,
+never as an undeployed surface.
+
+⚠️ **That diagnosis was dead code until a test fired.** `lastIndexOf("}")` finds
+the closing brace of the last *complete* row, so a truncated reply sliced to
+`{"rows":[{…}}` and threw a raw SyntaxError. It measures brace **balance** now.
+
+### ⭐ A rotating credential in a shared store has no owner
+
+Sam's save failed with *"your sign-in does not allow writing to the register."*
+His account was fine. `gr_history` proved it: **every write that landed has an
+audit row and his edit had none**, so the UPDATE matched nothing rather than
+being rejected — and his previous write had succeeded three minutes earlier,
+which rules out ordinary expiry.
+
+`cpl_session.js`'s `sync()` said *"this tab has the session: it is the truth"* —
+the one rule a **rotating** credential in a **shared** store cannot obey. A tab
+holding a pre-renewal copy published its consumed token over the sibling's live
+one, exchanged it, got a definitive 400, and `drop()` cleared BOTH stores. Now
+the **freshest token wins** (compare on `exp` — both copies are well-formed, so
+mint time is the only discriminator). ⚠️ A 400 with no better shared copy **still**
+ends the session, asserted, because a fix that never signs anyone out is worse
+than the bug.
+
+### Current state
+
+- Lane A (deterministic, per row) · Lane B (model, per row) · the **area sweep**
+  (model, whole area, proposes new rows) — all live and merged.
+- `cpl-chat` deployed twice: **v59** for the surface, again for the raised cap.
+- 4 candidate new rows waiting on a curator; **0 of 20 verified**.
+
+### Next concrete step
+
+1. **Sam on #2 and #12** — both legal calls, nothing written.
+2. The four candidate new rows; the sweep proposes them.
+3. The verification pass, now that authenticated text exists for Article 9.
