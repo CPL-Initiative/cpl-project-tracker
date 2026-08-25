@@ -266,9 +266,18 @@ function serve() {
         const list = M.m[nd.i] || [];
         if (list.length > 40) continue;
         const hit = list.find((r) => seen[r[0]].size > 1);
-        if (hit) return { shared, id: nd.i, disc: isl.d, x: nd.x, y: nd.y,
-                          cn: "CCC" + String(hit[0]).padStart(9, "0"),
-                          names: seen[hit[0]].size };
+        if (hit) {
+          // A positive control, sourced payload-wide rather than from this card:
+          // the card holding a shared key often holds nothing else. A guard
+          // asserted only on the case it rejects passes just as well when it
+          // rejects everything.
+          let uniqCn = null;
+          for (const c of Object.keys(seen))
+            if (seen[c].size === 1) { uniqCn = "CCC" + String(c).padStart(9, "0"); break; }
+          return { shared, id: nd.i, disc: isl.d, x: nd.x, y: nd.y,
+                   cn: "CCC" + String(hit[0]).padStart(9, "0"), uniqCn,
+                   names: seen[hit[0]].size };
+        }
       }
     }
     return { shared };
@@ -300,6 +309,21 @@ function serve() {
     await flyClick(plan.tgt);
     ok("and no write row is produced by clicking a destination afterwards",
       (await page.evaluate(() => window.__ccrUniverseState().moves.length)) === before);
+
+    // There are TWO guards and only the first is reachable through the UI: the
+    // pickup refusal above never lets a shared key reach applyMove, so removing
+    // canMove leaves every check above green. Assert it separately, or the
+    // deeper guard is untested and a future path that sets `drag` another way
+    // walks straight past it.
+    const gate = await page.evaluate(([bad, good]) => {
+      const f = window.__ccrUniverseState().canMove;
+      return { bad: f(bad).ok, others: (f(bad).others || []).length,
+               good: good ? f(good).ok : null };
+    }, [amb.cn, amb.uniqCn]);
+    ok("the write guard itself refuses the ambiguous key, and allows a unique one",
+      gate.bad === false && gate.good === true);
+    ok(`and reports the courses it could not choose between (${gate.others})`,
+      gate.others >= 2);
   }
 
   console.log("\n══ course descriptions load on demand");

@@ -142,7 +142,26 @@ window.__ccrDecision = function(discName, i){
   /* local, reversible move log — nothing leaves the page */
   var moves = [];
   var home  = {};                       // cn -> target identity id
-  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){ home[m.cn]=nd.id; }); });
+  /* Every course a control number names, WITHIN this decision's pack. The write
+   * is `CN:<control number>` and nothing else, so a key naming several courses
+   * cannot express which one to move and the receiving end picks the first it
+   * finds. Same guard as prototype/ccr_universe.js — back-ported here rather
+   * than left as a second, unguarded write path. */
+  var cnCourses = {};
+  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){
+    home[m.cn]=nd.id;
+    var l=cnCourses[m.cn]||(cnCourses[m.cn]=[]);
+    for(var i=0;i<l.length;i++) if(l[i].n===m.n && l[i].c===m.c) return;
+    l.push({n:m.n, c:m.c});
+  }); });
+  function coursesOn(cn){ return cnCourses[cn]||[]; }
+  function sharedKeyReason(cn, code){
+    var them=coursesOn(cn).filter(function(o){return o.n!==code;});
+    return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
+      " names "+coursesOn(cn).length+" courses — also "+
+      esc(them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", "))+
+      ". The write is <code>CN:"+esc(cn)+"</code>, which cannot say which one.";
+  }
 
   window.__crumbs([
     {label:"All disciplines", go:window.__ccrForest},
@@ -260,6 +279,7 @@ window.__ccrDecision = function(discName, i){
     return null;
   }
   function applyMove(sel, toId){
+    if(coursesOn(sel.cn).length>1){ setHint(sharedKeyReason(sel.cn, sel.code)); return; }
     home[sel.cn]=toId;
     moves = moves.filter(function(m){ return m.cn!==sel.cn; });
     var origin = null;
@@ -294,7 +314,13 @@ window.__ccrDecision = function(discName, i){
         out.push('<ul class="mlist">');
         mine.forEach(function(m){
           var wasMoved = moves.some(function(x){return x.cn===m.cn;});
-          out.push('<li'+(wasMoved?' class="moved"':"")+' draggable="true" data-cn="'+esc(m.cn)+'">'+
+          var shared = coursesOn(m.cn).length>1;
+          var cls=(wasMoved?"moved ":"")+(shared?"shared":"");
+          out.push('<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+
+            (shared?"":' draggable="true"')+' data-cn="'+esc(m.cn)+'">'+
+            (shared?'<span class="chip warn" title="Control number '+esc(m.cn)+
+              ' names '+coursesOn(m.cn).length+' different courses, so the CN: '+
+              'write key cannot say which one to move.">shared key</span> ':"")+
             '<span class="cd">'+esc(m.n)+"</span>"+
             '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
             (wasMoved?' <span class="chip ok">✓ moved</span>':"")+
