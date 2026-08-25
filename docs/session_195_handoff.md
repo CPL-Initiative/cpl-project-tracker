@@ -64,8 +64,12 @@ shorter prefix is accepted while caching NOTHING, silently. The `stable` block i
 ~3,234 tokens so it clears the bar; `tests/sierra_model_choice.test.js` pins the
 floor to the family actually configured, so trimming that block goes red.
 
-✅ **SAM VERIFIED IT IN A BROWSER, 2026-08-25:** *"I tried Sierra on Haiku and the
-results look good."* Deployed **v61**, byte-identical to `origin/main`, sha
+✅ **SAM VERIFIED IT IN A BROWSER TWICE, 2026-08-25:** *"I tried Sierra on Haiku
+and the results look good"*, and separately *"I tried Sierra from the My College
+tab and the response to a district question also looks good."* The second is the
+harder path — host-scoped, with the host owning the questions, the anchor **and**
+the thread, and a district question resolved from the `map_colleges` roster
+rather than a name match. Deployed **v61**, byte-identical to `origin/main`, sha
 `e373d731`. **Do not re-ask.**
 
 ⚠️ **ONE REAL REGRESSION, AND IT IS NAMED.** First smoke run on Haiku: **22 modes,
