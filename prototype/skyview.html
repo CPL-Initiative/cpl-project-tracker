@@ -150,7 +150,10 @@ a{color:var(--cobalt)}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 .canvas{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
         position:relative;overflow:hidden}
-.canvas svg{display:block;width:100%;height:auto;touch-action:none}
+.canvas svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.canvas svg:active{cursor:grabbing}
+.gbar{display:flex;gap:6px;align-items:center;padding:0 0 8px}
+.gbar .sub{margin-left:auto;color:var(--text-muted);font-size:.82rem}
 .hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;border-top:1px solid var(--border);
       background:var(--surface-subtle)}
 
@@ -180,6 +183,15 @@ a{color:var(--cobalt)}
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
+/* A card being dragged onto. Outline + tint, never tint alone: the cards
+   already carry state colors and one more wash of color reads as noise. */
+#ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
+  background:#F4F0FC}
+/* A course whose control number names several courses cannot be re-homed —
+   the CN: write key cannot say which. Dotted underline so the state survives
+   greyscale; the chip beside it carries the words. */
+.mlist li.shared .cd{text-decoration:underline dotted}
+.mlist .chip.warn{background:#FBF1D8;color:#6B4E00;border:1px solid #8B6800}
 .writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
         background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
         padding:9px 11px;overflow-x:auto;color:var(--text-body)}
@@ -265,7 +277,15 @@ document.getElementById("prov").textContent =
   DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
-  search(document.getElementById("gq").value);
+  var term = document.getElementById("gq").value;
+  // One search box, two behaviors, chosen by what is on screen: with the map
+  // open it flies and rings; anywhere else it lists results. The canvas being
+  // in the DOM is the test rather than a flag we keep in step by hand — every
+  // other view replaces #view wholesale, so it cannot go stale.
+  if (document.getElementById("u-cvs") && typeof window.__ccrUniverseSearch === "function")
+    window.__ccrUniverseSearch(term);
+  else
+    search(term);
 });
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -308,10 +328,10 @@ function forest(){
   h.push('<div class="banner"><p><strong>ESL packaging proposal</strong> \u2014 '+
     '1,846 identities folding into three courses, drawn against today\u2019s data. Nothing written.</p>'+
     '<button class="btn primary" type="button" id="go-esl">See the proposal</button></div>');
-  h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>The whole universe</strong> \u2014 '+
-    'every course identity on one map, with keyword zoom. Drag a subject next to another to move a '+
+  h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>Back to the map</strong> \u2014 '+
+    'every course identity on one canvas, with keyword zoom. Drag a subject next to another to move a '+
     'course that was filed under the wrong one.</p>'+
-    '<button class="btn primary" type="button" id="go-universe">Open the universe</button></div>');
+    '<button class="btn primary" type="button" id="go-universe">Open the map</button></div>');
   h.push('<div class="hero">'+
     '<div class="frame" id="hero-gfx"></div>'+
     '<div>'+
@@ -552,10 +572,22 @@ window.__ccrForest = forest;
 window.__ccrDiscipline = discipline;
 window.__ccrSearch = search;
 // Boot after EVERY script in the document has run — the graph module defines
-// __ccrPreview/__ccrDecision below this one, and forest() now uses both.
+// __ccrPreview/__ccrDecision below this one, and forest() uses both.
+//
+// SkyView leads (Sam, 2026-08-25: "SkyView should be the initial CCR tab … I
+// think SkyView is more manageable and less intimidating"). The subject list is
+// a button ON it rather than the way in. It falls back to the list when the
+// universe payload is missing, because a blank landing view is worse than a
+// less friendly one.
+function boot(){
+  if (window.CPL_CCR_UNIVERSE && typeof window.__ccrUniverse === "function")
+    window.__ccrUniverse();
+  else
+    forest();
+}
 if (document.readyState === "loading")
-  document.addEventListener("DOMContentLoaded", forest);
-else forest();
+  document.addEventListener("DOMContentLoaded", boot);
+else boot();
 })();
 </script>
 <script id="atlas-esl" type="application/json">{"_about":"ESL packaging PROPOSAL \u2014 read-only preview. Nothing written to kb_curation. Joins the 2026-07-15 classification to today's curation state so the figures are what an apply would really do.","_plan":"kb/esl_package_out/2026-07-15/esl_package_plan.json","_plan_generated":"2026-07-15","_curation_synced":"2026-08-23T13:07:40Z","_blocked_on":["the three comprehensive identities do not exist yet \u2014 they need names","983 of 1846 rows are medium confidence and the plan asks for a spot-check of exactly those"],"totals":{"plan_identities":2364,"plan_folds_claimed":2149,"would_write_today":1846,"skipped_already_curated":297,"skipped_curated_by_a_human":39,"skipped_no_longer_a_row":6,"carve_outs":215},"buckets":{"Beginning ESL":{"planned":1305,"would_fold":1110,"still_standing":null,"already_curated":1299,"curated_by_a_human":12,"no_longer_a_row":4,"local_courses":2843,"confidence":{"medium":794,"high":316},"signal":{"default-beginning":544,"numeric":250,"combo":11,"word":305},"is_carveout":false,"sample":[{"id":"ESOL M1152","t":"Enrichment ESL","n":47,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M1063","t":"Academic Communication, Notetaking, and College Success Skills","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M1066","t":"Academic Conversations","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M10GE","t":"Academic ESL Reading, Writing, and Grammar 1","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10GG","t":"Academic ESL Reading, Writing, and Grammar 2","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90KK","t":"Academic ESL Review","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10GD","t":"Academic ESL Speaking, Listening and Grammar 1","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10GF","t":"Academic ESL Speaking, Listening, and Grammar 2","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10FZ","t":"Academic English Editing Skills A","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M10FN","t":"Academic English Editing Skills B","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M10FY","t":"Academic English Grammar and Editing A","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M10FM","t":"Academic English Grammar and Editing B","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M1001","t":"Academic English Language Support 1","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M1016","t":"Academic English Language Support 2","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M1067","t":"Academic Grammar and Editing","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M10FR","t":"Academic Language Support for College Writing","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M10AJ","t":"Academic Listening & Speaking for Multilingual Students 1","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10BT","t":"Academic Listening & Speaking for Multilingual Students 2","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1094","t":"Academic Listening and Speaking","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M1082","t":"Academic Listening and Speaking 1","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10AK","t":"Academic Listening and Speaking 1","n":1,"conf":"medium","sig":"numeric","u":2.0,"cs":"Credit"},{"id":"ESOL M90KR","t":"Academic Listening and Speaking 1","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M1085","t":"Academic Listening and Speaking 2","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10BU","t":"Academic Listening and Speaking 2","n":1,"conf":"medium","sig":"numeric","u":2.0,"cs":"Credit"},{"id":"ESOL M90KT","t":"Academic Listening and Speaking 2","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10GV","t":"Academic Listening, Speaking, and Presentation Skills","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M10GX","t":"Academic Preparation for Non-Native Speakers","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M1097","t":"Academic Reading","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M1003","t":"Academic Reading & Writing 1","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M90LB","t":"Academic Reading Skills","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10FS","t":"Academic Reading and Composition","n":1,"conf":"medium","sig":"default-beginning","u":4.0,"cs":"Credit"},{"id":"ESOL M1084","t":"Academic Reading and Writing 1","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90KS","t":"Academic Reading and Writing 1","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M1017","t":"Academic Reading and Writing 2","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Credit"},{"id":"ESOL M1086","t":"Academic Reading and Writing 2","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90KU","t":"Academic Reading and Writing 2","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9082","t":"Academic Reading and Writing for ESL","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1002","t":"Academic Reading and Writing for ESL 1","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10GW","t":"Academic Reading and Writing for Multilingual Speakers","n":1,"conf":"medium","sig":"default-beginning","u":4.0,"cs":"Credit"},{"id":"ESOL M10AL","t":"Academic Reading for Multilingual Students 1","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10BV","t":"Academic Reading for Multilingual Students 2","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1096","t":"Academic Reading for Non-Native Speakers","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M90JX","t":"Academic Skills for College Success for ESL Students","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1098","t":"Academic Vocabulary Skills","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M1062","t":"Academic Writing 2 Learning Center","n":1,"conf":"medium","sig":"default-beginning","u":0.5,"cs":"Credit"},{"id":"ESOL M10GO","t":"Academic Writing 2 for Multilingual Writers","n":1,"conf":"medium","sig":"default-beginning","u":5.0,"cs":"Credit"},{"id":"ESOL M10FQ","t":"Academic Writing 3 Learning Center","n":1,"conf":"medium","sig":"default-beginning","u":0.5,"cs":"Credit"},{"id":"ESOL M1083","t":"Academic Writing I for Multilingual Writers","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10AM","t":"Academic Writing for Multilingual Students 1","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10BW","t":"Academic Writing for Multilingual Students 2","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M1051","t":"Accelerated Academic English for Nonnative Speakers 1","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M1052","t":"Accelerated Academic English for Nonnative Speakers 2","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10HD","t":"Accelerated Composition for English as a Second Language","n":1,"conf":"medium","sig":"default-beginning","u":6.0,"cs":"Credit"},{"id":"ESOL M10HF","t":"Accelerated Reading and Writing for English as a Second Language","n":1,"conf":"medium","sig":"default-beginning","u":6.0,"cs":"Credit"},{"id":"ESOL M1099","t":"Accelerated Written Communication 1","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10HH","t":"Accent Modification","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M9086","t":"Accent Reduction","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90AJ","t":"Achievement in Community College for ESL Students 1","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90LN","t":"Administrative Medical Assisting & ESL Success and Support Course","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90LT","t":"Adult Education ESL Vocabulary Development 1","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90LU","t":"Adult Education ESL Vocabulary Development 2","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10HO","t":"Adv ESL: Listening/Speak","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M10HP","t":"Adv ESL: Vocabulary & Reading","n":1,"conf":"medium","sig":"default-beginning","u":4.0,"cs":"Credit"},{"id":"ESOL M10HM","t":"Adv ESL: Writing/Grammar","n":1,"conf":"medium","sig":"default-beginning","u":4.0,"cs":"Credit"},{"id":"ESOL M90OQ","t":"Aesl Learning Center","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10KN","t":"Amer Expressions/Culture","n":1,"conf":"medium","sig":"default-beginning","u":1.5,"cs":"Credit"},{"id":"ESOL M1147","t":"American Classroom Culture","n":1,"conf":"medium","sig":"default-beginning","u":1.0,"cs":"Credit"},{"id":"ESOL M10KT","t":"American Culture 1","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10KU","t":"American Culture 2","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10KR","t":"American Culture ESL Students","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M90PI","t":"American Culture for ESL Students","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9124","t":"American English Pronunciation","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1004","t":"American English Pronunciation 1","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1018","t":"American English Pronunciation 2","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10KQ","t":"American Language Colloquial English for English Language Learners","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M90OZ","t":"American Language and Culture Through American Literature","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESLN M9005","t":"American Language and Culture Through American Movies","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90PA","t":"American Language and Culture Through American Music","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90PB","t":"American Language and Culture Through American Television","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90PE","t":"American Language and Culture Through Contemporary Life","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90PF","t":"American Language and Culture Through Current Events","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1153","t":"American Language and Culture Through Film","n":1,"conf":"medium","sig":"default-beginning","u":3.0,"cs":"Credit"},{"id":"ESOL M10KO","t":"American Language and Culture Through Media as Related to Child Development","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESLN M90AV","t":"American Language and Culture Through Music","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESLN M90AU","t":"American Language and Culture Through Urban Life","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90AO","t":"American Slang in Social Settings 1","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1157","t":"American Topics","n":1,"conf":"medium","sig":"default-beginning","u":2.0,"cs":"Credit"},{"id":"ESOL M90PW","t":"Artificial Intelligence in ESL","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90DY","t":"Beg. Listening/Speaking 2","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90WZ","t":"Bridge","n":1,"conf":"medium","sig":"default-beginning","u":0.0,"cs":"Noncredit Enhanced"}]},"Intermediate ESL":{"planned":548,"would_fold":467,"still_standing":null,"already_curated":547,"curated_by_a_human":23,"no_longer_a_row":0,"local_courses":1368,"confidence":{"medium":138,"high":329},"signal":{"numeric":133,"word":329,"combo":5},"is_carveout":false,"sample":[{"id":"ESOL M10GI","t":"Academic ESL Reading, Writing, and Grammar 3","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10GH","t":"Academic ESL Speaking, Listening, and Grammar 3","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M1029","t":"Academic English Language Support 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10CW","t":"Academic Listening & Speaking for Multilingual Students 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10GP","t":"Academic Listening and Speaking 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M90KV","t":"Academic Listening and Speaking 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M1087","t":"Academic Reading and Writing 3","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90KW","t":"Academic Reading and Writing 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10CX","t":"Academic Reading for Multicultural Students 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10CY","t":"Academic Writing for Multilingual Students 3","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M1072","t":"Academic and Professional ESL 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10GK","t":"Academic and Professional ESL 4","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M9074","t":"Accelerated Academic English for Nonnative Speakers 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90GP","t":"Achievement in Community College for ESL Students 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90AK","t":"Advanced Beginning ESL 1","n":1,"conf":"medium","sig":"combo","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90DQ","t":"Advanced Beginning ESL 2","n":1,"conf":"medium","sig":"combo","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90MI","t":"Advanced-Beginning English as a Second Language 1","n":1,"conf":"medium","sig":"combo","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90MJ","t":"Advanced-Beginning English as a Second Language 2","n":1,"conf":"medium","sig":"combo","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90MK","t":"Advanced-Beginning English as a Second Language 3","n":1,"conf":"medium","sig":"combo","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90GW","t":"Bridge to Credit ESOL - Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M1213","t":"College ESL 3: Listening and Speaking","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1214","t":"College ESL 3: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1209","t":"College ESL 3: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M1215","t":"College ESL 4: Listening and Speaking","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1216","t":"College ESL 4: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1210","t":"College ESL 4: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10NU","t":"College English as a Second Language 4: Listening and Speaking","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10NV","t":"College English as a Second Language 4: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10NR","t":"College English as a Second Language 4: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M9201","t":"Conversation and Grammar Level 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9200","t":"Conversation/Grammar Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10RE","t":"ENGL Spkrs Other Languages 3","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10RF","t":"ENGL Spkrs Other Languages 4","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M91BY","t":"ESL - Comprehensive 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M91BZ","t":"ESL - Comprehensive 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9049","t":"ESL - Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9058","t":"ESL - Level 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9043","t":"ESL Beg High 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10DB","t":"ESL Core Course Level 3","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10EA","t":"ESL Core Course Level 4","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90HE","t":"ESL Grammar 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90ID","t":"ESL Grammar 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1281","t":"ESL Grammar Skills 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M9057","t":"ESL Int Low 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10DD","t":"ESL Listening/Speaking, Level 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10EB","t":"ESL Listening/Speaking, Level 4","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10DF","t":"ESL Reading 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M90HJ","t":"ESL Reading and Writing 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90IG","t":"ESL Reading and Writing 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1031","t":"ESL Reading, Writing, and Grammar 3","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M1042","t":"ESL Reading, Writing, and Grammar 4","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10DE","t":"ESL Reading/Writing, Level 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10EC","t":"ESL Reading/Writing, Level 4","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M90HI","t":"ESL Vocabulary and Pronunciation 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90IF","t":"ESL Vocabulary and Pronunciation 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9184","t":"ESL and Civics 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90YY","t":"ESL for Child Development & Parenting 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M91KB","t":"ESL for Math 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1030","t":"English Pronunciation 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESLN M9002","t":"English Seminar for Speakers of Other Languages - Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90GJ","t":"English as a 2ND Lanuage 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESLN M9013","t":"English as a Second Language - 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESLN M9015","t":"English as a Second Language - 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9048","t":"English as a Second Language Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9046","t":"English as a Second Language Level 3 Condensed","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9056","t":"English as a Second Language Level 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9054","t":"English as a Second Language Level 4 Condensed","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90GZ","t":"English for Communication 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1034","t":"Grammar 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M1043","t":"Grammar 4","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10TY","t":"Grammar Fundamentals 3","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10DH","t":"Grammar Level 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10EE","t":"Grammar Level 4","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10PT","t":"Grammar Verbs III--Modals and Conditionals","n":1,"conf":"medium","sig":"numeric","u":1.0,"cs":"Credit"},{"id":"ESOL M10UB","t":"Grammar Verbs IV--Gerunds, Infinitives and Passive Voice","n":1,"conf":"medium","sig":"numeric","u":1.0,"cs":"Credit"},{"id":"ESOL M1308","t":"Grammar and Writing 4","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M90HK","t":"Grammar for Fluency 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10DJ","t":"Grammar, Reading, and Writing 3","n":1,"conf":"medium","sig":"numeric","u":4.5,"cs":"Credit"},{"id":"ESOL M10EF","t":"Grammar, Reading, and Writing Level 4","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10DI","t":"Grammar, Writing and Reading Level 3","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M91BG","t":"Healthcare Communication 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9044","t":"Integrated College Language Skills 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9229","t":"Integrated ESL Skills Level 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90HC","t":"Integrated English Language Skills 3","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90IB","t":"Integrated English Language Skills 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10VY","t":"Integrated Listening/Speaking 3","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10VZ","t":"Integrated Reading, Writing 3","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M1303","t":"Integrated Reading, Writing, and Grammar 3","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M90II","t":"Integrated Skills, Level 4","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1035","t":"Interm Listening/Speaking 3","n":1,"conf":"medium","sig":"numeric","u":2.0,"cs":"Credit"}]},"Advanced ESL":{"planned":296,"would_fold":269,"still_standing":null,"already_curated":293,"curated_by_a_human":4,"no_longer_a_row":2,"local_courses":765,"confidence":{"high":218,"medium":51},"signal":{"combo":21,"word":197,"numeric":51},"is_carveout":false,"sample":[{"id":"ESOL M1046","t":"Adv Listening/Speaking 5","n":1,"conf":"medium","sig":"numeric","u":2.0,"cs":"Credit"},{"id":"ESOL M1048","t":"Adv Listening/Speaking 6","n":1,"conf":"medium","sig":"numeric","u":2.0,"cs":"Credit"},{"id":"ESOL M10EZ","t":"Adv Reading and Vocabulary 6","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10EO","t":"Adv Reading/Vocabulary 5","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M90JC","t":"Adv Reading/Vocabulary 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10EN","t":"Adv Writing and Grammar 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10EY","t":"Adv Writing/Grammar 6","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1217","t":"College ESL 5: Listening and Speaking","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1220","t":"College ESL 5: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1211","t":"College ESL 5: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M1218","t":"College ESL 6: Listening and Speaking","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1221","t":"College ESL 6: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M1212","t":"College ESL 6: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10NX","t":"College English as a Second Language 5: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10NS","t":"College English as a Second Language 5: Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M10NY","t":"College English as a Second Language 6: Reading and Vocabulary","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10NT","t":"College English as a Second Language VI:Writing and Grammar","n":1,"conf":"medium","sig":"numeric","u":6.0,"cs":"Credit"},{"id":"ESOL M91CA","t":"ESL - Comprehensive 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9066","t":"ESL - Level 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9070","t":"ESL - Level 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9072","t":"ESL Adv High 7","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9068","t":"ESL Adv Low 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10EP","t":"ESL Core Course Level 5","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10FA","t":"ESL Core Course, Level 6","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M9064","t":"ESL Grammar 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9065","t":"ESL Int High 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90IS","t":"ESL Level 5 Bridge for College and Job Success","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10EQ","t":"ESL Listening/Speaking, Level 5","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M90IW","t":"ESL Reading and Writing 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10ER","t":"ESL Reading/Writing, Level 5","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M10FB","t":"ESL Reading/Writing, Level 6","n":1,"conf":"medium","sig":"numeric","u":3.0,"cs":"Credit"},{"id":"ESOL M90IV","t":"ESL Vocabulary and Pronunciation 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESLN M9018","t":"English as a Second Language - 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESLN M9017","t":"English as a Second Language 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90IT","t":"English as a Second Language College Readiness Level 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9063","t":"English as a Second Language Level 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9061","t":"English as a Second Language Level 5 Condensed","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M9069","t":"English as a Second Language Level 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit"},{"id":"ESOL M90JH","t":"English as a Second Language, Level 7","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10VB","t":"Grammar 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10ES","t":"Grammar Level 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10ET","t":"Grammar, Writing and Reading Level 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M1047","t":"Integrated ESL Skills, Level 5","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M1050","t":"Integrated ESL Skills, Level 6","n":1,"conf":"medium","sig":"numeric","u":5.0,"cs":"Credit"},{"id":"ESOL M10XJ","t":"Listening & Speaking 5","n":1,"conf":"medium","sig":"numeric","u":1.0,"cs":"Credit"},{"id":"ESOL M10PQ","t":"Reading & Composition 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M10EU","t":"Reading Level 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M9067","t":"Reading Skills for ESL Students 5","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9071","t":"Reading Skills for ESL Students 6","n":1,"conf":"medium","sig":"numeric","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10FC","t":"Verb Review 7","n":1,"conf":"medium","sig":"numeric","u":1.0,"cs":"Credit"},{"id":"ESOL M10EV","t":"Writing Level 5","n":1,"conf":"medium","sig":"numeric","u":4.0,"cs":"Credit"},{"id":"ESOL M1141","t":"Advanced ESL","n":497,"conf":"high","sig":"word","u":6.0,"cs":"Credit"},{"id":"ESOL M90JU","t":"Academic Advanced High","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M90JV","t":"Academic Advanced Low","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10FH","t":"Academic ESL Advanced Reading and Grammar 4","n":1,"conf":"high","sig":"word","u":4.0,"cs":"Credit"},{"id":"ESOL M10FI","t":"Academic ESL Advanced Writing and Grammar 4","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10FJ","t":"Academic Vocabulary for Advanced Students of ESL","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M10HQ","t":"Advanced","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10EX","t":"Advanced Academic Communication Skills Level 6","n":1,"conf":"high","sig":"word","u":4.0,"cs":"Credit"},{"id":"ESOL M1053","t":"Advanced Academic ESL Reading/Writing/Grammar","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10FG","t":"Advanced Academic English","n":1,"conf":"high","sig":"word","u":4.0,"cs":"Credit"},{"id":"ESOL M1057","t":"Advanced Academic Grammar","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M1058","t":"Advanced Academic Listening and Speaking","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M10FL","t":"Advanced Academic Oral Skills NNS","n":1,"conf":"high","sig":"word","u":2.0,"cs":"Credit"},{"id":"ESOL M10AI","t":"Advanced Academic Reading & Writing 1","n":1,"conf":"high","sig":"word","u":4.5,"cs":"Credit"},{"id":"ESOL M10BS","t":"Advanced Academic Reading & Writing 2","n":1,"conf":"high","sig":"word","u":4.5,"cs":"Credit"},{"id":"ESOL M9077","t":"Advanced Academic Reading and Writing","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit"},{"id":"ESOL M10FK","t":"Advanced Academic Reading, Research, & Writing in the Humanities","n":1,"conf":"high","sig":"word","u":4.5,"cs":"Credit"},{"id":"ESOL M10FF","t":"Advanced Academic Writing - Credit ESL","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M90JT","t":"Advanced Academic Writing - Noncredit ESL","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9075","t":"Advanced Academic Writing 1","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M9076","t":"Advanced Academic Writing 2","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10GZ","t":"Advanced Accelerated English for Non-Native Speakers of English","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10HA","t":"Advanced Accelerated Reading and Writing for ESL","n":1,"conf":"high","sig":"word","u":6.0,"cs":"Credit"},{"id":"ESOL M1102","t":"Advanced American College English","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Credit"},{"id":"ESOL M10HZ","t":"Advanced College Grammar for Multilingual Students 1","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M10IA","t":"Advanced College Grammar for Multilingual Students 2","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M10IB","t":"Advanced College Listening/Speaking for Multilingual Students 1","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M10IE","t":"Advanced College Reading & Writing Skills","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10IF","t":"Advanced College Reading and Writing","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10IC","t":"Advanced College Reading/Writing for Multilingual Students 1","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10ID","t":"Advanced College Reading/Writing for Multilingual Students 2","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M1109","t":"Advanced Communication Skills","n":1,"conf":"high","sig":"word","u":3.0,"cs":"Credit"},{"id":"ESOL M9101","t":"Advanced Conversation","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M10IV","t":"Advanced Conversation for Non-Native Speakers","n":1,"conf":"high","sig":"word","u":2.0,"cs":"Credit"},{"id":"ESOL M10IX","t":"Advanced Critical Reading/Writing for Multilingual Students","n":1,"conf":"high","sig":"word","u":6.0,"cs":"Credit"},{"id":"ESOL M1112","t":"Advanced Discourse in the Humanities","n":1,"conf":"high","sig":"word","u":0.0,"cs":"Credit"},{"id":"ESOL M1110","t":"Advanced ESL Composition","n":1,"conf":"high","sig":"word","u":6.0,"cs":"Credit"},{"id":"ESOL M10IL","t":"Advanced ESL Composition 1","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"},{"id":"ESOL M10IM","t":"Advanced ESL Composition 2","n":1,"conf":"high","sig":"word","u":5.0,"cs":"Credit"}]},"ESL Citizenship":{"planned":38,"would_fold":0,"still_standing":1,"already_curated":37,"curated_by_a_human":1,"no_longer_a_row":0,"local_courses":60,"confidence":{"high":1},"signal":{"carveout-citizenship":1},"is_carveout":true,"sample":[{"id":"ESOL M9177","t":"Civic ESL","n":60,"conf":"high","sig":"carveout-citizenship","u":0.0,"cs":"Noncredit"}]},"Vocational ESL (VESL)":{"planned":155,"would_fold":0,"still_standing":2,"already_curated":153,"curated_by_a_human":2,"no_longer_a_row":0,"local_courses":183,"confidence":{"high":2},"signal":{"carveout-vesl":2},"is_carveout":true,"sample":[{"id":"ESOL M9023","t":"Vocational ESL","n":177,"conf":"high","sig":"carveout-vesl","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M91IL","t":"Workplace ESL: Medical Fields","n":6,"conf":"high","sig":"carveout-vesl","u":0.0,"cs":"Noncredit Enhanced"}]},"Transfer-level ESL (review)":{"planned":22,"would_fold":0,"still_standing":8,"already_curated":8,"curated_by_a_human":1,"no_longer_a_row":6,"local_courses":12,"confidence":{"review":8},"signal":{"carveout-transfer":8},"is_carveout":true,"sample":[{"id":"ESOL M1239","t":"Composition, Reading, and Freshman English","n":3,"conf":"review","sig":"carveout-transfer","u":2.0,"cs":"Credit"},{"id":"ESOL M9192","t":"Composition for ESL Students","n":2,"conf":"review","sig":"carveout-transfer","u":0.0,"cs":"Noncredit Enhanced"},{"id":"ESOL M1205","t":"ESL College Composition and Reading","n":2,"conf":"review","sig":"carveout-transfer","u":4.0,"cs":"Credit"},{"id":"ESOL M10KY","t":"College Composition for ESL - Linguistic Analysis Plus","n":1,"conf":"review","sig":"carveout-transfer","u":3.0,"cs":"Credit"},{"id":"ESOL M10PO","t":"Composition for Non-Native Speakers","n":1,"conf":"review","sig":"carveout-transfer","u":5.0,"cs":"Credit"},{"id":"ESOL M10PN","t":"Freshman Composition for Non-Native Speakers","n":1,"conf":"review","sig":"carveout-transfer","u":5.0,"cs":"Credit"},{"id":"ESOL M10AD","t":"Preparation for English Composition for Multilingual Students","n":1,"conf":"review","sig":"carveout-transfer","u":4.0,"cs":"Credit"},{"id":"ESOL M91BQ","t":"Preparation for English Composition for Multilingual Students","n":1,"conf":"review","sig":"carveout-transfer","u":0.0,"cs":"Noncredit"}]}}}</script>
@@ -704,7 +736,26 @@ window.__ccrDecision = function(discName, i){
   /* local, reversible move log — nothing leaves the page */
   var moves = [];
   var home  = {};                       // cn -> target identity id
-  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){ home[m.cn]=nd.id; }); });
+  /* Every course a control number names, WITHIN this decision's pack. The write
+   * is `CN:<control number>` and nothing else, so a key naming several courses
+   * cannot express which one to move and the receiving end picks the first it
+   * finds. Same guard as prototype/ccr_universe.js — back-ported here rather
+   * than left as a second, unguarded write path. */
+  var cnCourses = {};
+  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){
+    home[m.cn]=nd.id;
+    var l=cnCourses[m.cn]||(cnCourses[m.cn]=[]);
+    for(var i=0;i<l.length;i++) if(l[i].n===m.n && l[i].c===m.c) return;
+    l.push({n:m.n, c:m.c});
+  }); });
+  function coursesOn(cn){ return cnCourses[cn]||[]; }
+  function sharedKeyReason(cn, code){
+    var them=coursesOn(cn).filter(function(o){return o.n!==code;});
+    return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
+      " names "+coursesOn(cn).length+" courses — also "+
+      esc(them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", "))+
+      ". The write is <code>CN:"+esc(cn)+"</code>, which cannot say which one.";
+  }
 
   window.__crumbs([
     {label:"All disciplines", go:window.__ccrForest},
@@ -719,8 +770,14 @@ window.__ccrDecision = function(discName, i){
          " local courses sit underneath. Move any course to the identity it belongs to — "+
          "by dragging it onto a circle, or with the <strong>Move</strong> button if you'd rather not drag.</p>");
   h.push('<div class="stage">');
-  h.push('<div><div class="canvas"><div id="gfx"></div>'+
+  h.push('<div><div class="canvas">'+
+         '<div class="gbar"><button class="btn" type="button" id="g-out">\u2212</button>'+
+         '<button class="btn" type="button" id="g-in">+</button>'+
+         '<button class="btn" type="button" id="g-reset">Reset view</button>'+
+         '<span class="sub" id="g-z">zoom 100%</span></div>'+
+         '<div id="gfx"></div>'+
          '<div class="hint"><div id="hint">Drag a course from the list onto a circle. '+
+         'Scroll to zoom, drag the background to pan. '+
          'Circle size = how many colleges teach it.</div>'+
          '<div class="glegend">'+
            '<span><b style="color:#0047AB">\u2605</b> C-ID \u2014 official</span>'+
@@ -732,6 +789,30 @@ window.__ccrDecision = function(discName, i){
          '</div></div></div></div>');
   h.push('<div class="side">');
   h.push('<div class="panel"><h3>Courses underneath</h3><ul class="idlist" id="ids"></ul></div>');
+  /* Sam: "have a status selector for the group that notes whether it's been
+   * reviewed and ready for re-minting at the appropriate point."
+   *
+   * The status is a JUDGMENT about a group, so it belongs beside the moves in
+   * the write panel, not in browser storage: localStorage is the wrong home for
+   * a determination someone else has to act on — the same call already made for
+   * the CIP category and settled for cr_reference_decisions. In the prototype
+   * it writes nothing and SHOWS the row it would write, keyed on the group so a
+   * rebuild of the packs cannot overwrite a curator's judgment.
+   *
+   * "Ready to re-mint" is deliberately not the same as "reviewed": a group can
+   * be checked and still not be ready, and re-mints are batched under the
+   * playbook rather than fired per group. */
+  h.push('<div class="panel"><h3>Group status</h3>'+
+         '<label class="sr" for="g-status">Review status for this group</label>'+
+         '<select id="g-status" style="width:100%;padding:.45em;border:1px solid '+
+         'var(--border);border-radius:6px">'+
+         '<option value="">Not reviewed</option>'+
+         '<option value="in-review">Being reviewed</option>'+
+         '<option value="needs-work">Reviewed \u2014 needs more work</option>'+
+         '<option value="reviewed">Reviewed \u2014 groupings are right</option>'+
+         '<option value="ready-remint">Reviewed \u2014 ready to re-mint</option>'+
+         '</select>'+
+         '<p id="g-status-note" class="empty" style="margin:.5em 0 0"></p></div>');
   h.push('<div class="panel"><h3>What this would write</h3><div id="wr"></div>'+
          '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
          'One row per move, in <code>kb_curation</code>. Reversible: delete the row and the '+
@@ -784,7 +865,68 @@ window.__ccrDecision = function(discName, i){
     });
     s.push("</svg>");
     document.getElementById("gfx").innerHTML=s.join("");
+    applyGView();
     wireNodes();
+    wireGraphView();
+  }
+
+  /* Sam: "I can use the mini graph view — doesn't seem drag and droppable or
+   * zoomable." It was a fixed viewBox, so a crowded decision (this one carries
+   * 13 identities and 89 courses) had no way to spread out and no way to read a
+   * label that landed under another.
+   *
+   * Zoom and pan move the viewBox rather than re-laying out: the layout is
+   * precomputed and stable on purpose — the same reason the universe view ships
+   * coordinates instead of solving them — so nothing must move under the reader
+   * except the frame they are looking through. */
+  var gview={k:1, x:0, y:0};
+  function applyGView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg) return;
+    var w=W/gview.k, hh=H/gview.k;
+    svg.setAttribute("viewBox", gview.x.toFixed(1)+" "+gview.y.toFixed(1)+" "+
+                                w.toFixed(1)+" "+hh.toFixed(1));
+    var z=document.getElementById("g-z");
+    if(z) z.textContent="zoom "+Math.round(gview.k*100)+"%";
+  }
+  function gzoom(f, ax, ay){
+    var k0=gview.k;
+    gview.k=Math.max(0.4, Math.min(8, gview.k*f));
+    // Keep the point under the cursor fixed, or zooming walks the graph away.
+    if(ax!=null){
+      gview.x += ax*(1/k0 - 1/gview.k);
+      gview.y += ay*(1/k0 - 1/gview.k);
+    }
+    applyGView();
+  }
+  function wireGraphView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg || svg.dataset.wired) return;
+    svg.dataset.wired="1";
+    svg.addEventListener("wheel", function(e){
+      e.preventDefault();
+      var r=svg.getBoundingClientRect();
+      gzoom(e.deltaY<0?1.18:1/1.18,
+            (e.clientX-r.left)/r.width*W, (e.clientY-r.top)/r.height*H);
+    }, {passive:false});
+    var pan=null;
+    svg.addEventListener("pointerdown", function(e){
+      // Never steal a press aimed at a circle — that press selects, and a drop
+      // target that also pans is a target you cannot hit.
+      if(e.target.closest && e.target.closest(".nodeg")) return;
+      var r=svg.getBoundingClientRect();
+      pan={px:e.clientX, py:e.clientY, x:gview.x, y:gview.y, sx:W/r.width/gview.k,
+           sy:H/r.height/gview.k};
+      svg.setPointerCapture(e.pointerId);
+    });
+    svg.addEventListener("pointermove", function(e){
+      if(!pan) return;
+      gview.x=pan.x-(e.clientX-pan.px)*pan.sx;
+      gview.y=pan.y-(e.clientY-pan.py)*pan.sy;
+      applyGView();
+    });
+    svg.addEventListener("pointerup", function(e){
+      pan=null;
+      try{ svg.releasePointerCapture(e.pointerId); }catch(err){}
+    });
   }
 
   var selected=null;                       // {cn, code, college, title, from}
@@ -822,6 +964,7 @@ window.__ccrDecision = function(discName, i){
     return null;
   }
   function applyMove(sel, toId){
+    if(coursesOn(sel.cn).length>1){ setHint(sharedKeyReason(sel.cn, sel.code)); return; }
     home[sel.cn]=toId;
     moves = moves.filter(function(m){ return m.cn!==sel.cn; });
     var origin = null;
@@ -833,22 +976,66 @@ window.__ccrDecision = function(discName, i){
     drawGraph(); drawList(); drawWrites();
   }
 
+  /* The courses each identity is currently carrying, and how many distinct
+   * colleges are among them. Sorted on below. */
+  function carried(nd){
+    var mine=[];
+    pack.nodes.forEach(function(src){
+      src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
+    });
+    var cols={}; mine.forEach(function(m){ cols[m.c]=1; });
+    return {mine:mine, colleges:Object.keys(cols).length};
+  }
   function drawList(){
     var out=[];
-    pack.nodes.forEach(function(nd){
-      var mine=[];
-      pack.nodes.forEach(function(src){
-        src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
-      });
+    /* Sam: "sorted descending by the ones with the most colleges".
+     *
+     * NEITHER available figure can rank this on its own, so the key is the
+     * larger of the two — a lower bound on the identity's real size, which is
+     * the most that can honestly be claimed:
+     *
+     *   nd.n     the count the row reports. Uncapped, but it disagrees with
+     *            what is actually carried on about a fifth of identities, and
+     *            it can UNDERSTATE: FCSH M1020 reports 10 and carries 14.
+     *   carried  what this pack embeds. Truthful about those, but capped at
+     *            --max-members (14), so it saturates — a 54-member identity and
+     *            a 10-member one would both read 14 and sort level, which ranks
+     *            nothing precisely at the top of the list where ranking matters.
+     *
+     * Both are printed whenever they disagree, and a carried list shorter than
+     * the reported count says it is a sample: a capped list must never read as
+     * a census. Ties fall back to the title so the order is stable. */
+    var order=pack.nodes.slice().map(function(nd){
+      var c=carried(nd);
+      return {nd:nd, mine:c.mine, colleges:c.colleges};
+    }).sort(function(a,b){
+      var sa=Math.max(a.nd.n, a.mine.length), sb=Math.max(b.nd.n, b.mine.length);
+      if(sa!==sb) return sb-sa;
+      return String(a.nd.t||a.nd.id).localeCompare(String(b.nd.t||b.nd.id));
+    });
+    order.forEach(function(row){
+      var nd=row.nd, mine=row.mine;
       var pt=paintOf(nd);
-      out.push("<li>");
+      // data-id makes the whole card a drop target — see the wiring below.
+      out.push('<li data-id="'+esc(nd.id)+'">');
       var st = stateOf(nd);
       out.push('<span class="ttl">'+esc(nd.t||nd.id)+"</span> "+
                '<span class="chip '+(nd.sys==="C-ID"||nd.sys==="CCN-ID"?"cid":
                  nd.sys==="M-ID"?"gen":"mut")+'">'+pt.glyph+" "+esc(pt.word)+"</span>"+
                (st?' <span class="chip '+(nd.rev?"ok":"flag")+'">'+st.glyph+" "+
                    esc(st.word)+"</span>":""));
-      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" college"+(nd.n===1?"":"s")+
+      // "N member courses", not "N colleges": nd.n comes from whichever field
+      // minted the row and is not a count of colleges — CLAUDE.md is explicit
+      // about it, and the card was calling it one.
+      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" member course"+
+               (nd.n===1?"":"s")+" reported"+
+               (mine.length!==nd.n?' <span title="What this view has embedded '+
+                 'for the identity. It caps the satellites it carries, so a '+
+                 'shorter list is a sample; a longer one means the reported '+
+                 'count understates what the join finds.">\u00b7 '+mine.length+
+                 " carried here"+(mine.length<nd.n?" (a sample)":"")+"</span>":"")+
+               (row.colleges?" · "+row.colleges+" college"+
+                 (row.colleges===1?"":"s")+" among them":"")+
                (nd.u!=null?" · "+nd.u+" units":"")+"</div>");
       if(!mine.length){
         out.push('<p class="empty" style="margin:.4em 0 0">No courses left here.</p>');
@@ -856,7 +1043,13 @@ window.__ccrDecision = function(discName, i){
         out.push('<ul class="mlist">');
         mine.forEach(function(m){
           var wasMoved = moves.some(function(x){return x.cn===m.cn;});
-          out.push('<li'+(wasMoved?' class="moved"':"")+' draggable="true" data-cn="'+esc(m.cn)+'">'+
+          var shared = coursesOn(m.cn).length>1;
+          var cls=(wasMoved?"moved ":"")+(shared?"shared":"");
+          out.push('<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+
+            (shared?"":' draggable="true"')+' data-cn="'+esc(m.cn)+'">'+
+            (shared?'<span class="chip warn" title="Control number '+esc(m.cn)+
+              ' names '+coursesOn(m.cn).length+' different courses, so the CN: '+
+              'write key cannot say which one to move.">shared key</span> ':"")+
             '<span class="cd">'+esc(m.n)+"</span>"+
             '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
             (wasMoved?' <span class="chip ok">✓ moved</span>':"")+
@@ -873,6 +1066,26 @@ window.__ccrDecision = function(discName, i){
         selected=findMember(li.dataset.cn);
       });
     });
+    /* Sam: "Should be able to drag from one Course card to another (not be
+     * limited to the Move… button)." The circles were the only drop target, so
+     * a curator reading the cards had to go back up to the graph to act on what
+     * they had just read. Every identity card is a drop target now; the circles
+     * still are, and the button still is, because a drag is not reachable from
+     * a keyboard and dropping that route would take the view backwards. */
+    Array.prototype.forEach.call(view.querySelectorAll("#ids > li[data-id]"), function(card){
+      card.addEventListener("dragover", function(ev){
+        if(!selected) return;
+        ev.preventDefault();                       // required, or no drop fires
+        card.classList.add("drop-to");
+      });
+      card.addEventListener("dragleave", function(){ card.classList.remove("drop-to"); });
+      card.addEventListener("drop", function(ev){
+        ev.preventDefault(); card.classList.remove("drop-to");
+        var cn=ev.dataTransfer.getData("text/plain");
+        var m=cn?findMember(cn):selected;
+        if(m) applyMove(m, card.dataset.id);
+      });
+    });
     Array.prototype.forEach.call(view.querySelectorAll(".mv"), function(b){
       b.addEventListener("click", function(){
         selected=findMember(b.dataset.cn);
@@ -883,13 +1096,42 @@ window.__ccrDecision = function(discName, i){
     });
   }
 
+  // Stable across a rebuild of the packs: the pack index would not be.
+  var groupKey="CCRGRP:"+discName+"::"+pack.nodes.map(function(n){return n.id;})
+                                         .slice().sort().join("+");
+  var groupStatus="";
   function drawWrites(){
     var el=document.getElementById("wr");
-    if(!moves.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
-    el.innerHTML='<div class="writes">'+moves.map(function(m){
+    var rows=moves.map(function(m){
       return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
-    }).join("")+"</div>";
+    });
+    if(groupStatus)
+      rows.push("<div>"+esc(groupKey.length>58?groupKey.slice(0,57)+"\u2026":groupKey)+
+                "  status  "+esc(groupStatus)+"</div>");
+    if(!rows.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
+    el.innerHTML='<div class="writes">'+rows.join("")+"</div>";
   }
+
+  var gi=document.getElementById("g-in"), go2=document.getElementById("g-out"),
+      gr=document.getElementById("g-reset");
+  if(gi) gi.onclick=function(){ gzoom(1.35, W/2, H/2); };
+  if(go2) go2.onclick=function(){ gzoom(1/1.35, W/2, H/2); };
+  if(gr) gr.onclick=function(){ gview={k:1,x:0,y:0}; applyGView(); };
+
+  var gs=document.getElementById("g-status");
+  if(gs) gs.addEventListener("change", function(){
+    groupStatus=gs.value;
+    var n=document.getElementById("g-status-note");
+    if(n) n.innerHTML = groupStatus
+      ? "Recorded against this group of "+pack.nodes.length+" identities. "+
+        (groupStatus==="ready-remint"
+          ? "Ready to re-mint is a QUEUE, not a trigger \u2014 re-mints are batched "+
+            "under the playbook, never fired from this page."
+          : "Nothing is written from the prototype; the row it would write is "+
+            "shown on the right.")
+      : "";
+    drawWrites();
+  });
 
   drawGraph(); drawList(); drawWrites();
 };
@@ -1118,11 +1360,20 @@ var cvs, ctx, DPR=1;
 var view={x:0,y:0,k:0.12};   // world→screen: screen = (world+pan)*k
 var hoverIsl=null, hoverNode=null, selIsl=null, selNode=null;
 var moves=[], movedTo={}, roster=null, byCn=null, cnHome=null, nodeIdx=null, memberSource="";
+var cnCourses=null;           // cn -> [{n:code, c:college}] — EVERY course the key names
 var MEMBER_PAGE=200, memFilter="";
 var descCache={}, descState={};      // island shard -> {cn/index: text} · shard -> "loading"|"ok"|"blocked"|"missing"
 var DESC_DIR="ccr_desc";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
+var placedBoxes=[], titlesQueued=0;   // last frame's placed text, for the harness
+/* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
+ * a module constant because doSearch has to honour it: a search that flies to
+ * "fit all the hits" picks a zoom below it whenever the hits are spread out,
+ * and then reports "Ringed in red" over a canvas drawing nothing but islands.
+ * Reported from a browser by Sam, 2026-08-25: 19 hits across 9 subjects, zoom
+ * 12%, no rings. One constant read by both is what stops them disagreeing. */
+var NODE_ZOOM=0.20;
 
 var SYS=[["#F1EAFC","#6D28D9","✽","M-ID"],
          ["#E7EEF9","#0047AB","★","C-ID"],
@@ -1134,7 +1385,12 @@ function ensureDescCss(){
   var st=document.createElement("style"); st.id="u-desc-css";
   st.textContent=".mlist .mdesc{display:block;margin:.35em 0 .1em;font-size:.84rem;"+
     "line-height:1.45;color:var(--text-body,#3A3A36);max-width:var(--cpl-measure,none)}"+
-    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}";
+    ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}"+
+    // Glyph-free on purpose: the chip's own words carry the state, so the color
+    // is reinforcement and greyscale loses nothing.
+    ".mlist .chip.warn{background:var(--accent-warn-tint,#FBF1D8);"+
+    "color:var(--accent-warn-ink,#6B4E00);border:1px solid var(--accent-warn,#8B6800)}"+
+    ".mlist li.shared .cd{text-decoration:underline dotted}";
   document.head.appendChild(st);
 }
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -1156,14 +1412,39 @@ function s2w(px,py){return [(px-cvs.clientWidth/2)/view.k - view.x,
  * live, because "no courses here" and "no courses shipped" look identical on
  * screen and mean opposite things.
  *
- * A control number can appear under MORE THAN ONE identity (1,122 do — the
- * forward join surfaces an over-merged course on every card that claims it).
- * The write is one `CN:` row per control number, so a move is a single global
- * statement: movedTo[cn] is therefore the ONLY home that counts once a curator
- * has moved a course, and the course leaves every other card it was showing on.
+ * TWO different things make a control number non-unique here, and only the
+ * first was ever handled:
+ *
+ *  1. A control number can appear under MORE THAN ONE IDENTITY (1,165 do — the
+ *     forward join surfaces an over-merged course on every card that claims it).
+ *     The write is one `CN:` row per control number, so a move is a single
+ *     global statement: movedTo[cn] is the ONLY home that counts once a curator
+ *     has moved a course, and the course leaves every other card it showed on.
+ *
+ *  2. A control number can name MORE THAN ONE COURSE. 1,761 in this payload do
+ *     — 3,634 draggable rows. Measured by kb/_audit_control_number_claims.py:
+ *     most are one course written two ways (a CCN alongside its local code, an
+ *     institution entered under two roster names), but 73 are genuinely two
+ *     different courses filed under one number, and the key cannot tell any of
+ *     them apart.
+ *
+ * (2) is why cnCourses exists. byCn keeps the first record seen, which is fine
+ * for reporting where a course came from and WRONG as the thing to render on a
+ * destination: a curator who drags the second of two collided courses would
+ * watch the first one arrive. A move whose key names several courses cannot be
+ * expressed by `CN:<cn>` at all, so it is REFUSED rather than written wrong —
+ * see canMove().
  */
+function noteCourse(cn, rec){
+  // Distinct (code, college) only: the same course legitimately appears on
+  // several identities, and counting those would flag every over-merge as an
+  // ambiguous KEY, which is a different fault with a different repair.
+  var l=cnCourses[cn]||(cnCourses[cn]=[]);
+  for(var i=0;i<l.length;i++) if(l[i].n===rec.n && l[i].c===rec.c) return;
+  l.push({n:rec.n, c:rec.c});
+}
 function buildMemberIndex(){
-  roster={}; byCn={}; cnHome={}; memberSource="";
+  roster={}; byCn={}; cnHome={}; cnCourses={}; memberSource="";
   var MEM=window.CPL_CCR_UNIVERSE_MEMBERS||null;
   if(MEM && MEM.m){
     var cols=MEM.colleges||[];
@@ -1171,6 +1452,7 @@ function buildMemberIndex(){
       roster[id]=MEM.m[id].map(function(r){
         var cn="CCC"+String(r[0]).padStart(9,"0");
         var rec={cn:cn, n:r[1]||"", c:cols[r[2]]||"—"};
+        noteCourse(cn, rec);
         if(!(cn in byCn)){ byCn[cn]=rec; cnHome[cn]=id; }
         return rec;
       });
@@ -1184,7 +1466,10 @@ function buildMemberIndex(){
       pack.nodes.forEach(function(nd){
         if(!nd.m||!nd.m.length) return;
         roster[nd.id]=nd.m;
-        nd.m.forEach(function(m){ if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; } });
+        nd.m.forEach(function(m){
+          noteCourse(m.cn, m);
+          if(!(m.cn in byCn)){ byCn[m.cn]=m; cnHome[m.cn]=nd.id; }
+        });
       });
     });
   });
@@ -1194,6 +1479,32 @@ function buildMemberIndex(){
  * several honest answers; the FIRST is recorded only so the move receipt can say
  * where it came from — the move itself is global and leaves all of them. */
 function originOf(cn){ return (cnHome&&cnHome[cn])||null; }
+/* Every course the write key names. More than one means the key is ambiguous. */
+function coursesOn(cn){ return (cnCourses&&cnCourses[cn])||[]; }
+/* Can this course be re-homed at all?  `CN:<control number>` carries no way to
+ * say WHICH course, and the receiving end picks the first one it finds — the
+ * live generator through cn_rows[cn][0], this page through byCn[cn]. So for an
+ * ambiguous key a move is not merely risky, it is INEXPRESSIBLE: whatever the
+ * curator dragged, the number moves whichever course happens to be indexed
+ * first, and takes the others out of their own cards on the way past.
+ * Refusing is the honest answer. Widening the key is a schema decision. */
+/* One sentence, used by the chip and by the refusal, so the warning a curator
+ * reads before clicking and the message they get after cannot disagree. */
+function sharedKeyReason(cn, code, others){
+  var them=(others||coursesOn(cn)).filter(function(o){return o.n!==code;});
+  var list=them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", ");
+  return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
+    " names "+((others||coursesOn(cn)).length)+" courses — also "+esc(list)+
+    (them.length>3?" and "+(them.length-3)+" more":"")+
+    ". The write is <code>CN:"+esc(cn)+"</code>, which cannot say which one, so "+
+    "the move would land whichever course is indexed first. Fix the duplicate "+
+    "control number upstream in COCI, or widen the write key.";
+}
+function canMove(cn){
+  var l=coursesOn(cn);
+  if(l.length<2) return {ok:true};
+  return {ok:false, others:l};
+}
 /* ── course descriptions, fetched per discipline on demand ────────────────
  * Measured 2026-08-24: descriptions are 34.8 MB stored, 11.6 MB even cut to 120
  * characters, against a page already at 9.7 MB. There is no truncation that is
@@ -1227,6 +1538,17 @@ function descFor(isl, id, idx){
   var d=descCache[sh]&&descCache[sh][id];
   return (d&&d[idx])||null;
 }
+/* The record a curator actually picked up, for a course that has been moved.
+ * byCn[cn] is the FIRST record indexed for that key, which is a different
+ * course whenever the key names several — so a destination built from byCn
+ * shows the wrong one. Moves are refused for ambiguous keys (canMove), so the
+ * two agree today; reading the move is what keeps them agreeing if that ever
+ * changes. */
+function movedRecord(cn){
+  for(var i=0;i<moves.length;i++)
+    if(moves[i].cn===cn) return {cn:cn, n:moves[i].code, c:moves[i].college};
+  return byCn&&byCn[cn]||null;
+}
 function membersOf(id){
   var out=(roster&&roster[id]||[]).filter(function(m){
     return !(m.cn in movedTo) || movedTo[m.cn]===id;
@@ -1234,7 +1556,8 @@ function membersOf(id){
   Object.keys(movedTo).forEach(function(cn){
     if(movedTo[cn]!==id) return;
     for(var i=0;i<out.length;i++) if(out[i].cn===cn) return;
-    if(byCn[cn]) out.push(byCn[cn]);
+    var rec=movedRecord(cn);
+    if(rec) out.push(rec);
   });
   return out;
 }
@@ -1257,9 +1580,9 @@ function draw(){
   ctx.fillRect(0,0,W,H);
 
   var k=view.k;
-  var showNodes = k>0.20, showLabels = k>0.55, showTitles = k>1.35;
+  var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTitles = k>1.35;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
-  var labelQueue=[];
+  var labelQueue=[], titleQueue=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -1296,23 +1619,29 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle="#0047AB"; ctx.stroke();
         }
-        if(showTitles && nd.n>1 && rad>5){
-          ctx.font="11px 'Source Sans 3',system-ui,sans-serif";
-          ctx.fillStyle="#3A3A36"; ctx.textAlign="center";
-          var t=nd.t.length>26?nd.t.slice(0,25)+"…":nd.t;
-          ctx.fillText(t,p[0],p[1]+rad+12);
-        }
+        // Titles are QUEUED, not drawn here, for the same reason island names
+        // are: a dense island stacks dozens of them into an unreadable pile.
+        // The file already calls that "the exact failure of a global graph
+        // view" for islands — it is no less true one grain down, and it shows
+        // up the moment a search flies you into a crowded subject.
+        if(showTitles && nd.n>1 && rad>5)
+          titleQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad,
+                           force:(nd===selNode||hitSet[nd.i])});
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
-    // big island's name is never buried under a small neighbour's — and so
+    // big island's name is never buried under a small neighbor's — and so
     // overlapping labels can be rejected rather than stacked. An unreadable
     // pile of overlapping names is the exact failure of a global graph view.
     labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
                      force:(isl===hoverIsl||isl===selIsl)});
   });
 
-  placeLabels(labelQueue, showLabels);
+  // Islands first: they are the navigational anchors, and a course name buried
+  // under its own subject's name helps nobody. Course titles then fill the gaps
+  // left over, and a title that cannot find one is dropped rather than stacked.
+  titlesQueued=titleQueue.length;
+  placedBoxes=placeTitles(titleQueue, placeLabels(labelQueue, showLabels));
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -1355,6 +1684,40 @@ function placeLabels(queue, showAll){
     ctx.fillStyle=q.force?"#0047AB":"#1C1C1A";
     ctx.fillText(lab,q.cx,q.cy);
   });
+  return boxes;   // course titles are placed into the gaps these leave
+}
+
+/* Course titles, same rule one grain down: biggest first, search hits and the
+   selection ahead of everything, and anything that will not fit is DROPPED.
+   Strictly dropped, including a hit — two names on top of each other are worth
+   less than one name and a bare ring, and the ring is still there to be
+   followed. Sorting hits first is what gets them the slots. */
+function placeTitles(queue, boxes){
+  var placed=[];
+  if(!queue.length) return placed;
+  queue.sort(function(a,b){
+    if(a.force!==b.force) return a.force?-1:1;
+    return b.rad-a.rad;
+  });
+  ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+  var W=cvs.clientWidth, H=cvs.clientHeight;
+  queue.forEach(function(q){
+    ctx.font=(q.force?"600 ":"")+"11px 'Source Sans 3',system-ui,sans-serif";
+    var t=q.nd.t.length>26?q.nd.t.slice(0,25)+"\u2026":q.nd.t;
+    var w=ctx.measureText(t).width;
+    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy+3];
+    if(box[2]<0||box[0]>W||box[3]<0||box[1]>H) return;
+    for(var i=0;i<boxes.length;i++){
+      var b=boxes[i];
+      if(box[0]<b[2]&&box[2]>b[0]&&box[1]<b[3]&&box[3]>b[1]) return;
+    }
+    boxes.push(box); placed.push(box);
+    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
+    ctx.strokeText(t,q.cx,q.cy);
+    ctx.fillStyle=q.force?"#920000":"#3A3A36";
+    ctx.fillText(t,q.cx,q.cy);
+  });
+  return placed;
 }
 
 /* ── hit testing ─────────────────────────────────────────────────────────── */
@@ -1379,7 +1742,7 @@ function pick(px,py){
 window.__ccrUniverse = function(){
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"Universe"}]);
+  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"SkyView"}]);
 
   view_el.innerHTML =
     '<h1>The whole Common Course Reference</h1>'+
@@ -1388,18 +1751,29 @@ window.__ccrUniverse = function(){
     'next to another, then drag a course between them — that is how a course filed under '+
     'the wrong subject gets moved to its real parent.</p>'+
     '<div class="u-bar">'+
-      '<input type="search" id="u-q" placeholder="Find a course or subject — e.g. welding, phlebotomy, MATH">'+
-      '<button class="btn" type="button" id="u-find">Find</button>'+
+      // No search box here. The page header already carries one, and two search
+      // fields on one screen that behave differently is a question about which
+      // one you are supposed to use — Sam hit exactly that. The header box
+      // drives this map whenever the map is open; see __ccrUniverseSearch.
       '<button class="btn" type="button" id="u-out">−</button>'+
       '<button class="btn" type="button" id="u-in">+</button>'+
       '<button class="btn" type="button" id="u-reset">Reset view</button>'+
+      // A real focusable control, not a gesture: this is the route to the
+      // subject list now that the map is the landing view, and it is also the
+      // route a keyboard reader takes to the parts of the tab the canvas does
+      // not carry.
+      '<button class="btn" type="button" id="u-list">Browse subjects as a list</button>'+
       '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
     '</div>'+
     '<div class="u-wrap"><canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
       'A map of every course identity, grouped into one island per subject area. '+
-      'Use the search box to jump to a subject; the panel below lists what you select."></canvas>'+
+      'Use the search box at the top of the page to jump to a subject, or Tab to '+
+      'step through them from the keyboard; the panel below lists what you '+
+      'select."></canvas>'+
       '<div class="u-hint" id="u-hint">Drag the background to pan · scroll to zoom · '+
-      'drag a subject to move it · click a course to open it</div></div>'+
+      'drag a subject to move it · click a course to open it. '+
+      'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> '+
+      'goes into one, <kbd>Esc</kbd> comes back out.</div></div>'+
     '<div class="stage" style="margin-top:14px">'+
       '<div class="panel" id="u-detail"><h3>Nothing selected</h3>'+
       '<p class="empty">Click a subject or a course on the map.</p></div>'+
@@ -1438,12 +1812,30 @@ function flyTo(x,y,k){
   view.k=Math.max(0.03,Math.min(9,k)); view.x=-x; view.y=-y; draw();
 }
 window.__ccrUniverseFly = flyTo;
+/* The header's search box calls this when the map is on screen, so one field
+ * serves both the map and the text views instead of the page carrying two. */
+window.__ccrUniverseSearch = doSearch;
 window.__ccrUniverseState = function(){
   // `sel` is here so a test that clicks the canvas can assert which identity it
   // actually landed on — a click check with no such assertion passes happily
   // against the previous selection.
+  // sharedKeys is here so a test can assert the guard is live on real data
+  // rather than on a fixture: a payload that stops carrying collided control
+  // numbers would silently turn the check into a no-op.
+  var shared=0;
+  if(cnCourses) for(var k in cnCourses) if(cnCourses[k].length>1) shared++;
   return {view:view, moves:moves, sel:selNode?selNode.i:null,
-          members:roster?Object.keys(roster).length:0, memberSource:memberSource};
+          members:roster?Object.keys(roster).length:0, memberSource:memberSource,
+          sharedKeys:shared, canMove:canMove,
+          // Exported so a test asserts against the SAME threshold draw() uses.
+          // Hard-coding 0.20 in the harness would pass happily the day the
+          // renderer's threshold moved and the search stopped clearing it.
+          nodeZoom:NODE_ZOOM, hits:searchHits.length,
+          // Canvas text cannot be queried from the DOM, so the placed boxes are
+          // published for the harness to check for overlap directly. Counting
+          // drawn-vs-queued alone would pass a renderer that dropped every
+          // second title at random.
+          placedBoxes:placedBoxes, titlesQueued:titlesQueued};
 };
 
 function wire(){
@@ -1456,10 +1848,8 @@ function wire(){
   document.getElementById("u-in").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1.4); };
   document.getElementById("u-out").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
-  document.getElementById("u-find").onclick=doSearch;
-  document.getElementById("u-q").addEventListener("keydown",function(e){
-    if(e.key==="Enter"){ e.preventDefault(); doSearch(); }
-  });
+  var lb=document.getElementById("u-list");
+  if(lb) lb.onclick=function(){ window.__ccrForest(); };
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -1510,8 +1900,83 @@ function wire(){
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
     drag=null; draw();
   });
+  /* The accelerator for the button in the panel. It follows the button rather
+   * than replacing it: a double-click is undiscoverable, is not reachable from
+   * a keyboard, and on 154 of the 159 subjects here there is nothing to open —
+   * so on its own it would be a gesture that usually appears to do nothing. */
+  cvs.addEventListener("dblclick", function(e){
+    var r=cvs.getBoundingClientRect();
+    var hit=pick(e.clientX-r.left, e.clientY-r.top);
+    if(!hit) return;
+    var d=hasWorkSurface(hit.isl);
+    if(d){ window.__ccrDiscipline(d); return; }
+    // Say so. Silence here is indistinguishable from a broken page.
+    selIsl=hit.isl; selNode=null; showIsland(hit.isl);
+    setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet \u2014 the "+
+            "grouped decision view covers "+
+            (A&&A.detail?num(Object.keys(A.detail).length):"a few")+" subjects so far.");
+    draw();
+  });
+  /* Keyboard operation of the map itself, not just the frame.
+   *
+   * Arrows panned and +/- zoomed, and there was NO key that reached a subject or
+   * an identity — so everything the view exists for (select it, read its panel,
+   * pick a course up) needed a mouse. That was survivable while the DOM list was
+   * the way in; it is not survivable now the map is the landing view, because
+   * the tab's front door would be the one surface a keyboard cannot operate.
+   *
+   * Tab/Shift-Tab step through subjects, Enter opens the selected one, and once
+   * inside a subject Tab steps through its identities. Escape steps back out.
+   * Arrows keep panning — a reader who wants the frame moved still can. */
+  var kbIsl=-1, kbNode=-1, kbInside=false;
+  function kbSubject(dir){
+    kbIsl=(kbIsl+dir+U.islands.length)%U.islands.length;
+    kbInside=false; kbNode=-1;
+    var isl=U.islands[kbIsl];
+    selIsl=isl; selNode=null;
+    flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
+    showIsland(isl);
+    setHint("Subject <strong>"+esc(isl.d)+"</strong> \u2014 "+num(isl.n)+
+            " identities. <kbd>Enter</kbd> to step into it, <kbd>Tab</kbd> for the next subject.");
+  }
+  function kbIdentity(dir){
+    var isl=U.islands[kbIsl]; if(!isl || !isl.p.length) return;
+    kbNode=(kbNode+dir+isl.p.length)%isl.p.length;
+    var nd=isl.p[kbNode];
+    // Zoom past the node threshold or the identity a reader has just selected
+    // is not drawn at all — the same floor the search has to clear.
+    flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(view.k, NODE_ZOOM*3));
+    showNode(nd, isl);
+    setHint("<strong>"+esc(nd.t||nd.i)+"</strong> \u2014 "+esc(nd.i)+
+            " ("+num(kbNode+1)+" of "+num(isl.p.length)+" in "+esc(isl.d)+
+            "). <kbd>Esc</kbd> to leave this subject.");
+  }
+  /* Two levels, and which one Tab moves in is held EXPLICITLY. Deriving it from
+     "have we got a node yet" made Enter unable to enter: at island level there
+     is no node by definition, so the same test that meant "step between
+     subjects" also swallowed the keypress meant to go inside one. */
+  function kbStep(dir){
+    if(kbIsl<0 || !kbInside) kbSubject(dir);
+    else kbIdentity(dir);
+  }
+
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
+    if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
+    if(e.key==="Enter"||e.key===" "){
+      if(kbIsl>=0 && !kbInside){ kbInside=true; kbNode=-1; kbIdentity(1); e.preventDefault(); }
+      return;
+    }
+    if(e.key==="Escape"){
+      if(kbInside){
+        kbInside=false; kbNode=-1; selNode=null;
+        var isl=U.islands[kbIsl];
+        if(isl){ showIsland(isl); setHint("Back to <strong>"+esc(isl.d)+
+          "</strong>. <kbd>Tab</kbd> for the next subject."); }
+        draw();
+      }
+      e.preventDefault(); return;
+    }
     if(e.key==="ArrowLeft"){ view.x+=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
@@ -1523,38 +1988,75 @@ function wire(){
 function setHint(t){ var el=document.getElementById("u-hint"); if(el) el.innerHTML=t; }
 
 /* ── keyword zoom ────────────────────────────────────────────────────────── */
-function doSearch(){
-  var term=(document.getElementById("u-q").value||"").trim().toLowerCase();
+function doSearch(raw){
+  var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
-  var isl=null;
-  for(var i=0;i<U.islands.length;i++)
-    if(U.islands[i].d.toLowerCase().indexOf(term)>=0){ isl=U.islands[i]; break; }
   U.islands.forEach(function(I){
     I.p.forEach(function(nd){
       if(nd.t.toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         searchHits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
     });
   });
-  if(isl && !searchHits.length){
+  /* A SUBJECT NAME WINS. Typing "English as a Second Language" means "take me
+   * there", and the old order only considered the subject when there were no
+   * node hits at all — so a subject name that also appeared in a few course
+   * titles scattered the view instead of going anywhere. Only when every
+   * matching island is the SAME discipline though: "art" matches Art, Culinary
+   * Arts and Theater Arts, and picking one of those for the curator would be a
+   * guess dressed as an answer. */
+  var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
+  var base=function(I){ return I.d.replace(" \u00b7 stand-alone",""); };
+  var bases={}; named.forEach(function(I){ bases[base(I)]=1; });
+  /* An EXACT discipline name beats a substring match. It has to, because the
+   * corpus carries near-identical discipline names that merely CONTAIN each
+   * other: "English as a Second Language" is one discipline, and "English as a
+   * Second Language (ESL)" and "English as a Second Language Noncredit 53412"
+   * are two more. Without this, typing the real name of a subject scattered the
+   * view because two other spellings of it also matched. */
+  var exact=named.filter(function(I){ return base(I).toLowerCase()===term; });
+  if(exact.length) named=exact;
+  if(named.length && (exact.length || Object.keys(bases).length===1)){
+    // Prefer the clustered island over its stand-alone twin: the stand-alone
+    // side asserts no equivalence, so it is not where curation happens.
+    var isl=named.filter(function(I){ return !I.a; })[0]||named[0];
     flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
     selIsl=isl; showIsland(isl);
-    setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+isl.n+" identities.");
+    setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+num(isl.n)+" identities."+
+      (searchHits.length?" <strong>"+num(searchHits.length)+"</strong> course"+
+        (searchHits.length===1?"":"s")+" also match “"+esc(term)+"” by name"+
+        (named.length>1?", including its stand-alone side":"")+", ringed in red.":""));
+    draw();
     return;
   }
   if(!searchHits.length){ setHint("Nothing matches “"+esc(term)+"”."); draw(); return; }
+  var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
+  var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
+  var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
+    "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
+    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" \u00b7 ")+
+    (names.length>4?" \u00b7 …":"")+".";
   var xs=searchHits.map(function(h){return h.x;}), ys=searchHits.map(function(h){return h.y;});
   var cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/2;
   var cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/2;
   var spread=Math.max(90, Math.max(Math.max.apply(null,xs)-Math.min.apply(null,xs),
                                    Math.max.apply(null,ys)-Math.min.apply(null,ys)));
-  flyTo(cx,cy, Math.min(3.2, (cvs.clientWidth*0.62)/spread));
-  var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
-  var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
-  setHint("<strong>"+num(searchHits.length)+"</strong> match“"+esc(term)+
-    "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
-    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
-    (names.length>4?" · …":"")+". Ringed in red.");
+  var fit=Math.min(3.2, (cvs.clientWidth*0.62)/spread);
+  if(fit>NODE_ZOOM){
+    flyTo(cx,cy,fit);
+    setHint(head+" Ringed in red.");
+  } else {
+    /* The hits do not fit in one view at any zoom that draws them. Go to the
+     * densest subject rather than framing them all invisibly, and say which —
+     * "ringed in red" over a canvas with no nodes on it is the report that
+     * sent Sam looking for a rendering bug. */
+    var top=searchHits.filter(function(h){return h.isl.d===names[0];});
+    var tx=top.reduce(function(a,h){return a+h.x;},0)/top.length;
+    var ty=top.reduce(function(a,h){return a+h.y;},0)/top.length;
+    flyTo(tx,ty,Math.max(NODE_ZOOM*1.6, Math.min(3.2, 190/top[0].isl.r)));
+    setHint(head+" They are too far apart to ring in one view — showing <strong>"+
+      esc(names[0])+"</strong>. Search a subject name to go straight to it.");
+  }
   if(searchHits.length===1){ selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
                              showNode(selNode, selIsl); }
   draw();
@@ -1574,8 +2076,44 @@ function showIsland(isl){
         '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span>"+
         '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+"</div></li>";
     }).join("")+"</ul>"+
+    workSurfaceOffer(isl)+
     '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
     'beside another, then drag a course across.</p>';
+  var b=document.getElementById("u-open-work");
+  if(b) b.addEventListener("click", function(){
+    window.__ccrDiscipline(b.dataset.d);
+  });
+}
+/* Sam: "double-click on a cluster in graph view to open the work surface … could
+ * also have a button on graph view that does the same."
+ *
+ * The button leads and the double-click follows it, because the work surface
+ * exists for FIVE of the 159 subjects on this map — 593 identities of 49,907.
+ * The decision packs in ccr_atlas_data.json were built as a demo sample while
+ * the map was built over the whole corpus. A double-click that silently does
+ * nothing on 97% of the map reads as a broken page; a button can say why there
+ * is nothing to open, which is the only honest thing to render here.
+ *
+ * Building packs for all 159 is ~39 MB inline — but that is the same shape as
+ * the course descriptions, which already ship one file per discipline fetched
+ * on demand. The path is known; it just has not been walked.
+ */
+function hasWorkSurface(isl){
+  var d=isl.d.replace(" \u00b7 stand-alone","");
+  var has = A && A.detail && A.detail[d] && A.detail[d].length &&
+            typeof window.__ccrDiscipline === "function";
+  return has ? d : null;
+}
+function workSurfaceOffer(isl){
+  var d=hasWorkSurface(isl);
+  if(d) return '<p style="margin-top:.6em"><button class="btn primary" type="button" '+
+    'id="u-open-work" data-d="'+esc(d)+'">Open the work surface for '+esc(d)+'</button>'+
+    ' <span class="sub">'+num(A.detail[d].length)+' decision'+
+    (A.detail[d].length===1?"":"s")+' to work through.</span></p>';
+  return '<p class="empty" style="margin-top:.6em">No work surface for this subject yet '+
+    '\u2014 the grouped decision view is built for '+
+    (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' subjects so far, not all '+
+    num(U.counts.disciplines)+'.</p>';
 }
 function showNode(nd, isl){
   selNode=nd; selIsl=isl; memFilter="";
@@ -1628,12 +2166,20 @@ function renderNode(){
     h+='<ul class="mlist">'+capped.map(function(m){
       var moved=movedTo[m.cn]===nd.i;
       var d=descFor(isl, nd.i, mine.indexOf(m));
-      return '<li'+(moved?' class="moved"':"")+'>'+
+      // Say it BEFORE the click, not only after. A curator who picks a course
+      // up, hunts for the destination and is refused on arrival has done the
+      // hard part of the work for nothing.
+      var shared=coursesOn(m.cn).length>1;
+      var cls=(moved?"moved ":"")+(shared?"shared":"");
+      return '<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+'>'+
         '<span class="cd">'+esc(m.n)+"</span>"+
         '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
         (moved?' <span class="chip ok">✓ moved here</span>':"")+
+        (shared?' <span class="chip warn" title="Control number '+esc(m.cn)+
+          ' names '+coursesOn(m.cn).length+' different courses, so the '+
+          'CN: write key cannot say which one to move.">shared key</span>':"")+
         '<button class="mv" type="button" data-cn="'+esc(m.cn)+'" data-code="'+esc(m.n)+
-        '" data-col="'+esc(m.c)+'">Drag\u2026</button>'+
+        '" data-col="'+esc(m.c)+'"'+(shared?' data-shared="1"':"")+'>Drag\u2026</button>'+
         (d?'<div class="mdesc">'+esc(d)+"</div>"
           :st==="ok"?'<div class="mdesc none">No catalog description for this course.</div>':"")+
         "</li>";
@@ -1657,6 +2203,10 @@ function renderNode(){
   });
   Array.prototype.forEach.call(el.querySelectorAll(".mv"), function(b){
     b.addEventListener("click", function(){
+      if(b.dataset.shared){
+        setHint(sharedKeyReason(b.dataset.cn, b.dataset.code, coursesOn(b.dataset.cn)));
+        return;
+      }
       drag={kind:"course", cn:b.dataset.cn, code:b.dataset.code, college:b.dataset.col,
             px:cvs.clientWidth/2, py:cvs.clientHeight/2};
       setHint("Carrying <strong>"+esc(b.dataset.code)+"</strong> — click the course it belongs to. "+
@@ -1666,6 +2216,8 @@ function renderNode(){
   });
 }
 function applyMove(cn, code, college, toId){
+  var gate=canMove(cn);
+  if(!gate.ok){ setHint(sharedKeyReason(cn, code, gate.others)); return; }
   var from=movedTo[cn]||originOf(cn);
   if(from===toId){ setHint("That course is already there."); return; }
   movedTo[cn]=toId;

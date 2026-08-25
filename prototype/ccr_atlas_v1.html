@@ -150,7 +150,10 @@ a{color:var(--cobalt)}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 .canvas{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
         position:relative;overflow:hidden}
-.canvas svg{display:block;width:100%;height:auto;touch-action:none}
+.canvas svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.canvas svg:active{cursor:grabbing}
+.gbar{display:flex;gap:6px;align-items:center;padding:0 0 8px}
+.gbar .sub{margin-left:auto;color:var(--text-muted);font-size:.82rem}
 .hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;border-top:1px solid var(--border);
       background:var(--surface-subtle)}
 
@@ -180,6 +183,15 @@ a{color:var(--cobalt)}
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
+/* A card being dragged onto. Outline + tint, never tint alone: the cards
+   already carry state colors and one more wash of color reads as noise. */
+#ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
+  background:#F4F0FC}
+/* A course whose control number names several courses cannot be re-homed —
+   the CN: write key cannot say which. Dotted underline so the state survives
+   greyscale; the chip beside it carries the words. */
+.mlist li.shared .cd{text-decoration:underline dotted}
+.mlist .chip.warn{background:#FBF1D8;color:#6B4E00;border:1px solid #8B6800}
 .writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
         background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
         padding:9px 11px;overflow-x:auto;color:var(--text-body)}
@@ -265,7 +277,15 @@ document.getElementById("prov").textContent =
   DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
-  search(document.getElementById("gq").value);
+  var term = document.getElementById("gq").value;
+  // One search box, two behaviors, chosen by what is on screen: with the map
+  // open it flies and rings; anywhere else it lists results. The canvas being
+  // in the DOM is the test rather than a flag we keep in step by hand — every
+  // other view replaces #view wholesale, so it cannot go stale.
+  if (document.getElementById("u-cvs") && typeof window.__ccrUniverseSearch === "function")
+    window.__ccrUniverseSearch(term);
+  else
+    search(term);
 });
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){
@@ -308,10 +328,10 @@ function forest(){
   h.push('<div class="banner"><p><strong>ESL packaging proposal</strong> \u2014 '+
     '1,846 identities folding into three courses, drawn against today\u2019s data. Nothing written.</p>'+
     '<button class="btn primary" type="button" id="go-esl">See the proposal</button></div>');
-  h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>The whole universe</strong> \u2014 '+
-    'every course identity on one map, with keyword zoom. Drag a subject next to another to move a '+
+  h.push('<div class="banner" style="border-left-color:var(--cobalt)"><p><strong>Back to the map</strong> \u2014 '+
+    'every course identity on one canvas, with keyword zoom. Drag a subject next to another to move a '+
     'course that was filed under the wrong one.</p>'+
-    '<button class="btn primary" type="button" id="go-universe">Open the universe</button></div>');
+    '<button class="btn primary" type="button" id="go-universe">Open the map</button></div>');
   h.push('<div class="hero">'+
     '<div class="frame" id="hero-gfx"></div>'+
     '<div>'+
@@ -552,10 +572,22 @@ window.__ccrForest = forest;
 window.__ccrDiscipline = discipline;
 window.__ccrSearch = search;
 // Boot after EVERY script in the document has run — the graph module defines
-// __ccrPreview/__ccrDecision below this one, and forest() now uses both.
+// __ccrPreview/__ccrDecision below this one, and forest() uses both.
+//
+// SkyView leads (Sam, 2026-08-25: "SkyView should be the initial CCR tab … I
+// think SkyView is more manageable and less intimidating"). The subject list is
+// a button ON it rather than the way in. It falls back to the list when the
+// universe payload is missing, because a blank landing view is worse than a
+// less friendly one.
+function boot(){
+  if (window.CPL_CCR_UNIVERSE && typeof window.__ccrUniverse === "function")
+    window.__ccrUniverse();
+  else
+    forest();
+}
 if (document.readyState === "loading")
-  document.addEventListener("DOMContentLoaded", forest);
-else forest();
+  document.addEventListener("DOMContentLoaded", boot);
+else boot();
 })();
 </script>
 <script id="atlas-esl" type="application/json">__ESLDATA__</script>

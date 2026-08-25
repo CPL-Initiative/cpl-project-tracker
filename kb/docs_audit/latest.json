@@ -9,43 +9,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 638,
-    "bytes": 7224159,
+    "files": 641,
+    "bytes": 7253122,
     "over_budget": 4,
-    "handoff_max": 192,
+    "handoff_max": 193,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 147732,
+    "always_loaded_bytes": 150020,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 147732,
+        "bytes": 150020,
         "over": 1
       },
       "other": {
         "files": 75,
-        "bytes": 1934751,
+        "bytes": 1936253,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 259568,
+        "bytes": 260925,
         "over": 1
       },
       "lessons": {
         "files": 68,
-        "bytes": 1751806,
+        "bytes": 1761226,
         "over": 1
       },
       "kb_note": {
-        "files": 323,
-        "bytes": 1724149,
+        "files": 325,
+        "bytes": 1731141,
         "over": 0
       },
       "handoff": {
-        "files": 170,
-        "bytes": 1406153,
+        "files": 171,
+        "bytes": 1413557,
         "over": 0
       }
     },
@@ -57,16 +57,16 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2239,
-      "bytes": 1212480238,
-      "heavy_bytes": 597945002,
-      "heavy_share": 0.493,
+      "files": 2548,
+      "bytes": 1270489127,
+      "heavy_bytes": 655860376,
+      "heavy_share": 0.516,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
+        "cpl-project-tracker/prototype",
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
-        "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
         "cpl-project-tracker/kb/coci_minted_courses.json",
@@ -115,13 +115,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 147732,
+        "bytes": 150020,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 87732,
-        "ratio": 2.46
+        "over_by": 90020,
+        "ratio": 2.5
       },
-      "message": "147,732 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "150,020 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -129,6 +129,12 @@
       "fixable": false,
       "detail": {
         "cells": [
+          {
+            "row": "SkyView / the CCR curation interface",
+            "chars": 6114,
+            "priors": 0,
+            "corrections": 0
+          },
           {
             "row": "My College (college action page) / MAP-t",
             "chars": 4292,
@@ -139,20 +145,20 @@
         "cell_max": 4000,
         "prior_max": 1
       },
-      "message": "1 roadmap cell(s) have become append-only logs — worst is \"My College (college action page) / MAP-t\" at 4,292 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
+      "message": "2 roadmap cell(s) have become append-only logs — worst is \"SkyView / the CCR curation interface\" at 6,114 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 259568,
+        "bytes": 260925,
         "limit": 40000,
         "lane": "index",
-        "over_by": 219568,
-        "ratio": 6.49
+        "over_by": 220925,
+        "ratio": 6.52
       },
-      "message": "259,568 B is 6.5× the index budget (40,000 B) — candidate for compaction",
+      "message": "260,925 B is 6.5× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -3102,13 +3108,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 491857,
+        "bytes": 493359,
         "limit": 150000,
         "lane": "other",
-        "over_by": 341857,
-        "ratio": 3.28
+        "over_by": 343359,
+        "ratio": 3.29
       },
-      "message": "491,857 B is 3.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "493,359 B is 3.3× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -3887,6 +3893,16 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "prototype",
+      "detail": {
+        "bytes": 68702707,
+        "kind": "dir"
+      },
+      "message": "directory totals 68,702,707 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "cip_fitcheck",
       "detail": {
         "bytes": 51991148,
@@ -3913,16 +3929,6 @@
         "kind": "dir"
       },
       "message": "directory totals 14,346,263 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "prototype",
-      "detail": {
-        "bytes": 10787333,
-        "kind": "dir"
-      },
-      "message": "directory totals 10,787,333 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

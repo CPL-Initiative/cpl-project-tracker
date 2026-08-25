@@ -1,62 +1,50 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-25 · Sam checked Sierra in a browser and confirmed she is right again: \"Sierra looks great this morning.\" That closes the problem he reported the night before, where she said Moreno Valley College had no students when it actually has nearly 2,900 — the most of Riverside's three colleges. She had been reading a copy of the numbers taken in June that nobody has updated since, while the real figures refresh every night. Rather than refresh the old copy we deleted it, because two copies of the same fact always drift apart again and a stale number looks exactly like a fresh one. That fix went live together with the two Memory tab features that had been waiting on the same deploy. We had already checked character-by-character that the right code was running and that the automated tests passed — but none of that can tell you whether an answer reads correctly to a person. Only someone looking can, and now someone has.",
-  "_session": 192,
-  "_status": "Deployed, and the Sierra half is confirmed. The Sierra fix and both Memory tab features (Autogenerate reading your whole note, and the Briefing that reads the entries back to you) went live together on 25 August, and Sam checked Sierra in a browser the next morning. The Briefing itself has still never been looked at by a person — it shipped in the same deploy but it is a different screen, so \"Sierra looks great\" does not cover it. That is on the list below.",
-  "items": [
-    {
-      "id": "s190-skyview-queue-call",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Decide whether SkyView's re-mint queue gets built now. Our recommendation is not yet: nobody has dragged a course yet, so the queue would open empty. A drag or two first would give it something real."
-    },
-    {
-      "id": "s190-first-drag",
-      "for": "Sam",
-      "tab": "unified-courses",
-      "text": "Optional: try a drag in SkyView. It would be the first one ever — no course has been re-homed yet, and the first one tells us whether the detection behind it actually fires."
-    },
-    {
-      "id": "s190-briefing-look",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "Press the Briefing button at the top of the Memory tab's Report view. It should write plain-language prose with small numbered links back to the entries it used. Nobody has seen it yet — it went live with the Sierra fix, but it is a different screen."
-    },
-    {
-      "id": "s190-browser-checks",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Two other answers still need your eyes rather than ours: the district roster question for Los Angeles, and a phone check of the Fact Sheet and veteran map."
-    },
-    {
-      "id": "s190-ab-next-time",
-      "for": "Fable",
-      "tab": "cpl-assistant",
-      "text": "Next time cpl-chat changes, run the new A/B workflow first. It deploys a candidate to a private copy and compares both against real questions before anything reaches the live site."
-    },
-    {
-      "id": "s190-arg-assertions",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "34 tests still check that a value is a function's LAST argument rather than that it arrives at all. Four were fixed; the rest go red for the wrong reason when anyone adds a parameter."
-    },
-    {
-      "id": "s190-claude-md-diet",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "The project's own memory file is two and a half times the size it should be, and every session pays for that on startup. It needs prose moved out, not more added."
-    },
-    {
-      "id": "s190-desc-shards",
-      "for": "Fable",
-      "tab": "unified-courses",
-      "text": "SkyView's course descriptions still have to be served from a local folder. Sam expects them in the shared database; table-versus-file and who can read them are still open."
-    },
-    {
-      "id": "s190-orphan-routine",
-      "for": "Fable",
-      "tab": "memory",
-      "text": "A leftover scheduled job from an older session is still queued to merge a pull request that merged long ago. Harmless, but worth clearing."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-25 · A working session with Sam driving SkyView in a browser while we fixed what he found. He confirmed the Memory Briefing works — and then reading it turned up a real problem: it named Sierra College as the college with bad data when the college was actually Moreno Valley. Sierra is our assistant's name AND a genuine California community college, so that is a false statement about a real institution rather than a slip of wording. We recorded the rule; fixing it in the assistant itself needs Sam's go, because it would change what she says on the public page too. On SkyView: the search was announcing highlighted results while showing none (it zoomed out past the point where the dots are drawn at all), two search boxes became one, course names stopped printing on top of each other, and the map is now what you see first with the subject list as a button on it — which we could only do after making the map usable from a keyboard, which it never was. Underneath all of it we found that the ID used to move a course between groups does not always point at just one course; about 1,800 of them point at more than one. Nobody has ever made a bad move, because nobody has made a move at all yet. Those moves are now refused with the reason rather than guessing.",
+ "_session": "Session 192 (SkyCruise)",
+ "_status": "SkyView is genuinely workable now, and one thing is holding back everything built on top of it: the grouped work surface — the screen that shows a cluster of identities that might be the same course — exists for only 5 of the 159 subjects on the map, about 1% of the corpus. Leading with the map means clicking into somewhere with nothing to open most of the time; the page says so rather than appearing broken. Building it for every subject is the next job, and the way to do it already exists in the code for something else. Everything from today is in PR #1329, open as a draft.",
+ "items": [
+  {
+   "id": "s192-sam-drives-flipped-skyview",
+   "for": "Sam",
+   "tab": "unified-courses",
+   "text": "Open SkyView and drive the flipped view. It now opens on the map instead of the subject list, the search lands where the results actually are, and course names no longer print on top of each other. Density and how the drop target should look are your calls."
+  },
+  {
+   "id": "s192-sierra-guidance-go",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Say whether we should add an assistant rule that Sierra (our assistant) and Sierra College (a real college in Rocklin) are never to be confused. We have recorded it as a memory, but a rule would also change what the assistant says on the public page, so it needs your go."
+  },
+  {
+   "id": "s192-decision-packs-everywhere",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Build the grouped work surface for every subject, not just 5 of 159. It is too big to ship in one file, but the code already loads course descriptions one subject at a time on demand, so the same approach applies."
+  },
+  {
+   "id": "s192-two-real-courses-worklist",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Work the 73 control numbers that point at two genuinely different courses. They sit at 12 colleges and 93 of the rows are at San Jose City College alone, so it is one conversation more than it is a project."
+  },
+  {
+   "id": "s192-roster-fold-member-list",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Apply the college-name fold to the member list. We already wrote down which spellings are duplicates, but only one part of the system reads that list — so a curator currently sees 'CaÃ±ada College' with the accent mangled, and two colleges where there is one."
+  },
+  {
+   "id": "s192-esl-stray-discipline",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Clean up the one ESL subject name that is not in the official list. Nine identities sit under 'English as a Second Language (ESL)', which colleges created by typing the whole subject name into the course-subject field. The other three ESL names are all legitimate."
+  },
+  {
+   "id": "s192-merge-1329",
+   "for": "Fable",
+   "tab": "unified-courses",
+   "text": "Merge PR #1329 once its checks pass — it carries everything from this session."
+  }
+ ]
 }

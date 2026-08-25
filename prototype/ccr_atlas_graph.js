@@ -142,7 +142,26 @@ window.__ccrDecision = function(discName, i){
   /* local, reversible move log — nothing leaves the page */
   var moves = [];
   var home  = {};                       // cn -> target identity id
-  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){ home[m.cn]=nd.id; }); });
+  /* Every course a control number names, WITHIN this decision's pack. The write
+   * is `CN:<control number>` and nothing else, so a key naming several courses
+   * cannot express which one to move and the receiving end picks the first it
+   * finds. Same guard as prototype/ccr_universe.js — back-ported here rather
+   * than left as a second, unguarded write path. */
+  var cnCourses = {};
+  pack.nodes.forEach(function(nd){ nd.m.forEach(function(m){
+    home[m.cn]=nd.id;
+    var l=cnCourses[m.cn]||(cnCourses[m.cn]=[]);
+    for(var i=0;i<l.length;i++) if(l[i].n===m.n && l[i].c===m.c) return;
+    l.push({n:m.n, c:m.c});
+  }); });
+  function coursesOn(cn){ return cnCourses[cn]||[]; }
+  function sharedKeyReason(cn, code){
+    var them=coursesOn(cn).filter(function(o){return o.n!==code;});
+    return "Cannot re-home <strong>"+esc(code)+"</strong>: control number "+esc(cn)+
+      " names "+coursesOn(cn).length+" courses — also "+
+      esc(them.slice(0,3).map(function(o){return o.n+" ("+o.c+")";}).join(", "))+
+      ". The write is <code>CN:"+esc(cn)+"</code>, which cannot say which one.";
+  }
 
   window.__crumbs([
     {label:"All disciplines", go:window.__ccrForest},
@@ -157,8 +176,14 @@ window.__ccrDecision = function(discName, i){
          " local courses sit underneath. Move any course to the identity it belongs to — "+
          "by dragging it onto a circle, or with the <strong>Move</strong> button if you'd rather not drag.</p>");
   h.push('<div class="stage">');
-  h.push('<div><div class="canvas"><div id="gfx"></div>'+
+  h.push('<div><div class="canvas">'+
+         '<div class="gbar"><button class="btn" type="button" id="g-out">\u2212</button>'+
+         '<button class="btn" type="button" id="g-in">+</button>'+
+         '<button class="btn" type="button" id="g-reset">Reset view</button>'+
+         '<span class="sub" id="g-z">zoom 100%</span></div>'+
+         '<div id="gfx"></div>'+
          '<div class="hint"><div id="hint">Drag a course from the list onto a circle. '+
+         'Scroll to zoom, drag the background to pan. '+
          'Circle size = how many colleges teach it.</div>'+
          '<div class="glegend">'+
            '<span><b style="color:#0047AB">\u2605</b> C-ID \u2014 official</span>'+
@@ -170,6 +195,30 @@ window.__ccrDecision = function(discName, i){
          '</div></div></div></div>');
   h.push('<div class="side">');
   h.push('<div class="panel"><h3>Courses underneath</h3><ul class="idlist" id="ids"></ul></div>');
+  /* Sam: "have a status selector for the group that notes whether it's been
+   * reviewed and ready for re-minting at the appropriate point."
+   *
+   * The status is a JUDGMENT about a group, so it belongs beside the moves in
+   * the write panel, not in browser storage: localStorage is the wrong home for
+   * a determination someone else has to act on — the same call already made for
+   * the CIP category and settled for cr_reference_decisions. In the prototype
+   * it writes nothing and SHOWS the row it would write, keyed on the group so a
+   * rebuild of the packs cannot overwrite a curator's judgment.
+   *
+   * "Ready to re-mint" is deliberately not the same as "reviewed": a group can
+   * be checked and still not be ready, and re-mints are batched under the
+   * playbook rather than fired per group. */
+  h.push('<div class="panel"><h3>Group status</h3>'+
+         '<label class="sr" for="g-status">Review status for this group</label>'+
+         '<select id="g-status" style="width:100%;padding:.45em;border:1px solid '+
+         'var(--border);border-radius:6px">'+
+         '<option value="">Not reviewed</option>'+
+         '<option value="in-review">Being reviewed</option>'+
+         '<option value="needs-work">Reviewed \u2014 needs more work</option>'+
+         '<option value="reviewed">Reviewed \u2014 groupings are right</option>'+
+         '<option value="ready-remint">Reviewed \u2014 ready to re-mint</option>'+
+         '</select>'+
+         '<p id="g-status-note" class="empty" style="margin:.5em 0 0"></p></div>');
   h.push('<div class="panel"><h3>What this would write</h3><div id="wr"></div>'+
          '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
          'One row per move, in <code>kb_curation</code>. Reversible: delete the row and the '+
@@ -222,7 +271,68 @@ window.__ccrDecision = function(discName, i){
     });
     s.push("</svg>");
     document.getElementById("gfx").innerHTML=s.join("");
+    applyGView();
     wireNodes();
+    wireGraphView();
+  }
+
+  /* Sam: "I can use the mini graph view — doesn't seem drag and droppable or
+   * zoomable." It was a fixed viewBox, so a crowded decision (this one carries
+   * 13 identities and 89 courses) had no way to spread out and no way to read a
+   * label that landed under another.
+   *
+   * Zoom and pan move the viewBox rather than re-laying out: the layout is
+   * precomputed and stable on purpose — the same reason the universe view ships
+   * coordinates instead of solving them — so nothing must move under the reader
+   * except the frame they are looking through. */
+  var gview={k:1, x:0, y:0};
+  function applyGView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg) return;
+    var w=W/gview.k, hh=H/gview.k;
+    svg.setAttribute("viewBox", gview.x.toFixed(1)+" "+gview.y.toFixed(1)+" "+
+                                w.toFixed(1)+" "+hh.toFixed(1));
+    var z=document.getElementById("g-z");
+    if(z) z.textContent="zoom "+Math.round(gview.k*100)+"%";
+  }
+  function gzoom(f, ax, ay){
+    var k0=gview.k;
+    gview.k=Math.max(0.4, Math.min(8, gview.k*f));
+    // Keep the point under the cursor fixed, or zooming walks the graph away.
+    if(ax!=null){
+      gview.x += ax*(1/k0 - 1/gview.k);
+      gview.y += ay*(1/k0 - 1/gview.k);
+    }
+    applyGView();
+  }
+  function wireGraphView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg || svg.dataset.wired) return;
+    svg.dataset.wired="1";
+    svg.addEventListener("wheel", function(e){
+      e.preventDefault();
+      var r=svg.getBoundingClientRect();
+      gzoom(e.deltaY<0?1.18:1/1.18,
+            (e.clientX-r.left)/r.width*W, (e.clientY-r.top)/r.height*H);
+    }, {passive:false});
+    var pan=null;
+    svg.addEventListener("pointerdown", function(e){
+      // Never steal a press aimed at a circle — that press selects, and a drop
+      // target that also pans is a target you cannot hit.
+      if(e.target.closest && e.target.closest(".nodeg")) return;
+      var r=svg.getBoundingClientRect();
+      pan={px:e.clientX, py:e.clientY, x:gview.x, y:gview.y, sx:W/r.width/gview.k,
+           sy:H/r.height/gview.k};
+      svg.setPointerCapture(e.pointerId);
+    });
+    svg.addEventListener("pointermove", function(e){
+      if(!pan) return;
+      gview.x=pan.x-(e.clientX-pan.px)*pan.sx;
+      gview.y=pan.y-(e.clientY-pan.py)*pan.sy;
+      applyGView();
+    });
+    svg.addEventListener("pointerup", function(e){
+      pan=null;
+      try{ svg.releasePointerCapture(e.pointerId); }catch(err){}
+    });
   }
 
   var selected=null;                       // {cn, code, college, title, from}
@@ -260,6 +370,7 @@ window.__ccrDecision = function(discName, i){
     return null;
   }
   function applyMove(sel, toId){
+    if(coursesOn(sel.cn).length>1){ setHint(sharedKeyReason(sel.cn, sel.code)); return; }
     home[sel.cn]=toId;
     moves = moves.filter(function(m){ return m.cn!==sel.cn; });
     var origin = null;
@@ -271,22 +382,66 @@ window.__ccrDecision = function(discName, i){
     drawGraph(); drawList(); drawWrites();
   }
 
+  /* The courses each identity is currently carrying, and how many distinct
+   * colleges are among them. Sorted on below. */
+  function carried(nd){
+    var mine=[];
+    pack.nodes.forEach(function(src){
+      src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
+    });
+    var cols={}; mine.forEach(function(m){ cols[m.c]=1; });
+    return {mine:mine, colleges:Object.keys(cols).length};
+  }
   function drawList(){
     var out=[];
-    pack.nodes.forEach(function(nd){
-      var mine=[];
-      pack.nodes.forEach(function(src){
-        src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
-      });
+    /* Sam: "sorted descending by the ones with the most colleges".
+     *
+     * NEITHER available figure can rank this on its own, so the key is the
+     * larger of the two — a lower bound on the identity's real size, which is
+     * the most that can honestly be claimed:
+     *
+     *   nd.n     the count the row reports. Uncapped, but it disagrees with
+     *            what is actually carried on about a fifth of identities, and
+     *            it can UNDERSTATE: FCSH M1020 reports 10 and carries 14.
+     *   carried  what this pack embeds. Truthful about those, but capped at
+     *            --max-members (14), so it saturates — a 54-member identity and
+     *            a 10-member one would both read 14 and sort level, which ranks
+     *            nothing precisely at the top of the list where ranking matters.
+     *
+     * Both are printed whenever they disagree, and a carried list shorter than
+     * the reported count says it is a sample: a capped list must never read as
+     * a census. Ties fall back to the title so the order is stable. */
+    var order=pack.nodes.slice().map(function(nd){
+      var c=carried(nd);
+      return {nd:nd, mine:c.mine, colleges:c.colleges};
+    }).sort(function(a,b){
+      var sa=Math.max(a.nd.n, a.mine.length), sb=Math.max(b.nd.n, b.mine.length);
+      if(sa!==sb) return sb-sa;
+      return String(a.nd.t||a.nd.id).localeCompare(String(b.nd.t||b.nd.id));
+    });
+    order.forEach(function(row){
+      var nd=row.nd, mine=row.mine;
       var pt=paintOf(nd);
-      out.push("<li>");
+      // data-id makes the whole card a drop target — see the wiring below.
+      out.push('<li data-id="'+esc(nd.id)+'">');
       var st = stateOf(nd);
       out.push('<span class="ttl">'+esc(nd.t||nd.id)+"</span> "+
                '<span class="chip '+(nd.sys==="C-ID"||nd.sys==="CCN-ID"?"cid":
                  nd.sys==="M-ID"?"gen":"mut")+'">'+pt.glyph+" "+esc(pt.word)+"</span>"+
                (st?' <span class="chip '+(nd.rev?"ok":"flag")+'">'+st.glyph+" "+
                    esc(st.word)+"</span>":""));
-      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" college"+(nd.n===1?"":"s")+
+      // "N member courses", not "N colleges": nd.n comes from whichever field
+      // minted the row and is not a count of colleges — CLAUDE.md is explicit
+      // about it, and the card was calling it one.
+      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" member course"+
+               (nd.n===1?"":"s")+" reported"+
+               (mine.length!==nd.n?' <span title="What this view has embedded '+
+                 'for the identity. It caps the satellites it carries, so a '+
+                 'shorter list is a sample; a longer one means the reported '+
+                 'count understates what the join finds.">\u00b7 '+mine.length+
+                 " carried here"+(mine.length<nd.n?" (a sample)":"")+"</span>":"")+
+               (row.colleges?" · "+row.colleges+" college"+
+                 (row.colleges===1?"":"s")+" among them":"")+
                (nd.u!=null?" · "+nd.u+" units":"")+"</div>");
       if(!mine.length){
         out.push('<p class="empty" style="margin:.4em 0 0">No courses left here.</p>');
@@ -294,7 +449,13 @@ window.__ccrDecision = function(discName, i){
         out.push('<ul class="mlist">');
         mine.forEach(function(m){
           var wasMoved = moves.some(function(x){return x.cn===m.cn;});
-          out.push('<li'+(wasMoved?' class="moved"':"")+' draggable="true" data-cn="'+esc(m.cn)+'">'+
+          var shared = coursesOn(m.cn).length>1;
+          var cls=(wasMoved?"moved ":"")+(shared?"shared":"");
+          out.push('<li'+(cls.trim()?' class="'+cls.trim()+'"':"")+
+            (shared?"":' draggable="true"')+' data-cn="'+esc(m.cn)+'">'+
+            (shared?'<span class="chip warn" title="Control number '+esc(m.cn)+
+              ' names '+coursesOn(m.cn).length+' different courses, so the CN: '+
+              'write key cannot say which one to move.">shared key</span> ':"")+
             '<span class="cd">'+esc(m.n)+"</span>"+
             '<span class="co" title="'+esc(m.c)+'">'+esc(m.c)+"</span>"+
             (wasMoved?' <span class="chip ok">✓ moved</span>':"")+
@@ -311,6 +472,26 @@ window.__ccrDecision = function(discName, i){
         selected=findMember(li.dataset.cn);
       });
     });
+    /* Sam: "Should be able to drag from one Course card to another (not be
+     * limited to the Move… button)." The circles were the only drop target, so
+     * a curator reading the cards had to go back up to the graph to act on what
+     * they had just read. Every identity card is a drop target now; the circles
+     * still are, and the button still is, because a drag is not reachable from
+     * a keyboard and dropping that route would take the view backwards. */
+    Array.prototype.forEach.call(view.querySelectorAll("#ids > li[data-id]"), function(card){
+      card.addEventListener("dragover", function(ev){
+        if(!selected) return;
+        ev.preventDefault();                       // required, or no drop fires
+        card.classList.add("drop-to");
+      });
+      card.addEventListener("dragleave", function(){ card.classList.remove("drop-to"); });
+      card.addEventListener("drop", function(ev){
+        ev.preventDefault(); card.classList.remove("drop-to");
+        var cn=ev.dataTransfer.getData("text/plain");
+        var m=cn?findMember(cn):selected;
+        if(m) applyMove(m, card.dataset.id);
+      });
+    });
     Array.prototype.forEach.call(view.querySelectorAll(".mv"), function(b){
       b.addEventListener("click", function(){
         selected=findMember(b.dataset.cn);
@@ -321,13 +502,42 @@ window.__ccrDecision = function(discName, i){
     });
   }
 
+  // Stable across a rebuild of the packs: the pack index would not be.
+  var groupKey="CCRGRP:"+discName+"::"+pack.nodes.map(function(n){return n.id;})
+                                         .slice().sort().join("+");
+  var groupStatus="";
   function drawWrites(){
     var el=document.getElementById("wr");
-    if(!moves.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
-    el.innerHTML='<div class="writes">'+moves.map(function(m){
+    var rows=moves.map(function(m){
       return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
-    }).join("")+"</div>";
+    });
+    if(groupStatus)
+      rows.push("<div>"+esc(groupKey.length>58?groupKey.slice(0,57)+"\u2026":groupKey)+
+                "  status  "+esc(groupStatus)+"</div>");
+    if(!rows.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
+    el.innerHTML='<div class="writes">'+rows.join("")+"</div>";
   }
+
+  var gi=document.getElementById("g-in"), go2=document.getElementById("g-out"),
+      gr=document.getElementById("g-reset");
+  if(gi) gi.onclick=function(){ gzoom(1.35, W/2, H/2); };
+  if(go2) go2.onclick=function(){ gzoom(1/1.35, W/2, H/2); };
+  if(gr) gr.onclick=function(){ gview={k:1,x:0,y:0}; applyGView(); };
+
+  var gs=document.getElementById("g-status");
+  if(gs) gs.addEventListener("change", function(){
+    groupStatus=gs.value;
+    var n=document.getElementById("g-status-note");
+    if(n) n.innerHTML = groupStatus
+      ? "Recorded against this group of "+pack.nodes.length+" identities. "+
+        (groupStatus==="ready-remint"
+          ? "Ready to re-mint is a QUEUE, not a trigger \u2014 re-mints are batched "+
+            "under the playbook, never fired from this page."
+          : "Nothing is written from the prototype; the row it would write is "+
+            "shown on the right.")
+      : "";
+    drawWrites();
+  });
 
   drawGraph(); drawList(); drawWrites();
 };

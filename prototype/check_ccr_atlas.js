@@ -60,7 +60,44 @@ function serve() {
   await page.goto(`http://127.0.0.1:${port}/${FILE}`);
   await page.waitForTimeout(500);
 
-  console.log("\n══ forest");
+  console.log("\n══ \u26a0 the page lands on SkyView, not the list");
+  // Sam, 2026-08-25: "SkyView should be the initial CCR tab and the current
+  // detailed tab should be a button on SkyView … I think SkyView is more
+  // manageable and less intimidating."
+  ok("the map is on screen with no clicks", (await page.locator("#u-cvs").count()) === 1);
+  ok("and the subject list is a real focusable button on it, not a gesture",
+    (await page.locator("button#u-list").count()) === 1);
+
+  console.log("\n══ \u26a0 the landing view can be operated from a keyboard");
+  // This is the condition the flip was made under. Before it, the canvas keydown
+  // handler panned and zoomed and had NO key that reached a subject or an
+  // identity — survivable while the DOM list was the way in, not survivable once
+  // the map is the front door.
+  await page.locator("#u-cvs").focus();
+  await page.keyboard.press("Tab");
+  await page.waitForTimeout(340);
+  const kSub = await page.locator("#u-detail h3").textContent();
+  ok(`Tab reaches a subject (${(kSub || "").slice(0, 28)})`, !!kSub);
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(420);
+  const k1 = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`Enter steps INTO it and selects an identity (${k1.sel})`, !!k1.sel);
+  // A selected identity that is not drawn is not selected as far as a reader is
+  // concerned — the same floor the search has to clear.
+  ok(`and zooms past the threshold that draws it (${k1.view.k.toFixed(2)} > ${k1.nodeZoom})`,
+    k1.view.k > k1.nodeZoom);
+  await page.keyboard.press("Tab");
+  await page.waitForTimeout(340);
+  const k2 = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`Tab inside moves to a different identity (${k2.sel})`, !!k2.sel && k2.sel !== k1.sel);
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(320);
+  ok("Escape comes back out to the subject",
+    (await page.locator("#u-detail h3").textContent()) === kSub);
+
+  console.log("\n══ forest (reached from the map's own button)");
+  await page.locator("button#u-list").click();
+  await page.waitForTimeout(500);
   ok("heading rendered", (await page.locator("h1").first().textContent()).includes("Common Course Reference"));
   const cells = await page.locator(".cell").count();
   ok(`discipline cells (${cells})`, cells > 100);
@@ -102,7 +139,8 @@ function serve() {
   await page.waitForTimeout(400);
 
   console.log("\n══ the universe view");
-  ok("the banner offers it", (await page.locator("#go-universe").count()) === 1);
+  ok("the list still offers the way back to the map",
+    (await page.locator("#go-universe").count()) === 1);
   await page.locator("#go-universe").click();
   await page.waitForTimeout(600);
   ok("canvas is present and sized", await page.evaluate(() => {
@@ -124,15 +162,15 @@ function serve() {
 
   console.log("\n══ keyword zoom");
   const z0 = await page.evaluate(() => window.__ccrUniverseState().view.k);
-  await page.fill("#u-q", "welding");
-  await page.locator("#u-find").click();
+  await page.fill("#gq", "welding");
+  await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(400);
   const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
   ok("and reports where the matches are",
     /match/i.test(await page.locator("#u-hint").textContent()));
-  await page.fill("#u-q", "zzzznotathing");
-  await page.locator("#u-find").click();
+  await page.fill("#gq", "zzzznotathing");
+  await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(300);
   ok("a miss says so rather than flying somewhere arbitrary",
     /Nothing matches/i.test(await page.locator("#u-hint").textContent()));
@@ -164,6 +202,78 @@ function serve() {
   console.log(`  note  ${mp.dup} control numbers sit under more than one identity; ` +
               `${mp.dropped} members carry no control number and cannot be dragged`);
 
+  console.log("\n══ ⚠ a search must land where its hits can be SEEN");
+  // Reported from a browser by Sam, 2026-08-25: searching "english as a second"
+  // said "19 match … Ringed in red" and drew nothing, because doSearch flew to
+  // "fit all the hits" — which for hits spread across nine subjects is a zoom
+  // BELOW the one at which draw() renders any node at all. The search was
+  // choosing a zoom the renderer refuses to draw at, then reporting rings.
+  const nodeZoom = await page.evaluate(() => window.__ccrUniverseState().nodeZoom);
+  ok(`the renderer's node threshold is exported (${nodeZoom})`, nodeZoom > 0);
+
+  // Sam, in a browser: "we have two different keyword searches on the tab,
+  // which should be consolidated to one." Two fields that behave differently
+  // is a question about which one you are meant to use.
+  const fields = await page.locator("input[type=search]").count();
+  ok(`the map screen carries exactly one search field (${fields})`, fields === 1);
+
+  // Drive the HEADER box — there is only one search field on the page now, and
+  // a test that still typed into a map-local one would keep passing after the
+  // header stopped reaching the map.
+  const runSearch = async (term) => {
+    await page.fill("#gq", term);
+    await page.locator("#msearch button[type=submit]").click();
+    await page.waitForTimeout(420);
+    const st = await page.evaluate(() => window.__ccrUniverseState());
+    return { k: st.view.k, hits: st.hits, hint: await page.locator("#u-hint").textContent() };
+  };
+
+  // Sam's exact term. Scattered on purpose — this is the case that failed.
+  const scattered = await runSearch("english as a second");
+  ok(`"english as a second" finds matches (${scattered.hits})`, scattered.hits > 0);
+  ok(`and lands where nodes are drawn (zoom ${scattered.k.toFixed(3)} > ${nodeZoom})`,
+    scattered.k > nodeZoom);
+  // The invariant, stated as itself: claiming rings and drawing none is the bug.
+  ok("it never claims rings at a zoom that draws none",
+    !(/ring/i.test(scattered.hint) && scattered.k <= nodeZoom));
+
+  // A subject name should TAKE you to the subject, not scatter the view — the
+  // old order only considered the subject when nothing else matched at all.
+  const subj = await runSearch("english as a second language");
+  // textContent strips the markup, so assert on the words that survive it.
+  ok("a subject name goes to that subject",
+    /^\s*Subject\b/i.test(subj.hint) && /English as a Second Language/i.test(subj.hint));
+  ok(`and zooms in to it (zoom ${subj.k.toFixed(3)})`, subj.k > nodeZoom);
+
+  // A word that is a substring of several DIFFERENT disciplines and an exact
+  // match for none must not silently pick one of them. ("art" is a poor probe
+  // here — it is the exact name of a discipline, so going to Art is correct.)
+  const many = await runSearch("tech");
+  ok("a word matching several different subjects does not pick one for you",
+    !/^\s*Subject\b/i.test(many.hint));
+  ok("and still lands where its hits can be seen",
+    many.k > nodeZoom || !/ring/i.test(many.hint));
+
+  // Flying into a dense subject stacked dozens of course names on top of each
+  // other. The file already calls that "the exact failure of a global graph
+  // view" for island names; it is no less true one grain down.
+  // Back to the crowded subject first — course names are only drawn when zoomed
+  // in, so measuring this after a wide search checks nothing at all.
+  await runSearch("english as a second language");
+  const boxes = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`the crowded view draws course names at all (${boxes.titlesQueued} queued)`,
+    boxes.titlesQueued > 0);
+  let overlaps = 0;
+  for (let i = 0; i < boxes.placedBoxes.length; i++)
+    for (let j = i + 1; j < boxes.placedBoxes.length; j++) {
+      const a = boxes.placedBoxes[i], b = boxes.placedBoxes[j];
+      if (a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]) overlaps++;
+    }
+  ok(`the crowded view actually queued more titles than it could fit ` +
+     `(${boxes.titlesQueued} queued, ${boxes.placedBoxes.length} placed)`,
+    boxes.titlesQueued > boxes.placedBoxes.length);
+  ok(`and no two placed names overlap (${overlaps})`, overlaps === 0);
+
   console.log("\n══ ⚠ the cross-area move (the reason this view exists)");
   // Pick a real source (a course on an identity in one island) and a real target
   // in a DIFFERENT island, then drive the actual UI: select, press Drag…, click
@@ -171,11 +281,18 @@ function serve() {
   // hook works, not the page.
   const plan = await page.evaluate(() => {
     const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    // Every course the payload puts on each control number. A key naming more
+    // than one is REFUSED by the page (canMove), so a source picked blindly can
+    // land on one and turn this check into an accidental test of the refusal.
+    const seen = {};
+    for (const id of Object.keys(M.m))
+      for (const [c, n, ci] of M.m[id]) (seen[c] = seen[c] || new Set()).add(n + "\u241f" + ci);
+    const uniq = (c) => (seen[c] || new Set()).size < 2;
     let src = null;
     for (const isl of U.islands) {
       for (const nd of isl.p) {
         const list = M.m[nd.i];
-        if (list && list.length >= 2 && list.length <= 40) {
+        if (list && list.length >= 2 && list.length <= 40 && list.every((r) => uniq(r[0]))) {
           src = { id: nd.i, disc: isl.d, x: nd.x, y: nd.y, n: list.length };
           break;
         }
@@ -240,6 +357,84 @@ function serve() {
     const b = document.querySelector(`#u-detail .mv[data-cn="${c}"]`);
     return !!b && /moved here/i.test(b.closest("li").textContent);
   }, cn));
+
+  console.log("\n══ ⚠ a move the write key cannot express is refused");
+  // `CN:<control number>` carries no way to say WHICH course, and both receiving
+  // ends pick the first one they find (the generator through cn_rows[cn][0], this
+  // page through byCn[cn]). 1,761 control numbers in this payload name more than
+  // one course — 3,634 draggable rows. So the page must refuse, not guess.
+  const amb = await page.evaluate(() => {
+    const M = window.CPL_CCR_UNIVERSE_MEMBERS, U = window.CPL_CCR_UNIVERSE;
+    const seen = {};
+    for (const id of Object.keys(M.m))
+      for (const [c, n, ci] of M.m[id]) (seen[c] = seen[c] || new Set()).add(n + "\u241f" + ci);
+    let shared = 0;
+    for (const c of Object.keys(seen)) if (seen[c].size > 1) shared++;
+    // A card that actually SHOWS one, so the refusal can be driven through the UI.
+    for (const isl of U.islands) {
+      for (const nd of isl.p) {
+        const list = M.m[nd.i] || [];
+        if (list.length > 40) continue;
+        const hit = list.find((r) => seen[r[0]].size > 1);
+        if (hit) {
+          // A positive control, sourced payload-wide rather than from this card:
+          // the card holding a shared key often holds nothing else. A guard
+          // asserted only on the case it rejects passes just as well when it
+          // rejects everything.
+          let uniqCn = null;
+          for (const c of Object.keys(seen))
+            if (seen[c].size === 1) { uniqCn = "CCC" + String(c).padStart(9, "0"); break; }
+          return { shared, id: nd.i, disc: isl.d, x: nd.x, y: nd.y,
+                   cn: "CCC" + String(hit[0]).padStart(9, "0"), uniqCn,
+                   names: seen[hit[0]].size };
+        }
+      }
+    }
+    return { shared };
+  });
+  // Assert the condition is LIVE in the data. If the payload ever stops carrying
+  // collided control numbers, this check must go red rather than pass vacuously
+  // against a page whose guard is never reached.
+  ok(`the payload still carries collided control numbers (${amb.shared})`, amb.shared > 0);
+  ok("and a card shows one, so the guard is reachable through the UI", !!amb.id);
+
+  if (amb.id) {
+    await flyClick({ x: amb.x, y: amb.y }, amb.id);
+    const row = `#u-detail .mv[data-cn="${amb.cn}"]`;
+    ok(`the row is flagged BEFORE the click (${amb.cn} names ${amb.names} courses)`,
+      await page.evaluate((sel) => {
+        const b = document.querySelector(sel);
+        return !!b && /shared key/i.test(b.closest("li").textContent);
+      }, row));
+    const before = await page.evaluate(() => window.__ccrUniverseState().moves.length);
+    await page.locator(row).click();
+    await page.waitForTimeout(200);
+    const hint = await page.locator("#u-hint").textContent();
+    ok("pressing Drag… explains the refusal instead of picking the course up",
+      /cannot re-home/i.test(hint) && hint.includes(amb.cn));
+    ok("the reason names the OTHER course, not just the count",
+      /also\s+\S/i.test(hint) && /which one/i.test(hint));
+    // The load-bearing half: nothing was carried, so clicking a destination
+    // cannot complete a move the key cannot express.
+    await flyClick(plan.tgt);
+    ok("and no write row is produced by clicking a destination afterwards",
+      (await page.evaluate(() => window.__ccrUniverseState().moves.length)) === before);
+
+    // There are TWO guards and only the first is reachable through the UI: the
+    // pickup refusal above never lets a shared key reach applyMove, so removing
+    // canMove leaves every check above green. Assert it separately, or the
+    // deeper guard is untested and a future path that sets `drag` another way
+    // walks straight past it.
+    const gate = await page.evaluate(([bad, good]) => {
+      const f = window.__ccrUniverseState().canMove;
+      return { bad: f(bad).ok, others: (f(bad).others || []).length,
+               good: good ? f(good).ok : null };
+    }, [amb.cn, amb.uniqCn]);
+    ok("the write guard itself refuses the ambiguous key, and allows a unique one",
+      gate.bad === false && gate.good === true);
+    ok(`and reports the courses it could not choose between (${gate.others})`,
+      gate.others >= 2);
+  }
 
   console.log("\n══ course descriptions load on demand");
   // Served over http here, which is the whole point: under file:// these fetches are
