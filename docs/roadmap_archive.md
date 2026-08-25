@@ -4848,3 +4848,22 @@ fourth named the current head but reported a suite I had **canceled** as "comple
 that event as a prompt to go look, never as the green light. #1315 merged on `unstable` with
 the secret scan stalled twice at zero log output — diff scanned locally instead, named in the
 merge commit. Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_189_handoff.md`.
+
+### SkyRead S190 — the note never reached the model, and the doctrine filled the vacuum (2026-08-24)
+
+**Sam: *"fix a bug in the memory procedures"*** — Autogenerate returned a confident entry about
+the two-band answer structure for a note about which kind of credit to award (#1320/#1321).
+⭐ **THE TOPIC ARRIVED AS SIXTEEN CHARACTERS.** The envelope was 984 of a 1,000-char server cap
+and led the prompt, so `When responding ` is all the model got; with no subject and ~9 KB of
+answer doctrine it wrote about the doctrine, verbatim from `STATEWIDE_RULE`. Retrieval keyed on
+the envelope too — **99 keywords, one of them the curator's**, at 0.86 similarity.
+⚠️ **NAMING THE LISTS IS NOT CHECKING THEM.** The surface vocabulary lives in THREE places; I
+updated two and CI found the third (the curator picker), exactly as its comment warned.
+⚠️ **AN EXEMPTION MUST BE ASSERTED, NOT ARGUED** — the inline citations are under 24px on
+purpose, justified by a source list that measured **15px**. The harness now checks the
+justification, so deleting the list turns it red.
+⚠️ **Three budget assertions passed VACUOUSLY** against a client declaring no budget.
+⭐ **The first real briefing found two things in the table** — a stale `verified` row and two
+contacts entries that are each right and misleading apart.
+**Both merged, neither live at the time** — deployed the next day by SkyAlign (below).
+Story `docs/cobi_memory_tab_lessons.md` · handoff `docs/session_191_handoff.md`.

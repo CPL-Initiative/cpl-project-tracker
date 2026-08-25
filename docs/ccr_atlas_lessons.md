@@ -547,3 +547,175 @@ islands per call; indexed.
 3. The **1,122 duplicate-claim courses** are a worklist in their own right — each is an identity
    claiming a course another identity also claims.
 4. Still open from Sky188: the 9 ESL over-claims, the 67 `ESOL Z####` rows, `FIMS M1018`.
+
+---
+
+## 2026-08-25 — Session 192 (SkyCruise): the write key, and everything Sam found in a browser
+
+Two threads. One was a latent correctness problem in the verb SkyCal made work
+last session; the other was Sam driving the view and reporting what he saw.
+
+### ⭐ A CourseControlNumber is not a unique course key
+
+The re-home writes `CN:<control number>` **and nothing else**, and every layer
+below assumes the number names exactly one course. It does not.
+
+`kb/_audit_control_number_claims.py` (new, READ-ONLY, receipt in
+`kb/control_number_audit/<date>.md`) measures it against the COCI course list:
+
+| | |
+|---:|---|
+| 139,834 | distinct control numbers |
+| **1,814** | resolve to more than one row **as the artifacts build them** |
+| **462** | name more than one course **in the source, after the declared institution fold** |
+
+⭐ **Both numbers are true and they answer different questions** — the first is
+what a consumer sees and what the write key must cope with, the second is what
+the data says. The receipt states both rather than picking the alarming one.
+
+The 462 split into classes wanting **different repairs**, which is the whole
+point of not reporting one headline:
+
+- **73** two real courses on one number — 12 institutions, **93 of them at San
+  Jose City College**. A per-college data-entry pattern, so it is a worklist with
+  an owner.
+- **112** two institutions on one number — statewide uniqueness violated.
+- **132** one course carrying both its local code and its CCN (`ANTH 101` /
+  `ANTH C1001`) — the cutover, working as intended.
+- **145** one course written two ways (`KFIT 6.2` / `KFIT 62`).
+
+⚠️ **The consequence.** Both receiving ends resolve an ambiguous key by picking
+the first match — the generator through `cn_rows[cn][0]`, the page through
+`byCn[cn]` — and `member_extract` is keyed on the bare control number, so a
+`CN:` write removes it from **every** native identity. Dragging one of a
+collided pair moved whichever course was indexed first and took the other out
+of its own card on the way past. **3,634 draggable rows** carry such a key.
+
+Zero `CN:` rows exist, so nothing has gone wrong yet. SkyView refuses those
+moves now, flagging the row **before** the click as well as refusing at it — a
+curator who picks a course up, hunts the map for a destination and is refused on
+arrival has done the hard part for nothing.
+
+⚠️ **The first perturbation did not go red.** Neutering `canMove` left every
+check green, because the pickup guard short-circuits before `applyMove` is ever
+reached. Two guards, only one reachable through the UI, and the deeper one was
+untested — a future path that starts a carry another way would have walked
+straight past it. Each has its own assertion now and each goes red alone.
+
+### ⚠️ A declared fold reaches only the roster that consults it
+
+`kb/reference/map_college_roster_rules.json` folds four college spellings.
+`excel_to_dashboard.py` applies it at every point a name enters the **EACR**
+payload. The **member** roster (`mcolleges`, built by `_mc()` straight from the
+raw COCI names) never consults it. So **1,352** control numbers read as naming
+two institutions when they name one, and all four names reach a curator as
+typed — **`CaÃ±ada College` renders that way in the member list today**.
+
+⭐ The mojibake case is worth separating: the raw COCI export carries **only**
+the broken spelling, **678 times**, so unlike the duplicate-entry cases there is
+no correct spelling in the source to fold from. The generator is right to
+reproduce its source faithfully; the repair belongs at the roster layer.
+
+### ⚠️ A view must not fly where it cannot draw
+
+Sam, in a browser: searching `english as a second` said *"19 match across 9
+subjects … Ringed in red"* and drew **nothing**, at zoom 12%.
+
+Both halves were real. `draw()` renders nodes only above `k=0.20`; `doSearch`
+flew to *fit all the hits*, which for hits scattered across nine subjects
+computes to about **0.12**. **The search was choosing a zoom the renderer
+refuses to draw at, and then reporting rings.** Removing the floor again
+reproduces it at exactly `0.120` — the number in his screenshot.
+
+The threshold is one constant read by both now. When the hits genuinely cannot
+be framed together at a drawable zoom, the view goes to the densest subject and
+says so.
+
+⭐ **A subject name now takes you to that subject.** The old order only
+considered the subject when there were *no* course hits at all, so a subject
+name that also appeared in a few course titles scattered the view. An **exact**
+discipline name wins outright — it has to, because the corpus carries three ESL
+discipline names that contain one another.
+
+⭐ **Course names stopped stacking.** Flying into a crowded island queued **344**
+titles and **54** fit — 290 were being painted on top of each other. Island
+names had had collision rejection since they were written; course titles never
+did, and the file already called an unreadable pile *"the exact failure of a
+global graph view"*.
+
+### The four ESL discipline names — the CCR is not their source
+
+| Island | What it is |
+|---|---|
+| `English as a Second Language` (77) | official MQ discipline; CSR `ESOL`, curator-confirmed 2026-05-23 |
+| `English as a Second Language Noncredit 53412` (4) | **also** an official MQ title — the TOP code is genuinely part of it; CSR `ESLN` |
+| `English as a Second Language (ESL)` (9) | **not in the vocabulary** — the only stray |
+| `… · stand-alone` (5) | SkyView's own display suffix, not a discipline |
+
+⭐ The stray's origin is in our own data: `ENGLISH AS A SECOND LANGUAGE (ESL)`
+appears in the `ESOL` record's `local_subject_variants` at **21 courses** —
+colleges typed the whole discipline name into the *subject* field.
+
+⭐ **Sam's CSR-supersedes idea holds, and the layer is nearly complete:**
+**157 of 159** disciplines on the map are valid MQ titles, only two are not
+(`(no discipline yet)` at 1,613 and the ESL stray at 9), and **48,244 of 49,907
+identities (96.7%)** already sit under a discipline carrying a CSR entry. 14
+have no CSR entry, but 12 of those are legitimate MQ titles the CSR has not
+reached — so the direction is **12 missing, not any surplus to delete**.
+
+### Sam's UI asks, and the one that bit back
+
+Ranked cards, card-to-card drag, a pannable/zoomable decision graph, a group
+review status, and the map/list flip.
+
+⚠️ **"Sorted descending by the ones with the most colleges" had no single figure
+that could express it.** The reported count is uncapped but disagrees with what
+is carried on about a fifth of identities and can **understate** — `FCSH M1020`
+reports 10 and carries 14. The carried count is truthful about what is embedded
+but **saturates at the pack's `--max-members` cap of 14**, so a 54-member
+identity and a 10-member one both read 14 and sort level: ranking on it ranks
+nothing at precisely the top of the list, which is where ranking is for. The key
+is the larger of the two — a lower bound — and both print when they disagree.
+
+⚠️ The card had been calling the reported count **"N colleges"**. It is not one,
+and the first honest render produced *"10 member courses · 14 colleges among
+them"*, which is impossible on its face. That is the disagreement made visible
+rather than averaged away.
+
+### The flip, and the condition it shipped under
+
+Sam: *"SkyView should be the initial CCR tab and the current detailed tab should
+be a button on SkyView … more manageable and less intimidating."*
+
+⚠️ **The canvas could not be operated without a mouse.** Its keydown handler
+panned with the arrows and zoomed with `+`/`-` and had **no key that reached a
+subject or an identity**. Survivable while the DOM list was the way in; not
+survivable when the map is the tab's front door. Keyboard selection landed in
+the same change: Tab through subjects, Enter into one, Tab through its
+identities, Escape back out — and entering a subject zooms past the threshold
+that draws it, the same floor the search had to clear.
+
+⚠️ **Deriving the level from "have we got an identity yet" made Enter unable to
+enter** — at subject level there is no identity by definition, so the test
+meaning *move between subjects* also swallowed the keypress meant to go inside
+one. The mode is held explicitly; restoring the derivation turns three of five
+new checks red.
+
+⭐ **The measurement that reframes the tweaks:** the grouped work surface exists
+for **5 of the 159 subjects** — **593 of 49,907 identities (1.2%)**. Leading
+with the map means clicking into somewhere with nothing to open most of the
+time. The button says so rather than doing nothing, and a double-click
+accelerator follows it rather than being the mechanism. All 159 is **~39 MB**
+inline, which is exactly the shape the per-discipline description shards already
+solve on demand.
+
+### Next
+
+1. **Sam drives the flipped view** — density, the drop affordance, and whether
+   the map is the right front door in practice are his calls.
+2. **Decision packs per discipline, fetched on demand** — the single change that
+   takes the work surface from 1.2% of the corpus to all of it.
+3. The **73 two-real-courses control numbers**, starting with San Jose City
+   College's 93 rows.
+4. Apply the roster fold to the member roster, or repair `CaÃ±ada` at source.
+5. The one ESL stray (`English as a Second Language (ESL)`, 9 identities).
