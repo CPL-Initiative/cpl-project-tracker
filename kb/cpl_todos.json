@@ -1,74 +1,56 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-25 · A long working session with Sam driving COBI in a browser and reporting things as he hit them. Almost everything found was a real defect rather than a preference: the Memory tab's status chip appeared to do nothing because the instruction that saves a change was addressed by a name six entries simply do not have; once fixed, the chip turned out to step through the statuses in a loop and really save every step it passed through, which recorded a verification nobody had made. That mark has now been cleared. Signing in by email link always returned you to the Common Course Reference no matter where you started, for everyone, because the note saying where you were is kept somewhere a newly-opened browser tab cannot see. SkyView's search sent you to an unrelated subject when a subject is spelled three slightly different ways, and now offers suggestions as you type. The GR Priorities tab can be edited row by row, with an on-demand re-check of each item's legal citations. Sam then described what he actually wants there — a routine that re-analyses an edited item for related law and says whether it needs a memo, a regulation change, an Ed Code change, or a combination. That is scoped and waiting for the next session.",
- "_session": "Session 193 (SkyFixer)",
- "_status": "Everything from today is merged and live. The next piece of work is already written up: the GR Priorities re-analysis Sam described. The key realisation is that the analysis behind that tab was never computed by anything — an earlier session did it by hand and typed the results in — so the job is to make that repeatable rather than to invent it, and the rules it followed can be read back out of the sixteen entries that already exist. The one thing still genuinely unfinished is that none of the twenty regulation revisions has had its legal citations checked against the primary source, which only a person can do and which matters most for a draft going to the Chancellor's Office this week.",
+ "_as_of": "2026-08-25 (evening) · A second long live session. Sam edited the GR Priorities register in a browser and hit a save that failed with a message blaming his sign-in — it was not his account. Refresh tokens are replaced each time they are used, and a browser tab still holding the previous one overwrote the good copy with the spent one, which signed him out of every tab at once. Fixed so the newest credential always wins. He then supplied three authenticated PDFs of brand-new law: SB 135 created an Education Code article for Credit for Prior Learning, effective 13 July. Reading all sixteen register entries against it found that one of them — ranked second — is asking the Legislature for something it has already passed. The register also could not cite the new law at all, because its citation rules never covered that range of section numbers. Sam then named what he wants built: that whole-register pass, as a button, able to propose entirely new priorities. It is built. Sierra also ran out of API credit this evening and was returning errors to the public; Sam restored it the same evening, and the uptime monitor did raise the alert correctly.",
+ "_session": 195,
+ "_status": "Everything from this session is merged and live, and the Sierra outage is resolved — Sam restored the credit balance the same evening. Two decisions in the register are legal judgments waiting on him: whether entry #2 is rewritten now that reciprocity is law, and whether entry #12 answers an objection the new statute hands to a reader. Nothing was written to the register; every finding is a proposal.",
  "items": [
   {
-   "id": "s193-sam-gr-reanalysis-questions",
+   "id": "s195-sam-credit-alert",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Sierra ran out of API credit this evening and you restored it — thank you. That is the third time (21 Aug, 22 Aug, 25 Aug). The uptime monitor did its job and raised the alert, but it only looks every three hours, so an outage can run that long before anyone is told. A balance-threshold alert on the Anthropic account itself would catch it before it becomes an outage, and that is the one thing a monitor here cannot do."
+  },
+  {
+   "id": "s195-sam-row2-enacted",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "Four questions before the GR re-analysis gets built (they are in docs/gr_reanalysis_scope.md). The one that changes the design: should it re-analyse the single item you edited, or the whole priority area? Only a whole-area pass can fix the tied priority rankings, where three items share rank 5 and two share rank 3."
+   "text": "Entry #2 (reciprocity between colleges) now asks for something already law. The new Education Code §78093.2(b)(2) requires every campus to accept transcribed prior-learning credit from other campuses. The entry still asks for a trailer bill, and it is ranked second, so it is near the top of what the Chancellor's Office reads. Two things do survive: 'no secondary review' is not stated outright, and the CSU/UC half is weaker in the statute than in the trailer bill."
   },
   {
-   "id": "s193-sam-gr-edit-and-reanalyze",
+   "id": "s195-sam-row12-objection",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "Open a regulation priority, edit it, and press Re-analyze. The check is deliberately not an opinion — it tells you which sections your text cites that are missing from the citation list, which listed ones the text no longer mentions, any section number that is ambiguous between two codes, and any section another priority area is also proposing to change. It checks the row against itself, not against the law."
+   "text": "Entry #12 is the one we call the cleanest win, and the new statute hands a reader an objection to it — §78093.1(f)(2) requires prior learning be 'approved through established curricular processes'. The answer exists (that governs how mastery is assessed, not what a course outline must list), but the entry is written as though nothing could be said against it. Worth pre-empting rather than meeting in the room."
   },
   {
-   "id": "s193-sam-gr-verify-citations",
+   "id": "s195-sam-new-priorities",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "None of the 20 regulation revisions has had its citations confirmed against the primary source — 0 of 20. For a draft going to the Chancellor's Office this week that is the number to move, and only a person can do it. Each row has a 'Mark citations verified' button."
+   "text": "The new law imposes four duties no entry covers. The biggest: every campus must evaluate the prior learning of ALL incoming students at the point their education plan is completed. Press 'Sweep this area' and the routine proposes these as new entries — nothing is added until you press Add, and anything added arrives marked 'proposed' with its citations flagged as machine-extracted."
   },
   {
-   "id": "s193-sam-gr-open-rows",
+   "id": "s195-sam-verify-article9",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "Some CPL regulation rows are already set to 'anyone in the CO' rather than MAP team only. Our notes said nothing was open yet, which turned out to be wrong. Worth a look before anything is exported, because the 'not yet verified against the source' caveat travels with the Word file."
+   "text": "None of the twenty register entries has had its citations checked against a primary source. The three PDFs you supplied are stamped 'authenticated electronic legal material', so they are the first material in the register that can move that number off zero."
   },
   {
-   "id": "s193-sam-gr-llm-lane",
+   "id": "s195-sam-browser-check",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "Decide whether you want drafting help for the 'Why it matters' text and the priority ranking. It is not built. It would need a change to the assistant's server, which is deployed separately from the site and is shared with the public assistant, so it is a deliberate step rather than a small one."
+   "text": "Two things only a browser can confirm: that signing in and saving now works across several open tabs at once, and that 'Sweep this area' reads usefully. Sixteen verdicts is a lot on one screen — entries needing rework are listed first deliberately, but the density is your call."
   },
   {
-   "id": "s193-sam-skyview-density",
-   "for": "Sam",
-   "tab": "unified-courses",
-   "text": "Open the Common Course Reference. It now shows the map first, with the list a button away. Try typing a subject name — suggestions should appear as you type — and try 'Browse subjects as a list', which now gives you an actual filterable list of all 302 subjects instead of the work-packaging screen it used to open."
-  },
-  {
-   "id": "s193-fable-decision-packs-everywhere",
+   "id": "s195-fable-decision-packs",
    "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Build the grouped work surface for every subject, not just 5 of 159 — about 1% of the corpus. It is the bottleneck behind every other improvement to that tab. It is too big for one file, but the code already fetches course descriptions one subject at a time, so the pattern exists."
+   "tab": "ccr",
+   "text": "The Common Course Reference map is the landing view, but the work surface behind it exists for only 5 of 159 subjects — so a curator clicking into it lands on nothing most of the time. Build the per-discipline decision packs, fetched on demand. The sharding path already exists."
   },
   {
-   "id": "s193-fable-two-real-courses-worklist",
+   "id": "s195-fable-my-college-cell",
    "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Work the 73 course-control numbers that genuinely point at two different courses. They sit at 12 colleges and 93 of the rows are at San Jose City College alone, so it is one conversation more than it is a project."
-  },
-  {
-   "id": "s193-fable-unattributed-verified",
-   "for": "Fable",
-   "tab": "memory",
-   "text": "Twenty-six memory entries are marked verified but name nobody as the verifier. New verifications now record the signed-in person, so this is a backlog rather than an ongoing leak."
-  },
-  {
-   "id": "s193-fable-member-roster-fold",
-   "for": "Fable",
-   "tab": "unified-courses",
-   "text": "Cañada College still renders with a mangled name in SkyView's member list. The name-folding rules exist but the member list never consults them, and the source export carries only the broken spelling — 678 times — so it needs repair at source."
-  },
-  {
-   "id": "s193-fable-my-college-cell",
-   "for": "Fable",
-   "tab": "my-college",
-   "text": "The My College entry in the project notes has grown past its size budget and now states several generations of findings at once. It should be cut back to what is currently true, with the history moved to that workstream's lessons file."
+   "tab": "dashboard",
+   "text": "The project memory's My College entry has grown into an append-only log — it is flagged by the documentation lint and has been carried across three sessions now. Compact it: current truth stays, the history moves to that workstream's lessons file."
   }
  ]
 }
