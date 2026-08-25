@@ -60,7 +60,44 @@ function serve() {
   await page.goto(`http://127.0.0.1:${port}/${FILE}`);
   await page.waitForTimeout(500);
 
-  console.log("\n══ forest");
+  console.log("\n══ \u26a0 the page lands on SkyView, not the list");
+  // Sam, 2026-08-25: "SkyView should be the initial CCR tab and the current
+  // detailed tab should be a button on SkyView … I think SkyView is more
+  // manageable and less intimidating."
+  ok("the map is on screen with no clicks", (await page.locator("#u-cvs").count()) === 1);
+  ok("and the subject list is a real focusable button on it, not a gesture",
+    (await page.locator("button#u-list").count()) === 1);
+
+  console.log("\n══ \u26a0 the landing view can be operated from a keyboard");
+  // This is the condition the flip was made under. Before it, the canvas keydown
+  // handler panned and zoomed and had NO key that reached a subject or an
+  // identity — survivable while the DOM list was the way in, not survivable once
+  // the map is the front door.
+  await page.locator("#u-cvs").focus();
+  await page.keyboard.press("Tab");
+  await page.waitForTimeout(340);
+  const kSub = await page.locator("#u-detail h3").textContent();
+  ok(`Tab reaches a subject (${(kSub || "").slice(0, 28)})`, !!kSub);
+  await page.keyboard.press("Enter");
+  await page.waitForTimeout(420);
+  const k1 = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`Enter steps INTO it and selects an identity (${k1.sel})`, !!k1.sel);
+  // A selected identity that is not drawn is not selected as far as a reader is
+  // concerned — the same floor the search has to clear.
+  ok(`and zooms past the threshold that draws it (${k1.view.k.toFixed(2)} > ${k1.nodeZoom})`,
+    k1.view.k > k1.nodeZoom);
+  await page.keyboard.press("Tab");
+  await page.waitForTimeout(340);
+  const k2 = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`Tab inside moves to a different identity (${k2.sel})`, !!k2.sel && k2.sel !== k1.sel);
+  await page.keyboard.press("Escape");
+  await page.waitForTimeout(320);
+  ok("Escape comes back out to the subject",
+    (await page.locator("#u-detail h3").textContent()) === kSub);
+
+  console.log("\n══ forest (reached from the map's own button)");
+  await page.locator("button#u-list").click();
+  await page.waitForTimeout(500);
   ok("heading rendered", (await page.locator("h1").first().textContent()).includes("Common Course Reference"));
   const cells = await page.locator(".cell").count();
   ok(`discipline cells (${cells})`, cells > 100);
@@ -102,7 +139,8 @@ function serve() {
   await page.waitForTimeout(400);
 
   console.log("\n══ the universe view");
-  ok("the banner offers it", (await page.locator("#go-universe").count()) === 1);
+  ok("the list still offers the way back to the map",
+    (await page.locator("#go-universe").count()) === 1);
   await page.locator("#go-universe").click();
   await page.waitForTimeout(600);
   ok("canvas is present and sized", await page.evaluate(() => {

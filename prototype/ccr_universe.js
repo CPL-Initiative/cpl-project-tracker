@@ -410,7 +410,7 @@ function pick(px,py){
 window.__ccrUniverse = function(){
   var view_el=document.getElementById("view");
   U=window.CPL_CCR_UNIVERSE; A=window.CPL_ATLAS_DATA||null;
-  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"Universe"}]);
+  window.__crumbs([{label:"All disciplines", go:window.__ccrForest},{label:"SkyView"}]);
 
   view_el.innerHTML =
     '<h1>The whole Common Course Reference</h1>'+
@@ -426,14 +426,22 @@ window.__ccrUniverse = function(){
       '<button class="btn" type="button" id="u-out">−</button>'+
       '<button class="btn" type="button" id="u-in">+</button>'+
       '<button class="btn" type="button" id="u-reset">Reset view</button>'+
+      // A real focusable control, not a gesture: this is the route to the
+      // subject list now that the map is the landing view, and it is also the
+      // route a keyboard reader takes to the parts of the tab the canvas does
+      // not carry.
+      '<button class="btn" type="button" id="u-list">Browse subjects as a list</button>'+
       '<span class="u-z">zoom <b id="u-zoom">12%</b></span>'+
     '</div>'+
     '<div class="u-wrap"><canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
       'A map of every course identity, grouped into one island per subject area. '+
-      'Use the search box at the top of the page to jump to a subject; the panel '+
-      'below lists what you select."></canvas>'+
+      'Use the search box at the top of the page to jump to a subject, or Tab to '+
+      'step through them from the keyboard; the panel below lists what you '+
+      'select."></canvas>'+
       '<div class="u-hint" id="u-hint">Drag the background to pan · scroll to zoom · '+
-      'drag a subject to move it · click a course to open it</div></div>'+
+      'drag a subject to move it · click a course to open it. '+
+      'From the keyboard: <kbd>Tab</kbd> steps through subjects, <kbd>Enter</kbd> '+
+      'goes into one, <kbd>Esc</kbd> comes back out.</div></div>'+
     '<div class="stage" style="margin-top:14px">'+
       '<div class="panel" id="u-detail"><h3>Nothing selected</h3>'+
       '<p class="empty">Click a subject or a course on the map.</p></div>'+
@@ -508,6 +516,8 @@ function wire(){
   document.getElementById("u-in").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1.4); };
   document.getElementById("u-out").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
+  var lb=document.getElementById("u-list");
+  if(lb) lb.onclick=function(){ window.__ccrForest(); };
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -575,8 +585,66 @@ function wire(){
             (A&&A.detail?num(Object.keys(A.detail).length):"a few")+" subjects so far.");
     draw();
   });
+  /* Keyboard operation of the map itself, not just the frame.
+   *
+   * Arrows panned and +/- zoomed, and there was NO key that reached a subject or
+   * an identity — so everything the view exists for (select it, read its panel,
+   * pick a course up) needed a mouse. That was survivable while the DOM list was
+   * the way in; it is not survivable now the map is the landing view, because
+   * the tab's front door would be the one surface a keyboard cannot operate.
+   *
+   * Tab/Shift-Tab step through subjects, Enter opens the selected one, and once
+   * inside a subject Tab steps through its identities. Escape steps back out.
+   * Arrows keep panning — a reader who wants the frame moved still can. */
+  var kbIsl=-1, kbNode=-1, kbInside=false;
+  function kbSubject(dir){
+    kbIsl=(kbIsl+dir+U.islands.length)%U.islands.length;
+    kbInside=false; kbNode=-1;
+    var isl=U.islands[kbIsl];
+    selIsl=isl; selNode=null;
+    flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
+    showIsland(isl);
+    setHint("Subject <strong>"+esc(isl.d)+"</strong> \u2014 "+num(isl.n)+
+            " identities. <kbd>Enter</kbd> to step into it, <kbd>Tab</kbd> for the next subject.");
+  }
+  function kbIdentity(dir){
+    var isl=U.islands[kbIsl]; if(!isl || !isl.p.length) return;
+    kbNode=(kbNode+dir+isl.p.length)%isl.p.length;
+    var nd=isl.p[kbNode];
+    // Zoom past the node threshold or the identity a reader has just selected
+    // is not drawn at all — the same floor the search has to clear.
+    flyTo(nd.x+(isl.dx||0), nd.y+(isl.dy||0), Math.max(view.k, NODE_ZOOM*3));
+    showNode(nd, isl);
+    setHint("<strong>"+esc(nd.t||nd.i)+"</strong> \u2014 "+esc(nd.i)+
+            " ("+num(kbNode+1)+" of "+num(isl.p.length)+" in "+esc(isl.d)+
+            "). <kbd>Esc</kbd> to leave this subject.");
+  }
+  /* Two levels, and which one Tab moves in is held EXPLICITLY. Deriving it from
+     "have we got a node yet" made Enter unable to enter: at island level there
+     is no node by definition, so the same test that meant "step between
+     subjects" also swallowed the keypress meant to go inside one. */
+  function kbStep(dir){
+    if(kbIsl<0 || !kbInside) kbSubject(dir);
+    else kbIdentity(dir);
+  }
+
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
+    if(e.key==="Tab"){ kbStep(e.shiftKey?-1:1); e.preventDefault(); return; }
+    if(e.key==="Enter"||e.key===" "){
+      if(kbIsl>=0 && !kbInside){ kbInside=true; kbNode=-1; kbIdentity(1); e.preventDefault(); }
+      return;
+    }
+    if(e.key==="Escape"){
+      if(kbInside){
+        kbInside=false; kbNode=-1; selNode=null;
+        var isl=U.islands[kbIsl];
+        if(isl){ showIsland(isl); setHint("Back to <strong>"+esc(isl.d)+
+          "</strong>. <kbd>Tab</kbd> for the next subject."); }
+        draw();
+      }
+      e.preventDefault(); return;
+    }
     if(e.key==="ArrowLeft"){ view.x+=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowRight"){ view.x-=step; draw(); e.preventDefault(); }
     if(e.key==="ArrowUp"){ view.y+=step; draw(); e.preventDefault(); }
