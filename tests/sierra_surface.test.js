@@ -164,9 +164,18 @@ block("(6)", function () {
     /const hostScope = normalizeHostScope\(scope\)/.test(SRC));
   check("(6) ⚠ …and no `mode` bundle was introduced",
     !/normalizeMode|const mode =|\bmode:\s*["']/.test(SRC));
-  check("(6) the surface reaches ONLY the guidance layer so far",
+  /* ⚠ THIS ASSERTION ONCE CLAIMED MORE THAN IT TESTED. It read "the surface
+   * reaches ONLY the guidance layer so far" while testing only that
+   * fetchTeamGuidance is CALLED with it — a presence check wearing an
+   * exclusivity label. v58 (2026-08-24) gave the surface three more consumers —
+   * the input cap, the system prompt and the interactions log — and this line
+   * still passed, because an assertion pinned to one member of a set cannot
+   * notice the set growing. The exclusivity claim now lives in
+   * tests/sierra_memory_isolation.test.js, which pins the whole set and fails
+   * when a fifth consumer appears. Here, keep the honest half. */
+  check("(6) the guidance layer is one of the surface's consumers",
     /fetchTeamGuidance\(sb, hostSurface\)/.test(SRC),
-    "its first consumer is the rule filter; widening it is a later decision");
+    "the full consumer set is pinned in tests/sierra_memory_isolation.test.js");
 });
 
 const failed = results.filter((r) => !r[1]);
