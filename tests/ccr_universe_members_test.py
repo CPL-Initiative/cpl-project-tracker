@@ -142,7 +142,7 @@ else:
           f"({len(ambiguous):,} keys, {rows_hit:,} draggable rows)",
           len(ambiguous) > 0)
     check("and they are a different set from the counter above, not a subset "
-          "relabelled",
+          "relabeled",
           len(ambiguous) != M["counts"]["cn_on_multiple_identities"])
     # The payload is inlined into a self-contained page. Titles were left out for
     # this reason; a ceiling is what stops them quietly coming back.

@@ -184,7 +184,7 @@ a{color:var(--cobalt)}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
 /* A card being dragged onto. Outline + tint, never tint alone: the cards
-   already carry state colours and one more wash of colour reads as noise. */
+   already carry state colors and one more wash of color reads as noise. */
 #ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
   background:#F4F0FC}
 /* A course whose control number names several courses cannot be re-homed —
@@ -278,7 +278,7 @@ document.getElementById("prov").textContent =
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
   var term = document.getElementById("gq").value;
-  // One search box, two behaviours, chosen by what is on screen: with the map
+  // One search box, two behaviors, chosen by what is on screen: with the map
   // open it flies and rings; anywhere else it lists results. The canvas being
   // in the DOM is the test rather than a flag we keep in step by hand — every
   // other view replaces #view wholesale, so it cannot go stale.

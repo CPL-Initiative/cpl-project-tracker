@@ -54,7 +54,7 @@ function ensureDescCss(){
   st.textContent=".mlist .mdesc{display:block;margin:.35em 0 .1em;font-size:.84rem;"+
     "line-height:1.45;color:var(--text-body,#3A3A36);max-width:var(--cpl-measure,none)}"+
     ".mlist .mdesc.none{color:var(--text-muted,#5C5C55);font-style:italic}"+
-    // Glyph-free on purpose: the chip's own words carry the state, so the colour
+    // Glyph-free on purpose: the chip's own words carry the state, so the color
     // is reinforcement and greyscale loses nothing.
     ".mlist .chip.warn{background:var(--accent-warn-tint,#FBF1D8);"+
     "color:var(--accent-warn-ink,#6B4E00);border:1px solid var(--accent-warn,#8B6800)}"+
@@ -298,7 +298,7 @@ function draw(){
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
-    // big island's name is never buried under a small neighbour's — and so
+    // big island's name is never buried under a small neighbor's — and so
     // overlapping labels can be rejected rather than stacked. An unreadable
     // pile of overlapping names is the exact failure of a global graph view.
     labelQueue.push({isl:isl, cx:c[0], cy:c[1]-r-6, r:r,
