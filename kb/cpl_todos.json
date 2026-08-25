@@ -41,12 +41,6 @@
    "text": "Two things only a browser can confirm: that signing in and saving now works across several open tabs at once, and that 'Sweep this area' reads usefully. Sixteen verdicts is a lot on one screen — entries needing rework are listed first deliberately, but the density is your call."
   },
   {
-   "id": "s195-fable-verify-deploy",
-   "for": "Fable",
-   "tab": "gr-priorities",
-   "text": "Confirm the second assistant deployment landed — the one carrying the larger request budget the whole-area sweep needs. Compare the deployed code against the repository; the earlier deployment was verified byte-for-byte and the same check applies."
-  },
-  {
    "id": "s195-fable-decision-packs",
    "for": "Fable",
    "tab": "ccr",

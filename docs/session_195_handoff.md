@@ -52,9 +52,11 @@ that is Sam's to set up, and it is the one durable fix.
 | **#1333** | Lane B per-row deep re-analysis · the keeper's cross-tab rotation bug · Ed. Code Part 48 citation bands · artifacts as evidence |
 | **#1334** | The **area sweep** + proposed new priorities · `docs/gr_sb135_row_sweep.md` |
 
-Both merged. `cpl-chat` deployed twice — **v59** for the `gr-analysis` surface,
-and again after #1334 for the raised cap. **Verify the second landed** (compare
-the deployed bundle against HEAD; v59 was byte-identical, sha `13d8fc13`).
+Both merged, and **`cpl-chat` is deployed and byte-verified at v60** — identical
+to `origin/main`, sha `5f817014`, with `QUERY_CAP_GR_ANALYSIS = 40000` and
+`gr-analysis` present in all three server lists. Two deploys: v59 for the surface,
+v60 for the raised cap the area sweep needs. **Nothing about the deploy is
+outstanding.**
 
 ## ⭐ The four findings worth carrying
 
@@ -134,7 +136,7 @@ walked path.
 | The 4 candidate new rows | sweep proposes them; a curator accepts |
 | GR: 0 of 20 revisions verified | **Sam's**, and Article 9 is the first primary-source material that can move it |
 | Row #9's title typo | *"requirement to requirement to note"* — **left alone deliberately**, it is Sam's prose |
-| Second cpl-chat deploy landed? | **verify** — dispatched right after #1334 merged |
+| Second cpl-chat deploy | ✅ **v60 byte-verified** against `origin/main` (sha `5f817014`, cap 40,000) |
 | Sam's 3 PDFs | filed as artifacts; his own artifact's empty citations repaired (marked derived) |
 | My College roadmap cell | **still flagged stacked** (4,292 chars) — two handoffs running |
 | `docs/INDEX.md` at 6.6× budget | 264 KB, standing |
