@@ -961,7 +961,8 @@ async function fetchCreditData(sb: any): Promise<any | null> {
 // boundary so tests/lib/lift_ts.js can lift this block into Node.
 function shapeCreditStatus(
   raw: any | null,
-  collegeName: string | null
+  collegeName: string | null,
+  rosterNames: any = null
 ): any {
   if (!raw) return null;
   {
@@ -1033,6 +1034,51 @@ function shapeCreditStatus(
       }
     }
 
+    /* ── LIVE FIGURES FOR EVERY COLLEGE IN A MULTI-COLLEGE SCOPE ──────────────
+     *
+     * ⚠ THIS EXISTS BECAUSE A DISTRICT ANSWER HAD NO LIVE PER-COLLEGE SOURCE AT
+     * ALL. `singleProfile` is null whenever the profile lookup returns an ARRAY,
+     * so a district question reached shapeCreditStatus with collegeName = null,
+     * `college` stayed null, and the only per-college numbers left in the whole
+     * context were the ones on chatbox_college_profiles.credit_distribution —
+     * a snapshot whose updated_at is 2026-06-25 21:59:58. Sam, 2026-08-24, on
+     * RCCD: Moreno Valley rendered as 0 students / 0 applied / 0 transcribed
+     * when the live table says 2,887 / 14,029 / 12,861 — and it is the LARGEST
+     * of the three colleges.
+     *
+     * Measured across the 103 colleges that join: the snapshot understates
+     * transcribed units by 61% and students by 40%, and shows a false zero for
+     * transcribed at 17 colleges and for students at 6.
+     *
+     * ⚠ A FALSE ZERO IS THE WORST ANSWER SIERRA GIVES — it reads as an inactive
+     * college, it closes the conversation, and nobody files feedback about a
+     * door they were told was not there. So the roster rows come from the SAME
+     * live table the single-college block uses: one source, so the two shapes
+     * cannot disagree.
+     *
+     * ⚠ SUPPRESSION IS CARRIED, NOT DROPPED. A suppressed row keeps its NULL
+     * measures and says why; rendering it as zero would leak the opposite of
+     * what k-anonymity protects. A college with NO row is named as absent,
+     * never as empty — "not in this dataset" and "zero" are different claims. */
+    let roster: any[] = [];
+    if (Array.isArray(rosterNames) && rosterNames.length > 1) {
+      roster = rosterNames.map((nm: string) => {
+        const cid = idByName.get(String(nm).trim().toLowerCase());
+        const row = cid != null ? summary.find((r: any) => r.college_id === cid) : null;
+        if (!row) return { name: nm, hasRow: false };
+        return {
+          name: nameById.get(row.college_id) || nm,
+          hasRow: true,
+          suppressed: !!row.suppressed,
+          students: row.students ?? null,
+          dormant: row.dormant_credits != null ? Number(row.dormant_credits) : null,
+          ready: row.articulated_waiting != null ? Number(row.articulated_waiting) : null,
+          applied: row.applied_credits != null ? Number(row.applied_credits) : null,
+          transcribed: row.transcribed_credits != null ? Number(row.transcribed_credits) : null,
+        };
+      });
+    }
+
     return {
       asOf: loadRows[0]?.loaded_at ? String(loadRows[0].loaded_at).slice(0, 10) : null,
       collegesWithData: summary.length,
@@ -1041,6 +1087,7 @@ function shapeCreditStatus(
       college,
       collegeAsked: collegeName,
       collegeHasNoRow,
+      roster,
     };
   }
 }
@@ -1828,6 +1875,32 @@ function buildCreditContext(cs: any): string {
       + `(it covers ${cs.collegesWithData} institutions). Say so plainly rather than implying zero — `
       + `"zero credit awarded" and "not in this dataset" are completely different statements.\n`;
   }
+
+  /* Per-college LIVE figures for a district or other multi-college scope. These
+   * are the ONLY per-college numbers in the context — the stale
+   * credit_distribution line was removed from the profile block — so a table
+   * built from them cannot silently be two months old. */
+  if (Array.isArray(cs.roster) && cs.roster.length > 1) {
+    out += `\nPER-COLLEGE FIGURES FOR THE COLLEGES NAMED ABOVE `
+      + `(from the same live table as everything else in this section`
+      + (cs.asOf ? `, as of ${cs.asOf}` : ``) + `).\n`
+      + `⚠ USE THESE NUMBERS AND NO OTHERS for any per-college table or claim. `
+      + `Do not carry a figure over from anywhere else in this prompt.\n`;
+    for (const r of cs.roster) {
+      if (!r.hasRow) {
+        out += `- ${r.name}: NOT in the credit dataset. Say that; do NOT write 0 — `
+          + `"not in this dataset" and "zero" are different statements.\n`;
+      } else if (r.suppressed) {
+        out += `- ${r.name}: fewer than 10 CPL students, so the figures are withheld to protect `
+          + `their privacy. Confirm activity exists; give no numbers and do not estimate.\n`;
+      } else {
+        out += `- ${r.name}: ${fmtN(r.students)} CPL students · `
+          + `${fmtN(r.dormant)} units recommended but not yet acted on · `
+          + `${fmtN(r.ready)} of those already articulated and waiting on a decision · `
+          + `${fmtN(r.applied)} units applied · ${fmtN(r.transcribed)} units transcribed\n`;
+      }
+    }
+  }
   return out;
 }
 
@@ -2177,13 +2250,28 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
    *
    * ⚠ Transcribed units were ALREADY in this context and the model dropped them
    * from the table. Shipping a figure is not the same as asking for it. */
+  /* ⚠ THIS RULE ONCE PROMISED DATA THE CONTEXT DID NOT CARRY. It said
+   * "Always include the Transcribed Units column — it is given for every college
+   * below", and for a district question that was false: the per-college numbers
+   * lived on the profile block, from a snapshot frozen 2026-06-25. Naming the
+   * columns while the values were stale is what put "Moreno Valley College | 26
+   * | 0 | 0 | 0" on screen for the largest college in RCCD.
+   *
+   * The figures now come from the CPL CREDIT DISPOSITION section, off the live
+   * table, and this rule points at it rather than asserting the values are
+   * nearby. A prompt must not promise a number it cannot show. */
   const TABLE_COLUMN_RULE =
     `\nIF YOU BUILD A PER-COLLEGE TABLE, use these columns and these labels: `
-    + `College | Eligible Units | Applied Units | Transcribed Units | Students in MAP | CPL Contact.\n`
+    + `College | Needs Action Units | Applied Units | Transcribed Units | Students in MAP | CPL Contact.\n`
     + `⚠ The student count is "Students in MAP" — students with a CPL record in the MAP platform. `
     + `It is NOT students awarded credit and must never be labelled or described as awarded, `
     + `granted or earned: a college can show students in MAP with zero applied units.\n`
-    + `Always include the Transcribed Units column — it is given for every college below.\n`;
+    + `⚠ TAKE EVERY NUMBER FROM THE "CPL CREDIT DISPOSITION" SECTION BELOW, which lists each `
+    + `college named here. The profile blocks above carry NO credit figures. If that section does `
+    + `not appear, do NOT build the table and do not estimate — say the figures are unavailable.\n`
+    + `⚠ Where it says a college is not in the dataset, or that its figures are withheld for `
+    + `privacy, write that in the cell. NEVER write 0 for either: a false zero reads as an `
+    + `inactive college and is the most damaging thing you can say about one.\n`;
 
   if (!profile) return "";
   const profiles = Array.isArray(profile) ? profile : [profile];
@@ -2326,13 +2414,27 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
       }
     }
 
-    const cr = p.credit_distribution || {};
-    if (cr.eligible_credits) {
-      // ⚠ "students in MAP", never "students awarded" — see TABLE_COLUMN_RULE.
-      // The wording here is what the model echoes into a column header, so the
-      // label has to be right at the point the number is stated.
-      ctx += `Credit distribution: ${cr.eligible_credits} eligible units, ${cr.applied_credits || 0} applied units, ${cr.transcribed_credits || 0} transcribed units, ${cr.students_awarded || 0} students in MAP (students with a CPL record, NOT students awarded credit)\n`;
-    }
+    /* ⚠ chatbox_college_profiles.credit_distribution IS NOT EMITTED, DELIBERATELY.
+     *
+     * It was the per-college credit source here until 2026-08-24. Its
+     * `updated_at` is 2026-06-25 21:59:58 and NOTHING refreshes it: four things
+     * write to this table (the landing-page sync, the identity crosswalk, the
+     * scraper, the MAP users sync) and not one of them touches this column,
+     * while map_college_credit_summary rebuilds nightly in the 13:40 promotion.
+     * The two drifted for two months.
+     *
+     * What that cost: asked what RCCD should do, Sierra reported Moreno Valley
+     * as 0 students / 0 applied / 0 transcribed. The live table says 2,887 /
+     * 14,029 / 12,861 — it is the LARGEST college of the three. Across the 103
+     * colleges that join, the snapshot understates transcribed units by 61% and
+     * students by 40%, with a false zero for transcribed at 17 colleges.
+     *
+     * ⚠ REFRESHING IT WOULD NOT HAVE FIXED THIS. Two sources for one fact drift
+     * again the moment one of them stops being written, and the failure is
+     * silent because a stale number looks exactly like a fresh one. The live
+     * figures now come from buildCreditContext for BOTH the single-college and
+     * the multi-college shape, so there is one source and the two cannot
+     * disagree. Do not re-add a per-college number here. */
 
     // Landing page link
     if (p.landing_page_url) {
@@ -3461,8 +3563,18 @@ Deno.serve(async (req: Request) => {
     // Credit disposition — shaped once detection has resolved, so "at MY college"
     // questions get the named row. With no college detected it still carries the
     // statewide roll-up, which is what a "how is CPL going?" question needs.
+    /* ⚠ THE ROSTER IS PASSED SEPARATELY FROM THE DETECTED COLLEGE, because they
+     * are different shapes and only one of them was ever wired. `singleProfile`
+     * is null whenever the lookup returns an ARRAY — which is exactly what a
+     * district question returns — so before this, a district answer carried NO
+     * live per-college figures at all and the model fell back to the stale
+     * profile line. Passing the resolved names lets the credit context speak for
+     * every college actually named in the answer. */
+    const rosterNames = Array.isArray(resolvedProfile)
+      ? resolvedProfile.map((p: any) => p && p.college).filter(Boolean)
+      : null;
     const creditContext = buildCreditContext(
-      shapeCreditStatus(creditData, singleProfile?.college || null));
+      shapeCreditStatus(creditData, singleProfile?.college || null, rosterNames));
 
     // Route CRED-STD — the canonical credential record. Looked up on every
     // question because a credential can be named in any of them, and the two

@@ -301,11 +301,27 @@ block("(5)", function () {
     "students with a CPL record, and 'Students Awarded' stated it as awards");
   check("(5) ⭐ …and the wrong label is explicitly forbidden",
     /NOT students awarded credit/.test(ctx));
-  check("(5) a Transcribed Units column is required",
-    /Always include the Transcribed Units column/.test(ctx),
+  /* ⚠ RE-POINTED 2026-08-24, NOT DELETED. Both assertions below guarded a real
+   * requirement — a transcribed column must be asked for, and the per-college
+   * numbers must actually be present — but they pinned the SOURCE that was
+   * wrong. The figures used to come from chatbox_college_profiles
+   * .credit_distribution, whose updated_at is 2026-06-25 and which nothing
+   * refreshes; that is what rendered Moreno Valley as 0 / 0 / 0 when the live
+   * table says 2,887 students and 12,861 transcribed units. The profile block
+   * now carries NO credit figures at all and the live ones come from
+   * buildCreditContext, so the requirement holds and the anchor moves.
+   * The per-college values themselves are guarded in
+   * tests/sierra_district_credit_figures.test.js against the live shape. */
+  check("(5) a Transcribed Units column is still required",
+    /Transcribed Units/.test(ctx),
     "the figure was already shipped and the model simply dropped it");
-  check("(5) the per-college line states transcribed units",
-    /7 transcribed units/.test(ctx), ctx.slice(0, 400));
+  check("(5) ⭐ the profile block carries NO per-college credit figures",
+    !/Credit distribution:/.test(ctx) && !/transcribed units/.test(ctx),
+    "a stale number looks exactly like a fresh one, so the stale source is gone " +
+    "rather than refreshed — one source, which cannot disagree with itself");
+  check("(5) ⚠ …and the rule sends the model to the live section for them",
+    /TAKE EVERY NUMBER FROM THE "CPL CREDIT DISPOSITION" SECTION/.test(ctx),
+    "naming columns while the values were stale is what put the false zeros on screen");
   check("(5) …and no longer says 'students awarded' at the point of the number",
     !/students awarded\b/.test(ctx.replace(/NOT students awarded credit/g, "")),
     "the wording here is what the model echoes into a column header");
