@@ -34,6 +34,13 @@ var descCache={}, descState={};      // island shard -> {cn/index: text} · shar
 var DESC_DIR="ccr_desc";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
+/* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
+ * a module constant because doSearch has to honour it: a search that flies to
+ * "fit all the hits" picks a zoom below it whenever the hits are spread out,
+ * and then reports "Ringed in red" over a canvas drawing nothing but islands.
+ * Reported from a browser by Sam, 2026-08-25: 19 hits across 9 subjects, zoom
+ * 12%, no rings. One constant read by both is what stops them disagreeing. */
+var NODE_ZOOM=0.20;
 
 var SYS=[["#F1EAFC","#6D28D9","✽","M-ID"],
          ["#E7EEF9","#0047AB","★","C-ID"],
@@ -240,7 +247,7 @@ function draw(){
   ctx.fillRect(0,0,W,H);
 
   var k=view.k;
-  var showNodes = k>0.20, showLabels = k>0.55, showTitles = k>1.35;
+  var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTitles = k>1.35;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
   var labelQueue=[];
 
@@ -432,7 +439,11 @@ window.__ccrUniverseState = function(){
   if(cnCourses) for(var k in cnCourses) if(cnCourses[k].length>1) shared++;
   return {view:view, moves:moves, sel:selNode?selNode.i:null,
           members:roster?Object.keys(roster).length:0, memberSource:memberSource,
-          sharedKeys:shared, canMove:canMove};
+          sharedKeys:shared, canMove:canMove,
+          // Exported so a test asserts against the SAME threshold draw() uses.
+          // Hard-coding 0.20 in the harness would pass happily the day the
+          // renderer's threshold moved and the search stopped clearing it.
+          nodeZoom:NODE_ZOOM, hits:searchHits.length};
 };
 
 function wire(){
@@ -516,34 +527,71 @@ function doSearch(){
   var term=(document.getElementById("u-q").value||"").trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
-  var isl=null;
-  for(var i=0;i<U.islands.length;i++)
-    if(U.islands[i].d.toLowerCase().indexOf(term)>=0){ isl=U.islands[i]; break; }
   U.islands.forEach(function(I){
     I.p.forEach(function(nd){
       if(nd.t.toLowerCase().indexOf(term)>=0 || nd.i.toLowerCase().indexOf(term)>=0)
         searchHits.push({id:nd.i, x:nd.x+(I.dx||0), y:nd.y+(I.dy||0), isl:I, nd:nd});
     });
   });
-  if(isl && !searchHits.length){
+  /* A SUBJECT NAME WINS. Typing "English as a Second Language" means "take me
+   * there", and the old order only considered the subject when there were no
+   * node hits at all — so a subject name that also appeared in a few course
+   * titles scattered the view instead of going anywhere. Only when every
+   * matching island is the SAME discipline though: "art" matches Art, Culinary
+   * Arts and Theater Arts, and picking one of those for the curator would be a
+   * guess dressed as an answer. */
+  var named=U.islands.filter(function(I){ return I.d.toLowerCase().indexOf(term)>=0; });
+  var base=function(I){ return I.d.replace(" \u00b7 stand-alone",""); };
+  var bases={}; named.forEach(function(I){ bases[base(I)]=1; });
+  /* An EXACT discipline name beats a substring match. It has to, because the
+   * corpus carries near-identical discipline names that merely CONTAIN each
+   * other: "English as a Second Language" is one discipline, and "English as a
+   * Second Language (ESL)" and "English as a Second Language Noncredit 53412"
+   * are two more. Without this, typing the real name of a subject scattered the
+   * view because two other spellings of it also matched. */
+  var exact=named.filter(function(I){ return base(I).toLowerCase()===term; });
+  if(exact.length) named=exact;
+  if(named.length && (exact.length || Object.keys(bases).length===1)){
+    // Prefer the clustered island over its stand-alone twin: the stand-alone
+    // side asserts no equivalence, so it is not where curation happens.
+    var isl=named.filter(function(I){ return !I.a; })[0]||named[0];
     flyTo(isl.x+(isl.dx||0), isl.y+(isl.dy||0), Math.min(3.2, 190/isl.r));
     selIsl=isl; showIsland(isl);
-    setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+isl.n+" identities.");
+    setHint("Subject <strong>"+esc(isl.d)+"</strong> — "+num(isl.n)+" identities."+
+      (searchHits.length?" <strong>"+num(searchHits.length)+"</strong> course"+
+        (searchHits.length===1?"":"s")+" also match “"+esc(term)+"” by name"+
+        (named.length>1?", including its stand-alone side":"")+", ringed in red.":""));
+    draw();
     return;
   }
   if(!searchHits.length){ setHint("Nothing matches “"+esc(term)+"”."); draw(); return; }
+  var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
+  var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
+  var head="<strong>"+num(searchHits.length)+"</strong> match “"+esc(term)+
+    "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
+    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" \u00b7 ")+
+    (names.length>4?" \u00b7 …":"")+".";
   var xs=searchHits.map(function(h){return h.x;}), ys=searchHits.map(function(h){return h.y;});
   var cx=(Math.min.apply(null,xs)+Math.max.apply(null,xs))/2;
   var cy=(Math.min.apply(null,ys)+Math.max.apply(null,ys))/2;
   var spread=Math.max(90, Math.max(Math.max.apply(null,xs)-Math.min.apply(null,xs),
                                    Math.max.apply(null,ys)-Math.min.apply(null,ys)));
-  flyTo(cx,cy, Math.min(3.2, (cvs.clientWidth*0.62)/spread));
-  var subj={}; searchHits.forEach(function(h){ subj[h.isl.d]=(subj[h.isl.d]||0)+1; });
-  var names=Object.keys(subj).sort(function(a,b){return subj[b]-subj[a];});
-  setHint("<strong>"+num(searchHits.length)+"</strong> match“"+esc(term)+
-    "” across <strong>"+names.length+"</strong> subject"+(names.length===1?"":"s")+
-    ": "+names.slice(0,4).map(function(n){return esc(n)+" ("+subj[n]+")";}).join(" · ")+
-    (names.length>4?" · …":"")+". Ringed in red.");
+  var fit=Math.min(3.2, (cvs.clientWidth*0.62)/spread);
+  if(fit>NODE_ZOOM){
+    flyTo(cx,cy,fit);
+    setHint(head+" Ringed in red.");
+  } else {
+    /* The hits do not fit in one view at any zoom that draws them. Go to the
+     * densest subject rather than framing them all invisibly, and say which —
+     * "ringed in red" over a canvas with no nodes on it is the report that
+     * sent Sam looking for a rendering bug. */
+    var top=searchHits.filter(function(h){return h.isl.d===names[0];});
+    var tx=top.reduce(function(a,h){return a+h.x;},0)/top.length;
+    var ty=top.reduce(function(a,h){return a+h.y;},0)/top.length;
+    flyTo(tx,ty,Math.max(NODE_ZOOM*1.6, Math.min(3.2, 190/top[0].isl.r)));
+    setHint(head+" They are too far apart to ring in one view — showing <strong>"+
+      esc(names[0])+"</strong>. Search a subject name to go straight to it.");
+  }
   if(searchHits.length===1){ selNode=searchHits[0].nd; selIsl=searchHits[0].isl;
                              showNode(selNode, selIsl); }
   draw();

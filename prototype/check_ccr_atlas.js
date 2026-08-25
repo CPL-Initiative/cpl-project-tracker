@@ -164,6 +164,49 @@ function serve() {
   console.log(`  note  ${mp.dup} control numbers sit under more than one identity; ` +
               `${mp.dropped} members carry no control number and cannot be dragged`);
 
+  console.log("\n══ ⚠ a search must land where its hits can be SEEN");
+  // Reported from a browser by Sam, 2026-08-25: searching "english as a second"
+  // said "19 match … Ringed in red" and drew nothing, because doSearch flew to
+  // "fit all the hits" — which for hits spread across nine subjects is a zoom
+  // BELOW the one at which draw() renders any node at all. The search was
+  // choosing a zoom the renderer refuses to draw at, then reporting rings.
+  const nodeZoom = await page.evaluate(() => window.__ccrUniverseState().nodeZoom);
+  ok(`the renderer's node threshold is exported (${nodeZoom})`, nodeZoom > 0);
+
+  const runSearch = async (term) => {
+    await page.fill("#u-q", term);
+    await page.locator("#u-find").click();
+    await page.waitForTimeout(420);
+    const st = await page.evaluate(() => window.__ccrUniverseState());
+    return { k: st.view.k, hits: st.hits, hint: await page.locator("#u-hint").textContent() };
+  };
+
+  // Sam's exact term. Scattered on purpose — this is the case that failed.
+  const scattered = await runSearch("english as a second");
+  ok(`"english as a second" finds matches (${scattered.hits})`, scattered.hits > 0);
+  ok(`and lands where nodes are drawn (zoom ${scattered.k.toFixed(3)} > ${nodeZoom})`,
+    scattered.k > nodeZoom);
+  // The invariant, stated as itself: claiming rings and drawing none is the bug.
+  ok("it never claims rings at a zoom that draws none",
+    !(/ring/i.test(scattered.hint) && scattered.k <= nodeZoom));
+
+  // A subject name should TAKE you to the subject, not scatter the view — the
+  // old order only considered the subject when nothing else matched at all.
+  const subj = await runSearch("english as a second language");
+  // textContent strips the markup, so assert on the words that survive it.
+  ok("a subject name goes to that subject",
+    /^\s*Subject\b/i.test(subj.hint) && /English as a Second Language/i.test(subj.hint));
+  ok(`and zooms in to it (zoom ${subj.k.toFixed(3)})`, subj.k > nodeZoom);
+
+  // A word that is a substring of several DIFFERENT disciplines and an exact
+  // match for none must not silently pick one of them. ("art" is a poor probe
+  // here — it is the exact name of a discipline, so going to Art is correct.)
+  const many = await runSearch("tech");
+  ok("a word matching several different subjects does not pick one for you",
+    !/^\s*Subject\b/i.test(many.hint));
+  ok("and still lands where its hits can be seen",
+    many.k > nodeZoom || !/ring/i.test(many.hint));
+
   console.log("\n══ ⚠ the cross-area move (the reason this view exists)");
   // Pick a real source (a course on an identity in one island) and a real target
   // in a DIFFERENT island, then drive the actual UI: select, press Drag…, click
