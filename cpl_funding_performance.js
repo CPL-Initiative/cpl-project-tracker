@@ -4,18 +4,18 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-08-24",
+ "as_of": "2026-08-25",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42840,
-  "pa": 40166,
+  "pe": 42847,
+  "pa": 40173,
   "p2": 3732,
-  "p3": 15771,
+  "p3": 15772,
   "pp": 5,
-  "pe_u": 1375984.95,
-  "pa_u": 222694.65,
-  "p3_u": 80309.95,
+  "pe_u": 1376224.95,
+  "pa_u": 222716.65,
+  "p3_u": 80312.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -64,10 +64,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Bakersfield": {
-   "pe": 589,
-   "pe_u": 25870.5,
-   "pa": 582,
-   "pa_u": 8597.5,
+   "pe": 590,
+   "pe_u": 25895.5,
+   "pa": 583,
+   "pa_u": 8602.5,
    "p2": 49,
    "p3": 50,
    "p3_u": 962.5,
@@ -130,10 +130,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Canyons": {
-   "pe": 509,
-   "pe_u": 21441.0,
-   "pa": 509,
-   "pa_u": 1527.0,
+   "pe": 510,
+   "pe_u": 21483.0,
+   "pa": 510,
+   "pa_u": 1530.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -174,13 +174,13 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Chaffey": {
-   "pe": 1519,
-   "pe_u": 32960.5,
-   "pa": 1515,
-   "pa_u": 18591.0,
+   "pe": 1518,
+   "pe_u": 32923.5,
+   "pa": 1514,
+   "pa_u": 18582.0,
    "p2": 17,
-   "p3": 35,
-   "p3_u": 271.0,
+   "p3": 36,
+   "p3_u": 274.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -347,10 +347,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "East LA": {
-   "pe": 233,
-   "pe_u": 9067.0,
-   "pa": 232,
-   "pa_u": 696.0,
+   "pe": 235,
+   "pe_u": 9200.0,
+   "pa": 234,
+   "pa_u": 702.0,
    "p2": 0,
    "p3": 26,
    "p3_u": 78.0,
@@ -839,10 +839,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Porterville": {
-   "pe": 26,
-   "pe_u": 639.0,
-   "pa": 26,
-   "pa_u": 130.0,
+   "pe": 27,
+   "pe_u": 675.0,
+   "pa": 27,
+   "pa_u": 135.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -949,10 +949,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "San Francisco": {
-   "pe": 1313,
-   "pe_u": 61004.5,
-   "pa": 1311,
-   "pa_u": 9005.5,
+   "pe": 1315,
+   "pe_u": 61011.5,
+   "pa": 1313,
+   "pa_u": 9012.5,
    "p2": 8,
    "p3": 15,
    "p3_u": 118.0,
@@ -1129,10 +1129,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Ventura": {
-   "pe": 182,
-   "pe_u": 10523.0,
-   "pa": 182,
-   "pa_u": 925.0,
+   "pe": 183,
+   "pe_u": 10557.0,
+   "pa": 183,
+   "pa_u": 930.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1302,8 +1302,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 547,
-    "pa": 544,
+    "pe": 548,
+    "pa": 545,
     "p3": 26
    }
   },
@@ -1385,8 +1385,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Canyons": {
    "Military": {
-    "pe": 509,
-    "pa": 509,
+    "pe": 510,
+    "pa": 510,
     "p3": 0
    }
   },
@@ -1426,9 +1426,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 346,
-    "pa": 344,
-    "p3": 8
+    "pe": 345,
+    "pa": 343,
+    "p3": 9
    },
    "Other": {
     "pe": null,
@@ -1628,8 +1628,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "Military": {
-    "pe": 233,
-    "pa": 232,
+    "pe": 235,
+    "pa": 234,
     "p3": 26
    }
   },
@@ -2257,8 +2257,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Porterville": {
    "Military": {
-    "pe": 26,
-    "pa": 26,
+    "pe": 27,
+    "pa": 27,
     "p3": 0
    }
   },
@@ -2476,9 +2476,16 @@ window.CPL_FUNDING_PERF = {
    }
   },
   "San Francisco": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
    "Industry Certification": {
-    "pe": 8,
-    "pa": 8,
+    "pe": 9,
+    "pa": 9,
     "p3": null,
     "p3_suppressed": true
    },
@@ -2664,8 +2671,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "Military": {
-    "pe": 182,
-    "pa": 182,
+    "pe": 183,
+    "pa": 183,
     "p3": 0
    }
   },
@@ -2761,8 +2768,8 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 9477,
-   "pa": 9115,
+   "pe": 9478,
+   "pa": 9116,
    "p3": 8682
   },
   "Credit By Exam | Industry Certification": {
@@ -2826,8 +2833,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 14
   },
   "Industry Certification": {
-   "pe": 1254,
-   "pa": 1230,
+   "pe": 1255,
+   "pa": 1231,
    "p3": 1144
   },
   "Industry Certification | Military": {
@@ -2872,9 +2879,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26802,
-   "pa": 24683,
-   "p3": 2469
+   "pe": 26807,
+   "pa": 24688,
+   "p3": 2470
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -2921,17 +2928,17 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1375508.45,
-   "pa_u": 222694.65,
-   "p3_u": 80309.95
+   "pe_u": 1375748.45,
+   "pa_u": 222716.65,
+   "p3_u": 80312.95
   },
   "map": {
-   "pe_u": 1382751.95,
-   "pa_u": 223369.15,
-   "p3_u": 80334.95
+   "pe_u": 1382884.95,
+   "pa_u": 223383.15,
+   "p3_u": 80337.95
   },
   "ratio": {
-   "pe_u": 1.0053,
+   "pe_u": 1.0052,
    "pa_u": 1.003,
    "p3_u": 1.0003
   }
@@ -2977,8 +2984,8 @@ window.CPL_FUNDING_PERF = {
   "Shasta": false,
   "Fullerton": true,
   "Victor Valley": true,
-  "LA Pierce": false,
   "Ventura": false,
+  "LA Pierce": false,
   "LA Mission": true,
   "Mission": true,
   "Sequoias": false,
@@ -3008,8 +3015,8 @@ window.CPL_FUNDING_PERF = {
   "Hartnell": false,
   "Crafton Hills": false,
   "Palo Verde": false,
-  "American River": false,
   "Porterville": false,
+  "American River": false,
   "Las Positas": false,
   "Compton": false,
   "Redwoods": false,
@@ -3053,7 +3060,7 @@ window.CPL_FUNDING_PERF = {
   "Marin": false,
   "Siskiyous": false
  },
- "vet_star_as_of": "2026-08-24",
+ "vet_star_as_of": "2026-08-25",
  "vet_star_threshold": 0.75,
  "vet_star_n": 57
 };

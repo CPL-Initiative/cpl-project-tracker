@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-24T16:14:45.023695+00:00",
+  "scraped_at": "2026-08-25T07:15:06.321182+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27353,
+    "jst": 27357,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 349,
+      "jst": 348,
       "star": true
     },
     "San Diego Mesa College": {
@@ -47,7 +47,7 @@
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 560,
+      "jst": 561,
       "star": true
     },
     "City College of San Francisco": {
@@ -102,7 +102,7 @@
     },
     "San Bernardino Valley College": {
       "vets": 907,
-      "jst": 208,
+      "jst": 207,
       "star": false
     },
     "College of the Desert": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 509,
+      "jst": 510,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -210,14 +210,14 @@
       "jst": 339,
       "star": true
     },
+    "Ventura College": {
+      "vets": 254,
+      "jst": 183,
+      "star": false
+    },
     "Los Angeles Pierce College": {
       "vets": 296,
       "jst": 131,
-      "star": false
-    },
-    "Ventura College": {
-      "vets": 254,
-      "jst": 182,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -252,7 +252,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 234,
+      "jst": 236,
       "star": false
     },
     "Evergreen Valley College": {
@@ -365,14 +365,14 @@
       "jst": 9,
       "star": false
     },
+    "Porterville College": {
+      "vets": 52,
+      "jst": 28,
+      "star": false
+    },
     "American River College": {
       "vets": 312,
       "jst": 44,
-      "star": false
-    },
-    "Porterville College": {
-      "vets": 52,
-      "jst": 27,
       "star": false
     },
     "Las Positas College": {

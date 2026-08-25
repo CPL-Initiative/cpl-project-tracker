@@ -1,7 +1,7 @@
 {
   "_about": "Human curation overlay for the COCI staging KB. Git-canonical and reviewable. Synced from the Supabase kb_curation table by kb/_apply_curation.py, then applied on top of the AI-drafted coci_* files by excel_to_dashboard.py (export_unified_courses) so curation is regen-safe. Keyed by course_id (M-ID / UC cluster / C-ID). Does NOT touch curated common_courses.json / course_crosswalk.json.",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-08-24T16:14:58Z",
+  "_synced_at": "2026-08-25T07:15:16Z",
   "count": 30694,
   "curations": {
     "AERO M10BA": {
@@ -65059,9 +65059,9 @@
       "reviewed_at": "2026-08-24T13:40:41.038398+00:00"
     },
     "ESLN M9017": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESLN M9018": {
       "merge_into": "ESOL M1141",
@@ -65548,14 +65548,14 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M1046": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M1047": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M1048": {
       "merge_into": "ESOL M1141",
@@ -66406,49 +66406,49 @@
       "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
     },
     "ESOL M10EN": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EO": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EP": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EQ": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10ER": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10ES": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10ET": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EU": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EV": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10EW": {
       "merge_into": "ESOL M9168",
@@ -66486,9 +66486,9 @@
       "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
     },
     "ESOL M10FD": {
-      "merge_into": "ESOL M9168",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:40:41.038398+00:00"
+      "merge_into": "ESOL M1141",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10FE": {
       "merge_into": "ESOL M1152",
@@ -67561,9 +67561,9 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M10NS": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10NT": {
       "merge_into": "ESOL M1141",
@@ -67586,9 +67586,9 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ESOL M10NX": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10NY": {
       "merge_into": "ESOL M1141",
@@ -67791,9 +67791,9 @@
       "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
     },
     "ESOL M10PQ": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10PR": {
       "merge_into": "ESOL M9168",
@@ -68491,9 +68491,9 @@
       "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
     },
     "ESOL M10VB": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10VC": {
       "merge_into": "ESOL M9168",
@@ -68791,9 +68791,9 @@
       "reviewed_at": "2026-08-24T13:37:05.751405+00:00"
     },
     "ESOL M10XJ": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M10XK": {
       "merge_into": "ESOL M9168",
@@ -69403,9 +69403,9 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M1211": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M1212": {
       "merge_into": "ESOL M1141",
@@ -69433,9 +69433,9 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M1217": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M1218": {
       "merge_into": "ESOL M1141",
@@ -69448,9 +69448,9 @@
       "reviewed_at": "2026-08-24T13:41:21.277665+00:00"
     },
     "ESOL M1220": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M1221": {
       "merge_into": "ESOL M1141",
@@ -70486,9 +70486,9 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M9061": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9062": {
       "merge_into": "ESOL M9001",
@@ -70496,29 +70496,29 @@
       "reviewed_at": "2026-06-16T19:56:31.806642+00:00"
     },
     "ESOL M9063": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9064": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9065": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9066": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9067": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M9068": {
       "merge_into": "ESOL M1141",
@@ -71815,14 +71815,14 @@
       "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
     },
     "ESOL M90IS": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M90IT": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M90IU": {
       "merge_into": "ESOL M9023",
@@ -71830,14 +71830,14 @@
       "reviewed_at": "2026-08-24T13:37:05.751405+00:00"
     },
     "ESOL M90IV": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M90IW": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M90IX": {
       "merge_into": "ESOL M9256",
@@ -74834,9 +74834,9 @@
       "reviewed_at": "2026-08-24T13:39:09.879652+00:00"
     },
     "ESOL M91CA": {
-      "merge_into": "ESOL M1141",
-      "reviewed_by": "package-esl-s187@bot",
-      "reviewed_at": "2026-08-24T13:37:58.68092+00:00"
+      "merge_into": "ESOL M9256",
+      "reviewed_by": "relevel-esl-s188@bot",
+      "reviewed_at": "2026-08-24T18:27:59.093726+00:00"
     },
     "ESOL M91CB": {
       "merge_into": "ESOL M9256",
