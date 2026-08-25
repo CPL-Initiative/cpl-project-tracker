@@ -95,8 +95,45 @@ function serve() {
   ok("Escape comes back out to the subject",
     (await page.locator("#u-detail h3").textContent()) === kSub);
 
-  console.log("\n══ forest (reached from the map's own button)");
+  console.log("\n\u2550\u2550 the subject list (the map's own button)");
+  // Sam, 2026-08-25: "The Browse by Subjects button takes me unexpectedly to the
+  // package view. Seems I'm already browsing by subject." It now opens an actual
+  // list of subjects, filterable and seeded from the search box; the packaging
+  // view keeps its own door at the bottom of that list. This section walks that
+  // route, because the route IS the fix.
+  await page.locator("#gq").fill("english as a second");
   await page.locator("button#u-list").click();
+  await page.waitForTimeout(400);
+  ok("the button opens a SUBJECT list, not the packaging view",
+    /Every subject area/.test(await page.locator("h1").first().textContent()));
+  ok("it carries the search term across as the filter",
+    (await page.locator("#sl-q").inputValue()) === "english as a second");
+  const seeded = await page.locator("#sl-rows button").count();
+  ok(`the seeded filter narrows to the ESL subjects (${seeded})`, seeded > 0 && seeded < 30);
+  ok("it says how many of how many matched",
+    /of\s[\d,]+\ssubjects match/.test(await page.locator("#sl-count").textContent()));
+  await page.locator("#sl-q").fill("");
+  await page.waitForTimeout(200);
+  ok(`clearing the filter shows every subject (${await page.locator("#sl-count").textContent()})`,
+    /^[\d,]+ subjects$/.test((await page.locator("#sl-count").textContent()).trim()));
+  // A filter that matches nothing must say so rather than render an empty panel
+  // that is indistinguishable from a corpus with no subjects in it.
+  await page.locator("#sl-q").fill("zzzznotasubject");
+  await page.waitForTimeout(200);
+  ok("an empty filter result says so",
+    /Nothing matches/.test(await page.locator("#sl-rows").textContent()));
+  await page.locator("#sl-q").fill("welding");
+  await page.waitForTimeout(200);
+  await page.locator("#sl-rows button").first().click();
+  await page.waitForTimeout(500);
+  ok("picking a subject returns to the MAP, opened on it",
+    (await page.locator("#u-cvs").count()) === 1 &&
+    /Welding/i.test(await page.locator("#u-detail h3").textContent()));
+
+  console.log("\n\u2550\u2550 forest (its own door, at the bottom of the subject list)");
+  await page.locator("button#u-list").click();
+  await page.waitForTimeout(350);
+  await page.locator("button#sl-pack").click();
   await page.waitForTimeout(500);
   ok("heading rendered", (await page.locator("h1").first().textContent()).includes("Common Course Reference"));
   const cells = await page.locator(".cell").count();
@@ -246,13 +283,37 @@ function serve() {
   ok(`and zooms in to it (zoom ${subj.k.toFixed(3)})`, subj.k > nodeZoom);
 
   // A word that is a substring of several DIFFERENT disciplines and an exact
-  // match for none must not silently pick one of them. ("art" is a poor probe
-  // here — it is the exact name of a discipline, so going to Art is correct.)
+  // match for none. ("art" is a poor probe here — it is the exact name of a
+  // discipline, so going to Art is correct.)
+  //
+  // ⚠ THIS CONTRACT CHANGED, 2026-08-25. It used to assert that such a term
+  // picked NO subject. That was the honest-looking half of a worse whole: the
+  // fallback then chose whichever subject carried the most incidental
+  // COURSE-TITLE matches, which is how "english as a second" landed on
+  // Interdisciplinary Studies. Both branches guess; only one of them guesses
+  // among subjects the term actually named. So the rule now is: pick the
+  // biggest of them, and SAY WHICH OTHERS MATCHED so the guess is visible and
+  // correctable — with the suggestion list as the way to not guess at all.
   const many = await runSearch("tech");
-  ok("a word matching several different subjects does not pick one for you",
-    !/^\s*Subject\b/i.test(many.hint));
+  ok("a word matching several different subjects still goes to a subject",
+    /^\s*Subject\b/i.test(many.hint));
+  ok("\u2b50 \u2026and NAMES the others rather than choosing silently",
+    /Also matching/i.test(many.hint));
   ok("and still lands where its hits can be seen",
     many.k > nodeZoom || !/ring/i.test(many.hint));
+
+  // ⭐ SAM'S CASE, 2026-08-25: a PREFIX of one subject spelled three ways.
+  // "english as a second" matches "English as a Second Language", "… (ESL)" and
+  // "… Noncredit 53412" — three base names, no exact match — so the old
+  // one-base test failed and the view flew to Interdisciplinary Studies, a
+  // subject the term never named. Variants that EXTEND one another are one
+  // subject; the shortest is the one the others qualify.
+  const esl = await runSearch("english as a second");
+  ok("\u2b50 a prefix of one subject's several spellings goes to THAT subject",
+    /^\s*Subject\b/i.test(esl.hint) && /English as a Second Language/i.test(esl.hint));
+  ok("\u2b50 \u2026and not to a subject matched only by course titles",
+    !/Interdisciplinary/i.test(esl.hint));
+  ok(`and zooms in to it (zoom ${esl.k.toFixed(3)})`, esl.k > nodeZoom);
 
   // Flying into a dense subject stacked dozens of course names on top of each
   // other. The file already calls that "the exact failure of a global graph

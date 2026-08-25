@@ -80,6 +80,158 @@
       body: JSON.stringify({ refresh_token: rt })
     }).then(function (r) { return r.ok ? r.json() : Promise.reject(new Error("refresh " + r.status)); });
   }
+  /* ══ SkyView leads the CCR tab ══════════════════════════════════════════
+   * Sam, 2026-08-25: "SkyView is not the initial view when I open CCR — we had
+   * agreed to flip the view so it opens first and there is a button on SkyView
+   * to go to the CCR List View."
+   *
+   * He is right and the earlier flip missed him: Session 192 made SkyView the
+   * landing view INSIDE the prototype page, while the COBI tab kept opening on
+   * the table with a launcher in the corner. Two different surfaces, one
+   * sentence, and only one of them got flipped.
+   *
+   * ⭐ IT IS ALSO CHEAPER, WHICH IS NOT OBVIOUS. Opening this tab used to pull
+   * the ~7 MB CPL_UNIFIED_COURSES payload immediately. The map is an iframe
+   * that fetches its own payloads, so the table's 7 MB is now deferred until
+   * someone actually asks for the table — a tab you open to look at the map no
+   * longer pays for the list.
+   *
+   * ⚠️ EXCEPT FOR A RETURNING CURATOR. Coming back from a magic link is an act
+   * of intent to curate, and curation happens in the LIST — landing that person
+   * on a map is answering a question they did not ask. authReturn carries that.
+   *
+   * Injected at runtime rather than written into the markup, so the daily regen
+   * cannot strand it and there is no Rule 4 mirror to keep in step.
+   */
+  var VIEW_SKYVIEW = "map", VIEW_LIST = "list";
+  var ccrView = null, listBooted = false, authReturn = false;
+
+  function ccrPane() { return document.getElementById("tab-unified-courses"); }
+
+  function ensureCcrShell() {
+    var pane = ccrPane();
+    if (!pane || pane.querySelector(".uc-viewseg")) return !!pane;
+    var host = pane.querySelector(".main-container") || pane;
+    var head = host.querySelector(".uc-head");
+
+    // The toggle: two plain words, no glyphs (#1212), each a real button so the
+    // keyboard reaches both. aria-pressed rather than a tablist because these
+    // are two views of one tab, not two tabs.
+    var seg = document.createElement("div");
+    seg.className = "uc-viewseg";
+    seg.setAttribute("role", "group");
+    seg.setAttribute("aria-label", "Choose how to see the Common Course Reference");
+    seg.innerHTML =
+      '<button type="button" class="uc-vbtn" data-v="map">SkyView map</button>' +
+      '<button type="button" class="uc-vbtn" data-v="list">CCR list view</button>' +
+      '<span class="uc-vnote" id="uc-vnote"></span>';
+    if (head && head.parentNode) head.parentNode.insertBefore(seg, head.nextSibling);
+    else host.insertBefore(seg, host.firstChild);
+
+    // Wrap what already exists rather than re-authoring it: the intro, toolbar,
+    // summary and table are built elsewhere and must keep their ids.
+    var listWrap = document.createElement("div");
+    listWrap.id = "uc-list-pane";
+    ["uc-intro", "uc-toolbar", "uc-summary", "uc-table-wrap"].forEach(function (k) {
+      var el = host.querySelector("#" + k) || host.querySelector("." + k);
+      if (el) listWrap.appendChild(el);
+    });
+    host.appendChild(listWrap);
+
+    var mapWrap = document.createElement("div");
+    mapWrap.id = "uc-map-pane";
+    mapWrap.innerHTML = '<div class="uc-map-note" id="uc-map-note"></div>';
+    host.insertBefore(mapWrap, listWrap);
+
+    ensureCcrShellCss();
+    Array.prototype.forEach.call(seg.querySelectorAll(".uc-vbtn"), function (b) {
+      b.onclick = function () { setCcrView(b.getAttribute("data-v")); };
+    });
+    return true;
+  }
+
+  function ensureCcrShellCss() {
+    if (document.getElementById("uc-viewseg-css")) return;
+    var st = document.createElement("style");
+    st.id = "uc-viewseg-css";
+    st.textContent =
+      "#tab-unified-courses .uc-viewseg{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin:10px 0 14px;}" +
+      "#tab-unified-courses .uc-vbtn{font:inherit;font-size:.88rem;font-weight:700;cursor:pointer;" +
+      "padding:8px 15px;border-radius:8px;border:1px solid var(--border-strong,rgba(28,28,26,.30));" +
+      "background:#fff;color:var(--seal-blue,#0b3d61);}" +
+      "#tab-unified-courses .uc-vbtn[aria-pressed=\"true\"]{background:var(--seal-blue,#0b3d61);" +
+      "color:#fff;border-color:var(--seal-blue,#0b3d61);}" +
+      "#tab-unified-courses .uc-vbtn:focus-visible{outline:2px solid var(--cobalt,#0047AB);outline-offset:2px;}" +
+      "#tab-unified-courses .uc-vnote{font-size:.82rem;color:#5a6478;}" +
+      "#tab-unified-courses #uc-map-pane{margin:0 0 8px;}" +
+      "#tab-unified-courses .uc-map-frame{width:100%;height:calc(100vh - 260px);min-height:520px;" +
+      "border:1px solid var(--border-strong,rgba(28,28,26,.30));border-radius:10px;background:#fff;display:block;}" +
+      "#tab-unified-courses .uc-map-note{font-size:.84rem;color:#5a6478;margin:0 0 8px;}" +
+      "@media (max-width:700px){#tab-unified-courses .uc-map-frame{height:70vh;}}";
+    document.head.appendChild(st);
+  }
+
+  function setCcrView(v) {
+    if (!ensureCcrShell()) return;
+    ccrView = (v === VIEW_LIST) ? VIEW_LIST : VIEW_SKYVIEW;
+    var pane = ccrPane();
+    var mapPane = pane.querySelector("#uc-map-pane");
+    var listPane = pane.querySelector("#uc-list-pane");
+    Array.prototype.forEach.call(pane.querySelectorAll(".uc-vbtn"), function (b) {
+      b.setAttribute("aria-pressed", b.getAttribute("data-v") === ccrView ? "true" : "false");
+    });
+    if (mapPane) mapPane.style.display = ccrView === VIEW_SKYVIEW ? "" : "none";
+    if (listPane) listPane.style.display = ccrView === VIEW_LIST ? "" : "none";
+    var note = pane.querySelector("#uc-vnote");
+    if (note) note.textContent = ccrView === VIEW_SKYVIEW
+      ? "Every course identity on one canvas. The list has the filters, the flags and the Merge actions."
+      : "The full table \u2014 filters, quality flags and curation actions.";
+    // The corner launcher is the "keep it open beside the list" route. Offering
+    // it while the map is already on screen is a control that appears to do
+    // nothing, so it belongs to the list view.
+    var launch = pane.querySelector(".uc-skyview");
+    if (launch) launch.style.display = ccrView === VIEW_LIST ? "" : "none";
+    if (ccrView === VIEW_SKYVIEW) mountMapFrame();
+    else bootList();
+  }
+
+  function mountMapFrame() {
+    var host = ccrPane() && ccrPane().querySelector("#uc-map-pane");
+    if (!host || host.querySelector("iframe")) return;
+    var note = host.querySelector("#uc-map-note");
+    if (note) note.innerHTML = 'SkyView \u2014 the whole reference as a map. ' +
+      '<a href="prototype/skyview.html" target="_blank" rel="noopener">Open it in its own tab \u2197</a> ' +
+      'to keep it beside the list.';
+    var f = document.createElement("iframe");
+    f.className = "uc-map-frame";
+    f.src = "prototype/skyview.html";
+    f.title = "SkyView \u2014 every course identity in the Common Course Reference, as a map";
+    f.loading = "lazy";
+    host.appendChild(f);
+  }
+
+  function bootList() {
+    if (listBooted) return;
+    listBooted = true;
+    if (window.CPL_TABS && CPL_TABS.loadScript)
+      CPL_TABS.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", init);
+    else init();
+  }
+
+  /* The tab's entry point. SkyView unless a returning curator asked for the pen. */
+  function openCcr() {
+    if (!ensureCcrShell()) return;
+    setCcrView(authReturn ? VIEW_LIST : VIEW_SKYVIEW);
+    authReturn = false;
+  }
+  // Exposed so the harness can drive the flip without a browser, and so a future
+  // deep link has one door rather than reaching into the panes itself.
+  window.CPL_CCR_VIEW = {
+    open: openCcr, set: setCcrView, current: function () { return ccrView; },
+    _listBooted: function () { return listBooted; },
+    _setAuthReturn: function (v) { authReturn = !!v; },
+  };
+
   function consumeAuthHash() {
     var h = location.hash || "";
     if (h.indexOf("access_token=") < 0) return false;
@@ -99,6 +251,9 @@
       var stashed = sessionStorage.getItem("cpl_sb_return_tab");
       if (stashed) { returnTab = stashed; sessionStorage.removeItem("cpl_sb_return_tab"); }
     } catch (e) {}
+    // Signing in is intent to CURATE, and curation happens in the list. Landing
+    // a returning curator on the map answers a question they did not ask.
+    if (returnTab === "unified-courses") authReturn = true;
     location.hash = returnTab;
     return true;
   }
@@ -4375,9 +4530,7 @@
   // no longer eager at page load. tabs.js loadScript injects unified_courses_data.js
   // on demand, then init() runs. See tabs.js onActivate/loadScript.
   if (window.CPL_TABS && CPL_TABS.onActivate) {
-    CPL_TABS.onActivate("unified-courses", function () {
-      CPL_TABS.loadScript("unified_courses_data.js", "CPL_UNIFIED_COURSES", init);
-    });
+    CPL_TABS.onActivate("unified-courses", function () { openCcr(); });
   } else {
     // Fallback (tabs.js absent — unit tests, or a load-order regression): eager
     // init, as before the lazy split. init() guards on the data global itself.
