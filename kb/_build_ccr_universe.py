@@ -130,7 +130,16 @@ def write_members(mem_payload, placed_ids, out_rel):
                                 single global statement, so it must leave every
                                 card it was showing on, not just the one the
                                 curator was looking at. The consumer needs the
-                                number to know that case is live (it is: 1,122).
+                                number to know that case is live.
+
+    ⚠️ That counter answers ONE question and is routinely read as answering a
+    second. It counts one course claimed by several identities. It does NOT
+    count a control number that names several different COURSES — a separate
+    fault, larger, and not bounded by this one, because the write key cannot
+    tell those rows apart at all. Sized by kb/_audit_control_number_claims.py;
+    guarded in the consumer by prototype/ccr_universe.js::canMove. No figure is
+    quoted here on purpose: the last one sat in this docstring until it was
+    wrong by 43.
     """
     mem = mem_payload["members"]
     out, dropped, owners = {}, 0, defaultdict(set)
