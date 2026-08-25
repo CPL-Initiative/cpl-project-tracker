@@ -36,6 +36,7 @@ const SRC = fs.readFileSync("chatbox/supabase/functions/cpl-chat/index.ts", "utf
 const SIERRA = fs.readFileSync("sierra/sierra.js", "utf8");
 const FACTSHEET = fs.readFileSync("fact-sheet/factsheet_sierra.js", "utf8");
 const MEMORY = fs.readFileSync("cpl_memory.js", "utf8");
+const GR_PRI = fs.readFileSync("gr_priorities.js", "utf8");
 
 // The request handler only — module-level constants above it carry the word
 // `drafting` for documentation reasons and are not behavior.
@@ -180,10 +181,28 @@ block("(5)", function () {
     !/retrieval_query/.test(SIERRA) && !/retrieval_query/.test(FACTSHEET),
     "retrieval_query REPLACES the embedded search text; on a conversational caller "
     + "that would search the knowledge base for something other than the question asked");
-  check("(5) the memory tab is the only caller that sends it",
-    /retrieval_query/.test(MEMORY));
-  check("(5) …and the only caller naming a drafting surface",
-    drafts.every((d) => MEMORY.includes(d)));
+  check("(5) the memory tab sends it", /retrieval_query/.test(MEMORY));
+  /* ⚠️ THE CLAIM IS "EVERY DRAFTING SURFACE HAS AN OWNER", NOT "THE OWNER IS
+   * cpl_memory.js". This read `drafts.every((d) => MEMORY.includes(d))` while
+   * the only two drafting surfaces were the memory tab's, so it was a true
+   * statement about a set of size two wearing an exclusivity label. The GR
+   * register's `gr-analysis` is a third, and it lives in gr_priorities.js — the
+   * assertion went red for a change that was correct, which is the right
+   * behaviour but the wrong claim.
+   *
+   * ⭐ THE ISOLATION PROPERTY IS THE ONE ABOVE: no CONVERSATIONAL page may name
+   * a drafting surface. That is what stops a caller opting itself into the
+   * drafting prompt, and it is checked against sierra.js and factsheet_sierra.js
+   * a few lines up. What belongs here is only that nothing is orphaned: a
+   * drafting surface no client sends is a prompt path with no caller, and a
+   * surface sent by a file not listed here is one nobody vetted. */
+  const DRAFT_OWNERS = { "memory-autogen": MEMORY, "memory-briefing": MEMORY, "gr-analysis": GR_PRI };
+  check("(5) ⭐ every drafting surface is claimed by exactly one vetted client",
+    drafts.every((d) => DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d)),
+    "unowned: " + drafts.filter((d) => !(DRAFT_OWNERS[d] && DRAFT_OWNERS[d].includes(d))).join(", "));
+  check("(5) ⚠ …and this list has not fallen behind DRAFTING_SURFACES",
+    Object.keys(DRAFT_OWNERS).length === drafts.length,
+    "owners " + Object.keys(DRAFT_OWNERS).length + " vs drafting surfaces " + drafts.length);
 });
 
 const failed = results.filter((r) => !r[1]);

@@ -99,7 +99,8 @@ create table if not exists public.sierra_guidance (
       'public',          -- the standalone sierra/ page (incl. the ctx=external embed)
       'fact-sheet',      -- the Fact Sheet drawer
       'memory-autogen',  -- cpl_memory.js drafting a memory row: not a conversation
-      'memory-briefing'  -- cpl_memory.js reading the memory rows back: also not one
+      'memory-briefing', -- cpl_memory.js reading the memory rows back: also not one
+      'gr-analysis'      -- gr_priorities.js re-analyzing one regulation priority
     )),
   note text                                   -- why the rule exists (optional)
     constraint sierra_guidance_note_len check (note is null or char_length(note) <= 300),

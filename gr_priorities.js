@@ -323,6 +323,14 @@
       // The kind is a WORD; the tint only reinforces it.
       ".grx .gx-fnd-k{flex:none;font-size:.66rem;font-weight:700;letter-spacing:.05em;color:var(--gx-mut);min-width:3.4em;}",
       ".grx .gx-fnd.warn .gx-fnd-k{color:#8a1f11;}",
+      // Lane B. The deep box carries the accent edge so it reads as a different
+      // instrument from the deterministic pass sitting in the same host, and the
+      // reasoning gets the emphasis its job deserves: it is the field that makes
+      // a legal conclusion reviewable, not a footnote under the conclusion.
+      ".grx .gx-analysis.gx-deep{border-left:3px solid var(--gx-accent);}",
+      ".grx .gx-fnd.gx-why{align-items:flex-start;}",
+      ".grx .gx-fnd.gx-why .gx-fnd-k{color:var(--gx-accent);}",
+      ".grx .gx-fnd.gx-why .gx-fnd-t{font-style:italic;color:var(--gx-ink);}",
       ".grx .gx-fnd-t{flex:1 1 auto;min-width:0;}",
       ".grx .gx-chip.primary{background:var(--gx-ink,#0b3d61);color:#fff;border-color:var(--gx-ink,#0b3d61);}",
       // toolbar
@@ -638,8 +646,58 @@
         });
       });
       ab.addEventListener("click", runAnalysis);
+
+      /* Lane B. A SECOND button, deliberately — the two analyses answer
+       * different questions and cost different things. Lane A is instant, free
+       * and re-derivable; Lane B calls a model, takes seconds, and returns a
+       * legal opinion. Folding them into one button would spend a model call
+       * every time a curator wanted the cheap check, and would blur which half
+       * of the output is defensible. */
+      var db = el("button", { class: "gx-chip", type: "button", text: "Deep re-analysis" });
+      db.title = "Ask for related Title 5 / Ed. Code sections and an instrument reading "
+        + "(clarifying memo, Title 5 rulemaking, Ed. Code, or a combination). Proposes only.";
+      db.addEventListener("click", function () {
+        db.disabled = true;
+        msg.className = "gx-rowmsg"; msg.textContent = "analyzing\u2026";
+        work.innerHTML = "";
+        var wait = el("p", { class: "gx-note", text: "Reading the row against the register\u2026" });
+        work.appendChild(wait);
+        var lane = laneASummary(analyzeRevision(r, state.revisions, areaTitleMap()));
+        deepFetch(r, state.revisions, lane).then(function (res) {
+          msg.textContent = "";
+          renderDeepAnalysis(work, r, res, function (patch) {
+            msg.className = "gx-rowmsg"; msg.textContent = "saving\u2026";
+            var rec = {};
+            for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) rec[k] = patch[k];
+            rec.updated_by = whoami();
+            rec.updated_at = new Date().toISOString();
+            /* ⚠️ THE MODEL NEVER SETS A VERIFICATION, AND ACCEPTING A CITATION
+             * CLEARS ONE. A stamp says "I checked THESE against the source";
+             * changing the list stops it saying that. Same rule the editor and
+             * Lane A already honor — carried here rather than re-derived. */
+            if (patch.citations && r.verified_at) {
+              rec.verified_at = null; rec.verified_by = null; rec.verified_note = null;
+            }
+            patchRevision(r.id, rec).then(function () {
+              for (var k2 in patch) if (Object.prototype.hasOwnProperty.call(patch, k2)) r[k2] = patch[k2];
+              if (rec.verified_at === null) { r.verified_at = null; r.verified_by = null; }
+              msg.className = "gx-rowmsg ok";
+              msg.textContent = rec.verified_at === null
+                ? "accepted \u2014 citations changed, so the verification was cleared"
+                : "accepted";
+            }).catch(function (e) {
+              msg.className = "gx-rowmsg err"; msg.textContent = e.message;
+            });
+          });
+        }).catch(function (e) {
+          work.innerHTML = "";
+          msg.className = "gx-rowmsg err"; msg.textContent = e.message;
+        }).then(function () { db.disabled = false; });
+      });
+
       ctl.appendChild(eb);
       ctl.appendChild(ab);
+      ctl.appendChild(db);
       ctl.appendChild(msg);
       desc.appendChild(ctl);
       desc.appendChild(work);
@@ -877,6 +935,487 @@
             + "no code is ambiguous, and no other priority area claims these sections. "
             + "This is a check of THIS row against ITSELF \u2014 it is not a reading of the primary source." }));
     }
+    host.appendChild(box);
+  }
+
+  /* ══ LANE B — THE DEEP RE-ANALYSIS (Session 195) ═══════════════════════════
+   * Sam, 2026-08-25: "a routine I can run on demand that looks at the edit I
+   * made and reanalyzes everything for related Title 5 and Ed Code citations and
+   * an analysis of whether it can be accomplished by a clarifying memo,
+   * regulation revision, Ed Code revision, or some combination of the 3" — and
+   * decisively: "It's the same routine used to create the tab in the first
+   * place."
+   *
+   * ⭐ THAT LINE IS THE WHOLE DESIGN. The 16 CPL revisions were analyzed by a
+   * SESSION during the Sky168 rebuild and written into the table; nothing
+   * computed them. So this is not "invent an analyzer", it is "make a session's
+   * work product repeatable and put a button on it" — and `gr_revisions` IS the
+   * output template, column for column.
+   *
+   * TWO LANES, AND THEY COMPOSE. Lane A (analyzeRevision, above) checks the row
+   * against ITSELF — deterministic, free, defensible, no deploy. Lane B is
+   * everything Lane A structurally cannot do because it needs knowledge of law
+   * the repo does not hold: related sections nobody has cited yet, and the
+   * instrument determination. ⭐ LANE A'S FINDINGS ARE FED INTO LANE B'S PROMPT
+   * so the model starts from what the deterministic pass already established
+   * rather than re-deriving it (and contradicting it).
+   *
+   * ⚠️ IT PROPOSES AND NEVER APPLIES — same posture as Lane A and the drift
+   * detector. Field-by-field accept; nothing lands on arrival.
+   */
+
+  /* Strip the stored HTML down to text for the prompt.
+   *
+   * ⚠️ NOT COSMETIC — IT IS MOST OF THE BUDGET. The approach fields are stored as
+   * markup and every section reference carries a full Cornell/leginfo href, so
+   * #7's approach is ~55% URL by character. Sending the markup spends the cap on
+   * link targets the model must not follow and cannot verify, and the cap is the
+   * one thing that fails silently (a truncated envelope is still grammatical).
+   * ⚠️ ENTITIES ARE DECODED AFTER TAGS ARE DROPPED, AND THAT ORDER IS THE WHOLE
+   * POINT. Decode first and a curator's escaped `&lt;b&gt;` becomes a real tag,
+   * which the strip then EATS — their literal text vanishes from the prompt with
+   * nothing to notice. Stripping first leaves it as visible characters, which is
+   * harmless here: nothing downstream re-parses this string as HTML. */
+  function plainText(html) {
+    var s = String(html || "")
+      .replace(/<\s*(script|style)[^>]*>[\s\S]*?<\s*\/\s*\1\s*>/gi, " ")
+      .replace(/<[^>]*>/g, " ");
+    s = s.replace(/&nbsp;/gi, " ").replace(/&amp;/gi, "&").replace(/&lt;/gi, "<")
+         .replace(/&gt;/gi, ">").replace(/&quot;/gi, '"').replace(/&#39;/gi, "'");
+    return s.replace(/[ \t ]+/g, " ").replace(/\s*\n\s*/g, "\n").trim();
+  }
+
+  /* ⭐ THE DOCTRINE IS MEASURED, NOT INVENTED, AND IT BELONGS TO ONE AREA.
+   *
+   * Grouping the 16 CPL rows by what their own Approach text says, against the
+   * pathway actually assigned: regulation-must-change → Title 5 only, 3 of 3
+   * (#3, #9, #10); statute-blocks → Ed Code + ed_first=Yes, 2 of 2 (#5, #7);
+   * already-permitted → includes a memo (#12 memo-only, #1, #14, #15).
+   *
+   * ⚠️ IT MUST BE CARRIED IN THE PROMPT EXPLICITLY or a re-analyzed row comes
+   * back in a different voice with a different instrument logic than #1–#16 and
+   * the tab becomes a patchwork of two analysts. A CO reader feels the seam.
+   *
+   * ⚠️ AND IT GOVERNS ONLY THE AREA IT WAS MEASURED FROM. This is an empirical
+   * generalization over `cpl`'s rows — asserting it over an area whose rows
+   * nobody has analyzed is the same patchwork failure running the other way.
+   * `dual-enrollment` is a MARKED SAMPLE whose own summary says its entries are
+   * "neutral review prompts, not Chancellor's Office or MAP positions"; running
+   * an advocacy doctrine there writes positions into the row that exists to
+   * demonstrate their absence. So the doctrine is keyed to the area, and every
+   * other area gets the NEUTRAL variant — related sections, no position — with
+   * the UI saying which one ran. Add an area here when its doctrine has been
+   * measured the same way, not before. */
+  var DOCTRINE_AREAS = { cpl: 1 };
+
+  function doctrineBlock() {
+    return [
+      "THE DOCTRINE — apply this test, it is how rows #1-#16 were decided:",
+      "",
+      "  Does the change contradict a STATUTE, a REGULATION, or merely a PRACTICE?",
+      "",
+      "  - contradicts a PRACTICE (the regulation already permits it; nobody says",
+      "    so plainly) -> include \"g\" (clarifying CO memo).",
+      "  - contradicts a REGULATION (a mandate must be struck, or a duty added)",
+      "    -> \"y\" (Title 5 rulemaking). You cannot memo away an express",
+      "    regulatory mandate.",
+      "  - contradicts a STATUTE (authority is vested elsewhere, or the premise",
+      "    is statutory) -> \"r\" (Ed. Code / trailer bill) and ed_first = \"Yes\".",
+      "    A regulation cannot exceed its enabling statute.",
+      "",
+      "  Memo + Title 5 together is the \"act now, make it durable\" combination and",
+      "  is the most common answer in this register (8 of 16). Use it when the",
+      "  change is reachable today by interpretation AND worth locking in.",
+      "",
+      "  Worked examples from the register, which your answer must be consistent with:",
+      "  - #12 \"This is already the law - 55002 does not require it - it just is not",
+      "    stated plainly\" -> memo ALONE, pathway [\"g\"].",
+      "  - #9 \"Strike the 55050 mandate that the record be annotated\" -> [\"y\"].",
+      "  - #7 \"A bare Title 5 tweak collides with the statutory attendance premise",
+      "    (Gov. Code 11342.2)\" -> [\"r\"], ed_first \"Yes\".",
+      "  - #5 \"Credit-granting is vested in district governing boards (70902)\"",
+      "    -> [\"r\"], ed_first \"Yes\".",
+    ].join("\n");
+  }
+
+  var NEUTRAL_BLOCK = [
+    "THIS AREA IS A MARKED SAMPLE, NOT A POSITION. Its entries are neutral review",
+    "prompts. Do NOT recommend an instrument, do NOT argue for the change, and do",
+    "NOT propose a pathway, an ed_first or a blast_rank - return those keys as null.",
+    "Identify related sections and state the open legal question neutrally. Writing",
+    "advocacy here would put a Chancellor's Office position into a row that exists",
+    "to demonstrate the register without taking one.",
+  ].join("\n");
+
+  /* One row, rendered for the prompt. ⭐ THE ROW LEADS THE ENVELOPE — anything a
+   * cap eats must be instruction text, so a truncation fails loudly instead of
+   * producing a confident analysis of the wrong subject. That is exactly how an
+   * 870-character memory note reached the model as "When responding ". */
+  function analysisRowBlock(r, lane) {
+    var L = [];
+    L.push("THE ROW UNDER ANALYSIS");
+    L.push("Title: " + (r.title || "(untitled)"));
+    if (r.grp) L.push("Section heading: " + r.grp);
+    if (r.summary) L.push("Approach: " + plainText(r.summary));
+    if (r.consideration) L.push("Considerations: " + plainText(r.consideration));
+    if (r.blast_why) L.push("Why it matters (current): " + plainText(r.blast_why));
+    L.push("Citations now listed: " + ((r.citations || []).join(", ") || "(none)"));
+    L.push("Pathway now assigned: " + ((r.pathway || []).join(", ") || "(none)")
+      + "   ed_first: " + (r.ed_first || "(unset)")
+      + "   instrument: " + (r.instrument || "(unset)")
+      + "   blast_rank: " + (r.blast_rank == null ? "(unset)" : r.blast_rank));
+    if (lane && lane.findings.length) {
+      L.push("");
+      L.push("WHAT THE DETERMINISTIC PASS ALREADY FOUND (do not contradict it):");
+      lane.findings.forEach(function (f) { L.push("  - " + f); });
+    }
+    return L.join("\n");
+  }
+
+  /* ⭐ THE SIBLINGS ARE HERE SO THE RANK IS COMPARATIVE. Ranking by systemic
+   * blast radius is a comparison, so a per-row call that cannot see the other
+   * rows cannot do it — it can only invent a number that looks like one. The
+   * scope raised this as an open question ("should it propose blast_rank at
+   * all?"); the answer is cheap: hand it the other rows' titles and ranks,
+   * read-only. It costs ~600 characters and it is also what lets the model SEE
+   * the ties (3,3 and 5,5,5 in `cpl` today) rather than adding another one.
+   *
+   * ⚠️ CONTEXT, NOT SUBJECT. Only the row under analysis is ever proposed
+   * against; the siblings are explicitly labeled as not-the-subject, because a
+   * list of 15 sibling rows is exactly the kind of material a drafting model
+   * will otherwise start writing about. */
+  function siblingBlock(r, all) {
+    var sibs = (all || []).filter(function (o) {
+      return o.area_id === r.area_id && o.id !== r.id;
+    }).sort(function (a, b) { return (a.n || 0) - (b.n || 0); });
+    if (!sibs.length) return "";
+    var L = ["THE OTHER ROWS IN THIS AREA - CONTEXT FOR RANKING ONLY, NOT THE SUBJECT:"];
+    sibs.forEach(function (o) {
+      L.push("  #" + (o.n == null ? "?" : o.n) + " [rank "
+        + (o.blast_rank == null ? "-" : o.blast_rank) + "] "
+        + (o.title || "(untitled)")
+        + " {" + ((o.pathway || []).join(",") || "-") + "}");
+    });
+    L.push("blast_rank is 1 = widest systemic blast radius. Ranks may tie.");
+    return L.join("\n");
+  }
+
+  var OUTPUT_CONTRACT = [
+    "RETURN EXACTLY ONE JSON OBJECT AND NOTHING ELSE - no preamble, no code fence,",
+    "no commentary. Keys, all required, null where you have nothing:",
+    "{",
+    '  "citations": ["T5 §55050", "EC §66025.71"],',
+    '  "citations_related": [{"cite":"T5 §55063","why":"one sentence"}],',
+    '  "pathway": ["g","y"],',
+    '  "ed_first": "No",',
+    '  "instrument": "§55050",',
+    '  "blast_why": "the argument for this item, in the register\'s voice",',
+    '  "blast_rank_suggested": 4,',
+    '  "reasoning": "why THIS instrument and not the other two"',
+    "}",
+    "",
+    "Rules for the values:",
+    '- "citations" are sections the row ITSELF is about. Canonical form only:',
+    '  "T5 §NNNNN" (Title 5), "EC §NNNNN" (Ed. Code), "GC §NNNNN" (Gov. Code).',
+    '- "citations_related" are sections NOT already cited that bear on it. These are',
+    "  DISPLAYED as leads for a curator to verify; they are never filed as citations",
+    "  on your say-so. Give a reason or leave the entry out.",
+    '- "pathway" uses only "g" (clarifying memo), "y" (Title 5), "r" (Ed. Code).',
+    '- "ed_first" is exactly "Yes", "No" or "Split".',
+    '- ⚠ "reasoning" IS NOT DECORATION. The instrument call is a legal conclusion,',
+    "  and a wrong answer in the PERMISSIVE direction - \"a memo will do\" when the",
+    "  thing needs statute - is advice the Chancellor's Office would act on.",
+    "  `reasoning` is the field that makes the answer reviewable. Never omit it.",
+    "- You cannot read the primary sources. Say what you are unsure of inside",
+    "  `reasoning` rather than writing around it.",
+  ].join("\n");
+
+  /* Build the envelope. ⚠️ ORDER IS LOAD-BEARING: row first (see above), then the
+   * doctrine, then the contract. */
+  function analysisQuery(r, all, lane, areaId) {
+    var doctrine = DOCTRINE_AREAS[areaId || r.area_id] ? doctrineBlock() : NEUTRAL_BLOCK;
+    return [
+      "Re-analyze one entry in the Chancellor's Office regulatory priorities register.",
+      "",
+      analysisRowBlock(r, lane),
+      "",
+      siblingBlock(r, all),
+      "",
+      doctrine,
+      "",
+      OUTPUT_CONTRACT,
+    ].filter(function (s) { return s !== ""; }).join("\n");
+  }
+
+  /* ⭐ SEARCH TEXT IS NOT SENT TEXT. cpl-chat embeds `query` to search the KB, and
+   * this envelope is mostly instructions — embedding them retrieves documents
+   * about JSON contracts. `retrieval_query` carries the row's own subject. */
+  function analysisRetrieval(r) {
+    return [r.title || "", plainText(r.summary || "")].join(" ").trim().slice(0, 900);
+  }
+
+  /* Parse the model's reply. ⚠️ TOLERANT OF A FENCE, INTOLERANT OF A GUESS: the
+   * contract forbids a code fence but models emit them, so strip one; anything
+   * that is not a JSON object is an error the curator sees, never a partial
+   * object filled in with defaults. A silently-defaulted `pathway` would read as
+   * an instrument determination nobody made. */
+  function parseAnalysis(txt) {
+    var s = String(txt || "").trim();
+    s = s.replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
+    var a = s.indexOf("{"), b = s.lastIndexOf("}");
+    if (a < 0 || b <= a) throw new Error("the analysis did not come back as JSON");
+    var o = JSON.parse(s.slice(a, b + 1));
+    if (!o || typeof o !== "object" || Array.isArray(o)) throw new Error("the analysis was not a JSON object");
+    function arr(v) { return Array.isArray(v) ? v : []; }
+    function str(v) { return typeof v === "string" && v.trim() ? v.trim() : null; }
+    return {
+      citations: arr(o.citations).filter(function (c) { return typeof c === "string"; }),
+      citations_related: arr(o.citations_related).filter(function (c) {
+        return c && typeof c === "object" && typeof c.cite === "string";
+      }),
+      pathway: arr(o.pathway).filter(function (p) { return p === "g" || p === "y" || p === "r"; }),
+      ed_first: ["Yes", "No", "Split"].indexOf(str(o.ed_first)) >= 0 ? str(o.ed_first) : null,
+      instrument: str(o.instrument),
+      blast_why: str(o.blast_why),
+      blast_rank_suggested: typeof o.blast_rank_suggested === "number"
+        && isFinite(o.blast_rank_suggested) ? Math.round(o.blast_rank_suggested) : null,
+      reasoning: str(o.reasoning),
+    };
+  }
+
+  /* Lane A's structured findings, flattened to sentences for Lane B's prompt.
+   * ⚠️ SENTENCES, NOT THE OBJECT — the model is told these are already
+   * established, so they have to read as statements rather than as a schema it
+   * might decide to re-derive. */
+  function laneASummary(a) {
+    var f = [];
+    if (!a) return { findings: f };
+    (a.ambiguous || []).forEach(function (b) {
+      f.push("\"" + b + "\" appears in the text but no code band claims it - it needs its code written out.");
+    });
+    (a.missing || []).forEach(function (c) {
+      f.push(c + " is cited in the row's text but is missing from its citation list.");
+    });
+    (a.unsupported || []).forEach(function (c) {
+      f.push(c + " is listed but the row's text no longer cites it.");
+    });
+    (a.shared || []).forEach(function (h) {
+      f.push(citeLabel(h.cite) + " is also cited by another priority area (" + h.areas.join(" · ") + ").");
+    });
+    if (a.staleVerification) f.push("The citations changed after this row was marked verified.");
+    if (a.derived) f.push("This row's codes were extracted from its text, not confirmed by a curator.");
+    return { findings: f };
+  }
+
+  /* Drain the SSE stream. Same shape as cpl_memory.js's — the function streams
+   * text events and the caller accumulates. */
+  function drainSse(reader, onDelta) {
+    var decoder = new TextDecoder(), buffer = "", full = "";
+    function pump() {
+      return reader.read().then(function (chunk) {
+        if (chunk.done) return full;
+        buffer += decoder.decode(chunk.value, { stream: true });
+        var events = buffer.split("\n\n"); buffer = events.pop() || "";
+        events.forEach(function (blk) {
+          var ev = "message", data = "";
+          blk.split("\n").forEach(function (line) {
+            if (line.indexOf("event:") === 0) ev = line.slice(6).trim();
+            else if (line.indexOf("data:") === 0) data += line.slice(5).trim();
+          });
+          if (ev === "text" && data) {
+            try {
+              var d = JSON.parse(data);
+              if (d && typeof d.text === "string") {
+                full += d.text;
+                if (onDelta) { try { onDelta(full); } catch (e2) { } }
+              }
+            } catch (e) { }
+          }
+        });
+        return pump();
+      });
+    }
+    return pump();
+  }
+
+  /* ⚠️ THE SURFACE NAME IS THE OPT-IN, AND IT IS SERVER-SIDE. `gr-analysis` is
+   * what buys the larger `query` cap and swaps the conversational answer
+   * doctrine for the drafting block. An unknown surface normalizes to null and
+   * silently takes the 1,000-character chat cap — which for this envelope means
+   * the model would receive the row's title and nothing else, and answer
+   * confidently. tests/gr_deep_analysis.test.js asserts the built envelope fits
+   * under the cap this file's own server declares. */
+  var GR_ANALYSIS_SURFACE = "gr-analysis";
+
+  /* ⭐ THE CAP IS CHECKED HERE, NOT ONLY IN CI. The established pattern for the
+   * memory drafter is a test that reads the server's cap and asserts the built
+   * envelope fits — and that test is only as current as the last CI run. This
+   * register is edited LIVE: Sam rewrites an Approach and the envelope grows in
+   * his browser, where no test is watching. So the client carries the number
+   * too and REFUSES rather than sending something it knows will be cut.
+   *
+   * ⚠️ REFUSING IS THE POINT. A truncated envelope is still grammatical — the
+   * doctrine and the output contract are at the END, so what survives is the row
+   * followed by nothing, and the model answers in prose about a row it was given
+   * no instructions for. There is no ragged edge to notice, which is how an
+   * 870-character memory note reached the model as "When responding ".
+   * tests/gr_deep_analysis.test.js pins this equal to QUERY_CAP_GR_ANALYSIS in
+   * the edge function, so the two cannot drift apart silently. */
+  var GR_QUERY_BUDGET = 14000;
+
+  function deepFetch(r, all, lane, onDelta) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var q = analysisQuery(r, all, lane, r.area_id);
+    if (q.length > GR_QUERY_BUDGET) {
+      return Promise.reject(new Error(
+        "This row is too long to analyze in one call (" + q.length + " characters against a "
+        + GR_QUERY_BUDGET + "-character budget). Shorten the Approach or Considerations and try again "
+        + "\u2014 sending it anyway would silently drop the instructions and analyze the wrong thing."));
+    }
+    var headers = {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+    };
+    var body = JSON.stringify({
+      query: q,
+      retrieval_query: analysisRetrieval(r),
+      session_id: "cobi-gr-analysis",
+      surface: GR_ANALYSIS_SURFACE,
+    });
+    return fetch(SUPABASE_URL + "/functions/v1/cpl-chat", {
+      method: "POST", headers: headers, body: body,
+    }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("analysis HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader(), onDelta);
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      if (!full || !String(full).trim()) throw new Error("the analysis came back empty");
+      try {
+        return parseAnalysis(full);
+      } catch (e) {
+        /* ⭐ NAME THE THING THAT ACTUALLY FAILED. A non-JSON reply to THIS
+         * envelope has one overwhelmingly likely cause, and it is not the model
+         * misbehaving: the output contract is the LAST block, so if the server
+         * did not know `gr-analysis` it normalized the surface to null, applied
+         * the 1,000-character conversational cap, and the instructions were
+         * eaten before the model ever saw them. It then answers in prose,
+         * helpfully, about a fragment.
+         *
+         * ⚠️ THE CLIENT'S OWN BUDGET CHECK CANNOT SEE THIS — it compares against
+         * the cap this repo declares, not the one the DEPLOYED function
+         * enforces, and those differ for exactly as long as the Edge Function
+         * is behind the client. `cpl-chat` is a Supabase deploy; this file
+         * ships with Pages on merge. Half a two-half feature deploys itself.
+         *
+         * Saying "did not come back as JSON" would send a curator to argue with
+         * the model. Saying this sends them to the deploy. */
+        throw new Error(e.message
+          + ". The most likely cause is that the cpl-chat Edge Function has not been "
+          + "deployed with the \u201cgr-analysis\u201d surface yet \u2014 an unknown surface "
+          + "silently takes the 1,000-character chat limit, which cuts off the instructions "
+          + "at the end of this request. Dispatch cpl-chat-deploy.yml, then try again.");
+      }
+    });
+  }
+
+  /* Render the proposal. ⚠️ EVERY FIELD IS A SEPARATE ACCEPT. A single "apply"
+   * button would make accepting a good citation list also accept an instrument
+   * determination the curator has not read — and the instrument call is the one
+   * a Chancellor's Office reader would act on. */
+  function renderDeepAnalysis(host, r, res, onAccept) {
+    host.innerHTML = "";
+    var box = el("div", { class: "gx-analysis gx-deep" });
+    box.appendChild(el("h5", { text: "Deep re-analysis — " + (r.title || "this item") }));
+    var neutral = !DOCTRINE_AREAS[r.area_id];
+    box.appendChild(el("p", {
+      class: "gx-note",
+      text: neutral
+        ? "This area is a marked sample, so the analysis identifies related sections only — "
+          + "it does not propose an instrument, a pathway or a rank."
+        : "Proposals only. Nothing below is saved until you accept it, field by field.",
+    }));
+
+    function row(label, text, action) {
+      var d = el("div", { class: "gx-fnd note" });
+      d.appendChild(el("span", { class: "gx-fnd-k", text: label }));
+      d.appendChild(el("span", { class: "gx-fnd-t", text: text }));
+      if (action) {
+        var b = el("button", { class: "gx-chip", type: "button", text: "Accept" });
+        b.addEventListener("click", function () { b.disabled = true; action(); });
+        d.appendChild(b);
+      }
+      box.appendChild(d);
+      return d;
+    }
+
+    /* ⭐ THE REASONING RENDERS FIRST AND CARRIES NO BUTTON. It is what makes the
+     * instrument call reviewable, so it must be read before the thing it
+     * justifies is accepted — not tucked under it as a footnote. */
+    if (res.reasoning) {
+      var rz = el("div", { class: "gx-fnd note gx-why" });
+      rz.appendChild(el("span", { class: "gx-fnd-k", text: "WHY" }));
+      rz.appendChild(el("span", { class: "gx-fnd-t", text: res.reasoning }));
+      box.appendChild(rz);
+    }
+
+    // Citations it would add. Each one individually, through the same path Lane
+    // A's "Add it" uses — which already clears a verification stamp.
+    var listed = (r.citations || []);
+    var add = res.citations.filter(function (c) { return listed.indexOf(c) === -1; });
+    add.forEach(function (c) {
+      row("CITE", citeLabel(c) + " is not on this row and the analysis says it belongs.",
+        function () { onAccept({ citations: listed.concat([c]) }); });
+    });
+
+    /* ⚠️ RELATED SECTIONS ARRIVE UNVERIFIED AND SAY SO. The sandbox is
+     * egress-blocked from leginfo and Cornell, so these come from the model's own
+     * knowledge. They are LEADS — displayed, never filed as citations on the
+     * model's say-so, and there is deliberately no column for them. A curator who
+     * wants one keeps it by typing it into the editor, which is the act that makes
+     * it a curated citation rather than a machine-extracted one. */
+    if (res.citations_related.length) {
+      box.appendChild(el("p", {
+        class: "gx-note",
+        text: "Related sections — not cited here, and NOT verified against the primary source. "
+          + "Leads to check, not citations.",
+      }));
+      res.citations_related.forEach(function (c) {
+        row("LEAD", c.cite + (c.why ? " — " + c.why : ""));
+      });
+    }
+
+    if (!neutral) {
+      var curPath = (r.pathway || []).join(",");
+      if (res.pathway.length && res.pathway.join(",") !== curPath) {
+        row("PATHWAY", "Proposed: " + res.pathway.join(" + ") + " (currently "
+          + (curPath || "none") + ").",
+          function () { onAccept({ pathway: res.pathway }); });
+      }
+      if (res.ed_first && res.ed_first !== r.ed_first) {
+        row("ED FIRST", "Proposed: " + res.ed_first + " (currently " + (r.ed_first || "unset") + ").",
+          function () { onAccept({ ed_first: res.ed_first }); });
+      }
+      if (res.instrument && res.instrument !== r.instrument) {
+        row("INSTRUMENT", "Proposed: " + res.instrument + " (currently " + (r.instrument || "unset") + ").",
+          function () { onAccept({ instrument: res.instrument }); });
+      }
+      if (res.blast_why && res.blast_why !== r.blast_why) {
+        row("WHY IT MATTERS", res.blast_why, function () { onAccept({ blast_why: res.blast_why }); });
+      }
+      if (res.blast_rank_suggested != null && res.blast_rank_suggested !== r.blast_rank) {
+        row("RANK", "Proposed rank " + res.blast_rank_suggested + " (currently "
+          + (r.blast_rank == null ? "unset" : r.blast_rank)
+          + "). Ranks are comparative — check it against the other rows above.",
+          function () { onAccept({ blast_rank: res.blast_rank_suggested }); });
+      }
+    }
+
+    box.appendChild(el("p", {
+      class: "gx-note",
+      text: "This reading came from a language model that cannot open leginfo or Cornell. "
+        + "Every section it names needs checking against the primary source before this leaves the building.",
+    }));
     host.appendChild(box);
   }
 
@@ -1531,6 +2070,16 @@
     _patchRevision: patchRevision,
     _analyzeRevision: analyzeRevision,
     _renderAnalysis: renderAnalysis,
+    _plainText: plainText,
+    _laneASummary: laneASummary,
+    _analysisQuery: analysisQuery,
+    _analysisRetrieval: analysisRetrieval,
+    _parseAnalysis: parseAnalysis,
+    _deepFetch: deepFetch,
+    _renderDeepAnalysis: renderDeepAnalysis,
+    _doctrineAreas: DOCTRINE_AREAS,
+    _GR_ANALYSIS_SURFACE: GR_ANALYSIS_SURFACE,
+    _GR_QUERY_BUDGET: GR_QUERY_BUDGET,
     _editRevisionForm: editRevisionForm,
     _state: state
   };
