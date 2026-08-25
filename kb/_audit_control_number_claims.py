@@ -197,6 +197,24 @@ def main():
                 "identities_showing_one": len(hit_ids),
                 "counter_reports": pay["counts"].get("cn_on_multiple_identities")}
 
+    # ── the roster the fold never reaches ───────────────────────────────────
+    roster = {}
+    mp2 = os.path.join(ROOT, "prototype", "ccr_universe_members.json")
+    if os.path.exists(mp2):
+        names = json.load(open(mp2, encoding="utf-8")).get("colleges") or []
+        hits = []
+        for nm in names:
+            if nm in fold:
+                hits.append((nm, f"the fold maps it to `{fold[nm]}`"))
+            elif "\u00c3" in nm or "\u00c2" in nm:
+                # utf-8 read as latin-1. Worth calling out separately: unlike the
+                # duplicate-entry case there is no correct spelling to fold FROM
+                # here, because the raw export carries only the broken one.
+                hits.append((nm, "mis-encoded — utf-8 read as latin-1, and the "
+                                 "raw COCI export carries no correct spelling to "
+                                 "fold from"))
+        roster = {"n": len(names), "hits": hits}
+
     outdir = os.path.join(ROOT, args.out)
     os.makedirs(outdir, exist_ok=True)
     md = os.path.join(outdir, f"{args.date}.md")
@@ -254,6 +272,16 @@ def main():
             for name, n in owners[key].most_common():
                 w(f"| {n:,} | {name} |\n")
             w("\n")
+        # The same unapplied fold, showing up as something a curator READS.
+        if roster:
+            w("## The member roster the fold does not reach\n\n")
+            w(f"`unified_courses_members.js` carries **{roster['n']}** college "
+              "names, built by `_mc()` straight from the raw COCI list. It never "
+              "consults `kb/reference/map_college_roster_rules.json`, so a name "
+              "the fold would repair reaches a curator's screen as typed:\n\n")
+            for nm, why in roster["hits"]:
+                w(f"- `{nm}` — {why}\n")
+            w("\n")
         w("## Examples\n\n")
         for key, label, _ in CLASSES:
             ex = sorted(members[key])[:3]
@@ -274,6 +302,7 @@ def main():
                "classes": {k: counts[k] for k, _, _ in CLASSES},
                "skyview": drag,
                "owners": {k: dict(v) for k, v in owners.items()},
+               "roster_names_fold_does_not_reach": roster.get("hits") or [],
                "members": {k: sorted(v) for k, v in members.items()}},
               open(js, "w", encoding="utf-8"), indent=1)
 

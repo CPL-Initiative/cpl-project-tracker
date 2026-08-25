@@ -98,12 +98,12 @@
    "Victor Valley College": 76
   },
   "cross_institution": {
-   "College of the Desert": 111,
    "Citrus College": 110,
+   "College of the Desert": 111,
    "Modesto Junior College": 1,
    "Rio Hondo College": 1,
-   "Norco College": 1,
-   "Riverside City College": 1
+   "Riverside City College": 1,
+   "Norco College": 1
   },
   "roster_twin": {
    "North Orange Continuing Education": 1876,
@@ -115,6 +115,24 @@
    "Santa Rosa Junior College": 2
   }
  },
+ "roster_names_fold_does_not_reach": [
+  [
+   "Calbright College Credit",
+   "the fold maps it to `Calbright College Non-Credit`"
+  ],
+  [
+   "Ca\u00c3\u00b1ada College",
+   "the fold maps it to `Ca\u00f1ada College`"
+  ],
+  [
+   "North Orange Continuing Education Credit",
+   "the fold maps it to `North Orange Continuing Education`"
+  ],
+  [
+   "San Diego College of Continuing Education Credit",
+   "the fold maps it to `San Diego College of Continuing Education`"
+  ]
+ ],
  "members": {
   "official_code_variant": [
    "CCC000037246",

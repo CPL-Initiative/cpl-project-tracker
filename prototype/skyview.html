@@ -777,6 +777,30 @@ window.__ccrDecision = function(discName, i){
          '</div></div></div></div>');
   h.push('<div class="side">');
   h.push('<div class="panel"><h3>Courses underneath</h3><ul class="idlist" id="ids"></ul></div>');
+  /* Sam: "have a status selector for the group that notes whether it's been
+   * reviewed and ready for re-minting at the appropriate point."
+   *
+   * The status is a JUDGMENT about a group, so it belongs beside the moves in
+   * the write panel, not in browser storage: localStorage is the wrong home for
+   * a determination someone else has to act on — the same call already made for
+   * the CIP category and settled for cr_reference_decisions. In the prototype
+   * it writes nothing and SHOWS the row it would write, keyed on the group so a
+   * rebuild of the packs cannot overwrite a curator's judgment.
+   *
+   * "Ready to re-mint" is deliberately not the same as "reviewed": a group can
+   * be checked and still not be ready, and re-mints are batched under the
+   * playbook rather than fired per group. */
+  h.push('<div class="panel"><h3>Group status</h3>'+
+         '<label class="sr" for="g-status">Review status for this group</label>'+
+         '<select id="g-status" style="width:100%;padding:.45em;border:1px solid '+
+         'var(--border);border-radius:6px">'+
+         '<option value="">Not reviewed</option>'+
+         '<option value="in-review">Being reviewed</option>'+
+         '<option value="needs-work">Reviewed \u2014 needs more work</option>'+
+         '<option value="reviewed">Reviewed \u2014 groupings are right</option>'+
+         '<option value="ready-remint">Reviewed \u2014 ready to re-mint</option>'+
+         '</select>'+
+         '<p id="g-status-note" class="empty" style="margin:.5em 0 0"></p></div>');
   h.push('<div class="panel"><h3>What this would write</h3><div id="wr"></div>'+
          '<p style="margin:.6em 0 0;font-size:.8rem;color:var(--text-muted)">'+
          'One row per move, in <code>kb_curation</code>. Reversible: delete the row and the '+
@@ -1060,12 +1084,20 @@ window.__ccrDecision = function(discName, i){
     });
   }
 
+  // Stable across a rebuild of the packs: the pack index would not be.
+  var groupKey="CCRGRP:"+discName+"::"+pack.nodes.map(function(n){return n.id;})
+                                         .slice().sort().join("+");
+  var groupStatus="";
   function drawWrites(){
     var el=document.getElementById("wr");
-    if(!moves.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
-    el.innerHTML='<div class="writes">'+moves.map(function(m){
+    var rows=moves.map(function(m){
       return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
-    }).join("")+"</div>";
+    });
+    if(groupStatus)
+      rows.push("<div>"+esc(groupKey.length>58?groupKey.slice(0,57)+"\u2026":groupKey)+
+                "  status  "+esc(groupStatus)+"</div>");
+    if(!rows.length){ el.innerHTML='<p class="empty">No moves yet.</p>'; return; }
+    el.innerHTML='<div class="writes">'+rows.join("")+"</div>";
   }
 
   var gi=document.getElementById("g-in"), go2=document.getElementById("g-out"),
@@ -1073,6 +1105,21 @@ window.__ccrDecision = function(discName, i){
   if(gi) gi.onclick=function(){ gzoom(1.35, W/2, H/2); };
   if(go2) go2.onclick=function(){ gzoom(1/1.35, W/2, H/2); };
   if(gr) gr.onclick=function(){ gview={k:1,x:0,y:0}; applyGView(); };
+
+  var gs=document.getElementById("g-status");
+  if(gs) gs.addEventListener("change", function(){
+    groupStatus=gs.value;
+    var n=document.getElementById("g-status-note");
+    if(n) n.innerHTML = groupStatus
+      ? "Recorded against this group of "+pack.nodes.length+" identities. "+
+        (groupStatus==="ready-remint"
+          ? "Ready to re-mint is a QUEUE, not a trigger \u2014 re-mints are batched "+
+            "under the playbook, never fired from this page."
+          : "Nothing is written from the prototype; the row it would write is "+
+            "shown on the right.")
+      : "";
+    drawWrites();
+  });
 
   drawGraph(); drawList(); drawWrites();
 };
