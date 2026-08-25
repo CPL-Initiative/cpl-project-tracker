@@ -173,8 +173,11 @@ block("(6)", function () {
    * notice the set growing. The exclusivity claim now lives in
    * tests/sierra_memory_isolation.test.js, which pins the whole set and fails
    * when a fifth consumer appears. Here, keep the honest half. */
+  /* ⚠ …and the pattern asserts hostSurface ARRIVES, not that it is last — the
+   * closing-paren anchor is what
+   * `assert-that-an-argument-arrives-not-that-it-is-last` warns about. */
   check("(6) the guidance layer is one of the surface's consumers",
-    /fetchTeamGuidance\(sb, hostSurface\)/.test(SRC),
+    /fetchTeamGuidance\([^;]*\bhostSurface\b[^;]*\)/.test(SRC),
     "the full consumer set is pinned in tests/sierra_memory_isolation.test.js");
 });
 

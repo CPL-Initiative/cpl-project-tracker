@@ -91,10 +91,17 @@ block("(1)", function () {
  * The honest version of sierra_surface (6). Four consumers today; the count is
  * asserted so a fifth cannot arrive silently. */
 block("(2)", function () {
+  /* ⚠ EACH PATTERN ASSERTS THAT THE VALUE ARRIVES, NOT THAT IT IS LAST. The first
+   * cut anchored two of these on a call's CLOSING PAREN —
+   * `fetchTeamGuidance\(sb, hostSurface\)` and `queryCapFor\(hostSurface\)` —
+   * which is the defect `assert-that-an-argument-arrives-not-that-it-is-last`
+   * was written about: append a parameter to either call and the check goes red
+   * naming a consumer that is perfectly fine. Nobody decided hostSurface must be
+   * the final argument of anything. */
   const consumers = [
-    ["the input cap", /const trimmedQuery = query\.trim\(\)\.slice\(0, queryCapFor\(hostSurface\)\)/],
-    ["the guidance filter", /fetchTeamGuidance\(sb, hostSurface\)/],
-    ["the system prompt", /if \(drafting\) systemPrompt\.volatile \+= DRAFTING_BLOCK;/],
+    ["the input cap", /const trimmedQuery = query\.trim\(\)\.slice\(0, queryCapFor\([^;]*\bhostSurface\b[^;]*\)/],
+    ["the guidance filter", /fetchTeamGuidance\([^;]*\bhostSurface\b[^;]*\)/],
+    ["the system prompt", /if \(drafting\) systemPrompt\.volatile \+= DRAFTING_BLOCK/],
     ["the interactions log", /if \(!drafting\) await sb\.from\("chat_interactions"\)/],
   ];
   consumers.forEach(([label, re]) =>
