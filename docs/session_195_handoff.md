@@ -45,6 +45,29 @@ outage (2026-08-21, 2026-08-22, 2026-08-25). A balance-threshold alert at the
 account level would catch what a liveness probe can only catch after the fact;
 that is Sam's to set up, and it is the one durable fix.
 
+## ⚠️ Sierra is on HAIKU 4.5, and it is TEMPORARY
+
+Sam, at the end of the session: *"set Sierra to run on Haiku 4.5 rather than Opus
+or Sonnet? It's a temporary fix until we can get our corporate billing
+released."* It was **Sonnet 4.6**, never Opus — which matters, because the saving
+is **3×** ($1/$5 per MTok vs $3/$15), not the ~5× an Opus baseline implies. The
+endpoint is INPUT-dominated (`MAX_TOKENS` caps every answer at 2,048).
+
+⭐ **REVERTING NEEDS NO DEPLOY** — set `CPL_CHAT_MODEL` on the Supabase project
+and it overrides the committed default. **When Sam says billing is restored,
+that is the whole action.** The default stays Haiku so an unset secret is the
+intended state, not an accident.
+
+⚠️ **Prompt caching survives, but the floor moved.** Haiku's minimum cacheable
+prefix is **2,048 tokens — double Sonnet's 1,024** — and a breakpoint on a
+shorter prefix is accepted while caching NOTHING, silently. The `stable` block is
+~3,234 tokens so it clears the bar; `tests/sierra_model_choice.test.js` pins the
+floor to the family actually configured, so trimming that block goes red.
+
+⚠️ **Watch the GR area sweep first.** It is the most demanding caller on this
+endpoint by a distance — a legal instrument determination across sixteen rows as
+strict JSON. Student questions are not where a smaller model shows first.
+
 ## What shipped
 
 | PR | |

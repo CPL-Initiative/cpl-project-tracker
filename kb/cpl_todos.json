@@ -11,6 +11,12 @@
    "text": "Sierra ran out of API credit this evening and you restored it — thank you. That is the third time (21 Aug, 22 Aug, 25 Aug). The uptime monitor did its job and raised the alert, but it only looks every three hours, so an outage can run that long before anyone is told. A balance-threshold alert on the Anthropic account itself would catch it before it becomes an outage, and that is the one thing a monitor here cannot do."
   },
   {
+   "id": "s195-sam-revert-model",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
+  },
+  {
    "id": "s195-sam-row2-enacted",
    "for": "Sam",
    "tab": "gr-priorities",
