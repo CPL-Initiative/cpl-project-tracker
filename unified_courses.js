@@ -246,11 +246,21 @@
     // before sending the magic-link request. Default back to the Common
     // Course Reference tab if nobody stashed (older code paths, manual
     // testing).
+    // ⚠ THE DEFAULT WAS FIRING FOR EVERYONE. The stash lived in sessionStorage,
+    // which is PER BROWSER TAB, and the magic link opens a NEW tab — so the
+    // note written where you clicked "sign in" was invisible here and every
+    // sign-in from anywhere landed on the Common Course Reference (Sam,
+    // 2026-08-25). The keeper reads the shared copy, honors an older
+    // same-tab one, expires a stale one, and TAKES it so the next arrival is
+    // not redirected by a note left for someone else.
     var returnTab = "unified-courses";
-    try {
-      var stashed = sessionStorage.getItem("cpl_sb_return_tab");
-      if (stashed) { returnTab = stashed; sessionStorage.removeItem("cpl_sb_return_tab"); }
+    var stashed = null;
+    if (window.CPL_SESSION && CPL_SESSION.takeReturnTab) stashed = CPL_SESSION.takeReturnTab();
+    else try {
+      stashed = sessionStorage.getItem("cpl_sb_return_tab");
+      if (stashed) sessionStorage.removeItem("cpl_sb_return_tab");
     } catch (e) {}
+    if (stashed) returnTab = stashed;
     // Signing in is intent to CURATE, and curation happens in the list. Landing
     // a returning curator on the map answers a question they did not ask.
     if (returnTab === "unified-courses") authReturn = true;

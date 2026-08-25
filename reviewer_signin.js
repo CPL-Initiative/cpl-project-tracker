@@ -85,7 +85,13 @@
   // sits in cpl_sb_return_tab — so stash the tab the person is ON, and they
   // come back to it instead of to some other tab's idea of home.
   function sendLink(email, returnTab) {
-    try { sessionStorage.setItem(RETURN_KEY, returnTab || currentTab() || "dashboard"); } catch (e) { /* ignore */ }
+    // ⚠ sessionStorage is PER BROWSER TAB and the magic link lands in a NEW one,
+    // so a stash written here could never be seen where it is read — every
+    // sign-in fell back to the reader's default (Sam, 2026-08-25). The keeper
+    // writes the shared copy; the local one stays for the same-tab flow.
+    var back = returnTab || currentTab() || "dashboard";
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab(back);
+    else try { sessionStorage.setItem(RETURN_KEY, back); } catch (e) { /* ignore */ }
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",

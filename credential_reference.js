@@ -151,7 +151,10 @@
     // magic-link round-trip. Without this, sign-in completes successfully
     // but the user is bounced to the Common Course Reference tab and the
     // sign-in feels like it "didn't complete."
-    try { sessionStorage.setItem("cpl_sb_return_tab", "credential-reference"); } catch (e) {}
+    // sessionStorage is PER BROWSER TAB and the magic link opens a NEW one, so a
+    // stash written here was invisible where it is read. The keeper writes both.
+    if (window.CPL_SESSION && CPL_SESSION.stashReturnTab) CPL_SESSION.stashReturnTab("credential-reference");
+    else try { sessionStorage.setItem("cpl_sb_return_tab", "credential-reference"); } catch (e) {}
     var redirect = encodeURIComponent(location.origin + location.pathname);
     return fetch(SUPABASE_URL + "/auth/v1/otp?redirect_to=" + redirect, {
       method: "POST",
