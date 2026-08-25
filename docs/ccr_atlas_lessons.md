@@ -719,3 +719,85 @@ solve on demand.
    College's 93 rows.
 4. Apply the roster fold to the member roster, or repair `CaÃ±ada` at source.
 5. The one ESL stray (`English as a Second Language (ESL)`, 9 identities).
+
+---
+
+## 2026-08-25 — SkyFixer S193: the search landed where the term never pointed
+
+Sam drove SkyView in a browser and reported five things. All five shipped in
+#1331. This section also absorbs the roadmap cell's accumulated history, which
+had reached 6,114 characters and was flagged by `stacked_roadmap_cell` — §11 now
+states current truth only.
+
+### The search
+
+Typing **`english as a second`** flew to **Interdisciplinary Studies**.
+
+The term is a PREFIX of three real spellings of one subject — `English as a
+Second Language`, `… (ESL)`, `… Noncredit 53412`. `doSearch` flew to a subject
+only when the matches collapsed to **one** base name; three did not, so it fell
+through to the course-title hits and picked the subject carrying the most
+*incidental* ones. Interdisciplinary Studies had four.
+
+⭐ **A subject-name match must outrank a course-title match.** Tiers now decide:
+exact → prefix → contains, best non-empty tier wins, and titles choose the
+destination only when no subject name matches at all.
+
+⭐ **Variants that EXTEND one another are one subject** and fold to the shortest,
+which is the one the others qualify. `Biology` vs `Biological Sciences` is not
+that — neither extends the other — so it stays an honest ambiguity.
+
+⚠️ **Refusing to pick is not automatically the honest choice.** The old rule
+declined to choose among several matching subjects, which sounded principled and
+shipped a worse guess: a subject the term had not named at all. Now it goes to
+the biggest and NAMES the others.
+
+⭐ **The real fix was the suggestion list.** Typeahead — subjects first, then
+course identities, each labeled with which kind it is — means a term naming
+several subjects needs nothing to guess. The tie-break above is only what
+happens when the curator does not pick.
+
+### The two screens that were not what their labels said
+
+**"Browse subjects as a list"** opened the work-packaging page: a different
+question (how the corpus decomposes into sittings) wearing the same words. It
+now opens an actual subject list, filterable, **seeded live from the search box**
+so typing without pressing Enter still carries across. The packaging view keeps
+its own, differently-named door.
+
+**The CCR tab opened on the table.** Session 192's flip made SkyView the landing
+view *inside the prototype page*, while the COBI tab kept opening on the list
+with a launcher in the corner — two surfaces, one sentence, one of them flipped.
+⭐ Flipping the tab is also **cheaper**: the map is an iframe that fetches its
+own payloads, so the table's ~7 MB is deferred until someone asks for the table.
+⚠️ Except a curator returning from a magic link — that is intent to curate.
+
+### Carried forward from the S192 cell (history, not current state)
+
+- The mechanism arithmetic: grinding the whole queue perfectly lands at 35,937,
+  14.4× short of 2,500. Packaging is the only mechanism with the right shape;
+  ESL proved it at 85:1. Target ≈17 per discipline.
+- The corpus is ~5,700 decisions, not 17,321 rows — 97.1% are ≤12 identities,
+  modal 2. 3,001 carry no discipline (8,065 identities) and are a different job.
+- Stand-alones draw HOLLOW because a stand-alone asserts no equivalence.
+- The page must be SERVED, not opened: `file://` blocks `fetch`, and a shard
+  that cannot load has to say so.
+- `CN:<control number>` names more than one course on 1,814 of 139,834 numbers
+  (462 in the source after the declared fold). Refused now. The real worklist is
+  73 two-real-course rows, 93 of them at San Jose City College.
+- A declared fold reaches only the roster that consults it: `CaÃ±ada College`
+  renders that way in the member list, and the raw export carries only the
+  broken spelling, 678×.
+- A view must not fly where it cannot draw — `draw()` renders nodes only above
+  zoom 0.20, and the search reported rings at 0.120.
+
+### Method note
+
+⚠️ **`check_ccr_atlas.js` asserted the OLD search behavior and correctly went
+red.** The assertion was rewritten with its reasoning rather than deleted — a
+contract change belongs in the guard that encoded the old contract.
+
+⚠️ **A pre-existing failure was measured, not assumed.** `"a shard fetches and
+holds descriptions"` fails because `prototype/ccr_desc/` is gitignored and
+absent. Confirmed by stashing the diff, rebuilding, and getting the identical
+failure on the unmodified prototype.

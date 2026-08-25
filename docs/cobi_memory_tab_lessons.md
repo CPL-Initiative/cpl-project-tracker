@@ -440,3 +440,86 @@ rewriting retired rows is churn, not hygiene. **Live rows are at zero.**
 - **The live CHECK constraint needs one additive `ALTER`** — independent of the deploy, and
   safe in either order (`fetchGuidanceKind` retries unscoped on any error, by design).
 - **The 3 polluted `chat_interactions` rows** are still in the Gap Miner's feed.
+
+---
+
+## 2026-08-25 — SkyFixer S193: the chip that could not write, then wrote too much
+
+Sam, live on the tab: *"The memory I'm on is not needed and I want to set it as
+inactive or delete it but I don't seem to have that option"*, *"The proposed chip
+doesn't seem to be working"*, and *"the team unlock doesn't seem to respond… but
+not the confusing message about team phrase expired"*.
+
+Three reports, one root cause and two missing affordances.
+
+### ⭐ The write key named nothing
+
+Every `cpl_memory` write was addressed `?slug=eq.<display handle>`. But `slug` is
+UNIQUE and **NULLABLE**, and `normalizeRow` falls back to the row's uuid for
+DISPLAY when it is null. So on the **6 of 572 rows with no slug** — all six
+visible, all `proposed`, and the row in Sam's screenshot among them — the PATCH
+went out as `slug=eq.<uuid>`, matched **zero** rows, and PostgREST answered
+`200 + []`, which `checkWrite` reports as 403-shaped.
+
+This is `a-write-key-must-name-exactly-one-thing` one level down: #1329's `CN:`
+key named *two* things; this one named *none*.
+
+### ⭐ The message named the wrong credential and pointed at a control that was not rendered
+
+`doWrite` hardcoded *"your team phrase may have expired — re-unlock"* for every
+401/403, including for a magic-link curator, for whom the phrase is irrelevant
+and whose phrase `handleWriteFailure` correctly never touches. And `renderAuth`
+rendered the unlock row only when there was **no** session — so the instruction
+named a control nowhere on the page.
+
+It also could not tell a **refusal** from a **miss**: `checkWrite` reports an
+ok-but-empty representation as 403-shaped but hands back an **array** there and
+`null` on a real HTTP rejection. That is the only thing separating "you are not
+allowed" from "nothing matched", and they need different words and different
+remedies.
+
+### ⭐ Then the fixed chip wrote states it was only passing through
+
+With writes working, Sam clicked again: *"just sets to verified without any other
+options."* Worse than a UX complaint — the cycle ran verified → stale → proposed,
+so reaching `stale` from `proposed` **transited `verified`**, and every step was
+a real PATCH plus a real audit row.
+
+**His two clicks are in `cpl_memory_log` 15 seconds apart** — a `verify` at
+19:22:08 and a `stale` at 19:22:23 — and the row sits at `stale` still carrying
+`verified_at` and `verified_by='curator'`: **a verification stamp for a row
+nobody verified**, on the one table whose purpose is corroboration.
+
+A menu replaced the cycle (one click, one write, each status carrying what it
+means), and `setStatus` now clears the stamp whenever the status is not
+`verified`. A verified write names the signed-in person rather than `"curator"`.
+
+⚠️ **The 11 `proposed` rows carrying `verified_by='Sam Lee'` / `'Jenni'` are NOT
+this.** That is real attribution awaiting promotion and must never be swept with
+the pass-through residue. Only `verified_at` + `verified_by='curator'` on a
+non-verified row is the signature.
+
+### Inactive and delete were missing affordances, not missing permissions
+
+The database already carried `reviewer deletes cpl_memory`, `cpl_memory_log.action`
+already accepted `'delete'`, and the log's FK is `ON DELETE SET NULL` so the
+audit trail outlives the row. Only the UI never offered either.
+
+⚠️ **Delete is reachable from the list and does not delete from the list.** It is
+the only one of the five that cannot be undone, and one mis-click from "Stale" in
+a list you click through quickly is the wrong home for that — so it opens the
+entry's confirm, which is where the count of entries pointing at the row and the
+reviewer-only warning fit. The ellipsis is the promise that it asks first.
+
+⚠️ **Marking a row inactive drops it out of every list** (`matchesEntry` hides
+superseded unconditionally), so the entry pane keeps its tools for a superseded
+row — the undo lives on the only surface that can still reach it.
+
+### ⚠️ The method lesson: five crashes that read as passes
+
+Five separate times a perturbation reported **0 FAIL** while the suite had
+actually *crashed* on an absent element and stopped, leaving every later check
+unreported. The exit code said only "something failed". That is the S190
+`exit=0 was my trailing grep` shape one layer in, and it is the most useful thing
+this session learned: **a test must report a missing thing, never dereference
+it.** All three suites now use safe accessors.
