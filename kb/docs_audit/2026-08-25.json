@@ -9,8 +9,8 @@
     "other": 150000
   },
   "summary": {
-    "files": 647,
-    "bytes": 7305131,
+    "files": 649,
+    "bytes": 7330452,
     "over_budget": 4,
     "handoff_max": 194,
     "always_loaded_files": 1,
@@ -24,8 +24,8 @@
         "over": 1
       },
       "other": {
-        "files": 77,
-        "bytes": 1952414,
+        "files": 78,
+        "bytes": 1964258,
         "over": 1
       },
       "index": {
@@ -35,12 +35,12 @@
       },
       "lessons": {
         "files": 68,
-        "bytes": 1775753,
+        "bytes": 1783585,
         "over": 1
       },
       "kb_note": {
-        "files": 328,
-        "bytes": 1741140,
+        "files": 329,
+        "bytes": 1746785,
         "over": 0
       },
       "handoff": {
@@ -54,11 +54,12 @@
       "stacked_roadmap_cell": 1,
       "american_spelling": 169,
       "kb_note_dialect": 60,
+      "unindexed_kb_note": 1,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2258,
-      "bytes": 1212932452,
+      "files": 2260,
+      "bytes": 1212977325,
       "heavy_bytes": 598055298,
       "heavy_share": 0.493,
       "ignore_filters": [
@@ -753,6 +754,15 @@
       },
       "message": "3 British forms — behaviour→behavior, summaris→summariz, defence→defense",
       "path": "docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md"
+    },
+    {
+      "rule": "unindexed_kb_note",
+      "fixable": false,
+      "detail": {
+        "stem": "methodology-a-client-cannot-see-the-cap-the-server-enforces"
+      },
+      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+      "path": "docs/kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md"
     },
     {
       "rule": "american_spelling",
