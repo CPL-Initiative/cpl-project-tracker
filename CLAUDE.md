@@ -817,7 +817,7 @@ The auditor is the foundational instrument for the whole pipeline: every phase
 upstream of CIDx submission produces a higher trust score and graduates rows
 from one readiness tier to the next.
 
-### Sky195 S194 — the sweep is the routine, and a token with no owner (2026-08-25)
+### SkyMoon S194 — the sweep is the routine, and a token with no owner (2026-08-25)
 
 **A live session: Sam edited the GR register in a browser while new law landed on it** (#1333, #1334).
 ⭐ **A save failed with a message blaming his sign-in, and his account was fine.** `gr_history` proved it:
@@ -833,6 +833,9 @@ statute until the bands widened to Part 48.
 NOT the per-row call widened; three of its findings are structurally invisible per-row.
 ⚠️ **A client cannot see the cap the server enforces**, and CI cannot either. ⚠️ Four guards were wrong
 before the code was, including one that could not fail for a typo.
+⚠️ **Sierra moved to Haiku 4.5** at Sam's request (temporary; revert = the `CPL_CHAT_MODEL` secret, no deploy).
+He verified it reads well; the one smoke regression is mode 15a dropping the Not-Applicable ceiling caveat —
+the rule exists, so it is a COMPLIANCE gap, and the fix is to attach the caveat to the DATA not a distant rule.
 Story `docs/gr_register_lessons.md` · `docs/gr_sb135_row_sweep.md` · handoff `docs/session_195_handoff.md`.
 
 ### SkyFixer S193 — a write key that named nothing, and a link that always came home to the wrong room (2026-08-25)
