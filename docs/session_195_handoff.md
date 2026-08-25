@@ -84,12 +84,18 @@ rather than a ceiling, when ~30% of reviewed credit is correctly ruled Not
 Applicable. The smoke test's own comment calls it *"the single most likely way
 this feature misleads."*
 
-⭐ **RECOMMENDED FIX, NOT SHIPPED:** attach the caveat to the **DATA**, not to a
-distant rules block — the credit context that carries the total should carry the
-caveat inline, so the model sees them together. That makes it robust on **any**
-model, not just Haiku. It was deliberately not shipped unattended at the end of
-a session Sam had closed; it is a public-surface prompt change and his call.
-Alternative: `CPL_CHAT_MODEL` → `claude-sonnet-4-6`, a secret, no deploy.
+🛑 **SAM ACCEPTED IT — DO NOT FIX THIS UNPROMPTED.** *"I can live with that Haiku
+limitation for now."* He ruled on it knowing exactly what it costs, having read
+Sierra on both routes himself. **A regression a human has accepted is not a
+defect a session gets to close.**
+
+The fix is designed and stays on the shelf: attach the caveat to the **DATA**, not
+to a distant rules block — the credit context carrying the total should carry the
+caveat inline, so the model sees them together, which makes it robust on **any**
+model. Revisit only if Sam asks, if the switch back to Sonnet makes it free, or
+if evidence appears that a reader actually mis-read the total as a debt.
+Alternative at any time: `CPL_CHAT_MODEL` → `claude-sonnet-4-6`, a secret, no
+deploy.
 
 ⚠️ **Watch the GR area sweep first.** It is the most demanding caller on this
 endpoint by a distance — a legal instrument determination across sixteen rows as
