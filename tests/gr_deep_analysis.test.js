@@ -357,6 +357,137 @@ block("(6)", () => {
 })();
 
 function report() {
+// ── (8) THE AREA SWEEP — the routine Sam actually asked for ─────────────────
+// Sam, 2026-08-25, after reading a hand pass over all 16 rows against the new
+// Ed. Code Article 9: "Your sweep is the routine I want to be able to run on
+// demand after edits." Then: "Can you add to the routine the ability to add new
+// priorities as proposed?"
+//
+// ⭐ IT IS NOT THE PER-ROW CALL WIDENED. Three findings from that pass are
+// structurally invisible to a per-row routine: the headline (row #2 asks for
+// something already enacted) only appears reading a row against an AREA-level
+// document; "weakened" is comparative (#5 lost value BECAUSE #2 became law);
+// and a duty no row covers is not a finding about any row at all.
+block("(8)", () => {
+  const AREA = { id: "cpl", title: "Credit for Prior Learning: §55050 Reform Priorities",
+                 summary: "Sixteen reforms, sorted by the lowest-effort legal path." };
+  const ARTS = [{ area_id: "cpl", title: "CA Ed Code §78093.2 — CPL Initiative", kind: "statute",
+                  source: "Stats. 2026, Ch. 79, Sec. 16 (SB 135)",
+                  why: "Requires campuses to accept transcribed CPL from other campuses.",
+                  citations: ["EC §78093.2"] }];
+  /* ⚠️ THE FIXTURE MUST BE SHAPED LIKE THE LIVE AREA OR THE CAP CHECK IS A LIE.
+   * Measured on the live `cpl` area: 16 rows carry 9,291 characters of prose
+   * once the tags come off. ALL above gives only #7 real prose, so the envelope
+   * built from it measures ~7,800 and would "prove" the raised cap unnecessary.
+   * Pad every row to the live per-row average instead. */
+  const PROSE = 580;
+  const SWEEP_ROWS = ALL.map((r) => r.n === 7 ? r : Object.assign({}, r, {
+    summary: "<p><b>Approach.</b> " + "x".repeat(PROSE - 120) + "</p>",
+    consideration: "y".repeat(70), blast_why: "z".repeat(50),
+  }));
+  const q = GR._sweepQuery(AREA, SWEEP_ROWS, ARTS, ["#2: T5 §55050 is cited but not listed."]);
+
+  check("(8) ⭐ every row is in the envelope, not a sample",
+    SWEEP_ROWS.every((r) => q.indexOf("#" + r.n + " " + r.title) >= 0));
+  check("(8) ⭐ each row carries its CURRENT values, so the answer is a diff",
+    /ed_first=Yes/.test(q) && /rank=1/.test(q) && /instrument=/.test(q));
+  check("(8) ⭐ the area's artifacts are in it — the headline needs them",
+    /78093\.2/.test(q) && /accept transcribed CPL/i.test(q));
+  check("(8) Lane A's findings are handed over", /DETERMINISTIC PASS/.test(q));
+  check("(8) the doctrine applies (cpl is the area it was measured from)", /THE DOCTRINE/.test(q));
+  check("(8) ⚠ …and a SAMPLE area still gets the neutral block instead",
+    /MARKED SAMPLE/.test(GR._sweepQuery({ id: "dual-enrollment", title: "DE" }, [], [], [])));
+
+  // ⚠️ THE REPLY BUDGET IS THE TIGHTER LIMIT AND IT IS NOT THE INPUT CAP.
+  // MAX_TOKENS is 2048 (~8,000 chars) and it must hold a verdict for EVERY row.
+  const m = /const MAX_TOKENS = (\d+);/.exec(TS);
+  check("(8) ⭐ the contract budgets its own OUTPUT, because MAX_TOKENS is the real limit",
+    !!m && /HARD BUDGET/.test(q) && /one sentence per row/i.test(q));
+  check("(8) ⚠ …and demands EVERY row, so a missing verdict is detectable",
+    /INCLUDE EVERY ROW/.test(q));
+
+  // The whole-area envelope must fit the raised cap.
+  const cap = /const QUERY_CAP_GR_ANALYSIS = (\d+);/.exec(TS);
+  check("(8) ⭐ the 16-row envelope fits the cap", !!cap && q.length < Number(cap[1]),
+    q.length + " vs " + (cap && cap[1]));
+  check("(8) …with room for the area to roughly double", !!cap && q.length * 2 < Number(cap[1]),
+    q.length + " doubled vs " + (cap && cap[1]));
+  check("(8) ⚠ …and it genuinely needed the raise — it does NOT fit the row lane's 14,000",
+    q.length > 14000, "sweep envelope is only " + q.length + " chars; the raise may be unjustified");
+});
+
+// ── (9) the sweep's two truncations are DIFFERENT failures ──────────────────
+block("(9)", () => {
+  // No "{" at all → the contract never arrived → an INPUT problem (undeployed).
+  let a = "";
+  try { GR._parseSweep("Credit for prior learning lets students earn credit."); }
+  catch (e) { a = e.message; }
+  check("(9) a prose reply is an error", /did not come back as JSON/.test(a));
+
+  // ⭐ Starts a JSON object and never closes it → ran out of OUTPUT tokens. A
+  // different fix entirely, and telling this person to redeploy sends them a
+  // long way in the wrong direction.
+  let b = "";
+  try { GR._parseSweep('{"rows":[{"n":1,"verdict":"unchanged","why":"fine"},{"n":2,'); }
+  catch (e) { b = e.message; }
+  check("(9) ⭐ a reply cut off mid-object blames the REPLY BUDGET, not the deploy",
+    /cut off mid-answer/.test(b) && /reply budget/i.test(b) && !/deploy/i.test(b));
+
+  const ok = GR._parseSweep(JSON.stringify({
+    rows: [{ n: 2, verdict: "REWORK", why: "already law", pathway: ["g", "y", "zzz"],
+             ed_first: "No", blast_rank_suggested: 1.4, cite: "EC §78093.2(b)(2)" },
+           { n: 3, verdict: "not-a-verdict", why: "x" },
+           { n: "nine", verdict: "unchanged" }],
+    proposals: [
+      { title: "Evaluate all incoming students", approach: "a", pathway: ["g"],
+        ed_first: "No", citations: ["78093.2", "99999"] },
+      { title: "b" }, { title: "c" }, { title: "d — over the cap" },
+      { what: "no title" }],
+    summary: "s",
+  }));
+  check("(9) a verdict is case-folded and validated", ok.rows[0].verdict === "rework");
+  check("(9) ⚠ an out-of-vocabulary verdict becomes null, not a guess", ok.rows[1].verdict === null);
+  check("(9) ⚠ a row with a non-numeric n is dropped — it cannot be matched",
+    ok.rows.length === 2);
+  check("(9) a stray pathway value is dropped", ok.rows[0].pathway.join(",") === "g,y");
+  check("(9) a fractional rank is rounded", ok.rows[0].blast_rank_suggested === 1);
+  check("(9) ⭐ proposals are capped at three, most consequential first",
+    ok.proposals.length === 3 && ok.proposals[0].title === "Evaluate all incoming students");
+  check("(9) ⚠ a proposal with no title is dropped, not rendered blank",
+    ok.proposals.every((p) => !!p.title));
+  // ⚠️ The model's citations go through parseCites like a typist's, and rejects
+  // are CARRIED so the card can show them rather than swallowing an invention.
+  check("(9) ⭐ a proposal's citations are parsed, not stored raw",
+    ok.proposals[0].citations.ok.join(",") === "EC §78093.2");
+  check("(9) ⚠ …and an unclaimable code is kept as a REJECT, not filed under a guess",
+    ok.proposals[0].citations.bad.indexOf("99999") >= 0);
+});
+
+// ── (10) an accepted proposal lands as a PROPOSED row, marked derived ───────
+block("(10)", () => {
+  const p = GR._parseSweep(JSON.stringify({ rows: [], summary: "s", proposals: [{
+    title: "Evaluate prior learning for all incoming students",
+    grp: "What CPL can count for", approach: "Do the thing.", consideration: "c",
+    blast_why: "w", pathway: ["g", "y"], ed_first: "No",
+    instrument: "§78093.2(b)(1)", citations: ["EC §78093.2"] }] })).proposals[0];
+  const rec = GR._proposalRecord("cpl", 17, p);
+  check("(10) ⭐ it arrives as PROPOSED, never as settled register content",
+    rec.status === "proposed");
+  check("(10) ⭐ …and its codes are marked derived, so they render “from text”",
+    rec.citations_derived === true);
+  check("(10) ⚠ it carries NO verification stamp", !rec.verified_at && !rec.verified_by);
+  check("(10) it is numbered from the live list, not from 1", rec.n === 17);
+  check("(10) it is the same record shape the hand form builds",
+    rec.area_id === "cpl" && rec.summary === "Do the thing." && rec.pathway.join(",") === "g,y"
+      && rec.citations.join(",") === "EC §78093.2");
+  // A proposal with no pathway must still satisfy the form's own rule that at
+  // least one is picked; memo is the least-committal default.
+  const bare = GR._proposalRecord("cpl", 2, GR._parseSweep(JSON.stringify({
+    rows: [], proposals: [{ title: "t" }] })).proposals[0]);
+  check("(10) ⚠ a pathway-less proposal defaults to memo, never to empty",
+    bare.pathway.join(",") === "g");
+});
+
 let pass = 0;
 for (const [n, ok, why] of results) {
   console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));

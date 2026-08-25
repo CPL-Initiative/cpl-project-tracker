@@ -2954,8 +2954,21 @@ const QUERY_CAP_BRIEFING = 20000;
  * envelope grows, silently, into a cap that truncates without erroring. The
  * budget is set for a row several times its current length, and
  * tests/gr_deep_analysis.test.js reads this number out of this file and asserts
- * the client's built envelope still fits under it. */
-const QUERY_CAP_GR_ANALYSIS = 14000;
+ * the client's built envelope still fits under it.
+ *
+ * ⚠ RAISED 14,000 → 40,000 FOR THE AREA SWEEP (2026-08-25). Sam: "Your sweep
+ * is the routine I want to be able to run on demand after edits." That sends an
+ * ENTIRE priority area — every row's prose plus the area's artifacts — not one
+ * row: ~17,000 characters on the live `cpl` area against 5,564 for a single
+ * row. One surface serves both shapes, and the number is set for an area that
+ * roughly doubles, because this sweep proposes new rows itself.
+ *
+ * ⚠ AND THIS IS NOT THE BINDING LIMIT. MAX_TOKENS caps the REPLY at 2048
+ * (~8,000 characters), which must carry a verdict for EVERY row in the area.
+ * Raising the input budget does nothing for that, so the sweep contract budgets
+ * its own output explicitly — one line per row — and a reply cut off mid-object
+ * is reported as an output problem, never as an undeployed surface. */
+const QUERY_CAP_GR_ANALYSIS = 40000;
 /* Every drafting surface gets its own budget. Kept as a table rather than a
  * ternary so adding a surface is one line and cannot silently inherit the wrong
  * one; tests/sierra_surface.test.js pins this keyset equal to
