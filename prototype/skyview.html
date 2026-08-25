@@ -150,7 +150,10 @@ a{color:var(--cobalt)}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 .canvas{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
         position:relative;overflow:hidden}
-.canvas svg{display:block;width:100%;height:auto;touch-action:none}
+.canvas svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.canvas svg:active{cursor:grabbing}
+.gbar{display:flex;gap:6px;align-items:center;padding:0 0 8px}
+.gbar .sub{margin-left:auto;color:var(--text-muted);font-size:.82rem}
 .hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;border-top:1px solid var(--border);
       background:var(--surface-subtle)}
 
@@ -180,6 +183,15 @@ a{color:var(--cobalt)}
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
+/* A card being dragged onto. Outline + tint, never tint alone: the cards
+   already carry state colours and one more wash of colour reads as noise. */
+#ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
+  background:#F4F0FC}
+/* A course whose control number names several courses cannot be re-homed —
+   the CN: write key cannot say which. Dotted underline so the state survives
+   greyscale; the chip beside it carries the words. */
+.mlist li.shared .cd{text-decoration:underline dotted}
+.mlist .chip.warn{background:#FBF1D8;color:#6B4E00;border:1px solid #8B6800}
 .writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
         background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
         padding:9px 11px;overflow-x:auto;color:var(--text-body)}
@@ -746,8 +758,14 @@ window.__ccrDecision = function(discName, i){
          " local courses sit underneath. Move any course to the identity it belongs to — "+
          "by dragging it onto a circle, or with the <strong>Move</strong> button if you'd rather not drag.</p>");
   h.push('<div class="stage">');
-  h.push('<div><div class="canvas"><div id="gfx"></div>'+
+  h.push('<div><div class="canvas">'+
+         '<div class="gbar"><button class="btn" type="button" id="g-out">\u2212</button>'+
+         '<button class="btn" type="button" id="g-in">+</button>'+
+         '<button class="btn" type="button" id="g-reset">Reset view</button>'+
+         '<span class="sub" id="g-z">zoom 100%</span></div>'+
+         '<div id="gfx"></div>'+
          '<div class="hint"><div id="hint">Drag a course from the list onto a circle. '+
+         'Scroll to zoom, drag the background to pan. '+
          'Circle size = how many colleges teach it.</div>'+
          '<div class="glegend">'+
            '<span><b style="color:#0047AB">\u2605</b> C-ID \u2014 official</span>'+
@@ -811,7 +829,68 @@ window.__ccrDecision = function(discName, i){
     });
     s.push("</svg>");
     document.getElementById("gfx").innerHTML=s.join("");
+    applyGView();
     wireNodes();
+    wireGraphView();
+  }
+
+  /* Sam: "I can use the mini graph view — doesn't seem drag and droppable or
+   * zoomable." It was a fixed viewBox, so a crowded decision (this one carries
+   * 13 identities and 89 courses) had no way to spread out and no way to read a
+   * label that landed under another.
+   *
+   * Zoom and pan move the viewBox rather than re-laying out: the layout is
+   * precomputed and stable on purpose — the same reason the universe view ships
+   * coordinates instead of solving them — so nothing must move under the reader
+   * except the frame they are looking through. */
+  var gview={k:1, x:0, y:0};
+  function applyGView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg) return;
+    var w=W/gview.k, hh=H/gview.k;
+    svg.setAttribute("viewBox", gview.x.toFixed(1)+" "+gview.y.toFixed(1)+" "+
+                                w.toFixed(1)+" "+hh.toFixed(1));
+    var z=document.getElementById("g-z");
+    if(z) z.textContent="zoom "+Math.round(gview.k*100)+"%";
+  }
+  function gzoom(f, ax, ay){
+    var k0=gview.k;
+    gview.k=Math.max(0.4, Math.min(8, gview.k*f));
+    // Keep the point under the cursor fixed, or zooming walks the graph away.
+    if(ax!=null){
+      gview.x += ax*(1/k0 - 1/gview.k);
+      gview.y += ay*(1/k0 - 1/gview.k);
+    }
+    applyGView();
+  }
+  function wireGraphView(){
+    var svg=view.querySelector("#gfx svg"); if(!svg || svg.dataset.wired) return;
+    svg.dataset.wired="1";
+    svg.addEventListener("wheel", function(e){
+      e.preventDefault();
+      var r=svg.getBoundingClientRect();
+      gzoom(e.deltaY<0?1.18:1/1.18,
+            (e.clientX-r.left)/r.width*W, (e.clientY-r.top)/r.height*H);
+    }, {passive:false});
+    var pan=null;
+    svg.addEventListener("pointerdown", function(e){
+      // Never steal a press aimed at a circle — that press selects, and a drop
+      // target that also pans is a target you cannot hit.
+      if(e.target.closest && e.target.closest(".nodeg")) return;
+      var r=svg.getBoundingClientRect();
+      pan={px:e.clientX, py:e.clientY, x:gview.x, y:gview.y, sx:W/r.width/gview.k,
+           sy:H/r.height/gview.k};
+      svg.setPointerCapture(e.pointerId);
+    });
+    svg.addEventListener("pointermove", function(e){
+      if(!pan) return;
+      gview.x=pan.x-(e.clientX-pan.px)*pan.sx;
+      gview.y=pan.y-(e.clientY-pan.py)*pan.sy;
+      applyGView();
+    });
+    svg.addEventListener("pointerup", function(e){
+      pan=null;
+      try{ svg.releasePointerCapture(e.pointerId); }catch(err){}
+    });
   }
 
   var selected=null;                       // {cn, code, college, title, from}
@@ -861,22 +940,66 @@ window.__ccrDecision = function(discName, i){
     drawGraph(); drawList(); drawWrites();
   }
 
+  /* The courses each identity is currently carrying, and how many distinct
+   * colleges are among them. Sorted on below. */
+  function carried(nd){
+    var mine=[];
+    pack.nodes.forEach(function(src){
+      src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
+    });
+    var cols={}; mine.forEach(function(m){ cols[m.c]=1; });
+    return {mine:mine, colleges:Object.keys(cols).length};
+  }
   function drawList(){
     var out=[];
-    pack.nodes.forEach(function(nd){
-      var mine=[];
-      pack.nodes.forEach(function(src){
-        src.m.forEach(function(m){ if(home[m.cn]===nd.id) mine.push(m); });
-      });
+    /* Sam: "sorted descending by the ones with the most colleges".
+     *
+     * NEITHER available figure can rank this on its own, so the key is the
+     * larger of the two — a lower bound on the identity's real size, which is
+     * the most that can honestly be claimed:
+     *
+     *   nd.n     the count the row reports. Uncapped, but it disagrees with
+     *            what is actually carried on about a fifth of identities, and
+     *            it can UNDERSTATE: FCSH M1020 reports 10 and carries 14.
+     *   carried  what this pack embeds. Truthful about those, but capped at
+     *            --max-members (14), so it saturates — a 54-member identity and
+     *            a 10-member one would both read 14 and sort level, which ranks
+     *            nothing precisely at the top of the list where ranking matters.
+     *
+     * Both are printed whenever they disagree, and a carried list shorter than
+     * the reported count says it is a sample: a capped list must never read as
+     * a census. Ties fall back to the title so the order is stable. */
+    var order=pack.nodes.slice().map(function(nd){
+      var c=carried(nd);
+      return {nd:nd, mine:c.mine, colleges:c.colleges};
+    }).sort(function(a,b){
+      var sa=Math.max(a.nd.n, a.mine.length), sb=Math.max(b.nd.n, b.mine.length);
+      if(sa!==sb) return sb-sa;
+      return String(a.nd.t||a.nd.id).localeCompare(String(b.nd.t||b.nd.id));
+    });
+    order.forEach(function(row){
+      var nd=row.nd, mine=row.mine;
       var pt=paintOf(nd);
-      out.push("<li>");
+      // data-id makes the whole card a drop target — see the wiring below.
+      out.push('<li data-id="'+esc(nd.id)+'">');
       var st = stateOf(nd);
       out.push('<span class="ttl">'+esc(nd.t||nd.id)+"</span> "+
                '<span class="chip '+(nd.sys==="C-ID"||nd.sys==="CCN-ID"?"cid":
                  nd.sys==="M-ID"?"gen":"mut")+'">'+pt.glyph+" "+esc(pt.word)+"</span>"+
                (st?' <span class="chip '+(nd.rev?"ok":"flag")+'">'+st.glyph+" "+
                    esc(st.word)+"</span>":""));
-      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" college"+(nd.n===1?"":"s")+
+      // "N member courses", not "N colleges": nd.n comes from whichever field
+      // minted the row and is not a count of colleges — CLAUDE.md is explicit
+      // about it, and the card was calling it one.
+      out.push('<div class="sub">'+esc(nd.id)+" · "+nd.n+" member course"+
+               (nd.n===1?"":"s")+" reported"+
+               (mine.length!==nd.n?' <span title="What this view has embedded '+
+                 'for the identity. It caps the satellites it carries, so a '+
+                 'shorter list is a sample; a longer one means the reported '+
+                 'count understates what the join finds.">\u00b7 '+mine.length+
+                 " carried here"+(mine.length<nd.n?" (a sample)":"")+"</span>":"")+
+               (row.colleges?" · "+row.colleges+" college"+
+                 (row.colleges===1?"":"s")+" among them":"")+
                (nd.u!=null?" · "+nd.u+" units":"")+"</div>");
       if(!mine.length){
         out.push('<p class="empty" style="margin:.4em 0 0">No courses left here.</p>');
@@ -907,6 +1030,26 @@ window.__ccrDecision = function(discName, i){
         selected=findMember(li.dataset.cn);
       });
     });
+    /* Sam: "Should be able to drag from one Course card to another (not be
+     * limited to the Move… button)." The circles were the only drop target, so
+     * a curator reading the cards had to go back up to the graph to act on what
+     * they had just read. Every identity card is a drop target now; the circles
+     * still are, and the button still is, because a drag is not reachable from
+     * a keyboard and dropping that route would take the view backwards. */
+    Array.prototype.forEach.call(view.querySelectorAll("#ids > li[data-id]"), function(card){
+      card.addEventListener("dragover", function(ev){
+        if(!selected) return;
+        ev.preventDefault();                       // required, or no drop fires
+        card.classList.add("drop-to");
+      });
+      card.addEventListener("dragleave", function(){ card.classList.remove("drop-to"); });
+      card.addEventListener("drop", function(ev){
+        ev.preventDefault(); card.classList.remove("drop-to");
+        var cn=ev.dataTransfer.getData("text/plain");
+        var m=cn?findMember(cn):selected;
+        if(m) applyMove(m, card.dataset.id);
+      });
+    });
     Array.prototype.forEach.call(view.querySelectorAll(".mv"), function(b){
       b.addEventListener("click", function(){
         selected=findMember(b.dataset.cn);
@@ -924,6 +1067,12 @@ window.__ccrDecision = function(discName, i){
       return "<div>CN:"+esc(m.cn)+"  merge_into  "+esc(m.to)+"</div>";
     }).join("")+"</div>";
   }
+
+  var gi=document.getElementById("g-in"), go2=document.getElementById("g-out"),
+      gr=document.getElementById("g-reset");
+  if(gi) gi.onclick=function(){ gzoom(1.35, W/2, H/2); };
+  if(go2) go2.onclick=function(){ gzoom(1/1.35, W/2, H/2); };
+  if(gr) gr.onclick=function(){ gview={k:1,x:0,y:0}; applyGView(); };
 
   drawGraph(); drawList(); drawWrites();
 };
@@ -1158,6 +1307,7 @@ var descCache={}, descState={};      // island shard -> {cn/index: text} · shar
 var DESC_DIR="ccr_desc";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
+var placedBoxes=[], titlesQueued=0;   // last frame's placed text, for the harness
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
  * a module constant because doSearch has to honour it: a search that flies to
  * "fit all the hits" picks a zoom below it whenever the hits are spread out,
@@ -1373,7 +1523,7 @@ function draw(){
   var k=view.k;
   var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTitles = k>1.35;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
-  var labelQueue=[];
+  var labelQueue=[], titleQueue=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -1410,12 +1560,14 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle="#0047AB"; ctx.stroke();
         }
-        if(showTitles && nd.n>1 && rad>5){
-          ctx.font="11px 'Source Sans 3',system-ui,sans-serif";
-          ctx.fillStyle="#3A3A36"; ctx.textAlign="center";
-          var t=nd.t.length>26?nd.t.slice(0,25)+"…":nd.t;
-          ctx.fillText(t,p[0],p[1]+rad+12);
-        }
+        // Titles are QUEUED, not drawn here, for the same reason island names
+        // are: a dense island stacks dozens of them into an unreadable pile.
+        // The file already calls that "the exact failure of a global graph
+        // view" for islands — it is no less true one grain down, and it shows
+        // up the moment a search flies you into a crowded subject.
+        if(showTitles && nd.n>1 && rad>5)
+          titleQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad,
+                           force:(nd===selNode||hitSet[nd.i])});
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
@@ -1426,7 +1578,11 @@ function draw(){
                      force:(isl===hoverIsl||isl===selIsl)});
   });
 
-  placeLabels(labelQueue, showLabels);
+  // Islands first: they are the navigational anchors, and a course name buried
+  // under its own subject's name helps nobody. Course titles then fill the gaps
+  // left over, and a title that cannot find one is dropped rather than stacked.
+  titlesQueued=titleQueue.length;
+  placedBoxes=placeTitles(titleQueue, placeLabels(labelQueue, showLabels));
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -1469,6 +1625,40 @@ function placeLabels(queue, showAll){
     ctx.fillStyle=q.force?"#0047AB":"#1C1C1A";
     ctx.fillText(lab,q.cx,q.cy);
   });
+  return boxes;   // course titles are placed into the gaps these leave
+}
+
+/* Course titles, same rule one grain down: biggest first, search hits and the
+   selection ahead of everything, and anything that will not fit is DROPPED.
+   Strictly dropped, including a hit — two names on top of each other are worth
+   less than one name and a bare ring, and the ring is still there to be
+   followed. Sorting hits first is what gets them the slots. */
+function placeTitles(queue, boxes){
+  var placed=[];
+  if(!queue.length) return placed;
+  queue.sort(function(a,b){
+    if(a.force!==b.force) return a.force?-1:1;
+    return b.rad-a.rad;
+  });
+  ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+  var W=cvs.clientWidth, H=cvs.clientHeight;
+  queue.forEach(function(q){
+    ctx.font=(q.force?"600 ":"")+"11px 'Source Sans 3',system-ui,sans-serif";
+    var t=q.nd.t.length>26?q.nd.t.slice(0,25)+"\u2026":q.nd.t;
+    var w=ctx.measureText(t).width;
+    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy+3];
+    if(box[2]<0||box[0]>W||box[3]<0||box[1]>H) return;
+    for(var i=0;i<boxes.length;i++){
+      var b=boxes[i];
+      if(box[0]<b[2]&&box[2]>b[0]&&box[1]<b[3]&&box[3]>b[1]) return;
+    }
+    boxes.push(box); placed.push(box);
+    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
+    ctx.strokeText(t,q.cx,q.cy);
+    ctx.fillStyle=q.force?"#920000":"#3A3A36";
+    ctx.fillText(t,q.cx,q.cy);
+  });
+  return placed;
 }
 
 /* ── hit testing ─────────────────────────────────────────────────────────── */
@@ -1573,7 +1763,12 @@ window.__ccrUniverseState = function(){
           // Exported so a test asserts against the SAME threshold draw() uses.
           // Hard-coding 0.20 in the harness would pass happily the day the
           // renderer's threshold moved and the search stopped clearing it.
-          nodeZoom:NODE_ZOOM, hits:searchHits.length};
+          nodeZoom:NODE_ZOOM, hits:searchHits.length,
+          // Canvas text cannot be queried from the DOM, so the placed boxes are
+          // published for the harness to check for overlap directly. Counting
+          // drawn-vs-queued alone would pass a renderer that dropped every
+          // second title at random.
+          placedBoxes:placedBoxes, titlesQueued:titlesQueued};
 };
 
 function wire(){
@@ -1635,6 +1830,23 @@ function wire(){
     if(drag && drag.kind==="node" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; showNode(drag.nd, drag.isl); }
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
     drag=null; draw();
+  });
+  /* The accelerator for the button in the panel. It follows the button rather
+   * than replacing it: a double-click is undiscoverable, is not reachable from
+   * a keyboard, and on 154 of the 159 subjects here there is nothing to open —
+   * so on its own it would be a gesture that usually appears to do nothing. */
+  cvs.addEventListener("dblclick", function(e){
+    var r=cvs.getBoundingClientRect();
+    var hit=pick(e.clientX-r.left, e.clientY-r.top);
+    if(!hit) return;
+    var d=hasWorkSurface(hit.isl);
+    if(d){ window.__ccrDiscipline(d); return; }
+    // Say so. Silence here is indistinguishable from a broken page.
+    selIsl=hit.isl; selNode=null; showIsland(hit.isl);
+    setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet \u2014 the "+
+            "grouped decision view covers "+
+            (A&&A.detail?num(Object.keys(A.detail).length):"a few")+" subjects so far.");
+    draw();
   });
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
@@ -1737,8 +1949,44 @@ function showIsland(isl){
         '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span>"+
         '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+"</div></li>";
     }).join("")+"</ul>"+
+    workSurfaceOffer(isl)+
     '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
     'beside another, then drag a course across.</p>';
+  var b=document.getElementById("u-open-work");
+  if(b) b.addEventListener("click", function(){
+    window.__ccrDiscipline(b.dataset.d);
+  });
+}
+/* Sam: "double-click on a cluster in graph view to open the work surface … could
+ * also have a button on graph view that does the same."
+ *
+ * The button leads and the double-click follows it, because the work surface
+ * exists for FIVE of the 159 subjects on this map — 593 identities of 49,907.
+ * The decision packs in ccr_atlas_data.json were built as a demo sample while
+ * the map was built over the whole corpus. A double-click that silently does
+ * nothing on 97% of the map reads as a broken page; a button can say why there
+ * is nothing to open, which is the only honest thing to render here.
+ *
+ * Building packs for all 159 is ~39 MB inline — but that is the same shape as
+ * the course descriptions, which already ship one file per discipline fetched
+ * on demand. The path is known; it just has not been walked.
+ */
+function hasWorkSurface(isl){
+  var d=isl.d.replace(" \u00b7 stand-alone","");
+  var has = A && A.detail && A.detail[d] && A.detail[d].length &&
+            typeof window.__ccrDiscipline === "function";
+  return has ? d : null;
+}
+function workSurfaceOffer(isl){
+  var d=hasWorkSurface(isl);
+  if(d) return '<p style="margin-top:.6em"><button class="btn primary" type="button" '+
+    'id="u-open-work" data-d="'+esc(d)+'">Open the work surface for '+esc(d)+'</button>'+
+    ' <span class="sub">'+num(A.detail[d].length)+' decision'+
+    (A.detail[d].length===1?"":"s")+' to work through.</span></p>';
+  return '<p class="empty" style="margin-top:.6em">No work surface for this subject yet '+
+    '\u2014 the grouped decision view is built for '+
+    (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' subjects so far, not all '+
+    num(U.counts.disciplines)+'.</p>';
 }
 function showNode(nd, isl){
   selNode=nd; selIsl=isl; memFilter="";

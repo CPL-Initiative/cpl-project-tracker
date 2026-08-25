@@ -150,7 +150,10 @@ a{color:var(--cobalt)}
 @media (max-width:900px){.stage{grid-template-columns:1fr}}
 .canvas{background:var(--surface-opaque);border:1px solid var(--border);border-radius:10px;
         position:relative;overflow:hidden}
-.canvas svg{display:block;width:100%;height:auto;touch-action:none}
+.canvas svg{display:block;width:100%;height:auto;touch-action:none;cursor:grab}
+.canvas svg:active{cursor:grabbing}
+.gbar{display:flex;gap:6px;align-items:center;padding:0 0 8px}
+.gbar .sub{margin-left:auto;color:var(--text-muted);font-size:.82rem}
 .hint{font-size:.8rem;color:var(--text-muted);padding:9px 13px;border-top:1px solid var(--border);
       background:var(--surface-subtle)}
 
@@ -180,6 +183,15 @@ a{color:var(--cobalt)}
            padding:1px 6px;cursor:pointer;color:var(--cobalt);white-space:nowrap}
 .mlist .mv:hover{background:var(--cobalt);color:#fff;border-color:var(--cobalt)}
 .mlist li.moved{border-color:var(--hunter);background:#EAF1E6}
+/* A card being dragged onto. Outline + tint, never tint alone: the cards
+   already carry state colours and one more wash of colour reads as noise. */
+#ids > li.drop-to{outline:2px solid var(--brand,#6D28D9);outline-offset:2px;
+  background:#F4F0FC}
+/* A course whose control number names several courses cannot be re-homed —
+   the CN: write key cannot say which. Dotted underline so the state survives
+   greyscale; the chip beside it carries the words. */
+.mlist li.shared .cd{text-decoration:underline dotted}
+.mlist .chip.warn{background:#FBF1D8;color:#6B4E00;border:1px solid #8B6800}
 .writes{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.75rem;
         background:var(--surface-subtle);border:1px solid var(--border);border-radius:7px;
         padding:9px 11px;overflow-x:auto;color:var(--text-body)}

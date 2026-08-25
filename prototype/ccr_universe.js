@@ -34,6 +34,7 @@ var descCache={}, descState={};      // island shard -> {cn/index: text} · shar
 var DESC_DIR="ccr_desc";
 var drag=null;               // {kind:'pan'|'island'|'course', ...}
 var searchHits=[], searchTerm="";
+var placedBoxes=[], titlesQueued=0;   // last frame's placed text, for the harness
 /* Below this zoom draw() renders NO nodes — so no search ring can appear. It is
  * a module constant because doSearch has to honour it: a search that flies to
  * "fit all the hits" picks a zoom below it whenever the hits are spread out,
@@ -249,7 +250,7 @@ function draw(){
   var k=view.k;
   var showNodes = k>NODE_ZOOM, showLabels = k>0.55, showTitles = k>1.35;
   var hitSet={}; searchHits.forEach(function(h){ hitSet[h.id]=1; });
-  var labelQueue=[];
+  var labelQueue=[], titleQueue=[];
 
   U.islands.forEach(function(isl){
     var c=w2s(isl.x+(isl.dx||0), isl.y+(isl.dy||0));
@@ -286,12 +287,14 @@ function draw(){
           ctx.beginPath(); ctx.arc(p[0],p[1],rad+7,0,6.2832);
           ctx.lineWidth=2.4; ctx.strokeStyle="#0047AB"; ctx.stroke();
         }
-        if(showTitles && nd.n>1 && rad>5){
-          ctx.font="11px 'Source Sans 3',system-ui,sans-serif";
-          ctx.fillStyle="#3A3A36"; ctx.textAlign="center";
-          var t=nd.t.length>26?nd.t.slice(0,25)+"…":nd.t;
-          ctx.fillText(t,p[0],p[1]+rad+12);
-        }
+        // Titles are QUEUED, not drawn here, for the same reason island names
+        // are: a dense island stacks dozens of them into an unreadable pile.
+        // The file already calls that "the exact failure of a global graph
+        // view" for islands — it is no less true one grain down, and it shows
+        // up the moment a search flies you into a crowded subject.
+        if(showTitles && nd.n>1 && rad>5)
+          titleQueue.push({nd:nd, cx:p[0], cy:p[1]+rad+12, rad:rad,
+                           force:(nd===selNode||hitSet[nd.i])});
       });
     }
     // Labels are COLLECTED here and placed after every island is drawn, so a
@@ -302,7 +305,11 @@ function draw(){
                      force:(isl===hoverIsl||isl===selIsl)});
   });
 
-  placeLabels(labelQueue, showLabels);
+  // Islands first: they are the navigational anchors, and a course name buried
+  // under its own subject's name helps nobody. Course titles then fill the gaps
+  // left over, and a title that cannot find one is dropped rather than stacked.
+  titlesQueued=titleQueue.length;
+  placedBoxes=placeTitles(titleQueue, placeLabels(labelQueue, showLabels));
 
   if(drag && drag.kind==="course" && drag.px!=null){
     ctx.beginPath(); ctx.arc(drag.px,drag.py,7,0,6.2832);
@@ -345,6 +352,40 @@ function placeLabels(queue, showAll){
     ctx.fillStyle=q.force?"#0047AB":"#1C1C1A";
     ctx.fillText(lab,q.cx,q.cy);
   });
+  return boxes;   // course titles are placed into the gaps these leave
+}
+
+/* Course titles, same rule one grain down: biggest first, search hits and the
+   selection ahead of everything, and anything that will not fit is DROPPED.
+   Strictly dropped, including a hit — two names on top of each other are worth
+   less than one name and a bare ring, and the ring is still there to be
+   followed. Sorting hits first is what gets them the slots. */
+function placeTitles(queue, boxes){
+  var placed=[];
+  if(!queue.length) return placed;
+  queue.sort(function(a,b){
+    if(a.force!==b.force) return a.force?-1:1;
+    return b.rad-a.rad;
+  });
+  ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+  var W=cvs.clientWidth, H=cvs.clientHeight;
+  queue.forEach(function(q){
+    ctx.font=(q.force?"600 ":"")+"11px 'Source Sans 3',system-ui,sans-serif";
+    var t=q.nd.t.length>26?q.nd.t.slice(0,25)+"\u2026":q.nd.t;
+    var w=ctx.measureText(t).width;
+    var box=[q.cx-w/2-2, q.cy-11, q.cx+w/2+2, q.cy+3];
+    if(box[2]<0||box[0]>W||box[3]<0||box[1]>H) return;
+    for(var i=0;i<boxes.length;i++){
+      var b=boxes[i];
+      if(box[0]<b[2]&&box[2]>b[0]&&box[1]<b[3]&&box[3]>b[1]) return;
+    }
+    boxes.push(box); placed.push(box);
+    ctx.lineWidth=3; ctx.strokeStyle="rgba(255,255,255,.92)";
+    ctx.strokeText(t,q.cx,q.cy);
+    ctx.fillStyle=q.force?"#920000":"#3A3A36";
+    ctx.fillText(t,q.cx,q.cy);
+  });
+  return placed;
 }
 
 /* ── hit testing ─────────────────────────────────────────────────────────── */
@@ -449,7 +490,12 @@ window.__ccrUniverseState = function(){
           // Exported so a test asserts against the SAME threshold draw() uses.
           // Hard-coding 0.20 in the harness would pass happily the day the
           // renderer's threshold moved and the search stopped clearing it.
-          nodeZoom:NODE_ZOOM, hits:searchHits.length};
+          nodeZoom:NODE_ZOOM, hits:searchHits.length,
+          // Canvas text cannot be queried from the DOM, so the placed boxes are
+          // published for the harness to check for overlap directly. Counting
+          // drawn-vs-queued alone would pass a renderer that dropped every
+          // second title at random.
+          placedBoxes:placedBoxes, titlesQueued:titlesQueued};
 };
 
 function wire(){
@@ -511,6 +557,23 @@ function wire(){
     if(drag && drag.kind==="node" && !drag.moved){ selNode=drag.nd; selIsl=drag.isl; showNode(drag.nd, drag.isl); }
     else if(drag && drag.kind==="island" && !drag.moved){ selIsl=drag.isl; selNode=null; showIsland(drag.isl); }
     drag=null; draw();
+  });
+  /* The accelerator for the button in the panel. It follows the button rather
+   * than replacing it: a double-click is undiscoverable, is not reachable from
+   * a keyboard, and on 154 of the 159 subjects here there is nothing to open —
+   * so on its own it would be a gesture that usually appears to do nothing. */
+  cvs.addEventListener("dblclick", function(e){
+    var r=cvs.getBoundingClientRect();
+    var hit=pick(e.clientX-r.left, e.clientY-r.top);
+    if(!hit) return;
+    var d=hasWorkSurface(hit.isl);
+    if(d){ window.__ccrDiscipline(d); return; }
+    // Say so. Silence here is indistinguishable from a broken page.
+    selIsl=hit.isl; selNode=null; showIsland(hit.isl);
+    setHint("No work surface for <strong>"+esc(hit.isl.d)+"</strong> yet \u2014 the "+
+            "grouped decision view covers "+
+            (A&&A.detail?num(Object.keys(A.detail).length):"a few")+" subjects so far.");
+    draw();
   });
   cvs.addEventListener("keydown", function(e){
     var step=40/view.k;
@@ -613,8 +676,44 @@ function showIsland(isl){
         '<span class="chip '+(nd.s===0?"gen":nd.s===3?"mut":"cid")+'">'+s[2]+" "+s[3]+"</span>"+
         '<div class="sub">'+esc(nd.i)+" · "+num(nd.n)+" member"+(nd.n===1?"":"s")+"</div></li>";
     }).join("")+"</ul>"+
+    workSurfaceOffer(isl)+
     '<p class="empty" style="margin-top:.5em">Drag this subject on the map to bring it '+
     'beside another, then drag a course across.</p>';
+  var b=document.getElementById("u-open-work");
+  if(b) b.addEventListener("click", function(){
+    window.__ccrDiscipline(b.dataset.d);
+  });
+}
+/* Sam: "double-click on a cluster in graph view to open the work surface … could
+ * also have a button on graph view that does the same."
+ *
+ * The button leads and the double-click follows it, because the work surface
+ * exists for FIVE of the 159 subjects on this map — 593 identities of 49,907.
+ * The decision packs in ccr_atlas_data.json were built as a demo sample while
+ * the map was built over the whole corpus. A double-click that silently does
+ * nothing on 97% of the map reads as a broken page; a button can say why there
+ * is nothing to open, which is the only honest thing to render here.
+ *
+ * Building packs for all 159 is ~39 MB inline — but that is the same shape as
+ * the course descriptions, which already ship one file per discipline fetched
+ * on demand. The path is known; it just has not been walked.
+ */
+function hasWorkSurface(isl){
+  var d=isl.d.replace(" \u00b7 stand-alone","");
+  var has = A && A.detail && A.detail[d] && A.detail[d].length &&
+            typeof window.__ccrDiscipline === "function";
+  return has ? d : null;
+}
+function workSurfaceOffer(isl){
+  var d=hasWorkSurface(isl);
+  if(d) return '<p style="margin-top:.6em"><button class="btn primary" type="button" '+
+    'id="u-open-work" data-d="'+esc(d)+'">Open the work surface for '+esc(d)+'</button>'+
+    ' <span class="sub">'+num(A.detail[d].length)+' decision'+
+    (A.detail[d].length===1?"":"s")+' to work through.</span></p>';
+  return '<p class="empty" style="margin-top:.6em">No work surface for this subject yet '+
+    '\u2014 the grouped decision view is built for '+
+    (A&&A.detail?num(Object.keys(A.detail).length):"a few")+' subjects so far, not all '+
+    num(U.counts.disciplines)+'.</p>';
 }
 function showNode(nd, isl){
   selNode=nd; selIsl=isl; memFilter="";

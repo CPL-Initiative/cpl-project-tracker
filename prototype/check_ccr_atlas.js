@@ -216,6 +216,26 @@ function serve() {
   ok("and still lands where its hits can be seen",
     many.k > nodeZoom || !/ring/i.test(many.hint));
 
+  // Flying into a dense subject stacked dozens of course names on top of each
+  // other. The file already calls that "the exact failure of a global graph
+  // view" for island names; it is no less true one grain down.
+  // Back to the crowded subject first — course names are only drawn when zoomed
+  // in, so measuring this after a wide search checks nothing at all.
+  await runSearch("english as a second language");
+  const boxes = await page.evaluate(() => window.__ccrUniverseState());
+  ok(`the crowded view draws course names at all (${boxes.titlesQueued} queued)`,
+    boxes.titlesQueued > 0);
+  let overlaps = 0;
+  for (let i = 0; i < boxes.placedBoxes.length; i++)
+    for (let j = i + 1; j < boxes.placedBoxes.length; j++) {
+      const a = boxes.placedBoxes[i], b = boxes.placedBoxes[j];
+      if (a[0] < b[2] && a[2] > b[0] && a[1] < b[3] && a[3] > b[1]) overlaps++;
+    }
+  ok(`the crowded view actually queued more titles than it could fit ` +
+     `(${boxes.titlesQueued} queued, ${boxes.placedBoxes.length} placed)`,
+    boxes.titlesQueued > boxes.placedBoxes.length);
+  ok(`and no two placed names overlap (${overlaps})`, overlaps === 0);
+
   console.log("\n══ ⚠ the cross-area move (the reason this view exists)");
   // Pick a real source (a course on an identity in one island) and a real target
   // in a DIFFERENT island, then drive the actual UI: select, press Drag…, click
