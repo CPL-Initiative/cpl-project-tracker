@@ -1352,7 +1352,19 @@
    * 870-character memory note reached the model as "When responding ".
    * tests/gr_deep_analysis.test.js pins this equal to QUERY_CAP_GR_ANALYSIS in
    * the edge function, so the two cannot drift apart silently. */
-  var GR_QUERY_BUDGET = 14000;
+  /* ⚠️ SIZED FOR THE AREA SWEEP, NOT THE ROW. Measured on the live `cpl` area:
+   * 16 rows are 12,665 raw characters, 9,291 once the tags come off, plus 1,839
+   * of artifacts — about 17,000 with the doctrine and the contract. The row lane
+   * needs 5,564. One budget serves both because they are one surface, and it is
+   * set for an area that roughly doubles: the CO priority-area list is coming
+   * and this sweep itself proposes new rows.
+   *
+   * ⚠️ THE OUTPUT BUDGET IS THE TIGHTER ONE AND IT IS NOT THIS NUMBER. cpl-chat
+   * answers with MAX_TOKENS = 2048 (~8,000 characters), which has to hold a
+   * verdict for every row. That is why the sweep contract asks for one line per
+   * row, and why a reply cut off mid-object is diagnosed as an OUTPUT problem
+   * rather than sending someone to redeploy the function. */
+  var GR_QUERY_BUDGET = 40000;
 
   function deepFetch(r, all, lane, onDelta, artifacts) {
     if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
@@ -1508,6 +1520,415 @@
         + "Every section it names needs checking against the primary source before this leaves the building.",
     }));
     host.appendChild(box);
+  }
+
+
+  /* ══ THE AREA SWEEP — the routine Sam actually asked for ═══════════════════
+   * Sam, 2026-08-25, after reading a hand-written pass over all 16 rows against
+   * the new Ed. Code Article 9: "Your sweep is the routine I want to be able to
+   * run on demand after edits."
+   *
+   * ⭐ THAT IS NOT THE PER-ROW BUTTON WIDENED. Three of the findings that pass
+   * produced are STRUCTURALLY invisible to a per-row call, and they are the
+   * three that mattered:
+   *
+   *   1. The headline — row #2 asks for something the Legislature already
+   *      enacted — cannot be seen from inside row #2. It only appears when the
+   *      row is read against a document filed at the AREA level.
+   *   2. "Weakened" is a COMPARATIVE verdict: #5 lost value BECAUSE #2 became
+   *      law. One row at a time cannot notice that, and it is also why the tied
+   *      ranks (3,3 and 5,5,5) can only be resolved across the set.
+   *   3. What the statute requires that NO row covers. A per-row routine has
+   *      nowhere to put a gap — it is not a finding about any row.
+   *
+   * So this sends the whole area at once, and asks for a diff against each row's
+   * own stored values rather than an essay.
+   *
+   * ⚠️ IT PROPOSES AND NEVER WRITES, like every other lane here.
+   */
+
+  /* ⚠️ TWO BUDGETS, AND THE OUTPUT ONE IS TIGHTER. Measured on the live `cpl`
+   * area: 16 rows are 12,665 raw characters, 9,291 after the tags come off, plus
+   * 1,839 of artifacts — about 17,000 with the doctrine and the contract, which
+   * is why QUERY_CAP_GR_ANALYSIS went to 40,000 rather than the row lane's
+   * 14,000. But cpl-chat answers with MAX_TOKENS = 2048, roughly 8,000
+   * characters, and that has to hold a verdict for EVERY row plus the gaps. So
+   * the contract below budgets the reply explicitly: one line per row, not a
+   * paragraph. A sweep that runs out of output tokens returns half a JSON
+   * object, which is a different failure from a truncated INPUT and is reported
+   * as one. */
+  var SWEEP_OUTPUT_CONTRACT = [
+    "RETURN EXACTLY ONE JSON OBJECT AND NOTHING ELSE - no preamble, no code fence.",
+    "",
+    "⚠ YOUR REPLY HAS A HARD BUDGET of about 8,000 characters and it must cover",
+    "EVERY row. Spend it on VERDICTS, not prose: one sentence per row. A reply",
+    "that runs out of room mid-object is unusable, so be terse by design.",
+    "",
+    "{",
+    '  "rows": [',
+    '    { "n": 2,',
+    '      "verdict": "rework",',
+    '      "why": "ONE sentence: what the evidence does to this row.",',
+    '      "pathway": ["g","y"],        // proposed, or null to leave alone',
+    '      "ed_first": "No",            // "Yes" | "No" | "Split" | null',
+    '      "instrument": "§55050",      // proposed, or null',
+    '      "blast_rank_suggested": 1,   // or null',
+    '      "cite": "EC §78093.2(b)(2)"  // the provision that drives it, or null',
+    "    }",
+    "  ],",
+    '  "proposals": [',
+    "    // A duty or provision in the evidence that NO existing row covers,",
+    "    // drafted as a register row so a curator can accept it as-is.",
+    '    { "title": "Evaluate prior learning for all incoming students",',
+    '      "grp": "What CPL can count for",',
+    '      "approach": "TWO sentences: what the change actually does.",',
+    '      "consideration": "ONE sentence: tailwinds, obstacles or prior art.",',
+    '      "blast_why": "ONE sentence: why it matters.",',
+    '      "pathway": ["g","y"],',
+    '      "ed_first": "No",',
+    '      "instrument": "§78093.2(b)(1)",',
+    '      "citations": ["EC §78093.2"],',
+    '      "why_missing": "ONE sentence: why no current row covers this." }',
+    "  ],",
+    '  "summary": "Two or three sentences for the whole area."',
+    "}",
+    "",
+    "Rules for the values:",
+    '- "verdict" is exactly one of: "strengthened" | "unchanged" | "rework" |',
+    '  "weakened". Use "rework" ONLY when the row now asks for something the',
+    "  evidence shows is already settled, or is otherwise wrong as written -",
+    "  that is the finding a Chancellor's Office reader would catch first.",
+    '- INCLUDE EVERY ROW, including the ones nothing happened to. A row absent',
+    "  from your list is indistinguishable from a row you did not reach.",
+    '- "proposals" are NEW ROWS for duties the evidence imposes that no existing',
+    "  row covers. AT MOST THREE, most consequential first — the reply budget has",
+    "  to hold a verdict for every row as well, and a curator works the head of a",
+    "  list, not the tail. An EMPTY list is a real answer; never invent one to",
+    "  look thorough.",
+    '- Apply the same doctrine to a proposal\'s "pathway" as to an existing row,',
+    "  and cite the provision that creates the duty in \"citations\".",
+    '- Propose a field only where you would change it. null means "leave it".',
+    '- ⚠ "cite" must be a provision you can actually point at in the material',
+    "  above. Do not cite from memory: an unfounded citation with a confident",
+    "  face on it is the one error this register cannot afford.",
+  ].join("\n");
+
+  /* Every row, compactly, with its CURRENT values so the answer is a diff. */
+  function sweepRowsBlock(rows) {
+    var L = ["EVERY ROW IN THIS AREA, with its stored values. Judge each one."];
+    (rows || []).slice().sort(function (a, b) { return (a.n || 0) - (b.n || 0); })
+      .forEach(function (r) {
+        L.push("");
+        L.push("#" + (r.n == null ? "?" : r.n) + " " + (r.title || "(untitled)")
+          + "   {" + ((r.pathway || []).join(",") || "-") + "}"
+          + " ed_first=" + (r.ed_first || "-")
+          + " instrument=" + (r.instrument || "-")
+          + " rank=" + (r.blast_rank == null ? "-" : r.blast_rank));
+        if (r.citations && r.citations.length) L.push("   cites: " + r.citations.join(", "));
+        if (r.summary) L.push("   approach: " + plainText(r.summary));
+        if (r.consideration) L.push("   considerations: " + plainText(r.consideration));
+        if (r.blast_why) L.push("   why it matters: " + plainText(r.blast_why));
+      });
+    return L.join("\n");
+  }
+
+  function sweepQuery(area, rows, artifacts, laneNotes) {
+    var areaId = area && area.id;
+    var doctrine = DOCTRINE_AREAS[areaId] ? doctrineBlock() : NEUTRAL_BLOCK;
+    var arts = (artifacts || []).filter(function (a) { return a && a.area_id === areaId; });
+    var L = [
+      "Sweep an entire Chancellor's Office regulatory priority area against the",
+      "evidence attached to it, and report what has changed for each row.",
+      "",
+      "THE AREA: " + ((area && area.title) || areaId || "(unnamed)"),
+    ];
+    if (area && area.summary) L.push(plainText(area.summary));
+    L.push("");
+    L.push(sweepRowsBlock(rows));
+    var ab = artifactBlock(arts);
+    if (ab) { L.push(""); L.push(ab); }
+    if (laneNotes && laneNotes.length) {
+      L.push("");
+      L.push("WHAT THE DETERMINISTIC PASS ALREADY FOUND (do not contradict it):");
+      laneNotes.forEach(function (n) { L.push("  - " + n); });
+    }
+    L.push(""); L.push(doctrine);
+    L.push(""); L.push(SWEEP_OUTPUT_CONTRACT);
+    return L.join("\n");
+  }
+
+  var VERDICTS = { strengthened: 1, unchanged: 1, rework: 1, weakened: 1 };
+
+  /* ⚠️ TWO TRUNCATIONS, TWO DIAGNOSES. A reply with no "{" at all did not get the
+   * contract — that is an INPUT problem (an undeployed surface takes the
+   * 1,000-char chat cap and eats the contract at the end of the envelope). A
+   * reply that STARTS a JSON object and never closes it ran out of OUTPUT
+   * tokens, which is a different fix: fewer rows, or a terser contract. Saying
+   * "deploy the function" to someone whose real problem is MAX_TOKENS sends them
+   * a long way in the wrong direction. */
+  function parseSweep(txt) {
+    var s = String(txt || "").trim().replace(/^```(?:json)?\s*/i, "").replace(/\s*```$/, "").trim();
+    var a = s.indexOf("{");
+    if (a < 0) throw new Error("the sweep did not come back as JSON");
+    /* ⚠️ lastIndexOf("}") IS NOT THE END OF THE OBJECT. A reply cut off partway
+     * through the rows array still contains the closing brace of the LAST
+     * COMPLETE row, so slicing to it yields `{"rows":[{…}}` — invalid, and it
+     * throws a raw SyntaxError instead of the diagnosis below. Measure BALANCE
+     * instead: if the depth never returns to zero, the reply was truncated.
+     * (Found by the test asserting the truncation message, which never fired.) */
+    var depth = 0, end = -1;
+    for (var i = a; i < s.length; i++) {
+      var ch = s.charAt(i);
+      if (ch === "{") depth++;
+      else if (ch === "}") { depth--; if (depth === 0) { end = i; break; } }
+    }
+    if (end < 0) {
+      throw new Error("the sweep was cut off mid-answer — it began a JSON object and never "
+        + "finished it. That is the REPLY budget (about 8,000 characters), not the request: "
+        + "this area has more rows than one pass can report on, or the model wrote at length "
+        + "where the contract asks for one line per row. Re-run it, or split the area.");
+    }
+    var o = JSON.parse(s.slice(a, end + 1));
+    if (!o || typeof o !== "object" || Array.isArray(o)) throw new Error("the sweep was not a JSON object");
+    function str(v) { return typeof v === "string" && v.trim() ? v.trim() : null; }
+    var rows = (Array.isArray(o.rows) ? o.rows : []).filter(function (r) {
+      return r && typeof r === "object" && typeof r.n === "number";
+    }).map(function (r) {
+      return {
+        n: r.n,
+        verdict: VERDICTS[String(r.verdict || "").toLowerCase()] ? String(r.verdict).toLowerCase() : null,
+        why: str(r.why),
+        pathway: Array.isArray(r.pathway)
+          ? r.pathway.filter(function (p) { return p === "g" || p === "y" || p === "r"; }) : null,
+        ed_first: ["Yes", "No", "Split"].indexOf(str(r.ed_first)) >= 0 ? str(r.ed_first) : null,
+        instrument: str(r.instrument),
+        blast_rank_suggested: typeof r.blast_rank_suggested === "number"
+          && isFinite(r.blast_rank_suggested) ? Math.round(r.blast_rank_suggested) : null,
+        cite: str(r.cite),
+      };
+    });
+    return {
+      rows: rows,
+      /* ⚠️ A PROPOSAL IS A DRAFT ROW, NOT A ROW. It is normalized into exactly
+       * the record newRevisionForm() builds, so accepting one takes the SAME
+       * insert path a curator typing it by hand would take — but nothing is
+       * inserted until the curator presses Add, and what lands is stamped
+       * status "proposed" with citations_derived true, so it renders "from
+       * text" until a human edits it. A machine-drafted priority presented as
+       * curated fact is the credibility failure this register exists to avoid.
+       *
+       * ⚠️ TITLE IS REQUIRED AND EVERYTHING ELSE IS OPTIONAL. A proposal with no
+       * title cannot be rendered, accepted or argued with, so it is dropped
+       * rather than shown as a blank card. */
+      proposals: (Array.isArray(o.proposals) ? o.proposals : []).filter(function (g) {
+        return g && typeof g === "object" && str(g.title);
+      }).slice(0, 3).map(function (g) {
+        return {
+          title: str(g.title), grp: str(g.grp),
+          approach: str(g.approach), consideration: str(g.consideration),
+          blast_why: str(g.blast_why),
+          pathway: Array.isArray(g.pathway)
+            ? g.pathway.filter(function (p) { return p === "g" || p === "y" || p === "r"; }) : [],
+          ed_first: ["Yes", "No", "Split"].indexOf(str(g.ed_first)) >= 0 ? str(g.ed_first) : null,
+          instrument: str(g.instrument),
+          /* ⚠️ RUN THE MODEL'S CITATIONS THROUGH parseCites, NEVER STORE THEM RAW.
+           * It is the same gate a typist goes through, and it is what stops a
+           * confidently-formatted section number no code band claims from being
+           * filed under the nearest plausible code. Rejects are carried so the
+           * card can SHOW them rather than dropping them silently. */
+          citations: (function () {
+            var parsed = parseCites((Array.isArray(g.citations) ? g.citations : []).join(", "));
+            return { ok: parsed.ok, bad: parsed.bad };
+          })(),
+          why_missing: str(g.why_missing),
+        };
+      }),
+      summary: str(o.summary),
+    };
+  }
+
+  function sweepFetch(area, rows, artifacts, laneNotes) {
+    if (typeof fetch !== "function") return Promise.reject(new Error("no fetch"));
+    var q = sweepQuery(area, rows, artifacts, laneNotes);
+    if (q.length > GR_QUERY_BUDGET) {
+      return Promise.reject(new Error(
+        "This area is too large to sweep in one pass (" + q.length + " characters against a "
+        + GR_QUERY_BUDGET + "-character budget). Sending it anyway would silently drop the "
+        + "instructions at the end and analyze the wrong thing."));
+    }
+    var headers = {
+      "Content-Type": "application/json",
+      apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
+    };
+    return fetch(SUPABASE_URL + "/functions/v1/cpl-chat", {
+      method: "POST", headers: headers,
+      body: JSON.stringify({
+        query: q,
+        // Search text is not sent text: the area's own subject, not the contract.
+        retrieval_query: [(area && area.title) || "", plainText((area && area.summary) || "")]
+          .join(" ").trim().slice(0, 900),
+        session_id: "cobi-gr-sweep", surface: GR_ANALYSIS_SURFACE,
+      }),
+    }).then(function (resp) {
+      if (!resp || !resp.ok) throw new Error("sweep HTTP " + (resp && resp.status));
+      if (resp.body && resp.body.getReader) return drainSse(resp.body.getReader(), null);
+      if (typeof resp.text === "function") return resp.text();
+      return "";
+    }).then(function (full) {
+      if (!full || !String(full).trim()) throw new Error("the sweep came back empty");
+      try {
+        return parseSweep(full);
+      } catch (e) {
+        if (/cut off mid-answer/.test(e.message)) throw e;   // already diagnosed
+        throw new Error(e.message
+          + ". If this says the reply was not JSON, the likeliest cause is that the cpl-chat "
+          + "Edge Function has not been deployed with the “gr-analysis” surface — "
+          + "an unknown surface silently takes the 1,000-character chat limit, which cuts off "
+          + "the instructions at the end of this request. Dispatch cpl-chat-deploy.yml.");
+      }
+    });
+  }
+
+  var VERDICT_LABEL = {
+    strengthened: "STRONGER", unchanged: "NO CHANGE",
+    rework: "REWORK", weakened: "WEAKER",
+  };
+
+  /* Render the sweep. ⚠️ REWORK ROWS FIRST, then weakened, then strengthened,
+   * then unchanged — a sweep's value is concentrated in the rows that are now
+   * WRONG, and burying them under fourteen "no change" lines is how a curator
+   * stops reading. */
+  var VERDICT_ORDER = { rework: 0, weakened: 1, strengthened: 2, unchanged: 3 };
+
+  function renderSweep(host, area, rows, res, handlers) {
+    host.innerHTML = "";
+    var box = el("div", { class: "gx-analysis gx-deep" });
+    box.appendChild(el("h5", { text: "Sweep — " + ((area && area.title) || "this area") }));
+    if (res.summary) {
+      var sm = el("div", { class: "gx-fnd note gx-why" });
+      sm.appendChild(el("span", { class: "gx-fnd-k", text: "SUMMARY" }));
+      sm.appendChild(el("span", { class: "gx-fnd-t", text: res.summary }));
+      box.appendChild(sm);
+    }
+
+    /* ⚠️ A ROW THE SWEEP DID NOT REACH IS NOT A ROW THAT IS FINE. The contract
+     * demands every row, so a missing one is reported as missing rather than
+     * silently reading as "unchanged" — the same reason a capped list must never
+     * render as a census. */
+    var seen = {};
+    res.rows.forEach(function (v) { seen[v.n] = 1; });
+    var missing = (rows || []).filter(function (r) { return r.n != null && !seen[r.n]; })
+                              .map(function (r) { return "#" + r.n; });
+
+    var byN = {};
+    (rows || []).forEach(function (r) { byN[r.n] = r; });
+    res.rows.slice().sort(function (a, b) {
+      var d = (VERDICT_ORDER[a.verdict] == null ? 9 : VERDICT_ORDER[a.verdict])
+            - (VERDICT_ORDER[b.verdict] == null ? 9 : VERDICT_ORDER[b.verdict]);
+      return d !== 0 ? d : (a.n || 0) - (b.n || 0);
+    }).forEach(function (v) {
+      var row = byN[v.n] || {};
+      var d = el("div", { class: "gx-fnd " + (v.verdict === "rework" ? "warn" : "note") });
+      d.appendChild(el("span", { class: "gx-fnd-k", text: VERDICT_LABEL[v.verdict] || "?" }));
+      var t = el("span", { class: "gx-fnd-t" });
+      t.appendChild(el("b", { text: "#" + v.n + " " + (row.title || "") }));
+      if (v.why) t.appendChild(el("span", { text: " — " + v.why }));
+      if (v.cite) t.appendChild(el("span", { class: "gx-cite", text: "  [" + v.cite + "]" }));
+      // Only offer a change where one is actually proposed AND differs.
+      var patch = {}, bits = [];
+      if (v.pathway && v.pathway.length && v.pathway.join(",") !== (row.pathway || []).join(",")) {
+        patch.pathway = v.pathway; bits.push("pathway → " + v.pathway.join("+"));
+      }
+      if (v.ed_first && v.ed_first !== row.ed_first) { patch.ed_first = v.ed_first; bits.push("Ed. Code first → " + v.ed_first); }
+      if (v.instrument && v.instrument !== row.instrument) { patch.instrument = v.instrument; bits.push("instrument → " + v.instrument); }
+      if (v.blast_rank_suggested != null && v.blast_rank_suggested !== row.blast_rank) {
+        patch.blast_rank = v.blast_rank_suggested; bits.push("rank → " + v.blast_rank_suggested);
+      }
+      if (bits.length) {
+        t.appendChild(el("div", { class: "gx-sub", text: "Proposed: " + bits.join(" · ") }));
+      }
+      d.appendChild(t);
+      if (bits.length && handlers && handlers.onApply) {
+        var b = el("button", { class: "gx-chip", type: "button", text: "Apply" });
+        b.addEventListener("click", function () { b.disabled = true; handlers.onApply(row, patch, b); });
+        d.appendChild(b);
+      }
+      box.appendChild(d);
+    });
+
+    if (missing.length) {
+      var m = el("div", { class: "gx-fnd warn" });
+      m.appendChild(el("span", { class: "gx-fnd-k", text: "CHECK" }));
+      m.appendChild(el("span", { class: "gx-fnd-t",
+        text: "The sweep returned no verdict for " + missing.join(", ")
+          + ". That is not the same as “nothing changed” — those rows were not reached, "
+          + "so read them yourself or run the sweep again." }));
+      box.appendChild(m);
+    }
+
+    /* ⭐ PROPOSED NEW PRIORITIES (Sam, 2026-08-25: "Can you add to the routine the
+     * ability to add new priorities as proposed?"). A gap in the register is not
+     * a finding about any row — it is a row that does not exist yet — so it gets
+     * its own section and its own verb.
+     *
+     * ⚠️ EACH ONE IS A DRAFT UNTIL A CURATOR PRESSES ADD, and what lands is
+     * stamped status "proposed" with citations_derived true, so it renders "from
+     * text" until a human edits it. */
+    if (res.proposals.length) {
+      box.appendChild(el("h5", { class: "gx-sub2", text: "Proposed new priorities" }));
+      box.appendChild(el("p", { class: "gx-note",
+        text: "Duties in the attached evidence that no current row covers. Nothing is added "
+            + "until you press Add, and anything added arrives as a PROPOSED row with its "
+            + "codes marked “from text” until you edit it." }));
+      res.proposals.forEach(function (p) {
+        var d = el("div", { class: "gx-fnd note" });
+        d.appendChild(el("span", { class: "gx-fnd-k", text: "NEW" }));
+        var t = el("span", { class: "gx-fnd-t" });
+        t.appendChild(el("b", { text: p.title }));
+        if (p.why_missing) t.appendChild(el("div", { class: "gx-sub", text: p.why_missing }));
+        if (p.approach) t.appendChild(el("div", { text: p.approach }));
+        var meta = [];
+        if (p.pathway.length) meta.push(p.pathway.join("+"));
+        if (p.ed_first) meta.push("Ed. Code first: " + p.ed_first);
+        if (p.instrument) meta.push(p.instrument);
+        if (p.citations.ok.length) meta.push(p.citations.ok.join(", "));
+        if (meta.length) t.appendChild(el("div", { class: "gx-sub", text: meta.join("  ·  ") }));
+        // ⚠️ Rejected codes are SHOWN, not swallowed — the same courtesy the
+        // editor gives a typist, and the signal that the model made one up.
+        if (p.citations.bad.length) {
+          t.appendChild(el("div", { class: "gx-sub",
+            text: "Not added — no code band claims " + p.citations.bad.join(", ")
+                + ". Write the code out when you edit this row." }));
+        }
+        d.appendChild(t);
+        if (handlers && handlers.onAdd) {
+          var b = el("button", { class: "gx-chip", type: "button", text: "Add as proposed" });
+          b.addEventListener("click", function () { b.disabled = true; handlers.onAdd(p, b); });
+          d.appendChild(b);
+        }
+        box.appendChild(d);
+      });
+    }
+
+    box.appendChild(el("p", { class: "gx-note",
+      text: "This reading came from a language model that cannot open leginfo or Cornell. "
+        + "Every section it names needs checking against the primary source before this leaves the building." }));
+    host.appendChild(box);
+  }
+
+  /* Turn an accepted proposal into the record newRevisionForm() would build.
+   * ⚠️ SAME SHAPE, SAME INSERT PATH — a second record shape is a second thing to
+   * keep in step with the schema. */
+  function proposalRecord(areaId, nextN, p) {
+    return {
+      area_id: areaId, n: nextN, title: p.title, grp: p.grp || null,
+      summary: p.approach || null, consideration: p.consideration || null,
+      blast_why: p.blast_why || null, instrument: p.instrument || null,
+      pathway: p.pathway.length ? p.pathway : ["g"],
+      citations: p.citations.ok, citations_derived: true,
+      ed_first: p.ed_first || null, status: "proposed",
+      created_by: whoami(), updated_by: whoami(),
+    };
   }
 
   // ── add-forms (reviewer only) ───────────────────────────────────────────────
@@ -1719,7 +2140,65 @@
     } else {
       bar.appendChild(el("span", { class: "gx-note", text: "Sign in to add areas, revisions or artifacts." }));
     }
+    /* ⭐ THE AREA SWEEP LIVES ON THE AREA, NOT ON A ROW — because the findings it
+     * produces belong to the area: a row that now asks for settled law, a row
+     * weakened BY another row, and a duty no row covers at all. None of those
+     * has a row to hang off. */
+    if (canWrite()) {
+      var sweepBtn = el("button", { class: "gx-btn ghost", type: "button", text: "Sweep this area" });
+      sweepBtn.title = "Read every row in this area against the artifacts attached to it, and "
+        + "report what changed — including duties no row covers yet. Proposes only.";
+      bar.appendChild(sweepBtn);
+      var sweepHost = el("div");
+      sweepBtn.addEventListener("click", function () {
+        sweepBtn.disabled = true;
+        sweepHost.innerHTML = "";
+        sweepHost.appendChild(el("p", { class: "gx-note",
+          text: "Reading " + state.revisions.length + " rows against this area's evidence\u2026" }));
+        var area = null;
+        (state.areas || []).forEach(function (a) { if (a.id === state.areaId) area = a; });
+        // Lane A first: hand the model what is already established deterministically.
+        var notes = [];
+        state.revisions.forEach(function (r) {
+          var a = analyzeRevision(r, state.revisions, areaTitleMap());
+          laneASummary(a).findings.forEach(function (f) { notes.push("#" + r.n + ": " + f); });
+        });
+        sweepFetch(area, state.revisions, state.artifacts, notes).then(function (res) {
+          renderSweep(sweepHost, area, state.revisions, res, {
+            onApply: function (row, patch, btn) {
+              var rec = {};
+              for (var k in patch) if (Object.prototype.hasOwnProperty.call(patch, k)) rec[k] = patch[k];
+              rec.updated_by = whoami(); rec.updated_at = new Date().toISOString();
+              patchRevision(row.id, rec).then(function () {
+                for (var k2 in patch) if (Object.prototype.hasOwnProperty.call(patch, k2)) row[k2] = patch[k2];
+                btn.textContent = "applied";
+              }).catch(function (e) { btn.disabled = false; btn.textContent = e.message; });
+            },
+            onAdd: function (proposal, btn) {
+              /* ⚠️ NUMBER FROM THE LIVE LIST, and refuse if that list is a failed
+               * read. `state.failed.revisions` means the rows collapsed to [],
+               * which would number a new priority #1 and bury it at the top of
+               * someone's regulatory agenda. */
+              if (state.failed && state.failed.revisions) {
+                btn.disabled = false;
+                btn.textContent = "can't add — the row list failed to load";
+                return;
+              }
+              var nextN = state.revisions.reduce(function (m, r) {
+                return Math.max(m, r.n || 0); }, 0) + 1;
+              post("gr_revisions", proposalRecord(state.areaId, nextN, proposal))
+                .then(function () { btn.textContent = "added as #" + nextN + " (proposed)"; load(root); })
+                .catch(function (e) { btn.disabled = false; btn.textContent = e.message; });
+            },
+          });
+        }).catch(function (e) {
+          sweepHost.innerHTML = "";
+          sweepHost.appendChild(el("p", { class: "gx-err", text: e.message }));
+        }).then(function () { sweepBtn.disabled = false; });
+      });
+    }
     wrap.appendChild(bar);
+    if (typeof sweepHost !== "undefined" && sweepHost) wrap.appendChild(sweepHost);
     var areaFormHost = el("div");
     wrap.appendChild(areaFormHost);
     if (addAreaBtn) {
@@ -2172,6 +2651,11 @@
     _doctrineAreas: DOCTRINE_AREAS,
     _GR_ANALYSIS_SURFACE: GR_ANALYSIS_SURFACE,
     _GR_QUERY_BUDGET: GR_QUERY_BUDGET,
+    _sweepQuery: sweepQuery,
+    _parseSweep: parseSweep,
+    _sweepFetch: sweepFetch,
+    _renderSweep: renderSweep,
+    _proposalRecord: proposalRecord,
     _editRevisionForm: editRevisionForm,
     _state: state
   };
