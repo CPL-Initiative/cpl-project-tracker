@@ -124,15 +124,15 @@ function serve() {
 
   console.log("\n══ keyword zoom");
   const z0 = await page.evaluate(() => window.__ccrUniverseState().view.k);
-  await page.fill("#u-q", "welding");
-  await page.locator("#u-find").click();
+  await page.fill("#gq", "welding");
+  await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(400);
   const z1 = await page.evaluate(() => window.__ccrUniverseState().view.k);
   ok(`search zooms in (${z0.toFixed(3)} -> ${z1.toFixed(3)})`, z1 > z0);
   ok("and reports where the matches are",
     /match/i.test(await page.locator("#u-hint").textContent()));
-  await page.fill("#u-q", "zzzznotathing");
-  await page.locator("#u-find").click();
+  await page.fill("#gq", "zzzznotathing");
+  await page.locator("#msearch button[type=submit]").click();
   await page.waitForTimeout(300);
   ok("a miss says so rather than flying somewhere arbitrary",
     /Nothing matches/i.test(await page.locator("#u-hint").textContent()));
@@ -173,9 +173,18 @@ function serve() {
   const nodeZoom = await page.evaluate(() => window.__ccrUniverseState().nodeZoom);
   ok(`the renderer's node threshold is exported (${nodeZoom})`, nodeZoom > 0);
 
+  // Sam, in a browser: "we have two different keyword searches on the tab,
+  // which should be consolidated to one." Two fields that behave differently
+  // is a question about which one you are meant to use.
+  const fields = await page.locator("input[type=search]").count();
+  ok(`the map screen carries exactly one search field (${fields})`, fields === 1);
+
+  // Drive the HEADER box — there is only one search field on the page now, and
+  // a test that still typed into a map-local one would keep passing after the
+  // header stopped reaching the map.
   const runSearch = async (term) => {
-    await page.fill("#u-q", term);
-    await page.locator("#u-find").click();
+    await page.fill("#gq", term);
+    await page.locator("#msearch button[type=submit]").click();
     await page.waitForTimeout(420);
     const st = await page.evaluate(() => window.__ccrUniverseState());
     return { k: st.view.k, hits: st.hits, hint: await page.locator("#u-hint").textContent() };

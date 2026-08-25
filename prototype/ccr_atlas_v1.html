@@ -265,7 +265,15 @@ document.getElementById("prov").textContent =
   DATA.totals.identities_inbrowser.toLocaleString("en-US") + " identities.";
 document.getElementById("msearch").addEventListener("submit", function(ev){
   ev.preventDefault();
-  search(document.getElementById("gq").value);
+  var term = document.getElementById("gq").value;
+  // One search box, two behaviours, chosen by what is on screen: with the map
+  // open it flies and rings; anywhere else it lists results. The canvas being
+  // in the DOM is the test rather than a flag we keep in step by hand — every
+  // other view replaces #view wholesale, so it cannot go stale.
+  if (document.getElementById("u-cvs") && typeof window.__ccrUniverseSearch === "function")
+    window.__ccrUniverseSearch(term);
+  else
+    search(term);
 });
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){

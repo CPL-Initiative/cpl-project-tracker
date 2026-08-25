@@ -378,8 +378,10 @@ window.__ccrUniverse = function(){
     'next to another, then drag a course between them — that is how a course filed under '+
     'the wrong subject gets moved to its real parent.</p>'+
     '<div class="u-bar">'+
-      '<input type="search" id="u-q" placeholder="Find a course or subject — e.g. welding, phlebotomy, MATH">'+
-      '<button class="btn" type="button" id="u-find">Find</button>'+
+      // No search box here. The page header already carries one, and two search
+      // fields on one screen that behave differently is a question about which
+      // one you are supposed to use — Sam hit exactly that. The header box
+      // drives this map whenever the map is open; see __ccrUniverseSearch.
       '<button class="btn" type="button" id="u-out">−</button>'+
       '<button class="btn" type="button" id="u-in">+</button>'+
       '<button class="btn" type="button" id="u-reset">Reset view</button>'+
@@ -387,7 +389,8 @@ window.__ccrUniverse = function(){
     '</div>'+
     '<div class="u-wrap"><canvas id="u-cvs" tabindex="0" role="img" aria-label="'+
       'A map of every course identity, grouped into one island per subject area. '+
-      'Use the search box to jump to a subject; the panel below lists what you select."></canvas>'+
+      'Use the search box at the top of the page to jump to a subject; the panel '+
+      'below lists what you select."></canvas>'+
       '<div class="u-hint" id="u-hint">Drag the background to pan · scroll to zoom · '+
       'drag a subject to move it · click a course to open it</div></div>'+
     '<div class="stage" style="margin-top:14px">'+
@@ -428,6 +431,9 @@ function flyTo(x,y,k){
   view.k=Math.max(0.03,Math.min(9,k)); view.x=-x; view.y=-y; draw();
 }
 window.__ccrUniverseFly = flyTo;
+/* The header's search box calls this when the map is on screen, so one field
+ * serves both the map and the text views instead of the page carrying two. */
+window.__ccrUniverseSearch = doSearch;
 window.__ccrUniverseState = function(){
   // `sel` is here so a test that clicks the canvas can assert which identity it
   // actually landed on — a click check with no such assertion passes happily
@@ -456,10 +462,6 @@ function wire(){
   document.getElementById("u-in").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1.4); };
   document.getElementById("u-out").onclick=function(){ zoomAt(cvs.clientWidth/2,cvs.clientHeight/2,1/1.4); };
   document.getElementById("u-reset").onclick=function(){ searchHits=[]; resetView(); draw(); };
-  document.getElementById("u-find").onclick=doSearch;
-  document.getElementById("u-q").addEventListener("keydown",function(e){
-    if(e.key==="Enter"){ e.preventDefault(); doSearch(); }
-  });
 
   cvs.addEventListener("pointerdown", function(e){
     var r=cvs.getBoundingClientRect(), px=e.clientX-r.left, py=e.clientY-r.top;
@@ -523,8 +525,8 @@ function wire(){
 function setHint(t){ var el=document.getElementById("u-hint"); if(el) el.innerHTML=t; }
 
 /* ── keyword zoom ────────────────────────────────────────────────────────── */
-function doSearch(){
-  var term=(document.getElementById("u-q").value||"").trim().toLowerCase();
+function doSearch(raw){
+  var term=String(raw==null?"":raw).trim().toLowerCase();
   searchTerm=term; searchHits=[];
   if(term.length<2){ setHint("Type at least two characters."); draw(); return; }
   U.islands.forEach(function(I){
