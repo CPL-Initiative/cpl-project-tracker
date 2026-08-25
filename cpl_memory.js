@@ -145,8 +145,11 @@
   function normalizeRow(d) {
     var r = {};
     for (var k in d) r[k] = d[k];
-    r._uuid = d.id != null ? d.id : (d.slug || null);   // the uuid (audit key)
-    r.id = d.slug || d.id;                                // DISPLAY handle (the human slug)
+    // The PRIMARY KEY, and the only key a write may be addressed to. It is a
+    // uuid, so it must never fall back to a slug: `cpl_memory_log.memory_id`
+    // is a uuid FK, and a slug sent as `id=eq.` is a 400.
+    r._uuid = d.id != null ? d.id : null;                 // the uuid (write + audit key)
+    r.id = d.slug || d.id;                                // DISPLAY handle (the human slug, else the uuid)
     r.tags = Array.isArray(d.tags) ? d.tags : [];
     r.affects = Array.isArray(d.affects) ? d.affects : [];
     r.related = Array.isArray(d.related) ? d.related : [];
@@ -320,13 +323,49 @@
     var TP = tp();
     sess = magicLinkSession() || ((TP && TP.session) ? TP.session() : null);
   }
+  // WHATEVER THE MESSAGE ASKS FOR IS RENDERED BESIDE IT. The banner told Sam to
+  // "re-unlock" while renderAuth rendered the unlock row only when there was NO
+  // session — so a signed-in curator read an instruction and found no control
+  // anywhere on the page to carry it out (2026-08-25). Same shape as
+  // methodology-hiding-a-control-also-hides-the-way-in: naming a remedy you do
+  // not offer is worse than naming none.
+  function buildWriteErr() {
+    var box = el("div", "mem-writeerr");
+    box.appendChild(el("span", "mem-writeerr-txt", "⚠ " + writeErrMsg));
+    var acts = el("span", "mem-writeerr-acts");
+    if (sess && sess.access_token) {
+      // A magic-link session: the remedy is the keeper, not the phrase. This
+      // renews the token in place when it can, and reports honestly when the
+      // session is genuinely over instead of leaving the page insisting you
+      // are signed in while every write 401s.
+      var re = el("button", "mem-errbtn", "Check sign-in"); re.type = "button";
+      re.title = "Renew this browser's reviewer session and re-read the table";
+      re.onclick = function () {
+        re.disabled = true; re.textContent = "Checking…";
+        var K = window.CPL_SESSION;
+        var pr = (K && K.ensureFresh) ? K.ensureFresh() : Promise.resolve(null);
+        pr.then(function (fresh) {
+          writeErrMsg = fresh ? null : "your sign-in has ended — open the magic link again to curate";
+          refresh();
+        });
+      };
+      acts.appendChild(re);
+    } else if (!sess) {
+      // No session at all — the unlock row below is the control, and it is
+      // already rendered by the branch that follows.
+    }
+    var dis = el("button", "mem-errbtn", "Dismiss"); dis.type = "button";
+    dis.title = "Clear this message";
+    dis.onclick = function () { writeErrMsg = null; render(); };
+    acts.appendChild(dis);
+    box.appendChild(acts);
+    return box;
+  }
   function renderAuth() {
     if (!authBar) return;
     clear(authBar);
     refreshSession();
-    if (writeErrMsg) {
-      authBar.appendChild(el("span", "mem-writeerr", "⚠ " + writeErrMsg));
-    }
+    if (writeErrMsg) authBar.appendChild(buildWriteErr());
     if (sess) {
       // Name the person AND the credential. "Signed in" alone is what let a
       // reviewer and a phrase-holder look identical while only one of them
@@ -338,10 +377,18 @@
       authBar.appendChild(el("span", "mem-authok",
         "🔓 Curate mode — " + (who ? who + ", " : "") + "signed in by " + how
         + " · your edits write to cpl_memory"));
+      // A PHRASE session whose write was refused needs the unlock row too. It
+      // used to be gated on having NO session at all, which is exactly the
+      // state a rotated phrase is not in: the phrase is still stored, still
+      // sent, and no longer accepted.
+      if (writeErrMsg && !sess.access_token) appendUnlockRow();
       return;
     }
     // No session — offer the shared unlock UI. If we have zero rows this is also the
     // team-gated empty state; either way, unlocking re-fetches.
+    appendUnlockRow();
+  }
+  function appendUnlockRow() {
     var TP = tp();
     if (TP && TP.unlockRow) {
       authBar.appendChild(TP.unlockRow({
@@ -464,7 +511,8 @@
       if (d.affects && d.affects.length) { var rb = el("span", "mi-ripple", "⟿ " + d.affects.length); rb.title = d.affects.length + " downstream targets"; right.appendChild(rb); }
       if (sess) {
         var cur = el("button", "mi-curate", "✎ " + d.status); cur.type = "button";
-        cur.title = "Cycle status: verified → stale → proposed (writes to cpl_memory + logs the change)";
+        var nextSt = ({ verified: "stale", stale: "proposed", proposed: "verified" })[d.status] || "verified";
+        cur.title = "Set to " + nextSt + " — currently " + d.status + ". Cycles verified → stale → proposed, writes to cpl_memory and logs the change.";
         cur.setAttribute("aria-label", "Cycle review status for " + d.id + " (currently " + d.status + ")");
         cur.onclick = function (e) { e.stopPropagation(); cycleStatus(d); };
         right.appendChild(cur);
@@ -572,21 +620,85 @@
 
     if (d.source) { var src = el("div", "rp-src"); src.innerHTML = "source: <span class=\"rp-srclink\">" + esc(d.source) + " ↗</span>"; box.appendChild(src); }
 
-    if (sess && d.status !== "superseded") {
+    // The tools render for a SUPERSEDED row too, restricted to Restore + Delete.
+    // Marking a row inactive drops it out of every list (matchesEntry hides
+    // superseded unconditionally), so without this the reader's own undo lives
+    // on a pane they can no longer reach — an action with no way back.
+    if (sess) {
+      var inactive = d.status === "superseded";
       var tools = el("div", "rp-tools");
-      var edit = el("button", "rp-toolbtn", "✎ Edit in place"); edit.type = "button";
-      var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
       var toolHost = el("div", "rp-toolhost");
-      edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
-      // Sam, 2026-08-24: a briefing citation should land on the row READY TO
-      // EDIT, not merely selected. The intent is a flag rather than a call from
-      // the click handler because the form lives inside this render — the click
-      // happens one render earlier, when these elements do not exist yet.
-      if (pendingEdit === d.id) { pendingEdit = null; edit.onclick(); }
-      revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
-      tools.appendChild(edit); tools.appendChild(revise);
+      if (!inactive) {
+        var edit = el("button", "rp-toolbtn", "✎ Edit in place"); edit.type = "button";
+        var revise = el("button", "rp-toolbtn", "⎘ Revise (new version)"); revise.type = "button";
+        edit.onclick = function () { clear(toolHost); buildEntryForm(toolHost, d, function () { clear(toolHost); }); };
+        // Sam, 2026-08-24: a briefing citation should land on the row READY TO
+        // EDIT, not merely selected. The intent is a flag rather than a call from
+        // the click handler because the form lives inside this render — the click
+        // happens one render earlier, when these elements do not exist yet.
+        if (pendingEdit === d.id) { pendingEdit = null; edit.onclick(); }
+        revise.onclick = function () { clear(toolHost); confirmRevise(toolHost, d); };
+        tools.appendChild(edit); tools.appendChild(revise);
+
+        var inact = el("button", "rp-toolbtn", "⊘ Mark inactive"); inact.type = "button";
+        inact.title = "Sets this entry to superseded — the house rule is supersede, don’t delete. It leaves every list and Sierra never sees it, but the row and its history stay in the table and you can restore it from here.";
+        inact.onclick = function () { clear(toolHost); confirmInactive(toolHost, d); };
+        tools.appendChild(inact);
+      } else {
+        var chain = d.superseded_by && byId[d.superseded_by];
+        if (chain) {
+          // Superseded BY a revision — restoring would leave two live rows
+          // claiming the same thing. The version chain above is the way back.
+          tools.appendChild(el("span", "rp-toolnote", "Inactive — replaced by " + d.superseded_by + ". Use the version chain above."));
+        } else {
+          var back = el("button", "rp-toolbtn", "↺ Restore"); back.type = "button";
+          back.title = "Returns this entry to proposed so it appears in the lists again";
+          back.onclick = function () { setStatus(d, "proposed"); };
+          tools.appendChild(back);
+        }
+      }
+      var del = el("button", "rp-toolbtn rp-toolbtn-danger", "🗑 Delete"); del.type = "button";
+      del.title = "Removes the row permanently. Reviewer sign-in only.";
+      del.onclick = function () { clear(toolHost); confirmDelete(toolHost, d); };
+      tools.appendChild(del);
       box.appendChild(tools); box.appendChild(toolHost);
     }
+  }
+  function confirmInactive(host, d) {
+    var box = el("div", "mem-form");
+    box.appendChild(el("div", "mem-form-h", "Mark " + d.id + " inactive"));
+    box.appendChild(el("p", "mem-form-note", "Sets the status to superseded. The entry drops out of every list and out of what the team reads back — nothing is deleted, the history stays, and Restore brings it back from this pane."));
+    var actions = el("div", "mem-form-actions");
+    var go = el("button", "mem-btn mem-btn-primary", "Mark inactive"); go.type = "button";
+    var cancel = el("button", "mem-btn", "Cancel"); cancel.type = "button"; cancel.onclick = function () { clear(host); };
+    go.onclick = function () { go.disabled = true; setStatus(d, "superseded").then(function () { clear(host); }); };
+    actions.appendChild(go); actions.appendChild(cancel);
+    box.appendChild(actions); host.appendChild(box);
+  }
+  function confirmDelete(host, d) {
+    var box = el("div", "mem-form");
+    box.appendChild(el("div", "mem-form-h", "Delete " + d.id + " permanently"));
+    box.appendChild(el("p", "mem-form-note", "This cannot be undone. “Mark inactive” does what most people want — it hides the entry everywhere while keeping the row. Delete only when the entry should never have existed."));
+    // NAME WHAT ELSE POINTS AT IT. A delete that silently strands references is
+    // the merge_into_orphan failure one table over: the pointers survive, the
+    // thing they name does not, and nothing says so until something reads them.
+    var refs = (referencedBy[d.id] || []).filter(function (r) { return byId[r]; });
+    var chain = DATA.filter(function (x) { return x.superseded_by === d.id; });
+    var n = refs.length + chain.length;
+    if (n) {
+      box.appendChild(el("p", "mem-form-warn", "⚠ " + n + " other entr" + (n === 1 ? "y" : "ies") + " point" + (n === 1 ? "s" : "") + " at this one (" + refs.concat(chain.map(function (x) { return x.id; })).join(", ") + "). Deleting leaves those references naming nothing. Mark it inactive instead and the links keep resolving."));
+    }
+    // Delete is reviewer-only in the database. Saying so up front beats letting
+    // the RLS answer with a zero-row write the reader has to decode.
+    if (!(sess && sess.access_token)) {
+      box.appendChild(el("p", "mem-form-warn", "⚠ Deleting needs a reviewer sign-in (the magic link). A team phrase can edit and mark inactive, but not delete — this will be refused."));
+    }
+    var actions = el("div", "mem-form-actions");
+    var go = el("button", "mem-btn mem-btn-danger", "Delete permanently"); go.type = "button";
+    var cancel = el("button", "mem-btn", "Cancel"); cancel.type = "button"; cancel.onclick = function () { clear(host); };
+    go.onclick = function () { go.disabled = true; deleteEntry(d).then(function (ok) { if (!ok) go.disabled = false; clear(host); }); };
+    actions.appendChild(go); actions.appendChild(cancel);
+    box.appendChild(actions); host.appendChild(box);
   }
   function renderTarget(box) {
     var t = view.target, ids = (targetIndex[t] || []).filter(function (id) { return byId[id] && byId[id].status !== "superseded"; });
@@ -1276,9 +1388,36 @@
     Object.keys(byId).forEach(function (s) { var m = re.exec(s); if (m) { var n = parseInt(m[1], 10); if (n > max) max = n; } });
     return pre + (max + 1);
   }
+  // ── the write key ────────────────────────────────────────────────────────
+  // WRITE BY THE PRIMARY KEY, NEVER BY THE DISPLAY HANDLE. `slug` is UNIQUE but
+  // NULLABLE, and normalizeRow falls back to the uuid for DISPLAY when it is
+  // null — so `?slug=eq.<display handle>` sent the uuid as a slug on those
+  // rows, matched nothing, and PostgREST answered 200 + [] which checkWrite
+  // reports as a 403. Six live rows carry no slug; every ✎ status cycle, every
+  // edit and every revise against them failed silently while the banner blamed
+  // the team phrase. (Sam, 2026-08-25 — "the proposed chip doesn't seem to be
+  // working".) `id` is NOT NULL by definition, so this key always names exactly
+  // one row.
+  function writeKey(d) {
+    if (d && d._uuid) return "id=eq." + encodeURIComponent(d._uuid);
+    return null;
+  }
+  // A write whose key names nothing must REFUSE and say so, not go out and be
+  // reported as an auth failure. Resolves false, the same shape doWrite gives.
+  function refuseKeyless(d) {
+    writeErrMsg = "this entry has no database key, so it can't be changed from here — reload the tab, and tell a curator if it persists";
+    render();
+    return Promise.resolve(false);
+  }
+
   function writeReq(method, pathWithQuery, body) {
     var headers = authHeaders({ "Content-Type": "application/json", Prefer: "return=representation" });
-    return fetch(REST + pathWithQuery, { method: method, headers: headers, body: JSON.stringify(body) });
+    var init = { method: method, headers: headers };
+    // A DELETE carries no body — `Prefer: return=representation` is what makes
+    // it answer with the deleted rows, which is how checkWrite tells a real
+    // delete from one the RLS filtered away.
+    if (body != null) init.body = JSON.stringify(body);
+    return fetch(REST + pathWithQuery, init);
   }
   function logEvent(memoryUuid, action, before, after, note) {
     if (typeof fetch !== "function") return Promise.resolve();
@@ -1287,6 +1426,29 @@
       headers: authHeaders({ "Content-Type": "application/json", Prefer: "return=representation" }),
       body: JSON.stringify({ memory_id: memoryUuid, actor: "curator", action: action, note: note || null, before: before || null, after: after || null }),
     }).catch(function () { });
+  }
+  // NAME THE CREDENTIAL THAT ACTUALLY FAILED. This said "your team phrase may
+  // have expired" for every 401/403, so a curator signed in by MAGIC LINK — for
+  // whom the phrase is irrelevant, and whose phrase handleWriteFailure
+  // correctly does not touch — was told to re-unlock something that was not in
+  // play (Sam, 2026-08-25).
+  //
+  // It also has to tell a REFUSAL from a MISS. checkWrite reports an
+  // ok-but-empty representation as 403-shaped so the phrase-recovery path
+  // engages, but it hands back an ARRAY of rows there and `null` on a real HTTP
+  // rejection — that is the only thing separating "you are not allowed" from
+  // "nothing matched that key", and they need different words and different
+  // remedies.
+  function writeFailMessage(res) {
+    if (Array.isArray(res.rows)) {
+      return "nothing was saved — no row matched, or this entry is one your access can’t change. Nothing was lost; reload the tab and try again.";
+    }
+    if (res.status === 401 || res.status === 403) {
+      return sess && sess.access_token
+        ? "your sign-in was refused — it may have expired. Check sign-in below, or open the magic link again."
+        : "your team phrase may have expired — unlock again below.";
+    }
+    return "couldn’t save — please try again";
   }
   // Every write funnels through here: checkWrite (the RLS zero-row trap), then on
   // failure handleWriteFailure (drop the rotated phrase) + re-render the lock state.
@@ -1300,9 +1462,7 @@
       var TP2 = tp();
       if (TP2 && TP2.handleWriteFailure) TP2.handleWriteFailure(sess, res.status);
       refreshSession();
-      writeErrMsg = (res.status === 401 || res.status === 403)
-        ? "your team phrase may have expired — re-unlock"
-        : "couldn’t save — please try again";
+      writeErrMsg = writeFailMessage(res);
       render();
       return false;
     }).catch(function () { writeErrMsg = "couldn’t save — please try again"; renderAuth(); return false; });
@@ -1315,12 +1475,38 @@
     var order = ["verified", "stale", "proposed"];
     var idx = order.indexOf(d.status);
     var next = order[(idx + 1) % order.length];
-    var action = next === "verified" ? "verify" : next === "stale" ? "stale" : "update";
+    return setStatus(d, next);
+  }
+  // The one place a status write is composed. cycleStatus (the ✎ chip), Mark
+  // inactive and Restore all land here so they cannot drift apart.
+  function setStatus(d, next) {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    var action = next === "verified" ? "verify" : next === "stale" ? "stale"
+      : next === "superseded" ? "supersede" : "update";
     var body = { status: next };
     if (next === "verified") { body.verified_at = nowIso(); body.verified_by = "curator"; }
-    return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
+    return doWrite(writeReq("PATCH", "cpl_memory?" + key, body), function () {
       logEvent(d._uuid, action, { status: d.status }, body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
+  }
+  // Delete is REVIEWER-ONLY in the database ("reviewer deletes cpl_memory" —
+  // is_allowed_reviewer(), no team_pass arm), so a phrase-holder's delete comes
+  // back as a zero-row write. The button says so up front rather than letting
+  // that surface as a failure. `cpl_memory_log.memory_id` is ON DELETE SET
+  // NULL, so the audit trail outlives the row it describes.
+  function deleteEntry(d) {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    var before = snapshot(d);
+    return doWrite(writeReq("DELETE", "cpl_memory?" + key, null), function () {
+      logEvent(d._uuid, "delete", before, null);
+    }).then(function (ok) {
+      // The entry pane is showing a row that no longer exists — send the reader
+      // back to the index rather than leaving a phantom on screen.
+      if (ok) { if (view.mode === "entry" && view.id === d.id) view = { mode: "index" }; refresh(); }
+      return ok;
+    });
   }
   function addEntry(v) {
     var slug = v.slug || genSlug(v.kind);
@@ -1336,11 +1522,14 @@
   }
   function editEntry(d, v) {
     var body = { title: v.title || null, summary: v.summary, detail: v.detail, plain: v.plain || null, tags: v.tags, org: v.org || null, share_across_orgs: !!v.share_across_orgs, source: v.source || null, updated_at: nowIso() };
-    return doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), body), function () {
+    var key = writeKey(d);
+    if (!key) return refuseKeyless(d);
+    return doWrite(writeReq("PATCH", "cpl_memory?" + key, body), function () {
       logEvent(d._uuid, "update", snapshot(d), body);
     }).then(function (ok) { if (ok) refresh(); return ok; });
   }
   function reviseEntry(d) {
+    if (!writeKey(d)) return refuseKeyless(d);
     var newSlug = genSlug(d.kind);
     var clone = {
       slug: newSlug, kind: d.kind, title: d.title || null, summary: d.summary, detail: d.detail, plain: d.plain || null, tags: d.tags,
@@ -1350,7 +1539,7 @@
     return doWrite(writeReq("POST", "cpl_memory", clone), function (rows) {
       var newRow = rows && rows[0] ? rows[0] : clone;
       // supersede the OLD row + link forward
-      doWrite(writeReq("PATCH", "cpl_memory?slug=eq." + encodeURIComponent(d.id), { status: "superseded", superseded_by: newSlug }), function () {
+      doWrite(writeReq("PATCH", "cpl_memory?" + writeKey(d), { status: "superseded", superseded_by: newSlug }), function () {
         logEvent(d._uuid, "supersede", snapshot(d), newRow);
       }).then(function () { refresh(); });
     }).then(function (ok) { return ok; });
@@ -1618,8 +1807,8 @@
   // ══════════════════════════════════════════════════════════════════════════
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
-    var LIGHT = "--paper:#F4F2ED;--surface:rgba(255,255,255,.78);--surface-opaque:#FFFFFF;--surface-subtle:#F7F5F1;--surface-muted:#ECE9E2;--text-strong:#1C1C1A;--text-body:#3A3A36;--text-muted:#5C5C55;--text-faint:#87877F;--border:rgba(28,28,26,.14);--border-strong:rgba(28,28,26,.30);--accent-link:#0047AB;--focus:#0047AB;--glass-blur:14px;--k-fact:#0047AB;--k-pitfall:#920000;--k-procedure:#0F766E;--k-opportunity:#2C601A;--k-risk:#7A5800;--k-wishlist:#6D28D9;--k-question:#005A8C;--k-decision:#002F6D;--k-milestone:#A83255;--st-ok:#2C601A;--st-info:#5C5C55;--st-warn:#7A5800;";
-    var DARK = "--paper:#1B1B18;--surface:rgba(36,36,32,.72);--surface-opaque:#242420;--surface-subtle:#201F1C;--surface-muted:#2E2D28;--text-strong:#F4F2ED;--text-body:#DAD8D0;--text-muted:#A9A79E;--text-faint:#7C7A72;--border:rgba(244,242,237,.14);--border-strong:rgba(244,242,237,.30);--accent-link:#7DA1D4;--focus:#7DA1D4;--glass-blur:14px;--k-fact:#7DA1D4;--k-pitfall:#CF8F8F;--k-procedure:#5EBFB5;--k-opportunity:#89A67F;--k-risk:#E3B341;--k-wishlist:#B28DEB;--k-question:#79B8D6;--k-decision:#A9BEE8;--k-milestone:#E48AA6;--st-ok:#89A67F;--st-info:#A9A79E;--st-warn:#E3B341;";
+    var LIGHT = "--paper:#F4F2ED;--surface:rgba(255,255,255,.78);--surface-opaque:#FFFFFF;--surface-subtle:#F7F5F1;--surface-muted:#ECE9E2;--text-strong:#1C1C1A;--text-body:#3A3A36;--text-muted:#5C5C55;--text-faint:#87877F;--border:rgba(28,28,26,.14);--border-strong:rgba(28,28,26,.30);--accent-link:#0047AB;--focus:#0047AB;--glass-blur:14px;--k-fact:#0047AB;--k-pitfall:#920000;--k-procedure:#0F766E;--k-opportunity:#2C601A;--k-risk:#7A5800;--k-wishlist:#6D28D9;--k-question:#005A8C;--k-decision:#002F6D;--k-milestone:#A83255;--st-ok:#2C601A;--st-info:#5C5C55;--st-warn:#7A5800;--st-danger:#920000;";
+    var DARK = "--paper:#1B1B18;--surface:rgba(36,36,32,.72);--surface-opaque:#242420;--surface-subtle:#201F1C;--surface-muted:#2E2D28;--text-strong:#F4F2ED;--text-body:#DAD8D0;--text-muted:#A9A79E;--text-faint:#7C7A72;--border:rgba(244,242,237,.14);--border-strong:rgba(244,242,237,.30);--accent-link:#7DA1D4;--focus:#7DA1D4;--glass-blur:14px;--k-fact:#7DA1D4;--k-pitfall:#CF8F8F;--k-procedure:#5EBFB5;--k-opportunity:#89A67F;--k-risk:#E3B341;--k-wishlist:#B28DEB;--k-question:#79B8D6;--k-decision:#A9BEE8;--k-milestone:#E48AA6;--st-ok:#89A67F;--st-info:#A9A79E;--st-warn:#E3B341;--st-danger:#CF8F8F;";
     var BASE = "color-scheme:light dark;background:var(--paper);color:var(--text-body);font-family:'Source Sans 3',system-ui,Arial,sans-serif;line-height:1.55;padding:16px;border-radius:14px;box-sizing:border-box;max-width:100%;";
     var css = [
       ".cpl-mem{" + LIGHT + BASE + "}",
@@ -1642,7 +1831,11 @@
       // auth bar
       ".cpl-mem .mem-authbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 2px;}",
       ".cpl-mem .mem-authok{font-size:.76rem;font-weight:600;color:var(--st-ok);background:color-mix(in srgb,var(--st-ok) 12%,transparent);border:1px solid color-mix(in srgb,var(--st-ok) 30%,transparent);padding:3px 10px;border-radius:9px;}",
-      ".cpl-mem .mem-writeerr{font-size:.76rem;font-weight:700;color:var(--st-warn);background:color-mix(in srgb,var(--st-warn) 15%,transparent);border:1px solid color-mix(in srgb,var(--st-warn) 34%,transparent);padding:3px 10px;border-radius:9px;}",
+      ".cpl-mem .mem-writeerr{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-size:.76rem;font-weight:700;color:var(--st-warn);background:color-mix(in srgb,var(--st-warn) 15%,transparent);border:1px solid color-mix(in srgb,var(--st-warn) 34%,transparent);padding:4px 10px;border-radius:9px;}",
+      ".cpl-mem .mem-writeerr-acts{display:inline-flex;gap:6px;flex-wrap:wrap;}",
+      ".cpl-mem .mem-errbtn{font:inherit;font-size:.72rem;font-weight:700;cursor:pointer;padding:3px 9px;border-radius:7px;border:1px solid color-mix(in srgb,var(--st-warn) 50%,transparent);background:var(--surface-opaque);color:var(--text-strong);}",
+      ".cpl-mem .mem-errbtn:hover{border-color:var(--accent-link);color:var(--accent-link);}",
+      ".cpl-mem .mem-errbtn:disabled{opacity:.6;cursor:default;}",
       // tiles
       ".cpl-mem .mem-tiles{display:flex;flex-wrap:wrap;gap:14px 18px;margin:12px 0 4px;}",
       ".cpl-mem .mem-fam{display:flex;flex-direction:column;gap:5px;min-width:0;}",
@@ -1756,6 +1949,9 @@
       ".cpl-mem .mem-btn{font:inherit;font-size:.78rem;font-weight:600;cursor:pointer;padding:6px 13px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .mem-btn:hover{background:var(--surface-subtle);}",
       ".cpl-mem .mem-btn-primary{background:var(--accent-link);color:#fff;border-color:var(--accent-link);}",
+      ".cpl-mem .mem-btn-danger{background:var(--st-danger);color:var(--surface-opaque);border-color:var(--st-danger);}",
+      ".cpl-mem .mem-btn-danger:disabled{opacity:.6;cursor:default;}",
+      ".cpl-mem .mem-form-warn{font-size:.78rem;font-weight:600;color:var(--st-danger);background:color-mix(in srgb,var(--st-danger) 10%,transparent);border:1px solid color-mix(in srgb,var(--st-danger) 30%,transparent);border-radius:8px;padding:7px 10px;margin:0 0 10px;line-height:1.45;}",
       ".cpl-mem .mem-btn-primary:hover{filter:brightness(1.06);}",
       // list
       ".cpl-mem .mem-body{display:grid;grid-template-columns:minmax(0,1fr) 344px;gap:16px;align-items:start;}",
@@ -1827,6 +2023,11 @@
       ".cpl-mem .rp-tools{display:flex;flex-wrap:wrap;gap:7px;margin-top:14px;padding-top:10px;border-top:1px solid var(--border);}",
       ".cpl-mem .rp-toolbtn{font:inherit;font-size:.74rem;font-weight:600;cursor:pointer;padding:5px 11px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface-muted);color:var(--text-strong);}",
       ".cpl-mem .rp-toolbtn:hover{background:var(--surface-subtle);color:var(--accent-link);border-color:var(--accent-link);}",
+      // Destructive actions are tinted AND worded ("Delete", 🗑) — color is
+      // never the only thing carrying the meaning.
+      ".cpl-mem .rp-toolbtn-danger{color:var(--st-danger);border-color:color-mix(in srgb,var(--st-danger) 45%,transparent);}",
+      ".cpl-mem .rp-toolbtn-danger:hover{background:color-mix(in srgb,var(--st-danger) 12%,transparent);color:var(--st-danger);border-color:var(--st-danger);}",
+      ".cpl-mem .rp-toolnote{font-size:.74rem;color:var(--text-muted);align-self:center;}",
       ".cpl-mem .rp-toolhost .mem-form{max-width:100%;}",
       // view-mode segmented control (masthead) — reuses .mem-seg-btn styling
       ".cpl-mem .mem-viewseg{display:inline-flex;border:1px solid var(--border-strong);border-radius:9px;overflow:hidden;flex:0 0 auto;}",
@@ -1862,11 +2063,27 @@
   }
 
   // ── lifecycle ──
+  var _sessWired = false;
   function activate() {
     ensureCss();
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
     if (!_shellBuilt) { buildShell(root); _shellBuilt = true; }
+    // The keeper renews the reviewer token underneath this tab and announces
+    // sign-ins that happened in ANOTHER browser tab. Without this the lock
+    // state was only ever rendered at activation, so a session that changed
+    // while the tab sat open never reached the auth bar — which is how a page
+    // ends up insisting you are signed out (or in) while the truth is the
+    // other way round.
+    if (!_sessWired && typeof window.addEventListener === "function") {
+      _sessWired = true;
+      window.addEventListener("cpl-session-changed", function () {
+        if (!_shellBuilt) return;
+        refreshSession();
+        if (sess) writeErrMsg = null;   // a fresh credential clears a stale complaint
+        render();
+      });
+    }
     load();
   }
 
@@ -1895,6 +2112,11 @@
     _renderBriefText: renderBriefText,
     _hideCiteCard: hideCiteCard,
     _pendingEdit: function () { return pendingEdit; },
+    _selectEntry: function (id) { selectEntry(id); },
+    _writeKey: writeKey,
+    _writeFailMessage: writeFailMessage,
+    _setStatus: setStatus,
+    _deleteEntry: deleteEntry,
     _renderBriefingPanel: renderBriefingPanel,
     _autogenerate: autogenerate,
     _applyDraftToForm: applyDraftToForm,
