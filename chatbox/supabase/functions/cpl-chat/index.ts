@@ -17,6 +17,42 @@ const ALLOWED_ORIGINS = [
 const MATCH_THRESHOLD = 0.5;
 const MATCH_COUNT = 5;
 const MAX_TOKENS = 2048;
+
+/* ── WHICH MODEL ANSWERS (2026-08-25) ─────────────────────────────────────────
+ *
+ * ⚠ TEMPORARY: Sam, 2026-08-25, hours after Sierra went down on an exhausted
+ * Anthropic credit balance for the THIRD time — "set Sierra to run on Haiku 4.5
+ * rather than Opus or Sonnet… a temporary fix until we can get our corporate
+ * billing released." It was Sonnet 4.6, never Opus.
+ *
+ * ⭐ REVERTING NEEDS NO DEPLOY. Set the `CPL_CHAT_MODEL` secret on the Supabase
+ * project and it wins over the default below; unset it to come back here. That
+ * matters because the person who will want Sonnet back is the one who gets the
+ * billing news, and he should not have to wait for a session to ship a one-line
+ * PR. The default stays Haiku so an unset secret is the intended state rather
+ * than an accident.
+ *
+ * ⚠ THE PRICE CUT IS REAL BUT IT IS NOT THE WHOLE BILL. Haiku 4.5 is $1/$5 per
+ * MTok against Sonnet 4.6's $3/$15 — 3× both directions. This endpoint is
+ * INPUT-dominated (MAX_TOKENS caps every answer at 2,048), so the saving lands
+ * where the spend is.
+ *
+ * ⚠ PROMPT CACHING STILL WORKS, AND THAT IS NOT AUTOMATIC. Haiku's minimum
+ * cacheable prefix is 2,048 tokens — DOUBLE Sonnet's 1,024 — and a breakpoint on
+ * a shorter prefix is accepted while caching nothing, silently. The `stable`
+ * block is ~3,234 tokens, so it clears the higher bar with room; if it is ever
+ * trimmed below 2,048 the cache stops paying on Haiku before anyone notices.
+ * tests/sierra_model_choice.test.js pins that reasoning.
+ *
+ * ⚠ CONTEXT IS 200K, NOT 1M. Nothing here needs more: the largest caller is the
+ * GR area sweep at a 40,000-CHARACTER cap (~10K tokens) on top of a system
+ * prompt in the single-digit thousands.
+ *
+ * ⚠ WHAT TO WATCH. The most demanding thing on this endpoint is not a student
+ * question — it is the GR area sweep, which asks for a legal instrument
+ * determination across sixteen rows returned as strict JSON and nothing else.
+ * If quality slips anywhere first, it will slip there. */
+const MODEL = Deno.env.get("CPL_CHAT_MODEL") || "claude-haiku-4-5-20251001";
 const RATE_LIMIT_PER_MIN = 20;
 
 const rateLimits = new Map<string, { count: number; resetAt: number }>();
@@ -3735,7 +3771,7 @@ Deno.serve(async (req: Request) => {
      * to serve one surface would cost every other surface its cache. */
     if (drafting) systemPrompt.volatile += DRAFTING_BLOCK;
 
-    // 4. Call Claude Sonnet
+    // 4. Call the model
     const anthropicRes = await fetch("https://api.anthropic.com/v1/messages", {
       method: "POST",
       headers: {
@@ -3744,7 +3780,7 @@ Deno.serve(async (req: Request) => {
         "anthropic-version": "2023-06-01",
       },
       body: JSON.stringify({
-        model: "claude-sonnet-4-6",
+        model: MODEL,
         max_tokens: MAX_TOKENS,
         stream: true,
         // TWO system blocks, breakpoint on the first — see buildSystemPrompt.
