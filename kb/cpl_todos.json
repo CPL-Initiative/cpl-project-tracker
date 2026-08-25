@@ -17,6 +17,12 @@
    "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
   },
   {
+   "id": "s195-sam-haiku-caveat",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "One thing to know about Haiku: the automated check found 40 of 41 answers still correct, and the one it dropped was the caveat that goes with the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling and not a debt. The instruction to say it is already in her rules; the smaller model just followed it less reliably. The fix is to put that caveat next to the number itself rather than in a rules list further away, which would make it stick on any model. I did not ship it unattended — it changes what the public assistant says, so it is your call."
+  },
+  {
    "id": "s195-sam-row2-enacted",
    "for": "Sam",
    "tab": "gr-priorities",

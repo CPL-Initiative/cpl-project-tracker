@@ -13,7 +13,7 @@ related:
 
 # Session 195 handoff
 
-You are **Session 195**. Session 194 ran as **Sky195**. It began as a planned
+You are **Session 195**. Session 194 ran as **SkyMoon** (Sam named it at the end). It began as a planned
 build and turned into a live session: Sam drove the GR register in a browser,
 hit a defect that signed him out of every tab, and supplied three authenticated
 PDFs of brand-new law that changed what several register rows should say.
@@ -63,6 +63,29 @@ prefix is **2,048 tokens — double Sonnet's 1,024** — and a breakpoint on a
 shorter prefix is accepted while caching NOTHING, silently. The `stable` block is
 ~3,234 tokens so it clears the bar; `tests/sierra_model_choice.test.js` pins the
 floor to the family actually configured, so trimming that block goes red.
+
+✅ **SAM VERIFIED IT IN A BROWSER, 2026-08-25:** *"I tried Sierra on Haiku and the
+results look good."* Deployed **v61**, byte-identical to `origin/main`, sha
+`e373d731`. **Do not re-ask.**
+
+⚠️ **ONE REAL REGRESSION, AND IT IS NAMED.** First smoke run on Haiku: **22 modes,
+40 assertions pass, ONE fails** — mode **15a, "carries the Not-Applicable ceiling
+caveat"**. The instruction exists and is explicit (*"Say this whenever you quote
+the total, so nobody reads the ceiling as a debt"*), so this is a **compliance**
+gap, not a missing rule: Haiku is less reliable at honoring a "say this whenever"
+buried in a long rules block.
+
+It matters — without the caveat the ~1M Needs Action total reads as a **debt**
+rather than a ceiling, when ~30% of reviewed credit is correctly ruled Not
+Applicable. The smoke test's own comment calls it *"the single most likely way
+this feature misleads."*
+
+⭐ **RECOMMENDED FIX, NOT SHIPPED:** attach the caveat to the **DATA**, not to a
+distant rules block — the credit context that carries the total should carry the
+caveat inline, so the model sees them together. That makes it robust on **any**
+model, not just Haiku. It was deliberately not shipped unattended at the end of
+a session Sam had closed; it is a public-surface prompt change and his call.
+Alternative: `CPL_CHAT_MODEL` → `claude-sonnet-4-6`, a secret, no deploy.
 
 ⚠️ **Watch the GR area sweep first.** It is the most demanding caller on this
 endpoint by a distance — a legal instrument determination across sixteen rows as
@@ -187,5 +210,5 @@ walked path.
 - ⚠️ A `check_suite.completed` wake is not a green light — it named a superseded
   head twice this session. Re-read `get_check_runs` on the CURRENT head.
 
-**Moniker:** Sky195 signing off. Next is **Session 196** —
+**Moniker:** SkyMoon signing off. Next is **Session 196** —
 `docs/session_196_handoff.md`. Take **Sky196** or coin your own.
