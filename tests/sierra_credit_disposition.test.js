@@ -181,8 +181,16 @@ check("7 the student-grain table is NEVER queried by the edge function",
 // ── 8. Wiring ────────────────────────────────────────────────────────────────
 check("8 fetchCreditData rides in the main Promise.all",
   /fetchCreditData\(sb\),/.test(SRC));
+// ⚠ AND THIS ONE CARRIED THE DEFECT THE COMMENT BELOW DESCRIBES, until 2026-08-24.
+// It pinned the closing paren — `…\|\| null\)` — so adding a third argument
+// (`rosterNames`, the district roster, #1325) turned it red with the message
+// "the per-college pick uses the resolved single profile" while the per-college
+// pick was using the resolved single profile. The two assertions below were
+// fixed for exactly this reason and this one was left behind: the lesson reached
+// its neighbours and not itself.
 check("8 the per-college pick uses the resolved single profile",
-  /shapeCreditStatus\(creditData, singleProfile\?\.college \|\| null\)/.test(SRC));
+  /shapeCreditStatus\([^;]*\bcreditData\b[^;]*\bsingleProfile\b[^;]*\)/.test(SRC),
+  "the detected college must still drive the named-college block");
 // These two used to pin the EXACT neighbours — `..., creditContext)` as the last
 // argument, and `${offeringsContext}${creditContext}` as adjacent in the
 // template. Both went red the moment a later route (CRED·STD) inserted
