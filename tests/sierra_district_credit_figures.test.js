@@ -137,8 +137,17 @@ block("(4)", function () {
     /TAKE EVERY NUMBER FROM THE "CPL CREDIT DISPOSITION" SECTION/.test(SRC));
   check("(4) ⭐ …and forbids writing 0 for absent or withheld",
     /NEVER write 0 for either/.test(SRC));
+  /* ⚠ ASSERT THAT THE ROSTER ARRIVES, NOT THAT IT IS LAST. The first cut of this
+   * pinned the whole argument list up to the closing paren — the exact defect
+   * `assert-that-an-argument-arrives-not-that-it-is-last` was written about, and
+   * that note says the generalization has to reach your own diff in the same
+   * sitting or you ship a fresh instance of the bug you just read about. Nobody
+   * ever decided rosterNames must be the third argument; the intent is that it
+   * reaches shapeCreditStatus at all. */
   check("(4) the roster is passed from the resolved profiles, not re-derived",
-    /shapeCreditStatus\(creditData, singleProfile\?\.college \|\| null, rosterNames\)/.test(SRC));
+    /shapeCreditStatus\([^;]*\bcreditData\b[^;]*\brosterNames\b[^;]*\)/.test(SRC));
+  check("(4) …and it is built from the resolved profiles, not re-queried",
+    /const rosterNames = Array\.isArray\(resolvedProfile\)/.test(SRC));
 });
 
 /* ── (5) THE RENDERED CONTEXT SAYS THE RIGHT THINGS ───────────────────────── */

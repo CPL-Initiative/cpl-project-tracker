@@ -169,7 +169,7 @@
     "sierra_credential_volume.test.js": 26,
     "sierra_credit_disposition.test.js": 68,
     "sierra_ctx.test.js": 11,
-    "sierra_district_credit_figures.test.js": 23,
+    "sierra_district_credit_figures.test.js": 24,
     "sierra_district_roster.test.js": 28,
     "sierra_feedback_ci_rows.test.js": 19,
     "sierra_geo_ranking.test.js": 50,
