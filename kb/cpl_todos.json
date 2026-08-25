@@ -5,43 +5,63 @@
   "_status": "Both changes are merged and waiting on a single deploy. Until that runs, Autogenerate still cuts your note short and the Briefing button politely says it could not build one — nothing is broken that was not already, but nothing is fixed either. The first briefing we ran over twelve real entries already found two things worth your eye, listed below.",
   "items": [
     {
-      "for": "sam",
+      "id": "s190-verify-rccd",
+      "for": "Sam",
+      "tab": "my-college",
       "text": "Open My College, pick Riverside CCD and ask what it should do. Moreno Valley should now show about 2,887 students — not zero. This is the check that closes the bug you spotted."
     },
     {
-      "for": "sam",
+      "id": "s190-verify-briefing",
+      "for": "Sam",
+      "tab": "memory",
       "text": "Open the Memory tab's Report view and press Briefing. You should get plain-language prose with small numbered links beside each claim, and a citation count above zero."
     },
     {
-      "for": "sam",
-      "text": "Decide whether SkyView's re-mint queue gets built now. Our recommendation is not yet: nobody has dragged a course yet, so the queue would open empty. Doing a drag or two first would give it something real."
+      "id": "s190-skyview-queue-call",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Decide whether SkyView's re-mint queue gets built now. Our recommendation is not yet: nobody has dragged a course yet, so the queue would open empty. A drag or two first would give it something real."
     },
     {
-      "for": "sam",
-      "text": "Optional: try a drag in SkyView. It is the first one ever — no course has been re-homed yet, and the first one tells us whether the detection behind it actually fires."
+      "id": "s190-first-drag",
+      "for": "Sam",
+      "tab": "unified-courses",
+      "text": "Optional: try a drag in SkyView. It would be the first one ever — no course has been re-homed yet, and the first one tells us whether the detection behind it actually fires."
     },
     {
-      "for": "sam",
-      "text": "Two of Sierra's answers still need your eyes rather than ours: the district roster question for Los Angeles, and a phone check of the Fact Sheet and veteran map."
+      "id": "s190-browser-checks",
+      "for": "Sam",
+      "tab": "cpl-assistant",
+      "text": "Two other answers still need your eyes rather than ours: the district roster question for Los Angeles, and a phone check of the Fact Sheet and veteran map."
     },
     {
-      "for": "fable",
+      "id": "s190-ab-next-time",
+      "for": "Fable",
+      "tab": "cpl-assistant",
       "text": "Next time cpl-chat changes, run the new A/B workflow first. It deploys a candidate to a private copy and compares both against real questions before anything reaches the live site."
     },
     {
-      "for": "fable",
+      "id": "s190-arg-assertions",
+      "for": "Fable",
+      "tab": "memory",
       "text": "34 tests still check that a value is a function's LAST argument rather than that it arrives at all. Four were fixed; the rest go red for the wrong reason when anyone adds a parameter."
     },
     {
-      "for": "fable",
+      "id": "s190-claude-md-diet",
+      "for": "Fable",
+      "tab": "memory",
       "text": "The project's own memory file is two and a half times the size it should be, and every session pays for that on startup. It needs prose moved out, not more added."
     },
     {
-      "for": "fable",
+      "id": "s190-desc-shards",
+      "for": "Fable",
+      "tab": "unified-courses",
       "text": "SkyView's course descriptions still have to be served from a local folder. Sam expects them in the shared database; table-versus-file and who can read them are still open."
     },
     {
-      "for": "fable",
+      "id": "s190-orphan-routine",
+      "for": "Fable",
+      "tab": "memory",
       "text": "A leftover scheduled job from an older session is still queued to merge a pull request that merged long ago. Harmless, but worth clearing."
     }
   ]
