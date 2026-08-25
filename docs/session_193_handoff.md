@@ -26,8 +26,14 @@ branch is the only work in flight.
 
 ## Read this first
 
-**PR #1329** is open (draft, watched) — everything below is in it. Nothing has
-merged yet, so check its state before building on it.
+**PR #1329** is open, ready and watched — everything below is in it. A self
+check-in was armed to squash-merge it on green. ⚠️ **Verify it actually merged**
+rather than assuming: a `check_suite.completed` event on this repo routinely
+names a SUPERSEDED head, and this session got one naming a commit two pushes old.
+
+⚠️ **`npm test` is 267 files / ~40 minutes and cannot complete in this sandbox's
+command budget.** Session 192 claimed it green in the PR body before checking,
+and corrected it. Run the targeted suites locally and let CI own the full one.
 
 ✅ **The Memory Briefing is CONFIRMED** — Sam read it in a browser, 2026-08-25:
 *"I checked the Memory Briefing and it looks great!"* That closes the last open
@@ -102,7 +108,7 @@ is blocked under `file://` and a shard that cannot load must SAY so.
 |---|---|
 | Sam reads the Memory Briefing | ✅ **DONE 2026-08-25** — do not re-ask |
 | The Sierra / Sierra College rule | recorded in memory; **a guidance rule needs Sam's go** |
-| PR #1329 | open, draft, watched — merge on green per the branch policy |
+| PR #1329 | open, **ready** (not draft), watched. A self check-in was armed to squash-merge on green; **verify it actually landed** before building on it |
 | Sam drives the flipped view | open — density and the drop affordance are his calls |
 | 73 two-real-course control numbers | worklist exists, 93 rows at San Jose City College |
 | Member roster fold / `CaÃ±ada` at source | open |
