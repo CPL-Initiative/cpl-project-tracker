@@ -34,11 +34,18 @@ insertion that shifts (i) breaks that cross-reference. **So the new reciprocity
 clause is appended as (n)**, not inserted where it reads most naturally. That is a
 deliberate trade of elegance for not breaking a companion amendment.
 
-**2. Tier the asks.** Amendments 1–5 are **implementation of enacted law** — each
-cites Article 9. Amendments 6–9 are **policy**, unchanged in strength from the
-November 2025 proposal; Article 9 neither helps nor hurts them. Presenting all nine
-as statutorily compelled invites a reader to test the weakest and discount the
-rest. **§3 can be cut entirely in one move without touching §2.**
+**2. Tier the asks — and SPLIT them.** Amendments 1–5 are **implementation of
+enacted law**; each cites Article 9. Amendments 6–9 are **policy**, unchanged in
+strength from the November 2025 proposal.
+
+⭐ **DECIDED 2026-08-26 (Sam: *"go with your gut"*): file Tier 1 alone; Tier 2
+follows as separate actions.** The two carry different burdens of proof — Tier 1's
+is *"does Article 9 say this?"*, answerable by reading the statute; Tier 2's is
+*"is this good policy?"*, a debate that was already had in November and lost.
+Bundling makes Tier 1 inherit Tier 2's burden, trading a near-certain win for a
+contested one. **Tier 2 is retained below, complete and ready to file separately**
+— reasoning and per-item routing in
+[`t5_55050_cover_argument.md`](t5_55050_cover_argument.md).
 
 ---
 
@@ -179,8 +186,10 @@ suggestive and not decisive. **Settle before filing.**
 
 ## 2. TIER 2 — policy, on the same merits as November 2025
 
-**Cut this whole section if the package should carry only what Article 9 compels.**
-Nothing in Tier 1 depends on it.
+⛔ **NOT part of the Tier 1 filing.** Retained here complete and ready, to be
+raised as separate actions on their own timeline. Nothing in Tier 1 depends on
+any of it. Per-item routing — which to move first and which deserves its own
+action — is in [`t5_55050_cover_argument.md`](t5_55050_cover_argument.md) §1.
 
 ### Amendment 6 — (j): a Credit (CR) symbol
 
