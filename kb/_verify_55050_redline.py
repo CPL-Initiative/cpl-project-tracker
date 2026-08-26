@@ -14,7 +14,7 @@ Checks
 import re, sys, zipfile, pathlib, unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges.docx"
+DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
 CLEAN = ROOT / "docs/reference/statute/t5_55050_clean_after_2026-08-12.txt"
 
 fails, checks = [], 0
@@ -101,7 +101,8 @@ def main():
             pass
     check(len(got) == 13, f"reject-all yields exactly (a)-(m), got {len(got)}",
           f"letters: {''.join(sorted(got))}")
-    check("n" not in got, "(n) does not exist before the amendment")
+    check("n" not in got and "o" not in got,
+          "(n) and (o) do not exist before the amendment")
 
     # deleted-in-2026 language must NOT be in the baseline we drew against
     joined_orig = norm(" ".join(orig))
@@ -116,30 +117,55 @@ def main():
 
     # ---- 2. accept-all carries every amendment ---------------------------
     joined_final = norm(" ".join(final))
+    v_norm = norm
     for phrase, label in [
+        ("policies and procedures pertaining to", "(b) policies AND procedures"),
         ("public internet website", "(b) publication on the website"),
+        ("credit by examination, evaluation of authenticated competencies, and evaluation of Joint Services Transcripts",
+         "(b) the repaired list reads as one grammatical sentence"),
+        ("College-Level Examination Program assessments. The policies and procedures shall further:",
+         "(b) the collision Sam flagged is gone"),
         ("Provide a means for the public to explore", "(b)(1) public exploration"),
-        ("submit requests for timely review", "(b)(2) student request"),
+        ("or program requirements listed on program pathways", "(b)(1) program requirements"),
+        ("submit requests for timely and documented review and determination",
+         "(b)(2) review AND determination"),
         ("identify and notify students who may qualify", "(b)(3) identify + notify"),
-        ("systemwide credit for prior learning infrastructure", "(b)(4) infrastructure"),
+        ("infrastructure described in Education Code section 78093.2(a)(2) and referenced in Education Code section 88782(b)",
+         "(b)(4) the platform is cited, not named as a product"),
+        ("to the extent that resources are available, to interested independent institutions of higher education pursuant to Education Code section 78093.2(c)(2)",
+         "(b)(4) independent institutions kept, on the statutory conditional"),
+        ("prior learning, and may be applied to a course listed in the catalog",
+         "(c) the run-on is repaired"),
+        ("a local or transfer general education area, or degree-applicable elective credit",
+         "(c) GE area + elective, naming no framework"),
         ("at a minimum consider the credit recommendations", "(c) shall at a minimum consider"),
         ("faculty discipline review groups", "(c) FDRG recommendations"),
-        ("local discipline faculty experts", "(c) local faculty experts"),
+        ("Academic Senate for California Community Colleges pursuant to Education Code section 75013(b)",
+         "(c) the fourth source, from 75013(b)"),
         ("all incoming students be evaluated", "(e) evaluate all incoming students"),
-        ("Joint Services Transcripts for veterans", "(e) document list"),
-        ("transcribed by another California Community College shall be accepted",
-         "(n) reciprocity"),
+        ("and that a student be advised", "(e) the stray comma is gone"),
+        ("Grading for credit by examination shall be", "(j) scoped to credit by examination"),
+        ("(l) The student's academic record shall be clearly annotated",
+         "(l) the annotation duty is RESTORED"),
+        ("student population (military, working adult", "(m) his categories, punctuation repaired"),
+        ("gender, and race/ethnicity, including the number of students who were eligible for and received",
+         "(m) demographics restored AND the eligible-for gap"),
+        ("average number of credits awarded", "(m) average"),
+        ("transcribed by another California Community College shall be accepted", "(n) reciprocity"),
         ("shall not require a student to repeat an assessment", "(n) no secondary review"),
-        ("78093.2", "NOTE authority"),
-        ("78093, 78093.1, 78093.2", "NOTE reference"),
+        ("for an equivalent course, general education area, or degree requirement",
+         "(n) Sam's scoping of the no-repeat rule"),
+        ("(o) Grading for all types of credit for prior learning other than credit by examination",
+         "(o) the grading clause, moved off (l)"),
+        ("75013, 78093, 78093.1, 78093.2", "NOTE reference"),
     ]:
-        check(norm(phrase) in joined_final, f"accept-all carries {label}")
+        check(v_norm(phrase) in joined_final, f"accept-all carries {label}")
 
     # the NOTE must still read as a sentence once accepted
     note = next((norm(p) for p in final if p.strip().startswith("NOTE:")), "")
     check("66700, 70901, and 78093.2" in note,
           "NOTE Authority reads correctly when accepted", f"got: {note[:160]}")
-    check("70901, 70902, 78093, 78093.1, 78093.2, and 88782" in note,
+    check("70901, 70902, 75013, 78093, 78093.1, 78093.2, and 88782" in note,
           "NOTE Reference reads correctly when accepted", f"got: {note[-160:]}")
 
     # ---- 3. OOXML hygiene ------------------------------------------------
