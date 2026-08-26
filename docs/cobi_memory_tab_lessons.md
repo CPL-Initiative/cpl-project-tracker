@@ -523,3 +523,116 @@ unreported. The exit code said only "something failed". That is the S190
 `exit=0 was my trailing grep` shape one layer in, and it is the most useful thing
 this session learned: **a test must report a missing thing, never dereference
 it.** All three suites now use safe accessors.
+
+---
+
+## 2026-08-26 — Sky196: the plain-language pass, and the 34 of 188 nobody had noticed
+
+Sam: *"Can you make a pass through all memory items to put them in plain
+non-techie speech? You did this for active items, but I want to review and close
+out everything in the hopper and then re-order the validated items so Haiku reads
+them more progressively."*
+
+### What was actually wrong, and it was not the plain text
+
+The `plain` column was in good shape — 565 of 589 rows had one, written by the
+Autogenerate flow, which is instructed to write plainly. **The engineer-speak was
+in `title`**, which nobody had treated as reader-facing even though the Report
+renders it bold above every paragraph and the Briefing puts it in each entry's
+head line. `gr_revisions.blast_rank is authored, not computed`, `A PATCH keyed on
+a NULLABLE unique column`, `statewide_prescriptive.js is built by a separate
+pass` — all of that was on screen.
+
+**Where the work actually was:**
+
+| | proposed | verified |
+|---|---|---|
+| rows | 382 | 188 |
+| no plain text at all | 15 | 2 |
+| plain text carrying jargon | 34 | 17 |
+| **techie `title`** | **63** | **18** |
+
+202 rows rewritten. Afterwards: 0 rows without plain text, 0 carrying developer
+jargon, 0 British spellings, across all 573 non-superseded rows. `summary` and
+`detail` were deliberately untouched — they are the precise curator record, and
+`detail` still rides along to the model as the evidence.
+
+### ⭐ The finding: the briefing read 34 of 188, chosen by "recently edited"
+
+Sam asked for reading order. Measuring first turned it into a retrieval question.
+
+The corpus budget is **17,951 characters** (a 20,000 server cap minus a *measured*
+2,049-character envelope). The 188 verified entries digest to **83,058**. So the
+briefing reads **34 — 18%** — and `briefDigest` drops from the *end* while rows
+arrive in `updated_at` descending. Every entry the model ever saw was dated
+2026-08-05 or later. A typo fix promoted a row over a standing rule untouched
+since June, and the panel said "Read 34 of 188" either way.
+
+**Disclosure is not selection.** This tab already got the disclosure half right —
+that is the lesson it was built on. Nobody had asked *which* 34.
+
+### ⚠️ And the obvious fix was wrong — only live data showed it
+
+The natural repair is a reading ladder: ground rules, then what is true, then what
+goes wrong, then what is unresolved, then what shipped, then what is next. That is
+what was built first, and every fixture test passed.
+
+Run against the live band distribution it is **worse than the recency order it
+replaced**. 82 of 188 verified rows are `procedure` or `decision`, so a strict
+ladder sort spends the whole budget inside band 0 — **38 decisions and zero facts,
+pitfalls, risks or milestones**. The traps live in the bands it never reaches, and
+a briefing that has read no pitfalls cannot catch the misunderstanding it exists
+to catch.
+
+**The fix: the ladder ORDERS, a proportional share SELECTS.** Each row carries
+`(j + 0.5) / bandSize` — its position within its own band — and the sort runs on
+that fraction first, band second. Any prefix then holds the same *fraction* of
+every band, while each slice still runs down the ladder and the slices run
+oldest-first.
+
+Live result: **49 entries, all seven kinds** — 12 fact · 12 procedure · 10 pitfall
+· 9 decision · 2 risk · 2 milestone · 2 opportunity.
+
+⚠️ **Assert the guarantee the arithmetic supports, not the one you want.** A band
+of *n* rows first appears at `1/(2n)`, so at a 20% cut every band of **3+ rows** is
+guaranteed — not "every band, always", which is false for a one-row band. The
+first version of that guard used an 89%-one-band fixture and failed correctly:
+under pure proportionality a band that is 2% of the corpus legitimately does not
+appear in a 10-row prefix. The fixture was wrong, not the code.
+
+Full write-up:
+[`methodology-when-a-corpus-does-not-fit-the-order-is-the-selection`](kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md).
+
+### ⭐ And the briefing was reading `summary`, not `plain`
+
+`briefRow()` sent `d.summary` while the Report beside it rendered `reportProse()`
+(plain-preferred). So the screen and the model read **different words**, and every
+plain-language pass this table has ever had — including 2026-07-25's — never
+reached the model at all. The file asserts "what is briefed is what is shown" as
+a structural invariant; it was true of the *set* and false of the *text*.
+
+### ⚠️ Four guards passed against the unfixed code, and one still would have
+
+Perturbing each new guard separately: band order reversed → 4 FAIL; unknown kind
+sorts first → 5 FAIL; `briefRow` reverted to `summary` → 2 FAIL; envelope line
+removed → 1 FAIL. All with the full check count still registering, so no crash.
+
+**But deleting `rows = briefOrder(rows)` from `renderBriefingPanel` — the wiring
+that actually applies the whole thing — passed 74 of 74.** The guards tested the
+function, never the application. The replacement drives the real panel and reads
+the body that was *sent*; it now fails with the observed order in its message.
+
+### ⚠️ Two smaller traps worth keeping
+
+- **A case-insensitive detector with a case-sensitive fix leaves the capitals
+  behind.** `Labelling` survived a sweep that caught `labelling`, and only showed
+  up because the re-scan used `~*` on both passes.
+- **`analyses` is correct American English.** My own British-spelling regex
+  flagged it — on the row that records a spelling stem flagging 430 correct words.
+  The check found its own lesson.
+
+### Method note: the floor was bumped for one file, not re-baselined
+
+`npm run test:floor` re-baselines *every* file, which would silently accept a
+drop anywhere else — the exact thing the floor exists to catch. The entry for
+`cpl_memory_briefing.test.js` was edited from 61 to 75 by hand instead.
