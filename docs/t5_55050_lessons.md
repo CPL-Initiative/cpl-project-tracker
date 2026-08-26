@@ -275,3 +275,63 @@ Row #7's own consideration names DOF and the attendance premise as its obstacle.
 ⚠️ **Row #16's instrument still reads `§55050(d)`** — the 2026-08-12 adoption moved
 the ACE *"shall consider"* clause to **(c)**. The only row citing a subdivision
 letter, and the renumbering made it stale.
+
+---
+
+## 2026-08-26 (late) — the annotation ruling, and the ancestor trap a third time
+
+### Sam asked the right question and the answer was no
+
+> *"I want to delete the requirement to annotate the transcript as alternative…
+> If you see something in Ed Code that requires it, let me know."*
+
+**Nothing does.** §78093.2(b)(2) binds the **receiving** campus (*accept transcribed
+credit*) and is silent on how the sending campus records it; §88782(a)(1) binds the
+**Chancellor's Office** to build the Career Passport, and §88782(b) builds it by
+leveraging MAP, so its CPL data need not come from a transcript at all. §66025.71,
+§75013, §78093 and §78093.1 are silent.
+
+⚠️ **My earlier argument was about ENFORCEABILITY, not law, and it overclaimed.**
+Withdrawn, and the `cpl_memory` row asserting the opposite is superseded by his
+ruling rather than left to be re-derived. ⭐ **And his own draft already solved the
+problem the annotation was solving** — (b)(4) requires districts to maintain student
+CPL records in the systemwide infrastructure. That is a better home for
+identification than a label on a student's transcript.
+
+Scope of the answer, stated in the filing: the **eight authenticated sections we
+hold**. No session can search the whole Education Code.
+
+### (f) — kept, and disclosed rather than silent
+
+He confirmed the revert to *"course content"* was deliberate. It ships as a
+**tracked change** against the adopted *"outcomes"* and is named in drafting note
+(2) as a fifth clause going beyond conformity, with the reason that makes it
+defensible: **(h) already says "course content"**, so (f) and (h) now describe one
+standard in one set of words. A reader will notice we reversed a three-week-old
+amendment; they should find our reasoning in the document.
+
+### ⚠️ Three returned files, three different ancestors
+
+| his file | built on | what it silently lacked |
+|---|---|---|
+| "cleaned up version" | the **first** draft | everything in v2 |
+| v4 revisions | v3 | — (that one was linear) |
+| "final draft" | **v4** | his own (f) revert, and a serial comma in (b)(4) |
+
+⭐ **The third one is the sharpest: his final draft had lost the ruling he had just
+given me.** He described it as *"a few small edits, nothing that impacts content"* —
+true of what he changed, and the loss came from what he started from.
+
+**The check is two lines and it should be reflexive**: diff the accept-all views of
+the returned file against what you last sent. Here it showed exactly two paragraphs
+differing, and applying those two changes to his file reproduced v5 paragraph for
+paragraph — which is what let the answer be *"send v5, it is your final plus your
+own ruling"* rather than another round.
+
+⚠️ **And one false alarm worth recording.** The reject-all check reported (l) and (m)
+as differing. They are not: Word merged the fully-deleted annotation paragraph with
+the one after it, so the two arrive joined. `reject-all (l) == adopted (l)
+immediately followed by adopted (m)` is **True**. My paragraph splitter is not
+paragraph-mark aware, and I checked the raw XML before reporting rather than
+after — which is now three times that construct has produced a false finding and
+been caught by reading the XML.

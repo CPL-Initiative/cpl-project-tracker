@@ -1,32 +1,32 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-26 · A day on one thing: getting a new draft of the regulation that governs credit for prior learning — Title 5 section 55050 — ready for the Chancellor's Office, now that SB 135 has put credit for prior learning into the Education Code. The finding is that a redraft is the wrong shape. A revised 55050 was already adopted by the Board of Governors on 12 August, and the numbering in it is Sam's own from last November, so it is not a rival version — it is the same section with the substance left out. Its drafting simply finished three weeks before the new law took effect, which is the whole argument: nobody erred, and the regulation now has to be brought into line with the statute it operates under. Five amendments, nothing renumbered, delivered as a Word file with real tracked changes and checked by machine against the adopted text. Earlier the same day, the memory feature: its written briefing was reading 34 of 188 entries and picking them by whichever had been edited most recently.",
+ "_as_of": "2026-08-26 (evening) · The whole day went to one thing: a new draft of Title 5 section 55050, the regulation that governs credit for prior learning, ready to take to the Chancellor's Office. The finding was that a redraft was the wrong shape — a revised version had already been adopted by the Board of Governors on 12 August, and the numbering in it is Sam's own from last November, so it is the same section with the substance left out rather than a rival. Its drafting finished three weeks before the new law took effect, which is the whole argument: nobody erred, and the regulation simply has to be brought into line with the statute it operates under. Sam then ruled on every open call and revised the draft four times; two of his answers were better than the recommendations. A second finding along the way: the new law reaches further than the article everyone has been reading — a separate section of the same bill requires the Chancellor's Office and the Academic Senate to publish, by July 2027, prior-learning credit recommendations worth the same at every college in the state.",
  "_session": 196,
- "_status": "Everything is merged. The amendment package and the tracked-changes file are ready to take to the Chancellor's Office. Nothing left on it is drafting — four items below are judgment calls or facts only Sam can supply. Nothing was written to the regulation, the register, or anyone else's system; every document here is a proposal.",
+ "_status": "Everything is merged and v5 is the draft to send. Sponsor is James Todd, Staff Lead is Mari Estrada; the only blank left in the filing document is the 2026-27 timeline. Nothing was written to the policy register — every finding there is a proposal.",
  "items": [
   {
-   "id": "s196-sam-55050-package",
+   "id": "s196-sam-55050-send",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "The Title 5 55050 package is ready to take to the Chancellor's Office: a Word file with real tracked changes against the version the Board of Governors adopted on 12 August, plus a Regulatory Action Proposal in the same format as your November one. Five changes, and nothing is renumbered. The order to raise them in is in the cover argument doc — lead with the compliance gap, then the timing fact (the drafting finished 19 June, the new law took effect 13 July, so nobody erred), then the remedy, and name our own two stretches before anyone else finds them."
+   "text": "The Title 5 55050 package is ready to send: v5 of the Word file, with every one of your decisions in it and real tracked changes against the version the Board of Governors adopted, plus a Regulatory Action Proposal in the same format as your November one. Undoing every tracked change gives back the adopted regulation word for word, checked by machine. The only blank left is the 2026-27 calendar — five steps to set dates against: the curriculum committee, field vetting, Consultation Council, and two Board readings."
   },
   {
-   "id": "s196-sam-tier2-timing",
+   "id": "s196-sam-tier2-companion",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "One judgment call worth making before the meeting: whether the four policy items from your November draft — the Credit grade symbol, no fee for assessment, credit against program requirements, and folding two exam sections together — go in the same filing or separately. The recommendation is separately, because those four were argued last November and lost, and bundling them lets a reader treat the whole package as reopening a settled negotiation. The fee one carries an Academic Senate resolution and is the strongest candidate to file on its own soon after."
+   "text": "One judgment call left on the package: whether the four policy items from your November draft travel with it or separately. Recommendation is separately — they were argued last November and lost, and bundling lets a reader treat the whole filing as reopening a settled negotiation. Two notes: the new grading clause needs its companion amendment to section 55023, which is what makes a 'credit' mark exist at all; and the no-fee item just gained a second legal anchor, because the Career Passport statute says a student's records must be available at no or low cost."
   },
   {
-   "id": "s196-sam-88782",
+   "id": "s196-sam-register-three",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "A thirty-second check somebody with the Education Code open can do: is section 88782 the California Career Passport Program? The adopted regulation cites it, so our amendment mirrors it either way — but your November proposal cited 88792(b)(1) in one place while describing 88782 in another, so one of them is a typo. If 88782 turns out to be wrong that is a defect in the adopted regulation and its own separate correction, not something to slip into this package."
+   "text": "Three quick fixes on the policy register, now that the draft is settled. Entry #16 points at the wrong lettered paragraph — the August adoption moved that clause. Entry #2 still asks the Legislature for reciprocity between colleges, which is already law; what survives is the 'no second review' half and the CSU/UC half. And entry #10 deserves a fresh look now that #9 is settled: recording the credit was never the same request as flagging where it came from."
   },
   {
-   "id": "s196-sam-proposal-fields",
+   "id": "s196-sam-75013-workgroup",
    "for": "Sam",
    "tab": "gr-priorities",
-   "text": "Three blanks in the Regulatory Action Proposal that are yours to fill and that no session should invent: the Executive Sponsor, the Staff Lead, and the timeline against the 2026-27 calendar. Worth noting when you set the dates — the two duties the new law puts on every campus are in force now, so the gap between today and adoption is time in which Title 5 does not tell districts about them."
+   "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
   },
   {
    "id": "s196-sam-metrics-opening",
@@ -47,12 +47,6 @@
    "text": "The nightly load of the MAP custom reports failed: MAP returned the student-details dataset twice and left out the exhibit-by-catalog-year one entirely, so the run stopped rather than publishing a partial picture — which is the gate working. Needs a look at whether the report itself was renamed on MAP's side."
   },
   {
-   "id": "s196-fable-gr-citations",
-   "for": "Fable",
-   "tab": "gr-priorities",
-   "text": "None of the 20 entries in the policy register cite the new Education Code article yet, and entry #2 still asks for a trailer bill for something the Legislature has already passed. The sweep proposes the fixes; nothing has been written."
-  },
-  {
    "id": "s195-sam-credit-alert",
    "for": "Sam",
    "tab": "cpl-assistant",
@@ -69,12 +63,6 @@
    "for": "Sam",
    "tab": "cpl-assistant",
    "text": "Settled, and noted so nobody undoes it: the automated check found 40 of 41 answers still correct on Haiku, and the one it dropped was the caveat beside the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling rather than a debt. You said you can live with it for now, so it stays as it is. The fix is written down and ready if you change your mind: move that caveat next to the number itself instead of into a rules list further away, which would make it stick on any model."
-  },
-  {
-   "id": "s195-sam-row2-enacted",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "Entry #2 (reciprocity between colleges) now asks for something already law. The new Education Code §78093.2(b)(2) requires every campus to accept transcribed prior-learning credit from other campuses. The entry still asks for a trailer bill, and it is ranked second, so it is near the top of what the Chancellor's Office reads. Two things do survive: 'no secondary review' is not stated outright, and the CSU/UC half is weaker in the statute than in the trailer bill."
   }
  ]
 }

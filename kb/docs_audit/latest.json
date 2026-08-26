@@ -10,22 +10,22 @@
   },
   "summary": {
     "files": 664,
-    "bytes": 7511403,
+    "bytes": 7515622,
     "over_budget": 4,
     "handoff_max": 197,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 150719,
+    "always_loaded_bytes": 151218,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 150719,
+        "bytes": 151218,
         "over": 1
       },
       "other": {
         "files": 87,
-        "bytes": 2074602,
+        "bytes": 2074989,
         "over": 1
       },
       "index": {
@@ -35,7 +35,7 @@
       },
       "lessons": {
         "files": 69,
-        "bytes": 1810158,
+        "bytes": 1813406,
         "over": 1
       },
       "kb_note": {
@@ -45,7 +45,7 @@
       },
       "handoff": {
         "files": 174,
-        "bytes": 1446799,
+        "bytes": 1446884,
         "over": 0
       }
     },
@@ -56,8 +56,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2297,
-      "bytes": 1220858821,
+      "files": 2298,
+      "bytes": 1220868601,
       "heavy_bytes": 598349256,
       "heavy_share": 0.49,
       "ignore_filters": [
@@ -114,13 +114,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 150719,
+        "bytes": 151218,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 90719,
-        "ratio": 2.51
+        "over_by": 91218,
+        "ratio": 2.52
       },
-      "message": "150,719 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "151,218 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
