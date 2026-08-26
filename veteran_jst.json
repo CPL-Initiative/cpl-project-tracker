@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-25T13:17:02.978125+00:00",
+  "scraped_at": "2026-08-26T07:11:59.869550+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27357,
+    "jst": 27417,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,7 +17,7 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 273,
+      "jst": 274,
       "star": true
     },
     "Chaffey College": {
@@ -27,12 +27,12 @@
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1579,
+      "jst": 1587,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1453,
+      "jst": 1468,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,17 +42,17 @@
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1611,
+      "jst": 1620,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
-      "jst": 561,
+      "jst": 563,
       "star": true
     },
     "City College of San Francisco": {
       "vets": 1197,
-      "jst": 1301,
+      "jst": 1315,
       "star": true
     },
     "West Los Angeles College": {
@@ -117,12 +117,12 @@
     },
     "Modesto Junior College": {
       "vets": 80,
-      "jst": 148,
+      "jst": 147,
       "star": true
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 370,
+      "jst": 373,
       "star": true
     },
     "Barstow Community College": {
@@ -162,7 +162,7 @@
     },
     "College of the Canyons": {
       "vets": 382,
-      "jst": 510,
+      "jst": 512,
       "star": true
     },
     "San Joaquin Delta College": {
@@ -210,14 +210,14 @@
       "jst": 339,
       "star": true
     },
-    "Ventura College": {
-      "vets": 254,
-      "jst": 183,
-      "star": false
-    },
     "Los Angeles Pierce College": {
       "vets": 296,
       "jst": 131,
+      "star": false
+    },
+    "Ventura College": {
+      "vets": 254,
+      "jst": 183,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -242,7 +242,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 115,
-      "jst": 172,
+      "jst": 176,
       "star": true
     },
     "Lemoore College": {
@@ -342,7 +342,7 @@
     },
     "Copper Mountain College": {
       "vets": 72,
-      "jst": 78,
+      "jst": 80,
       "star": true
     },
     "Pasadena City College": {
@@ -352,7 +352,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 60,
+      "jst": 61,
       "star": false
     },
     "Crafton Hills College": {
@@ -405,6 +405,11 @@
       "jst": 30,
       "star": false
     },
+    "Los Medanos College": {
+      "vets": 146,
+      "jst": 229,
+      "star": true
+    },
     "College of Alameda": {
       "vets": 30,
       "jst": 14,
@@ -418,11 +423,6 @@
     "Cuesta College": {
       "vets": 206,
       "jst": 176,
-      "star": true
-    },
-    "Los Medanos College": {
-      "vets": 146,
-      "jst": 229,
       "star": true
     },
     "Napa Valley College": {
