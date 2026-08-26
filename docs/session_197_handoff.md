@@ -81,12 +81,13 @@ anti-staleness mechanism) · independent institutions kept. What is left:
 
 | # | item | status |
 |---|---|---|
-| 1 | ⚠️ **Register row #9 conflicts with the draft** — it asks to strike the annotation v3 retains. The statute inverted its logic and **row #10 already carries the counter-argument**. **Settle before filing**: two CO-facing documents must not contradict each other. | **his call, highest value** |
-| 2 | **Four v3 changes he has not ruled on**, each one click to reject: the (l) restore + grading to (o); §75013(b) as a fourth recommendation source in (c); §75013 in the NOTE Reference; CPL expanded in (b)(4) | open |
+| 1 | ✅ **Row #9 SETTLED 2026-08-26 — struck.** Sam asked whether the Ed. Code requires the annotation; it does not (§78093.2(b)(2) binds the *receiving* campus, §88782(a)(1) binds the CO). The earlier keep-it argument was about enforceability, not law, and is withdrawn. Register and draft now agree. ⚠️ **#10 wants a second look** — it was #9's counterweight. | **done** |
+| 2 | **Three v4 changes he has not ruled on**: §75013(b) as a fourth recommendation source in (c); §75013 in the NOTE Reference; CPL expanded in (b)(4) | open |
+| 2b | ⚠️ **His v4 reverted (f) to "course content"** — the BOG adopted **"course outcomes"** on 2026-08-12. Kept as adopted in the merge; confirm the revert was not deliberate. | **needs a word** |
 | 3 | **Register row #2** still asks for enacted law and is still ranked second | open |
 | 4 | **Register row #16's instrument says `§55050(d)`** — the 2026-08-12 adoption moved that clause to **(c)**. One-field fix a CO reader would catch. | open |
 | 5 | ⭐ **Row #7 has a venue it did not have** — §75013(a)'s CBE-to-FTES workgroup must report to the **Department of Finance** by 2028-10-01, which is row #7's own named obstacle. Two candidate new rows from §75013. | open |
-| 6 | **Executive Sponsor / Staff Lead**, and the **2026–27 timeline** | blank, deliberately |
+| 6 | ✅ **Executive Sponsor: James Todd, Vice Chancellor of Academic Affairs** (Sam, 2026-08-26). **Staff Lead** and the **2026–27 timeline** still blank | partly done |
 | 7 | **Whether Tier 2 gets a companion action** — recommend yes, separately; the fee amendment (ASCCC Res. 103.04) is the strongest candidate, and it now has a second anchor in §88782(c)(3) *"no or low cost"* | open |
 
 ⚠️ **§88782 is settled** — it IS the Career Passport Program, so the adopted NOTE
