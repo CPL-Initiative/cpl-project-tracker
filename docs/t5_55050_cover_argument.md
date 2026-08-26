@@ -143,15 +143,18 @@ anticipated this."* Same fact, different weight, entirely down to order.
 
 ## 3. The NOTE citation — recommendation, with the caveat that matters
 
-**Use §88782.** Two independent sources agree: the CO's own 2026-08-12 final text,
-and the November proposal's *background* section, which describes §88782 as the
-California Career Passport Program. The lone outlier is the NOTE line in the
-November proposal itself, which is the likeliest place for a transposition.
+**Use §88782 — and note this is no longer a judgment call.** The section as
+**adopted** on 2026-08-12 already carries it: the redline strikes the `and` before
+70902 and inserts `, and 88782`. This action amends that section, so it mirrors
+what is there. The November proposal's NOTE line (§88792(b)(1)) is the lone
+outlier, and its own background section describes §88782 — a transposition.
 
-⚠️ **This is a recommendation from agreement, not from reading the code.** This
-session cannot reach `leginfo`. It takes someone thirty seconds with the Education
-Code in front of them, and a citation in a filed regulation should be confirmed
-that way rather than inferred. **Confirm; do not adopt on this reasoning alone.**
+⚠️ **A different question is still open, and don't conflate them.** Whether
+§88782 *is* the California Career Passport Program in the Education Code has not
+been checked against the code — this session cannot reach `leginfo`. If it turns
+out to be wrong, that is a defect in the adopted regulation, and correcting it is
+its own conversation. **Do not fold a citation correction into a conformity
+amendment**; it would give a reader a second thing to argue about.
 
 ---
 
