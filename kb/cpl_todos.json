@@ -1,9 +1,57 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-25 (evening) · A second long live session. Sam edited the GR Priorities register in a browser and hit a save that failed with a message blaming his sign-in — it was not his account. Refresh tokens are replaced each time they are used, and a browser tab still holding the previous one overwrote the good copy with the spent one, which signed him out of every tab at once. Fixed so the newest credential always wins. He then supplied three authenticated PDFs of brand-new law: SB 135 created an Education Code article for Credit for Prior Learning, effective 13 July. Reading all sixteen register entries against it found that one of them — ranked second — is asking the Legislature for something it has already passed. The register also could not cite the new law at all, because its citation rules never covered that range of section numbers. Sam then named what he wants built: that whole-register pass, as a button, able to propose entirely new priorities. It is built. Sierra also ran out of API credit this evening and was returning errors to the public; Sam restored it the same evening, and the uptime monitor did raise the alert correctly.",
- "_session": 195,
- "_status": "Everything from this session is merged and live, and the Sierra outage is resolved — Sam restored the credit balance the same evening. Two decisions in the register are legal judgments waiting on him: whether entry #2 is rewritten now that reciprocity is law, and whether entry #12 answers an objection the new statute hands to a reader. Nothing was written to the register; every finding is a proposal.",
+ "_as_of": "2026-08-26 · A day on one thing: getting a new draft of the regulation that governs credit for prior learning — Title 5 section 55050 — ready for the Chancellor's Office, now that SB 135 has put credit for prior learning into the Education Code. The finding is that a redraft is the wrong shape. A revised 55050 was already adopted by the Board of Governors on 12 August, and the numbering in it is Sam's own from last November, so it is not a rival version — it is the same section with the substance left out. Its drafting simply finished three weeks before the new law took effect, which is the whole argument: nobody erred, and the regulation now has to be brought into line with the statute it operates under. Five amendments, nothing renumbered, delivered as a Word file with real tracked changes and checked by machine against the adopted text. Earlier the same day, the memory feature: its written briefing was reading 34 of 188 entries and picking them by whichever had been edited most recently.",
+ "_session": 196,
+ "_status": "Everything is merged. The amendment package and the tracked-changes file are ready to take to the Chancellor's Office. Nothing left on it is drafting — four items below are judgment calls or facts only Sam can supply. Nothing was written to the regulation, the register, or anyone else's system; every document here is a proposal.",
  "items": [
+  {
+   "id": "s196-sam-55050-package",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "The Title 5 55050 package is ready to take to the Chancellor's Office: a Word file with real tracked changes against the version the Board of Governors adopted on 12 August, plus a Regulatory Action Proposal in the same format as your November one. Five changes, and nothing is renumbered. The order to raise them in is in the cover argument doc — lead with the compliance gap, then the timing fact (the drafting finished 19 June, the new law took effect 13 July, so nobody erred), then the remedy, and name our own two stretches before anyone else finds them."
+  },
+  {
+   "id": "s196-sam-tier2-timing",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "One judgment call worth making before the meeting: whether the four policy items from your November draft — the Credit grade symbol, no fee for assessment, credit against program requirements, and folding two exam sections together — go in the same filing or separately. The recommendation is separately, because those four were argued last November and lost, and bundling them lets a reader treat the whole package as reopening a settled negotiation. The fee one carries an Academic Senate resolution and is the strongest candidate to file on its own soon after."
+  },
+  {
+   "id": "s196-sam-88782",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "A thirty-second check somebody with the Education Code open can do: is section 88782 the California Career Passport Program? The adopted regulation cites it, so our amendment mirrors it either way — but your November proposal cited 88792(b)(1) in one place while describing 88782 in another, so one of them is a typo. If 88782 turns out to be wrong that is a defect in the adopted regulation and its own separate correction, not something to slip into this package."
+  },
+  {
+   "id": "s196-sam-proposal-fields",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "Three blanks in the Regulatory Action Proposal that are yours to fill and that no session should invent: the Executive Sponsor, the Staff Lead, and the timeline against the 2026-27 calendar. Worth noting when you set the dates — the two duties the new law puts on every campus are in force now, so the gap between today and adoption is time in which Title 5 does not tell districts about them."
+  },
+  {
+   "id": "s196-sam-metrics-opening",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Separate from the regulation and probably bigger. The new law makes every dollar of implementation funding conditional on 'the metrics described in paragraph (1)' — and paragraph (1) describes four goals and supplies no metrics at all. Somebody has to define them, and the Implementation Funding model is the only college-by-college quantification of those goals that exists. It already covers access and completion, and the pilot-project one is satisfied because MAP is named in the statute. Career advancement is the gap you said you would cover through CPL Projects and the Credential Registry. This needs no rulemaking, which is exactly its advantage — keep it out of the amendment conversation."
+  },
+  {
+   "id": "s196-sam-memory-hopper",
+   "for": "Sam",
+   "tab": "memory",
+   "text": "The memory entries are now readable end to end in plain English — 202 were rewritten, and there are no entries left without plain text, none with developer jargon, and no British spellings. The hopper of unreviewed entries is worth an afternoon whenever you have one. Two small things still need you: one entry is marked stale but still carries a verification stamp, which needs your go to clear, and 26 verified entries do not name who verified them."
+  },
+  {
+   "id": "s196-fable-map-load",
+   "for": "Fable",
+   "tab": "map-data-quality",
+   "text": "The nightly load of the MAP custom reports failed: MAP returned the student-details dataset twice and left out the exhibit-by-catalog-year one entirely, so the run stopped rather than publishing a partial picture — which is the gate working. Needs a look at whether the report itself was renamed on MAP's side."
+  },
+  {
+   "id": "s196-fable-gr-citations",
+   "for": "Fable",
+   "tab": "gr-priorities",
+   "text": "None of the 20 entries in the policy register cite the new Education Code article yet, and entry #2 still asks for a trailer bill for something the Legislature has already passed. The sweep proposes the fixes; nothing has been written."
+  },
   {
    "id": "s195-sam-credit-alert",
    "for": "Sam",
@@ -27,42 +75,6 @@
    "for": "Sam",
    "tab": "gr-priorities",
    "text": "Entry #2 (reciprocity between colleges) now asks for something already law. The new Education Code §78093.2(b)(2) requires every campus to accept transcribed prior-learning credit from other campuses. The entry still asks for a trailer bill, and it is ranked second, so it is near the top of what the Chancellor's Office reads. Two things do survive: 'no secondary review' is not stated outright, and the CSU/UC half is weaker in the statute than in the trailer bill."
-  },
-  {
-   "id": "s195-sam-row12-objection",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "Entry #12 is the one we call the cleanest win, and the new statute hands a reader an objection to it — §78093.1(f)(2) requires prior learning be 'approved through established curricular processes'. The answer exists (that governs how mastery is assessed, not what a course outline must list), but the entry is written as though nothing could be said against it. Worth pre-empting rather than meeting in the room."
-  },
-  {
-   "id": "s195-sam-new-priorities",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "The new law imposes four duties no entry covers. The biggest: every campus must evaluate the prior learning of ALL incoming students at the point their education plan is completed. Press 'Sweep this area' and the routine proposes these as new entries — nothing is added until you press Add, and anything added arrives marked 'proposed' with its citations flagged as machine-extracted."
-  },
-  {
-   "id": "s195-sam-verify-article9",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "None of the twenty register entries has had its citations checked against a primary source. The three PDFs you supplied are stamped 'authenticated electronic legal material', so they are the first material in the register that can move that number off zero."
-  },
-  {
-   "id": "s195-sam-browser-check",
-   "for": "Sam",
-   "tab": "gr-priorities",
-   "text": "Two things only a browser can confirm: that signing in and saving now works across several open tabs at once, and that 'Sweep this area' reads usefully. Sixteen verdicts is a lot on one screen — entries needing rework are listed first deliberately, but the density is your call."
-  },
-  {
-   "id": "s195-fable-decision-packs",
-   "for": "Fable",
-   "tab": "ccr",
-   "text": "The Common Course Reference map is the landing view, but the work surface behind it exists for only 5 of 159 subjects — so a curator clicking into it lands on nothing most of the time. Build the per-discipline decision packs, fetched on demand. The sharding path already exists."
-  },
-  {
-   "id": "s195-fable-my-college-cell",
-   "for": "Fable",
-   "tab": "dashboard",
-   "text": "The project memory's My College entry has grown into an append-only log — it is flagged by the documentation lint and has been carried across three sessions now. Compact it: current truth stays, the history moves to that workstream's lessons file."
   }
  ]
 }

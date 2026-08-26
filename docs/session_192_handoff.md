@@ -10,6 +10,8 @@ related:
   - "[[docs/college_action_page_lessons]]"
   - "[[docs/cobi_memory_tab_lessons]]"
   - "[[docs/kb-notes/methodology-a-second-copy-of-a-fact-is-a-stale-copy-waiting]]"
+superseded: true
+superseded_by: session_197_handoff.md
 ---
 
 # Session 192 handoff

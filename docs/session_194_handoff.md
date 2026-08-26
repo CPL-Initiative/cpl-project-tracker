@@ -10,6 +10,8 @@ related:
   - "[[docs/kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it]]"
   - "[[docs/kb-notes/methodology-name-the-credential-that-actually-failed]]"
   - "[[docs/kb-notes/methodology-a-word-in-a-request-may-have-no-referent-yet]]"
+superseded: true
+superseded_by: session_197_handoff.md
 ---
 
 # Session 194 handoff

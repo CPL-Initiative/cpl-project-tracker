@@ -10,6 +10,8 @@ related:
   - "[[docs/ccr_atlas_lessons]]"
   - "[[docs/kb-notes/methodology-a-write-key-must-name-exactly-one-thing]]"
   - "[[docs/kb-notes/methodology-a-view-must-not-fly-where-it-cannot-draw]]"
+superseded: true
+superseded_by: session_197_handoff.md
 ---
 
 # Session 193 handoff
