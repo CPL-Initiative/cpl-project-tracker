@@ -36,7 +36,7 @@ against.
 |---|---|---|
 | ✅ **Delivered by the draft** | **#1 #2 #6 #11 #14 #16** | in v2, filed as conformity |
 | 🟡 **Half-delivered** | **#3** | §55050 half is in (o); the **§55023** companion is not |
-| ⚠️ **Conflicts with the draft** | **#9** | the draft *restores* the annotation #9 wants struck |
+| ✅ **Settled in the row's favor** | **#9** | Sam ruled 2026-08-26 — the draft now strikes the annotation |
 | ⬜ **Candidates for the draft** | **#10 #15** | small, and each implements something |
 | ⬜ **Correctly outside it** | **#4 #5 #7 #8 #12 #13** | memo, statute, or a different section |
 
@@ -47,48 +47,40 @@ draft **(b)(1)–(3)**. Those should stop being listed as uncovered.
 
 ---
 
-## 2. ⚠️ The one real conflict — row #9
+## 2. ✅ Row #9 — SETTLED 2026-08-26, in the row's favor
 
-**Row #9 asks to strike the transcript annotation. The draft restores it.**
+**Sam ruled: strike the annotation.** He asked directly whether anything in the
+Education Code requires it. **It does not**, and the earlier recommendation here
+— *keep the annotation, rewrite the row* — was wrong and has been withdrawn.
 
-That is not an oversight on either side. The row was written when reciprocity
-depended on colleges *voluntarily* honoring each other, and de-flagging was, as
-the row says, *"the quiet lever that makes reciprocity work."* **The statute
-inverted that logic**, and two provisions do it:
+Why it was wrong: the argument rested on **enforceability**, not on a statutory
+requirement, and the two provisions cited do not do what was claimed of them.
 
-1. **§78093.2(b)(2)** obliges a campus to accept *"**transcribed credit for prior
-   learning** from other campuses."* The duty is keyed to credit that is
-   identifiable **as** CPL. Strike the annotation and the receiving college
-   cannot tell which credit the duty applies to — de-flagging stops making
-   reciprocity automatic and starts making it **unenforceable**.
-2. **§88782(a)(1)** — the Career Passport displays *"preparation for employment,
-   academic records, and **credit for prior learning**."* To display CPL
-   *specifically*, something must identify it. The academic record is what
-   populates the Passport.
+| provision | who it binds | does it require annotation? |
+|---|---|---|
+| **§78093.2(b)(2)** | the **receiving** campus (*accept transcribed credit*) | **No.** It is silent on how the sending campus records it. |
+| **§88782(a)(1)** | the **Chancellor's Office** (build the Career Passport) | **No.** And §88782(b) builds the Passport by leveraging **MAP**, so its CPL data need not come from a transcript. |
+| §66025.71 · §75013 · §78093 · §78093.1 | — | Silent. |
 
-⭐ **The register already contains the counter-argument, in row #10.** The sweep's
-own entry for #10 reads: *"(b)(2) requires accepting **transcribed** CPL — which
-presupposes transcription. If a campus does not transcribe, the receiving campus
-has nothing to accept."* **#9 and #10 now pull against each other**, and the
-statute resolves it toward #10.
+⭐ **And the draft already carries the identification duty elsewhere**: `(b)(4)`
+requires districts to maintain student credit-for-prior-learning records in the
+systemwide infrastructure. That is a better home for it than a transcript flag —
+it serves reciprocity and the Passport without labeling the student's record.
 
-⚠️ **The concern behind #9 is real and does not go away.** A source-flag that
-invites adverse treatment is a genuine equity problem. What changes is the
-**remedy**: not *don't record it*, but *record it and prohibit its adverse use*.
+⚠️ **Scope of the check:** the eight authenticated sections in
+`docs/reference/statute/`. No session can search the whole Education Code — the
+sandbox is egress-blocked from `leginfo`.
 
-> **Recommendation — rewrite #9, keep the draft.** New shape: *"Prohibit adverse
-> use of the CPL notation"* — the credit is recorded and identifiable for
-> portability and the Career Passport, and districts may not treat it as inferior
-> for transfer, major preparation, honors, or financial aid. If the flag itself
-> must go, it belongs off the **student-facing transcript** while staying in the
-> record the receiving college and the Passport read.
+**Result: row #9 and the draft now agree.** In v4 the annotation is a **tracked
+deletion**, former (m) re-letters to (l), and the new material becomes (m) and (n).
+The re-letter was checked first: the only cross-reference into §55050 in the
+adopted regulatory text is **§55051(d) → §55050(i)**, and (a)–(k) are untouched.
 
-**This is Sam's call — it reverses a position he has held.** It is also the single
-highest-value item in this comparison, because filing a §55050 package that
-restores the annotation while the register asks to strike it puts two CO-facing
-documents in contradiction.
-
----
+⚠️ **Row #10 now needs a second look**, since it was the counterweight to #9. Its
+*"transcribe all CPL"* ask survives — recording the **credit** is different from
+flagging its **source**, and that distinction is exactly what #9 and #10 were
+always about. But the register should say so explicitly rather than leave two
+rows whose relationship has changed.
 
 ## 3. ⭐ §75013 changes three rows, and the biggest is #7
 
@@ -221,8 +213,9 @@ recharacterization risk the cover argument warns about.
 
 ## 7. Order to work it
 
-1. **#9** — the conflict. Nothing else should be filed while a CO-facing register
-   contradicts a CO-facing draft.
+1. ~~**#9** — the conflict.~~ ✅ **Settled 2026-08-26**: struck, and the register
+   and the draft now agree. **#10** wants a second look, since it was #9's
+   counterweight.
 2. **#2** — still asks for enacted law, still ranked second.
 3. **#16's stale `§55050(d)`** — a one-field fix that a CO reader would catch.
 4. **#7 + the two new §75013 rows** — the largest new ground.
