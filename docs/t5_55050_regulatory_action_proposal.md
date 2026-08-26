@@ -103,10 +103,10 @@ basis for this action is the statute, not the earlier proposal.
 
 ## Communication & Participatory Governance Process
 
-*To be confirmed — carried forward from the November 2025 proposal and not
-independently verified.*
+*Executive Sponsor supplied by Sam, 2026-08-26. The remaining role is carried
+forward from the November 2025 proposal and not independently verified.*
 
-- **Executive Sponsor:** ⟨confirm⟩ — accountable for presenting to the Board of Governors; final decision-making authority.
+- **Executive Sponsor:** **James Todd, Vice Chancellor of Academic Affairs, California Community Colleges Chancellor's Office** *(Sam, 2026-08-26)* — accountable for presenting to the Board of Governors; final decision-making authority.
 - **Executive Advisor:** Samuel Lee, Senior Advisor to the Chancellor for Credit for Prior Learning.
 - **Staff Lead:** ⟨confirm⟩ — manages the regulatory action process and develops the regulatory changes.
 - **Regulatory Action Workgroup:** California Community Colleges Curriculum Committee (5C).
@@ -133,8 +133,12 @@ not state them.
   their statutory basis.
 - Local governing boards will review existing credit for prior learning policies
   against the amended section — in particular the evaluation duty in (e) and the
-  reciprocity requirement in (n), both of which may require procedural changes
+  reciprocity requirement in (m), both of which may require procedural changes
   rather than policy language alone.
+- Districts will stop annotating academic records to identify credit as earned
+  through an alternative method of assessment. ⚠️ **Registrars will need notice**:
+  this reverses a duty that has been in force since 2020, and student information
+  systems may enforce it in configuration rather than in policy.
 - Curriculum committees, faculty, and student services departments will review
   campus practices for intake evaluation and for acceptance of transcribed credit
   from other California Community Colleges.
@@ -151,7 +155,8 @@ article on a campus demonstrating implementation.
 | **(b)** | Adds four policy attributes: public exploration of credit for prior learning opportunities; a means for students to request timely review; a process to identify and notify students during exploration and admissions; and use of, or data supply to, the systemwide CPL infrastructure. Adds publication on the district or college website. | Implements § 78093.2(a)(1)(A)–(C) and (a)(2). The infrastructure duty also supports (d)(2), which conditions allocation on demonstrated implementation. |
 | **(c)** | Extends *shall consider* beyond ACE to credit recommendations developed by California Community Colleges faculty discipline review groups and by local discipline faculty experts, as documented in detailed exhibits for faculty credit evaluation. | § 78093.1(d) defines a credit recommendation as developed by any of these three, documented in detailed exhibits. ⚠️ § 78093.2(a)(3) is permissive as to adoption; *shall consider* is therefore a Title 5 requirement layered on it, consistent with the existing treatment of ACE. |
 | **(e)** | Requires that the prior learning documents and credentials of **all incoming students** be evaluated for the assessment and award of credit, before or upon completion of the § 78212 education plan. Adds the statutory list of document types. Retains the existing advise-and-refer requirement. | Implements § 78093.2(b)(1). The duty is unconditional in statute; advising and referring does not satisfy a requirement to evaluate. |
-| **(n)** *(new)* | Requires acceptance of credit for prior learning transcribed by another California Community College, including for general education, transfer, and major preparation, and provides that a district shall not require a student to repeat an assessment another college has assessed and transcribed. | First sentence implements § 78093.2(b)(2). ⚠️ The second sentence is a Title 5 addition: the statute requires acceptance and is silent on re-adjudication, which is the practical barrier to portability. Appended as (n) so that no existing subdivision is re-lettered and § 55051(d)'s cross-reference to § 55050(i) is preserved. |
+| **(l)** *(struck)* | Strikes the requirement that the academic record be annotated to reflect credit earned through an alternative method of assessment. Remaining subdivisions re-letter: former (m) becomes (l). | ⚠️ **No Education Code provision requires this annotation.** § 78093.2(b)(2) places its duty on the *receiving* campus and § 88782(a)(1) on the Chancellor's Office; neither directs a district to annotate. Identification of an award as credit for prior learning is carried instead by the systemwide infrastructure under (b)(4). |
+| **(m)** *(new)* | Requires acceptance of credit for prior learning transcribed by another California Community College, including for general education, transfer, and major preparation, and provides that a district shall not require a student to repeat an assessment another college has assessed and transcribed. | First sentence implements § 78093.2(b)(2). ⚠️ The second sentence is a Title 5 addition: the statute requires acceptance and is silent on re-adjudication, which is the practical barrier to portability. Added as (m). Subdivisions (a)–(k) are untouched, so § 55051(d)'s cross-reference to § 55050(i) is preserved — the only cross-reference into this section in the adopted regulatory text. |
 | **NOTE** | Adds § 78093.2 to Authority and §§ 78093, 78093.1 and 78093.2 to Reference. | The section implements Article 9; the NOTE presently cites none of it. |
 
 ### Not included in this action
@@ -173,7 +178,7 @@ Deliberately, so the action remains a conformity amendment:
 
 Full amendatory text, with additions and deletions marked, is at
 [`t5_55050_amendment_package_draft.md`](t5_55050_amendment_package_draft.md)
-§ 1 (Tier 1, Amendments 1–5).
+§ 1 (Tier 1, Amendments 1–5), and the tracked-changes file `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v4.docx`.
 
 ---
 
@@ -187,8 +192,9 @@ Full amendatory text, with additions and deletions marked, is at
    § 88792(b)(1) was a transposition. **No longer an open item.** The statute
    also does real work for the package — see
    [`t5_55050_sam_revision_review.md`](t5_55050_sam_revision_review.md) § 2.
-2. **Executive Sponsor and Staff Lead** — carried forward from November 2025 and
-   not confirmed.
+2. ✅ **Executive Sponsor — SETTLED 2026-08-26: James Todd, Vice Chancellor of
+   Academic Affairs.** **Staff Lead** is still carried forward from November 2025
+   and unconfirmed.
 3. **Timeline** — to be set against the 2026–27 calendar.
 4. **Whether the four November policy items** are filed as a companion action, and
    on what schedule.

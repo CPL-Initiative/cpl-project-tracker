@@ -43,7 +43,7 @@ import os, zipfile, html
 
 AUTHOR = "CPL Initiative — Article 9 conformity"
 DATE = "2026-08-26T00:00:00Z"
-OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v3.docx"
+OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v4.docx"
 
 _id = [100]
 def nid():
@@ -117,22 +117,20 @@ P.append(para([
     ("p", " and published at minimum in college catalogs"),
     ("i", " and on the district's or college's public internet website"),
     ("p", ". Procedures for students to attain credit for prior learning shall include, but not "
-          "be limited to, credit by examination, "),
-    ("d", "evaluation of Joint Services Transcripts, "),
-    ("p", "evaluation of authenticated competencies, "),
+          "be limited to, credit by examination, evaluation of Joint Services Transcripts"),
+    ("i", " for veterans, reservists, and active-duty members of the Armed Forces of the United "
+          "States, industry-recognized credentials of working learners and apprentices, portfolios "
+          "for self-directed and experiential learners"),
+    ("p", ", evaluation of authenticated competencies, "),
     ("d", "student-created portfolios, evaluation of industry-recognized certifications and "
           "documented trainings, and standardized examinations."),
-    ("i", "and evaluation of Joint Services Transcripts for veterans, reservists, and active duty "
-          "members of the Armed Forces of the United States, industry-recognized credentials of "
-          "working learners and apprentices, portfolios for self-directed and experiential "
-          "learners, and standardized assessments, including, but not limited to, advanced "
-          "placement, international baccalaureate, and College-Level Examination Program "
-          "assessments."),
+    ("i", "and standardized assessments, including, but not limited to, advanced placement, "
+          "international baccalaureate, and College-Level Examination Program assessments."),
     ("i", " The policies and procedures shall further:"),
 ]))
 P.append(para([("i", "(1) Provide a means for the public to explore faculty-approved credit for prior "
                      "learning opportunities associated with specific prior learning experiences and "
-                     "with college courses or program requirements listed on program pathways;")], indent=720))
+                     "with approved college courses or program requirements listed on program pathways;")], indent=720))
 P.append(para([("i", "(2) Provide a means for admitted or registered students to submit requests for "
                      "timely and documented review and determination of their documented prior learning "
                      "prior to "
@@ -195,13 +193,16 @@ P.append(para([
     ("d", ", as a component of their educational planning process pursuant to California Education "
           "Code section 78212,"),
     ("p", " be advised of credit for prior learning opportunities and referred to the college's "
-          "appropriate authority for assessment of prior learning."),
+          "appropriate authority for assessment"),
+    ("i", " and award of prior learning credit"),
+    ("d", " of prior learning"),
+    ("p", "."),
     ("i", " For purposes of this subdivision, prior learning documents and credentials include, but "
-          "are not limited to, Joint Services Transcripts for veterans, reservists, and active duty "
+          "are not limited to, Joint Services Transcripts for veterans, reservists, and active-duty "
           "members of the Armed Forces of the United States, industry-recognized credentials of "
           "working learners and apprentices, portfolios for self-directed and experiential learners, "
-          "and standardized assessments, including advanced placement, international baccalaureate, "
-          "and College-Level Examination Program assessments."),
+          "authenticated competencies, and standardized assessments, including advanced placement, "
+          "international baccalaureate, and College-Level Examination Program assessments."),
 ]))
 
 # (f)-(h) — unchanged
@@ -232,7 +233,8 @@ P.append(para([
     ("p", " the discretion of the discipline faculty. "),
     ("d", "A separate examination shall be conducted for each course for which credit is to be "
           "granted. "),
-    ("p", "Credit may be granted "),
+    ("i", "Such credit"), ("d", "Credit"),
+    ("p", " may be granted "),
     ("d", "only to a student who is registered at the college and in good standing and "),
     ("p", "only for a course listed in the catalog of the community college."),
 ]))
@@ -251,13 +253,14 @@ P.append(para([("p", "(k) A district may charge a student a fee for administerin
                      "pursuant to this section, provided the fee does not exceed the enrollment fee "
                      "which would be associated with enrollment in the course for which the student "
                      "seeks credit by examination.")]))
-P.append(para([("p", "(l) The student's academic record shall be clearly annotated to reflect that "
+P.append(para([("d", "(l) The student's academic record shall be clearly annotated to reflect that "
                      "credit was earned through an alternative method of assessment for prior "
                      "learning.")]))
 
 # (m) — AMENDED
 P.append(para([
-    ("p", "(m) The governing board of each community college district shall review the credit for "
+    ("p", "("), ("d", "m"), ("i", "l"), ("p", ") "),
+    ("p", "The governing board of each community college district shall review the credit for "
           "prior learning policies every three years and report findings to the Chancellor's Office. "
           "Findings shall include data disaggregated by "),
     ("i", "credit for prior learning type, student population (military, working adult, apprentice "
@@ -278,15 +281,15 @@ P.append(para([
 
 # (n), (o) — NEW
 P.append(para([
-    ("i", "(n) Credit for prior learning transcribed by another California Community College shall "
-          "be accepted as credit, including for program requirements, general education (local and "
+    ("i", "(m) Credit for prior learning transcribed by another California Community College shall "
+          "be accepted as credit, including for course credit, program requirements, general education (local and "
           "transfer), transfer requirements, and major preparation. A district shall not require a "
           "student to repeat an assessment of prior learning that another California Community "
           "College has assessed and transcribed for an equivalent course, local degree requirement, "
           "or general education course or area."),
 ]))
 P.append(para([
-    ("i", "(o) Grading for all types of credit for prior learning other than credit by examination "
+    ("i", "(n) Grading for all types of credit for prior learning other than credit by examination "
           "shall be according to the regular grading system approved by the governing board pursuant "
           "to section 55023, except that students shall be offered a \u201ccredit\u201d option."),
 ]))
@@ -302,9 +305,10 @@ P.append(para([
 ], space_after=240))
 
 P.append(para([("em",
-    "Drafting notes. (1) New material is appended as (n) and (o) rather than inserted, so that no "
-    "existing subdivision is re-lettered and \u00a7 55051(d)'s cross-reference to \u00a7 55050(i) is "
-    "preserved. (2) Four clauses go beyond restating the statute and are identified as such: "
+    "Drafting notes. (1) The annotation requirement at (l) is struck and the remaining subdivisions "
+    "re-letter accordingly: former (m) becomes (l), and the new material is added as (m) and (n). "
+    "Subdivisions (a) through (k) are untouched, so \u00a7 55051(d)'s cross-reference to \u00a7 55050(i) is "
+    "preserved \u2014 that is the only cross-reference into this section in the adopted regulatory text. (2) Four clauses go beyond restating the statute and are identified as such: "
     "\u201cshall at a minimum consider\u201d in (c), which rests on Education Code \u00a7 78093.2(a)(3) "
     "(permissive as to adoption) and on \u00a7 75013(b), under which the recommendations are mandatory, "
     "systemwide-uniform, and colleges are strongly encouraged to award consistent with them; the "
