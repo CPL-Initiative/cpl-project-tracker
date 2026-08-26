@@ -66,7 +66,12 @@ jobs:
           MAP_API_KEY: ${{ secrets.MAP_API_KEY }}
           MAP_API_AUTH_HEADER: ${{ secrets.MAP_API_AUTH_HEADER }}
           MAP_API_AUTH_SCHEME: ${{ secrets.MAP_API_AUTH_SCHEME }}
-        run: python fetch_custom_report.py --output CustomReport_latest.json
+        # --strict: stop at the FETCH when MAP does not return every requested
+        # dataset cleanly, and stop with MAP's own responseMessage in the log.
+        # The 2026-08-24 outage ran three nights reporting a name mismatch while
+        # MAP was plainly answering 400 "...is not Valid". The daily dashboard
+        # deliberately does NOT pass this — it consumes none of these views.
+        run: python fetch_custom_report.py --output CustomReport_latest.json --strict
 
       # Runs before the load so a contract break is caught on the runner rather
       # than discovered mid-insert.
