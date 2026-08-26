@@ -1000,10 +1000,93 @@
   var BRIEF_DETAIL_CHARS = 240;      // per-entry slice of `detail`
   var BRIEF_RETRIEVAL_MAX = 1000;    // the KB search text (cpl-chat caps at 1000)
 
+  // ── reading order — foundations first, specifics last ─────────────────────
+  //
+  // ⭐ THE ORDER IS ALSO THE SELECTION, and that is why this exists. The 188
+  // verified entries digest to ~83,000 characters against a 17,951-character
+  // corpus budget, so about 34 of them fit and briefDigest drops the rest from
+  // the END. Whatever order this array is in decides WHICH entries the model
+  // ever sees, not merely the sequence it reads them in.
+  //
+  // ⚠ ROWS ARRIVE IN `updated_at` DESCENDING — the tab's own fetch order. Before
+  // this existed the briefing therefore read the 34 most recently EDITED rows
+  // and silently dropped every foundation: a typo fix promoted an entry over a
+  // standing rule nobody had needed to touch since June, and the panel still
+  // said "Read 34 of 188" either way.
+  //
+  // The ladder is what a person reads to come up to speed — the ground rules,
+  // then what is true, then what goes wrong, then what is unsettled, then what
+  // shipped, then what is next. Within a band, OLDEST FIRST: an undated seed row
+  // is the most settled thing in this table and a row dated yesterday the least,
+  // and "" sorts before any ISO date, so undated foundations lead their band.
+  var READING_BANDS = [
+    ["procedure", "decision"],       // how we work, and what is settled
+    ["fact"],                        // what is true
+    ["pitfall"],                     // what goes wrong
+    ["risk", "question"],            // what is unresolved
+    ["milestone"],                   // what has shipped
+    ["opportunity", "wishlist"],     // what is next
+  ];
+  var READING_BAND_OF = {};
+  READING_BANDS.forEach(function (ks, i) { ks.forEach(function (k) { READING_BAND_OF[k] = i; }); });
+  // An unknown kind reads LAST, never first — a new kind must not silently
+  // displace the foundations from a budget this tight.
+  function readingRank(d) {
+    var b = READING_BAND_OF[d && d.kind];
+    return b == null ? READING_BANDS.length : b;
+  }
+  //
+  // ⚠ A STRICT LADDER SORT IS THE WRONG SHAPE HERE, and measuring it on the live
+  // table is the only way that shows. The verified set is 82 procedure+decision
+  // rows out of 188, and only ~38 entries fit — so ordering strictly by band
+  // spends the ENTIRE budget inside band 0 and the model reads 38 decisions and
+  // ZERO facts, pitfalls, risks or milestones. That is a worse briefing than the
+  // recency order it replaced: the traps live in the bands it never reaches.
+  //
+  // ⭐ SO THE LADDER ORDERS, AND A PROPORTIONAL SHARE SELECTS. Each row carries
+  // its position WITHIN its band as a fraction, `(j + 0.5) / bandSize`, and the
+  // sort runs on that fraction first, band second. Any prefix of the result then
+  // holds roughly the same FRACTION of every band — so truncation keeps all six
+  // represented — while inside each slice the bands still appear in ladder order,
+  // and the slices run oldest-fraction to newest. Progressive on both axes:
+  // settled before recent, ground rules before specifics.
+  //
+  // Unknown kinds are held out of the stride entirely and appended, so a new kind
+  // can never take a slot from a known one.
+  function briefOrder(rows) {
+    var bands = {}, unknown = [], out = [];
+    (rows || []).forEach(function (d, i) {
+      var b = readingRank(d);
+      if (b >= READING_BANDS.length) { unknown.push({ d: d, i: i }); return; }
+      (bands[b] = bands[b] || []).push({ d: d, i: i });
+    });
+    Object.keys(bands).forEach(function (b) {
+      // Oldest first inside the band: "" sorts before any ISO date, so the
+      // undated seed rows — the most settled things in this table — lead.
+      var list = bands[b].sort(function (a, c) {
+        return String(a.d.when || "").localeCompare(String(c.d.when || "")) || a.i - c.i;
+      });
+      list.forEach(function (x, j) {
+        out.push({ d: x.d, band: +b, pos: (j + 0.5) / list.length, i: x.i });
+      });
+    });
+    out.sort(function (a, c) { return a.pos - c.pos || a.band - c.band || a.i - c.i; });
+    return out.concat(unknown.sort(function (a, c) { return a.i - c.i; }))
+      .map(function (x) { return x.d; });
+  }
+
   function briefRow(d, withDetail) {
     var head = "[" + d.id + "] " + (d.kind || "fact") + "/" + (d.status || "proposed")
       + (d.title ? " · " + d.title : "");
-    var out = head + "\n  " + String(d.summary || "").trim();
+    // ⭐ THE READER'S TEXT, NOT THE CURATOR'S. This used to send `summary` while
+    // the Report beside it rendered `plain`, so the model briefed different words
+    // from the ones on screen and the plain-language pass never reached it at
+    // all. `detail` still rides along as the evidence when the budget allows,
+    // which is where the numbers and quotes live.
+    // ⚠ Deliberately NOT reportProse(): that folds `detail` into its fallback,
+    // which would print detail twice on any row whose `plain` is empty.
+    var body = (d.plain || "").trim() || String(d.summary || "").trim();
+    var out = head + "\n  " + body;
     if (withDetail && d.detail) out += "\n  why: " + String(d.detail).trim().slice(0, BRIEF_DETAIL_CHARS);
     if ((d.tags || []).length) out += "\n  tags: " + d.tags.join(", ");
     return out;
@@ -1055,7 +1138,7 @@
   function briefQuery(digestText, meta) {
     return [
       "MEMORY ENTRIES — " + meta.used + " of " + meta.total + " currently on screen"
-        + (meta.scope ? " (" + meta.scope + ")" : "") + ":",
+        + (meta.scope ? " (" + meta.scope + ")" : "") + ", in reading order:",
       "",
       digestText,
       "",
@@ -1064,6 +1147,12 @@
       "YOU understand from them, as the agent who would read them at the start of a piece of work.",
       "Write it in the first person, opening with \"Here's what I understand from these entries\".",
       "4-7 short paragraphs, no bullet lists, and no headings except the two named below.",
+      "",
+      "THEY ARE ORDERED TO BE READ IN ORDER, and the order carries meaning. They run in passes:",
+      "each pass gives you the ground rules, then what is true, then what goes wrong, then what is",
+      "unresolved, then what has shipped, then what is next. Earlier passes hold the settled,",
+      "longest-standing entries and later passes the recent ones. So read top to bottom and let the",
+      "settled ground frame the recent specifics, rather than the other way round.",
       "",
       "PLAIN LANGUAGE. This is the requirement, not a style note. Short sentences. Everyday words.",
       "Say the thing directly instead of building up to it. Write for a smart colleague who does not",
@@ -1277,6 +1366,10 @@
   }
   // The panel itself, at the top of the Report view. Nothing is saved, ever.
   function renderBriefingPanel(rows, scopeLabel) {
+    // ⚠ SORTED ONCE, HERE. The digest, the `shown` citation map and the fetch
+    // all read this array; sorting inside any one of them lets the panel report
+    // having read entries it never sent.
+    rows = briefOrder(rows);
     var box = el("section", "mem-brief");
     box.style.position = "relative";     // the hover card positions against this
     box.appendChild(el("h2", "mb-h", "How I read these entries"));
@@ -2205,6 +2298,9 @@
     _parseDraft: parseDraft,
     _autogenQuery: autogenQuery,
     _autogenTopicMax: AUTOGEN_TOPIC_MAX,
+    _briefOrder: briefOrder,
+    _readingRank: readingRank,
+    _readingBands: READING_BANDS,
     _briefDigest: briefDigest,
     _briefQuery: briefQuery,
     _briefRetrieval: briefRetrieval,

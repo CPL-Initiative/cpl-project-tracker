@@ -355,6 +355,124 @@ function rows(n, detailChars) {
   await tick();
   check("(9) an empty view is refused, not sent", /No entries in this view/.test(host3.querySelector(".mb-status").textContent));
 
+  // ── (10) READING ORDER — foundations first, and it is the SELECTION ────────
+  //
+  // Rows reach the panel in `updated_at` descending, and briefDigest drops from
+  // the END, so the order decides WHICH entries the model sees at all. These
+  // guard the two halves separately: that the ladder is the ladder, and that a
+  // tight budget keeps the foundations rather than the freshest edits.
+  const ladder = [
+    { id: "m1", kind: "milestone", when: "2026-06-01" },
+    { id: "f1", kind: "fact", when: "2026-08-20" },
+    { id: "o1", kind: "opportunity", when: "2026-07-01" },
+    { id: "pr1", kind: "procedure", when: null },       // undated seed = most settled
+    { id: "p1", kind: "pitfall", when: "2026-08-01" },
+    { id: "d1", kind: "decision", when: "2026-08-25" },
+    { id: "r1", kind: "risk", when: "2026-08-10" },
+    { id: "f0", kind: "fact", when: null },
+    { id: "zz", kind: "not-a-kind", when: "2026-01-01" },
+  ].map((x) => Object.assign({ status: "verified", title: "T " + x.id, summary: "S " + x.id,
+    plain: "P " + x.id, detail: "", tags: [], org: "cpl", affects: [], related: [] }, x));
+
+  const ordered = api._briefOrder(ladder).map((d) => d.id);
+  check("(10) the ground rules lead, undated before dated",
+    ordered[0] === "pr1", ordered.join(","));
+  check("(10) each pass runs down the ladder — ground rules, fact, pitfall, risk, milestone, next",
+    ordered.slice(0, 6).join(",") === "pr1,f0,p1,r1,m1,o1", ordered.join(","));
+  check("(10) the later pass carries the RECENT rows of the big bands",
+    ordered.indexOf("d1") > ordered.indexOf("pr1") && ordered.indexOf("f1") > ordered.indexOf("f0"),
+    ordered.join(","));
+  check("(10) ⚠ an UNKNOWN kind reads last, never first — a new kind must not " +
+    "take a slot from a known one",
+    ordered[ordered.length - 1] === "zz", ordered.join(","));
+  check("(10) the sort is stable — same input, same corpus, every time",
+    api._briefOrder(ladder).map((d) => d.id).join(",") === ordered.join(","));
+  check("(10) briefOrder does not mutate the array it was handed",
+    ladder.map((d) => d.id).join(",") !== ordered.join(",") || ladder.length !== 9);
+
+  // ⚠ THE PROPORTIONAL-COVERAGE GUARD, and it is the one that matters. A strict
+  // ladder sort passes every check above and still spends the whole budget inside
+  // band 0 — measured on the live table, 38 decisions and ZERO facts or pitfalls.
+  // The traps live in the bands a strict sort never reaches, so a truncated
+  // corpus has to keep every band represented.
+  //
+  // The fixture mirrors the LIVE band distribution (2026-08-26: 82 decision+
+  // procedure, 45 fact, 38 pitfall, 9 risk, 8 milestone, 6 opportunity of 188)
+  // and the live truncation ratio (~20%). The provable property: a band of n
+  // rows first appears at position 1/(2n), so at a 20% prefix every band with
+  // **3 or more rows** is guaranteed present. Asserting "every band, always"
+  // would be a claim the maths does not support for a 1-row band.
+  const shape = [["decision", 60], ["procedure", 22], ["fact", 45], ["pitfall", 38],
+                 ["risk", 9], ["milestone", 8], ["opportunity", 6]];
+  const live = [];
+  shape.forEach(([k, n]) => {
+    for (let i = 1; i <= n; i++) {
+      live.push({ id: k.slice(0, 4) + i, kind: k, status: "verified", title: "T", summary: "S",
+        plain: "P", detail: "", tags: [], org: "cpl", affects: [], related: [],
+        when: "2026-0" + (1 + (i % 8)) + "-01" });
+    }
+  });
+  const cut = Math.round(live.length * 0.2);
+  const prefix = api._briefOrder(live).slice(0, cut).map((d) => d.kind);
+  const missing = shape.filter(([, n]) => n >= 3).map(([k]) => k).filter((k) => prefix.indexOf(k) < 0);
+  check("(10) ⚠ at the LIVE truncation ratio every band of 3+ rows is still represented — " +
+    "a strict ladder sort spends the whole budget inside band 0 and the model sees no traps at all",
+    missing.length === 0, "missing: " + missing.join(",") + " | " + prefix.join(","));
+  check("(10) …and the share tracks the band's size, so the big bands still dominate",
+    prefix.filter((k) => k === "decision").length > prefix.filter((k) => k === "opportunity").length,
+    prefix.join(","));
+
+  // Truncation is still reported against the TRUE total, never as a census.
+  const tight = api._briefDigest(api._briefOrder(ladder), 120);
+  check("(10) what did not fit is reported against the true total",
+    tight.total === 9 && tight.used < 9, `used=${tight.used} total=${tight.total}`);
+
+  // ⚠ AND THE PANEL MUST ACTUALLY APPLY IT. Asserting briefOrder() in isolation
+  // passed happily with the call deleted from renderBriefingPanel — the rule was
+  // written and not applied, which is the failure this repo keeps re-learning.
+  // So this one goes through the panel and reads the body that was SENT.
+  let ordSent = null;
+  win.fetch = function (url, opts) {
+    ordSent = opts && opts.body;
+    return Promise.resolve({ ok: true, status: 200, text: () => Promise.resolve("Read it. [pr1]") });
+  };
+  api._setData(ladder);
+  const ordHost = win.document.createElement("div");
+  win.document.body.appendChild(ordHost);
+  ordHost.appendChild(api._renderBriefingPanel(ladder, "verified only"));
+  ordHost.querySelector(".mb-btn").click();
+  await tick(); await tick(); await tick();
+  const seq = (() => {
+    const q = JSON.parse(ordSent || "{}").query || "";
+    return ["pr1", "d1", "f0", "f1", "p1", "r1", "m1", "o1", "zz"]
+      .map((s) => [s, q.indexOf("[" + s + "]")]).filter(([, i]) => i >= 0)
+      .sort((a, b) => a[1] - b[1]).map(([s]) => s).join(",");
+  })();
+  check("(10) ⚠ the PANEL sends them in reading order — not just briefOrder() in isolation",
+    seq === "pr1,f0,p1,r1,m1,o1,d1,f1,zz", seq);
+
+  // ── (11) THE BRIEFING READS THE READER'S TEXT ─────────────────────────────
+  //
+  // The Report renders `plain`; this used to send `summary`, so the model
+  // briefed different words from the ones on screen and the plain-language pass
+  // never reached it. `detail` still rides along as the evidence.
+  const one = [{ id: "x1", kind: "fact", status: "verified", title: "A title",
+    summary: "Terse curator summary.", plain: "The plain-English reading of it.",
+    detail: "Why it is true.", tags: ["t"], org: "cpl", affects: [], related: [] }];
+  const digested = api._briefDigest(one).text;
+  check("(11) the digest carries the plain-English text", /The plain-English reading of it\./.test(digested));
+  check("(11) …and not the curator's summary in its place", !/Terse curator summary\./.test(digested));
+  check("(11) …while `detail` still rides along as the evidence", /why: Why it is true\./.test(digested));
+  check("(11) a row with no plain text falls back to the summary, once",
+    (() => {
+      const bare = [Object.assign({}, one[0], { plain: "" })];
+      const t = api._briefDigest(bare).text;
+      return /Terse curator summary\./.test(t) && t.split("Why it is true.").length === 2;
+    })());
+  check("(11) the envelope tells the model the entries are in reading order",
+    /in reading order:/.test(api._briefQuery("body", { used: 1, total: 1, scope: "" })) &&
+    /They run in passes/.test(api._briefQuery("body", { used: 1, total: 1, scope: "" })));
+
   let pass = 0;
   for (const [n, ok, why] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));
