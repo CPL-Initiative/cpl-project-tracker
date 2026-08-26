@@ -14,7 +14,7 @@ Checks
 import re, sys, zipfile, pathlib, unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v4.docx"
+DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx"
 CLEAN = ROOT / "docs/reference/statute/t5_55050_clean_after_2026-08-12.txt"
 
 fails, checks = [], 0
@@ -142,6 +142,8 @@ def main():
         ("(the Mapping Articulated Pathways platform referenced in Education Code section 88782(b))",
          "(b)(4) Sam's naming kept, grounded in statute"),
         ("Such credit may be granted only for a course", "(i) Sam's Such-credit"),
+        ("sufficient mastery of the course content as set forth", "(f) Sam's deliberate revert to course content"),
+        ("adequately measures mastery of the course content as set forth", "(h) unchanged, and now agrees with (f)"),
         ("for assessment and award of prior learning credit", "(e) Sam's assessment AND award"),
         ("with approved college courses or program requirements", "(b)(1) the duplication is repaired"),
         ("to the extent feasible, made available to interested independent institutions of higher education",

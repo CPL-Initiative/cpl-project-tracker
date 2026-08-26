@@ -83,11 +83,11 @@ anti-staleness mechanism) · independent institutions kept. What is left:
 |---|---|---|
 | 1 | ✅ **Row #9 SETTLED 2026-08-26 — struck.** Sam asked whether the Ed. Code requires the annotation; it does not (§78093.2(b)(2) binds the *receiving* campus, §88782(a)(1) binds the CO). The earlier keep-it argument was about enforceability, not law, and is withdrawn. Register and draft now agree. ⚠️ **#10 wants a second look** — it was #9's counterweight. | **done** |
 | 2 | **Three v4 changes he has not ruled on**: §75013(b) as a fourth recommendation source in (c); §75013 in the NOTE Reference; CPL expanded in (b)(4) | open |
-| 2b | ⚠️ **His v4 reverted (f) to "course content"** — the BOG adopted **"course outcomes"** on 2026-08-12. Kept as adopted in the merge; confirm the revert was not deliberate. | **needs a word** |
+| 2b | ✅ **(f) "course content" — CONFIRMED DELIBERATE (Sam, 2026-08-26).** Now a tracked change against the adopted "outcomes", disclosed in drafting note (2) with its reason: (h) already says "course content", so (f) and (h) describe one standard in one set of words. | **done** |
 | 3 | **Register row #2** still asks for enacted law and is still ranked second | open |
 | 4 | **Register row #16's instrument says `§55050(d)`** — the 2026-08-12 adoption moved that clause to **(c)**. One-field fix a CO reader would catch. | open |
 | 5 | ⭐ **Row #7 has a venue it did not have** — §75013(a)'s CBE-to-FTES workgroup must report to the **Department of Finance** by 2028-10-01, which is row #7's own named obstacle. Two candidate new rows from §75013. | open |
-| 6 | ✅ **Executive Sponsor: James Todd, Vice Chancellor of Academic Affairs** (Sam, 2026-08-26). **Staff Lead** and the **2026–27 timeline** still blank | partly done |
+| 6 | ✅ **Executive Sponsor: James Todd, VC Academic Affairs · Staff Lead: Mari Estrada** (Sam, 2026-08-26). Only the **2026–27 timeline** is still blank | timeline open |
 | 7 | **Whether Tier 2 gets a companion action** — recommend yes, separately; the fee amendment (ASCCC Res. 103.04) is the strongest candidate, and it now has a second anchor in §88782(c)(3) *"no or low cost"* | open |
 
 ⚠️ **§88782 is settled** — it IS the Career Passport Program, so the adopted NOTE
