@@ -82,6 +82,14 @@ has answered any.
 - Deferred by Sam ("keep the scope tight"): the `coci_college_offerings`
   8-course/900-char caps; syncing `statewide_prescriptive.js` into a `chatbox_*`
   table; refreshing `chatbox_college_profiles`.
+- ⚠️ **Seven test files print no readable check count**, so `tests/run.js` can
+  record no floor for them and their checks are **not protected against silently
+  disappearing** — the exact failure mode this repo keeps re-learning. 266 of 274
+  files are covered; these seven are not: `ccr_skyview_first`, `cobi_identity`,
+  `cpl_memory_curate_actions`, `cpl_session_return_tab`, `gr_deep_analysis`,
+  `gr_revision_edit`, `sierra_model_choice`. The fix is a final
+  `N/M checks passed` line in each, then `npm run test:floor` — a small, tidy
+  first task. (Full suite is green: **274/274 files** as of 2026-08-26.)
 
 ## Patterns that worked
 
