@@ -18,10 +18,24 @@ excerpts."* Nothing in this folder is reconstructed.
 | `t5_55050_operative.txt` | 5 CCR §55050 as it operatively reads — subdivisions (a)–(n) |
 | `t5_55050_55051_final_reg_text_2026-08-12.txt` | **Final** revised reg text amending §55050 **and** §55051 — renumbers §55050 and predates Article 9. **Confirmed by Sam, 2026-08-26, as the version adopted by the Board of Governors.** |
 | `t5_55050_clean_after_2026-08-12.txt` | ⭐ **The BASELINE.** The line above with every strikethrough removed — how §55050/§55051 will read once published. **Generated** by `kb/_derive_55050_clean.py`, never typed. |
+| `ec_66025_71_ace_jst.txt` | EC §66025.71 — ACE/JST credit policy (AB 1002, 2021). **Authority** in the adopted §55050 NOTE. (a)(2) is a pre-existing district duty to **post CPL policy on the website**; ⚠️ its GE list is still **IGETC / CSU GE Breadth**, the language the BOG replaced with **Cal-GETC** on 2026-08-12. |
+| `ec_88782_career_passport.txt` | EC §88782 — **California Career Passport Program** (Stats. 2025, Ch. 9, Sec. 13 (AB 123)). CPL is a named input; **§88782(b) names MAP in statute**; (c)(3) *no or low cost*; (g) FERPA. |
+| `ec_75013_online_college.txt` | EC §75013 — California Online Community College Act. ⭐ **(b) is a Credit for Prior Learning Initiative duty OUTSIDE Article 9**: CO + ASCCC **shall** make CPL recommendations **per program**, **uniform systemwide**, by **2027-07-01**. (a) CBE→FTES recommendations; (c)(2)(B) demographic reporting. Same bill as Article 9 (Stats. 2026, Ch. 79 — Sec. 14 vs Sec. 16). |
 | `t5_article5_proposal_2025-11-19_lee.txt` | **Sam's November 2025 Regulatory Action Proposal** — the source of the final text's renumbering, with substance the final text dropped. References **AB 123**, whose CPL provisions were enacted as SB 135. |
 
 Article 9 was added by **Stats. 2026, Ch. 79, Sec. 16 (SB 135)**, effective
 **2026-07-13**.
+
+⭐ **SB 135 is wider than Article 9 — §75013 is Sec. 14 of the same chapter.** Its
+subdivision (b) opens *"As part of the Credit for Prior Learning Initiative"* and
+places a mandatory, systemwide-uniform, deadline-bearing duty on the chancellor's
+office that Article 9 does not contain. **Anything scoped to §§78093–78093.2 alone
+misses it** — read the two sections together. Analysis:
+[`docs/t5_55050_sam_revision_review.md`](../../t5_55050_sam_revision_review.md).
+
+✅ **§88782 is confirmed as the California Career Passport Program**, so the NOTE
+citation carried by the adopted §55050 is correct and the November 2025 proposal's
+§88792(b)(1) was a transposition.
 
 ⚠️ The final reg text contains **zero** references to §78093 / Article 9 / SB 135
 and **no** reciprocity clause. Its accessibility stamp reads 6/19/26, so the

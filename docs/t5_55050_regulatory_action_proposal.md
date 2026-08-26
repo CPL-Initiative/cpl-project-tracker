@@ -179,17 +179,14 @@ Full amendatory text, with additions and deletions marked, is at
 
 ## ⚠️ Open items before filing
 
-1. **§ 88782 in the NOTE — settled for this action, still worth a code check.**
-   The **adopted** NOTE reads *"Reference: Sections 70901, 70902, and 88782,
-   Education Code"* (the redline strikes the `and` before 70902 and inserts
-   `, and 88782`). Since this action amends the adopted section, it **mirrors
-   § 88782** — that is not a choice this proposal gets to make. The lone outlier
-   is the NOTE line in the November 2025 proposal, which cites § 88792(b)(1)
-   while its own background describes § 88782; that reads as a transposition.
-   ⚠️ **Separate question, still open:** whether § 88782 is *in fact* the
-   California Career Passport Program in the Education Code. If it is not, that
-   is a defect in the adopted regulation and a different conversation — do not
-   quietly fix it here.
+1. ✅ **§ 88782 — SETTLED 2026-08-26.** Education Code § 88782 **is** the
+   California Career Passport Program (added by Stats. 2025, Ch. 9, Sec. 13
+   (AB 123)); authenticated text at
+   [`docs/reference/statute/ec_88782_career_passport.txt`](reference/statute/ec_88782_career_passport.txt).
+   The adopted NOTE's citation is correct and the November 2025 proposal's
+   § 88792(b)(1) was a transposition. **No longer an open item.** The statute
+   also does real work for the package — see
+   [`t5_55050_sam_revision_review.md`](t5_55050_sam_revision_review.md) § 2.
 2. **Executive Sponsor and Staff Lead** — carried forward from November 2025 and
    not confirmed.
 3. **Timeline** — to be set against the 2026–27 calendar.
