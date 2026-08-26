@@ -43,7 +43,7 @@ import os, zipfile, html
 
 AUTHOR = "CPL Initiative — Article 9 conformity"
 DATE = "2026-08-26T00:00:00Z"
-OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
+OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v3.docx"
 
 _id = [100]
 def nid():
@@ -134,20 +134,21 @@ P.append(para([("i", "(1) Provide a means for the public to explore faculty-appr
                      "learning opportunities associated with specific prior learning experiences and "
                      "with college courses or program requirements listed on program pathways;")], indent=720))
 P.append(para([("i", "(2) Provide a means for admitted or registered students to submit requests for "
-                     "timely and documented review and determination of their prior learning prior to "
+                     "timely and documented review and determination of their documented prior learning "
+                     "prior to "
                      "selecting a program of study;")], indent=720))
 P.append(para([("i", "(3) Provide a process to identify and notify students who may qualify for credit "
                      "for prior learning, including during the college exploration and admission "
                      "process; and")], indent=720))
 P.append(para([("i", "(4) Utilize the Chancellor's Office systemwide credit for prior learning "
-                     "infrastructure described in Education Code section 78093.2(a)(2) and referenced "
-                     "in Education Code section 88782(b) to facilitate credit for prior learning "
+                     "infrastructure (the Mapping Articulated Pathways platform referenced in "
+                     "Education Code section 88782(b)) to facilitate credit for prior learning "
                      "procedures, documentation of credit for prior learning opportunities, and "
-                     "maintenance of student credit for prior learning records, ensuring that credit "
-                     "for prior learning opportunities are made available on related Chancellor's "
-                     "Office, intersegmental, and agency partner systems and, to the extent that "
-                     "resources are available, to interested independent institutions of higher "
-                     "education pursuant to Education Code section 78093.2(c)(2).")], indent=720))
+                     "maintain student credit for prior learning records, ensuring that credit for "
+                     "prior learning opportunities are made available on related Chancellor's "
+                     "Office, intersegmental, and agency partner systems, and to the extent "
+                     "feasible, made available to interested independent institutions of higher "
+                     "education.")], indent=720))
 
 # (c) — AMENDED
 P.append(para([
@@ -226,8 +227,9 @@ for t in [
 
 # (i) — AMENDED
 P.append(para([
-    ("p", "(i) Credit by Examination: The determination to offer credit by examination rests solely "
-          "on the discretion of the discipline faculty. "),
+    ("p", "(i) Credit by Examination: The determination to offer credit by examination rests solely "),
+    ("d", "on"), ("i", "at"),
+    ("p", " the discretion of the discipline faculty. "),
     ("d", "A separate examination shall be conducted for each course for which credit is to be "
           "granted. "),
     ("p", "Credit may be granted "),
@@ -259,7 +261,7 @@ P.append(para([
           "prior learning policies every three years and report findings to the Chancellor's Office. "
           "Findings shall include data disaggregated by "),
     ("i", "credit for prior learning type, student population (military, working adult, apprentice "
-          "or journeyperson, high school, noncredit, and not-for-credit), "),
+          "or journeyperson, high school, noncredit and not-for-credit), "),
     ("p", "gender"),
     ("i", ","),
     ("p", " and race/ethnicity"),
@@ -277,10 +279,11 @@ P.append(para([
 # (n), (o) — NEW
 P.append(para([
     ("i", "(n) Credit for prior learning transcribed by another California Community College shall "
-          "be accepted as credit, including for general education, transfer, and major preparation. "
-          "A district shall not require a student to repeat an assessment of prior learning that "
-          "another California Community College has assessed and transcribed for an equivalent "
-          "course, general education area, or degree requirement."),
+          "be accepted as credit, including for program requirements, general education (local and "
+          "transfer), transfer requirements, and major preparation. A district shall not require a "
+          "student to repeat an assessment of prior learning that another California Community "
+          "College has assessed and transcribed for an equivalent course, local degree requirement, "
+          "or general education course or area."),
 ]))
 P.append(para([
     ("i", "(o) Grading for all types of credit for prior learning other than credit by examination "
@@ -301,19 +304,25 @@ P.append(para([
 P.append(para([("em",
     "Drafting notes. (1) New material is appended as (n) and (o) rather than inserted, so that no "
     "existing subdivision is re-lettered and \u00a7 55051(d)'s cross-reference to \u00a7 55050(i) is "
-    "preserved. (2) Three clauses go beyond restating the statute and are identified as such: "
+    "preserved. (2) Four clauses go beyond restating the statute and are identified as such: "
     "\u201cshall at a minimum consider\u201d in (c), which rests on Education Code \u00a7 78093.2(a)(3) "
     "(permissive as to adoption) and on \u00a7 75013(b), under which the recommendations are mandatory, "
     "systemwide-uniform, and colleges are strongly encouraged to award consistent with them; the "
-    "second sentence of (n), addressing re-adjudication, on which \u00a7 78093.2(b)(2) is silent; and the "
-    "amendments to (i), which remove the separate-examination and registration requirements and are "
-    "policy rather than conformity. (3) The Reference citation to \u00a7 88782 is confirmed: Education "
-    "Code \u00a7 88782 is the California Career Passport Program (added by Stats. 2025, Ch. 9, Sec. 13 "
-    "(AB 123)); the November 2025 proposal's citation to \u00a7 88792(b)(1) was a transposition. "
-    "(4) \u00a7 75013 is added to Reference: its subdivision (b), enacted by the same chapter as Article 9 "
-    "(Stats. 2026, Ch. 79), places a Credit for Prior Learning Initiative duty on the Chancellor's "
-    "Office outside Article 9. (5) (c) deliberately names no general education framework, so the "
-    "subdivision does not go stale if Cal-GETC is superseded.")],
+    "second sentence of (n), addressing re-adjudication, on which \u00a7 78093.2(b)(2) is silent; the "
+    "extension of (n) to program requirements, which \u00a7 78093.2(b)(2) does not name (it lists general "
+    "education, transfer, and major preparation) and which rests instead on \u00a7 75013(b)'s per-program "
+    "credit recommendations; and the amendments to (i), which remove the separate-examination and "
+    "registration requirements and are policy rather than conformity. (3) The Reference citation to "
+    "\u00a7 88782 is confirmed: Education Code \u00a7 88782 is the California Career Passport Program (added "
+    "by Stats. 2025, Ch. 9, Sec. 13 (AB 123)); the November 2025 proposal's citation to "
+    "\u00a7 88792(b)(1) was a transposition. (4) \u00a7 75013 is added to Reference: its subdivision (b), "
+    "enacted by the same chapter as Article 9 (Stats. 2026, Ch. 79), places a Credit for Prior "
+    "Learning Initiative duty on the Chancellor's Office outside Article 9. (5) (c) deliberately "
+    "names no general education framework, so the subdivision does not go stale if Cal-GETC is "
+    "superseded. (6) The academic-record annotation in (l) is retained: Education Code "
+    "\u00a7 78093.2(b)(2) obliges a campus to accept credit that has been transcribed AS credit for prior "
+    "learning, and \u00a7 88782(a)(1) makes credit for prior learning a displayed component of the "
+    "California Career Passport \u2014 both depend on the award being identifiable.")],
     space_after=0))
 
 DOC = ("<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>"
