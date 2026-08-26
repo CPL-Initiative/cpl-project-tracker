@@ -9,6 +9,8 @@ related:
   - "[[CLAUDE]]"
   - "[[docs/gr_sb135_row_sweep]]"
   - "[[docs/kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces]]"
+superseded: true
+superseded_by: session_197_handoff.md
 ---
 
 # Session 195 handoff

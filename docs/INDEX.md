@@ -440,6 +440,7 @@ Workstream-anchored scratchpads. Append a dated section every checkpoint.
 
 ---
 | [`ccr_atlas_lessons.md`](ccr_atlas_lessons.md) | CCR interactive interface: the ceiling arithmetic, the component reframe, the `CN:` finding, the ESL fold — and the spot-check that calibrated it (`numeric` 49.2% wrong, 9 over-claims, the rejected number-ladder) | 2026-08-24 |
+| [`t5_55050_lessons.md`](t5_55050_lessons.md) | Title 5 §55050 → Ed. Code Article 9 — why the ask became a restore, the cross-reference that locked the lettering, and the redline resolution | 2026-08-26 |
 
 ## Session handoffs (`docs/session_<N>_handoff.md`)
 
@@ -712,3 +713,20 @@ Authoritative external sources we've cached:
 | [`gr_sb135_row_sweep.md`](gr_sb135_row_sweep.md) | SB 135 sweep — all 16 CPL revisions against Ed. Code Article 9 |
 | [`session_195_handoff.md`](session_195_handoff.md) | Session 195 handoff — the sweep is the routine |
 | [`methodology-a-client-cannot-see-the-cap-the-server-enforces.md`](kb-notes/methodology-a-client-cannot-see-the-cap-the-server-enforces.md) | A client cannot see the cap the server enforces |
+
+## Added 2026-08-26 (Sky196)
+
+| Doc | What it is |
+|---|---|
+| [`t5_55050_redraft_scope.md`](t5_55050_redraft_scope.md) | §55050 redraft — the architecture, and the two texts that block a from-scratch draft |
+| [`t5_55050_restore_the_2025_draft.md`](t5_55050_restore_the_2025_draft.md) | The 11 clauses the final text dropped, each with the Article 9 authority that did not exist in November |
+| [`t5_55050_article9_amendments.md`](t5_55050_article9_amendments.md) | The gaps Article 9 opens in the adopted section |
+| [`t5_55050_amendment_package_draft.md`](t5_55050_amendment_package_draft.md) | Nine amendments, tiered, with authority per clause |
+| [`t5_55050_cover_argument.md`](t5_55050_cover_argument.md) | The Tier 1 / Tier 2 call and the order to raise things in with the CO |
+| [`t5_55050_regulatory_action_proposal.md`](t5_55050_regulatory_action_proposal.md) | The filing document, in the November 2025 format |
+| [`t5_55050_lessons.md`](t5_55050_lessons.md) | Workstream lessons — what was learned, in what order, and what is still Sam's |
+| [`reference/statute/`](reference/statute/) | 7 primary sources (Ed. Code Article 9, §55050 operative, the BOG-adopted redline, Sam's Nov 2025 proposal) **+ the generated clean baseline** |
+| [`methodology-a-change-inherits-every-reference-into-it.md`](kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | A change inherits every reference into it, and the same-cycle reference is the one you miss |
+| [`methodology-resolve-a-redline-as-an-edit-list.md`](kb-notes/methodology-resolve-a-redline-as-an-edit-list.md) | Resolve a redline as an edit list, not as retyped prose |
+| [`methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md`](kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | When a corpus does not fit, the order is the selection |
+| [`session_197_handoff.md`](session_197_handoff.md) | Session 197 handoff |

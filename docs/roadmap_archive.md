@@ -4902,3 +4902,24 @@ titles queued and **54** fit.
 ⭐ **SkyView is the landing view** (Sam's call) — shipped with keyboard operation of the canvas, which
 **did not exist**. ⚠️ **The work surface behind it is 1.2% built** — 5 of 159 subjects.
 Story `docs/ccr_atlas_lessons.md` · handoff `docs/session_193_handoff.md`.
+
+---
+
+### SkyFixer S193 — a write key that named nothing, and a link that always came home to the wrong room (2026-08-25)
+
+**A live session: Sam drove COBI in a browser all afternoon** (#1330, #1331).
+⭐ **The Memory ✎ chip "did nothing" because its write key named NOTHING.** `slug` is UNIQUE but NULLABLE and
+the display handle falls back to the uuid, so on **6 of 572 rows** the PATCH matched zero rows and the page
+blamed the team phrase. Then the chip turned out to be a CYCLE that **wrote every state it passed through** —
+his two clicks sit in `cpl_memory_log` 15s apart and left a `stale` row carrying a verification stamp.
+⭐ **The magic link came back to the wrong screen for everyone** — nine modules stashed the return tab in
+`sessionStorage`, which is per browser tab, and the link opens a new one. `cpl_session.js`'s own header
+claimed that key restored the right tab while it could not, for the reason that file exists.
+⭐ **Naming the credential that actually failed** turned out to matter more than the failure: "your team
+phrase may have expired" was shown to a magic-link curator, pointing at an unlock row that was not rendered.
+⭐ **GR "reanalysis" had no referent** — `blast_rank` is computed by nothing in the repo. Built the checks a
+lawyer makes first instead; an answer you can re-derive is one you can defend to the CO.
+⚠️ **Five times a perturbation read as 0 FAIL because the suite CRASHED and stopped** — the most useful
+thing learned today. Story `docs/ccr_atlas_lessons.md` · `docs/gr_register_lessons.md` ·
+`docs/cobi_memory_tab_lessons.md` · handoff `docs/session_194_handoff.md`.
+
