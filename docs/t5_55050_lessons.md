@@ -210,3 +210,68 @@ a properly-tracked deletion read as a vanished paragraph. Reading the raw XML
 before writing any of it down is what kept two false findings out of a document
 going to the Chancellor's Office. **The one real finding survived:** `only` was
 deleted from (c) with no `w:del` at all.
+
+---
+
+## 2026-08-26 (evening) — the rulings, the merge, and the register
+
+### Sam ruled on all five, and one answer was better than the recommendation
+
+(m) demographics **restored** · (b) keeps the documents list · competencies
+**restored** · independent institutions **kept** · and on Cal-GETC:
+
+> *"I would like to keep it open-ended so when/if things change it will not go stale."*
+
+⭐ **That is a better answer than "restore the adopted sentence."** Naming any GE
+framework picks which one the subdivision goes stale on — and §66025.71, cited as
+**Authority**, still names IGETC and CSU GE Breadth. The generic *"a local or
+transfer general education area"* sidesteps both. It is now drafting note (5) so
+nobody helpfully names a framework later.
+
+### ⚠️ A returned file is not necessarily a descendant of what you sent
+
+His *"cleaned up version with a few small additional edits"* was built on the
+**first** draft, not v2 — it restored `(MAP platform)`/`CPL`, reverted (l) to the
+grading clause with no (o), dropped §75013 from the NOTE, and carried the stale
+note saying §88782 was unverified. **Two parallel descendants, not successive
+ones.** Overwriting either would have silently discarded a round of work.
+
+The tell was cheap: diff the accept-all views. **Check which ancestor a returned
+file has before merging it.**
+
+### What his edits and mine each caught
+
+- His: *"rests solely **at** the discretion"*; the widened (n); and the collision
+  in (b) that he flagged as a formatting error.
+- Mine: the (b) list had lost the word *"assessments"* and put *"evaluation of
+  authenticated competencies"* at the end of a list of documents; (c) had no
+  connector; (n)'s second sentence ended mid-list; (m) kept `population, (military`.
+- ⚠️ **And the verifier caught one of my own**: the deletion in (c) swallowed the
+  word *"for"*, so reject-all would not have reproduced the adopted wording.
+
+Two occurrences make a preference: he chose `(MAP platform)` and *"to the extent
+feasible"* twice, so v3 keeps his naming and adds the §88782(b) citation
+**alongside** rather than replacing it.
+
+### The register comparison
+
+[`t5_55050_vs_gr_register.md`](t5_55050_vs_gr_register.md). Six of sixteen rows
+are now drafted, and the draft closes two of the four gaps the SB 135 sweep said
+the register did not cover at all.
+
+⚠️ **Row #9 conflicts with the draft.** It asks to strike the annotation v3
+retains. Neither side was careless — the row was written when reciprocity was
+voluntary, and de-flagging was the lever that made it work. **§78093.2(b)(2) and
+§88782(a)(1) inverted that**: both key on the award being identifiable *as* CPL,
+so de-flagging now makes a mandatory duty unenforceable rather than automatic.
+⭐ **The register already contains the rebuttal, in row #10** — the two rows pull
+against each other. The equity concern survives; the remedy shifts from *don't
+record it* to *record it and prohibit its adverse use*. **Sam's call.**
+
+⭐ **§75013(a) gives row #7 a venue it never had** — a competency-based-education
+to FTES workgroup that must report to the **Department of Finance** by 2028-10-01.
+Row #7's own consideration names DOF and the attendance premise as its obstacle.
+
+⚠️ **Row #16's instrument still reads `§55050(d)`** — the 2026-08-12 adoption moved
+the ACE *"shall consider"* clause to **(c)**. The only row citing a subdivision
+letter, and the renumbering made it stale.
