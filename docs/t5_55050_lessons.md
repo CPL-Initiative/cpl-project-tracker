@@ -159,3 +159,54 @@ Shipped and merged (#1339, #1341–#1347):
    reads. ⚠️ The §78093.2(b) duties are in force now; the interval to adoption is
    time in which Title 5 does not state them.
 4. **Whether Tier 2 gets a companion action**, and on what schedule.
+
+---
+
+## 2026-08-26 (later the same day) — Sam revises, and two statutes arrive
+
+Sam returned the package with **59 tracked changes** plus authenticated text for
+**EC §88782** (Career Passport) and **EC §75013** (California Online Community
+College Act). Full review: [`t5_55050_sam_revision_review.md`](t5_55050_sam_revision_review.md).
+
+### What changed the shape of the package
+
+⭐ **SB 135 is wider than Article 9.** §75013 is **Sec. 14 of the same chapter**
+(Article 9 is Sec. 16), and §75013(b) opens *"As part of the Credit for Prior
+Learning Initiative."* So a CPL Initiative duty lives **outside** Article 9 —
+mandatory, systemwide-uniform, with a **2027-07-01** deadline. Every scoping
+document we wrote reads §§78093–78093.2 and stops. **That was the wrong boundary,
+and the boundary was a section-number range rather than a statutory scheme.**
+
+⭐ **It promotes an amendment.** A recommendation of *N units toward a program*
+cannot be implemented by a regulation permitting credit only against individually
+identified catalog courses — so the program-level/GE-area broadening moves from
+**Tier 2 to Tier 1**. And *"strongly encouraged to award consistent with"* is a
+far better foundation for *"shall consider"* than §78093.2(a)(3)'s permissive
+*"may adopt"*: the weaker of the two stretches we named is now much cheaper.
+
+⭐ **§88782 does three jobs, not one.** It settles the citation; it **names MAP in
+the Education Code**, giving (b)(4) an anchor in place of a bare product name; and
+§88782(a)(1) makes CPL a **named input to the Career Passport**, which is the
+argument for keeping the academic-record annotation Sam's revision deletes.
+
+### What the review had to push back on
+
+The five fixes are in the review doc. The one worth restating: **deleting
+"gender and race/ethnicity" from (m)** contradicts §75013(c)(2)(B) *in the same
+bill*, contradicts the equity condition the money hangs on, and deletes adopted
+text in a filing framed as conformity. The new categories are additive — keep both.
+
+⚠️ **And "evaluation of authenticated competencies" was struck** — the only
+competency word in §55050 — in the same message that told me competency-based
+education matters. Worth noticing that the BOG had already moved (f) from
+*"course content"* to *"course outcomes"*, which is the competency framing arriving
+in adopted text without anyone calling it that.
+
+### Method note
+
+⚠️ **My own check reported four mismatches and two of them were its bug** —
+paragraph-mark insertions (`<w:ins>` inside `<w:pPr><w:rPr>`) threw the offsets, so
+a properly-tracked deletion read as a vanished paragraph. Reading the raw XML
+before writing any of it down is what kept two false findings out of a document
+going to the Chancellor's Office. **The one real finding survived:** `only` was
+deleted from (c) with no `w:del` at all.

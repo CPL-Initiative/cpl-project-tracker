@@ -143,20 +143,18 @@ anticipated this."* Same fact, different weight, entirely down to order.
 
 ## 3. The NOTE citation — recommendation, with the caveat that matters
 
-**Use §88782 — and note this is no longer a judgment call.** The section as
-**adopted** on 2026-08-12 already carries it: the redline strikes the `and` before
-70902 and inserts `, and 88782`. This action amends that section, so it mirrors
-what is there. The November proposal's NOTE line (§88792(b)(1)) is the lone
-outlier, and its own background section describes §88782 — a transposition.
+✅ **SETTLED 2026-08-26 — §88782 is the California Career Passport Program**
+(Stats. 2025, Ch. 9, Sec. 13 (AB 123)), confirmed against the authenticated
+Education Code text. The adopted §55050 already carries it and this action
+mirrors it. The November proposal's §88792(b)(1) was a transposition.
 
-⚠️ **A different question is still open, and don't conflate them.** Whether
-§88782 *is* the California Career Passport Program in the Education Code has not
-been checked against the code — this session cannot reach `leginfo`. If it turns
-out to be wrong, that is a defect in the adopted regulation, and correcting it is
-its own conversation. **Do not fold a citation correction into a conformity
-amendment**; it would give a reader a second thing to argue about.
-
----
+⭐ **And it is not only a citation.** §88782(a)(1) makes credit for prior learning
+a **named input to the Career Passport**, and §88782(b) **names MAP in the
+Education Code**. That gives (b)(4) a statutory anchor in place of a bare product
+name, and it is the argument for keeping the academic-record annotation duty in
+(l) — an unannotated award is invisible to both the receiving college under (n)
+and to the Passport. Full analysis:
+[`t5_55050_sam_revision_review.md`](t5_55050_sam_revision_review.md) §2.
 
 ## 4. The order to raise things in
 

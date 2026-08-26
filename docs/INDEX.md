@@ -724,6 +724,7 @@ Authoritative external sources we've cached:
 | [`t5_55050_amendment_package_draft.md`](t5_55050_amendment_package_draft.md) | Nine amendments, tiered, with authority per clause |
 | [`t5_55050_cover_argument.md`](t5_55050_cover_argument.md) | The Tier 1 / Tier 2 call and the order to raise things in with the CO |
 | [`t5_55050_regulatory_action_proposal.md`](t5_55050_regulatory_action_proposal.md) | The filing document, in the November 2025 format |
+| [`t5_55050_sam_revision_review.md`](t5_55050_sam_revision_review.md) | Review of Sam's revision + what EC §88782 (Career Passport) and EC §75013 (Calbright / CBE) change |
 | [`t5_55050_lessons.md`](t5_55050_lessons.md) | Workstream lessons — what was learned, in what order, and what is still Sam's |
 | [`reference/statute/`](reference/statute/) | 7 primary sources (Ed. Code Article 9, §55050 operative, the BOG-adopted redline, Sam's Nov 2025 proposal) **+ the generated clean baseline** |
 | [`methodology-a-change-inherits-every-reference-into-it.md`](kb-notes/methodology-a-change-inherits-every-reference-into-it.md) | A change inherits every reference into it, and the same-cycle reference is the one you miss |
