@@ -9,23 +9,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 652,
-    "bytes": 7373828,
+    "files": 654,
+    "bytes": 7387128,
     "over_budget": 4,
     "handoff_max": 195,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 149262,
+    "always_loaded_bytes": 149569,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 149262,
+        "bytes": 149569,
         "over": 1
       },
       "other": {
-        "files": 79,
-        "bytes": 1975697,
+        "files": 81,
+        "bytes": 1988690,
         "over": 1
       },
       "index": {
@@ -57,8 +57,8 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2268,
-      "bytes": 1220576791,
+      "files": 2275,
+      "bytes": 1220616246,
       "heavy_bytes": 598349256,
       "heavy_share": 0.49,
       "ignore_filters": [
@@ -115,13 +115,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 149262,
+        "bytes": 149569,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 89262,
+        "over_by": 89569,
         "ratio": 2.49
       },
-      "message": "149,262 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "149,569 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
