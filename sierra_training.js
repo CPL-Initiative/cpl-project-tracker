@@ -846,7 +846,7 @@
    *
    * The ~10 rules that OUTRANK everything in the Instructions pane above. Sam
    * wrote an instruction on 2026-08-14, re-tested an hour later and got the old
-   * behaviour: STATEWIDE_RULE was suppressing the answer he wanted and he could
+   * behavior: STATEWIDE_RULE was suppressing the answer he wanted and he could
    * not see it, could not edit it, and the prompt's promise that "the team
    * guidance wins" is a sentence, not a mechanism. #1186 made the rules data;
    * this pane is the half that lets a human SEE them.
@@ -1044,7 +1044,7 @@
     // CI rows are excluded even when the "show N CI rows" toggle is on. Bulk-triaging
     // them would overwrite the server-side status='ci' label with a human triage
     // state, quietly undoing the write-time fix and re-mixing robot rows into the
-    // counts. Reviewing them is fine; re-labelling them is not what the button means.
+    // counts. Reviewing them is fine; re-labeling them is not what the button means.
     var rows = filteredFeedback().filter(function (f) {
       return !isSmoke(f) && (f.status || "new") !== target;
     });
@@ -1544,7 +1544,7 @@
       + "Three parts, in the order you would use them: what people told us was wrong "
       + "(\u{1F44D}/\u{1F44E}), the questions she struggled to answer, and the "
       + "<b>instructions</b> you give her — plain-English rules she follows on every question, live "
-      + "within a minute. Hover anything you don’t recognise; every filter and label explains itself.</p>";
+      + "within a minute. Hover anything you don’t recognize; every filter and label explains itself.</p>";
 
     if (!signedIn()) {
       html += '<div class="sit-empty">This surface reads the gated Sierra logs. '
@@ -1755,7 +1755,7 @@
         // Plain-word control, no glyph. Defaults to Instruction: that is what
         // almost every row is, and defaulting the other way would re-file
         // ordinary prose into a budget the curator never looks at.
-        + '<label class="sit-meta" title="An INSTRUCTION tells Sierra what to say. A DISPLAY RULE shapes structured output — which columns a table has, what they are labelled, what order the rows go in. They are kept apart because they have separate size budgets, so a display rule never crowds out an instruction.">'
+        + '<label class="sit-meta" title="An INSTRUCTION tells Sierra what to say. A DISPLAY RULE shapes structured output — which columns a table has, what they are labeled, what order the rows go in. They are kept apart because they have separate size budgets, so a display rule never crowds out an instruction.">'
         + "This is a: "
         + '<select data-guid-kind>'
         + '<option value="directive"' + (state.draftKind === "display" ? "" : " selected") + ">Instruction</option>"
