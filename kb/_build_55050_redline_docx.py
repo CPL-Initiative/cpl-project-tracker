@@ -43,7 +43,7 @@ import os, zipfile, html
 
 AUTHOR = "CPL Initiative — Article 9 conformity"
 DATE = "2026-08-26T00:00:00Z"
-OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v4.docx"
+OUT = "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx"
 
 _id = [100]
 def nid():
@@ -206,14 +206,19 @@ P.append(para([
 ]))
 
 # (f)-(h) — unchanged
+# (f) — AMENDED (Sam, 2026-08-26: revert to "course content", deliberate)
+P.append(para([
+    ("p", "(f) The governing board may grant credit to any student who satisfactorily passes an "
+          "assessment approved or conducted by proper authorities of the college. For purposes of "
+          "this section, \u201cassessment\u201d means the process that faculty undertake with a student to "
+          "ensure the student demonstrates sufficient mastery of the course "),
+    ("d", "outcomes"), ("i", "content"),
+    ("p", " as set forth in the course outline of record. \u201cSufficient mastery\u201d means having "
+          "attained a level of knowledge, skill, and information equivalent to that demonstrated "
+          "generally by students who receive the minimum passing grade in the course."),
+]))
+
 for t in [
- "(f) The governing board may grant credit to any student who satisfactorily passes an assessment "
- "approved or conducted by proper authorities of the college. For purposes of this section, "
- "\u201cassessment\u201d means the process that faculty undertake with a student to ensure the student "
- "demonstrates sufficient mastery of the course outcomes as set forth in the course outline of "
- "record. \u201cSufficient mastery\u201d means having attained a level of knowledge, skill, and information "
- "equivalent to that demonstrated generally by students who receive the minimum passing grade in "
- "the course.",
  "(g) The policies for assessments adopted by the governing board of a community college district "
  "shall offer students an opportunity to accept, decline, or appeal decisions related to the award "
  "of credit, and in cases of credit by examination, pursuant to sections 55021 and 55025.",
