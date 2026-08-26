@@ -14,7 +14,7 @@ Checks
 import re, sys, zipfile, pathlib, unicodedata
 
 ROOT = pathlib.Path(__file__).resolve().parents[1]
-DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v2.docx"
+DOCX = ROOT / "exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v3.docx"
 CLEAN = ROOT / "docs/reference/statute/t5_55050_clean_after_2026-08-12.txt"
 
 fails, checks = [], 0
@@ -127,13 +127,13 @@ def main():
          "(b) the collision Sam flagged is gone"),
         ("Provide a means for the public to explore", "(b)(1) public exploration"),
         ("or program requirements listed on program pathways", "(b)(1) program requirements"),
-        ("submit requests for timely and documented review and determination",
-         "(b)(2) review AND determination"),
+        ("timely and documented review and determination of their documented prior learning",
+         "(b)(2) Sam's wording"),
         ("identify and notify students who may qualify", "(b)(3) identify + notify"),
-        ("infrastructure described in Education Code section 78093.2(a)(2) and referenced in Education Code section 88782(b)",
-         "(b)(4) the platform is cited, not named as a product"),
-        ("to the extent that resources are available, to interested independent institutions of higher education pursuant to Education Code section 78093.2(c)(2)",
-         "(b)(4) independent institutions kept, on the statutory conditional"),
+        ("(the Mapping Articulated Pathways platform referenced in Education Code section 88782(b))",
+         "(b)(4) Sam's naming kept, grounded in statute"),
+        ("to the extent feasible, made available to interested independent institutions of higher education",
+         "(b)(4) independent institutions kept, Sam's wording"),
         ("prior learning, and may be applied to a course listed in the catalog",
          "(c) the run-on is repaired"),
         ("a local or transfer general education area, or degree-applicable elective credit",
@@ -148,13 +148,16 @@ def main():
         ("(l) The student's academic record shall be clearly annotated",
          "(l) the annotation duty is RESTORED"),
         ("student population (military, working adult", "(m) his categories, punctuation repaired"),
+        ("rests solely at the discretion of the discipline faculty", "(i) Sam's at-the-discretion"),
         ("gender, and race/ethnicity, including the number of students who were eligible for and received",
          "(m) demographics restored AND the eligible-for gap"),
         ("average number of credits awarded", "(m) average"),
         ("transcribed by another California Community College shall be accepted", "(n) reciprocity"),
         ("shall not require a student to repeat an assessment", "(n) no secondary review"),
-        ("for an equivalent course, general education area, or degree requirement",
-         "(n) Sam's scoping of the no-repeat rule"),
+        ("including for program requirements, general education (local and transfer), transfer requirements, and major preparation",
+         "(n) Sam's widened scope"),
+        ("for an equivalent course, local degree requirement, or general education course or area",
+         "(n) the no-repeat list, closed with an or"),
         ("(o) Grading for all types of credit for prior learning other than credit by examination",
          "(o) the grading clause, moved off (l)"),
         ("75013, 78093, 78093.1, 78093.2", "NOTE reference"),
