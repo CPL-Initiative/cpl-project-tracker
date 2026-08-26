@@ -205,7 +205,7 @@ P.append(para([
 # NOTE
 P.append(para([
     ("p", "NOTE: Authority cited: Sections 66025.71, 66700"),
-    ("d", " and"), ("p", " 70901"),
+    ("d", " and"), ("i", ","), ("p", " 70901"),
     ("i", ", and 78093.2"),
     ("p", ", Education Code. Reference: Sections 70901, 70902,"),
     ("i", " 78093, 78093.1, 78093.2,"),
