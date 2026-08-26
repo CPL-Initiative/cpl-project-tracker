@@ -26,7 +26,7 @@ landed (#1338–#1347). Nothing is half-finished; what remains is Sam's.
 
 ## What shipped
 
-**§55050 (#1339, #1341–#1347).** Sam asked for a fresh redraft based on
+**§55050 (#1339, #1341–#1352).** Sam asked for a fresh redraft based on
 SB 135. It is the wrong shape, and finding that out *was* the work:
 
 - A final §55050 **already exists** — adopted by the Board of Governors
@@ -40,9 +40,25 @@ SB 135. It is the wrong shape, and finding that out *was* the work:
   55050(i)"* — a pointer the *same* rulemaking created, so it is invisible to a
   search of the operative text. New material appends as **(n)**. If you are ever
   tempted to tidy the lettering, this is why you must not.
-- Delivered: `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges.docx`,
-  14 insertions / 3 deletions, plus a Regulatory Action Proposal in the November
-  format.
+- ⭐ **SB 135 is wider than Article 9.** `EC §75013` is **Sec. 14 of the same
+  chapter** (Article 9 is Sec. 16) and its (b) opens *"As part of the Credit for
+  Prior Learning Initiative"* — CO + ASCCC **shall** make CPL recommendations
+  **per program**, **the same systemwide**, by **2027-07-01**, colleges **strongly
+  encouraged to award consistent with them**. Every scoping doc we wrote reads
+  §§78093–78093.2 and stops. **The boundary drawn was a section-number range
+  rather than a statutory scheme.** It promotes the program-level/GE-area
+  broadening from Tier 2 to Tier 1 and repairs the weaker of the two stretches.
+- ✅ **§88782 confirmed as the Career Passport Program**, and it does three jobs:
+  settles the citation, **names MAP in the Education Code**, and makes CPL a
+  **named input to the Passport** — which is the argument for keeping the
+  academic-record annotation in (l).
+- **Delivered: `exports/…_TrackedChanges_v3.docx`** — 27 insertions / 12
+  deletions, 86 checks. Sam ruled on all five open calls, revised twice, and v3
+  merges his cleaned-up line with the v2 changes he had not seen. ⚠️ **His
+  "cleaned up version" was built on the FIRST draft, not v2** — check which
+  ancestor a returned file has before merging.
+- **`docs/t5_55050_vs_gr_register.md`** — the draft against all 16 CPL register
+  rows.
 
 **The memory table (#1338, #1340).** The Briefing was reading **34 of 188**
 verified entries, chosen by whichever had been edited most recently, and it was
@@ -58,12 +74,26 @@ has answered any.
 
 ## Carryover — Sam's, and none of it is drafting
 
+**All five of his §55050 rulings are in** (2026-08-26): (m) demographics restored ·
+(b) keeps the documents list · competencies restored · Cal-GETC deliberately NOT
+restored (the generic *"local or transfer general education area"* is his
+anti-staleness mechanism) · independent institutions kept. What is left:
+
 | # | item | status |
 |---|---|---|
-| 1 | **§88782** — the adopted NOTE carries it so this action mirrors it; whether it *is* Career Passport in the Ed. Code is unverified (no session can reach `leginfo`). ⚠️ If wrong, that is a defect in the adopted regulation and a **separate** action. | open |
-| 2 | **Executive Sponsor / Staff Lead** in the proposal | blank, deliberately |
-| 3 | **The 2026–27 timeline** | blank, deliberately |
-| 4 | **Whether Tier 2 gets a companion action** — recommendation is yes, separately; the fee amendment (ASCCC Res. 103.04) is the strongest near-term candidate | open |
+| 1 | ⚠️ **Register row #9 conflicts with the draft** — it asks to strike the annotation v3 retains. The statute inverted its logic and **row #10 already carries the counter-argument**. **Settle before filing**: two CO-facing documents must not contradict each other. | **his call, highest value** |
+| 2 | **Four v3 changes he has not ruled on**, each one click to reject: the (l) restore + grading to (o); §75013(b) as a fourth recommendation source in (c); §75013 in the NOTE Reference; CPL expanded in (b)(4) | open |
+| 3 | **Register row #2** still asks for enacted law and is still ranked second | open |
+| 4 | **Register row #16's instrument says `§55050(d)`** — the 2026-08-12 adoption moved that clause to **(c)**. One-field fix a CO reader would catch. | open |
+| 5 | ⭐ **Row #7 has a venue it did not have** — §75013(a)'s CBE-to-FTES workgroup must report to the **Department of Finance** by 2028-10-01, which is row #7's own named obstacle. Two candidate new rows from §75013. | open |
+| 6 | **Executive Sponsor / Staff Lead**, and the **2026–27 timeline** | blank, deliberately |
+| 7 | **Whether Tier 2 gets a companion action** — recommend yes, separately; the fee amendment (ASCCC Res. 103.04) is the strongest candidate, and it now has a second anchor in §88782(c)(3) *"no or low cost"* | open |
+
+⚠️ **§88782 is settled** — it IS the Career Passport Program, so the adopted NOTE
+is right and November's §88792(b)(1) was a transposition. Whether §88782 is
+*correctly* that program in the code is a separate, unverified question; if it is
+wrong that is a defect in the adopted regulation and its own action. **Do not fold
+a citation correction into a conformity amendment.**
 
 ## Carryover — engineering
 
