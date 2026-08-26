@@ -32,6 +32,14 @@ jobs:
       # the published anon key. Pure-stdlib python; same non-required check.
       - name: Supabase function-grant lint (revoke must name PUBLIC)
         run: python3 tests/supabase_function_grants_test.py
+      # MAP's per-dataset verdict (2026-08-26) — the nightly load failed three
+      # nights reporting a name mismatch while MAP was plainly answering
+      # 400 "View_StudentDetailsCredits_APIDataset is not Valid" in a field
+      # nothing read. Also pins that strictness stays OPT-IN: the daily
+      # dashboard shares this fetcher and must not fall back over datasets it
+      # never reads. Pure-stdlib python, no network.
+      - name: MAP CustomReport response verdict (responseCode / duplicate views)
+        run: python3 tests/custom_report_response_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs
