@@ -1,0 +1,253 @@
+
+REGULATORY ACTION PROPOSAL
+Regulatory Action Title
+Alternative Methods for Awarding Credit
+Proposed Regulatory Action:
+The proposed changes modify three regulatory sections and repeal one under Article 5 Alternative Methods of Awarding Credit: 
+§ 55050. Credit for Prior Learning 
+§ 55051. Articulation of High School Courses.
+§ 55052. Advanced Placement Examinations.
+§ 55052.5. International Baccalaureate and College Level Examination Program Examinations (Repeal)
+Background:
+Across California, millions of adults—veterans, working professionals, apprentices, caregivers, first responders, and rising scholars—carry college-level knowledge gained through experience, service, and training. Yet, too few have access to the college credit that can accelerate their path to a degree or career advancement. Vision 2030 and the California Master Plan for Career Education call for bold action to close this gap, expanding college access, increasing completion of certificates, associate degrees and baccalaureate degrees, and fostering economic mobility by scaling Credit for Prior Learning (CPL) opportunities statewide. As more colleges expand their capacity and efforts to offer, assess, and award credit for prior learning, the need to build on existing CPL technology, provide consistent statewide policies, and clear regulatory guidance is timely. While the California Community College Chancellor’s Office is setting a clear direction and providing critical support in the form of infrastructure, policy, technical and financial assistance, the real transformation will happen through local college leadership and implementation. 
+The Vision 2030 Credit for Prior Learning Workplan outlines goals and activities designed to accomplish Vision 2030 actions, including:
+Action 1a: Scale Credit for Prior Learning opportunities with a focus on military service, apprenticeships, and technical industry certifications, including service corps programs. Action 5: Provide flexible course scheduling and credit for prior learning opportunities to optimize working learners’ abilities to reach their educational goals in an efficient timeline.
+The proposed regulatory changes are intended to support Vision 2030 goals by eliminating unnecessary barriers, supporting credit transparency, exploration, and mobility, simplifying compliance, and clarifying and updating current and new reporting requirements detailed in Assembly Bill 123.
+Brief history of policy actions related to credit for prior learning: 
+June 1980 – ACCJC adopts Policy on CPL. 
+July 2008 – CSU CO originates CPL policy (EO 1036).
+Spring 2011 – ASCCC Resolution 18.04, which supported colleges to offer credit in recognition of prior learning.
+September 2012 – AB 2462 adds Section 66025.7 to California Education Code requiring the Chancellor’s Offices by July, 2015 to use common course descriptors and  recommendations of the American Council on Education to determine the course credit that should be awarded for prior military experience.
+September 2018 – SB 1071 and AB 1786 required the Chancellor’s Office to establish an system to expand the awarding of credit for prior learning at California community colleges.
+April 2019 – The Success Center for California Community Colleges prepared the report: Credit for Prior Learning Initiative: Findings and Recommendations to Expand Credit for Prior Learning as a Vison for Success Strategy.
+March 2020 – Regulatory changes to section 55050 codified credit for prior learning and expanded the scope to include specific requirements for local policy development and implementation. 
+April 2021 – Section 55052.5 related to the International Baccalaureate and College Level Examination Program was added as another subsection for alternative methods of awarding credit like Advance Placement.
+Fall 2023 – ASCCC Resolution 15.04 supports use of Credit for Prior Learning for Cal-GETC.
+Spring 2023 – ASCCC Resolution 07.04 requests review of Title 5 55050 regulations and alignment with CSU EO 1036.
+Spring 2024 – ASCCC Resolution 105.03 supports Credit for Prior Learning Through the California Mapping Articulated Pathways Initiative.
+Summer 2024 – SB 108 provides Prop 98 funding for Mapping Articulated Pathways for Credit for Prior Learning, a demonstration project that will embed credit for prior learning policies into educational pathways that provide support for working adults seeking to improve their economic mobility through community college educational programs.
+Fall 2024 – Chancellor’s Office CPL Demonstration Projects adopts the Mapping Articulated Pathways Initiative to facilitate the effort to scale CPL statewide.
+Fall 2024 – Chancellor’s Office initiates Veteran Sprint project to assist colleges by Nov. 11, 2025 to obtain enrolled veteran and military student JSTs (30,000+) and award appropriate credit based on JST credit recommendations. The project aims to serve our veterans and to ensure compliance with Education Code §66025.71, Title 5 §55050 (d) & (j), Title 38 §21.4253 (d)(3) and 21.4254 (c)(4), and the VA School Certifying Handbook – Prior Credit
+Spring 2025 – ASCCC Resolution 103.01 which supports Advancing Credit for Prior Learning in Alignment with the CCCCO Vision 2030 (Apprenticeships, Veterans Sprint, and Rising Scholars).
+Spring 2025 – ASCCC Resolution 103.04 advocates for Eliminating Financial Barriers: No Fees for Credit by Exam for Credit for Prior Learning.
+Spring 2025 – ASCCC Resolution 105.02 supports Maximizing Student Awareness: Promoting Credit for Prior Learning Awareness through Syllabus Statements and Other Appropriate Institutional Communications at California’s Community Colleges 
+Summer 2025 – Chancellor’s Office contracts with ASCCC to partner with MAP team to formalize and build on the credit recommendations of the MAP statewide faculty workgroups, with a goal to formalize and make ASCCC statewide credit recommendations for 40 disciplines and their associated industry and military credentials. 
+Summer 2025 – Chancellor’s Office finalizes the Vision 2030 Credit for Prior Learning Workplan, which provides goals and activities designed to achieve key goals of Vision 2030 (2025 Edition).
+Summer 2025 – AB 123 is passed, which:
+Provides annual ongoing funding to support CPL Initiative operations and one-time funding to support CPL infrastructure for statewide scaling. 
+Requires new reporting on new objectives.
+Requires CPL infrastructure integration with related systems, including e-Transcript and Career Passport by amending California Education code 88782 Section 13 Part 53.8. to fund the development of the California Career Passport Program, which is to be supported by the Mapping Articulated Pathways Initiative and the modernized eTranscript.
+Enumerates goals and reporting requirements (beginning March, 2026) associated with appropriated funding.
+This proposed regulatory action clarifies policy, practices, systems, and reporting requirement for alternative methods of awarding credit. Namely, the changes:
+Update outdated language
+Consolidate credit for prior learning into section 55050
+Clarify the curricular option of having a distinct articulation agreement between high schools and community colleges
+Disentangle credit by exam from high school articulation agreements, and
+Repeal section 55052.5 to incorporate the information into section 55052
+Establishes new reporting requirements
+Defines CPL infrastructure and related systems
+Related Regulations or Regulatory Actions:
+The following sections may apply to credit for prior learning: 
+Education Code Sections: 
+88782 Section 13 Part 53.8. California Career Passport Program.
+78212.5 Student Matriculation, math or English prerequisites
+78213. Student Matriculation, applying multiple measures in placement and enrollment
+Assembly Bill 123:
+Section 26 specifies seven CPL Initiative objectives and 5 reporting requirements due on March 1, 2026, with an additional five reporting requirements due on January 31, 2028. Below are the seven objectives: 
+(1) Developing a systemwide process to identify and notify students who may qualify for credit for prior learning, including during the college exploration and admission process.
+(2) Developing a systemwide process to award credits for industry certifications, military service, workplace training, and other sources of prior learning, including educational certificates or degrees earned in foreign countries.
+(3) Developing a systemwide technology infrastructure that can identify credit for prior learning opportunities and can facilitate the awarding of credit for prior learning.
+(4) Convening systemwide faculty discipline workgroups to develop and promote the adoption of systemwide credit recommendations for prior learning.
+(5) Leveraging partnerships with workforce agencies, industry organizations, and educational institutions to expand credit for prior learning opportunities.
+(6) Collaborating with systemwide leadership, the Academic Senate of the California State University, the Academic Senate of the University of California, and to the extent practicable, other interested independent and nonprofit postsecondary educational institutions to accept credit for prior learning as transfer credit, participate in intersegmental alignment of credit for prior learning policies, and include credit for prior learning opportunities in published transfer pathways.
+(7) Implementing the initiative at each community college district.
+
+Regulatory sections related to curriculum and instruction, admissions and records, financial aid, student services, adult education, apprenticeships, and career technical education. 
+Communication & Participatory Governance Process:
+Executive Sponsor: James Todd, Vice Chancellor of Academic Affairs
+The Executive Sponsor is accountable for presenting to the Board of Governors and has final decision-making authority. 
+Executive Advisor: Samuel Lee, Senior Advisor to the Chancellor for Credit for Prior Learning. The Executive Advisor provides recommendations to the Executive Sponsor on CPL policy, strategy, and infrastructure.
+Staff Leads: Erin Larson, Dean
+The Staff Lead for the regulatory action is responsible for managing the regulatory action process and developing the regulatory changes. Regulatory Action Workgroup: 5C
+The California Community Colleges Curriculum Committee (5C) is the primary advisory committee that provides feedback and recommendations regarding the proposed revisions.
+Expanded Feedback Network:  
+The proposed regulatory action will be shared as an information item with the following stakeholder groups during regularly scheduled meetings. Documents for meetings include this regulatory action proposal.
+Admissions and Registrars
+Academic Senate for California Community Colleges
+Academic Senate Presidents
+Chief Business Officers
+Chief Executive Officers
+Chief Instructional Officers 
+Chief Student Services Officers
+Financial Aid Specialists
+Student Senate for California Community Colleges
+Mapping Articulated Pathways Initiative Leadership
+MAP CPL Statewide Group
+Proposed Timeline:
+June 20: 5C Reviews
+May-August: CCCCO field vetting
+August 21: Present to Consultation Council
+September 16: BOG 1st read
+November 18: BOG 2nd read
+Implementation Impact:
+The Chancellor’s Office will update the Program and Course Approval Handbook.
+The Chancellor’s Office will provide a guidance memo detailing the title 5 changes/updates.
+Local community college Boards will need to review existing policies to ascertain if additional updates are necessary.
+Curriculum committees, faculty, and student services departments will need to review and update campus policies and practices if necessary.
+Summary of the Rationale for the Proposed Changes:
+The proposed revisions include 4 Sections 
+SECTIONS
+DESCRIPTION OF THE CHANGE
+RATIONALE
+Section 55050. Credit for Prior Learning.
+	Reordered the sections and omitted one (old to new section letter):
+	(m) to (a), omitted Advance Placement 
+	(a) to (b), added “authenticated competencies” and “documented trainings”; omitted “student created portfolios” and “credential documentation”
+	(d) to (c), omitted IGETC, CSU GE, and added Cal-GETC
+	(h) to (d), removed student qualifiers 
+	(j) to (e)
+	(b) to (f)
+	(k) to (g)
+	(c) to (h), added “proctored” in lieu of “conducted
+	(e) to (i)
+	(g) to (j)
+	(i) to (k), added language related to charging fees for alternative methods of awarding credit
+	(f) to (l)
+	(l) to (m)
+	(n) was deleted
+Reordering provides clarity and organizes the requirements in three areas: 
+CPL Policy
+How assessed
+Where reported
+
+For each section with changes:
+(a) removed AP to be addressed in 55052
+(b) updated assessment options for consistency 
+(c) aligns with omnibus technical title change and AB 928
+(e) now applies to all students, not just veterans or credential holders
+(h) updated for clarity
+(k) to align with pending 2025 trailer bill language.
+
+Align to CPL trailer bill (pending)
+Section 55051. Articulation of High School Courses.
+Adds “articulation agreement”
+Removes credit by exam from this section. 
+Disentangles credit by exam from a high school articulation agreement, where the former is an alternative method of awarding credit while the latter is the application of credit from a comparable course. 
+Section 55052
+Renames the section to External Standardized Exams
+Added 2 other common exams: Cambridge Advanced Level and the Defense Language Proficiency Test
+
+Consolidates all external exams under a new title
+Included additional exams for clarity 
+Omnibus text change for the general education pattern
+Section 55052.5 International Baccalaureate and College Level Examination Program Examinations.
+Repeal 
+Incorporates the information into the updated Section 55052.
+
+Proposed Revisions to Title 5, California Code of Regulations Related to Article 5. Alternative Methods of Awarding Credit
+This document contains underlined text which may require adjustments to screen reader settings. Underlined text denotes additions to existing regulations, strikethrough text denotes deletions.
+Section 55050 of article 5 of subchapter 1 of chapter 6 of Division 6 of title 5 of the california code of regulations is amended to read:
+§ 55050. Credit for Prior Learning.
+(a) The governing board of each community college district shall create a comprehensive credit for prior learning policy and procedures.
+(ab) The governing board of each community college district shall adopt and publish credit for prior learning policies and procedures with attributes including, but not limited to: 
+Procedures for students to attain credit for prior learning, including but not limited to, evaluation of military training and Joint Services Transcripts, evaluation of industry certifications and credential documentation documented trainings, credit by examination, portfolio review, standardized exams, evaluation of authenticated competencies, and evaluation of international transcripts.
+Transparent and accessible to all stakeholders, published at least in college catalogs and websites;
+Provide a digital site means for the public to explore faculty-approved credit for prior learning opportunities associated with specific prior learning experiences and college courses listed on program pathways.
+Provide a digital site for admitted or registered students to submit requests for timely reviews of their documented prior learning prior to selecting a program of study. 
+Provide a process to identify and notify students who may qualify for credit for prior learning, including during the college exploration and admission process.
+Utilize the Chancellor’s Office systemwide credit for prior learning infrastructure or supply regular and frequent updates of required data to the infrastructure for reporting and to make credit for prior learning opportunities available on related Chancellor’s Office systems and  intersegmental and agency partner systems.
+
+(c) Credit for prior learning may be awarded for:
+(1) Local catalog courses or program requirement with subject matter similar to that of the individual's prior learning; 
+(2) Colleges shall at a minimum consider the credit recommendations of:
+(i) The Academic Senate of the California Community Colleges; and
+(ii) The faculty-approved credit determinations maintained in the Chancellor’s Office CPL infrastructure. 
+(i) The American Council on Education pursuant to Education Code section 66025.71; 
+(3) Colleges may award credit to satisfy general education area requirements, including but not limited to California General Education Transfer Curriculum, Cal-GETC, and local community college general education requirements or requirements for a student's program of study. 
+(4) Award of credit may be made to electives to satisfy program requirements, provided the award of credit does not exceed the program unit requirements.
+(d) Units for which credit is given pursuant to the provisions of this section may be counted in determining the 12 semester hours of credit in residence required for an associate degree.
+(e) The policies and procedures adopted by the governing board of a community college district pursuant to this section shall require that a student, as a component of their educational plan pursuant to California Education Code Section 78212, shall be assessed for prior learning opportunities and advised on the process to receive credit for prior learning.
+(bf) The governing board may grant credit to any student who satisfactorily passes an assessment approved or conducted by proper authorities of the college. For purposes of this section, “assessment” means the process that faculty undertake to ensure the student has or can demonstrate sufficient mastery similar to the course or program requirements. “Sufficient mastery” means having attained a level of knowledge, skill, and information equivalent to that demonstrated generally by students who receive the minimum passing grade in the course or program requirement.
+(g) The policies for assessments adopted by the governing board of a community college shall offer students an opportunity to accept, decline, or appeal decisions related to the award of credit for prior learning, and in cases of credit by exam, pursuant to sections 55021 and 55025.
+(ch) The nature and content of the assessment shall be determined solely by faculty in the discipline who normally teach the course or program requirement for which credit is to be granted in accordance with policies and procedures approved by the curriculum committee established pursuant to section 55002. The faculty shall determine that the assessment adequately measures mastery of the course content or program requirement similar to that set forth in the outline of record or college catalog. The faculty may accept an assessment conducted at a location other than the community college for this purpose.
+(d) Credit may be awarded for prior experience or prior learning only for individually identified courses with subject matter similar to that of the individual's prior learning, and only for a course listed in the catalog of the community college. Colleges shall consider the credit recommendations of the American Council on Education pursuant to Education Code section 66025.71. Upon a student's demonstration of sufficient mastery through an examination or assessment, an award of credit should be made, if possible, to California Intersegmental General Education Transfer Curriculum, California State University General Education Breadth, and local community college general education requirements or requirements for a student's chosen program. Award of credit may be made to electives for students who do not require additional general education or program credits to meet their goals.
+(ei) Credit by Examination: The determination to offer credit by examination rests solely on the discretion of the discipline faculty. A separate examination shall be conducted for each course for which credit is to be granted. Credit may be granted only to a student who is registered at the college and in good standing and only for a course listed in the college catalog.
+(f) The student's academic record shall be clearly annotated to reflect that credit was earned by assessment of prior learning.
+(gj) Grading shall be according to the regular grading system approved by the governing board pursuant to section 55023. A grade of Credit (CR) may be used to signify a minimum C passing proficiency or higher for the course or program requirement. 
+(h) Units for which credit is given pursuant to the provisions of this section shall not be counted in determining the 12 semester hours of credit in residence required for an associate degree.
+(ik) A district or college may not charge a student a fee for administering any alternative method of awarding course credit, except an examination pursuant to this section, provided the fee does not exceed the enrollment fee which would be associated with enrollment in the course for which the student seeks credit by examination.
+(i) A district may charge a student a fee for administering an examination pursuant to this section, provided the fee does not exceed the enrollment fee which would be associated with enrollment in the course for which the student seeks credit by examination.
+(j) The policies and procedures adopted by the governing board of a community college district pursuant to this section shall require that a student, upon completion of their educational plan pursuant to California Education Code Section 78212, shall be referred to the college's appropriate authority for assessment of prior learning if the student is a veteran or an active-duty member of the armed forces, holds industry-recognized credentials, or requests credit for a course based on their prior learning.
+(k) The policies for assessments adopted by the governing board of a community college shall offer students an opportunity to accept, decline, or appeal decisions related to the award of credit, and in cases of credit by exam, pursuant to sections 55021 and 55025.
+(l) The student's academic record shall be clearly annotated to reflect that credit was earned through an alternative method of assessment for prior learning.
+(lm) The governing board of each community college district shall review the credit for prior learning policy every three years and report findings to the Chancellor's Office. Findings shall include data disaggregated by gender and race/ethnicity including the number of students who received credit for prior learning, the number of credits awarded per student, retention and persistence rates of students earning credit for prior learning, completion data (for certificate, degree, and transfer) for students earning credit for prior learning, and qualitative assessments by students of the policies and procedures.
+(m) The governing board of each community college district shall incorporate policies pursuant to section 55052 on College Board Advanced Placement examinations and any other districtwide policies governing the award of credit for prior learning to create a comprehensive credit for prior learning policy.
+(n) By December 31, 2020, the district shall certify in writing to the Chancellor of the California Community Colleges that the policies required by this section have been adopted and implemented.
+Credits
+Note: Authority cited: Sections 66025.71, 66700 and 70901, Education Code. Reference: Sections 70901, and 70902, and 88792(b)(1) Education Code
+Section 55051 of article 5 of subchapter 1 of chapter 6 of Division 6 of title 5 of the  CALIFORNIA code of regulations is amended to read:
+§ 55051. High School Course Articulation Agreement of High School Courses. 
+(a) For purposes of this section, the term “articulated high school course articulation agreement” means a high school course or courses that the faculty in the appropriate discipline, using policies and procedures approved by the curriculum committee established pursuant to section 55002, have determined to be comparable to a specific community college course through a formal articulation agreement.
+(b) The governing board of a community college district may adopt policies to permit articulated high school courses articulation agreements to be applied to community college requirements in accordance with this section. Articulated These articulation agreements high school courses may be accepted in lieu of comparable community college courses only to partially satisfy:
+(1) requirements for a certificate program, including the total number of units required for the certificate; or,
+(2) The major or area of emphasis requirements in a local associate degree program.
+(c) Articulated A high school courses with an articulation agreement used to partially satisfy certificate or major/area of emphasis requirements shall be clearly noted as such on the student's academic record. Districts may require standard or abbreviated college application process for the purpose of establishing academic credit. Notations of community college course credit shall be made only if community college courses are successfully completed or if credit is earned via credit by examination.
+(d) Except through credit by examination, as defined in section 5575355050(i), high school courses may not be used to satisfy:
+(1) The requirement of section 55063 55061 that students complete at least 60 semester or 90 quarter units in order to receive an associate degree; or,
+(2) Any general education requirement for the associate degree established by the district.
+Credits
+Note: Authority cited: Sections 66700 and 70901, Education Code. Reference: Sections 66700, 70901 and 70902, Education Code.
+Section 55052 of article 5 of subchapter 1 of chapter 6 of Division 6 of title 5 of the california code of regulations is amended to read:
+§ 55052. Advanced Placement External Standardized Examinations.
+(a) The governing board of a community college district may adopt policies to grant credit for satisfactory completion of advanced placement external standardized examinations typically recognized by colleges and universities as measuring competencies comparable to those achieved in baccalaureate level courses or general education areas. These may include but are not limited to Advance Placement, International Baccalaureate, College Level Examination Program, Cambridge Advance Level, and Defense Language Proficiency Test.
+(b) The Chancellor’s Office, in collaboration with the California State University Chancellor’s Office, shall develop policy guidelines on the minimum passing scores for the Advance Placement, International Baccalaureate and/or College Level Examination Program examinations. The policy guidelines shall be distributed to community college districts on an annual basis. 
+(c) The faculty in the appropriate discipline must approve aAdvanced pPlacement, International Baccalaureate, and College Level Examination Program examinations, scores deemed to constitute satisfactory performance for major preparation, courses credit and/or local general education area credit. Credit may be awarded for the California General Education Transfer Curriculum (Cal-GETC) certification as allowed through the Cal-GETC Standards established by the Intersegmental Committee of the Academic Senates. Where no major preparation course or general education area matches an external standardized examination, the college may award elective credit. Requirements ,  offered by the college for which credit will be granted, and requirements that may be met by such examinations in accordance with policies and procedures approved by the curriculum committee established pursuant to section 55002.
+(d)The student's academic record shall be clearly annotated to reflect that credit was earned through an advanced placement examination.
+Credits
+Note: Authority cited: Sections 66700 and 70901, Education Code. Reference: Sections 66700, 70901 and 70902, Education Code.
+Section 55052 of article 5 of subchapter 1 of chapter 6 of Division 6 of title 5 of the california code of regulations is Repealed:
+§ 55052.5. International Baccalaureate and College Level Examination Program Examinations.
+The Chancellor, in collaboration with the Academic Senate for the California Community Colleges, shall develop policy guidelines on the minimum passing scores for the International Baccalaureate and/or College Level Examination Program examinations. The policy guidelines shall be distributed to community college districts on an annual basis.
+The governing board of a community college district shall adopt policies to grant credit for satisfactory completion of International Baccalaureate and/or College Level Examination Program examinations typically recognized by colleges and universities as measuring competencies comparable to those achieved in baccalaureate level courses or general education areas.
+The faculty in the appropriate discipline must approve International Baccalaureate and/or College Level Examination Program examination scores deemed to constitute satisfactory performance for direct course credit and/or general education area credit. Credit may be awarded for the California Intersegmental General Education Transfer Curriculum, California State University General Education Breadth, or local community college general education requirements, as most appropriate. Where no direct course or general education area matches an International Baccalaureate or College Level Examination Program exam, the college may award elective credit. Requirements may be met by such examinations in accordance with policies and procedures approved by the curriculum committee established pursuant to section 55002.
+The student's academic record shall be clearly annotated to reflect that credit was earned through an international baccalaureate and/or college level examination program examination.
+Credits
+Note: Authority cited: Sections 66700 and 70901, Education Code. Reference: Sections 70901 and 70902, Education Code.
+Notes and Links: 
+55023 Grading Policy: Add grading symbol “CR” to list of allowable grade symbolshttps://www.law.cornell.edu/regulations/california/5-CCR-55023symbols. HYPERLINK "https://www.law.cornell.edu/regulations/california/5-CCR-55023"https://www.law.cornell.edu/regulations/california/5-CCR-55023
+
+B
+Good
+3
+
+C
+Satisfactory
+2
+
+D
+Less than satisfactory
+1
+
+F
+Failing
+0
+
+P
+Passing (At least satisfactory--units awarded not counted in GPA.)
+
+NP
+No Pass (Less than satisfactory, or failing--units not counted in GPA.)
+
+CR
+Credit (At least satisfactory—units awarded not counted in GPA. (Used for Credit For Prior Learning)(Used for credit for prior learning only and is not supplanted by any other symbol.)
+
+SP
+Satisfactory Progress towards completion of the course (Used for noncredit courses only and is not supplanted by any other symbol.)
+
+55022 - Pass-NO Pass Grading Option: https://www.law.cornell.edu/regulations/california/5-CCR-55022
+(a)The policy adopted pursuant to section 55021 may permit courses to be offered in either or both of the following categories and, if so, shall require that each college catalog specify the category into which each course falls:
+(1)Courses in which all students are evaluated on a "pass-no pass" or "credit-no credit" basis.
+(2)Courses in which each student may elect until the last day of instruction, as established and published by the districts, whether the basis of evaluation is to be "pass-no pass" or a letter grade.
+(b)All units of credit earned on a "pass-no pass" or "credit-no credit" basis in accredited California institutions of higher education or equivalent out-of-state institutions shall be counted in satisfaction of community college curriculum requirements.
+(c)Units earned on a "pass-no pass" or "credit-no credit" basis shall not be used to calculate grade point averages. However, units attempted for which a student receives a "NP" designation (as defined in section 55023) shall be considered in probation and dismissal procedures.
+

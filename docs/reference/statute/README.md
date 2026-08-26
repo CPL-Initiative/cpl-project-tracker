@@ -18,6 +18,8 @@ excerpts."* Nothing in this folder is reconstructed.
 | `t5_55050_operative.txt` | 5 CCR §55050 as it operatively reads — subdivisions (a)–(n) |
 | `t5_55050_55051_final_reg_text_2026-08-12.txt` | **Final** revised reg text amending §55050 **and** §55051 — renumbers §55050 and predates Article 9 |
 
+| `t5_article5_proposal_2025-11-19_lee.txt` | **Sam's November 2025 Regulatory Action Proposal** — the source of the final text's renumbering, with substance the final text dropped. References **AB 123**, whose CPL provisions were enacted as SB 135. |
+
 Article 9 was added by **Stats. 2026, Ch. 79, Sec. 16 (SB 135)**, effective
 **2026-07-13**.
 
@@ -29,3 +31,9 @@ substantive drafting predates the statute. See
 ⚠️ It is a **redline**: struck and inserted text run together in extraction
 (`at leastminimum` = "at least" struck, "minimum" inserted). Read the PDF for the
 formatting; read this for search and quotation.
+
+⚠️ The November 2025 proposal is **not** a filed regulation — it is the CO
+workgroup proposal that preceded the final text. Its own rationale says several
+clauses were written *"to align with pending 2025 trailer bill language."* That
+bill is now enacted. See
+[`docs/t5_55050_restore_the_2025_draft.md`](../../t5_55050_restore_the_2025_draft.md).
