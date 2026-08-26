@@ -276,7 +276,77 @@ def _build_headers():
     return headers
 
 
-def fetch_report(output_path=None, timeout=120):
+def summarize_response(data, requested=None):
+    """Read MAP's per-dataset verdict on a CustomReport response.
+
+    Pure: takes the parsed payload, returns {lines, problems, usable}. Kept
+    separate from fetch_report so it can be tested without a network call — the
+    outage this exists for reproduces as a fixture, not as a live request.
+
+    WHY THIS EXISTS. MAP reports the outcome of each requested dataset in
+    `responseCode` / `responseMessage`, and nothing read them. On 2026-08-24 the
+    student-detail view began answering
+
+        responseCode 400 — "View_StudentDetailsCredits_APIDataset is not Valid"
+
+    and three consecutive nightly runs reported a downstream name mismatch
+    instead, because the field carrying the answer was never printed. MAP's own
+    words beat our inference.
+
+    THREE THINGS ARE CHECKED, each earned by that outage:
+
+    * `responseCode` — an ABSENT code is normal on a healthy dataset, so only a
+      PRESENT non-2xx one fails. Treating absence as an error fails every good
+      pull.
+    * `dataCount` is MAP's CLAIM, not a measurement. An errored dataset carries
+      `columnValue: null` and can still carry a count, so the claim alone cannot
+      tell a full dataset from an empty one. Rows are counted and any
+      disagreement is shown.
+    * a REPEATED viewName means the response cannot be keyed by name. One invalid
+      view in the batch and MAP labelled a neighbour's data with the invalid
+      name, so a requested view vanished while another appeared twice. Every
+      consumer looks datasets up by viewName, so a duplicate is fatal here rather
+      than mysterious three steps downstream.
+
+    Rows live under `columnValue` — the key kb/_sync_map_custom_reports.py
+    centralises in rows_of(). A `data`-keyed payload must read as EMPTY rather
+    than be quietly accepted: tolerating both spellings is what hides a
+    wrong-key bug.
+    """
+    if requested is None:
+        requested = [d["viewName"] for d in REQUEST_PAYLOAD]
+
+    lines, failed, seen = [], [], {}
+    for ds in data:
+        view = ds.get("viewName") or "?"
+        claimed = ds.get("dataCount")
+        parsed = len(ds.get("columnValue") or [])
+        code = str(ds.get("responseCode") or "").strip()
+        message = str(ds.get("responseMessage") or "").strip()
+
+        line = f"    {view}: {parsed:,} rows"
+        if not isinstance(claimed, int) or claimed != parsed:
+            shown = f"{claimed:,}" if isinstance(claimed, int) else claimed
+            line += f"  [MAP claims {shown}]"
+        if code and not code.startswith("2"):
+            line += f"  <-- HTTP {code}: {message or 'no message'}"
+            failed.append((view, code, message))
+        lines.append(line)
+        seen[view] = seen.get(view, 0) + 1
+
+    problems = []
+    for view, code, message in failed:
+        problems.append(f"{view}: MAP returned {code} — {message or 'no message'}")
+    for view in sorted(v for v, n in seen.items() if n > 1):
+        problems.append(f"{view}: returned {seen[view]}x — viewName cannot identify a dataset")
+    for view in requested:
+        if view not in seen:
+            problems.append(f"{view}: requested but not present in the response")
+
+    return {"lines": lines, "problems": problems, "usable": not problems}
+
+
+def fetch_report(output_path=None, timeout=120, strict=False):
     """Fetch the full CustomReport from the MAP API and save to disk."""
     if output_path is None:
         today = datetime.now().strftime("%Y-%m-%d")
@@ -313,10 +383,26 @@ def fetch_report(output_path=None, timeout=120):
         return None
 
     print(f"  Received {len(data)} datasets ({len(raw):,} bytes)")
-    for ds in data:
-        vn = ds.get("viewName", "?")
-        dc = ds.get("dataCount", "?")
-        print(f"    {vn}: {dc:,} rows" if isinstance(dc, int) else f"    {vn}: {dc} rows")
+    report = summarize_response(data)
+    for line in report["lines"]:
+        print(line)
+    if report["problems"]:
+        # PRINTING IS UNCONDITIONAL, FAILING IS NOT — and the split is load-bearing.
+        # .github/workflows/daily-dashboard.yml runs this same fetcher and falls
+        # back on a non-zero exit. It consumes none of the views involved in the
+        # 2026-08-24 outage, so failing the whole pull here would drop the
+        # dashboard to its fallback path over a dataset it never reads. The
+        # Supabase load DOES need to stop, and passes --strict.
+        label = "ERROR" if strict else "WARNING"
+        print(f"  {label}: MAP did not return every requested dataset cleanly.")
+        for line in report["problems"]:
+            print(f"    {line}")
+        print("    Check whether the view was renamed, retired or redefined on the")
+        print("    MAP side before changing anything here.")
+        if strict:
+            print("    --strict: nothing has been saved.")
+            return None
+        print("    Continuing: the datasets that DID arrive are saved (--strict to stop).")
 
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f)
@@ -328,7 +414,7 @@ def fetch_report(output_path=None, timeout=120):
 if __name__ == "__main__":
     output = None
     for arg in sys.argv[1:]:
-        if arg == "--output" or arg == "-o":
+        if arg == "--output" or arg == "-o" or arg.startswith("--"):
             continue
         output = arg
     if "--output" in sys.argv or "-o" in sys.argv:
@@ -336,7 +422,7 @@ if __name__ == "__main__":
         if idx + 1 < len(sys.argv):
             output = sys.argv[idx + 1]
 
-    result = fetch_report(output)
+    result = fetch_report(output, strict="--strict" in sys.argv)
     if result is None:
         print("FAILED — see errors above")
         sys.exit(1)
