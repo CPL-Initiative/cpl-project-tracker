@@ -374,7 +374,27 @@ def main():
     # college posted nothing" and pay every college $0 on a column we simply
     # never asked for. Absent keys are the honest shape for absent data.
     has_applied = i_acr is not None
-    metrics = ("pe", "pa", "p2", "p3", "pp") if has_applied else ("pe", "p2", "p3", "pp")
+    # PPA (added 2026-08-27 per Sam) = APPLIED units among PORTAL-ORIGIN students
+    # (Potential Student = Yes). This is the measure the Year-1 Access metric has
+    # been asking for since it was written: "Applied units ... for students
+    # originating from either CPL Portal, College CPL Landing Page, or batch
+    # upload". Sam, 2026-08-27: "Potential Student ... is our temporary field
+    # indicating it was submitted from a landing page or the portal ... count
+    # every instance of Yes as meeting these metrics."
+    #
+    # ⚠️ IT IS NOT `pa` RESTRICTED — IT IS `pa`'s COMPLEMENT. Every other metric
+    # here carries `and not is_potential`, so pe/pa/p2/p3 describe the DOCUMENTED
+    # cohort and deliberately EXCLUDE portal-origin students; `pp` was the only
+    # measure of that population and it is gated on TRANSCRIBED. So there was no
+    # applied-among-portal-origin figure at all, and scoring Access on `pa` would
+    # have measured the exact set of students the metric excludes.
+    #
+    # TEMPORARY BY DESIGN. MAP is replacing this Yes/No with an explicit `Origin`
+    # (Student Portal / Landing Page / Batch / College Entered) plus a `LocID2`
+    # naming the noncredit location a record came from. When those land, this
+    # measure narrows to the named origins and the noncredit lane gets its own
+    # cut of the same rung — see METRIC_SOURCES in cpl_funding.js.
+    metrics = ("pe", "pa", "ppa", "p2", "p3", "pp") if has_applied else ("pe", "p2", "p3", "pp")
     if not has_applied:
         print("funding-performance: NOTE — 'Applied Credits' not in this pull; "
               "pa/pa_u omitted (not zeroed). Check fetch_custom_report.py's column list.")
@@ -398,8 +418,8 @@ def main():
     # (which is what the test fixture assumes). MAP's own per-college totals are
     # read below as an independent cross-check so the real grain is measured
     # rather than assumed.
-    UNIT_METRICS = tuple(m for m in ("pe", "pa", "p3", "pp") if m in metrics)
-    unit_of = {"pe": "ecr", "pa": "acr", "p3": "tcr", "pp": "tcr"}
+    UNIT_METRICS = tuple(m for m in ("pe", "pa", "ppa", "p3", "pp") if m in metrics)
+    unit_of = {"pe": "ecr", "pa": "acr", "ppa": "acr", "p3": "tcr", "pp": "tcr"}
     units = {}                                  # funding-name -> {pe_u,p3_u,pp_u}
     unmatched_units = {}
     state_units = {m: 0.0 for m in UNIT_METRICS}
@@ -490,7 +510,10 @@ def main():
                             ("pa", acr > 0 and not is_potential),
                             ("p3", tcr > 0 and not is_potential),
                             ("p2", tcr >= P2_MIN_UNITS and not is_potential),
-                            ("pp", tcr > 0 and is_potential)):
+                            ("pp", tcr > 0 and is_potential),
+                            # The mirror of `pa` on the other side of the
+                            # partition: same rung, opposite cohort.
+                            ("ppa", acr > 0 and is_potential)):
             if not hit:
                 continue
             k = (key, sid) if sid else (key, f"row{rowno}")
@@ -545,7 +568,13 @@ def main():
     # excluded above), and the small portal count itself IS the signal to
     # surface per college. pe/p2/p3 keep the ratified <5 suppression (real
     # students — adr-funding-priority-metrics-privacy.md).
-    NO_SUPPRESS = {"pp"}
+    # `ppa` joins `pp` because it describes the SAME PEOPLE (Potential Student =
+    # Yes) at a different rung — a college's portal cohort is already visible
+    # through `pp`, so suppressing `ppa` would hide nothing that is not already
+    # shown while costing small-portal colleges their Access money (a suppressed
+    # cell reads to earnFraction() as "not yet credited", f=0). Consistency here
+    # is both the privacy-neutral and the funding-correct choice.
+    NO_SUPPRESS = {"pp", "ppa"}
 
     def suppress(bucket, ubucket=None):
         outb = {}
@@ -642,7 +671,10 @@ def main():
                   "-> transcribed; unlike eligible it does not carry the ACE/JST skill-level "
                   "duplication, and unlike eligible it is an action the college took), "
                   "PP = portal-origin (Potential Student = Yes) with any transcribed CPL "
-                  "(the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). "
+                  "(the CPL Student Portal / Landing Page metric; small & mostly test until launch), "
+                  "PPA = APPLIED units among those same portal-origin students — the measure the "
+                  "Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE "
+                  "Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). "
                   "*_u keys are UNIT sums over exactly the same students as their count "
                   "(first row per college+student, matching the count dedupe); statewide "
                   "unit sums are the plain sum of the per-college sums, NOT sid-deduped, "
@@ -725,7 +757,9 @@ def main():
           f"statewide pe={state['pe']:,} "
           + (f"pa={state['pa']:,} " if has_applied else "")
           + f"p2={state['p2']:,} p3={state['p3']:,} "
-          f"pp={state['pp']:,} | units "
+          f"pp={state['pp']:,} "
+          + (f"ppa={state['ppa']:,} " if has_applied else "")
+          + "| units "
           + " ".join(f"{m}_u={state_units[m]:,.0f}" for m in UNIT_METRICS)
           + f", as_of {payload['as_of']}")
 
