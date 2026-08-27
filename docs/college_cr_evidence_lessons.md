@@ -324,3 +324,49 @@ not short of search.
 their hours against the course's units, a recommendation used elsewhere says so **neutrally**
 (`also on N other`), the bulk fill no longer skips anything (it still refuses to bulk-fill
 below High confidence), and a `1–2 unit courses` filter isolates the 28 small ones.
+
+### 2026-08-27, the unit rule — a curator ruling replaces a modelled one
+
+*"Often credit recommendation hours match the units for the course. If the credit
+recommendation hours vary by more than 1 unit, leave it off of the list. If it varies by 1
+unit, lower the confidence score but keep it on the list. Hold off on the combinations
+mentioned previously. I think we were overanalysing."* (Jessica).
+
+⭐ **A HARD CUT BEAT MY CONTINUOUS SCORE, AND SHE WAS RIGHT TO OVERRULE IT.** I had scored
+the hours/units gap on a curve at 0.20 of the confidence blend. That kept **3 hours in
+welding** at the top of a **1-unit** lab, because breadth (40 colleges) outweighed the
+penalty — a result that is obviously wrong to the person who has to defend the articulation,
+however defensible the arithmetic. `> 1 unit apart → not listed` is simpler, and it is set
+by the reader who lives with it rather than inferred by me.
+
+**What the cut does.** A 1-unit lab is now offered `1 hour in welding`, `1 hour in arc
+welding`, `1 hour in gas and electric welding` and the off-by-one `2 hours in welding` — the
+3-hour recommendations are **gone**. It cuts at the top end too: `WELDG/E121 Electric Welding
+I` (**6 units**) went from *3 hours in welding* to **6 hours in welding**, which no amount of
+weighting had achieved.
+
+⚠️ **THE CUT APPLIES ONLY WHERE COCI GAVE US UNITS.** The 8 courses with no units are not
+filtered at all. Shortening their list would make an *absent* measurement look like a
+*failed* one — the same failure family as a suppressed cell rendering as a zero.
+
+⚠️ **A cut changes what counts as evidence, so the counts move honestly**: peer-backed
+courses **100 → 87**, recommendation-only **33 → 46**, High-confidence top picks **86 → 68**.
+Nothing was lost — those courses now get a *smaller, better-fitting* recommendation that
+happens to have fewer adopters. **A drop in "peer-backed" is not a drop in quality here**,
+and reporting it as one would be the misreading to avoid.
+
+⚠️ **Widening the shown set exposed a data gap I had been living with.** The candidate lists
+went from 133 recommendations to 299, and **184 of them had no college list** — my earlier
+pulls had used a hand-written trade regex, so anything outside it silently rendered its
+counts as plain text instead of a hover. Both lookups are now pulled for **all 7,155** ACE
+recommendations. **A regex-scoped extract is fine until the thing it scopes changes size.**
+
+⚠️ **Three test assertions broke that were pinned to values the data can move** — a peer chip
+named on one specific card (that card's top pick changed), and a hardcoded bulk-fill count.
+Re-derived from the payload at runtime. The repo's own lesson, met again: an assertion pinned
+to a value that can leave the data stops being a guard the moment it does.
+
+**Also:** units now sit beside the course title at the title's own size rather than pushed
+right in smaller type — they are part of identifying the course, not a footnote to it.
+**Combinations remain unbuilt**, at Jessica's direction and consistent with the measurement
+that they reach only 4 of 127 courses.

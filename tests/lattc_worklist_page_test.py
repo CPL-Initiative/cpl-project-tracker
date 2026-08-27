@@ -54,7 +54,13 @@ with sync_playwright() as p:
     u = pg.locator('article.card .units').count()
     ck('every card has a units cell', u==139, u)
     utext = pg.locator('article[data-code="CRPNTRY111"] .units').inner_text()
-    ck('CRPNTRY111 shows COCI units (7.0)', '7.0' in utext, utext)
+    ck('CRPNTRY111 shows COCI units (7)', '7 unit' in utext, utext)
+    # units sit inside the title span, at the title's own size
+    same = pg.evaluate("""() => {
+        const t = document.querySelector('article[data-code="CRPNTRY111"] .ct');
+        const u = t.querySelector('.units');
+        return u ? getComputedStyle(t).fontSize === getComputedStyle(u).fontSize : null; }""")
+    ck('units render at the course title font size', same is True, same)
     ck('a missing-units card says so',
        'not in COCI' in pg.locator('article[data-code="ST MAIN206"] .units').inner_text())
 
@@ -63,8 +69,16 @@ with sync_playwright() as p:
     ck('bullets are visible without expanding', first.locator('.recitem').first.is_visible())
     ck('confidence chip on bullet', first.locator('.recitem').first.locator('.tag').first.is_visible())
     chips = first.locator('.recitem').first.locator('.tag').all_inner_texts()
-    ck('bullet carries BOTH a confidence band and a peer chip', len(chips)>=2, chips)
-    ck('peer chip text present', any('Peer' in c for c in chips), chips)
+    ck('bullet carries a confidence band and a peer/no-peer chip', len(chips)>=2, chips)
+    # ⚠️ Pinned to the page, not to one card: WELDG/E121's top pick changed from a
+    # peer-backed 3h rec to a 6h one when the unit cut landed, and an assertion
+    # naming that card's chip stopped testing anything real.
+    ck('every bullet on the page carries exactly one peer/no-peer chip',
+       pg.locator('.recitem').count() ==
+       pg.locator('.recitem .tag.t-peer').count() + pg.locator('.recitem .tag.t-cr').count(),
+       (pg.locator('.recitem').count(), pg.locator('.recitem .tag.t-peer').count(),
+        pg.locator('.recitem .tag.t-cr').count()))
+    ck('peer-backed bullets exist', pg.locator('.recitem .tag.t-peer').count() > 0)
 
     # Jessica, 2026-08-27: no ACE exhibits in the header
     meta = first.locator('.recitem').first.locator('.rmeta').inner_text()
@@ -122,9 +136,14 @@ with sync_playwright() as p:
     # bulk fill only touches High band
     # Bulk fill takes the best HIGH-band option, preferring one whose hours match
     # the units. Reuse is allowed, so nothing is skipped for being claimed.
-    pg.locator('#pick').click(); pg.wait_for_timeout(800)
+    pg.locator('#clear').click(); pg.wait_for_timeout(400)   # start from empty
+    expect_n = pg.evaluate("""() => {
+        const D = JSON.parse(document.getElementById('cpl-data').textContent);
+        return D.courses.filter(c => c.cands.some(cd => cd.band === 'High')).length; }""")
+    pg.locator('#pick').click(); pg.wait_for_timeout(900)
     n = int(pg.locator('#count').inner_text().split(' ')[0])
-    ck('bulk fill chose the high-confidence courses', n == 86, n)
+    ck('bulk fill covers every course that HAS a high-confidence option',
+       n == expect_n, (n, expect_n))
     lowband = pg.evaluate("""() => {
         const D = JSON.parse(document.getElementById('cpl-data').textContent);
         const sel = JSON.parse(localStorage.getItem('lattc_mil_cpl_choices_v1')||'{}');
@@ -168,10 +187,23 @@ with sync_playwright() as p:
     # a recommendation's HOURS shown against the course's UNITS
     lab = pg.locator('article[data-code="WELDG/E030"]')
     chips = lab.locator('.recitem .tag').all_inner_texts()
-    ck('a 1-unit lab shows the hours/units gap', any('3h rec' in c for c in chips), chips[:8])
-    ck('and a matching 1-hour variant is offered', any('1h fits 1' in c for c in chips), chips[:8])
-    ck('the unit-matched options are labelled for the reader',
-       any('fits your' in c for c in chips), chips[:8])
+    # Jessica's cut: more than one unit apart is NOT LISTED; exactly one apart
+    # stays with a lower score. A 1-unit lab must therefore never be offered a
+    # 3-hour recommendation.
+    ck('a 3-hour rec is GONE from a 1-unit lab', not any('3h' in c for c in chips), chips[:8])
+    ck('the 1-hour match is offered', any('1h fits 1 unit' in c for c in chips), chips[:8])
+    ck('an off-by-one (2h) rec is still offered', any('2h rec' in c for c in chips), chips[:8])
+    gaps = pg.evaluate("""() => {
+        const D = JSON.parse(document.getElementById('cpl-data').textContent);
+        let bad = 0;
+        D.courses.forEach(c => { if (c.u == null) return;
+          c.cands.forEach(cd => { if (cd.h != null && Math.abs(cd.h - c.u) > 1.01) bad++; }); });
+        return bad; }""")
+    ck('NO listed recommendation is more than one unit from its course', gaps==0, gaps)
+    nounits = pg.evaluate("""() => {
+        const D = JSON.parse(document.getElementById('cpl-data').textContent);
+        return D.courses.filter(c => c.u == null && c.cands.length).length; }""")
+    ck('courses with no COCI units are NOT filtered (absent != failed)', nounits > 0, nounits)
 
     # the fix that matters for small courses: a unit match that ranks BELOW the
     # top five is still surfaced (22 were hidden on this 2-unit carpentry course)

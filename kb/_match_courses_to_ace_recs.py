@@ -97,12 +97,39 @@ def rec_hours(rec):
     m = re.match(r'^(\d+(?:\.\d+)?)(?:\s*-\s*\d+(?:\.\d+)?)?\s+hours?\s+in\s', rec)
     return float(m.group(1)) if m else None
 
+# ── THE UNIT RULE (Jessica, 2026-08-27) ─────────────────────────────────────
+# "Often credit recommendation hours match the units for the course. If the
+#  credit recommendation hours vary by more than 1 unit, leave it off of the
+#  list. If it varies by 1 unit, lower the confidence score but keep it on the
+#  list. Hold off on the combinations mentioned previously. I think we were
+#  overanalysing."
+#
+# A curator ruling replacing a modelled one. The earlier version scored the gap
+# on a continuous curve, which kept a 3-hour recommendation at the top of a
+# 1-unit lab because breadth outweighed the penalty — visibly wrong to the
+# person who has to defend the articulation. A hard cut at >1 is simpler, and it
+# is the reader who has to live with it who set it.
+#
+# ⚠️ The cut applies ONLY where COCI gave us units. On the 8 courses with no
+# units nothing is dropped — an absent measurement must never read as a failed
+# one, and silently shortening their list would be exactly that.
+UNIT_GAP_DROP = 1.0        # strictly more than this many units apart -> not shown
+UNIT_GAP_PENALTY = 0.5     # exactly one apart -> kept, scored lower
+
 def unit_fit(h, u):
-    """1.0 when the recommendation's hours equal the course's units, falling off
-    with the relative gap. None when either side is unknown."""
+    """1.0 when the hours equal the units, UNIT_GAP_PENALTY at exactly one apart,
+    None when either side is unknown. A gap larger than UNIT_GAP_DROP is not
+    scored at all - unit_drop() removes it before scoring."""
     if h is None or u is None: return None
-    if abs(h - u) < 0.01: return 1.0
-    return max(0.0, 1.0 - abs(h - u) / max(h, u))
+    d = abs(h - u)
+    if d < 0.01: return 1.0
+    return UNIT_GAP_PENALTY
+
+def unit_drop(h, u):
+    """True when the recommendation is further than one unit from the course and
+    should not be offered. Unknown units never drop anything."""
+    if h is None or u is None: return False
+    return abs(h - u) > UNIT_GAP_DROP + 0.01
 
 # Domain vocabulary per LATTC subject prefix. A course title is often too thin
 # ("Materials Of Construction"); the subject says which trade it sits in.
@@ -248,6 +275,7 @@ for r in lattc:
     course_units = None
     try: course_units = float(r['_units']) if r.get('_units') else None
     except (TypeError, ValueError): course_units = None
+    cands = [c for c in cands if not unit_drop(rec_hours(c['rec']), course_units)]
     for c in cands:
         fit  = c['score']
         peer = 1.0 if c['peer_n'] else 0.0
