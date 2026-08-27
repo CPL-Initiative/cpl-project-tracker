@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-27 (SkyPin) · The biggest slice of the implementation money — the Access priority, a third of the pool — turned out to be scored against the wrong number, so every one of the 115 colleges was showing zero earned on it. Not because they had done nothing: the model was reading students who already had credit on a transcript (25 units, three colleges) instead of credit APPLIED for students who came in through the portal or a college landing page, which is what the metric actually asks for. Sam supplied the missing piece — the Potential Student flag is the temporary marker for exactly that group. Fixed and live: 52 colleges now have a real number and 12 are earning. A priority can now be told which data to use instead of the model guessing from the wording, and an unrecognised setting pays nothing loudly rather than paying everything quietly.",
+ "_as_of": "2026-08-27 (SkyPin) · Two workstreams ran today. The funding items above come from the session that fixed the Access measure. Separately, LATTC sent 139 courses they will award for military training and no evidence for any of them — the thing colleges keep getting stuck on: they know a course qualifies, they just do not keep the credit recommendation MAP needs to record it. There is now a tool that proposes one per course from what ACE publishes and what other colleges have already done: 87 of the 139 have a recommendation a named peer college has used, 46 have one nobody has claimed yet, and 6 need a person. Jessica set the rule that a recommendation more than one unit away from the course is not offered at all.",
  "_session": 199,
- "_status": "The noncredit lane is one decision away from being built. Sam has chosen how it should look on the college table (a second row per college, under the credit row) and how it should be measured, but not how the money splits across its three priorities. Everything else is merged and live. The noncredit figures will read zero until MAP delivers the field that identifies a noncredit location — that is expected, and the page says \"no feed\" rather than pretending it is a measurement.",
+ "_status": "The noncredit lane is one decision away from being built. Sam has chosen how it should look on the college table (a second row per college, under the credit row) and how it should be measured, but not how the money splits across its three priorities. Everything else is merged and live. The noncredit figures will read zero until MAP delivers the field that identifies a noncredit location — that is expected, and the page says \"no feed\" rather than pretending it is a measurement. Also open: the LATTC worklist is delivered and live; the NCCER catalog is blocked on a PDF nobody here can download.",
  "items": [
   {
    "id": "s196-sam-55050-send",
@@ -89,6 +89,21 @@
    "id": "memory-false-stamp",
    "title": "One memory entry carries a stamp that is not true",
    "note": "It is marked as checked by a curator while also being marked out of date. Needs your call on which it is. The eleven entries credited to you and Jenni are real attribution and should never be swept."
+  },
+  {
+   "id": "lattc-cr-evidence-review",
+   "title": "Look at the LATTC worklist and say whether this becomes a tab",
+   "note": "Jessica asked for this and it is finished: 139 LATTC courses, each with ranked credit recommendations, what other colleges did, and a Select button. It is a web page today, which means it is a snapshot. If colleges will keep asking — Jessica says they will — it wants to be a COBI tab that any college can be pointed at. Your call. https://claude.ai/code/artifact/cbf1e2e5-e3a0-406b-9aaf-1bddcbc3a0c2"
+  },
+  {
+   "id": "lattc-course-number-mismatch",
+   "title": "Five LATTC course numbers point at a different course in COCI",
+   "note": "LATTC's list calls BLDGCTQ105 'Basic Blueprints and Drawings'; COCI says that number is 'CPR/AED/First Aid'. Four others disagree the same way. Somebody should ask LATTC which is right before anyone articulates them — a recommendation attached to the wrong course number is worse than none."
+  },
+  {
+   "id": "nccer-catalog-pdf",
+   "title": "Someone needs to hand us the NCCER catalog",
+   "note": "Jessica asked for a table of NCCER certifications and the modules inside each. NCCER's website is blocked from the machine these sessions run on, so it has to be attached to a session by a person. We already hold 19 NCCER credentials, and 14 of them have published credit recommendations that no college has adopted."
   }
  ],
  "for_fable": [
@@ -121,6 +136,16 @@
    "id": "funding-a11y",
    "title": "Check the funding tab on a phone, and the header at high zoom",
    "note": "Not audited. Needs a real browser — the automated tests cannot see layout at all."
+  },
+  {
+   "id": "cr-evidence-next-college",
+   "title": "Point the CR-evidence matcher at the next college that asks",
+   "note": "kb/_match_courses_to_ace_recs.py is written to be reused, but it has only ever been run once. The next college that sends a list is the test of whether it is genuinely reusable or quietly LATTC-shaped. Read docs/college_cr_evidence_lessons.md first."
+  },
+  {
+   "id": "cr-evidence-ready-to-adopt",
+   "title": "The 46 recommendations nobody in California has claimed",
+   "note": "For 46 of LATTC's courses the credit recommendation exists and students already hold it, but no college has ever attached it to a course. That is a shelf, not a gap — and it is not LATTC-specific. Worth counting statewide."
   }
  ]
 }

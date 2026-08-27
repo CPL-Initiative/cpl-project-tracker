@@ -784,3 +784,25 @@ Outputs land in `kb/partner_crosswalk_out/<date>-<slug>/`. The workbook is a
 regenerable artifact and is **not committed**; `summary.json` / `unmapped.json`
 are the run receipt, and `unmapped.json` **is the curator worklist**. Method:
 [`docs/kb-notes/methodology-partner-occupation-crosswalk.md`](../docs/kb-notes/methodology-partner-occupation-crosswalk.md).
+
+## `college_cr_evidence/` — a CR for a course a college already approved (2026-08-27)
+
+A college names courses it will award for a CPL type but holds no credit recommendation, and
+MAP needs one before an articulation can exist. Jessica: *"This is a common problem we have
+with colleges."*
+
+- **`_match_courses_to_ace_recs.py`** — matches a college's course list to the ACE credit
+  recommendation vocabulary in `map_college_cr_unit`. Two signals kept separate: the
+  recommendation EXISTS (a proposal) vs a named peer college USED it (a fact). Reuses the
+  Supabase `cx_align_tokens()` stopword list, adds a WEAK set (generic nouns may contribute
+  to a score but never carry a match alone) and a domain gate.
+- **`college_cr_evidence/<college>_<lane>_<date>.{json,html}`** — the payload and the
+  rendered worklist. First run: LATTC military CPL, 139 courses → 87 peer-backed /
+  46 recommendation-only / 6 needing a faculty call.
+- Guard: `tests/lattc_worklist_page_test.py` (browser, 51 checks; needs Chromium, skips
+  cleanly without it — it is NOT part of `npm test`).
+
+⚠️ **The unit rule (Jessica, 2026-08-27):** recommendation hours more than **1 unit** from
+the course are not listed; exactly one apart stay at a lower score. Applied **only** where
+COCI supplied units — a course with no units is never filtered, because an absent
+measurement must not read as a failed one.
