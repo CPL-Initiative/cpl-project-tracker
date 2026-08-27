@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-26T13:27:57.823091+00:00",
+  "scraped_at": "2026-08-27T15:06:22.371322+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27417,
+    "jst": 27467,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -17,22 +17,22 @@
     },
     "Merced College": {
       "vets": 142,
-      "jst": 274,
+      "jst": 275,
       "star": true
     },
     "Chaffey College": {
       "vets": 182,
-      "jst": 348,
+      "jst": 349,
       "star": true
     },
     "San Diego Mesa College": {
       "vets": 1070,
-      "jst": 1587,
+      "jst": 1596,
       "star": true
     },
     "San Diego City College": {
       "vets": 776,
-      "jst": 1468,
+      "jst": 1473,
       "star": true
     },
     "Moreno Valley College": {
@@ -42,17 +42,17 @@
     },
     "San Diego Miramar College": {
       "vets": 1181,
-      "jst": 1620,
+      "jst": 1626,
+      "star": true
+    },
+    "City College of San Francisco": {
+      "vets": 1197,
+      "jst": 1330,
       "star": true
     },
     "Bakersfield College": {
       "vets": 416,
       "jst": 563,
-      "star": true
-    },
-    "City College of San Francisco": {
-      "vets": 1197,
-      "jst": 1315,
       "star": true
     },
     "West Los Angeles College": {
@@ -140,14 +140,14 @@
       "jst": 441,
       "star": true
     },
+    "Fresno City College": {
+      "vets": 724,
+      "jst": 592,
+      "star": true
+    },
     "Cabrillo College": {
       "vets": 102,
       "jst": 182,
-      "star": true
-    },
-    "Fresno City College": {
-      "vets": 724,
-      "jst": 581,
       "star": true
     },
     "Sierra College": {
@@ -172,7 +172,7 @@
     },
     "Los Angeles Trade Technical College": {
       "vets": 318,
-      "jst": 421,
+      "jst": 414,
       "star": true
     },
     "Glendale Community College": {
@@ -212,7 +212,7 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 131,
+      "jst": 132,
       "star": false
     },
     "Ventura College": {
@@ -352,7 +352,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 61,
+      "jst": 62,
       "star": false
     },
     "Crafton Hills College": {
@@ -422,7 +422,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 176,
+      "jst": 177,
       "star": true
     },
     "Napa Valley College": {
@@ -447,7 +447,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 226,
+      "jst": 229,
       "star": true
     },
     "Coalinga College": {
@@ -477,7 +477,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 98,
+      "jst": 101,
       "star": false
     },
     "Cuyamaca College": {
