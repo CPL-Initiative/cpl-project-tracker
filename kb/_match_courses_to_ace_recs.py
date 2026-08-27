@@ -122,7 +122,7 @@ def subj_of(code):
     m = re.match(r'^([A-Z /]+?)\d', code.upper())
     return (m.group(1).strip() if m else code)
 
-lattc = json.load(open('lattc_raw.json'))
+lattc = json.load(open('lattc_raw2.json'))
 vocab = json.load(open('ace_vocab.json'))
 peer  = json.load(open('peer_ace.json'))
 
@@ -190,6 +190,23 @@ for r in lattc:
     # management" (business distribution) over "water storage and distribution",
     # and "Construction Wiring" with "introduction to construction" over the
     # wiring recs. Whether anyone has done it does not change what it IS.
+    # ── CONFIDENCE ───────────────────────────────────────────────────────
+    # A HEURISTIC, NOT A PROBABILITY, and its three inputs are shown on the
+    # card so a reviewer can disagree with the arithmetic rather than the
+    # number. Deliberately NOT trained on anything: nobody has labelled a
+    # ground truth for "is this the right CR", so a fitted score would be a
+    # borrowed authority. It ranks; faculty decide.
+    for c in cands:
+        fit  = c['score']                              # how well the words fit
+        peer = 1.0 if c['peer_n'] else 0.0             # has anyone done it
+        breadth = min(c['colleges'] / 40.0, 1.0)       # how widely it is held
+        conf = 0.55*fit + 0.25*peer + 0.20*breadth
+        c['confidence'] = round(conf, 3)
+        c['confidence_band'] = ('High' if conf >= 0.70 else
+                                'Medium' if conf >= 0.45 else 'Low')
+        c['confidence_parts'] = {'fit': round(fit,3), 'peer': bool(c['peer_n']),
+                                 'breadth': round(breadth,3)}
+
     cands.sort(key=lambda c: (-round(c['score'],1), -min(c['peer_n'],1),
                               -c['colleges'], -c['exhibits'], -c['score']))
     seen, ded = set(), []
@@ -197,9 +214,16 @@ for r in lattc:
         key = re.sub(r'^\d+(\.\d+)?\s+hours?\s+in\s+','',c['rec'])
         if key in seen: continue
         seen.add(key); ded.append(c)
+    ded.sort(key=lambda c: -c['confidence'])
     out.append({'code': code, 'subject_key': sk, 'subject_name': sname,
                 'number': r['Course Number'], 'title': title,
                 'top_code': r['Top Code'], 'cb08': r['CB08'],
+                # COCI, joined on (subject, course number) with leading zeros
+                # stripped. 8 of 139 do not resolve - reported, never guessed.
+                'units': r.get('_units'), 'coci_title': r.get('_coci_title'),
+                'control_number': r.get('_control'), 'cid': r.get('_cid'),
+                'credit_type': r.get('_credit_type'),
+                'units_variants': r.get('_units_multi'),
                 'candidates': ded[:5], 'n_cand': len(ded)})
 
 json.dump(out, open('lattc_matches.json','w'), indent=1)

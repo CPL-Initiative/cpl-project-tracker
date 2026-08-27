@@ -121,3 +121,60 @@ session, as the LATTC workbook was.
    first California college to articulate them.
 3. The 6 leftovers need a faculty call, not a better matcher.
 4. NCCER: get the catalog PDF attached, then build certificate → module → CR.
+
+### 2026-08-27, later — from a report to a worklist (Jessica)
+
+*"Please also include units… Show a summary of the CRs… in bullets in the same header…
+Include a confidence score for each CR and a select button. I don't want them to have to
+sort through the detailed info below unless they want to. I want to give them an easy
+button for this."* Then: *"The peer precedence would result in a higher confidence score.
+Please include the chip that indicates peer precedent etc. next to each bullet."*
+
+The page was a **report**; it needed to be a **worklist**. Everything needed to decide now
+sits in the collapsed card — units, ranked recommendations, confidence, the peer chip, a
+Select button — and the evidence moved behind one disclosure.
+
+**Units came from COCI**, joined on (subject, course number) against
+`chatbox_college_courses`. ⚠️ **Leading zeros cost 25 of 139 matches** on the first pass:
+LATTC writes `BLDGCTQ002`, `WELDG/E020`, `WATER001`; COCI stores `2`, `20`, `1`. Normalized,
+**131 of 139** resolve. The other 8 are reported as *"units not in COCI"* — never guessed.
+
+⭐ **The join found something better than units: five course numbers that name a different
+course in COCI.** `BLDGCTQ105` is *Basic Blueprints And Drawings* on LATTC's list and
+**CPR/AED/First Aid: Construction & Industry** in COCI; `BLDGCTQ600` is *Green Jobs for the
+AEC Industry Cluster* vs **Building Construction Techniques**; `WATER001/002` vs **Modern
+Water Works I/II**; `ECONMT191` vs **Electrical Wiring Systems**. A ratio test separates
+these from the 4 harmless spelling drifts (*METAL SCUPTURE II*). Each one is flagged on the
+card, because a recommendation attached to the wrong course number is worse than no
+recommendation. **A units join is also a course-identity check** — the second finding was
+free and worth more.
+
+**Confidence is `0.55 × word fit + 0.25 × peer precedent + 0.20 × how widely held`.**
+Jessica confirmed peer precedent must raise it. ⚠️ **It is a ranking heuristic, not a
+probability, and it is deliberately not fitted to anything** — nobody has labelled a ground
+truth for *"is this the right CR"*, so a trained score would be a borrowed authority. All
+three inputs render on the chip's tooltip so a reviewer argues with the arithmetic, not the
+number. Bands: High ≥0.70 (**82** courses), Medium ≥0.45 (**34**), Low (**17**).
+
+⚠️ **The bulk "choose the top pick" button fills only High-band rows.** Filling all 139
+would launder a Low-confidence guess into a recorded decision at the exact moment nobody is
+looking. It fills 82 and says so.
+
+**Selections persist three ways, deliberately layered** — `localStorage` immediately (works
+for everyone, survives reload), the `artifact` capability on an explicit *Save* (the shared
+record, so choices come back to us rather than dying in a browser), and a CSV via the
+`downloads` capability with a clipboard fallback. ⚠️ **A read-only viewer cannot publish** —
+`publish` returns `not_writer`, so that path is caught and the viewer is pointed at the CSV
+rather than shown a failure.
+
+⭐ **Rebuilt as data + renderer rather than pre-rendered HTML** — required by the capability
+(save = swap the state JSON block in the page source and republish; the live DOM is never
+serialized back), and it shrank the file from 430 KB to 346 KB.
+
+**Committed the browser test** (`tests/lattc_worklist_page_test.py`, 27 checks) rather than
+throwing it away: it guards that the bullets are visible *without* expanding, that every
+bullet carries both chips, that the bulk fill stops at 82, and that Save degrades with a
+sentence when the runtime is absent. ⚠️ Chromium is at build **1194** here while a
+pip-installed Playwright wants 1234 — pass `executable_path`, never `playwright install`.
+The lone console error is the Google Fonts fetch, blocked by the sandbox's egress and
+allowed by the artifact CSP; the test asserts on **page** errors instead.
