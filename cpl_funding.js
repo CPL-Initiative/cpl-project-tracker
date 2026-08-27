@@ -2147,10 +2147,25 @@
   // the pie sectors. Two data-backed built-ins (coordinator + participation) plus
   // any AUTO-scorable extra requirement (today: the veteran-JST → Veteran Star
   // qualifier). Other free-text extras aren't per-college tracked, so aren't sliced.
+  // ⚠️ ONE PLACE COMPOSES THE PARTICIPATION REQUIREMENT TEXT.
+  // `partLabel()` is curator-editable, and the live value ended in the word
+  // "by" ("Opt-in participation by") while TWO of its three call sites appended
+  // their own — rendering "Opt-in participation by by 2026-11-01" in the
+  // eligibility hover and the baseline-gate text, live. The third site appended
+  // nothing, so the SAME label had to end in "by" there and not end in "by"
+  // here, which no single value can satisfy.
+  //
+  // The joiner now adapts to the label instead of the label having to guess the
+  // joiner: append "by" only when the curator has not already written it.
+  function partReqText() {
+    var lbl = String(partLabel() || "").trim();
+    if (!lbl) return participationDeadline();
+    return (/\bby$/i.test(lbl) ? lbl : lbl + " by") + " " + participationDeadline();
+  }
   function eligReqList(college) {
     var list = [];
     if (coordShown()) list.push({ met: !!ELIG.coord[college], label: coordLabel() });
-    if (partShown()) list.push({ met: !!ELIG.optin[college], label: partLabel() + " by " + participationDeadline() });
+    if (partShown()) list.push({ met: !!ELIG.optin[college], label: partReqText() });
     var vs = vetStar();
     extraReqs().forEach(function (txt) {
       if (isVetJstReq(txt)) list.push({ met: !!(vs && vs[college]), label: txt, auto: "vetstar", pending: !vs });
@@ -2183,7 +2198,7 @@
     if (!ELIG.coordOk) return { pending: true, blocked: false, missing: [] };
     var missing = [];
     if (coordShown() && !ELIG.coord[college]) missing.push(coordLabel());
-    if (partShown() && !ELIG.optin[college]) missing.push(partLabel() + " by " + participationDeadline());
+    if (partShown() && !ELIG.optin[college]) missing.push(partReqText());
     return { pending: false, blocked: missing.length > 0, missing: missing };
   }
   function baselineGateText(college) {
@@ -2427,23 +2442,23 @@
     }
     if (ui.done) {
       return '<div class="cplfund-optin cplfund-optin-done"><span class="cplfund-optin-tick">✓</span> ' +
-        "<strong>Thank you — your opt-in has been recorded.</strong> " +
+        "<strong>Thank you — your participation is confirmed.</strong> " +
         '<span class="dk">The Chancellor&#39;s Office will acknowledge it; your college is counted as participating in the meantime.</span></div>';
     }
     var withdrawn = row && row.status === "revoked"
-      ? '<div class="cplfund-optin-note cplfund-warn-text">A previous opt-in for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
+      ? '<div class="cplfund-optin-note cplfund-warn-text">A previous participation confirmation for this college was withdrawn by the Chancellor&#39;s Office. Contact the CO to re-open it.</div>'
       : "";
     if (!ui.open) {
       return '<div class="cplfund-optin">' + withdrawn +
         '<button type="button" class="cplfund-optbtn cplfund-optin-open" data-optinbtn="' + esc(college) + '">' +
-        "✎ Opt in to participate</button> " +
+        "✎ Confirm participation</button> " +
         '<span class="dk">for your college&#39;s VPAA / VP of Student Services / President</span></div>';
     }
     var titleOpts = OPTIN_TITLES.map(function (o) {
       return '<option value="' + esc(o.val) + '">' + esc(o.label) + "</option>";
     }).join("");
     return '<div class="cplfund-optin cplfund-optin-form" data-optinwrap="' + esc(college) + '">' + withdrawn +
-      '<div class="cplfund-optin-head">Opt <strong>' + esc(dispName(college)) + "</strong> in to CPL Implementation Funding</div>" +
+      '<div class="cplfund-optin-head">Confirm <strong>' + esc(dispName(college)) + "</strong>&#39;s participation in CPL Implementation Funding</div>" +
       '<div class="cplfund-optin-grid">' +
       '<label>Your name<input type="text" data-optinfield="name" autocomplete="name" maxlength="120" placeholder="First Last"></label>' +
       "<label>Your title<select data-optinfield=\"title\">" + titleOpts + "</select></label>" +
@@ -2452,9 +2467,9 @@
       '<div class="cplfund-optin-err" data-optinerr="' + esc(college) + '"></div>' +
       '<div class="cplfund-optin-actions">' +
       '<button type="button" class="cplfund-optbtn cplfund-optin-submit" data-optinsubmit="' + esc(college) + '"' +
-      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Submit opt-in") + "</button>" +
+      (ui.submitting ? " disabled" : "") + ">" + (ui.submitting ? "Submitting…" : "Confirm participation") + "</button>" +
       '<button type="button" class="cplfund-optbtn" data-optincancel="' + esc(college) + '">Cancel</button>' +
-      (ui.error ? ' <span class="cplfund-warn-text">Could not record the opt-in — please try again.</span>' : "") +
+      (ui.error ? ' <span class="cplfund-warn-text">Could not record the confirmation — please try again.</span>' : "") +
       "</div>" +
       '<div class="cplfund-optin-note">By submitting, you attest that you are an administrator of ' + esc(dispName(college)) +
       " requesting that it participate in CPL Implementation Funding. Your name and email are recorded for the Chancellor&#39;s " +
@@ -5065,7 +5080,7 @@
     // all 115 rows reads as the state withholding money from the whole system,
     // when in fact the requirement is not yet due. Before the deadline the row
     // says what to DO and names no figure (the cap is already on the line above,
-    // and the row carries an ✎ Opt in button). After the deadline the money
+    // and the row carries an ✎ Confirm button). After the deadline the money
     // genuinely is being held back, and the figure returns because then it is
     // true. Same fact either way; only the claim about the college changes.
     if (held > 0.5 || gated) {
@@ -5083,7 +5098,7 @@
           ". Once this college opts in and has a CPL Coordinator on file in MAP, it starts earning against " +
           "its cap. The dollars roll forward either way.";
       return '<span class="sub cf-withheld" title="' + esc(tip) + '">' +
-        (showFig ? "held " + fmtMoney(held) : "opt in to start earning") + "</span>";
+        (showFig ? "held " + fmtMoney(held) : "confirm participation to start earning") + "</span>";
     }
     var pct = earned / cap;
     var advTag = adv > 0.5
@@ -5154,13 +5169,17 @@
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
     if (c.capped) chips += '<span class="cplfund-chip" title="Maximum allocation applied — held to ' + fmtMoney(allocModel().cap) + ' for the window; the difference re-splits across the other colleges">⬇</span>';
-    // One-click opt-in entry (Sam, 2026-08-05): opens THIS row's drill-in with the
+    // One-click entry (Sam, 2026-08-05): opens THIS row's drill-in with the
     // attestation form focused, so a college admin doesn't have to expand-then-hunt.
+    // ⚠️ The CHIP says "Confirm" and the drill-in button says "Confirm
+    // participation" — the row is width-constrained (no horizontal scroll at
+    // desktop widths) and the noun is carried by the hover. Sam approved the
+    // phrase with the short chip form, 2026-08-27.
     // Public + private; hidden once opted in. Not a CURATE_ATTR, so it survives the
     // public-mode sweep like the form button does.
     if (partShown() && !ELIG.optin[c.college]) {
       chips += '<button type="button" class="cplfund-optin-jump" data-optinjump="' + esc(c.college) +
-        '" title="Opt ' + esc(dispName(c.college)) + ' in to CPL Implementation Funding — opens the short attestation form">✎ Opt in</button>';
+        '" title="Confirm ' + esc(dispName(c.college)) + '&#39;s participation in CPL Implementation Funding — opens the short attestation form">✎ Confirm</button>';
     }
     return chips;
   }
@@ -5852,7 +5871,7 @@
       list.push({ text: coordLabel(),
         note: ELIG.coordOk ? (ELIG.coordN + " of " + base().colleges.length + " colleges currently have one on file in MAP") : "" });
     }
-    if (partShown()) list.push({ text: (partLabel() + " " + participationDeadline()).trim() });
+    if (partShown()) list.push({ text: partReqText() });
     extraReqs().forEach(function (t) { if (String(t).trim()) list.push({ text: String(t).trim() }); });
     return list;
   }
@@ -6949,7 +6968,7 @@
   }
 
   // One-shot: after a table (re)render, scroll a row's opt-in form into view and
-  // focus its name field — set by the row-level "Opt in" chip (data-optinjump).
+  // focus its name field — set by the row-level "Confirm" chip (data-optinjump).
   var _optinFocusCollege = null;
   function focusOptinForm() {
     if (!_optinFocusCollege) return;
@@ -7708,6 +7727,12 @@
     // The noncredit lane itself, for a sweep. Cache cleared so a caller that
     // moved a dial between calls gets the new answer rather than the old one.
     _nc: function () { _ncCache = null; return ncModel(); },
+    // The composed participation-requirement text. Exposed because its only
+    // render surfaces need live eligibility data (baselineGate() short-circuits
+    // to "pending" when the coordinator feed has not loaded), so the join it
+    // performs — the one that was printing "… by by 2026-11-01" — is otherwise
+    // unreachable from a test.
+    _partReqText: function () { return partReqText(); },
     _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
 
     // ── read-only API for the My College tab (#college-briefing) ────────────

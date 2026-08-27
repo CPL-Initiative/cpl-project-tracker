@@ -277,6 +277,40 @@ function teamPhrase() {
     /Opted in to participate/.test(t));
 }
 
+// ── the participation-requirement join (2026-08-27) ─────────────────────────
+// `partLabel()` is curator-editable and TWO of its three call sites appended
+// their own " by ", so the live label "Opt-in participation by" rendered
+// "Opt-in participation by by 2026-11-01" in the eligibility hover and the
+// baseline-gate text. The third site appended nothing, so NO single label value
+// could be correct in all three places. The joiner adapts to the label now.
+//
+// ⚠️ Tested through a hook rather than the screen: both render surfaces need
+// live eligibility data (baselineGate() short-circuits to "pending" when the
+// coordinator feed has not loaded), so this join is unreachable from jsdom —
+// which is exactly why it shipped wrong and stayed wrong.
+{
+  const { window } = freshDom();
+  boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const withLabel = (l) => { T._setScenario({ partLabel: l }); return T._partReqText(); };
+
+  const endsInBy = withLabel("Opt-in participation by");
+  check("a label already ending in 'by' is not given a second one",
+    /participation by \d{4}-\d{2}-\d{2}$/.test(endsInBy) && !/by\s+by/i.test(endsInBy));
+  const noBy = withLabel("Participation confirmed");
+  check("a label NOT ending in 'by' still reads as a deadline, not two facts jammed together",
+    /^Participation confirmed by \d{4}-\d{2}-\d{2}$/.test(noBy));
+  check("Sam's new label composes cleanly (2026-08-27)",
+    /^Participation confirmed by \d{4}-\d{2}-\d{2}$/.test(withLabel("Participation confirmed by")));
+  check("case does not defeat it — 'By' is the same word",
+    !/by\s+by/i.test(withLabel("Participation confirmed By")));
+  check("an empty label degrades to the bare deadline, not a dangling 'by'",
+    !/\bby\b/i.test(withLabel("")) && /\d{4}-\d{2}-\d{2}/.test(withLabel("")));
+  check("every call site composes through partReqText() — none keeps its own concatenation",
+    !/partLabel\(\)\s*\+\s*" by "/.test(consumerSrc) &&
+    (consumerSrc.match(/partReqText\(\)/g) || []).length >= 4);
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);

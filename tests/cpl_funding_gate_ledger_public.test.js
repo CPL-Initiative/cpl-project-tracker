@@ -110,8 +110,13 @@ function footText(doc) {
   // is withholding from the whole system, when the requirement is not yet due.
   // The rule is now phase-dependent, and the never-a-bare-$0 ruling still holds
   // in both phases.
+  // Sam, 2026-08-27: the call to action is "confirm participation", not "opt in"
+  // — "opt in" is mailing-list language that presumes a default of OUT and makes
+  // declining look like a normal choice, when nothing here is conditional on a
+  // choice. Asserted BOTH ways so a revert is a failure, not a silent pass.
   check("S5: before the deadline the row says what to DO, and names no held figure",
-    !!gatedSub && /opt in/i.test(gatedSub.textContent) &&
+    !!gatedSub && /confirm participation/i.test(gatedSub.textContent) &&
+    !/\bopt[- ]?in\b/i.test(gatedSub.textContent) &&
     !/held/i.test(gatedSub.textContent) && !/\$/.test(gatedSub.textContent) &&
     !/^\s*\$0\s*$/.test(gatedSub.textContent));
   check("S5: ...and its hover says plainly that nothing is withheld yet",
