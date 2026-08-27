@@ -276,6 +276,35 @@ def _build_headers():
     return headers
 
 
+# MAP's per-dataset status codes, as OBSERVED — not as assumed.
+#
+#   absent   healthy (most datasets, most days)
+#   "000"    healthy. MAP's OK sentinel. Observed 2026-08-27 on a 338.7 MB pull
+#            where all ten datasets carried it AND full row counts
+#            (StudentDetailsCredits 596,656; CollegeExhibitCRByCatalogYear
+#            204,896). It is not an HTTP status at all.
+#   "400"    a real failure, and it carries a message. Observed 2026-08-26:
+#            "View_StudentDetailsCredits_APIDataset is not Valid", columnValue
+#            null, rows 0.
+#
+# WHY THIS IS A SEPARATE FUNCTION WITH THIS COMMENT. The first cut of this guard
+# said `not code.startswith("2")`, which made "000" a failure — so on 2026-08-27,
+# the first pull after MAP fixed the broken view, --strict refused a COMPLETELY
+# HEALTHY payload and saved nothing. The bug was not the logic; it was that the
+# test fixture was built from what I imagined a healthy response looks like
+# (absent, or "200") rather than from a real one. That is the Session 172 lesson
+# quoted in this file's own history — "a fixture invented alongside the code it
+# tests cannot falsify that code's premise" — repeated by me one release later.
+# Every value listed above now comes from a captured payload.
+OK_CODES = frozenset({"", "000"})
+
+
+def code_is_ok(code: str) -> bool:
+    """True when MAP's per-dataset responseCode does NOT indicate a problem."""
+    c = (code or "").strip()
+    return c in OK_CODES or c.startswith("2")
+
+
 def summarize_response(data, requested=None):
     """Read MAP's per-dataset verdict on a CustomReport response.
 
@@ -328,7 +357,7 @@ def summarize_response(data, requested=None):
         if not isinstance(claimed, int) or claimed != parsed:
             shown = f"{claimed:,}" if isinstance(claimed, int) else claimed
             line += f"  [MAP claims {shown}]"
-        if code and not code.startswith("2"):
+        if not code_is_ok(code):
             line += f"  <-- HTTP {code}: {message or 'no message'}"
             failed.append((view, code, message))
         lines.append(line)
