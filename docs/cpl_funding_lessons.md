@@ -1814,3 +1814,163 @@ money, so parity is ~**$2.21M** — up $406k, not a step change. Across all 111
 institutions that buys a **$16,216** floor ($19,873 at parity), and the median
 institution in that lane has **226** noncredit FTES. The threshold is what buys
 the floor its size: a meaningful floor for a few, or a token for everyone.
+
+---
+
+## 2026-08-27 — Session 199 (SkyPin): build step 1, and the column was in the wrong database
+
+### ⭐ The defect is three times worse than it was recorded, and invisible by construction
+
+Session 197 recorded that `measurability()` mis-resolves Sam's noncredit metrics —
+"all three match the credit sources, and one naming the NC landing page matches
+`pp_u` first". Reproduced against the real predicates before touching anything,
+in his own idiom:
+
+```
+pp_u  <-  Eligible CPL Units as FTES ... Noncredit Landing Page
+pp_u  <-  Applied CPL Units as FTES ... Noncredit Landing Page
+pp_u  <-  Transcribed CPL Units as FTES ... Noncredit Landing Page
+```
+
+**All three collapse onto one source.** The portal/landing-page entry sits FIRST
+among the unit measures, so it wins before `eligible` / `applied` / `transcribed`
+is ever consulted. The eligible → applied → transcribed **milestone structure —
+the entire reason the lane gets three priorities — silently becomes one number**,
+and that number is the credit lane's portal traffic.
+
+⚠️ **And the wrong number is indistinguishable from the right one.** Statewide
+`pp_u` is **25.0 units carried by 3 of 105 colleges**, so 102 colleges would
+render **0** — exactly the honest zero Sam asked the NC lane to show while the
+origination field is undelivered. There is no screen you could look at to catch
+this. It is precisely the case his draft-model ruling excludes: *"values calculate
+correctly based on the available data"* permits an absent number, never a
+plausible wrong one.
+
+The demonstration that made it concrete — same metric prose in all three slots,
+only the pin differing:
+
+| slot | pin | renders |
+|---|---|---|
+| P1 | `pa_u` | Now **400 FTES** · $26.3K · 100% |
+| P2 | *(none — falls to prose)* | Now 0 FTES · **$389** · 1.06% |
+| P3 | `nope_u` | **not wired** · $0 |
+
+One config field; a 4,000× difference in what the college is judged on; **neither
+cell looks broken.**
+
+### ⚠️ The handoff put the NULL column in the wrong database
+
+Sam's mechanism is right and is the good one — declare the field now, all empty,
+calculate off it, so nothing is synthetic, nothing has to be removed later, the
+cutover is zero-change, and *the disclosure becomes derivable rather than
+maintained*. The **location** was wrong.
+
+The handoff said to add `nc_origin_loc_id` to Supabase `map_student_credit` and
+`map_college_cr_unit`. **The funding model never reads either.** `perf()` is
+`window.CPL_FUNDING_PERF` — a static artifact built by
+`funding/_build_funding_performance.py` from the daily MAP pull. `cpl_funding.js`
+touches Supabase only for the config and the opt-in. A NULL column in those two
+tables would have wired **nothing** in this lane, and the first sign would have
+been an NC row reading $0 for a reason nobody could find.
+
+⭐ **So the funding lane's equivalent of his NULL column is a DECLARED SOURCE THE
+FEED DOES NOT CARRY YET** — `nc_pe_u` / `nc_pa_u` / `nc_pt_u`, registered in
+`METRIC_SOURCES`, emitted by nothing. Every property he wanted survives the move:
+nothing synthetic, nothing to remove, zero-change cutover the day the builder can
+compute them, and `srcDelivered()` **asks the published artifact** whether the key
+is present rather than reading a flag somebody has to keep true.
+
+(The Supabase column is still worth having for student-grain analysis. It is a
+different consumer, and it is not this.)
+
+### What shipped
+
+`metric_src` — an explicit per-priority pin that overrides the prose, riding
+`prioField()` so it layers scenario → shared → baked like every other field.
+
+- ⚠️ **It is deliberately not free text.** An unrecognised key would read
+  `rec[src] == null`, fall through to status `none`, and render as *"this college
+  posted nothing"* — a typo silently zeroing a lane and **looking like a
+  measurement**. Every legal key is declared with its unit; an unknown one becomes
+  a loud `bad_src`.
+- ⚠️ **A miswired pin must never ADVANCE.** Without its own branch, `bad_src` fell
+  into the data-gap branch and paid **every college its full cap** — one typo in
+  one config field disbursing a whole priority. The gap branch is for a metric
+  *nobody* can measure, which is a statement about the world; a bad pin is a
+  statement about our own config, and the safe reading of "we do not know what
+  this measures" is **$0, loudly**, not everything, silently.
+- ⭐ **`undelivered` is a LABEL, not a third earn state.** The fraction is 0,
+  identical to `none` — Sam's ruling exactly. It is separated because *"the feed
+  carries no such measure"* and *"this college posted nothing"* are two different
+  zeros, and this repo has kept absent / withheld / measured apart for a year.
+- ⚠️ **Four surfaces each tested `status === "gap" || status === "pending"`
+  inline**, so every new status had to be remembered in four places or it rendered
+  as a measured zero. Now one `earnIsMeasured()`.
+
+### ⚠️ Two of my own guards were inert, and only mutation showed it
+
+Written, green, and **proven worthless**:
+
+- `earnIsMeasured()` forced to `return true` — the CSV/sort assertions **still
+  passed**, because they read the *source text* rather than exercising the CSV.
+- `prioUnit()`'s registry lookup blanked — the unit assertion **still passed**,
+  because its own fixture's prose (*"…Units as FTES…"*) already sniffed to units,
+  so the pin was never the thing under test.
+
+Both replaced with behavioral checks (a real `_csv()` round trip; a metric whose
+prose says **Headcount** pinned to a unit source, so the pin is the only thing
+that can produce FTES). **Seven mutations, all now caught.** Same lesson as
+#1361's reversed `check()` arguments, one session later: *a guard that has never
+been made to fail is not yet a guard.*
+
+### ⛔ THE SAME DEFECT IS ALREADY LIVE ON THE CREDIT LANE, ON THE BIGGEST PRIORITY
+
+Looking up the live Supabase config to build a faithful mock turned the
+hypothetical into a present-tense one. Sam's **Year-1 Access** metric reads:
+
+> *"**Applied** units measured in FTES for students originating from either CPL
+> Portal, College CPL Landing Page, **or batch upload**"*
+
+It resolves to **`pp_u`** — portal-origin **transcribed** units. Two disagreements
+at once, and neither is visible on the tab:
+
+1. **Wrong rung.** He asks for APPLIED; `pp_u` returns TRANSCRIBED. Statewide these
+   are 223,384 and 80,338 units — not interchangeable.
+2. **Wrong origin scope.** He names three origins *including batch upload*; `pp_u`
+   is `Potential Student = Yes` only, which excludes batch upload entirely.
+
+⚠️ **Measured against the published artifact: all 115 colleges read exactly
+`0 FTES` on it.** `pp_u` is 25.0 units across 3 colleges, and 25 ÷ 30 rounds to 0.
+Access carries **share 0.34 — the largest of the three** — and under front-load
+Year 1 carries the whole window. **So the tab's largest earning line reads $0
+system-wide, for a reason nothing on screen states.**
+
+⭐ **And note which way the error runs.** Had the metric been read as a genuine
+data gap it would have *advanced the full cap*; instead it resolves to a real key
+and pays $0. The mis-resolution flipped roughly a third of the pool from
+"advances" to "earns nothing" — silently, in the direction nobody audits, because
+a low number on a new program looks like the program being new.
+
+**The fix is Sam's call, not ours** — pin it to `pa_u` (right rung, no origin
+filter), or accept it as a data gap that advances, or accept `pp_u` deliberately.
+All three are now one config field. What shipped instead is the thing that makes
+the disagreement impossible to miss: a **MILESTONE-agreement check** in the
+curator diagnostic, the second axis beside the UNIT-agreement check that has been
+there since 2026-07-31. It reads `⚠ MILESTONE MISMATCH — this metric asks for
+APPLIED CPL but pp_u returns transcribed`, fires on that slot in both years, and
+leaves the four honest priorities a clean ✔.
+
+⭐ **The generalizable half:** the funnel has three rungs and the tab had a guard
+for the *unit* axis and none for the *rung* axis. When a matcher can be wrong
+along more than one dimension, a guard on one dimension reads as coverage.
+
+### Still open, and needing Sam
+
+- ⛔ **The live Access metric** (above) — pin, gap, or accept. It is the largest
+  share and currently earns $0 for every college.
+- **Row shape** — a second table row per college, or extra lines inside each
+  P1/P2/P3 cell. A mock, not a guess.
+- **Shares for the NC three.** Nothing ruled. Inheriting credit's 34/33/33 is the
+  obvious default and keeps one number to change, but he has not said so.
+
+Neither blocks anything else; both block step 2.

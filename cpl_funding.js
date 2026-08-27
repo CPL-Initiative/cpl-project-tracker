@@ -1161,12 +1161,20 @@
       if (L.unit === "ftes" || L.unit === "headcount") return L.unit;
       if (L.metric != null) break;      // set the metric but not the unit → sniff it
     }
+    // A PINNED measure carries its own unit from the registry. Sniffing the
+    // prose here would re-introduce exactly the mismatch the pin exists to end:
+    // an NC metric pinned to a *_u source while its wording resolved to a
+    // student count would score the right college against the wrong quantity.
+    var pinned = prioField(slot, i, "metric_src");
+    if (pinned && METRIC_SOURCES[pinned]) {
+      return METRIC_SOURCES[pinned].unit === "units" ? "ftes" : "headcount";
+    }
     return measurability(metric).unit === "units" ? "ftes" : "headcount";
   }
   // Is this priority scored in CPL FTES rather than students?
   function prioIsFtes(p) {
     if (p && (p.unit === "ftes" || p.unit === "headcount")) return p.unit === "ftes";
-    return measurability(p.metric).unit === "units";   // legacy rows: sniff the label
+    return measureOf(p).unit === "units";   // legacy rows: sniff the label
   }
   // The PRE-BOUNDS proportional per-year entitlement behind one priority. The
   // target must ride THIS, never the topped-up cap: the floor raises a college's
@@ -1438,6 +1446,9 @@
         title: prioTitle(slot, i),
         description: prioField(slot, i, "description"),
         metric: metric,
+        // The explicit measure pin (see METRIC_SOURCES). Rides prioField() so it
+        // layers scenario -> shared -> baked like every other priority field.
+        metric_src: prioField(slot, i, "metric_src"),
         unit: prioUnit(slot, i, metric),
         strategies: prioStrategies(slot, i),
         share: share,
@@ -2774,7 +2785,7 @@
     selectedYears().forEach(function (yr, i) {
       var slot = String(i + 1);
       priorities(slot).forEach(function (p, idx) {
-        var meas = measurability(p.metric);
+        var meas = measureOf(p);
         var srcOf = prioMetricSource(slot, idx);
         var measurable = !!meas.src;
         var live = (measurable && pf && pf.statewide && pf.statewide[meas.src] != null)
@@ -2789,19 +2800,53 @@
         // what Sam's three FTES strings did before 2026-07-31, and the old
         // diagnostic showed them as a clean ✔ because both sides had a src.
         var wantU = wantsUnits(String(p.metric || "").toLowerCase());
-        var mismatch = measurable && meas.unit &&
+        // A PINNED priority takes its unit from the registry, so the prose no
+        // longer decides it and a prose/pin disagreement is a WORDING problem,
+        // not a wiring one. Still worth saying — a curator reading "Headcount…"
+        // beside a cell measured in FTES has been misled by our own text — but it
+        // must not be reported as the silent mis-scoring `mismatch` names.
+        var pinned = !!meas.pinned;
+        var mismatch = measurable && !pinned && meas.unit &&
           (wantU ? meas.unit !== "units" : meas.unit !== "students");
+        var wording = measurable && pinned && meas.unit &&
+          (wantU ? meas.unit !== "units" : meas.unit !== "students");
+        // MILESTONE AGREEMENT — the other axis. See metricMilestone().
+        var wantM = metricMilestone(p.metric);
+        var msMismatch = measurable && wantM && meas.milestone && wantM !== meas.milestone;
+        if (msMismatch) anyRisk = true;
         if (mismatch) anyRisk = true;
-        if ((!measurable && bearing) || srcOf === "baked") anyRisk = true;
+        // A BAD PIN is always a risk, in every year, front-loaded or not: it is a
+        // typo in our own config, not a fact about the world, and unlike an
+        // unmeasurable metric it silently pays $0 rather than advancing.
+        if (meas.bad_src) anyRisk = true;
+        if ((!measurable && !meas.bad_src && bearing) || srcOf === "baked") anyRisk = true;
         rows.push('<li><strong>Y' + slot + " P" + (idx + 1) + "</strong> " +
-          (measurable
-            ? (mismatch
+          (meas.bad_src
+            ? '<span class="cplfund-warn-text">⚠ NOT WIRED &mdash; pinned to ' + esc(String(meas.bad_src)) +
+              ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong> " +
+              "(it does NOT advance).</span>"
+            : measurable
+            ? (msMismatch
+                ? '<span class="cplfund-warn-text">⚠ MILESTONE MISMATCH &mdash; this metric asks for ' +
+                  esc(wantM.toUpperCase()) + " CPL but " + esc(meas.src) + " returns " +
+                  esc(meas.milestone) + ". These are different rungs of MAP&#39;s funnel and are not " +
+                  "interchangeable&#59; pin the priority with <code>metric_src</code>, or reword it.</span>"
+                : mismatch
                 ? '<span class="cplfund-warn-text">⚠ UNIT MISMATCH &mdash; this metric asks for ' +
                   (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
                   esc(meas.unit) + '</span>'
+                : meas.undelivered
+                  ? '<span class="dk">◦ declared, not delivered yet &mdash; the daily feed carries no ' +
+                    esc(meas.src) + " column, so this earns <strong>$0</strong> rather than advancing. " +
+                    "It starts earning the day the feed carries it, with no edit here.</span>"
+                : wording
+                  ? '<span class="cf-ok">✔ measurable</span> <span class="cplfund-warn-text">&mdash; but the ' +
+                    "wording says " + (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " while the pin measures " +
+                    esc(meas.unit) + "; reword the metric so it matches what it scores</span>"
                 : '<span class="cf-ok">✔ measurable</span>') +
               ' <span class="dk">&mdash; ' + esc(meas.src) +
               (meas.unit ? " (" + esc(meas.unit) + ")" : "") +
+              (pinned ? ", pinned" : "") +
               (live ? ", " + live : "") + "</span>"
             : bearing
               ? '<span class="cplfund-warn-text">⚠ not measurable &mdash; pays a FULL ADVANCE</span> <span class="dk">(' +
@@ -3618,6 +3663,162 @@
     return {};
   }
 
+  // ── the explicit metric SOURCE registry (2026-08-27) ──────────────────────
+  // MEASURES above resolves a metric by reading its PROSE. That was sound while
+  // there was one lane: every metric in the system described credit performance,
+  // so a text match could only land on the right measure or on none.
+  //
+  // IT STOPS BEING SOUND THE MOMENT A SECOND LANE EXISTS, and the noncredit lane
+  // is that second lane. Measured against the real predicates on 2026-08-27,
+  // Sam's three NC metrics — written in his own idiom, naming the noncredit
+  // LANDING PAGE, which is how the origin filter reads in prose — do not merely
+  // mis-resolve one of three. ALL THREE collapse onto `pp_u`:
+  //
+  //   pp_u  <- Eligible CPL Units as FTES ... Noncredit Landing Page
+  //   pp_u  <- Applied CPL Units as FTES ... Noncredit Landing Page
+  //   pp_u  <- Transcribed CPL Units as FTES ... Noncredit Landing Page
+  //
+  // because the portal/landing-page entry sits FIRST among the unit measures and
+  // wins before "eligible"/"applied"/"transcribed" is ever consulted. So the
+  // eligible -> applied -> transcribed MILESTONE STRUCTURE — the whole point of
+  // giving the lane three priorities — silently collapses to one number, and
+  // that number is the CREDIT lane's portal-origin traffic.
+  //
+  // ⚠️ AND THE WRONG NUMBER IS INDISTINGUISHABLE FROM THE RIGHT ONE. Statewide
+  // pp_u is 25.0 units on 3 of 105 colleges, so 102 colleges would read 0 — which
+  // is EXACTLY the honest zero Sam asked the NC lane to show while the origin
+  // field is undelivered. A defect that renders as the expected value is not
+  // caught by looking at the screen. That is the specific thing his draft-model
+  // ruling does not cover: "values calculate correctly based on the available
+  // data" (2026-08-27) permits an absent number, never a plausible wrong one.
+  //
+  // So a priority may PIN its measure with an explicit `metric_src`, which wins
+  // over the text match. It rides prioField(), so it layers scenario -> shared ->
+  // baked like every other priority field, with no new plumbing.
+  //
+  // ⚠️ `metric_src` is deliberately NOT free text. An unrecognised key would read
+  // `rec[src] == null` and fall through to status "none" — $0 earned, rendered as
+  // "this college posted nothing" — so a typo would silently zero a lane and look
+  // like a measurement. Every legal key is declared here WITH its unit, and an
+  // unknown one resolves to a loud `bad_src` that the diagnostic reports.
+  var METRIC_SOURCES = {
+    // ── credit lane (carried by cpl_funding_performance.js today) ──────────
+    pe:   { unit: "students", milestone: "eligible", basis: "distinct students with any eligible CPL identified in MAP" },
+    pa:   { unit: "students", milestone: "applied", basis: "distinct students with CPL applied to their record in MAP" },
+    p2:   { unit: "students", milestone: "transcribed", basis: "distinct students with 6+ transcribed CPL units, per MAP" },
+    p3:   { unit: "students", milestone: "transcribed", basis: "distinct students with any transcribed CPL, per MAP" },
+    pp:   { unit: "students", milestone: "transcribed", basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    pe_u: { unit: "units", milestone: "eligible", basis: "units of eligible CPL identified in MAP" },
+    pa_u: { unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
+    p3_u: { unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
+    pp_u: { unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
+    // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
+    // against the same three milestones, filtered to students who originated
+    // from noncredit. These are those three measures.
+    //
+    // ⭐ THEY ARE DECLARED BEFORE ANY DATA EXISTS, ON PURPOSE — Sam's own
+    // mechanism ("since all will be null for now, we can calculate off that
+    // until the real data hits"), and it is the good one: nothing here is
+    // synthetic, nothing has to be remembered and removed later, and the cutover
+    // is zero-change — the day the daily feed carries the origination LocID,
+    // funding/_build_funding_performance.py emits these keys and the same wiring
+    // starts returning real values with no edit to this file.
+    //
+    // ⭐ AND THE DISCLOSURE IS DERIVED, NOT MAINTAINED: srcDelivered() asks the
+    // published artifact whether the key is there at all. Nobody keeps a flag in
+    // sync; "not delivering yet" is a measurement of the feed.
+    //
+    // ⚠️ THE HANDOFF PUT THIS COLUMN IN THE WRONG PLACE, and it matters. It said
+    // to add `nc_origin_loc_id` to the Supabase tables map_student_credit /
+    // map_college_cr_unit. Those are worth having for student-grain analysis, but
+    // THE FUNDING MODEL NEVER READS THEM: perf() is window.CPL_FUNDING_PERF, a
+    // static artifact built from the daily MAP pull. A NULL column in Supabase
+    // would have wired nothing here. The funding lane's equivalent of his NULL
+    // column is exactly this: a declared source the feed does not carry yet.
+    nc_pe_u: { unit: "units", lane: "nc", milestone: "eligible",
+               basis: "units of eligible CPL for students originating from a noncredit landing page" },
+    nc_pa_u: { unit: "units", lane: "nc", milestone: "applied",
+               basis: "units of CPL APPLIED for students originating from a noncredit landing page" },
+    nc_pt_u: { unit: "units", lane: "nc", milestone: "transcribed",
+               basis: "units of transcribed CPL for students originating from a noncredit landing page" }
+  };
+  // ── MILESTONE AGREEMENT (2026-08-27) ──────────────────────────────────────
+  // MAP's funnel is eligible -> applied -> transcribed, and they are three
+  // different quantities (statewide: 1,382,125 / 223,384 / 80,338 units). A
+  // metric naming one rung and a measure returning another scores the right
+  // college on the wrong thing and reports no error at all — the same shape as
+  // the UNIT-agreement check the diagnostic has carried since 2026-07-31, on the
+  // other axis.
+  //
+  // ⚠️ THIS IS NOT HYPOTHETICAL AND IT IS LIVE. Sam's Year-1 Access metric reads
+  // "APPLIED units measured in FTES for students originating from either CPL
+  // Portal, College CPL Landing Page, or batch upload". It resolves to `pp_u` —
+  // portal-origin TRANSCRIBED units — because the portal/landing-page entry sits
+  // first among the unit measures. Measured against the published artifact on
+  // 2026-08-27: ALL 115 COLLEGES read exactly 0 FTES on it, because pp_u is 25.0
+  // units carried by 3 colleges. That priority holds the largest share (0.34),
+  // so the tab's largest earning line reads $0 system-wide for a reason nothing
+  // on screen states. The wording also names batch upload, which pp_u
+  // (Potential Student = Yes) excludes entirely.
+  //
+  // The fix for THAT is Sam's call, not ours — pin it to `pa_u`, or accept it as
+  // a genuine data gap that advances — so this only makes the disagreement
+  // impossible to miss. Both answers are now one config field.
+  function metricMilestone(m) {
+    m = String(m || "").toLowerCase();
+    // Order matters and mirrors MEASURES: a metric naming two rungs is scored on
+    // the one MEASURES would pick, so the check compares like with like rather
+    // than inventing a second precedence nobody else follows.
+    if (has(m, "applied")) return "applied";
+    if (has(m, "eligible")) return "eligible";
+    if (has(m, "transcribed")) return "transcribed";
+    return null;
+  }
+  // Does the feed actually CARRY this source? Asked of the artifact, never
+  // assumed from the registry: a key may be declared here (so a priority can be
+  // wired to it) long before MAP delivers the column that computes it. That
+  // difference is the honest one — an undelivered measure is an ABSENT
+  // measurement, not a college that did nothing, and this repo has recorded the
+  // three kinds of zero (absent / withheld / measured) often enough to keep them
+  // apart on sight.
+  function srcDelivered(src) {
+    var pf = perf();
+    return !!(pf && pf.statewide && Object.prototype.hasOwnProperty.call(pf.statewide, src));
+  }
+  // THE ONE SEAM every consumer goes through to learn what a priority measures.
+  // Explicit pin wins; otherwise fall back to reading the prose. Kept as a
+  // separate function rather than widening measurability()'s signature because
+  // two call sites (prioUnit, prioIsFtes on a legacy row) genuinely have only the
+  // metric TEXT, and a signature that silently accepts "no pin supplied" from
+  // those would make the pin look optional at the sites where it is not.
+  function measureOf(p) {
+    var pin = p && p.metric_src;
+    if (pin) {
+      var reg = METRIC_SOURCES[pin];
+      if (!reg) {
+        return { bad_src: pin, unit: (p.unit === "ftes" ? "units" : "students"),
+                 gap: "priority pins metric_src=&quot;" + esc(String(pin)) + "&quot;, which is not a known " +
+                      "measure &mdash; nothing can score it",
+                 gap_short: "unknown metric_src" };
+      }
+      return { src: pin, unit: reg.unit, basis: reg.basis, pinned: true,
+               milestone: reg.milestone, lane: reg.lane,
+               undelivered: !srcDelivered(pin) };
+    }
+    // Prose-resolved: enrich from the registry so BOTH paths carry a milestone.
+    // Without this the agreement check below would silently never fire on an
+    // unpinned priority — which is every priority today, and the only kind the
+    // live defect can occur on.
+    var m = measurability(p && p.metric);
+    if (m && m.src && METRIC_SOURCES[m.src] && m.milestone == null) {
+      m = { src: m.src, unit: m.unit, basis: m.basis, gap: m.gap, gap_short: m.gap_short,
+            milestone: METRIC_SOURCES[m.src].milestone, lane: METRIC_SOURCES[m.src].lane,
+            undelivered: !srcDelivered(m.src) };
+    }
+    return m;
+  }
+
   // ── achievement-based earning (Sam, 2026-07-23) ───────────────────────────
   // The per-priority per-college allocation is a CAP; a college is paid on the
   // CPL it ACTUALLY posts in MAP, proportional to its target and never above the
@@ -3634,10 +3835,28 @@
   // none (feed IS published but this college has posted nothing → $0, the
   // incentive), suppressed (1–4 students, privacy-hidden → not yet credited).
   function earnFraction(c, p) {
-    var meas = measurability(p.metric);
+    var meas = measureOf(p);
+    // A MISWIRED PIN MUST NEVER ADVANCE. An unknown metric_src leaves meas.src
+    // unset, which would fall into the data-gap branch below and pay every
+    // college its FULL CAP — a typo in one config field quietly disbursing a
+    // whole priority. The gap branch exists for a metric NOBODY can measure yet,
+    // which is a statement about the world; a bad pin is a statement about our
+    // own config, and the safe reading of "we do not know what this measures" is
+    // $0, loudly, not everything, silently.
+    if (meas.bad_src) return { f: 0, status: "bad_src", meas: meas };
     if (!meas.src) return { f: 1, status: "gap", meas: meas };            // data-gap metric → advance for everyone
     var pf = perf();
     if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
+    // A DECLARED-BUT-UNDELIVERED measure: the priority is wired to a real key,
+    // and the feed does not carry that key for ANYONE yet (the noncredit-origin
+    // sources, until MAP delivers the origination LocID). f is 0, exactly as Sam
+    // ruled for the NC row — targets and potential shown, current earnings at
+    // zero, NOT the full-cap advance the credit lane gives an unmeasurable
+    // metric. This is NOT a third earning state: the FRACTION is 0, identical to
+    // "none". It is a separate LABEL, because "the feed carries no such measure"
+    // and "this college posted nothing" are two different zeros and this tab
+    // must not print them the same way.
+    if (meas.undelivered) return { f: 0, status: "undelivered", target: prioTarget(c, p), meas: meas };
     var rec = c ? perfFor(c.college) : pf.statewide;
     var target = prioTarget(c, p);
     if (target <= 0) return { f: 0, status: "none", target: target, meas: meas };
@@ -3660,6 +3879,17 @@
     var actual = toActual(rec[meas.src]);
     return { f: Math.min(1, actual / target), status: "earned", actual: actual,
       raw: rec[meas.src], target: target, meas: meas };
+  }
+  // Is there a MEASUREMENT behind this earn state? False for every status whose
+  // number is not something a college did: gap and pending (no feed for anyone —
+  // these advance), undelivered (the feed carries no such measure) and bad_src (a
+  // miswired pin). Four surfaces used to test this inline as
+  // `status === "gap" || status === "pending"`, so each new status had to be
+  // remembered at four sites or it silently rendered as a measured zero — which
+  // is the one thing a funding tab must never print.
+  function earnIsMeasured(fr) {
+    var st = fr && fr.status;
+    return st === "earned" || st === "none" || st === "suppressed";
   }
   // Aggregate the earned picture once per render: per-priority (viewed year)
   // statewide cap+earned for the priority cards, and the window cap+earned totals
@@ -3712,7 +3942,7 @@
   // which is the same divisor the statewide target is built on; the two quarter
   // colleges are ~2% of enrolment and do not move the display at this precision.
   function actualLineHtml(p, idx, target) {
-    var meas = measurability(p.metric);
+    var meas = measureOf(p);
     if (meas.gap) {
       return '<p class="nums dk">&#9203; Actual: <strong>data gap</strong> &mdash; ' + meas.gap + ".</p>";
     }
@@ -3962,6 +4192,15 @@
     } else if (fr.status === "suppressed") {
       actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' + maskLt(true) + '</span> &middot; <span class="cf-u">' +
         fmtMoneyK(earned) + "</span>";
+    } else if (fr.status === "undelivered" || fr.status === "bad_src") {
+      // Both earn $0, and the "advances at full cap" wording in the branch below
+      // would be a plain lie about them — so they get their own line rather than
+      // sharing the gap/pending one. "no feed" is the ABSENT zero; the 0% is
+      // omitted deliberately, because a percentage of a target nothing is
+      // measuring against would read as a measurement.
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
+        (fr.status === "bad_src" ? "not wired" : "no feed") + '</span> &middot; <span class="cf-u">' +
+        fmtMoneyK(0) + "</span>";
     } else {   // gap / pending — not measurable yet; advances at full cap
       actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
         (fr.status === "gap" ? "gap" : "&hellip;") + '</span> &middot; <span class="cf-u">' + fmtMoneyK(earned) + "</span>";
@@ -3975,6 +4214,12 @@
       : fr.status === "gap" ? "data gap — not measurable in MAP yet (advances at full cap)"
       : fr.status === "pending" ? "actuals arrive with the next daily refresh (advances meanwhile)"
       : fr.status === "suppressed" ? "fewer than 5 students (privacy-suppressed)"
+      : fr.status === "undelivered"
+        ? "this measure is not in the daily feed yet — $0 earned, and deliberately NOT an advance " +
+          "(the target and the potential stand; the earning starts when the feed carries it)"
+      : fr.status === "bad_src"
+        ? "this priority is pinned to an unknown measure (" + esc(String(fr.meas && fr.meas.bad_src)) +
+          ") — nothing can score it, so it earns $0 rather than advancing"
       : "nothing posted in MAP yet";
     // Hover — the full story incl. the effective per-student rate + WHY it differs
     // (the floor top-up or the ceiling hold; the SYSTEM row has neither).
@@ -4039,7 +4284,7 @@
       var fr = earnFraction(isSystem ? null : c, p);
       out.push(fr.status === "earned" ? fr.actual :
         fr.status === "suppressed" ? maskLt(false) :
-        (fr.status === "gap" || fr.status === "pending") ? "" : 0);
+        !earnIsMeasured(fr) ? "" : 0);
     });
     return out;
   }
@@ -4403,7 +4648,7 @@
         var paid = prioCap(mainW, slot, p) * fr.f;
         if (gate.blocked) { earnWithheld += paid; return; }   // held in reserve
         ey += paid;
-        if (fr.status === "gap" || fr.status === "pending") earnAdvance += paid;
+        if (!earnIsMeasured(fr)) earnAdvance += paid;   // gap/pending advance; undelivered/bad_src contribute $0
         else earnMeasured += paid;
       });
       eys.push(ey);
@@ -4491,7 +4736,7 @@
         var p = priorities(state.viewSlot)[Number(state.sortKey.slice(4))];
         if (!p) return null;
         var fr = earnFraction(r, p);
-        return fr.status === "earned" ? fr.actual : (fr.status === "gap" || fr.status === "pending") ? null : 0;
+        return fr.status === "earned" ? fr.actual : !earnIsMeasured(fr) ? null : 0;
       }
       return r[state.sortKey];
     }
@@ -4714,7 +4959,7 @@
     var m = allocModel();
     var floorActive = m.floor > 0 && m.floorCount > 0;
     var prio = ps.map(function (p, i) {
-      var meas = measurability(p.metric);
+      var meas = measureOf(p);
       var actual = "";
       if (meas.src && rec) {
         actual = " &middot; actual <strong>" + fmtActual(rec, meas.src) + "</strong>";
@@ -4750,8 +4995,13 @@
               ? ' <span class="dk">&mdash; full advance (actuals arrive with the next data refresh)</span>'
               : fr.status === "suppressed"
                 ? ' <span class="dk">&mdash; fewer than 5 students (privacy-suppressed); not yet credited</span>'
-                : ' <span class="dk">&mdash; $0 on the main allocation: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
-                  fmtInt(fr.target) + '-student target)</span>';
+                : fr.status === "undelivered"
+                  ? ' <span class="dk">&mdash; $0, and NOT an advance: the daily feed does not carry this measure yet, ' +
+                    'so nothing about this college has been measured either way</span>'
+                  : fr.status === "bad_src"
+                    ? ' <span class="dk">&mdash; $0: this priority is pinned to an unknown measure, so nothing can score it</span>'
+                    : ' <span class="dk">&mdash; $0 on the main allocation: no CPL posted in MAP yet (earns as this college transcribes toward its ' +
+                      fmtInt(fr.target) + '-student target)</span>';
         earnSeg = "<br><span class='dk'>earned:</span> <strong>" + fmtMoney(earnedYr) + "</strong> of " +
           fmtMoney(capYr) + " cap <strong>(" + fmtPctTrim(earnedPctYr) + ")</strong>" + tail +
           "";
