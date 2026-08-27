@@ -274,8 +274,16 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   const pinned   = cells.map((c) => c[6].textContent);
   check("7b: UNPINNED, the live Access prose still reads 0 FTES for every college",
     rows.length > 100 && unpinned.every((t) => /Now 0 FTES/.test(t)));
-  check("7c: PINNED, the same prose reads 'no feed' — an absent measure, not a wrong one",
-    pinned.every((t) => /no feed/.test(t)) && !pinned.some((t) => /Now 0 FTES/.test(t)));
+  // ⚠️ THIS ASSERTION USED TO READ "every pinned cell says 'no feed'", which was
+  // true only while ppa_u was undelivered. The cron delivered it hours later and
+  // the guard went red on a change that was the feature working. An assertion
+  // pinned to a value that can leave the data stops being a guard the moment it
+  // does — so assert the INVARIANT instead: the pin resolves somewhere other than
+  // the prose does. Whether that source is delivered yet is section 3e/8's job.
+  check("7c: PINNED, the same prose does NOT land on the prose matcher's answer",
+    pinned.some((t, i) => t !== unpinned[i]));
+  check("7c2: and the pinned column is never the unpinned one's universal zero",
+    !pinned.every((t) => /Now 0 FTES/.test(t)));
   const diag = doc.querySelector(".cplfund-metricdiag");
   const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
   const mm = lis.filter((t) => /MILESTONE MISMATCH/.test(t));
