@@ -1,6 +1,6 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-27 (afternoon) · Sam ruled that the funding model is a DRAFT: a piece of data we do not have yet is not a reason to stop and not a fault in the design — build the mechanism and let the figure read zero until the data arrives. That reverses an earlier call that the noncredit work was blocked. One edge he drew in the same breath decides everything: a BLANK is fine, a number that is quietly WRONG while looking right is not. He also reported six things from using the tab — two are simply not built yet (he is ahead of us), two are real bugs in signing in and unlocking, and two are accessibility checks we have not run on the funding tab or the site header. Separately, today's automatic MAP data load did not start on schedule, so it was kicked off by hand.",
+  "_as_of": "2026-08-27 (late) · Sam decided how noncredit should look on the college rows: under the credit row, show what the institution's noncredit targets are and what it could earn, then underneath that show what it has earned so far — zero, because nothing is measured yet. He chose zero over paying the award up front, which is what the credit side does for anything it cannot yet measure. Separately, and more urgently: EVERY daily scheduled job in this repo failed to run today. Not late — dropped. GitHub does this to this repo routinely and the workflow file already says so; today it dropped all three attempts instead of one. Sam spotted it from the date on the site header, which is the only place it shows, and asked for a real alarm. The dashboard and the MAP data load were both restarted by hand and are current again.",
   "_session": 196,
   "_status": "Everything is merged and v5 is the draft to send. Sponsor is James Todd, Staff Lead is Mari Estrada; the only blank left in the filing document is the 2026-27 timeline. Nothing was written to the policy register — every finding there is a proposal.",
   "items": [
@@ -94,29 +94,34 @@
   ],
   "for_fable": [
     {
+      "id": "cron-drop-alarm",
+      "title": "Build an alarm for a scheduled job that never ran",
+      "note": "Sam asked for this, and not on the site header. The hard part: a job that never starts leaves no failure and nothing queued, so there is nothing for GitHub to tell anyone about — silence looks exactly like success. So the alarm has to create a failure on purpose. Hang it off a job that DOES still run (the every-3-hours one gets eight chances a day where a daily job gets one), work out what is overdue from the schedules themselves rather than a list someone has to remember to update, and only shout when a job has missed EVERY attempt — being a few hours late is normal here."
+    },
+    {
       "id": "nc-src-first",
       "title": "Give a priority an explicit data source, then build the noncredit lane",
-      "note": "FIRST, but no longer a blocker. The model works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data. That is not a missing number — it is a wrong one that looks right, which is the one thing Sam's draft-model ruling does not permit. Then: noncredit earns, then the display."
+      "note": "FIRST. The model currently works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data — a wrong number that looks right. Then noncredit earns, then the display."
+    },
+    {
+      "id": "nc-display",
+      "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
+      "note": "Sam's ruling. Note the one deliberate difference from credit: an unmeasured noncredit metric shows ZERO earned, not the full award advanced. Settle with a mock first whether that is a second row per college or extra lines inside each cell."
     },
     {
       "id": "signin-click",
       "title": "Sign-in email box cannot be clicked into — only reached by tab",
-      "note": "Sam hit this. Clicking fails but tabbing works, which is the signature of the box being rebuilt underneath the pointer. There is a strong clue in the code: someone already noticed this and preserved what you had TYPED across the rebuild, but not where the cursor was."
+      "note": "The box is being rebuilt underneath the pointer. Someone already noticed and preserved what you had typed across the rebuild, but not where the cursor was."
     },
     {
       "id": "unlock-noresponse",
       "title": "The unlock control on the funding tab does not respond",
-      "note": "Sam guessed it was because that tab does not use the team phrase. It does — so this is a real defect, not expected behavior. Two leads are noted in the handoff."
+      "note": "A real defect — that tab does use the team phrase. Worth asking Sam which control he clicked; the tab's own button says 'Unlock team editing'."
     },
     {
       "id": "funding-a11y",
-      "title": "Accessibility and mobile check: the funding tab and the COBI header",
-      "note": "The header behaves oddly on zoom. Reuse the pattern we already have for the public pages — one check that runs in the test suite, and a separate browser-driven one for anything to do with layout, because the test suite cannot see layout at all."
-    },
-    {
-      "id": "map-load-watch",
-      "title": "Read the manually-started MAP load, and watch whether the schedule fires tomorrow",
-      "note": "Today's did not start on time so it was kicked off by hand. If it fails, the log now carries MAP's own words for each report — read those rather than guessing."
+      "title": "Accessibility and mobile: the funding tab and the site header",
+      "note": "The header behaves oddly on zoom. Needs the browser-driven check, not the test suite — the suite cannot see layout at all."
     }
   ]
 }

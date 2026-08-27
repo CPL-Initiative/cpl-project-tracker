@@ -72,6 +72,71 @@ recommendation was to wait, since it moves no money today).
 | 5 | "Unlock to curate doesn't respond — maybe this tab doesn't use the team phrase" | ⚠️ **His hypothesis is wrong: the funding tab DOES use the team phrase.** `unlocked()` (cpl_funding.js:556) reads `window.CPL_TEAM_PHRASE.session()`, and the tab renders `#cplFundUnlockSlot` (line 2689) into which line 6761 appends `t.unlockRow({label:"🔓 Unlock team editing"})` **only when `!unlocked()`**. So non-response is a real defect. Two leads: `stripCurateAffordances()` (line 1733) **removes `cplFundUnlockSlot` outright** in public mode; and the button is appended AFTER render, so any re-render that rewrites the auth bar destroys it. ⚠️ The exact string "Unlock to curate" does not exist in the repo — confirm with Sam which control he clicked (the header **🔒 Team** button is circled in his screenshot). |
 | 6 | funding tab + COBI header accessibility / mobile; header "acts funny on zoom" | **Not audited yet.** Precedent exists and should be reused: `tests/factsheet_a11y.test.js` and `tests/public_pages_a11y.test.js` for the jsdom half, `scripts/check_public_page_layout.js` for the Chromium half (9 viewports, contrast, focus, motion). ⚠️ **Split by instrument** — jsdom has no layout engine and cannot see the zoom/reflow defect; that one needs the Chromium script. ⚠️ The funding table is wide and Rule "no horizontal scroll" applies. |
 
+## ⭐ Sam's NC display ruling (2026-08-27) — he chose ZERO, not the advance
+
+> *"I expect it to show what their targets are and potential earning on the NC row
+> (just below the CR row) and the current earnings at 0 below those."*
+
+So the NC row shows **target + potential earning**, and beneath it **current
+earnings at 0**. He was given the alternative — full-cap advance labelled "gap",
+which is what the credit lane does today for any metric `measurability()` cannot
+resolve (`cpl_funding.js:3638`, `f = 1`) — and chose 0.
+
+⚠️ **This is the ONE deliberate divergence from credit, and it has to be built on
+purpose.** NC priorities must NOT take the gap branch. An unwired NC `src` has to
+yield `f = 0` / status `none`, not `f = 1`.
+
+The recommendation at the time was the advance, on the grounds that otherwise the
+NC floor is meaningless until ITPI delivers. **That was over-weighted** — the
+model is draft, no money is disbursing, and by the time it does the origin data
+should exist. His call is the honest display and it costs nothing real now.
+
+⚠️ **Settle with a mock before building:** is the NC row a SECOND TABLE ROW per
+college beneath its credit row, or extra lines inside each P1/P2/P3 cell? His
+wording supports the second-row reading. Do not guess.
+
+## ⚠️ Scheduled runs are being DROPPED, and there is no alarm
+
+**On 2026-08-27 every daily cron in this repo failed to fire.** Not late — dropped.
+
+| workflow | due (UTC) | last actually ran |
+|---|---|---|
+| Daily CPL Dashboard | 06:17 · 09:17 · 12:17 | Aug 26, 13:25 |
+| MAP Users sync | daily | Aug 26, 13:42 |
+| CPL News harvest | 13:17 | Aug 26, 14:06 |
+| Credential catalog sync | 13:20 | Aug 26, 14:06 |
+| MAP Custom Report load | 13:40 | Aug 26, 14:22 |
+
+The 3-hourly `cpl-chat-health` probe also skipped ~4 windows (00:43 → 14:04).
+**Manual dispatch and push-triggered CI both work** — it is specifically GitHub's
+`schedule` delivery that is degraded.
+
+⭐ **This is already documented in the repo.** `daily-dashboard.yml`'s own comment:
+*"GitHub's scheduled trigger is best-effort: it routinely delays this repo's cron
+by 1.5–4h and occasionally DROPS a run entirely (no failed run, none queued)."*
+The 3-cron ladder is the existing mitigation; today all three rungs were dropped,
+so the mitigation was defeated rather than absent. **Nothing to fix in our code.**
+
+**Sam wants an alarm — and explicitly NOT on the COBI header.** Design, agreed but
+NOT BUILT:
+
+1. ⭐ **A dropped run leaves no failed run and nothing queued**, so silence and
+   success are indistinguishable and GitHub has nothing to notify on. The alarm
+   must MANUFACTURE a failure.
+2. **Piggyback it on a workflow that still fires** — `cpl-chat-health` (every 3h)
+   gets ~8 chances a day where a daily job gets one.
+3. **FAIL when a sibling is overdue.** A red run notifies; a warning in a log
+   nobody reads is what we already have.
+4. ⚠️ **Derive the expected interval from the actual `cron:` expressions**, never
+   a hand-maintained list — a list that must be kept in sync with the workflows
+   goes stale silently (the ESL hand-listed-institutions lesson).
+5. ⚠️ Do not let it cry wolf. A 1.5–4h delay is NORMAL here; the threshold has to
+   be "missed every window in its ladder", not "late".
+
+**Deliberately not built at the end of Session 197**, after that session shipped a
+guard built on an unchecked assumption and caused a one-day outage. An alarm built
+the same way either cries wolf or stays silent.
+
 ## Engineering carryover
 
 - ⚠️ **The 13:40 UTC MAP load did NOT fire on 2026-08-27.** At 14:30 the workflow
@@ -93,7 +158,8 @@ recommendation was to wait, since it moves no money today).
   `node scripts/funding_effective.js --config live.json --nc-sweep 15000,25000,50000,60000`.
   **$60k is infeasible.** Dropping the threshold fails at this pool: parity is only
   +$406k, which across all 111 institutions buys a **$16,216** floor.
-- Sam's phone check on the Fact Sheet and Sierra/veteran-map pages (both rows now
+- Sam's phone check on the Fact Sheet and Sierra/veteran-map pages — **he said
+  2026-08-27 he will do this next session**, so keep it on the list (both rows now
   in `docs/reference/finished_workstreams.md`; the item is in `kb/cpl_todos.json`).
 
 ## Tools you now have
