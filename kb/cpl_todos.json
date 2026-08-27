@@ -1,127 +1,152 @@
 {
-  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-27 (late) · Sam decided how noncredit should look on the college rows: under the credit row, show what the institution's noncredit targets are and what it could earn, then underneath that show what it has earned so far — zero, because nothing is measured yet. He chose zero over paying the award up front, which is what the credit side does for anything it cannot yet measure. Separately, and more urgently: EVERY daily scheduled job in this repo failed to run today. Not late — dropped. GitHub does this to this repo routinely and the workflow file already says so; today it dropped all three attempts instead of one. Sam spotted it from the date on the site header, which is the only place it shows, and asked for a real alarm. The dashboard and the MAP data load were both restarted by hand and are current again.",
-  "_session": 196,
-  "_status": "Everything is merged and v5 is the draft to send. Sponsor is James Todd, Staff Lead is Mari Estrada; the only blank left in the filing document is the 2026-27 timeline. Nothing was written to the policy register — every finding there is a proposal.",
-  "items": [
-    {
-      "id": "s196-sam-55050-send",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "The Title 5 55050 package is ready to send: v5 of the Word file, with every one of your decisions in it and real tracked changes against the version the Board of Governors adopted, plus a Regulatory Action Proposal in the same format as your November one. Undoing every tracked change gives back the adopted regulation word for word, checked by machine. The only blank left is the 2026-27 calendar — five steps to set dates against: the curriculum committee, field vetting, Consultation Council, and two Board readings."
-    },
-    {
-      "id": "s196-sam-tier2-companion",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "One judgment call left on the package: whether the four policy items from your November draft travel with it or separately. Recommendation is separately — they were argued last November and lost, and bundling lets a reader treat the whole filing as reopening a settled negotiation. Two notes: the new grading clause needs its companion amendment to section 55023, which is what makes a 'credit' mark exist at all; and the no-fee item just gained a second legal anchor, because the Career Passport statute says a student's records must be available at no or low cost."
-    },
-    {
-      "id": "s196-sam-register-three",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "Three quick fixes on the policy register, now that the draft is settled. Entry #16 points at the wrong lettered paragraph — the August adoption moved that clause. Entry #2 still asks the Legislature for reciprocity between colleges, which is already law; what survives is the 'no second review' half and the CSU/UC half. And entry #10 deserves a fresh look now that #9 is settled: recording the credit was never the same request as flagging where it came from."
-    },
-    {
-      "id": "s196-sam-75013-workgroup",
-      "for": "Sam",
-      "tab": "gr-priorities",
-      "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
-    },
-    {
-      "id": "s196-sam-metrics-opening",
-      "for": "Sam",
-      "tab": "cpl-implementation",
-      "text": "Separate from the regulation and probably bigger. The new law makes every dollar of implementation funding conditional on 'the metrics described in paragraph (1)' — and paragraph (1) describes four goals and supplies no metrics at all. Somebody has to define them, and the Implementation Funding model is the only college-by-college quantification of those goals that exists. It already covers access and completion, and the pilot-project one is satisfied because MAP is named in the statute. Career advancement is the gap you said you would cover through CPL Projects and the Credential Registry. This needs no rulemaking, which is exactly its advantage — keep it out of the amendment conversation."
-    },
-    {
-      "id": "s196-sam-memory-hopper",
-      "for": "Sam",
-      "tab": "memory",
-      "text": "The memory entries are now readable end to end in plain English — 202 were rewritten, and there are no entries left without plain text, none with developer jargon, and no British spellings. The hopper of unreviewed entries is worth an afternoon whenever you have one. Two small things still need you: one entry is marked stale but still carries a verification stamp, which needs your go to clear, and 26 verified entries do not name who verified them."
-    },
-    {
-      "id": "s196-fable-map-load",
-      "for": "Fable",
-      "tab": "map-data-quality",
-      "text": "The nightly load of the MAP custom reports failed: MAP returned the student-details dataset twice and left out the exhibit-by-catalog-year one entirely, so the run stopped rather than publishing a partial picture — which is the gate working. Needs a look at whether the report itself was renamed on MAP's side."
-    },
-    {
-      "id": "s195-sam-credit-alert",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Sierra ran out of API credit this evening and you restored it — thank you. That is the third time (21 Aug, 22 Aug, 25 Aug). The uptime monitor did its job and raised the alert, but it only looks every three hours, so an outage can run that long before anyone is told. A balance-threshold alert on the Anthropic account itself would catch it before it becomes an outage, and that is the one thing a monitor here cannot do."
-    },
-    {
-      "id": "s195-sam-revert-model",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
-    },
-    {
-      "id": "s195-sam-haiku-caveat",
-      "for": "Sam",
-      "tab": "cpl-assistant",
-      "text": "Settled, and noted so nobody undoes it: the automated check found 40 of 41 answers still correct on Haiku, and the one it dropped was the caveat beside the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling rather than a debt. You said you can live with it for now, so it stays as it is. The fix is written down and ready if you change your mind: move that caveat next to the number itself instead of into a rules list further away, which would make it stick on any model."
-    }
-  ],
-  "for_sam": [
-    {
-      "id": "nc-floor",
-      "title": "Decide the noncredit minimum award",
-      "note": "At $50,000, 30 of the 33 noncredit institutions sit exactly on the minimum and growth does not start paying until 3,909 FTES — which is the opposite of the incentive you wanted. At $15,000 nobody is on the minimum and growth pays from 384 FTES. $60,000 is not affordable at all. Opening it to every noncredit institution does not work at this pot: even at full parity it buys about $16,000 each."
-    },
-    {
-      "id": "nc-mirror-strategy",
-      "title": "Remove \"noncredit mirror courses\" from the credit lane's strategy list when noncredit goes live",
-      "note": "Priority 3 currently invites colleges to bank noncredit work under the credit lane. Today that is not double-counting, it is single-counting in the wrong lane — which is the stepchild problem itself."
-    },
-    {
-      "id": "itpi-locid",
-      "title": "Watch for ITPI on the origination ID",
-      "note": "Pedro has the request and says it will take longer than tonight's fix. The one question only they can answer: can a college have a SECOND, noncredit landing page with its own ID, or is that only available to standalone institutions like North Orange and San Diego Continuing Education? That decides whether this reaches about 108 colleges or just a handful."
-    },
-    {
-      "id": "phone-check",
-      "title": "Open the Fact Sheet and the Sierra / veteran-map pages on your phone",
-      "note": "Both were audited and fixed, and no session can check them — the sandbox cannot reach the live site. This is the only step left on either, which is why both moved out of the always-loaded notes today."
-    },
-    {
-      "id": "memory-false-stamp",
-      "title": "One memory row still carries a false verification stamp",
-      "note": "Marked stale and verified by 'curator' at the same time. Awaiting your go. The eleven rows verified by you or Jenni are real attribution and must never be swept."
-    }
-  ],
-  "for_fable": [
-    {
-      "id": "cron-drop-alarm",
-      "title": "Build an alarm for a scheduled job that never ran",
-      "note": "Sam asked for this, and not on the site header. The hard part: a job that never starts leaves no failure and nothing queued, so there is nothing for GitHub to tell anyone about — silence looks exactly like success. So the alarm has to create a failure on purpose. Hang it off a job that DOES still run (the every-3-hours one gets eight chances a day where a daily job gets one), work out what is overdue from the schedules themselves rather than a list someone has to remember to update, and only shout when a job has missed EVERY attempt — being a few hours late is normal here."
-    },
-    {
-      "id": "nc-src-first",
-      "title": "Give a priority an explicit data source, then build the noncredit lane",
-      "note": "FIRST. The model currently works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data — a wrong number that looks right. Then noncredit earns, then the display."
-    },
-    {
-      "id": "nc-display",
-      "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
-      "note": "Sam's ruling, and his own mechanism, which he improved twice: add the noncredit origin field to the database now, empty, and calculate from it. Nothing is invented — 'units where the origin is recorded' is honestly zero today, and the day the real data arrives the same calculation just starts returning numbers, with nothing to swap out. It also means the page can PROVE it is waiting rather than claiming it: if the column is empty everywhere, that is the evidence. Put the field on both tables, and treat adding it as a deliberate step — it is a live table with student-level data in it."
-    },
-    {
-      "id": "signin-click",
-      "title": "Sign-in email box cannot be clicked into — only reached by tab",
-      "note": "The box is being rebuilt underneath the pointer. Someone already noticed and preserved what you had typed across the rebuild, but not where the cursor was."
-    },
-    {
-      "id": "unlock-noresponse",
-      "title": "The unlock control on the funding tab does not respond",
-      "note": "A real defect — that tab does use the team phrase. Worth asking Sam which control he clicked; the tab's own button says 'Unlock team editing'."
-    },
-    {
-      "id": "funding-a11y",
-      "title": "Accessibility and mobile: the funding tab and the site header",
-      "note": "The header behaves oddly on zoom. Needs the browser-driven check, not the test suite — the suite cannot see layout at all."
-    }
-  ]
+ "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
+ "_as_of": "2026-08-27 (later) · LATTC sent 139 courses they will award for military training and no evidence for any of them, which is the thing colleges keep getting stuck on: they know a course qualifies, they just do not keep the credit recommendation that MAP needs to record it. There is now a tool that proposes one per course from what ACE publishes and what other colleges have already done — 87 of the 139 have a recommendation a named peer college has used, 46 have one nobody has claimed yet, and 6 need a person. Jessica set the rule that a recommendation more than one unit away from the course is not offered at all. Earlier items on this list belong to a separate session running at the same time and have been left alone.",
+ "_session": 196,
+ "_status": "LATTC worklist delivered and live; NCCER blocked on a PDF nobody here can download. Everything above the LATTC items belongs to a parallel session.",
+ "items": [
+  {
+   "id": "s196-sam-55050-send",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "The Title 5 55050 package is ready to send: v5 of the Word file, with every one of your decisions in it and real tracked changes against the version the Board of Governors adopted, plus a Regulatory Action Proposal in the same format as your November one. Undoing every tracked change gives back the adopted regulation word for word, checked by machine. The only blank left is the 2026-27 calendar — five steps to set dates against: the curriculum committee, field vetting, Consultation Council, and two Board readings."
+  },
+  {
+   "id": "s196-sam-tier2-companion",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "One judgment call left on the package: whether the four policy items from your November draft travel with it or separately. Recommendation is separately — they were argued last November and lost, and bundling lets a reader treat the whole filing as reopening a settled negotiation. Two notes: the new grading clause needs its companion amendment to section 55023, which is what makes a 'credit' mark exist at all; and the no-fee item just gained a second legal anchor, because the Career Passport statute says a student's records must be available at no or low cost."
+  },
+  {
+   "id": "s196-sam-register-three",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "Three quick fixes on the policy register, now that the draft is settled. Entry #16 points at the wrong lettered paragraph — the August adoption moved that clause. Entry #2 still asks the Legislature for reciprocity between colleges, which is already law; what survives is the 'no second review' half and the CSU/UC half. And entry #10 deserves a fresh look now that #9 is settled: recording the credit was never the same request as flagging where it came from."
+  },
+  {
+   "id": "s196-sam-75013-workgroup",
+   "for": "Sam",
+   "tab": "gr-priorities",
+   "text": "The bigger one when you have time. Entry #7 — getting prior-learning credit to generate funding — names the Department of Finance and the attendance rules as its obstacle. A section of the same new bill sets up a workgroup that must design exactly that kind of non-seat-time funding measure and report it to Finance by October 2028. It is scoped to competency-based education rather than prior learning, so it is a venue rather than a solution, but it is the room where this gets designed and we are not in it yet."
+  },
+  {
+   "id": "s196-sam-metrics-opening",
+   "for": "Sam",
+   "tab": "cpl-implementation",
+   "text": "Separate from the regulation and probably bigger. The new law makes every dollar of implementation funding conditional on 'the metrics described in paragraph (1)' — and paragraph (1) describes four goals and supplies no metrics at all. Somebody has to define them, and the Implementation Funding model is the only college-by-college quantification of those goals that exists. It already covers access and completion, and the pilot-project one is satisfied because MAP is named in the statute. Career advancement is the gap you said you would cover through CPL Projects and the Credential Registry. This needs no rulemaking, which is exactly its advantage — keep it out of the amendment conversation."
+  },
+  {
+   "id": "s196-sam-memory-hopper",
+   "for": "Sam",
+   "tab": "memory",
+   "text": "The memory entries are now readable end to end in plain English — 202 were rewritten, and there are no entries left without plain text, none with developer jargon, and no British spellings. The hopper of unreviewed entries is worth an afternoon whenever you have one. Two small things still need you: one entry is marked stale but still carries a verification stamp, which needs your go to clear, and 26 verified entries do not name who verified them."
+  },
+  {
+   "id": "s196-fable-map-load",
+   "for": "Fable",
+   "tab": "map-data-quality",
+   "text": "The nightly load of the MAP custom reports failed: MAP returned the student-details dataset twice and left out the exhibit-by-catalog-year one entirely, so the run stopped rather than publishing a partial picture — which is the gate working. Needs a look at whether the report itself was renamed on MAP's side."
+  },
+  {
+   "id": "s195-sam-credit-alert",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Sierra ran out of API credit this evening and you restored it — thank you. That is the third time (21 Aug, 22 Aug, 25 Aug). The uptime monitor did its job and raised the alert, but it only looks every three hours, so an outage can run that long before anyone is told. A balance-threshold alert on the Anthropic account itself would catch it before it becomes an outage, and that is the one thing a monitor here cannot do."
+  },
+  {
+   "id": "s195-sam-revert-model",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Sierra is running on Haiku 4.5 as the temporary cost measure you asked for — about a third the price of what it was on (Sonnet, not Opus). When corporate billing is released, switching back needs no code change and no session: set CPL_CHAT_MODEL on the Supabase project to claude-sonnet-4-6. Worth trying the whole-register sweep on Haiku once before you rely on it — a sixteen-row legal analysis is the hardest thing the assistant does, and it is where a smaller model would show first."
+  },
+  {
+   "id": "s195-sam-haiku-caveat",
+   "for": "Sam",
+   "tab": "cpl-assistant",
+   "text": "Settled, and noted so nobody undoes it: the automated check found 40 of 41 answers still correct on Haiku, and the one it dropped was the caveat beside the big waiting-credit number — the reminder that roughly a third of reviewed credit is correctly ruled Not Applicable, so the total is a ceiling rather than a debt. You said you can live with it for now, so it stays as it is. The fix is written down and ready if you change your mind: move that caveat next to the number itself instead of into a rules list further away, which would make it stick on any model."
+  }
+ ],
+ "for_sam": [
+  {
+   "id": "nc-floor",
+   "title": "Decide the noncredit minimum award",
+   "note": "At $50,000, 30 of the 33 noncredit institutions sit exactly on the minimum and growth does not start paying until 3,909 FTES — which is the opposite of the incentive you wanted. At $15,000 nobody is on the minimum and growth pays from 384 FTES. $60,000 is not affordable at all. Opening it to every noncredit institution does not work at this pot: even at full parity it buys about $16,000 each."
+  },
+  {
+   "id": "nc-mirror-strategy",
+   "title": "Remove \"noncredit mirror courses\" from the credit lane's strategy list when noncredit goes live",
+   "note": "Priority 3 currently invites colleges to bank noncredit work under the credit lane. Today that is not double-counting, it is single-counting in the wrong lane — which is the stepchild problem itself."
+  },
+  {
+   "id": "itpi-locid",
+   "title": "Watch for ITPI on the origination ID",
+   "note": "Pedro has the request and says it will take longer than tonight's fix. The one question only they can answer: can a college have a SECOND, noncredit landing page with its own ID, or is that only available to standalone institutions like North Orange and San Diego Continuing Education? That decides whether this reaches about 108 colleges or just a handful."
+  },
+  {
+   "id": "phone-check",
+   "title": "Open the Fact Sheet and the Sierra / veteran-map pages on your phone",
+   "note": "Both were audited and fixed, and no session can check them — the sandbox cannot reach the live site. This is the only step left on either, which is why both moved out of the always-loaded notes today."
+  },
+  {
+   "id": "memory-false-stamp",
+   "title": "One memory row still carries a false verification stamp",
+   "note": "Marked stale and verified by 'curator' at the same time. Awaiting your go. The eleven rows verified by you or Jenni are real attribution and must never be swept."
+  },
+  {
+   "id": "lattc-cr-evidence-review",
+   "title": "Look at the LATTC worklist and say whether this becomes a tab",
+   "note": "Jessica asked for this and it is finished: 139 LATTC courses, each with ranked credit recommendations, what other colleges did, and a Select button. It is a web page today, which means it is a snapshot. If colleges will keep asking — Jessica says they will — it wants to be a COBI tab that any college can be pointed at. Your call. https://claude.ai/code/artifact/cbf1e2e5-e3a0-406b-9aaf-1bddcbc3a0c2"
+  },
+  {
+   "id": "lattc-course-number-mismatch",
+   "title": "Five LATTC course numbers point at a different course in COCI",
+   "note": "LATTC's list calls BLDGCTQ105 'Basic Blueprints and Drawings'; COCI says that number is 'CPR/AED/First Aid'. Four others disagree the same way. Somebody should ask LATTC which is right before anyone articulates them — a recommendation attached to the wrong course number is worse than none."
+  },
+  {
+   "id": "nccer-catalog-pdf",
+   "title": "Someone needs to hand us the NCCER catalog",
+   "note": "Jessica asked for a table of NCCER certifications and the modules inside each. NCCER's website is blocked from the machine these sessions run on, so it has to be attached to a session by a person. We already hold 19 NCCER credentials, and 14 of them have published credit recommendations that no college has adopted."
+  }
+ ],
+ "for_fable": [
+  {
+   "id": "cron-drop-alarm",
+   "title": "Build an alarm for a scheduled job that never ran",
+   "note": "Sam asked for this, and not on the site header. The hard part: a job that never starts leaves no failure and nothing queued, so there is nothing for GitHub to tell anyone about — silence looks exactly like success. So the alarm has to create a failure on purpose. Hang it off a job that DOES still run (the every-3-hours one gets eight chances a day where a daily job gets one), work out what is overdue from the schedules themselves rather than a list someone has to remember to update, and only shout when a job has missed EVERY attempt — being a few hours late is normal here."
+  },
+  {
+   "id": "nc-src-first",
+   "title": "Give a priority an explicit data source, then build the noncredit lane",
+   "note": "FIRST. The model currently works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data — a wrong number that looks right. Then noncredit earns, then the display."
+  },
+  {
+   "id": "nc-display",
+   "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
+   "note": "Sam's ruling, and his own mechanism, which he improved twice: add the noncredit origin field to the database now, empty, and calculate from it. Nothing is invented — 'units where the origin is recorded' is honestly zero today, and the day the real data arrives the same calculation just starts returning numbers, with nothing to swap out. It also means the page can PROVE it is waiting rather than claiming it: if the column is empty everywhere, that is the evidence. Put the field on both tables, and treat adding it as a deliberate step — it is a live table with student-level data in it."
+  },
+  {
+   "id": "signin-click",
+   "title": "Sign-in email box cannot be clicked into — only reached by tab",
+   "note": "The box is being rebuilt underneath the pointer. Someone already noticed and preserved what you had typed across the rebuild, but not where the cursor was."
+  },
+  {
+   "id": "unlock-noresponse",
+   "title": "The unlock control on the funding tab does not respond",
+   "note": "A real defect — that tab does use the team phrase. Worth asking Sam which control he clicked; the tab's own button says 'Unlock team editing'."
+  },
+  {
+   "id": "funding-a11y",
+   "title": "Accessibility and mobile: the funding tab and the site header",
+   "note": "The header behaves oddly on zoom. Needs the browser-driven check, not the test suite — the suite cannot see layout at all."
+  },
+  {
+   "id": "cr-evidence-next-college",
+   "title": "Point the CR-evidence matcher at the next college that asks",
+   "note": "kb/_match_courses_to_ace_recs.py is written to be reused, but it has only ever been run once. The next college that sends a list is the test of whether it is genuinely reusable or quietly LATTC-shaped. Read docs/college_cr_evidence_lessons.md first."
+  },
+  {
+   "id": "cr-evidence-ready-to-adopt",
+   "title": "The 46 recommendations nobody in California has claimed",
+   "note": "For 46 of LATTC's courses the credit recommendation exists and students already hold it, but no college has ever attached it to a course. That is a shelf, not a gap — and it is not LATTC-specific. Worth counting statewide."
+  }
+ ]
 }

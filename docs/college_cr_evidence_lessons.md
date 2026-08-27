@@ -151,7 +151,7 @@ free and worth more.
 
 **Confidence is `0.55 × word fit + 0.25 × peer precedent + 0.20 × how widely held`.**
 Jessica confirmed peer precedent must raise it. ⚠️ **It is a ranking heuristic, not a
-probability, and it is deliberately not fitted to anything** — nobody has labelled a ground
+probability, and it is deliberately not fitted to anything** — nobody has labeled a ground
 truth for *"is this the right CR"*, so a trained score would be a borrowed authority. All
 three inputs render on the chip's tooltip so a reviewer argues with the arithmetic, not the
 number. Bands: High ≥0.70 (**82** courses), Medium ≥0.45 (**34**), Low (**17**).
@@ -325,12 +325,12 @@ their hours against the course's units, a recommendation used elsewhere says so 
 (`also on N other`), the bulk fill no longer skips anything (it still refuses to bulk-fill
 below High confidence), and a `1–2 unit courses` filter isolates the 28 small ones.
 
-### 2026-08-27, the unit rule — a curator ruling replaces a modelled one
+### 2026-08-27, the unit rule — a curator ruling replaces a modeled one
 
 *"Often credit recommendation hours match the units for the course. If the credit
 recommendation hours vary by more than 1 unit, leave it off of the list. If it varies by 1
 unit, lower the confidence score but keep it on the list. Hold off on the combinations
-mentioned previously. I think we were overanalysing."* (Jessica).
+mentioned previously. I think we were overanalyzing."* (Jessica).
 
 ⭐ **A HARD CUT BEAT MY CONTINUOUS SCORE, AND SHE WAS RIGHT TO OVERRULE IT.** I had scored
 the hours/units gap on a curve at 0.20 of the confidence blend. That kept **3 hours in

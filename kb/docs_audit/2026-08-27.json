@@ -9,62 +9,63 @@
     "other": 150000
   },
   "summary": {
-    "files": 667,
-    "bytes": 7547099,
+    "files": 672,
+    "bytes": 7608595,
     "over_budget": 4,
-    "handoff_max": 198,
+    "handoff_max": 199,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 146407,
+    "always_loaded_bytes": 148843,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 146407,
+        "bytes": 148843,
         "over": 1
       },
       "other": {
         "files": 87,
-        "bytes": 2083980,
+        "bytes": 2086526,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 268565,
+        "bytes": 269455,
         "over": 1
       },
       "lessons": {
-        "files": 69,
-        "bytes": 1823686,
+        "files": 70,
+        "bytes": 1856563,
         "over": 1
       },
       "kb_note": {
-        "files": 334,
-        "bytes": 1770524,
+        "files": 337,
+        "bytes": 1781905,
         "over": 0
       },
       "handoff": {
-        "files": 175,
-        "bytes": 1453937,
+        "files": 176,
+        "bytes": 1465303,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 4,
-      "american_spelling": 169,
+      "stacked_roadmap_cell": 1,
+      "american_spelling": 171,
       "kb_note_dialect": 60,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2304,
-      "bytes": 1220935511,
-      "heavy_bytes": 598349256,
-      "heavy_share": 0.49,
+      "files": 2317,
+      "bytes": 1231413857,
+      "heavy_bytes": 598638606,
+      "heavy_share": 0.486,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/tmc",
         "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -114,36 +115,54 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 146407,
+        "bytes": 148843,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 86407,
-        "ratio": 2.44
+        "over_by": 88843,
+        "ratio": 2.48
       },
-      "message": "146,407 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "148,843 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "stacked_roadmap_cell",
+      "fixable": false,
+      "detail": {
+        "cells": [
+          {
+            "row": "Implementation Funding tab / the $35M mo",
+            "chars": 4317,
+            "priors": 0,
+            "corrections": 0
+          }
+        ],
+        "cell_max": 4000,
+        "prior_max": 1
+      },
+      "message": "1 roadmap cell(s) have become append-only logs — worst is \"Implementation Funding tab / the $35M mo\" at 4,317 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 268565,
+        "bytes": 269455,
         "limit": 40000,
         "lane": "index",
-        "over_by": 228565,
-        "ratio": 6.71
+        "over_by": 229455,
+        "ratio": 6.74
       },
-      "message": "268,565 B is 6.7× the index budget (40,000 B) — candidate for compaction",
+      "message": "269,455 B is 6.7× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 11,
+        "total": 13,
         "forms": {
           "behaviour": {
-            "n": 5,
+            "n": 6,
             "prefer": "behavior"
           },
           "normalis": {
@@ -151,12 +170,12 @@
             "prefer": "normaliz"
           },
           "minimis": {
-            "n": 2,
+            "n": 3,
             "prefer": "minimiz"
           }
         }
       },
-      "message": "11 British forms — behaviour→behavior, normalis→normaliz, minimis→minimiz",
+      "message": "13 British forms — behaviour→behavior, normalis→normaliz, minimis→minimiz",
       "path": "docs/INDEX.md"
     },
     {
@@ -342,7 +361,7 @@
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 4,
         "forms": {
           "colour": {
             "n": 1,
@@ -352,13 +371,17 @@
             "n": 1,
             "prefer": "behavior"
           },
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          },
           "modelling": {
             "n": 1,
             "prefer": "modeling"
           }
         }
       },
-      "message": "3 British forms — colour→color, behaviour→behavior, modelling→modeling",
+      "message": "4 British forms — colour→color, behaviour→behavior, recognis→recogniz, modelling→modeling",
       "path": "docs/cpl_funding_lessons.md"
     },
     {
@@ -882,6 +905,21 @@
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
+        "total": 1,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          }
+        }
+      },
+      "message": "1 British form — recognis→recogniz",
+      "path": "docs/kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
         "total": 2,
         "forms": {
           "behaviour": {
@@ -964,6 +1002,21 @@
       },
       "message": "5 British forms — normalis→normaliz, generalis→generaliz, labelled→labeled",
       "path": "docs/kb-notes/methodology-a-fold-at-the-label-layer-is-not-a-fold.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 3,
+        "forms": {
+          "behaviour": {
+            "n": 3,
+            "prefer": "behavior"
+          }
+        }
+      },
+      "message": "3 British forms — behaviour→behavior",
+      "path": "docs/kb-notes/methodology-a-frequency-is-not-a-rule.md"
     },
     {
       "rule": "kb_note_dialect",
@@ -3068,13 +3121,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 499625,
+        "bytes": 502171,
         "limit": 150000,
         "lane": "other",
-        "over_by": 349625,
-        "ratio": 3.33
+        "over_by": 352171,
+        "ratio": 3.35
       },
-      "message": "499,625 B is 3.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "502,171 B is 3.3× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -3863,22 +3916,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/unclassified_fold",
+      "detail": {
+        "bytes": 14925059,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,925,059 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "tmc",
       "detail": {
         "bytes": 14867812,
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/unclassified_fold",
-      "detail": {
-        "bytes": 14635661,
-        "kind": "dir"
-      },
-      "message": "directory totals 14,635,661 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4045,10 +4098,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694855,
+        "bytes": 8694826,
         "kind": "file"
       },
-      "message": "8,694,855 B single file inside the vault"
+      "message": "8,694,826 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4125,10 +4178,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267512,
+        "bytes": 6267513,
         "kind": "file"
       },
-      "message": "6,267,512 B single file inside the vault"
+      "message": "6,267,513 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4265,10 +4318,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354227,
+        "bytes": 2354207,
         "kind": "file"
       },
-      "message": "2,354,227 B single file inside the vault"
+      "message": "2,354,207 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

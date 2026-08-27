@@ -7,7 +7,7 @@ TWO SIGNALS, REPORTED SEPARATELY, NEVER BLENDED
                       already hold it. This is what makes an articulation possible.
   B. PEER PRECEDENT - a named CA college has attached that CR to a named local
                       course. This is the evidence Jessica asked for.
-A candidate with A and no B is still a proposal; it is labelled as one.
+A candidate with A and no B is still a proposal; it is labeled as one.
 
 ⚠️ Keyed on the CREDIT RECOMMENDATION, not on MOS/rate (Jessica, 2026-08-27):
 a service member can hold several MOSs, so the CR printed on the JST is the
@@ -102,9 +102,9 @@ def rec_hours(rec):
 #  credit recommendation hours vary by more than 1 unit, leave it off of the
 #  list. If it varies by 1 unit, lower the confidence score but keep it on the
 #  list. Hold off on the combinations mentioned previously. I think we were
-#  overanalysing."
+#  overanalyzing."
 #
-# A curator ruling replacing a modelled one. The earlier version scored the gap
+# A curator ruling replacing a modeled one. The earlier version scored the gap
 # on a continuous curve, which kept a 3-hour recommendation at the top of a
 # 1-unit lab because breadth outweighed the penalty — visibly wrong to the
 # person who has to defend the articulation. A hard cut at >1 is simpler, and it
@@ -263,14 +263,14 @@ for r in lattc:
     # ── CONFIDENCE ───────────────────────────────────────────────────────
     # A HEURISTIC, NOT A PROBABILITY, and its three inputs are shown on the
     # card so a reviewer can disagree with the arithmetic rather than the
-    # number. Deliberately NOT trained on anything: nobody has labelled a
+    # number. Deliberately NOT trained on anything: nobody has labeled a
     # ground truth for "is this the right CR", so a fitted score would be a
     # borrowed authority. It ranks; faculty decide.
     # UNIT FIT — measured, not assumed: across 3,419 peer articulations carrying
     # both numbers, 81.1% pair a CR's hours with a course of EXACTLY those units.
     # Matching hours to units is what colleges actually do, so it earns a real
     # share of the score. When COCI has no units the term is dropped and the
-    # remaining weights are renormalised, so an unmeasured course is never
+    # remaining weights are renormalized, so an unmeasured course is never
     # penalised for something we failed to look up.
     course_units = None
     try: course_units = float(r['_units']) if r.get('_units') else None

@@ -4944,3 +4944,36 @@ lawyer makes first instead; an answer you can re-derive is one you can defend to
 thing learned today. Story `docs/ccr_atlas_lessons.md` · `docs/gr_register_lessons.md` ·
 `docs/cobi_memory_tab_lessons.md` · handoff `docs/session_194_handoff.md`.
 
+
+
+## Archived session narrative — SkyRule S196 (moved 2026-08-27, Rule 8 narrative budget)
+
+### SkyRule S196 — the regulation that does not implement its own statute (2026-08-26)
+
+**Sam: *"My priority today is to get a new draft Title 5 55050 to the CO."*** (#1339, #1341–#1356).
+⭐ **He asked for a fresh redraft; the answer is a RESTORE.** A final §55050 already exists, adopted
+by the BOG **2026-08-12** — and **its renumbering is Sam's own November 2025 work**.
+⭐ **Nobody erred**: stamp 6/19/26, Article 9 effective 7/13/26. That one fact turns a criticism into
+an ordinary conformity amendment.
+⭐ **The argument is about districts** — §78093.2(b)(1)/(b)(2) bind every campus TODAY.
+⭐ **SB 135 is wider than Article 9: §75013 is Sec. 14 of the SAME chapter**, its (b) opens *"As part
+of the Credit for Prior Learning Initiative"* (CO + ASCCC **shall** make CPL recommendations **per
+program**, **the same systemwide**, by **2027-07-01**), and it moves the program-level/GE-area
+broadening from Tier 2 to Tier 1. **A section-number range is not a scope** — every scoping doc read
+§§78093–78093.2 and stopped.
+✅ **§88782 CONFIRMED as the Career Passport Program**; it **NAMES MAP IN STATUTE**.
+⭐ **Sam ruled on everything and revised four times.** Two of his answers beat the recommendation:
+naming no GE framework (so the subdivision cannot go stale), and striking the transcript annotation —
+he asked whether the Ed. Code requires it, **it does not**, and my keep-it argument had been about
+enforceability, not law. Withdrawn and superseded in `cpl_memory`.
+⚠️ **A returned file is not necessarily a descendant of what you sent** — his "cleaned up version" was
+built on the FIRST draft, so v3 had to MERGE two parallel lines. **Diff the accept-all views.**
+⚠️ **The adopted PDF is a redline and `pdftotext` drops the formatting** — 21 collisions, 7 unmarked
+struck paragraphs; resolved as an edit list, and the subdivisions coming out contiguous is what
+proved it. ⭐ **Reject-all must reproduce the adopted text** — 95 checks, one perturbation per ruling,
+and it caught a deletion in my own build that had swallowed the word *"for"*.
+Also this run: the Memory Briefing was reading 34 of 188 entries by recency and sending `summary`
+where the screen shows `plain`, so **every plain-language pass that table ever had never reached the
+model**. Story `docs/t5_55050_lessons.md` · `docs/t5_55050_vs_gr_register.md` ·
+`docs/cobi_memory_tab_lessons.md` · handoff `docs/session_197_handoff.md`.
+

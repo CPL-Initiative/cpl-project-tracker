@@ -661,7 +661,7 @@ document.getElementById('save').addEventListener('click', async function(){
   catch(e) { done('Could not read the page to save it. Use “Download choices (CSV)” instead.'); return; }
   // Only the state block changes. The page renders itself from these two JSON
   // blocks, so swapping the state is the whole edit - the live DOM is never
-  // serialised back into the document.
+  // serialized back into the document.
   var next = JSON.stringify({choices: sel, savedAt: new Date().toISOString()});
   var re = /(<script id="cpl-state" type="application\/json">)[\s\S]*?(<\/script>)/;
   if (!re.test(src)) { done('Could not find where to save. Use “Download choices (CSV)” instead.'); return; }
