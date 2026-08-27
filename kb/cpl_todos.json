@@ -1,6 +1,6 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-27 · Sam ruled that noncredit earns at the same rate as credit — no discount for the newer lane. · Two systems were telling us plainly what was wrong and we were reading neither. The nightly load of MAP data had failed three nights running; MAP was answering \"that report is not valid\" for each report separately, in a field our loader never looked at, so three nights of failures blamed the wrong report. Sam found it in one manual pull, and Pedro at ITPI is correcting it overnight. The loader now reads MAP's own words and prints them. Separately, Sam ruled that noncredit funding should be EARNED on results exactly the way credit is, rather than handed out on size — and scoping that turned up a real trap: the model works out which data to measure a priority against by reading the priority's own wording, so the noncredit priorities (worded almost identically to the credit ones) would have been measured against the college's CREDIT results, silently and plausibly. Found before a line was written, so it is a finding rather than an incident. Nothing about anyone's money changed today.",
+  "_as_of": "2026-08-27 (afternoon) · Sam ruled that the funding model is a DRAFT: a piece of data we do not have yet is not a reason to stop and not a fault in the design — build the mechanism and let the figure read zero until the data arrives. That reverses an earlier call that the noncredit work was blocked. One edge he drew in the same breath decides everything: a BLANK is fine, a number that is quietly WRONG while looking right is not. He also reported six things from using the tab — two are simply not built yet (he is ahead of us), two are real bugs in signing in and unlocking, and two are accessibility checks we have not run on the funding tab or the site header. Separately, today's automatic MAP data load did not start on schedule, so it was kicked off by hand.",
   "_session": 196,
   "_status": "Everything is merged and v5 is the draft to send. Sponsor is James Todd, Staff Lead is Mari Estrada; the only blank left in the filing document is the 2026-27 timeline. Nothing was written to the policy register — every finding there is a proposal.",
   "items": [
@@ -95,23 +95,28 @@
   "for_fable": [
     {
       "id": "nc-src-first",
-      "title": "Give a priority an explicit data source before building the noncredit lane",
-      "note": "BLOCKING, and the order matters. The model currently picks which data to measure a priority against by matching words in the priority's text. All three noncredit metrics match the CREDIT data, and one mentioning the noncredit landing page matches an unrelated rule first. Build this, then noncredit earning, then the display."
+      "title": "Give a priority an explicit data source, then build the noncredit lane",
+      "note": "FIRST, but no longer a blocker. The model works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data. That is not a missing number — it is a wrong one that looks right, which is the one thing Sam's draft-model ruling does not permit. Then: noncredit earns, then the display."
     },
     {
-      "id": "nc-earn",
-      "title": "Make the noncredit award earned rather than allocated",
-      "note": "Sam's ruling. The award becomes a ceiling earned against three targets, the same three as credit, measured over students who came in through noncredit. Route each unit to one lane by origin — do not split it."
+      "id": "signin-click",
+      "title": "Sign-in email box cannot be clicked into — only reached by tab",
+      "note": "Sam hit this. Clicking fails but tabbing works, which is the signature of the box being rebuilt underneath the pointer. There is a strong clue in the code: someone already noticed this and preserved what you had TYPED across the rebuild, but not where the cursor was."
     },
     {
-      "id": "nc-display",
-      "title": "Show noncredit money under the credit figures on the college rows",
-      "note": "Sam's original ask. Same three columns, credit line over noncredit line. Comes after the two above."
+      "id": "unlock-noresponse",
+      "title": "The unlock control on the funding tab does not respond",
+      "note": "Sam guessed it was because that tab does not use the team phrase. It does — so this is a real defect, not expected behavior. Two leads are noted in the handoff."
+    },
+    {
+      "id": "funding-a11y",
+      "title": "Accessibility and mobile check: the funding tab and the COBI header",
+      "note": "The header behaves oddly on zoom. Reuse the pattern we already have for the public pages — one check that runs in the test suite, and a separate browser-driven one for anything to do with layout, because the test suite cannot see layout at all."
     },
     {
       "id": "map-load-watch",
-      "title": "Check the MAP load after ITPI's overnight fix",
-      "note": "A reminder is already scheduled for 27 August. If it still fails, the log now carries MAP's own message — read it rather than inferring. Two likely causes: the report was renamed (a one-line fix, but we need the new name), or a safety check blocked because the corrected report has a different shape (report the numbers, never loosen the check)."
+      "title": "Read the manually-started MAP load, and watch whether the schedule fires tomorrow",
+      "note": "Today's did not start on time so it was kicked off by hand. If it fails, the log now carries MAP's own words for each report — read those rather than guessing."
     }
   ]
 }

@@ -29,6 +29,16 @@ failures = []
 
 
 def check(cond, msg):
+    # ⚠️ CONDITION FIRST. On 2026-08-27 four checks in this file were written
+    # check(msg, cond); a non-empty string in the condition slot is always
+    # truthy, so all four were INERT and sailed through a deliberately broken
+    # build. Testing for that is impossible — a reversed call is inert BY
+    # CONSTRUCTION — so the mistake is made loud instead: nothing that is a
+    # string can be a condition here.
+    if isinstance(cond, str):
+        raise TypeError(
+            "check(cond, msg) takes the CONDITION first. A string was passed as "
+            "the condition, which is always truthy and can never fail: " + cond[:80])
     if not cond:
         failures.append(msg)
 
@@ -63,6 +73,48 @@ check(F.summarize_response([ds(v, rows=3, count=3) for v in ALL])["usable"],
       "fail every healthy pull")
 check(F.summarize_response([ds(v, rows=3, count=3, code="200") for v in ALL])["usable"],
       "an explicit 2xx responseCode was treated as a failure")
+
+# ── 2b. "000" is MAP's OK sentinel — the regression of 2026-08-27 ────────
+# THIS IS THE REAL PAYLOAD, not an invented one. On 2026-08-27, the first pull
+# after MAP repaired the broken view, every one of the ten datasets carried
+# responseCode "000" alongside FULL row counts — and the first cut of this guard
+# (`not code.startswith("2")`) called all ten a failure, so --strict refused a
+# 338.7 MB healthy payload and saved nothing.
+#
+# The lesson is not "handle 000". It is that the previous fixture was built from
+# what I imagined healthy looked like. Both cases below are transcribed from
+# captured runs.
+REAL_OK = [
+    ("View_ArticulatedMAPExhibits_APIDataset", 12953),
+    ("View_ArticulatedCollegeCourses_APIDataset", 47791),
+    ("View_CollegeCourses_APIDataset", 150599),
+    ("View_CreditDistributionByCollege_APIDataset", 113),
+    ("View_PointInTime_StudentAggregatedValues_APIDataset", 1081),
+    ("View_ProgramsofStudy_APIDataset", 20247),
+    ("View_StudentAggregatedValues_APIDataset", 53104),
+    ("View_CollegeExhibitCRByCatalogYear_APIDataset", 204896),
+    ("View_StudentDetailsCredits_APIDataset", 596656),
+    ("View_ExhibitCRsCatalog_Dataset", 271826),
+]
+live_ok = [ds(v, rows=n, count=n, code="000") for v, n in REAL_OK]
+r = F.summarize_response(live_ok)
+check(r["usable"],
+      "2b: the REAL 2026-08-27 healthy pull (all ten datasets at code 000) was "
+      "reported unusable — this is the regression that blocked a 338.7 MB good pull")
+check(not r["problems"], "2b: a healthy all-000 pull produced problems")
+check(F.code_is_ok("") and F.code_is_ok(None) and F.code_is_ok("000")
+      and F.code_is_ok("200") and F.code_is_ok("204")
+      and not F.code_is_ok("400") and not F.code_is_ok("500"),
+      "2b: code_is_ok must accept absent, 000 and 2xx and reject 400/500")
+# The genuine failure must STILL fail — the fix must not blanket-accept.
+mixed = [d for d in live_ok if d["viewName"] != "View_StudentDetailsCredits_APIDataset"]
+mixed.append({"viewName": "View_StudentDetailsCredits_APIDataset", "columnValue": None,
+              "responseCode": "400",
+              "responseMessage": "View_StudentDetailsCredits_APIDataset is not Valid \r\n"})
+r = F.summarize_response(mixed)
+check(not r["usable"] and any("is not Valid" in p for p in r["problems"]),
+      "2b: a real 400 among nine healthy 000s must STILL fail — the fix must not "
+      "blanket-accept every code")
 
 # ── 3. MAP's own words must reach the caller, verbatim ───────────────────
 # The exact payload Sam pulled by hand on 2026-08-26.
