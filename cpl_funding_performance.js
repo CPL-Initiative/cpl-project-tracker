@@ -8,14 +8,14 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch) (per MAP). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 5,
  "statewide": {
-  "pe": 42964,
-  "pa": 40292,
-  "p2": 3733,
-  "p3": 15778,
+  "pe": 42984,
+  "pa": 40311,
+  "p2": 3734,
+  "p3": 15779,
   "pp": 5,
-  "pe_u": 1382125.45,
-  "pa_u": 223384.15,
-  "p3_u": 80337.95,
+  "pe_u": 1383097.45,
+  "pa_u": 223490.15,
+  "p3_u": 80349.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -178,9 +178,9 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 32948.5,
    "pa": 1517,
    "pa_u": 18607.0,
-   "p2": 17,
-   "p3": 36,
-   "p3_u": 274.0,
+   "p2": 18,
+   "p3": 37,
+   "p3_u": 286.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -218,8 +218,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Columbia": {
-   "pe": 23,
-   "pe_u": 1377.0,
+   "pe": 24,
+   "pe_u": 1398.0,
    "pa": 0,
    "pa_u": 0.0,
    "p2": 0,
@@ -529,10 +529,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "LA Pierce": {
-   "pe": 343,
-   "pe_u": 6032.0,
-   "pa": 307,
-   "pa_u": 1254.0,
+   "pe": 344,
+   "pe_u": 6065.0,
+   "pa": 308,
+   "pa_u": 1263.0,
    "p2": 20,
    "p3": 229,
    "p3_u": 907.0,
@@ -729,10 +729,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Moreno Valley": {
-   "pe": 2434,
-   "pe_u": 51791.0,
-   "pa": 2105,
-   "pa_u": 12407.5,
+   "pe": 2449,
+   "pe_u": 52444.0,
+   "pa": 2120,
+   "pa_u": 12491.5,
    "p2": 438,
    "p3": 1989,
    "p3_u": 11518.0,
@@ -993,10 +993,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santa Ana": {
-   "pe": 453,
-   "pe_u": 16477.0,
-   "pa": 448,
-   "pa_u": 2002.2,
+   "pe": 454,
+   "pe_u": 16504.0,
+   "pa": 449,
+   "pa_u": 2006.2,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1030,10 +1030,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Santa Rosa": {
-   "pe": 440,
-   "pe_u": 19050.0,
-   "pa": 440,
-   "pa_u": 1760.0,
+   "pe": 441,
+   "pe_u": 19174.0,
+   "pa": 441,
+   "pa_u": 1764.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1129,10 +1129,10 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0
   },
   "Ventura": {
-   "pe": 183,
-   "pe_u": 10557.0,
-   "pa": 183,
-   "pa_u": 930.0,
+   "pe": 184,
+   "pe_u": 10671.0,
+   "pa": 184,
+   "pa_u": 935.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
@@ -1414,7 +1414,7 @@ window.CPL_FUNDING_PERF = {
    "Industry Certification": {
     "pe": 23,
     "pa": 21,
-    "p3": 18
+    "p3": 19
    },
    "Industry Certification | Military": {
     "pe": null,
@@ -1466,7 +1466,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Columbia": {
    "Military": {
-    "pe": 23,
+    "pe": 24,
     "pa": 0,
     "p3": 0
    }
@@ -2138,8 +2138,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 978,
-    "pa": 978,
+    "pe": 993,
+    "pa": 993,
     "p3": 881
    },
    "Standardized Assessment": {
@@ -2565,8 +2565,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 371,
-    "pa": 371,
+    "pe": 372,
+    "pa": 372,
     "p3": 0
    },
    "Portfolio Review": {
@@ -2595,8 +2595,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Rosa": {
    "Military": {
-    "pe": 440,
-    "pa": 440,
+    "pe": 441,
+    "pa": 441,
     "p3": 0
    }
   },
@@ -2679,8 +2679,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "Military": {
-    "pe": 183,
-    "pa": 183,
+    "pe": 184,
+    "pa": 184,
     "p3": 0
    }
   },
@@ -2843,7 +2843,7 @@ window.CPL_FUNDING_PERF = {
   "Industry Certification": {
    "pe": 1257,
    "pa": 1235,
-   "p3": 1144
+   "p3": 1145
   },
   "Industry Certification | Military": {
    "pe": 46,
@@ -2887,8 +2887,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 26915,
-   "pa": 24796,
+   "pe": 26935,
+   "pa": 24815,
    "p3": 2471
   },
   "Military | Portfolio Review": {
@@ -2936,14 +2936,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1381648.95,
-   "pa_u": 223384.15,
-   "p3_u": 80337.95
+   "pe_u": 1382620.95,
+   "pa_u": 223490.15,
+   "p3_u": 80349.95
   },
   "map": {
-   "pe_u": 1388775.45,
-   "pa_u": 224045.65,
-   "p3_u": 80362.95
+   "pe_u": 1389747.45,
+   "pa_u": 224151.65,
+   "p3_u": 80374.95
   },
   "ratio": {
    "pe_u": 1.0052,

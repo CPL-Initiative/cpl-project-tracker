@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-27T15:06:22.371322+00:00",
+  "scraped_at": "2026-08-27T17:58:42.049177+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27467,
+    "jst": 27487,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -37,7 +37,7 @@
     },
     "Moreno Valley College": {
       "vets": 916,
-      "jst": 998,
+      "jst": 1013,
       "star": true
     },
     "San Diego Miramar College": {
@@ -122,7 +122,7 @@
     },
     "Santa Ana College": {
       "vets": 334,
-      "jst": 373,
+      "jst": 374,
       "star": true
     },
     "Barstow Community College": {
@@ -137,7 +137,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 523,
-      "jst": 441,
+      "jst": 442,
       "star": true
     },
     "Fresno City College": {
@@ -212,12 +212,12 @@
     },
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 132,
+      "jst": 133,
       "star": false
     },
     "Ventura College": {
       "vets": 254,
-      "jst": 183,
+      "jst": 184,
       "star": false
     },
     "Los Angeles Mission College": {
@@ -497,7 +497,7 @@
     },
     "Columbia College": {
       "vets": 33,
-      "jst": 23,
+      "jst": 24,
       "star": false
     },
     "Chabot College": {
