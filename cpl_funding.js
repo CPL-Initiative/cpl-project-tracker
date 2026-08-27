@@ -6887,6 +6887,76 @@
     _getScenario: function () { return SCENARIO; },
     _getShared: function () { return SHARED; },
     _model: function () { _allocCache = null; _ncCache = null; return allocModel(); },
+    // ── the EFFECTIVE dials, in one call (2026-08-26) ──────────────────────
+    // Sam, after a session read yearPriorities["2"].factor from the live
+    // Supabase config and reported it as what the model uses: "Never rely on
+    // the config."  It was right there in storage and completely inert —
+    // mirrorYears makes prioSlot() return "1" for EVERY year, so that block is
+    // never read.  A MISSING value sends you looking; a PRESENT but dormant one
+    // does not, which is what makes it the easy mistake to keep making.
+    //
+    // So this is the answer to "what is the model using", computed by the model
+    // rather than transcribed from its input.  Everything here comes from the
+    // same accessors the tab renders through — nothing is re-derived, which is
+    // the whole point (see also _alloc/_prios/_nc).  scripts/funding_effective.js
+    // prints it; cpl_memory: a-saved-setting-is-not-the-effective-value.
+    _effective: function () {
+      // Clear the caches FIRST, exactly as _model() does. Without this the hook
+      // reads whatever ncModel() memoised at boot() — so a caller that set a
+      // config afterwards got the BAKED numbers reported as "effective", which
+      // is the very error this hook exists to prevent, reproduced inside it.
+      // Caught by tests/cpl_funding_effective.test.js 3b/3c: _effective() and
+      // _nc() disagreed, which is what two readers of one fact always do.
+      _allocCache = null; _ncCache = null;
+      var slots = [], n = nYears(), i;
+      for (i = 1; i <= n; i++) {
+        var slot = String(i);
+        slots.push({
+          slot: slot,
+          year: selectedYears()[i - 1] || null,
+          // The two reasons a stored year block can be inert, named per year
+          // rather than left for a reader to infer from a flag elsewhere.
+          mirroredFrom: slotIsMirrored(slot) ? prioSlot(slot) : null,
+          carryover: slotIsCarryover(slot),
+          priorities: priorities(slot).map(function (p) {
+            return {
+              // pos is what the SCREEN calls it; srcIndex is where it lives in
+              // the config. priorityOrder is a permutation, so these differ —
+              // quoting a stored index by its screen ordinal is its own bug.
+              pos: p.pos + 1, label: p.label, title: p.title || null,
+              key: p.key, srcIndex: p.src,
+              share: p.share, factor: p.factor,
+              unit: p.unit, metric: p.metric
+            };
+          })
+        });
+      }
+      var nc = ncModel();
+      return {
+        project: activeProject, scenario: activeScenario,
+        basis: allocationBasis(),
+        disbursement: disbursement(),
+        mirrorYears: mirrorYears(),
+        priorityOrder: priorityOrder("1"),
+        window: windowLabel(),
+        pool: {
+          net_before_feeder: netBeforeFeeder(), net_college: netCollege(),
+          floor_window: floorWindow(), cap_window: capWindow(),
+          feeder_carveout: feederCarveout()
+        },
+        nc: {
+          pool: nc.pool, threshold_ftes: nc.threshold,
+          floor_window: nc.floor, cap_window: nc.cap,
+          institutions: nc.rows.length, at_floor: nc.floorCount, at_cap: nc.cappedCount,
+          break_even_ftes: nc.breakEven, unspent: nc.unspent,
+          floor_infeasible: !!nc.floorInfeasible, cap_below_floor: !!nc.capBelowFloor
+        },
+        years: slots
+      };
+    },
+    // The noncredit lane itself, for a sweep. Cache cleared so a caller that
+    // moved a dial between calls gets the new answer rather than the old one.
+    _nc: function () { _ncCache = null; return ncModel(); },
     _alloc: function (name) { var c = baseCollege(name); return c ? collegeAlloc(c) : null; },
 
     // ── read-only API for the My College tab (#college-briefing) ────────────

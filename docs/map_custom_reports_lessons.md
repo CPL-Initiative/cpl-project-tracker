@@ -845,3 +845,95 @@ against **33 distinct military exhibits**.
    or three.
 3. Send the **1,310 `cx-course-named`** rows as the Cx offer.
 4. Unchanged carryover: Ashley's Delta outcome, the second occupation list.
+
+## 2026-08-26 (Session 197, SkyVerdict) — three nights of failure, and the answer was in a field nothing read
+
+**Sam, from memory:** *"I got a message in a session yesterday … something like
+double records and that it might heal itself on the next cron."*
+
+It did not heal. **Runs 12, 13 and 14 all failed** — 24, 25 and 26 August. Last
+clean run was 23 August at 13:57 UTC.
+
+### What the runs said, and why it pointed at the wrong view
+
+Every failing run reported the same shape: 10 datasets returned,
+`View_StudentDetailsCredits_APIDataset` listed **twice**, and
+`View_CollegeExhibitCRByCatalogYear_APIDataset` **absent**. So the obvious
+reading — and the one three nights of logs supported — was that the *exhibit* view
+had been renamed or retired.
+
+I reasoned my way further down that path than I should have. The payload had
+halved (341 MB → 157 MB), and between 25 and 26 August the two duplicate slots
+each grew by 820 rows while the payload grew 233,321 bytes — **142 bytes/row**,
+which back-solves the student row to ~357 bytes. Conclusion: both slots carry
+exhibit-CR data and the student data is gone. The second half was right. The
+first half was inference dressed as measurement.
+
+### Sam pulled the report by hand and MAP answered in one sentence
+
+```
+"columnValue": null,
+"responseCode": "400",
+"responseMessage": "View_StudentDetailsCredits_APIDataset is not Valid"
+```
+
+⭐ **MAP had been saying exactly what was wrong, per dataset, every night.**
+`fetch_custom_report.py` read neither `responseCode` nor `responseMessage`. It
+printed `dataCount` — MAP's **claim** — rather than the rows it parsed, which is
+how an empty dataset advertised "204,491 rows" for three nights running.
+
+⚠️ **And the dead view was the STUDENT one, not the exhibit one.** The batch
+response's labels are precisely what cannot be trusted here: one invalid view
+makes MAP put the invalid name on a *neighbour's* dataset, so the name that
+vanished belonged to a healthy view. My byte arithmetic was sound and my
+conclusion from the labels was not.
+
+### The fix, and the part of it that is not obvious (#1358)
+
+`summarize_response()` is pure, so the outage reproduces as a fixture rather than
+a live request. Three checks:
+
+- **`responseCode`** — an ABSENT code is normal; only a PRESENT non‑2xx fails.
+  Treating absence as an error would fail every healthy pull (mutation M2).
+- **`dataCount` is a claim.** Rows are counted from `columnValue`; disagreement
+  prints as `[MAP claims N]`.
+- **A duplicate `viewName` is fatal**, because every consumer keys on it.
+
+⭐ **PRINTING IS UNCONDITIONAL, FAILING IS OPT‑IN, and the split is load-bearing.**
+`daily-dashboard.yml` runs the *same* fetcher and falls back on a non-zero exit,
+while consuming **none** of the views involved. Failing by default would have
+dropped the public dashboard to its fallback path over datasets it never reads —
+a regression caused by the fix. `--strict` is passed only by the Supabase load.
+
+Six mutations, all caught. All 21 funding suites and the three custom-report
+suites green.
+
+### What Sam asked ITPI, and the second ask
+
+Pedro has both requests and will correct the report overnight. The second is the
+one that matters for the noncredit funding lane: **an origination LocID** on the
+student-detail view.
+
+⭐ **Framed as the identity of a route MAP already records the type of** — the
+credit P1 metric already says "originating from either CPL Portal, College CPL
+Landing Page, or batch upload". That is a field addition to an existing concept,
+not a request to build noncredit tracking.
+
+Three requirements, each earned: same namespace as `CollegeID`; **NULL when
+unknown, never defaulted to the enrolling college** (a default silently
+manufactures credit-lane attribution); and on the **catalog-year view too**, or
+NC earning can only ever be computed at student grain.
+
+⚠️ **One question only ITPI can answer:** can a college have a second, noncredit
+landing page with its own LocID, or is that only available to standalone
+entities like NOCE and SDCCE? That decides whether this reaches the ~108 credit
+colleges carrying noncredit FTES or only the standalone few.
+
+⚠️ **`course_type` cannot substitute.** All ten values in `map_student_credit`
+are credit types (Course credit, Area credit, Elective credit, Credit for Basic
+Military Service ×3). There is no noncredit marker anywhere in the data we hold.
+
+### Durable
+
+- [`methodology-read-the-per-item-verdict-not-just-the-envelope`] — `cpl_memory`
+  `read-the-per-item-verdict-not-just-the-envelope`.

@@ -5,6 +5,8 @@ updated: 2026-08-26
 tags: [handoff, session-197, gr, title-5, 55050, sb135, memory]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_198_handoff.md
 ---
 
 # You are Session 197

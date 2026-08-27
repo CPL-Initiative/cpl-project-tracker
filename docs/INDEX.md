@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-08-25
+updated: 2026-08-27
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -22,6 +22,8 @@ Refreshed at every checkpoint (per `CLAUDE.md` Rule 8).
 
 | Lane | What | Where |
 |---|---|---|
+| [`methodology-a-saved-setting-is-not-the-effective-value`](kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | A stored config value is an input to a model, never its output — ask the model | 2026-08-26 |
+| [`methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists`](kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | Matching a metric to its data by reading its label fails silently once two lanes exist | 2026-08-26 |
 | **KB notes** | Durable, distilled, reusable knowledge | [`docs/kb-notes/`](kb-notes/) |
 | **Lessons (WIP)** | Workstream scratchpads, append-only | `docs/<workstream>_lessons.md` |
 | **Session handoffs** | "Fattyfat" capsules for the next session | `docs/session_<N>_handoff.md` |
@@ -694,6 +696,8 @@ Authoritative external sources we've cached:
 > **New this run:** [`docs/gr_reanalysis_scope.md`](gr_reanalysis_scope.md) — the GR Priorities on-demand re-analysis, scoped and buildable. ⭐ The tab's original analysis was a SESSION's work product, not a computation, so the job is to make it repeatable; the instrument doctrine (memo / Title 5 / Ed Code) is measured from the 16 rows that already exist, and rows #12/#9/#7/#5 are a labeled test set.
 
 ## Update history
+
+- **2026-08-27 (SkyVerdict S197)** — MAP's per-dataset verdict now read by the loader (#1358); `_effective()` + `scripts/funding_effective.js` so dials are asked of the model, not the config (#1359). Two KB notes. Two finished rows retired from `CLAUDE.md` §11 to `finished_workstreams.md`.
 
 - **2026-08-25 (SkyFixer S193)** — a live session with Sam in a browser (#1330/#1331). ⭐ **The Memory ✎ chip could not write because its key named NOTHING** — `slug` is UNIQUE but NULLABLE and the display handle falls back to the uuid, so 6 of 572 rows took a PATCH that matched zero rows and the page blamed the team phrase. ⭐ Then the fixed chip turned out to be a **cycle that wrote every state it passed through** — his two clicks sit in `cpl_memory_log` 15s apart and left a `stale` row carrying a verification stamp; replaced with a menu, and the stamp is cleared whenever the status leaves `verified`. ⭐ **The magic link came back to the wrong screen for everyone** — nine modules stashed the return tab in `sessionStorage`, which is per browser tab, and the link opens a new one. ⭐ **SkyView search landed where the term never pointed** (`english as a second` → Interdisciplinary Studies); subject names now outrank course titles, plus typeahead, a real subject list, and the CCR tab opening on the map. ⭐ **GR "reanalysis" had no referent** — `blast_rank` is computed by nothing in the repo — so the analysis built is deterministic and defensible to the CO. ⚠️ **Five perturbations read as 0 FAIL because the suite CRASHED**. 3 KB notes; the flagged SkyView roadmap cell compacted to current truth; S190's narrative archived.
 
