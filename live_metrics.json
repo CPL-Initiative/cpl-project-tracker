@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-08-27T19:37:56.000Z",
+  "scraped_at": "2026-08-27T19:53:34.534Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 115,
@@ -36,15 +36,15 @@
           "students": 2485,
           "units": 12545,
           "avgUnits": 5.048289738430584,
-          "transcriptionRate": 92.1,
-          "avgTranscribed": 4.650301810865191,
+          "transcriptionRate": 92.2,
+          "avgTranscribed": 4.654728370221328,
           "criteriaMetCount": 5,
           "militaryStudents": 1013,
           "nonMilitaryStudents": 1489,
           "apprenticeStudents": 0,
           "savings": 17980570,
           "yearImpact": 72032928,
-          "transcribedUnits": 11556
+          "transcribedUnits": 11567
         },
         {
           "college": "Norco College",
@@ -1879,13 +1879,13 @@
   "raw": {
     "Students": 50838,
     "Units": 224157.65000000002,
-    "TranscribedUnits": 80412.95,
+    "TranscribedUnits": 80423.95,
     "Savings": 335640290.25,
     "YearImpact": 1338716364.4,
     "MilitaryStudents": 27490,
     "NonMilitaryStudents": 23432,
     "AprenticeStudents": 851,
     "AverageUnits": 4.4092539045595815,
-    "TranscribedAverage": 1.5817488886266178
+    "TranscribedAverage": 1.5819652622054368
   }
 }

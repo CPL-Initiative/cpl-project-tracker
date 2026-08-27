@@ -11,13 +11,13 @@ window.CPL_FUNDING_PERF = {
   "pe": 42987,
   "pa": 40312,
   "ppa": 108,
-  "p2": 3735,
-  "p3": 15786,
+  "p2": 3736,
+  "p3": 15787,
   "pp": 5,
   "pe_u": 1383235.45,
   "pa_u": 223496.15,
   "ppa_u": 661.5,
-  "p3_u": 80387.95,
+  "p3_u": 80398.95,
   "pp_u": 25.0
  },
  "colleges": {
@@ -861,9 +861,9 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 12491.5,
    "ppa": 4,
    "ppa_u": 53.5,
-   "p2": 439,
-   "p3": 1996,
-   "p3_u": 11556.0,
+   "p2": 440,
+   "p3": 1997,
+   "p3_u": 11567.0,
    "pp": 0,
    "pp_u": 0.0
   },
@@ -2358,7 +2358,7 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 993,
     "pa": 993,
-    "p3": 888
+    "p3": 889
    },
    "Standardized Assessment": {
     "pe": 222,
@@ -3107,7 +3107,7 @@ window.CPL_FUNDING_PERF = {
   "Military": {
    "pe": 26938,
    "pa": 24816,
-   "p3": 2478
+   "p3": 2479
   },
   "Military | Portfolio Review": {
    "pe": null,
@@ -3156,12 +3156,12 @@ window.CPL_FUNDING_PERF = {
   "ours": {
    "pe_u": 1382758.95,
    "pa_u": 223496.15,
-   "p3_u": 80387.95
+   "p3_u": 80398.95
   },
   "map": {
    "pe_u": 1389885.45,
    "pa_u": 224157.65,
-   "p3_u": 80412.95
+   "p3_u": 80423.95
   },
   "ratio": {
    "pe_u": 1.0052,
