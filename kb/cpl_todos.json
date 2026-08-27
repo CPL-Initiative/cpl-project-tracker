@@ -106,7 +106,7 @@
     {
       "id": "nc-display",
       "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
-      "note": "Sam's ruling, with his own mechanism for it: give the noncredit metrics a real data source that simply returns zero for every college until the real counts arrive. That is simpler than inventing a special 'not measured yet' state — the ordinary path already produces zero earned — and when the real data lands nothing has to change. One caution: a stand-in zero and a real zero look the same, so it has to say on screen that it is waiting for data, or in six months everyone will read it as measured."
+      "note": "Sam's ruling, and his own mechanism, which he improved twice: add the noncredit origin field to the database now, empty, and calculate from it. Nothing is invented — 'units where the origin is recorded' is honestly zero today, and the day the real data arrives the same calculation just starts returning numbers, with nothing to swap out. It also means the page can PROVE it is waiting rather than claiming it: if the column is empty everywhere, that is the evidence. Put the field on both tables, and treat adding it as a deliberate step — it is a live table with student-level data in it."
     },
     {
       "id": "signin-click",

@@ -91,21 +91,38 @@ NC floor is meaningless until ITPI delivers. **That was over-weighted** — the
 model is draft, no money is disbursing, and by the time it does the origin data
 should exist. His call is the honest display and it costs nothing real now.
 
-⭐ **SAM'S MECHANISM (2026-08-27): a SYNTHETIC 0 feed, per college, until the real
-data lands.** This is better than the "third state" this handoff previously
-proposed, and it deletes that complexity: give the NC metrics a real `src` whose
-feed returns 0 for every college, and `earnFraction` takes the ORDINARY path —
-not `gap`, not `pending`, actual 0 against a real target, so **f = 0 and $0
-earned**. Exactly the display he described, and when ITPI delivers, nothing
-structural changes: the number simply stops being 0.
+⭐ **SAM'S MECHANISM, final form (2026-08-27): add the expected NC LocID COLUMN
+to the Supabase dataset now, all NULL, and calculate off it.**
 
-⚠️ **The synthetic 0 must ANNOUNCE ITSELF.** A synthetic 0 and a measured 0 are
-the same value; if the real feed is never wired, every college reads 0 for ever
-and it will be taken as measured. Carry a flag on the feed and render it as
-*awaiting NC origin data*, never a bare zero.
+> *"Or just add the expected NC LocID field to the supabase dataset and since all
+> will be null for now, we can calculate off that until the real data hits."*
 
-⚠️ **It has no consumer until the NC priorities exist**, so it ships WITH build
-step 2, not before it — steps 1 and 2 are really one piece of work.
+He proposed a synthetic 0 feed first and then improved on it. **The column wins on
+three counts** and this handoff's earlier "third earn state" idea is retired:
+
+1. **Nothing is synthetic.** *"applied units where `nc_origin_loc_id is not null`"*
+   is HONESTLY 0 today — a real result over a genuinely empty column, which is
+   exactly his "calculate correctly based on the available data" rather than a
+   placeholder standing in for it.
+2. **Nothing to remember to remove.** A synthetic feed must later be deleted; a
+   NULL column just fills up.
+3. **Zero-change cutover.** The same query returns real values the day ITPI
+   populates it — no feed swap, no code edit.
+
+⭐ **And it makes the disclosure DERIVABLE rather than declared.** The earlier
+worry was that a synthetic 0 and a measured 0 look identical, needing a flag
+someone maintains. With the column, `count(*) where nc_origin_loc_id is not null`
+= 0 across the table **is** the evidence that nothing is delivering yet. A
+measurement, not a maintained flag.
+
+⚠️ **The schema change is decoupled from the loader and safe:** a nullable column
+on `map_student_credit` / `map_college_cr_unit` is not requested from MAP yet, so
+the nightly pipeline is untouched and Postgres fills NULL. It can land ahead of
+ITPI. But it IS a write to a live student-grain table on shared ground — do it
+deliberately, not as a side effect.
+
+⚠️ Put it on **both** tables. Without it on `map_college_cr_unit`, NC earning can
+only ever be computed at student grain (this is also what was asked of ITPI).
 
 ⚠️ **Settle with a mock before building:** is the NC row a SECOND TABLE ROW per
 college beneath its credit row, or extra lines inside each P1/P2/P3 cell? His
