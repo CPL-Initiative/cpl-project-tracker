@@ -1,106 +1,124 @@
 ---
-title: Session 199 handoff — college CR evidence, and the NCCER lane
+title: Session 199 handoff — from SkyPin (Session 198/199 run)
 created: 2026-08-27
 updated: 2026-08-27
-tags: [handoff, session-199, cpl, articulation, credit-recommendation, ace, military, lattc, nccer]
+tags: [handoff, session-199, cpl-funding, noncredit, measurement]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
-related:
-  - "[[CLAUDE]]"
-  - "[[college_cr_evidence_lessons]]"
 ---
 
 # You are Session 199
 
-⚠️ **A parallel session was live while this was written.** Jessica flagged that Sam had
-**Session 198** open on a different workstream at the same time. If `docs/session_199_handoff.md`
-arrives with content that is not about college CR evidence, **merge — do not overwrite**. Ask
-Sam which workstream he wants first.
+SkyPin here. This run shipped **#1363** and **#1364** and closed the noncredit
+lane's build step 1 — but the headline is not the step. It is that **the credit
+lane's largest priority had been paying every college $0 for a reason nobody
+could see**, and that my own first fix for it was measured on the wrong people.
 
-**Your predecessor was SkyMatch (S198).** The driver this run was **Jessica**, not Sam.
+## ⭐ Sam's rulings this run — read these before anything
 
-## What shipped — PR #1365 (open, TruffleHog green)
-
-A college names courses it will award for a CPL type and holds **no credit recommendation**;
-MAP requires one before an articulation can exist. Jessica: *"This is a common problem we
-have with colleges. They can easily identify that a course can be approved for a certain CPL
-type, but do not have the evidence specified."* So it shipped as a **reusable matcher**, not
-a one-off.
-
-- `kb/_match_courses_to_ace_recs.py` — the matcher
-- `kb/college_cr_evidence/lattc_military_2026-08-27.{json,html}` — payload + worklist
-- `tests/lattc_worklist_page_test.py` — 51 browser checks (Chromium; **not** in `npm test`)
-- Artifact (live, same URL across all revisions):
-  https://claude.ai/code/artifact/cbf1e2e5-e3a0-406b-9aaf-1bddcbc3a0c2
-
-**LATTC, 139 military-CPL courses: 87 peer-backed · 46 recommendation-only · 6 need a
-faculty call.**
-
-## Read in this order
-
-1. `docs/college_cr_evidence_lessons.md` — the whole story, five dated sections
-2. `CLAUDE.md` §11 row **College CR evidence**
-3. `docs/kb-notes/methodology-a-frequency-is-not-a-rule.md`
-4. `docs/kb-notes/methodology-one-ranked-list-cannot-answer-two-questions.md`
-
-## Jessica's rulings this run — these are inputs, not narrative
-
-| Ruling | Where it lives |
+| ruling | what it settles |
 |---|---|
-| **Hours >1 unit from the course → NOT LISTED.** Exactly one apart → keep, lower score. | `UNIT_GAP_DROP` / `UNIT_GAP_PENALTY` in the matcher |
-| **A CR may serve several courses; a course may take several CRs; any combination.** | `cpl_memory` `a-cr-can-serve-several-courses-and-a-course-several-crs` (verified, verified_by Jessica) |
-| **Hold off on combinations** that sum to the units — *"we were overanalyzing"* | unbuilt, and measured as reaching only 4 of 127 courses |
-| **Award on the CR printed on the JST, not the MOS** — a service member holds several MOSs | the whole output is CR-keyed |
-| **Do not emphasize the ACE exhibit ID**; lead with the CR and the college count | header carries no exhibits; ID lives inside a hover |
-| **Units beside the course title, same font size** | `unitsCell()` |
+| **`Potential Student` = Yes IS the origin filter, for now** | *"our temporary field indicating it was submitted from a landing page or the portal … count every instance of Yes as meeting these metrics."* The Access metric was never unmeasurable. |
+| **`Origin` + `LocID2` are coming** | Explicit origins (Student Portal / Landing Page / Batch / College Entered) plus a `LocID2` naming the noncredit location. *"all three count the NC FTES only if they have a Yes."* |
+| **Row shape: Option A** | A second **NC row per college**, not extra lines inside each P-cell. |
+| **Display** | CR/NC chips (not "Credit"/"Noncredit") · Tgt and Now folded onto aligned lines · abbreviated `$99.7K` · **bold only on the Total column**. |
+| **Draft-model posture (carried from 198)** | A missing upstream field is not a blocker and not a design flaw — *"freedom to play to pay"* — but values must calculate **correctly on available data**. An absent number is fine; a plausible wrong one never is. |
+
+## ⛔ What was actually broken, and is now fixed
+
+Sam's Year-1 **Access** metric asks for *applied* units from portal / landing
+page / batch upload. `measurability()` matched its prose, hit "Landing Page"
+first, and resolved to **`pp_u`** — portal-origin **transcribed** units, 25.0
+across 3 of 105 colleges. **All 115 colleges read $0** on the priority holding
+share 0.34 (**$7,969,705**), and under front-load that is the whole window.
+
+⚠️ **The direction matters.** Read as a genuine data gap it would have *advanced
+the full cap*; resolving to a real key paid $0 instead. The mis-resolution
+flipped roughly a third of the pool from "advances" to "earns nothing" —
+silently, because a low number on a new program looks like the program being new.
+
+⚠️ **And my first fix was wrong.** I proposed pinning it to `pa_u`. But every
+metric in the builder except `pp` carries `and not is_potential`:
+
+```python
+("pe",  ecr > 0 and not is_potential),
+("pa",  acr > 0 and not is_potential),
+("pp",  tcr > 0 and     is_potential),   # only portal measure — TRANSCRIBED
+```
+
+**`pa` and `ppa` are DISJOINT cohorts**, not superset and subset. `pa_u` would
+have scored Access on exactly the students its wording excludes. New
+`ppa`/`ppa_u` is the mirror: applied units where `Potential Student = Yes`.
+
+**Live now:** `ppa_u` = **108 students / 661.5 units / 52 of 105 colleges**;
+Access went from 115 "no feed" to **12 earning, 0 no-feed**, MILESTONE warning
+cleared.
+
+## What shipped
+
+- **`metric_src`** — a priority pins its measure instead of having it inferred.
+  Registry `METRIC_SOURCES`; `""` un-pins; an unknown pin is a loud `bad_src`
+  earning **$0, never a full-cap advance**; a declared-but-undelivered source is
+  `undelivered` (Sam's NC ruling: targets shown, $0 earned, not an advance).
+- **MILESTONE-agreement check** — the second axis beside the UNIT check. The
+  funnel has three rungs and the tab guarded only the unit axis.
+- **`ppa`/`ppa_u`** in `funding/_build_funding_performance.py`, `NO_SUPPRESS`
+  alongside `pp` (same people, different rung — suppressing costs small-portal
+  colleges their Access money).
+- Pin written to the **live Supabase config** via `jsonb_set` on the single path.
+
+## ⚠️ Safety patterns this run earned
+
+- **A pin belongs with its metric, NOT in the bake.** `cpl_funding_data.js` is
+  stale by design — its slot-2 metric is *headcount/transcribed* while live slot
+  2 is *applied/units*. A baked pin lands on whichever metric occupies the slot;
+  mine turned **nine assertions across three suites red**, correctly.
+- **A guard that has never been made to fail is not a guard.** Two of mine passed
+  with the fix deleted — one read source text instead of exercising the CSV, one
+  used a fixture whose prose already produced the right answer. Twelve mutations
+  run in total across both PRs.
+- **When you have predicted the output, inspection stops working.** New KB note:
+  `methodology-a-defect-that-produces-the-expected-value-is-invisible`.
+- **The stop-hook "N unpushed commits" nag has a real fix**, not just a dismissal:
+  `git remote prune origin` clears the stale remote-tracking ref left when GitHub
+  auto-deletes a merged branch. `docs/reference/troubleshooting.md` still says
+  only "confirm and dismiss" — worth updating.
+- Verify layout in **Chromium**, not jsdom (`/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
+  via `executablePath`; the repo pins a newer Playwright than the preinstalled build).
+
+## Priority workstream — NC lane, build step 2
+
+**Blocked on ONE thing: the NC shares.** Nothing has been ruled. Inheriting
+credit's 34/33/33 is the obvious default and keeps one number to change, but Sam
+has not said so. Ask, then build:
+
+1. NC priorities earn against `nc_pe_u` / `nc_pa_u` / `nc_pt_u` — declared in
+   `METRIC_SOURCES`, emitted by nothing, so they read `$0 · no feed` honestly
+   until `LocID2` lands. **No synthetic data, no placeholder to remove.**
+2. Render the **Option A** second row (mock:
+   `https://claude.ai/code/artifact/7c62ff4f-12ce-4574-8821-86c667109df9`).
+3. ⚠️ `share` splits the MONEY, not the FTES. **Route, don't split.**
 
 ## Carryover
 
-1. ⛔ **NCCER catalog — BLOCKED, needs a human.** `https://www.nccer.org/media/2026/03/NCCER-FULL-CATALOG-2026.pdf`
-   is **egress-blocked** (403 at the proxy); `WebFetch` refuses it too. Jessica must attach
-   the PDF to a session. Goal: certification → module → CR table. What we already hold:
-   **19 NCCER credentials**, **14 statewide with published recs and ZERO adopters**; only
-   **Welding Levels 1–4** are articulated, by three colleges (Bakersfield, Barstow,
-   Santa Ana). ⭐ The statewide recs are **already at roughly module grain** (*Thermal Cutting
-   Processes*, *Printreading and Welding Symbols Interpretation*); MAP records NCCER only at
-   the **level** grain, which is why the module evidence disappears.
-2. **Ask LATTC about 5 course numbers** whose COCI title is a different course —
-   `BLDGCTQ105` (*Basic Blueprints* vs COCI *CPR/AED/First Aid*), `BLDGCTQ600`,
-   `WATER001`/`002` (*Modern Water Works*), `ECONMT191`. Flagged on each card.
-3. **8 courses have no COCI units** — deliberately unfiltered by the unit rule.
-4. **CI `test` check red on #1365 — not this PR's, do not chase it.** Two comments on the PR
-   carry the full account. Faithful reproduction (this branch, fresh install, **Node 20.20.2**
-   = what CI resolves): **276 files, 0 failures**. The re-run has been spent. The branch adds
-   **no JavaScript**; `tests/run.js` globs `tests/*.test.js` only. `js-tests.yml` is
-   **non-required** by its own header.
+- **Year-1 P3's strategy list still names *"noncredit mirror courses"*** — one
+  line to move into NC's own strategies when the lane goes live.
+- **Sam's phone check** on the Fact Sheet + Sierra/veteran-map pages.
+- **TruffleHog stalled ~30 min** on #1364 (queued, never started). It also runs
+  on push to `main`, so the merge commit was scanned. Watch whether it recurs.
+- Jessica was working **Military CPL** in a parallel session on 2026-08-27 — no
+  file overlap with this run, but check before touching ACE surfaces.
 
-## Patterns that worked
+## Docs to read, in order
 
-- **Run the page in a real browser.** Chromium is at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`
-  — pass `executable_path`, never `playwright install`. Four defects were browser-only:
-  hover-open fighting click-toggle (touch never worked at all), a scroll handler closing a
-  popover before the click landed, a duplicate flagged on one card of a pair, and a
-  units-vs-title font mismatch.
-- **Measure the domain question instead of answering it.** *"Do welding programs have a
-  lecture+lab pair?"* → 1,198 welding courses at 79 colleges; 55 lab-titled at 17 colleges;
-  of 19 `L`-suffixed numbers exactly **one** has a lecture counterpart.
-- **A units join is also a course-identity check.** The second finding was free and worth
-  more than the first.
-
-## Safety patterns to honor
-
-- A **regex-scoped extract is fine until the thing it scopes changes size** — widening the
-  shortlists left **184 of 299** recommendations without a college list. Both lookups now
-  cover all **7,155**.
-- **Never pin an assertion to a value that can leave the data.** Three broke this run.
-- **`kb/college_cr_evidence/` artifacts are committed** — that is deliberate (they are the
-  deliverable, not a build output), but keep them out of any `**/*.md` vault-materialize rule.
-
-## Next concrete step
-
-**Ask Jessica for the NCCER PDF.** Everything else is either with LATTC or with Sam.
+1. `CLAUDE.md` §11 — the funding row (compacted this run; it states current truth)
+2. `docs/cpl_funding_lessons.md` — the 2026-08-27 sections, both of them
+3. `docs/kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md`
+4. `cpl_memory` — query `tags && array['cpl-funding']` **before** touching this
 
 ## Moniker
 
-SkyMatch → yours to claim. **SkyLevel** fits if you take the NCCER lane (certificate levels
-and their modules). Coin your own if you'd rather.
+I took **SkyPin** — the run was about pinning a measure instead of inferring it.
+Yours is open.
+
+**Next is Session 200 — `docs/session_200_handoff.md`.**

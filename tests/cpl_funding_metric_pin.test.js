@@ -21,7 +21,7 @@
 // indistinguishable by eye.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
-const { check, freshDom, boot, consumerSrc, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
 
 // ── 1. the defect itself, against the REAL predicates ────────────────────────
 // Rebuilt out of the consumer so this cannot drift into testing a copy.
@@ -228,49 +228,125 @@ check("5d: the drill-in does not claim 'no CPL posted' when nothing was measured
     !!diag && diag.hasAttribute("open"));
 }
 
-// ── 7. MILESTONE agreement — the live defect this PR found ───────────────────
+// ── 7. MILESTONE agreement, and the live Access metric now PINNED ───────────
 // MAP's funnel is eligible -> applied -> transcribed, three different quantities
 // (statewide 1,382,125 / 223,384 / 80,338 units). A metric naming one rung and a
 // measure returning another scores the right college on the wrong thing.
 //
-// ⚠️ Sam's LIVE Year-1 Access metric does exactly this, and it is the priority
-// with the largest share (0.34).
+// Sam's live Year-1 Access metric did exactly this. It is now pinned to `ppa_u`
+// in the baked defaults, so this section asserts BOTH halves: the defect still
+// reproduces on an unpinned slot (so the guard keeps its teeth), and the pinned
+// slot is clean.
 const LIVE_ACCESS = "Applied units measured in FTES for students originating from " +
   "either CPL Portal, College CPL Landing Page, or batch upload";
-check("7a: the live Access metric still resolves to a TRANSCRIBED measure (pp_u)",
+check("7a: prose matching still sends the live Access metric to a TRANSCRIBED measure",
   proseMeasure(LIVE_ACCESS).src === "pp_u");
+// ⚠️ THE PIN DOES NOT BELONG IN THE BAKE, and an attempt to put it there is what
+// proved it. cpl_funding_data.js is stale BY DESIGN: its slot-2 metric is the old
+// "Headcount ... transcribed Credit from either CPL Student Portal or CPL Landing
+// Page" — a HEADCOUNT/TRANSCRIBED metric — while the live config's slot 2 is Sam's
+// APPLIED/UNITS one. A pin lands on whichever metric occupies the slot, so pinning
+// `ppa_u` there attached a units/applied key to a headcount/transcribed metric and
+// broke nine existing assertions across three suites. The pin lives with the
+// metric it was chosen for: the live Supabase config.
+check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin is for",
+  !(D.year_priorities["1"][2] || {}).metric_src &&
+  !(D.year_priorities["2"][2] || {}).metric_src &&
+  /Headcount/.test((D.year_priorities["1"][2] || {}).metric || ""));
 {
   const { window } = freshDom();
-  // The REAL published artifact, so the numbers are the live ones.
   const fs = require("fs");
   new Function("window", fs.readFileSync("cpl_funding_performance.js", "utf8")).call(window, window);
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  // Slot 0 is UNPINNED in the bake, so putting the Access prose there reproduces
+  // the historical defect; slot 2 keeps its baked `ppa_u` pin.
+  const LIVE = {
+    "0": { metric: LIVE_ACCESS, share: 0.33, factor: 0.5 },
+    "1": { metric: "Transcribed CPL Units measured in FTES", share: 0.33, factor: 0.5 },
+    "2": { metric: LIVE_ACCESS, share: 0.34, factor: 0.5, metric_src: "ppa_u" }
+  };
+  T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
+  T.render();
+  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  const cells = rows.map((r) => Array.from(r.querySelectorAll("td")));
+  const unpinned = cells.map((c) => c[4].textContent);
+  const pinned   = cells.map((c) => c[6].textContent);
+  check("7b: UNPINNED, the live Access prose still reads 0 FTES for every college",
+    rows.length > 100 && unpinned.every((t) => /Now 0 FTES/.test(t)));
+  // ⚠️ THIS ASSERTION USED TO READ "every pinned cell says 'no feed'", which was
+  // true only while ppa_u was undelivered. The cron delivered it hours later and
+  // the guard went red on a change that was the feature working. An assertion
+  // pinned to a value that can leave the data stops being a guard the moment it
+  // does — so assert the INVARIANT instead: the pin resolves somewhere other than
+  // the prose does. Whether that source is delivered yet is section 3e/8's job.
+  check("7c: PINNED, the same prose does NOT land on the prose matcher's answer",
+    pinned.some((t, i) => t !== unpinned[i]));
+  check("7c2: and the pinned column is never the unpinned one's universal zero",
+    !pinned.every((t) => /Now 0 FTES/.test(t)));
+  const diag = doc.querySelector(".cplfund-metricdiag");
+  const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
+  const mm = lis.filter((t) => /MILESTONE MISMATCH/.test(t));
+  check("7d: the diagnostic flags the unpinned slot and only that slot",
+    mm.length === 2 && mm.every((t) => /P1/.test(t)));
+  check("7e: and the pinned Access slot is NOT flagged",
+    !lis.some((t) => /P3/.test(t) && /MILESTONE MISMATCH/.test(t)));
+}
+// ── 8. the pin activates itself when the feed catches up ─────────────────────
+// `ppa_u` is emitted by funding/_build_funding_performance.py but the published
+// artifact predates it, so today the pin is DECLARED-BUT-UNDELIVERED ($0, "no
+// feed"). It must start earning with no code change the moment the cron
+// regenerates the artifact — that is the whole point of pinning a named key.
+{
+  const { window } = freshDom();
+  const fs = require("fs");
+  const w = {};
+  new Function("window", fs.readFileSync("cpl_funding_performance.js", "utf8")).call(w, w);
+  const perf = JSON.parse(JSON.stringify(w.CPL_FUNDING_PERF));
+  perf.statewide.ppa_u = 9000;
+  Object.keys(perf.colleges).forEach((c, i) => { perf.colleges[c].ppa_u = 40 + i * 3; });
+  window.CPL_FUNDING_PERF = perf;
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const LIVE = {
     "0": { metric: "Eligible CPL Units measured in FTES", share: 0.33, factor: 0.5 },
     "1": { metric: "Transcribed CPL Units measured in FTES", share: 0.33, factor: 0.5 },
-    "2": { metric: LIVE_ACCESS, share: 0.34, factor: 0.5 }
+    "2": { metric: LIVE_ACCESS, share: 0.34, factor: 0.5, metric_src: "ppa_u" }
   };
   T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
   T.render();
-  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const zero = rows.filter((r) => /Now 0 FTES/.test(Array.from(r.querySelectorAll("td"))[6].textContent));
-  check("7b: and every college in the system reads 0 FTES on it — the symptom nobody could see",
-    rows.length > 100 && zero.length === rows.length);
-  const diag = doc.querySelector(".cplfund-metricdiag");
-  check("7c: the diagnostic now names it a MILESTONE MISMATCH instead of a clean ✔",
-    !!diag && /MILESTONE MISMATCH/.test(diag.textContent) &&
-    /asks for APPLIED CPL but pp_u returns transcribed/.test(diag.textContent));
-  check("7d: and the panel opens itself, because this is a live risk",
-    !!diag && diag.hasAttribute("open"));
-  // Fires on P3 in BOTH years (the config mirrors), and on nothing else — the
-  // eligible and transcribed metrics resolve to their own rungs and stay clean.
-  const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
-  check("7e: it fires on the Access slot in both years and on nothing else",
-    lis.filter((t) => /MILESTONE MISMATCH/.test(t)).length === 2 &&
-    lis.filter((t) => /MILESTONE MISMATCH/.test(t)).every((t) => /P3/.test(t)));
-  check("7f: the four honest priorities stay a clean ✔",
-    lis.filter((t) => /✔ measurable/.test(t) && !/MISMATCH/.test(t)).length === 4);
+  const pinned = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .map((r) => Array.from(r.querySelectorAll("td"))[6].textContent);
+  check("8a: with ppa_u present the Access column starts earning, no code change",
+    pinned.some((t) => /Now [\d,.]+ FTES/.test(t)) && !pinned.some((t) => /no feed/.test(t)));
+  check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
+    /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
+  check("8c: the registry records that ppa is NOT a filtered pa (disjoint cohorts)",
+    /NOT a filtered `pa`/.test(consumerSrc) && /DISJOINT cohorts/.test(consumerSrc));
+}
+
+// ── 9. a pin can be CLEARED from an override layer ──────────────────────────
+// firstDefined() skips null and undefined, so without a sentinel an override
+// could ADD a pin but never REMOVE one — a curator could not un-pin on the tab.
+check("9a: an empty-string metric_src clears the pin rather than being an unknown key",
+  /if \(pin === ""\) pin = null;/.test(consumerSrc));
+{
+  const { window } = freshDom();
+  window.CPL_FUNDING_PERF = { as_of: "2026-08-27", suppress_below: 5,
+    statewide: { pa_u: 500000 }, colleges: { "Laney": { pa_u: 12000 } }, unmatched: {} };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ yearPriorities: { "1": {
+    "0": { metric: "Applied CPL Units as FTES", metric_src: "" },
+    "1": { metric: "Headcount with CPL Matched in MAP and MIS" },
+    "2": { metric: "Headcount with CPL Matched in MAP and MIS" }
+  } } });
+  T.render();
+  const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .find((r) => /Laney/.test(r.textContent));
+  const c = Array.from(row.querySelectorAll("td"))[4].textContent;
+  check("9b: a cleared pin falls back to the prose matcher, not to 'not wired'",
+    !/not wired/.test(c) && /Now 400 FTES/.test(c));
 }
 
 finish("cpl_funding_metric_pin");

@@ -1,8 +1,8 @@
 {
  "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
- "_as_of": "2026-08-27 (later) · LATTC sent 139 courses they will award for military training and no evidence for any of them, which is the thing colleges keep getting stuck on: they know a course qualifies, they just do not keep the credit recommendation that MAP needs to record it. There is now a tool that proposes one per course from what ACE publishes and what other colleges have already done — 87 of the 139 have a recommendation a named peer college has used, 46 have one nobody has claimed yet, and 6 need a person. Jessica set the rule that a recommendation more than one unit away from the course is not offered at all. Earlier items on this list belong to a separate session running at the same time and have been left alone.",
- "_session": 196,
- "_status": "LATTC worklist delivered and live; NCCER blocked on a PDF nobody here can download. Everything above the LATTC items belongs to a parallel session.",
+ "_as_of": "2026-08-27 (SkyPin) · Two workstreams ran today. The funding items above come from the session that fixed the Access measure. Separately, LATTC sent 139 courses they will award for military training and no evidence for any of them — the thing colleges keep getting stuck on: they know a course qualifies, they just do not keep the credit recommendation MAP needs to record it. There is now a tool that proposes one per course from what ACE publishes and what other colleges have already done: 87 of the 139 have a recommendation a named peer college has used, 46 have one nobody has claimed yet, and 6 need a person. Jessica set the rule that a recommendation more than one unit away from the course is not offered at all.",
+ "_session": 199,
+ "_status": "The noncredit lane is one decision away from being built. Sam has chosen how it should look on the college table (a second row per college, under the credit row) and how it should be measured, but not how the money splits across its three priorities. Everything else is merged and live. The noncredit figures will read zero until MAP delivers the field that identifies a noncredit location — that is expected, and the page says \"no feed\" rather than pretending it is a measurement. Also open: the LATTC worklist is delivered and live; the NCCER catalog is blocked on a PDF nobody here can download.",
  "items": [
   {
    "id": "s196-sam-55050-send",
@@ -41,12 +41,6 @@
    "text": "The memory entries are now readable end to end in plain English — 202 were rewritten, and there are no entries left without plain text, none with developer jargon, and no British spellings. The hopper of unreviewed entries is worth an afternoon whenever you have one. Two small things still need you: one entry is marked stale but still carries a verification stamp, which needs your go to clear, and 26 verified entries do not name who verified them."
   },
   {
-   "id": "s196-fable-map-load",
-   "for": "Fable",
-   "tab": "map-data-quality",
-   "text": "The nightly load of the MAP custom reports failed: MAP returned the student-details dataset twice and left out the exhibit-by-catalog-year one entirely, so the run stopped rather than publishing a partial picture — which is the gate working. Needs a look at whether the report itself was renamed on MAP's side."
-  },
-  {
    "id": "s195-sam-credit-alert",
    "for": "Sam",
    "tab": "cpl-assistant",
@@ -67,29 +61,34 @@
  ],
  "for_sam": [
   {
+   "id": "nc-shares",
+   "title": "Decide how noncredit's money splits across its three priorities",
+   "note": "THE ONE THING BLOCKING THE BUILD. The credit side splits 34/33/33 between Access, Outreach and Success. Noncredit can inherit those, which keeps it to one number to change later, or have its own. Nothing has been decided and everything else for the noncredit lane is ready."
+  },
+  {
    "id": "nc-floor",
    "title": "Decide the noncredit minimum award",
-   "note": "At $50,000, 30 of the 33 noncredit institutions sit exactly on the minimum and growth does not start paying until 3,909 FTES — which is the opposite of the incentive you wanted. At $15,000 nobody is on the minimum and growth pays from 384 FTES. $60,000 is not affordable at all. Opening it to every noncredit institution does not work at this pot: even at full parity it buys about $16,000 each."
+   "note": "Still open. At $50,000, 30 of the 33 noncredit institutions sit exactly on the minimum and growth does not start paying until 3,909 FTES — the opposite of the incentive you wanted. At $15,000 nobody is on the minimum and growth pays from 384 FTES. $60,000 is not affordable at all."
   },
   {
    "id": "nc-mirror-strategy",
-   "title": "Remove \"noncredit mirror courses\" from the credit lane's strategy list when noncredit goes live",
-   "note": "Priority 3 currently invites colleges to bank noncredit work under the credit lane. Today that is not double-counting, it is single-counting in the wrong lane — which is the stepchild problem itself."
+   "title": "Move the noncredit line out of the credit priority's strategy list",
+   "note": "Year-1 Access still lists \"noncredit mirror courses\" among the things a college can do to earn credit-side money. Harmless today, but it belongs to the noncredit lane the moment that lane goes live. One line."
   },
   {
    "id": "itpi-locid",
-   "title": "Watch for ITPI on the origination ID",
-   "note": "Pedro has the request and says it will take longer than tonight's fix. The one question only they can answer: can a college have a SECOND, noncredit landing page with its own ID, or is that only available to standalone institutions like North Orange and San Diego Continuing Education? That decides whether this reaches about 108 colleges or just a handful."
+   "title": "ITPI: can a college have its own noncredit landing page?",
+   "note": "Only ITPI can answer. MAP is adding a field naming which noncredit location a student came from. Whether an ordinary college can have a second, noncredit landing page — or only the standalone institutions like NOCE and SDCCE — decides whether this covers about 108 colleges or a handful."
   },
   {
    "id": "phone-check",
-   "title": "Open the Fact Sheet and the Sierra / veteran-map pages on your phone",
-   "note": "Both were audited and fixed, and no session can check them — the sandbox cannot reach the live site. This is the only step left on either, which is why both moved out of the always-loaded notes today."
+   "title": "Look at the Fact Sheet and Sierra pages on your phone",
+   "note": "Both were reworked for small screens and checked by measurement, but nobody has actually held them in a hand. Carried from the last two sessions."
   },
   {
    "id": "memory-false-stamp",
-   "title": "One memory row still carries a false verification stamp",
-   "note": "Marked stale and verified by 'curator' at the same time. Awaiting your go. The eleven rows verified by you or Jenni are real attribution and must never be swept."
+   "title": "One memory entry carries a stamp that is not true",
+   "note": "It is marked as checked by a curator while also being marked out of date. Needs your call on which it is. The eleven entries credited to you and Jenni are real attribution and should never be swept."
   },
   {
    "id": "lattc-cr-evidence-review",
@@ -109,34 +108,34 @@
  ],
  "for_fable": [
   {
+   "id": "nc-earn-and-row",
+   "title": "Build the noncredit lane earning, and its row on the college table",
+   "note": "Waiting only on Sam's split above. The measures are already declared and deliberately empty, so they will read \"no feed\" until MAP delivers the location field and then start working with no further change. The row shape is decided: a second row per college under the credit row, with short CR and NC labels."
+  },
+  {
    "id": "cron-drop-alarm",
-   "title": "Build an alarm for a scheduled job that never ran",
-   "note": "Sam asked for this, and not on the site header. The hard part: a job that never starts leaves no failure and nothing queued, so there is nothing for GitHub to tell anyone about — silence looks exactly like success. So the alarm has to create a failure on purpose. Hang it off a job that DOES still run (the every-3-hours one gets eight chances a day where a daily job gets one), work out what is overdue from the schedules themselves rather than a list someone has to remember to update, and only shout when a job has missed EVERY attempt — being a few hours late is normal here."
+   "title": "An alarm for when a scheduled job silently does not run",
+   "note": "Still not built. A dropped run leaves nothing behind — no failure, nothing queued — so silence and success look identical. It has to be attached to a job that still runs, work out what is overdue from the schedules themselves rather than a list someone maintains, and only complain when every attempt in a day is missed."
   },
   {
-   "id": "nc-src-first",
-   "title": "Give a priority an explicit data source, then build the noncredit lane",
-   "note": "FIRST. The model currently works out which data to measure a priority against by matching words in the priority's own text, and all three noncredit metrics match the CREDIT data — a wrong number that looks right. Then noncredit earns, then the display."
-  },
-  {
-   "id": "nc-display",
-   "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
-   "note": "Sam's ruling, and his own mechanism, which he improved twice: add the noncredit origin field to the database now, empty, and calculate from it. Nothing is invented — 'units where the origin is recorded' is honestly zero today, and the day the real data arrives the same calculation just starts returning numbers, with nothing to swap out. It also means the page can PROVE it is waiting rather than claiming it: if the column is empty everywhere, that is the evidence. Put the field on both tables, and treat adding it as a deliberate step — it is a live table with student-level data in it."
+   "id": "troubleshooting-prune",
+   "title": "Write down the real fix for the repeated 'unpushed commits' warning",
+   "note": "The warning after a merge is caused by a leftover local pointer to the branch GitHub deleted. One command clears it for good. The troubleshooting notes currently say only to confirm it and ignore it, which means every session re-diagnoses it."
   },
   {
    "id": "signin-click",
-   "title": "Sign-in email box cannot be clicked into — only reached by tab",
-   "note": "The box is being rebuilt underneath the pointer. Someone already noticed and preserved what you had typed across the rebuild, but not where the cursor was."
+   "title": "The sign-in email button does not respond to a click",
+   "note": "Reported by Sam, not yet fixed. Clicking fails while tabbing to it works, which points at the field being rebuilt underneath the pointer."
   },
   {
    "id": "unlock-noresponse",
    "title": "The unlock control on the funding tab does not respond",
-   "note": "A real defect — that tab does use the team phrase. Worth asking Sam which control he clicked; the tab's own button says 'Unlock team editing'."
+   "note": "Reported by Sam, not yet fixed."
   },
   {
    "id": "funding-a11y",
-   "title": "Accessibility and mobile: the funding tab and the site header",
-   "note": "The header behaves oddly on zoom. Needs the browser-driven check, not the test suite — the suite cannot see layout at all."
+   "title": "Check the funding tab on a phone, and the header at high zoom",
+   "note": "Not audited. Needs a real browser — the automated tests cannot see layout at all."
   },
   {
    "id": "cr-evidence-next-college",

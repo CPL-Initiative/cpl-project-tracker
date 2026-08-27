@@ -9,33 +9,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 672,
-    "bytes": 7608595,
-    "over_budget": 4,
-    "handoff_max": 199,
+    "files": 673,
+    "bytes": 7624213,
+    "over_budget": 5,
+    "handoff_max": 200,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 148843,
+    "always_loaded_bytes": 148488,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 148843,
+        "bytes": 148488,
         "over": 1
       },
       "other": {
         "files": 87,
-        "bytes": 2086526,
-        "over": 1
+        "bytes": 2131962,
+        "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 269455,
+        "bytes": 270867,
         "over": 1
       },
       "lessons": {
         "files": 70,
-        "bytes": 1856563,
+        "bytes": 1818366,
         "over": 1
       },
       "kb_note": {
@@ -44,22 +44,21 @@
         "over": 0
       },
       "handoff": {
-        "files": 176,
-        "bytes": 1465303,
+        "files": 177,
+        "bytes": 1472625,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
-      "stacked_roadmap_cell": 1,
+      "oversized_doc": 5,
       "american_spelling": 171,
       "kb_note_dialect": 60,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2317,
-      "bytes": 1231413857,
-      "heavy_bytes": 598638606,
+      "files": 2319,
+      "bytes": 1231447837,
+      "heavy_bytes": 598638592,
       "heavy_share": 0.486,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -115,44 +114,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 148843,
+        "bytes": 148488,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 88843,
-        "ratio": 2.48
+        "over_by": 88488,
+        "ratio": 2.47
       },
-      "message": "148,843 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
-      "rule": "stacked_roadmap_cell",
-      "fixable": false,
-      "detail": {
-        "cells": [
-          {
-            "row": "Implementation Funding tab / the $35M mo",
-            "chars": 4317,
-            "priors": 0,
-            "corrections": 0
-          }
-        ],
-        "cell_max": 4000,
-        "prior_max": 1
-      },
-      "message": "1 roadmap cell(s) have become append-only logs — worst is \"Implementation Funding tab / the $35M mo\" at 4,317 chars / 0 *Prior:* markers. A cell must state CURRENT truth; retire superseded text to the lessons doc instead of prefixing it. Contradictory claims inside one auto-loaded file are why the same correction gets made twice.",
+      "message": "148,488 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 269455,
+        "bytes": 270867,
         "limit": 40000,
         "lane": "index",
-        "over_by": 229455,
-        "ratio": 6.74
+        "over_by": 230867,
+        "ratio": 6.77
       },
-      "message": "269,455 B is 6.7× the index budget (40,000 B) — candidate for compaction",
+      "message": "270,867 B is 6.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -361,15 +342,11 @@
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 4,
+        "total": 3,
         "forms": {
           "colour": {
             "n": 1,
             "prefer": "color"
-          },
-          "behaviour": {
-            "n": 1,
-            "prefer": "behavior"
           },
           "recognis": {
             "n": 1,
@@ -381,15 +358,32 @@
           }
         }
       },
-      "message": "4 British forms — colour→color, behaviour→behavior, recognis→recogniz, modelling→modeling",
+      "message": "3 British forms — colour→color, recognis→recogniz, modelling→modeling",
       "path": "docs/cpl_funding_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 174429,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 24429,
+        "ratio": 1.16
+      },
+      "message": "174,429 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 4,
         "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
           "normalis": {
             "n": 1,
             "prefer": "normaliz"
@@ -404,7 +398,7 @@
           }
         }
       },
-      "message": "3 British forms — normalis→normaliz, labelled→labeled, enrol→enroll",
+      "message": "4 British forms — behaviour→behavior, normalis→normaliz, labelled→labeled, enrol→enroll",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -4098,10 +4092,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694826,
+        "bytes": 8694850,
         "kind": "file"
       },
-      "message": "8,694,826 B single file inside the vault"
+      "message": "8,694,850 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4318,10 +4312,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354207,
+        "bytes": 2354169,
         "kind": "file"
       },
-      "message": "2,354,207 B single file inside the vault"
+      "message": "2,354,169 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

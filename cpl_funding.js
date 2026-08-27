@@ -3712,6 +3712,20 @@
     pa_u: { unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
     p3_u: { unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
     pp_u: { unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    // ── the Access measure (2026-08-27, Sam) ───────────────────────────────
+    // APPLIED units among portal-origin students — what the Year-1 Access
+    // metric has asked for since it was written. Sam: "Potential Student ... is
+    // our temporary field indicating it was submitted from a landing page or the
+    // portal ... count every instance of Yes as meeting these metrics."
+    //
+    // ⚠️ NOT a filtered `pa`. pe/pa/p2/p3 all carry `and not is_potential` in the
+    // builder, so they EXCLUDE portal-origin students; `pa` and `ppa` are
+    // DISJOINT cohorts. Scoring Access on `pa` would measure exactly the students
+    // the metric excludes. Pinned by tests/funding_portal_applied_test.py.
+    ppa:   { unit: "students", milestone: "applied",
+             basis: "portal-origin students (Potential Student = Yes) with CPL applied in MAP" },
+    ppa_u: { unit: "units", milestone: "applied",
+             basis: "units of CPL APPLIED for portal-origin students (via the CPL Student Portal / Landing Page)" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
     // against the same three milestones, filtered to students who originated
@@ -3736,6 +3750,12 @@
     // static artifact built from the daily MAP pull. A NULL column in Supabase
     // would have wired nothing here. The funding lane's equivalent of his NULL
     // column is exactly this: a declared source the feed does not carry yet.
+    // ⏭ WHAT REPLACES `Potential Student` (Sam, 2026-08-27): MAP is shipping an
+    // explicit `Origin` (Student Portal / Landing Page / Batch / College Entered)
+    // plus a `LocID2` naming the noncredit location a record came from. At that
+    // point `ppa_u` narrows from "Yes" to the named origins, and the three
+    // measures below become the same rung cut by LocID2 — one builder change,
+    // no consumer change, because the pin already names the key.
     nc_pe_u: { unit: "units", lane: "nc", milestone: "eligible",
                basis: "units of eligible CPL for students originating from a noncredit landing page" },
     nc_pa_u: { unit: "units", lane: "nc", milestone: "applied",
@@ -3793,7 +3813,12 @@
   // metric TEXT, and a signature that silently accepts "no pin supplied" from
   // those would make the pin look optional at the sites where it is not.
   function measureOf(p) {
+    // An empty string CLEARS a pin. firstDefined() deliberately skips null and
+    // undefined, so without a sentinel an override layer could ADD a pin but
+    // never REMOVE one — a curator could not un-pin on the tab, and a lower
+    // layer's pin would be permanent. "" is the un-pin.
     var pin = p && p.metric_src;
+    if (pin === "") pin = null;
     if (pin) {
       var reg = METRIC_SOURCES[pin];
       if (!reg) {
