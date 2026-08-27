@@ -286,3 +286,41 @@ of 1-unit practice courses, not companions to a lecture.**
 **So the honest treatment for LATTC's four 1-unit labs is a small recommendation each, not a
 share of a 3-hour one** — and, because they are a progression, four *different* ones. That
 is a faculty call, but it is now a call made against measured practice instead of intuition.
+
+### 2026-08-27, the correction — reuse is allowed, and small courses were being starved
+
+*"We can utilize a credit recommendation for multiple courses or multiple credit
+recommendations for 1 course or any combination like that. Can you please take another look
+… recommend the lower unit courses like a 1 unit lab with any or all courses. We just want
+to make it easy for them to create articulation for these lower unit courses."* (Jessica).
+
+⭐ **I INFERRED A PROHIBITION FROM A FREQUENCY.** The peer reading was right — of 900
+(college, recommendation) pairs only 54 span more than one course, and those are
+cross-listings and catalog duplicates. What I then did with it was wrong: I turned *colleges
+rarely do this* into *this must not be done*, and shipped it as a duplicate **warning** plus
+a bulk-fill that **skipped any recommendation already claimed**. MAP permits many-to-many;
+the curator knew that and I did not ask. `CLAUDE.md` already says a team member's domain
+knowledge outranks a derived finding — this is what that looks like in practice. Recorded as
+`cpl_memory` `a-cr-can-serve-several-courses-and-a-course-several-crs`, verified, sourced to
+Jessica.
+
+⚠️ **AND THE SAME RANKING WAS STARVING THE SMALL COURSES.** Confidence rewards how widely a
+recommendation is held; the widely-held recommendations are the **3-hour** ones; so a 1- or
+2-unit course's best-fitting option sinks below the cut. Showing the top 6 by confidence hid
+**22 exact-hour matches** on one 2-unit carpentry course, and hid the *only* unit-matched
+option on **12 courses — 5 of them at ≤2 units**, i.e. precisely the courses Jessica asked
+to make easy. **A single ranked list cannot serve two different questions.** Each card now
+carries the top five by confidence **plus** up to five whose hours *equal* its units, marked
+`fits your units`. Courses showing an exact-hour option: **107 → 119 of 127**; at ≤2 units,
+**19 → 24 of 28**.
+
+⚠️ **Combinations that sum to the units are nearly useless here** — with the full pool, only
+**4 of 127** courses are reachable by a 2- or 3-recommendation sum that a single match does
+not already cover, and **0 of the 9** low-unit gaps. Worth measuring, not worth building.
+The eight remaining courses without any exact-hour option are genuinely short of vocabulary,
+not short of search.
+
+**What the page does now:** a course holds **several** recommendations, the header totals
+their hours against the course's units, a recommendation used elsewhere says so **neutrally**
+(`also on N other`), the bulk fill no longer skips anything (it still refuses to bulk-fill
+below High confidence), and a `1–2 unit courses` filter isolates the 28 small ones.

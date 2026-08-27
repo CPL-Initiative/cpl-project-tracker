@@ -189,6 +189,25 @@ def score(title_t, subj_t, rec_t):
     s = 0.45*cov_rec + 0.30*cov_title + 0.25*min(strength,1.0)
     return round(s,4), sorted(strong), sorted(shared-strong), sorted(subj_hit)
 
+def pick_shown(ded, u, top=5, fits=5):
+    """What the card offers: the best few by confidence, PLUS the best few whose
+    HOURS EQUAL THE COURSE'S UNITS even when those rank below the cut.
+
+    ⚠️ Truncating to the top 6 by confidence hid 22 exact-hour matches on a
+    2-unit carpentry course, and hid one entirely on 12 courses (5 of them at
+    ≤2 units) - precisely the small courses that are hardest to articulate and
+    that Jessica asked to make easy. Confidence rewards breadth, and the broad
+    recommendations are the 3-hour ones, so a small course's best-fitting option
+    is systematically pushed down the list."""
+    shown = list(ded[:top])
+    if u is None: return shown
+    have = {c['rec'] for c in shown}
+    extra = [c for c in ded if c.get('unit_fit') == 1.0 and c['rec'] not in have]
+    extra.sort(key=lambda c: -c['confidence'])
+    for c in extra[:fits]:
+        c['fits_units'] = True
+    return shown + extra[:fits]
+
 out = []
 for r in lattc:
     code, title = str(r['Course Subject']), str(r['Course Title'])
@@ -278,7 +297,7 @@ for r in lattc:
                 # carried, because a recommendation on the wrong course number
                 # is worse than no recommendation.
                 'units_flag': units_flag(r), 'divergence_ratio': divergence(r),
-                'candidates': ded[:6], 'n_cand': len(ded)})
+                'candidates': pick_shown(ded, course_units), 'n_cand': len(ded)})
 
 json.dump(out, open('lattc_matches.json','w'), indent=1)
 

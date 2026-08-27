@@ -105,7 +105,8 @@ with sync_playwright() as p:
     btn.click(); pg.wait_for_timeout(200)
     ck('card marked chosen', 'chosen' in (first.get_attribute('class') or ''))
     ck('counter moved to 1', '1 of 139' in pg.locator('#count').inner_text(), pg.locator('#count').inner_text())
-    ck('chosen chip shows the rec', 'Chosen:' in first.locator('.chead').inner_text())
+    ck('chosen chip names the recommendation',
+       '1 chosen' in first.locator('.chead').inner_text(), first.locator('.chead').inner_text()[:80])
     ck('button flips to Chosen', first.locator('.selbtn').first.inner_text().strip().endswith('Chosen'))
 
     # deselect
@@ -119,30 +120,36 @@ with sync_playwright() as p:
        '1 of 139' in pg.locator('#count').inner_text(), pg.locator('#count').inner_text())
 
     # bulk fill only touches High band
-    # Bulk fill must never hand out one recommendation twice - a greedy fill of
-    # every High-band top pick put "3 hours in welding" on 22 courses at once.
-    pg.locator('#pick').click(); pg.wait_for_timeout(700)
+    # Bulk fill takes the best HIGH-band option, preferring one whose hours match
+    # the units. Reuse is allowed, so nothing is skipped for being claimed.
+    pg.locator('#pick').click(); pg.wait_for_timeout(800)
     n = int(pg.locator('#count').inner_text().split(' ')[0])
-    ck('bulk fill chose something', n > 20, n)
-    dups = pg.evaluate("""() => {
+    ck('bulk fill chose the high-confidence courses', n == 86, n)
+    lowband = pg.evaluate("""() => {
+        const D = JSON.parse(document.getElementById('cpl-data').textContent);
         const sel = JSON.parse(localStorage.getItem('lattc_mil_cpl_choices_v1')||'{}');
-        const used = {}; let d = 0;
-        Object.values(sel).forEach(r => { if (used[r]) d++; used[r] = 1; });
-        return d; }""")
-    ck('bulk fill hands out NO recommendation twice', dups==0, dups)
-    ck('and therefore raises no duplicate warning',
-       pg.locator('.warnbox.wb-dup').count()==0, pg.locator('.warnbox.wb-dup').count())
-
-    # choosing the same rec twice BY HAND is flagged
+        let bad = 0;
+        D.courses.forEach(c => (sel[c.code]||[]).forEach(rec => {
+          const cd = c.cands.find(x => x.rec === rec);
+          if (cd && cd.band !== 'High') bad++; }));
+        return bad; }""")
+    ck('bulk fill never puts a non-High recommendation in', lowband==0, lowband)
     pg.locator('#clear').click(); pg.wait_for_timeout(400)
-    pg.fill('#q','welding laborator'); pg.wait_for_timeout(300)
-    labs = pg.locator('article.card:not(.hidden)')
-    if labs.count() >= 2:
-        for i in range(2):
-            labs.nth(i).locator('.selbtn').first.click(); pg.wait_for_timeout(280)
-        ck('picking one recommendation for two courses is flagged',
-           pg.locator('.warnbox.wb-dup').count() >= 2, pg.locator('.warnbox.wb-dup').count())
-    pg.locator('#clear').click(); pg.fill('#q',''); pg.wait_for_timeout(400)
+
+    # MULTI-SELECT: a course may carry several recommendations, and the header
+    # keeps a running total of their hours against the course's units.
+    lab = pg.locator('article[data-code="WELDG/E030"]')
+    lab.locator('.selbtn').nth(0).click(); pg.wait_for_timeout(250)
+    lab.locator('.selbtn').nth(1).click(); pg.wait_for_timeout(250)
+    head = lab.locator('.chead').inner_text()
+    ck('a course can hold two recommendations at once', '2 chosen' in head, head[:90])
+    ck('and the header totals their hours against the units', 'against 1 unit' in head, head[:120])
+    stored = pg.evaluate("() => JSON.parse(localStorage.getItem('lattc_mil_cpl_choices_v1'))['WELDG/E030'].length")
+    ck('both are stored', stored==2, stored)
+
+    # REUSE IS ALLOWED and is stated, not warned about
+    pg.locator('#clear').click(); pg.wait_for_timeout(300)
+    ck('no duplicate WARNING exists any more', pg.locator('.warnbox.wb-dup').count()==0)
 
     # filters
     pg.locator('.fbtn[data-f="none"]').click(); pg.wait_for_timeout(250)
@@ -161,8 +168,21 @@ with sync_playwright() as p:
     # a recommendation's HOURS shown against the course's UNITS
     lab = pg.locator('article[data-code="WELDG/E030"]')
     chips = lab.locator('.recitem .tag').all_inner_texts()
-    ck('a 1-unit lab shows the hours/units gap', any('3h rec' in c for c in chips), chips[:6])
-    ck('and a matching 1-hour variant is offered', any('1h fits 1' in c for c in chips), chips[:6])
+    ck('a 1-unit lab shows the hours/units gap', any('3h rec' in c for c in chips), chips[:8])
+    ck('and a matching 1-hour variant is offered', any('1h fits 1' in c for c in chips), chips[:8])
+    ck('the unit-matched options are labelled for the reader',
+       any('fits your' in c for c in chips), chips[:8])
+
+    # the fix that matters for small courses: a unit match that ranks BELOW the
+    # top five is still surfaced (22 were hidden on this 2-unit carpentry course)
+    cb = pg.locator('article[data-code="CRPNTRY111B"]')
+    ck('a 2-unit course surfaces its 2-hour options',
+       cb.locator('.tag.t-fits').count() > 0, cb.locator('.tag.t-fits').count())
+
+    pg.locator('.fbtn[data-f="low"]').click(); pg.wait_for_timeout(300)
+    lowc = pg.locator('article.card:not(.hidden)').count()
+    ck('the 1-2 unit filter shows the 28 small courses', lowc==28, lowc)
+    pg.locator('.fbtn[data-f="all"]').click(); pg.wait_for_timeout(200)
     pg.locator('.fbtn[data-f="unitgap"]').click(); pg.wait_for_timeout(300)
     ug = pg.locator('article.card:not(.hidden)').count()
     ck('hours-not-equal-units filter narrows the list', 0 < ug < 139, ug)
