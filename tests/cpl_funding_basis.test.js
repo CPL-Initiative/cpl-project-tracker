@@ -223,8 +223,16 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   T._setScenario({ allocationBasis: "ftes" });
   T.render();
   check("a curator-visible control selects the basis", !!doc.querySelector("#cplFundAllocBasis"));
-  check("the size column is labelled Credit FTES under the FTES basis",
-    /Credit FTES/.test(doc.querySelector("#cplFundTable thead").textContent));
+  // ⚠️ Assert the CONTRACT, not Sam's current wording. This read /Credit FTES/,
+  // which broke the moment he renamed the header to "2025 Ttl FTES/Funding"
+  // (2026-08-27) — a rename that changed nothing about the basis. He renames
+  // labels routinely, so a test pinned to the exact string is a chore that goes
+  // red on correct work. What must hold is that the size column NAMES THE BASIS
+  // IN FORCE, and scoping to that column's own <th> keeps it precise.
+  const sizeTh = () => doc.querySelector(
+    '#cplFundTable thead th[data-sort="credit_ftes"], #cplFundTable thead th[data-sort="headcount"]');
+  check("the size column's label names the FTES basis when FTES is in force",
+    !!sizeTh() && /FTES/i.test(sizeTh().textContent) && !/headcount/i.test(sizeTh().textContent));
   check("the explainer names the basis in the allocation formula",
     /credit FTES share/.test(doc.body.textContent));
   // Both figures must be reachable regardless of which one is rendered.
@@ -236,8 +244,7 @@ check("sizePct is COMPUTED, never read from a baked percentage",
   T._setScenario({ allocationBasis: "headcount" });
   T.render();
   check("the size column flips its label with the basis",
-    /Headcount/.test(doc.querySelector("#cplFundTable thead").textContent) &&
-    !/Credit FTES/.test(doc.querySelector("#cplFundTable thead").textContent));
+    !!sizeTh() && /headcount/i.test(sizeTh().textContent) && !/FTES/i.test(sizeTh().textContent));
   check("the explainer follows the basis too",
     /headcount share/.test(doc.body.textContent));
   // Public readers get the numbers, not the modelling control.
