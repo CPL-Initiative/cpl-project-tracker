@@ -360,7 +360,35 @@
     // carry the distinction in TEXT, which is what keeps it legible in
     // grayscale, in a print of the tab, and to a reader who cannot separate the
     // two surfaces. Colour is never the only signal (First Light).
-    ".cplfund-table tr.cplfund-ncrow > td { background: var(--surface-subtle); }",
+    // Sam, 2026-08-27, asked for "a gray underline below the CR row to
+    // distinguish it from the NC row", or thin white cell borders instead.
+    // Rendered all three: BOTH of those make the pair read as two separate
+    // institutions, because they strengthen the line INSIDE the pair while the
+    // line BETWEEN colleges stays the same weight (white borders are worse —
+    // they erase the between-college line entirely). What actually makes a
+    // noncredit row tellable is knowing which credit row it belongs to, so the
+    // weights go the other way: STRONGER between institutions, LIGHTER within
+    // the pair. The lane is already named in words twice over (the CR/NC chips
+    // and the CR/NC labels in the size cell), so the rules only have to carry
+    // the grouping.
+    ".cplfund-table tbody tr.cplfund-row > td { border-top: 1px solid var(--border-strong); }",
+    ".cplfund-table tr.cplfund-ncrow > td { background: var(--surface-subtle); border-top: 1px solid var(--border); }",
+    // The TGT/NOW label column. Narrow, muted, and deliberately NOT right
+    // aligned — Sam asked for the labels left justified so they read as a key
+    // to the two lines beside them rather than as another column of values.
+    ".cplfund-table td.cf-lblcol, .cplfund-table th.cf-lblcol { text-align: left; padding-right: 2px; width: 1px; }",
+    // ⚠️ `.cf-prio .cf-a { display:block }` is SCOPED to the priority cell, so
+    // inside the label column both spans stayed inline and painted "TGT:NOW:"
+    // on one line. The label cell has to restate the stacking it is imitating.
+    ".cf-lblcol .cf-t, .cf-lblcol .cf-a { display: block; }",
+    ".cf-lblcol .cf-a { margin-top: 1px; }",
+    ".cf-lblcol .cf-lbl { margin-right: 0; }",
+    // The size cell carries both lanes: label hard left, figure hard right, so
+    // the numbers still form a clean column and the labels line up under each
+    // other. A flex row would ragged-edge the labels.
+    ".cplfund-table td.cf-size { text-align: right; }",
+    ".cf-size .cf-szline { display: grid; grid-template-columns: 1.7em 1fr; gap: .35em; align-items: baseline; }",
+    ".cf-size .cf-lane { text-align: left; font-size: .66rem; font-weight: 700; letter-spacing: .05em; color: var(--text-faint); }",
     ".cf-lanechip { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .06em; " +
       "padding: 0 4px; margin-left: 0; margin-right: 5px; border: 1px solid var(--border-strong); " +
       "border-radius: 3px; color: var(--text-muted); cursor: default; vertical-align: middle; }",
@@ -4363,6 +4391,14 @@
   // floor reason live in the cell HOVER (Sam: "add a hover to explain the
   // per-student amount difference"). Counts + % are normal weight; the real
   // DOLLARS (cap + earned) are bold. c = shaped college row; isSystem = totals.
+  // The TGT/NOW label cell (Sam, 2026-08-27). It uses the SAME two span classes
+  // the priority cells stack with, which is what makes the labels line up with
+  // the lines they name — matching the line-height by hand would drift the first
+  // time either cell's typography changed.
+  function tgtNowLabelCellHtml() {
+    return '<td class="cf-lblcol"><span class="cf-t"><span class="cf-lbl">TGT:</span></span>' +
+      '<span class="cf-a"><span class="cf-lbl">NOW:</span></span></td>';
+  }
   function prioCellHtml(c, p, isSystem) {
     var isFtes = prioIsFtes(p);
     var heads = isSystem ? totalHeads() : (c.headcount || 0);
@@ -4389,14 +4425,14 @@
     // Actual line — a shared "% of target" yardstick, real earned dollars bold.
     var actLine;
     if (fr.status === "earned") {
-      actLine = '<span class="cf-lbl">Now</span> ' + fmtCountK(fr.actual) + " " + (isFtes ? "FTES" : "stu") + " &middot; " +
+      actLine = '' + fmtCountK(fr.actual) + " " + (isFtes ? "FTES" : "stu") + " &middot; " +
         '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
         (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
     } else if (fr.status === "none") {
-      actLine = '<span class="cf-lbl">Now</span> 0 ' + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-u">' + fmtMoneyK(0) +
+      actLine = '0 ' + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-u">' + fmtMoneyK(0) +
         '</span> &middot; <span class="cf-pct">0%</span>';
     } else if (fr.status === "suppressed") {
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' + maskLt(true) + '</span> &middot; <span class="cf-u">' +
+      actLine = '<span class="cf-gap">' + maskLt(true) + '</span> &middot; <span class="cf-u">' +
         fmtMoneyK(earned) + "</span>";
     } else if (fr.status === "undelivered" || fr.status === "bad_src") {
       // Both earn $0, and the "advances at full cap" wording in the branch below
@@ -4404,11 +4440,11 @@
       // sharing the gap/pending one. "no feed" is the ABSENT zero; the 0% is
       // omitted deliberately, because a percentage of a target nothing is
       // measuring against would read as a measurement.
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
+      actLine = '<span class="cf-gap">' +
         (fr.status === "bad_src" ? "not wired" : "no feed") + '</span> &middot; <span class="cf-u">' +
         fmtMoneyK(0) + "</span>";
     } else {   // gap / pending — not measurable yet; advances at full cap
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">' +
+      actLine = '<span class="cf-gap">' +
         (fr.status === "gap" ? "gap" : "&hellip;") + '</span> &middot; <span class="cf-u">' + fmtMoneyK(earned) + "</span>";
     }
     var actExplain = fr.status === "earned"
@@ -4471,7 +4507,7 @@
               : fmtInt(target) + " students (" + fmtPctTrim(reachPct(isSystem ? null : c, target)) +
                 " of its headcount)") + ". " + rateSentence + " Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtCountK(target) +
+      '<span class="cf-t"><span class="cf-n">' + fmtCountK(target) +
       "</span> " + (isFtes ? "FTES" : "stu") + ' &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
       '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
@@ -4499,11 +4535,23 @@
       { key: "order", label: "#", cls: "" },
       { key: "college", label: "College", cls: "t" },
       { key: "district", label: "District", cls: "t" },
-      { key: sizeSortKey(), label: usesFtes() ? "Credit FTES" : "Headcount", cls: "",
+      // Sam, 2026-08-27: the size column now carries BOTH lanes (CR + NC), so
+      // "Credit FTES" no longer describes what is in it.
+      { key: sizeSortKey(), label: usesFtes() ? "2025 Ttl FTES/Funding" : "Headcount", cls: "",
         title: usesFtes()
           ? "2025-26 annual CREDIT FTES (CCCCO DataMart). This is the allocation basis — each college's share of statewide credit FTES sets its share of the pool. Noncredit FTES is excluded here; the noncredit campuses have their own carve-out. Hover a cell for that college's headcount."
           : "Annual student headcount (CCCCO MIS DataMart). This is the allocation basis — each college's share of statewide headcount sets its share of the pool. Hover a cell for that college's credit FTES." }
-    ].concat(prioColDefs(), [
+    ].concat([
+      // Sam, 2026-08-27: "Remove repeated Tgt and Now and move those labels
+      // before the P1 column, left justified." One label column instead of the
+      // same two words repeated in every priority cell on every row — the
+      // labels were costing 6 repetitions per college pair and saying nothing
+      // the reader had not already learned by the second row.
+      // ⚠️ NOT sortable: it holds no data. A focusable header that sorts on a
+      // key no row carries is a keyboard trap that does nothing.
+      { key: "tgtnow", label: "", cls: "cf-lblcol", sortable: false,
+        title: "Each priority cell stacks two lines: TGT — the target and the funding cap for this year; NOW — what the college has actually posted in MAP and earned against it." }
+    ], prioColDefs(), [
       { key: "elig", label: "Elig", cls: "",
         title: "Proposed baseline eligibility to PARTICIPATE (informational in this draft): a numbered pie, one sector per tracked requirement (CPL Coordinator in MAP + participation request by the deadline + Veteran Star ≥75% JSTs uploaded) — a sector turns green when the college meets it; a FULLY green glyph = all met. This is the participation gate; funding is then EARNED on actual CPL (the second line of each money cell)." }
     ], yearColDefs(), [
@@ -5215,17 +5263,17 @@
     var earned = cap * fr.f;
     var actLine, actExplain;
     if (fr.status === "earned") {
-      actLine = '<span class="cf-lbl">Now</span> ' + fmtFtesSmall(fr.actual) + " FTES &middot; " +
+      actLine = '' + fmtFtesSmall(fr.actual) + " FTES &middot; " +
         '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
         (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
       actExplain = fmtNum1(fr.actual) + " noncredit-origin CPL FTES posted (" +
         fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)";
     } else if (fr.status === "none") {
-      actLine = '<span class="cf-lbl">Now</span> 0 FTES &middot; <span class="cf-u">' + fmtMoneyK(0) +
+      actLine = '0 FTES &middot; <span class="cf-u">' + fmtMoneyK(0) +
         '</span> &middot; <span class="cf-pct">0%</span>';
       actExplain = "nothing posted against this measure yet";
     } else if (fr.status === "bad_src") {
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">not wired</span> &middot; <span class="cf-u">' +
+      actLine = '<span class="cf-gap">not wired</span> &middot; <span class="cf-u">' +
         fmtMoneyK(0) + "</span>";
       actExplain = "this priority has no noncredit measure at its milestone (" +
         esc(String(fr.meas && fr.meas.bad_src)) + ") — nothing can score it, so it earns $0 rather than advancing";
@@ -5236,7 +5284,7 @@
       // credit lane gives an unmeasurable metric (Sam's ruling). The percentage
       // is omitted on purpose: a percentage of a target nothing is measuring
       // against would read as a measurement.
-      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">no feed</span> &middot; <span class="cf-u">' +
+      actLine = '<span class="cf-gap">no feed</span> &middot; <span class="cf-u">' +
         fmtMoneyK(0) + "</span>";
       actExplain = "the daily feed does not carry a noncredit-origin measure yet — $0 earned, and deliberately " +
         "NOT an advance. The target and the potential stand; earning starts when MAP delivers the origination LocID.";
@@ -5247,7 +5295,7 @@
       ", from the " + fmtMoney(ncModel().pool) + " noncredit carve-out — separate money from the credit total. " +
       "Measure: " + p.metric + ". Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
     return '<td class="cf-prio cf-ncprio" title="' + esc(title) + '">' +
-      '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtFtesSmall(target) +
+      '<span class="cf-t"><span class="cf-n">' + fmtFtesSmall(target) +
       '</span> FTES &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
       '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
@@ -5261,9 +5309,10 @@
       '<td class="t"><span class="cplfund-chip cf-lanechip">NC</span> <span class="cf-lanename">' +
         esc(dispName(c.college)) + "</span>" + ncRowChips(row) + "</td>" +
       '<td class="t dk">&middot;</td>' +
-      '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and the size basis " +
-        "for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
-        fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
+      '<td class="cf-size" title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +
+        "the size basis for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
+        '<span class="cf-szline"><span class="cf-lane">NC</span><span>' + fmtInt(inst.ftes) + "</span></span></td>" +
+      tgtNowLabelCellHtml() +
       ncPriorities(state.viewSlot).map(function (p) { return ncPrioCellHtml(inst, row, p); }).join("") +
       '<td class="dk" title="' + esc("Participation is recorded once for the institution — see the credit row above.") +
         '">&middot;</td>' +
@@ -5287,17 +5336,17 @@
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      '<td title="' + esc(sizeCellTitle(c)) + '">' +
-        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) +
-        // Advisory noncredit FTES companion line (Sam, 2026-08-04 — "targeted +
-        // advisory NC column"): the college's OWN noncredit program scale (MIS
-        // 2025-26), shown for visibility so a large embedded NC program (e.g. SF)
-        // is not invisible. It is NOT part of the credit-FTES allocation and earns
-        // nothing here — the $1M NC support stays with the 4 standalone campuses.
+      // Sam, 2026-08-27: both lanes, each labelled, numbers aligned — "CR 3,112"
+      // over "NC 43". It replaces a bare figure with a "+43 NC FTES" tail, which
+      // read as a footnote to the credit number rather than as the other lane.
+      '<td class="cf-size" title="' + esc(sizeCellTitle(c)) + '">' +
+        '<span class="cf-szline"><span class="cf-lane">CR</span><span>' +
+          (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</span></span>" +
         (c.noncredit_ftes != null && c.noncredit_ftes > 0
-          ? '<span class="sub" title="Noncredit FTES (MIS 2025-26) — this college&#39;s own noncredit program. Not part of the CREDIT allocation; since 2026-08-23 it is the size basis for the separate noncredit carve-out in the NC $ column.">+' +
-            fmtInt(c.noncredit_ftes) + " NC FTES</span>"
+          ? '<span class="cf-szline dk" title="Noncredit FTES (MIS 2025-26) — this college&#39;s own noncredit program. Not part of the CREDIT allocation; it is the size basis for the separate noncredit carve-out shown on the NC row.">' +
+            '<span class="cf-lane">NC</span><span>' + fmtInt(c.noncredit_ftes) + "</span></span>"
           : "") + "</td>" +
+      tgtNowLabelCellHtml() +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
       yearCellsHtml(c) +
@@ -5486,7 +5535,8 @@
   // are already visible right below it, which is the entire point).
   function districtGroupHeaderHtml(g, colCount) {
     var lead = 4;   // #, College, District, Headcount
-    var prioN = priorities(state.viewSlot).length;
+    // +1 for the TGT/NOW label column, which sits inside this span (2026-08-27).
+    var prioN = priorities(state.viewSlot).length + 1;
     return '<tr class="cplfund-grouphdr">' +
       '<td class="t" colspan="' + lead + '"><strong>' + esc(districtShort(g.district)) + "</strong>" +
       ' <span class="dk">&middot; ' + g.n + (g.n === 1 ? " college" : " colleges") +
@@ -5532,6 +5582,13 @@
       // Sortable headers are keyboard-operable (a11y, 2026-07-28): scope + role +
       // tabindex + aria-sort mirror the visible arrow; the keydown handler in
       // wireTable() sorts on Enter/Space.
+      // A label-only column is not a sortable header: no data-sort, no
+      // tabindex, no aria-sort — otherwise the keyboard lands on a control that
+      // reorders the table by a key no row carries.
+      if (col.sortable === false) {
+        return '<th class="' + col.cls + '" scope="col"' +
+          (col.title ? ' title="' + esc(col.title) + '"' : "") + ">" + col.label + "</th>";
+      }
       var active = state.sortKey === col.key;
       var arr = active ? ' <span class="arr" aria-hidden="true">' + (state.sortDir === 1 ? "▲" : "▼") + "</span>" : "";
       var ariaSort = active ? (state.sortDir === 1 ? "ascending" : "descending") : "none";
@@ -5575,6 +5632,7 @@
       foot = '<tr class="cplfund-systemrow">' +
         '<td></td><td class="t">SYSTEM (statewide)</td><td class="t">' + esc(base().system.district || "") + "</td>" +
         sysHeadCell +
+        tgtNowLabelCellHtml() +
         priorities(state.viewSlot).map(function (p) { return prioCellHtml(null, p, true); }).join("") +
         "<td title=\"colleges satisfying ALL tracked baseline requirements (fully-green glyph)\">" +
         (ELIG.coordOk ? eligAllMetCount() + "/" + base().colleges.length : "—") + "</td>" +

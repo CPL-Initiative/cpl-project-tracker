@@ -130,13 +130,31 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     return { n: n, td: row.querySelector("td.cf-prio") };
   });
   const txt = function (i) { return rows[i].td.textContent.replace(/\s+/g, " "); };
-  check("semester college: 900 units reads 30 CPL FTES", /Now 30 FTES/.test(txt(0)));
+  // ⚠️ The inline "Tgt"/"Now" labels moved out of the cell into a single label
+  // COLUMN (Sam, 2026-08-27), so a label string can no longer tell the target
+  // line from the actual one. Read the two lines STRUCTURALLY instead — .cf-t
+  // is the target line, .cf-a the actual — which is what the labels were only
+  // ever standing in for, and which cannot be broken by a wording change.
+  const tline = function (i) { return rows[i].td.querySelector(".cf-t").textContent.replace(/\s+/g, " "); };
+  const aline = function (i) { return rows[i].td.querySelector(".cf-a").textContent.replace(/\s+/g, " "); };
+  check("semester college: 900 units reads 30 CPL FTES", /(^|[^\d.])30 FTES/.test(aline(0)));
   check("QUARTER college: the same 900 units reads 20 CPL FTES (÷45, not ÷30)",
-    /Now 20 FTES/.test(txt(1)));
+    /(^|[^\d.])20 FTES/.test(aline(1)));
   check("...so the quarter college is NOT credited 1.5x for identical work",
-    /Now 30 FTES/.test(txt(0)) && !/Now 30 FTES/.test(txt(1)));
+    /(^|[^\d.])30 FTES/.test(aline(0)) && !/(^|[^\d.])30 FTES/.test(aline(1)));
   check("the cell counts in FTES, not students, when the metric is FTES",
-    /Tgt [\d.,]+ FTES/.test(txt(0)) && !/stu/.test(txt(0)));
+    /[\d.,]+ FTES/.test(tline(0)) && !/stu/.test(txt(0)));
+  // The labels MOVED; they did not vanish. Without this, deleting them outright
+  // would leave every assertion above passing and the reader with two unlabelled
+  // numbers stacked in every cell.
+  {
+    const lbl = rows[0].td.closest("tr").querySelector("td.cf-lblcol");
+    const lt = lbl ? lbl.textContent.replace(/\s+/g, " ").trim() : "";
+    check("the Tgt/Now labels moved to a single label column on the row, once, left-justified",
+      /TGT:/.test(lt) && /NOW:/.test(lt));
+    check("and the priority cells no longer repeat them",
+      !/Tgt|Now/.test(txt(0)));
+  }
   // The hover has to show the working, including which calendar was applied.
   const q = rows[1].td.getAttribute("title") || "";
   check("the quarter college's hover shows units ÷ units-per-FTES and names the calendar",

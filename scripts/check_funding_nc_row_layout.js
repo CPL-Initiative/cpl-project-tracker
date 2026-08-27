@@ -41,6 +41,25 @@ const { chromium } = require("playwright");
 
 const REPO = path.join(__dirname, "..");
 const PORT = 8751;
+
+// ⚠️ The real palette, lifted out of the dashboard — NOT a hand-written copy.
+// This check compares two BORDER TOKENS against each other, so a stand-in
+// palette does not merely look different: it silently answers the question with
+// values the product does not use. The first version of this file invented
+// `--border-strong` and omitted `--border` entirely, and the comparison read
+// both borders as opaque.
+function rootTokens() {
+  const html = fs.readFileSync(path.join(REPO, "CPL_Dashboard.html"), "utf8");
+  const m = /:root\s*\{/.exec(html);
+  if (!m) throw new Error("no :root block in CPL_Dashboard.html");
+  let depth = 1, j = m.index + m[0].length;
+  while (depth && j < html.length) {
+    if (html[j] === "{") depth++;
+    else if (html[j] === "}") depth--;
+    j++;
+  }
+  return html.slice(m.index, j);
+}
 const results = [];
 const check = (name, ok, detail) => results.push([name, !!ok, detail || ""]);
 
@@ -52,10 +71,7 @@ function serve() {
       return res.end(`<!DOCTYPE html><html><head><meta charset="utf-8">
         <meta name="viewport" content="width=device-width,initial-scale=1">
         <style>
-          :root{--surface-opaque:#fff;--surface-subtle:#FAF8F4;--surface-muted:#F0EDE6;
-                --border-strong:#D8D2C6;--text-body:#2B2B2B;--text-strong:#111;
-                --text-muted:#5A5A5A;--text-faint:#8A8A8A;--text-gray:#6B6B6B;
-                --navy-primary:#1B365D;--navy-secondary:#2E5984;--green-progress:#2E7D32;}
+          ${rootTokens()}
           body{margin:0;font-family:system-ui,sans-serif;background:#F4F2ED;}
           .main-container{padding:12px;}
         </style></head>
@@ -123,6 +139,29 @@ function serve() {
     check("5: the lane chip paints the WORD, not color alone", /^(CR|NC)$/.test(m.chipText || ""), m.chipText);
     check("6: and the chip is large enough to read", m.chipFont >= 9, `${m.chipFont}px`);
     check("7: an NC row exists for more than one college", m.nNc > 1, `${m.nNc} rows`);
+
+    // The pair must GROUP: the rule between two institutions has to be heavier
+    // than the rule inside one institution's CR/NC pair. Inverting these (which
+    // is what "underline the CR row" literally asks for) makes a noncredit row
+    // read as a separate college. Computed alpha, because both are rgba tokens
+    // over the same background and a string compare would pass on any change.
+    const rules = await pg.evaluate(() => {
+      const nc = document.querySelector("tr.cplfund-ncrow");
+      const cr = nc.previousElementSibling;
+      const alpha = (c) => {
+        const m = /rgba?\(([^)]+)\)/.exec(c || "");
+        if (!m) return 1;
+        const p = m[1].split(",").map((x) => parseFloat(x));
+        return p.length > 3 ? p[3] : 1;
+      };
+      return {
+        withinPair: alpha(getComputedStyle(nc.children[0]).borderTopColor),
+        betweenInstitutions: alpha(getComputedStyle(cr.children[0]).borderTopColor),
+      };
+    });
+    check("10: the rule BETWEEN institutions is heavier than the rule INSIDE a CR/NC pair, so the pair groups",
+      rules.betweenInstitutions > rules.withinPair,
+      `between ${rules.betweenInstitutions} vs within ${rules.withinPair}`);
 
     // Narrow viewport: the wide table scrolls inside its own container, the body never does.
     await pg.setViewportSize({ width: 390, height: 900 });
