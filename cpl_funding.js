@@ -2810,6 +2810,10 @@
           (wantU ? meas.unit !== "units" : meas.unit !== "students");
         var wording = measurable && pinned && meas.unit &&
           (wantU ? meas.unit !== "units" : meas.unit !== "students");
+        // MILESTONE AGREEMENT — the other axis. See metricMilestone().
+        var wantM = metricMilestone(p.metric);
+        var msMismatch = measurable && wantM && meas.milestone && wantM !== meas.milestone;
+        if (msMismatch) anyRisk = true;
         if (mismatch) anyRisk = true;
         // A BAD PIN is always a risk, in every year, front-loaded or not: it is a
         // typo in our own config, not a fact about the world, and unlike an
@@ -2822,7 +2826,12 @@
               ", which is not a known measure. Nothing can score it, so it earns <strong>$0</strong> " +
               "(it does NOT advance).</span>"
             : measurable
-            ? (mismatch
+            ? (msMismatch
+                ? '<span class="cplfund-warn-text">⚠ MILESTONE MISMATCH &mdash; this metric asks for ' +
+                  esc(wantM.toUpperCase()) + " CPL but " + esc(meas.src) + " returns " +
+                  esc(meas.milestone) + ". These are different rungs of MAP&#39;s funnel and are not " +
+                  "interchangeable&#59; pin the priority with <code>metric_src</code>, or reword it.</span>"
+                : mismatch
                 ? '<span class="cplfund-warn-text">⚠ UNIT MISMATCH &mdash; this metric asks for ' +
                   (wantU ? "UNITS/FTES" : "a HEADCOUNT") + " but " + esc(meas.src) + " returns " +
                   esc(meas.unit) + '</span>'
@@ -3694,15 +3703,15 @@
   // unknown one resolves to a loud `bad_src` that the diagnostic reports.
   var METRIC_SOURCES = {
     // ── credit lane (carried by cpl_funding_performance.js today) ──────────
-    pe:   { unit: "students", basis: "distinct students with any eligible CPL identified in MAP" },
-    pa:   { unit: "students", basis: "distinct students with CPL applied to their record in MAP" },
-    p2:   { unit: "students", basis: "distinct students with 6+ transcribed CPL units, per MAP" },
-    p3:   { unit: "students", basis: "distinct students with any transcribed CPL, per MAP" },
-    pp:   { unit: "students", basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
-    pe_u: { unit: "units", basis: "units of eligible CPL identified in MAP" },
-    pa_u: { unit: "units", basis: "units of CPL APPLIED to student records in MAP" },
-    p3_u: { unit: "units", basis: "units of transcribed CPL, per MAP" },
-    pp_u: { unit: "units", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    pe:   { unit: "students", milestone: "eligible", basis: "distinct students with any eligible CPL identified in MAP" },
+    pa:   { unit: "students", milestone: "applied", basis: "distinct students with CPL applied to their record in MAP" },
+    p2:   { unit: "students", milestone: "transcribed", basis: "distinct students with 6+ transcribed CPL units, per MAP" },
+    p3:   { unit: "students", milestone: "transcribed", basis: "distinct students with any transcribed CPL, per MAP" },
+    pp:   { unit: "students", milestone: "transcribed", basis: "portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
+    pe_u: { unit: "units", milestone: "eligible", basis: "units of eligible CPL identified in MAP" },
+    pa_u: { unit: "units", milestone: "applied", basis: "units of CPL APPLIED to student records in MAP" },
+    p3_u: { unit: "units", milestone: "transcribed", basis: "units of transcribed CPL, per MAP" },
+    pp_u: { unit: "units", milestone: "transcribed", basis: "units of portal-origin transcribed CPL (via the CPL Student Portal / Landing Page)" },
     // ── noncredit lane (DECLARED, NOT YET DELIVERED) ───────────────────────
     // Sam ruled 2026-08-26 that the NC lane EARNS like credit: a cap earned
     // against the same three milestones, filtered to students who originated
@@ -3727,13 +3736,45 @@
     // static artifact built from the daily MAP pull. A NULL column in Supabase
     // would have wired nothing here. The funding lane's equivalent of his NULL
     // column is exactly this: a declared source the feed does not carry yet.
-    nc_pe_u: { unit: "units", lane: "nc",
+    nc_pe_u: { unit: "units", lane: "nc", milestone: "eligible",
                basis: "units of eligible CPL for students originating from a noncredit landing page" },
-    nc_pa_u: { unit: "units", lane: "nc",
+    nc_pa_u: { unit: "units", lane: "nc", milestone: "applied",
                basis: "units of CPL APPLIED for students originating from a noncredit landing page" },
-    nc_pt_u: { unit: "units", lane: "nc",
+    nc_pt_u: { unit: "units", lane: "nc", milestone: "transcribed",
                basis: "units of transcribed CPL for students originating from a noncredit landing page" }
   };
+  // ── MILESTONE AGREEMENT (2026-08-27) ──────────────────────────────────────
+  // MAP's funnel is eligible -> applied -> transcribed, and they are three
+  // different quantities (statewide: 1,382,125 / 223,384 / 80,338 units). A
+  // metric naming one rung and a measure returning another scores the right
+  // college on the wrong thing and reports no error at all — the same shape as
+  // the UNIT-agreement check the diagnostic has carried since 2026-07-31, on the
+  // other axis.
+  //
+  // ⚠️ THIS IS NOT HYPOTHETICAL AND IT IS LIVE. Sam's Year-1 Access metric reads
+  // "APPLIED units measured in FTES for students originating from either CPL
+  // Portal, College CPL Landing Page, or batch upload". It resolves to `pp_u` —
+  // portal-origin TRANSCRIBED units — because the portal/landing-page entry sits
+  // first among the unit measures. Measured against the published artifact on
+  // 2026-08-27: ALL 115 COLLEGES read exactly 0 FTES on it, because pp_u is 25.0
+  // units carried by 3 colleges. That priority holds the largest share (0.34),
+  // so the tab's largest earning line reads $0 system-wide for a reason nothing
+  // on screen states. The wording also names batch upload, which pp_u
+  // (Potential Student = Yes) excludes entirely.
+  //
+  // The fix for THAT is Sam's call, not ours — pin it to `pa_u`, or accept it as
+  // a genuine data gap that advances — so this only makes the disagreement
+  // impossible to miss. Both answers are now one config field.
+  function metricMilestone(m) {
+    m = String(m || "").toLowerCase();
+    // Order matters and mirrors MEASURES: a metric naming two rungs is scored on
+    // the one MEASURES would pick, so the check compares like with like rather
+    // than inventing a second precedence nobody else follows.
+    if (has(m, "applied")) return "applied";
+    if (has(m, "eligible")) return "eligible";
+    if (has(m, "transcribed")) return "transcribed";
+    return null;
+  }
   // Does the feed actually CARRY this source? Asked of the artifact, never
   // assumed from the registry: a key may be declared here (so a priority can be
   // wired to it) long before MAP delivers the column that computes it. That
@@ -3762,9 +3803,20 @@
                  gap_short: "unknown metric_src" };
       }
       return { src: pin, unit: reg.unit, basis: reg.basis, pinned: true,
+               milestone: reg.milestone, lane: reg.lane,
                undelivered: !srcDelivered(pin) };
     }
-    return measurability(p && p.metric);
+    // Prose-resolved: enrich from the registry so BOTH paths carry a milestone.
+    // Without this the agreement check below would silently never fire on an
+    // unpinned priority — which is every priority today, and the only kind the
+    // live defect can occur on.
+    var m = measurability(p && p.metric);
+    if (m && m.src && METRIC_SOURCES[m.src] && m.milestone == null) {
+      m = { src: m.src, unit: m.unit, basis: m.basis, gap: m.gap, gap_short: m.gap_short,
+            milestone: METRIC_SOURCES[m.src].milestone, lane: METRIC_SOURCES[m.src].lane,
+            undelivered: !srcDelivered(m.src) };
+    }
+    return m;
   }
 
   // ── achievement-based earning (Sam, 2026-07-23) ───────────────────────────

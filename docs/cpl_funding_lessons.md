@@ -1923,8 +1923,51 @@ that can produce FTES). **Seven mutations, all now caught.** Same lesson as
 #1361's reversed `check()` arguments, one session later: *a guard that has never
 been made to fail is not yet a guard.*
 
+### ⛔ THE SAME DEFECT IS ALREADY LIVE ON THE CREDIT LANE, ON THE BIGGEST PRIORITY
+
+Looking up the live Supabase config to build a faithful mock turned the
+hypothetical into a present-tense one. Sam's **Year-1 Access** metric reads:
+
+> *"**Applied** units measured in FTES for students originating from either CPL
+> Portal, College CPL Landing Page, **or batch upload**"*
+
+It resolves to **`pp_u`** — portal-origin **transcribed** units. Two disagreements
+at once, and neither is visible on the tab:
+
+1. **Wrong rung.** He asks for APPLIED; `pp_u` returns TRANSCRIBED. Statewide these
+   are 223,384 and 80,338 units — not interchangeable.
+2. **Wrong origin scope.** He names three origins *including batch upload*; `pp_u`
+   is `Potential Student = Yes` only, which excludes batch upload entirely.
+
+⚠️ **Measured against the published artifact: all 115 colleges read exactly
+`0 FTES` on it.** `pp_u` is 25.0 units across 3 colleges, and 25 ÷ 30 rounds to 0.
+Access carries **share 0.34 — the largest of the three** — and under front-load
+Year 1 carries the whole window. **So the tab's largest earning line reads $0
+system-wide, for a reason nothing on screen states.**
+
+⭐ **And note which way the error runs.** Had the metric been read as a genuine
+data gap it would have *advanced the full cap*; instead it resolves to a real key
+and pays $0. The mis-resolution flipped roughly a third of the pool from
+"advances" to "earns nothing" — silently, in the direction nobody audits, because
+a low number on a new program looks like the program being new.
+
+**The fix is Sam's call, not ours** — pin it to `pa_u` (right rung, no origin
+filter), or accept it as a data gap that advances, or accept `pp_u` deliberately.
+All three are now one config field. What shipped instead is the thing that makes
+the disagreement impossible to miss: a **MILESTONE-agreement check** in the
+curator diagnostic, the second axis beside the UNIT-agreement check that has been
+there since 2026-07-31. It reads `⚠ MILESTONE MISMATCH — this metric asks for
+APPLIED CPL but pp_u returns transcribed`, fires on that slot in both years, and
+leaves the four honest priorities a clean ✔.
+
+⭐ **The generalizable half:** the funnel has three rungs and the tab had a guard
+for the *unit* axis and none for the *rung* axis. When a matcher can be wrong
+along more than one dimension, a guard on one dimension reads as coverage.
+
 ### Still open, and needing Sam
 
+- ⛔ **The live Access metric** (above) — pin, gap, or accept. It is the largest
+  share and currently earns $0 for every college.
 - **Row shape** — a second table row per college, or extra lines inside each
   P1/P2/P3 cell. A mock, not a guess.
 - **Shares for the NC three.** Nothing ruled. Inheriting credit's 34/33/33 is the

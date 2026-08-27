@@ -207,7 +207,11 @@ check("5d: the drill-in does not claim 'no CPL posted' when nothing was measured
   T._setShared({ yearPriorities: { "1": {
     "0": { metric: NC_METRICS[1], metric_src: "nc_pa_u" },
     "1": { metric: NC_METRICS[1], metric_src: "nope_u" },
-    "2": { metric: "Headcount of students with transcribed CPL credit", metric_src: "pa_u" }
+    // Same MILESTONE (applied), different UNIT — so the wording check fires and
+    // the milestone check does not. Separating them matters: an earlier fixture
+    // said "transcribed" and pinned pa_u, which trips BOTH, and the milestone
+    // warning correctly outranks the wording one.
+    "2": { metric: "Headcount of students with CPL applied to their record", metric_src: "pa_u" }
   } } });
   T.render();
   const diag = doc.querySelector(".cplfund-metricdiag");
@@ -222,6 +226,51 @@ check("5d: the drill-in does not claim 'no CPL posted' when nothing was measured
     /wording says/.test(txt) && !/UNIT MISMATCH/.test(txt));
   check("6e: the panel opens itself when a pin is bad",
     !!diag && diag.hasAttribute("open"));
+}
+
+// ── 7. MILESTONE agreement — the live defect this PR found ───────────────────
+// MAP's funnel is eligible -> applied -> transcribed, three different quantities
+// (statewide 1,382,125 / 223,384 / 80,338 units). A metric naming one rung and a
+// measure returning another scores the right college on the wrong thing.
+//
+// ⚠️ Sam's LIVE Year-1 Access metric does exactly this, and it is the priority
+// with the largest share (0.34).
+const LIVE_ACCESS = "Applied units measured in FTES for students originating from " +
+  "either CPL Portal, College CPL Landing Page, or batch upload";
+check("7a: the live Access metric still resolves to a TRANSCRIBED measure (pp_u)",
+  proseMeasure(LIVE_ACCESS).src === "pp_u");
+{
+  const { window } = freshDom();
+  // The REAL published artifact, so the numbers are the live ones.
+  const fs = require("fs");
+  new Function("window", fs.readFileSync("cpl_funding_performance.js", "utf8")).call(window, window);
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  const LIVE = {
+    "0": { metric: "Eligible CPL Units measured in FTES", share: 0.33, factor: 0.5 },
+    "1": { metric: "Transcribed CPL Units measured in FTES", share: 0.33, factor: 0.5 },
+    "2": { metric: LIVE_ACCESS, share: 0.34, factor: 0.5 }
+  };
+  T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
+  T.render();
+  const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
+  const zero = rows.filter((r) => /Now 0 FTES/.test(Array.from(r.querySelectorAll("td"))[6].textContent));
+  check("7b: and every college in the system reads 0 FTES on it — the symptom nobody could see",
+    rows.length > 100 && zero.length === rows.length);
+  const diag = doc.querySelector(".cplfund-metricdiag");
+  check("7c: the diagnostic now names it a MILESTONE MISMATCH instead of a clean ✔",
+    !!diag && /MILESTONE MISMATCH/.test(diag.textContent) &&
+    /asks for APPLIED CPL but pp_u returns transcribed/.test(diag.textContent));
+  check("7d: and the panel opens itself, because this is a live risk",
+    !!diag && diag.hasAttribute("open"));
+  // Fires on P3 in BOTH years (the config mirrors), and on nothing else — the
+  // eligible and transcribed metrics resolve to their own rungs and stay clean.
+  const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
+  check("7e: it fires on the Access slot in both years and on nothing else",
+    lis.filter((t) => /MILESTONE MISMATCH/.test(t)).length === 2 &&
+    lis.filter((t) => /MILESTONE MISMATCH/.test(t)).every((t) => /P3/.test(t)));
+  check("7f: the four honest priorities stay a clean ✔",
+    lis.filter((t) => /✔ measurable/.test(t) && !/MISMATCH/.test(t)).length === 4);
 }
 
 finish("cpl_funding_metric_pin");
