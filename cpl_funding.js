@@ -400,6 +400,18 @@
       "padding: 1px 5px; margin-left: 5px; border: 0; border-radius: 3px; " +
       "background: var(--surface-muted); color: var(--navy-secondary); cursor: default; vertical-align: middle; }",
     ".cplfund-ncrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
+    // Matches .cplfund-caret exactly — width AND the 1px right margin. If that
+    // rule's width changes, this one has to follow, which is why they sit in the
+    // same stylesheet a few lines apart.
+    ".cf-caretpad { display: inline-block; width: 1.2em; margin: 0 1px 0 0; }",
+    // Sam: "maybe add a gentle chip to note that it doesn't meet the threshold."
+    // Gentle = quieter than the lane chip beside it, and a WORD plus a NUMBER
+    // ("below 500") rather than a colour or a glyph, so it survives greyscale
+    // and states the dial it is measured against.
+    ".cf-belowchip { display: inline-block; font-size: .6rem; font-weight: 600; letter-spacing: .03em; " +
+      "padding: 1px 5px; margin-left: 5px; border: 1px solid var(--border); border-radius: 3px; " +
+      "background: transparent; color: var(--text-faint); cursor: help; vertical-align: middle; }",
+    ".cplfund-table tr.cplfund-ncout > td { color: var(--text-faint); }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -2957,7 +2969,7 @@
       '<span class="cplfund-basis-lbl">Reading the money</span>' +
       '<span class="dk cplfund-basis-note">' +
       "Every money cell shows the <strong>allocation cap</strong> on top and what the college has " +
-      "<strong>earned</strong> so far beneath it. Colleges are paid on the CPL they actually post in MAP &mdash; " +
+      "<strong>earning</strong> so far beneath it. Colleges are paid on the CPL they actually post in MAP &mdash; " +
       "<code>earned = cap &times; (actual &divide; target)</code>, capped at 100% (a college at half its target draws " +
       "half its cap; it never needs the full target to be funded). Unearned dollars roll forward. Priorities MAP " +
       "cannot measure yet pay the full cap as an <strong>advance</strong> (marked <span class=\"cf-adv\">adv</span>) " +
@@ -4384,7 +4396,7 @@
       return { key: "prio" + i, label: "P" + (i + 1) + (nm ? " " + esc(nm) : ""), cls: "c",
         title: p.label + (nm ? " — " + nm : "") + ": " + stripTags(p.description) +
           " · METRIC: " + stripTags(p.metric) + ". " +
-          "Each cell: top = Tgt (target students · funding cap), bottom = Now (students posted in MAP · earned $ · % of target). " +
+          "Each cell: top = Tgt (target students · funding cap), bottom = Now (students posted in MAP · earning $ · % of target). " +
           "Hover a cell for the effective $/student rate." };
     });
   }
@@ -5078,10 +5090,12 @@
       ? ' <span class="cf-adv" title="' + fmtMoney(adv) + " of this is a provisional ADVANCE — paid at full cap because MAP cannot measure that priority's metric yet; it flips to achievement-based automatically when the feed lands" +
         '">adv ' + fmtMoney(adv) + "</span>"
       : "";
-    return '<span class="sub">earned ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + advTag + "</span>";
+    // Sam, 2026-08-27: "earning", not "earned" — the money is not a done deal
+    // until the college qualifies, and the past tense read like a settled award.
+    return '<span class="sub">earning ' + fmtMoney(earned) + " &middot; " + fmtPctTrim(pct) + advTag + "</span>";
   }
   function earnedCellTitle(capLabel, cap, earned, meas, adv, held) {
-    var bits = [capLabel + ": " + fmtMoney(cap), "earned so far: " + fmtMoney(earned)];
+    var bits = [capLabel + ": " + fmtMoney(cap), "earning so far: " + fmtMoney(earned)];
     if (meas > 0.5) bits.push(fmtMoney(meas) + " measured on actual CPL in MAP");
     if (adv > 0.5) bits.push(fmtMoney(adv) + " advance (metric not measurable yet)");
     if (held > 0.5) bits.push(fmtMoney(held) + " WITHHELD — baseline participation not met; held in reserve, rolls forward");
@@ -5239,9 +5253,26 @@
     });
     return out;
   }
-  // Is there an Option A row for this college? Same test the NC $ cell already
-  // uses, so the row and the column can never disagree about who is in the lane.
-  function ncRowShown(c) { return (ncModel().W[c.college] || 0) > 0; }
+  // Is there an Option A row for this college? EVERY college that runs a
+  // noncredit programme gets one — not only the ones currently in the funded
+  // lane (Sam, 2026-08-27: "show all the NC rows for colleges, even if they
+  // don't qualify … I may adjust the minimum 500 threshold").
+  //
+  // ⭐ THE THRESHOLD IS A DIAL, AND THAT IS THE WHOLE ARGUMENT. While the table
+  // listed only qualifiers, moving the dial changed WHICH ROWS EXIST, so the
+  // table could not show the consequence of the curator's own edit — you had to
+  // already know who was missing to see who joined. ncInstitutions() has always
+  // returned the roster unfiltered for exactly this reason ("moving the dial
+  // visibly drops or admits them instead of silently deleting a row"); the row
+  // layer simply never honored it.
+  function ncRowShown(c) {
+    var inst = ncInstFor(c.college);
+    return !!(inst && inst.ftes > 0);
+  }
+  // In the funded lane, or merely present? A college below the entry threshold
+  // is NOT a college that earned nothing — it was never eligible to earn — and
+  // the row must not print those two the same way.
+  function ncInLane(inst) { return !!(inst && (ncModel().W[inst.key] || 0) > 0); }
   function ncRowChips(row) {
     var m = ncModel(), chips = "";
     if (row.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
@@ -5307,16 +5338,55 @@
       '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
   }
+  // Sam: "make the NC row college names line up on the left with their sibling
+  // … I'm a big fan of symmetry." The credit row opens with a caret BUTTON and
+  // the noncredit row has nothing to expand, so the two names started at
+  // different x. An empty inline-block of the caret's exact width restores the
+  // column. aria-hidden + empty: it is a spacer, and a screen reader announcing
+  // a blank before every noncredit college name would be a real cost for a
+  // purely visual fix.
+  var NC_CARET_PAD = '<span class="cf-caretpad" aria-hidden="true"></span>';
+  // A college that runs noncredit but sits BELOW the entry threshold. It earns
+  // nothing, and the row must not say so with a $0: "$0 earned" and "never
+  // eligible to earn" are two different facts, and this tab has spent months
+  // keeping its kinds of zero apart. So the money cells are em-dashes with the
+  // reason, and the only figures are the two that decide the question — the
+  // college's noncredit FTES and how far below the dial it sits.
+  function ncBelowThresholdRowHtml(c, inst, alt) {
+    var thr = ncThresholdFtes();
+    var gap = Math.max(0, thr - inst.ftes);
+    var why = fmtNum1(inst.ftes) + " noncredit FTES — " + fmtNum1(gap) + " short of the " +
+      fmtInt(thr) + " FTES entry threshold, so this college is not in the noncredit lane and " +
+      "earns nothing from the carve-out. It is listed so that moving the threshold visibly " +
+      "admits it rather than silently adding a row.";
+    var dash = '<td class="dk" title="' + esc(why) + '">&mdash;</td>';
+    return '<tr class="cplfund-ncrow cplfund-ncout' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
+      "<td></td>" +
+      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
+        '</span><span class="cplfund-chip cf-lanechip">NC</span>' +
+        '<span class="cplfund-chip cf-belowchip" title="' + esc(why) + '">below ' + fmtInt(thr) + '</span></td>' +
+      '<td class="t dk">&middot;</td>' +
+      '<td title="' + esc(why) + '">' + fmtInt(inst.ftes) + "</td>" +
+      '<td class="cf-lblcol"></td>' +
+      ncPriorities(state.viewSlot).map(function () { return dash; }).join("") +
+      '<td class="dk">&middot;</td>' +
+      yearKeys().map(function () { return dash; }).join("") +
+      dash +
+      '<td class="dk" title="' + esc(why) + '">&mdash;</td>' +
+      "<td></td>" +
+      "</tr>";
+  }
   function ncCollegeRowHtml(c, alt) {
     var inst = ncInstFor(c.college);
     if (!inst) return "";
+    if (!ncInLane(inst)) return ncBelowThresholdRowHtml(c, inst, alt);
     var row = ncAllocFor(inst);
     return '<tr class="cplfund-ncrow' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
       "<td></td>" +
       // Sam: the NC chip sits to the RIGHT of the name, like the CR chip — the
       // two lane chips have to occupy the same position or the eye cannot pair
       // them down the column.
-      '<td class="t"><span class="cf-lanename">' + esc(dispName(c.college)) +
+      '<td class="t">' + NC_CARET_PAD + '<span class="cf-lanename">' + esc(dispName(c.college)) +
         '</span><span class="cplfund-chip cf-lanechip">NC</span>' + ncRowChips(row) + "</td>" +
       '<td class="t dk">&middot;</td>' +
       '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +

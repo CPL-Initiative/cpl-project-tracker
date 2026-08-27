@@ -152,7 +152,15 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
   check("D4: a credit row with NO noncredit program gets no CR chip — the label would name a distinction that is not on screen",
     Array.from(creditRows).some((r) => !r.querySelector(".cf-lanechip")));
 
-  const cells = ncRows[0].querySelectorAll("td.cf-ncprio");
+  // ⚠️ Pick a FUNDED noncredit row. Since 2026-08-27 every college that runs a
+  // noncredit programme gets a row, including the 78 below the entry threshold,
+  // and those deliberately render em-dashes rather than priority cells — so
+  // `ncRows[0]` is whichever college sorts first, not necessarily one in the
+  // lane (it is Alameda, at 43 FTES against a 500 threshold).
+  const funded = Array.from(ncRows).filter((r) => !r.classList.contains("cplfund-ncout"));
+  check("D4b: both kinds of noncredit row are present — funded, and present-but-below-threshold",
+    funded.length > 0 && funded.length < ncRows.length);
+  const cells = funded[0].querySelectorAll("td.cf-ncprio");
   check("D5: the NC row's priority cells keep the Tgt/Now two-line shape so the lanes read down the column",
     cells.length === 3 && Array.from(cells).every((td) => td.querySelector(".cf-t") && td.querySelector(".cf-a")));
   check("D6: today they read 'no feed' — the ABSENT zero, distinct from a measured 0",
@@ -175,6 +183,24 @@ check("A7: NC targets ride the PRE-BOUNDS proportional entitlement, so the noncr
       small.length > 0 && small.every((td) => /\.\d/.test(td.querySelector(".cf-n").textContent)));
     check("D12: and the cell hover still carries the full-precision figure",
       Array.from(cells).every((td) => /Target \d+\.\d+ CPL FTES/.test(td.getAttribute("title"))));
+  }
+
+  // ── the below-threshold row (Sam, 2026-08-27) ─────────────────────────────
+  {
+    const out = Array.from(ncRows).find((r) => r.classList.contains("cplfund-ncout"));
+    check("D13: a college below the entry threshold still gets a noncredit row",
+      !!out);
+    check("D14: it carries a gentle chip naming the THRESHOLD it misses, as a word plus a number",
+      !!out && /below\s*\d+/.test((out.querySelector(".cf-belowchip") || {}).textContent || ""));
+    // ⚠️ THE POINT OF THE ROW. "$0 earned" and "never eligible to earn" are two
+    // different facts. A $0 here would read as a college that posted nothing.
+    check("D15: and its money cells are em-dashes, NOT $0 — it was never eligible to earn",
+      !!out && !/\$0/.test(out.textContent) && /—/.test(out.textContent));
+    check("D16: it still carries the same cell count, so no column shifts under it",
+      !!out && out.children.length === creditRows[0].children.length);
+    check("D17: the row states the gap to the dial, which is the number that decides whether to move it",
+      !!out && /short of the/.test(out.getAttribute("data-ncfor") !== null
+        ? Array.from(out.querySelectorAll("[title]")).map((e) => e.getAttribute("title")).join(" ") : ""));
   }
 
   // The floored chip must name the NONCREDIT minimum. Naming the credit floor
