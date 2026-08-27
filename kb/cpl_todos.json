@@ -1,6 +1,6 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
-  "_as_of": "2026-08-27 · Two systems were telling us plainly what was wrong and we were reading neither. The nightly load of MAP data had failed three nights running; MAP was answering \"that report is not valid\" for each report separately, in a field our loader never looked at, so three nights of failures blamed the wrong report. Sam found it in one manual pull, and Pedro at ITPI is correcting it overnight. The loader now reads MAP's own words and prints them. Separately, Sam ruled that noncredit funding should be EARNED on results exactly the way credit is, rather than handed out on size — and scoping that turned up a real trap: the model works out which data to measure a priority against by reading the priority's own wording, so the noncredit priorities (worded almost identically to the credit ones) would have been measured against the college's CREDIT results, silently and plausibly. Found before a line was written, so it is a finding rather than an incident. Nothing about anyone's money changed today.",
+  "_as_of": "2026-08-27 · Sam ruled that noncredit earns at the same rate as credit — no discount for the newer lane. · Two systems were telling us plainly what was wrong and we were reading neither. The nightly load of MAP data had failed three nights running; MAP was answering \"that report is not valid\" for each report separately, in a field our loader never looked at, so three nights of failures blamed the wrong report. Sam found it in one manual pull, and Pedro at ITPI is correcting it overnight. The loader now reads MAP's own words and prints them. Separately, Sam ruled that noncredit funding should be EARNED on results exactly the way credit is, rather than handed out on size — and scoping that turned up a real trap: the model works out which data to measure a priority against by reading the priority's own wording, so the noncredit priorities (worded almost identically to the credit ones) would have been measured against the college's CREDIT results, silently and plausibly. Found before a line was written, so it is a finding rather than an incident. Nothing about anyone's money changed today.",
   "_session": 196,
   "_status": "Everything is merged and v5 is the draft to send. Sponsor is James Todd, Staff Lead is Mari Estrada; the only blank left in the filing document is the 2026-27 timeline. Nothing was written to the policy register — every finding there is a proposal.",
   "items": [
@@ -70,11 +70,6 @@
       "id": "nc-floor",
       "title": "Decide the noncredit minimum award",
       "note": "At $50,000, 30 of the 33 noncredit institutions sit exactly on the minimum and growth does not start paying until 3,909 FTES — which is the opposite of the incentive you wanted. At $15,000 nobody is on the minimum and growth pays from 384 FTES. $60,000 is not affordable at all. Opening it to every noncredit institution does not work at this pot: even at full parity it buys about $16,000 each."
-    },
-    {
-      "id": "nc-factor",
-      "title": "Confirm noncredit keeps the same funding factor as credit (0.5)",
-      "note": "Recommendation is yes. A noncredit institution on the minimum would need about 8 units of FTES over two years to earn its full award — roughly 240 units. The thing that decides whether it earns is whether the college has a noncredit landing page at all, not how hard the bar is. Worth revisiting once we can actually see noncredit volume."
     },
     {
       "id": "nc-mirror-strategy",

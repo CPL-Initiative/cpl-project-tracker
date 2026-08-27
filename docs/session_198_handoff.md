@@ -72,10 +72,10 @@ fall through to a labeled gap. It would not.
   names *"noncredit mirror courses"*. One line to remove when NC goes live.
 - ⚠️ **Leakage undercounts NC rather than double-paying**, and Sam considers that
   the incentive to route students through the NC landing page.
-- ⭐ **Recommended, not yet ruled: keep NC at factor 0.5**, same as credit. Base
-  SCFF rate is $12,423/CPL FTES, so a floored NC institution needs **8.0 CPL
-  FTES** over the window. The binding constraint is origin capture, not
-  difficulty.
+- ✅ **RULED 2026-08-27: NC keeps factor 0.5**, same as credit. Base SCFF rate is
+  $12,423/CPL FTES, so a floored NC institution needs **8.0 CPL FTES** over the
+  window. The binding constraint is origin capture, not difficulty. ⚠️ Do not
+  vary the factor *within* NC — credit is uniform 0.5 deliberately.
 
 ## Carryover — not ours
 
