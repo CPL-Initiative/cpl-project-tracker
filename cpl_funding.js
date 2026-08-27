@@ -217,7 +217,14 @@
     ".cplfund-table td { padding: 5px 7px; border-top: 1px solid var(--border); text-align: right; white-space: nowrap; }",
     ".cplfund-table td.trunc { max-width: 16ch; overflow: hidden; text-overflow: ellipsis; }",
     ".cplfund-table tbody tr.cplfund-row { cursor: pointer; }",
-    ".cplfund-table tbody tr:nth-child(even) { background: var(--surface-subtle); }",
+    // ⚠️ ZEBRA IS PER COLLEGE, NOT PER ROW (Sam, 2026-08-27). This was
+    // `tr:nth-child(even)`, which is row parity — and the moment a college can
+    // occupy TWO rows, its credit row and its noncredit row land on opposite
+    // stripes and the pair reads as two different colleges. Sam: "alternate
+    // gray/white BETWEEN colleges and keep the CR and NC same background."
+    // The class is emitted per college and carried by every row of that
+    // college's block, so the stripe survives any future third row.
+    ".cplfund-table tbody tr.cplfund-alt > td { background: var(--surface-subtle); }",
     ".cplfund-table tbody tr:hover { background: var(--surface-muted); }",
     ".cplfund-table td.tot, .cplfund-table tfoot td { font-weight: 700; color: var(--navy-primary); }",
     ".cplfund-table tfoot td { border-top: 2px solid var(--seal-blue); background: var(--surface-muted); }",
@@ -360,19 +367,14 @@
     // carry the distinction in TEXT, which is what keeps it legible in
     // grayscale, in a print of the tab, and to a reader who cannot separate the
     // two surfaces. Colour is never the only signal (First Light).
-    // Sam, 2026-08-27, asked for "a gray underline below the CR row to
-    // distinguish it from the NC row", or thin white cell borders instead.
-    // Rendered all three: BOTH of those make the pair read as two separate
-    // institutions, because they strengthen the line INSIDE the pair while the
-    // line BETWEEN colleges stays the same weight (white borders are worse —
-    // they erase the between-college line entirely). What actually makes a
-    // noncredit row tellable is knowing which credit row it belongs to, so the
-    // weights go the other way: STRONGER between institutions, LIGHTER within
-    // the pair. The lane is already named in words twice over (the CR/NC chips
-    // and the CR/NC labels in the size cell), so the rules only have to carry
-    // the grouping.
+    // The row rules group the pair too: STRONGER between institutions, LIGHTER
+    // within one institution's CR/NC pair. Sam first asked for the opposite (an
+    // underline under the CR row, or white cell borders); rendered, both made a
+    // noncredit row read as a separate college, and he then arrived at the same
+    // grouping conclusion from the zebra striping. The lane is named in words by
+    // the CR/NC chips, so the rules and the stripe only carry the grouping.
     ".cplfund-table tbody tr.cplfund-row > td { border-top: 1px solid var(--border-strong); }",
-    ".cplfund-table tr.cplfund-ncrow > td { background: var(--surface-subtle); border-top: 1px solid var(--border); }",
+    ".cplfund-table tr.cplfund-ncrow > td { border-top: 1px solid var(--border); }",
     // The TGT/NOW label column. Narrow, muted, and deliberately NOT right
     // aligned — Sam asked for the labels left justified so they read as a key
     // to the two lines beside them rather than as another column of values.
@@ -389,9 +391,14 @@
     ".cplfund-table td.cf-size { text-align: right; }",
     ".cf-size .cf-szline { display: grid; grid-template-columns: 1.7em 1fr; gap: .35em; align-items: baseline; }",
     ".cf-size .cf-lane { text-align: left; font-size: .66rem; font-weight: 700; letter-spacing: .05em; color: var(--text-faint); }",
+    // Sam: "give the CR/NC chips a muted different color". A filled muted chip
+    // rather than the outlined one every other chip on the row uses, so the lane
+    // label is distinguishable from the floor/ceiling/gate glyphs beside it.
+    // ⚠️ Colour is not the signal — the chip is the WORD "CR" or "NC" — so this
+    // stays legible in greyscale and to a reader who cannot separate the fills.
     ".cf-lanechip { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .06em; " +
-      "padding: 0 4px; margin-left: 0; margin-right: 5px; border: 1px solid var(--border-strong); " +
-      "border-radius: 3px; color: var(--text-muted); cursor: default; vertical-align: middle; }",
+      "padding: 1px 5px; margin-left: 5px; border: 0; border-radius: 3px; " +
+      "background: var(--surface-muted); color: var(--navy-secondary); cursor: default; vertical-align: middle; }",
     ".cplfund-ncrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
@@ -5300,18 +5307,21 @@
       '<span class="cf-a">' + actLine + "</span>" +
       "</td>";
   }
-  function ncCollegeRowHtml(c) {
+  function ncCollegeRowHtml(c, alt) {
     var inst = ncInstFor(c.college);
     if (!inst) return "";
     var row = ncAllocFor(inst);
-    return '<tr class="cplfund-ncrow" data-ncfor="' + esc(c.college) + '">' +
+    return '<tr class="cplfund-ncrow' + (alt || "") + '" data-ncfor="' + esc(c.college) + '">' +
       "<td></td>" +
-      '<td class="t"><span class="cplfund-chip cf-lanechip">NC</span> <span class="cf-lanename">' +
-        esc(dispName(c.college)) + "</span>" + ncRowChips(row) + "</td>" +
+      // Sam: the NC chip sits to the RIGHT of the name, like the CR chip — the
+      // two lane chips have to occupy the same position or the eye cannot pair
+      // them down the column.
+      '<td class="t"><span class="cf-lanename">' + esc(dispName(c.college)) +
+        '</span><span class="cplfund-chip cf-lanechip">NC</span>' + ncRowChips(row) + "</td>" +
       '<td class="t dk">&middot;</td>' +
-      '<td class="cf-size" title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +
+      '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and " +
         "the size basis for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
-        '<span class="cf-szline"><span class="cf-lane">NC</span><span>' + fmtInt(inst.ftes) + "</span></span></td>" +
+        fmtInt(inst.ftes) + "</td>" +
       tgtNowLabelCellHtml() +
       ncPriorities(state.viewSlot).map(function (p) { return ncPrioCellHtml(inst, row, p); }).join("") +
       '<td class="dk" title="' + esc("Participation is recorded once for the institution — see the credit row above.") +
@@ -5323,29 +5333,32 @@
       "<td></td>" +
       "</tr>";
   }
-  function collegeRowHtml(c) {
+  function collegeRowHtml(c, idx) {
     var id = "c:" + c.order;
+    // One stripe per COLLEGE, carried by every row of its block (credit row,
+    // noncredit row, drill-in). See the cplfund-alt rule for why this is not
+    // nth-child.
+    var alt = (idx % 2 === 1) ? " cplfund-alt" : "";
     // The expand control is a real <button> on the caret (a11y, 2026-07-28) —
     // keyboard-focusable + announced, WITHOUT overriding the row's table
     // semantics. Its native Enter/Space fires a click that bubbles to the row's
     // toggle handler; mouse users still click anywhere on the row.
-    return '<tr class="cplfund-row' + (state.open[id] ? " cplfund-open" : "") +
+    return '<tr class="cplfund-row' + alt + (state.open[id] ? " cplfund-open" : "") +
       (_deepLinkCollege && c.college === _deepLinkCollege ? " cplfund-deeplink" : "") +
       '" data-id="' + esc(id) + '">' +
       "<td>" + esc(c.order) + "</td>" +
       '<td class="t"><button type="button" class="cplfund-caret" aria-expanded="' + (state.open[id] ? "true" : "false") +
       '" aria-label="' + esc(dispName(c.college) + " — toggle per-priority detail") + '">▸</button><strong>' + esc(dispName(c.college)) + "</strong>" + rowChips(c) + "</td>" +
       '<td class="t trunc" title="' + esc(c.district || "") + '">' + esc(districtShort(c.district) || "—") + "</td>" +
-      // Sam, 2026-08-27: both lanes, each labelled, numbers aligned — "CR 3,112"
-      // over "NC 43". It replaces a bare figure with a "+43 NC FTES" tail, which
-      // read as a footnote to the credit number rather than as the other lane.
-      '<td class="cf-size" title="' + esc(sizeCellTitle(c)) + '">' +
-        '<span class="cf-szline"><span class="cf-lane">CR</span><span>' +
-          (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</span></span>" +
-        (c.noncredit_ftes != null && c.noncredit_ftes > 0
-          ? '<span class="cf-szline dk" title="Noncredit FTES (MIS 2025-26) — this college&#39;s own noncredit program. Not part of the CREDIT allocation; it is the size basis for the separate noncredit carve-out shown on the NC row.">' +
-            '<span class="cf-lane">NC</span><span>' + fmtInt(c.noncredit_ftes) + "</span></span>"
-          : "") + "</td>" +
+      // Sam, 2026-08-27 (second pass): "We don't need the CR/NC column since you
+      // added a CR and NC chip next to the College name." So each row shows its
+      // OWN lane's figure and the chip beside the name says which lane that is.
+      // ⚠️ CONSEQUENCE, raised to Sam: a college whose noncredit programme is
+      // BELOW the entry threshold has no NC row, so its noncredit FTES now
+      // appears only in the NC $ column's hover. That is the Alameda case in his
+      // question 3 — it has 43 NC FTES and does not qualify at 500.
+      '<td title="' + esc(sizeCellTitle(c)) + '">' +
+        (usesFtes() ? fmtInt(c.credit_ftes) : fmtInt(c.headcount)) + "</td>" +
       tgtNowLabelCellHtml() +
       priorities(state.viewSlot).map(function (p) { return prioCellHtml(c, p, false); }).join("") +
       '<td title="' + esc(eligTitle(c.college)) + '">' + eligGlyph(c.college) + "</td>" +
@@ -5357,11 +5370,11 @@
       "</tr>" +
       // Sam: the noncredit row sits DIRECTLY under its credit row, before the
       // drill-in, so the pair reads as one institution in two lanes.
-      (ncRowShown(c) ? ncCollegeRowHtml(c) : "") +
-      (state.open[id] ? collegeDetailHtml(c) : "");
+      (ncRowShown(c) ? ncCollegeRowHtml(c, alt) : "") +
+      (state.open[id] ? collegeDetailHtml(c, alt) : "");
   }
 
-  function collegeDetailHtml(c) {
+  function collegeDetailHtml(c, alt) {
     var ps = priorities(state.viewSlot);
     var per = perYear();
     var rec = perfFor(c.college);
@@ -5511,7 +5524,7 @@
       noteLine = '<div class="cplfund-notewrap"><span class="dk">CO Monitor&#39;s note (internal):</span> ' +
         esc(noteRec.note) + "</div>";
     }
-    return '<tr class="cplfund-detail"><td colspan="' + COLS_COLLEGE().length + '">' +
+    return '<tr class="cplfund-detail' + (alt || "") + '"><td colspan="' + COLS_COLLEGE().length + '">' +
       '<div class="cplfund-detail-grid">' +
       '<div><span class="dk">' + (usesFtes() ? "Credit FTES share:" : "Headcount share:") + "</span> " +
       fmtInt(sizeOf(c)) + (usesFtes() ? " credit FTES = " : " students = ") +
@@ -5603,10 +5616,10 @@
     } else if (grouped()) {
       body = groupRowsByDistrict(rows).map(function (g) {
         return districtGroupHeaderHtml(g, cols.length) +
-          g.rows.map(function (c) { return collegeRowHtml(c); }).join("");
+          g.rows.map(function (c, i) { return collegeRowHtml(c, i); }).join("");
       }).join("");
     } else {
-      body = rows.map(function (c) { return collegeRowHtml(c); }).join("");
+      body = rows.map(function (c, i) { return collegeRowHtml(c, i); }).join("");
     }
     var sysYearCells = yearCellsHtml(sys);
     // The SYSTEM size total INCLUDES the noncredit feeder side (Sam,

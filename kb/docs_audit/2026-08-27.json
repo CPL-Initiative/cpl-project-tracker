@@ -10,7 +10,7 @@
   },
   "summary": {
     "files": 675,
-    "bytes": 7644778,
+    "bytes": 7645918,
     "over_budget": 5,
     "handoff_max": 201,
     "always_loaded_files": 1,
@@ -30,7 +30,7 @@
       },
       "index": {
         "files": 1,
-        "bytes": 270867,
+        "bytes": 272007,
         "over": 1
       },
       "lessons": {
@@ -53,12 +53,11 @@
       "oversized_doc": 5,
       "american_spelling": 171,
       "kb_note_dialect": 60,
-      "unindexed_kb_note": 1,
       "vault_heavy_path": 45
     },
     "vault": {
       "files": 2323,
-      "bytes": 1231526545,
+      "bytes": 1231527685,
       "heavy_bytes": 598638632,
       "heavy_share": 0.486,
       "ignore_filters": [
@@ -128,13 +127,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 270867,
+        "bytes": 272007,
         "limit": 40000,
         "lane": "index",
-        "over_by": 230867,
-        "ratio": 6.77
+        "over_by": 232007,
+        "ratio": 6.8
       },
-      "message": "270,867 B is 6.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "272,007 B is 6.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -767,15 +766,6 @@
       },
       "message": "1 British form — generalis→generaliz",
       "path": "docs/kb-notes/methodology-a-collapsed-section-must-still-inform.md"
-    },
-    {
-      "rule": "unindexed_kb_note",
-      "fixable": false,
-      "detail": {
-        "stem": "methodology-a-compact-formatter-is-calibrated-to-a-magnitude"
-      },
-      "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
-      "path": "docs/kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md"
     },
     {
       "rule": "american_spelling",

@@ -23,6 +23,22 @@
 // Run from repo root: `npm test` (or `node tests/cpl_funding_metric_pin.test.js`).
 const { check, freshDom, boot, consumerSrc, D, finish } = require("./lib/cpl_funding_harness.js");
 
+// ⚠️ LOCATE PRIORITY CELLS STRUCTURALLY, AND READ THEIR TWO LINES BY CLASS.
+// Every assertion below used to index the row's <td> list (cells[4], [5], [6])
+// and match on the inline "Now" label. Both broke the day a TGT/NOW label
+// column landed before P1 (2026-08-27) — a LAYOUT change that says nothing
+// about what this suite tests, and which made nine assertions fail for a reason
+// unrelated to any of them. `td.cf-prio` in document order IS P1, P2, P3
+// whatever else the row carries, and `.cf-t` / `.cf-a` are the target and
+// actual lines whatever labels the design puts on them.
+const prios = (row) => Array.from(row.querySelectorAll("td.cf-prio"));
+const line = (td, sel) => ((td && td.querySelector(sel)) || { textContent: "" })
+  .textContent.replace(/\s+/g, " ").trim();
+const now = (td) => line(td, ".cf-a");
+// "N FTES" on the ACTUAL line, not preceded by a digit or dot (so 400 does not
+// match inside 1,400 and 0 does not match inside 20.0).
+const nowFtes = (td, n) => new RegExp("(^|[^\\d.])" + n + " FTES").test(now(td));
+
 // ── 1. the defect itself, against the REAL predicates ────────────────────────
 // Rebuilt out of the consumer so this cannot drift into testing a copy.
 const has = (m, s) => String(m || "").toLowerCase().indexOf(s) !== -1;
@@ -81,21 +97,22 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   T.render();
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find((r) => /Laney/.test(r.textContent));
-  const cells = Array.from(row.querySelectorAll("td")).map((td) => td.textContent);
-  const joined = cells.join(" | ");
+  const P = prios(row);
+  const cells = P.map((td) => td.textContent);
+  const joined = Array.from(row.querySelectorAll("td")).map((td) => td.textContent).join(" | ");
   // P1 and P2 carry the SAME metric prose and differ only by the pin. P1 scores
   // on pa_u (12,000 units / 30 = 400 CPL FTES, its full cap); P2 falls through
   // to the prose and scores on pp_u (3 units = 0.1 FTES, ~$389). One config
   // field, a 4,000x difference in what the college is judged on — and neither
   // cell looks broken.
   check("3a: the pinned priority scores on pa_u (400 FTES), not on the prose's pp_u",
-    /Now 400 FTES/.test(cells[4]));
+    nowFtes(P[0], 400));
   check("3b: the UNPINNED twin, same prose, silently scores on the credit portal measure",
-    /Now 0 FTES/.test(cells[5]) && /1\.06%/.test(cells[5]));
+    nowFtes(P[1], 0) && /1\.06%/.test(cells[1]));
   check("3b2: so the pin changes the answer — identical prose, different earning",
-    cells[4] !== cells[5]);
+    cells[0] !== cells[1]);
   check("3c: an unknown pin renders 'not wired' rather than a plausible number",
-    /not wired/.test(cells[6]) && /\$0/.test(cells[6]));
+    /not wired/.test(cells[2]) && /\$0/.test(cells[2]));
   check("3d: a pinned unit source forces the FTES unit, whatever the prose sniffs",
     T._prios("Laney", "1")[0].unit === "FTES");
 
@@ -134,15 +151,16 @@ check("2d: srcDelivered() asks the ARTIFACT, not the registry (a declared key ma
   T.render();
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find((r) => /Laney/.test(r.textContent));
-  const cells = Array.from(row.querySelectorAll("td")).map((td) => td.textContent);
+  const P = prios(row);
+  const cells = P.map((td) => td.textContent);
   check("3e: an undelivered NC source earns $0 and says 'no feed'",
-    /no feed/.test(cells[4]) && /\$0/.test(cells[4]));
+    /no feed/.test(cells[0]) && /\$0/.test(cells[0]));
   check("3e2: it does NOT advance the full cap — the contrast is the data-gap cell beside it",
-    !/no feed/.test(cells[5]) && /gap/.test(cells[5]));
+    !/no feed/.test(cells[1]) && /gap/.test(cells[1]));
   check("3e3: and it is not reported as a measured zero ('0 FTES ... 0%')",
-    !/Now 0 FTES/.test(cells[4]));
-  const nc = cells[4].match(/\$[\d.,]+K?/g) || [];
-  const gap = cells[5].match(/\$[\d.,]+K?/g) || [];
+    !nowFtes(P[0], 0));
+  const nc = cells[0].match(/\$[\d.,]+K?/g) || [];
+  const gap = cells[1].match(/\$[\d.,]+K?/g) || [];
   check("3e4: the undelivered cell earns strictly less than the data-gap cell advances",
     nc.length >= 2 && gap.length >= 2 && nc[1] === "$0" && gap[1] !== "$0");
 }
@@ -269,11 +287,11 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
   T.render();
   const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const cells = rows.map((r) => Array.from(r.querySelectorAll("td")));
-  const unpinned = cells.map((c) => c[4].textContent);
-  const pinned   = cells.map((c) => c[6].textContent);
+  const cells = rows.map((r) => prios(r));
+  const unpinned = cells.map((c) => c[0].textContent);
+  const pinned   = cells.map((c) => c[2].textContent);
   check("7b: UNPINNED, the live Access prose still reads 0 FTES for every college",
-    rows.length > 100 && unpinned.every((t) => /Now 0 FTES/.test(t)));
+    rows.length > 100 && cells.every((c) => nowFtes(c[0], 0)));
   // ⚠️ THIS ASSERTION USED TO READ "every pinned cell says 'no feed'", which was
   // true only while ppa_u was undelivered. The cron delivered it hours later and
   // the guard went red on a change that was the feature working. An assertion
@@ -283,7 +301,7 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   check("7c: PINNED, the same prose does NOT land on the prose matcher's answer",
     pinned.some((t, i) => t !== unpinned[i]));
   check("7c2: and the pinned column is never the unpinned one's universal zero",
-    !pinned.every((t) => /Now 0 FTES/.test(t)));
+    !cells.every((c) => nowFtes(c[2], 0)));
   const diag = doc.querySelector(".cplfund-metricdiag");
   const lis = Array.from(diag.querySelectorAll("li")).map((li) => li.textContent);
   const mm = lis.filter((t) => /MILESTONE MISMATCH/.test(t));
@@ -315,10 +333,11 @@ check("7a2: the BAKE carries no pin — its slot-2 metric is not the one the pin
   };
   T._setShared({ yearPriorities: { "1": LIVE, "2": LIVE }, mirrorYears: true, disbursement: "frontload" });
   T.render();
-  const pinned = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .map((r) => Array.from(r.querySelectorAll("td"))[6].textContent);
+  const pinnedCells = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
+    .map((r) => prios(r)[2]);
+  const pinned = pinnedCells.map((td) => td.textContent);
   check("8a: with ppa_u present the Access column starts earning, no code change",
-    pinned.some((t) => /Now [\d,.]+ FTES/.test(t)) && !pinned.some((t) => /no feed/.test(t)));
+    pinnedCells.some((td) => /[\d,.]+ FTES/.test(now(td))) && !pinned.some((t) => /no feed/.test(t)));
   check("8b: ppa_u is declared in the registry as an APPLIED-rung unit measure",
     /ppa_u:\s*\{ unit: "units", milestone: "applied"/.test(consumerSrc));
   check("8c: the registry records that ppa is NOT a filtered pa (disjoint cohorts)",
@@ -344,9 +363,9 @@ check("9a: an empty-string metric_src clears the pin rather than being an unknow
   T.render();
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
     .find((r) => /Laney/.test(r.textContent));
-  const c = Array.from(row.querySelectorAll("td"))[4].textContent;
+  const cell = prios(row)[0];
   check("9b: a cleared pin falls back to the prose matcher, not to 'not wired'",
-    !/not wired/.test(c) && /Now 400 FTES/.test(c));
+    !/not wired/.test(cell.textContent) && nowFtes(cell, 400));
 }
 
 finish("cpl_funding_metric_pin");

@@ -163,6 +163,37 @@ function serve() {
       rules.betweenInstitutions > rules.withinPair,
       `between ${rules.betweenInstitutions} vs within ${rules.withinPair}`);
 
+    // ZEBRA IS PER COLLEGE. Sam: "rather than alternating gray/white rows, which
+    // makes them look like different colleges, alternate between colleges and
+    // keep the CR and NC same background." Row-parity striping (`nth-child`)
+    // silently produces the defect the moment a college occupies two rows, and
+    // it looks like a deliberate design rather than a bug — so the invariant is
+    // asserted, not the rule that implements it.
+    const stripe = await pg.evaluate(() => {
+      const nc = document.querySelector("tr.cplfund-ncrow");
+      const cr = nc.previousElementSibling;
+      // The next college's credit row: the first .cplfund-row after this pair.
+      let n = nc.nextElementSibling;
+      while (n && !n.classList.contains("cplfund-row")) n = n.nextElementSibling;
+      const bg = (el) => getComputedStyle(el.children[0]).backgroundColor;
+      return { cr: bg(cr), nc: bg(nc), next: n ? bg(n) : null };
+    });
+    check("11: a college's CR and NC rows share ONE background, so the pair reads as one college",
+      stripe.cr === stripe.nc, `${stripe.cr} vs ${stripe.nc}`);
+    check("12: and the NEXT college is on the other stripe, so colleges are still told apart",
+      stripe.next && stripe.next !== stripe.cr, `next ${stripe.next}`);
+
+    // The lane chip must be a filled, muted chip distinct from the outlined
+    // chips beside it — and still a WORD, which check 5 already pins.
+    const chipStyle = await pg.evaluate(() => {
+      const c = document.querySelector("tr.cplfund-ncrow .cf-lanechip");
+      const cs = getComputedStyle(c);
+      return { bg: cs.backgroundColor, border: cs.borderTopWidth };
+    });
+    check("13: the lane chip carries a muted FILL rather than the outline every other chip uses",
+      /rgba?\(/.test(chipStyle.bg) && !/rgba\(0, 0, 0, 0\)/.test(chipStyle.bg) &&
+      parseFloat(chipStyle.border) === 0, `${chipStyle.bg} border ${chipStyle.border}`);
+
     // Narrow viewport: the wide table scrolls inside its own container, the body never does.
     await pg.setViewportSize({ width: 390, height: 900 });
     await pg.waitForTimeout(250);
