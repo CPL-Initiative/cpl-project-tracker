@@ -119,7 +119,27 @@ check("slotIsCarryover names the front-loaded later years",
     /function capScale/.test(consumerSrc) &&
     /m\.capped\[c\.college\]/.test((consumerSrc.match(/function capScale\(c\)[\s\S]*?\n  \}/) || [""])[0]));
 
-  const strays = (consumerSrc.replace(entBody, "").match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
+  // SECOND named exemption (2026-08-27): ncPrioEntitlement, the NONCREDIT lane's
+  // counterpart. Same role, same rationale — the pre-bounds, per-year
+  // proportional entitlement that prioTarget divides by the price — over the
+  // noncredit carve-out instead of the college pool. It is exempted BY NAME and
+  // then held to the SAME three properties, so the exemption cannot be widened
+  // into a hole: a future lane that quietly computes its own W × share ÷ nYears
+  // still fires this.
+  const ncEntBody = (consumerSrc.match(/function ncPrioEntitlement\(inst, p\)[\s\S]*?\n  \}/) || [""])[0];
+  check("ncPrioEntitlement exists and is the second, named exemption",
+    /\* p\.share \/ nYears\(\)/.test(ncEntBody));
+  check("ncPrioEntitlement is front-load BLIND (an NC target must not double with its cap)",
+    ncEntBody.length > 0 && !/frontload|SlotEntitlement|PrioCap/i.test(ncEntBody));
+  check("ncPrioEntitlement rides the PRE-BOUNDS noncredit share (ncSizePct x the carve-out, never the floored award)",
+    /ncSizePct\(inst\)/.test(ncEntBody) && /ncModel\(\)\.pool/.test(ncEntBody) &&
+    !/ncAward|\.W\[/.test(ncEntBody));
+  check("ncPrioEntitlement's ONLY bound-awareness is ncCapScale() — the noncredit floor raises money, never the bar",
+    /ncCapScale\(inst\)/.test(ncEntBody) &&
+    /m\.capped\[inst\.key\]/.test((consumerSrc.match(/function ncCapScale\(inst\)[\s\S]*?\n  \}/) || [""])[0]));
+
+  const strays = (consumerSrc.replace(entBody, "").replace(ncEntBody, "")
+      .match(/\*\s*p\.share\s*\/\s*nYears\(\)/g) || []).length +
     (consumerSrc.match(/\*\s*p\.share\s*\/\s*ny\b/g) || []).length;
   check("no OTHER site computes W × p.share ÷ nYears on its own (all go through prioCap)",
     strays === 0);

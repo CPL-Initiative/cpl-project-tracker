@@ -10,17 +10,17 @@
   },
   "summary": {
     "files": 669,
-    "bytes": 7579867,
+    "bytes": 7589007,
     "over_budget": 5,
     "handoff_max": 199,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 146536,
+    "always_loaded_bytes": 146525,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 146536,
+        "bytes": 146525,
         "over": 1
       },
       "other": {
@@ -35,7 +35,7 @@
       },
       "lessons": {
         "files": 69,
-        "bytes": 1792749,
+        "bytes": 1801900,
         "over": 1
       },
       "kb_note": {
@@ -56,9 +56,9 @@
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2311,
-      "bytes": 1228477295,
-      "heavy_bytes": 598638643,
+      "files": 2313,
+      "bytes": 1228536854,
+      "heavy_bytes": 598638592,
       "heavy_share": 0.487,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
@@ -114,13 +114,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 146536,
+        "bytes": 146525,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 86536,
+        "over_by": 86525,
         "ratio": 2.44
       },
-      "message": "146,536 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "146,525 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -342,7 +342,7 @@
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 4,
         "forms": {
           "colour": {
             "n": 1,
@@ -352,13 +352,17 @@
             "n": 1,
             "prefer": "recogniz"
           },
+          "programme": {
+            "n": 1,
+            "prefer": "program"
+          },
           "modelling": {
             "n": 1,
             "prefer": "modeling"
           }
         }
       },
-      "message": "3 British forms — colour→color, recognis→recogniz, modelling→modeling",
+      "message": "4 British forms — colour→color, recognis→recogniz, programme→program, modelling→modeling",
       "path": "docs/cpl_funding_lessons.md"
     },
     {
@@ -4077,10 +4081,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694843,
+        "bytes": 8694850,
         "kind": "file"
       },
-      "message": "8,694,843 B single file inside the vault"
+      "message": "8,694,850 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4297,10 +4301,10 @@
       "fixable": false,
       "path": "kb/cr_reference_worklist.json",
       "detail": {
-        "bytes": 2354227,
+        "bytes": 2354169,
         "kind": "file"
       },
-      "message": "2,354,227 B single file inside the vault"
+      "message": "2,354,169 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

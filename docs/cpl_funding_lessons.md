@@ -1407,3 +1407,145 @@ Mutation-checked after the rewrite: blanking the pin still fails it (34/43).
 `no feed` → **0**; earning → **12**; `MILESTONE MISMATCH` → cleared. The 103
 measured zeros are now genuine — those colleges have no applied credit from
 portal-origin students yet, which is the incentive, not a defect.
+
+---
+
+## 2026-08-27 (Session 200, SkyLane) — the noncredit lane earns, and the trap ran the other way
+
+Sam ruled the last open dial in one line — **NC inherits credit's shares,
+34/33/33** — and build step 2 landed: the noncredit lane now EARNS against its
+own three measures, and the Option A row renders under every college that has a
+noncredit program.
+
+### The shape of the build
+
+The lane needed exactly one new idea and no new plumbing. `prioTarget()` already
+computes *pot ÷ price*; what changed is **which pot**:
+
+```js
+function prioEntitlement(c, p) {
+  if (p && p.lane === "nc") return ncPrioEntitlement(c, p);   // route, don't split
+  return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
+}
+```
+
+That is Sam's *"route, don't split"* made structural: a priority belongs to one
+lane and is measured against that lane's pot; `share` splits the MONEY inside the
+lane, never the FTES. Everything downstream — the clamp, the earning ladder, the
+front-load carryover states, the floor/ceiling asymmetry — is reused unchanged.
+
+`ncPriorities(slot)` is credit's three, re-pointed. Titles, descriptions,
+strategies, shares and the funding factor are **inherited** (Sam: "the same three
+priorities", "no discount for being the newer lane"), with an `ncPriorities`
+override layer resolving scenario → shared → baked so diverging any of them later
+is one field rather than a refactor.
+
+### ⭐ The prose trap, running in the opposite direction
+
+#1364 fixed a CREDIT metric that prose-matched its way onto the wrong measure.
+This lane is the mirror, and it is worse: **the NC priorities inherit credit's
+wording by construction.** An unpinned NC priority does not fail to resolve — it
+resolves confidently onto a CREDIT source and scores noncredit money on credit
+performance. Every figure would be non-zero, in range, and wrong.
+
+So `ncPriorities()` **always** emits a `metric_src`, mapped by MILESTONE out of
+`METRIC_SOURCES` itself rather than written down a second time, and a milestone
+with no noncredit counterpart gets a deliberately-unknown key so it lands in the
+loud `bad_src` branch — $0, named on the cell — instead of falling through to the
+prose. There is no unpinned path in this lane by construction, not by discipline.
+
+⚠️ **And the coupling runs both ways.** Because the NC rung is taken from how the
+CREDIT priority resolved, a mis-resolved credit metric hands its error straight to
+noncredit. `F9`/`F10` pin this: un-pin the credit Access metric and its noncredit
+counterpart follows it onto the transcribed rung, collapsing two NC priorities
+onto one source. **Sam's `ppa_u` pin is now load-bearing for both lanes.**
+
+### ⚠️ Three ways this build could have quietly disbursed the carve-out
+
+1. **The advance.** `earnFraction()` pays the FULL CAP when the perf artifact has
+   not loaded — a sensible transient for credit, and catastrophic here: Sam ruled
+   NC shows $0, never an advance. That branch fires *before* `srcDelivered()` can
+   be asked anything, so without a lane test a slow artifact load (or any harness
+   without one) disburses the whole **$1.8M**. Lane-guarded now.
+2. **The share sum.** `prioCap()` normalizes by the CREDIT share sum. Identical
+   today, because Sam set NC's shares to credit's — and silently wrong the moment
+   he moves one. `ncShareSum`/`ncSlotEntitlement`/`ncPrioCap` exist for exactly
+   that day. ⚠️ Measured while writing the guard: **a share set is a MULTIPLIER on
+   the pot, not a normalizer** — shares summing to 1.30 place 1.30 × W, in credit
+   too. My first assertion encoded an invariant the credit lane does not have.
+3. **The wrong floor in the hover.** Reusing `prioCellHtml()` wholesale would have
+   printed the **$150,000 credit floor** on a row held by the **$50,000 noncredit**
+   one — a real dollar figure, in the right place, describing the wrong dial. The
+   NC cell is its own function for this reason.
+
+### ⚠️ `fmtCountK` misstates a noncredit target — found in Chromium, not jsdom
+
+The row was structurally perfect and the numbers were wrong. Credit targets are in
+the hundreds or thousands, so the compact formatter rounds to a whole number
+harmlessly. **Noncredit targets are order 1–25 CPL FTES**, where `1.4` paints
+`"1"` (−29%) and anything under 0.5 paints **`"0"`** — an absent-looking zero, on
+the one lane whose honest zeros are the entire point of the design.
+
+Nine jsdom assertions about that cell passed. It took a screenshot to see it.
+`fmtFtesSmall()` keeps one decimal below 100 and defers to the shared compaction
+above it. ⚠️ **The credit lane has the same latent case** — a small college's
+FTES-denominated credit target can also fall under 100 — left alone deliberately
+rather than widened into a live tab mid-build.
+
+### Measured on the LIVE config, not the bake
+
+Sam, mid-build: *"The config is likely old news. Check the tab for current numbers
+and metrics."* He was right to say it — every block of the new suite runs on the
+BAKED defaults, which differ from live on **all four** properties that matter
+here: shares, factor, `mirrorYears`, and (decisively) the bake has **two
+priorities on the transcribed rung**, so it cannot exercise the three-distinct-
+sources mapping at all.
+
+Dumped live via MCP, verified **byte-identical** (`md5 23531c14…`, 8,607 chars —
+not hand-checked, compared against `md5(config::text)` in Postgres), and run
+through `_effective()`:
+
+| | live |
+|---|---|
+| NC carve-out | **$1,800,000** |
+| entry threshold | 500 FTES → **33 institutions** |
+| NC floor / cap | **$50,000 / $100,000** |
+| at floor / at cap | **30 / 2** |
+| NC sources | three DISTINCT (`nc_pe_u` · `nc_pa_u` · `nc_pt_u`) |
+| earned across all 33 | **$0** |
+
+⭐ **30 of 33 sit at the floor and 2 at the cap — exactly ONE institution is
+earning proportionally.** `ncModel().breakEven` already said so (3,909 FTES);
+seeing it as 30/33 makes the point sharper. As an incentive the lane is currently
+almost entirely a grant, and that is a dial question for Sam, not a defect.
+
+⚠️ A live-shaped FIXTURE went into the suite, never the live config — a test
+carrying today's shares goes red the next time Sam edits one, which is how a
+guard becomes a chore and then a deletion. It reproduces the four structural
+properties and pins no dial.
+
+### Verification
+
+`tests/cpl_funding_nc_lane.test.js` — **48 assertions**, six blocks. Five
+mutations run, all caught: dropping the pin (7 fail), routing the entitlement at
+the credit pool (4), letting the not-loaded branch advance NC (3), normalizing on
+the credit share sum (3), reverting the target precision (1).
+
+`scripts/check_funding_nc_row_layout.js` — **9 Chromium checks** for the four
+claims jsdom structurally cannot make: the row does not widen the table, every
+cell lines up under its credit counterpart, the CR/NC chips are painted words at
+a readable size, and the body never scrolls sideways at 390px.
+
+⚠️ **Do not mutate a source file while a full-suite background run is in flight** —
+I invalidated a 15-minute run that way, then compounded it with a `git checkout --`
+in the restore step that wiped the file. A copy taken before the first mutation is
+what saved it.
+
+### Next
+
+1. **Sam looks at the row** — density and the tint are his calls.
+2. The credit-lane variant of the rounding (a small college's FTES target).
+3. **NC's own strategy text.** Year-1 P-Success still lists *"noncredit mirror
+   courses"* among CREDIT strategies (the carryover from Session 199). The NC
+   priorities inherit credit's strategies today; moving that line is a change to
+   curator-authored text in the live config, so it is Sam's, not a session's.

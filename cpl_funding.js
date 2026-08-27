@@ -354,6 +354,17 @@
     ".cf-prio .cf-u { font-weight: 700; color: var(--navy-primary); }",
     ".cf-prio .cf-pct { color: var(--green-progress); font-weight: 400; }",
     ".cf-prio .cf-gap { color: var(--text-faint); font-weight: 400; }",
+    // ── the Option A NONCREDIT row (Sam, 2026-08-27) ─────────────────────
+    // A recessed band directly under its credit row, so the pair reads as one
+    // institution in two lanes. ⚠️ The tint is NOT the signal — the CR/NC chips
+    // carry the distinction in TEXT, which is what keeps it legible in
+    // grayscale, in a print of the tab, and to a reader who cannot separate the
+    // two surfaces. Colour is never the only signal (First Light).
+    ".cplfund-table tr.cplfund-ncrow > td { background: var(--surface-subtle); }",
+    ".cf-lanechip { display: inline-block; font-size: .62rem; font-weight: 700; letter-spacing: .06em; " +
+      "padding: 0 4px; margin-left: 0; margin-right: 5px; border: 1px solid var(--border-strong); " +
+      "border-radius: 3px; color: var(--text-muted); cursor: default; vertical-align: middle; }",
+    ".cplfund-ncrow .cf-lanename { color: var(--text-muted); font-weight: 600; }",
     // Numbered pie glyph for the Elig column (Sam, 2026-07-24).
     ".cf-eligpie { vertical-align: middle; display: inline-block; }",
     ".cplfund-notewrap { grid-column: 1 / -1; }",
@@ -484,6 +495,16 @@
     if (a >= 1e5) return "$" + Math.round(v / 1e3) + "K";
     if (a >= 1e3) return "$" + parseFloat((v / 1e3).toFixed(1)) + "K";
     return "$" + Math.round(v);
+  }
+  // NONCREDIT targets are order 1–25 CPL FTES, and at that scale fmtCountK's
+  // integer rounding stops being a compaction and becomes a misstatement: 1.4
+  // renders "1" (−29%) and 0.4 renders "0" — an ABSENT-looking zero on a row
+  // that has a real target, on the one lane whose honest zeros are the whole
+  // point. One decimal below 100, the shared compaction above it. Caught in
+  // Chromium, not jsdom: the markup was correct and the number was not.
+  function fmtFtesSmall(v) {
+    if (v == null) return "—";
+    return Math.abs(v) < 100 ? fmtNum1(v) : fmtCountK(v);
   }
   // Compact student counts for the priority cells (797 · 16.8K · 113K) so the
   // wide statewide numbers don't blow out the column; full precision stays in
@@ -876,6 +897,149 @@
   }
   // A single institution's noncredit award (0 when it is not in the lane).
   function ncAward(key) { var m = ncModel(); return m.W[key] || 0; }
+
+  // ── THE NONCREDIT PRIORITY LAYER (build step 2 — Sam, 2026-08-26/27) ──────
+  // Until now the noncredit lane only ALLOCATED: ncModel() splits the carve-out
+  // across the roster by noncredit FTES, with a floor and a ceiling. Sam ruled
+  // 2026-08-26 that it must also EARN, exactly the way credit does — "a cap
+  // earned against the CR three, origin-filtered" — and 2026-08-27 that its
+  // three shares are credit's (Access 0.34 / Outreach 0.33 / Success 0.33).
+  //
+  // ⭐ ROUTE, DON'T SPLIT. A unit earns in ONE lane, decided by where the
+  // student originated, and counts three times INSIDE that lane. `share` splits
+  // the MONEY, never the FTES. So this layer changes which POT a priority is
+  // measured against and nothing else: same formula, same clamp, same earning
+  // ladder, a different pool and a different measure.
+  //
+  // ⚠️ WHY THE PIN IS COMPULSORY HERE. measurability() resolves a priority to a
+  // data key by reading its PROSE. The NC priorities inherit credit's wording
+  // (Sam: "the same three priorities"), so an unpinned NC priority would match
+  // credit's prose and score noncredit money on CREDIT performance — plausible
+  // numbers, nothing on screen saying so. That is the exact failure the Access
+  // metric shipped with, in the other direction. Every priority this function
+  // returns therefore carries an explicit metric_src, and one that cannot be
+  // mapped gets a DELIBERATELY unknown key so it lands in the loud `bad_src`
+  // branch ($0, named on the cell) rather than falling through to the prose.
+  //
+  // The mapping is by MILESTONE, read out of METRIC_SOURCES itself rather than
+  // written down twice: credit's eligible/applied/transcribed rung picks the
+  // noncredit source carrying the same rung. Add a fourth NC source to the
+  // registry and it is reachable here with no edit.
+  function ncSourceByMilestone() {
+    var out = {};
+    if (typeof METRIC_SOURCES !== "object" || !METRIC_SOURCES) return out;
+    Object.keys(METRIC_SOURCES).forEach(function (k) {
+      var r = METRIC_SOURCES[k];
+      if (r && r.lane === "nc" && r.milestone && !out[r.milestone]) out[r.milestone] = k;
+    });
+    return out;
+  }
+  // A curator override layer for the NC lane, resolving scenario -> shared ->
+  // baked like every other field. Today it is empty and NC inherits credit's
+  // share and factor, which is Sam's ruling; the layer exists so diverging them
+  // later is one field, not a refactor. Indexed by the credit priority's SOURCE
+  // index, never its display position — the same identity rule priorities() uses.
+  function ncPrioOverride(slot, srcIdx, field) {
+    var s = prioSlot(slot);
+    return firstDefined(
+      SCENARIO.ncPriorities && SCENARIO.ncPriorities[s] && SCENARIO.ncPriorities[s][srcIdx] &&
+        SCENARIO.ncPriorities[s][srcIdx][field],
+      SHARED.ncPriorities && SHARED.ncPriorities[s] && SHARED.ncPriorities[s][srcIdx] &&
+        SHARED.ncPriorities[s][srcIdx][field],
+      base().nc_priorities && base().nc_priorities[s] && base().nc_priorities[s][srcIdx] &&
+        base().nc_priorities[s][srcIdx][field]);
+  }
+  // The noncredit lane's priorities for a year slot — credit's three, re-pointed
+  // at the noncredit measures. `key` is namespaced so an NC priority can never
+  // be read off a credit college object (or vice versa) by accident.
+  function ncPriorities(slot) {
+    var byMs = ncSourceByMilestone();
+    return priorities(slot).map(function (p) {
+      // The rung this priority sits on, taken from the CREDIT resolution so the
+      // two lanes are guaranteed to be talking about the same milestone.
+      var cm = measureOf(p);
+      var ms = cm && cm.milestone;
+      var src = (ms && byMs[ms]) || "nc_unmapped";
+      var reg = (typeof METRIC_SOURCES === "object" && METRIC_SOURCES) ? METRIC_SOURCES[src] : null;
+      var share = ncPrioOverride(slot, p.src, "share");
+      var factor = ncPrioOverride(slot, p.src, "factor");
+      return {
+        key: "nc_" + p.key, label: p.label, pos: p.pos, src: p.src, lane: "nc",
+        title: p.title,
+        description: p.description,
+        // The NC measure's own words. Inheriting credit's metric TEXT would put
+        // "Applied units ... from either CPL Portal, College CPL Landing Page,
+        // or batch upload" on a row measuring noncredit origination — true of
+        // the credit lane and false here.
+        metric: reg ? reg.basis : (p.metric + " (noncredit origin — unmapped)"),
+        metric_src: src,
+        unit: "ftes",
+        strategies: p.strategies,
+        // Sam, 2026-08-27: NC inherits credit's shares. Sam, 2026-08-26: NC
+        // keeps credit's funding factor (0.5), "no discount for being newer".
+        share: share == null ? p.share : Number(share),
+        factor: factor == null ? p.factor : Number(factor),
+        // target_rate/per_student are CREDIT-lane denominations (they divide by
+        // the credit basis and the credit pool). Every NC priority is scored in
+        // FTES, which never reads them — carrying them across would put a
+        // credit-derived rate on a noncredit row where nothing checks it.
+        target_rate: null,
+        per_student: null
+      };
+    });
+  }
+  function ncShareSum(slot) {
+    return ncPriorities(slot).reduce(function (s, p) { return s + (Number(p.share) || 0); }, 0);
+  }
+  // The NC mirrors of windowEntitlement/slotEntitlement/prioCap. They exist
+  // rather than reusing the credit ones because those normalize by the CREDIT
+  // share sum: identical today (Sam set NC's shares to credit's) and silently
+  // wrong the moment he moves one. A shared helper parameterized by lane would
+  // be the same code; two named functions make the divergence impossible.
+  function ncWindowEntitlement(W) {
+    var ny = nYears(), s = 0;
+    selectedYears().forEach(function (_, i) { s += W * ncShareSum(String(i + 1)) / ny; });
+    return s;
+  }
+  function ncSlotEntitlement(W, slot) {
+    if (!frontloaded()) return W * ncShareSum(slot) / nYears();
+    return String(slot) === "1" ? ncWindowEntitlement(W) : 0;
+  }
+  function ncPrioCap(W, slot, p) {
+    var ss = ncShareSum(slot);
+    return ss > 0 ? ncSlotEntitlement(W, slot) * p.share / ss : 0;
+  }
+  // One institution's entry in the noncredit roster, by key.
+  function ncInstFor(key) {
+    var list = ncInstitutions(), i;
+    for (i = 0; i < list.length; i++) if (list[i].key === key) return list[i];
+    return null;
+  }
+  function ncTotalSize() {
+    return ncRoster().reduce(function (s, r) { return s + (Number(r.ftes) || 0); }, 0);
+  }
+  function ncSizePct(inst) {
+    var t = ncTotalSize();
+    return t > 0 ? (Number(inst && inst.ftes) || 0) / t : 0;
+  }
+  // The NC lane's capScale — the ceiling lowers the bar, the floor never raises
+  // it. Same asymmetry Sam ruled for credit (2026-08-22): a bound on the money
+  // is a bound on the bar, and the floor is deliberately one-way.
+  function ncCapScale(inst) {
+    if (!inst) return 1;
+    var m = ncModel();
+    if (!(m.cap > 0) || !m.capped[inst.key]) return 1;
+    var prop = ncSizePct(inst) * m.pool;
+    var ratio = m.plainRatio > 0 ? m.plainRatio : 1;
+    return prop > 0 ? Math.min(1, m.cap / ratio / prop) : 1;
+  }
+  // The PRE-BOUNDS proportional per-year entitlement behind one NC priority —
+  // what prioTarget() divides by the price. Rides the roster's own size share
+  // and the carve-out, never the floored award: an institution topped up to the
+  // NC minimum gets more money and the SAME target, exactly as in credit.
+  function ncPrioEntitlement(inst, p) {
+    return (inst ? ncSizePct(inst) * ncCapScale(inst) : 1) * ncModel().pool * p.share / nYears();
+  }
   // ── generalized pool line-items (Sam, 2026-07-23): editable labels, add/delete
   //    custom boxes, hide/restore core boxes. Net = Σrevenue − Σdeduction −
   //    carve-outs; with NO custom boxes and nothing hidden this equals the old
@@ -1227,6 +1391,12 @@
     return prop > 0 ? Math.min(1, m.cap / ratio / prop) : 1;
   }
   function prioEntitlement(c, p) {
+    // ROUTE, DON'T SPLIT (Sam, 2026-08-26). A priority belongs to exactly ONE
+    // lane and is measured against that lane's pot; `share` splits the MONEY
+    // inside the lane, never the FTES. Without this seam an NC priority would
+    // divide the CREDIT pool by a noncredit size share — a figure that balances
+    // against the wrong total and reads perfectly plausible on screen.
+    if (p && p.lane === "nc") return ncPrioEntitlement(c, p);
     return (c ? sizePct(c) * capScale(c) : 1) * netCollege() * p.share / nYears();
   }
 
@@ -3696,7 +3866,7 @@
   // over the text match. It rides prioField(), so it layers scenario -> shared ->
   // baked like every other priority field, with no new plumbing.
   //
-  // ⚠️ `metric_src` is deliberately NOT free text. An unrecognised key would read
+  // ⚠️ `metric_src` is deliberately NOT free text. An unrecognized key would read
   // `rec[src] == null` and fall through to status "none" — $0 earned, rendered as
   // "this college posted nothing" — so a typo would silently zero a lane and look
   // like a measurement. Every legal key is declared here WITH its unit, and an
@@ -3871,7 +4041,18 @@
     if (meas.bad_src) return { f: 0, status: "bad_src", meas: meas };
     if (!meas.src) return { f: 1, status: "gap", meas: meas };            // data-gap metric → advance for everyone
     var pf = perf();
-    if (!pf || !pf.statewide) return { f: 1, status: "pending", meas: meas };  // feed not loaded → advance (transient)
+    if (!pf || !pf.statewide) {
+      // Feed not loaded → advance (transient) … but NEVER for a lane whose
+      // measures the feed has never carried at all. Sam ruled the noncredit row
+      // shows its targets with $0 earned, explicitly NOT the full-cap advance
+      // the credit lane gives an unmeasurable metric — and this branch fires
+      // before srcDelivered() can be asked anything, so without the lane test a
+      // slow artifact load (or any harness without one) would pay the whole NC
+      // carve-out out as an advance. Credit keeps the advance: those measures
+      // ARE in the feed, it just has not arrived yet.
+      if (meas.lane === "nc") return { f: 0, status: "undelivered", target: prioTarget(c, p), meas: meas };
+      return { f: 1, status: "pending", meas: meas };
+    }
     // A DECLARED-BUT-UNDELIVERED measure: the priority is wired to a real key,
     // and the feed does not carry that key for ANYONE yet (the noncredit-origin
     // sources, until MAP delivers the origination LocID). f is 0, exactly as Sam
@@ -4813,7 +4994,7 @@
     //
     // WORDING (Sam, 2026-08-23: "a little worried about the message we're
     // sending with the Held label"). Until the deadline passes, EVERY college is
-    // gated — nobody has opted in yet — so a dollar figure labelled "held" on
+    // gated — nobody has opted in yet — so a dollar figure labeled "held" on
     // all 115 rows reads as the state withholding money from the whole system,
     // when in fact the requirement is not yet due. Before the deadline the row
     // says what to DO and names no figure (the cap is already on the line above,
@@ -4895,6 +5076,11 @@
   }
   function rowChips(c) {
     var chips = "";
+    // The lane chip (Sam, 2026-08-27: "CR/NC chips", not the words). Shown ONLY
+    // where a noncredit row follows — on a college with no noncredit program
+    // there is no second lane to tell this row apart from, so a bare "CR" would
+    // be labelling a distinction that is not on screen.
+    if (ncRowShown(c)) chips += '<span class="cplfund-chip cf-lanechip">CR</span>';
     if (c.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
       esc(baselineGateText(c.college)) + '">⛔</span>';
     if (c.floored) chips += '<span class="cplfund-chip" title="Minimum-viable floor applied — topped up to ' + fmtMoney(allocModel().floor) + ' for the window">⬆</span>';
@@ -4943,6 +5129,151 @@
       '<span class="sub">+ ' + fmtMoney(standalone) + " standalone = " + fmtMoney(m.pool) + "</span></td>";
   }
 
+  // ── OPTION A: the NONCREDIT ROW (Sam, 2026-08-27) ─────────────────────────
+  // "Option A — a second NC row per college", not extra lines inside each
+  // priority cell. His display rules, verbatim: CR/NC chips (not the words
+  // "Credit"/"Noncredit"), Tgt and Now folded onto aligned lines, abbreviated
+  // $99.7K, bold only on the Total column.
+  //
+  // The row is built as a collegeAlloc()-SHAPED object so yearCellsHtml() and
+  // totalCellHtml() render it unchanged. That is deliberate: those two carry the
+  // cap/earned/advance/withheld stacking and the front-load carryover states,
+  // and a second copy of that logic for the NC lane is a second thing to keep in
+  // step. Every figure inside the object is the noncredit lane's own.
+  function ncAllocFor(inst) {
+    var W = ncAward(inst.key);
+    var m = ncModel();
+    var ny = nYears(), fl = frontloaded();
+    // The participation gate is a property of the INSTITUTION, not of a lane, so
+    // a college that has not opted in does not earn noncredit money either. It
+    // can only ever REDUCE, so carrying it cannot over-pay. ⚠️ Sam has NOT ruled
+    // on whether the standalone continuing-education institutions (which have no
+    // credit row, and so no gate record) have a gate of their own — they are
+    // treated as ungated here, which is the reading that does not invent one.
+    var gate = inst.kind === "college" ? baselineGate(inst.college) : { blocked: false };
+    var out = { nc: true, key: inst.key, college: inst.college || null, w: W,
+      ftes: inst.ftes, total: 0,
+      floored: !!m.floored[inst.key], capped: !!m.capped[inst.key],
+      gate_blocked: !!gate.blocked };
+    var ys = [], eys = [], earnTotal = 0, earnMeasured = 0, earnAdvance = 0, earnWithheld = 0;
+    selectedYears().forEach(function (_, i) {
+      var slot = String(i + 1);
+      var v = W * ncShareSum(slot) / ny;
+      ys.push(v);
+      out.total += v;
+      var ey = 0;
+      ncPriorities(slot).forEach(function (p) {
+        var fr = earnFraction(inst, p);
+        var paid = ncPrioCap(W, slot, p) * fr.f;
+        if (gate.blocked) { earnWithheld += paid; return; }
+        ey += paid;
+        if (!earnIsMeasured(fr)) earnAdvance += paid; else earnMeasured += paid;
+      });
+      eys.push(ey);
+      earnTotal += ey;
+    });
+    ys.forEach(function (v, i) { out["y" + (i + 1)] = fl ? (i === 0 ? out.total : 0) : v; });
+    eys.forEach(function (v, i) { out["ey" + (i + 1)] = fl ? (i === 0 ? earnTotal : 0) : v; });
+    out.earned_total = earnTotal;
+    out.earned_measured = earnMeasured;
+    out.earned_advance = earnAdvance;
+    out.earned_withheld = earnWithheld;
+    ncPriorities(state.viewSlot).forEach(function (p) {
+      out[p.key] = ncPrioCap(W, state.viewSlot, p);
+      out[p.key + "_heads"] = prioTarget(inst, p);
+    });
+    return out;
+  }
+  // Is there an Option A row for this college? Same test the NC $ cell already
+  // uses, so the row and the column can never disagree about who is in the lane.
+  function ncRowShown(c) { return (ncModel().W[c.college] || 0) > 0; }
+  function ncRowChips(row) {
+    var m = ncModel(), chips = "";
+    if (row.gate_blocked) chips += '<span class="cplfund-chip cf-gatechip" title="' +
+      esc(baselineGateText(row.college)) + '">⛔</span>';
+    // The NC lane's OWN bounds, never the credit floor/ceiling — naming the
+    // $150,000 credit floor on a row held by the $50,000 noncredit one would be
+    // a figure that looks right and is not.
+    if (row.floored) chips += '<span class="cplfund-chip" title="Noncredit minimum applied — topped up to ' +
+      fmtMoney(m.floor) + ' for the window">⬆</span>';
+    if (row.capped) chips += '<span class="cplfund-chip" title="Noncredit maximum applied — held to ' +
+      fmtMoney(m.cap) + ' for the window">⬇</span>';
+    return chips;
+  }
+  // One NC priority cell. Same two-line Tgt/Now shape as the credit cell so the
+  // two rows read down the column (Sam's "Tgt and Now folded onto aligned
+  // lines"), with every figure and every word taken from the noncredit lane.
+  function ncPrioCellHtml(inst, row, p) {
+    var target = prioTarget(inst, p);
+    var cap = row[p.key] || 0;
+    var fr = earnFraction(inst, p);
+    if (cap <= 0 && slotIsCarryover(state.viewSlot)) {
+      return '<td class="cf-prio cplfund-carry" title="' +
+        esc("Year " + state.viewSlot + " is carryover under front-loaded disbursement — the whole " +
+          windowLabel() + " noncredit window was placed in Year 1.") + '">↻ carryover</td>';
+    }
+    var earned = cap * fr.f;
+    var actLine, actExplain;
+    if (fr.status === "earned") {
+      actLine = '<span class="cf-lbl">Now</span> ' + fmtFtesSmall(fr.actual) + " FTES &middot; " +
+        '<span class="cf-u">' + fmtMoneyK(earned) + "</span>" +
+        (target > 0 ? ' &middot; <span class="cf-pct">' + fmtPctTrim(Math.min(1, fr.actual / target)) + "</span>" : "");
+      actExplain = fmtNum1(fr.actual) + " noncredit-origin CPL FTES posted (" +
+        fmtPctTrim(Math.min(1, fr.actual / (target || 1))) + " of target)";
+    } else if (fr.status === "none") {
+      actLine = '<span class="cf-lbl">Now</span> 0 FTES &middot; <span class="cf-u">' + fmtMoneyK(0) +
+        '</span> &middot; <span class="cf-pct">0%</span>';
+      actExplain = "nothing posted against this measure yet";
+    } else if (fr.status === "bad_src") {
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">not wired</span> &middot; <span class="cf-u">' +
+        fmtMoneyK(0) + "</span>";
+      actExplain = "this priority has no noncredit measure at its milestone (" +
+        esc(String(fr.meas && fr.meas.bad_src)) + ") — nothing can score it, so it earns $0 rather than advancing";
+    } else {
+      // undelivered — and today that is EVERY noncredit priority. The daily MAP
+      // feed carries no nc_* key, so nothing about this institution has been
+      // measured either way. $0, and deliberately NOT the full-cap advance the
+      // credit lane gives an unmeasurable metric (Sam's ruling). The percentage
+      // is omitted on purpose: a percentage of a target nothing is measuring
+      // against would read as a measurement.
+      actLine = '<span class="cf-lbl">Now</span> <span class="cf-gap">no feed</span> &middot; <span class="cf-u">' +
+        fmtMoneyK(0) + "</span>";
+      actExplain = "the daily feed does not carry a noncredit-origin measure yet — $0 earned, and deliberately " +
+        "NOT an advance. The target and the potential stand; earning starts when MAP delivers the origination LocID.";
+    }
+    var title = p.label + " — " + p.title + " (noncredit). Target " + fmtNum1(target) + " CPL FTES (" +
+      fmtInt(target * unitsPerCplFtes(inst.college ? baseCollege(inst.college) : null)) + " units — its noncredit " +
+      "allocation ÷ " + fmtRate(prioPrice(p)) + "/FTES). Noncredit funding cap " + fmtMoney(cap) +
+      ", from the " + fmtMoney(ncModel().pool) + " noncredit carve-out — separate money from the credit total. " +
+      "Measure: " + p.metric + ". Earned so far: " + actExplain + " → " + fmtMoney(earned) + ".";
+    return '<td class="cf-prio cf-ncprio" title="' + esc(title) + '">' +
+      '<span class="cf-t"><span class="cf-lbl">Tgt</span> <span class="cf-n">' + fmtFtesSmall(target) +
+      '</span> FTES &middot; <span class="cf-cap">' + fmtMoneyK(cap) + "</span></span>" +
+      '<span class="cf-a">' + actLine + "</span>" +
+      "</td>";
+  }
+  function ncCollegeRowHtml(c) {
+    var inst = ncInstFor(c.college);
+    if (!inst) return "";
+    var row = ncAllocFor(inst);
+    return '<tr class="cplfund-ncrow" data-ncfor="' + esc(c.college) + '">' +
+      "<td></td>" +
+      '<td class="t"><span class="cplfund-chip cf-lanechip">NC</span> <span class="cf-lanename">' +
+        esc(dispName(c.college)) + "</span>" + ncRowChips(row) + "</td>" +
+      '<td class="t dk">&middot;</td>' +
+      '<td title="' + esc("Noncredit FTES (MIS 2025-26) — this college's own noncredit program, and the size basis " +
+        "for the noncredit carve-out. Not part of the credit allocation on the row above.") + '">' +
+        fmtInt(inst.ftes) + '<span class="sub">NC FTES</span></td>' +
+      ncPriorities(state.viewSlot).map(function (p) { return ncPrioCellHtml(inst, row, p); }).join("") +
+      '<td class="dk" title="' + esc("Participation is recorded once for the institution — see the credit row above.") +
+        '">&middot;</td>' +
+      yearCellsHtml(row) +
+      totalCellHtml(row) +
+      '<td class="dk" title="' + esc("This row IS the noncredit carve-out; the NC $ figure on the credit row above is " +
+        "the same money, summarized.") + '">&#8593;</td>' +
+      "<td></td>" +
+      "</tr>";
+  }
   function collegeRowHtml(c) {
     var id = "c:" + c.order;
     // The expand control is a real <button> on the caret (a11y, 2026-07-28) —
@@ -4974,7 +5305,11 @@
       ncCellHtml(c) +
       "<td>" + (c.working_adults == null ? "—" : fmtInt(c.working_adults) +
         '<span class="sub">' + fmtPct(c.county_pop_pct, 1) + " of county</span>") + "</td>" +
-      "</tr>" + (state.open[id] ? collegeDetailHtml(c) : "");
+      "</tr>" +
+      // Sam: the noncredit row sits DIRECTLY under its credit row, before the
+      // drill-in, so the pair reads as one institution in two lanes.
+      (ncRowShown(c) ? ncCollegeRowHtml(c) : "") +
+      (state.open[id] ? collegeDetailHtml(c) : "");
   }
 
   function collegeDetailHtml(c) {
@@ -7286,6 +7621,33 @@
           unit: prioUnitLabel(p),
           cap: prioCap(W, slot, p),
           target: prioTarget(c, p)
+        };
+      });
+    },
+    // The NONCREDIT lane's counterpart of _prios (build step 2, 2026-08-27).
+    // Same standing rule as _alloc/_prios: never re-derive an NC figure, ask the
+    // model. Takes a college name, or an "NC:<short>" key for one of the
+    // standalone continuing-education institutions that have no credit row.
+    _ncPrios: function (key, slot) {
+      var inst = ncInstFor(key);
+      if (!inst) return null;
+      slot = String(slot || "1");
+      var W = ncAward(inst.key);
+      return ncPriorities(slot).map(function (p) {
+        var cap = ncPrioCap(W, slot, p);
+        var fr = earnFraction(inst, p);
+        return {
+          key: p.key, src: p.src, label: p.label, title: p.title || null,
+          metric: p.metric || null, metric_src: p.metric_src || null,
+          lane: "nc", share: p.share, factor: p.factor,
+          unit: prioUnitLabel(p),
+          cap: cap,
+          target: prioTarget(inst, p),
+          status: fr.status,
+          // $0 today by construction: the daily feed carries no nc_* measure, so
+          // every NC priority resolves `undelivered`. That is Sam's ruling —
+          // targets and potential shown, current earnings zero, NOT an advance.
+          earned: cap * fr.f
         };
       });
     },
