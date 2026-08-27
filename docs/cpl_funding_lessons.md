@@ -1714,3 +1714,103 @@ all three priorities.** Corrected at this checkpoint.
 config now measures P1 = *applied units by origin*, P2 = *eligible units*,
 P3 = *transcribed units*. Same author, later statement — flagged rather than
 silently superseded, per Rule 8.
+
+## 2026-08-26 (Session 197, SkyVerdict) — the noncredit lane earns, and two ways a value can lie
+
+Sam opened on the noncredit half of the model and ended up ruling on its shape.
+The engineering that came out of it is small; the findings are not.
+
+### ⭐ Sam's ruling: NC EARNS like credit
+
+Offered allocated-and-displayed, display-first, or earned-now, he took **earned**:
+the NC award becomes a **cap earned against three targets**, not a presentational
+split of an FTES clamp. His reason is the whole workstream in one line — a fixed
+handout is what makes noncredit the stepchild.
+
+His three metrics mirror the credit three with an origin filter:
+P1 Applied · P2 Eligible · P3 Transcribed, for students originating from NC.
+That ordering already matches the live display order (`priorityOrder [2,0,1]`).
+
+⭐ **He corrected my objection and was right.** I argued noncredit has no units,
+so the FTES conversion would not transfer. It does — the lane measures **credit**
+CPL FTES for NC-origin students. NC is a filter on the population, not a change
+of currency, so `unitsPerCplFtes` is unchanged and the units are already in the
+data we hold. Only the origin marker is missing.
+
+### ⭐ Route, don't split — and the reason is in the model already
+
+Sam raised double-dipping himself, and proposed either deducting NC FTES from the
+credit total or splitting each unit. The mechanics answer it:
+
+`prioEntitlement = sizePct × netCollege × share ÷ nYears` — **share splits the
+MONEY**. Each priority then reads its **own** `meas.src`. So eligible / applied /
+transcribed are three *milestones on one credit*, and **the model already counts
+the same FTES three times by design**. Within-lane repetition is the funnel, not
+a leak.
+
+Which makes the real rule narrow: same unit + different milestone → count it;
+same unit + **same** milestone + two lanes → a true duplicate. So **route by
+origin** rather than splitting — no ratio to defend, and no subtraction ever
+appears on a college's row. Deducting from the credit total would make a college's
+credit earning fall when it reports noncredit work, which is a reporting
+disincentive aimed at exactly the colleges you want doing it.
+
+⚠️ **The credit lane is already inviting noncredit in.** Year‑1 P3's own strategy
+list says *"Include AP, IB, CLEP, High School articulated credit by exam,
+**noncredit mirror courses**, basic training credit…"*. Today that is not a double
+dip — it is a **single dip in the wrong lane**. One line to remove when NC goes
+live.
+
+⚠️ **Leakage is fine and points the safe way.** An NC student who uses the credit
+landing page is counted once, in the credit lane, so leakage **undercounts NC**
+rather than double-paying. Sam's read: that is the incentive for NC programs to
+route students through their own landing page. Consequence to hold: NC will be
+biased low during the ramp, which is an argument for keeping the floor.
+
+### ⚠️ The build is blocked on something found before writing any of it
+
+`measurability()` resolves a metric to its data source by **substring-matching
+the metric's prose**. All three NC metrics match the **credit** sources; one
+naming the NC landing page matches `pp_u` (portal-origin transcribed) **first**.
+So the NC lane would be silently measured against credit performance — real
+numbers, plausible percentages, nothing on screen saying so.
+
+This invalidates the argument that made "build it now" safe (unmeasurable → gap →
+full-cap advance). **Build order is therefore: explicit per-priority `src` →
+NC priorities earn → display.** Note
+[`methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists`](kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md).
+
+### ⚠️ "Never rely on the config" — and the harness that answers it
+
+I read `yearPriorities["2"].factor = 1` from the **live** Supabase config and told
+Sam credit runs 1.0 in Year 2. It runs **0.5**: `mirrorYears` makes `prioSlot()`
+return `"1"` for every year, so the stored Year‑2 block is unreachable. Front-load
+makes it moot a second time (carryover, zero cap).
+
+⭐ **A missing value sends you looking; a dormant one does not.** Shipped
+`_effective()` + `scripts/funding_effective.js` (#1359), which **refuses to run
+without a config** and flags each year MIRRORED / CARRYOVER. Verified against
+independently-recorded figures — 30 of 33 at the NC floor, break-even 3,909,
+$25,240,308 to institutions. ⚠️ Its own test caught the same bug *inside the fix*:
+`_effective()` read a `ncModel()` memoised at boot, so a caller setting a config
+afterwards got BAKED numbers reported as "effective".
+[`methodology-a-saved-setting-is-not-the-effective-value`](kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md).
+
+### The NC floor sweep, for the decision still open
+
+Model re-solved at each floor (`--nc-sweep`), pool $1.8M, threshold 500 FTES:
+
+| floor | in lane | at floor | at cap | break-even FTES |
+|---|---|---|---|---|
+| $15,000 | 33 | 0 | 9 | 384 |
+| $25,000 | 33 | 6 | 9 | 654 |
+| $40,000 | 33 | 21 | 5 | 1,528 |
+| **$50,000 (live)** | 33 | **30** | 2 | **3,909** |
+| $60,000 | 33 | 33 | 0 | — **INFEASIBLE** |
+
+⚠️ **Dropping the threshold does not work at this pool.** Noncredit is **8.74%**
+of system teaching (102,427 NC FTES vs 1,069,182 credit) against **7.13%** of the
+money, so parity is ~**$2.21M** — up $406k, not a step change. Across all 111
+institutions that buys a **$16,216** floor ($19,873 at parity), and the median
+institution in that lane has **226** noncredit FTES. The threshold is what buys
+the floor its size: a meaningful floor for a few, or a token for everyone.

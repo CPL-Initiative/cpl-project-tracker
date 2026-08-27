@@ -3842,6 +3842,27 @@ Story: `docs/college_action_page_lessons.md` · handoff `docs/session_132_handof
 
 ## Archived session narratives
 
+### SkyMoon S194 — the sweep is the routine, and a token with no owner (2026-08-25)
+
+**A live session: Sam edited the GR register in a browser while new law landed on it** (#1333, #1334).
+⭐ **A save failed with a message blaming his sign-in, and his account was fine.** `gr_history` proved it:
+every write that landed has an audit row and his edit had none, so the UPDATE matched nothing. Refresh
+tokens ROTATE, and `sync()` said *"this tab has the session: it is the truth"* — so a stale tab published
+its consumed token over the live one and signed out every tab. **The freshest token wins now.**
+⭐ **Rule 8's read step earned its place**: the surface vocabulary lives in FIVE places, and neither the
+scope doc nor the memory row knew all five.
+⭐ **SB 135 created Ed. Code Article 9** (§78093–78093.2, eff. 2026-07-13) — **row #2 asks for enacted law**,
+four duties no row covers, and one finding cuts AGAINST #12. The register could not cite its own governing
+statute until the bands widened to Part 48.
+⭐ **Sam named the routine**: *"Your sweep is the routine I want to run on demand after edits"* — and it is
+NOT the per-row call widened; three of its findings are structurally invisible per-row.
+⚠️ **A client cannot see the cap the server enforces**, and CI cannot either. ⚠️ Four guards were wrong
+before the code was, including one that could not fail for a typo.
+⚠️ **Sierra moved to Haiku 4.5** at Sam's request (temporary; revert = the `CPL_CHAT_MODEL` secret, no deploy).
+He verified it reads well; the one smoke regression is mode 15a dropping the Not-Applicable ceiling caveat —
+the rule exists, so it is a COMPLIANCE gap, and the fix is to attach the caveat to the DATA not a distant rule.
+Story `docs/gr_register_lessons.md` · `docs/gr_sb135_row_sweep.md` · handoff `docs/session_195_handoff.md`.
+
 ### SkyCal S189 — the drag was reachable at last, and it had never worked (2026-08-24)
 
 **Sam: *"let get this moonshot on the way"*** — step 1 of the approved drag re-home (#1317).
