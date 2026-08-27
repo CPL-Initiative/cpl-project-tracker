@@ -1974,3 +1974,106 @@ along more than one dimension, a guard on one dimension reads as coverage.
   obvious default and keeps one number to change, but he has not said so.
 
 Neither blocks anything else; both block step 2.
+
+---
+
+## 2026-08-27 (later) — Sam corrects the Access fix, and `pa` turns out to be the wrong half
+
+### ⛔ I offered three options and my numbers for the recommended one were measured on the wrong population
+
+I put the live Access defect to Sam as pin `pa_u` / declare a gap / accept, with
+measured payouts (51 colleges full, 115 full, 112 zero). He answered with the
+fact that made option 1 both right and wrong:
+
+> *"Option 1 is correct but we need to read the **Potential Student**, which
+> returns either 'Yes' or 'No' and is our temporary field indicating it was
+> submitted from a landing page or the portal."*
+
+⭐ **THE ORIGIN FILTER ALREADY EXISTS.** The metric's *"originating from either
+CPL Portal, College CPL Landing Page, or batch upload"* was never unmeasurable —
+`Potential Student` has been in the pull since the beginning and the builder has
+read it since 2026-07-27.
+
+⚠️ **AND `pa` IS NOT THE SUPERSET OF WHAT HE WANTS — IT IS THE COMPLEMENT.**
+Every other metric in `_build_funding_performance.py` carries `and not
+is_potential`:
+
+```
+("pe",  ecr > 0 and not is_potential),
+("pa",  acr > 0 and not is_potential),
+("p3",  tcr > 0 and not is_potential),
+("p2",  tcr >= P2_MIN_UNITS and not is_potential),
+("pp",  tcr > 0 and     is_potential),      # the ONLY portal measure — transcribed
+```
+
+So `pe/pa/p2/p3` describe the **documented** cohort and deliberately **exclude**
+portal-origin students, and `pp` — the only measure of that population — is gated
+on **transcribed**. There was no applied-among-portal-origin figure at all.
+**Pinning Access to `pa_u` would have scored it on precisely the students the
+metric's own wording excludes**, and my "51 colleges earn full" was that wrong
+population's number.
+
+⭐ **The general shape, and it is the same one as the milestone finding one step
+earlier:** a matcher can be wrong along more than one axis. I had just added a
+guard for the *rung* (eligible/applied/transcribed) and was still reasoning about
+the *cohort* by assumption. Two axes were checked; the third was not even named.
+
+### What shipped
+
+`ppa` / `ppa_u` — applied units among `Potential Student = Yes` — the mirror of
+`pa` on the other side of the partition, same rung, opposite cohort. Registered
+as `ppa_u` and **pinned on the Access priority in the LIVE Supabase config** —
+surgically, with `jsonb_set` on the one path, so a concurrent edit by Sam to any
+other field survives. Shares, factors, `priorityOrder` and the NC floor were
+re-read after the write and are unchanged.
+
+⚠️ **THE PIN DOES NOT BELONG IN THE BAKE, and trying to put it there is what
+proved it.** `cpl_funding_data.js` is stale *by design*: its slot-2 metric is the
+old *"Headcount … transcribed Credit from either CPL Student Portal or CPL Landing
+Page"* while the live config's slot 2 is Sam's **applied/units** one. A pin lands
+on whichever metric occupies the slot, so pinning `ppa_u` in the bake attached a
+units/applied key to a headcount/transcribed metric — **nine assertions across
+three suites went red**, correctly. The layering makes a baked value a *shared
+default*, not a private one. A pin belongs with the metric it was chosen for.
+
+⭐ **And the attempt exposed a real gap: a pin could not be CLEARED.**
+`firstDefined()` skips null and undefined, so an override layer could ADD a pin
+but never REMOVE one — a curator could not un-pin on the tab, and a lower layer's
+pin would have been permanent. `metric_src: ""` is now the un-pin.
+
+⭐ **The pin is safe to land BEFORE the data.** `ppa_u` is emitted by the builder
+but the published artifact predates it, so today every college reads
+**`Now: $0 · no feed`** — the `undelivered` state, an absent measure rather than a
+wrong one — and starts earning with **no code change** the moment the cron
+regenerates the artifact. Verified both ways.
+
+⚠️ **`ppa` joins `pp` in `NO_SUPPRESS`, and that is a funding decision as much as
+a privacy one.** It describes the *same people* as `pp` at a different rung, so
+suppressing it hides nothing already visible — while a suppressed cell reads to
+`earnFraction()` as *"not yet credited"*, `f=0`, which would cost small-portal
+colleges their Access money outright.
+
+⏭ **What replaces it** (Sam): MAP is shipping an explicit `Origin` — Student
+Portal / Landing Page / Batch / College Entered — plus a **`LocID2`** naming the
+noncredit location a record came from. Then `ppa_u` narrows from "Yes" to the
+named origins, and the three `nc_*` measures become the same rung cut by LocID2.
+One builder change, no consumer change, because the pin already names the key.
+His example row:
+
+| LocID | College | Origin | LocID2 |
+|---|---|---|---|
+| 1 | Mt SAC | Landing Page | 1x [Mt SAC NC] |
+
+⚠️ **His noncredit rule, recorded before it can be built:** *"all three count the
+NC FTES only if they have a Yes."* The Yes-gate applies to the NC three as well —
+but NC records cannot be isolated until `LocID2` arrives, which is exactly why
+the `nc_*` sources stay declared-and-undelivered rather than being approximated.
+
+### ⚠️ My own test failed because I fixed what it was asserting
+
+Section 7 asserted the live Access metric mis-resolves and the diagnostic flags
+it. The baked pin made all four of those false. **That is the guard behaving
+correctly** — a premise changed and something said so. It now asserts *both*
+halves: the defect still reproduces on an **unpinned** slot (so the guard keeps
+its teeth), and the pinned slot is clean. Five mutations, all caught, including
+`ppa` gated on the wrong cohort and `ppa` summing the wrong column.
