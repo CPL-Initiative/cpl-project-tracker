@@ -35,98 +35,96 @@ wrong number that looks right** (NC metrics reading CREDIT performance). So it
 stays a correctness requirement and stays FIRST in the build order — not as a gate
 on starting, but as the first thing built.
 
-## Priority workstream — the NC lane earns like credit
+## Priority workstream — BUILD STEP 2: make the NC lane earn
 
-Sam ruled 2026-08-26 that the NC award becomes a **cap earned against three
-targets**, not a display split. Factor **0.5**, same as credit (ruled 08-27).
+This is the whole plan in one place, with the reasoning, because it was settled
+across a long conversation on 2026-08-26/27 and none of it should be re-derived.
 
-**Build order, unchanged:**
+### What it is
 
-1. **Explicit per-priority `src`** overriding prose matching.
-2. **NC priorities earn** — `ncModel()` gains priorities/targets.
-3. **Display** — NC line under the credit line on the college rows.
+Today `ncModel()` is a single `clamp(λ × ncFTES, floor, cap)` — an allocation by
+size, with no priorities and no earning. **Sam ruled it should EARN like credit:**
+the award becomes a **cap earned against three targets**, the same three the
+credit lane uses, filtered to students who originated from noncredit.
 
-**Why 1 stays first.** `measurability()` (cpl_funding.js ~3615) resolves a metric
-to its data source by **substring-matching the metric's prose**, in order:
-`portal|landing page → pp_u`, then `applied → pa_u`, `eligible → pe_u`,
-`transcribed → pt_u`. All three of Sam's proposed NC metrics match the **credit**
-sources, and one naming the *NC landing page* matches `pp_u` **first** — the wrong
-lane and the wrong milestone. With an explicit `src`, an unwired NC source is a
-genuine gap that pays full cap as a **labeled advance**, which is exactly the
-"temporarily shows 0/advance" behavior Sam is happy with.
+### The three decisions that constrain it
 
-**Design rulings already made — do not relitigate:** route don't split · `share`
-splits the MONEY not the FTES · leakage undercounts NC and that is the incentive ·
-Year-1 P3's strategy list names *"noncredit mirror courses"* (one line to move
-into NC's own strategies when the lane goes live — Sam offered to do it; the
-recommendation was to wait, since it moves no money today).
+| decision | ruling |
+|---|---|
+| **Earns or displays?** | **EARNS.** Chosen over "allocated, split for display only". |
+| **Factor** | **0.5, same as credit.** No discount for the newer lane. Base rate $12,423/CPL FTES → a floored NC institution needs **8.0 CPL FTES** over the window, a capped one 16.1. ⚠️ Do NOT vary it *within* NC — credit is uniform 0.5 deliberately. |
+| **What it shows before data** | **Targets + potential earning on the NC row, current earnings at 0 beneath.** Explicitly NOT the full-cap advance the credit lane gives an unmeasurable metric. |
 
-## Sam's list of 2026-08-27 — what I found
+### How the zero happens — Sam's mechanism, and why it is the good one
 
-| # | his report | finding |
-|---|---|---|
-| 1 | draft-model posture | **Ruling, above.** §11 corrected. |
-| 2 | "I don't see NC factor boxes, just CR" | **Correct — not built.** `ncModel()` has no priorities at all today; it is a single `clamp(λ×ncFTES, floor, cap)`. Factor boxes appear per priority, so they arrive with build step 2. |
-| 3 | "I don't see NC row data under each P1/2/3" | **Correct — not built, he is ahead.** Today NC money is the far-right `NC $` column only. This is build step 3. |
-| 4 | sign-in email field wouldn't accept a **click**; had to **tab** into it | ⚠️ **Real bug, and there is a tell.** Click-fails-but-tab-works is the signature of the node being destroyed and recreated under the pointer (tab focus re-finds a new node; a click does not). `reviewer_signin.js:197` reads `input.value = m.draft \|\| ""` and line 198 writes `m.draft` on every keystroke — **someone already hit re-render destroying this input and preserved the VALUE; focus was never preserved.** Start there, not at CSS. |
-| 5 | "Unlock to curate doesn't respond — maybe this tab doesn't use the team phrase" | ⚠️ **His hypothesis is wrong: the funding tab DOES use the team phrase.** `unlocked()` (cpl_funding.js:556) reads `window.CPL_TEAM_PHRASE.session()`, and the tab renders `#cplFundUnlockSlot` (line 2689) into which line 6761 appends `t.unlockRow({label:"🔓 Unlock team editing"})` **only when `!unlocked()`**. So non-response is a real defect. Two leads: `stripCurateAffordances()` (line 1733) **removes `cplFundUnlockSlot` outright** in public mode; and the button is appended AFTER render, so any re-render that rewrites the auth bar destroys it. ⚠️ The exact string "Unlock to curate" does not exist in the repo — confirm with Sam which control he clicked (the header **🔒 Team** button is circled in his screenshot). |
-| 6 | funding tab + COBI header accessibility / mobile; header "acts funny on zoom" | **Not audited yet.** Precedent exists and should be reused: `tests/factsheet_a11y.test.js` and `tests/public_pages_a11y.test.js` for the jsdom half, `scripts/check_public_page_layout.js` for the Chromium half (9 viewports, contrast, focus, motion). ⚠️ **Split by instrument** — jsdom has no layout engine and cannot see the zoom/reflow defect; that one needs the Chromium script. ⚠️ The funding table is wide and Rule "no horizontal scroll" applies. |
+⭐ **Add the expected NC LocID column to the Supabase dataset now, all NULL, and
+calculate off it.**
 
-## ⭐ Sam's NC display ruling (2026-08-27) — he chose ZERO, not the advance
+> *"Since all will be null for now, we can calculate off that until the real data
+> hits."*
 
-> *"I expect it to show what their targets are and potential earning on the NC row
-> (just below the CR row) and the current earnings at 0 below those."*
+`"applied units WHERE nc_origin_loc_id IS NOT NULL"` is **honestly 0 today** — a
+real result over a genuinely empty column. So:
 
-So the NC row shows **target + potential earning**, and beneath it **current
-earnings at 0**. He was given the alternative — full-cap advance labelled "gap",
-which is what the credit lane does today for any metric `measurability()` cannot
-resolve (`cpl_funding.js:3638`, `f = 1`) — and chose 0.
+- **Nothing is synthetic.** This is his own *"calculate correctly based on the
+  available data"*, not a placeholder standing in for it.
+- **Nothing to remember to remove.** A synthetic feed must later be deleted; a
+  NULL column just fills up.
+- **Zero-change cutover.** The same query returns real values the day ITPI
+  populates it — no feed swap, no code edit.
+- ⭐ **The disclosure becomes DERIVABLE**: `count(*) WHERE nc_origin_loc_id IS NOT
+  NULL` = 0 across the table **is** the evidence nothing is delivering yet. A
+  measurement, not a flag someone maintains.
 
-⚠️ **This is the ONE deliberate divergence from credit, and it has to be built on
-purpose.** NC priorities must NOT take the gap branch. An unwired NC `src` has to
-yield `f = 0` / status `none`, not `f = 1`.
+⚠️ Put the column on **BOTH** `map_student_credit` and `map_college_cr_unit` —
+without the second, NC earning can only ever be computed at student grain. (This
+is also exactly what was asked of ITPI.)
 
-The recommendation at the time was the advance, on the grounds that otherwise the
-NC floor is meaningless until ITPI delivers. **That was over-weighted** — the
-model is draft, no money is disbursing, and by the time it does the origin data
-should exist. His call is the honest display and it costs nothing real now.
+⚠️ **It is decoupled from the loader and safe:** the field is not requested from
+MAP yet, so the nightly pipeline is untouched and Postgres fills NULL. It can land
+ahead of ITPI. But it IS a write to a live student-grain table on shared ground —
+a deliberate step, never a side effect.
 
-⭐ **SAM'S MECHANISM, final form (2026-08-27): add the expected NC LocID COLUMN
-to the Supabase dataset now, all NULL, and calculate off it.**
+### Build order, and why step 1 cannot be skipped
 
-> *"Or just add the expected NC LocID field to the supabase dataset and since all
-> will be null for now, we can calculate off that until the real data hits."*
+1. **Explicit per-priority `src`.** `measurability()` resolves a metric to its data
+   source by **substring-matching the metric's prose** (`portal|landing page →
+   pp_u`, then `applied → pa_u`, `eligible → pe_u`, `transcribed → pt_u`). All
+   three NC metrics match the **CREDIT** sources, and one naming the *NC landing
+   page* matches `pp_u` **first** — wrong lane, wrong milestone. That is not a
+   missing number, it is a **plausible wrong one that renders as right**, which is
+   the one thing Sam's draft-model ruling does not permit.
+2. **NC priorities earn**, reading the NULL column. Steps 1 and 2 are really one
+   piece of work — the column has no consumer until the priorities exist.
+3. **Display**: the NC row beneath the credit row.
 
-He proposed a synthetic 0 feed first and then improved on it. **The column wins on
-three counts** and this handoff's earlier "third earn state" idea is retired:
+⚠️ With an explicit `src` pointing at a real-but-empty column, `earnFraction`
+takes the **ordinary** path — not `gap`, not `pending`; actual 0 against a real
+target — so **f = 0, $0 earned**, which is exactly what Sam asked for. **No third
+earn state is needed**; an earlier draft of this handoff proposed one and it is
+retired.
 
-1. **Nothing is synthetic.** *"applied units where `nc_origin_loc_id is not null`"*
-   is HONESTLY 0 today — a real result over a genuinely empty column, which is
-   exactly his "calculate correctly based on the available data" rather than a
-   placeholder standing in for it.
-2. **Nothing to remember to remove.** A synthetic feed must later be deleted; a
-   NULL column just fills up.
-3. **Zero-change cutover.** The same query returns real values the day ITPI
-   populates it — no feed swap, no code edit.
+### Standing design rulings — do not relitigate
 
-⭐ **And it makes the disclosure DERIVABLE rather than declared.** The earlier
-worry was that a synthetic 0 and a measured 0 look identical, needing a flag
-someone maintains. With the column, `count(*) where nc_origin_loc_id is not null`
-= 0 across the table **is** the evidence that nothing is delivering yet. A
-measurement, not a maintained flag.
+- ⭐ **Route, don't split.** Each unit earns in exactly ONE lane by origin, and
+  still counts three times *inside* its lane, because eligible/applied/transcribed
+  are three MILESTONES on one credit. **`share` splits the MONEY, not the FTES.**
+- ⚠️ **Leakage undercounts NC rather than double-paying** — a NC student who uses
+  the credit door is counted once, in credit. Sam's read: that is precisely the
+  incentive to route students through the NC landing page.
+- ⚠️ **Year-1 P3's strategy list names *"noncredit mirror courses"***, so today
+  this is a single dip in the WRONG lane. One line to move into NC's own
+  strategies when the lane goes live — Sam offered to do it; the recommendation
+  was to wait, since it moves no money today.
 
-⚠️ **The schema change is decoupled from the loader and safe:** a nullable column
-on `map_student_credit` / `map_college_cr_unit` is not requested from MAP yet, so
-the nightly pipeline is untouched and Postgres fills NULL. It can land ahead of
-ITPI. But it IS a write to a live student-grain table on shared ground — do it
-deliberately, not as a side effect.
+### Open, and needing Sam before or during the build
 
-⚠️ Put it on **both** tables. Without it on `map_college_cr_unit`, NC earning can
-only ever be computed at student grain (this is also what was asked of ITPI).
-
-⚠️ **Settle with a mock before building:** is the NC row a SECOND TABLE ROW per
-college beneath its credit row, or extra lines inside each P1/P2/P3 cell? His
-wording supports the second-row reading. Do not guess.
+- **Is the NC row a SECOND TABLE ROW per college, or extra lines inside each
+  P1/P2/P3 cell?** His wording ("just below the CR row", "under each P1,2,3")
+  supports the second row. ⚠️ **Settle with a mock — do not guess.**
+- **Shares for the NC three.** Nothing has been ruled. Inheriting credit's
+  34/33/33 is the obvious default and keeps one number to change, but he has not
+  said so.
 
 ## ⚠️ Scheduled runs are being DROPPED, and there is no alarm
 
