@@ -106,7 +106,7 @@
     {
       "id": "nc-display",
       "title": "Noncredit row under the credit row: targets and potential, with earnings at zero",
-      "note": "Sam's ruling. Note the one deliberate difference from credit: an unmeasured noncredit metric shows ZERO earned, not the full award advanced. Settle with a mock first whether that is a second row per college or extra lines inside each cell."
+      "note": "Sam's ruling, with his own mechanism for it: give the noncredit metrics a real data source that simply returns zero for every college until the real counts arrive. That is simpler than inventing a special 'not measured yet' state — the ordinary path already produces zero earned — and when the real data lands nothing has to change. One caution: a stand-in zero and a real zero look the same, so it has to say on screen that it is waiting for data, or in six months everyone will read it as measured."
     },
     {
       "id": "signin-click",
