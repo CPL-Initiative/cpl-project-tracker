@@ -9,62 +9,62 @@
     "other": 150000
   },
   "summary": {
-    "files": 667,
-    "bytes": 7547099,
-    "over_budget": 4,
-    "handoff_max": 198,
+    "files": 669,
+    "bytes": 7579867,
+    "over_budget": 5,
+    "handoff_max": 199,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 146407,
+    "always_loaded_bytes": 146536,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 146407,
+        "bytes": 146536,
         "over": 1
       },
       "other": {
         "files": 87,
-        "bytes": 2083980,
-        "over": 1
+        "bytes": 2129416,
+        "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 268565,
+        "bytes": 269963,
         "over": 1
       },
       "lessons": {
         "files": 69,
-        "bytes": 1823686,
+        "bytes": 1792749,
         "over": 1
       },
       "kb_note": {
-        "files": 334,
-        "bytes": 1770524,
+        "files": 335,
+        "bytes": 1774940,
         "over": 0
       },
       "handoff": {
-        "files": 175,
-        "bytes": 1453937,
+        "files": 176,
+        "bytes": 1466263,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
-      "american_spelling": 169,
+      "oversized_doc": 5,
+      "american_spelling": 170,
       "kb_note_dialect": 60,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2304,
-      "bytes": 1220935511,
-      "heavy_bytes": 598349256,
-      "heavy_share": 0.49,
+      "files": 2311,
+      "bytes": 1228477295,
+      "heavy_bytes": 598638643,
+      "heavy_share": 0.487,
       "ignore_filters": [
         "cpl-project-tracker/kb/reference",
         "cpl-project-tracker/cip_fitcheck",
-        "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/unclassified_fold",
+        "cpl-project-tracker/tmc",
         "cpl-project-tracker/prototype",
         "cpl-project-tracker/unified_courses_member_desc.js",
         "cpl-project-tracker/kb/coci_minted_singletons.json",
@@ -114,26 +114,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 146407,
+        "bytes": 146536,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 86407,
+        "over_by": 86536,
         "ratio": 2.44
       },
-      "message": "146,407 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "146,536 B is 2.4× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 268565,
+        "bytes": 269963,
         "limit": 40000,
         "lane": "index",
-        "over_by": 228565,
-        "ratio": 6.71
+        "over_by": 229963,
+        "ratio": 6.75
       },
-      "message": "268,565 B is 6.7× the index budget (40,000 B) — candidate for compaction",
+      "message": "269,963 B is 6.7× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -348,9 +348,9 @@
             "n": 1,
             "prefer": "color"
           },
-          "behaviour": {
+          "recognis": {
             "n": 1,
-            "prefer": "behavior"
+            "prefer": "recogniz"
           },
           "modelling": {
             "n": 1,
@@ -358,15 +358,32 @@
           }
         }
       },
-      "message": "3 British forms — colour→color, behaviour→behavior, modelling→modeling",
+      "message": "3 British forms — colour→color, recognis→recogniz, modelling→modeling",
       "path": "docs/cpl_funding_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 174429,
+        "limit": 150000,
+        "lane": "other",
+        "over_by": 24429,
+        "ratio": 1.16
+      },
+      "message": "174,429 B is 1.2× the other budget (150,000 B) — candidate for compaction",
+      "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
       "rule": "american_spelling",
       "fixable": false,
       "detail": {
-        "total": 3,
+        "total": 4,
         "forms": {
+          "behaviour": {
+            "n": 1,
+            "prefer": "behavior"
+          },
           "normalis": {
             "n": 1,
             "prefer": "normaliz"
@@ -381,7 +398,7 @@
           }
         }
       },
-      "message": "3 British forms — normalis→normaliz, labelled→labeled, enrol→enroll",
+      "message": "4 British forms — behaviour→behavior, normalis→normaliz, labelled→labeled, enrol→enroll",
       "path": "docs/cpl_funding_lessons_archive.md"
     },
     {
@@ -877,6 +894,21 @@
       },
       "message": "1 British form — behaviour→behavior",
       "path": "docs/kb-notes/methodology-a-default-payout-masks-the-gap-beneath-it.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "recognis": {
+            "n": 1,
+            "prefer": "recogniz"
+          }
+        }
+      },
+      "message": "1 British form — recognis→recogniz",
+      "path": "docs/kb-notes/methodology-a-defect-that-produces-the-expected-value-is-invisible.md"
     },
     {
       "rule": "american_spelling",
@@ -3863,22 +3895,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/unclassified_fold",
+      "detail": {
+        "bytes": 14925059,
+        "kind": "dir"
+      },
+      "message": "directory totals 14,925,059 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "tmc",
       "detail": {
         "bytes": 14867812,
         "kind": "dir"
       },
       "message": "directory totals 14,867,812 B inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/unclassified_fold",
-      "detail": {
-        "bytes": 14635661,
-        "kind": "dir"
-      },
-      "message": "directory totals 14,635,661 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4045,10 +4077,10 @@
       "fixable": false,
       "path": "statewide_data.js",
       "detail": {
-        "bytes": 8694855,
+        "bytes": 8694843,
         "kind": "file"
       },
-      "message": "8,694,855 B single file inside the vault"
+      "message": "8,694,843 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -4125,10 +4157,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6267512,
+        "bytes": 6267513,
         "kind": "file"
       },
-      "message": "6,267,512 B single file inside the vault"
+      "message": "6,267,513 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
