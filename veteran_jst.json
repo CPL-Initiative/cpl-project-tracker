@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-08-27T17:58:42.049177+00:00",
+  "scraped_at": "2026-08-27T19:37:56.258942+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34135,
-    "jst": 27487,
+    "jst": 27490,
     "star_colleges": 57
   },
   "computed_star_colleges": 57,
@@ -227,7 +227,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 146,
+      "jst": 147,
       "star": true
     },
     "College of the Sequoias": {
@@ -422,7 +422,7 @@
     },
     "Cuesta College": {
       "vets": 206,
-      "jst": 177,
+      "jst": 179,
       "star": true
     },
     "Napa Valley College": {
