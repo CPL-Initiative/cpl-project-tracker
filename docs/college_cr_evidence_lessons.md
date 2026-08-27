@@ -178,3 +178,43 @@ sentence when the runtime is absent. ⚠️ Chromium is at build **1194** here w
 pip-installed Playwright wants 1234 — pass `executable_path`, never `playwright install`.
 The lone console error is the Google Fonts fetch, blocked by the sandbox's egress and
 allowed by the artifact CSP; the test asserts on **page** errors instead.
+
+### 2026-08-27, later still — the ACE id is plumbing, and a count is useless alone
+
+*"Please do not place emphasis on the ACE ID in the details section. Just list the unique
+CRs and the number of colleges."* Then: *"Please remove the ace exhibits in the header."*
+And: *"give us a 'hover over' on the colleges as well as the other numbered items to show
+details (names of colleges etc.)."*
+
+⭐ **The ACE exhibit id was the most prominent thing on the page and it is the least
+decidable.** It was set in monospace, it had its own table column, and it opened the
+evidence block. Nobody deciding whether a recommendation fits a course needs
+`AR-1723-0026`; they need to know it is *Allied Trades Specialist* and that 40 colleges'
+students hold the credit. The header now reads **`matched on weld · held at 40 colleges ·
+4 peer articulations`** — no exhibits at all — and the details lead with the recommendation
+and its college count. The id survives only inside the hover, where a curator who needs it
+can still find it.
+
+⚠️ **A COUNT WITHOUT ITS NAMES IS A DEAD END.** "40 colleges" is unverifiable and therefore
+unpersuasive; "40 colleges, and here they are" is an argument. Every count on the page now
+opens the list behind it.
+
+⚠️ **`title=""` IS NOT A HOVER.** It never appears on touch, cannot be reached by keyboard,
+cannot hold a list and cannot be styled. The hovers are real `<button>`s opening a positioned
+panel on **hover, focus AND tap**, dismissed by Escape or an outside click — so the same
+affordance works for a mouse, a phone and a screen reader.
+
+⚠️ **Two bugs, both only findable in a browser.** (1) **Hover-open fought click-toggle**:
+the pointer opened the panel, the click that followed closed it, so tapping the thing you
+were hovering did nothing and touch never worked at all. Fixed with a `pinned` flag — a
+click on an already-open panel pins it rather than toggling. (2) **A `scroll` handler closed
+the panel**, which was wrong twice: the panel is positioned in *document* coordinates so it
+already travels with the page, and browsers scroll a control into view before activating it
+— so the close fired before the click landed. Both would have shipped invisibly from a
+static read of the diff.
+
+⭐ **The college names paid for themselves immediately: on 111 of the 139 courses, LATTC's
+own veterans already hold the recommendation.** LATTC appears in the holder list for 243 of
+the candidate rows. That is credit already sitting in their students' records with nothing
+to apply it to — the strongest argument on the page for doing the articulation, and it only
+became visible once the counts were expanded into names.

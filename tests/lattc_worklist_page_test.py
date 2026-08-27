@@ -66,6 +66,22 @@ with sync_playwright() as p:
     ck('bullet carries BOTH a confidence band and a peer chip', len(chips)>=2, chips)
     ck('peer chip text present', any('Peer' in c for c in chips), chips)
 
+    # Jessica, 2026-08-27: no ACE exhibits in the header
+    meta = first.locator('.recitem').first.locator('.rmeta').inner_text()
+    ck('no ACE exhibit count in the header', 'ACE exhibit' not in meta, meta)
+    ck('header still names the colleges count', 'college' in meta, meta)
+
+    # every count opens the names behind it
+    hovs = first.locator('.recitem').first.locator('.hov').count()
+    ck('header counts are hoverable', hovs >= 1, hovs)
+    hb = first.locator('.recitem').first.locator('.hov').first
+    ck('hover control is keyboard reachable', hb.evaluate('e=>e.tagName')=='BUTTON')
+    hb.click(); pg.wait_for_timeout(250)
+    ck('popover opens with college NAMES', pg.locator('.pop li').count() > 1, pg.locator('.pop li').count())
+    ck('popover names a real college', 'College' in pg.locator('.pop').inner_text())
+    pg.keyboard.press('Escape'); pg.wait_for_timeout(200)
+    ck('Escape closes the popover', pg.locator('.pop').count()==0)
+
     # a no-peer bullet gets the other chip
     nop = pg.locator('.recitem .tag.t-cr').count()
     ck('no-peer bullets carry the "No peer yet" chip', nop>0, nop)
@@ -74,6 +90,14 @@ with sync_playwright() as p:
     ck('evidence hidden until asked', not first.locator('.ev').first.is_visible())
     first.locator('.more > summary').first.click(); pg.wait_for_timeout(150)
     ck('evidence opens on click', first.locator('.ev').first.is_visible())
+    heads = first.locator('.ev table thead').first.inner_text()
+    ck('details table has no ACE id column', 'exhibit' not in heads.lower(), heads)
+    ck('details leads with the CR and a college count',
+       'hold this' in first.locator('.ev .evmeta').first.inner_text(),
+       first.locator('.ev .evmeta').first.inner_text())
+    import re as _re
+    ck('no bare ACE id rendered as its own emphasised cell',
+       first.locator('.ev .mono').count()==0, first.locator('.ev .mono').count())
 
     # SELECT
     btn = first.locator('.selbtn').first
