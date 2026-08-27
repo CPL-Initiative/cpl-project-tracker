@@ -218,3 +218,71 @@ own veterans already hold the recommendation.** LATTC appears in the holder list
 the candidate rows. That is credit already sitting in their students' records with nothing
 to apply it to — the strongest argument on the page for doing the articulation, and it only
 became visible once the counts were expanded into names.
+
+### 2026-08-27, the unit question — "a 3 hour credit recommendation for a 1 unit course"
+
+*"We're struggling with the first example of a 1 unit welding lab… We wouldn't want to give
+a 3 hour credit recommendation for a 1 unit course and then use the same credit
+recommendation for a 3 unit course."* (Jessica). Right on both halves, and the second half
+is the bigger one.
+
+**Measured, not assumed.** Across **3,419 peer articulations** carrying both numbers,
+**81.1% pair a recommendation's hours with a course of exactly those units**; 8.1% award a
+smaller course, 10.8% a larger. `3 hours → 1.0 unit` — the shape of the welding-lab case —
+happens **61 times in 3,419 (1.8%)**. So matching hours to units is not a house rule we
+invented; it is what colleges overwhelmingly do.
+
+⚠️ **MY OWN DEDUP WAS CAUSING THE PROBLEM.** The matcher collapsed hour-variants of a topic
+(`1 hour in welding` → `3 hours in welding`) and kept the better-evidenced one. That was
+harmless while hours were decoration and *fatal* once hours were the question: the 1-unit
+lab could never be shown `1 hour in welding` (4 exhibits, 18 colleges) because it had been
+folded away. **The hour variants ARE the choice.** Only exact-duplicate strings collapse now.
+
+⚠️ **THE LAB-SPECIFIC RECOMMENDATION IS A DEAD END, and it took measuring to see.** ACE does
+publish laboratory recommendations — but only **41 of 7,155**, none for welding, and the
+hour distribution is **1h×8, 2h×2, 3h×20, 4h×10**. A lab recommendation is not a small
+recommendation. "Match a lab course to a lab recommendation" would not have solved the units
+at all. `lab`/`laboratory` also sits in the inherited `cx_align_tokens()` stopword list, so
+it can never distinguish anything here anyway.
+
+⭐ **THE REUSE PROBLEM IS FAR BIGGER THAN THE LAB CASE, AND IT WAS MINE.** Before this pass,
+**118 of 139 courses shared a top pick — 36 distinct recommendations for 133 courses**, with
+`3 hours in welding` recommended for **22** courses spanning 1.0 to 6.0 units. The scorer
+rewarded short recommendations fully covered by a title, and confidence rewarded breadth, so
+the broadest recommendation won everywhere. **A per-course ranking cannot see a collision;
+only the assignment can.**
+
+⚠️ **The "fill every top pick" button was therefore actively harmful** — one click put 86
+choices in and lit **82 duplicate warnings**. It now skips a recommendation already claimed,
+prefers a variant whose hours match the units, fills **40**, and reports what it left for a
+human. **A bulk button exists to clear the obvious ones, not to look finished.**
+
+⚠️ **A duplicate is a statement about a PAIR.** Re-rendering only the clicked card left the
+other half silently unflagged — the reader saw one warning where there were two. Every card
+the change touches re-renders.
+
+**Do peers reuse a recommendation across courses?** Effectively no. Of **900**
+(college, recommendation) pairs, **54 (6%)** span more than one course — and reading them,
+they are cross-listings (`BUS-3`/`CAT-3`/`CIS-3 Computer Applications for Business`),
+catalog-year duplicates (`ELC-11 DC Electronics` at 4.0 and 8.0) and stated alternatives.
+**Not one recommendation awarded twice.** ⚠️ The count alone would have said "6% do it" —
+the reading is what says they don't.
+
+### Does welding actually come as a lecture + lab pair? (Jessica asked; the data answered)
+
+**No — that is the minority pattern, and LATTC is in it.** Across **1,198 welding courses at
+79 colleges**: only **55 (4.6%)** carry lab/laboratory in the title, at **17 of 79 colleges
+(22%)**; median welding course is **2.5 units** and **48% are ≥3 units** — i.e. the shop time
+is usually *inside* one combined course.
+
+⭐ **And where lab courses do exist, they are mostly NOT the lab half of a pair.** Of 19
+`L`-suffixed welding course numbers, exactly **one** has a same-number lecture counterpart
+(Mt. SAC `WELD 91` / `91L`). Cerritos has **15** `L` courses and **no** base counterparts —
+verified against its complete 30-course welding list, so this is the catalog, not a gap in
+our extract. They are standalone skills and certification labs (`252L Pipe Welding Level 1`),
+and LATTC's own `Welding Laboratory – Electric I/II/III` read the same way: **a progression
+of 1-unit practice courses, not companions to a lecture.**
+
+**So the honest treatment for LATTC's four 1-unit labs is a small recommendation each, not a
+share of a 3-hour one** — and, because they are a progression, four *different* ones. That
+is a faculty call, but it is now a call made against measured practice instead of intuition.

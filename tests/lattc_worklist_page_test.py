@@ -119,9 +119,30 @@ with sync_playwright() as p:
        '1 of 139' in pg.locator('#count').inner_text(), pg.locator('#count').inner_text())
 
     # bulk fill only touches High band
-    pg.locator('#pick').click(); pg.wait_for_timeout(500)
+    # Bulk fill must never hand out one recommendation twice - a greedy fill of
+    # every High-band top pick put "3 hours in welding" on 22 courses at once.
+    pg.locator('#pick').click(); pg.wait_for_timeout(700)
     n = int(pg.locator('#count').inner_text().split(' ')[0])
-    ck('bulk fill = the 82 High-confidence courses', n==82, n)
+    ck('bulk fill chose something', n > 20, n)
+    dups = pg.evaluate("""() => {
+        const sel = JSON.parse(localStorage.getItem('lattc_mil_cpl_choices_v1')||'{}');
+        const used = {}; let d = 0;
+        Object.values(sel).forEach(r => { if (used[r]) d++; used[r] = 1; });
+        return d; }""")
+    ck('bulk fill hands out NO recommendation twice', dups==0, dups)
+    ck('and therefore raises no duplicate warning',
+       pg.locator('.warnbox.wb-dup').count()==0, pg.locator('.warnbox.wb-dup').count())
+
+    # choosing the same rec twice BY HAND is flagged
+    pg.locator('#clear').click(); pg.wait_for_timeout(400)
+    pg.fill('#q','welding laborator'); pg.wait_for_timeout(300)
+    labs = pg.locator('article.card:not(.hidden)')
+    if labs.count() >= 2:
+        for i in range(2):
+            labs.nth(i).locator('.selbtn').first.click(); pg.wait_for_timeout(280)
+        ck('picking one recommendation for two courses is flagged',
+           pg.locator('.warnbox.wb-dup').count() >= 2, pg.locator('.warnbox.wb-dup').count())
+    pg.locator('#clear').click(); pg.fill('#q',''); pg.wait_for_timeout(400)
 
     # filters
     pg.locator('.fbtn[data-f="none"]').click(); pg.wait_for_timeout(250)
@@ -134,7 +155,18 @@ with sync_playwright() as p:
 
     # divergence warning
     pg.locator('.fbtn[data-f="all"]').click(); pg.wait_for_timeout(200)
-    ck('5 divergent-number warnings', pg.locator('.warnbox').count()==5, pg.locator('.warnbox').count())
+    ck('5 divergent-number warnings', pg.locator('.warnbox.wb-num').count()==5,
+       pg.locator('.warnbox.wb-num').count())
+
+    # a recommendation's HOURS shown against the course's UNITS
+    lab = pg.locator('article[data-code="WELDG/E030"]')
+    chips = lab.locator('.recitem .tag').all_inner_texts()
+    ck('a 1-unit lab shows the hours/units gap', any('3h rec' in c for c in chips), chips[:6])
+    ck('and a matching 1-hour variant is offered', any('1h fits 1' in c for c in chips), chips[:6])
+    pg.locator('.fbtn[data-f="unitgap"]').click(); pg.wait_for_timeout(300)
+    ug = pg.locator('article.card:not(.hidden)').count()
+    ck('hours-not-equal-units filter narrows the list', 0 < ug < 139, ug)
+    pg.locator('.fbtn[data-f="all"]').click(); pg.wait_for_timeout(200)
 
     # graceful absence: no window.claude in this harness at all
     ck('save button degrades without the runtime', pg.locator('#save').is_enabled())

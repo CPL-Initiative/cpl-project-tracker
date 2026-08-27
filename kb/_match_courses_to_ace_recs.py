@@ -22,7 +22,7 @@ maintenance" and "Piping Principles And Practices" -> "1 hour in laboratory
 practices" in the first cut. Courses with no strong match are reported as
 NEEDS A HUMAN rather than given a weak one.
 """
-import json, re, collections
+import json, re, collections, difflib
 
 # Same stopword list as public.cx_align_tokens() in Supabase - do not diverge.
 STOP = {'introduction','intro','to','the','a','an','and','or','of','for','in','on',
@@ -91,6 +91,19 @@ def toks(s):
 
 WEAK_F = {fold(w) for w in WEAK}
 
+def rec_hours(rec):
+    """Leading hour figure of an ACE recommendation ('3 hours in welding' -> 3.0).
+    A range ('3-4 hours in ...') takes the LOW end: the conservative award."""
+    m = re.match(r'^(\d+(?:\.\d+)?)(?:\s*-\s*\d+(?:\.\d+)?)?\s+hours?\s+in\s', rec)
+    return float(m.group(1)) if m else None
+
+def unit_fit(h, u):
+    """1.0 when the recommendation's hours equal the course's units, falling off
+    with the relative gap. None when either side is unknown."""
+    if h is None or u is None: return None
+    if abs(h - u) < 0.01: return 1.0
+    return max(0.0, 1.0 - abs(h - u) / max(h, u))
+
 # Domain vocabulary per LATTC subject prefix. A course title is often too thin
 # ("Materials Of Construction"); the subject says which trade it sits in.
 SUBJ = {
@@ -121,6 +134,17 @@ def subj_of(code):
         if u.startswith(k.upper().replace(' ','')): return k
     m = re.match(r'^([A-Z /]+?)\d', code.upper())
     return (m.group(1).strip() if m else code)
+
+def _norm_title(t): return re.sub(r'[^a-z0-9]', '', (t or '').lower())
+def divergence(r):
+    ct = r.get('_coci_title')
+    if not ct: return None
+    return round(difflib.SequenceMatcher(None, _norm_title(r['Course Title']), _norm_title(ct)).ratio(), 2)
+def units_flag(r):
+    if not r.get('_units'): return 'absent'          # not in our COCI extract
+    d = divergence(r)
+    if d is None or d == 1.0: return None
+    return 'divergent' if d < 0.75 else 'spelling'   # 0.75 separates a renamed course from a typo
 
 lattc = json.load(open('lattc_raw2.json'))
 vocab = json.load(open('ace_vocab.json'))
@@ -196,24 +220,47 @@ for r in lattc:
     # number. Deliberately NOT trained on anything: nobody has labelled a
     # ground truth for "is this the right CR", so a fitted score would be a
     # borrowed authority. It ranks; faculty decide.
+    # UNIT FIT — measured, not assumed: across 3,419 peer articulations carrying
+    # both numbers, 81.1% pair a CR's hours with a course of EXACTLY those units.
+    # Matching hours to units is what colleges actually do, so it earns a real
+    # share of the score. When COCI has no units the term is dropped and the
+    # remaining weights are renormalised, so an unmeasured course is never
+    # penalised for something we failed to look up.
+    course_units = None
+    try: course_units = float(r['_units']) if r.get('_units') else None
+    except (TypeError, ValueError): course_units = None
     for c in cands:
-        fit  = c['score']                              # how well the words fit
-        peer = 1.0 if c['peer_n'] else 0.0             # has anyone done it
-        breadth = min(c['colleges'] / 40.0, 1.0)       # how widely it is held
-        conf = 0.55*fit + 0.25*peer + 0.20*breadth
+        fit  = c['score']
+        peer = 1.0 if c['peer_n'] else 0.0
+        breadth = min(c['colleges'] / 40.0, 1.0)
+        h = rec_hours(c['rec'])
+        uf = unit_fit(h, course_units)
+        if uf is None:
+            conf = 0.55*fit + 0.25*peer + 0.20*breadth
+        else:
+            conf = 0.45*fit + 0.20*peer + 0.15*breadth + 0.20*uf
         c['confidence'] = round(conf, 3)
         c['confidence_band'] = ('High' if conf >= 0.70 else
                                 'Medium' if conf >= 0.45 else 'Low')
+        c['rec_hours'] = h
+        c['unit_fit'] = None if uf is None else round(uf, 3)
         c['confidence_parts'] = {'fit': round(fit,3), 'peer': bool(c['peer_n']),
-                                 'breadth': round(breadth,3)}
+                                 'breadth': round(breadth,3),
+                                 'units': None if uf is None else round(uf,3)}
 
     cands.sort(key=lambda c: (-round(c['score'],1), -min(c['peer_n'],1),
                               -c['colleges'], -c['exhibits'], -c['score']))
+    # ⚠️ DO NOT COLLAPSE HOUR VARIANTS. An earlier cut folded "1 hour in welding"
+    # into "3 hours in welding" and kept the better-evidenced one - which threw
+    # away the only thing that distinguishes a 1-unit lab's recommendation from a
+    # 3-unit lecture's. Jessica, 2026-08-27: "We wouldn't want to give a 3 hour
+    # credit recommendation for a 1 unit course and then use the same credit
+    # recommendation for a 3 unit course." The hour variants ARE the choice.
+    # Only exact-duplicate strings collapse.
     seen, ded = set(), []
-    for c in cands:                      # collapse "2 hours in X"/"3 hours in X" to the best-evidenced
-        key = re.sub(r'^\d+(\.\d+)?\s+hours?\s+in\s+','',c['rec'])
-        if key in seen: continue
-        seen.add(key); ded.append(c)
+    for c in cands:
+        if c['rec'] in seen: continue
+        seen.add(c['rec']); ded.append(c)
     ded.sort(key=lambda c: -c['confidence'])
     out.append({'code': code, 'subject_key': sk, 'subject_name': sname,
                 'number': r['Course Number'], 'title': title,
@@ -224,7 +271,14 @@ for r in lattc:
                 'control_number': r.get('_control'), 'cid': r.get('_cid'),
                 'credit_type': r.get('_credit_type'),
                 'units_variants': r.get('_units_multi'),
-                'candidates': ded[:5], 'n_cand': len(ded)})
+                'course_units': course_units,
+                # Does LATTC's course number name the same course COCI has? A
+                # units join is also a course-identity check, and five of these
+                # numbers point at a DIFFERENT course - flagged, never silently
+                # carried, because a recommendation on the wrong course number
+                # is worse than no recommendation.
+                'units_flag': units_flag(r), 'divergence_ratio': divergence(r),
+                'candidates': ded[:6], 'n_cand': len(ded)})
 
 json.dump(out, open('lattc_matches.json','w'), indent=1)
 
