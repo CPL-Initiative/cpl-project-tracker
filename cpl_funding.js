@@ -154,6 +154,34 @@
     ".cplfund-addbox { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 10px 0 2px; }",
     ".cplfund-addbox .dk { font-size: .8rem; }",
     ".cplfund-prio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }",
+    // ── the statutory goal spine (§78093.2(d)(1)) ─────────────────────────
+    // First Light: warm monochrome base, tokens only, no raw hex. Colour is
+    // never the only signal — every state chip carries a WORD, so the section
+    // reads the same in greyscale and to a screen reader.
+    ".cplfund-goal-intro, .cplfund-goal-regnote { font-size: .85rem; max-width: var(--cpl-measure, none); }",
+    ".cplfund-goal-align { padding: 8px 12px; background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--green-progress); border-radius: 8px; }",
+    ".cplfund-goals { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; margin: 12px 0 4px; }",
+    ".cplfund-goal { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--navy-secondary); border-radius: 8px; padding: 14px 16px; }",
+    ".cplfund-goal h4 { margin: 0 0 8px; color: var(--navy-primary); font-size: 1rem; display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; }",
+    ".cplfund-goal-key { font-weight: 700; }",
+    ".cplfund-goal-cite { font-size: .7rem; font-weight: 400; color: var(--text-faint); letter-spacing: .02em; }",
+    ".cplfund-goal-quote { margin: 0 0 10px; padding: 6px 10px; border-left: 3px solid var(--gold-accent); background: var(--surface-opaque); font-size: .8rem; font-style: italic; color: var(--text-body); border-radius: 0 4px 4px 0; }",
+    ".cplfund-goal-axes { display: grid; gap: 10px; }",
+    ".cplfund-goal-ax h5 { margin: 0 0 4px; font-size: .72rem; text-transform: uppercase; letter-spacing: .05em; color: var(--text-muted); font-weight: 700; }",
+    ".cplfund-goal-ax ul { margin: 0; padding-left: 18px; font-size: .8rem; line-height: 1.6; }",
+    ".cplfund-goal-ax p { margin: 0; font-size: .8rem; line-height: 1.55; }",
+    ".cplfund-goal-empty { color: var(--text-faint); font-style: italic; }",
+    ".cplfund-goal-chip { display: inline-block; border-radius: 4px; padding: 1px 7px; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; border: 1px solid var(--border-strong); background: var(--surface-opaque); color: var(--text-body); }",
+    ".cplfund-goal-chip.ok { border-color: var(--green-progress); color: var(--green-progress); }",
+    ".cplfund-goal-chip.warn { border-color: var(--mustard-text); color: var(--mustard-text); }",
+    ".cplfund-goal-chip.gap { border-color: var(--text-faint); color: var(--text-faint); }",
+    ".cplfund-goal-limit { margin-top: 8px !important; padding: 6px 9px; border-left: 3px solid var(--mustard-text); background: var(--surface-opaque); border-radius: 0 4px 4px 0; font-size: .78rem !important; }",
+    ".cplfund-goal-derived { font-size: .68rem; text-transform: uppercase; letter-spacing: .04em; color: var(--text-faint); border: 1px dashed var(--border-strong); border-radius: 4px; padding: 0 4px; }",
+    // The superscript marker. Underlined AND raised, so it is not colour alone,
+    // and it keeps a real focus ring — it is a link, and a curator tabs to it.
+    ".cplfund-goalsup { font-size: .8em; vertical-align: super; line-height: 0; color: var(--link); text-decoration: underline; text-decoration-style: dotted; margin-left: 1px; }",
+    ".cplfund-goalsup:focus-visible { outline: 2px solid var(--navy-secondary); outline-offset: 2px; border-radius: 2px; }",
+    "@media (max-width: 560px) { .cplfund-goals { grid-template-columns: 1fr; } }",
     ".cplfund-prio .p { background: var(--surface-subtle); border: 1px solid var(--border); border-left: 4px solid var(--gold-accent); border-radius: 8px; padding: 14px 16px; }",
     ".cplfund-prio .p h4 { margin: 0 0 6px; color: var(--navy-primary); font-size: 1rem; text-align: left; }",
     // Uniform body-copy size across the whole priority box + the timing rows
@@ -3389,6 +3417,102 @@
       "<ul style='margin:0;padding-left:20px;font-size:.8rem;line-height:1.7;'>" + rows.join("") + "</ul></details>";
   }
 
+  // ── the statutory spine: Ed. Code §78093.2(d)(1) (Sam, 2026-08-28) ────────
+  // The appropriation this tab models is not a blank grant. §78093.2(d)(1)
+  // directs the chancellor's office to allocate it "using all of the following
+  // goals", and (d)(2) makes DEMONSTRATING them a precondition of a campus
+  // allocation. So the four goals are not commentary on the model — they are
+  // the thing the model has to be able to answer for, and this section is the
+  // (d)(2) reporting artifact.
+  //
+  // ⚠️ THE POINT OF THIS SECTION IS THE GOAL WITH NOTHING UNDER IT. Anyone can
+  // render four boxes and fill them. What makes it worth shipping is that (C)
+  // comes out honestly empty of measurement, and says so, rather than being
+  // padded with the nearest available number. See goalEvidence().
+  var STATUTORY_GOALS = [
+    { key: "A", sup: "ᴬ", short: "Access",
+      text: "Increasing access to credit for prior learning opportunities equitably for all eligible students" },
+    { key: "B", sup: "ᴮ", short: "Completion",
+      text: "Increasing completion through credit for prior learning awards" },
+    { key: "C", sup: "ᶜ", short: "Career attainment",
+      text: "Advancing career attainment through credit for prior learning" },
+    { key: "D", sup: "ᴰ", short: "Pilot projects",
+      text: "Supporting credit for prior learning through the chancellor’s office’s pilot projects, " +
+            "such as the California Mapping Articulated Pathways Initiative" }
+  ];
+  function goalByKey(k) {
+    for (var i = 0; i < STATUTORY_GOALS.length; i++) if (STATUTORY_GOALS[i].key === k) return STATUTORY_GOALS[i];
+    return null;
+  }
+
+  // Which goal does a PRIORITY serve? An explicit `goals` array on the priority
+  // wins; otherwise it is DERIVED — and derived from the metric's MILESTONE,
+  // never from the title's prose.
+  //
+  // ⚠️ That distinction is the whole reason this is safe. Matching a title
+  // ("Access: Statewide" -> A) is the exact shape that made three noncredit
+  // metrics collapse onto one credit measure (see METRIC_SOURCES): prose is
+  // written by a curator for a reader, and it drifts. The MILESTONE is
+  // structural — it is already resolved through metric_src / measurability(),
+  // and eligible-or-applied vs transcribed IS the access-vs-completion line the
+  // statute itself draws. On Sam's live config it resolves all three correctly
+  // without reading a single word of a title.
+  //
+  // ⚠️ AND IT DRIVES NO MATH. A goal tag is a display + reporting label; no
+  // dollar, share, factor, target or earned figure consults it. A wrong tag is
+  // a wrong caption a curator can see and pin, never a wrong number. (Same
+  // posture as the TOP-code rule: display it, don't gate on it.)
+  function prioGoals(slot, i, p) {
+    var stored = prioField(slot, i, "goals");
+    if (Array.isArray(stored)) return { keys: stored.slice(), derived: false };
+    // measureOf() is the ONE resolver the earning math itself uses, pin first and
+    // prose only as a fallback. Deriving from anything else would let the goal
+    // caption and the dollars disagree about what this priority measures.
+    var ms = (measureOf(p || lanePriorities(slot)[i] || {}) || {}).milestone;
+    if (ms === "transcribed") return { keys: ["B"], derived: true };
+    if (ms === "eligible" || ms === "applied") return { keys: ["A"], derived: true };
+    return { keys: [], derived: true };
+  }
+
+  // Which goal does a POOL line item serve? Core deductions carry a default the
+  // statute itself supports; custom boxes carry whatever a curator tags.
+  //
+  // The project pool is tagged C AND D, and both are load-bearing:
+  //   (D) is the pool in the statute's own words — "the chancellor's office's
+  //       pilot projects, such as the California Mapping Articulated Pathways
+  //       Initiative" names MAP, which this pool funds.
+  //   (C) is Sam's ruling (2026-08-28): career attainment is carried by the
+  //       project funding withheld from the direct college award and reported
+  //       qualitatively, because no reliable campus measure of it exists.
+  // admin_cost is deliberately UNTAGGED by default: CO administration plausibly
+  // supports (D), but "plausibly" is not a statutory claim, and a default tag
+  // would put a $800,000 figure under a goal nobody decided to put it under.
+  var POOL_GOAL_DEFAULTS = { scaling_projects_tech: ["C", "D"] };
+  function poolGoals(field) {
+    var v = firstDefined(
+      SCENARIO.poolGoals && SCENARIO.poolGoals[field],
+      SHARED.poolGoals && SHARED.poolGoals[field],
+      base().pool_goals && base().pool_goals[field],
+      POOL_GOAL_DEFAULTS[field]);
+    return Array.isArray(v) ? v.slice() : [];
+  }
+
+  // A superscript marker linking a card back to the goal it serves. Never the
+  // ONLY signal: it carries an accessible name and a hover naming the goal in
+  // words, because a lone raised letter is unreadable to a screen reader and
+  // ambiguous to everyone else.
+  function goalSupHtml(keys, ctx) {
+    if (!keys || !keys.length) return "";
+    return keys.map(function (k) {
+      var g = goalByKey(k);
+      if (!g) return "";
+      return '<a class="cplfund-goalsup" href="#cplfund-goal-' + esc(k) + '" data-goaljump="' + esc(k) +
+        '" title="' + esc("Ed. Code §78093.2(d)(1)(" + k + ") — " + g.short + ": " + g.text +
+          (ctx ? " · " + ctx : "")) + '" aria-label="' +
+        esc("Goal " + k + ", " + g.short + " — jump to the statutory goals section") + '">' + g.sup + "</a>";
+    }).join("");
+  }
+
   // ── pool cards ────────────────────────────────────────────────────────
   // Provenance + drift for the figures now sourced from the Budget ledger.
   // Silent agreement is stated once (so a reader knows WHERE the money figure
@@ -3481,7 +3605,8 @@
       var def = b.def || base().pool.admin_cost_label;
       if (poolSkip(b.field)) return;
       out.push(card({ neg: true, v: valueEd(b.field, true),
-        l: labelEd(b.field, def) + ' <span class="dk">&mdash; deducted</span>',
+        l: labelEd(b.field, def) + goalSupHtml(poolGoals(b.field), poolLabel(b.field, def)) +
+           ' <span class="dk">&mdash; deducted</span>',
         x: pubEye(b.field, poolLabel(b.field, def)) + hideX(b.field, poolLabel(b.field, def)) }));
     });
 
@@ -3492,6 +3617,7 @@
         cls: ded ? " custom custom-ded" : " custom custom-rev", neg: ded,
         v: edNum("pool-custom-amt", fmtInt(it.amount), { idx: i, neg: ded, label: "Custom box amount" }),
         l: edText("pool-custom-label", it.label, { idx: i, cls: "cplfund-pool-label-input", label: "Custom box label", placeholder: "Label this box…" }) +
+           goalSupHtml(Array.isArray(it.goals) ? it.goals : [], it.label) +
            ' <button type="button" class="cplfund-kindtoggle" data-poolkind="' + i +
            '" title="Flip between a revenue source (+) and a deduction (−)">' + (ded ? "&minus; deduction" : "&plus; revenue") + "</button>",
         x: '<button type="button" class="cplfund-card-x" data-pooldel="' + i +
@@ -3814,6 +3940,230 @@
       '<span class="dk">new boxes flow into the college-pool math &mdash; revenue adds, deduction subtracts</span></div>';
 
     return '<div class="cplfund-cards">' + out.join("") + "</div>" + pubNote + restore + add;
+  }
+
+  // ── the (d)(2) reporting artifact: what funds each goal, and what evidences it ──
+  //
+  // ⚠️ FUNDED AND MEASURED ARE TWO AXES AND THIS SECTION NEVER MERGES THEM.
+  // Collapsing them into one "status" is what would make this section a
+  // decoration: goal (C) is FUNDED (the project pool, per Sam's 2026-08-28
+  // ruling) and has NO campus measure at all, and a single traffic light forces
+  // that into either a green that lies or a red that denies the money. Two
+  // columns state both facts and let the empty half stay empty.
+  // The CPL Workplan's own three goals, as the Activities register records them.
+  var PROJECT_REGISTER_GOALS = ["Goal 1: Expand Equitable Access",
+    "Goal 2: Build Unified System", "Goal 3: Sustainable Policies & Resources"];
+
+  // The Activities register (window.CPL_DATA.projects — 32 named projects with
+  // leads, budgets and statuses) is the best evidence goal (D) has: it IS the
+  // list of the chancellor's office's CPL projects, which the statute names.
+  //
+  // ⚠️ ITS `goal` FIELD IS A DIFFERENT FRAME, AND THAT IS CHRONOLOGY, NOT A
+  // DEFECT (Sam, 2026-08-28). The register's three goals — "Expand Equitable
+  // Access", "Build Unified System", "Sustainable Policies & Resources" — were
+  // set BEFORE §78093.2 existed, and they align with the CPL Workplan and
+  // Vision 2030. They are the OPERATIONAL layer that delivers the statutory
+  // outcomes, not a competing vocabulary to be reconciled away. Nothing here
+  // should read as though 32 projects need correcting; they do not.
+  //
+  // What follows from that is narrow and still worth holding: a project's
+  // contribution to a statutory goal is a judgment about what the work
+  // DELIVERS, so it is an explicit curator tag rather than a string match on
+  // two goal names that happen to share the word "access". The section reports
+  // how many projects carry that additive tag, and never treats its absence as
+  // a fault in the register.
+  function registerProjects() {
+    var d = (typeof window !== "undefined" && window.CPL_DATA) || null;
+    var list = (d && Array.isArray(d.projects)) ? d.projects : [];
+    return list.map(function (p) {
+      return { id: String(p.id || ""), name: String(p.name || ""), lead: p.lead || "",
+               status: p.status || "", budget: p.budget || "", budget_source: p.budget_source || "",
+               register_goal: p.goal || "", goals: projectGoals(String(p.id || "")) };
+    });
+  }
+  function projectGoals(id) {
+    var v = firstDefined(
+      SCENARIO.projectGoals && SCENARIO.projectGoals[id],
+      SHARED.projectGoals && SHARED.projectGoals[id],
+      base().project_goals && base().project_goals[id]);
+    return Array.isArray(v) ? v.slice() : [];
+  }
+
+  // What the CPL story corpus actually evidences, COUNTED at load rather than
+  // quoted from a session that counted it once. Sam's ruling is that career
+  // attainment is reported qualitatively via these stories; the corpus is the
+  // artifact that claim rests on, so the claim should be able to go stale out
+  // loud. A pathway reads "<prior role> → <destination>", and the destination
+  // is overwhelmingly a CREDENTIAL — which makes the corpus evidence for (B),
+  // not for (C). Absent corpus → no claim at all, never a zero.
+  function storyEvidence() {
+    var S = (typeof window !== "undefined" && window.CPL_STORIES) || null;
+    var arr = S && Array.isArray(S.stories) ? S.stories : null;
+    if (!arr || !arr.length) return null;
+    var edu = /\b(student|graduate|degree|associate|bachelor|certificate|major|college|enroll|transfer|university|a\.?s\.?|a\.?a\.?|b\.?s\.?|b\.?a\.?)\b/i;
+    var job = 0;
+    arr.forEach(function (s) {
+      var parts = String(s.pathway || "").split(/→|->/);
+      var dest = (parts[parts.length - 1] || "").trim();
+      if (dest && !edu.test(dest)) job++;
+    });
+    return { total: arr.length, job: job, edu: arr.length - job };
+  }
+
+  // Everything tagged to each goal, in the lane currently in view.
+  // ⚠️ LANE-SCOPED ON PURPOSE. The credit pool and the noncredit carve-out are
+  // solved separately and must never be summed (lanePerYear's standing rule), so
+  // this reports the lane you are looking at and SAYS which one, rather than
+  // producing a statewide figure that is the sum of two incompatible models.
+  function goalFunding(slot) {
+    var map = {};
+    STATUTORY_GOALS.forEach(function (g) { map[g.key] = { prios: [], pools: [], projects: [] }; });
+    lanePriorities(slot).forEach(function (p, i) {
+      var gk = prioGoals(slot, i, p);
+      var meas = measureOf(p) || {};
+      gk.keys.forEach(function (k) {
+        if (map[k]) map[k].prios.push({ p: p, idx: i, derived: gk.derived, meas: meas,
+                                        dollars: lanePrioCap(slot, p) });
+      });
+    });
+    // Pool line items are statewide, not lane-scoped — they are taken off the
+    // top before either lane's pot exists — so they ride every lane's view.
+    CORE_DEDUCTION.forEach(function (b) {
+      if (poolHidden(b.field)) return;
+      poolGoals(b.field).forEach(function (k) {
+        if (map[k]) map[k].pools.push({ label: poolLabel(b.field, b.def || base().pool.admin_cost_label),
+                                        amount: Number(poolField(b.field)) || 0, field: b.field });
+      });
+    });
+    customPool().forEach(function (it, i) {
+      var keys = Array.isArray(it.goals) ? it.goals : [];
+      keys.forEach(function (k) {
+        if (map[k]) map[k].pools.push({ label: it.label || "(untitled)", amount: Number(it.amount) || 0,
+                                        field: "custom:" + i, kind: it.kind });
+      });
+    });
+    registerProjects().forEach(function (pr) {
+      pr.goals.forEach(function (k) { if (map[k]) map[k].projects.push(pr); });
+    });
+    return map;
+  }
+
+  function goalSpineHtml() {
+    var slot = state.viewSlot;
+    var funding = goalFunding(slot);
+    var reg = registerProjects();
+    var untagged = reg.filter(function (p) { return !p.goals.length; }).length;
+    var story = storyEvidence();
+
+    var cards = STATUTORY_GOALS.map(function (g) {
+      var f = funding[g.key];
+      var fundBits = [];
+      f.prios.forEach(function (x) {
+        fundBits.push('<li><strong>' + esc(x.p.label + ": " + x.p.title) + "</strong> &mdash; " +
+          fmtMoney(x.dollars) + " over the " + esc(windowLabel()) + " window" +
+          (x.derived ? ' <span class="cplfund-goal-derived" title="' +
+            esc("Derived from this priority's measure (" + (x.meas.milestone || "no milestone") +
+                "), not stored. A curator can pin it.") + '">derived</span>' : "") + "</li>");
+      });
+      f.pools.forEach(function (x) {
+        fundBits.push("<li><strong>" + esc(x.label) + "</strong> &mdash; " + fmtMoney(x.amount) +
+          ' <span class="dk">withheld from the college pool for statewide work</span></li>');
+      });
+      if (f.projects.length) {
+        fundBits.push("<li><strong>" + f.projects.length + " tagged " +
+          (f.projects.length === 1 ? "project" : "projects") + "</strong> in the Activities register &mdash; " +
+          f.projects.slice(0, 6).map(function (p) { return esc(p.name); }).join(", ") +
+          (f.projects.length > 6 ? ", &hellip;" : "") + "</li>");
+      }
+
+      // ── the measured axis, stated separately from the funded one ──────────
+      var measured = f.prios.filter(function (x) { return x.meas.src && !x.meas.bad_src && !x.meas.undelivered; });
+      var broken = f.prios.filter(function (x) { return x.meas.bad_src || x.meas.undelivered; });
+      var mCls, mWord, mText;
+      if (measured.length) {
+        mCls = "ok"; mWord = "Performance-measured";
+        mText = "Earned against " + measured.map(function (x) {
+          return "<strong>" + esc(x.p.title) + "</strong> (" + esc(x.meas.milestone || "measure") + ")";
+        }).join(" and ") + ", per the daily MAP feed.";
+      } else if (broken.length) {
+        mCls = "warn"; mWord = "Declared, not delivered";
+        mText = "A priority is tagged to this goal but its measure is not reaching the model, so nothing " +
+          "here can be scored yet. See the metric diagnostic above.";
+      } else if (f.pools.length || f.projects.length) {
+        mCls = "warn"; mWord = "No performance measure";
+        mText = "Funded through statewide work rather than a campus target, so no college earns against it " +
+          "and no figure on this tab scores it.";
+      } else {
+        mCls = "gap"; mWord = "Nothing tagged";
+        mText = "No priority, pool line item or project is tagged to this goal in the model as it stands.";
+      }
+      // Goal-specific measured findings — each one a fact this tab can check,
+      // not a caveat someone remembered to type.
+      var extra = "";
+      if (g.key === "A") {
+        extra = '<p class="cplfund-goal-limit">⚠ <strong>&ldquo;Equitably&rdquo; is not measured.</strong> ' +
+          "The measures behind this goal count CPL volume; none of them describes how that volume is " +
+          "distributed across student populations. The model&rsquo;s equity devices &mdash; the minimum-award " +
+          "floor and the award ceiling &mdash; equalise between <em>colleges</em>, which is a different claim " +
+          "from equitable access <em>for students</em>.</p>";
+      }
+      if (g.key === "C" && story) {
+        extra = '<p class="cplfund-goal-limit">⚠ <strong>The qualitative evidence documents a different goal.</strong> ' +
+          "Of the <strong>" + fmtInt(story.total) + "</strong> published CPL stories, <strong>" +
+          fmtInt(story.edu) + "</strong> end at an educational destination and <strong>" + fmtInt(story.job) +
+          "</strong> name a job or role. The corpus records where people came from in work and where they " +
+          "arrived in <em>education</em> &mdash; evidence for (B), not for (C). Fixable at intake, by asking " +
+          "what changed at work; nothing in analysis recovers it.</p>";
+      }
+
+      return '<article class="cplfund-goal" id="cplfund-goal-' + esc(g.key) + '">' +
+        '<h4><span class="cplfund-goal-key">(' + esc(g.key) + ')</span> ' + esc(g.short) +
+        ' <span class="cplfund-goal-cite">Ed. Code &sect;78093.2(d)(1)(' + esc(g.key) + ')</span></h4>' +
+        '<blockquote class="cplfund-goal-quote">' + esc(g.text) + "</blockquote>" +
+        '<div class="cplfund-goal-axes">' +
+          '<section class="cplfund-goal-ax"><h5>What funds it</h5>' +
+            (fundBits.length ? "<ul>" + fundBits.join("") + "</ul>"
+              : '<p class="cplfund-goal-empty">Nothing in this model is tagged to this goal.</p>') +
+          "</section>" +
+          '<section class="cplfund-goal-ax"><h5>How it is evidenced</h5>' +
+            '<p><span class="cplfund-goal-chip ' + mCls + '">' + esc(mWord) + "</span> " + mText + "</p>" +
+            extra +
+          "</section>" +
+        "</div></article>";
+    }).join("");
+
+    var regNote = reg.length
+      ? '<p class="cplfund-goal-regnote">📋 <strong>The Activities register carries ' + fmtInt(reg.length) +
+        " named projects</strong>, which is what goal (D) asks the chancellor&rsquo;s office to show. " +
+        (untagged
+          ? "<strong>" + fmtInt(untagged) + "</strong> of them do not yet carry an additional statutory " +
+            "goal tag. " +
+            '<span class="dk">Each already records its CPL Workplan goal (' +
+            esc(PROJECT_REGISTER_GOALS.join(", ")) + ") and its Vision 2030 action. Those were set before " +
+            "&sect;78093.2 was enacted and are the operational plan that delivers these outcomes &mdash; " +
+            "not a rival vocabulary, and nothing here needs correcting. A statutory tag is an addition, " +
+            "recording which funding outcome a project&rsquo;s work evidences, which is a judgment about " +
+            "delivery rather than a match between two goal names.</span>"
+          : "All of them also carry a statutory goal tag.") + "</p>"
+      : "";
+
+    return '<p class="cplfund-goal-intro">The chancellor&rsquo;s office must allocate this appropriation ' +
+      '&ldquo;using all of the following goals&rdquo; (Ed. Code &sect;78093.2(d)(1)), and &sect;78093.2(d)(2) ' +
+      "makes demonstrating them a condition of a campus allocation. This is that account, read live from the " +
+      "model rather than written down beside it. Figures are for the <strong>" +
+      (laneIsNc() ? "noncredit" : "credit") + " lane</strong> currently in view; the two lanes are solved " +
+      "separately and are never summed.</p>" +
+      // Sam, 2026-08-28: the statutory goals are not a separate errand. They sit
+      // inside one alignment stack, and the frames were written at different
+      // times — naming them together is what stops the newest one reading as a
+      // replacement for the others.
+      '<p class="cplfund-goal-intro cplfund-goal-align">These goals are one frame among several the ' +
+      "CPL Initiative works to, all of them pointed at the same buildout of statewide CPL infrastructure: " +
+      "<strong>Vision 2030</strong>, the <strong>California Master Plan for Career Education</strong>, the " +
+      "<strong>CPL Workplan</strong>, and <strong>Ed. Code &sect;&sect;78092&ndash;78093.2</strong>. " +
+      "The funding outcomes below are what the legislature approved money against; the Workplan&rsquo;s own " +
+      "goals are how the work gets done.</p>" +
+      '<div class="cplfund-goals">' + cards + "</div>" + regNote;
   }
 
   // ── award distribution (per college, window total) ────────────────────
@@ -4164,6 +4514,10 @@
           ? "Noncredit lane — this priority is measured against the noncredit carve-out"
           : "Credit lane — this priority is measured against the college pool") + '">' +
         (laneIsNc() ? "NC" : "CR") + "</span>" +
+        // The statutory goal this priority serves (§78093.2(d)(1)) — a link
+        // back to the spine, never a bare raised letter: it carries a hover
+        // naming the goal in words and an accessible label.
+        goalSupHtml(prioGoals(slot, i, p).keys, p.title) +
         "</h4>" +
         '<p class="desc">' + edArea("description", p.description, { slot: slot, idx: i, rows: 2, ro: ro, label: p.label + " description" }) + "</p>" +
         '<p class="nums">Allocation share ' + edNum("share", fmtRatePct(p.share), { small: true, slot: slot, idx: i, ro: ro, label: p.label + " allocation share percent" }) +
@@ -7363,7 +7717,15 @@
       section("eligibility", "Baseline eligibility", eligibilityHtml()) +
       section("priorities", "The three funding priorities",
         (laneIsNc() ? "" : metricDiagnosticHtml()) + laneFilterHtml() + yearFilterHtml() + prioritiesHtml() +
-        ftesFactorsHtml() + timingSectionHtml()) +
+        ftesFactorsHtml()) +
+      // Sam, 2026-08-28: "The Timing block is now part of the priorities block
+      // and should probably have its own so it can be collapsible separately."
+      // It already emits its own <h3>Timing</h3> as its first element, which is
+      // exactly what collapseH3() consumes — so it becomes an independently
+      // collapsible section through the existing helper (the same path the
+      // feeder block uses), with no new machinery and no change to its markup.
+      collapseH3("timing", timingSectionHtml()) +
+      section("goals", "What the funding must achieve — Ed. Code §78093.2(d)(1)", goalSpineHtml()) +
       section("formula", "How an allocation is computed", formulaHtml()) +
       section("college", "Potential allocation by college", collegeBody) +
       collapseH3("feeder", ncStandaloneHtml()) +
