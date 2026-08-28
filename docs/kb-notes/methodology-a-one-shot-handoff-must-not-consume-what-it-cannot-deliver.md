@@ -80,7 +80,7 @@ function chatbotInputEl() {
 — and fall back to the module reference only as a last resort. "Which input?" is
 a question about *where the user is*, not about *what the module last built*.
 
-## The generalisation
+## The generalization
 
 **A shared module-level element reference is a cache of a DOM lookup, and it goes
 stale exactly when a second mount appears.** The second mount is usually added

@@ -59,7 +59,7 @@ uniquely.
 
 ## Why it hid for so long
 
-Two compounding effects, both worth recognising in other systems:
+Two compounding effects, both worth recognizing in other systems:
 
 1. **The consequence surfaced one layer away.** With no home college resolved, a *geography* variable was null,
    so a *ranking* function silently degraded to volume ordering. The visible complaint was "it recommends a
@@ -89,7 +89,7 @@ was `core(200) + county(100) + region(40) + min(courses, 39)`, and `39 < 40` mea
 region. Having to explain why the reported bug was arithmetically impossible is what forced the search one layer
 up.
 
-**Generalised: when the code you were pointed at cannot produce the symptom, stop fixing it and go up a layer.**
+**Generalized: when the code you were pointed at cannot produce the symptom, stop fixing it and go up a layer.**
 Re-deriving a small function by hand costs minutes and is the cheapest way to discover you are in the wrong file.
 
 ## Testing it

@@ -86,7 +86,7 @@ a bug report.
 
 ## The general shape
 
-Any fixed-size list of behaviour-shaping inputs — prompt directives, feature
+Any fixed-size list of behavior-shaping inputs — prompt directives, feature
 flags read in order, a top-N retrieval budget, a nav bar with an overflow — is a
 zero-sum budget. Ask of each:
 

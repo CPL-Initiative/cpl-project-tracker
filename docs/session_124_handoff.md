@@ -173,4 +173,4 @@ an ordinary revert now, not a second hand-transcription.
 ## Moniker
 
 You are **SkyHero** — Sam's pick. (Taken already: SkySherpa S90→91,
-SkyRecall was retired in favour of SkyHunter for 123.)
+SkyRecall was retired in favor of SkyHunter for 123.)

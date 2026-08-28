@@ -36,7 +36,7 @@ hours-old code rather than in anything inherited.
 `tabpanel` role and arrow-key navigation were not. The result announces *"tab, 1
 of 2"* — which tells the user to press Left/Right — and then nothing happens.
 
-**A sighted user encountering an unlabelled div at least knows they are on their
+**A sighted user encountering an unlabeled div at least knows they are on their
 own. A screen-reader user handed a half-declared pattern has been actively
 misinformed.** The complete pattern is small and well-specified: `aria-selected`
 on every tab, `aria-controls` pointing at a `role="tabpanel"` that is
@@ -80,12 +80,12 @@ mutation into an announced one.
 Session 162. Two more defects in the same pass, both worth naming because they
 are easy to repeat:
 
-- **Colour-only meaning (WCAG 1.4.1).** A "likely" could-adopt match was
-  distinguished from a broad lead by an *outline colour*. Fixed by splitting into
-  two **text-labelled** groups — the label carries the distinction, styling only
+- **Color-only meaning (WCAG 1.4.1).** A "likely" could-adopt match was
+  distinguished from a broad lead by an *outline color*. Fixed by splitting into
+  two **text-labeled** groups — the label carries the distinction, styling only
   reinforces it. A `@media (forced-colors: active)` block then keeps the selected
   states distinguishable under Windows high contrast, which drops background
-  colour entirely.
+  color entirely.
 - **A tooltip is not an accessible name.** College chips carried the full name in
   a `title` on a `<span>` — announced inconsistently, and on touch unreachable by
   anyone. `<abbr title>` is the element assistive tech actually expands, and it

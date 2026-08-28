@@ -61,7 +61,7 @@ Two states render identically if you are careless and mean opposite things:
 
 Collapsing them produces the failure this project has hit before in another
 guise: **"not in this dataset" read as zero.** A blind spot reported as a zero
-tells a college its programme is dead when the truth is that we cannot see it.
+tells a college its program is dead when the truth is that we cannot see it.
 Bakersfield's per-CPL-type counts make this vivid — 57 nameable students against
 582 actual, so a bare "2" for Credit by Exam is a visibility artefact, not a
 finding.

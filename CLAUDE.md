@@ -821,7 +821,7 @@ from one readiness tier to the next.
 
 ### SkyLens S202 — a gate stricter than its own policy, and a fix that was half a fix (2026-08-28)
 
-**Sam relabelled the priorities on the live tab and nothing reached Supabase — three times.**
+**Sam relabeled the priorities on the live tab and nothing reached Supabase — three times.**
 ⭐ **The client refused a write the DATABASE would have accepted**: `unlocked()` asked only for
 the team PHRASE while all three funding tables carry `is_allowed_reviewer() OR team_pass_ok()`.
 His masthead read "● Signed in" — **two credentials, one word**. Seven write paths had it; fixed

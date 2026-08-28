@@ -51,7 +51,7 @@ session resuming the build — read it before touching `kb/` or the curation tab
       The `clusters` dict in `coci_unified_courses.json` is empty (archived at
       `archive/coci_unified_courses_clusters_2026-05-30_pre-dissolution.json`);
       every `for … in clusters` loop in `export_unified_courses()` no-ops.
-   2. **Curator merge targets** — **RELABELLED.** When a curator folds members
+   2. **Curator merge targets** — **RELABELED.** When a curator folds members
       into a target via `merge_into`, the result no longer overrides the
       target's identity with "Cluster". Instead:
       - a target with a **native identity** (M-ID / C-ID / CCN-ID) keeps that

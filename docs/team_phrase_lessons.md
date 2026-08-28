@@ -78,7 +78,7 @@ one function, one row, twelve policies and an unlock box.
   and names the scope it will unlock. Fixes all 7 bounce tabs by re-dispatching
   `cpl-tab-activated` for the live tab, reusing wiring 5 of them already had.
 - **`team_phrase.js`** — site-scoped API. Each site phrase gets its **own** slot
-  (`cpl_gr_pass` / `cpl_fin_pass`), generalising what `gr_priorities.js` had done
+  (`cpl_gr_pass` / `cpl_fin_pass`), generalizing what `gr_priorities.js` had done
   since it shipped, so holding Finance never costs you the shared phrase.
 - **`team_phrases.js`** — 🔑 Team Phrases tab (see below).
 - **`fin_pass_ok()`** + the `fin` row, applied additively.
@@ -141,7 +141,7 @@ enforce. `mountInto()` lets Admin mount the *same* control inline, so nobody is
 bounced anywhere. RACI keeps its phrase box — Sam: *"RACI can use the team phrase
 rather than the magic link."*
 
-### Then the same question, generalised — and it had to be measured
+### Then the same question, generalized — and it had to be measured
 
 Sam: *"What do you recommend to insure that all tabs that require a Team Phrase
 have an input on them?"*

@@ -482,17 +482,56 @@ BRITISH_FORMS = [
 ]
 
 
+def prose_only(text):
+    """Blank every region of a markdown doc that is NOT prose, keeping offsets.
+
+    ⭐ THE LINT AND THE FIXER MUST SHARE ONE DEFINITION OF PROSE. Before this
+    existed the rule scanned raw text, so it reported 25 findings that
+    `kb/_fix_american_spelling.py` deliberately refuses to touch — a filename in
+    link text, a word inside a code span, Sam quoted verbatim. A guard that
+    reports work nobody can do is the muted-guard failure this corpus already
+    documented (methodology-a-guard-that-fails-on-truth-gets-muted).
+
+    Masked: fenced blocks, inline code, indented code, wikilinks, markdown link
+    TARGETS, bare URLs, `*.md` filenames, and quoted spans.
+
+    ⚠ QUOTED SPANS ARE PROSE TO A READER BUT NOT OURS TO EDIT. Sam, 2026-08-28:
+    *"No need to fix any spellings we import...like COCI catalog or MAP Custom
+    Reports data."* A quotation is someone else's text — an imported COCI title,
+    a MAP field, or a person's own words — and correcting it makes our record
+    disagree with its source.
+    """
+    out = list(text)
+
+    def blank(m, g=0):
+        for i in range(m.start(g), m.end(g)):
+            out[i] = "\0"
+
+    for pat, grp in ((r"```.*?```|~~~.*?~~~", 0), (r"`[^`\n]*`", 0),
+                     (r"\[\[[^\]]*\]\]", 0), (r"\]\(([^)]*)\)", 1),
+                     (r"https?://\S+", 0), (r"^\s{4,}\S.*$", 0),
+                     (r"[\w./-]+\.md\b", 0),
+                     (r"\"[^\"\n]*\"|\u201c[^\u201d\n]*\u201d", 0)):
+        flags = re.S | re.M if grp == 0 else 0
+        for m in re.finditer(pat, text, re.S | re.M):
+            blank(m, grp)
+    return "".join(out)
+
+
 def rule_american_spelling(entry):
     """Informational: British spellings in a doc Sam reads.
 
     Never a defect — it reports so a pass can be made deliberately, in the same
     spirit as kb_note_dialect. Case-insensitive on the stem; reports the forms
     found and their count, not every offset.
+
+    Scans `prose_only()` — the SAME mask `kb/_fix_american_spelling.py` applies,
+    so the rule can never report a hit the fixer refuses to touch.
     """
     text = entry.get("text") or ""
     if not text:
         return None
-    low = text.lower()
+    low = prose_only(text).lower()
     hits = {}
     for brit, amer in BRITISH_FORMS:
         # Plain stems stay a substring count (cheap, and "normalis" is meant to

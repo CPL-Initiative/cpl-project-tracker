@@ -53,7 +53,7 @@ accessibility tree, which would delete the warning rather than relocate it.
 **2. A word needs a font a glyph did not.** A `<button>` inherits neither
 `font-family` nor `color`. With thumbs that was invisible — a glyph renders the
 same in any font. With words, the two rating pills would have rendered in the
-UA's default button font and colour immediately beside a Copy pill that
+UA's default button font and color immediately beside a Copy pill that
 explicitly opts in. `.s-fb-copy` already spelled both out; the rating pill never
 had to. Fixed on **both** surfaces, since `cpl_chat.js` carried the same latent
 issue from #1231 and the two pills sit in the same row there too.

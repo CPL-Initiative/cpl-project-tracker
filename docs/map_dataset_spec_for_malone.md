@@ -497,7 +497,7 @@ create policy map_sending_entities_read on public.map_sending_entities
 grant select on public.map_sending_entities to anon, authenticated, service_role;
 ```
 
-Public-read is right here — it is a registry of organisations, no student data.
+Public-read is right here — it is a registry of organizations, no student data.
 
 ### S9 · ⚠️ Refresh the three materialized views, IN THIS ORDER
 

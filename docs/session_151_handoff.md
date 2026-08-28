@@ -48,7 +48,7 @@ fails **both** ways:
   strings carry a C-ID at all (**~17%**), stranding ~1,942 as their own canonical.
 
 Numbers to start from: **2,344** distinct strings → **2,187** after mechanical
-normalisation (**~7% collapse, so this is CURATION, not string-cleaning** —
+normalization (**~7% collapse, so this is CURATION, not string-cleaning** —
 exactly the CER's situation); 402 C-ID-bearing → **175 distinct C-IDs**, 81
 carrying 2+ wordings, worst `AJ 110` → **10 wordings**; curated spine already in
 place = **351 statewide lines / 134 credentials**.

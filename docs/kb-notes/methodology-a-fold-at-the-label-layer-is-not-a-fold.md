@@ -17,7 +17,7 @@ artifacts:
 
 # A fold at the label layer is not a fold
 
-> **One-sentence summary** — When a display resolver normalises two spellings to
+> **One-sentence summary** — When a display resolver normalizes two spellings to
 > one label, the duplicate stops being *visible* without ceasing to *exist*, and
 > every count taken through that resolver will look correct while the data under
 > it is still split.
@@ -46,11 +46,11 @@ resolved these names for display — which is every consumer that had a reason t
 count them — saw 118 distinct *labels* over a 119-row *axis*. The number was
 right. The reason was wrong. Nothing was measuring the axis itself.
 
-This generalises past encodings. A display resolver typically folds punctuation,
+This generalizes past encodings. A display resolver typically folds punctuation,
 casing, `Community`/`Junior`, `College`, `of the`, credit/non-credit suffixes —
 each fold a place where two genuinely distinct records, or one record entered
 twice, can become indistinguishable *after* the resolver and remain distinct
-*before* it. Wherever a pipeline has a normalising display layer, "count the
+*before* it. Wherever a pipeline has a normalizing display layer, "count the
 distinct labels" and "count the distinct records" are different questions, and
 only one of them is about the data.
 
@@ -59,7 +59,7 @@ only one of them is about the data.
 It resolves the axis while leaving the **cells** keyed on the raw name. That is
 the failure mode that produces a plausible, fully-populated screen with the
 values on the wrong side of a split: one Cañada column with 26 opportunities and
-another, identically labelled, with none. A user cannot see this. It does not
+another, identically labeled, with none. A user cannot see this. It does not
 throw. It looks like a college that simply has no data — which is a real state,
 and therefore an unfalsifiable one by inspection.
 

@@ -57,7 +57,7 @@ fields.
 
 1. **Never emit a key conditionally in a payload destined for a bulk endpoint.**
    Emit it always, `null` when empty.
-2. **Normalise at the boundary as well.** Expand every row to the union of keys
+2. **Normalize at the boundary as well.** Expand every row to the union of keys
    before sending, so a *future* optional field cannot reintroduce it:
 
    ```python
@@ -76,7 +76,7 @@ fields.
 4. Log the running total per batch (`upserted N/TOTAL`) — that log is what makes
    the positional failure diagnosable at all.
 
-## Generalises to
+## Generalizes to
 
 Any batched writer over a schema-flexible endpoint: PostgREST, BigQuery streaming
 inserts, Elasticsearch `_bulk`, DynamoDB `BatchWriteItem`. The shared shape is

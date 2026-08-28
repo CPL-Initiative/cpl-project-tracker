@@ -60,7 +60,7 @@ the source.
 explicit and checkable. A measure resolved by matching prose cannot be verified by
 reading the screen; a measure **pinned to a declared key** can be asserted, linted
 and mutation-tested. The fix was not "correct the matcher" — it was to stop
-inferring the source at all where it matters, and to make an unrecognised pin fail
+inferring the source at all where it matters, and to make an unrecognized pin fail
 **loudly** rather than fall through to a plausible zero.
 
 ## Where it bites

@@ -98,7 +98,7 @@ the judgment, not the run" — extended from the rulings to the prose.
 
 **8. Priority is DERIVED, never authored.** It is a pure function of
 (fit × exhibit status). Hand-ranking would let the order drift from the two columns
-it claims to summarise.
+it claims to summarize.
 
 ### The numbers
 
@@ -112,7 +112,7 @@ Best effort-to-reach ratios: **ServSafe / food-manager** (four exhibits, one cou
 — `CUL ART 3`, and school nutrition staff hold these near-universally);
 **EMT + Paramedic** (Delta teaches the full `H S 87` + `H S 89A–F` sequence, both
 exhibits statewide, Delta flagged potential, adopted neither); **AWS welding**
-(certificates organised BY PROCESS — SMAW / GMAW-FCAW / GTAW — the same axis the AWS
+(certificates organized BY PROCESS — SMAW / GMAW-FCAW / GTAW — the same axis the AWS
 exhibits are keyed on); **CompTIA** (`ELECT 14C` is literally named *IT Essentials
 (A+)*); **ASE A2/A3** (three exhibits, one course cluster).
 

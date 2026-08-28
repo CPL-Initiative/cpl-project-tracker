@@ -179,7 +179,7 @@ independent draws from a varied enough distribution raise the odds that one land
 a completely legitimate thing to spend on, and it isn't the opposite of method.
 
 The condition is what decides it: **luck only pays when a hit is cheap to
-recognise.**
+recognize.**
 
 - A bug — you reproduce it and you know. Verifiable.
 - A suppressed number recoverable by subtraction — the arithmetic either works or

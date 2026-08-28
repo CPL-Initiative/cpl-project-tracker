@@ -1,8 +1,8 @@
 ---
-title: A label that decides behaviour is a policy switch, not a label
+title: A label that decides behavior is a policy switch, not a label
 created: 2026-08-06
 updated: 2026-08-06
-tags: [methodology, config, funding, data-modelling]
+tags: [methodology, config, funding, data-modeling]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -13,9 +13,9 @@ artifacts:
   - cpl_funding_data.js (year_priorities[].unit)
 ---
 
-# A label that decides behaviour is a policy switch, not a label
+# A label that decides behavior is a policy switch, not a label
 
-> **One-sentence summary** — if code infers behaviour by pattern-matching a
+> **One-sentence summary** — if code infers behavior by pattern-matching a
 > human-editable string, then editing that string silently changes the maths,
 > and the person editing it has no way to know.
 
@@ -70,7 +70,7 @@ model. The baked defaults were still entirely headcount-denominated while the
 live Scenario 1 had moved to FTES — so the *fail-soft fallback* served a
 different model than the tab's own explainers described. Shipped in PR #1012
 with a test asserting `field == sniff` on every baked row, which makes the
-migration behaviour-neutral by construction.
+migration behavior-neutral by construction.
 
 ## When this applies (and when it doesn't)
 

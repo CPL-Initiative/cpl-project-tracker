@@ -82,7 +82,7 @@ the auth helpers.
 560px (it needed 368px of fixed track, so at 360px the page scrolled sideways,
 the program name printed *on top of* its own figure, and "Could adopt" was
 clipped out of existence); a skip link; the funding table's scroll container is
-now a labelled region focusable only while it overflows; heading levels no longer
+now a labeled region focusable only while it overflows; heading levels no longer
 skip. All 31 painted contrast pairs already passed AA.
 
 ---

@@ -33,7 +33,7 @@ titles flagged statewide; the adoption file carries 137. **42 credentials that
 exist in both read as local**, including Paramedic License, CompTIA, OSHA 10/30 and
 the NCCER and Carpenters ladders.
 
-So Sierra contradicted the organisation's own public Fact Sheet, which reads the
+So Sierra contradicted the organization's own public Fact Sheet, which reads the
 adoption file.
 
 Sam reported the symptom **across several sessions**: *"your analysis says EMT and

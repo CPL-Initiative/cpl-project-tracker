@@ -53,7 +53,7 @@ precedent out of the similarity ranking: **these are different kinds of claim.**
 |---|---|---|
 | 1. identity key | "the equivalence is established" | an external standard |
 | 2. exact name | "the names are the same" | lexical, strong |
-| 3. best available | "this is the closest thing you have" | judgement |
+| 3. best available | "this is the closest thing you have" | judgment |
 
 Blending them into one number lets a rung-3 guess outrank a rung-1 fact when the
 guess happens to score well, and — worse — presents them to the reader as
@@ -84,7 +84,7 @@ first is how you stop needing to.
   discards the strongest signal. Ship it with a divergence flag and let the
   expert judge. **The divergence is the finding.**
 - **Coverage is partial, and that is fine.** Only 16,067 of 141,696 courses carry
-  a C-ID (112 colleges). The ladder degrades to title, then to judgement — it does
+  a C-ID (112 colleges). The ladder degrades to title, then to judgment — it does
   not require the key to exist.
 - **Say which rung a row came from.** A reader who cannot tell an established
   equivalence from a lexical guess will treat both as the same claim, which

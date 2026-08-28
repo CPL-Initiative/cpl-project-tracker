@@ -36,7 +36,7 @@ four tests below instead of a blanket "move everything."
 
 Sam wrote a Sierra training instruction at 13:33 on 2026-08-14 telling her to
 answer a credential question by naming the colleges that had articulated it. He
-re-tested at 14:49 and got the old behaviour. The rule was active, correctly
+re-tested at 14:49 and got the old behavior. The rule was active, correctly
 authored, and well inside both the newest-10 and 9,000-char budgets.
 
 Two things were wrong, and **both were invisible to him**:
@@ -88,7 +88,7 @@ can drift. One curatable table with a code fallback is fewer sources than today.
 ## Already proven twice in this repo
 
 - **`cr_reference_decisions`** — keyed on `group_key` precisely so a rebuild can
-  never overwrite a curator's judgement.
+  never overwrite a curator's judgment.
 - **`map_contact_proposals`** (#1167) — written up at the time as *"curator
   proposals are data now, not code."* That is this ADR, learned once already in
   a different corner.

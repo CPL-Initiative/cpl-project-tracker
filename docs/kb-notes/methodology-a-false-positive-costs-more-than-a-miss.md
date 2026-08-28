@@ -113,7 +113,7 @@ surface this note was written about. Across a 40-credential sample it fired
 
 ### Why it could not be tuned into working
 
-The reason is structural, and it generalises past this one feature:
+The reason is structural, and it generalizes past this one feature:
 
 > **The scorer already returns the best row whenever any course shares a content
 > token. So a recommendation with NO candidate is precisely one where nothing

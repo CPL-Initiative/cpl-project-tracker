@@ -3,7 +3,7 @@ title: A summary field will be read as the whole record
 created: 2026-08-13
 updated: 2026-08-13
 kb-status: published
-tags: [methodology, data-modelling, retrieval, rag, sierra, publishing, pitfall]
+tags: [methodology, data-modeling, retrieval, rag, sierra, publishing, pitfall]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"
@@ -53,7 +53,7 @@ nothing about which layer failed.
 
 ## The rule
 
-1. **A field that summarises a set must be named as a summary** (`ccc_rec_summary`,
+1. **A field that summarizes a set must be named as a summary** (`ccc_rec_summary`,
    `primary_rec`) or must not exist alongside consumers that can reach the set.
 2. **Publish the set.** If a richer layer exists but lives somewhere the consumer
    cannot read (a committed JS file, an unpublished view), that is a *publish step*,

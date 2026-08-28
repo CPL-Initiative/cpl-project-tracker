@@ -52,7 +52,7 @@ Stage 1 of the Ironworkers pathway reads:
 - *"American River College — Welding Credit Program"* → the credit-bearing twin
 - both under *"Welding Apprenticeship Preparation"* → mechanism 2
 
-That box **is** pre-apprenticeship CPL. It simply isn't labelled as such. Pointing at an existing
+That box **is** pre-apprenticeship CPL. It simply isn't labeled as such. Pointing at an existing
 slide beats adding a new one.
 
 ### ⚠ The high-school route, and the catch that decides its value
@@ -64,7 +64,7 @@ one of them.
 
 But:
 
-> **CSU does not recognise high-school CTE *articulated* credit for transfer. CSU does recognise
+> **CSU does not recognize high-school CTE *articulated* credit for transfer. CSU does recognize
 > credit by exam.**
 
 If a college transcripts a pre-apprentice's award as plain articulated credit, that credit **dies

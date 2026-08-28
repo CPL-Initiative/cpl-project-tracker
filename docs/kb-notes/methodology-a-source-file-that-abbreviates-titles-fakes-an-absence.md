@@ -55,7 +55,7 @@ incomplete because the same assumption is usually encoded in more than one place
 
 ## The practice
 
-1. **Normalise at the boundary.** One `tidy_title()`-style fold (case, hyphens,
+1. **Normalize at the boundary.** One `tidy_title()`-style fold (case, hyphens,
    slashes, periods → space; collapse whitespace) applied wherever the field is
    read — not at each call site.
 2. **Match on the stem the file actually writes.** `comm` not `communicat`;

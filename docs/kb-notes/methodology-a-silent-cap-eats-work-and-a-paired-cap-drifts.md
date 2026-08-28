@@ -38,7 +38,7 @@ On 2026-08-12 the curator wrote three instructions. All three were cut:
 Nobody was told. He only discovered it because he asked, separately, why his
 instructions did not seem to be taking effect. **Two rules landing on exactly
 500 characters is not a coincidence — it is a fingerprint**, and it is worth
-learning to recognise: when several independent inputs share an identical
+learning to recognize: when several independent inputs share an identical
 length, they were cut, not written that way.
 
 ## Why `maxlength` is the wrong instrument alone
@@ -91,7 +91,7 @@ can feel at all: nothing is refused, the instruction just stops being obeyed.
 If a limit governs a *set* rather than one item, render the set's consumption
 (`used of total`) beside the composer, and warn before it binds.
 
-## Generalisation
+## Generalization
 
 Any cap that can be reached by ordinary use needs three things:
 

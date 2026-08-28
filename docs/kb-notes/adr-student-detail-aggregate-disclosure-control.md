@@ -188,7 +188,7 @@ Smallest = cheapest real information lost. Cost: **16 complement cells** (123 of
 no published measure on a suppressed row, *and* no credential with exactly one
 suppressed cell.
 
-The generalisable lesson: **a suppression test must model the attack, not the
+The generalizable lesson: **a suppression test must model the attack, not the
 field.** `assert cell is None` and "does any measure survive on a hidden row"
 both pass on a schema that leaks by subtraction. Ask instead: *what can be
 derived from everything published, taken together?*

@@ -1,8 +1,8 @@
 ---
-title: Agreement is not corroboration when the behaviour is systematic
+title: Agreement is not corroboration when the behavior is systematic
 created: 2026-08-20
 updated: 2026-08-20
-tags: [methodology, peer-precedent, corroboration, matching, prioritisation, data-quality, ace]
+tags: [methodology, peer-precedent, corroboration, matching, prioritization, data-quality, ace]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:
@@ -13,7 +13,7 @@ artifacts:
   - kb/supabase_map_cx_exhibit_guidance.sql
 ---
 
-# Agreement is not corroboration when the behaviour is systematic
+# Agreement is not corroboration when the behavior is systematic
 
 > **One-sentence summary** — counting how many independent parties agree is only
 > evidence when their agreement is independent; a policy that several parties

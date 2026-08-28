@@ -70,10 +70,10 @@ Two supporting details:
   These are the properties that decay first under later edits, because every
   future contributor feels mild pressure to make the page look better.
 
-## Why this generalises
+## Why this generalizes
 
 Any artifact whose job is to describe the state of a system — a governance
-register, a runbook, a compliance page, a service catalogue, a RACI — has the
+register, a runbook, a compliance page, a service catalog, a RACI — has the
 same structural weakness: it is a *claim about a system*, stored *outside* that
 system. Wiring the checkable parts back to the system is what converts it from a
 description into an instrument.

@@ -1,8 +1,8 @@
 ---
-title: A normalisation and the screens that judge it must see the same text
+title: A normalization and the screens that judge it must see the same text
 created: 2026-08-13
 kb-status: published
-tags: [methodology, matching, identity, curation, normalisation, silent-failure, pitfall]
+tags: [methodology, matching, identity, curation, normalization, silent-failure, pitfall]
 artifacts:
   - kb/_build_cr_reference.py
   - tests/cr_reference.test.js
@@ -12,15 +12,15 @@ related:
   - "[[docs/common_cr_reference_lessons]]"
 ---
 
-# A normalisation and the screens that judge it must see the same text
+# A normalization and the screens that judge it must see the same text
 
 ## The rule
 
-When a matcher normalises text to form a key, every **safety screen** that then
-decides whether the match may proceed has to run on that **same normalised
+When a matcher normalizes text to form a key, every **safety screen** that then
+decides whether the match may proceed has to run on that **same normalized
 text** — not on the raw input, and not on its own private re-derivation.
 
-Two derivations of one normalisation will drift. When they drift, the screen
+Two derivations of one normalization will drift. When they drift, the screen
 stops guarding the thing it was written to guard and starts blocking things it
 was never meant to touch, and it does both silently.
 
@@ -55,7 +55,7 @@ being merged; there was nothing for a screen to act on.
 The instinct on discovering drift is to bring the copies into line. That is the
 wrong repair: it leaves N derivations and buys time until the next edit.
 
-- **One derivation.** The normaliser is a named function; the key and the
+- **One derivation.** The normalizer is a named function; the key and the
   screens both call it.
 - **Emit what you computed.** The builder writes each member's screen profile
   into the artifact, so a consumer or a test asserts on **what the builder
@@ -79,7 +79,7 @@ as a finding.
 
 ## Where else this applies
 
-- **Both sides of a join** — the same family; a join key normalised on one side
+- **Both sides of a join** — the same family; a join key normalized on one side
   only silently drops rows
   ([[docs/kb-notes/methodology-normalise-both-sides-of-a-join]], where five
   colleges lost their implementation funding).
@@ -91,7 +91,7 @@ as a finding.
 - **A validator and the writer it validates** — a `maxlength` enforced at two
   layers with different limits truncates at whichever is smaller, invisibly.
 
-## The generalisation
+## The generalization
 
 *Any* predicate that gates a transformation must consume the transformation's
 own output. If it re-derives its input, the gate and the transformation are two

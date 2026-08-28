@@ -36,7 +36,7 @@ no `change` event fires. The person concludes it saved. It did not.
 
 ## How it actually played out
 
-A curator relabelled three items, signed in, and re-typed them — **three times
+A curator relabeled three items, signed in, and re-typed them — **three times
 across two days**, each time watching the labels appear correctly, each time
 with nothing reaching the database.
 

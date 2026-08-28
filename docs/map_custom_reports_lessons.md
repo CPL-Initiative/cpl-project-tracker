@@ -93,7 +93,7 @@ The run was not useless — it was **backwards**. The API validates the name
 first: an invalid name is rejected with 400 before the empty column list can
 crash it; a *valid* name passes and then 500s. On that sweep **500 meant real**.
 Exactly one candidate got a 500 — `View_StudentDetailsCredits_APIDataset`, the
-one real view in the list — and the probe printed it as `✗` and summarised it in
+one real view in the list — and the probe printed it as `✗` and summarized it in
 with the rejections.
 
 Two misses, both now encoded in `kb/_probe_new_custom_reports.py` rather than
@@ -118,7 +118,7 @@ bare hash of the id. Two independent signals agree.
 rotating salt leaks nothing — it silently makes distinct-student counts
 incomparable across refreshes, with no error anywhere. Sam asked Pedro directly.
 **Build the key-set overlap check at load time regardless**: an assurance
-describes today's behaviour, and `cpl_memory: statewide-is-138-not-84` is the
+describes today's behavior, and `cpl_memory: statewide-is-138-not-84` is the
 precedent for a correct ruling sitting unenforced because no consumer changed.
 
 `Notes` is held permanently — free text at student grain, written by staff, read
@@ -129,7 +129,7 @@ interchangeable: `Status` (workflow stage) · `CPLStatusPlan` (what the college
 decided — the entire reason the view was wanted) · `CPLPlanStatus` (**not a
 status**; a pipe-delimited checklist, `"CPL Docs |Ed Plan |Analysis |Counselor |"`).
 
-**The payload IS the PII boundary.** `fetch_custom_report.py`'s minimisation is
+**The payload IS the PII boundary.** `fetch_custom_report.py`'s minimization is
 not a filter or a redactor — it is *what the request does not ask for*, which is
 one plausible edit from being undone in a public repo.
 `tests/custom_report_payload_test.py` pins the banned contact views, identity-
@@ -169,7 +169,7 @@ it is now answered rather than inferred. Consequences worth stating plainly:
   `docs/map_dataset_sql_for_malone.md` asked for ("use the same salt each run so
   counts stay comparable over time").
 - The key-set overlap check is now a **regression check, not an open question.**
-  Build it anyway: an assurance describes today's behaviour, and this failure is
+  Build it anyway: an assurance describes today's behavior, and this failure is
   silent by construction — a rotated salt raises no error, the numbers just
   quietly stop matching. `cpl_memory: statewide-is-138-not-84` is the standing
   precedent for a correct ruling sitting unenforced because no consumer changed.
@@ -313,7 +313,7 @@ what is billed as a refresh, and `count(distinct catalog_year)` silently goes
 **A load must reproduce its source, not improve it.** NULL is arguably the
 better representation of absent; that is a separate change, argued on its own,
 not a side effect of a refresh. `_clean()` now passes `""` through, the test
-pins all four columns, and the mutation back to the old behaviour fails on all
+pins all four columns, and the mutation back to the old behavior fails on all
 four.
 
 ### (d3) The decreases are a catalog-year ROLL-FORWARD, not deletions
@@ -442,7 +442,7 @@ patience.
 every numeric; the API sends blanks. The blanks are not scattered —
 `sum_applied_credits` is blank on **exactly** the 26,953 `Not Applicable` rows
 and on no other disposition. That is caveat 4 of the spec: *"all four credit
-fields are 0 on unapproved rows. That is correct behaviour, not missing data."*
+fields are 0 on unapproved rows. That is correct behavior, not missing data."*
 
 But `map_student_credit` is *nullable* on `applied_credits`/`transcribed_credits`
 and **holds nulls** (31,467 / 19,533). So a house-style rule would have been
@@ -697,7 +697,7 @@ exactly like a closed one, which is the whole reason this class looked dead.
 ⭐ **A well-chosen rule dissolves the question it was asked.** The brief argued
 this needed *two* rulings, because swimming (95% cumulative) might not rule with
 individualized assessment (75%). Under Cx it never comes up: **the college's own
-Cx policy for that course decides swimming**, which is where that judgement
+Cx policy for that course decides swimming**, which is where that judgment
 belonged. When an answer makes a sub-question disappear rather than answering it,
 that is evidence the frame was wrong, not that the answer was lucky.
 
@@ -748,12 +748,12 @@ data.
 
 ⭐ **The row is not empty; the RECOMMENDATION is.** Each still carries the exhibit
 — the training ACE reviewed. And `fetch_custom_report.py` **already asks the
-exhibit catalogue for `AceID` and `Title`** and stores neither, while
-`map_student_credit.exhibit_id` is in the ACE namespace. *Minimisation happens
+exhibit catalog for `AceID` and `Title`** and stores neither, while
+`map_student_credit.exhibit_id` is in the ACE namespace. *Minimization happens
 twice*, and this is the cost side of it: a column dropped for having no consumer
 is invisible until something needs it.
 
-⚠️ **The join rate is deliberately unmeasured.** The catalogue is fetched on the
+⚠️ **The join rate is deliberately unmeasured.** The catalog is fetched on the
 runner and never written down, so it can only be counted on the next run. Stated
 as an open number rather than an assumed one.
 
@@ -786,7 +786,7 @@ about two tables, not one.
 
 ### (b) The titles: 97.3%, after I read the wrong key
 
-`fetch_custom_report.py` had asked the catalogue for `AceID` **and** `Title`
+`fetch_custom_report.py` had asked the catalog for `AceID` **and** `Title`
 since 2026-08-14 and stored neither. **25,794 titles now load; 219 of 225
 exhibits resolve.**
 

@@ -53,7 +53,7 @@ value":
 | College genuinely posted nothing (the incentive!) | pays | $0 |
 
 Only the first row is the policy. The rest are bugs and one real signal, all wearing the
-policy's clothes. **A permissive default is indistinguishable from correct behaviour right
+policy's clothes. **A permissive default is indistinguishable from correct behavior right
 up until you remove it** — which is exactly when it turns into a false accusation against
 whoever the gap belonged to.
 

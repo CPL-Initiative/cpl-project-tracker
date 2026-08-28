@@ -75,7 +75,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A guidance rule that references a fact the request does not carry is an instruction to guess](../kb-notes/methodology-a-guidance-rule-must-name-the-fact-it-depends-on.md) | methodology | published | 2026-08-22 | 2026-08-22 |
 | [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
-| [A label that decides behaviour is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
+| [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A live rename must be order-proof, because the database and the deploy cannot be simultaneous](../kb-notes/methodology-a-live-rename-must-be-order-proof.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -85,7 +85,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A metric matched by its prose mis-measures the moment a second lane exists](../kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | published | 2026-08-26 | 2026-08-26 |
 | [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
-| [A normalisation and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
+| [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |
 | [A one-rule class must be checked against its own text](../kb-notes/methodology-a-one-rule-class-must-be-checked-against-its-own-text.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A one-shot hand-off must not consume what it cannot deliver](../kb-notes/methodology-a-one-shot-handoff-must-not-consume-what-it-cannot-deliver.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A partial ARIA pattern is worse than none — take the native control instead](../kb-notes/methodology-a-partial-aria-pattern-is-worse-than-none.md) | methodology | published | 2026-08-16 | 2026-08-16 |
@@ -116,7 +116,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A status lane must link to the remedy lane, or "done" measures attention](../kb-notes/methodology-a-status-lane-must-link-to-the-remedy-lane.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A successful import is not a correct one](../kb-notes/methodology-a-successful-import-is-not-a-correct-one.md) | methodology | published | 2026-08-08 | 2026-08-08 |
 | [A summary field will be read as the whole record](../kb-notes/methodology-a-summary-field-is-not-the-record.md) | methodology | published | 2026-08-13 | 2026-08-13 |
-| [A summary surface must share the unit of the detail it summarises](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
+| [A summary surface must share the unit of the detail it summarizes](../kb-notes/methodology-a-summary-must-share-the-unit-of-its-detail.md) | methodology | published | 2026-08-01 | 2026-08-01 |
 | [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
@@ -133,7 +133,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Achievement-based funding — the cap-and-earn model](../kb-notes/methodology-achievement-based-funding-cap-and-earn.md) | methodology | published | 2026-07-24 |  |
 | [Adding a curation surface with a synthesized kb_curation namespace (zero schema migration)](../kb-notes/methodology-kb-curation-synthesized-namespace.md) | methodology | published | 2026-06-02 | 2026-06-02 |
 | [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |
-| [Agreement is not corroboration when the behaviour is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
+| [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
 | [An affordance gated on a problem is invisible when there isn't one](../kb-notes/methodology-an-affordance-gated-on-a-problem-is-invisible-when-there-isnt-one.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [An assertion pinned to a mutable value stops being a guard](../kb-notes/methodology-an-assertion-pinned-to-a-mutable-value-stops-being-a-guard.md) | methodology | published | 2026-08-15 | 2026-08-15 |
@@ -222,10 +222,10 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Methodology: bulk-writing beside a live curator — snapshot decay + conflict-yielding writes](../kb-notes/methodology-live-curation-concurrency.md) | methodology | published | 2026-07-09 |  |
 | [Methodology: dark→light recolor mapping (COBI tokens)](../kb-notes/methodology-dark-to-light-recolor-mapping.md) | methodology | published | 2026-06-30 | 2026-06-30 |
 | [Migrate the display, not just the data — a faithful migration can still lose everything that mattered](../kb-notes/methodology-migrate-the-display-not-just-the-data.md) | methodology | published | 2026-08-19 |  |
-| [Minimisation happens twice — what you request, and what you keep](../kb-notes/methodology-minimisation-happens-twice.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [Minimization happens twice — what you request, and what you keep](../kb-notes/methodology-minimisation-happens-twice.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [Move one rung down the funnel to route around an upstream defect you can't fix](../kb-notes/methodology-move-down-the-funnel-to-route-around-an-upstream-defect.md) | methodology | published | 2026-08-01 | 2026-08-03 |
 | [Name the credential that actually failed](../kb-notes/methodology-name-the-credential-that-actually-failed.md) | methodology | published | 2026-08-25 | 2026-08-25 |
-| [Normalise both sides of a join, or the resolver is decoration](../kb-notes/methodology-normalise-both-sides-of-a-join.md) | methodology | published | 2026-08-12 | 2026-08-12 |
+| [Normalize both sides of a join, or the resolver is decoration](../kb-notes/methodology-normalise-both-sides-of-a-join.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [Omit, don't zero, a measure your source didn't supply](../kb-notes/methodology-omit-dont-zero-an-absent-measure.md) | methodology | published | 2026-08-01 | 2026-08-12 |
 | [On a trust-building surface, a plausible false positive costs more than a miss](../kb-notes/methodology-a-false-positive-costs-more-than-a-miss.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [One assistant, three files — compare them in a test or they drift](../kb-notes/methodology-one-assistant-three-files-is-a-drift-machine.md) | methodology | published | 2026-08-17 | 2026-08-17 |

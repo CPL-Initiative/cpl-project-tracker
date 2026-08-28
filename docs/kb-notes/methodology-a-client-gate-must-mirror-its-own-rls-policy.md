@@ -23,7 +23,7 @@ related:
 
 ## What happened
 
-Sam relabelled the three funding priorities on the live tab. Nothing reached
+Sam relabeled the three funding priorities on the live tab. Nothing reached
 Supabase — the config's md5 was byte-identical to a write made hours earlier.
 
 The first diagnosis was **wrong**, and the way it was wrong is the point: the

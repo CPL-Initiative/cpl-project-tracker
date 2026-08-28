@@ -53,7 +53,7 @@ sister-pair collapse guards below and never applied on TOP alone (see
 [[methodology-top-is-a-last-in-line-signal]]):
 1. Partition the M-ID's members by 2-digit TOP division (candidate split).
 2. Each division-group with **≥2 distinct colleges** → a corroborated M-ID
-   (plurality group keeps the old id to minimise churn; others get fresh ids).
+   (plurality group keeps the old id to minimize churn; others get fresh ids).
 3. Each division-group with **1 college** → singleton(s) (`coci_minted_singletons.json`).
 4. Reassign each new group's discipline from its division's TOP→discipline map
    (`discipline_source="top_code"`), else blank for curator review.

@@ -105,7 +105,7 @@ people who haven't read anything.
 ### On agents — recommended NOT yet
 
 Sam floated *"maybe need some established agents who are mindful of these
-things."* I pushed back, and the reasoning generalises:
+things."* I pushed back, and the reasoning generalizes:
 
 **An agent must be invoked, so it fails precisely when someone forgets — which
 is the failure mode being designed against.** Standing instructions load
@@ -178,7 +178,7 @@ can never wipe an assignment. Same split that keeps `map_college_nudges` out of
 work. No delete policy — clearing an owner writes null, so who-assigned-what
 survives.
 
-**Generalisation: any read-only artifact that names a gap should be checked for
+**Generalization: any read-only artifact that names a gap should be checked for
 "can the reader close it here?"** If the answer is no, either add the affordance
 or say plainly where the work happens instead. Naming a gap and providing no
 handle is a small betrayal of the reader's attention.

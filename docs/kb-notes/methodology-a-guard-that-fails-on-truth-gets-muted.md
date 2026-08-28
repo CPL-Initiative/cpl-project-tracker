@@ -18,7 +18,7 @@ artifacts:
 
 ## The claim
 
-An assertion that fires on **correct** behaviour is worse than no assertion. It
+An assertion that fires on **correct** behavior is worse than no assertion. It
 does not merely waste a run — it trains everyone reading the output to discount
 that check, and a discounted check protects nothing. The cost is asymmetric on
 security-shaped assertions, where the whole value is being believed the one time
@@ -86,7 +86,7 @@ regex would fail the system for being right. Reverted the same day.
 The instinct "this assertion is too narrow, tighten it" is almost always framed
 as rigour, and tightening feels free. It isn't: every widening moves the boundary
 between *wrong* and *right*, and if you have not measured which real cases sit
-near that boundary, you are as likely to have swallowed correct behaviour as
+near that boundary, you are as likely to have swallowed correct behavior as
 incorrect.
 
 Both instances share one shape: **the assertion encoded a proxy** ("response is
@@ -100,7 +100,7 @@ property** ("no rows were served", "a figure was invented").
 2. **Never treat "not the expected value" as "the failure."** Say what failure
    looks like, positively.
 3. **Before widening a pattern, query which real cases it would newly catch.** If
-   any of them are correct behaviour, the widening is a regression.
+   any of them are correct behavior, the widening is a regression.
 4. **Add a positive control to every "returns nothing" assertion.** An expired
    key or a broken client makes every negative check pass for the wrong reason.
    Assert something that *must* come back before trusting anything that must not.

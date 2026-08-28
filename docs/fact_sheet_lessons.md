@@ -529,7 +529,7 @@ anyone who opens it learns whatever reveal switch we pick. Hiding it buys exactl
 one thing: a visitor stops being offered a control they cannot use, and stops being
 asked for a *"reviewer email"* they do not have. That is worth doing and it is not
 hardening, and the module header now says so, because the next person to touch this
-file must not start treating it as a second line of defence.
+file must not start treating it as a second line of defense.
 
 ⭐ **HIDING AN AFFORDANCE ALSO HIDES THE WAY TO GET ACCESS.** This is the whole
 design problem and it is easy to miss: the Curate button was *itself* the sign-in
@@ -595,9 +595,9 @@ reaching any content.
 
 ⭐ **③ THE SCROLLING TABLE WAS KEYBOARD-UNREACHABLE, AND ITS CONTAINMENT IS WHY.**
 The funding table is 674px wide inside `.tbl-wrap{overflow-x:auto}`. That container
-is why it never pushed the page sideways — the good behaviour — and **also** why a
+is why it never pushed the page sideways — the good behavior — and **also** why a
 keyboard user could never see its right-hand columns (WCAG 2.1.1: a scroll container
-is mouse-draggable but not focusable). Now a labelled region, focusable **only while
+is mouse-draggable but not focusable). Now a labeled region, focusable **only while
 it actually overflows** (verified `tabindex=0` at 360px, absent at 1024px), so it
 never becomes a dead tab stop on a wide screen. Its accessible name comes from the
 table's own `<caption>` rather than being invented here.
