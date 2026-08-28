@@ -504,6 +504,7 @@
       + esc(R._as_of || "") + "</p></div>";
     root.innerHTML = h;
     wire(root);
+    mountDocs(root);
   }
 
   // Markdown export so this can leave the tab and enter an actual meeting.
@@ -594,6 +595,223 @@
     nameEl.addEventListener("keydown", function (e) { if (e.key === "Enter") commit(nameEl.value.trim()); });
   }
 
+  // ══ Docs & doctrine — a LOOKUP, deliberately not a review queue ═══════════
+  //
+  // Sam, 2026-08-28: *"I definitely don't want to get trapped reviewing for a
+  // living :) But it would be nice to be able to easily look at them when I see
+  // recurring or thematic misalignments with my expectations that could be
+  // artifact-based."*
+  //
+  // ⭐ THAT IS A DIAGNOSTIC, NOT A CADENCE, and the difference decides the whole
+  // design. The entry point is a SYMPTOM he already noticed — "the system keeps
+  // doing X" — and the question is "which document taught it that?". So there is
+  // deliberately NO review state here: no checkboxes, no "mark reviewed", no
+  // unread counts, no owner, no last-reviewed column, nothing that can nag. It
+  // is inert until asked.
+  //
+  // ⚠️ A LIST OF LINKS CANNOT ANSWER HIS QUESTION. Tracing a theme needs titles,
+  // tags and the `artifacts:` each note declares it governs to be searchable
+  // together, which is why kb/_build_docs_index.py emits docs/catalog/index.json
+  // in the same pass that writes the markdown catalogs — one collector, so the
+  // panel and the catalogs cannot disagree about what exists.
+  //
+  // ⭐ `CLAUDE.md` leads the lanes on purpose: it auto-loads into EVERY session,
+  // so it is the likeliest cause of a recurring behavioral mismatch. kb/doctrine.py
+  // puts it in NOISE — right for `--changed`, wrong for this question.
+  var DOCS_URL = "docs/catalog/index.json";
+  var GH = "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/";
+  var docs = { loaded: false, loading: false, error: null, data: null, q: "" };
+
+  function ensureDocsCss() {
+    if (document.getElementById("gov-docs-css")) return;
+    var css = [
+      ".gov-docs { margin: 26px 0 8px; }",
+      ".gov-docs > summary { cursor:pointer; color: var(--navy-primary); font-weight:600;",
+      "  font-size:1.05rem; padding:6px 0; }",
+      ".gov-docs > summary:focus-visible, .gov-docs details > summary:focus-visible {",
+      "  outline:2px solid var(--seal-blue); outline-offset:2px; border-radius:4px; }",
+      ".gov-docs-q { width:100%; max-width:420px; padding:7px 10px; font-size:.9rem;",
+      "  border:1px solid var(--border-strong); border-radius:6px; background: var(--surface);",
+      "  color: var(--text-body); margin:6px 0 4px; }",
+      ".gov-docs-hint { color: var(--text-muted); font-size:.8rem; margin:0 0 12px; }",
+      ".gov-lane { border:1px solid var(--border); border-radius:8px; margin:0 0 8px;",
+      "  background: var(--surface-subtle); }",
+      ".gov-lane > summary { cursor:pointer; padding:8px 12px; font-size:.9rem;",
+      "  color: var(--text-body); }",
+      ".gov-lane > summary .n { color: var(--text-muted); font-size:.78rem; margin-left:6px; }",
+      ".gov-lane .blurb { color: var(--text-muted); font-size:.8rem; padding:0 12px 6px; margin:0; }",
+      ".gov-doclist { list-style:none; margin:0; padding:0 12px 10px; }",
+      ".gov-doclist li { padding:5px 0; border-top:1px solid var(--border); font-size:.85rem; }",
+      ".gov-doclist a { color: var(--link); text-decoration:none; }",
+      ".gov-doclist a:hover, .gov-doclist a:focus-visible { text-decoration:underline; }",
+      ".gov-doclist .meta { color: var(--text-muted); font-size:.75rem; }",
+      ".gov-doclist .gov-governs { color: var(--text-muted); font-size:.73rem; display:block; }",
+      "@media (max-width:560px){ .gov-docs-q { max-width:100%; } }",
+    ].join("\n");
+    var el = document.createElement("style");
+    el.id = "gov-docs-css"; el.textContent = css;
+    document.head.appendChild(el);
+  }
+
+  // Newest first. Handoffs carry a session NUMBER, which orders them better than
+  // a date they often do not set; everything else falls back updated → created.
+  function sortDocs(lane) {
+    return (lane.docs || []).slice().sort(function (a, b) {
+      if (typeof a.n === "number" && typeof b.n === "number") return b.n - a.n;
+      var ad = a.updated || a.created || "", bd = b.updated || b.created || "";
+      if (ad !== bd) return bd.localeCompare(ad);
+      return String(a.title || "").localeCompare(String(b.title || ""));
+    });
+  }
+
+  // The theme search. Matches title, tags, path AND `governs`, because "which
+  // document governs cpl-chat/index.ts?" is the same question as "which document
+  // governs caps?" — one is asked by file, the other by word.
+  function docMatches(d, q) {
+    if (!q) return true;
+    var hay = [d.title, d.path, (d.tags || []).join(" "),
+               (d.governs || []).join(" "), d.type, d.status]
+      .join(" ").toLowerCase();
+    return q.toLowerCase().split(/\s+/).filter(Boolean)
+      .every(function (w) { return hay.indexOf(w) !== -1; });
+  }
+
+  function docsBody() {
+    var q = docs.q.trim();
+    var wrap = document.createElement("div");
+
+    var lab = document.createElement("label");
+    lab.setAttribute("for", "gov-docs-q");
+    lab.className = "gov-docs-hint";
+    lab.textContent = "Search a theme, a tag, or a file the guidance governs "
+      + "\u2014 e.g. \u201ccap\u201d, \u201csuppression\u201d, \u201ccpl-chat\u201d.";
+    var input = document.createElement("input");
+    input.id = "gov-docs-q"; input.className = "gov-docs-q"; input.type = "search";
+    input.value = docs.q;
+    input.setAttribute("placeholder", "Filter\u2026");
+    wrap.appendChild(lab); wrap.appendChild(input);
+
+    var total = 0;
+    (docs.data.lanes || []).forEach(function (lane) {
+      var hits = sortDocs(lane).filter(function (d) { return docMatches(d, q); });
+      total += hits.length;
+      if (q && !hits.length) return;              // hide empty lanes while filtering
+
+      var det = document.createElement("details");
+      det.className = "gov-lane";
+      if (q) det.open = true;                     // a search should show its answer
+      var sum = document.createElement("summary");
+      sum.textContent = lane.name;
+      var n = document.createElement("span");
+      n.className = "n";
+      n.textContent = q ? "(" + hits.length + " of " + lane.count + ")"
+                        : "(" + lane.count + ")";
+      sum.appendChild(n); det.appendChild(sum);
+
+      if (lane.blurb) {
+        var b = document.createElement("p");
+        b.className = "blurb"; b.textContent = lane.blurb;
+        det.appendChild(b);
+      }
+      var ul = document.createElement("ul");
+      ul.className = "gov-doclist";
+      hits.forEach(function (d) {
+        var li = document.createElement("li");
+        var a = document.createElement("a");
+        a.href = GH + d.path; a.target = "_blank"; a.rel = "noopener";
+        a.textContent = d.title || d.path;
+        li.appendChild(a);
+        var bits = [];
+        if (d.type && d.type !== "doctrine") bits.push(d.type);
+        if (d.status) bits.push(d.status);
+        if (d.updated || d.created) bits.push(d.updated || d.created);
+        if (bits.length) {
+          var m = document.createElement("span");
+          m.className = "meta";
+          m.textContent = " \u2014 " + bits.join(" \u00b7 ");
+          li.appendChild(m);
+        }
+        // Only while searching: say WHY this row matched when the match came
+        // from what it governs rather than from anything visible in its title.
+        if (q && (d.governs || []).length) {
+          var g = (d.governs || []).filter(function (x) {
+            return x.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+          });
+          if (g.length) {
+            var gs = document.createElement("span");
+            gs.className = "gov-governs";
+            gs.textContent = "governs: " + g.slice(0, 3).join(", ");
+            li.appendChild(gs);
+          }
+        }
+        ul.appendChild(li);
+      });
+      det.appendChild(ul);
+      wrap.appendChild(det);
+    });
+
+    if (q && !total) {
+      var none = document.createElement("p");
+      none.className = "gov-docs-hint";
+      none.textContent = "Nothing matches \u201c" + q + "\u201d. That is a result, not an error "
+        + "\u2014 it means no committed guidance mentions it, so the behavior you are "
+        + "seeing is not coming from these documents.";
+      wrap.appendChild(none);
+    }
+    return { wrap: wrap, input: input };
+  }
+
+  function paintDocs(host) {
+    var body = host.querySelector("[data-docs-body]");
+    if (!body) return;
+    body.innerHTML = "";
+    if (docs.loading) { body.textContent = "Loading\u2026"; return; }
+    if (docs.error || !docs.data) {
+      // An absent index must never read as an empty corpus.
+      body.textContent = "Could not load the docs index (" + (docs.error || "no data")
+        + "). The catalogs are still browsable in the repo under docs/catalog/.";
+      return;
+    }
+    var built = docsBody();
+    body.appendChild(built.wrap);
+    built.input.addEventListener("input", function () {
+      docs.q = built.input.value;
+      paintDocs(host);
+      var again = host.querySelector("#gov-docs-q");
+      if (again) { again.focus(); again.setSelectionRange(again.value.length, again.value.length); }
+    });
+  }
+
+  function mountDocs(root) {
+    var gov = root.querySelector(".gov");
+    if (!gov || gov.querySelector(".gov-docs")) return;   // idempotent: wire() re-runs
+    ensureDocsCss();
+    var det = document.createElement("details");
+    det.className = "gov-docs";
+    var sum = document.createElement("summary");
+    sum.textContent = "Docs & doctrine \u2014 what the written guidance says";
+    det.appendChild(sum);
+    var body = document.createElement("div");
+    body.setAttribute("data-docs-body", "");
+    body.textContent = "";
+    det.appendChild(body);
+    gov.appendChild(det);
+
+    det.addEventListener("toggle", function () {
+      if (!det.open || docs.loaded || docs.loading) { return; }
+      docs.loading = true; paintDocs(det);
+      fetch(DOCS_URL).then(function (r) {
+        if (!r.ok) throw new Error("index " + r.status);
+        return r.json();
+      }).then(function (j) {
+        docs.data = j; docs.loaded = true; docs.loading = false; paintDocs(det);
+      }).catch(function (e) {
+        docs.error = (e && e.message) || String(e);
+        docs.loading = false; paintDocs(det);
+      });
+    });
+  }
+
   function wire(root) {
     root.querySelectorAll("[data-own]").forEach(function (b) {
       b.addEventListener("click", function () { openOwnerDialog(root, b.getAttribute("data-own")); });
@@ -669,6 +887,10 @@
     _loadLive: loadLive,       // exported so the CI-row exclusion is testable
     _renderCandidates: renderCandidates,
     _signedIn: signedIn,
+    _docsState: docs,
+    _sortDocs: sortDocs,
+    _docMatches: docMatches,
+    _mountDocs: mountDocs,
   };
 
   // tabs.js dispatches cpl-tab-activated on WINDOW, not document.
