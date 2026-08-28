@@ -2,13 +2,13 @@
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-28",
   "_session": "Session 202 (SkyLens)",
-  "_status": "The noncredit lane is live on the funding priority cards behind one CR/NC switch, and it carries its own strategies you can edit yourself. Then a bigger thing surfaced: Sam relabelled the three priorities on the live tab while signed in, and nothing saved. The tab was only accepting the team phrase, while the database accepts a magic-link sign-in too — so the edit went to his own browser, showed itself back, and looked published. Fixed, in all seven places that tab writes. Those labels need re-applying. Next is putting the four outcomes the Ed. Code requires — access, completion, career attainment, and the Chancellor's Office pilot projects — onto the tab, with the project money tagged to the ones it serves.",
+  "_status": "The noncredit lane is live on the funding priority cards behind one CR/NC switch. The rest of the day went to one problem: Sam renamed three priorities and it would not save, three times. Three separate causes, all now fixed — the page was only accepting the team password when the database also accepts a normal sign-in; the sign-in drop-down closed whenever you clicked the email box; and, the real one, edits made before signing in stayed in your own browser and painted themselves back over the shared version, so they looked saved. His names are still only in his browser: once the last fix deploys, the tab shows a Publish button and one click lands them.",
   "items": [
     {
-      "id": "s202-sam-relabel",
+      "id": "s202-sam-publish",
       "for": "Sam",
       "tab": "cpl-implementation",
-      "text": "Re-apply your priority relabels on the Funding tab. The earlier ones never left your browser — the tab was only accepting the team phrase, so being signed in wasn't enough and it saved locally without saying so. That is fixed: signing in now saves for everyone."
+      "text": "Click 'Publish this browser's changes' on the Funding tab. Your three priority names are still only on your machine — the tab will now say so plainly and offer the button. One click puts them where everyone sees them, and I will confirm it landed rather than trusting the screen."
     },
     {
       "id": "s202-sam-threshold",
@@ -26,37 +26,37 @@
       "id": "s202-sam-stories",
       "for": "Sam",
       "tab": "cpl-implementation",
-      "text": "Add one question to how CPL stories are collected: what changed at work? Of the 36 stories we hold, only about four describe a job outcome — the rest describe degrees. As they stand they cannot evidence the career-attainment goal you are reporting them against, and that is fixable when they are gathered, not afterwards."
+      "text": "Add one question to how CPL stories are collected: what changed at work? Of the 36 we hold, only about four describe a job outcome — the rest describe degrees. As they stand they cannot evidence the career-attainment goal you are reporting them against, and that is fixable when stories are gathered, not afterwards."
     },
     {
       "id": "s202-sam-ncstrat",
       "for": "Sam",
       "tab": "cpl-implementation",
-      "text": "Look over the noncredit strategies now on the cards and edit them freely — they are directly editable, no engineering needed. They are deliberately not the credit ones, because a noncredit institution prepares students to earn credit elsewhere rather than awarding it."
+      "text": "Look over the noncredit strategies now on the cards and edit them freely — they are directly editable. They are deliberately not the credit ones, because a noncredit institution prepares students to earn credit elsewhere rather than awarding it."
     },
     {
       "id": "s202-fable-abcd",
       "for": "Fable",
       "tab": "cpl-implementation",
-      "text": "Build the four-goal spine on the Funding tab — access, completion, career attainment, and support for the Chancellor's Office pilot projects — with small superscript links from whatever on the page serves each one. Design is in the session-203 handoff."
+      "text": "Build the four-goal spine on the Funding tab — access, completion, career attainment, and support for the Chancellor's Office pilot projects — with small superscript links from whatever on the page serves each one. Sam's ask; design is in the session-203 handoff."
     },
     {
       "id": "s202-fable-projectpool",
       "for": "Fable",
       "tab": "cpl-implementation",
-      "text": "Split the roughly $8.96M project pool into named projects — WestEd, Credential Engine, apprenticeship partners, the CA Credential Registry, MAP — each tagged to the goal it serves. The totals do not change, and it produces most of the reporting the Ed. Code asks for."
+      "text": "Split the roughly $8.96M project pool into named projects — WestEd, Credential Engine, apprenticeship partners, the CA Credential Registry, MAP — each tagged to the goal it serves. Totals do not change, and it produces most of the reporting the Ed. Code asks for."
+    },
+    {
+      "id": "s202-fable-savesweep",
+      "for": "Fable",
+      "tab": "cpl-implementation",
+      "text": "Check the other curator tabs for the two save faults found here: a page that only accepts the team password locks out someone signed in by magic link, and edits made before signing in can stay stranded in the browser while looking saved."
     },
     {
       "id": "s202-fable-ncdials",
       "for": "Fable",
       "tab": "cpl-implementation",
       "text": "Give noncredit its own share and funding-factor editors. They inherit from credit today; the store already accepts both, only the strategies have an editor so far."
-    },
-    {
-      "id": "s202-fable-authsweep",
-      "for": "Fable",
-      "tab": "cpl-implementation",
-      "text": "Check the other tabs for the gap the Funding tab had: a page that only accepts the team phrase will silently lock out someone signed in by magic link, even where the database would allow the write."
     },
     {
       "id": "s196-sam-55050-send",

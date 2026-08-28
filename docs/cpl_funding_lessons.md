@@ -1802,3 +1802,90 @@ hardcodes the names.** The change simply never entered the routing.
   intake (ask what changed at work), not in analysis.
 - Still unruled from SkyLane: the **threshold/floor coupling** (400 FTES is the
   last feasible step at the $50k floor).
+
+---
+
+## 2026-08-28 (later) — SkyLens: the fix that was half a fix
+
+Continues the section above. After #1370 landed, Sam re-applied his three
+priority relabels and reported them saved. **They were not.** Verified against
+Supabase three separate times: `Access` / `Outreach` / (blank), md5 unmoved.
+
+### ⭐ THE MISSING HALF WAS MINE
+
+#1370 fixed **who may write**. It did nothing about work done **before** signing
+in — and that is what kept him stuck.
+
+Everything edited while locked lands in the `SCENARIO` overlay, and the overlay
+**wins the render**. So after signing in the tab painted his labels back from
+localStorage, looking exactly like published work. Re-typing the same text then
+wrote nothing: the field already displayed that value, so no `change` event
+fired.
+
+⭐ **The promotion step already existed, and exactly one path reached it.**
+
+```js
+onUnlocked: function () {          // ← the TEAM PHRASE unlock row, only
+  p.scenarios[activeScenario] = deepMerge(clone(SHARED), SCENARIO);
+```
+
+A magic-link reviewer never passes through that row: `unlocked()` flips true, the
+row disappears, and the overlay is stranded on top of shared for ever — visible
+to its author, invisible to everyone else.
+
+Extracted as `promoteScenarioToShared()`, reachable from both credentials, plus:
+
+- ⚠️ **Work that exists in only one browser must say so, unprompted.** Unlocked
+  with an overlay, the auth bar reads *"⚠ This browser holds changes nobody else
+  can see"* and offers **Publish this browser's changes**. Automatic promotion
+  suits a *typed phrase* (deliberate); a magic-link sign-in is often incidental,
+  so this path asks.
+- ⏰ **An expired sign-in is now distinguishable from never having signed in**
+  (Sam: *"I should get a notice if my token has expired"*). A dead-but-present
+  session used to read as ordinary exploring.
+
+Durable: [`fixing-who-may-write-does-not-rescue-what-was-already-written`](kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md).
+
+### The sign-in dropdown (`cobi_identity.js`)
+
+Sam: *"the drop down closes when I try to click into the email box… I have to
+trick it and tab to it."*
+
+```js
+document.addEventListener("click", function () { if (openPane) { openPane = false; render(); } });
+```
+
+Closed on **any** document click. The toggle button survives because it
+`stopPropagation()`s itself; nothing inside the pane does, so clicking the email
+field bubbled here and `render()` tore the field out mid-click.
+
+⭐ **A tab still worked** — which is what made it read as a focus mystery rather
+than a stray handler. Tabbing is not a click, so it never reaches the listener.
+**When a workaround is "use the keyboard instead", suspect an event-model
+mismatch, not focus.**
+
+Fixed by containment at the boundary rather than `stopPropagation` on each
+control: the pane grows controls (`reviewer_signin.js` mounts the sign-in form
+into it) and each would have to remember. Swept — no other module closes on an
+unconditional document click; **47 sites already do a containment check**, so
+this was the lone outlier.
+
+### ⚠️ Two process notes on myself
+
+- **I wrote his labels via SQL and then reverted them.** He said plainly:
+  *"I don't want you to fix it; I want the tab to save it."* He was right — my
+  write would have masked the very thing under test. Reverted to a byte-identical
+  md5. **A hand-applied fix destroys the experiment that proves the repair.**
+- **I ground on a redundant local suite** while the same suite was queued in CI,
+  with the work already committed. Sam: *"grinding?"* Nothing was blocked on it.
+  **A second run of the same check is not verification, it is delay.**
+
+### Where it stands
+
+- **PR #1371** open: `939774d` (dropdown) + `2538fd9` (promotion + expiry notice).
+- ⛔ **Sam's relabels are STILL only in his browser.** After #1371 deploys, the
+  Publish button is the one click that lands them — and the proof is the config
+  md5 moving off `9cf58b99efa36bd40fccbfb823f3683c`, not the screen.
+- **Still unproven end to end:** that a reviewer save reaches Supabase at all.
+  Every layer has now been fixed or verified in isolation; nothing has done the
+  round trip in a real browser.
