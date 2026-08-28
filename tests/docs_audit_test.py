@@ -378,6 +378,65 @@ for _e in (_no_pipe, _code_pipes, _code_ok, _malformed):
 for _e in (_healthy, _logged, _short_log, _one_prior):
     _os.unlink(_e["path"])
 
+# ── unreferenced_offload ──────────────────────────────────────────────────
+# Guards the failure the 2026-08-28 consolidation itself committed: it moved
+# §11's 29 lane cells to docs/reference/lanes/, updated the /checkpoint slash
+# command, and left Rule 9 in CLAUDE.md naming only the three 2026-07-10
+# pare-down files. The slash command is the PULLED path; Rule 9 is the PUSHED
+# one. A missing pointer is silent by construction — the offloaded file is fine,
+# the always-loaded file is fine, only the LINK is gone.
+import shutil as _sh
+
+def _repo_with(offloads, claude_text):
+    d = _tf.mkdtemp()
+    _os.makedirs(_os.path.join(d, "docs", "reference"), exist_ok=True)
+    for name, body in offloads.items():
+        fp = _os.path.join(d, "docs", "reference", name)
+        _os.makedirs(_os.path.dirname(fp), exist_ok=True)
+        open(fp, "w", encoding="utf-8").write(body)
+    cp = _os.path.join(d, "CLAUDE.md")
+    open(cp, "w", encoding="utf-8").write(claude_text)
+    return d, {"rel": "CLAUDE.md", "path": cp}
+
+_d, _e = _repo_with({"lanes/funding.md": "# lane"}, "# CLAUDE\nnothing points anywhere.\n")
+_u = da.rule_unreferenced_offload(_e, _d)
+check("unreferenced offload: fires when an offload is named nowhere in CLAUDE.md",
+      _u is not None and _u["detail"]["missing"] == ["lanes/"])
+_sh.rmtree(_d)
+
+_d, _e = _repo_with({"lanes/funding.md": "# lane"},
+                    "# CLAUDE\nstate lives in docs/reference/lanes/ now.\n")
+check("unreferenced offload: silent when CLAUDE.md names the path",
+      da.rule_unreferenced_offload(_e, _d) is None)
+_sh.rmtree(_d)
+
+# ⚠️ The first cut matched the BARE name and passed on a deliberately broken
+# file, because CLAUDE.md happens to say "Three doc lanes in this repo" for an
+# unrelated reason. A guard satisfied by a common English word never fires.
+_d, _e = _repo_with({"lanes/funding.md": "# lane"},
+                    "# CLAUDE\nThree doc lanes in this repo, by lifecycle.\n")
+check("unreferenced offload: a bare directory word does NOT satisfy the pointer",
+      da.rule_unreferenced_offload(_e, _d) is not None)
+_sh.rmtree(_d)
+
+# Reachability, not direct mention — the standard unindexed_kb_note already uses.
+_d, _e = _repo_with(
+    {"statute/README.md": "# texts",
+     "lanes/t5.md": "source texts in docs/reference/statute/"},
+    "# CLAUDE\nsee docs/reference/lanes/t5.md\n")
+check("unreferenced offload: one hop through a doc CLAUDE.md points at counts",
+      da.rule_unreferenced_offload(_e, _d) is None)
+_sh.rmtree(_d)
+
+# A directory with no prose in it is not an offload.
+_d, _e = _repo_with({"pdfs/x.txt": "raw"}, "# CLAUDE\nnothing.\n")
+check("unreferenced offload: a directory holding no markdown is not an offload",
+      da.rule_unreferenced_offload(_e, _d) is None)
+_sh.rmtree(_d)
+
+check("unreferenced offload: ignores docs that are not CLAUDE.md",
+      da.rule_unreferenced_offload({"rel": "docs/other.md", "path": __file__}, ".") is None)
+
 # ── report renders ────────────────────────────────────────────────────────
 _payload = {"generated": "2026-01-01",
             "summary": {"files": 1, "bytes": 10, "over_budget": 0, "handoff_max": 130,

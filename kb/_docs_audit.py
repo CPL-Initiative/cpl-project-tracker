@@ -442,6 +442,87 @@ def rule_stacked_roadmap_cell(entry):
     }
 
 
+# ── unreferenced_offload ─────────────────────────────────────────────────────
+# WHY (added 2026-08-28, Session 206, the hour after the consolidation shipped):
+# moving content into `docs/reference/` is only half the move. The other half is
+# the POINTER left in CLAUDE.md — and the pointer is the safety mechanism, not a
+# courtesy, because a pull store nobody was told exists is the same as no store.
+#
+# This rule exists because the consolidation itself got it wrong. It relocated
+# §11's 29 lane cells to `docs/reference/lanes/`, updated
+# `.claude/commands/checkpoint.md`, and left Rule 9's own checkpoint list in
+# CLAUDE.md still naming only the three 2026-07-10 pare-down files. The slash
+# command is the PULLED path and fires only when someone types it; Rule 9 is the
+# PUSHED path and fires unprompted. So a checkpoint run from the rule would have
+# refreshed the pointer table and left all 30 lane files to go stale — the exact
+# failure the same session had just written a KB note about.
+#
+# A missing pointer is silent by construction: the offloaded file is fine, the
+# always-loaded file is fine, and only the LINK between them is absent. Nothing
+# else in this corpus can see that, so it is checked here.
+REFERENCE_DIR = "docs/reference"
+
+
+def rule_unreferenced_offload(entry, root):
+    """An offload under docs/reference/ that CLAUDE.md never points at."""
+    if entry["rel"] != "CLAUDE.md":
+        return None
+    try:
+        text = read(entry["path"])
+    except Exception:
+        return None
+    ref_root = os.path.join(root, REFERENCE_DIR)
+    if not os.path.isdir(ref_root):
+        return None
+
+    targets = []
+    for name in sorted(os.listdir(ref_root)):
+        full = os.path.join(ref_root, name)
+        if os.path.isdir(full):
+            # a directory counts only when it actually holds prose
+            if any(f.endswith(".md") for _, _, fs in os.walk(full) for f in fs):
+                targets.append(name.rstrip("/") + "/")
+        elif name.endswith(".md"):
+            targets.append(name)
+
+    # ⚠️ Match the PATH, never the bare name. The first cut tested for "lanes"
+    # and passed on a deliberately broken file, because CLAUDE.md says "Three
+    # doc lanes in this repo" for an unrelated reason — a guard passing on a
+    # common English word is a guard that never fires.
+    # REACHABILITY is the invariant, not a direct mention — the same standard
+    # `unindexed_kb_note` already applies. An offload named by a doc CLAUDE.md
+    # itself points at is findable, so one hop counts.
+    hop = text
+    for m in set(re.findall(r"docs/(?:reference|kb-notes)/[\w./-]+\.md", text)):
+        fp = os.path.join(root, m)
+        if os.path.isfile(fp):
+            try:
+                hop += read(fp)
+            except Exception:
+                pass
+
+    def referenced(name):
+        stem = name.rstrip("/")
+        return (f"reference/{stem}" in hop
+                or f"reference/{os.path.splitext(stem)[0]}" in hop)
+
+    missing = [n for n in targets if not referenced(n)]
+    if not missing:
+        return None
+    return {
+        "rule": "unreferenced_offload",
+        "fixable": False,
+        "detail": {"missing": missing, "checked": len(targets)},
+        "message": (
+            f"{len(missing)} of {len(targets)} offload(s) under `{REFERENCE_DIR}/` "
+            f"are never named in CLAUDE.md: {', '.join(missing)}. Content was moved "
+            f"out without leaving the pointer, so the always-loaded file no longer "
+            f"says the store exists — and a pull store nobody was told about is the "
+            f"same as no store. Name it in Rule 9's checkpoint list (so it is "
+            f"refreshed) and in the read-before stub (so it is found)."),
+    }
+
+
 def _is_kb_note(entry):
     if entry["lane"] != "kb_note":
         return False
@@ -988,7 +1069,8 @@ def main():
                   rule_american_spelling(e),
                   rule_frontmatter_log_chain(e),
                   rule_unindexed_kb_note(e, index_text),
-                  rule_stacked_roadmap_cell(e)):
+                  rule_stacked_roadmap_cell(e),
+                  rule_unreferenced_offload(e, ROOT)):
             if f:
                 f["path"] = e["rel"]
                 findings.append(f)

@@ -241,12 +241,26 @@ finished_workstreams · `lanes/` (see the stubs below).
    counter; use proxies: long conversations with many tool calls, large file
    reads, multi-phase strategic work), pause and update **every** artifact below
    — none are optional, all sync to the user's Obsidian via the repo:
-   - **`CLAUDE.md`** — rules + the §11 Roadmap table + ≤2 session
-     narratives. Refresh roadmap-table status here. **Deep memory now lives in
-     `docs/reference/` (pipeline_reference.md · kb_build_status.md ·
-     mid_lifecycle.md — the 2026-07-10 pare-down): update THOSE at checkpoints**
-     for tag counts, lifecycle/pathway changes, build-phase state, and new
-     tabs/pipeline surface — do NOT re-inflate this file.
+   - **`docs/reference/lanes/<lane>.md` — THE USUAL CHECKPOINT EDIT (2026-08-28).**
+     Each §11 roadmap lane's state lives in its own file; **§11's table is a
+     POINTER INDEX**. Refresh the LANE FILE with what this run learned — same
+     content and same standard as the old §11 cell, new address.
+     ⚠️ **Added 2026-08-28 because the consolidation that moved the content
+     updated `.claude/commands/checkpoint.md` and left THIS bullet describing
+     the old arrangement.** The slash command is the *pulled* path and fires
+     only when someone types it; this rule is the *pushed* path and fires
+     unprompted — so for one commit a checkpoint run from here would have
+     refreshed the pointer table and left all 30 lane files to go stale. Same
+     failure the consolidation itself was documenting.
+   - **`CLAUDE.md`** — rules + the §11 pointer table + ≤2 session narratives.
+     **Touch a §11 ROW only when the lane's STATE changes** (live ⇄ in progress
+     ⇄ parked, open work appearing or clearing) — ⚠️ **do not grow a row back
+     into a paragraph.** **Deep memory lives in `docs/reference/`
+     (`lanes/` · pipeline_reference.md · kb_build_status.md · mid_lifecycle.md ·
+     troubleshooting.md · branch_policy.md · engineering_ui_practices.md ·
+     obsidian_vault_wiring.md): update THOSE at checkpoints** for tag counts,
+     lifecycle/pathway changes, build-phase state, and new tabs/pipeline
+     surface — do NOT re-inflate this file.
      **Session-narrative budget (added Session 41):** a new session's §11
      subsection is ≤ ~10 lines — headline, numbers, PR #s, pointers to the
      lessons doc (which holds the full story; write it ONCE there, don't
@@ -624,7 +638,8 @@ EACR identity (§9); C-ID/CCN conventions (§10). Contents: 1 Architecture ·
 
 Read it BEFORE: KB/unified-courses curation work, the CCR worklists, or citing
 build-phase history. It holds the phase-by-phase build narrative, counts, and
-artifact locations. Current-phase quick state: see the §11 Roadmap table below
+artifact locations. Current-phase quick state: the §11 pointer table below
+names each lane's state; its detail is in `docs/reference/lanes/`
 + the latest `docs/session_<N>_handoff.md`.
 
 ## 11. M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway
