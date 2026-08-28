@@ -22,6 +22,8 @@ Refreshed at every checkpoint (per `CLAUDE.md` Rule 8).
 
 | Lane | What | Where |
 |---|---|---|
+| [`methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md`](kb-notes/methodology-fixing-who-may-write-does-not-rescue-what-was-already-written.md) | methodology | Restoring a credential does not move work already stranded in a local overlay |
+| [`methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md`](kb-notes/methodology-when-the-workaround-is-the-keyboard-suspect-the-event-model.md) | methodology | Reachable by Tab but not by click = a click-handler bug, not focus |
 | [`methodology-a-client-gate-must-mirror-its-own-rls-policy.md`](kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | A client permission check narrower than its RLS policy refuses a valid credential silently, toward lost work |
 | [`methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md`](kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | Held at the cap and receiving the cap are different populations |
 | [`methodology-a-saved-setting-is-not-the-effective-value`](kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | A stored config value is an input to a model, never its output — ask the model | 2026-08-26 |
@@ -705,6 +707,7 @@ Authoritative external sources we've cached:
 > **New this run:** [`docs/gr_reanalysis_scope.md`](gr_reanalysis_scope.md) — the GR Priorities on-demand re-analysis, scoped and buildable. ⭐ The tab's original analysis was a SESSION's work product, not a computation, so the job is to make it repeatable; the instrument doctrine (memo / Title 5 / Ed Code) is measured from the 16 rows that already exist, and rows #12/#9/#7/#5 are a labeled test set.
 
 ## Update history
+- **2026-08-28 (SkyLens, S202, refresh)** — the gate fix was half a fix: a local overlay survives sign-in and masks shared, so Sam's relabels never landed; plus the sign-in dropdown closing on any click. 3 more KB notes / memory rows.
 - **2026-08-28 (SkyLens, S202)** — funding CR/NC lane switch merged (#1369); found a client gate stricter than its own RLS policy silently losing Sam's relabels; 2 KB notes; session-203 handoff.
 
 - **2026-08-27 (SkyMatch, parallel to SkyPin)** — College CR evidence workstream: reusable matcher + LATTC worklist (PR #1365); two KB notes (a frequency is not a rule; one ranked list cannot answer two questions); §11 row added, SkyRule S196 narrative archived.

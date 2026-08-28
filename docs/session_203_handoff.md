@@ -9,60 +9,80 @@ obsidian-folder: cpl-project-tracker
 
 # You are Session 203
 
-SkyLens here. The noncredit lane is live on the priority cards (#1369, merged
-`80d96b6`), and then Sam found something better than anything in that PR.
+SkyLens here. The noncredit lane shipped (#1369). Then Sam tried to rename three
+priorities and could not, and chasing that produced everything below.
 
-## ⛔ START HERE — the finding, and the one thing Sam must do
+## ⛔ START HERE — the one thing not finished
 
-**He relabelled the three priorities on the live tab and nothing reached Supabase.**
+**Sam's three relabels are still only in his browser.** Verified against Supabase
+four times today; shared still reads `Access` / `Outreach` / (blank), md5
+`9cf58b99efa36bd40fccbfb823f3683c`.
 
-My first diagnosis was **wrong** — I concluded he had not been signed in. He sent a
-screenshot: the masthead read **"● Signed in."**
+His names, and where they belong (`priorityOrder` is `[2,0,1]`, so display
+position ≠ source index):
 
-```js
-function unlocked() { var t = tp(); return !!(t && t.session()); }   // team PHRASE only
-```
+| Display | Title | Source index |
+|---|---|---|
+| Priority 1 | `Access: Statewide` | **2** |
+| Priority 2 | `Access: Outreach` | **0** |
+| Priority 3 | `Completion` | **1** |
+
+⚠️ **DO NOT WRITE THESE FOR HIM.** I did, via SQL, and reverted it. His words:
+*"I don't want you to fix it; I want the tab to save it."* He is right — a
+hand-applied fix destroys the experiment that proves the repair works.
+
+**What should happen:** once #1371 deploys, his Funding tab shows *"⚠ This browser
+holds changes nobody else can see"* and a **Publish this browser's changes**
+button. One click. Then verify:
+
 ```sql
-with check (is_allowed_reviewer() OR team_pass_ok())                -- all 3 funding tables
+select md5(config::text), updated_by from cpl_funding_config where id='default';
 ```
 
-**The database would have accepted his write. The client never attempted it.**
-`activeOverride()` handed him the per-browser scenario layer, `persistActive()`
-wrote `localStorage` inside a swallowed `try/catch`, and **that layer wins the
-render** — so the tab showed his new labels back and looked published.
+Anything other than `9cf58b99efa3…` is proof. **The screen is not proof** — that
+is the whole lesson of this session.
 
-⭐ **Two credentials, one word.** COBI's masthead reports the **reviewer** session;
-this tab gated on the **team phrase**. Seven write paths across three tables had
-it; fixed as ONE `applyWriteAuth()` — seven copies of an auth decision is seven
-chances to drift from the policy, which is how it survived.
+## What happened, in order — the diagnosis took three attempts
 
-⚠️ **Sam still needs to re-apply his relabels.** They are not in Supabase. With
-the gate fixed his reviewer session will now save for everyone. **Ask him what the
-four names are, or confirm he has redone it, before anything else touches the
-priorities.**
+1. **Wrong.** I concluded he had not been signed in. He sent a screenshot: the
+   masthead read **"● Signed in."**
+2. **Right, but half.** `unlocked()` tested only `tp().session()` — the team
+   **phrase** — while all three funding tables carry
+   `is_allowed_reviewer() OR team_pass_ok()`. **The database would have accepted
+   his write; the client never attempted it.** Seven write paths had it; fixed as
+   one `applyWriteAuth()` (#1370, merged `995be5a`).
+3. **The actual cause.** That fix let a reviewer *write* and did nothing about
+   work done *before* signing in. Edits made while locked live in the `SCENARIO`
+   overlay, which **wins the render** — so his labels painted back, looked
+   published, and re-typing them fired no `change` event because the value never
+   differed. ⭐ **The promotion step already existed and exactly one path reached
+   it:** the team-phrase unlock row. A magic-link reviewer never passes through
+   it. Fixed in #1371.
 
-⚠️ **The routing was never at fault** — his actual question. Every consumer reads
-`_prios()`/`_ncPrios()` (`college_briefing.js`, `funding_model_payload.js`, the
-memo/docx path). Nothing hardcodes a priority name. **Verify a change reached the
-store before auditing the fan-out.**
+## Open PR
 
-## What Sam ruled this run
+**#1371** — `939774d` (sign-in dropdown) + `2538fd9` (promotion + expiry notice).
+CI was pending at handoff; a check-in was armed to merge on green. If it merged,
+tell Sam it is deployed and to click Publish. If it went red, it is yours.
+
+## Sam's rulings across this session
 
 | Ruling | |
 |---|---|
-| One switch above the cards, all three, every year | *"otherwise I'll be a confuseled Pooh"* |
+| One lane switch above the cards, all three, every year | *"otherwise I'll be a confuseled Pooh"* |
 | Same FTES rate in both lanes | no noncredit rate |
 | `Annual funding` / `Combined funding` | replacing Disbursement / Even tranches / Front-load |
 | Remove most explanatory language from the cards | **keep the derivations** |
 | No feed keys in reader-facing text | *"what does this mean? Metric · pinned to ppa_u"* |
-| Noncredit needs its own strategies | *"NC programs do not generally award credit"* — different work |
+| Noncredit needs its own strategies | *"NC programs do not generally award credit"* |
 | Career attainment sits with the **project pool**, reported qualitatively | **no invented metric** |
-| Wire the **ABCD §78093.2 outcomes** in and make them visible | **with superscript links from whatever serves each** |
-| *"Unearned reallocated after 2028"* | **he withdrew it himself as invented** — replaced with §78093.2(d)(1) |
+| Wire the **ABCD §78093.2 outcomes** in and make them visible | **superscript links from whatever serves each** |
+| *"Unearned reallocated after 2028"* | **he withdrew it himself as invented** |
+| *"I want the tab to save it"* | don't hand-apply his data |
 
-## Your priority: build the ABCD spine (his ask, designed, not built)
+## Your build: the ABCD spine (his ask, designed, not built)
 
-Ed. Code **§78093.2(d)(1)** — the statutory basis for the allocation, verbatim:
+Ed. Code **§78093.2(d)(1)**, verbatim — the statutory basis for the allocation:
 
 - **(A)** Increasing access to CPL opportunities equitably for all eligible students
 - **(B)** Increasing completion through CPL awards
@@ -70,92 +90,75 @@ Ed. Code **§78093.2(d)(1)** — the statutory basis for the allocation, verbati
 - **(D)** Supporting CPL through the chancellor's office's pilot projects, *such as
   the California Mapping Articulated Pathways Initiative*
 
-**(d)(2) makes demonstrating these a precondition of a campus allocation** — so
-they belong on the tab as structure, not commentary.
+**(d)(2) makes demonstrating these a precondition of a campus allocation.**
 
-Two pieces, both small, neither moves a dollar:
-
-1. **Goal-tagged project line items.** `scaling_projects_tech` is one ~$8.96M box
-   labelled "CPL Projects & Innovation". Split it into named projects (WestEd,
-   Credential Engine, apprenticeship partners, CA Credential Registry, MAP), each
-   tagged to the goal it serves. The pool card system already supports custom
-   boxes with editable labels — **the math is unchanged as long as the sum is
-   preserved**. This is most of the (d)(2) reporting artifact for free.
+1. **Goal-tagged project line items.** `scaling_projects_tech` is one ~$8.96M box.
+   Split into named projects (WestEd, Credential Engine, apprenticeship partners,
+   CA Credential Registry, MAP), each tagged to the goal it serves. The pool card
+   system already supports custom labelled boxes — **math unchanged if the sum is
+   preserved.** Most of the (d)(2) reporting artifact, nearly free.
 2. **A four-goal spine**: goal → what funds it → how it is evidenced → *"no
-   measure yet"* where true. Plus Sam's superscript **ᴬᴮᶜᴰ** markers on whatever
-   serves each, linking back to the spine.
+   measure yet"* where true, with superscript **ᴬᴮᶜᴰ** markers linking back.
 
-⭐ **The project pool answers (C) AND (D)** — (D) is literally the pool in the
-statute's own words, and is the best-evidenced of the four.
-
-⚠️ **Do NOT invent a career-attainment metric.** The model already distinguishes a
-`gap` (nobody can measure this) from `undelivered` (declared, feed missing) and
-renders a gap honestly. An absent number is fine; a plausible wrong one never is.
-
-⚠️ **The CPL story corpus evidences the wrong goal.** Measured: of 36 stories in
+⭐ **The project pool answers (C) AND (D)** — (D) is the pool in the statute's own
+words, and the best-evidenced of the four.
+⚠️ **Do NOT invent a career-attainment metric.** The model distinguishes a `gap`
+(nobody can measure this) from `undelivered` (declared, feed missing).
+⚠️ **The CPL story corpus evidences the wrong goal**: of 36 in
 `fact-sheet/cpl_stories.js`, **5** destinations name a job, ~4 are genuine
-progression, and 8 of 36 quotes mention employment at all — often aspirationally
-(*"time I need to move my career forward"*). It documents **educational**
-attainment, which is goal (B). The left side of the arrow is often the job
-(*Firefighter →*, *Registered Dental Assistant →*) — worker-becomes-student, the
-inverse. **Fixable at intake** (ask what changed at work: hired, promoted,
-licensed, apprenticeship placement), not in analysis.
+progression, 8 quotes mention employment at all. It documents *educational*
+attainment — goal (B). **Fixable at intake** (ask what changed at work), never in
+analysis.
 
-## Read in this order
+## Patterns this session earned
 
-1. `CLAUDE.md` §11 — the funding cell (rewritten this run; states current truth)
-2. `docs/cpl_funding_lessons.md` — the 2026-08-28 section
-3. `docs/kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md`
-4. `cpl_memory` — `tags && array['cpl-funding','auth']` **before** touching this
-
-## Patterns that earned their place
-
-- ⚠️ **Three things I cut as "gloss" were data**, and three existing suites caught
-  all three: the effective rate, `meas.basis` (a **different author** from the
-  METRIC block — curator vs system, and their divergence shows nowhere else), and
-  roll-forward (a different fact from reprioritization). **Of the assertions I was
-  ready to call stale, most were protecting something.**
-- ⚠️ **A bound is tested by VALUE, not the model's clamp count** — Santa Ana
-  receives exactly $100,000 without being *held* there, so `capped` says 2 while 3
-  receive the max.
-- ⚠️ **`undelivered` conflates artifact-not-loaded with feed-does-not-carry.** Test
-  the artifact FIRST, mirroring `earnFraction()`, or every **credit** card claims
-  its measure is uncarried.
+- ⚠️ **Fixing who may write does not rescue what was already written.** Any
+  transition granting write access must decide the fate of work done before it —
+  promote, offer to promote, or discard loudly. Silence strands it.
+- ⚠️ **A client gate stricter than its RLS policy fails silently, toward lost
+  work.** Read the client predicate and the `with check (…)` clause side by side.
+- ⚠️ **When the workaround is "use the keyboard", suspect an event-model
+  mismatch, not focus.** A document click handler closed the sign-in pane; tab
+  worked because a tab is not a click.
+- ⚠️ **Three things I cut as "gloss" were data** and three suites caught all
+  three. **Of assertions you are ready to call stale, most are protecting
+  something.**
+- ⚠️ **A bound is tested by VALUE, not the clamp count** — Santa Ana receives
+  exactly $100,000 without being *held* there.
 - ⚠️ **A python patch script that writes only at the end loses every edit when a
-  later assertion raises.** One did; the `unlocked()` fix silently never landed and
-  the file still parsed. Only the new test caught it. **Write per-edit, or assert
-  the result.**
-- **Guard the destination, not the keystroke.** The NC strategy editor's test
-  asserts the text landed in `ncPriorities` *and* that credit's rows are
-  byte-identical — a control writing to the wrong store looks identical on screen.
+  later assertion raises.** One did; the `unlocked()` fix silently never landed
+  and the file still parsed.
+- ⚠️ **Assert structure, not prose.** New copy ("sign in again to save for
+  everyone") collided with an existing `/save for everyone/` assertion. Key on a
+  class the branch alone emits.
+- ⚠️ **A second run of the same check is not verification, it is delay.** Sam:
+  *"grinding?"* — I was waiting on a local suite CI was already running.
 
 ## Safety patterns to honor
 
 - **Never read the config — call `_effective()` / `_alloc()` / `_nc()` / `_prios()`.**
 - Live config writes: fresh read, **guard the UPDATE on the before-md5**, commit a
-  receipt (`kb/funding_strategies_out/2026-08-28/` is the worked example).
+  receipt (`kb/funding_strategies_out/2026-08-28/`).
 - Never force-push `main`. Merge on `clean` OR `unstable`.
-- ⚠️ A `check_suite` / `check_run` wake names a `head_sha` that is **routinely
-  superseded** — it was wrong three times on #1369. Always re-read
-  `get_check_runs` on the current head.
+- ⚠️ A `check_suite`/`check_run` wake names a **routinely superseded** `head_sha` —
+  wrong five times today. Always re-read `get_check_runs` on the current head.
 
 ## Carryover
 
-- **Sam's relabels** — not in Supabase (above).
-- **The threshold/floor coupling**, unruled since SkyLane: 400 FTES is the last
-  feasible step at the $50k floor; 350 demands $1.90M against $1.8M.
-- **The optional Combined award row** (Mt. SAC $400,000 + $100,000 = $500,000).
-- **NC share/factor are still read-only** — `ncPrioOverride()` accepts both; only
-  strategies have an editor.
+- The threshold/floor coupling, unruled since SkyLane: 400 FTES is the last
+  feasible step at the $50k floor.
+- The optional Combined award row (Mt. SAC $400,000 + $100,000 = $500,000).
+- NC share/factor editors — `ncPrioOverride()` accepts both; only strategies have
+  one.
 - `npm run test:floor` has never recorded a floor for
-  `tests/cpl_funding_lane_switch.test.js` (not a failure).
-- **Lint debt, pre-existing:** `american_spelling` 171 · `oversized_doc` 5 ·
-  `CLAUDE.md` at 2.48× its always-loaded budget.
+  `tests/cpl_funding_lane_switch.test.js`.
+- Lint debt, pre-existing: `american_spelling` 173 · `oversized_doc` 5 ·
+  `CLAUDE.md` at ~2.4× its always-loaded budget.
 
 ## Moniker
 
-I took **SkyLens** — the lane switch is a lens on one card set, and the run's real
-finding was that a "Signed in" indicator was focused on the wrong credential.
-Yours is open.
+I took **SkyLens**. The lane switch is a lens on one card set — and the session's
+real finding was a "Signed in" indicator focused on the wrong credential. Yours
+is open.
 
 **Next is Session 204 — `docs/session_204_handoff.md`.**

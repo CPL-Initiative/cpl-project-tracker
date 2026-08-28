@@ -2099,6 +2099,25 @@
   }
   var savingState = "";      // "", "saving", "saved", "err"
   var pendingPromotion = false;  // a local what-if is being promoted into SHARED on unlock
+  // Does this browser hold edits that exist NOWHERE ELSE? (2026-08-28.)
+  // Everything made while locked lands in SCENARIO, and SCENARIO WINS THE
+  // RENDER — so the tab shows them back and they are indistinguishable from
+  // published work. This is the predicate behind saying so out loud.
+  function hasLocalOnlyEdits() { return !!(SCENARIO && Object.keys(SCENARIO).length); }
+  // Promote this browser's what-if into the shared scenario. Extracted from the
+  // team-phrase unlock row (2026-08-28) because that was the ONLY caller, and a
+  // magic-link reviewer never passes through it: unlocked() flips true, the
+  // unlock row disappears, and the local overlay stays stranded on top of shared
+  // for ever — visible to its author, invisible to everyone else. Sam lost the
+  // same three priority relabels twice this way.
+  function promoteScenarioToShared() {
+    if (!hasLocalOnlyEdits()) { render(); return; }
+    var p = activeProjectObj();
+    p.scenarios[activeScenario] = deepMerge(clone(SHARED), SCENARIO);
+    SHARED = p.scenarios[activeScenario];
+    pendingPromotion = true;
+    saveShared();
+  }
   function clearPromotedScenario() {
     if (pendingPromotion) {
       var key = activeProject + "::" + activeScenario;
@@ -3066,13 +3085,35 @@
         (tp() && tp().session() ? "Team editing on" : "Signed in") +
         " — changes save for everyone</span> " +
         '<span class="dk">' + (dirty ? "team-configured scenario" : "using baked defaults") + "</span>";
+      // ⚠️ WORK THAT EXISTS ONLY HERE MUST SAY SO, and offer the way out. A
+      // reviewer who edited before signing in now holds a local overlay that
+      // masks the shared model — the screen looks published and is not. The
+      // phrase path promotes automatically; this path had no promotion at all.
+      if (hasLocalOnlyEdits()) {
+        status += ' <span class="cplfund-saving local">⚠ This browser holds changes nobody else can see</span>';
+        rightBtn = '<button type="button" class="rst warn" id="cplFundPromote">' +
+          "Publish this browser&#39;s changes</button>";
+      }
       if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset scenario to defaults</button>';
-      rightBtn = '<button type="button" class="lock" id="cplFundLock">Lock</button>';
+      rightBtn += '<button type="button" class="lock" id="cplFundLock">Lock</button>';
     } else {
-      status = '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
-        "Viewing the shared model") + "</span> " +
-        '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
-          "just start editing to explore — or unlock to save for the team") + "</span>";
+      // ⚠️ AN EXPIRED SIGN-IN IS NOT THE SAME AS NEVER HAVING SIGNED IN
+      // (Sam, 2026-08-28: "I should get a notice if my token has expired").
+      // A Supabase token lives ~1h. Without this branch a session that died
+      // mid-edit reads as ordinary exploring, and the curator has no way to tell
+      // "I am browsing" from "I was working and stopped being able to save".
+      var S = window.CPL_SESSION;
+      var staleSess = !!(S && typeof S.get === "function" && S.get() &&
+        typeof S.isFresh === "function" && !S.isFresh(S.get()));
+      status = staleSess
+        ? '<span class="mode scenario">⏰ Your sign-in has expired' +
+          (dirty ? " — the edits since then are on this browser only" : "") + "</span> " +
+          '<span class="dk">Sign in again to save for everyone' +
+          (dirty ? "; your changes are kept and can be published after." : ".") + "</span>"
+        : '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
+          "Viewing the shared model") + "</span> " +
+          '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
+            "just start editing to explore — or unlock to save for the team") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset exploration</button>';
     }
     // ⚠️ EVERY EDIT GETS AN EVENT, IN BOTH MODES (Sam, 2026-08-28).
@@ -7989,19 +8030,18 @@
             // "what you were exploring becomes the team's model" (kept if the save
             // fails). Write the merge back INTO the config so SHARED stays a live
             // pointer. No what-if → just re-render in shared mode.
-            if (SCENARIO && Object.keys(SCENARIO).length) {
-              var p = activeProjectObj();
-              p.scenarios[activeScenario] = deepMerge(clone(SHARED), SCENARIO);
-              SHARED = p.scenarios[activeScenario];
-              pendingPromotion = true;
-              saveShared();
-            } else {
-              render();
-            }
+            promoteScenarioToShared();
           }
         }));
       }
     }
+
+    // The publish button for a local overlay held under an unlocked session.
+    var promoteBtn = document.getElementById("cplFundPromote");
+    if (promoteBtn) promoteBtn.addEventListener("click", function () {
+      savingState = "";
+      promoteScenarioToShared();
+    });
 
     wireTable();   // college/district row drill-ins + sortable headers
   }

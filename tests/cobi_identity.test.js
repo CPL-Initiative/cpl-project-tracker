@@ -297,6 +297,46 @@ function railText(win) {
       !!chip && /Not unlocked/.test(chip.textContent), chip ? chip.textContent : "");
   }
 
+  // ── (J) the pane must not close when you click INSIDE it ──────────────────
+  // Sam, 2026-08-28: "I logged out but when I try to log back in, the drop down
+  // closes when I try to click into the email box... I have to trick it and tab
+  // to it."
+  //
+  // The document click handler closed the pane on ANY click. The toggle button
+  // survived because it stopPropagation()s itself; nothing inside the pane did,
+  // so clicking the email field bubbled to document, openPane went false, and
+  // render() tore the field out mid-click. A TAB still worked — which is what
+  // makes this read as a focus mystery instead of a stray handler.
+  {
+    // Signed-out is exactly Sam's state: he logged out, then could not click
+    // into the email box to get back in.
+    const w = boot({});
+    const btn = w.document.querySelector(".cobi-ident-btn");
+    check("(J) the identity chip renders", !!btn);
+    if (btn) {
+      btn.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+      const pane = w.document.querySelector(".cobi-ident-pane");
+      check("(J) clicking the chip opens the pane", !!pane, "no pane after click");
+      if (pane) {
+        // A click on something INSIDE the pane must leave it open. Use a real
+        // focusable child so this exercises the shape Sam hit, not a synthetic
+        // div: whatever the pane contains, the boundary test is the same.
+        const inner = pane.querySelector("input, button, a") || pane.firstElementChild || pane;
+        inner.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+        check("(J) ⭐ a click INSIDE the pane leaves it open",
+          !!w.document.querySelector(".cobi-ident-pane"),
+          "the pane closed on an inside click — the reported bug");
+
+        // …and a click outside must still close it, or the fix has traded one
+        // bug for a pane nothing can dismiss.
+        w.document.body.dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
+        check("(J) a click OUTSIDE still closes it",
+          !w.document.querySelector(".cobi-ident-pane"),
+          "the pane stayed open on an outside click");
+      }
+    }
+  }
+
   let pass = 0;
   for (const [n, ok, why] of results) {
     console.log((ok ? "PASS" : "FAIL") + "  " + n + (!ok && why ? "  — " + why : ""));
