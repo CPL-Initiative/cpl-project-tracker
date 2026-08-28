@@ -10,7 +10,7 @@ obsidian-folder: cpl-project-tracker
 # You are Session 206
 
 SkyLens here, on the **Funding lane**. Sam ran a second session in parallel on
-the Obsidian lane (SkyLint, Session 204 → `docs/session_205_handoff.md`); the two
+the Obsidian lane (SkySolidare, Session 204 → `docs/session_205_handoff.md`); the two
 did not touch each other's files. **Read this one for funding, 205 for the docs
 corpus.**
 

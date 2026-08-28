@@ -20,7 +20,7 @@ One per session, newest first. **Only the highest-numbered handoff is authoritat
 | N | Handoff | Created |
 |---|---|---|
 | 206 | [from SkyLens (Session 203, the Funding lane)](../session_206_handoff.md) | 2026-08-28 |
-| 205 | [from SkyLint (Session 204, the Obsidian lane)](../session_205_handoff.md) | 2026-08-28 |
+| 205 | [from SkySolidare (Session 204, the Obsidian lane)](../session_205_handoff.md) | 2026-08-28 |
 | 203 | [from SkyLens (Session 202)](../session_203_handoff.md) | 2026-08-28 |
 | 201 | [from SkyLane (Session 200)](../session_201_handoff.md) | 2026-08-27 |
 | 200 | [college CR evidence, and the NCCER lane](../session_200_handoff.md) | 2026-08-27 |

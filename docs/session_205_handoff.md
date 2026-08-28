@@ -1,5 +1,5 @@
 ---
-title: Session 205 handoff — from SkyLint (Session 204, the Obsidian lane)
+title: Session 205 handoff — from SkySolidare (Session 204, the Obsidian lane)
 created: 2026-08-28
 updated: 2026-08-28
 tags: [handoff, session-205, obsidian, docs-corpus, lint, vault]
@@ -9,7 +9,7 @@ obsidian-folder: cpl-project-tracker
 
 # You are Session 205
 
-SkyLint here. Sam split this session off from the live Funding session (203) to
+SkySolidare here. Sam split this session off from the live Funding session (203) to
 work **the Obsidian lane** — the vault-facing lint debt carried in the Session
 203 handoff. That separation held all run; the Funding tab was not touched.
 
@@ -108,7 +108,80 @@ split** roadmap row, which exists because of IP-proliferation concern.
 2. Nothing reads `docs/kb-notes/` at runtime — Sierra reads `cpl_memory` but not
    the notes. That is the concrete gap if tools should query "everything we know".
 
-## Your priority — `CLAUDE.md` at 2.49× its always-loaded budget
+## Your priority — the CLAUDE.md consolidation (SCOPED AND MEASURED, execute it)
+
+Sam and SkySolidare worked this out at the end of Session 204. The measurements are
+done; you are executing a plan, not designing one.
+
+### The diagnosis
+
+**Three stores are each doing all three jobs**, with nothing assigned:
+
+| Job | `CLAUDE.md` | `cpl_memory` | `docs/kb-notes/` |
+|---|:--:|:--:|:--:|
+| **Rules** — must fire unprompted | ✅ 23 KB | ⚠️ **85 of Sam's rulings** | — |
+| **State** — what is true in a lane now | ⚠️ **§11, 90 KB** | ⚠️ some | — |
+| **Findings** — what we learned | ⚠️ narratives | ✅ 379 | ✅ 343 |
+
+⭐ **THE ASSIGNMENT RULE (Sam's, 2026-08-28): push what a session cannot know to
+ask for; pull everything else.** `CLAUDE.md` is PUSHED — present before you know
+you need it. `cpl_memory` is PULLED — you must think of the question. *"Never
+force-push main"* cannot move to a pull store; you would only query it if you
+already suspected. *"What is the state of the funding lane"* is a question you
+know you have — that is pull, and it is **62.4% of the file**.
+
+⚠️ **Do NOT relocate doctrine into `cpl_memory`.** Its briefing budget is 17,951
+chars against **85,505** of verified rows — **21% fits**. A rule there can be
+present and silently unread, which is strictly worse than a large `CLAUDE.md`
+that at least loads completely.
+
+### Measured starting state
+
+- `CLAUDE.md` **148,460 B** vs a 60,000 B budget. §11 Roadmap is **90,324 B (62.4%)**
+  across **37 rows**; Critical Rules are only **22,680 B (15.3%)**.
+- **Dropping §11 alone lands the file at ~56 KB — under budget, in one move.**
+- 26 rows carry a ✅/DONE/LIVE marker, ⚠️ **but that over-counts**: many read
+  *"✅ LIVE … NEXT: …"*, i.e. live with open work. Read each row; do not grep.
+- `cpl_memory.scope` is set on **4 of 646 rows** — the field that would answer
+  "global or lane-local?" is unused.
+
+### The steps — ONE PR EACH, each independently revertible
+
+1. **Retire genuinely-finished rows.** Already documented practice ("when a
+   row's NEXT step is done and nothing is pending, move it"), never enforced.
+   Per-row read, not a grep.
+2. **Move live lane state to per-lane files, leaving a ONE-LINE POINTER INDEX in
+   `CLAUDE.md`.** ⭐ **The pointer is the safety mechanism** — pushed, while the
+   content is pulled. Without it a session re-derives what was already written,
+   which is the exact failure Rule 8 exists for. ~2 KB replaces ~45 KB.
+3. **FOLLOW THE GUARDS.** ⚠️ `rule_stacked_roadmap_cell` hard-codes
+   `if entry["rel"] != "CLAUDE.md": return None` — **the moment §11 cells move it
+   silently stops guarding.** Re-point it, and give the new lane an
+   `oversized_doc` budget or it grows unwatched. This is the third instance in
+   one day of *moving content out from under a guard disables the guard, and the
+   diff looks like progress*; it is the step most likely to be skipped because
+   the change looks finished without it.
+4. **Populate `cpl_memory.scope` BEFORE promoting any ruling.** Then "global or
+   lane-local" is a query, not 85 judgment calls. ⚠️ **Do not promote all 85** —
+   *"the noncredit lane gets a SECOND ROW per college"* is one tab's design
+   decision, not a rule every session needs. By slug it looks like ~51
+   cross-cutting / ~34 lane-local, but that is a weak heuristic.
+5. **Write the assignment rule into `CLAUDE.md` AND `.claude/commands/checkpoint.md`.**
+   Otherwise it regrows — Session 204 proved that changing a mechanism without
+   changing the instruction describing it is its own failure.
+
+### Safety
+
+- **Relocate verbatim, never delete** — content moves, nothing is lost.
+- `oversized_doc` **verifies the outcome mechanically**; you will know it worked
+  without reading anything.
+- ⚠️ **Check no other session is live on `CLAUDE.md` first** — it is the most
+  contended file in the repo (Session 204 had to verify PR #1372's file list
+  before touching §11).
+- **Steps 1–3 are mechanical; 4–5 are judgment. Do not mix them in one PR.**
+- Steps 1–3 get you under budget alone and need no decisions from Sam.
+
+## Background — why this is the priority
 
 **149,538 B against a 60,000 B budget, and every session pays it.** This is the
 single highest-value item left in this lane and it was held today only because
@@ -170,7 +243,8 @@ Do it once 203's PR has landed:
 
 ## Moniker
 
-I took **SkyLint** — the whole run was the lint pass this corpus had been
-reporting and nobody had consumed. Yours is open.
+**SkySolidare**, named by Sam at the close of the session — *"amazing unification
+planning"*. The run started as the lint pass this corpus had been reporting and
+nobody consumed, and ended as the unification plan you are holding. Yours is open.
 
 **Next is Session 206 — `docs/session_206_handoff.md`.**

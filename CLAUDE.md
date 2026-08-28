@@ -856,7 +856,7 @@ $8.96M project pool has **no breakdown anywhere**, so that split is Sam's input,
 the only carrier and deleting it removes the figure. Story `docs/cpl_funding_lessons.md` · handoff
 `docs/session_206_handoff.md`.
 
-### SkyLint S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
+### SkySolidare S204 — the lint had reported this for weeks and nothing consumed it (2026-08-28)
 
 **Ran in PARALLEL with SkyLens (203, the Funding tab); the two lanes never touched.**
 The vault-facing debt: `kb_note_dialect` **60 → 0**, `american_spelling` **174 → 1** (the one
