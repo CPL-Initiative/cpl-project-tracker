@@ -1,8 +1,8 @@
 {
   "_about": "The dashboard To-Do feed. Refreshed at every Rule 8 checkpoint alongside the session handoff — this is the handoff distilled into plain language for the 📋 button on every tab. Split For Sam (curation / decisions only a human makes) and For Fable (engineering, the next session picks up).",
   "_as_of": "2026-08-28",
-  "_session": "SkyCrush, Session 206 (CLAUDE.md consolidation) — carrying SkyLens's open funding items",
-  "_status": "Sam published his three priority names from the Funding tab and they reached the database — the save path is proven working end to end, which had been open for three sessions. Curating the funding model now needs a personal sign-in rather than the shared team phrase. The tab also gained a section showing what the law requires this money to achieve, with links from whatever funds each goal; and the noncredit column came off the college table, because it was showing the same money twice — every institution now has its own credit and noncredit rows instead. Colleges with no noncredit program get a row too, marked as such, so if that is wrong we hear about it. Separately, the project's own instruction file has been halved twice over: it was two and a half times the size it should be, and every session was paying for that before it did any work. The detail for each workstream now lives in its own file, with a one-line pointer left behind, so a session reads only the workstream it is on. Nothing was thrown away.",
+  "_session": "SkyCrush, Session 206 (CLAUDE.md consolidation, presentation rules, test speed)",
+  "_status": "Sam published his three priority names from the Funding tab and they reached the database — the save path is proven working end to end, which had been open for three sessions. Curating the funding model now needs a personal sign-in rather than the shared team phrase. The tab also gained a section showing what the law requires this money to achieve, with links from whatever funds each goal; and the noncredit column came off the college table, because it was showing the same money twice — every institution now has its own credit and noncredit rows instead. Colleges with no noncredit program get a row too, marked as such, so if that is wrong we hear about it. Separately, the project's own instruction file has been halved twice over: it was two and a half times the size it should be, and every session was paying for that before it did any work. The detail for each workstream now lives in its own file, with a one-line pointer left behind, so a session reads only the workstream it is on. Nothing was thrown away. Two follow-ups from Sam: the formatting rules — First Light, accessible, mobile-friendly, plain words rather than emoji — now sit in one place near the top of the project instructions, with an automatic check that fails if any of them is ever moved out; and the test suite, which had grown past twenty minutes, now runs several files at once. Nothing about what the tests check was changed.",
   "items": [
     {
       "id": "s202-sam-threshold",
@@ -111,6 +111,12 @@
       "for": "Fable",
       "tab": "pipeline",
       "text": "Work through the 29 workstream files and retire the ones that are genuinely finished. A previous estimate said five could go with no judgment needed; reading them showed four still list outstanding work in their own text, so none were retired. The test is now written down: no \"next\", no \"needs Sam\", no \"blocked\"."
+    },
+    {
+      "id": "s206-sam-emoji-scope",
+      "for": "Sam",
+      "tab": "admin",
+      "text": "One judgment call on the no-emoji rule. Several emoji are in the site on purpose and named in our instructions — the to-do button, the guidance pane, the Governance tab icon. The rule as written bans emoji used INSTEAD of a word as a label, and keeps small state marks like a tick or a warning beside a word. Tell us if you want it stricter than that; we deliberately did not build an automatic checker, because it would flag the ones you approved."
     }
   ]
 }
