@@ -325,8 +325,55 @@ _one_prior = _claude_md_with("current state. *Prior:* the thing it replaced.")
 check("stacked cell: tolerates a single *Prior:* as context",
       da.rule_stacked_roadmap_cell(_one_prior) is None)
 
-check("stacked cell: only ever inspects CLAUDE.md",
+check("stacked cell: ignores docs outside §11 and the lane files",
       da.rule_stacked_roadmap_cell({"rel": "docs/other.md", "path": _logged["path"]}) is None)
+
+# ── the two bypasses found on 2026-08-28 while moving §11's detail out ────
+# Both are the same shape: a guard that passes because it is not looking. The
+# rule split rows on a bare "|" and skipped anything with fewer than four, so
+# the TWO LARGEST CELLS in the live table were invisible to it — the largest
+# (4,930 chars, over the cap) because its row was missing a trailing pipe, and
+# the second (4,447) because `1|2,3|4` inside a code span truncated the split.
+_no_pipe = _claude_md_with("x" * 4500)
+_no_pipe_body = open(_no_pipe["path"], encoding="utf-8").read().replace(
+    "x" * 4500 + " |", "x" * 4500)
+open(_no_pipe["path"], "w", encoding="utf-8").write(_no_pipe_body)
+check("stacked cell: an oversized cell whose row is missing its trailing pipe still fires",
+      da.rule_stacked_roadmap_cell(_no_pipe) is not None)
+
+# Assert it fires as an OVERSIZED cell, not as a malformed row — under the old
+# naive split this input also produced a finding, but for the wrong reason, so a
+# bare is-not-None here would pass on the very parser it is meant to reject.
+_code_pipes = _claude_md_with("`1|2,3|4` " + "x" * 4500)
+_cp = da.rule_stacked_roadmap_cell(_code_pipes)
+check("stacked cell: pipes inside a code span do not truncate the measured cell",
+      _cp is not None and _cp["detail"]["cells"][0]["malformed"] == 0
+      and _cp["detail"]["cells"][0]["chars"] > da.CELL_MAX_CHARS)
+
+_code_ok = _claude_md_with("`1|2,3|4` live — [lane state](x.md)")
+check("stacked cell: a healthy cell containing code-span pipes stays silent",
+      da.rule_stacked_roadmap_cell(_code_ok) is None)
+
+_malformed = _claude_md_with("live | stray")
+check("stacked cell: a row it cannot parse is a finding, never an exemption",
+      (_m := da.rule_stacked_roadmap_cell(_malformed)) is not None
+      and _m["detail"]["cells"][0]["malformed"] == 4)
+
+# The lane files are the surface the detail moved TO, so the rule follows it.
+import tempfile as _tf
+_fd, _lane_path = _tf.mkstemp(suffix=".md")
+_os.write(_fd, b"current state. *Prior:* a. *Prior:* b."); _os.close(_fd)
+check("stacked cell: a lane file stacking *Prior:* markers fires",
+      da.rule_stacked_roadmap_cell(
+          {"rel": "docs/reference/lanes/x.md", "path": _lane_path}) is not None)
+_os.unlink(_lane_path)
+
+check("lane budget: docs/reference/lanes/ is its own budget lane, not `other`",
+      da.lane_of("docs/reference/lanes/esl-packaging.md") == "roadmap_lane"
+      and da.THRESHOLDS["roadmap_lane"] < da.THRESHOLDS["other"])
+
+for _e in (_no_pipe, _code_pipes, _code_ok, _malformed):
+    _os.unlink(_e["path"])
 
 for _e in (_healthy, _logged, _short_log, _one_prior):
     _os.unlink(_e["path"])

@@ -10461,6 +10461,501 @@
    "slug": "workstream-docs"
   },
   {
+   "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
+   "count": 37,
+   "docs": [
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/ess-25-82-tab.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "$50k / ESS 25-82 tab \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/admin-tab-side-menu.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Admin tab / the side menu as data \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/college-district-identity.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "College & district identity \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/college-cr-evidence.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "College CR evidence ('we approved it, but we have no CR') \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/common-cr-reference.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Common CR Reference \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/cpl-cleanup-worklist.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "CPL clean-up worklist \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/disposition-grain-student-detail.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Disposition grain / student detail \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/eacr-exhibit-cr-adoption.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "EACR \u2014 Exhibit & CR Adoption \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/esl-packaging.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "ESL packaging (the first fold) \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/excel-to-supabase.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Excel\u2192Supabase Phase 2-4 \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/governance-team-enablement.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Governance & team enablement \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/gr-register.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "GR register / CO policy & regulation review \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/implementation-funding.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Implementation Funding tab / the $35M model \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/local-course-cr-alignment.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Local course \u2194 CR alignment \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/map-custom-reports.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "MAP Custom Reports (3 new) / ITPI automation \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/map-users-student-contact.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "MAP Users / student contact \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/memory-tab.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Memory tab / Autogenerate + the Briefing \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/military-ace-cr-reference.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Military (ACE) CR Reference \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/my-college-action-page.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "My College (college action page) / MAP-team queue \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/nc-learning-partners.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "NC / Learning Partners \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/noncredit-cip-categories.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Noncredit CIP categories \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/org-phrase-scope-auth.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Org & phrase scope / auth model \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/partner-crosswalks.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Partner crosswalks \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/public-private-repo-split.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Public/private repo split \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/reviewer-session-lifetime.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Reviewer session lifetime & scope \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/audit-rules.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane",
+      "auditor"
+     ],
+     "title": "Row-auditor rules (\u00a711 phase 1c) \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/sierra-retrieval-corpus.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Sierra retrieval + corpus \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/sierra-false-absences.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Sierra: false absences + the statewide flag \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/skyview-ccr-interface.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "SkyView / the CCR curation interface \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/lanes/t5-55050-article-9.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap-lane"
+     ],
+     "title": "Title 5 \u00a755050 \u2192 Ed. Code Article 9 \u2014 lane state",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "",
+     "governs": [],
+     "path": "docs/reference/statute/README.md",
+     "status": null,
+     "tags": [],
+     "title": "Primary-source statutory and regulatory text",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-08-15",
+     "governs": [],
+     "path": "docs/reference/finished_workstreams.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "roadmap",
+      "archive"
+     ],
+     "title": "Finished workstreams \u2014 archived \u00a711 rows",
+     "type": null,
+     "updated": "2026-08-15"
+    },
+    {
+     "created": "2026-07-10",
+     "governs": [],
+     "path": "docs/reference/kb_build_status.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "claude-md-offload"
+     ],
+     "title": "Knowledge Base & Unified Courses Curation \u2014 Build Status (CLAUDE.md offload)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-07-10",
+     "governs": [],
+     "path": "docs/reference/mid_lifecycle.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "claude-md-offload"
+     ],
+     "title": "M-ID Lifecycle, Model Curriculum (MC), and the CID/CIDx Pathway (CLAUDE.md offload)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-08-28",
+     "governs": [],
+     "path": "docs/reference/obsidian_vault_wiring.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "obsidian",
+      "vault",
+      "claude-md-offload"
+     ],
+     "title": "Obsidian vault wiring (CLAUDE.md offload)",
+     "type": null,
+     "updated": "2026-08-28"
+    },
+    {
+     "created": "2026-07-10",
+     "governs": [],
+     "path": "docs/reference/pipeline_reference.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "claude-md-offload"
+     ],
+     "title": "Pipeline Reference \u2014 architecture, file inventory, generator, tabs, Supabase (CLAUDE.md offload)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-08-19",
+     "governs": [],
+     "path": "docs/reference/troubleshooting.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "troubleshooting",
+      "dashboard",
+      "pages",
+      "cron",
+      "scrape",
+      "stop-hook"
+     ],
+     "title": "Troubleshooting \u2014 dashboard, Pages, scrape, and the stop-hook false positives",
+     "type": null,
+     "updated": "2026-08-19"
+    }
+   ],
+   "name": "Reference (pull-side)",
+   "slug": "reference"
+  },
+  {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
    "count": 181,
    "docs": [
@@ -13651,5 +14146,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 678
+ "total": 715
 }
