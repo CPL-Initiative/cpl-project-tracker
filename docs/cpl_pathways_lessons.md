@@ -336,7 +336,7 @@ Supabase `merge_doctrine_notes`):
 
 - **#778** — the **10 ASE `(with Practical Assessment)` → base-cert** folds
   (A1–A8, G1, L1). Verified: `credentials.json` 2016 → 1993 keys, all 10 gone.
-- **#779** — the **Long Beach `Automative` cluster** (AUTO 611–619, catalogued
+- **#779** — the **Long Beach `Automative` cluster** (AUTO 611–619, catalogd
   with LB's OWN "Automative" typo). Rule 8c-4 self-corrected mid-flight: the
   Rule-9 read showed **Sam had deliberately set `issuer = ASE`** + CPL Type
   Industry Certification, so these are ASE-competency exhibits, **not** local

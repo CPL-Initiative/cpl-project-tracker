@@ -125,7 +125,7 @@ the lane.
    bare `Evidence` as real columns. Always run a known-good baseline first, or an
    API outage reads as "every field is invalid."
 6. **Postgres word boundary is `\y`, not `\b`.** `\b` is a backspace — a
-   normalisation step using it silently matches nothing and looks like "that step
+   normalization step using it silently matches nothing and looks like "that step
    doesn't help."
 7. **Sanity-check every count against its population.** A containment join
    reported 908,451 rows in a 200,840-row lane (a topic counted once per pair).

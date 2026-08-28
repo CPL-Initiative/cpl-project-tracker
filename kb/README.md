@@ -203,20 +203,54 @@ nothing kept the docs honest, and the docs corpus is the larger of the two.
 Wired as **step 0 of `/checkpoint`** so its findings shape what the checkpoint
 writes rather than arriving after.
 
-Seven rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
+Nine rules: `superseded_handoff` (FIXABLE — stamps `superseded: true` on every
 `session_<N>_handoff.md` below the highest, so search can filter them),
 `oversized_doc` (per-LANE budgets — an always-loaded file, a KB note and a
-lessons doc have different economics), `kb_note_frontmatter`,
-`kb_note_dialect` (informational, not a defect — the corpus states a note's
-type three ways and its date two), `frontmatter_log_chain` (a frontmatter field
-being used as a changelog), `unindexed_kb_note`, and `vault_heavy_path` (emits a
-paste-able Obsidian `userIgnoreFilters` block from what is actually on disk).
+lessons doc have different economics), `stacked_roadmap_cell` (a §11 cell that
+has become an append-only log), `kb_note_frontmatter`, `kb_note_dialect`
+(informational — the corpus stated a note's type three ways and its date two;
+**normalized to one dialect 2026-08-28, so this now reads 0**),
+`american_spelling`, `frontmatter_log_chain` (a frontmatter field being used as
+a changelog), `unindexed_kb_note` (satisfied by `docs/INDEX.md` **or any
+`docs/catalog/*.md` INDEX links to** — reachability is the invariant, not a
+filename), and `vault_heavy_path` (emits a paste-able Obsidian
+`userIgnoreFilters` block from what is actually on disk).
 
 Zero third-party dependencies — no PyYAML anywhere in `kb/*.py`, so the
 frontmatter reader is a minimal hand-roll. Receipts are date-only (no wall-clock
 stamp) and the scan excludes its own output directory, so two runs on the same
 day are byte-identical and never dirty the tree. Guarded by
-`tests/docs_audit_test.py` (56 checks). Run: `python3 kb/_docs_audit.py`.
+`tests/docs_audit_test.py` (67 checks). Run: `python3 kb/_docs_audit.py`.
+
+⚠️ `prose_only()` lives here and defines what counts as PROSE — code spans,
+markdown link targets, wikilinks, `*.md` filenames and QUOTED spans are masked.
+`american_spelling` and its fixer BOTH read it, so the rule can never report a
+hit the fixer refuses to touch. Quoted spans are excluded on Sam's ruling
+(2026-08-28): *"No need to fix any spellings we import…like COCI catalog or MAP
+Custom Reports data"* — a quotation is someone else's text, including a person's
+own words.
+
+**Three consumers of the auditor (2026-08-28, Session 204)** — the lint had
+reported this debt for weeks and nothing applied it. All dry-run by default:
+
+- **`kb/_normalize_kb_note_frontmatter.py`** — canonicalizes KB-note frontmatter
+  to `created:` + a type tag in `tags:`. Imports `KB_TYPE_TAGS`/`kb_type_of`
+  from the auditor rather than re-declaring them. Also folds a REDUNDANT
+  `type:`/`kb-type:` the linter structurally cannot see (`kb_type_of` returns
+  the tag and stops), resolving conflicts with the filename as an independent
+  third signal. `--apply` to write.
+- **`kb/_build_docs_index.py`** — generates `docs/INDEX.md`'s marker block and
+  the per-lane catalogs under `docs/catalog/` from each doc's own frontmatter.
+  Hand prose outside `<!-- generated:corpus -->` survives byte-for-byte.
+  `--check` exits 1 when a rebuild would change anything and runs in CI.
+- **`kb/_fix_american_spelling.py`** — applies `american_spelling` over prose
+  only. Never renames a FILE (a filename is an identifier referenced from
+  `CLAUDE.md`, `related:` wikilinks and `cpl_memory`); it lists those and stops.
+  `--skip <relpath>` leaves another live session's lane alone.
+
+Guarded by `tests/docs_index_build_test.py` (25) and
+`tests/american_spelling_test.py` (32); both, plus the auditor's own suite and
+`_build_docs_index.py --check`, run in `.github/workflows/js-tests.yml`.
 
 **Row Trust-Card auditor (2026-05-23, `kb/_row_audit.py`)** — read-only
 auditor over every M-ID + Cluster, producing per-row Trust Cards with two

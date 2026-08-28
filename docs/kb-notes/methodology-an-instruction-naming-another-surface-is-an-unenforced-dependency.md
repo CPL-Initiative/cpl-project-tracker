@@ -76,7 +76,7 @@ control.
 4. **Delete the orphan.** An implementation whose entry point is gone should be
    removed, not left for the next reader to mistake for a feature.
 
-## The generalisation
+## The generalization
 
 Any cross-surface instruction is an untyped reference: *"configure this in
 Settings"*, *"see the Admin tab"*, *"run the sync script first"*, *"ask a

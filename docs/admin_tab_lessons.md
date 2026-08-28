@@ -37,7 +37,7 @@ correction below came from a real report.
 3. **The menu became data** (`cobi_nav`) with drag and drop.
 4. **The audience filter** — show a menu item only to signed-in people.
 
-### The lesson that generalises furthest
+### The lesson that generalizes furthest
 
 **An empty read is only evidence if the set cannot legitimately be empty.**
 `team_phrases.js` infers "not a reviewer" from `200 + []` because `team_access`
@@ -192,7 +192,7 @@ Dashboard gets no ladder at all. Re-checked at the point of the write, because
 the render decides what to *offer* and the handler decides what *happens*, and
 those two must not be able to disagree.
 
-### Only the alarming case was labelled
+### Only the alarming case was labeled
 
 The protection chip rendered for `open`/`public`/`view` **alone**. A properly
 protected tab showed nothing — indistinguishable from one nobody had examined.
@@ -200,7 +200,7 @@ Measured: **1 of 7 items carried a chip before, 7 of 7 now.**
 
 This is the same asymmetry as the audience note (stated only inside the ⚠, which
 fires on public-read tabs, so on most items it never appeared while it applied to
-all of them). Worth naming as a pattern: **when only the bad case is labelled,
+all of them). Worth naming as a pattern: **when only the bad case is labeled,
 silence means two different things and the reader cannot tell which.**
 
 ⚠️ **Chipping every row had a trap that would have been worse than the gap.**
@@ -386,7 +386,7 @@ no page at all.
 
 `team_access.id` was `raci` — named after the Team & RACI tab, which Sam renamed
 to *Team*. He could not find it because **the id is internal and appears nowhere
-a phrase holder can see**; the card is simply labelled *Shared team phrase*.
+a phrase holder can see**; the card is simply labeled *Shared team phrase*.
 
 The secret was untouched (md5 identical before and after), so nobody was locked
 out. But **a live rename and a deploy cannot be simultaneous**, and the
@@ -412,7 +412,7 @@ found yesterday in `admin_tab.test.js`, reappearing in `nav_groups.test.js`
 ⚠️ **A fix applied to one harness is not a fix applied to the practice.** Both
 files carry `val()` now. Real numbers after: 15 of 17 new admin checks fail
 pre-fix, 3 of 6 nav_groups checks — and the three that pass both ways are
-**labelled regression guards rather than counted as proof.**
+**labeled regression guards rather than counted as proof.**
 
 One new assertion was also wrong on first writing (it asserted a rendered count
 was "not 2", which is a correct count in that fixture for unrelated reasons) —
@@ -484,7 +484,7 @@ made the failure silent in three places at once:
    audience in the table. That is the only reason it surfaced at all.
 
 ⚠️ **A default that "lands on the harmless side" is right for a bad VALUE and
-wrong for an ABSENT column.** `sanitize()` maps an unrecognised audience to
+wrong for an ABSENT column.** `sanitize()` maps an unrecognized audience to
 `everyone` so a typo can never hide a menu item — deliberate, and documented.
 But absent and invalid are different states, and collapsing them turned a
 missing value into a *confident wrong one*.

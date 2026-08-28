@@ -72,7 +72,7 @@ Only a direct probe separates them, and the probe costs one query.
 
 Having found nothing, the model **filled the silence from world knowledge** — and
 its list of CompTIA certs was *correct*. That is the worst available outcome: a
-reviewer sees a plausible, accurate answer and files no bug, so the behaviour
+reviewer sees a plausible, accurate answer and files no bug, so the behavior
 survives to a question where the guess is wrong. Accidental correctness is not
 evidence of grounding.
 

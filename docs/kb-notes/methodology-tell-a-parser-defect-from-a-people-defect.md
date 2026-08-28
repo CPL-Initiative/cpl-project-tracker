@@ -2,7 +2,7 @@
 title: Tell a parser defect from a people defect before you build a curation queue
 created: 2026-08-14
 updated: 2026-08-14
-tags: [methodology, data-quality, curation, normalisation, ingest, measurement]
+tags: [methodology, data-quality, curation, normalization, ingest, measurement]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
 related:

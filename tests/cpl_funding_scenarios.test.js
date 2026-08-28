@@ -130,14 +130,13 @@ const {
     { id: "cip", label: "CIP", full: "TOP-to-CIP Transition" },
     { id: "gr",  label: "GR",  full: "Government Relations" }
   ] };
-  window.CPL_TEAM_PHRASE = {
-    _pass: "x",
-    session: function () { return this._pass ? { teamPass: this._pass, email: "(team)" } : null; },
-    clear: function () { this._pass = null; },
-    decorateHeaders: function (h) { return h; },
-    checkWrite: function () { return Promise.resolve({ ok: true, status: 200 }); },
-    handleWriteFailure: function () { return false; },
-    unlockRow: function () { return window.document.createElement("span"); }
+  // ⚠️ Curating funding needs a magic-link reviewer since 2026-08-28, not the
+  // team phrase. Without this the curator controls never render and the suite
+  // CRASHES on a null element rather than failing an assertion.
+  window.CPL_SESSION = {
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; }
   };
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;

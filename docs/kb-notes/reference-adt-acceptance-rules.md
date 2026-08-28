@@ -1,9 +1,8 @@
 ---
 title: ADT acceptance & course-substitution rules (ASCCC C-ID guidance + STAR Act)
-date: 2026-06-20
+created: 2026-06-20
 kb-status: published
-type: reference
-tags: [adt, tmc, c-id, compliance, co-review, title-5, star-act, sb1440, assist, substitution]
+tags: [reference, adt, tmc, c-id, compliance, co-review, title-5, star-act, sb1440, assist, substitution]
 artifacts:
   - tmc_templates.js          # the 45 TMC templates (Required Core / List A/B/C + select-counts + units)
   - tmc/source_data/coci_program_export_2026-06-17.csv  # MAJOR UNITS + status per ADT

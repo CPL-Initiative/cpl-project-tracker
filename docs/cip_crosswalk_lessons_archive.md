@@ -75,7 +75,7 @@ Curation nav group) + a new **CIP site** in the org switcher.
   haystack (one line) so the crosswalk's "COCI courses with TOP N" deep-link
   (sessionStorage `cpl_coci_focus`, the RACI focus pattern) actually filters.
 
-## Decisions / judgement calls
+## Decisions / judgment calls
 
 - **CIP is an org site, not just a tab.** Sam said "a CIP site (to be added to
   our current CPL and C&I sites)" — so it's a third area in SkyFlyer's org layer,
@@ -278,7 +278,7 @@ crosswalk. No Supabase in the tab anymore (backend-free reference).
   "wildland firefighting" → `43.0206`, CTE pill → 943, families 50, 2,182 active
   shown by default.
 
-**Decisions / judgement calls**
+**Decisions / judgment calls**
 - **Replace, don't augment.** "Get the mockup into production" + Jenni's "stop
   recreating the crosswalk" + "don't expose suggest" = the tab becomes the
   reference, full stop. The `cip_crosswalk_suggestion` Supabase table + its SQL stay

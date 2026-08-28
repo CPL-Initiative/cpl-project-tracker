@@ -1,9 +1,8 @@
 ---
 title: Re-mint applies — recompute through the dry-run's own allocator, gate on byte-fidelity to the reviewed plan
-date: 2026-06-12
+created: 2026-06-12
 kb-status: published
-type: methodology
-tags: [kb, remint, apply, dry-run, alias-map, subj4, playbook, supabase]
+tags: [methodology, kb, remint, apply, dry-run, alias-map, subj4, playbook, supabase]
 artifacts:
   - kb/_subj4_dryrun.py (compute_plan — the shared allocator)
   - kb/_subj4_apply.py (the consumer: P1–P3 + G1–G8 gates)

@@ -1,3 +1,6 @@
+-- ⚠️ NARROWED 2026-08-28 (Sam): curating funding requires a magic-link
+-- reviewer, NOT the team phrase. Live policies were altered to match; this
+-- file is the SQL of record and must state the same gate.
 -- ─────────────────────────────────────────────────────────────────────────
 -- cpl_funding_notes — CO Monitor's per-college notes on the Implementation
 -- Funding tab (2026-07-06, migration cpl_funding_notes).
@@ -40,20 +43,20 @@ alter table public.cpl_funding_notes enable row level security;
 drop policy if exists cfn_select on public.cpl_funding_notes;
 create policy cfn_select on public.cpl_funding_notes for select
   to anon, authenticated
-  using (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer());
 
 drop policy if exists cfn_insert on public.cpl_funding_notes;
 create policy cfn_insert on public.cpl_funding_notes for insert
   to anon, authenticated
-  with check (is_allowed_reviewer() or team_pass_ok());
+  with check (is_allowed_reviewer());
 
 drop policy if exists cfn_update on public.cpl_funding_notes;
 create policy cfn_update on public.cpl_funding_notes for update
   to anon, authenticated
-  using (is_allowed_reviewer() or team_pass_ok())
-  with check (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer())
+  with check (is_allowed_reviewer());
 
 drop policy if exists cfn_delete on public.cpl_funding_notes;
 create policy cfn_delete on public.cpl_funding_notes for delete
   to anon, authenticated
-  using (is_allowed_reviewer() or team_pass_ok());
+  using (is_allowed_reviewer());

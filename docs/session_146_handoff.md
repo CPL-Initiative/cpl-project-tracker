@@ -123,7 +123,7 @@ from the crosswalk — key partners on `college_id`, never on the name. Ashley h
 a Futuro crosswalk session live on 2026-08-12.
 
 **4. Contacts and staff are NOT PII** (Sam, 2026-08-12) — directory information
-for a public programme. **Don't invent caution he hasn't asked for.** I withheld
+for a public program. **Don't invent caution he hasn't asked for.** I withheld
 CEO emails on a "public repo" argument and had to withdraw it; they are in
 `kb/reference/ccc_colleges_ceo_2026.json` now.
 

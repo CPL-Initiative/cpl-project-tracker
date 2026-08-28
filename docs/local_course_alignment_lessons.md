@@ -76,7 +76,7 @@ be systematically blind to a whole legitimate articulation style.
 
 **⚠️ Candidates must NOT be scoped by TOP code.** Scoping the candidate set by TOP
 is using TOP as a **gate**, which Rule 7 forbids. TOP may corroborate or boost;
-the search runs over the college's catalogue. (The offline demo scoped by TOP for
+the search runs over the college's catalog. (The offline demo scoped by TOP for
 speed — the build must not.)
 
 ### (b) Current state — three independent gaps
@@ -134,7 +134,7 @@ doing so.
    subject, number, title), straight from `coci_articulations.json`. Exact data, no
    matching, and it alone answers deliverable (2).
 3. **One RPC** `credential_alignment_for_college(credential, college)` returning
-   both signals per rec, each labelled with what it is.
+   both signals per rec, each labeled with what it is.
 4. **cpl-chat wiring** + a rule: propose with evidence, never determine; name the
    peer college and its course so faculty can check the precedent themselves.
 
@@ -153,7 +153,7 @@ course.
   failure — peer precedent may still show a broad course that works.
 - The offline demo's scorer (`0.35·ratio + 0.40·jaccard + 0.25·acronym`) was tuned
   on one credential. It is a starting point, not a validated model; the acronym
-  bonus is doing a lot of work and will not generalise to credentials whose recs
+  bonus is doing a lot of work and will not generalize to credentials whose recs
   carry no acronym.
 
 ---
@@ -161,7 +161,7 @@ course.
 ## 2026-08-13 (later) — SkyBridge: built and live (cpl-chat v41)
 
 Shipped the same day it was designed. **#1153** peer articulations · **#1154**
-per-college catalogue + RPC · **#1155** the cpl-chat wiring.
+per-college catalog + RPC · **#1155** the cpl-chat wiring.
 
 ### (a) What was learned
 
@@ -175,7 +175,7 @@ COCI's `course_id`, so the join is `(unified_title, identity)`.
 articulations carrying >1 local course, **208 (57%) list differing college sets
 per course** — real attribution (`ASL 1 → Copper Mountain`, `ASL V01 → Ventura`).
 The other **158 (43%) repeat one identical set onto every course**, which is the
-signature of a group-level list denormalised down. The example that exposed it:
+signature of a group-level list denormalized down. The example that exposed it:
 Correctional Officer Core Course listed the same five colleges against five
 different courses (`ADJ 20`, `ADJUS 200`, `AOJ 3`, `CJ 30`, `CJ 51`) — read
 literally, that claims five colleges each teach five equivalents under five
@@ -211,7 +211,7 @@ look alike to a trigram and swamps the course name.
 Verified live for the acceptance case (Cerritos × ASME BPVC Section IX — FCAW):
 `WELD 214L` tops both recs; peers Barstow `WELD 54B`, Bakersfield `WELD B74A`,
 Santa Ana `WELD 240`/`244`.
-`tests/sierra_alignment.test.js` — 21 behavioural checks.
+`tests/sierra_alignment.test.js` — 21 behavioral checks.
 
 ### (c) Strategic roadmap
 
@@ -224,7 +224,7 @@ becomes an instruction. Two things follow from that:
 - The scorer is a **starting point tuned on one credential**. Expect the
   stoplist and the 0.45/0.55 weighting to need adjustment across disciplines;
   the acronym-in-parentheses case (FCAW) is doing real work in welding and will
-  not generalise to credentials whose recs carry no acronym.
+  not generalize to credentials whose recs carry no acronym.
 
 ### (d) Next concrete step
 
@@ -333,7 +333,7 @@ looked, because both ends verified clean.
 rows beside 9 candidates**. `where p.rn <= per_rec` sits only on `picked`; the
 `peers` CTE had no bound at all. `buildAlignmentContext` renders every row it
 receives, so nine candidate lines were interleaved into ~3,800 peer lines and
-the model summarised what dominated. Those "peer colleges use ADJUS 120, ADMJ
+the model summarized what dominated. Those "peer colleges use ADJUS 120, ADMJ
 52…" bullets in his answer *are* the peer rows, standing in for the answer.
 Durable: `methodology-bound-both-sides-of-a-union`.
 
@@ -420,7 +420,7 @@ Scale of the vocabulary:
 | | |
 |---|---|
 | distinct `credit_rec` strings | **2,344** |
-| after mechanical normalisation | 2,187 — **only ~7% collapse** |
+| after mechanical normalization | 2,187 — **only ~7% collapse** |
 | strings carrying a C-ID | 402 → **175 distinct C-IDs** |
 | C-IDs with 2+ wordings | 81 — worst `AJ 110` → **10 wordings** |
 | curated spine already in place | 351 statewide lines / 134 credentials |

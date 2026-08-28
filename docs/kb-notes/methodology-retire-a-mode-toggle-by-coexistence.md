@@ -3,7 +3,6 @@ title: Retire a mode toggle by making both modes coexist
 created: 2026-07-30
 updated: 2026-07-30
 kb-status: published
-kb-type: methodology
 tags: [methodology, ui, data-integrity, dashboard-tab, funding]
 related:
   - "[[docs/cpl_funding_lessons]]"
@@ -26,7 +25,7 @@ don't add up, with no way to prove it.
 **The fix is usually not to correct the toggle. It is to delete the toggle and put both
 numbers in the same cell**, where a mismatch becomes structurally impossible to hide.
 
-## How to recognise it
+## How to recognize it
 
 Suspect this whenever:
 
@@ -61,7 +60,7 @@ than substitutive.
    retired toggle usually strands a whole branch of code (alternate column sets, alternate
    row renderers, alternate CSV shapes). Leaving them is context tax on every future
    session.
-5. **Rewrite the toggle's tests into behaviour tests.** The old assertions ("mode B is
+5. **Rewrite the toggle's tests into behavior tests.** The old assertions ("mode B is
    selected," "mode B renders N rows") describe a mechanism that no longer exists.
    Replace them with the property the retirement was *for* — e.g. "every detail row stays
    visible when grouped," "Σ subtotals == Σ details," "both figures appear in the cell."
@@ -86,7 +85,7 @@ tests, and each *removed* more code than it added (the district-view retirement 
   mismatch: per-priority cells rendered the viewed *year* while the front-load "Yr 1"
   money column rendered the whole *window*, and `earned_total` silently summed both
   years — so the earned figure was dominated by year-2 advances invisible in the year-1
-  cells. Also relabelled the front-load column "Window (front-loaded)", because it *is*
+  cells. Also relabeled the front-load column "Window (front-loaded)", because it *is*
   the window and naming it "Yr 1" was the proximate cause of the confusion.
 - **Colleges⇄Districts view toggle → "Group by district" on the one table.** Groups
   ordered by subtotal, detail rows sorted within groups, every college row still visible.

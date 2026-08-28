@@ -1,8 +1,7 @@
 ---
 title: "When two source tabs disagree, neither is authoritative — get the certified value"
-date: 2026-07-15
+created: 2026-07-15
 kb-status: published
-type: methodology
 tags: [methodology, data-integrity, source-of-truth, cip, curation, reconciliation]
 artifacts:
   - kb/reference/cip_cte_certified_260715.json

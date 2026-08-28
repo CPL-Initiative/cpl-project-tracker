@@ -272,7 +272,7 @@ Spec: [`docs/kb-notes/reference-ui-design-system.md`](kb-notes/reference-ui-desi
 + `prototype/first_light_theme_v1.html` v1.6. Warm monochrome, five accents one
 job each, Playfair Display + Source Sans 3, `var(--token)` never a raw hex,
 tables never on glass. **Verify contrast, don't claim it** —
-`prototype/check_contrast.py` holds the maths — and **colour is never the only
+`prototype/check_contrast.py` holds the maths — and **color is never the only
 signal**. Full rule in `CLAUDE.md` → Engineering & UI practices.
 
 ## Patterns that worked
@@ -304,7 +304,7 @@ signal**. Full rule in `CLAUDE.md` → Engineering & UI practices.
   environment-named error (`403 Forbidden`, `Connection refused`) in a test that
   should never touch the network is a finding.
   [`methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action`](kb-notes/methodology-a-guard-test-must-not-be-able-to-fire-the-guarded-action.md)
-- ⚠️ **Minimisation happens twice** — the payload decides what we ASK, the loader
+- ⚠️ **Minimization happens twice** — the payload decides what we ASK, the loader
   what we KEEP. Twelve fetched columns have no consumer and are dropped, and
   **listed** in `HELD_COLUMNS` so the decision is visible rather than an
   apparent oversight. `StudentMAPID` derives the surrogate and is discarded.

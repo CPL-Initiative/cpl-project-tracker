@@ -946,7 +946,7 @@ failed `42725 "not unique"`. Caught by re-running the cases, not by review.
 - **Short tokens → unstemmed `simple` vector**; longer ones keep stemming.
 - **Document-frequency filter**, self-tuning: it caught `engine` (15.5%,
   prefix-matches "Engineering") with nobody stoplisting it.
-- **Separator normalisation** before tokenising, on both the match and the DF count.
+- **Separator normalization** before tokenising, on both the match and the DF count.
 - **Fuzzy over synonym KEYS, not titles** — `word_similarity('cardiopulminary',
   'Adult CPR and Standard First Aid')` is 0.069; only the synonym table bridges
   a vocabulary gap. Corpus-side typos (`Automotive Service Excellance` is real
@@ -1002,7 +1002,7 @@ question is answered correctly on the live function.
 **The deploy path was rebuilt rather than hand-fed.** The MCP
 `deploy_edge_function` tool takes the function body inline — 66 KB / 1,287
 lines re-emitted by hand into a surface with no staging tier, where a single
-dropped line inside ~9 KB of prompt text changes ANSWER BEHAVIOUR without
+dropped line inside ~9 KB of prompt text changes ANSWER BEHAVIOR without
 breaking syntax. A 55 KB payload had already dropped mid-flight once
 (Session 94). So the deploy now runs on a runner from the git checkout:
 `.github/workflows/cpl-chat-deploy.yml`, dispatch-only, refusing unless
@@ -1118,7 +1118,7 @@ Postgres is free to return any 3 of the 9. That is the whole "mode 7 is flaky" s
 **retrieval was flaky**. And with no home college, `askedGeo` is `null`, every proximity band scores 0, and
 nothing downstream *can* rank by distance — the ranking code was innocent and unreachable.
 
-**The lesson that generalises:** a handoff's *facts* can all be right while its *causal arrow* points one layer
+**The lesson that generalizes:** a handoff's *facts* can all be right while its *causal arrow* points one layer
 too low. The tell was cheap and I nearly skipped it — I re-derived the rank function by hand, saw `min(courses,
 39) < 40`, and had to explain why the stated bug was arithmetically impossible. That contradiction is what sent
 me up a layer. **When the code you were pointed at cannot produce the symptom, stop fixing it.**
@@ -1192,7 +1192,7 @@ The line to encode (drafted, **not yet shipped**): **the restraint binds salesma
 withholds something that materially changes a seeker's outcome in order to protect a college's interest; what it
 does not do is *editorialise* — no unprompted "you'd do better at X", no ranking the host against neighbours, no
 framing the host as deficient. The honest version usually serves both, because **the gap is the product**: a
-college that learns via Sierra that its students keep asking for something unarticulated has been done a favour.
+college that learns via Sierra that its students keep asking for something unarticulated has been done a favor.
 
 ### Mode 7 is still red, and the next session must not simply green it
 
@@ -1212,7 +1212,7 @@ actually did the thing.
 
 ⭐ **My own #1027 caused this.** Told to lead with the host and not push other colleges, Sierra never reached
 "here are nearby colleges that teach it." The assertion encodes the *pre-#1027* product intent from the Boys &
-Girls Club case. So the question is not "why is the test red" but **which behaviour do we want** — and that is
+Girls Club case. So the question is not "why is the test red" but **which behavior do we want** — and that is
 Sam's call, not a test edit. Greening it by rewriting the assertion would be exactly the failure
 `methodology-assert-what-retrieval-returns` was written to prevent, one level up: making the check agree with the
 code instead of with the goal.
@@ -1544,7 +1544,7 @@ Live proof, from smoke 55 on San Diego Mesa:
 
 ### The mistake, twice, hours apart
 
-**Both guards I wrote fired on CORRECT behaviour**, and the second was written *after* diagnosing the first.
+**Both guards I wrote fired on CORRECT behavior**, and the second was written *after* diagnosing the first.
 
 1. The anon-key boundary check asserted `response == "[]"` and printed **`STUDENT GRAIN LEAKED to anon`** for a
    PostgREST statement timeout (`57014`). Nothing leaked — it conflated "not the empty array" with "rows were

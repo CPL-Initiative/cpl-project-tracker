@@ -38,7 +38,7 @@ The failure is silent in the worst way: the call succeeds, the data is correct,
 and the caller has no signal that one class of row has been diluted into
 uselessness. Nothing errors. Nothing is missing. The answer is simply wrong in
 emphasis, which for an LLM consumer means wrong in substance — the model
-summarised the 3,807 peer rows it could see and reported "no close title match"
+summarized the 3,807 peer rows it could see and reported "no close title match"
 for five recommendations whose candidate rows were sitting in the same payload.
 
 ## Two rules that follow

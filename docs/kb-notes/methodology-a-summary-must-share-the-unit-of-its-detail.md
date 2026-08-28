@@ -1,5 +1,5 @@
 ---
-title: A summary surface must share the unit of the detail it summarises
+title: A summary surface must share the unit of the detail it summarizes
 created: 2026-08-01
 updated: 2026-08-01
 tags: [methodology, testing, ui, funding, measurement]
@@ -13,7 +13,7 @@ artifacts:
   - tests/cpl_funding_cpl_ftes.test.js
 ---
 
-# A summary surface must share the unit of the detail it summarises
+# A summary surface must share the unit of the detail it summarizes
 
 > **One-sentence summary** — when a value and its target are computed at
 > different sites, a test that asserts each side independently will pass while

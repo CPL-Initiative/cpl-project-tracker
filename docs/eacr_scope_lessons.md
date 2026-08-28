@@ -144,8 +144,8 @@ code.** Four of the five were mine, shipped hours earlier:
    `<button>`s. Replaced with **native radios in a `<fieldset>`**: arrow keys,
    "2 of 3, selected" and the focus ring come free, and a hand-rolled radiogroup
    is exactly the thing to get subtly wrong a second time.
-3. **Colour-only meaning (WCAG 1.4.1)** — likely-match vs broad-lead separated by
-   an *outline colour*. Now two text-labelled groups; the label carries the
+3. **Color-only meaning (WCAG 1.4.1)** — likely-match vs broad-lead separated by
+   an *outline color*. Now two text-labeled groups; the label carries the
    distinction, styling only reinforces it.
 4. **`collegeChip` hid the full college name in a `title` on a `<span>`** —
    inconsistently announced, and unreachable on touch. Now `<abbr title>`.
@@ -213,7 +213,7 @@ Parked / open, in value order:
 ### (d) Next concrete step
 
 Sam uses the tab with the new default and says whether **Adopted** is the right
-thing to open on — it is a visible behaviour change, and anyone used to the old
+thing to open on — it is a visible behavior change, and anyone used to the old
 counts will see far fewer rows. Everything else here is downstream of that.
 
 ---
@@ -271,7 +271,7 @@ that attribution. `adopter_units` is now a straight re-emission at 100% coverage
 no Supabase dependency, no sign-in. Units parse from the rec text at **100%**.
 
 **Not `map_college_cr_unit`** — reviewer/team-gated, no k-anonymity of its own,
-and it measures student *disposition* rather than the articulation catalogue.
+and it measures student *disposition* rather than the articulation catalog.
 
 **The sketch was arithmetically impossible, and saying so with a number was the
 deliverable.** A legible 2–3 digit cell needs ~26px; 122 of them plus a title

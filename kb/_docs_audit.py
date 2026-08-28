@@ -49,9 +49,10 @@ Rules
   R4 frontmatter_log_chain — a frontmatter scalar that has become an append-only
                              log. `docs/INDEX.md`'s `updated:` is the worked
                              example: one line chaining six `prior:` entries.
-  R5 unindexed_kb_note     — a KB note absent from `docs/INDEX.md`. The index is
-                             the declared Obsidian entry point; a note missing
-                             from it is effectively unreachable by browsing.
+  R5 unindexed_kb_note     — a KB note reachable from neither `docs/INDEX.md`
+                             nor a `docs/catalog/*.md` that INDEX links to. The
+                             index is the declared Obsidian entry point; a note
+                             missing from it is unreachable by browsing.
   R6 vault_heavy_path      — a heavy non-markdown path that an Obsidian vault
                              containing this repo has to watch. This repo is
                              cloned INTO the vault, so its working tree is vault
@@ -481,17 +482,56 @@ BRITISH_FORMS = [
 ]
 
 
+def prose_only(text):
+    """Blank every region of a markdown doc that is NOT prose, keeping offsets.
+
+    ⭐ THE LINT AND THE FIXER MUST SHARE ONE DEFINITION OF PROSE. Before this
+    existed the rule scanned raw text, so it reported 25 findings that
+    `kb/_fix_american_spelling.py` deliberately refuses to touch — a filename in
+    link text, a word inside a code span, Sam quoted verbatim. A guard that
+    reports work nobody can do is the muted-guard failure this corpus already
+    documented (methodology-a-guard-that-fails-on-truth-gets-muted).
+
+    Masked: fenced blocks, inline code, indented code, wikilinks, markdown link
+    TARGETS, bare URLs, `*.md` filenames, and quoted spans.
+
+    ⚠ QUOTED SPANS ARE PROSE TO A READER BUT NOT OURS TO EDIT. Sam, 2026-08-28:
+    *"No need to fix any spellings we import...like COCI catalog or MAP Custom
+    Reports data."* A quotation is someone else's text — an imported COCI title,
+    a MAP field, or a person's own words — and correcting it makes our record
+    disagree with its source.
+    """
+    out = list(text)
+
+    def blank(m, g=0):
+        for i in range(m.start(g), m.end(g)):
+            out[i] = "\0"
+
+    for pat, grp in ((r"```.*?```|~~~.*?~~~", 0), (r"`[^`\n]*`", 0),
+                     (r"\[\[[^\]]*\]\]", 0), (r"\]\(([^)]*)\)", 1),
+                     (r"https?://\S+", 0), (r"^\s{4,}\S.*$", 0),
+                     (r"[\w./-]+\.md\b", 0),
+                     (r"\"[^\"\n]*\"|\u201c[^\u201d\n]*\u201d", 0)):
+        flags = re.S | re.M if grp == 0 else 0
+        for m in re.finditer(pat, text, re.S | re.M):
+            blank(m, grp)
+    return "".join(out)
+
+
 def rule_american_spelling(entry):
     """Informational: British spellings in a doc Sam reads.
 
     Never a defect — it reports so a pass can be made deliberately, in the same
     spirit as kb_note_dialect. Case-insensitive on the stem; reports the forms
     found and their count, not every offset.
+
+    Scans `prose_only()` — the SAME mask `kb/_fix_american_spelling.py` applies,
+    so the rule can never report a hit the fixer refuses to touch.
     """
     text = entry.get("text") or ""
     if not text:
         return None
-    low = text.lower()
+    low = prose_only(text).lower()
     hits = {}
     for brit, amer in BRITISH_FORMS:
         # Plain stems stay a substring count (cheap, and "normalis" is meant to
@@ -544,6 +584,29 @@ def rule_frontmatter_log_chain(entry):
     }
 
 
+def read_browsable_index():
+    """The text a human can reach by BROWSING from `docs/INDEX.md`.
+
+    INDEX.md is the landing page; the full per-lane listings live in the
+    generated `docs/catalog/*.md` (`kb/_build_docs_index.py`), because 340
+    KB-note rows cannot fit a 40,000 B landing-page budget at any width.
+
+    A catalog counts only when INDEX actually LINKS to it — reachability is the
+    invariant, not the file's existence. Unlink a catalog and every note in it
+    correctly reports as unreachable again.
+    """
+    index_path = os.path.join(ROOT, "docs", "INDEX.md")
+    if not os.path.isfile(index_path):
+        return None
+    text = read(index_path)
+    parts = [text]
+    for href in set(re.findall(r"\]\((catalog/[^)]+\.md)\)", text)):
+        p = os.path.join(ROOT, "docs", href)
+        if os.path.isfile(p):
+            parts.append(read(p))
+    return "\n".join(parts)
+
+
 def rule_unindexed_kb_note(entry, index_text):
     if entry["lane"] != "kb_note" or index_text is None:
         return None
@@ -556,7 +619,8 @@ def rule_unindexed_kb_note(entry, index_text):
         "rule": "unindexed_kb_note",
         "fixable": False,
         "detail": {"stem": base[:-3]},
-        "message": "not referenced anywhere in docs/INDEX.md — unreachable by browsing",
+        "message": "not referenced from docs/INDEX.md or any catalog it "
+                   "links to — unreachable by browsing",
     }
 
 
@@ -811,8 +875,7 @@ def main():
 
     docs = collect(ROOT)
     handoff_max = find_handoff_max(docs)
-    index_path = os.path.join(ROOT, "docs", "INDEX.md")
-    index_text = read(index_path) if os.path.isfile(index_path) else None
+    index_text = read_browsable_index()
 
     entries = []
     for path in docs:

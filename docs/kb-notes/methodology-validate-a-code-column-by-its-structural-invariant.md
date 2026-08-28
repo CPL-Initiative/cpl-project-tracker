@@ -120,10 +120,10 @@ page agreed with the catalog, so the relay was the sole point of corruption.
 
 Two additions to the method this instance earned:
 
-- **A relay is a transformation.** A human retyping or summarising a code table
+- **A relay is a transformation.** A human retyping or summarizing a code table
   is as capable of shifting a column as a bad CSV parse, and carries none of the
   signals a file does (no header row, no delimiter, no obvious truncation). Treat
-  a pasted or summarised table as untrusted **input**, not as authority — go back
+  a pasted or summarized table as untrusted **input**, not as authority — go back
   to the published source.
 - **Check every pair, not a sample.** When the invariant is *pairwise alignment*
   (code ↔ label), the only sound check is exhaustive over the set. Seven pairs is

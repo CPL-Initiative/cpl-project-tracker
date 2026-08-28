@@ -21,7 +21,7 @@ is the reason this run produced a correct answer instead of a shipped mistake.
 ### What happened, in order — the whole lesson is the sequence
 
 1. Measured the vocabulary. `credit_rec` fits `<units-expr> <unit-word> in
-   <topic>` at 99.1%, 100% with range parsing. Aggressive normalisation —
+   <topic>` at 99.1%, 100% with range parsing. Aggressive normalization —
    units discarded entirely — collapses **6.9%**. Confirmed Sam's framing:
    curation, not string-cleaning.
 2. Noticed a factor nobody had named. Every peer articulation already carries
@@ -47,7 +47,7 @@ is the reason this run produced a correct answer instead of a shipped mistake.
    per-line information anywhere.
 7. Nearly concluded rung 3 was dead — then checked whether the *good* merges
    live across credentials rather than within one. `HIST 130`'s six wordings all
-   sit under **`AP United States History`**: denormalised, but every wording
+   sit under **`AP United States History`**: denormalized, but every wording
    belongs to one credential and one course, so they genuinely are six
    phrasings of one recommendation. `POST` differs only because it spans 43
    lines and many courses.
@@ -65,8 +65,8 @@ solved" from "the gate does not fire on the example I invented it for."
 
 ⭐ **A label that names the disease is not a test for it.** `attribution`
 already carries `per_course` / `group_wide`, and the builder's own header
-documents the denormalisation risk in detail. Every poisoned `AJ 110` row is
-labelled `per_course`. The column is more optimistic than the data; a consumer
+documents the denormalization risk in detail. Every poisoned `AJ 110` row is
+labeled `per_course`. The column is more optimistic than the data; a consumer
 trusting it passes the exact case it appears to catch.
 
 ⭐ **The strongest-looking factor can be the smallest rung.** Course identity
@@ -91,7 +91,7 @@ a correct measurement of the wrong grain.
 **The deliverable is a curation workbench with a small automated spine, not a
 merge engine.** Automation reaches ~10% (rung 1: 351 published statewide lines;
 rung 2: 36 C-ID-declared; rung 3: 40; rung 4: ~160 mechanical). ~90% is curator
-judgement and no achievable matcher changes that — *Racial Issues and the
+judgment and no achievable matcher changes that — *Racial Issues and the
 Police* and *Community Relations* are one POST topic in unrelated words.
 
 That should drive build order: **worklist, grouping affordance, curator
@@ -103,7 +103,7 @@ the run on the tenth that is easy.
 Build the tab as a **worklist**, not a report: the ~2,180 topics ranked by how
 much they would collapse (wordings × colleges affected), each row offering
 group / split / confirm with curator attribution, plus the four automated rungs
-pre-applied and labelled by rung. Model the affordances on the CCR merge
+pre-applied and labeled by rung. Model the affordances on the CCR merge
 workspace (`docs/ccr_merge_workspace_epic_scope.md`), which already solved the
 curator-confirm pattern for course identity.
 
@@ -144,7 +144,7 @@ Justice` (5 wordings / 26 colleges), Principles & Procedures (5 / 16), Criminal
 Investigation (3 / 24). ⭐ **A ranking rule that needs a special case to avoid an
 absurd result is usually the wrong rule.** The fix was not an exclusion list.
 
-### Three bugs, one shape: two places normalising the same text differently
+### Three bugs, one shape: two places normalizing the same text differently
 
 1. **`screen_profile()` judged the RAW topic while the group key used the
    ABBREVIATION-FOLDED one.** `Intro to Administration of Justice` read as
@@ -168,7 +168,7 @@ absurd result is usually the wrong rule.** The fix was not an exclusion list.
 Applying the official title wherever a C-ID resolves would have renamed
 **`3 hours in Physical Training and Health Education` → `AJ 110 — Introduction
 to Criminal Justice`**. `AJ 110` reaches that group only through the
-denormalised (credential, course) pairing — the POST cross-join the scope doc
+denormalized (credential, course) pairing — the POST cross-join the scope doc
 names. That is not a mislabel; it **asserts that Physical Training is
 Introduction to Criminal Justice**.
 
@@ -201,7 +201,7 @@ Supervision` (2,986 rows) · `Computer Applications` · `Communications` ·
 `Industrial Safety` · `Leadership` · `1 hour in First Aid`. **There is no C-ID
 for "Supervision".** So the entire cascade — CCN, C-ID, and M-ID when it comes —
 has nothing to bite on, and the military lane falls through to rung 5, curator
-judgement, almost in full. The local MAP lane by contrast is course-shaped
+judgment, almost in full. The local MAP lane by contrast is course-shaped
 (`Criminal Investigation`, `Academic Reading and Writing`, `Introduction to
 Corrections`) and is exactly what the worklist already resolves.
 
@@ -252,7 +252,7 @@ ACE recommendation ACE's own published text *is* the published line. The
 authority was there the whole time, one rung lower. Checking the ruling we
 already had saved inventing a new one.
 
-**3. The ranking rule is corpus-specific, and that generalises.** SkyCall's
+**3. The ranking rule is corpus-specific, and that generalizes.** SkyCall's
 hard-won finding was that ranking by spread is backwards and collapse value
 (wordings × colleges) is right. In this lane collapse value is **also** wrong,
 for the mirror-image reason: every head topic already sits at 80–100 of 108
@@ -277,7 +277,7 @@ recommendation itself. Reading the memory table first is what connected them.
 
 **6. I re-ran two measurements that were wrong, and both were wrong the same
 way.** A `\b` word boundary in Postgres is a *backspace* (`\y` is the boundary),
-so a normalisation step silently matched nothing and reported no change — which
+so a normalization step silently matched nothing and reported no change — which
 looks exactly like "that step doesn't help." And a containment join reported
 908,451 rows in a 200,840-row lane, because a topic in many pairs was counted
 once per pair. **Both were caught by a figure being impossible, not by

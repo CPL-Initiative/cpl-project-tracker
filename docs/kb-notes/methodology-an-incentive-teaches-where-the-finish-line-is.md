@@ -32,7 +32,7 @@ Sam's explanation, offered as a guess, turned out to be the mechanism:
 
 ## The claim
 
-**A metric does not merely observe behaviour; it defines where the work is
+**A metric does not merely observe behavior; it defines where the work is
 understood to end.** The Veteran Star (≥75% of enrolled veterans with a JST in
 MAP) is achievable **without performing the per-CR articulation step even once**
 — the JST upload creates the plan, and the DD-214/JST Basic Training rows
@@ -68,7 +68,7 @@ as designed, against a finish line nobody intended to draw.
 
 Applies to every published measure that colleges can see and optimise toward —
 badges, stars, outcome checkmarks, funding gates. Ask before shipping: *what is
-the cheapest way to max this, and is that the behaviour we want?*
+the cheapest way to max this, and is that the behavior we want?*
 
 Does **not** mean avoid binaries entirely. A binary is right where the step
 genuinely is done-or-not (a coordinator is listed, or isn't). It is wrong where

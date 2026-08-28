@@ -1,5 +1,5 @@
 ---
-title: Normalise both sides of a join, or the resolver is decoration
+title: Normalize both sides of a join, or the resolver is decoration
 created: 2026-08-12
 updated: 2026-08-12
 tags: [methodology, entity-resolution, joins, data-integrity, funding, my-college]
@@ -17,7 +17,7 @@ artifacts:
   - tests/college_briefing.test.js
 ---
 
-# Normalise both sides of a join, or the resolver is decoration
+# Normalize both sides of a join, or the resolver is decoration
 
 > **One-sentence summary** — putting one side of a join through a name resolver
 > and comparing the result against the *raw* other side produces a join that
@@ -40,7 +40,7 @@ var grant = M._grant(key);
 ```
 
 and `cpl_funding.js` compares that key against the roster's own string, never
-normalised:
+normalized:
 
 ```js
 function baseCollege(name) {
@@ -63,7 +63,7 @@ are byte-identical, so the join worked. For five they are not:
 
 Each of those five rendered **“is not on the 115-college funding roster”** and
 was shown no implementation funding at all — including Mt. San Antonio, the
-largest CPL programme in the system, whose real allocation is **$522,239**. The
+largest CPL program in the system, whose real allocation is **$522,239**. The
 roster row was present the entire time.
 
 ## Why the existing test didn't catch it
@@ -86,10 +86,10 @@ colleges were orphaned in production.
 
 ## The rule
 
-**Whatever normalisation one side gets, the other side gets too — at the point
+**Whatever normalization one side gets, the other side gets too — at the point
 of comparison, not somewhere upstream.** Either:
 
-- normalise inside the module that owns the lookup (`c.college === name` becomes
+- normalize inside the module that owns the lookup (`c.college === name` becomes
   `S(c.college) === S(name)`), or
 - resolve the canonical key *back* to the owning side's own spelling before
   calling in.
@@ -106,8 +106,8 @@ function rosterKey(name) {
 ```
 
 Chosen because the Implementation Funding tab passes roster-raw names internally
-and works today — normalising inside `cpl_funding.js` would have changed
-behaviour for a second, unrelated consumer to fix a bug in this one. **Fix the
+and works today — normalizing inside `cpl_funding.js` would have changed
+behavior for a second, unrelated consumer to fix a bug in this one. **Fix the
 join at the caller that has the mismatch**, unless every caller has it.
 
 ## Two details worth copying
@@ -119,7 +119,7 @@ asynchronously, so an index built eagerly caches *empty* forever:
 if (_rosterKeys === null || _rosterKeysN !== rows.length) { ...rebuild... }
 ```
 
-**First writer wins.** If two roster rows ever normalised to the same key, a
+**First writer wins.** If two roster rows ever normalized to the same key, a
 later duplicate must not steal an earlier college's money. The roster is
 asserted collision-free separately; the map is written defensively anyway.
 

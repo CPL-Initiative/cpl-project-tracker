@@ -67,7 +67,7 @@ confident wrong answer rather than an error:
   all of them. *A manager that describes the thing differently from how the
   thing behaves is worse than one that omits it* — the omission is at least
   visible once someone looks.
-- **The safety classifier** would have labelled both "not checked", so the
+- **The safety classifier** would have labeled both "not checked", so the
   page's "not checked" count would have **risen by two the day the omission was
   fixed**. A number going up because you started *showing* something is a false
   finding, and it points investigation at the wrong place.
@@ -91,7 +91,7 @@ Each needed an explicit branch for the new kind, not a wider selector.
    into "not checked", because the honest answer was neither a pass nor a
    finding.
 
-## The generalisation
+## The generalization
 
 This is the same failure as
 [[methodology-a-check-that-never-registers-can-never-fail]] wearing different

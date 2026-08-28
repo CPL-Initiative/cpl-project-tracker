@@ -80,7 +80,7 @@ observations. Public-facing, CO voice, non-punitive. His framing of the dance:
 | Malone's report → daily pull | ⏳ landing ~2026-08-07. Add view to `fetch_custom_report.py`, set `VIEW` in `_build_cr_backlog.py`, add to `daily-dashboard.yml` |
 | NC **floor** build | Unblocked by `feederBasis(f)`. **FTES alone only moved Calbright $33K → $40K — the FLOOR is what delivers equity** (~$161K at $150K). With a floor, basis barely matters. ⚠ 4 recipients × $150K = 60% of the $1M — pick the floor deliberately |
 | Calbright placeholder | 1,000 FTES, chipped. Retires automatically when a curator enters a real figure. **Malone still to verify** (21,438.17 = 8.63 FTES/student, impossible; likely enrollments) |
-| Re-bake `year_priorities` → FTES | **Deliberately deferred.** Fail-soft fallback is still the headcount model. Rewrites ~15 behavioural assertions — its own PR, re-fixture the suite properly |
+| Re-bake `year_priorities` → FTES | **Deliberately deferred.** Fail-soft fallback is still the headcount model. Rewrites ~15 behavioral assertions — its own PR, re-fixture the suite properly |
 | Scenario 2 | Live trapdoor: headcount metrics, no `factor`, and its P2 has neither `target_rate` nor `per_student` → target 0. Sam's what-if; ask before touching |
 | Peer-adoption worklist | Concept holds, CR-text join too narrow (max 8 peers). Use the CER's credential-level articulations instead |
 | GitHub Actions | **Starved — `runner_id: 0`, no runner assigned since ~15:30 UTC 08-06.** Everything merged publishes when it recovers. If still dead: support ticket per the playbook |

@@ -1,10 +1,9 @@
 ---
 title: "Methodology — build a packaging dry-run: title-primary carve-outs, safe-default under-claim, review-bucket when no authoritative flag"
-type: methodology
 kb-status: published
 created: 2026-07-15
 updated: 2026-07-15
-tags: [ccr, packaging, dry-run, esl, classification, curation, human-in-the-loop]
+tags: [methodology, ccr, packaging, dry-run, esl, classification, curation, human-in-the-loop]
 related:
   - "[[kb/merge_doctrine]]"
   - "[[docs/ccr_convergence_lessons]]"

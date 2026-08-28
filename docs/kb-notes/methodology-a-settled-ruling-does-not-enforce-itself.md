@@ -2,9 +2,8 @@
 title: A settled ruling does not enforce itself — the consumer has to change
 created: 2026-08-13
 updated: 2026-08-13
-type: methodology
 kb-status: published
-tags: [memory, governance, data-quality, process, cpl-memory, pitfall]
+tags: [methodology, memory, governance, data-quality, process, cpl-memory, pitfall]
 obsidian-folder: cpl-project-tracker
 related:
   - "[[docs/sierra_credit_recs_lessons]]"
@@ -34,7 +33,7 @@ titles flagged statewide; the adoption file carries 137. **42 credentials that
 exist in both read as local**, including Paramedic License, CompTIA, OSHA 10/30 and
 the NCCER and Carpenters ladders.
 
-So Sierra contradicted the organisation's own public Fact Sheet, which reads the
+So Sierra contradicted the organization's own public Fact Sheet, which reads the
 adoption file.
 
 Sam reported the symptom **across several sessions**: *"your analysis says EMT and
@@ -80,3 +79,34 @@ for the consumer that never got the memo.
 `statewide_data.js` into the flag; 42 live rows corrected; sync now reports
 **126 statewide, up from 84**. Twelve titles remain statewide in the adoption file
 but absent from `chatbox_credentials` entirely — recorded, not yet closed.
+
+## The inverse, and it is just as expensive (2026-08-28, Session 204)
+
+The rule above runs forward: a written decision does not change code. It also
+runs **backward — changed code does not update the instruction that describes
+it**, and that direction is worse, because the stale instruction actively walks
+the next person into a trap rather than merely failing to help.
+
+`docs/INDEX.md` became generated (`kb/_build_docs_index.py`). Both places that
+tell a session how to maintain it still said to hand-add table rows:
+
+| Instruction | What it said | What would happen |
+|---|---|---|
+| `CLAUDE.md` Rule 9 | *"new KB notes, lessons docs, session handoffs all get table rows"* | those tables now live in `docs/catalog/`, not INDEX |
+| `.claude/commands/checkpoint.md` step 6 | *"Add any new … to the tables"* | a row added inside the marker block is **erased on the next build** |
+
+So the session that followed the documented checkpoint procedure most carefully
+would lose its work, and the shipping session — me — did not notice, because I
+was reading the instruction as a *task list to satisfy*, not as an artifact my
+own change had invalidated.
+
+⭐ **A mechanism change is not finished until every instruction describing that
+mechanism has been re-read.** Grep for the artifact's name across `CLAUDE.md`,
+`.claude/commands/`, `README.md` and any runbook before calling it done — the
+instructions are consumers too, and they are the consumers with no tests.
+
+⚠️ **It was caught by a question, not by a check**: Sam asked *"is there
+anything we just changed that would cause you to miss the checkpoint rule?"*
+Nothing in CI could have caught it — `--check` guards the file's CONTENT, and
+no guard reads prose for claims about a mechanism. This class stays human-caught
+until a doctrine linter exists (`doctrine-is-indexed-to-files-but-was-unqueryable`).

@@ -717,7 +717,7 @@ line already set apart, the bold was competing emphasis rather than adding it.
 
 **Layout.** The notice is a grid child at `grid-column:1 / -1` with a late
 `order`, so it takes its own row under the brand in both the wide and the
-≤1180px header layouts without disturbing the columns above it. Colours come
+≤1180px header layouts without disturbing the columns above it. Colors come
 from `--mustard-fill` / `--mustard-text` (the caution grades) — no raw hex.
 
 **Not done — deliberately.** The standalone public pages (the CPL Fact Sheet,

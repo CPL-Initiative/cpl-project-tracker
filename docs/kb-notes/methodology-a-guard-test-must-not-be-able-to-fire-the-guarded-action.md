@@ -65,7 +65,7 @@ check(not _calls, "truncate() issued a request before refusing — the guard "
 Assertion 2 is the one that matters, and it is the one the obvious version
 cannot make. "It raised" is compatible with "it raised *after* deleting."
 
-**Generalisation:** for any irreversible operation — delete, drop, publish,
+**Generalization:** for any irreversible operation — delete, drop, publish,
 send, pay — the test must be unable to perform it *even when every guard in the
 code is broken*. Isolation lives in the test, not in the code under test.
 

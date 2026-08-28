@@ -2,7 +2,7 @@
 title: The CPL clean-up worklist — what to fix, in what order, and who fixes it
 created: 2026-08-19
 updated: 2026-08-19
-tags: [worklist, cleanup, disposition, student-detail, supabase, map, prioritisation]
+tags: [worklist, cleanup, disposition, student-detail, supabase, map, prioritization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
 artifacts:
@@ -73,7 +73,7 @@ before: the Common CR Reference was nearly ranked by how widely a string spread,
 and the widest-spreading string turned out to be a placeholder at one college.
 
 **A class of 11,926 rows that all resolve under one rule is a smaller job than
-413 rows needing 413 judgements.** (⚠️ The corollary, learned the hard way in
+413 rows needing 413 judgments.** (⚠️ The corollary, learned the hard way in
 session 172: **check that they really do all resolve under the same rule.** The
 class that looked like 17,594 one-rule rows contained 5,311 that needed the
 opposite treatment — see Priority 1 below.) Sorting by row count puts them in the wrong
@@ -303,7 +303,7 @@ step, not the clean-up.
 > but only if swimming rules the same way). It doesn't: offering the row as Cx
 > never requires deciding in advance whether swimming deserves credit — **the
 > college's own Cx policy for that course decides it**, which is where that
-> judgement belonged.
+> judgment belonged.
 >
 > ⚠️ **AND ITS REACH IS A QUARTER OF THE CLASS — Sam's own challenge to his own
 > ruling, same day.** *"Is the CR for many of these just a vague 'College may grant
@@ -330,7 +330,7 @@ step, not the clean-up.
 > `fetch_custom_report.py` asks `View_ExhibitCRsCatalog_Dataset` for `AceID` **and**
 > `Title`, and these rows are keyed on the ACE id (`AF-0101-0002`). That is a loader
 > change, not a request to ITPI. ⚠️ **The join rate is NOT yet measured** — the
-> catalogue is fetched on the runner and never written down, so it can only be
+> catalog is fetched on the runner and never written down, so it can only be
 > counted on the next run. Do not quote a coverage figure until it is.
 >
 > ⚠️ `chatbox_exhibits` does **not** rescue them: 0 of the 225 have a title there.
@@ -379,7 +379,7 @@ step, not the clean-up.
 > ⭐ **So the honest read: the titles are the deliverable; peer precedent is
 > mostly noise.** Two exhibits have a pointer worth acting on. Every
 > `peer_courses` entry carries **both** `colleges` and `spans_exhibits`, and
-> blanket courses are **labelled rather than hidden** — a curator who cannot see
+> blanket courses are **labeled rather than hidden** — a curator who cannot see
 > why an exhibit has no strong course cannot judge the list.
 >
 > ⭐ **A finding for the CCRR lane in its own right:** three colleges have mapped
@@ -437,7 +437,7 @@ absent.
 - **Attach the exhibit title** so the other 4,001 can be offered too. The columns
   are already in the daily pull (`AceID` + `Title`); nothing stores them. Measure
   the join rate on the next run before quoting any coverage figure.
-- Follow-on in Sam's own lane: normalising these ACE recommendations as Cx against
+- Follow-on in Sam's own lane: normalizing these ACE recommendations as Cx against
   specific courses in the Common CR Reference.
 - Decide whether P5's **rank** should move to match its value now that readiness
   is no longer the constraint (see the note under Priority 5).

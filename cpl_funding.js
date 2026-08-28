@@ -663,7 +663,6 @@
   var SCENARIO = {};    // → WHATIF[activeProject + "::" + activeScenario]
   var remoteLoaded = false; // whether the shared fetch has resolved
 
-  function tp() { return window.CPL_TEAM_PHRASE || null; }
   // ── WHO MAY EDIT THE SHARED MODEL (fixed 2026-08-28) ─────────────────────
   // ⚠️ THIS GATE MUST MIRROR THE RLS POLICY, AND IT DID NOT.
   // funding/supabase_cpl_funding_config.sql:
@@ -693,10 +692,17 @@
     // private save for a loud failed one.
     return (s && (typeof S.isFresh !== "function" || S.isFresh(s))) ? s : null;
   }
-  function unlocked() {
-    var t = tp();
-    return !!((t && t.session()) || reviewerSession());
-  }
+  // ── CURATING FUNDING REQUIRES A NAMED REVIEWER (Sam, 2026-08-28) ─────────
+  // "clean up the auth so it requires the magic link auth and not the team
+  // phrase." The RLS policies on all three funding tables were narrowed the
+  // same day to is_allowed_reviewer() alone, so this gate mirrors them again —
+  // that mirroring is the whole lesson of the bug above, and it holds in the
+  // NARROWING direction too: a client that still offered team-phrase editing
+  // would hand someone a write the database now refuses.
+  //
+  // ⚠️ This did NOT narrow cpl_funding_participation's cfp_insert_self — the
+  // college self-attestation path is public by design and is not a phrase gate.
+  function unlocked() { return !!reviewerSession(); }
   function activeOverride() { return unlocked() ? SHARED : SCENARIO; }
 
   function defaultProject() { return { label: DEFAULT_PROJECT_LABEL, area: "cpl", scenarios: { "Scenario 1": {} } }; }
@@ -2093,8 +2099,8 @@
     "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
-  var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset", "cplFundLock",
-    "cplFundUnlockSlot", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
+  var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
+    "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
     "cplFundScenSel", "cplFundScenNew", "cplFundScenDel",
     "cplFundOrderReset", "cplFundMirror", "cplFundCopyYear1"];
@@ -2167,15 +2173,35 @@
   // deliberate credential and preserves today's behavior for phrase holders),
   // reviewer session otherwise.
   function applyWriteAuth(headers) {
-    var t = tp();
-    var phrase = t && t.session();
-    if (phrase) { t.decorateHeaders(headers, phrase); return headers; }
     var S = window.CPL_SESSION;
     if (S && typeof S.authHeaders === "function") {
       var ah = S.authHeaders();
       for (var k in ah) headers[k] = ah[k];
     }
     return headers;
+  }
+
+  // Who to stamp on a row. Only reviewers can write here now, so the old
+  // "(team)" placeholder is no longer the truth — and an anonymous stamp on a
+  // per-person credential throws away the one thing the magic link buys us.
+  function curatorEmail() {
+    var s = reviewerSession();
+    return (s && s.email) || "(reviewer)";
+  }
+
+  // ⚠️ AN RLS-FILTERED WRITE RETURNS 200 WITH AN EMPTY BODY, so r.ok alone
+  // reports a no-row write as a success. Kept from team_phrase.checkWrite()
+  // when this tab stopped depending on that module — the semantics belong to
+  // PostgREST, not to whichever credential was used.
+  function writeResult(r) {
+    if (!r.ok) return Promise.resolve({ ok: false, status: r.status });
+    return r.json().then(function (rows) {
+      var wrote = !Array.isArray(rows) || rows.length > 0;
+      return { ok: wrote, status: wrote ? r.status : 403 };
+    }).catch(function () {
+      // No JSON body (a 204, or return=minimal) — nothing to count; trust r.ok.
+      return { ok: true, status: r.status };
+    });
   }
 
   function saveShared() {
@@ -2192,17 +2218,17 @@
       apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
       "Content-Type": "application/json", Prefer: "return=representation"
     };
-    var t = tp();
     applyWriteAuth(headers);
     fetch(CONFIG_URL + "?id=eq.default", {
       method: "PATCH", headers: headers,
-      body: JSON.stringify({ config: SUPA_CONFIG, updated_by: "(team)" })
-    }).then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
+      body: JSON.stringify({ config: SUPA_CONFIG, updated_by: curatorEmail() })
+    }).then(writeResult)
       .then(function (res) {
         if (res.ok) { clearPromotedScenario(); CONFIG_SAVED = clone(SUPA_CONFIG); savingState = "saved"; render(); return; }
-        // RLS/auth failure — roll back the WHOLE config, KEEP the what-if (nothing
-        // lost), drop a stale phrase, surface it.
-        if (t) t.handleWriteFailure(t.session(), res.status);
+        // RLS/auth failure — roll back the WHOLE config, KEEP the what-if
+        // (nothing lost) and surface it. ⚠️ Deliberately does NOT delete the
+        // session: a 403 can mean "not on the roster", and dropping a live
+        // credential on a refusal is how a curator silently loses their work.
         SUPA_CONFIG = clone(CONFIG_SAVED); syncActive();
         pendingPromotion = false;
         savingState = "err";
@@ -2272,7 +2298,6 @@
     // anon caller sends none and the RPC returns []. Fetched for everyone (cheap,
     // fail-soft) — it self-populates the moment a reviewer unlocks and reloads.
     var rh = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
-    var t0 = tp();
     applyWriteAuth(rh);
     Promise.all([
       fetch(COORD_RPC_URL, {
@@ -2463,7 +2488,6 @@
       return;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
-    var t = tp();
     applyWriteAuth(headers);
     var req = on
       ? fetch(PART_URL + "?on_conflict=college", {
@@ -2473,15 +2497,12 @@
           headers: (function (x) { x.Prefer = "resolution=merge-duplicates,return=minimal"; return x; })(headers),
           // A reviewer mark is itself the confirmation; it also fully re-activates
           // a previously revoked row (clears revoked_at) via the merge-upsert.
-          body: JSON.stringify({ college: college, noted_by: "(team)", source: "reviewer",
+          body: JSON.stringify({ college: college, noted_by: curatorEmail(), source: "reviewer",
             status: "confirmed", confirmed_at: nowIso(), confirmed_by: "(CO reviewer)", revoked_at: null })
         })
       : fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
-    req.then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
-      .then(function (res) {
-        if (!res.ok && t) t.handleWriteFailure(t.session(), res.status);
-        loadEligibility();
-      })
+    req.then(writeResult)
+      .then(function () { loadEligibility(); })
       .catch(function () { loadEligibility(); });
   }
 
@@ -2544,11 +2565,10 @@
     // representation would 403 the successful update.
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON,
       "Content-Type": "application/json", Prefer: "return=minimal" };
-    var t = tp();
     applyWriteAuth(headers);
     fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "PATCH", headers: headers, body: JSON.stringify(body) })
-      .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
-      .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
+      .then(writeResult)
+      .then(function () { loadEligibility(); })
       .catch(function () { loadEligibility(); });
   }
   function confirmOptIn(college) {
@@ -2566,11 +2586,10 @@
       render(); return;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, Prefer: "return=minimal" };
-    var t = tp();
     applyWriteAuth(headers);
     fetch(PART_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers })
-      .then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
-      .then(function (res) { if (!res.ok && t) t.handleWriteFailure(t.session(), res.status); loadEligibility(); })
+      .then(writeResult)
+      .then(function () { loadEligibility(); })
       .catch(function () { loadEligibility(); });
   }
   // Local (NO_REMOTE / test) mirror of a status change.
@@ -2722,7 +2741,6 @@
   function loadNotes() {
     if (!remoteEnabled() || publicMode()) return;   // reviewer-gated server-side; don't ask
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
-    var t = tp();
     applyWriteAuth(headers);
     fetch(NOTES_URL + "?select=college,note,updated_by,updated_at", { headers: headers })
       .then(function (r) { return r.ok ? r.json() : null; })
@@ -2742,20 +2760,16 @@
       return;
     }
     var headers = { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Content-Type": "application/json" };
-    var t = tp();
     applyWriteAuth(headers);
     var req = note
       ? fetch(NOTES_URL + "?on_conflict=college", {
           method: "POST",
           headers: (function (x) { x.Prefer = "resolution=merge-duplicates"; return x; })(headers),
-          body: JSON.stringify({ college: college, note: note, updated_by: "(team)" })
+          body: JSON.stringify({ college: college, note: note, updated_by: curatorEmail() })
         })
       : fetch(NOTES_URL + "?college=eq." + encodeURIComponent(college), { method: "DELETE", headers: headers });
-    req.then(function (r) { return t ? t.checkWrite(r) : { ok: r.ok, status: r.status }; })
-      .then(function (res) {
-        if (!res.ok && t) t.handleWriteFailure(t.session(), res.status);
-        loadNotes();   // re-read = the honest confirmation (#598)
-      })
+    req.then(writeResult)
+      .then(function () { loadNotes(); })   // re-read = the honest confirmation (#598)
       .catch(function () { loadNotes(); });
   }
 
@@ -3110,7 +3124,7 @@
     var status, resetBtn = "", rightBtn = "";
     if (unlocked()) {
       status = '<span class="mode shared">✎ ' +
-        (tp() && tp().session() ? "Team editing on" : "Signed in") +
+        "Signed in as " + esc(curatorEmail()) +
         " — changes save for everyone</span> " +
         '<span class="dk">' + (dirty ? "team-configured scenario" : "using baked defaults") + "</span>";
       // ⚠️ WORK THAT EXISTS ONLY HERE MUST SAY SO, and offer the way out. A
@@ -3119,11 +3133,19 @@
       // phrase path promotes automatically; this path had no promotion at all.
       if (hasLocalOnlyEdits()) {
         status += ' <span class="cplfund-saving local">⚠ This browser holds changes nobody else can see</span>';
-        rightBtn = '<button type="button" class="rst warn" id="cplFundPromote">' +
-          "Publish this browser&#39;s changes</button>";
+        // ⚠️ A CONTROL WHOSE JOB IS REASSURANCE MUST ACKNOWLEDGE THE CLICK.
+        // Sam, 2026-08-28: "it didn't appear to respond at first but then the
+        // button disappeared". The publish is async and re-renders, so without
+        // a pending state the only feedback is the button vanishing — on the
+        // one control that exists to prove private work became shared.
+        rightBtn = savingState === "saving"
+          ? '<button type="button" class="rst warn" id="cplFundPromote" disabled>Publishing&hellip;</button>'
+          : '<button type="button" class="rst warn" id="cplFundPromote">' +
+            "Publish this browser&#39;s changes</button>";
       }
       if (dirty) resetBtn = '<button type="button" class="rst warn" id="cplFundReset">Reset scenario to defaults</button>';
-      rightBtn += '<button type="button" class="lock" id="cplFundLock">Lock</button>';
+      // No per-tab Lock any more: the credential is a whole-session sign-in,
+      // so ending it belongs to the masthead identity menu, not to one tab.
     } else {
       // ⚠️ AN EXPIRED SIGN-IN IS NOT THE SAME AS NEVER HAVING SIGNED IN
       // (Sam, 2026-08-28: "I should get a notice if my token has expired").
@@ -3136,12 +3158,13 @@
       status = staleSess
         ? '<span class="mode scenario">⏰ Your sign-in has expired' +
           (dirty ? " — the edits since then are on this browser only" : "") + "</span> " +
-          '<span class="dk">Sign in again to save for everyone' +
+          '<span class="dk">Sign in again from the account control in the header to save for everyone' +
           (dirty ? "; your changes are kept and can be published after." : ".") + "</span>"
         : '<span class="mode scenario">' + (dirty ? "🧪 Exploring — " + esc(activeScenario) + " (this browser only)" :
           "Viewing the shared model") + "</span> " +
           '<span class="dk">' + (dirty ? "your edits overlay the shared scenario; nobody else sees them" :
-            "just start editing to explore — or unlock to save for the team") + "</span>";
+            "just start editing to explore — or sign in from the account control " +
+            "in the header to save for the team") + "</span>";
       if (dirty) resetBtn = '<button type="button" class="rst" id="cplFundReset">Reset exploration</button>';
     }
     // ⚠️ EVERY EDIT GETS AN EVENT, IN BOTH MODES (Sam, 2026-08-28).
@@ -3163,14 +3186,14 @@
       saveLine = unlocked()
         ? '<span class="cplfund-saving' + (savingState === "err" ? " err" : "") + '">' +
           (savingState === "saving" ? "saving…" : savingState === "saved" ? "✓ saved" :
-            "⚠ couldn’t save — phrase may have changed") + "</span>"
+            "⚠ couldn’t save — your sign-in may have expired") + "</span>"
         // Never a bare "✓ saved" here: it is true and it is what the reader
         // would misread. The destination is the whole message.
         : '<span class="cplfund-saving local">✓ saved to this browser only &mdash; ' +
           "sign in to publish for everyone</span>";
     }
     return '<div class="cplfund-authbar"><span class="grow">' + status + " " + saveLine + "</span>" +
-      resetBtn + '<span id="cplFundUnlockSlot"></span>' + rightBtn + "</div>";
+      resetBtn + rightBtn + "</div>";
   }
 
   // ── year controls + year filter ───────────────────────────────────────
@@ -8364,32 +8387,11 @@
     var rst = document.getElementById("cplFundReset");
     if (rst) rst.addEventListener("click", function () { savingState = ""; resetActive(); });
 
-    var lock = document.getElementById("cplFundLock");
-    if (lock) lock.addEventListener("click", function () {
-      var t = tp(); if (t) t.clear();
-      savingState = "";
-      render();
-    });
+    // No Lock button and no team-phrase unlock row: curating this tab needs a
+    // magic-link sign-in, which is held for the whole session and ended from the
+    // masthead. promoteScenarioToShared() is still reachable — via the Publish
+    // button below, which is the ONLY path now, so it must never be gated away.
 
-    // Unlock row (team phrase) in the auth bar when locked.
-    if (!unlocked()) {
-      var slotEl = document.getElementById("cplFundUnlockSlot");
-      var t = tp();
-      if (slotEl && t && typeof t.unlockRow === "function") {
-        slotEl.appendChild(t.unlockRow({
-          label: "🔓 Unlock team editing",
-          blurb: "",
-          onUnlocked: function () {
-            savingState = "";
-            // Promote this browser's local what-if into the shared ACTIVE scenario —
-            // "what you were exploring becomes the team's model" (kept if the save
-            // fails). Write the merge back INTO the config so SHARED stays a live
-            // pointer. No what-if → just re-render in shared mode.
-            promoteScenarioToShared();
-          }
-        }));
-      }
-    }
 
     // The publish button for a local overlay held under an unlocked session.
     var promoteBtn = document.getElementById("cplFundPromote");

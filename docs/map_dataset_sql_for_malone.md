@@ -159,14 +159,14 @@ themselves** behaving differently from a field **MAP generates**.
    latter — it is the entire point of the request.
 2. **`ExhibitID` blankness is inconsistent, and that is data.** The `-Course`
    variant arrives with `"Default Credit"`; the `-Area` variant arrives empty;
-   at least one college sends a literal `"-"`. Please don't normalise these
+   at least one college sends a literal `"-"`. Please don't normalize these
    away — the difference tells us which path the credit took.
 3. **`CourseType` is 11 values in two vocabularies**, not 3. Send it verbatim.
    It is the most valuable field in the extract: because MAP generates it, it is
    the one field we can trust to mean the same thing at every college, and it is
    what lets us measure real course credit against elective/GE-area credit.
 4. **All four credit fields are 0 on unapproved rows.** That is correct
-   behaviour, not missing data — but it means any ratio must guard its
+   behavior, not missing data — but it means any ratio must guard its
    denominator, since the unapproved population is exactly the backlog we care
    about.
 5. **`TotalStudentsForCR` is not usable as a student count.** It varies *within*

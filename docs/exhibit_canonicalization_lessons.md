@@ -340,7 +340,7 @@ the kb_curation flags into a generated artifact (analog of
 `_apply_canonical_subj4.py`) — so curator flags can drive downstream
 filtering / hiding in the dashboard's exhibit-analysis cards. Deferred
 because the MVP shows the badge inline on the EACR table and that's the
-80% case. Build it when flag-driven downstream behaviour is needed.
+80% case. Build it when flag-driven downstream behavior is needed.
 
 ## Next concrete step (2026-05-24, post PR-D)
 
@@ -1307,7 +1307,7 @@ EXISTING credential."** Method (re-usable for the next pass):
   (which needs the PII-purged CustomReport).
 - **Know when to STOP batching:** the remaining 67 are the long tail — **~50 need a NEW credential
   minted** (new `unified_title` + issuer, a `credentials.json` add), not a fold-into-existing.
-  That's per-item judgement (the `exhibit-canonicalization` skill), NOT safe to fuzzy-batch.
+  That's per-item judgment (the `exhibit-canonicalization` skill), NOT safe to fuzzy-batch.
 
 ---
 
@@ -1676,7 +1676,7 @@ Sam's evening asks, all shipped: *"look at what I've recently saved … do more
 pre-seeding … For pre-seeded items, leave them ready to save but not yet
 saved … shouldn't we have a toggle [for] just the ones needing to be triaged?
 … speed all the credit by exam still in the hopper — preseed the titles using
-your judgement and the issuing agency CCC."*
+your judgment and the issuing agency CCC."*
 
 **Queue math at build time:** 451 queue rows; ~181 live-assigned (Sam hand-
 triaged ~90 more today on top of the 158 Session-102 pre-seeds — he was saving

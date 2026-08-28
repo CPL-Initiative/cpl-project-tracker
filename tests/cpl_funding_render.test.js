@@ -715,24 +715,34 @@ const {
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "SHARED metric");
 }
 
-// C7 — team-phrase (shared) editing: when unlocked, edits go to the SHARED store
-// and reset clears it (not the scenario). Mock CPL_TEAM_PHRASE with a session.
+// ⚠️ C7 / C7b USED THE TEAM PHRASE, WHICH NO LONGER UNLOCKS THIS TAB
+// (2026-08-28, Sam: "clean up the auth so it requires the magic link auth and
+// not the team phrase"). The BEHAVIOR both blocks guard is unchanged — unlocked
+// edits land in SHARED, and work explored while locked can become the team's
+// model — so they are re-pointed at the credential and the control that now
+// carry it, never deleted.
+function reviewerSession(win, email) {
+  return {
+    _live: true,
+    get: function () { return this._live ? { access_token: "header.payload.sig", email: email || "co@cccco.edu" } : null; },
+    isFresh: function () { return true; },
+    authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; },
+    signOut: function () { this._live = false; }
+  };
+}
+
+// C7 — signed-in (shared) editing: when unlocked, edits go to the SHARED store
+// and reset clears it (not the scenario).
 {
   const { window } = freshDom();
-  window.CPL_TEAM_PHRASE = {
-    _pass: "x",
-    session: function () { return this._pass ? { teamPass: this._pass, email: "(team)" } : null; },
-    clear: function () { this._pass = null; },
-    decorateHeaders: function (h) { return h; },
-    checkWrite: function (r) { return Promise.resolve({ ok: true, status: 200 }); },
-    handleWriteFailure: function () { return false; },
-    unlockRow: function () { return window.document.createElement("span"); }
-  };
+  const sess = reviewerSession(window);
+  window.CPL_SESSION = sess;
   const doc = boot(window);
-  check("auth bar shows team-editing-on when unlocked",
-    doc.querySelector(".cplfund-authbar .mode.shared") &&
-    doc.querySelector(".cplfund-authbar .mode.shared").textContent.indexOf("Team editing on") !== -1);
-  // Edit the visible (Year-1) P1 metric → it lands in SHARED (not the scenario).
+  check("auth bar shows signed-in when unlocked",
+    !!doc.querySelector(".cplfund-authbar .mode.shared"));
+  check("...and names the curator rather than a shared placeholder",
+    doc.querySelector(".cplfund-authbar .mode.shared").textContent.indexOf("co@cccco.edu") !== -1);
+  // Edit the visible (Year-1) P1 metric -> it lands in SHARED (not the scenario).
   commit(window, doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]'), "TEAM edit");
   check("unlocked edit writes to the SHARED store",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "TEAM edit");
@@ -741,43 +751,37 @@ const {
   click(window, doc.getElementById("cplFundReset"));
   check("reset (unlocked) clears the shared config",
     Object.keys(window.CPL_FUNDING_TAB._getShared()).length === 0);
-  // Lock returns to anonymous scenario mode.
-  click(window, doc.getElementById("cplFundLock"));
-  check("lock returns to the anonymous scenario mode",
+  // ⚠️ No Lock button any more — the credential is a whole-session sign-in ended
+  // from the masthead, so losing it is what returns the tab to scenario mode.
+  sess.signOut();
+  window.CPL_FUNDING_TAB.render();
+  check("losing the session returns the tab to the anonymous scenario mode",
     !!doc.querySelector(".cplfund-authbar .mode.scenario"));
+  delete window.CPL_SESSION;
 }
 
-// C7b — a local scenario is PROMOTED into the shared config on unlock
-// ("what you were exploring becomes the team's model").
+// C7b — a local scenario is PROMOTED into the shared config, now via the Publish
+// button. ⚠️ This is the ONLY path left: the phrase unlock row that used to carry
+// the promotion is gone, so a regression here strands a curator's work silently,
+// which is exactly the bug #1371 fixed.
 {
   const { window } = freshDom();
-  const mock = {
-    _pass: null,
-    session: function () { return this._pass ? { teamPass: this._pass } : null; },
-    clear: function () { this._pass = null; },
-    decorateHeaders: function (h) { return h; },
-    checkWrite: function () { return Promise.resolve({ ok: true, status: 200 }); },
-    handleWriteFailure: function () { return false; },
-    unlockRow: function (opts) {
-      const b = window.document.createElement("button");
-      b.className = "mock-unlock";
-      const self = this;
-      b.addEventListener("click", function () { self._pass = "x"; opts.onUnlocked(self.session()); });
-      return b;
-    }
-  };
-  window.CPL_TEAM_PHRASE = mock;
-  const doc = boot(window);   // locked (no pass) → scenario mode
+  const doc = boot(window);   // locked (no session) -> scenario mode
   commit(window, doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]'), "explored metric");
   check("locked edit is a local scenario", !!scenSlot(window));
-  // Unlock → the scenario promotes into SHARED and clears.
-  click(window, doc.querySelector(".mock-unlock"));
-  check("unlock promotes the scenario into the shared config",
+  // Sign in: the overlay is NOT promoted automatically on this path — it is
+  // called out, with a control to publish it.
+  window.CPL_SESSION = reviewerSession(window);
+  window.CPL_FUNDING_TAB.render();
+  const promote = doc.getElementById("cplFundPromote");
+  check("signing in over a local overlay offers a publish control", !!promote);
+  click(window, promote);
+  check("publishing promotes the scenario into the shared config",
     window.CPL_FUNDING_TAB._getShared().yearPriorities["1"]["0"].metric === "explored metric");
-  check("unlock clears the local scenario after promotion", !scenSlot(window));
+  check("publishing clears the local scenario after promotion", !scenSlot(window));
   check("promoted model still renders the edited value",
     doc.querySelector('[data-edit="metric"][data-slot="1"][data-idx="0"]').value === "explored metric");
-  delete window.CPL_TEAM_PHRASE;
+  delete window.CPL_SESSION;
 }
 
 finish();

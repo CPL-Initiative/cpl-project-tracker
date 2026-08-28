@@ -97,3 +97,19 @@ jobs:
       # SkyView build is 9.9 MB and GITIGNORED, so a link to it 404s on the live site
       # while working perfectly on the machine that built it. Proven to fail when the
       # href is repointed at that build. Runs under `npm test` via tests/run.js.
+      # Docs corpus (Session 204) — the lint that guards this repo's prose had
+      # itself never run in CI: `npm test` discovers only *.test.js, so
+      # tests/docs_audit_test.py's 67 assertions executed NOWHERE. The index is
+      # the case that matters most, because its failure is silent and gradual —
+      # docs/INDEX.md is generated now, and `--check` is what turns "somebody
+      # forgot to rebuild" into a red check instead of another 273 KB landing
+      # page. The spelling suite guards the substitution that must never land in
+      # a link target, a wikilink, a code span or a quotation (imported COCI /
+      # MAP strings, and Sam's own words). Pure-stdlib python; same non-required
+      # check.
+      - name: Docs corpus — lint, index generator, spelling
+        run: |
+          python3 tests/docs_audit_test.py
+          python3 tests/docs_index_build_test.py
+          python3 tests/american_spelling_test.py
+          python3 kb/_build_docs_index.py --check

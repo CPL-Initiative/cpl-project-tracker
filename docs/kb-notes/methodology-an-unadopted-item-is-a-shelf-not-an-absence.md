@@ -15,7 +15,7 @@ artifacts:
 
 # An unadopted item is a shelf, not an absence — and it needs its own band
 
-> **One-sentence summary** — when a catalogue is deliberately stocked ahead of
+> **One-sentence summary** — when a catalog is deliberately stocked ahead of
 > demand, zero uptake is a product state, not a quality signal, and folding it into
 > a popularity-ranked list makes the system assert things that are false.
 
@@ -57,7 +57,7 @@ the model carefully separated.
 
 ## The pattern
 
-1. **Separate bands, separately labelled.** Each band's copy states what it is and
+1. **Separate bands, separately labeled.** Each band's copy states what it is and
    what it is not. The shelf band says explicitly that zero uptake is not a quality
    signal and that the asking party would be *first*, which is a feature.
 2. **Slot reservation, not sort priority.** Ordering the shelf first

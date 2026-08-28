@@ -1,10 +1,9 @@
 ---
 title: "Methodology — elicit curation doctrine with small, grounded, curated scenario batches (not the firehose)"
-type: methodology
 kb-status: published
 created: 2026-07-14
 updated: 2026-07-14
-tags: [ccr, doctrine, mind-meld, curation, human-in-the-loop, calibration]
+tags: [methodology, ccr, doctrine, mind-meld, curation, human-in-the-loop, calibration]
 related:
   - "[[docs/ccr_convergence_lessons]]"
   - "[[kb/merge_doctrine]]"

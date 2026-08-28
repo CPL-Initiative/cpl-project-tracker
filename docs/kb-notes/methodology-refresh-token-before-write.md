@@ -1,6 +1,5 @@
 ---
 title: Refresh the access token before every write (don't trust a format-valid JWT)
-type: methodology
 kb-status: published
 created: 2026-06-26
 updated: 2026-06-26
