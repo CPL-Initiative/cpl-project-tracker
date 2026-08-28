@@ -1549,3 +1549,114 @@ what saved it.
    courses"* among CREDIT strategies (the carryover from Session 199). The NC
    priorities inherit credit's strategies today; moving that line is a change to
    curator-authored text in the live config, so it is Sam's, not a session's.
+
+## 2026-08-27 (later, Session 200) — twelve tweaks, and the two guards I broke without noticing
+
+The NC lane merged as **#1367** after Sam drove the row through roughly a dozen
+visual passes in one sitting. The build lessons are in the section above; these
+are the ones the *iteration* produced.
+
+### ⭐ Sam arrived at the grouping problem from the other end
+
+I had rendered three options for his "gray underline below the CR row" and
+recommended the opposite — heavier rules BETWEEN institutions, lighter WITHIN
+the pair — because underlining inside the pair makes a noncredit row read as a
+separate college. He accepted that, then found the same defect independently
+from the zebra striping:
+
+> *"rather than alternating gray/white rows, which makes them look like
+> different colleges, would be better to alternate between colleges and keep the
+> CR and NC same background."*
+
+`tr:nth-child(even)` is **row** parity. The moment a college can occupy two
+rows, its credit row and its noncredit row land on opposite stripes. Two
+independent routes to one conclusion is the strongest signal a design has that
+it is right; the stripe is now emitted per COLLEGE and carried by every row of
+that college's block, so it survives a future third row.
+
+### ⚠️ I broke two suites I never ran, twice, the same way
+
+`cpl_funding_metric_pin` (9 of 43) and `cpl_funding_basis` (1 of 37). Neither
+failure was about what the suite tests:
+
+- metric_pin indexed priority cells off the row's `<td>` list — `cells[4]`,
+  `[5]`, `[6]` — and matched on the inline `"Now"` label. A **TGT/NOW label
+  column** shifted every index by one and removed the label.
+- basis asserted `/Credit FTES/` against the whole `<thead>`. Sam **renamed the
+  header**, which changed nothing about the allocation basis that assertion
+  exists to protect.
+
+**Both times I ran the suites my change was ABOUT rather than the ones it could
+REACH.** CI found one; the merge conflict made me re-run and find the other. The
+rule is not "run everything" (30+ minutes) — it is that a *layout* change reaches
+every suite that locates an element, and a *wording* change reaches every suite
+that matches a string.
+
+Both are now written against the CONTRACT: `td.cf-prio` in document order IS
+P1/P2/P3, `.cf-t`/`.cf-a` ARE the target and actual lines, and the size column
+NAMES THE BASIS IN FORCE rather than saying one particular phrase. ⚠️ basis's
+paired assertion had also gone **vacuous** — "the header does NOT say Credit
+FTES" became trivially true once nothing said it anywhere; it now asserts the
+positive and the negative on the same scoped element.
+
+### ⛔ The threshold cannot go below 400, and that is a finding about the FLOOR
+
+Sam asked whether to show all noncredit rows because *"I may adjust the minimum
+500 threshold"*. Building that surfaced the constraint behind his question.
+Swept through the model (not re-derived):
+
+| threshold | in lane | floor demanded | vs $1.8M |
+|---|---|---|---|
+| 500 | 33 | $1.65M | ok, 2 also capped |
+| 450 | 34 | $1.70M | ok, ceiling stops binding |
+| **400** | **35** | **$1.75M** | **last feasible step** |
+| 350 | 38 | $1.90M | ✗ `floorInfeasible` |
+| 200 | 58 | $2.90M | ✗ |
+| 50 | 88 | $4.40M | ✗ |
+
+**The threshold and the floor are one decision, not two.** Widening the lane
+below 400 makes the $50k minimum unpayable, so the lever for a bigger lane is
+the floor or the carve-out. Also: at 450 and below the $100k ceiling stops
+binding entirely (capped 2 → 0), so it is inert the moment the lane widens.
+
+### ⭐ Showing the 78 below-threshold colleges is a DIAL argument
+
+While the table listed only qualifiers, moving the threshold changed **which
+rows exist** — so the table could not show the consequence of the curator's own
+edit; you had to already know who was missing to see who joined.
+`ncInstitutions()` has returned the roster unfiltered since it was written, for
+exactly this reason. The ROW layer simply never honored it.
+
+⚠️ **A below-threshold row must not print $0.** "$0 earned" and "never eligible
+to earn" are different facts. Em-dashes with the reason, plus a `below 500` chip
+naming the gap — 476.7 short by 23 is a different story from 0.26, and both were
+equally invisible before.
+
+### ⚠️ "Opt in" was hiding a live typo, two layers down
+
+Sam asked for wording that sounds less optional without a compliance tone.
+"Confirm participation" — opt-in is mailing-list language presuming a default of
+OUT, when nothing here turns on a choice, only on results.
+
+Chasing the label found that **`partLabel` ends in the word "by" and two of its
+three call sites appended their own**, so the eligibility hover and the
+baseline-gate text had been rendering *"Opt-in participation **by by**
+2026-11-01"*. The third site appended nothing — so the same label had to end in
+"by" there and not end in "by" at the other two. **No single value satisfies
+that**, which is why editing the text could never have fixed it.
+
+⚠️ It is guarded through a **hook**, not the screen: both render surfaces need
+live eligibility data (`baselineGate()` short-circuits to "pending" when the
+coordinator feed has not loaded), so the join is unreachable from jsdom — which
+is exactly why it shipped wrong and stayed wrong.
+
+### Next
+
+1. **The ⬆/⬇ glyph → the words `min`/`max`.** Sam asked what it meant, which is
+   the finding: one mark doing two jobs ($150k credit floor on a credit row,
+   $50k noncredit floor on an NC row), told apart only by hover, against his own
+   standing preference for plain words over glyphs.
+2. **His call on the threshold**, given it is really a floor decision.
+3. The credit-lane variant of the `fmtCountK` rounding.
+4. NC's own strategy text (Year-1 P-Success still lists "noncredit mirror
+   courses" among CREDIT strategies).
