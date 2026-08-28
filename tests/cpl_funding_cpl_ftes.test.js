@@ -342,8 +342,17 @@ check("the two quantities are ~500x apart, so a mix-up could not hide",
     !prio.some(function (t) { return /Per-student rate/.test(t); }));
   check("F: CPL FTES is never divided by headcount to make a reach %",
     !prio.some(function (t) { return /of statewide headcount/.test(t); }));
-  check("F: the target names the rate it was derived from",
-    prio.some(function (t) { return /÷ \$5,649\.63 per CPL FTES/.test(t); }));
+  // ⚠️ NARROWED, not fixed (Sam, 2026-08-28): he asked for the DERIVED arithmetic
+  // ("$X priority funding ÷ $Y per CPL FTES. A performance target only…") to come
+  // off the card. Requiring that sentence would pin the card to a reversed ruling.
+  //
+  // What it was protecting survives and is still asserted: a reader must be able
+  // to see the RATE the target came from, without doing arithmetic in their head.
+  // The card states it one line above, on the funding-factor line — so the rate
+  // is named, just not the division. A card that dropped the rate entirely, or
+  // showed a target with no price beside it, still fails here.
+  check("F: the card names the per-CPL-FTES rate the target rides on",
+    prio.some(function (t) { return /\$5,649\.63 per CPL FTES/.test(t); }));
 
   // ── the pool rate card ──
   const rate = cardTexts.find(function (t) { return /Reimbursement rate per/.test(t); });

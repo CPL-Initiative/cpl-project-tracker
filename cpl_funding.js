@@ -1916,6 +1916,30 @@
     ov.yearPriorities[slot][idx][field] = value;
     persistActive();
   }
+  // ── the NONCREDIT write path (Sam, 2026-08-28) ──────────────────────────
+  // "Let's take the needed steps to ... get it into supabase where it belongs."
+  // setPrio() addresses `yearPriorities`, which is the CREDIT row — that is why
+  // every other field on an NC card is read-only. This is the one control that
+  // has somewhere correct to write, so it is the one control the NC lane offers.
+  //
+  // ⚠️ THE INDEX IS THE SOURCE INDEX, NOT THE DISPLAY POSITION. Priorities are
+  // reorderable, so a position-keyed write lands on a different priority the
+  // moment someone drags a card — the identity rule priorities() and
+  // ncPrioOverride() already follow. Callers pass `p.src`; nothing here calls
+  // srcIdx(), because converting twice would be worse than not converting.
+  function setNcPrioStrategies(slot, srcIndex, list) {
+    slot = prioSlot(slot);
+    var ov = activeOverride();
+    ov.ncPriorities = ov.ncPriorities || {};
+    ov.ncPriorities[slot] = ov.ncPriorities[slot] || {};
+    ov.ncPriorities[slot][srcIndex] = ov.ncPriorities[slot][srcIndex] || {};
+    ov.ncPriorities[slot][srcIndex].strategies = (list || []).slice();
+    persistActive();
+  }
+  function ncPrioStrategiesBySrc(slot, srcIndex) {
+    var v = ncPrioOverride(slot, srcIndex, "strategies");
+    return Array.isArray(v) ? v.slice() : [];
+  }
   function setFeeders(list) { activeOverride().feeders = list; persistActive(); }
   function setFeederMetric(v) { activeOverride().feederMetric = v; persistActive(); }
   function setDisbursement(v) { activeOverride().disbursement = v === "frontload" ? "frontload" : "even"; persistActive(); }
@@ -1999,7 +2023,7 @@
   // declarative sweep cannot miss one. wire() reads the same list.
   var CURATE_ATTRS = ["data-edit", "data-note", "data-notesave",
     "data-reqdel", "data-reqhide", "data-reqshow",
-    "data-stratadd", "data-stratdel", "data-timingdel",
+    "data-stratadd", "data-stratdel", "data-ncstratadd", "data-ncstratdel", "data-timingdel",
     "data-priodrag", "data-priopos",
     "data-pooladd", "data-pooldel", "data-poolhide", "data-poolshow", "data-poolkind"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset", "cplFundLock",
@@ -3775,19 +3799,29 @@
     // writes the noncredit set (ncPrioOverride() is where they will live).
     if (laneIsNc()) {
       var ncp = ncPriorities(slot)[i];
+      var srcI = ncp ? ncp.src : i;
       var ncList = (ncp && ncp.strategies) || [];
-      if (!ncList.length) {
-        return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies</div>' +
-          '<p class="nums dk">None written for the noncredit lane yet. Credit&rsquo;s are not shown here: a ' +
-          "noncredit institution does not generally award the credit &mdash; it prepares students to earn it at a " +
-          "credit college, which is different work.</p></div>";
-      }
-      // Read-only for the same reason every other NC field is (laneReadOnly):
-      // the strategy editor addresses the CREDIT priority's stored row.
-      return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies</div>' +
-        ncList.map(function (x) {
-          return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' + esc(x) + "</div>";
-        }).join("") + "</div>";
+      var ncKey = slot + ":" + srcI;
+      // EDITABLE, unlike every other field on an NC card — and for a reason that
+      // is the mirror image of why the others are not: this one has a store of
+      // its own (ncPriorities), so an edit lands on the noncredit priority
+      // instead of silently rewriting credit's.
+      var ncRows = ncList.map(function (x, j) {
+        return '<div class="cplfund-reqrow"><span class="cplfund-bullet">&bull;</span>' +
+          edText("nc-strategy", x, { slot: slot, idx: srcI, sidx: j,
+            label: "Noncredit recommended strategy", placeholder: "Add a noncredit strategy…" }) +
+          '<button type="button" class="cplfund-reqdel" data-ncstratdel="' + esc(ncKey + ":" + j) +
+          '" title="Remove this strategy" aria-label="Remove noncredit strategy ' + (j + 1) + '">✕</button></div>';
+      }).join("");
+      return '<div class="cplfund-strat"><div class="cplfund-strat-h">Recommended strategies (noncredit)</div>' +
+        (ncList.length ? ncRows
+          : '<p class="nums dk">None written for the noncredit lane yet. Credit&rsquo;s are not shown here: a ' +
+            "noncredit institution does not generally award the credit &mdash; it prepares students to earn it at " +
+            "a credit college, which is different work.</p>") +
+        (publicMode() ? "" :
+          '<button type="button" class="cplfund-optbtn cplfund-stratadd" data-ncstratadd="' + esc(ncKey) +
+          '" title="Add a noncredit strategy">＋ Add strategy</button>') +
+        "</div>";
     }
     var list = prioStrategies(slot, i);
     var rows = list.map(function (s, j) {
@@ -7498,6 +7532,17 @@
       if (sj >= 0 && sj < slist.length) { slist[sj] = raw; setPrioStrategies(slot, Number(idx), slist); }
       return;
     }
+    // The noncredit twin of "strategy". `idx` here is the SOURCE index (the NC
+    // rows carry p.src, not a display position), so it is used unconverted.
+    if (edit === "nc-strategy") {
+      var nsj = Number(el.getAttribute("data-sidx"));
+      var nlist = ncPrioStrategiesBySrc(slot, Number(idx));
+      if (nsj >= 0 && nsj < nlist.length) {
+        nlist[nsj] = raw;
+        setNcPrioStrategies(slot, Number(idx), nlist);
+      }
+      return;
+    }
     if (edit === "timing-label" || edit === "timing-date") {
       var ti = Number(idx);
       var tlist = timingItems();
@@ -7753,6 +7798,23 @@
         var pslot = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
         var slist = prioStrategies(pslot, pi);
         if (sj >= 0 && sj < slist.length) { slist.splice(sj, 1); setPrioStrategies(pslot, pi, slist); }
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncstratadd]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncstratadd").split(":");
+        var ps = parts[0], pi = Number(parts[1]);
+        setNcPrioStrategies(ps, pi, ncPrioStrategiesBySrc(ps, pi).concat([""]));
+      });
+    });
+    document.querySelectorAll("#cplFundingMount [data-ncstratdel]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        savingState = "";
+        var parts = b.getAttribute("data-ncstratdel").split(":");
+        var ps = parts[0], pi = Number(parts[1]), sj = Number(parts[2]);
+        var nlist = ncPrioStrategiesBySrc(ps, pi);
+        if (sj >= 0 && sj < nlist.length) { nlist.splice(sj, 1); setNcPrioStrategies(ps, pi, nlist); }
       });
     });
     // Timing list: add a blank / remove one.

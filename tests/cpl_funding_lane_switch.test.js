@@ -34,7 +34,7 @@
 // still read 34/33/33 while the pots come from two pools that sum to nothing.
 //
 // Run from repo root: `npm test` (or `node tests/cpl_funding_lane_switch.test.js`).
-const { check, freshDom, boot, click, finish } = require("./lib/cpl_funding_harness.js");
+const { check, freshDom, boot, click, commit, finish } = require("./lib/cpl_funding_harness.js");
 
 // Locate things STRUCTURALLY, never by index or by a literal label — both of
 // those broke suites on 2026-08-27 for reasons unrelated to what they tested.
@@ -204,8 +204,15 @@ check("every noncredit priority is earning $0 while the feed is undelivered",
     ncNow.length === 3 && ncNow.every((c) => /NC ONLY: refer completers/.test(stratTexts(c))));
   check("credit's strategies never leak into the noncredit lane",
     ncNow.every((c) => !/CREDIT ONLY:/.test(flat(c) + stratTexts(c))));
-  check("noncredit strategies are read-only like every other NC field",
-    ncNow.every((c) => !c.querySelector(".cplfund-strat [data-edit], .cplfund-strat [data-stratadd]")));
+  // ⭐ THE ONE NC CONTROL THAT IS EDITABLE, and the reason is the mirror image
+  // of why the others are not (Sam, 2026-08-28: "get it into supabase where it
+  // belongs"). Every other field addresses credit's stored row; strategies have
+  // a store of their own, so an edit lands on the noncredit priority.
+  check("noncredit strategies ARE editable — they have a store of their own",
+    ncNow.every((c) => !!c.querySelector('.cplfund-strat [data-edit="nc-strategy"]')));
+  check("...and never through credit's strategy edit key",
+    ncNow.every((c) => !c.querySelector('.cplfund-strat [data-edit="strategy"], ' +
+      ".cplfund-strat [data-stratadd], .cplfund-strat [data-stratdel]")));
 
   T._state.viewLane = "cr"; T.render();
   const crNow = cards(win.document);
@@ -218,12 +225,65 @@ check("every noncredit priority is earning $0 while the feed is undelivered",
   check("with no NC override, the card says none are written (never credit's)",
     cards(win.document).every((c) => /None written for the noncredit lane/.test(flat(c))) &&
     cards(win.document).every((c) => !/CREDIT ONLY:/.test(flat(c) + stratTexts(c))));
-  // ⚠️ Leave the lane on NC — sections 5 and 6 below assert against it.
+  // ── the round trip: an edit in the NC lane must land on ncPriorities ─────
+  // ⚠️ THE ASSERTION THAT MATTERS IS WHERE IT LANDED, not that the field
+  // accepted a keystroke. A control that wrote to yearPriorities would look
+  // identical on screen and would silently rewrite the CREDIT priority.
+  {
+    // ⚠️ Re-seed: the block above deletes ncPriorities to prove the empty state,
+    // so without this there is no strategy row to edit and the null read would
+    // look like a missing editor rather than a missing fixture.
+    shared.ncPriorities = { "1": {} };
+    [0, 1, 2].forEach((i) => {
+      shared.ncPriorities["1"][i] = { strategies: ["NC ONLY: refer completers to a credit college"] };
+    });
+    T._state.viewLane = "nc"; T.render();
+    const before = JSON.parse(JSON.stringify(shared.yearPriorities["1"]));
+    const input = cards(win.document)[0].querySelector('[data-edit="nc-strategy"]');
+    commit(win, input, "EDITED NC STRATEGY");
+    const ov = T._getScenario().ncPriorities || shared.ncPriorities || {};
+    const landed = JSON.stringify(ov);
+    check("editing an NC strategy writes into ncPriorities",
+      /EDITED NC STRATEGY/.test(landed));
+    check("editing an NC strategy does NOT touch the credit priorities",
+      JSON.stringify(shared.yearPriorities["1"]) === JSON.stringify(before));
+    check("the edited text renders back on the card",
+      /EDITED NC STRATEGY/.test(
+        Array.from(cards(win.document)[0].querySelectorAll('[data-edit="nc-strategy"]'))
+          .map((e) => e.value).join(" ")));
+  }
+  // Adding a strategy on an empty NC priority must create the store, not throw.
+  {
+    delete shared.ncPriorities;
+    const sc = T._getScenario(); delete sc.ncPriorities;
+    T.render();
+    const add = cards(win.document)[0].querySelector("[data-ncstratadd]");
+    check("an empty NC priority still offers the add control", !!add);
+    click(win, add);
+    check("adding on an empty NC priority creates the store rather than throwing",
+      !!((T._getScenario().ncPriorities) || (T._getShared().ncPriorities)));
+  }
+  // ⚠️ LEAVE THE FIXTURE AS FOUND. A later block asserts the noncredit lane
+  // drops CREDIT's strategies, and it read "no strategy rows at all" as the
+  // proxy for that — which stops being true the moment NC has a set of its own.
+  // Clearing here keeps each block's precondition its own business.
+  delete shared.ncPriorities;
+  const sc0 = T._getScenario(); delete sc0.ncPriorities;
+  // Leave the lane on NC — sections 5 and 6 below assert against it.
+  T._state.viewLane = "nc"; T.render();
 })();
 
 // ── 5. the NC cards may not edit the credit configuration ───────────────────
-check("no noncredit card carries an edit control",
-  ncCards.every((c) => c.querySelectorAll("[data-edit]").length === 0));
+// ⚠️ NARROWED, deliberately: the NC strategy editor is now a legitimate control
+// (it writes to ncPriorities). What must still never appear is a control
+// addressing the CREDIT row — share, factor, metric, title, description.
+check("no noncredit card carries a control that writes to the credit priority",
+  ncCards.every((c) => Array.from(c.querySelectorAll("[data-edit]"))
+    .every((e) => e.getAttribute("data-edit") === "nc-strategy")));
+check("specifically: no share, factor, metric, title or description editor in NC",
+  ncCards.every((c) => !c.querySelector(
+    '[data-edit="share"], [data-edit="priofactor"], [data-edit="metric"], ' +
+    '[data-edit="prio-title"], [data-edit="description"], [data-edit="perstudent"]')));
 check("no noncredit card carries a priority-reorder control",
   ncCards.every((c) => !c.querySelector("[data-priomove], [data-priopos]")));
 
@@ -285,10 +345,20 @@ check("flipping back restores the credit strategy editor",
   // The specific phrase that makes this matter — it must not reach a noncredit
   // card as an instruction. It appears only inside the explanatory note, which
   // is why the bullet COUNT above is the real assertion and this is the second.
-  check("no seeded strategy text is presented as a noncredit instruction",
+  // ⚠️ ASSERT THE MEANING, NOT A ROW COUNT. This used to require the noncredit
+  // strategy block to hold no rows at all, which was only ever a proxy for
+  // "credit's list is not here" — and it stopped being true the day the NC lane
+  // got strategies of its own. What must hold is that nothing on an NC card is
+  // credit's text, and that any row present is addressed to the NC store.
+  check("no seeded credit strategy text is presented as a noncredit instruction",
     seededNc.every((c) => {
       const block = c.querySelector(".cplfund-strat");
-      return block && !block.querySelector("li, .cplfund-reqrow, [data-edit]");
+      if (!block) return false;
+      const vals = Array.from(block.querySelectorAll("input, textarea")).map((e) => e.value).join(" ");
+      const noCreditText = !/noncredit mirror courses|Batch upload to MAP/.test(block.textContent + vals);
+      const onlyNcControls = Array.from(block.querySelectorAll("[data-edit]"))
+        .every((e) => e.getAttribute("data-edit") === "nc-strategy");
+      return noCreditText && onlyNcControls;
     }));
 
   click(win, laneBtn(win.document, "cr"));
