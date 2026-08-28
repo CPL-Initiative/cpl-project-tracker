@@ -8,6 +8,8 @@ obsidian-folder: cpl-project-tracker
 related:
   - "[[CLAUDE]]"
   - "[[college_cr_evidence_lessons]]"
+superseded: true
+superseded_by: session_203_handoff.md
 ---
 
 # You are Session 200

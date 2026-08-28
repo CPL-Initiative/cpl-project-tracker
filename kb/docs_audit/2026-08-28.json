@@ -9,55 +9,56 @@
     "other": 150000
   },
   "summary": {
-    "files": 675,
-    "bytes": 7650894,
+    "files": 678,
+    "bytes": 7676637,
     "over_budget": 5,
-    "handoff_max": 201,
+    "handoff_max": 203,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 148639,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "always_loaded_bytes": 147785,
+    "superseded_files": 4,
+    "superseded_bytes": 32371,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 148639,
+        "bytes": 147785,
         "over": 1
       },
       "other": {
         "files": 87,
-        "bytes": 2131962,
+        "bytes": 2133412,
         "over": 2
       },
       "index": {
         "files": 1,
-        "bytes": 272007,
+        "bytes": 272862,
         "over": 1
       },
       "lessons": {
         "files": 70,
-        "bytes": 1831891,
+        "bytes": 1839835,
         "over": 1
       },
       "kb_note": {
-        "files": 338,
-        "bytes": 1787085,
+        "files": 340,
+        "bytes": 1795015,
         "over": 0
       },
       "handoff": {
-        "files": 178,
-        "bytes": 1479310,
+        "files": 179,
+        "bytes": 1487728,
         "over": 0
       }
     },
     "by_rule": {
       "oversized_doc": 5,
-      "american_spelling": 171,
+      "american_spelling": 173,
       "kb_note_dialect": 60,
+      "superseded_handoff": 4,
       "vault_heavy_path": 45
     },
     "vault": {
-      "files": 2323,
-      "bytes": 1231548708,
+      "files": 2329,
+      "bytes": 1231643631,
       "heavy_bytes": 598638632,
       "heavy_share": 0.486,
       "ignore_filters": [
@@ -114,26 +115,41 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 148639,
+        "bytes": 147785,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 88639,
-        "ratio": 2.48
+        "over_by": 87785,
+        "ratio": 2.46
       },
-      "message": "148,639 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "147,785 B is 2.5× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
       "path": "CLAUDE.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 272007,
+        "bytes": 272862,
         "limit": 40000,
         "lane": "index",
-        "over_by": 232007,
-        "ratio": 6.8
+        "over_by": 232862,
+        "ratio": 6.82
       },
-      "message": "272,007 B is 6.8× the index budget (40,000 B) — candidate for compaction",
+      "message": "272,862 B is 6.8× the index budget (40,000 B) — candidate for compaction",
       "path": "docs/INDEX.md"
     },
     {
@@ -337,29 +353,6 @@
       },
       "message": "2 British forms — modelling→modeling, labelled→labeled",
       "path": "docs/cpl_funding_handoff.md"
-    },
-    {
-      "rule": "american_spelling",
-      "fixable": false,
-      "detail": {
-        "total": 3,
-        "forms": {
-          "colour": {
-            "n": 1,
-            "prefer": "color"
-          },
-          "recognis": {
-            "n": 1,
-            "prefer": "recogniz"
-          },
-          "modelling": {
-            "n": 1,
-            "prefer": "modeling"
-          }
-        }
-      },
-      "message": "3 British forms — colour→color, recognis→recogniz, modelling→modeling",
-      "path": "docs/cpl_funding_lessons.md"
     },
     {
       "rule": "oversized_doc",
@@ -751,6 +744,21 @@
       },
       "message": "3 British forms — behaviour→behavior, summaris→summariz, defence→defense",
       "path": "docs/kb-notes/methodology-a-check-that-never-registers-can-never-fail.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "labelled": {
+            "n": 1,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "1 British form — labelled→labeled",
+      "path": "docs/kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md"
     },
     {
       "rule": "american_spelling",
@@ -3115,13 +3123,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 502171,
+        "bytes": 503621,
         "limit": 150000,
         "lane": "other",
-        "over_by": 352171,
-        "ratio": 3.35
+        "over_by": 353621,
+        "ratio": 3.36
       },
-      "message": "502,171 B is 3.3× the other budget (150,000 B) — candidate for compaction",
+      "message": "503,621 B is 3.4× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/roadmap_archive.md"
     },
     {
@@ -3720,6 +3728,65 @@
       },
       "message": "1 British form — generalis→generaliz",
       "path": "docs/session_181_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 198,
+        "authoritative": 203,
+        "has_frontmatter": true
+      },
+      "message": "handoff 198 is below the authoritative 203 but is not stamped `superseded: true`",
+      "path": "docs/session_198_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 199,
+        "authoritative": 203,
+        "has_frontmatter": true
+      },
+      "message": "handoff 199 is below the authoritative 203 but is not stamped `superseded: true`",
+      "path": "docs/session_199_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 200,
+        "authoritative": 203,
+        "has_frontmatter": true
+      },
+      "message": "handoff 200 is below the authoritative 203 but is not stamped `superseded: true`",
+      "path": "docs/session_200_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 201,
+        "authoritative": 203,
+        "has_frontmatter": true
+      },
+      "message": "handoff 201 is below the authoritative 203 but is not stamped `superseded: true`",
+      "path": "docs/session_201_handoff.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 2,
+        "forms": {
+          "labelled": {
+            "n": 2,
+            "prefer": "labeled"
+          }
+        }
+      },
+      "message": "2 British forms — labelled→labeled",
+      "path": "docs/session_203_handoff.md"
     },
     {
       "rule": "american_spelling",

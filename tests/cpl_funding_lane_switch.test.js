@@ -408,4 +408,110 @@ check("the credit minimum counts the colleges sharing the floor",
 check("the noncredit minimum counts the institutions sharing the floor",
   ncModel.floorCount <= 1 || boundIsCounted(rows[1], "Minimum"));
 
+
+// ── 10. a private save and a published save must not feel the same ──────────
+// Sam relabelled the three priorities on the live tab, 2026-08-28, and the
+// change never reached Supabase. The routing was never at fault — every
+// consumer reads the model through _prios()/_ncPrios(), so a rename propagates
+// on its own. The change never ENTERED the routing.
+//
+// activeOverride() returns the per-browser SCENARIO layer whenever unlocked()
+// is false, persistActive() writes it to localStorage inside a swallowed
+// try/catch, and the scenario layer wins the render — so the tab shows the edit
+// back and it looks published.
+//
+// ⚠️ THE ACKNOWLEDGMENT WAS GATED ON unlocked(). A signed-in curator got
+// "saving… / ✓ saved" beside the field they had just typed in; a locked one got
+// nothing but a static banner that was already on screen before they started
+// and does not change when they type. The per-edit event existed exactly where
+// it was not needed and was missing where it was.
+{
+  const dom2 = freshDom();
+  const w2 = dom2.window;
+  const d2 = boot(w2);
+  const T2 = w2.CPL_FUNDING_TAB;
+  const bar = () => (d2.querySelector(".cplfund-authbar") || { textContent: "" })
+    .textContent.replace(/\s+/g, " ").trim();
+
+  // The fixture boots LOCKED (no team phrase, no reviewer session).
+  check("the fixture is locked, which is the state that loses work",
+    /Exploring|Viewing the shared model/.test(bar()));
+
+  // An edit in locked mode: it persists (to localStorage) and must SAY so.
+  T2._state.viewSlot = "1";
+  const sh2 = T2._getShared();
+  sh2.yearPriorities = sh2.yearPriorities || {};
+  sh2.yearPriorities["1"] = sh2.yearPriorities["1"] || {};
+  const titleInput = d2.querySelector('.cplfund-prio [data-edit="prio-title"]');
+  check("a priority title is editable in the credit lane", !!titleInput);
+  if (titleInput) {
+    commit(w2, titleInput, "RENAMED BY A LOCKED CURATOR");
+    const after = bar();
+    check("a locked edit is acknowledged at all (it used to be silent)",
+      /saved/i.test(after));
+    check("...and names the DESTINATION, not just the fact of saving",
+      /this browser/i.test(after));
+    check("...and tells the curator how to publish it",
+      /sign in/i.test(after));
+    // ⚠️ A bare "✓ saved" is true and is the exact misreading this prevents.
+    check("a locked save never reads as a plain published save",
+      !/^\s*✓ saved\s*$/.test(after) && !/save for everyone/i.test(after));
+  }
+}
+
+// ── 11. the client's gate must mirror the RLS policy ────────────────────────
+// Sam relabelled the priorities while the masthead read "● Signed in", and
+// nothing reached Supabase.
+//
+// ⚠️ TWO CREDENTIALS, ONE WORD. COBI's masthead reports the REVIEWER magic-link
+// session; this tab gated shared editing on `tp().session()`, which is non-null
+// ONLY when a team PHRASE sits in localStorage. All three funding tables carry
+//     with check (is_allowed_reviewer() OR team_pass_ok())
+// so the DATABASE would have accepted his write. The client never attempted it:
+// activeOverride() handed him the per-browser scenario layer, the edit went to
+// localStorage, and the scenario layer won the render — so the tab showed the
+// change back and it looked published.
+//
+// A gate that is STRICTER than its policy fails silently and in the direction
+// of lost work; the guard is that the two agree.
+{
+  const dom3 = freshDom();
+  const w3 = dom3.window;
+  const d3 = boot(w3);
+  const T3 = w3.CPL_FUNDING_TAB;
+  const bar3 = () => (d3.querySelector(".cplfund-authbar") || { textContent: "" })
+    .textContent.replace(/\s+/g, " ").trim();
+
+  check("with neither credential the tab is locked", /Viewing the shared model|Exploring/.test(bar3()));
+
+  // A reviewer session, no team phrase — the exact state in Sam's screenshot.
+  w3.CPL_SESSION = {
+    get: () => ({ access_token: "header.payload.sig", refresh_token: "r" }),
+    isFresh: () => true,
+    authHeaders: (extra) => Object.assign({ apikey: "anon", Authorization: "Bearer header.payload.sig" }, extra || {}),
+  };
+  T3.render();
+  check("a fresh REVIEWER session unlocks shared editing (it used not to)",
+    /save for everyone/i.test(bar3()));
+  check("...and the banner names the credential actually doing it",
+    /Signed in/i.test(bar3()) && !/Team editing on/i.test(bar3()));
+
+  // ⚠️ An EXPIRED reviewer session must NOT unlock: claiming unlocked() there
+  // trades a silent private save for a loud 401. Neither is wanted.
+  w3.CPL_SESSION.isFresh = () => false;
+  T3.render();
+  check("a STALE reviewer session does not unlock",
+    !/save for everyone/i.test(bar3()));
+
+  // The policy accepts either credential, so the phrase must still work alone.
+  w3.CPL_SESSION = null;
+  w3.CPL_TEAM_PHRASE = {
+    session: () => ({ teamPass: "p", email: "(team)" }),
+    decorateHeaders: (h) => { h["x-team-pass"] = "p"; return h; },
+  };
+  T3.render();
+  check("the team phrase alone still unlocks, and is named as such",
+    /save for everyone/i.test(bar3()) && /Team editing on/i.test(bar3()));
+}
+
 finish();

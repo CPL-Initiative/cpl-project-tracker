@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-08-27
+updated: 2026-08-28
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -22,6 +22,8 @@ Refreshed at every checkpoint (per `CLAUDE.md` Rule 8).
 
 | Lane | What | Where |
 |---|---|---|
+| [`methodology-a-client-gate-must-mirror-its-own-rls-policy.md`](kb-notes/methodology-a-client-gate-must-mirror-its-own-rls-policy.md) | methodology | A client permission check narrower than its RLS policy refuses a valid credential silently, toward lost work |
+| [`methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md`](kb-notes/methodology-a-bound-is-tested-by-value-not-by-the-clamp-count.md) | methodology | Held at the cap and receiving the cap are different populations |
 | [`methodology-a-saved-setting-is-not-the-effective-value`](kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | A stored config value is an input to a model, never its output — ask the model | 2026-08-26 |
 | [`methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists`](kb-notes/methodology-a-metric-matched-by-its-prose-mis-measures-once-a-second-lane-exists.md) | methodology | Matching a metric to its data by reading its label fails silently once two lanes exist | 2026-08-26 |
 | **KB notes** | Durable, distilled, reusable knowledge | [`docs/kb-notes/`](kb-notes/) |
@@ -703,6 +705,7 @@ Authoritative external sources we've cached:
 > **New this run:** [`docs/gr_reanalysis_scope.md`](gr_reanalysis_scope.md) — the GR Priorities on-demand re-analysis, scoped and buildable. ⭐ The tab's original analysis was a SESSION's work product, not a computation, so the job is to make it repeatable; the instrument doctrine (memo / Title 5 / Ed Code) is measured from the 16 rows that already exist, and rows #12/#9/#7/#5 are a labeled test set.
 
 ## Update history
+- **2026-08-28 (SkyLens, S202)** — funding CR/NC lane switch merged (#1369); found a client gate stricter than its own RLS policy silently losing Sam's relabels; 2 KB notes; session-203 handoff.
 
 - **2026-08-27 (SkyMatch, parallel to SkyPin)** — College CR evidence workstream: reusable matcher + LATTC worklist (PR #1365); two KB notes (a frequency is not a rule; one ranked list cannot answer two questions); §11 row added, SkyRule S196 narrative archived.
 - **2026-08-27 (SkyPin, Session 199)** — the funding measure pin (`metric_src`) + the MILESTONE-agreement check (#1363); `ppa`/`ppa_u` after Sam's `Potential Student` correction, and the live Access metric fixed from $0-for-all-115 to 12 colleges earning (#1364). New KB note: *a defect that produces the value you expected is invisible*. Compacted the §11 funding cell (stacked_roadmap_cell) and archived `cpl_funding_lessons.md` 2026-08-01 → 08-06.
@@ -747,3 +750,4 @@ Authoritative external sources we've cached:
 | [`methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md`](kb-notes/methodology-a-compact-formatter-is-calibrated-to-a-magnitude.md) | A compact formatter is calibrated to a magnitude, and a second lane rarely shares it |
 | [`methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md`](kb-notes/methodology-when-a-corpus-does-not-fit-the-order-is-the-selection.md) | When a corpus does not fit, the order is the selection |
 | [`session_197_handoff.md`](session_197_handoff.md) | Session 197 handoff |
+| [`session_203_handoff.md`](session_203_handoff.md) | handoff | Session 203 — from SkyLens (S202): the client gate vs its RLS policy, and the ABCD spine to build |

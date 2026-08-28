@@ -248,8 +248,8 @@ test ran with the search box still focused from an earlier step. Both are the
 Sky175 lesson repeating — suspect a new check when it goes red.
 
 **(f) Sam's copy note.** *"Use American English (e.g., check rather than
-cheque)."* Swept the page and this run's new files; `cheque`, `colour` and two
-`towards` were the whole list. Left the two pre-existing `modelling`s in
+cheque)."* Swept the page and this run's new files; `cheque`, `color` and two
+`towards` were the whole list. Left the two pre-existing `modeling`s in
 `cpl_funding.js` alone rather than churn code this run did not touch.
 
 **(g) Sam's second copy note — and the trap in it.** *"Revise 'the middle
@@ -1193,7 +1193,7 @@ different consumer, and it is not this.)
 `metric_src` — an explicit per-priority pin that overrides the prose, riding
 `prioField()` so it layers scenario → shared → baked like every other field.
 
-- ⚠️ **It is deliberately not free text.** An unrecognised key would read
+- ⚠️ **It is deliberately not free text.** An unrecognized key would read
   `rec[src] == null`, fall through to status `none`, and render as *"this college
   posted nothing"* — a typo silently zeroing a lane and **looking like a
   measurement**. Every legal key is declared with its unit; an unknown one becomes
@@ -1660,3 +1660,145 @@ is exactly why it shipped wrong and stayed wrong.
 3. The credit-lane variant of the `fmtCountK` rounding.
 4. NC's own strategy text (Year-1 P-Success still lists "noncredit mirror
    courses" among CREDIT strategies).
+
+---
+
+## 2026-08-28 — SkyLens: the lane switch, and a gate stricter than its own policy
+
+### What shipped (PR #1369, merged as `80d96b6`)
+
+The noncredit lane is on the priority cards behind **one switch above them**, moving
+all three together across every year. Sam named the failure mode himself before I
+built it: *"otherwise I'll be a confuseled Pooh."* Three per-card toggles is eight
+states and six of them describe no lane — the shares still read 34/33/33 while the
+pots come from two pools that sum to nothing.
+
+He also ruled **one FTES rate for both lanes** ($5,649.63 × the 0.5 factor =
+$2,824.82 per CPL FTES). It holds on the merits: what the noncredit lane measures
+is still credit *units*; the *student* originates in noncredit.
+
+### Three card lines could not carry over, and each failed while looking right
+
+1. **Strategies were inherited verbatim** (`strategies: p.strategies`). Credit's
+   Success list names *"noncredit mirror courses"* among the things to
+   batch-upload — on a noncredit card that instructs a noncredit institution
+   about itself. Sam's framing: *"NC programs do not generally award credit, they
+   get students trained and qualified to get credit at a credit college — hence
+   different strategies."* A difference in the **work**, not the wording, so
+   credit's list can never be the fallback.
+2. **The actuals line fell through to** *"Actuals arrive with the next daily data
+   refresh"* — false, and the most reassuring sentence available.
+3. **The earning line read `earnAgg().perPrio[i]`** — the credit statewide
+   aggregate, indexed by **position**.
+
+### ⚠️ `undelivered` conflates two things, and the ORDER is the fix
+
+`srcDelivered()` asks the **loaded** performance artifact whether a key is
+present, so when the artifact has not loaded it answers false for *every* source.
+Testing `meas.undelivered` before asking whether the artifact was there made every
+**credit** card claim its measure was uncarried. The order now mirrors
+`earnFraction()` exactly — the earning line and the actuals line describe the same
+measure, so a surface that ordered them differently would contradict the one
+beside it.
+
+### ⚠️ Three things I cut as "gloss" were data — three suites caught all three
+
+Sam asked to remove explanatory language. I over-cut:
+
+| Cut | Why it had to come back |
+|---|---|
+| The **effective rate** (window ÷ target) | A derived figure, not a gloss — and he separately asked to see *more* of where numbers come from |
+| **`meas.basis`** | Looks like a duplicate of the METRIC block, but they have different authors — METRIC is the CURATOR's wording, `meas.basis` is what the SYSTEM measured. Their divergence shows nowhere else |
+| **Roll-forward** | A different fact from **reprioritization**: roll-forward is inside the window (unearned Year-1 money is still earnable in Year 2), reprioritization is money never earned at all. Collapsing them lost the half that tells a college its money is still there |
+
+**The ratio is the lesson.** Of the assertions I was ready to write off as stale,
+most were protecting something real. A failing assertion on correct-looking work
+is a question, not a verdict.
+
+### ⭐ THE FINDING: a client gate stricter than its own RLS policy fails silently, toward lost work
+
+Sam relabeled the three priorities on the live tab. Nothing reached Supabase —
+the config md5 was still byte-identical to my own write hours earlier.
+
+My first diagnosis was wrong and worth recording as a near-miss: I concluded he
+had not been signed in. **He sent a screenshot: the masthead read "● Signed in".**
+
+The real cause:
+
+```js
+function unlocked() { var t = tp(); return !!(t && t.session()); }   // team PHRASE only
+```
+
+while all three funding tables carry
+
+```sql
+with check (is_allowed_reviewer() OR team_pass_ok())
+```
+
+**The database would have accepted his write. The client never attempted it.**
+`activeOverride()` handed him the per-browser SCENARIO layer, `persistActive()`
+wrote `localStorage` inside a swallowed `try/catch`, and the scenario layer wins
+the render — so the tab showed his new labels back to him and looked published.
+
+⭐ **Two credentials, one word.** COBI's masthead reports the **reviewer**
+magic-link session; this tab gated on the **team phrase**. §11 already carried the
+standing rule for the transition — *"accepts EITHER a session OR a phrase so
+nothing goes dark"* — and this tab was one of the places it had not landed.
+
+⚠️ **It was seven write paths, not one.** Config, notes and participation all
+decorated with the phrase alone. Fixed as **one `applyWriteAuth()` helper**, not
+seven patches: seven copies of an auth decision is seven chances to drift from the
+policy, which is how this survived.
+
+### ⚠️ The routing was never at fault
+
+Worth stating because it was Sam's actual question. Every consumer reads the model
+through `_prios()` / `_ncPrios()` — `college_briefing.js`, `funding_model_payload.js`,
+the memo/docx path — so a renamed priority propagates on its own. **Nothing
+hardcodes the names.** The change simply never entered the routing.
+
+### Other findings
+
+- ⚠️ **A bound must be tested by VALUE, never by the model's clamp count.** Santa
+  Ana's unclamped noncredit award solves to exactly **$100,000.00**, so it
+  receives the maximum without being *held* to it: `ncModel().capped` names 2
+  while 3 receive the max. Both true, different measurements. Gating the sentence
+  on one while counting the other makes the box disagree with itself.
+- **The award range is two rows, never merged.** 115 colleges vs 33 institutions,
+  different floors and ceilings, and 30 of the 33 sit in both lanes — a merged
+  minimum would print the noncredit floor as the credit minimum.
+- **The maximum box named Fresno City alone** while five colleges sit at the
+  ceiling. Both bounds now count ties, as the minimum always had.
+- ⚠️ **A python patch script that writes only at the end loses every edit when a
+  later assertion raises.** One did, the `unlocked()` fix silently never landed,
+  and the file still parsed. The new test caught it; nothing else would have.
+
+### Sam's rulings this run
+
+| Ruling | |
+|---|---|
+| One switch above the cards, all three, every year | never per card |
+| Same FTES rate in both lanes | no noncredit rate |
+| `Annual funding` / `Combined funding` | replacing "Disbursement / Even tranches / Front-load Year 1" |
+| Remove most explanatory language from the cards | keep the derivations |
+| No feed keys in reader-facing text | *"what does this mean? Metric · pinned to ppa_u"* |
+| Noncredit needs its own strategies | different work, not different wording |
+| Career attainment is carried by the **project pool**, reported qualitatively | no invented metric |
+| Wire the ABCD §78093.2 outcomes in and make them visible | with superscript links from whatever serves each |
+| *"Unearned reallocated after 2028"* — **withdrawn by Sam as invented** | replaced with the §78093.2(d)(1) goals |
+
+### Where it stands / next
+
+- ⛔ **Sam should re-apply his relabels** — with the gate fixed, a reviewer session
+  now saves for everyone.
+- **Not built: the ABCD spine and the goal-tagged project pool.** Design is in the
+  session-203 handoff. `scaling_projects_tech` (~$8.96M) is one box; splitting it
+  into named projects each tagged to a goal is most of the (d)(2) reporting
+  artifact, and the pool card system already supports custom labeled boxes.
+- ⚠️ **The CPL story corpus evidences the wrong goal.** Of 36 stories, **5**
+  destinations name a job and only ~4 are genuine progression; 8 of 36 quotes
+  mention employment at all, often aspirationally. The corpus documents
+  *educational* attainment — goal (B), the one already measurable. Fixable at
+  intake (ask what changed at work), not in analysis.
+- Still unruled from SkyLane: the **threshold/floor coupling** (400 FTES is the
+  last feasible step at the $50k floor).

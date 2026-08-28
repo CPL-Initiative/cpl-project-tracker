@@ -5,6 +5,8 @@ updated: 2026-08-28
 tags: [handoff, session-201, cpl-funding, noncredit, measurement]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_203_handoff.md
 ---
 
 # You are Session 201

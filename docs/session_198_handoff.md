@@ -5,6 +5,8 @@ updated: 2026-08-27
 tags: [handoff, session-198, cpl-funding, noncredit, map-api, accessibility, auth]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
+superseded: true
+superseded_by: session_203_handoff.md
 ---
 
 # You are Session 198
